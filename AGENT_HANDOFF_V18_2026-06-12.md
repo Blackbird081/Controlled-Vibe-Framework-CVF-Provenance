@@ -24,18 +24,19 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes Model Gateway C-02 P2 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW for Codex review; parked checkpoint=provider/live-proof, Model Gateway P3/P4, Sandbox Runtime implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond P2 scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p2_dynamic_model_registry_boundary_closed`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=consider Model Gateway C-02 P3 Unified Gateway Interface boundary only through fresh operator authorization, fresh GC-018, and source-verified work order; parked checkpoint=provider/live-proof, Model Gateway runtime DynamicModelRegistry implementation, Model Gateway P4, Sandbox Runtime implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond P2 scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`
+`model_gateway_c02_p2_dynamic_model_registry_boundary_closed`
 
-Current HEAD recorded for this handoff: `a31f32a9`
-(Agent Commit Steward protocol material commit; prior Model Gateway C-02 P2
-dispatch material commit `eea131ec`, prior P2 work-order draft and Agent
-Operation Trace root-level manifest parser repair commit `61984341`, prior
-handoff-sync commit `2d1dd769`, prior roadmap repair commit `ca29e988`, prior
-roadmap commit `aa9e0550`).
+Current HEAD recorded for this handoff: `24d455f8`
+(Model Gateway C-02 P2 material implementation commit; prior session sync commit
+`e01d298c`, prior Agent Commit Steward protocol material commit `a31f32a9`,
+prior Model Gateway C-02 P2 dispatch material commit `eea131ec`, prior P2
+work-order draft and Agent Operation Trace root-level manifest parser repair
+commit `61984341`, prior handoff-sync commit `2d1dd769`, prior roadmap repair
+commit `ca29e988`, prior roadmap commit `aa9e0550`).
 
 ## Active Boundary
 
@@ -112,34 +113,39 @@ commit-shape conflicts early while keeping existing hooks and autorun gates.
 
 ---
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` as of 2026-06-15.
+Model Gateway C-02 P2 Dynamic Model Registry Boundary is `CLOSED_PASS_BOUNDED`
+at material implementation commit `24d455f8`.
 
-Material dispatch commit: `eea131ec`.
+Artifacts:
 
-GC-018:
-`docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`;
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`;
+- Worker return:
+  `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md`;
+- Completion review:
+  `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md`;
+- Contract:
+  `EXTENSIONS/CVF_MODEL_GATEWAY/src/dynamic-model-registry-contract.ts`;
+- Tests:
+  `EXTENSIONS/CVF_MODEL_GATEWAY/tests/dynamic-model-registry-contract.test.ts`;
+- Boundary definition:
+  `docs/reference/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_DEFINITION_2026-06-15.md`.
 
-Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
+Scope closed: types-only dynamic model registry contract, barrel exports,
+type-level tests, boundary definition, GC-051 source/test coverage, worker
+return, reviewer completion, and session sync. `MGW-001` remains
+`PARTIAL_RECHECK_REQUIRED` until P3 also closes.
 
-Dispatch-quality, Agent Operation Trace, Markdown structural completeness,
-docs governance, rescan intelligence hardening, pre-dispatch autorun,
-reviewer-fast, and `git diff --check` PASS before dispatch commit.
+Next move: consider Model Gateway C-02 P3 Unified Gateway Interface boundary
+only through fresh operator authorization, fresh GC-018, and a source-verified
+work order. Runtime DynamicModelRegistry implementation, provider/API use, live
+proof, provider/model addition, strategy-layer implementation, AI Gateway
+absorption, public-sync, production readiness, and public readiness remain
+parked.
 
-Claude worker now executes under WORKER_MUST_NOT_COMMIT. Expected worker scope:
-types-only dynamic model registry contract, boundary definition doc, focused
-type-level tests, bounded exports/GC-051 coverage if required by the work
-order, and worker return. Existing provider registries and routing runtime stay
-unchanged unless explicitly allowed by the P2 work order.
-
-Model Gateway C-02 P2 roadmap is `ROADMAP_READY`. Operator authorized P2 tranche
-per session instruction 2026-06-15.
-
-Roadmap:
-`docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
-
-Current mode: `model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`.
+Current mode: `model_gateway_c02_p2_dynamic_model_registry_boundary_closed`.
 
 ---
 
@@ -869,16 +875,19 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is `ROADMAP_READY`.
-Next move: issue GC-018 for C-02 P2, author source-verified work order, dispatch to worker.
+Model Gateway C-02 P2 Dynamic Model Registry Boundary is `CLOSED_PASS_BOUNDED`
+at material implementation commit `24d455f8`.
+Next move: consider C-02 P3 Unified Gateway Interface boundary only through
+fresh operator authorization, fresh GC-018, and a source-verified work order.
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-No Model Gateway P2/P3 implementation, provider/API use, live governance proof,
-provider/model addition, strategy-layer implementation, AI Gateway absorption,
-legacy/model registry mutation, public-sync, external Document_Translator
-inspection or mutation, OS audit, endpoint monitoring, T12, raw memory release,
-co-work product development, or autonomous mutation is authorized without fresh
-operator authorization, fresh GC-018, and a source-verified work order.
+No Model Gateway runtime DynamicModelRegistry implementation, provider/API use,
+live governance proof, provider/model addition, strategy-layer implementation,
+AI Gateway absorption, legacy/model registry mutation, public-sync, external
+Document_Translator inspection or mutation, OS audit, endpoint monitoring, T12,
+raw memory release, co-work product development, or autonomous mutation is
+authorized without fresh operator authorization, fresh GC-018, and a
+source-verified work order.
 
 ## Parked Checkpoints
 

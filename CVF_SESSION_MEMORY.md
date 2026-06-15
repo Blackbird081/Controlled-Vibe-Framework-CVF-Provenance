@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`
+Current mode marker: `model_gateway_c02_p2_dynamic_model_registry_boundary_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`.
+Current mode: `model_gateway_c02_p2_dynamic_model_registry_boundary_closed`.
 
 Active handoff:
 
@@ -59,13 +59,19 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 Model Gateway C-02 P2 Dynamic Model Registry Boundary is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` as of 2026-06-15.
+`CLOSED_PASS_BOUNDED` as of 2026-06-15.
 
-Material dispatch commit: `eea131ec`.
+Material implementation commit: `24d455f8`.
 
-Next move: Claude executes the P2 work order under WORKER_MUST_NOT_COMMIT and
-returns `COMPLETE_PENDING_REVIEW`; Codex then reviews closure evidence and
-decides whether to close P2.
+Completion review:
+`docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md`
+
+Next move: consider Model Gateway C-02 P3 Unified Gateway Interface boundary
+only through fresh operator authorization, fresh GC-018, and a source-verified
+work order. P2 does not authorize runtime DynamicModelRegistry implementation,
+provider/API use, live proof, provider/model addition, public-sync, AI Gateway
+absorption, co-work product development, production readiness, or public
+readiness.
 
 Roadmap:
 `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
@@ -1008,16 +1014,19 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is `ROADMAP_READY`.
-Next move: issue GC-018 for C-02 P2, author source-verified work order, dispatch to worker.
+Model Gateway C-02 P2 Dynamic Model Registry Boundary is `CLOSED_PASS_BOUNDED`
+at material implementation commit `24d455f8`.
+Next move: consider C-02 P3 Unified Gateway Interface boundary only through
+fresh operator authorization, fresh GC-018, and a source-verified work order.
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-No Model Gateway P2/P3 implementation, provider/API use, live governance proof,
-provider/model addition, strategy-layer implementation, AI Gateway absorption,
-legacy/model registry mutation, public-sync, external Document_Translator
-inspection or mutation, OS audit, endpoint monitoring, T12, raw memory release,
-co-work product development, or autonomous mutation is authorized without fresh
-operator authorization, fresh GC-018, and a source-verified work order.
+No Model Gateway runtime DynamicModelRegistry implementation, provider/API use,
+live governance proof, provider/model addition, strategy-layer implementation,
+AI Gateway absorption, legacy/model registry mutation, public-sync, external
+Document_Translator inspection or mutation, OS audit, endpoint monitoring, T12,
+raw memory release, co-work product development, or autonomous mutation is
+authorized without fresh operator authorization, fresh GC-018, and a
+source-verified work order.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:

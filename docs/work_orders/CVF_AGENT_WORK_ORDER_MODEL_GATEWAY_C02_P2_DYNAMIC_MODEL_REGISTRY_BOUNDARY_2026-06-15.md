@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 Worker: Claude
 
@@ -24,9 +24,9 @@ reviewerOwnedClosurePaths:
 
 dispatchBaseHead: 1ec2f2b4
 
-executionBaseHead: WORKER_MUST_CAPTURE_AFTER_DISPATCH
+executionBaseHead: e01d298c
 
-closureBaseHead: REVIEWER_CAPTURE_AFTER_WORKER_RETURN
+closureBaseHead: 24d455f8
 
 rawMemoryReleased=false
 
@@ -45,7 +45,8 @@ released because both prerequisites are now satisfied:
 2. Operator authorized the P2 scope and Claude/Codex worker-reviewer assignment
    in the 2026-06-15 session instruction: "commit de Claude thi cong".
 
-Dispatch status is `DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT`.
+Closure status is `CLOSED_PASS_BOUNDED` after material implementation commit
+`24d455f8` and reviewer closure conversion.
 
 ## Public Export Disposition
 
@@ -162,7 +163,7 @@ token against governed runtime source before completion.
 | routeMode | SINGLE_AGENT_MULTI_ROLE |
 | Role separation basis | Phase gates, separate base heads, worker no-commit boundary, reviewer closure conversion, committed-range closure checks |
 | Escalation condition | Stop for scope expansion beyond the P2 contract boundary, runtime implementation, provider/live proof, public-sync, secrets, package install, registry mutation, governance-kernel mutation, destructive action, or P3/strategy-layer work |
-| Disposition | DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT |
+| Disposition | CLOSED_PASS_BOUNDED |
 
 ## Single-Agent Multi-Role Control Block
 
@@ -188,6 +189,11 @@ reviewerOwnedClosurePaths:
 - `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md`
 - `docs/corpus-intelligence/registry/entries/model-gateway-c02-p2-dynamic-model-registry-contract.json`
 - `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 
 Reviewer role must convert a successful handoff packet into a completion review,
@@ -234,10 +240,19 @@ Allowed scope:
 - (reviewer-owned at closure) `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 - (reviewer-owned at closure) `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
 - (reviewer-owned at closure) `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md`
+- (reviewer-owned session sync) `CVF_SESSION_MEMORY.md`
+- (reviewer-owned session sync) `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- (reviewer-owned session sync) `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- (reviewer-owned session sync) `CVF_SESSION/state/entries/modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615.json`
+- (reviewer-owned session sync) `CVF_SESSION/state/entries/nextAllowedMove.json`
+- (reviewer-owned session sync) `AGENT_HANDOFF_V18_2026-06-12.md`
 
 The `docs/corpus-intelligence/` paths are reviewer-owned GC-051 closure coverage
 for the new governed source file, not Model Gateway runtime registry or legacy
 coverage index mutation.
+
+The session-sync paths are reviewer-owned continuity updates only. They do not
+authorize runtime, provider, public-sync, or governance-kernel behavior changes.
 
 ## Required First Reads
 
@@ -482,23 +497,23 @@ Risk ceiling: R1 single-extension contract-first definition.
 
 | Gate | Required evidence | Status |
 | --- | --- | --- |
-| Authorizations present | GC-018 baseline + operator authorization cited | PENDING |
-| Scope-limited mutation | Changes limited to the new contract file, barrel edit, new test, boundary doc, and worker return | PENDING |
-| Existing registries unchanged | `provider-capability-registry.ts` and `provider-registry.ts` show zero diff | PENDING |
-| Types-only contract | Contract file has no class body, no `new`, no runtime statement beyond declarations | PENDING |
-| Type reuse | `ProviderMethodName`, `ProviderStatus`, `ProviderHealthState` imported, not redeclared | PENDING |
-| Health reconciliation | DMR health field reuses 5-value `ProviderHealthState`; recorded in worker return | PENDING |
-| New tests present | Shape, implementable-interface, type-reuse cases added | PENDING |
-| Type check | Model Gateway `npm run check` PASS | PENDING |
-| Test run | Model Gateway `npm test` PASS | PENDING |
-| GC-023 | No touched `.ts`/`.test.ts` file exceeds its hard threshold | PENDING |
-| No provider/live | No provider/API/live proof, model addition, package install, or secret read | PENDING |
-| Name collision avoided | New symbols `ModelTier`, `DynamicModelRecord`, `FindOptimalQuery`, `DynamicModelRegistryContract` have no prior occurrence | PENDING |
-| Agent Operation Trace Block | Expected and actual changed set recorded | PENDING |
-| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return | PENDING |
-| Worker did not commit | HEAD stayed `executionBaseHead` through worker return | PENDING |
-| Diff hygiene | `git diff --check` PASS | PENDING |
-| Reviewer-fast | `python governance/compat/run_worker_return_fast_gate.py` PASS | PENDING |
+| Authorizations present | GC-018 baseline + operator authorization cited | PASS |
+| Scope-limited mutation | Changes limited to the new contract file, barrel edit, new test, boundary doc, GC-051 entries, aggregate, and worker return | PASS |
+| Existing registries unchanged | `provider-capability-registry.ts` and `provider-registry.ts` show zero diff | PASS |
+| Types-only contract | Contract file has no class body, no `new`, no runtime statement beyond declarations and one literal version constant | PASS |
+| Type reuse | `ProviderMethodName`, `ProviderStatus`, `ProviderHealthState` imported, not redeclared | PASS |
+| Health reconciliation | DMR health field reuses 5-value `ProviderHealthState`; recorded in worker return | PASS |
+| New tests present | Shape, implementable-interface, type-reuse cases added | PASS |
+| Type check | Model Gateway `npm run check` PASS | PASS |
+| Test run | Model Gateway `npm test` PASS, 22 files / 105 tests | PASS |
+| GC-023 | No touched `.ts`/`.test.ts` file exceeds its hard threshold | PASS |
+| No provider/live | No provider/API/live proof, model addition, package install, or secret read | PASS |
+| Name collision avoided | New symbols `ModelTier`, `DynamicModelRecord`, `FindOptimalQuery`, `DynamicModelRegistryContract` have no prior occurrence before P2 | PASS |
+| Agent Operation Trace Block | Expected and actual changed set recorded | PASS |
+| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return and completion | PASS |
+| Worker did not commit | HEAD stayed `executionBaseHead` through worker return | PASS |
+| Diff hygiene | `git diff --check` PASS, CRLF warnings only | PASS |
+| Reviewer-fast | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base e01d298c --head HEAD --enforce` PASS | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -591,21 +606,21 @@ completion review, the work-order status field, and session continuity.
 
 ## Closure Checklist
 
-- [ ] Fresh GC-018 baseline exists and is cited.
-- [ ] Operator authorization exists and is cited.
-- [ ] Worker return records changed files, gate output, and AC evidence.
-- [ ] Contract file is types-only (AC1).
-- [ ] Existing registries unchanged (AC2).
-- [ ] Type reuse confirmed (AC3).
-- [ ] Type-level tests pass (AC4).
-- [ ] Boundary definition doc states the merge-strategy boundary (AC5).
-- [ ] `rawMemoryReleased=false` on all closure artifacts (AC6).
-- [ ] No live/provider proof used (AC7).
-- [ ] GC-051 registry entry added for the new contract file.
-- [ ] `MGW-001` coverage note recorded: stays `PARTIAL_RECHECK_REQUIRED`.
-- [ ] Pre-closure autorun gate PASS on the material range.
-- [ ] Completion review authored with disposition.
-- [ ] Session continuity synced (front door, state, handoff).
+- [x] Fresh GC-018 baseline exists and is cited.
+- [x] Operator authorization exists and is cited.
+- [x] Worker return records changed files, gate output, and AC evidence.
+- [x] Contract file is types-only (AC1).
+- [x] Existing registries unchanged (AC2).
+- [x] Type reuse confirmed (AC3).
+- [x] Type-level tests pass (AC4).
+- [x] Boundary definition doc states the merge-strategy boundary (AC5).
+- [x] `rawMemoryReleased=false` on all closure artifacts (AC6).
+- [x] No live/provider proof used (AC7).
+- [x] GC-051 registry entry added for the new contract file and tests.
+- [x] `MGW-001` coverage note recorded: stays `PARTIAL_RECHECK_REQUIRED`.
+- [x] Material pre-closure autorun gate run on `e01d298c..24d455f8`; material gates PASS and active-session sync is handled by reviewer closure batch.
+- [x] Completion review authored with disposition.
+- [x] Session continuity synced (front door, state, handoff).
 
 ## Return-To-Orchestrator Conditions
 
@@ -637,30 +652,47 @@ No operator checkpoint is parked inside the normal worker-to-reviewer flow;
 routine allowed-scope repairs proceed under the Worker Autonomy / No-Question
 Rule without operator escalation.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md` | Roadmap remains the planning parent; P2 closure is recorded by this work order and completion review without roadmap mutation | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check PASS | PASS |
+| Registry Markdown | N/A with reason: no markdown registry owner exists for this GC-051 source entry | BLOCKED with reason: JSON aggregate and per-entry source are the required registry surfaces | BLOCKED with reason |
+| External evidence digest | N/A with reason: repo-local source, tests, and governance gates only | N/A_WITH_REASON | N/A with reason |
+| System loop interlock | N/A with reason: P2 did not change system-loop registry or interlock surfaces | N/A_WITH_REASON | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V18_2026-06-12.md` | reviewer-owned closure sync updates current mode, next allowed move, and HEAD pointer | PASS |
+| Worker return reviewed | `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md` | reviewer-return steward PASS and completion accepted | PASS |
+| Source implementation | Model Gateway P2 source/tests named in Allowed scope | Model Gateway check/test evidence recorded in completion review | PASS |
+| Public export disposition recorded | this file and completion review | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Runtime/provider/live proof | N/A with reason: no provider/API/live behavior claim authorized or made | N/A_WITH_REASON | N/A with reason |
+| Public-sync | N/A with reason: private provenance implementation only | N/A_WITH_REASON | N/A with reason |
+
 ## Agent Operation Trace Block
 
-This block records the dispatch packaging of THIS work order (orchestrator
-role), not the worker's future execution. The worker authors its own trace block
-in the worker return.
+This block records the reviewer closure conversion update to THIS work order.
+The worker execution trace remains in the worker return.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex (orchestrator/reviewer) |
+| Actor | Codex reviewer / closer |
 | Provider or surface | Codex CLI |
-| Session or invocation | Dispatch session from prior HEAD `1ec2f2b4` |
+| Session or invocation | closureBaseHead `24d455f8` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read (work order, roadmap, source files, P1 GC-018), Edit (work order dispatch release), Create (fresh P2 GC-018 baseline), Bash/PowerShell (source verification, line-count checks, dispatch-quality gates) |
-| Target paths | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` (CREATED); `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` (UPDATED) |
-| Allowed scope source | Operator instruction 2026-06-15 to check the work order, commit it, and dispatch Claude; P2 roadmap; active session state nextAllowedMove |
-| Before status evidence | `git status --short` clean before dispatch; HEAD `1ec2f2b4` |
-| After status evidence | `git status --short` shows one new GC-018 baseline and one modified work order before commit |
-| Diff evidence | `git diff --check` expected PASS before commit; changed set is exactly the paths listed in this trace block |
-| Approval boundary | Operator authorized dispatch; fresh GC-018 exists in this batch; work order status is `DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` |
-| Claim boundary | Repo-local trace only; no OS-level user attribution, endpoint telemetry, provider-internal logs, physical-machine identity, public readiness, or production readiness claim |
-| Agent type | Codex orchestrator/reviewer |
-| Invocation ID | Dispatch from HEAD `1ec2f2b4` |
-| Expected manifest | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` |
+| Command or tool surface | Read, `rg`, governance gates, `apply_patch`, active-state generator, `git diff --check` |
+| Target paths | this work order, completion review, active session state source/aggregate, session front door, active handoff |
+| Allowed scope source | Reviewer Closure Conversion Block in this work order; completion review Core Guard Self-Protection Authorization |
+| Before status evidence | material implementation commit `24d455f8`; worktree clean before closure sync |
+| After status evidence | P2 closure/sync packet ready for commit |
+| Diff evidence | `git status --short`; `git diff --check`; closure-sync gates |
+| Approval boundary | P2 reviewer closure and session continuity only; no runtime/provider/public expansion |
+| Claim boundary | Repo-local P2 contract closure only; no OS-level user attribution, endpoint telemetry, provider-internal logs, physical-machine identity, public readiness, or production readiness claim |
+| Agent type | Codex |
+| Invocation ID | `closureBaseHead=24d455f8` |
+| Expected manifest | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V18_2026-06-12.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md` |
+| Actual changed set | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V18_2026-06-12.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no protected path was deleted or renamed during this authoring session |
 

@@ -2,11 +2,13 @@
   "stateOrder": 253,
   "stateKey": "modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615",
   "value": {
-    "status": "DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT",
+    "status": "CLOSED_PASS_BOUNDED",
     "dispatchBaseHead": "1ec2f2b4",
     "materialDispatchCommit": "eea131ec",
     "worker": "Claude",
     "reviewer": "Codex",
+    "executionBaseHead": "e01d298c",
+    "materialImplementationCommit": "24d455f8",
     "roadmap": "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md",
     "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md",
@@ -18,7 +20,7 @@
       "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md"
     ],
     "reviewerOwnedClosurePath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md",
-    "nextAllowedMove": "Await Claude COMPLETE_PENDING_REVIEW, then Codex review and closure decision. Do not open P3/P4 or runtime/provider/live/public work before P2 review.",
-    "claimBoundary": "P2 dispatch only. No runtime registry implementation, provider/API use, live proof, provider/model addition, public-sync, external app mutation, raw memory release, co-work product development, AI Gateway absorption, production readiness, or public readiness."
+    "nextAllowedMove": "P2 is closed. Model Gateway C-02 P3 Unified Gateway Interface boundary may open only through fresh operator authorization, fresh GC-018, and source-verified work order. Do not open runtime DynamicModelRegistry implementation, provider/API use, live proof, provider/model addition, public-sync, AI Gateway absorption, co-work product development, production readiness, or public readiness from P2 closure.",
+    "claimBoundary": "P2 closure only. Types-only dynamic model registry contract, boundary doc, type-level tests, GC-051 coverage, worker return, reviewer completion, and session sync. No runtime registry implementation, provider/API use, live proof, provider/model addition, public-sync, external app mutation, raw memory release, co-work product development, AI Gateway absorption, production readiness, or public readiness."
   }
 }
