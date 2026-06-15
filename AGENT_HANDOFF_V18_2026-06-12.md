@@ -79,6 +79,17 @@ commit `b2c7c802`, or Model Gateway C-02 P1 routing pipeline dispatch commit
 
 ## Latest Continuity Note
 
+Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is
+`ROADMAP_READY` as of 2026-06-15. Operator authorized P2 tranche per session
+instruction. Next move: issue GC-018, author work order, dispatch to worker.
+
+Roadmap:
+`docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
+
+Current mode updated to `model_gateway_c02_p2_roadmap_ready`.
+
+---
+
 Model Gateway C-02 P1 Routing Pipeline Implementation is `CLOSED_PASS_BOUNDED`
 at material closure commit `24a3c30a`.
 
@@ -805,34 +816,16 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: Model Gateway C-02 P1 Routing Pipeline is
-`CLOSED_PASS_BOUNDED` at material closure commit `24a3c30a`. Closure artifacts
-are:
-
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`.
-
-No Model Gateway P2 dynamic registry, P3 unified gateway interface, strategy
-layer, AI Gateway absorption, provider/API use, live governance proof,
-provider/model addition, legacy/model registry mutation, public-sync, external
-Document_Translator inspection or mutation, Policy_Local mutation, OS audit,
-endpoint monitoring, T12, raw memory release, co-work product development, or
-autonomous mutation is authorized without fresh operator authorization, fresh
-GC-018, and a source-verified work order.
-
-DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
-work order for Document Translator source custody, repo inventory,
-secret-safety, and control-baseline audit. Policy_Local PL-S1 remains
-separately held until the operator explicitly authorizes it.
-
-Do not edit or inspect the external Document Translator repo, mutate external
-Policy_Local, activate EC, wire retrieval routes, invoke OCR or providers,
-import external code, install dependencies, ingest corpus records, use
-public-sync, unlock T12, or claim readiness/cost/quality until a later
-authorized work order permits it.
-
+Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is `ROADMAP_READY`.
+Next move: issue GC-018 for C-02 P2, author source-verified work order, dispatch to worker.
 LHW24 remains the latest closed numbered LHW wave in the state registry.
+
+No Model Gateway P2/P3 implementation, provider/API use, live governance proof,
+provider/model addition, strategy-layer implementation, AI Gateway absorption,
+legacy/model registry mutation, public-sync, external Document_Translator
+inspection or mutation, OS audit, endpoint monitoring, T12, raw memory release,
+co-work product development, or autonomous mutation is authorized without fresh
+operator authorization, fresh GC-018, and a source-verified work order.
 
 ## Parked Checkpoints
 

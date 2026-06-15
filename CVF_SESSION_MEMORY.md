@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p1_routing_pipeline_closed_bounded`
+Current mode marker: `model_gateway_c02_p2_roadmap_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_c02_p1_routing_pipeline_closed_bounded`.
+Current mode: `model_gateway_c02_p2_roadmap_ready`.
 
 Active handoff:
 
@@ -58,25 +58,19 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is
+`ROADMAP_READY` as of 2026-06-15. Operator authorized P2 per session
+instruction 2026-06-15. Next move: GC-018, work order, dispatch to worker.
+
+Roadmap:
+`docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
+
+Prior closed tranche (pointer):
+
 Model Gateway C-02 P1 Routing Pipeline is `CLOSED_PASS_BOUNDED` at material
 closure commit `24a3c30a`; handoff sync commit `00b96357` is complete.
-
-Work order:
-
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`
-
-Closure artifacts:
-
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`;
-- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json`;
-- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-existing-routing-touchpoints.json`.
-
-Codex executed the bounded multi-role P1 implementation, created the worker
-return and completion review, repaired required GC-051 source registry coverage,
-and committed the closure. Any Model Gateway C-02 P2/P3 or runtime/provider
-follow-up requires fresh operator authorization, fresh GC-018, and a
-source-verified work order.
+Full closure artifacts in `AGENT_HANDOFF_V18_2026-06-12.md` Latest
+Continuity Note section.
 
 Legacy coverage-index dispatch guard hardening is `CLOSED_PASS_BOUNDED` at
 material commit `3423d82e`. Ready/dispatch work orders that are both
@@ -1000,24 +994,16 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Model Gateway C-02 P1 Routing Pipeline is
-`CLOSED_PASS_BOUNDED` at material closure commit `24a3c30a`; handoff sync commit
-`00b96357` is complete.
-Closure artifacts are:
+Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is `ROADMAP_READY`.
+Next move: issue GC-018 for C-02 P2, author source-verified work order, dispatch to worker.
+LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`.
-
-Model Gateway C-02 P2 dynamic model registry boundary, C-02 P3 unified gateway
-interface boundary, or another foundation follow-up may open only through fresh
-operator authorization, fresh GC-018, and a source-verified work order. No Model
-Gateway P2/P3 implementation, provider/API use, live governance proof,
+No Model Gateway P2/P3 implementation, provider/API use, live governance proof,
 provider/model addition, strategy-layer implementation, AI Gateway absorption,
 legacy/model registry mutation, public-sync, external Document_Translator
-inspection or mutation, Policy_Local mutation, OS audit, endpoint monitoring,
-T12, raw memory release, co-work product development, or autonomous mutation is
-authorized without that fresh authorization chain.
+inspection or mutation, OS audit, endpoint monitoring, T12, raw memory release,
+co-work product development, or autonomous mutation is authorized without fresh
+operator authorization, fresh GC-018, and a source-verified work order.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
