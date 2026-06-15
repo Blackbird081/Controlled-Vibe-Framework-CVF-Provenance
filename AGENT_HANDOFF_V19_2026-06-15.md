@@ -30,10 +30,10 @@ Startup acknowledged: current mode=`model_gateway_c02_p4b_a_closed_p4b_b_hold`; 
 
 `model_gateway_c02_p4b_a_closed_p4b_b_hold`
 
-Current HEAD recorded for this handoff: `3c5b1d3d`
-(Model Gateway C-02 P4B-A material implementation commit; dispatch commit
-`2181b072`; prior Model Gateway C-02 P3/P4A material implementation commit
-`5d46bc62`.)
+Current HEAD recorded for this handoff: `a21f3e65`
+(Model Gateway C-02 P4B-A closure-doc commit; session-sync commit `ddc28dc8`;
+material implementation commit `3c5b1d3d`; dispatch commit `2181b072`; prior
+Model Gateway C-02 P3/P4A material implementation commit `5d46bc62`.)
 
 ## Active Boundary
 
@@ -52,9 +52,9 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update session continuity files after P4B-A material commit `3c5b1d3d` so the
-front door, generated state aggregate, state sources, and active handoff record
-bounded closure while preserving the P4B-B live-proof hold.
+update this handoff after P4B-A closure-doc commit `a21f3e65` so GC-020 records
+the accepted parent-marker handoff-sync boundary while preserving the P4B-B
+live-proof hold.
 
 Protected paths:
 
@@ -70,9 +70,10 @@ Operator authorization: operator authorized Codex repair and Claude execution
 on 2026-06-15; this reviewer closure sync records the completed bounded P4B-A
 work without releasing P4B-B live proof.
 
-Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert P4B-A material commit `3c5b1d3d`, P4B-A dispatch commit
-`2181b072`, or Model Gateway C-02 P3/P4A material closure commit `5d46bc62`.
+Rollback boundary: if handoff-sync gates fail, revert only this handoff-sync
+batch. Do not revert P4B-A closure-doc commit `a21f3e65`, session-sync commit
+`ddc28dc8`, material commit `3c5b1d3d`, dispatch commit `2181b072`, or Model
+Gateway C-02 P3/P4A material closure commit `5d46bc62`.
 
 ## Latest Continuity Note
 
@@ -107,9 +108,10 @@ Artifacts (pointer only -- full list in V18 archive):
 
 Session Continuity Rotation Guard Hardening is `CLOSED_PASS_BOUNDED`.
 
-Model Gateway C-02 P4B-A is `CLOSED_PASS_BOUNDED` at material commit
-`3c5b1d3d`. Codex added adapter identity enforcement, corrected worker
-evidence, and verified 25 files / 154 tests.
+Model Gateway C-02 P4B-A is `CLOSED_PASS_BOUNDED` at closure-doc commit
+`a21f3e65`, session-sync commit `ddc28dc8`, and material commit `3c5b1d3d`.
+Codex added adapter identity enforcement, corrected worker evidence, and
+verified 25 files / 154 tests.
 
 Next move: audit and select the next high-foundation-value roadmap. P4B-B
 concrete provider wiring and live proof remain
@@ -141,7 +143,8 @@ Roadmap, GC-018, and Claude work order authored to make stale non-active root
 handoffs a machine-check failure.
 
 Model Gateway C-02 P4B-A Provider Execution Bridge --
-CLOSED_PASS_BOUNDED at material commit `3c5b1d3d` after reviewer repair.
+CLOSED_PASS_BOUNDED at closure-doc commit `a21f3e65`, session-sync commit
+`ddc28dc8`, and material commit `3c5b1d3d` after reviewer repair.
 P4B-B concrete provider wiring and live proof remain on explicit hold.
 
 ## Parked Lanes
