@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`roadmap_state_reconciliation_t1_dispatched`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude may execute `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md` under WORKER_MUST_NOT_COMMIT and return uncommitted artifacts for Codex review; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`roadmap_state_reconciliation_t1_closed_rsf_t2_authorized`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=authorize and dispatch RSF-T2, a narrow stale-roadmap redispatch machine guard; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`roadmap_state_reconciliation_t1_dispatched`
+`roadmap_state_reconciliation_t1_closed_rsf_t2_authorized`
 
-Current HEAD recorded for this handoff: `0977365e`
-(Roadmap State Reconciliation RSF-T1 dispatch commit `0977365e`; Session-Sync
+Current HEAD recorded for this handoff: `1c3724d0`
+(Roadmap State Reconciliation RSF-T1 material closure commit `1c3724d0`;
+Roadmap State Reconciliation RSF-T1 dispatch commit `0977365e`; Session-Sync
 Authoring Helper T2 material commit `5cb9d472` and this
 session-sync; Session mode-consistency checker T1 material commit `e022c872`;
 T1 handoff-sync `0b4c0a7b`; T1 dispatch packet commit `401858eb`;
@@ -79,11 +80,11 @@ requires separate authorization.
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
 update this handoff and session front-door state after Roadmap State
-Reconciliation RSF-T1 dispatch commit `0977365e` to advance the mode marker to
-`roadmap_state_reconciliation_t1_dispatched` across all surfaces, preserve the
-prior bounded closures, and route the next allowed move to Claude worker
-execution. This scope also covers regenerating the `ACTIVE_SESSION_STATE.json`
-aggregate from source entries.
+Reconciliation RSF-T1 material closure commit `1c3724d0` to advance the mode
+marker to `roadmap_state_reconciliation_t1_closed_rsf_t2_authorized` across all
+surfaces, preserve the prior bounded closures, and route the next allowed move
+to RSF-T2 authorization/dispatch. This scope also covers regenerating the
+`ACTIVE_SESSION_STATE.json` aggregate from source entries.
 
 Protected paths:
 
@@ -96,6 +97,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/sessionModeConsistencyCheckerClosure20260616.json`
 - `CVF_SESSION/state/entries/sessionSyncAuthoringHelperClosure20260616.json`
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT1Dispatch20260616.json`
+- `CVF_SESSION/state/entries/roadmapStateReconciliationT1Closure20260616.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceDispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceClosure20260615.json`
@@ -131,12 +133,21 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-Session-Sync Authoring Helper T2 is `CLOSED_PASS_BOUNDED` at material commit
-`5cb9d472`. `governance/compat/build_session_sync_pack.py --author-entry`
-emits a read-only state-entry skeleton, `nextAllowedMove` template, and all
-five session mode marker occurrences enforced by T1. Focused tests pass 16/16;
-reviewer-fast passes 17/17. Next move: audit/select the next high-value CVF
-foundation roadmap.
+Roadmap State Reconciliation RSF-T1 is `CLOSED_PASS_BOUNDED` at material commit
+`1c3724d0`. CI2 roadmap now records `ALL_TRANCHES_CLOSED_PASS_BOUNDED`,
+CI2-T3/T4/T5 completion evidence is source-backed, and the touched stale CI2
+roadmap is protected in the active archive baseline. Next allowed move:
+authorize and dispatch RSF-T2, a narrow stale-roadmap redispatch machine guard.
+No runtime/provider/public-sync/broad legacy scan/LPCI product implementation
+is authorized by this closure.
+
+Prior closure pointer: Session-Sync Authoring Helper T2 is
+`CLOSED_PASS_BOUNDED` at material commit `5cb9d472`.
+
+`governance/compat/build_session_sync_pack.py --author-entry` emits a
+read-only state-entry skeleton, `nextAllowedMove` template, and all five
+session mode marker occurrences enforced by T1. Focused tests pass 16/16;
+reviewer-fast passes 17/17.
 
 Prior closure pointer: Session Mode-Consistency Checker (T1 of the session
 continuity foundation roadmap) is `CLOSED_PASS_BOUNDED` at material commit

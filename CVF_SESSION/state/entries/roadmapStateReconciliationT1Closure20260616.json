@@ -1,0 +1,5 @@
+{
+  "stateOrder": 406,
+  "stateKey": "roadmapStateReconciliationT1Closure20260616",
+  "value": "Roadmap State Reconciliation RSF-T1 is CLOSED_PASS_BOUNDED at material commit 1c3724d0. CI2 roadmap now records ALL_TRANCHES_CLOSED_PASS_BOUNDED, CI2-T3/T4/T5 completion evidence is source-backed, and the active archive baseline has a blocked entry for the touched stale CI2 roadmap. RSF-T2 is authorized as the next governance foundation move: implement a narrow stale-roadmap redispatch guard. Claim boundary: no runtime/provider/public/legacy broad scan or LPCI product implementation is authorized by RSF-T1 closure."
+}
