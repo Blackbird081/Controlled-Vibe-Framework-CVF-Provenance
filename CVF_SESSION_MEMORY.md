@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-15
+Last updated: 2026-06-16
 
-Current mode marker: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`
+Current mode marker: `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`.
+Current mode: `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`.
 
 Active handoff:
 
@@ -62,9 +62,10 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Agent Dispatch Prompt Envelope Standardization is `DISPATCHED_TO_CLAUDE`.
+Agent Dispatch Prompt Envelope Standardization is `CLOSED_PASS_BOUNDED`.
 
-Dispatch commit: `c0c72317` (dispatchBaseHead `4895bca3`).
+Material commit: `b2654e2e` (worker executionBaseHead `620dc039`;
+dispatch commit `c0c72317`; dispatchBaseHead `4895bca3`).
 
 Artifacts:
 
@@ -75,12 +76,11 @@ Artifacts:
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md`
 
-Result: Codex authored and committed the foundation roadmap, GC-018, and Claude
-work order. Claude is assigned as worker under `WORKER_MUST_NOT_COMMIT`.
-The work is authoring-time governance only: dispatch prompt envelope standard,
-template update, checker and tests, fast-gate wiring, and completion review.
-Claude should record the actual executionBaseHead as the current HEAD at worker
-start; `4895bca3` remains the dispatch packet authoring base.
+Result: Claude returned uncommitted deliverables under `WORKER_MUST_NOT_COMMIT`.
+Codex repaired reviewer findings and committed the bounded foundation batch:
+dispatch prompt envelope standard, compact work-order template pointer, checker
+and tests, dispatch-author fast-gate wiring, closed work order, and completion
+review. The work is authoring-time governance only.
 
 Previous closure: Model Gateway C-02 P4B-B Live Proof T2 is
 `CLOSED_PASS_BOUNDED` at material commit `d15f973e` with DeepSeek
@@ -140,12 +140,10 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`.
+Mode: `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`.
 
-Next move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md`
-under `WORKER_MUST_NOT_COMMIT`. Codex reviews and commits only after worker
-return.
+Next move: Codex may audit/select the next high-value CVF foundation roadmap
+and, if operator-authorized, author a source-verified GC-018/work order.
 
 No provider/API call, credential/network use, provider/model addition, runtime
 behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway

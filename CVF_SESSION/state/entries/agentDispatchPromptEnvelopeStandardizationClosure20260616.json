@@ -1,0 +1,5 @@
+{
+  "stateOrder": 396,
+  "stateKey": "agentDispatchPromptEnvelopeStandardizationClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material commit b2654e2e. Claude returned six uncommitted deliverables under WORKER_MUST_NOT_COMMIT; Codex reviewer repaired the dispatch prompt envelope checker, tests, closure evidence, work-order closure state, and template-size pressure before committing. The guard now requires a Dispatch Prompt Envelope section for dispatch-ready delegated work orders, checks required fields, blocks unbounded production/readiness/scope-expansion claims while allowing negated warnings, and is wired into the dispatch packet author fast gate. Tests: governance/compat/test_check_dispatch_prompt_envelope.py 29/29 PASS. Boundary: authoring-time dispatch clarity and multi-agent handoff standardization only; no runtime/provider behavior, production readiness, public readiness, or live/provider proof claim."
+}

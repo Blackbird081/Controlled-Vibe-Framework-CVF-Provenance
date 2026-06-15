@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude executes the Agent Dispatch Prompt Envelope Standardization work order under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may audit/select the next high-value CVF foundation roadmap and, if operator-authorized, author a source-verified GC-018/work order; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`
+`agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`
 
-Current HEAD recorded for this handoff: `c0c72317`
-(Agent Dispatch Prompt Envelope Standardization dispatch commit; Model Gateway
+Current HEAD recorded for this handoff: `b2654e2e`
+(Agent Dispatch Prompt Envelope Standardization material closure commit; prior
+Agent Dispatch Prompt Envelope Standardization dispatch commit `c0c72317`; Model Gateway
 C-02 P4B-B Live Proof T2 material commit `d15f973e`; Dispatch packet
 authoring guard hardening material commit `bf3f3419`; P4B-B live proof
 packet recorded as draft negative sample at `de515c11`; prior Model Gateway
@@ -69,9 +70,9 @@ requires separate authorization.
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
 update this handoff and session front-door state after Agent Dispatch Prompt
-Envelope Standardization dispatch commit `c0c72317` to record dispatch-to-Claude
-status, preserve the P4B-B T2 bounded live-proof closure, and route the next
-foundation move to Claude execution under `WORKER_MUST_NOT_COMMIT`.
+Envelope Standardization material closure commit `b2654e2e` to record
+`CLOSED_PASS_BOUNDED`, preserve the P4B-B T2 bounded live-proof closure, and
+route the next allowed move to foundation-roadmap selection.
 
 Protected paths:
 
@@ -89,6 +90,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/modelGatewayC02P5CBridgeAdmissionBoundaryClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BBLiveProofT2Closure20260615.json`
 - `CVF_SESSION/state/entries/agentDispatchPromptEnvelopeStandardizationDispatch20260615.json`
+- `CVF_SESSION/state/entries/agentDispatchPromptEnvelopeStandardizationClosure20260616.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
 Operator authorization: operator authorized P4B-B live proof using existing
@@ -172,19 +174,24 @@ defect. Model Gateway tests PASS 29 files / 214 tests. Reviewer-fast PASS.
 No provider preference, ranking, broad adapter support, production readiness,
 or public readiness is claimed.
 
-Agent Dispatch Prompt Envelope Standardization is `DISPATCHED_TO_CLAUDE` at
-dispatch commit `c0c72317` (dispatchBaseHead `4895bca3`). Codex authored:
+Agent Dispatch Prompt Envelope Standardization is `CLOSED_PASS_BOUNDED` at
+material commit `b2654e2e` (worker executionBaseHead `620dc039`; dispatch
+commit `c0c72317`; dispatchBaseHead `4895bca3`). Codex/Claude authored:
 
 - `docs/roadmaps/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_ROADMAP_2026-06-15.md`
 - `docs/baselines/CVF_GC018_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_2026-06-15.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md`
+- `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`
+- `governance/compat/check_dispatch_prompt_envelope.py`
+- `governance/compat/test_check_dispatch_prompt_envelope.py`
+- `docs/reviews/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_COMPLETION_2026-06-15.md`
 
-Next move: Claude executes the work order under `WORKER_MUST_NOT_COMMIT`.
-Claude should record the actual executionBaseHead as the current HEAD at worker
-start; `4895bca3` remains the dispatch packet authoring base. Codex reviews and
-commits after worker return.
+Reviewer note: Codex repaired N/A parsing, negated readiness warnings, closure
+evidence, work-order closure state, and template line-count pressure before
+committing. The guard is authoring-time only and does not claim runtime/provider
+behavior.
 
-Current mode: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`.
+Current mode: `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`.
 
 ## Latest Closed LHW Wave
 
@@ -251,6 +258,12 @@ CLOSED_PASS_BOUNDED at material commit `d15f973e`. One selected live provider
 path proved through the governed bridge with DeepSeek `deepseek-chat` receipt
 `gw_20260615155616612_f0mwl515`; Alibaba parity is parked pending credential
 refresh.
+
+Agent Dispatch Prompt Envelope Standardization --
+CLOSED_PASS_BOUNDED at material commit `b2654e2e`. The batch added the dispatch
+prompt envelope standard, checker, tests, and dispatch-author fast-gate wiring;
+Codex kept the work-order template at 1200 lines by using a compact pointer
+instead of expanding the near-threshold template body.
 
 ## Parked Lanes
 
