@@ -30,9 +30,10 @@ Startup acknowledged: current mode=`model_gateway_c02_p1_routing_pipeline_closed
 
 `model_gateway_c02_p2_roadmap_ready`
 
-Current HEAD recorded for this handoff: `2d1dd769`
-(Model Gateway C-02 P2 work order handoff-sync commit;
-prior repair commit `ca29e988`, prior roadmap commit `aa9e0550`).
+Current HEAD recorded for this handoff: `61984341`
+(Model Gateway C-02 P2 work order draft plus Agent Operation Trace
+root-level manifest parser repair; prior handoff-sync commit `2d1dd769`,
+prior roadmap repair commit `ca29e988`, prior roadmap commit `aa9e0550`).
 
 ## Active Boundary
 
@@ -84,13 +85,16 @@ trace-alignment commit `f7b0c2d5`, or C-02 rewrite planning material closure
 commit `657b2794`, or provider memory authority boundary guard hardening
 material closure commit `9cd4a97f`, or Model Gateway C-02 P1 draft work-order
 commit `b2c7c802`, or Model Gateway C-02 P1 routing pipeline dispatch commit
-`e9f46b61`.
+`e9f46b61`, or Model Gateway C-02 P2 work-order draft and Agent Operation Trace
+parser repair commit `61984341`.
 
 ## Latest Continuity Note
 
 Model Gateway C-02 P2 Dynamic Model Registry Boundary work order is drafted at
 `DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION` as of 2026-06-15. Dispatch is
 blocked until a fresh GC-018 baseline and operator authorization both exist.
+
+Material draft/guard repair commit: `61984341`.
 
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
