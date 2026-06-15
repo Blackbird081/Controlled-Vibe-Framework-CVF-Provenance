@@ -1,0 +1,29 @@
+{
+  "stateOrder": 215,
+  "stateKey": "modelGatewayC02P3P4AUnifiedGatewayClosure20260615",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "5d46bc62",
+    "closureBaseHead": "5d46bc62",
+    "dispatchBaseHead": "c6c09ae3",
+    "p3Gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_2026-06-15.md",
+    "p3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_FOR_CLAUDE_2026-06-15.md",
+    "p3Completion": "docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md",
+    "p4aGc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_2026-06-15.md",
+    "p4aWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_FOR_CLAUDE_2026-06-15.md",
+    "p4aCompletion": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_COMPLETION_2026-06-15.md",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "reviewDisposition": "ACCEPT_AFTER_REVIEWER_PACKET_REPAIR",
+    "verification": [
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base c6c09ae3 --head HEAD --enforce PASS before material commit",
+      "npm run check PASS in EXTENSIONS/CVF_MODEL_GATEWAY",
+      "npm test PASS 24 files / 133 tests in EXTENSIONS/CVF_MODEL_GATEWAY",
+      "python governance/compat/generate_corpus_scan_registry.py --check PASS",
+      "git diff --check PASS with CRLF warnings only",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base c6c09ae3 --head 5d46bc62 PASS for content gates; active-session sync handled by closure batch"
+    ],
+    "acceptedNextMove": "Fresh authorization only: consider Model Gateway C-02 P4B live-provider wiring through fresh GC-018, source-verified work order, live-run diagnostic discipline, credential boundary, and explicit provider/live scope. P4A does not authorize provider/API use.",
+    "boundary": "P3/P4A closure only. P3 defines the unified gateway interface contract; P4A adds a local deterministic runtime skeleton and conformance tests. No live provider/API call, EPF wiring, strategy-layer implementation, AI Gateway absorption, public-sync, provider/model addition, production readiness, public readiness, raw memory release, high-risk promotion, co-work product development, or autonomous mutation is authorized."
+  }
+}

@@ -24,20 +24,21 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p2_dynamic_model_registry_boundary_closed`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=consider Model Gateway C-02 P3 Unified Gateway Interface boundary only through fresh operator authorization, fresh GC-018, and source-verified work order; parked checkpoint=provider/live-proof, Model Gateway runtime DynamicModelRegistry implementation, Model Gateway P4, Sandbox Runtime implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond P2 scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p4a_unified_gateway_runtime_skeleton_closed`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=consider Model Gateway C-02 P4B live-provider wiring only through fresh operator authorization, fresh GC-018, source-verified work order, live-run diagnostic discipline, and explicit credential boundary; parked checkpoint=provider/live-proof until P4B authorization, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond closed P3/P4A scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p2_dynamic_model_registry_boundary_closed`
+`model_gateway_c02_p4a_unified_gateway_runtime_skeleton_closed`
 
-Current HEAD recorded for this handoff: `14210d27`
-(Model Gateway C-02 P2 closure commit; prior material implementation commit
-`24d455f8`, prior session sync commit `e01d298c`, prior Agent Commit Steward
-protocol material commit `a31f32a9`, prior Model Gateway C-02 P2 dispatch
-material commit `eea131ec`, prior P2 work-order draft and Agent Operation
-Trace root-level manifest parser repair commit `61984341`, prior handoff-sync
-commit `2d1dd769`, prior roadmap repair commit `ca29e988`, prior roadmap
-commit `aa9e0550`).
+Current HEAD recorded for this handoff: `5d46bc62`
+(Model Gateway C-02 P3/P4A material implementation commit; prior P2 closure
+commit `14210d27`, prior P2 material implementation commit `24d455f8`, prior
+session sync commit `e01d298c`, prior Agent Commit Steward protocol material
+commit `a31f32a9`, prior Model Gateway C-02 P2 dispatch material commit
+`eea131ec`, prior P2 work-order draft and Agent Operation Trace root-level
+manifest parser repair commit `61984341`, prior handoff-sync commit
+`2d1dd769`, prior roadmap repair commit `ca29e988`, prior roadmap commit
+`aa9e0550`).
 
 ## Active Boundary
 
@@ -95,6 +96,46 @@ parser repair commit `61984341`, or Model Gateway C-02 P2 dispatch commit
 `eea131ec`.
 
 ## Latest Continuity Note
+
+Model Gateway C-02 P3 Unified Gateway Interface and P4A Unified Gateway
+Runtime Skeleton are `CLOSED_PASS_BOUNDED` at material implementation commit
+`5d46bc62`.
+
+Artifacts:
+
+- P3 GC-018:
+  `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_2026-06-15.md`;
+- P3 work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_FOR_CLAUDE_2026-06-15.md`;
+- P3 completion:
+  `docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md`;
+- P4A GC-018:
+  `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_2026-06-15.md`;
+- P4A work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_FOR_CLAUDE_2026-06-15.md`;
+- P4A completion:
+  `docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_COMPLETION_2026-06-15.md`;
+- source/tests:
+  `EXTENSIONS/CVF_MODEL_GATEWAY/src/unified-gateway-interface-contract.ts`,
+  `EXTENSIONS/CVF_MODEL_GATEWAY/src/unified-gateway-skeleton.ts`,
+  `EXTENSIONS/CVF_MODEL_GATEWAY/tests/unified-gateway-interface-contract.test.ts`,
+  and `EXTENSIONS/CVF_MODEL_GATEWAY/tests/unified-gateway-skeleton.test.ts`.
+
+Result: P3 defines the unified gateway interface contract and P4A implements a
+local deterministic skeleton with conformance tests. Verification: Model
+Gateway `npm run check` PASS; `npm test` PASS 24 files / 133 tests; GC-051
+drift PASS; material commit steward PASS; G7 pre-closure content gates PASS
+with only expected active-session sync required.
+
+Next move: consider P4B live-provider wiring only through fresh authorization,
+fresh GC-018, source-verified work order, live-run diagnostic discipline, and
+explicit credential boundary. P4A does not authorize provider/API use,
+provider/model addition, EPF wiring, strategy-layer implementation, AI Gateway
+absorption, public-sync, production readiness, or public readiness.
+
+Current mode: `model_gateway_c02_p4a_unified_gateway_runtime_skeleton_closed`.
+
+---
 
 Agent Commit Steward Protocol hardening is committed at material commit
 `a31f32a9`.
@@ -876,19 +917,20 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary is `CLOSED_PASS_BOUNDED`
-at material implementation commit `24d455f8`.
-Next move: consider C-02 P3 Unified Gateway Interface boundary only through
-fresh operator authorization, fresh GC-018, and a source-verified work order.
+Model Gateway C-02 P3 Unified Gateway Interface and P4A Unified Gateway
+Runtime Skeleton are `CLOSED_PASS_BOUNDED` at material implementation commit
+`5d46bc62`.
+Next move: consider C-02 P4B live-provider wiring only through fresh operator
+authorization, fresh GC-018, source-verified work order, live-run diagnostic
+discipline, and explicit credential boundary.
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-No Model Gateway runtime DynamicModelRegistry implementation, provider/API use,
-live governance proof, provider/model addition, strategy-layer implementation,
-AI Gateway absorption, legacy/model registry mutation, public-sync, external
-Document_Translator inspection or mutation, OS audit, endpoint monitoring, T12,
-raw memory release, co-work product development, or autonomous mutation is
-authorized without fresh operator authorization, fresh GC-018, and a
-source-verified work order.
+No provider/API use, live governance proof, provider/model addition, EPF
+wiring, strategy-layer implementation, AI Gateway absorption, legacy/model
+registry mutation, public-sync, external Document_Translator inspection or
+mutation, OS audit, endpoint monitoring, T12, raw memory release, co-work
+product development, or autonomous mutation is authorized without fresh
+operator authorization, fresh GC-018, and a source-verified work order.
 
 ## Parked Checkpoints
 

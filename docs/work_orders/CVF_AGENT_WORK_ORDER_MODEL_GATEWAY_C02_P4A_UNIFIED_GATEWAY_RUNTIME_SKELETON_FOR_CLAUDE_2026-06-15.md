@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 Worker: Claude
 
@@ -356,22 +356,22 @@ destructive action.
 
 | Gate | Required evidence | Status |
 |---|---|---|
-| Authorizations present | GC-018 + operator authorization cited | PENDING |
-| Scope-limited mutation | Changes limited to new skeleton, barrel edit, new tests, GC-051 entries, worker return | PENDING |
-| Existing sources unchanged | All fragment contracts and existing primitives show zero diff | PENDING |
-| Implements contract | `UnifiedGatewaySkeletonImpl` satisfies `UnifiedGatewayInterfaceContract` | PENDING |
-| No live call | No fetch, no network, no provider API key in new files | PENDING |
-| Conformance tests present | All 10+ required test cases added | PENDING |
-| Type check | `npm run check` PASS | PENDING |
-| Test run | `npm test` PASS | PENDING |
-| GC-023 | No file exceeds hard threshold | PENDING |
-| Credential shielding | `credentialShielded: true` on all error envelopes; secret not in JSON output | PENDING |
-| Name collision avoided | `UnifiedGatewaySkeletonImpl` absent from repo before authoring | PENDING |
-| Agent Operation Trace Block | Expected and actual changed set recorded | PENDING |
-| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return | PENDING |
-| Worker did not commit | HEAD stayed `executionBaseHead` | PENDING |
-| Diff hygiene | `git diff --check` PASS | PENDING |
-| Reviewer-fast | `python governance/compat/run_worker_return_fast_gate.py` PASS | PENDING |
+| Authorizations present | GC-018 + operator authorization cited | PASS |
+| Scope-limited mutation | Changes limited to new skeleton, barrel edit, new tests, GC-051 entries, worker return | PASS |
+| Existing sources unchanged | All fragment contracts and existing primitives show zero diff | PASS |
+| Implements contract | `UnifiedGatewaySkeletonImpl` satisfies `UnifiedGatewayInterfaceContract` | PASS |
+| No live call | No fetch, no network, no provider API key in new files | PASS |
+| Conformance tests present | All 10+ required test cases added | PASS |
+| Type check | `npm run check` PASS | PASS |
+| Test run | `npm test` PASS | PASS |
+| GC-023 | No file exceeds hard threshold | PASS |
+| Credential shielding | `credentialShielded: true` on all error envelopes; secret not in JSON output | PASS |
+| Name collision avoided | `UnifiedGatewaySkeletonImpl` absent from repo before authoring | PASS |
+| Agent Operation Trace Block | Expected and actual changed set recorded | PASS |
+| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return | PASS |
+| Worker did not commit | HEAD stayed `executionBaseHead` | PASS |
+| Diff hygiene | `git diff --check` PASS | PASS |
+| Reviewer-fast | `python governance/compat/run_worker_return_fast_gate.py` PASS | PASS |
 
 ---
 
@@ -424,20 +424,46 @@ The reviewer must verify, on the committed range, before declaring ACCEPT:
 
 ## Closure Checklist
 
-- [ ] Fresh GC-018 baseline exists and is cited.
-- [ ] Operator authorization exists and is cited.
-- [ ] Worker return records changed files, gate output, and AC evidence.
-- [ ] Skeleton class implements all four interface methods (AC1, AC2).
-- [ ] All error envelopes have `credentialShielded: true` (AC3).
-- [ ] Credential shielding test passes (AC4).
-- [ ] No live network call (AC5).
-- [ ] All existing tests PASS (AC6).
-- [ ] `rawMemoryReleased=false` on all closure artifacts (AC7).
-- [ ] GC-051 registry entries added (AC8).
-- [ ] `MGW-001` coverage note recorded: stays `PARTIAL_RECHECK_REQUIRED`.
-- [ ] Pre-closure autorun gate PASS on the material range.
-- [ ] Completion review authored with disposition.
-- [ ] Session continuity synced (front door, state, handoff).
+- [x] Fresh GC-018 baseline exists and is cited.
+- [x] Operator authorization exists and is cited.
+- [x] Worker return records changed files, gate output, and AC evidence.
+- [x] Skeleton class implements all four interface methods (AC1, AC2).
+- [x] All error envelopes have `credentialShielded: true` (AC3).
+- [x] Credential shielding test passes (AC4).
+- [x] No live network call (AC5).
+- [x] All existing tests PASS (AC6).
+- [x] `rawMemoryReleased=false` on all closure artifacts (AC7).
+- [x] GC-051 registry entries added (AC8).
+- [x] `MGW-001` coverage note recorded: stays `PARTIAL_RECHECK_REQUIRED`.
+- [x] Pre-closure autorun gate PASS on the material range.
+- [x] Completion review authored with disposition.
+- [x] Session continuity synced (front door, state, handoff).
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | P4A roadmap | Roadmap remains planning parent; closure recorded here and in completion review | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check PASS | PASS |
+| Registry Markdown | N/A with reason: no markdown registry owner exists for this GC-051 entry | BLOCKED with reason | BLOCKED with reason |
+| External evidence digest | N/A with reason: repo-local source, tests, and governance gates only | N/A_WITH_REASON | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop registry or interlock surface changed | N/A_WITH_REASON | N/A with reason |
+| Session continuity | front door, generated state, active handoff | closure sync updates mode, next move, and HEAD pointer | PASS |
+| Worker return reviewed | P4A worker return | reviewer-return steward PASS | PASS |
+| Runtime/provider/live proof | N/A with reason: no live/provider claim authorized or made | N/A_WITH_REASON | N/A with reason |
+| Public-sync | N/A with reason: private provenance only | N/A_WITH_REASON | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Criterion | Required value | Observed value | Status |
+|---|---|---|---|
+| Existing receipt primitive only | P4A must not add a new receipt acceptance engine | `GatewayReceiptBuilder` remains unmodified; skeleton emits receipt obligations only | PASS |
+| Execute receipt obligation | allowed execute response carries a bounded obligation string | `skeleton_execute_receipt_required` | PASS |
+| Stream receipt obligation | allowed stream chunk carries a bounded obligation string | `skeleton_stream_receipt_required` | PASS |
+| Embedding receipt obligation | allowed embedding response carries a bounded obligation string | `skeleton_embedding_receipt_required` | PASS |
+| No new acceptance claim | P4A must not claim receipt acceptance, public readiness, or live proof | completion claim boundary keeps P4A local deterministic only | PASS |
 
 ## Operator Checkpoint
 

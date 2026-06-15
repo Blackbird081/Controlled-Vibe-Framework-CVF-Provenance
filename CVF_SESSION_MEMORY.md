@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p2_dynamic_model_registry_boundary_closed`
+Current mode marker: `model_gateway_c02_p4a_unified_gateway_runtime_skeleton_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_c02_p2_dynamic_model_registry_boundary_closed`.
+Current mode: `model_gateway_c02_p4a_unified_gateway_runtime_skeleton_closed`.
 
 Active handoff:
 
@@ -58,29 +58,31 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary is
-`CLOSED_PASS_BOUNDED` as of 2026-06-15.
+Model Gateway C-02 P3 Unified Gateway Interface and P4A Unified Gateway
+Runtime Skeleton are `CLOSED_PASS_BOUNDED` as of 2026-06-15.
 
-Material implementation commit: `24d455f8`.
+Material implementation commit: `5d46bc62`.
 
-Completion review:
-`docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md`
+Completion reviews:
 
-Next move: consider Model Gateway C-02 P3 Unified Gateway Interface boundary
-only through fresh operator authorization, fresh GC-018, and a source-verified
-work order. P2 does not authorize runtime DynamicModelRegistry implementation,
-provider/API use, live proof, provider/model addition, public-sync, AI Gateway
-absorption, co-work product development, production readiness, or public
-readiness.
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md`
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_COMPLETION_2026-06-15.md`
 
-Roadmap:
-`docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
+Next move: consider Model Gateway C-02 P4B live-provider wiring only through
+fresh operator authorization, fresh GC-018, source-verified work order,
+live-run diagnostic discipline, and explicit credential boundary. P4A does not
+authorize provider/API use, live proof, provider/model addition, EPF wiring,
+strategy-layer implementation, AI Gateway absorption, public-sync, co-work
+product development, production readiness, or public readiness.
 
-GC-018:
-`docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
+P4A roadmap:
+`docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_AND_CONFORMANCE_ROADMAP_2026-06-15.md`
 
-Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
+P4A GC-018:
+`docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_2026-06-15.md`
+
+P4A work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_FOR_CLAUDE_2026-06-15.md`
 
 Prior closed tranche (pointer):
 
@@ -1014,19 +1016,20 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary is `CLOSED_PASS_BOUNDED`
-at material implementation commit `24d455f8`.
-Next move: consider C-02 P3 Unified Gateway Interface boundary only through
-fresh operator authorization, fresh GC-018, and a source-verified work order.
+Model Gateway C-02 P3 Unified Gateway Interface and P4A Unified Gateway
+Runtime Skeleton are `CLOSED_PASS_BOUNDED` at material implementation commit
+`5d46bc62`.
+Next move: consider C-02 P4B live-provider wiring only through fresh operator
+authorization, fresh GC-018, source-verified work order, live-run diagnostic
+discipline, and explicit credential boundary.
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-No Model Gateway runtime DynamicModelRegistry implementation, provider/API use,
-live governance proof, provider/model addition, strategy-layer implementation,
-AI Gateway absorption, legacy/model registry mutation, public-sync, external
-Document_Translator inspection or mutation, OS audit, endpoint monitoring, T12,
-raw memory release, co-work product development, or autonomous mutation is
-authorized without fresh operator authorization, fresh GC-018, and a
-source-verified work order.
+No provider/API use, live governance proof, provider/model addition, EPF
+wiring, strategy-layer implementation, AI Gateway absorption, legacy/model
+registry mutation, public-sync, external Document_Translator inspection or
+mutation, OS audit, endpoint monitoring, T12, raw memory release, co-work
+product development, or autonomous mutation is authorized without fresh
+operator authorization, fresh GC-018, and a source-verified work order.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:

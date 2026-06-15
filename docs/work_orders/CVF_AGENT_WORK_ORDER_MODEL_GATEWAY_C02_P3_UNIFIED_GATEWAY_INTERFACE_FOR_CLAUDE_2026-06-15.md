@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 Worker: Claude
 
@@ -415,22 +415,22 @@ mutation, or any destructive action.
 
 | Gate | Required evidence | Status |
 |---|---|---|
-| Authorizations present | GC-018 + operator authorization cited | PENDING |
-| Scope-limited mutation | Changes limited to new contract, barrel edit, new test, boundary doc, GC-051 entries, worker return | PENDING |
-| Existing sources unchanged | All fragment contracts and registries show zero diff | PENDING |
-| Types-only contract | Contract file has no class body, no `new`, no runtime statement | PENDING |
-| Type reuse | All reused types imported, not redeclared | PENDING |
-| New tests present | Shape, stub, type-reuse cases added | PENDING |
-| Type check | `npm run check` PASS | PENDING |
-| Test run | `npm test` PASS | PENDING |
-| GC-023 | No file exceeds hard threshold | PENDING |
-| No provider/live | No provider/API/live proof, package install, secret read | PENDING |
-| Name collision avoided | All new symbols absent from repo before authoring | PENDING |
-| Agent Operation Trace Block | Expected and actual changed set recorded | PENDING |
-| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return | PENDING |
-| Worker did not commit | HEAD stayed `executionBaseHead` | PENDING |
-| Diff hygiene | `git diff --check` PASS | PENDING |
-| Reviewer-fast | `python governance/compat/run_worker_return_fast_gate.py` PASS | PENDING |
+| Authorizations present | GC-018 + operator authorization cited | PASS |
+| Scope-limited mutation | Changes limited to new contract, barrel edit, new test, boundary doc, GC-051 entries, worker return | PASS |
+| Existing sources unchanged | All fragment contracts and registries show zero diff | PASS |
+| Types-only contract | Contract file has no class body, no `new`, no runtime statement | PASS |
+| Type reuse | All reused types imported, not redeclared | PASS |
+| New tests present | Shape, stub, type-reuse cases added | PASS |
+| Type check | `npm run check` PASS | PASS |
+| Test run | `npm test` PASS | PASS |
+| GC-023 | No file exceeds hard threshold | PASS |
+| No provider/live | No provider/API/live proof, package install, secret read | PASS |
+| Name collision avoided | All new symbols absent from repo before authoring | PASS |
+| Agent Operation Trace Block | Expected and actual changed set recorded | PASS |
+| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return | PASS |
+| Worker did not commit | HEAD stayed `executionBaseHead` | PASS |
+| Diff hygiene | `git diff --check` PASS | PASS |
+| Reviewer-fast | `python governance/compat/run_worker_return_fast_gate.py` PASS | PASS |
 
 ---
 
@@ -486,21 +486,37 @@ completion review, work-order status field, and session continuity.
 
 ## Closure Checklist
 
-- [ ] Fresh GC-018 baseline exists and is cited.
-- [ ] Operator authorization exists and is cited.
-- [ ] Worker return records changed files, gate output, and AC evidence.
-- [ ] Contract file is types-only (AC1).
-- [ ] Existing fragment contracts unchanged (AC2).
-- [ ] Type reuse confirmed (AC3).
-- [ ] Type-level tests pass (AC4).
-- [ ] Boundary definition doc states fragment coverage vs. unified interface additions (AC5).
-- [ ] `rawMemoryReleased=false` on all closure artifacts (AC6).
-- [ ] No live/provider proof used (AC7).
-- [ ] GC-051 registry entries added for the new contract and test files.
-- [ ] `MGW-001` coverage note recorded: stays `PARTIAL_RECHECK_REQUIRED`.
-- [ ] Pre-closure autorun gate PASS on the material range.
-- [ ] Completion review authored with disposition.
-- [ ] Session continuity synced (front door, state, handoff).
+- [x] Fresh GC-018 baseline exists and is cited.
+- [x] Operator authorization exists and is cited.
+- [x] Worker return records changed files, gate output, and AC evidence.
+- [x] Contract file is types-only (AC1).
+- [x] Existing fragment contracts unchanged (AC2).
+- [x] Type reuse confirmed (AC3).
+- [x] Type-level tests pass (AC4).
+- [x] Boundary definition doc states fragment coverage vs. unified interface additions (AC5).
+- [x] `rawMemoryReleased=false` on all closure artifacts (AC6).
+- [x] No live/provider proof used (AC7).
+- [x] GC-051 registry entries added for the new contract and test files.
+- [x] `MGW-001` coverage note recorded: stays `PARTIAL_RECHECK_REQUIRED`.
+- [x] Pre-closure autorun gate PASS on the material range.
+- [x] Completion review authored with disposition.
+- [x] Session continuity synced (front door, state, handoff).
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | P3 roadmap | Roadmap remains planning parent; closure recorded here and in completion review | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check PASS | PASS |
+| Registry Markdown | N/A with reason: no markdown registry owner exists for this GC-051 entry | BLOCKED with reason | BLOCKED with reason |
+| External evidence digest | N/A with reason: repo-local source, tests, and governance gates only | N/A_WITH_REASON | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop registry or interlock surface changed | N/A_WITH_REASON | N/A with reason |
+| Session continuity | front door, generated state, active handoff | closure sync updates mode, next move, and HEAD pointer | PASS |
+| Worker return reviewed | P3 worker return | reviewer-return steward PASS | PASS |
+| Runtime/provider/live proof | N/A with reason: no live/provider claim authorized or made | N/A_WITH_REASON | N/A with reason |
+| Public-sync | N/A with reason: private provenance only | N/A_WITH_REASON | N/A with reason |
 
 ## Operator Checkpoint
 
