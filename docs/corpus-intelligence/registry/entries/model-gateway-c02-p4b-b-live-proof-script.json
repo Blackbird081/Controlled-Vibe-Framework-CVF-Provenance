@@ -1,0 +1,24 @@
+{
+  "registryOrder": 93,
+  "id": "model-gateway-c02-p4b-b-live-proof-script",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P4B-B live proof runner script",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/scripts/run-p4b-b-live-proof.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw key print (only alias name and presence boolean reported)",
+    "secret in receipt (receipt is secret-safe)",
+    "provider preference (candidates tried in order, none ranked or canonical)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+  "notes": "Operator-authorized runner that tries operator-approved available-key candidates in order and runs one bounded live proof through the governed bridge. Writes a secret-safe receipt/diagnostic artifact. Reports only key alias name and presence boolean, never a raw key value. Provider order is attempt order, not preference."
+}

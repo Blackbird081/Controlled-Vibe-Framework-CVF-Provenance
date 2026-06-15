@@ -3412,6 +3412,77 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
       "notes": "Existing Model Gateway provider method helper source cited by P5 capability negotiation closure evidence. P5 reuses normalizeProviderMethodName, findProviderCapability, and listRegistrySupportedMethods instead of duplicating method-gate logic."
+    },
+    {
+      "id": "model-gateway-c02-p4b-b-live-proof-harness",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-B live proof harness source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (never returned, logged, or embedded)",
+        "secret in result (wrapper output never contains the secret)",
+        "network when liveAuthorized=false (no fetch and no secret read)",
+        "canonical provider (live-test adapters only, not product scope)",
+        "new provider-execution semantic (thin bridge wrapper only)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+      "notes": "Live-proof harness building the existing governed chain (routing, credential boundary, health, quota, receipt, P5-A admission, P5-C bridge admission, ProviderExecutionBridge.execute) around a thin OpenAI-compatible execute adapter. liveAuthorized=false performs no network call and reads no secret. Not a new canonical provider or provider-execution semantic."
+    },
+    {
+      "id": "model-gateway-c02-p4b-b-dry-run-gate-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-B dry-run gate tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/p4b-b-dry-run-gate.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "real network call (injected fetch double only)",
+        "real credential (fake-test-secret only)",
+        "liveAuthorized=true against real endpoint (uses fetch double)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+      "notes": "Deterministic dry-run gate tests proving the harness makes no network call and reads no secret when liveAuthorized=false, and flows a fake response through the governed bridge with an admitted record when liveAuthorized=true via an injected fetch double. No real provider, credential, or network."
+    },
+    {
+      "id": "model-gateway-c02-p4b-b-live-proof-script",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-B live proof runner script",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/scripts/run-p4b-b-live-proof.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw key print (only alias name and presence boolean reported)",
+        "secret in receipt (receipt is secret-safe)",
+        "provider preference (candidates tried in order, none ranked or canonical)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+      "notes": "Operator-authorized runner that tries operator-approved available-key candidates in order and runs one bounded live proof through the governed bridge. Writes a secret-safe receipt/diagnostic artifact. Reports only key alias name and presence boolean, never a raw key value. Provider order is attempt order, not preference."
     }
   ]
 }

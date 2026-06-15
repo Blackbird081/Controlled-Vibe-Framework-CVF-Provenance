@@ -1,0 +1,103 @@
+{
+  "proof": "model-gateway-c02-p4b-b-live-proof",
+  "contractVersion": "cvf.p4bBLiveProofHarness.t2.v1",
+  "startedAt": "2026-06-15T15:56:04.931Z",
+  "finishedAt": "2026-06-15T15:56:16.612Z",
+  "overall": "PASS",
+  "governedChain": [
+    "RoutingPolicyEngine",
+    "CredentialBoundary",
+    "ProviderHealthMonitor",
+    "QuotaLedger",
+    "admitProviderAdapter(P5-A)",
+    "checkBridgeAdmission(P5-C)",
+    "ProviderExecutionBridge.execute"
+  ],
+  "providerNeutralityNote": "candidates are operator-available-key live-test adapters only; none is canonical CVF product scope, preferred, or ranked",
+  "selectedProof": {
+    "providerId": "deepseek",
+    "modelId": "deepseek-chat",
+    "keyAliasUsed": "DEEPSEEK_API_KEY",
+    "keyPresent": true,
+    "outcome": "PASS",
+    "latencyMs": 960,
+    "admissionStatus": "admitted",
+    "bridgeErrorClass": null,
+    "detail": {
+      "receipt": {
+        "receiptId": "gw_20260615155616612_f0mwl515",
+        "traceId": "p4b-b-live-deepseek-1781538975652",
+        "providerId": "deepseek",
+        "selectedModelId": "deepseek-chat",
+        "decision": "selected"
+      },
+      "response": {
+        "model": {
+          "providerId": "deepseek",
+          "modelId": "deepseek-chat"
+        },
+        "textLength": 4,
+        "textPreview": "pong",
+        "usage": {
+          "inputTokens": 12,
+          "outputTokens": 2
+        }
+      }
+    }
+  },
+  "attempts": [
+    {
+      "providerId": "alibaba",
+      "modelId": "qwen-turbo",
+      "keyAliasUsed": "DASHSCOPE_API_KEY",
+      "keyPresent": true,
+      "outcome": "PARTIAL",
+      "latencyMs": 10719,
+      "admissionStatus": "admitted",
+      "bridgeErrorClass": "internal_error",
+      "detail": {
+        "diagnostic": {
+          "stage": "bridge_execute",
+          "class": "internal_error",
+          "retryable": true,
+          "userAction": "inspect governed bridge error class",
+          "provider": "alibaba",
+          "model": "qwen-turbo",
+          "traceId": "p4b-b-live-alibaba-1781538964933",
+          "message": "Provider adapter execution failed"
+        }
+      }
+    },
+    {
+      "providerId": "deepseek",
+      "modelId": "deepseek-chat",
+      "keyAliasUsed": "DEEPSEEK_API_KEY",
+      "keyPresent": true,
+      "outcome": "PASS",
+      "latencyMs": 960,
+      "admissionStatus": "admitted",
+      "bridgeErrorClass": null,
+      "detail": {
+        "receipt": {
+          "receiptId": "gw_20260615155616612_f0mwl515",
+          "traceId": "p4b-b-live-deepseek-1781538975652",
+          "providerId": "deepseek",
+          "selectedModelId": "deepseek-chat",
+          "decision": "selected"
+        },
+        "response": {
+          "model": {
+            "providerId": "deepseek",
+            "modelId": "deepseek-chat"
+          },
+          "textLength": 4,
+          "textPreview": "pong",
+          "usage": {
+            "inputTokens": 12,
+            "outputTokens": 2
+          }
+        }
+      }
+    }
+  ]
+}
