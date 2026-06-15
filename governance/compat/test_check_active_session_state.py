@@ -231,7 +231,7 @@ class ActiveSessionStateTests(unittest.TestCase):
                 for issue in report["stateViolations"])
         )
         self.assertTrue(
-            any("archived handoff remains at repository root" in issue
+            any("non-active root handoff must be archived or removed" in issue
                 for issue in report["handoffViolations"])
         )
 
@@ -246,7 +246,37 @@ class ActiveSessionStateTests(unittest.TestCase):
 
         self.assertFalse(report["compliant"])
         self.assertTrue(
-            any("archived handoff remains at repository root" in issue
+            any("non-active root handoff must be archived or removed" in issue
+                for issue in report["handoffViolations"])
+        )
+
+    def test_superseded_root_handoff_fails(self) -> None:
+        (self.repo_root / "AGENT_HANDOFF_V7_2026-05-16.md").write_text(
+            "Status: SUPERSEDED -- archived to CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("non-active root handoff must be archived or removed" in issue
+                for issue in report["handoffViolations"])
+        )
+
+    def test_unexpected_status_root_handoff_fails(self) -> None:
+        (self.repo_root / "AGENT_HANDOFF_V7_2026-05-16.md").write_text(
+            "Status: DRAFT\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("non-active root handoff must be archived or removed" in issue
                 for issue in report["handoffViolations"])
         )
 

@@ -514,16 +514,14 @@ def _classify() -> dict[str, Any]:
         handoff_violations.append(
             f"active handoff registry mismatch: registry={active_handoff}, detected={active_handoffs}"
         )
-    if archive_path:
-        for path in _root_handoff_paths():
-            rel = path.relative_to(REPO_ROOT).as_posix()
-            if rel == active_handoff:
-                continue
-            status = _handoff_status(path) or ""
-            if status.startswith("Status: ARCHIVED"):
-                handoff_violations.append(
-                    f"archived handoff remains at repository root instead of historicalHandoffArchive: {rel}"
-                )
+    for path in _root_handoff_paths():
+        rel = path.relative_to(REPO_ROOT).as_posix()
+        if rel == active_handoff:
+            continue
+        status = _handoff_status(path) or "(no status found)"
+        handoff_violations.append(
+            f"non-active root handoff must be archived or removed: {rel} ({status})"
+        )
 
     # GC-020 In-Place Update Rule: active handoff must contain the current HEAD SHA.
     # For a dedicated handoff-sync commit, the handoff cannot name its own future
