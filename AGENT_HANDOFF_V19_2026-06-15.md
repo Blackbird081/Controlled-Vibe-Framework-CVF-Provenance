@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cclv_t2_closed_c02_p2_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=begin Model Gateway C-02 P2 Dynamic Model Registry Boundary (GC-018 + work order + TypeScript contract + boundary doc + type tests); parked checkpoint=RSF-T3 candidate-only pending operator selection, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`rsf_t3_dispatched_to_claude_pending_worker_return`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=wait for Claude RSF-T3 non-CI2 next-move sample worker return, then Codex reviews actual diff and commits accepted material if any; parked checkpoint=Model Gateway C-02 P2 redispatch blocked as closed, Model Gateway P3 requires fresh operator authorization/GC-018/work order, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`cclv_t2_closed_c02_p2_ready`
+`rsf_t3_dispatched_to_claude_pending_worker_return`
 
-Current HEAD recorded for this handoff: `bf938549`
-(CCLV-T2 Central Facts Reference Advisory Checker combined-role closure commit `bf938549`;
+Current HEAD recorded for this handoff: `8450707a`
+(Roadmap State Reconciliation RSF-T3 dispatch commit `8450707a`;
+CCLV-T2 Central Facts Reference Advisory Checker combined-role closure commit `bf938549`;
 FPRC-T1 Finding Root Cause And Memory Escape Guard closure commit `51f56133`;
 FPRC-T1 dispatch commit `988cb37c`;
 CCLV-T2 Central Facts Reference Advisory Checker dispatch commit `7e11c39c`
@@ -91,13 +92,13 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after FPRC-T1 material closure
-commit `51f56133` to advance the mode marker to
-`fprc_t1_closed_cclv_t2_paused_pending_refresh` across all surfaces, preserve
-prior bounded closures, keep CCLV-T2 paused pending Codex refresh/resume
-decision, and route the next allowed move to that refresh/resume decision. This
-scope also covers regenerating the `ACTIVE_SESSION_STATE.json` aggregate from
-source entries.
+update this handoff and session front-door state after RSF-T3 dispatch commit
+`8450707a` to advance the mode marker to
+`rsf_t3_dispatched_to_claude_pending_worker_return` across all surfaces,
+preserve prior bounded closures, route the next allowed move to Claude RSF-T3
+worker return, and block stale Model Gateway C-02 P2 redispatch. This scope
+also covers regenerating the `ACTIVE_SESSION_STATE.json` aggregate from source
+entries.
 
 Protected paths:
 
@@ -117,6 +118,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT1Closure20260616.json`
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT2Dispatch20260616.json`
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT2Closure20260616.json`
+- `CVF_SESSION/state/entries/roadmapStateReconciliationT3Dispatch20260616.json`
 - `CVF_SESSION/state/entries/centralCoreLocalViewPromptHeaderPacketClosure20260616.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceDispatch20260615.json`
@@ -131,13 +133,14 @@ Protected paths:
 - `CVF_SESSION/state/entries/commitStewardSessionSyncPreflightHardeningClosure20260616.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator prioritized FPRC-T1 before CCLV-T2 because
-the CCLV-T2 worker could repeat provider-memory-only learning escape and
-keyword-trigger boundary prose defects. Codex dispatched FPRC-T1 at commit
-`988cb37c` and closed it at material commit `51f56133`.
+Operator authorization: operator asked Codex on 2026-06-16 to evaluate what
+Claude actually did, audit, choose the next roadmap, and issue a work order.
+Codex audited CCLV-T2 actual commits and selected RSF-T3 because current
+continuity points to Model Gateway C-02 P2 after C-02 P2 is already closed.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert Session-Sync Pack Builder material commit `a5e91d4b`,
+batch. Do not revert RSF-T3 dispatch commit `8450707a`, CCLV-T2 material commit
+`bf938549`, Session-Sync Pack Builder material commit `a5e91d4b`,
 Commit Steward Session-Sync Preflight Hardening material commit `d709071c`,
 Agent Dispatch Prompt Envelope dispatch commit `c0c72317`,
 FPRC-T1 dispatch commit `988cb37c`,
@@ -155,12 +158,26 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-FPRC-T1 Finding Root Cause And Memory Escape Guard is `CLOSED_PASS_BOUNDED`
-at material commit `51f56133`. Codex accepted the Claude worker return after
-reviewer repairs to closure status, machine-closure table shape, work-order
-closure state, runtime-freshness evidence, and trace manifest coverage. CCLV-T2
-remains paused pending Codex refresh or explicit resume decision against the
-closed FPRC-T1 standard and checker.
+RSF-T3 Roadmap State Reconciliation Non-CI2 Next-Move Sample is
+`DISPATCHED_TO_WORKER` at material dispatch commit `8450707a`. Codex audited
+CCLV-T2 from actual commits, files, and commands instead of chat claims. CCLV-T2
+checker implementation is acceptable within advisory scope, but the audit found
+stale continuity pointing to Model Gateway C-02 P2 after C-02 P2 was already
+closed. Claude may now execute the RSF-T3 work order in
+`WORKER_MUST_NOT_COMMIT` mode and return `COMPLETE_PENDING_REVIEW`.
+
+Artifacts:
+
+- Audit:
+  `docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`
+
+Do not redispatch Model Gateway C-02 P2 from stale continuity text. Model
+Gateway P3 requires fresh operator authorization, fresh GC-018, and a
+source-verified work order.
 
 Prior closure pointer: CCLV-T1 closure central facts packet template is
 `CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
@@ -174,7 +191,7 @@ Local View foundation packet is `CLOSED_PASS_BOUNDED` at material commit
 Prior closure pointer: Roadmap State Reconciliation RSF-T2 is
 `CLOSED_PASS_BOUNDED` at material commit `4d0883fa`. The dispatch-quality
 checker has a bounded stale-roadmap redispatch guard with a reviewer-repaired
-completion-path boundary. RSF-T3 remains candidate-only.
+completion-path boundary.
 
 Prior closure pointer: Session-Sync Authoring Helper T2 is
 `CLOSED_PASS_BOUNDED` at material commit `5cb9d472`.
