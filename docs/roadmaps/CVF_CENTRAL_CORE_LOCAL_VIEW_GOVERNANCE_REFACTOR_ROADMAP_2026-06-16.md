@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T2_PAUSED_PENDING_FPRC_T1
+Status: ROADMAP_IN_PROGRESS_T2_CLOSED_T3_CANDIDATE
 
 docType: roadmap
 
@@ -87,7 +87,7 @@ facts.
 | CCLV-T0 | COMPLETED_IN_ROADMAP_PACKET | Publish common standard and roadmap selection | Codex |
 | CCLV-T1 | CLOSED_PASS_BOUNDED | Define a closure central facts packet template and local reference rules | Claude (combined role) |
 | CCLV-T1A | CLOSED_PASS_BOUNDED | Apply CCLV pattern to the work order template (pointer refactor, 1200->994 lines) | Claude/Codex |
-| CCLV-T2 | PAUSED_PENDING_FPRC_T1 | Add advisory checker for central facts references on changed new batches | Claude worker; Codex reviewer |
+| CCLV-T2 | CLOSED_PASS_BOUNDED | Add advisory checker for central facts references on changed new batches | Claude (combined-role per operator instruction 2026-06-16) |
 | CCLV-T3 | CANDIDATE_AFTER_T2 | Pilot on one small governance closure workflow | Future worker |
 | CCLV-T4 | CANDIDATE_AFTER_PILOT | Decide whether selected workflows can replace duplicated AOT/closure facts with references | Codex reviewer |
 
