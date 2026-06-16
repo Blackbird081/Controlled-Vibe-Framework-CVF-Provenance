@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_T2_CLOSED_AHB_T3_CANDIDATE
+Status: ROADMAP_ACTIVE_AHB_T2_F1_CLOSED_AHB_T3_CANDIDATE
 
 docType: roadmap
 
@@ -168,6 +168,7 @@ views that must cite the contract.
 | AHB-T1 | CLOSED_PASS_BOUNDED | Read-only audit of handoff surfaces; produced the role-configuration x phase x invariant matrix and a proposed Agent Handoff Contract model | Claude author; Codex critique/rebuttal |
 | AHB-T1A | CLOSED_PASS_BOUNDED | Immediate cleanup for AHB-T1 meta-findings: structural checker audit/handoff filename classification and canonical defect-class vocabulary proof | Codex |
 | AHB-T2 | CLOSED_PASS_BOUNDED | Ratified the canonical Agent Handoff Contract and reconciled MA1/envelope/steward/AOT/session-sync surfaces under it; absorbed the closed AOT-T3 rule as an existing AOT input | Claude author; Codex reviewer/closer |
+| AHB-T2-F1 | CLOSED_PASS_BOUNDED | Promoted the foundation folder/index/storage rule into a stable reference folder, standard, operational-index row, and closure packet before AHB-T3 | Codex |
 | AHB-T3 | CANDIDATE_AFTER_T2 | Implement a unified handoff-boundary machine check derived from the contract, at the earliest applicable gate phase | Decided after T2 |
 | AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
 
@@ -210,6 +211,22 @@ Closure packet:
 
 AHB-T3 remains a future candidate requiring fresh GC-018 and operator
 authorization. The agent-interaction workspace remains AHB-Tn scope.
+
+## AHB-T2-F1 Closure Note
+
+AHB-T2-F1 is `CLOSED_PASS_BOUNDED`. It promotes the AHB-T2 foundation
+folder/index finding into governed storage-layout controls:
+
+- folder front door:
+  `docs/reference/foundation_storage/README.md`
+- stable standard:
+  `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md`
+- completion packet:
+  `docs/reviews/CVF_AHB_T2_F1_FOUNDATION_STORAGE_LAYOUT_REMEDIATION_COMPLETION_2026-06-16.md`
+
+This closes the immediate memory/control-plane gap at documentation-control
+level. AHB-T3 remains a future checker candidate requiring fresh GC-018 and
+operator authorization.
 
 ## AHB-T1 Requirements (Proposed)
 
