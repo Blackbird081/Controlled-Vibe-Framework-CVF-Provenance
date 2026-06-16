@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=transfer/await PLCS-T1 Claude worker return under WORKER_MUST_NOT_COMMIT after material dispatch commit 263e9b6e; parked checkpoint=runtime/provider/live/public-sync/new legacy scan/registry mutation, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex closes the accepted PLCS-T1 worker material from commit b05286fe with bounded closure review, then session-sync; parked checkpoint=runtime/provider/live/public-sync/new legacy scan/registry mutation, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
 `plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`
 
-Current HEAD recorded for this handoff: `469f9bb2`
-(PLCS-T1 Central Core + Local View standing rule clarification commit
+Current HEAD recorded for this handoff: `b05286fe`
+(PLCS-T1 worker matrix and worker return accepted by Codex at material commit
+`b05286fe`;
+PLCS-T1 Central Core + Local View standing rule clarification commit
 `469f9bb2`;
 PLCS-T1 Absorption To Workflow-Chain Routing Matrix dispatch commit `263e9b6e`;
 Next-Move Freshness Checker soft-wrap hardening material commit `fc7171aa`;
@@ -182,18 +184,19 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-PLCS-T1 Absorption To Workflow-Chain Routing Matrix is dispatched at material
-commit `263e9b6e`. This opens a bounded foundation lane to combine future
-knowledge absorption with plane/layer workflow-chain systemization. Claude work
-order:
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix worker material is accepted
+at Codex material commit `b05286fe`. Claude honored
+`WORKER_MUST_NOT_COMMIT`; Codex committed the two worker deliverables after
+reviewer-fast, central-facts-reference, diff hygiene, agent-operation-trace, and
+reviewer-return steward checks. Claude work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`.
 Follow-up rule clarification commit `469f9bb2` records Central Core + Local View
 as the standing operating pattern for future CVF foundation hardening that
 touches absorption, planes, layers, memory, learning, workflow chains, or agent
 handoff governance.
-Next allowed move: transfer/await the PLCS-T1 Claude worker return under
-`WORKER_MUST_NOT_COMMIT`, then Codex reviews actual changed files, gates, and
-the worker return before closure. No runtime/provider/live/public-sync/new
+Next allowed move: Codex completes the PLCS-T1 bounded closure review and
+updates roadmap/work-order/baseline status on the current accepted material
+range, then performs session-sync. No runtime/provider/live/public-sync/new
 legacy scan/registry mutation is authorized.
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
@@ -235,10 +238,10 @@ source-verified work order.
 
 ## Next Allowed Move
 
-PLCS-T1 Absorption To Workflow-Chain Routing Matrix is dispatched at material
-commit `263e9b6e`. Next allowed move: transfer/await the PLCS-T1 Claude worker
-return under `WORKER_MUST_NOT_COMMIT`, then Codex reviews actual changed files,
-gates, and the worker return before any closure. Do not redispatch Model
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix worker material is accepted
+at Codex material commit `b05286fe`. Next allowed move: Codex completes the
+bounded PLCS-T1 closure review on the accepted worker material, then performs
+session-sync. Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
 latest closed numbered LHW wave.
