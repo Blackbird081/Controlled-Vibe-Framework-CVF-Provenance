@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision",
-  "previousMode": "ahb_t2_agent_handoff_contract_ratification_closed_pass_bounded_foundation_storage_remediation_next",
+  "currentMode": "ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision",
+  "previousMode": "ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

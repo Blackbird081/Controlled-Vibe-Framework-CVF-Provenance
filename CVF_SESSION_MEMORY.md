@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-16
+Last updated: 2026-06-17
 
-Current mode marker: `ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`
+Current mode marker: `ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`.
+Current mode: `ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`.
 
 Active handoff:
 
@@ -85,6 +85,16 @@ the active Finding-To-Governance standard path:
 - `governance/compat/check_foundation_storage_layout.py`
 - `governance/compat/test_check_foundation_storage_layout.py`
 - `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`
+
+AHB-T3 Unified Handoff Boundary Checker is `CLOSED_PASS_BOUNDED` at material
+commit `e0927de5`. It adds a stable agent-handoff front door, machine-check
+standard, checker, focused tests, and autorun/local hook binding for the
+ratified Agent Handoff Contract:
+
+- `docs/reference/agent_handoff/README.md`
+- `docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md`
+- `governance/compat/check_agent_handoff_boundary.py`
+- `governance/compat/test_check_agent_handoff_boundary.py`
 
 AHB-T1A Finding Cleanup remains `CLOSED_PASS_BOUNDED` at material commit
 `9b21a901`; AHB-T1 remains `CLOSED_PASS_BOUNDED` at material commit
@@ -135,9 +145,10 @@ Prior AHB-T1 artifacts:
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
-Next allowed move: operator decision whether to authorize AHB-T3 unified
-handoff-boundary checker dispatch with fresh GC-018. Do not open AHB-T3,
-implement the unified checker, build the agent-interaction workspace, or
+Next allowed move: operator decision whether to authorize AHB-Tn
+agent-interaction workspace analysis/design with fresh GC-018, or choose
+another bounded CVF foundation/refactor tranche. Do not build the workspace,
+edit registries, mutate runtime/product code, run provider/live proof, or
 public-sync without later operator authorization.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
@@ -374,12 +385,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`.
+Mode: `ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`.
 
-AHB-T2-F2 Foundation Storage And Memory Learning Enforcement is
-`CLOSED_PASS_BOUNDED` at material commit `abfd9015`. Next allowed move:
-operator decision whether to authorize AHB-T3 unified handoff-boundary checker
-dispatch with fresh GC-018. AHB-T3 is not opened unilaterally.
+AHB-T3 Unified Handoff Boundary Checker is `CLOSED_PASS_BOUNDED` at material
+commit `e0927de5`. Next allowed move: operator decision whether to authorize
+AHB-Tn agent-interaction workspace analysis/design with fresh GC-018, or choose
+another bounded CVF foundation/refactor tranche. The workspace is not opened
+unilaterally.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

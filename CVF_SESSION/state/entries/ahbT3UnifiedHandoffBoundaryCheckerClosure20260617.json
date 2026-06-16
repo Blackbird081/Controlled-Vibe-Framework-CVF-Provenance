@@ -1,0 +1,19 @@
+{
+  "stateOrder": 421,
+  "stateKey": "ahbT3UnifiedHandoffBoundaryCheckerClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "e0927de5",
+    "executionBaseHead": "230565e4",
+    "gc018": "docs/baselines/CVF_GC018_AHB_T3_UNIFIED_HANDOFF_BOUNDARY_CHECKER_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T3_UNIFIED_HANDOFF_BOUNDARY_CHECKER_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_T3_UNIFIED_HANDOFF_BOUNDARY_CHECKER_COMPLETION_2026-06-17.md",
+    "standardFrontDoor": "docs/reference/agent_handoff/README.md",
+    "machineCheckStandard": "docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md",
+    "checker": "governance/compat/check_agent_handoff_boundary.py",
+    "checkerTests": "governance/compat/test_check_agent_handoff_boundary.py",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-T3 converted the ratified Agent Handoff Contract into a mandatory machine-checked local view for changed governed handoff work orders.",
+    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn agent-interaction workspace analysis/design with fresh GC-018, or choose another bounded CVF foundation/refactor tranche. Workspace build remains unauthorized."
+  }
+}
