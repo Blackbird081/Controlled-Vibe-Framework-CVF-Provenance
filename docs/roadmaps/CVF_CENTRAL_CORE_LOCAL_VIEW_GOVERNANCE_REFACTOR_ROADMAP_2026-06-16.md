@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T2_DISPATCHED
+Status: ROADMAP_IN_PROGRESS_T2_PAUSED_PENDING_FPRC_T1
 
 docType: roadmap
 
@@ -87,7 +87,7 @@ facts.
 | CCLV-T0 | COMPLETED_IN_ROADMAP_PACKET | Publish common standard and roadmap selection | Codex |
 | CCLV-T1 | CLOSED_PASS_BOUNDED | Define a closure central facts packet template and local reference rules | Claude (combined role) |
 | CCLV-T1A | CLOSED_PASS_BOUNDED | Apply CCLV pattern to the work order template (pointer refactor, 1200->994 lines) | Claude/Codex |
-| CCLV-T2 | DISPATCHED_TO_CLAUDE | Add advisory checker for central facts references on changed new batches | Claude worker; Codex reviewer |
+| CCLV-T2 | PAUSED_PENDING_FPRC_T1 | Add advisory checker for central facts references on changed new batches | Claude worker; Codex reviewer |
 | CCLV-T3 | CANDIDATE_AFTER_T2 | Pilot on one small governance closure workflow | Future worker |
 | CCLV-T4 | CANDIDATE_AFTER_PILOT | Decide whether selected workflows can replace duplicated AOT/closure facts with references | Codex reviewer |
 
@@ -130,6 +130,20 @@ CCLV-T2 is dispatched to Claude as a no-commit worker implementation packet.
 Dispatch boundary: advisory checker only; no global hard-fail hook wiring, no
 historical rewrite, no runtime/provider/live/public/legacy scope.
 
+## CCLV-T2 Pause Record (2026-06-16)
+
+Operator superseded the immediate next move before CCLV-T2 worker execution.
+CCLV-T2 remains a valid dispatch packet, but it must not be executed until
+FPRC-T1 closes or Codex issues a refreshed work order. The reason is preventive:
+FPRC-T1 addresses reusable agent-error patterns that could otherwise recur
+during CCLV-T2 implementation.
+
+Paused by:
+`docs/reviews/CVF_FPRC_T1_PRIORITY_OVERRIDE_AND_CCLV_T2_PAUSE_AUDIT_2026-06-16.md`
+
+Replacement next move:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_FOR_CLAUDE_2026-06-16.md`
+
 ## Acceptance Criteria
 
 | ID | Criterion |
@@ -170,7 +184,7 @@ approval.
 | Defect class | `EVIDENCE_DUPLICATION_DRIFT` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `STANDARD_ADDED` |
-| Next control action | CCLV-T2 advisory checker dispatched to Claude on 2026-06-16 |
+| Next control action | FPRC-T1 closes first; then Codex refreshes or resumes CCLV-T2 |
 | Worker blame | `N/A_WITH_REASON`: repeated facts across files create drift opportunities by design |
 
 ## Public Export Disposition

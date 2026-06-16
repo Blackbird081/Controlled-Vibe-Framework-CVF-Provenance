@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_GC018
+Status: ROADMAP_IN_PROGRESS_T1_DISPATCHED
 
 docType: roadmap
 
@@ -93,7 +93,7 @@ Recommended taxonomy:
 
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
-| FPRC-T1 | READY_FOR_GC018 | Add root-cause grouping table standard and completion-review template note | Future worker |
+| FPRC-T1 | DISPATCHED_TO_CLAUDE | Add root-cause grouping standard, provider-memory learning escape guard, and boundary-prose trigger discipline | Claude worker; Codex reviewer |
 | FPRC-T2 | CANDIDATE_AFTER_T1 | Add advisory parser/checker for finding-bearing artifacts that include the table | Future worker |
 | FPRC-T3 | CANDIDATE_AFTER_T2 | Pilot on one future finding-bearing closure and compare operator readability | Codex reviewer |
 
@@ -105,6 +105,30 @@ Recommended taxonomy:
 4. FPRC-T3 pilots the table on one future finding-bearing closure.
 5. Codex reviews whether the table reduces operator confusion before any hard
    gate is considered.
+
+## FPRC-T1 Superseding Dispatch Record (2026-06-16)
+
+Operator changed the next-move priority before CCLV-T2 worker execution because
+two reusable agent-error patterns could recur during CCLV-T2:
+
+- reusable guard lessons recorded only in provider-specific memory instead of a
+  CVF-governed learning artifact;
+- boundary prose using scan, classification, corpus, receipt, or provider-call
+  wording in N/A/out-of-scope explanations, causing keyword-based gates to
+  infer the wrong evidence class.
+
+FPRC-T1 is now dispatched before CCLV-T2 resumes.
+
+- Codex priority override audit:
+  `docs/reviews/CVF_FPRC_T1_PRIORITY_OVERRIDE_AND_CCLV_T2_PAUSE_AUDIT_2026-06-16.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_2026-06-16.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_FOR_CLAUDE_2026-06-16.md`
+
+Dispatch boundary: foundation guard hardening only. No runtime behavior,
+public-sync, historical migration, legacy absorption, or live proof is
+authorized.
 
 ## Acceptance Criteria
 
@@ -139,7 +163,7 @@ grouping should reference it instead of repeating the shared facts again.
 | Defect class | `FINDING_PROPAGATION_NOISE` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `ROADMAP_READY_FOR_GC018` |
-| Next control action | FPRC-T1 standard/table work order after operator authorization |
+| Next control action | FPRC-T1 dispatched before CCLV-T2 resumes |
 | Worker blame | `N/A_WITH_REASON`: repeated file-level failures can be symptoms of one root control-plane defect |
 
 ## Public Export Disposition
