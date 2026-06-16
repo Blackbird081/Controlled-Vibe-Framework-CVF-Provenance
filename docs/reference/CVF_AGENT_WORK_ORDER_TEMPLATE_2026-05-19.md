@@ -202,13 +202,6 @@ Use:
 docs/work_orders/CVF_AGENT_WORK_ORDER_<SCOPE>_<YYYY-MM-DD>.md
 ```
 
-Examples:
-
-```text
-docs/work_orders/CVF_AGENT_WORK_ORDER_LANE_B_WORKFLOW_PACKAGING_2026-05-19.md
-docs/work_orders/CVF_AGENT_WORK_ORDER_LANE_BCH_2026-05-19.md
-```
-
 Root-level scratch prompts are allowed only as temporary intake material. Once a
 prompt becomes execution authority for another agent, convert it into a work
 order under `docs/work_orders/`.
@@ -234,6 +227,13 @@ Status token rule:
   Use child-lane wording such as `EX_T1_PASS_BOUNDED` in the parent roadmap,
   and reserve `CLOSED_PASS_BOUNDED` for the child work order, completion
   review, or fully closed roadmap.
+
+## Dispatch Prompt Envelope
+
+Place this section here, before Mission, for any delegated or role-switching
+dispatch-ready work order. It is a read-first cover note; it does not replace
+the work order. Use the field skeleton in
+`docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`.
 
 ## 1. Mission
 

@@ -36,6 +36,8 @@ STANDARD_PATH = (
     "docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md"
 )
 ENVELOPE_SECTION_MARKER = "## Dispatch Prompt Envelope"
+MISSION_SECTION_PATTERN = re.compile(r"^##\s+(?:1\.\s+)?Mission\s*$", re.MULTILINE)
+READ_FIRST_MAX_LINE = 80
 # NA_STANDALONE_PATTERN matches N/A with reason only when it appears as a
 # standalone declaration at the start of the section (possibly preceded by
 # whitespace or a bullet), NOT when it appears as a value inside a field line
@@ -193,6 +195,30 @@ def _extract_envelope_section(text: str) -> str:
     return "\n".join(lines)
 
 
+def _check_read_first_placement(text: str) -> list[str]:
+    """Return placement issues for the dispatch prompt envelope section."""
+    issues: list[str] = []
+    marker_index = text.find(ENVELOPE_SECTION_MARKER)
+    if marker_index < 0:
+        return issues
+
+    marker_line = text[:marker_index].count("\n") + 1
+    if marker_line > READ_FIRST_MAX_LINE:
+        issues.append(
+            f"`{ENVELOPE_SECTION_MARKER}` must be read-first near the top of "
+            f"the work order (line {marker_line}, max {READ_FIRST_MAX_LINE})"
+        )
+
+    mission_match = MISSION_SECTION_PATTERN.search(text)
+    if mission_match and marker_index > mission_match.start():
+        issues.append(
+            f"`{ENVELOPE_SECTION_MARKER}` must appear before `## 1. Mission` "
+            "or `## Mission` in delegated dispatch-ready work orders"
+        )
+
+    return issues
+
+
 def _is_na_section(section_text: str) -> bool:
     """Return True if the section declares a standalone N/A with reason.
 
@@ -259,6 +285,10 @@ def check_work_order(path: str, text: str) -> list[str]:
             "add the envelope or explicit `N/A with reason`"
         )
         return issues
+
+    placement_issues = _check_read_first_placement(text)
+    for msg in placement_issues:
+        issues.append(f"{path}: {msg}")
 
     section = _extract_envelope_section(text)
 

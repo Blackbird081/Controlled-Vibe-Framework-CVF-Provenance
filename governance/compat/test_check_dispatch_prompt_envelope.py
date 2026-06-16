@@ -33,6 +33,7 @@ from check_dispatch_prompt_envelope import (  # noqa: E402
     _is_na_section,
     _check_required_fields,
     _check_prohibited_content,
+    _check_read_first_placement,
 )
 
 # ---------------------------------------------------------------------------
@@ -274,6 +275,69 @@ def test_pass_complete_envelope() -> None:
     text = _make_work_order("DISPATCH_READY", COMPLETE_ENVELOPE)
     issues = check_work_order("docs/work_orders/CVF_TEST_2026-06-15.md", text)
     assert issues == [], f"Expected no issues, got: {issues}"
+
+
+def test_pass_read_first_envelope_before_mission() -> None:
+    """PASS: envelope near top before Mission is read-first compliant."""
+    text = f"""# CVF Agent Work Order - Test
+
+Memory class: POINTER_RECORD
+
+Status: DISPATCH_READY
+
+{ENVELOPE_SECTION_MARKER}
+
+{COMPLETE_ENVELOPE}
+
+## 1. Mission
+
+Test mission.
+"""
+    issues = check_work_order("docs/work_orders/CVF_TEST_2026-06-15.md", text)
+    assert issues == [], f"Expected read-first envelope to pass, got: {issues}"
+
+
+def test_fail_envelope_after_mission_not_read_first() -> None:
+    """FAIL: envelope after Mission is too late for delegated dispatch."""
+    text = f"""# CVF Agent Work Order - Test
+
+Memory class: POINTER_RECORD
+
+Status: DISPATCH_READY
+
+## 1. Mission
+
+Test mission.
+
+{ENVELOPE_SECTION_MARKER}
+
+{COMPLETE_ENVELOPE}
+
+## Claim Boundary
+
+Test claim boundary.
+"""
+    issues = check_work_order("docs/work_orders/CVF_TEST_2026-06-15.md", text)
+    assert any("before `## 1. Mission`" in issue for issue in issues), issues
+
+
+def test_fail_envelope_too_deep_even_without_mission() -> None:
+    """FAIL: an envelope buried far down the file is not read-first."""
+    padding = "\n".join(f"Intro line {i}" for i in range(1, 85))
+    text = f"""# CVF Agent Work Order - Test
+
+Memory class: POINTER_RECORD
+
+Status: DISPATCH_READY
+
+{padding}
+
+{ENVELOPE_SECTION_MARKER}
+
+{COMPLETE_ENVELOPE}
+"""
+    placement = _check_read_first_placement(text)
+    assert any("max 80" in issue for issue in placement), placement
 
 
 def test_pass_na_with_reason() -> None:

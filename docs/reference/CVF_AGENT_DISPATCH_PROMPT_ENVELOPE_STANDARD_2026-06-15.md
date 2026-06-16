@@ -50,7 +50,14 @@ A dispatch prompt envelope must include all of the following fields, or record
 ## Envelope Placement
 
 The dispatch prompt envelope must appear in the work order under a
-`## Dispatch Prompt Envelope` section. The section must contain either:
+`## Dispatch Prompt Envelope` section. For delegated or role-switching
+dispatch-ready work orders, this section is a read-first cover note: it must
+appear near the top of the file before `## 1. Mission` or `## Mission`, and no
+later than line 80. This placement rule exists because the envelope carries the
+worker's current role, commit mode, first actions, and return contract; placing
+it after the long execution packet weakens its purpose.
+
+The section must contain either:
 
 1. A fenced code block with all required fields; or
 2. A structured table or list with all required fields; or
@@ -60,6 +67,10 @@ The dispatch prompt envelope must appear in the work order under a
 
 Placement of `N/A with reason` must name the specific reason (e.g., "operator
 executes directly; no agent handoff is expected for this batch").
+
+Forward-only migration rule: existing closed work orders are not reopened solely
+to move an envelope upward. New or changed dispatch-ready delegated work orders
+must use the read-first placement.
 
 ## Prohibited Content
 
@@ -88,8 +99,9 @@ This checker runs as part of the dispatch packet author fast gate:
 `governance/compat/run_dispatch_packet_author_fast_gate.py`
 
 A dispatch-ready work order that lacks a `## Dispatch Prompt Envelope` section
-with the required fields, or an explicit `N/A with reason`, fails the gate and
-must be kept in `HOLD` or `DRAFT` until corrected.
+with the required fields, puts it below the read-first placement boundary, or
+uses no explicit `N/A with reason`, fails the gate and must be kept in `HOLD`
+or `DRAFT` until corrected.
 
 ## Envelope Template
 
@@ -152,22 +164,22 @@ Claim Update Requirement: N/A with reason: no claim was predicted; no update is 
 
 | Field | Evidence |
 |---|---|
-| Actor | Claude worker/implementer |
-| Provider or surface | Antigravity IDE / Claude Sonnet 4.6 |
-| Session or invocation | 2026-06-15 Agent Dispatch Prompt Envelope Standardization T1 |
+| Actor | Codex orchestrator/reviewer |
+| Provider or surface | Codex local workspace |
+| Session or invocation | 2026-06-16 prompt envelope read-first placement hardening |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | write_to_file, governance/compat checks |
-| Target paths | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md` |
-| Allowed scope source | GC-018 `docs/baselines/CVF_GC018_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_2026-06-15.md`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md` |
-| Before status evidence | executionBaseHead `620dc039`; worktree clean at worker start |
-| After status evidence | standard authored; pending worker return uncommitted |
-| Diff evidence | new file under `docs/reference/` inside Allowed Scope |
-| Approval boundary | authoring-time dispatch prompt envelope standardization only; no runtime/provider/live/public scope |
+| Command or tool surface | PowerShell, apply_patch, pytest |
+| Target paths | prompt-envelope standard, template, checker, tests |
+| Allowed scope source | operator requested read-first prompt placement hardening as a small CVF foundation update |
+| Before status evidence | base `dedc97c4` |
+| After status evidence | read-first placement rule and tests authored; pending material commit |
+| Diff evidence | `git diff --name-status`; `git status --short` |
+| Approval boundary | authoring-time dispatch prompt envelope placement only; no runtime/provider/live/public scope |
 | Claim boundary | repo-local trace only; no OS/user attribution |
-| Agent type | Claude worker |
-| Invocation ID | `adpes-standard-2026-06-15` |
-| Expected manifest | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `governance/compat/run_dispatch_packet_author_fast_gate.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
-| Actual changed set | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `governance/compat/run_dispatch_packet_author_fast_gate.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
+| Agent type | Codex orchestrator/reviewer |
+| Invocation ID | `prompt-header-cclv-packet-2026-06-16` |
+| Expected manifest | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md` |
+| Actual changed set | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
