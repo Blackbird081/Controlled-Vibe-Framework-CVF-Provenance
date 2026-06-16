@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `ahb_t2_agent_handoff_contract_ratification_dispatched_waiting_worker_return`
+Current mode marker: `ahb_t2_agent_handoff_contract_ratification_closed_pass_bounded_foundation_storage_remediation_next`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t2_agent_handoff_contract_ratification_dispatched_waiting_worker_return`.
+Current mode: `ahb_t2_agent_handoff_contract_ratification_closed_pass_bounded_foundation_storage_remediation_next`.
 
 Active handoff:
 
@@ -62,12 +62,13 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AHB-T2 Agent Handoff Contract Ratification is `DISPATCH_READY` at dispatch
-commit `4b78355f` from dispatchBaseHead `88111c19` and executionBaseHead
-`88111c19`. Claude is assigned under `WORKER_MUST_NOT_COMMIT` to author the
-ratification packet and worker return, with HEAD unchanged. AOT-T3 remains a
-closed clean input: dispatch trace `Expected manifest` rows that list future
-execution paths fail `DISPATCH_SCOPE_VIOLATION`.
+AHB-T2 Agent Handoff Contract Ratification is `CLOSED_PASS_BOUNDED` at material
+commit `cabbca87` after dispatch commit `4b78355f`. Codex accepted Claude's
+worker return with reviewer repairs, ratified the bounded Agent Handoff
+Contract, and recorded AHB-T2-F1 as a standing foundation storage/layout
+finding: governance refactor work must include stable folder/index/storage
+layout review, with foundation files on stable indexed paths and
+execution/evidence files kept dated and archive-bound.
 
 AHB-T1A Finding Cleanup remains `CLOSED_PASS_BOUNDED` at material commit
 `9b21a901`; AHB-T1 remains `CLOSED_PASS_BOUNDED` at material commit
@@ -75,6 +76,12 @@ AHB-T1A Finding Cleanup remains `CLOSED_PASS_BOUNDED` at material commit
 
 Artifacts:
 
+- AHB-T2 contract:
+  `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
+- AHB-T2 completion:
+  `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md`
+- AHB-T2 worker return:
+  `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_WORKER_RETURN_2026-06-16.md`
 - AOT-T3 GC-018:
   `docs/baselines/CVF_GC018_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_2026-06-16.md`
 - AOT-T3 work order:
@@ -110,10 +117,11 @@ Prior AHB-T1 artifacts:
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
-Next allowed move: wait for Claude AHB-T2 worker return, then Codex reviews the
-actual returned files before closure. Do not open AHB-T3, implement the unified
-checker, build the agent-interaction workspace, or public-sync without later
-operator authorization.
+Next allowed move: open or dispatch a bounded foundation storage/layout
+remediation for AHB-T2-F1 before AHB-T3 unless the operator explicitly
+redirects. Do not open AHB-T3, implement the unified checker, build the
+agent-interaction workspace, or public-sync without later operator
+authorization.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync
