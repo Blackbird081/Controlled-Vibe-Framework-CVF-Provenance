@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `roadmap_state_reconciliation_t2_closed_next_roadmap_review`
+Current mode marker: `central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `roadmap_state_reconciliation_t2_closed_next_roadmap_review`.
+Current mode: `central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`.
 
 Active handoff:
 
@@ -62,11 +62,18 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Roadmap State Reconciliation RSF-T2 is `CLOSED_PASS_BOUNDED` at material commit
-`4d0883fa`. The dispatch-quality checker now has a bounded stale-roadmap
-redispatch guard with a reviewer-repaired completion-path boundary. RSF-T3 is
-candidate-only; no follow-on dispatch is authorized without fresh operator
-selection. Next allowed move: Codex may audit and propose the next roadmap.
+Prompt Envelope Read-First Placement and Central Core Local View foundation
+packet is `CLOSED_PASS_BOUNDED` at material commit `ef6f67de`. The prompt
+envelope checker now requires new delegated dispatch-ready work orders to place
+`## Dispatch Prompt Envelope` before Mission and within the read-first boundary.
+The CCLV standard and CCLV/FPRC roadmaps are open as next foundation candidates.
+Next allowed move: Codex may author GC-018 and a work order for CCLV-T1 central
+closure facts template if the operator selects it.
+
+Prior closure pointer: Roadmap State Reconciliation RSF-T2 is
+`CLOSED_PASS_BOUNDED` at material commit `4d0883fa`. The dispatch-quality
+checker has a bounded stale-roadmap redispatch guard with a reviewer-repaired
+completion-path boundary. RSF-T3 remains candidate-only.
 
 Prior closure pointer: Session-Sync Authoring Helper T2 is
 `CLOSED_PASS_BOUNDED` at material commit `5cb9d472`.
@@ -166,10 +173,11 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `session_sync_authoring_helper_closed_next_roadmap`.
+Mode: `central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`.
 
-Next move: audit and select the next high-value CVF foundation roadmap, then
-author a source-verified GC-018/work order only after operator authorization.
+Next move: author a source-verified GC-018/work order for CCLV-T1 central
+closure facts template if the operator selects that tranche. FPRC root-cause
+grouping remains roadmap-ready candidate after CCLV-T1.
 
 No provider/API call, credential/network use, provider/model addition, runtime
 behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 408,
+  "stateKey": "centralCoreLocalViewPromptHeaderPacketClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material commit ef6f67de. Codex hardened the dispatch prompt envelope standard/checker so new delegated dispatch-ready work orders must place the envelope read-first before Mission and no later than line 80. The work-order template now keeps the envelope pointer before Mission while staying at the 1200-line hard threshold. New standard: docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md. Roadmaps opened: docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md and docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md. Completion review: docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md. Focused tests pass 32/32; reviewer-fast passed; material pre-closure passed except expected active handoff sync."
+}

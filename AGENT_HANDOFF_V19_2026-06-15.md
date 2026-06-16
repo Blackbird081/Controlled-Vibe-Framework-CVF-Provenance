@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`roadmap_state_reconciliation_t2_closed_next_roadmap_review`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may audit and propose the next highest-value CVF foundation roadmap; parked checkpoint=RSF-T3 candidate-only pending operator selection, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may author GC-018/work order for CCLV-T1 central closure facts template if the operator selects it; parked checkpoint=FPRC root-cause grouping roadmap candidate, RSF-T3 candidate-only pending operator selection, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`roadmap_state_reconciliation_t2_closed_next_roadmap_review`
+`central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`
 
-Current HEAD recorded for this handoff: `4d0883fa`
-(Roadmap State Reconciliation RSF-T2 material closure commit `4d0883fa`;
+Current HEAD recorded for this handoff: `ef6f67de`
+(Prompt Envelope Read-First Placement and Central Core Local View packet
+material commit `ef6f67de`;
+Roadmap State Reconciliation RSF-T2 material closure commit `4d0883fa`;
 Roadmap State Reconciliation RSF-T2 dispatch commit `221a5f08`;
 Roadmap State Reconciliation RSF-T1 material closure commit `1c3724d0`;
 Roadmap State Reconciliation RSF-T1 dispatch commit `0977365e`; Session-Sync
@@ -81,12 +83,14 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Roadmap State
-Reconciliation RSF-T2 material closure commit `4d0883fa` to advance the mode
-marker to `roadmap_state_reconciliation_t2_closed_next_roadmap_review` across
-all surfaces, preserve the prior bounded closures, and route the next allowed
-move to Codex roadmap selection. This scope also covers regenerating the
-`ACTIVE_SESSION_STATE.json` aggregate from source entries.
+update this handoff and session front-door state after Prompt Envelope
+Read-First Placement and Central Core Local View material commit `ef6f67de` to
+advance the mode marker to
+`central_core_local_view_prompt_header_closed_next_cclv_t1_gc018` across all
+surfaces, preserve prior bounded closures, and route the next allowed move to
+CCLV-T1 GC-018/work-order authoring if the operator selects it. This scope also
+covers regenerating the `ACTIVE_SESSION_STATE.json` aggregate from source
+entries.
 
 Protected paths:
 
@@ -102,6 +106,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT1Closure20260616.json`
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT2Dispatch20260616.json`
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT2Closure20260616.json`
+- `CVF_SESSION/state/entries/centralCoreLocalViewPromptHeaderPacketClosure20260616.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceDispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceClosure20260615.json`
@@ -137,11 +142,19 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-Roadmap State Reconciliation RSF-T2 is `CLOSED_PASS_BOUNDED` at material commit
-`4d0883fa`. The dispatch-quality checker now has a bounded stale-roadmap
-redispatch guard with a reviewer-repaired completion-path boundary. RSF-T3 is
-candidate-only; no follow-on dispatch is authorized without fresh operator
-selection. Next allowed move: Codex may audit and propose the next roadmap.
+Prompt Envelope Read-First Placement and Central Core Local View foundation
+packet is `CLOSED_PASS_BOUNDED` at material commit `ef6f67de`. The prompt
+envelope checker now requires changed delegated dispatch-ready work orders to
+place `## Dispatch Prompt Envelope` before Mission and no later than line 80.
+The new CCLV standard defines the central core plus local view pattern, and the
+CCLV/FPRC roadmaps are ready for future GC-018 selection. Next allowed move:
+Codex may author a source-verified GC-018/work order for CCLV-T1 central
+closure facts template if the operator selects it.
+
+Prior closure pointer: Roadmap State Reconciliation RSF-T2 is
+`CLOSED_PASS_BOUNDED` at material commit `4d0883fa`. The dispatch-quality
+checker has a bounded stale-roadmap redispatch guard with a reviewer-repaired
+completion-path boundary. RSF-T3 remains candidate-only.
 
 Prior closure pointer: Session-Sync Authoring Helper T2 is
 `CLOSED_PASS_BOUNDED` at material commit `5cb9d472`.
