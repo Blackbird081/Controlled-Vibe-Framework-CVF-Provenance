@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: RSF_T3_DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -27,9 +27,10 @@ and promote the defect into a reusable dispatch freshness guard.
 ## Authorization / Decision
 
 Decision: RSF-T1 is closed bounded at material commit `1c3724d0`; RSF-T2 is
-implemented and closed bounded in the reviewer material batch. RSF-T3 is now
-dispatched as a bounded non-CI2 next-move sample validation after source audit
-found current continuity pointing to closed Model Gateway C-02 P2 material.
+implemented and closed bounded in the reviewer material batch. RSF-T3 is closed
+bounded after Claude verified that the stale Model Gateway C-02 P2 next-move
+contradiction existed at dispatch-selection time and was pointer-remediated
+before worker execution.
 
 No runtime, live-provider, credential, public-sync, Model Gateway, LPCI product,
 or broad legacy absorption work is authorized by this roadmap.
@@ -99,7 +100,7 @@ move is reconciliation or dependency-release refresh, not duplicate dispatch.
 |---|---|---|---|
 | RSF-T1 | CLOSED_PASS_BOUNDED | Reconcile CI2 roadmap state against T3/T4/T5 closure evidence and author a stale-roadmap learning review | Claude worker, Codex reviewer |
 | RSF-T2 | CLOSED_PASS_BOUNDED | Add or extend a machine guard that blocks ready packets when source evidence shows the target tranche is already closed | Claude worker, Codex reviewer |
-| RSF-T3 | DISPATCHED_TO_WORKER | Apply the guard to one non-CI2 roadmap sample and document operator-facing next-move behavior | Claude worker, Codex reviewer |
+| RSF-T3 | CLOSED_PASS_BOUNDED | Apply the guard to one non-CI2 roadmap sample and document operator-facing next-move behavior | Claude worker, Codex reviewer |
 
 ## Work Plan
 
@@ -199,6 +200,26 @@ Dispatch artifacts:
 - `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`
 
+## RSF-T3 Closure Note
+
+RSF-T3 is `CLOSED_PASS_BOUNDED`. Claude's worker return confirmed C-02 P2 is
+`CLOSED_PASS_BOUNDED` from the work order and state entry, confirmed the stale
+next-move contradiction existed at CCLV-T2 audit/dispatch-selection time, and
+verified that current front-door, handoff, and `nextAllowedMove` surfaces now
+route to RSF-T3 and explicitly block C-02 P2 redispatch. Codex accepts the
+worker return with reviewer repairs to close the roadmap tranche.
+
+Verification:
+
+- `python governance/compat/run_worker_return_fast_gate.py` PASS.
+- `python governance/compat/check_active_session_state.py --enforce` PASS.
+- `python governance/compat/check_session_mode_consistency.py --enforce` PASS.
+- committed-range pre-closure gate is reviewer-owned for this material batch.
+
+Next control candidate: a fresh, separately authorized next-move freshness
+checker that reads `nextAllowedMove.json` and blocks stale references to closed
+targets. This roadmap does not implement that checker.
+
 ## Non-Regression Boundary
 
 This roadmap does not make old roadmaps canonical again. It creates a bounded
@@ -218,17 +239,21 @@ until RSF-T2 closes with source-backed implementation evidence.
 | Defect class | `ORCHESTRATOR_PACKET_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `MACHINE_CHECK_ADDED` |
-| Next control action | RSF-T2 dispatch freshness guard added; RSF-T3 remains candidate-only for a future non-CI2 sample |
+| Next control action | RSF-T3 closed; fresh authorization may open a bounded next-move freshness checker for closed-target references |
 | Worker blame | `N/A_WITH_REASON`: stale roadmap state is a control-plane freshness gap; the worker should not infer closure from chat history |
 
 ## Machine Closure Package
 
-| Surface | Required final state | Current disposition |
-|---|---|---|
-| Roadmap | RSF-T1 closure evidence recorded after reviewer commit | PASS |
-| CI2 roadmap | T3/T4/T5 stale rows reconciled by RSF-T1 | PASS |
-| Guard implementation | Bounded stale-roadmap redispatch guard closes RSF-T2 | PASS |
-| Runtime/public/live proof | Not authorized | N/A with reason |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED`; RSF-T3 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | no corpus registry JSON mutation authorized; RSF-T3 is not a corpus registry tranche | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no corpus registry Markdown mutation authorized; RSF-T3 is not a corpus registry tranche | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external source, provider, OCR, or live-proof artifact | N/A with reason |
+| System loop interlock | N/A with reason | no system loop interlock registry mutation authorized | N/A with reason |
+| Session continuity | N/A with reason | material closure excludes session-sync; session update is reviewer-owned after commit if needed | N/A with reason |
 
 ## Public Export Disposition
 
@@ -241,6 +266,6 @@ authorized.
 
 | Field | Evidence |
 |---|---|
-| Expected changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py` |
-| Actual changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py` |
-| Trace boundary | RSF-T2 material closure only |
+| Expected changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` |
+| Actual changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` |
+| Trace boundary | RSF-T3 material closure only |

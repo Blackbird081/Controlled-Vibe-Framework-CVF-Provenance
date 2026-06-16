@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,9 +18,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: 72fa2427
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: f8d468c1
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: f8d468c1
 
 riskCeiling: R1_GOVERNANCE_DOCUMENTATION_ONLY
 
@@ -43,7 +43,7 @@ Role: Claude is worker/implementer. Codex is reviewer/closer.
 Canonical packet: docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md.
 Commit mode: WORKER_MUST_NOT_COMMIT.
 Base: executionBaseHead WORKER_MUST_CAPTURE_AT_START with git rev-parse --short HEAD before edits.
-Current-time notes: RSF-T3 is documentation/audit only. Current session sync is at 32689562 after dispatch commit 8450707a. No live/provider/key/public-sync/runtime work is authorized.
+Current-time notes: RSF-T3 is documentation/audit only. Worker execution started at f8d468c1 after dispatch commit 8450707a, prompt/provider-memory hardening commit 93d0eb7f, and session sync f8d468c1. No live/provider/key/public-sync/runtime work is authorized.
 Do-not-misread notes: Do not redispatch Model Gateway C-02 P2; C-02 P2 is already closed. Do not open Model Gateway P3. Do not edit session state, active handoff, governance checker source, or runtime files.
 Required first actions: read CVF_SESSION_MEMORY.md, CVF_SESSION/ACTIVE_SESSION_STATE.json, AGENT_HANDOFF_V19_2026-06-15.md, this work order, the RSF-T3 GC-018, the audit review, the RSF roadmap, the RSF-T2 completion, the C-02 P2 work order, and the C-02 P2 state entry; then capture executionBaseHead and run the pre-flight checks.
 Return contract: COMPLETE_PENDING_REVIEW with executionBaseHead, HEAD unchanged, git status --short, git diff --name-status, required gate outputs, source evidence table, and explicit BLOCKED_WITH_REASON if forbidden scope is required.
@@ -129,9 +129,14 @@ Authority boundary:
 Allowed scope:
 
 - create the worker-return packet named in `workerReturnPath`;
+  `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md`;
+- create the reviewer-owned completion packet named in `completionReviewPath`
+  during Codex closure:
+  `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md`;
 - update this work order status/evidence only after worker-return gates pass;
 - update the RSF roadmap RSF-T3 row/evidence only if the worker return supports
-  the update;
+  the update:
+  `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`;
 - run the required local governance and evidence commands.
 
 Forbidden scope:
@@ -208,10 +213,11 @@ memory, IDE summaries, or chat text as canonical evidence.
 | RSF-T3 candidate exists | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md` | line 101 | `RSF-T3` | RSF roadmap tranche table | ACCEPT |
 | C-02 P2 work order is closed | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` | line 5 | `Status` | C-02 P2 work order | ACCEPT |
 | C-02 P2 state entry is closed | `CVF_SESSION/state/entries/modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615.json` | JSON `value.status` | `modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615` | active session source entry | ACCEPT |
-| Front door names C-02 P2 as next move | `CVF_SESSION_MEMORY.md` | line 195 | `Next move` | active session front door | ACCEPT |
-| Handoff startup acknowledgment names C-02 P2 | `AGENT_HANDOFF_V19_2026-06-15.md` | line 27 | `Startup acknowledged` | active handoff | ACCEPT |
-| Generated nextAllowedMove source carries older FPRC/CCLV text | `CVF_SESSION/state/entries/nextAllowedMove.json` | JSON `value` | `nextAllowedMove` | active session source entry | ACCEPT |
-| RSF-T2 is closed and left RSF-T3 candidate-only | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md` | lines 107 and 174 | `RSF-T3` | RSF-T2 completion review | ACCEPT |
+| Front door currently names RSF-T3 and blocks C-02 P2 redispatch | `CVF_SESSION_MEMORY.md` | `## Next Allowed Move` | `Next Allowed Move` | active session front door | ACCEPT |
+| Handoff startup acknowledgment currently names RSF-T3 and blocks C-02 P2 redispatch | `AGENT_HANDOFF_V19_2026-06-15.md` | `## Startup Acknowledgment` | `Startup acknowledged` | active handoff | ACCEPT |
+| Generated nextAllowedMove source currently carries RSF-T3 dispatch text | `CVF_SESSION/state/entries/nextAllowedMove.json` | JSON `value` | `nextAllowedMove` | active session source entry | ACCEPT |
+| RSF-T2 is closed and left RSF-T3 candidate-only before RSF-T3 dispatch | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md` | Implementation Summary; Claim Boundary | `RSF-T3` | RSF-T2 completion review | ACCEPT |
+| Worker return confirms the stale C-02 P2 contradiction existed at dispatch-selection time and is now pointer-remediated | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md` | `## Findings / Position` | `F-RSF3-002` | RSF-T3 worker return | ACCEPT |
 
 ## 6B. Roadmap-To-Work-Order Trace Matrix
 
@@ -260,11 +266,16 @@ and leave material commit, pre-closure, and session sync to Codex.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: COMPLETE_PENDING_REVIEW` after worker gates | PENDING_WORKER |
-| Worker return | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md` | source-backed findings and gate results | PENDING_WORKER |
-| Roadmap state | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md` | RSF-T3 worker-return evidence only | PENDING_WORKER |
-| Completion review | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` | reviewer-owned closure artifact | REVIEWER_OWNED |
-| Session continuity | `CVF_SESSION/**`; `CVF_SESSION_MEMORY.md`; active handoff | Codex-owned after material commit if accepted | REVIEWER_OWNED |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` after Codex review | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md` | source-backed findings and reviewer-fast pass | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md` | RSF-T3 row `CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` | reviewer-owned closure artifact | PASS |
+| Registry JSON | BLOCKED with reason | no corpus registry JSON mutation authorized; RSF-T3 is not a corpus registry tranche | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no corpus registry Markdown mutation authorized; RSF-T3 is not a corpus registry tranche | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external source, provider, OCR, or live-proof artifact | N/A with reason |
+| System loop interlock | N/A with reason | no system loop interlock registry mutation authorized | N/A with reason |
+| Session continuity | `CVF_SESSION/**`; `CVF_SESSION_MEMORY.md`; active handoff | separate session-sync commit after material closure | N/A with reason |
 | Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## 7. Write Ownership
@@ -339,17 +350,17 @@ Write mode: modify-listed / create-listed only.
 | Session or invocation | 2026-06-16 RSF-T3 non-CI2 next-move sample |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | source reads, git status, active-session checks, worker-return fast gate |
-| Target paths | `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
-| Allowed scope source | operator 2026-06-16 foundation-hardening request; `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md` |
-| Before status evidence | clean worktree at `32689562` before prompt/gate hardening |
-| After status evidence | work order prompt envelope repaired; mandatory gate wiring pending commit |
-| Diff evidence | hardening batch uses `32689562..HEAD`; worker must record `git diff --name-status` on return |
-| Approval boundary | governance checker/wiring hardening and current work-order prompt correction only |
-| Claim boundary | repo-local trace only; no runtime/provider/public/live/legacy/session-state claim |
-| Agent type | Codex governance hardening; future Claude worker remains `WORKER_MUST_NOT_COMMIT` |
-| Invocation ID | `rsf-t3-work-order-prompt-envelope-correction-2026-06-16` |
-| Expected manifest | `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
-| Actual changed set | `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
+| Target paths | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` |
+| Allowed scope source | RSF-T3 GC-018; worker return; Codex reviewer closure authority |
+| Before status evidence | clean worktree at worker execution base `f8d468c1` before reviewer acceptance |
+| After status evidence | RSF-T3 worker return accepted with reviewer repairs; material closure pending commit |
+| Diff evidence | material closure batch uses `f8d468c1..HEAD`; `git diff --name-status` |
+| Approval boundary | bounded documentation/audit closure only |
+| Claim boundary | one non-CI2 next-move sample; no runtime/provider/public/live/legacy/session-state claim in material commit |
+| Agent type | Claude worker `WORKER_MUST_NOT_COMMIT`; Codex reviewer/closer |
+| Invocation ID | `rsf-t3-non-ci2-next-move-sample-closure-2026-06-16` |
+| Expected manifest | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` |
+| Actual changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized |
 
