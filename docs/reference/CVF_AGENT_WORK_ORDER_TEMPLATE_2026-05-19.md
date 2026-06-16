@@ -4,6 +4,8 @@ Memory class: POINTER_RECORD
 
 Status: reusable template for scoped agent execution orders.
 
+Text Encoding Exception: em dash and standard punctuation used in governance prose
+
 ## Purpose
 
 A CVF Agent Work Order is the tactical execution packet that an orchestrator,
@@ -20,6 +22,9 @@ session.
 
 Work orders are governed by the operating workflow in
 `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`.
+
+**Template family front door:**
+`docs/reference/work_order_template/README.md`
 
 ## Owner / Source
 
@@ -329,19 +334,21 @@ Staging and checker-source rule:
 - Before staging, working-tree-aware component gates may be used for pending
   worker artifacts; record that status as pending, not clean closure.
 - If a checker appears to reject a file that is correct on disk, first verify
-  whether the corrected file was staged. Some helpers read the working tree,
-  while hook-chain checks may read the staged index.
+  whether the corrected file was staged.
 - Hook-chain failures are cascade layers. Fix the first failing gate, rerun
   that gate directly, then rerun the full applicable autorun or hook chain
   before recording PASS.
 
 ## 6A. Source-Fidelity Pass
 
-Before marking this work order ready for execution, verify the source facts the
-work order depends on:
+Before marking this work order ready for execution, verify the source facts it
+depends on.
 
-Every ready/dispatch work order that names runtime/source facts must include a
-Source Verification Block with the required table columns.
+Full rules for all items below are in:
+
+`docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md`
+
+Quick-reference commands:
 
 ```powershell
 Test-Path "<existing path named in first reads>"
@@ -349,159 +356,38 @@ rg -n "<claimed function/type/templateId/role/policy field>" <source path>
 rg -n --fixed-strings "<claimed token>" .
 ```
 
-Required source-fidelity notes:
+### Source Verification Block
 
-- Existing paths verified:
-- Planned new paths clearly marked as NEW:
-- Canonical role/type values verified from:
-- Canonical template or pack IDs verified from:
-- Runtime/source facts verified from current source or canonical contract:
-- Completion review facts used only when no runtime/source contract exists:
-- Draft-only tokens that appear nowhere else in repo:
-- Same-token collisions with different meaning:
-- Any missing or ambiguous source fact:
+Include a Source Verification Table when the work order names runtime or source
+facts. Required columns per addendum; disposition values: `ACCEPT`, `REJECT`,
+`BLOCKED_SOURCE_NOT_FOUND`.
 
-If a source fact cannot be verified, either correct the work order or return to
-the orchestrator. Do not ask the implementer to discover that the work order
-invented a path, symbol, role value, or baseline source.
+### Current Runtime Freshness Verification
 
-Source priority:
-
-1. current runtime/source file or schema;
-2. canonical reference/contract document;
-3. completion review with explicit source trace;
-4. handoff/session memory summary only as a pointer, not as source authority.
-
-If a current runtime/source file exists, a completion review alone is not enough
-to verify a field, enum, diagnostic class, route state, tool name, or schema key.
-
-If the work order claims a runtime/source capability is absent, not
-implemented, hardcoded, per-role only, stale, missing, or intentionally not
-used in the current lane, include a Current Runtime Freshness Verification
-section before dispatch. This includes non-use statements such as "no
-provider/API key use", "no provider calls", "no runtime/source edits", or "no
-registry update" when current runtime/source owners exist. That section must
-show the repo searches or source files that were checked and must cite current
-owner paths for any partial implementation surface found.
+Include this section when the work order claims a capability is absent, not
+implemented, stale, or intentionally not used. Show the repo searches that
+were checked. Full rule in addendum.
 
 ### Negative Search And Collision Discipline
 
-If the work order claims a token, field, enum, schema key, failure token, or
-config key is `NOT FOUND`, or uses `BLOCKED_SOURCE_NOT_FOUND`, include a
-Negative Search And Collision Discipline section before dispatch. The section
-must record exact search roots, exact search command or structured query,
-coverage across source, tests, docs, JSON, and external evidence when
-applicable, same-token collision results, and the absent-versus-collision
-disposition.
+Include this section when the work order uses `NOT FOUND` or
+`BLOCKED_SOURCE_NOT_FOUND`. Record exact search roots, commands, and collision
+results. Full rule in addendum.
 
-If the same token appears elsewhere with a different meaning, do not mark it
-`NOT FOUND`. Record the collision or non-authoritative occurrence, cite it,
-and explain why it is or is not binding for this work.
+### ACCEPT_AS_OWNER_MAP coverage
 
-If a roadmap-derived work order claims complete ACCEPT_AS_OWNER_MAP coverage
-from a source audit, include an ACCEPT_AS_OWNER_MAP coverage disposition that
-names each accepted concept from the cited audit and marks it as in-scope,
-already completed, deferred, rejected, or out-of-scope with reason.
+When a roadmap-derived work order claims ACCEPT_AS_OWNER_MAP coverage from a
+source audit, include a coverage disposition naming each accepted concept and
+its status (in-scope / completed / deferred / rejected / out-of-scope with
+reason). Full rule in addendum.
 
-### Intake Role Routing Decision
+Required blocks when applicable:
 
-Ready or dispatched work orders must include `## Intake Role Routing Decision`
-before worker execution. The orchestrator owns this block and must include the
-fields required by
-`docs/reference/CVF_INTAKE_ROLE_ROUTING_DECISION_STANDARD_2026-06-11.md`;
-unresolved routing keeps the work order in `HOLD_*` or `DRAFT`.
+- Intake Role Routing Decision block (per addendum)
+- Single-Agent Multi-Role Control Block when applicable (per addendum)
 
-### Single-Agent Multi-Role Control Block
-
-If one agent owns implementation plus review/closure roles, include the block required by `docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md`.
-
-If the work order names, maps, modifies, consumes, or instructs an agent to use
-any runtime field, interface, function, type, schema key, receipt field,
-diagnostic class, role value, route state, template ID, pack ID, policy enum,
-config key, CLI/MCP tool name, or existing source path, include this table
-before implementation:
-
-| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
-|---|---|---|---|---|---|
-| <field/type/path/etc.> | <source path> | <line number or canonical section> | <verified field/symbol> | <owner> | <ACCEPT/REJECT/BLOCKED_SOURCE_NOT_FOUND> |
-
-Rules:
-
-- `ACCEPT` requires direct verification from the cited source file or canonical
-  contract.
-- `REJECT` must name the corrected field/symbol when known.
-- `BLOCKED_SOURCE_NOT_FOUND` stops dispatch and returns to Orchestrator.
-- A source fact with no file plus line/section is not verified.
-- Source Verification row type must be clear in the claimed item or owning
-  schema: `EXISTS`, `VALUE_SET`, `LITERAL_INVARIANT`, `RUNTIME_BEHAVIOR`, or
-  `DOC_ONLY_NEW`.
-- `Verified path or symbol` must contain only the field, path, or symbol being
-  verified. Do not put value assignments or type annotations in that cell; use
-  `rawMemoryReleased`, not `rawMemoryReleased: false`, and `canReinject`, not
-  `canReinject: boolean`.
-- Ready/dispatch Authority Chain, Dependency Gate, and Source Verification
-  rows must use final checker-accepted dispositions such as `ACCEPT`, `REJECT`,
-  or `BLOCKED_SOURCE_NOT_FOUND`. Do not use `REQUIRED` as a disposition in a
-  ready/dispatch packet; `REQUIRED` is allowed only in draft/HOLD dependency
-  prose or in artifact/proof manifest columns where it is a boolean
-  requirement.
-- For code sources, an `ACCEPT` row must cite a symbol that exists in the cited
-  file. Dotted symbols must exist under the cited owner/interface/class; if the
-  owner does not contain that field or method, correct the symbol or use
-  `REJECT` / `BLOCKED_SOURCE_NOT_FOUND`.
-- For code symbols, `Verified line/section` must cite the symbol definition
-  line, not a continuation line inside a multiline function signature,
-  parameter list, type body, or implementation block.
-- `LITERAL_INVARIANT` requires the cited source to declare or assign the value
-  literally, for example `field: false` or `field = false`.
-- If the source type is `boolean`, the worker must not claim "`field=false`
-  preserved from source" unless a cited runtime branch or literal source line
-  proves that invariant for the specific connector path.
-- If the connector requires a safer value than the source globally guarantees,
-  mark it as `DOC_ONLY_NEW` or "connector-normalized requirement", not as a
-  source-proven invariant.
-- If a claimed token appears only in this draft work order, mark it
-  `BLOCKED_SOURCE_NOT_FOUND` unless it is explicitly listed as a new doc-only
-  field in the table below.
-- If a claimed token appears elsewhere with a different meaning, do not mark
-  it `NOT FOUND`; record the collision, cite the occurrence, and explain why
-  it is or is not binding for this work.
-- Source Verification Table columns are canonical per `docs/reference/CVF_SOURCE_VERIFICATION_TABLE_SHAPE_STANDARD_2026-06-11.md`;
-  do not dispatch abbreviated source tables or doc-only fields as verified source facts.
-- Do not dispatch implementation with guessed fields, inferred names,
-  placeholder paths, stale memory-only vocabulary, or "confirm later" language.
-- Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
-  `TODO`, `confirm later`, `confirm field name`, and
-  `verify during implementation`. These terms may appear only as a blocking
-  defect note, not as an allowed disposition, acceptance criterion, evidence
-  requirement, or closure checklist item.
-
-When the work order introduces new documentation-only connector fields, include
-this separate table:
-
-| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
-|---|---|---|---|---|
-| <field name> | <why it exists> | Yes | Yes | <doc/schema/checklist validation only> |
-
-MA1 section references are locked to the canonical standard at
-`docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
-Do not invent or rename MA1 sections. Use only:
-
-- `## 0. Surface Fidelity Gate`
-- `## 1. Authority Chain`
-- `## 2. Transfer Objective`
-- `## 3. Source Packet`
-- `## 4. Role Assignment`
-- `## 5. Execution Instructions`
-- `## 6. Role Output Schema`
-- `## 7. Dissent And Review Ledger`
-- `## 8. Integration Decision`
-- `## 9. Completion Evidence`
-- `## 10. Claim Boundary`
-
-Any alternate MA1 section label, including `Input Package`, `Purpose`, or
-`Return Protocol`, is a blocking defect unless the canonical MA1 standard has
-been updated first in a separate governed change.
+If a source fact cannot be verified, either correct the work order or return to
+the orchestrator. Do not ask the implementer to discover invented symbols.
 
 ## 6B. Roadmap-To-Work-Order Trace Matrix
 
@@ -544,13 +430,6 @@ If a machine gate fails inside Allowed scope, complete the remediation and
 execute the gate again. Routine gate remediation is not an operator-preference
 checkpoint.
 
-Orchestrator wording hygiene:
-
-- keep any `Operator Checkpoint` section factual and separate from
-  gate-remediation instructions;
-- do not place operator-preference terms near allowed-scope remediation text;
-- prefer `Escalation is reserved for...` over `Ask the operator if...`.
-
 ## 6C.1 System Loop Interlock Routing
 
 Include this section when the work order scans, classifies, absorbs, or maps a
@@ -580,12 +459,10 @@ record the actual pending status or state that clean-status evidence is
 post-commit and command-backed.
 
 Pending artifacts must not cite `--base HEAD~1 --head HEAD` or another
-committed-only range as proof for the pending artifact itself. Use
-working-tree-aware validation for pending artifacts, or commit first and rerun
-the real changed range.
+committed-only range as proof for the pending artifact itself.
 
-Finality and reviewer-conversion details are extracted to keep this template
-reviewable:
+Full finality, commit-mode lifecycle, dependency release, two-stage handoff,
+worker pending-return gate, and reviewer closure conversion block rules are in:
 
 `docs/reference/CVF_AGENT_WORK_ORDER_FINALITY_AND_REVIEW_CONVERSION_ADDENDUM_2026-06-12.md`
 
@@ -627,82 +504,29 @@ Any work order that scans, classifies, imports, maps, routes, closes, or
 hands off governed work must define the machine-readable outputs that turn the
 worker result into the next loop's input.
 
+Full table, rules, Acceptance Receipt Assertion Matrix template, and External
+Artifact Hash Manifest template are in:
+
+`docs/reference/work_order_template/CVF_WORK_ORDER_MACHINE_CLOSURE_PACKAGE_ADDENDUM.md`
+
 Machine check:
 
 ```powershell
 python governance/compat/check_machine_closure_package.py --base <baseHead> --head HEAD --enforce
 ```
 
-Required closure package table:
+Required closure package table — use the full template from the addendum above:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/<work-order>.md` | closed-equivalent status, no stale `DISPATCH_READY`, no unchecked required checklist residue, closure anchor policy recorded | `<PASS/BLOCKED/N/A with reason>` |
-| Completion or reviewer artifact | `docs/reviews/<completion>.md` or `N/A with reason` | final disposition, changed-file evidence, claim boundary, gate evidence, reviewer-owned closure when `WORKER_MUST_NOT_COMMIT` | `<PASS/BLOCKED/N/A with reason>` |
-| Roadmap state | `docs/roadmaps/<roadmap>.md` or `N/A with reason` | tranche row final status, next tranche dependency release state, no stale `READY_WITH_CONDITIONS` residue | `<PASS/BLOCKED/N/A with reason>` |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | entry id, normalized paths, hashes, verdicts, gap ids, next action | `<PASS/BLOCKED/N/A with reason>` |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | human quick lookup, negative-search note, next recommendation | `<PASS/BLOCKED/N/A with reason>` |
+| Work order status | `docs/work_orders/<work-order>.md` | closed-equivalent status; no stale residue | `<PASS/BLOCKED/N/A with reason>` |
+| Completion or reviewer artifact | `docs/reviews/<completion>.md` or `N/A with reason` | final disposition, changed-file evidence, claim boundary, gate evidence | `<PASS/BLOCKED/N/A with reason>` |
+| Roadmap state | `docs/roadmaps/<roadmap>.md` or `N/A with reason` | tranche row final status; no stale `READY_WITH_CONDITIONS` residue | `<PASS/BLOCKED/N/A with reason>` |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | entry id, normalized paths, hashes, verdicts, next action | `<PASS/BLOCKED/N/A with reason>` |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | human quick lookup, next recommendation | `<PASS/BLOCKED/N/A with reason>` |
 | External evidence digest | repo-local completion section or digest artifact | external path, schema/version, record count, hash, generated time, privacy boundary | `<PASS/BLOCKED/N/A with reason>` |
 | System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_*.json` or `N/A with reason` | upstream output, downstream input, learning/finding route, mutation boundary | `<PASS/BLOCKED/N/A with reason>` |
 | Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, active handoff | mode, next allowed move, handoff HEAD or accepted parent marker | `<PASS/BLOCKED/N/A with reason>` |
-
-Rules:
-
-- External workspace paths are evidence inputs, not source-authority rows. Do
-  not put `D:\...`, local upload paths, or other non-repo paths in Source
-  Verification as if they were canonical source files. Record them in the
-  External Evidence Digest with a hash, schema/version, record count, and
-  privacy boundary, then cite the repo-local digest or completion section in
-  Source Verification if a later work order needs it.
-- Corpus work that changes scan, classification, readiness, or gap state must
-  update both GC-051 registry surfaces when applicable: the JSON is the
-  machine input and the Markdown file is the operator/reviewer lookup. A
-  report-only closure is not enough when the registry is the downstream input.
-- Machine Closure Package row names and final status tokens must follow
-  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`.
-- Closed-equivalent artifacts must not retain stale `DISPATCH_READY`,
-  `READY_WITH_CONDITIONS`, `NOT_EXECUTED_YET`, `PRE_CLOSURE_NOT_RUN`, or
-  placeholder dependency language unless the artifact is explicitly still a
-  pending-review worker handoff.
-- If findings are recorded, use checker-accepted Finding-To-Governance defect
-  classes only. `EVIDENCE_GAP` is not a defect class; use `RULE_GAP`,
-  `MACHINE_GATE_GAP`, `ORCHESTRATOR_PACKET_GAP`, or
-  `PHASE_GATE_PLACEMENT_GAP` as appropriate. `N/A_WITH_REASON` is a
-  disposition, not a defect class.
-- The closure package must be updated after final gate reruns, not copied from
-  pre-implementation or pending-worker evidence.
-- If any roadmap path is cited in Authority Chain, Source Verification,
-  Trace Matrix, or closure evidence, the Roadmap state row must name that
-  roadmap and its final state. Do not mark Roadmap state `N/A with reason` or
-  "no roadmap" when a roadmap path appears anywhere in the artifact.
-- Receipt-based PASS claims must include an Acceptance Receipt Assertion
-  Matrix. The matrix must compare each required receipt value against the
-  observed value from the generated receipt artifact. A query cannot pass if a
-  required value and observed value differ, even when the broader answer class
-  is correct.
-- External evidence from a sibling workspace, local data folder, provider
-  receipt, browser artifact, or generated file must include an External
-  Artifact Hash Manifest with sha256 for every external artifact used as
-  closure evidence. Counts and schemas are not enough by themselves.
-- External evidence digest hash rules are defined in
-  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`.
-- When material closure and session-sync closure use different commits, record
-  both ranges. The material range must cover implementation evidence; the
-  session-sync range must cover state, memory, and handoff updates. Do not use
-  a combined range that includes files outside the work order Allowed scope
-  unless the Allowed scope explicitly authorizes those continuity files.
-
-Acceptance Receipt Assertion Matrix template:
-
-| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
-|---|---|---|---|---|---|
-| <AQ-id> | <path or digest section> | <receipt JSON path> | <required> | <observed> | <PASS/BLOCKED> |
-
-External Artifact Hash Manifest template:
-
-| Artifact | Evidence role | sha256 | Generated or verified at | Status |
-|---|---|---|---|---|
-| <path or redacted path> | <script/receipt/data/etc.> | `sha256:<hex>` | <timestamp/command> | <PASS/BLOCKED> |
 
 ## 6F. Commit Choreography
 
@@ -757,14 +581,12 @@ state:
    `docs/work_orders/`.
 2. For a protected session/front-door sync commit, the changed root active
    handoff matching `AGENT_HANDOFF*.md` may carry the same authorization block
-   if it lists every protected path in the changed range. Archived handoffs do
-   not count.
+   if it lists every protected path in the changed range.
 3. Preferred two-commit closure:
    - material/session commit: close the artifact, update session state/front
      door if needed, and include the same-range authorization doc;
    - handoff-only sync commit: update only the active handoff with the material
-     commit SHA so `check_active_session_state.py` can accept the parent SHA as
-     `parent-present-for-sync-commit`.
+     commit SHA.
 4. If the front door or state registry must record the material commit SHA
    itself, use a protected session-sync commit whose changed active handoff or
    docs-prefixed artifact carries same-range authorization.
@@ -789,7 +611,7 @@ Required content:
   Ownership.
 
 Do not classify the near-threshold owner entrypoint as forbidden-touch while
-adding adjacent source. That is a maintainability bypass, not a split.
+adding adjacent source.
 
 ## 6G. Work-Order Fulfillment Manifest
 
@@ -812,8 +634,6 @@ before dispatch.
 
 Record the filesystem state of every forbidden path at the moment this work
 order is dispatched. The orchestrator must verify each path before dispatch.
-A path that exists on disk at dispatch must be explained or cleaned up; the
-worker must not be sent into an environment where forbidden files already exist.
 
 This block is verified by `check_forbidden_filesystem_state.py` at the
 `pre-implementation` autorun gate phase.
@@ -824,12 +644,12 @@ This block is verified by `check_forbidden_filesystem_state.py` at the
 
 Rules:
 
-- `ABSENT` — path does not exist on disk (file or directory). Dispatch is safe.
+- `ABSENT` — path does not exist on disk. Dispatch is safe.
 - `PRESENT` — path already exists. Dispatch is blocked until the orchestrator
   either removes the files, opens a governance packet for them, or records an
   explicit operator exemption with reason.
-- `PRESENT_EXEMPTED` — path exists; orchestrator has explicitly authorized
-  worker to ignore it; worker must not edit, stage, or claim the path.
+- `PRESENT_EXEMPTED` — path exists; orchestrator has authorized worker to ignore
+  it; worker must not edit, stage, or claim the path.
 
 ## Pre-Existing Dirty Path Exemptions
 
@@ -868,27 +688,20 @@ Orchestrator.
 ## 7A. Protected-Path Authorization Carrier
 
 If this work order authorizes the worker to create or modify any protected
-path -- a `governance/compat/*.py` checker, any `CVF_SESSION/**` state/handoff
-file, `CVF_SESSION_MEMORY.md`, or an `AGENT_HANDOFF*.md` file -- the work order
-itself must carry a `Core Guard Self-Protection Authorization` block. Authoring
-the checker/state file alone is not enough: the core-guard self-protection gate
-also requires the authorization carrier, and omitting it forces the worker to
-synthesize one mid-task (the ORCHESTRATOR_PACKET_GAP closed by the DIR-T1
-learning).
+path — a `governance/compat/*.py` checker, any `CVF_SESSION/**` state/handoff
+file, `CVF_SESSION_MEMORY.md`, or an `AGENT_HANDOFF*.md` file — the work order
+itself must carry a `Core Guard Self-Protection Authorization` block.
 
-The block must use the same vocabulary the core-guard checker and active
-handoff already use, so dispatch and closure share one authorization language.
 Required fields:
 
 - `## Core Guard Self-Protection Authorization` heading;
-- `Authorized guard-maintenance scope` -- what guard/state change is permitted
-  and what is explicitly out of scope;
-- `Protected paths` -- a list naming every protected path the work order
-  authorizes, each as an exact repo-relative path;
-- `Operator authorization` -- the operator instruction or governance authority
-  that permits the protected change;
-- `Rollback boundary` -- which commits/artifacts may be reverted if the change
-  is rejected, and which must not.
+- `Authorized guard-maintenance scope`;
+- `Protected paths` — a list of every protected path authorized;
+- `Operator authorization` — the governance authority that permits the change;
+- `Rollback boundary` — what may and must not be reverted if rejected.
+
+Omitting this block when a protected path is in scope is a dispatch-quality
+violation (enforced by `governance/compat/check_work_order_dispatch_quality.py`).
 
 Example skeleton:
 
@@ -906,12 +719,6 @@ Operator authorization: <instruction or governance authority>.
 
 Rollback boundary: revert only <this change> if rejected; do not revert <prior closures>.
 ```
-
-If the work order authorizes no protected path, this section may be omitted.
-This rule is enforced at dispatch by
-`governance/compat/check_work_order_dispatch_quality.py`; a dispatch/ready work
-order that authorizes a protected path without a complete carrier is a
-dispatch-quality violation.
 
 ## 8. Execution Plan
 
@@ -944,9 +751,7 @@ Roadmap-derived work orders must preserve the roadmap design-control gate.
 | Dispatch-readiness decision | <section/path> | <why this work order may dispatch> | <PASS/BLOCKED/N/A> |
 
 If any required design control is `BLOCKED`, this work order must remain
-`DRAFT`, `HOLD_*`, or return to Orchestrator. Do not ask a worker to resolve
-roadmap ambiguity during implementation unless this work order is explicitly a
-source-verification, design-audit, or spec task.
+`DRAFT`, `HOLD_*`, or return to Orchestrator.
 
 ## 8B. Agent Operation Trace Block
 
@@ -975,16 +780,11 @@ Required block:
 | Claim boundary | <repo-local trace only; no OS/user attribution unless separately proven> |
 | Deletion or rename disposition | <required only when protected paths are deleted/renamed; otherwise N/A with reason> |
 
-The block is repo-local evidence. It does not prove OS-level user attribution,
-endpoint telemetry, physical-machine identity, provider-internal logs, or
-absence of external filesystem events.
-
 ## 8C. Epistemic Process Block (FPC-T3-C04)
 
 High-evidence work orders (findings, claim updates, corpus analysis, source
 verification, benchmarks, or risk-model changes) must include this process
-block. It checks evidence structure only, not semantic truth or provider
-correctness.
+block.
 
 ```text
 ## Epistemic Process Block
@@ -1000,10 +800,8 @@ Contradiction Handling Requirement: contradictory evidence requires a Contradict
 Claim Update Requirement: worker return records whether the claim was confirmed, revised, narrowed, or invalidated.
 ```
 
-For evidence-light or mechanical work, use
-`EPISTEMIC_PROCESS_NA_WITH_REASON: <reason>`. The structural checker is
-`governance/compat/check_epistemic_process_packet.py`; detailed contract:
-`docs/reference/CVF_AGENT_WORK_ORDER_EPISTEMIC_PROCESS_BLOCK_ADDENDUM_2026-06-13.md`.
+Full contract:
+`docs/reference/CVF_AGENT_WORK_ORDER_EPISTEMIC_PROCESS_BLOCK_ADDENDUM_2026-06-13.md`
 
 ## 9. Evidence Requirements
 
@@ -1077,10 +875,7 @@ python governance/compat/run_worker_return_fast_gate.py
 ```
 
 When the work order names focused tests, add one `--pytest-target <path>` per
-test path. This fast gate reuses `reviewer-fast`, generated registry drift
-checking, changed source/test registry coverage, and diff hygiene. It is not a
-replacement for full `pre-commit`, committed-range `pre-closure`, or reviewer
-judgment.
+test path.
 
 Mandatory remediation rule:
 
@@ -1198,3 +993,4 @@ A work order is not ready for execution unless it answers:
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`
 - `governance/toolkit/05_OPERATION/CVF_DOCUMENT_STORAGE_GUARD.md`
+- `docs/reference/work_order_template/README.md`
