@@ -87,6 +87,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_session_mode_consistency.py", "--enforce"],
     ),
     (
+        "next-move freshness",
+        ["python", "governance/compat/check_next_move_freshness.py", "--enforce"],
+    ),
+    (
         "memory consolidation artifact quality",
         ["python", "governance/compat/check_memory_consolidation_artifact_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -139,6 +143,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "active session state compatibility",
             ["python", "governance/compat/check_active_session_state.py", "--enforce"],
+        ),
+        (
+            "next-move freshness",
+            ["python", "governance/compat/check_next_move_freshness.py", "--enforce"],
         ),
         (
             "docs governance compatibility",
@@ -409,6 +417,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "active session state compatibility",
             ["python", "governance/compat/check_active_session_state.py", "--enforce"],
+        ),
+        (
+            "next-move freshness",
+            ["python", "governance/compat/check_next_move_freshness.py", "--enforce"],
         ),
         (
             "session governance bootstrap compatibility",

@@ -204,6 +204,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             ("python", "governance/compat/check_active_session_state.py", "--enforce"),
         ),
         GateCommand(
+            "next-move freshness",
+            ("python", "governance/compat/check_next_move_freshness.py", "--enforce"),
+        ),
+        GateCommand(
             "governed file size compatibility",
             ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
         ),
