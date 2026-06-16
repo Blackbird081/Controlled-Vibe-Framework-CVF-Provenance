@@ -1,0 +1,17 @@
+{
+  "stateOrder": 416,
+  "stateKey": "aotT3DispatchManifestScopeCheckClosure20260616",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "08659a5d",
+    "executionBaseHead": "e509aa4d",
+    "completionReview": "docs/reviews/CVF_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_COMPLETION_2026-06-16.md",
+    "gc018": "docs/baselines/CVF_GC018_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_2026-06-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_FOR_CODEX_2026-06-16.md",
+    "checker": "governance/compat/check_agent_operation_trace.py",
+    "tests": "governance/compat/test_check_agent_operation_trace.py",
+    "standard": "docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md",
+    "result": "B12 dispatch manifest scope discipline is machine-checked with DISPATCH_SCOPE_VIOLATION for future execution paths in dispatch Expected manifest rows; ownership sections remain valid execution intent.",
+    "nextAllowedMove": "Operator decision: open AHB-T2 ratification, choose another bounded CVF foundation hardening tranche, or revise roadmap sequence. AHB-T2 remains unopened."
+  }
+}

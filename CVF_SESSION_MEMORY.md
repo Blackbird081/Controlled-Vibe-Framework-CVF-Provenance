@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `ahb_t1a_finding_cleanup_closed_pass_bounded_operator_decision_required`
+Current mode marker: `aot_t3_dispatch_manifest_scope_check_closed_pass_bounded_operator_decision_required`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t1a_finding_cleanup_closed_pass_bounded_operator_decision_required`.
+Current mode: `aot_t3_dispatch_manifest_scope_check_closed_pass_bounded_operator_decision_required`.
 
 Active handoff:
 
@@ -62,29 +62,31 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AHB-T1A Finding Cleanup is `CLOSED_PASS_BOUNDED` at material commit
-`9b21a901` from executionBaseHead `30076e1b`. Codex processed the two AHB-T1
-meta-findings before continuing: structural checker classification now maps
-`docType: audit` and audit-directory files before `HANDOFF` subject-keyword
-heuristics, and finding-learning tests prove descriptive noncanonical defect
-labels fail without canonical vocabulary such as `RULE_GAP`.
+AOT-T3 Dispatch Manifest Scope Check is `CLOSED_PASS_BOUNDED` at material
+commit `08659a5d` from executionBaseHead `e509aa4d`. Codex promoted B12 from a
+queued machine-check candidate into the AOT checker: future execution paths may
+live in `Write Ownership` or expected-deliverable sections, but dispatch trace
+`Expected manifest` rows that list future execution paths now fail
+`DISPATCH_SCOPE_VIOLATION`.
+
+AHB-T1A Finding Cleanup remains `CLOSED_PASS_BOUNDED` at material commit
+`9b21a901`; AHB-T1 remains `CLOSED_PASS_BOUNDED` at material commit
+`11f4c4a2`.
 
 Artifacts:
 
-- AHB-T1A GC-018:
-  `docs/baselines/CVF_GC018_AHB_T1A_FINDING_CLEANUP_2026-06-16.md`
-- AHB-T1A work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1A_FINDING_CLEANUP_FOR_CODEX_2026-06-16.md`
-- AHB-T1A completion:
-  `docs/reviews/CVF_AHB_T1A_FINDING_CLEANUP_COMPLETION_2026-06-16.md`
-- Structural checker:
-  `governance/compat/check_markdown_structural_completeness.py`
-- Structural checker tests:
-  `governance/compat/test_check_markdown_structural_completeness.py`
-- Finding-learning tests:
-  `governance/compat/test_check_finding_to_governance_learning.py`
-- Structural standard:
-  `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- AOT-T3 GC-018:
+  `docs/baselines/CVF_GC018_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_2026-06-16.md`
+- AOT-T3 work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_FOR_CODEX_2026-06-16.md`
+- AOT-T3 completion:
+  `docs/reviews/CVF_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_COMPLETION_2026-06-16.md`
+- AOT checker:
+  `governance/compat/check_agent_operation_trace.py`
+- AOT focused tests:
+  `governance/compat/test_check_agent_operation_trace.py`
+- AOT standard:
+  `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`
 - AHB roadmap:
   `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`
 
@@ -109,10 +111,10 @@ Prior AHB-T1 artifacts:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
 Next allowed move: operator decision on whether to open AHB-T2 Agent Handoff
-Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone first, or
-revise the model. AHB-T2 is not opened unilaterally. AOT-T3 B12 machine-check
-hardening remains parked/queued pending operator review and AHB sequencing
-decision.
+Contract ratification, choose another bounded CVF foundation hardening tranche,
+or revise the roadmap sequence. AHB-T2 is not opened unilaterally. AOT-T3 is
+closed and should be treated as an input to any future AHB-T2 contract
+ratification.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync
@@ -144,10 +146,10 @@ a future separate-tranche machine-check candidate; recommended enforcement
 placement is future pre-dispatch autorun; C05 remains
 `DEFERRED_PENDING_FPC_T3_C01`.
 
-AOT-T3 B12 machine-check hardening remains parked/queued pending operator
-review and AHB sequencing decision. No registry edit, checker implementation,
-runtime/source/test mutation, provider/live/public-sync/new legacy scan, C05
-companion ruling, production readiness, or public readiness is authorized.
+AOT-T3 B12 machine-check hardening is closed at material commit `08659a5d`.
+No registry edit, additional checker implementation outside later authorized
+scope, runtime/source/test mutation, provider/live/public-sync/new legacy scan,
+C05 companion ruling, production readiness, or public readiness is authorized.
 
 PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
 closure commit `6ab05918` after dispatch commit `9b483168` and handoff-sync
@@ -348,13 +350,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_t1a_finding_cleanup_closed_pass_bounded_operator_decision_required`.
+Mode: `aot_t3_dispatch_manifest_scope_check_closed_pass_bounded_operator_decision_required`.
 
-AHB-T1A Finding Cleanup is `CLOSED_PASS_BOUNDED` at material commit
-`9b21a901`. Next allowed move: operator decision on whether to open AHB-T2
-Agent Handoff Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone
-first, or revise the model. AHB-T2 is not opened unilaterally. AOT-T3 remains
-parked/queued pending operator review and AHB sequencing decision.
+AOT-T3 Dispatch Manifest Scope Check is `CLOSED_PASS_BOUNDED` at material
+commit `08659a5d`. Next allowed move: operator decision on whether to open
+AHB-T2 Agent Handoff Contract ratification, choose another bounded CVF
+foundation hardening tranche, or revise the roadmap sequence. AHB-T2 is not
+opened unilaterally. AOT-T3 is closed and should be treated as an input to any
+future AHB-T2 contract ratification.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
