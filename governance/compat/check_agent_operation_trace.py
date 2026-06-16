@@ -75,6 +75,14 @@ TRACE_REVIEW_TRIGGERS = (
     "Closure Diff Gate",
 )
 
+FUTURE_EXECUTION_SECTION_HINTS = (
+    "Write Ownership",
+    "Expected Deliverables",
+    "Required Artifact Manifest",
+    "Required Proof Manifest",
+    "Work-Order Fulfillment Manifest",
+)
+
 PROTECTED_REPO_PREFIXES = (
     ".github/",
     "AGENTS.md",
@@ -210,6 +218,26 @@ def _extract_trace_block(text: str) -> str:
     return "\n".join(lines)
 
 
+def _extract_section_by_hint(text: str, heading_hint: str) -> str:
+    """Return the markdown section whose heading contains heading_hint."""
+    lines = text.splitlines()
+    start: int | None = None
+    target = heading_hint.lower()
+    for idx, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("## ") and target in stripped.lower():
+            start = idx + 1
+            break
+    if start is None:
+        return ""
+    body: list[str] = []
+    for line in lines[start:]:
+        if line.startswith("## "):
+            break
+        body.append(line)
+    return "\n".join(body)
+
+
 def _extract_trace_field(text: str, label: str) -> str:
     """Return the cell value for a given trace table label, or empty string."""
     trace_block = _extract_trace_block(text)
@@ -223,6 +251,26 @@ def _extract_trace_field(text: str, label: str) -> str:
         if len(parts) >= 2 and parts[0].lower() == lower_label:
             return parts[1].strip()
     return ""
+
+
+def _is_dispatch_work_order(path: str, text: str) -> bool:
+    normalized = _normalize(path)
+    if not normalized.startswith("docs/work_orders/"):
+        return False
+    status_tokens = (
+        "Status: DISPATCH_READY",
+        "Status: DISPATCHED",
+        "Status: READY_FOR_REVIEW",
+        "Status: APPROVED_FOR_EXECUTION",
+    )
+    if not any(token in text for token in status_tokens):
+        return False
+    closure_tokens = (
+        "Status: CLOSED",
+        "Status: CLOSED_PASS",
+        "Status: CLOSED_PASS_BOUNDED",
+    )
+    return not any(token in text for token in closure_tokens)
 
 
 def _parse_path_list(value: str) -> set[str]:
@@ -240,11 +288,20 @@ def _parse_path_list(value: str) -> set[str]:
     result: set[str] = set()
     for tok in tokens:
         tok = tok.strip()
+        tok = re.sub(r"^[-*]\s+", "", tok).strip()
         # A valid repo path must look like a file path or known directory path.
         # Root-level governed files such as AGENT_HANDOFF_*.md are valid paths.
         if tok and re.search(r"(?:^|/)[A-Za-z0-9_.-]+\.\w{1,8}$|/$", tok):
             result.add(_normalize(tok))
     return result
+
+
+def _future_execution_paths(text: str) -> set[str]:
+    future_paths: set[str] = set()
+    for heading in FUTURE_EXECUTION_SECTION_HINTS:
+        section = _extract_section_by_hint(text, heading)
+        future_paths.update(_parse_path_list(section))
+    return future_paths
 
 
 _NA_PATTERN = None
@@ -277,6 +334,15 @@ def _check_manifest_delta(
     # If we cannot parse any paths from the expected manifest, skip delta check
     if not expected_paths:
         return []
+
+    if _is_dispatch_work_order(path, text):
+        future_manifest_paths = expected_paths & _future_execution_paths(text)
+        if future_manifest_paths:
+            violations.append(
+                f"{path}: DISPATCH_SCOPE_VIOLATION - dispatch Expected manifest "
+                "lists future execution path(s): "
+                + ", ".join(sorted(future_manifest_paths))
+            )
 
     # Compare expected vs observed changed set (only A/M/R additions count).
     # A trace artifact may or may not be part of the expected deliverables:

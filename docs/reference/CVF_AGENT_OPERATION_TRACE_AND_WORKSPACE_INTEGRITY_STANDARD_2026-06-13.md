@@ -128,6 +128,22 @@ the comparison only when the expected manifest does not name it. `Actual
 changed set` must match the repo-local changed paths observed by the checker
 for the selected range.
 
+### Dispatch Manifest Scope Discipline (AOT-T3)
+
+For dispatch work orders, the Agent Operation Trace `Expected manifest` and
+`Actual changed set` describe the dispatch batch itself. They must not include
+future execution artifacts merely because the work order authorizes them.
+
+Future source, test, decision, worker-return, and completion paths belong in
+work-order sections such as `Write Ownership`, `Expected Deliverables`,
+`Required Artifact Manifest`, or acceptance criteria. The checker treats those
+sections as execution intent, not as dispatch changed-set evidence.
+
+If a dispatch work order places a future execution path in the trace
+`Expected manifest`, the checker reports `DISPATCH_SCOPE_VIOLATION`. This is a
+dispatch-authoring defect, even when the same path is correctly listed in
+`Write Ownership`.
+
 ### Worker-Authored Reference Deliverable Trace Eligibility
 
 Changed files under `docs/reference/` require a trace block only when

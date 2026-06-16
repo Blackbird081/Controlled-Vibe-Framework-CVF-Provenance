@@ -116,10 +116,35 @@ a separate AOT-lane tranche:
 
 | Queued tranche | Status | Purpose | Owner | Sequencing |
 |---|---|---|---|---|
-| AOT-T3 | QUEUED_AFTER_PLCS_T3 | Harden `governance/compat/check_agent_operation_trace.py` to scope the manifest comparison to the dispatch changed set, so dispatch packets that name future execution deliverables in Write Ownership do not fail MISSING_DELIVERABLE | Codex | Opens only after PLCS-T3 closes, on the PLCS-T3 closure commit as executionBaseHead, so the two batches do not share a changed set |
+| AOT-T3 | CLOSED_PASS_BOUNDED | Hardened `governance/compat/check_agent_operation_trace.py` to distinguish dispatch trace manifests from future execution ownership sections and fail `DISPATCH_SCOPE_VIOLATION` when a dispatch Expected manifest lists future execution paths | Codex | Shipped standalone after AHB-T1A cleanup by operator decision; AHB-T2 remains unopened |
 
 B11 stays documentation-only guidance; no B11 code enforcement is queued.
-AOT-T3 must be additive and must not regress AOT-T2 manifest enforcement.
+AOT-T3 is additive and does not supersede AOT-T2 manifest enforcement.
+
+## AOT-T3 Closure Evidence (2026-06-16)
+
+Operator selected AOT-T3 as the faster cleanup before AHB-T2.
+
+Status: CLOSED_PASS_BOUNDED.
+
+Artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_2026-06-16.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_FOR_CODEX_2026-06-16.md`
+- Standard update:
+  `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`
+- Checker/test update:
+  `governance/compat/check_agent_operation_trace.py`
+  and
+  `governance/compat/test_check_agent_operation_trace.py`
+- Completion review:
+  `docs/reviews/CVF_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_COMPLETION_2026-06-16.md`
+
+Bounded result: future execution paths listed in work-order ownership sections
+remain valid execution intent, but future paths placed in a dispatch trace
+`Expected manifest` now fail with `DISPATCH_SCOPE_VIOLATION`.
 
 ## Work Plan
 

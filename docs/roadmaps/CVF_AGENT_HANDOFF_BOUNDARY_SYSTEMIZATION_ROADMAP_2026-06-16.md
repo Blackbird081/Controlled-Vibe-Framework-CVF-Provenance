@@ -95,9 +95,9 @@ not supersede them without an explicit later decision):
   `docs/reference/CVF_MULTI_AGENT_DECISION_PACK_TEMPLATE.md`,
   `docs/reference/CVF_MULTI_AGENT_INTAKE_REVIEW_TEMPLATE.md`,
   `docs/reference/CVF_MULTI_AGENT_REBUTTAL_TEMPLATE.md`
-- AOT-T3 queued machine-check tranche:
+- AOT-T3 machine-check tranche:
   `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`
-  (Cross-Lane Queued Follow-Up section)
+  (Cross-Lane AOT-T3 section)
 - Active session next-move authorization:
   `CVF_SESSION/state/entries/nextAllowedMove.json`
 
@@ -167,7 +167,7 @@ views that must cite the contract.
 | AHB-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap, state the seam problem, request Codex critique | Claude Code proposer |
 | AHB-T1 | CLOSED_PASS_BOUNDED | Read-only audit of handoff surfaces; produced the role-configuration x phase x invariant matrix and a proposed Agent Handoff Contract model | Claude author; Codex critique/rebuttal |
 | AHB-T1A | CLOSED_PASS_BOUNDED | Immediate cleanup for AHB-T1 meta-findings: structural checker audit/handoff filename classification and canonical defect-class vocabulary proof | Codex |
-| AHB-T2 | CANDIDATE_AFTER_T1 | Ratify the canonical Agent Handoff Contract and reconcile MA1/envelope/steward/AOT surfaces under it; fold the AOT-T3 queued check in as one derived check | Decided after T1 critique |
+| AHB-T2 | CANDIDATE_AFTER_T1 | Ratify the canonical Agent Handoff Contract and reconcile MA1/envelope/steward/AOT surfaces under it; absorb the closed AOT-T3 rule as an existing AOT input, not as an unopened dependency | Decided after T1 critique |
 | AHB-T3 | CANDIDATE_AFTER_T2 | Implement a unified handoff-boundary machine check derived from the contract, at the earliest applicable gate phase | Decided after T2 |
 | AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
 
@@ -179,10 +179,10 @@ artifacts, and descriptive defect labels must carry canonical defect-class
 vocabulary such as `RULE_GAP`.
 
 AHB-T3 and the workspace tranche require fresh GC-018 and operator
-authorization. AOT-T3 (B12 machine check, queued in the finding-propagation
-roadmap) remains valid as a standalone follow-up if AHB-T2 has not yet ratified
-a superseding unified check; AHB-T2 will decide whether AOT-T3 is absorbed or
-shipped independently first.
+authorization. AOT-T3 (B12 machine check in the finding-propagation roadmap)
+was shipped independently first after operator selection. AHB-T2 should treat
+AOT-T3 as a closed AOT input when reconciling MA1, envelope, steward, and AOT
+surfaces.
 
 ## AHB-T1 Requirements (Proposed)
 
@@ -246,8 +246,9 @@ AHB-T1 execution and closure verification:
 
 AHB-T1 is `CLOSED_PASS_BOUNDED` after Codex reviewed the Claude worker audit,
 recorded a rebuttal-template critique, and accepted the bounded audit/model
-proposal. AHB-T2 ratification remains a strategic operator decision; AOT-T3
-remains parked/queued pending AHB sequencing.
+proposal. AHB-T2 ratification remains a strategic operator decision. AOT-T3 was
+shipped standalone before AHB-T2 and is now an input to future contract
+ratification rather than a parked dependency.
 
 ## Codex Critique Protocol
 

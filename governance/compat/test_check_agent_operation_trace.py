@@ -312,6 +312,72 @@ class AgentOperationTraceTests(unittest.TestCase):
 
         self.assertEqual(MODULE.find_trace_violations(changed, texts), [])
 
+    # --- AOT-T3: dispatch manifest scope discipline ---
+
+    def test_dispatch_future_paths_in_write_ownership_do_not_count_as_manifest(self) -> None:
+        path = "docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T3_EXAMPLE.md"
+        gc018 = "docs/baselines/CVF_GC018_AOT_T3_EXAMPLE.md"
+        roadmap = "docs/roadmaps/CVF_AOT_EXAMPLE_ROADMAP.md"
+        trace = (
+            "Status: DISPATCH_READY\n\n"
+            "## Write Ownership\n\n"
+            "Owned files:\n\n"
+            "- `governance/compat/check_agent_operation_trace.py`\n"
+            "- `governance/compat/test_check_agent_operation_trace.py`\n"
+            "- `docs/reviews/CVF_AOT_T3_EXAMPLE_COMPLETION.md`\n\n"
+            + VALID_TRACE.replace(
+                "| Expected manifest | N/A with reason: unit test fixture not a worker return |",
+                f"| Expected manifest | {gc018}; {path}; {roadmap} |",
+            ).replace(
+                "| Actual changed set | N/A with reason: unit test fixture not a worker return |",
+                f"| Actual changed set | {gc018}; {path}; {roadmap} |",
+            ).replace(
+                "| Manifest delta | N/A with reason: unit test fixture not a worker return |",
+                "| Manifest delta | MATCH |",
+            )
+        )
+        changed = {
+            gc018: {"A"},
+            path: {"A"},
+            roadmap: {"M"},
+        }
+        texts = {gc018: "content", path: trace, roadmap: "content"}
+
+        self.assertEqual(MODULE.find_trace_violations(changed, texts), [])
+
+    def test_dispatch_manifest_listing_future_write_ownership_path_is_violation(self) -> None:
+        path = "docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T3_EXAMPLE.md"
+        gc018 = "docs/baselines/CVF_GC018_AOT_T3_EXAMPLE.md"
+        roadmap = "docs/roadmaps/CVF_AOT_EXAMPLE_ROADMAP.md"
+        future = "governance/compat/check_agent_operation_trace.py"
+        trace = (
+            "Status: DISPATCH_READY\n\n"
+            "## Write Ownership\n\n"
+            "Owned files:\n\n"
+            f"- `{future}`\n"
+            "- `docs/reviews/CVF_AOT_T3_EXAMPLE_COMPLETION.md`\n\n"
+            + VALID_TRACE.replace(
+                "| Expected manifest | N/A with reason: unit test fixture not a worker return |",
+                f"| Expected manifest | {gc018}; {path}; {roadmap}; {future} |",
+            ).replace(
+                "| Actual changed set | N/A with reason: unit test fixture not a worker return |",
+                f"| Actual changed set | {gc018}; {path}; {roadmap} |",
+            ).replace(
+                "| Manifest delta | N/A with reason: unit test fixture not a worker return |",
+                f"| Manifest delta | MISSING_DELIVERABLE: {future} |",
+            )
+        )
+        changed = {
+            gc018: {"A"},
+            path: {"A"},
+            roadmap: {"M"},
+        }
+        texts = {gc018: "content", path: trace, roadmap: "content"}
+
+        violations = MODULE.find_trace_violations(changed, texts)
+
+        self.assertTrue(any("DISPATCH_SCOPE_VIOLATION" in v for v in violations))
+
 
 if __name__ == "__main__":
     unittest.main()
