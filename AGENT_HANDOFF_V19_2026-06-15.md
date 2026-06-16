@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fprc_t1_closed_cclv_t2_paused_pending_refresh`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex decides whether to refresh or explicitly resume CCLV-T2 Central Facts Reference Advisory Checker against the closed FPRC-T1 standard/checker before any Claude execution; parked checkpoint=CCLV-T2 paused pending Codex refresh/resume decision, RSF-T3 candidate-only pending operator selection, Model Gateway C-02 P2 parked candidate, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`cclv_t2_closed_c02_p2_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=begin Model Gateway C-02 P2 Dynamic Model Registry Boundary (GC-018 + work order + TypeScript contract + boundary doc + type tests); parked checkpoint=RSF-T3 candidate-only pending operator selection, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`fprc_t1_closed_cclv_t2_paused_pending_refresh`
+`cclv_t2_closed_c02_p2_ready`
 
-Current HEAD recorded for this handoff: `51f56133`
-(FPRC-T1 Finding Root Cause And Memory Escape Guard closure commit `51f56133`;
+Current HEAD recorded for this handoff: `bf938549`
+(CCLV-T2 Central Facts Reference Advisory Checker combined-role closure commit `bf938549`;
+FPRC-T1 Finding Root Cause And Memory Escape Guard closure commit `51f56133`;
 FPRC-T1 dispatch commit `988cb37c`;
 CCLV-T2 Central Facts Reference Advisory Checker dispatch commit `7e11c39c`
 now paused pending Codex refresh/resume decision after FPRC-T1 closure;

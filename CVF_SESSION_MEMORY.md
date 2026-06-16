@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `fprc_t1_closed_cclv_t2_paused_pending_refresh`
+Current mode marker: `cclv_t2_closed_c02_p2_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `fprc_t1_closed_cclv_t2_paused_pending_refresh`.
+Current mode: `cclv_t2_closed_c02_p2_ready`.
 
 Active handoff:
 
@@ -62,13 +62,18 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-FPRC-T1 Finding Root Cause And Memory Escape Guard is
+CCLV-T2 refreshed work order is now authored and ready for Codex to dispatch.
+Refreshed work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_FOR_CODEX_REFRESHED_2026-06-16.md`
+`dispatchBaseHead: 90205f79`. FPRC-T1 guard notes (B1-B6) integrated. No scope
+change from original CCLV-T2; GC-018 unchanged. Codex must commit the work
+order and dispatch Claude.
+
+Prior closure pointer: FPRC-T1 Finding Root Cause And Memory Escape Guard is
 `CLOSED_PASS_BOUNDED` at material commit `51f56133`.
 Codex accepted the Claude worker return after reviewer repairs to closure
 status, machine-closure table shape, work-order closure state, runtime-freshness
-evidence, and trace manifest coverage. CCLV-T2 remains paused pending Codex
-refresh or explicit resume decision against the closed FPRC-T1 standard and
-checker.
+evidence, and trace manifest coverage.
 
 Prior closure pointer: CCLV-T1 closure central facts packet template is
 `CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
@@ -182,12 +187,16 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `fprc_t1_closed_cclv_t2_paused_pending_refresh`.
+Mode: `cclv_t2_closed_c02_p2_ready`.
 
-Next move: Codex decides whether to refresh or explicitly resume CCLV-T2
-Central Facts Reference Advisory Checker against the closed FPRC-T1
-standard/checker before any Claude execution. CCLV-T2 remains paused until that
-decision is recorded.
+CCLV-T2 `CLOSED_PASS_BOUNDED` at material commit `bf938549` (combined-role,
+Claude worker + reviewer per operator instruction 2026-06-16).
+
+Next move: begin Model Gateway C-02 P2 Dynamic Model Registry Boundary.
+GC-018 + work order + TypeScript contract file (`DynamicModelRegistryContract`,
+`DynamicModelRecord`, `ModelTier`, `FindOptimalQuery` interfaces) + boundary
+definition doc + focused type tests + GC-051 entry. No source mutation of
+existing registries or runtime implementation.
 
 No provider/API call, credential/network use, provider/model addition, runtime
 behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway
