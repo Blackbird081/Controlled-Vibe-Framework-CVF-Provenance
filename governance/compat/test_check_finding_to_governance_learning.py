@@ -161,6 +161,84 @@ def test_provider_memory_only_with_explicit_na_passes() -> None:
     assert "provider_memory_only_learning_escape" not in types
 
 
+def test_provider_memory_reusable_lesson_with_na_still_fails() -> None:
+    doc = """
+# Review
+
+## Findings
+
+Reusable gate lessons were recorded in Claude memory for future agents.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Memory-only lesson | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | N/A_WITH_REASON - recorded in provider memory | N/A |
+"""
+    issues = MODULE._validate_path_with_text("docs/reviews/CVF_TEST.md", doc)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" in types
+
+
+def test_memory_md_reusable_lesson_signal_fails() -> None:
+    doc = """
+# Worker Return
+
+## Findings / Position
+
+B7, B8, and B9 lessons were written to MEMORY.md. Future work orders of the
+same kind will be faster because the lessons are stored there.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Memory-only lesson | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | DOCUMENTATION_ONLY_LEARNING | MEMORY.md updated |
+"""
+    issues = MODULE._validate_path_with_text("docs/reviews/CVF_TEST.md", doc)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" in types
+
+
+def test_memory_md_with_governed_disposition_passes() -> None:
+    doc = """
+# Worker Return
+
+## Findings / Position
+
+B7, B8, and B9 lessons were written to MEMORY.md, then promoted into a
+governed checker.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Memory-only lesson | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Checker updated |
+"""
+    issues = MODULE._validate_path_with_text("docs/reviews/CVF_TEST.md", doc)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" not in types
+
+
+def test_provider_memory_session_local_na_still_passes() -> None:
+    doc = """
+# Review
+
+## Findings
+
+Session-local operator preference was recorded in Claude memory.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Session preference | OPERATOR_SCOPE_CLARITY_GAP | DOCUMENTATION_ONLY_LEARNING | N/A_WITH_REASON - session-local personal preference only | N/A |
+"""
+    issues = MODULE._validate_path_with_text("docs/reviews/CVF_TEST.md", doc)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" not in types
+
+
 def test_provider_memory_signal_in_claude_md_phrase_detected() -> None:
     doc = VALID_DOC.replace(
         "MACHINE_CHECK_CANDIDATE",

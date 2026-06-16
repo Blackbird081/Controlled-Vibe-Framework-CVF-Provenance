@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: OPEN_FPRC_T2_CANDIDATE
+Status: ROADMAP_ACTIVE_AFTER_FPRC_T2
 
 docType: roadmap
 
@@ -94,7 +94,7 @@ Recommended taxonomy:
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | FPRC-T1 | CLOSED_PASS_BOUNDED | Add root-cause grouping standard, provider-memory learning escape guard, and boundary-prose trigger discipline | Claude worker; Codex reviewer |
-| FPRC-T2 | CANDIDATE_AFTER_T1_REVIEW | Add advisory parser/checker for finding-bearing artifacts that include the table | Future worker |
+| FPRC-T2 | CLOSED_PASS_BOUNDED | Harden provider-memory lesson promotion so reusable lessons in Claude memory or `MEMORY.md` (`NOT_CVF_SOURCE`) require CVF-governed promotion | Codex |
 | FPRC-T3 | CANDIDATE_AFTER_T2 | Pilot on one future finding-bearing closure and compare operator readability | Codex reviewer |
 
 ## Work Plan
@@ -148,6 +148,34 @@ worker-return fast gate PASS; `git diff --check` PASS.
 
 Codex reviewer owns: commit accepted material range, run pre-closure on
 committed range, and perform session sync.
+
+## FPRC-T2 Closure Evidence (2026-06-16)
+
+Operator identified a remaining control-loop gap after PLCS-T2: Claude stated
+that B7/B8/B9 were written to Claude-only memory and future same-kind work
+would be faster, but did not promote those reusable lessons into CVF governance
+until prompted.
+
+Status: CLOSED_PASS_BOUNDED.
+
+Artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_FPRC_T2_PROVIDER_MEMORY_LESSON_PROMOTION_HARDENING_2026-06-16.md`
+- Standard update:
+  `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`
+- Addendum update:
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`
+- Checker/test update:
+  `governance/compat/check_finding_to_governance_learning.py`
+  and
+  `governance/compat/test_check_finding_to_governance_learning.py`
+- Completion review:
+  `docs/reviews/CVF_FPRC_T2_PROVIDER_MEMORY_LESSON_PROMOTION_HARDENING_COMPLETION_2026-06-16.md`
+
+Bounded result: `MEMORY.md` is now treated as a provider-local memory signal;
+reusable lessons cannot be waived with generic `N/A_WITH_REASON`; B7/B8/B9
+authoring traps are written into the standard/addendum.
 
 ## Acceptance Criteria
 

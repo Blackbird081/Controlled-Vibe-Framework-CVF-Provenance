@@ -355,8 +355,27 @@ When a dispatch packet or worker return records that a lesson was stored in
 provider memory, it must also provide a CVF-governed disposition
 (`RULE_ADDED`, `STANDARD_UPDATED`, `STANDARD_ADDED`, `MACHINE_CHECK_ADDED`,
 `MACHINE_CHECK_CANDIDATE`, or `TEMPLATE_UPDATED`) pointing to a CVF source
-artifact, or an explicit `N/A_WITH_REASON` explaining why governed persistence
-is waived.
+artifact. `N/A_WITH_REASON` is valid only for a session-local, one-off, or
+non-reusable note. It is not valid for a reusable gate lesson, future-agent
+lesson, work-order authoring trap, checker behavior trap, or repeated failure
+pattern.
+
+Provider-owned `MEMORY.md` is provider-local memory unless a CVF-governed
+artifact explicitly owns it. A statement such as "lessons were written to
+MEMORY.md and future same-kind work will be faster" proves the lesson is
+reusable and must be promoted into CVF governance before closure.
+
+Authoring traps promoted by FPRC-T2:
+
+- Do not write checklist items that repeat exact section-heading strings such
+  as `## Heading Name` when a substring-based checker extracts that section.
+  Use plain prose such as "Rescan Intelligence Hardening section."
+- Use `COMPLETE_WITH_DECLARED_LIMITS` for bounded dispatch or decision packets
+  that name future closure targets; do not use `NOT_APPLICABLE_WITH_REASON`
+  when closure terms appear elsewhere in the file.
+- Use `PREDECESSOR_SATISFIED` for predecessor authority-chain status values in
+  dispatch packets; reserve `CLOSED_PASS_BOUNDED` for the current closure
+  artifact or closed child artifact evidence, not predecessor status cells.
 
 Standard:
 `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`

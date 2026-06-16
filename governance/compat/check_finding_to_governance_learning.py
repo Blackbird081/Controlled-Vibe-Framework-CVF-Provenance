@@ -13,6 +13,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -113,6 +114,14 @@ PROVIDER_MEMORY_ONLY_SIGNALS = (
     "lessons captured in memory",
     "gate lessons captured in memory",
     "new gate lessons captured in memory",
+    "stored in memory.md",
+    "saved to memory.md",
+    "recorded in memory.md",
+    "written to memory.md",
+    "added to memory.md",
+    "updated memory.md",
+    "memory.md updated",
+    "in memory.md",
     "in claude.md",
     "added to claude.md",
     "written to claude.md",
@@ -127,6 +136,34 @@ PROVIDER_MEMORY_GOVERNED_DISPOSITIONS = (
     "MACHINE_CHECK_ADDED",
     "MACHINE_CHECK_CANDIDATE",
     "TEMPLATE_UPDATED",
+)
+
+PROVIDER_MEMORY_REUSABLE_SIGNALS = (
+    "lesson",
+    "lessons",
+    "gate lesson",
+    "guard lesson",
+    "reusable",
+    "future agent",
+    "future agents",
+    "future work order",
+    "same kind of work order",
+    "next time",
+    "will be faster",
+    "b7",
+    "b8",
+    "b9",
+    "b10",
+)
+
+PROVIDER_MEMORY_LOCAL_NA_SIGNALS = (
+    "session-local",
+    "session local",
+    "operator preference",
+    "personal preference",
+    "not reusable",
+    "non-reusable",
+    "one-off",
 )
 
 
@@ -329,11 +366,17 @@ def _validate_provider_memory_learning_escape(path: str, text: str) -> list[dict
     if not _is_provider_memory_escape_path(path):
         return violations
     lowered = text.lower()
-    if not any(signal in lowered for signal in PROVIDER_MEMORY_ONLY_SIGNALS):
+    has_memory_signal = any(signal in lowered for signal in PROVIDER_MEMORY_ONLY_SIGNALS)
+    has_memory_md_signal = re.search(r"\bmemory\.md\b", lowered) is not None
+    if not has_memory_signal and not has_memory_md_signal:
         return violations
     has_governed = any(disp in text for disp in PROVIDER_MEMORY_GOVERNED_DISPOSITIONS)
+    if has_governed:
+        return violations
     has_na = "N/A_WITH_REASON" in text
-    if has_governed or has_na:
+    has_reusable_signal = any(signal in lowered for signal in PROVIDER_MEMORY_REUSABLE_SIGNALS)
+    has_local_na_signal = any(signal in lowered for signal in PROVIDER_MEMORY_LOCAL_NA_SIGNALS)
+    if has_na and has_local_na_signal and not has_reusable_signal:
         return violations
     _add(
         violations,
@@ -341,7 +384,7 @@ def _validate_provider_memory_learning_escape(path: str, text: str) -> list[dict
         "provider_memory_only_learning_escape",
         "reusable lesson stored only in provider-specific memory must have a CVF-governed "
         "promotion disposition (RULE_ADDED, STANDARD_ADDED, MACHINE_CHECK_ADDED, etc.) "
-        "or explicit N/A_WITH_REASON - provider memory is not CVF source authority",
+        "or an explicit non-reusable/session-local N/A_WITH_REASON - provider memory is not CVF source authority",
     )
     return violations
 

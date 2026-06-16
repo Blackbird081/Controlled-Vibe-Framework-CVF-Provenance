@@ -138,8 +138,13 @@ memory, the artifact must also provide one of the following in its
    `STANDARD_ADDED`, `MACHINE_CHECK_ADDED`, `MACHINE_CHECK_CANDIDATE`, or
    `TEMPLATE_UPDATED` - pointing to a CVF source artifact that carries the rule;
    OR
-2. An explicit `N/A_WITH_REASON` disposition explaining why CVF-governed
-   persistence is intentionally waived for this finding.
+2. An explicit `N/A_WITH_REASON` disposition only when the note is
+   session-local, personal-preference, one-off, or otherwise non-reusable.
+
+`N/A_WITH_REASON` is not valid for a reusable lesson, future-agent lesson,
+gate-repair lesson, work-order authoring trap, or checker behavior trap. Those
+lessons must be promoted into a CVF-governed artifact or machine-check
+candidate before closure.
 
 ### Provider-Memory-Only Detection Signals
 
@@ -154,6 +159,14 @@ finding-bearing artifact contains any of the following signals:
   - `codex memory only`
   - `provider memory only`
   - `in provider-specific memory`
+  - `stored in memory.md`
+  - `saved to memory.md`
+  - `recorded in memory.md`
+  - `written to memory.md`
+  - `added to memory.md`
+  - `updated memory.md`
+  - `memory.md updated`
+  - `in memory.md`
   - `in claude.md`
   - `added to claude.md`
   - `written to claude.md`
@@ -161,7 +174,32 @@ finding-bearing artifact contains any of the following signals:
 AND the disposition section does not contain a CVF-governed promotion
 disposition (`RULE_ADDED`, `STANDARD_UPDATED`, `STANDARD_ADDED`,
 `MACHINE_CHECK_ADDED`, `MACHINE_CHECK_CANDIDATE`, `TEMPLATE_UPDATED`) and does
-not contain `N/A_WITH_REASON`.
+not contain a non-reusable/session-local `N/A_WITH_REASON`.
+
+### FPRC-T2 Reusable Lesson Promotion Addendum
+
+Provider-owned memory files such as `MEMORY.md` are provider-local execution
+aids unless they are explicitly CVF-governed by the repository. They are not a
+shared learning surface for other agents.
+
+If an agent says a future run will be faster because a lesson was captured in
+provider memory, that statement is itself evidence of reusability. The agent
+must promote the lesson into one of:
+
+- a CVF reference standard;
+- a work-order authoring addendum;
+- a governed roadmap or completion review with a follow-up control action;
+- a checker/test update;
+- a machine-check candidate with owner and next action.
+
+Current FPRC-T2 examples:
+
+| ID | Finding | Required promotion |
+|---|---|---|
+| B7 | Checklist text that repeats a section heading such as `## Heading Name` can confuse substring-based section extraction. | Template/addendum wording or checker hardening. |
+| B8 | `NOT_APPLICABLE_WITH_REASON` can be the wrong verdict in dispatch or decision artifacts when closure-target terms appear elsewhere in the file. | Standard wording: use `COMPLETE_WITH_DECLARED_LIMITS` for bounded decision packets that name future closure targets. |
+| B9 | `CLOSED_PASS_BOUNDED` in predecessor rows can trigger closure-packaging logic before the current artifact is a closure packet. | Standard wording: use `PREDECESSOR_SATISFIED` for authority-chain predecessor status values in dispatch packets. |
+| B10 | Capturing B7-B9 only in Claude memory or `MEMORY.md` (`NOT_CVF_SOURCE`) is a provider-memory learning escape. | Governed artifact or machine check required before closure. |
 
 ### Provider Memory Is Not CVF Authority
 
