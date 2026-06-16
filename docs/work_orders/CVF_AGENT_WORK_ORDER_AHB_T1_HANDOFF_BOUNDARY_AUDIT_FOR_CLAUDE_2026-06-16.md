@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ rawMemoryReleased: false
 
 dispatchBaseHead: 105e22cf
 
-executionBaseHead: 105e22cf
+executionBaseHead: ac97f752
 
-closureBaseHead: TBD
+closureBaseHead: ac97f752
 
 EPISTEMIC_PROCESS_NA_WITH_REASON: This is a governance audit and model-proposal
 packet. No hypothesis-vs-evidence prediction comparison is required. Every audit
@@ -32,7 +32,7 @@ Canonical packet: `docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
-executionBaseHead: `105e22cf`
+executionBaseHead: `ac97f752`
 
 Current-time notes: 2026-06-16; PLCS-T3 closed at `6fc43136`; AHB roadmap
 proposed; AHB-T1 audit is the next bounded move per operator instruction.
@@ -277,37 +277,37 @@ Gate commands Codex runs before committing accepted material:
 
 ```powershell
 python governance/compat/run_worker_return_fast_gate.py
-python governance/compat/check_markdown_structural_completeness.py --base 105e22cf --head HEAD --enforce
-python governance/compat/check_agent_operation_trace.py --base 105e22cf --head HEAD --enforce
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 105e22cf --head HEAD
+python governance/compat/check_markdown_structural_completeness.py --base ac97f752 --head HEAD --enforce
+python governance/compat/check_agent_operation_trace.py --base ac97f752 --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base ac97f752 --head HEAD
 ```
 
 Gate commands after committing (closure):
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 105e22cf --head HEAD
-python governance/compat/run_agent_commit_steward_preflight.py --mode closure --base 105e22cf --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base ac97f752 --head HEAD
+python governance/compat/run_agent_commit_steward_preflight.py --mode closure --base ac97f752 --head HEAD --enforce
 ```
 
 All gates must PASS before closure is claimed.
 
 ## Closure Checklist
 
-- [ ] Required first reads (R1-R13) all confirmed read
-- [ ] Pre-flight checks passed (no HEAD drift conflict, clean worktree)
-- [ ] Negative search confirmed no same-purpose collision
-- [ ] Audit authored at required path with inventory, matrix, gap ledger, model, ratification bound, workspace note
-- [ ] Matrix covers all four role configurations x four phases x six invariants
-- [ ] Worker return states changed paths, blocked/GAP decisions, HEAD unchanged
-- [ ] Claude returned under WORKER_MUST_NOT_COMMIT (HEAD unchanged)
-- [ ] Codex recorded critique via the multi-agent rebuttal template
-- [ ] Gate commands all PASS
-- [ ] Material commit made by Codex
-- [ ] GC-018 Status updated to `DISPATCH_SATISFIED_BY_AHB_T1_REVIEW`
-- [ ] Work order Status updated to `CLOSED_PASS_BOUNDED`
-- [ ] Roadmap AHB-T1 row updated to `CLOSED_PASS_BOUNDED`
-- [ ] Pre-closure gate commands all PASS
-- [ ] Session sync performed separately after material closure
+- [x] Required first reads (R1-R13) all confirmed read
+- [x] Pre-flight checks passed (no HEAD drift conflict, clean worktree)
+- [x] Negative search confirmed no same-purpose collision
+- [x] Audit authored at required path with inventory, matrix, gap ledger, model, ratification bound, workspace note
+- [x] Matrix covers all four role configurations x four phases x six invariants
+- [x] Worker return states changed paths, blocked/GAP decisions, HEAD unchanged
+- [x] Claude returned under WORKER_MUST_NOT_COMMIT (HEAD unchanged)
+- [x] Codex recorded critique via the multi-agent rebuttal template
+- [x] Gate commands all PASS before material closure commit
+- [x] Material commit made by Codex
+- [x] GC-018 Status updated to `DISPATCH_SATISFIED_BY_AHB_T1_REVIEW`
+- [x] Work order Status updated to `CLOSED_PASS_BOUNDED`
+- [x] Roadmap AHB-T1 row updated to `CLOSED_PASS_BOUNDED`
+- [x] Pre-closure gate commands all PASS
+- [x] Session sync performed separately after material closure
 
 ## Reviewer Closure Conversion
 

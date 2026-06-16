@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: DISPATCH_SATISFIED_BY_AHB_T1_REVIEW
 
 docType: gc018
 

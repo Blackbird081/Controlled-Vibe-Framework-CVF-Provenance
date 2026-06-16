@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_T1_DISPATCH_READY
+Status: ROADMAP_ACTIVE_AFTER_AHB_T1_PASS_BOUNDED
 
 docType: roadmap
 
@@ -165,7 +165,7 @@ views that must cite the contract.
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | AHB-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap, state the seam problem, request Codex critique | Claude Code proposer |
-| AHB-T1 | DISPATCH_READY | Read-only audit of handoff surfaces; produce the role-configuration x phase x invariant matrix and a proposed Agent Handoff Contract model | Claude author; Codex critique/rebuttal |
+| AHB-T1 | CLOSED_PASS_BOUNDED | Read-only audit of handoff surfaces; produced the role-configuration x phase x invariant matrix and a proposed Agent Handoff Contract model | Claude author; Codex critique/rebuttal |
 | AHB-T2 | CANDIDATE_AFTER_T1 | Ratify the canonical Agent Handoff Contract and reconcile MA1/envelope/steward/AOT surfaces under it; fold the AOT-T3 queued check in as one derived check | Decided after T1 critique |
 | AHB-T3 | CANDIDATE_AFTER_T2 | Implement a unified handoff-boundary machine check derived from the contract, at the earliest applicable gate phase | Decided after T2 |
 | AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
@@ -233,6 +233,13 @@ AHB-T1 execution and closure verification:
 - markdown structural completeness and agent operation trace gates on the
   committed range;
 - pre-closure autorun gate and commit steward closure preflight.
+
+## AHB-T1 Closure Note
+
+AHB-T1 is `CLOSED_PASS_BOUNDED` after Codex reviewed the Claude worker audit,
+recorded a rebuttal-template critique, and accepted the bounded audit/model
+proposal. AHB-T2 ratification remains a strategic operator decision; AOT-T3
+remains parked/queued pending AHB sequencing.
 
 ## Codex Critique Protocol
 
