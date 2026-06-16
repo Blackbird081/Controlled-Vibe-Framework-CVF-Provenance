@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_STANDARD
+Status: ACTIVE_STANDARD_AND_MACHINE_ENFORCED
 
 docType: reference
 
@@ -20,7 +20,8 @@ their local-view folders.
 
 Owner boundary: this standard governs folder/index expectations for foundation
 artifacts. It does not rewrite historical artifacts by itself, authorize broad
-archive cleanup, implement machine checks, or change runtime behavior.
+archive cleanup, or change runtime behavior. The machine gate below enforces
+the storage/index surface for changed artifacts.
 
 ## Source Authority
 
@@ -110,9 +111,17 @@ index layout was handled in the same batch. If not handled, the completion must
 record `MACHINE_CHECK_CANDIDATE` or `STANDARD_CANDIDATE` with a concrete next
 control action.
 
-## Machine Check Candidate
+## Machine Enforcement
 
-Future checker candidates:
+The mandatory guard is:
+
+```powershell
+python governance/compat/check_foundation_storage_layout.py --base <baseHead> --head HEAD --enforce
+```
+
+The guard runs in the autorun workflow and local governance hook chain. It
+checks changed work orders and stable `docs/reference/<family>/` files for
+these defects:
 
 - detect new stable foundation folders without `README.md`;
 - detect work orders that refactor foundation files without a Foundation Storage
@@ -121,8 +130,6 @@ Future checker candidates:
   family folder;
 - detect active indexes that point to superseded foundation files without an
   archive disposition.
-
-No machine check is implemented by this standard.
 
 ## Agent Operation Trace Block
 

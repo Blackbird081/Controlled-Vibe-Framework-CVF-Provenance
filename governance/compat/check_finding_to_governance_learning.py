@@ -21,7 +21,7 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-STANDARD_PATH = "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md"
+STANDARD_PATH = "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md"
 THIS_SCRIPT_PATH = "governance/compat/check_finding_to_governance_learning.py"
 AUTORUN_PATH = "governance/compat/run_agent_autorun_workflow_gate.py"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"

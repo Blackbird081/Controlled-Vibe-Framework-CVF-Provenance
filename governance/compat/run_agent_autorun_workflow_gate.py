@@ -108,6 +108,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "foundation storage layout",
+            "governance/compat/check_foundation_storage_layout.py",
+            base,
+            head,
+        ),
+        _range_command(
             "public export disposition quality",
             "governance/compat/check_public_export_disposition.py",
             base,

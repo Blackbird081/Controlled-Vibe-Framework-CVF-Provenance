@@ -607,7 +607,7 @@ blocks governed closure.
 
 Canonical standard:
 
-`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`
 
 Machine guard:
 
