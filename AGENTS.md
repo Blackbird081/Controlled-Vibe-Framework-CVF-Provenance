@@ -604,6 +604,30 @@ This guard is mandatory in the autorun workflow and local hook chain. It does
 not replace the AOT trace guard, commit steward, or next-move freshness guard;
 it binds their local views back to the ratified handoff Central Core.
 
+## Mandatory Agent Interaction Workspace Design Boundary - 2026-06-17
+
+Stable front door:
+
+`docs/reference/agent_workspace/README.md`
+
+Canonical design standard:
+
+`docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+
+Any future task that proposes, analyzes, designs, builds, or modifies a
+dedicated Claude/Codex/other-agent interaction workspace must read the stable
+agent workspace front door before implementation.
+
+The AHB-Tn.1 design foundation is not workspace build authorization. A future
+workspace build, runtime state file, UI, queue, provider proof, public-sync, or
+registry edit requires fresh GC-018, a separate work order, Agent Handoff
+Contract Control Block evidence, and an Agent Workspace Design Control Block.
+
+Stable workspace foundation rules live under `docs/reference/agent_workspace/`.
+Dated GC-018 packets, work orders, reviews, and evidence remain in their normal
+execution folders. Do not use provider-local memory, chat history, or an
+unindexed folder as the source of truth for workspace design.
+
 ## Mandatory IDE Extension Multi-Provider Execution Log Guard - 2026-05-29
 
 Canonical standard:

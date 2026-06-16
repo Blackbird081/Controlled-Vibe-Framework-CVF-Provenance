@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_T3_CLOSED_AHB_TN_CANDIDATE
+Status: ROADMAP_ACTIVE_AHB_TN1_CLOSED_WORKSPACE_BUILD_CANDIDATE
 
 docType: roadmap
 
@@ -171,7 +171,8 @@ views that must cite the contract.
 | AHB-T2-F1 | CLOSED_PASS_BOUNDED | Promoted the foundation folder/index/storage rule into a stable reference folder, standard, operational-index row, and closure packet before AHB-T3 | Codex |
 | AHB-T2-F2 | CLOSED_PASS_BOUNDED | Hardened foundation storage/layout and provider-memory-only learning into machine enforcement before AHB-T3 | Codex |
 | AHB-T3 | CLOSED_PASS_BOUNDED | Implemented a unified handoff-boundary machine check derived from the contract, with stable `docs/reference/agent_handoff/` front door and autorun/local-hook binding | Codex |
-| AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
+| AHB-Tn.1 | CLOSED_PASS_BOUNDED | Analyzed and designed the dedicated agent-interaction workspace foundation with stable `docs/reference/agent_workspace/` front door; no build | Codex |
+| AHB-Tn.2 | CANDIDATE_AFTER_TN1 | Future decision whether to build or machine-harden the dedicated agent-interaction workspace against the AHB-Tn.1 design standard | Operator decision |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
 AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
@@ -271,6 +272,25 @@ handoff work orders to instantiate the Agent Handoff Contract Control Block.
 It does not build the agent-interaction workspace, mutate product runtime,
 run provider/live proof, public-sync, or edit registries. AHB-Tn remains a
 future candidate requiring separate operator authorization.
+
+## AHB-Tn.1 Closure Note
+
+AHB-Tn.1 is `CLOSED_PASS_BOUNDED`. Operator authorized bounded
+agent-interaction workspace analysis/design on 2026-06-17, and Codex created
+the stable workspace design foundation:
+
+- stable front door:
+  `docs/reference/agent_workspace/README.md`
+- stable design standard:
+  `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+- completion packet:
+  `docs/reviews/CVF_AHB_TN1_AGENT_INTERACTION_WORKSPACE_ANALYSIS_DESIGN_COMPLETION_2026-06-17.md`
+
+AHB-Tn.1 does not build the workspace, create runtime state, mutate product
+runtime, run provider/live proof, public-sync, edit registries, or claim
+production/public readiness. Any future workspace build or dedicated workspace
+checker remains AHB-Tn.2 or later and requires fresh GC-018 plus operator
+authorization.
 
 ## AHB-T1 Requirements (Proposed)
 
