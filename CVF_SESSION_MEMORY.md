@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `rsf_t3_closed_pass_bounded_next_move_fresh_auth`
+Current mode marker: `next_move_freshness_checker_closed_pass_bounded_fresh_auth`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rsf_t3_closed_pass_bounded_next_move_fresh_auth`.
+Current mode: `next_move_freshness_checker_closed_pass_bounded_fresh_auth`.
 
 Active handoff:
 
@@ -62,12 +62,18 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-RSF-T3 Roadmap State Reconciliation Non-CI2 Next-Move Sample is
-`CLOSED_PASS_BOUNDED` at material closure commit `ab683089`. Codex reviewed the
-Claude worker return against actual files, diffs, and gates, then repaired
-bounded closure evidence before committing. The verified finding is narrow:
-stale Model Gateway C-02 P2 next-move continuity existed at the earlier audit
-and dispatch-selection time, while current front-door and active handoff
+Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
+commit `8433691f`. The checker rejects current next-move surfaces that dispatch,
+reopen, or execute work already recorded as `CLOSED_PASS` or
+`CLOSED_PASS_BOUNDED` in active session state, and is wired into reviewer-fast,
+pre-commit, pre-push, autorun common gates, and steward `session-sync`.
+
+Prior closure pointer: RSF-T3 Roadmap State Reconciliation Non-CI2 Next-Move
+Sample is `CLOSED_PASS_BOUNDED` at material closure commit `ab683089`. Codex
+reviewed the Claude worker return against actual files, diffs, and gates, then
+repaired bounded closure evidence before committing. The verified finding is
+narrow: stale Model Gateway C-02 P2 next-move continuity existed at the earlier
+audit and dispatch-selection time, while current front-door and active handoff
 pointers now block C-02 P2 redispatch.
 
 Follow-up foundation hardening commit `93d0eb7f` moved the RSF-T3 dispatch
@@ -210,13 +216,11 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `rsf_t3_closed_pass_bounded_next_move_fresh_auth`.
+Mode: `next_move_freshness_checker_closed_pass_bounded_fresh_auth`.
 
-RSF-T3 is `CLOSED_PASS_BOUNDED` at material closure commit `ab683089`.
-Next allowed move: fresh operator authorization only. The next foundation move
-may open a bounded next-move freshness checker with fresh GC-018 and
-source-verified work order, or the operator may choose another foundation
-roadmap.
+Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
+commit `8433691f`. Next allowed move: fresh operator authorization only for the
+next bounded foundation roadmap or another operator-selected task.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
