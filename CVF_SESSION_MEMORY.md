@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `roadmap_state_reconciliation_t2_dispatched`
+Current mode marker: `roadmap_state_reconciliation_t2_closed_next_roadmap_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `roadmap_state_reconciliation_t2_dispatched`.
+Current mode: `roadmap_state_reconciliation_t2_closed_next_roadmap_review`.
 
 Active handoff:
 
@@ -62,12 +62,11 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Roadmap State Reconciliation RSF-T2 is dispatched at commit `221a5f08`.
-Claude may execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md`
-as a no-commit worker. The tranche is limited to a narrow dispatch-quality
-stale-roadmap redispatch guard. No runtime, provider/API, public-sync, broad
-legacy scan, or LPCI product implementation is authorized.
+Roadmap State Reconciliation RSF-T2 is `CLOSED_PASS_BOUNDED` at material commit
+`4d0883fa`. The dispatch-quality checker now has a bounded stale-roadmap
+redispatch guard with a reviewer-repaired completion-path boundary. RSF-T3 is
+candidate-only; no follow-on dispatch is authorized without fresh operator
+selection. Next allowed move: Codex may audit and propose the next roadmap.
 
 Prior closure pointer: Session-Sync Authoring Helper T2 is
 `CLOSED_PASS_BOUNDED` at material commit `5cb9d472`.
