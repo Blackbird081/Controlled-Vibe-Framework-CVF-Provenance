@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `fprc_t1_dispatched_to_claude_pending_worker_return`
+Current mode marker: `fprc_t1_closed_cclv_t2_paused_pending_refresh`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `fprc_t1_dispatched_to_claude_pending_worker_return`.
+Current mode: `fprc_t1_closed_cclv_t2_paused_pending_refresh`.
 
 Active handoff:
 
@@ -63,12 +63,12 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 FPRC-T1 Finding Root Cause And Memory Escape Guard is
-`DISPATCHED_TO_CLAUDE` at material dispatch commit `988cb37c`.
-Claude should execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_FOR_CLAUDE_2026-06-16.md`
-under `WORKER_MUST_NOT_COMMIT` and return `COMPLETE_PENDING_REVIEW`.
-CCLV-T2 remains paused pending FPRC-T1 closure or a Codex refresh of the
-CCLV-T2 work order.
+`CLOSED_PASS_BOUNDED` at material commit `51f56133`.
+Codex accepted the Claude worker return after reviewer repairs to closure
+status, machine-closure table shape, work-order closure state, runtime-freshness
+evidence, and trace manifest coverage. CCLV-T2 remains paused pending Codex
+refresh or explicit resume decision against the closed FPRC-T1 standard and
+checker.
 
 Prior closure pointer: CCLV-T1 closure central facts packet template is
 `CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
@@ -182,12 +182,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `fprc_t1_dispatched_to_claude_pending_worker_return`.
+Mode: `fprc_t1_closed_cclv_t2_paused_pending_refresh`.
 
-Next move: Claude executes FPRC-T1 under
-`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` with
-executionBaseHead, HEAD unchanged, exact changed paths, focused tests/gates,
-and claim boundary.
+Next move: Codex decides whether to refresh or explicitly resume CCLV-T2
+Central Facts Reference Advisory Checker against the closed FPRC-T1
+standard/checker before any Claude execution. CCLV-T2 remains paused until that
+decision is recorded.
 
 No provider/API call, credential/network use, provider/model addition, runtime
 behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway

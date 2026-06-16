@@ -24,16 +24,17 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fprc_t1_dispatched_to_claude_pending_worker_return`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude executes FPRC-T1 finding root-cause and memory escape guard work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW; parked checkpoint=CCLV-T2 paused pending FPRC-T1 closure, RSF-T3 candidate-only pending operator selection, Model Gateway C-02 P2 parked candidate, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`fprc_t1_closed_cclv_t2_paused_pending_refresh`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex decides whether to refresh or explicitly resume CCLV-T2 Central Facts Reference Advisory Checker against the closed FPRC-T1 standard/checker before any Claude execution; parked checkpoint=CCLV-T2 paused pending Codex refresh/resume decision, RSF-T3 candidate-only pending operator selection, Model Gateway C-02 P2 parked candidate, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`fprc_t1_dispatched_to_claude_pending_worker_return`
+`fprc_t1_closed_cclv_t2_paused_pending_refresh`
 
-Current HEAD recorded for this handoff: `988cb37c`
-(FPRC-T1 Finding Root Cause And Memory Escape Guard dispatch commit `988cb37c`;
+Current HEAD recorded for this handoff: `51f56133`
+(FPRC-T1 Finding Root Cause And Memory Escape Guard closure commit `51f56133`;
+FPRC-T1 dispatch commit `988cb37c`;
 CCLV-T2 Central Facts Reference Advisory Checker dispatch commit `7e11c39c`
-now paused pending FPRC-T1 closure;
+now paused pending Codex refresh/resume decision after FPRC-T1 closure;
 CCLV-T1 closure central facts packet template material commit `89debbd6`;
 CCLV-T1A work order template pointer refactor (1200->994 lines) material commit
 `dcc114e6`;
@@ -89,13 +90,13 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after FPRC-T1 dispatch commit
-`988cb37c` to advance the mode marker to
-`fprc_t1_dispatched_to_claude_pending_worker_return` across all surfaces,
-preserve prior bounded closures, pause CCLV-T2 pending FPRC-T1 closure, and
-route the next allowed move to Claude worker execution of the FPRC-T1 work
-order. This scope also covers regenerating the `ACTIVE_SESSION_STATE.json`
-aggregate from source entries.
+update this handoff and session front-door state after FPRC-T1 material closure
+commit `51f56133` to advance the mode marker to
+`fprc_t1_closed_cclv_t2_paused_pending_refresh` across all surfaces, preserve
+prior bounded closures, keep CCLV-T2 paused pending Codex refresh/resume
+decision, and route the next allowed move to that refresh/resume decision. This
+scope also covers regenerating the `ACTIVE_SESSION_STATE.json` aggregate from
+source entries.
 
 Protected paths:
 
@@ -105,6 +106,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/fprcT1FindingRootCauseAndMemoryEscapeGuardDispatch20260616.json`
+- `CVF_SESSION/state/entries/fprcT1FindingRootCauseAndMemoryEscapeGuardClosure20260616.json`
 - `CVF_SESSION/state/entries/cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616.json`
 - `CVF_SESSION/state/entries/cclvT1ClosureFactsPacketTemplateClosure20260616.json`
 - `CVF_SESSION/state/entries/sessionSyncPackBuilderClosure20260616.json`
@@ -131,7 +133,7 @@ Protected paths:
 Operator authorization: operator prioritized FPRC-T1 before CCLV-T2 because
 the CCLV-T2 worker could repeat provider-memory-only learning escape and
 keyword-trigger boundary prose defects. Codex dispatched FPRC-T1 at commit
-`988cb37c`.
+`988cb37c` and closed it at material commit `51f56133`.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
 batch. Do not revert Session-Sync Pack Builder material commit `a5e91d4b`,
@@ -152,12 +154,12 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-FPRC-T1 Finding Root Cause And Memory Escape Guard is `DISPATCHED_TO_CLAUDE`
-at material dispatch commit `988cb37c`. Claude should execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_FOR_CLAUDE_2026-06-16.md`
-under `WORKER_MUST_NOT_COMMIT` and return `COMPLETE_PENDING_REVIEW`. CCLV-T2
-remains paused pending FPRC-T1 closure or a Codex refresh of the CCLV-T2 work
-order.
+FPRC-T1 Finding Root Cause And Memory Escape Guard is `CLOSED_PASS_BOUNDED`
+at material commit `51f56133`. Codex accepted the Claude worker return after
+reviewer repairs to closure status, machine-closure table shape, work-order
+closure state, runtime-freshness evidence, and trace manifest coverage. CCLV-T2
+remains paused pending Codex refresh or explicit resume decision against the
+closed FPRC-T1 standard and checker.
 
 Prior closure pointer: CCLV-T1 closure central facts packet template is
 `CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
