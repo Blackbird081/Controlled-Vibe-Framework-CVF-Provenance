@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_PLCS_T3_DISPATCH_READY
+Status: ROADMAP_ACTIVE_AFTER_PLCS_T3_PASS_BOUNDED
 
 docType: roadmap
 
@@ -131,7 +131,7 @@ local views aligned, or record `N/A with reason`.
 | PLCS-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap and dispatch T1 | Codex |
 | PLCS-T1 | CLOSED_PASS_BOUNDED | Existing absorption to plane/layer workflow-chain routing matrix | Claude worker, Codex reviewer |
 | PLCS-T2 | CLOSED_PASS_BOUNDED | Decide whether FPC-T2-C01 through C04 registry-edit work should include any absorption-intake companion entry | Codex |
-| PLCS-T3 | DISPATCH_READY | Decide the companion-routing checker disposition and lock the reusable companion-block template for FPC-T2 C01-C04 registry-edit work orders | Codex |
+| PLCS-T3 | CLOSED_PASS_BOUNDED | Decide the companion-routing checker disposition and lock the reusable companion-block template for FPC-T2 C01-C04 registry-edit work orders | Codex |
 
 ## Work Plan
 
@@ -214,6 +214,48 @@ absorption/FPC/CCLV evidence into owner, workflow-chain, interlock,
 checker/template, CCLV, parallel-lane risk, and next-action dispositions. It
 does not authorize registry edits, runtime/source/test mutation, provider/live
 proof, public-sync, new legacy scan, or production/public readiness.
+
+## PLCS-T3 Closure Note
+
+PLCS-T3 is `CLOSED_PASS_BOUNDED`. Codex authored the companion-routing
+checker/template decision and completion review after dispatch commit
+`992c2270` and session-sync commit `8d375b24`.
+
+Decision:
+
+- future C01-C04 registry-edit work orders must embed the locked seven-field
+  PLCS companion block;
+- checker disposition is `CHECKER_APPROVED` as a future separate-tranche
+  machine-check candidate;
+- recommended enforcement placement is `AUTORUN_PHASE_GATE`, specifically a
+  future pre-dispatch check;
+- C05 remains `DEFERRED_PENDING_FPC_T3_C01`;
+- AOT-T3 B12 machine-check hardening remains queued after PLCS-T3 closure.
+
+Artifacts:
+
+- Decision:
+  `docs/reference/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md`
+- Completion:
+  `docs/reviews/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_COMPLETION_2026-06-16.md`
+
+Boundary: documentation-only closure; no checker implementation, gate wiring,
+registry edit, runtime/source/test mutation, external API proof, public-sync,
+C05 ruling, production readiness, or public readiness.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_FOR_CODEX_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Decision packet | `docs/reference/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` | PLCS-T3 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | N/A | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | N/A | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source or live proof used | N/A | N/A with reason |
+| System loop interlock | N/A with reason: PLCS-T3 does not edit the registry | N/A | N/A with reason |
+| Session continuity | N/A with reason: session sync follows material closure commit separately | N/A | N/A with reason |
 
 ## Verification / Evidence
 

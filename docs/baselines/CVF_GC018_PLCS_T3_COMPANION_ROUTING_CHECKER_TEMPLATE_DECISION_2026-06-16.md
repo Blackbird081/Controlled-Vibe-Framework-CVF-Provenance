@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: DISPATCH_SATISFIED_BY_PLCS_T3_REVIEW
 
 docType: gc018
 

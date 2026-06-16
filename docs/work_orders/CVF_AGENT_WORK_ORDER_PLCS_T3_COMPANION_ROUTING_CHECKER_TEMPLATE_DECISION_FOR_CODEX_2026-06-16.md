@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ rawMemoryReleased: false
 
 dispatchBaseHead: 7ca00450
 
-executionBaseHead: 7ca00450
+executionBaseHead: 8d375b24
 
-closureBaseHead: TBD
+closureBaseHead: 8d375b24
 
 EPISTEMIC_PROCESS_NA_WITH_REASON: This is a governance decision/planning
 packet. No hypothesis-vs-evidence prediction comparison is required. Every
@@ -32,7 +32,7 @@ Canonical packet: `docs/reference/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE
 
 Commit mode: `WORKER_MAY_COMMIT`
 
-executionBaseHead: `7ca00450`
+executionBaseHead: `8d375b24`
 
 Current-time notes: 2026-06-16; PLCS-T2 closed at `6ab05918`; FPRC-T2 closed
 at `7773b767`; PLCS-T3 checker/template decision is next bounded move per
@@ -293,24 +293,24 @@ All gates must PASS before closure is claimed.
 
 ## Closure Checklist
 
-- [ ] Required first reads (R1-R7) all confirmed read
-- [ ] R8 addendum read confirmed
-- [ ] Pre-flight checks passed (no HEAD drift conflict, clean worktree)
-- [ ] Negative search confirmed no same-purpose collision
-- [ ] B11/B12 promoted into governed documentation surfaces
-- [ ] Decision packet authored at required path
-- [ ] Checker disposition verdict present with reason
-- [ ] Reusable companion-block template present
-- [ ] Enforcement placement recommendation present
-- [ ] C05 token `DEFERRED_PENDING_FPC_T3_C01` present
-- [ ] All required structural sections present in decision packet
-- [ ] Pre-dispatch gate commands all PASS
-- [ ] Material commit made
-- [ ] GC-018 Status updated to `DISPATCH_SATISFIED_BY_PLCS_T3_REVIEW`
-- [ ] Work order Status updated to `CLOSED_PASS_BOUNDED`
-- [ ] Roadmap PLCS-T3 row updated to `CLOSED_PASS_BOUNDED`
-- [ ] Pre-closure gate commands all PASS
-- [ ] Session sync performed separately after material closure
+- [x] Required first reads (R1-R7) all confirmed read
+- [x] R8 addendum read confirmed
+- [x] Pre-flight checks passed (no HEAD drift conflict, clean worktree)
+- [x] Negative search confirmed no same-purpose collision
+- [x] B11/B12 promoted into governed documentation surfaces
+- [x] Decision packet authored at required path
+- [x] Checker disposition verdict present with reason
+- [x] Reusable companion-block template present
+- [x] Enforcement placement recommendation present
+- [x] C05 token `DEFERRED_PENDING_FPC_T3_C01` present
+- [x] All required structural sections present in decision packet
+- [x] Pre-dispatch gate commands all PASS
+- [x] Material commit made
+- [x] GC-018 Status updated to `DISPATCH_SATISFIED_BY_PLCS_T3_REVIEW`
+- [x] Work order Status updated to `CLOSED_PASS_BOUNDED`
+- [x] Roadmap PLCS-T3 row updated to `CLOSED_PASS_BOUNDED`
+- [x] Pre-closure gate commands all PASS
+- [x] Session sync performed separately after material closure
 
 ## Machine Closure Package
 
