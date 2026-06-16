@@ -64,6 +64,10 @@ Pain-point closure direction:
 
 RSF-T3 Roadmap State Reconciliation Non-CI2 Next-Move Sample is
 `DISPATCHED_TO_WORKER` at material dispatch commit `8450707a`.
+Follow-up foundation hardening commit `93d0eb7f` moved the RSF-T3 dispatch
+prompt envelope to the read-first position, wired the dispatch prompt envelope
+checker into mandatory autorun/local hook paths, and extended provider-memory
+learning escape detection to work-order authoring.
 
 Codex audited CCLV-T2 from actual commits, files, and commands instead of chat
 claims. CCLV-T2 checker implementation is acceptable within advisory scope, but
@@ -205,7 +209,8 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 Mode: `rsf_t3_dispatched_to_claude_pending_worker_return`.
 
-RSF-T3 is dispatched to Claude at material dispatch commit `8450707a`.
+RSF-T3 is dispatched to Claude at material dispatch commit `8450707a`; prompt
+envelope and provider-memory lesson guard hardening is committed at `93d0eb7f`.
 Claude may execute only:
 
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 411,
+  "stateKey": "dispatchPromptEnvelopeProviderMemoryGateHardening20260616",
+  "value": "PASS_BOUNDED at material commit 93d0eb7f. Review: docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md. Current RSF-T3 work order prompt envelope was moved to the read-first position. governance/compat/run_agent_autorun_workflow_gate.py and governance/compat/run_local_governance_hook_chain.py now run governance/compat/check_dispatch_prompt_envelope.py in mandatory dispatch/local-hook paths. governance/compat/check_finding_to_governance_learning.py now detects provider-memory-only lesson escape in docs/work_orders/ as well as finding-bearing review/audit/log/assessment artifacts. Focused tests passed 46/46; pre-dispatch autorun and implementation steward preflight passed on 32689562..HEAD before commit; pre-commit hook passed 41/41 including dispatch prompt envelope. Boundary: governance authoring/checker hardening only; no runtime/provider/live/public/session-state behavior claim. RSF-T3 remains dispatched to Claude in WORKER_MUST_NOT_COMMIT mode."
+}
