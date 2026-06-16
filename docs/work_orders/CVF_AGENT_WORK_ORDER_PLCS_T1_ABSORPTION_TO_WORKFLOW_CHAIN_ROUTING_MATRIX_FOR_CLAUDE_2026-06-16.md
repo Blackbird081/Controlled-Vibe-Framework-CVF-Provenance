@@ -156,6 +156,21 @@ continue only if the changed set is otherwise clean and inside allowed scope.
    decisions, and epistemic claim update.
 6. Run required verification commands and stop with `COMPLETE_PENDING_REVIEW`.
 
+## 10A. Standing Operating Rule For Worker
+
+Treat Central Core + Local View as the default shape for PLCS-T1 and for any
+future reusable lesson discovered while authoring the matrix.
+
+Central Core means shared facts, source authority, reusable lessons, and
+machine-check candidates belong in a governed artifact, not only in provider
+memory or a local worker note. Local View means row-level context, bounded
+exceptions, dissent, and tranche-specific evidence may stay local when they
+reference the central fact instead of copying or redefining it.
+
+If a matrix row cannot preserve this split, mark the CCLV disposition as
+`N/A with reason`, `central facts useful`, or `local view only` with a clear
+reason. Do not create a free-floating accepted lesson.
+
 ## 11. Matrix Requirements
 
 Create a matrix with at least these columns:
@@ -452,20 +467,20 @@ mutation, provider/live proof, public-sync, or downstream adapter work.
 |---|---|
 | Actor | Codex orchestrator |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-16 PLCS-T1 dispatch authoring |
+| Session or invocation | 2026-06-16 PLCS-T1 standing operating rule clarification |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | rg, PowerShell, apply_patch |
-| Target paths | this work order; PLCS-T1 GC-018; PLCS roadmap |
+| Target paths | this work order; PLCS roadmap |
 | Allowed scope source | operator instruction on 2026-06-16 |
-| Before status evidence | base `9882de99`; clean worktree |
-| After status evidence | pending dispatch commit |
-| Diff evidence | `git diff --name-status` on `9882de99..HEAD` |
+| Before status evidence | base `1d918ee0`; clean worktree |
+| After status evidence | pending rule-clarification commit |
+| Diff evidence | `git diff --name-status` on `1d918ee0..HEAD` |
 | Approval boundary | dispatch authoring only |
 | Claim boundary | no runtime/provider/live/public/registry mutation |
 | Agent type | Codex orchestrator |
-| Invocation ID | `plcs-t1-dispatch-authoring-2026-06-16` |
-| Expected manifest | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md` |
-| Actual changed set | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md` |
+| Invocation ID | `plcs-t1-standing-rule-clarification-2026-06-16` |
+| Expected manifest | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md` |
+| Actual changed set | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

@@ -107,6 +107,23 @@ concept as a standalone new plane/layer, runtime module, provider rule, memory
 fact, or public claim unless the matrix gives it a CVF owner surface and a
 workflow-chain disposition.
 
+## Standing Operating Rule
+
+From this roadmap forward, CVF foundation hardening that touches absorption,
+planes, layers, memory, learning, workflow chains, or agent handoff governance
+must preserve the Central Core + Local View pattern by default.
+
+Use a central governed artifact for shared facts, stable decisions, source
+authority, reusable lessons, and machine-check candidates. Use local views for
+context-specific routing, dissent, bounded exceptions, and tranche-local
+execution evidence. Do not let accepted knowledge remain only in provider
+memory, isolated worker returns, one-off local prose, or parallel plane/layer
+documentation without an owner and workflow-chain disposition.
+
+This is a continuity rule, not a rush order. Future work may proceed in small
+bounded tranches, but each tranche must explain how it keeps central facts and
+local views aligned, or record `N/A with reason`.
+
 ## Tranche Plan
 
 | Tranche | Status | Purpose | Owner |
