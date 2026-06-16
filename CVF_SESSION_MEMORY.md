@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`
+Current mode marker: `ahb_tn1_agent_interaction_workspace_design_closed_pass_bounded_ahb_tn2_operator_decision`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`.
+Current mode: `ahb_tn1_agent_interaction_workspace_design_closed_pass_bounded_ahb_tn2_operator_decision`.
 
 Active handoff:
 
@@ -61,6 +61,17 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+AHB-Tn.1 Agent Interaction Workspace Analysis Design is
+`CLOSED_PASS_BOUNDED` at material commit `4b8278be`. It creates the stable
+agent-workspace front door and design standard:
+
+- `docs/reference/agent_workspace/README.md`
+- `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+
+This is design foundation only. It does not build the workspace, mutate
+runtime/product code, run provider/live proof, public-sync, edit registries, or
+claim production/public readiness.
 
 AHB-T2 Agent Handoff Contract Ratification is `CLOSED_PASS_BOUNDED` at material
 commit `cabbca87` after dispatch commit `4b78355f`. Codex accepted Claude's
@@ -145,11 +156,11 @@ Prior AHB-T1 artifacts:
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
-Next allowed move: operator decision whether to authorize AHB-Tn
-agent-interaction workspace analysis/design with fresh GC-018, or choose
+Next allowed move: operator decision whether to authorize AHB-Tn.2 workspace
+build or dedicated workspace checker design with fresh GC-018, or choose
 another bounded CVF foundation/refactor tranche. Do not build the workspace,
-edit registries, mutate runtime/product code, run provider/live proof, or
-public-sync without later operator authorization.
+create generated workspace state, edit registries, mutate runtime/product code,
+run provider/live proof, or public-sync without later operator authorization.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync
@@ -385,13 +396,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`.
+Mode: `ahb_tn1_agent_interaction_workspace_design_closed_pass_bounded_ahb_tn2_operator_decision`.
 
-AHB-T3 Unified Handoff Boundary Checker is `CLOSED_PASS_BOUNDED` at material
-commit `e0927de5`. Next allowed move: operator decision whether to authorize
-AHB-Tn agent-interaction workspace analysis/design with fresh GC-018, or choose
-another bounded CVF foundation/refactor tranche. The workspace is not opened
-unilaterally.
+AHB-Tn.1 Agent Interaction Workspace Analysis Design is
+`CLOSED_PASS_BOUNDED` at material commit `4b8278be`. Next allowed move:
+operator decision whether to authorize AHB-Tn.2 workspace build or dedicated
+workspace checker design with fresh GC-018, or choose another bounded CVF
+foundation/refactor tranche. The workspace is not opened unilaterally.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

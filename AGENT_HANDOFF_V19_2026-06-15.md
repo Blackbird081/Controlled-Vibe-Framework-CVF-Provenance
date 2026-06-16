@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision whether to authorize AHB-Tn agent-interaction workspace analysis/design with fresh GC-018 or choose another bounded CVF foundation/refactor tranche; parked checkpoint=agent-interaction workspace build, registry edit, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`ahb_tn1_agent_interaction_workspace_design_closed_pass_bounded_ahb_tn2_operator_decision`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision whether to authorize AHB-Tn.2 workspace build or dedicated workspace checker design with fresh GC-018 or choose another bounded CVF foundation/refactor tranche; parked checkpoint=agent-interaction workspace build, generated workspace state, registry edit, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`
+`ahb_tn1_agent_interaction_workspace_design_closed_pass_bounded_ahb_tn2_operator_decision`
 
-Current HEAD recorded for this handoff: `e0927de5`
-(AHB-T3 Unified Handoff Boundary Checker material closure commit `e0927de5`;
+Current HEAD recorded for this handoff: `4b8278be`
+(AHB-Tn.1 Agent Interaction Workspace Analysis Design material closure commit
+`4b8278be`;
+AHB-T3 Unified Handoff Boundary Checker material closure commit `e0927de5`;
 AHB-T2-F2 Foundation Storage And Memory Learning Enforcement material closure
 commit `abfd9015`;
 AHB-T2-F1 Foundation Storage Layout Remediation material closure commit `959e2d78`;
@@ -125,8 +127,9 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after AHB-T3 material closure
-commit `e0927de5`, AHB-T2-F2 material closure commit `abfd9015`, AHB-T2-F1 material closure commit `959e2d78`,
+update this handoff and session front-door state after AHB-Tn.1 material
+closure commit `4b8278be`, AHB-T3 material closure commit `e0927de5`,
+AHB-T2-F2 material closure commit `abfd9015`, AHB-T2-F1 material closure commit `959e2d78`,
 AHB-T2 material closure commit `cabbca87`, AHB-T2 dispatch commit `4b78355f`, AOT-T3 material closure commit `08659a5d`, AHB-T1A material closure commit `9b21a901`, AHB-T1 material closure commit `11f4c4a2`, dispatch session-sync commit `ac97f752`, AHB-T1 dispatch commit
 `d1bd8a69`, PLCS-T3 material closure commit `6fc43136`, PLCS-T3 dispatch commit
 `992c2270`, FPRC-T2 material commit `7773b767`, PLCS-T2 material closure commit `6ab05918`, PLCS-T2 handoff-sync
@@ -135,10 +138,10 @@ commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
 handoff-sync commit `dbddf213`, worker material commit `b05286fe`, rule
 clarification commit `469f9bb2`, and material dispatch commit `263e9b6e` to
 preserve the mode marker as
-`ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`
-across all surfaces, record AHB-T3, AHB-T2-F2, and AHB-T2-F1 bounded closure,
-route the next allowed move to operator decision on AHB-Tn or another bounded
-foundation/refactor tranche, preserve prior bounded closures, preserve the
+`ahb_tn1_agent_interaction_workspace_design_closed_pass_bounded_ahb_tn2_operator_decision`
+across all surfaces, record AHB-Tn.1, AHB-T3, AHB-T2-F2, and AHB-T2-F1 bounded
+closure, route the next allowed move to operator decision on AHB-Tn.2 or another
+bounded foundation/refactor tranche, preserve prior bounded closures, preserve the
 Central Core + Local View standing operating rule, and keep registry edit,
 runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
 This scope also covers regenerating the
@@ -150,6 +153,7 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/ahbTn1AgentInteractionWorkspaceDesignClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbT3UnifiedHandoffBoundaryCheckerClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbT2F2FoundationStorageAndMemoryLearningEnforcementClosure20260616.json`
 - `CVF_SESSION/state/entries/aotT3DispatchManifestScopeCheckClosure20260616.json`
@@ -231,6 +235,18 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
+AHB-Tn.1 Agent Interaction Workspace Analysis Design is
+`CLOSED_PASS_BOUNDED` at material commit `4b8278be`. It creates the stable
+agent-workspace front door and design standard:
+
+`docs/reference/agent_workspace/README.md`
+
+`docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+
+This is design foundation only. It does not build the workspace, mutate
+runtime/product code, run provider/live proof, public-sync, edit registries, or
+claim production/public readiness.
+
 AHB-T3 Unified Handoff Boundary Checker is `CLOSED_PASS_BOUNDED` at material
 commit `e0927de5`. It adds the stable agent-handoff front door and mandatory
 machine-check local view for the ratified Agent Handoff Contract:
@@ -288,11 +304,11 @@ Prior AHB-T1 artifacts:
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`.
 
-Next allowed move: operator decision whether to authorize AHB-Tn
-agent-interaction workspace analysis/design with fresh GC-018, or choose
+Next allowed move: operator decision whether to authorize AHB-Tn.2 workspace
+build or dedicated workspace checker design with fresh GC-018, or choose
 another bounded CVF foundation/refactor tranche. Do not build the workspace,
-edit registries, mutate runtime/product code, run provider/live proof, or
-public-sync without later operator authorization.
+create generated workspace state, edit registries, mutate runtime/product code,
+run provider/live proof, or public-sync without later operator authorization.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync
@@ -386,15 +402,16 @@ source-verified work order.
 
 ## Next Allowed Move
 
-AHB-T3 Unified Handoff Boundary Checker is `CLOSED_PASS_BOUNDED` at material
-commit `e0927de5`. Next allowed move: operator decision whether to authorize
-AHB-Tn agent-interaction workspace analysis/design with fresh GC-018, or choose
-another bounded CVF foundation/refactor tranche. The workspace is not opened
-unilaterally.
+AHB-Tn.1 Agent Interaction Workspace Analysis Design is
+`CLOSED_PASS_BOUNDED` at material commit `4b8278be`. Next allowed move:
+operator decision whether to authorize AHB-Tn.2 workspace build or dedicated
+workspace checker design with fresh GC-018, or choose another bounded CVF
+foundation/refactor tranche. The workspace is not opened unilaterally.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
-Remediation, AHB-T2-F2 enforcement hardening, and AHB-T3 checker hardening are
-closed and should be treated as inputs to any future AHB-Tn workspace work.
+Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening, and
+AHB-Tn.1 workspace design foundation are closed and should be treated as inputs
+to any future AHB-Tn.2 workspace work.
 Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
@@ -533,7 +550,7 @@ evidence, work-order closure state, and template line-count pressure before
 committing. The guard is authoring-time only and does not claim runtime/provider
 behavior.
 
-Current mode: `ahb_t3_unified_handoff_boundary_checker_closed_pass_bounded_ahb_tn_operator_decision`.
+Current mode: `ahb_tn1_agent_interaction_workspace_design_closed_pass_bounded_ahb_tn2_operator_decision`.
 
 ## Latest Closed LHW Wave
 
