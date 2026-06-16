@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`
+Current mode marker: `ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`.
+Current mode: `ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`.
 
 Active handoff:
 
@@ -62,14 +62,22 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69` from
-base `105e22cf`. Codex reviewed the Claude-authored AHB roadmap, GC-018
-baseline, and work order against actual files, repaired source-claim and
-dispatch-scope findings, added B13/B14/B15 as governed audit inputs, and
-accepted the dispatch batch.
+AHB-T1 Agent Handoff Boundary Audit is `CLOSED_PASS_BOUNDED` at material commit
+`11f4c4a2` from executionBaseHead `ac97f752` after dispatch commit `d1bd8a69`
+and dispatch session-sync commit `ac97f752`. Codex reviewed the actual Claude
+worker audit and worker-return files, authored the Codex rebuttal and
+completion review, and closed the bounded audit.
 
 Artifacts:
 
+- Audit:
+  `docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`
+- Worker return:
+  `docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_WORKER_RETURN_2026-06-16.md`
+- Codex rebuttal:
+  `docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_CODEX_REBUTTAL_2026-06-16.md`
+- Completion:
+  `docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_COMPLETION_2026-06-16.md`
 - Roadmap:
   `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`
 - GC-018:
@@ -77,11 +85,11 @@ Artifacts:
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
-Next allowed move: Claude worker executes AHB-T1 under
-`WORKER_MUST_NOT_COMMIT`, creates the audit and worker return, keeps HEAD
-unchanged, and returns for Codex actual-file review and closure. AOT-T3 B12
-machine-check hardening is parked/queued pending operator review and AHB
-sequencing decision.
+Next allowed move: operator decision on whether to open AHB-T2 Agent Handoff
+Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone first, or
+revise the model. AHB-T2 is not opened unilaterally. AOT-T3 B12 machine-check
+hardening remains parked/queued pending operator review and AHB sequencing
+decision.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync
@@ -317,16 +325,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`.
+Mode: `ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`.
 
-AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69`.
-Next allowed move: Claude worker executes AHB-T1 under
-`WORKER_MUST_NOT_COMMIT`, creates
-`docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md` and
-`docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_WORKER_RETURN_2026-06-16.md`,
-keeps HEAD unchanged, and returns for Codex actual-file review and closure.
-AOT-T3 remains parked/queued pending operator review and AHB sequencing
-decision.
+AHB-T1 Agent Handoff Boundary Audit is `CLOSED_PASS_BOUNDED` at material commit
+`11f4c4a2`. Next allowed move: operator decision on whether to open AHB-T2
+Agent Handoff Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone
+first, or revise the model. AHB-T2 is not opened unilaterally. AOT-T3 remains
+parked/queued pending operator review and AHB sequencing decision.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

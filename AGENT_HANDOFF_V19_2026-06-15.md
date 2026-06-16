@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude worker executes AHB-T1 under WORKER_MUST_NOT_COMMIT and returns uncommitted audit plus worker return for Codex actual-file review; parked checkpoint=AOT-T3 B12 machine-check hardening, registry edit, checker implementation outside later authorized scope, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision on whether to open AHB-T2 Agent Handoff Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone first, or revise the model; parked checkpoint=AOT-T3 B12 machine-check hardening, AHB-T2 not opened unilaterally, registry edit, checker implementation outside later authorized scope, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`
+`ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`
 
-Current HEAD recorded for this handoff: `d1bd8a69`
-(AHB-T1 Agent Handoff Boundary Audit dispatch commit `d1bd8a69`;
+Current HEAD recorded for this handoff: `11f4c4a2`
+(AHB-T1 Agent Handoff Boundary Audit material closure commit `11f4c4a2`;
+AHB-T1 Agent Handoff Boundary Audit dispatch session-sync commit `ac97f752`;
+AHB-T1 Agent Handoff Boundary Audit dispatch commit `d1bd8a69`;
 PLCS-T3 Companion Routing Checker/Template Decision material closure commit
 `6fc43136`;
 PLCS-T3 Companion Routing Checker/Template Decision dispatch commit
@@ -115,7 +117,8 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after AHB-T1 dispatch commit
+update this handoff and session front-door state after AHB-T1 material closure
+commit `11f4c4a2`, dispatch session-sync commit `ac97f752`, AHB-T1 dispatch commit
 `d1bd8a69`, PLCS-T3 material closure commit `6fc43136`, PLCS-T3 dispatch commit
 `992c2270`, FPRC-T2 material commit `7773b767`, PLCS-T2 material closure commit `6ab05918`, PLCS-T2 handoff-sync
 commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
@@ -123,10 +126,10 @@ commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
 handoff-sync commit `dbddf213`, worker material commit `b05286fe`, rule
 clarification commit `469f9bb2`, and material dispatch commit `263e9b6e` to
 preserve the mode marker as
-`ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`
-across all surfaces, record AHB-T1 dispatch, route the next allowed move to
-AHB-T1 worker execution/return, park AOT-T3 pending operator review and AHB
-sequencing, preserve prior bounded
+`ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`
+across all surfaces, record AHB-T1 bounded closure, route the next allowed move
+to operator decision on AHB-T2 ratification and AOT-T3 sequencing, park AOT-T3
+pending operator review and AHB sequencing, preserve prior bounded
 closures, preserve the
 Central Core + Local View standing operating rule, and keep registry edit,
 runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
@@ -140,6 +143,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ahbT1HandoffBoundaryAuditClosure20260616.json`
 - `CVF_SESSION/state/entries/ahbT1HandoffBoundaryAuditDispatch20260616.json`
 - `CVF_SESSION/state/entries/plcsT3CompanionRoutingCheckerTemplateClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT3CompanionRoutingCheckerTemplateDispatch20260616.json`
@@ -211,21 +215,25 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69` from
-base `105e22cf`. Codex reviewed the Claude-authored roadmap, GC-018 baseline,
-and work order against actual files, repaired source-claim and dispatch-scope
-findings, added B13/B14/B15 as governed audit inputs, and accepted the dispatch
-batch.
+AHB-T1 Agent Handoff Boundary Audit is `CLOSED_PASS_BOUNDED` at material commit
+`11f4c4a2` from executionBaseHead `ac97f752` after dispatch commit `d1bd8a69`
+and dispatch session-sync commit `ac97f752`. Codex reviewed the actual Claude
+worker audit and worker-return files, authored the Codex rebuttal and
+completion review, and closed the bounded audit.
 
 Artifacts:
+`docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`,
+`docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_WORKER_RETURN_2026-06-16.md`,
+`docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_CODEX_REBUTTAL_2026-06-16.md`,
+`docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_COMPLETION_2026-06-16.md`,
 `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`,
 `docs/baselines/CVF_GC018_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`,
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`.
 
-Next allowed move: Claude worker executes AHB-T1 under
-`WORKER_MUST_NOT_COMMIT`, creates the audit and worker return, keeps HEAD
-unchanged, and returns for Codex actual-file review and closure. AOT-T3 remains
+Next allowed move: operator decision on whether to open AHB-T2 Agent Handoff
+Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone first, or
+revise the model. AHB-T2 is not opened unilaterally. AOT-T3 remains
 parked/queued pending operator review and AHB sequencing decision.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
@@ -320,14 +328,11 @@ source-verified work order.
 
 ## Next Allowed Move
 
-AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69`.
-Next allowed move: Claude worker executes AHB-T1 under
-`WORKER_MUST_NOT_COMMIT`, creates
-`docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md` and
-`docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_WORKER_RETURN_2026-06-16.md`,
-keeps HEAD unchanged, and returns for Codex actual-file review and closure.
-AOT-T3 remains parked/queued pending operator review and AHB sequencing
-decision.
+AHB-T1 Agent Handoff Boundary Audit is `CLOSED_PASS_BOUNDED` at material commit
+`11f4c4a2`. Next allowed move: operator decision on whether to open AHB-T2
+Agent Handoff Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone
+first, or revise the model. AHB-T2 is not opened unilaterally. AOT-T3 remains
+parked/queued pending operator review and AHB sequencing decision.
 Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
@@ -466,7 +471,7 @@ evidence, work-order closure state, and template line-count pressure before
 committing. The guard is authoring-time only and does not claim runtime/provider
 behavior.
 
-Current mode: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`.
+Current mode: `ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`.
 
 ## Latest Closed LHW Wave
 
