@@ -24,13 +24,13 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may author GC-018/work order for CCLV-T1 central closure facts template if the operator selects it; parked checkpoint=FPRC root-cause grouping roadmap candidate, RSF-T3 candidate-only pending operator selection, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`cclv_t1_closed_next_cclv_t2_candidate`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=CCLV-T1 closure central facts packet template CLOSED (material 89debbd6); next candidate is CCLV-T2 advisory checker GC-018/work order if the operator selects it, or FPRC-T1 / C-02 P2; parked checkpoint=FPRC root-cause grouping roadmap candidate, RSF-T3 candidate-only pending operator selection, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`
+`cclv_t1_closed_next_cclv_t2_candidate`
 
-Current HEAD recorded for this handoff: `dcc114e6`
+Current HEAD recorded for this handoff: `89debbd6`
 (Prompt Envelope Read-First Placement and Central Core Local View packet
 material commit `ef6f67de`;
 Roadmap State Reconciliation RSF-T2 material closure commit `4d0883fa`;
@@ -42,7 +42,7 @@ session-sync; Session mode-consistency checker T1 material commit `e022c872`;
 T1 handoff-sync `0b4c0a7b`; T1 dispatch packet commit `401858eb`;
 session continuity authoring and mode-consistency foundation
 roadmap commit `2a65298b`; session-state mode drift fix material commit
-`7df9679d`; CCLV-T1A work order template pointer refactor (1200->994 lines) material commit `dcc114e6`; Central Core Local View roadmap and prompt envelope material commit `71b4f2ce`; Session-Sync Pack Builder And Authorization Manifest material commit
+`7df9679d`; CCLV-T1 closure central facts packet template material commit `89debbd6`; CCLV-T1A work order template pointer refactor (1200->994 lines) material commit `dcc114e6`; Central Core Local View roadmap and prompt envelope material commit `71b4f2ce`; Session-Sync Pack Builder And Authorization Manifest material commit
 `a5e91d4b`; Commit Steward Session-Sync Preflight Hardening material commit
 `d709071c`; Agent
 Dispatch Prompt Envelope Standardization material closure commit `b2654e2e`; prior
@@ -99,6 +99,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/cclvT1ClosureFactsPacketTemplateClosure20260616.json`
 - `CVF_SESSION/state/entries/sessionSyncPackBuilderClosure20260616.json`
 - `CVF_SESSION/state/entries/sessionModeConsistencyCheckerClosure20260616.json`
 - `CVF_SESSION/state/entries/sessionSyncAuthoringHelperClosure20260616.json`

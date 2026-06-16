@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`
+Current mode marker: `cclv_t1_closed_next_cclv_t2_candidate`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`.
+Current mode: `cclv_t1_closed_next_cclv_t2_candidate`.
 
 Active handoff:
 
@@ -173,7 +173,7 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `central_core_local_view_prompt_header_closed_next_cclv_t1_gc018`.
+Mode: `cclv_t1_closed_next_cclv_t2_candidate`.
 
 Next move: author a source-verified GC-018/work order for CCLV-T1 central
 closure facts template if the operator selects that tranche. FPRC root-cause
