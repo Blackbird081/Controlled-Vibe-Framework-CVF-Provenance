@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`
+Current mode marker: `plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`.
+Current mode: `plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`.
 
 Active handoff:
 
@@ -62,6 +62,32 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
+closure commit `6ab05918` after dispatch commit `9b483168` and handoff-sync
+commit `29ec11b0`.
+
+Artifacts:
+
+- Decision:
+  `docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`
+- Completion:
+  `docs/reviews/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_COMPLETION_2026-06-16.md`
+- Roadmap:
+  `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`
+
+Decision: future FPC-T2 C01-C04 registry-edit work orders must carry a PLCS
+companion block with PLCS-T1 Section C row, routing disposition, CCLV
+disposition, parallel-lane risk, PLCS cross-reference, and registry-edit
+boundary. C05 remains `DEFERRED_PENDING_FPC_T3_C01`.
+
+Next allowed move: fresh operator authorization to choose PLCS-T3
+checker/template hardening, individual FPC-T2 C01-C04 registry-edit work
+orders with fresh GC-018/work orders, or another bounded CVF foundation
+hardening tranche that preserves Central Core + Local View. No registry edit,
+runtime/provider/live/public-sync/new legacy scan, Model Gateway redispatch,
+Model Gateway P3 authorization, co-work product development, production
+readiness, or public readiness is authorized.
+
 PLCS-T1 Absorption To Workflow-Chain Routing Matrix is
 `CLOSED_PASS_BOUNDED` at material closure commit `9f7cd413`. Codex accepted the
 Claude `WORKER_MUST_NOT_COMMIT` worker material at commit `b05286fe`, synced
@@ -78,11 +104,7 @@ Artifacts:
 - Completion:
   `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md`
 
-Next allowed move: fresh operator authorization to choose a bounded follow-up,
-likely PLCS-T2 registry-companion decision, PLCS-T3 checker/template hardening,
-or another CVF foundation hardening tranche that preserves Central Core + Local
-View. No runtime/provider/live/public-sync/new legacy scan/registry mutation is
-authorized.
+PLCS-T1 is superseded for next-move routing by the PLCS-T2 closure note above.
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
 commit `8433691f` with soft-wrap hardening commit `fc7171aa`. The checker rejects
@@ -239,12 +261,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `next_move_freshness_checker_closed_pass_bounded_fresh_auth`.
+Mode: `plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`.
 
-Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
-commit `8433691f` with soft-wrap hardening commit `fc7171aa`. Next allowed move:
-fresh operator authorization only for the next bounded foundation roadmap or
-another operator-selected task.
+PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
+closure commit `6ab05918`. Next allowed move: fresh operator authorization to
+choose PLCS-T3 checker/template hardening, individual FPC-T2 C01-C04
+registry-edit work orders with fresh GC-018/work orders, or another bounded CVF
+foundation hardening tranche that preserves Central Core + Local View.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

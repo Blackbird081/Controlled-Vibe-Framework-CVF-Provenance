@@ -1,0 +1,5 @@
+{
+  "stateOrder": 408,
+  "stateKey": "plcsT2RegistryCompanionDecisionClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material closure commit 6ab05918 after dispatch commit 9b483168 and handoff-sync commit 29ec11b0. Codex authored docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md and docs/reviews/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_COMPLETION_2026-06-16.md. The decision requires future FPC-T2 C01-C04 registry-edit work orders to carry a PLCS companion block with PLCS-T1 Section C row, routing disposition, CCLV disposition, parallel-lane risk, PLCS cross-reference, and registry-edit boundary. C05 remains DEFERRED_PENDING_FPC_T3_C01. Roadmap docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md is ROADMAP_ACTIVE_AFTER_PLCS_T2 with PLCS-T2 row CLOSED_PASS_BOUNDED. Boundary: documentation-only decision; no interlock registry edit, checker implementation, runtime/source/test mutation, provider/live proof, public-sync, C05 companion ruling, downstream adapter authorization, production readiness, or public readiness."
+}

@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization to choose a bounded PLCS/CVF foundation follow-up after PLCS-T1 closure; parked checkpoint=runtime/provider/live/public-sync/new legacy scan/registry mutation, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization to choose PLCS-T3 checker/template hardening, individual FPC-T2 C01-C04 registry-edit work orders with fresh GC-018/work orders, or another bounded CVF foundation follow-up; parked checkpoint=registry edit, runtime/provider/live/public-sync/new legacy scan, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`
+`plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`
 
-Current HEAD recorded for this handoff: `9b483168`
-(PLCS-T2 Registry-Companion Decision dispatch commit `9b483168`;
+Current HEAD recorded for this handoff: `6ab05918`
+(PLCS-T2 Registry-Companion Decision material closure commit `6ab05918`;
+PLCS-T2 Registry-Companion Decision handoff-sync commit `29ec11b0`;
+PLCS-T2 Registry-Companion Decision dispatch commit `9b483168`;
 PLCS-T1 closure material commit `9f7cd413`;
 PLCS-T1 worker-material handoff-sync commit `dbddf213`;
 PLCS-T1 worker matrix and worker return accepted by Codex at material commit
@@ -106,14 +108,16 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after PLCS-T2 dispatch commit
-`9b483168`, PLCS-T1 closure commit `9f7cd413`, worker-material handoff-sync
-commit `dbddf213`, worker material commit `b05286fe`, rule clarification commit
-`469f9bb2`, and material dispatch commit `263e9b6e` to preserve the mode marker as
-`plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`
-across all surfaces, record PLCS-T1 closure, route the next allowed move to
+update this handoff and session front-door state after PLCS-T2 material closure
+commit `6ab05918`, PLCS-T2 handoff-sync commit `29ec11b0`, PLCS-T2 dispatch
+commit `9b483168`, PLCS-T1 closure commit `9f7cd413`, worker-material
+handoff-sync commit `dbddf213`, worker material commit `b05286fe`, rule
+clarification commit `469f9bb2`, and material dispatch commit `263e9b6e` to
+preserve the mode marker as
+`plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`
+across all surfaces, record PLCS-T2 closure, route the next allowed move to
 fresh operator authorization, preserve prior bounded closures, record the
-Central Core + Local View standing operating rule, and keep
+Central Core + Local View standing operating rule, and keep registry edit,
 runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
 This scope also covers regenerating the
 `ACTIVE_SESSION_STATE.json` aggregate from source entries.
@@ -125,6 +129,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/plcsT2RegistryCompanionDecisionClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT1AbsorptionWorkflowChainRoutingClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT1AbsorptionWorkflowChainRoutingDispatch20260616.json`
 - `CVF_SESSION/state/entries/nextMoveFreshnessCheckerFoundationClosure20260616.json`
@@ -164,7 +169,8 @@ Claude work order at material commit `263e9b6e`; pre-dispatch autorun and
 dispatch steward gates passed. This session-sync updates continuity only.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert PLCS-T2 dispatch commit `9b483168`,
+batch. Do not revert PLCS-T2 material closure commit `6ab05918`,
+PLCS-T2 handoff-sync commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`,
 PLCS-T1 material closure commit `9f7cd413`,
 PLCS-T1 worker-material handoff-sync commit `dbddf213`, PLCS-T1 worker material
 commit `b05286fe`, PLCS-T1 Central Core + Local View rule clarification
@@ -192,18 +198,25 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-PLCS-T2 Registry-Companion Decision dispatch is committed at `9b483168`.
+PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
+closure commit `6ab05918` after dispatch commit `9b483168` and handoff-sync
+commit `29ec11b0`.
 Artifacts:
+`docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`,
+`docs/reviews/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_COMPLETION_2026-06-16.md`,
 `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md`.
-Codex is authorized as the decision author under `WORKER_MAY_COMMIT` /
-single-agent execution. Boundary: documentation-only companion-shape decision;
-no interlock registry edit, checker implementation, runtime/source/test
-mutation, provider/live proof, public-sync, C05 companion ruling, downstream
-adapter authorization, production readiness, or public readiness.
+Decision: future FPC-T2 C01-C04 registry-edit work orders must carry a PLCS
+companion block with PLCS-T1 Section C row, routing disposition, CCLV
+disposition, parallel-lane risk, PLCS cross-reference, and registry-edit
+boundary. C05 remains `DEFERRED_PENDING_FPC_T3_C01`. Boundary:
+documentation-only companion-shape decision; no interlock registry edit,
+checker implementation, runtime/source/test mutation, provider/live proof,
+public-sync, C05 companion ruling, downstream adapter authorization,
+production readiness, or public readiness.
 
-PLCS-T1 Absorption To Workflow-Chain Routing Matrix is
+Prior closure pointer: PLCS-T1 Absorption To Workflow-Chain Routing Matrix is
 `CLOSED_PASS_BOUNDED` at material closure commit `9f7cd413`. Codex accepted
 Claude's `WORKER_MUST_NOT_COMMIT` worker material at commit `b05286fe`, synced
 handoff at `dbddf213`, then closed the bounded matrix review. Completion:
@@ -212,11 +225,7 @@ Follow-up rule clarification commit `469f9bb2` records Central Core + Local View
 as the standing operating pattern for future CVF foundation hardening that
 touches absorption, planes, layers, memory, learning, workflow chains, or agent
 handoff governance.
-Next allowed move: fresh operator authorization to choose a bounded follow-up,
-likely PLCS-T2 registry-companion decision, PLCS-T3 checker/template hardening,
-or another CVF foundation hardening tranche that preserves Central Core + Local
-View. No runtime/provider/live/public-sync/new legacy scan/registry mutation is
-authorized.
+PLCS-T1 is superseded for next-move routing by PLCS-T2 closure.
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
 commit `8433691f` with soft-wrap hardening commit `fc7171aa`. The checker rejects
@@ -257,9 +266,11 @@ source-verified work order.
 
 ## Next Allowed Move
 
-PLCS-T1 Absorption To Workflow-Chain Routing Matrix is
-`CLOSED_PASS_BOUNDED` at material closure commit `9f7cd413`. Next allowed move:
-fresh operator authorization to choose a bounded PLCS/CVF foundation follow-up.
+PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
+closure commit `6ab05918`. Next allowed move: fresh operator authorization to
+choose PLCS-T3 checker/template hardening, individual FPC-T2 C01-C04
+registry-edit work orders with fresh GC-018/work orders, or another bounded CVF
+foundation follow-up that preserves Central Core + Local View.
 Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
