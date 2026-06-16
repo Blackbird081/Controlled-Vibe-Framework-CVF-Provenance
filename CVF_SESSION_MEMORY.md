@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `roadmap_state_reconciliation_t1_closed_rsf_t2_authorized`
+Current mode marker: `roadmap_state_reconciliation_t2_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `roadmap_state_reconciliation_t1_closed_rsf_t2_authorized`.
+Current mode: `roadmap_state_reconciliation_t2_dispatched`.
 
 Active handoff:
 
@@ -62,13 +62,12 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Roadmap State Reconciliation RSF-T1 is `CLOSED_PASS_BOUNDED` at material
-commit `1c3724d0`. CI2 roadmap state now records
-`ALL_TRANCHES_CLOSED_PASS_BOUNDED`, and the touched stale CI2 roadmap is
-protected in the active archive baseline. Next allowed move: authorize and
-dispatch RSF-T2, a narrow stale-roadmap redispatch machine guard. No runtime,
-provider/API, public-sync, broad legacy scan, or LPCI product implementation is
-authorized by RSF-T1 closure.
+Roadmap State Reconciliation RSF-T2 is dispatched at commit `221a5f08`.
+Claude may execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md`
+as a no-commit worker. The tranche is limited to a narrow dispatch-quality
+stale-roadmap redispatch guard. No runtime, provider/API, public-sync, broad
+legacy scan, or LPCI product implementation is authorized.
 
 Prior closure pointer: Session-Sync Authoring Helper T2 is
 `CLOSED_PASS_BOUNDED` at material commit `5cb9d472`.
