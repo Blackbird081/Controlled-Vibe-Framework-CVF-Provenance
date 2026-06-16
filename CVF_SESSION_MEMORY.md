@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `plcs_t3_companion_routing_checker_template_dispatch_ready`
+Current mode marker: `plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `plcs_t3_companion_routing_checker_template_dispatch_ready`.
+Current mode: `plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`.
 
 Active handoff:
 
@@ -62,9 +62,10 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-PLCS-T3 Companion Routing Checker/Template Decision is `DISPATCH_READY` at
-dispatch commit `992c2270` from dispatchBaseHead `7ca00450`. Codex accepted and
-committed the dispatch batch after auditing the actual diff and gates.
+PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
+material commit `6fc43136` after dispatch commit `992c2270` and session-sync
+commit `8d375b24`. Codex authored the documentation-only decision packet,
+completion review, and bounded roadmap/work-order closure updates.
 
 Artifacts:
 
@@ -72,6 +73,10 @@ Artifacts:
   `docs/baselines/CVF_GC018_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md`
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_FOR_CODEX_2026-06-16.md`
+- Decision:
+  `docs/reference/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md`
+- Completion:
+  `docs/reviews/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_COMPLETION_2026-06-16.md`
 - PLCS roadmap:
   `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`
 - Finding propagation roadmap:
@@ -81,16 +86,18 @@ Artifacts:
   and
   `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`
 
-Result: PLCS-T3 is authorized for Codex execution to author a documentation-only
-companion-routing checker/template decision packet. B11/B12 are promoted into
-governed documentation, and AOT-T3 B12 machine-check hardening is queued after
-PLCS-T3 closure. Boundary: no checker implementation, runtime/source/test
-mutation, interlock registry edit, provider/live proof, public-sync, C05
-companion ruling, production readiness, or public readiness.
+Result: future C01-C04 registry-edit work orders must embed the locked
+seven-field PLCS companion block; checker disposition is `CHECKER_APPROVED` as
+a future separate-tranche machine-check candidate; recommended enforcement
+placement is future pre-dispatch autorun; C05 remains
+`DEFERRED_PENDING_FPC_T3_C01`.
 
-Next allowed move: Codex executes PLCS-T3 material decision/closure from
-dispatch commit `992c2270`; then run closure gates and session sync. AOT-T3
-remains queued until PLCS-T3 closure commit.
+Next allowed move: prepare and dispatch AOT-T3 B12 machine-check hardening with
+fresh GC-018/work order from PLCS-T3 material commit `6fc43136`. No registry
+edit, checker implementation outside AOT-T3 scope, runtime/source/test mutation
+outside that future authorized work order, provider/live/public-sync/new legacy
+scan, C05 companion ruling, production readiness, or public readiness is
+authorized.
 
 PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
 closure commit `6ab05918` after dispatch commit `9b483168` and handoff-sync
@@ -291,14 +298,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `plcs_t3_companion_routing_checker_template_dispatch_ready`.
+Mode: `plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`.
 
-PLCS-T3 Companion Routing Checker/Template Decision is `DISPATCH_READY` at
-dispatch commit `992c2270`. Next allowed move: Codex executes PLCS-T3 material
-decision/closure by authoring the decision packet and completion review,
-updating PLCS-T3 dispatch artifacts/roadmap for bounded closure, running
-closure gates, and then session sync. AOT-T3 B12 machine-check hardening remains
-queued until PLCS-T3 closure commit.
+PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
+material commit `6fc43136`. Next allowed move: prepare and dispatch AOT-T3 B12
+machine-check hardening with fresh GC-018/work order from PLCS-T3 material
+commit `6fc43136`.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
