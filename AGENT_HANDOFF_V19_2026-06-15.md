@@ -30,8 +30,10 @@ Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_di
 
 `plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`
 
-Current HEAD recorded for this handoff: `263e9b6e`
-(PLCS-T1 Absorption To Workflow-Chain Routing Matrix dispatch commit `263e9b6e`;
+Current HEAD recorded for this handoff: `469f9bb2`
+(PLCS-T1 Central Core + Local View standing rule clarification commit
+`469f9bb2`;
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix dispatch commit `263e9b6e`;
 Next-Move Freshness Checker soft-wrap hardening material commit `fc7171aa`;
 Next-Move Freshness Checker Foundation material commit `8433691f`;
 Roadmap State Reconciliation RSF-T3 closure material commit `ab683089`;
@@ -99,13 +101,15 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after PLCS-T1 material dispatch
-commit `263e9b6e` to preserve the mode marker as
+update this handoff and session front-door state after PLCS-T1 rule
+clarification commit `469f9bb2` and material dispatch commit `263e9b6e` to
+preserve the mode marker as
 `plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude` across all
 surfaces, record the PLCS-T1 dispatch, route the next allowed move to the
 Claude worker return under `WORKER_MUST_NOT_COMMIT`, preserve prior bounded
-closures, and keep runtime/provider/live/public-sync/new legacy scan/registry
-mutation parked. This scope also covers regenerating the
+closures, record the Central Core + Local View standing operating rule, and keep
+runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
+This scope also covers regenerating the
 `ACTIVE_SESSION_STATE.json` aggregate from source entries.
 
 Protected paths:
@@ -153,7 +157,8 @@ Claude work order at material commit `263e9b6e`; pre-dispatch autorun and
 dispatch steward gates passed. This session-sync updates continuity only.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert PLCS-T1 material dispatch commit `263e9b6e`,
+batch. Do not revert PLCS-T1 Central Core + Local View rule clarification
+commit `469f9bb2`, PLCS-T1 material dispatch commit `263e9b6e`,
 Next-Move Freshness Checker soft-wrap hardening material
 commit `fc7171aa`, Next-Move Freshness Checker Foundation material commit
 `8433691f`, RSF-T3 closure material commit `ab683089`, hardening commit
@@ -182,6 +187,10 @@ commit `263e9b6e`. This opens a bounded foundation lane to combine future
 knowledge absorption with plane/layer workflow-chain systemization. Claude work
 order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`.
+Follow-up rule clarification commit `469f9bb2` records Central Core + Local View
+as the standing operating pattern for future CVF foundation hardening that
+touches absorption, planes, layers, memory, learning, workflow chains, or agent
+handoff governance.
 Next allowed move: transfer/await the PLCS-T1 Claude worker return under
 `WORKER_MUST_NOT_COMMIT`, then Codex reviews actual changed files, gates, and
 the worker return before closure. No runtime/provider/live/public-sync/new
