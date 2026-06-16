@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=prepare and dispatch AOT-T3 B12 machine-check hardening with fresh GC-018/work order from PLCS-T3 material commit `6fc43136`; parked checkpoint=registry edit, checker implementation outside future AOT-T3 scope, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude worker executes AHB-T1 under WORKER_MUST_NOT_COMMIT and returns uncommitted audit plus worker return for Codex actual-file review; parked checkpoint=AOT-T3 B12 machine-check hardening, registry edit, checker implementation outside later authorized scope, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`
+`ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`
 
-Current HEAD recorded for this handoff: `6fc43136`
-(PLCS-T3 Companion Routing Checker/Template Decision material closure commit
+Current HEAD recorded for this handoff: `d1bd8a69`
+(AHB-T1 Agent Handoff Boundary Audit dispatch commit `d1bd8a69`;
+PLCS-T3 Companion Routing Checker/Template Decision material closure commit
 `6fc43136`;
 PLCS-T3 Companion Routing Checker/Template Decision dispatch commit
 `992c2270`;
@@ -114,16 +115,18 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after PLCS-T3 material closure
-commit `6fc43136`, PLCS-T3 dispatch commit `992c2270`, FPRC-T2 material commit `7773b767`, PLCS-T2 material closure commit `6ab05918`, PLCS-T2 handoff-sync
+update this handoff and session front-door state after AHB-T1 dispatch commit
+`d1bd8a69`, PLCS-T3 material closure commit `6fc43136`, PLCS-T3 dispatch commit
+`992c2270`, FPRC-T2 material commit `7773b767`, PLCS-T2 material closure commit `6ab05918`, PLCS-T2 handoff-sync
 commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
 `9f7cd413`, worker-material
 handoff-sync commit `dbddf213`, worker material commit `b05286fe`, rule
 clarification commit `469f9bb2`, and material dispatch commit `263e9b6e` to
 preserve the mode marker as
-`plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`
-across all surfaces, record PLCS-T3 bounded closure, route the next allowed
-move to AOT-T3 dispatch preparation, preserve prior bounded
+`ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`
+across all surfaces, record AHB-T1 dispatch, route the next allowed move to
+AHB-T1 worker execution/return, park AOT-T3 pending operator review and AHB
+sequencing, preserve prior bounded
 closures, preserve the
 Central Core + Local View standing operating rule, and keep registry edit,
 runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
@@ -137,6 +140,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ahbT1HandoffBoundaryAuditDispatch20260616.json`
 - `CVF_SESSION/state/entries/plcsT3CompanionRoutingCheckerTemplateClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT3CompanionRoutingCheckerTemplateDispatch20260616.json`
 - `CVF_SESSION/state/entries/fprcT2ProviderMemoryLessonPromotionHardeningClosure20260616.json`
@@ -206,6 +210,23 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69` from
+base `105e22cf`. Codex reviewed the Claude-authored roadmap, GC-018 baseline,
+and work order against actual files, repaired source-claim and dispatch-scope
+findings, added B13/B14/B15 as governed audit inputs, and accepted the dispatch
+batch.
+
+Artifacts:
+`docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`,
+`docs/baselines/CVF_GC018_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`,
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`.
+
+Next allowed move: Claude worker executes AHB-T1 under
+`WORKER_MUST_NOT_COMMIT`, creates the audit and worker return, keeps HEAD
+unchanged, and returns for Codex actual-file review and closure. AOT-T3 remains
+parked/queued pending operator review and AHB sequencing decision.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync
@@ -299,10 +320,14 @@ source-verified work order.
 
 ## Next Allowed Move
 
-PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
-material commit `6fc43136`. Next allowed move: prepare and dispatch AOT-T3 B12
-machine-check hardening with fresh GC-018/work order from PLCS-T3 material
-commit `6fc43136`.
+AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69`.
+Next allowed move: Claude worker executes AHB-T1 under
+`WORKER_MUST_NOT_COMMIT`, creates
+`docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md` and
+`docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_WORKER_RETURN_2026-06-16.md`,
+keeps HEAD unchanged, and returns for Codex actual-file review and closure.
+AOT-T3 remains parked/queued pending operator review and AHB sequencing
+decision.
 Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
@@ -441,7 +466,7 @@ evidence, work-order closure state, and template line-count pressure before
 committing. The guard is authoring-time only and does not claim runtime/provider
 behavior.
 
-Current mode: `plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`.
+Current mode: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`.
 
 ## Latest Closed LHW Wave
 

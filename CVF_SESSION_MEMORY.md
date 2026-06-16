@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`
+Current mode marker: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`.
+Current mode: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`.
 
 Active handoff:
 
@@ -61,6 +61,27 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69` from
+base `105e22cf`. Codex reviewed the Claude-authored AHB roadmap, GC-018
+baseline, and work order against actual files, repaired source-claim and
+dispatch-scope findings, added B13/B14/B15 as governed audit inputs, and
+accepted the dispatch batch.
+
+Artifacts:
+
+- Roadmap:
+  `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
+
+Next allowed move: Claude worker executes AHB-T1 under
+`WORKER_MUST_NOT_COMMIT`, creates the audit and worker return, keeps HEAD
+unchanged, and returns for Codex actual-file review and closure. AOT-T3 B12
+machine-check hardening is parked/queued pending operator review and AHB
+sequencing decision.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync
@@ -92,12 +113,10 @@ a future separate-tranche machine-check candidate; recommended enforcement
 placement is future pre-dispatch autorun; C05 remains
 `DEFERRED_PENDING_FPC_T3_C01`.
 
-Next allowed move: prepare and dispatch AOT-T3 B12 machine-check hardening with
-fresh GC-018/work order from PLCS-T3 material commit `6fc43136`. No registry
-edit, checker implementation outside AOT-T3 scope, runtime/source/test mutation
-outside that future authorized work order, provider/live/public-sync/new legacy
-scan, C05 companion ruling, production readiness, or public readiness is
-authorized.
+AOT-T3 B12 machine-check hardening remains parked/queued pending operator
+review and AHB sequencing decision. No registry edit, checker implementation,
+runtime/source/test mutation, provider/live/public-sync/new legacy scan, C05
+companion ruling, production readiness, or public readiness is authorized.
 
 PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
 closure commit `6ab05918` after dispatch commit `9b483168` and handoff-sync
@@ -298,12 +317,16 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `plcs_t3_companion_routing_checker_template_closed_pass_bounded_next_authorization`.
+Mode: `ahb_t1_handoff_boundary_audit_dispatched_awaiting_worker_return`.
 
-PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
-material commit `6fc43136`. Next allowed move: prepare and dispatch AOT-T3 B12
-machine-check hardening with fresh GC-018/work order from PLCS-T3 material
-commit `6fc43136`.
+AHB-T1 Agent Handoff Boundary Audit dispatch is committed at `d1bd8a69`.
+Next allowed move: Claude worker executes AHB-T1 under
+`WORKER_MUST_NOT_COMMIT`, creates
+`docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md` and
+`docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_WORKER_RETURN_2026-06-16.md`,
+keeps HEAD unchanged, and returns for Codex actual-file review and closure.
+AOT-T3 remains parked/queued pending operator review and AHB sequencing
+decision.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
