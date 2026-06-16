@@ -27,6 +27,7 @@ HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 
 APPLICABLE_PREFIXES = ("docs/logs/", "docs/reviews/", "docs/assessments/", "docs/audits/")
+PROVIDER_MEMORY_ESCAPE_PREFIXES = APPLICABLE_PREFIXES + ("docs/work_orders/",)
 ARCHIVE_PATH_MARKER = "/archive/"
 FINDING_MARKERS = ("## Quality Findings", "## Findings", "## Known Issues", "Known Issues", "| Finding |", "finding |")
 REQUIRED_SECTION = "## Finding-To-Governance Learning Disposition"
@@ -104,10 +105,14 @@ PROVIDER_MEMORY_ONLY_SIGNALS = (
     "stored in claude memory",
     "saved to claude memory",
     "recorded in claude memory",
+    "captured in claude memory",
     "claude memory only",
     "codex memory only",
     "provider memory only",
     "in provider-specific memory",
+    "lessons captured in memory",
+    "gate lessons captured in memory",
+    "new gate lessons captured in memory",
     "in claude.md",
     "added to claude.md",
     "written to claude.md",
@@ -241,6 +246,14 @@ def _is_applicable_path(path: str) -> bool:
     )
 
 
+def _is_provider_memory_escape_path(path: str) -> bool:
+    return (
+        path.endswith(".md")
+        and ARCHIVE_PATH_MARKER not in path
+        and any(path.startswith(prefix) for prefix in PROVIDER_MEMORY_ESCAPE_PREFIXES)
+    )
+
+
 def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     required = (
@@ -308,22 +321,28 @@ def _validate_finding_doc(path: str, text: str) -> list[dict[str, str]]:
         if not has_runtime_lane and not has_explicit_na:
             _add(violations, path, "runtime_learning_lane_missing", "runtime/provider/cost findings require runtime/provider/cost learning lane or explicit N/A")
 
-    # Provider-memory-only learning escape guard (FPRC-T1).
-    # A reusable lesson stored only in provider-specific memory without a
-    # CVF-governed promotion disposition is a learning escape.
-    if any(signal in lowered for signal in PROVIDER_MEMORY_ONLY_SIGNALS):
-        has_governed = any(disp in text for disp in PROVIDER_MEMORY_GOVERNED_DISPOSITIONS)
-        has_na = "N/A_WITH_REASON" in text
-        if not has_governed and not has_na:
-            _add(
-                violations,
-                path,
-                "provider_memory_only_learning_escape",
-                "reusable lesson stored only in provider-specific memory must have a CVF-governed "
-                "promotion disposition (RULE_ADDED, STANDARD_ADDED, MACHINE_CHECK_ADDED, etc.) "
-                "or explicit N/A_WITH_REASON - provider memory is not CVF source authority",
-            )
+    return violations
 
+
+def _validate_provider_memory_learning_escape(path: str, text: str) -> list[dict[str, str]]:
+    violations: list[dict[str, str]] = []
+    if not _is_provider_memory_escape_path(path):
+        return violations
+    lowered = text.lower()
+    if not any(signal in lowered for signal in PROVIDER_MEMORY_ONLY_SIGNALS):
+        return violations
+    has_governed = any(disp in text for disp in PROVIDER_MEMORY_GOVERNED_DISPOSITIONS)
+    has_na = "N/A_WITH_REASON" in text
+    if has_governed or has_na:
+        return violations
+    _add(
+        violations,
+        path,
+        "provider_memory_only_learning_escape",
+        "reusable lesson stored only in provider-specific memory must have a CVF-governed "
+        "promotion disposition (RULE_ADDED, STANDARD_ADDED, MACHINE_CHECK_ADDED, etc.) "
+        "or explicit N/A_WITH_REASON - provider memory is not CVF source authority",
+    )
     return violations
 
 
@@ -333,6 +352,7 @@ def _validate_path_with_text(path: str, text: str) -> list[dict[str, str]]:
         violations.extend(_validate_standard(path, text))
     if path in {AUTORUN_PATH, HOOK_CHAIN_PATH}:
         violations.extend(_validate_binding(path, text))
+    violations.extend(_validate_provider_memory_learning_escape(path, text))
     violations.extend(_validate_finding_doc(path, text))
     return violations
 
@@ -353,7 +373,12 @@ def _classify(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
     scoped_paths = sorted(
         path
         for path in paths_to_check
-        if path == STANDARD_PATH or path in {AUTORUN_PATH, HOOK_CHAIN_PATH} or _is_applicable_path(path)
+        if (
+            path == STANDARD_PATH
+            or path in {AUTORUN_PATH, HOOK_CHAIN_PATH}
+            or _is_applicable_path(path)
+            or _is_provider_memory_escape_path(path)
+        )
     )
     violations: list[dict[str, str]] = []
     for path in scoped_paths:

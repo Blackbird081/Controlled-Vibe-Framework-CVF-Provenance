@@ -36,6 +36,19 @@ reviewerOwnedClosurePaths:
 
 - `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md`
 
+## Dispatch Prompt Envelope
+
+```text
+Role: Claude is worker/implementer. Codex is reviewer/closer.
+Canonical packet: docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md.
+Commit mode: WORKER_MUST_NOT_COMMIT.
+Base: executionBaseHead WORKER_MUST_CAPTURE_AT_START with git rev-parse --short HEAD before edits.
+Current-time notes: RSF-T3 is documentation/audit only. Current session sync is at 32689562 after dispatch commit 8450707a. No live/provider/key/public-sync/runtime work is authorized.
+Do-not-misread notes: Do not redispatch Model Gateway C-02 P2; C-02 P2 is already closed. Do not open Model Gateway P3. Do not edit session state, active handoff, governance checker source, or runtime files.
+Required first actions: read CVF_SESSION_MEMORY.md, CVF_SESSION/ACTIVE_SESSION_STATE.json, AGENT_HANDOFF_V19_2026-06-15.md, this work order, the RSF-T3 GC-018, the audit review, the RSF roadmap, the RSF-T2 completion, the C-02 P2 work order, and the C-02 P2 state entry; then capture executionBaseHead and run the pre-flight checks.
+Return contract: COMPLETE_PENDING_REVIEW with executionBaseHead, HEAD unchanged, git status --short, git diff --name-status, required gate outputs, source evidence table, and explicit BLOCKED_WITH_REASON if forbidden scope is required.
+```
+
 ## Purpose
 
 Apply the RSF stale-roadmap freshness pattern to one non-CI2 sample: current
@@ -326,17 +339,17 @@ Write mode: modify-listed / create-listed only.
 | Session or invocation | 2026-06-16 RSF-T3 non-CI2 next-move sample |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | source reads, git status, active-session checks, worker-return fast gate |
-| Target paths | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`; `docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md` |
-| Allowed scope source | `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`; `docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md` |
-| Before status evidence | dispatch base `72fa2427` |
-| After status evidence | dispatch artifact pending commit; worker must record pending `git status --short` before return |
-| Diff evidence | dispatch batch uses `72fa2427..HEAD`; worker must record `git diff --name-status` on return |
-| Approval boundary | bounded documentation/audit worker return only |
-| Claim boundary | repo-local trace only; no runtime/provider/public/live/legacy broad scan claim |
-| Agent type | Claude worker `WORKER_MUST_NOT_COMMIT`; Codex reviewer/closer |
-| Invocation ID | `rsf-t3-non-ci2-next-move-sample-dispatch-2026-06-16` |
-| Expected manifest | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`; `docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md` |
-| Actual changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`; `docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md` |
+| Target paths | `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
+| Allowed scope source | operator 2026-06-16 foundation-hardening request; `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md` |
+| Before status evidence | clean worktree at `32689562` before prompt/gate hardening |
+| After status evidence | work order prompt envelope repaired; mandatory gate wiring pending commit |
+| Diff evidence | hardening batch uses `32689562..HEAD`; worker must record `git diff --name-status` on return |
+| Approval boundary | governance checker/wiring hardening and current work-order prompt correction only |
+| Claim boundary | repo-local trace only; no runtime/provider/public/live/legacy/session-state claim |
+| Agent type | Codex governance hardening; future Claude worker remains `WORKER_MUST_NOT_COMMIT` |
+| Invocation ID | `rsf-t3-work-order-prompt-envelope-correction-2026-06-16` |
+| Expected manifest | `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
+| Actual changed set | `docs/reviews/CVF_DISPATCH_PROMPT_ENVELOPE_AND_PROVIDER_MEMORY_GATE_HARDENING_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/test_check_finding_to_governance_learning.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized |
 
@@ -472,23 +485,6 @@ Forbidden claims:
 - public readiness, production readiness, or provider readiness;
 - legacy content was absorbed;
 - a new machine checker was implemented.
-
-## Dispatch Prompt Envelope
-
-Worker prompt:
-
-```text
-You are Claude acting as WORKER for CVF RSF-T3 Non-CI2 Next-Move Sample.
-Read the work order, GC-018, audit, RSF roadmap, RSF-T2 completion, active
-front door/state/handoff, C-02 P2 work order, and C-02 P2 state entry. Capture
-executionBaseHead first. Your scope is documentation/audit only: independently
-verify whether current continuity points to C-02 P2 after C-02 P2 is already
-closed, run the listed gates, document operator-facing next-move behavior, and
-return COMPLETE_PENDING_REVIEW without committing. Do not touch runtime,
-provider, credentials, public-sync, broad legacy scan, broad repository scan,
-session state, active handoff, governance checker source, Model Gateway
-implementation, or C-02 P2/P3 dispatch.
-```
 
 ## Finding-To-Governance Learning Disposition
 

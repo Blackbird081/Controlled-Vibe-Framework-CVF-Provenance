@@ -78,6 +78,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "dispatch prompt envelope",
+            "governance/compat/check_dispatch_prompt_envelope.py",
+            base,
+            head,
+        ),
+        _range_command(
             "agent operation trace integrity",
             "governance/compat/check_agent_operation_trace.py",
             base,
