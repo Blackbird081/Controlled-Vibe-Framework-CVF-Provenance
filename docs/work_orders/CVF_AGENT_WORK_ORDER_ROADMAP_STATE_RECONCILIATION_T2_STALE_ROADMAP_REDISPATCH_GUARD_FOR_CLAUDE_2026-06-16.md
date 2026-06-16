@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,9 +18,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: e31ac133
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: 12d805d1
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: 12d805d1
 
 riskCeiling: R1_GOVERNANCE_CHECKER_ONLY
 
@@ -197,10 +197,19 @@ changes outside Allowed Scope.
 Authorized guard-maintenance scope: this work order authorizes a narrow change
 to dispatch-quality governance checker source and its focused tests.
 
-Authorized paths:
+Protected paths:
 
 - `governance/compat/check_work_order_dispatch_quality.py`
 - `governance/compat/test_check_work_order_dispatch_quality.py`
+
+Operator authorization: operator asked Codex to continue after RSF-T1 closure
+on 2026-06-16 and dispatch RSF-T2 to Claude as a bounded governance checker/test
+change. Codex authored this source-verified packet authorizing exactly these two
+paths.
+
+Rollback boundary: revert only the RSF-T2 dispatch-quality checker/test change
+if the stale-roadmap redispatch validation or its tests are incorrect. Do not
+revert RSF-T1 closure `1c3724d0`, the RSF roadmap, or any prior closed tranche.
 
 The implementation must preserve existing checker behavior except for adding
 the stale-roadmap redispatch failure mode and its control fixture.
@@ -258,6 +267,29 @@ Work-Order Fulfillment Manifest:
 | Focused tests | `governance/compat/test_check_work_order_dispatch_quality.py` | Claude worker | ASSIGNED |
 | Worker return | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_WORKER_RETURN_2026-06-16.md` | Claude worker | ASSIGNED |
 | Completion review | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md` | Codex reviewer | REVIEWER_OWNED |
+
+## Required Artifact Manifest
+
+| Path | Owner | Required at handoff |
+|---|---|---|
+| `governance/compat/check_work_order_dispatch_quality.py` | Claude worker | Yes |
+| `governance/compat/test_check_work_order_dispatch_quality.py` | Claude worker | Yes |
+| `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_WORKER_RETURN_2026-06-16.md` | Claude worker | Yes |
+| `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md` | Codex reviewer | No |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md` | reviewer completion review authored in closure batch | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md` | RSF-T2 row set to `CLOSED_PASS_BOUNDED`; RSF-T3 candidate-only | PASS |
+| Registry JSON | BLOCKED with reason | no corpus registry JSON mutation authorized in this tranche | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no corpus registry Markdown mutation authorized in this tranche | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external source, provider, OCR, or live-proof artifact | N/A with reason |
+| System loop interlock | N/A with reason | no system loop interlock registry mutation authorized | N/A with reason |
+| Session continuity | N/A with reason | material closure excludes session-sync; session update is reviewer-owned after commit if needed | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 Required proof commands:
 
@@ -397,25 +429,25 @@ Model Gateway, or LPCI product files.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex orchestrator/author |
+| Actor | Claude worker; Codex reviewer/closer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-16 RSF-T2 dispatch packet |
+| Session or invocation | 2026-06-16 RSF-T2 material closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | source reads, apply_patch, governance gates |
-| Target paths | RSF roadmap, RSF-T2 GC-018, RSF-T2 work order |
-| Allowed scope source | operator continuation request and RSF-T1 closure |
-| Before status evidence | RSF-T1 closed at `1c3724d0`; session sync `e31ac133` |
-| After status evidence | RSF-T2 work order dispatched to Claude worker |
-| Diff evidence | dispatch batch from `e31ac133..HEAD` |
-| Approval boundary | dispatch packet authoring only; worker implementation not in this commit |
+| Command or tool surface | Claude edits, Codex apply_patch, pytest, governance gates |
+| Target paths | RSF roadmap, RSF-T2 work order, worker return, completion review, dispatch-quality checker and tests |
+| Allowed scope source | RSF-T2 work order and GC-018 |
+| Before status evidence | RSF-T2 dispatch/session sync at `12d805d1` |
+| After status evidence | RSF-T2 closed bounded in material closure batch |
+| Diff evidence | material closure batch from `12d805d1..HEAD` |
+| Approval boundary | bounded governance checker/test implementation and reviewer closure only |
 | Claim boundary | no runtime/provider/public/live/legacy broad scan claim |
-| Agent type | Codex orchestrator; Claude worker target |
-| Invocation ID | `rsf-t2-stale-roadmap-redispatch-guard-work-order-2026-06-16` |
-| Expected manifest | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md` |
-| Actual changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md` |
+| Agent type | Claude worker (WORKER_MUST_NOT_COMMIT); Codex reviewer/closer |
+| Invocation ID | `rsf-t2-stale-roadmap-redispatch-guard-material-closure-2026-06-16` |
+| Expected manifest | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py` |
+| Actual changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_COMPLETION_2026-06-16.md`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
-| Trace boundary | Dispatch packet authoring only; worker execution will update this work order and create the worker-return packet |
+| Trace boundary | RSF-T2 material closure only |
 
 ## Public Export Disposition
 

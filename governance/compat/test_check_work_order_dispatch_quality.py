@@ -2708,5 +2708,142 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertTrue(report["compliant"], report.get("violations"))
 
 
+class StaleRoadmapRedispatchGuardTests(unittest.TestCase):
+    """RSF-T2: a roadmap-derived ready/dispatch work order whose tranche already
+    has a CLOSED_PASS_BOUNDED completion must be blocked as a stale redispatch."""
+
+    def setUp(self) -> None:
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.repo_root = Path(self.temp_dir.name)
+
+    def tearDown(self) -> None:
+        self.temp_dir.cleanup()
+
+    def _write(self, rel_path: str, text: str) -> None:
+        path = self.repo_root / rel_path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+
+    def _roadmap_derived_ready_work_order(self) -> str:
+        return "\n".join(
+            [
+                "# Test Work Order",
+                "Status: DISPATCHED_TO_WORKER",
+                "docs/roadmaps/CVF_EXAMPLE_ROADMAP_2026-06-16.md",
+                "## Roadmap-To-Work-Order Trace Matrix",
+                "| Roadmap requirement | Work order section | Output | Check | Status |",
+                "|---|---|---|---|---|",
+                "| R1 | S1 | artifact | check | PASS |",
+            ]
+        )
+
+    def test_scope_token_extraction(self) -> None:
+        self.assertEqual(
+            MODULE._work_order_scope_token(
+                "docs/work_orders/CVF_AGENT_WORK_ORDER_EXAMPLE_FEATURE_FOR_CODEX_2026-06-16.md"
+            ),
+            "EXAMPLE_FEATURE",
+        )
+        # Non-canonical filename yields empty token.
+        self.assertEqual(MODULE._work_order_scope_token("docs/work_orders/random.md"), "")
+
+    def test_stale_redispatch_blocked_by_filename_match(self) -> None:
+        # T2-AC1: matching closed completion blocks stale roadmap-derived dispatch.
+        work_order = "docs/work_orders/CVF_AGENT_WORK_ORDER_EXAMPLE_FEATURE_FOR_CODEX_2026-06-16.md"
+        self._write(work_order, self._roadmap_derived_ready_work_order())
+        self._write(
+            "docs/reviews/CVF_EXAMPLE_FEATURE_COMPLETION_2026-06-16.md",
+            "# Completion\nStatus: CLOSED_PASS_BOUNDED\n",
+        )
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_stale_roadmap_redispatch(
+                work_order, self._roadmap_derived_ready_work_order()
+            )
+        self.assertTrue(
+            any("stale roadmap-derived dispatch/ready work order" in issue for issue in issues),
+            issues,
+        )
+
+    def test_non_stale_dispatch_passes_when_no_closed_completion(self) -> None:
+        # T2-AC2: non-stale roadmap-derived dispatch passes (no matching completion).
+        work_order = "docs/work_orders/CVF_AGENT_WORK_ORDER_FRESH_FEATURE_FOR_CODEX_2026-06-16.md"
+        self._write(work_order, self._roadmap_derived_ready_work_order())
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_stale_roadmap_redispatch(
+                work_order, self._roadmap_derived_ready_work_order()
+            )
+        self.assertEqual(issues, [])
+
+    def test_non_closed_completion_does_not_block(self) -> None:
+        # A completion that is not CLOSED_PASS_BOUNDED must not block dispatch.
+        work_order = "docs/work_orders/CVF_AGENT_WORK_ORDER_PENDING_FEATURE_FOR_CODEX_2026-06-16.md"
+        self._write(work_order, self._roadmap_derived_ready_work_order())
+        self._write(
+            "docs/reviews/CVF_PENDING_FEATURE_COMPLETION_2026-06-16.md",
+            "# Completion\nStatus: COMPLETE_PENDING_REVIEW\n",
+        )
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_stale_roadmap_redispatch(
+                work_order, self._roadmap_derived_ready_work_order()
+            )
+        self.assertEqual(issues, [])
+
+    def test_non_roadmap_derived_work_order_skipped(self) -> None:
+        # The guard only applies to roadmap-derived work orders.
+        work_order = "docs/work_orders/CVF_AGENT_WORK_ORDER_EXAMPLE_FEATURE_FOR_CODEX_2026-06-16.md"
+        non_roadmap_text = "# WO\nStatus: DISPATCHED_TO_WORKER\nNo roadmap reference here.\n"
+        self._write(
+            "docs/reviews/CVF_EXAMPLE_FEATURE_COMPLETION_2026-06-16.md",
+            "# Completion\nStatus: CLOSED_PASS_BOUNDED\n",
+        )
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_stale_roadmap_redispatch(work_order, non_roadmap_text)
+        self.assertEqual(issues, [])
+
+    def test_explicit_completion_path_reference_blocks(self) -> None:
+        # A bounded explicit completionReviewPath reference is also honored.
+        work_order = "docs/work_orders/CVF_AGENT_WORK_ORDER_REFERENCED_FOR_CODEX_2026-06-16.md"
+        body = "\n".join(
+            [
+                "# WO",
+                "Status: DISPATCHED_TO_WORKER",
+                "docs/roadmaps/CVF_EXAMPLE_ROADMAP_2026-06-16.md",
+                "completionReviewPath:",
+                "`docs/reviews/CVF_OTHER_SCOPE_COMPLETION_2026-06-16.md`",
+            ]
+        )
+        self._write(work_order, body)
+        self._write(
+            "docs/reviews/CVF_OTHER_SCOPE_COMPLETION_2026-06-16.md",
+            "# Completion\nStatus: CLOSED_PASS_BOUNDED\n",
+        )
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_stale_roadmap_redispatch(work_order, body)
+        self.assertTrue(any("stale roadmap-derived" in issue for issue in issues), issues)
+
+    def test_prior_completion_reference_in_authority_chain_does_not_block(self) -> None:
+        # Prior-tranche completion evidence is not the current work order's closure.
+        work_order = "docs/work_orders/CVF_AGENT_WORK_ORDER_CURRENT_SCOPE_FOR_CODEX_2026-06-16.md"
+        body = "\n".join(
+            [
+                "# WO",
+                "Status: DISPATCHED_TO_WORKER",
+                "docs/roadmaps/CVF_EXAMPLE_ROADMAP_2026-06-16.md",
+                "completionReviewPath:",
+                "`docs/reviews/CVF_CURRENT_SCOPE_COMPLETION_2026-06-16.md`",
+                "## Authority Chain",
+                "- Prior completion:",
+                "  `docs/reviews/CVF_PRIOR_SCOPE_COMPLETION_2026-06-16.md`.",
+            ]
+        )
+        self._write(
+            "docs/reviews/CVF_PRIOR_SCOPE_COMPLETION_2026-06-16.md",
+            "# Completion\nStatus: CLOSED_PASS_BOUNDED\n",
+        )
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_stale_roadmap_redispatch(work_order, body)
+        self.assertEqual(issues, [])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -473,6 +473,28 @@ def _extract_paths(text: str) -> list[str]:
     return paths
 
 
+def _extract_completion_review_paths(text: str) -> list[str]:
+    """Extract only paths from the work order's own completionReviewPath field.
+
+    Authority-chain references to prior completion artifacts are evidence for
+    dependency release, not proof that the current work order is stale.
+    """
+    lines = text.splitlines()
+    paths: list[str] = []
+    for index, line in enumerate(lines):
+        if not re.match(r"^\s*completionReviewPath\s*:", line):
+            continue
+        window = [line]
+        for follow in lines[index + 1 : index + 4]:
+            if not follow.strip():
+                break
+            if re.match(r"^\s*[A-Za-z][A-Za-z0-9 _/-]*\s*:", follow):
+                break
+            window.append(follow)
+        paths.extend(_extract_paths("\n".join(window)))
+    return paths
+
+
 def _extract_section(text: str, heading_fragment: str) -> str:
     pattern = re.compile(
         rf"^##\s+.*{re.escape(heading_fragment)}.*$([\s\S]*?)(?=^##\s+|\Z)",
@@ -1251,6 +1273,90 @@ def _validate_referenced_work_order_closure(text: str, artifact_label: str) -> l
                 f"closed {artifact_label} cites work order `{work_order_path}` with unresolved closure residue"
             )
     return issues
+
+
+def _work_order_scope_token(path: str) -> str:
+    """Derive the bounded scope token from a work-order filename.
+
+    `CVF_AGENT_WORK_ORDER_<SCOPE>_FOR_<AGENT>_<DATE>.md` -> `<SCOPE>`.
+    The completion artifact is named `CVF_<SCOPE>_COMPLETION_<DATE>.md`, so the
+    SCOPE token is the bounded join key between a work order and its closed
+    completion. Returns an empty string when the filename does not match the
+    canonical work-order shape.
+    """
+    name = Path(path.replace("\\", "/")).name
+    if not name.startswith("CVF_AGENT_WORK_ORDER_") or not name.endswith(".md"):
+        return ""
+    stem = name[len("CVF_AGENT_WORK_ORDER_"):-len(".md")]
+    # Strip the trailing `_FOR_<AGENT>_<DATE>` segment when present.
+    for_match = re.search(r"_FOR_[A-Z0-9]+_\d{4}-\d{2}-\d{2}$", stem)
+    if for_match:
+        return stem[: for_match.start()]
+    date_match = re.search(r"_\d{4}-\d{2}-\d{2}$", stem)
+    if date_match:
+        return stem[: date_match.start()]
+    return stem
+
+
+def _matching_closed_completion(path: str, text: str) -> str | None:
+    """Return a matching CLOSED_PASS_BOUNDED completion path, or None.
+
+    Uses bounded path/filename matching only -- it never performs a full-text
+    repository scan. It checks two bounded sources:
+
+    1. an explicit `completionReviewPath:` reference in the work-order body;
+    2. completion artifacts under `docs/reviews/` whose filename carries the
+       same SCOPE token as this work order (`CVF_<SCOPE>_COMPLETION_*.md`).
+
+    A match must declare `Status: CLOSED_PASS_BOUNDED`.
+    """
+    candidates: list[str] = []
+
+    # Source 1: explicit completionReviewPath reference for this work order.
+    for explicit in _extract_completion_review_paths(text):
+        normalized = explicit.replace("\\", "/")
+        if normalized.startswith("docs/reviews/") and "_COMPLETION_" in normalized:
+            candidates.append(normalized)
+
+    # Source 2: bounded filename match by SCOPE token under docs/reviews/.
+    scope = _work_order_scope_token(path)
+    if scope:
+        reviews_dir = REPO_ROOT / "docs" / "reviews"
+        if reviews_dir.is_dir():
+            prefix = f"CVF_{scope}_COMPLETION_"
+            for entry in sorted(reviews_dir.glob(f"CVF_{scope}_COMPLETION_*.md")):
+                if entry.name.startswith(prefix):
+                    candidates.append(f"docs/reviews/{entry.name}")
+
+    for candidate in sorted(set(candidates)):
+        completion_text = _read_rel(candidate)
+        if not completion_text:
+            continue
+        if _extract_status(completion_text).strip().upper() == "CLOSED_PASS_BOUNDED":
+            return candidate
+    return None
+
+
+def _validate_stale_roadmap_redispatch(path: str, text: str) -> list[str]:
+    """Block a roadmap-derived ready/dispatch work order whose tranche is closed.
+
+    RSF-T2: a stale roadmap/work-order state can survive after a matching closed
+    completion artifact already exists and mislead next-move selection. When a
+    dispatch/ready work order is roadmap-derived and a matching
+    `CLOSED_PASS_BOUNDED` completion already exists for its tranche, the work
+    order is a stale redispatch and must not pass dispatch-quality.
+    """
+    if not _is_roadmap_derived(text):
+        return []
+    completion = _matching_closed_completion(path, text)
+    if completion is None:
+        return []
+    return [
+        "stale roadmap-derived dispatch/ready work order references a tranche "
+        f"that already has a closed completion artifact `{completion}` "
+        "(Status: CLOSED_PASS_BOUNDED); reconcile the roadmap/work-order state "
+        "before redispatch instead of re-dispatching a closed tranche"
+    ]
 
 
 def _validate_provider_memory_authority_boundary(text: str, artifact_label: str) -> list[str]:
@@ -2170,6 +2276,9 @@ def _validate_work_order(path: str, text: str) -> list[str]:
 
     if dispatching and _is_roadmap_derived(text) and not _has_trace_matrix(text):
         issues.append("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix")
+
+    if dispatching:
+        issues.extend(_validate_stale_roadmap_redispatch(path, text))
 
     if dispatching and not _has_worker_autonomy_clause(text):
         issues.append("dispatch/ready work order lacks Worker Autonomy / No-Question Rule")
