@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `aot_t3_dispatch_manifest_scope_check_closed_pass_bounded_operator_decision_required`
+Current mode marker: `ahb_t2_agent_handoff_contract_ratification_dispatched_waiting_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aot_t3_dispatch_manifest_scope_check_closed_pass_bounded_operator_decision_required`.
+Current mode: `ahb_t2_agent_handoff_contract_ratification_dispatched_waiting_worker_return`.
 
 Active handoff:
 
@@ -62,12 +62,12 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AOT-T3 Dispatch Manifest Scope Check is `CLOSED_PASS_BOUNDED` at material
-commit `08659a5d` from executionBaseHead `e509aa4d`. Codex promoted B12 from a
-queued machine-check candidate into the AOT checker: future execution paths may
-live in `Write Ownership` or expected-deliverable sections, but dispatch trace
-`Expected manifest` rows that list future execution paths now fail
-`DISPATCH_SCOPE_VIOLATION`.
+AHB-T2 Agent Handoff Contract Ratification is `DISPATCH_READY` at dispatch
+commit `4b78355f` from dispatchBaseHead `88111c19` and executionBaseHead
+`88111c19`. Claude is assigned under `WORKER_MUST_NOT_COMMIT` to author the
+ratification packet and worker return, with HEAD unchanged. AOT-T3 remains a
+closed clean input: dispatch trace `Expected manifest` rows that list future
+execution paths fail `DISPATCH_SCOPE_VIOLATION`.
 
 AHB-T1A Finding Cleanup remains `CLOSED_PASS_BOUNDED` at material commit
 `9b21a901`; AHB-T1 remains `CLOSED_PASS_BOUNDED` at material commit
@@ -110,11 +110,10 @@ Prior AHB-T1 artifacts:
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
-Next allowed move: operator decision on whether to open AHB-T2 Agent Handoff
-Contract ratification, choose another bounded CVF foundation hardening tranche,
-or revise the roadmap sequence. AHB-T2 is not opened unilaterally. AOT-T3 is
-closed and should be treated as an input to any future AHB-T2 contract
-ratification.
+Next allowed move: wait for Claude AHB-T2 worker return, then Codex reviews the
+actual returned files before closure. Do not open AHB-T3, implement the unified
+checker, build the agent-interaction workspace, or public-sync without later
+operator authorization.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync

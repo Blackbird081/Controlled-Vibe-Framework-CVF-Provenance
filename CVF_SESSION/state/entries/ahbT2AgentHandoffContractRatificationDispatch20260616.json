@@ -1,0 +1,17 @@
+{
+  "stateOrder": 417,
+  "stateKey": "ahbT2AgentHandoffContractRatificationDispatch20260616",
+  "value": {
+    "status": "DISPATCH_READY",
+    "dispatchCommit": "4b78355f",
+    "dispatchBaseHead": "88111c19",
+    "executionBaseHead": "88111c19",
+    "gc018": "docs/baselines/CVF_GC018_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_FOR_CLAUDE_2026-06-16.md",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "assignedWorker": "Claude",
+    "result": "AHB-T2 contract-ratification dispatch is gate-clean and ready for Claude authoring. AOT-T3 is treated as a closed clean input.",
+    "nextAllowedMove": "Claude authors AHB-T2 ratification packet and worker return under WORKER_MUST_NOT_COMMIT from executionBaseHead 88111c19; Codex reviews actual returned files before closure."
+  }
+}
