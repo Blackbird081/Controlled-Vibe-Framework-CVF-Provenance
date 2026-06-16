@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization",
-  "previousMode": "plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization",
+  "currentMode": "plcs_t3_companion_routing_checker_template_dispatch_ready",
+  "previousMode": "fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

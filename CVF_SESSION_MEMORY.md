@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization`
+Current mode marker: `plcs_t3_companion_routing_checker_template_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization`.
+Current mode: `plcs_t3_companion_routing_checker_template_dispatch_ready`.
 
 Active handoff:
 
@@ -62,37 +62,35 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-FPRC-T2 Provider Memory Lesson Promotion Hardening is `CLOSED_PASS_BOUNDED` at
-material commit `7773b767`. Codex executed the operator-authorized foundation
-hardening after Claude reported B7/B8/B9 lessons were stored only in
-Claude-only memory and future same-kind work would be faster.
+PLCS-T3 Companion Routing Checker/Template Decision is `DISPATCH_READY` at
+dispatch commit `992c2270` from dispatchBaseHead `7ca00450`. Codex accepted and
+committed the dispatch batch after auditing the actual diff and gates.
 
 Artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_FPRC_T2_PROVIDER_MEMORY_LESSON_PROMOTION_HARDENING_2026-06-16.md`
-- Completion:
-  `docs/reviews/CVF_FPRC_T2_PROVIDER_MEMORY_LESSON_PROMOTION_HARDENING_COMPLETION_2026-06-16.md`
-- Standard:
+  `docs/baselines/CVF_GC018_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_FOR_CODEX_2026-06-16.md`
+- PLCS roadmap:
+  `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`
+- Finding propagation roadmap:
+  `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`
+- Standards:
   `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`
-- Addendum:
+  and
   `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`
-- Checker/tests:
-  `governance/compat/check_finding_to_governance_learning.py` and
-  `governance/compat/test_check_finding_to_governance_learning.py`
 
-Result: provider-local `MEMORY.md` is `NOT_CVF_SOURCE`; reusable lessons stored
-in provider memory cannot be waived with generic `N/A_WITH_REASON`; B7 exact
-heading substring traps, B8 `NOT_APPLICABLE_WITH_REASON` verdict traps, and B9
-predecessor `CLOSED_PASS_BOUNDED` status traps are now governed guidance.
+Result: PLCS-T3 is authorized for Codex execution to author a documentation-only
+companion-routing checker/template decision packet. B11/B12 are promoted into
+governed documentation, and AOT-T3 B12 machine-check hardening is queued after
+PLCS-T3 closure. Boundary: no checker implementation, runtime/source/test
+mutation, interlock registry edit, provider/live proof, public-sync, C05
+companion ruling, production readiness, or public readiness.
 
-Next allowed move: fresh operator authorization to choose PLCS-T3
-checker/template hardening, individual FPC-T2 C01-C04 registry-edit work
-orders with fresh GC-018/work orders, or another bounded CVF foundation
-hardening tranche that preserves Central Core + Local View. No registry edit,
-runtime/provider/live/public-sync/new legacy scan, Model Gateway redispatch,
-Model Gateway P3 authorization, co-work product development, production
-readiness, or public readiness is authorized.
+Next allowed move: Codex executes PLCS-T3 material decision/closure from
+dispatch commit `992c2270`; then run closure gates and session sync. AOT-T3
+remains queued until PLCS-T3 closure commit.
 
 PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
 closure commit `6ab05918` after dispatch commit `9b483168` and handoff-sync
@@ -293,13 +291,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization`.
+Mode: `plcs_t3_companion_routing_checker_template_dispatch_ready`.
 
-FPRC-T2 Provider Memory Lesson Promotion Hardening is `CLOSED_PASS_BOUNDED` at
-material commit `7773b767`. Next allowed move: fresh operator authorization to
-choose PLCS-T3 checker/template hardening, individual FPC-T2 C01-C04
-registry-edit work orders with fresh GC-018/work orders, or another bounded CVF
-foundation hardening tranche that preserves Central Core + Local View.
+PLCS-T3 Companion Routing Checker/Template Decision is `DISPATCH_READY` at
+dispatch commit `992c2270`. Next allowed move: Codex executes PLCS-T3 material
+decision/closure by authoring the decision packet and completion review,
+updating PLCS-T3 dispatch artifacts/roadmap for bounded closure, running
+closure gates, and then session sync. AOT-T3 B12 machine-check hardening remains
+queued until PLCS-T3 closure commit.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
