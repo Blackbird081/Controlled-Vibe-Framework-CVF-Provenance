@@ -98,6 +98,32 @@ GENERALIZABLE_PROMOTION_DISPOSITIONS = (
     "N/A_WITH_REASON",
 )
 
+# Phrases that indicate a lesson was stored only in provider-specific memory.
+# Detection is lower-cased before matching.
+PROVIDER_MEMORY_ONLY_SIGNALS = (
+    "stored in claude memory",
+    "saved to claude memory",
+    "recorded in claude memory",
+    "claude memory only",
+    "codex memory only",
+    "provider memory only",
+    "in provider-specific memory",
+    "in claude.md",
+    "added to claude.md",
+    "written to claude.md",
+)
+
+# Dispositions that prove a reusable lesson was promoted to CVF governance.
+# If none of these appear alongside a provider-memory signal, it is a learning escape.
+PROVIDER_MEMORY_GOVERNED_DISPOSITIONS = (
+    "RULE_ADDED",
+    "STANDARD_UPDATED",
+    "STANDARD_ADDED",
+    "MACHINE_CHECK_ADDED",
+    "MACHINE_CHECK_CANDIDATE",
+    "TEMPLATE_UPDATED",
+)
+
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
     proc = subprocess.run(
@@ -281,6 +307,23 @@ def _validate_finding_doc(path: str, text: str) -> list[dict[str, str]]:
         has_explicit_na = "N/A_WITH_REASON" in text
         if not has_runtime_lane and not has_explicit_na:
             _add(violations, path, "runtime_learning_lane_missing", "runtime/provider/cost findings require runtime/provider/cost learning lane or explicit N/A")
+
+    # Provider-memory-only learning escape guard (FPRC-T1).
+    # A reusable lesson stored only in provider-specific memory without a
+    # CVF-governed promotion disposition is a learning escape.
+    if any(signal in lowered for signal in PROVIDER_MEMORY_ONLY_SIGNALS):
+        has_governed = any(disp in text for disp in PROVIDER_MEMORY_GOVERNED_DISPOSITIONS)
+        has_na = "N/A_WITH_REASON" in text
+        if not has_governed and not has_na:
+            _add(
+                violations,
+                path,
+                "provider_memory_only_learning_escape",
+                "reusable lesson stored only in provider-specific memory must have a CVF-governed "
+                "promotion disposition (RULE_ADDED, STANDARD_ADDED, MACHINE_CHECK_ADDED, etc.) "
+                "or explicit N/A_WITH_REASON - provider memory is not CVF source authority",
+            )
+
     return violations
 
 

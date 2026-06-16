@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T1_DISPATCHED
+Status: OPEN_FPRC_T2_CANDIDATE
 
 docType: roadmap
 
@@ -93,8 +93,8 @@ Recommended taxonomy:
 
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
-| FPRC-T1 | DISPATCHED_TO_CLAUDE | Add root-cause grouping standard, provider-memory learning escape guard, and boundary-prose trigger discipline | Claude worker; Codex reviewer |
-| FPRC-T2 | CANDIDATE_AFTER_T1 | Add advisory parser/checker for finding-bearing artifacts that include the table | Future worker |
+| FPRC-T1 | CLOSED_PASS_BOUNDED | Add root-cause grouping standard, provider-memory learning escape guard, and boundary-prose trigger discipline | Claude worker; Codex reviewer |
+| FPRC-T2 | CANDIDATE_AFTER_T1_REVIEW | Add advisory parser/checker for finding-bearing artifacts that include the table | Future worker |
 | FPRC-T3 | CANDIDATE_AFTER_T2 | Pilot on one future finding-bearing closure and compare operator readability | Codex reviewer |
 
 ## Work Plan
@@ -129,6 +129,25 @@ FPRC-T1 is now dispatched before CCLV-T2 resumes.
 Dispatch boundary: foundation guard hardening only. No runtime behavior,
 public-sync, historical migration, legacy absorption, or live proof is
 authorized.
+
+## FPRC-T1 Closure Evidence (2026-06-16)
+
+Worker: Claude. Reviewer: Codex. executionBaseHead: `ba902737`.
+Status: CLOSED_PASS_BOUNDED.
+
+Artifacts delivered and accepted:
+
+- Standard: `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`
+- Addendum update: `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md` (FPRC-T1 sections added)
+- Checker update: `governance/compat/check_finding_to_governance_learning.py` (provider-memory-only escape guard)
+- Focused tests: `governance/compat/test_check_finding_to_governance_learning.py` (12/12 PASS)
+- Completion review: `docs/reviews/CVF_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_COMPLETION_2026-06-16.md`
+
+Gate results: focused pytest 12/12 PASS; checker self-run COMPLIANT;
+worker-return fast gate PASS; `git diff --check` PASS.
+
+Codex reviewer owns: commit accepted material range, run pre-closure on
+committed range, and perform session sync.
 
 ## Acceptance Criteria
 

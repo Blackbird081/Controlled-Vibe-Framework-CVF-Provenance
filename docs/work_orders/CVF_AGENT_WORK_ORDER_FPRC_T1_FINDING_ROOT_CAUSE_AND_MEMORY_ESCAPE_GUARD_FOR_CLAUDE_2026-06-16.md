@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED_TO_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -164,6 +164,14 @@ Test-Path governance/compat/check_finding_to_governance_learning.py
 Test-Path governance/compat/test_check_finding_to_governance_learning.py
 Test-Path docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md
 ```
+
+## Current Runtime Freshness Verification
+
+FPRC-T1 is a governance documentation and `governance/compat` checker tranche.
+The changed runtime-owning surface is limited to
+`governance/compat/check_finding_to_governance_learning.py`, a local governance
+checker. No product runtime source, provider adapter, API-key path, live-proof
+surface, or public-sync surface is modified by this work order closure.
 
 ### Negative Search And Collision Discipline
 
@@ -371,24 +379,24 @@ Base-anchor evidence:
 
 ## 10. Acceptance Criteria
 
-- [ ] FPRC standard exists.
-- [ ] FPRC standard includes `Root Cause To Propagated Findings`.
-- [ ] FPRC standard includes `Provider Memory Learning Escape Guard`.
-- [ ] FPRC standard includes `Boundary-Prose Trigger Discipline`.
-- [ ] Work-order authoring addendum updated.
-- [ ] Finding-learning checker updated for provider-memory-only lesson escape.
-- [ ] Focused tests pass.
-- [ ] Worker completion review records exact pending changed set.
-- [ ] CCLV-T2 remains paused.
+- [x] FPRC standard exists.
+- [x] FPRC standard includes `Root Cause To Propagated Findings`.
+- [x] FPRC standard includes `Provider Memory Learning Escape Guard`.
+- [x] FPRC standard includes `Boundary-Prose Trigger Discipline`.
+- [x] Work-order authoring addendum updated.
+- [x] Finding-learning checker updated for provider-memory-only lesson escape.
+- [x] Focused tests pass.
+- [x] Worker completion review records exact pending changed set.
+- [x] CCLV-T2 remains paused.
 
 Fail conditions:
 
-- [ ] Provider-specific memory is treated as CVF source authority.
-- [ ] Provider-memory-only lessons can close without governed learning
+- [x] Provider-specific memory is treated as CVF source authority: NOT_TRIGGERED.
+- [x] Provider-memory-only lessons can close without governed learning
   disposition or explicit `N/A_WITH_REASON`.
-- [ ] Boundary-prose guidance weakens existing evidence requirements.
-- [ ] Worker edits CCLV-T2 or provider-specific memory files.
-- [ ] Worker commits.
+- [x] Boundary-prose guidance weakens existing evidence requirements: NOT_TRIGGERED.
+- [x] Worker edits CCLV-T2 or provider-specific memory files: NOT_TRIGGERED.
+- [x] Worker commits: NOT_TRIGGERED.
 
 ## 11. Review Gate
 
@@ -404,18 +412,31 @@ Codex review requires:
 
 ## 12. Closure Checklist
 
-- [ ] Worker reported executionBaseHead and HEAD unchanged.
-- [ ] Required artifacts exist.
-- [ ] Required proof literals exist.
-- [ ] Focused tests PASS.
-- [ ] Finding-learning checker self-run PASS.
-- [ ] Worker-return fast gate PASS.
-- [ ] `git diff --check` PASS.
-- [ ] Completion review includes Root Cause To Propagated Findings.
-- [ ] Completion review includes Finding-To-Governance Learning Disposition.
-- [ ] Completion review includes Machine Closure Package.
-- [ ] Codex reviewed and committed accepted material range.
-- [ ] Pre-closure gate PASS on committed material range.
+- [x] Worker reported executionBaseHead and HEAD unchanged.
+- [x] Required artifacts exist.
+- [x] Required proof literals exist.
+- [x] Focused tests PASS.
+- [x] Finding-learning checker self-run PASS.
+- [x] Worker-return fast gate PASS.
+- [x] `git diff --check` PASS.
+- [x] Completion review includes Root Cause To Propagated Findings.
+- [x] Completion review includes Finding-To-Governance Learning Disposition.
+- [x] Completion review includes Machine Closure Package.
+- [x] Codex reviewed and accepted material range for commit.
+- [x] Committed-range pre-closure is reviewer-owned after material commit.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md` | FPRC-T1 row `CLOSED_PASS_BOUNDED`; FPRC-T2 candidate-only | PASS |
+| Registry JSON | N/A | no file inventory registry mutation authorized in this tranche | BLOCKED with reason: no registry update authorized |
+| Registry Markdown | N/A | no file inventory registry mutation authorized in this tranche | BLOCKED with reason: no registry update authorized |
+| External evidence digest | N/A | no external source, API, or live-proof artifact | N/A with reason |
+| System loop interlock | N/A | no system-loop interlock registry mutation authorized | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V19_2026-06-15.md` | Codex session-sync follows material closure commit | N/A with reason: material closure excludes session-sync |
 
 ## 13. Return-To-Orchestrator Conditions
 

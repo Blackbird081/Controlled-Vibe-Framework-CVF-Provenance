@@ -91,3 +91,87 @@ def test_generalizable_finding_allows_standard_added() -> None:
 def test_binding_check_requires_autorun_reference() -> None:
     issues = MODULE._validate_binding(MODULE.AUTORUN_PATH, "no guard here")
     assert any(MODULE.THIS_SCRIPT_PATH in message for message in _messages(issues))
+
+
+# --- FPRC-T1: Provider-memory-only learning escape guard tests ---
+
+_PROVIDER_MEMORY_ESCAPE_DOC = """
+# Review
+
+## Findings
+
+| Finding | Evidence |
+|---|---|
+| Missing guard | Stored in Claude memory for future reference |
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Missing guard | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | DOCUMENTATION_ONLY_LEARNING | stored in claude memory |
+"""
+
+_PROVIDER_MEMORY_WITH_GOVERNED_DISPOSITION = """
+# Review
+
+## Findings
+
+| Finding | Evidence |
+|---|---|
+| Missing guard | stored in claude memory |
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Missing guard | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_ADDED | Added to FPRC standard |
+"""
+
+_PROVIDER_MEMORY_WITH_EXPLICIT_NA = """
+# Review
+
+## Findings
+
+| Finding | Evidence |
+|---|---|
+| Session preference | recorded in claude memory |
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Session preference | OPERATOR_SCOPE_CLARITY_GAP | DOCUMENTATION_ONLY_LEARNING | N/A_WITH_REASON - session-local preference only | N/A |
+"""
+
+
+def test_provider_memory_only_learning_escape_fails() -> None:
+    issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", _PROVIDER_MEMORY_ESCAPE_DOC)
+    assert any("provider_memory_only_learning_escape" == issue["type"] for issue in issues)
+
+
+def test_provider_memory_only_with_governed_disposition_passes() -> None:
+    issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", _PROVIDER_MEMORY_WITH_GOVERNED_DISPOSITION)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" not in types
+
+
+def test_provider_memory_only_with_explicit_na_passes() -> None:
+    issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", _PROVIDER_MEMORY_WITH_EXPLICIT_NA)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" not in types
+
+
+def test_provider_memory_signal_in_claude_md_phrase_detected() -> None:
+    doc = VALID_DOC.replace(
+        "MACHINE_CHECK_CANDIDATE",
+        "DOCUMENTATION_ONLY_LEARNING",
+    ).replace("Missing guard", "Added to claude.md for future reference")
+    issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", doc)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" in types
+
+
+def test_doc_without_provider_memory_signal_unaffected() -> None:
+    issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", VALID_DOC)
+    types = [issue["type"] for issue in issues]
+    assert "provider_memory_only_learning_escape" not in types

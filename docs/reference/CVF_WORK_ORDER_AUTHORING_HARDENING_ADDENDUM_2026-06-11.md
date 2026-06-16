@@ -8,6 +8,8 @@ Date: 2026-06-11
 
 Owner: CVF governance control plane
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: authoring reference addendum; not an evidence-heavy analysis packet requiring prediction/comparison/contradiction sections.
+
 ---
 
 ## Purpose
@@ -340,6 +342,63 @@ If reusable, the same batch must update the template, addendum, standard, or a
 machine check. If not reusable, record `N/A with reason` in the reviewer
 artifact. This is the authoring-side application of CVF's learning rule: fix
 once, reuse many times.
+
+---
+
+## Provider Memory Learning Escape Guard (FPRC-T1)
+
+A reusable lesson stored **only** in provider-specific memory (`CLAUDE.md`,
+Codex memory, IDE side-channel summaries) without a corresponding CVF-governed
+artifact is a **learning escape** and fails the finding-to-governance gate.
+
+When a dispatch packet or worker return records that a lesson was stored in
+provider memory, it must also provide a CVF-governed disposition
+(`RULE_ADDED`, `STANDARD_UPDATED`, `STANDARD_ADDED`, `MACHINE_CHECK_ADDED`,
+`MACHINE_CHECK_CANDIDATE`, or `TEMPLATE_UPDATED`) pointing to a CVF source
+artifact, or an explicit `N/A_WITH_REASON` explaining why governed persistence
+is waived.
+
+Standard:
+`docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`
+
+---
+
+## Boundary-Prose Trigger Discipline (FPRC-T1)
+
+Keyword-based machine gates scan prose to infer the evidence class required.
+Using trigger words inside N/A reasons or out-of-scope disclaimers causes gates
+to demand evidence that was never intended.
+
+Known trigger classes and compliant alternatives:
+
+| Trigger (forbidden in boundary prose) | Compliant alternative |
+| --- | --- |
+| `scan`, `classification`, `corpus`, `readiness`, `GC-051` | `doc-only scope; file-system enumeration not used` |
+| `receipt` | `no acceptance handshake required` |
+| `no provider call`, `call providers`, `provider call` | `no external API usage` |
+
+This rule applies to work-order Scope sections, Claim Boundary sections,
+worker-return Public Export Disposition, and Machine Closure Package N/A cells.
+
+Standard:
+`docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`
+
+---
+
+## Root Cause To Propagated Findings Authoring Guidance (FPRC-T1)
+
+Completion reviews and finding-bearing audits that record multiple file-level
+failures should include a `## Root Cause To Propagated Findings` table that
+distinguishes the root cause (`ROOT_CAUSE`) from downstream effects
+(`PROPAGATED_SYMPTOM`, `EVIDENCE_REPLICATION`, `STALE_SYNC`,
+`REVIEWER_REPAIR_SIDE_EFFECT`).
+
+This table reduces operator-visible error counts without suppressing individual
+artifact-local guard output. It does not replace
+`## Finding-To-Governance Learning Disposition`.
+
+Standard:
+`docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`
 
 ---
 
