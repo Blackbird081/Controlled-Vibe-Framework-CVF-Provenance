@@ -1,0 +1,5 @@
+{
+  "stateOrder": 415,
+  "stateKey": "ahbT1AFindingCleanupClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material commit 9b21a901 from executionBaseHead 30076e1b. Codex processed the two AHB-T1 meta-findings before continuing: structural checker classification now maps docType audit and audit-directory files before HANDOFF subject-keyword heuristics, with a focused regression test; finding-learning tests now prove descriptive noncanonical defect labels fail without canonical vocabulary such as RULE_GAP. Artifacts: docs/baselines/CVF_GC018_AHB_T1A_FINDING_CLEANUP_2026-06-16.md; docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1A_FINDING_CLEANUP_FOR_CODEX_2026-06-16.md; docs/reviews/CVF_AHB_T1A_FINDING_CLEANUP_COMPLETION_2026-06-16.md. Code/test/standard paths: governance/compat/check_markdown_structural_completeness.py; governance/compat/test_check_markdown_structural_completeness.py; governance/compat/test_check_finding_to_governance_learning.py; docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md. AHB-T2 is not opened unilaterally; AOT-T3 remains parked pending operator review and sequencing decision."
+}

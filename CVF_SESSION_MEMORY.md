@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`
+Current mode marker: `ahb_t1a_finding_cleanup_closed_pass_bounded_operator_decision_required`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`.
+Current mode: `ahb_t1a_finding_cleanup_closed_pass_bounded_operator_decision_required`.
 
 Active handoff:
 
@@ -62,13 +62,36 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AHB-T1 Agent Handoff Boundary Audit is `CLOSED_PASS_BOUNDED` at material commit
-`11f4c4a2` from executionBaseHead `ac97f752` after dispatch commit `d1bd8a69`
-and dispatch session-sync commit `ac97f752`. Codex reviewed the actual Claude
-worker audit and worker-return files, authored the Codex rebuttal and
-completion review, and closed the bounded audit.
+AHB-T1A Finding Cleanup is `CLOSED_PASS_BOUNDED` at material commit
+`9b21a901` from executionBaseHead `30076e1b`. Codex processed the two AHB-T1
+meta-findings before continuing: structural checker classification now maps
+`docType: audit` and audit-directory files before `HANDOFF` subject-keyword
+heuristics, and finding-learning tests prove descriptive noncanonical defect
+labels fail without canonical vocabulary such as `RULE_GAP`.
 
 Artifacts:
+
+- AHB-T1A GC-018:
+  `docs/baselines/CVF_GC018_AHB_T1A_FINDING_CLEANUP_2026-06-16.md`
+- AHB-T1A work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1A_FINDING_CLEANUP_FOR_CODEX_2026-06-16.md`
+- AHB-T1A completion:
+  `docs/reviews/CVF_AHB_T1A_FINDING_CLEANUP_COMPLETION_2026-06-16.md`
+- Structural checker:
+  `governance/compat/check_markdown_structural_completeness.py`
+- Structural checker tests:
+  `governance/compat/test_check_markdown_structural_completeness.py`
+- Finding-learning tests:
+  `governance/compat/test_check_finding_to_governance_learning.py`
+- Structural standard:
+  `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- AHB roadmap:
+  `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`
+
+AHB-T1 Agent Handoff Boundary Audit remains `CLOSED_PASS_BOUNDED` at material
+commit `11f4c4a2`.
+
+Prior AHB-T1 artifacts:
 
 - Audit:
   `docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`
@@ -325,10 +348,10 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_t1_handoff_boundary_audit_closed_pass_bounded_operator_decision_required`.
+Mode: `ahb_t1a_finding_cleanup_closed_pass_bounded_operator_decision_required`.
 
-AHB-T1 Agent Handoff Boundary Audit is `CLOSED_PASS_BOUNDED` at material commit
-`11f4c4a2`. Next allowed move: operator decision on whether to open AHB-T2
+AHB-T1A Finding Cleanup is `CLOSED_PASS_BOUNDED` at material commit
+`9b21a901`. Next allowed move: operator decision on whether to open AHB-T2
 Agent Handoff Contract ratification, keep AOT-T3 parked, ship AOT-T3 standalone
 first, or revise the model. AHB-T2 is not opened unilaterally. AOT-T3 remains
 parked/queued pending operator review and AHB sequencing decision.
