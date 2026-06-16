@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_OPEN_T1_DISPATCH_READY
+Status: ROADMAP_ACTIVE_AFTER_PLCS_T1
 
 docType: roadmap
 
@@ -129,7 +129,7 @@ local views aligned, or record `N/A with reason`.
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | PLCS-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap and dispatch T1 | Codex |
-| PLCS-T1 | DISPATCH_READY | Existing absorption to plane/layer workflow-chain routing matrix | Claude worker, Codex reviewer |
+| PLCS-T1 | CLOSED_PASS_BOUNDED | Existing absorption to plane/layer workflow-chain routing matrix | Claude worker, Codex reviewer |
 | PLCS-T2 | CANDIDATE_AFTER_T1 | Decide whether FPC-T2-C01 through C04 registry-edit work should include any absorption-intake companion entry | Codex |
 | PLCS-T3 | CANDIDATE_AFTER_T1 | Decide whether a checker should require absorption packets to carry workflow-chain routing disposition | Future worker |
 
@@ -199,6 +199,22 @@ Runtime freshness is therefore `N/A with reason`: changed scope is governed
 markdown dispatch only. All runtime, provider, public-sync, and registry
 mutation remains forbidden unless a later work order authorizes it.
 
+## PLCS-T1 Closure Note
+
+PLCS-T1 is closed bounded by Codex review after accepting the Claude
+`WORKER_MUST_NOT_COMMIT` return and committing the two worker deliverables at
+material commit `b05286fe`.
+
+Completion review:
+
+`docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md`
+
+Bounded result: the routing matrix exists and maps existing governed
+absorption/FPC/CCLV evidence into owner, workflow-chain, interlock,
+checker/template, CCLV, parallel-lane risk, and next-action dispositions. It
+does not authorize registry edits, runtime/source/test mutation, provider/live
+proof, public-sync, new legacy scan, or production/public readiness.
+
 ## Verification / Evidence
 
 Pre-dispatch verification for this authoring batch:
@@ -233,18 +249,19 @@ authorized.
 |---|---|
 | Actor | Codex orchestrator |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-16 PLCS roadmap authoring |
+| Session or invocation | 2026-06-16 PLCS-T1 reviewer closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | rg, PowerShell, apply_patch |
-| Target paths | this roadmap; PLCS-T1 GC-018; PLCS-T1 work order |
-| Allowed scope source | operator instruction on 2026-06-16 |
-| Before status evidence | base `9882de99`; clean worktree |
-| After status evidence | roadmap and dispatch artifacts pending material commit |
-| Diff evidence | `git diff --name-status` before commit |
-| Approval boundary | audit-first governance roadmap and dispatch only |
+| Command or tool surface | rg, PowerShell, apply_patch, autorun/steward gates |
+| Target paths | this roadmap; PLCS-T1 GC-018; PLCS-T1 work order; PLCS-T1 completion review |
+| Allowed scope source | PLCS-T1 work order Reviewer Closure Conversion |
+| Before status evidence | base `dbddf213`; clean worktree after handoff-sync for worker material commit |
+| After status evidence | pending PLCS-T1 closure commit |
+| Diff evidence | `git diff --name-status` on `dbddf213..HEAD` |
+| Approval boundary | bounded PLCS-T1 documentation closure only |
 | Claim boundary | no runtime/provider/live/public/registry mutation |
-| Expected manifest | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md` |
-| Actual changed set | pending |
+| Expected manifest | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md` |
+| Actual changed set | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md` |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary

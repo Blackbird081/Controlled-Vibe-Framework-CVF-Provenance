@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -412,13 +412,13 @@ Codex may accept only if:
 
 ## 32. Closure Checklist
 
-- [ ] Worker return status is `COMPLETE_PENDING_REVIEW`.
-- [ ] HEAD unchanged by worker.
-- [ ] Matrix exists at required path.
-- [ ] Worker return exists at required path.
-- [ ] Required commands are recorded.
-- [ ] No forbidden paths changed.
-- [ ] Codex reviewer runs committed-range gates before closure.
+- [x] Worker return status is `COMPLETE_PENDING_REVIEW`.
+- [x] HEAD unchanged by worker.
+- [x] Matrix exists at required path.
+- [x] Worker return exists at required path.
+- [x] Required commands are recorded.
+- [x] No forbidden paths changed.
+- [x] Codex reviewer runs committed-range gates before closure.
 
 ## Reviewer Closure Conversion
 
@@ -461,26 +461,39 @@ mutation, provider/live proof, public-sync, or downstream adapter work.
 | AC5 | CCLV disposition is explicit for each row or N/A with reason. |
 | AC6 | Worker return includes exact changed set, commands, blocked decisions, and HEAD unchanged. |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` | PLCS-T1 row `CLOSED_PASS_BOUNDED`; top status remains active after T1 | PASS |
+| Registry JSON | BLOCKED with reason | PLCS-T1 forbids system-loop registry, GC-051, and generated registry mutation | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no registry Markdown mutation authorized for this matrix task | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external source, provider, OCR, live proof, or public-sync evidence authorized | N/A with reason |
+| System loop interlock | N/A with reason | FPC-T2 candidates remain proposal-only; no interlock registry edit authorized | N/A with reason |
+| Session continuity | N/A with reason | material closure excludes session-sync; session update is Codex-owned after closure commit | N/A with reason |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex orchestrator |
+| Actor | Claude worker; Codex reviewer/closer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-16 PLCS-T1 standing operating rule clarification |
+| Session or invocation | 2026-06-16 PLCS-T1 reviewer closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | rg, PowerShell, apply_patch |
-| Target paths | this work order; PLCS roadmap |
-| Allowed scope source | operator instruction on 2026-06-16 |
-| Before status evidence | base `1d918ee0`; clean worktree |
-| After status evidence | pending rule-clarification commit |
-| Diff evidence | `git diff --name-status` on `1d918ee0..HEAD` |
-| Approval boundary | dispatch authoring only |
+| Command or tool surface | rg, PowerShell, apply_patch, reviewer-fast, autorun/steward gates |
+| Target paths | roadmap, GC-018 baseline, this work order, completion review |
+| Allowed scope source | Reviewer Closure Conversion in this work order |
+| Before status evidence | base `dbddf213`; clean worktree after handoff-sync for worker material commit |
+| After status evidence | pending PLCS-T1 closure commit |
+| Diff evidence | `git diff --name-status` on `dbddf213..HEAD` |
+| Approval boundary | bounded PLCS-T1 documentation closure only |
 | Claim boundary | no runtime/provider/live/public/registry mutation |
-| Agent type | Codex orchestrator |
-| Invocation ID | `plcs-t1-standing-rule-clarification-2026-06-16` |
-| Expected manifest | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md` |
-| Actual changed set | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md` |
+| Agent type | Claude worker `WORKER_MUST_NOT_COMMIT`; Codex reviewer/closer |
+| Invocation ID | `plcs-t1-absorption-workflow-chain-routing-completion-2026-06-16` |
+| Expected manifest | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md` |
+| Actual changed set | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

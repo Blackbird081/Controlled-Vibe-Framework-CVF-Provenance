@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: DISPATCH_SATISFIED_BY_PLCS_T1_REVIEW
 
 docType: gc018
 
@@ -118,6 +118,17 @@ Required authoring checks before dispatch/commit:
 - `python governance/compat/check_markdown_structural_completeness.py --base 9882de99 --head HEAD --enforce`
 - `python governance/compat/check_agent_operation_trace.py --base 9882de99 --head HEAD --enforce`
 - `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 9882de99 --head HEAD`
+
+PLCS-T1 closure verification:
+
+- Claude returned the two authorized worker deliverables without committing.
+- Codex committed the accepted worker matrix and worker return at material
+  commit `b05286fe`.
+- Codex closure review is recorded at
+  `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md`.
+- This baseline is satisfied for PLCS-T1 only; it does not authorize PLCS-T2,
+  PLCS-T3, registry edits, runtime/source/test mutation, provider/live proof,
+  public-sync, or new legacy scan.
 
 ## Knowledge Absorption Blind-Spot Control Block
 
