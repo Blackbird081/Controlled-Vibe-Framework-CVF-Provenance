@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `cclv_t1_closed_next_cclv_t2_candidate`
+Current mode marker: `cclv_t2_dispatched_to_claude_pending_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `cclv_t1_closed_next_cclv_t2_candidate`.
+Current mode: `cclv_t2_dispatched_to_claude_pending_worker_return`.
 
 Active handoff:
 
@@ -62,13 +62,21 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Prompt Envelope Read-First Placement and Central Core Local View foundation
-packet is `CLOSED_PASS_BOUNDED` at material commit `ef6f67de`. The prompt
-envelope checker now requires new delegated dispatch-ready work orders to place
-`## Dispatch Prompt Envelope` before Mission and within the read-first boundary.
-The CCLV standard and CCLV/FPRC roadmaps are open as next foundation candidates.
-Next allowed move: Codex may author GC-018 and a work order for CCLV-T1 central
-closure facts template if the operator selects it.
+CCLV-T2 Central Facts Reference Advisory Checker is
+`DISPATCHED_TO_CLAUDE` at material dispatch commit `7e11c39c`.
+Claude should execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_FOR_CLAUDE_2026-06-16.md`
+under `WORKER_MUST_NOT_COMMIT` and return `COMPLETE_PENDING_REVIEW`.
+Codex will review, commit, and run closure gates after worker return.
+
+Prior closure pointer: CCLV-T1 closure central facts packet template is
+`CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
+template pointer refactor is `CLOSED_PASS_BOUNDED` at material commit
+`dcc114e6`.
+
+Prior foundation pointer: Prompt Envelope Read-First Placement and Central Core
+Local View foundation packet is `CLOSED_PASS_BOUNDED` at material commit
+`ef6f67de`.
 
 Prior closure pointer: Roadmap State Reconciliation RSF-T2 is
 `CLOSED_PASS_BOUNDED` at material commit `4d0883fa`. The dispatch-quality
