@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `ahb_t2_agent_handoff_contract_ratification_closed_pass_bounded_foundation_storage_remediation_next`
+Current mode marker: `ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t2_agent_handoff_contract_ratification_closed_pass_bounded_foundation_storage_remediation_next`.
+Current mode: `ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`.
 
 Active handoff:
 
@@ -70,6 +70,13 @@ finding: governance refactor work must include stable folder/index/storage
 layout review, with foundation files on stable indexed paths and
 execution/evidence files kept dated and archive-bound.
 
+AHB-T2-F1 Foundation Storage Layout Remediation is `CLOSED_PASS_BOUNDED` at
+material commit `959e2d78`. It created the stable foundation storage front door
+and standard:
+
+- `docs/reference/foundation_storage/README.md`
+- `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md`
+
 AHB-T1A Finding Cleanup remains `CLOSED_PASS_BOUNDED` at material commit
 `9b21a901`; AHB-T1 remains `CLOSED_PASS_BOUNDED` at material commit
 `11f4c4a2`.
@@ -82,6 +89,8 @@ Artifacts:
   `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md`
 - AHB-T2 worker return:
   `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_WORKER_RETURN_2026-06-16.md`
+- AHB-T2-F1 completion:
+  `docs/reviews/CVF_AHB_T2_F1_FOUNDATION_STORAGE_LAYOUT_REMEDIATION_COMPLETION_2026-06-16.md`
 - AOT-T3 GC-018:
   `docs/baselines/CVF_GC018_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_2026-06-16.md`
 - AOT-T3 work order:
@@ -117,11 +126,10 @@ Prior AHB-T1 artifacts:
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
-Next allowed move: open or dispatch a bounded foundation storage/layout
-remediation for AHB-T2-F1 before AHB-T3 unless the operator explicitly
-redirects. Do not open AHB-T3, implement the unified checker, build the
-agent-interaction workspace, or public-sync without later operator
-authorization.
+Next allowed move: operator decision whether to authorize AHB-T3 unified
+handoff-boundary checker dispatch with fresh GC-018. Do not open AHB-T3,
+implement the unified checker, build the agent-interaction workspace, or
+public-sync without later operator authorization.
 
 PLCS-T3 Companion Routing Checker/Template Decision is `CLOSED_PASS_BOUNDED` at
 material commit `6fc43136` after dispatch commit `992c2270` and session-sync

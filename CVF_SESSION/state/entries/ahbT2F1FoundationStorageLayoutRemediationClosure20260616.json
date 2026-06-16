@@ -1,0 +1,18 @@
+{
+  "stateOrder": 419,
+  "stateKey": "ahbT2F1FoundationStorageLayoutRemediationClosure20260616",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "959e2d78",
+    "executionBaseHead": "073407d3",
+    "gc018": "docs/baselines/CVF_GC018_AHB_T2_F1_FOUNDATION_STORAGE_LAYOUT_REMEDIATION_2026-06-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T2_F1_FOUNDATION_STORAGE_LAYOUT_REMEDIATION_FOR_CODEX_2026-06-16.md",
+    "completionReview": "docs/reviews/CVF_AHB_T2_F1_FOUNDATION_STORAGE_LAYOUT_REMEDIATION_COMPLETION_2026-06-16.md",
+    "foundationStorageFrontDoor": "docs/reference/foundation_storage/README.md",
+    "foundationStorageStandard": "docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md",
+    "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-T2-F1 promoted the foundation folder/index/storage rule into a stable folder front door, standard, operational-index pointer, and closure packet.",
+    "nextAllowedMove": "Operator decision whether to authorize AHB-T3 unified handoff-boundary checker dispatch with fresh GC-018. AHB-T3 is not auto-dispatched by this closure."
+  }
+}
