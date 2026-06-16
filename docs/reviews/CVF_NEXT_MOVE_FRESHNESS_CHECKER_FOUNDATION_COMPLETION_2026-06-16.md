@@ -58,7 +58,7 @@ that:
 
 Added focused tests for active state, front door, handoff section, startup
 acknowledgment, advisory mode, missing section enforcement, allowed blocked
-context, and long-line masking.
+context, soft-wrapped negation, and long-line masking.
 
 Wired the checker into reviewer-fast, pre-commit, pre-push, autorun common
 phase gates, and steward `session-sync` preflight.
@@ -69,7 +69,7 @@ phase gates, and steward `session-sync` preflight.
 |---|---|---|---|
 | NMF-F1 | Existing structural session checks do not prove next-move semantic freshness. | RSF-T3 machine-check candidate and current checker addition | CLOSED_BY_MACHINE_CHECK |
 | NMF-F2 | Current session surfaces are now compliant. | `check_next_move_freshness.py --enforce` returns zero violations | PASS |
-| NMF-F3 | Synthetic stale active-state/front-door/handoff/startup text is rejected. | focused unittest suite PASS 8/8 | PASS |
+| NMF-F3 | Synthetic stale active-state/front-door/handoff/startup text is rejected. | focused unittest suite PASS 9/9 | PASS |
 
 ## Risk / Corrective Action
 
@@ -83,7 +83,7 @@ phase gates, and steward `session-sync` preflight.
 
 | Command | Result |
 |---|---|
-| `python -m unittest governance.compat.test_check_next_move_freshness -v` | PASS 8/8 |
+| `python -m unittest governance.compat.test_check_next_move_freshness -v` | PASS 9/9 |
 | `python governance/compat/check_next_move_freshness.py --enforce` | PASS on current active state, front door, and handoff |
 | `python governance/compat/check_markdown_structural_completeness.py --base 7a89cccc --head HEAD --enforce` | PASS |
 | `python governance/compat/run_worker_return_fast_gate.py` | PASS; reviewer-fast 19/19 PASS |
@@ -160,7 +160,7 @@ freshness; it is not a broad historical roadmap reconciliation engine.
 | Session or invocation | 2026-06-16 next-move freshness checker foundation |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, unittest, checker CLI, local governance gates |
-| Target paths | `docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py` |
 | Allowed scope source | operator instruction, work order, GC-018 |
 | Before status evidence | `executionBaseHead=7a89cccc`; clean worktree before edits |
 | After status evidence | pending material commit |
@@ -169,8 +169,8 @@ freshness; it is not a broad historical roadmap reconciliation engine.
 | Claim boundary | no runtime/provider/live/public/session material mutation or Model Gateway authorization |
 | Agent type | Codex single-agent multi-role |
 | Invocation ID | `next-move-freshness-checker-foundation-2026-06-16` |
-| Expected manifest | `docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
-| Actual changed set | `docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

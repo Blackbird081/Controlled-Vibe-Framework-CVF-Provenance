@@ -266,8 +266,17 @@ def _line_contains_alias(line: str, target: ClosedTarget) -> bool:
 
 
 def _iter_fragments(text: str) -> Iterable[str]:
-    for raw_line in text.splitlines():
-        for fragment in re.split(r"(?<=[.;])\s+|\s+-\s+", raw_line):
+    paragraph: list[str] = []
+    for raw_line in [*text.splitlines(), ""]:
+        stripped = raw_line.strip()
+        if stripped:
+            paragraph.append(stripped)
+            continue
+        if not paragraph:
+            continue
+        logical_line = " ".join(paragraph)
+        paragraph = []
+        for fragment in re.split(r"(?<=[.;])\s+|\s+-\s+", logical_line):
             cleaned = fragment.strip()
             if cleaned:
                 yield cleaned

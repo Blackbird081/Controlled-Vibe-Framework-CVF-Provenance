@@ -181,7 +181,7 @@ Evidence must include:
 | NMF-AC1 | stale closed-target active `nextAllowedMove` fails | focused test |
 | NMF-AC2 | stale front-door next move fails | focused test |
 | NMF-AC3 | stale handoff next move and startup acknowledgment fail | focused tests |
-| NMF-AC4 | safe blocked/closed wording passes | focused test and current-state run |
+| NMF-AC4 | safe blocked/closed wording passes, including soft-wrapped negation | focused tests and current-state run |
 | NMF-AC5 | checker is wired into early gates | runner diffs and gates |
 
 ## Review Gate
@@ -367,7 +367,7 @@ authorized by this work order.
 | Session or invocation | 2026-06-16 next-move freshness checker foundation |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, unittest, checker CLI, local governance gates |
-| Target paths | `docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py` |
 | Allowed scope source | operator instruction, this work order, GC-018 |
 | Before status evidence | `executionBaseHead=7a89cccc`; clean worktree before edits |
 | After status evidence | pending material commit |
@@ -376,8 +376,8 @@ authorized by this work order.
 | Claim boundary | no runtime/provider/live/public/session material mutation or Model Gateway authorization |
 | Agent type | Codex single-agent multi-role |
 | Invocation ID | `next-move-freshness-checker-foundation-2026-06-16` |
-| Expected manifest | `docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
-| Actual changed set | `docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md`; `governance/compat/check_next_move_freshness.py`; `governance/compat/test_check_next_move_freshness.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

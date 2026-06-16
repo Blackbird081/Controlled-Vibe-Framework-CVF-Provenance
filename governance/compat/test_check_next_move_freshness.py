@@ -88,6 +88,21 @@ class NextMoveFreshnessTests(unittest.TestCase):
             self.assertEqual(code, 0)
             self.assertIn("COMPLIANT", text)
 
+    def test_allows_soft_wrapped_do_not_redispatch_context(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_surfaces(
+                root,
+                active_next="Next allowed move: fresh operator authorization only.",
+                handoff_next=(
+                    "Next allowed move: fresh authorization only. Do not\n"
+                    "redispatch Model Gateway C-02 P2 from stale continuity text."
+                ),
+            )
+            code, text = self._run(root, ["--enforce"])
+            self.assertEqual(code, 0)
+            self.assertIn("COMPLIANT", text)
+
     def test_rejects_active_state_dispatch_to_closed_target(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
