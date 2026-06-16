@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_GC018
+Status: ROADMAP_IN_PROGRESS_T1_CLOSED
 
 docType: roadmap
 
@@ -85,8 +85,9 @@ facts.
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | CCLV-T0 | COMPLETED_IN_ROADMAP_PACKET | Publish common standard and roadmap selection | Codex |
-| CCLV-T1 | READY_FOR_GC018 | Define a closure central facts packet template and local reference rules | Future worker |
-| CCLV-T2 | CANDIDATE_AFTER_T1 | Add advisory checker for central facts references on changed new batches | Future worker |
+| CCLV-T1 | CLOSED_PASS_BOUNDED | Define a closure central facts packet template and local reference rules | Claude (combined role) |
+| CCLV-T1A | CLOSED_PASS_BOUNDED | Apply CCLV pattern to the work order template (pointer refactor, 1200->994 lines) | Claude/Codex |
+| CCLV-T2 | READY_FOR_GC018 | Add advisory checker for central facts references on changed new batches | Future worker |
 | CCLV-T3 | CANDIDATE_AFTER_T2 | Pilot on one small governance closure workflow | Future worker |
 | CCLV-T4 | CANDIDATE_AFTER_PILOT | Decide whether selected workflows can replace duplicated AOT/closure facts with references | Codex reviewer |
 
@@ -99,6 +100,21 @@ facts.
 3. CCLV-T2 should add a narrow checker only after the template exists.
 4. CCLV-T3 should pilot on a new governance batch, not on historical material.
 5. CCLV-T4 should review latency, false positives, and operator readability.
+
+## CCLV-T1 Closure Record (2026-06-16)
+
+CCLV-T1 is `CLOSED_PASS_BOUNDED`. Delivered the closure central facts packet
+template and the local reference block rules the standard specified.
+
+- GC-018: `docs/baselines/CVF_GC018_CCLV_T1_CLOSURE_FACTS_PACKET_TEMPLATE_2026-06-16.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_CCLV_T1_CLOSURE_FACTS_PACKET_TEMPLATE_2026-06-16.md`
+- Markdown template: `docs/reviews/evidence/CVF_CLOSURE_CENTRAL_FACTS_PACKET_TEMPLATE.md`
+- JSON companion: `docs/reviews/evidence/CVF_CLOSURE_CENTRAL_FACTS_PACKET_TEMPLATE.json`
+- Local reference rules: `docs/reference/CVF_CLOSURE_CENTRAL_FACTS_LOCAL_REFERENCE_RULES.md`
+- Completion review: `docs/reviews/CVF_CCLV_T1_CLOSURE_FACTS_PACKET_TEMPLATE_COMPLETION_2026-06-16.md`
+
+No checker was added (that is CCLV-T2). No workflow pilot was run (that is
+CCLV-T3). Forward-only; no historical artifact was rewritten.
 
 ## Acceptance Criteria
 
@@ -140,7 +156,7 @@ approval.
 | Defect class | `EVIDENCE_DUPLICATION_DRIFT` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `STANDARD_ADDED` |
-| Next control action | CCLV-T1 template work order after operator authorization |
+| Next control action | CCLV-T2 advisory checker work order after operator authorization (CCLV-T1 closed 2026-06-16) |
 | Worker blame | `N/A_WITH_REASON`: repeated facts across files create drift opportunities by design |
 
 ## Public Export Disposition
