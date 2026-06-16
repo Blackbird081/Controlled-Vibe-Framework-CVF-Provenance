@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_T2_F2_CLOSED_AHB_T3_CANDIDATE
+Status: ROADMAP_ACTIVE_AHB_T3_CLOSED_AHB_TN_CANDIDATE
 
 docType: roadmap
 
@@ -170,7 +170,7 @@ views that must cite the contract.
 | AHB-T2 | CLOSED_PASS_BOUNDED | Ratified the canonical Agent Handoff Contract and reconciled MA1/envelope/steward/AOT/session-sync surfaces under it; absorbed the closed AOT-T3 rule as an existing AOT input | Claude author; Codex reviewer/closer |
 | AHB-T2-F1 | CLOSED_PASS_BOUNDED | Promoted the foundation folder/index/storage rule into a stable reference folder, standard, operational-index row, and closure packet before AHB-T3 | Codex |
 | AHB-T2-F2 | CLOSED_PASS_BOUNDED | Hardened foundation storage/layout and provider-memory-only learning into machine enforcement before AHB-T3 | Codex |
-| AHB-T3 | CANDIDATE_AFTER_T2 | Implement a unified handoff-boundary machine check derived from the contract, at the earliest applicable gate phase | Decided after T2 |
+| AHB-T3 | CLOSED_PASS_BOUNDED | Implemented a unified handoff-boundary machine check derived from the contract, with stable `docs/reference/agent_handoff/` front door and autorun/local-hook binding | Codex |
 | AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
@@ -246,8 +246,31 @@ Closure packet:
 
 `docs/reviews/CVF_AHB_T2_F2_FOUNDATION_STORAGE_AND_MEMORY_LEARNING_ENFORCEMENT_COMPLETION_2026-06-16.md`
 
-AHB-T3 remains a future candidate requiring fresh GC-018 and operator
-authorization.
+AHB-T3 was later authorized by the operator and closed in the AHB-T3 closure
+note below.
+
+## AHB-T3 Closure Note
+
+AHB-T3 is `CLOSED_PASS_BOUNDED`. Operator authorized the tranche on 2026-06-17,
+and Codex implemented bounded machine enforcement for the ratified Agent
+Handoff Contract:
+
+- stable front door:
+  `docs/reference/agent_handoff/README.md`
+- stable machine-check standard:
+  `docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md`
+- checker:
+  `governance/compat/check_agent_handoff_boundary.py`
+- focused tests:
+  `governance/compat/test_check_agent_handoff_boundary.py`
+- completion packet:
+  `docs/reviews/CVF_AHB_T3_UNIFIED_HANDOFF_BOUNDARY_CHECKER_COMPLETION_2026-06-17.md`
+
+The checker is bound into autorun and local hook chains and requires changed
+handoff work orders to instantiate the Agent Handoff Contract Control Block.
+It does not build the agent-interaction workspace, mutate product runtime,
+run provider/live proof, public-sync, or edit registries. AHB-Tn remains a
+future candidate requiring separate operator authorization.
 
 ## AHB-T1 Requirements (Proposed)
 

@@ -90,6 +90,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "agent handoff boundary",
+            "governance/compat/check_agent_handoff_boundary.py",
+            base,
+            head,
+        ),
+        _range_command(
             "machine closure package",
             "governance/compat/check_machine_closure_package.py",
             base,

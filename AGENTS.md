@@ -565,6 +565,45 @@ higher closed `lhwN...CLOSED_PASS_BOUNDED` record, then `nextAllowedMove`,
 `CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff must
 reference that same latest `LHWN`; stale lower-wave text blocks closure.
 
+## Mandatory Agent Handoff Boundary Contract Guard - 2026-06-17
+
+Stable front door:
+
+`docs/reference/agent_handoff/README.md`
+
+Canonical machine-check standard:
+
+`docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md`
+
+Machine guard:
+
+`governance/compat/check_agent_handoff_boundary.py`
+
+The ratified Agent Handoff Contract is the Central Core for all governed
+handoff semantics:
+
+`docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
+
+Any changed governed work order that uses agent handoff semantics, including
+`dispatchBaseHead`, `executionBaseHead`, `closureBaseHead`,
+`WORKER_MAY_COMMIT`, `WORKER_MUST_NOT_COMMIT`, multi-agent role routing,
+reviewer closure conversion, AOT trace scope, commit ownership, session-sync,
+or next-move surface updates, must include an
+`Agent Handoff Contract Control Block`.
+
+The block must select exactly one canonical route token, name the `rolePattern`,
+state the phase/base-head/changed-set/trace/commit-owner dispositions, record
+cross-batch isolation, and state how next-move surfaces are handled.
+
+`WORKER_MUST_NOT_COMMIT` work orders must also include
+`Reviewer Closure Conversion` with `completionReviewPath` and
+`reviewerOwnedClosurePaths`. Three-or-more-agent chains must designate one
+closer before dispatch.
+
+This guard is mandatory in the autorun workflow and local hook chain. It does
+not replace the AOT trace guard, commit steward, or next-move freshness guard;
+it binds their local views back to the ratified handoff Central Core.
+
 ## Mandatory IDE Extension Multi-Provider Execution Log Guard - 2026-05-29
 
 Canonical standard:
