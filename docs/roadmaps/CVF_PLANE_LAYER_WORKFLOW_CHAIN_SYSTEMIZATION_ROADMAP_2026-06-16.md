@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AFTER_PLCS_T1
+Status: ROADMAP_ACTIVE_PLCS_T2_DISPATCH_READY
 
 docType: roadmap
 
@@ -130,7 +130,7 @@ local views aligned, or record `N/A with reason`.
 |---|---|---|---|
 | PLCS-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap and dispatch T1 | Codex |
 | PLCS-T1 | CLOSED_PASS_BOUNDED | Existing absorption to plane/layer workflow-chain routing matrix | Claude worker, Codex reviewer |
-| PLCS-T2 | CANDIDATE_AFTER_T1 | Decide whether FPC-T2-C01 through C04 registry-edit work should include any absorption-intake companion entry | Codex |
+| PLCS-T2 | DISPATCH_READY | Decide whether FPC-T2-C01 through C04 registry-edit work should include any absorption-intake companion entry | Codex |
 | PLCS-T3 | CANDIDATE_AFTER_T1 | Decide whether a checker should require absorption packets to carry workflow-chain routing disposition | Future worker |
 
 ## Work Plan
