@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rsf_t3_dispatched_to_claude_pending_worker_return`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=wait for Claude RSF-T3 non-CI2 next-move sample worker return after dispatch prompt/provider-memory gate hardening, then Codex reviews actual diff and commits accepted material if any; parked checkpoint=Model Gateway C-02 P2 redispatch blocked as closed, Model Gateway P3 requires fresh operator authorization/GC-018/work order, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`rsf_t3_closed_pass_bounded_next_move_fresh_auth`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization only after RSF-T3 CLOSED_PASS_BOUNDED at material commit ab683089; a bounded next-move freshness checker or another foundation roadmap requires fresh GC-018/source-verified work order; parked checkpoint=Model Gateway C-02 P2 redispatch blocked as closed, Model Gateway P3 requires fresh operator authorization/GC-018/work order, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`rsf_t3_dispatched_to_claude_pending_worker_return`
+`rsf_t3_closed_pass_bounded_next_move_fresh_auth`
 
-Current HEAD recorded for this handoff: `93d0eb7f`
-(Dispatch Prompt Envelope And Provider Memory Gate Hardening material commit
+Current HEAD recorded for this handoff: `ab683089`
+(Roadmap State Reconciliation RSF-T3 closure material commit `ab683089`;
+Dispatch Prompt Envelope And Provider Memory Gate Hardening material commit
 `93d0eb7f`;
 RSF-T3 session-sync commit `32689562`;
 Roadmap State Reconciliation RSF-T3 dispatch commit `8450707a`;
@@ -95,13 +96,14 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after hardening commit
-`93d0eb7f` and RSF-T3 dispatch commit `8450707a` to preserve the mode marker
-as
-`rsf_t3_dispatched_to_claude_pending_worker_return` across all surfaces,
-preserve prior bounded closures, route the next allowed move to Claude RSF-T3
-worker return, record prompt-envelope/provider-memory gate hardening, and block
-stale Model Gateway C-02 P2 redispatch. This scope also covers regenerating the
+update this handoff and session front-door state after RSF-T3 closure material
+commit `ab683089`, hardening commit `93d0eb7f`, and RSF-T3 dispatch commit
+`8450707a` to preserve the mode marker as
+`rsf_t3_closed_pass_bounded_next_move_fresh_auth` across all surfaces, preserve
+prior bounded closures, record RSF-T3 as `CLOSED_PASS_BOUNDED`, route the next
+allowed move to fresh operator authorization only, record
+prompt-envelope/provider-memory gate hardening, and block stale Model Gateway
+C-02 P2 redispatch. This scope also covers regenerating the
 `ACTIVE_SESSION_STATE.json` aggregate from source entries.
 
 Protected paths:
@@ -123,6 +125,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT2Dispatch20260616.json`
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT2Closure20260616.json`
 - `CVF_SESSION/state/entries/roadmapStateReconciliationT3Dispatch20260616.json`
+- `CVF_SESSION/state/entries/roadmapStateReconciliationT3Closure20260616.json`
 - `CVF_SESSION/state/entries/dispatchPromptEnvelopeProviderMemoryGateHardening20260616.json`
 - `CVF_SESSION/state/entries/centralCoreLocalViewPromptHeaderPacketClosure20260616.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
@@ -144,10 +147,14 @@ Codex audited CCLV-T2 actual commits and selected RSF-T3 because current
 continuity points to Model Gateway C-02 P2 after C-02 P2 is already closed.
 Operator then directed Codex to treat the buried prompt and Claude-memory-only
 lesson pattern as CVF foundation hardening, not a one-off work-order fix.
+Claude returned RSF-T3 as `COMPLETE_PENDING_REVIEW`; Codex reviewed actual
+files, diffs, and gates, repaired bounded closure evidence, and committed
+accepted material at `ab683089`.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert hardening commit `93d0eb7f`, RSF-T3 session-sync commit
-`32689562`, RSF-T3 dispatch commit `8450707a`, CCLV-T2 material commit
+batch. Do not revert RSF-T3 closure material commit `ab683089`, hardening commit
+`93d0eb7f`, RSF-T3 session-sync commit `32689562`, RSF-T3 dispatch commit
+`8450707a`, CCLV-T2 material commit
 `bf938549`, Session-Sync Pack Builder material commit `a5e91d4b`,
 Commit Steward Session-Sync Preflight Hardening material commit `d709071c`,
 Agent Dispatch Prompt Envelope dispatch commit `c0c72317`,
@@ -167,16 +174,17 @@ commit `5d46bc62`.
 ## Latest Continuity Note
 
 RSF-T3 Roadmap State Reconciliation Non-CI2 Next-Move Sample is
-`DISPATCHED_TO_WORKER` at material dispatch commit `8450707a`. Follow-up
-foundation hardening commit `93d0eb7f` moved the RSF-T3 dispatch prompt
-envelope to the read-first position, wired the prompt-envelope checker into
-mandatory autorun/local hook paths, and extended provider-memory learning escape
-detection to work-order authoring. Codex audited
-CCLV-T2 from actual commits, files, and commands instead of chat claims. CCLV-T2
-checker implementation is acceptable within advisory scope, but the audit found
-stale continuity pointing to Model Gateway C-02 P2 after C-02 P2 was already
-closed. Claude may now execute the RSF-T3 work order in
-`WORKER_MUST_NOT_COMMIT` mode and return `COMPLETE_PENDING_REVIEW`.
+`CLOSED_PASS_BOUNDED` at material closure commit `ab683089`. Codex reviewed the
+Claude worker return against actual files, diffs, and gates, then repaired
+bounded closure evidence before committing. The verified finding is narrow:
+stale Model Gateway C-02 P2 next-move continuity existed at the earlier audit
+and dispatch-selection time, while current front-door and active handoff
+pointers now block C-02 P2 redispatch.
+
+Follow-up foundation hardening commit `93d0eb7f` moved the RSF-T3 dispatch
+prompt envelope to the read-first position, wired the prompt-envelope checker
+into mandatory autorun/local hook paths, and extended provider-memory learning
+escape detection to work-order authoring.
 
 Artifacts:
 
@@ -186,10 +194,24 @@ Artifacts:
   `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`
+- Worker return:
+  `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_WORKER_RETURN_2026-06-16.md`
+- Completion review:
+  `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_COMPLETION_2026-06-16.md`
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. Model
 Gateway P3 requires fresh operator authorization, fresh GC-018, and a
 source-verified work order.
+
+## Next Allowed Move
+
+RSF-T3 is `CLOSED_PASS_BOUNDED` at material closure commit `ab683089`.
+Next allowed move: fresh operator authorization only. The next foundation move
+may open a bounded next-move freshness checker with fresh GC-018 and
+source-verified work order, or the operator may choose another foundation
+roadmap. Do not redispatch Model Gateway C-02 P2. Do not open Model Gateway P3
+without fresh operator authorization, fresh GC-018, and source-verified work
+order. LHW24 remains the latest closed numbered LHW wave.
 
 Prior closure pointer: CCLV-T1 closure central facts packet template is
 `CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
