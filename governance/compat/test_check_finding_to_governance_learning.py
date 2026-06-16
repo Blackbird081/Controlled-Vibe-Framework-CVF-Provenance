@@ -88,6 +88,24 @@ def test_generalizable_finding_allows_standard_added() -> None:
     assert MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", valid) == []
 
 
+def test_descriptive_defect_label_without_canonical_class_fails() -> None:
+    doc = """
+# Review
+
+## Findings
+
+The audit exposed a handoff seam interpretation problem.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Handoff seam interpretation gap | AGENT_HANDOFF_SEAM_INTERPRETATION_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | Map to canonical class |
+"""
+    issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", doc)
+    assert any("defect class" in message for message in _messages(issues))
+
+
 def test_binding_check_requires_autorun_reference() -> None:
     issues = MODULE._validate_binding(MODULE.AUTORUN_PATH, "no guard here")
     assert any(MODULE.THIS_SCRIPT_PATH in message for message in _messages(issues))

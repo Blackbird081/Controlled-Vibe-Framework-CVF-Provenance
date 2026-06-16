@@ -104,3 +104,57 @@ def test_new_roadmap_with_dispatch_boundary_passes_design_control_gate() -> None
             issues = MODULE._validate_markdown(rel_path)
 
     assert "missing roadmap section: design control gate" not in issues
+
+
+def test_docs_audit_handoff_filename_uses_audit_doctype_not_handoff_keyword() -> None:
+    text = "\n".join(
+        [
+            "# CVF AHB-T1 Handoff Boundary Audit",
+            "",
+            "Memory class: FULL_RECORD",
+            "",
+            "Status: CLOSED_PASS_BOUNDED",
+            "",
+            "docType: audit",
+            "",
+            "## Purpose",
+            "",
+            "Audit the handoff boundary.",
+            "",
+            "## Scope / Target / Owner Boundary",
+            "",
+            "Documentation-only audit.",
+            "",
+            "## Target / Source",
+            "",
+            "Target is the audit artifact itself.",
+            "",
+            "## Findings / Position",
+            "",
+            "The filename contains HANDOFF because that is the subject.",
+            "",
+            "## Risk / Corrective Action",
+            "",
+            "No session handoff status is claimed.",
+            "",
+            "## Decision / Recommendation",
+            "",
+            "Treat this as an audit/review artifact.",
+            "",
+            "## Claim Boundary",
+            "",
+            "No active handoff mutation.",
+            "",
+        ]
+    )
+
+    with tempfile.TemporaryDirectory() as tmp:
+        repo_root = Path(tmp)
+        rel_path = "docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md"
+        _write(repo_root, rel_path, text)
+
+        with patch.object(MODULE, "REPO_ROOT", repo_root):
+            issues = MODULE._validate_markdown(rel_path)
+
+    assert not any("missing handoff section" in issue for issue in issues)
+    assert not issues

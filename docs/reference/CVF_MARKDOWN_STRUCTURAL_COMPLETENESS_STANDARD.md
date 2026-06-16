@@ -38,6 +38,12 @@ elements plus that type's required sections.
 When a file intentionally mixes artifact types, it must satisfy the stricter
 section set for the highest-risk role it performs.
 
+Classifier precedence is part of the rule. An explicit `docType` or governed
+path classification must win over subject keywords in the filename. For
+example, an audit under `docs/audits/` whose filename contains `HANDOFF` is an
+audit/review artifact, not an active session handoff, unless it is actually an
+`AGENT_HANDOFF*.md` or archived handoff path.
+
 ## Exceptions
 
 Legacy dense documents are grandfathered until a material rewrite, split, or

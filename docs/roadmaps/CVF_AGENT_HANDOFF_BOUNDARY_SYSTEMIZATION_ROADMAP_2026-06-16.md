@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AFTER_AHB_T1_PASS_BOUNDED
+Status: ROADMAP_ACTIVE_AFTER_AHB_T1A_CLEANUP
 
 docType: roadmap
 
@@ -166,9 +166,17 @@ views that must cite the contract.
 |---|---|---|---|
 | AHB-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap, state the seam problem, request Codex critique | Claude Code proposer |
 | AHB-T1 | CLOSED_PASS_BOUNDED | Read-only audit of handoff surfaces; produced the role-configuration x phase x invariant matrix and a proposed Agent Handoff Contract model | Claude author; Codex critique/rebuttal |
+| AHB-T1A | CLOSED_PASS_BOUNDED | Immediate cleanup for AHB-T1 meta-findings: structural checker audit/handoff filename classification and canonical defect-class vocabulary proof | Codex |
 | AHB-T2 | CANDIDATE_AFTER_T1 | Ratify the canonical Agent Handoff Contract and reconcile MA1/envelope/steward/AOT surfaces under it; fold the AOT-T3 queued check in as one derived check | Decided after T1 critique |
 | AHB-T3 | CANDIDATE_AFTER_T2 | Implement a unified handoff-boundary machine check derived from the contract, at the earliest applicable gate phase | Decided after T2 |
 | AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
+
+AHB-T1A cleanup is closed at the governance-control level. It does not ratify
+AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
+resolves the two immediate meta-findings from AHB-T1: audit files under
+`docs/audits/` with `HANDOFF` in the filename must classify as audit/review
+artifacts, and descriptive defect labels must carry canonical defect-class
+vocabulary such as `RULE_GAP`.
 
 AHB-T3 and the workspace tranche require fresh GC-018 and operator
 authorization. AOT-T3 (B12 machine check, queued in the finding-propagation

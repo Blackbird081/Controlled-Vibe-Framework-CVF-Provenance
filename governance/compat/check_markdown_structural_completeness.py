@@ -269,6 +269,13 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
     ),
 }
 
+DOC_TYPE_ALIASES: dict[str, str] = {
+    "audit": "review",
+    "completion_review": "review",
+    "rebuttal_review": "review",
+    "gc018": "baseline",
+}
+
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
     proc = subprocess.run(
@@ -388,6 +395,7 @@ def _classify(path: str, text: str) -> str:
     doc_type_match = re.search(r"^docType:\s*([A-Za-z_ -]+)\s*$", text, re.M)
     if doc_type_match:
         declared = doc_type_match.group(1).strip().lower().replace("-", "_").replace(" ", "_")
+        declared = DOC_TYPE_ALIASES.get(declared, declared)
         if declared in SECTION_GROUPS:
             return declared
     name = Path(path).name.upper()
@@ -398,6 +406,8 @@ def _classify(path: str, text: str) -> str:
     if normalized_path.startswith("docs/roadmaps/"):
         return "roadmap"
     if normalized_path.startswith("docs/reviews/"):
+        return "review"
+    if normalized_path.startswith("docs/audits/"):
         return "review"
     if normalized_path.startswith("docs/baselines/") or normalized_path.startswith("docs/assessments/"):
         return "baseline"
