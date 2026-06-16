@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `cclv_t2_dispatched_to_claude_pending_worker_return`
+Current mode marker: `fprc_t1_dispatched_to_claude_pending_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `cclv_t2_dispatched_to_claude_pending_worker_return`.
+Current mode: `fprc_t1_dispatched_to_claude_pending_worker_return`.
 
 Active handoff:
 
@@ -62,12 +62,13 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-CCLV-T2 Central Facts Reference Advisory Checker is
-`DISPATCHED_TO_CLAUDE` at material dispatch commit `7e11c39c`.
+FPRC-T1 Finding Root Cause And Memory Escape Guard is
+`DISPATCHED_TO_CLAUDE` at material dispatch commit `988cb37c`.
 Claude should execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_FOR_CLAUDE_2026-06-16.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_FOR_CLAUDE_2026-06-16.md`
 under `WORKER_MUST_NOT_COMMIT` and return `COMPLETE_PENDING_REVIEW`.
-Codex will review, commit, and run closure gates after worker return.
+CCLV-T2 remains paused pending FPRC-T1 closure or a Codex refresh of the
+CCLV-T2 work order.
 
 Prior closure pointer: CCLV-T1 closure central facts packet template is
 `CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
@@ -181,11 +182,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `cclv_t1_closed_next_cclv_t2_candidate`.
+Mode: `fprc_t1_dispatched_to_claude_pending_worker_return`.
 
-Next move: author a source-verified GC-018/work order for CCLV-T1 central
-closure facts template if the operator selects that tranche. FPRC root-cause
-grouping remains roadmap-ready candidate after CCLV-T1.
+Next move: Claude executes FPRC-T1 under
+`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` with
+executionBaseHead, HEAD unchanged, exact changed paths, focused tests/gates,
+and claim boundary.
 
 No provider/API call, credential/network use, provider/model addition, runtime
 behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway
