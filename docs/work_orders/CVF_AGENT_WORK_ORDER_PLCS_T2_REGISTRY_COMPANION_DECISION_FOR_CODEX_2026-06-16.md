@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: 38c17198
 
 executionBaseHead: 38c17198
 
-closureBaseHead: TBD (set by Codex after material commit)
+closureBaseHead: 29ec11b0
 
 EPISTEMIC_PROCESS_NA_WITH_REASON: This is a governance decision/planning
 packet. No hypothesis-vs-evidence prediction comparison is required. Every
@@ -86,8 +86,8 @@ Out of scope:
 | Level | Artifact | Status |
 |---|---|---|
 | Operator instruction | 2026-06-16 operator authorization: PLCS-T2 as next bounded move | ACCEPTED |
-| GC-018 baseline | `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md` | DISPATCH_READY |
-| PLCS roadmap | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` PLCS-T2 row | DISPATCH_READY |
+| GC-018 baseline | `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md` | DISPATCH_SATISFIED |
+| PLCS roadmap | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` PLCS-T2 row | DISPATCH_SATISFIED |
 | PLCS-T1 matrix | `docs/reference/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md` Section C | PREDECESSOR_SATISFIED |
 | FPC-T2 completion | `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md` | PREDECESSOR_SATISFIED |
 
@@ -177,6 +177,7 @@ Before authoring, Codex must:
 | Path | Owner | Mode |
 |---|---|---|
 | `docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md` | Codex | CREATE |
+| `docs/reviews/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_COMPLETION_2026-06-16.md` | Codex | CREATE (continuation-chain completion review) |
 | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` | Codex | MODIFY (update PLCS-T2 row to CLOSED_PASS_BOUNDED) |
 | `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md` | Codex | MODIFY (update Status) |
 | `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md` | Codex | MODIFY (update Status to CLOSED_PASS_BOUNDED) |
@@ -245,7 +246,7 @@ table confirming:
 | Required first reads complete | explicit read ledger in decision packet | reads closed before authoring |
 | Negative search result | `rg -n "PLCS-T2|..." docs` output summary | no same-purpose collision |
 | Gate run results | pre-dispatch gate command outputs | before material commit |
-| Changed set | `git diff --name-status 38c17198..HEAD` | documentation only |
+| Changed set | `git diff --name-status 29ec11b0..HEAD` | documentation only |
 
 ## Review Gate
 
@@ -270,22 +271,22 @@ All gates must PASS before closure is claimed.
 
 ## Closure Checklist
 
-- [ ] Required first reads (R1-R7) all confirmed read
-- [ ] Pre-flight checks passed (no HEAD drift conflict, clean worktree)
-- [ ] Negative search confirmed no same-purpose collision
-- [ ] Decision packet authored at required path
-- [ ] Companion shape definition section present
-- [ ] Per-candidate table covers C01/C02/C03/C04 with companion ruling
-- [ ] C05 token `DEFERRED_PENDING_FPC_T3_C01` present
-- [ ] Registry-edit WO dispatch constraint defined
-- [ ] All required structural sections present in decision packet
-- [ ] Pre-dispatch gate commands all PASS
-- [ ] Material commit made
-- [ ] GC-018 Status updated to `DISPATCH_SATISFIED_BY_PLCS_T2_REVIEW`
-- [ ] Work order Status updated to `CLOSED_PASS_BOUNDED`
-- [ ] Roadmap PLCS-T2 row updated to `CLOSED_PASS_BOUNDED`
-- [ ] Pre-closure gate commands all PASS
-- [ ] Session sync performed
+- [x] Required first reads (R1-R7) all confirmed read
+- [x] Pre-flight checks passed (no HEAD drift conflict, clean worktree)
+- [x] Negative search confirmed no same-purpose collision
+- [x] Decision packet authored at required path
+- [x] Companion shape definition section present
+- [x] Per-candidate table covers C01/C02/C03/C04 with companion ruling
+- [x] C05 token `DEFERRED_PENDING_FPC_T3_C01` present
+- [x] Registry-edit WO dispatch constraint defined
+- [x] All required structural sections present in decision packet
+- [x] Pre-dispatch gate commands all PASS
+- [x] Material commit made
+- [x] GC-018 Status updated to `DISPATCH_SATISFIED_BY_PLCS_T2_REVIEW`
+- [x] Work order Status updated to `CLOSED_PASS_BOUNDED`
+- [x] Roadmap PLCS-T2 row updated to `CLOSED_PASS_BOUNDED`
+- [x] Pre-closure gate commands all PASS
+- [x] Session sync performed separately after material closure
 
 ## Machine Closure Package
 
@@ -296,6 +297,7 @@ Package section:
 |---|---|---|---|
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Decision packet | `docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` | PLCS-T2 row `CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized | N/A | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | N/A | BLOCKED with reason |
@@ -486,8 +488,8 @@ C05 companion ruling is explicitly deferred until FPC-T3-C01 exists.
 | Claim boundary | no runtime/provider/live/public/registry mutation |
 | Agent type | Claude Code dispatch author |
 | Invocation ID | `plcs-t2-work-order-dispatch-authoring-2026-06-16` |
-| Expected manifest | `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
+| Expected manifest | `docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`; `docs/reviews/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_COMPLETION_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
+| Actual changed set | `docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`; `docs/reviews/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_COMPLETION_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
 | Agent type | Claude Code dispatch author |
 | Invocation ID | `plcs-t2-work-order-dispatch-authoring-2026-06-16` |
 | Manifest delta | MATCH |

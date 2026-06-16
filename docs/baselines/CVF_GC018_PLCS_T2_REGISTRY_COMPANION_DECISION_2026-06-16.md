@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: DISPATCH_SATISFIED_BY_PLCS_T2_REVIEW
 
 docType: gc018
 
@@ -171,16 +171,16 @@ Required post-commit closure checks (Codex):
 
 ## Rescan Intelligence Hardening
 
-- Original source artifact: NOT_APPLICABLE_WITH_REASON - this baseline does
+- Original source artifact: N/A with reason - this baseline does
   not reopen a corpus rescan or new intake replay.
 - Predecessor intake artifact: PLCS-T1 routing matrix and FPC-T2 completion
   review (both closed).
-- Delta ledger status: NOT_APPLICABLE_WITH_REASON - PLCS-T2 derives from
+- Delta ledger status: COMPLETE_WITH_DECLARED_LIMITS - PLCS-T2 derives from
   already-governed inputs; no new delta ledger.
 - Routing matrix status: DO_NOW for the PLCS-T2 decision packet;
   registry edits, runtime, provider, and public-sync are OUT_OF_SCOPE.
 - Semantic sampling status: bounded adversarial boundary sample below.
-- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+- Rescan intelligence verdict: COMPLETE_WITH_DECLARED_LIMITS
 
 ### Original-Intake Delta Ledger
 
@@ -216,6 +216,18 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance dispatch baseline. No public-sync batch is
 authorized.
+
+## Closure Verification
+
+PLCS-T2 is satisfied by:
+
+`docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`
+
+Final disposition: `CLOSED_PASS_BOUNDED`.
+
+The decision packet is documentation-only and keeps registry edits, checker
+implementation, runtime/source/test mutation, provider/live proof, public-sync,
+C05 companion ruling, and downstream adapter authorization out of scope.
 
 ## Agent Operation Trace Block
 
