@@ -376,6 +376,14 @@ Authoring traps promoted by FPRC-T2:
 - Use `PREDECESSOR_SATISFIED` for predecessor authority-chain status values in
   dispatch packets; reserve `CLOSED_PASS_BOUNDED` for the current closure
   artifact or closed child artifact evidence, not predecessor status cells.
+- If boundary prose must mention provider-registry absence or hardcoded
+  provider behavior, explicitly name
+  `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and
+  `PROVIDER_CAPABILITY_REGISTRY` as accounted-for, out-of-scope, and untouched.
+- Dispatch Agent Operation Trace manifests must list only the files changed by
+  the dispatch batch. Put future decision packets, completion reviews, source
+  files, or tests in Write Ownership or Expected Deliverables, not in the
+  dispatch expected/actual changed set.
 
 Standard:
 `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`
@@ -425,22 +433,22 @@ Standard:
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex |
-| Provider or surface | Codex CLI / VSCode extension |
-| Session or invocation | base `5841ae43` |
+| Actor | Claude Code (B11/B12 doc-promotion authoring) |
+| Provider or surface | Claude Code local workspace |
+| Session or invocation | 2026-06-16 B11/B12 promotion folded into PLCS-T3 dispatch batch; base `7ca00450` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | `apply_patch`, `python`, `git` |
-| Target paths | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reviews/CVF_PROVIDER_MEMORY_AUTHORITY_BOUNDARY_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
-| Allowed scope source | Operator instruction to promote the provider-memory authority finding into reusable CVF governance |
-| Before status evidence | HEAD `5841ae43`; guard hardening not committed |
-| After status evidence | Addendum guidance added for provider memory authority boundary |
-| Diff evidence | Guard branch, regression test, addendum guidance, and completion review only |
-| Approval boundary | Governance authoring hardening only; no implementation authorization |
-| Claim boundary | Work-order authoring guidance only; no runtime/provider/live/public claim |
-| Agent type | Codex |
-| Invocation ID | `provider-memory-authority-boundary-2026-06-14` |
-| Expected manifest | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reviews/CVF_PROVIDER_MEMORY_AUTHORITY_BOUNDARY_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
-| Actual changed set | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reviews/CVF_PROVIDER_MEMORY_AUTHORITY_BOUNDARY_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
+| Command or tool surface | Read, Edit, Grep, PowerShell |
+| Target paths | `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_FOR_CODEX_2026-06-16.md` |
+| Allowed scope source | operator instruction 2026-06-16 (two-layer B11/B12 promotion); PLCS-T3 GC-018 expanded scope |
+| Before status evidence | HEAD `7ca00450`; clean worktree before B11/B12 doc edits |
+| After status evidence | B11/B12 promoted into finding-propagation standard and this addendum; AOT-T3 queued in finding-propagation roadmap; pending material commit |
+| Diff evidence | `git status --short` shows the six doc-layer + PLCS-T3 dispatch paths |
+| Approval boundary | governance authoring/documentation only; no checker code change in this batch |
+| Claim boundary | work-order authoring guidance only; no runtime/provider/live/public/checker-implementation claim |
+| Agent type | Claude Code authoring; Codex executes PLCS-T3 and queued AOT-T3 |
+| Invocation ID | `b11-b12-doc-promotion-2026-06-16` |
+| Expected manifest | `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_FOR_CODEX_2026-06-16.md` |
+| Actual changed set | `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_FOR_CODEX_2026-06-16.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no delete or rename |
 

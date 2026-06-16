@@ -97,6 +97,30 @@ Recommended taxonomy:
 | FPRC-T2 | CLOSED_PASS_BOUNDED | Harden provider-memory lesson promotion so reusable lessons in Claude memory or `MEMORY.md` (`NOT_CVF_SOURCE`) require CVF-governed promotion | Codex |
 | FPRC-T3 | CANDIDATE_AFTER_T2 | Pilot on one future finding-bearing closure and compare operator readability | Codex reviewer |
 
+## Cross-Lane Queued Follow-Up: AOT-T3 (B11/B12 Machine-Check Hardening)
+
+The PLCS-T3 dispatch authoring session surfaced two repeatable cross-agent
+dispatch-authoring traps, now governed as findings B11 and B12 in
+`docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`:
+
+- B11: provider-registry trigger phrases in N/A prose force runtime-freshness
+  evidence (work-order dispatch quality gate).
+- B12: dispatch trace manifests that list not-yet-created execution
+  deliverables produce false MISSING_DELIVERABLE failures (agent operation
+  trace gate).
+
+Operator decision (2026-06-16): two-layer promotion ("Ca hai"). The
+documentation layer is delivered now (this standard, the work-order authoring
+addendum, and the PLCS-T3 batch). The machine-check layer for B12 is queued as
+a separate AOT-lane tranche:
+
+| Queued tranche | Status | Purpose | Owner | Sequencing |
+|---|---|---|---|---|
+| AOT-T3 | QUEUED_AFTER_PLCS_T3 | Harden `governance/compat/check_agent_operation_trace.py` to scope the manifest comparison to the dispatch changed set, so dispatch packets that name future execution deliverables in Write Ownership do not fail MISSING_DELIVERABLE | Codex | Opens only after PLCS-T3 closes, on the PLCS-T3 closure commit as executionBaseHead, so the two batches do not share a changed set |
+
+B11 stays documentation-only guidance; no B11 code enforcement is queued.
+AOT-T3 must be additive and must not regress AOT-T2 manifest enforcement.
+
 ## Work Plan
 
 1. FPRC-T1 defines the table standard and example root/symptom grouping.

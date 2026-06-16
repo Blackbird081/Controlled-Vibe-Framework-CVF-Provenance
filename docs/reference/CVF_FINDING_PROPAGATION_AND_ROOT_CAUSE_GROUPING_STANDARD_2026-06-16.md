@@ -200,6 +200,8 @@ Current FPRC-T2 examples:
 | B8 | `NOT_APPLICABLE_WITH_REASON` can be the wrong verdict in dispatch or decision artifacts when closure-target terms appear elsewhere in the file. | Standard wording: use `COMPLETE_WITH_DECLARED_LIMITS` for bounded decision packets that name future closure targets. |
 | B9 | `CLOSED_PASS_BOUNDED` in predecessor rows can trigger closure-packaging logic before the current artifact is a closure packet. | Standard wording: use `PREDECESSOR_SATISFIED` for authority-chain predecessor status values in dispatch packets. |
 | B10 | Capturing B7-B9 only in Claude memory or `MEMORY.md` (`NOT_CVF_SOURCE`) is a provider-memory learning escape. | Governed artifact or machine check required before closure. |
+| B11 | Provider registry absence or hardcoded-provider trigger phrases in N/A prose can force runtime-freshness evidence. | If unavoidable, name `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` as out-of-scope and untouched. |
+| B12 | Dispatch trace manifests that include future Codex deliverables not created in the dispatch batch create false missing-deliverable failures. | Dispatch expected/actual manifests must list only the current dispatch changed set; future worker deliverables belong in Write Ownership or Expected Deliverables sections. |
 
 ### Provider Memory Is Not CVF Authority
 
@@ -226,6 +228,7 @@ Known keyword trigger classes:
 | `scan`, `classification`, `corpus`, `readiness`, `GC-051` | Corpus scan registry gate | `Registry JSON` PASS, `Registry Markdown` PASS |
 | `receipt` | Acceptance Receipt Assertion Matrix gate | full ARAM section |
 | `no provider call`, `call providers`, `provider call` | Runtime Freshness gate | top-level `## Current Runtime Freshness Verification` section |
+| `provider` within ~120 chars of `no registry`, `hardcoded`, `no model registry`, `no provider/API key use` (B11) | Work-order dispatch quality gate (`_validate_runtime_freshness_claims`) | the artifact must name `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` as accounted-for surfaces |
 
 ### Rule
 
@@ -255,6 +258,25 @@ This rule applies to:
 When boundary prose must be technical and cannot avoid a trigger word, place the
 sentence in a section header or summary table row that is outside the scanned
 prose body, and cite this standard as the reason.
+
+---
+
+## Dispatch Manifest Scope Discipline
+
+Dispatch packet Agent Operation Trace manifests must describe the files changed
+by the dispatch batch itself. They must not list future worker or Codex
+deliverables that are authorized but not yet created.
+
+Use this split:
+
+| Artifact class | Where it belongs |
+|---|---|
+| GC-018, work order, and roadmap files changed in the dispatch batch | Agent Operation Trace expected and actual manifests |
+| Decision packet, completion review, source file, test, or runtime artifact to be produced later | Write Ownership, Expected Deliverables, or Acceptance Criteria |
+
+If a future deliverable is listed in the dispatch manifest before it exists, the
+machine gate may correctly report it as missing or unobserved. That is a
+dispatch-authoring defect, not a worker execution defect.
 
 ---
 
