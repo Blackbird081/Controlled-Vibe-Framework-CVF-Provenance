@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: OPEN_RSF_T3_CANDIDATE
+Status: RSF_T3_DISPATCHED_TO_WORKER
 
 docType: roadmap
 
@@ -27,8 +27,9 @@ and promote the defect into a reusable dispatch freshness guard.
 ## Authorization / Decision
 
 Decision: RSF-T1 is closed bounded at material commit `1c3724d0`; RSF-T2 is
-implemented and closed bounded in the reviewer material batch. RSF-T3 remains a
-candidate only and requires fresh authorization before dispatch.
+implemented and closed bounded in the reviewer material batch. RSF-T3 is now
+dispatched as a bounded non-CI2 next-move sample validation after source audit
+found current continuity pointing to closed Model Gateway C-02 P2 material.
 
 No runtime, live-provider, credential, public-sync, Model Gateway, LPCI product,
 or broad legacy absorption work is authorized by this roadmap.
@@ -98,7 +99,7 @@ move is reconciliation or dependency-release refresh, not duplicate dispatch.
 |---|---|---|---|
 | RSF-T1 | CLOSED_PASS_BOUNDED | Reconcile CI2 roadmap state against T3/T4/T5 closure evidence and author a stale-roadmap learning review | Claude worker, Codex reviewer |
 | RSF-T2 | CLOSED_PASS_BOUNDED | Add or extend a machine guard that blocks ready packets when source evidence shows the target tranche is already closed | Claude worker, Codex reviewer |
-| RSF-T3 | CANDIDATE_AFTER_T2_REVIEW | Apply the guard to one non-CI2 roadmap sample and document operator-facing next-move behavior | Future worker |
+| RSF-T3 | DISPATCHED_TO_WORKER | Apply the guard to one non-CI2 roadmap sample and document operator-facing next-move behavior | Claude worker, Codex reviewer |
 
 ## Work Plan
 
@@ -181,6 +182,22 @@ Verification:
 - `python governance/compat/check_agent_operation_trace.py --base 12d805d1 --head HEAD --enforce`
   PASS.
 - `git diff --check` PASS.
+
+## RSF-T3 Dispatch Note
+
+RSF-T3 was selected after a Codex source audit of CCLV-T2 actual work and
+current continuity. The non-CI2 sample is the Model Gateway C-02 P2 next-move
+surface: C-02 P2 work order and state entry already report
+`CLOSED_PASS_BOUNDED`, while current front-door/handoff continuity still points
+to C-02 P2. The worker must verify this sample from source files and document
+operator-facing next-move behavior without redispatching C-02 P2 or touching
+runtime/provider/public/session state.
+
+Dispatch artifacts:
+
+- `docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md`
+- `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_2026-06-16.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T3_NON_CI2_NEXT_MOVE_SAMPLE_FOR_CLAUDE_2026-06-16.md`
 
 ## Non-Regression Boundary
 
