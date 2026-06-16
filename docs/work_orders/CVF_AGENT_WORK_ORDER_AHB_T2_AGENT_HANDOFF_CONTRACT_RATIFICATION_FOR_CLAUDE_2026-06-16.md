@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -63,10 +63,11 @@ Claude returns to Codex when:
 - any unresolved ratification decision is marked `DEFERRED_WITH_REASON` with a
   concrete blocker.
 
-Return status should be `COMPLETE_PENDING_REVIEW` if all acceptance criteria are
-met or boundedly deferred. Return status should be `BLOCKED` only when a
-required source artifact is missing, the same-purpose contract already exists,
-or a required decision cannot be expressed within this work order's scope.
+Worker-phase return status was expected to be complete-pending-review if all
+acceptance criteria were met or boundedly deferred. Worker-phase return status
+was expected to be blocked only when a required source artifact was missing, the
+same-purpose contract already existed, or a required decision could not be
+expressed within this work order's scope.
 
 ## Operator Checkpoint
 
@@ -111,8 +112,8 @@ Out of scope:
 | Level | Artifact | Status |
 |---|---|---|
 | Operator instruction | 2026-06-16 operator authorization: proceed with AHB-T2 after AOT-T3 | ACCEPTED |
-| GC-018 baseline | `docs/baselines/CVF_GC018_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | DISPATCH_READY |
-| AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` AHB-T2 row | DISPATCH_READY |
+| GC-018 baseline | `docs/baselines/CVF_GC018_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | CLOSURE_SATISFIED |
+| AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` AHB-T2 row | CLOSURE_SATISFIED |
 | AHB-T1 audit | `docs/audits/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md` | PREDECESSOR_SATISFIED |
 | AHB-T1 Codex rebuttal | `docs/reviews/CVF_AHB_T1_HANDOFF_BOUNDARY_AUDIT_CODEX_REBUTTAL_2026-06-16.md` | PREDECESSOR_SATISFIED |
 | AOT-T3 completion | `docs/reviews/CVF_AOT_T3_DISPATCH_MANIFEST_SCOPE_CHECK_COMPLETION_2026-06-16.md` | PREDECESSOR_SATISFIED |
@@ -280,16 +281,16 @@ python governance/compat/run_agent_commit_steward_preflight.py --mode closure --
 
 ## Closure Checklist
 
-- [ ] Required first reads R1-R13 are confirmed.
-- [ ] Pre-flight checks passed.
-- [ ] Ratification packet authored at required path.
-- [ ] Every contract field is resolved as RATIFIED, RATIFIED_WITH_BOUNDARY, or DEFERRED_WITH_REASON.
-- [ ] Surface reconciliation matrix has no orphaned MA1/envelope/steward/AOT/session-sync surface.
-- [ ] AOT-T3 is absorbed as closed input.
-- [ ] Cross-batch isolation is explicitly decided or deferred with blocking reason.
-- [ ] C3 semantics are explicitly decided or deferred with blocking reason.
-- [ ] Worker return states HEAD unchanged.
-- [ ] No forbidden runtime/checker/registry/provider/public/workspace work is claimed.
+- [x] Required first reads R1-R13 are confirmed.
+- [x] Pre-flight checks passed.
+- [x] Ratification packet authored at required path.
+- [x] Every contract field is resolved as RATIFIED, RATIFIED_WITH_BOUNDARY, or DEFERRED_WITH_REASON.
+- [x] Surface reconciliation matrix has no orphaned MA1/envelope/steward/AOT/session-sync surface.
+- [x] AOT-T3 is absorbed as closed input.
+- [x] Cross-batch isolation is explicitly decided or deferred with blocking reason.
+- [x] C3 semantics are explicitly decided or deferred with blocking reason.
+- [x] Worker return states HEAD unchanged.
+- [x] No forbidden runtime/checker/registry/provider/public/workspace work is claimed.
 
 ## Reviewer Closure Conversion
 
@@ -299,6 +300,23 @@ packet and worker return; Codex converts accepted material into a closed tranche
 completionReviewPath: `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md`
 
 reviewerOwnedClosurePaths: `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_FOR_CLAUDE_2026-06-16.md`
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 status | `docs/baselines/CVF_GC018_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_FOR_CLAUDE_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Ratified contract | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | `Status: ACTIVE_RATIFIED` | PASS |
+| Worker return | `docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_WORKER_RETURN_2026-06-16.md` | `Status: ACCEPTED_BY_CODEX_WITH_REVIEWER_REPAIRS` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | AHB-T2 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized for AHB-T2 documentation-only contract ratification | N/A | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized for AHB-T2 documentation-only contract ratification | N/A | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source/live proof | N/A | N/A with reason |
+| System loop interlock | N/A with reason: AHB-T2 does not edit the registry | N/A | N/A with reason |
+| Session continuity | N/A with reason: follows material closure commit separately if next move changes | N/A | N/A with reason |
 
 ## Current Runtime Freshness Verification
 

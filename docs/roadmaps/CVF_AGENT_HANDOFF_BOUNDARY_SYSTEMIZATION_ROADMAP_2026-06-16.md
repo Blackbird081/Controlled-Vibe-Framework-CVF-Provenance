@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_T2_DISPATCH_READY
+Status: ROADMAP_ACTIVE_AHB_T2_CLOSED_AHB_T3_CANDIDATE
 
 docType: roadmap
 
@@ -167,7 +167,7 @@ views that must cite the contract.
 | AHB-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap, state the seam problem, request Codex critique | Claude Code proposer |
 | AHB-T1 | CLOSED_PASS_BOUNDED | Read-only audit of handoff surfaces; produced the role-configuration x phase x invariant matrix and a proposed Agent Handoff Contract model | Claude author; Codex critique/rebuttal |
 | AHB-T1A | CLOSED_PASS_BOUNDED | Immediate cleanup for AHB-T1 meta-findings: structural checker audit/handoff filename classification and canonical defect-class vocabulary proof | Codex |
-| AHB-T2 | DISPATCH_READY | Ratify the canonical Agent Handoff Contract and reconcile MA1/envelope/steward/AOT surfaces under it; absorb the closed AOT-T3 rule as an existing AOT input, not as an unopened dependency | Claude author; Codex reviewer/closer |
+| AHB-T2 | CLOSED_PASS_BOUNDED | Ratified the canonical Agent Handoff Contract and reconciled MA1/envelope/steward/AOT/session-sync surfaces under it; absorbed the closed AOT-T3 rule as an existing AOT input | Claude author; Codex reviewer/closer |
 | AHB-T3 | CANDIDATE_AFTER_T2 | Implement a unified handoff-boundary machine check derived from the contract, at the earliest applicable gate phase | Decided after T2 |
 | AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
 
@@ -194,6 +194,22 @@ accepted material commit, closure, and session sync.
 AHB-T2 must not implement the future unified checker, wire any gate, build the
 agent-interaction workspace, edit runtime/source/test or registry files, run
 provider/live proof, public-sync, or claim production/public readiness.
+
+## AHB-T2 Closure Note
+
+AHB-T2 is `CLOSED_PASS_BOUNDED` after Claude authored the ratification packet
+and worker return under `WORKER_MUST_NOT_COMMIT`, and Codex reviewed actual
+files, performed narrow reviewer repairs, and accepted the material. The
+ratified contract is:
+
+`docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
+
+Closure packet:
+
+`docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md`
+
+AHB-T3 remains a future candidate requiring fresh GC-018 and operator
+authorization. The agent-interaction workspace remains AHB-Tn scope.
 
 ## AHB-T1 Requirements (Proposed)
 
