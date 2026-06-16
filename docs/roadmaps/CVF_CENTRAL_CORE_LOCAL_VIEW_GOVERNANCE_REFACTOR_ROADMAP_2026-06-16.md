@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T1_CLOSED
+Status: ROADMAP_IN_PROGRESS_T2_DISPATCHED
 
 docType: roadmap
 
@@ -87,7 +87,7 @@ facts.
 | CCLV-T0 | COMPLETED_IN_ROADMAP_PACKET | Publish common standard and roadmap selection | Codex |
 | CCLV-T1 | CLOSED_PASS_BOUNDED | Define a closure central facts packet template and local reference rules | Claude (combined role) |
 | CCLV-T1A | CLOSED_PASS_BOUNDED | Apply CCLV pattern to the work order template (pointer refactor, 1200->994 lines) | Claude/Codex |
-| CCLV-T2 | READY_FOR_GC018 | Add advisory checker for central facts references on changed new batches | Future worker |
+| CCLV-T2 | DISPATCHED_TO_CLAUDE | Add advisory checker for central facts references on changed new batches | Claude worker; Codex reviewer |
 | CCLV-T3 | CANDIDATE_AFTER_T2 | Pilot on one small governance closure workflow | Future worker |
 | CCLV-T4 | CANDIDATE_AFTER_PILOT | Decide whether selected workflows can replace duplicated AOT/closure facts with references | Codex reviewer |
 
@@ -115,6 +115,20 @@ template and the local reference block rules the standard specified.
 
 No checker was added (that is CCLV-T2). No workflow pilot was run (that is
 CCLV-T3). Forward-only; no historical artifact was rewritten.
+
+## CCLV-T2 Dispatch Record (2026-06-16)
+
+CCLV-T2 is dispatched to Claude as a no-commit worker implementation packet.
+
+- Codex audit and selection:
+  `docs/reviews/CVF_CCLV_T1_T1A_CODEX_AUDIT_AND_CCLV_T2_SELECTION_2026-06-16.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_FOR_CLAUDE_2026-06-16.md`
+
+Dispatch boundary: advisory checker only; no global hard-fail hook wiring, no
+historical rewrite, no runtime/provider/live/public/legacy scope.
 
 ## Acceptance Criteria
 
@@ -156,7 +170,7 @@ approval.
 | Defect class | `EVIDENCE_DUPLICATION_DRIFT` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `STANDARD_ADDED` |
-| Next control action | CCLV-T2 advisory checker work order after operator authorization (CCLV-T1 closed 2026-06-16) |
+| Next control action | CCLV-T2 advisory checker dispatched to Claude on 2026-06-16 |
 | Worker blame | `N/A_WITH_REASON`: repeated facts across files create drift opportunities by design |
 
 ## Public Export Disposition
@@ -172,18 +186,18 @@ authorized.
 |---|---|
 | Actor | Codex orchestrator |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-16 central-core-local-view roadmap authoring |
+| Session or invocation | 2026-06-16 CCLV roadmap authoring and CCLV-T2 dispatch update |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, apply_patch |
 | Target paths | this roadmap; central core/local view standard |
 | Allowed scope source | operator selected central core/local view as CVF-wide governance refactor |
-| Before status evidence | base `dedc97c4` |
-| After status evidence | roadmap authored; pending material commit |
-| Diff evidence | governed documentation add |
-| Approval boundary | roadmap and standard only; no worker dispatch yet |
-| Claim boundary | governance planning and standardization only |
-| Expected manifest | `docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md` |
-| Actual changed set | pending reviewer completion |
+| Before status evidence | base `28a72f45` for CCLV-T2 dispatch update |
+| After status evidence | CCLV-T2 dispatched to Claude; pending dispatch commit |
+| Diff evidence | `git diff --name-status`; `git status --short` |
+| Approval boundary | roadmap update and dispatch packet only; no implementation by this commit |
+| Claim boundary | governance planning and dispatch only |
+| Expected manifest | `docs/reviews/CVF_CCLV_T1_T1A_CODEX_AUDIT_AND_CCLV_T2_SELECTION_2026-06-16.md`; `docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_FOR_CLAUDE_2026-06-16.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md` |
+| Actual changed set | docs/reviews/CVF_CCLV_T1_T1A_CODEX_AUDIT_AND_CCLV_T2_SELECTION_2026-06-16.md; docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md; docs/work_orders/CVF_AGENT_WORK_ORDER_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_FOR_CLAUDE_2026-06-16.md; docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
