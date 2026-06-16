@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AFTER_AHB_T1A_CLEANUP
+Status: ROADMAP_ACTIVE_AHB_T2_DISPATCH_READY
 
 docType: roadmap
 
@@ -167,7 +167,7 @@ views that must cite the contract.
 | AHB-T0 | COMPLETED_IN_ROADMAP_PACKET | Open roadmap, state the seam problem, request Codex critique | Claude Code proposer |
 | AHB-T1 | CLOSED_PASS_BOUNDED | Read-only audit of handoff surfaces; produced the role-configuration x phase x invariant matrix and a proposed Agent Handoff Contract model | Claude author; Codex critique/rebuttal |
 | AHB-T1A | CLOSED_PASS_BOUNDED | Immediate cleanup for AHB-T1 meta-findings: structural checker audit/handoff filename classification and canonical defect-class vocabulary proof | Codex |
-| AHB-T2 | CANDIDATE_AFTER_T1 | Ratify the canonical Agent Handoff Contract and reconcile MA1/envelope/steward/AOT surfaces under it; absorb the closed AOT-T3 rule as an existing AOT input, not as an unopened dependency | Decided after T1 critique |
+| AHB-T2 | DISPATCH_READY | Ratify the canonical Agent Handoff Contract and reconcile MA1/envelope/steward/AOT surfaces under it; absorb the closed AOT-T3 rule as an existing AOT input, not as an unopened dependency | Claude author; Codex reviewer/closer |
 | AHB-T3 | CANDIDATE_AFTER_T2 | Implement a unified handoff-boundary machine check derived from the contract, at the earliest applicable gate phase | Decided after T2 |
 | AHB-Tn | CANDIDATE_AFTER_T2 | Analyze and, if authorized, design the dedicated agent-interaction workspace against the ratified contract | Decided after T2 |
 
@@ -183,6 +183,17 @@ authorization. AOT-T3 (B12 machine check in the finding-propagation roadmap)
 was shipped independently first after operator selection. AHB-T2 should treat
 AOT-T3 as a closed AOT input when reconciling MA1, envelope, steward, and AOT
 surfaces.
+
+## AHB-T2 Dispatch Note
+
+Operator authorized AHB-T2 on 2026-06-16 after AOT-T3 closure. Dispatch base is
+`88111c19`. AHB-T2 is assigned to Claude under `WORKER_MUST_NOT_COMMIT` to
+author the contract ratification packet and worker return. Codex owns review,
+accepted material commit, closure, and session sync.
+
+AHB-T2 must not implement the future unified checker, wire any gate, build the
+agent-interaction workspace, edit runtime/source/test or registry files, run
+provider/live proof, public-sync, or claim production/public readiness.
 
 ## AHB-T1 Requirements (Proposed)
 
