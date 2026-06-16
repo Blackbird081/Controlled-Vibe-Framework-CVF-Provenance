@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex closes the accepted PLCS-T1 worker material from commit b05286fe with bounded closure review, then session-sync; parked checkpoint=runtime/provider/live/public-sync/new legacy scan/registry mutation, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization to choose a bounded PLCS/CVF foundation follow-up after PLCS-T1 closure; parked checkpoint=runtime/provider/live/public-sync/new legacy scan/registry mutation, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`
+`plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`
 
-Current HEAD recorded for this handoff: `b05286fe`
-(PLCS-T1 worker matrix and worker return accepted by Codex at material commit
+Current HEAD recorded for this handoff: `9f7cd413`
+(PLCS-T1 closure material commit `9f7cd413`;
+PLCS-T1 worker-material handoff-sync commit `dbddf213`;
+PLCS-T1 worker matrix and worker return accepted by Codex at material commit
 `b05286fe`;
 PLCS-T1 Central Core + Local View standing rule clarification commit
 `469f9bb2`;
@@ -103,13 +105,14 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after PLCS-T1 rule
-clarification commit `469f9bb2` and material dispatch commit `263e9b6e` to
-preserve the mode marker as
-`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude` across all
-surfaces, record the PLCS-T1 dispatch, route the next allowed move to the
-Claude worker return under `WORKER_MUST_NOT_COMMIT`, preserve prior bounded
-closures, record the Central Core + Local View standing operating rule, and keep
+update this handoff and session front-door state after PLCS-T1 closure commit
+`9f7cd413`, worker-material handoff-sync commit `dbddf213`, worker material
+commit `b05286fe`, rule clarification commit `469f9bb2`, and material dispatch
+commit `263e9b6e` to preserve the mode marker as
+`plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`
+across all surfaces, record PLCS-T1 closure, route the next allowed move to
+fresh operator authorization, preserve prior bounded closures, record the
+Central Core + Local View standing operating rule, and keep
 runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
 This scope also covers regenerating the
 `ACTIVE_SESSION_STATE.json` aggregate from source entries.
@@ -121,6 +124,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/plcsT1AbsorptionWorkflowChainRoutingClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT1AbsorptionWorkflowChainRoutingDispatch20260616.json`
 - `CVF_SESSION/state/entries/nextMoveFreshnessCheckerFoundationClosure20260616.json`
 - `CVF_SESSION/state/entries/fprcT1FindingRootCauseAndMemoryEscapeGuardDispatch20260616.json`
@@ -159,7 +163,9 @@ Claude work order at material commit `263e9b6e`; pre-dispatch autorun and
 dispatch steward gates passed. This session-sync updates continuity only.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert PLCS-T1 Central Core + Local View rule clarification
+batch. Do not revert PLCS-T1 material closure commit `9f7cd413`,
+PLCS-T1 worker-material handoff-sync commit `dbddf213`, PLCS-T1 worker material
+commit `b05286fe`, PLCS-T1 Central Core + Local View rule clarification
 commit `469f9bb2`, PLCS-T1 material dispatch commit `263e9b6e`,
 Next-Move Freshness Checker soft-wrap hardening material
 commit `fc7171aa`, Next-Move Freshness Checker Foundation material commit
@@ -184,20 +190,20 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-PLCS-T1 Absorption To Workflow-Chain Routing Matrix worker material is accepted
-at Codex material commit `b05286fe`. Claude honored
-`WORKER_MUST_NOT_COMMIT`; Codex committed the two worker deliverables after
-reviewer-fast, central-facts-reference, diff hygiene, agent-operation-trace, and
-reviewer-return steward checks. Claude work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`.
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix is
+`CLOSED_PASS_BOUNDED` at material closure commit `9f7cd413`. Codex accepted
+Claude's `WORKER_MUST_NOT_COMMIT` worker material at commit `b05286fe`, synced
+handoff at `dbddf213`, then closed the bounded matrix review. Completion:
+`docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md`.
 Follow-up rule clarification commit `469f9bb2` records Central Core + Local View
 as the standing operating pattern for future CVF foundation hardening that
 touches absorption, planes, layers, memory, learning, workflow chains, or agent
 handoff governance.
-Next allowed move: Codex completes the PLCS-T1 bounded closure review and
-updates roadmap/work-order/baseline status on the current accepted material
-range, then performs session-sync. No runtime/provider/live/public-sync/new
-legacy scan/registry mutation is authorized.
+Next allowed move: fresh operator authorization to choose a bounded follow-up,
+likely PLCS-T2 registry-companion decision, PLCS-T3 checker/template hardening,
+or another CVF foundation hardening tranche that preserves Central Core + Local
+View. No runtime/provider/live/public-sync/new legacy scan/registry mutation is
+authorized.
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
 commit `8433691f` with soft-wrap hardening commit `fc7171aa`. The checker rejects
@@ -238,10 +244,10 @@ source-verified work order.
 
 ## Next Allowed Move
 
-PLCS-T1 Absorption To Workflow-Chain Routing Matrix worker material is accepted
-at Codex material commit `b05286fe`. Next allowed move: Codex completes the
-bounded PLCS-T1 closure review on the accepted worker material, then performs
-session-sync. Do not redispatch Model
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix is
+`CLOSED_PASS_BOUNDED` at material closure commit `9f7cd413`. Next allowed move:
+fresh operator authorization to choose a bounded PLCS/CVF foundation follow-up.
+Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
 latest closed numbered LHW wave.
