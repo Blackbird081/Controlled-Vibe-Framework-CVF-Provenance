@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`next_move_freshness_checker_closed_pass_bounded_fresh_auth`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization only after Next-Move Freshness Checker Foundation CLOSED_PASS_BOUNDED at material commit 8433691f; parked checkpoint=Model Gateway C-02 P2 redispatch blocked as closed, Model Gateway P3 requires fresh operator authorization/GC-018/work order, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`next_move_freshness_checker_closed_pass_bounded_fresh_auth`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization only after Next-Move Freshness Checker Foundation CLOSED_PASS_BOUNDED at material commit 8433691f with soft-wrap hardening commit fc7171aa; parked checkpoint=Model Gateway C-02 P2 redispatch blocked as closed, Model Gateway P3 requires fresh operator authorization/GC-018/work order, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
 `next_move_freshness_checker_closed_pass_bounded_fresh_auth`
 
-Current HEAD recorded for this handoff: `8433691f`
-(Next-Move Freshness Checker Foundation material commit `8433691f`;
+Current HEAD recorded for this handoff: `fc7171aa`
+(Next-Move Freshness Checker soft-wrap hardening material commit `fc7171aa`;
+Next-Move Freshness Checker Foundation material commit `8433691f`;
 Roadmap State Reconciliation RSF-T3 closure material commit `ab683089`;
 Dispatch Prompt Envelope And Provider Memory Gate Hardening material commit
 `93d0eb7f`;
@@ -98,7 +99,8 @@ requires separate authorization.
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
 update this handoff and session front-door state after Next-Move Freshness
-Checker Foundation material commit `8433691f` to preserve the mode marker as
+Checker Foundation material commit `8433691f` and soft-wrap hardening commit
+`fc7171aa` to preserve the mode marker as
 `next_move_freshness_checker_closed_pass_bounded_fresh_auth` across all
 surfaces, record the checker closure, route the next allowed move to fresh
 operator authorization only, preserve prior bounded closures, and block stale
@@ -143,12 +145,14 @@ Protected paths:
 
 Operator authorization: operator asked Codex on 2026-06-16 to process this
 next-move freshness error before the next roadmap. Codex implemented the
-bounded checker, tests, and gate wiring at material commit `8433691f`; material
+bounded checker, tests, and gate wiring at material commit `8433691f`, then
+hardened soft-wrapped negation handling at material commit `fc7171aa`; material
 pre-closure passed all material gates and required this session-sync only for
 handoff HEAD continuity.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert Next-Move Freshness Checker Foundation material commit
+batch. Do not revert Next-Move Freshness Checker soft-wrap hardening material
+commit `fc7171aa`, Next-Move Freshness Checker Foundation material commit
 `8433691f`, RSF-T3 closure material commit `ab683089`, hardening commit
 `93d0eb7f`, RSF-T3 session-sync commit `32689562`, RSF-T3 dispatch commit
 `8450707a`, CCLV-T2 material commit
@@ -171,7 +175,8 @@ commit `5d46bc62`.
 ## Latest Continuity Note
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
-commit `8433691f`. The checker rejects current next-move surfaces that dispatch,
+commit `8433691f` with soft-wrap hardening commit `fc7171aa`. The checker rejects
+current next-move surfaces that dispatch,
 reopen, or execute work already recorded as `CLOSED_PASS` or
 `CLOSED_PASS_BOUNDED` in active session state, and is wired into reviewer-fast,
 pre-commit, pre-push, autorun common gates, and steward `session-sync`.
@@ -209,8 +214,9 @@ source-verified work order.
 ## Next Allowed Move
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
-commit `8433691f`. Next allowed move: fresh operator authorization only for the
-next bounded foundation roadmap or another operator-selected task.
+commit `8433691f` with soft-wrap hardening commit `fc7171aa`. Next allowed move:
+fresh operator authorization only for the next bounded foundation roadmap or
+another operator-selected task.
 Do not redispatch Model Gateway C-02 P2. Do not open Model Gateway P3 without fresh
 operator authorization, fresh GC-018, and source-verified work order. LHW24
 remains the latest closed numbered LHW wave.

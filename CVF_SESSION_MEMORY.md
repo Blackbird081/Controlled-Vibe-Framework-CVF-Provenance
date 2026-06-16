@@ -63,7 +63,8 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
-commit `8433691f`. The checker rejects current next-move surfaces that dispatch,
+commit `8433691f` with soft-wrap hardening commit `fc7171aa`. The checker rejects
+current next-move surfaces that dispatch,
 reopen, or execute work already recorded as `CLOSED_PASS` or
 `CLOSED_PASS_BOUNDED` in active session state, and is wired into reviewer-fast,
 pre-commit, pre-push, autorun common gates, and steward `session-sync`.
@@ -219,8 +220,9 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 Mode: `next_move_freshness_checker_closed_pass_bounded_fresh_auth`.
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
-commit `8433691f`. Next allowed move: fresh operator authorization only for the
-next bounded foundation roadmap or another operator-selected task.
+commit `8433691f` with soft-wrap hardening commit `fc7171aa`. Next allowed move:
+fresh operator authorization only for the next bounded foundation roadmap or
+another operator-selected task.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
