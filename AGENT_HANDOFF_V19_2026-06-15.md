@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization to choose PLCS-T3 checker/template hardening, individual FPC-T2 C01-C04 registry-edit work orders with fresh GC-018/work orders, or another bounded CVF foundation follow-up; parked checkpoint=registry edit, runtime/provider/live/public-sync/new legacy scan, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization to choose PLCS-T3 checker/template hardening, individual FPC-T2 C01-C04 registry-edit work orders with fresh GC-018/work orders, or another bounded CVF foundation follow-up; parked checkpoint=registry edit, runtime/provider/live/public-sync/new legacy scan, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`
+`fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization`
 
-Current HEAD recorded for this handoff: `6ab05918`
-(PLCS-T2 Registry-Companion Decision material closure commit `6ab05918`;
+Current HEAD recorded for this handoff: `7773b767`
+(FPRC-T2 Provider Memory Lesson Promotion Hardening material commit
+`7773b767`;
+PLCS-T2 Registry-Companion Decision material closure commit `6ab05918`;
 PLCS-T2 Registry-Companion Decision handoff-sync commit `29ec11b0`;
 PLCS-T2 Registry-Companion Decision dispatch commit `9b483168`;
 PLCS-T1 closure material commit `9f7cd413`;
@@ -108,15 +110,16 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after PLCS-T2 material closure
-commit `6ab05918`, PLCS-T2 handoff-sync commit `29ec11b0`, PLCS-T2 dispatch
-commit `9b483168`, PLCS-T1 closure commit `9f7cd413`, worker-material
+update this handoff and session front-door state after FPRC-T2 material commit
+`7773b767`, PLCS-T2 material closure commit `6ab05918`, PLCS-T2 handoff-sync
+commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
+`9f7cd413`, worker-material
 handoff-sync commit `dbddf213`, worker material commit `b05286fe`, rule
 clarification commit `469f9bb2`, and material dispatch commit `263e9b6e` to
 preserve the mode marker as
-`plcs_t2_registry_companion_decision_closed_pass_bounded_next_authorization`
-across all surfaces, record PLCS-T2 closure, route the next allowed move to
-fresh operator authorization, preserve prior bounded closures, record the
+`fprc_t2_provider_memory_lesson_promotion_closed_pass_bounded_next_authorization`
+across all surfaces, record FPRC-T2 closure, route the next allowed move to
+fresh operator authorization, preserve prior bounded closures, preserve the
 Central Core + Local View standing operating rule, and keep registry edit,
 runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
 This scope also covers regenerating the
@@ -129,6 +132,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/fprcT2ProviderMemoryLessonPromotionHardeningClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT2RegistryCompanionDecisionClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT1AbsorptionWorkflowChainRoutingClosure20260616.json`
 - `CVF_SESSION/state/entries/plcsT1AbsorptionWorkflowChainRoutingDispatch20260616.json`
@@ -161,15 +165,13 @@ Protected paths:
 - `CVF_SESSION/state/entries/commitStewardSessionSyncPreflightHardeningClosure20260616.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator asked on 2026-06-16 whether the foundation
-upgrade can be combined with knowledge absorption, and authorized proceeding to
-make remaining plane/layer work route through workflow chains instead of
-parallel lanes. Codex authored the bounded PLCS-T1 roadmap, baseline, and
-Claude work order at material commit `263e9b6e`; pre-dispatch autorun and
-dispatch steward gates passed. This session-sync updates continuity only.
+Operator authorization: operator instructed Codex on 2026-06-16 to harden CVF
+and handle the Claude memory-only findings before proceeding. This session-sync
+updates continuity only after FPRC-T2 material commit `7773b767`.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert PLCS-T2 material closure commit `6ab05918`,
+batch. Do not revert FPRC-T2 material commit `7773b767`,
+PLCS-T2 material closure commit `6ab05918`,
 PLCS-T2 handoff-sync commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`,
 PLCS-T1 material closure commit `9f7cd413`,
 PLCS-T1 worker-material handoff-sync commit `dbddf213`, PLCS-T1 worker material
@@ -197,6 +199,24 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+FPRC-T2 Provider Memory Lesson Promotion Hardening is `CLOSED_PASS_BOUNDED` at
+material commit `7773b767`. Codex executed the operator-authorized foundation
+hardening after Claude reported B7/B8/B9 lessons were stored only in
+Claude-only memory and future same-kind work would be faster.
+
+Artifacts:
+`docs/baselines/CVF_GC018_FPRC_T2_PROVIDER_MEMORY_LESSON_PROMOTION_HARDENING_2026-06-16.md`,
+`docs/reviews/CVF_FPRC_T2_PROVIDER_MEMORY_LESSON_PROMOTION_HARDENING_COMPLETION_2026-06-16.md`,
+`docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md`,
+`docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`,
+`governance/compat/check_finding_to_governance_learning.py`, and
+`governance/compat/test_check_finding_to_governance_learning.py`.
+
+Result: provider-local `MEMORY.md` is `NOT_CVF_SOURCE`; reusable lessons stored
+in provider memory cannot be waived with generic `N/A_WITH_REASON`; B7 exact
+heading substring traps, B8 `NOT_APPLICABLE_WITH_REASON` verdict traps, and B9
+predecessor `CLOSED_PASS_BOUNDED` status traps are now governed guidance.
 
 PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
 closure commit `6ab05918` after dispatch commit `9b483168` and handoff-sync
@@ -266,8 +286,8 @@ source-verified work order.
 
 ## Next Allowed Move
 
-PLCS-T2 Registry-Companion Decision is `CLOSED_PASS_BOUNDED` at material
-closure commit `6ab05918`. Next allowed move: fresh operator authorization to
+FPRC-T2 Provider Memory Lesson Promotion Hardening is `CLOSED_PASS_BOUNDED` at
+material commit `7773b767`. Next allowed move: fresh operator authorization to
 choose PLCS-T3 checker/template hardening, individual FPC-T2 C01-C04
 registry-edit work orders with fresh GC-018/work orders, or another bounded CVF
 foundation follow-up that preserves Central Core + Local View.
