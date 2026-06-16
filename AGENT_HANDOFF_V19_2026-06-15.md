@@ -30,8 +30,9 @@ Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_cl
 
 `plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`
 
-Current HEAD recorded for this handoff: `9f7cd413`
-(PLCS-T1 closure material commit `9f7cd413`;
+Current HEAD recorded for this handoff: `9b483168`
+(PLCS-T2 Registry-Companion Decision dispatch commit `9b483168`;
+PLCS-T1 closure material commit `9f7cd413`;
 PLCS-T1 worker-material handoff-sync commit `dbddf213`;
 PLCS-T1 worker matrix and worker return accepted by Codex at material commit
 `b05286fe`;
@@ -105,10 +106,10 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after PLCS-T1 closure commit
-`9f7cd413`, worker-material handoff-sync commit `dbddf213`, worker material
-commit `b05286fe`, rule clarification commit `469f9bb2`, and material dispatch
-commit `263e9b6e` to preserve the mode marker as
+update this handoff and session front-door state after PLCS-T2 dispatch commit
+`9b483168`, PLCS-T1 closure commit `9f7cd413`, worker-material handoff-sync
+commit `dbddf213`, worker material commit `b05286fe`, rule clarification commit
+`469f9bb2`, and material dispatch commit `263e9b6e` to preserve the mode marker as
 `plcs_t1_absorption_workflow_chain_routing_closed_pass_bounded_next_authorization`
 across all surfaces, record PLCS-T1 closure, route the next allowed move to
 fresh operator authorization, preserve prior bounded closures, record the
@@ -163,7 +164,8 @@ Claude work order at material commit `263e9b6e`; pre-dispatch autorun and
 dispatch steward gates passed. This session-sync updates continuity only.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert PLCS-T1 material closure commit `9f7cd413`,
+batch. Do not revert PLCS-T2 dispatch commit `9b483168`,
+PLCS-T1 material closure commit `9f7cd413`,
 PLCS-T1 worker-material handoff-sync commit `dbddf213`, PLCS-T1 worker material
 commit `b05286fe`, PLCS-T1 Central Core + Local View rule clarification
 commit `469f9bb2`, PLCS-T1 material dispatch commit `263e9b6e`,
@@ -189,6 +191,17 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+PLCS-T2 Registry-Companion Decision dispatch is committed at `9b483168`.
+Artifacts:
+`docs/baselines/CVF_GC018_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T2_REGISTRY_COMPANION_DECISION_FOR_CODEX_2026-06-16.md`.
+Codex is authorized as the decision author under `WORKER_MAY_COMMIT` /
+single-agent execution. Boundary: documentation-only companion-shape decision;
+no interlock registry edit, checker implementation, runtime/source/test
+mutation, provider/live proof, public-sync, C05 companion ruling, downstream
+adapter authorization, production readiness, or public readiness.
 
 PLCS-T1 Absorption To Workflow-Chain Routing Matrix is
 `CLOSED_PASS_BOUNDED` at material closure commit `9f7cd413`. Codex accepted
