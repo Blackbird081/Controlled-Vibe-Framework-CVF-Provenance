@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `next_move_freshness_checker_closed_pass_bounded_fresh_auth`
+Current mode marker: `plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `next_move_freshness_checker_closed_pass_bounded_fresh_auth`.
+Current mode: `plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`.
 
 Active handoff:
 
@@ -61,6 +61,18 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix is dispatched at material
+commit `263e9b6e`. The batch opens a bounded foundation lane to combine future
+knowledge absorption with plane/layer workflow-chain systemization, so accepted
+knowledge must route to an owner, workflow-chain/interlock/checker/template
+disposition, or a blocked/out-of-scope reason instead of remaining parallel
+plane/layer prose. Claude work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`.
+Next allowed move: transfer/await the PLCS-T1 Claude worker return under
+`WORKER_MUST_NOT_COMMIT`, then Codex reviews the actual diff before closure.
+No runtime/provider/live/public-sync/new legacy scan/registry mutation is
+authorized.
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
 commit `8433691f` with soft-wrap hardening commit `fc7171aa`. The checker rejects

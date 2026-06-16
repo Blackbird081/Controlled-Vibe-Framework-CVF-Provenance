@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`next_move_freshness_checker_closed_pass_bounded_fresh_auth`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=fresh operator authorization only after Next-Move Freshness Checker Foundation CLOSED_PASS_BOUNDED at material commit 8433691f with soft-wrap hardening commit fc7171aa; parked checkpoint=Model Gateway C-02 P2 redispatch blocked as closed, Model Gateway P3 requires fresh operator authorization/GC-018/work order, Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=transfer/await PLCS-T1 Claude worker return under WORKER_MUST_NOT_COMMIT after material dispatch commit 263e9b6e; parked checkpoint=runtime/provider/live/public-sync/new legacy scan/registry mutation, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`next_move_freshness_checker_closed_pass_bounded_fresh_auth`
+`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude`
 
-Current HEAD recorded for this handoff: `fc7171aa`
-(Next-Move Freshness Checker soft-wrap hardening material commit `fc7171aa`;
+Current HEAD recorded for this handoff: `263e9b6e`
+(PLCS-T1 Absorption To Workflow-Chain Routing Matrix dispatch commit `263e9b6e`;
+Next-Move Freshness Checker soft-wrap hardening material commit `fc7171aa`;
 Next-Move Freshness Checker Foundation material commit `8433691f`;
 Roadmap State Reconciliation RSF-T3 closure material commit `ab683089`;
 Dispatch Prompt Envelope And Provider Memory Gate Hardening material commit
@@ -98,13 +99,13 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Next-Move Freshness
-Checker Foundation material commit `8433691f` and soft-wrap hardening commit
-`fc7171aa` to preserve the mode marker as
-`next_move_freshness_checker_closed_pass_bounded_fresh_auth` across all
-surfaces, record the checker closure, route the next allowed move to fresh
-operator authorization only, preserve prior bounded closures, and block stale
-Model Gateway C-02 P2 redispatch. This scope also covers regenerating the
+update this handoff and session front-door state after PLCS-T1 material dispatch
+commit `263e9b6e` to preserve the mode marker as
+`plcs_t1_absorption_workflow_chain_routing_dispatched_to_claude` across all
+surfaces, record the PLCS-T1 dispatch, route the next allowed move to the
+Claude worker return under `WORKER_MUST_NOT_COMMIT`, preserve prior bounded
+closures, and keep runtime/provider/live/public-sync/new legacy scan/registry
+mutation parked. This scope also covers regenerating the
 `ACTIVE_SESSION_STATE.json` aggregate from source entries.
 
 Protected paths:
@@ -114,6 +115,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/plcsT1AbsorptionWorkflowChainRoutingDispatch20260616.json`
 - `CVF_SESSION/state/entries/nextMoveFreshnessCheckerFoundationClosure20260616.json`
 - `CVF_SESSION/state/entries/fprcT1FindingRootCauseAndMemoryEscapeGuardDispatch20260616.json`
 - `CVF_SESSION/state/entries/fprcT1FindingRootCauseAndMemoryEscapeGuardClosure20260616.json`
@@ -143,15 +145,16 @@ Protected paths:
 - `CVF_SESSION/state/entries/commitStewardSessionSyncPreflightHardeningClosure20260616.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator asked Codex on 2026-06-16 to process this
-next-move freshness error before the next roadmap. Codex implemented the
-bounded checker, tests, and gate wiring at material commit `8433691f`, then
-hardened soft-wrapped negation handling at material commit `fc7171aa`; material
-pre-closure passed all material gates and required this session-sync only for
-handoff HEAD continuity.
+Operator authorization: operator asked on 2026-06-16 whether the foundation
+upgrade can be combined with knowledge absorption, and authorized proceeding to
+make remaining plane/layer work route through workflow chains instead of
+parallel lanes. Codex authored the bounded PLCS-T1 roadmap, baseline, and
+Claude work order at material commit `263e9b6e`; pre-dispatch autorun and
+dispatch steward gates passed. This session-sync updates continuity only.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert Next-Move Freshness Checker soft-wrap hardening material
+batch. Do not revert PLCS-T1 material dispatch commit `263e9b6e`,
+Next-Move Freshness Checker soft-wrap hardening material
 commit `fc7171aa`, Next-Move Freshness Checker Foundation material commit
 `8433691f`, RSF-T3 closure material commit `ab683089`, hardening commit
 `93d0eb7f`, RSF-T3 session-sync commit `32689562`, RSF-T3 dispatch commit
@@ -173,6 +176,16 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix is dispatched at material
+commit `263e9b6e`. This opens a bounded foundation lane to combine future
+knowledge absorption with plane/layer workflow-chain systemization. Claude work
+order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_FOR_CLAUDE_2026-06-16.md`.
+Next allowed move: transfer/await the PLCS-T1 Claude worker return under
+`WORKER_MUST_NOT_COMMIT`, then Codex reviews actual changed files, gates, and
+the worker return before closure. No runtime/provider/live/public-sync/new
+legacy scan/registry mutation is authorized.
 
 Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
 commit `8433691f` with soft-wrap hardening commit `fc7171aa`. The checker rejects
@@ -213,13 +226,13 @@ source-verified work order.
 
 ## Next Allowed Move
 
-Next-Move Freshness Checker Foundation is `CLOSED_PASS_BOUNDED` at material
-commit `8433691f` with soft-wrap hardening commit `fc7171aa`. Next allowed move:
-fresh operator authorization only for the next bounded foundation roadmap or
-another operator-selected task.
-Do not redispatch Model Gateway C-02 P2. Do not open Model Gateway P3 without fresh
-operator authorization, fresh GC-018, and source-verified work order. LHW24
-remains the latest closed numbered LHW wave.
+PLCS-T1 Absorption To Workflow-Chain Routing Matrix is dispatched at material
+commit `263e9b6e`. Next allowed move: transfer/await the PLCS-T1 Claude worker
+return under `WORKER_MUST_NOT_COMMIT`, then Codex reviews actual changed files,
+gates, and the worker return before any closure. Do not redispatch Model
+Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
+authorization, fresh GC-018, and source-verified work order. LHW24 remains the
+latest closed numbered LHW wave.
 
 Prior closure pointer: CCLV-T1 closure central facts packet template is
 `CLOSED_PASS_BOUNDED` at material commit `89debbd6`; CCLV-T1A work order
