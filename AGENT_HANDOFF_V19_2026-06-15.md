@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision whether to authorize AHB-T3 unified handoff-boundary checker dispatch with fresh GC-018; parked checkpoint=AHB-T3 unified checker, agent-interaction workspace build, registry edit, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision whether to authorize AHB-T3 unified handoff-boundary checker dispatch with fresh GC-018; parked checkpoint=AHB-T3 unified checker, agent-interaction workspace build, registry edit, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`
+`ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`
 
-Current HEAD recorded for this handoff: `959e2d78`
-(AHB-T2-F1 Foundation Storage Layout Remediation material closure commit `959e2d78`;
+Current HEAD recorded for this handoff: `abfd9015`
+(AHB-T2-F2 Foundation Storage And Memory Learning Enforcement material closure
+commit `abfd9015`;
+AHB-T2-F1 Foundation Storage Layout Remediation material closure commit `959e2d78`;
 AHB-T2 Agent Handoff Contract Ratification material closure commit `cabbca87`;
 AHB-T2 Agent Handoff Contract Ratification dispatch commit `4b78355f`;
 AOT-T3 Dispatch Manifest Scope Check material closure commit `08659a5d`;
@@ -122,8 +124,9 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after AHB-T2-F1 material
-closure commit `959e2d78`, AHB-T2 material closure commit `cabbca87`, AHB-T2 dispatch commit `4b78355f`, AOT-T3 material closure commit `08659a5d`, AHB-T1A material closure commit `9b21a901`, AHB-T1 material closure commit `11f4c4a2`, dispatch session-sync commit `ac97f752`, AHB-T1 dispatch commit
+update this handoff and session front-door state after AHB-T2-F2 material
+closure commit `abfd9015`, AHB-T2-F1 material closure commit `959e2d78`,
+AHB-T2 material closure commit `cabbca87`, AHB-T2 dispatch commit `4b78355f`, AOT-T3 material closure commit `08659a5d`, AHB-T1A material closure commit `9b21a901`, AHB-T1 material closure commit `11f4c4a2`, dispatch session-sync commit `ac97f752`, AHB-T1 dispatch commit
 `d1bd8a69`, PLCS-T3 material closure commit `6fc43136`, PLCS-T3 dispatch commit
 `992c2270`, FPRC-T2 material commit `7773b767`, PLCS-T2 material closure commit `6ab05918`, PLCS-T2 handoff-sync
 commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
@@ -131,8 +134,8 @@ commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
 handoff-sync commit `dbddf213`, worker material commit `b05286fe`, rule
 clarification commit `469f9bb2`, and material dispatch commit `263e9b6e` to
 preserve the mode marker as
-`ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`
-across all surfaces, record AHB-T2-F1 bounded closure, route the next allowed
+`ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`
+across all surfaces, record AHB-T2-F2 and AHB-T2-F1 bounded closure, route the next allowed
 move to operator decision on AHB-T3 with fresh GC-018, preserve prior bounded
 closures, preserve the
 Central Core + Local View standing operating rule, and keep registry edit,
@@ -146,6 +149,7 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/ahbT2F2FoundationStorageAndMemoryLearningEnforcementClosure20260616.json`
 - `CVF_SESSION/state/entries/aotT3DispatchManifestScopeCheckClosure20260616.json`
 - `CVF_SESSION/state/entries/ahbT2F1FoundationStorageLayoutRemediationClosure20260616.json`
 - `CVF_SESSION/state/entries/ahbT2AgentHandoffContractRatificationClosure20260616.json`
@@ -367,12 +371,14 @@ source-verified work order.
 
 ## Next Allowed Move
 
-AOT-T3 Dispatch Manifest Scope Check is `CLOSED_PASS_BOUNDED` at material
-commit `08659a5d`. Next allowed move: operator decision on whether to open
-AHB-T2 Agent Handoff Contract ratification, choose another bounded CVF
-foundation hardening tranche, or revise the roadmap sequence. AHB-T2 is not
-opened unilaterally. AOT-T3 is closed and should be treated as an input to any
-future AHB-T2 contract ratification.
+AHB-T2-F2 Foundation Storage And Memory Learning Enforcement is
+`CLOSED_PASS_BOUNDED` at material commit `abfd9015`. Next allowed move:
+operator decision whether to authorize AHB-T3 unified handoff-boundary checker
+dispatch with fresh GC-018. AHB-T3 is not opened unilaterally.
+
+AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
+Remediation, and AHB-T2-F2 enforcement hardening are closed and should be
+treated as inputs to any future AHB-T3 work.
 Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
@@ -511,7 +517,7 @@ evidence, work-order closure state, and template line-count pressure before
 committing. The guard is authoring-time only and does not claim runtime/provider
 behavior.
 
-Current mode: `ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`.
+Current mode: `ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`.
 
 ## Latest Closed LHW Wave
 

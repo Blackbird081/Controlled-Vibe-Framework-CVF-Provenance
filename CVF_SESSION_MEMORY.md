@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`
+Current mode marker: `ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_t2_f1_foundation_storage_layout_closed_pass_bounded_ahb_t3_operator_decision`.
+Current mode: `ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`.
 
 Active handoff:
 
@@ -76,6 +76,15 @@ and standard:
 
 - `docs/reference/foundation_storage/README.md`
 - `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md`
+
+AHB-T2-F2 Foundation Storage And Memory Learning Enforcement is
+`CLOSED_PASS_BOUNDED` at material commit `abfd9015`. It added the foundation
+storage/layout machine gate, bound it into autorun/local hooks, and stabilized
+the active Finding-To-Governance standard path:
+
+- `governance/compat/check_foundation_storage_layout.py`
+- `governance/compat/test_check_foundation_storage_layout.py`
+- `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`
 
 AHB-T1A Finding Cleanup remains `CLOSED_PASS_BOUNDED` at material commit
 `9b21a901`; AHB-T1 remains `CLOSED_PASS_BOUNDED` at material commit
@@ -365,14 +374,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `aot_t3_dispatch_manifest_scope_check_closed_pass_bounded_operator_decision_required`.
+Mode: `ahb_t2_f2_enforcement_hardening_closed_pass_bounded_ahb_t3_operator_decision`.
 
-AOT-T3 Dispatch Manifest Scope Check is `CLOSED_PASS_BOUNDED` at material
-commit `08659a5d`. Next allowed move: operator decision on whether to open
-AHB-T2 Agent Handoff Contract ratification, choose another bounded CVF
-foundation hardening tranche, or revise the roadmap sequence. AHB-T2 is not
-opened unilaterally. AOT-T3 is closed and should be treated as an input to any
-future AHB-T2 contract ratification.
+AHB-T2-F2 Foundation Storage And Memory Learning Enforcement is
+`CLOSED_PASS_BOUNDED` at material commit `abfd9015`. Next allowed move:
+operator decision whether to authorize AHB-T3 unified handoff-boundary checker
+dispatch with fresh GC-018. AHB-T3 is not opened unilaterally.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
