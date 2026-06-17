@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_T1_GC018
+Status: ROADMAP_IN_PROGRESS_T2_DISPATCH_READY
 
 docType: roadmap
 
@@ -126,7 +126,7 @@ entry is fresher.
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | PRFC-T1 | CLOSED_PASS_BOUNDED | CCLV-T2 current-state reconciliation: align active state, CCLV roadmap, completion/audit pointers, and next-move language so no current surface implies CCLV-T2 is still paused after its accepted implementation | Codex |
-| PRFC-T2 | READY_FOR_GC018 | CCLV-T3 pilot: use one small governance closure workflow to prove Central Core + Local View reduces duplicate shared facts without removing local judgment | Codex |
+| PRFC-T2 | DISPATCH_READY | CCLV-T3 pilot: use one small governance closure workflow to prove Central Core + Local View reduces duplicate shared facts without removing local judgment | Claude worker; Codex reviewer |
 | PRFC-T3 | HOLD_UNTIL_T2_PASS_OR_OPERATOR_RELEASE | PLCS companion-routing checker/interlock: implement the PLCS-T3 approved companion block check for future FPC-T2 C01-C04 registry-edit work orders | Codex |
 
 ## Work Plan
