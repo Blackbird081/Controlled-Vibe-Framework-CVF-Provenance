@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `prfc_t1_current_state_reconciliation_closed_ready_for_t2_gc018_runtime_execution_parked`
+Current mode marker: `prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `prfc_t1_current_state_reconciliation_closed_ready_for_t2_gc018_runtime_execution_parked`.
+Current mode: `prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`.
 
 Active handoff:
 
@@ -62,10 +62,10 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-PRFC-T1 CCLV-T2 current-state reconciliation is `CLOSED_PASS_BOUNDED` at
-closure docs commit `defdc40c` after protected state/base authorization commit
-`4b42064f` and handoff-sync commit `e85e5a2b`. The PRFC roadmap now marks
-PRFC-T1 closed and PRFC-T2 `READY_FOR_GC018`. Runtime execution remains parked.
+PRFC-T2 central facts pilot is `DISPATCH_READY` at dispatch commit
+`f6c775ed`. The work order assigns Claude worker execution under
+`WORKER_MUST_NOT_COMMIT`; Codex owns review, commit, closure, and any
+session-sync. Runtime execution remains parked.
 
 Stable artifact:
 
@@ -504,12 +504,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `prfc_t1_current_state_reconciliation_closed_ready_for_t2_gc018_runtime_execution_parked`.
+Mode: `prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`.
 
-PRFC-T1 CCLV-T2 current-state reconciliation is `CLOSED_PASS_BOUNDED` at
-closure docs commit `defdc40c`. Next allowed move: open PRFC-T2 with fresh
-GC-018 and a source-verified work order for the Central Core plus Local View
-pilot before runtime execution. Runtime workspace execution remains parked.
+PRFC-T2 central facts pilot is `DISPATCH_READY` at dispatch commit
+`f6c775ed`. Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_FOR_CLAUDE_2026-06-17.md`
+under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` with
+uncommitted worker artifacts. Codex owns review, commit, closure, and any
+session-sync. Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
