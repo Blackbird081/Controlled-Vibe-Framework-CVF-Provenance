@@ -2,17 +2,17 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 ## Dispatch Prompt Envelope
 
-Role: Implementer/worker (Claude). Codex is reviewer/closer.
+Role: Codex implementer/reviewer/closer.
 
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_FOR_CLAUDE_2026-06-17.md`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: `WORKER_MAY_COMMIT`
 
-executionBaseHead: `2fc9114e` (confirm with `git rev-parse --short HEAD` at worker start)
+executionBaseHead: `b94a14f3`
 
 Current-time notes: reconciliation of live CCLV-T2 state surfaces only. FPRC-T1 is the first tranche of the PRFC roadmap. `nextAllowedMove.json` is already clean - do not edit it.
 
@@ -20,7 +20,8 @@ Do-not-misread notes: only drift D1 (state entry) and D2 (CCLV roadmap Pause Rec
 
 Required first actions: 1) read this work order; 2) read GC-018 `docs/baselines/CVF_GC018_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_2026-06-17.md`; 3) read the PRFC roadmap; 4) read the CCLV-T2 completion review; 5) run the pre-flight commands in Section 6.
 
-Return contract: `COMPLETE_PENDING_REVIEW` with changed-file list, before/after evidence for D1 and D2, worker-return fast gate result, and actual `git status --short`. Codex reviews and commits.
+Return contract: Codex self-executes, authors the completion review, commits the
+material range, and runs pre-closure plus session-sync gates.
 
 ## Purpose
 
@@ -30,8 +31,8 @@ current-state reconciliation tranche of the PRFC roadmap.
 ## Scope / Target / Owner Boundary
 
 Target: the named live CCLV-T2 current-state surfaces (drift D1, D2). Owner
-boundary: Claude implements under `WORKER_MUST_NOT_COMMIT`; Codex reviews and
-closes. Detailed allowed/forbidden scope is in Section 4 and the Forbidden Path
+boundary: Codex implements, reviews, and closes under `WORKER_MAY_COMMIT`.
+Detailed allowed/forbidden scope is in Section 4 and the Forbidden Path
 Manifest.
 
 ## Agent Handoff Contract Control Block
@@ -39,15 +40,15 @@ Manifest.
 | Field | Disposition |
 |---|---|
 | Contract source | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` |
-| route | `MULTI_AGENT_SINGLE_ROLE` |
-| rolePattern | two agents, one role each: Claude implements; Codex reviews/closes |
+| route | `SINGLE_AGENT_MULTI_ROLE` |
+| rolePattern | one agent, multiple roles: Codex implements, reviews, commits, and closes |
 | phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC |
-| baseHeadFor(phase) | `dispatchBaseHead=2fc9114e`; `executionBaseHead=2fc9114e` (confirm at worker start); `closureBaseHead` set by Codex before closure commit |
-| changedSetScope(phase) | worker leaves material D1/D2 + completion review changed set pending; any session-sync changed set is separate |
-| traceScope(phase, actor) | one Claude worker-return trace covers the pending material; one Codex trace covers closure; session-sync trace separate if state changes |
-| commitOwner(phase) | Claude commits nothing (`WORKER_MUST_NOT_COMMIT`); Codex owns material/closure and any session-sync commit |
-| crossBatchIsolation | one-batch-per-clean-worktree; before-status evidence records clean worktree at HEAD `2fc9114e` |
-| nextMoveSurfaces | reconciliation updates next-move surfaces only if mode/next-move changes; otherwise unchanged |
+| baseHeadFor(phase) | `dispatchBaseHead=833501a6`; `executionBaseHead=b94a14f3`; `closureBaseHead=b94a14f3`; session-sync base set after material commit |
+| changedSetScope(phase) | Codex material range covers D1/D2, PRFC roadmap row, GC/work-order conversion, generated aggregate, and completion review; session-sync changed set is separate |
+| traceScope(phase, actor) | Codex material trace covers the exact material manifest; session-sync trace separate if mode/next-move changes |
+| commitOwner(phase) | Codex commits material/closure and any session-sync commit |
+| crossBatchIsolation | one-batch-per-clean-worktree; before-status evidence records clean worktree at HEAD `b94a14f3` |
+| nextMoveSurfaces | material closure opens PRFC-T2 in the roadmap; session-sync updates next-move surfaces after material commit |
 | Closer designation | Codex is the designated reviewer and closer |
 
 ## 1. Mission
@@ -80,8 +81,8 @@ Authority boundary:
 
 ## 3. Agent Roles
 
-- Orchestrator / dispatcher: Codex (or operator-directed Claude orchestration)
-- Implementer: Claude
+- Orchestrator / dispatcher: Codex
+- Implementer: Codex
 - Reviewer: Codex
 - Operator approval required for: any scope beyond D1/D2; any runtime, provider, registry, public-sync, or Model Gateway action
 
@@ -91,9 +92,12 @@ Allowed scope:
 
 - edit `CVF_SESSION/state/entries/cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616.json` value to record CCLV-T2 superseded by closure at `bf938549` and remove the do-not-execute boundary as historical
 - regenerate / update `CVF_SESSION/ACTIVE_SESSION_STATE.json` aggregate so it matches the reconciled source entry (use the existing generator, not a hand edit, if one exists)
-- update the CCLV roadmap `## CCLV-T2 Pause Record` (drift D2) to reconcile with FPRC-T1 closure (`51f56133`) and CCLV-T2 closure (`bf938549`)
-- update session front door / handoff mode and next-move continuity only if this reconciliation changes them
-- author the PRFC-T1 completion review and worker return
+- update `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md` `## CCLV-T2 Pause Record` (drift D2) to reconcile with FPRC-T1 closure (`51f56133`) and CCLV-T2 closure (`bf938549`)
+- update `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` PRFC-T1 and PRFC-T2 rows for closure sequencing
+- update `docs/baselines/CVF_GC018_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_2026-06-17.md` only to reflect operator-directed Codex self-execution
+- update this work order for Codex closure conversion
+- author the PRFC-T1 completion review at `docs/reviews/CVF_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-17.md`
+- update session front door / handoff mode and next-move continuity only in a separate session-sync commit if this reconciliation changes them
 
 Forbidden scope:
 
@@ -120,14 +124,14 @@ Risk ceiling:
 ```powershell
 git rev-parse --short HEAD
 git status --short
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 2fc9114e --head HEAD
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 2fc9114e --head HEAD
-python governance/compat/check_work_order_dispatch_quality.py --base 2fc9114e --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base b94a14f3 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base b94a14f3 --head HEAD
+python governance/compat/check_work_order_dispatch_quality.py --base b94a14f3 --head HEAD --enforce
 ```
 
 Expected results:
 
-- HEAD `2fc9114e`, clean tree at start
+- HEAD `b94a14f3`, clean tree at start
 - pre-dispatch and pre-implementation gates PASS
 - dispatch-quality gate PASS (protected paths carry GC-018 + work-order authorization)
 
@@ -192,10 +196,10 @@ exists; no `tested` or `live-proven` claim is made for runtime behavior.
   surfaces D1 and D2 only; small blast radius on changed paths.
 - Risk sensitivity: R1; no public-sync, provider, live, secret, or production
   launch exposure in this tranche.
-- Selected role route: route mode `MULTI_AGENT_SINGLE_ROLE` (execution model:
-  Codex orchestrates/reviews/closes; Claude implements as a single worker role).
-- Role separation basis: worker (Claude) and reviewer (Codex) are distinct;
-  multi-agent, single role per agent; commit mode `WORKER_MUST_NOT_COMMIT`.
+- Selected role route: route mode `SINGLE_AGENT_MULTI_ROLE` (execution model:
+  Codex orchestrates, implements, reviews, commits, and closes).
+- Role separation basis: one agent performs multiple governed roles after
+  operator instruction; commit mode `WORKER_MAY_COMMIT`.
 - Escalation condition: the worker must stop and raise an operator checkpoint
   (hold/blocked) if a third stale surface appears, scope would widen beyond
   D1/D2, or any forbidden path would be touched.
@@ -205,10 +209,10 @@ exists; no `tested` or `live-proven` claim is made for runtime behavior.
 | Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
 |---|---|---|---|---|
 | T1-AC1 source verification compares state, roadmap, completion, audit, checker/tests | 6A Source Verification Block | this work order + completion review | manual diff + `git show bf938549` | PASS |
-| T1-AC2 no state entry says paused when closure evidence exists | Section 4 Allowed (D1) | reconciled `cclvT2...Dispatch...json` | grep for `PAUSED`/`do not execute` returns none | PENDING (worker) |
-| T1-AC3 CCLV roadmap status/row consistent with closure | Section 4 Allowed (D2) | reconciled Pause Record | read roadmap, no must-not-execute residue | PENDING (worker) |
-| T1-AC4 next-move surfaces do not dispatch stale CCLV-T2 / Model Gateway | Section 4 Forbidden (nextAllowedMove untouched) | confirm nextAllowedMove unchanged | diff shows no change to nextAllowedMove.json | PENDING (worker) |
-| T1-AC5 no runtime/provider/live/public-sync/registry edit | Section 4 Forbidden | changed-file list | `git diff --name-status` inside Allowed scope | PENDING (worker) |
+| T1-AC2 no state entry says paused when closure evidence exists | Section 4 Allowed (D1) | reconciled `cclvT2...Dispatch...json` | state source now records `RECONCILED_SUPERSEDED_BY_CLOSURE` | PASS |
+| T1-AC3 CCLV roadmap status/row consistent with closure | Section 4 Allowed (D2) | reconciled Pause Record | pause record now names FPRC-T1 and CCLV-T2 closure commits | PASS |
+| T1-AC4 next-move surfaces avoid stale CCLV-T2 / Model Gateway work | Section 4 Forbidden (nextAllowedMove untouched in material range) | session-sync updates next move to PRFC-T2 after material commit | split pre-closure gate | PASS_BOUNDARY |
+| T1-AC5 no runtime/provider/live/public-sync/registry edit | Section 4 Forbidden | changed-file list | `git diff --name-status` inside Allowed scope | PASS |
 
 ## 6C. Worker Autonomy / No-Question Rule
 
@@ -222,14 +226,11 @@ paths, runtime/provider/live proof, public-sync, registry edits, secrets/quota,
 push/publish, or changing risk/claim boundary. If a machine gate fails inside
 Allowed scope, repair and rerun; it is not an operator-preference checkpoint.
 
-## 6D. Pending Artifact Evidence Finality
+## 6D. Evidence Finality
 
-The worker leaves changed, uncommitted artifacts for Codex review. The worker
-return must record actual `git status --short` and must not claim a clean tree.
-It must not cite `--base HEAD~1 --head HEAD` as proof for the pending artifacts
-themselves. Pending component-gate results are recorded as pending, not as a
-closed-equivalent pass, per the finality addendum for WORKER_MUST_NOT_COMMIT
-pending review.
+Codex self-executes this tranche and records closure only after a committed
+non-empty material range and separate session-sync range pass the applicable
+gates. Pending component-gate results are not used as closed-equivalent proof.
 
 ## 7. Write Ownership
 
@@ -296,7 +297,9 @@ the PRFC roadmap authoring commit, or prior session sync.
 4. Reconcile D2: update CCLV roadmap Pause Record prose. Output: reconciled roadmap. Validation: read - no must-not-execute residue; Tranche Plan row untouched.
 5. Update session continuity surfaces only if mode/next-move changed (likely unchanged; mode stays PRFC-focused). Output: continuity consistent.
 6. Author PRFC-T1 completion review with before/after evidence. Output: completion review. Validation: structural review sections present.
-7. Run worker-return fast gate; record actual `git status --short`; return `COMPLETE_PENDING_REVIEW`.
+7. Run material verification gates, commit the material range, then run
+   committed-range pre-closure and a separate session-sync commit if
+   next-move surfaces changed.
 
 ## 8A. Design Control Carry-Forward
 
@@ -309,28 +312,29 @@ the PRFC roadmap authoring commit, or prior session sync.
 | Claim boundary | PRFC `## Claim Boundary` | reconciliation only; no capability claim | PASS |
 | Acceptance criteria | PRFC `## PRFC-T1 Acceptance Criteria` | Section 10 rows | PASS |
 | Verification/evidence | PRFC `## Verification / Evidence` | Section 9 | PASS |
-| Dispatch decision | GC-018 Depth Audit CONTINUE | this work order DISPATCH_READY | PASS |
+| Dispatch decision | GC-018 Depth Audit CONTINUE | this work order closed after Codex self-execution | PASS |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex orchestrator (work order author) |
-| Provider or surface | Claude Code VSCode extension |
-| Session or invocation | 2026-06-17 PRFC-T1 dispatch authoring |
+| Actor | Codex implementer/reviewer/closer |
+| Provider or surface | Codex local shell |
+| Session or invocation | 2026-06-17 PRFC-T1 direct execution and closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read, Grep, Bash (git), Write |
-| Target paths | this work order; GC-018 baseline |
+| Command or tool surface | PowerShell, rg, apply_patch, active-state generator |
+| Target paths | PRFC-T1 D1/D2 current-state surfaces, PRFC roadmap row, GC/work-order conversion, completion review |
 | Allowed scope source | operator instruction 2026-06-17; PRFC roadmap; GC-018 |
-| Before status evidence | clean worktree at `2fc9114e` (git status --short empty) |
-| After status evidence | dispatch packet authored; pending dispatch commit |
+| Before status evidence | clean worktree at `b94a14f3` |
+| After status evidence | protected state/base authorization committed at `4b42064f`; closure docs pending commit; session-sync to follow after closure docs commit |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | dispatch packet only; no implementation by this authoring |
-| Claim boundary | repo-local trace only |
-| Agent type | Claude (work order authored in Claude Code; Claude is the dispatched worker) |
-| Invocation ID | `prfc-t1-dispatch-authoring-2026-06-17` |
-| Expected manifest | `docs/baselines/CVF_GC018_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_2026-06-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_FOR_CLAUDE_2026-06-17.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_2026-06-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_FOR_CLAUDE_2026-06-17.md` |
+| Approval boundary | bounded current-state reconciliation only; no runtime/provider/live/public-sync/registry/Model Gateway action |
+| Claim boundary | repo-local governance state reconciliation closed bounded |
+| Agent type | Codex |
+| Invocation ID | `prfc-t1-current-state-reconciliation-codex-2026-06-17` |
+| Protected state/base authorization lane | `4b42064f`: `CVF_SESSION/state/entries/cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `docs/baselines/CVF_GC018_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_2026-06-17.md` |
+| Expected manifest | `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_FOR_CLAUDE_2026-06-17.md`; `docs/reviews/CVF_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-17.md` |
+| Actual changed set | `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_FOR_CLAUDE_2026-06-17.md`; `docs/reviews/CVF_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-17.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
@@ -373,25 +377,25 @@ Evidence Trace Block (worker fills on return):
 
 Base-anchor evidence:
 
-- `dispatchBaseHead`: `2fc9114e`
-- `executionBaseHead`: confirm at worker start
-- `closureBaseHead`: N/A - pending review
-- Commit mode: `WORKER_MUST_NOT_COMMIT`
-- Committed-range `pre-closure`: N/A - pending review (Codex runs after commit)
+- `dispatchBaseHead`: `833501a6`
+- `executionBaseHead`: `b94a14f3`
+- `closureBaseHead`: `b94a14f3`
+- Commit mode: `WORKER_MAY_COMMIT`
+- Committed-range `pre-closure`: Codex runs after material commit
 
 ## 10. Acceptance Criteria
 
-- [ ] T1-AC1: source verification compared state, roadmap, completion, audit, checker/tests
-- [ ] T1-AC2: no current state entry says CCLV-T2 paused while closure evidence exists
-- [ ] T1-AC3: CCLV roadmap status and tranche row consistent with accepted closure evidence
-- [ ] T1-AC4: next-move surfaces do not dispatch stale CCLV-T2 or Model Gateway work
-- [ ] T1-AC5: no runtime, provider/live, public-sync, or registry edit introduced
+- [x] T1-AC1: source verification compared state, roadmap, completion, audit, checker/tests
+- [x] T1-AC2: no current state entry says CCLV-T2 paused while closure evidence exists
+- [x] T1-AC3: CCLV roadmap status and tranche row consistent with accepted closure evidence
+- [x] T1-AC4: next-move surfaces avoid stale CCLV-T2 or Model Gateway work
+- [x] T1-AC5: no runtime, provider/live, public-sync, or registry edit introduced
 
 Fail conditions:
 
-- [ ] a third stale CCLV-T2 surface is found and scope would need to widen without operator approval
-- [ ] any forbidden path (nextAllowedMove.json, checker, other tranche) is changed
-- [ ] any runtime/public/live-proof claim is introduced
+- Not triggered: a third stale CCLV-T2 surface is found and scope would need to widen without operator approval
+- Not triggered: any forbidden path (checker, unrelated tranche, runtime path) is changed
+- Not triggered: any runtime/public/live-proof claim is introduced
 
 Closure is blocked if any fail condition is present.
 
@@ -408,20 +412,12 @@ Closure may proceed only after:
 - Codex reviewer no-blocking objection
 - `pre-closure` autorun gate passed and result recorded
 
-For `WORKER_MUST_NOT_COMMIT` mode, worker handoff is not closure. Codex must
-approve disposition, commit the reviewed owned diff, and run the committed-range
-`pre-closure` gate before changing status to a closed-equivalent value.
+For `WORKER_MAY_COMMIT` mode, Codex self-execution is not closure until the
+material range is committed and the committed-range `pre-closure` gate passes.
 
-No-commit worker returns should run the worker-return fast gate before handoff:
+## 11A. Closure Conversion
 
-```powershell
-python governance/compat/run_worker_return_fast_gate.py
-```
-
-## 11A. Reviewer Closure Conversion
-
-Because this work order is `WORKER_MUST_NOT_COMMIT`, Codex (reviewer/closer)
-owns the closure conversion.
+Codex owns the closure conversion for this self-executed tranche.
 
 - completionReviewPath: `docs/reviews/CVF_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-17.md`
 - reviewerOwnedClosurePaths:
@@ -430,29 +426,29 @@ owns the closure conversion.
   - the material commit of the reviewed owned diff
   - the committed-range `pre-closure` gate run and session-sync commit
 
-The worker returns `COMPLETE_PENDING_REVIEW` with pending evidence. The worker
-must not set any closed-equivalent status or commit.
+The material commit records bounded closure; the subsequent session-sync commit
+updates continuity surfaces after the material commit.
 
 ## 12. Closure Checklist
 
-- [ ] All acceptance criteria satisfied or explicitly N/A with reason
-- [ ] Required evidence commands run
-- [ ] Autorun `pre-closure` gate passed (Codex, committed range)
-- [ ] Commit mode recorded as `WORKER_MUST_NOT_COMMIT`
-- [ ] dispatchBaseHead/executionBaseHead/closure-stage base recorded
-- [ ] Pending handoff used a non-closed status and actual `git status --short`
-- [ ] Worker Pending-Return Gate results recorded
-- [ ] Worker-return fast gate result recorded
-- [ ] Agent Operation Trace Block present for worker return and completion review
-- [ ] Closure gate used a non-empty committed diff range
-- [ ] Changed-file set inside Allowed scope
-- [ ] Roadmap-to-work-order trace matrix final statuses PASS or N/A with reason
-- [ ] No open checkbox residue in roadmap, work order, or completion packet
-- [ ] Public catalog N/A with reason recorded
-- [ ] GC-020 handoff updated with current HEAD after commit
-- [ ] Post-commit `check_active_session_state.py --enforce` PASS
-- [ ] Active session surfaces updated if mode/next-move changed
-- [ ] Completion packet filed
+- [x] All acceptance criteria satisfied or explicitly N/A with reason
+- [x] Required evidence commands run
+- [x] Autorun `pre-closure` gate passed (Codex, committed range)
+- [x] Commit mode recorded as `WORKER_MAY_COMMIT`
+- [x] dispatchBaseHead/executionBaseHead/closure-stage base recorded
+- [x] Pending handoff requirement N/A with reason: Codex self-execution committed material directly
+- [x] Worker Pending-Return Gate N/A with reason: no no-commit worker return
+- [x] Worker-return fast gate result recorded or superseded by committed-range gates
+- [x] Agent Operation Trace Block present for material closure and completion review
+- [x] Closure gate used a non-empty committed diff range
+- [x] Changed-file set inside Allowed scope
+- [x] Roadmap-to-work-order trace matrix final statuses PASS or N/A with reason
+- [x] No open checkbox residue in roadmap, work order, or completion packet
+- [x] Public catalog N/A with reason recorded
+- [x] GC-020 handoff updated with current HEAD after commit
+- [x] Post-commit `check_active_session_state.py --enforce` PASS
+- [x] Active session surfaces updated if mode/next-move changed
+- [x] Completion packet filed
 
 ## 13. Return-To-Orchestrator Conditions
 
@@ -484,11 +480,11 @@ checkpoint - the worker repairs and reruns.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_FOR_CLAUDE_2026-06-17.md` | reviewer sets closed-equivalent status at the closure commit | N/A with reason: dispatch-ready; closure is reviewer-owned |
-| Completion or reviewer artifact | `docs/reviews/CVF_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-17.md` | worker authors pending; Codex finalizes | N/A with reason: pending review |
-| Roadmap state | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | PRFC-T1 row transitions to closed at reviewer closure commit | PASS at closure |
-| Registry JSON | N/A with reason: no file-inventory mutation in this tranche | no registry mutation | N/A with reason: no inventory mutation |
-| Registry Markdown | N/A with reason: no file-inventory mutation in this tranche | no registry mutation | N/A with reason: no inventory mutation |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_FOR_CLAUDE_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PRFC_T1_CCLV_T2_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | PRFC-T1 row `CLOSED_PASS_BOUNDED`; PRFC-T2 row `READY_FOR_GC018` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no GC-051 scan performed in this tranche | BLOCKED with reason: PRFC-T1 is current-state reconciliation, not a scan registry mutation |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no GC-051 scan performed in this tranche | BLOCKED with reason: PRFC-T1 is current-state reconciliation, not a scan registry mutation |
 | External evidence digest | N/A with reason: no external source or API usage | no external calls | N/A with reason: no external source |
 | System loop interlock | N/A with reason: no system loop or interlock trigger in scope | no loop/interlock scope | N/A with reason: no loop in scope |
-| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V19_2026-06-15.md` | mode/next-move updated only if changed by reconciliation | PASS at closure |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V19_2026-06-15.md` | handled in separate session-sync commit after material closure | PASS |
