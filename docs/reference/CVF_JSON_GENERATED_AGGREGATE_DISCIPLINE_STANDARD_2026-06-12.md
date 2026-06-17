@@ -25,6 +25,7 @@ Examples include:
 
 - `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`;
 - future registry, catalog, ledger, manifest, or state aggregate JSON files.
 
 ## Rule
@@ -50,6 +51,14 @@ Unicode only when the aggregate is rebuilt by the generator.
 
 Source-only metadata such as order fields must be stripped from the generated
 aggregate unless the runtime contract explicitly requires them.
+
+## Current Generated Aggregates
+
+| Aggregate | Source layout | Generator | Drift checker |
+|---|---|---|---|
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `docs/corpus-intelligence/registry/` | `governance/compat/generate_corpus_scan_registry.py` | `governance/compat/check_corpus_scan_registry.py` |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `CVF_SESSION/state/` | `governance/compat/generate_active_session_state.py` | `governance/compat/check_active_session_state.py` |
+| `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | `CVF_SESSION/agent_workspace/state/` | `governance/compat/generate_agent_workspace_state.py` | `governance/compat/check_agent_workspace_state.py` |
 
 ## Aggregate Discipline
 

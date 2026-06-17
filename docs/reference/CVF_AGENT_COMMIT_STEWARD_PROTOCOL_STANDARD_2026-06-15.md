@@ -90,6 +90,11 @@ Operation Trace Block requires an exact `Actual changed set`, unless the
 artifact explicitly authorizes the mixed protected-path manifest and the machine
 gate accepts the exact observed paths.
 
+Generated workspace state under `CVF_SESSION/agent_workspace/` is a governed
+workspace-state material surface, not active session-sync continuity. It follows
+the generated aggregate discipline and the agent workspace state checker rather
+than the session-sync lane.
+
 ## Single-Agent Multi-Role Rule
 
 A single agent may execute multiple roles only if the evidence is separated by

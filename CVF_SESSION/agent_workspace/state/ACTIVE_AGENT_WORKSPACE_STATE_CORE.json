@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "ACTIVE_AGENT_WORKSPACE_STATE",
+  "frontDoor": "docs/reference/agent_workspace/README.md",
+  "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
+  "topologyContract": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+  "handoffContract": "docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md",
+  "generatedBy": "governance/compat/generate_agent_workspace_state.py",
+  "checker": "governance/compat/check_agent_workspace_state.py",
+  "claimBoundary": "Governance workspace state foundation only; no workspace UI/runtime, provider proof, public-sync, registry edit, production readiness, or public readiness.",
+  "items": []
+}

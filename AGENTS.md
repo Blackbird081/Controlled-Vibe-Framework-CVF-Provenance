@@ -459,6 +459,9 @@ Current generated JSON aggregates:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
   - source: `CVF_SESSION/state/`
   - generator: `governance/compat/generate_active_session_state.py`
+- `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+  - source: `CVF_SESSION/agent_workspace/state/`
+  - generator: `governance/compat/generate_agent_workspace_state.py`
 
 Changed generated aggregates must pass their drift check before dispatch,
 closure, or commit. A future large governed JSON aggregate must record whether
@@ -645,6 +648,39 @@ Stable workspace foundation rules live under `docs/reference/agent_workspace/`.
 Dated GC-018 packets, work orders, reviews, and evidence remain in their normal
 execution folders. Do not use provider-local memory, chat history, or an
 unindexed folder as the source of truth for workspace design.
+
+## Mandatory Agent Workspace State Generated Aggregate Guard - 2026-06-17
+
+Generated workspace state aggregate:
+
+`CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+
+Generated source layout:
+
+`CVF_SESSION/agent_workspace/state/`
+
+Generator:
+
+`governance/compat/generate_agent_workspace_state.py`
+
+Machine guard:
+
+`governance/compat/check_agent_workspace_state.py`
+
+Any future task that changes the agent workspace generated state must edit the
+source fragments under `CVF_SESSION/agent_workspace/state/` and run the
+generator. Direct aggregate-only edits are drift defects.
+
+The generated workspace state is a compact governed state view, not a chat log,
+provider-local memory store, runtime queue, UI, public surface, or production
+claim. Items must map to the required fields in
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`.
+
+The agent workspace state guard is mandatory in the autorun workflow and local
+hook chain. It checks drift, required state fields, source/front-door pointers,
+and hook binding. A future workspace build, runtime queue, provider proof,
+public-sync, registry edit, or generated-state expansion still requires fresh
+GC-018 and a separate work order.
 
 ## Mandatory IDE Extension Multi-Provider Execution Log Guard - 2026-05-29
 

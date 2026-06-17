@@ -22,6 +22,9 @@ SESSION_PREFIXES = (
     "CVF_SESSION/",
     "CVF_SESSION_MEMORY.md",
 )
+MATERIAL_SESSION_SUBPREFIXES = (
+    "CVF_SESSION/agent_workspace/",
+)
 HANDOFF_PREFIXES = (
     "AGENT_HANDOFF",
     "CVF_SESSION/handoffs/",
@@ -107,6 +110,8 @@ def _range_paths(base: str, head: str) -> tuple[str, ...]:
 
 
 def _is_protected_session_path(path: str) -> bool:
+    if path.startswith(MATERIAL_SESSION_SUBPREFIXES):
+        return False
     return path.startswith(SESSION_PREFIXES) or path.startswith(HANDOFF_PREFIXES)
 
 

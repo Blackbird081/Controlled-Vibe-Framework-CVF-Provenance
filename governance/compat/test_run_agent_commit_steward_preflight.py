@@ -7,6 +7,7 @@ def test_protected_session_path_classification() -> None:
     assert steward._is_protected_session_path("CVF_SESSION_MEMORY.md")
     assert steward._is_protected_session_path("CVF_SESSION/ACTIVE_SESSION_STATE.json")
     assert steward._is_protected_session_path("AGENT_HANDOFF_V18_2026-06-12.md")
+    assert not steward._is_protected_session_path("CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json")
     assert not steward._is_protected_session_path("docs/reference/example.md")
 
 

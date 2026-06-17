@@ -45,11 +45,11 @@ The topology has three layers:
 |---|---|---|
 | Central Core | AHB contract fields plus workspace state vocabulary | ACTIVE_CONTRACT |
 | Local View | per-batch work orders, worker returns, reviews, completion packets, and session-sync entries | EXISTING_SURFACES |
-| Generated State Candidate | future compact machine-readable workspace state aggregate and source fragments | CANDIDATE_REQUIRES_FRESH_GC018 |
+| Generated State | compact machine-readable workspace state aggregate and source fragments | ACTIVE_FOUNDATION |
 
-No generated aggregate is created by this contract. Future generated-state work
-must use a fresh GC-018, define source fragments, define a generator, and pass
-generated aggregate drift checks.
+AHB-Tn.4 creates the generated-state foundation after this contract. Future
+expansion of generated-state semantics must still use a fresh GC-018, update
+source fragments, run the generator, and pass generated aggregate drift checks.
 
 ## Workspace State Units
 
@@ -123,12 +123,14 @@ layout is:
 
 | Candidate path | Role | Status |
 |---|---|---|
-| `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated aggregate | CANDIDATE_REQUIRES_FRESH_GC018 |
-| `CVF_SESSION/agent_workspace/state/` | source fragments | CANDIDATE_REQUIRES_FRESH_GC018 |
-| `governance/compat/generate_agent_workspace_state.py` | generator | CANDIDATE_REQUIRES_FRESH_GC018 |
-| `governance/compat/check_agent_workspace_state.py` | drift/topology checker | CANDIDATE_REQUIRES_FRESH_GC018 |
+| `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated aggregate | ACTIVE_FOUNDATION |
+| `CVF_SESSION/agent_workspace/state/` | source fragments | ACTIVE_FOUNDATION |
+| `governance/compat/generate_agent_workspace_state.py` | generator | ACTIVE_FOUNDATION |
+| `governance/compat/check_agent_workspace_state.py` | drift/topology checker | ACTIVE_FOUNDATION |
 
-This contract does not create those paths.
+Those paths are generated-state foundation only. They do not build a workspace
+UI, runtime queue, provider route, public surface, registry edit, or production
+claim.
 
 ## Archive And Retention Rule
 
@@ -169,7 +171,12 @@ python governance/compat/check_foundation_storage_layout.py --base <baseHead> --
 ```
 
 Future generated workspace state requires a separate checker. This contract
-does not add one.
+now points to the AHB-Tn.4 checker:
+
+```powershell
+python governance/compat/check_agent_workspace_state.py --base <baseHead> --head HEAD --enforce
+python governance/compat/generate_agent_workspace_state.py --check
+```
 
 ## Public Export Disposition
 
@@ -184,20 +191,20 @@ authorized.
 |---|---|
 | Actor | Codex |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-17 AHB-Tn.3 workspace state topology contract |
+| Session or invocation | 2026-06-17 AHB-Tn.4 agent workspace state source checker |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, rg, apply_patch |
-| Target paths | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `AGENTS.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
-| Allowed scope source | operator authorization for AHB-Tn.3 workspace state topology contract on 2026-06-17 |
-| Before status evidence | HEAD `3b340823`; clean worktree |
-| After status evidence | AHB-Tn.3 material closure pending commit |
-| Diff evidence | `git diff --name-status 3b340823..HEAD` |
-| Approval boundary | bounded workspace state topology contract only |
-| Claim boundary | no workspace build, generated state creation, runtime/provider/live/public/registry implementation claim |
+| Command or tool surface | PowerShell, rg, apply_patch, pytest |
+| Target paths | `AGENTS.md`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE.json`; `CVF_SESSION/agent_workspace/state/items/ahb-tn4-workspace-state-foundation-parked.json`; `docs/baselines/CVF_GC018_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_2026-06-17.md`; `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md`; `governance/compat/check_agent_workspace_state.py`; `governance/compat/generate_agent_workspace_state.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/test_agent_workspace_state.py` |
+| Allowed scope source | operator authorization to continue workspace foundation hardening on 2026-06-17 |
+| Before status evidence | HEAD `f8964c7a`; clean worktree |
+| After status evidence | AHB-Tn.4 material closure pending commit |
+| Diff evidence | `git diff --name-status f8964c7a..HEAD` |
+| Approval boundary | generated workspace state source/checker foundation only |
+| Claim boundary | no workspace build, runtime/provider/live/public/registry implementation claim |
 | Agent type | Codex implementer/closer |
-| Invocation ID | `ahb-tn3-agent-workspace-state-topology-contract-2026-06-17` |
-| Expected manifest | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `AGENTS.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
-| Actual changed set | AHB-Tn.3 material changed set, verified in completion review |
+| Invocation ID | `ahb-tn4-agent-workspace-state-source-checker-2026-06-17` |
+| Expected manifest | `AGENTS.md`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE.json`; `CVF_SESSION/agent_workspace/state/items/ahb-tn4-workspace-state-foundation-parked.json`; `docs/baselines/CVF_GC018_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_2026-06-17.md`; `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md`; `governance/compat/check_agent_workspace_state.py`; `governance/compat/generate_agent_workspace_state.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/test_agent_workspace_state.py` |
+| Actual changed set | `AGENTS.md`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE.json`; `CVF_SESSION/agent_workspace/state/items/ahb-tn4-workspace-state-foundation-parked.json`; `docs/baselines/CVF_GC018_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_2026-06-17.md`; `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md`; `governance/compat/check_agent_workspace_state.py`; `governance/compat/generate_agent_workspace_state.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/test_agent_workspace_state.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

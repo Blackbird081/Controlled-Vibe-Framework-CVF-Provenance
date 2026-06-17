@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_TN3_CLOSED_WORKSPACE_BUILD_CANDIDATE
+Status: ROADMAP_ACTIVE_AHB_TN4_CLOSED_WORKSPACE_BUILD_CANDIDATE
 
 docType: roadmap
 
@@ -174,7 +174,8 @@ views that must cite the contract.
 | AHB-Tn.1 | CLOSED_PASS_BOUNDED | Analyzed and designed the dedicated agent-interaction workspace foundation with stable `docs/reference/agent_workspace/` front door; no build | Codex |
 | AHB-Tn.2 | CLOSED_PASS_BOUNDED | Machine-hardened the dedicated agent-interaction workspace design control block against the AHB-Tn.1 design standard; no workspace build | Codex |
 | AHB-Tn.3 | CLOSED_PASS_BOUNDED | Defined the workspace state topology contract: state units, lanes, required fields, storage candidate layout, and archive policy; no workspace build | Codex |
-| AHB-Tn.4 | CANDIDATE_AFTER_TN3 | Future decision whether to build a bounded workspace surface, design generated workspace state sources/checker, or continue foundation hardening | Operator decision |
+| AHB-Tn.4 | CLOSED_PASS_BOUNDED | Added generated workspace state source layout, generated aggregate, generator, drift/topology checker, tests, and autorun/local-hook binding; no workspace build | Codex |
+| AHB-Tn.5 | CANDIDATE_AFTER_TN4 | Future decision whether to build a bounded workspace surface, add richer workspace state lanes, or continue foundation hardening | Operator decision |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
 AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
@@ -338,6 +339,32 @@ mutate product runtime, run provider/live proof, public-sync, edit registries,
 or claim production/public readiness. AHB-Tn.4 remains an operator-decision
 candidate.
 
+## AHB-Tn.4 Closure Note
+
+AHB-Tn.4 is `CLOSED_PASS_BOUNDED`. Operator authorized continued workspace
+foundation hardening on 2026-06-17 after AHB-Tn.3. Codex added the generated
+workspace state foundation:
+
+- generated aggregate:
+  `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+- source layout:
+  `CVF_SESSION/agent_workspace/state/`
+- generator:
+  `governance/compat/generate_agent_workspace_state.py`
+- checker:
+  `governance/compat/check_agent_workspace_state.py`
+- tests:
+  `governance/compat/test_agent_workspace_state.py`
+- completion packet:
+  `docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md`
+
+The checker is bound into autorun and local hook chains. Agents must edit
+workspace state source fragments and regenerate the aggregate instead of
+hand-editing the generated file. AHB-Tn.4 does not build the workspace, create
+runtime queues, mutate product runtime, run provider/live proof, public-sync,
+edit registries, or claim production/public readiness. AHB-Tn.5 remains an
+operator-decision candidate.
+
 ## AHB-T1 Requirements (Proposed)
 
 AHB-T1 must produce, under `docs/audits/` and/or `docs/reference/`:
@@ -474,22 +501,22 @@ authorized.
 
 | Field | Evidence |
 |---|---|
-| Actor | Claude Code (roadmap authoring) |
-| Provider or surface | Claude Code local workspace |
-| Session or invocation | 2026-06-16 AHB roadmap authoring |
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | 2026-06-17 AHB-Tn.4 agent workspace state source checker |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read, Write, Grep, Glob, PowerShell |
-| Target paths | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md` |
-| Allowed scope source | operator instruction 2026-06-16: build one shared handoff pattern; Claude proposes, Codex critiques |
-| Before status evidence | HEAD `105e22cf`; clean worktree |
-| After status evidence | AHB roadmap + AHB-T1 GC-018 + AHB-T1 audit work order authored; pending material commit |
-| Diff evidence | `git status --short` shows AHB roadmap, GC-018, and work order as changed |
-| Approval boundary | roadmap and audit dispatch authoring only; no checker/runtime/registry/provider/public mutation |
-| Claim boundary | no runtime/provider/live/public/registry/checker mutation; governance roadmap only |
-| Agent type | Claude Code (roadmap proposer); Codex (critic) |
-| Invocation ID | `ahb-roadmap-authoring-2026-06-16` |
-| Expected manifest | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md` |
-| Actual changed set | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_AHB_T1_HANDOFF_BOUNDARY_AUDIT_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md` |
+| Command or tool surface | PowerShell, rg, apply_patch, pytest |
+| Target paths | `AGENTS.md`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE.json`; `CVF_SESSION/agent_workspace/state/items/ahb-tn4-workspace-state-foundation-parked.json`; `docs/baselines/CVF_GC018_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_2026-06-17.md`; `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md`; `governance/compat/check_agent_workspace_state.py`; `governance/compat/generate_agent_workspace_state.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/test_agent_workspace_state.py` |
+| Allowed scope source | operator authorization to continue workspace foundation hardening on 2026-06-17 |
+| Before status evidence | HEAD `f8964c7a`; clean worktree |
+| After status evidence | AHB-Tn.4 material closure pending commit |
+| Diff evidence | `git diff --name-status f8964c7a..HEAD` |
+| Approval boundary | generated workspace state source/checker foundation only |
+| Claim boundary | no workspace build, runtime/provider/live/public/registry implementation claim |
+| Agent type | Codex implementer/closer |
+| Invocation ID | `ahb-tn4-agent-workspace-state-source-checker-2026-06-17` |
+| Expected manifest | `AGENTS.md`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE.json`; `CVF_SESSION/agent_workspace/state/items/ahb-tn4-workspace-state-foundation-parked.json`; `docs/baselines/CVF_GC018_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_2026-06-17.md`; `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md`; `governance/compat/check_agent_workspace_state.py`; `governance/compat/generate_agent_workspace_state.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/test_agent_workspace_state.py` |
+| Actual changed set | `AGENTS.md`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE.json`; `CVF_SESSION/agent_workspace/state/items/ahb-tn4-workspace-state-foundation-parked.json`; `docs/baselines/CVF_GC018_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_2026-06-17.md`; `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md`; `governance/compat/check_agent_workspace_state.py`; `governance/compat/generate_agent_workspace_state.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/test_agent_workspace_state.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

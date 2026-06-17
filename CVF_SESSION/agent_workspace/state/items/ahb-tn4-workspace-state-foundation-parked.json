@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1,
+  "workspaceItemId": "ahb-tn4-workspace-state-foundation-parked-2026-06-17",
+  "itemKind": "parked",
+  "status": "PARKED_PENDING_OPERATOR_DECISION",
+  "ownerRole": "operator",
+  "route": "SINGLE_AGENT_MULTI_ROLE",
+  "rolePattern": "operator_decision_to_future_dispatch",
+  "phase": "parked",
+  "baseHead": "f8964c7a",
+  "changedSetScope": "N/A with reason: future workspace build or generated-state expansion is not authorized by this parked item.",
+  "traceScope": "N/A with reason: parked next-move marker only.",
+  "commitOwner": "N/A with reason: no commit implied by parked item.",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md",
+  "evidencePaths": [
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+    "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+  ],
+  "claimBoundary": "No workspace build, runtime/product mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+  "nextMoveImpact": "Records that future workspace build or generated-state expansion requires fresh operator authorization and GC-018.",
+  "archivePolicy": "Remove from active workspace state only after a later governed tranche supersedes this parked candidate with committed evidence and session-sync."
+}
