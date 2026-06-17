@@ -24,23 +24,21 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after CGFP-T1 checker
-trigger-context hardening material closure commit `e431b0e7`.
+Authorized session-sync scope: update active handoff after PRFC-T1 protected
+state/base authorization lane commit `4b42064f`.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator instructed Codex on 2026-06-17 to continue
-from Claude's in-progress CGFP-T1 worker return, review the actual diff, repair
-the closure packaging finding, and finish the governed commit path before
-continuing PRFC/runtime roadmap work. Codex closed the bounded checker
-trigger-context hardening tranche in material commit `e431b0e7` and must sync
-the active handoff.
+Operator authorization: operator instructed Codex on 2026-06-17 to execute
+PRFC-T1 directly after CGFP cleanup. Codex committed the protected active-state
+reconciliation and GC-018 authorization lane at `4b42064f`; closure docs and
+final session-sync remain in progress.
 
 Rollback boundary: revert only this handoff HEAD sync if rejected. Do not alter
-the CGFP-T1 material closure, supplemental finding, PRFC, or prior AHB material
-artifacts.
+the PRFC-T1 protected state/base authorization lane, CGFP-T1 material closure,
+supplemental finding, PRFC roadmap, or prior AHB material artifacts.
 
 ## Startup Acknowledgment
 
@@ -50,9 +48,11 @@ Startup acknowledged: current mode=`prfc_pre_runtime_foundation_cleanup_roadmap_
 
 `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`
 
-Current HEAD recorded for this handoff: `e431b0e7`
-(CGFP-T1 Checker Trigger-Context Hardening material closure commit `e431b0e7`;
-prior anchors: `c7359af4` handoff-sync after CGFP provider-local finding,
+Current HEAD recorded for this handoff: `4b42064f`
+(PRFC-T1 protected state/base authorization lane commit `4b42064f`;
+prior anchors: `b94a14f3` handoff-sync after CGFP-T1 checker hardening,
+`e431b0e7` CGFP-T1 Checker Trigger-Context Hardening material closure commit,
+`c7359af4` handoff-sync after CGFP provider-local finding,
 `78282164` Codex supplemental CGFP provider-local learning boundary finding,
 `2210bef6` handoff-sync after CGFP-T1 checker
 dispatch, `35f17941` CGFP-T1 checker false-positive finding, GC-018, and
