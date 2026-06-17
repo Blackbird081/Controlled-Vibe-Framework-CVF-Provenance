@@ -25,8 +25,8 @@ reviews, and roadmap evidence remain in their governed owner paths.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active session state sources, generated
-state aggregate, session memory front door, and active handoff after AHB-Tn.8
-through AHB-Tn.10 material closure commit `b3ab716e`.
+state aggregate, session memory front door, and active handoff after PRFC
+Pre-Runtime Foundation Cleanup And Pilot roadmap material commit `2117544d`.
 
 Protected paths:
 
@@ -36,27 +36,31 @@ Protected paths:
 - `CVF_SESSION/state/entries/ahbTn6AgentWorkspaceFoundationReadinessBundleClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbTn7BoundedWorkspaceBuildSkeletonClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbTn8Tn10WorkspaceRuntimeFoundationClosure20260617.json`
+- `CVF_SESSION/state/entries/preRuntimeFoundationCleanupRoadmap20260617.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator instructed Codex on 2026-06-17 to execute the
-three useful follow-on AHB workspace foundation tranches, then Codex closed
-AHB-Tn.8 through AHB-Tn.10 and must sync active session surfaces.
+Operator authorization: operator instructed Codex on 2026-06-17 to author the
+roadmap for option 1, option 2, and option 3, then Codex created the PRFC
+roadmap and must sync active session surfaces.
 
-Rollback boundary: revert only this AHB-Tn.8 through AHB-Tn.10 session-sync if
-rejected. Do not alter AHB-Tn.8 through AHB-Tn.10 material closure artifacts.
+Rollback boundary: revert only this PRFC roadmap session-sync if rejected. Do
+not alter PRFC material roadmap artifact or prior AHB material closure
+artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=keep workspace runtime execution parked or open fresh GC-018 plus a source-verified work order for a future bounded executable runtime/UI/queue tranche; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=open PRFC-T1 with fresh GC-018 and a source-verified work order for current-state reconciliation before runtime execution; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`
+`prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`
 
-Current HEAD recorded for this handoff: `b3ab716e`
-(AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
+Current HEAD recorded for this handoff: `2117544d`
+(PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap material commit
+`2117544d`;
+AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
 Operator View material closure commit `b3ab716e`;
 AHB-Tn.7 Bounded Agent Workspace Build Skeleton material closure commit
 `4e6f9afe`;
@@ -281,6 +285,17 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap is
+`ROADMAP_READY_FOR_T1_GC018` at material commit `2117544d`. It covers three
+operator-approved pre-runtime foundation options: PRFC-T1 current-state
+reconciliation, PRFC-T2 Central Core plus Local View pilot, and PRFC-T3
+companion-routing checker or interlock follow-up. Runtime execution remains
+parked.
+
+Stable artifact:
+
+`docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md`
 
 AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
 Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. The
@@ -559,13 +574,11 @@ source-verified work order.
 
 ## Next Allowed Move
 
-AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
-Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. They
-close the bounded runtime-readiness contract, queue skeleton, and operator
-read-model plan. Next allowed move: keep workspace runtime execution parked, or
-open fresh GC-018 plus a source-verified work order for a future bounded
-executable runtime/UI/queue tranche. The runtime workspace is not opened
-unilaterally.
+PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap is
+`ROADMAP_READY_FOR_T1_GC018` at material commit `2117544d`. Next allowed move:
+open PRFC-T1 with fresh GC-018 and a source-verified work order for
+current-state reconciliation before runtime execution. Runtime workspace
+execution remains parked.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
@@ -713,7 +726,7 @@ evidence, work-order closure state, and template line-count pressure before
 committing. The guard is authoring-time only and does not claim runtime/provider
 behavior.
 
-Current mode: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`.
+Current mode: `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`.
 
 ## Latest Closed LHW Wave
 

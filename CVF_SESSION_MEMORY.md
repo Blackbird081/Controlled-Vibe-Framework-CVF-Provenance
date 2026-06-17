@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`
+Current mode marker: `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`.
+Current mode: `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`.
 
 Active handoff:
 
@@ -61,6 +61,17 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap is
+`ROADMAP_READY_FOR_T1_GC018` at material commit `2117544d`. It covers three
+operator-approved pre-runtime foundation options: PRFC-T1 current-state
+reconciliation, PRFC-T2 Central Core plus Local View pilot, and PRFC-T3
+companion-routing checker or interlock follow-up. Runtime execution remains
+parked.
+
+Stable artifact:
+
+- `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md`
 
 AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
 Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. The
@@ -495,15 +506,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`.
+Mode: `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`.
 
-AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
-Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. They
-close the bounded runtime-readiness contract, queue skeleton, and operator
-read-model plan. Next allowed move: keep workspace runtime execution parked, or
-open fresh GC-018 plus a source-verified work order for a future bounded
-executable runtime/UI/queue tranche. The runtime workspace is not opened
-unilaterally.
+PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap is
+`ROADMAP_READY_FOR_T1_GC018` at material commit `2117544d`. Next allowed move:
+open PRFC-T1 with fresh GC-018 and a source-verified work order for
+current-state reconciliation before runtime execution. Runtime workspace
+execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

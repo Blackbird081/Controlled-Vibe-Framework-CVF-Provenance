@@ -1,0 +1,15 @@
+{
+  "stateOrder": 430,
+  "stateKey": "preRuntimeFoundationCleanupRoadmap20260617",
+  "value": {
+    "status": "ROADMAP_READY_FOR_T1_GC018",
+    "materialCommit": "2117544d",
+    "roadmap": "docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md",
+    "prfcT1": "CCLV-T2 current-state reconciliation",
+    "prfcT2": "CCLV-T3 Central Core plus Local View pilot after T1 pass",
+    "prfcT3": "PLCS companion-routing checker or interlock follow-up after T2 pass or operator release",
+    "result": "Roadmap authored for the three operator-approved pre-runtime foundation options.",
+    "claimBoundary": "Planning only. No GC-018, work order, checker implementation, runtime queue, scheduler, UI, provider or live proof, public-sync, registry edit, product runtime mutation, production readiness, or public readiness.",
+    "nextAllowedMove": "Open PRFC-T1 with fresh GC-018 and source-verified work order before runtime execution. Workspace runtime remains parked."
+  }
+}
