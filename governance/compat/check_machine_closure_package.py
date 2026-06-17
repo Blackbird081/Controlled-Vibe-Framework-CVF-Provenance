@@ -78,6 +78,35 @@ EXTERNAL_EVIDENCE_SIGNAL_RE = re.compile(
     re.IGNORECASE,
 )
 SHA256_RE = re.compile(r"\b(?:sha256:)?[0-9a-f]{64}\b", re.IGNORECASE)
+NA_LINE_RE = re.compile(r"(?im)^\s*[-|].{0,40}N/A\s+with\s+reason\b")
+CITED_PATH_RE = re.compile(r"`[^`\n]+`")
+
+
+def _is_in_code_fence(lines: list[str], target_idx: int) -> bool:
+    """Return True if the line at target_idx is inside a markdown code fence."""
+    fence_count = 0
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            fence_count += 1
+        if i == target_idx:
+            break
+    return (fence_count % 2) == 1
+
+
+def _strip_non_signal_text(text: str) -> str:
+    """Remove code fences, cited-path spans, and N/A-with-reason lines before
+    bare-keyword signal matching, so incidental trigger words in those
+    contexts do not count as real applicability signal."""
+    lines = text.splitlines()
+    kept: list[str] = []
+    for idx, line in enumerate(lines):
+        if _is_in_code_fence(lines, idx):
+            continue
+        if NA_LINE_RE.match(line):
+            continue
+        kept.append(CITED_PATH_RE.sub(" ", line))
+    return "\n".join(kept)
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -316,7 +345,7 @@ def validate_machine_closure_package(path: str, text: str) -> list[str]:
         if PLACEHOLDER_STATUS_RE.search(final_status):
             issues.append(f"Machine Closure Package row `{item}` retains stale placeholder status `{final_status}`")
 
-    if CORPUS_SIGNAL_RE.search(text):
+    if CORPUS_SIGNAL_RE.search(_strip_non_signal_text(text)):
         for item in ("Registry JSON", "Registry Markdown"):
             row = rows.get(item.lower())
             if row is None:

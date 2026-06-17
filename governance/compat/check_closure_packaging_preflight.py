@@ -62,6 +62,35 @@ PATH_RE = re.compile(
     r"`((?:docs|governance|EXTENSIONS|CVF_SESSION|scripts|sdk|\.github|\.private_reference)/[^`|)]+)`"
     r"|`((?:AGENTS\.md|CLAUDE\.md|CVF_SESSION_MEMORY\.md|AGENT_HANDOFF[^`|)]+\.md))`"
 )
+NA_LINE_RE = re.compile(r"(?im)^\s*[-|].{0,40}N/A\s+with\s+reason\b")
+INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
+
+
+def _is_in_code_fence(lines: list[str], target_idx: int) -> bool:
+    """Return True if the line at target_idx is inside a markdown code fence."""
+    fence_count = 0
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            fence_count += 1
+        if i == target_idx:
+            break
+    return (fence_count % 2) == 1
+
+
+def _strip_non_signal_text(text: str) -> str:
+    """Remove code fences, inline-code spans, and N/A-with-reason lines before
+    bare-keyword/status signal matching, so incidental trigger words quoted as
+    evidence or describing another tranche do not count as real signal."""
+    lines = text.splitlines()
+    kept: list[str] = []
+    for idx, line in enumerate(lines):
+        if _is_in_code_fence(lines, idx):
+            continue
+        if NA_LINE_RE.match(line):
+            continue
+        kept.append(INLINE_CODE_RE.sub(" ", line))
+    return "\n".join(kept)
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -134,7 +163,8 @@ def _is_closed_equivalent(text: str) -> bool:
     status = _extract_status(text).upper()
     if re.match(r"^CLOSED(?:\b|_)", status):
         return True
-    return "CLOSED_PASS" in "\n".join(text.splitlines()[:80]).upper()
+    signal_chunk = _strip_non_signal_text("\n".join(text.splitlines()[:80]))
+    return "CLOSED_PASS" in signal_chunk.upper()
 
 
 def _is_active_doc(path: str) -> bool:
@@ -224,11 +254,12 @@ def _validate_stale_closed_language(path: str, text: str) -> list[str]:
     if not _is_closed_equivalent(text):
         return []
     issues: list[str] = []
+    signal_text = _strip_non_signal_text(text)
     matches = sorted(
         {
             match.group(0)
             for pattern in STALE_CLOSED_PATTERNS
-            for match in re.finditer(pattern, text, re.IGNORECASE)
+            for match in re.finditer(pattern, signal_text, re.IGNORECASE)
         }
     )
     if matches:

@@ -53,6 +53,27 @@ Scope: refactor docs/reference/ durable governance template addendum storage.
     assert "foundation_storage_layout_block_missing" in _types(issues)
 
 
+def test_cited_filename_markers_inside_inline_code_do_not_trigger() -> None:
+    text = """
+# Work Order
+
+Scope: this work order touches `CVF_REFACTOR_TEMPLATE_ADDENDUM_STANDARD.md`
+only as a filename citation; no foundation storage change is made here.
+"""
+    issues = MODULE._validate_work_order("docs/work_orders/CVF_TEST_FOR_CODEX.md", text)
+    assert "foundation_storage_layout_block_missing" not in _types(issues)
+
+
+def test_foundation_markers_inside_na_line_do_not_trigger() -> None:
+    text = """
+# Work Order
+
+- Foundation Storage Layout Block: N/A with reason: no refactor, split, or relocate of any docs/reference/ template addendum standard in this tranche
+"""
+    issues = MODULE._validate_work_order("docs/work_orders/CVF_TEST_FOR_CODEX.md", text)
+    assert "foundation_storage_layout_block_missing" not in _types(issues)
+
+
 def test_foundation_refactor_work_order_with_storage_block_passes() -> None:
     text = """
 # Work Order

@@ -77,6 +77,42 @@ Convert one external-review architecture finding into runtime hardening.
     assert check_text("docs/work_orders/CVF_WO_RUNTIME_DURABILITY_2026-06-05.md", text) == []
 
 
+def test_rescan_keyword_inside_code_fence_is_not_applicable():
+    text = """
+# Plain Note
+
+Status: CLOSED_PASS_BOUNDED
+
+```text
+this is a rescan example used only as fenced sample text
+```
+"""
+    assert check_text("docs/reviews/CVF_PLAIN_NOTE.md", text) == []
+
+
+def test_rescan_keyword_inside_na_line_is_not_applicable():
+    text = """
+# Plain Note
+
+Status: CLOSED_PASS_BOUNDED
+
+- Rescan applicability: N/A with reason: not a rescan or knowledge absorption output
+"""
+    assert check_text("docs/reviews/CVF_PLAIN_NOTE.md", text) == []
+
+
+def test_rescan_keyword_in_real_prose_still_applicable():
+    text = """
+# Real Rescan Note
+
+Status: CLOSED_PASS_BOUNDED
+
+This document performs a full rescan of the prior intake findings.
+"""
+    violations = check_text("docs/reviews/CVF_REAL_RESCAN.md", text)
+    assert any(item["type"] == "rescan_hardening_section_missing" for item in violations)
+
+
 def test_complete_claim_cannot_use_not_applicable():
     text = VALID_BLOCK.replace("COMPLETE_WITH_DELTA_ROUTING_SAMPLE", "NOT_APPLICABLE_WITH_REASON")
     violations = check_text("docs/assessments/CVF_RESCAN_SAMPLE.md", text)

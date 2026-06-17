@@ -23,6 +23,47 @@ This does not dispatch worker execution.
     assert any("stale dispatch/hold/pre-closure" in issue for issue in issues)
 
 
+def test_stale_dispatch_language_inside_code_fence_is_not_flagged() -> None:
+    text = """
+# Example
+
+Status: CLOSED_PASS_BOUNDED
+
+```text
+This does not dispatch worker execution.
+```
+"""
+    issues = MODULE.validate_doc("docs/work_orders/CVF_WO_EXAMPLE.md", text, {"docs/work_orders/CVF_WO_EXAMPLE.md"})
+    assert not any("stale dispatch/hold/pre-closure" in issue for issue in issues)
+
+
+def test_stale_dispatch_language_outside_fence_still_fires() -> None:
+    text = """
+# Example
+
+Status: CLOSED_PASS_BOUNDED
+
+This does not dispatch worker execution.
+"""
+    issues = MODULE.validate_doc("docs/work_orders/CVF_WO_EXAMPLE.md", text, {"docs/work_orders/CVF_WO_EXAMPLE.md"})
+    assert any("stale dispatch/hold/pre-closure" in issue for issue in issues)
+
+
+def test_closed_pass_substring_inside_fence_is_not_closed_equivalent() -> None:
+    text = """
+# Example
+
+Status: ACTIVE
+
+Other tranche reference:
+
+```text
+CLOSED_PASS_BOUNDED
+```
+"""
+    assert not MODULE._is_closed_equivalent(text)
+
+
 def test_corpus_enumeration_rejects_git_listing() -> None:
     text = """
 # Example

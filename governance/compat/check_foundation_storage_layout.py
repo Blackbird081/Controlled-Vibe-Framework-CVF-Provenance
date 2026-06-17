@@ -57,6 +57,37 @@ FOUNDATION_ACTION_MARKERS = (
     "date policy",
 )
 
+NA_LINE_RE = re.compile(r"(?im)^\s*[-|].{0,40}N/A\s+with\s+reason\b")
+INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
+
+
+def _is_in_code_fence(lines: list[str], target_idx: int) -> bool:
+    """Return True if the line at target_idx is inside a markdown code fence."""
+    fence_count = 0
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            fence_count += 1
+        if i == target_idx:
+            break
+    return (fence_count % 2) == 1
+
+
+def _strip_non_signal_text(text: str) -> str:
+    """Remove code fences, inline-code/cited-filename spans, and
+    N/A-with-reason lines before bare-word marker matching, so incidental
+    words in cited filenames or template row labels do not count as real
+    foundation-work signal."""
+    lines = text.splitlines()
+    kept: list[str] = []
+    for idx, line in enumerate(lines):
+        if _is_in_code_fence(lines, idx):
+            continue
+        if NA_LINE_RE.match(line):
+            continue
+        kept.append(INLINE_CODE_RE.sub(" ", line))
+    return "\n".join(kept)
+
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
     proc = subprocess.run(
@@ -223,7 +254,7 @@ def _validate_reference_family_folder(
 
 
 def _work_order_needs_storage_block(text: str) -> bool:
-    lowered = text.lower()
+    lowered = _strip_non_signal_text(text).lower()
     has_foundation_subject = any(marker in lowered for marker in FOUNDATION_WORK_MARKERS)
     has_action = any(marker in lowered for marker in FOUNDATION_ACTION_MARKERS)
     return has_foundation_subject and has_action
