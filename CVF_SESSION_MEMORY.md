@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`
+Current mode marker: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`.
+Current mode: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`.
 
 Active handoff:
 
@@ -61,6 +61,27 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
+Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. The
+batch adds the runtime expansion readiness contract, runtime boundary guard,
+minimal local `runtime_queue` skeleton, operator-facing read-model plan,
+generated workspace state items, and front-door/index updates.
+
+Stable artifacts:
+
+- `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`
+- `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`
+- `CVF_SESSION/agent_workspace/runtime_queue/README.md`
+- `CVF_SESSION/agent_workspace/runtime_queue/queues/README.md`
+- `governance/compat/check_agent_workspace_runtime_boundary.py`
+- `governance/compat/test_agent_workspace_runtime_boundary.py`
+- `docs/reviews/CVF_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_COMPLETION_2026-06-17.md`
+
+This is foundation only. It does not create executable runtime queues,
+scheduler queues, worker daemons, UI implementation, provider/live proof,
+public-sync, registry edits, product runtime mutation, production readiness, or
+public readiness.
 
 AHB-Tn.7 Bounded Agent Workspace Build Skeleton is `CLOSED_PASS_BOUNDED` at
 material commit `4e6f9afe`. It executes the formerly parked AHB-Tn.5-A option
@@ -474,13 +495,15 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`.
+Mode: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`.
 
-AHB-Tn.7 Bounded Agent Workspace Build Skeleton is `CLOSED_PASS_BOUNDED` at
-material commit `4e6f9afe`. It closes the bounded skeleton-level workspace
-build. Next allowed move: keep workspace runtime expansion parked, or open
-fresh GC-018 plus a source-verified work order for a future bounded
-runtime/UI/queue tranche. The runtime workspace is not opened unilaterally.
+AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
+Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. They
+close the bounded runtime-readiness contract, queue skeleton, and operator
+read-model plan. Next allowed move: keep workspace runtime execution parked, or
+open fresh GC-018 plus a source-verified work order for a future bounded
+executable runtime/UI/queue tranche. The runtime workspace is not opened
+unilaterally.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

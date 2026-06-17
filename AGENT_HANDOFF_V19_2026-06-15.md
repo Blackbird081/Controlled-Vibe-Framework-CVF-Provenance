@@ -25,8 +25,8 @@ reviews, and roadmap evidence remain in their governed owner paths.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active session state sources, generated
-state aggregate, session memory front door, and active handoff after AHB-Tn.7
-material closure commit `4e6f9afe`.
+state aggregate, session memory front door, and active handoff after AHB-Tn.8
+through AHB-Tn.10 material closure commit `b3ab716e`.
 
 Protected paths:
 
@@ -35,27 +35,30 @@ Protected paths:
 - `CVF_SESSION/state/entries/ahbTn5AgentWorkspaceOptionReadinessClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbTn6AgentWorkspaceFoundationReadinessBundleClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbTn7BoundedWorkspaceBuildSkeletonClosure20260617.json`
+- `CVF_SESSION/state/entries/ahbTn8Tn10WorkspaceRuntimeFoundationClosure20260617.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
 Operator authorization: operator instructed Codex on 2026-06-17 to execute the
-bounded AHB-Tn.5-A workspace skeleton, then Codex closed AHB-Tn.7 and must sync
-active session surfaces.
+three useful follow-on AHB workspace foundation tranches, then Codex closed
+AHB-Tn.8 through AHB-Tn.10 and must sync active session surfaces.
 
-Rollback boundary: revert only this AHB-Tn.7 session-sync if rejected. Do not
-alter AHB-Tn.7 material closure artifacts.
+Rollback boundary: revert only this AHB-Tn.8 through AHB-Tn.10 session-sync if
+rejected. Do not alter AHB-Tn.8 through AHB-Tn.10 material closure artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=keep workspace runtime expansion parked or open fresh GC-018 plus a source-verified work order for a future bounded runtime/UI/queue tranche; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace expansion, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=keep workspace runtime execution parked or open fresh GC-018 plus a source-verified work order for a future bounded executable runtime/UI/queue tranche; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`
+`ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`
 
-Current HEAD recorded for this handoff: `4e6f9afe`
-(AHB-Tn.7 Bounded Agent Workspace Build Skeleton material closure commit
+Current HEAD recorded for this handoff: `b3ab716e`
+(AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
+Operator View material closure commit `b3ab716e`;
+AHB-Tn.7 Bounded Agent Workspace Build Skeleton material closure commit
 `4e6f9afe`;
 AHB-Tn.6 Agent Workspace Foundation Readiness Bundle material closure commit
 `d53914f5`;
@@ -278,6 +281,33 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
+Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. The
+batch adds the runtime expansion readiness contract, runtime boundary guard,
+minimal local `runtime_queue` skeleton, operator-facing read-model plan,
+generated workspace state items, and front-door/index updates.
+
+Stable artifacts:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`
+
+`CVF_SESSION/agent_workspace/runtime_queue/README.md`
+
+`CVF_SESSION/agent_workspace/runtime_queue/queues/README.md`
+
+`governance/compat/check_agent_workspace_runtime_boundary.py`
+
+`governance/compat/test_agent_workspace_runtime_boundary.py`
+
+`docs/reviews/CVF_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_COMPLETION_2026-06-17.md`
+
+This is foundation only. It does not create executable runtime queues,
+scheduler queues, worker daemons, UI implementation, provider/live proof,
+public-sync, registry edits, product runtime mutation, production readiness, or
+public readiness.
 
 AHB-Tn.7 Bounded Agent Workspace Build Skeleton is `CLOSED_PASS_BOUNDED` at
 material commit `4e6f9afe`. It executes the formerly parked AHB-Tn.5-A option
@@ -529,19 +559,22 @@ source-verified work order.
 
 ## Next Allowed Move
 
-AHB-Tn.7 Bounded Agent Workspace Build Skeleton is `CLOSED_PASS_BOUNDED` at
-material commit `4e6f9afe`. It closes the bounded skeleton-level workspace
-build. Next allowed move: keep workspace runtime expansion parked, or open
-fresh GC-018 plus a source-verified work order for a future bounded
-runtime/UI/queue tranche. The runtime workspace is not opened unilaterally.
+AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
+Operator View are `CLOSED_PASS_BOUNDED` at material commit `b3ab716e`. They
+close the bounded runtime-readiness contract, queue skeleton, and operator
+read-model plan. Next allowed move: keep workspace runtime execution parked, or
+open fresh GC-018 plus a source-verified work order for a future bounded
+executable runtime/UI/queue tranche. The runtime workspace is not opened
+unilaterally.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
 AHB-Tn.1 workspace design foundation, AHB-Tn.2 workspace design checker,
 AHB-Tn.3 workspace state topology contract, AHB-Tn.4 workspace state source
 checker, AHB-Tn.5 option readiness, AHB-Tn.6 foundation readiness, and
-AHB-Tn.7 bounded skeleton are closed and should be treated as inputs to any
-future selected runtime workspace tranche.
+AHB-Tn.7 bounded skeleton, and AHB-Tn.8 through AHB-Tn.10 runtime-readiness
+foundation are closed and should be treated as inputs to any future selected
+runtime workspace tranche.
 Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
@@ -680,7 +713,7 @@ evidence, work-order closure state, and template line-count pressure before
 committing. The guard is authoring-time only and does not claim runtime/provider
 behavior.
 
-Current mode: `ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`.
+Current mode: `ahb_tn8_tn10_workspace_runtime_foundation_closed_pass_bounded_runtime_execution_parked`.
 
 ## Latest Closed LHW Wave
 

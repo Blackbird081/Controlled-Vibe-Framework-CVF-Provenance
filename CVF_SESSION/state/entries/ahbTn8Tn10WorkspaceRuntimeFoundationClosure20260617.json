@@ -1,0 +1,25 @@
+{
+  "stateOrder": 429,
+  "stateKey": "ahbTn8Tn10WorkspaceRuntimeFoundationClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "b3ab716e",
+    "executionBaseHead": "3619ab8d",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_COMPLETION_2026-06-17.md",
+    "workspaceFrontDoor": "docs/reference/agent_workspace/README.md",
+    "runtimeReadinessContract": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+    "runtimeQueueSkeleton": "CVF_SESSION/agent_workspace/runtime_queue/README.md",
+    "runtimeQueueFamilyIndex": "CVF_SESSION/agent_workspace/runtime_queue/queues/README.md",
+    "operatorViewPlan": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+    "workspaceStateAggregate": "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+    "workspaceStateSourceItems": "CVF_SESSION/agent_workspace/state/items/",
+    "runtimeBoundaryChecker": "governance/compat/check_agent_workspace_runtime_boundary.py",
+    "runtimeBoundaryCheckerTests": "governance/compat/test_agent_workspace_runtime_boundary.py",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.8 through AHB-Tn.10 closed the bounded workspace runtime-readiness contract, local queue skeleton, operator read-model plan, generated workspace state items, and runtime-boundary guard binding.",
+    "claimBoundary": "Foundation only. No executable runtime queue, scheduler, worker daemon, UI implementation, provider/live proof, public-sync, registry edit, product runtime mutation, production readiness, or public readiness.",
+    "nextAllowedMove": "Workspace runtime execution remains parked. Any executable queue, UI, provider/live, public-sync, registry, or product-runtime work requires fresh GC-018 plus source-verified work order."
+  }
+}
