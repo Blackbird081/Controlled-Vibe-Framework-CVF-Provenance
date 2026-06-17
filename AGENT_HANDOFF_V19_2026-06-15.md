@@ -24,30 +24,20 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active session state sources, generated
-state aggregate, session memory front door, and active handoff after PRFC
-Pre-Runtime Foundation Cleanup And Pilot roadmap material commit `2117544d`.
+Authorized session-sync scope: update active handoff after Claude CGFP-T1
+checker trigger false-positive finding and hardening dispatch commit `35f17941`.
 
 Protected paths:
 
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/ahbTn5AgentWorkspaceOptionReadinessClosure20260617.json`
-- `CVF_SESSION/state/entries/ahbTn6AgentWorkspaceFoundationReadinessBundleClosure20260617.json`
-- `CVF_SESSION/state/entries/ahbTn7BoundedWorkspaceBuildSkeletonClosure20260617.json`
-- `CVF_SESSION/state/entries/ahbTn8Tn10WorkspaceRuntimeFoundationClosure20260617.json`
-- `CVF_SESSION/state/entries/preRuntimeFoundationCleanupRoadmap20260617.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator instructed Codex on 2026-06-17 to author the
-roadmap for option 1, option 2, and option 3, then Codex created the PRFC
-roadmap and must sync active session surfaces.
+Operator authorization: operator instructed Codex on 2026-06-17 to record the
+two findings and review the Claude-reported CGFP/PRFC dispatch commits. Before
+Codex records the supplemental finding, the active handoff must first reflect
+Claude's latest committed dispatch head.
 
-Rollback boundary: revert only this PRFC roadmap session-sync if rejected. Do
-not alter PRFC material roadmap artifact or prior AHB material closure
-artifacts.
+Rollback boundary: revert only this handoff sync if rejected. Do not alter the
+PRFC, CGFP, or prior AHB material artifacts.
 
 ## Startup Acknowledgment
 
@@ -57,10 +47,11 @@ Startup acknowledged: current mode=`prfc_pre_runtime_foundation_cleanup_roadmap_
 
 `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`
 
-Current HEAD recorded for this handoff: `070e2382`
-(handoff-sync after PRFC-T1 dispatch; CGFP-T1 checker-hardening dispatch
-committed in the same session-sync batch. Prior anchors: `833501a6` PRFC-T1
-dispatch, `2117544d` PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap
+Current HEAD recorded for this handoff: `35f17941`
+(CGFP-T1 checker false-positive finding, GC-018, and work-order dispatch
+commit `35f17941`; prior anchors: `070e2382` handoff-sync after PRFC-T1
+dispatch, `833501a6` PRFC-T1 dispatch, `2117544d` PRFC Pre-Runtime Foundation
+Cleanup And Pilot roadmap
 material commit
 `2117544d`;
 AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
