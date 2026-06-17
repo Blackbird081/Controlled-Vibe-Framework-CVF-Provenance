@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_TN1_CLOSED_WORKSPACE_BUILD_CANDIDATE
+Status: ROADMAP_ACTIVE_AHB_TN2_CLOSED_WORKSPACE_BUILD_CANDIDATE
 
 docType: roadmap
 
@@ -172,7 +172,8 @@ views that must cite the contract.
 | AHB-T2-F2 | CLOSED_PASS_BOUNDED | Hardened foundation storage/layout and provider-memory-only learning into machine enforcement before AHB-T3 | Codex |
 | AHB-T3 | CLOSED_PASS_BOUNDED | Implemented a unified handoff-boundary machine check derived from the contract, with stable `docs/reference/agent_handoff/` front door and autorun/local-hook binding | Codex |
 | AHB-Tn.1 | CLOSED_PASS_BOUNDED | Analyzed and designed the dedicated agent-interaction workspace foundation with stable `docs/reference/agent_workspace/` front door; no build | Codex |
-| AHB-Tn.2 | CANDIDATE_AFTER_TN1 | Future decision whether to build or machine-harden the dedicated agent-interaction workspace against the AHB-Tn.1 design standard | Operator decision |
+| AHB-Tn.2 | CLOSED_PASS_BOUNDED | Machine-hardened the dedicated agent-interaction workspace design control block against the AHB-Tn.1 design standard; no workspace build | Codex |
+| AHB-Tn.3 | CANDIDATE_AFTER_TN2 | Future decision whether to build a bounded workspace surface, design generated state, or continue foundation hardening | Operator decision |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
 AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
@@ -288,9 +289,31 @@ the stable workspace design foundation:
 
 AHB-Tn.1 does not build the workspace, create runtime state, mutate product
 runtime, run provider/live proof, public-sync, edit registries, or claim
-production/public readiness. Any future workspace build or dedicated workspace
-checker remains AHB-Tn.2 or later and requires fresh GC-018 plus operator
-authorization.
+production/public readiness. The dedicated workspace checker is AHB-Tn.2 scope
+after fresh operator authorization.
+
+## AHB-Tn.2 Closure Note
+
+AHB-Tn.2 is `CLOSED_PASS_BOUNDED`. Operator authorized workspace-foundation
+hardening on 2026-06-17 after AHB-Tn.1. Codex promoted the Agent Workspace
+Design Control Block from artifact guidance into machine enforcement:
+
+- workspace design checker:
+  `governance/compat/check_agent_workspace_design.py`
+- workspace design checker tests:
+  `governance/compat/test_check_agent_workspace_design.py`
+- machine-enforced workspace design standard:
+  `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+- stable front door updated with the checker:
+  `docs/reference/agent_workspace/README.md`
+- completion packet:
+  `docs/reviews/CVF_AHB_TN2_AGENT_WORKSPACE_DESIGN_CHECKER_COMPLETION_2026-06-17.md`
+
+The checker is bound into autorun and local hook chains and requires changed
+workspace work orders to instantiate the Agent Workspace Design Control Block.
+AHB-Tn.2 does not build the workspace, create runtime state, mutate product
+runtime, run provider/live proof, public-sync, edit registries, or claim
+production/public readiness. AHB-Tn.3 remains an operator-decision candidate.
 
 ## AHB-T1 Requirements (Proposed)
 

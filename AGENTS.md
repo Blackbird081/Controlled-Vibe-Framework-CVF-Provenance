@@ -614,6 +614,10 @@ Canonical design standard:
 
 `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
 
+Machine guard:
+
+`governance/compat/check_agent_workspace_design.py`
+
 Any future task that proposes, analyzes, designs, builds, or modifies a
 dedicated Claude/Codex/other-agent interaction workspace must read the stable
 agent workspace front door before implementation.
@@ -622,6 +626,11 @@ The AHB-Tn.1 design foundation is not workspace build authorization. A future
 workspace build, runtime state file, UI, queue, provider proof, public-sync, or
 registry edit requires fresh GC-018, a separate work order, Agent Handoff
 Contract Control Block evidence, and an Agent Workspace Design Control Block.
+
+The workspace design guard is mandatory in the autorun workflow and local hook
+chain. Changed workspace work orders must explicitly account for workspace
+purpose, contract source, front door, storage class, handoff fields, state
+ownership, guard owner, and build boundary before dispatch or closure.
 
 Stable workspace foundation rules live under `docs/reference/agent_workspace/`.
 Dated GC-018 packets, work orders, reviews, and evidence remain in their normal

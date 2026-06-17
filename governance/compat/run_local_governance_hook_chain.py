@@ -59,6 +59,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_agent_handoff_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "agent workspace design boundary",
+        ["python", "governance/compat/check_agent_workspace_design.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "machine closure package",
         ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -179,6 +183,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "agent handoff boundary",
             ["python", "governance/compat/check_agent_handoff_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "agent workspace design boundary",
+            ["python", "governance/compat/check_agent_workspace_design.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "machine closure package",
@@ -337,6 +345,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "agent handoff boundary",
             ["python", "governance/compat/check_agent_handoff_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "agent workspace design boundary",
+            ["python", "governance/compat/check_agent_workspace_design.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "machine closure package",

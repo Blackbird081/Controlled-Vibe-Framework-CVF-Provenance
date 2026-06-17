@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_STANDARD
+Status: ACTIVE_STANDARD_AND_MACHINE_ENFORCED
 
 docType: reference
 
@@ -29,6 +29,7 @@ behavior, public-sync, or claim production readiness.
 |---|---|---|
 | AHB-T2 ratified contract | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | Central Core for role, phase, base-head, trace, commit, and next-move fields |
 | AHB-T3 checker | `governance/compat/check_agent_handoff_boundary.py` | Machine-enforced work-order local view |
+| AHB-Tn.2 workspace checker | `governance/compat/check_agent_workspace_design.py` | Machine-enforced workspace design control block |
 | AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | Workspace candidate route after AHB-T3 |
 | Foundation storage standard | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | Stable folder/index rule |
 | Provider memory boundary | `AGENTS.md` | Provider-local memory is not CVF source of truth |
@@ -102,6 +103,7 @@ provider integration, or public-facing copy from this standard alone.
 | Guard | Relationship |
 |---|---|
 | `governance/compat/check_agent_handoff_boundary.py` | Enforces handoff contract evidence in changed work orders |
+| `governance/compat/check_agent_workspace_design.py` | Enforces the Agent Workspace Design Control Block in changed workspace work orders |
 | `governance/compat/check_foundation_storage_layout.py` | Enforces stable folder/index discipline for durable workspace rules |
 | `governance/compat/check_agent_operation_trace.py` | Enforces per-phase changed-set and trace manifest evidence |
 | `governance/compat/check_finding_to_governance_learning.py` | Prevents workspace findings from staying only in provider memory |
@@ -109,17 +111,20 @@ provider integration, or public-facing copy from this standard alone.
 
 ## Machine Enforcement
 
-Current enforcement is by existing guards only:
+Workspace design enforcement is now machine-checked:
 
 ```powershell
+python governance/compat/check_agent_workspace_design.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_handoff_boundary.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_foundation_storage_layout.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_operation_trace.py --base <baseHead> --head HEAD --enforce
 ```
 
-No dedicated `check_agent_workspace_design.py` exists yet. A future build or
-implementation tranche must decide whether the `Agent Workspace Design Control
-Block` needs a dedicated checker before runtime or product work begins.
+`governance/compat/check_agent_workspace_design.py` is included in the autorun
+workflow gate and local governance hook chain. A future workspace build,
+runtime, provider-proof, public-sync, registry, queue, inbox, or dashboard work
+order that mentions the agent-interaction workspace must carry the Agent
+Workspace Design Control Block before dispatch or closure.
 
 ## Work Order Requirement
 
@@ -150,17 +155,17 @@ authorized.
 | Session or invocation | 2026-06-17 AHB-Tn.1 agent-interaction workspace analysis/design |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, rg, apply_patch |
-| Target paths | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` |
-| Allowed scope source | operator authorization for AHB-Tn analysis/design on 2026-06-17 |
-| Before status evidence | HEAD `05f3f795`; clean worktree |
-| After status evidence | AHB-Tn.1 material closure pending commit |
-| Diff evidence | `git diff --name-status 05f3f795..HEAD` |
-| Approval boundary | bounded workspace analysis/design foundation only |
+| Target paths | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `governance/compat/check_agent_workspace_design.py`; `governance/compat/test_check_agent_workspace_design.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py` |
+| Allowed scope source | operator authorization for AHB-Tn.2 workspace-foundation hardening on 2026-06-17 |
+| Before status evidence | HEAD `5c79881e`; clean worktree |
+| After status evidence | AHB-Tn.2 material closure pending commit |
+| Diff evidence | `git diff --name-status 5c79881e..HEAD` |
+| Approval boundary | bounded workspace design checker and foundation hardening only |
 | Claim boundary | no workspace build, runtime/provider/live/public/registry implementation claim |
 | Agent type | Codex implementer/closer |
-| Invocation ID | `ahb-tn1-agent-interaction-workspace-analysis-design-2026-06-17` |
-| Expected manifest | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` |
-| Actual changed set | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` |
+| Invocation ID | `ahb-tn2-agent-workspace-design-checker-2026-06-17` |
+| Expected manifest | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `governance/compat/check_agent_workspace_design.py`; `governance/compat/test_check_agent_workspace_design.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py` |
+| Actual changed set | AHB-Tn.2 material changed set, verified in completion review |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
