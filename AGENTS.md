@@ -614,6 +614,10 @@ Canonical design standard:
 
 `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
 
+Canonical state topology contract:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`
+
 Machine guard:
 
 `governance/compat/check_agent_workspace_design.py`
@@ -631,6 +635,11 @@ The workspace design guard is mandatory in the autorun workflow and local hook
 chain. Changed workspace work orders must explicitly account for workspace
 purpose, contract source, front door, storage class, handoff fields, state
 ownership, guard owner, and build boundary before dispatch or closure.
+
+Future workspace state, generated workspace state, workspace queues, inboxes,
+review lanes, dashboards, or runtime work must also cite the state topology
+contract and map proposed records to its required state fields before
+implementation.
 
 Stable workspace foundation rules live under `docs/reference/agent_workspace/`.
 Dated GC-018 packets, work orders, reviews, and evidence remain in their normal

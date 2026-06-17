@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_TN2_CLOSED_WORKSPACE_BUILD_CANDIDATE
+Status: ROADMAP_ACTIVE_AHB_TN3_CLOSED_WORKSPACE_BUILD_CANDIDATE
 
 docType: roadmap
 
@@ -173,7 +173,8 @@ views that must cite the contract.
 | AHB-T3 | CLOSED_PASS_BOUNDED | Implemented a unified handoff-boundary machine check derived from the contract, with stable `docs/reference/agent_handoff/` front door and autorun/local-hook binding | Codex |
 | AHB-Tn.1 | CLOSED_PASS_BOUNDED | Analyzed and designed the dedicated agent-interaction workspace foundation with stable `docs/reference/agent_workspace/` front door; no build | Codex |
 | AHB-Tn.2 | CLOSED_PASS_BOUNDED | Machine-hardened the dedicated agent-interaction workspace design control block against the AHB-Tn.1 design standard; no workspace build | Codex |
-| AHB-Tn.3 | CANDIDATE_AFTER_TN2 | Future decision whether to build a bounded workspace surface, design generated state, or continue foundation hardening | Operator decision |
+| AHB-Tn.3 | CLOSED_PASS_BOUNDED | Defined the workspace state topology contract: state units, lanes, required fields, storage candidate layout, and archive policy; no workspace build | Codex |
+| AHB-Tn.4 | CANDIDATE_AFTER_TN3 | Future decision whether to build a bounded workspace surface, design generated workspace state sources/checker, or continue foundation hardening | Operator decision |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
 AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
@@ -314,6 +315,28 @@ workspace work orders to instantiate the Agent Workspace Design Control Block.
 AHB-Tn.2 does not build the workspace, create runtime state, mutate product
 runtime, run provider/live proof, public-sync, edit registries, or claim
 production/public readiness. AHB-Tn.3 remains an operator-decision candidate.
+
+## AHB-Tn.3 Closure Note
+
+AHB-Tn.3 is `CLOSED_PASS_BOUNDED`. Operator authorized workspace state topology
+contract work on 2026-06-17 after AHB-Tn.2. Codex added the stable workspace
+state topology contract:
+
+- state topology contract:
+  `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`
+- stable front door updated:
+  `docs/reference/agent_workspace/README.md`
+- design standard updated:
+  `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+- completion packet:
+  `docs/reviews/CVF_AHB_TN3_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT_COMPLETION_2026-06-17.md`
+
+The contract defines workspace state units, lanes, required fields, storage
+topology, candidate generated-state layout, and archive policy before any
+workspace build. AHB-Tn.3 does not build the workspace, create generated state,
+mutate product runtime, run provider/live proof, public-sync, edit registries,
+or claim production/public readiness. AHB-Tn.4 remains an operator-decision
+candidate.
 
 ## AHB-T1 Requirements (Proposed)
 

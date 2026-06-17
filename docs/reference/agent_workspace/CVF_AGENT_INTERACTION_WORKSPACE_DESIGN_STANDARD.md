@@ -30,6 +30,7 @@ behavior, public-sync, or claim production readiness.
 | AHB-T2 ratified contract | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | Central Core for role, phase, base-head, trace, commit, and next-move fields |
 | AHB-T3 checker | `governance/compat/check_agent_handoff_boundary.py` | Machine-enforced work-order local view |
 | AHB-Tn.2 workspace checker | `governance/compat/check_agent_workspace_design.py` | Machine-enforced workspace design control block |
+| AHB-Tn.3 state topology contract | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | Workspace state, lane, storage, and archive topology |
 | AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | Workspace candidate route after AHB-T3 |
 | Foundation storage standard | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | Stable folder/index rule |
 | Provider memory boundary | `AGENTS.md` | Provider-local memory is not CVF source of truth |
@@ -61,6 +62,7 @@ these design surfaces before implementation:
 | Handoff contract fields | How `route`, `rolePattern`, `phase`, base heads, changed-set scope, trace scope, commit owner, cross-batch isolation, and next-move surfaces are represented |
 | Evidence storage | Which artifacts are stable foundation records and which are dated execution evidence |
 | Workspace state | Whether state is markdown-only, generated JSON, runtime-backed, or deferred |
+| State topology | How intake, dispatch, worker-return, review, accepted-material, session-sync, and parked state units map to the AHB contract |
 | Guard placement | Which existing or future machine checks enforce the design before dispatch, implementation, closure, and session sync |
 | Archive policy | How stale workspace records leave the active front door |
 | Public boundary | Whether any workspace output may ever enter public-sync, and under which separate authorization |
@@ -104,6 +106,7 @@ provider integration, or public-facing copy from this standard alone.
 |---|---|
 | `governance/compat/check_agent_handoff_boundary.py` | Enforces handoff contract evidence in changed work orders |
 | `governance/compat/check_agent_workspace_design.py` | Enforces the Agent Workspace Design Control Block in changed workspace work orders |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | Defines state units, lanes, required fields, candidate generated-state layout, and archive policy |
 | `governance/compat/check_foundation_storage_layout.py` | Enforces stable folder/index discipline for durable workspace rules |
 | `governance/compat/check_agent_operation_trace.py` | Enforces per-phase changed-set and trace manifest evidence |
 | `governance/compat/check_finding_to_governance_learning.py` | Prevents workspace findings from staying only in provider memory |
@@ -136,6 +139,8 @@ must:
 - include a Foundation Storage Layout Block if it creates durable workspace
   foundation files;
 - include the Agent Workspace Design Control Block above before implementation;
+- cite the workspace state topology contract before creating workspace state,
+  generated state, queues, inboxes, review lanes, or dashboards;
 - state whether it is analysis-only, design-only, machine-check, runtime build,
   provider-proof, public-sync, or archive-cleanup scope.
 
@@ -152,20 +157,20 @@ authorized.
 |---|---|
 | Actor | Codex |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-17 AHB-Tn.1 agent-interaction workspace analysis/design |
+| Session or invocation | 2026-06-17 AHB-Tn.3 workspace state topology contract |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, rg, apply_patch |
-| Target paths | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `governance/compat/check_agent_workspace_design.py`; `governance/compat/test_check_agent_workspace_design.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py` |
-| Allowed scope source | operator authorization for AHB-Tn.2 workspace-foundation hardening on 2026-06-17 |
-| Before status evidence | HEAD `5c79881e`; clean worktree |
-| After status evidence | AHB-Tn.2 material closure pending commit |
-| Diff evidence | `git diff --name-status 5c79881e..HEAD` |
-| Approval boundary | bounded workspace design checker and foundation hardening only |
-| Claim boundary | no workspace build, runtime/provider/live/public/registry implementation claim |
+| Target paths | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `AGENTS.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
+| Allowed scope source | operator authorization for AHB-Tn.3 workspace state topology contract on 2026-06-17 |
+| Before status evidence | HEAD `3b340823`; clean worktree |
+| After status evidence | AHB-Tn.3 material closure pending commit |
+| Diff evidence | `git diff --name-status 3b340823..HEAD` |
+| Approval boundary | bounded workspace state topology contract only |
+| Claim boundary | no workspace build, generated state/runtime/provider/live/public/registry implementation claim |
 | Agent type | Codex implementer/closer |
-| Invocation ID | `ahb-tn2-agent-workspace-design-checker-2026-06-17` |
-| Expected manifest | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `governance/compat/check_agent_workspace_design.py`; `governance/compat/test_check_agent_workspace_design.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py` |
-| Actual changed set | AHB-Tn.2 material changed set, verified in completion review |
+| Invocation ID | `ahb-tn3-agent-workspace-state-topology-contract-2026-06-17` |
+| Expected manifest | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `AGENTS.md`; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` |
+| Actual changed set | AHB-Tn.3 material changed set, verified in completion review |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
