@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `ahb_tn6_workspace_foundation_readiness_closed_pass_bounded_runtime_build_parked`
+Current mode marker: `ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_tn6_workspace_foundation_readiness_closed_pass_bounded_runtime_build_parked`.
+Current mode: `ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`.
 
 Active handoff:
 
@@ -62,14 +62,13 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AHB-Tn.6 Agent Workspace Foundation Readiness Bundle is
-`CLOSED_PASS_BOUNDED` at material commit `d53914f5`. It absorbs and closes
-the useful pre-runtime AHB-Tn.5-B richer workspace state lanes and AHB-Tn.5-C
-further foundation hardening options by adding the stable lane taxonomy, item
-template, generated-state schema/checker hardening, and front-door/index
-updates.
+AHB-Tn.7 Bounded Agent Workspace Build Skeleton is `CLOSED_PASS_BOUNDED` at
+material commit `4e6f9afe`. It executes the formerly parked AHB-Tn.5-A option
+only as a local skeleton: workspace front door, canonical lane pointers,
+generated workspace state disposition, skeleton checker, AOT dotfile manifest
+parsing support, and hook/autorun binding.
 
-AHB-Tn.5-A bounded workspace build remains parked.
+Runtime expansion remains parked.
 
 Stable artifacts:
 
@@ -77,16 +76,26 @@ Stable artifacts:
 - `docs/reference/agent_workspace/README.md`
 - `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`
 - `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`
+- `CVF_SESSION/agent_workspace/workspace/README.md`
+- `CVF_SESSION/agent_workspace/workspace/lanes/README.md`
 - `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
 - `CVF_SESSION/agent_workspace/state/items/ahb-tn5-workspace-build-option-parked.json`
+- `CVF_SESSION/agent_workspace/state/items/ahb-tn7-bounded-workspace-build-skeleton-closed.json`
 - `CVF_SESSION/agent_workspace/state/items/ahb-tn5-richer-state-lanes-option-parked.json`
 - `CVF_SESSION/agent_workspace/state/items/ahb-tn5-foundation-hardening-option-parked.json`
 - `CVF_SESSION/agent_workspace/state/items/ahb-tn6-workspace-foundation-readiness-bundle-closed.json`
 - `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`
 
-This is pre-runtime foundation only. It does not build the workspace, mutate
-runtime/product code, run provider/live proof, public-sync, edit registries, or
-claim production/public readiness.
+This is skeleton foundation only. It does not create runtime queues, scheduler
+queues, UI, provider/live proof, public-sync, registry edits, product runtime
+mutation, production readiness, or public readiness.
+
+AHB-Tn.6 Agent Workspace Foundation Readiness Bundle remains
+`CLOSED_PASS_BOUNDED` at material commit `d53914f5`. It absorbs and closes
+the useful pre-runtime AHB-Tn.5-B richer workspace state lanes and AHB-Tn.5-C
+further foundation hardening options by adding the stable lane taxonomy, item
+template, generated-state schema/checker hardening, and front-door/index
+updates.
 
 AHB-Tn.4 Agent Workspace State Source Checker is `CLOSED_PASS_BOUNDED` at
 material commit `39fb942d`. It creates the generated workspace state source
@@ -465,15 +474,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_tn6_workspace_foundation_readiness_closed_pass_bounded_runtime_build_parked`.
+Mode: `ahb_tn7_bounded_workspace_skeleton_closed_pass_bounded_runtime_expansion_parked`.
 
-AHB-Tn.6 Agent Workspace Foundation Readiness Bundle is
-`CLOSED_PASS_BOUNDED` at material commit `d53914f5`. It closes the useful
-pre-runtime workspace foundation work. AHB-Tn.5-B richer workspace state lanes
-and AHB-Tn.5-C further foundation hardening are absorbed by Tn.6. Next allowed
-move: keep workspace runtime/build parked, or open fresh GC-018 plus a
-source-verified work order for the remaining AHB-Tn.5-A bounded workspace
-build. The workspace is not opened unilaterally.
+AHB-Tn.7 Bounded Agent Workspace Build Skeleton is `CLOSED_PASS_BOUNDED` at
+material commit `4e6f9afe`. It closes the bounded skeleton-level workspace
+build. Next allowed move: keep workspace runtime expansion parked, or open
+fresh GC-018 plus a source-verified work order for a future bounded
+runtime/UI/queue tranche. The runtime workspace is not opened unilaterally.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
