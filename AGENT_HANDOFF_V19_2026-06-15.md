@@ -57,10 +57,11 @@ Startup acknowledged: current mode=`prfc_pre_runtime_foundation_cleanup_roadmap_
 
 `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`
 
-Current HEAD recorded for this handoff: `833501a6`
-(PRFC-T1 CCLV-T2 current-state reconciliation dispatch; CGFP-T1 checker-
-hardening dispatch follows in the same session. Prior anchor: `2117544d`,
-PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap material commit
+Current HEAD recorded for this handoff: `070e2382`
+(handoff-sync after PRFC-T1 dispatch; CGFP-T1 checker-hardening dispatch
+committed in the same session-sync batch. Prior anchors: `833501a6` PRFC-T1
+dispatch, `2117544d` PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap
+material commit
 `2117544d`;
 AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
 Operator View material closure commit `b3ab716e`;
