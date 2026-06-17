@@ -1,0 +1,22 @@
+{
+  "stateOrder": 426,
+  "stateKey": "ahbTn5AgentWorkspaceOptionReadinessClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be4ce22f",
+    "executionBaseHead": "8cfe709e",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_COMPLETION_2026-06-17.md",
+    "optionMatrix": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
+    "workspaceFrontDoor": "docs/reference/agent_workspace/README.md",
+    "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
+    "topologyContract": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+    "aggregate": "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+    "sourceItems": "CVF_SESSION/agent_workspace/state/items/",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.5 closed the AHB foundation roadmap as option-ready with explicit parked options for future workspace build, richer state lanes, or further foundation hardening.",
+    "claimBoundary": "No workspace build, runtime/product mutation, registry edit, provider/live proof, public-sync, production readiness, or public readiness.",
+    "nextAllowedMove": "Operator decision whether to select AHB-Tn.5-A bounded workspace build, AHB-Tn.5-B richer workspace state lanes, AHB-Tn.5-C further foundation hardening, or leave all workspace options parked. Each selected option requires fresh GC-018 and a source-verified work order."
+  }
+}

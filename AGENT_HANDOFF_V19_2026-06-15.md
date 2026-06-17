@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ahb_tn4_agent_workspace_state_source_checker_closed_pass_bounded_ahb_tn5_operator_decision`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision whether to authorize AHB-Tn.5 workspace build, richer workspace state lanes, or another bounded CVF foundation/refactor tranche with fresh GC-018; parked checkpoint=agent-interaction workspace build, richer workspace state lanes, registry edit, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
+Startup acknowledged: current mode=`ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision whether to select AHB-Tn.5-A bounded workspace build, AHB-Tn.5-B richer workspace state lanes, AHB-Tn.5-C further foundation hardening, or leave all workspace options parked; parked checkpoint=agent-interaction workspace build, richer workspace state lanes implementation, registry edit, runtime/provider/live/public-sync/new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, co-work product development, production readiness, and public readiness remain parked.
 
 ## Current Mode
 
-`ahb_tn4_agent_workspace_state_source_checker_closed_pass_bounded_ahb_tn5_operator_decision`
+`ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`
 
-Current HEAD recorded for this handoff: `39fb942d`
-(AHB-Tn.4 Agent Workspace State Source Checker material closure commit
+Current HEAD recorded for this handoff: `be4ce22f`
+(AHB-Tn.5 Agent Workspace Option Readiness material closure commit
+`be4ce22f`;
+AHB-Tn.4 Agent Workspace State Source Checker material closure commit
 `39fb942d`;
 AHB-Tn.3 Agent Workspace State Topology Contract material closure commit
 `e1ebaa17`;
@@ -132,8 +134,9 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after AHB-Tn.4 material
-closure commit `39fb942d`, AHB-Tn.3 material closure commit `e1ebaa17`,
+update this handoff and session front-door state after AHB-Tn.5 material
+closure commit `be4ce22f`, AHB-Tn.4 material closure commit `39fb942d`,
+AHB-Tn.3 material closure commit `e1ebaa17`,
 AHB-Tn.2 material closure commit `38e98f8c`,
 AHB-Tn.1 material closure commit `4b8278be`,
 AHB-T3 material closure commit `e0927de5`,
@@ -146,10 +149,10 @@ commit `29ec11b0`, PLCS-T2 dispatch commit `9b483168`, PLCS-T1 closure commit
 handoff-sync commit `dbddf213`, worker material commit `b05286fe`, rule
 clarification commit `469f9bb2`, and material dispatch commit `263e9b6e` to
 preserve the mode marker as
-`ahb_tn4_agent_workspace_state_source_checker_closed_pass_bounded_ahb_tn5_operator_decision`
-across all surfaces, record AHB-Tn.4, AHB-Tn.3, AHB-Tn.2, AHB-Tn.1, AHB-T3,
+`ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`
+across all surfaces, record AHB-Tn.5, AHB-Tn.4, AHB-Tn.3, AHB-Tn.2, AHB-Tn.1, AHB-T3,
 AHB-T2-F2, and AHB-T2-F1 bounded closure, route the next allowed move to
-operator decision on AHB-Tn.5 or another bounded foundation/refactor tranche,
+operator decision on AHB-Tn.5-A/AHB-Tn.5-B/AHB-Tn.5-C option selection or leaving all options parked,
 preserve prior bounded closures, preserve the
 Central Core + Local View standing operating rule, and keep registry edit,
 runtime/provider/live/public-sync/new legacy scan/registry mutation parked.
@@ -163,6 +166,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/ahbTn4AgentWorkspaceStateSourceCheckerClosure20260617.json`
+- `CVF_SESSION/state/entries/ahbTn5AgentWorkspaceOptionReadinessClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbTn2AgentWorkspaceDesignCheckerClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbTn3AgentWorkspaceStateTopologyContractClosure20260617.json`
 - `CVF_SESSION/state/entries/ahbTn1AgentInteractionWorkspaceDesignClosure20260617.json`
@@ -246,6 +250,30 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+AHB-Tn.5 Agent Workspace Option Readiness is `CLOSED_PASS_BOUNDED` at
+material commit `be4ce22f`. It closes the AHB foundation roadmap as
+option-ready and leaves three explicit parked choices for the operator:
+AHB-Tn.5-A bounded workspace build, AHB-Tn.5-B richer workspace state lanes,
+and AHB-Tn.5-C further foundation hardening.
+
+Stable artifacts:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md`
+
+`CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+
+`CVF_SESSION/agent_workspace/state/items/ahb-tn5-workspace-build-option-parked.json`
+
+`CVF_SESSION/agent_workspace/state/items/ahb-tn5-richer-state-lanes-option-parked.json`
+
+`CVF_SESSION/agent_workspace/state/items/ahb-tn5-foundation-hardening-option-parked.json`
+
+`docs/reviews/CVF_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_COMPLETION_2026-06-17.md`
+
+This is option-readiness foundation only. It does not select an option, build
+the workspace, mutate runtime/product code, run provider/live proof,
+public-sync, edit registries, or claim production/public readiness.
 
 AHB-Tn.4 Agent Workspace State Source Checker is `CLOSED_PASS_BOUNDED` at
 material commit `39fb942d`. It adds the generated workspace state source
@@ -453,18 +481,20 @@ source-verified work order.
 
 ## Next Allowed Move
 
-AHB-Tn.4 Agent Workspace State Source Checker is `CLOSED_PASS_BOUNDED` at
-material commit `39fb942d`. Next allowed move: operator decision whether to
-authorize AHB-Tn.5 workspace build, richer workspace state lanes, or another
-bounded CVF foundation/refactor tranche with fresh GC-018.
-The workspace is not opened unilaterally.
+AHB-Tn.5 Agent Workspace Option Readiness is `CLOSED_PASS_BOUNDED` at
+material commit `be4ce22f`. The AHB foundation roadmap is closed as
+option-ready. Next allowed move: operator decision whether to select
+AHB-Tn.5-A bounded workspace build, AHB-Tn.5-B richer workspace state lanes,
+AHB-Tn.5-C further foundation hardening, or leave all workspace options
+parked. Any selected option requires fresh GC-018 and a source-verified work
+order. The workspace is not opened unilaterally.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
 AHB-Tn.1 workspace design foundation, AHB-Tn.2 workspace design checker, and
-AHB-Tn.3 workspace state topology contract, and AHB-Tn.4 workspace state source
-checker are closed and should be treated as inputs to any future AHB-Tn.5
-workspace work.
+AHB-Tn.3 workspace state topology contract, AHB-Tn.4 workspace state source
+checker, and AHB-Tn.5 option readiness are closed and should be treated as
+inputs to any future selected workspace option.
 Do not redispatch Model
 Gateway C-02 P2. Do not open Model Gateway P3 without fresh operator
 authorization, fresh GC-018, and source-verified work order. LHW24 remains the
@@ -603,7 +633,7 @@ evidence, work-order closure state, and template line-count pressure before
 committing. The guard is authoring-time only and does not claim runtime/provider
 behavior.
 
-Current mode: `ahb_tn4_agent_workspace_state_source_checker_closed_pass_bounded_ahb_tn5_operator_decision`.
+Current mode: `ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`.
 
 ## Latest Closed LHW Wave
 

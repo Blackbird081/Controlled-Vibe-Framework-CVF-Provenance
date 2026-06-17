@@ -20,6 +20,6 @@
     "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
     "result": "AHB-Tn.4 created the generated agent workspace state source layout, aggregate, generator, checker, hook wiring, and steward classification needed before any future workspace build.",
     "claimBoundary": "No workspace build, runtime/product mutation, registry edit, provider/live proof, public-sync, production readiness, or public readiness.",
-    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn.5 workspace build, richer workspace state lanes, or another bounded CVF foundation/refactor tranche with fresh GC-018."
+    "nextAllowedMove": "Superseded by AHB-Tn.5 Agent Workspace Option Readiness closure at material commit be4ce22f. Future workspace work must select one parked option from the option-readiness matrix or leave all options parked; fresh GC-018 and source-verified work order required."
   }
 }
