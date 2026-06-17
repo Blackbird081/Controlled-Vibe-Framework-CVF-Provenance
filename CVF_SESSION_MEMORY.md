@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `ahb_tn2_agent_workspace_design_checker_closed_pass_bounded_ahb_tn3_operator_decision`
+Current mode marker: `ahb_tn3_agent_workspace_state_topology_contract_closed_pass_bounded_ahb_tn4_operator_decision`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_tn2_agent_workspace_design_checker_closed_pass_bounded_ahb_tn3_operator_decision`.
+Current mode: `ahb_tn3_agent_workspace_state_topology_contract_closed_pass_bounded_ahb_tn4_operator_decision`.
 
 Active handoff:
 
@@ -61,6 +61,19 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+AHB-Tn.3 Agent Workspace State Topology Contract is `CLOSED_PASS_BOUNDED` at
+material commit `e1ebaa17`. It adds the stable topology contract that future
+workspace build or generated-state work must cite before creating workspace
+state, queues, inboxes, review lanes, dashboards, or generated state sources:
+
+- `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`
+- `docs/reference/agent_workspace/README.md`
+- `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+
+This is topology foundation only. It does not build the workspace, create
+generated workspace state, mutate runtime/product code, run provider/live proof,
+public-sync, edit registries, or claim production/public readiness.
 
 AHB-Tn.2 Agent Workspace Design Checker is `CLOSED_PASS_BOUNDED` at material
 commit `38e98f8c`. It converts the Agent Workspace Design Control Block into a
@@ -170,7 +183,7 @@ Prior AHB-T1 artifacts:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T1_HANDOFF_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-16.md`
 
 Superseded AHB-Tn.1 next-move note: the AHB-Tn.2 checker path is now closed.
-Future workspace build or generated state work remains parked behind AHB-Tn.3
+Future workspace build or generated state work remains parked behind AHB-Tn.4
 or another fresh operator-authorized tranche. Do not build the workspace,
 create generated workspace state, edit registries, mutate runtime/product code,
 run provider/live proof, or public-sync without later operator authorization.
@@ -409,13 +422,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_tn2_agent_workspace_design_checker_closed_pass_bounded_ahb_tn3_operator_decision`.
+Mode: `ahb_tn3_agent_workspace_state_topology_contract_closed_pass_bounded_ahb_tn4_operator_decision`.
 
-AHB-Tn.2 Agent Workspace Design Checker is `CLOSED_PASS_BOUNDED` at material
-commit `38e98f8c`. Next allowed move: operator decision whether to authorize
-AHB-Tn.3 workspace build, generated workspace state design, or another bounded
-CVF foundation/refactor tranche with fresh GC-018. The workspace is not opened
-unilaterally.
+AHB-Tn.3 Agent Workspace State Topology Contract is `CLOSED_PASS_BOUNDED` at
+material commit `e1ebaa17`. Next allowed move: operator decision whether to
+authorize AHB-Tn.4 workspace build or generated workspace state source/checker
+tranche, or another bounded CVF foundation/refactor tranche with fresh GC-018.
+The workspace is not opened unilaterally.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

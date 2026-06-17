@@ -1,0 +1,20 @@
+{
+  "stateOrder": 424,
+  "stateKey": "ahbTn3AgentWorkspaceStateTopologyContractClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "e1ebaa17",
+    "executionBaseHead": "3b340823",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN3_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN3_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN3_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT_COMPLETION_2026-06-17.md",
+    "standardFrontDoor": "docs/reference/agent_workspace/README.md",
+    "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
+    "topologyContract": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+    "checker": "governance/compat/check_agent_workspace_design.py",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.3 defined the stable workspace state topology contract before any workspace build or generated state aggregate.",
+    "claimBoundary": "No workspace build, runtime/product mutation, generated workspace state, registry edit, provider/live proof, public-sync, production readiness, or public readiness.",
+    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn.4 workspace build or generated workspace state source/checker tranche, or another bounded CVF foundation/refactor tranche with fresh GC-018. Workspace build remains unauthorized."
+  }
+}

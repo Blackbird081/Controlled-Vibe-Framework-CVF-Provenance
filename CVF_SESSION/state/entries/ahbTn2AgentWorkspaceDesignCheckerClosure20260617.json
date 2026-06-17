@@ -14,6 +14,6 @@
     "checkerTests": "governance/compat/test_check_agent_workspace_design.py",
     "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
     "result": "AHB-Tn.2 converted the Agent Workspace Design Control Block into a mandatory machine-checked local view for changed workspace work orders.",
-    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn.3 workspace build, generated workspace state design, or another bounded CVF foundation/refactor tranche with fresh GC-018. Workspace build remains unauthorized."
+    "nextAllowedMove": "Superseded by AHB-Tn.3 closure. Future workspace build or generated workspace state remains unauthorized until AHB-Tn.4 or another fresh operator-authorized tranche."
   }
 }
