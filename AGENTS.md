@@ -694,6 +694,35 @@ and hook binding. A future workspace build, runtime queue, provider proof,
 public-sync, registry edit, or generated-state expansion still requires fresh
 GC-018 and a separate work order.
 
+## Mandatory Agent Workspace Skeleton Guard - 2026-06-17
+
+Bounded local workspace skeleton:
+
+`CVF_SESSION/agent_workspace/workspace/README.md`
+
+Lane index:
+
+`CVF_SESSION/agent_workspace/workspace/lanes/README.md`
+
+Machine guard:
+
+`governance/compat/check_agent_workspace_skeleton.py`
+
+The workspace skeleton is a repo-local governance coordination surface. It is
+not a runtime queue, scheduler, UI, provider route, public-sync surface,
+registry entry, production claim, or public readiness claim.
+
+Any future task that modifies the local workspace skeleton, lane folders, lane
+index, or workspace front doors must keep the skeleton bound to the stable
+agent workspace reference front door, lane taxonomy, generated workspace state,
+and machine guard. Agents must not create active work by dropping ad hoc files
+into lane folders; active workspace state remains governed by source fragments
+under `CVF_SESSION/agent_workspace/state/` plus the generator and checker.
+
+The agent workspace skeleton guard is mandatory in the autorun workflow and
+local hook chain. Future runtime/build expansion beyond this skeleton requires
+fresh GC-018 and a source-verified work order.
+
 ## Mandatory IDE Extension Multi-Provider Execution Log Guard - 2026-05-29
 
 Canonical standard:

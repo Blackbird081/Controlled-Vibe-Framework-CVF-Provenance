@@ -33,6 +33,7 @@ behavior, public-sync, or claim production readiness.
 | AHB-Tn.3 state topology contract | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | Workspace state, lane, storage, and archive topology |
 | AHB-Tn.6 lane taxonomy | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Canonical lane vocabulary and transition rules |
 | AHB-Tn.6 item template | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | Canonical generated state source item shape |
+| AHB-Tn.7 workspace skeleton | `CVF_SESSION/agent_workspace/workspace/README.md` | Bounded local workspace skeleton front door |
 | AHB-Tn.5 option readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Parked future option choices after foundation closure |
 | AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | Workspace candidate route after AHB-T3 |
 | Foundation storage standard | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | Stable folder/index rule |
@@ -115,6 +116,7 @@ provider integration, or public-facing copy from this standard alone.
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | Defines state units, lanes, required fields, candidate generated-state layout, and archive policy |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Defines canonical lanes, transition rules, and required `lane`, `resumeCondition`, and `supersedes` fields |
 | `governance/compat/check_agent_workspace_state.py` | Enforces generated workspace state drift and required topology fields |
+| `governance/compat/check_agent_workspace_skeleton.py` | Enforces bounded skeleton folder/index layout and hook binding |
 | `governance/compat/check_foundation_storage_layout.py` | Enforces stable folder/index discipline for durable workspace rules |
 | `governance/compat/check_agent_operation_trace.py` | Enforces per-phase changed-set and trace manifest evidence |
 | `governance/compat/check_finding_to_governance_learning.py` | Prevents workspace findings from staying only in provider memory |
@@ -127,6 +129,7 @@ Workspace design enforcement is now machine-checked:
 ```powershell
 python governance/compat/check_agent_workspace_design.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_workspace_state.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_agent_workspace_skeleton.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_handoff_boundary.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_foundation_storage_layout.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_operation_trace.py --base <baseHead> --head HEAD --enforce
@@ -144,6 +147,11 @@ change must edit source fragments under `CVF_SESSION/agent_workspace/state/`,
 run `governance/compat/generate_agent_workspace_state.py`, and pass the drift
 checker.
 
+`governance/compat/check_agent_workspace_skeleton.py` is included in the
+autorun workflow gate and local governance hook chain. Any future change to
+`CVF_SESSION/agent_workspace/workspace/` must preserve the skeleton front
+door, lane index, canonical lane folders, and no-runtime boundary.
+
 ## Work Order Requirement
 
 Any future work order that proposes or builds an agent-interaction workspace
@@ -158,6 +166,8 @@ must:
   generated state, queues, inboxes, review lanes, or dashboards;
 - cite the lane taxonomy and item template before changing generated workspace
   state source fragments;
+- cite the skeleton front door and skeleton checker before modifying the local
+  workspace skeleton or lane folders;
 - state whether it is analysis-only, design-only, machine-check, runtime build,
   provider-proof, public-sync, or archive-cleanup scope.
 

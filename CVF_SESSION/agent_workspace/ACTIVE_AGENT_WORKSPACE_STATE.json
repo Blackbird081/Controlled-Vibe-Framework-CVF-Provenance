@@ -37,25 +37,27 @@
       "workspaceItemId": "ahb-tn5-workspace-build-option-parked-2026-06-17",
       "lane": "parked",
       "itemKind": "parked",
-      "status": "PARKED_PENDING_OPERATOR_DECISION",
+      "status": "CLOSED_PASS_BOUNDED",
       "ownerRole": "operator",
       "route": "SINGLE_AGENT_MULTI_ROLE",
       "rolePattern": "operator_decision_to_future_dispatch",
       "phase": "parked",
       "baseHead": "8cfe709e",
-      "changedSetScope": "N/A with reason: workspace build is not authorized by this parked option item.",
-      "traceScope": "N/A with reason: option-readiness marker only.",
-      "commitOwner": "N/A with reason: no future build commit implied by this parked option item.",
+      "changedSetScope": "Superseded by AHB-Tn.7 bounded workspace build skeleton material batch.",
+      "traceScope": "AHB-Tn.7 completion evidence and skeleton checker.",
+      "commitOwner": "Codex owned AHB-Tn.7 material closure commit.",
       "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md",
       "evidencePaths": [
         "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
-        "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+        "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+        "CVF_SESSION/agent_workspace/workspace/README.md",
+        "docs/reviews/CVF_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_COMPLETION_2026-06-17.md"
       ],
-      "claimBoundary": "Workspace build remains parked; no UI, runtime queue, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
-      "nextMoveImpact": "If operator selects this option, a fresh GC-018 and work order must authorize the bounded workspace build surface before implementation.",
-      "resumeCondition": "Operator explicitly authorizes bounded workspace build with fresh GC-018 and source-verified work order.",
+      "claimBoundary": "Bounded local skeleton only; no UI, runtime queue, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+      "nextMoveImpact": "AHB-Tn.5-A is closed at skeleton level by AHB-Tn.7; any runtime expansion requires a fresh GC-018 and source-verified work order.",
+      "resumeCondition": "N/A with reason: bounded skeleton option was executed by AHB-Tn.7; runtime expansion is a separate future authorization.",
       "supersedes": [],
-      "archivePolicy": "Remove from active workspace state only after a future governed workspace build decision is committed and session-sync records the selected path."
+      "archivePolicy": "Eligible for archive-ready after AHB-Tn.7 session-sync records skeleton closure and future next-move surfaces no longer point to this parked option."
     },
     {
       "workspaceItemId": "ahb-tn5-richer-state-lanes-option-parked-2026-06-17",
@@ -135,6 +137,34 @@
         "ahb-tn5-foundation-hardening-option-parked-2026-06-17"
       ],
       "archivePolicy": "Keep active until the first future workspace build or archive-cleanup tranche records that this foundation bundle is no longer needed as an active read-first item."
+    },
+    {
+      "workspaceItemId": "ahb-tn7-bounded-workspace-build-skeleton-closed-2026-06-17",
+      "lane": "accepted_material",
+      "itemKind": "accepted_material",
+      "status": "CLOSED_PASS_BOUNDED",
+      "ownerRole": "closer",
+      "route": "SINGLE_AGENT_MULTI_ROLE",
+      "rolePattern": "codex_dispatch_implementation_review_closure",
+      "phase": "closure",
+      "baseHead": "338c34e2",
+      "changedSetScope": "Bounded local agent workspace skeleton, lane index, generated workspace state item disposition, skeleton checker/test, reference front doors, roadmap, work order, GC-018, and completion review.",
+      "traceScope": "AHB-Tn.7 Agent Operation Trace Block in work order and completion review.",
+      "commitOwner": "Codex",
+      "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_FOR_CODEX_2026-06-17.md",
+      "evidencePaths": [
+        "CVF_SESSION/agent_workspace/workspace/README.md",
+        "CVF_SESSION/agent_workspace/workspace/lanes/README.md",
+        "governance/compat/check_agent_workspace_skeleton.py",
+        "docs/reviews/CVF_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_COMPLETION_2026-06-17.md"
+      ],
+      "claimBoundary": "Bounded local workspace skeleton only; no runtime queue, scheduler, UI, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+      "nextMoveImpact": "Closes AHB-Tn.5-A at skeleton level; future runtime expansion requires fresh GC-018 and source-verified work order.",
+      "resumeCondition": "N/A with reason: skeleton foundation is closed; runtime expansion is separate future authorization.",
+      "supersedes": [
+        "ahb-tn5-workspace-build-option-parked-2026-06-17"
+      ],
+      "archivePolicy": "Remain active until session-sync records AHB-Tn.7 closure and a future archive batch compacts closed workspace foundation items."
     }
   ]
 }

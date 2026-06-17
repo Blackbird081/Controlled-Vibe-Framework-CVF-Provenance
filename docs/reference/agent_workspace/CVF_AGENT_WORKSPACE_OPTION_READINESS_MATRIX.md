@@ -38,7 +38,7 @@ public-sync, edit registries, or claim production/public readiness.
 
 | Option ID | Option | Readiness | Required next artifact | Boundary |
 |---|---|---|---|---|
-| AHB-Tn.5-A | Bounded workspace build surface | OPTION_READY_PARKED | fresh GC-018 and work order selecting one bounded surface | no build authorized by this matrix |
+| AHB-Tn.5-A | Bounded workspace build surface | CLOSED_BY_AHB_TN7 | `CVF_SESSION/agent_workspace/workspace/README.md` plus skeleton checker | no runtime/UI/provider build authorized |
 | AHB-Tn.5-B | Richer workspace state lanes | CLOSED_BY_AHB_TN6 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` plus checker hardening | no runtime queue authorized |
 | AHB-Tn.5-C | Further foundation hardening | CLOSED_BY_AHB_TN6 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` plus front-door/checker hardening | no open-ended hardening authorized |
 
@@ -60,10 +60,11 @@ public-sync, edit registries, or claim production/public readiness.
 
 | Workspace item | Option | Status |
 |---|---|---|
-| `ahb-tn5-workspace-build-option-parked-2026-06-17` | AHB-Tn.5-A | PARKED_PENDING_OPERATOR_DECISION |
+| `ahb-tn5-workspace-build-option-parked-2026-06-17` | AHB-Tn.5-A | CLOSED_PASS_BOUNDED by AHB-Tn.7 |
 | `ahb-tn5-richer-state-lanes-option-parked-2026-06-17` | AHB-Tn.5-B | CLOSED_PASS_BOUNDED by AHB-Tn.6 |
 | `ahb-tn5-foundation-hardening-option-parked-2026-06-17` | AHB-Tn.5-C | CLOSED_PASS_BOUNDED by AHB-Tn.6 |
 | `ahb-tn6-workspace-foundation-readiness-bundle-closed-2026-06-17` | AHB-Tn.5-B + AHB-Tn.5-C | CLOSED_PASS_BOUNDED |
+| `ahb-tn7-bounded-workspace-build-skeleton-closed-2026-06-17` | AHB-Tn.5-A | CLOSED_PASS_BOUNDED |
 
 ## Minimum Future Work Order Requirements
 

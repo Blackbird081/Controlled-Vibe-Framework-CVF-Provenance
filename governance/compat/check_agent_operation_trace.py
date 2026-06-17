@@ -291,7 +291,7 @@ def _parse_path_list(value: str) -> set[str]:
         tok = re.sub(r"^[-*]\s+", "", tok).strip()
         # A valid repo path must look like a file path or known directory path.
         # Root-level governed files such as AGENT_HANDOFF_*.md are valid paths.
-        if tok and re.search(r"(?:^|/)[A-Za-z0-9_.-]+\.\w{1,8}$|/$", tok):
+        if tok and re.search(r"(?:^|/)[A-Za-z0-9_.-]+\.\w{1,8}$|^\.[A-Za-z0-9_.-]+$|/$", tok):
             result.add(_normalize(tok))
     return result
 

@@ -138,6 +138,9 @@ layout is:
 | `governance/compat/check_agent_workspace_state.py` | drift/topology checker | ACTIVE_FOUNDATION |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | stable lane vocabulary | ACTIVE_TAXONOMY |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | source item template | ACTIVE_TEMPLATE |
+| `CVF_SESSION/agent_workspace/workspace/README.md` | bounded local skeleton front door | ACTIVE_SKELETON |
+| `CVF_SESSION/agent_workspace/workspace/lanes/README.md` | lane folder index | ACTIVE_INDEX |
+| `governance/compat/check_agent_workspace_skeleton.py` | skeleton folder/index guard | ACTIVE_GUARD |
 
 Those paths are generated-state foundation only. They do not build a workspace
 UI, runtime queue, provider route, public surface, registry edit, or production
@@ -189,6 +192,7 @@ now points to the AHB-Tn.4 checker:
 ```powershell
 python governance/compat/check_agent_workspace_state.py --base <baseHead> --head HEAD --enforce
 python governance/compat/generate_agent_workspace_state.py --check
+python governance/compat/check_agent_workspace_skeleton.py --base <baseHead> --head HEAD --enforce
 ```
 
 ## Public Export Disposition
