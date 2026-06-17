@@ -36,9 +36,10 @@ mutation. Each later PRFC tranche (PRFC-T2, PRFC-T3) needs its own GC-018.
 
 Operator instruction (2026-06-17): after correcting stale session memory, the
 operator confirmed the next allowed move is to open PRFC-T1 with a fresh GC-018
-and a source-verified work order. Commit mode for PRFC-T1 is
-WORKER_MUST_NOT_COMMIT: Claude executes the reconciliation edits as pending,
-uncommitted artifacts; Codex reviews and commits/closes.
+and a source-verified work order. The operator later instructed Codex to execute
+the tranche directly from current HEAD `b94a14f3`. Commit mode for PRFC-T1 is
+therefore WORKER_MAY_COMMIT under Codex single-agent/multi-role execution:
+Codex implements, reviews, commits, and closes the bounded reconciliation.
 
 Decision: AUTHORIZE PRFC-T1 as a bounded current-state reconciliation tranche.
 Workspace runtime execution remains parked.
@@ -123,7 +124,7 @@ Depth Audit
 Authorization Boundary
 
 - Authorized now: YES
-- If YES, next batch name: PRFC-T1 dispatch and execution (WORKER_MUST_NOT_COMMIT)
+- If YES, next batch name: PRFC-T1 direct Codex execution (WORKER_MAY_COMMIT)
 - Reopen trigger for PRFC-T2/T3: each requires its own fresh GC-018
 
 ## Core Guard Self-Protection Authorization
@@ -179,9 +180,9 @@ PRFC roadmap authoring commit, or any prior session sync.
 ## Decision
 
 AUTHORIZE PRFC-T1 as a bounded current-state reconciliation tranche under
-`WORKER_MUST_NOT_COMMIT`. Depth Audit total 6, decision CONTINUE. Workspace
-runtime execution remains parked. PRFC-T2 and PRFC-T3 each require their own
-fresh GC-018.
+`WORKER_MAY_COMMIT` for Codex direct execution. Depth Audit total 6, decision
+CONTINUE. Workspace runtime execution remains parked. PRFC-T2 and PRFC-T3 each
+require their own fresh GC-018.
 
 ## Verification
 
