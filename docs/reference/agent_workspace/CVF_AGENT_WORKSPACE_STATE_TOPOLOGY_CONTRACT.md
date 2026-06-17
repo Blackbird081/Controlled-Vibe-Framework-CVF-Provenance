@@ -28,6 +28,8 @@ claim.
 |---|---|---|
 | Agent workspace front door | `docs/reference/agent_workspace/README.md` | Stable retrieval path |
 | Workspace design standard | `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` | Pre-build boundary and control block source |
+| Lane taxonomy | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Canonical lane vocabulary and transition rules |
+| Item template | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | Canonical state source item shape |
 | Option readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Parked future option routing after foundation closure |
 | Workspace design checker | `governance/compat/check_agent_workspace_design.py` | Machine-enforced work-order local view |
 | Agent Handoff Contract | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | Central Core for role, phase, base-head, trace, commit, and next-move semantics |
@@ -81,6 +83,7 @@ aggregate is authorized:
 | Field | Requirement |
 |---|---|
 | workspaceItemId | stable opaque ID within the workspace state family |
+| lane | one canonical lane from `CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` |
 | itemKind | one of intake, dispatch, worker_return, review, accepted_material, session_sync, parked |
 | status | one bounded lifecycle status, not freeform prose |
 | ownerRole | dispatcher, worker, reviewer, closer, session_sync_steward, or operator |
@@ -95,6 +98,8 @@ aggregate is authorized:
 | evidencePaths | bounded artifact paths; no provider-local memory as authority |
 | claimBoundary | explicit no-runtime/no-provider/no-public/no-registry boundary when applicable |
 | nextMoveImpact | whether the item changes next allowed move surfaces |
+| resumeCondition | explicit condition to resume, or `N/A with reason` when closed |
+| supersedes | list of workspace item IDs superseded by this item; empty list when none |
 | archivePolicy | condition that moves the item out of the active view |
 
 ## Lane Topology
@@ -131,6 +136,8 @@ layout is:
 | `CVF_SESSION/agent_workspace/state/` | source fragments | ACTIVE_FOUNDATION |
 | `governance/compat/generate_agent_workspace_state.py` | generator | ACTIVE_FOUNDATION |
 | `governance/compat/check_agent_workspace_state.py` | drift/topology checker | ACTIVE_FOUNDATION |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | stable lane vocabulary | ACTIVE_TAXONOMY |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | source item template | ACTIVE_TEMPLATE |
 
 Those paths are generated-state foundation only. They do not build a workspace
 UI, runtime queue, provider route, public surface, registry edit, or production
@@ -162,6 +169,8 @@ dashboards, or workspace runtime must:
 - state whether it creates stable reference files, dated evidence, generated
   state, runtime source, public-sync output, or registry edits;
 - map any proposed state record to the Required State Fields table;
+- use the lane taxonomy and item template when adding or modifying state source
+  fragments;
 - state the archive policy before implementation.
 
 ## Machine Enforcement

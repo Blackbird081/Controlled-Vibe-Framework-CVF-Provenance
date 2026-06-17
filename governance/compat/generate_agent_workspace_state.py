@@ -34,6 +34,7 @@ REQUIRED_CORE_FIELDS = (
 
 REQUIRED_ITEM_FIELDS = (
     "workspaceItemId",
+    "lane",
     "itemKind",
     "status",
     "ownerRole",
@@ -48,8 +49,23 @@ REQUIRED_ITEM_FIELDS = (
     "evidencePaths",
     "claimBoundary",
     "nextMoveImpact",
+    "resumeCondition",
+    "supersedes",
     "archivePolicy",
 )
+
+LANE_VALUES = {
+    "intake",
+    "dispatch",
+    "execution",
+    "worker_return",
+    "review",
+    "accepted_material",
+    "session_sync",
+    "parked",
+    "blocked",
+    "archive_ready",
+}
 
 ITEM_KIND_VALUES = {
     "intake",
@@ -59,6 +75,10 @@ ITEM_KIND_VALUES = {
     "accepted_material",
     "session_sync",
     "parked",
+    "decision",
+    "repair",
+    "blocked",
+    "archive_ready",
 }
 
 OWNER_ROLE_VALUES = {
@@ -80,9 +100,12 @@ ROUTE_VALUES = {
 PHASE_VALUES = {
     "dispatch_authoring",
     "execution",
+    "review",
+    "repair",
     "closure",
     "session_sync",
     "parked",
+    "archive",
 }
 
 STATUS_VALUES = {
@@ -96,6 +119,7 @@ STATUS_VALUES = {
     "PARKED_PENDING_OPERATOR_DECISION",
     "DEFERRED",
     "BLOCKED",
+    "ARCHIVE_READY",
 }
 
 
@@ -137,6 +161,8 @@ def _validate_item(item: dict[str, Any], path: Path) -> None:
             raise ValueError(f"{path}: workspace item missing `{field}`")
     if item["itemKind"] not in ITEM_KIND_VALUES:
         raise ValueError(f"{path}: itemKind `{item['itemKind']}` is not canonical")
+    if item["lane"] not in LANE_VALUES:
+        raise ValueError(f"{path}: lane `{item['lane']}` is not canonical")
     if item["ownerRole"] not in OWNER_ROLE_VALUES:
         raise ValueError(f"{path}: ownerRole `{item['ownerRole']}` is not canonical")
     if item["route"] not in ROUTE_VALUES:
@@ -149,6 +175,10 @@ def _validate_item(item: dict[str, Any], path: Path) -> None:
         raise ValueError(f"{path}: evidencePaths must be a non-empty list")
     if not all(isinstance(item_path, str) and item_path for item_path in item["evidencePaths"]):
         raise ValueError(f"{path}: evidencePaths entries must be non-empty strings")
+    if not isinstance(item["supersedes"], list):
+        raise ValueError(f"{path}: supersedes must be a list")
+    if not all(isinstance(item_id, str) and item_id for item_id in item["supersedes"]):
+        raise ValueError(f"{path}: supersedes entries must be non-empty strings")
 
 
 def load_source_items(items_dir: Path = ITEMS_DIR) -> list[dict[str, Any]]:

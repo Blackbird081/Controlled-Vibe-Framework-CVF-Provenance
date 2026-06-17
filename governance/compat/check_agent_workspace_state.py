@@ -30,6 +30,8 @@ CORE_PATH = "CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE
 FRONT_DOOR_PATH = "docs/reference/agent_workspace/README.md"
 DESIGN_STANDARD_PATH = "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md"
 TOPOLOGY_CONTRACT_PATH = "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md"
+LANE_TAXONOMY_PATH = "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md"
+ITEM_TEMPLATE_PATH = "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json"
 GENERATOR_PATH = "governance/compat/generate_agent_workspace_state.py"
 THIS_SCRIPT_PATH = "governance/compat/check_agent_workspace_state.py"
 AUTORUN_PATH = "governance/compat/run_agent_autorun_workflow_gate.py"
@@ -93,6 +95,8 @@ def _validate_static_paths() -> list[str]:
         FRONT_DOOR_PATH,
         DESIGN_STANDARD_PATH,
         TOPOLOGY_CONTRACT_PATH,
+        LANE_TAXONOMY_PATH,
+        ITEM_TEMPLATE_PATH,
         GENERATOR_PATH,
         THIS_SCRIPT_PATH,
     )
@@ -150,6 +154,12 @@ def _validate_aggregate() -> list[str]:
             seen_ids.add(item_id)
         if item.get("sourceWorkOrder") and str(item["sourceWorkOrder"]).startswith("CLAUDE"):
             violations.append(f"{STATE_PATH} items[{index}] sourceWorkOrder must be CVF-governed")
+        supersedes = item.get("supersedes")
+        if not isinstance(supersedes, list):
+            violations.append(f"{STATE_PATH} items[{index}] supersedes must be a list")
+        resume_condition = item.get("resumeCondition")
+        if not isinstance(resume_condition, str) or not resume_condition:
+            violations.append(f"{STATE_PATH} items[{index}] resumeCondition must be a non-empty string")
     return violations
 
 
@@ -159,20 +169,33 @@ def _validate_reference_markers() -> list[str]:
             STATE_PATH,
             GENERATOR_PATH,
             THIS_SCRIPT_PATH,
+            LANE_TAXONOMY_PATH,
+            ITEM_TEMPLATE_PATH,
         ),
         DESIGN_STANDARD_PATH: (
             STATE_PATH,
             THIS_SCRIPT_PATH,
+            LANE_TAXONOMY_PATH,
         ),
         TOPOLOGY_CONTRACT_PATH: (
             STATE_PATH,
             GENERATOR_PATH,
             THIS_SCRIPT_PATH,
+            LANE_TAXONOMY_PATH,
+            ITEM_TEMPLATE_PATH,
+        ),
+        LANE_TAXONOMY_PATH: (
+            ITEM_TEMPLATE_PATH,
+            THIS_SCRIPT_PATH,
+            "Central Core",
+            "Local View",
         ),
         AGENTS_PATH: (
             "Mandatory Agent Workspace State Generated Aggregate Guard",
             STATE_PATH,
             THIS_SCRIPT_PATH,
+            LANE_TAXONOMY_PATH,
+            ITEM_TEMPLATE_PATH,
         ),
     }
     violations: list[str] = []

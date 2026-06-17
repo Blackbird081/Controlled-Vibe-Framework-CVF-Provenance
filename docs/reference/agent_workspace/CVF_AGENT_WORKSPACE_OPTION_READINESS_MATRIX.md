@@ -28,6 +28,8 @@ public-sync, edit registries, or claim production/public readiness.
 | `docs/reference/agent_workspace/README.md` | stable workspace front door |
 | `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` | workspace design control block |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | state units, required fields, lanes, archive policy |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | canonical lane vocabulary and transition rules |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | canonical generated state item template |
 | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated active option/state view |
 | `governance/compat/check_agent_workspace_state.py` | generated-state drift and topology checker |
 | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | central handoff contract |
@@ -37,8 +39,8 @@ public-sync, edit registries, or claim production/public readiness.
 | Option ID | Option | Readiness | Required next artifact | Boundary |
 |---|---|---|---|---|
 | AHB-Tn.5-A | Bounded workspace build surface | OPTION_READY_PARKED | fresh GC-018 and work order selecting one bounded surface | no build authorized by this matrix |
-| AHB-Tn.5-B | Richer workspace state lanes | OPTION_READY_PARKED | fresh GC-018 and work order defining added state units/statuses/checker updates | no generated-state expansion authorized by this matrix |
-| AHB-Tn.5-C | Further foundation hardening | OPTION_READY_PARKED | fresh GC-018 and work order naming the specific foundation gap | no open-ended hardening authorized by this matrix |
+| AHB-Tn.5-B | Richer workspace state lanes | CLOSED_BY_AHB_TN6 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` plus checker hardening | no runtime queue authorized |
+| AHB-Tn.5-C | Further foundation hardening | CLOSED_BY_AHB_TN6 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` plus front-door/checker hardening | no open-ended hardening authorized |
 
 ## Option Selection Rules
 
@@ -59,8 +61,9 @@ public-sync, edit registries, or claim production/public readiness.
 | Workspace item | Option | Status |
 |---|---|---|
 | `ahb-tn5-workspace-build-option-parked-2026-06-17` | AHB-Tn.5-A | PARKED_PENDING_OPERATOR_DECISION |
-| `ahb-tn5-richer-state-lanes-option-parked-2026-06-17` | AHB-Tn.5-B | PARKED_PENDING_OPERATOR_DECISION |
-| `ahb-tn5-foundation-hardening-option-parked-2026-06-17` | AHB-Tn.5-C | PARKED_PENDING_OPERATOR_DECISION |
+| `ahb-tn5-richer-state-lanes-option-parked-2026-06-17` | AHB-Tn.5-B | CLOSED_PASS_BOUNDED by AHB-Tn.6 |
+| `ahb-tn5-foundation-hardening-option-parked-2026-06-17` | AHB-Tn.5-C | CLOSED_PASS_BOUNDED by AHB-Tn.6 |
+| `ahb-tn6-workspace-foundation-readiness-bundle-closed-2026-06-17` | AHB-Tn.5-B + AHB-Tn.5-C | CLOSED_PASS_BOUNDED |
 
 ## Minimum Future Work Order Requirements
 

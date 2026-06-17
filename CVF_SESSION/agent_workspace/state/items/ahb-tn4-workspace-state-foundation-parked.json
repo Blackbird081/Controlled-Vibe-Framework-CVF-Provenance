@@ -1,6 +1,7 @@
 {
   "stateOrder": 1,
   "workspaceItemId": "ahb-tn4-workspace-state-foundation-parked-2026-06-17",
+  "lane": "parked",
   "itemKind": "parked",
   "status": "CLOSED_PASS_BOUNDED",
   "ownerRole": "operator",
@@ -18,5 +19,7 @@
   ],
   "claimBoundary": "No workspace build, runtime/product mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
   "nextMoveImpact": "Superseded by AHB-Tn.5 option readiness items.",
+  "resumeCondition": "N/A with reason: this item is superseded by AHB-Tn.5 and AHB-Tn.6 foundation records.",
+  "supersedes": [],
   "archivePolicy": "Remove from active workspace state only after AHB-Tn.5 or a later governed tranche records committed option disposition and session-sync."
 }

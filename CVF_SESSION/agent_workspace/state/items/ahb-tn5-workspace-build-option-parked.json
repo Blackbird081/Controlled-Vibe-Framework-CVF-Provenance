@@ -1,6 +1,7 @@
 {
   "stateOrder": 2,
   "workspaceItemId": "ahb-tn5-workspace-build-option-parked-2026-06-17",
+  "lane": "parked",
   "itemKind": "parked",
   "status": "PARKED_PENDING_OPERATOR_DECISION",
   "ownerRole": "operator",
@@ -18,5 +19,7 @@
   ],
   "claimBoundary": "Workspace build remains parked; no UI, runtime queue, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
   "nextMoveImpact": "If operator selects this option, a fresh GC-018 and work order must authorize the bounded workspace build surface before implementation.",
+  "resumeCondition": "Operator explicitly authorizes bounded workspace build with fresh GC-018 and source-verified work order.",
+  "supersedes": [],
   "archivePolicy": "Remove from active workspace state only after a future governed workspace build decision is committed and session-sync records the selected path."
 }

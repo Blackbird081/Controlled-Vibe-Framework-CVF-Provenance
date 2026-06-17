@@ -31,6 +31,8 @@ behavior, public-sync, or claim production readiness.
 | AHB-T3 checker | `governance/compat/check_agent_handoff_boundary.py` | Machine-enforced work-order local view |
 | AHB-Tn.2 workspace checker | `governance/compat/check_agent_workspace_design.py` | Machine-enforced workspace design control block |
 | AHB-Tn.3 state topology contract | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | Workspace state, lane, storage, and archive topology |
+| AHB-Tn.6 lane taxonomy | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Canonical lane vocabulary and transition rules |
+| AHB-Tn.6 item template | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | Canonical generated state source item shape |
 | AHB-Tn.5 option readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Parked future option choices after foundation closure |
 | AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | Workspace candidate route after AHB-T3 |
 | Foundation storage standard | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | Stable folder/index rule |
@@ -64,6 +66,7 @@ these design surfaces before implementation:
 | Evidence storage | Which artifacts are stable foundation records and which are dated execution evidence |
 | Workspace state | Whether state is markdown-only, generated JSON, runtime-backed, or deferred |
 | State topology | How intake, dispatch, worker-return, review, accepted-material, session-sync, and parked state units map to the AHB contract |
+| Lane taxonomy | Which `lane` value each workspace item uses before active state is changed |
 | Generated state aggregate | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` must stay generated from `CVF_SESSION/agent_workspace/state/` |
 | Option readiness | Which parked option is selected before build, richer lanes, or further hardening starts |
 | Guard placement | Which existing or future machine checks enforce the design before dispatch, implementation, closure, and session sync |
@@ -110,6 +113,7 @@ provider integration, or public-facing copy from this standard alone.
 | `governance/compat/check_agent_handoff_boundary.py` | Enforces handoff contract evidence in changed work orders |
 | `governance/compat/check_agent_workspace_design.py` | Enforces the Agent Workspace Design Control Block in changed workspace work orders |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | Defines state units, lanes, required fields, candidate generated-state layout, and archive policy |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Defines canonical lanes, transition rules, and required `lane`, `resumeCondition`, and `supersedes` fields |
 | `governance/compat/check_agent_workspace_state.py` | Enforces generated workspace state drift and required topology fields |
 | `governance/compat/check_foundation_storage_layout.py` | Enforces stable folder/index discipline for durable workspace rules |
 | `governance/compat/check_agent_operation_trace.py` | Enforces per-phase changed-set and trace manifest evidence |
@@ -152,6 +156,8 @@ must:
 - include the Agent Workspace Design Control Block above before implementation;
 - cite the workspace state topology contract before creating workspace state,
   generated state, queues, inboxes, review lanes, or dashboards;
+- cite the lane taxonomy and item template before changing generated workspace
+  state source fragments;
 - state whether it is analysis-only, design-only, machine-check, runtime build,
   provider-proof, public-sync, or archive-cleanup scope.
 

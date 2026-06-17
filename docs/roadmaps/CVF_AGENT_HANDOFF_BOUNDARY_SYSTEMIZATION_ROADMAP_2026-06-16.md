@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_CLOSED_PASS_BOUNDED_OPTION_READY
+Status: ROADMAP_CLOSED_PASS_BOUNDED_FOUNDATION_READY_PRE_RUNTIME
 
 docType: roadmap
 
@@ -176,6 +176,7 @@ views that must cite the contract.
 | AHB-Tn.3 | CLOSED_PASS_BOUNDED | Defined the workspace state topology contract: state units, lanes, required fields, storage candidate layout, and archive policy; no workspace build | Codex |
 | AHB-Tn.4 | CLOSED_PASS_BOUNDED | Added generated workspace state source layout, generated aggregate, generator, drift/topology checker, tests, and autorun/local-hook binding; no workspace build | Codex |
 | AHB-Tn.5 | CLOSED_PASS_BOUNDED | Prepared explicit parked options for bounded workspace build, richer state lanes, or further foundation hardening; no workspace build | Codex |
+| AHB-Tn.6 | CLOSED_PASS_BOUNDED | Absorbed useful richer-lane and foundation-hardening options into lane taxonomy, item template, generated-state checker hardening, and active state disposition; no workspace build | Codex |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
 AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
@@ -390,18 +391,46 @@ production/public readiness. It closes the AHB foundation roadmap as
 option-ready. Any future selected option requires fresh GC-018 and a
 source-verified work order.
 
+## AHB-Tn.6 Closure Note
+
+AHB-Tn.6 is `CLOSED_PASS_BOUNDED`. Operator authorized Codex to combine all
+useful pre-runtime workspace foundation tranches on 2026-06-17. Codex absorbed
+AHB-Tn.5-B richer state lanes and AHB-Tn.5-C further foundation hardening into
+a single foundation-readiness bundle:
+
+- lane taxonomy:
+  `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`
+- item template:
+  `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`
+- generated active workspace state:
+  `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+- workspace state checker:
+  `governance/compat/check_agent_workspace_state.py`
+- focused tests:
+  `governance/compat/test_agent_workspace_state.py`
+- completion packet:
+  `docs/reviews/CVF_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_COMPLETION_2026-06-17.md`
+
+AHB-Tn.6 does not build the workspace, create runtime queues, mutate product
+runtime, run provider/live proof, public-sync, edit registries, or claim
+production/public readiness. It leaves AHB-Tn.5-A bounded workspace build as
+the only remaining parked workspace option, still requiring fresh GC-018 and a
+source-verified work order.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | `Status: ROADMAP_CLOSED_PASS_BOUNDED_OPTION_READY` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| AHB-Tn.5 completion review | `docs/reviews/CVF_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_COMPLETION_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_COMPLETION_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| AHB-Tn.5 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| AHB-Tn.5 GC-018 | `docs/baselines/CVF_GC018_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | `Status: ROADMAP_CLOSED_PASS_BOUNDED_FOUNDATION_READY_PRE_RUNTIME` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_FOR_CODEX_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AHB-Tn.6 completion review | `docs/reviews/CVF_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_COMPLETION_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_COMPLETION_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AHB-Tn.6 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_FOR_CODEX_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AHB-Tn.6 GC-018 | `docs/baselines/CVF_GC018_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Lane taxonomy | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | stable taxonomy under workspace front door | PASS |
+| Item template | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | stable template under workspace front door | PASS |
 | Option-readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | stable option matrix under workspace front door | PASS |
-| Generated workspace state | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated aggregate includes three AHB-Tn.5 parked options | PASS |
+| Generated workspace state | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated aggregate includes AHB-Tn.6 accepted-material item and AHB-Tn.5-A parked build option | PASS |
 | Runtime workspace build | N/A with reason: no workspace build authorized | N/A | N/A with reason |
 | Registry JSON | BLOCKED with reason: no registry edit authorized for this option-readiness roadmap closure | N/A | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized for this option-readiness roadmap closure | N/A | BLOCKED with reason |

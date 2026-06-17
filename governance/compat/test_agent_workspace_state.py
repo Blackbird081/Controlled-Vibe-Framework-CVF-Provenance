@@ -34,6 +34,7 @@ def _valid_item() -> dict[str, object]:
     return {
         "stateOrder": 1,
         "workspaceItemId": "test-item",
+        "lane": "parked",
         "itemKind": "parked",
         "status": "PARKED_PENDING_OPERATOR_DECISION",
         "ownerRole": "operator",
@@ -48,6 +49,8 @@ def _valid_item() -> dict[str, object]:
         "evidencePaths": ["docs/reference/agent_workspace/README.md"],
         "claimBoundary": "no runtime",
         "nextMoveImpact": "none",
+        "resumeCondition": "operator decision",
+        "supersedes": [],
         "archivePolicy": "test",
     }
 
@@ -93,3 +96,35 @@ def test_invalid_item_kind_fails(tmp_path: Path) -> None:
         assert "itemKind" in str(exc)
     else:
         raise AssertionError("invalid itemKind should fail")
+
+
+def test_invalid_lane_fails(tmp_path: Path) -> None:
+    core = tmp_path / "state" / "ACTIVE_AGENT_WORKSPACE_STATE_CORE.json"
+    items = tmp_path / "state" / "items"
+    _write_json(core, _valid_core())
+    item = _valid_item()
+    item["lane"] = "chat_log"
+    _write_json(items / "test-item.json", item)
+
+    try:
+        GEN.load_source_state(core, items)
+    except ValueError as exc:
+        assert "lane" in str(exc)
+    else:
+        raise AssertionError("invalid lane should fail")
+
+
+def test_supersedes_must_be_list(tmp_path: Path) -> None:
+    core = tmp_path / "state" / "ACTIVE_AGENT_WORKSPACE_STATE_CORE.json"
+    items = tmp_path / "state" / "items"
+    _write_json(core, _valid_core())
+    item = _valid_item()
+    item["supersedes"] = "old-item"
+    _write_json(items / "test-item.json", item)
+
+    try:
+        GEN.load_source_state(core, items)
+    except ValueError as exc:
+        assert "supersedes" in str(exc)
+    else:
+        raise AssertionError("non-list supersedes should fail")

@@ -621,6 +621,14 @@ Canonical state topology contract:
 
 `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`
 
+Canonical state lane taxonomy:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`
+
+Canonical state item template:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`
+
 Machine guard:
 
 `governance/compat/check_agent_workspace_design.py`
@@ -674,7 +682,11 @@ generator. Direct aggregate-only edits are drift defects.
 The generated workspace state is a compact governed state view, not a chat log,
 provider-local memory store, runtime queue, UI, public surface, or production
 claim. Items must map to the required fields in
-`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`.
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`,
+the lane vocabulary in
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`,
+and the source shape in
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`.
 
 The agent workspace state guard is mandatory in the autorun workflow and local
 hook chain. It checks drift, required state fields, source/front-door pointers,
