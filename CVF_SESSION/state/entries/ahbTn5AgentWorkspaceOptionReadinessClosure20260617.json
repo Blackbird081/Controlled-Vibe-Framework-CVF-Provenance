@@ -17,6 +17,6 @@
     "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
     "result": "AHB-Tn.5 closed the AHB foundation roadmap as option-ready with explicit parked options for future workspace build, richer state lanes, or further foundation hardening.",
     "claimBoundary": "No workspace build, runtime/product mutation, registry edit, provider/live proof, public-sync, production readiness, or public readiness.",
-    "nextAllowedMove": "Operator decision whether to select AHB-Tn.5-A bounded workspace build, AHB-Tn.5-B richer workspace state lanes, AHB-Tn.5-C further foundation hardening, or leave all workspace options parked. Each selected option requires fresh GC-018 and a source-verified work order."
+    "nextAllowedMove": "Superseded by AHB-Tn.6 for AHB-Tn.5-B richer workspace state lanes and AHB-Tn.5-C further foundation hardening. AHB-Tn.5-A bounded workspace build remains parked and requires fresh GC-018 plus a source-verified work order before any runtime/build work."
   }
 }

@@ -1,0 +1,27 @@
+{
+  "stateOrder": 427,
+  "stateKey": "ahbTn6AgentWorkspaceFoundationReadinessBundleClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "d53914f5",
+    "executionBaseHead": "736fef37",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_COMPLETION_2026-06-17.md",
+    "workspaceFrontDoor": "docs/reference/agent_workspace/README.md",
+    "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
+    "topologyContract": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+    "laneTaxonomy": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md",
+    "itemTemplate": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json",
+    "optionMatrix": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
+    "aggregate": "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+    "sourceItems": "CVF_SESSION/agent_workspace/state/items/",
+    "generator": "governance/compat/generate_agent_workspace_state.py",
+    "checker": "governance/compat/check_agent_workspace_state.py",
+    "checkerTests": "governance/compat/test_agent_workspace_state.py",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.6 closed all useful pre-runtime workspace foundation readiness work by absorbing AHB-Tn.5-B and AHB-Tn.5-C into stable lane taxonomy, item template, generated state schema/checker hardening, and indexed front-door updates.",
+    "claimBoundary": "No workspace build, runtime/product mutation, registry edit, provider/live proof, public-sync, production readiness, or public readiness.",
+    "nextAllowedMove": "AHB-Tn.5-A bounded workspace build remains parked. Future build/runtime work requires fresh GC-018 and source-verified work order, or the operator may keep the workspace parked."
+  }
+}

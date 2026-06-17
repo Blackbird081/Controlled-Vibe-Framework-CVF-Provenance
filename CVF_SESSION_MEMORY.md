@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`
+Current mode marker: `ahb_tn6_workspace_foundation_readiness_closed_pass_bounded_runtime_build_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`.
+Current mode: `ahb_tn6_workspace_foundation_readiness_closed_pass_bounded_runtime_build_parked`.
 
 Active handoff:
 
@@ -62,27 +62,31 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AHB-Tn.5 Agent Workspace Option Readiness is `CLOSED_PASS_BOUNDED` at
-material commit `be4ce22f`. It closes the AHB foundation roadmap as
-option-ready and makes the future workspace choices explicit and parked:
+AHB-Tn.6 Agent Workspace Foundation Readiness Bundle is
+`CLOSED_PASS_BOUNDED` at material commit `d53914f5`. It absorbs and closes
+the useful pre-runtime AHB-Tn.5-B richer workspace state lanes and AHB-Tn.5-C
+further foundation hardening options by adding the stable lane taxonomy, item
+template, generated-state schema/checker hardening, and front-door/index
+updates.
 
-- AHB-Tn.5-A bounded workspace build option
-- AHB-Tn.5-B richer workspace state lanes option
-- AHB-Tn.5-C further foundation hardening option
+AHB-Tn.5-A bounded workspace build remains parked.
 
 Stable artifacts:
 
 - `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md`
 - `docs/reference/agent_workspace/README.md`
+- `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`
+- `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`
 - `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
 - `CVF_SESSION/agent_workspace/state/items/ahb-tn5-workspace-build-option-parked.json`
 - `CVF_SESSION/agent_workspace/state/items/ahb-tn5-richer-state-lanes-option-parked.json`
 - `CVF_SESSION/agent_workspace/state/items/ahb-tn5-foundation-hardening-option-parked.json`
+- `CVF_SESSION/agent_workspace/state/items/ahb-tn6-workspace-foundation-readiness-bundle-closed.json`
 - `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md`
 
-This is option-readiness foundation only. It does not select a future option,
-build the workspace, mutate runtime/product code, run provider/live proof,
-public-sync, edit registries, or claim production/public readiness.
+This is pre-runtime foundation only. It does not build the workspace, mutate
+runtime/product code, run provider/live proof, public-sync, edit registries, or
+claim production/public readiness.
 
 AHB-Tn.4 Agent Workspace State Source Checker is `CLOSED_PASS_BOUNDED` at
 material commit `39fb942d`. It creates the generated workspace state source
@@ -461,15 +465,15 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `ahb_tn5_agent_workspace_option_readiness_closed_pass_bounded_ahb_foundation_roadmap_closed_option_ready`.
+Mode: `ahb_tn6_workspace_foundation_readiness_closed_pass_bounded_runtime_build_parked`.
 
-AHB-Tn.5 Agent Workspace Option Readiness is `CLOSED_PASS_BOUNDED` at
-material commit `be4ce22f`. The AHB foundation roadmap is closed as
-option-ready. Next allowed move: operator decision whether to select
-AHB-Tn.5-A bounded workspace build, AHB-Tn.5-B richer workspace state lanes,
-AHB-Tn.5-C further foundation hardening, or leave all workspace options
-parked. Any selected option requires fresh GC-018 and a source-verified work
-order. The workspace is not opened unilaterally.
+AHB-Tn.6 Agent Workspace Foundation Readiness Bundle is
+`CLOSED_PASS_BOUNDED` at material commit `d53914f5`. It closes the useful
+pre-runtime workspace foundation work. AHB-Tn.5-B richer workspace state lanes
+and AHB-Tn.5-C further foundation hardening are absorbed by Tn.6. Next allowed
+move: keep workspace runtime/build parked, or open fresh GC-018 plus a
+source-verified work order for the remaining AHB-Tn.5-A bounded workspace
+build. The workspace is not opened unilaterally.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
