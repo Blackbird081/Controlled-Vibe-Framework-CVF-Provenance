@@ -12,6 +12,6 @@
     "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
     "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
     "result": "AHB-Tn.1 created the stable agent-workspace design front door and standard without building the workspace.",
-    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn.2 workspace build or dedicated workspace checker design with fresh GC-018, or choose another bounded CVF foundation/refactor tranche. Workspace build remains unauthorized."
+    "nextAllowedMove": "Superseded by AHB-Tn.2 closure. Future workspace build or generated workspace state remains unauthorized until AHB-Tn.3 or another fresh operator-authorized tranche."
   }
 }

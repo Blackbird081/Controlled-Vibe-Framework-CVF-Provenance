@@ -1,0 +1,19 @@
+{
+  "stateOrder": 423,
+  "stateKey": "ahbTn2AgentWorkspaceDesignCheckerClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "38e98f8c",
+    "executionBaseHead": "5c79881e",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN2_AGENT_WORKSPACE_DESIGN_CHECKER_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN2_AGENT_WORKSPACE_DESIGN_CHECKER_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN2_AGENT_WORKSPACE_DESIGN_CHECKER_COMPLETION_2026-06-17.md",
+    "standardFrontDoor": "docs/reference/agent_workspace/README.md",
+    "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
+    "checker": "governance/compat/check_agent_workspace_design.py",
+    "checkerTests": "governance/compat/test_check_agent_workspace_design.py",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.2 converted the Agent Workspace Design Control Block into a mandatory machine-checked local view for changed workspace work orders.",
+    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn.3 workspace build, generated workspace state design, or another bounded CVF foundation/refactor tranche with fresh GC-018. Workspace build remains unauthorized."
+  }
+}
