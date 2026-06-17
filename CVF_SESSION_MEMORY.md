@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-17
 
-Current mode marker: `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`
+Current mode marker: `prfc_t1_current_state_reconciliation_closed_ready_for_t2_gc018_runtime_execution_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`.
+Current mode: `prfc_t1_current_state_reconciliation_closed_ready_for_t2_gc018_runtime_execution_parked`.
 
 Active handoff:
 
@@ -62,12 +62,10 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap is
-`ROADMAP_READY_FOR_T1_GC018` at material commit `2117544d`. It covers three
-operator-approved pre-runtime foundation options: PRFC-T1 current-state
-reconciliation, PRFC-T2 Central Core plus Local View pilot, and PRFC-T3
-companion-routing checker or interlock follow-up. Runtime execution remains
-parked.
+PRFC-T1 CCLV-T2 current-state reconciliation is `CLOSED_PASS_BOUNDED` at
+closure docs commit `defdc40c` after protected state/base authorization commit
+`4b42064f` and handoff-sync commit `e85e5a2b`. The PRFC roadmap now marks
+PRFC-T1 closed and PRFC-T2 `READY_FOR_GC018`. Runtime execution remains parked.
 
 Stable artifact:
 
@@ -506,13 +504,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`.
+Mode: `prfc_t1_current_state_reconciliation_closed_ready_for_t2_gc018_runtime_execution_parked`.
 
-PRFC Pre-Runtime Foundation Cleanup And Pilot roadmap is
-`ROADMAP_READY_FOR_T1_GC018` at material commit `2117544d`. Next allowed move:
-open PRFC-T1 with fresh GC-018 and a source-verified work order for
-current-state reconciliation before runtime execution. Runtime workspace
-execution remains parked.
+PRFC-T1 CCLV-T2 current-state reconciliation is `CLOSED_PASS_BOUNDED` at
+closure docs commit `defdc40c`. Next allowed move: open PRFC-T2 with fresh
+GC-018 and a source-verified work order for the Central Core plus Local View
+pilot before runtime execution. Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
