@@ -1,0 +1,26 @@
+{
+  "stateOrder": 8,
+  "workspaceItemId": "ahb-tn9-minimal-runtime-queue-skeleton-closed-2026-06-17",
+  "lane": "accepted_material",
+  "itemKind": "accepted_material",
+  "status": "CLOSED_PASS_BOUNDED",
+  "ownerRole": "closer",
+  "route": "SINGLE_AGENT_MULTI_ROLE",
+  "rolePattern": "codex_dispatch_implementation_review_closure",
+  "phase": "closure",
+  "baseHead": "3619ab8d",
+  "changedSetScope": "Minimal runtime queue skeleton under CVF_SESSION/agent_workspace/runtime_queue/ with queue-family README pointers only.",
+  "traceScope": "AHB-Tn.8 through AHB-Tn.10 Agent Operation Trace Block in work order and completion review.",
+  "commitOwner": "Codex",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_FOR_CODEX_2026-06-17.md",
+  "evidencePaths": [
+    "CVF_SESSION/agent_workspace/runtime_queue/README.md",
+    "CVF_SESSION/agent_workspace/runtime_queue/queues/README.md",
+    "governance/compat/check_agent_workspace_runtime_boundary.py"
+  ],
+  "claimBoundary": "Queue skeleton only; no executable queue records, scheduler, worker daemon, provider/live proof, public-sync, registry edit, UI, production readiness, or public readiness.",
+  "nextMoveImpact": "Provides stable local queue-family paths for future source-verified runtime work while keeping runtime execution blocked.",
+  "resumeCondition": "N/A with reason: queue skeleton is closed; executable queue records require fresh GC-018.",
+  "supersedes": [],
+  "archivePolicy": "Remain active until a future archive batch compacts closed workspace foundation items after runtime queue implementation is either opened or explicitly parked."
+}

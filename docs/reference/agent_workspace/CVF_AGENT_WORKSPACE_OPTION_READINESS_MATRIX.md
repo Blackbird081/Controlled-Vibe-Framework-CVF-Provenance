@@ -32,6 +32,10 @@ public-sync, edit registries, or claim production/public readiness.
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | canonical generated state item template |
 | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated active option/state view |
 | `governance/compat/check_agent_workspace_state.py` | generated-state drift and topology checker |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md` | runtime/read-model/queue boundary |
+| `CVF_SESSION/agent_workspace/runtime_queue/README.md` | bounded runtime queue skeleton |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | operator-facing read-model plan |
+| `governance/compat/check_agent_workspace_runtime_boundary.py` | runtime boundary guard |
 | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | central handoff contract |
 
 ## Option Matrix
@@ -41,6 +45,9 @@ public-sync, edit registries, or claim production/public readiness.
 | AHB-Tn.5-A | Bounded workspace build surface | CLOSED_BY_AHB_TN7 | `CVF_SESSION/agent_workspace/workspace/README.md` plus skeleton checker | no runtime/UI/provider build authorized |
 | AHB-Tn.5-B | Richer workspace state lanes | CLOSED_BY_AHB_TN6 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` plus checker hardening | no runtime queue authorized |
 | AHB-Tn.5-C | Further foundation hardening | CLOSED_BY_AHB_TN6 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` plus front-door/checker hardening | no open-ended hardening authorized |
+| AHB-Tn.8 | Runtime expansion readiness contract | CLOSED_PASS_BOUNDED | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md` plus runtime boundary checker | no executable runtime authorized |
+| AHB-Tn.9 | Minimal runtime queue skeleton | CLOSED_PASS_BOUNDED | `CVF_SESSION/agent_workspace/runtime_queue/README.md` plus queue-family index | no queue records, scheduler, provider call, or worker daemon authorized |
+| AHB-Tn.10 | Operator-facing workspace view plan | CLOSED_PASS_BOUNDED | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | no UI implementation authorized |
 
 ## Option Selection Rules
 
@@ -65,6 +72,9 @@ public-sync, edit registries, or claim production/public readiness.
 | `ahb-tn5-foundation-hardening-option-parked-2026-06-17` | AHB-Tn.5-C | CLOSED_PASS_BOUNDED by AHB-Tn.6 |
 | `ahb-tn6-workspace-foundation-readiness-bundle-closed-2026-06-17` | AHB-Tn.5-B + AHB-Tn.5-C | CLOSED_PASS_BOUNDED |
 | `ahb-tn7-bounded-workspace-build-skeleton-closed-2026-06-17` | AHB-Tn.5-A | CLOSED_PASS_BOUNDED |
+| `ahb-tn8-runtime-expansion-readiness-contract-closed-2026-06-17` | AHB-Tn.8 | CLOSED_PASS_BOUNDED |
+| `ahb-tn9-minimal-runtime-queue-skeleton-closed-2026-06-17` | AHB-Tn.9 | CLOSED_PASS_BOUNDED |
+| `ahb-tn10-operator-facing-workspace-view-plan-closed-2026-06-17` | AHB-Tn.10 | CLOSED_PASS_BOUNDED |
 
 ## Minimum Future Work Order Requirements
 
@@ -76,6 +86,8 @@ Any future work order selecting an option from this matrix must include:
   checker named by the selected option;
 - generated workspace state update plan when the option changes active
   workspace state;
+- Runtime Expansion Control Block when the option touches runtime/read-model
+  or queue scope;
 - explicit no-provider/no-public/no-registry/no-production boundary unless the
   fresh GC-018 authorizes otherwise;
 - archive policy for superseded active workspace state items.

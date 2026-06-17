@@ -53,6 +53,18 @@ Bounded local workspace skeleton:
 
 `CVF_SESSION/agent_workspace/workspace/README.md`
 
+Runtime expansion readiness contract:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`
+
+Bounded runtime queue skeleton:
+
+`CVF_SESSION/agent_workspace/runtime_queue/README.md`
+
+Operator-facing workspace view plan:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`
+
 Workspace option-readiness matrix:
 
 `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md`
@@ -73,6 +85,10 @@ Workspace skeleton machine guard:
 
 `governance/compat/check_agent_workspace_skeleton.py`
 
+Workspace runtime boundary machine guard:
+
+`governance/compat/check_agent_workspace_runtime_boundary.py`
+
 Foundation storage standard:
 
 `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md`
@@ -85,6 +101,8 @@ Read this folder when a task:
   agent-interaction workspace;
 - introduces agent-to-agent workspace folders, indexes, queues, inboxes,
   review lanes, shared dashboards, or coordination surfaces;
+- proposes runtime queues, queue records, operator views, dashboards, or
+  workspace runtime expansion;
 - changes how Claude, Codex, Gemini, or future agents exchange work outside a
   one-off work order;
 - needs to decide whether a workspace artifact is a stable foundation file,
@@ -103,11 +121,16 @@ Read this folder when a task:
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Stable option matrix for future build, richer lanes, or further hardening decisions |
 | `CVF_SESSION/agent_workspace/workspace/README.md` | Bounded local workspace skeleton front door |
 | `CVF_SESSION/agent_workspace/workspace/lanes/README.md` | Local lane folder index |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md` | Runtime expansion boundary and control-block source |
+| `CVF_SESSION/agent_workspace/runtime_queue/README.md` | Bounded runtime queue skeleton front door |
+| `CVF_SESSION/agent_workspace/runtime_queue/queues/README.md` | Queue-family index |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | Operator-facing read-model plan |
 | `governance/compat/check_agent_workspace_design.py` | Machine-enforced local view for Agent Workspace Design Control Block |
 | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | Generated compact active workspace state view |
 | `governance/compat/generate_agent_workspace_state.py` | Generator for workspace state source fragments |
 | `governance/compat/check_agent_workspace_state.py` | Drift and topology guard for generated workspace state |
 | `governance/compat/check_agent_workspace_skeleton.py` | Machine-enforced local view for skeleton folder/index layout |
+| `governance/compat/check_agent_workspace_runtime_boundary.py` | Machine-enforced local view for runtime-readiness and queue skeleton boundaries |
 | `docs/reference/agent_handoff/README.md` | Handoff contract and machine-enforced work-order local view |
 | `docs/reference/foundation_storage/README.md` | Stable folder/index storage rule |
 | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | AHB tranche state and future workspace routing |

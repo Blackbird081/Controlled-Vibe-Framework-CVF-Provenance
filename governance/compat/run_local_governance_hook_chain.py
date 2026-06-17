@@ -71,6 +71,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_agent_workspace_skeleton.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "agent workspace runtime boundary",
+        ["python", "governance/compat/check_agent_workspace_runtime_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "machine closure package",
         ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -203,6 +207,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "agent workspace skeleton",
             ["python", "governance/compat/check_agent_workspace_skeleton.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "agent workspace runtime boundary",
+            ["python", "governance/compat/check_agent_workspace_runtime_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "machine closure package",
@@ -373,6 +381,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "agent workspace skeleton",
             ["python", "governance/compat/check_agent_workspace_skeleton.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "agent workspace runtime boundary",
+            ["python", "governance/compat/check_agent_workspace_runtime_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "machine closure package",

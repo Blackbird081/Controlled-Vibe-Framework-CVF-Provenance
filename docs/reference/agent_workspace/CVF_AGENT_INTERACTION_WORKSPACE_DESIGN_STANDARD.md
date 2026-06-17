@@ -34,6 +34,9 @@ behavior, public-sync, or claim production readiness.
 | AHB-Tn.6 lane taxonomy | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Canonical lane vocabulary and transition rules |
 | AHB-Tn.6 item template | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | Canonical generated state source item shape |
 | AHB-Tn.7 workspace skeleton | `CVF_SESSION/agent_workspace/workspace/README.md` | Bounded local workspace skeleton front door |
+| AHB-Tn.8 runtime expansion contract | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md` | Runtime expansion boundary and control-block source |
+| AHB-Tn.9 queue skeleton | `CVF_SESSION/agent_workspace/runtime_queue/README.md` | Bounded queue-family skeleton front door |
+| AHB-Tn.10 operator view plan | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | Operator-facing read-model plan |
 | AHB-Tn.5 option readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Parked future option choices after foundation closure |
 | AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | Workspace candidate route after AHB-T3 |
 | Foundation storage standard | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | Stable folder/index rule |
@@ -70,6 +73,8 @@ these design surfaces before implementation:
 | Lane taxonomy | Which `lane` value each workspace item uses before active state is changed |
 | Generated state aggregate | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` must stay generated from `CVF_SESSION/agent_workspace/state/` |
 | Option readiness | Which parked option is selected before build, richer lanes, or further hardening starts |
+| Runtime expansion | Whether the work is `QUEUE_SKELETON_ONLY`, `READ_MODEL_ONLY`, runtime implementation, provider-live, or public-sync scope |
+| Operator view | Whether the work is read-model planning only or a separately authorized UI implementation |
 | Guard placement | Which existing or future machine checks enforce the design before dispatch, implementation, closure, and session sync |
 | Archive policy | How stale workspace records leave the active front door |
 | Public boundary | Whether any workspace output may ever enter public-sync, and under which separate authorization |
@@ -117,6 +122,7 @@ provider integration, or public-facing copy from this standard alone.
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Defines canonical lanes, transition rules, and required `lane`, `resumeCondition`, and `supersedes` fields |
 | `governance/compat/check_agent_workspace_state.py` | Enforces generated workspace state drift and required topology fields |
 | `governance/compat/check_agent_workspace_skeleton.py` | Enforces bounded skeleton folder/index layout and hook binding |
+| `governance/compat/check_agent_workspace_runtime_boundary.py` | Enforces runtime-readiness contract, queue skeleton, operator view plan, and hook binding |
 | `governance/compat/check_foundation_storage_layout.py` | Enforces stable folder/index discipline for durable workspace rules |
 | `governance/compat/check_agent_operation_trace.py` | Enforces per-phase changed-set and trace manifest evidence |
 | `governance/compat/check_finding_to_governance_learning.py` | Prevents workspace findings from staying only in provider memory |
@@ -130,6 +136,7 @@ Workspace design enforcement is now machine-checked:
 python governance/compat/check_agent_workspace_design.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_workspace_state.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_workspace_skeleton.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_agent_workspace_runtime_boundary.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_handoff_boundary.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_foundation_storage_layout.py --base <baseHead> --head HEAD --enforce
 python governance/compat/check_agent_operation_trace.py --base <baseHead> --head HEAD --enforce
@@ -152,6 +159,12 @@ autorun workflow gate and local governance hook chain. Any future change to
 `CVF_SESSION/agent_workspace/workspace/` must preserve the skeleton front
 door, lane index, canonical lane folders, and no-runtime boundary.
 
+`governance/compat/check_agent_workspace_runtime_boundary.py` is included in
+the autorun workflow gate and local governance hook chain. Any future runtime
+queue, operator view, dashboard, provider, public-sync, registry, or runtime
+execution work must preserve the runtime-readiness contract unless a fresh
+GC-018 explicitly authorizes a wider mode.
+
 ## Work Order Requirement
 
 Any future work order that proposes or builds an agent-interaction workspace
@@ -168,6 +181,12 @@ must:
   state source fragments;
 - cite the skeleton front door and skeleton checker before modifying the local
   workspace skeleton or lane folders;
+- cite the runtime expansion readiness contract and runtime boundary checker
+  before creating or modifying runtime queue skeletons, operator views,
+  dashboards, provider-live behavior, public-sync, registries, or runtime
+  execution;
+- include a Runtime Expansion Control Block when runtime/read-model/queue
+  scope is mentioned;
 - state whether it is analysis-only, design-only, machine-check, runtime build,
   provider-proof, public-sync, or archive-cleanup scope.
 

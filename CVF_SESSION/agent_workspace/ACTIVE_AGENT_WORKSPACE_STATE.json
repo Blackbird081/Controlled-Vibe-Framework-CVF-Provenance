@@ -165,6 +165,81 @@
         "ahb-tn5-workspace-build-option-parked-2026-06-17"
       ],
       "archivePolicy": "Remain active until session-sync records AHB-Tn.7 closure and a future archive batch compacts closed workspace foundation items."
+    },
+    {
+      "workspaceItemId": "ahb-tn8-runtime-expansion-readiness-contract-closed-2026-06-17",
+      "lane": "accepted_material",
+      "itemKind": "accepted_material",
+      "status": "CLOSED_PASS_BOUNDED",
+      "ownerRole": "closer",
+      "route": "SINGLE_AGENT_MULTI_ROLE",
+      "rolePattern": "codex_dispatch_implementation_review_closure",
+      "phase": "closure",
+      "baseHead": "3619ab8d",
+      "changedSetScope": "Runtime expansion readiness contract, runtime boundary guard, hook and autorun binding, reference front doors, roadmap, work order, GC-018, and completion review.",
+      "traceScope": "AHB-Tn.8 through AHB-Tn.10 Agent Operation Trace Block in work order and completion review.",
+      "commitOwner": "Codex",
+      "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_FOR_CODEX_2026-06-17.md",
+      "evidencePaths": [
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+        "governance/compat/check_agent_workspace_runtime_boundary.py",
+        "docs/reviews/CVF_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_COMPLETION_2026-06-17.md"
+      ],
+      "claimBoundary": "Runtime-readiness contract only; no executable runtime queue, scheduler, UI, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+      "nextMoveImpact": "Adds a mandatory runtime expansion boundary before any future workspace runtime, queue, view, provider, public, registry, or UI tranche.",
+      "resumeCondition": "N/A with reason: runtime-readiness contract is closed; executable runtime requires fresh GC-018.",
+      "supersedes": [],
+      "archivePolicy": "Remain active until a future archive batch compacts closed workspace foundation items after runtime work is either opened or explicitly parked."
+    },
+    {
+      "workspaceItemId": "ahb-tn9-minimal-runtime-queue-skeleton-closed-2026-06-17",
+      "lane": "accepted_material",
+      "itemKind": "accepted_material",
+      "status": "CLOSED_PASS_BOUNDED",
+      "ownerRole": "closer",
+      "route": "SINGLE_AGENT_MULTI_ROLE",
+      "rolePattern": "codex_dispatch_implementation_review_closure",
+      "phase": "closure",
+      "baseHead": "3619ab8d",
+      "changedSetScope": "Minimal runtime queue skeleton under CVF_SESSION/agent_workspace/runtime_queue/ with queue-family README pointers only.",
+      "traceScope": "AHB-Tn.8 through AHB-Tn.10 Agent Operation Trace Block in work order and completion review.",
+      "commitOwner": "Codex",
+      "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_FOR_CODEX_2026-06-17.md",
+      "evidencePaths": [
+        "CVF_SESSION/agent_workspace/runtime_queue/README.md",
+        "CVF_SESSION/agent_workspace/runtime_queue/queues/README.md",
+        "governance/compat/check_agent_workspace_runtime_boundary.py"
+      ],
+      "claimBoundary": "Queue skeleton only; no executable queue records, scheduler, worker daemon, provider/live proof, public-sync, registry edit, UI, production readiness, or public readiness.",
+      "nextMoveImpact": "Provides stable local queue-family paths for future source-verified runtime work while keeping runtime execution blocked.",
+      "resumeCondition": "N/A with reason: queue skeleton is closed; executable queue records require fresh GC-018.",
+      "supersedes": [],
+      "archivePolicy": "Remain active until a future archive batch compacts closed workspace foundation items after runtime queue implementation is either opened or explicitly parked."
+    },
+    {
+      "workspaceItemId": "ahb-tn10-operator-facing-workspace-view-plan-closed-2026-06-17",
+      "lane": "accepted_material",
+      "itemKind": "accepted_material",
+      "status": "CLOSED_PASS_BOUNDED",
+      "ownerRole": "closer",
+      "route": "SINGLE_AGENT_MULTI_ROLE",
+      "rolePattern": "codex_dispatch_implementation_review_closure",
+      "phase": "closure",
+      "baseHead": "3619ab8d",
+      "changedSetScope": "Operator-facing workspace read-model plan and runtime boundary guard linkage.",
+      "traceScope": "AHB-Tn.8 through AHB-Tn.10 Agent Operation Trace Block in work order and completion review.",
+      "commitOwner": "Codex",
+      "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_FOR_CODEX_2026-06-17.md",
+      "evidencePaths": [
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+        "governance/compat/check_agent_workspace_runtime_boundary.py"
+      ],
+      "claimBoundary": "Operator read-model plan only; no UI implementation, runtime mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+      "nextMoveImpact": "Future UI/dashboard work has a stable read model but remains blocked until fresh GC-018.",
+      "resumeCondition": "N/A with reason: read-model plan is closed; UI implementation requires fresh GC-018.",
+      "supersedes": [],
+      "archivePolicy": "Remain active until a future archive batch compacts closed workspace foundation items after UI work is either opened or explicitly parked."
     }
   ]
 }

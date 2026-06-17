@@ -114,6 +114,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "agent workspace runtime boundary",
+            "governance/compat/check_agent_workspace_runtime_boundary.py",
+            base,
+            head,
+        ),
+        _range_command(
             "machine closure package",
             "governance/compat/check_machine_closure_package.py",
             base,

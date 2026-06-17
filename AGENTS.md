@@ -723,6 +723,44 @@ The agent workspace skeleton guard is mandatory in the autorun workflow and
 local hook chain. Future runtime/build expansion beyond this skeleton requires
 fresh GC-018 and a source-verified work order.
 
+## Mandatory Agent Workspace Runtime Boundary Guard - 2026-06-17
+
+Stable front door:
+
+`docs/reference/agent_workspace/README.md`
+
+Canonical runtime expansion readiness contract:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`
+
+Bounded runtime queue skeleton:
+
+`CVF_SESSION/agent_workspace/runtime_queue/README.md`
+
+Operator-facing read model plan:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`
+
+Machine guard:
+
+`governance/compat/check_agent_workspace_runtime_boundary.py`
+
+The runtime queue skeleton is `QUEUE_SKELETON_ONLY`. It is not an executable
+queue, scheduler, worker daemon, provider route, UI, public-sync surface,
+registry edit, production claim, or public readiness claim.
+
+Any future task that proposes or modifies workspace runtime queues, queue
+records, operator views, dashboards, provider proof, public-sync, registries,
+or runtime execution must read the runtime expansion readiness contract and
+include a Runtime Expansion Control Block. Queue skeleton and read-model work
+must preserve the no-runtime/no-provider/no-public/no-registry boundary unless
+a fresh GC-018 explicitly authorizes the wider mode.
+
+The agent workspace runtime boundary guard is mandatory in the autorun workflow
+and local hook chain. It binds the runtime-readiness contract, queue skeleton,
+operator view plan, AGENTS.md, and hook placement so agents cannot silently
+promote workspace folders into runtime behavior.
+
 ## Mandatory IDE Extension Multi-Provider Execution Log Guard - 2026-05-29
 
 Canonical standard:

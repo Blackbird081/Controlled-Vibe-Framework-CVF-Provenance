@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_CLOSED_PASS_BOUNDED_SKELETON_READY_PRE_RUNTIME
+Status: ROADMAP_CLOSED_PASS_BOUNDED_RUNTIME_READY_PRE_EXECUTION
 
 docType: roadmap
 
@@ -178,6 +178,9 @@ views that must cite the contract.
 | AHB-Tn.5 | CLOSED_PASS_BOUNDED | Prepared explicit parked options for bounded workspace build, richer state lanes, or further foundation hardening; no workspace build | Codex |
 | AHB-Tn.6 | CLOSED_PASS_BOUNDED | Absorbed useful richer-lane and foundation-hardening options into lane taxonomy, item template, generated-state checker hardening, and active state disposition; no workspace build | Codex |
 | AHB-Tn.7 | CLOSED_PASS_BOUNDED | Executed AHB-Tn.5-A as a bounded local workspace skeleton with lane folders, skeleton guard, hook/autorun binding, and active state disposition; no runtime/UI/provider/public/registry build | Codex |
+| AHB-Tn.8 | CLOSED_PASS_BOUNDED | Added the runtime expansion readiness contract and runtime boundary guard, with autorun/local-hook binding; no executable runtime | Codex |
+| AHB-Tn.9 | CLOSED_PASS_BOUNDED | Added a minimal local runtime queue skeleton and queue-family index under `CVF_SESSION/agent_workspace/runtime_queue/`; no queue records, scheduler, or provider execution | Codex |
+| AHB-Tn.10 | CLOSED_PASS_BOUNDED | Added the operator-facing workspace read-model plan; no UI implementation | Codex |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
 AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
@@ -442,6 +445,33 @@ remaining AHB-Tn.5-A option as a bounded local workspace skeleton on
 AHB-Tn.7 closes AHB-Tn.5-A at skeleton level only. It does not create runtime
 queues, scheduler queues, UI, provider/live proof, public-sync, registry edit,
 product runtime mutation, production readiness, or public readiness.
+
+## AHB-Tn.8 Through AHB-Tn.10 Closure Note
+
+AHB-Tn.8 through AHB-Tn.10 are `CLOSED_PASS_BOUNDED`. Operator authorized
+Codex to execute all three useful workspace-foundation tranches together on
+2026-06-17. Codex added:
+
+- runtime expansion readiness contract:
+  `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`
+- minimal queue skeleton:
+  `CVF_SESSION/agent_workspace/runtime_queue/README.md`
+- queue-family index:
+  `CVF_SESSION/agent_workspace/runtime_queue/queues/README.md`
+- operator-facing read-model plan:
+  `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`
+- runtime boundary checker:
+  `governance/compat/check_agent_workspace_runtime_boundary.py`
+- focused checker test:
+  `governance/compat/test_agent_workspace_runtime_boundary.py`
+- generated active workspace state items for AHB-Tn.8, AHB-Tn.9, and
+  AHB-Tn.10 closure.
+
+AHB-Tn.8 through AHB-Tn.10 close runtime-readiness, queue-skeleton, and
+operator-read-model foundations only. They do not create executable queue
+records, schedulers, worker daemons, provider/live proof, public-sync, registry
+edits, UI implementation, product runtime mutation, production readiness, or
+public readiness.
 
 ## Machine Closure Package
 

@@ -31,6 +31,9 @@ claim.
 | Lane taxonomy | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Canonical lane vocabulary and transition rules |
 | Item template | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | Canonical state source item shape |
 | Option readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Parked future option routing after foundation closure |
+| Runtime expansion contract | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md` | Runtime/read-model/queue boundary |
+| Runtime queue skeleton | `CVF_SESSION/agent_workspace/runtime_queue/README.md` | Queue-family skeleton front door |
+| Operator view plan | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | Operator read-model boundary |
 | Workspace design checker | `governance/compat/check_agent_workspace_design.py` | Machine-enforced work-order local view |
 | Agent Handoff Contract | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | Central Core for role, phase, base-head, trace, commit, and next-move semantics |
 | Handoff boundary checker | `governance/compat/check_agent_handoff_boundary.py` | Machine-enforced handoff local view |
@@ -141,6 +144,10 @@ layout is:
 | `CVF_SESSION/agent_workspace/workspace/README.md` | bounded local skeleton front door | ACTIVE_SKELETON |
 | `CVF_SESSION/agent_workspace/workspace/lanes/README.md` | lane folder index | ACTIVE_INDEX |
 | `governance/compat/check_agent_workspace_skeleton.py` | skeleton folder/index guard | ACTIVE_GUARD |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md` | runtime expansion boundary | ACTIVE_CONTRACT |
+| `CVF_SESSION/agent_workspace/runtime_queue/README.md` | bounded queue skeleton front door | ACTIVE_QUEUE_SKELETON |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | operator read-model plan | ACTIVE_PLAN |
+| `governance/compat/check_agent_workspace_runtime_boundary.py` | runtime boundary guard | ACTIVE_GUARD |
 
 Those paths are generated-state foundation only. They do not build a workspace
 UI, runtime queue, provider route, public surface, registry edit, or production
@@ -174,6 +181,11 @@ dashboards, or workspace runtime must:
 - map any proposed state record to the Required State Fields table;
 - use the lane taxonomy and item template when adding or modifying state source
   fragments;
+- cite the runtime expansion readiness contract before creating runtime queue
+  skeletons, runtime queue records, operator views, dashboards, provider-live
+  behavior, public-sync output, registries, or runtime execution;
+- include a Runtime Expansion Control Block when runtime queue or operator
+  view scope is mentioned;
 - state the archive policy before implementation.
 
 ## Machine Enforcement
@@ -193,6 +205,7 @@ now points to the AHB-Tn.4 checker:
 python governance/compat/check_agent_workspace_state.py --base <baseHead> --head HEAD --enforce
 python governance/compat/generate_agent_workspace_state.py --check
 python governance/compat/check_agent_workspace_skeleton.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_agent_workspace_runtime_boundary.py --base <baseHead> --head HEAD --enforce
 ```
 
 ## Public Export Disposition

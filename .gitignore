@@ -78,6 +78,8 @@ Xd_App/
 REVIEW/
 !CVF_SESSION/agent_workspace/workspace/lanes/review/
 !CVF_SESSION/agent_workspace/workspace/lanes/review/README.md
+!CVF_SESSION/agent_workspace/runtime_queue/queues/review/
+!CVF_SESSION/agent_workspace/runtime_queue/queues/review/README.md
 
 # Local web export samples / operator scratch artifacts
 cvf-spec-*.md
