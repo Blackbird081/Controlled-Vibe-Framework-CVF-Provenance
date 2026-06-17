@@ -24,20 +24,20 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after Claude CGFP-T1
-checker trigger false-positive finding and hardening dispatch commit `35f17941`.
+Authorized session-sync scope: update active handoff after Codex supplemental
+provider-local learning boundary finding commit `78282164`.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
 Operator authorization: operator instructed Codex on 2026-06-17 to record the
-two findings and review the Claude-reported CGFP/PRFC dispatch commits. Before
-Codex records the supplemental finding, the active handoff must first reflect
-Claude's latest committed dispatch head.
+two findings and review the Claude-reported CGFP/PRFC dispatch commits. Codex
+recorded the supplemental provider-local learning boundary finding in
+`78282164` and must sync the active handoff.
 
-Rollback boundary: revert only this handoff sync if rejected. Do not alter the
-PRFC, CGFP, or prior AHB material artifacts.
+Rollback boundary: revert only this handoff HEAD sync if rejected. Do not alter
+the supplemental finding, PRFC, CGFP, or prior AHB material artifacts.
 
 ## Startup Acknowledgment
 
@@ -47,11 +47,13 @@ Startup acknowledged: current mode=`prfc_pre_runtime_foundation_cleanup_roadmap_
 
 `prfc_pre_runtime_foundation_cleanup_roadmap_ready_for_t1_gc018_runtime_execution_parked`
 
-Current HEAD recorded for this handoff: `35f17941`
-(CGFP-T1 checker false-positive finding, GC-018, and work-order dispatch
-commit `35f17941`; prior anchors: `070e2382` handoff-sync after PRFC-T1
-dispatch, `833501a6` PRFC-T1 dispatch, `2117544d` PRFC Pre-Runtime Foundation
-Cleanup And Pilot roadmap
+Current HEAD recorded for this handoff: `78282164`
+(Codex supplemental CGFP provider-local learning boundary finding commit
+`78282164`; prior anchors: `2210bef6` handoff-sync after CGFP-T1 checker
+dispatch, `35f17941` CGFP-T1 checker false-positive finding, GC-018, and
+work-order dispatch, `070e2382` handoff-sync after PRFC-T1 dispatch,
+`833501a6` PRFC-T1 dispatch, `2117544d` PRFC Pre-Runtime Foundation Cleanup And
+Pilot roadmap
 material commit
 `2117544d`;
 AHB-Tn.8 through AHB-Tn.10 Workspace Runtime Readiness, Queue Skeleton, and
