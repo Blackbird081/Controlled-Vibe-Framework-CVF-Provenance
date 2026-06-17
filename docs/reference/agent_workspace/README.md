@@ -41,6 +41,10 @@ Workspace state topology contract:
 
 `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`
 
+Workspace option-readiness matrix:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md`
+
 Workspace design machine guard:
 
 `governance/compat/check_agent_workspace_design.py`
@@ -78,6 +82,7 @@ Read this folder when a task:
 |---|---|
 | `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` | Design boundary and pre-build requirements |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | State topology, lane, storage, and archive contract before any workspace state is built |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Stable option matrix for future build, richer lanes, or further hardening decisions |
 | `governance/compat/check_agent_workspace_design.py` | Machine-enforced local view for Agent Workspace Design Control Block |
 | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | Generated compact active workspace state view |
 | `governance/compat/generate_agent_workspace_state.py` | Generator for workspace state source fragments |

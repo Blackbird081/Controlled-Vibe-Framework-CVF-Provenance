@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AHB_TN4_CLOSED_WORKSPACE_BUILD_CANDIDATE
+Status: ROADMAP_CLOSED_PASS_BOUNDED_OPTION_READY
 
 docType: roadmap
 
@@ -175,7 +175,7 @@ views that must cite the contract.
 | AHB-Tn.2 | CLOSED_PASS_BOUNDED | Machine-hardened the dedicated agent-interaction workspace design control block against the AHB-Tn.1 design standard; no workspace build | Codex |
 | AHB-Tn.3 | CLOSED_PASS_BOUNDED | Defined the workspace state topology contract: state units, lanes, required fields, storage candidate layout, and archive policy; no workspace build | Codex |
 | AHB-Tn.4 | CLOSED_PASS_BOUNDED | Added generated workspace state source layout, generated aggregate, generator, drift/topology checker, tests, and autorun/local-hook binding; no workspace build | Codex |
-| AHB-Tn.5 | CANDIDATE_AFTER_TN4 | Future decision whether to build a bounded workspace surface, add richer workspace state lanes, or continue foundation hardening | Operator decision |
+| AHB-Tn.5 | CLOSED_PASS_BOUNDED | Prepared explicit parked options for bounded workspace build, richer state lanes, or further foundation hardening; no workspace build | Codex |
 
 AHB-T1A cleanup is closed at the governance-control level. It does not ratify
 AHB-T2, execute AOT-T3, or implement the unified AHB contract checker. It only
@@ -362,8 +362,55 @@ The checker is bound into autorun and local hook chains. Agents must edit
 workspace state source fragments and regenerate the aggregate instead of
 hand-editing the generated file. AHB-Tn.4 does not build the workspace, create
 runtime queues, mutate product runtime, run provider/live proof, public-sync,
-edit registries, or claim production/public readiness. AHB-Tn.5 remains an
-operator-decision candidate.
+edit registries, or claim production/public readiness. AHB-Tn.5 later closes
+the option-readiness layer.
+
+## AHB-Tn.5 Closure Note
+
+AHB-Tn.5 is `CLOSED_PASS_BOUNDED`. Operator authorized Codex to complete the
+AHB foundation roadmap and prepare ready options on 2026-06-17. Codex added
+the stable option-readiness matrix and generated workspace state option items:
+
+- option-readiness matrix:
+  `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md`
+- generated active workspace state:
+  `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+- workspace build option item:
+  `CVF_SESSION/agent_workspace/state/items/ahb-tn5-workspace-build-option-parked.json`
+- richer state lanes option item:
+  `CVF_SESSION/agent_workspace/state/items/ahb-tn5-richer-state-lanes-option-parked.json`
+- further foundation hardening option item:
+  `CVF_SESSION/agent_workspace/state/items/ahb-tn5-foundation-hardening-option-parked.json`
+- completion packet:
+  `docs/reviews/CVF_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_COMPLETION_2026-06-17.md`
+
+AHB-Tn.5 does not build the workspace, create runtime queues, mutate product
+runtime, run provider/live proof, public-sync, edit registries, or claim
+production/public readiness. It closes the AHB foundation roadmap as
+option-ready. Any future selected option requires fresh GC-018 and a
+source-verified work order.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Roadmap state | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | `Status: ROADMAP_CLOSED_PASS_BOUNDED_OPTION_READY` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AHB-Tn.5 completion review | `docs/reviews/CVF_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_COMPLETION_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_COMPLETION_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AHB-Tn.5 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AHB-Tn.5 GC-018 | `docs/baselines/CVF_GC018_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_2026-06-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Option-readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | stable option matrix under workspace front door | PASS |
+| Generated workspace state | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated aggregate includes three AHB-Tn.5 parked options | PASS |
+| Runtime workspace build | N/A with reason: no workspace build authorized | N/A | N/A with reason |
+| Registry JSON | BLOCKED with reason: no registry edit authorized for this option-readiness roadmap closure | N/A | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized for this option-readiness roadmap closure | N/A | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source/live proof authorized | N/A | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | N/A | N/A with reason |
+| Session continuity | N/A with reason: follows material closure commit separately if next move changes | N/A | N/A with reason |
+| Provider/live proof | N/A with reason: no provider/live proof authorized | N/A | N/A with reason |
+| Public-sync | N/A with reason: private provenance foundation only | N/A | N/A with reason |
+| Registry edit | N/A with reason: no registry edit authorized | N/A | N/A with reason |
 
 ## AHB-T1 Requirements (Proposed)
 

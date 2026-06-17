@@ -1,0 +1,90 @@
+# CVF Agent Workspace Option Readiness Matrix
+
+Memory class: FULL_RECORD
+
+Status: ACTIVE_MATRIX
+
+docType: reference
+
+## Purpose
+
+Define the stable option-readiness matrix for future agent-interaction
+workspace work after AHB-Tn.4. The matrix keeps workspace build, richer state
+lanes, and further foundation hardening separate so future agents do not treat
+"continue workspace" as implicit runtime or UI authorization.
+
+## Scope / Target / Owner Boundary
+
+Target: governed option readiness for future AHB workspace decisions.
+
+Owner boundary: this matrix is foundation planning only. It does not build a
+workspace, create runtime queues, edit product code, run provider/live proof,
+public-sync, edit registries, or claim production/public readiness.
+
+## Source Authority
+
+| Source | Role |
+|---|---|
+| `docs/reference/agent_workspace/README.md` | stable workspace front door |
+| `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` | workspace design control block |
+| `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | state units, required fields, lanes, archive policy |
+| `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | generated active option/state view |
+| `governance/compat/check_agent_workspace_state.py` | generated-state drift and topology checker |
+| `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | central handoff contract |
+
+## Option Matrix
+
+| Option ID | Option | Readiness | Required next artifact | Boundary |
+|---|---|---|---|---|
+| AHB-Tn.5-A | Bounded workspace build surface | OPTION_READY_PARKED | fresh GC-018 and work order selecting one bounded surface | no build authorized by this matrix |
+| AHB-Tn.5-B | Richer workspace state lanes | OPTION_READY_PARKED | fresh GC-018 and work order defining added state units/statuses/checker updates | no generated-state expansion authorized by this matrix |
+| AHB-Tn.5-C | Further foundation hardening | OPTION_READY_PARKED | fresh GC-018 and work order naming the specific foundation gap | no open-ended hardening authorized by this matrix |
+
+## Option Selection Rules
+
+1. Select AHB-Tn.5-A only when the operator explicitly wants a usable
+   workspace surface and accepts a fresh build work order.
+2. Select AHB-Tn.5-B only when the current generated state vocabulary is too
+   small for the next governed workflow and the work remains state-only.
+3. Select AHB-Tn.5-C only when a new AHB finding shows the foundation is not
+   yet enforceable by documentation, checker, hook, or session-sync controls.
+4. Do not combine build, richer lanes, provider proof, public-sync, registry
+   edit, and runtime mutation in one tranche unless a later GC-018 explicitly
+   authorizes that combined shape.
+5. Keep provider-local memory out of option evidence. Reusable lessons must
+   land in CVF-governed artifacts and, when repeated, machine checks.
+
+## Active Workspace State Mapping
+
+| Workspace item | Option | Status |
+|---|---|---|
+| `ahb-tn5-workspace-build-option-parked-2026-06-17` | AHB-Tn.5-A | PARKED_PENDING_OPERATOR_DECISION |
+| `ahb-tn5-richer-state-lanes-option-parked-2026-06-17` | AHB-Tn.5-B | PARKED_PENDING_OPERATOR_DECISION |
+| `ahb-tn5-foundation-hardening-option-parked-2026-06-17` | AHB-Tn.5-C | PARKED_PENDING_OPERATOR_DECISION |
+
+## Minimum Future Work Order Requirements
+
+Any future work order selecting an option from this matrix must include:
+
+- Agent Handoff Contract Control Block;
+- Agent Workspace Design Control Block;
+- source verification for every existing path, field, status, route token, and
+  checker named by the selected option;
+- generated workspace state update plan when the option changes active
+  workspace state;
+- explicit no-provider/no-public/no-registry/no-production boundary unless the
+  fresh GC-018 authorizes otherwise;
+- archive policy for superseded active workspace state items.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private provenance workspace foundation. No public-sync batch is
+authorized.
+
+## Claim Boundary
+
+This matrix prepares options only. It does not select an option, dispatch a
+future worker, build the workspace, mutate runtime/product code, run provider
+proof, public-sync, edit registries, or claim production/public readiness.

@@ -31,6 +31,7 @@ behavior, public-sync, or claim production readiness.
 | AHB-T3 checker | `governance/compat/check_agent_handoff_boundary.py` | Machine-enforced work-order local view |
 | AHB-Tn.2 workspace checker | `governance/compat/check_agent_workspace_design.py` | Machine-enforced workspace design control block |
 | AHB-Tn.3 state topology contract | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | Workspace state, lane, storage, and archive topology |
+| AHB-Tn.5 option readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Parked future option choices after foundation closure |
 | AHB roadmap | `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` | Workspace candidate route after AHB-T3 |
 | Foundation storage standard | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | Stable folder/index rule |
 | Provider memory boundary | `AGENTS.md` | Provider-local memory is not CVF source of truth |
@@ -64,6 +65,7 @@ these design surfaces before implementation:
 | Workspace state | Whether state is markdown-only, generated JSON, runtime-backed, or deferred |
 | State topology | How intake, dispatch, worker-return, review, accepted-material, session-sync, and parked state units map to the AHB contract |
 | Generated state aggregate | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` must stay generated from `CVF_SESSION/agent_workspace/state/` |
+| Option readiness | Which parked option is selected before build, richer lanes, or further hardening starts |
 | Guard placement | Which existing or future machine checks enforce the design before dispatch, implementation, closure, and session sync |
 | Archive policy | How stale workspace records leave the active front door |
 | Public boundary | Whether any workspace output may ever enter public-sync, and under which separate authorization |

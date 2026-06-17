@@ -28,6 +28,7 @@ claim.
 |---|---|---|
 | Agent workspace front door | `docs/reference/agent_workspace/README.md` | Stable retrieval path |
 | Workspace design standard | `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` | Pre-build boundary and control block source |
+| Option readiness matrix | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md` | Parked future option routing after foundation closure |
 | Workspace design checker | `governance/compat/check_agent_workspace_design.py` | Machine-enforced work-order local view |
 | Agent Handoff Contract | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | Central Core for role, phase, base-head, trace, commit, and next-move semantics |
 | Handoff boundary checker | `governance/compat/check_agent_handoff_boundary.py` | Machine-enforced handoff local view |
@@ -50,6 +51,9 @@ The topology has three layers:
 AHB-Tn.4 creates the generated-state foundation after this contract. Future
 expansion of generated-state semantics must still use a fresh GC-018, update
 source fragments, run the generator, and pass generated aggregate drift checks.
+AHB-Tn.5 adds parked option records so future workspace work must first select
+one explicit option instead of treating workspace continuation as implicit
+build authorization.
 
 ## Workspace State Units
 

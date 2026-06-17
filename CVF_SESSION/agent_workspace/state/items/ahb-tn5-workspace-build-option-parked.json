@@ -1,0 +1,22 @@
+{
+  "stateOrder": 2,
+  "workspaceItemId": "ahb-tn5-workspace-build-option-parked-2026-06-17",
+  "itemKind": "parked",
+  "status": "PARKED_PENDING_OPERATOR_DECISION",
+  "ownerRole": "operator",
+  "route": "SINGLE_AGENT_MULTI_ROLE",
+  "rolePattern": "operator_decision_to_future_dispatch",
+  "phase": "parked",
+  "baseHead": "8cfe709e",
+  "changedSetScope": "N/A with reason: workspace build is not authorized by this parked option item.",
+  "traceScope": "N/A with reason: option-readiness marker only.",
+  "commitOwner": "N/A with reason: no future build commit implied by this parked option item.",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md",
+  "evidencePaths": [
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
+    "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+  ],
+  "claimBoundary": "Workspace build remains parked; no UI, runtime queue, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+  "nextMoveImpact": "If operator selects this option, a fresh GC-018 and work order must authorize the bounded workspace build surface before implementation.",
+  "archivePolicy": "Remove from active workspace state only after a future governed workspace build decision is committed and session-sync records the selected path."
+}

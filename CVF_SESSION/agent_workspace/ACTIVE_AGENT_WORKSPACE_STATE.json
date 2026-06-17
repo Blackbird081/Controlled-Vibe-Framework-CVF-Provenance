@@ -12,14 +12,14 @@
     {
       "workspaceItemId": "ahb-tn4-workspace-state-foundation-parked-2026-06-17",
       "itemKind": "parked",
-      "status": "PARKED_PENDING_OPERATOR_DECISION",
+      "status": "CLOSED_PASS_BOUNDED",
       "ownerRole": "operator",
       "route": "SINGLE_AGENT_MULTI_ROLE",
       "rolePattern": "operator_decision_to_future_dispatch",
       "phase": "parked",
       "baseHead": "f8964c7a",
-      "changedSetScope": "N/A with reason: future workspace build or generated-state expansion is not authorized by this parked item.",
-      "traceScope": "N/A with reason: parked next-move marker only.",
+      "changedSetScope": "N/A with reason: this parked marker is superseded by AHB-Tn.5 option readiness items.",
+      "traceScope": "N/A with reason: superseded parked marker only.",
       "commitOwner": "N/A with reason: no commit implied by parked item.",
       "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md",
       "evidencePaths": [
@@ -27,8 +27,71 @@
         "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
       ],
       "claimBoundary": "No workspace build, runtime/product mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
-      "nextMoveImpact": "Records that future workspace build or generated-state expansion requires fresh operator authorization and GC-018.",
-      "archivePolicy": "Remove from active workspace state only after a later governed tranche supersedes this parked candidate with committed evidence and session-sync."
+      "nextMoveImpact": "Superseded by AHB-Tn.5 option readiness items.",
+      "archivePolicy": "Remove from active workspace state only after AHB-Tn.5 or a later governed tranche records committed option disposition and session-sync."
+    },
+    {
+      "workspaceItemId": "ahb-tn5-workspace-build-option-parked-2026-06-17",
+      "itemKind": "parked",
+      "status": "PARKED_PENDING_OPERATOR_DECISION",
+      "ownerRole": "operator",
+      "route": "SINGLE_AGENT_MULTI_ROLE",
+      "rolePattern": "operator_decision_to_future_dispatch",
+      "phase": "parked",
+      "baseHead": "8cfe709e",
+      "changedSetScope": "N/A with reason: workspace build is not authorized by this parked option item.",
+      "traceScope": "N/A with reason: option-readiness marker only.",
+      "commitOwner": "N/A with reason: no future build commit implied by this parked option item.",
+      "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md",
+      "evidencePaths": [
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
+        "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+      ],
+      "claimBoundary": "Workspace build remains parked; no UI, runtime queue, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+      "nextMoveImpact": "If operator selects this option, a fresh GC-018 and work order must authorize the bounded workspace build surface before implementation.",
+      "archivePolicy": "Remove from active workspace state only after a future governed workspace build decision is committed and session-sync records the selected path."
+    },
+    {
+      "workspaceItemId": "ahb-tn5-richer-state-lanes-option-parked-2026-06-17",
+      "itemKind": "parked",
+      "status": "PARKED_PENDING_OPERATOR_DECISION",
+      "ownerRole": "operator",
+      "route": "SINGLE_AGENT_MULTI_ROLE",
+      "rolePattern": "operator_decision_to_future_dispatch",
+      "phase": "parked",
+      "baseHead": "8cfe709e",
+      "changedSetScope": "N/A with reason: richer workspace state lanes are not authorized by this parked option item.",
+      "traceScope": "N/A with reason: option-readiness marker only.",
+      "commitOwner": "N/A with reason: no future state-lane commit implied by this parked option item.",
+      "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md",
+      "evidencePaths": [
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
+        "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+      ],
+      "claimBoundary": "Richer workspace state lanes remain parked; no runtime queue, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+      "nextMoveImpact": "If operator selects this option, a fresh GC-018 and work order must define the exact additional state units, statuses, archive policy, and checker updates.",
+      "archivePolicy": "Remove from active workspace state only after a future governed state-lane decision is committed and session-sync records the selected path."
+    },
+    {
+      "workspaceItemId": "ahb-tn5-foundation-hardening-option-parked-2026-06-17",
+      "itemKind": "parked",
+      "status": "PARKED_PENDING_OPERATOR_DECISION",
+      "ownerRole": "operator",
+      "route": "SINGLE_AGENT_MULTI_ROLE",
+      "rolePattern": "operator_decision_to_future_dispatch",
+      "phase": "parked",
+      "baseHead": "8cfe709e",
+      "changedSetScope": "N/A with reason: further workspace foundation hardening is not authorized by this parked option item.",
+      "traceScope": "N/A with reason: option-readiness marker only.",
+      "commitOwner": "N/A with reason: no future foundation-hardening commit implied by this parked option item.",
+      "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md",
+      "evidencePaths": [
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
+        "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+      ],
+      "claimBoundary": "Further foundation hardening remains parked; no runtime/product mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+      "nextMoveImpact": "If operator selects this option, a fresh GC-018 and work order must name the bounded foundation gap and decide whether documentation, checker, or hook enforcement is needed.",
+      "archivePolicy": "Remove from active workspace state only after a future governed foundation-hardening decision is committed and session-sync records the selected path."
     }
   ]
 }
