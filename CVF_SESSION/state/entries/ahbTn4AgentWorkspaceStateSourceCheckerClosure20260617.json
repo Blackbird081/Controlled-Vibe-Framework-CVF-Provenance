@@ -1,0 +1,25 @@
+{
+  "stateOrder": 425,
+  "stateKey": "ahbTn4AgentWorkspaceStateSourceCheckerClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "39fb942d",
+    "executionBaseHead": "f8964c7a",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN4_AGENT_WORKSPACE_STATE_SOURCE_CHECKER_COMPLETION_2026-06-17.md",
+    "workspaceFrontDoor": "docs/reference/agent_workspace/README.md",
+    "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
+    "topologyContract": "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+    "aggregate": "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+    "sourceCore": "CVF_SESSION/agent_workspace/state/ACTIVE_AGENT_WORKSPACE_STATE_CORE.json",
+    "sourceItems": "CVF_SESSION/agent_workspace/state/items/",
+    "generator": "governance/compat/generate_agent_workspace_state.py",
+    "checker": "governance/compat/check_agent_workspace_state.py",
+    "checkerTests": "governance/compat/test_agent_workspace_state.py",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.4 created the generated agent workspace state source layout, aggregate, generator, checker, hook wiring, and steward classification needed before any future workspace build.",
+    "claimBoundary": "No workspace build, runtime/product mutation, registry edit, provider/live proof, public-sync, production readiness, or public readiness.",
+    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn.5 workspace build, richer workspace state lanes, or another bounded CVF foundation/refactor tranche with fresh GC-018."
+  }
+}

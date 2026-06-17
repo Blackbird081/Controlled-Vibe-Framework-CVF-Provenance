@@ -15,6 +15,6 @@
     "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
     "result": "AHB-Tn.3 defined the stable workspace state topology contract before any workspace build or generated state aggregate.",
     "claimBoundary": "No workspace build, runtime/product mutation, generated workspace state, registry edit, provider/live proof, public-sync, production readiness, or public readiness.",
-    "nextAllowedMove": "Operator decision whether to authorize AHB-Tn.4 workspace build or generated workspace state source/checker tranche, or another bounded CVF foundation/refactor tranche with fresh GC-018. Workspace build remains unauthorized."
+    "nextAllowedMove": "Superseded by AHB-Tn.4 closure. Future workspace build or richer workspace state lanes remain unauthorized until AHB-Tn.5 or another fresh operator-authorized tranche."
   }
 }
