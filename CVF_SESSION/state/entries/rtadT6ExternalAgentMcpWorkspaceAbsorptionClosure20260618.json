@@ -1,0 +1,20 @@
+{
+  "stateOrder": 441,
+  "stateKey": "rtadT6ExternalAgentMcpWorkspaceAbsorptionClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "7d8ae7b3",
+    "executionBaseHead": "c5033df4",
+    "roadmap": "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_FOR_CODEX_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md",
+    "externalAgentReviewFrontDoor": "docs/reference/external_agent_review/README.md",
+    "workflowChainPublicReviewContext": "docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md",
+    "externalPackageAbsorptionMap": "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md",
+    "mcpGatewayFrontDoor": "docs/reference/mcp_gateway/README.md",
+    "agentWorkspaceFrontDoor": "docs/reference/agent_workspace/README.md",
+    "boundedClaim": "CVF absorbed useful MCP/workspace review patterns from Foundry and the copied external workspace-layer package into governed reference/context surfaces only. CVF remains source of truth; public/simple lifecycle labels are display vocabulary unless mapped to governed CVF workflow-chain surfaces; the raw external package remains local/ignored and is not canonical.",
+    "gateSummary": "worker-return fast gate passed before material commit; material commit pre-commit hook passed 50/50 checks; pre-closure material range passed all content gates and failed only on expected pre-session-sync handoff HEAD drift."
+  }
+}
