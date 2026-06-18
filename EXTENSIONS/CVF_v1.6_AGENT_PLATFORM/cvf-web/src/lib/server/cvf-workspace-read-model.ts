@@ -2,10 +2,23 @@ import { existsSync, readFileSync } from 'fs';
 import { dirname, resolve } from 'path';
 
 const ACTIVE_STATE_PATH = 'CVF_SESSION/ACTIVE_SESSION_STATE.json';
+const WORKSPACE_STATE_PATH = 'CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json';
 const SESSION_MEMORY_PATH = 'CVF_SESSION_MEMORY.md';
 const ROADMAP_PATH = 'docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md';
 const WORK_ORDER_PATH = 'docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md';
 const GC018_PATH = 'docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md';
+const LANE_ORDER = [
+    'intake',
+    'dispatch',
+    'execution',
+    'worker_return',
+    'review',
+    'accepted_material',
+    'session_sync',
+    'parked',
+    'blocked',
+    'archive_ready',
+];
 
 interface ActiveSessionState {
     currentMode?: string;
@@ -23,6 +36,25 @@ interface ActiveSessionState {
     };
 }
 
+interface AgentWorkspaceStateItem {
+    workspaceItemId?: string;
+    lane?: string;
+    itemKind?: string;
+    status?: string;
+    ownerRole?: string;
+    phase?: string;
+    sourceWorkOrder?: string;
+    evidencePaths?: string[];
+    claimBoundary?: string;
+    nextMoveImpact?: string;
+    resumeCondition?: string;
+}
+
+interface AgentWorkspaceState {
+    status?: string;
+    items?: AgentWorkspaceStateItem[];
+}
+
 export interface WorkspaceLink {
     label: string;
     href: string;
@@ -35,6 +67,26 @@ export interface WorkspaceSourceStatus {
     path: string;
     status: string;
     exists: boolean;
+}
+
+export interface WorkspaceLaneSummaryItem {
+    workspaceItemId: string;
+    itemKind: string;
+    status: string;
+    ownerRole: string;
+    phase: string;
+    sourceWorkOrder: string;
+    evidencePaths: string[];
+    claimBoundary: string;
+    nextMoveImpact: string;
+    resumeCondition: string;
+}
+
+export interface WorkspaceLaneSummary {
+    lane: string;
+    count: number;
+    statuses: string[];
+    recentItems: WorkspaceLaneSummaryItem[];
 }
 
 export interface CvfWorkspaceReadModel {
@@ -52,6 +104,8 @@ export interface CvfWorkspaceReadModel {
     roadmap: WorkspaceSourceStatus;
     workOrder: WorkspaceSourceStatus;
     gc018: WorkspaceSourceStatus;
+    workspaceState: WorkspaceSourceStatus;
+    laneSummaries: WorkspaceLaneSummary[];
     dispatch: {
         status: string;
         materialCommit: string;
@@ -86,6 +140,16 @@ function readText(repoRoot: string, path: string): string | null {
     const absolutePath = resolve(repoRoot, path);
     if (!existsSync(absolutePath)) return null;
     return readFileSync(absolutePath, 'utf8');
+}
+
+function readJson<T>(repoRoot: string, path: string): T | null {
+    const text = readText(repoRoot, path);
+    if (text === null) return null;
+    try {
+        return JSON.parse(text) as T;
+    } catch {
+        return null;
+    }
 }
 
 function readStatus(content: string | null): string {
@@ -155,6 +219,46 @@ function sourceExists(repoRoot: string, path: string): boolean {
     return existsSync(resolve(repoRoot, path));
 }
 
+function normalizeLaneItem(item: AgentWorkspaceStateItem): WorkspaceLaneSummaryItem {
+    return {
+        workspaceItemId: item.workspaceItemId ?? 'UNKNOWN',
+        itemKind: item.itemKind ?? 'UNKNOWN',
+        status: item.status ?? 'UNKNOWN',
+        ownerRole: item.ownerRole ?? 'UNKNOWN',
+        phase: item.phase ?? 'UNKNOWN',
+        sourceWorkOrder: item.sourceWorkOrder ?? 'N/A',
+        evidencePaths: item.evidencePaths ?? [],
+        claimBoundary: item.claimBoundary ?? 'N/A',
+        nextMoveImpact: item.nextMoveImpact ?? 'N/A',
+        resumeCondition: item.resumeCondition ?? 'N/A',
+    };
+}
+
+function laneSortKey(lane: string): number {
+    const index = LANE_ORDER.indexOf(lane);
+    return index >= 0 ? index : LANE_ORDER.length;
+}
+
+function summarizeWorkspaceLanes(state: AgentWorkspaceState | null): WorkspaceLaneSummary[] {
+    const groups = new Map<string, AgentWorkspaceStateItem[]>();
+    for (const item of state?.items ?? []) {
+        const lane = item.lane ?? 'unknown';
+        groups.set(lane, [...(groups.get(lane) ?? []), item]);
+    }
+
+    return [...groups.entries()]
+        .sort(([left], [right]) => laneSortKey(left) - laneSortKey(right) || left.localeCompare(right))
+        .map(([lane, items]) => {
+            const statuses = [...new Set(items.map(item => item.status ?? 'UNKNOWN'))].sort();
+            return {
+                lane,
+                count: items.length,
+                statuses,
+                recentItems: items.slice(0, 3).map(normalizeLaneItem),
+            };
+        });
+}
+
 export function getCvfWorkspaceReadModel(options: CvfWorkspaceReadModelOptions = {}): CvfWorkspaceReadModel {
     const repoRoot = options.repoRoot ?? resolveRepoRoot();
     const stateRaw = readText(repoRoot, ACTIVE_STATE_PATH);
@@ -166,13 +270,16 @@ export function getCvfWorkspaceReadModel(options: CvfWorkspaceReadModelOptions =
     const handoffNextMove = readSection(activeHandoff, 'Next Allowed Move');
     const nextAllowedMove = nextAllowedMoveFromState(state, sessionMemory);
     const dispatch = state.wwuT2CvfWebWorkspaceOperatorDashboardReadModelDispatch20260618 ?? {};
+    const agentWorkspaceState = readJson<AgentWorkspaceState>(repoRoot, WORKSPACE_STATE_PATH);
 
     const roadmap = sourceStatus(repoRoot, 'WWU roadmap', dispatch.roadmap ?? ROADMAP_PATH);
     const workOrder = sourceStatus(repoRoot, 'WWU-T2 work order', dispatch.workOrder ?? WORK_ORDER_PATH);
     const gc018 = sourceStatus(repoRoot, 'WWU-T2 GC-018', dispatch.gc018 ?? GC018_PATH);
+    const workspaceState = sourceStatus(repoRoot, 'Generated workspace state', WORKSPACE_STATE_PATH);
 
     const sources: WorkspaceSourceStatus[] = [
         sourceStatus(repoRoot, 'Active session state', ACTIVE_STATE_PATH),
+        workspaceState,
         sourceStatus(repoRoot, 'Session memory front door', SESSION_MEMORY_PATH),
         sourceStatus(repoRoot, 'Active handoff', activeHandoffPath),
         roadmap,
@@ -195,6 +302,8 @@ export function getCvfWorkspaceReadModel(options: CvfWorkspaceReadModelOptions =
         roadmap,
         workOrder,
         gc018,
+        workspaceState,
+        laneSummaries: summarizeWorkspaceLanes(agentWorkspaceState),
         dispatch: {
             status: dispatch.status ?? 'UNKNOWN',
             materialCommit: dispatch.materialCommit ?? 'UNKNOWN',

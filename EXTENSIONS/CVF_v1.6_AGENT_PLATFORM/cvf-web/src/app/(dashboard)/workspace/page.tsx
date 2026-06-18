@@ -5,10 +5,11 @@ import {
     CheckCircle2,
     FileCheck2,
     GitBranch,
+    Layers3,
     LockKeyhole,
     ShieldCheck,
 } from 'lucide-react';
-import { getCvfWorkspaceReadModel, type WorkspaceLink, type WorkspaceSourceStatus } from '@/lib/server/cvf-workspace-read-model';
+import { getCvfWorkspaceReadModel, type WorkspaceLaneSummary, type WorkspaceLink, type WorkspaceSourceStatus } from '@/lib/server/cvf-workspace-read-model';
 
 export const dynamic = 'force-dynamic';
 
@@ -53,6 +54,45 @@ function LinkCard({ link }: { link: WorkspaceLink }) {
             </div>
             <div className="mt-3 font-mono text-[11px] uppercase tracking-wide text-gray-400 dark:text-gray-500">{link.kind}</div>
         </Link>
+    );
+}
+
+function LaneSummaryCard({ summary }: { summary: WorkspaceLaneSummary }) {
+    return (
+        <div className="rounded-lg border border-gray-200 bg-white dark:border-white/[0.08] dark:bg-[#151827]">
+            <div className="flex items-start justify-between gap-3 border-b border-gray-200 p-4 dark:border-white/[0.08]">
+                <div className="min-w-0">
+                    <div className="break-all font-mono text-sm font-semibold text-gray-950 dark:text-white">{summary.lane}</div>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                        {summary.statuses.map((status) => <StatusBadge key={status} status={status} />)}
+                    </div>
+                </div>
+                <div className="rounded-md bg-slate-100 px-2.5 py-1 font-mono text-xs font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-100">
+                    {summary.count}
+                </div>
+            </div>
+            <div>
+                {summary.recentItems.map((item) => (
+                    <div key={item.workspaceItemId} className="border-t border-gray-100 px-4 py-3 text-xs leading-5 first:border-t-0 dark:border-white/[0.06]">
+                        <div className="flex flex-wrap items-center gap-2">
+                            <span className="break-all font-mono font-semibold text-gray-950 dark:text-white">{item.workspaceItemId}</span>
+                            <span className="text-gray-500 dark:text-gray-400">{item.itemKind}</span>
+                        </div>
+                        <div className="mt-2 grid gap-2 text-gray-600 dark:text-gray-300">
+                            <div className="break-all">
+                                <span className="font-semibold text-gray-800 dark:text-gray-100">Owner:</span> {item.ownerRole}
+                            </div>
+                            <div className="break-all">
+                                <span className="font-semibold text-gray-800 dark:text-gray-100">Source:</span> {item.sourceWorkOrder}
+                            </div>
+                            {item.evidencePaths.slice(0, 2).map((path) => (
+                                <div key={path} className="break-all font-mono text-[11px] text-gray-500 dark:text-gray-400">{path}</div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 }
 
@@ -129,6 +169,25 @@ export default function WorkspacePage() {
                         ))}
                     </div>
                 </div>
+            </section>
+
+            <section>
+                <div className="mb-3 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-gray-950 dark:text-white">
+                        <Layers3 className="h-4 w-4 text-indigo-500" aria-hidden="true" />
+                        Workspace State Lanes
+                    </div>
+                    <StatusBadge status={model.workspaceState.exists ? model.workspaceState.status : 'MISSING'} />
+                </div>
+                {model.laneSummaries.length > 0 ? (
+                    <div className="grid gap-4 lg:grid-cols-2">
+                        {model.laneSummaries.map((summary) => <LaneSummaryCard key={summary.lane} summary={summary} />)}
+                    </div>
+                ) : (
+                    <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-600 dark:border-white/[0.08] dark:bg-[#151827] dark:text-gray-300">
+                        No workspace lane items found.
+                    </div>
+                )}
             </section>
 
             <section className="grid gap-4 lg:grid-cols-3">

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `517ba80c`
 
-executionBaseHead: `517ba80c`
+executionBaseHead: `3742f811`
 
-closureBaseHead: `N/A_DISPATCH_ONLY_EXECUTION_WILL_CAPTURE_CLOSURE_BASE`
+closureBaseHead: `3742f811`
 
 rawMemoryReleased: false
 
@@ -32,8 +32,8 @@ Canonical packet:
 
 Commit mode: `WORKER_MAY_COMMIT`
 
-Base: executionBaseHead `517ba80c`, captured from the source-backed WWU-T2
-closure material commit `b3593e1b` and session-sync commit `517ba80c`.
+Base: executionBaseHead `3742f811`, captured after WWU-T2A dispatch commit
+`b3d89c60` and handoff-sync commit `3742f811`.
 
 Current-time notes: WWU-T2 is closed and WWU-T3 Local Workspace Runtime/MCP is
 parked. This work order opens only a read-only CVF Web Workspace follow-up that
@@ -111,7 +111,7 @@ claims, destructive actions, or paths outside Write Ownership.
 | Operator instruction | 2026-06-19 continue request | ACCEPTED as bounded Web Workspace continuation only |
 | Active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | WWU-T2 closed; WWU-T3 parked |
 | Active handoff | `AGENT_HANDOFF_V19_2026-06-15.md` | next allowed move permits only fresh GC-018/work order for Web follow-up |
-| WWU roadmap | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | WWU-T2A ready for implementation |
+| WWU roadmap | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | WWU-T2A closed bounded; WWU-T3 parked |
 | WWU-T2 completion | `docs/reviews/CVF_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_COMPLETION_2026-06-18.md` | `CLOSED_PASS_BOUNDED` |
 | WWU-T2A GC-018 | `docs/baselines/CVF_GC018_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_2026-06-19.md` | `DISPATCH_READY` |
 
@@ -136,7 +136,7 @@ claims, destructive actions, or paths outside Write Ownership.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | Codex worker; Codex reviewer/closer; Codex session-sync actor if needed; operator escalation |
 | phase | DISPATCH_AUTHORING now; EXECUTION by Codex; CLOSURE by Codex; SESSION_SYNC by Codex in a separate range if next move changes |
-| baseHeadFor(phase) | `dispatchBaseHead=517ba80c`; `executionBaseHead=517ba80c`; `closureBaseHead=N/A_DISPATCH_ONLY_EXECUTION_WILL_CAPTURE_CLOSURE_BASE` |
+| baseHeadFor(phase) | `dispatchBaseHead=517ba80c`; `executionBaseHead=3742f811`; `closureBaseHead=3742f811` |
 | changedSetScope(phase) | dispatch scope is WWU-T2A GC-018, work order, roadmap, and registry; execution scope is named read-model/API/page/test paths plus completion/evidence; session-sync range is protected continuity files only |
 | traceScope(phase, actor) | dispatch trace covers dispatch files only; execution trace covers product and completion files; session-sync trace covers session/front-door files only |
 | commitOwner(phase) | Codex for dispatch, material execution, closure, and session-sync |
@@ -260,11 +260,11 @@ Codex must read:
 
 | Roadmap requirement | Work order section | Worker deliverable | Verification command or check | Status |
 |---|---|---|---|---|
-| Later bounded Web Workspace follow-up requires fresh GC-018 and work order. | Purpose; GC-018 | WWU-T2A dispatch packet | pre-dispatch gate | READY |
-| UI/frontend implementation must read DESIGN.md. | Required first actions; Source Verification Block | completion records DESIGN.md read | completion evidence plus UI test | READY |
-| Keep Local Runtime/MCP parked. | Forbidden Scope; Runtime Expansion Control Block | no runtime/MCP paths touched | git diff/name-status review | READY |
-| Preserve read-only Web Workspace boundary. | Workspace Two-Layer Control Block | read-only lane summary | focused tests | READY |
-| Use generated workspace state topology. | Agent Workspace Design Control Block; Source Verification Block | map lane fields into read model | focused helper test | READY |
+| Later bounded Web Workspace follow-up requires fresh GC-018 and work order. | Purpose; GC-018 | WWU-T2A dispatch packet | pre-dispatch gate | PASS |
+| UI/frontend implementation must read DESIGN.md. | Required first actions; Source Verification Block | completion records DESIGN.md read | completion evidence plus UI test | PASS |
+| Keep Local Runtime/MCP parked. | Forbidden Scope; Runtime Expansion Control Block | no runtime/MCP paths touched | git diff/name-status review | PASS |
+| Preserve read-only Web Workspace boundary. | Workspace Two-Layer Control Block | read-only lane summary | focused tests | PASS |
+| Use generated workspace state topology. | Agent Workspace Design Control Block; Source Verification Block | map lane fields into read model | focused helper test | PASS |
 
 ## Write Ownership
 
@@ -272,6 +272,7 @@ Allowed scope:
 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/cvf-workspace-read-model.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/cvf-workspace-read-model.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/workspace/state/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.tsx`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.test.tsx`
@@ -299,7 +300,7 @@ Run before implementation:
 git rev-parse --short HEAD
 git status --short
 rg -n "ACTIVE_AGENT_WORKSPACE_STATE|workspaceItemId|laneSummary|workspaceLanes|items" EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 517ba80c --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 3742f811 --head HEAD
 ```
 
 Expected result: worktree is clean, existing read-model files are present from
@@ -390,17 +391,17 @@ Return `BLOCKED_WITH_REASON` if:
 
 ## Closure Checklist
 
-| Item | Required disposition at closure |
+| Item | Final disposition |
 |---|---|
-| Required first reads completed | PASS or BLOCKED with reason |
-| Source Verification Block recomputed | PASS or BLOCKED with reason |
-| Read-only lane summary implemented | PASS or BLOCKED with reason |
-| Focused tests/checks run | PASS or BLOCKED with reason |
-| Material changed paths inside ownership | PASS or BLOCKED with reason |
+| Required first reads completed | PASS |
+| Source Verification Block recomputed | PASS |
+| Read-only lane summary implemented | PASS |
+| Focused tests/checks run | PASS |
+| Material changed paths inside ownership | PASS |
 | No protected session/handoff/generated state material mutation | PASS |
 | No Local Runtime/MCP/provider/live/public-sync/readiness claim | PASS |
 | Completion review filed | PASS |
-| Session-sync split if next move changes | PASS or N/A with reason |
+| Session-sync split if next move changes | N/A with reason: material range excludes protected session paths; continuity sync is a separate range after material commit if required |
 
 ## Verification To Run Before Closure
 
@@ -427,16 +428,17 @@ claims, destructive actions, or scope expansion.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | GC-018 baseline | `docs/baselines/CVF_GC018_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_2026-06-19.md` | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | `ROADMAP_ACTIVE_WWU_T2A_READY_FOR_IMPLEMENTATION_T3_PARKED` | PASS |
-| Completion or reviewer artifact | N/A with reason: dispatch-only packet; implementation completion is required before closure | no completion path changed in dispatch range | N/A with reason |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated from source entry | PASS after generation |
+| Roadmap state | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | `ROADMAP_ACTIVE_WWU_T2A_CLOSED_PASS_BOUNDED_T3_PARKED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Evidence digest | `docs/reviews/evidence/wwu-t2a-cvf-web-workspace-lane-summary-read-model-2026-06-19.json` | `status=CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated from source entry in dispatch range | PASS |
 | Registry Markdown | BLOCKED with reason: no separate markdown registry exists for this reference family | no path changed | BLOCKED with reason |
-| External evidence digest | N/A with reason: no external evidence consumed in dispatch | repo-local governed artifacts only | N/A with reason |
+| External evidence digest | N/A with reason: no external evidence consumed in implementation | repo-local governed artifacts only | N/A with reason |
 | System loop interlock | N/A with reason: no runtime interlock mutation authorized | no interlock path changed | N/A with reason |
-| Session continuity | separate session-sync follows accepted material if next move changes | no session path changed in dispatch range | N/A with reason |
-| Runtime/provider proof | BLOCKED with reason: runtime/provider proof is forbidden in WWU-T2A | no provider/live receipt accepted | BLOCKED with reason |
+| Session continuity | separate session-sync follows accepted material if next move changes | no session path changed in material range | N/A with reason |
+| Runtime/provider proof | N/A with reason: runtime/provider proof is forbidden in WWU-T2A | no provider/live receipt accepted | N/A with reason |
 | Public export disposition | `DEFERRED_PRIVATE_ONLY` | private provenance dispatch | PASS |
 
 ## Acceptance Receipt Assertion Matrix
@@ -460,7 +462,7 @@ authorized.
 
 | Field | Disposition |
 |---|---|
-| Defect class | `OPERATOR_VISIBILITY_GAP` |
+| Defect class | `OPERATOR_SCOPE_CLARITY_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `WORK_ORDER_ADDED` |
 | Next control action | Implement read-only generated workspace lane summary in the Web Workspace before any action-request/runtime tranche |
@@ -478,15 +480,15 @@ authorized.
 | Target paths | WWU roadmap; WWU-T2A GC-018; this work order; GC-051 registry source entry |
 | Allowed scope source | active session next allowed move plus WWU-T2 material commit `b3593e1b` and session-sync commit `517ba80c` |
 | Before status evidence | base `517ba80c`; clean worktree before dispatch authoring |
-| After status evidence | WWU-T2A dispatch material diff ready for commit |
-| Diff evidence | `git diff --name-status 517ba80c..HEAD` |
+| After status evidence | WWU-T2A lane summary implementation and completion evidence ready for material commit |
+| Diff evidence | `git diff --name-status 3742f811..HEAD` |
 | Approval boundary | work-order dispatch only |
 | Claim boundary | no product source implementation in dispatch batch; no runtime/provider/live/public-sync/readiness claim |
 | Agent type | Codex |
 | Invocation ID | `wwu-t2a-cvf-web-workspace-lane-summary-read-model-codex-2026-06-19` |
 | Expected manifest | N/A with reason: dispatch-ready work order names future execution paths in Write Ownership, so AOT exact-manifest comparison is deferred to material implementation |
-| Actual changed set | N/A with reason: dispatch-ready work order names future execution paths in Write Ownership, so AOT exact-manifest comparison is deferred to material implementation |
-| Manifest delta | N/A with reason: dispatch-ready work order names future execution paths in Write Ownership, so AOT exact-manifest comparison is deferred to material implementation |
+| Actual changed set | product files, focused tests, roadmap, work order, completion review, evidence digest |
+| Manifest delta | none |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary

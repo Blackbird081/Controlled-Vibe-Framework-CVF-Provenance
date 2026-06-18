@@ -35,6 +35,35 @@ vi.mock('@/lib/server/cvf-workspace-read-model', () => ({
             status: 'DISPATCH_READY',
             exists: true,
         },
+        workspaceState: {
+            label: 'Generated workspace state',
+            path: 'CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json',
+            status: 'PRESENT',
+            exists: true,
+        },
+        laneSummaries: [
+            {
+                lane: 'accepted_material',
+                count: 1,
+                statuses: ['CLOSED_PASS_BOUNDED'],
+                recentItems: [
+                    {
+                        workspaceItemId: 'wwu-t2-accepted-material-2026-06-18',
+                        itemKind: 'web_workspace_read_model',
+                        status: 'CLOSED_PASS_BOUNDED',
+                        ownerRole: 'Codex',
+                        phase: 'closure',
+                        sourceWorkOrder: 'docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md',
+                        evidencePaths: [
+                            'docs/reviews/CVF_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_COMPLETION_2026-06-18.md',
+                        ],
+                        claimBoundary: 'Read-only dashboard only.',
+                        nextMoveImpact: 'WWU-T3 remains parked.',
+                        resumeCondition: 'N/A',
+                    },
+                ],
+            },
+        ],
         dispatch: {
             status: 'DISPATCH_READY',
             materialCommit: '1bbf3046',
@@ -76,6 +105,10 @@ describe('WorkspacePage', () => {
         expect(screen.getByText('wwu_t2_web_workspace_read_model_dispatched_t3_parked')).toBeTruthy();
         expect(screen.getByText('AGENT_HANDOFF_V19_2026-06-15.md')).toBeTruthy();
         expect(screen.getByText('WWU-T3 Local Workspace Runtime/MCP remains parked.')).toBeTruthy();
+        expect(screen.getByText('Workspace State Lanes')).toBeTruthy();
+        expect(screen.getByText('accepted_material')).toBeTruthy();
+        expect(screen.getByText('wwu-t2-accepted-material-2026-06-18')).toBeTruthy();
+        expect(screen.getByText('web_workspace_read_model')).toBeTruthy();
         expect(screen.getByRole('link', { name: /Evidence State/ }).getAttribute('href')).toBe('/governance/evidence');
         expect(screen.queryByRole('button')).toBeNull();
     });
