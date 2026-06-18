@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `rtad_t3_model_gateway_live_run_closed_runtime_parked`
+Current mode marker: `rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rtad_t3_model_gateway_live_run_closed_runtime_parked`.
+Current mode: `rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`.
 
 Active handoff:
 
@@ -106,6 +106,15 @@ gateway implementation, release-facing claims, external-facing readiness,
 provider ranking/parity claims, Model Gateway redispatch/P3, and co-work
 product development remain parked.
 
+RTAD-T4 Alibaba endpoint and free-quota registry harness hardening is
+`CLOSED_PASS_BOUNDED` at material commit `07349e70`: the governed Model Gateway
+harness passed with Alibaba `qwen3.7-plus` on `dashscope-intl.aliyuncs.com`,
+freeQuotaStatus `usable`, and receipt `gw_20260618073540894_nbw6m3hk`.
+RTAD-T4 moved the Alibaba endpoint/key-scope finding and free-quota expiration
+preflight into governed runtime/registry surfaces without claiming provider
+ranking, broad provider parity, MCP readiness, release readiness, public
+readiness, or external-facing readiness.
+
 Stable artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
@@ -135,11 +144,13 @@ Stable artifacts:
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_FOR_CODEX_2026-06-18.md`
 - `docs/reviews/CVF_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_COMPLETION_2026-06-18.md`
 - `docs/reviews/evidence/rtad-t3-model-gateway-live-run-receipt-2026-06-18.json`
+- `docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md`
+- `docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json`
 
-Next move: decide the next governed runtime tranche after RTAD-T3 closure.
-Possible inputs include Model Gateway MCP/runtime bridge design, Alibaba
-diagnostic follow-up, or another runtime admission tranche, each requiring fresh
-GC-018 and a source-verified work order. Registry mutation, public-sync, MCP
+Next move: decide the next governed runtime tranche after RTAD-T4 closure.
+Possible inputs include Model Gateway MCP/runtime bridge design or another
+runtime admission tranche, each requiring fresh GC-018 and a source-verified
+work order. Public-sync, MCP
 gateway implementation, release-facing claims, external-facing readiness,
 provider ranking/parity claims, Model Gateway redispatch/P3, and co-work
 product development remain parked.
@@ -597,26 +608,25 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `rtad_t3_model_gateway_live_run_closed_runtime_parked`.
+Mode: `rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`.
 
-RTAD-T3 Model Gateway live proof is `CLOSED_PASS_BOUNDED` at material commit
-`71bfc3a3`. The bounded live run used existing available API-key aliases
-without printing or committing raw keys. DeepSeek `deepseek-chat` passed with
-receipt `gw_20260618063232191_5qgr2fbg`; Alibaba `qwen-turbo` produced a
-recorded `PARTIAL` `internal_error` diagnostic. Runtime workspace execution
-remains parked.
+RTAD-T4 Alibaba endpoint and free-quota registry harness hardening is
+`CLOSED_PASS_BOUNDED` at material commit `07349e70`. The governed Model Gateway
+harness passed with Alibaba `qwen3.7-plus` on `dashscope-intl.aliyuncs.com`,
+freeQuotaStatus `usable`, receipt `gw_20260618073540894_nbw6m3hk`, and no raw
+key disclosure. Runtime workspace execution remains parked.
 
 Next move: decide the next governed runtime tranche with fresh GC-018 and a
 source-verified work order. Candidate inputs include Model Gateway MCP/runtime
-bridge design, Alibaba diagnostic follow-up, or another bounded runtime
-admission tranche.
+bridge design or another bounded runtime admission tranche.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
 GC-018, and a source-verified work order.
 
-No provider/model addition, registry mutation, MCP gateway implementation,
-runtime behavior mutation beyond the bounded live proof, provider
+No provider/model addition beyond the bounded RTAD-T4 free-quota registry
+visibility, MCP gateway implementation, runtime behavior mutation beyond the
+bounded harness hardening, provider
 ranking/parity claim, governance checker implementation, EPF wiring, Strategy
 Layer implementation, AI Gateway absorption, public-sync, external app
 mutation, raw memory release, co-work product development, production
@@ -633,7 +643,7 @@ Parked lanes:
 4. AI Gateway family absorption: `PARKED_PENDING_PRIVACY_OPERATOR_AUTHORIZATION`
 5. Strategy Layer implementation: `DEFERRED_REQUIRES_SEPARATE_GC018`
 6. Model Gateway C-02 P4B-B Alibaba second-provider parity:
-   `PARKED_PENDING_VALID_DASHSCOPE_CREDENTIAL`
+   `PARKED_REQUIRES_SEPARATE_GC018`
 7. DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12: `PARKED`
 
 ## Active Rule Additions

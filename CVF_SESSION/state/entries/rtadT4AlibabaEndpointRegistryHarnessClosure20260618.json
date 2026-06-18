@@ -1,0 +1,26 @@
+{
+  "stateOrder": 440,
+  "stateKey": "rtadT4AlibabaEndpointRegistryHarnessClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "07349e70",
+    "executionBaseHead": "5b13bac7",
+    "roadmap": "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+    "evidenceReceipt": "docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json",
+    "selectedProof": "alibaba/qwen3.7-plus",
+    "endpointHost": "dashscope-intl.aliyuncs.com",
+    "freeQuotaStatus": "usable",
+    "receiptId": "gw_20260618073540894_nbw6m3hk",
+    "result": "Bounded Model Gateway Alibaba endpoint/free-quota registry hardening passed through the governed live harness.",
+    "checks": [
+      "Model Gateway npm run check PASS",
+      "Model Gateway npm test PASS 29 files / 219 tests",
+      "governed live harness PASS",
+      "worker-return fast gate PASS",
+      "pre-commit hook PASS 50/50"
+    ],
+    "claimBoundary": "Bounded Alibaba endpoint handling, free-quota registry visibility, expiration preflight, and governed harness rerun only; no provider ranking, broad provider parity, MCP readiness, release readiness, public readiness, external-facing readiness, or general provider reliability.",
+    "nextAllowedMove": "Select the next governed runtime tranche with fresh GC-018 and source-verified work order; possible inputs include Model Gateway MCP/runtime bridge design or another runtime admission tranche."
+  }
+}

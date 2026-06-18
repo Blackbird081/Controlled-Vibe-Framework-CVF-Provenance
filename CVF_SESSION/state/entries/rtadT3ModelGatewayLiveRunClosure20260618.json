@@ -20,6 +20,6 @@
       "pre-commit hook PASS 50/50"
     ],
     "claimBoundary": "Bounded live proof only; no provider ranking, provider parity, registry mutation, MCP implementation, public-sync, release-facing claim, external-facing readiness claim, runtime source mutation, or co-work product development.",
-    "nextAllowedMove": "Select the next governed runtime tranche with fresh GC-018 and source-verified work order; possible inputs include Model Gateway MCP/runtime bridge design or Alibaba diagnostic follow-up."
+    "nextAllowedMove": "Superseded by RTAD-T4 for the Alibaba endpoint/free-quota diagnostic follow-up. Select the next governed runtime tranche with fresh GC-018 and source-verified work order; possible inputs include Model Gateway MCP/runtime bridge design or another runtime admission tranche."
   }
 }
