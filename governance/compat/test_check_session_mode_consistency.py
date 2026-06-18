@@ -29,10 +29,14 @@ def _write_surfaces(root: Path, *, front=None, handoff=None, core=None) -> None:
     front = front or {}
     handoff = handoff or {}
     core = core if core is not None else "mode_x"
+    default_front_mode = front.get("mode", front.get("marker", "mode_x"))
 
     (root / "CVF_SESSION_MEMORY.md").write_text(
         f"Current mode marker: `{front.get('marker', 'mode_x')}`\n\n"
-        f"Current mode: `{front.get('mode', 'mode_x')}`.\n",
+        f"Current mode: `{front.get('mode', 'mode_x')}`.\n\n"
+        "## Next Allowed Move\n\n"
+        f"Mode: `{front.get('next_allowed_mode', default_front_mode)}`.\n\n"
+        "Next allowed move: keep testing.\n",
         encoding="utf-8",
     )
 
@@ -109,6 +113,23 @@ class CollectAndEvaluateTests(unittest.TestCase):
             )
             readings = self._markers(root)
             self.assertTrue(any("disagrees" in v for v in MODULE.evaluate(readings)))
+
+    def test_front_next_allowed_mode_drift_detected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_surfaces(
+                root,
+                front={
+                    "marker": "mode_new",
+                    "mode": "mode_new",
+                    "next_allowed_mode": "mode_old",
+                },
+                handoff={"startup": "mode_new", "current": "mode_new"},
+                core="mode_new",
+            )
+            readings = self._markers(root)
+            violations = MODULE.evaluate(readings)
+            self.assertTrue(any("disagrees" in v for v in violations))
 
     def test_missing_surface_flagged(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

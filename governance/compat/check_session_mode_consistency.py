@@ -4,7 +4,8 @@ CVF Session Mode-Consistency Checker
 
 Fails when the session mode marker disagrees across its canonical surfaces:
 
-- front door CVF_SESSION_MEMORY.md: `Current mode marker:` and `Current mode:`
+- front door CVF_SESSION_MEMORY.md: `Current mode marker:`, `Current mode:`,
+  and the `## Next Allowed Move` `Mode:` line
 - active handoff (resolved from ACTIVE_SESSION_STATE.json activeHandoff):
   the `## Current Mode` value and the startup acknowledgment `current mode=` field
 - CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json: `currentMode`
@@ -34,6 +35,7 @@ CORE_PATH = "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json"
 
 FRONT_DOOR_MARKER_RE = re.compile(r"^Current mode marker:\s*`([^`]+)`", re.MULTILINE)
 FRONT_DOOR_MODE_RE = re.compile(r"^Current mode:\s*`([^`]+)`", re.MULTILINE)
+NEXT_ALLOWED_MOVE_MODE_RE = re.compile(r"^Mode:\s*`([^`]+)`", re.MULTILINE)
 HANDOFF_STARTUP_RE = re.compile(r"current mode=`([^`]+)`")
 HANDOFF_CURRENT_MODE_RE = re.compile(
     r"^##\s+Current Mode\s*\n+\s*`([^`]+)`", re.MULTILINE
@@ -82,6 +84,24 @@ def _first_group(pattern: re.Pattern[str], text: str | None) -> str | None:
     return _normalize_mode(match.group(1)) if match else None
 
 
+def _extract_markdown_section(text: str | None, heading: str) -> str | None:
+    if text is None:
+        return None
+    lines = text.splitlines()
+    section: list[str] = []
+    capture = False
+    for line in lines:
+        if line.strip() == heading:
+            capture = True
+            section.append(line)
+            continue
+        if capture and line.startswith("## "):
+            break
+        if capture:
+            section.append(line)
+    return "\n".join(section) if section else None
+
+
 def resolve_active_handoff() -> str | None:
     """Resolve the active handoff path from ACTIVE_SESSION_STATE.json."""
     text = _read_text(STATE_PATH)
@@ -125,6 +145,14 @@ def collect_markers() -> list[MarkerReading]:
             "front-door Current mode",
             _first_group(FRONT_DOOR_MODE_RE, front_text),
             f"{FRONT_DOOR_PATH} Current mode:",
+        )
+    )
+    front_next_allowed = _extract_markdown_section(front_text, "## Next Allowed Move")
+    readings.append(
+        MarkerReading(
+            "front-door Next Allowed Move Mode",
+            _first_group(NEXT_ALLOWED_MOVE_MODE_RE, front_next_allowed),
+            f"{FRONT_DOOR_PATH} ## Next Allowed Move Mode:",
         )
     )
 
