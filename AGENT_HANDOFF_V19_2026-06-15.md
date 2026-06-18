@@ -24,8 +24,8 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after Prompt Read-First
-Placement Finding hardening material commit `7635a4a1`.
+Authorized session-sync scope: update active handoff after GFC-T1 accepted
+worker material commit `c8034a81`.
 
 Protected paths:
 
@@ -39,26 +39,27 @@ Protected paths:
 - `CVF_SESSION/state/entries/prfcT2CentralFactsPilotClosure20260617.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator instructed Codex on 2026-06-18 to handle the
-prompt read-first placement finding before continuing Claude worker-return
-review. Codex committed hardening at `7635a4a1`; this session-sync records the
-hardening and keeps GFC-T1 worker-return review as the next move.
+Operator authorization: operator instructed Codex on 2026-06-18 to handle
+GFC-T1 worker-return review. Codex accepted the worker packet at `c8034a81`;
+this session-sync records the accepted-material state and routes to GFC-T1
+bounded closure.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-prompt read-first hardening commit, GFC-T1 dispatch artifacts, PRFC material
-closures, CGFP-T1 material closure, supplemental finding, PRFC roadmap history,
-or prior AHB material artifacts.
+GFC-T1 accepted worker material commit, prompt read-first hardening commit,
+GFC-T1 dispatch artifacts, PRFC material closures, CGFP-T1 material closure,
+supplemental finding, PRFC roadmap history, or prior AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=review Claude GFC-T1 WORKER_MUST_NOT_COMMIT return, then Codex reviews actual files before accepted-material commit and bounded closure; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
+Startup acknowledged: current mode=`gfc_t1_foundation_consolidation_audit_accepted_material_pending_closure`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=author GFC-T1 completion review, update GFC roadmap/work-order closure state, run pre-closure, and session-sync final closure; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
 
 ## Current Mode
 
-`gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`
+`gfc_t1_foundation_consolidation_audit_accepted_material_pending_closure`
 
-Current HEAD recorded for this handoff: `7635a4a1`
-(Prompt Read-First Placement Finding hardening material commit `7635a4a1`;
+Current HEAD recorded for this handoff: `c8034a81`
+(GFC-T1 accepted worker material commit `c8034a81`;
+Prompt Read-First Placement Finding hardening material commit `7635a4a1`;
 GFC-T1 Governance Foundation Consolidation Audit dispatch commit `62b2fa27`;
 PRFC-T3 PLCS companion checker material closure commit `674ddf34`;
 prior anchor: PRFC-T3 dispatch-continuity sync commit `cced9179`;

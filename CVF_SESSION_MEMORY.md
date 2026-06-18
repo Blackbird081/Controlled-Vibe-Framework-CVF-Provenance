@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`
+Current mode marker: `gfc_t1_foundation_consolidation_audit_accepted_material_pending_closure`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`.
+Current mode: `gfc_t1_foundation_consolidation_audit_accepted_material_pending_closure`.
 
 Active handoff:
 
@@ -62,27 +62,16 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Prompt read-first placement finding is remediated at material commit
-`7635a4a1`. The prompt envelope standard, work-order template, template family
-index, checker, and focused tests now require delegated dispatch-ready work
-orders to put `## Dispatch Prompt Envelope` as the first `##` section before
-`## Purpose`.
+GFC-T1 Governance Foundation Consolidation Audit worker packet is accepted at
+commit `c8034a81` after Codex reviewer repair to align the stale-roadmap count
+from five to seven. Codex owns the remaining completion review, GFC
+roadmap/work-order closure state update, pre-closure gate, and final session
+sync.
 
-Stable artifact:
-
-- `docs/reviews/CVF_PROMPT_READ_FIRST_PLACEMENT_FINDING_2026-06-18.md`
-- `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`
-- `governance/compat/check_dispatch_prompt_envelope.py`
-
-GFC-T1 Governance Foundation Consolidation Audit is `DISPATCHED` to Claude at
-material dispatch commit `62b2fa27`. Claude is assigned
-`WORKER_MUST_NOT_COMMIT` and may return only:
+Accepted worker artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_WORKER_RETURN_2026-06-18.md`
-
-Codex owns review, accepted-material commit, closure, and session sync after
-worker return.
 
 Stable artifact:
 
@@ -94,6 +83,18 @@ This is audit/decision only. Runtime queue execution, scheduler, worker
 daemon, UI implementation, runtime/product mutation, registry edit,
 provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work
 product development remain parked.
+
+Prompt read-first placement finding is remediated at material commit
+`7635a4a1`. The prompt envelope standard, work-order template, template family
+index, checker, and focused tests now require delegated dispatch-ready work
+orders to put `## Dispatch Prompt Envelope` as the first `##` section before
+`## Purpose`.
+
+Stable artifact:
+
+- `docs/reviews/CVF_PROMPT_READ_FIRST_PLACEMENT_FINDING_2026-06-18.md`
+- `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`
+- `governance/compat/check_dispatch_prompt_envelope.py`
 
 PRFC-T3 PLCS companion-routing checker/interlock is `CLOSED_PASS_BOUNDED` at
 material commit `674ddf34`. The PRFC roadmap is closed bounded. Runtime
