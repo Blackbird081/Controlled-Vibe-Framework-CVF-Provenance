@@ -132,6 +132,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "roadmap closure freshness",
+            "governance/compat/check_roadmap_closure_freshness.py",
+            base,
+            head,
+        ),
+        _range_command(
             "multi-provider execution log quality",
             "governance/compat/check_multi_provider_execution_log.py",
             base,

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GFC_T1_T3_CLOSED_PASS_BOUNDED_RUNTIME_PARKED
+Status: GFC_T1_T5_CLOSED_PASS_BOUNDED_RUNTIME_PARKED
 
 docType: roadmap
 
@@ -23,7 +23,9 @@ opened:
 2. pilot FPRC-T3 root-cause grouping on a current finding-bearing governance
    packet;
 3. audit stale roadmap state surfaces that still advertise ready work after the
-   matching foundation artifact or guard has already shipped elsewhere.
+   matching foundation artifact or guard has already shipped elsewhere;
+4. close the pre-runtime readiness decision after the selected foundation
+   guard and template decisions are recorded.
 
 The goal is to reduce context-scan ambiguity for all agents before runtime,
 provider, public-sync, or product execution creates more state.
@@ -117,9 +119,10 @@ must retain role-specific judgment.
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | GFC-T1 | CLOSED_PASS_BOUNDED | Claude authored the CCLV-T4, FPRC-T3, and roadmap-state hygiene audit/decision packet; Codex accepted after reviewer repair | Claude worker; Codex reviewer |
-| GFC-T2 | HOLD_PENDING_OPERATOR_DECISION | Codex decides which CCLV-T4 rule or limit becomes a standard/template/checker change | Codex |
+| GFC-T2 | CLOSED_PASS_BOUNDED | CCLV-T4 converted to an opt-in/conditional standard rule; no broad hard-fail checker | Codex |
 | GFC-T3 | CLOSED_PASS_BOUNDED | Claude authored a no-commit roadmap-state hygiene remediation packet for the eight confirmed stale roadmap rows; Codex repaired the Rotation Guard D3/D4 stale cells and committed accepted material | Claude worker; Codex reviewer |
-| GFC-T4 | HOLD_PENDING_OPERATOR_DECISION | Optional FPRC-T3 machine or template follow-up if the T1 pilot proves value | Codex |
+| GFC-T4 | CLOSED_PASS_BOUNDED | FPRC-T3 promoted roadmap self-reference drift into a narrow machine guard wired into hooks and autorun | Codex |
+| GFC-T5 | CLOSED_PASS_BOUNDED | Pre-runtime readiness review recorded: governance foundation improved, runtime remains parked until fresh authorization | Codex |
 
 ## GFC-T1 Work Plan
 
@@ -259,7 +262,7 @@ material range is bounded to GFC-T1 governed documentation artifacts.
 | GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: GFC_T1_T3_CLOSED_PASS_BOUNDED_RUNTIME_PARKED` | PASS |
+| Roadmap state | this file | `Status: GFC_T1_T5_CLOSED_PASS_BOUNDED_RUNTIME_PARKED` | PASS |
 | Accepted material commit | `c8034a81` | two worker-owned review files only | PASS |
 | Session continuity | `f764f449` | accepted-material continuity synced before closure material | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
@@ -327,6 +330,29 @@ status-line remediations, and repaired the worker-reported Rotation Guard
 D3/D4 stale table cells before committing accepted material. Runtime,
 provider/live, public-sync, registry, workspace runtime, product runtime
 mutation, production readiness, and public readiness remain parked.
+
+## GFC-T2 / GFC-T4 / GFC-T5 Closure Record
+
+GFC-T2, GFC-T4, and GFC-T5 are `CLOSED_PASS_BOUNDED` at combined completion
+review:
+
+`docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md`
+
+Accepted decisions:
+
+- GFC-T2: CCLV-T4 is converted into an opt-in/conditional standard rule in
+  `docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md`.
+  CCLV should be used when shared facts repeat across multiple governed
+  artifacts, but it is not mandatory for small single-file or low-duplication
+  batches.
+- GFC-T4: FPRC-T3 is promoted into a narrow machine guard for same-file roadmap
+  closure freshness:
+  `governance/compat/check_roadmap_closure_freshness.py`, with stable front
+  door `docs/reference/roadmap_closure_freshness/README.md`.
+- GFC-T5: pre-runtime readiness is bounded. The governance foundation is
+  cleaner after GFC-T2/T3/T4, but runtime, provider/live proof, registry
+  mutation, public-sync, and product readiness remain parked until fresh
+  operator authorization and a fresh runtime-specific GC-018/work order.
 
 ## Claim Boundary
 

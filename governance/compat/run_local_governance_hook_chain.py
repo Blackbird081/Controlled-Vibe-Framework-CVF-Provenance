@@ -83,6 +83,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "roadmap closure freshness",
+        ["python", "governance/compat/check_roadmap_closure_freshness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "finding-to-governance learning quality",
         ["python", "governance/compat/check_finding_to_governance_learning.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -223,6 +227,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "machine closure package",
             ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "roadmap closure freshness",
+            ["python", "governance/compat/check_roadmap_closure_freshness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "multi-provider execution log quality",
@@ -401,6 +409,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "machine closure package",
             ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "roadmap closure freshness",
+            ["python", "governance/compat/check_roadmap_closure_freshness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "multi-provider execution log quality",

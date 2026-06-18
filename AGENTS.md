@@ -327,6 +327,35 @@ Open checkbox residue, stale continuity state, memory-based file-change claims,
 and roadmap requirements lost between dispatch and final artifact are closure
 defects. Operator silence is not a waiver.
 
+## Mandatory Roadmap Closure Freshness Guard - 2026-06-18
+
+Stable front door:
+
+`docs/reference/roadmap_closure_freshness/README.md`
+
+Canonical standard:
+
+`docs/reference/roadmap_closure_freshness/CVF_ROADMAP_CLOSURE_FRESHNESS_STANDARD.md`
+
+Machine guard:
+
+`governance/compat/check_roadmap_closure_freshness.py`
+
+Any agent that changes a roadmap top-of-file `Status:` line, edits a roadmap
+`## Machine Closure Package`, closes or reopens a roadmap tranche, or updates a
+roadmap self-reference must keep same-file roadmap closure state
+self-consistent.
+
+If a changed active roadmap's `Machine Closure Package` `Roadmap state` row
+refers to the same roadmap file, the row's cited `Status:` value must match the
+actual top-of-file `Status:` value exactly. Do not retype closure status from
+provider memory, chat history, or a previous packet; copy it from the roadmap's
+current top `Status:` line after the closure/status decision is made.
+
+This guard is mandatory in reviewer-fast, pre-commit, pre-push, and autorun
+workflow gates. It is intentionally range-aware and forward-only: archived or
+unchanged historical roadmaps are not reopened solely for this rule.
+
 ## Mandatory Work Order Dependency Release Evidence - 2026-06-03
 
 Canonical standard:

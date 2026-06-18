@@ -119,6 +119,35 @@ Initial enforcement should be permissive:
 The first machine check should be advisory or narrow. It must not block small
 single-file batches where a central packet would add overhead.
 
+## CCLV-T4 Rule Conversion
+
+Decision: CCLV remains opt-in and conditional; it is not a blanket requirement
+for every governed batch.
+
+Use Central Core + Local View when a batch repeats shared facts across multiple
+governed artifacts, especially:
+
+- closure facts that appear in a roadmap, work order, completion review, and
+  session-sync entry;
+- Agent Operation Trace expected/actual changed sets copied into multiple
+  artifacts;
+- material and session-sync commit anchors used by several closure surfaces;
+- finding/root-cause summaries that must be referenced by both worker return
+  and reviewer completion packets;
+- public export disposition or claim-boundary facts repeated in local views.
+
+Do not force a central packet for a small single-file or two-file batch where
+the central packet would add more retrieval overhead than drift reduction.
+
+For conditional-use batches, the central core owns shared facts. Local views
+must cite the central core and add only role-specific judgment, disposition,
+or boundary deltas. A local view may repeat a short human-readable summary, but
+the central core remains the source of truth for shared fields.
+
+This rule is a template/standard decision, not a broad hard-fail checker.
+Machine checks should remain narrow and field-specific until repeated evidence
+shows a broader rule can be enforced without increasing false positives.
+
 ## Design Boundary
 
 This standard does not reduce evidence requirements. It changes where shared
