@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-18
+Last updated: 2026-06-19
 
-Current mode marker: `wwu_t2_web_workspace_read_model_closed_t3_parked`
+Current mode marker: `wwu_t2a_web_workspace_lane_summary_closed_t3_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t2_web_workspace_read_model_closed_t3_parked`.
+Current mode: `wwu_t2a_web_workspace_lane_summary_closed_t3_parked`.
 
 Active handoff:
 
@@ -274,6 +274,16 @@ external package import, runtime enforcement claim, governed action request,
 production readiness, public readiness, release readiness, or external-facing
 readiness was authorized or performed. WWU-T3 Local Workspace Runtime/MCP
 remains parked.
+
+WWU-T2A CVF Web Workspace Lane Summary Read Model is `CLOSED_PASS_BOUNDED` at
+material commit `acedeb28`. The existing Web Workspace read model now projects
+generated workspace state lane summaries from
+`CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` into
+`GET /api/workspace/state` and `/workspace` without mutation controls. No
+generated workspace state mutation, Local Runtime/MCP, provider/live proof,
+public-sync, runtime enforcement claim, governed action request, production
+readiness, public readiness, release readiness, or external-facing readiness
+was authorized or performed. WWU-T3 Local Workspace Runtime/MCP remains parked.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -728,17 +738,17 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t2_web_workspace_read_model_closed_t3_parked`.
+Mode: `wwu_t2a_web_workspace_lane_summary_closed_t3_parked`.
 
-WWU-T2 CVF Web Workspace Operator Dashboard Read Model is
-`CLOSED_PASS_BOUNDED` at material commit `b3593e1b`. The implemented surface is
-a read-only CVF Web Workspace dashboard/read model under
+WWU-T2A CVF Web Workspace Lane Summary Read Model is `CLOSED_PASS_BOUNDED` at
+material commit `acedeb28`. The implemented surface is a read-only lane
+summary extension to the CVF Web Workspace dashboard/read model under
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`.
 
 Next allowed move: no WWU-T3 Local Workspace Runtime/MCP implementation until
 explicit runtime/MCP authorization, fresh GC-018, and a source-verified work
-order. A later bounded Web Workspace follow-up also requires fresh GC-018 and a
-source-verified work order.
+order. Any later bounded Web Workspace follow-up also requires fresh GC-018 and
+a source-verified work order.
 
 WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
 authorization. EARC-T2 public-sync preparation and EARC-T4 MCP/workspace

@@ -30,10 +30,10 @@ External agent memory files: non-canonical convenience only.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after WWU-T2A CVF Web
-Workspace Lane Summary Read Model dispatch material commit `b3d89c60`,
-following WWU-T2 CVF Web Workspace Operator Dashboard Read Model closure
-material commit `b3593e1b`, following WWU-T2 dispatch material commit
-`1bbf3046`, WWU-T1 CVF Web
+Workspace Lane Summary Read Model closure material commit `acedeb28`,
+following WWU-T2A dispatch material commit `b3d89c60`, WWU-T2 CVF Web
+Workspace Operator Dashboard Read Model closure material commit `b3593e1b`,
+following WWU-T2 dispatch material commit `1bbf3046`, WWU-T1 CVF Web
 Workspace Surface Audit material commit `3db83d3b`,
 following WWU-T0 Workspace
 Two-Layer Foundation material commit `f637904c`, EARC-T3B External
@@ -75,6 +75,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/wwuT1CvfWebWorkspaceSurfaceAuditClosure20260618.json`
 - `CVF_SESSION/state/entries/wwuT2CvfWebWorkspaceOperatorDashboardReadModelDispatch20260618.json`
 - `CVF_SESSION/state/entries/wwuT2CvfWebWorkspaceOperatorDashboardReadModelClosure20260618.json`
+- `CVF_SESSION/state/entries/wwuT2ACvfWebWorkspaceLaneSummaryReadModelClosure20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -134,14 +135,16 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wwu_t2_web_workspace_read_model_closed_t3_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=no WWU-T3 Local Workspace Runtime/MCP implementation until explicit runtime/MCP authorization, fresh GC-018, and a source-verified work order; parked checkpoint=WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`wwu_t2a_web_workspace_lane_summary_closed_t3_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=no WWU-T3 Local Workspace Runtime/MCP implementation until explicit runtime/MCP authorization, fresh GC-018, and a source-verified work order; parked checkpoint=WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
-`wwu_t2_web_workspace_read_model_closed_t3_parked`
+`wwu_t2a_web_workspace_lane_summary_closed_t3_parked`
 
-Current HEAD recorded for this handoff: `b3d89c60`
-(WWU-T2A CVF Web Workspace Lane Summary Read Model dispatch material commit
+Current HEAD recorded for this handoff: `acedeb28`
+(WWU-T2A CVF Web Workspace Lane Summary Read Model closure material commit
+`acedeb28`;
+WWU-T2A CVF Web Workspace Lane Summary Read Model dispatch material commit
 `b3d89c60`;
 WWU-T2 CVF Web Workspace Operator Dashboard Read Model closure material
 commit `b3593e1b`;
@@ -815,16 +818,16 @@ source-verified work order.
 
 ## Next Allowed Move
 
-WWU-T2 CVF Web Workspace Operator Dashboard Read Model is
-`CLOSED_PASS_BOUNDED` at material commit `b3593e1b`. It implemented a read-only
-CVF Web Workspace dashboard/read model in
-`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`, based on the WWU-T1 source-mapped
-surface audit and WWU-T2 GC-018/work order.
+WWU-T2A CVF Web Workspace Lane Summary Read Model is `CLOSED_PASS_BOUNDED` at
+material commit `acedeb28`. It extends the read-only CVF Web Workspace
+dashboard/read model with generated workspace state lane summaries from
+`CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`, without
+mutation controls.
 
 Next allowed move: no WWU-T3 Local Workspace Runtime/MCP implementation until
 explicit runtime/MCP authorization, fresh GC-018, and a source-verified work
-order. A later bounded Web Workspace follow-up also requires fresh GC-018 and a
-source-verified work order.
+order. Any later bounded Web Workspace follow-up also requires fresh GC-018 and
+a source-verified work order.
 
 WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
 authorization. EARC-T2 public-sync preparation remains held for explicit
