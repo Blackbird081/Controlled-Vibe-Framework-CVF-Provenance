@@ -1,0 +1,19 @@
+{
+  "stateOrder": 436,
+  "stateKey": "rtadT0FoundationTerminalAlignmentClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "914b2af6",
+    "baseHead": "96f87adb",
+    "roadmap": "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md",
+    "alignedRoadmaps": [
+      "docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md",
+      "docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md",
+      "docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md"
+    ],
+    "result": "RTAD-T0 closed stale active/candidate terminal states in CCLV, FPRC, and PLCS before runtime admission.",
+    "claimBoundary": "Governance terminal alignment only; no runtime/provider/live/public-sync/registry/product authorization.",
+    "nextAllowedMove": "RTAD-T1 runtime pilot selection may open only through fresh operator authorization. Runtime execution remains parked."
+  }
+}

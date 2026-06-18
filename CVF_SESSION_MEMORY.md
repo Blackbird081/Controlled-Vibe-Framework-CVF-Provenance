@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`
+Current mode marker: `rtad_t0_foundation_terminal_alignment_closed_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`.
+Current mode: `rtad_t0_foundation_terminal_alignment_closed_runtime_parked`.
 
 Active handoff:
 
@@ -81,6 +81,9 @@ GFC-T2/T4/T5 foundation closeout is committed at `bfc30dbd`: CCLV-T4 is now
 an opt-in/conditional standard rule, roadmap closure freshness has a stable
 front door plus machine guard wired into hooks and autorun, and pre-runtime
 readiness remains bounded without runtime authorization.
+RTAD-T0 Foundation Terminal Alignment is committed at `914b2af6`: the CCLV,
+FPRC, and PLCS active foundation roadmaps were terminally aligned before
+runtime admission. Runtime remains parked.
 
 Stable artifacts:
 
@@ -99,10 +102,11 @@ Stable artifacts:
 - `docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md`
 - `docs/reference/roadmap_closure_freshness/README.md`
 - `governance/compat/check_roadmap_closure_freshness.py`
+- `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md`
+- `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md`
 
-Next move: operator may authorize a fresh runtime-specific GC-018/work order
-or select another bounded foundation audit. Runtime/provider/live/public-sync/
-registry/product work remains parked.
+Next move: operator may authorize RTAD-T1 runtime pilot selection. Runtime/
+provider/live/public-sync/registry/product work remains parked.
 Runtime queue execution, scheduler, worker daemon, UI implementation,
 runtime/product mutation, registry edit, provider/live proof, public-sync,
 Model Gateway redispatch/P3, and co-work product development remain parked.
@@ -560,14 +564,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`.
+Mode: `rtad_t0_foundation_terminal_alignment_closed_runtime_parked`.
 
-GFC foundation closeout is `CLOSED_PASS_BOUNDED` at material commit
-`bfc30dbd`: GFC-T2 converted CCLV-T4 to an opt-in/conditional standard rule,
-GFC-T4 added and wired the roadmap closure freshness guard, and GFC-T5
-recorded bounded pre-runtime readiness. Next move: operator may authorize a
-fresh runtime-specific GC-018/work order or select another bounded foundation
-audit. Runtime workspace execution remains parked.
+RTAD-T0 Foundation Terminal Alignment is `CLOSED_PASS_BOUNDED` at material
+commit `914b2af6`: CCLV, FPRC, and PLCS active foundation roadmaps are
+terminally aligned before runtime admission. Next move: operator may authorize
+RTAD-T1 runtime pilot selection. Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

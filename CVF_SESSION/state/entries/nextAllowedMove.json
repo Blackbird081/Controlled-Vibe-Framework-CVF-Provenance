@@ -1,5 +1,5 @@
 {
   "stateOrder": 407,
   "stateKey": "nextAllowedMove",
-  "value": "GFC foundation closeout is CLOSED_PASS_BOUNDED at material commit bfc30dbd: GFC-T2 converted CCLV-T4 to an opt-in/conditional standard rule; GFC-T4 added and wired the roadmap closure freshness guard; GFC-T5 recorded bounded pre-runtime readiness. Next move: operator may authorize a fresh runtime-specific GC-018/work order or select another bounded foundation audit. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "RTAD-T0 Foundation Terminal Alignment is CLOSED_PASS_BOUNDED at material commit 914b2af6: the CCLV, FPRC, and PLCS active foundation roadmaps are terminally aligned before runtime admission. Next move: RTAD-T1 runtime pilot selection may be opened only by fresh operator authorization; runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

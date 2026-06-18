@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked",
-  "previousMode": "gfc_t3_roadmap_state_hygiene_closed_runtime_parked",
+  "currentMode": "rtad_t0_foundation_terminal_alignment_closed_runtime_parked",
+  "previousMode": "gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -1288,7 +1288,7 @@
   "lastUpdated": "2026-06-18",
   "roadmapStateReconciliationT1Dispatch20260616": "Roadmap State Reconciliation RSF-T1 dispatch packet committed at 0977365e. Artifacts: docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md; docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T1_2026-06-16.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md. Purpose: reconcile stale CI2 roadmap state after source audit found CI2-T3/T4/T5 completion reviews already exist. Claim boundary: documentation-only dispatch; RSF-T2 machine guard not yet implemented.",
   "roadmapStateReconciliationT1Closure20260616": "Roadmap State Reconciliation RSF-T1 is CLOSED_PASS_BOUNDED at material commit 1c3724d0. CI2 roadmap now records ALL_TRANCHES_CLOSED_PASS_BOUNDED, CI2-T3/T4/T5 completion evidence is source-backed, and the active archive baseline has a blocked entry for the touched stale CI2 roadmap. RSF-T2 is authorized as the next governance foundation move: implement a narrow stale-roadmap redispatch guard. Claim boundary: no runtime/provider/public/legacy broad scan or LPCI product implementation is authorized by RSF-T1 closure.",
-  "nextAllowedMove": "GFC foundation closeout is CLOSED_PASS_BOUNDED at material commit bfc30dbd: GFC-T2 converted CCLV-T4 to an opt-in/conditional standard rule; GFC-T4 added and wired the roadmap closure freshness guard; GFC-T5 recorded bounded pre-runtime readiness. Next move: operator may authorize a fresh runtime-specific GC-018/work order or select another bounded foundation audit. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "RTAD-T0 Foundation Terminal Alignment is CLOSED_PASS_BOUNDED at material commit 914b2af6: the CCLV, FPRC, and PLCS active foundation roadmaps are terminally aligned before runtime admission. Next move: RTAD-T1 runtime pilot selection may be opened only by fresh operator authorization; runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave.",
   "cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616": "RECONCILED_SUPERSEDED_BY_CLOSURE. Original CCLV-T2 dispatch commit 7e11c39c was superseded by accepted combined-role execution and bounded closure at material commit bf938549 after FPRC-T1 closed at material commit 51f56133. Codex audited and accepted the implementation in docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md. Completion evidence: docs/reviews/CVF_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_COMPLETION_2026-06-16.md. GC-018: docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md. Current-state reconciliation: PRFC-T1 removes the obsolete pause boundary from live agent-facing state while preserving historical dispatch provenance.",
   "centralCoreLocalViewPromptHeaderPacketClosure20260616": "CLOSED_PASS_BOUNDED at material commit ef6f67de. Codex hardened the dispatch prompt envelope standard/checker so new delegated dispatch-ready work orders must place the envelope read-first before Mission and no later than line 80. The work-order template now keeps the envelope pointer before Mission while staying at the 1200-line hard threshold. New standard: docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md. Roadmaps opened: docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md and docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md. Completion review: docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md. Focused tests pass 32/32; reviewer-fast passed; material pre-closure passed except expected active handoff sync.",
   "nextMoveFreshnessCheckerFoundationClosure20260616": "CLOSED_PASS_BOUNDED at material commit 8433691f from execution base 7a89cccc, with soft-wrap hardening commit fc7171aa. Codex added docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md, docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md, docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md, docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md, governance/compat/check_next_move_freshness.py, governance/compat/test_check_next_move_freshness.py, and additive wiring in governance/compat/run_local_governance_hook_chain.py, governance/compat/run_agent_autorun_workflow_gate.py, and governance/compat/run_agent_commit_steward_preflight.py. Follow-up hardening joins soft-wrapped paragraph fragments before stale-action matching so blocked statements such as Do not redispatch Model Gateway C-02 P2 are not treated as stale redispatch instructions. Focused tests pass 9/9; current-state next-move freshness check passes; reviewer-fast passes 19/19; implementation and session-sync steward preflights pass; material pre-closure passes all material gates with session continuity synced. Boundary: read-only governance checker and gate wiring only; no runtime/provider/live/public-sync/session-material mutation, Model Gateway redispatch, Model Gateway P3 authorization, legacy absorption, production readiness, public readiness, or public catalog export.",
@@ -1628,5 +1628,20 @@
     "roadmapFreshnessFrontDoor": "docs/reference/roadmap_closure_freshness/README.md",
     "claimBoundary": "Pre-runtime governance foundation closeout only; no runtime/provider/live/public-sync/registry/product authorization.",
     "nextAllowedMove": "Fresh runtime-specific GC-018/work order or another bounded foundation audit only if operator authorizes."
+  },
+  "rtadT0FoundationTerminalAlignmentClosure20260618": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "914b2af6",
+    "baseHead": "96f87adb",
+    "roadmap": "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md",
+    "alignedRoadmaps": [
+      "docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md",
+      "docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md",
+      "docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md"
+    ],
+    "result": "RTAD-T0 closed stale active/candidate terminal states in CCLV, FPRC, and PLCS before runtime admission.",
+    "claimBoundary": "Governance terminal alignment only; no runtime/provider/live/public-sync/registry/product authorization.",
+    "nextAllowedMove": "RTAD-T1 runtime pilot selection may open only through fresh operator authorization. Runtime execution remains parked."
   }
 }

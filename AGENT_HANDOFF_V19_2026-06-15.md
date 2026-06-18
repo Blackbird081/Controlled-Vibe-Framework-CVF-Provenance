@@ -24,8 +24,8 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after GFC-T2/T4/T5
-foundation closeout material commit `bfc30dbd`.
+Authorized session-sync scope: update active handoff after RTAD-T0 Foundation
+Terminal Alignment material commit `914b2af6`.
 
 Protected paths:
 
@@ -39,18 +39,16 @@ Protected paths:
 - `CVF_SESSION/state/entries/promptReadFirstPlacementFindingClosure20260618.json`
 - `CVF_SESSION/state/entries/preRuntimeFoundationCleanupRoadmap20260617.json`
 - `CVF_SESSION/state/entries/prfcT2CentralFactsPilotClosure20260617.json`
+- `CVF_SESSION/state/entries/rtadT0FoundationTerminalAlignmentClosure20260618.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator instructed Codex on 2026-06-18 to handle
-GFC-T1 worker-return review and closure, process the post-closure state drift
-finding, then continue with GFC-T3. Codex closed GFC-T1 at `81669ff5`,
-remediated the post-closure state drift at `da09980e`, accepted GFC-T3
-dispatch at `21cf3793`, accepted GFC-T3 worker material at `f68ff8ce`, closed
-GFC-T3 at `d5146cce`, and closed GFC-T2/T4/T5 at `bfc30dbd`; this
-session-sync records the foundation closeout and keeps runtime parked.
+Operator authorization: operator selected option 1 first after accepting the
+RTAD proposal. Codex closed RTAD-T0 Foundation Terminal Alignment at material
+commit `914b2af6`; this session-sync records the terminal alignment and keeps
+runtime parked.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
+RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
 GFC-T3 accepted-material commit, GFC-T3 dispatch commit, GFC-T1
 post-closure state drift remediation commit,
 GFC-T1 closure material commit, GFC-T1 accepted worker material commit, prompt
@@ -60,14 +58,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator may authorize a fresh runtime-specific GC-018/work order or select another bounded foundation audit; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
+Startup acknowledged: current mode=`rtad_t0_foundation_terminal_alignment_closed_runtime_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator may authorize RTAD-T1 runtime pilot selection; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
 
 ## Current Mode
 
-`gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`
+`rtad_t0_foundation_terminal_alignment_closed_runtime_parked`
 
-Current HEAD recorded for this handoff: `bfc30dbd`
-(GFC-T2/T4/T5 foundation closeout material commit `bfc30dbd`;
+Current HEAD recorded for this handoff: `914b2af6`
+(RTAD-T0 Foundation Terminal Alignment material commit `914b2af6`;
+GFC-T2/T4/T5 foundation closeout material commit `bfc30dbd`;
 GFC-T3 closure commit `d5146cce`;
 GFC-T3 accepted-material session-sync commit `d64bd56d`;
 GFC-T3 accepted-material commit `f68ff8ce`;
@@ -615,14 +614,12 @@ source-verified work order.
 
 ## Next Allowed Move
 
-GFC foundation closeout is `CLOSED_PASS_BOUNDED` at material commit
-`bfc30dbd`: GFC-T2 converted CCLV-T4 to an opt-in/conditional standard rule,
-GFC-T4 added and wired `governance/compat/check_roadmap_closure_freshness.py`,
-and GFC-T5 recorded bounded pre-runtime readiness. Operator may authorize a
-fresh runtime-specific GC-018/work order or select another bounded foundation
-audit. Runtime workspace execution, runtime/provider/live, public-sync,
-registry, product runtime mutation, and co-work product development remain
-parked.
+RTAD-T0 Foundation Terminal Alignment is `CLOSED_PASS_BOUNDED` at material
+commit `914b2af6`: CCLV, FPRC, and PLCS active foundation roadmaps are
+terminally aligned before runtime admission. Operator may authorize RTAD-T1
+runtime pilot selection. Runtime workspace execution, runtime/provider/live,
+public-sync, registry, product runtime mutation, and co-work product
+development remain parked.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
