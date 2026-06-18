@@ -1,5 +1,5 @@
 {
   "stateOrder": 407,
   "stateKey": "nextAllowedMove",
-  "value": "GFC-T3 Roadmap State Hygiene Remediation is CLOSED_PASS_BOUNDED at closure commit d5146cce after accepted-material commit f68ff8ce and accepted-material session-sync commit d64bd56d. Next move: operator selects the next bounded GFC tranche, a pre-runtime readiness review, or fresh runtime authorization. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "GFC foundation closeout is CLOSED_PASS_BOUNDED at material commit bfc30dbd: GFC-T2 converted CCLV-T4 to an opt-in/conditional standard rule; GFC-T4 added and wired the roadmap closure freshness guard; GFC-T5 recorded bounded pre-runtime readiness. Next move: operator may authorize a fresh runtime-specific GC-018/work order or select another bounded foundation audit. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

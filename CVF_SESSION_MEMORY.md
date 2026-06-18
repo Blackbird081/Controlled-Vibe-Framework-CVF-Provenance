@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `gfc_t3_roadmap_state_hygiene_closed_runtime_parked`
+Current mode marker: `gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfc_t3_roadmap_state_hygiene_closed_runtime_parked`.
+Current mode: `gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`.
 
 Active handoff:
 
@@ -77,6 +77,10 @@ Claude returned GFC-T3 `COMPLETE_PENDING_REVIEW`; Codex accepted material at
 commit `f68ff8ce` after repairing the Rotation Guard D3/D4 stale table cells.
 Accepted-material session sync is committed at `d64bd56d`; GFC-T3 closure is
 committed at `d5146cce` with status `CLOSED_PASS_BOUNDED`.
+GFC-T2/T4/T5 foundation closeout is committed at `bfc30dbd`: CCLV-T4 is now
+an opt-in/conditional standard rule, roadmap closure freshness has a stable
+front door plus machine guard wired into hooks and autorun, and pre-runtime
+readiness remains bounded without runtime authorization.
 
 Stable artifacts:
 
@@ -92,12 +96,13 @@ Stable artifacts:
 - `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_PACKET_2026-06-18.md`
 - `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_WORKER_RETURN_2026-06-18.md`
 - `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md`
+- `docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md`
+- `docs/reference/roadmap_closure_freshness/README.md`
+- `governance/compat/check_roadmap_closure_freshness.py`
 
-Next move: operator selects the next bounded GFC tranche, a pre-runtime
-readiness review, or fresh runtime authorization. Runtime/provider/live/
-public-sync/registry/product work remains parked.
-GFC-T2 CCLV rule conversion and GFC-T4 FPRC machine/template follow-up remain
-optional operator decisions.
+Next move: operator may authorize a fresh runtime-specific GC-018/work order
+or select another bounded foundation audit. Runtime/provider/live/public-sync/
+registry/product work remains parked.
 Runtime queue execution, scheduler, worker daemon, UI implementation,
 runtime/product mutation, registry edit, provider/live proof, public-sync,
 Model Gateway redispatch/P3, and co-work product development remain parked.
@@ -555,13 +560,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `gfc_t3_roadmap_state_hygiene_closed_runtime_parked`.
+Mode: `gfc_t2_t4_t5_foundation_closeout_closed_runtime_parked`.
 
-GFC-T3 Roadmap State Hygiene Remediation is `CLOSED_PASS_BOUNDED` at closure
-commit `d5146cce` after accepted-material commit `f68ff8ce` and
-accepted-material session-sync commit `d64bd56d`. Next move: operator selects
-the next bounded GFC tranche, a pre-runtime readiness review, or fresh runtime
-authorization. Runtime workspace execution remains parked.
+GFC foundation closeout is `CLOSED_PASS_BOUNDED` at material commit
+`bfc30dbd`: GFC-T2 converted CCLV-T4 to an opt-in/conditional standard rule,
+GFC-T4 added and wired the roadmap closure freshness guard, and GFC-T5
+recorded bounded pre-runtime readiness. Next move: operator may authorize a
+fresh runtime-specific GC-018/work order or select another bounded foundation
+audit. Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
