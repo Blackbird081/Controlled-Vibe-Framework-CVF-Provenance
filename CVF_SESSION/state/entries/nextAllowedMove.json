@@ -1,5 +1,5 @@
 {
   "stateOrder": 407,
   "stateKey": "nextAllowedMove",
-  "value": "GFC-T3 Roadmap State Hygiene Remediation accepted-material commit f68ff8ce is in place after Claude no-commit worker return and Codex reviewer repair of the Rotation Guard D3/D4 stale table cells. Next move: Codex commits the GFC-T3 closure review and then performs final session sync. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "GFC-T3 Roadmap State Hygiene Remediation is CLOSED_PASS_BOUNDED at closure commit d5146cce after accepted-material commit f68ff8ce and accepted-material session-sync commit d64bd56d. Next move: operator selects the next bounded GFC tranche, a pre-runtime readiness review, or fresh runtime authorization. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`
+Current mode marker: `gfc_t3_roadmap_state_hygiene_closed_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`.
+Current mode: `gfc_t3_roadmap_state_hygiene_closed_runtime_parked`.
 
 Active handoff:
 
@@ -75,6 +75,8 @@ material commit `21cf3793` after Codex reviewer repair clarified that the
 scope is seven accepted GFC-T1 rows plus re-verified P5C, eight rows total.
 Claude returned GFC-T3 `COMPLETE_PENDING_REVIEW`; Codex accepted material at
 commit `f68ff8ce` after repairing the Rotation Guard D3/D4 stale table cells.
+Accepted-material session sync is committed at `d64bd56d`; GFC-T3 closure is
+committed at `d5146cce` with status `CLOSED_PASS_BOUNDED`.
 
 Stable artifacts:
 
@@ -87,10 +89,13 @@ Stable artifacts:
 - `docs/reviews/CVF_GFC_T1_POST_CLOSURE_STATE_DRIFT_FINDING_2026-06-18.md`
 - `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`
+- `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_PACKET_2026-06-18.md`
+- `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_WORKER_RETURN_2026-06-18.md`
+- `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md`
 
-Next move: Codex commits the GFC-T3 closure review, then performs final
-session sync. Runtime/provider/live/public-sync/registry/product work remains
-parked.
+Next move: operator selects the next bounded GFC tranche, a pre-runtime
+readiness review, or fresh runtime authorization. Runtime/provider/live/
+public-sync/registry/product work remains parked.
 GFC-T2 CCLV rule conversion and GFC-T4 FPRC machine/template follow-up remain
 optional operator decisions.
 Runtime queue execution, scheduler, worker daemon, UI implementation,
@@ -550,13 +555,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`.
+Mode: `gfc_t3_roadmap_state_hygiene_closed_runtime_parked`.
 
-GFC-T3 Roadmap State Hygiene Remediation accepted-material commit `f68ff8ce`
-is in place after Claude no-commit worker return and Codex reviewer repair of
-the Rotation Guard D3/D4 stale table cells. Next move: Codex commits the
-GFC-T3 closure review, then performs final session sync. Runtime workspace
-execution remains parked.
+GFC-T3 Roadmap State Hygiene Remediation is `CLOSED_PASS_BOUNDED` at closure
+commit `d5146cce` after accepted-material commit `f68ff8ce` and
+accepted-material session-sync commit `d64bd56d`. Next move: operator selects
+the next bounded GFC tranche, a pre-runtime readiness review, or fresh runtime
+authorization. Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

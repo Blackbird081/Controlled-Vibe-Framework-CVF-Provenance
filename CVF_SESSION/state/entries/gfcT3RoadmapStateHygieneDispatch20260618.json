@@ -2,9 +2,11 @@
   "stateOrder": 434,
   "stateKey": "gfcT3RoadmapStateHygieneDispatch20260618",
   "value": {
-    "status": "ACCEPTED_MATERIAL_PENDING_CLOSURE",
+    "status": "CLOSED_PASS_BOUNDED",
     "dispatchCommit": "21cf3793",
     "acceptedMaterialCommit": "f68ff8ce",
+    "acceptedMaterialSessionSyncCommit": "d64bd56d",
+    "closureCommit": "d5146cce",
     "dispatchBaseHead": "ecd74bbe",
     "gc018": "docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md",
     "roadmap": "docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md",
@@ -18,6 +20,6 @@
     "targetRoadmapRows": 8,
     "scope": "Roadmap-state hygiene only: update eight named roadmap top-of-file Status lines, plus the AHB roadmap Machine Closure Package roadmap-state self-reference.",
     "claimBoundary": "No runtime, provider/live proof, public-sync, registry edit, source/test code edit, workspace runtime queue, session mutation by worker, or product/public-readiness claim.",
-    "nextAllowedMove": "Codex authors and commits the GFC-T3 closure review, then performs final session sync. Runtime/provider/live/public-sync/registry/product work remains parked."
+    "nextAllowedMove": "GFC-T3 is closed. Operator may choose the next bounded GFC tranche, pre-runtime readiness review, or fresh runtime authorization. Runtime/provider/live/public-sync/registry/product work remains parked without fresh authorization."
   }
 }
