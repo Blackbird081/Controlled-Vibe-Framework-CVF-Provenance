@@ -135,6 +135,12 @@ MCP implementation, provider credential mutation, live run, readiness claim,
 runtime queue, or Model Gateway runtime behavior change was authorized or
 performed.
 
+Follow-up workspace root classification remediation is committed at
+`5b3294a8`: `CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE` is now classified
+in the repository lifecycle registry as `FROZEN_REFERENCE` and `INTERNAL_ONLY`.
+The raw package remains local/ignored, not canonical, and useful content must be
+absorbed through governed CVF artifacts.
+
 Stable artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
@@ -178,6 +184,7 @@ Stable artifacts:
 - `docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md`
 - `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md`
 - `docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md`
+- `governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json`
 
 Next move: choose the next governed runtime tranche after RTAD-T6 closure.
 Possible inputs include a public-safe external review context/public-sync
@@ -645,7 +652,9 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 Mode: `rtad_t6_external_agent_mcp_workspace_absorption_closed_runtime_parked`.
 
 RTAD-T6 External Agent MCP Workspace Absorption is `CLOSED_PASS_BOUNDED` at
-material commit `7d8ae7b3`. CVF now has a stable external-agent review front
+material commit `7d8ae7b3`, with follow-up repository lifecycle classification
+remediation committed at `5b3294a8` for the local copied external
+workspace-layer package root. CVF now has a stable external-agent review front
 door, a public/simple workflow-chain review context, and a governed absorption
 map for the copied workspace-layer package and Foundry MCP/workspace reference
 patterns. Absorbed material is bounded to reference/context surfaces only: CVF

@@ -1,0 +1,15 @@
+{
+  "stateOrder": 442,
+  "stateKey": "rtadT6ExternalWorkspacePackageRootClassification20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "5b3294a8",
+    "predecessorMaterialCommit": "7d8ae7b3",
+    "registry": "governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json",
+    "root": "CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE",
+    "lifecycleClass": "FROZEN_REFERENCE",
+    "exposureClass": "INTERNAL_ONLY",
+    "boundedClaim": "The local copied external workspace-layer package root is lifecycle-classified as internal frozen reference and remains ignored/not canonical. Useful content must be absorbed through governed CVF artifacts.",
+    "gateSummary": "Repository lifecycle classification gate passed before material commit; pre-commit hook passed 50/50 checks."
+  }
+}

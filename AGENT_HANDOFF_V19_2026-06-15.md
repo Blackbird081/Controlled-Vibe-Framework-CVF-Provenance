@@ -30,7 +30,8 @@ External agent memory files: non-canonical convenience only.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after RTAD-T6 External
-Agent MCP Workspace Absorption closure material commit `7d8ae7b3`.
+Agent MCP Workspace Absorption closure material commit `7d8ae7b3` and
+follow-up repository lifecycle classification remediation commit `5b3294a8`.
 
 Protected paths:
 
@@ -51,6 +52,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/rtadT4AlibabaEndpointRegistryHarnessClosure20260618.json`
 - `CVF_SESSION/state/entries/rtadT5ModelGatewayMcpBridgeBoundaryClosure20260618.json`
 - `CVF_SESSION/state/entries/rtadT6ExternalAgentMcpWorkspaceAbsorptionClosure20260618.json`
+- `CVF_SESSION/state/entries/rtadT6ExternalWorkspacePackageRootClassification20260618.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -60,14 +62,17 @@ accepted the RTAD-T4 Alibaba endpoint/free-quota registry hardening follow-up,
 then asked Codex to continue runtime foundation work. Codex closed RTAD-T5 at
 material commit `8e690cea`, then closed RTAD-T6 at material commit `7d8ae7b3`
 to absorb external-agent MCP/workspace reference material into governed CVF
-reference/context surfaces. This session-sync records the external-agent review
-front door, workflow-chain public review context, and external package
-absorption map while keeping public-sync, broad MCP gateway implementation,
-release-facing claims, external-facing readiness, provider ranking/parity
-claims, Model Gateway redispatch/P3, and co-work product development parked.
+reference/context surfaces. Follow-up commit `5b3294a8` classified the local
+copied external workspace-layer package root as internal frozen reference. This
+session-sync records the external-agent review front door, workflow-chain
+public review context, external package absorption map, and lifecycle
+classification remediation while keeping public-sync, broad MCP gateway
+implementation, release-facing claims, external-facing readiness, provider
+ranking/parity claims, Model Gateway redispatch/P3, and co-work product
+development parked.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-RTAD-T6 closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
+RTAD-T6 root-classification remediation commit, RTAD-T6 closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
 GFC-T3 accepted-material commit, GFC-T3 dispatch commit, GFC-T1
 post-closure state drift remediation commit,
 GFC-T1 closure material commit, GFC-T1 accepted worker material commit, prompt
@@ -83,8 +88,10 @@ Startup acknowledged: current mode=`rtad_t6_external_agent_mcp_workspace_absorpt
 
 `rtad_t6_external_agent_mcp_workspace_absorption_closed_runtime_parked`
 
-Current HEAD recorded for this handoff: `7d8ae7b3`
-(RTAD-T6 External Agent MCP Workspace Absorption material commit `7d8ae7b3`;
+Current HEAD recorded for this handoff: `5b3294a8`
+(RTAD-T6 external workspace package root classification remediation commit
+`5b3294a8`;
+RTAD-T6 External Agent MCP Workspace Absorption material commit `7d8ae7b3`;
 RTAD-T5 Model Gateway MCP runtime bridge boundary material commit `8e690cea`;
 RTAD-T4 Alibaba endpoint registry harness hardening material commit `07349e70`;
 Alibaba free-quota model ledger material commit `4ba5c072`;
@@ -371,6 +378,12 @@ MCP implementation, provider credential mutation, live run, readiness claim,
 runtime queue, or Model Gateway runtime behavior change was authorized or
 performed.
 
+Follow-up workspace root classification remediation is committed at
+`5b3294a8`: `CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE` is now classified
+in the repository lifecycle registry as `FROZEN_REFERENCE` and `INTERNAL_ONLY`.
+The raw package remains local/ignored, not canonical, and useful content must be
+absorbed through governed CVF artifacts.
+
 Stable artifacts:
 
 `docs/baselines/CVF_GC018_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_2026-06-18.md`
@@ -408,6 +421,8 @@ Stable artifacts:
 `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md`
 
 `docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md`
+
+`governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json`
 
 GFC-T3 Roadmap State Hygiene Remediation dispatch is accepted at material
 commit `21cf3793` after Codex reviewer repair clarified that the scope is
@@ -701,7 +716,9 @@ source-verified work order.
 ## Next Allowed Move
 
 RTAD-T6 External Agent MCP Workspace Absorption is `CLOSED_PASS_BOUNDED` at
-material commit `7d8ae7b3`. CVF now has a stable external-agent review front
+material commit `7d8ae7b3`, with follow-up repository lifecycle classification
+remediation committed at `5b3294a8` for the local copied external
+workspace-layer package root. CVF now has a stable external-agent review front
 door, a public/simple workflow-chain review context, and a governed absorption
 map for the copied workspace-layer package and Foundry MCP/workspace reference
 patterns. Absorbed material is bounded to reference/context surfaces only: CVF
