@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `earc_t3b_absorption_table_checker_closed_t2_t4_parked`
+Current mode marker: `wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `earc_t3b_absorption_table_checker_closed_t2_t4_parked`.
+Current mode: `wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`.
 
 Active handoff:
 
@@ -244,10 +244,19 @@ Stable artifacts:
 - `governance/compat/check_external_agent_absorption_table.py`
 - `governance/compat/test_check_external_agent_absorption_table.py`
 - `docs/reviews/CVF_EARC_T3B_ABSORPTION_TABLE_CHECKER_COMPLETION_2026-06-18.md`
+- `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md`
+- `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md`
+- `docs/baselines/CVF_GC018_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_FOR_CODEX_2026-06-18.md`
+- `docs/reviews/CVF_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_COMPLETION_2026-06-18.md`
 
-Next move: no unheld EARC tranche remains. EARC-T2 requires explicit
-public-sync authorization and EARC-T4 requires explicit MCP/runtime
-authorization.
+WWU-T0 Workspace Two-Layer Foundation is `CLOSED_PASS_BOUNDED` at material
+commit `f637904c`. CVF now has a stable two-layer workspace standard separating
+CVF Web Workspace from CVF Local Workspace Runtime. Next move is WWU-T1:
+source-verification audit of current `cvf-web` surfaces before any UI
+implementation. EARC-T2 public-sync, EARC-T4 MCP/runtime, WWU-T2 product UI,
+and WWU-T3 Local Runtime/MCP remain parked until their explicit prerequisites
+are met.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -702,23 +711,23 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `earc_t3b_absorption_table_checker_closed_t2_t4_parked`.
+Mode: `wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`.
 
-EARC-T3B External Absorption Table Checker is `CLOSED_PASS_BOUNDED` at material
-commit `6de12f33`. CVF now enforces the EARC Required Absorption Table through
-`governance/compat/check_external_agent_absorption_table.py`, with focused
-tests and hook/autorun wiring.
+WWU-T0 Workspace Two-Layer Foundation is `CLOSED_PASS_BOUNDED` at material
+commit `f637904c`. CVF now has a stable Central Core rule that separates
+`CVF_WEB_WORKSPACE` from `CVF_LOCAL_WORKSPACE_RUNTIME`.
 
-Next allowed move: no unheld EARC tranche remains. Operator may explicitly
-authorize EARC-T2 public-sync, explicitly authorize EARC-T4 MCP/runtime
-decision work, or choose a separate non-public/non-runtime foundation roadmap.
+Next allowed move: WWU-T1 source-verification audit of current `cvf-web`
+surfaces before any UI implementation.
 
-EARC-T2 public-sync preparation remains held for explicit public-sync
-authorization. EARC-T4 MCP/workspace implementation decision remains held for
-explicit MCP/runtime authorization. Public-sync, MCP implementation,
-provider/live calls, workspace runtime mutation, raw external package import,
-public readiness, production readiness, release readiness, and external-facing
-readiness claims remain parked.
+WWU-T2 product UI implementation remains parked until WWU-T1 output and fresh
+GC-018. WWU-T3 Local Workspace Runtime/MCP remains parked until explicit
+runtime/MCP authorization. EARC-T2 public-sync preparation and EARC-T4
+MCP/workspace implementation decision remain held for their explicit
+authorizations. Public-sync, MCP implementation, provider/live calls, workspace
+runtime mutation, raw external package import, public readiness, production
+readiness, release readiness, and external-facing readiness claims remain
+parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

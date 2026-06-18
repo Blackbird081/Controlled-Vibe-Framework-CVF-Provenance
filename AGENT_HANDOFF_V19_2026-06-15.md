@@ -29,8 +29,9 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after EARC-T3B External
-Absorption Table Checker material commit `6de12f33`, following EARC-T3A External
+Authorized session-sync scope: update active handoff after WWU-T0 Workspace
+Two-Layer Foundation material commit `f637904c`, following EARC-T3B External
+Absorption Table Checker material commit `6de12f33`, EARC-T3A External
 Return Absorption Pilot material commit `481f35bd`, EARC-T3 External
 Finding Absorption Workflow material commit `4bf9920b`, EARC-T1
 External Agent Review Packet Template material commit `ab8382f3`, EARC-T0
@@ -64,6 +65,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/rtadT5ModelGatewayMcpBridgeBoundaryClosure20260618.json`
 - `CVF_SESSION/state/entries/rtadT6ExternalAgentMcpWorkspaceAbsorptionClosure20260618.json`
 - `CVF_SESSION/state/entries/rtadT6ExternalWorkspacePackageRootClassification20260618.json`
+- `CVF_SESSION/state/entries/wwuT0WorkspaceTwoLayerFoundationClosure20260618.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -88,6 +90,14 @@ mutation, raw external package import, public readiness, production readiness,
 release readiness, and external-facing readiness parked. The operator then
 asked Codex to proceed; Codex closed EARC-T1 at material commit `ab8382f3` with
 stable external-agent review packet template, authoring checklist, bounded
+workflow/MCP/workspace sample packet, updated external-agent review front door,
+and GC-051 registry coverage. Codex later closed EARC-T3, EARC-T3A, and
+EARC-T3B, then the operator asked Codex to clarify the absorbed Web Workspace
+versus Local Workspace Runtime split before upgrading CVF Web. Codex closed
+WWU-T0 at material commit `f637904c`, adding a stable two-layer workspace
+standard and CVF Web Workspace upgrade roadmap while keeping product UI,
+Local Runtime/MCP, provider/live proof, public-sync, raw external package
+import, and readiness claims parked.
 workflow/MCP/workspace sample packet, updated folder front door, and GC-051
 registry coverage. The operator then asked Codex to continue; Codex closed
 EARC-T3 at material commit `4bf9920b` with a stable post-review workflow for
@@ -115,14 +125,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`earc_t3b_absorption_table_checker_closed_t2_t4_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=no unheld EARC tranche remains; operator may explicitly authorize EARC-T2 public-sync, explicitly authorize EARC-T4 MCP/runtime decision work, or choose a separate non-public/non-runtime foundation roadmap; parked checkpoint=EARC-T2 public-sync preparation waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation decision waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=WWU-T1 source-verification audit of current `cvf-web` surfaces before any UI implementation; parked checkpoint=WWU-T2 product UI implementation waits for WWU-T1 output and fresh GC-018, WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
-`earc_t3b_absorption_table_checker_closed_t2_t4_parked`
+`wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`
 
-Current HEAD recorded for this handoff: `6de12f33`
-(EARC-T3B External Absorption Table Checker material commit `6de12f33`;
+Current HEAD recorded for this handoff: `f637904c`
+(WWU-T0 Workspace Two-Layer Foundation material commit `f637904c`;
+EARC-T3B External Absorption Table Checker material commit `6de12f33`;
 EARC-T3A External Return Absorption Pilot material commit `481f35bd`;
 EARC-T3 External Finding Absorption Workflow material commit `4bf9920b`;
 EARC-T1 External Agent Review Packet Template material commit `ab8382f3`;
@@ -788,22 +799,22 @@ source-verified work order.
 
 ## Next Allowed Move
 
-EARC-T3B External Absorption Table Checker is `CLOSED_PASS_BOUNDED` at material
-commit `6de12f33`. CVF now enforces the EARC Required Absorption Table through
-`governance/compat/check_external_agent_absorption_table.py`, with focused
-tests and hook/autorun wiring.
+WWU-T0 Workspace Two-Layer Foundation is `CLOSED_PASS_BOUNDED` at material
+commit `f637904c`. CVF now has a stable Central Core rule that separates
+`CVF_WEB_WORKSPACE` from `CVF_LOCAL_WORKSPACE_RUNTIME`.
 
-Next allowed move: no unheld EARC tranche remains. Operator may explicitly
-authorize EARC-T2 public-sync, explicitly authorize EARC-T4 MCP/runtime
-decision work, or choose a separate non-public/non-runtime foundation roadmap.
+Next allowed move: WWU-T1 source-verification audit of current `cvf-web`
+surfaces before any UI implementation.
 
-EARC-T2 public-sync preparation remains held for explicit public-sync
-authorization. EARC-T4 MCP/workspace implementation decision remains held for
-explicit MCP/runtime authorization. Public-sync, broad MCP gateway
-implementation, release-facing claims, external-facing readiness, provider
-ranking/parity claims, Model Gateway redispatch/P3, and co-work product
-development remain parked unless a later operator authorization opens a
-separate tranche.
+WWU-T2 product UI implementation remains parked until WWU-T1 output and fresh
+GC-018. WWU-T3 Local Workspace Runtime/MCP remains parked until explicit
+runtime/MCP authorization. EARC-T2 public-sync preparation remains held for
+explicit public-sync authorization. EARC-T4 MCP/workspace implementation
+decision remains held for explicit MCP/runtime authorization. Public-sync,
+broad MCP gateway implementation, release-facing claims, external-facing
+readiness, provider ranking/parity claims, Model Gateway redispatch/P3, and
+co-work product development remain parked unless a later operator
+authorization opens a separate tranche.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,

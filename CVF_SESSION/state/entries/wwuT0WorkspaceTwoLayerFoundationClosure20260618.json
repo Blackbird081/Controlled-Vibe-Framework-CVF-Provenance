@@ -1,0 +1,19 @@
+{
+  "stateOrder": 409,
+  "stateKey": "wwuT0WorkspaceTwoLayerFoundationClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "f637904c",
+    "roadmap": "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "standard": "docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_FOR_CODEX_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_COMPLETION_2026-06-18.md",
+    "next": "WWU-T1 source-verification audit of current cvf-web surfaces before any UI implementation",
+    "claimBoundary": "Two-layer architecture clarification and Web Workspace roadmap only; no product UI implementation, Local Runtime mutation, MCP implementation, provider/live call, public-sync, raw external package import, or readiness claim.",
+    "parked": [
+      "WWU-T2 product UI implementation waits for WWU-T1 output and fresh GC-018",
+      "WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization",
+      "public-sync remains parked until explicit public-sync authorization"
+    ]
+  }
+}
