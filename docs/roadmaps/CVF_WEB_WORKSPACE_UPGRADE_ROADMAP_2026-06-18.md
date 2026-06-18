@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_T0_CLOSED_T1_READY_T2_T3_PARKED
+Status: ROADMAP_T1_CLOSED_T2_READY_FOR_GC018_T3_PARKED
 
 Date: 2026-06-18
 
@@ -77,8 +77,8 @@ order selects `BOTH_WITH_BOUNDARY` and lists separate proof requirements.
 | Tranche | Status | Objective | Owner | Boundary |
 |---|---|---|---|---|
 | WWU-T0 | CLOSED_PASS_BOUNDED | Canonicalize the two-layer workspace architecture and Web upgrade boundary | Codex | Documentation/reference only |
-| WWU-T1 | READY_FOR_GC018 | Audit current `cvf-web` surfaces against CVF Web Workspace read-model needs | Codex | Source verification and route/component map only |
-| WWU-T2 | PARKED_UNTIL_T1 | Implement first bounded CVF Web Workspace operator dashboard/read model | Codex or worker | Requires `DESIGN.md`, fresh GC-018, UI tests, no Local Runtime mutation |
+| WWU-T1 | CLOSED_PASS_BOUNDED | Audit current `cvf-web` surfaces against CVF Web Workspace read-model needs | Codex | Source verification and route/component map only |
+| WWU-T2 | READY_FOR_GC018 | Implement first bounded CVF Web Workspace operator dashboard/read model | Codex or worker | Requires `DESIGN.md`, fresh GC-018, UI tests, no Local Runtime mutation |
 | WWU-T3 | PARKED_RUNTIME_AUTHORIZATION | Decide Local Workspace Runtime/MCP bridge after Web read model is stable | Codex | Requires explicit runtime/MCP authorization |
 
 ## WWU-T1 Candidate Scope
@@ -132,13 +132,23 @@ WWU-T0 is `CLOSED_PASS_BOUNDED`. It added the stable two-layer architecture
 standard and linked it into the agent workspace front door, operator view plan,
 runtime expansion contract, and external package absorption map.
 
+## WWU-T1 Closure Note (2026-06-18)
+
+WWU-T1 is `CLOSED_PASS_BOUNDED`. It produced a source-backed audit of current
+`cvf-web` surfaces and found that current Web already has governance,
+evidence, health, operations, approvals, work-transfer, and chat/session
+surfaces, but no dedicated active CVF session-state/handoff/workspace read
+model. WWU-T2 is ready only for fresh GC-018 authoring; product UI
+implementation remains parked until that packet is dispatched.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `ROADMAP_T0_CLOSED_T1_READY_T2_T3_PARKED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Audit packet | `docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `ROADMAP_T1_CLOSED_T2_READY_FOR_GC018_T3_PARKED` | PASS |
 | Central standard | `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md` | `Status: ACTIVE_STANDARD` | PASS |
 | Front door | `docs/reference/agent_workspace/README.md` | points to two-layer standard | PASS |
 | Web local view | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | cites two-layer standard | PASS |
