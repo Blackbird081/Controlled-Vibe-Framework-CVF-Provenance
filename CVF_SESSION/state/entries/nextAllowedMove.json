@@ -1,5 +1,5 @@
 {
   "stateOrder": 407,
   "stateKey": "nextAllowedMove",
-  "value": "PRFC-T3 PLCS companion-routing checker/interlock dispatch is committed at 151db2cd. Next allowed move: execute PRFC-T3 under docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md, limited to checker/test/hook wiring and closure evidence. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "PRFC-T3 PLCS companion-routing checker/interlock is CLOSED_PASS_BOUNDED at material commit 674ddf34. The PRFC roadmap is closed bounded. Next allowed move: audit and select the next roadmap, or open any runtime/provider/live/public-sync/registry/product work only through fresh operator authorization, fresh GC-018, and a source-verified work order. Runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

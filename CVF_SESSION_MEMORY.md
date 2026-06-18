@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `prfc_t3_plcs_companion_checker_dispatched_runtime_execution_parked`
+Current mode marker: `prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `prfc_t3_plcs_companion_checker_dispatched_runtime_execution_parked`.
+Current mode: `prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`.
 
 Active handoff:
 
@@ -62,9 +62,9 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-PRFC-T3 PLCS companion-routing checker/interlock dispatch is committed at
-`151db2cd`. Codex may execute only the committed checker/test/hook-wiring work
-order and closure evidence. Runtime execution remains parked.
+PRFC-T3 PLCS companion-routing checker/interlock is `CLOSED_PASS_BOUNDED` at
+material commit `674ddf34`. The PRFC roadmap is closed bounded. Runtime
+execution remains parked.
 
 Stable artifact:
 
@@ -503,13 +503,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `prfc_t3_plcs_companion_checker_dispatched_runtime_execution_parked`.
+Mode: `prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`.
 
-PRFC-T3 PLCS companion-routing checker/interlock dispatch is committed at
-`151db2cd`. Next allowed move: execute PRFC-T3 under
-`docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`,
-limited to checker/test/hook wiring and closure evidence. Runtime workspace
-execution remains parked.
+PRFC-T3 PLCS companion-routing checker/interlock is `CLOSED_PASS_BOUNDED` at
+material commit `674ddf34`. The PRFC roadmap is closed bounded. Next allowed
+move: audit and select the next roadmap, or open any runtime/provider/live,
+public-sync, registry, or product work only through fresh operator
+authorization, fresh GC-018, and a source-verified work order. Runtime
+workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
