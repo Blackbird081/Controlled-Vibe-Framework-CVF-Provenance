@@ -61,6 +61,28 @@ The package is useful reference input. It is not CVF authority.
 | `request_transition` | future request to move a governed item between lanes, not a standalone workflow state change. |
 | `receipt` | CVF receipt or completion evidence reference, not just local JSON output. |
 
+## EARC-T3A Pilot Absorption Result
+
+Pilot packet:
+
+`docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_WORKSPACE_LAYER_2026-06-18.md`
+
+| Pilot item | Result |
+|---|---|
+| Projection-not-authority | `ABSORB`: keep as a core workspace principle. |
+| State-first MCP and proposal-before-execution | `ADAPT`: future MCP/workspace work must bind this to AHB, autorun, receipts, and CVF Core authority. |
+| Dangerous action non-bypass rule | `ADAPT`: useful guard vocabulary, not a complete policy engine. |
+| Five projected state files | `ADAPT`: useful local view, not a replacement for generated CVF state aggregates. |
+| `INTAKE -> DESIGN -> SPEC -> WORK_ORDER -> BUILD -> REVIEW -> FREEZE` | `REJECT_AS_AUTHORITY`: display vocabulary only. |
+| Package smoke result | `NON_CANONICAL_ADVISORY`: package-local evidence only, not CVF runtime proof. |
+| Production handoff wording | `BLOCKED_UNTIL_CVF_PROOF`: implementation requires explicit MCP/runtime authorization and fresh GC-018. |
+
+Checker follow-up:
+
+`EARC-T3B` may add a range-aware checker requiring the EARC-T3 Required
+Absorption Table for changed external-return absorption reviews. T3A does not
+implement that checker.
+
 ## Absorption Decision
 
 The package strengthens CVF in three areas:
