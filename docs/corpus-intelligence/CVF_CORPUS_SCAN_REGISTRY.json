@@ -3483,6 +3483,106 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
       "notes": "Operator-authorized runner that tries operator-approved available-key candidates in order and runs one bounded live proof through the governed bridge. Writes a secret-safe receipt/diagnostic artifact. Reports only key alias name and presence boolean, never a raw key value. Provider order is attempt order, not preference."
+    },
+    {
+      "id": "model-gateway-rtad-t4-alibaba-free-quota-ledger-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway RTAD-T4 Alibaba free-quota ledger source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (ledger contains no secrets)",
+        "provider ranking (bounded free-quota candidates only)",
+        "broad provider parity claim (explicitly out of scope)",
+        "network call (helper only, no fetch)",
+        "credential resolution (helper only, no secret read)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Runtime mirror of the governed Alibaba free-quota model ledger. Provides endpoint constants, env-overridable DashScope endpoint resolution, model expiration metadata, and free-quota usability classification before live harness calls."
+    },
+    {
+      "id": "model-gateway-rtad-t4-provider-capability-registry-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway RTAD-T4 provider capability registry source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (registry metadata contains no secrets)",
+        "network call (registry only, no fetch)",
+        "provider ranking (bounded capability metadata only)",
+        "broad provider parity claim (explicitly out of scope)",
+        "credential resolution (registry only, no secret read)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Provider capability registry source updated by RTAD-T4 to expose operator-confirmed Alibaba free-quota models as bounded complete/chat candidates with metadata pointing to the governed ledger."
+    },
+    {
+      "id": "model-gateway-rtad-t4-provider-capability-registry-tests",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "CVF Model Gateway RTAD-T4 provider capability registry tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (tests use no real secrets)",
+        "network call (unit test only)",
+        "provider ranking (asserts bounded metadata only)",
+        "broad provider parity claim (unsupported methods still fail)",
+        "live provider call (not in test)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Focused tests proving that all Alibaba free-quota ledger rows are registry-visible as bounded complete/chat candidates and that expiration preflight classifies usable, expired, and unknown models."
+    },
+    {
+      "id": "model-gateway-rtad-t4-alibaba-stream-adapter-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway RTAD-T4 Alibaba stream adapter source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/stream-adapter.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (adapter receives secret at runtime only)",
+        "hardcoded mainland endpoint (default endpoint now resolves through helper)",
+        "provider ranking (adapter is provider-specific capability only)",
+        "broad provider parity claim (stream support remains bounded)",
+        "secret logging (adapter throws status/detail only)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Alibaba stream adapter source updated by RTAD-T4 to use the shared DashScope endpoint resolver instead of a fixed mainland endpoint default."
     }
   ]
 }

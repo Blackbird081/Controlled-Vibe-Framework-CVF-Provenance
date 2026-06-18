@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: RTAD_T3_CLOSED_PASS_BOUNDED
+Status: RTAD_T4_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -25,10 +25,11 @@ Operator selected option 1 first on 2026-06-18: Foundation Terminal Alignment.
 After RTAD-T0 closed, the operator selected Model Gateway as the first runtime
 focus and asked Codex to continue RTAD-T1 and RTAD-T2.
 
-This roadmap now records RTAD-T1 selection, RTAD-T2 deterministic closure, and
-RTAD-T3 bounded live proof closure. It does not authorize public-sync, registry
-edits, product runtime mutation, workspace runtime execution, MCP gateway
-implementation, release-facing readiness, or external-facing readiness.
+This roadmap now records RTAD-T1 selection, RTAD-T2 deterministic closure,
+RTAD-T3 bounded live proof closure, and RTAD-T4 Alibaba endpoint/free-quota
+registry hardening. It does not authorize public-sync, workspace runtime
+execution, MCP gateway implementation, release-facing readiness, or
+external-facing readiness.
 
 ## Scope
 
@@ -47,14 +48,17 @@ In scope:
 
 Out of scope:
 
-- runtime/source/test behavior beyond the closed RTAD-T2 deterministic checks;
-- provider/API or live proof beyond the closed RTAD-T3 bounded proof;
+- runtime/source/test behavior beyond the closed RTAD-T4 bounded Model Gateway
+  hardening;
+- provider/API or live proof beyond the closed RTAD-T4 bounded governed harness
+  rerun;
 - public-sync;
-- registry edit;
+- registry edit outside the Model Gateway provider capability registry and
+  Alibaba free-quota runtime helper changed in RTAD-T4;
 - historical archive rewrite;
 - new checker implementation;
 - execution of later runtime pilots.
-- registry, MCP, public-sync, or release-facing follow-up after RTAD-T3.
+- registry, MCP, public-sync, or release-facing follow-up after RTAD-T4.
 
 ## Non-Goals
 
@@ -104,6 +108,7 @@ closure record.
 | RTAD-T1 | COMPLETE_WITH_DECLARED_LIMITS | Select Model Gateway as first runtime pilot target and define proof boundary | Codex |
 | RTAD-T2 | CLOSED_PASS_BOUNDED | Run local deterministic Model Gateway runtime-admission pilot | Codex |
 | RTAD-T3 | CLOSED_PASS_BOUNDED | Run secret-safe Model Gateway live proof using existing available API keys | Codex |
+| RTAD-T4 | CLOSED_PASS_BOUNDED | Harden Alibaba endpoint handling and free-quota model registry, then rerun governed harness | Codex |
 
 ## Work Plan
 
@@ -196,13 +201,43 @@ RTAD-T3 does not claim provider ranking, provider registry readiness, MCP
 readiness, release readiness, public readiness, external-facing readiness, or
 general provider reliability.
 
+## RTAD-T4 Closure Note
+
+After the operator supplied Alibaba Model Studio free-quota screenshots and
+accepted the bounded follow-up, Codex hardened the Model Gateway Alibaba path:
+
+- added a runtime Alibaba free-quota model ledger mirror with expiration
+  preflight;
+- changed Alibaba live harness default endpoint handling to
+  `dashscope-intl.aliyuncs.com` while keeping explicit env override support;
+- registered the 18 free-quota Alibaba Model Studio LLM codes as bounded
+  `complete`/`chat` routing candidates with metadata pointing back to the
+  governed reference ledger;
+- reran the governed live harness through
+  `ProviderExecutionBridge.execute`.
+
+Evidence:
+
+- Receipt:
+  `docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json`
+- Completion:
+  `docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md`
+- Overall result: `PASS`
+- Alibaba qwen3.7-plus candidate: `PASS`, endpoint host
+  `dashscope-intl.aliyuncs.com`, free-quota status `usable`
+
+RTAD-T4 does not claim provider ranking, broad provider parity, MCP readiness,
+release readiness, public readiness, external-facing readiness, or general
+provider reliability.
+
 ## Current Runtime Freshness Verification
 
 Runtime freshness is bounded: RTAD-T1 selected Model Gateway using direct
 source and prior-closure evidence; RTAD-T2 closed local deterministic checks;
-RTAD-T3 closed one secret-safe live proof. This roadmap update does not mutate
-runtime source, provider configuration, live credentials, public-sync,
-registries, MCP gateway code, or product behavior.
+RTAD-T3 closed one secret-safe live proof; RTAD-T4 closed Alibaba endpoint,
+free-quota registry, and governed-harness hardening. This roadmap update does
+not mutate live credentials, public-sync, MCP gateway code, or external-facing
+product readiness.
 
 ## Acceptance Criteria
 
@@ -217,6 +252,9 @@ registries, MCP gateway code, or product behavior.
 | RTAD-T2-AC1 | Fresh GC-018 and source-verified work order exist for the selected pilot. |
 | RTAD-T3-AC1 | Bounded live proof receipt records overall pass or diagnostic-backed blocker. |
 | RTAD-T3-AC2 | Raw keys are not printed or committed. |
+| RTAD-T4-AC1 | Alibaba endpoint default handles the current key scope without requiring direct-probe-only knowledge. |
+| RTAD-T4-AC2 | Alibaba free-quota model codes are registry-visible with expiration metadata. |
+| RTAD-T4-AC3 | Governed harness rerun records endpoint host, free-quota status, and raw-key-safe receipt. |
 
 ## Verification / Evidence
 
@@ -234,16 +272,17 @@ Required verification before closure:
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
 | Work order status | N/A with reason: direct Codex terminal-alignment closeout authorized by operator in chat | no delegated work order in this batch | N/A with reason |
-| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md`; `docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md` | T0 `Status: CLOSED_PASS_BOUNDED`; T1 `Status: COMPLETE_WITH_DECLARED_LIMITS` | PASS |
-| Roadmap state | this roadmap | `Status: RTAD_T3_CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md`; `docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md`; `docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md` | T0 `Status: CLOSED_PASS_BOUNDED`; T1 `Status: COMPLETE_WITH_DECLARED_LIMITS`; T4 `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: RTAD_T4_CLOSED_PASS_BOUNDED` | PASS |
 | RTAD-T2 GC-018 | `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md` | baseline satisfied | PASS |
 | RTAD-T2 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | RTAD-T3 GC-018 | `docs/baselines/CVF_GC018_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | RTAD-T3 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | RTAD-T3 completion | `docs/reviews/CVF_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | RTAD-T3 receipt | `docs/reviews/evidence/rtad-t3-model-gateway-live-run-receipt-2026-06-18.json` | `overall: PASS` | PASS |
-| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
-| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| RTAD-T4 receipt | `docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json` | `overall: PASS`; `freeQuotaStatus: usable` | PASS |
+| Registry JSON | BLOCKED with reason: no product provider JSON registry exists for this package; Model Gateway provider capability registry is TypeScript | TypeScript registry updated instead | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: governed free-quota ledger front door already exists under `docs/reference/model_gateway/`; no new Markdown registry needed | no registry Markdown path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: live receipt is repo-local governed evidence | no external digest path changed | N/A with reason |
 | System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
 | Session continuity | separate session-sync follows material commit | active session surfaces update after material commit | N/A with reason |
@@ -264,6 +303,8 @@ authorized.
 | Partial diagnostic | diagnostic recorded before further action | Alibaba `internal_error` diagnostic | PASS |
 | Secret safety | no raw key values in committed evidence | alias/presence only | PASS |
 | Claim boundary | bounded live proof only | no release/public/external readiness claim | PASS |
+| RTAD-T4 endpoint handling | default endpoint host is intl and overrideable | receipt records `dashscope-intl.aliyuncs.com` | PASS |
+| RTAD-T4 free-quota preflight | model is usable before live call | receipt records `freeQuotaStatus: usable` | PASS |
 
 ## Agent Operation Trace Block
 
@@ -271,23 +312,24 @@ authorized.
 |---|---|
 | Actor | Codex reviewer/closer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-18 RTAD-T0 foundation terminal alignment |
+| Session or invocation | 2026-06-18 RTAD-T4 Alibaba endpoint and registry hardening |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, rg, apply_patch, governance gates |
-| Target paths | this roadmap; CCLV roadmap; FPRC roadmap; PLCS roadmap; RTAD-T0 completion review |
-| Allowed scope source | operator selected option 1 first after accepting RTAD proposal |
-| Before status evidence | base `96f87adb`; GFC closeout material `bfc30dbd`; session sync `96f87adb` |
-| After status evidence | RTAD-T3 material diff ready for commit |
+| Command or tool surface | PowerShell, rg, apply_patch, npm, npx tsx, governed live harness, governance gates |
+| Target paths | Model Gateway Alibaba helper, provider capability registry, live harness, runner, tests, RTAD-T4 receipt, this roadmap, RTAD-T4 completion |
+| Allowed scope source | operator accepted RTAD-T4 recommendation after Alibaba endpoint/free-quota finding |
+| Before status evidence | base `5b13bac7`; RTAD-T3 closed and Alibaba ledger committed |
+| After status evidence | RTAD-T4 material diff ready for commit |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | terminal alignment only |
-| Claim boundary | no runtime/provider/live/public-sync/registry/product mutation |
-| Expected manifest | this roadmap; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` |
-| Actual changed set | `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` |
+| Approval boundary | bounded Alibaba endpoint/free-quota registry hardening and governed harness rerun |
+| Claim boundary | no raw key disclosure, public-sync, MCP implementation, release readiness, external-facing readiness, provider ranking, or broad provider parity |
+| Expected manifest | `EXTENSIONS/CVF_MODEL_GATEWAY/scripts/run-p4b-b-live-proof.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/stream-adapter.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/p4b-b-dry-run-gate.test.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/registry/entries/model-gateway-rtad-t4-alibaba-free-quota-ledger-source.json`; `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md`; `docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md`; `docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json` |
+| Actual changed set | `EXTENSIONS/CVF_MODEL_GATEWAY/scripts/run-p4b-b-live-proof.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/stream-adapter.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/p4b-b-dry-run-gate.test.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/registry/entries/model-gateway-rtad-t4-alibaba-free-quota-ledger-source.json`; `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md`; `docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md`; `docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
 
-RTAD-T0 is governance terminal alignment only. It does not select a runtime
-pilot, implement runtime behavior, run provider/live proof, mutate registries,
-public-sync, or claim release-facing readiness.
+RTAD-T4 closes only Alibaba endpoint handling, bounded free-quota registry
+visibility, and one governed harness rerun. It does not claim provider ranking,
+broad provider parity, MCP readiness, release readiness, public readiness,
+external-facing readiness, or general provider reliability.

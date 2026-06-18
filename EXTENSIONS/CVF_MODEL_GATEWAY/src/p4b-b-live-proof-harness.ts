@@ -38,6 +38,7 @@ import { admitProviderAdapter } from "./provider-adapter-admission";
 import type { AdapterAdmissionRecord } from "./provider-adapter-admission";
 import { PROVIDER_CAPABILITY_REGISTRY } from "./provider-capability-registry";
 import type { ProviderMethodName } from "./provider-method-contract";
+import { resolveAlibabaDashScopeEndpoint } from "./alibaba-free-quota-model-ledger";
 
 export const P4B_B_LIVE_PROOF_HARNESS_VERSION =
   "cvf.p4bBLiveProofHarness.t2.v1" as const;
@@ -98,9 +99,6 @@ export interface LiveProofResult {
 }
 
 export type HarnessRunResult = LiveProofDryRunResult | LiveProofResult;
-
-const DEFAULT_DASHSCOPE_ENDPOINT =
-  "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
 
 /**
  * Build a thin bridge-compatible ProviderExecutionAdapter for an
@@ -212,7 +210,16 @@ export async function runLiveProof(
     );
   }
 
-  const endpoint = options.endpoint ?? DEFAULT_DASHSCOPE_ENDPOINT;
+  const endpoint =
+    options.endpoint ??
+    (options.providerId === "alibaba"
+      ? resolveAlibabaDashScopeEndpoint(env)
+      : undefined);
+  if (!endpoint) {
+    throw new Error(
+      `live_proof_endpoint_absent: no endpoint supplied for provider=${options.providerId}`,
+    );
+  }
   const fetchImpl =
     options.fetchImpl ?? (globalThis.fetch as unknown as LiveProofFetch);
 

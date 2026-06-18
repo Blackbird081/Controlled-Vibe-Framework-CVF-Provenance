@@ -1,0 +1,94 @@
+{
+  "proof": "model-gateway-c02-p4b-b-live-proof",
+  "contractVersion": "cvf.p4bBLiveProofHarness.t2.v1",
+  "startedAt": "2026-06-18T07:35:35.306Z",
+  "finishedAt": "2026-06-18T07:35:40.895Z",
+  "overall": "PASS",
+  "governedChain": [
+    "RoutingPolicyEngine",
+    "CredentialBoundary",
+    "ProviderHealthMonitor",
+    "QuotaLedger",
+    "admitProviderAdapter(P5-A)",
+    "checkBridgeAdmission(P5-C)",
+    "ProviderExecutionBridge.execute"
+  ],
+  "providerNeutralityNote": "candidates are operator-available-key live-test adapters only; none is canonical CVF product scope, preferred, or ranked",
+  "alibabaEndpointHandling": {
+    "defaultEndpointHost": "dashscope-intl.aliyuncs.com",
+    "overrideEnvNames": [
+      "DASHSCOPE_COMPAT_ENDPOINT",
+      "ALIBABA_DASHSCOPE_ENDPOINT",
+      "CVF_ALIBABA_DASHSCOPE_ENDPOINT"
+    ],
+    "freeQuotaLedgerRef": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json"
+  },
+  "selectedProof": {
+    "providerId": "alibaba",
+    "modelId": "qwen3.7-plus",
+    "endpointHost": "dashscope-intl.aliyuncs.com",
+    "keyAliasUsed": "DASHSCOPE_API_KEY",
+    "keyPresent": true,
+    "freeQuotaStatus": "usable",
+    "outcome": "PASS",
+    "latencyMs": 5587,
+    "admissionStatus": "admitted",
+    "bridgeErrorClass": null,
+    "detail": {
+      "receipt": {
+        "receiptId": "gw_20260618073540894_nbw6m3hk",
+        "traceId": "p4b-b-live-alibaba-1781768135308",
+        "providerId": "alibaba",
+        "selectedModelId": "qwen3.7-plus",
+        "decision": "selected"
+      },
+      "response": {
+        "model": {
+          "providerId": "alibaba",
+          "modelId": "qwen3.7-plus"
+        },
+        "textLength": 4,
+        "textPreview": "pong",
+        "usage": {
+          "inputTokens": 17,
+          "outputTokens": 231
+        }
+      }
+    }
+  },
+  "attempts": [
+    {
+      "providerId": "alibaba",
+      "modelId": "qwen3.7-plus",
+      "endpointHost": "dashscope-intl.aliyuncs.com",
+      "keyAliasUsed": "DASHSCOPE_API_KEY",
+      "keyPresent": true,
+      "freeQuotaStatus": "usable",
+      "outcome": "PASS",
+      "latencyMs": 5587,
+      "admissionStatus": "admitted",
+      "bridgeErrorClass": null,
+      "detail": {
+        "receipt": {
+          "receiptId": "gw_20260618073540894_nbw6m3hk",
+          "traceId": "p4b-b-live-alibaba-1781768135308",
+          "providerId": "alibaba",
+          "selectedModelId": "qwen3.7-plus",
+          "decision": "selected"
+        },
+        "response": {
+          "model": {
+            "providerId": "alibaba",
+            "modelId": "qwen3.7-plus"
+          },
+          "textLength": 4,
+          "textPreview": "pong",
+          "usage": {
+            "inputTokens": 17,
+            "outputTokens": 231
+          }
+        }
+      }
+    }
+  ]
+}

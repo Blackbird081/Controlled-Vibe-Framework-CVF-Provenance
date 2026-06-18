@@ -1,0 +1,26 @@
+{
+  "registryOrder": 95,
+  "id": "model-gateway-rtad-t4-provider-capability-registry-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway RTAD-T4 provider capability registry source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw API key value (registry metadata contains no secrets)",
+    "network call (registry only, no fetch)",
+    "provider ranking (bounded capability metadata only)",
+    "broad provider parity claim (explicitly out of scope)",
+    "credential resolution (registry only, no secret read)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "RTAD-T4",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+  "notes": "Provider capability registry source updated by RTAD-T4 to expose operator-confirmed Alibaba free-quota models as bounded complete/chat candidates with metadata pointing to the governed ledger."
+}

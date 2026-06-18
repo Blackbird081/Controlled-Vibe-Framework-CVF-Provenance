@@ -123,6 +123,19 @@ export {
   REVIEW_CVF_PROVIDER_METHODS,
 } from "./provider-capability-registry";
 export type {
+  AlibabaFreeQuotaModelLedgerEntry,
+  AlibabaFreeQuotaStatus,
+} from "./alibaba-free-quota-model-ledger";
+export {
+  ALIBABA_DASHSCOPE_INTL_ENDPOINT,
+  ALIBABA_DASHSCOPE_MAINLAND_ENDPOINT,
+  ALIBABA_FREE_QUOTA_LEDGER_REFERENCE,
+  ALIBABA_FREE_QUOTA_MODELS,
+  getAlibabaFreeQuotaModel,
+  getAlibabaFreeQuotaStatus,
+  resolveAlibabaDashScopeEndpoint,
+} from "./alibaba-free-quota-model-ledger";
+export type {
   ProviderCapabilityLookup,
 } from "./provider-method-gate";
 export {

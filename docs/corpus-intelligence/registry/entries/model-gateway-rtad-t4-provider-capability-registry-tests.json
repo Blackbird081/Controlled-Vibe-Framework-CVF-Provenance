@@ -1,0 +1,26 @@
+{
+  "registryOrder": 96,
+  "id": "model-gateway-rtad-t4-provider-capability-registry-tests",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "CVF Model Gateway RTAD-T4 provider capability registry tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw API key value (tests use no real secrets)",
+    "network call (unit test only)",
+    "provider ranking (asserts bounded metadata only)",
+    "broad provider parity claim (unsupported methods still fail)",
+    "live provider call (not in test)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "RTAD-T4",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+  "notes": "Focused tests proving that all Alibaba free-quota ledger rows are registry-visible as bounded complete/chat candidates and that expiration preflight classifies usable, expired, and unknown models."
+}

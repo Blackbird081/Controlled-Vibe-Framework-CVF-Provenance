@@ -26,22 +26,30 @@ import { runLiveProof } from "../src/p4b-b-live-proof-harness";
 import type { CredentialReference } from "../src/credential-boundary";
 import type { GatewayExecuteRequest } from "../src/unified-gateway-interface-contract";
 import type { ProviderMethodName } from "../src/provider-method-contract";
+import {
+  ALIBABA_FREE_QUOTA_LEDGER_REFERENCE,
+  getAlibabaFreeQuotaStatus,
+  resolveAlibabaDashScopeEndpoint,
+} from "../src/alibaba-free-quota-model-ledger";
 
 const REPO_ROOT = resolve(__dirname, "..", "..", "..");
 const ENV_LOCAL = resolve(
   REPO_ROOT,
   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local",
 );
-const RECEIPT_PATH = resolve(
-  REPO_ROOT,
-  "docs/reviews/evidence/p4b-b-live-proof-receipt-2026-06-15.json",
-);
+function resolveReceiptPath(env: Record<string, string | undefined>): string {
+  return resolve(
+    REPO_ROOT,
+    env.CVF_MODEL_GATEWAY_LIVE_RECEIPT_PATH?.trim() ||
+      "docs/reviews/evidence/p4b-b-live-proof-receipt-2026-06-15.json",
+  );
+}
 
 interface ProviderCandidate {
   providerId: string;
   modelId: string;
   method: ProviderMethodName;
-  endpoint: string;
+  endpoint?: string;
   aliases: readonly string[];
 }
 
@@ -50,10 +58,8 @@ interface ProviderCandidate {
 const CANDIDATES: readonly ProviderCandidate[] = [
   {
     providerId: "alibaba",
-    modelId: "qwen-turbo",
+    modelId: "qwen3.7-plus",
     method: "complete",
-    endpoint:
-      "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
     aliases: [
       "DASHSCOPE_API_KEY",
       "ALIBABA_API_KEY",
@@ -110,9 +116,17 @@ function safeMessage(error: unknown): string {
 interface AttemptOutcome {
   providerId: string;
   modelId: string;
+  endpointHost: string | null;
   keyAliasUsed: string | null;
   keyPresent: boolean;
-  outcome: "PASS" | "PARTIAL" | "FAIL" | "SKIPPED_NO_KEY";
+  freeQuotaStatus: "usable" | "expired" | "unknown" | "not_applicable";
+  outcome:
+    | "PASS"
+    | "PARTIAL"
+    | "FAIL"
+    | "SKIPPED_NO_KEY"
+    | "SKIPPED_FREE_QUOTA_EXPIRED"
+    | "SKIPPED_FREE_QUOTA_UNKNOWN";
   latencyMs: number | null;
   admissionStatus: string | null;
   bridgeErrorClass: string | null;
@@ -124,11 +138,22 @@ async function attemptCandidate(
   env: Record<string, string | undefined>,
 ): Promise<AttemptOutcome> {
   const aliasUsed = firstPresentAlias(env, candidate.aliases);
+  const endpoint =
+    candidate.endpoint ??
+    (candidate.providerId === "alibaba"
+      ? resolveAlibabaDashScopeEndpoint(env)
+      : "");
+  const freeQuotaStatus =
+    candidate.providerId === "alibaba"
+      ? getAlibabaFreeQuotaStatus(candidate.modelId)
+      : "not_applicable";
   const base: AttemptOutcome = {
     providerId: candidate.providerId,
     modelId: candidate.modelId,
+    endpointHost: endpoint ? new URL(endpoint).host : null,
     keyAliasUsed: aliasUsed ?? null,
     keyPresent: Boolean(aliasUsed),
+    freeQuotaStatus,
     outcome: "SKIPPED_NO_KEY",
     latencyMs: null,
     admissionStatus: null,
@@ -137,6 +162,30 @@ async function attemptCandidate(
   };
   if (!aliasUsed) {
     return base;
+  }
+  if (freeQuotaStatus === "expired" || freeQuotaStatus === "unknown") {
+    return {
+      ...base,
+      outcome:
+        freeQuotaStatus === "expired"
+          ? "SKIPPED_FREE_QUOTA_EXPIRED"
+          : "SKIPPED_FREE_QUOTA_UNKNOWN",
+      detail: {
+        diagnostic: {
+          stage: "free_quota_preflight",
+          class:
+            freeQuotaStatus === "expired"
+              ? "model_free_quota_expired"
+              : "model_free_quota_not_verified",
+          retryable: false,
+          userAction:
+            "refresh Alibaba free-quota ledger before live Model Gateway proof",
+          provider: candidate.providerId,
+          model: candidate.modelId,
+          ledgerRef: ALIBABA_FREE_QUOTA_LEDGER_REFERENCE,
+        },
+      },
+    };
   }
 
   const traceId = `p4b-b-live-${candidate.providerId}-${Date.now()}`;
@@ -171,7 +220,7 @@ async function attemptCandidate(
         method: candidate.method,
         credentialReference,
         env,
-        endpoint: candidate.endpoint,
+        endpoint,
         liveAuthorized: true,
       },
       request,
@@ -249,6 +298,7 @@ async function main(): Promise<number> {
     ...loadEnvLocal(ENV_LOCAL),
     ...process.env,
   };
+  const receiptPath = resolveReceiptPath(env);
 
   const attempts: AttemptOutcome[] = [];
   let proof: AttemptOutcome | null = null;
@@ -279,13 +329,24 @@ async function main(): Promise<number> {
     ],
     providerNeutralityNote:
       "candidates are operator-available-key live-test adapters only; none is canonical CVF product scope, preferred, or ranked",
+    alibabaEndpointHandling: {
+      defaultEndpointHost: new URL(resolveAlibabaDashScopeEndpoint(env)).host,
+      overrideEnvNames: [
+        "DASHSCOPE_COMPAT_ENDPOINT",
+        "ALIBABA_DASHSCOPE_ENDPOINT",
+        "CVF_ALIBABA_DASHSCOPE_ENDPOINT",
+      ],
+      freeQuotaLedgerRef: ALIBABA_FREE_QUOTA_LEDGER_REFERENCE,
+    },
     selectedProof: proof,
     attempts,
-  });
+  }, receiptPath);
 
   for (const a of attempts) {
     console.log(
       `P4B-B candidate ${a.providerId}/${a.modelId}: ${a.outcome}` +
+        (a.endpointHost ? ` endpointHost=${a.endpointHost}` : "") +
+        ` freeQuotaStatus=${a.freeQuotaStatus}` +
         (a.latencyMs !== null ? ` latencyMs=${a.latencyMs}` : "") +
         (a.bridgeErrorClass ? ` errorClass=${a.bridgeErrorClass}` : ""),
     );
@@ -294,12 +355,12 @@ async function main(): Promise<number> {
   return proof ? 0 : 1;
 }
 
-function writeArtifact(payload: Record<string, unknown>): void {
-  const dir = dirname(RECEIPT_PATH);
+function writeArtifact(payload: Record<string, unknown>, receiptPath: string): void {
+  const dir = dirname(receiptPath);
   if (!existsSync(dir)) {
     mkdirSync(dir, { recursive: true });
   }
-  writeFileSync(RECEIPT_PATH, `${JSON.stringify(payload, null, 2)}\n`, "utf-8");
+  writeFileSync(receiptPath, `${JSON.stringify(payload, null, 2)}\n`, "utf-8");
 }
 
 main()

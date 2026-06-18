@@ -15,6 +15,10 @@ import {
   createOpenAiCompatibleExecuteAdapter,
   P4B_B_LIVE_PROOF_HARNESS_VERSION,
 } from "../src/p4b-b-live-proof-harness";
+import {
+  ALIBABA_DASHSCOPE_INTL_ENDPOINT,
+  resolveAlibabaDashScopeEndpoint,
+} from "../src/alibaba-free-quota-model-ledger";
 import type { LiveProofFetch } from "../src/p4b-b-live-proof-harness";
 import type { CredentialReference } from "../src/credential-boundary";
 import type { GatewayExecuteRequest } from "../src/unified-gateway-interface-contract";
@@ -67,6 +71,13 @@ function makeFetchDouble(): LiveProofFetch & { calls: number } {
 describe("P4B-B live proof harness", () => {
   it("exports the harness version constant", () => {
     expect(P4B_B_LIVE_PROOF_HARNESS_VERSION).toBe("cvf.p4bBLiveProofHarness.t2.v1");
+  });
+
+  it("defaults Alibaba live calls to the international DashScope endpoint", () => {
+    expect(resolveAlibabaDashScopeEndpoint({})).toBe(ALIBABA_DASHSCOPE_INTL_ENDPOINT);
+    expect(resolveAlibabaDashScopeEndpoint({
+      ALIBABA_DASHSCOPE_ENDPOINT: "https://example.invalid/v1/chat/completions",
+    })).toBe("https://example.invalid/v1/chat/completions");
   });
 
   describe("dry-run gate (liveAuthorized=false)", () => {
@@ -147,6 +158,35 @@ describe("P4B-B live proof harness", () => {
         });
         expect(fetchDouble.calls).toBe(1);
       }
+    });
+
+    it("uses the default international endpoint for Alibaba when no endpoint override is supplied", async () => {
+      const calls: string[] = [];
+      const fetchDouble: LiveProofFetch = async (input, init) => {
+        calls.push(input);
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            choices: [{ message: { content: "pong" } }],
+            usage: { prompt_tokens: 2, completion_tokens: 1 },
+          }),
+        };
+      };
+      const result = await runLiveProof(
+        {
+          providerId: PROVIDER,
+          modelId: MODEL,
+          method: "complete",
+          credentialReference: makeRef(),
+          env: { DASHSCOPE_API_KEY: "fake-test-secret" },
+          fetchImpl: fetchDouble,
+          liveAuthorized: true,
+        },
+        makeRequest(),
+      );
+      expect(result.authorized).toBe(true);
+      expect(calls).toEqual([ALIBABA_DASHSCOPE_INTL_ENDPOINT]);
     });
 
     it("classifies an absent secret without exposing a value", async () => {
