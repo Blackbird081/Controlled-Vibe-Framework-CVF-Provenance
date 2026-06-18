@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`
+Current mode marker: `rtad_t5_model_gateway_mcp_bridge_boundary_closed_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`.
+Current mode: `rtad_t5_model_gateway_mcp_bridge_boundary_closed_runtime_parked`.
 
 Active handoff:
 
@@ -115,6 +115,14 @@ preflight into governed runtime/registry surfaces without claiming provider
 ranking, broad provider parity, MCP readiness, release readiness, public
 readiness, or external-facing readiness.
 
+RTAD-T5 Model Gateway MCP runtime bridge boundary is `CLOSED_PASS_BOUNDED` at
+material commit `8e690cea`: the stable MCP reference front door and boundary
+contract now define MCP as future tool ingress and Model Gateway as provider
+execution surface. The tranche fixed a stale MCP README documentation link and
+indexed the new boundary in GC-051. No MCP implementation, provider credential
+mutation, live run, public-sync, provider ranking, readiness claim, runtime
+queue, or Model Gateway runtime behavior change was authorized or performed.
+
 Stable artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
@@ -146,14 +154,20 @@ Stable artifacts:
 - `docs/reviews/evidence/rtad-t3-model-gateway-live-run-receipt-2026-06-18.json`
 - `docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md`
 - `docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json`
+- `docs/baselines/CVF_GC018_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_FOR_CODEX_2026-06-18.md`
+- `docs/reference/mcp_gateway/README.md`
+- `docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md`
+- `docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md`
 
-Next move: decide the next governed runtime tranche after RTAD-T4 closure.
-Possible inputs include Model Gateway MCP/runtime bridge design or another
-runtime admission tranche, each requiring fresh GC-018 and a source-verified
-work order. Public-sync, MCP
-gateway implementation, release-facing claims, external-facing readiness,
-provider ranking/parity claims, Model Gateway redispatch/P3, and co-work
-product development remain parked.
+Next move: choose the next governed runtime tranche after RTAD-T5 closure.
+Possible inputs include a narrow MCP Model Gateway tool implementation tranche
+only if the operator explicitly authorizes implementation scope, or another
+bounded runtime admission tranche. Each requires fresh GC-018 and a
+source-verified work order. Public-sync, broad MCP gateway implementation,
+release-facing claims, external-facing readiness, provider ranking/parity
+claims, Model Gateway redispatch/P3, and co-work product development remain
+parked.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -608,25 +622,27 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`.
+Mode: `rtad_t5_model_gateway_mcp_bridge_boundary_closed_runtime_parked`.
 
-RTAD-T4 Alibaba endpoint and free-quota registry harness hardening is
-`CLOSED_PASS_BOUNDED` at material commit `07349e70`. The governed Model Gateway
-harness passed with Alibaba `qwen3.7-plus` on `dashscope-intl.aliyuncs.com`,
-freeQuotaStatus `usable`, receipt `gw_20260618073540894_nbw6m3hk`, and no raw
-key disclosure. Runtime workspace execution remains parked.
+RTAD-T5 Model Gateway MCP runtime bridge boundary is `CLOSED_PASS_BOUNDED` at
+material commit `8e690cea`. The stable MCP reference front door and boundary
+contract now define MCP as future tool ingress and Model Gateway as provider
+execution surface, but no MCP implementation, provider credential mutation,
+live run, public-sync, provider ranking, readiness claim, runtime queue, or
+Model Gateway runtime behavior change was authorized or performed.
 
-Next move: decide the next governed runtime tranche with fresh GC-018 and a
-source-verified work order. Candidate inputs include Model Gateway MCP/runtime
-bridge design or another bounded runtime admission tranche.
+Next move: choose the next governed runtime tranche with fresh GC-018 and a
+source-verified work order. Candidate inputs include a narrow MCP Model Gateway
+tool implementation tranche only if the operator explicitly authorizes
+implementation scope, or another bounded runtime admission tranche.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
 GC-018, and a source-verified work order.
 
 No provider/model addition beyond the bounded RTAD-T4 free-quota registry
-visibility, MCP gateway implementation, runtime behavior mutation beyond the
-bounded harness hardening, provider
+visibility, broad MCP gateway implementation, runtime behavior mutation beyond
+the bounded RTAD-T5 boundary documentation, provider
 ranking/parity claim, governance checker implementation, EPF wiring, Strategy
 Layer implementation, AI Gateway absorption, public-sync, external app
 mutation, raw memory release, co-work product development, production

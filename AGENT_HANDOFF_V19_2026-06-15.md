@@ -29,8 +29,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after RTAD-T4 Alibaba
-Endpoint Registry Harness closure material commit `07349e70`.
+Authorized session-sync scope: update active handoff after RTAD-T5 Model
+Gateway MCP runtime bridge boundary closure material commit `8e690cea`.
 
 Protected paths:
 
@@ -49,20 +49,22 @@ Protected paths:
 - `CVF_SESSION/state/entries/rtadT2ModelGatewayRuntimeAdmissionPilotClosure20260618.json`
 - `CVF_SESSION/state/entries/rtadT3ModelGatewayLiveRunClosure20260618.json`
 - `CVF_SESSION/state/entries/rtadT4AlibabaEndpointRegistryHarnessClosure20260618.json`
+- `CVF_SESSION/state/entries/rtadT5ModelGatewayMcpBridgeBoundaryClosure20260618.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
 focus, asked Codex to continue RTAD-T1 and RTAD-T2, explicitly authorized Codex
 to use existing available API keys for a bounded Model Gateway live run, then
-accepted the RTAD-T4 Alibaba endpoint/free-quota registry hardening follow-up.
-Codex closed RTAD-T4 at material commit `07349e70`; this session-sync records
-the governed Alibaba harness pass and moves the next allowed move to a governed
-runtime-tranche decision while keeping public-sync, MCP gateway implementation,
+accepted the RTAD-T4 Alibaba endpoint/free-quota registry hardening follow-up,
+then asked Codex to continue runtime foundation work. Codex closed RTAD-T5 at
+material commit `8e690cea`; this session-sync records the governed MCP bridge
+boundary contract and moves the next allowed move to a governed runtime-tranche
+decision while keeping public-sync, broad MCP gateway implementation,
 release-facing claims, external-facing readiness, provider ranking/parity
 claims, Model Gateway redispatch/P3, and co-work product development parked.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
+RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
 GFC-T3 accepted-material commit, GFC-T3 dispatch commit, GFC-T1
 post-closure state drift remediation commit,
 GFC-T1 closure material commit, GFC-T1 accepted worker material commit, prompt
@@ -72,14 +74,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=decide the next governed runtime tranche after RTAD-T4 bounded Alibaba endpoint/free-quota harness closure; parked checkpoint=public-sync, MCP gateway implementation, release-facing claims, external-facing readiness, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`rtad_t5_model_gateway_mcp_bridge_boundary_closed_runtime_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=choose the next governed runtime tranche after RTAD-T5 bounded MCP bridge boundary closure; parked checkpoint=public-sync, broad MCP gateway implementation, release-facing claims, external-facing readiness, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
-`rtad_t4_alibaba_endpoint_registry_harness_closed_runtime_parked`
+`rtad_t5_model_gateway_mcp_bridge_boundary_closed_runtime_parked`
 
-Current HEAD recorded for this handoff: `07349e70`
-(RTAD-T4 Alibaba endpoint registry harness hardening material commit `07349e70`;
+Current HEAD recorded for this handoff: `8e690cea`
+(RTAD-T5 Model Gateway MCP runtime bridge boundary material commit `8e690cea`;
+RTAD-T4 Alibaba endpoint registry harness hardening material commit `07349e70`;
 Alibaba free-quota model ledger material commit `4ba5c072`;
 RTAD-T3 pre-push metadata alignment commit `6c41bf9b`;
 RTAD-T3 session continuity sync commit `058b3c7f`;
@@ -344,14 +347,13 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-RTAD-T4 Alibaba endpoint and free-quota registry harness hardening is
-`CLOSED_PASS_BOUNDED` at material commit `07349e70`. The governed Model Gateway
-harness passed with Alibaba `qwen3.7-plus` on `dashscope-intl.aliyuncs.com`,
-freeQuotaStatus `usable`, receipt `gw_20260618073540894_nbw6m3hk`, and no raw
-key disclosure. RTAD-T4 moved the Alibaba endpoint/key-scope finding and
-free-quota expiration preflight into governed runtime/registry surfaces without
-claiming provider ranking, broad provider parity, MCP readiness, release
-readiness, public readiness, or external-facing readiness.
+RTAD-T5 Model Gateway MCP runtime bridge boundary is `CLOSED_PASS_BOUNDED` at
+material commit `8e690cea`. The stable MCP reference front door and boundary
+contract now define MCP as future tool ingress and Model Gateway as provider
+execution surface. The tranche fixed a stale MCP README documentation link and
+indexed the new boundary in GC-051. No MCP implementation, provider credential
+mutation, live run, public-sync, provider ranking, readiness claim, runtime
+queue, or Model Gateway runtime behavior change was authorized or performed.
 
 Stable artifacts:
 
@@ -366,6 +368,16 @@ Stable artifacts:
 `docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md`
 
 `docs/reviews/evidence/rtad-t4-alibaba-endpoint-registry-harness-receipt-2026-06-18.json`
+
+`docs/baselines/CVF_GC018_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_2026-06-18.md`
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_FOR_CODEX_2026-06-18.md`
+
+`docs/reference/mcp_gateway/README.md`
+
+`docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md`
+
+`docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md`
 
 GFC-T3 Roadmap State Hygiene Remediation dispatch is accepted at material
 commit `21cf3793` after Codex reviewer repair clarified that the scope is
@@ -658,20 +670,21 @@ source-verified work order.
 
 ## Next Allowed Move
 
-RTAD-T4 Alibaba endpoint and free-quota registry harness hardening is
-`CLOSED_PASS_BOUNDED` at material commit `07349e70`. The governed Model Gateway
-harness passed with Alibaba `qwen3.7-plus` on `dashscope-intl.aliyuncs.com`,
-freeQuotaStatus `usable`, receipt `gw_20260618073540894_nbw6m3hk`, and no raw
-key disclosure.
+RTAD-T5 Model Gateway MCP runtime bridge boundary is `CLOSED_PASS_BOUNDED` at
+material commit `8e690cea`. The stable MCP reference front door and boundary
+contract now define MCP as future tool ingress and Model Gateway as provider
+execution surface. No MCP implementation, provider credential mutation, live
+run, public-sync, provider ranking, readiness claim, runtime queue, or Model
+Gateway runtime behavior change was authorized or performed.
 
-Next allowed move: decide the next governed runtime tranche with fresh GC-018
-and a source-verified work order. Candidate inputs include Model Gateway
-MCP/runtime bridge design or another bounded runtime admission tranche.
-Public-sync, MCP gateway
-implementation, release-facing claims, external-facing readiness, provider
-ranking/parity claims, Model Gateway redispatch/P3, and co-work product
-development remain parked unless a later operator authorization opens a
-separate tranche.
+Next allowed move: choose the next governed runtime tranche with fresh GC-018
+and a source-verified work order. Candidate inputs include a narrow MCP Model
+Gateway tool implementation tranche only if the operator explicitly authorizes
+implementation scope, or another bounded runtime admission tranche. Public-sync,
+broad MCP gateway implementation, release-facing claims, external-facing
+readiness, provider ranking/parity claims, Model Gateway redispatch/P3, and
+co-work product development remain parked unless a later operator authorization
+opens a separate tranche.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
