@@ -24,8 +24,8 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after GFC-T3 roadmap-state
-hygiene dispatch material commit `21cf3793`.
+Authorized session-sync scope: update active handoff after GFC-T3
+accepted-material commit `f68ff8ce`.
 
 Protected paths:
 
@@ -43,12 +43,13 @@ Protected paths:
 Operator authorization: operator instructed Codex on 2026-06-18 to handle
 GFC-T1 worker-return review and closure, process the post-closure state drift
 finding, then continue with GFC-T3. Codex closed GFC-T1 at `81669ff5`,
-remediated the post-closure state drift at `da09980e`, and accepted GFC-T3
-dispatch at `21cf3793`; this session-sync records the dispatch and routes to
-the Claude no-commit worker return.
+remediated the post-closure state drift at `da09980e`, accepted GFC-T3
+dispatch at `21cf3793`, and accepted GFC-T3 worker material at `f68ff8ce`;
+this session-sync records the accepted material and routes to Codex closure.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-GFC-T3 dispatch commit, GFC-T1 post-closure state drift remediation commit,
+GFC-T3 accepted-material commit, GFC-T3 dispatch commit, GFC-T1
+post-closure state drift remediation commit,
 GFC-T1 closure material commit, GFC-T1 accepted worker material commit, prompt
 read-first hardening commit, GFC-T1 dispatch artifacts, PRFC material closures,
 CGFP-T1 material closure, supplemental finding, PRFC roadmap history, or prior
@@ -56,14 +57,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gfc_t3_roadmap_state_hygiene_dispatched_to_claude_runtime_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude executes GFC-T3 roadmap-state hygiene remediation under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
+Startup acknowledged: current mode=`gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex commits GFC-T3 closure review, then performs final session sync; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
 
 ## Current Mode
 
-`gfc_t3_roadmap_state_hygiene_dispatched_to_claude_runtime_parked`
+`gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`
 
-Current HEAD recorded for this handoff: `21cf3793`
-(GFC-T3 roadmap-state hygiene dispatch material commit `21cf3793`;
+Current HEAD recorded for this handoff: `f68ff8ce`
+(GFC-T3 accepted-material commit `f68ff8ce`;
+GFC-T3 roadmap-state hygiene dispatch material commit `21cf3793`;
 GFC-T1 post-closure state drift remediation material commit `da09980e`;
 GFC-T1 closure material commit `81669ff5`;
 GFC-T1 accepted worker material commit `c8034a81`;

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `gfc_t3_roadmap_state_hygiene_dispatched_to_claude_runtime_parked`
+Current mode marker: `gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfc_t3_roadmap_state_hygiene_dispatched_to_claude_runtime_parked`.
+Current mode: `gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`.
 
 Active handoff:
 
@@ -73,6 +73,8 @@ front-door `## Next Allowed Move` `Mode:` line as a canonical session mode
 surface. GFC-T3 Roadmap State Hygiene Remediation dispatch is accepted at
 material commit `21cf3793` after Codex reviewer repair clarified that the
 scope is seven accepted GFC-T1 rows plus re-verified P5C, eight rows total.
+Claude returned GFC-T3 `COMPLETE_PENDING_REVIEW`; Codex accepted material at
+commit `f68ff8ce` after repairing the Rotation Guard D3/D4 stale table cells.
 
 Stable artifacts:
 
@@ -86,10 +88,9 @@ Stable artifacts:
 - `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`
 
-Next move: Claude executes GFC-T3 under `WORKER_MUST_NOT_COMMIT`, editing only
-the eight named roadmap status/self-reference surfaces and returning
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Codex owns review,
-accepted-material commit, closure, and session sync after worker return.
+Next move: Codex commits the GFC-T3 closure review, then performs final
+session sync. Runtime/provider/live/public-sync/registry/product work remains
+parked.
 GFC-T2 CCLV rule conversion and GFC-T4 FPRC machine/template follow-up remain
 optional operator decisions.
 Runtime queue execution, scheduler, worker daemon, UI implementation,
@@ -549,18 +550,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `gfc_t3_roadmap_state_hygiene_dispatched_to_claude_runtime_parked`.
+Mode: `gfc_t3_roadmap_state_hygiene_accepted_material_pending_closure_runtime_parked`.
 
-GFC-T3 Roadmap State Hygiene Remediation is dispatched to Claude at material
-commit `21cf3793`. Codex reviewed the dispatch artifacts and repaired wording
-so the scope is unambiguous: seven accepted GFC-T1 rows plus the re-verified
-P5C row, eight rows total. Claude worker must execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`
-under `WORKER_MUST_NOT_COMMIT`, editing only the eight named roadmap
-status/self-reference surfaces and returning `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex owns review, accepted-material commit, closure,
-and session sync after worker return. Runtime workspace execution remains
-parked.
+GFC-T3 Roadmap State Hygiene Remediation accepted-material commit `f68ff8ce`
+is in place after Claude no-commit worker return and Codex reviewer repair of
+the Rotation Guard D3/D4 stale table cells. Next move: Codex commits the
+GFC-T3 closure review, then performs final session sync. Runtime workspace
+execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
