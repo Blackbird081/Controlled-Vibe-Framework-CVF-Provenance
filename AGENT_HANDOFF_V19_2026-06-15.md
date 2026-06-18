@@ -77,8 +77,9 @@ Startup acknowledged: current mode=`rtad_t3_model_gateway_live_run_closed_runtim
 
 `rtad_t3_model_gateway_live_run_closed_runtime_parked`
 
-Current HEAD recorded for this handoff: `6c41bf9b`
-(RTAD-T3 pre-push metadata alignment commit `6c41bf9b`;
+Current HEAD recorded for this handoff: `4ba5c072`
+(Alibaba free-quota model ledger material commit `4ba5c072`;
+RTAD-T3 pre-push metadata alignment commit `6c41bf9b`;
 RTAD-T3 session continuity sync commit `058b3c7f`;
 RTAD-T3 Model Gateway live proof closure material commit `71bfc3a3`;
 RTAD-T2 Model Gateway closure material commit `1a68f448`;
