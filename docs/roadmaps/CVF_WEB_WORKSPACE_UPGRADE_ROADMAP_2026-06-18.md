@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_T1_PASS_T2_READY_FOR_IMPLEMENTATION_T3_PARKED
+Status: ROADMAP_T2_PASS_WEB_WORKSPACE_READ_MODEL_CLOSED_T3_PARKED
 
 Date: 2026-06-18
 
@@ -78,7 +78,7 @@ order selects `BOTH_WITH_BOUNDARY` and lists separate proof requirements.
 |---|---|---|---|---|
 | WWU-T0 | CLOSED_PASS_BOUNDED | Canonicalize the two-layer workspace architecture and Web upgrade boundary | Codex | Documentation/reference only |
 | WWU-T1 | CLOSED_PASS_BOUNDED | Audit current `cvf-web` surfaces against CVF Web Workspace read-model needs | Codex | Source verification and route/component map only |
-| WWU-T2 | READY_FOR_IMPLEMENTATION | Implement first bounded CVF Web Workspace operator dashboard/read model | Codex | Requires `DESIGN.md`, fresh GC-018, UI tests, no Local Runtime mutation |
+| WWU-T2 | CLOSED_PASS_BOUNDED | Implement first bounded CVF Web Workspace operator dashboard/read model | Codex | `CVF_WEB_WORKSPACE` read-only dashboard/read model; no Local Runtime mutation |
 | WWU-T3 | PARKED_RUNTIME_AUTHORIZATION | Decide Local Workspace Runtime/MCP bridge after Web read model is stable | Codex | Requires explicit runtime/MCP authorization |
 
 ## WWU-T1 Candidate Scope
@@ -141,13 +141,14 @@ surfaces, but no dedicated active CVF session-state/handoff/workspace read
 model. WWU-T2 then required fresh GC-018 authoring before product UI
 implementation could be dispatched.
 
-## WWU-T2 Dispatch Note (2026-06-18)
+## WWU-T2 Closure Note (2026-06-18)
 
-WWU-T2 is ready for implementation. Fresh GC-018 and a source-verified work order now
-authorize the first read-only CVF Web Workspace operator dashboard/read model.
-The execution boundary is `CVF_WEB_WORKSPACE` only: Local Workspace Runtime,
-MCP/CLI tooling, provider/live proof, public-sync, runtime enforcement, and
-readiness claims remain parked.
+WWU-T2 is `CLOSED_PASS_BOUNDED`. It implemented the first read-only CVF Web
+Workspace operator dashboard/read model under `cvf-web`: a server-side
+continuity projection, `GET /api/workspace/state`, `/workspace` dashboard, and
+sidebar navigation. The execution boundary remains `CVF_WEB_WORKSPACE` only:
+Local Workspace Runtime, MCP/CLI tooling, provider/live proof, public-sync,
+runtime enforcement, action requests, and readiness claims remain parked.
 
 ## Machine Closure Package
 
@@ -156,9 +157,11 @@ readiness claims remain parked.
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Audit packet | `docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `ROADMAP_T1_PASS_T2_READY_FOR_IMPLEMENTATION_T3_PARKED` | PASS |
+| Roadmap state | this file | `ROADMAP_T2_PASS_WEB_WORKSPACE_READ_MODEL_CLOSED_T3_PARKED` | PASS |
 | WWU-T2 GC-018 | `docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
-| WWU-T2 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
+| WWU-T2 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| WWU-T2 completion | `docs/reviews/CVF_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| WWU-T2 evidence | `docs/reviews/evidence/wwu-t2-cvf-web-workspace-operator-dashboard-read-model-2026-06-18.json` | `status=CLOSED_PASS_BOUNDED` | PASS |
 | Central standard | `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md` | `Status: ACTIVE_STANDARD` | PASS |
 | Front door | `docs/reference/agent_workspace/README.md` | points to two-layer standard | PASS |
 | Web local view | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | cites two-layer standard | PASS |

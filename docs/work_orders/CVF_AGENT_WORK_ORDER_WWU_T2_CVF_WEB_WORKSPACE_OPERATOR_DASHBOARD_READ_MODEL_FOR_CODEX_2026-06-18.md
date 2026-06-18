@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-18
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `93540bbf`
 
 executionBaseHead: `93540bbf`
 
-closureBaseHead: `N/A - set at execution closure`
+closureBaseHead: `c31e0069`
 
 rawMemoryReleased: false
 
@@ -129,7 +129,7 @@ claims, destructive actions, or paths outside Write Ownership.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | Codex worker; Codex reviewer/closer; Codex session-sync actor if needed; operator escalation |
 | phase | DISPATCH_AUTHORING now; EXECUTION by Codex; CLOSURE by Codex; SESSION_SYNC by Codex in a separate range if next move changes |
-| baseHeadFor(phase) | `dispatchBaseHead=93540bbf`; `executionBaseHead=93540bbf`; `closureBaseHead=N/A - set at execution closure` |
+| baseHeadFor(phase) | `dispatchBaseHead=93540bbf`; `executionBaseHead=93540bbf`; `closureBaseHead=c31e0069` |
 | changedSetScope(phase) | dispatch scope is WWU-T2 GC-018, work order, roadmap, and registry; execution scope is named `cvf-web` read-model/API/UI/test paths plus completion/evidence; session-sync range is protected continuity files only |
 | traceScope(phase, actor) | dispatch trace covers dispatch files only; execution trace covers product and completion files; session-sync trace covers session/front-door files only |
 | commitOwner(phase) | Codex for dispatch, material execution, closure, and session-sync |
@@ -283,9 +283,9 @@ Runtime/MCP enforcement.
 | Operator instruction | 2026-06-18 `next` following WWU-T1 material commit `3db83d3b` and session-sync commit `93540bbf` | ACCEPTED |
 | Active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | WWU-T2 fresh GC-018 ready |
 | Active handoff | `AGENT_HANDOFF_V19_2026-06-15.md` | next allowed move is WWU-T2 |
-| WWU roadmap | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | WWU-T2 dispatch-ready after this packet |
+| WWU roadmap | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | WWU-T2 closed by completion review |
 | WWU-T1 audit | `docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md` | closed source audit |
-| WWU-T2 GC-018 | `docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md` | DISPATCH_READY |
+| WWU-T2 GC-018 | `docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md` | dispatch baseline packet |
 | Design contract | `DESIGN.md` | read before frontend implementation |
 
 ## 3. Required First Reads
@@ -551,10 +551,10 @@ expansion.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| GC-018 baseline | `docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | WWU-T2 row `READY_FOR_IMPLEMENTATION` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_COMPLETION_2026-06-18.md` | created during execution | N/A with reason: dispatch packet only |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 baseline | `docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md` | dispatch baseline packet retained as source authority | PASS |
+| Roadmap state | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | WWU-T2 row `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated from source entries if registry changed | PASS after generation |
 | Registry Markdown | BLOCKED with reason: no separate markdown registry exists for this reference family | no path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no external evidence consumed in dispatch | repo-local governed artifacts only | N/A with reason |
@@ -566,7 +566,7 @@ expansion.
 
 | Criterion | Required value | Observed value | Status |
 |---|---|---|---|
-| Work order dispatch state | `DISPATCH_READY` | this packet is dispatch-ready | PASS |
+| Work order closure state | `CLOSED_PASS_BOUNDED` | this packet is closed by completion review | PASS |
 | Runtime proof boundary | no provider/network proof | no provider command authorized | PASS |
 | Receipt boundary | local completion/evidence only | no live receipt produced in dispatch | PASS |
 | Local Runtime/MCP boundary | forbidden | WWU-T3 remains parked | PASS |
