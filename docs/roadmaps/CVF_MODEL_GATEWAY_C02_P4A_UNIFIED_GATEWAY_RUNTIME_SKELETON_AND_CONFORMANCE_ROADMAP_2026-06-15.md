@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY
+Status: ROADMAP_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -327,3 +327,12 @@ readiness. No implementation is claimed before the worker return is authored
 and reviewed. `MGW-001` in the legacy coverage index stays
 `PARTIAL_RECHECK_REQUIRED` until P4A and P4B both close (P3 alone was
 insufficient; P4A adds skeleton but not live provider proof).
+
+## GFC-T3 Closure Note (2026-06-18)
+
+This roadmap is closed bounded per GFC-T3 Roadmap State Hygiene Remediation
+(work order `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`).
+Closure evidence: `docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_COMPLETION_2026-06-15.md`
+(status `CLOSED_PASS_BOUNDED`); session memory records material commit `5d46bc62`. Status line
+updated from `ROADMAP_READY` to `ROADMAP_CLOSED_PASS_BOUNDED` by GFC-T3 worker, fulfilling
+the reviewer-closure instruction documented at line 281 of this file.

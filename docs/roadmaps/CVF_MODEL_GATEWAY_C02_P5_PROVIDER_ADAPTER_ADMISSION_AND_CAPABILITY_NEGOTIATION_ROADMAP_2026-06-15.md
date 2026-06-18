@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_GC018
+Status: ROADMAP_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -187,3 +187,30 @@ This roadmap defines the next foundation direction only. It does not implement
 P5, dispatch Claude, authorize live provider/API calls, read credentials, add
 providers/models, wire EPF, implement Strategy Layer, absorb AI Gateway,
 public-sync, or claim production/public readiness.
+
+## GFC-T3 Closure Note (2026-06-18)
+
+This roadmap is closed bounded per GFC-T3 Roadmap State Hygiene Remediation
+(work order `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`).
+Closure evidence: `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md`
+(status `CLOSED_PASS_BOUNDED`); session memory records material commit `a4907f2c`. Status line
+updated from `ROADMAP_READY_FOR_GC018` to `ROADMAP_CLOSED_PASS_BOUNDED` by GFC-T3 worker.
+
+## Current Runtime Freshness Verification
+
+NOT_APPLICABLE_WITH_REASON: this roadmap's GFC-T3 closure note adds governance metadata only; no runtime source symbols were modified or introduced.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` | GFC-T3 work order authorizes this status-line change; GC-018 baseline approves scope | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_PACKET_2026-06-18.md` | worker packet Status: COMPLETE_PENDING_REVIEW; this row marked REMEDIATED | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_ROADMAP_2026-06-15.md` | `Status: ROADMAP_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | governance-doc-only tranche | no GC-051 registry mutation authorized or required | BLOCKED with reason: governance-doc-only status remediation |
+| Registry Markdown | governance-doc-only tranche | no registry markdown update authorized or required | BLOCKED with reason: governance-doc-only status remediation |
+| External evidence digest | all evidence is repo-local and git-tracked | no external artifacts or digests needed | N/A with reason |
+| System loop interlock | no runtime system loop required | no API interlock needed for governance status remediation | N/A with reason |
+| Session continuity | session mode unchanged | no session state file modification authorized for GFC-T3 worker | N/A with reason |
+| Tranche completion review | `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED`; material commit `a4907f2c` | PASS |
+| Public-sync | N/A with reason: private provenance, `DEFERRED_PRIVATE_ONLY` | N/A | N/A with reason |

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY
+Status: ROADMAP_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -377,3 +377,41 @@ Evidence artifacts:
 Closure is `CLOSED_PASS_BOUNDED` when completion review disposition is ACCEPT
 or ACCEPT_AFTER_REVIEWER_REPAIR, pre-closure autorun gate PASS on the material
 range, and pre-commit hook PASS on the closure commit.
+
+## GFC-T3 Closure Note (2026-06-18)
+
+This roadmap is closed bounded per GFC-T3 Roadmap State Hygiene Remediation
+(work order `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`).
+Closure evidence: `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md`
+(position `CLOSED_PASS_BOUNDED`; material implementation commit `24d455f8`). Session memory
+explicitly warns against C-02 P2 redispatch; P3 requires fresh operator authorization,
+fresh GC-018, and a source-verified work order. Status line updated from `ROADMAP_READY`
+to `ROADMAP_CLOSED_PASS_BOUNDED` by GFC-T3 worker.
+
+## Acceptance Receipt Assertion Matrix
+
+| Acceptance criterion | Required value | Observed value | Status |
+|---|---|---|---|
+| Roadmap Status: line | `ROADMAP_CLOSED_PASS_BOUNDED` | `ROADMAP_CLOSED_PASS_BOUNDED` (updated by GFC-T3 worker) | PASS |
+| GFC-T3 Closure Note present | section present | `## GFC-T3 Closure Note (2026-06-18)` appended | PASS |
+| Closure evidence on disk | `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md` exists | Test-Path returned TRUE before edit | PASS |
+| HEAD unchanged | `24848d66` | `24848d66` (no commit by worker) | PASS |
+
+## Current Runtime Freshness Verification
+
+NOT_APPLICABLE_WITH_REASON: this roadmap's GFC-T3 closure note adds governance metadata only; no runtime source symbols were modified or introduced.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` | GFC-T3 work order authorizes this status-line change; GC-018 baseline approves scope | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_PACKET_2026-06-18.md` | worker packet Status: COMPLETE_PENDING_REVIEW; this row marked REMEDIATED (highest-risk row per GFC-T1 matrix) | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md` | `Status: ROADMAP_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | governance-doc-only tranche | no GC-051 registry mutation authorized or required | BLOCKED with reason: governance-doc-only status remediation |
+| Registry Markdown | governance-doc-only tranche | no registry markdown update authorized or required | BLOCKED with reason: governance-doc-only status remediation |
+| External evidence digest | all evidence is repo-local and git-tracked | no external artifacts or digests needed | N/A with reason |
+| System loop interlock | no runtime system loop required | no API interlock needed for governance status remediation | N/A with reason |
+| Session continuity | session mode unchanged | no session state file modification authorized for GFC-T3 worker | N/A with reason |
+| Tranche completion review | `docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md` | position `CLOSED_PASS_BOUNDED`; material commit `24d455f8` | PASS |
+| Public-sync | N/A with reason: private provenance, `DEFERRED_PRIVATE_ONLY` | N/A | N/A with reason |

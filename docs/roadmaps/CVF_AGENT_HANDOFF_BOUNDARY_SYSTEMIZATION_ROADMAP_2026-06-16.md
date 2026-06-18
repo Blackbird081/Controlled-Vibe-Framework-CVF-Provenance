@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_CLOSED_PASS_BOUNDED_RUNTIME_READY_PRE_EXECUTION
+Status: ROADMAP_CLOSED_PASS_BOUNDED_SKELETON_READY_PRE_RUNTIME
 
 docType: roadmap
 
@@ -663,3 +663,19 @@ implement checkers, does not build the agent-interaction workspace, and does not
 authorize runtime, provider, public-sync, or registry work. AHB-T1 is a
 read-only audit and model proposal subject to Codex critique and operator
 decision.
+
+## GFC-T3 Closure Note (2026-06-18)
+
+This roadmap is closed bounded (skeleton foundation only; runtime expansion
+parked) per GFC-T3 Roadmap State Hygiene Remediation (work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`).
+Closure evidence: session memory records `CLOSED_PASS_BOUNDED` for all AHB tranches
+through AHB-Tn.10 at commits through `b3ab716e`;
+`docs/reviews/CVF_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_COMPLETION_2026-06-17.md`
+records final AHB sub-tranche closure. Top-of-file Status corrected from
+`ROADMAP_CLOSED_PASS_BOUNDED_RUNTIME_READY_PRE_EXECUTION` to
+`ROADMAP_CLOSED_PASS_BOUNDED_SKELETON_READY_PRE_RUNTIME` to resolve the internal
+self-reference mismatch with the `## Machine Closure Package` row (line 480),
+which already expected `ROADMAP_CLOSED_PASS_BOUNDED_SKELETON_READY_PRE_RUNTIME`.
+No change to the Machine Closure Package row was required; it already matches
+the corrected top-of-file status.

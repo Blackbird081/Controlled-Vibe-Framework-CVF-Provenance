@@ -2,7 +2,7 @@
 
 Memory class: ROADMAP_PACKET
 
-Status: ROADMAP_READY
+Status: ROADMAP_CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -83,8 +83,8 @@ temporary fixtures.
 |---|---|---|---|
 | D1 | GC-018 baseline for this guard hardening | Codex | READY |
 | D2 | Claude work order | Codex | READY |
-| D3 | Guard implementation | Claude | DISPATCH_READY |
-| D4 | Focused unit tests | Claude | DISPATCH_READY |
+| D3 | Guard implementation | Claude | CLOSED_PASS_BOUNDED |
+| D4 | Focused unit tests | Claude | CLOSED_PASS_BOUNDED |
 | D5 | Worker return with gate evidence | Claude | REQUIRED_AFTER_IMPLEMENTATION |
 | D6 | Completion review and commit | Codex | REQUIRED_AFTER_WORKER_RETURN |
 
@@ -121,7 +121,8 @@ worker return.
 Disposition: DEFERRED_PRIVATE_ONLY
 
 Reason: this roadmap changes internal provenance governance guards only. It is
-not a public CVF product claim or runtime capability.
+not a public CVF product claim or runtime capability. No public-sync batch is
+authorized.
 
 ## Legacy Absorption Coverage Index Disposition
 
@@ -139,3 +140,30 @@ machine guard. It does not absorb, reopen, or scope legacy knowledge.
 This roadmap authorizes only a focused guard and test hardening pass. It does
 not authorize Model Gateway P4B, live-provider wiring, provider/model addition,
 public-sync, legacy absorption, or broader session architecture redesign.
+
+## GFC-T3 Closure Note (2026-06-18)
+
+This roadmap is closed bounded per GFC-T3 Roadmap State Hygiene Remediation
+(work order `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`).
+Closure evidence: `docs/reviews/CVF_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_COMPLETION_2026-06-15.md`
+(status `REVIEW_PASS_BOUNDED`; session memory records this tranche as `CLOSED_PASS_BOUNDED`).
+Status line updated from `ROADMAP_READY` to `ROADMAP_CLOSED_PASS_BOUNDED` by GFC-T3 worker.
+
+## Current Runtime Freshness Verification
+
+NOT_APPLICABLE_WITH_REASON: this roadmap's GFC-T3 closure note adds governance metadata only; no runtime source symbols were modified or introduced.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` | GFC-T3 work order authorizes this status-line change; GC-018 baseline approves scope | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_PACKET_2026-06-18.md` | worker packet Status: COMPLETE_PENDING_REVIEW; this row marked REMEDIATED | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_ROADMAP_2026-06-15.md` | `Status: ROADMAP_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | governance-doc-only tranche | no GC-051 registry mutation authorized or required | BLOCKED with reason: governance-doc-only status remediation |
+| Registry Markdown | governance-doc-only tranche | no registry markdown update authorized or required | BLOCKED with reason: governance-doc-only status remediation |
+| External evidence digest | all evidence is repo-local and git-tracked | no external artifacts or digests needed | N/A with reason |
+| System loop interlock | no runtime system loop required | no API interlock needed for governance status remediation | N/A with reason |
+| Session continuity | session mode unchanged | no session state file modification authorized for GFC-T3 worker | N/A with reason |
+| Tranche completion review | `docs/reviews/CVF_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_COMPLETION_2026-06-15.md` | `Status: REVIEW_PASS_BOUNDED`; session memory records `CLOSED_PASS_BOUNDED` | PASS |
+| Public-sync | N/A with reason: private provenance, `DEFERRED_PRIVATE_ONLY` | N/A | N/A with reason |
