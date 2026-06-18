@@ -1,0 +1,31 @@
+{
+  "stateOrder": 446,
+  "stateKey": "earcT3AExternalReturnAbsorptionPilotClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "481f35bd",
+    "roadmap": "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_FOR_CODEX_2026-06-18.md",
+    "primaryAbsorptionReview": "docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_WORKSPACE_LAYER_2026-06-18.md",
+    "completion": "docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_COMPLETION_2026-06-18.md",
+    "updatedFoundationMap": "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md",
+    "registryEntry": "docs/corpus-intelligence/registry/entries/earc-t3a-external-return-absorption-pilot.json",
+    "nextDispatchCandidate": "EARC-T3B",
+    "nextDispatchRequirement": "Fresh GC-018 and source-verified work order for a range-aware checker requiring the Required Absorption Table on changed external-return absorption reviews.",
+    "parkedBoundaries": [
+      "EARC-T2 public-sync preparation until explicit public-sync authorization",
+      "EARC-T4 MCP/workspace implementation decision until explicit MCP/runtime authorization",
+      "public-sync",
+      "MCP implementation",
+      "provider/live calls",
+      "workspace runtime mutation",
+      "raw external package import",
+      "public readiness",
+      "production readiness",
+      "release readiness",
+      "external-facing readiness"
+    ],
+    "gateSummary": "worker-return fast gate passed, git diff --check passed, corpus registry aggregate check passed, continuation-chain guard passed, commit steward implementation preflight passed, pre-commit hook passed 50/50 checks on material commit 481f35bd, and pre-closure material gate passed except expected GC-020 session-sync drift before this session-sync."
+  }
+}

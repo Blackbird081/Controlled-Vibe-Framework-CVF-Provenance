@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `earc_t3_external_finding_absorption_workflow_closed_t2_t4_parked`
+Current mode marker: `earc_t3a_external_return_absorption_pilot_closed_t3b_ready_t2_t4_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `earc_t3_external_finding_absorption_workflow_closed_t2_t4_parked`.
+Current mode: `earc_t3a_external_return_absorption_pilot_closed_t3b_ready_t2_t4_parked`.
 
 Active handoff:
 
@@ -168,7 +168,17 @@ door, packet template, authoring checklist, roadmap, and GC-051 registry are
 aligned to that workflow. No EARC execution tranche is open without explicit
 operator authorization: EARC-T2 public-sync preparation remains held, EARC-T4
 MCP/workspace implementation remains held, and the external-return absorption
-checker waits for one real external-return packet.
+checker was waiting for one real external-return packet before EARC-T3A.
+
+EARC-T3A External Return Absorption Pilot is `CLOSED_PASS_BOUNDED` at material
+commit `481f35bd`. Codex ran the EARC-T3 absorption workflow on the
+operator-copied workspace-layer package, kept the raw package as advisory
+evidence only, recorded source hashes, updated the CVF-owned workspace
+absorption map, rejected the hard-coded external workflow enum as CVF
+authority, and confirmed the Required Absorption Table is ready for a future
+range-aware checker. Next dispatch candidate is EARC-T3B with fresh GC-018 and
+a source-verified work order. EARC-T2 public-sync and EARC-T4 MCP/runtime
+remain held for explicit authorization.
 
 Stable artifacts:
 
@@ -225,11 +235,15 @@ Stable artifacts:
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md`
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`
 - `docs/reviews/CVF_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_COMPLETION_2026-06-18.md`
+- `docs/baselines/CVF_GC018_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_FOR_CODEX_2026-06-18.md`
+- `docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_WORKSPACE_LAYER_2026-06-18.md`
+- `docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_COMPLETION_2026-06-18.md`
 
-Next move: no EARC execution tranche is open without explicit operator
-authorization. EARC-T2 requires explicit public-sync authorization, EARC-T4
-requires explicit MCP/runtime authorization, and the EARC-T3 checker candidate
-requires one real external-return packet first.
+Next move: EARC-T3B with fresh GC-018 and a source-verified work order for a
+range-aware checker requiring the Required Absorption Table on changed
+external-return absorption reviews. EARC-T2 requires explicit public-sync
+authorization and EARC-T4 requires explicit MCP/runtime authorization.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -684,18 +698,18 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `earc_t3_external_finding_absorption_workflow_closed_t2_t4_parked`.
+Mode: `earc_t3a_external_return_absorption_pilot_closed_t3b_ready_t2_t4_parked`.
 
-EARC-T3 External Finding Absorption Workflow is `CLOSED_PASS_BOUNDED` at
-material commit `4bf9920b`. CVF now has a stable post-review workflow for
-classifying returned external-agent output before action, plus updated
-external-agent review front door, packet template, authoring checklist, EARC
-roadmap, and GC-051 registry coverage.
+EARC-T3A External Return Absorption Pilot is `CLOSED_PASS_BOUNDED` at material
+commit `481f35bd`. CVF has now run the EARC-T3 absorption workflow on the
+operator-copied workspace-layer package, updated the CVF-owned workspace
+absorption map, recorded advisory external evidence with hashes, rejected the
+hard-coded external workflow enum as CVF authority, and confirmed the Required
+Absorption Table is ready for machine-check hardening.
 
-Next allowed move: no EARC execution tranche is open without explicit operator
-authorization. EARC-T2 requires explicit public-sync authorization, EARC-T4
-requires explicit MCP/runtime authorization, and the EARC-T3 checker candidate
-requires one real external-return packet first.
+Next allowed move: EARC-T3B with fresh GC-018 and a source-verified work order
+for a range-aware checker requiring the Required Absorption Table on changed
+external-return absorption reviews.
 
 EARC-T2 public-sync preparation remains held for explicit public-sync
 authorization. EARC-T4 MCP/workspace implementation decision remains held for
