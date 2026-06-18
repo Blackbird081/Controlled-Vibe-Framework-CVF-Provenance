@@ -2,14 +2,15 @@
   "stateOrder": 430,
   "stateKey": "preRuntimeFoundationCleanupRoadmap20260617",
   "value": {
-    "status": "ROADMAP_IN_PROGRESS_T2_CLOSED_T3_READY_FOR_GC018",
+    "status": "ROADMAP_IN_PROGRESS_T3_DISPATCHED",
     "materialCommit": "051b491e",
+    "dispatchCommit": "151db2cd",
     "roadmap": "docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md",
     "prfcT1": "CCLV-T2 current-state reconciliation",
     "prfcT2": "Central facts pilot closed at material commit 051b491e",
-    "prfcT3": "PLCS companion-routing checker or interlock follow-up after T2 pass or operator release",
-    "result": "PRFC-T1 and PRFC-T2 are closed. PRFC-T3 is the next source-verified GC-018/work-order lane before runtime.",
-    "claimBoundary": "Planning only. No GC-018, work order, checker implementation, runtime queue, scheduler, UI, provider or live proof, public-sync, registry edit, product runtime mutation, production readiness, or public readiness.",
-    "nextAllowedMove": "Open PRFC-T3 only through fresh GC-018 and a source-verified work order for the PLCS companion-routing checker/interlock follow-up. Workspace runtime remains parked."
+    "prfcT3": "PLCS companion-routing checker/interlock dispatch committed at 151db2cd",
+    "result": "PRFC-T1 and PRFC-T2 are closed. PRFC-T3 has fresh GC-018 and source-verified work order dispatch committed; implementation is the next bounded lane before runtime.",
+    "claimBoundary": "Dispatch and implementation lane only. No runtime queue, scheduler, UI, provider or live proof, public-sync, registry edit, product runtime mutation, production readiness, or public readiness.",
+    "nextAllowedMove": "Execute PRFC-T3 under its committed work order, limited to checker/test/hook wiring and closure evidence. Workspace runtime remains parked."
   }
 }
