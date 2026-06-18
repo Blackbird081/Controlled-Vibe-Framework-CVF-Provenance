@@ -6,6 +6,17 @@ Status: reusable template for scoped agent execution orders.
 
 Text Encoding Exception: em dash and standard punctuation used in governance prose
 
+## Dispatch Prompt Envelope Placement Rule
+
+For every delegated or role-switching dispatch-ready work order, the
+`## Dispatch Prompt Envelope` section must be the first `##` section in the
+actual work order. It must appear before `## Purpose`, before any mission or
+scope prose, and no later than line 25. Minimal metadata such as title, memory
+class, status, owner, and base-head fields may appear above it.
+
+This template describes the rule before its own purpose section so authors see
+the read-first requirement before copying any other section order.
+
 ## Purpose
 
 A CVF Agent Work Order is the tactical execution packet that an orchestrator,
@@ -213,16 +224,7 @@ order under `docs/work_orders/`.
 
 ## Required Structure
 
-Copy and complete the block below.
-
-```text
-# CVF Agent Work Order - <Scope>
-
-Memory class: POINTER_RECORD
-
-Status: <DRAFT | READY_FOR_REVIEW | APPROVED_FOR_EXECUTION | CLOSED>
-
-Status token rule:
+Status token rule for authors:
 
 - `HOLD_*`, `DRAFT`, or `PROPOSED` statuses must not include the token
   `CLOSED`; use `PASS` or `SATISFIED` for prerequisite wording, for example
@@ -233,11 +235,20 @@ Status token rule:
   and reserve `CLOSED_PASS_BOUNDED` for the child work order, completion
   review, or fully closed roadmap.
 
+Copy and complete the block below.
+
+```text
+# CVF Agent Work Order - <Scope>
+
+Memory class: POINTER_RECORD
+
+Status: <DRAFT | READY_FOR_REVIEW | APPROVED_FOR_EXECUTION | CLOSED>
+
 ## Dispatch Prompt Envelope
 
-Place this section here, before Mission, for any delegated or role-switching
-dispatch-ready work order. It is a read-first cover note; it does not replace
-the work order. Use the field skeleton in
+Place this section here as the first `##` section for any delegated or
+role-switching dispatch-ready work order. It is a read-first cover note; it
+does not replace the work order. Use the field skeleton in
 `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`.
 
 ## 1. Mission

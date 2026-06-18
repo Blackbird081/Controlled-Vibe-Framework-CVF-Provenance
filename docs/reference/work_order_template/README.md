@@ -33,8 +33,10 @@ An agent reading a work order should:
 
 1. Start from the canonical template:
    `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
-2. Follow a section pointer here to this README.
-3. Read only the addenda relevant to the current work order type.
+2. Confirm that any delegated dispatch-ready work order has
+   `## Dispatch Prompt Envelope` as the first `##` section before `## Purpose`.
+3. Follow a section pointer here to this README.
+4. Read only the addenda relevant to the current work order type.
 
 ## Canonical Template
 

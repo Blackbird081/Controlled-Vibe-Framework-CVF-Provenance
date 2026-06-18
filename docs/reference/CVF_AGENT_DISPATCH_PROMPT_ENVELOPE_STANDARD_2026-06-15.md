@@ -51,11 +51,14 @@ A dispatch prompt envelope must include all of the following fields, or record
 
 The dispatch prompt envelope must appear in the work order under a
 `## Dispatch Prompt Envelope` section. For delegated or role-switching
-dispatch-ready work orders, this section is a read-first cover note: it must
-appear near the top of the file before `## 1. Mission` or `## Mission`, and no
-later than line 80. This placement rule exists because the envelope carries the
-worker's current role, commit mode, first actions, and return contract; placing
-it after the long execution packet weakens its purpose.
+dispatch-ready work orders, this section is a read-first cover note: it must be
+the first `##` section in the file, appear before `## Purpose`, appear before
+`## 1. Mission` or `## Mission`, and begin no later than line 25. Minimal
+metadata such as title, memory class, status, owner, and base-head fields may
+appear above it, but no prose section may precede it. This placement rule
+exists because the envelope carries the worker's current role, commit mode,
+first actions, and return contract; placing it after the long execution packet
+or after purpose prose weakens its purpose.
 
 The section must contain either:
 
@@ -99,9 +102,10 @@ This checker runs as part of the dispatch packet author fast gate:
 `governance/compat/run_dispatch_packet_author_fast_gate.py`
 
 A dispatch-ready work order that lacks a `## Dispatch Prompt Envelope` section
-with the required fields, puts it below the read-first placement boundary, or
-uses no explicit `N/A with reason`, fails the gate and must be kept in `HOLD`
-or `DRAFT` until corrected.
+with the required fields, puts it below the read-first placement boundary, puts
+any other `##` section before it, puts it after `## Purpose`, or uses no
+explicit `N/A with reason`, fails the gate and must be kept in `HOLD` or
+`DRAFT` until corrected.
 
 ## Envelope Template
 
@@ -143,6 +147,7 @@ Return contract: <COMPLETE_PENDING_REVIEW | BLOCKED_WITH_REASON> with <exact evi
 Evidence of standard compliance is established when:
 
 - the dispatch-ready work order includes a `## Dispatch Prompt Envelope` section;
+- the envelope is the first `##` section and appears before `## Purpose`;
 - the section contains all required fields or explicit `N/A with reason`
   per-field;
 - `check_dispatch_prompt_envelope.py` passes on the work order file;
@@ -166,20 +171,20 @@ Claim Update Requirement: N/A with reason: no claim was predicted; no update is 
 |---|---|
 | Actor | Codex orchestrator/reviewer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-16 prompt envelope read-first placement hardening |
+| Session or invocation | 2026-06-18 prompt envelope first-section placement hardening |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, apply_patch, pytest |
-| Target paths | prompt-envelope standard, template, checker, tests |
-| Allowed scope source | operator requested read-first prompt placement hardening as a small CVF foundation update |
-| Before status evidence | base `dedc97c4` |
-| After status evidence | read-first placement rule and tests authored; pending material commit |
+| Target paths | prompt-envelope standard, work-order template, template family index, checker, tests, finding review |
+| Allowed scope source | operator requested prompt placement finding remediation before Claude worker-return review |
+| Before status evidence | base `8ce54d6b` |
+| After status evidence | first-section placement rule and tests authored; pending material commit |
 | Diff evidence | `git diff --name-status`; `git status --short` |
 | Approval boundary | authoring-time dispatch prompt envelope placement only; no runtime/provider/live/public scope |
 | Claim boundary | repo-local trace only; no OS/user attribution |
 | Agent type | Codex orchestrator/reviewer |
-| Invocation ID | `prompt-header-cclv-packet-2026-06-16` |
-| Expected manifest | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md` |
-| Actual changed set | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md` |
+| Invocation ID | `prompt-read-first-placement-finding-2026-06-18` |
+| Expected manifest | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/work_order_template/README.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reviews/CVF_PROMPT_READ_FIRST_PLACEMENT_FINDING_2026-06-18.md` |
+| Actual changed set | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/work_order_template/README.md`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/test_check_dispatch_prompt_envelope.py`; `docs/reviews/CVF_PROMPT_READ_FIRST_PLACEMENT_FINDING_2026-06-18.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

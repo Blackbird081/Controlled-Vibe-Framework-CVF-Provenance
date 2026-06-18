@@ -37,7 +37,9 @@ STANDARD_PATH = (
 )
 ENVELOPE_SECTION_MARKER = "## Dispatch Prompt Envelope"
 MISSION_SECTION_PATTERN = re.compile(r"^##\s+(?:1\.\s+)?Mission\s*$", re.MULTILINE)
-READ_FIRST_MAX_LINE = 80
+PURPOSE_SECTION_PATTERN = re.compile(r"^##\s+Purpose\s*$", re.MULTILINE)
+FIRST_SECTION_PATTERN = re.compile(r"^##\s+.+$", re.MULTILINE)
+READ_FIRST_MAX_LINE = 25
 # NA_STANDALONE_PATTERN matches N/A with reason only when it appears as a
 # standalone declaration at the start of the section (possibly preceded by
 # whitespace or a bullet), NOT when it appears as a value inside a field line
@@ -207,6 +209,20 @@ def _check_read_first_placement(text: str) -> list[str]:
         issues.append(
             f"`{ENVELOPE_SECTION_MARKER}` must be read-first near the top of "
             f"the work order (line {marker_line}, max {READ_FIRST_MAX_LINE})"
+        )
+
+    first_section_match = FIRST_SECTION_PATTERN.search(text)
+    if first_section_match and first_section_match.group(0).strip() != ENVELOPE_SECTION_MARKER:
+        issues.append(
+            f"`{ENVELOPE_SECTION_MARKER}` must be the first `##` section in "
+            "delegated dispatch-ready work orders"
+        )
+
+    purpose_match = PURPOSE_SECTION_PATTERN.search(text)
+    if purpose_match and marker_index > purpose_match.start():
+        issues.append(
+            f"`{ENVELOPE_SECTION_MARKER}` must appear before `## Purpose` in "
+            "delegated dispatch-ready work orders"
         )
 
     mission_match = MISSION_SECTION_PATTERN.search(text)

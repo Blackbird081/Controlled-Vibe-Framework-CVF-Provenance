@@ -48,6 +48,10 @@ Memory class: POINTER_RECORD
 
 Status: {status}
 
+{ENVELOPE_SECTION_MARKER}
+
+{envelope_section}
+
 ## Purpose
 
 Test work order for envelope checker.
@@ -55,10 +59,6 @@ Test work order for envelope checker.
 ## Authority Chain
 
 - Operator instruction: test
-
-{ENVELOPE_SECTION_MARKER}
-
-{envelope_section}
 
 ## Claim Boundary
 
@@ -278,7 +278,7 @@ def test_pass_complete_envelope() -> None:
 
 
 def test_pass_read_first_envelope_before_mission() -> None:
-    """PASS: envelope near top before Mission is read-first compliant."""
+    """PASS: envelope is the first section before Purpose and Mission."""
     text = f"""# CVF Agent Work Order - Test
 
 Memory class: POINTER_RECORD
@@ -288,6 +288,10 @@ Status: DISPATCH_READY
 {ENVELOPE_SECTION_MARKER}
 
 {COMPLETE_ENVELOPE}
+
+## Purpose
+
+Test purpose.
 
 ## 1. Mission
 
@@ -321,9 +325,30 @@ Test claim boundary.
     assert any("before `## 1. Mission`" in issue for issue in issues), issues
 
 
+def test_fail_envelope_after_purpose_not_read_first() -> None:
+    """FAIL: Purpose before the envelope hides the worker prompt."""
+    text = f"""# CVF Agent Work Order - Test
+
+Memory class: POINTER_RECORD
+
+Status: DISPATCH_READY
+
+## Purpose
+
+Test purpose.
+
+{ENVELOPE_SECTION_MARKER}
+
+{COMPLETE_ENVELOPE}
+"""
+    issues = check_work_order("docs/work_orders/CVF_TEST_2026-06-15.md", text)
+    assert any("before `## Purpose`" in issue for issue in issues), issues
+    assert any("first `##` section" in issue for issue in issues), issues
+
+
 def test_fail_envelope_too_deep_even_without_mission() -> None:
     """FAIL: an envelope buried far down the file is not read-first."""
-    padding = "\n".join(f"Intro line {i}" for i in range(1, 85))
+    padding = "\n".join(f"Intro line {i}" for i in range(1, 30))
     text = f"""# CVF Agent Work Order - Test
 
 Memory class: POINTER_RECORD
@@ -337,7 +362,7 @@ Status: DISPATCH_READY
 {COMPLETE_ENVELOPE}
 """
     placement = _check_read_first_placement(text)
-    assert any("max 80" in issue for issue in placement), placement
+    assert any("max 25" in issue for issue in placement), placement
 
 
 def test_pass_na_with_reason() -> None:
