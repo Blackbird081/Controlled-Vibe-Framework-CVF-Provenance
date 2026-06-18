@@ -29,9 +29,11 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after WWU-T2 CVF Web
-Workspace Operator Dashboard Read Model closure material commit `b3593e1b`,
-following WWU-T2 dispatch material commit `1bbf3046`, WWU-T1 CVF Web
+Authorized session-sync scope: update active handoff after WWU-T2A CVF Web
+Workspace Lane Summary Read Model dispatch material commit `b3d89c60`,
+following WWU-T2 CVF Web Workspace Operator Dashboard Read Model closure
+material commit `b3593e1b`, following WWU-T2 dispatch material commit
+`1bbf3046`, WWU-T1 CVF Web
 Workspace Surface Audit material commit `3db83d3b`,
 following WWU-T0 Workspace
 Two-Layer Foundation material commit `f637904c`, EARC-T3B External
@@ -138,8 +140,10 @@ Startup acknowledged: current mode=`wwu_t2_web_workspace_read_model_closed_t3_pa
 
 `wwu_t2_web_workspace_read_model_closed_t3_parked`
 
-Current HEAD recorded for this handoff: `b3593e1b`
-(WWU-T2 CVF Web Workspace Operator Dashboard Read Model closure material
+Current HEAD recorded for this handoff: `b3d89c60`
+(WWU-T2A CVF Web Workspace Lane Summary Read Model dispatch material commit
+`b3d89c60`;
+WWU-T2 CVF Web Workspace Operator Dashboard Read Model closure material
 commit `b3593e1b`;
 WWU-T2 CVF Web Workspace Operator Dashboard Read Model dispatch material commit
 `1bbf3046`;
