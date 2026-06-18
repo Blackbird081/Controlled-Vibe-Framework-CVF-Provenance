@@ -1,0 +1,36 @@
+{
+  "stateOrder": 445,
+  "stateKey": "earcT3ExternalFindingAbsorptionWorkflowClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4bf9920b",
+    "roadmap": "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md",
+    "completion": "docs/reviews/CVF_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_COMPLETION_2026-06-18.md",
+    "deliveredReferenceFiles": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md",
+      "docs/reference/external_agent_review/README.md"
+    ],
+    "registryEntry": "docs/corpus-intelligence/registry/entries/earc-t3-external-finding-absorption-workflow.json",
+    "nextDispatchCandidate": "NONE_WITHOUT_EXPLICIT_OPERATOR_AUTHORIZATION",
+    "nextDispatchRequirement": "EARC-T2 requires explicit public-sync authorization; EARC-T4 requires explicit MCP/runtime authorization; checker candidate waits for one real external-return packet.",
+    "parkedBoundaries": [
+      "EARC-T2 public-sync preparation until explicit public-sync authorization",
+      "EARC-T4 MCP/workspace implementation decision until explicit MCP/runtime authorization",
+      "external-return absorption checker until one real external-return packet exercises EARC-T3",
+      "public-sync",
+      "MCP implementation",
+      "provider/live calls",
+      "workspace runtime mutation",
+      "raw external package import",
+      "public readiness",
+      "production readiness",
+      "release readiness",
+      "external-facing readiness"
+    ],
+    "gateSummary": "worker-return fast gate passed, git diff --check passed, corpus registry check passed, commit steward implementation preflight passed, and pre-commit hook passed 50/50 checks on material commit 4bf9920b."
+  }
+}

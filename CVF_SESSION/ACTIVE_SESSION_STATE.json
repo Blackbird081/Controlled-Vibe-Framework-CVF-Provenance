@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018",
-  "previousMode": "earc_t0_external_agent_review_context_roadmap_ready_for_t1_dispatch",
+  "currentMode": "earc_t3_external_finding_absorption_workflow_closed_t2_t4_parked",
+  "previousMode": "earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -1288,7 +1288,7 @@
   "lastUpdated": "2026-06-18",
   "roadmapStateReconciliationT1Dispatch20260616": "Roadmap State Reconciliation RSF-T1 dispatch packet committed at 0977365e. Artifacts: docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md; docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T1_2026-06-16.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md. Purpose: reconcile stale CI2 roadmap state after source audit found CI2-T3/T4/T5 completion reviews already exist. Claim boundary: documentation-only dispatch; RSF-T2 machine guard not yet implemented.",
   "roadmapStateReconciliationT1Closure20260616": "Roadmap State Reconciliation RSF-T1 is CLOSED_PASS_BOUNDED at material commit 1c3724d0. CI2 roadmap now records ALL_TRANCHES_CLOSED_PASS_BOUNDED, CI2-T3/T4/T5 completion evidence is source-backed, and the active archive baseline has a blocked entry for the touched stale CI2 roadmap. RSF-T2 is authorized as the next governance foundation move: implement a narrow stale-roadmap redispatch guard. Claim boundary: no runtime/provider/public/legacy broad scan or LPCI product implementation is authorized by RSF-T1 closure.",
-  "nextAllowedMove": "EARC-T1 External Agent Review Packet Template is CLOSED_PASS_BOUNDED at material commit ab8382f3. CVF now has a stable external-agent review packet template, authoring checklist, bounded workflow/MCP/workspace sample packet, updated external-agent review front door, and GC-051 registry coverage. Next allowed move: author fresh GC-018 and a source-verified work order for EARC-T3 to define the external-finding absorption workflow: source-backed CVF defect, useful external pattern, public/simple assumption, missing-context question, rejected assumption, and blocked readiness/runtime claim. EARC-T2 public-sync preparation remains held for explicit public-sync authorization. EARC-T4 MCP/workspace implementation decision remains held for explicit MCP/runtime authorization. Public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, public readiness, production readiness, release readiness, and external-facing readiness claims remain parked. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "EARC-T3 External Finding Absorption Workflow is CLOSED_PASS_BOUNDED at material commit 4bf9920b. CVF now has a stable post-review workflow for classifying returned external-agent output before action, plus updated external-agent review front door, packet template, authoring checklist, EARC roadmap, and GC-051 registry coverage. No EARC execution tranche is currently open without explicit operator authorization: EARC-T2 public-sync preparation remains held for explicit public-sync authorization, EARC-T4 MCP/workspace implementation decision remains held for explicit MCP/runtime authorization, and the external-return absorption checker remains a machine-check candidate after one real external-return packet exercises EARC-T3. Public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, public readiness, production readiness, release readiness, and external-facing readiness claims remain parked. LHW24 remains the latest closed numbered LHW wave.",
   "cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616": "RECONCILED_SUPERSEDED_BY_CLOSURE. Original CCLV-T2 dispatch commit 7e11c39c was superseded by accepted combined-role execution and bounded closure at material commit bf938549 after FPRC-T1 closed at material commit 51f56133. Codex audited and accepted the implementation in docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md. Completion evidence: docs/reviews/CVF_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_COMPLETION_2026-06-16.md. GC-018: docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md. Current-state reconciliation: PRFC-T1 removes the obsolete pause boundary from live agent-facing state while preserving historical dispatch provenance.",
   "centralCoreLocalViewPromptHeaderPacketClosure20260616": "CLOSED_PASS_BOUNDED at material commit ef6f67de. Codex hardened the dispatch prompt envelope standard/checker so new delegated dispatch-ready work orders must place the envelope read-first before Mission and no later than line 80. The work-order template now keeps the envelope pointer before Mission while staying at the 1200-line hard threshold. New standard: docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md. Roadmaps opened: docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md and docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md. Completion review: docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md. Focused tests pass 32/32; reviewer-fast passed; material pre-closure passed except expected active handoff sync.",
   "nextMoveFreshnessCheckerFoundationClosure20260616": "CLOSED_PASS_BOUNDED at material commit 8433691f from execution base 7a89cccc, with soft-wrap hardening commit fc7171aa. Codex added docs/baselines/CVF_GC018_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_2026-06-16.md, docs/work_orders/CVF_AGENT_WORK_ORDER_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_FOR_CODEX_2026-06-16.md, docs/reference/CVF_NEXT_MOVE_FRESHNESS_CHECKER_STANDARD_2026-06-16.md, docs/reviews/CVF_NEXT_MOVE_FRESHNESS_CHECKER_FOUNDATION_COMPLETION_2026-06-16.md, governance/compat/check_next_move_freshness.py, governance/compat/test_check_next_move_freshness.py, and additive wiring in governance/compat/run_local_governance_hook_chain.py, governance/compat/run_agent_autorun_workflow_gate.py, and governance/compat/run_agent_commit_steward_preflight.py. Follow-up hardening joins soft-wrapped paragraph fragments before stale-action matching so blocked statements such as Do not redispatch Model Gateway C-02 P2 are not treated as stale redispatch instructions. Focused tests pass 9/9; current-state next-move freshness check passes; reviewer-fast passes 19/19; implementation and session-sync steward preflights pass; material pre-closure passes all material gates with session continuity synced. Boundary: read-only governance checker and gate wiring only; no runtime/provider/live/public-sync/session-material mutation, Model Gateway redispatch, Model Gateway P3 authorization, legacy absorption, production readiness, public readiness, or public catalog export.",
@@ -1809,5 +1809,37 @@
       "external-facing readiness"
     ],
     "gateSummary": "worker-return fast gate passed, git diff --check passed, commit steward implementation preflight passed, and pre-commit hook passed 50/50 checks on material commit ab8382f3."
+  },
+  "earcT3ExternalFindingAbsorptionWorkflowClosure20260618": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4bf9920b",
+    "roadmap": "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md",
+    "completion": "docs/reviews/CVF_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_COMPLETION_2026-06-18.md",
+    "deliveredReferenceFiles": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md",
+      "docs/reference/external_agent_review/README.md"
+    ],
+    "registryEntry": "docs/corpus-intelligence/registry/entries/earc-t3-external-finding-absorption-workflow.json",
+    "nextDispatchCandidate": "NONE_WITHOUT_EXPLICIT_OPERATOR_AUTHORIZATION",
+    "nextDispatchRequirement": "EARC-T2 requires explicit public-sync authorization; EARC-T4 requires explicit MCP/runtime authorization; checker candidate waits for one real external-return packet.",
+    "parkedBoundaries": [
+      "EARC-T2 public-sync preparation until explicit public-sync authorization",
+      "EARC-T4 MCP/workspace implementation decision until explicit MCP/runtime authorization",
+      "external-return absorption checker until one real external-return packet exercises EARC-T3",
+      "public-sync",
+      "MCP implementation",
+      "provider/live calls",
+      "workspace runtime mutation",
+      "raw external package import",
+      "public readiness",
+      "production readiness",
+      "release readiness",
+      "external-facing readiness"
+    ],
+    "gateSummary": "worker-return fast gate passed, git diff --check passed, corpus registry check passed, commit steward implementation preflight passed, and pre-commit hook passed 50/50 checks on material commit 4bf9920b."
   }
 }

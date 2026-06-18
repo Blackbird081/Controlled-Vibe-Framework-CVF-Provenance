@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`
+Current mode marker: `earc_t3_external_finding_absorption_workflow_closed_t2_t4_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`.
+Current mode: `earc_t3_external_finding_absorption_workflow_closed_t2_t4_parked`.
 
 Active handoff:
 
@@ -161,6 +161,15 @@ order for external-finding absorption workflow. EARC-T2 remains held for
 explicit public-sync authorization. EARC-T4 remains held for explicit
 MCP/runtime authorization.
 
+EARC-T3 External Finding Absorption Workflow is `CLOSED_PASS_BOUNDED` at
+material commit `4bf9920b`. CVF now has a stable post-review workflow for
+classifying returned external-agent output before action, and the EARC front
+door, packet template, authoring checklist, roadmap, and GC-051 registry are
+aligned to that workflow. No EARC execution tranche is open without explicit
+operator authorization: EARC-T2 public-sync preparation remains held, EARC-T4
+MCP/workspace implementation remains held, and the external-return absorption
+checker waits for one real external-return packet.
+
 Stable artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
@@ -212,11 +221,15 @@ Stable artifacts:
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md`
 - `docs/reviews/CVF_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_COMPLETION_2026-06-18.md`
+- `docs/baselines/CVF_GC018_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`
+- `docs/reviews/CVF_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_COMPLETION_2026-06-18.md`
 
-Next move: author fresh GC-018 and a source-verified work order for EARC-T3 to
-define the external-finding absorption workflow: source-backed CVF defect,
-useful external pattern, public/simple assumption, missing-context question,
-rejected assumption, and blocked readiness/runtime claim.
+Next move: no EARC execution tranche is open without explicit operator
+authorization. EARC-T2 requires explicit public-sync authorization, EARC-T4
+requires explicit MCP/runtime authorization, and the EARC-T3 checker candidate
+requires one real external-return packet first.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -671,17 +684,18 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`.
+Mode: `earc_t3_external_finding_absorption_workflow_closed_t2_t4_parked`.
 
-EARC-T1 External Agent Review Packet Template is `CLOSED_PASS_BOUNDED` at
-material commit `ab8382f3`. CVF now has a stable external-agent review packet
-template, authoring checklist, bounded workflow/MCP/workspace sample packet,
-updated external-agent review front door, and GC-051 registry coverage.
+EARC-T3 External Finding Absorption Workflow is `CLOSED_PASS_BOUNDED` at
+material commit `4bf9920b`. CVF now has a stable post-review workflow for
+classifying returned external-agent output before action, plus updated
+external-agent review front door, packet template, authoring checklist, EARC
+roadmap, and GC-051 registry coverage.
 
-Next allowed move: author fresh GC-018 and a source-verified work order for
-EARC-T3 to define the external-finding absorption workflow: source-backed CVF
-defect, useful external pattern, public/simple assumption, missing-context
-question, rejected assumption, and blocked readiness/runtime claim.
+Next allowed move: no EARC execution tranche is open without explicit operator
+authorization. EARC-T2 requires explicit public-sync authorization, EARC-T4
+requires explicit MCP/runtime authorization, and the EARC-T3 checker candidate
+requires one real external-return packet first.
 
 EARC-T2 public-sync preparation remains held for explicit public-sync
 authorization. EARC-T4 MCP/workspace implementation decision remains held for
