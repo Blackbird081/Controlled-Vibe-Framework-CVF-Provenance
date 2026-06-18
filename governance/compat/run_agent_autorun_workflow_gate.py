@@ -84,6 +84,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "PLCS companion routing block",
+            "governance/compat/check_plcs_companion_routing_block.py",
+            base,
+            head,
+        ),
+        _range_command(
             "agent operation trace integrity",
             "governance/compat/check_agent_operation_trace.py",
             base,

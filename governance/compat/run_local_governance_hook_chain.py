@@ -51,6 +51,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_dispatch_prompt_envelope.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "PLCS companion routing block",
+        ["python", "governance/compat/check_plcs_companion_routing_block.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "agent operation trace integrity",
         ["python", "governance/compat/check_agent_operation_trace.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -187,6 +191,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "dispatch prompt envelope",
             ["python", "governance/compat/check_dispatch_prompt_envelope.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "PLCS companion routing block",
+            ["python", "governance/compat/check_plcs_companion_routing_block.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "agent operation trace integrity",
@@ -361,6 +369,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "work-order dispatch quality",
             ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "PLCS companion routing block",
+            ["python", "governance/compat/check_plcs_companion_routing_block.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "agent operation trace integrity",

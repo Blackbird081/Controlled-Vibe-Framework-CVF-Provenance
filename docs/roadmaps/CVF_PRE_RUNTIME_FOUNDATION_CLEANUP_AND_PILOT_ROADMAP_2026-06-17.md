@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T3_DISPATCH_READY
+Status: ROADMAP_CLOSED_PASS_BOUNDED_RUNTIME_PARKED
 
 docType: roadmap
 
@@ -135,7 +135,7 @@ source, or provider configuration.
 |---|---|---|---|
 | PRFC-T1 | CLOSED_PASS_BOUNDED | CCLV-T2 current-state reconciliation: align active state, CCLV roadmap, completion/audit pointers, and next-move language so no current surface implies CCLV-T2 is still paused after its accepted implementation | Codex |
 | PRFC-T2 | CLOSED_PASS_BOUNDED | CCLV-T3 pilot: use one small governance closure workflow to prove Central Core + Local View reduces duplicate shared facts without removing local judgment | Codex combined role by operator takeover |
-| PRFC-T3 | DISPATCH_READY | PLCS companion-routing checker/interlock: implement the PLCS-T3 approved companion block check for future FPC-T2 C01-C04 registry-edit work orders | Codex |
+| PRFC-T3 | CLOSED_PASS_BOUNDED | PLCS companion-routing checker/interlock: implement the PLCS-T3 approved companion block check for future FPC-T2 C01-C04 registry-edit work orders | Codex |
 
 ## Work Plan
 
@@ -170,7 +170,7 @@ source, or provider configuration.
 | T1-AC1 | Source verification compares current `ACTIVE_SESSION_STATE.json`, CCLV roadmap, CCLV-T2 completion, CCLV-T2 audit, and checker/test files. |
 | T1-AC2 | No current machine-readable state entry says CCLV-T2 is paused when accepted closure evidence exists, unless the packet records a precise bounded reason. |
 | T1-AC3 | The CCLV roadmap status and tranche row are consistent with the accepted material/completion evidence. |
-| T1-AC4 | Next-move surfaces do not dispatch stale CCLV-T2 work or stale Model Gateway work. |
+| T1-AC4 | Next-move surfaces avoid stale CCLV-T2 or stale Model Gateway dispatch. |
 | T1-AC5 | No runtime, provider/live, public-sync, or registry edit is introduced. |
 
 ## PRFC-T2 Acceptance Criteria
@@ -210,7 +210,7 @@ GC-018/source-verified work order if the operator releases the follow-up.
 
 ## PRFC-T3 Dispatch Record (2026-06-18)
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Dispatch base: `15816000`
 
@@ -224,6 +224,22 @@ Authorized artifacts:
 Dispatch boundary: checker/interlock implementation only after pre-dispatch
 gate pass. No registry mutation, runtime work, provider/live proof, public-sync,
 production readiness, or public readiness is authorized by the dispatch record.
+
+## PRFC-T3 Closure Record (2026-06-18)
+
+PRFC-T3 is closed bounded after Codex implementation. The closure added
+`governance/compat/check_plcs_companion_routing_block.py`, focused pytest
+coverage, and autorun/local hook-chain wiring so future FPC-T2 C01-C04
+`ADD_INTERLOCK_ENTRY` registry-edit work orders must carry the seven-field PLCS
+companion routing block.
+
+Closure artifact:
+
+- Completion review:
+  `docs/reviews/CVF_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_COMPLETION_2026-06-18.md`
+
+Runtime execution remains parked and requires a separate fresh GC-018 plus
+source-verified work order.
 
 ## PRFC-T3 Acceptance Criteria
 
@@ -257,6 +273,19 @@ Future tranches must provide:
 | Escalation state | `ROADMAP_ADDED` |
 | Next control action | PRFC-T1 CCLV-T2 current-state reconciliation |
 | Worker blame | `N/A_WITH_REASON`: the risk comes from multiple current-state surfaces aging differently after later closures |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: ROADMAP_CLOSED_PASS_BOUNDED_RUNTIME_PARKED`; PRFC-T3 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no registry mutation authorized | no registry JSON path changed | BLOCKED with reason: PRFC-T3 scope forbids registry mutation |
+| Registry Markdown | N/A with reason: no registry mutation authorized | no registry Markdown path changed | BLOCKED with reason: PRFC-T3 scope forbids registry mutation |
+| External evidence digest | N/A with reason: no external source or API proof | repo-local checker/test/docs only | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop interlock mutation | no interlock path changed | N/A with reason |
+| Session continuity | N/A with reason: material closure does not edit session surfaces | session-sync may be done separately if next move changes | N/A with reason |
 
 ## Public Export Disposition
 

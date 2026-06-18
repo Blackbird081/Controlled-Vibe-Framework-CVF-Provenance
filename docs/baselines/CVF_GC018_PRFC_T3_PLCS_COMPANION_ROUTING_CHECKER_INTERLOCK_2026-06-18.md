@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED_FOR_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -148,15 +148,15 @@ session-sync in a separate session-sync range after the material closure commit.
 
 ## Tranche Closure Checklist
 
-- [ ] Checker enforces the seven-field PLCS companion block only for future
+- [x] Checker enforces the seven-field PLCS companion block only for future
   C01-C04 registry-edit work orders
-- [ ] Checker exempts unrelated work orders
-- [ ] Checker preserves C05 deferral and does not decide C05
-- [ ] Focused tests cover missing block, incomplete field set, candidate scope,
+- [x] Checker exempts unrelated work orders
+- [x] Checker preserves C05 deferral and does not decide C05
+- [x] Focused tests cover missing block, incomplete field set, candidate scope,
   C05 boundary, and unrelated exemption
-- [ ] Autorun/hook placement matches PLCS-T3 recommendation or records a
+- [x] Autorun/hook placement matches PLCS-T3 recommendation or records a
   bounded alternative with reason
-- [ ] No system-loop interlock registry entry, provider-registry source, runtime
+- [x] No system-loop interlock registry entry, provider-registry source, runtime
   source, provider/live proof, public-sync, production readiness, or public
   readiness is added
 
@@ -164,15 +164,15 @@ session-sync in a separate session-sync range after the material closure commit.
 
 | Field | Disposition |
 |---|---|
-| Defect class | `RULE_INTERPRETATION_GAP` |
+| Defect class | `RULE_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
-| Escalation state | `MACHINE_CHECK_AUTHORIZED` |
-| Next control action | PRFC-T3 implements the pre-dispatch PLCS companion routing checker/interlock |
+| Escalation state | `MACHINE_CHECK_IMPLEMENTED` |
+| Next control action | Future FPC-T2 C01-C04 registry-edit work orders must pass the PLCS companion routing block checker before dispatch |
 | Worker blame | `N/A_WITH_REASON`: PLCS-T3 already classified this as a structural dispatch-layer drift risk |
 
 ## Decision
 
-AUTHORIZE PRFC-T3 as a bounded PLCS companion-routing checker/interlock under
+PRFC-T3 is closed bounded as a PLCS companion-routing checker/interlock under
 `WORKER_MAY_COMMIT` for Codex. Runtime execution remains parked.
 
 ## Verification

@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 ## Dispatch Prompt Envelope
 
@@ -14,9 +14,9 @@ Commit mode: `WORKER_MAY_COMMIT`
 
 dispatchBaseHead: `15816000`
 
-executionBaseHead: `PENDING_AFTER_DISPATCH_COMMIT`
+executionBaseHead: `cced9179`
 
-closureBaseHead: `PENDING_AFTER_IMPLEMENTATION_BASE`
+closureBaseHead: `cced9179`
 
 Current-time notes: PRFC-T2 is closed at material commit `051b491e` and
 session-sync commit `15816000`. PRFC-T3 is the next allowed move through fresh
@@ -337,14 +337,14 @@ failing machine gate.
 
 ## Closure Checklist
 
-- [ ] Required first reads completed
-- [ ] Checker added inside Write Ownership
-- [ ] Focused tests added and passing
-- [ ] Autorun/local hook-chain placement wired or bounded alternative recorded
-- [ ] No registry mutation, provider-registry edit, runtime source mutation,
+- [x] Required first reads completed
+- [x] Checker added inside Write Ownership
+- [x] Focused tests added and passing
+- [x] Autorun/local hook-chain placement wired or bounded alternative recorded
+- [x] No registry mutation, provider-registry edit, runtime source mutation,
   provider/live proof, public-sync, production readiness, or public readiness
-- [ ] Completion review added
-- [ ] Pre-closure gate and closure steward pass
+- [x] Completion review added
+- [x] Pre-closure gate and closure steward pass
 
 ## Return-To-Orchestrator Conditions
 
@@ -383,10 +383,10 @@ edits inside the material range, destructive action, or runtime/product claims.
 
 | Field | Disposition |
 |---|---|
-| Defect class | `RULE_INTERPRETATION_GAP` |
+| Defect class | `RULE_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
-| Escalation state | `MACHINE_CHECK_DISPATCHED` |
-| Next control action | Implement PRFC-T3 checker/interlock and wire it into pre-dispatch gates |
+| Escalation state | `MACHINE_CHECK_IMPLEMENTED` |
+| Next control action | Use the PLCS companion routing block checker in future FPC-T2 C01-C04 registry-edit dispatch gates |
 | Worker blame | `N/A_WITH_REASON`: this is planned machine promotion of PLCS-T3 guidance |
 
 ## 10. Public Export Disposition
@@ -396,41 +396,53 @@ Disposition: DEFERRED_PRIVATE_ONLY
 Reason: private provenance governance checker hardening. No public-sync batch is
 authorized.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_COMPLETION_2026-06-18.md` | completion review exists in changed set | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | PRFC-T3 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no registry mutation authorized | no registry JSON path changed | BLOCKED with reason: PRFC-T3 scope forbids registry mutation |
+| Registry Markdown | N/A with reason: no registry mutation authorized | no registry Markdown path changed | BLOCKED with reason: PRFC-T3 scope forbids registry mutation |
+| External evidence digest | N/A with reason: no external source or API proof | repo-local checker/test/docs only | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop interlock mutation | no interlock path changed | N/A with reason |
+| Session continuity | N/A with reason: material closure does not edit session surfaces | session-sync may be done separately if next move changes | N/A with reason |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex dispatch author |
+| Actor | Codex worker/reviewer/closer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-18 PRFC-T3 dispatch |
+| Session or invocation | 2026-06-18 PRFC-T3 implementation and closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, rg, apply_patch, governance gates |
-| Target paths | `docs/baselines/CVF_GC018_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` |
+| Command or tool surface | PowerShell, rg, apply_patch, pytest, governance gates |
+| Target paths | `governance/compat/check_plcs_companion_routing_block.py`; `governance/compat/test_plcs_companion_routing_block.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `docs/reviews/CVF_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_COMPLETION_2026-06-18.md`; `docs/baselines/CVF_GC018_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` |
 | Allowed scope source | active next move plus PRFC roadmap PRFC-T3 row |
-| Before status evidence | clean worktree at dispatch base `15816000` |
-| After status evidence | dispatch packet authored; pending dispatch gate and commit |
+| Before status evidence | clean worktree and pre-implementation gate pass at implementation base `cced9179` |
+| After status evidence | PRFC-T3 implementation complete; pending final pre-closure and commit |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | dispatch only; no checker implementation, registry mutation, runtime, provider/live proof, or public-sync in this batch |
-| Claim boundary | source-verified work order dispatch only |
-| Agent type | Codex dispatch author |
-| Invocation ID | `prfc-t3-plcs-companion-routing-checker-interlock-dispatch-codex-2026-06-18` |
-| Expected manifest | `docs/baselines/CVF_GC018_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` |
+| Approval boundary | PRFC-T3 checker/test/hook wiring and closure evidence only |
+| Claim boundary | no registry mutation, runtime, provider/live proof, public-sync, production readiness, or public readiness |
+| Agent type | Codex combined worker/reviewer/committer/closer |
+| Invocation ID | `prfc-t3-plcs-companion-routing-checker-interlock-implementation-codex-2026-06-18` |
+| Expected manifest | `governance/compat/check_plcs_companion_routing_block.py`; `governance/compat/test_plcs_companion_routing_block.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `docs/reviews/CVF_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_COMPLETION_2026-06-18.md`; `docs/baselines/CVF_GC018_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` |
+| Actual changed set | `governance/compat/check_plcs_companion_routing_block.py`; `governance/compat/test_plcs_companion_routing_block.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py`; `docs/reviews/CVF_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_COMPLETION_2026-06-18.md`; `docs/baselines/CVF_GC018_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`; `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## 12. Dispatch Checklist
 
-- [ ] GC-018 exists
-- [ ] Source Verification Block has ACCEPT rows for all source facts
-- [ ] Roadmap row moves to DISPATCH_READY
-- [ ] Pre-dispatch autorun gate passes
-- [ ] `git diff --check` passes
-- [ ] No implementation files are included in this dispatch batch
+- [x] GC-018 exists
+- [x] Source Verification Block has ACCEPT rows for all source facts
+- [x] Roadmap row moved to dispatch-ready state during dispatch
+- [x] Pre-dispatch autorun gate passed before dispatch commit
+- [x] `git diff --check` passed
+- [x] No implementation files were included in the dispatch batch
 
 ## Claim Boundary
 
-This work order authorizes only PRFC-T3 checker/interlock implementation after
-this dispatch packet passes. The dispatch batch itself creates no checker,
-runtime behavior, registry edit, public-sync, provider/live proof, production
-readiness, or public readiness claim.
+This work order closes only PRFC-T3 checker/interlock implementation. It
+creates no registry edit, runtime behavior, public-sync, provider/live proof,
+production readiness, or public readiness claim.
