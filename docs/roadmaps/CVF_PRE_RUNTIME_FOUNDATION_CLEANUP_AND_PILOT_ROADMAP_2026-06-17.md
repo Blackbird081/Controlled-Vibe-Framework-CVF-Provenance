@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T2_DISPATCH_READY
+Status: ROADMAP_IN_PROGRESS_T2_CLOSED_T3_READY_FOR_GC018
 
 docType: roadmap
 
@@ -110,6 +110,14 @@ ambiguity. A future runtime tranche should consume clean current-state surfaces,
 not ask agents to infer which roadmap, completion packet, or machine-readable
 entry is fresher.
 
+## Current Runtime Freshness Verification
+
+Runtime, provider-registry, hardcoded model, queue, scheduler, UI, API, and
+provider/live behavior are explicitly out of scope and untouched by PRFC-T2.
+This roadmap does not make an absent/not-implemented/hardcoded runtime claim and
+does not touch `provider-registry.ts`, `PROVIDER_CAPABILITY_REGISTRY`, runtime
+source, or provider configuration.
+
 ## Design Control Gate
 
 | Control | Decision |
@@ -126,8 +134,8 @@ entry is fresher.
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | PRFC-T1 | CLOSED_PASS_BOUNDED | CCLV-T2 current-state reconciliation: align active state, CCLV roadmap, completion/audit pointers, and next-move language so no current surface implies CCLV-T2 is still paused after its accepted implementation | Codex |
-| PRFC-T2 | DISPATCH_READY | CCLV-T3 pilot: use one small governance closure workflow to prove Central Core + Local View reduces duplicate shared facts without removing local judgment | Claude worker; Codex reviewer |
-| PRFC-T3 | HOLD_UNTIL_T2_PASS_OR_OPERATOR_RELEASE | PLCS companion-routing checker/interlock: implement the PLCS-T3 approved companion block check for future FPC-T2 C01-C04 registry-edit work orders | Codex |
+| PRFC-T2 | CLOSED_PASS_BOUNDED | CCLV-T3 pilot: use one small governance closure workflow to prove Central Core + Local View reduces duplicate shared facts without removing local judgment | Codex combined role by operator takeover |
+| PRFC-T3 | READY_FOR_GC018 | PLCS companion-routing checker/interlock: implement the PLCS-T3 approved companion block check for future FPC-T2 C01-C04 registry-edit work orders | Codex |
 
 ## Work Plan
 
@@ -174,6 +182,31 @@ entry is fresher.
 | T2-AC3 | The central facts packet is checked by the CCLV-T2 advisory checker. |
 | T2-AC4 | Completion evidence states whether the pilot reduced duplicate fact edits. |
 | T2-AC5 | No historical artifact is rewritten solely to demonstrate the pilot. |
+
+## PRFC-T2 Closure Record (2026-06-17)
+
+PRFC-T2 is closed bounded after operator-authorized Codex takeover from the
+original no-commit worker route. The pilot created one central facts packet and
+four local views while keeping local judgment in the worker return and
+completion review.
+
+Central Facts Reference: docs/reviews/evidence/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_CLOSURE_FACTS_2026-06-17.md#central-facts-packet
+Local View Role: roadmap
+Local Disposition: PASS
+Local Delta: records PRFC tranche state, PRFC-T3 sequencing, and the runtime
+boundary for the roadmap.
+
+Closure artifacts:
+
+- Central facts packet:
+  `docs/reviews/evidence/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_CLOSURE_FACTS_2026-06-17.md`
+- Worker return:
+  `docs/reviews/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_WORKER_RETURN_2026-06-17.md`
+- Completion review:
+  `docs/reviews/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_COMPLETION_2026-06-17.md`
+
+PRFC-T3 is not implemented by this closure. It is ready only for a fresh
+GC-018/source-verified work order if the operator releases the follow-up.
 
 ## PRFC-T3 Acceptance Criteria
 
@@ -237,7 +270,9 @@ authorized.
 
 ## Claim Boundary
 
-This roadmap does not implement PRFC-T1, PRFC-T2, or PRFC-T3. It does not open
-workspace runtime execution, provider/live proof, registry edits, public-sync,
-Model Gateway work, production readiness, or public readiness. Each tranche
-requires fresh GC-018 and a source-verified work order before implementation.
+The original roadmap authoring batch did not implement PRFC-T1, PRFC-T2, or
+PRFC-T3. The later PRFC-T2 closure update implements only the bounded central
+facts pilot described above. This roadmap does not open workspace runtime
+execution, provider/live proof, registry edits, public-sync, Model Gateway
+work, production readiness, or public readiness. Each later tranche requires
+fresh GC-018 and a source-verified work order before implementation.

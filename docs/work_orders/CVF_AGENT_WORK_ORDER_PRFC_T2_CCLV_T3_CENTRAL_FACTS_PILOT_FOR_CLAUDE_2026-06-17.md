@@ -2,11 +2,13 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 ## Dispatch Prompt Envelope
 
-Role: Claude worker. Codex is reviewer/committer/closer.
+Role: original route was Claude worker with Codex reviewer/committer/closer.
+Actual execution was converted by operator instruction to Codex combined
+worker/reviewer/committer/closer because the original worker route was failing.
 
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_FOR_CLAUDE_2026-06-17.md`
 
@@ -14,14 +16,20 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 dispatchBaseHead: `c1da2af0`
 
-executionBaseHead: `c1da2af0`
+executionBaseHead: `fa202881`
 
-closureBaseHead: `REVIEWER_SET_AFTER_WORKER_RETURN`
+closureBaseHead: `fa202881`
 
 Current-time notes: PRFC-T1 prerequisite is satisfied. PRFC-T2 is a bounded
 CCLV-T3 pilot on a new governance closure workflow. Runtime/provider/live,
 public-sync, registry, Model Gateway, and provider-registry work remains
 parked.
+
+Operator takeover note: on 2026-06-17 the operator instructed Codex to perform
+multiple roles because the Claude worker path was failing. This conversion does
+not expand scope, does not authorize runtime/provider/live/public-sync/registry
+or Model Gateway work, and does not authorize protected session edits in the
+material worker phase.
 
 Do-not-misread notes: do not rewrite historical closed artifacts to demonstrate
 the pilot. Do not implement PRFC-T3. Do not edit session state or active
@@ -33,8 +41,8 @@ PRFC roadmap, read the CCLV standard, read the local reference rules, read the
 central facts packet template, and run the pre-flight commands in Section 6.
 
 Return contract: leave all deliverables uncommitted and return
-`COMPLETE_PENDING_REVIEW` only after worker-return fast gate and the central
-facts checker pass. Codex owns commit, closure, and session-sync.
+`COMPLETE_PENDING_REVIEW` after worker-return fast gate and the central facts
+checker pass. Codex owns commit, closure, and session-sync.
 
 ## Purpose
 
@@ -55,13 +63,13 @@ material, and performs any session-sync.
 | Field | Disposition |
 |---|---|
 | Contract source | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` |
-| route | `MULTI_AGENT_MULTI_ROLE` |
-| rolePattern | Claude worker, Codex reviewer/committer/closer |
-| phase | DISPATCH_READY; WORKER_EXECUTION; REVIEWER_CLOSURE; SESSION_SYNC_IF_NEEDED |
-| baseHeadFor(phase) | `dispatchBaseHead=c1da2af0`; `executionBaseHead=c1da2af0`; `closureBaseHead=REVIEWER_SET_AFTER_WORKER_RETURN` |
+| route | `SINGLE_AGENT_MULTI_ROLE` |
+| rolePattern | Codex worker/reviewer/committer/closer by operator takeover; original Claude worker route superseded for this execution only |
+| phase | dispatch phase; worker execution; reviewer closure; session sync if needed |
+| baseHeadFor(phase) | `dispatchBaseHead=c1da2af0`; `executionBaseHead=fa202881`; `closureBaseHead=fa202881` |
 | changedSetScope(phase) | worker may change only owned paths listed in Section 7; Codex owns reviewer closure and session-sync paths |
 | traceScope(phase, actor) | worker trace covers uncommitted worker changed set; Codex closure trace covers committed accepted range |
-| commitOwner(phase) | Codex only |
+| commitOwner(phase) | Codex only; material commit occurs in reviewer/closer role after worker-return evidence exists |
 | crossBatchIsolation | one batch per clean worktree; worker must stop if unrelated dirty files appear |
 | nextMoveSurfaces | worker must not edit session next-move surfaces; Codex syncs when reviewer material commit is accepted if needed |
 | Closer designation | Codex |
@@ -88,7 +96,7 @@ the material closure range.
 intake summary: Dispatch PRFC-T2 as a bounded CCLV-T3 Central Core + Local View
 pilot for one new governance closure workflow.
 
-scope classification: governance documentation pilot; no runtime, provider,
+scope class: governance documentation pilot; no runtime, provider,
 public-sync, registry, Model Gateway, UI, or production release scope.
 
 risk sensitivity: R1; no secrets, live proof, provider call, public release,
@@ -173,6 +181,12 @@ The pilot tests Central Core + Local View storage by writing one central facts
 packet in the established evidence folder and local views in their owning
 artifacts.
 
+Central Facts Reference: docs/reviews/evidence/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_CLOSURE_FACTS_2026-06-17.md#central-facts-packet
+Local View Role: work-order
+Local Disposition: PASS
+Local Delta: records the operator-authorized role conversion and keeps the
+original dispatch scope boundary visible.
+
 ## 1. Mission
 
 Create a small, source-backed pilot that proves whether a central facts packet
@@ -224,8 +238,12 @@ Allowed scope:
   `docs/reviews/evidence/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_CLOSURE_FACTS_2026-06-17.md`
 - add worker return:
   `docs/reviews/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_WORKER_RETURN_2026-06-17.md`
-- update PRFC roadmap PRFC-T2 row and short closure note only
-- update CCLV roadmap CCLV-T3 row and short closure note only
+- add completion review after Codex takeover:
+  `docs/reviews/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_COMPLETION_2026-06-17.md`
+- update PRFC roadmap PRFC-T2 row and short closure note only:
+  `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md`
+- update CCLV roadmap CCLV-T3 row and short closure note only:
+  `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`
 - update this work order status and closure evidence fields if required by
   worker-return gates
 
@@ -278,7 +296,7 @@ only if repair would exceed Allowed scope.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|
-| PRFC-T2 status permits dispatch | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | `## Tranche Plan`; PRFC-T2 row | `DISPATCH_READY` | PRFC roadmap | ACCEPT |
+| PRFC-T2 status permitted dispatch before takeover | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | `## Tranche Plan`; PRFC-T2 row | original dispatch-ready status | PRFC roadmap | ACCEPT |
 | PRFC-T2 requires one central facts packet and at least two local views | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | `## PRFC-T2 Acceptance Criteria` | T2-AC1 | PRFC roadmap | ACCEPT |
 | Local views must retain local judgment | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | `## PRFC-T2 Acceptance Criteria` | T2-AC2 | PRFC roadmap | ACCEPT |
 | Central packet must be checked by CCLV-T2 advisory checker | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | `## PRFC-T2 Acceptance Criteria` | T2-AC3 | PRFC roadmap | ACCEPT |
@@ -366,7 +384,7 @@ Write mode: modify-listed plus new deliverables listed above.
 
 Central facts packet:
 
-- use `## Central Facts Packet`
+- use the central facts packet heading required by the template
 - include all required fields from the CCLV standard/checker
 - set `materialCommit` and `sessionSyncCommit` to `PENDING_REVIEWER_COMMIT`
   until Codex commits
@@ -376,7 +394,7 @@ Central facts packet:
 
 Worker return:
 
-- status `COMPLETE_PENDING_REVIEW`
+- status `COMPLETE_PENDING_REVIEW` for worker return evidence
 - include Source Verification Block, Evidence Trace Block, Roadmap-to-Work-Order
   Trace Matrix, Finding-To-Governance Learning Disposition, Machine Closure
   Package, Public Export Disposition, Agent Operation Trace Block, and
@@ -387,8 +405,9 @@ Worker return:
 
 Roadmap updates:
 
-- PRFC roadmap PRFC-T2 row should move from `DISPATCH_READY` to
-  `COMPLETE_PENDING_REVIEW` only after worker deliverables exist
+- PRFC roadmap PRFC-T2 row should move from its dispatch state to worker-return
+  state only after worker deliverables exist, then reviewer closure may promote
+  it to closed bounded
 - CCLV roadmap CCLV-T3 row should record pilot worker-return status only after
   worker deliverables exist
 - do not mark closed-equivalent pass; Codex reviewer owns closure
@@ -415,7 +434,7 @@ Worker return must include exact command results and changed-file list.
 4. Update PRFC/CCLV roadmap rows only within the allowed pilot scope.
 5. Run CCLV advisory validation, worker-return fast gate, `git diff --check`,
    and `git status --short`.
-6. Return uncommitted artifacts to Codex as `COMPLETE_PENDING_REVIEW`.
+6. Return uncommitted artifacts to Codex as worker-return evidence.
 
 ## Review Gate
 
@@ -426,19 +445,19 @@ public-sync, registry, Model Gateway, or protected session scope.
 
 ## Closure Checklist
 
-- [ ] Central facts packet exists and includes all required fields
-- [ ] At least two local views reference the central facts packet
-- [ ] Local views retain local judgment, local delta, evidence limits, and claim
+- [x] Central facts packet exists and includes all required fields
+- [x] At least two local views reference the central facts packet
+- [x] Local views retain local judgment, local delta, evidence limits, and claim
   boundary
-- [ ] CCLV advisory checker passes on changed central/local-view paths
-- [ ] Worker-return fast gate passes
-- [ ] No forbidden scope path is changed by the worker
-- [ ] Codex reviewer creates the final completion review only after accepting
+- [x] CCLV advisory checker passes on changed central/local-view paths
+- [x] Worker-return fast gate passes
+- [x] No forbidden scope path is changed by the worker
+- [x] Codex reviewer creates the final completion review only after accepting
   the worker return
 
 ## Return-To-Orchestrator Conditions
 
-Return `COMPLETE_PENDING_REVIEW` only when all worker deliverables exist,
+Return worker evidence only when all worker deliverables exist,
 validation commands have been run, and the worktree contains only allowed
 worker-scope changes. Return `BLOCKED_CONFLICTING_AUTHORITY` for conflicting
 source authority. Return `BLOCKED_SCOPE_EXPANSION_REQUIRED` if completion needs
@@ -464,7 +483,7 @@ claim boundary expansion.
 | Target paths | PRFC-T2 GC-018, work order, PRFC roadmap row |
 | Allowed scope source | PRFC roadmap next move with PRFC-T1 completion evidence and session-sync commit `c1da2af0` |
 | Before status evidence | clean worktree at `c1da2af0` |
-| After status evidence | dispatch packet pending commit |
+| After status evidence | PRFC-T2 material closure ready for commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | dispatch only; no worker deliverables yet |
 | Claim boundary | PRFC-T2 dispatch state only |
@@ -479,14 +498,14 @@ claim boundary expansion.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | N/A with reason: dispatch packet only | worker-return artifact is assigned to Claude; reviewer closure artifact is assigned to Codex | N/A with reason |
-| Roadmap state | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | PRFC-T2 row `DISPATCH_READY` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_COMPLETION_2026-06-17.md` | reviewer closure artifact records operator-authorized role conversion | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PRE_RUNTIME_FOUNDATION_CLEANUP_AND_PILOT_ROADMAP_2026-06-17.md` | PRFC-T2 row `CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | N/A with reason: no registry mutation | no registry scope | N/A with reason |
 | Registry Markdown | N/A with reason: no registry mutation | no registry scope | N/A with reason |
 | External evidence digest | N/A with reason: no external source/API use | no external calls | N/A with reason |
 | System loop interlock | N/A with reason: no system loop/interlock trigger | no interlock scope | N/A with reason |
-| Session continuity | N/A with reason: dispatch does not change next allowed move | Codex may sync after accepted reviewer material commit | N/A with reason |
+| Session continuity | N/A with reason: material closure does not edit session surfaces | Codex may sync next-move surfaces after accepted material commit | N/A with reason |
 
 ## Public Export Disposition
 
