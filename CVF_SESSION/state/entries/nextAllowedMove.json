@@ -1,5 +1,5 @@
 {
   "stateOrder": 407,
   "stateKey": "nextAllowedMove",
-  "value": "RTAD-T0 Foundation Terminal Alignment is CLOSED_PASS_BOUNDED at material commit 914b2af6: the CCLV, FPRC, and PLCS active foundation roadmaps are terminally aligned before runtime admission. Next move: RTAD-T1 runtime pilot selection may be opened only by fresh operator authorization; runtime queue execution, scheduler, worker daemon, UI implementation, runtime/product mutation, registry edit, provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work product development remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "RTAD-T1 selected Model Gateway as the first runtime-entry pilot and RTAD-T2 dispatch is ready at material commit 04755f3b. Next allowed move: execute docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md as a local deterministic Model Gateway admission pilot. Provider network calls, provider credentials, registry mutation, public-sync, MCP gateway implementation, release-facing claims, Model Gateway redispatch/P3, and co-work product development remain parked unless a later operator authorization opens a separate tranche. LHW24 remains the latest closed numbered LHW wave."
 }

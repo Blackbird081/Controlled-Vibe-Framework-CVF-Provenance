@@ -1,0 +1,19 @@
+{
+  "stateOrder": 437,
+  "stateKey": "rtadT2ModelGatewayRuntimeAdmissionPilotDispatch20260618",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "04755f3b",
+    "baseHead": "f74dab2f",
+    "roadmap": "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md",
+    "selectionPacket": "docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md",
+    "selectedPilot": "EXTENSIONS/CVF_MODEL_GATEWAY",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "commitMode": "WORKER_MAY_COMMIT",
+    "result": "RTAD-T1 selected Model Gateway and RTAD-T2 dispatch authored a source-verified local deterministic admission-pilot work order.",
+    "claimBoundary": "Dispatch only; no provider network calls, provider credentials, registry mutation, public-sync, MCP gateway implementation, release-facing claims, or Model Gateway redispatch/P3 authorization.",
+    "nextAllowedMove": "Execute the RTAD-T2 work order as a local deterministic Model Gateway admission pilot."
+  }
+}

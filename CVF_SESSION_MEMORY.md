@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `rtad_t0_foundation_terminal_alignment_closed_runtime_parked`
+Current mode marker: `rtad_t2_model_gateway_runtime_admission_pilot_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rtad_t0_foundation_terminal_alignment_closed_runtime_parked`.
+Current mode: `rtad_t2_model_gateway_runtime_admission_pilot_dispatch_ready`.
 
 Active handoff:
 
@@ -85,6 +85,14 @@ RTAD-T0 Foundation Terminal Alignment is committed at `914b2af6`: the CCLV,
 FPRC, and PLCS active foundation roadmaps were terminally aligned before
 runtime admission. Runtime remains parked.
 
+RTAD-T1 Model Gateway Runtime Pilot Selection and RTAD-T2 Model Gateway Runtime
+Admission Pilot dispatch are committed at `04755f3b`. RTAD-T1 selected Model
+Gateway as the first runtime-entry pilot, and RTAD-T2 authored a source-verified
+work order for a local deterministic Model Gateway admission pilot. Provider
+network calls, provider credentials, registry mutation, public-sync, MCP
+gateway implementation, release-facing claims, Model Gateway redispatch/P3, and
+co-work product development remain parked.
+
 Stable artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
@@ -104,12 +112,16 @@ Stable artifacts:
 - `governance/compat/check_roadmap_closure_freshness.py`
 - `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md`
 - `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md`
+- `docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md`
+- `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md`
 
-Next move: operator may authorize RTAD-T1 runtime pilot selection. Runtime/
-provider/live/public-sync/registry/product work remains parked.
-Runtime queue execution, scheduler, worker daemon, UI implementation,
-runtime/product mutation, registry edit, provider/live proof, public-sync,
-Model Gateway redispatch/P3, and co-work product development remain parked.
+Next move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md`
+as a local deterministic Model Gateway admission pilot. Provider network calls,
+provider credentials, registry mutation, public-sync, MCP gateway
+implementation, release-facing claims, Model Gateway redispatch/P3, and
+co-work product development remain parked.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -564,20 +576,22 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `rtad_t0_foundation_terminal_alignment_closed_runtime_parked`.
+Mode: `rtad_t2_model_gateway_runtime_admission_pilot_dispatch_ready`.
 
-RTAD-T0 Foundation Terminal Alignment is `CLOSED_PASS_BOUNDED` at material
-commit `914b2af6`: CCLV, FPRC, and PLCS active foundation roadmaps are
-terminally aligned before runtime admission. Next move: operator may authorize
-RTAD-T1 runtime pilot selection. Runtime workspace execution remains parked.
+RTAD-T1 Model Gateway Runtime Pilot Selection and RTAD-T2 dispatch are accepted
+at material commit `04755f3b`. Next move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md`
+as a local deterministic Model Gateway admission pilot. Runtime workspace
+execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
 GC-018, and a source-verified work order.
 
-No provider/API call, credential/network use, provider/model addition, runtime
-behavior mutation, governance checker implementation by the worker, session
-state mutation by the worker, EPF wiring, Strategy Layer implementation, AI
+No provider API call, credential/network use, provider/model addition, runtime
+behavior mutation beyond the bounded local pilot, governance checker
+implementation by the worker, session state mutation by the worker, EPF wiring,
+Strategy Layer implementation, AI
 Gateway absorption, public-sync, external app mutation, raw memory release,
 co-work product development, production readiness, or public readiness is
 authorized without fresh operator authorization.
