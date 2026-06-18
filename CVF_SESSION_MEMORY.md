@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `rtad_t3_model_gateway_live_run_authorized`
+Current mode marker: `rtad_t3_model_gateway_live_run_closed_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rtad_t3_model_gateway_live_run_authorized`.
+Current mode: `rtad_t3_model_gateway_live_run_closed_runtime_parked`.
 
 Active handoff:
 
@@ -97,10 +97,14 @@ RTAD-T2 local deterministic Model Gateway admission pilot is closed at material
 commit `1a68f448`: source symbols were re-verified, `npm run check` passed, and
 `npm test` passed 29 files / 214 tests. The operator then explicitly authorized
 Codex to use existing available API keys for a bounded Model Gateway live run.
-RTAD-T3 may execute a secret-safe live proof with diagnostics and receipt
-evidence. Registry mutation, public-sync, MCP gateway implementation,
-release-facing claims, external-facing readiness, Model Gateway redispatch/P3,
-and co-work product development remain parked.
+RTAD-T3 Model Gateway live proof is `CLOSED_PASS_BOUNDED` at material commit
+`71bfc3a3`: the secret-safe live run used existing API-key aliases without
+printing or committing raw keys; DeepSeek `deepseek-chat` passed with receipt
+`gw_20260618063232191_5qgr2fbg`; Alibaba `qwen-turbo` produced a recorded
+`PARTIAL` `internal_error` diagnostic. Registry mutation, public-sync, MCP
+gateway implementation, release-facing claims, external-facing readiness,
+provider ranking/parity claims, Model Gateway redispatch/P3, and co-work
+product development remain parked.
 
 Stable artifacts:
 
@@ -127,12 +131,18 @@ Stable artifacts:
 - `docs/reviews/CVF_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_PACKET_2026-06-18.md`
 - `docs/reviews/CVF_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_COMPLETION_2026-06-18.md`
 - `docs/reviews/evidence/rtad-t2-model-gateway-runtime-admission-pilot-2026-06-18.json`
+- `docs/baselines/CVF_GC018_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_FOR_CODEX_2026-06-18.md`
+- `docs/reviews/CVF_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_COMPLETION_2026-06-18.md`
+- `docs/reviews/evidence/rtad-t3-model-gateway-live-run-receipt-2026-06-18.json`
 
-Next move: execute RTAD-T3 as a secret-safe Model Gateway live proof using the
-operator-authorized existing available API keys. Do not print or commit raw
-keys. Registry mutation, public-sync, MCP gateway implementation,
-release-facing claims, external-facing readiness, Model Gateway redispatch/P3,
-and co-work product development remain parked.
+Next move: decide the next governed runtime tranche after RTAD-T3 closure.
+Possible inputs include Model Gateway MCP/runtime bridge design, Alibaba
+diagnostic follow-up, or another runtime admission tranche, each requiring fresh
+GC-018 and a source-verified work order. Registry mutation, public-sync, MCP
+gateway implementation, release-facing claims, external-facing readiness,
+provider ranking/parity claims, Model Gateway redispatch/P3, and co-work
+product development remain parked.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -587,24 +597,31 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `rtad_t3_model_gateway_live_run_authorized`.
+Mode: `rtad_t3_model_gateway_live_run_closed_runtime_parked`.
 
-RTAD-T2 local deterministic Model Gateway admission pilot is closed at material
-commit `1a68f448`. The operator explicitly authorized Codex to use existing
-available API keys for a bounded Model Gateway live run. Next move: execute
-RTAD-T3 as a secret-safe live proof with diagnostics and receipt evidence.
-Runtime workspace execution remains parked.
+RTAD-T3 Model Gateway live proof is `CLOSED_PASS_BOUNDED` at material commit
+`71bfc3a3`. The bounded live run used existing available API-key aliases
+without printing or committing raw keys. DeepSeek `deepseek-chat` passed with
+receipt `gw_20260618063232191_5qgr2fbg`; Alibaba `qwen-turbo` produced a
+recorded `PARTIAL` `internal_error` diagnostic. Runtime workspace execution
+remains parked.
+
+Next move: decide the next governed runtime tranche with fresh GC-018 and a
+source-verified work order. Candidate inputs include Model Gateway MCP/runtime
+bridge design, Alibaba diagnostic follow-up, or another bounded runtime
+admission tranche.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
 GC-018, and a source-verified work order.
 
 No provider/model addition, registry mutation, MCP gateway implementation,
-runtime behavior mutation beyond the bounded live proof, governance checker
-implementation, EPF wiring, Strategy Layer implementation, AI Gateway
-absorption, public-sync, external app mutation, raw memory release, co-work
-product development, production readiness, release-facing claim, or public
-readiness is authorized without fresh operator authorization.
+runtime behavior mutation beyond the bounded live proof, provider
+ranking/parity claim, governance checker implementation, EPF wiring, Strategy
+Layer implementation, AI Gateway absorption, public-sync, external app
+mutation, raw memory release, co-work product development, production
+readiness, release-facing claim, or public readiness is authorized without
+fresh operator authorization.
 
 LHW24 remains the latest closed numbered LHW wave.
 

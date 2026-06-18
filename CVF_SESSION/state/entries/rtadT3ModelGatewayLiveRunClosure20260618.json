@@ -1,0 +1,25 @@
+{
+  "stateOrder": 439,
+  "stateKey": "rtadT3ModelGatewayLiveRunClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "71bfc3a3",
+    "executionBaseHead": "d3060e64",
+    "roadmap": "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_FOR_CODEX_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_COMPLETION_2026-06-18.md",
+    "evidenceReceipt": "docs/reviews/evidence/rtad-t3-model-gateway-live-run-receipt-2026-06-18.json",
+    "selectedProof": "deepseek/deepseek-chat",
+    "receiptId": "gw_20260618063232191_5qgr2fbg",
+    "result": "Bounded Model Gateway live proof passed through DeepSeek deepseek-chat; Alibaba qwen-turbo attempt was recorded as PARTIAL with internal_error diagnostic.",
+    "checks": [
+      "secret-safe environment alias discovery PASS",
+      "DeepSeek live provider call PASS",
+      "Alibaba live provider attempt PARTIAL with diagnostic recorded",
+      "pre-commit hook PASS 50/50"
+    ],
+    "claimBoundary": "Bounded live proof only; no provider ranking, provider parity, registry mutation, MCP implementation, public-sync, release-facing claim, external-facing readiness claim, runtime source mutation, or co-work product development.",
+    "nextAllowedMove": "Select the next governed runtime tranche with fresh GC-018 and source-verified work order; possible inputs include Model Gateway MCP/runtime bridge design or Alibaba diagnostic follow-up."
+  }
+}

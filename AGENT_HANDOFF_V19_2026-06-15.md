@@ -24,8 +24,8 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after RTAD-T2 Model Gateway
-Runtime Admission Pilot closure material commit `1a68f448`.
+Authorized session-sync scope: update active handoff after RTAD-T3 Model Gateway
+Live Run closure material commit `71bfc3a3`.
 
 Protected paths:
 
@@ -42,19 +42,21 @@ Protected paths:
 - `CVF_SESSION/state/entries/rtadT0FoundationTerminalAlignmentClosure20260618.json`
 - `CVF_SESSION/state/entries/rtadT2ModelGatewayRuntimeAdmissionPilotDispatch20260618.json`
 - `CVF_SESSION/state/entries/rtadT2ModelGatewayRuntimeAdmissionPilotClosure20260618.json`
+- `CVF_SESSION/state/entries/rtadT3ModelGatewayLiveRunClosure20260618.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
-focus, asked Codex to continue RTAD-T1 and RTAD-T2, and then explicitly
-authorized Codex to use existing available API keys for a bounded Model Gateway
-live run. Codex closed RTAD-T2 at material commit `1a68f448`; this session-sync
-records the closure and opens RTAD-T3 live proof as the next allowed move while
-keeping registry mutation, public-sync, MCP gateway implementation,
-release-facing claims, external-facing readiness, Model Gateway redispatch/P3,
-and co-work product development parked.
+focus, asked Codex to continue RTAD-T1 and RTAD-T2, then explicitly authorized
+Codex to use existing available API keys for a bounded Model Gateway live run.
+Codex closed RTAD-T3 at material commit `71bfc3a3`; this session-sync records
+the bounded live proof result and moves the next allowed move to a governed
+runtime-tranche decision while keeping registry mutation, public-sync, MCP
+gateway implementation, release-facing claims, external-facing readiness,
+provider ranking/parity claims, Model Gateway redispatch/P3, and co-work
+product development parked.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
+RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
 GFC-T3 accepted-material commit, GFC-T3 dispatch commit, GFC-T1
 post-closure state drift remediation commit,
 GFC-T1 closure material commit, GFC-T1 accepted worker material commit, prompt
@@ -64,14 +66,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rtad_t3_model_gateway_live_run_authorized`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=execute RTAD-T3 secret-safe Model Gateway live proof using existing available API keys; parked checkpoint=registry mutation, public-sync, MCP gateway implementation, release-facing claims, external-facing readiness, Model Gateway redispatch/P3, Alibaba second-provider parity beyond this bounded proof, and co-work product development remain parked.
+Startup acknowledged: current mode=`rtad_t3_model_gateway_live_run_closed_runtime_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=decide the next governed runtime tranche after RTAD-T3 bounded live proof closure; parked checkpoint=registry mutation, public-sync, MCP gateway implementation, release-facing claims, external-facing readiness, provider ranking/parity claims, Model Gateway redispatch/P3, Alibaba follow-up beyond recorded diagnostic, and co-work product development remain parked.
 
 ## Current Mode
 
-`rtad_t3_model_gateway_live_run_authorized`
+`rtad_t3_model_gateway_live_run_closed_runtime_parked`
 
-Current HEAD recorded for this handoff: `1a68f448`
-(RTAD-T2 Model Gateway closure material commit `1a68f448`;
+Current HEAD recorded for this handoff: `71bfc3a3`
+(RTAD-T3 Model Gateway live proof closure material commit `71bfc3a3`;
+RTAD-T2 Model Gateway closure material commit `1a68f448`;
 RTAD-T2 Model Gateway dispatch material commit `04755f3b`;
 RTAD-T0 Foundation Terminal Alignment material commit `914b2af6`;
 GFC-T2/T4/T5 foundation closeout material commit `bfc30dbd`;
@@ -330,6 +333,25 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+RTAD-T3 Model Gateway live proof is `CLOSED_PASS_BOUNDED` at material commit
+`71bfc3a3`. The bounded live run used existing available API-key aliases
+without printing or committing raw keys. DeepSeek `deepseek-chat` passed with
+receipt `gw_20260618063232191_5qgr2fbg`; Alibaba `qwen-turbo` produced a
+recorded `PARTIAL` `internal_error` diagnostic. Registry mutation, public-sync,
+MCP gateway implementation, release-facing claims, external-facing readiness,
+provider ranking/parity claims, Model Gateway redispatch/P3, and co-work
+product development remain parked.
+
+Stable artifacts:
+
+`docs/baselines/CVF_GC018_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_2026-06-18.md`
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_FOR_CODEX_2026-06-18.md`
+
+`docs/reviews/CVF_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_COMPLETION_2026-06-18.md`
+
+`docs/reviews/evidence/rtad-t3-model-gateway-live-run-receipt-2026-06-18.json`
 
 GFC-T3 Roadmap State Hygiene Remediation dispatch is accepted at material
 commit `21cf3793` after Codex reviewer repair clarified that the scope is
@@ -622,14 +644,20 @@ source-verified work order.
 
 ## Next Allowed Move
 
-RTAD-T2 local deterministic Model Gateway admission pilot is closed at material
-commit `1a68f448`. The operator explicitly authorized Codex to use existing
-available API keys for a bounded Model Gateway live run. Next allowed move:
-execute RTAD-T3 as a secret-safe live proof with diagnostics and receipt
-evidence. Registry mutation, public-sync, MCP gateway implementation,
-release-facing claims, external-facing readiness, Model Gateway redispatch/P3,
-and co-work product development remain parked unless a later operator
-authorization opens a separate tranche.
+RTAD-T3 Model Gateway live proof is `CLOSED_PASS_BOUNDED` at material commit
+`71bfc3a3`. The bounded live run used existing available API-key aliases
+without printing or committing raw keys. DeepSeek `deepseek-chat` passed with
+receipt `gw_20260618063232191_5qgr2fbg`; Alibaba `qwen-turbo` produced a
+recorded `PARTIAL` `internal_error` diagnostic.
+
+Next allowed move: decide the next governed runtime tranche with fresh GC-018
+and a source-verified work order. Candidate inputs include Model Gateway
+MCP/runtime bridge design, Alibaba diagnostic follow-up, or another bounded
+runtime admission tranche. Registry mutation, public-sync, MCP gateway
+implementation, release-facing claims, external-facing readiness, provider
+ranking/parity claims, Model Gateway redispatch/P3, and co-work product
+development remain parked unless a later operator authorization opens a
+separate tranche.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
