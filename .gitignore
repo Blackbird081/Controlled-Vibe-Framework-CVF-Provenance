@@ -66,6 +66,10 @@ EXTENSIONS/**/package-lock.json
 # AI Research (external reference)
 AI-Research-SKILLs/
 
+# External agent handoff packages copied for local absorption audit only.
+# Absorb useful content through governed CVF artifacts; do not commit raw bundles.
+CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE/
+
 # Mini Game projects (moved to CVF-Workspace — ADR-020)
 Mini Game/
 Mini_Game/

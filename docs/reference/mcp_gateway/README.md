@@ -25,6 +25,8 @@ readiness.
 | Reference | Use |
 |---|---|
 | `CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md` | Central boundary contract for any future MCP tool that intends to call Model Gateway runtime surfaces. |
+| `docs/reference/external_agent_review/README.md` | Review-context front door for external-agent MCP/workspace critique and non-canonical package absorption. |
+| `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md` | Selective absorption map for the operator-copied external workspace package. |
 
 ## Runtime Source Pointers
 
@@ -42,6 +44,11 @@ Before authoring any work order that exposes Model Gateway through MCP, read
 this folder front door and the bridge boundary contract. The work order must
 source-verify the MCP tool surface and the Model Gateway runtime surface it
 intends to connect.
+
+If the work order uses external repository ideas or external-agent package
+material, also read `docs/reference/external_agent_review/README.md` and record
+whether the material is `ABSORB`, `ADAPT`, `DEFER`, or `REJECT` under a
+CVF-owned absorption map.
 
 ## Claim Boundary
 

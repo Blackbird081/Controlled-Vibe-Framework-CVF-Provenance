@@ -51,6 +51,7 @@ order and GC-018 packet still control authorization.
 | Creating, splitting, relocating, or refactoring durable governance foundation files | `docs/reference/foundation_storage/README.md`; `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md`; affected family README or reference index | `docs/reference/` foundation folders and operational indexes | Foundation files need stable indexed paths. Execution/evidence files stay dated and archive-bound. Storage layout is part of the refactor, not optional cleanup. |
 | Authoring or reviewing agent handoff boundaries | `docs/reference/agent_handoff/README.md`; `docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md`; `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | Work orders, dispatch envelopes, commit steward records, AOT trace blocks, session-sync surfaces | Agent Handoff Contract is the Central Core. Per-batch handoff evidence is the Local View and must include route, role pattern, phase, base-head, changed-set, trace, commit-owner, isolation, and next-move dispositions. |
 | Proposing, designing, or building an agent-interaction workspace | `docs/reference/agent_workspace/README.md`; `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`; `CVF_SESSION/agent_workspace/workspace/README.md`; `CVF_SESSION/agent_workspace/workspace/lanes/README.md`; `CVF_SESSION/agent_workspace/runtime_queue/README.md`; `CVF_SESSION/agent_workspace/runtime_queue/queues/README.md`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `governance/compat/check_agent_workspace_design.py`; `governance/compat/check_agent_workspace_state.py`; `governance/compat/check_agent_workspace_skeleton.py`; `governance/compat/check_agent_workspace_runtime_boundary.py`; `docs/reference/agent_handoff/README.md`; `docs/reference/foundation_storage/README.md` | Future Claude/Codex/other-agent coordination workspace surfaces | AHB-Tn.1 authorizes design foundation only. AHB-Tn.2 machine-enforces the design control block. AHB-Tn.3 defines state topology. AHB-Tn.4 adds generated workspace state source/checker foundation. AHB-Tn.5 makes the future options explicit and parked. AHB-Tn.6 closes richer lanes and foundation hardening into stable taxonomy/template/checker controls. AHB-Tn.7 closes the bounded workspace build option at skeleton level only. AHB-Tn.8 closes the runtime expansion readiness contract. AHB-Tn.9 closes a queue skeleton only. AHB-Tn.10 closes the operator read-model plan only. Any executable runtime state, provider proof, public-sync, registry edit, UI implementation, production readiness, or public readiness needs fresh GC-018 and a separate work order. |
+| Preparing external-agent review context or absorbing external MCP/workspace ideas | `docs/reference/external_agent_review/README.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md`; `docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md`; `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md`; `docs/reference/mcp_gateway/README.md`; `docs/reference/agent_workspace/README.md` | External-agent review context and non-canonical package absorption | CVF remains the source of truth. Public/simple lifecycle labels are display vocabulary unless mapped to current governed workflow-chain surfaces. External packages and repositories are reference inputs only; useful material must be classified as absorb/adapt/defer/reject before entering CVF-owned reference surfaces. |
 | Checking Pain H memory status | `docs/reviews/CVF_H2_WORKING_MEMORY_RUNTIME_PROOF_COMPLETION_2026-05-22.md`; `docs/reviews/archive/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`; registry agentmemory row; AIF-C completion | Learning Plane runtime-memory and AIF-C modules | H/AIF-C prove bounded memory surfaces, not durable or live provider memory. |
 | Checking graph knowledge status | Registry code-review-graph row; `docs/reference/CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md`; AIF-B completion | Learning Plane graph schema/parser/index/task-query modules | Phase 1 is in-memory AST/index/blast-radius foundation only. |
 
@@ -66,3 +67,25 @@ of preserving a stale work-order assumption.
 This index improves agent scoping and reference discovery. It does not prove
 runtime governance behavior, live provider behavior, public readiness, release
 readiness, or automatic legacy absorption.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+Adding the external-agent review row was expected to improve lookup routing
+without changing runtime behavior.
+
+### Evidence Comparison
+
+The row points to stable reference front doors and does not claim runtime,
+provider, public-sync, or readiness evidence.
+
+### Contradiction Or Gap Disposition
+
+No contradiction is introduced. The update closes a retrieval gap for external
+review context.
+
+### Claim Update
+
+This index now routes external-agent review and external package absorption to
+CVF-owned context surfaces.

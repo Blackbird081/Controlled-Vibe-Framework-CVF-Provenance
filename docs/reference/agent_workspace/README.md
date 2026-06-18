@@ -69,6 +69,14 @@ Workspace option-readiness matrix:
 
 `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md`
 
+External workspace package absorption map:
+
+`docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md`
+
+External-agent review context:
+
+`docs/reference/external_agent_review/README.md`
+
 Workspace design machine guard:
 
 `governance/compat/check_agent_workspace_design.py`
@@ -125,6 +133,8 @@ Read this folder when a task:
 | `CVF_SESSION/agent_workspace/runtime_queue/README.md` | Bounded runtime queue skeleton front door |
 | `CVF_SESSION/agent_workspace/runtime_queue/queues/README.md` | Queue-family index |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | Operator-facing read-model plan |
+| `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md` | CVF-owned absorption map for the local external workspace package |
+| `docs/reference/external_agent_review/README.md` | External-agent context and public/private review boundary |
 | `governance/compat/check_agent_workspace_design.py` | Machine-enforced local view for Agent Workspace Design Control Block |
 | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | Generated compact active workspace state view |
 | `governance/compat/generate_agent_workspace_state.py` | Generator for workspace state source fragments |
@@ -172,3 +182,25 @@ separate governed archive batch.
 This README is a stable pointer record. It does not authorize runtime behavior,
 provider calls, public-sync, autonomous mutation, workspace construction, or
 production/public readiness claims.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+Adding the external package absorption map was expected to improve workspace
+reference discovery without authorizing workspace runtime.
+
+### Evidence Comparison
+
+The update adds pointer rows only and keeps runtime behavior, provider proof,
+public-sync, and production readiness out of scope.
+
+### Contradiction Or Gap Disposition
+
+No contradiction is introduced. The map clarifies that the copied package is
+reference input, not authority.
+
+### Claim Update
+
+The workspace front door now points agents to the external package absorption
+map before future workspace runtime or MCP work.

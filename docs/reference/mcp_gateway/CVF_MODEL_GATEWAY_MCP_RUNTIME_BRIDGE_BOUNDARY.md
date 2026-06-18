@@ -54,6 +54,18 @@ The first executable MCP bridge, if authorized later, must be a single narrow
 tool candidate such as `cvf_model_gateway_execute_preview`, not a broad provider
 marketplace or multi-method gateway.
 
+External repository patterns may inform this design only after CVF-owned
+absorption. The useful Foundry pattern is MCP as a first-class agent ingress
+over local state with a thin tool layer. CVF adapts that pattern by keeping
+Model Gateway as execution authority and requiring CVF receipts, credential
+boundaries, AHB role controls, and autorun gates.
+
+The operator-copied workspace package reinforces proposal-before-execution and
+event/receipt separation, but its hard-coded public/simple workflow enum is not
+CVF internal workflow-chain authority. Future MCP work must cite
+`docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md`
+when public lifecycle vocabulary appears in MCP/workspace context.
+
 ## Required Bridge Control Fields
 
 Any future MCP Model Gateway work order must define these fields before
@@ -96,6 +108,7 @@ Allowed only after fresh GC-018:
   claim.
 - Runtime queue, scheduler, worker daemon, or agent workspace execution.
 - New provider live campaign without explicit operator live-run authorization.
+- Treating public/simple workflow labels as MCP authorization or runtime state.
 
 ## Bridge Readiness Ruling
 
