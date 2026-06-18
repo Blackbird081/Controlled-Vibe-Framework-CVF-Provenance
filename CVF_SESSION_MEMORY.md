@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`
+Current mode marker: `gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`.
+Current mode: `gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`.
 
 Active handoff:
 
@@ -61,6 +61,27 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+GFC-T1 Governance Foundation Consolidation Audit is `DISPATCHED` to Claude at
+material dispatch commit `62b2fa27`. Claude is assigned
+`WORKER_MUST_NOT_COMMIT` and may return only:
+
+- `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
+- `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_WORKER_RETURN_2026-06-18.md`
+
+Codex owns review, accepted-material commit, closure, and session sync after
+worker return.
+
+Stable artifact:
+
+- `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`
+- `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md`
+
+This is audit/decision only. Runtime queue execution, scheduler, worker
+daemon, UI implementation, runtime/product mutation, registry edit,
+provider/live proof, public-sync, Model Gateway redispatch/P3, and co-work
+product development remain parked.
 
 PRFC-T3 PLCS companion-routing checker/interlock is `CLOSED_PASS_BOUNDED` at
 material commit `674ddf34`. The PRFC roadmap is closed bounded. Runtime

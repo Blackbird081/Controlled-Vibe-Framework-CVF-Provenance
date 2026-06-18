@@ -24,41 +24,40 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after PRFC-T2
-central facts pilot material closure commit `051b491e`.
+Authorized session-sync scope: update active handoff after GFC-T1
+Governance Foundation Consolidation Audit dispatch commit `62b2fa27`.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/gfcT1FoundationConsolidationAuditDispatch20260618.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/preRuntimeFoundationCleanupRoadmap20260617.json`
 - `CVF_SESSION/state/entries/prfcT2CentralFactsPilotClosure20260617.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator instructed Codex on 2026-06-17 to take over
-the PRFC-T2 worker/reviewer/closer roles after Claude hit checker failures.
-Codex committed PRFC-T2 material closure at `051b491e`, session-sync at
-`15816000`, PRFC-T3 dispatch at `151db2cd`, and PRFC-T3 material closure at
-`674ddf34`; this session-sync records the PRFC roadmap as closed bounded and
-keeps runtime execution parked.
+Operator authorization: operator instructed Codex on 2026-06-18 to create a
+roadmap and work order for the three proposed governance-foundation follow-ups
+and assign Claude as worker. Codex committed GFC-T1 dispatch at `62b2fa27`;
+this session-sync records the dispatch and keeps runtime execution parked.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-PRFC-T2 material closure, PRFC-T1 protected state/base authorization lane,
-closure docs, CGFP-T1 material closure, supplemental finding, PRFC roadmap
-history, or prior AHB material artifacts.
+GFC-T1 dispatch artifacts, PRFC material closures, CGFP-T1 material closure,
+supplemental finding, PRFC roadmap history, or prior AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=audit and select the next roadmap, or open runtime/provider/live/public-sync/registry/product work only through fresh operator authorization, fresh GC-018, and source-verified work order; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
+Startup acknowledged: current mode=`gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=wait for Claude GFC-T1 WORKER_MUST_NOT_COMMIT return, then Codex reviews actual files before accepted-material commit and bounded closure; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
 
 ## Current Mode
 
-`prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`
+`gfc_t1_foundation_consolidation_audit_dispatched_awaiting_claude_worker_return`
 
-Current HEAD recorded for this handoff: `674ddf34`
-(PRFC-T3 PLCS companion checker material closure commit `674ddf34`;
+Current HEAD recorded for this handoff: `62b2fa27`
+(GFC-T1 Governance Foundation Consolidation Audit dispatch commit `62b2fa27`;
+PRFC-T3 PLCS companion checker material closure commit `674ddf34`;
 prior anchor: PRFC-T3 dispatch-continuity sync commit `cced9179`;
 prior anchor: PRFC-T3 PLCS companion checker dispatch commit `151db2cd`;
 prior anchor: PRFC-T2 session-sync commit `15816000`;
@@ -590,12 +589,16 @@ source-verified work order.
 
 ## Next Allowed Move
 
-PRFC-T3 PLCS companion-routing checker/interlock is `CLOSED_PASS_BOUNDED` at
-material commit `674ddf34`. The PRFC roadmap is closed bounded. Next allowed
-move: audit and select the next roadmap, or open runtime/provider/live,
-public-sync, registry, or product work only through fresh operator
-authorization, fresh GC-018, and source-verified work order. Runtime workspace
-execution remains parked.
+GFC-T1 Governance Foundation Consolidation Audit is `DISPATCHED` to Claude at
+material dispatch commit `62b2fa27`. Claude is assigned
+`WORKER_MUST_NOT_COMMIT` and may return only
+`docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
+and
+`docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_WORKER_RETURN_2026-06-18.md`.
+Codex owns review, accepted-material commit, closure, and session sync after
+worker return. Runtime workspace execution, runtime/provider/live,
+public-sync, registry, product runtime mutation, and co-work product
+development remain parked.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
