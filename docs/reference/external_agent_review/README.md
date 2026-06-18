@@ -43,6 +43,7 @@ semantics.
 | `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md` | Authoring checklist and red-flag screen before sending a packet to an external agent. |
 | `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` | Bounded sample packet for workflow-chain, MCP, and workspace review context. |
 | `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` | Stable workflow for classifying returned external-agent output before CVF acts on it. |
+| `governance/compat/check_external_agent_absorption_table.py` | Range-aware guard requiring the Required Absorption Table on changed external-return absorption reviews. |
 | `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md` | CVF-owned absorption map for the local external workspace package copied into the repo root. |
 | `docs/reference/mcp_gateway/README.md` | MCP Gateway local view for future MCP tool ingress work. |
 | `docs/reference/agent_workspace/README.md` | Agent workspace local view for future workspace state/runtime work. |
@@ -55,9 +56,11 @@ semantics.
 4. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
    the bounded example for workflow-chain, MCP, and workspace review context.
 5. After the external agent returns output, classify every returned item through
-   `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` before creating a
-   finding, standard, roadmap, work order, review, reference artifact, or
-   operator decision.
+    `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` before creating a
+    finding, standard, roadmap, work order, review, reference artifact, or
+    operator decision.
+6. For changed external-return absorption reviews, satisfy
+   `governance/compat/check_external_agent_absorption_table.py` before closure.
 
 ## Required Read Trigger
 

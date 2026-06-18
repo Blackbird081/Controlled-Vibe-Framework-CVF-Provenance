@@ -99,12 +99,21 @@ these columns:
 - Runtime, provider, public, production, release, MCP, or workspace readiness
   claims require current CVF proof.
 
-## Machine-Check Candidate
+## Machine Check
 
-Future machine enforcement may check that changed external-agent review return
-packets or absorption reviews include the Required Absorption Table before they
-close. That checker is intentionally deferred until at least one real external
-return packet exercises this workflow.
+Changed external-return absorption reviews must include the Required Absorption
+Table before they close.
+
+Machine guard:
+
+`governance/compat/check_external_agent_absorption_table.py`
+
+The guard is range-aware and forward-only. It checks changed `docs/reviews/`
+and `docs/audits/` files in the committed range, staged set, and untracked set,
+while avoiding ordinary completion/worker-return prose unless the artifact uses
+the explicit marker:
+
+`External absorption review: REQUIRED`
 
 ## Epistemic Process Block
 

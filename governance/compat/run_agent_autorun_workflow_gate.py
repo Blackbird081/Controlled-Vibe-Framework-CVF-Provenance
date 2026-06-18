@@ -150,6 +150,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "external-agent absorption table",
+            "governance/compat/check_external_agent_absorption_table.py",
+            base,
+            head,
+        ),
+        _range_command(
             "foundation storage layout",
             "governance/compat/check_foundation_storage_layout.py",
             base,

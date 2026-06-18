@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_T1_T3_T3A_CLOSED_T3B_READY_T2_T4_PARKED
+Status: ROADMAP_T1_T3_T3A_T3B_CLOSED_T2_T4_PARKED
 
 docType: roadmap
 
@@ -122,7 +122,7 @@ Local views:
 | EARC-T2 | HOLD_PUBLIC_SYNC_AUTHORIZATION | Prepare public-safe front-door/catalog reconciliation plan for external reviewers | Codex | Requires operator public-sync authorization before editing public-sync clone |
 | EARC-T3 | CLOSED_PASS_BOUNDED | Define external-finding absorption workflow: finding, question, useful pattern, rejected assumption | Codex | Closed by EARC-T3 material commit |
 | EARC-T3A | CLOSED_PASS_BOUNDED | Run first real external-return absorption pilot on copied workspace-layer package | Codex | Closed by EARC-T3A material commit |
-| EARC-T3B | READY_FOR_GC018 | Add range-aware checker for Required Absorption Table on changed external-return absorption reviews | Codex | Requires fresh GC-018 |
+| EARC-T3B | CLOSED_PASS_BOUNDED | Add range-aware checker for Required Absorption Table on changed external-return absorption reviews | Codex | Closed by EARC-T3B material commit |
 | EARC-T4 | HOLD_RUNTIME_AUTHORIZATION | Decide first MCP/workspace implementation boundary after review-context stabilization | Codex | Requires explicit MCP/runtime implementation authorization |
 
 ## T1 Target Shape
@@ -259,6 +259,27 @@ package import, checker implementation, production readiness, release
 readiness, public readiness, or external-facing readiness was authorized or
 performed.
 
+## EARC-T3B Closure Note (2026-06-18)
+
+EARC-T3B is `CLOSED_PASS_BOUNDED`. It added a range-aware machine guard for
+the Required Absorption Table on changed external-return absorption reviews,
+focused tests, hook-chain wiring, autorun wiring, front-door references, and
+GC-051 corpus registry coverage.
+
+Execution evidence:
+
+- `docs/baselines/CVF_GC018_EARC_T3B_EXTERNAL_ABSORPTION_TABLE_CHECKER_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3B_EXTERNAL_ABSORPTION_TABLE_CHECKER_FOR_CODEX_2026-06-18.md`
+- `governance/compat/check_external_agent_absorption_table.py`
+- `governance/compat/test_check_external_agent_absorption_table.py`
+- `docs/reviews/CVF_EARC_T3B_ABSORPTION_TABLE_CHECKER_COMPLETION_2026-06-18.md`
+
+The checker is mandatory through autorun and local hook chains. No public-sync,
+MCP implementation, provider/live call, workspace runtime mutation, raw package
+import, retroactive historical cleanup, production readiness, release
+readiness, public readiness, or external-facing readiness was authorized or
+performed.
+
 ## Work Plan
 
 1. Commit this roadmap as the EARC execution front door.
@@ -291,8 +312,8 @@ performed.
 
 | Required row | Disposition |
 |---|---|
-| Roadmap state | `ROADMAP_T1_T3_T3A_CLOSED_T3B_READY_T2_T4_PARKED` at `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md` |
-| Work order trace | `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_FOR_CODEX_2026-06-18.md` |
+| Roadmap state | `ROADMAP_T1_T3_T3A_T3B_CLOSED_T2_T4_PARKED` at `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md` |
+| Work order trace | `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_FOR_CODEX_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3B_EXTERNAL_ABSORPTION_TABLE_CHECKER_FOR_CODEX_2026-06-18.md` |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` generated from source entry |
 | Registry Markdown | `BLOCKED_WITH_REASON`: no separate markdown registry is required for this reference family |
 | Public export disposition | `DEFERRED_PRIVATE_ONLY`: roadmap is private provenance planning; public-sync requires later authorization |
@@ -308,8 +329,7 @@ part of this roadmap creation.
 
 ## Next Dispatch Candidate
 
-EARC-T3: define the external-finding absorption workflow with fresh GC-018 and
-a source-verified work order. EARC-T2 remains held for explicit public-sync
+No unheld EARC tranche remains. EARC-T2 remains held for explicit public-sync
 authorization, and EARC-T4 remains held for explicit MCP/runtime authorization.
 
 ## Claim Boundary
