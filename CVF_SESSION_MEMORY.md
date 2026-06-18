@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `gfc_t1_closed_bounded_gfc_t3_recommended_runtime_parked`
+Current mode marker: `gfc_t1_post_closure_state_drift_remediated_gfc_t3_recommended_runtime_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfc_t1_closed_bounded_gfc_t3_recommended_runtime_parked`.
+Current mode: `gfc_t1_post_closure_state_drift_remediated_gfc_t3_recommended_runtime_parked`.
 
 Active handoff:
 
@@ -66,6 +66,11 @@ GFC-T1 Governance Foundation Consolidation Audit is `CLOSED_PASS_BOUNDED` at
 closure commit `81669ff5`, after accepted worker material commit `c8034a81`
 and accepted-material session-sync commit `f764f449`. Codex reviewer repair
 aligned the stale-roadmap count from five to seven before acceptance.
+Post-closure state drift remediation is committed at `da09980e`: the
+front-door and active handoff `## Next Allowed Move` sections were resynced,
+and `governance/compat/check_session_mode_consistency.py` now checks the
+front-door `## Next Allowed Move` `Mode:` line as a canonical session mode
+surface.
 
 Stable artifacts:
 
@@ -75,6 +80,7 @@ Stable artifacts:
 - `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`
 - `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md`
+- `docs/reviews/CVF_GFC_T1_POST_CLOSURE_STATE_DRIFT_FINDING_2026-06-18.md`
 
 Recommended next move: operator decides whether to open GFC-T3 roadmap-state
 hygiene remediation for the seven confirmed stale rows from the accepted
@@ -537,14 +543,19 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `prfc_t3_plcs_companion_checker_closed_runtime_execution_parked`.
+Mode: `gfc_t1_post_closure_state_drift_remediated_gfc_t3_recommended_runtime_parked`.
 
-PRFC-T3 PLCS companion-routing checker/interlock is `CLOSED_PASS_BOUNDED` at
-material commit `674ddf34`. The PRFC roadmap is closed bounded. Next allowed
-move: audit and select the next roadmap, or open any runtime/provider/live,
-public-sync, registry, or product work only through fresh operator
-authorization, fresh GC-018, and a source-verified work order. Runtime
-workspace execution remains parked.
+GFC-T1 Governance Foundation Consolidation Audit is `CLOSED_PASS_BOUNDED` at
+closure commit `81669ff5`, after accepted worker material commit `c8034a81`
+and accepted-material session-sync commit `f764f449`. Post-closure state
+drift remediation is committed at `da09980e`: `CVF_SESSION_MEMORY.md` and
+`AGENT_HANDOFF_V19_2026-06-15.md` `## Next Allowed Move` sections were
+resynced, and `check_session_mode_consistency.py` now checks the front-door
+`## Next Allowed Move` `Mode:` line. Next allowed move: operator decides
+whether to open GFC-T3 roadmap-state hygiene remediation for the seven
+confirmed stale rows from the accepted matrix; P5C must be re-read before any
+edit. GFC-T2 CCLV rule conversion and GFC-T4 FPRC machine/template follow-up
+remain optional operator decisions. Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
