@@ -29,6 +29,7 @@
     { "path": "CVF_ECO_v3.0_TASK_MARKETPLACE", "lifecycleClass": "MERGED_RETAINED", "exposureClass": "PRIVATE_ENTERPRISE_ONLY" },
     { "path": "CVF_ECO_v3.1_REPUTATION", "lifecycleClass": "MERGED_RETAINED", "exposureClass": "PRIVATE_ENTERPRISE_ONLY" },
     { "path": "CVF_EXECUTION_PLANE_FOUNDATION", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "PUBLIC_EXPORT_CANDIDATE", "exportReadiness": "NEEDS_PACKAGING" },
+    { "path": "CVF_EXTRACTION_FOUNDATION", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": "CVF_GOVERNANCE_EXPANSION_FOUNDATION", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "PUBLIC_EXPORT_CANDIDATE", "exportReadiness": "NEEDS_PACKAGING" },
     { "path": "CVF_GUARD_CONTRACT", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "PUBLIC_EXPORT_CANDIDATE", "exportReadiness": "NEEDS_PACKAGING" },
     { "path": "CVF_LEARNING_PLANE_FOUNDATION", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "PUBLIC_EXPORT_CANDIDATE", "exportReadiness": "NEEDS_PACKAGING" },

@@ -22,6 +22,11 @@ Target: route the next bounded CVF foundation move after session compaction.
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, and roadmap evidence remain in their governed owner paths.
 
+Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
+Exact remote SHA must be derived live from git when needed; do not
+hand-maintain it in this handoff.
+External agent memory files: non-canonical convenience only.
+
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after RTAD-T3 Model Gateway
@@ -72,8 +77,9 @@ Startup acknowledged: current mode=`rtad_t3_model_gateway_live_run_closed_runtim
 
 `rtad_t3_model_gateway_live_run_closed_runtime_parked`
 
-Current HEAD recorded for this handoff: `71bfc3a3`
-(RTAD-T3 Model Gateway live proof closure material commit `71bfc3a3`;
+Current HEAD recorded for this handoff: `058b3c7f`
+(RTAD-T3 session continuity sync commit `058b3c7f`;
+RTAD-T3 Model Gateway live proof closure material commit `71bfc3a3`;
 RTAD-T2 Model Gateway closure material commit `1a68f448`;
 RTAD-T2 Model Gateway dispatch material commit `04755f3b`;
 RTAD-T0 Foundation Terminal Alignment material commit `914b2af6`;
