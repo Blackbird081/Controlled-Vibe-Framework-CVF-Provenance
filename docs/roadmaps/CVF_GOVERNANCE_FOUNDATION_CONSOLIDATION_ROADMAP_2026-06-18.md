@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_RECOMMENDED
+Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_DISPATCHED_TO_WORKER
 
 docType: roadmap
 
@@ -118,7 +118,7 @@ must retain role-specific judgment.
 |---|---|---|---|
 | GFC-T1 | CLOSED_PASS_BOUNDED | Claude authored the CCLV-T4, FPRC-T3, and roadmap-state hygiene audit/decision packet; Codex accepted after reviewer repair | Claude worker; Codex reviewer |
 | GFC-T2 | HOLD_PENDING_OPERATOR_DECISION | Codex decides which CCLV-T4 rule or limit becomes a standard/template/checker change | Codex |
-| GFC-T3 | RECOMMENDED_NEXT_OPERATOR_DECISION | Codex executes the selected roadmap-state hygiene remediation, if operator confirms the next tranche | Codex |
+| GFC-T3 | DISPATCHED_TO_WORKER | Claude authors a no-commit roadmap-state hygiene remediation packet for the eight confirmed stale roadmap rows; Codex reviews, repairs, and commits accepted material | Claude worker; Codex reviewer |
 | GFC-T4 | HOLD_PENDING_OPERATOR_DECISION | Optional FPRC-T3 machine or template follow-up if the T1 pilot proves value | Codex |
 
 ## GFC-T1 Work Plan
@@ -155,6 +155,47 @@ Accepted decisions:
 Closure review:
 
 `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md`
+
+Post-closure state drift finding and remediation:
+
+`docs/reviews/CVF_GFC_T1_POST_CLOSURE_STATE_DRIFT_FINDING_2026-06-18.md`
+(material commit `da09980e`, session-sync `ecd74bbe`). The P5C row, which the
+GFC-T1 matrix left `UNDETERMINED` pending a re-read, has since been
+re-verified by direct reading of `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_ROADMAP_2026-06-15.md`
+and confirmed `CLOSED_PASS_BOUNDED` at material commit `b7a88782` (guard file
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-bridge-admission-guard.ts` exists
+and is wired into the bridge; completion review
+`docs/reviews/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_COMPLETION_2026-06-15.md`
+exists), while the roadmap's own top-of-file `Status:` line remains
+`ROADMAP_READY_FOR_GC018`. P5C is therefore promoted from `UNDETERMINED` to an
+eighth confirmed-stale row for GFC-T3.
+
+## GFC-T3 Dispatch Record (2026-06-18)
+
+GFC-T3 is dispatched to Claude as a no-commit worker remediation packet
+covering the eight confirmed-stale roadmap rows from the accepted GFC-T1
+matrix plus the re-verified P5C row:
+
+1. `docs/roadmaps/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_ROADMAP_2026-06-15.md`
+2. `docs/roadmaps/CVF_SESSION_SYNC_PACK_BUILDER_AND_AUTHORIZATION_MANIFEST_ROADMAP_2026-06-16.md`
+3. `docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md` (same-file self-reference mismatch)
+4. `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md` (highest risk)
+5. `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_AND_CONFORMANCE_ROADMAP_2026-06-15.md`
+6. `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_ROADMAP_2026-06-15.md`
+7. `docs/roadmaps/CVF_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_ROADMAP_2026-06-15.md`
+8. `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_ROADMAP_2026-06-15.md` (re-verified, promoted from `UNDETERMINED`)
+
+- GC-018: `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`
+
+Dispatch boundary: each remediated roadmap's top-of-file `Status:` line and,
+for the AHB roadmap, its own internal `Machine Closure Package` row, are
+updated to a closed-equivalent value with a pointer to existing closure
+evidence already cited in the GFC-T1 matrix or this dispatch record. No new
+implementation, runtime/source/test mutation, registry edit, provider/live
+proof, or public-sync is authorized. Claude must not invent or backfill
+closure evidence; every status change must cite an artifact that already
+exists on disk.
 
 ## Work Plan
 
@@ -218,7 +259,7 @@ material range is bounded to GFC-T1 governed documentation artifacts.
 | GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_RECOMMENDED` | PASS |
+| Roadmap state | this file | `Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_DISPATCHED_TO_WORKER` | PASS |
 | Accepted material commit | `c8034a81` | two worker-owned review files only | PASS |
 | Session continuity | `f764f449` | accepted-material continuity synced before closure material | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
@@ -253,6 +294,26 @@ is authorized.
 | Claim boundary | governance planning and dispatch only |
 | Expected manifest | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md` |
 | Actual changed set | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md` |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GFC-T3 Dispatch Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Claude orchestrator (dispatching this batch, per operator instruction to act as dispatcher for GFC-T3) |
+| Provider or surface | Claude Code CLI |
+| Session or invocation | 2026-06-18 GFC-T3 roadmap update and Claude-worker dispatch authoring |
+| Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | Read, Grep, Bash (`git`, `python`), Edit, Write |
+| Target paths | this roadmap; GFC-T3 GC-018; GFC-T3 Claude work order |
+| Allowed scope source | operator instructed Claude to audit and author the GFC-T3 GC-018/work order for a Claude worker, after re-reading the P5C row |
+| Before status evidence | base `ecd74bbe`; clean worktree before authoring |
+| After status evidence | GFC-T3 dispatch artifacts authored; pending dispatch-author gate |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | roadmap update and dispatch packet only; no worker output, runtime, provider/live, public-sync, or registry mutation by this dispatch |
+| Claim boundary | governance planning and dispatch only |
+| Expected manifest | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` |
+| Actual changed set | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
