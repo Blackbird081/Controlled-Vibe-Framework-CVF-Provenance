@@ -26,6 +26,7 @@ registries, or claim production/public readiness.
 | Source | Role |
 |---|---|
 | `docs/reference/agent_workspace/README.md` | stable workspace front door |
+| `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md` | CVF Web Workspace versus Local Workspace Runtime split |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md` | runtime/read-model boundary |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | generated state source of truth |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | lane vocabulary |
@@ -34,6 +35,9 @@ registries, or claim production/public readiness.
 | `governance/compat/check_agent_workspace_runtime_boundary.py` | machine guard |
 
 ## Read Model Sections
+
+This plan is the first Local View for the `CVF_WEB_WORKSPACE` layer. It does
+not define Local Workspace Runtime behavior.
 
 | Section | Data source | Boundary |
 |---|---|---|

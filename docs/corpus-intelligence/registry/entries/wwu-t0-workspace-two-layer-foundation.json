@@ -1,0 +1,39 @@
+{
+  "registryOrder": 105,
+  "id": "wwu-t0-workspace-two-layer-foundation",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF WWU-T0 workspace two-layer foundation",
+  "scopePaths": [
+    "docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md",
+    "docs/reference/agent_workspace/README.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+    "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md",
+    "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md"
+  ],
+  "fileCount": 6,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "wwu-t0-two-layer-workspace-rule",
+      "summary": "CVF Web Workspace and CVF Local Workspace Runtime are now separated as two first-class workspace layers before CVF Web upgrade work.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Run WWU-T1 source-verification audit of current cvf-web surfaces before any UI implementation.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "web dashboard implies runtime enforcement",
+    "mcp scaffold implies operator workspace",
+    "external workflow enum as authority",
+    "external smoke as CVF proof"
+  ],
+  "nextScanRecommendation": "WWU-T1",
+  "scanWave": "WWU-T0",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_COMPLETION_2026-06-18.md",
+  "notes": "Foundation clarification for CVF Web Workspace upgrade sequencing."
+}

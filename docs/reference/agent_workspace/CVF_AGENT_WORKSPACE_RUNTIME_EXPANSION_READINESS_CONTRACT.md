@@ -30,6 +30,7 @@ readiness, or public readiness.
 | Source | Role |
 |---|---|
 | `docs/reference/agent_workspace/README.md` | stable workspace front door |
+| `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md` | CVF Web Workspace versus Local Workspace Runtime split |
 | `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` | workspace design boundary |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | state topology and generated aggregate boundary |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | canonical lane vocabulary |
@@ -40,6 +41,9 @@ readiness, or public readiness.
 | `governance/compat/check_agent_workspace_runtime_boundary.py` | machine guard for this contract |
 
 ## Runtime Expansion Boundary
+
+This contract is the first Local View for the `CVF_LOCAL_WORKSPACE_RUNTIME`
+layer. It does not implement or substitute the CVF Web Workspace.
 
 | Area | Current authorized disposition | Blocked until fresh GC-018 |
 |---|---|---|

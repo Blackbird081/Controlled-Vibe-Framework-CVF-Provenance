@@ -37,6 +37,10 @@ Workspace design standard:
 
 `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
 
+Workspace two-layer architecture standard:
+
+`docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md`
+
 Workspace state topology contract:
 
 `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`
@@ -107,6 +111,9 @@ Read this folder when a task:
 
 - proposes, analyzes, designs, builds, or modifies the dedicated
   agent-interaction workspace;
+- proposes, analyzes, designs, builds, or modifies CVF Web Workspace,
+  workspace dashboards, operator workspace views, Local Workspace Runtime,
+  MCP/CLI workspace tooling, or IDE agent enforcement;
 - introduces agent-to-agent workspace folders, indexes, queues, inboxes,
   review lanes, shared dashboards, or coordination surfaces;
 - proposes runtime queues, queue records, operator views, dashboards, or
@@ -123,6 +130,7 @@ Read this folder when a task:
 | Local view | Role |
 |---|---|
 | `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` | Design boundary and pre-build requirements |
+| `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md` | Central split between CVF Web Workspace and CVF Local Workspace Runtime |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` | State topology, lane, storage, and archive contract before any workspace state is built |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md` | Canonical lane vocabulary and transition rules for generated workspace state |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` | Canonical source-item shape for future workspace state records |

@@ -50,6 +50,10 @@ The package is useful reference input. It is not CVF authority.
 
 ## CVF Mapping
 
+Central two-layer standard:
+
+`docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md`
+
 | Package concept | CVF-owned mapping |
 |---|---|
 | `workspace_state.json` | workspace identity and active session projection under existing generated workspace state. |
@@ -60,6 +64,14 @@ The package is useful reference input. It is not CVF authority.
 | `submit_proposal` | future MCP ingress to create a governed proposal/workspace item, not direct execution approval. |
 | `request_transition` | future request to move a governed item between lanes, not a standalone workflow state change. |
 | `receipt` | CVF receipt or completion evidence reference, not just local JSON output. |
+
+## Two-Layer Absorption
+
+| External package area | CVF layer | Disposition |
+|---|---|---|
+| `contracts/WORKSPACE_UI_CONTRACT.md`; `implementation/WORKSPACE_WEB_ARCHITECTURE.md`; local surface server | `CVF_WEB_WORKSPACE` | `ADAPT`: useful operator read-model and display-surface input, but not CVF authority or product implementation. |
+| `contracts/WORKSPACE_RUNTIME_CONTRACT.md`; `contracts/WORKSPACE_MCP_CONTRACT.md`; `contracts/IDE_BRIDGE_CONTRACT.md`; MCP/CLI runbooks | `CVF_LOCAL_WORKSPACE_RUNTIME` | `ADAPT`: useful proposal, receipt, and non-bypass boundary input, but fresh GC-018 is required before runtime implementation. |
+| Hard-coded lifecycle and package-local readiness wording | neither layer as authority | `REJECT_AS_AUTHORITY`: may inform display vocabulary or questions only. |
 
 ## EARC-T3A Pilot Absorption Result
 
