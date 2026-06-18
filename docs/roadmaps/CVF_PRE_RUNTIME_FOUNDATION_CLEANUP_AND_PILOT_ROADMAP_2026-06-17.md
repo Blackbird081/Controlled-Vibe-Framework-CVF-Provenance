@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T2_CLOSED_T3_READY_FOR_GC018
+Status: ROADMAP_IN_PROGRESS_T3_DISPATCH_READY
 
 docType: roadmap
 
@@ -135,7 +135,7 @@ source, or provider configuration.
 |---|---|---|---|
 | PRFC-T1 | CLOSED_PASS_BOUNDED | CCLV-T2 current-state reconciliation: align active state, CCLV roadmap, completion/audit pointers, and next-move language so no current surface implies CCLV-T2 is still paused after its accepted implementation | Codex |
 | PRFC-T2 | CLOSED_PASS_BOUNDED | CCLV-T3 pilot: use one small governance closure workflow to prove Central Core + Local View reduces duplicate shared facts without removing local judgment | Codex combined role by operator takeover |
-| PRFC-T3 | READY_FOR_GC018 | PLCS companion-routing checker/interlock: implement the PLCS-T3 approved companion block check for future FPC-T2 C01-C04 registry-edit work orders | Codex |
+| PRFC-T3 | DISPATCH_READY | PLCS companion-routing checker/interlock: implement the PLCS-T3 approved companion block check for future FPC-T2 C01-C04 registry-edit work orders | Codex |
 
 ## Work Plan
 
@@ -207,6 +207,23 @@ Closure artifacts:
 
 PRFC-T3 is not implemented by this closure. It is ready only for a fresh
 GC-018/source-verified work order if the operator releases the follow-up.
+
+## PRFC-T3 Dispatch Record (2026-06-18)
+
+Status: DISPATCH_READY
+
+Dispatch base: `15816000`
+
+Authorized artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_2026-06-18.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T3_PLCS_COMPANION_ROUTING_CHECKER_INTERLOCK_FOR_CODEX_2026-06-18.md`
+
+Dispatch boundary: checker/interlock implementation only after pre-dispatch
+gate pass. No registry mutation, runtime work, provider/live proof, public-sync,
+production readiness, or public readiness is authorized by the dispatch record.
 
 ## PRFC-T3 Acceptance Criteria
 
