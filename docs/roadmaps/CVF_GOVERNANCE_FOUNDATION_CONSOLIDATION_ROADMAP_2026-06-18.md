@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_DISPATCHED_TO_WORKER
+Status: GFC_T1_T3_CLOSED_PASS_BOUNDED_RUNTIME_PARKED
 
 docType: roadmap
 
@@ -118,7 +118,7 @@ must retain role-specific judgment.
 |---|---|---|---|
 | GFC-T1 | CLOSED_PASS_BOUNDED | Claude authored the CCLV-T4, FPRC-T3, and roadmap-state hygiene audit/decision packet; Codex accepted after reviewer repair | Claude worker; Codex reviewer |
 | GFC-T2 | HOLD_PENDING_OPERATOR_DECISION | Codex decides which CCLV-T4 rule or limit becomes a standard/template/checker change | Codex |
-| GFC-T3 | DISPATCHED_TO_WORKER | Claude authors a no-commit roadmap-state hygiene remediation packet for the eight confirmed stale roadmap rows; Codex reviews, repairs, and commits accepted material | Claude worker; Codex reviewer |
+| GFC-T3 | CLOSED_PASS_BOUNDED | Claude authored a no-commit roadmap-state hygiene remediation packet for the eight confirmed stale roadmap rows; Codex repaired the Rotation Guard D3/D4 stale cells and committed accepted material | Claude worker; Codex reviewer |
 | GFC-T4 | HOLD_PENDING_OPERATOR_DECISION | Optional FPRC-T3 machine or template follow-up if the T1 pilot proves value | Codex |
 
 ## GFC-T1 Work Plan
@@ -259,7 +259,7 @@ material range is bounded to GFC-T1 governed documentation artifacts.
 | GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_DISPATCHED_TO_WORKER` | PASS |
+| Roadmap state | this file | `Status: GFC_T1_T3_CLOSED_PASS_BOUNDED_RUNTIME_PARKED` | PASS |
 | Accepted material commit | `c8034a81` | two worker-owned review files only | PASS |
 | Session continuity | `f764f449` | accepted-material continuity synced before closure material | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
@@ -315,6 +315,18 @@ is authorized.
 | Expected manifest | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` |
 | Actual changed set | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GFC-T3 Closure Record
+
+GFC-T3 is `CLOSED_PASS_BOUNDED` at closure review
+`docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md`
+after accepted-material commit `f68ff8ce`.
+
+Codex reviewed Claude's worker packet and return, accepted the eight roadmap
+status-line remediations, and repaired the worker-reported Rotation Guard
+D3/D4 stale table cells before committing accepted material. Runtime,
+provider/live, public-sync, registry, workspace runtime, product runtime
+mutation, production readiness, and public readiness remain parked.
 
 ## Claim Boundary
 

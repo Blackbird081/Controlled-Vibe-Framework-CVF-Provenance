@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -229,8 +229,8 @@ closure evidence, and the AHB self-reference mismatch is resolved.
 | Level | Artifact | Status |
 |---|---|---|
 | Operator instruction | 2026-06-18 instruction confirming GFC-T3 and asking for audit plus work order | ACCEPTED |
-| GFC roadmap (dispatch record) | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md` | DISPATCH_READY |
-| GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md` | DISPATCH_READY |
+| GFC roadmap (dispatch record) | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md` | CLOSED_PASS_BOUNDED |
+| GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md` | CLOSED_PASS_BOUNDED |
 | Accepted GFC-T1 decision packet | `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md` | ACCEPT |
 | Post-closure state drift finding | `docs/reviews/CVF_GFC_T1_POST_CLOSURE_STATE_DRIFT_FINDING_2026-06-18.md` | ACCEPT |
 | Active session front door | `CVF_SESSION_MEMORY.md` | ACCEPT |
@@ -439,14 +439,15 @@ The reviewer must not accept the worker return until:
 
 ## Closure Checklist
 
-- [ ] Claude worker packet exists.
-- [ ] Claude worker return exists.
-- [ ] HEAD unchanged evidence is present.
-- [ ] No forbidden path is changed.
-- [ ] Each of the eight rows' `Status:` line is either remediated with cited
+- [x] Claude worker packet exists.
+- [x] Claude worker return exists.
+- [x] HEAD unchanged evidence is present.
+- [x] No forbidden path is changed.
+- [x] Each of the eight rows' `Status:` line is either remediated with cited
   evidence or marked `BLOCKED_WITH_REASON`.
-- [ ] AHB roadmap self-reference is reconciled.
-- [ ] Reviewer decision is recorded before accepted material commit.
+- [x] AHB roadmap self-reference is reconciled.
+- [x] Reviewer decision is recorded in accepted-material commit `f68ff8ce` and
+  completion review `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md`.
 
 ## Return-To-Orchestrator Conditions
 
@@ -532,24 +533,57 @@ authorized.
 
 | Field | Evidence |
 |---|---|
-| Actor | Claude dispatcher |
-| Provider or surface | Claude Code CLI |
-| Session or invocation | 2026-06-18 GFC-T3 Claude work order authoring |
+| Actor | Codex reviewer/closer |
+| Provider or surface | Codex local workspace |
+| Session or invocation | 2026-06-18 GFC-T3 work order closure update |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read, Grep, Bash (`git`, `python`), Edit, Write |
-| Target paths | GFC roadmap; this GC-018; this work order |
-| Allowed scope source | operator confirmed GFC-T3 and asked for an audit plus work order for an agent to execute |
-| Before status evidence | base `ecd74bbe`; clean worktree before authoring |
-| After status evidence | dispatch artifacts authored; pending gate |
-| Diff evidence | `git diff --name-status` |
-| Approval boundary | dispatch only; worker output not authored by this packet |
+| Command or tool surface | PowerShell, rg, apply_patch, git, CVF governance gates |
+| Target paths | GFC roadmap; GFC-T3 GC-018; this work order; GFC-T3 completion review |
+| Allowed scope source | Reviewer Closure Conversion in this work order |
+| Before status evidence | accepted material commit `f68ff8ce`; clean worktree before closure authoring |
+| After status evidence | closure artifacts authored; pending pre-closure gate |
+| Diff evidence | `git diff --name-status f68ff8ce..HEAD` |
+| Approval boundary | closure update only; no runtime/provider/live/public/registry/workspace runtime claim |
 | Claim boundary | no runtime/provider/live/public/registry/workspace runtime claim |
-| Agent type | Claude orchestrator |
-| Invocation ID | `gfc-t3-claude-dispatch-2026-06-18` |
-| Expected manifest | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` |
-| Actual changed set | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` |
+| Agent type | Codex |
+| Invocation ID | `gfc-t3-codex-work-order-closure-2026-06-18` |
+| Expected manifest | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`; `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md` |
+| Actual changed set | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md`; `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md`; `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GFC-T3 Closure Note (2026-06-18)
+
+GFC-T3 closed bounded at accepted-material commit `f68ff8ce` and closure
+review `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md`.
+Claude returned `COMPLETE_PENDING_REVIEW`; Codex accepted the worker material,
+repaired the worker-reported Rotation Guard D3/D4 stale table cells, and left
+runtime/provider/live/public-sync/registry/workspace runtime work parked.
+
+## Current Runtime Freshness Verification
+
+Runtime/source mutation applicability: N/A with reason: GFC-T3 is
+roadmap-state hygiene closure only. The accepted material range
+`24848d66..f68ff8ce` changes governed roadmap/review documentation and does
+not touch runtime/source/test/provider/workspace runtime files.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md` | `Status: GFC_T1_T3_CLOSED_PASS_BOUNDED_RUNTIME_PARKED` | PASS |
+| Accepted material commit | `f68ff8ce` | eight roadmap files plus worker packet and worker return | PASS |
+| Worker no-commit evidence | `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_WORKER_RETURN_2026-06-18.md` | HEAD unchanged at `24848d66` | PASS |
+| Session continuity | pending separate session-sync range | closure claim does not include session-sync commit yet | N/A with reason |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source/live proof authorized | repo-local governance docs only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
+| Provider/live proof | N/A with reason: no provider/live proof authorized | no live/provider command run | N/A with reason |
+| Public-sync | N/A with reason: private provenance closure only | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
 
 ## Claim Boundary
 

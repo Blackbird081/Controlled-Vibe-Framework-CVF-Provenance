@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -191,8 +191,41 @@ batch is authorized.
 
 ## Claim Boundary
 
+## GFC-T3 Closure Note (2026-06-18)
+
+GFC-T3 closed bounded at accepted-material commit `f68ff8ce` and closure
+review `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md`.
+Codex accepted the eight roadmap status-line remediations, reconciled the
+worker-reported Rotation Guard D3/D4 stale table cells as a reviewer repair,
+and left runtime/provider/live/public-sync/registry/workspace runtime work
+parked.
+
+## Current Runtime Freshness Verification
+
+Runtime/source mutation applicability: N/A with reason: GFC-T3 is
+roadmap-state hygiene closure only. The accepted material range
+`24848d66..f68ff8ce` changes governed roadmap/review documentation and does
+not touch runtime/source/test/provider/workspace runtime files.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md` | `Status: GFC_T1_T3_CLOSED_PASS_BOUNDED_RUNTIME_PARKED` | PASS |
+| Accepted material commit | `f68ff8ce` | eight roadmap files plus worker packet and worker return | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source/live proof authorized | repo-local governance docs only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
+| Provider/live proof | N/A with reason: no provider/live proof authorized | no live/provider command run | N/A with reason |
+| Public-sync | N/A with reason: private provenance closure only | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
+
+## Claim Boundary
+
 This GC-018 authorizes only GFC-T3 roadmap-status remediation worker
-artifacts and the nine named status-line edits. It does not authorize runtime
-execution, provider/live proof, public-sync, registry edits, workspace
-runtime, product runtime mutation, production readiness, public readiness, or
-any other roadmap content change.
+artifacts and the named status-line/closure hygiene edits. It does not
+authorize runtime execution, provider/live proof, public-sync, registry edits,
+workspace runtime, product runtime mutation, production readiness, public
+readiness, or any other roadmap content change.
