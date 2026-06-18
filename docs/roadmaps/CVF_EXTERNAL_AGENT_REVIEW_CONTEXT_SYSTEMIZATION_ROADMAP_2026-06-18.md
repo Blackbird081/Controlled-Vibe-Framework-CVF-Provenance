@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_T1_CLOSED_T3_READY_FOR_GC018
+Status: ROADMAP_T1_T3_CLOSED_T2_T4_PARKED
 
 docType: roadmap
 
@@ -120,7 +120,7 @@ Local views:
 | EARC-T0 | ROADMAP_READY_FOR_T1_DISPATCH | Create this roadmap and define execution sequence | Codex | This roadmap only |
 | EARC-T1 | CLOSED_PASS_BOUNDED | Build reusable external-agent review packet template and authoring checklist | Codex | Closed by EARC-T1 material commit |
 | EARC-T2 | HOLD_PUBLIC_SYNC_AUTHORIZATION | Prepare public-safe front-door/catalog reconciliation plan for external reviewers | Codex | Requires operator public-sync authorization before editing public-sync clone |
-| EARC-T3 | READY_FOR_GC018 | Define external-finding absorption workflow: finding, question, useful pattern, rejected assumption | Codex or delegated worker | Requires fresh GC-018 |
+| EARC-T3 | CLOSED_PASS_BOUNDED | Define external-finding absorption workflow: finding, question, useful pattern, rejected assumption | Codex | Closed by EARC-T3 material commit |
 | EARC-T4 | HOLD_RUNTIME_AUTHORIZATION | Decide first MCP/workspace implementation boundary after review-context stabilization | Codex | Requires explicit MCP/runtime implementation authorization |
 
 ## T1 Target Shape
@@ -214,6 +214,29 @@ No public-sync, MCP implementation, provider/live call, workspace runtime
 mutation, raw package import, production readiness, release readiness, public
 readiness, or external-facing readiness was authorized or performed.
 
+## EARC-T3 Closure Note (2026-06-18)
+
+EARC-T3 is `CLOSED_PASS_BOUNDED`. It added the stable external-agent finding
+absorption workflow under `docs/reference/external_agent_review/` and updated
+the external-agent review front door, packet template, and authoring checklist
+so future agents classify returned external output before acting on it.
+
+Delivered stable local view:
+
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`
+
+Execution evidence:
+
+- `docs/baselines/CVF_GC018_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md`
+- `docs/reviews/CVF_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_COMPLETION_2026-06-18.md`
+
+Machine-check follow-up is recorded as a candidate after the first real
+external return packet exercises this workflow. No public-sync, MCP
+implementation, provider/live call, workspace runtime mutation, raw package
+import, checker implementation, production readiness, release readiness, public
+readiness, or external-facing readiness was authorized or performed.
+
 ## Work Plan
 
 1. Commit this roadmap as the EARC execution front door.
@@ -246,8 +269,8 @@ readiness, or external-facing readiness was authorized or performed.
 
 | Required row | Disposition |
 |---|---|
-| Roadmap state | `ROADMAP_T1_CLOSED_T3_READY_FOR_GC018` at `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md` |
-| Work order trace | `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md` |
+| Roadmap state | `ROADMAP_T1_T3_CLOSED_T2_T4_PARKED` at `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md` |
+| Work order trace | `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_FOR_CODEX_2026-06-18.md` |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` generated from source entry |
 | Registry Markdown | `BLOCKED_WITH_REASON`: no separate markdown registry is required for this reference family |
 | Public export disposition | `DEFERRED_PRIVATE_ONLY`: roadmap is private provenance planning; public-sync requires later authorization |

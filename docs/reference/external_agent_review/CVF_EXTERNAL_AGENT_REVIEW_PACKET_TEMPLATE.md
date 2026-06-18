@@ -106,7 +106,8 @@ supplies current CVF-governed evidence for that claim.
 
 External output is advisory. CVF will absorb useful content only through
 CVF-owned findings, standards, roadmaps, work orders, reviews, or reference
-artifacts.
+artifacts after classifying it with
+`docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`.
 ```
 
 ## Required Source Authority Minimum
@@ -116,6 +117,7 @@ Every packet created from this template must cite at least:
 - `docs/reference/external_agent_review/README.md`;
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md`;
 - `docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md`;
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`;
 - the specific CVF-governed standard, roadmap, work order, runtime source, or
   completion artifact being reviewed.
 

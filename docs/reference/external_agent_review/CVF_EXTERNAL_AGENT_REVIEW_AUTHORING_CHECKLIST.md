@@ -28,6 +28,7 @@ Before authoring an external-agent review packet, read:
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md`;
 - `docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md`;
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md`;
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`;
 - the current source authority for the topic being reviewed.
 
 ## Authoring Checklist
@@ -72,6 +73,10 @@ before acting on it:
 | Missing context request | Operator/CVF reviewer decision |
 | Runtime/readiness claim | Block unless CVF proof exists |
 
+Use `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` to classify each
+returned item before creating a finding, roadmap, work order, reference update,
+or operator decision.
+
 ## Epistemic Process Block
 
 ### Expected Result / Prediction
@@ -88,14 +93,15 @@ repeatable authoring local view.
 
 ### Contradiction Or Gap Disposition
 
-Machine enforcement is deferred until the external-finding absorption workflow
-defines packet lifecycle and required surfaces.
+EARC-T3 defines the external-finding absorption workflow and required returned
+output classification surface. Machine enforcement remains a future candidate
+after the first real external return packet exercises the workflow.
 
 ### Claim Update
 
-CVF now has a stable checklist for authoring external-agent review packets, but
-external output remains advisory until CVF absorbs it through governed
-artifacts.
+CVF now has a stable checklist for authoring external-agent review packets and
+a stable workflow for classifying returned external output, but external output
+remains advisory until CVF absorbs it through governed artifacts.
 
 ## Public Export Disposition
 

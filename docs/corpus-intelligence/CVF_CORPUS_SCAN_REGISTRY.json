@@ -3771,6 +3771,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md",
       "notes": "GC-018, work order, completion, and roadmap closure for bounded external-agent MCP/workspace absorption."
+    },
+    {
+      "id": "earc-t3-external-finding-absorption-workflow",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF EARC-T3 external finding absorption workflow",
+      "scopePaths": [
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md",
+        "docs/reference/external_agent_review/README.md",
+        "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 5,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "earc-t3-external-output-absorption-route-gap",
+          "summary": "External-agent output needs a governed classification route before CVF acts on it.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md for returned external-agent review output.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external output as CVF authority without verification",
+        "external review finding stored only in provider memory",
+        "public assumption treated as internal workflow fact",
+        "readiness claim from external output without CVF proof",
+        "raw private source request accepted"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EARC-T3",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_COMPLETION_2026-06-18.md",
+      "notes": "Stable workflow for classifying returned external-agent review output. Reference only; no public-sync, checker, or runtime implementation."
     }
   ]
 }
