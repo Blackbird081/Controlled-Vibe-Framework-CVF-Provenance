@@ -60,7 +60,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gfc_t1_foundation_consolidation_audit_accepted_material_pending_closure",
+  "currentMode": "gfc_t1_closed_bounded_gfc_t3_recommended_runtime_parked",
   "previousMode": "prfc_t3_plcs_companion_checker_closed_runtime_execution_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
