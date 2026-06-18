@@ -1,0 +1,200 @@
+# CVF Runtime Entry Admission Roadmap
+
+Memory class: FULL_RECORD
+
+Status: RTAD_T0_CLOSED_PASS_BOUNDED_RUNTIME_PARKED
+
+docType: roadmap
+
+Date: 2026-06-18
+
+rawMemoryReleased: false
+
+Roadmap class: runtime-entry-admission
+
+## Purpose
+
+Create the narrow bridge from cleaned governance foundation work into any future
+runtime pilot. This roadmap prevents runtime work from being opened from stale
+foundation-roadmap text, while keeping the runtime door available through fresh
+operator authorization, fresh GC-018, and a source-verified work order.
+
+## Authorization / Decision
+
+Operator selected option 1 first on 2026-06-18: Foundation Terminal Alignment.
+
+This roadmap authorizes RTAD-T0 only. It does not authorize runtime execution,
+provider or live proof, public-sync, registry edits, product runtime mutation,
+workspace runtime execution, Model Gateway redispatch, or production/public
+readiness.
+
+## Scope
+
+In scope:
+
+- align stale terminal statuses in the CCLV, FPRC, and PLCS foundation
+  roadmaps;
+- record that CCLV-T4, FPRC-T3, and PLCS post-T3 state have been absorbed by
+  accepted GFC/PLCS closure evidence;
+- add machine-closure evidence where a changed roadmap is now
+  closed-equivalent;
+- keep runtime parked pending a fresh runtime-specific GC-018 and work order.
+
+Out of scope:
+
+- runtime/source/test behavior;
+- provider/API or live proof;
+- public-sync;
+- registry edit;
+- historical archive rewrite;
+- new checker implementation;
+- selection or execution of a runtime pilot.
+
+## Non-Goals
+
+- Do not select a runtime pilot in RTAD-T0.
+- Do not convert runtime parked lanes into implementation work.
+- Do not run live/provider proof.
+- Do not mutate product/runtime code, registries, public-sync, or external
+  repositories.
+- Do not rewrite historical archived roadmaps.
+
+## Source Authority
+
+- GFC foundation closeout:
+  `docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md`
+- CCLV roadmap:
+  `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`
+- FPRC roadmap:
+  `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`
+- PLCS roadmap:
+  `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`
+- Active next move:
+  `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+## Design Rule
+
+Before opening runtime work, all active foundation roadmaps that a future agent
+is likely to read as next-move authority must either point to a still-valid
+future action or close their stale candidate/action wording with an accepted
+closure record.
+
+## Design Control Gate
+
+| Control | Decision |
+|---|---|
+| Foundation value | High: prevents stale foundation text from becoming false runtime next-move authority |
+| Scope size | Small: four roadmap files plus one completion review |
+| Runtime risk | None authorized |
+| Legacy posture | No archive or legacy scan |
+| CCLV posture | Local terminal views only; no new central facts packet needed for this small batch |
+| Claim boundary | Governance terminal alignment only |
+
+## Tranche Plan
+
+| Tranche | Status | Purpose | Owner |
+|---|---|---|---|
+| RTAD-T0 | CLOSED_PASS_BOUNDED | Foundation terminal alignment before runtime admission | Codex |
+| RTAD-T1 | ELIGIBLE_AFTER_OPERATOR_SELECTION | Select one runtime pilot target and define proof boundary | Codex or delegated worker |
+| RTAD-T2 | HOLD_PENDING_T1_SELECTION | Author fresh GC-018 and source-verified work order for the selected runtime pilot | Codex |
+
+## Work Plan
+
+1. Create this RTAD roadmap as the runtime-admission front door.
+2. Align CCLV, FPRC, and PLCS top statuses and terminal notes to accepted
+   closure evidence.
+3. Add or correct Machine Closure Package roadmap-state rows for changed
+   closed-equivalent roadmaps.
+4. Author RTAD-T0 completion review.
+5. Run focused governance gates, commit material, then perform session sync.
+
+## RTAD-T0 Closure Note
+
+RTAD-T0 closes three active-roadmap stale terminal surfaces:
+
+- CCLV: CCLV-T4 is resolved by the GFC-T2 opt-in/conditional rule. Central
+  Core + Local View remains mandatory where shared facts repeat, but is not a
+  blanket requirement for small batches.
+- FPRC: FPRC-T3 is resolved by the GFC-T4 machine follow-up. The roadmap
+  closure freshness guard is now a narrow machine check with stable front door.
+- PLCS: PLCS-T1 through PLCS-T3 are closed bounded. The later companion-routing
+  checker work is already represented as future separate authorization, not an
+  active PLCS roadmap tranche.
+
+Runtime remains parked after RTAD-T0.
+
+## Current Runtime Freshness Verification
+
+Runtime freshness is `N/A with reason`: RTAD-T0 changes only governed roadmap
+and review documentation. It does not inspect, execute, or mutate runtime
+source, provider configuration, live credentials, public-sync, registries, or
+product behavior. Any future runtime pilot requires RTAD-T1 selection and a
+fresh runtime-specific GC-018/work order.
+
+## Acceptance Criteria
+
+| ID | Criterion |
+|---|---|
+| RTAD-T0-AC1 | CCLV no longer advertises CCLV-T4 as an unresolved candidate. |
+| RTAD-T0-AC2 | FPRC no longer advertises FPRC-T3 as the active next move. |
+| RTAD-T0-AC3 | PLCS no longer advertises active post-PLCS-T3 roadmap state. |
+| RTAD-T0-AC4 | Changed closed-equivalent roadmaps expose machine closure evidence. |
+| RTAD-T0-AC5 | Runtime remains parked pending fresh runtime-specific authorization. |
+
+## Verification / Evidence
+
+Required verification before closure:
+
+- roadmap closure freshness gate;
+- machine closure package gate;
+- markdown structural completeness gate;
+- agent operation trace gate;
+- closure packaging preflight;
+- `git diff --check`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: direct Codex terminal-alignment closeout authorized by operator in chat | no delegated work order in this batch | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: RTAD_T0_CLOSED_PASS_BOUNDED_RUNTIME_PARKED` | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source or live proof authorized | repo-local governed artifacts only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
+| Session continuity | pending session-sync after material commit | active session surfaces update after material commit | PASS |
+
+## Public Export Disposition
+
+Disposition: DEFERRED_PRIVATE_ONLY
+
+Reason: private provenance terminal-alignment roadmap. No public-sync batch is
+authorized.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer |
+| Provider or surface | Codex local workspace |
+| Session or invocation | 2026-06-18 RTAD-T0 foundation terminal alignment |
+| Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, rg, apply_patch, governance gates |
+| Target paths | this roadmap; CCLV roadmap; FPRC roadmap; PLCS roadmap; RTAD-T0 completion review |
+| Allowed scope source | operator selected option 1 first after accepting RTAD proposal |
+| Before status evidence | base `96f87adb`; GFC closeout material `bfc30dbd`; session sync `96f87adb` |
+| After status evidence | pending RTAD-T0 material commit |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | terminal alignment only |
+| Claim boundary | no runtime/provider/live/public-sync/registry/product mutation |
+| Expected manifest | this roadmap; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` |
+| Actual changed set | `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md`; `docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md`; `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md`; `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Claim Boundary
+
+RTAD-T0 is governance terminal alignment only. It does not select a runtime
+pilot, implement runtime behavior, run provider/live proof, mutate registries,
+public-sync, or claim production/public readiness.

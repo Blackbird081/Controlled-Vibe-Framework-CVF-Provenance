@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_IN_PROGRESS_T3_CLOSED_T4_CANDIDATE
+Status: ROADMAP_CLOSED_PASS_BOUNDED_BY_RTAD_T0_RUNTIME_PARKED
 
 docType: roadmap
 
@@ -89,7 +89,7 @@ facts.
 | CCLV-T1A | CLOSED_PASS_BOUNDED | Apply CCLV pattern to the work order template (pointer refactor, 1200->994 lines) | Claude/Codex |
 | CCLV-T2 | CLOSED_PASS_BOUNDED | Add advisory checker for central facts references on changed new batches | Claude (combined-role per operator instruction 2026-06-16) |
 | CCLV-T3 | CLOSED_PASS_BOUNDED | Pilot on one small governance closure workflow | Codex combined role by operator takeover |
-| CCLV-T4 | CANDIDATE_AFTER_PILOT | Decide whether selected workflows can replace duplicated AOT/closure facts with references | Codex reviewer |
+| CCLV-T4 | CLOSED_PASS_BOUNDED_BY_GFC_T2 | Decide whether selected workflows can replace duplicated AOT/closure facts with references | Codex reviewer |
 
 ## Work Plan
 
@@ -99,7 +99,9 @@ facts.
    closure facts and local references.
 3. CCLV-T2 should add a narrow checker only after the template exists.
 4. CCLV-T3 should pilot on a new governance batch, not on historical material.
-5. CCLV-T4 should review latency, false positives, and operator readability.
+5. CCLV-T4 was resolved by GFC-T2 as an opt-in/conditional rule: use Central
+   Core + Local View where shared facts repeat, not as a blanket requirement
+   for every small batch.
 
 ## CCLV-T1 Closure Record (2026-06-16)
 
@@ -172,6 +174,32 @@ Closure evidence:
 CCLV-T4 remains a separate future decision. This pilot does not make central
 facts packets mandatory for unrelated small single-file batches.
 
+## RTAD-T0 Terminal Alignment Note (2026-06-18)
+
+CCLV-T4 is now terminally aligned through the GFC-T2 foundation closeout.
+
+Source evidence:
+
+- GFC-T2/T4/T5 completion:
+  `docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md`
+- CCLV standard section:
+  `docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md`
+
+Resolved decision: Central Core + Local View is a standing CVF foundation rule
+where shared facts repeat across governed artifacts, but it is not a broad
+hard-fail requirement for small single-file or two-file batches where a central
+packet would add more overhead than drift reduction.
+
+Runtime remains parked. This terminal alignment does not authorize runtime,
+provider/live proof, public-sync, registry edits, or historical rewrites.
+
+## Current Runtime Freshness Verification
+
+Runtime freshness is `N/A with reason`: this RTAD-T0 update changes only the
+governed roadmap terminal state. It does not inspect, execute, or mutate
+runtime source, provider configuration, live credentials, public-sync,
+registries, or product behavior.
+
 ## Acceptance Criteria
 
 | ID | Criterion |
@@ -212,7 +240,7 @@ approval.
 | Defect class | `EVIDENCE_DUPLICATION_DRIFT` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `STANDARD_ADDED` |
-| Next control action | FPRC-T1 closes first; then Codex refreshes or resumes CCLV-T2 |
+| Next control action | RTAD-T0 terminal alignment complete; future use follows the opt-in/conditional CCLV rule |
 | Worker blame | `N/A_WITH_REASON`: repeated facts across files create drift opportunities by design |
 
 ## Public Export Disposition
@@ -221,6 +249,19 @@ Disposition: DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance governance roadmap. No public-sync batch is
 authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: RTAD-T0 was directly authorized by operator selection of option 1 | no delegated work order in this terminal-alignment batch | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: ROADMAP_CLOSED_PASS_BOUNDED_BY_RTAD_T0_RUNTIME_PARKED` | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source or live proof authorized | repo-local governed artifacts only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
+| Session continuity | pending session-sync after material commit | active session surfaces update after material commit | PASS |
 
 ## Agent Operation Trace Block
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AFTER_PLCS_T3_PASS_BOUNDED
+Status: ROADMAP_CLOSED_PASS_BOUNDED_BY_RTAD_T0_RUNTIME_PARKED
 
 docType: roadmap
 
@@ -243,6 +243,26 @@ Boundary: documentation-only closure; no checker implementation, gate wiring,
 registry edit, runtime/source/test mutation, external API proof, public-sync,
 C05 ruling, production readiness, or public readiness.
 
+## RTAD-T0 Terminal Alignment Note (2026-06-18)
+
+PLCS is now terminally aligned for pre-runtime foundation purposes.
+
+Source evidence:
+
+- PLCS-T1 completion:
+  `docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md`
+- PLCS-T3 completion:
+  `docs/reviews/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_COMPLETION_2026-06-16.md`
+- GFC foundation closeout:
+  `docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md`
+
+Resolved decision: PLCS-T1 through PLCS-T3 are closed bounded. Any future
+companion-routing checker implementation, C05 companion ruling, FPC registry
+edit, or runtime admission requires a separate fresh authorization path.
+
+Runtime remains parked. This terminal alignment does not authorize runtime,
+provider/live proof, public-sync, registry edits, or historical rewrites.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
@@ -250,7 +270,7 @@ C05 ruling, production readiness, or public readiness.
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_FOR_CODEX_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Decision packet | `docs/reference/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_PLCS_T3_COMPANION_ROUTING_CHECKER_TEMPLATE_DECISION_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_PLANE_LAYER_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-06-16.md` | PLCS-T3 row `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: ROADMAP_CLOSED_PASS_BOUNDED_BY_RTAD_T0_RUNTIME_PARKED` | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized | N/A | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | N/A | BLOCKED with reason |
 | External evidence digest | N/A with reason: no external source or live proof used | N/A | N/A with reason |

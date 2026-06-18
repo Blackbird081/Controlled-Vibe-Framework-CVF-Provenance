@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_AFTER_FPRC_T2
+Status: ROADMAP_CLOSED_PASS_BOUNDED_BY_RTAD_T0_RUNTIME_PARKED
 
 docType: roadmap
 
@@ -95,7 +95,7 @@ Recommended taxonomy:
 |---|---|---|---|
 | FPRC-T1 | CLOSED_PASS_BOUNDED | Add root-cause grouping standard, provider-memory learning escape guard, and boundary-prose trigger discipline | Claude worker; Codex reviewer |
 | FPRC-T2 | CLOSED_PASS_BOUNDED | Harden provider-memory lesson promotion so reusable lessons in Claude memory or `MEMORY.md` (`NOT_CVF_SOURCE`) require CVF-governed promotion | Codex |
-| FPRC-T3 | CANDIDATE_AFTER_T2 | Pilot on one future finding-bearing closure and compare operator readability | Codex reviewer |
+| FPRC-T3 | CLOSED_PASS_BOUNDED_BY_GFC_T4 | Pilot on one future finding-bearing closure and compare operator readability | Codex reviewer |
 
 ## Cross-Lane Queued Follow-Up: AOT-T3 (B11/B12 Machine-Check Hardening)
 
@@ -151,9 +151,10 @@ remain valid execution intent, but future paths placed in a dispatch trace
 1. FPRC-T1 defines the table standard and example root/symptom grouping.
 2. FPRC-T1 updates a completion-review template note or reference addendum.
 3. FPRC-T2 adds a narrow advisory parser/checker only after T1 closes.
-4. FPRC-T3 pilots the table on one future finding-bearing closure.
-5. Codex reviews whether the table reduces operator confusion before any hard
-   gate is considered.
+4. FPRC-T3 was resolved by GFC-T4 as the narrow roadmap-closure freshness
+   machine follow-up for the repeated stale-roadmap finding class.
+5. Future root-cause grouping expansion requires a new source-backed finding
+   and fresh authorization; this roadmap is no longer the active next move.
 
 ## FPRC-T1 Superseding Dispatch Record (2026-06-16)
 
@@ -226,6 +227,34 @@ Bounded result: `MEMORY.md` is now treated as a provider-local memory signal;
 reusable lessons cannot be waived with generic `N/A_WITH_REASON`; B7/B8/B9
 authoring traps are written into the standard/addendum.
 
+## RTAD-T0 Terminal Alignment Note (2026-06-18)
+
+FPRC-T3 is now terminally aligned through the GFC-T4 foundation closeout.
+
+Source evidence:
+
+- GFC-T2/T4/T5 completion:
+  `docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md`
+- Roadmap closure freshness front door:
+  `docs/reference/roadmap_closure_freshness/README.md`
+- Roadmap closure freshness guard:
+  `governance/compat/check_roadmap_closure_freshness.py`
+
+Resolved decision: the repeated roadmap-state drift class has been promoted to
+a narrow machine guard for changed active roadmaps. The wider FPRC roadmap is
+closed bounded; future root-cause grouping expansion requires a fresh
+source-backed finding and authorization.
+
+Runtime remains parked. This terminal alignment does not authorize runtime,
+provider/live proof, public-sync, registry edits, or historical rewrites.
+
+## Current Runtime Freshness Verification
+
+Runtime freshness is `N/A with reason`: this RTAD-T0 update changes only the
+governed roadmap terminal state. It does not inspect, execute, or mutate
+runtime source, provider configuration, live credentials, public-sync,
+registries, or product behavior.
+
 ## Acceptance Criteria
 
 | ID | Criterion |
@@ -258,8 +287,8 @@ grouping should reference it instead of repeating the shared facts again.
 |---|---|
 | Defect class | `FINDING_PROPAGATION_NOISE` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
-| Escalation state | `ROADMAP_READY_FOR_GC018` |
-| Next control action | FPRC-T1 dispatched before CCLV-T2 resumes |
+| Escalation state | `CLOSED_PASS_BOUNDED_BY_RTAD_T0` |
+| Next control action | Future expansion only after a fresh source-backed finding and authorization |
 | Worker blame | `N/A_WITH_REASON`: repeated file-level failures can be symptoms of one root control-plane defect |
 
 ## Public Export Disposition
@@ -268,6 +297,26 @@ Disposition: DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance governance roadmap. No public-sync batch is
 authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: RTAD-T0 was directly authorized by operator selection of option 1 | no delegated work order in this terminal-alignment batch | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: ROADMAP_CLOSED_PASS_BOUNDED_BY_RTAD_T0_RUNTIME_PARKED` | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source or live proof authorized | repo-local governed artifacts only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
+| Session continuity | pending session-sync after material commit | active session surfaces update after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Receipt-bearing closure applicability | N/A with reason: RTAD-T0 does not assert receipt, query, candidate, or live acceptance behavior | no receipt, query, selectedCandidateIds, or freshnessDisclosureApplied value is part of this terminal-alignment closure | N/A with reason |
+| Runtime/provider proof receipt | N/A with reason: provider/live proof is not authorized | no provider/live command is run | N/A with reason |
 
 ## Agent Operation Trace Block
 
