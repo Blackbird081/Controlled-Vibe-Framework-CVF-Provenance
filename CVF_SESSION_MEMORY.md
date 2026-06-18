@@ -62,6 +62,18 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Prompt read-first placement finding is remediated at material commit
+`7635a4a1`. The prompt envelope standard, work-order template, template family
+index, checker, and focused tests now require delegated dispatch-ready work
+orders to put `## Dispatch Prompt Envelope` as the first `##` section before
+`## Purpose`.
+
+Stable artifact:
+
+- `docs/reviews/CVF_PROMPT_READ_FIRST_PLACEMENT_FINDING_2026-06-18.md`
+- `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md`
+- `governance/compat/check_dispatch_prompt_envelope.py`
+
 GFC-T1 Governance Foundation Consolidation Audit is `DISPATCHED` to Claude at
 material dispatch commit `62b2fa27`. Claude is assigned
 `WORKER_MUST_NOT_COMMIT` and may return only:
