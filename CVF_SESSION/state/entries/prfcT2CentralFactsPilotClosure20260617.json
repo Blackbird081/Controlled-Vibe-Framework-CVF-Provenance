@@ -1,0 +1,12 @@
+{
+  "stateOrder": 431,
+  "stateKey": "prfcT2CentralFactsPilotClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "051b491e",
+    "closureReview": "docs/reviews/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_COMPLETION_2026-06-17.md",
+    "centralFactsPacket": "docs/reviews/evidence/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_CLOSURE_FACTS_2026-06-17.md",
+    "workerReturn": "docs/reviews/CVF_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_WORKER_RETURN_2026-06-17.md",
+    "nextAllowedMove": "Open PRFC-T3 only through fresh GC-018 and a source-verified work order for the PLCS companion-routing checker/interlock follow-up."
+  }
+}

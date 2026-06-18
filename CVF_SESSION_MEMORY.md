@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-17
+Last updated: 2026-06-18
 
-Current mode marker: `prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`
+Current mode marker: `prfc_t2_central_facts_pilot_closed_prfc_t3_gc018_ready_runtime_execution_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`.
+Current mode: `prfc_t2_central_facts_pilot_closed_prfc_t3_gc018_ready_runtime_execution_parked`.
 
 Active handoff:
 
@@ -62,10 +62,9 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-PRFC-T2 central facts pilot is `DISPATCH_READY` at dispatch commit
-`f6c775ed`. The work order assigns Claude worker execution under
-`WORKER_MUST_NOT_COMMIT`; Codex owns review, commit, closure, and any
-session-sync. Runtime execution remains parked.
+PRFC-T2 central facts pilot is `CLOSED_PASS_BOUNDED` at material commit
+`051b491e`. Codex completed the operator-authorized worker/reviewer/closer
+takeover after Claude hit checker failures. Runtime execution remains parked.
 
 Stable artifact:
 
@@ -504,14 +503,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`.
+Mode: `prfc_t2_central_facts_pilot_closed_prfc_t3_gc018_ready_runtime_execution_parked`.
 
-PRFC-T2 central facts pilot is `DISPATCH_READY` at dispatch commit
-`f6c775ed`. Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_FOR_CLAUDE_2026-06-17.md`
-under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` with
-uncommitted worker artifacts. Codex owns review, commit, closure, and any
-session-sync. Runtime workspace execution remains parked.
+PRFC-T2 central facts pilot is `CLOSED_PASS_BOUNDED` at material commit
+`051b491e`. Next allowed move: open PRFC-T3 only through fresh GC-018 and a
+source-verified work order for the PLCS companion-routing checker/interlock
+follow-up. Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

@@ -25,31 +25,40 @@ reviews, and roadmap evidence remain in their governed owner paths.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after PRFC-T2
-central facts pilot dispatch commit `f6c775ed`.
+central facts pilot material closure commit `051b491e`.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V19_2026-06-15.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/preRuntimeFoundationCleanupRoadmap20260617.json`
+- `CVF_SESSION/state/entries/prfcT2CentralFactsPilotClosure20260617.json`
+- `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator instructed Codex on 2026-06-17 to continue the
-PRFC roadmap. Codex committed PRFC-T2 dispatch at `f6c775ed`; this session-sync
-records Claude worker execution as the next allowed move.
+Operator authorization: operator instructed Codex on 2026-06-17 to take over
+the PRFC-T2 worker/reviewer/closer roles after Claude hit checker failures.
+Codex committed PRFC-T2 material closure at `051b491e`; this session-sync
+records PRFC-T3 GC-018/source-verified work-order preparation as the next
+allowed move.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-PRFC-T2 dispatch material, PRFC-T1 protected state/base authorization lane,
+PRFC-T2 material closure, PRFC-T1 protected state/base authorization lane,
 closure docs, CGFP-T1 material closure, supplemental finding, PRFC roadmap
 history, or prior AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude executes PRFC-T2 central facts pilot work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
+Startup acknowledged: current mode=`prfc_t2_central_facts_pilot_closed_prfc_t3_gc018_ready_runtime_execution_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=open PRFC-T3 only through fresh GC-018 and a source-verified work order for the PLCS companion-routing checker/interlock follow-up; parked checkpoint=runtime/provider/live/public-sync/registry/product workspace execution, new legacy scan, C05 companion ruling, Model Gateway redispatch, Model Gateway P3 authorization, Alibaba second-provider parity pending valid DashScope credential, and co-work product development remain parked.
 
 ## Current Mode
 
-`prfc_t2_cclv_t3_central_facts_pilot_dispatched_runtime_execution_parked`
+`prfc_t2_central_facts_pilot_closed_prfc_t3_gc018_ready_runtime_execution_parked`
 
-Current HEAD recorded for this handoff: `f6c775ed`
-(PRFC-T2 central facts pilot dispatch commit `f6c775ed`;
+Current HEAD recorded for this handoff: `051b491e`
+(PRFC-T2 central facts pilot material closure commit `051b491e`;
+prior anchor: PRFC-T2 dispatch commit `f6c775ed`;
 prior anchors: `c1da2af0` session-sync after PRFC-T1 closure,
 `defdc40c` PRFC-T1 current-state reconciliation closure docs commit,
 `e85e5a2b` handoff-sync after PRFC-T1 protected state
@@ -291,9 +300,9 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-PRFC-T2 central facts pilot is `DISPATCH_READY` at dispatch commit
-`f6c775ed`. Claude worker execution is next under `WORKER_MUST_NOT_COMMIT`.
-Runtime execution remains parked.
+PRFC-T2 central facts pilot is `CLOSED_PASS_BOUNDED` at material commit
+`051b491e`. Codex completed the operator-authorized worker/reviewer/closer
+takeover after Claude hit checker failures. Runtime execution remains parked.
 
 Stable artifact:
 
@@ -576,12 +585,10 @@ source-verified work order.
 
 ## Next Allowed Move
 
-PRFC-T2 central facts pilot is `DISPATCH_READY` at dispatch commit
-`f6c775ed`. Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_PRFC_T2_CCLV_T3_CENTRAL_FACTS_PILOT_FOR_CLAUDE_2026-06-17.md`
-under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` with
-uncommitted worker artifacts. Codex owns review, commit, closure, and any
-session-sync. Runtime workspace execution remains parked.
+PRFC-T2 central facts pilot is `CLOSED_PASS_BOUNDED` at material commit
+`051b491e`. Next allowed move: open PRFC-T3 only through fresh GC-018 and a
+source-verified work order for the PLCS companion-routing checker/interlock
+follow-up. Runtime workspace execution remains parked.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
