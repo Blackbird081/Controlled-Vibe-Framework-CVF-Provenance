@@ -29,8 +29,9 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after EARC-T3A External
-Return Absorption Pilot material commit `481f35bd`, following EARC-T3 External
+Authorized session-sync scope: update active handoff after EARC-T3B External
+Absorption Table Checker material commit `6de12f33`, following EARC-T3A External
+Return Absorption Pilot material commit `481f35bd`, EARC-T3 External
 Finding Absorption Workflow material commit `4bf9920b`, EARC-T1
 External Agent Review Packet Template material commit `ab8382f3`, EARC-T0
 External Agent Review Context Systemization roadmap material commit `cdbfddac`,
@@ -50,6 +51,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/earcT1ExternalAgentReviewPacketTemplateClosure20260618.json`
 - `CVF_SESSION/state/entries/earcT3ExternalFindingAbsorptionWorkflowClosure20260618.json`
 - `CVF_SESSION/state/entries/earcT3AExternalReturnAbsorptionPilotClosure20260618.json`
+- `CVF_SESSION/state/entries/earcT3BExternalAbsorptionTableCheckerClosure20260618.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/promptReadFirstPlacementFindingClosure20260618.json`
 - `CVF_SESSION/state/entries/preRuntimeFoundationCleanupRoadmap20260617.json`
@@ -96,9 +98,11 @@ claims parked. The operator then agreed that Codex should absorb the copied
 external workspace-layer package through CVF rather than copy it as authority;
 Codex closed EARC-T3A at material commit `481f35bd` as the first real
 external-return absorption pilot, updating the CVF-owned workspace absorption
-map and making EARC-T3B checker hardening ready for fresh GC-018 while keeping
-public-sync, MCP/runtime, provider/live calls, workspace runtime mutation, raw
-package import, and readiness claims parked.
+map and making EARC-T3B checker hardening ready for fresh GC-018. Codex then
+closed EARC-T3B at material commit `6de12f33`, adding the range-aware Required
+Absorption Table checker plus focused tests, hook/autorun wiring, and front-door
+updates while keeping public-sync, MCP/runtime, provider/live calls, workspace
+runtime mutation, raw package import, and readiness claims parked.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
 EARC-T3A material commit, EARC-T3 material commit, EARC-T1 material commit, EARC-T0 roadmap material commit, RTAD-T6 root-classification remediation commit, RTAD-T6 closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
@@ -111,14 +115,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`earc_t3a_external_return_absorption_pilot_closed_t3b_ready_t2_t4_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=EARC-T3B with fresh GC-018 and a source-verified work order for a range-aware Required Absorption Table checker; parked checkpoint=EARC-T2 public-sync preparation waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation decision waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`earc_t3b_absorption_table_checker_closed_t2_t4_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=no unheld EARC tranche remains; operator may explicitly authorize EARC-T2 public-sync, explicitly authorize EARC-T4 MCP/runtime decision work, or choose a separate non-public/non-runtime foundation roadmap; parked checkpoint=EARC-T2 public-sync preparation waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation decision waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
-`earc_t3a_external_return_absorption_pilot_closed_t3b_ready_t2_t4_parked`
+`earc_t3b_absorption_table_checker_closed_t2_t4_parked`
 
-Current HEAD recorded for this handoff: `481f35bd`
-(EARC-T3A External Return Absorption Pilot material commit `481f35bd`;
+Current HEAD recorded for this handoff: `6de12f33`
+(EARC-T3B External Absorption Table Checker material commit `6de12f33`;
+EARC-T3A External Return Absorption Pilot material commit `481f35bd`;
 EARC-T3 External Finding Absorption Workflow material commit `4bf9920b`;
 EARC-T1 External Agent Review Packet Template material commit `ab8382f3`;
 EARC-T0 External Agent Review Context Systemization roadmap material commit
@@ -783,16 +788,14 @@ source-verified work order.
 
 ## Next Allowed Move
 
-EARC-T3A External Return Absorption Pilot is `CLOSED_PASS_BOUNDED` at material
-commit `481f35bd`. CVF has now run the EARC-T3 absorption workflow on the
-operator-copied workspace-layer package, updated the CVF-owned workspace
-absorption map, recorded advisory external evidence with hashes, rejected the
-hard-coded external workflow enum as CVF authority, and confirmed the Required
-Absorption Table is ready for machine-check hardening.
+EARC-T3B External Absorption Table Checker is `CLOSED_PASS_BOUNDED` at material
+commit `6de12f33`. CVF now enforces the EARC Required Absorption Table through
+`governance/compat/check_external_agent_absorption_table.py`, with focused
+tests and hook/autorun wiring.
 
-Next allowed move: EARC-T3B with fresh GC-018 and a source-verified work order
-for a range-aware checker requiring the Required Absorption Table on changed
-external-return absorption reviews.
+Next allowed move: no unheld EARC tranche remains. Operator may explicitly
+authorize EARC-T2 public-sync, explicitly authorize EARC-T4 MCP/runtime
+decision work, or choose a separate non-public/non-runtime foundation roadmap.
 
 EARC-T2 public-sync preparation remains held for explicit public-sync
 authorization. EARC-T4 MCP/workspace implementation decision remains held for
