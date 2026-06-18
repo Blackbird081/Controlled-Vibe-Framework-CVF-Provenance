@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `wwu_t2_web_workspace_read_model_dispatched_t3_parked`
+Current mode marker: `wwu_t2_web_workspace_read_model_closed_t3_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t2_web_workspace_read_model_dispatched_t3_parked`.
+Current mode: `wwu_t2_web_workspace_read_model_closed_t3_parked`.
 
 Active handoff:
 
@@ -264,15 +264,16 @@ approvals, work-transfer, and chat/session surfaces were source-mapped, and the
 audit found no active CVF session-state/handoff/workspace read-model endpoint
 yet.
 
-WWU-T2 CVF Web Workspace Operator Dashboard Read Model is dispatched at
-material commit `1bbf3046`. Next move is to execute the WWU-T2 work order as a
-read-only CVF Web Workspace dashboard/read-model implementation in
-`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`. `DESIGN.md` has already been read
-for dispatch and must be re-read before frontend implementation. No Local
-Workspace Runtime, MCP/CLI tooling, provider/live calls, secrets/quota,
-public-sync, raw external package import, runtime enforcement claim, production
-readiness, public readiness, release readiness, or external-facing readiness is
-authorized. WWU-T3 Local Workspace Runtime/MCP remains parked.
+WWU-T2 CVF Web Workspace Operator Dashboard Read Model is
+`CLOSED_PASS_BOUNDED` at material commit `b3593e1b`. The Web Workspace now has
+a read-only server continuity projection, `GET /api/workspace/state`,
+`/workspace` operator dashboard, sidebar navigation, focused Vitest coverage,
+typecheck, and Playwright/HTTP visual-read evidence. No Local Workspace
+Runtime, MCP/CLI tooling, provider/live calls, secrets/quota, public-sync, raw
+external package import, runtime enforcement claim, governed action request,
+production readiness, public readiness, release readiness, or external-facing
+readiness was authorized or performed. WWU-T3 Local Workspace Runtime/MCP
+remains parked.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -727,28 +728,25 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t2_web_workspace_read_model_dispatched_t3_parked`.
+Mode: `wwu_t2_web_workspace_read_model_closed_t3_parked`.
 
-WWU-T2 CVF Web Workspace Operator Dashboard Read Model is dispatched at
-material commit `1bbf3046`. The dispatch authorizes a read-only CVF Web
-Workspace dashboard/read-model implementation in
-`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`, based on the WWU-T1 source-mapped
-surface audit.
+WWU-T2 CVF Web Workspace Operator Dashboard Read Model is
+`CLOSED_PASS_BOUNDED` at material commit `b3593e1b`. The implemented surface is
+a read-only CVF Web Workspace dashboard/read model under
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`.
 
-Next allowed move: execute the WWU-T2 work order as a read-only Web Workspace
-implementation. `DESIGN.md` has already been read for dispatch and must be
-re-read before frontend implementation. Product implementation must preserve the
-work-order boundary: no Local Workspace Runtime, MCP/CLI tooling, provider/live
-calls, secrets/quota, public-sync, raw external package import, runtime
-enforcement claim, production readiness, public readiness, release readiness, or
-external-facing readiness.
+Next allowed move: no WWU-T3 Local Workspace Runtime/MCP implementation until
+explicit runtime/MCP authorization, fresh GC-018, and a source-verified work
+order. A later bounded Web Workspace follow-up also requires fresh GC-018 and a
+source-verified work order.
 
 WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
 authorization. EARC-T2 public-sync preparation and EARC-T4 MCP/workspace
 implementation decision remain held for their explicit authorizations.
-Public-sync, MCP implementation, provider/live calls, workspace runtime
-mutation, raw external package import, public readiness, production readiness,
-release readiness, and external-facing readiness claims remain parked.
+Public-sync, MCP implementation, provider/live calls, secrets/quota, workspace
+runtime mutation, raw external package import, public readiness, production
+readiness, release readiness, runtime enforcement claims, governed action
+requests, and external-facing readiness claims remain parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
