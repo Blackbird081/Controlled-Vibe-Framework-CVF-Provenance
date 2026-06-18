@@ -1,0 +1,39 @@
+{
+  "registryOrder": 101,
+  "id": "earc-t1-external-agent-review-packet-template",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF EARC-T1 external agent review packet template",
+  "scopePaths": [
+    "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md",
+    "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md",
+    "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md",
+    "docs/reference/external_agent_review/README.md",
+    "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md"
+  ],
+  "fileCount": 5,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "earc-t1-one-off-external-review-prompt-gap",
+      "summary": "External-agent review context should be packetized before critique instead of recreated as one-off prompts.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md and checklist before external-agent review.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "external review prompt without CVF source authority",
+    "public lifecycle label as internal state",
+    "raw external package as CVF authority",
+    "readiness claim from external critique",
+    "provider memory as reusable governance learning"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EARC-T1",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_COMPLETION_2026-06-18.md",
+  "notes": "Stable packet template, authoring checklist, and bounded sample for external-agent review context. Reference only; no public-sync or runtime implementation."
+}

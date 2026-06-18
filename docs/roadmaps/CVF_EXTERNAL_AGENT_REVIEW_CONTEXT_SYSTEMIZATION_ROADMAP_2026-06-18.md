@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_T1_DISPATCH
+Status: ROADMAP_T1_CLOSED_T3_READY_FOR_GC018
 
 docType: roadmap
 
@@ -118,9 +118,9 @@ Local views:
 | Tranche | Status | Purpose | Owner | Dispatch rule |
 |---|---|---|---|---|
 | EARC-T0 | ROADMAP_READY_FOR_T1_DISPATCH | Create this roadmap and define execution sequence | Codex | This roadmap only |
-| EARC-T1 | READY_FOR_GC018 | Build reusable external-agent review packet template and authoring checklist | Codex or delegated worker | Requires fresh GC-018 and work order |
+| EARC-T1 | CLOSED_PASS_BOUNDED | Build reusable external-agent review packet template and authoring checklist | Codex | Closed by EARC-T1 material commit |
 | EARC-T2 | HOLD_PUBLIC_SYNC_AUTHORIZATION | Prepare public-safe front-door/catalog reconciliation plan for external reviewers | Codex | Requires operator public-sync authorization before editing public-sync clone |
-| EARC-T3 | HOLD_DECISION | Define external-finding absorption workflow: finding, question, useful pattern, rejected assumption | Codex or delegated worker | Requires fresh GC-018 |
+| EARC-T3 | READY_FOR_GC018 | Define external-finding absorption workflow: finding, question, useful pattern, rejected assumption | Codex or delegated worker | Requires fresh GC-018 |
 | EARC-T4 | HOLD_RUNTIME_AUTHORIZATION | Decide first MCP/workspace implementation boundary after review-context stabilization | Codex | Requires explicit MCP/runtime implementation authorization |
 
 ## T1 Target Shape
@@ -191,6 +191,29 @@ T4 must start with a decision packet before any implementation.
 | Public-sync clone | Not touched in EARC-T0/T1; T2 requires explicit public-sync authorization |
 | Raw copied external package | Local ignored reference only; do not import as CVF runtime source |
 
+## EARC-T1 Closure Note (2026-06-18)
+
+EARC-T1 is `CLOSED_PASS_BOUNDED`. It added the stable external-agent review
+packet template, authoring checklist, and bounded workflow/MCP/workspace sample
+packet under `docs/reference/external_agent_review/`, updated the folder front
+door, and added GC-051 registry coverage.
+
+Delivered stable local views:
+
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md`
+
+Execution evidence:
+
+- `docs/baselines/CVF_GC018_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md`
+- `docs/reviews/CVF_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_COMPLETION_2026-06-18.md`
+
+No public-sync, MCP implementation, provider/live call, workspace runtime
+mutation, raw package import, production readiness, release readiness, public
+readiness, or external-facing readiness was authorized or performed.
+
 ## Work Plan
 
 1. Commit this roadmap as the EARC execution front door.
@@ -223,10 +246,10 @@ T4 must start with a decision packet before any implementation.
 
 | Required row | Disposition |
 |---|---|
-| Roadmap state | `ROADMAP_READY_FOR_T1_DISPATCH` at `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md` |
-| Work order trace | `BLOCKED_WITH_REASON`: no work order exists yet; EARC-T1 requires fresh GC-018 and work order |
-| Registry JSON | `BLOCKED_WITH_REASON`: no registry mutation in roadmap-only batch |
-| Registry Markdown | `BLOCKED_WITH_REASON`: no registry mutation in roadmap-only batch |
+| Roadmap state | `ROADMAP_T1_CLOSED_T3_READY_FOR_GC018` at `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md` |
+| Work order trace | `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md` |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` generated from source entry |
+| Registry Markdown | `BLOCKED_WITH_REASON`: no separate markdown registry is required for this reference family |
 | Public export disposition | `DEFERRED_PRIVATE_ONLY`: roadmap is private provenance planning; public-sync requires later authorization |
 | Runtime proof | `BLOCKED_WITH_REASON`: no runtime/provider/MCP proof authorized |
 
@@ -240,8 +263,9 @@ part of this roadmap creation.
 
 ## Next Dispatch Candidate
 
-EARC-T1: create a reusable external-agent review packet template and authoring
-checklist with fresh GC-018 and a source-verified work order.
+EARC-T3: define the external-finding absorption workflow with fresh GC-018 and
+a source-verified work order. EARC-T2 remains held for explicit public-sync
+authorization, and EARC-T4 remains held for explicit MCP/runtime authorization.
 
 ## Claim Boundary
 

@@ -39,9 +39,23 @@ semantics.
 |---|---|
 | `CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md` | Standard for giving external agents enough context to review CVF without exposing private provenance source. |
 | `CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md` | Canonical distinction between public/simple workflow vocabulary and internal governed workflow-chain system. |
+| `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` | Stable packet template for external-agent review requests. |
+| `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md` | Authoring checklist and red-flag screen before sending a packet to an external agent. |
+| `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` | Bounded sample packet for workflow-chain, MCP, and workspace review context. |
 | `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md` | CVF-owned absorption map for the local external workspace package copied into the repo root. |
 | `docs/reference/mcp_gateway/README.md` | MCP Gateway local view for future MCP tool ingress work. |
 | `docs/reference/agent_workspace/README.md` | Agent workspace local view for future workspace state/runtime work. |
+
+## Authoring Flow
+
+1. Read this front door and the context standard.
+2. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md`.
+3. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
+4. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
+   the bounded example for workflow-chain, MCP, and workspace review context.
+5. Treat external output as advisory until CVF classifies it through a governed
+   finding, standard, roadmap, work order, review, reference artifact, or
+   operator decision.
 
 ## Required Read Trigger
 
