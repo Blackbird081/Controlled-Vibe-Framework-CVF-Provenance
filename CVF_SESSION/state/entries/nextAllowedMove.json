@@ -1,5 +1,5 @@
 {
   "stateOrder": 407,
   "stateKey": "nextAllowedMove",
-  "value": "RTAD-T1 selected Model Gateway as the first runtime-entry pilot and RTAD-T2 dispatch is ready at material commit 04755f3b. Next allowed move: execute docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md as a local deterministic Model Gateway admission pilot. Provider network calls, provider credentials, registry mutation, public-sync, MCP gateway implementation, release-facing claims, Model Gateway redispatch/P3, and co-work product development remain parked unless a later operator authorization opens a separate tranche. LHW24 remains the latest closed numbered LHW wave."
+  "value": "RTAD-T2 local deterministic Model Gateway admission pilot is closed at material commit 1a68f448. Operator explicitly authorized Codex to use existing available API keys for a bounded Model Gateway live run. Next allowed move: execute RTAD-T3 as a secret-safe live proof, recording diagnostics and receipt evidence without printing or committing raw keys. Registry mutation, public-sync, MCP gateway implementation, release-facing claims, external-facing readiness, Model Gateway redispatch/P3, and co-work product development remain parked unless a later operator authorization opens a separate tranche. LHW24 remains the latest closed numbered LHW wave."
 }

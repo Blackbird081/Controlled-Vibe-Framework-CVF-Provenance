@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `rtad_t2_model_gateway_runtime_admission_pilot_dispatch_ready`
+Current mode marker: `rtad_t3_model_gateway_live_run_authorized`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rtad_t2_model_gateway_runtime_admission_pilot_dispatch_ready`.
+Current mode: `rtad_t3_model_gateway_live_run_authorized`.
 
 Active handoff:
 
@@ -93,6 +93,15 @@ network calls, provider credentials, registry mutation, public-sync, MCP
 gateway implementation, release-facing claims, Model Gateway redispatch/P3, and
 co-work product development remain parked.
 
+RTAD-T2 local deterministic Model Gateway admission pilot is closed at material
+commit `1a68f448`: source symbols were re-verified, `npm run check` passed, and
+`npm test` passed 29 files / 214 tests. The operator then explicitly authorized
+Codex to use existing available API keys for a bounded Model Gateway live run.
+RTAD-T3 may execute a secret-safe live proof with diagnostics and receipt
+evidence. Registry mutation, public-sync, MCP gateway implementation,
+release-facing claims, external-facing readiness, Model Gateway redispatch/P3,
+and co-work product development remain parked.
+
 Stable artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
@@ -115,13 +124,15 @@ Stable artifacts:
 - `docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md`
 - `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md`
+- `docs/reviews/CVF_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_PACKET_2026-06-18.md`
+- `docs/reviews/CVF_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_COMPLETION_2026-06-18.md`
+- `docs/reviews/evidence/rtad-t2-model-gateway-runtime-admission-pilot-2026-06-18.json`
 
-Next move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md`
-as a local deterministic Model Gateway admission pilot. Provider network calls,
-provider credentials, registry mutation, public-sync, MCP gateway
-implementation, release-facing claims, Model Gateway redispatch/P3, and
-co-work product development remain parked.
+Next move: execute RTAD-T3 as a secret-safe Model Gateway live proof using the
+operator-authorized existing available API keys. Do not print or commit raw
+keys. Registry mutation, public-sync, MCP gateway implementation,
+release-facing claims, external-facing readiness, Model Gateway redispatch/P3,
+and co-work product development remain parked.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -576,25 +587,24 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `rtad_t2_model_gateway_runtime_admission_pilot_dispatch_ready`.
+Mode: `rtad_t3_model_gateway_live_run_authorized`.
 
-RTAD-T1 Model Gateway Runtime Pilot Selection and RTAD-T2 dispatch are accepted
-at material commit `04755f3b`. Next move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md`
-as a local deterministic Model Gateway admission pilot. Runtime workspace
-execution remains parked.
+RTAD-T2 local deterministic Model Gateway admission pilot is closed at material
+commit `1a68f448`. The operator explicitly authorized Codex to use existing
+available API keys for a bounded Model Gateway live run. Next move: execute
+RTAD-T3 as a secret-safe live proof with diagnostics and receipt evidence.
+Runtime workspace execution remains parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
 GC-018, and a source-verified work order.
 
-No provider API call, credential/network use, provider/model addition, runtime
-behavior mutation beyond the bounded local pilot, governance checker
-implementation by the worker, session state mutation by the worker, EPF wiring,
-Strategy Layer implementation, AI
-Gateway absorption, public-sync, external app mutation, raw memory release,
-co-work product development, production readiness, or public readiness is
-authorized without fresh operator authorization.
+No provider/model addition, registry mutation, MCP gateway implementation,
+runtime behavior mutation beyond the bounded live proof, governance checker
+implementation, EPF wiring, Strategy Layer implementation, AI Gateway
+absorption, public-sync, external app mutation, raw memory release, co-work
+product development, production readiness, release-facing claim, or public
+readiness is authorized without fresh operator authorization.
 
 LHW24 remains the latest closed numbered LHW wave.
 
