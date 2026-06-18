@@ -1,0 +1,22 @@
+{
+  "stateOrder": 411,
+  "stateKey": "wwuT2CvfWebWorkspaceOperatorDashboardReadModelDispatch20260618",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "1bbf3046",
+    "baseHead": "93540bbf",
+    "roadmap": "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md",
+    "registryEntry": "docs/corpus-intelligence/registry/entries/wwu-t2-cvf-web-workspace-operator-dashboard-read-model.json",
+    "result": "Fresh GC-018 and a source-verified work order now authorize a read-only CVF Web Workspace operator dashboard/read-model implementation.",
+    "next": "Execute WWU-T2 implementation inside the work-order boundary: read-only cvf-web helper/API/dashboard/nav/tests, DESIGN.md re-read, focused Web checks, and no Local Runtime/MCP/provider/live/public-sync/readiness claims.",
+    "claimBoundary": "Dispatch-only material commit; no cvf-web product source was implemented in the dispatch batch, no Local Runtime/MCP, provider/live call, public-sync, raw external package import, runtime enforcement claim, or readiness claim.",
+    "parked": [
+      "WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization",
+      "EARC-T2 public-sync waits for explicit public-sync authorization",
+      "EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization",
+      "provider/live calls and readiness claims remain parked unless separately authorized"
+    ]
+  }
+}

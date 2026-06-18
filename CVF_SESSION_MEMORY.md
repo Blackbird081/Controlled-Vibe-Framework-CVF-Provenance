@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`
+Current mode marker: `wwu_t2_web_workspace_read_model_dispatched_t3_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`.
+Current mode: `wwu_t2_web_workspace_read_model_dispatched_t3_parked`.
 
 Active handoff:
 
@@ -262,9 +262,17 @@ WWU-T1 CVF Web Workspace Surface Audit is `CLOSED_PASS_BOUNDED` at material
 commit `3db83d3b`. Current `cvf-web` governance/evidence/health/operations,
 approvals, work-transfer, and chat/session surfaces were source-mapped, and the
 audit found no active CVF session-state/handoff/workspace read-model endpoint
-yet. Next move is WWU-T2 fresh GC-018 authoring for a read-only CVF Web
-Workspace operator dashboard/read model. Product UI implementation remains
-parked until WWU-T2 is dispatched.
+yet.
+
+WWU-T2 CVF Web Workspace Operator Dashboard Read Model is dispatched at
+material commit `1bbf3046`. Next move is to execute the WWU-T2 work order as a
+read-only CVF Web Workspace dashboard/read-model implementation in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`. `DESIGN.md` has already been read
+for dispatch and must be re-read before frontend implementation. No Local
+Workspace Runtime, MCP/CLI tooling, provider/live calls, secrets/quota,
+public-sync, raw external package import, runtime enforcement claim, production
+readiness, public readiness, release readiness, or external-facing readiness is
+authorized. WWU-T3 Local Workspace Runtime/MCP remains parked.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -719,18 +727,21 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`.
+Mode: `wwu_t2_web_workspace_read_model_dispatched_t3_parked`.
 
-WWU-T1 CVF Web Workspace Surface Audit is `CLOSED_PASS_BOUNDED` at material
-commit `3db83d3b`. The audit source-mapped current `cvf-web` surfaces and found
-that Web has useful governance/evidence/health/operations/approvals/work-transfer
-surfaces, but lacks an active CVF session-state/handoff/workspace read-model
-endpoint.
+WWU-T2 CVF Web Workspace Operator Dashboard Read Model is dispatched at
+material commit `1bbf3046`. The dispatch authorizes a read-only CVF Web
+Workspace dashboard/read-model implementation in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`, based on the WWU-T1 source-mapped
+surface audit.
 
-Next allowed move: author WWU-T2 fresh GC-018 and source-verified work order
-for a read-only CVF Web Workspace operator dashboard/read model. Product UI
-implementation remains parked until WWU-T2 is dispatched, and `DESIGN.md` must
-be read before any frontend implementation.
+Next allowed move: execute the WWU-T2 work order as a read-only Web Workspace
+implementation. `DESIGN.md` has already been read for dispatch and must be
+re-read before frontend implementation. Product implementation must preserve the
+work-order boundary: no Local Workspace Runtime, MCP/CLI tooling, provider/live
+calls, secrets/quota, public-sync, raw external package import, runtime
+enforcement claim, production readiness, public readiness, release readiness, or
+external-facing readiness.
 
 WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
 authorization. EARC-T2 public-sync preparation and EARC-T4 MCP/workspace

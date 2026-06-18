@@ -29,8 +29,10 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after WWU-T1 CVF Web
-Workspace Surface Audit material commit `3db83d3b`, following WWU-T0 Workspace
+Authorized session-sync scope: update active handoff after WWU-T2 CVF Web
+Workspace Operator Dashboard Read Model dispatch material commit `1bbf3046`,
+following WWU-T1 CVF Web Workspace Surface Audit material commit `3db83d3b`,
+following WWU-T0 Workspace
 Two-Layer Foundation material commit `f637904c`, EARC-T3B External
 Absorption Table Checker material commit `6de12f33`, EARC-T3A External
 Return Absorption Pilot material commit `481f35bd`, EARC-T3 External
@@ -68,6 +70,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/rtadT6ExternalWorkspacePackageRootClassification20260618.json`
 - `CVF_SESSION/state/entries/wwuT0WorkspaceTwoLayerFoundationClosure20260618.json`
 - `CVF_SESSION/state/entries/wwuT1CvfWebWorkspaceSurfaceAuditClosure20260618.json`
+- `CVF_SESSION/state/entries/wwuT2CvfWebWorkspaceOperatorDashboardReadModelDispatch20260618.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -127,14 +130,16 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=WWU-T2 fresh GC-018 and source-verified work order for a read-only CVF Web Workspace operator dashboard/read model; parked checkpoint=WWU-T2 product UI implementation waits for dispatch and DESIGN.md first-read, WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`wwu_t2_web_workspace_read_model_dispatched_t3_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=execute the dispatched WWU-T2 read-only CVF Web Workspace operator dashboard/read-model work order; parked checkpoint=WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
-`wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`
+`wwu_t2_web_workspace_read_model_dispatched_t3_parked`
 
-Current HEAD recorded for this handoff: `3db83d3b`
-(WWU-T1 CVF Web Workspace Surface Audit material commit `3db83d3b`;
+Current HEAD recorded for this handoff: `1bbf3046`
+(WWU-T2 CVF Web Workspace Operator Dashboard Read Model dispatch material
+commit `1bbf3046`;
+WWU-T1 CVF Web Workspace Surface Audit material commit `3db83d3b`;
 WWU-T0 Workspace Two-Layer Foundation material commit `f637904c`;
 EARC-T3B External Absorption Table Checker material commit `6de12f33`;
 EARC-T3A External Return Absorption Pilot material commit `481f35bd`;
@@ -802,16 +807,18 @@ source-verified work order.
 
 ## Next Allowed Move
 
-WWU-T1 CVF Web Workspace Surface Audit is `CLOSED_PASS_BOUNDED` at material
-commit `3db83d3b`. The audit source-mapped current `cvf-web` surfaces and found
-that Web has useful governance/evidence/health/operations/approvals/work-transfer
-surfaces, but lacks an active CVF session-state/handoff/workspace read-model
-endpoint.
+WWU-T2 CVF Web Workspace Operator Dashboard Read Model is dispatched at
+material commit `1bbf3046`. The dispatch authorizes a read-only CVF Web
+Workspace dashboard/read-model implementation in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`, based on the WWU-T1 source-mapped
+surface audit. It does not authorize Local Workspace Runtime, MCP/CLI tooling,
+provider/live calls, secrets/quota, public-sync, raw external package import,
+runtime enforcement claims, production readiness, public readiness, release
+readiness, or external-facing readiness.
 
-Next allowed move: author WWU-T2 fresh GC-018 and source-verified work order
-for a read-only CVF Web Workspace operator dashboard/read model. Product UI
-implementation remains parked until WWU-T2 is dispatched, and `DESIGN.md` must
-be read before any frontend implementation.
+Next allowed move: execute the WWU-T2 work order as a read-only Web Workspace
+implementation. `DESIGN.md` has already been read for dispatch and must be
+re-read before frontend implementation.
 
 WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
 authorization. EARC-T2 public-sync preparation remains held for explicit
