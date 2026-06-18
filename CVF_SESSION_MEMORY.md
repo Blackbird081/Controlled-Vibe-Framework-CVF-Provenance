@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `earc_t0_external_agent_review_context_roadmap_ready_for_t1_dispatch`
+Current mode marker: `earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `earc_t0_external_agent_review_context_roadmap_ready_for_t1_dispatch`.
+Current mode: `earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`.
 
 Active handoff:
 
@@ -152,6 +152,15 @@ calls, workspace runtime mutation, raw external package import, public
 readiness, production readiness, release readiness, and external-facing
 readiness remain parked.
 
+EARC-T1 External Agent Review Packet Template is `CLOSED_PASS_BOUNDED` at
+material commit `ab8382f3`. CVF now has a stable external-agent review packet
+template, authoring checklist, bounded workflow/MCP/workspace sample packet,
+updated external-agent review front door, and GC-051 registry coverage. Next
+dispatch candidate is EARC-T3 with fresh GC-018 and a source-verified work
+order for external-finding absorption workflow. EARC-T2 remains held for
+explicit public-sync authorization. EARC-T4 remains held for explicit
+MCP/runtime authorization.
+
 Stable artifacts:
 
 - `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md`
@@ -197,15 +206,17 @@ Stable artifacts:
 - `docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md`
 - `governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json`
 - `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md`
+- `docs/baselines/CVF_GC018_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_2026-06-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md`
+- `docs/reviews/CVF_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_COMPLETION_2026-06-18.md`
 
-Next move: author fresh GC-018 and a source-verified work order for EARC-T1 to
-build a reusable external-agent review packet template, authoring checklist, and
-one bounded sample packet under `docs/reference/external_agent_review/`.
-EARC-T1 must preserve CVF as source of truth, mark public/simple workflow labels
-as display vocabulary only, and avoid public-sync, MCP implementation,
-provider/live calls, workspace runtime mutation, raw package import, public
-readiness, production readiness, release readiness, and external-facing
-readiness claims.
+Next move: author fresh GC-018 and a source-verified work order for EARC-T3 to
+define the external-finding absorption workflow: source-backed CVF defect,
+useful external pattern, public/simple assumption, missing-context question,
+rejected assumption, and blocked readiness/runtime claim.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -660,23 +671,24 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `earc_t0_external_agent_review_context_roadmap_ready_for_t1_dispatch`.
+Mode: `earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`.
 
-EARC-T0 External Agent Review Context Systemization roadmap is
-`ROADMAP_READY_FOR_T1_DISPATCH` at material commit `cdbfddac`. The roadmap
-turns the RTAD-T6 external-agent review context foundation into a practical
-execution sequence. Next allowed move: author fresh GC-018 and a source-verified
-work order for EARC-T1 to build a reusable external-agent review packet
-template, authoring checklist, and one bounded sample packet under
-`docs/reference/external_agent_review/`.
+EARC-T1 External Agent Review Packet Template is `CLOSED_PASS_BOUNDED` at
+material commit `ab8382f3`. CVF now has a stable external-agent review packet
+template, authoring checklist, bounded workflow/MCP/workspace sample packet,
+updated external-agent review front door, and GC-051 registry coverage.
 
-EARC-T1 must preserve CVF as source of truth, mark public/simple workflow labels
-as display vocabulary only, and avoid public-sync, MCP implementation,
-provider/live calls, workspace runtime mutation, raw package import, public
-readiness, production readiness, release readiness, and external-facing
-readiness claims. EARC-T2 public-sync preparation, EARC-T3 external-finding
-absorption workflow, and EARC-T4 MCP/workspace implementation decision remain
-parked until their dispatch rules are satisfied.
+Next allowed move: author fresh GC-018 and a source-verified work order for
+EARC-T3 to define the external-finding absorption workflow: source-backed CVF
+defect, useful external pattern, public/simple assumption, missing-context
+question, rejected assumption, and blocked readiness/runtime claim.
+
+EARC-T2 public-sync preparation remains held for explicit public-sync
+authorization. EARC-T4 MCP/workspace implementation decision remains held for
+explicit MCP/runtime authorization. Public-sync, MCP implementation,
+provider/live calls, workspace runtime mutation, raw external package import,
+public readiness, production readiness, release readiness, and external-facing
+readiness claims remain parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

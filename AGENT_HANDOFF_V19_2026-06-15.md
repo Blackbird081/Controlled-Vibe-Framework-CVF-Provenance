@@ -29,10 +29,11 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after EARC-T0 External
-Agent Review Context Systemization roadmap material commit `cdbfddac`,
-following RTAD-T6 External Agent MCP Workspace Absorption closure material
-commit `7d8ae7b3` and repository lifecycle classification remediation commit
+Authorized session-sync scope: update active handoff after EARC-T1 External
+Agent Review Packet Template material commit `ab8382f3`, following EARC-T0
+External Agent Review Context Systemization roadmap material commit `cdbfddac`,
+RTAD-T6 External Agent MCP Workspace Absorption closure material commit
+`7d8ae7b3`, and repository lifecycle classification remediation commit
 `5b3294a8`.
 
 Protected paths:
@@ -44,6 +45,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/gfcT2T4T5FoundationCloseout20260618.json`
 - `CVF_SESSION/state/entries/gfcT3RoadmapStateHygieneDispatch20260618.json`
 - `CVF_SESSION/state/entries/earcT0ExternalAgentReviewContextRoadmap20260618.json`
+- `CVF_SESSION/state/entries/earcT1ExternalAgentReviewPacketTemplateClosure20260618.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/promptReadFirstPlacementFindingClosure20260618.json`
 - `CVF_SESSION/state/entries/preRuntimeFoundationCleanupRoadmap20260617.json`
@@ -77,10 +79,14 @@ roadmap for the next phase. Codex authored EARC-T0 at material commit
 `cdbfddac` to turn the RTAD-T6 foundation into an execution sequence while
 leaving public-sync, MCP implementation, provider/live calls, workspace runtime
 mutation, raw external package import, public readiness, production readiness,
-release readiness, and external-facing readiness parked.
+release readiness, and external-facing readiness parked. The operator then
+asked Codex to proceed; Codex closed EARC-T1 at material commit `ab8382f3` with
+stable external-agent review packet template, authoring checklist, bounded
+workflow/MCP/workspace sample packet, updated folder front door, and GC-051
+registry coverage.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-EARC-T0 roadmap material commit, RTAD-T6 root-classification remediation commit, RTAD-T6 closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
+EARC-T1 material commit, EARC-T0 roadmap material commit, RTAD-T6 root-classification remediation commit, RTAD-T6 closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
 GFC-T3 accepted-material commit, GFC-T3 dispatch commit, GFC-T1
 post-closure state drift remediation commit,
 GFC-T1 closure material commit, GFC-T1 accepted worker material commit, prompt
@@ -90,14 +96,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`earc_t0_external_agent_review_context_roadmap_ready_for_t1_dispatch`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=author fresh GC-018 and a source-verified work order for EARC-T1 external-agent review packet template, authoring checklist, and bounded sample packet; parked checkpoint=public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, public readiness, production readiness, release readiness, external-facing readiness, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=author fresh GC-018 and a source-verified work order for EARC-T3 external-finding absorption workflow; parked checkpoint=EARC-T2 public-sync preparation waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation decision waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
-`earc_t0_external_agent_review_context_roadmap_ready_for_t1_dispatch`
+`earc_t1_external_agent_review_packet_template_closed_t3_ready_for_gc018`
 
-Current HEAD recorded for this handoff: `cdbfddac`
-(EARC-T0 External Agent Review Context Systemization roadmap material commit
+Current HEAD recorded for this handoff: `ab8382f3`
+(EARC-T1 External Agent Review Packet Template material commit `ab8382f3`;
+EARC-T0 External Agent Review Context Systemization roadmap material commit
 `cdbfddac`;
 RTAD-T6 external workspace package root classification remediation commit
 `5b3294a8`;
@@ -405,6 +412,15 @@ calls, workspace runtime mutation, raw external package import, public
 readiness, production readiness, release readiness, and external-facing
 readiness remain parked.
 
+EARC-T1 External Agent Review Packet Template is `CLOSED_PASS_BOUNDED` at
+material commit `ab8382f3`. CVF now has a stable external-agent review packet
+template, authoring checklist, bounded workflow/MCP/workspace sample packet,
+updated external-agent review front door, and GC-051 registry coverage. Next
+dispatch candidate is EARC-T3 with fresh GC-018 and a source-verified work
+order for external-finding absorption workflow. EARC-T2 remains held for
+explicit public-sync authorization. EARC-T4 remains held for explicit
+MCP/runtime authorization.
+
 Stable artifacts:
 
 `docs/baselines/CVF_GC018_RTAD_T3_MODEL_GATEWAY_LIVE_RUN_2026-06-18.md`
@@ -446,6 +462,18 @@ Stable artifacts:
 `governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json`
 
 `docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md`
+
+`docs/baselines/CVF_GC018_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_2026-06-18.md`
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md`
+
+`docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md`
+
+`docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`
+
+`docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md`
+
+`docs/reviews/CVF_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_COMPLETION_2026-06-18.md`
 
 GFC-T3 Roadmap State Hygiene Remediation dispatch is accepted at material
 commit `21cf3793` after Codex reviewer repair clarified that the scope is
@@ -738,26 +766,23 @@ source-verified work order.
 
 ## Next Allowed Move
 
-EARC-T0 External Agent Review Context Systemization roadmap is
-`ROADMAP_READY_FOR_T1_DISPATCH` at material commit `cdbfddac`. The roadmap
-turns the RTAD-T6 external-agent review context foundation into a practical
-execution sequence.
+EARC-T1 External Agent Review Packet Template is `CLOSED_PASS_BOUNDED` at
+material commit `ab8382f3`. CVF now has a stable external-agent review packet
+template, authoring checklist, bounded workflow/MCP/workspace sample packet,
+updated external-agent review front door, and GC-051 registry coverage.
 
 Next allowed move: author fresh GC-018 and a source-verified work order for
-EARC-T1 to build a reusable external-agent review packet template, authoring
-checklist, and one bounded sample packet under
-`docs/reference/external_agent_review/`. EARC-T1 must preserve CVF as source of
-truth, mark public/simple workflow labels as display vocabulary only, and avoid
-public-sync, MCP implementation, provider/live calls, workspace runtime
-mutation, raw package import, public readiness, production readiness, release
-readiness, and external-facing readiness claims.
+EARC-T3 to define the external-finding absorption workflow: source-backed CVF
+defect, useful external pattern, public/simple assumption, missing-context
+question, rejected assumption, and blocked readiness/runtime claim.
 
-EARC-T2 public-sync preparation, EARC-T3 external-finding absorption workflow,
-and EARC-T4 MCP/workspace implementation decision remain parked until their
-dispatch rules are satisfied. Public-sync, broad MCP gateway implementation,
-release-facing claims, external-facing readiness, provider ranking/parity
-claims, Model Gateway redispatch/P3, and co-work product development remain
-parked unless a later operator authorization opens a separate tranche.
+EARC-T2 public-sync preparation remains held for explicit public-sync
+authorization. EARC-T4 MCP/workspace implementation decision remains held for
+explicit MCP/runtime authorization. Public-sync, broad MCP gateway
+implementation, release-facing claims, external-facing readiness, provider
+ranking/parity claims, Model Gateway redispatch/P3, and co-work product
+development remain parked unless a later operator authorization opens a
+separate tranche.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
