@@ -1,0 +1,38 @@
+{
+  "registryOrder": 99,
+  "id": "model-gateway-rtad-t5-mcp-bridge-boundary-completion",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF RTAD-T5 Model Gateway MCP bridge boundary completion",
+  "scopePaths": [
+    "docs/baselines/CVF_GC018_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_2026-06-18.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_FOR_CODEX_2026-06-18.md",
+    "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+    "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md"
+  ],
+  "fileCount": 4,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "rtad-t5-mcp-implementation-parked-boundary",
+      "summary": "RTAD-T5 closed a boundary/design tranche and kept MCP implementation parked.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Open a fresh GC-018 before any MCP runtime tool implementation.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "MCP runtime source mutation (none)",
+    "Model Gateway runtime source mutation (none)",
+    "provider live proof (none)",
+    "raw secret disclosure (none)",
+    "public-sync (not authorized)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "RTAD-T5",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+  "notes": "GC-018, work order, completion, and roadmap closure for the bounded MCP-to-Model-Gateway bridge boundary."
+}

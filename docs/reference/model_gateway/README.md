@@ -34,6 +34,7 @@ receipts, and closure reviews remain in their existing owner paths.
 |---|---|
 | `CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.md` | Human-readable Alibaba free-quota model codes, expiration dates, and use-before-live-test rule. |
 | `CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json` | Machine-readable mirror for future guards or scripts. |
+| `../mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md` | Boundary contract for any future MCP tool that intends to call Model Gateway runtime surfaces. |
 
 ## Required Use
 

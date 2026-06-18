@@ -3583,6 +3583,80 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
       "notes": "Alibaba stream adapter source updated by RTAD-T4 to use the shared DashScope endpoint resolver instead of a fixed mainland endpoint default."
+    },
+    {
+      "id": "model-gateway-rtad-t5-mcp-bridge-boundary-reference",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF RTAD-T5 Model Gateway MCP bridge boundary reference",
+      "scopePaths": [
+        "docs/reference/mcp_gateway/README.md",
+        "docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md",
+        "docs/reference/model_gateway/README.md",
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/README.md"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "rtad-t5-mcp-reference-front-door-gap",
+          "summary": "MCP package README previously linked to a missing dated prepublic export surface; remediated by stable MCP reference front door.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use docs/reference/mcp_gateway/README.md as the stable front door before future MCP bridge work.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "MCP implementation (boundary only)",
+        "provider live call (not authorized)",
+        "raw API key value (no credential file read)",
+        "public readiness claim (explicitly out of scope)",
+        "provider ranking (explicitly out of scope)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T5",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+      "notes": "Stable MCP Gateway front door plus Model Gateway MCP runtime bridge boundary contract. Design and reference only; no MCP runtime tool was implemented."
+    },
+    {
+      "id": "model-gateway-rtad-t5-mcp-bridge-boundary-completion",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF RTAD-T5 Model Gateway MCP bridge boundary completion",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_2026-06-18.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_FOR_CODEX_2026-06-18.md",
+        "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+        "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "rtad-t5-mcp-implementation-parked-boundary",
+          "summary": "RTAD-T5 closed a boundary/design tranche and kept MCP implementation parked.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Open a fresh GC-018 before any MCP runtime tool implementation.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "MCP runtime source mutation (none)",
+        "Model Gateway runtime source mutation (none)",
+        "provider live proof (none)",
+        "raw secret disclosure (none)",
+        "public-sync (not authorized)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T5",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+      "notes": "GC-018, work order, completion, and roadmap closure for the bounded MCP-to-Model-Gateway bridge boundary."
     }
   ]
 }
