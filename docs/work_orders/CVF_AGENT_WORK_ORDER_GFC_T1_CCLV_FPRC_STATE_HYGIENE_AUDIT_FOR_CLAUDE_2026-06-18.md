@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -212,8 +212,8 @@ can review one source-backed packet that:
 | Level | Artifact | Status |
 |---|---|---|
 | Operator instruction | 2026-06-18 instruction to roadmap all three proposals and assign Claude | ACCEPTED |
-| GFC roadmap | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md` | DISPATCH_READY |
-| GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md` | DISPATCH_READY |
+| GFC roadmap | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md` | CLOSED_PASS_BOUNDED |
+| GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md` | CLOSED_PASS_BOUNDED |
 | Active session front door | `CVF_SESSION_MEMORY.md` | ACCEPT |
 | Active state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | ACCEPT |
 | Active handoff | `AGENT_HANDOFF_V19_2026-06-15.md` | ACCEPT |
@@ -388,14 +388,14 @@ Codex must not accept the worker return until:
 
 ## Closure Checklist
 
-- [ ] Claude worker packet exists.
-- [ ] Claude worker return exists.
-- [ ] HEAD unchanged evidence is present.
-- [ ] No forbidden path is changed.
-- [ ] CCLV-T4 decision is source-backed.
-- [ ] FPRC-T3 pilot or deferral is source-backed.
-- [ ] Roadmap-state hygiene matrix is source-backed.
-- [ ] Codex reviewer decision is recorded before accepted material commit.
+- [x] Claude worker packet exists.
+- [x] Claude worker return exists.
+- [x] HEAD unchanged evidence is present.
+- [x] No forbidden path is changed.
+- [x] CCLV-T4 decision is source-backed.
+- [x] FPRC-T3 pilot or deferral is source-backed.
+- [x] Roadmap-state hygiene matrix is source-backed.
+- [x] Codex reviewer decision is recorded before accepted material commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -466,6 +466,34 @@ allowed scope, return `BLOCKED_WITH_REASON` and cite the failing check.
 | Escalation state | `ROADMAP_ADDED` |
 | Next control action | Claude must produce GFC-T1 decision packet and worker return from governed sources |
 | Worker blame | `N/A_WITH_REASON`: this dispatch assigns a consolidation audit across surfaces, not a worker error fix |
+
+## Current Runtime Freshness Verification
+
+Runtime/source mutation applicability: N/A with reason: this work order is
+closed as a no-commit governance audit/decision dispatch. The closure material
+range changes GFC-T1 governed documentation artifacts only; it does not touch
+runtime/source/test/provider/workspace runtime files and does not claim runtime
+implementation freshness.
+
+Freshness evidence: `git diff --name-status f764f449..HEAD` for the closure
+material range is bounded to GFC-T1 governed documentation artifacts.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md` | `Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_RECOMMENDED` | PASS |
+| Accepted material commit | `c8034a81` | two worker-owned review files only | PASS |
+| Session continuity | `f764f449` | accepted-material continuity synced before closure material | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source/live proof authorized | repo-local governance docs only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
+| Provider/live proof | N/A with reason: no provider/live proof authorized | no live/provider command run | N/A with reason |
+| Public-sync | N/A with reason: private provenance closure only | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
 
 ## 12. Public Export Disposition
 

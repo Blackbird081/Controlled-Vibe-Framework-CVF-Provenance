@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GFC_T1_DISPATCH_READY
+Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_RECOMMENDED
 
 docType: roadmap
 
@@ -116,10 +116,10 @@ must retain role-specific judgment.
 
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
-| GFC-T1 | DISPATCH_READY | Claude authors a combined CCLV-T4, FPRC-T3, and roadmap-state hygiene audit/decision packet; no commit | Claude worker; Codex reviewer |
-| GFC-T2 | HOLD_PENDING_T1_REVIEW | Codex decides which CCLV-T4 rule or limit becomes a standard/template/checker change | Codex |
-| GFC-T3 | HOLD_PENDING_T1_REVIEW | Codex executes the selected roadmap-state hygiene remediation, if any, from T1 matrix | Codex |
-| GFC-T4 | HOLD_PENDING_T1_REVIEW | Optional FPRC-T3 machine or template follow-up if the T1 pilot proves value | Codex |
+| GFC-T1 | CLOSED_PASS_BOUNDED | Claude authored the CCLV-T4, FPRC-T3, and roadmap-state hygiene audit/decision packet; Codex accepted after reviewer repair | Claude worker; Codex reviewer |
+| GFC-T2 | HOLD_PENDING_OPERATOR_DECISION | Codex decides which CCLV-T4 rule or limit becomes a standard/template/checker change | Codex |
+| GFC-T3 | RECOMMENDED_NEXT_OPERATOR_DECISION | Codex executes the selected roadmap-state hygiene remediation, if operator confirms the next tranche | Codex |
+| GFC-T4 | HOLD_PENDING_OPERATOR_DECISION | Optional FPRC-T3 machine or template follow-up if the T1 pilot proves value | Codex |
 
 ## GFC-T1 Work Plan
 
@@ -135,6 +135,26 @@ must retain role-specific judgment.
 4. Claude writes one worker return with HEAD unchanged evidence.
 5. Codex reviews actual files, performs allowed reviewer repairs, commits
    accepted material, and syncs session state if next move changes.
+
+## GFC-T1 Closure Record
+
+GFC-T1 is `CLOSED_PASS_BOUNDED`. Claude returned the two worker-owned review
+files under `WORKER_MUST_NOT_COMMIT`; Codex reviewed actual files, corrected a
+stale-row count mismatch from five to seven, accepted the worker packet at
+material commit `c8034a81`, and recorded continuity at session-sync commit
+`f764f449`.
+
+Accepted decisions:
+
+- CCLV-T4 remains limited/advisory pending a Codex-owned GFC-T2 rule decision.
+- FPRC-T3 can pilot root-cause grouping on the roadmap-state hygiene case.
+- GFC-T3 is the recommended next tranche for seven confirmed stale roadmap
+  status surfaces, while the P5C row remains `UNDETERMINED` and must be
+  re-read before remediation.
+
+Closure review:
+
+`docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md`
 
 ## Work Plan
 
@@ -179,6 +199,34 @@ GFC-T1 dispatch and closure must provide:
 | Escalation state | `ROADMAP_ADDED` |
 | Next control action | GFC-T1 asks Claude to produce source-backed decisions for CCLV-T4, FPRC-T3, and stale roadmap hygiene |
 | Worker blame | `N/A_WITH_REASON`: this is a cross-surface freshness and rollout-design task, not a single worker defect |
+
+## Current Runtime Freshness Verification
+
+Runtime/source mutation applicability: N/A with reason: GFC-T1 is a
+governance audit/decision closure only. The closure material range changes
+roadmap, baseline, work-order, and review documentation; it does not touch
+runtime/source/test/provider/workspace runtime files and does not claim runtime
+implementation freshness.
+
+Freshness evidence: `git diff --name-status f764f449..HEAD` for the closure
+material range is bounded to GFC-T1 governed documentation artifacts.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 baseline | `docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: GFC_T1_CLOSED_PASS_BOUNDED_GFC_T3_RECOMMENDED` | PASS |
+| Accepted material commit | `c8034a81` | two worker-owned review files only | PASS |
+| Session continuity | `f764f449` | accepted-material continuity synced before closure material | PASS |
+| Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry edit authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source/live proof authorized | repo-local governance docs only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock registry edit authorized | no interlock path changed | N/A with reason |
+| Provider/live proof | N/A with reason: no provider/live proof authorized | no live/provider command run | N/A with reason |
+| Public-sync | N/A with reason: private provenance closure only | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
 
 ## Public Export Disposition
 
