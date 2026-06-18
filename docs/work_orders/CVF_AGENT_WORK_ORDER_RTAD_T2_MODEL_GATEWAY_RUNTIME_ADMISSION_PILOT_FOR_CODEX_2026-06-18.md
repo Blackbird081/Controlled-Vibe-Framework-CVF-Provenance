@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -226,7 +226,7 @@ parked for a later explicit tranche.
 | Operator instruction | 2026-06-18 Model Gateway first, continue RTAD-T1/T2 | ACCEPTED |
 | RTAD roadmap | `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md` | RTAD-T1/T2 dispatch update |
 | RTAD-T1 selection | `docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md` | CLOSED_PASS_BOUNDED |
-| RTAD-T2 GC-018 | `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md` | DISPATCH_READY |
+| RTAD-T2 GC-018 | `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md` | BASELINE_SATISFIED |
 | Active session front door | `CVF_SESSION_MEMORY.md` | read-only until session sync |
 
 ## Roadmap-To-Work-Order Trace Matrix
@@ -429,21 +429,21 @@ public-sync, release-facing claim, or broad runtime/source expansion.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | pending RTAD-T2 execution | completion path named in Write Ownership | N/A with reason |
-| Roadmap state | `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md` | RTAD-T2 row is dispatch-ready | PASS |
-| GC-018 baseline | `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md` | RTAD-T2 row closed bounded | PASS |
+| GC-018 baseline | `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md` | baseline satisfied for RTAD-T2 | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized in dispatch | no registry JSON path changed | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry edit authorized in dispatch | no registry Markdown path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no external evidence consumed or produced in dispatch | repo-local governed artifacts only | N/A with reason |
 | System loop interlock | N/A with reason: no interlock mutation authorized | no interlock path changed | N/A with reason |
-| Session continuity | pending separate session-sync following dispatch commit | active session surfaces update only following material commit | N/A with reason |
+| Session continuity | separate session-sync follows material commit | active session surfaces update only after material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Criterion | Required value | Observed value | Status |
 |---|---|---|---|
-| Work order dispatch state | dispatch-ready source-verified packet | this work order is `Status: DISPATCH_READY` | PASS |
+| Work order dispatch state | closed source-verified packet | this work order is `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Runtime proof boundary | no provider network call in dispatch | no provider command run | PASS |
 | Receipt boundary | receipt is optional for later local execution only | no receipt produced in dispatch authoring | PASS |
 | Registry boundary | no provider registry or capability registry mutation | dispatch changed set is documentation only | PASS |
@@ -478,7 +478,7 @@ is authorized.
 | Target paths | RTAD roadmap; RTAD-T1 packet; RTAD-T2 GC-018; this work order |
 | Allowed scope source | operator selected Model Gateway and asked Codex to continue RTAD-T1/T2 |
 | Before status evidence | base `f74dab2f`; clean worktree before dispatch authoring; RTAD-T0 closed and runtime parked |
-| After status evidence | pending RTAD-T2 dispatch commit |
+| After status evidence | RTAD-T2 closure material diff ready for commit |
 | Diff evidence | `git diff --name-status f74dab2f..HEAD` |
 | Approval boundary | work-order dispatch only |
 | Claim boundary | no runtime/provider/live/public-sync/registry/product mutation in dispatch batch |

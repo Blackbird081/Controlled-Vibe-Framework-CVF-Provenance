@@ -1,0 +1,32 @@
+{
+  "proof": "rtad-t2-model-gateway-runtime-admission-pilot",
+  "date": "2026-06-18",
+  "executionBaseHead": "64f3ae34",
+  "selectedPilot": "EXTENSIONS/CVF_MODEL_GATEWAY",
+  "network": "not_used",
+  "providerCredentials": "not_used",
+  "sourceVerification": {
+    "requiredSymbolsFound": [
+      "ProviderExecutionBridge",
+      "checkBridgeAdmission",
+      "admitProviderAdapter",
+      "negotiateProviderCapability",
+      "runLiveProof"
+    ]
+  },
+  "checks": [
+    {
+      "command": "npm run check",
+      "workingDirectory": "EXTENSIONS/CVF_MODEL_GATEWAY",
+      "result": "PASS"
+    },
+    {
+      "command": "npm test",
+      "workingDirectory": "EXTENSIONS/CVF_MODEL_GATEWAY",
+      "result": "PASS",
+      "testFiles": 29,
+      "tests": 214
+    }
+  ],
+  "claimBoundary": "local deterministic Model Gateway admission pilot only; no provider network call, provider credential use, registry mutation, MCP implementation, public-sync, release-facing claim, or external-facing claim"
+}

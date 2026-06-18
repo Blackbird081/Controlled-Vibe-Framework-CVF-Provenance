@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: RTAD_T1_SELECTED_T2_DISPATCH_READY_RUNTIME_PARKED
+Status: RTAD_T2_CLOSED_PASS_BOUNDED_LIVE_RUN_AUTHORIZED
 
 docType: roadmap
 
@@ -101,7 +101,8 @@ closure record.
 |---|---|---|---|
 | RTAD-T0 | CLOSED_PASS_BOUNDED | Foundation terminal alignment before runtime admission | Codex |
 | RTAD-T1 | COMPLETE_WITH_DECLARED_LIMITS | Select Model Gateway as first runtime pilot target and define proof boundary | Codex |
-| RTAD-T2 | DISPATCH_READY | Author fresh GC-018 and source-verified work order for the Model Gateway runtime-admission pilot | Codex |
+| RTAD-T2 | CLOSED_PASS_BOUNDED | Run local deterministic Model Gateway runtime-admission pilot | Codex |
+| RTAD-T3 | OPERATOR_AUTHORIZED | Run secret-safe Model Gateway live proof using existing available API keys | Codex |
 
 ## Work Plan
 
@@ -153,6 +154,26 @@ authorize provider network proof, credential use, provider ranking, registry
 mutation, public-sync, MCP implementation, release-readiness claim, or
 external-facing readiness claim.
 
+## RTAD-T2 Closure Note
+
+RTAD-T2 closed bounded by the material closure diff. It re-verified current
+Model Gateway source symbols and passed deterministic checks:
+
+- `npm run check`: PASS
+- `npm test`: PASS, 29 files / 214 tests
+
+No provider network call, credential use, registry mutation, public-sync, MCP
+implementation, or release-facing claim was made in RTAD-T2.
+
+## RTAD-T3 Authorization Note
+
+After RTAD-T2 execution, the operator explicitly authorized Codex to use the
+existing available API keys to test a Model Gateway live run and asked Codex to
+handle the whole Model Gateway tranche. RTAD-T3 must be secret-safe and bounded:
+it may use existing keys from the operator-approved local environment, but must
+not print raw keys, commit raw keys, mutate provider registries, implement MCP,
+public-sync, or claim release/external readiness.
+
 ## Current Runtime Freshness Verification
 
 Runtime freshness is bounded: RTAD-T1 selected Model Gateway using direct
@@ -190,9 +211,9 @@ Required verification before closure:
 |---|---|---|---|
 | Work order status | N/A with reason: direct Codex terminal-alignment closeout authorized by operator in chat | no delegated work order in this batch | N/A with reason |
 | Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md`; `docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md` | T0 `Status: CLOSED_PASS_BOUNDED`; T1 `Status: COMPLETE_WITH_DECLARED_LIMITS` | PASS |
-| Roadmap state | this roadmap | `Status: RTAD_T1_SELECTED_T2_DISPATCH_READY_RUNTIME_PARKED` | PASS |
+| Roadmap state | this roadmap | `Status: RTAD_T2_CLOSED_PASS_BOUNDED_LIVE_RUN_AUTHORIZED` | PASS |
 | RTAD-T2 GC-018 | `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
-| RTAD-T2 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
+| RTAD-T2 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no external source or live proof authorized | repo-local governed artifacts only | N/A with reason |
