@@ -1,0 +1,105 @@
+{
+  "proof": "rtad-t3-model-gateway-live-run",
+  "contractVersion": "cvf.p4bBLiveProofHarness.t2.v1",
+  "startedAt": "2026-06-18T06:32:29.980Z",
+  "finishedAt": "2026-06-18T06:32:32.191Z",
+  "overall": "PASS",
+  "operatorAuthorization": "existing available API keys authorized by operator on 2026-06-18 for bounded Model Gateway live run",
+  "secretSafety": "raw keys not printed or written; receipt records alias and presence only",
+  "governedChain": [
+    "RoutingPolicyEngine",
+    "CredentialBoundary",
+    "ProviderHealthMonitor",
+    "QuotaLedger",
+    "admitProviderAdapter(P5-A)",
+    "checkBridgeAdmission(P5-C)",
+    "ProviderExecutionBridge.execute"
+  ],
+  "providerNeutralityNote": "candidates are operator-available-key live-test adapters only; none is canonical CVF product scope, preferred, or ranked",
+  "selectedProof": {
+    "providerId": "deepseek",
+    "modelId": "deepseek-chat",
+    "keyAliasUsed": "DEEPSEEK_API_KEY",
+    "keyPresent": true,
+    "outcome": "PASS",
+    "latencyMs": 826,
+    "admissionStatus": "admitted",
+    "bridgeErrorClass": null,
+    "detail": {
+      "receipt": {
+        "receiptId": "gw_20260618063232191_5qgr2fbg",
+        "traceId": "rtad-t3-live-deepseek-1781764351365",
+        "providerId": "deepseek",
+        "selectedModelId": "deepseek-chat",
+        "decision": "selected"
+      },
+      "response": {
+        "model": {
+          "providerId": "deepseek",
+          "modelId": "deepseek-chat"
+        },
+        "textLength": 4,
+        "textPreview": "pong",
+        "usage": {
+          "inputTokens": 12,
+          "outputTokens": 2
+        }
+      }
+    }
+  },
+  "attempts": [
+    {
+      "providerId": "alibaba",
+      "modelId": "qwen-turbo",
+      "keyAliasUsed": "DASHSCOPE_API_KEY",
+      "keyPresent": true,
+      "outcome": "PARTIAL",
+      "latencyMs": 1382,
+      "admissionStatus": "admitted",
+      "bridgeErrorClass": "internal_error",
+      "detail": {
+        "diagnostic": {
+          "stage": "bridge_execute",
+          "class": "internal_error",
+          "retryable": true,
+          "userAction": "inspect governed bridge error class before rerun",
+          "provider": "alibaba",
+          "model": "qwen-turbo",
+          "traceId": "rtad-t3-live-alibaba-1781764349982",
+          "message": "Provider adapter execution failed"
+        }
+      }
+    },
+    {
+      "providerId": "deepseek",
+      "modelId": "deepseek-chat",
+      "keyAliasUsed": "DEEPSEEK_API_KEY",
+      "keyPresent": true,
+      "outcome": "PASS",
+      "latencyMs": 826,
+      "admissionStatus": "admitted",
+      "bridgeErrorClass": null,
+      "detail": {
+        "receipt": {
+          "receiptId": "gw_20260618063232191_5qgr2fbg",
+          "traceId": "rtad-t3-live-deepseek-1781764351365",
+          "providerId": "deepseek",
+          "selectedModelId": "deepseek-chat",
+          "decision": "selected"
+        },
+        "response": {
+          "model": {
+            "providerId": "deepseek",
+            "modelId": "deepseek-chat"
+          },
+          "textLength": 4,
+          "textPreview": "pong",
+          "usage": {
+            "inputTokens": 12,
+            "outputTokens": 2
+          }
+        }
+      }
+    }
+  ]
+}
