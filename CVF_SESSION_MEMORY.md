@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-18
 
-Current mode marker: `wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`
+Current mode marker: `wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`.
+Current mode: `wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`.
 
 Active handoff:
 
@@ -257,6 +257,14 @@ source-verification audit of current `cvf-web` surfaces before any UI
 implementation. EARC-T2 public-sync, EARC-T4 MCP/runtime, WWU-T2 product UI,
 and WWU-T3 Local Runtime/MCP remain parked until their explicit prerequisites
 are met.
+
+WWU-T1 CVF Web Workspace Surface Audit is `CLOSED_PASS_BOUNDED` at material
+commit `3db83d3b`. Current `cvf-web` governance/evidence/health/operations,
+approvals, work-transfer, and chat/session surfaces were source-mapped, and the
+audit found no active CVF session-state/handoff/workspace read-model endpoint
+yet. Next move is WWU-T2 fresh GC-018 authoring for a read-only CVF Web
+Workspace operator dashboard/read model. Product UI implementation remains
+parked until WWU-T2 is dispatched.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -711,23 +719,25 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t0_workspace_two_layer_foundation_closed_t1_ready_t2_t3_parked`.
+Mode: `wwu_t1_cvf_web_workspace_surface_audit_closed_t2_gc018_ready_t3_parked`.
 
-WWU-T0 Workspace Two-Layer Foundation is `CLOSED_PASS_BOUNDED` at material
-commit `f637904c`. CVF now has a stable Central Core rule that separates
-`CVF_WEB_WORKSPACE` from `CVF_LOCAL_WORKSPACE_RUNTIME`.
+WWU-T1 CVF Web Workspace Surface Audit is `CLOSED_PASS_BOUNDED` at material
+commit `3db83d3b`. The audit source-mapped current `cvf-web` surfaces and found
+that Web has useful governance/evidence/health/operations/approvals/work-transfer
+surfaces, but lacks an active CVF session-state/handoff/workspace read-model
+endpoint.
 
-Next allowed move: WWU-T1 source-verification audit of current `cvf-web`
-surfaces before any UI implementation.
+Next allowed move: author WWU-T2 fresh GC-018 and source-verified work order
+for a read-only CVF Web Workspace operator dashboard/read model. Product UI
+implementation remains parked until WWU-T2 is dispatched, and `DESIGN.md` must
+be read before any frontend implementation.
 
-WWU-T2 product UI implementation remains parked until WWU-T1 output and fresh
-GC-018. WWU-T3 Local Workspace Runtime/MCP remains parked until explicit
-runtime/MCP authorization. EARC-T2 public-sync preparation and EARC-T4
-MCP/workspace implementation decision remain held for their explicit
-authorizations. Public-sync, MCP implementation, provider/live calls, workspace
-runtime mutation, raw external package import, public readiness, production
-readiness, release readiness, and external-facing readiness claims remain
-parked.
+WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
+authorization. EARC-T2 public-sync preparation and EARC-T4 MCP/workspace
+implementation decision remain held for their explicit authorizations.
+Public-sync, MCP implementation, provider/live calls, workspace runtime
+mutation, raw external package import, public readiness, production readiness,
+release readiness, and external-facing readiness claims remain parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
