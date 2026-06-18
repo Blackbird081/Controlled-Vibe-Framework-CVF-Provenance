@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: RTAD_T0_CLOSED_PASS_BOUNDED_RUNTIME_PARKED
+Status: RTAD_T1_SELECTED_T2_DISPATCH_READY_RUNTIME_PARKED
 
 docType: roadmap
 
@@ -22,11 +22,13 @@ operator authorization, fresh GC-018, and a source-verified work order.
 ## Authorization / Decision
 
 Operator selected option 1 first on 2026-06-18: Foundation Terminal Alignment.
+After RTAD-T0 closed, the operator selected Model Gateway as the first runtime
+focus and asked Codex to continue RTAD-T1 and RTAD-T2.
 
-This roadmap authorizes RTAD-T0 only. It does not authorize runtime execution,
-provider or live proof, public-sync, registry edits, product runtime mutation,
-workspace runtime execution, Model Gateway redispatch, or production/public
-readiness.
+This roadmap now records RTAD-T1 selection and RTAD-T2 dispatch authoring only.
+It does not authorize live/provider proof, public-sync, registry edits, product
+runtime mutation, workspace runtime execution, MCP gateway implementation, or
+release-facing readiness.
 
 ## Scope
 
@@ -39,6 +41,8 @@ In scope:
 - add machine-closure evidence where a changed roadmap is now
   closed-equivalent;
 - keep runtime parked pending a fresh runtime-specific GC-018 and work order.
+- select one runtime pilot target after RTAD-T0;
+- author a fresh GC-018 and source-verified work order for the selected pilot.
 
 Out of scope:
 
@@ -49,6 +53,7 @@ Out of scope:
 - historical archive rewrite;
 - new checker implementation;
 - selection or execution of a runtime pilot.
+- execution of the selected runtime pilot in the dispatch-authoring range.
 
 ## Non-Goals
 
@@ -95,8 +100,8 @@ closure record.
 | Tranche | Status | Purpose | Owner |
 |---|---|---|---|
 | RTAD-T0 | CLOSED_PASS_BOUNDED | Foundation terminal alignment before runtime admission | Codex |
-| RTAD-T1 | ELIGIBLE_AFTER_OPERATOR_SELECTION | Select one runtime pilot target and define proof boundary | Codex or delegated worker |
-| RTAD-T2 | HOLD_PENDING_T1_SELECTION | Author fresh GC-018 and source-verified work order for the selected runtime pilot | Codex |
+| RTAD-T1 | COMPLETE_WITH_DECLARED_LIMITS | Select Model Gateway as first runtime pilot target and define proof boundary | Codex |
+| RTAD-T2 | DISPATCH_READY | Author fresh GC-018 and source-verified work order for the Model Gateway runtime-admission pilot | Codex |
 
 ## Work Plan
 
@@ -123,13 +128,38 @@ RTAD-T0 closes three active-roadmap stale terminal surfaces:
 
 Runtime remains parked after RTAD-T0.
 
+## RTAD-T1 Selection Note
+
+RTAD-T1 selects Model Gateway as the first runtime-entry pilot. Source-backed
+evidence is recorded in
+`docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md`.
+
+The selection is bounded: Model Gateway is the runtime-provider bridge, while
+MCP remains a later agent/tool ingress surface. The intended sequence is Model
+Gateway local deterministic pilot first, then any later MCP gateway pilot only
+after a fresh authorization.
+
+## RTAD-T2 Dispatch Record
+
+RTAD-T2 dispatch is authored as:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md`
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md`
+
+RTAD-T2 is local deterministic Model Gateway admission only. It does not
+authorize provider network proof, credential use, provider ranking, registry
+mutation, public-sync, MCP implementation, release-readiness claim, or
+external-facing readiness claim.
+
 ## Current Runtime Freshness Verification
 
-Runtime freshness is `N/A with reason`: RTAD-T0 changes only governed roadmap
-and review documentation. It does not inspect, execute, or mutate runtime
-source, provider configuration, live credentials, public-sync, registries, or
-product behavior. Any future runtime pilot requires RTAD-T1 selection and a
-fresh runtime-specific GC-018/work order.
+Runtime freshness is bounded: RTAD-T1 selected Model Gateway using direct
+source and prior-closure evidence, and RTAD-T2 dispatch authorizes only a local
+deterministic admission pilot. This roadmap update does not execute or mutate
+runtime source, provider configuration, live credentials, public-sync,
+registries, MCP gateway code, or product behavior.
 
 ## Acceptance Criteria
 
@@ -140,6 +170,8 @@ fresh runtime-specific GC-018/work order.
 | RTAD-T0-AC3 | PLCS no longer advertises active post-PLCS-T3 roadmap state. |
 | RTAD-T0-AC4 | Changed closed-equivalent roadmaps expose machine closure evidence. |
 | RTAD-T0-AC5 | Runtime remains parked pending fresh runtime-specific authorization. |
+| RTAD-T1-AC1 | One runtime pilot target is selected from source-backed evidence. |
+| RTAD-T2-AC1 | Fresh GC-018 and source-verified work order exist for the selected pilot. |
 
 ## Verification / Evidence
 
@@ -157,8 +189,10 @@ Required verification before closure:
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
 | Work order status | N/A with reason: direct Codex terminal-alignment closeout authorized by operator in chat | no delegated work order in this batch | N/A with reason |
-| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this roadmap | `Status: RTAD_T0_CLOSED_PASS_BOUNDED_RUNTIME_PARKED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RTAD_T0_FOUNDATION_TERMINAL_ALIGNMENT_COMPLETION_2026-06-18.md`; `docs/reviews/CVF_RTAD_T1_MODEL_GATEWAY_RUNTIME_PILOT_SELECTION_2026-06-18.md` | T0 `Status: CLOSED_PASS_BOUNDED`; T1 `Status: COMPLETE_WITH_DECLARED_LIMITS` | PASS |
+| Roadmap state | this roadmap | `Status: RTAD_T1_SELECTED_T2_DISPATCH_READY_RUNTIME_PARKED` | PASS |
+| RTAD-T2 GC-018 | `docs/baselines/CVF_GC018_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
+| RTAD-T2 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T2_MODEL_GATEWAY_RUNTIME_ADMISSION_PILOT_FOR_CODEX_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
 | Registry JSON | BLOCKED with reason: no registry edit authorized | no registry JSON path changed | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry Markdown path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no external source or live proof authorized | repo-local governed artifacts only | N/A with reason |
@@ -197,4 +231,4 @@ authorized.
 
 RTAD-T0 is governance terminal alignment only. It does not select a runtime
 pilot, implement runtime behavior, run provider/live proof, mutate registries,
-public-sync, or claim production/public readiness.
+public-sync, or claim release-facing readiness.
