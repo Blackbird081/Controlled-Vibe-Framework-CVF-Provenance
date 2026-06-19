@@ -1,9 +1,11 @@
 {
   "schemaVersion": "1.0.0",
   "batchId": "DELTA-T7",
-  "status": "COMPLETE_PENDING_REVIEW",
+  "status": "CLOSED_PASS_BOUNDED",
   "dispatchCommit": "264cc598",
   "executionBaseHead": "2fb39e44",
+  "materialCommit": "fcf28c0d",
+  "closureBaseHead": "b13632e0",
   "auditContract": "cvf.delta.receiptToExecutionEvidenceAudit.v1",
   "checks": [
     "focused Vitest PASS 1 file / 11 tests",
