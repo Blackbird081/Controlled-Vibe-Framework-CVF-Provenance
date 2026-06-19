@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure`
+Current mode marker: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure`.
+Current mode: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`.
 
-Previous mode: `delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready`.
+Previous mode: `delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure`.
 
 Active handoff:
 
@@ -803,7 +803,7 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure`.
+Mode: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
@@ -814,19 +814,20 @@ one approval-backed local mutating profile, `approval-marker-write`, with fixed
 marker target `.cvf/delta/approval-marker-write.json` and durable approval/
 marker evidence.
 
-Delta-T4B Mutating Profile Boundary Guard is
-`ACCEPTED_MATERIAL_PENDING_CLOSURE` at material commit `39a22e3f`. It added a
-range-aware governed Markdown checker for future mutating-profile boundary
-artifacts, focused tests, hook/autorun wiring, completion review, and evidence.
-Focused tests PASS 9/9, direct checker PASS, worker-return fast gate PASS,
-implementation steward PASS, and pre-commit hook PASS 53/53. It does not
-authorize runtime profile expansion, provider/live calls, public-sync, direct
-interception, arbitrary commands, EDIT/COMMIT execution, or universal
-enforcement claims.
+Delta-T4B Mutating Profile Boundary Guard is `CLOSED_PASS_BOUNDED` at material
+commit `39a22e3f` and closure commit `5b1f7c2a`. It added a range-aware
+governed Markdown checker for future mutating-profile boundary artifacts,
+focused tests, hook/autorun wiring, completion review, and evidence. Focused
+tests PASS 9/9, direct checker PASS, worker-return fast gate PASS,
+implementation steward PASS, material pre-commit hook PASS 53/53, and closure
+pre-commit hook PASS 53/53. It does not authorize runtime profile expansion,
+provider/live calls, public-sync, direct interception, arbitrary commands,
+EDIT/COMMIT execution, or universal enforcement claims.
 
-Next allowed move: perform accepted-material session sync, then convert
-Delta-T4B GC-018, work order, completion review, and evidence JSON to closure
-status if pre-closure gates pass.
+Next allowed move: return to MCP to Model Gateway Composition Proof selection
+with fresh GC-018 and a source-verified work order before implementation.
+Delta Execution Control runtime expansion remains parked until separately
+authorized after the composition proof or another explicit operator checkpoint.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
