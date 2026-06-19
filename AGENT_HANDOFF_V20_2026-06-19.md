@@ -42,6 +42,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherAcceptedMaterial20260619.json`
+- `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
@@ -55,13 +56,13 @@ Do not alter material commit `ff584e42` or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t3_governed_command_launcher_accepted_material_pending_closure`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Codex closes the four matching Delta-T3 governance artifacts on a dedicated range and then performs final session sync; parked checkpoint=npm script profiles, arbitrary/mutating execution, EDIT/COMMIT, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal governed-coding claims.
+Startup acknowledged: current mode=`delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator decides whether to authorize a fresh Delta-T4 approval-backed mutating execution/EDIT-COMMIT boundary or select another bounded CVF lane; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal governed-coding claims.
 
 ## Current Mode
 
-`delta_t3_governed_command_launcher_accepted_material_pending_closure`
+`delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`
 
-Current HEAD recorded for this handoff: `bcc4374f`
+Current HEAD recorded for this handoff: `7a654dfb`
 
 Material state:
 
@@ -69,6 +70,8 @@ Material state:
 - Delta-T3 execution base: `aae39481`
 - Delta-T3 accepted material commit: `ff584e42`
 - V20 routing metadata commit: `bcc4374f`
+- Accepted-material session-sync commit: `febf67fc`
+- Delta-T3 closure commit: `7a654dfb`
 - Focused tests: PASS 2 files / 15 tests
 - Full MCP tests: PASS 29 files / 610 tests
 - MCP package build: PASS
@@ -92,9 +95,8 @@ and cannot support this tranche's fixed non-destructive command claim.
 
 ## Active Boundary
 
-Only reviewer-owned conversion of the four Delta-T3 governance artifacts and
-the matching final session sync are active. Runtime source is accepted and must
-not be expanded during closure.
+Delta-T3 is closed bounded. No execution expansion is active; the next step is
+an operator decision on a separately governed Delta-T4 or another CVF lane.
 
 ## Latest Work / Changes
 
@@ -105,12 +107,13 @@ material commit `ff584e42`.
 
 ## Next Allowed Move
 
-Delta-T3 is `ACCEPTED_MATERIAL_PENDING_CLOSURE` at commit `ff584e42`.
+Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
+commit `7a654dfb`.
 
-Next allowed move: convert the matching GC-018, work order, completion review,
-and evidence JSON to `CLOSED_PASS_BOUNDED` on a dedicated closure range. Then
-perform final session sync and present the next execution-boundary decision to
-the operator.
+Next allowed move: operator decision whether to authorize a fresh Delta-T4
+approval-backed mutating execution profile/EDIT-COMMIT boundary through fresh
+GC-018 and source verification, or stop Delta expansion and select another
+bounded CVF lane. No Delta-T4 work is auto-authorized.
 
 ## Parked Operator Checkpoints
 
@@ -143,22 +146,22 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T3 accepted-material sync and V20 rotation, 2026-06-19 |
+| Session or invocation | Delta-T3 final closure session sync, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
 | Target paths | active handoff and generated session-state surfaces listed below |
 | Allowed scope source | operator Delta-T3 continuation request and governed file-size rotation requirement |
-| Before status evidence | material commit `ff584e42`; routing metadata commit `bcc4374f` |
-| After status evidence | V20 active, V19 archived, accepted-material session state aligned |
+| Before status evidence | closure commit `7a654dfb`; clean worktree |
+| After status evidence | Delta-T3 closure state and operator-decision next move aligned |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | continuity and mandatory handoff rotation only |
+| Approval boundary | final Delta-T3 continuity only; no Delta-T4 authorization |
 | Claim boundary | no runtime, provider/live, public-sync, or execution-scope expansion |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t3-v20-rotation-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherAcceptedMaterial20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherAcceptedMaterial20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `delta-t3-final-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | `AGENT_HANDOFF_V19_2026-06-15.md` moved to `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md` because the active file reached the mandatory rotation threshold; no continuity was deleted |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
 ## Claim Boundary
 

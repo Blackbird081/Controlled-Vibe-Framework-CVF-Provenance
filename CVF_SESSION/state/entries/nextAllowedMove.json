@@ -1,5 +1,5 @@
 {
-  "stateOrder": 467,
+  "stateOrder": 469,
   "stateKey": "nextAllowedMove",
-  "value": "Delta-T3 Governed Command Launcher material is ACCEPTED_MATERIAL_PENDING_CLOSURE at commit ff584e42. Next allowed move: Codex converts the matching GC-018, work order, completion review, and evidence JSON to CLOSED_PASS_BOUNDED on a dedicated closure range, then performs final session sync. The accepted runtime owns only git-status and git-diff-check after durable Delta-T1/T2/T3 admission. No npm script profile, arbitrary or mutating command, EDIT/COMMIT, shell/interpreter, provider/live, public-sync, queue/daemon, workspace-state mutation, direct IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Delta-T3 Governed Command Launcher is CLOSED_PASS_BOUNDED at material commit ff584e42 and closure commit 7a654dfb. Operator decision is required before any Delta-T4 approval-backed mutating execution profile or EDIT/COMMIT boundary; such work requires fresh GC-018 and source verification, or the operator may stop Delta expansion and select another bounded CVF lane. No npm script profile, arbitrary/mutating command, direct IDE/shell/filesystem interception, provider/live, public-sync, queue/daemon, workspace-state mutation, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
 }

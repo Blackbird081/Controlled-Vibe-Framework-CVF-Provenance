@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t3_governed_command_launcher_accepted_material_pending_closure`
+Current mode marker: `delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t3_governed_command_launcher_accepted_material_pending_closure`.
+Current mode: `delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`.
 
 Previous mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
@@ -793,14 +793,16 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t3_governed_command_launcher_accepted_material_pending_closure`.
+Mode: `delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`.
 
-Delta-T3 material is accepted at commit `ff584e42`.
+Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
+commit `7a654dfb`.
 
-Next allowed move: Codex closes the matching four Delta-T3 governance
-artifacts on a dedicated range, then performs final session sync. The accepted
-runtime owns only `git-status` and `git-diff-check`. Arbitrary/mutating
-execution, npm script profiles, and external interception remain parked.
+Next allowed move: operator decision whether to authorize a fresh Delta-T4
+approval-backed mutating execution/EDIT-COMMIT boundary, or stop Delta
+expansion and select another bounded CVF lane. No Delta-T4 work is
+auto-authorized. Arbitrary/mutating execution, npm script profiles, and
+external interception remain parked.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
