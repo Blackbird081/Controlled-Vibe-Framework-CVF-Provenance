@@ -1,0 +1,29 @@
+{
+  "stateOrder": 494,
+  "stateKey": "gglT1GovernanceGateLatencyOptimizationClosure20260619",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "7de440d2",
+    "dispatchHandoffBridgeCommit": "309e9f57",
+    "materialCommit": "b71bde91",
+    "materialHandoffBridgeCommit": "969455b3",
+    "closureCommit": "913c8c9b",
+    "gc018": "docs/baselines/CVF_GC018_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md",
+    "evidenceJson": "docs/reviews/evidence/ggl-t1-governance-gate-latency-audit-optimization-2026-06-19.json",
+    "checks": [
+      "focused pytest PASS 19/19",
+      "parallel pre-implementation PASS 44/44 in 3.35s",
+      "serial pre-implementation PASS 44/44 in 9.19s",
+      "exact receipt reuse steward PASS in 1.2s total",
+      "worker-return fast gate PASS",
+      "material pre-commit hook PASS 54/54",
+      "material pre-closure PASS 43/43 in 3.59s",
+      "closure steward exact receipt reuse PASS",
+      "closure pre-commit hook PASS 54/54"
+    ],
+    "claimBoundary": "GGL-T1 proves only fail-closed local autorun and commit-steward orchestration optimization with unchanged checker coverage on the observed host. It does not prove universal speedup, git-hook optimization, runtime governance, direct interception, provider/live behavior, public readiness, production readiness, release readiness, or universal governed-coding control.",
+    "nextAllowedMove": "Open the receipt-to-execution evidence auditor only through fresh GC-018 and a source-verified work order. Runtime/provider/public/direct-interception scope remains parked."
+  }
+}

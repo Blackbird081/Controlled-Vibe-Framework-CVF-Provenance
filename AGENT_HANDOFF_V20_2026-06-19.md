@@ -37,10 +37,10 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record Delta-T6 closure commit `50812e9c`
-and move session front doors to the post-closure next-foundation routing. This
-is a session-sync commit and does not open runtime, provider, public, or
-execution scope.
+Authorized guard-maintenance scope: record GGL-T1 closure commit `913c8c9b`,
+compact the oversized session front door, and route next work to the receipt-
+to-execution evidence auditor. This session-sync does not open runtime,
+provider, public, or direct-interception scope.
 
 Protected paths:
 
@@ -62,8 +62,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`
 - `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerDispatch20260619.json`
 - `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`
+- `CVF_SESSION/state/entries/gglT1GovernanceGateLatencyOptimizationClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Operator authorization: the operator asked Codex to continue the recommended
@@ -81,13 +83,13 @@ commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche with fresh GC-018 and source verification, recommended candidate receipt-to-execution evidence auditor or another bounded governance-control-plane hardening tranche; parked checkpoint=runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`ggl_t1_gate_latency_optimization_closed_receipt_auditor_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=open the receipt-to-execution evidence auditor through fresh GC-018 and source verification; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready`
+`ggl_t1_gate_latency_optimization_closed_receipt_auditor_ready`
 
-Current HEAD recorded for this handoff: `50812e9c`
+Current HEAD recorded for this handoff: `913c8c9b`
 
 Material state:
 
@@ -291,9 +293,14 @@ commit `50812e9c`, after dispatch commit `73539dab`, dispatch session-sync
 commit `1fbe968e`, material commit `3ef55abc`, and handoff bridge commit
 `c72449cf`.
 
-Next allowed move: select the next high-value foundation tranche with fresh
-GC-018 and source verification. Recommended candidate: a receipt-to-execution
-evidence auditor or another bounded governance-control-plane hardening tranche.
+GGL-T1 Governance Gate Latency Audit And Optimization is
+`CLOSED_PASS_BOUNDED` at closure commit `913c8c9b`, after dispatch `7de440d2`,
+dispatch handoff bridge `309e9f57`, material `b71bde91`, and material handoff
+bridge `969455b3`.
+
+Next allowed move: open the receipt-to-execution evidence auditor only through
+fresh GC-018 and a source-verified work order. Git-hook lane optimization is a
+separate future finding and does not displace the operator-selected auditor.
 
 ## Parked Operator Checkpoints
 
