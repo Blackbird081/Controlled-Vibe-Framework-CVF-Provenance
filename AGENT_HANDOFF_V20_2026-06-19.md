@@ -258,6 +258,14 @@ as `CLOSED_PASS_BOUNDED`. It added no runtime/provider/public/direct
 interception behavior and proves only forward-only governed Markdown
 execution-claim boundary checking.
 
+GGL-T1 Governance Gate Latency Audit And Optimization dispatch commit
+`7de440d2` opened a bounded control-plane tranche. The packet authorizes
+complete-manifest parallel autorun execution, timing evidence, and fail-closed
+reuse of an exact local ignored PASS receipt by commit steward. It does not
+authorize checker suppression, hook bypass, runtime/provider/public/UI work,
+or universal speed claims. The execution base is this handoff-only bridge
+commit; protected session mode remains unchanged until material closure.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -327,6 +335,8 @@ LHW24 remains the latest closed numbered LHW wave.
 - Delta-T6 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`
 - Delta-T6 completion: `docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md`
 - Delta-T6 evidence: `docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json`
+- GGL-T1 GC-018: `docs/baselines/CVF_GC018_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_2026-06-19.md`
+- GGL-T1 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_FOR_CODEX_2026-06-19.md`
 - Predecessor continuity: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
 
 ## Agent Operation Trace Block
