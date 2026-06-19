@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t1_governance_action_preflight_receipt_dispatch_ready`
+Current mode marker: `delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t1_governance_action_preflight_receipt_dispatch_ready`.
+Current mode: `delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`.
 
 Previous mode: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`.
 
@@ -329,11 +329,10 @@ audit, wrapper/proxy execution control, universal governed-coding control,
 production readiness, public readiness, release readiness, or external-facing
 readiness was authorized or performed.
 
-Delta-T1 Governance Action Preflight Receipt is `DISPATCH_READY_FOR_CLAUDE` at
-dispatch commit `dcf55645`. The fresh GC-018 and source-verified work order
-preserve the existing Gamma classifier, authorize a distinct durable preflight
-receipt component, and require Claude to return uncommitted changes for Codex
-review. No Delta runtime implementation has been accepted yet.
+Delta-T1 Governance Action Preflight Receipt material is accepted at commit
+`156b0610`. Codex repaired structured-secret detection, concurrent durable-write
+serialization, and the required artifact manifest before acceptance. Closure
+conversion and final session sync remain pending.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -788,15 +787,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t1_governance_action_preflight_receipt_dispatch_ready`.
+Mode: `delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`.
 
-Delta-T1 Governance Action Preflight Receipt is
-`DISPATCH_READY_FOR_CLAUDE` at dispatch commit `dcf55645`.
+Delta-T1 material is accepted at commit `156b0610`.
 
-Next allowed move: Claude implements only the source/test/worker-return scope
-in the Delta-T1 work order under `WORKER_MUST_NOT_COMMIT`, leaves HEAD
-unchanged, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-Codex remains reviewer, closer, commit owner, and session-sync actor.
+Next allowed move: Codex closes the matching GC-018, work order, completion
+review, and evidence JSON on a dedicated closure range, commits closure, then
+performs final session sync.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

@@ -30,7 +30,8 @@ External agent memory files: non-canonical convenience only.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after Delta-T1 Governance
-Action Preflight Receipt dispatch commit `dcf55645`, following MCP to Model
+Action Preflight Receipt accepted material commit `156b0610`, following dispatch
+commit `dcf55645` and MCP to Model
 Gateway Composition Proof material commit `befad4a9`, following External Knowledge
 Absorption Chain Map material commit `7c3db96a`, following MCP Gateway
 Execution Control Legacy Recheck material commit `5f75d52c`, following
@@ -94,6 +95,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/externalKnowledgeAbsorptionChainMapClosure20260619.json`
 - `CVF_SESSION/state/entries/mcpModelGatewayCompositionProofClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT1GovernanceActionPreflightReceiptDispatch20260619.json`
+- `CVF_SESSION/state/entries/deltaT1GovernanceActionPreflightReceiptAcceptedMaterial20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -161,8 +163,9 @@ a real Model Gateway `ProviderExecutionBridge` through the injected executor
 port while preserving response/error/receipt evidence. Delta Execution Control
 is now the next candidate, but only through fresh GC-018 and a source-verified
 work order. Codex then created the fresh Delta-T1 GC-018 and source-verified
-Claude work order at dispatch commit `dcf55645`; implementation remains pending
-under `WORKER_MUST_NOT_COMMIT`.
+  Claude work order at dispatch commit `dcf55645`. Claude returned uncommitted
+  material; Codex repaired three bounded findings and accepted it at commit
+  `156b0610`. Closure conversion remains pending.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
 MCP to Model Gateway Composition Proof material commit, External Knowledge
@@ -182,14 +185,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t1_governance_action_preflight_receipt_dispatch_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude implements the Delta-T1 work order without commit and returns evidence for Codex review; parked checkpoint=provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, wrapper/CLI/proxy receipt enforcement, IDE/shell/git/filesystem interception, workspace state mutation, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and universal governed-coding control claims.
+Startup acknowledged: current mode=`delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex closes the four Delta-T1 closure artifacts and then performs final session sync; parked checkpoint=provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, wrapper/CLI/proxy receipt consumption or interception, IDE/shell/git/filesystem interception, workspace state mutation, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and universal governed-coding control claims.
 
 ## Current Mode
 
-`delta_t1_governance_action_preflight_receipt_dispatch_ready`
+`delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`
 
-Current HEAD recorded for this handoff: `dcf55645`
-(Delta-T1 Governance Action Preflight Receipt dispatch commit `dcf55645`;
+Current HEAD recorded for this handoff: `156b0610`
+(Delta-T1 Governance Action Preflight Receipt accepted material commit `156b0610`;
+dispatch commit `dcf55645`;
 MCP to Model Gateway Composition Proof material commit `befad4a9`;
 External Knowledge Absorption Chain Map material commit `7c3db96a`;
 MCP Gateway Execution Control Legacy Recheck material commit `5f75d52c`;
@@ -876,13 +880,12 @@ source-verified work order.
 
 ## Next Allowed Move
 
-Delta-T1 Governance Action Preflight Receipt is
-`DISPATCH_READY_FOR_CLAUDE` at dispatch commit `dcf55645`.
+Delta-T1 material is accepted at commit `156b0610` after three Codex reviewer
+repairs.
 
-Next allowed move: Claude implements only the source/test/worker-return scope
-in the Delta-T1 work order under `WORKER_MUST_NOT_COMMIT`, leaves HEAD
-unchanged, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-Codex remains reviewer, closer, commit owner, and session-sync actor.
+Next allowed move: Codex closes the matching GC-018, work order, completion
+review, and evidence JSON on a dedicated closure range, commits closure, then
+performs final session sync.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation remains held for explicit public-sync

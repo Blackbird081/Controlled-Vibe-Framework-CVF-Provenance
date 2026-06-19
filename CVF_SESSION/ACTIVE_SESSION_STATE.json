@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_t1_governance_action_preflight_receipt_dispatch_ready",
-  "previousMode": "mcp_model_gateway_composition_proof_closed_delta_execution_control_ready",
+  "currentMode": "delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure",
+  "previousMode": "delta_t1_governance_action_preflight_receipt_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -1288,7 +1288,7 @@
   "lastUpdated": "2026-06-18",
   "roadmapStateReconciliationT1Dispatch20260616": "Roadmap State Reconciliation RSF-T1 dispatch packet committed at 0977365e. Artifacts: docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md; docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T1_2026-06-16.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md. Purpose: reconcile stale CI2 roadmap state after source audit found CI2-T3/T4/T5 completion reviews already exist. Claim boundary: documentation-only dispatch; RSF-T2 machine guard not yet implemented.",
   "roadmapStateReconciliationT1Closure20260616": "Roadmap State Reconciliation RSF-T1 is CLOSED_PASS_BOUNDED at material commit 1c3724d0. CI2 roadmap now records ALL_TRANCHES_CLOSED_PASS_BOUNDED, CI2-T3/T4/T5 completion evidence is source-backed, and the active archive baseline has a blocked entry for the touched stale CI2 roadmap. RSF-T2 is authorized as the next governance foundation move: implement a narrow stale-roadmap redispatch guard. Claim boundary: no runtime/provider/public/legacy broad scan or LPCI product implementation is authorized by RSF-T1 closure.",
-  "nextAllowedMove": "Delta-T1 Governance Action Preflight Receipt is DISPATCH_READY_FOR_CLAUDE at dispatch commit dcf55645 with fresh GC-018 and a source-verified WORKER_MUST_NOT_COMMIT work order. Next allowed move: Claude implements only docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_FOR_CLAUDE_2026-06-19.md, runs pre-implementation from the current clean HEAD, leaves HEAD unchanged, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with required evidence. Codex remains reviewer, closer, commit owner, and session-sync actor. Provider/live calls, secrets/quota, public-sync, runtime queues/schedulers/daemons, wrapper/CLI/proxy execution control, IDE/shell/git/filesystem interception, workspace state mutation, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and any universal governed-coding claim remain parked. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Delta-T1 Governance Action Preflight Receipt material is accepted at commit 156b0610 after Codex repaired structured-secret detection, concurrent durable-write serialization, and the required artifact manifest. Next allowed move: Codex converts the matching GC-018, work order, completion review, and evidence JSON to CLOSED_PASS_BOUNDED, runs closure gates on the dedicated closure range, and commits closure before final session sync. Provider/live calls, secrets/quota, public-sync, runtime queues/schedulers/daemons, wrapper/CLI/proxy receipt consumption or interception, IDE/shell/git/filesystem interception, workspace state mutation, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and any universal governed-coding claim remain parked. LHW24 remains the latest closed numbered LHW wave.",
   "cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616": "RECONCILED_SUPERSEDED_BY_CLOSURE. Original CCLV-T2 dispatch commit 7e11c39c was superseded by accepted combined-role execution and bounded closure at material commit bf938549 after FPRC-T1 closed at material commit 51f56133. Codex audited and accepted the implementation in docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md. Completion evidence: docs/reviews/CVF_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_COMPLETION_2026-06-16.md. GC-018: docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md. Current-state reconciliation: PRFC-T1 removes the obsolete pause boundary from live agent-facing state while preserving historical dispatch provenance.",
   "centralCoreLocalViewPromptHeaderPacketClosure20260616": "CLOSED_PASS_BOUNDED at material commit ef6f67de. Codex hardened the dispatch prompt envelope standard/checker so new delegated dispatch-ready work orders must place the envelope read-first before Mission and no later than line 80. The work-order template now keeps the envelope pointer before Mission while staying at the 1200-line hard threshold. New standard: docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md. Roadmaps opened: docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md and docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md. Completion review: docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md. Focused tests pass 32/32; reviewer-fast passed; material pre-closure passed except expected active handoff sync.",
   "earcT3BExternalAbsorptionTableCheckerClosure20260618": {
@@ -2193,5 +2193,26 @@
     ],
     "claimBoundary": "Dispatch only for a deterministic local MCP governance-action preflight and durable secret-safe audit receipt. No external action interception, provider/live call, secrets/quota use, public-sync, queue/scheduler/daemon, wrapper/CLI/proxy receipt enforcement, workspace state mutation, universal governed-coding control, or readiness claim.",
     "nextAllowedMove": "Claude implements only the source/test/worker-return scope in the work order without committing, then returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON."
+  },
+  "deltaT1GovernanceActionPreflightReceiptAcceptedMaterial20260619": {
+    "status": "ACCEPTED_MATERIAL_PENDING_CLOSURE",
+    "acceptedMaterialCommit": "156b0610",
+    "executionBaseHead": "d0dca484",
+    "workerReturn": "docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_WORKER_RETURN_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md",
+    "reviewerRepairs": [
+      "structured secret-bearing values are rejected before persistence",
+      "durable JSON audit writes are serialized and recover after a failed queued write",
+      "work-order Required Artifact Manifest is present"
+    ],
+    "checks": [
+      "focused Vitest PASS 2 files / 48 tests",
+      "MCP package test suite PASS 26 files / 584 tests",
+      "MCP package build PASS",
+      "reviewer-fast PASS 28/28 before accepted-material commit",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Accepted material proves only an invoked deterministic MCP preflight with serialized secret-safe durable persistence and a correlated bounded receipt. It does not prove mandatory invocation, action execution, receipt consumption, external interception, provider/live behavior, public readiness, or universal governed-coding control.",
+    "nextAllowedMove": "Codex converts the four reviewer-owned closure artifacts to CLOSED_PASS_BOUNDED, runs closure gates on a dedicated range, commits closure, then performs final session sync."
   }
 }
