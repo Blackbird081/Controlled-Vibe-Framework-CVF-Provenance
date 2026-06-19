@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`
+Current mode marker: `eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`.
+Current mode: `eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`.
 
 Previous mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
@@ -793,19 +793,18 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`.
+Mode: `eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
 
 Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake
-Routing Guard T1 is the preferred next foundation candidate at decision commit
-`9f0b4c9f`.
+Routing Guard T1 is dispatched at commit `f74a3220` with fresh GC-018 and a
+source-verified work order.
 
-Next allowed move: operator may authorize fresh GC-018 and a source-verified
-work order for bounded range-aware governed-artifact routing. EKA-R1 is not yet
-dispatch-ready or implemented; Delta-T4 and external interception remain
-parked.
+Next allowed move: implement the bounded range-aware governed-artifact routing
+guard, focused tests, hook/autorun wiring, and closure evidence under the
+EKA-R1 work order. Delta-T4 and external interception remain parked.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

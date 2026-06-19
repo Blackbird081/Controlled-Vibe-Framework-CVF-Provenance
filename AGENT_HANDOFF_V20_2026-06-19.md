@@ -62,13 +62,13 @@ Do not alter material commit `ff584e42` or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator may authorize fresh GC-018 and source-verified work order for EKA-R1 bounded external knowledge intake routing guard; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=implement the bounded EKA-R1 external knowledge intake routing guard under the dispatched work order; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`
+`eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`
 
-Current HEAD recorded for this handoff: `9f0b4c9f`
+Current HEAD recorded for this handoff: `f74a3220`
 
 Material state:
 
@@ -79,6 +79,7 @@ Material state:
 - Accepted-material session-sync commit: `febf67fc`
 - Delta-T3 closure commit: `7a654dfb`
 - Post-Delta-T3 foundation selection commit: `9f0b4c9f`
+- EKA-R1 dispatch commit: `f74a3220`
 - Focused tests: PASS 2 files / 15 tests
 - Full MCP tests: PASS 29 files / 610 tests
 - MCP package build: PASS
@@ -102,8 +103,8 @@ and cannot support this tranche's fixed non-destructive command claim.
 
 ## Active Boundary
 
-Delta-T3 is closed bounded and Delta-T4 is parked. EKA-R1 is the preferred
-foundation candidate but remains pending operator authorization.
+Delta-T3 is closed bounded and Delta-T4 is parked. EKA-R1 is dispatched for
+bounded implementation.
 
 ## Latest Work / Changes
 
@@ -115,11 +116,11 @@ material commit `ff584e42`.
 ## Next Allowed Move
 
 Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake
-Routing Guard T1 is recommended at decision commit `9f0b4c9f`.
+Routing Guard T1 is dispatched at commit `f74a3220`.
 
-Next allowed move: operator may authorize fresh GC-018 and a source-verified
-work order for the bounded range-aware EKA-R1 checker. EKA-R1 is not yet
-dispatch-ready or implemented and makes no universal interception claim.
+Next allowed move: implement the bounded range-aware EKA-R1 checker, focused
+tests, hook/autorun wiring, and closure evidence under the dispatched work
+order. EKA-R1 makes no universal interception claim.
 
 ## Parked Operator Checkpoints
 

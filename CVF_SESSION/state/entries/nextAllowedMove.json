@@ -1,5 +1,5 @@
 {
   "stateOrder": 471,
   "stateKey": "nextAllowedMove",
-  "value": "Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake Routing Guard T1 is the preferred next foundation candidate at decision commit 9f0b4c9f because it offers broader cross-lane governance leverage with lower irreversible risk. Next allowed move: operator may authorize fresh GC-018 and a source-verified work order for a bounded range-aware governed-artifact routing guard. EKA-R1 is not yet dispatch-ready or implemented and does not claim universal interception. Runtime/provider/live/public-sync/registry/readiness expansion remains unauthorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "EKA-R1 External Knowledge Intake Routing Guard T1 is dispatched at commit f74a3220 with fresh GC-018 and a source-verified work order. Next allowed move: implement the bounded range-aware governed-artifact routing guard, focused tests, hook/autorun wiring, and closure evidence under the EKA-R1 work order. Delta-T4 remains parked. Runtime/provider/live/public-sync/registry/readiness expansion, broad external router/interception, and universal governed-coding control claims remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
 }
