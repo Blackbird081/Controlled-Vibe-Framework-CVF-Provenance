@@ -146,3 +146,65 @@ def test_worktree_fingerprint_changes_with_file_content(tmp_path: Path, monkeypa
     second = autorun._worktree_fingerprint("base", "head")
 
     assert first != second
+
+
+def test_git_status_short_keeps_stderr_separate(monkeypatch) -> None:
+    class Proc:
+        returncode = 0
+        stdout = ""
+        stderr = "warning: unable to access global ignore"
+
+    monkeypatch.setattr(autorun.subprocess, "run", lambda *args, **kwargs: Proc())
+
+    result = autorun._git_status_short()
+
+    assert result.returncode == 0
+    assert result.stdout == ""
+    assert result.stderr == "warning: unable to access global ignore"
+
+
+def test_closure_finality_allows_warning_only_git_status(monkeypatch, capsys) -> None:
+    monkeypatch.setattr(
+        autorun,
+        "_git_status_short",
+        lambda: autorun.GitStatusResult(
+            returncode=0,
+            stdout="",
+            stderr="warning: unable to access global ignore",
+        ),
+    )
+
+    assert autorun._closure_worktree_finality_failures() == 0
+    output = capsys.readouterr().out
+    assert "Git status diagnostics:" in output
+    assert "PASS: worktree is clean" in output
+
+
+def test_closure_finality_blocks_dirty_stdout(monkeypatch, capsys) -> None:
+    monkeypatch.setattr(
+        autorun,
+        "_git_status_short",
+        lambda: autorun.GitStatusResult(returncode=0, stdout=" M file.txt", stderr=""),
+    )
+
+    assert autorun._closure_worktree_finality_failures() == 1
+    output = capsys.readouterr().out
+    assert " M file.txt" in output
+    assert "cannot claim CLOSED" in output
+
+
+def test_closure_finality_blocks_nonzero_git_status(monkeypatch, capsys) -> None:
+    monkeypatch.setattr(
+        autorun,
+        "_git_status_short",
+        lambda: autorun.GitStatusResult(
+            returncode=128,
+            stdout="",
+            stderr="fatal: not a git repository",
+        ),
+    )
+
+    assert autorun._closure_worktree_finality_failures() == 1
+    output = capsys.readouterr().out
+    assert "Git status diagnostics:" in output
+    assert "git status --short failed" in output

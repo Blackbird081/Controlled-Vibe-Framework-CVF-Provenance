@@ -39,6 +39,14 @@ class LocalGovernanceHookChainTests(unittest.TestCase):
         self.assertIn("pre-commit", MODULE.PARALLEL_BY_DEFAULT_HOOKS)
         self.assertIn("pre-push", MODULE.PARALLEL_BY_DEFAULT_HOOKS)
 
+    def test_installed_pre_commit_hook_uses_parallel_default(self) -> None:
+        hook_text = (MODULE.REPO_ROOT / ".githooks" / "pre-commit").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("--hook pre-commit", hook_text)
+        self.assertNotIn("--serial", hook_text)
+
 
 if __name__ == "__main__":
     unittest.main()

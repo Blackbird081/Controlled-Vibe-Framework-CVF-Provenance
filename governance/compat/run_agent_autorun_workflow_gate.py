@@ -43,6 +43,13 @@ class GateResult:
     output: str
 
 
+@dataclass(frozen=True)
+class GitStatusResult:
+    returncode: int
+    stdout: str
+    stderr: str
+
+
 RANGE_GATE_NAMES = (
     "docs governance compatibility",
     "markdown structural completeness",
@@ -469,15 +476,38 @@ def _write_receipt(
     temp_path.replace(path)
 
 
-def _git_status_short() -> str:
+def _git_status_short() -> GitStatusResult:
     proc = subprocess.run(
         ["git", "status", "--short"],
         cwd=REPO_ROOT,
         text=True,
         stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
+        stderr=subprocess.PIPE,
     )
-    return proc.stdout.strip()
+    return GitStatusResult(
+        returncode=proc.returncode,
+        stdout=proc.stdout.strip(),
+        stderr=proc.stderr.strip(),
+    )
+
+
+def _closure_worktree_finality_failures() -> int:
+    status = _git_status_short()
+    if status.stderr:
+        print("Git status diagnostics:")
+        print(status.stderr)
+    if status.returncode != 0:
+        print("FAIL: git status --short failed during closure finality.")
+        return 1
+    if status.stdout:
+        print(status.stdout)
+        print(
+            "FAIL: pre-closure cannot claim CLOSED while worktree changes are "
+            "uncommitted, untracked, or otherwise unresolved."
+        )
+        return 1
+    print("PASS: worktree is clean for closure claim finality.")
+    return 0
 
 
 def _git_rev_parse(ref: str) -> str:
@@ -637,16 +667,7 @@ def _run_phase(
 
     if phase == "pre-closure":
         print("\n=== closure worktree finality ===")
-        status = _git_status_short()
-        if status:
-            print(status)
-            print(
-                "FAIL: pre-closure cannot claim CLOSED while worktree changes are "
-                "uncommitted, untracked, or otherwise unresolved."
-            )
-            failures += 1
-        else:
-            print("PASS: worktree is clean for closure claim finality.")
+        failures += _closure_worktree_finality_failures()
 
     if failures:
         elapsed = time.perf_counter() - total_started
