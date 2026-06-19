@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`
+Current mode marker: `delta_execution_control_selection_ready_after_mcp_composition_proof_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`.
+Current mode: `delta_execution_control_selection_ready_after_mcp_composition_proof_closed`.
 
-Previous mode: `delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure`.
+Previous mode: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`.
 
 Active handoff:
 
@@ -803,7 +803,7 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`.
+Mode: `delta_execution_control_selection_ready_after_mcp_composition_proof_closed`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
@@ -824,10 +824,16 @@ pre-commit hook PASS 53/53. It does not authorize runtime profile expansion,
 provider/live calls, public-sync, direct interception, arbitrary commands,
 EDIT/COMMIT execution, or universal enforcement claims.
 
-Next allowed move: return to MCP to Model Gateway Composition Proof selection
-with fresh GC-018 and a source-verified work order before implementation.
-Delta Execution Control runtime expansion remains parked until separately
-authorized after the composition proof or another explicit operator checkpoint.
+MCP to Model Gateway Composition Proof is already `CLOSED_PASS_BOUNDED` at
+material commit `befad4a9`. The existing MCP `cvf_model_gateway_execute`
+adapter has deterministic proof coverage showing it can call a real Model
+Gateway `ProviderExecutionBridge` through the injected executor port and
+preserve response/error/receipt evidence.
+
+Next allowed move: open Delta Execution Control selection with fresh GC-018 and
+a source-verified work order using `MCP-GW-001`, the external knowledge
+absorption chain map, and the composition proof artifacts as upstream context
+before implementation.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
