@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`
+Current mode marker: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`.
+Current mode: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`.
 
-Previous mode: `ggl_t1_gate_latency_optimization_closed_receipt_auditor_ready`.
+Previous mode: `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -86,14 +86,23 @@ closure commit `d82870b9`, after dispatch `264cc598`, dispatch handoff bridge
 closure handoff bridge `c4b49fbd`. Focused tests passed 11/11, the full MCP
 suite passed 31 files / 628 tests, and TypeScript build passed.
 
+GGL-T2 Git Hook Lane And Worktree Finality Reliability is
+`CLOSED_PASS_BOUNDED` at closure commit `a7b2f1d2`, after dispatch
+`cc6e4666`, dispatch handoff bridge `01836f18`, material commit `02678968`,
+and material handoff bridge `96a3611b`. Focused tests passed 17/17; direct
+hook proof passed 54/54 with parallel preflight enabled; worker-return fast
+gate passed; implementation steward passed with pre-implementation rerun 44/44;
+material-range pre-closure passed 43/43 with clean finality; closure pre-commit
+passed 54/54.
+
 ## Next Allowed Move
 
-Mode: `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`.
+Mode: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`.
 
 Next allowed move: select the next high-value foundation tranche through fresh
-GC-018 and source verification. GGL-T2 git-hook lane and worktree-finality
-reliability optimization is the leading candidate: pre-commit remains serial,
-and Git stderr can be misclassified as dirty-worktree output.
+GC-018 and source verification. Suggested candidates should prioritize durable
+CVF foundation value and must start from source verification, not provider
+memory.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct
@@ -119,12 +128,14 @@ gates, and governed file-size checks enforce this front-door contract.
 - `AGENT_HANDOFF_V20_2026-06-19.md`
 - `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_COMPLETION_2026-06-19.md`
+- `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 - `governance/compat/run_agent_commit_steward_preflight.py`
 
 ## Claim Boundary
 
-This front door is a pointer record only. GGL-T1 timing is host-specific and
-does not prove runtime behavior, provider behavior, hosted freshness, public
-readiness, production readiness, universal speedup, or automatic loading by
-external agents.
+This front door is a pointer record only. GGL-T1 and GGL-T2 timing and hook
+evidence are host-specific local governance-control evidence. They do not
+prove runtime behavior, provider behavior, hosted freshness, public readiness,
+production readiness, universal speedup, direct interception, universal
+governed-coding control, or automatic loading by external agents.

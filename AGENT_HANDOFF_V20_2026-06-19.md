@@ -37,10 +37,10 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize Delta-T7 closure commit
-`d82870b9`, closure handoff bridge `c4b49fbd`, generated active state, compact
-session memory, and the next bounded foundation route. This session sync does
-not open runtime, provider, public, or direct-interception scope.
+Authorized guard-maintenance scope: synchronize GGL-T2 closure commit
+`a7b2f1d2`, generated active state, compact session memory, and the next
+bounded foundation route. This session sync does not open runtime, provider,
+public, or direct-interception scope.
 
 Protected paths:
 
@@ -64,14 +64,14 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`
 - `CVF_SESSION/state/entries/gglT1GovernanceGateLatencyOptimizationClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`
+- `CVF_SESSION/state/entries/gglT2GitHookLaneFinalityReliabilityClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator asked Codex to complete Governance Gate
-Latency Audit And Optimization and then the receipt-to-execution evidence
-auditor. Delta-T7 is now closed bounded and this session sync records the next
+Operator authorization: the operator asked Codex to continue processing the
+finding. GGL-T2 is now closed bounded and this session sync records the next
 foundation selection lane without expanding runtime, public, provider, or
 execution scope.
 
@@ -85,13 +85,13 @@ commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche through fresh GC-018 and source verification, with GGL-T2 hook/finality reliability as the leading candidate; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`ggl_t2_hook_finality_reliability_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche through fresh GC-018 and source verification; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`
+`ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `02678968`
+Current HEAD recorded for this handoff: `a7b2f1d2`
 
 Material state:
 
@@ -305,6 +305,12 @@ passed with pre-implementation rerun 44/44. Material adds no checker
 suppression, hook bypass, runtime/provider/public/UI behavior, direct
 interception, or universal governed-coding claim.
 
+GGL-T2 is `CLOSED_PASS_BOUNDED` at closure commit `a7b2f1d2`, after dispatch
+`cc6e4666`, dispatch handoff bridge `01836f18`, material commit `02678968`,
+and material handoff bridge `96a3611b`. Material-range pre-closure passed
+43/43 with clean finality, and closure pre-commit passed 54/54. It proves only
+bounded local hook-lane and worktree-finality reliability.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -334,16 +340,15 @@ closure commit `d82870b9`, after dispatch `264cc598`, dispatch handoff bridge
 `2fb39e44`, material `fcf28c0d`, material handoff bridge `b13632e0`, and
 closure handoff bridge `c4b49fbd`.
 
-Next allowed move: select the next high-value foundation tranche through fresh
-GC-018 and source verification. GGL-T2 git-hook lane and worktree-finality
-reliability optimization is the leading candidate because pre-commit remains
-serial and Git stderr can be misclassified as dirty-worktree output.
+GGL-T2 Git Hook Lane And Worktree Finality Reliability is
+`CLOSED_PASS_BOUNDED` at closure commit `a7b2f1d2`.
 
-GGL-T2 material is now committed at `02678968`. Next allowed move: run
-committed-range pre-closure on the material range, convert GGL-T2 closure
-artifacts to `CLOSED_PASS_BOUNDED`, then perform separate session sync. Keep
-runtime profiles, provider/live calls, public-sync, CVF Web runtime action,
-direct interception, and universal governed-coding claims parked.
+Next allowed move: select the next high-value foundation tranche through fresh
+GC-018 and source verification. Suggested candidates should prioritize durable
+CVF foundation value and must start from source verification, not provider
+memory. Keep runtime profiles, provider/live calls, public-sync, CVF Web
+runtime action, direct interception, readiness, universal speed, and universal
+governed-coding claims parked.
 
 ## Parked Operator Checkpoints
 
