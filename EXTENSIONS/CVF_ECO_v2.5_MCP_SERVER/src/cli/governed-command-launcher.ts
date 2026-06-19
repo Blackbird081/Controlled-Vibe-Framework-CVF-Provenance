@@ -17,6 +17,13 @@ import {
   type GovernedExecutionReceipt,
   type GovernedExecutionStore,
 } from '../persistence/json-governed-execution.store.js';
+import {
+  APPROVAL_MARKER_PROFILE_ID,
+  APPROVAL_MARKER_TARGET_RELATIVE_PATH,
+  validateApprovalMarkerTarget,
+  writeApprovalMarkerFile,
+  type MutatingProfileApprovalPolicy,
+} from './mutating-profile-approval.js';
 
 export const GOVERNED_COMMAND_LAUNCHER_CONTRACT =
   'cvf.delta.governedCommandLauncher.v1' as const;
@@ -26,6 +33,7 @@ export const DEFAULT_COMMAND_TIMEOUT_MS = 600_000;
 export const GOVERNED_COMMAND_PROFILE_IDS = [
   'git-status',
   'git-diff-check',
+  APPROVAL_MARKER_PROFILE_ID,
 ] as const;
 export type GovernedCommandProfileId = (typeof GOVERNED_COMMAND_PROFILE_IDS)[number];
 
@@ -34,6 +42,7 @@ export interface GovernedCommandProfile {
   executable: string;
   args: readonly string[];
   riskLevel: CVFRiskLevel;
+  mutatingTargetRelativePath?: typeof APPROVAL_MARKER_TARGET_RELATIVE_PATH;
 }
 
 export function getGovernedCommandProfile(
@@ -51,6 +60,13 @@ export function getGovernedCommandProfile(
       executable: 'git',
       args: ['--no-pager', 'diff', '--no-ext-diff', '--no-textconv', '--check'],
       riskLevel: 'R0',
+    },
+    'approval-marker-write': {
+      id: APPROVAL_MARKER_PROFILE_ID,
+      executable: 'node',
+      args: ['--version'],
+      riskLevel: 'R1',
+      mutatingTargetRelativePath: APPROVAL_MARKER_TARGET_RELATIVE_PATH,
     },
   };
   return profiles[profileId as GovernedCommandProfileId] ?? null;
@@ -162,6 +178,7 @@ export interface GovernedCommandLauncherDependencies {
   receiptStore: ReceiptConsumptionStore;
   executionStore: GovernedExecutionStore;
   runner: GovernedCommandRunner;
+  approvalPolicy?: MutatingProfileApprovalPolicy;
   now?: () => number;
   generateConsumptionId?: () => string;
 }
@@ -181,6 +198,7 @@ export interface GovernedCommandLauncherResponse {
   stderr: string;
   knownCredentialPatternsRedacted: true;
   externalInterceptionProved: false;
+  approvalBackedMutationProved: boolean;
   error?: { code: string; message: string; retryable: boolean };
 }
 
@@ -205,6 +223,7 @@ function rejected(
     stderr: '',
     knownCredentialPatternsRedacted: true,
     externalInterceptionProved: false,
+    approvalBackedMutationProved: false,
     error: { code, message, retryable },
   };
 }
@@ -229,7 +248,27 @@ export function buildGovernedCommandAction(
   profile: GovernedCommandProfile,
   relativeCwd: string
 ): string {
-  return `profile=${profile.id}; executable=${profile.executable}; args=${JSON.stringify(profile.args)}; cwd=${relativeCwd}`;
+  const target = profile.mutatingTargetRelativePath
+    ? `; target=${profile.mutatingTargetRelativePath}`
+    : '';
+  return `profile=${profile.id}; executable=${profile.executable}; args=${JSON.stringify(profile.args)}; cwd=${relativeCwd}${target}`;
+}
+
+async function finalizeFailedIntent(
+  dependencies: GovernedCommandLauncherDependencies,
+  consumptionId: string,
+  diagnosticCode: string
+): Promise<void> {
+  await dependencies.executionStore.finalizeExecution(consumptionId, {
+    status: 'FAILED',
+    startedAt: null,
+    completedAt: new Date((dependencies.now ?? Date.now)()).toISOString(),
+    exitCode: null,
+    signal: null,
+    diagnosticCode,
+    executionStarted: false,
+    executionCompleted: false,
+  });
 }
 
 export async function launchGovernedCommand(
@@ -253,6 +292,9 @@ export async function launchGovernedCommand(
   }
 
   const action = buildGovernedCommandAction(profile, paths.relativeCwd);
+  const targetFiles = profile.mutatingTargetRelativePath
+    ? [profile.mutatingTargetRelativePath]
+    : undefined;
   const preflight = await preflightGovernanceAction(
     {
       actionClass: 'RUN',
@@ -262,6 +304,8 @@ export async function launchGovernedCommand(
       role: 'AI_AGENT',
       agentId: input.agentId?.trim() || 'cvf-governed-exec',
       scope: `workspace:${paths.relativeCwd}`,
+      targetFiles,
+      mutationCount: profile.mutatingTargetRelativePath ? 1 : undefined,
     },
     dependencies.engine,
     dependencies.preflightPersistence
@@ -276,7 +320,7 @@ export async function launchGovernedCommand(
   }
 
   const consumption = await consumeGovernanceActionReceipt(
-    { receiptId: preflight.receiptId, actionClass: 'RUN', action },
+    { receiptId: preflight.receiptId, actionClass: 'RUN', action, targetFiles },
     dependencies.receiptStore,
     {
       now: dependencies.now,
@@ -330,6 +374,64 @@ export async function launchGovernedCommand(
     return rejected('EXECUTION_INTENT_ALREADY_EXISTS', 'Execution intent already exists.', profile.id);
   }
 
+  let approvalId: string | null = null;
+  if (profile.mutatingTargetRelativePath) {
+    const target = validateApprovalMarkerTarget(profile.mutatingTargetRelativePath);
+    if (!target.valid) {
+      await finalizeFailedIntent(
+        dependencies,
+        consumption.consumptionId,
+        'APPROVAL_TARGET_MISMATCH'
+      );
+      return {
+        ...rejected('APPROVAL_TARGET_MISMATCH', 'The mutating profile target is not fixed.', profile.id),
+        receiptId: preflight.receiptId,
+        consumptionId: consumption.consumptionId,
+        bindingHash: consumption.bindingHash,
+      };
+    }
+    if (!dependencies.approvalPolicy) {
+      await finalizeFailedIntent(
+        dependencies,
+        consumption.consumptionId,
+        'APPROVAL_POLICY_MISSING'
+      );
+      return {
+        ...rejected(
+          'APPROVAL_POLICY_MISSING',
+          'The mutating profile requires a T4A approval policy.',
+          profile.id
+        ),
+        receiptId: preflight.receiptId,
+        consumptionId: consumption.consumptionId,
+        bindingHash: consumption.bindingHash,
+      };
+    }
+
+    const approval = await dependencies.approvalPolicy.evaluate({
+      profileId: profile.id,
+      targetRelativePath: profile.mutatingTargetRelativePath,
+      action,
+      bindingHash: consumption.bindingHash,
+      nowMs: (dependencies.now ?? Date.now)(),
+    });
+    if (!approval.approved || !approval.approvalId) {
+      const diagnosticCode = approval.diagnosticCode ?? 'APPROVAL_NOT_GRANTED';
+      await finalizeFailedIntent(dependencies, consumption.consumptionId, diagnosticCode);
+      return {
+        ...rejected(
+          diagnosticCode,
+          'The mutating profile approval evidence did not authorize execution.',
+          profile.id
+        ),
+        receiptId: preflight.receiptId,
+        consumptionId: consumption.consumptionId,
+        bindingHash: consumption.bindingHash,
+      };
+    }
+    approvalId = approval.approvalId;
+  }
+
   const runResult = await dependencies.runner.run({
     executable: profile.executable,
     args: profile.args,
@@ -338,15 +440,34 @@ export async function launchGovernedCommand(
     maxCaptureBytes: MAX_CAPTURE_BYTES,
   });
   const success = runResult.started && runResult.exitCode === 0;
+  let markerWritten = false;
+  let diagnosticCode = runResult.diagnosticCode;
+  if (success && profile.mutatingTargetRelativePath) {
+    try {
+      await writeApprovalMarkerFile({
+        workspaceRoot: paths.workspace,
+        targetRelativePath: profile.mutatingTargetRelativePath,
+        approvalId: approvalId!,
+        profileId: APPROVAL_MARKER_PROFILE_ID,
+        bindingHash: consumption.bindingHash,
+        consumptionId: consumption.consumptionId,
+        completedAt: runResult.completedAt,
+      });
+      markerWritten = true;
+    } catch {
+      diagnosticCode = 'APPROVAL_MARKER_WRITE_FAILED';
+    }
+  }
+  const finalSuccess = success && (!profile.mutatingTargetRelativePath || markerWritten);
 
   try {
     await dependencies.executionStore.finalizeExecution(consumption.consumptionId, {
-      status: success ? 'COMPLETED' : 'FAILED',
+      status: finalSuccess ? 'COMPLETED' : 'FAILED',
       startedAt: runResult.startedAt,
       completedAt: runResult.completedAt,
       exitCode: runResult.exitCode,
       signal: runResult.signal,
-      diagnosticCode: runResult.diagnosticCode,
+      diagnosticCode,
       executionStarted: runResult.started,
       executionCompleted: true,
     });
@@ -371,7 +492,7 @@ export async function launchGovernedCommand(
   const stderr = redactText(runResult.stderr).slice(0, MAX_CAPTURE_BYTES);
   return {
     contractVersion: GOVERNED_COMMAND_LAUNCHER_CONTRACT,
-    accepted: success,
+    accepted: finalSuccess,
     profileId: profile.id,
     receiptId: preflight.receiptId,
     consumptionId: consumption.consumptionId,
@@ -384,11 +505,13 @@ export async function launchGovernedCommand(
     stderr,
     knownCredentialPatternsRedacted: true,
     externalInterceptionProved: false,
-    ...(success
+    approvalBackedMutationProved:
+      profile.mutatingTargetRelativePath === APPROVAL_MARKER_TARGET_RELATIVE_PATH && markerWritten,
+    ...(finalSuccess
       ? {}
       : {
           error: {
-            code: runResult.diagnosticCode ?? 'COMMAND_FAILED',
+            code: diagnosticCode ?? 'COMMAND_FAILED',
             message: 'The governed command did not complete successfully.',
             retryable: false,
           },

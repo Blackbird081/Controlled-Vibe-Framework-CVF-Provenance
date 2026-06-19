@@ -14,6 +14,7 @@ import {
   GOVERNED_COMMAND_PROFILE_IDS,
   launchGovernedCommand,
 } from './governed-command-launcher.js';
+import { JsonMutatingProfileApprovalPolicy } from './mutating-profile-approval.js';
 
 export interface GovernedExecCliArgs {
   profileId: string;
@@ -81,6 +82,7 @@ export async function runGovernedExecCli(argv: string[]): Promise<number> {
       receiptStore: new JsonReceiptConsumptionStore({ dataDir, auditReader: auditAdapter }),
       executionStore: new JsonGovernedExecutionStore(dataDir),
       runner: new DirectGovernedCommandRunner(),
+      approvalPolicy: new JsonMutatingProfileApprovalPolicy(dataDir),
     }
   );
 

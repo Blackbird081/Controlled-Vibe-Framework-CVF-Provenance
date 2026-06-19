@@ -1,4 +1,4 @@
-import { mkdir, mkdtemp, rm, symlink } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, symlink } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
@@ -12,6 +12,12 @@ import type {
 } from '../persistence/json-governed-execution.store.js';
 import type { PreflightPersistencePort } from '../tools/governance-action-preflight.js';
 import { parseGovernedExecArgs } from './governed-exec.js';
+import {
+  APPROVAL_MARKER_PROFILE_ID,
+  APPROVAL_MARKER_TARGET_RELATIVE_PATH,
+  type MutatingProfileApprovalPolicy,
+  type MutatingProfileApprovalVerdict,
+} from './mutating-profile-approval.js';
 import {
   buildGovernedCommandAction,
   getGovernedCommandProfile,
@@ -76,6 +82,22 @@ class MemoryExecutionStore implements GovernedExecutionStore {
   }
 }
 
+class MemoryApprovalPolicy implements MutatingProfileApprovalPolicy {
+  verdict: MutatingProfileApprovalVerdict = {
+    approved: true,
+    approvalId: 'approval-1',
+    targetRelativePath: APPROVAL_MARKER_TARGET_RELATIVE_PATH,
+    actionHash: 'hash-1',
+    diagnosticCode: null,
+  };
+  requests: unknown[] = [];
+
+  async evaluate(request: unknown): Promise<MutatingProfileApprovalVerdict> {
+    this.requests.push(request);
+    return this.verdict;
+  }
+}
+
 function successfulRun(overrides: Partial<GovernedCommandRunResult> = {}): GovernedCommandRunResult {
   return {
     started: true,
@@ -95,9 +117,11 @@ function setup(runResult = successfulRun()) {
   const execution = new MemoryExecutionStore();
   const run = vi.fn(async (_request: GovernedCommandRunRequest) => runResult);
   const runner: GovernedCommandRunner = { run };
+  const approval = new MemoryApprovalPolicy();
   return {
     admission,
     execution,
+    approval,
     run,
     dependencies: {
       engine: createGuardEngine(),
@@ -105,13 +129,14 @@ function setup(runResult = successfulRun()) {
       receiptStore: admission,
       executionStore: execution,
       runner,
+      approvalPolicy: approval,
       generateConsumptionId: () => 'delta-consumption-1000-abcd',
     },
   };
 }
 
-describe('Delta-T3 governed command launcher', () => {
-  it('publishes only the frozen non-destructive profiles', () => {
+describe('Delta-T3/T4A governed command launcher', () => {
+  it('publishes only the frozen profiles', () => {
     expect(getGovernedCommandProfile('git-status')?.args).toEqual([
       '-c',
       'core.fsmonitor=false',
@@ -127,6 +152,11 @@ describe('Delta-T3 governed command launcher', () => {
       '--no-textconv',
       '--check',
     ]);
+    expect(getGovernedCommandProfile(APPROVAL_MARKER_PROFILE_ID)).toMatchObject({
+      executable: 'node',
+      args: ['--version'],
+      mutatingTargetRelativePath: APPROVAL_MARKER_TARGET_RELATIVE_PATH,
+    });
     expect(getGovernedCommandProfile('npm-test')).toBeNull();
     expect(getGovernedCommandProfile('npm-build')).toBeNull();
     expect(getGovernedCommandProfile('npm-check')).toBeNull();
@@ -175,6 +205,38 @@ describe('Delta-T3 governed command launcher', () => {
     );
   });
 
+  it('writes the fixed marker only after T1, T2, T3, T4A approval, and runner success', async () => {
+    const root = await workspace();
+    const state = setup();
+    const response = await launchGovernedCommand(
+      { profileId: APPROVAL_MARKER_PROFILE_ID, workspaceRoot: root },
+      state.dependencies
+    );
+
+    expect(response.accepted).toBe(true);
+    expect(response.approvalBackedMutationProved).toBe(true);
+    expect(state.admission.entries[0].context.targetFiles).toEqual([
+      APPROVAL_MARKER_TARGET_RELATIVE_PATH,
+    ]);
+    expect(state.admission.markers).toHaveLength(1);
+    expect(state.execution.intent?.status).toBe('ADMITTED');
+    expect(state.approval.requests).toHaveLength(1);
+    expect(state.run).toHaveBeenCalledTimes(1);
+    expect(state.run.mock.calls[0][0]).toMatchObject({
+      executable: 'node',
+      args: ['--version'],
+      cwd: root,
+    });
+    const marker = JSON.parse(
+      await readFile(join(root, APPROVAL_MARKER_TARGET_RELATIVE_PATH), 'utf-8')
+    ) as { approvalId: string; consumptionId: string };
+    expect(marker).toMatchObject({
+      approvalId: 'approval-1',
+      consumptionId: 'delta-consumption-1000-abcd',
+    });
+    expect(state.execution.finalization?.status).toBe('COMPLETED');
+  });
+
   it('does not call the runner for unknown profiles', async () => {
     const state = setup();
     const response = await launchGovernedCommand(
@@ -182,6 +244,38 @@ describe('Delta-T3 governed command launcher', () => {
       state.dependencies
     );
     expect(response.error?.code).toBe('UNKNOWN_COMMAND_PROFILE');
+    expect(state.run).not.toHaveBeenCalled();
+  });
+
+  it('fails closed after T3 intent and before runner when approval is missing', async () => {
+    const state = setup();
+    state.approval.verdict = {
+      approved: false,
+      approvalId: null,
+      targetRelativePath: null,
+      actionHash: null,
+      diagnosticCode: 'APPROVAL_RECORD_NOT_FOUND',
+    };
+    const response = await launchGovernedCommand(
+      { profileId: APPROVAL_MARKER_PROFILE_ID, workspaceRoot: await workspace() },
+      state.dependencies
+    );
+    expect(response.error?.code).toBe('APPROVAL_RECORD_NOT_FOUND');
+    expect(state.execution.intent?.status).toBe('ADMITTED');
+    expect(state.execution.finalization?.status).toBe('FAILED');
+    expect(state.execution.finalization?.diagnosticCode).toBe('APPROVAL_RECORD_NOT_FOUND');
+    expect(state.run).not.toHaveBeenCalled();
+  });
+
+  it('fails closed before runner when the approval policy is absent', async () => {
+    const state = setup();
+    const dependencies = { ...state.dependencies, approvalPolicy: undefined };
+    const response = await launchGovernedCommand(
+      { profileId: APPROVAL_MARKER_PROFILE_ID, workspaceRoot: await workspace() },
+      dependencies
+    );
+    expect(response.error?.code).toBe('APPROVAL_POLICY_MISSING');
+    expect(state.execution.finalization?.status).toBe('FAILED');
     expect(state.run).not.toHaveBeenCalled();
   });
 
