@@ -2,10 +2,12 @@
   "stateOrder": 408,
   "stateKey": "postMcpExternalKnowledgeAbsorptionChainFollowup20260619",
   "value": {
-    "status": "PARKED_AFTER_MCP_COMPLETION",
+    "status": "SUPERSEDED_BY_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP_CLOSURE",
     "recordedAt": "2026-06-19",
-    "operatorIntent": "After the future authorized MCP/runtime work is complete, revisit the external-agent/repo knowledge absorption system and formalize the old and new rules into one CVF-governed workflow chain map.",
+    "operatorIntent": "Originally, after the future authorized MCP/runtime work was complete, revisit the external-agent/repo knowledge absorption system and formalize the old and new rules into one CVF-governed workflow chain map. The operator later authorized elevating this foundation before Composition Proof.",
     "candidateArtifact": "External Knowledge Absorption Chain reference or equivalent stable front door under docs/reference/",
+    "resolvedByCommit": "7c3db96a",
+    "resolvedByArtifact": "docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md",
     "sourceInputs": [
       "docs/reference/external_agent_review/README.md",
       "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md",
@@ -14,7 +16,7 @@
       "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
       "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md"
     ],
-    "boundary": "Continuity note only; no current roadmap, GC-018, work order, public-sync, MCP/runtime implementation, provider/live proof, or readiness claim is opened by this note.",
-    "nextRequirement": "After MCP/runtime completion, open fresh GC-018 and a source-verified work order before implementing or closing an External Knowledge Absorption Chain artifact."
+    "boundary": "Superseded continuity note only; no public-sync, MCP/runtime implementation, provider/live proof, broad external absorption-chain implementation, router/checker implementation, or readiness claim is opened by this note.",
+    "nextRequirement": "Composition Proof now proceeds next only after fresh GC-018 and a source-verified work order using MCP-GW-001 plus the chain map as upstream context. Delta Execution Control remains parked until after Composition Proof."
   }
 }

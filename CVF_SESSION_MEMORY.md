@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`
+Current mode marker: `external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`.
+Current mode: `external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`.
 
 Active handoff:
 
@@ -244,6 +244,10 @@ Stable artifacts:
 - `governance/compat/check_external_agent_absorption_table.py`
 - `governance/compat/test_check_external_agent_absorption_table.py`
 - `docs/reviews/CVF_EARC_T3B_ABSORPTION_TABLE_CHECKER_COMPLETION_2026-06-18.md`
+- `docs/baselines/CVF_GC018_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP_2026-06-19.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP_FOR_CODEX_2026-06-19.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
+- `docs/reviews/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP_COMPLETION_2026-06-19.md`
 - `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md`
 - `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md`
 - `docs/baselines/CVF_GC018_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_2026-06-18.md`
@@ -302,12 +306,15 @@ remains parked until after Composition Proof. No provider/live call,
 secrets/quota use, public-sync, broad runtime enforcement, readiness claim,
 or external absorption-chain implementation was performed.
 
-Operator checkpoint recorded on 2026-06-19: after the future authorized
-MCP/runtime work is complete, revisit the external-agent/repo knowledge
-absorption system and formalize the old and new rules into one CVF-governed
-workflow chain map. This checkpoint is parked only; it does not open a roadmap,
-GC-018, work order, public-sync, MCP/runtime implementation, provider/live
-proof, or readiness claim.
+External Knowledge Absorption Chain Map is `CLOSED_PASS_BOUNDED` at material
+commit `7c3db96a`. Codex elevated the previously parked operator checkpoint
+into a stable CVF-owned chain map linking external/corpus/repo intake, old
+authority and blind-spot guards, external-agent review packet/checklist,
+returned-output absorption table, promotion/adaptation/rejection/blocking
+decisions, and GC-018/work-order/source-verification/autorun escalation when
+implementation is needed. No provider/live call, secrets/quota use,
+public-sync, runtime enforcement, external absorption router/checker
+implementation, or readiness claim was authorized or performed.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -762,14 +769,18 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`.
+Mode: `external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`.
 
-MCP Gateway Execution Control Legacy Recheck is `CLOSED_PASS_BOUNDED` at
+External Knowledge Absorption Chain Map is `CLOSED_PASS_BOUNDED` at material
+commit `7c3db96a`, following MCP Gateway Execution Control Legacy Recheck
 material commit `5f75d52c`.
 
 Next allowed move: open MCP to Model Gateway Composition Proof only after fresh
 GC-018 and a source-verified work order using `MCP-GW-001` legacy recheck
-evidence. Delta Execution Control remains parked until after Composition Proof.
+evidence plus
+`docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
+as upstream context. Delta Execution Control remains parked until after
+Composition Proof.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
@@ -777,8 +788,9 @@ decision remain held for their explicit authorizations. Public-sync, broad MCP
 implementation, provider/live calls, secrets/quota, runtime queue/scheduler/
 daemon work, raw external package import, public readiness, production
 readiness, release readiness, runtime enforcement claims, governed action
-requests, AI Gateway environment signal capture, external absorption-chain
-implementation, and external-facing readiness claims remain parked.
+requests, AI Gateway environment signal capture, external absorption
+router/checker implementation, broad external absorption-chain implementation,
+and external-facing readiness claims remain parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

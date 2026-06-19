@@ -29,7 +29,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after MCP Gateway
+Authorized session-sync scope: update active handoff after External Knowledge
+Absorption Chain Map material commit `7c3db96a`, following MCP Gateway
 Execution Control Legacy Recheck material commit `5f75d52c`, following
 WWU-T3B MCP Model Gateway Execution Adapter closure material commit `7e15146d`,
 following dispatch commit `9ef97f2d`, WWU-T2A CVF Web
@@ -88,6 +89,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/wwuT3BMcpModelGatewayExecutionAdapterClosure20260619.json`
 - `CVF_SESSION/state/entries/mcpGatewayExecutionControlLegacyRecheckClosure20260619.json`
 - `CVF_SESSION/state/entries/postMcpExternalKnowledgeAbsorptionChainFollowup20260619.json`
+- `CVF_SESSION/state/entries/externalKnowledgeAbsorptionChainMapClosure20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -143,10 +145,21 @@ source-verified work order before implementation. The operator then agreed to
 recheck legacy once more before MCP to Model Gateway Composition Proof and
 Delta Execution Control. Codex closed that bounded legacy recheck at material
 commit `5f75d52c`, recording `MCP-GW-001` coverage and preserving Delta as
-parked until after Composition Proof.
+parked until after Composition Proof. The operator then authorized elevating
+the external knowledge absorption chain-map foundation before Composition
+Proof. Codex closed that foundation at material commit `7c3db96a`, adding a
+stable chain map and wiring the external-agent review README, authoring
+checklist, and finding-absorption workflow while preserving Composition Proof
+as the next allowed move and Delta Execution Control as parked.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
-EARC-T3A material commit, EARC-T3 material commit, EARC-T1 material commit, EARC-T0 roadmap material commit, RTAD-T6 root-classification remediation commit, RTAD-T6 closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
+External Knowledge Absorption Chain Map material commit, EARC-T3A material
+commit, EARC-T3 material commit, EARC-T1 material commit, EARC-T0 roadmap
+material commit, RTAD-T6 root-classification remediation commit, RTAD-T6
+closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure
+material commit, RTAD-T3 closure material commit, RTAD-T2 closure material
+commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit,
+GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
 GFC-T3 accepted-material commit, GFC-T3 dispatch commit, GFC-T1
 post-closure state drift remediation commit,
 GFC-T1 closure material commit, GFC-T1 accepted worker material commit, prompt
@@ -156,14 +169,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=open MCP to Model Gateway Composition Proof only after fresh GC-018 and source verification using `MCP-GW-001`; parked checkpoint=Delta Execution Control until after Composition Proof; provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, and external absorption-chain implementation remain parked.
+Startup acknowledged: current mode=`external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=open MCP to Model Gateway Composition Proof only after fresh GC-018 and source verification using `MCP-GW-001` plus the external knowledge absorption chain map; parked checkpoint=Delta Execution Control until after Composition Proof; provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, and broad external absorption-chain implementation remain parked.
 
 ## Current Mode
 
-`mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`
+`external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`
 
-Current HEAD recorded for this handoff: `5f75d52c`
-(MCP Gateway Execution Control Legacy Recheck material commit `5f75d52c`;
+Current HEAD recorded for this handoff: `7c3db96a`
+(External Knowledge Absorption Chain Map material commit `7c3db96a`;
+MCP Gateway Execution Control Legacy Recheck material commit `5f75d52c`;
 WWU-T3B MCP Model Gateway Execution Adapter closure material commit
 `7e15146d`;
 WWU-T3B MCP Model Gateway Execution Adapter dispatch commit `9ef97f2d`;
@@ -847,12 +861,16 @@ source-verified work order.
 
 ## Next Allowed Move
 
-MCP Gateway Execution Control Legacy Recheck is `CLOSED_PASS_BOUNDED` at
+External Knowledge Absorption Chain Map is `CLOSED_PASS_BOUNDED` at material
+commit `7c3db96a`, following MCP Gateway Execution Control Legacy Recheck
 material commit `5f75d52c`.
 
 Next allowed move: open MCP to Model Gateway Composition Proof only after fresh
 GC-018 and a source-verified work order using `MCP-GW-001` legacy recheck
-evidence. Delta Execution Control remains parked until after Composition Proof.
+evidence plus
+`docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
+as upstream context. Delta Execution Control remains parked until after
+Composition Proof.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation remains held for explicit public-sync
@@ -860,10 +878,11 @@ authorization. EARC-T4 MCP/workspace implementation decision remains held for
 explicit MCP/runtime authorization. Public-sync, broad MCP gateway
 implementation, provider/live calls, runtime queue/scheduler/daemon work,
 release-facing claims, runtime enforcement claims, governed action requests,
-AI Gateway environment signal capture, external absorption-chain
-implementation, external-facing readiness, provider ranking/parity claims,
-Model Gateway redispatch/P3, and co-work product development remain parked
-unless a later operator authorization opens a separate tranche.
+AI Gateway environment signal capture, external absorption router/checker
+implementation, broad external absorption-chain implementation,
+external-facing readiness, provider ranking/parity claims, Model Gateway
+redispatch/P3, and co-work product development remain parked unless a later
+operator authorization opens a separate tranche.
 
 AHB-T2 Agent Handoff Contract Ratification, AHB-T2-F1 Foundation Storage Layout
 Remediation, AHB-T2-F2 enforcement hardening, AHB-T3 checker hardening,
