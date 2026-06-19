@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready",
-  "previousMode": "delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready",
+  "currentMode": "delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure",
+  "previousMode": "delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2470,6 +2470,29 @@
     "claimBoundary": "Dispatch only for a range-aware governed Markdown checker requiring future mutating-profile boundary artifacts to declare fixed target, approval evidence, caller path-input boundary, command authority, receipt chain, claim boundary, and forbidden expansion. No runtime profile, CLI behavior, provider/live, public-sync, queue/daemon, CVF Web action, direct interception, or universal governed-coding claim is authorized.",
     "nextAllowedMove": "Codex performs dispatch session sync, then runs pre-implementation and implements only the checker/test/hook/completion/evidence scope in the Delta-T4B work order."
   },
-  "nextAllowedMove": "Delta-T4B Mutating Profile Boundary Guard is DISPATCH_READY_FOR_CODEX at dispatch commit 49f71004. Next allowed move: Codex performs dispatch session sync, then runs pre-implementation and implements only the checker/test/hook/completion/evidence scope in the Delta-T4B work order. Unauthorized scope remains parked: runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave.",
+  "deltaT4BMutatingProfileBoundaryGuardAcceptedMaterial20260619": {
+    "status": "ACCEPTED_MATERIAL_PENDING_CLOSURE",
+    "dispatchCommit": "49f71004",
+    "dispatchSessionSyncCommit": "dc96f4fe",
+    "executionBaseHead": "dc96f4fe",
+    "materialCommit": "39a22e3f",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md",
+    "completion": "docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json",
+    "checker": "governance/compat/check_delta_mutating_profile_boundary.py",
+    "testFile": "governance/compat/test_check_delta_mutating_profile_boundary.py",
+    "checks": [
+      "pre-implementation autorun PASS",
+      "focused unittest PASS 9/9",
+      "direct checker smoke PASS",
+      "worker-return fast gate PASS",
+      "implementation commit steward PASS",
+      "pre-commit hook PASS 53/53"
+    ],
+    "claimBoundary": "Accepted material is limited to a range-aware governed Markdown checker and hook/autorun wiring for future Delta mutating-profile boundary artifacts. It does not add runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live behavior, public-sync, queue/daemon, CVF Web action execution, direct interception, or universal governed-coding control.",
+    "nextAllowedMove": "Perform accepted-material session sync, then convert Delta-T4B GC-018, work order, completion review, and evidence JSON to closure status if pre-closure gates pass."
+  },
+  "nextAllowedMove": "Delta-T4B Mutating Profile Boundary Guard accepted material at material commit 39a22e3f after focused tests PASS 9/9, direct checker PASS, worker-return fast PASS, implementation steward PASS, and pre-commit hook PASS 53/53. Next allowed move: accepted-material session sync, then closure conversion of Delta-T4B GC-018, work order, completion review, and evidence JSON if pre-closure gates pass. Unauthorized scope remains parked: runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave.",
   "ekaR1ExternalKnowledgeIntakeRoutingGuardClosure20260619": "CLOSED_PASS_BOUNDED at material commit b00a1292. EKA-R1 added governance/compat/check_external_knowledge_intake_routing.py, focused tests, and hook/autorun wiring so changed governed external-intake artifacts must cite docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md and include an External Knowledge Intake Routing block with input type, route, owner surface, disposition, matching local-view guard or N/A with reason, and claim boundary. Focused tests PASS 11/11; worker-return fast gate PASS; material pre-closure PASS except expected pre-session-sync handoff HEAD drift. Boundary: changed-artifact governance routing only; no broad external router, runtime interception, provider/live proof, public-sync, readiness, or universal governed-coding control claim."
 }

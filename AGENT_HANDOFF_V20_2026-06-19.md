@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current Delta-T4B dispatch state, the current
-mode, the next allowed move, and parked operator checkpoints. Detailed history
-remains in governed completion artifacts and archived handoffs.
+This compact handoff records the current Delta-T4B accepted-material state, the
+current mode, the next allowed move, and parked operator checkpoints. Detailed
+history remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: sync Delta-T4B dispatch continuity after dispatch commit `49f71004`,
-then prepare pre-implementation for the checker.
+Target: sync Delta-T4B accepted material continuity after material commit
+`39a22e3f`, then prepare closure conversion for the checker guard.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,8 +35,8 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preserve the Delta-T4A closure state and
-route the Delta-T4B dispatch state after dispatch commit `49f71004`.
+Authorized guard-maintenance scope: preserve the Delta-T4B accepted material
+state after material commit `39a22e3f`.
 
 Protected paths:
 
@@ -48,6 +48,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT4AApprovalBackedMutatingProfileBoundaryAcceptedMaterial20260619.json`
 - `CVF_SESSION/state/entries/deltaT4AApprovalBackedMutatingProfileBoundaryClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT4BMutatingProfileBoundaryGuardDispatch20260619.json`
+- `CVF_SESSION/state/entries/deltaT4BMutatingProfileBoundaryGuardAcceptedMaterial20260619.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherAcceptedMaterial20260619.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`
 - `CVF_SESSION/state/entries/ekaR1ExternalKnowledgeIntakeRoutingGuardClosure20260619.json`
@@ -57,23 +58,23 @@ Protected paths:
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Operator authorization: the operator asked Codex to continue the recommended
-high-foundation steps after Delta-T4A, and Codex dispatched Delta-T4B as a
-checker-only mutating profile boundary guard. This dispatch session sync does
-not expand runtime, public, provider, or execution scope.
+high-foundation steps after Delta-T4A, and Codex implemented Delta-T4B as a
+checker-only mutating profile boundary guard. This accepted-material session
+sync does not expand runtime, public, provider, or execution scope.
 
 Rollback boundary: revert only this session-sync/rotation commit if rejected.
 Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
-commit `49f71004`, or earlier Delta commits.
+commit `49f71004`, material commit `39a22e3f`, or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=run pre-implementation and implement only Delta-T4B checker/test/hook/completion/evidence scope; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=accepted-material session sync then Delta-T4B closure conversion if pre-closure gates pass; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready`
+`delta_t4b_mutating_profile_boundary_guard_accepted_material_pending_closure`
 
-Current HEAD recorded for this handoff: `49f71004`
+Current HEAD recorded for this handoff: `39a22e3f`
 
 Material state:
 
@@ -100,9 +101,17 @@ Material state:
 - Delta-T4A pre-commit hook: PASS 52/52
 - Delta-T4A closure pre-commit hook: PASS 52/52
 - Delta-T4B dispatch commit: `49f71004`
+- Delta-T4B dispatch session-sync commit: `dc96f4fe`
+- Delta-T4B accepted material commit: `39a22e3f`
 - Delta-T4B pre-dispatch gate: PASS
 - Delta-T4B dispatch commit steward: PASS
 - Delta-T4B dispatch pre-commit hook: PASS 52/52
+- Delta-T4B pre-implementation autorun: PASS
+- Delta-T4B focused tests: PASS 9/9
+- Delta-T4B direct checker smoke: PASS
+- Delta-T4B worker-return fast gate: PASS
+- Delta-T4B implementation commit steward: PASS
+- Delta-T4B material pre-commit hook: PASS 53/53
 - EKA-R1 focused tests: PASS 11/11
 - EKA-R1 worker-return fast gate: PASS
 - EKA-R1 material pre-closure: PASS except expected pre-session-sync handoff HEAD drift
@@ -129,9 +138,9 @@ and cannot support this tranche's fixed non-destructive command claim.
 
 ## Active Boundary
 
-Delta-T3, EKA-R1, and Delta-T4A are closed bounded. Delta-T4B is dispatch-ready;
-implementation is limited to checker/test/hook/completion/evidence scope after
-pre-implementation.
+Delta-T3, EKA-R1, and Delta-T4A are closed bounded. Delta-T4B accepted material
+is pending closure conversion; the accepted material is limited to checker/test/
+hook/completion/evidence scope.
 
 ## Latest Work / Changes
 
@@ -162,17 +171,24 @@ mutating-profile boundary control blocks. Runtime profiles, arbitrary commands,
 EDIT/COMMIT execution, provider/live calls, public-sync, direct interception,
 and universal enforcement claims remain parked.
 
+Delta-T4B material commit `39a22e3f` added
+`governance/compat/check_delta_mutating_profile_boundary.py`, focused tests,
+hook/autorun wiring, completion review, and evidence JSON. Focused tests PASS
+9/9, direct checker PASS, worker-return fast gate PASS, implementation commit
+steward PASS, and material pre-commit hook PASS 53/53.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
 `CLOSED_PASS_BOUNDED` at material commit `d2fc4f5b` and closure commit
 `c61d7d85`.
 
-Delta-T4B Mutating Profile Boundary Guard is `DISPATCH_READY_FOR_CODEX` at
-dispatch commit `49f71004`.
+Delta-T4B Mutating Profile Boundary Guard is
+`ACCEPTED_MATERIAL_PENDING_CLOSURE` at material commit `39a22e3f`.
 
-Next allowed move: run pre-implementation and implement only Delta-T4B checker,
-focused tests, hook/autorun wiring, completion review, and evidence.
+Next allowed move: perform accepted-material session sync, then convert
+Delta-T4B GC-018, work order, completion review, and evidence JSON to closure
+status if pre-closure gates pass.
 
 ## Parked Operator Checkpoints
 
@@ -206,6 +222,8 @@ LHW24 remains the latest closed numbered LHW wave.
 - Delta-T4A evidence: `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json`
 - Delta-T4B GC-018: `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md`
 - Delta-T4B work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md`
+- Delta-T4B completion: `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md`
+- Delta-T4B evidence: `docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json`
 - Predecessor continuity: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
 
 ## Agent Operation Trace Block
@@ -214,28 +232,28 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T4B dispatch session sync, 2026-06-19 |
+| Session or invocation | Delta-T4B accepted-material session sync, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
 | Target paths | active handoff and generated session-state surfaces listed below |
-| Allowed scope source | dispatch commit `49f71004` and operator authorization to follow the recommended high-foundation steps |
-| Before status evidence | dispatch commit `49f71004`; generated session-state changes pending |
-| After status evidence | Delta-T4B dispatch continuity aligned |
+| Allowed scope source | material commit `39a22e3f` and dispatch/session-sync commits `49f71004`/`dc96f4fe` |
+| Before status evidence | material commit `39a22e3f`; pre-closure material range blocked only by expected post-material handoff HEAD drift |
+| After status evidence | Delta-T4B accepted material continuity aligned |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | session-sync continuity only; implementation remains limited to the dispatched checker/test/hook/completion/evidence scope |
-| Claim boundary | no runtime implementation, runtime profile expansion, provider/live, public-sync, direct interception, or universal enforcement claim in this session-sync commit |
+| Approval boundary | accepted-material session-sync continuity only; closure conversion remains separate |
+| Claim boundary | no runtime profile expansion, arbitrary commands, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, CVF Web action execution, direct interception, or universal enforcement claim in this session-sync commit |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t4b-dispatch-session-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT4BMutatingProfileBoundaryGuardDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT4BMutatingProfileBoundaryGuardDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `delta-t4b-accepted-material-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT4BMutatingProfileBoundaryGuardAcceptedMaterial20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT4BMutatingProfileBoundaryGuardAcceptedMaterial20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
 ## Claim Boundary
 
 This handoff proves continuity only. Runtime claims are bounded to the committed
-Delta-T3 and Delta-T4A evidence. Delta-T4B is dispatched only for a governed
-Markdown checker. This handoff does not prove mandatory invocation, runtime
-profile expansion, arbitrary command execution, direct external interception,
-provider behavior, hosted freshness, public readiness, production readiness, or
-universal control.
+Delta-T3 and Delta-T4A evidence. Delta-T4B accepted material is limited to a
+governed Markdown checker and hook/autorun wiring. This handoff does not prove
+mandatory invocation, runtime profile expansion, arbitrary command execution,
+EDIT/COMMIT execution, direct external interception, provider behavior, hosted
+freshness, public readiness, production readiness, or universal control.
