@@ -1,0 +1,29 @@
+{
+  "stateOrder": 466,
+  "stateKey": "deltaT3GovernedCommandLauncherAcceptedMaterial20260619",
+  "value": {
+    "status": "ACCEPTED_MATERIAL_PENDING_CLOSURE",
+    "acceptedMaterialCommit": "ff584e42",
+    "executionBaseHead": "aae39481",
+    "completionReview": "docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json",
+    "acceptedProfiles": [
+      "git-status",
+      "git-diff-check"
+    ],
+    "reviewerRepairs": [
+      "execution receipt finalization now writes from offset zero after truncate",
+      "dynamic npm script profiles were rejected from the bounded non-destructive T3 claim"
+    ],
+    "checks": [
+      "focused Vitest PASS 2 files / 15 tests",
+      "MCP package test suite PASS 29 files / 610 tests",
+      "MCP package build PASS",
+      "bounded git-status binary smoke PASS with durable T1/T2/T3 receipts",
+      "worker-return fast gate PASS with reviewer-fast 28/28",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Accepted material proves wrapper-owned execution for two fixed read-only Git profiles after durable Delta-T1 ALLOW, atomic Delta-T2 consumption, and durable Delta-T3 intent. It does not intercept direct IDE or shell actions, permit arbitrary or mutating commands, prove mandatory invocation, use a live provider, authorize public-sync, or establish universal governed-coding control.",
+    "nextAllowedMove": "Codex converts the matching GC-018, work order, completion review, and evidence artifact to CLOSED_PASS_BOUNDED on a dedicated closure range, then performs final session sync."
+  }
+}

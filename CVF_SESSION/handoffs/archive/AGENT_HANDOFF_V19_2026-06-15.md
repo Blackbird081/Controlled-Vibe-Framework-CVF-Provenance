@@ -30,7 +30,8 @@ External agent memory files: non-canonical convenience only.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after Delta-T3 Governed
-Command Launcher dispatch commit `aafcdfda`, following Delta-T2 Governance
+Command Launcher accepted material commit `ff584e42`, following dispatch
+commit `aafcdfda` and Delta-T2 Governance
 Action Receipt Consumption closure commit `22ad256e`, accepted material commit
 `d3bf3594`, dispatch commit `c08691fc`, and Delta-T1 closure
 commit `a196e42f`, accepted material commit
@@ -105,6 +106,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT2GovernanceActionReceiptConsumptionAcceptedMaterial20260619.json`
 - `CVF_SESSION/state/entries/deltaT2GovernanceActionReceiptConsumptionClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherDispatch20260619.json`
+- `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherAcceptedMaterial20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -200,14 +202,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t3_governed_command_launcher_dispatch_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex runs pre-implementation and implements only the Delta-T3 static-profile non-destructive RUN launcher; parked checkpoint=arbitrary/mutating execution, EDIT/COMMIT, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal governed-coding claims.
+Startup acknowledged: current mode=`delta_t3_governed_command_launcher_accepted_material_pending_closure`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex closes the four matching Delta-T3 governance artifacts on a dedicated range and then performs final session sync; parked checkpoint=npm script profiles, arbitrary/mutating execution, EDIT/COMMIT, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal governed-coding claims.
 
 ## Current Mode
 
-`delta_t3_governed_command_launcher_dispatch_ready`
+`delta_t3_governed_command_launcher_accepted_material_pending_closure`
 
-Current HEAD recorded for this handoff: `aafcdfda`
-(Delta-T3 Governed Command Launcher dispatch commit `aafcdfda`;
+Current HEAD recorded for this handoff: `ff584e42`
+(Delta-T3 Governed Command Launcher accepted material commit `ff584e42`;
+dispatch commit `aafcdfda`;
 Delta-T2 Governance Action Receipt Consumption closure commit `22ad256e`;
 accepted material commit `d3bf3594`; dispatch commit `c08691fc`;
 Delta-T1 Governance Action Preflight Receipt closure commit `a196e42f`;
@@ -899,10 +902,12 @@ source-verified work order.
 
 ## Next Allowed Move
 
-Delta-T3 is `DISPATCH_READY_FOR_CODEX` at commit `aafcdfda`.
+Delta-T3 is `ACCEPTED_MATERIAL_PENDING_CLOSURE` at commit `ff584e42`.
 
-Next allowed move: Codex runs pre-implementation and implements only the
-static-profile non-destructive RUN launcher in the Delta-T3 work order.
+Next allowed move: Codex converts the matching GC-018, work order, completion
+review, and evidence JSON to `CLOSED_PASS_BOUNDED` on a dedicated range, then
+performs final session sync. The accepted runtime owns only `git-status` and
+`git-diff-check`; npm script profiles were rejected from this bounded tranche.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation remains held for explicit public-sync

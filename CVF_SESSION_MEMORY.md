@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t3_governed_command_launcher_dispatch_ready`
+Current mode marker: `delta_t3_governed_command_launcher_accepted_material_pending_closure`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -23,7 +23,7 @@ Previous long front-door snapshot:
 
 Active handoff predecessor archived in this batch:
 
-`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
 
 Compaction archive (prior closed-tranche prose from this file):
 
@@ -37,18 +37,18 @@ Compaction archive (prior closed-tranche prose from this file):
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff from the state registry:
-   `AGENT_HANDOFF_V19_2026-06-15.md`
+   `AGENT_HANDOFF_V20_2026-06-19.md`
 5. Read mandatory startup guards listed in the state registry.
 
 ## Current State
 
-Current mode: `delta_t3_governed_command_launcher_dispatch_ready`.
+Current mode: `delta_t3_governed_command_launcher_accepted_material_pending_closure`.
 
 Previous mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
 Active handoff:
 
-`AGENT_HANDOFF_V19_2026-06-15.md`
+`AGENT_HANDOFF_V20_2026-06-19.md`
 
 Active state registry:
 
@@ -793,13 +793,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t3_governed_command_launcher_dispatch_ready`.
+Mode: `delta_t3_governed_command_launcher_accepted_material_pending_closure`.
 
-Delta-T3 is dispatch-ready at commit `aafcdfda`.
+Delta-T3 material is accepted at commit `ff584e42`.
 
-Next allowed move: Codex runs pre-implementation and implements only the
-static-profile non-destructive RUN launcher scope in the Delta-T3 work order.
-Arbitrary/mutating execution and external interception remain parked.
+Next allowed move: Codex closes the matching four Delta-T3 governance
+artifacts on a dedicated range, then performs final session sync. The accepted
+runtime owns only `git-status` and `git-diff-check`. Arbitrary/mutating
+execution, npm script profiles, and external interception remain parked.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
@@ -859,7 +860,7 @@ gates, and governed file-size checks enforce this front-door contract.
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `AGENT_HANDOFF_V19_2026-06-15.md`
+- `AGENT_HANDOFF_V20_2026-06-19.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 - `governance/compat/run_local_governance_hook_chain.py`
