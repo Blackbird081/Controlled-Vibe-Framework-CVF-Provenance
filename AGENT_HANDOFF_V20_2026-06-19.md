@@ -91,7 +91,7 @@ Startup acknowledged: current mode=`delta_t7_receipt_to_execution_evidence_audit
 
 `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `c4b49fbd`
+Current HEAD recorded for this handoff: `cc6e4666`
 
 Material state:
 
@@ -290,6 +290,14 @@ material handoff bridge `b13632e0`. The pure auditor passed focused tests
 no MCP registration, action execution, runtime mutation, provider/live,
 public-sync, direct interception, or universal claim.
 
+GGL-T2 Git Hook Lane And Worktree Finality Reliability dispatch commit
+`cc6e4666` opened a bounded control-plane tranche. It authorizes only the
+installed pre-commit hook lane, autorun worktree-finality helper, focused
+tests, completion review, and evidence JSON. Runtime profiles, arbitrary
+commands, EDIT/COMMIT execution, provider/live calls, public-sync, queues,
+daemons, CVF Web action execution, direct interception, broad wrapper/proxy
+enforcement, and universal governed-coding claims remain parked.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -323,6 +331,11 @@ Next allowed move: select the next high-value foundation tranche through fresh
 GC-018 and source verification. GGL-T2 git-hook lane and worktree-finality
 reliability optimization is the leading candidate because pre-commit remains
 serial and Git stderr can be misclassified as dirty-worktree output.
+
+GGL-T2 dispatch is now committed at `cc6e4666`. Next allowed move: run
+pre-implementation from the dispatch handoff-sync head, then implement only the
+bounded hook/finality/tests/completion/evidence scope authorized by the GGL-T2
+work order.
 
 ## Parked Operator Checkpoints
 
