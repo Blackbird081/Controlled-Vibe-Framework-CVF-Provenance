@@ -1,0 +1,23 @@
+{
+  "stateOrder": 459,
+  "stateKey": "deltaT2GovernanceActionReceiptConsumptionDispatch20260619",
+  "value": {
+    "status": "DISPATCH_READY_FOR_CODEX",
+    "dispatchCommit": "c08691fc",
+    "dispatchBaseHead": "8c4c95ca",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "commitMode": "WORKER_MAY_COMMIT",
+    "workerReviewerCloser": "Codex",
+    "toolCandidate": "cvf_consume_governance_action_receipt",
+    "checks": [
+      "dispatch packet author fast gate PASS",
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Dispatch only for deterministic validation and atomic one-time consumption of a matching fresh Delta-T1 receipt. No action execution, wrapper enforcement, external interception, provider/live behavior, public-sync, workspace-state mutation, readiness, or universal governed-coding control.",
+    "nextAllowedMove": "Codex runs pre-implementation, then implements only the source/test/prompt scope in the Delta-T2 work order."
+  }
+}
