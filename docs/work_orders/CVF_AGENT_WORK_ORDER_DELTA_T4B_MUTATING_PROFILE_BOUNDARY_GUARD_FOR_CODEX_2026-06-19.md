@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CODEX
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,10 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `bbb84de0`
 
-executionBaseHead: `bbb84de0` initial dispatch anchor; replace with the
-dispatch session-sync commit before implementation
+executionBaseHead: `dc96f4fe`
 
-closureBaseHead: `NOT_OPEN_UNTIL_MATERIAL_ACCEPTANCE`
+closureBaseHead: `e25f5c7a`
 
 rawMemoryReleased: false
 
@@ -100,7 +99,7 @@ and range-aware over changed governed Markdown artifacts.
 | Active handoff | `AGENT_HANDOFF_V20_2026-06-19.md` | Delta-T3, EKA-R1, and Delta-T4A closed bounded |
 | Delta-T4A learning source | `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | EKA-R1 guard pattern | `governance/compat/check_external_knowledge_intake_routing.py` | existing range-aware checker |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md` | `DISPATCH_READY` |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Roadmap | N/A with reason: Delta-T4B follows active-session/operator-derived foundation selection, not a numbered roadmap tranche | N/A with reason |
 
 ## Agent Roles
@@ -143,7 +142,7 @@ matching dispatch/completion/session-sync artifacts if rejected.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | one-agent-many-roles: Codex holds dispatcher, implementer, reviewer, closer, and session-sync roles across distinct phases |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`bbb84de0`; execution=`bbb84de0` initial dispatch anchor to refresh after dispatch session sync; closure=`NOT_OPEN_UNTIL_MATERIAL_ACCEPTANCE` |
+| baseHeadFor(phase) | dispatch=`bbb84de0`; execution=`dc96f4fe`; closure=`e25f5c7a` |
 | changedSetScope(phase) | dispatch baseline/work order; implementation checker/test/hook/completion/evidence; closure status conversion; protected continuity only in session-sync |
 | traceScope(phase, actor) | Codex records exact phase-local manifests, commands, and commit anchors |
 | commitOwner(phase) | Codex for every phase |
@@ -246,10 +245,10 @@ fresh GC-018 -> this work order.
 
 | Upstream requirement | Work order section | Deliverable | Verification | Closure state |
 | --- | --- | --- | --- | --- |
-| T4A machine-check candidate | Delta Mutating Profile Boundary Control Block | new checker and tests | focused tests | OPEN |
-| no runtime expansion | Scope / Target / Owner Boundary | no runtime paths touched | diff review | OPEN |
-| hook enforcement | Acceptance Criteria | hook/autorun wiring | reviewer-fast/pre-closure | OPEN |
-| no universal claim | Claim Boundary | bounded completion language | text review | OPEN |
+| T4A machine-check candidate | Delta Mutating Profile Boundary Control Block | new checker and tests | focused tests PASS 9/9 | PASS |
+| no runtime expansion | Scope / Target / Owner Boundary | no runtime paths touched | diff review at material commit `39a22e3f` | PASS |
+| hook enforcement | Acceptance Criteria | hook/autorun wiring | worker-return fast gate and pre-commit hook PASS 53/53 | PASS |
+| no universal claim | Claim Boundary | bounded completion language | completion review and evidence JSON | PASS |
 
 ## Work-Order Fulfillment Manifest
 
@@ -292,15 +291,15 @@ action execution, direct interception, or any forbidden path.
 
 ## Closure Checklist
 
-- [ ] Dispatch packet includes source verification for every existing symbol
+- [x] Dispatch packet includes source verification for every existing symbol
   named in implementation instructions.
-- [ ] Work order includes Agent Handoff, Single-Agent, Delta Mutating Profile,
+- [x] Work order includes Agent Handoff, Single-Agent, Delta Mutating Profile,
   External Knowledge Intake Routing, and Worker Autonomy control blocks.
-- [ ] Allowed scope is limited to one governance checker and hook wiring.
-- [ ] Forbidden scope names runtime profiles, EDIT/COMMIT execution,
+- [x] Allowed scope is limited to one governance checker and hook wiring.
+- [x] Forbidden scope names runtime profiles, EDIT/COMMIT execution,
   provider/live, public-sync, queue/daemon, direct interception, and universal
   control.
-- [ ] Closure requires completion review, evidence JSON, focused tests,
+- [x] Closure requires completion review, evidence JSON, focused tests,
   reviewer-fast, commit steward, and governance gates.
 
 ## Required Artifact Manifest
@@ -397,20 +396,20 @@ universal governed-coding claims.
 | --- | --- |
 | Actor | Codex dispatcher |
 | Provider or surface | local provenance workspace |
-| Session or invocation | `delta-t4b-dispatch-codex-2026-06-19` |
+| Session or invocation | `delta-t4b-closure-conversion-codex-2026-06-19` |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, rg, apply_patch, governance gates |
-| Target paths | this work order and matching GC-018 |
-| Allowed scope source | user authorization to follow recommended high-foundation steps after Delta-T4A |
-| Before status evidence | clean worktree at `bbb84de0` |
-| After status evidence | Delta-T4B dispatch packet ready |
-| Diff evidence | `git diff --name-status`; pre-dispatch gates |
-| Approval boundary | governance checker dispatch only |
+| Target paths | Delta-T4B GC-018, work order, completion review, and evidence JSON |
+| Allowed scope source | material commit `39a22e3f` and accepted-material session sync commit `e25f5c7a` |
+| Before status evidence | Delta-T4B material accepted at `39a22e3f`; continuity synced at `e25f5c7a` |
+| After status evidence | Delta-T4B closure artifacts converted to `CLOSED_PASS_BOUNDED` |
+| Diff evidence | `git diff --name-status`; closure steward and pre-commit/pre-closure gates |
+| Approval boundary | closure conversion only |
 | Claim boundary | no runtime/provider/live/public-sync/direct interception/universal governed coding |
 | Agent type | single-agent multi-role Codex dispatch phase |
-| Invocation ID | `delta-t4b-mutating-profile-boundary-guard-dispatch-codex-2026-06-19` |
-| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md` |
+| Invocation ID | `delta-t4b-mutating-profile-boundary-guard-closure-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none planned |
 
@@ -425,15 +424,31 @@ authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: DISPATCH_READY_FOR_CODEX` | OPEN |
-| GC-018 baseline | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md` | `Status: DISPATCH_READY` | OPEN |
-| Material implementation | checker, test, hook wiring, completion evidence | pending | OPEN |
-| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md` | pending | OPEN |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 baseline | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Material implementation | checker, test, hook wiring, completion evidence | material commit `39a22e3f` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | N/A with reason: active-session/operator-derived tranche | no roadmap mutation | N/A with reason |
-| Registry JSON | BLOCKED with reason: no corpus registry edit authorized | no registry path planned | BLOCKED with reason |
-| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path planned | BLOCKED with reason |
+| Registry JSON | BLOCKED with reason: no corpus registry edit authorized for this checker-only tranche | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no corpus registry edit authorized for this checker-only tranche | no registry path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence source consumed | repo-local source verification only | N/A with reason |
+| System loop interlock | `governance/compat/check_system_loop_interlock.py` | PASS in closure steward range `e25f5c7a..HEAD` | PASS |
+| Session continuity | active session state | accepted-material session sync commit `e25f5c7a`; closure session sync follows closure commit | PASS |
 | Provider/live proof | N/A with reason: no provider claim | no live provider command | N/A with reason |
 | Public-sync | N/A with reason: not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| status | `CLOSED_PASS_BOUNDED` | PASS |
+| material commit | `39a22e3f` | PASS |
+| closure base | `e25f5c7a` | PASS |
+| runtime scope added | false | PASS |
+| provider/live scope added | false | PASS |
+| public-sync performed | false | PASS |
+| direct interception claimed | false | PASS |
+| universal governed-coding claimed | false | PASS |
 
 ## Claim Boundary
 

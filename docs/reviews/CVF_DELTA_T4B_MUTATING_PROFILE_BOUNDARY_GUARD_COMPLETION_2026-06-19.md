@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -14,7 +14,9 @@ Dispatch commit: `49f71004`
 
 Execution base: `dc96f4fe`
 
-Material commit: pending
+Material commit: `39a22e3f`
+
+Closure base: `e25f5c7a`
 
 ## Purpose
 
@@ -145,7 +147,7 @@ and does not assert provider, model, API, or live governance behavior.
 | --- | --- |
 | GC-018 to work order | checker-only scope and forbidden runtime/provider/public boundaries preserved |
 | Work order to implementation | implementation stayed in checker, test, hook, autorun, completion, and evidence paths |
-| Required manifest to actual material set | pending material commit |
+| Required manifest to actual material set | MATCH at material commit `39a22e3f` |
 | Forbidden scope | no runtime source, provider, web, public-sync, queue, daemon, registry, or credential path changed |
 
 ## Finding-To-Governance Learning Disposition
@@ -171,13 +173,27 @@ or performed from this private workspace.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | Delta-T4B work order | `Status: DISPATCH_READY_FOR_CODEX` pending closure conversion | PASS for material review |
-| Completion or reviewer artifact | this file | Codex implementation evidence | PASS for material review |
+| Work order status | Delta-T4B work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | N/A with reason: active-session/operator-derived tranche | no roadmap mutation | N/A with reason |
-| Registry JSON | BLOCKED with reason: no corpus registry edit authorized | no registry path changed | BLOCKED with reason |
-| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path changed | BLOCKED with reason |
+| Registry JSON | BLOCKED with reason: no corpus registry edit authorized for this checker-only tranche | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized for this checker-only tranche | no registry path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
-| Session continuity | active session state | pending post-material session sync if material commit is accepted | pending |
+| System loop interlock | `governance/compat/check_system_loop_interlock.py` | PASS in closure steward range `e25f5c7a..HEAD` | PASS |
+| Session continuity | active session state | accepted-material session sync commit `e25f5c7a` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| status | `CLOSED_PASS_BOUNDED` | PASS |
+| material commit | `39a22e3f` | PASS |
+| closure base | `e25f5c7a` | PASS |
+| runtime scope added | false | PASS |
+| provider/live scope added | false | PASS |
+| public-sync performed | false | PASS |
+| direct interception claimed | false | PASS |
+| universal governed-coding claimed | false | PASS |
 
 ## Epistemic Process Block
 
@@ -211,20 +227,20 @@ universal governed-coding control remain unclaimed.
 | --- | --- |
 | Actor | Codex implementer/reviewer |
 | Provider or surface | local provenance workspace |
-| Session or invocation | `delta-t4b-material-codex-2026-06-19` |
+| Session or invocation | `delta-t4b-closure-conversion-codex-2026-06-19` |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, Python unittest, Python governance gates |
-| Target paths | checker, focused test, hook chain, autorun workflow, completion review, evidence JSON |
-| Allowed scope source | Delta-T4B dispatch commit `49f71004` and session-sync commit `dc96f4fe` |
-| Before status evidence | pre-implementation gate PASS on `dc96f4fe..HEAD` |
-| After status evidence | checker implementation and focused tests PASS |
-| Diff evidence | `git diff --name-status`, focused tests, direct checker smoke, steward and hook gates |
-| Approval boundary | implementation-only material; closure conversion and session sync remain separate |
+| Target paths | Delta-T4B GC-018, work order, completion review, and evidence JSON |
+| Allowed scope source | material commit `39a22e3f` and accepted-material session sync commit `e25f5c7a` |
+| Before status evidence | Delta-T4B material accepted at `39a22e3f`; continuity synced at `e25f5c7a` |
+| After status evidence | closure artifacts converted to `CLOSED_PASS_BOUNDED` |
+| Diff evidence | `git diff --name-status`, closure steward, pre-commit hook, and pre-closure gate |
+| Approval boundary | closure conversion only; closure session sync remains separate |
 | Claim boundary | no runtime/provider/live/public/direct-interception/universal enforcement claim |
 | Agent type | single-agent implementation and review |
-| Invocation ID | `delta-t4b-material-codex-2026-06-19` |
-| Expected manifest | `governance/compat/check_delta_mutating_profile_boundary.py`; `governance/compat/test_check_delta_mutating_profile_boundary.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json` |
-| Actual changed set | `governance/compat/check_delta_mutating_profile_boundary.py`; `governance/compat/test_check_delta_mutating_profile_boundary.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json` |
+| Invocation ID | `delta-t4b-closure-conversion-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4b-mutating-profile-boundary-guard-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in material implementation |
 
