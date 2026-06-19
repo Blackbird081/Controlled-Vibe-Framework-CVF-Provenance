@@ -1,15 +1,15 @@
 # CVF Agent Work Order - Delta-T9 Durable Execution Audit Contract And Store Boundary
 
 Memory class: FULL_RECORD
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-06-19
 docType: work_order
 Batch ID: DELTA-T9
 Owner: Claude worker, Codex reviewer
 Commit mode: WORKER_MUST_NOT_COMMIT
 dispatchBaseHead: `1c1247d6`
-executionBaseHead: `PENDING_CLAUDE_CAPTURE`
-closureBaseHead: `N/A_REVIEWER_OWNED`
+executionBaseHead: `7f603b49`
+closureBaseHead: `8b1cb2d5`
 rawMemoryReleased: false
 
 ## Dispatch Prompt Envelope
@@ -37,10 +37,11 @@ Required first actions: read `CVF_SESSION_MEMORY.md`, resolve
 read this work order and the matching GC-018, capture `executionBaseHead`, then
 run pre-implementation gate before source edits.
 
-Return contract: return `COMPLETE_PENDING_REVIEW` with uncommitted changes, or
-`BLOCKED` if the durable store cannot be implemented inside the allowed files
-without runtime registration, provider/live behavior, direct interception, or
-claim expansion.
+Return contract satisfied: Claude returned an uncommitted worker packet for
+Codex review, and Codex accepted the material at commit `ac390222`. A `BLOCKED`
+return would have been required if the durable store could not be implemented
+inside the allowed files without runtime registration, provider/live behavior,
+direct interception, or claim expansion.
 
 ## Purpose
 
@@ -70,6 +71,10 @@ Allowed scope:
 - create `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md`;
 - create `docs/reviews/evidence/delta-t9-durable-execution-audit-contract-store-boundary-2026-06-19.json`;
 - update this work order only for worker-return status/evidence if needed.
+- Codex reviewer closure may update
+  `docs/baselines/CVF_GC018_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_2026-06-19.md`,
+  this work order, the completion review, and the evidence JSON for closure
+  conversion only.
 
 Forbidden scope:
 
@@ -100,7 +105,7 @@ Forbidden scope:
 | Operator | current instruction, 2026-06-19 | ACCEPTED |
 | Session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | next high-value foundation selection |
 | Roadmap | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | Delta-T9 high after T7 |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_2026-06-19.md` | DISPATCHED |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_2026-06-19.md` | CLOSED_PASS_BOUNDED |
 
 ## Agent Roles
 
@@ -137,7 +142,7 @@ public-sync history.
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | worker-no-commit split: Claude worker returns uncommitted artifacts; Codex reviewer owns commit and closure |
 | phase | DISPATCH_AUTHORING, WORKER_EXECUTION, REVIEWER_CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`1c1247d6`; execution=`PENDING_CLAUDE_CAPTURE`; closure=`N/A_REVIEWER_OWNED` |
+| baseHeadFor(phase) | dispatch=`1c1247d6`; execution=`7f603b49`; closure=`8b1cb2d5` |
 | changedSetScope(phase) | dispatch packet; worker-owned source/test/worker-return/evidence; reviewer closure conversion; separate sync |
 | traceScope(phase, actor) | exact manifests and commands per phase |
 | commitOwner(phase) | Codex only |
@@ -151,7 +156,7 @@ public-sync history.
 | --- | --- |
 | completionReviewPath | `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md` |
 | reviewerOwnedClosurePaths | matching GC-018, this work order, worker return/completion, evidence JSON, active session state/front door/handoff only if accepted |
-| workerReturnStatus | `COMPLETE_PENDING_REVIEW` or `BLOCKED` only |
+| workerReturnStatus | worker no-commit return accepted by Codex at `ac390222` |
 | reviewerAction | Codex runs reviewer-fast, focused tests, full MCP tests/build, committed-range gates, then commits or rejects |
 
 ## Durable Execution Audit Store Control Block
@@ -288,11 +293,11 @@ source and Markdown must default to ASCII.
 
 | Proof | Path | Required literal | Required at handoff |
 | --- | --- | --- | --- |
-| contract identity | durable audit store source | `DURABLE_EXECUTION_AUDIT_CONTRACT` | Yes |
-| bounded claim | durable audit output/test | `mandatoryInvocationProved` | Yes |
-| bounded claim | durable audit output/test | `directInterceptionProved` | Yes |
-| secret safety | focused test | secret-like value is rejected or redacted | Yes |
-| no-commit return | worker return packet | `COMPLETE_PENDING_REVIEW` | Yes |
+| contract identity | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-store.ts` | `DURABLE_EXECUTION_AUDIT_CONTRACT` | Yes |
+| bounded claim | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-store.ts` | `mandatoryInvocationProved` | Yes |
+| bounded claim | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-store.ts` | `directInterceptionProved` | Yes |
+| secret safety | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-store.test.ts` | `secret-like values are rejected` | Yes |
+| no-commit return | `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md` | worker no-commit return accepted by Codex | Yes |
 
 ## Allowed Changed Set
 
@@ -359,7 +364,7 @@ modify-listed for this work order.
 5. Run focused tests, full MCP tests, build, worker-return fast gate, status,
    and diff.
 6. Create worker-return packet and evidence JSON.
-7. Return uncommitted `COMPLETE_PENDING_REVIEW` to Codex, or `BLOCKED`.
+7. Return uncommitted worker packet to Codex, or `BLOCKED`.
 
 ## Agent Operation Trace Block
 
@@ -431,10 +436,10 @@ Claude must return `BLOCKED` without continuing if:
 | Item | Worker disposition |
 | --- | --- |
 | acceptance criteria | worker records PASS, BLOCKED, or N/A with reason in completion packet |
-| focused tests | required before `COMPLETE_PENDING_REVIEW` |
-| full MCP tests | required before `COMPLETE_PENDING_REVIEW` |
-| build | required before `COMPLETE_PENDING_REVIEW` |
-| worker-return fast gate | required before `COMPLETE_PENDING_REVIEW` |
+| focused tests | required before worker no-commit return |
+| full MCP tests | required before worker no-commit return |
+| build | required before worker no-commit return |
+| worker-return fast gate | required before worker no-commit return |
 | commit mode | must remain `WORKER_MUST_NOT_COMMIT` |
 | forbidden paths | must remain unchanged |
 | public/provenance boundary | no worker export or sibling clone mutation |
@@ -471,25 +476,25 @@ sync was checked before dispatch and is not worker-authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this work order | worker return may set `COMPLETE_PENDING_REVIEW`; Codex sets closure later | PENDING_REVIEW |
-| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md` | worker-return status and evidence table | PENDING_WORKER |
-| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | no worker edit authorized | N/A with reason |
-| Registry JSON | N/A with reason: not corpus intake | evidence JSON is tranche evidence, not corpus registry | N/A with reason |
-| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized | N/A with reason |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED`; accepted material commit `ac390222` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | roadmap remains `Status: CLOSED_PASS_BOUNDED`; Delta-T9 release condition satisfied by this closure | PASS |
+| Registry JSON | N/A with reason: not corpus intake | evidence JSON is tranche evidence, not corpus registry | BLOCKED with reason: no registry mutation authorized for this tranche |
+| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized | BLOCKED with reason: no registry mutation authorized for this tranche |
 | External evidence digest | N/A with reason: no external evidence | repo-local source/test evidence only | N/A with reason |
-| System loop interlock | durable audit source/tests | focused/full/build evidence required | PENDING_WORKER |
-| Session continuity | active state, memory, and handoff | reviewer-owned only if accepted | N/A with reason |
+| System loop interlock | durable audit source/tests | focused 30/30, full MCP 658/658, build PASS, worker-return fast gate PASS | PASS |
+| Session continuity | active state, memory, and handoff | dispatch handoff bridge `8a9ee919`; material handoff bridge `8b1cb2d5`; post-closure sync remains separate reviewer-owned continuity | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Expected value | Status |
 | --- | --- | --- |
-| commit mode | `WORKER_MUST_NOT_COMMIT` | PENDING_WORKER |
-| runtime scope | bounded new audit module only | PENDING_WORKER |
-| provider/live scope | false | PENDING_WORKER |
-| public-sync | false | PENDING_WORKER |
-| direct interception claim | false | PENDING_WORKER |
-| universal governed-coding claim | false | PENDING_WORKER |
+| commit mode | `WORKER_MUST_NOT_COMMIT`; Codex committed accepted material | PASS |
+| runtime scope | bounded new audit module only | PASS |
+| provider/live scope | false | PASS |
+| public-sync | false | PASS |
+| direct interception claim | false | PASS |
+| universal governed-coding claim | false | PASS |
 
 ## Claim Boundary
 

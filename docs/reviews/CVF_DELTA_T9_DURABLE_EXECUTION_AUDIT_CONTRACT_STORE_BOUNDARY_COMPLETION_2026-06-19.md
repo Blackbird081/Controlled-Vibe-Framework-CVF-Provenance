@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -27,10 +27,11 @@ launcher/profile change, or session continuity edit was made by Claude.
 
 ## Worker Return Status
 
-`COMPLETE_PENDING_REVIEW`
+Worker no-commit return accepted by Codex at material commit `ac390222`.
 
-All acceptance criteria are met at the worker level. Codex reviewer must run
-reviewer gates, commit, and perform closure conversion.
+All acceptance criteria are met. Codex reviewer ran reviewer gates, tightened
+the store boundary during review, committed accepted material, and converted
+this packet to `CLOSED_PASS_BOUNDED`.
 
 ## Pre-Implementation Gate Finding
 
@@ -127,7 +128,7 @@ Additional exported symbols not in GC-018 planned list (new, within scope):
 | `mandatoryInvocationProved` | `durable-execution-audit-store.ts` return value; tests AC5 | YES |
 | `directInterceptionProved` | `durable-execution-audit-store.ts` return value; tests AC5 | YES |
 | secret-like value is rejected or redacted | focused tests AC3 (5 tests) | YES |
-| `COMPLETE_PENDING_REVIEW` | this document | YES |
+| worker no-commit return accepted by Codex | this document | YES |
 
 ## Verification Command Evidence
 
@@ -263,7 +264,7 @@ return. All other source and Markdown in this packet is ASCII-safe.
 | Target paths | required artifact manifest only |
 | Allowed scope source | Delta-T9 work order and matching GC-018 |
 | Before status evidence | clean worktree at `7f603b49` |
-| After status evidence | two untracked new files; no staged/committed changes |
+| After status evidence | four untracked worker artifacts before Codex review; no Claude-staged or Claude-committed changes |
 | Diff evidence | `git diff --name-status` empty (new untracked files only) |
 | Approval boundary | worker creates allowed artifacts only; Codex commits/reviews |
 | Claim boundary | durable local audit evidence only; no runtime interception or universal control |
@@ -281,7 +282,41 @@ return. All other source and Markdown in this packet is ASCII-safe.
 | Expected Result / Prediction | Valid supplied Delta-T7 audit evidence produces a durable local record; invalid evidence cannot persist a passing governed-action claim; mandatory invocation and direct interception stay false |
 | Evidence Comparison | Focused Vitest passed 30/30, full MCP suite passed 32 files / 658 tests, TypeScript build passed, and worker-return fast gate passed after Codex handoff bridge; reviewer-fast initially found packet/control-block and handoff drift issues rather than source behavior failure |
 | Contradiction Or Gap Disposition | Gate gaps are documentation/control/sync gaps in the worker return and active handoff, not a failure of the durable store behavior; Codex reviewer repairs packet structure and owns continuity bridge |
-| Claim Update | Claim remains narrowed to bounded durable audit storage for supplied receipt-to-execution evidence until Codex reviewer accepts and commits |
+| Claim Update | Claim remains narrowed to bounded durable audit storage for supplied receipt-to-execution evidence; Codex accepted and committed material at `ac390222` |
+
+## Closure Diff Gate
+
+| Requirement | Result |
+| --- | --- |
+| Required artifact manifest | PASS: four required artifacts committed at `ac390222` |
+| Durable local audit contract/store | PASS: new audit module only, no registration or launcher/profile expansion |
+| Secret-safe and bounded claim fields | PASS: builder emits false fields and store append/read rejects forged or corrupted true values |
+| Verification commands | PASS: focused 30/30, full MCP 32 files / 658 tests, build PASS, worker-return fast gate PASS |
+| Forbidden scope | PASS: no provider/live, public-sync, CVF Web, queue/daemon, direct interception, EDIT/COMMIT execution, wrapper/proxy enforcement, readiness, or universal control claim |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_FOR_CLAUDE_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this completion | `Status: CLOSED_PASS_BOUNDED`; material commit `ac390222` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | roadmap remains `Status: CLOSED_PASS_BOUNDED`; Delta-T9 release condition satisfied by this closure | PASS |
+| Registry JSON | N/A with reason: not corpus intake | evidence JSON is tranche evidence, not corpus registry | BLOCKED with reason: no registry mutation authorized for this tranche |
+| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized | BLOCKED with reason: no registry mutation authorized for this tranche |
+| External evidence digest | N/A with reason: no external evidence | repo-local source and test evidence only | N/A with reason |
+| System loop interlock | durable audit source/tests | focused 30/30, full MCP 658/658, build PASS, worker-return fast gate PASS | PASS |
+| Session continuity | active state, memory, and handoff | dispatch handoff bridge `8a9ee919`; material handoff bridge `8b1cb2d5`; final post-closure session sync remains reviewer-owned | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| contract identity | `DURABLE_EXECUTION_AUDIT_CONTRACT` in durable audit source | PASS |
+| bounded mandatory invocation claim | `mandatoryInvocationProved: false`; store rejects forged/corrupted true values | PASS |
+| bounded direct interception claim | `directInterceptionProved: false`; store rejects forged/corrupted true values | PASS |
+| invalid evidence handling | invalid evidence cannot persist as a passing governed-action claim | PASS |
+| secret-safe persistence | secret-like request/profile identifiers rejected before append | PASS |
+| local durable storage only | caller-supplied JSONL append/read; no MCP registration or launcher/profile expansion | PASS |
 
 ## Public Export Disposition
 
