@@ -1,20 +1,22 @@
 {
   "schemaVersion": "1.0.0",
   "batchId": "GGL-T2",
-  "status": "IMPLEMENTED_PENDING_CLOSURE",
+  "status": "CLOSED_PASS_BOUNDED",
   "date": "2026-06-19",
   "dispatchCommit": "cc6e4666",
   "handoffBridgeCommit": "01836f18",
   "executionBaseHead": "01836f18",
-  "materialCommit": "pending",
-  "closureBaseHead": "pending",
+  "materialCommit": "02678968",
+  "materialHandoffBridgeCommit": "96a3611b",
+  "closureBaseHead": "02678968",
   "checks": [
     "pre-implementation autorun PASS 44/44",
     "focused pytest PASS 17/17",
     "direct hook invocation PASS 54/54 with parallel preflight enabled",
     "worker-return fast gate PASS",
     "implementation steward PASS with pre-implementation rerun PASS 44/44",
-    "pre-closure autorun pending material commit"
+    "material commit pre-commit hook PASS 54/54",
+    "pre-closure autorun PASS 43/43 on range 01836f18..02678968 with clean finality"
   ],
   "changedPaths": [
     ".githooks/pre-commit",

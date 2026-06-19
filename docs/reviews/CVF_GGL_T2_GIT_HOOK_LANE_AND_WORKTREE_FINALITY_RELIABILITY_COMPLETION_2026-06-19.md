@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTED_PENDING_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -10,9 +10,9 @@ Owner: Codex
 
 Execution base: `01836f18`
 
-Material commit: pending
+Material commit: `02678968`
 
-Closure base: pending
+Closure base: `02678968`
 
 ## Purpose
 
@@ -113,7 +113,7 @@ Rollback boundary: revert only GGL-T2 source/test/completion/evidence changes.
 | Field | Disposition |
 | --- | --- |
 | claimScope | `GOVERNANCE_HOOK_FINALITY_ONLY`: no runtime execution control added |
-| claimDisposition | `BOUNDED_CLAIM_WITH_EVIDENCE` only after closure gates pass |
+| claimDisposition | `BOUNDED_CLAIM_WITH_EVIDENCE` |
 | receiptEvidence | N/A with reason: this tranche does not create execution-control receipts |
 | actionEvidence | ACTION_EVIDENCE_PRESENT through focused tests, hook output, and closure gate output |
 | invocationBoundary | cooperating local Git hook and autorun invocation only |
@@ -129,8 +129,38 @@ Rollback boundary: revert only GGL-T2 source/test/completion/evidence changes.
 | direct hook invocation | PASS 54/54 with parallel preflight enabled |
 | worker-return fast gate | PASS |
 | implementation steward | PASS; pre-implementation rerun PASS 44/44 |
-| pre-closure autorun | pending material commit |
-| pre-commit hook proof | pending material commit |
+| pre-closure autorun | PASS 43/43 on material range `01836f18..02678968`; clean finality |
+| pre-commit hook proof | PASS 54/54 during material commit `02678968` |
+
+## Closure Diff Gate
+
+| Requirement | Result |
+| --- | --- |
+| installed hook no longer forces `--serial` | PASS |
+| explicit serial debugging remains available | PASS |
+| Git status stdout and stderr are separated | PASS |
+| warning-only stderr does not fail finality | PASS |
+| dirty stdout and non-zero status fail closed | PASS |
+| hook-chain command coverage unchanged | PASS |
+| no forbidden runtime/provider/public/direct-interception claim | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_FOR_CODEX_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Material commit | GGL-T2 implementation | `02678968` | PASS |
+| Material handoff bridge | active handoff pointer bridge | `96a3611b` | PASS |
+| Evidence JSON | `docs/reviews/evidence/ggl-t2-git-hook-lane-and-worktree-finality-reliability-2026-06-19.json` | status closed bounded | PASS |
+| Roadmap state | N/A with reason: no roadmap changed | no roadmap path in closure set | N/A with reason |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: repo-local hook/finality evidence only | no external digest consumed | N/A with reason |
+| System loop interlock | N/A with reason: no loop registry change | no interlock path changed | N/A with reason |
+| Public export | private provenance only | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | active session source/aggregate and handoff | separate post-closure session sync required | N/A with reason |
 
 ## Public Export Disposition
 
@@ -159,18 +189,18 @@ change is authorized from the provenance workspace.
 | Session or invocation | GGL-T2 implementation, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, pytest, hook runner, autorun, steward |
-| Target paths | GGL-T2 source, tests, completion review, and evidence JSON |
+| Target paths | GGL-T2 closure conversion artifacts |
 | Allowed scope source | GGL-T2 work order at dispatch commit `cc6e4666` and handoff bridge `01836f18` |
 | Before status evidence | pre-implementation PASS 44/44 at `01836f18` |
-| After status evidence | pending closure conversion |
-| Diff evidence | `git diff --name-status 01836f18..HEAD` before material commit |
+| After status evidence | GGL-T2 converted to `CLOSED_PASS_BOUNDED` with material range pre-closure PASS |
+| Diff evidence | `git diff --name-status 96a3611b..HEAD` before closure conversion commit |
 | Approval boundary | bounded hook/finality reliability only |
 | Claim boundary | no checker suppression, hook bypass, runtime/provider/public/UI/readiness/universal-control claim |
 | Agent type | single-agent multi-role |
 | Invocation ID | `ggl-t2-implementation-codex-2026-06-19` |
-| Expected manifest | `.githooks/pre-commit`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_local_governance_hook_chain.py`; `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/ggl-t2-git-hook-lane-and-worktree-finality-reliability-2026-06-19.json` |
-| Actual changed set | pending material commit evidence |
-| Manifest delta | pending material commit evidence |
+| Expected manifest | `docs/baselines/CVF_GC018_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/ggl-t2-git-hook-lane-and-worktree-finality-reliability-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/ggl-t2-git-hook-lane-and-worktree-finality-reliability-2026-06-19.json` |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Epistemic Process Block
@@ -200,7 +230,7 @@ or universal governed-coding enforcement.
 ### Claim Update
 
 GGL-T2 updates the claim from "finding open" to "bounded local hook-lane and
-worktree-finality reliability implemented pending closure conversion."
+worktree-finality reliability closed with committed-range evidence."
 
 ## Claim Boundary
 

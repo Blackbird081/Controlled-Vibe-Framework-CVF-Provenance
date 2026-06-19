@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `5077cea5`
 
-executionBaseHead: N/A with reason: captured from the committed dispatch head before implementation begins.
+executionBaseHead: `01836f18`
 
-closureBaseHead: N/A with reason: captured from the accepted material commit before closure conversion.
+closureBaseHead: `02678968`
 
 rawMemoryReleased: false
 
@@ -32,8 +32,7 @@ Canonical packet: this work order and
 
 Commit mode: `WORKER_MAY_COMMIT`.
 
-executionBaseHead: N/A with reason: captured from the committed dispatch head
-before implementation begins.
+executionBaseHead: `01836f18`
 
 Current-time notes: base `5077cea5`; current mode is
 `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`;
@@ -112,7 +111,7 @@ Risk ceiling: R1 governance-control implementation.
 | Operator authorization | current request on 2026-06-19: continue processing finding | ACCEPTED |
 | Active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Delta-T7 closed; next foundation selection allowed |
 | Active handoff | `AGENT_HANDOFF_V20_2026-06-19.md` | GGL-T2 leading candidate through fresh GC-018 |
-| GC-018 | `docs/baselines/CVF_GC018_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_2026-06-19.md` | `DISPATCHED` |
+| GC-018 | `docs/baselines/CVF_GC018_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 
 ## Agent Roles
 
@@ -366,13 +365,13 @@ non-zero Git status fails closed.
 
 ## Closure Checklist
 
-- [ ] Focused hook/finality tests pass.
-- [ ] Worker-return fast gate passes.
-- [ ] Implementation steward passes.
-- [ ] Pre-commit hook passes.
-- [ ] Pre-closure autorun passes on a committed range.
-- [ ] Completion review and evidence JSON include exact changed-set evidence.
-- [ ] No runtime/provider/live/public/direct-interception/universal-control
+- [x] Focused hook/finality tests pass.
+- [x] Worker-return fast gate passes.
+- [x] Implementation steward passes.
+- [x] Pre-commit hook passes.
+- [x] Pre-closure autorun passes on a committed range.
+- [x] Completion review and evidence JSON include exact changed-set evidence.
+- [x] No runtime/provider/live/public/direct-interception/universal-control
       claim is introduced.
 
 ## Return Conditions
@@ -411,6 +410,35 @@ Before any closure claim:
 - Worktree must be clean or explicitly N/A with reason for untracked files.
 - No runtime/provider/live/public/direct-interception/universal-control claim
   may be introduced.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Material commit | GGL-T2 implementation | `02678968` | PASS |
+| Material handoff bridge | active handoff pointer bridge | `96a3611b` | PASS |
+| Evidence JSON | `docs/reviews/evidence/ggl-t2-git-hook-lane-and-worktree-finality-reliability-2026-06-19.json` | status closed bounded | PASS |
+| Roadmap state | N/A with reason: no roadmap changed | no roadmap path in closure set | N/A with reason |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation authorized | no registry JSON path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation authorized | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: repo-local hook/finality evidence only | no external digest consumed | N/A with reason |
+| System loop interlock | N/A with reason: no loop registry change | no interlock path changed | N/A with reason |
+| Public export | private provenance only | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | active session source/aggregate and handoff | separate post-closure session sync required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| receiptEvidence | N/A with reason: this tranche does not create execution-control receipts | PASS |
+| actionEvidence | focused tests, direct hook output, worker-return fast gate, implementation steward, material commit hook, and pre-closure output | PASS |
+| hookDefault | installed pre-commit uses runner default without `--serial` | PASS |
+| stderrPolicy | warning-only Git status stderr is diagnostic-only | PASS |
+| failurePolicy | dirty stdout and non-zero Git status fail closed | PASS |
+| claimBoundary | no runtime/provider/public/direct-interception/universal-control claim | PASS |
 
 ## Agent Operation Trace Block
 
