@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_t5_execution_control_capability_roadmap_dispatched_ready",
-  "previousMode": "delta_execution_control_selection_ready_after_mcp_composition_proof_closed",
+  "currentMode": "delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready",
+  "previousMode": "delta_t5_execution_control_capability_roadmap_material_accepted_pending_closure",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2551,6 +2551,44 @@
     "claimBoundary": "Dispatch only for a source-verified Delta Execution Control capability roadmap. No runtime source change, new MCP tool, launcher profile expansion, provider/live call, public-sync, queue/daemon, CVF Web action, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, or universal governed-coding control claim is authorized.",
     "nextAllowedMove": "Run pre-implementation from dispatch commit a47e185b, then implement only the roadmap, completion review, and evidence JSON named by the work order."
   },
-  "nextAllowedMove": "Delta-T5 Execution Control Capability Roadmap is DISPATCHED at commit a47e185b after pre-dispatch and dispatch steward gates passed. Next allowed move: implement only the Delta-T5 roadmap, completion review, and evidence JSON within the dispatched work order, starting with pre-implementation from dispatch commit a47e185b. Unauthorized scope remains parked: runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave.",
+  "deltaT5ExecutionControlCapabilityRoadmapMaterialAccepted20260619": {
+    "status": "ACCEPTED_MATERIAL_SUPERSEDED_BY_CLOSURE",
+    "dispatchCommit": "a47e185b",
+    "dispatchSessionSyncCommit": "c320ca36",
+    "executionBaseHead": "c320ca36",
+    "materialCommit": "97a634c2",
+    "roadmap": "docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md",
+    "evidenceJson": "docs/reviews/evidence/delta-t5-execution-control-capability-roadmap-2026-06-19.json",
+    "checks": [
+      "pre-implementation autorun PASS",
+      "implementation commit steward PASS",
+      "material pre-commit hook PASS 53/53"
+    ],
+    "claimBoundary": "Material proves only a source-backed Delta Execution Control capability roadmap and claim boundary. It does not prove mandatory invocation, direct IDE/shell/git/filesystem interception, provider/live behavior, public readiness, production readiness, release readiness, durable execution audit, wrapper/proxy enforcement, or universal governed-coding control.",
+    "nextAllowedMove": "Superseded by Delta-T5 CLOSED_PASS_BOUNDED closure at material/closure commit 97a634c2. Current next allowed move is governed by deltaT5ExecutionControlCapabilityRoadmapClosure20260619 and nextAllowedMove."
+  },
+  "deltaT5ExecutionControlCapabilityRoadmapClosure20260619": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "a47e185b",
+    "dispatchSessionSyncCommit": "c320ca36",
+    "materialCommit": "97a634c2",
+    "closureCommit": "97a634c2",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_FOR_CODEX_2026-06-19.md",
+    "roadmap": "docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md",
+    "evidenceJson": "docs/reviews/evidence/delta-t5-execution-control-capability-roadmap-2026-06-19.json",
+    "checks": [
+      "pre-implementation autorun PASS",
+      "implementation commit steward PASS",
+      "material pre-commit hook PASS 53/53",
+      "closure focused machine package and AOT gates PASS",
+      "closure pre-commit hook PASS 53/53"
+    ],
+    "claimBoundary": "Delta-T5 closed only a source-backed capability roadmap and claim boundary for Delta Execution Control. It does not prove mandatory invocation, direct IDE/shell/git/filesystem interception, provider/live behavior, public readiness, production readiness, release readiness, durable execution audit, wrapper/proxy enforcement, or universal governed-coding control.",
+    "nextAllowedMove": "Select the next high-value foundation tranche with fresh GC-018 and source verification. Recommended candidate: Delta-T6 Execution Claim Boundary Checker to machine-reject universal execution-control claims that lack receipt/action evidence. Runtime wrapper/proxy, direct interception, EDIT/COMMIT, provider/live, CVF Web action execution, queue/daemon, and public-sync remain parked until separately authorized."
+  },
+  "nextAllowedMove": "Delta-T5 Execution Control Capability Roadmap is CLOSED_PASS_BOUNDED at material/closure commit 97a634c2. Next allowed move: select the next high-value foundation tranche with fresh GC-018 and source verification. Recommended candidate: Delta-T6 Execution Claim Boundary Checker to machine-reject universal execution-control claims that lack receipt/action evidence. Unauthorized scope remains parked: runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave.",
   "ekaR1ExternalKnowledgeIntakeRoutingGuardClosure20260619": "CLOSED_PASS_BOUNDED at material commit b00a1292. EKA-R1 added governance/compat/check_external_knowledge_intake_routing.py, focused tests, and hook/autorun wiring so changed governed external-intake artifacts must cite docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md and include an External Knowledge Intake Routing block with input type, route, owner surface, disposition, matching local-view guard or N/A with reason, and claim boundary. Focused tests PASS 11/11; worker-return fast gate PASS; material pre-closure PASS except expected pre-session-sync handoff HEAD drift. Boundary: changed-artifact governance routing only; no broad external router, runtime interception, provider/live proof, public-sync, readiness, or universal governed-coding control claim."
 }

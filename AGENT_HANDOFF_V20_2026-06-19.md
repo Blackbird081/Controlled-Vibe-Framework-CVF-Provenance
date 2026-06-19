@@ -76,13 +76,13 @@ commit `49f71004`, material commit `39a22e3f`, Delta-T4B closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t5_execution_control_capability_roadmap_dispatched_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=implement only the Delta-T5 capability roadmap, completion review, and evidence JSON after pre-implementation from dispatch commit `a47e185b`; parked checkpoint=runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche with fresh GC-018 and source verification, with Delta-T6 Execution Claim Boundary Checker recommended; parked checkpoint=runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t5_execution_control_capability_roadmap_dispatched_ready`
+`delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `a47e185b`
+Current HEAD recorded for this handoff: `97a634c2`
 
 Material state:
 
@@ -117,9 +117,16 @@ Material state:
 - MCP to Model Gateway Composition Proof material commit: `befad4a9`
 - MCP to Model Gateway Composition Proof status: `CLOSED_PASS_BOUNDED`
 - Delta-T5 dispatch commit: `a47e185b`
+- Delta-T5 dispatch session-sync commit: `c320ca36`
+- Delta-T5 material/closure commit: `97a634c2`
 - Delta-T5 pre-dispatch gate: PASS
 - Delta-T5 dispatch commit steward: PASS
 - Delta-T5 dispatch pre-commit hook: PASS 53/53
+- Delta-T5 pre-implementation autorun: PASS
+- Delta-T5 implementation commit steward: PASS
+- Delta-T5 material pre-commit hook: PASS 53/53
+- Delta-T5 closure focused machine package and AOT gates: PASS
+- Delta-T5 closure pre-commit hook: PASS 53/53
 - Delta-T4B pre-dispatch gate: PASS
 - Delta-T4B dispatch commit steward: PASS
 - Delta-T4B dispatch pre-commit hook: PASS 52/52
@@ -214,6 +221,12 @@ Roadmap tranche. It authorizes only roadmap/completion/evidence documentation
 that maps completed invoked-control evidence, parked runtime expansion, and
 no-receipt/no-claim boundaries.
 
+Delta-T5 material/closure commit `97a634c2` added the capability roadmap,
+completion review, and evidence JSON, then converted the GC-018, work order,
+roadmap, completion review, and evidence JSON to `CLOSED_PASS_BOUNDED` while
+preserving the no-runtime/no-provider/no-public/no-universal-control claim
+boundary.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -226,11 +239,12 @@ Delta-T4B Mutating Profile Boundary Guard is
 
 MCP to Model Gateway Composition Proof is already `CLOSED_PASS_BOUNDED` at
 material commit `befad4a9`. Delta-T5 Execution Control Capability Roadmap is
-`DISPATCHED` at commit `a47e185b`.
+`CLOSED_PASS_BOUNDED` at material/closure commit `97a634c2`.
 
-Next allowed move: run pre-implementation from dispatch commit `a47e185b`, then
-implement only the Delta-T5 roadmap, completion review, and evidence JSON named
-by the work order.
+Next allowed move: select the next high-value foundation tranche with fresh
+GC-018 and source verification. Recommended candidate: Delta-T6 Execution Claim
+Boundary Checker to machine-reject universal execution-control claims that lack
+receipt/action evidence.
 
 ## Parked Operator Checkpoints
 
@@ -282,20 +296,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T5 dispatch session sync, 2026-06-19 |
+| Session or invocation | Delta-T5 closure session sync, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
 | Target paths | active handoff and generated session-state surfaces listed below |
-| Allowed scope source | Delta-T5 dispatch commit `a47e185b` and active session next-move correction commit `b88080b1` |
-| Before status evidence | Delta-T5 dispatch committed, active handoff still recorded pre-dispatch HEAD |
-| After status evidence | next-move surfaces point to Delta-T5 implementation after pre-implementation from `a47e185b` |
+| Allowed scope source | Delta-T5 material/closure commit `97a634c2` |
+| Before status evidence | Delta-T5 closure committed, active handoff still recorded pre-sync material HEAD |
+| After status evidence | next-move surfaces point to next high-value foundation tranche selection |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | session-sync correction only; Delta-T5 implementation remains limited to roadmap/completion/evidence |
+| Approval boundary | session-sync correction only; no new runtime or public scope |
 | Claim boundary | no runtime profile expansion beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, CVF Web action execution, direct interception, broad wrapper/proxy/runtime enforcement expansion, or universal enforcement claim in this session-sync commit |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t5-dispatch-session-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `delta-t5-closure-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapClosure20260619.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapMaterialAccepted20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapClosure20260619.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapMaterialAccepted20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
