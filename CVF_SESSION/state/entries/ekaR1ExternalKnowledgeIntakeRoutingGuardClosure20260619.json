@@ -1,0 +1,5 @@
+{
+  "stateOrder": 501,
+  "stateKey": "ekaR1ExternalKnowledgeIntakeRoutingGuardClosure20260619",
+  "value": "CLOSED_PASS_BOUNDED at material commit b00a1292. EKA-R1 added governance/compat/check_external_knowledge_intake_routing.py, focused tests, and hook/autorun wiring so changed governed external-intake artifacts must cite docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md and include an External Knowledge Intake Routing block with input type, route, owner surface, disposition, matching local-view guard or N/A with reason, and claim boundary. Focused tests PASS 11/11; worker-return fast gate PASS; material pre-closure PASS except expected pre-session-sync handoff HEAD drift. Boundary: changed-artifact governance routing only; no broad external router, runtime interception, provider/live proof, public-sync, readiness, or universal governed-coding control claim."
+}

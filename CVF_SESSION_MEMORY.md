@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`
+Current mode marker: `eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`.
+Current mode: `eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`.
 
 Previous mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
@@ -328,6 +328,16 @@ call, secrets/quota use, public-sync, broad MCP runtime enforcement, durable
 audit, wrapper/proxy execution control, universal governed-coding control,
 production readiness, public readiness, release readiness, or external-facing
 readiness was authorized or performed.
+
+EKA-R1 External Knowledge Intake Routing Guard is `CLOSED_PASS_BOUNDED` at
+material commit `b00a1292`. Codex added a range-aware guard requiring changed
+governed external-intake artifacts to cite the chain map and include an
+External Knowledge Intake Routing block with input type, route, owner surface,
+disposition, matching local-view guard or `N/A with reason`, and claim
+boundary. Focused tests PASS 11/11 and worker-return fast gate PASS. No broad
+external router, runtime interception, provider/live proof, public-sync,
+readiness, or universal governed-coding control claim was authorized or
+performed.
 
 Delta-T1 Governance Action Preflight Receipt is `CLOSED_PASS_BOUNDED` at
 accepted material commit `156b0610` and closure commit `a196e42f`. Codex
@@ -793,18 +803,20 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`.
+Mode: `eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
 
-Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake
-Routing Guard T1 is dispatched at commit `f74a3220` with fresh GC-018 and a
-source-verified work order.
+EKA-R1 External Knowledge Intake Routing Guard T1 is `CLOSED_PASS_BOUNDED` at
+material commit `b00a1292`. The changed-artifact routing guard, focused tests,
+and hook/autorun wiring are complete.
 
-Next allowed move: implement the bounded range-aware governed-artifact routing
-guard, focused tests, hook/autorun wiring, and closure evidence under the
-EKA-R1 work order. Delta-T4 and external interception remain parked.
+Next allowed move: select or authorize the next high-leverage foundation
+tranche with fresh GC-018 and source-verified work order. Delta Execution
+Control continuation may be reconsidered because MCP-to-Model-Gateway
+Composition Proof and EKA-R1 are now closed, but Delta-T4 remains parked until
+explicit authorization.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

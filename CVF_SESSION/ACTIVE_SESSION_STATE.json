@@ -60,7 +60,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready",
+  "currentMode": "eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready",
   "previousMode": "delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -2385,5 +2385,6 @@
     "claimBoundary": "Candidate selection only. EKA-R1 is not dispatch-ready or implemented; it is bounded to future range-aware governed-artifact routing and does not claim universal interception. Delta-T4 is parked, not rejected.",
     "nextAllowedMove": "Operator may authorize fresh GC-018 and a source-verified work order for EKA-R1. Until then EKA-R1 remains recommended but undispatched, Delta-T4 remains parked, and runtime/provider/live/public-sync/registry/readiness expansion remains unauthorized."
   },
-  "nextAllowedMove": "EKA-R1 External Knowledge Intake Routing Guard T1 is dispatched at commit f74a3220 with fresh GC-018 and a source-verified work order. Next allowed move: implement the bounded range-aware governed-artifact routing guard, focused tests, hook/autorun wiring, and closure evidence under the EKA-R1 work order. Delta-T4 remains parked. Runtime/provider/live/public-sync/registry/readiness expansion, broad external router/interception, and universal governed-coding control claims remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
+  "nextAllowedMove": "EKA-R1 External Knowledge Intake Routing Guard T1 is CLOSED_PASS_BOUNDED at material commit b00a1292 with changed-artifact routing guard, focused tests, and hook/autorun wiring complete. Next allowed move: select or authorize the next high-leverage foundation tranche with fresh GC-018 and source-verified work order. Candidate direction: Delta Execution Control continuation may be reconsidered now that MCP-to-Model-Gateway Composition Proof and EKA-R1 are closed, but Delta-T4 remains parked until explicit authorization. Runtime/provider/live/public-sync/registry/readiness expansion, broad external router/interception, and universal governed-coding control claims remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "ekaR1ExternalKnowledgeIntakeRoutingGuardClosure20260619": "CLOSED_PASS_BOUNDED at material commit b00a1292. EKA-R1 added governance/compat/check_external_knowledge_intake_routing.py, focused tests, and hook/autorun wiring so changed governed external-intake artifacts must cite docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md and include an External Knowledge Intake Routing block with input type, route, owner surface, disposition, matching local-view guard or N/A with reason, and claim boundary. Focused tests PASS 11/11; worker-return fast gate PASS; material pre-closure PASS except expected pre-session-sync handoff HEAD drift. Boundary: changed-artifact governance routing only; no broad external router, runtime interception, provider/live proof, public-sync, readiness, or universal governed-coding control claim."
 }

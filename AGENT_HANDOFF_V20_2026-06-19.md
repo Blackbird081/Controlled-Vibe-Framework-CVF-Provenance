@@ -48,6 +48,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherAcceptedMaterial20260619.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`
+- `CVF_SESSION/state/entries/ekaR1ExternalKnowledgeIntakeRoutingGuardClosure20260619.json`
 - `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
@@ -62,13 +63,13 @@ Do not alter material commit `ff584e42` or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=implement the bounded EKA-R1 external knowledge intake routing guard under the dispatched work order; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select or authorize the next high-leverage foundation tranche with fresh GC-018 and source-verified work order; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`eka_r1_external_knowledge_intake_routing_guard_dispatched_implementation_ready`
+`eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`
 
-Current HEAD recorded for this handoff: `f74a3220`
+Current HEAD recorded for this handoff: `b00a1292`
 
 Material state:
 
@@ -80,6 +81,10 @@ Material state:
 - Delta-T3 closure commit: `7a654dfb`
 - Post-Delta-T3 foundation selection commit: `9f0b4c9f`
 - EKA-R1 dispatch commit: `f74a3220`
+- EKA-R1 closure material commit: `b00a1292`
+- EKA-R1 focused tests: PASS 11/11
+- EKA-R1 worker-return fast gate: PASS
+- EKA-R1 material pre-closure: PASS except expected pre-session-sync handoff HEAD drift
 - Focused tests: PASS 2 files / 15 tests
 - Full MCP tests: PASS 29 files / 610 tests
 - MCP package build: PASS
@@ -103,8 +108,8 @@ and cannot support this tranche's fixed non-destructive command claim.
 
 ## Active Boundary
 
-Delta-T3 is closed bounded and Delta-T4 is parked. EKA-R1 is dispatched for
-bounded implementation.
+Delta-T3 and EKA-R1 are closed bounded. Delta-T4 remains parked until explicit
+operator authorization.
 
 ## Latest Work / Changes
 
@@ -113,14 +118,20 @@ registry, T1/T2/T3 admission sequencing, durable execution receipts, direct
 `shell:false` child execution, focused tests, and bounded smoke evidence at
 material commit `ff584e42`.
 
+EKA-R1 added `governance/compat/check_external_knowledge_intake_routing.py`,
+focused tests, and hook/autorun wiring so changed governed external-intake
+artifacts must cite the chain map and include local routing evidence.
+
 ## Next Allowed Move
 
-Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake
-Routing Guard T1 is dispatched at commit `f74a3220`.
+EKA-R1 External Knowledge Intake Routing Guard T1 is `CLOSED_PASS_BOUNDED` at
+material commit `b00a1292`.
 
-Next allowed move: implement the bounded range-aware EKA-R1 checker, focused
-tests, hook/autorun wiring, and closure evidence under the dispatched work
-order. EKA-R1 makes no universal interception claim.
+Next allowed move: select or authorize the next high-leverage foundation
+tranche with fresh GC-018 and source-verified work order. Delta Execution
+Control continuation may be reconsidered because MCP-to-Model-Gateway
+Composition Proof and EKA-R1 are now closed, but Delta-T4 remains parked until
+explicit authorization.
 
 ## Parked Operator Checkpoints
 
