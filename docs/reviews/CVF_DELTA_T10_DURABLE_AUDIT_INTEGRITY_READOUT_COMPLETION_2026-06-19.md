@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -29,8 +29,9 @@ session continuity edit was made by Claude.
 
 `COMPLETE_PENDING_REVIEW`
 
-Worker return is accepted pending reviewer repair and closure conversion. Codex
-reviewer identified and fixed two allowed-scope robustness gaps before commit:
+Worker no-commit return accepted by Codex at material commit `8f4abb28`.
+Codex reviewer identified and fixed two allowed-scope robustness gaps before
+commit:
 
 - supplied JSONL that parses to `null` or another primitive is classified with
   findings instead of crashing the readout;
@@ -75,7 +76,7 @@ All acceptance criteria remain met after reviewer hardening.
 | Current action | Codex reviewer repaired allowed-scope implementation edge cases, expanded focused tests, and added missing packet control sections |
 | Machine-check action | `RULE_EXISTS`: reviewer-fast caught missing packet sections; focused tests now cover JSONL primitive/null handling and secret-like receipt identity suppression |
 | Runtime/provider/cost lane | `N/A_WITH_REASON`: no provider call, runtime registration, public-sync, or cost signal in Delta-T10 |
-| Next action | Commit accepted material after reviewer gates, then perform closure conversion and session sync |
+| Next action | Perform final closure/session sync if continuity state changes |
 | Worker blame | N/A with reason: this `WORKER_MUST_NOT_COMMIT` return allowed Codex reviewer to make bounded repairs before acceptance |
 
 ## Delta Execution Claim Boundary Control Block
@@ -263,6 +264,30 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance Delta execution-control foundation tranche. Public
 sync is not authorized for this worker packet.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_FOR_CLAUDE_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this completion | `Status: CLOSED_PASS_BOUNDED`; material commit `8f4abb28` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | roadmap remains `Status: CLOSED_PASS_BOUNDED`; Delta-T10 bounded continuation completed by this closure | PASS |
+| Registry JSON | N/A with reason: not corpus intake | evidence JSON is tranche evidence, not corpus registry | BLOCKED with reason: no registry mutation authorized for this tranche |
+| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized | BLOCKED with reason: no registry mutation authorized for this tranche |
+| External evidence digest | N/A with reason: no external evidence | repo-local source/test evidence only | N/A with reason |
+| System loop interlock | durable audit readout source/tests | focused 30/30, full MCP 688/688, build PASS, worker-return fast gate PASS | PASS |
+| Session continuity | active state, memory, and handoff | material handoff bridge `1a08cbd0`; final closure sync remains separate reviewer-owned continuity | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Expected value | Status |
+| --- | --- | --- |
+| commit mode | `WORKER_MUST_NOT_COMMIT`; Codex committed accepted material | PASS |
+| runtime scope | bounded new audit readout module only | PASS |
+| provider/live scope | false | PASS |
+| public-sync | false | PASS |
+| direct interception claim | false | PASS |
+| universal governed-coding claim | false | PASS |
 
 ## Claim Boundary
 

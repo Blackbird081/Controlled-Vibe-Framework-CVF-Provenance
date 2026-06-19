@@ -222,7 +222,7 @@ describe('durable-execution-audit-readout', () => {
       expect(secretFinding!.message).not.toContain(secretValue);
     });
 
-    it('secret-like receiptId is not echoed through finding receipt identity', () => {
+    it('secret-like values are classified without raw echo in receipt identity', () => {
       const secretValue = 'sk-secret-receipt-value';
       const bad = validRecord({ receiptId: secretValue });
       const readout = buildDurableAuditIntegrityReadout([bad], { readoutAt: READOUT_AT });

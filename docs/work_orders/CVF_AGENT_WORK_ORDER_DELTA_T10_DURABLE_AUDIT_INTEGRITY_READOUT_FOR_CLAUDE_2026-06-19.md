@@ -1,15 +1,15 @@
 # CVF Agent Work Order - Delta-T10 Durable Audit Integrity Readout
 
 Memory class: FULL_RECORD
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-06-19
 docType: work_order
 Batch ID: DELTA-T10
 Owner: Claude worker, Codex reviewer
 Commit mode: WORKER_MUST_NOT_COMMIT
 dispatchBaseHead: `5f774742`
-executionBaseHead: `PENDING_CLAUDE_CAPTURE`
-closureBaseHead: `N/A_REVIEWER_OWNED`
+executionBaseHead: `b8545740`
+closureBaseHead: `1a08cbd0`
 rawMemoryReleased: false
 
 ## Dispatch Prompt Envelope
@@ -73,6 +73,10 @@ Allowed scope:
 - create `docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md`;
 - create `docs/reviews/evidence/delta-t10-durable-audit-integrity-readout-2026-06-19.json`;
 - update this work order only for worker-return status/evidence if needed.
+- Codex reviewer closure may update
+  `docs/baselines/CVF_GC018_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_2026-06-19.md`,
+  this work order, the completion review, and the evidence JSON for closure
+  conversion only.
 
 Forbidden scope:
 
@@ -104,7 +108,7 @@ Forbidden scope:
 | Session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | next high-value foundation selection |
 | Roadmap | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | durable audit continuation allowed only via fresh source-verified tranche |
 | Delta-T9 closure | `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md` | CLOSED_PASS_BOUNDED |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_2026-06-19.md` | DISPATCHED |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_2026-06-19.md` | CLOSED_PASS_BOUNDED |
 
 ## Agent Roles
 
@@ -141,7 +145,7 @@ public-sync history.
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | worker-no-commit split: Claude worker returns uncommitted artifacts; Codex reviewer owns commit and closure |
 | phase | DISPATCH_AUTHORING, WORKER_EXECUTION, REVIEWER_CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`5f774742`; execution=`PENDING_CLAUDE_CAPTURE`; closure=`N/A_REVIEWER_OWNED` |
+| baseHeadFor(phase) | dispatch=`5f774742`; execution=`b8545740`; closure=`1a08cbd0` |
 | changedSetScope(phase) | dispatch packet; worker-owned source/test/worker-return/evidence; reviewer closure conversion; separate sync |
 | traceScope(phase, actor) | exact manifests and commands per phase |
 | commitOwner(phase) | Codex only |
@@ -155,8 +159,8 @@ public-sync history.
 | --- | --- |
 | completionReviewPath | `docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md` |
 | reviewerOwnedClosurePaths | matching GC-018, this work order, worker return/completion, evidence JSON, active session state/front door/handoff only if accepted |
-| workerReturnStatus | pending Claude no-commit return |
-| reviewerAction | Codex runs reviewer-fast, focused tests, full MCP tests/build, committed-range gates, then commits or rejects |
+| workerReturnStatus | worker no-commit return accepted by Codex at material commit `8f4abb28` |
+| reviewerAction | Codex ran reviewer-fast, focused tests, full MCP tests/build, committed-range gates, and accepted bounded material |
 
 ## Durable Audit Integrity Readout Control Block
 
@@ -497,25 +501,25 @@ sync is not worker-authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this work order | `Status: DISPATCHED`; worker must return `COMPLETE_PENDING_REVIEW` or `BLOCKED` | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md` | pending Claude worker return | PENDING_WORKER |
-| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | roadmap remains `Status: CLOSED_PASS_BOUNDED`; Delta-T10 is a post-T9 fresh tranche | N/A with reason |
-| Registry JSON | N/A with reason: not corpus intake | no registry mutation authorized | N/A with reason |
-| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized | N/A with reason |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED`; accepted material commit `8f4abb28` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | roadmap remains `Status: CLOSED_PASS_BOUNDED`; Delta-T10 bounded continuation completed by this closure | PASS |
+| Registry JSON | N/A with reason: not corpus intake | no registry mutation authorized | BLOCKED with reason: no registry mutation authorized for this tranche |
+| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized | BLOCKED with reason: no registry mutation authorized for this tranche |
 | External evidence digest | N/A with reason: no external evidence | repo-local source/test evidence only | N/A with reason |
-| System loop interlock | durable audit readout source/tests | pending focused/full/build/worker-return fast gate evidence | PENDING_WORKER |
-| Session continuity | active state, memory, and handoff | reviewer-owned once worker return is accepted | PENDING_REVIEWER |
+| System loop interlock | durable audit readout source/tests | focused 30/30, full MCP 688/688, build PASS, worker-return fast gate PASS | PASS |
+| Session continuity | active state, memory, and handoff | material handoff bridge `1a08cbd0`; final closure sync remains separate reviewer-owned continuity | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Expected value | Status |
 | --- | --- | --- |
-| commit mode | `WORKER_MUST_NOT_COMMIT`; Codex commits only during reviewer closure | PENDING_WORKER |
-| runtime scope | bounded new audit readout module only | PENDING_WORKER |
-| provider/live scope | false | PENDING_WORKER |
-| public-sync | false | PENDING_WORKER |
-| direct interception claim | false | PENDING_WORKER |
-| universal governed-coding claim | false | PENDING_WORKER |
+| commit mode | `WORKER_MUST_NOT_COMMIT`; Codex committed accepted material | PASS |
+| runtime scope | bounded new audit readout module only | PASS |
+| provider/live scope | false | PASS |
+| public-sync | false | PASS |
+| direct interception claim | false | PASS |
+| universal governed-coding claim | false | PASS |
 
 ## Claim Boundary
 
