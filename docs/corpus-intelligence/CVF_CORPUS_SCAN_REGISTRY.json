@@ -4041,6 +4041,47 @@
       "manifestPath": null,
       "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_FOR_CODEX_2026-06-19.md",
       "notes": "Dispatch-only packet; no cvf-web product source changed in this authoring batch."
+    },
+    {
+      "id": "wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF WWU-T3A local workspace runtime MCP Model Gateway execute preview dispatch",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_2026-06-19.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md",
+        "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+        "docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+        "docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md",
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "wwu-t3a-mcp-execute-preview-dispatch",
+          "summary": "WWU-T3A dispatch authorizes one deterministic MCP Model Gateway execute preview tool under Local Workspace Runtime boundary.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Execute WWU-T3A implementation inside the source-verified work order boundary.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "broad MCP gateway implementation",
+        "provider live proof for WWU-T3A",
+        "raw API key through MCP request",
+        "runtime queue scheduler worker daemon",
+        "public readiness from MCP preview"
+      ],
+      "nextScanRecommendation": "WWU-T3A material implementation closure",
+      "scanWave": "WWU-T3A",
+      "scanDate": "2026-06-19",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md",
+      "notes": "Dispatch-only packet; no runtime source changed in this authoring batch."
     }
   ]
 }
