@@ -92,7 +92,7 @@ Startup acknowledged: current mode=`delta_t9_durable_execution_audit_store_close
 
 `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `0b286d03`
+Current HEAD recorded for this handoff: `b14df7b4`
 
 Material state:
 
@@ -350,6 +350,12 @@ readout of supplied records only: no wrapper/proxy enforcement, no direct
 IDE/shell/git/filesystem interception, no arbitrary command execution, no
 provider/live, no public-sync, no queue/daemon, no CVF Web action execution, no
 readiness, and no universal governed-coding control claim.
+
+Delta-T10 dispatch repair commit `b14df7b4` updates the work-order
+pre-implementation gate instruction to use the current handoff bridge parent as
+base. This keeps reviewer-owned handoff sync outside the worker changed range
+and does not open runtime, provider, public, direct-interception, readiness, or
+universal-control scope.
 
 ## Next Allowed Move
 
