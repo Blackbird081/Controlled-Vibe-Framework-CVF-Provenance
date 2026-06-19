@@ -37,8 +37,8 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize GGL-T2 closure commit
-`a7b2f1d2`, generated active state, compact session memory, and the next
+Authorized guard-maintenance scope: synchronize Delta-T9 closure commit
+`38292bee`, generated active state, compact session memory, and the next
 bounded foundation route. This session sync does not open runtime, provider,
 public, or direct-interception scope.
 
@@ -65,15 +65,16 @@ Protected paths:
 - `CVF_SESSION/state/entries/gglT1GovernanceGateLatencyOptimizationClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`
 - `CVF_SESSION/state/entries/gglT2GitHookLaneFinalityReliabilityClosure20260619.json`
+- `CVF_SESSION/state/entries/deltaT9DurableExecutionAuditStoreClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator asked Codex to continue processing the
-finding. GGL-T2 is now closed bounded and this session sync records the next
-foundation selection lane without expanding runtime, public, provider, or
-execution scope.
+Operator authorization: the operator asked Codex to review and close the
+Delta-T9 worker return. Delta-T9 is now closed bounded and this session sync
+records the next foundation selection lane without expanding runtime, public,
+provider, or execution scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
 Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
@@ -85,13 +86,13 @@ commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ggl_t2_hook_finality_reliability_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche through fresh GC-018 and source verification; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t9_durable_execution_audit_store_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche through fresh GC-018 and source verification; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
+`delta_t9_durable_execution_audit_store_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `ac390222`
+Current HEAD recorded for this handoff: `38292bee`
 
 Material state:
 
@@ -332,8 +333,15 @@ contract/store module, focused tests, completion review, and evidence JSON.
 Codex reviewer tightened store append/read validation so forged or corrupted
 mandatory-invocation/direct-interception claims are rejected. Verification:
 focused 30/30 PASS, full MCP 32 files / 658 tests PASS, build PASS,
-worker-return fast gate PASS. Closure conversion remains in progress and must
-stay inside the same bounded claim boundary.
+worker-return fast gate PASS.
+
+Delta-T9 closure commit `38292bee` converts the GC-018, work order, completion
+review, and evidence JSON to `CLOSED_PASS_BOUNDED`. Pre-closure content gates
+passed on `8b1cb2d5..38292bee`; the only remaining failure before this sync was
+expected active-session HEAD drift. Boundary remains supplied Delta evidence
+durability only, with no wrapper/proxy enforcement, direct interception,
+arbitrary command execution, provider/live, public-sync, CVF Web action
+execution, queue/daemon, readiness, or universal governed-coding control claim.
 
 ## Next Allowed Move
 
@@ -366,6 +374,10 @@ closure handoff bridge `c4b49fbd`.
 
 GGL-T2 Git Hook Lane And Worktree Finality Reliability is
 `CLOSED_PASS_BOUNDED` at closure commit `a7b2f1d2`.
+
+Delta-T9 Durable Execution Audit Store is `CLOSED_PASS_BOUNDED` at closure
+commit `38292bee`, after dispatch `7f603b49`, dispatch handoff bridge
+`8a9ee919`, material `ac390222`, and material handoff bridge `8b1cb2d5`.
 
 Next allowed move: select the next high-value foundation tranche through fresh
 GC-018 and source verification. Suggested candidates should prioritize durable

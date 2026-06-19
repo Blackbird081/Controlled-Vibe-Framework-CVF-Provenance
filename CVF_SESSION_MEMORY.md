@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
+Current mode marker: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`.
+Current mode: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`.
 
-Previous mode: `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`.
+Previous mode: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -95,9 +95,18 @@ gate passed; implementation steward passed with pre-implementation rerun 44/44;
 material-range pre-closure passed 43/43 with clean finality; closure pre-commit
 passed 54/54.
 
+Delta-T9 Durable Execution Audit Store is `CLOSED_PASS_BOUNDED` at closure
+commit `38292bee`, after dispatch `7f603b49`, dispatch handoff bridge
+`8a9ee919`, material commit `ac390222`, and material handoff bridge
+`8b1cb2d5`. It adds a bounded durable audit contract/local JSONL store for
+supplied Delta receipt-to-execution evidence only. Focused tests passed 30/30,
+full MCP tests passed 32 files / 658 tests, build passed, worker-return fast
+gate passed, and pre-closure content gates passed with only expected
+post-closure session-sync HEAD drift before this sync.
+
 ## Next Allowed Move
 
-Mode: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`.
+Mode: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`.
 
 Next allowed move: select the next high-value foundation tranche through fresh
 GC-018 and source verification. Suggested candidates should prioritize durable
@@ -138,6 +147,7 @@ gates, and governed file-size checks enforce this front-door contract.
 - `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`
+- `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 - `governance/compat/run_agent_commit_steward_preflight.py`
 
