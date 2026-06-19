@@ -92,7 +92,7 @@ Startup acknowledged: current mode=`delta_t9_durable_execution_audit_store_close
 
 `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `38292bee`
+Current HEAD recorded for this handoff: `0b286d03`
 
 Material state:
 
@@ -342,6 +342,14 @@ expected active-session HEAD drift. Boundary remains supplied Delta evidence
 durability only, with no wrapper/proxy enforcement, direct interception,
 arbitrary command execution, provider/live, public-sync, CVF Web action
 execution, queue/daemon, readiness, or universal governed-coding control claim.
+
+Delta-T10 dispatch commit `0b286d03` adds the source-verified GC-018 and
+WORKER_MUST_NOT_COMMIT work order for a durable audit integrity readout over
+supplied Delta-T9 durable audit records. Claim boundary remains deterministic
+readout of supplied records only: no wrapper/proxy enforcement, no direct
+IDE/shell/git/filesystem interception, no arbitrary command execution, no
+provider/live, no public-sync, no queue/daemon, no CVF Web action execution, no
+readiness, and no universal governed-coding control claim.
 
 ## Next Allowed Move
 
