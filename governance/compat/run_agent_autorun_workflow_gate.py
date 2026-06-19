@@ -168,6 +168,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "Delta execution claim boundary",
+            "governance/compat/check_delta_execution_claim_boundary.py",
+            base,
+            head,
+        ),
+        _range_command(
             "foundation storage layout",
             "governance/compat/check_foundation_storage_layout.py",
             base,

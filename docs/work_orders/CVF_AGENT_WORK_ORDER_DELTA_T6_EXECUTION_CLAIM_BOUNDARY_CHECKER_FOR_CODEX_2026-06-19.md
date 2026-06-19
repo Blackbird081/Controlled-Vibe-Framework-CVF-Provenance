@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CODEX
+Status: MATERIAL_ACCEPTED_PENDING_CLOSURE
 
 Date: 2026-06-19
 
@@ -16,7 +16,7 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `1092829b`
 
-executionBaseHead: `POST_DISPATCH_SYNC_ANCHOR`
+executionBaseHead: `1fbe968e`
 
 closureBaseHead: `POST_MATERIAL_SYNC_ANCHOR`
 
@@ -129,6 +129,10 @@ Protected paths authorized in this tranche:
 
 Allowed mutation: additive checker/test creation and additive hook/autorun
 registration only.
+
+Implementation evidence update: material implementation is limited to the
+protected checker/test/hook paths listed above and uses execution base
+`1fbe968e`.
 
 Forbidden mutation: deleting, disabling, weakening, or bypassing existing
 guards; changing unrelated guard semantics; changing runtime/profile/provider
@@ -359,6 +363,16 @@ worker-return fast gate, commit steward output, pre-closure autorun output,
 exact changed-set manifest, public export disposition, and no-runtime/no-live/
 no-public/no-universal-control claim boundary.
 
+## Required Artifact Manifest
+
+| Path | Required at handoff | Purpose |
+| --- | --- | --- |
+| `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md` | true | material authorization and work-order state |
+| `governance/compat/check_delta_execution_claim_boundary.py` | true | execution-claim boundary checker |
+| `governance/compat/test_check_delta_execution_claim_boundary.py` | true | focused checker tests |
+| `governance/compat/run_local_governance_hook_chain.py` | true | reviewer-fast, pre-commit, and pre-push wiring |
+| `governance/compat/run_agent_autorun_workflow_gate.py` | true | autorun common gate wiring |
+
 ## Review Gate
 
 Codex must self-review the checker against at least these cases: valid bounded
@@ -422,22 +436,22 @@ Reason: private provenance governance guard. Public-sync is not authorized.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex dispatcher |
+| Actor | Codex implementer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T6 dispatch authoring, 2026-06-19 |
+| Session or invocation | Delta-T6 material implementation, 2026-06-19 |
 | Working directory | repository root |
-| Command or tool surface | PowerShell, apply_patch, governance gates |
-| Target paths | Delta-T6 GC-018 and work order |
-| Allowed scope source | active session next move from Delta-T5 closure artifact `docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md` at commit `97a634c2` |
-| Before status evidence | clean worktree at `1092829b`; Delta-T5 closed |
-| After status evidence | Delta-T6 dispatch packet authored; implementation not yet performed |
-| Diff evidence | `git diff --cached --name-status` before dispatch commit |
-| Approval boundary | dispatch only for bounded checker tranche |
+| Command or tool surface | PowerShell, apply_patch, Python unittest, worker-return fast gate, governance gates |
+| Target paths | Delta-T6 checker, tests, hook wiring, autorun wiring, and work-order material state |
+| Allowed scope source | dispatch commit `73539dab`; dispatch session-sync commit `1fbe968e`; this Core Guard Self-Protection Authorization block |
+| Before status evidence | Delta-T6 dispatch committed and continuity synced at `1fbe968e` |
+| After status evidence | material implementation ready for material commit and later closure conversion |
+| Diff evidence | `git diff --name-status`, focused tests, direct checker, worker-return fast gate, implementation steward |
+| Approval boundary | bounded checker/test/hook implementation only |
 | Claim boundary | no runtime/profile/provider/live/public/direct-interception/universal-control claim |
 | Agent type | single-agent multi-role |
-| Invocation ID | `delta-t6-dispatch-codex-2026-06-19` |
-| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md` |
+| Invocation ID | `delta-t6-material-codex-2026-06-19` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/test_check_delta_execution_claim_boundary.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/test_check_delta_execution_claim_boundary.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
