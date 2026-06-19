@@ -31,8 +31,8 @@ External agent memory files: non-canonical convenience only.
 
 Authorized session-sync scope: update active handoff after WWU-T2A CVF Web
 Workspace Lane Summary Read Model closure material commit `acedeb28`,
-WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview dispatch
-material commit `9dff4a1b`,
+WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview closure
+material commit `10b3f886`, following dispatch material commit `9dff4a1b`,
 operator post-MCP external knowledge absorption chain checkpoint,
 following WWU-T2A dispatch material commit `b3d89c60`, WWU-T2 CVF Web
 Workspace Operator Dashboard Read Model closure material commit `b3593e1b`,
@@ -80,6 +80,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/wwuT2CvfWebWorkspaceOperatorDashboardReadModelClosure20260618.json`
 - `CVF_SESSION/state/entries/wwuT2ACvfWebWorkspaceLaneSummaryReadModelClosure20260619.json`
 - `CVF_SESSION/state/entries/wwuT3ALocalWorkspaceRuntimeMcpModelGatewayExecutePreviewDispatch20260619.json`
+- `CVF_SESSION/state/entries/wwuT3ALocalWorkspaceRuntimeMcpModelGatewayExecutePreviewClosure20260619.json`
 - `CVF_SESSION/state/entries/postMcpExternalKnowledgeAbsorptionChainFollowup20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
@@ -145,15 +146,16 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=run pre-implementation from dispatch commit `9dff4a1b`, then implement only the bounded deterministic WWU-T3A MCP execute preview tool; parked checkpoint=broad WWU-T3 runtime/MCP remains parked beyond WWU-T3A, post-MCP external knowledge absorption chain formalization waits for MCP/runtime completion plus fresh GC-018 and source-verified work order, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, broad MCP implementation, provider/live calls, runtime queue/scheduler/daemon work, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=formalize the old and new external-agent/repo knowledge absorption rules into one CVF-governed workflow chain map only after fresh GC-018 and a source-verified work order; parked checkpoint=broad WWU-T3 runtime/MCP remains parked beyond WWU-T3A, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, broad MCP implementation, provider/live calls, runtime queue/scheduler/daemon work, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
-`wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`
+`wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`
 
-Current HEAD recorded for this handoff: `9dff4a1b`
-(WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview dispatch
-material commit `9dff4a1b`;
+Current HEAD recorded for this handoff: `10b3f886`
+(WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview closure
+material commit `10b3f886`;
+WWU-T3A dispatch material commit `9dff4a1b`;
 session-sync commit before the post-MCP checkpoint note `4438a781`;
 WWU-T2A CVF Web Workspace Lane Summary Read Model closure material commit
 `acedeb28`;
@@ -832,21 +834,18 @@ source-verified work order.
 ## Next Allowed Move
 
 WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview is
-`DISPATCH_READY` at material commit `9dff4a1b`. It authorizes one bounded
+`CLOSED_PASS_BOUNDED` at material commit `10b3f886`. It added one bounded
 deterministic MCP tool candidate: `cvf_model_gateway_execute_preview`.
 
-Next allowed move: run pre-implementation from dispatch commit `9dff4a1b`,
-then implement only the bounded deterministic WWU-T3A MCP execute preview tool
-under
-`docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md`.
-Any broader WWU-T3 runtime/MCP tranche or bounded Web Workspace follow-up
-requires fresh GC-018 and a source-verified work order.
+Next allowed move: formalize the old and new external-agent/repo knowledge
+absorption rules into one CVF-governed workflow chain map, but only after
+fresh GC-018 and a source-verified work order. Any broader WWU-T3 runtime/MCP
+tranche or bounded Web Workspace follow-up requires fresh GC-018 and a
+source-verified work order.
 
-Post-MCP parked follow-up: after the future authorized MCP/runtime work is
-complete, formalize the old and new external-agent/repo knowledge absorption
-rules into one CVF-governed workflow chain map. That follow-up is not open now
-and requires fresh GC-018 plus a source-verified work order before
-implementation.
+Post-MCP follow-up: the external-agent/repo knowledge absorption workflow-chain
+formalization is now the next candidate, with fresh GC-018 and source
+verification required before implementation.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation remains held for explicit public-sync

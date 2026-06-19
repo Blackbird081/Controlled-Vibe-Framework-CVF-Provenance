@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`
+Current mode marker: `wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`.
+Current mode: `wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`.
 
 Active handoff:
 
@@ -745,23 +745,21 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`.
+Mode: `wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`.
 
 WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview is
-`DISPATCH_READY` at material commit `9dff4a1b`. It authorizes one bounded
+`CLOSED_PASS_BOUNDED` at material commit `10b3f886`. It added one bounded
 deterministic MCP tool candidate: `cvf_model_gateway_execute_preview`.
 
-Next allowed move: run pre-implementation from dispatch commit `9dff4a1b`,
-then implement only the bounded deterministic WWU-T3A MCP execute preview tool
-under
-`docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md`.
-Any broader WWU-T3 runtime/MCP tranche or bounded Web Workspace follow-up
-requires fresh GC-018 and a source-verified work order.
+Next allowed move: formalize the old and new external-agent/repo knowledge
+absorption rules into one CVF-governed workflow chain map, but only after
+fresh GC-018 and a source-verified work order. Any broader WWU-T3 runtime/MCP
+tranche or bounded Web Workspace follow-up also requires fresh GC-018 and a
+source-verified work order.
 
-Post-MCP parked follow-up: after the future authorized MCP/runtime work is
-complete, formalize the old and new external-agent/repo knowledge absorption
-rules into one CVF-governed workflow chain map. That follow-up requires fresh
-GC-018 and a source-verified work order before implementation.
+Post-MCP follow-up: the external-agent/repo knowledge absorption workflow-chain
+formalization is now the next candidate, with fresh GC-018 and source
+verification required before implementation.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
