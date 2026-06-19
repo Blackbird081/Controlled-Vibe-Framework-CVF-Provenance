@@ -266,6 +266,12 @@ authorize checker suppression, hook bypass, runtime/provider/public/UI work,
 or universal speed claims. The execution base is this handoff-only bridge
 commit; protected session mode remains unchanged until material closure.
 
+GGL-T1 material commit `b71bde91` is `COMPLETE_PENDING_REVIEW`. Focused tests
+passed 19/19; full parallel pre-implementation passed 44/44 in 3.35s; serial
+regression passed 44/44 in 9.19s; exact receipt reuse reduced the following
+steward invocation to 1.2s total. Material adds no checker suppression, hook
+bypass, runtime/provider/public/UI behavior, or universal speed claim.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -337,6 +343,8 @@ LHW24 remains the latest closed numbered LHW wave.
 - Delta-T6 evidence: `docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json`
 - GGL-T1 GC-018: `docs/baselines/CVF_GC018_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_2026-06-19.md`
 - GGL-T1 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_FOR_CODEX_2026-06-19.md`
+- GGL-T1 material completion: `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`
+- GGL-T1 material evidence: `docs/reviews/evidence/ggl-t1-governance-gate-latency-audit-optimization-2026-06-19.json`
 - Predecessor continuity: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
 
 ## Agent Operation Trace Block
