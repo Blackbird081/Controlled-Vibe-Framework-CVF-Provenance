@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`
+Current mode marker: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`.
+Current mode: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`.
 
-Previous mode: `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`.
+Previous mode: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -104,9 +104,19 @@ full MCP tests passed 32 files / 658 tests, build passed, worker-return fast
 gate passed, and pre-closure content gates passed with only expected
 post-closure session-sync HEAD drift before this sync.
 
+Delta-T10 Durable Audit Integrity Readout is `CLOSED_PASS_BOUNDED` at closure
+commit `b496146f`, after dispatch `0b286d03`, dispatch repair `b14df7b4`,
+material commit `8f4abb28`, and material handoff bridge `1a08cbd0`. It adds a
+bounded deterministic integrity readout for supplied Delta-T9 durable audit
+records only. Codex reviewer hardened JSONL primitive/null classification and
+secret-like receipt identity handling. Focused tests passed 30/30, full MCP
+tests passed 33 files / 688 tests, build passed, worker-return fast gate
+passed, and pre-closure content gates passed with only expected post-closure
+session-sync HEAD drift before this sync.
+
 ## Next Allowed Move
 
-Mode: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`.
+Mode: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`.
 
 Next allowed move: select the next high-value foundation tranche through fresh
 GC-018 and source verification. Suggested candidates should prioritize durable

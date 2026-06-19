@@ -37,10 +37,10 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize Delta-T9 closure commit
-`38292bee`, generated active state, compact session memory, and the next
-bounded foundation route. This session sync does not open runtime, provider,
-public, or direct-interception scope.
+Authorized guard-maintenance scope: synchronize Delta-T10 closure commit
+`b496146f`, generated active state, compact session memory, active handoff, and
+the next bounded foundation route. This session sync does not open runtime,
+provider, public, or direct-interception scope.
 
 Protected paths:
 
@@ -66,15 +66,16 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`
 - `CVF_SESSION/state/entries/gglT2GitHookLaneFinalityReliabilityClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT9DurableExecutionAuditStoreClosure20260619.json`
+- `CVF_SESSION/state/entries/deltaT10DurableAuditIntegrityReadoutClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator asked Codex to review and close the
-Delta-T9 worker return. Delta-T9 is now closed bounded and this session sync
-records the next foundation selection lane without expanding runtime, public,
-provider, or execution scope.
+Operator authorization: the operator reported Delta-T10 `COMPLETE_PENDING_REVIEW`
+for Codex review and closure. Delta-T10 is now closed bounded and this session
+sync records the next foundation selection lane without expanding runtime,
+public, provider, or execution scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
 Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
@@ -86,13 +87,13 @@ commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t9_durable_execution_audit_store_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche through fresh GC-018 and source verification; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche through fresh GC-018 and source verification; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t9_durable_execution_audit_store_closed_next_foundation_ready`
+`delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `8f4abb28`
+Current HEAD recorded for this handoff: `b496146f`
 
 Material state:
 
@@ -363,6 +364,15 @@ reviewer hardened JSONL primitive/null classification and secret-like receipt
 identity handling before acceptance. Verification: focused 30/30 PASS, full
 MCP 33 files / 688 tests PASS, build PASS, worker-return fast gate PASS.
 
+Delta-T10 closure commit `b496146f` converts the GC-018, work order,
+completion review, evidence JSON, and proof-literal test title to
+`CLOSED_PASS_BOUNDED`. Pre-closure content gates passed on
+`1a08cbd0..b496146f`; the only remaining failure before this sync was expected
+active-session HEAD drift. Boundary remains supplied durable audit record
+readout only, with no wrapper/proxy enforcement, direct interception, arbitrary
+command execution, provider/live, public-sync, CVF Web action execution,
+queue/daemon, readiness, or universal governed-coding control claim.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -398,6 +408,10 @@ GGL-T2 Git Hook Lane And Worktree Finality Reliability is
 Delta-T9 Durable Execution Audit Store is `CLOSED_PASS_BOUNDED` at closure
 commit `38292bee`, after dispatch `7f603b49`, dispatch handoff bridge
 `8a9ee919`, material `ac390222`, and material handoff bridge `8b1cb2d5`.
+
+Delta-T10 Durable Audit Integrity Readout is `CLOSED_PASS_BOUNDED` at closure
+commit `b496146f`, after dispatch `0b286d03`, dispatch repair `b14df7b4`,
+material commit `8f4abb28`, and material handoff bridge `1a08cbd0`.
 
 Next allowed move: select the next high-value foundation tranche through fresh
 GC-018 and source verification. Suggested candidates should prioritize durable

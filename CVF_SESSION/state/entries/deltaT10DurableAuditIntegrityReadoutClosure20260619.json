@@ -1,0 +1,19 @@
+{
+  "stateOrder": 507,
+  "stateKey": "deltaT10DurableAuditIntegrityReadoutClosure20260619",
+  "value": "CLOSED_PASS_BOUNDED at closure commit b496146f after dispatch commit 0b286d03, dispatch repair commit b14df7b4, accepted material commit 8f4abb28, and material handoff bridge 1a08cbd0. Artifacts: GC-018 docs/baselines/CVF_GC018_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_2026-06-19.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_FOR_CLAUDE_2026-06-19.md; completion docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md; evidence docs/reviews/evidence/delta-t10-durable-audit-integrity-readout-2026-06-19.json. Result: Delta now has a bounded deterministic integrity readout for supplied Delta-T9 durable audit records. Codex reviewer hardened JSONL primitive/null classification and secret-like receipt identity handling before acceptance. Evidence: focused tests PASS 30/30; full MCP tests PASS 33 files / 688 tests; npm run build PASS; worker-return fast gate PASS; pre-closure content gates PASS with only expected post-closure session-sync HEAD drift before this sync. Boundary: supplied durable audit record readout only; no wrapper/proxy enforcement, direct IDE/shell/git/filesystem interception, arbitrary command execution, EDIT/COMMIT execution, provider/live behavior, public-sync, CVF Web action execution, queue/daemon, readiness, or universal governed-coding control claim.",
+  "metadata": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "0b286d03",
+    "dispatchRepairCommit": "b14df7b4",
+    "materialCommit": "8f4abb28",
+    "materialHandoffBridgeCommit": "1a08cbd0",
+    "closureCommit": "b496146f",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_FOR_CLAUDE_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md",
+    "evidenceJson": "docs/reviews/evidence/delta-t10-durable-audit-integrity-readout-2026-06-19.json",
+    "claimBoundary": "Supplied durable audit record integrity readout only; no wrapper/proxy enforcement, direct interception, arbitrary command execution, EDIT/COMMIT execution, provider/live behavior, public-sync, CVF Web action execution, queue/daemon, readiness, or universal governed-coding control claim.",
+    "nextAllowedMove": "Select the next high-value foundation tranche through fresh GC-018 and source verification. Runtime/provider/public/direct-interception and universal-control scope remain parked."
+  }
+}
