@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CODEX
+Status: CLOSED_PASS_BOUNDED
 
 Owner: Codex Orchestrator
 
@@ -242,12 +242,12 @@ External knowledge intake routing: REQUIRED
 
 | ID | Criterion | Status |
 | --- | --- | --- |
-| AC1 | Checker detects changed external knowledge intake artifacts by explicit marker and bounded path markers. | OPEN |
-| AC2 | Checker requires citation of `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`. | OPEN |
-| AC3 | Checker requires `## External Knowledge Intake Routing` with input type, chain route, owner surface, disposition, and claim boundary. | OPEN |
-| AC4 | Checker requires matching local-view guard or bounded `N/A with reason`. | OPEN |
-| AC5 | Checker is wired into reviewer-fast, pre-commit, pre-push, and autorun. | OPEN |
-| AC6 | Focused tests and governance gates pass. | OPEN |
+| AC1 | Checker detects changed external knowledge intake artifacts by explicit marker and bounded path markers. | PASS |
+| AC2 | Checker requires citation of `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`. | PASS |
+| AC3 | Checker requires `## External Knowledge Intake Routing` with input type, chain route, owner surface, disposition, and claim boundary. | PASS |
+| AC4 | Checker requires matching local-view guard or bounded `N/A with reason`. | PASS |
+| AC5 | Checker is wired into reviewer-fast, pre-commit, pre-push, and autorun. | PASS |
+| AC6 | Focused tests and governance gates pass. | PASS |
 
 ## Required Artifact Manifest
 
@@ -282,6 +282,15 @@ External knowledge intake routing: REQUIRED
 | Pre-push autorun gate | PASS |
 | `git diff --check` | PASS |
 
+## Current Runtime Freshness Verification
+
+| Runtime claim | Freshness verification | Disposition |
+| --- | --- | --- |
+| Runtime/source behavior | EKA-R1 changes governance checker code only, not product runtime | N/A with reason |
+| Provider/live behavior | provider/API calls are forbidden scope | N/A with reason |
+| Universal interception | explicitly out of scope; no shell/IDE/filesystem/MCP interception claimed | N/A with reason |
+| Public/readiness claim | public-sync and readiness are forbidden scope | N/A with reason |
+
 ## Review Gate
 
 Codex reviewer may close only if the checker composes existing guard evidence,
@@ -296,14 +305,14 @@ Return-To-Orchestrator Conditions section.
 
 ## Closure Checklist
 
-- [ ] Dispatch Prompt Envelope present.
-- [ ] Source Verification Block present.
-- [ ] External Knowledge Intake Routing block present.
-- [ ] Agent Handoff Contract Control Block present.
-- [ ] Agent Operation Trace Block present in completion review.
-- [ ] Public Export Disposition present.
-- [ ] Evidence JSON present.
-- [ ] Focused and governance checks pass.
+- [x] Dispatch Prompt Envelope present.
+- [x] Source Verification Block present.
+- [x] External Knowledge Intake Routing block present.
+- [x] Agent Handoff Contract Control Block present.
+- [x] Agent Operation Trace Block present in completion review.
+- [x] Public Export Disposition present.
+- [x] Evidence JSON present.
+- [x] Focused and governance checks pass.
 
 ## Return-To-Orchestrator Conditions
 
@@ -316,11 +325,18 @@ interception, or a universal governed-coding claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_FOR_CODEX_2026-06-19.md` | Status moves to `CLOSED_PASS_BOUNDED` only at closure | OPEN |
-| Completion review | `docs/reviews/CVF_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_COMPLETION_2026-06-19.md` | Completion review exists before closure | OPEN |
-| GC-018 | `docs/baselines/CVF_GC018_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_2026-06-19.md` | Status moves to `CLOSED_PASS_BOUNDED` only at closure | OPEN |
-| Focused tests | `governance/compat/test_check_external_knowledge_intake_routing.py` | PASS required | OPEN |
-| Hook wiring | `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py` | checker appears in required gate chains | OPEN |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_FOR_CODEX_2026-06-19.md` | Status is `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_COMPLETION_2026-06-19.md` | Completion review exists | PASS |
+| Completion review | `docs/reviews/CVF_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_COMPLETION_2026-06-19.md` | Completion review exists | PASS |
+| GC-018 | `docs/baselines/CVF_GC018_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_2026-06-19.md` | Status is `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: no roadmap changed | no roadmap mutation | N/A with reason |
+| Focused tests | `governance/compat/test_check_external_knowledge_intake_routing.py` | PASS | PASS |
+| Hook wiring | `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py` | checker appears in required gate chains | PASS |
+| Registry JSON | BLOCKED with reason: EKA-R1 does not add a corpus/GC-051 registry entry in this bounded guard tranche | no registry mutation | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no separate registry Markdown surface exists for this checker tranche | no registry mutation | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external return consumed | no external digest required | N/A with reason |
+| System loop interlock | N/A with reason: no interlock changed | no GC-052 path changed | N/A with reason |
+| Session continuity | N/A with reason: dedicated session-sync follows material closure | no protected session path in material commit | N/A with reason |
 | Public-sync | N/A with reason: not authorized | no public path changed | N/A with reason |
 | Live proof | N/A with reason: not authorized and not needed | no live command run | N/A with reason |
 
@@ -336,15 +352,15 @@ interception, or a universal governed-coding claim.
 | Target paths | EKA-R1 checker, tests, hook wiring, GC-018, work order, completion review, evidence JSON |
 | Allowed scope source | Operator authorization and this work order |
 | Before status evidence | Base head `84e9d190`; clean worktree before dispatch authoring |
-| After status evidence | Pending implementation |
-| Diff evidence | `git status --short`; `git diff --check`; autorun gates |
+| After status evidence | Focused tests and checker smoke PASS before material commit |
+| Diff evidence | focused tests; checker smoke; `git diff --check`; autorun gates |
 | Approval boundary | Bounded external knowledge intake routing guard only |
 | Claim boundary | No runtime/provider/live/public-sync/broad external absorption/universal interception |
 | Agent type | Codex |
 | Invocation ID | `eka-r1-routing-guard-codex-2026-06-19` |
 | Expected manifest | GC-018, work order, checker, tests, hook wiring, completion review, evidence JSON |
-| Actual changed set | Pending implementation |
-| Manifest delta | Pending implementation |
+| Actual changed set | GC-018, work order, checker, tests, hook wiring, completion review, evidence JSON |
+| Manifest delta | MATCH |
 
 ## Public Export Disposition
 

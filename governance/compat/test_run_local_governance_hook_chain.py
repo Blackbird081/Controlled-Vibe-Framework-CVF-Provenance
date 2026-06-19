@@ -25,8 +25,14 @@ class LocalGovernanceHookChainTests(unittest.TestCase):
         self.assertIn("rescan intelligence hardening", labels)
         self.assertIn("corpus scan registry", labels)
         self.assertIn("changed corpus registry coverage", labels)
+        self.assertIn("external knowledge intake routing", labels)
         self.assertIn("active session state compatibility", labels)
         self.assertIn("epistemic process packet", labels)
+
+    def test_commit_and_push_chains_include_external_knowledge_routing(self) -> None:
+        for hook in ("pre-commit", "pre-push"):
+            labels = [label for label, _ in MODULE.HOOK_CHAINS[hook]]
+            self.assertIn("external knowledge intake routing", labels)
 
     def test_latency_sensitive_hooks_default_to_parallel(self) -> None:
         self.assertIn("reviewer-fast", MODULE.PARALLEL_BY_DEFAULT_HOOKS)

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Owner: Codex Orchestrator
 
@@ -142,7 +142,7 @@ External knowledge intake routing: REQUIRED
 
 | Item | Delta category | Original disposition | Updated disposition | Rationale |
 | --- | --- | --- | --- | --- |
-| EKA-R1 routing guard | `CHANGED_DISPOSITION` | recommended candidate | `DISPATCH_READY` | operator authorized this tranche |
+| EKA-R1 routing guard | `CHANGED_DISPOSITION` | recommended candidate | `CLOSED_PASS_BOUNDED` | bounded checker implemented and closed |
 | Guard implementation artifact | `NEW_FINDING` | no EKA-R1 checker existed | new checker required | selected machine-check candidate needs a local-view guard |
 | External-agent absorption table guard | `UNCHANGED_FROM_INTAKE` | existing local-view guard | compose, do not duplicate | EKA-R1 routes to it when applicable |
 | Broad external absorption router | `REMOVED_OR_REJECTED` | known future gap | parked | this tranche is bounded to changed artifacts |
@@ -186,12 +186,12 @@ External knowledge intake routing: REQUIRED
 
 | ID | Criterion | Status |
 | --- | --- | --- |
-| AC1 | Add range-aware checker requiring changed external knowledge intake artifacts to cite the chain map. | OPEN |
-| AC2 | Checker requires `## External Knowledge Intake Routing` with input type and chain-map route. | OPEN |
-| AC3 | Checker requires matching local-view guard evidence or bounded `N/A with reason`. | OPEN |
-| AC4 | Checker ignores unrelated changed Markdown and archived artifacts. | OPEN |
-| AC5 | Focused checker tests cover pass/fail/ignore cases. | OPEN |
-| AC6 | Reviewer-fast, pre-commit, pre-push, and autorun phase gates include the checker. | OPEN |
+| AC1 | Add range-aware checker requiring changed external knowledge intake artifacts to cite the chain map. | PASS |
+| AC2 | Checker requires `## External Knowledge Intake Routing` with input type and chain-map route. | PASS |
+| AC3 | Checker requires matching local-view guard evidence or bounded `N/A with reason`. | PASS |
+| AC4 | Checker ignores unrelated changed Markdown and archived artifacts. | PASS |
+| AC5 | Focused checker tests cover pass/fail/ignore cases. | PASS |
+| AC6 | Reviewer-fast, pre-commit, pre-push, and autorun phase gates include the checker. | PASS |
 
 ## Evidence / Verification Requirements
 
