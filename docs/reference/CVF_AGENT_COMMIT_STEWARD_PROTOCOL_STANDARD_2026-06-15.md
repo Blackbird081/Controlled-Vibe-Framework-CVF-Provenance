@@ -226,6 +226,31 @@ Claim update: prediction CONFIRMED_BOUNDED. CVF can reduce final sync latency
 for handoff-only commits without weakening guard coverage, but this standard
 does not claim semantic review automation or runtime/provider behavior.
 
+## Exact Autorun Receipt Reuse And Parallel Timing Addendum - 2026-06-19
+
+The phase-specific commit steward still invokes the matching autorun gate and
+does not replace it. To avoid executing an identical successful phase twice,
+autorun now writes a local ignored PASS receipt under
+`.cvf/runtime/autorun-receipts/`. Steward requests reuse of that receipt.
+
+Reuse is valid only when all of these values match exactly:
+
+- phase;
+- requested and resolved base/head anchors;
+- complete command-manifest hash;
+- worktree fingerprint over every committed-range and local changed path.
+
+A missing, malformed, failed, stale, or mismatched receipt is never a pass. The
+autorun gate executes its complete command set and replaces the receipt only
+after every check passes. Receipts are optimization hints, not canonical CVF
+authority, closure evidence, or a substitute for git hooks.
+
+Autorun common checks run with bounded parallel workers by default and report
+per-command plus total duration. `--serial` remains available for debugging.
+Pre-push trailing commands remain serial so the nested parallel hook chain does
+not compete with the common bundle. Parallel execution changes scheduling only;
+it does not remove checks or weaken any failure condition.
+
 ## Core Guard Self-Protection Authorization
 
 This batch is authorized as bounded governance control-plane hardening in
@@ -263,20 +288,20 @@ not revert Agent Dispatch Prompt Envelope Standardization material commit
 | --- | --- |
 | Actor | Codex |
 | Provider or surface | Codex CLI |
-| Session or invocation | Commit steward session-sync preflight hardening from HEAD `65496aec` |
+| Session or invocation | GGL-T1 governance gate latency optimization from execution base `309e9f57` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Inspect session-sync failure path; update steward preflight session-sync command sequence; add focused tests; update standard |
-| Target paths | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_COMMIT_STEWARD_SESSION_SYNC_PREFLIGHT_HARDENING_COMPLETION_2026-06-16.md` |
-| Allowed scope source | Operator instruction 2026-06-16: improve the CVF foundation after session-sync commit latency caused by missing protected-path authorization caught only by commit hook |
-| Before status evidence | HEAD `65496aec`; worktree clean before this hardening batch |
-| After status evidence | `git status --short` shows exactly the three target paths before material commit |
-| Diff evidence | `git diff --check`, focused steward tests, and steward preflight expected PASS before commit |
-| Approval boundary | Operator authorized foundation hardening; no runtime/provider/live/public behavior authorized |
+| Command or tool surface | implement exact autorun receipt reuse, bounded parallel timing, stderr-safe path parsing, and focused tests |
+| Target paths | GGL-T1 six-file material implementation manifest |
+| Allowed scope source | GGL-T1 GC-018 and work order dispatched at `7de440d2` |
+| Before status evidence | execution base `309e9f57`; worktree clean before implementation |
+| After status evidence | six GGL-T1 material paths changed before material commit |
+| Diff evidence | `git diff --check`, focused tests, parallel autorun, and exact receipt reuse proof |
+| Approval boundary | bounded governance control-plane optimization only |
 | Claim boundary | Repo-local trace only; no OS telemetry, provider-internal log, public readiness, production readiness, or runtime behavior claim |
 | Agent type | Single agent acting as orchestrator/implementer/reviewer for a governance-control batch |
-| Invocation ID | Commit steward session-sync preflight hardening from HEAD `65496aec` |
-| Expected manifest | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_COMMIT_STEWARD_SESSION_SYNC_PREFLIGHT_HARDENING_COMPLETION_2026-06-16.md` |
-| Actual changed set | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_COMMIT_STEWARD_SESSION_SYNC_PREFLIGHT_HARDENING_COMPLETION_2026-06-16.md` |
+| Invocation ID | `ggl-t1-material-codex-2026-06-19` |
+| Expected manifest | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_FOR_CODEX_2026-06-19.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/ggl-t1-governance-gate-latency-audit-optimization-2026-06-19.json` |
+| Actual changed set | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_FOR_CODEX_2026-06-19.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/ggl-t1-governance-gate-latency-audit-optimization-2026-06-19.json` |
 | Manifest delta | MATCH |
 
 ## Claim Boundary

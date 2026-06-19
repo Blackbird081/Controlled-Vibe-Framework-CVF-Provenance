@@ -81,9 +81,18 @@ def _run(command: Command) -> int:
 
 
 def _git_output(*args: str, check: bool = True) -> str:
-    proc = _run_raw(("git", *args))
+    proc = subprocess.run(
+        ["git", *args],
+        cwd=REPO_ROOT,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
     if check and proc.returncode != 0:
-        raise RuntimeError(proc.stdout.strip() or f"git {' '.join(args)} failed")
+        message = proc.stderr.strip() or proc.stdout.strip()
+        raise RuntimeError(message or f"git {' '.join(args)} failed")
     return proc.stdout.strip()
 
 
@@ -203,6 +212,7 @@ def _mode_commands(mode: str, base: str, head: str) -> tuple[Command, ...]:
                     base,
                     "--head",
                     head,
+                    "--reuse-valid-receipt",
                 ),
             ),
             Command("diff hygiene", ("git", "diff", "--check")),

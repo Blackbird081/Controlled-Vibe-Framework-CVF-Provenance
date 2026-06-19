@@ -1,3 +1,4 @@
+import subprocess
 from pathlib import Path
 
 import governance.compat.run_agent_commit_steward_preflight as steward
@@ -125,3 +126,24 @@ def test_status_paths_handles_trimmed_git_status(monkeypatch) -> None:
         "AGENTS.md",
         "docs/reference/new.md",
     )
+
+
+def test_phase_command_requests_exact_autorun_receipt_reuse() -> None:
+    command = steward._mode_commands("implementation", "base", "head")[0]
+
+    assert command.args[-1] == "--reuse-valid-receipt"
+
+
+def test_git_output_does_not_mix_stderr_warning_into_paths(monkeypatch) -> None:
+    monkeypatch.setattr(
+        steward.subprocess,
+        "run",
+        lambda *args, **kwargs: subprocess.CompletedProcess(
+            args=args,
+            returncode=0,
+            stdout=" M docs/reference/example.md\n",
+            stderr="warning: ignored config\n",
+        ),
+    )
+
+    assert steward._git_output("status", "--short") == "M docs/reference/example.md"

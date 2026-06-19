@@ -10,21 +10,37 @@ guards; it makes the autorun stop points explicit and repeatable.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
+import hashlib
+import json
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 import run_agent_commit_steward_preflight as steward
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_RECEIPT_DIR = REPO_ROOT / ".cvf" / "runtime" / "autorun-receipts"
+RECEIPT_SCHEMA = "cvf.autorun.pass-receipt.v1"
 
 
 @dataclass(frozen=True)
 class GateCommand:
     name: str
     command: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class GateResult:
+    index: int
+    name: str
+    command: tuple[str, ...]
+    returncode: int
+    duration_s: float
+    output: str
 
 
 RANGE_GATE_NAMES = (
@@ -302,9 +318,8 @@ PRE_PUSH_COMMANDS: tuple[GateCommand, ...] = (
 )
 
 
-def _run(command: GateCommand) -> int:
-    print(f"\n=== {command.name} ===")
-    print(" ".join(command.command))
+def _execute(index: int, command: GateCommand) -> GateResult:
+    started = time.perf_counter()
     proc = subprocess.run(
         list(command.command),
         cwd=REPO_ROOT,
@@ -312,13 +327,146 @@ def _run(command: GateCommand) -> int:
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
     )
-    if proc.stdout:
-        print(proc.stdout.rstrip())
-    if proc.returncode == 0:
-        print(f"PASS: {command.name}")
-    else:
-        print(f"FAIL: {command.name} exited {proc.returncode}")
-    return proc.returncode
+    return GateResult(
+        index=index,
+        name=command.name,
+        command=command.command,
+        returncode=proc.returncode,
+        duration_s=time.perf_counter() - started,
+        output=proc.stdout or "",
+    )
+
+
+def _print_result(result: GateResult, *, show_success_output: bool) -> None:
+    status = "PASS" if result.returncode == 0 else "FAIL"
+    print(f"[{status}] {result.name} ({result.duration_s:.2f}s)")
+    if result.output and (show_success_output or result.returncode != 0):
+        print(result.output.rstrip())
+
+
+def _run_commands(
+    commands: tuple[GateCommand, ...],
+    *,
+    parallel: bool,
+    max_workers: int,
+) -> tuple[GateResult, ...]:
+    if not commands:
+        return ()
+    if not parallel:
+        results: list[GateResult] = []
+        for index, command in enumerate(commands, start=1):
+            print(f"\n=== {command.name} ===")
+            print(" ".join(command.command))
+            result = _execute(index, command)
+            _print_result(result, show_success_output=True)
+            results.append(result)
+        return tuple(results)
+
+    worker_count = max(1, min(max_workers, len(commands)))
+    print(
+        f"\n=== parallel autorun bundle: {len(commands)} commands, "
+        f"max_workers={worker_count} ==="
+    )
+    results: list[GateResult] = []
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        futures = [
+            executor.submit(_execute, index, command)
+            for index, command in enumerate(commands, start=1)
+        ]
+        for future in as_completed(futures):
+            result = future.result()
+            _print_result(result, show_success_output=False)
+            results.append(result)
+    return tuple(sorted(results, key=lambda item: item.index))
+
+
+def _command_manifest_hash(commands: tuple[GateCommand, ...]) -> str:
+    payload = [
+        {"name": command.name, "command": list(command.command)}
+        for command in commands
+    ]
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _worktree_fingerprint(base: str, head: str) -> str:
+    plan = steward.build_path_plan(base, head)
+    digest = hashlib.sha256()
+    for path in plan.changed_paths:
+        digest.update(path.encode("utf-8", errors="replace"))
+        digest.update(b"\0")
+        full = REPO_ROOT / path
+        if full.is_file():
+            digest.update(hashlib.sha256(full.read_bytes()).digest())
+        else:
+            digest.update(b"<missing-or-directory>")
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
+def _receipt_path(phase: str, receipt_dir: Path) -> Path:
+    return receipt_dir / f"{phase}.json"
+
+
+def _receipt_context(
+    phase: str,
+    base: str,
+    head: str,
+    base_sha: str,
+    head_sha: str,
+    commands: tuple[GateCommand, ...],
+) -> dict[str, str]:
+    return {
+        "phase": phase,
+        "base": base,
+        "head": head,
+        "baseSha": base_sha,
+        "headSha": head_sha,
+        "commandManifestHash": _command_manifest_hash(commands),
+        "worktreeFingerprint": _worktree_fingerprint(base, head),
+    }
+
+
+def _load_valid_receipt(path: Path, expected: dict[str, str]) -> tuple[bool, str]:
+    if not path.is_file():
+        return False, "receipt missing"
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return False, f"receipt unreadable: {exc}"
+    if payload.get("schema") != RECEIPT_SCHEMA or payload.get("status") != "PASS":
+        return False, "receipt schema or status mismatch"
+    for key, value in expected.items():
+        if payload.get(key) != value:
+            return False, f"receipt {key} mismatch"
+    return True, "exact receipt context match"
+
+
+def _write_receipt(
+    path: Path,
+    context: dict[str, str],
+    results: tuple[GateResult, ...],
+    total_duration_s: float,
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "schema": RECEIPT_SCHEMA,
+        "status": "PASS",
+        **context,
+        "totalDurationSeconds": round(total_duration_s, 3),
+        "checks": [
+            {
+                "name": result.name,
+                "command": list(result.command),
+                "durationSeconds": round(result.duration_s, 3),
+                "status": "PASS",
+            }
+            for result in results
+        ],
+    }
+    temp_path = path.with_suffix(".tmp")
+    temp_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    temp_path.replace(path)
 
 
 def _git_status_short() -> str:
@@ -391,7 +539,17 @@ def _default_base_for_phase(phase: str) -> str:
     return "HEAD"
 
 
-def _run_phase(phase: str, base: str | None, head: str) -> int:
+def _run_phase(
+    phase: str,
+    base: str | None,
+    head: str,
+    *,
+    serial: bool = False,
+    max_workers: int = 6,
+    reuse_valid_receipt: bool = False,
+    receipt_dir: Path = DEFAULT_RECEIPT_DIR,
+) -> int:
+    total_started = time.perf_counter()
     resolved_base = base or _default_base_for_phase(phase)
     print("=== CVF Agent Autorun Workflow Gate ===")
     print(f"Phase: {phase}")
@@ -408,16 +566,14 @@ def _run_phase(phase: str, base: str | None, head: str) -> int:
     print(f"Head anchor: {head_sha}")
 
     failures = 0
-    commands: list[GateCommand] = list(_common_commands(resolved_base, head))
-    if phase == "pre-push":
-        commands.extend(PRE_PUSH_COMMANDS)
+    common_commands: list[GateCommand] = list(_common_commands(resolved_base, head))
 
     # Fix (B): at pre-implementation, check that no forbidden-path files
     # already exist on disk before a worker begins. This catches the pattern
     # where a prior tranche left untracked files in paths the current work
     # order explicitly forbids.
     if phase == "pre-implementation":
-        commands.insert(0, GateCommand(
+        common_commands.insert(0, GateCommand(
             "forbidden filesystem state",
             ("python", "governance/compat/check_forbidden_filesystem_state.py",
              "--base", resolved_base, "--head", head, "--enforce"),
@@ -445,8 +601,39 @@ def _run_phase(phase: str, base: str | None, head: str) -> int:
             )
             return 1
 
-    for command in commands:
-        failures += 1 if _run(command) != 0 else 0
+    common_tuple = tuple(common_commands)
+    trailing_commands = PRE_PUSH_COMMANDS if phase == "pre-push" else ()
+    all_commands = common_tuple + trailing_commands
+    context = _receipt_context(
+        phase,
+        resolved_base,
+        head,
+        base_sha,
+        head_sha,
+        all_commands,
+    )
+    receipt_path = _receipt_path(phase, receipt_dir)
+    if reuse_valid_receipt:
+        valid, reason = _load_valid_receipt(receipt_path, context)
+        if valid:
+            print(f"\nREUSED: {reason}: {receipt_path}")
+            print(f"COMPLIANT: {phase} autorun gate passed from exact local PASS receipt.")
+            return 0
+        print(f"\nReceipt reuse unavailable ({reason}); running full autorun bundle.")
+
+    results = _run_commands(
+        common_tuple,
+        parallel=not serial,
+        max_workers=max_workers,
+    )
+    failures += sum(result.returncode != 0 for result in results)
+    trailing_results = _run_commands(
+        trailing_commands,
+        parallel=False,
+        max_workers=1,
+    )
+    failures += sum(result.returncode != 0 for result in trailing_results)
+    all_results = results + trailing_results
 
     if phase == "pre-closure":
         print("\n=== closure worktree finality ===")
@@ -462,10 +649,17 @@ def _run_phase(phase: str, base: str | None, head: str) -> int:
             print("PASS: worktree is clean for closure claim finality.")
 
     if failures:
-        print(f"\nVIOLATION: {phase} blocked by {failures} failing gate(s).")
+        elapsed = time.perf_counter() - total_started
+        print(
+            f"\nVIOLATION: {phase} blocked by {failures} failing gate(s) "
+            f"in {elapsed:.2f}s."
+        )
         return 1
 
-    print(f"\nCOMPLIANT: {phase} autorun gate passed.")
+    elapsed = time.perf_counter() - total_started
+    _write_receipt(receipt_path, context, all_results, elapsed)
+    print(f"\nReceipt: {receipt_path}")
+    print(f"COMPLIANT: {phase} autorun gate passed in {elapsed:.2f}s.")
     return 0
 
 
@@ -482,8 +676,29 @@ def main() -> int:
         help="Base commit/ref for range-aware gates. Defaults to HEAD for pre-dispatch/pre-implementation and HEAD~1 for pre-closure/pre-push.",
     )
     parser.add_argument("--head", default="HEAD", help="Head commit/ref for range-aware gates.")
+    parser.add_argument("--serial", action="store_true", help="Run commands serially for debugging.")
+    parser.add_argument("--max-workers", type=int, default=6, help="Maximum parallel common checks.")
+    parser.add_argument(
+        "--reuse-valid-receipt",
+        action="store_true",
+        help="Reuse only an exact local PASS receipt; otherwise run the full bundle.",
+    )
+    parser.add_argument(
+        "--receipt-dir",
+        type=Path,
+        default=DEFAULT_RECEIPT_DIR,
+        help="Local ignored autorun receipt directory.",
+    )
     args = parser.parse_args()
-    return _run_phase(args.phase, args.base, args.head)
+    return _run_phase(
+        args.phase,
+        args.base,
+        args.head,
+        serial=args.serial,
+        max_workers=args.max_workers,
+        reuse_valid_receipt=args.reuse_valid_receipt,
+        receipt_dir=args.receipt_dir,
+    )
 
 
 if __name__ == "__main__":
