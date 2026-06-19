@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "0.1.0",
+  "proofId": "mcp-model-gateway-composition-proof-2026-06-19",
+  "status": "PASS",
+  "baseHead": "2490d0cd",
+  "tool": "cvf_model_gateway_execute",
+  "mcpAdapterContract": "cvf.mcpModelGatewayExecuteAdapter.wwuT3B.v1",
+  "modelGatewayBridgeContract": "cvf.providerExecutionBridge.p4bA.v1",
+  "compositionShape": "MCP execute adapter -> injected ModelGatewayExecutorPort -> ProviderExecutionBridge.execute -> response/error plus GatewayReceipt",
+  "liveProviderCallClaimed": false,
+  "secretsOrQuotaConsumed": false,
+  "publicSyncPerformed": false,
+  "deltaExecutionControlImplemented": false,
+  "verification": [
+    {
+      "command": "working directory EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER; npx vitest run src/tools/model-gateway-composition-proof.test.ts --reporter verbose",
+      "result": "PASS",
+      "summary": "1 file passed, 4 tests passed"
+    },
+    {
+      "command": "working directory EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER; npm run test:run",
+      "result": "PASS",
+      "summary": "25 files passed, 573 tests passed"
+    },
+    {
+      "command": "working directory EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER; npm run build",
+      "result": "PASS",
+      "summary": "tsc completed"
+    },
+    {
+      "command": "working directory EXTENSIONS/CVF_MODEL_GATEWAY; npm run check",
+      "result": "PASS",
+      "summary": "tsc --noEmit completed"
+    },
+    {
+      "command": "working directory EXTENSIONS/CVF_MODEL_GATEWAY; npm test -- provider-execution-bridge.test.ts",
+      "result": "PASS",
+      "summary": "1 file passed, 21 tests passed"
+    }
+  ]
+}
