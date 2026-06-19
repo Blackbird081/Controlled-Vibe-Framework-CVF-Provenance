@@ -91,7 +91,7 @@ Startup acknowledged: current mode=`delta_t7_receipt_to_execution_evidence_audit
 
 `delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `cc6e4666`
+Current HEAD recorded for this handoff: `02678968`
 
 Material state:
 
@@ -298,6 +298,13 @@ commands, EDIT/COMMIT execution, provider/live calls, public-sync, queues,
 daemons, CVF Web action execution, direct interception, broad wrapper/proxy
 enforcement, and universal governed-coding claims remain parked.
 
+GGL-T2 material commit `02678968` is `IMPLEMENTED_PENDING_CLOSURE`. Focused
+tests passed 17/17; direct pre-commit hook proof passed 54/54 with parallel
+preflight enabled; worker-return fast gate passed; implementation steward
+passed with pre-implementation rerun 44/44. Material adds no checker
+suppression, hook bypass, runtime/provider/public/UI behavior, direct
+interception, or universal governed-coding claim.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -332,10 +339,11 @@ GC-018 and source verification. GGL-T2 git-hook lane and worktree-finality
 reliability optimization is the leading candidate because pre-commit remains
 serial and Git stderr can be misclassified as dirty-worktree output.
 
-GGL-T2 dispatch is now committed at `cc6e4666`. Next allowed move: run
-pre-implementation from the dispatch handoff-sync head, then implement only the
-bounded hook/finality/tests/completion/evidence scope authorized by the GGL-T2
-work order.
+GGL-T2 material is now committed at `02678968`. Next allowed move: run
+committed-range pre-closure on the material range, convert GGL-T2 closure
+artifacts to `CLOSED_PASS_BOUNDED`, then perform separate session sync. Keep
+runtime profiles, provider/live calls, public-sync, CVF Web runtime action,
+direct interception, and universal governed-coding claims parked.
 
 ## Parked Operator Checkpoints
 
