@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MATERIAL_ACCEPTED_PENDING_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `1092829b`
 
 executionBaseHead: `1fbe968e`
 
-closureBaseHead: `POST_MATERIAL_SYNC_ANCHOR`
+closureBaseHead: `c72449cf`
 
 rawMemoryReleased: false
 
@@ -102,7 +102,7 @@ and range-aware over changed governed Markdown artifacts.
 | Active handoff | `AGENT_HANDOFF_V20_2026-06-19.md` | Delta-T5 closed bounded; Delta-T6 recommended |
 | Delta-T5 roadmap | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Delta-T5 completion | `docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md` | `DISPATCH_READY` |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Roadmap | Delta-T5 roadmap next-tranche table | Delta-T6 recommended |
 
 ## Agent Roles
@@ -149,7 +149,7 @@ matching dispatch/completion/session-sync artifacts if rejected.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | one-agent-many-roles: Codex holds dispatcher, implementer, reviewer, closer, and session-sync roles across distinct phases |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`1092829b`; execution=`POST_DISPATCH_SYNC_ANCHOR`; closure=`POST_MATERIAL_SYNC_ANCHOR` |
+| baseHeadFor(phase) | dispatch=`1092829b`; execution=`1fbe968e`; closure=`c72449cf` |
 | changedSetScope(phase) | dispatch baseline/work order; implementation checker/test/hook/completion/evidence; closure status conversion; protected continuity only in session-sync |
 | traceScope(phase, actor) | Codex records exact phase-local manifests, commands, and commit anchors |
 | commitOwner(phase) | Codex for every phase |
@@ -265,11 +265,11 @@ Current runtime/source state at dispatch:
 
 | Roadmap requirement | Work order section | Deliverable | Verification | Closure state |
 | --- | --- | --- | --- | --- |
-| Delta-T6 is a high-value next-tranche candidate | Purpose / Authority Chain | new checker and tests | focused tests | DISPATCH_READY |
-| no-receipt/no-claim rule | Delta Execution Claim Boundary Control Block | receipt/action evidence rows | checker negative tests | DISPATCH_READY |
-| claim language boundary | Claim Boundary / Acceptance Criteria | broad claim guard | checker negative tests | DISPATCH_READY |
-| no runtime expansion | Scope / Target / Owner Boundary | no runtime paths touched | diff review | DISPATCH_READY |
-| hook enforcement | Acceptance Criteria | hook/autorun wiring | worker-return fast gate and pre-commit | DISPATCH_READY |
+| Delta-T6 is a high-value next-tranche candidate | Purpose / Authority Chain | new checker and tests | focused tests | PASS |
+| no-receipt/no-claim rule | Delta Execution Claim Boundary Control Block | receipt/action evidence rows | checker negative tests | PASS |
+| claim language boundary | Claim Boundary / Acceptance Criteria | broad claim guard | checker negative tests | PASS |
+| no runtime expansion | Scope / Target / Owner Boundary | no runtime paths touched | diff review | PASS |
+| hook enforcement | Acceptance Criteria | hook/autorun wiring | worker-return fast gate and pre-commit | PASS |
 
 ## Work-Order Fulfillment Manifest
 
@@ -381,13 +381,13 @@ invalid receipt/action fields, unrelated governed Markdown, and archived paths.
 
 ## Closure Checklist
 
-- [ ] Focused checker tests pass.
-- [ ] Direct checker smoke passes.
-- [ ] Worker-return fast gate passes.
-- [ ] Implementation steward passes.
-- [ ] Pre-closure autorun passes or records an allowed session-sync drift.
-- [ ] Completion review and evidence JSON include exact changed-set evidence.
-- [ ] No runtime/provider/live/public/direct-interception/universal-control
+- [x] Focused checker tests pass.
+- [x] Direct checker smoke passes.
+- [x] Worker-return fast gate passes.
+- [x] Implementation steward passes.
+- [x] Pre-closure autorun passes.
+- [x] Completion review and evidence JSON include exact changed-set evidence.
+- [x] No runtime/provider/live/public/direct-interception/universal-control
       claim is introduced.
 
 ## Return Conditions
@@ -432,26 +432,55 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance governance guard. Public-sync is not authorized.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | upstream roadmap remains `CLOSED_PASS_BOUNDED` and recommended Delta-T6 | PASS |
+| Registry JSON | BLOCKED with reason: no corpus or runtime registry edit authorized | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external source consumed beyond already-governed Delta-T5 artifacts | repo-local sources only | N/A with reason |
+| System loop interlock | N/A with reason: no system loop registry edit authorized | no registry path changed | N/A with reason |
+| Session continuity | active session state | separate post-closure session-sync required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| status | `CLOSED_PASS_BOUNDED` | PASS |
+| material commit | `3ef55abc` | PASS |
+| closure base | `c72449cf` | PASS |
+| checker added | true | PASS |
+| focused tests pass | true | PASS |
+| hook/autorun wiring added | true | PASS |
+| runtime scope added | false | PASS |
+| provider/live scope added | false | PASS |
+| public-sync performed | false | PASS |
+| direct interception claimed | false | PASS |
+| universal governed-coding claimed | false | PASS |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex implementer |
+| Actor | Codex closer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T6 material implementation, 2026-06-19 |
+| Session or invocation | Delta-T6 closure conversion, 2026-06-19 |
 | Working directory | repository root |
-| Command or tool surface | PowerShell, apply_patch, Python unittest, worker-return fast gate, governance gates |
-| Target paths | Delta-T6 checker, tests, hook wiring, autorun wiring, and work-order material state |
-| Allowed scope source | dispatch commit `73539dab`; dispatch session-sync commit `1fbe968e`; this Core Guard Self-Protection Authorization block |
-| Before status evidence | Delta-T6 dispatch committed and continuity synced at `1fbe968e` |
-| After status evidence | material implementation ready for material commit and later closure conversion |
-| Diff evidence | `git diff --name-status`, focused tests, direct checker, worker-return fast gate, implementation steward |
-| Approval boundary | bounded checker/test/hook implementation only |
+| Command or tool surface | PowerShell, apply_patch, governance gates |
+| Target paths | Delta-T6 GC-018, work order, completion review, and evidence JSON |
+| Allowed scope source | material commit `3ef55abc` |
+| Before status evidence | material checker implementation committed at `3ef55abc` |
+| After status evidence | closure artifacts converted to `CLOSED_PASS_BOUNDED` |
+| Diff evidence | `git diff --name-status`, pre-closure autorun, closure steward |
+| Approval boundary | closure conversion only |
 | Claim boundary | no runtime/profile/provider/live/public/direct-interception/universal-control claim |
 | Agent type | single-agent multi-role |
-| Invocation ID | `delta-t6-material-codex-2026-06-19` |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/test_check_delta_execution_claim_boundary.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/test_check_delta_execution_claim_boundary.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_autorun_workflow_gate.py` |
+| Invocation ID | `delta-t6-closure-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
