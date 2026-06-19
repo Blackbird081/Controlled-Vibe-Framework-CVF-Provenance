@@ -91,7 +91,7 @@ Startup acknowledged: current mode=`ggl_t2_hook_finality_reliability_closed_next
 
 `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `9faa0b00`
+Current HEAD recorded for this handoff: `d10b59fe`
 
 Material state:
 
@@ -312,11 +312,12 @@ and material handoff bridge `96a3611b`. Material-range pre-closure passed
 bounded local hook-lane and worktree-finality reliability.
 
 GGL-T2 closure continuity sync commit `9faa0b00` recorded
-`ggl_t2_hook_finality_reliability_closed_next_foundation_ready`. A following
-pre-push hygiene remediation updates the provider-local `.codex` root to the
-root lifecycle ignored list and restores front-door compatibility markers for
-`broad external knowledge absorption` and `blocked work classes`; it does not
-open external absorption, runtime, provider, public, or interception scope.
+`ggl_t2_hook_finality_reliability_closed_next_foundation_ready`. Pre-push
+hygiene remediation commit `d10b59fe` updates the provider-local `.codex` root
+to the root lifecycle ignored list and restores front-door compatibility
+markers for `broad external knowledge absorption` and `blocked work classes`;
+it does not open external absorption, runtime, provider, public, or
+interception scope.
 
 ## Next Allowed Move
 
