@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure`
+Current mode marker: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure`.
+Current mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
-Previous mode: `delta_t2_governance_action_receipt_consumption_dispatch_ready`.
+Previous mode: `delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure`.
 
 Active handoff:
 
@@ -334,11 +334,11 @@ accepted material commit `156b0610` and closure commit `a196e42f`. Codex
 repaired structured-secret detection, concurrent durable-write serialization,
 and the required artifact manifest before acceptance.
 
-Delta-T2 Governance Action Receipt Consumption is
-`ACCEPTED_MATERIAL_PENDING_CLOSURE` at material commit `d3bf3594` from
-execution base `0a345338`. It validates and atomically claims one matching
-fresh Delta-T1 receipt without executing the action. Focused tests pass 49/49,
-the MCP suite passes 595/595, and the MCP package build passes.
+Delta-T2 Governance Action Receipt Consumption is `CLOSED_PASS_BOUNDED` at
+accepted material commit `d3bf3594` and closure commit `22ad256e`. It validates
+and atomically claims one matching fresh Delta-T1 receipt without executing the
+action. Focused tests pass 49/49, the MCP suite passes 595/595, and the MCP
+package build passes.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -793,14 +793,15 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure`.
+Mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
-Delta-T2 material is accepted at commit `d3bf3594`.
+Delta-T2 is closed bounded at accepted material commit `d3bf3594` and closure
+commit `22ad256e`.
 
-Next allowed move: Codex converts only the matching GC-018, work order,
-completion review, and evidence artifact to `CLOSED_PASS_BOUNDED` on a
-dedicated closure range, then performs final session sync. Action execution,
-wrapper/CLI/proxy enforcement, and external interception remain parked.
+Next allowed move: operator decision whether to authorize Delta-T3 governed
+launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified
+work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched;
+action execution and external interception remain parked.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure",
-  "previousMode": "delta_t2_governance_action_receipt_consumption_dispatch_ready",
+  "currentMode": "delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready",
+  "previousMode": "delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2278,5 +2278,27 @@
     "claimBoundary": "Accepted material proves deterministic validation and atomic one-time consumption of one matching fresh Delta-T1 ALLOW receipt. It does not execute the action, intercept external tools, prove mandatory invocation, use a live provider, authorize public-sync, or establish universal governed-coding control.",
     "nextAllowedMove": "Codex converts the matching GC-018, work order, completion review, and evidence artifact to CLOSED_PASS_BOUNDED on a dedicated closure range, then performs final session sync."
   },
-  "nextAllowedMove": "Delta-T2 Governance Action Receipt Consumption material is accepted at commit d3bf3594 from execution base 0a345338. Next allowed move: Codex converts only the matching GC-018, work order, completion review, and evidence artifact to CLOSED_PASS_BOUNDED on a dedicated closure range, then performs final session sync. No action execution, shell/process/git runner, wrapper/CLI/proxy enforcement, provider/live call, secrets/quota, public-sync, queue/scheduler/daemon, workspace state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
+  "deltaT2GovernanceActionReceiptConsumptionClosure20260619": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "c08691fc",
+    "dispatchSessionSyncCommit": "0a345338",
+    "acceptedMaterialCommit": "d3bf3594",
+    "acceptedMaterialSessionSyncCommit": "d954a59f",
+    "closureCommit": "22ad256e",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json",
+    "checks": [
+      "focused Vitest PASS 2 files / 49 tests",
+      "MCP package test suite PASS 27 files / 595 tests",
+      "MCP package build PASS",
+      "reviewer-fast PASS 28/28",
+      "pre-commit hook PASS 51/51"
+    ],
+    "reviewDisposition": "One MEDIUM receipt-id generator/validator mismatch was repaired before material acceptance; no unresolved finding remains.",
+    "claimBoundary": "Delta-T2 proves only deterministic validation and atomic one-time consumption of an invoked matching fresh Delta-T1 ALLOW receipt. It does not execute the action, make MCP mandatory, intercept external tools, prove provider/live behavior, authorize public-sync, or establish universal governed-coding control.",
+    "nextAllowedMove": "Operator decision whether to authorize Delta-T3 governed launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched."
+  },
+  "nextAllowedMove": "Delta-T2 Governance Action Receipt Consumption is CLOSED_PASS_BOUNDED at accepted material commit d3bf3594 and closure commit 22ad256e. Next allowed move is an operator decision whether to authorize Delta-T3 governed launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched. No action execution, shell/process/git runner, wrapper/CLI/proxy enforcement, provider/live call, secrets/quota, public-sync, queue/scheduler/daemon, workspace state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
 }

@@ -1,0 +1,26 @@
+{
+  "stateOrder": 462,
+  "stateKey": "deltaT2GovernanceActionReceiptConsumptionClosure20260619",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "c08691fc",
+    "dispatchSessionSyncCommit": "0a345338",
+    "acceptedMaterialCommit": "d3bf3594",
+    "acceptedMaterialSessionSyncCommit": "d954a59f",
+    "closureCommit": "22ad256e",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json",
+    "checks": [
+      "focused Vitest PASS 2 files / 49 tests",
+      "MCP package test suite PASS 27 files / 595 tests",
+      "MCP package build PASS",
+      "reviewer-fast PASS 28/28",
+      "pre-commit hook PASS 51/51"
+    ],
+    "reviewDisposition": "One MEDIUM receipt-id generator/validator mismatch was repaired before material acceptance; no unresolved finding remains.",
+    "claimBoundary": "Delta-T2 proves only deterministic validation and atomic one-time consumption of an invoked matching fresh Delta-T1 ALLOW receipt. It does not execute the action, make MCP mandatory, intercept external tools, prove provider/live behavior, authorize public-sync, or establish universal governed-coding control.",
+    "nextAllowedMove": "Operator decision whether to authorize Delta-T3 governed launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched."
+  }
+}
