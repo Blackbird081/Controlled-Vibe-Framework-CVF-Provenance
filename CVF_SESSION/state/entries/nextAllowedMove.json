@@ -1,5 +1,5 @@
 {
-  "stateOrder": 473,
+  "stateOrder": 474,
   "stateKey": "nextAllowedMove",
-  "value": "Delta-T4A Approval-Backed Mutating Profile Boundary is DISPATCH_READY_FOR_CODEX at dispatch commit 0caf8ec1 with fresh GC-018 and source-verified work order. Next allowed move: Codex runs pre-implementation from the refreshed clean HEAD, then implements only the bounded approval-marker-write profile scope in the Delta-T4A work order. Unauthorized scope remains parked: arbitrary commands, EDIT/COMMIT profiles, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Delta-T4A Approval-Backed Mutating Profile Boundary material is accepted at commit d2fc4f5b and remains COMPLETE_PENDING_CLOSURE. Next allowed move: run accepted-material session sync, then convert Delta-T4A completion artifacts to CLOSED_PASS_BOUNDED from the accepted-material sync head. Unauthorized scope remains parked: arbitrary commands, EDIT/COMMIT profiles, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave."
 }
