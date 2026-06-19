@@ -29,8 +29,9 @@ External agent memory files: non-canonical convenience only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-sync scope: update active handoff after MCP to Model Gateway
-Composition Proof material commit `befad4a9`, following External Knowledge
+Authorized session-sync scope: update active handoff after Delta-T1 Governance
+Action Preflight Receipt dispatch commit `dcf55645`, following MCP to Model
+Gateway Composition Proof material commit `befad4a9`, following External Knowledge
 Absorption Chain Map material commit `7c3db96a`, following MCP Gateway
 Execution Control Legacy Recheck material commit `5f75d52c`, following
 WWU-T3B MCP Model Gateway Execution Adapter closure material commit `7e15146d`,
@@ -92,6 +93,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/postMcpExternalKnowledgeAbsorptionChainFollowup20260619.json`
 - `CVF_SESSION/state/entries/externalKnowledgeAbsorptionChainMapClosure20260619.json`
 - `CVF_SESSION/state/entries/mcpModelGatewayCompositionProofClosure20260619.json`
+- `CVF_SESSION/state/entries/deltaT1GovernanceActionPreflightReceiptDispatch20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -158,7 +160,9 @@ adding deterministic proof that the existing MCP execute adapter composes with
 a real Model Gateway `ProviderExecutionBridge` through the injected executor
 port while preserving response/error/receipt evidence. Delta Execution Control
 is now the next candidate, but only through fresh GC-018 and a source-verified
-work order.
+work order. Codex then created the fresh Delta-T1 GC-018 and source-verified
+Claude work order at dispatch commit `dcf55645`; implementation remains pending
+under `WORKER_MUST_NOT_COMMIT`.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
 MCP to Model Gateway Composition Proof material commit, External Knowledge
@@ -178,14 +182,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=open Delta Execution Control only after fresh GC-018 and source verification using `MCP-GW-001`, the external knowledge absorption chain map, and the Composition Proof artifacts; parked checkpoint=provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, broad runtime enforcement, durable audit implementation, wrapper/proxy control, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and universal governed-coding control claims unless separately authorized by the Delta work order.
+Startup acknowledged: current mode=`delta_t1_governance_action_preflight_receipt_dispatch_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude implements the Delta-T1 work order without commit and returns evidence for Codex review; parked checkpoint=provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, wrapper/CLI/proxy receipt enforcement, IDE/shell/git/filesystem interception, workspace state mutation, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and universal governed-coding control claims.
 
 ## Current Mode
 
-`mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`
+`delta_t1_governance_action_preflight_receipt_dispatch_ready`
 
-Current HEAD recorded for this handoff: `befad4a9`
-(MCP to Model Gateway Composition Proof material commit `befad4a9`;
+Current HEAD recorded for this handoff: `dcf55645`
+(Delta-T1 Governance Action Preflight Receipt dispatch commit `dcf55645`;
+MCP to Model Gateway Composition Proof material commit `befad4a9`;
 External Knowledge Absorption Chain Map material commit `7c3db96a`;
 MCP Gateway Execution Control Legacy Recheck material commit `5f75d52c`;
 WWU-T3B MCP Model Gateway Execution Adapter closure material commit
@@ -871,23 +876,22 @@ source-verified work order.
 
 ## Next Allowed Move
 
-MCP to Model Gateway Composition Proof is `CLOSED_PASS_BOUNDED` at material
-commit `befad4a9`, following External Knowledge Absorption Chain Map material
-commit `7c3db96a` and MCP Gateway Execution Control Legacy Recheck material
-commit `5f75d52c`.
+Delta-T1 Governance Action Preflight Receipt is
+`DISPATCH_READY_FOR_CLAUDE` at dispatch commit `dcf55645`.
 
-Next allowed move: open Delta Execution Control only after fresh GC-018 and a
-source-verified work order using `MCP-GW-001`, the external knowledge
-absorption chain map, and the MCP to Model Gateway Composition Proof artifacts
-as upstream context.
+Next allowed move: Claude implements only the source/test/worker-return scope
+in the Delta-T1 work order under `WORKER_MUST_NOT_COMMIT`, leaves HEAD
+unchanged, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Codex remains reviewer, closer, commit owner, and session-sync actor.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation remains held for explicit public-sync
 authorization. EARC-T4 MCP/workspace implementation decision remains held for
 explicit MCP/runtime authorization. Public-sync, broad MCP gateway
 implementation, provider/live calls, runtime queue/scheduler/daemon work,
-release-facing claims, runtime enforcement claims, durable audit
-implementation, wrapper/proxy execution control, governed action requests, AI
+release-facing claims, broad runtime enforcement claims, wrapper/CLI/proxy
+receipt enforcement, IDE/shell/git/filesystem interception, workspace state
+mutation, AI
 Gateway environment signal capture, external absorption router/checker
 implementation, broad external absorption-chain implementation, universal
 governed-coding control claims, external-facing readiness, provider

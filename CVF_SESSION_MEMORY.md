@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`
+Current mode marker: `delta_t1_governance_action_preflight_receipt_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`.
+Current mode: `delta_t1_governance_action_preflight_receipt_dispatch_ready`.
+
+Previous mode: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`.
 
 Active handoff:
 
@@ -326,6 +328,12 @@ call, secrets/quota use, public-sync, broad MCP runtime enforcement, durable
 audit, wrapper/proxy execution control, universal governed-coding control,
 production readiness, public readiness, release readiness, or external-facing
 readiness was authorized or performed.
+
+Delta-T1 Governance Action Preflight Receipt is `DISPATCH_READY_FOR_CLAUDE` at
+dispatch commit `dcf55645`. The fresh GC-018 and source-verified work order
+preserve the existing Gamma classifier, authorize a distinct durable preflight
+receipt component, and require Claude to return uncommitted changes for Codex
+review. No Delta runtime implementation has been accepted yet.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -780,25 +788,23 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`.
+Mode: `delta_t1_governance_action_preflight_receipt_dispatch_ready`.
 
-MCP to Model Gateway Composition Proof is `CLOSED_PASS_BOUNDED` at material
-commit `befad4a9`, following External Knowledge Absorption Chain Map material
-commit `7c3db96a` and MCP Gateway Execution Control Legacy Recheck material
-commit `5f75d52c`.
+Delta-T1 Governance Action Preflight Receipt is
+`DISPATCH_READY_FOR_CLAUDE` at dispatch commit `dcf55645`.
 
-Next allowed move: open Delta Execution Control only after fresh GC-018 and a
-source-verified work order using `MCP-GW-001`, the external knowledge
-absorption chain map, and the MCP to Model Gateway Composition Proof artifacts
-as upstream context.
+Next allowed move: Claude implements only the source/test/worker-return scope
+in the Delta-T1 work order under `WORKER_MUST_NOT_COMMIT`, leaves HEAD
+unchanged, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Codex remains reviewer, closer, commit owner, and session-sync actor.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
 decision remain held for their explicit authorizations. Public-sync, broad MCP
 implementation, provider/live calls, secrets/quota, runtime queue/scheduler/
 daemon work, raw external package import, public readiness, production
-readiness, release readiness, runtime enforcement claims, durable audit
-implementation, wrapper/proxy execution control, governed action requests, AI
+readiness, release readiness, broad runtime enforcement claims, wrapper/CLI/
+proxy receipt enforcement, IDE/shell/git/filesystem interception, AI
 Gateway environment signal capture, external absorption router/checker
 implementation, broad external absorption-chain implementation, universal
 governed-coding control claims, and external-facing readiness claims remain

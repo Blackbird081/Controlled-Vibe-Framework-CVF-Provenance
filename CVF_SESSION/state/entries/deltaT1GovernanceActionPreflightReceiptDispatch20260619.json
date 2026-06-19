@@ -1,0 +1,23 @@
+{
+  "stateOrder": 456,
+  "stateKey": "deltaT1GovernanceActionPreflightReceiptDispatch20260619",
+  "value": {
+    "status": "DISPATCH_READY_FOR_CLAUDE",
+    "dispatchCommit": "dcf55645",
+    "dispatchBaseHead": "087f7678",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_FOR_CLAUDE_2026-06-19.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "worker": "Claude",
+    "reviewerCloserCommitOwner": "Codex",
+    "toolCandidate": "cvf_preflight_governance_action",
+    "checks": [
+      "dispatch packet author fast gate PASS",
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Dispatch only for a deterministic local MCP governance-action preflight and durable secret-safe audit receipt. No external action interception, provider/live call, secrets/quota use, public-sync, queue/scheduler/daemon, wrapper/CLI/proxy receipt enforcement, workspace state mutation, universal governed-coding control, or readiness claim.",
+    "nextAllowedMove": "Claude implements only the source/test/worker-return scope in the work order without committing, then returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON."
+  }
+}
