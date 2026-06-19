@@ -1,0 +1,33 @@
+{
+  "stateOrder": 453,
+  "stateKey": "mcpGatewayExecutionControlLegacyRecheckClosure20260619",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "5f75d52c",
+    "baseHead": "b17221ef",
+    "baseline": "docs/baselines/CVF_GC018_MCP_GATEWAY_EXECUTION_CONTROL_LEGACY_RECHECK_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_GATEWAY_EXECUTION_CONTROL_LEGACY_RECHECK_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_MCP_GATEWAY_EXECUTION_CONTROL_LEGACY_RECHECK_COMPLETION_2026-06-19.md",
+    "coverageIndex": "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
+    "coverageRow": "MCP-GW-001",
+    "legacySourcesRechecked": [
+      ".private_reference/legacy/CVF 17.05/CVF_EXTERNAL_CAPABILITY_INTAKE/",
+      ".private_reference/legacy/CVF ADD/CLI-Anything/",
+      ".private_reference/legacy/CVF ADD/cortex-hub/"
+    ],
+    "absorbedFindings": [
+      "external capabilities cannot execute or call providers unless CVF grants authority",
+      "external tool callability is not governed unless routed through policy and trace recording",
+      "MCP is bridge/interface, not provider execution center",
+      "composition proof must preserve Model Gateway as provider execution authority and receipt boundary",
+      "Delta Execution Control must require pre-action governance/preflight, durable audit/receipt, and no governed-coding claim without CVF receipt"
+    ],
+    "checks": [
+      "worker-return fast gate PASS",
+      "git diff --check PASS",
+      "pre-commit hook PASS"
+    ],
+    "claimBoundary": "Legacy recheck and routing evidence only. No MCP to Model Gateway live/provider composition, Delta execution control implementation, provider call, secret/quota use, public-sync, runtime queue/scheduler/daemon work, broad runtime enforcement, readiness claim, or external absorption-chain implementation was performed.",
+    "nextAllowedMove": "Open MCP to Model Gateway Composition Proof only after fresh GC-018 and a source-verified work order using MCP-GW-001 legacy recheck evidence. Delta Execution Control remains parked until after Composition Proof."
+  }
+}

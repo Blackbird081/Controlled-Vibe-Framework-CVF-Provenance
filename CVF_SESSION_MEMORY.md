@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`
+Current mode marker: `mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`.
+Current mode: `mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`.
 
 Active handoff:
 
@@ -292,6 +292,15 @@ fail-closed default registration when no executor is injected. No provider/live
 composition, secrets/quota use, public-sync, runtime queue/scheduler/daemon
 work, broad runtime enforcement, readiness claim, or governed action execution
 was authorized or performed.
+
+MCP Gateway Execution Control Legacy Recheck is `CLOSED_PASS_BOUNDED` at
+material commit `5f75d52c`. Codex rechecked the bounded legacy sources for
+MCP, external capability, CLI tool, and Model Gateway control signals, then
+recorded coverage row `MCP-GW-001`. Composition Proof may proceed only through
+fresh GC-018 and source-verified work order evidence; Delta Execution Control
+remains parked until after Composition Proof. No provider/live call,
+secrets/quota use, public-sync, broad runtime enforcement, readiness claim,
+or external absorption-chain implementation was performed.
 
 Operator checkpoint recorded on 2026-06-19: after the future authorized
 MCP/runtime work is complete, revisit the external-agent/repo knowledge
@@ -753,14 +762,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`.
+Mode: `mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked`.
 
-WWU-T3B MCP Model Gateway Execution Adapter is `CLOSED_PASS_BOUNDED` at
-material commit `7e15146d`.
+MCP Gateway Execution Control Legacy Recheck is `CLOSED_PASS_BOUNDED` at
+material commit `5f75d52c`.
 
-Next allowed move: formalize the external-agent/repo knowledge absorption rules
-into one CVF-governed workflow chain map only after fresh GC-018 and a
-source-verified work order.
+Next allowed move: open MCP to Model Gateway Composition Proof only after fresh
+GC-018 and a source-verified work order using `MCP-GW-001` legacy recheck
+evidence. Delta Execution Control remains parked until after Composition Proof.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
@@ -768,7 +777,8 @@ decision remain held for their explicit authorizations. Public-sync, broad MCP
 implementation, provider/live calls, secrets/quota, runtime queue/scheduler/
 daemon work, raw external package import, public readiness, production
 readiness, release readiness, runtime enforcement claims, governed action
-requests, and external-facing readiness claims remain parked.
+requests, AI Gateway environment signal capture, external absorption-chain
+implementation, and external-facing readiness claims remain parked.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

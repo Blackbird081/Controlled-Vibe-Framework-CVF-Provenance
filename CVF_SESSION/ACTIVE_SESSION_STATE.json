@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready",
-  "previousMode": "wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready",
+  "currentMode": "mcp_gateway_legacy_recheck_closed_composition_proof_ready_delta_parked",
+  "previousMode": "wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -1288,7 +1288,7 @@
   "lastUpdated": "2026-06-18",
   "roadmapStateReconciliationT1Dispatch20260616": "Roadmap State Reconciliation RSF-T1 dispatch packet committed at 0977365e. Artifacts: docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md; docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T1_2026-06-16.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md. Purpose: reconcile stale CI2 roadmap state after source audit found CI2-T3/T4/T5 completion reviews already exist. Claim boundary: documentation-only dispatch; RSF-T2 machine guard not yet implemented.",
   "roadmapStateReconciliationT1Closure20260616": "Roadmap State Reconciliation RSF-T1 is CLOSED_PASS_BOUNDED at material commit 1c3724d0. CI2 roadmap now records ALL_TRANCHES_CLOSED_PASS_BOUNDED, CI2-T3/T4/T5 completion evidence is source-backed, and the active archive baseline has a blocked entry for the touched stale CI2 roadmap. RSF-T2 is authorized as the next governance foundation move: implement a narrow stale-roadmap redispatch guard. Claim boundary: no runtime/provider/public/legacy broad scan or LPCI product implementation is authorized by RSF-T1 closure.",
-  "nextAllowedMove": "WWU-T3B MCP Model Gateway Execution Adapter is CLOSED_PASS_BOUNDED at material commit 7e15146d. Next allowed move: formalize the external-agent/repo knowledge absorption rules into one CVF-governed workflow chain map only after fresh GC-018 and a source-verified work order. Provider/live composition, secrets/quota, public-sync, runtime queues/schedulers/daemons, broad runtime enforcement, readiness claims, and additional MCP/runtime work remain parked. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "MCP Gateway Execution Control Legacy Recheck is CLOSED_PASS_BOUNDED at material commit 5f75d52c. Next allowed move: open MCP to Model Gateway Composition Proof only after fresh GC-018 and a source-verified work order using MCP-GW-001 legacy recheck evidence. Delta Execution Control remains parked until after Composition Proof. Provider/live calls, secrets/quota, public-sync, runtime queues/schedulers/daemons, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, and external absorption-chain implementation remain parked unless separately authorized. LHW24 remains the latest closed numbered LHW wave.",
   "cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616": "RECONCILED_SUPERSEDED_BY_CLOSURE. Original CCLV-T2 dispatch commit 7e11c39c was superseded by accepted combined-role execution and bounded closure at material commit bf938549 after FPRC-T1 closed at material commit 51f56133. Codex audited and accepted the implementation in docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md. Completion evidence: docs/reviews/CVF_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_COMPLETION_2026-06-16.md. GC-018: docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md. Current-state reconciliation: PRFC-T1 removes the obsolete pause boundary from live agent-facing state while preserving historical dispatch provenance.",
   "centralCoreLocalViewPromptHeaderPacketClosure20260616": "CLOSED_PASS_BOUNDED at material commit ef6f67de. Codex hardened the dispatch prompt envelope standard/checker so new delegated dispatch-ready work orders must place the envelope read-first before Mission and no later than line 80. The work-order template now keeps the envelope pointer before Mission while staying at the 1200-line hard threshold. New standard: docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md. Roadmaps opened: docs/roadmaps/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_ROADMAP_2026-06-16.md and docs/roadmaps/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_ROADMAP_2026-06-16.md. Completion review: docs/reviews/CVF_CENTRAL_CORE_LOCAL_VIEW_AND_PROMPT_HEADER_PACKET_COMPLETION_2026-06-16.md. Focused tests pass 32/32; reviewer-fast passed; material pre-closure passed except expected active handoff sync.",
   "earcT3BExternalAbsorptionTableCheckerClosure20260618": {
@@ -2092,5 +2092,34 @@
     ],
     "claimBoundary": "Injectable MCP Model Gateway execution adapter only. The default registration fails closed without an injected executor; no provider/live composition, raw secret handling, quota use, runtime queue/scheduler/daemon behavior, public-sync, production readiness, public readiness, release readiness, external-facing readiness, broad runtime enforcement, or governed action execution is claimed.",
     "nextAllowedMove": "Formalize the external-agent/repo knowledge absorption rules into one CVF-governed workflow chain map only after fresh GC-018 and a source-verified work order."
+  },
+  "mcpGatewayExecutionControlLegacyRecheckClosure20260619": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "5f75d52c",
+    "baseHead": "b17221ef",
+    "baseline": "docs/baselines/CVF_GC018_MCP_GATEWAY_EXECUTION_CONTROL_LEGACY_RECHECK_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_GATEWAY_EXECUTION_CONTROL_LEGACY_RECHECK_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_MCP_GATEWAY_EXECUTION_CONTROL_LEGACY_RECHECK_COMPLETION_2026-06-19.md",
+    "coverageIndex": "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
+    "coverageRow": "MCP-GW-001",
+    "legacySourcesRechecked": [
+      ".private_reference/legacy/CVF 17.05/CVF_EXTERNAL_CAPABILITY_INTAKE/",
+      ".private_reference/legacy/CVF ADD/CLI-Anything/",
+      ".private_reference/legacy/CVF ADD/cortex-hub/"
+    ],
+    "absorbedFindings": [
+      "external capabilities cannot execute or call providers unless CVF grants authority",
+      "external tool callability is not governed unless routed through policy and trace recording",
+      "MCP is bridge/interface, not provider execution center",
+      "composition proof must preserve Model Gateway as provider execution authority and receipt boundary",
+      "Delta Execution Control must require pre-action governance/preflight, durable audit/receipt, and no governed-coding claim without CVF receipt"
+    ],
+    "checks": [
+      "worker-return fast gate PASS",
+      "git diff --check PASS",
+      "pre-commit hook PASS"
+    ],
+    "claimBoundary": "Legacy recheck and routing evidence only. No MCP to Model Gateway live/provider composition, Delta execution control implementation, provider call, secret/quota use, public-sync, runtime queue/scheduler/daemon work, broad runtime enforcement, readiness claim, or external absorption-chain implementation was performed.",
+    "nextAllowedMove": "Open MCP to Model Gateway Composition Proof only after fresh GC-018 and a source-verified work order using MCP-GW-001 legacy recheck evidence. Delta Execution Control remains parked until after Composition Proof."
   }
 }
