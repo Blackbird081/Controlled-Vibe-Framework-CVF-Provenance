@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `wwu_t2a_web_workspace_lane_summary_closed_t3_parked`
+Current mode marker: `wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t2a_web_workspace_lane_summary_closed_t3_parked`.
+Current mode: `wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`.
 
 Active handoff:
 
@@ -745,28 +745,29 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t2a_web_workspace_lane_summary_closed_t3_parked`.
+Mode: `wwu_t3a_mcp_execute_preview_dispatched_implementation_ready`.
 
-WWU-T2A CVF Web Workspace Lane Summary Read Model is `CLOSED_PASS_BOUNDED` at
-material commit `acedeb28`. The implemented surface is a read-only lane
-summary extension to the CVF Web Workspace dashboard/read model under
-`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`.
+WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview is
+`DISPATCH_READY` at material commit `9dff4a1b`. It authorizes one bounded
+deterministic MCP tool candidate: `cvf_model_gateway_execute_preview`.
 
-Next allowed move: no WWU-T3 Local Workspace Runtime/MCP implementation until
-explicit runtime/MCP authorization, fresh GC-018, and a source-verified work
-order. Any later bounded Web Workspace follow-up also requires fresh GC-018 and
-a source-verified work order.
+Next allowed move: run pre-implementation from dispatch commit `9dff4a1b`,
+then implement only the bounded deterministic WWU-T3A MCP execute preview tool
+under
+`docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md`.
+Any broader WWU-T3 runtime/MCP tranche or bounded Web Workspace follow-up
+requires fresh GC-018 and a source-verified work order.
 
 Post-MCP parked follow-up: after the future authorized MCP/runtime work is
 complete, formalize the old and new external-agent/repo knowledge absorption
 rules into one CVF-governed workflow chain map. That follow-up requires fresh
 GC-018 and a source-verified work order before implementation.
 
-WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
-authorization. EARC-T2 public-sync preparation and EARC-T4 MCP/workspace
-implementation decision remain held for their explicit authorizations.
-Public-sync, MCP implementation, provider/live calls, secrets/quota, workspace
-runtime mutation, raw external package import, public readiness, production
+Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
+EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
+decision remain held for their explicit authorizations. Public-sync, broad MCP
+implementation, provider/live calls, secrets/quota, runtime queue/scheduler/
+daemon work, raw external package import, public readiness, production
 readiness, release readiness, runtime enforcement claims, governed action
 requests, and external-facing readiness claims remain parked.
 
