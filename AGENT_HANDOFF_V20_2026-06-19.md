@@ -92,7 +92,7 @@ Startup acknowledged: current mode=`delta_t9_durable_execution_audit_store_close
 
 `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `b14df7b4`
+Current HEAD recorded for this handoff: `8f4abb28`
 
 Material state:
 
@@ -356,6 +356,12 @@ pre-implementation gate instruction to use the current handoff bridge parent as
 base. This keeps reviewer-owned handoff sync outside the worker changed range
 and does not open runtime, provider, public, direct-interception, readiness, or
 universal-control scope.
+
+Delta-T10 accepted material commit `8f4abb28` adds the durable audit integrity
+readout module, focused tests, completion packet, and evidence JSON. Codex
+reviewer hardened JSONL primitive/null classification and secret-like receipt
+identity handling before acceptance. Verification: focused 30/30 PASS, full
+MCP 33 files / 688 tests PASS, build PASS, worker-return fast gate PASS.
 
 ## Next Allowed Move
 
