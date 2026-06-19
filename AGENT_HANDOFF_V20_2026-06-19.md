@@ -91,7 +91,7 @@ Startup acknowledged: current mode=`ggl_t2_hook_finality_reliability_closed_next
 
 `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `a7b2f1d2`
+Current HEAD recorded for this handoff: `9faa0b00`
 
 Material state:
 
@@ -310,6 +310,13 @@ GGL-T2 is `CLOSED_PASS_BOUNDED` at closure commit `a7b2f1d2`, after dispatch
 and material handoff bridge `96a3611b`. Material-range pre-closure passed
 43/43 with clean finality, and closure pre-commit passed 54/54. It proves only
 bounded local hook-lane and worktree-finality reliability.
+
+GGL-T2 closure continuity sync commit `9faa0b00` recorded
+`ggl_t2_hook_finality_reliability_closed_next_foundation_ready`. A following
+pre-push hygiene remediation updates the provider-local `.codex` root to the
+root lifecycle ignored list and restores front-door compatibility markers for
+`broad external knowledge absorption` and `blocked work classes`; it does not
+open external absorption, runtime, provider, public, or interception scope.
 
 ## Next Allowed Move
 

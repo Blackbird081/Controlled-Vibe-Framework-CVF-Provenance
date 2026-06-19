@@ -38,6 +38,7 @@
   "ignoredRoots": [
     ".private_reference",
     ".git",
+    ".codex",
     "node_modules",
     ".cache",
     ".pytest_cache"

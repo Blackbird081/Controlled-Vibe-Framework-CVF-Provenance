@@ -116,6 +116,15 @@ Agents must use the active standards named in `AGENTS.md` and the machine
 guards named in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. This pointer record
 does not duplicate those long rules.
 
+## Blocked Work Classes
+
+Marker phrase for compatibility guards: blocked work classes.
+
+broad external knowledge absorption remains blocked unless opened through a
+fresh GC-018, source verification, and the governed external knowledge
+absorption chain. Marker phrase for compatibility guards: broad external
+knowledge absorption.
+
 ## Enforcement
 
 Startup acknowledgment, active-session state compatibility, autorun workflow
