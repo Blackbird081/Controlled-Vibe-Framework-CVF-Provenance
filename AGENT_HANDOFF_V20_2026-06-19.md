@@ -91,7 +91,7 @@ Startup acknowledged: current mode=`ggl_t2_hook_finality_reliability_closed_next
 
 `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `d10b59fe`
+Current HEAD recorded for this handoff: `7f603b49`
 
 Material state:
 
@@ -318,6 +318,14 @@ to the root lifecycle ignored list and restores front-door compatibility
 markers for `broad external knowledge absorption` and `blocked work classes`;
 it does not open external absorption, runtime, provider, public, or
 interception scope.
+
+Delta-T9 dispatch commit `7f603b49` adds the source-verified GC-018 and
+WORKER_MUST_NOT_COMMIT work order for a durable execution audit contract/store
+boundary. Claim boundary remains supplied Delta receipt-to-execution evidence
+only: no wrapper/proxy enforcement, no direct IDE/shell/git/filesystem
+interception, no arbitrary command execution, no provider/live, no public-sync,
+no queue/daemon, no CVF Web action execution, no readiness, and no universal
+governed-coding control claim.
 
 ## Next Allowed Move
 
