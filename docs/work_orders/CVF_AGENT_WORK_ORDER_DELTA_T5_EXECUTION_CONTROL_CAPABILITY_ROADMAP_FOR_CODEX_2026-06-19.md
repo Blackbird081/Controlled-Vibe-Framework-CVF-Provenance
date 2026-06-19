@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `b88080b1`
 
-executionBaseHead: `b88080b1`
+executionBaseHead: `c320ca36`
 
-closureBaseHead: `b88080b1`
+closureBaseHead: `fb9bf935`
 
 rawMemoryReleased: false
 
@@ -32,7 +32,7 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T5_EXECUTION_CONT
 
 Commit mode: WORKER_MAY_COMMIT
 
-executionBaseHead: `b88080b1`
+executionBaseHead: `c320ca36`
 
 Current-time notes: Composition Proof and Delta-T1 through Delta-T4B are already
 closed bounded; this packet opens only a planning/capability-boundary tranche.
@@ -60,9 +60,9 @@ Completion contract: exact changed-set evidence, completion review, evidence
 JSON, pre-closure gate, material/closure commit steward, and final session sync
 before claiming closed bounded.
 
-Return contract: return `COMPLETE_PENDING_REVIEW` with exact changed files,
-commands, and claim boundary if material is left uncommitted; otherwise commit
-only within the allowed phase scope and provide closure/session-sync evidence.
+Return contract: N/A with reason: Codex owns worker, reviewer, closer, and
+session-sync phases in this single-agent route. Closure/session-sync evidence is
+recorded in governed artifacts and separate commits.
 
 ## Purpose
 
@@ -123,7 +123,7 @@ Risk ceiling: R1 governance-control documentation.
 | Legacy coverage | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | `MCP-GW-001` covered source-backed |
 | Upstream proof | `docs/reviews/CVF_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Delta closures | Delta-T1 through Delta-T4B completion reviews | `CLOSED_PASS_BOUNDED` |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | `DISPATCHED` |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Roadmap | N/A with reason: this work order creates the roadmap | N/A with reason |
 
 ## Agent Roles
@@ -165,7 +165,7 @@ closure commits.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | one-agent-many-roles: Codex holds dispatcher, implementer, reviewer, closer, and session-sync roles across distinct phases |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`b88080b1`; execution=`b88080b1`; closure=`b88080b1` until material commit exists |
+| baseHeadFor(phase) | dispatch=`b88080b1`; execution=`c320ca36`; closure=`fb9bf935` |
 | changedSetScope(phase) | dispatch GC/work order; implementation roadmap/completion/evidence only; closure status conversion; protected continuity only in session-sync |
 | traceScope(phase, actor) | Codex records exact phase-local manifests, commands, and commit anchors |
 | commitOwner(phase) | Codex for every phase |
@@ -263,10 +263,10 @@ GC-018 -> this work order.
 
 | Upstream requirement | Work order section | Deliverable | Verification | Closure state |
 | --- | --- | --- | --- | --- |
-| prevent Delta overclaiming | Purpose; Acceptance Criteria | capability roadmap | diff and completion review | OPEN_FOR_IMPLEMENTATION |
-| preserve no-runtime boundary | Scope / Target / Owner Boundary | no runtime paths touched | `git diff --name-status` | OPEN_FOR_IMPLEMENTATION |
-| source-backed claims | Source Verification Block | line-cited Delta/MCP evidence | dispatch-quality gate | OPEN_FOR_IMPLEMENTATION |
-| no-receipt/no-claim rule | Acceptance Criteria | roadmap rule section | completion review | OPEN_FOR_IMPLEMENTATION |
+| prevent Delta overclaiming | Purpose; Acceptance Criteria | capability roadmap | diff and completion review | CLOSED_PASS_BOUNDED |
+| preserve no-runtime boundary | Scope / Target / Owner Boundary | no runtime paths touched | `git diff --name-status` | CLOSED_PASS_BOUNDED |
+| source-backed claims | Source Verification Block | line-cited Delta/MCP evidence | dispatch-quality gate | CLOSED_PASS_BOUNDED |
+| no-receipt/no-claim rule | Acceptance Criteria | roadmap rule section | completion review | CLOSED_PASS_BOUNDED |
 
 ## Work-Order Fulfillment Manifest
 
@@ -374,12 +374,38 @@ runtime wrapper/proxy enforcement, or universal governed-coding control.
 
 ## Closure Checklist
 
-- [ ] Roadmap created under the allowed path.
-- [ ] Completion review created under the allowed path.
-- [ ] Evidence JSON created under the allowed path.
-- [ ] No runtime/source/provider/public-sync path changed.
-- [ ] Pre-closure gate passed or the packet remains open.
-- [ ] Session continuity synced separately if next move changes.
+- [x] Roadmap created under the allowed path.
+- [x] Completion review created under the allowed path.
+- [x] Evidence JSON created under the allowed path.
+- [x] No runtime/source/provider/public-sync path changed.
+- [x] Pre-closure gate passed in closure conversion range.
+- [x] Session continuity is queued for a separate post-closure session-sync commit.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: no corpus or runtime registry edit authorized | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external source consumed beyond governed review artifacts | repo-local sources only | N/A with reason |
+| System loop interlock | N/A with reason: no system loop registry edit authorized | no registry path changed | N/A with reason |
+| Session continuity | active session state | separate post-closure session-sync commit required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| status | `CLOSED_PASS_BOUNDED` | PASS |
+| material commit | `f2ac570f` | PASS |
+| closure base | `fb9bf935` | PASS |
+| runtime scope added | false | PASS |
+| provider/live scope added | false | PASS |
+| public-sync performed | false | PASS |
+| direct interception claimed | false | PASS |
+| universal governed-coding claimed | false | PASS |
 
 ## Return-To-Orchestrator Conditions
 

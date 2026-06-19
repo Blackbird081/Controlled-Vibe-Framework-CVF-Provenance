@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -11,6 +11,14 @@ Owner: Codex
 Execution route: SINGLE_AGENT_MULTI_ROLE
 
 Base head: `b88080b1`
+
+Dispatch commit: `a47e185b`
+
+Execution base: `c320ca36`
+
+Material commit: `f2ac570f`
+
+Closure base: `fb9bf935`
 
 ## Purpose
 
@@ -29,7 +37,7 @@ production, release, or universal governed-coding readiness claims.
 
 | Field | Disposition |
 | --- | --- |
-| Decision | Dispatch a bounded Delta Execution Control capability roadmap |
+| Decision | Close a bounded Delta Execution Control capability roadmap |
 | Proposed tranche | Delta-T5 Execution Control Capability Roadmap |
 | Base head | `b88080b1` |
 | Worker / reviewer / closer | Codex across phase-separated roles |
@@ -109,6 +117,17 @@ only.
 | AC4 | The roadmap distinguishes invoked MCP/wrapper control from mandatory external action interception. |
 | AC5 | The roadmap names one or more future tranche candidates without marking them implementation-ready. |
 | AC6 | No runtime/source/provider/public-sync files are changed. |
+
+## Closure Evidence
+
+| Evidence | Result |
+| --- | --- |
+| Roadmap | `docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md` |
+| Completion review | `docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md` |
+| Evidence JSON | `docs/reviews/evidence/delta-t5-execution-control-capability-roadmap-2026-06-19.json` |
+| Material commit | `f2ac570f` |
+| Runtime/source/provider/public-sync change | false |
+| Claim boundary | planning and claim-boundary only |
 
 ## Evidence / Verification
 
