@@ -99,6 +99,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_external_knowledge_intake_routing.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "Delta mutating profile boundary",
+        ["python", "governance/compat/check_delta_mutating_profile_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "foundation storage layout",
         ["python", "governance/compat/check_foundation_storage_layout.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -255,6 +259,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "external knowledge intake routing",
             ["python", "governance/compat/check_external_knowledge_intake_routing.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "Delta mutating profile boundary",
+            ["python", "governance/compat/check_delta_mutating_profile_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "foundation storage layout",
@@ -445,6 +453,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "external knowledge intake routing",
             ["python", "governance/compat/check_external_knowledge_intake_routing.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "Delta mutating profile boundary",
+            ["python", "governance/compat/check_delta_mutating_profile_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "foundation storage layout",
