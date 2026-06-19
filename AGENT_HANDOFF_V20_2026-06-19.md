@@ -37,9 +37,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record Delta-T6 material commit
-`3ef55abc` in the active handoff before closure conversion. This is a
-handoff-only bridge sync and does not open runtime, provider, public, or
+Authorized guard-maintenance scope: record Delta-T6 closure commit `50812e9c`
+and move session front doors to the post-closure next-foundation routing. This
+is a session-sync commit and does not open runtime, provider, public, or
 execution scope.
 
 Protected paths:
@@ -61,30 +61,33 @@ Protected paths:
 - `CVF_SESSION/state/entries/postCompositionProofDeltaExecutionControlSelection20260619.json`
 - `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`
 - `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerDispatch20260619.json`
+- `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Operator authorization: the operator asked Codex to continue the recommended
-high-foundation steps. Delta-T6 material is now committed and this handoff-only
-sync records the bounded closure parent. It does not expand runtime, public,
-provider, or execution scope.
+high-foundation steps. Delta-T6 is now closed bounded and this session sync
+records the post-closure next-foundation lane. It does not expand runtime,
+public, provider, or execution scope.
 
 Rollback boundary: revert only this session-sync/rotation commit if rejected.
 Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
 commit `49f71004`, material commit `39a22e3f`, Delta-T4B closure commit
 `5b1f7c2a`, Delta-T5 closure commit `97a634c2`, Delta-T6 dispatch commit
-`73539dab`, Delta-T6 material commit `3ef55abc`, or earlier Delta commits.
+`73539dab`, Delta-T6 material commit `3ef55abc`, Delta-T6 handoff bridge
+commit `c72449cf`, Delta-T6 closure commit `50812e9c`, or earlier Delta
+commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t6_execution_claim_boundary_checker_dispatched_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=run pre-implementation from the dispatch session-sync head, then implement only the bounded checker, tests, hook/autorun wiring, completion review, and evidence JSON named by the Delta-T6 work order; parked checkpoint=runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche with fresh GC-018 and source verification, recommended candidate receipt-to-execution evidence auditor or another bounded governance-control-plane hardening tranche; parked checkpoint=runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t6_execution_claim_boundary_checker_dispatched_ready`
+`delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `3ef55abc`
+Current HEAD recorded for this handoff: `50812e9c`
 
 Material state:
 
@@ -139,6 +142,9 @@ Material state:
 - Delta-T6 worker-return fast gate: PASS
 - Delta-T6 implementation commit steward: PASS
 - Delta-T6 material pre-commit hook: PASS 54/54
+- Delta-T6 handoff bridge commit: `c72449cf`
+- Delta-T6 closure commit: `50812e9c`
+- Delta-T6 closure material pre-commit hook: PASS 54/54
 - Delta-T4B pre-dispatch gate: PASS
 - Delta-T4B dispatch commit steward: PASS
 - Delta-T4B dispatch pre-commit hook: PASS 52/52
@@ -247,6 +253,11 @@ provider/live calls, public-sync, queues, daemons, CVF Web action execution,
 wrapper/proxy runtime enforcement, EDIT/COMMIT execution, and universal
 governed-coding claims remain parked.
 
+Delta-T6 closure commit `50812e9c` closed the Execution Claim Boundary Checker
+as `CLOSED_PASS_BOUNDED`. It added no runtime/provider/public/direct
+interception behavior and proves only forward-only governed Markdown
+execution-claim boundary checking.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -261,12 +272,14 @@ MCP to Model Gateway Composition Proof is already `CLOSED_PASS_BOUNDED` at
 material commit `befad4a9`. Delta-T5 Execution Control Capability Roadmap is
 `CLOSED_PASS_BOUNDED` at material/closure commit `97a634c2`.
 
-Delta-T6 Execution Claim Boundary Checker is `DISPATCHED` at commit
-`73539dab`.
+Delta-T6 Execution Claim Boundary Checker is `CLOSED_PASS_BOUNDED` at closure
+commit `50812e9c`, after dispatch commit `73539dab`, dispatch session-sync
+commit `1fbe968e`, material commit `3ef55abc`, and handoff bridge commit
+`c72449cf`.
 
-Next allowed move: run pre-implementation from the dispatch session-sync head,
-then implement only the bounded checker, tests, hook/autorun wiring, completion
-review, and evidence JSON named by the Delta-T6 work order.
+Next allowed move: select the next high-value foundation tranche with fresh
+GC-018 and source verification. Recommended candidate: a receipt-to-execution
+evidence auditor or another bounded governance-control-plane hardening tranche.
 
 ## Parked Operator Checkpoints
 
@@ -312,28 +325,30 @@ LHW24 remains the latest closed numbered LHW wave.
 - Delta-T5 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_FOR_CODEX_2026-06-19.md`
 - Delta-T6 GC-018: `docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md`
 - Delta-T6 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md`
+- Delta-T6 completion: `docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md`
+- Delta-T6 evidence: `docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json`
 - Predecessor continuity: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex handoff-sync steward |
+| Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T6 material handoff bridge sync, 2026-06-19 |
+| Session or invocation | Delta-T6 closure session sync, 2026-06-19 |
 | Working directory | repository root |
-| Command or tool surface | PowerShell, apply_patch, governance hooks |
-| Target paths | active handoff only |
-| Allowed scope source | Delta-T6 material commit `3ef55abc` |
-| Before status evidence | Delta-T6 material committed while handoff still recorded dispatch parent |
-| After status evidence | active handoff records Delta-T6 material parent for closure conversion |
-| Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | handoff bridge sync only; no new runtime or public scope |
+| Command or tool surface | PowerShell, apply_patch, active session state generator, governance hooks |
+| Target paths | active handoff, generated active session state, session core, closure state entry, next allowed move entry, and session memory front door |
+| Allowed scope source | Delta-T6 closure commit `50812e9c` |
+| Before status evidence | Delta-T6 closure committed while session front doors still recorded handoff bridge/material parent |
+| After status evidence | session front doors record Delta-T6 closed bounded and next-foundation routing |
+| Diff evidence | `git diff --cached --name-status`, session-sync steward, and pre-commit hook |
+| Approval boundary | session-sync continuity only; no new runtime or public scope |
 | Claim boundary | no runtime profile expansion beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, CVF Web action execution, direct interception, broad wrapper/proxy/runtime enforcement expansion, or universal enforcement claim in this session-sync commit |
-| Agent type | single-agent handoff-sync steward |
-| Invocation ID | `delta-t6-material-handoff-bridge-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md` |
+| Agent type | single-agent session-sync steward |
+| Invocation ID | `delta-t6-closure-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 

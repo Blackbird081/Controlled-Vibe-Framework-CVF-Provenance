@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t6_execution_claim_boundary_checker_dispatched_ready`
+Current mode marker: `delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t6_execution_claim_boundary_checker_dispatched_ready`.
+Current mode: `delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready`.
 
-Previous mode: `delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready`.
+Previous mode: `delta_t6_execution_claim_boundary_checker_dispatched_ready`.
 
 Active handoff:
 
@@ -803,7 +803,7 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t6_execution_claim_boundary_checker_dispatched_ready`.
+Mode: `delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
@@ -835,12 +835,14 @@ material/closure commit `97a634c2`. It added a source-verified
 roadmap/capability-boundary artifact, completion review, and evidence JSON
 only.
 
-Delta-T6 Execution Claim Boundary Checker is `DISPATCHED` at commit
-`73539dab`, with fresh GC-018 and source-verified work order.
+Delta-T6 Execution Claim Boundary Checker is `CLOSED_PASS_BOUNDED` at closure
+commit `50812e9c`, after dispatch commit `73539dab`, dispatch session-sync
+commit `1fbe968e`, material commit `3ef55abc`, and handoff bridge commit
+`c72449cf`.
 
-Next allowed move: run pre-implementation from the dispatch session-sync head,
-then implement only the bounded checker, tests, hook/autorun wiring, completion
-review, and evidence JSON named by the Delta-T6 work order.
+Next allowed move: select the next high-value foundation tranche with fresh
+GC-018 and source verification. Recommended candidate: a receipt-to-execution
+evidence auditor or another bounded governance-control-plane hardening tranche.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

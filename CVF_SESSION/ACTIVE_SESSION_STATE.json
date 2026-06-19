@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_t6_execution_claim_boundary_checker_dispatched_ready",
-  "previousMode": "delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready",
+  "currentMode": "delta_t6_execution_claim_boundary_checker_closed_next_foundation_ready",
+  "previousMode": "delta_t6_execution_claim_boundary_checker_dispatched_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2589,7 +2589,6 @@
     "claimBoundary": "Delta-T5 closed only a source-backed capability roadmap and claim boundary for Delta Execution Control. It does not prove mandatory invocation, direct IDE/shell/git/filesystem interception, provider/live behavior, public readiness, production readiness, release readiness, durable execution audit, wrapper/proxy enforcement, or universal governed-coding control.",
     "nextAllowedMove": "Select the next high-value foundation tranche with fresh GC-018 and source verification. Recommended candidate: Delta-T6 Execution Claim Boundary Checker to machine-reject universal execution-control claims that lack receipt/action evidence. Runtime wrapper/proxy, direct interception, EDIT/COMMIT, provider/live, CVF Web action execution, queue/daemon, and public-sync remain parked until separately authorized."
   },
-  "nextAllowedMove": "Delta-T6 Execution Claim Boundary Checker is DISPATCHED at commit 73539dab with fresh GC-018 and source-verified work order. Next allowed move: run pre-implementation from the dispatch session-sync head, then implement only the bounded checker, tests, hook/autorun wiring, completion review, and evidence JSON named by the Delta-T6 work order. Unauthorized scope remains parked: runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave.",
   "deltaT6ExecutionClaimBoundaryCheckerDispatch20260619": {
     "status": "DISPATCHED",
     "dispatchBaseHead": "1092829b",
@@ -2612,5 +2611,29 @@
     "claimBoundary": "Delta-T6 dispatch authorizes only a machine checker for future execution-control claim boundaries. It does not authorize new runtime execution control, new mutating profiles, direct IDE/shell/git/filesystem interception, provider/live calls, public-sync, queues, daemons, CVF Web action execution, wrapper/proxy runtime enforcement, EDIT/COMMIT execution, or universal governed-coding claims.",
     "nextAllowedMove": "Run pre-implementation from the dispatch session-sync head, then implement only the bounded checker, tests, hook/autorun wiring, completion review, and evidence JSON named by the Delta-T6 work order."
   },
+  "deltaT6ExecutionClaimBoundaryCheckerClosure20260619": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchBaseHead": "1092829b",
+    "dispatchCommit": "73539dab",
+    "dispatchSessionSyncCommit": "1fbe968e",
+    "materialCommit": "3ef55abc",
+    "handoffBridgeCommit": "c72449cf",
+    "closureCommit": "50812e9c",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md",
+    "evidenceJson": "docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json",
+    "checks": [
+      "focused tests PASS 11/11",
+      "direct checker PASS",
+      "worker-return fast gate PASS",
+      "implementation steward PASS",
+      "material pre-commit hook PASS 54/54",
+      "closure material pre-commit hook PASS 54/54"
+    ],
+    "claimBoundary": "Delta-T6 proves only forward-only, repo-local machine checking for changed governed Markdown execution-control claim boundaries. It does not prove runtime interception, mandatory wrapper use, provider behavior, hosted readiness, public readiness, production readiness, wrapper/proxy enforcement, EDIT/COMMIT execution, or universal governed-coding control.",
+    "nextAllowedMove": "Select the next high-value foundation tranche with fresh GC-018 and source verification; recommended candidate is a receipt-to-execution evidence auditor or another bounded governance-control-plane hardening tranche."
+  },
+  "nextAllowedMove": "Delta-T6 Execution Claim Boundary Checker is CLOSED_PASS_BOUNDED at closure commit 50812e9c after dispatch 73539dab, dispatch session-sync 1fbe968e, material commit 3ef55abc, and handoff bridge c72449cf. Next allowed move: select the next high-value foundation tranche with fresh GC-018 and source verification; recommended candidate is a receipt-to-execution evidence auditor or another bounded governance-control-plane hardening tranche. Unauthorized scope remains parked: runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, and universal governed-coding control claims. LHW24 remains the latest closed numbered LHW wave.",
   "ekaR1ExternalKnowledgeIntakeRoutingGuardClosure20260619": "CLOSED_PASS_BOUNDED at material commit b00a1292. EKA-R1 added governance/compat/check_external_knowledge_intake_routing.py, focused tests, and hook/autorun wiring so changed governed external-intake artifacts must cite docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md and include an External Knowledge Intake Routing block with input type, route, owner surface, disposition, matching local-view guard or N/A with reason, and claim boundary. Focused tests PASS 11/11; worker-return fast gate PASS; material pre-closure PASS except expected pre-session-sync handoff HEAD drift. Boundary: changed-artifact governance routing only; no broad external router, runtime interception, provider/live proof, public-sync, readiness, or universal governed-coding control claim."
 }

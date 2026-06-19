@@ -1,0 +1,27 @@
+{
+  "stateOrder": 492,
+  "stateKey": "deltaT6ExecutionClaimBoundaryCheckerClosure20260619",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchBaseHead": "1092829b",
+    "dispatchCommit": "73539dab",
+    "dispatchSessionSyncCommit": "1fbe968e",
+    "materialCommit": "3ef55abc",
+    "handoffBridgeCommit": "c72449cf",
+    "closureCommit": "50812e9c",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md",
+    "evidenceJson": "docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json",
+    "checks": [
+      "focused tests PASS 11/11",
+      "direct checker PASS",
+      "worker-return fast gate PASS",
+      "implementation steward PASS",
+      "material pre-commit hook PASS 54/54",
+      "closure material pre-commit hook PASS 54/54"
+    ],
+    "claimBoundary": "Delta-T6 proves only forward-only, repo-local machine checking for changed governed Markdown execution-control claim boundaries. It does not prove runtime interception, mandatory wrapper use, provider behavior, hosted readiness, public readiness, production readiness, wrapper/proxy enforcement, EDIT/COMMIT execution, or universal governed-coding control.",
+    "nextAllowedMove": "Select the next high-value foundation tranche with fresh GC-018 and source verification; recommended candidate is a receipt-to-execution evidence auditor or another bounded governance-control-plane hardening tranche."
+  }
+}
