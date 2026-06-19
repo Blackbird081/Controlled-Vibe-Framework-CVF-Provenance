@@ -92,7 +92,7 @@ Startup acknowledged: current mode=`delta_t11_durable_audit_evidence_bundle_disp
 
 `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`
 
-Current HEAD recorded for this handoff: `53aca070`
+Current HEAD recorded for this handoff: `0a3e298e`
 
 Material state:
 
@@ -372,6 +372,16 @@ readout only, with no wrapper/proxy enforcement, direct interception, arbitrary
 command execution, provider/live, public-sync, CVF Web action execution,
 queue/daemon, readiness, or universal governed-coding control claim.
 
+Delta-T11 material commit `0a3e298e` accepts the Claude no-commit worker return
+after Codex reviewer repair. It adds the durable audit evidence bundle module,
+focused tests, worker-return completion packet, and evidence JSON. Reviewer
+repair changed `bundledAt` defaulting to supplied `readout.readoutAt`, rejected
+forged readout contract/bounded-flag inputs, corrected worker changed-set
+evidence, and added required review/claim/epistemic/learning sections.
+Evidence: focused tests PASS 39/39, full MCP tests PASS 34 files / 727 tests,
+build PASS, worker-return fast gate PASS, reviewer-fast PASS 31/31, material
+pre-commit hook PASS 54/54. Closure conversion remains next.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -413,16 +423,17 @@ commit `b496146f`, after dispatch `0b286d03`, dispatch repair `b14df7b4`,
 material commit `8f4abb28`, and material handoff bridge `1a08cbd0`.
 
 Delta-T11 Durable Audit Evidence Bundle External Reviewer Readout is
-`DISPATCHED` at dispatch commit `53aca070` from base `66cb8494`. It authorizes
-Claude, `WORKER_MUST_NOT_COMMIT`, to implement a bounded deterministic evidence
-bundle/readout over supplied Delta-T9/T10 audit artifacts only. Pre-dispatch
-autorun passed 43/43, dispatch-quality passed, commit steward dispatch
-preflight passed, and pre-commit governance hook passed 54/54.
+`IMPLEMENTED_PENDING_CLOSURE` at material commit `0a3e298e`, after dispatch
+commit `53aca070` from base `66cb8494` and execution base `de1a39c2`. It adds a
+bounded deterministic evidence bundle/readout over supplied Delta-T9/T10 audit
+artifacts only. Pre-dispatch autorun passed 43/43, dispatch-quality passed,
+commit steward dispatch preflight passed, material focused tests passed 39/39,
+full MCP tests passed 34 files / 727 tests, build passed, worker-return fast
+gate passed, reviewer-fast passed 31/31, and material pre-commit hook passed
+54/54.
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md`
-as `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW`
-or `BLOCKED`. Codex owns review, commit, closure conversion, and session sync.
+Next allowed move: Codex performs Delta-T11 closure conversion, runs closure
+gates, commits closure, then performs reviewer-owned session sync.
 Keep runtime profiles, provider/live calls, public-sync, CVF Web runtime action,
 direct interception, readiness, universal speed, and universal governed-coding
 claims parked.
