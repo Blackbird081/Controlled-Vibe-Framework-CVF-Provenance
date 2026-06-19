@@ -25,6 +25,11 @@ reviews, roadmaps, and prior continuity remain in their governed owner paths.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
+Exact remote SHA must be derived live from git when needed; do not
+hand-maintain it in this handoff.
+
+External agent memory files: non-canonical convenience only.
+
 This provenance workspace is private. Public changes may be pushed only from
 the sibling public-sync clone after separate authorization.
 
@@ -62,7 +67,7 @@ Startup acknowledged: current mode=`delta_t3_governed_command_launcher_closed_ne
 
 `delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`
 
-Current HEAD recorded for this handoff: `7a654dfb`
+Current HEAD recorded for this handoff: `cada9d94`
 
 Material state:
 
@@ -146,20 +151,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T3 final closure session sync, 2026-06-19 |
+| Session or invocation | Delta-T3 V20 GC-020 marker handoff sync, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
 | Target paths | active handoff and generated session-state surfaces listed below |
 | Allowed scope source | operator Delta-T3 continuation request and governed file-size rotation requirement |
-| Before status evidence | closure commit `7a654dfb`; clean worktree |
-| After status evidence | Delta-T3 closure state and operator-decision next move aligned |
+| Before status evidence | final session-sync commit `cada9d94`; clean worktree |
+| After status evidence | required GC-020 remote and external-memory markers restored |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
 | Approval boundary | final Delta-T3 continuity only; no Delta-T4 authorization |
 | Claim boundary | no runtime, provider/live, public-sync, or execution-scope expansion |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t3-final-session-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `delta-t3-v20-gc020-marker-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
