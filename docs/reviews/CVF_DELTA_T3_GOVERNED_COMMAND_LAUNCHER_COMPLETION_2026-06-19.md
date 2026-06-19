@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACCEPTED_MATERIAL_PENDING_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -11,6 +11,10 @@ docType: review
 Worker / reviewer / closer: Codex, phase-separated single-agent route
 
 Execution base: `aae39481`
+
+Material commit: `ff584e42`
+
+Closure base: `febf67fc`
 
 ## Purpose
 
@@ -154,18 +158,18 @@ interception claim is added.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | Delta-T3 work order | accepted material; closure conversion follows commit evidence | N/A with reason |
+| Work order status | Delta-T3 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | this file | Codex review and two resolved findings | PASS |
 | Roadmap state | N/A with reason: active-session/operator-derived tranche | no roadmap mutation | N/A with reason |
 | Registry JSON | BLOCKED with reason: no corpus registry edit authorized | no registry path changed | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
 | System loop interlock | N/A with reason: no queue/scheduler/loop added | no interlock mutation | N/A with reason |
-| Session continuity | N/A with reason: material batch only | separate post-material session sync | N/A with reason |
+| Session continuity | accepted-material state | commit `febf67fc` | PASS |
 
-## Execution Admission Assertion Matrix
+## Acceptance Receipt Assertion Matrix
 
-| Assertion | Required observation | Observed result | Status |
+| Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
 | full admission precedes process | T1 audit, T2 marker, T3 intent before runner | ordering and failure-injection tests | PASS |
 | arbitrary execution unavailable | strict profile registry/parser | unknown profile and extra args reject | PASS |
@@ -178,22 +182,22 @@ interception claim is added.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex implementer/reviewer |
+| Actor | Codex closer |
 | Provider or surface | local provenance workspace |
-| Session or invocation | `delta-t3-governed-command-launcher-material-2026-06-19` |
+| Session or invocation | `delta-t3-governed-command-launcher-closure-2026-06-19` |
 | Working directory | repository root and MCP package |
 | Command or tool surface | PowerShell, apply_patch, Vitest, TypeScript, Node binary, Python governance gates |
-| Target paths | exact eight-path material manifest below |
+| Target paths | exact four-path closure manifest below |
 | Allowed scope source | Delta-T3 GC-018 and work order |
-| Before status evidence | clean implementation base `aae39481` |
-| After status evidence | focused/full tests, build, receipt readback, and real bounded smoke pass; two findings resolved |
-| Diff evidence | `git diff --name-status`; `git diff --check`; focused/full tests; binary smoke; reviewer-fast |
+| Before status evidence | accepted material `ff584e42`; closure base `febf67fc` |
+| After status evidence | GC-018, work order, completion, and evidence aligned to bounded closure |
+| Diff evidence | `git diff --name-status febf67fc..HEAD`; `git diff --check`; focused/full tests; binary smoke; closure gates |
 | Approval boundary | static-profile non-destructive RUN launcher only |
 | Claim boundary | no arbitrary/mutating command, EDIT/COMMIT, external interception, provider/live, public-sync, or universal governed coding |
-| Agent type | single-agent multi-role Codex material phase |
-| Invocation ID | `delta-t3-governed-command-launcher-material-codex-2026-06-19` |
-| Expected manifest | `EXTENSIONS\CVF_ECO_v2.5_MCP_SERVER/package.json`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-exec.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/persistence/json-governed-execution.store.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/persistence/json-governed-execution.store.test.ts`; `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json` |
-| Actual changed set | `EXTENSIONS\CVF_ECO_v2.5_MCP_SERVER/package.json`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-exec.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/persistence/json-governed-execution.store.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/persistence/json-governed-execution.store.test.ts`; `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json` |
+| Agent type | single-agent multi-role Codex closure phase |
+| Invocation ID | `delta-t3-governed-command-launcher-closure-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -205,7 +209,7 @@ Reason: private provenance runtime component. Public-sync is not authorized.
 
 ## Claim Boundary
 
-Accepted material proves only wrapper-owned execution of two exact Git
+Closed bounded evidence proves only wrapper-owned execution of two exact Git
 inspection profiles after durable T1/T2/T3 admission. It does not make the
 wrapper mandatory outside its path, execute arbitrary or mutating commands,
 intercept external tools, prove provider behavior, or establish universal

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -39,8 +39,9 @@ and only then invoke the exact profile through a direct process runner.
 Allowed scope:
 
 - add one package binary named `cvf-governed-exec` in the MCP package;
-- add a static CVF-owned profile registry for `git-status`, `git-diff-check`,
-  `npm-test`, `npm-build`, and `npm-check`;
+- add a static CVF-owned profile registry for `git-status` and
+  `git-diff-check`; dispatched npm script candidates are rejected because
+  project-defined scripts are not statically non-destructive;
 - derive one canonical RUN action from the selected profile and resolved
   workspace-relative working directory;
 - call the existing Delta-T1 pure preflight handler and persist its audit;
@@ -170,15 +171,15 @@ These are new authorized fields, not existing runtime facts.
 
 | ID | Criterion | Dispatch state |
 | --- | --- | --- |
-| AC1 | `cvf-governed-exec` is published from the MCP package without changing T1/T2 contracts. | REQUIRED |
-| AC2 | The runner is unreachable unless T1 ALLOW, T2 consumption, and T3 intent persistence all succeed. | REQUIRED |
-| AC3 | Only exact static profiles execute; arbitrary executable, args, env, shell, EDIT, and COMMIT are unavailable. | REQUIRED |
-| AC4 | Real workspace/cwd checks reject lexical and symlink escape. | REQUIRED |
-| AC5 | Execution receipt persists admission/final status without raw action, target, stdout, stderr, or credential values. | REQUIRED |
-| AC6 | Runner failure returns a bounded failed receipt and does not become success. | REQUIRED |
-| AC7 | Returned output is bounded and known credential patterns are redacted. | REQUIRED |
-| AC8 | Focused tests, full MCP tests, package build, binary smoke, and governance gates pass. | REQUIRED |
-| AC9 | No provider/live, public-sync, queue, daemon, mutating profile, or broad interception work occurs. | REQUIRED |
+| AC1 | `cvf-governed-exec` is published from the MCP package without changing T1/T2 contracts. | PASS |
+| AC2 | The runner is unreachable unless T1 ALLOW, T2 consumption, and T3 intent persistence all succeed. | PASS |
+| AC3 | Only exact static profiles execute; arbitrary executable, args, env, shell, EDIT, and COMMIT are unavailable. | PASS_BOUNDED: two Git profiles shipped; npm candidates rejected |
+| AC4 | Real workspace/cwd checks reject lexical and symlink escape. | PASS |
+| AC5 | Execution receipt persists admission/final status without raw action, target, stdout, stderr, or credential values. | PASS |
+| AC6 | Runner failure returns a bounded failed receipt and does not become success. | PASS |
+| AC7 | Returned output is bounded and known credential patterns are redacted. | PASS_BOUNDED |
+| AC8 | Focused tests, full MCP tests, package build, binary smoke, and governance gates pass. | PASS |
+| AC9 | No provider/live, public-sync, queue, daemon, mutating profile, or broad interception work occurs. | PASS |
 
 ## Evidence / Verification
 
@@ -198,6 +199,17 @@ Required evidence:
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance Delta runtime tranche. No public-sync authorization.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Baseline status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Material implementation | MCP package source/tests and completion evidence | commit `ff584e42` | PASS |
+| Accepted-material continuity | active session state | commit `febf67fc` | PASS |
+| Profile boundary | completion review and evidence JSON | two shipped Git profiles; three npm candidates rejected | PASS_BOUNDED |
+| Provider/live proof | N/A with reason: no provider claim | no live provider command | N/A with reason |
+| Public-sync | N/A with reason: not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
 
 ## Claim Boundary
 

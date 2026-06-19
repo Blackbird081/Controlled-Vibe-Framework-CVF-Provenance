@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CODEX
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `f50e2903`
 
-executionBaseHead: `f50e2903`
+executionBaseHead: `aae39481`
 
-closureBaseHead: `f50e2903`
+closureBaseHead: `febf67fc`
 
 rawMemoryReleased: false
 
@@ -57,7 +57,7 @@ existing Delta-T1 issuer and Delta-T2 consumer before a direct child process.
 | --- | --- |
 | `CVF_SESSION_MEMORY.md` | current mode and next allowed move |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | machine-readable continuity |
-| `AGENT_HANDOFF_V19_2026-06-15.md` | active handoff and parked boundaries |
+| `AGENT_HANDOFF_V20_2026-06-19.md` | active handoff and parked boundaries |
 | matching Delta-T3 GC-018 | exact authorization and claim boundary |
 | Delta-T1 and Delta-T2 completion reviews | predecessor contracts and residual risk |
 | `docs/reference/agent_workspace/README.md` | Local Workspace Runtime front door |
@@ -104,12 +104,12 @@ destructive action, or irreversible external action.
 | --- | --- | --- |
 | Operator authorization | current request on 2026-06-19 | ACCEPTED for Delta-T3 implementation |
 | Active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Delta-T2 closed; launcher decision ready |
-| Active handoff | `AGENT_HANDOFF_V19_2026-06-15.md` | Delta-T3 requires operator authorization now granted |
+| Active handoff | `AGENT_HANDOFF_V20_2026-06-19.md` | Delta-T3 accepted material and bounded closure route |
 | Legacy absorption | `MCP-GW-001` in `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | source-backed execution-control direction |
 | Workspace authority | `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md` | local MCP/CLI ingress uses guards and receipts |
 | Delta-T1 prerequisite | `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Delta-T2 prerequisite | `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED`; material `d3bf3594`; closure `22ad256e` |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md` | DISPATCH_READY |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md` | CLOSED_PASS_BOUNDED |
 | Roadmap | N/A with reason: Delta-T3 follows active-session operator authorization, not a numbered roadmap tranche | N/A with reason |
 
 ## Agent Handoff Contract Control Block
@@ -184,7 +184,7 @@ destructive action, or irreversible external action.
 | Field | Disposition |
 | --- | --- |
 | actionClass | `RUN` only |
-| profiles | `git-status`, `git-diff-check`, `npm-test`, `npm-build`, `npm-check` |
+| profiles | shipped: `git-status`, `git-diff-check`; rejected from T3: `npm-test`, `npm-build`, `npm-check` |
 | action binding | deterministic canonical profile/executable/args/workspace-relative cwd string |
 | preflight owner | existing `preflightGovernanceAction` |
 | consumption owner | existing `consumeGovernanceActionReceipt` |
@@ -209,6 +209,15 @@ destructive action, or irreversible external action.
 | Known credential patterns have an existing redaction helper. | EXISTS | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.ts` | `redactText` declaration | `redactText` | Delta-T1 secret handling | ACCEPT |
 | MCP package manifest owns npm binary publication. | VALUE_SET | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/package.json` | `bin` | `cvf-mcp-server` | npm manifest | ACCEPT |
 | T2 closure names launcher execution as later separately authorized work. | LITERAL_INVARIANT | `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md` | `## Risk / Corrective Action` | `executionAdmissionEligible` | Delta-T2 completion | ACCEPT |
+
+## Current Runtime Freshness Verification
+
+Closure reread material commit `ff584e42` and verified the shipped package
+binary, two-profile registry, T1/T2/T3 admission sequence, durable execution
+receipt store, direct `shell:false` runner, and focused tests. The three npm
+script candidates are absent from runtime and recorded as rejected rather than
+implemented. Delta-T1/T2 owners, dependencies, lockfiles, Model Gateway, CVF
+Web, provider/live, public-sync, and workspace state remain unchanged.
 
 ## New Doc-Only Fields
 
@@ -239,11 +248,11 @@ GC-018 -> this work order.
 
 | Upstream requirement | Work order section | Deliverable | Verification | Dispatch state |
 | --- | --- | --- | --- | --- |
-| receipt-gated execution | Delta-T3 Execution Control Block | modular governed launcher | focused sequence tests | READY |
-| no arbitrary shell | Scope and control blocks | static profile registry and direct runner | negative parser/runner tests | READY |
-| durable execution evidence | Delta-T3 Execution Control Block | intent/final receipt store | temp-directory readback | READY |
-| no universal claim | Claim Boundary | bounded response/completion language | text and diff review | READY |
-| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | READY |
+| receipt-gated execution | Delta-T3 Execution Control Block | modular governed launcher | focused sequence tests | PASS |
+| no arbitrary shell | Scope and control blocks | static profile registry and direct runner | negative parser/runner tests | PASS |
+| durable execution evidence | Delta-T3 Execution Control Block | intent/final receipt store | temp-directory readback | PASS |
+| no universal claim | Claim Boundary | bounded response/completion language | text and diff review | PASS_BOUNDED |
+| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | PASS |
 
 ## Write Ownership
 
@@ -398,10 +407,10 @@ order.
 | Agent Handoff Contract Control Block | PASS |
 | Single-Agent Multi-Role Control Block | PASS |
 | Work-Order Fulfillment Manifest | PASS |
-| Runtime implementation | REQUIRED |
-| Focused/full verification and binary smoke | REQUIRED |
-| Completion/evidence and closure gates | REQUIRED |
-| Separate session continuity | REQUIRED |
+| Runtime implementation | PASS at `ff584e42` |
+| Focused/full verification and binary smoke | PASS |
+| Completion/evidence and closure gates | PASS_BOUNDED |
+| Separate session continuity | PASS at `febf67fc` |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -410,7 +419,7 @@ order.
 | Finding | Delta-T2 yields admission eligibility but no process owner requires it before execution |
 | Defect class | `RUNTIME_SIGNAL_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
-| Escalation state | `DISPATCHED_BOUNDED_DELTA_T3` |
+| Escalation state | `CLOSED_BOUNDED_DELTA_T3` |
 | Current control action | add wrapper-owned static-profile execution after T1/T2 durable admission |
 | Machine-check action | later wider execution surfaces must compose the same admission chain rather than bypass it |
 | Worker blame | N/A with reason: planned architecture progression |
@@ -425,22 +434,22 @@ Reason: private provenance Delta runtime implementation. No public-sync.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex dispatcher |
+| Actor | Codex closer |
 | Provider or surface | local provenance workspace |
-| Session or invocation | `delta-t3-governed-command-launcher-dispatch-2026-06-19` |
+| Session or invocation | `delta-t3-governed-command-launcher-closure-2026-06-19` |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, rg, apply_patch, Python governance gates |
-| Target paths | matching Delta-T3 GC-018 and this work order |
+| Target paths | matching Delta-T3 GC-018, work order, completion review, and evidence JSON |
 | Allowed scope source | operator request, Delta-T1/T2 closures, `MCP-GW-001` |
-| Before status evidence | clean worktree at `f50e2903` |
-| After status evidence | dispatch artifacts authored and source-verified |
-| Diff evidence | `git diff --name-status`; `git diff --check`; pre-dispatch gates |
+| Before status evidence | accepted-material continuity commit `febf67fc` |
+| After status evidence | four closure artifacts aligned as `CLOSED_PASS_BOUNDED` / `PASS_BOUNDED` |
+| Diff evidence | `git diff --name-status febf67fc..HEAD`; `git diff --check`; closure gates |
 | Approval boundary | bounded static-profile RUN launcher only |
 | Claim boundary | no arbitrary/mutating command, external interception, provider/live, public-sync, or universal governed-coding claim |
-| Agent type | single-agent multi-role Codex dispatch phase |
-| Invocation ID | `delta-t3-governed-command-launcher-dispatch-codex-2026-06-19` |
-| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md` |
+| Agent type | single-agent multi-role Codex closure phase |
+| Invocation ID | `delta-t3-governed-command-launcher-closure-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none authorized |
 
@@ -448,24 +457,29 @@ Reason: private provenance Delta runtime implementation. No public-sync.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order | this file | `Status: DISPATCH_READY_FOR_CODEX` | PASS |
-| GC-018 | matching baseline | `Status: DISPATCH_READY` | PASS |
-| Completion review | reviewer-owned path | final bounded disposition | REQUIRED |
-| Evidence JSON | reviewer-owned path | acceptance assertion results | REQUIRED |
-| Runtime source/tests | Required Artifact Manifest | exact changed-set evidence | REQUIRED |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 | matching baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | reviewer-owned path | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Evidence JSON | reviewer-owned path | `status: PASS_BOUNDED` | PASS |
+| Runtime source/tests | material commit `ff584e42` | exact eight-path changed-set evidence | PASS |
+| Roadmap state | N/A with reason: operator/session-derived tranche | no roadmap changed | N/A with reason |
+| Registry JSON | BLOCKED with reason: no registry mutation authorized for this runtime tranche | no registry changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry mutation authorized for this runtime tranche | no registry changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external source consumed | repo-local source and tests | N/A with reason |
+| System loop interlock | N/A with reason: no loop/queue/scheduler change | no interlock changed | N/A with reason |
 | Provider/live proof | N/A with reason: forbidden and unnecessary | no live command | N/A with reason |
 | Public-sync | N/A with reason: not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
-| Session continuity | separate phase | dispatch/material/closure continuity | REQUIRED |
+| Session continuity | separate phase | accepted-material sync `febf67fc`; final sync follows closure | PASS |
 
-## Execution Admission Assertion Matrix
+## Acceptance Receipt Assertion Matrix
 
-| Assertion | Required observation | Dispatch state |
-| --- | --- | --- |
-| process requires full admission chain | runner call occurs only after T1/T2/T3 durable success | REQUIRED |
-| arbitrary execution unavailable | unknown profile and extra args rejected | REQUIRED |
-| cwd stays inside workspace | lexical and symlink escape rejected | REQUIRED |
-| failure receipt is durable | runner error finalizes failed state | REQUIRED |
-| execution claim stays bounded | wrapper-owned process true; external interception false | REQUIRED |
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| process requires full admission chain | runner only after T1/T2/T3 durable success | ordering and failure-injection tests | PASS |
+| arbitrary execution unavailable | unknown profile and extra args rejected | strict parser/profile tests | PASS |
+| cwd stays inside workspace | lexical and symlink escape rejected | real-path containment tests | PASS |
+| failure receipt is durable | runner error finalizes failed state | receipt readback test | PASS |
+| execution claim stays bounded | wrapper process true; external interception false | response/evidence assertions | PASS_BOUNDED |
 
 ## Claim Boundary
 

@@ -1,8 +1,10 @@
 {
   "schemaVersion": "1.0.0",
   "evidenceId": "delta-t3-governed-command-launcher-2026-06-19",
-  "status": "PASS_BOUNDED_PENDING_CLOSURE",
+  "status": "PASS_BOUNDED",
   "executionBaseHead": "aae39481",
+  "acceptedMaterialCommit": "ff584e42",
+  "closureBaseHead": "febf67fc",
   "binary": "cvf-governed-exec",
   "launcherContractVersion": "cvf.delta.governedCommandLauncher.v1",
   "executionReceiptContractVersion": "cvf.delta.governedExecutionReceipt.v1",
