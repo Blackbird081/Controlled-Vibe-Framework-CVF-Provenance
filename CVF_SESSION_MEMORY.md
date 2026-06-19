@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`
+Current mode marker: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`.
+Current mode: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`.
 
-Previous mode: `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`.
+Previous mode: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -114,14 +114,21 @@ tests passed 33 files / 688 tests, build passed, worker-return fast gate
 passed, and pre-closure content gates passed with only expected post-closure
 session-sync HEAD drift before this sync.
 
+Delta-T11 Durable Audit Evidence Bundle External Reviewer Readout is
+`DISPATCHED` at dispatch commit `53aca070` from base `66cb8494`. It authorizes
+Claude, `WORKER_MUST_NOT_COMMIT`, to implement a bounded deterministic evidence
+bundle/readout over supplied Delta-T9/T10 audit artifacts only. Pre-dispatch
+autorun passed 43/43, dispatch-quality passed, commit steward dispatch
+preflight passed, and pre-commit governance hook passed 54/54.
+
 ## Next Allowed Move
 
-Mode: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`.
+Mode: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`.
 
-Next allowed move: select the next high-value foundation tranche through fresh
-GC-018 and source verification. Suggested candidates should prioritize durable
-CVF foundation value and must start from source verification, not provider
-memory.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md`
+as `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW`
+or `BLOCKED`. Codex owns review, commit, closure conversion, and session sync.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct
@@ -158,6 +165,8 @@ gates, and governed file-size checks enforce this front-door contract.
 - `docs/reviews/CVF_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUNDARY_COMPLETION_2026-06-19.md`
+- `docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 - `governance/compat/run_agent_commit_steward_preflight.py`
 
