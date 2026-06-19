@@ -48,6 +48,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherAcceptedMaterial20260619.json`
 - `CVF_SESSION/state/entries/deltaT3GovernedCommandLauncherClosure20260619.json`
+- `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
@@ -61,13 +62,13 @@ Do not alter material commit `ff584e42` or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator decides whether to authorize a fresh Delta-T4 approval-backed mutating execution/EDIT-COMMIT boundary or select another bounded CVF lane; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal governed-coding claims.
+Startup acknowledged: current mode=`delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator may authorize fresh GC-018 and source-verified work order for EKA-R1 bounded external knowledge intake routing guard; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`
+`delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`
 
-Current HEAD recorded for this handoff: `cada9d94`
+Current HEAD recorded for this handoff: `9f0b4c9f`
 
 Material state:
 
@@ -77,6 +78,7 @@ Material state:
 - V20 routing metadata commit: `bcc4374f`
 - Accepted-material session-sync commit: `febf67fc`
 - Delta-T3 closure commit: `7a654dfb`
+- Post-Delta-T3 foundation selection commit: `9f0b4c9f`
 - Focused tests: PASS 2 files / 15 tests
 - Full MCP tests: PASS 29 files / 610 tests
 - MCP package build: PASS
@@ -100,8 +102,8 @@ and cannot support this tranche's fixed non-destructive command claim.
 
 ## Active Boundary
 
-Delta-T3 is closed bounded. No execution expansion is active; the next step is
-an operator decision on a separately governed Delta-T4 or another CVF lane.
+Delta-T3 is closed bounded and Delta-T4 is parked. EKA-R1 is the preferred
+foundation candidate but remains pending operator authorization.
 
 ## Latest Work / Changes
 
@@ -112,13 +114,12 @@ material commit `ff584e42`.
 
 ## Next Allowed Move
 
-Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
-commit `7a654dfb`.
+Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake
+Routing Guard T1 is recommended at decision commit `9f0b4c9f`.
 
-Next allowed move: operator decision whether to authorize a fresh Delta-T4
-approval-backed mutating execution profile/EDIT-COMMIT boundary through fresh
-GC-018 and source verification, or stop Delta expansion and select another
-bounded CVF lane. No Delta-T4 work is auto-authorized.
+Next allowed move: operator may authorize fresh GC-018 and a source-verified
+work order for the bounded range-aware EKA-R1 checker. EKA-R1 is not yet
+dispatch-ready or implemented and makes no universal interception claim.
 
 ## Parked Operator Checkpoints
 
@@ -151,20 +152,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T3 V20 GC-020 marker handoff sync, 2026-06-19 |
+| Session or invocation | post-Delta-T3 foundation selection session sync, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
 | Target paths | active handoff and generated session-state surfaces listed below |
 | Allowed scope source | operator Delta-T3 continuation request and governed file-size rotation requirement |
-| Before status evidence | final session-sync commit `cada9d94`; clean worktree |
-| After status evidence | required GC-020 remote and external-memory markers restored |
+| Before status evidence | decision commit `9f0b4c9f`; clean worktree |
+| After status evidence | Delta-T4 parked and EKA-R1 candidate continuity aligned |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | final Delta-T3 continuity only; no Delta-T4 authorization |
+| Approval boundary | candidate-selection continuity only; no EKA-R1 implementation authorization |
 | Claim boundary | no runtime, provider/live, public-sync, or execution-scope expansion |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t3-v20-gc020-marker-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md` |
+| Invocation ID | `post-delta-t3-foundation-selection-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 

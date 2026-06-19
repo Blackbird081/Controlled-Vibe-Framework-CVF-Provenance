@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`
+Current mode marker: `delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`.
+Current mode: `delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`.
 
 Previous mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
@@ -793,16 +793,19 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready`.
+Mode: `delta_t4_parked_eka_r1_foundation_candidate_pending_authorization`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
 
-Next allowed move: operator decision whether to authorize a fresh Delta-T4
-approval-backed mutating execution/EDIT-COMMIT boundary, or stop Delta
-expansion and select another bounded CVF lane. No Delta-T4 work is
-auto-authorized. Arbitrary/mutating execution, npm script profiles, and
-external interception remain parked.
+Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake
+Routing Guard T1 is the preferred next foundation candidate at decision commit
+`9f0b4c9f`.
+
+Next allowed move: operator may authorize fresh GC-018 and a source-verified
+work order for bounded range-aware governed-artifact routing. EKA-R1 is not yet
+dispatch-ready or implemented; Delta-T4 and external interception remain
+parked.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

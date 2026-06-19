@@ -1,0 +1,15 @@
+{
+  "stateOrder": 470,
+  "stateKey": "postDeltaT3NextFoundationSelection20260619",
+  "value": {
+    "status": "EKA_R1_RECOMMENDED_PENDING_OPERATOR_AUTHORIZATION",
+    "decisionCommit": "9f0b4c9f",
+    "decisionPacket": "docs/reviews/CVF_POST_DELTA_T3_NEXT_FOUNDATION_TRANCHE_SELECTION_2026-06-19.md",
+    "parkedCandidate": "Delta-T4 approval-backed mutating execution and EDIT-COMMIT boundary",
+    "preferredCandidateId": "EKA-R1",
+    "preferredCandidate": "External Knowledge Intake Routing Guard T1",
+    "rationale": "EKA-R1 adds broad cross-lane governance leverage before future external-agent, repo, legacy, corpus, and external-claim absorption with lower irreversible risk than Delta-T4 mutation semantics.",
+    "claimBoundary": "Candidate selection only. EKA-R1 is not dispatch-ready or implemented; it is bounded to future range-aware governed-artifact routing and does not claim universal interception. Delta-T4 is parked, not rejected.",
+    "nextAllowedMove": "Operator may authorize fresh GC-018 and a source-verified work order for EKA-R1. Until then EKA-R1 remains recommended but undispatched, Delta-T4 remains parked, and runtime/provider/live/public-sync/registry/readiness expansion remains unauthorized."
+  }
+}

@@ -60,7 +60,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_t3_governed_command_launcher_closed_next_execution_boundary_decision_ready",
+  "currentMode": "delta_t4_parked_eka_r1_foundation_candidate_pending_authorization",
   "previousMode": "delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -2374,5 +2374,16 @@
     "claimBoundary": "CLOSED_PASS_BOUNDED proves wrapper-owned execution for two fixed read-only Git profiles after durable Delta-T1 ALLOW, atomic Delta-T2 consumption, and durable Delta-T3 intent. It does not intercept direct IDE or shell actions, permit arbitrary or mutating commands, prove mandatory invocation, use a live provider, authorize public-sync, or establish universal governed-coding control.",
     "nextAllowedMove": "Operator decision whether to authorize a fresh Delta-T4 approval-backed mutating execution profile/EDIT-COMMIT boundary through fresh GC-018 and source verification, or stop Delta expansion and select another bounded CVF lane. No Delta-T4 work is auto-authorized."
   },
-  "nextAllowedMove": "Delta-T3 Governed Command Launcher is CLOSED_PASS_BOUNDED at material commit ff584e42 and closure commit 7a654dfb. Operator decision is required before any Delta-T4 approval-backed mutating execution profile or EDIT/COMMIT boundary; such work requires fresh GC-018 and source verification, or the operator may stop Delta expansion and select another bounded CVF lane. No npm script profile, arbitrary/mutating command, direct IDE/shell/filesystem interception, provider/live, public-sync, queue/daemon, workspace-state mutation, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
+  "postDeltaT3NextFoundationSelection20260619": {
+    "status": "EKA_R1_RECOMMENDED_PENDING_OPERATOR_AUTHORIZATION",
+    "decisionCommit": "9f0b4c9f",
+    "decisionPacket": "docs/reviews/CVF_POST_DELTA_T3_NEXT_FOUNDATION_TRANCHE_SELECTION_2026-06-19.md",
+    "parkedCandidate": "Delta-T4 approval-backed mutating execution and EDIT-COMMIT boundary",
+    "preferredCandidateId": "EKA-R1",
+    "preferredCandidate": "External Knowledge Intake Routing Guard T1",
+    "rationale": "EKA-R1 adds broad cross-lane governance leverage before future external-agent, repo, legacy, corpus, and external-claim absorption with lower irreversible risk than Delta-T4 mutation semantics.",
+    "claimBoundary": "Candidate selection only. EKA-R1 is not dispatch-ready or implemented; it is bounded to future range-aware governed-artifact routing and does not claim universal interception. Delta-T4 is parked, not rejected.",
+    "nextAllowedMove": "Operator may authorize fresh GC-018 and a source-verified work order for EKA-R1. Until then EKA-R1 remains recommended but undispatched, Delta-T4 remains parked, and runtime/provider/live/public-sync/registry/readiness expansion remains unauthorized."
+  },
+  "nextAllowedMove": "Delta-T4 is parked by operator decision. EKA-R1 External Knowledge Intake Routing Guard T1 is the preferred next foundation candidate at decision commit 9f0b4c9f because it offers broader cross-lane governance leverage with lower irreversible risk. Next allowed move: operator may authorize fresh GC-018 and a source-verified work order for a bounded range-aware governed-artifact routing guard. EKA-R1 is not yet dispatch-ready or implemented and does not claim universal interception. Runtime/provider/live/public-sync/registry/readiness expansion remains unauthorized. LHW24 remains the latest closed numbered LHW wave."
 }
