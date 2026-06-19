@@ -1,15 +1,15 @@
 # CVF Agent Work Order - Delta-T11 Durable Audit Evidence Bundle External Reviewer Readout
 
 Memory class: FULL_RECORD
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-06-19
 docType: work_order
 Batch ID: DELTA-T11
 Owner: Claude worker, Codex reviewer
 Commit mode: WORKER_MUST_NOT_COMMIT
 dispatchBaseHead: `66cb8494`
-executionBaseHead: `PENDING_CLAUDE_CAPTURE`
-closureBaseHead: `N/A_REVIEWER_OWNED`
+executionBaseHead: `de1a39c2`
+closureBaseHead: `26a9491e`
 rawMemoryReleased: false
 
 ## Dispatch Prompt Envelope
@@ -42,9 +42,9 @@ Required first actions: read `CVF_SESSION_MEMORY.md`, resolve
 read this work order and the matching GC-018, capture `executionBaseHead`, then
 run pre-implementation gate before source edits.
 
-Return contract: return uncommitted `COMPLETE_PENDING_REVIEW` artifacts for
-Codex review, or return `BLOCKED` with evidence. Codex owns review, commit,
-closure conversion, and session sync.
+Return contract: return uncommitted artifacts for Codex review, or return
+`BLOCKED` with evidence. Codex owns review, commit, closure conversion, and
+session sync. Final disposition after Codex review: `CLOSED_PASS_BOUNDED`.
 
 ## Purpose
 
@@ -76,6 +76,7 @@ Allowed scope:
 - create `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.test.ts`;
 - create `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md`;
 - create `docs/reviews/evidence/delta-t11-durable-audit-evidence-bundle-external-reviewer-readout-2026-06-19.json`;
+- Codex reviewer closure may update `docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md`;
 - update this work order only for worker-return status/evidence if needed.
 - Codex reviewer closure may update the matching GC-018, this work order, the
   completion review, and the evidence JSON for closure conversion only.
@@ -111,7 +112,7 @@ Forbidden scope:
 | Session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | next high-value foundation selection |
 | External review reference | `docs/reference/external_agent_review/README.md` | ACTIVE_INDEX |
 | Delta-T10 closure | `docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md` | CLOSED_PASS_BOUNDED |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md` | DISPATCHED |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md` | CLOSED_PASS_BOUNDED |
 
 ## Agent Roles
 
@@ -148,7 +149,7 @@ public-sync history.
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | worker-no-commit split: Claude worker returns uncommitted artifacts; Codex reviewer owns commit and closure |
 | phase | DISPATCH_AUTHORING, WORKER_EXECUTION, REVIEWER_CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`66cb8494`; execution=`PENDING_CLAUDE_CAPTURE`; closure=`N/A_REVIEWER_OWNED` |
+| baseHeadFor(phase) | dispatch=`66cb8494`; execution=`de1a39c2`; closure=`26a9491e` |
 | changedSetScope(phase) | dispatch packet; worker-owned source/test/worker-return/evidence; reviewer closure conversion; separate sync |
 | traceScope(phase, actor) | exact manifests and commands per phase |
 | commitOwner(phase) | Codex only |
@@ -162,8 +163,8 @@ public-sync history.
 | --- | --- |
 | completionReviewPath | `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md` |
 | reviewerOwnedClosurePaths | matching GC-018, this work order, worker return/completion, evidence JSON, active session state/front door/handoff only if accepted |
-| workerReturnStatus | PENDING |
-| reviewerAction | PENDING |
+| workerReturnStatus | CLOSED_PASS_BOUNDED |
+| reviewerAction | accepted material commit `0a3e298e`; closure conversion applied |
 
 ## Durable Audit Evidence Bundle Control Block
 
@@ -385,13 +386,20 @@ source and Markdown must default to ASCII.
 | claim matrix | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts` | `DurableAuditEvidenceBundleClaim` | Yes |
 | bounded claim check | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts` | `NOT_CLAIMED` | Yes |
 | secret safety | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.test.ts` | `secret-safe reviewer readout` | Yes |
-| no-commit return | `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md` | `COMPLETE_PENDING_REVIEW` | Yes |
+| no-commit return | `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` | Yes |
 
 ## Allowed Changed Set
 
 Claude may leave only the required artifact manifest paths plus this work order
 if status/evidence rows need worker-return updates. Claude must not stage,
 commit, push, public-sync, or edit session continuity.
+
+Codex reviewer closure conversion may update:
+
+- `docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md`
+- `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md`
+- `docs/reviews/evidence/delta-t11-durable-audit-evidence-bundle-external-reviewer-readout-2026-06-19.json`
 
 ## Acceptance Criteria
 
@@ -565,25 +573,25 @@ sync is not worker-authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this work order | `Status: DISPATCHED` | PENDING |
-| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md` | pending worker return | PENDING |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md` | reviewer accepted material commit `0a3e298e` | PASS |
 | Roadmap state | N/A with reason: no roadmap status edit authorized at dispatch | no roadmap mutation authorized | N/A with reason |
-| Registry JSON | N/A with reason: not corpus intake | no registry mutation authorized | N/A with reason |
-| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized | N/A with reason |
+| Registry JSON | N/A with reason: not corpus intake | no registry mutation authorized; changed range has no registry JSON edits | PASS |
+| Registry Markdown | N/A with reason: no registry edit authorized | no registry mutation authorized; changed range has no registry Markdown edits | PASS |
 | External evidence digest | N/A with reason: no external evidence | repo-local source/test evidence only | N/A with reason |
-| System loop interlock | durable audit evidence bundle source/tests | pending worker return | PENDING |
-| Session continuity | active state, memory, and handoff | reviewer-owned during accepted worker-return closure conversion | PENDING |
+| System loop interlock | durable audit evidence bundle source/tests | focused/full/build/gates PASS | PASS |
+| Session continuity | active state, memory, and handoff | separate reviewer-owned session-sync after closure commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Expected value | Status |
 | --- | --- | --- |
-| commit mode | `WORKER_MUST_NOT_COMMIT`; Codex commits only after review | PENDING |
-| runtime scope | bounded new audit evidence-bundle module only | PENDING |
-| provider/live scope | false | PENDING |
-| public-sync | false | PENDING |
-| direct interception claim | false | PENDING |
-| universal governed-coding claim | false | PENDING |
+| commit mode | `WORKER_MUST_NOT_COMMIT`; Codex commits only after review | PASS |
+| runtime scope | bounded new audit evidence-bundle module only | PASS |
+| provider/live scope | false | PASS |
+| public-sync | false | PASS |
+| direct interception claim | false | PASS |
+| universal governed-coding claim | false | PASS |
 
 ## Claim Boundary
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -28,13 +28,15 @@ readiness, or universal governed-coding control.
 
 | Field | Disposition |
 | --- | --- |
-| Decision | dispatch durable audit evidence bundle external reviewer readout |
+| Decision | close durable audit evidence bundle external reviewer readout |
 | Baseline | Delta-T10 closure continuity `66cb8494` |
 | Proposed tranche | Delta-T11 |
 | Route | `MULTI_AGENT_MULTI_ROLE` |
 | Worker commit mode | `WORKER_MUST_NOT_COMMIT` |
 | Runtime mutation | bounded new audit evidence-bundle module and tests only |
 | Risk ceiling | R1 local deterministic evidence summarization |
+| Material commit | `0a3e298e` |
+| Closure base | `26a9491e` |
 
 ## Scope / Target / Owner Boundary
 
@@ -213,16 +215,17 @@ are adversarially checked below.
 
 ## Evidence / Verification
 
-Required from Claude:
+Closure evidence:
 
-- focused Vitest for the new durable audit evidence-bundle test;
-- MCP package `npm run test:run`;
-- MCP package `npm run build`;
-- worker-return fast gate;
-- `git diff --name-status`;
-- worker-return review packet;
-- evidence JSON;
-- explicit no-commit handoff status.
+- focused Vitest PASS: 1 file / 39 tests;
+- MCP package `npm run test:run` PASS: 34 files / 727 tests;
+- MCP package `npm run build` PASS;
+- worker-return fast gate PASS after Codex reviewer repair;
+- reviewer-fast PASS 31/31 after Codex reviewer repair;
+- material pre-commit hook PASS 54/54;
+- worker-return review packet and evidence JSON committed at material commit
+  `0a3e298e`;
+- explicit no-commit handoff status preserved.
 
 Provider/live and public proof are not applicable because they are forbidden.
 
@@ -232,6 +235,17 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance Delta execution-control foundation tranche. Public
 sync is not authorized for this worker packet.
+
+## Machine Closure Package
+
+| Closure item | Artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Baseline status | this GC-018 | `Status: CLOSED_PASS_BOUNDED` | CLOSED_PASS_BOUNDED |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED`; closure base `0a3e298e` | CLOSED_PASS_BOUNDED |
+| Completion review | `docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | CLOSED_PASS_BOUNDED |
+| Evidence JSON | `docs/reviews/evidence/delta-t11-durable-audit-evidence-bundle-external-reviewer-readout-2026-06-19.json` | `closureStatus: CLOSED_PASS_BOUNDED` | CLOSED_PASS_BOUNDED |
+| Runtime tests | MCP package | focused 39/39; full 727/727; build PASS | PASS |
+| Public export | N/A private provenance tranche | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
 
 ## Claim Boundary
 

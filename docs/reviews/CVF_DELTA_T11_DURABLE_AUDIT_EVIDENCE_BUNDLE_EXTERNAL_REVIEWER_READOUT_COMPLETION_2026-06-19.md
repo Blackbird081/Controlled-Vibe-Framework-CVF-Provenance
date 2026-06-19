@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -27,10 +27,11 @@ launcher/profile change, or session continuity edit was made by Claude.
 
 ## Worker Return Status
 
-`COMPLETE_PENDING_REVIEW`
+`CLOSED_PASS_BOUNDED`
 
-All acceptance criteria are met at the worker level. Codex reviewer must run
-reviewer gates, commit, and perform closure conversion.
+All acceptance criteria are met after Codex reviewer repair. Codex committed
+the accepted material at `0a3e298e` and this closure conversion records the
+bounded final status.
 
 ## Scope / Methodology
 
@@ -50,7 +51,7 @@ Review method:
 
 ## Findings / Position
 
-Position: ACCEPT_WITH_REVIEWER_REPAIR_PENDING_COMMIT.
+Position: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_REPAIR.
 
 Findings:
 
@@ -136,7 +137,7 @@ Additional exported symbols (within scope):
 | `mandatoryInvocationProved` | `DurableAuditEvidenceBundle` interface; `buildDurableAuditEvidenceBundle` return; AC3 tests | YES |
 | `directInterceptionProved` | `DurableAuditEvidenceBundle` interface; `buildDurableAuditEvidenceBundle` return; AC3 tests | YES |
 | secret-safe reviewer readout | focused tests AC4 (5 tests); `sanitizeSourceLabel` in renderer | YES |
-| `COMPLETE_PENDING_REVIEW` | this document | YES |
+| `CLOSED_PASS_BOUNDED` | this document | YES |
 
 ## Verification Command Evidence
 
@@ -251,6 +252,39 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance Delta execution-control foundation tranche. Public
 sync is not authorized for this worker packet.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Completion status | this review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Baseline status | `docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this review | reviewer accepted material commit `0a3e298e` | PASS |
+| Roadmap state | N/A with reason: no roadmap status edit authorized | no roadmap mutation in changed range | N/A with reason |
+| Registry JSON | N/A with reason: not corpus intake | no registry JSON mutation in changed range | PASS |
+| Registry Markdown | N/A with reason: no registry edit authorized | no registry Markdown mutation in changed range | PASS |
+| External evidence digest | N/A with reason: no external evidence | repo-local source/test evidence only | N/A with reason |
+| System loop interlock | durable audit evidence bundle source/tests | focused/full/build/gates PASS | PASS |
+| Session continuity | active state, memory, and handoff | separate reviewer-owned session-sync after closure commit | N/A with reason |
+| Material commit | Git | `0a3e298e` | PASS |
+| Focused tests | MCP package | 1 file / 39 tests PASS | PASS |
+| Full MCP tests | MCP package | 34 files / 727 tests PASS | PASS |
+| Build | MCP package | `npm run build` exit 0 | PASS |
+| Worker-return fast gate | governance | COMPLIANT after reviewer repair | PASS |
+| Reviewer-fast hook | governance | 31/31 PASS after reviewer repair | PASS |
+| Public export | private provenance tranche | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| commit mode | `WORKER_MUST_NOT_COMMIT`; Codex committed material after review | PASS |
+| runtime scope | bounded new audit evidence-bundle module only | PASS |
+| provider/live scope | false | PASS |
+| public-sync | false | PASS |
+| direct interception claim | false | PASS |
+| universal governed-coding claim | false | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 
