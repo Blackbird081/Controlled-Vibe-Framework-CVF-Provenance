@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`
+Current mode marker: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`.
+Current mode: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`.
 
-Previous mode: `delta_t10_durable_audit_integrity_readout_closed_next_foundation_ready`.
+Previous mode: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`.
 
 Active handoff:
 
@@ -115,20 +115,27 @@ passed, and pre-closure content gates passed with only expected post-closure
 session-sync HEAD drift before this sync.
 
 Delta-T11 Durable Audit Evidence Bundle External Reviewer Readout is
-`DISPATCHED` at dispatch commit `53aca070` from base `66cb8494`. It authorizes
-Claude, `WORKER_MUST_NOT_COMMIT`, to implement a bounded deterministic evidence
-bundle/readout over supplied Delta-T9/T10 audit artifacts only. Pre-dispatch
-autorun passed 43/43, dispatch-quality passed, commit steward dispatch
-preflight passed, and pre-commit governance hook passed 54/54.
+`CLOSED_PASS_BOUNDED` at closure commit `3d0b70c5`, after dispatch
+`53aca070`, material commit `0a3e298e`, and material handoff bridge
+`26a9491e`. It adds a bounded deterministic evidence bundle and external
+reviewer readout over supplied Delta-T9/T10 durable audit artifacts only.
+Codex reviewer hardened deterministic `bundledAt` defaulting, rejected forged
+readout contract/bounded-flag inputs, repaired packet evidence/scaffold, and
+preserved `NOT_CLAIMED` rows for forbidden expansion claims. Focused tests
+passed 39/39, full MCP tests passed 34 files / 727 tests, build passed,
+worker-return fast gate passed, reviewer-fast passed 31/31, and closure
+pre-commit hook passed 54/54.
 
 ## Next Allowed Move
 
-Mode: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`.
+Mode: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`.
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md`
-as `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW`
-or `BLOCKED`. Codex owns review, commit, closure conversion, and session sync.
+Next allowed move: select the next high-value lane with fresh GC-018 and source
+verification. Recommended lane: public/external-evaluation package and catalog
+alignment from the public-sync clone only, so external agents and user
+developers can inspect the latest bounded CVF evidence without treating the
+2026-06-19 snapshot as the whole catalog. Do not open Delta-T12 by default
+unless a fresh operator decision chooses another foundation tranche.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct

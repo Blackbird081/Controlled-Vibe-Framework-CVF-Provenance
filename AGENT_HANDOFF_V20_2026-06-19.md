@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current Delta-T11 dispatch state, the current
+This compact handoff records the current Delta-T11 closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after dispatching Delta-T11 Durable Audit
-Evidence Bundle External Reviewer Readout for Claude no-commit execution.
+Target: correct next-move continuity after closing Delta-T11 Durable Audit
+Evidence Bundle External Reviewer Readout.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,10 +35,10 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize Delta-T11 dispatch commit
-`53aca070`, generated active state, compact session memory, active handoff, and
-the Claude no-commit execution route. This session sync does not open runtime,
-provider, public, or direct-interception scope.
+Authorized guard-maintenance scope: synchronize Delta-T11 closure commit
+`3d0b70c5`, generated active state, compact session memory, active handoff, and
+the next allowed move after Codex reviewer closure conversion. This session
+sync does not open runtime, provider, public, or direct-interception scope.
 
 Protected paths:
 
@@ -66,33 +66,32 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT9DurableExecutionAuditStoreClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT10DurableAuditIntegrityReadoutClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT11DurableAuditEvidenceBundleDispatch20260619.json`
+- `CVF_SESSION/state/entries/deltaT11DurableAuditEvidenceBundleClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator approved the next valuable roadmap after
-Delta-T10 closure. Delta-T11 is now dispatched and this session sync records the
-Claude no-commit execution lane without expanding runtime, public, provider, or
-execution scope.
+Operator authorization: the operator returned Claude COMPLETE_PENDING_REVIEW
+for Delta-T11 and approved continuing the bounded review/closure flow. Delta-T11
+is now CLOSED_PASS_BOUNDED, and this session sync records the closure plus the
+next valuable lane without expanding runtime, public, provider, or execution
+scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
-commit `49f71004`, material commit `39a22e3f`, Delta-T4B closure commit
-`5b1f7c2a`, Delta-T5 closure commit `97a634c2`, Delta-T6 dispatch commit
-`73539dab`, Delta-T6 material commit `3ef55abc`, Delta-T6 handoff bridge
-commit `c72449cf`, Delta-T6 closure commit `50812e9c`, or earlier Delta
-commits.
+Do not alter Delta-T11 closure commit `3d0b70c5`, material handoff bridge commit
+`26a9491e`, material commit `0a3e298e`, dispatch continuity commit `de1a39c2`,
+dispatch commit `53aca070`, or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes Delta-T11 work order as WORKER_MUST_NOT_COMMIT and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value lane with fresh GC-018 and source verification; recommended lane is public/external-evaluation package and catalog alignment from the public-sync clone only; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync without explicit authorization and remote verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`
+`delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `0a3e298e`
+Current HEAD recorded for this handoff: `3d0b70c5`
 
 Material state:
 
@@ -382,6 +381,15 @@ Evidence: focused tests PASS 39/39, full MCP tests PASS 34 files / 727 tests,
 build PASS, worker-return fast gate PASS, reviewer-fast PASS 31/31, material
 pre-commit hook PASS 54/54. Closure conversion remains next.
 
+Delta-T11 closure commit `3d0b70c5` converts the GC-018, work order,
+completion review, and evidence JSON to `CLOSED_PASS_BOUNDED`. Pre-closure
+content gates passed on `26a9491e..3d0b70c5`; the only remaining failure before
+this sync was expected active-session HEAD drift. Boundary remains supplied
+durable audit evidence bundle/readout only, with no wrapper/proxy enforcement,
+direct interception, arbitrary command execution, EDIT/COMMIT execution,
+provider/live behavior, public-sync, CVF Web action execution, queue/daemon,
+readiness, or universal governed-coding control claim.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -423,17 +431,20 @@ commit `b496146f`, after dispatch `0b286d03`, dispatch repair `b14df7b4`,
 material commit `8f4abb28`, and material handoff bridge `1a08cbd0`.
 
 Delta-T11 Durable Audit Evidence Bundle External Reviewer Readout is
-`IMPLEMENTED_PENDING_CLOSURE` at material commit `0a3e298e`, after dispatch
-commit `53aca070` from base `66cb8494` and execution base `de1a39c2`. It adds a
-bounded deterministic evidence bundle/readout over supplied Delta-T9/T10 audit
-artifacts only. Pre-dispatch autorun passed 43/43, dispatch-quality passed,
-commit steward dispatch preflight passed, material focused tests passed 39/39,
-full MCP tests passed 34 files / 727 tests, build passed, worker-return fast
-gate passed, reviewer-fast passed 31/31, and material pre-commit hook passed
-54/54.
+`CLOSED_PASS_BOUNDED` at closure commit `3d0b70c5`, after dispatch commit
+`53aca070`, material commit `0a3e298e`, and material handoff bridge
+`26a9491e`. It adds a bounded deterministic evidence bundle/readout over
+supplied Delta-T9/T10 audit artifacts only. Focused tests passed 39/39, full
+MCP tests passed 34 files / 727 tests, build passed, worker-return fast gate
+passed, reviewer-fast passed 31/31, material pre-commit hook passed 54/54, and
+closure pre-commit hook passed 54/54.
 
-Next allowed move: Codex performs Delta-T11 closure conversion, runs closure
-gates, commits closure, then performs reviewer-owned session sync.
+Next allowed move: select the next high-value lane with fresh GC-018 and source
+verification. Recommended lane: public/external-evaluation package and catalog
+alignment from the public-sync clone only, so external agents and user
+developers can inspect the latest bounded CVF evidence without treating the
+2026-06-19 snapshot as the whole catalog. Do not open Delta-T12 by default
+unless a fresh operator decision chooses another foundation tranche.
 Keep runtime profiles, provider/live calls, public-sync, CVF Web runtime action,
 direct interception, readiness, universal speed, and universal governed-coding
 claims parked.
