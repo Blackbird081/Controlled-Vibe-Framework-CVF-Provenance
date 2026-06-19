@@ -91,7 +91,7 @@ Startup acknowledged: current mode=`ggl_t2_hook_finality_reliability_closed_next
 
 `ggl_t2_hook_finality_reliability_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `7f603b49`
+Current HEAD recorded for this handoff: `ac390222`
 
 Material state:
 
@@ -326,6 +326,14 @@ only: no wrapper/proxy enforcement, no direct IDE/shell/git/filesystem
 interception, no arbitrary command execution, no provider/live, no public-sync,
 no queue/daemon, no CVF Web action execution, no readiness, and no universal
 governed-coding control claim.
+
+Delta-T9 accepted material commit `ac390222` adds the durable audit
+contract/store module, focused tests, completion review, and evidence JSON.
+Codex reviewer tightened store append/read validation so forged or corrupted
+mandatory-invocation/direct-interception claims are rejected. Verification:
+focused 30/30 PASS, full MCP 32 files / 658 tests PASS, build PASS,
+worker-return fast gate PASS. Closure conversion remains in progress and must
+stay inside the same bounded claim boundary.
 
 ## Next Allowed Move
 
