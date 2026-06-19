@@ -37,9 +37,10 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record Delta-T7 closure commit `d82870b9`
-in a dedicated active-handoff-only bridge before final session sync. This
-bridge does not open runtime, provider, public, or direct-interception scope.
+Authorized guard-maintenance scope: synchronize Delta-T7 closure commit
+`d82870b9`, closure handoff bridge `c4b49fbd`, generated active state, compact
+session memory, and the next bounded foundation route. This session sync does
+not open runtime, provider, public, or direct-interception scope.
 
 Protected paths:
 
@@ -62,17 +63,19 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerDispatch20260619.json`
 - `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`
 - `CVF_SESSION/state/entries/gglT1GovernanceGateLatencyOptimizationClosure20260619.json`
+- `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator asked Codex to continue the recommended
-high-foundation steps. Delta-T6 is now closed bounded and this session sync
-records the post-closure next-foundation lane. It does not expand runtime,
-public, provider, or execution scope.
+Operator authorization: the operator asked Codex to complete Governance Gate
+Latency Audit And Optimization and then the receipt-to-execution evidence
+auditor. Delta-T7 is now closed bounded and this session sync records the next
+foundation selection lane without expanding runtime, public, provider, or
+execution scope.
 
-Rollback boundary: revert only this handoff-only bridge commit if rejected.
+Rollback boundary: revert only this final session-sync commit if rejected.
 Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
 commit `49f71004`, material commit `39a22e3f`, Delta-T4B closure commit
 `5b1f7c2a`, Delta-T5 closure commit `97a634c2`, Delta-T6 dispatch commit
@@ -82,13 +85,13 @@ commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ggl_t1_gate_latency_optimization_closed_receipt_auditor_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=open the receipt-to-execution evidence auditor through fresh GC-018 and source verification; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation tranche through fresh GC-018 and source verification, with GGL-T2 hook/finality reliability as the leading candidate; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`ggl_t1_gate_latency_optimization_closed_receipt_auditor_ready`
+`delta_t7_receipt_to_execution_evidence_auditor_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `d82870b9`
+Current HEAD recorded for this handoff: `c4b49fbd`
 
 Material state:
 
@@ -311,9 +314,15 @@ GGL-T1 Governance Gate Latency Audit And Optimization is
 dispatch handoff bridge `309e9f57`, material `b71bde91`, and material handoff
 bridge `969455b3`.
 
-Next allowed move: open the receipt-to-execution evidence auditor only through
-fresh GC-018 and a source-verified work order. Git-hook lane optimization is a
-separate future finding and does not displace the operator-selected auditor.
+Delta-T7 Receipt-To-Execution Evidence Auditor is `CLOSED_PASS_BOUNDED` at
+closure commit `d82870b9`, after dispatch `264cc598`, dispatch handoff bridge
+`2fb39e44`, material `fcf28c0d`, material handoff bridge `b13632e0`, and
+closure handoff bridge `c4b49fbd`.
+
+Next allowed move: select the next high-value foundation tranche through fresh
+GC-018 and source verification. GGL-T2 git-hook lane and worktree-finality
+reliability optimization is the leading candidate because pre-commit remains
+serial and Git stderr can be misclassified as dirty-worktree output.
 
 ## Parked Operator Checkpoints
 
@@ -377,20 +386,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T7 closure handoff bridge, 2026-06-19 |
+| Session or invocation | Delta-T7 closure final session sync, 2026-06-19 |
 | Working directory | repository root |
-| Command or tool surface | apply_patch, handoff-sync steward, governance hooks |
-| Target paths | active handoff only |
+| Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
+| Target paths | six-path Delta-T7 final session-sync manifest |
 | Allowed scope source | Delta-T7 closure commit `d82870b9` |
-| Before status evidence | Delta-T7 closure committed while handoff recorded GGL-T1 closure HEAD |
-| After status evidence | handoff records Delta-T7 closure HEAD and bounded result |
-| Diff evidence | exact one-path handoff diff and handoff-sync hook evidence |
-| Approval boundary | handoff bridge continuity only; no new runtime or public scope |
+| Before status evidence | closure handoff bridge `c4b49fbd` with pre-Delta-T7 mode still active |
+| After status evidence | state, memory, and handoff record Delta-T7 closed and next-foundation selection ready |
+| Diff evidence | exact six-path session-sync diff, generated-state drift check, and governance hooks |
+| Approval boundary | final session continuity only; no new runtime or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
-| Agent type | single-agent handoff-sync steward |
-| Invocation ID | `delta-t7-closure-handoff-bridge-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md` |
+| Agent type | single-agent session-sync steward |
+| Invocation ID | `delta-t7-closure-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
