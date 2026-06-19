@@ -30,7 +30,8 @@ External agent memory files: non-canonical convenience only.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after Delta-T1 Governance
-Action Preflight Receipt accepted material commit `156b0610`, following dispatch
+Action Preflight Receipt closure commit `a196e42f`, accepted material commit
+`156b0610`, and accepted-material session-sync commit `6d7f4d94`, following dispatch
 commit `dcf55645` and MCP to Model
 Gateway Composition Proof material commit `befad4a9`, following External Knowledge
 Absorption Chain Map material commit `7c3db96a`, following MCP Gateway
@@ -96,6 +97,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/mcpModelGatewayCompositionProofClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT1GovernanceActionPreflightReceiptDispatch20260619.json`
 - `CVF_SESSION/state/entries/deltaT1GovernanceActionPreflightReceiptAcceptedMaterial20260619.json`
+- `CVF_SESSION/state/entries/deltaT1GovernanceActionPreflightReceiptClosure20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -165,7 +167,7 @@ is now the next candidate, but only through fresh GC-018 and a source-verified
 work order. Codex then created the fresh Delta-T1 GC-018 and source-verified
   Claude work order at dispatch commit `dcf55645`. Claude returned uncommitted
   material; Codex repaired three bounded findings and accepted it at commit
-  `156b0610`. Closure conversion remains pending.
+  `156b0610`, then closed the tranche at commit `a196e42f`.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
 MCP to Model Gateway Composition Proof material commit, External Knowledge
@@ -185,14 +187,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex closes the four Delta-T1 closure artifacts and then performs final session sync; parked checkpoint=provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, wrapper/CLI/proxy receipt consumption or interception, IDE/shell/git/filesystem interception, workspace state mutation, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and universal governed-coding control claims.
+Startup acknowledged: current mode=`delta_t1_governance_action_preflight_receipt_closed_next_enforcement_decision_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=operator decision whether to authorize a fresh Delta receipt-consumption enforcement tranche or choose another bounded CVF lane; parked checkpoint=provider/live calls, secrets/quota, public-sync, runtime queue/scheduler/daemon work, wrapper/CLI/proxy receipt consumption or interception, IDE/shell/git/filesystem interception, workspace state mutation, broad runtime enforcement, readiness claims, AI Gateway environment signal capture, external absorption router/checker implementation, broad external absorption-chain implementation, and universal governed-coding control claims.
 
 ## Current Mode
 
-`delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`
+`delta_t1_governance_action_preflight_receipt_closed_next_enforcement_decision_ready`
 
-Current HEAD recorded for this handoff: `156b0610`
-(Delta-T1 Governance Action Preflight Receipt accepted material commit `156b0610`;
+Current HEAD recorded for this handoff: `a196e42f`
+(Delta-T1 Governance Action Preflight Receipt closure commit `a196e42f`;
+accepted material commit `156b0610`; accepted-material session-sync commit `6d7f4d94`;
 dispatch commit `dcf55645`;
 MCP to Model Gateway Composition Proof material commit `befad4a9`;
 External Knowledge Absorption Chain Map material commit `7c3db96a`;
@@ -880,12 +883,13 @@ source-verified work order.
 
 ## Next Allowed Move
 
-Delta-T1 material is accepted at commit `156b0610` after three Codex reviewer
-repairs.
+Delta-T1 is `CLOSED_PASS_BOUNDED` at accepted material commit `156b0610` and
+closure commit `a196e42f` after three Codex reviewer repairs.
 
-Next allowed move: Codex closes the matching GC-018, work order, completion
-review, and evidence JSON on a dedicated closure range, commits closure, then
-performs final session sync.
+Next allowed move: operator decision whether to authorize a fresh Delta
+receipt-consumption enforcement tranche through wrapper/CLI/proxy, or choose
+another bounded CVF lane. Fresh GC-018 and source-verified work order are
+required before implementation.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation remains held for explicit public-sync

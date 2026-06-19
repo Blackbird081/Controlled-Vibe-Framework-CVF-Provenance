@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`
+Current mode marker: `delta_t1_governance_action_preflight_receipt_closed_next_enforcement_decision_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`.
+Current mode: `delta_t1_governance_action_preflight_receipt_closed_next_enforcement_decision_ready`.
 
 Previous mode: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`.
 
@@ -329,10 +329,10 @@ audit, wrapper/proxy execution control, universal governed-coding control,
 production readiness, public readiness, release readiness, or external-facing
 readiness was authorized or performed.
 
-Delta-T1 Governance Action Preflight Receipt material is accepted at commit
-`156b0610`. Codex repaired structured-secret detection, concurrent durable-write
-serialization, and the required artifact manifest before acceptance. Closure
-conversion and final session sync remain pending.
+Delta-T1 Governance Action Preflight Receipt is `CLOSED_PASS_BOUNDED` at
+accepted material commit `156b0610` and closure commit `a196e42f`. Codex
+repaired structured-secret detection, concurrent durable-write serialization,
+and the required artifact manifest before acceptance.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -787,13 +787,15 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t1_governance_action_preflight_receipt_accepted_material_pending_closure`.
+Mode: `delta_t1_governance_action_preflight_receipt_closed_next_enforcement_decision_ready`.
 
-Delta-T1 material is accepted at commit `156b0610`.
+Delta-T1 is closed bounded at material commit `156b0610` and closure commit
+`a196e42f`.
 
-Next allowed move: Codex closes the matching GC-018, work order, completion
-review, and evidence JSON on a dedicated closure range, commits closure, then
-performs final session sync.
+Next allowed move: operator decision whether to authorize a fresh Delta
+receipt-consumption enforcement tranche through wrapper/CLI/proxy, or choose
+another bounded CVF lane. Fresh GC-018 and source-verified work order are
+required before implementation.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
