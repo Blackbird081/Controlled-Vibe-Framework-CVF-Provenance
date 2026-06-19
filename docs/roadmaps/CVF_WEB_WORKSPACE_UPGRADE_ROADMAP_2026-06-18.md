@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_WWU_T3A_CLOSED_PASS_BOUNDED
+Status: ROADMAP_ACTIVE_WWU_T3B_DISPATCHED
 
 Date: 2026-06-18
 
@@ -82,6 +82,7 @@ order selects `BOTH_WITH_BOUNDARY` and lists separate proof requirements.
 | WWU-T2A | CLOSED_PASS_BOUNDED | Add generated workspace state lane summary to the read-only Web Workspace dashboard/read model | Codex | `CVF_WEB_WORKSPACE` read-only lane summary; no generated state mutation |
 | WWU-T3 | OPENED_BY_OPERATOR_AUTHORIZATION | Decide Local Workspace Runtime/MCP bridge after Web read model is stable | Codex | Split into narrow runtime/MCP tranches |
 | WWU-T3A | CLOSED_PASS_BOUNDED | Implement one deterministic MCP Model Gateway execute preview tool | Codex | `CVF_LOCAL_WORKSPACE_RUNTIME`; no provider/live, public-sync, runtime queue, or readiness claim |
+| WWU-T3B | DISPATCHED | Implement an injectable MCP Model Gateway execution adapter | Codex | Module bridge only; no provider/live composition, secret use, public-sync, runtime queue, or readiness claim |
 
 ## WWU-T1 Candidate Scope
 
@@ -179,6 +180,15 @@ returns local preview response/error envelopes with receipt fields. The tranche
 does not perform provider/live calls, accept raw credential material, open
 runtime queues, schedulers, worker daemons, public-sync, or readiness claims.
 
+## WWU-T3B Dispatch Note (2026-06-19)
+
+WWU-T3B is dispatched after the operator authorized completion where current
+prerequisites are sufficient. It is limited to an injectable MCP adapter that
+calls the source-compatible Model Gateway execution method, fails closed when
+no executor is configured, and preserves executor response/error plus receipt.
+Provider/live composition, secrets/quota, public-sync, executable queues, broad
+runtime enforcement, and readiness claims remain outside this tranche.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
@@ -186,7 +196,7 @@ runtime queues, schedulers, worker daemons, public-sync, or readiness claims.
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Audit packet | `docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `ROADMAP_ACTIVE_WWU_T3A_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `ROADMAP_ACTIVE_WWU_T3B_DISPATCHED` | PASS |
 | WWU-T2 GC-018 | `docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md` | `Status: DISPATCH_READY` | PASS |
 | WWU-T2 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | WWU-T2 completion | `docs/reviews/CVF_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_COMPLETION_2026-06-18.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
@@ -199,6 +209,8 @@ runtime queues, schedulers, worker daemons, public-sync, or readiness claims.
 | WWU-T3A work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | WWU-T3A completion | `docs/reviews/CVF_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | WWU-T3A evidence | `docs/reviews/evidence/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview-2026-06-19.json` | `status=CLOSED_PASS_BOUNDED` | PASS |
+| WWU-T3B GC-018 | `docs/baselines/CVF_GC018_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_2026-06-19.md` | `Status: DISPATCH_READY` | PASS |
+| WWU-T3B work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md` | `Status: DISPATCHED` | PASS |
 | Central standard | `docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md` | `Status: ACTIVE_STANDARD` | PASS |
 | Front door | `docs/reference/agent_workspace/README.md` | points to two-layer standard | PASS |
 | Web local view | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | cites two-layer standard | PASS |
