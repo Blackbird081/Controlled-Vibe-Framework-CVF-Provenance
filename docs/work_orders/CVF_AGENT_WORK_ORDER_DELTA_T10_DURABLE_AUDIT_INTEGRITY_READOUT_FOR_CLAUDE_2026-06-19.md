@@ -22,6 +22,9 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`. Do not commit, push, public-sync, or
 edit active session continuity.
 
 executionBaseHead: capture with `git rev-parse --short HEAD` before editing.
+If Codex has added a dispatch handoff bridge, run the pre-implementation gate
+from the current handoff bridge parent so reviewer-owned handoff sync stays
+outside the worker changed range.
 
 Current-time notes: current mode is
 `delta_t9_durable_execution_audit_store_closed_next_foundation_ready`; Delta-T9
@@ -352,11 +355,13 @@ Before implementation, Claude must run:
 
 ```powershell
 git rev-parse --short HEAD
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 5f774742 --head HEAD
+$preImplementationBase = git rev-parse --short HEAD^
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $preImplementationBase --head HEAD
 ```
 
-Expected result: PASS, or BLOCKED if the repo is dirty or the gate failure is
-outside this work order's allowed remediation scope.
+Expected result: PASS. Codex verified this parent-bridge form before this
+repair. Return `BLOCKED` if the repo is dirty or the gate failure is outside
+this work order's allowed remediation scope.
 
 ## Write Ownership
 
@@ -401,8 +406,8 @@ modify-listed for this work order.
 | Claim boundary | durable audit readout only; no runtime interception or universal control |
 | Agent type | worker-no-commit under `MULTI_AGENT_MULTI_ROLE` |
 | Invocation ID | `delta-t10-durable-audit-integrity-readout-claude-2026-06-19` |
-| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_FOR_CLAUDE_2026-06-19.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_FOR_CLAUDE_2026-06-19.md` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_FOR_CLAUDE_2026-06-19.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_FOR_CLAUDE_2026-06-19.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: deletion/rename forbidden |
 
