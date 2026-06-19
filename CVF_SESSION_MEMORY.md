@@ -285,6 +285,13 @@ public-sync, runtime enforcement claim, governed action request, production
 readiness, public readiness, release readiness, or external-facing readiness
 was authorized or performed. WWU-T3 Local Workspace Runtime/MCP remains parked.
 
+Operator checkpoint recorded on 2026-06-19: after the future authorized
+MCP/runtime work is complete, revisit the external-agent/repo knowledge
+absorption system and formalize the old and new rules into one CVF-governed
+workflow chain map. This checkpoint is parked only; it does not open a roadmap,
+GC-018, work order, public-sync, MCP/runtime implementation, provider/live
+proof, or readiness claim.
+
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
 index, checker, and focused tests now require delegated dispatch-ready work
@@ -749,6 +756,11 @@ Next allowed move: no WWU-T3 Local Workspace Runtime/MCP implementation until
 explicit runtime/MCP authorization, fresh GC-018, and a source-verified work
 order. Any later bounded Web Workspace follow-up also requires fresh GC-018 and
 a source-verified work order.
+
+Post-MCP parked follow-up: after the future authorized MCP/runtime work is
+complete, formalize the old and new external-agent/repo knowledge absorption
+rules into one CVF-governed workflow chain map. That follow-up requires fresh
+GC-018 and a source-verified work order before implementation.
 
 WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
 authorization. EARC-T2 public-sync preparation and EARC-T4 MCP/workspace

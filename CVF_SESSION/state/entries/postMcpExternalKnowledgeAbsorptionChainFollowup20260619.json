@@ -1,0 +1,20 @@
+{
+  "stateOrder": 408,
+  "stateKey": "postMcpExternalKnowledgeAbsorptionChainFollowup20260619",
+  "value": {
+    "status": "PARKED_AFTER_MCP_COMPLETION",
+    "recordedAt": "2026-06-19",
+    "operatorIntent": "After the future authorized MCP/runtime work is complete, revisit the external-agent/repo knowledge absorption system and formalize the old and new rules into one CVF-governed workflow chain map.",
+    "candidateArtifact": "External Knowledge Absorption Chain reference or equivalent stable front door under docs/reference/",
+    "sourceInputs": [
+      "docs/reference/external_agent_review/README.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+      "docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md",
+      "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md"
+    ],
+    "boundary": "Continuity note only; no current roadmap, GC-018, work order, public-sync, MCP/runtime implementation, provider/live proof, or readiness claim is opened by this note.",
+    "nextRequirement": "After MCP/runtime completion, open fresh GC-018 and a source-verified work order before implementing or closing an External Knowledge Absorption Chain artifact."
+  }
+}

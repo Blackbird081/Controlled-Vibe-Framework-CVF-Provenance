@@ -31,6 +31,7 @@ External agent memory files: non-canonical convenience only.
 
 Authorized session-sync scope: update active handoff after WWU-T2A CVF Web
 Workspace Lane Summary Read Model closure material commit `acedeb28`,
+operator post-MCP external knowledge absorption chain checkpoint,
 following WWU-T2A dispatch material commit `b3d89c60`, WWU-T2 CVF Web
 Workspace Operator Dashboard Read Model closure material commit `b3593e1b`,
 following WWU-T2 dispatch material commit `1bbf3046`, WWU-T1 CVF Web
@@ -76,6 +77,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/wwuT2CvfWebWorkspaceOperatorDashboardReadModelDispatch20260618.json`
 - `CVF_SESSION/state/entries/wwuT2CvfWebWorkspaceOperatorDashboardReadModelClosure20260618.json`
 - `CVF_SESSION/state/entries/wwuT2ACvfWebWorkspaceLaneSummaryReadModelClosure20260619.json`
+- `CVF_SESSION/state/entries/postMcpExternalKnowledgeAbsorptionChainFollowup20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator selected Model Gateway as the first runtime
@@ -122,7 +124,12 @@ map and making EARC-T3B checker hardening ready for fresh GC-018. Codex then
 closed EARC-T3B at material commit `6de12f33`, adding the range-aware Required
 Absorption Table checker plus focused tests, hook/autorun wiring, and front-door
 updates while keeping public-sync, MCP/runtime, provider/live calls, workspace
-runtime mutation, raw package import, and readiness claims parked.
+runtime mutation, raw package import, and readiness claims parked. On
+2026-06-19 the operator asked to record a post-MCP checkpoint: after the future
+authorized MCP/runtime work is complete, CVF should revisit external-agent/repo
+knowledge absorption and formalize the old and new rules into one governed
+workflow chain map. This is parked only and requires fresh GC-018 plus a
+source-verified work order before implementation.
 
 Rollback boundary: revert only this session-sync if rejected. Do not alter the
 EARC-T3A material commit, EARC-T3 material commit, EARC-T1 material commit, EARC-T0 roadmap material commit, RTAD-T6 root-classification remediation commit, RTAD-T6 closure material commit, RTAD-T5 closure material commit, RTAD-T4 closure material commit, RTAD-T3 closure material commit, RTAD-T2 closure material commit, RTAD-T2 dispatch material commit, RTAD-T0 material commit, GFC-T2/T4/T5 foundation closeout commit, GFC-T3 closure commit,
@@ -135,14 +142,15 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wwu_t2a_web_workspace_lane_summary_closed_t3_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=no WWU-T3 Local Workspace Runtime/MCP implementation until explicit runtime/MCP authorization, fresh GC-018, and a source-verified work order; parked checkpoint=WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
+Startup acknowledged: current mode=`wwu_t2a_web_workspace_lane_summary_closed_t3_parked`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=no WWU-T3 Local Workspace Runtime/MCP implementation until explicit runtime/MCP authorization, fresh GC-018, and a source-verified work order; parked checkpoint=WWU-T3 Local Workspace Runtime/MCP waits for explicit runtime/MCP authorization, post-MCP external knowledge absorption chain formalization waits for MCP/runtime completion plus fresh GC-018 and source-verified work order, EARC-T2 public-sync waits for explicit public-sync authorization, EARC-T4 MCP/workspace implementation waits for explicit MCP/runtime authorization, and public-sync, MCP implementation, provider/live calls, workspace runtime mutation, raw external package import, readiness claims, provider ranking/parity claims, Model Gateway redispatch/P3, and co-work product development remain parked.
 
 ## Current Mode
 
 `wwu_t2a_web_workspace_lane_summary_closed_t3_parked`
 
-Current HEAD recorded for this handoff: `acedeb28`
-(WWU-T2A CVF Web Workspace Lane Summary Read Model closure material commit
+Current HEAD recorded for this handoff: `4438a781`
+(session-sync commit before this post-MCP checkpoint note; WWU-T2A CVF Web
+Workspace Lane Summary Read Model closure material commit
 `acedeb28`;
 WWU-T2A CVF Web Workspace Lane Summary Read Model dispatch material commit
 `b3d89c60`;
@@ -828,6 +836,12 @@ Next allowed move: no WWU-T3 Local Workspace Runtime/MCP implementation until
 explicit runtime/MCP authorization, fresh GC-018, and a source-verified work
 order. Any later bounded Web Workspace follow-up also requires fresh GC-018 and
 a source-verified work order.
+
+Post-MCP parked follow-up: after the future authorized MCP/runtime work is
+complete, formalize the old and new external-agent/repo knowledge absorption
+rules into one CVF-governed workflow chain map. That follow-up is not open now
+and requires fresh GC-018 plus a source-verified work order before
+implementation.
 
 WWU-T3 Local Workspace Runtime/MCP remains parked until explicit runtime/MCP
 authorization. EARC-T2 public-sync preparation remains held for explicit
