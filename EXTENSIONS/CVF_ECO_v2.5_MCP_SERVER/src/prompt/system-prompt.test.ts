@@ -191,6 +191,16 @@ describe('generateSystemPrompt', () => {
       expect(result.systemPrompt).toContain('MANDATORY tool usage');
       expect(result.systemPrompt).toContain('cvf_evaluate_full');
     });
+
+    it('requires the Delta preflight before edit/run/commit and bounds the receipt claim', () => {
+      const result = generateSystemPrompt();
+      expect(result.systemPrompt).toContain(
+        'Call cvf_preflight_governance_action before any EDIT, RUN, or COMMIT action, and retain the returned receipt'
+      );
+      expect(result.systemPrompt).toContain(
+        'It does not prove that the action was executed, or that any IDE, shell, git, or filesystem was intercepted.'
+      );
+    });
   });
 
   describe('user constraints', () => {

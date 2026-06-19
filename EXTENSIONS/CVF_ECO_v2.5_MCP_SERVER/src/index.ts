@@ -24,6 +24,13 @@ import { emitInt1AgentEvent, validateInt1Plan } from './tools/int1-connection-po
 import { registerModelGatewayExecutePreviewTool } from './tools/model-gateway-execute-preview.js';
 import { registerModelGatewayExecuteTool } from './tools/model-gateway-execute.js';
 import {
+  registerGovernanceActionPreflightTool,
+  serializePreflightPersistence,
+} from './tools/governance-action-preflight.js';
+import { JsonFileAdapter } from './persistence/json-file.adapter.js';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
+import {
   createGuardEngine,
   GuardRuntimeEngine,
   PHASE_ORDER,
@@ -429,6 +436,24 @@ server.tool(
 
 registerModelGatewayExecutePreviewTool(server);
 registerModelGatewayExecuteTool(server);
+
+// --- Delta-T1: cvf_preflight_governance_action -----------------------
+// Durable, secret-safe pre-action governance receipt. The audit JSON is
+// written to CVF_MCP_DELTA_AUDIT_DIR when set, otherwise a user-local
+// directory outside the repository. The adapter initializes lazily on first
+// save, so no audit data is written at module import.
+
+function resolveDeltaAuditDir(): string {
+  const configured = process.env.CVF_MCP_DELTA_AUDIT_DIR;
+  if (configured && configured.trim().length > 0) {
+    return configured.trim();
+  }
+  return join(homedir(), '.cvf', 'mcp-delta-audit');
+}
+
+const deltaAuditAdapter = new JsonFileAdapter({ dataDir: resolveDeltaAuditDir() });
+const deltaAuditPersistence = serializePreflightPersistence(deltaAuditAdapter);
+registerGovernanceActionPreflightTool(server, engine, deltaAuditPersistence);
 
 // ─── Gamma Tool 8: cvf_get_session_memory ─────────────────────────────
 

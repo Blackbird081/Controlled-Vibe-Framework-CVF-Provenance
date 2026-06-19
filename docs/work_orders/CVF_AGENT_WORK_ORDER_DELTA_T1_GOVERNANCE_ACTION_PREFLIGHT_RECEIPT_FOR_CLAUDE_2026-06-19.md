@@ -380,6 +380,19 @@ Forbidden worker artifacts: commits, completion review, closure JSON, session
 sync, live receipts, provider logs, raw secrets, public artifacts, queues,
 wrappers, proxies, git hooks, or new dependencies.
 
+## Required Artifact Manifest
+
+| Path | Required at handoff | Owner | Purpose |
+| --- | --- | --- | --- |
+| `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.ts` | YES | Claude worker | modular preflight handler and registration |
+| `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.test.ts` | YES | Claude worker | deterministic runtime and persistence coverage |
+| `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | YES | Claude worker | thin server registration and local audit configuration |
+| `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.ts` | YES | Claude worker | bounded preflight workflow guidance |
+| `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.test.ts` | YES | Claude worker | prompt guidance regression coverage |
+| `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_WORKER_RETURN_2026-06-19.md` | YES | Claude worker | uncommitted worker evidence and return contract |
+| `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md` | NO | Codex reviewer | reviewer-owned completion conversion |
+| `docs/reviews/evidence/delta-t1-governance-action-preflight-receipt-2026-06-19.json` | NO | Codex reviewer | reviewer-owned acceptance evidence |
+
 ## Pre-Flight Checks
 
 Run from repository root before source edits:
