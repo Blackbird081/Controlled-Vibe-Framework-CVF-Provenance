@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `7879f23f`
 
-executionBaseHead: `PENDING_AFTER_DISPATCH_COMMIT`
+executionBaseHead: `38b7d6c0`
 
-closureBaseHead: `PENDING_AFTER_DISPATCH_COMMIT`
+closureBaseHead: `38b7d6c0`
 
 rawMemoryReleased: false
 
@@ -141,7 +141,7 @@ or broad MCP gateway implementation.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | Codex worker; Codex reviewer/closer; Codex session-sync actor if needed; operator escalation |
 | phase | DISPATCH_AUTHORING now; EXECUTION by Codex; CLOSURE by Codex; SESSION_SYNC by Codex in a separate range if next move changes |
-| baseHeadFor(phase) | `dispatchBaseHead=7879f23f`; `executionBaseHead=PENDING_AFTER_DISPATCH_COMMIT`; `closureBaseHead=PENDING_AFTER_DISPATCH_COMMIT` |
+| baseHeadFor(phase) | `dispatchBaseHead=7879f23f`; `executionBaseHead=38b7d6c0`; `closureBaseHead=38b7d6c0` |
 | changedSetScope(phase) | dispatch scope is WWU-T3A GC-018, work order, roadmap, and registry; execution scope is named MCP source/test/package paths plus completion/evidence; session-sync range is protected continuity files only |
 | traceScope(phase, actor) | dispatch trace covers dispatch files only; execution trace covers runtime source and completion files; session-sync trace covers session/front-door files only |
 | commitOwner(phase) | Codex for dispatch, material execution, closure, and session-sync |
@@ -297,9 +297,11 @@ Allowed scope:
 - `docs/reviews/CVF_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_COMPLETION_2026-06-19.md`
 - `docs/reviews/evidence/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview-2026-06-19.json`
 - `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md`
+- `docs/corpus-intelligence/registry/entries/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 
-Dispatch authoring additionally owns this work order, its GC-018, and the
-matching GC-051 registry source entry.
+Dispatch and closure authoring additionally own this work order, its GC-018,
+and the matching GC-051 registry source entry.
 
 Forbidden scope:
 
@@ -411,15 +413,15 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Item | Final disposition |
 |---|---|
-| Required first reads completed | OPEN |
-| Source Verification Block recomputed | OPEN |
-| Deterministic MCP preview tool implemented | OPEN |
-| Focused tests/checks run | OPEN |
-| Material changed paths inside ownership | OPEN |
-| No protected session/handoff/generated state material mutation | OPEN |
-| No provider/live/public-sync/raw-key/runtime-queue/readiness claim | OPEN |
-| Completion review filed | OPEN |
-| Session-sync split if next move changes | OPEN |
+| Required first reads completed | PASS |
+| Source Verification Block recomputed | PASS |
+| Deterministic MCP preview tool implemented | PASS |
+| Focused tests/checks run | PASS |
+| Material changed paths inside ownership | PASS |
+| No protected session/handoff/generated state material mutation | PASS |
+| No provider/live/public-sync/raw-key/runtime-queue/readiness claim | PASS |
+| Completion review filed | PASS |
+| Session-sync split if next move changes | N/A with reason: material range does not update session front doors; post-material session-sync follows only if continuity gate requires it |
 
 ## Verification To Run Before Closure
 
@@ -450,16 +452,16 @@ readiness claims, destructive actions, or scope expansion.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | GC-018 baseline | `docs/baselines/CVF_GC018_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_2026-06-19.md` | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | `ROADMAP_ACTIVE_WWU_T3A_READY_TO_DISPATCH` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | `ROADMAP_ACTIVE_WWU_T3A_CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated from source entry in dispatch range | PASS |
 | Registry Markdown | BLOCKED with reason: no separate markdown registry exists for this reference family | no path changed | BLOCKED with reason |
-| Completion or reviewer artifact | N/A with reason: dispatch packet only; completion is produced by material implementation | no completion yet | N/A with reason |
-| Evidence digest | N/A with reason: dispatch packet only; evidence digest is produced by material implementation | no evidence yet | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_COMPLETION_2026-06-19.md` | completion review filed | PASS |
+| Evidence digest | `docs/reviews/evidence/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview-2026-06-19.json` | focused test and build evidence filed | PASS |
 | External evidence digest | N/A with reason: no new external package output consumed | repo-local governed artifacts only | N/A with reason |
 | System loop interlock | N/A with reason: no interlock mutation authorized | no path changed | N/A with reason |
-| Session continuity | separate session-sync follows accepted material if next move changes | no session path changed in dispatch range | N/A with reason |
+| Session continuity | separate session-sync follows accepted material if next move changes | no session path changed in material range | N/A with reason |
 | Runtime/provider proof | N/A with reason: provider/live proof is forbidden in WWU-T3A | no provider/live receipt accepted | N/A with reason |
 | Public export disposition | `DEFERRED_PRIVATE_ONLY` | private provenance dispatch | PASS |
 
@@ -469,8 +471,8 @@ readiness claims, destructive actions, or scope expansion.
 |---|---|---|---|
 | Dispatch authority | fresh GC-018 and source-verified work order | this packet plus WWU-T3A GC-018 | PASS |
 | Runtime authorization | explicit operator authorization | `LAM DI` on 2026-06-19 | PASS |
-| Runtime proof boundary | deterministic local preview only | no provider command authorized | PASS |
-| Receipt boundary | local receipt evidence only | no live receipt produced in dispatch | PASS |
+| Runtime proof boundary | deterministic local preview only | focused MCP preview test and build only | PASS |
+| Receipt boundary | local receipt evidence only | preview receipt fields implemented and tested; no live receipt produced | PASS |
 | Public boundary | private only | no public-sync authorized | PASS |
 
 ## Public Export Disposition
@@ -484,7 +486,7 @@ is authorized.
 
 | Field | Disposition |
 |---|---|
-| Defect class | `RUNTIME_BOUNDARY_RELEASE` |
+| Defect class | `RUNTIME_SIGNAL_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
 | Escalation state | `WORK_ORDER_ADDED` |
 | Next control action | Implement one deterministic MCP Model Gateway execute preview before any broad MCP/runtime queue/live-provider tranche |
@@ -496,21 +498,21 @@ is authorized.
 |---|---|
 | Actor | Codex |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-19 WWU-T3A work order dispatch |
+| Session or invocation | 2026-06-19 WWU-T3A implementation closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, rg, apply_patch, governance gates |
-| Target paths | WWU roadmap; WWU-T3A GC-018; this work order; GC-051 registry source entry |
+| Command or tool surface | PowerShell, rg, apply_patch, Vitest, TypeScript build, governance gates |
+| Target paths | MCP server index; MCP preview tool module; focused MCP preview test; WWU roadmap; this work order; completion review; evidence digest; GC-051 registry source entry |
 | Allowed scope source | operator authorization `LAM DI`; active session next allowed move; WWU roadmap; MCP bridge boundary |
-| Before status evidence | base `7879f23f`; clean worktree before dispatch authoring |
-| After status evidence | dispatch-ready packet pending pre-dispatch gate |
-| Diff evidence | `git diff --name-status 7879f23f..HEAD` |
-| Approval boundary | work-order dispatch only |
-| Claim boundary | no runtime source implementation in dispatch batch; no provider/live/public-sync/readiness claim |
+| Before status evidence | execution base `38b7d6c0`; pre-implementation PASS |
+| After status evidence | focused test PASS 5/5; MCP package build PASS; Model Gateway check PASS; ProviderExecutionBridge focused test PASS 21/21 |
+| Diff evidence | `git diff --name-status 38b7d6c0..HEAD` |
+| Approval boundary | WWU-T3A deterministic MCP preview implementation only |
+| Claim boundary | no provider/live/public-sync/runtime queue/readiness claim |
 | Agent type | Codex |
 | Invocation ID | `wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview-codex-2026-06-19` |
-| Expected manifest | N/A with reason: dispatch-ready work order names future execution paths in Write Ownership, so AOT exact-manifest comparison is deferred to material implementation |
-| Actual changed set | dispatch packet files only |
-| Manifest delta | none |
+| Expected manifest | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute-preview.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute-preview.test.ts`; `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview-2026-06-19.json`; `docs/corpus-intelligence/registry/entries/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` |
+| Actual changed set | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute-preview.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute-preview.test.ts`; `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview-2026-06-19.json`; `docs/corpus-intelligence/registry/entries/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary

@@ -10,6 +10,7 @@
  *   5. cvf_advance_phase      — Request phase advancement
  *   6. cvf_get_audit_log      — Retrieve audit trail
  *   7. cvf_evaluate_full      — Run full guard pipeline
+ *   8. cvf_model_gateway_execute_preview - Preview Model Gateway execute mapping
  *
  * @module index
  */
@@ -19,6 +20,7 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod';
 import { getMcpToolAuditSnapshot, withMcpToolAudit } from './audit/mcp-tool-audit.js';
 import { emitInt1AgentEvent, validateInt1Plan } from './tools/int1-connection-point-policy.js';
+import { registerModelGatewayExecutePreviewTool } from './tools/model-gateway-execute-preview.js';
 import {
   createGuardEngine,
   GuardRuntimeEngine,
@@ -422,6 +424,8 @@ server.tool(
     };
   }
 );
+
+registerModelGatewayExecutePreviewTool(server);
 
 // ─── Gamma Tool 8: cvf_get_session_memory ─────────────────────────────
 
