@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceId": "delta-t2-governance-action-receipt-consumption-2026-06-19",
+  "status": "PASS_BOUNDED_PENDING_CLOSURE",
+  "executionBaseHead": "0a345338",
+  "tool": "cvf_consume_governance_action_receipt",
+  "contractVersion": "cvf.delta.governanceActionReceiptConsumption.v1",
+  "preflightContractVersion": "cvf.delta.governanceActionPreflight.v1",
+  "defaultReceiptTtlMs": 300000,
+  "assertions": {
+    "exactlyOneAuditRequired": true,
+    "allowDecisionRequired": true,
+    "contractAndIdentityRequired": true,
+    "actionClassBindingRequired": true,
+    "actionBindingRequired": true,
+    "normalizedTargetSetBindingRequired": true,
+    "serverOwnedTtlBounded": true,
+    "atomicCreateExclusiveClaim": true,
+    "concurrentAtMostOneSuccess": true,
+    "replayFailsClosed": true,
+    "lookupFailureFailsClosed": true,
+    "claimFailureFailsClosed": true,
+    "markerOmitsRawActionAndTargets": true,
+    "credentialBearingInputRejected": true,
+    "actionExecutionProved": false,
+    "externalInterceptionProved": false
+  },
+  "verification": [
+    {
+      "command": "npx vitest run src/tools/governance-action-receipt-consumer.test.ts src/prompt/system-prompt.test.ts --reporter verbose",
+      "result": "PASS_2_FILES_49_TESTS"
+    },
+    {
+      "command": "npm run test:run",
+      "result": "PASS_27_FILES_595_TESTS"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py",
+      "result": "PASS_REVIEWER_FAST_28_OF_28"
+    }
+  ],
+  "reviewerRepairs": [
+    "align receipt-id validation with the Delta-T1 variable-length generated suffix"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Deterministic invoked receipt validation and atomic one-time consumption only; no action execution, mandatory invocation, wrapper enforcement, external interception, provider/live behavior, public readiness, or universal governed-coding control."
+}

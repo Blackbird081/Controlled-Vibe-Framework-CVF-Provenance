@@ -27,7 +27,12 @@ import {
   registerGovernanceActionPreflightTool,
   serializePreflightPersistence,
 } from './tools/governance-action-preflight.js';
+import {
+  registerGovernanceActionReceiptConsumerTool,
+  resolveReceiptTtlMs,
+} from './tools/governance-action-receipt-consumer.js';
 import { JsonFileAdapter } from './persistence/json-file.adapter.js';
+import { JsonReceiptConsumptionStore } from './persistence/json-receipt-consumption.store.js';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import {
@@ -451,9 +456,21 @@ function resolveDeltaAuditDir(): string {
   return join(homedir(), '.cvf', 'mcp-delta-audit');
 }
 
-const deltaAuditAdapter = new JsonFileAdapter({ dataDir: resolveDeltaAuditDir() });
+const deltaAuditDir = resolveDeltaAuditDir();
+const deltaAuditAdapter = new JsonFileAdapter({ dataDir: deltaAuditDir });
 const deltaAuditPersistence = serializePreflightPersistence(deltaAuditAdapter);
 registerGovernanceActionPreflightTool(server, engine, deltaAuditPersistence);
+
+// --- Delta-T2: cvf_consume_governance_action_receipt -----------------
+// Validates one fresh matching Delta-T1 receipt and atomically claims a
+// secret-safe one-time marker. It does not execute the planned action.
+const deltaReceiptConsumptionStore = new JsonReceiptConsumptionStore({
+  dataDir: deltaAuditDir,
+  auditReader: deltaAuditAdapter,
+});
+registerGovernanceActionReceiptConsumerTool(server, deltaReceiptConsumptionStore, {
+  maxReceiptAgeMs: resolveReceiptTtlMs(process.env.CVF_MCP_DELTA_RECEIPT_TTL_SECONDS),
+});
 
 // ─── Gamma Tool 8: cvf_get_session_memory ─────────────────────────────
 

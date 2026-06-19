@@ -200,6 +200,12 @@ describe('generateSystemPrompt', () => {
       expect(result.systemPrompt).toContain(
         'It does not prove that the action was executed, or that any IDE, shell, git, or filesystem was intercepted.'
       );
+      expect(result.systemPrompt).toContain(
+        'Call cvf_consume_governance_action_receipt with the exact matching action and targets before proceeding; a receipt may be consumed only once'
+      );
+      expect(result.systemPrompt).toContain(
+        'It does not execute the action, make MCP invocation mandatory, or prove external interception.'
+      );
     });
   });
 
