@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`
+Current mode marker: `delta_t3_governed_command_launcher_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
+Current mode: `delta_t3_governed_command_launcher_dispatch_ready`.
 
-Previous mode: `delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure`.
+Previous mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
 
 Active handoff:
 
@@ -793,15 +793,13 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
+Mode: `delta_t3_governed_command_launcher_dispatch_ready`.
 
-Delta-T2 is closed bounded at accepted material commit `d3bf3594` and closure
-commit `22ad256e`.
+Delta-T3 is dispatch-ready at commit `aafcdfda`.
 
-Next allowed move: operator decision whether to authorize Delta-T3 governed
-launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified
-work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched;
-action execution and external interception remain parked.
+Next allowed move: Codex runs pre-implementation and implements only the
+static-profile non-destructive RUN launcher scope in the Delta-T3 work order.
+Arbitrary/mutating execution and external interception remain parked.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

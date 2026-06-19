@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready",
-  "previousMode": "delta_t2_governance_action_receipt_consumption_accepted_material_pending_closure",
+  "currentMode": "delta_t3_governed_command_launcher_dispatch_ready",
+  "previousMode": "delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2300,5 +2300,23 @@
     "claimBoundary": "Delta-T2 proves only deterministic validation and atomic one-time consumption of an invoked matching fresh Delta-T1 ALLOW receipt. It does not execute the action, make MCP mandatory, intercept external tools, prove provider/live behavior, authorize public-sync, or establish universal governed-coding control.",
     "nextAllowedMove": "Operator decision whether to authorize Delta-T3 governed launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched."
   },
-  "nextAllowedMove": "Delta-T2 Governance Action Receipt Consumption is CLOSED_PASS_BOUNDED at accepted material commit d3bf3594 and closure commit 22ad256e. Next allowed move is an operator decision whether to authorize Delta-T3 governed launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched. No action execution, shell/process/git runner, wrapper/CLI/proxy enforcement, provider/live call, secrets/quota, public-sync, queue/scheduler/daemon, workspace state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
+  "deltaT3GovernedCommandLauncherDispatch20260619": {
+    "status": "DISPATCH_READY_FOR_CODEX",
+    "dispatchCommit": "aafcdfda",
+    "dispatchBaseHead": "f50e2903",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "commitMode": "WORKER_MAY_COMMIT",
+    "workerReviewerCloser": "Codex",
+    "binaryCandidate": "cvf-governed-exec",
+    "checks": [
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Dispatch only for a static-profile non-destructive RUN launcher that requires durable Delta-T1/T2/T3 admission before its own direct child process. No arbitrary or mutating command, EDIT/COMMIT, shell/interpreter, provider/live, public-sync, queue/daemon, external interception, readiness, or universal governed-coding claim.",
+    "nextAllowedMove": "Codex runs pre-implementation from the refreshed clean HEAD, then implements only the source/test/package/completion/evidence scope in the Delta-T3 work order."
+  },
+  "nextAllowedMove": "Delta-T3 Governed Command Launcher is DISPATCH_READY_FOR_CODEX at dispatch commit aafcdfda with fresh GC-018 and a source-verified SINGLE_AGENT_MULTI_ROLE work order. Next allowed move: Codex runs pre-implementation, then implements only the static-profile non-destructive RUN launcher, durable execution receipt, focused tests, package binary, completion review, and evidence JSON. No arbitrary or mutating command, EDIT/COMMIT, shell/interpreter, provider/live, public-sync, queue/daemon, workspace-state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
 }

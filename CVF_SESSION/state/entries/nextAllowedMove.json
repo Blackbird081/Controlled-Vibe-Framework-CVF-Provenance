@@ -1,5 +1,5 @@
 {
-  "stateOrder": 463,
+  "stateOrder": 465,
   "stateKey": "nextAllowedMove",
-  "value": "Delta-T2 Governance Action Receipt Consumption is CLOSED_PASS_BOUNDED at accepted material commit d3bf3594 and closure commit 22ad256e. Next allowed move is an operator decision whether to authorize Delta-T3 governed launcher/wrapper/CLI action execution through fresh GC-018 and a source-verified work order, or choose another bounded CVF lane. Delta-T3 is not auto-dispatched. No action execution, shell/process/git runner, wrapper/CLI/proxy enforcement, provider/live call, secrets/quota, public-sync, queue/scheduler/daemon, workspace state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Delta-T3 Governed Command Launcher is DISPATCH_READY_FOR_CODEX at dispatch commit aafcdfda with fresh GC-018 and a source-verified SINGLE_AGENT_MULTI_ROLE work order. Next allowed move: Codex runs pre-implementation, then implements only the static-profile non-destructive RUN launcher, durable execution receipt, focused tests, package binary, completion review, and evidence JSON. No arbitrary or mutating command, EDIT/COMMIT, shell/interpreter, provider/live, public-sync, queue/daemon, workspace-state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
 }
