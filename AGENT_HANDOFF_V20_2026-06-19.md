@@ -37,9 +37,10 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record Delta-T6 Execution Claim Boundary
-Checker dispatch commit `73539dab` and move session front doors to
-implementation-ready routing before any material checker work begins.
+Authorized guard-maintenance scope: record Delta-T6 material commit
+`3ef55abc` in the active handoff before closure conversion. This is a
+handoff-only bridge sync and does not open runtime, provider, public, or
+execution scope.
 
 Protected paths:
 
@@ -65,15 +66,15 @@ Protected paths:
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Operator authorization: the operator asked Codex to continue the recommended
-high-foundation steps. Delta-T6 dispatch is now committed and this session sync
-records the bounded implementation lane. It does not expand runtime, public,
+high-foundation steps. Delta-T6 material is now committed and this handoff-only
+sync records the bounded closure parent. It does not expand runtime, public,
 provider, or execution scope.
 
 Rollback boundary: revert only this session-sync/rotation commit if rejected.
 Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
 commit `49f71004`, material commit `39a22e3f`, Delta-T4B closure commit
 `5b1f7c2a`, Delta-T5 closure commit `97a634c2`, Delta-T6 dispatch commit
-`73539dab`, or earlier Delta commits.
+`73539dab`, Delta-T6 material commit `3ef55abc`, or earlier Delta commits.
 
 ## Startup Acknowledgment
 
@@ -83,7 +84,7 @@ Startup acknowledged: current mode=`delta_t6_execution_claim_boundary_checker_di
 
 `delta_t6_execution_claim_boundary_checker_dispatched_ready`
 
-Current HEAD recorded for this handoff: `73539dab`
+Current HEAD recorded for this handoff: `3ef55abc`
 
 Material state:
 
@@ -132,6 +133,12 @@ Material state:
 - Delta-T6 pre-dispatch gate: PASS
 - Delta-T6 dispatch commit steward: PASS
 - Delta-T6 dispatch pre-commit hook: PASS 53/53
+- Delta-T6 dispatch session-sync commit: `1fbe968e`
+- Delta-T6 material commit: `3ef55abc`
+- Delta-T6 focused tests: PASS 11/11
+- Delta-T6 worker-return fast gate: PASS
+- Delta-T6 implementation commit steward: PASS
+- Delta-T6 material pre-commit hook: PASS 54/54
 - Delta-T4B pre-dispatch gate: PASS
 - Delta-T4B dispatch commit steward: PASS
 - Delta-T4B dispatch pre-commit hook: PASS 52/52
@@ -311,22 +318,22 @@ LHW24 remains the latest closed numbered LHW wave.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex session-sync steward |
+| Actor | Codex handoff-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T6 dispatch session sync, 2026-06-19 |
+| Session or invocation | Delta-T6 material handoff bridge sync, 2026-06-19 |
 | Working directory | repository root |
-| Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
-| Target paths | active handoff and generated session-state surfaces listed below |
-| Allowed scope source | Delta-T6 dispatch commit `73539dab` |
-| Before status evidence | Delta-T6 dispatch committed, active handoff still recorded pre-dispatch material HEAD |
-| After status evidence | next-move surfaces point to Delta-T6 pre-implementation and bounded implementation |
+| Command or tool surface | PowerShell, apply_patch, governance hooks |
+| Target paths | active handoff only |
+| Allowed scope source | Delta-T6 material commit `3ef55abc` |
+| Before status evidence | Delta-T6 material committed while handoff still recorded dispatch parent |
+| After status evidence | active handoff records Delta-T6 material parent for closure conversion |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | session-sync correction only; no new runtime or public scope |
+| Approval boundary | handoff bridge sync only; no new runtime or public scope |
 | Claim boundary | no runtime profile expansion beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, CVF Web action execution, direct interception, broad wrapper/proxy/runtime enforcement expansion, or universal enforcement claim in this session-sync commit |
-| Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t6-dispatch-session-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Agent type | single-agent handoff-sync steward |
+| Invocation ID | `delta-t6-material-handoff-bridge-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
