@@ -37,10 +37,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record GGL-T1 closure commit `913c8c9b`,
-compact the oversized session front door, and route next work to the receipt-
-to-execution evidence auditor. This session-sync does not open runtime,
-provider, public, or direct-interception scope.
+Authorized guard-maintenance scope: record Delta-T7 closure commit `d82870b9`
+in a dedicated active-handoff-only bridge before final session sync. This
+bridge does not open runtime, provider, public, or direct-interception scope.
 
 Protected paths:
 
@@ -73,7 +72,7 @@ high-foundation steps. Delta-T6 is now closed bounded and this session sync
 records the post-closure next-foundation lane. It does not expand runtime,
 public, provider, or execution scope.
 
-Rollback boundary: revert only this session-sync/rotation commit if rejected.
+Rollback boundary: revert only this handoff-only bridge commit if rejected.
 Do not alter material commit `d2fc4f5b`, closure commit `c61d7d85`, dispatch
 commit `49f71004`, material commit `39a22e3f`, Delta-T4B closure commit
 `5b1f7c2a`, Delta-T5 closure commit `97a634c2`, Delta-T6 dispatch commit
@@ -89,7 +88,7 @@ Startup acknowledged: current mode=`ggl_t1_gate_latency_optimization_closed_rece
 
 `ggl_t1_gate_latency_optimization_closed_receipt_auditor_ready`
 
-Current HEAD recorded for this handoff: `913c8c9b`
+Current HEAD recorded for this handoff: `d82870b9`
 
 Material state:
 
@@ -281,10 +280,12 @@ optional approval-marker, and changed-set evidence. It does not authorize a new
 MCP tool, execution, runtime mutation, provider/live, public-sync, direct
 interception, or universal governed-coding claim.
 
-Delta-T7 material commit `fcf28c0d` is `COMPLETE_PENDING_REVIEW`. The pure
-auditor passed focused tests 11/11, the full MCP suite 31 files / 628 tests,
-and TypeScript build. It adds no MCP registration, action execution, runtime
-mutation, provider/live, public-sync, direct interception, or universal claim.
+Delta-T7 is `CLOSED_PASS_BOUNDED` at closure commit `d82870b9`, after dispatch
+`264cc598`, dispatch handoff bridge `2fb39e44`, material `fcf28c0d`, and
+material handoff bridge `b13632e0`. The pure auditor passed focused tests
+11/11, the full MCP suite 31 files / 628 tests, and TypeScript build. It adds
+no MCP registration, action execution, runtime mutation, provider/live,
+public-sync, direct interception, or universal claim.
 
 ## Next Allowed Move
 
@@ -376,20 +377,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T6 closure session sync, 2026-06-19 |
+| Session or invocation | Delta-T7 closure handoff bridge, 2026-06-19 |
 | Working directory | repository root |
-| Command or tool surface | PowerShell, apply_patch, active session state generator, governance hooks |
-| Target paths | active handoff, generated active session state, session core, closure state entry, next allowed move entry, and session memory front door |
-| Allowed scope source | Delta-T6 closure commit `50812e9c` |
-| Before status evidence | Delta-T6 closure committed while session front doors still recorded handoff bridge/material parent |
-| After status evidence | session front doors record Delta-T6 closed bounded and next-foundation routing |
-| Diff evidence | `git diff --cached --name-status`, session-sync steward, and pre-commit hook |
-| Approval boundary | session-sync continuity only; no new runtime or public scope |
-| Claim boundary | no runtime profile expansion beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, CVF Web action execution, direct interception, broad wrapper/proxy/runtime enforcement expansion, or universal enforcement claim in this session-sync commit |
-| Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t6-closure-session-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT6ExecutionClaimBoundaryCheckerClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Command or tool surface | apply_patch, handoff-sync steward, governance hooks |
+| Target paths | active handoff only |
+| Allowed scope source | Delta-T7 closure commit `d82870b9` |
+| Before status evidence | Delta-T7 closure committed while handoff recorded GGL-T1 closure HEAD |
+| After status evidence | handoff records Delta-T7 closure HEAD and bounded result |
+| Diff evidence | exact one-path handoff diff and handoff-sync hook evidence |
+| Approval boundary | handoff bridge continuity only; no new runtime or public scope |
+| Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
+| Agent type | single-agent handoff-sync steward |
+| Invocation ID | `delta-t7-closure-handoff-bridge-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
