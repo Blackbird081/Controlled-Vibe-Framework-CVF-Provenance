@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`
+Current mode marker: `wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`.
+Current mode: `wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`.
 
 Active handoff:
 
@@ -745,20 +745,17 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t3a_mcp_execute_preview_closed_absorption_chain_ready`.
+Mode: `wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`.
 
-WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview is
-`CLOSED_PASS_BOUNDED` at material commit `10b3f886`. It added one bounded
-deterministic MCP tool candidate: `cvf_model_gateway_execute_preview`.
+WWU-T3B MCP Model Gateway Execution Adapter is `DISPATCHED` at commit
+`9ef97f2d` with fresh GC-018 and a source-verified work order.
 
-Next allowed move: formalize the old and new external-agent/repo knowledge
-absorption rules into one CVF-governed workflow chain map, but only after
-fresh GC-018 and a source-verified work order. Any broader WWU-T3 runtime/MCP
-tranche or bounded Web Workspace follow-up also requires fresh GC-018 and a
-source-verified work order.
+Next allowed move: run pre-implementation from execution base `9ef97f2d`, then
+implement only the injectable `cvf_model_gateway_execute` adapter and focused
+deterministic tests.
 
-Post-MCP follow-up: the external-agent/repo knowledge absorption workflow-chain
-formalization is now the next candidate, with fresh GC-018 and source
+Post-MCP follow-up remains the external-agent/repo knowledge absorption
+workflow-chain formalization candidate, with fresh GC-018 and source
 verification required before implementation.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.

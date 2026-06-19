@@ -1,0 +1,21 @@
+{
+  "stateOrder": 451,
+  "stateKey": "wwuT3BMcpModelGatewayExecutionAdapterDispatch20260619",
+  "value": {
+    "status": "DISPATCHED",
+    "dispatchCommit": "9ef97f2d",
+    "dispatchBaseHead": "cf76e3e2",
+    "executionBaseHead": "9ef97f2d",
+    "roadmap": "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md",
+    "toolCandidate": "cvf_model_gateway_execute",
+    "checks": [
+      "pre-dispatch autorun PASS on cf76e3e2..HEAD",
+      "dispatch commit steward PASS on cf76e3e2..HEAD",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Injectable module adapter only. No provider/live composition, secret or quota use, runtime queue/scheduler/daemon, public-sync, broad runtime enforcement, or readiness claim.",
+    "nextAllowedMove": "Run pre-implementation from 9ef97f2d, then implement the bounded WWU-T3B adapter and focused tests."
+  }
+}
