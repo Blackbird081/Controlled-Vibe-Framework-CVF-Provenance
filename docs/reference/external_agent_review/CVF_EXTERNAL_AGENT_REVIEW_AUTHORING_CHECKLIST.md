@@ -25,6 +25,7 @@ calls, workspace runtime mutation, or readiness claims.
 Before authoring an external-agent review packet, read:
 
 - `docs/reference/external_agent_review/README.md`;
+- `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`;
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md`;
 - `docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md`;
 - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md`;
@@ -36,6 +37,7 @@ Before authoring an external-agent review packet, read:
 | Check | Required result |
 |---|---|
 | Review objective is narrow | One topic, one critique surface, no broad architecture fishing |
+| Input type routed through chain map | External/corpus/repo/public/legacy/review input is classified before packet authoring |
 | CVF source-of-truth statement included | CVF-governed surfaces outrank public simplifications and external references |
 | Public/private boundary included | Public-safe facts are separated from private provenance summaries |
 | Workflow-chain map included | Public/simple labels are marked display vocabulary unless source-backed |
@@ -62,7 +64,8 @@ Reject or rewrite the packet before review if it:
 
 ## Completion Requirement
 
-After using an external-agent review packet, CVF must classify returned content
+After using an external-agent review packet, CVF must return through
+`CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` and classify returned content
 before acting on it:
 
 | Returned content | CVF next action |

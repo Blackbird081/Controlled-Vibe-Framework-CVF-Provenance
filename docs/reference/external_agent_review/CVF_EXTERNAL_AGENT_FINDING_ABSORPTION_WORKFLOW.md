@@ -15,6 +15,14 @@ This workflow exists so useful external critique becomes CVF-owned governance
 material instead of provider-local memory, chat commentary, or unverified
 architecture drift.
 
+Upstream routing lives in:
+
+`docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
+
+Use that chain map first to classify whether the input is external-agent
+returned output, legacy/corpus intake, public/simple vocabulary, copied repo
+material, or implementation planning.
+
 ## Scope / Target / Owner Boundary
 
 Target: external-agent review returns, copied-package critique, external repo
@@ -38,6 +46,7 @@ Before classifying external output, the CVF reviewer must have:
 | CVF authority surfaces | Current governed paths supplied in the packet or re-verified during review. |
 | Public/private boundary | The packet's boundary or a reviewer-authored replacement when the packet was missing one. |
 | Operator constraint | Any parked checkpoint, forbidden scope, or explicit authorization boundary. |
+| Chain-map route | The input type and route selected from `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`. |
 
 If the review packet is missing, classify the return as
 `CONTEXT_DEFECT_REVIEW_REQUIRED` before absorbing any content.

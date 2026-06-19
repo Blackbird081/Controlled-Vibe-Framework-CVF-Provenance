@@ -38,6 +38,7 @@ semantics.
 | Reference | Role |
 |---|---|
 | `CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md` | Standard for giving external agents enough context to review CVF without exposing private provenance source. |
+| `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | Central chain map connecting external/corpus/repo input, old blind-spot/corpus/legacy rules, external-agent review packets, returned-output absorption, GC-018, work orders, source verification, and autorun. |
 | `CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md` | Canonical distinction between public/simple workflow vocabulary and internal governed workflow-chain system. |
 | `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` | Stable packet template for external-agent review requests. |
 | `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md` | Authoring checklist and red-flag screen before sending a packet to an external agent. |
@@ -50,16 +51,21 @@ semantics.
 
 ## Authoring Flow
 
-1. Read this front door and the context standard.
-2. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md`.
-3. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
-4. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
+1. Read this front door, the context standard, and
+   `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`.
+2. Classify the input type through the chain map before deciding whether the
+   task is packet authoring, returned-output absorption, legacy/corpus intake,
+   or implementation planning.
+3. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` when an external
+   agent review packet is needed.
+4. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
+5. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
    the bounded example for workflow-chain, MCP, and workspace review context.
-5. After the external agent returns output, classify every returned item through
+6. After the external agent returns output, classify every returned item through
     `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` before creating a
     finding, standard, roadmap, work order, review, reference artifact, or
     operator decision.
-6. For changed external-return absorption reviews, satisfy
+7. For changed external-return absorption reviews, satisfy
    `governance/compat/check_external_agent_absorption_table.py` before closure.
 
 ## Required Read Trigger
@@ -70,6 +76,8 @@ Read this folder when a task:
   workspace design;
 - prepares public or semi-public context for external review;
 - absorbs a copied external package, repo idea, or review packet;
+- consumes corpus, legacy, public/simple, or external repo input before
+  implementation planning;
 - notices an external agent treating a public/simple lifecycle as internal CVF
   workflow-chain authority;
 - needs to decide what can be public context without publishing private
