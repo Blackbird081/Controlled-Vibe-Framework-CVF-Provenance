@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready`
+Current mode marker: `delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready`.
+Current mode: `delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready`.
 
-Previous mode: `delta_t4a_approval_backed_mutating_profile_boundary_accepted_material_pending_closure`.
+Previous mode: `delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready`.
 
 Active handoff:
 
@@ -803,7 +803,7 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready`.
+Mode: `delta_t4b_mutating_profile_boundary_guard_dispatched_preimplementation_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
@@ -814,20 +814,29 @@ one approval-backed local mutating profile, `approval-marker-write`, with fixed
 marker target `.cvf/delta/approval-marker-write.json` and durable approval/
 marker evidence.
 
-Next allowed move: select the next high-leverage foundation tranche with fresh
-GC-018 and source-verified work order.
+Delta-T4B Mutating Profile Boundary Guard is `DISPATCH_READY_FOR_CODEX` at
+dispatch commit `49f71004`. It opens only a range-aware governed Markdown
+checker for future mutating-profile boundary artifacts, focused tests, hook/
+autorun wiring, completion review, and evidence. It does not authorize runtime
+profile expansion, provider/live calls, public-sync, direct interception,
+arbitrary commands, EDIT/COMMIT execution, or universal enforcement claims.
+
+Next allowed move: Codex performs dispatch session sync, then runs
+pre-implementation and implements only the Delta-T4B checker/test/hook/
+completion/evidence scope in the Delta-T4B work order.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
 decision remain held for their explicit authorizations. Public-sync, broad MCP
 implementation, provider/live calls, secrets/quota, runtime queue/scheduler/
 daemon work, raw external package import, public readiness, production
-readiness, release readiness, broad runtime enforcement claims, wrapper/CLI/
-proxy receipt enforcement beyond Delta-T4A, IDE/shell/git/filesystem interception, AI
-Gateway environment signal capture, external absorption router/checker
-implementation, broad external absorption-chain implementation, universal
-governed-coding control claims, and external-facing readiness claims remain
-parked unless separately authorized by the Delta work order.
+readiness, release readiness, broad runtime enforcement claims, runtime
+profiles, arbitrary commands, EDIT/COMMIT execution, wrapper/CLI/proxy receipt
+enforcement beyond Delta-T4A, IDE/shell/git/filesystem interception, AI Gateway
+environment signal capture, external absorption router/checker implementation,
+broad external absorption-chain implementation, CVF Web action execution,
+universal governed-coding control claims, and external-facing readiness claims
+remain parked unless separately authorized by a future work order.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh

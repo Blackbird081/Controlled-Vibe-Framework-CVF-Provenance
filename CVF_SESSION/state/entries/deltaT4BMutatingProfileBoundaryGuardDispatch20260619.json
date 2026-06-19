@@ -1,0 +1,22 @@
+{
+  "stateOrder": 477,
+  "stateKey": "deltaT4BMutatingProfileBoundaryGuardDispatch20260619",
+  "value": {
+    "status": "DISPATCH_READY_FOR_CODEX",
+    "dispatchCommit": "49f71004",
+    "dispatchBaseHead": "bbb84de0",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_FOR_CODEX_2026-06-19.md",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "commitMode": "WORKER_MAY_COMMIT",
+    "workerReviewerCloser": "Codex",
+    "checkerCandidate": "governance/compat/check_delta_mutating_profile_boundary.py",
+    "checks": [
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "pre-commit hook PASS 52/52"
+    ],
+    "claimBoundary": "Dispatch only for a range-aware governed Markdown checker requiring future mutating-profile boundary artifacts to declare fixed target, approval evidence, caller path-input boundary, command authority, receipt chain, claim boundary, and forbidden expansion. No runtime profile, CLI behavior, provider/live, public-sync, queue/daemon, CVF Web action, direct interception, or universal governed-coding claim is authorized.",
+    "nextAllowedMove": "Codex performs dispatch session sync, then runs pre-implementation and implements only the checker/test/hook/completion/evidence scope in the Delta-T4B work order."
+  }
+}
