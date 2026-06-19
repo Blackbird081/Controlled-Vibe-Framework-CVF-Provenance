@@ -1,5 +1,5 @@
 {
-  "stateOrder": 407,
+  "stateOrder": 461,
   "stateKey": "nextAllowedMove",
-  "value": "Delta-T2 Governance Action Receipt Consumption is DISPATCH_READY_FOR_CODEX at dispatch commit c08691fc with fresh GC-018 and a source-verified SINGLE_AGENT_MULTI_ROLE work order. Next allowed move: Codex runs pre-implementation from the refreshed clean HEAD, then implements only deterministic receipt validation, bounded TTL, exact action/target binding, atomic one-time secret-safe marker claim, focused tests, thin MCP registration, and bounded prompt guidance. No action execution, shell/process/git runner, wrapper/CLI/proxy enforcement, provider/live call, secrets/quota, public-sync, queue/scheduler/daemon, workspace state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Delta-T2 Governance Action Receipt Consumption material is accepted at commit d3bf3594 from execution base 0a345338. Next allowed move: Codex converts only the matching GC-018, work order, completion review, and evidence artifact to CLOSED_PASS_BOUNDED on a dedicated closure range, then performs final session sync. No action execution, shell/process/git runner, wrapper/CLI/proxy enforcement, provider/live call, secrets/quota, public-sync, queue/scheduler/daemon, workspace state mutation, IDE/filesystem interception, readiness claim, or universal governed-coding claim is authorized. LHW24 remains the latest closed numbered LHW wave."
 }
