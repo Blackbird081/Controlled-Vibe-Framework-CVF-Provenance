@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -182,15 +182,15 @@ presented as existing runtime facts.
 
 | ID | Criterion | Dispatch state |
 | --- | --- | --- |
-| AC1 | New modular tool is registered as `cvf_preflight_governance_action`; Gamma tool remains source-compatible. | REQUIRED |
-| AC2 | `EDIT`, `RUN`, and `COMMIT` inputs are evaluated through the existing guard engine. | REQUIRED |
-| AC3 | `ALLOW` returns a receipt only after durable audit persistence succeeds. | REQUIRED |
-| AC4 | `BLOCK` and `ESCALATE` remain non-proceed decisions and are durably recorded. | REQUIRED |
-| AC5 | Persistence failure fails closed with no valid governed-action claim. | REQUIRED |
-| AC6 | Raw credential-bearing text is absent from tool output and persisted audit JSON. | REQUIRED |
-| AC7 | MCP prompt guidance requires this preflight before edit/run/commit without claiming external interception. | REQUIRED |
-| AC8 | Focused tests, full MCP tests, MCP build, and governance return gates pass. | REQUIRED |
-| AC9 | Claude returns uncommitted changes and a worker-return packet; Codex owns closure. | REQUIRED |
+| AC1 | New modular tool is registered as `cvf_preflight_governance_action`; Gamma tool remains source-compatible. | PASS |
+| AC2 | `EDIT`, `RUN`, and `COMMIT` inputs are evaluated through the existing guard engine. | PASS |
+| AC3 | `ALLOW` returns a receipt only after durable audit persistence succeeds. | PASS |
+| AC4 | `BLOCK` and `ESCALATE` remain non-proceed decisions and are durably recorded. | PASS |
+| AC5 | Persistence failure fails closed with no valid governed-action claim. | PASS |
+| AC6 | Raw credential-bearing text is absent from tool output and persisted audit JSON. | PASS |
+| AC7 | MCP prompt guidance requires this preflight before edit/run/commit without claiming external interception. | PASS |
+| AC8 | Focused tests, full MCP tests, MCP build, and governance return gates pass. | PASS |
+| AC9 | Claude returns uncommitted changes and a worker-return packet; Codex owns closure. | PASS |
 
 ## Evidence / Verification
 

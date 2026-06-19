@@ -1,8 +1,9 @@
 {
   "schemaVersion": "1.0.0",
   "evidenceId": "delta-t1-governance-action-preflight-receipt-2026-06-19",
-  "status": "PASS_BOUNDED_PENDING_CLOSURE",
+  "status": "PASS_BOUNDED",
   "executionBaseHead": "d0dca484",
+  "acceptedMaterialCommit": "156b0610",
   "tool": "cvf_preflight_governance_action",
   "contractVersion": "cvf.delta.governanceActionPreflight.v1",
   "acceptedActionClasses": [

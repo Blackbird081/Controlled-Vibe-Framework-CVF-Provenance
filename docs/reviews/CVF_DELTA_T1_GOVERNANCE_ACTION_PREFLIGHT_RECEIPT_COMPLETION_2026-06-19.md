@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACCEPTED_MATERIAL_PENDING_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -14,8 +14,8 @@ Execution base: `d0dca484`
 
 ## Purpose
 
-Record Codex review of Claude's uncommitted Delta-T1 implementation before the
-accepted-material commit and separate closure conversion.
+Record Codex review, repair, accepted-material commit, and bounded closure of
+Claude's uncommitted Delta-T1 implementation.
 
 ## Scope / Target / Owner Boundary
 
@@ -43,6 +43,8 @@ No unresolved blocker remains in the accepted material.
 Reviewer position: accept the bounded Delta-T1 material after the three repairs
 above. The component now satisfies the work-order acceptance criteria without
 expanding into external interception or universal enforcement.
+
+Accepted material commit: `156b0610`.
 
 ## Risk / Corrective Action
 
@@ -146,14 +148,14 @@ added.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | Delta-T1 work order | accepted material; closure conversion follows committed evidence | N/A with reason |
-| Completion or reviewer artifact | this file | Codex review and resolved findings | PASS |
+| Work order status | Delta-T1 work order | `Status: CLOSED_PASS_BOUNDED`; accepted material commit `156b0610` | PASS |
+| Completion or reviewer artifact | this file | `Status: CLOSED_PASS_BOUNDED`; Codex review and resolved findings | PASS |
 | Roadmap state | N/A with reason: Delta-T1 is active-session and `MCP-GW-001` derived | no roadmap mutation | N/A with reason |
-| Registry JSON | N/A with reason: no registry edit authorized | no registry path changed | N/A with reason |
-| Registry Markdown | N/A with reason: no registry edit authorized | no registry path changed | N/A with reason |
+| Registry JSON | BLOCKED with reason: no corpus registry edit authorized in Delta-T1 | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no corpus registry Markdown edit authorized in Delta-T1 | no registry Markdown path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
 | System loop interlock | N/A with reason: no queue, scheduler, or loop added | no interlock mutation | N/A with reason |
-| Session continuity | separate post-closure session-sync owned by Codex | material batch does not mix protected continuity | N/A with reason |
+| Session continuity | N/A with reason: material/closure batch only | separate post-closure session-sync owned by Codex | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -178,14 +180,14 @@ added.
 | Target paths | five MCP source/test paths; work order; worker return; this completion; evidence JSON |
 | Allowed scope source | Delta-T1 GC-018 and work order |
 | Before status evidence | clean worker-start HEAD `d0dca484` |
-| After status evidence | reviewed material and resolved findings ready for accepted-material commit |
-| Diff evidence | `git diff --name-status`; `git diff --check`; focused/full tests; reviewer-fast |
+| After status evidence | accepted material commit `156b0610`; resolved findings; bounded closure conversion |
+| Diff evidence | `git diff --name-status`; `git diff --check`; focused/full tests; reviewer-fast; accepted material commit `156b0610` |
 | Approval boundary | bounded deterministic Delta-T1 component only |
 | Claim boundary | no external interception, provider/live, public-sync, wrapper/proxy, or universal governed-coding claim |
 | Agent type | multi-agent worker/reviewer route |
 | Invocation ID | `delta-t1-preflight-receipt-review-codex-2026-06-19` |
-| Expected manifest | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.test.ts`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_FOR_CLAUDE_2026-06-19.md`; `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_WORKER_RETURN_2026-06-19.md`; `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t1-governance-action-preflight-receipt-2026-06-19.json` |
-| Actual changed set | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.test.ts`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_FOR_CLAUDE_2026-06-19.md`; `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_WORKER_RETURN_2026-06-19.md`; `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t1-governance-action-preflight-receipt-2026-06-19.json` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_FOR_CLAUDE_2026-06-19.md`; `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t1-governance-action-preflight-receipt-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_FOR_CLAUDE_2026-06-19.md`; `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t1-governance-action-preflight-receipt-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
@@ -197,7 +199,7 @@ Reason: private provenance runtime component. Public-sync is not authorized.
 
 ## Claim Boundary
 
-Accepted material proves only the behavior of an invoked local MCP preflight:
+Closed Delta-T1 proves only the behavior of an invoked local MCP preflight:
 guard evaluation, secret-safe durable audit persistence, and a correlated
 bounded receipt. It does not prove mandatory invocation, action execution,
 receipt consumption, external interception, provider behavior, or universal

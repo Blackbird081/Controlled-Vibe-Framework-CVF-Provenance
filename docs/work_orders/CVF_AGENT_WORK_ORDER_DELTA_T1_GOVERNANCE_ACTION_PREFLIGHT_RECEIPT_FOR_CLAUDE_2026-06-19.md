@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `087f7678`
 
-executionBaseHead: `087f7678`
+executionBaseHead: `d0dca484`
 
-closureBaseHead: `087f7678`
+closureBaseHead: `6d7f4d94`
 
 rawMemoryReleased: false
 
@@ -115,7 +115,7 @@ state mutation, or broader enforcement claim.
 | Legacy absorption | `MCP-GW-001` in `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | source-backed Delta controls |
 | Chain authority | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | runtime/MCP work routes through fresh GC-018/work order/source verification |
 | Composition prerequisite | `docs/reviews/CVF_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_2026-06-19.md` | DISPATCH_READY |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_2026-06-19.md` | CLOSED_PASS_BOUNDED |
 | Roadmap | N/A with reason: Delta-T1 is released by active-session next-move authority and `MCP-GW-001`, not a numbered roadmap tranche | N/A with reason |
 
 ## Agent Handoff Contract Control Block
@@ -307,6 +307,16 @@ Unicode comments outside changed lines need no broad normalization.
 | `MCP-GW-001` requires preflight, durable audit/receipt, and bounded claim language. | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | row `MCP-GW-001` | `MCP-GW-001` | legacy absorption coverage index | ACCEPT |
 | Composition prerequisite is closed. | `docs/reviews/CVF_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_COMPLETION_2026-06-19.md` | `Status`; `## Claim Boundary` | `CLOSED_PASS_BOUNDED` | Composition Proof completion | ACCEPT |
 
+## Current Runtime Freshness Verification
+
+| Runtime surface | Fresh source checked | Result |
+| --- | --- | --- |
+| Gamma advisory classifier | `src/startup/startup-state.ts`; `src/index.ts` | preserved without contract replacement |
+| Guard pipeline | `src/guards/engine.ts`; `src/guards/types.ts`; `src/guards/index.ts` | existing deterministic guard owner reused |
+| Durable audit port | `src/persistence/persistence.interface.ts` | existing save/read contract reused |
+| JSON audit adapter | `src/persistence/json-file.adapter.ts` | existing local JSON implementation reused with serialized Delta writes |
+| Delta registration and prompt guidance | `src/index.ts`; `src/prompt/system-prompt.ts` | reviewed against accepted material commit `156b0610` |
+
 ## New Doc-Only Fields
 
 | Proposed field or symbol | Disposition |
@@ -336,11 +346,11 @@ chain is active session next move -> `MCP-GW-001` -> Composition Proof closure
 
 | Upstream requirement | Work order section | Worker deliverable | Verification | Dispatch state |
 | --- | --- | --- | --- | --- |
-| pre-action governance | Delta-T1 Control Block | new modular MCP tool | focused tests | READY |
-| durable audit/receipt | Delta-T1 Control Block | persistence-backed receipt | temp-directory readback | READY |
-| no direct bypass claim | Claim Boundary | bounded response and worker return | reviewer text/diff check | READY |
-| no governed claim without receipt | acceptance AC3-AC5 | fail-closed persistence behavior | focused tests | READY |
-| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | READY |
+| pre-action governance | Delta-T1 Control Block | new modular MCP tool | focused tests | PASS |
+| durable audit/receipt | Delta-T1 Control Block | persistence-backed receipt | temp-directory readback | PASS |
+| no direct bypass claim | Claim Boundary | bounded response and worker return | reviewer text/diff check | PASS |
+| no governed claim without receipt | acceptance AC3-AC5 | fail-closed persistence behavior | focused tests | PASS |
+| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | PASS |
 
 ## Write Ownership
 
@@ -528,10 +538,10 @@ operator checkpoint and fresh governed tranche.
 | Agent Handoff Contract Control Block | PASS |
 | Reviewer Closure Conversion | PASS |
 | Work-Order Fulfillment Manifest | PASS |
-| Runtime implementation | REQUIRED |
-| Focused/full verification | REQUIRED |
-| Worker return with unchanged HEAD | REQUIRED |
-| Codex completion/evidence/closure gates | REQUIRED |
+| Runtime implementation | PASS |
+| Focused/full verification | PASS |
+| Worker return with unchanged HEAD | PASS |
+| Codex completion/evidence/closure gates | PASS |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -540,8 +550,8 @@ operator checkpoint and fresh governed tranche.
 | Finding | Gamma action classification and in-process audit do not establish durable preflight receipt control |
 | Defect class | `RUNTIME_SIGNAL_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
-| Escalation state | `DISPATCHED_BOUNDED_DELTA_T1` |
-| Current control action | add durable preflight receipt using existing guard/persistence owners |
+| Escalation state | `CLOSED_BOUNDED_DELTA_T1` |
+| Current control action | durable preflight receipt added using existing guard/persistence owners |
 | Machine-check action | deferred to a later tranche: receipt consumption/interception is not authorized here |
 | Worker blame | N/A with reason: this is a planned architecture progression, not a worker failure |
 
@@ -564,40 +574,45 @@ authorized.
 | Target paths | exact Write Ownership and reviewer closure paths in this work order |
 | Allowed scope source | operator request, fresh GC-018, `MCP-GW-001`, Composition Proof closure |
 | Before status evidence | clean worktree at `087f7678` before dispatch authoring |
-| After status evidence | dispatch gate output for baseline and work order; worker evidence pending execution |
-| Diff evidence | dispatch range diff; worker `git diff --name-status`; reviewer closure diff |
+| After status evidence | accepted material commit `156b0610`; focused/full tests, build, reviewer-fast, and closure gates pass |
+| Diff evidence | dispatch range diff; worker `git diff --name-status`; accepted material commit `156b0610`; reviewer closure diff |
 | Approval boundary | bounded Delta-T1 local deterministic preflight receipt only |
 | Claim boundary | no external interception, provider/live, public-sync, wrapper/proxy, or universal governed-coding claim |
 | Agent type | multi-agent dispatch: Codex -> Claude -> Codex |
 | Invocation ID | `delta-t1-preflight-receipt-dispatch-codex-2026-06-19` |
-| Expected manifest | dispatch: matching GC-018 and this work order; worker: six Write Ownership paths; reviewer: completion/evidence and status conversion |
-| Actual changed set | dispatch: matching GC-018 and this work order |
-| Manifest delta | MATCH for dispatch phase |
+| Expected manifest | closure: matching GC-018, this work order, completion review, and evidence JSON; material: exact nine-path accepted manifest |
+| Actual changed set | material commit `156b0610`: exact nine-path accepted manifest; closure: matching GC-018, this work order, completion review, and evidence JSON |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized |
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order | this file | `Status: DISPATCH_READY_FOR_CLAUDE` | PASS |
-| GC-018 | matching baseline | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_WORKER_RETURN_2026-06-19.md` | `COMPLETE_PENDING_REVIEW` or blocked disposition | REQUIRED |
-| Completion review | reviewer-owned path | final bounded disposition | REQUIRED |
-| Evidence JSON | reviewer-owned path | acceptance assertion results | REQUIRED |
-| Runtime source/tests | Work-Order Fulfillment Manifest | exact changed-set evidence | REQUIRED |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 | matching baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_WORKER_RETURN_2026-06-19.md` | `COMPLETE_PENDING_REVIEW` converted by Codex completion | PASS |
+| Evidence JSON | `docs/reviews/evidence/delta-t1-governance-action-preflight-receipt-2026-06-19.json` | `status: PASS_BOUNDED`; accepted material commit `156b0610` | PASS |
+| Runtime source/tests | Work-Order Fulfillment Manifest | accepted material commit `156b0610`; exact changed-set evidence | PASS |
+| Roadmap state | N/A with reason: Delta-T1 is active-session and `MCP-GW-001` derived | no roadmap mutation | N/A with reason |
+| Registry JSON | BLOCKED with reason: no corpus registry edit authorized in Delta-T1 | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no corpus registry Markdown edit authorized in Delta-T1 | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
+| System loop interlock | N/A with reason: no queue, scheduler, or loop added | no interlock mutation | N/A with reason |
 | Provider/live proof | N/A with reason: component-only claim and live execution forbidden | no live command | N/A with reason |
 | Public-sync | N/A with reason: not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
-| Session continuity | reviewer-owned separate sync | post-closure or blocked state | REQUIRED |
+| Session continuity | N/A with reason: material/closure batch only | separate session-sync follows closure commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required observation | Dispatch state |
 | --- | --- | --- |
-| allowed preflight is durable | JSON readback contains matching `requestId` before valid receipt return | REQUIRED |
-| blocked/escalated cannot proceed | persisted decision plus `governedActionClaimAllowed=false` | REQUIRED |
-| persistence failure fails closed | no valid receipt claim and `auditPersisted=false` | REQUIRED |
-| raw credential is absent | secret-safe response and JSON readback | REQUIRED |
-| claim stays bounded | prompt, worker return, and completion reject external interception claim | REQUIRED |
+| allowed preflight is durable | JSON readback contains matching `requestId` before valid receipt return | PASS |
+| blocked/escalated cannot proceed | persisted decision plus `governedActionClaimAllowed=false` | PASS |
+| persistence failure fails closed | no valid receipt claim and `auditPersisted=false` | PASS |
+| raw credential is absent | secret-safe response and JSON readback | PASS |
+| claim stays bounded | prompt, worker return, and completion reject external interception claim | PASS |
 
 ## Claim Boundary
 
