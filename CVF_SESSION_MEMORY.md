@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`
+Current mode marker: `delta_t4a_approval_backed_mutating_profile_boundary_dispatched_pre_implementation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`.
+Current mode: `delta_t4a_approval_backed_mutating_profile_boundary_dispatched_pre_implementation_ready`.
 
-Previous mode: `delta_t2_governance_action_receipt_consumption_closed_next_launcher_decision_ready`.
+Previous mode: `eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`.
 
 Active handoff:
 
@@ -803,20 +803,19 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`.
+Mode: `delta_t4a_approval_backed_mutating_profile_boundary_dispatched_pre_implementation_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
 
-EKA-R1 External Knowledge Intake Routing Guard T1 is `CLOSED_PASS_BOUNDED` at
-material commit `b00a1292`. The changed-artifact routing guard, focused tests,
-and hook/autorun wiring are complete.
+Delta-T4A Approval-Backed Mutating Profile Boundary is `DISPATCH_READY_FOR_CODEX`
+at dispatch commit `0caf8ec1`. The dispatch package includes fresh GC-018 and
+a source-verified work order for exactly one bounded `approval-marker-write`
+profile.
 
-Next allowed move: select or authorize the next high-leverage foundation
-tranche with fresh GC-018 and source-verified work order. Delta Execution
-Control continuation may be reconsidered because MCP-to-Model-Gateway
-Composition Proof and EKA-R1 are now closed, but Delta-T4 remains parked until
-explicit authorization.
+Next allowed move: Codex runs pre-implementation from the refreshed clean HEAD,
+then implements only the bounded source/test/package/completion/evidence scope
+in the Delta-T4A work order.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
@@ -824,7 +823,7 @@ decision remain held for their explicit authorizations. Public-sync, broad MCP
 implementation, provider/live calls, secrets/quota, runtime queue/scheduler/
 daemon work, raw external package import, public readiness, production
 readiness, release readiness, broad runtime enforcement claims, wrapper/CLI/
-proxy receipt enforcement, IDE/shell/git/filesystem interception, AI
+proxy receipt enforcement beyond Delta-T4A, IDE/shell/git/filesystem interception, AI
 Gateway environment signal capture, external absorption router/checker
 implementation, broad external absorption-chain implementation, universal
 governed-coding control claims, and external-facing readiness claims remain

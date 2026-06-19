@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the Delta-T3 accepted-material state, the current
+This compact handoff records the current Delta-T4A dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: close Delta-T3 Governed Command Launcher after accepted material commit
-`ff584e42` and then route the next bounded operator decision.
+Target: execute Delta-T4A Approval-Backed Mutating Profile Boundary after
+dispatch commit `0caf8ec1`.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -63,13 +63,13 @@ Do not alter material commit `ff584e42` or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select or authorize the next high-leverage foundation tranche with fresh GC-018 and source-verified work order; parked checkpoint=Delta-T4, npm script profiles, arbitrary/mutating execution, provider/live calls, public-sync, queue/daemon, external interception, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t4a_approval_backed_mutating_profile_boundary_dispatched_pre_implementation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=run Delta-T4A pre-implementation, then implement only the bounded approval-backed `approval-marker-write` profile scope; parked checkpoint=arbitrary commands, EDIT/COMMIT profiles, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`eka_r1_external_knowledge_intake_routing_guard_closed_next_foundation_selection_ready`
+`delta_t4a_approval_backed_mutating_profile_boundary_dispatched_pre_implementation_ready`
 
-Current HEAD recorded for this handoff: `b00a1292`
+Current HEAD recorded for this handoff: `0caf8ec1`
 
 Material state:
 
@@ -82,6 +82,7 @@ Material state:
 - Post-Delta-T3 foundation selection commit: `9f0b4c9f`
 - EKA-R1 dispatch commit: `f74a3220`
 - EKA-R1 closure material commit: `b00a1292`
+- Delta-T4A dispatch commit: `0caf8ec1`
 - EKA-R1 focused tests: PASS 11/11
 - EKA-R1 worker-return fast gate: PASS
 - EKA-R1 material pre-closure: PASS except expected pre-session-sync handoff HEAD drift
@@ -108,8 +109,8 @@ and cannot support this tranche's fixed non-destructive command claim.
 
 ## Active Boundary
 
-Delta-T3 and EKA-R1 are closed bounded. Delta-T4 remains parked until explicit
-operator authorization.
+Delta-T3 and EKA-R1 are closed bounded. Delta-T4A is dispatch-ready for Codex
+implementation only within the bounded work order.
 
 ## Latest Work / Changes
 
@@ -122,23 +123,25 @@ EKA-R1 added `governance/compat/check_external_knowledge_intake_routing.py`,
 focused tests, and hook/autorun wiring so changed governed external-intake
 artifacts must cite the chain map and include local routing evidence.
 
+Delta-T4A dispatch added a fresh GC-018 and source-verified work order for one
+approval-backed local mutating profile, `approval-marker-write`, with broad
+runtime enforcement and interception claims explicitly parked.
+
 ## Next Allowed Move
 
-EKA-R1 External Knowledge Intake Routing Guard T1 is `CLOSED_PASS_BOUNDED` at
-material commit `b00a1292`.
+Delta-T4A Approval-Backed Mutating Profile Boundary is
+`DISPATCH_READY_FOR_CODEX` at dispatch commit `0caf8ec1`.
 
-Next allowed move: select or authorize the next high-leverage foundation
-tranche with fresh GC-018 and source-verified work order. Delta Execution
-Control continuation may be reconsidered because MCP-to-Model-Gateway
-Composition Proof and EKA-R1 are now closed, but Delta-T4 remains parked until
-explicit authorization.
+Next allowed move: Codex runs pre-implementation from the refreshed clean HEAD,
+then implements only the bounded `approval-marker-write` profile scope in the
+Delta-T4A work order.
 
 ## Parked Operator Checkpoints
 
 The following remain parked unless a later explicit authorization opens a
 fresh GC-018 and source-verified work order:
 
-1. npm script, arbitrary, mutating, EDIT, or COMMIT execution profiles.
+1. npm script, arbitrary, EDIT, or COMMIT execution profiles.
 2. Direct IDE, shell, git, or filesystem interception outside the wrapper.
 3. Queue, scheduler, daemon, workspace-state, or CVF Web runtime expansion.
 4. Provider/live calls, secrets/quota use, or public-sync.
@@ -156,6 +159,8 @@ LHW24 remains the latest closed numbered LHW wave.
 - Delta-T3 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md`
 - Delta-T3 completion: `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md`
 - Delta-T3 evidence: `docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json`
+- Delta-T4A GC-018: `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md`
+- Delta-T4A work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md`
 - Predecessor continuity: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
 
 ## Agent Operation Trace Block
@@ -164,26 +169,26 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | post-Delta-T3 foundation selection session sync, 2026-06-19 |
+| Session or invocation | Delta-T4A dispatch session sync, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
 | Target paths | active handoff and generated session-state surfaces listed below |
-| Allowed scope source | operator Delta-T3 continuation request and governed file-size rotation requirement |
-| Before status evidence | decision commit `9f0b4c9f`; clean worktree |
-| After status evidence | Delta-T4 parked and EKA-R1 candidate continuity aligned |
+| Allowed scope source | operator authorization to follow the recommended Delta Execution Control continuation |
+| Before status evidence | dispatch commit `0caf8ec1`; clean worktree |
+| After status evidence | Delta-T4A pre-implementation continuity aligned |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | candidate-selection continuity only; no EKA-R1 implementation authorization |
-| Claim boundary | no runtime, provider/live, public-sync, or execution-scope expansion |
+| Approval boundary | session-sync continuity only; implementation remains governed by the Delta-T4A work order |
+| Claim boundary | no runtime implementation, provider/live, public-sync, or universal enforcement claim in this session-sync commit |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `post-delta-t3-foundation-selection-session-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/postDeltaT3NextFoundationSelection20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `delta-t4a-dispatch-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT4AApprovalBackedMutatingProfileBoundaryDispatch20260619.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT4AApprovalBackedMutatingProfileBoundaryDispatch20260619.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
 ## Claim Boundary
 
 This handoff proves continuity only. Runtime claims are bounded to the committed
-Delta-T3 implementation and its cited tests/smoke evidence. It does not prove
+Delta-T3 implementation and Delta-T4A dispatch evidence. It does not prove
 mandatory invocation, direct external interception, provider behavior, hosted
 freshness, public readiness, production readiness, or universal control.
