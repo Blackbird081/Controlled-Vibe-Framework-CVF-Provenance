@@ -1,14 +1,14 @@
 # CVF Agent Work Order - Delta-T7 Receipt-To-Execution Evidence Auditor
 
 Memory class: FULL_RECORD
-Status: DISPATCH_READY
+Status: COMPLETE_PENDING_REVIEW
 Date: 2026-06-19
 docType: work_order
 Batch ID: DELTA-T7
 Owner: Codex multi-role executor
 Commit mode: WORKER_MAY_COMMIT
 dispatchBaseHead: `f3219048`
-executionBaseHead: N/A with reason: captured from dispatch continuity bridge
+executionBaseHead: `2fb39e44`
 closureBaseHead: N/A with reason: captured after material commit
 rawMemoryReleased: false
 
@@ -111,7 +111,7 @@ Rollback boundary: revert Delta-T7 module/tests and matching artifacts only.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | one-agent-many-roles with phase-separated evidence |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`f3219048`; later anchors recorded by commit |
+| baseHeadFor(phase) | dispatch=`f3219048`; execution=`2fb39e44`; closure set from material commit |
 | changedSetScope(phase) | dispatch packet; implementation module/tests/completion/evidence; closure conversion; separate sync |
 | traceScope(phase, actor) | exact manifests and commands per phase |
 | commitOwner(phase) | Codex |
@@ -243,12 +243,12 @@ Session sync: active handoff/front door/generated state only in separate phase.
 ## Acceptance Criteria
 
 - [x] dispatch sources verified;
-- [ ] valid non-mutating chain passes;
-- [ ] valid fixed marker chain passes;
-- [ ] identity/binding/chronology/finalization/profile mismatches fail;
-- [ ] expected/observed changed-set mismatch fails;
-- [ ] focused tests, package tests, and build pass;
-- [ ] claim boundary remains explicit;
+- [x] valid non-mutating chain passes;
+- [x] valid fixed marker chain passes;
+- [x] identity/binding/chronology/finalization/profile mismatches fail;
+- [x] expected/observed changed-set mismatch fails;
+- [x] focused tests, package tests, and build pass;
+- [x] claim boundary remains explicit;
 - [ ] continuity updated after closure.
 
 ## Verification Commands
@@ -324,7 +324,7 @@ Reason: private provenance evidence auditor.
 
 | Field | Value |
 | --- | --- |
-| Status | DISPATCH_READY |
+| Status | COMPLETE_PENDING_REVIEW |
 | Base | `f3219048` |
 | Public export | `DEFERRED_PRIVATE_ONLY` |
 
@@ -334,20 +334,20 @@ Reason: private provenance evidence auditor.
 | --- | --- |
 | Actor | Codex dispatcher |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T7 dispatch, 2026-06-19 |
+| Session or invocation | Delta-T7 material, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | source reads, apply_patch, governance gates |
-| Target paths | matching Delta-T7 GC-018 and work order |
-| Allowed scope source | operator request and current session state |
-| Before status evidence | worktree clean at base `f3219048` before dispatch authoring |
-| After status evidence | two dispatch artifacts |
-| Diff evidence | exact dispatch diff and pre-dispatch output |
-| Approval boundary | dispatch only |
+| Target paths | five-file Delta-T7 material manifest |
+| Allowed scope source | dispatch `264cc598` |
+| Before status evidence | clean execution base `2fb39e44` |
+| After status evidence | pure module, tests, work-order update, completion, evidence |
+| Diff evidence | exact diff plus focused/full/build output |
+| Approval boundary | pure audit implementation only |
 | Claim boundary | pure supplied-evidence audit; no runtime/interception claim |
 | Agent type | single-agent multi-role |
-| Invocation ID | `delta-t7-dispatch-codex-2026-06-19` |
-| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_FOR_CODEX_2026-06-19.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_FOR_CODEX_2026-06-19.md` |
+| Invocation ID | `delta-t7-material-codex-2026-06-19` |
+| Expected manifest | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/receipt-to-execution-evidence-auditor.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/receipt-to-execution-evidence-auditor.test.ts`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t7-receipt-to-execution-evidence-auditor-2026-06-19.json` |
+| Actual changed set | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/receipt-to-execution-evidence-auditor.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/receipt-to-execution-evidence-auditor.test.ts`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t7-receipt-to-execution-evidence-auditor-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
