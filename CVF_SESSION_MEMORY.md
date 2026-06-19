@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`
+Current mode marker: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`.
+Current mode: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`.
 
 Active handoff:
 
@@ -315,6 +315,17 @@ decisions, and GC-018/work-order/source-verification/autorun escalation when
 implementation is needed. No provider/live call, secrets/quota use,
 public-sync, runtime enforcement, external absorption router/checker
 implementation, or readiness claim was authorized or performed.
+
+MCP to Model Gateway Composition Proof is `CLOSED_PASS_BOUNDED` at material
+commit `befad4a9`. The existing MCP `cvf_model_gateway_execute` adapter now
+has deterministic proof coverage showing it can call a real Model Gateway
+`ProviderExecutionBridge` through the injected executor port and preserve
+response/error/receipt evidence. Raw credential-bearing MCP input is rejected
+before executor call, and adapter-thrown details are shielded. No live provider
+call, secrets/quota use, public-sync, broad MCP runtime enforcement, durable
+audit, wrapper/proxy execution control, universal governed-coding control,
+production readiness, public readiness, release readiness, or external-facing
+readiness was authorized or performed.
 
 Prompt read-first placement finding is remediated at material commit
 `7635a4a1`. The prompt envelope standard, work-order template, template family
@@ -769,28 +780,29 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `external_knowledge_absorption_chain_map_closed_composition_proof_ready_delta_parked`.
+Mode: `mcp_model_gateway_composition_proof_closed_delta_execution_control_ready`.
 
-External Knowledge Absorption Chain Map is `CLOSED_PASS_BOUNDED` at material
-commit `7c3db96a`, following MCP Gateway Execution Control Legacy Recheck
-material commit `5f75d52c`.
+MCP to Model Gateway Composition Proof is `CLOSED_PASS_BOUNDED` at material
+commit `befad4a9`, following External Knowledge Absorption Chain Map material
+commit `7c3db96a` and MCP Gateway Execution Control Legacy Recheck material
+commit `5f75d52c`.
 
-Next allowed move: open MCP to Model Gateway Composition Proof only after fresh
-GC-018 and a source-verified work order using `MCP-GW-001` legacy recheck
-evidence plus
-`docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
-as upstream context. Delta Execution Control remains parked until after
-Composition Proof.
+Next allowed move: open Delta Execution Control only after fresh GC-018 and a
+source-verified work order using `MCP-GW-001`, the external knowledge
+absorption chain map, and the MCP to Model Gateway Composition Proof artifacts
+as upstream context.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
 decision remain held for their explicit authorizations. Public-sync, broad MCP
 implementation, provider/live calls, secrets/quota, runtime queue/scheduler/
 daemon work, raw external package import, public readiness, production
-readiness, release readiness, runtime enforcement claims, governed action
-requests, AI Gateway environment signal capture, external absorption
-router/checker implementation, broad external absorption-chain implementation,
-and external-facing readiness claims remain parked.
+readiness, release readiness, runtime enforcement claims, durable audit
+implementation, wrapper/proxy execution control, governed action requests, AI
+Gateway environment signal capture, external absorption router/checker
+implementation, broad external absorption-chain implementation, universal
+governed-coding control claims, and external-facing readiness claims remain
+parked unless separately authorized by the Delta work order.
 
 Do not redispatch Model Gateway C-02 P2 from stale continuity text. C-02 P2 is
 already closed; Model Gateway P3 requires fresh operator authorization, fresh
