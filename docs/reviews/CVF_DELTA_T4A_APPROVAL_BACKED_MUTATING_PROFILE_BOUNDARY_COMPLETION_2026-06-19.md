@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -12,14 +12,14 @@ Worker / reviewer / closer: Codex, phase-separated single-agent route
 
 Execution base: `22f35116`
 
-Material commit: `PENDING_MATERIAL_COMMIT`
+Material commit: `d2fc4f5b`
 
-Closure base: `PENDING_POST_MATERIAL_SYNC`
+Closure base: `136b9095`
 
 ## Purpose
 
-Record implementation and adversarial self-review of the bounded Delta-T4A
-approval-backed mutating profile before material commit and closure conversion.
+Record implementation, adversarial self-review, and closure conversion of the
+bounded Delta-T4A approval-backed mutating profile.
 
 ## Scope / Target / Owner Boundary
 
@@ -105,7 +105,7 @@ mutation boundary and makes no provider or external-service governance claim.
 | --- | --- |
 | GC-018 to work order | fixed approval-backed marker mutation and claim boundaries preserved |
 | Work order to implementation | runtime edits stay in named MCP source/test scope plus this completion/evidence |
-| Required manifest to actual material set | MATCH pending material commit |
+| Required manifest to actual material set | MATCH at material commit `d2fc4f5b` |
 | Forbidden scope | no dependency, lockfile, Model Gateway, Web, workspace state, queue, hook, public, provider, or credential path changed |
 
 ## Finding-To-Governance Learning Disposition
@@ -149,14 +149,14 @@ added.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | Delta-T4A work order | closure conversion pending | PENDING_CLOSURE |
+| Work order status | Delta-T4A work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | this file | Codex review and two resolved findings | PASS |
 | Roadmap state | N/A with reason: active-session/operator-derived tranche | no roadmap mutation | N/A with reason |
 | Registry JSON | BLOCKED with reason: no corpus registry edit authorized | no registry path changed | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
 | System loop interlock | N/A with reason: no queue/scheduler/loop added | no interlock mutation | N/A with reason |
-| Session continuity | accepted-material state | pending material commit | PENDING_CLOSURE |
+| Session continuity | accepted-material state | session-sync commit `136b9095` | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -181,14 +181,14 @@ added.
 | Target paths | exact seven-path material manifest below |
 | Allowed scope source | Delta-T4A GC-018 and work order |
 | Before status evidence | execution base `22f35116`; clean worktree before edits |
-| After status evidence | material pending commit with tests/build/smoke passed |
-| Diff evidence | `git diff --name-status`; focused/full tests; build; binary smoke |
+| After status evidence | material commit `d2fc4f5b`; accepted-material session sync `136b9095` |
+| Diff evidence | `git diff --name-status`; focused/full tests; build; binary smoke; closure conversion diff |
 | Approval boundary | one fixed approval-backed marker-write profile only |
 | Claim boundary | no arbitrary command, EDIT/COMMIT, provider/live, public-sync, queue, daemon, interception, or universal governed coding |
 | Agent type | single-agent multi-role Codex material phase |
 | Invocation ID | `delta-t4a-approval-backed-mutating-profile-boundary-material-codex-2026-06-19` |
-| Expected manifest | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-exec.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/mutating-profile-approval.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/mutating-profile-approval.test.ts`; `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json` |
-| Actual changed set | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-exec.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/mutating-profile-approval.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/mutating-profile-approval.test.ts`; `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

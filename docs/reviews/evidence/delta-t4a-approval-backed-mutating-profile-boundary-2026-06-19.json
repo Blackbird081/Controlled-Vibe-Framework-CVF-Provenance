@@ -1,9 +1,11 @@
 {
   "schemaVersion": "1.0.0",
   "evidenceId": "delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19",
-  "status": "PASS_BOUNDED_PENDING_CLOSURE",
+  "status": "PASS_BOUNDED",
   "executionBaseHead": "22f35116",
-  "materialCommit": "PENDING_MATERIAL_COMMIT",
+  "materialCommit": "d2fc4f5b",
+  "acceptedMaterialSessionSyncCommit": "136b9095",
+  "closureBaseHead": "136b9095",
   "binary": "cvf-governed-exec",
   "launcherContractVersion": "cvf.delta.governedCommandLauncher.v1",
   "approvalContractVersion": "cvf.delta.mutatingProfileApprovalPolicy.v1",

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -26,9 +26,11 @@ governed-coding claims.
 
 | Field | Disposition |
 | --- | --- |
-| Decision | Dispatch one bounded local mutating-profile boundary implementation |
+| Decision | Closed one bounded local mutating-profile boundary implementation |
 | Proposed tranche | Delta-T4A Approval-Backed Mutating Profile Boundary |
 | Base head | `5c718d46` |
+| Material commit | `d2fc4f5b` |
+| Accepted-material session sync | `136b9095` |
 | Worker / reviewer / closer | Codex across phase-separated roles |
 | Route | `SINGLE_AGENT_MULTI_ROLE` |
 | Upstream evidence | Delta-T1/T2/T3 closures, MCP-Gateway Composition Proof, EKA-R1 guard, workspace runtime contract |
@@ -181,16 +183,16 @@ These are new authorized fields, not existing runtime facts.
 
 ## Acceptance Criteria
 
-| ID | Criterion | Dispatch state |
+| ID | Criterion | Closure state |
 | --- | --- | --- |
-| AC1 | T4A adds exactly one mutating static profile and leaves T1/T2 contracts unchanged. | READY |
-| AC2 | Runner is unreachable unless T1 ALLOW, T2 consumption, T3 intent, and T4A approval all succeed. | READY |
-| AC3 | The mutating profile can write only the fixed marker target inside the resolved workspace root. | READY |
-| AC4 | Missing, expired, wrong-profile, or wrong-target approval blocks before runner. | READY |
-| AC5 | CLI remains strict and does not expose arbitrary executable, args, env, shell, EDIT, or COMMIT. | READY |
-| AC6 | Approval and execution evidence are secret-safe and do not persist stdout/stderr or raw credential values. | READY |
-| AC7 | Focused tests, full MCP tests, build, smoke proof, reviewer-fast, and governance gates pass. | READY |
-| AC8 | No provider/live, public-sync, queue, daemon, workspace-state, external interception, or universal enforcement claim occurs. | READY |
+| AC1 | T4A adds exactly one mutating static profile and leaves T1/T2 contracts unchanged. | PASS |
+| AC2 | Runner is unreachable unless T1 ALLOW, T2 consumption, T3 intent, and T4A approval all succeed. | PASS |
+| AC3 | The mutating profile can write only the fixed marker target inside the resolved workspace root. | PASS |
+| AC4 | Missing, expired, wrong-profile, or wrong-target approval blocks before runner. | PASS |
+| AC5 | CLI remains strict and does not expose arbitrary executable, args, env, shell, EDIT, or COMMIT. | PASS |
+| AC6 | Approval and execution evidence are secret-safe and do not persist stdout/stderr or raw credential values. | PASS |
+| AC7 | Focused tests, full MCP tests, build, smoke proof, reviewer-fast, and governance gates pass. | PASS |
+| AC8 | No provider/live, public-sync, queue, daemon, workspace-state, external interception, or universal enforcement claim occurs. | PASS |
 
 ## Evidence / Verification
 
@@ -216,9 +218,9 @@ Reason: private provenance Delta runtime tranche. No public-sync authorization.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Baseline status | this file | `Status: DISPATCH_READY` | READY |
-| Work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md` | source-verified dispatch packet | READY |
-| Material implementation | MCP package source/tests and completion evidence | pending implementation | READY |
+| Baseline status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md` | source-verified closure packet | PASS |
+| Material implementation | MCP package source/tests and completion evidence | material commit `d2fc4f5b` | PASS |
 | Provider/live proof | N/A with reason: no provider claim | no live provider command | N/A with reason |
 | Public-sync | N/A with reason: not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CODEX
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `5c718d46`
 
-executionBaseHead: `PENDING_POST_DISPATCH_SYNC`
+executionBaseHead: `22f35116`
 
-closureBaseHead: `PENDING_POST_MATERIAL_SYNC`
+closureBaseHead: `136b9095`
 
 rawMemoryReleased: false
 
@@ -104,14 +104,14 @@ workspaces.
 | Level | Artifact | Status |
 | --- | --- | --- |
 | Operator authorization | current request on 2026-06-19 | ACCEPTED for Delta-T4A dispatch and bounded implementation |
-| Active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | EKA-R1 closed; next high-leverage tranche selection ready |
-| Active handoff | `AGENT_HANDOFF_V20_2026-06-19.md` | Delta-T4 parked until explicit authorization; current request releases T4A only |
+| Active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Delta-T4A accepted material pending closure at closure base |
+| Active handoff | `AGENT_HANDOFF_V20_2026-06-19.md` | Delta-T4A accepted material pending closure at closure base |
 | Delta-T1 prerequisite | `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Delta-T2 prerequisite | `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Delta-T3 prerequisite | `docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Composition proof prerequisite | `docs/reviews/CVF_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | EKA-R1 prerequisite | `docs/reviews/CVF_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md` | `DISPATCH_READY` |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Roadmap | N/A with reason: Delta-T4A follows active-session operator authorization, not a numbered roadmap tranche | N/A with reason |
 
 ## Agent Handoff Contract Control Block
@@ -122,7 +122,7 @@ workspaces.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | one-agent-many-roles: Codex holds dispatcher, implementer, reviewer, closer, and session-sync roles across distinct phases |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`5c718d46`; execution=post-dispatch session-sync HEAD; closure=post-material session-sync HEAD |
+| baseHeadFor(phase) | dispatch=`5c718d46`; execution=`22f35116`; closure=`136b9095` |
 | changedSetScope(phase) | dispatch baseline/work order; implementation named MCP source/tests/completion/evidence; closure status conversion; protected continuity only in session-sync |
 | traceScope(phase, actor) | Codex records exact phase-local manifests, commands, and commit anchors |
 | commitOwner(phase) | Codex for every phase |
@@ -267,13 +267,13 @@ Applicability: N/A with reason: no numbered roadmap owns Delta-T4A. Trace chain
 is active session -> operator authorization -> Delta-T1/T2/T3 closure ->
 MCP composition proof -> EKA-R1 -> fresh GC-018 -> this work order.
 
-| Upstream requirement | Work order section | Deliverable | Verification | Dispatch state |
+| Upstream requirement | Work order section | Deliverable | Verification | Closure state |
 | --- | --- | --- | --- | --- |
-| approval-backed mutation | Delta-T4A Execution Control Block | approval policy plus fixed marker profile | focused approval/target tests | READY |
-| no arbitrary shell | Scope and control blocks | static profile registry and direct runner | negative CLI/profile tests | READY |
-| durable evidence | Delta-T4A Execution Control Block | T1/T2/T3 plus T4A approval/evidence | temp-directory readback | READY |
-| no universal claim | Claim Boundary | bounded response/completion language | text and diff review | READY |
-| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | READY |
+| approval-backed mutation | Delta-T4A Execution Control Block | approval policy plus fixed marker profile | focused approval/target tests | PASS |
+| no arbitrary shell | Scope and control blocks | static profile registry and direct runner | negative CLI/profile tests | PASS |
+| durable evidence | Delta-T4A Execution Control Block | T1/T2/T3 plus T4A approval/evidence | temp-directory readback | PASS |
+| no universal claim | Claim Boundary | bounded response/completion language | text and diff review | PASS |
+| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | PASS |
 
 ## Write Ownership
 
@@ -311,9 +311,9 @@ record any reviewer finding in the completion review.
 
 ## Return-To-Orchestrator Conditions
 
-Return `COMPLETE_PENDING_CLOSURE` only when every required artifact exists,
-all acceptance criteria are resolved as PASS, PASS_BOUNDED, or N/A with reason,
-and the material range has focused/full test evidence.
+Closure is valid only when every required artifact exists, all acceptance
+criteria are resolved as PASS, PASS_BOUNDED, or N/A with reason, and the
+material range has focused/full test evidence.
 
 Return `BLOCKED_WITH_REASON` if implementation requires arbitrary command
 construction, caller-selected target paths, shell/interpreter execution,
@@ -342,13 +342,24 @@ interception claim, and any universal governed-coding claim.
 
 ## Work-Order Fulfillment Manifest
 
-| Artifact | Required result |
+| Artifact | Closure result |
 | --- | --- |
-| approval policy module | approval record/verdict validation, target allowlist, expiry, profile binding |
-| launcher module | fixed mutating profile, canonical binding, admission sequence, approval gate, injected runner |
-| focused tests | pass, missing approval, expired approval, target mismatch, runner unreachable before approval, fixed target mutation |
-| CLI | remains strict; no arbitrary executable, args, env, shell, EDIT, or COMMIT |
-| completion/evidence | exact changed set, assertions, commands, and bounded closure claim |
+| approval policy module | PASS: approval record/verdict validation, target allowlist, expiry, profile binding |
+| launcher module | PASS: fixed mutating profile, canonical binding, admission sequence, approval gate, injected runner |
+| focused tests | PASS: missing approval, expired approval, target mismatch, runner unreachable before approval, fixed target mutation |
+| CLI | PASS: remains strict; no arbitrary executable, args, env, shell, EDIT, or COMMIT |
+| completion/evidence | PASS: exact changed set, assertions, commands, and bounded closure claim |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| full admission precedes process | T1 audit, T2 marker, T3 intent, T4A approval before runner | ordering and failure-injection tests | PASS |
+| arbitrary execution unavailable | strict profile registry/parser | unknown profile and extra args reject | PASS |
+| marker target fixed | no caller target path | source, tests, and smoke readback | PASS |
+| approval failure blocks runner | runner not called | missing-policy and missing-approval tests | PASS |
+| failure evidence is durable | failed approval/runner finalizes receipt | focused failure tests | PASS |
+| execution claim stays bounded | wrapper marker true; interception false | response and marker assertions | PASS |
 
 ## Required Artifact Manifest
 
@@ -452,22 +463,22 @@ workspace for the mutating profile.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex dispatcher |
+| Actor | Codex closer |
 | Provider or surface | local provenance workspace |
-| Session or invocation | `delta-t4a-dispatch-codex-2026-06-19` |
+| Session or invocation | `delta-t4a-closure-codex-2026-06-19` |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, governance gates |
-| Target paths | this work order and matching GC-018 |
+| Target paths | this work order, matching GC-018, completion review, and evidence JSON |
 | Allowed scope source | user authorization to follow Delta continuation recommendation |
-| Before status evidence | clean worktree at `5c718d46` |
-| After status evidence | dispatch artifacts ready for gates and commit |
-| Diff evidence | `git diff --name-status`; `git diff --check`; pre-dispatch gate |
+| Before status evidence | accepted-material session sync `136b9095` |
+| After status evidence | closure artifacts converted to `CLOSED_PASS_BOUNDED` |
+| Diff evidence | `git diff --name-status`; `git diff --check`; closure gates |
 | Approval boundary | one fixed approval-backed marker-write profile only |
 | Claim boundary | no arbitrary command, EDIT/COMMIT, provider/live, public-sync, queue, daemon, interception, or universal governed coding |
-| Agent type | single-agent multi-role Codex dispatch phase |
-| Invocation ID | `delta-t4a-approval-backed-mutating-profile-boundary-dispatch-codex-2026-06-19` |
-| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md` |
+| Agent type | single-agent multi-role Codex closure phase |
+| Invocation ID | `delta-t4a-approval-backed-mutating-profile-boundary-closure-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none planned |
 
@@ -476,6 +487,24 @@ workspace for the mutating profile.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance Delta runtime tranche. Public-sync is not authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 baseline | `docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Material implementation | MCP package source/tests and completion evidence | material commit `d2fc4f5b` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: active-session/operator-derived tranche | no roadmap mutation | N/A with reason |
+| Registry JSON | BLOCKED with reason: no corpus registry edit authorized | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
+| System loop interlock | N/A with reason: no queue/scheduler/loop added | no interlock mutation | N/A with reason |
+| Evidence JSON | `docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json` | `status: PASS_BOUNDED` | PASS |
+| Session continuity | active handoff and session state | accepted-material session sync `136b9095` | PASS |
+| Provider/live proof | N/A with reason: no provider claim | no live provider command | N/A with reason |
+| Public-sync | N/A with reason: not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
 
 ## Claim Boundary
 
