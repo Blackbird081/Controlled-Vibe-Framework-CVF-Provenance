@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACCEPTED_MATERIAL_PENDING_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -14,8 +14,8 @@ Execution base: `0a345338`
 
 ## Purpose
 
-Record implementation and adversarial self-review of the bounded Delta-T2
-receipt consumer before accepted-material commit and closure conversion.
+Record implementation, adversarial self-review, accepted material commit
+`d3bf3594`, and bounded closure of the Delta-T2 receipt consumer.
 
 ## Scope / Target / Owner Boundary
 
@@ -141,14 +141,14 @@ enforcement claim is added.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | Delta-T2 work order | accepted material; closure conversion follows commit evidence | N/A with reason |
+| Work order status | Delta-T2 work order | `Status: CLOSED_PASS_BOUNDED`; accepted material commit `d3bf3594` | PASS |
 | Completion or reviewer artifact | this file | Codex review and resolved finding | PASS |
 | Roadmap state | N/A with reason: active-session/operator-derived tranche | no roadmap mutation | N/A with reason |
 | Registry JSON | BLOCKED with reason: no corpus registry edit authorized | no registry path changed | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: no registry Markdown edit authorized | no registry path changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
 | System loop interlock | N/A with reason: no queue/scheduler/loop added | no interlock mutation | N/A with reason |
-| Session continuity | N/A with reason: material batch only | separate post-material session sync | N/A with reason |
+| Session continuity | N/A with reason: material/closure batch only | separate final session-sync owned by Codex | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -167,20 +167,20 @@ enforcement claim is added.
 | --- | --- |
 | Actor | Codex implementer/reviewer |
 | Provider or surface | local provenance workspace |
-| Session or invocation | `delta-t2-receipt-consumption-material-2026-06-19` |
+| Session or invocation | `delta-t2-receipt-consumption-closure-2026-06-19` |
 | Working directory | repository root and MCP package |
 | Command or tool surface | PowerShell, apply_patch, Vitest, TypeScript, Python governance gates |
-| Target paths | exact eight-path material manifest below |
+| Target paths | exact four-path closure manifest below; material commit retains the eight-path implementation manifest |
 | Allowed scope source | Delta-T2 GC-018 and work order |
-| Before status evidence | clean implementation base `0a345338` |
-| After status evidence | focused/full tests and build pass; one reviewer repair resolved |
-| Diff evidence | `git diff --name-status`; `git diff --check`; focused/full tests; reviewer-fast |
+| Before status evidence | clean closure base `d954a59f` after accepted material commit `d3bf3594` |
+| After status evidence | focused/full tests and build pass; one reviewer repair resolved; bounded closure conversion complete |
+| Diff evidence | accepted material commit `d3bf3594`; closure `git diff --name-status`; `git diff --check`; focused/full tests; reviewer-fast |
 | Approval boundary | deterministic receipt validation and atomic one-time consumption only |
 | Claim boundary | no action execution, wrapper enforcement, provider/live, public-sync, or universal governed coding |
-| Agent type | single-agent multi-role Codex material phase |
-| Invocation ID | `delta-t2-receipt-consumption-material-codex-2026-06-19` |
-| Expected manifest | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/persistence/json-receipt-consumption.store.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-receipt-consumer.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-receipt-consumer.test.ts`; `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json` |
-| Actual changed set | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/persistence/json-receipt-consumption.store.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/prompt/system-prompt.test.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-receipt-consumer.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-receipt-consumer.test.ts`; `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json` |
+| Agent type | single-agent multi-role Codex closure phase |
+| Invocation ID | `delta-t2-receipt-consumption-closure-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -192,7 +192,7 @@ Reason: private provenance runtime component. Public-sync is not authorized.
 
 ## Claim Boundary
 
-Accepted material proves only deterministic validation and atomic one-time
+Closed bounded evidence proves only deterministic validation and atomic one-time
 consumption of an invoked fresh matching Delta-T1 receipt. It does not execute
 the action, force MCP use, enforce a wrapper, intercept external tools, prove
 provider behavior, or establish universal governed coding.

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -172,17 +172,17 @@ These are new authorized fields, not existing runtime facts.
 
 ## Acceptance Criteria
 
-| ID | Criterion | Dispatch state |
+| ID | Criterion | Final state |
 | --- | --- | --- |
-| AC1 | Distinct Delta-T2 tool is registered without changing Delta-T1 or Gamma contracts. | REQUIRED |
-| AC2 | Only one unambiguous persisted Delta-T1 ALLOW receipt can validate. | REQUIRED |
-| AC3 | Action class, safe action, target binding, contract, and TTL must match. | REQUIRED |
-| AC4 | Successful consumption creates a secret-safe atomic marker before returning eligibility. | REQUIRED |
-| AC5 | Replay, stale, mismatch, BLOCK, ESCALATE, missing, ambiguous, and storage failure paths fail closed. | REQUIRED |
-| AC6 | Marker and response omit raw action, target paths, and credential-bearing values. | REQUIRED |
-| AC7 | Prompt requires consumption after preflight but preserves no-execution/no-interception language. | REQUIRED |
-| AC8 | Focused tests, full MCP tests, MCP build, and governance gates pass. | REQUIRED |
-| AC9 | No action execution, provider/live, public-sync, queue, workspace-state, or broad interception work occurs. | REQUIRED |
+| AC1 | Distinct Delta-T2 tool is registered without changing Delta-T1 or Gamma contracts. | PASS |
+| AC2 | Only one unambiguous persisted Delta-T1 ALLOW receipt can validate. | PASS |
+| AC3 | Action class, safe action, target binding, contract, and TTL must match. | PASS |
+| AC4 | Successful consumption creates a secret-safe atomic marker before returning eligibility. | PASS |
+| AC5 | Replay, stale, mismatch, BLOCK, ESCALATE, missing, ambiguous, and storage failure paths fail closed. | PASS |
+| AC6 | Marker and response omit raw action, target paths, and credential-bearing values. | PASS |
+| AC7 | Prompt requires consumption after preflight but preserves no-execution/no-interception language. | PASS |
+| AC8 | Focused tests, full MCP tests, MCP build, and governance gates pass. | PASS |
+| AC9 | No action execution, provider/live, public-sync, queue, workspace-state, or broad interception work occurs. | PASS |
 
 ## Evidence / Verification
 

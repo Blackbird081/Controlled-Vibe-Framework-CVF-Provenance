@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CODEX
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `8c4c95ca`
 
-executionBaseHead: `8c4c95ca`
+executionBaseHead: `0a345338`
 
-closureBaseHead: `8c4c95ca`
+closureBaseHead: `d954a59f`
 
 rawMemoryReleased: false
 
@@ -95,7 +95,7 @@ quota, public action, destructive action, or irreversible external action.
 | Legacy absorption | `MCP-GW-001` in `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | source-backed receipt enforcement direction |
 | Chain authority | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | runtime work requires fresh GC-018/work order/source verification |
 | Delta-T1 prerequisite | `docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
-| GC-018 | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md` | DISPATCH_READY |
+| GC-018 | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md` | `CLOSED_PASS_BOUNDED` |
 | Roadmap | N/A with reason: Delta-T2 follows active-session operator authorization, not a numbered roadmap tranche | N/A with reason |
 
 ## Agent Handoff Contract Control Block
@@ -257,11 +257,11 @@ is active session -> operator authorization -> Delta-T1 closure -> fresh GC-018
 
 | Upstream requirement | Work order section | Deliverable | Verification | Dispatch state |
 | --- | --- | --- | --- | --- |
-| receipt consumption | Delta-T2 Control Block | modular MCP consumer | focused tests | READY |
-| anti-replay | Delta-T2 Control Block | atomic marker store | concurrent/replay tests | READY |
-| no bypass claim | Claim Boundary | bounded response/prompt/completion | text and diff review | READY |
-| no execution claim | Execution Control Block | false proof markers | focused tests | READY |
-| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | READY |
+| receipt consumption | Delta-T2 Control Block | modular MCP consumer | focused tests | PASS |
+| anti-replay | Delta-T2 Control Block | atomic marker store | concurrent/replay tests | PASS |
+| no bypass claim | Claim Boundary | bounded response/prompt/completion | text and diff review | PASS |
+| no execution claim | Execution Control Block | false proof markers | focused tests | PASS |
+| source verification and autorun | source/pre-flight blocks | command evidence | governance gates | PASS |
 
 ## Write Ownership
 
@@ -416,10 +416,10 @@ source-verified work order.
 | Agent Handoff Contract Control Block | PASS |
 | Single-Agent Multi-Role Control Block | PASS |
 | Work-Order Fulfillment Manifest | PASS |
-| Runtime implementation | REQUIRED |
-| Focused/full verification | REQUIRED |
-| Completion/evidence and closure gates | REQUIRED |
-| Separate session continuity | REQUIRED |
+| Runtime implementation | PASS |
+| Focused/full verification | PASS |
+| Completion/evidence and closure gates | PASS |
+| Separate session continuity | PASS |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -428,8 +428,8 @@ source-verified work order.
 | Finding | Delta-T1 issues a durable receipt but no component consumes it or rejects replay |
 | Defect class | `RUNTIME_SIGNAL_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
-| Escalation state | `DISPATCHED_BOUNDED_DELTA_T2` |
-| Current control action | add deterministic receipt verification and atomic one-time consumption |
+| Escalation state | `CLOSED_BOUNDED_DELTA_T2` |
+| Current control action | deterministic receipt verification and atomic one-time consumption added |
 | Machine-check action | later wrapper/launcher enforcement remains separately authorized |
 | Worker blame | N/A with reason: planned architecture progression |
 
@@ -443,22 +443,22 @@ Reason: private provenance Delta runtime implementation. No public-sync.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex dispatcher |
+| Actor | Codex dispatcher, implementer, reviewer, and closer |
 | Provider or surface | local provenance workspace |
-| Session or invocation | `delta-t2-receipt-consumption-dispatch-2026-06-19` |
+| Session or invocation | `delta-t2-receipt-consumption-closure-2026-06-19` |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, rg, apply_patch, Python governance gates |
-| Target paths | matching Delta-T2 GC-018 and this work order |
+| Target paths | exact four-path closure manifest below |
 | Allowed scope source | operator request, Delta-T1 closure, `MCP-GW-001` |
-| Before status evidence | clean worktree at `8c4c95ca` |
-| After status evidence | dispatch artifacts authored and source-verified |
-| Diff evidence | `git diff --name-status`; `git diff --check`; pre-dispatch gates |
+| Before status evidence | clean closure base `d954a59f` after accepted material commit `d3bf3594` |
+| After status evidence | bounded implementation accepted; focused/full tests, build, reviewer-fast, and closure checks pass |
+| Diff evidence | dispatch range; accepted material commit `d3bf3594`; closure `git diff --name-status`; `git diff --check` |
 | Approval boundary | deterministic receipt verification/consumption only |
 | Claim boundary | no action execution, wrapper enforcement, provider/live, public-sync, or universal governed-coding claim |
-| Agent type | single-agent multi-role Codex dispatch phase |
-| Invocation ID | `delta-t2-receipt-consumption-dispatch-codex-2026-06-19` |
-| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md` |
+| Agent type | single-agent multi-role Codex closure phase |
+| Invocation ID | `delta-t2-receipt-consumption-closure-codex-2026-06-19` |
+| Expected manifest | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_2026-06-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_FOR_CODEX_2026-06-19.md`; `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none authorized |
 
@@ -466,24 +466,29 @@ Reason: private provenance Delta runtime implementation. No public-sync.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order | this file | `Status: DISPATCH_READY_FOR_CODEX` | PASS |
-| GC-018 | matching baseline | `Status: DISPATCH_READY` | PASS |
-| Completion review | reviewer-owned path | final bounded disposition | REQUIRED |
-| Evidence JSON | reviewer-owned path | acceptance assertion results | REQUIRED |
-| Runtime source/tests | Required Artifact Manifest | exact changed-set evidence | REQUIRED |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 | matching baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Evidence JSON | `docs/reviews/evidence/delta-t2-governance-action-receipt-consumption-2026-06-19.json` | `status: PASS_BOUNDED`; accepted material commit `d3bf3594` | PASS |
+| Runtime source/tests | Required Artifact Manifest | accepted material commit `d3bf3594`; exact changed-set evidence | PASS |
+| Roadmap state | N/A with reason: Delta-T2 is active-session and operator derived | no roadmap mutation | N/A with reason |
+| Registry JSON | BLOCKED with reason: no corpus registry edit authorized in Delta-T2 | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no corpus registry Markdown edit authorized in Delta-T2 | no registry Markdown path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external source consumed | repo-local sources only | N/A with reason |
+| System loop interlock | N/A with reason: no queue, scheduler, or loop added | no interlock mutation | N/A with reason |
 | Provider/live proof | N/A with reason: forbidden and unnecessary | no live command | N/A with reason |
 | Public-sync | N/A with reason: not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
-| Session continuity | separate phase | dispatch/material/closure continuity | REQUIRED |
+| Session continuity | N/A with reason: material/closure batch only | separate final session-sync follows closure commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
-| Assertion | Required observation | Dispatch state |
+| Assertion | Required observation | Final state |
 | --- | --- | --- |
-| valid receipt can be consumed once | one successful atomic marker claim | REQUIRED |
-| replay fails closed | second/concurrent claim is rejected | REQUIRED |
-| stale or mismatched receipt fails | no marker and no eligibility | REQUIRED |
-| marker is secret-safe | no raw action or target values in marker JSON | REQUIRED |
-| execution claim stays false | false action-execution and interception proof markers | REQUIRED |
+| valid receipt can be consumed once | one successful atomic marker claim | PASS |
+| replay fails closed | second/concurrent claim is rejected | PASS |
+| stale or mismatched receipt fails | no marker and no eligibility | PASS |
+| marker is secret-safe | no raw action or target values in marker JSON | PASS |
+| execution claim stays false | false action-execution and interception proof markers | PASS |
 
 ## Claim Boundary
 
