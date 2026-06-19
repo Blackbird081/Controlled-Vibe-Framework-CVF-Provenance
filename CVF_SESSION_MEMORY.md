@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t4a_approval_backed_mutating_profile_boundary_accepted_material_pending_closure`
+Current mode marker: `delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t4a_approval_backed_mutating_profile_boundary_accepted_material_pending_closure`.
+Current mode: `delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready`.
 
-Previous mode: `delta_t4a_approval_backed_mutating_profile_boundary_dispatched_pre_implementation_ready`.
+Previous mode: `delta_t4a_approval_backed_mutating_profile_boundary_accepted_material_pending_closure`.
 
 Active handoff:
 
@@ -803,20 +803,19 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t4a_approval_backed_mutating_profile_boundary_accepted_material_pending_closure`.
+Mode: `delta_t4a_approval_backed_mutating_profile_boundary_closed_next_foundation_selection_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
 
-Delta-T4A Approval-Backed Mutating Profile Boundary material is
-`COMPLETE_PENDING_CLOSURE` at accepted material commit `d2fc4f5b`. The
-implementation adds exactly one approval-backed local mutating profile,
-`approval-marker-write`, with fixed marker target
-`.cvf/delta/approval-marker-write.json` and durable approval/marker evidence.
+Delta-T4A Approval-Backed Mutating Profile Boundary is `CLOSED_PASS_BOUNDED`
+at material commit `d2fc4f5b` and closure commit `c61d7d85`. It adds exactly
+one approval-backed local mutating profile, `approval-marker-write`, with fixed
+marker target `.cvf/delta/approval-marker-write.json` and durable approval/
+marker evidence.
 
-Next allowed move: run accepted-material session sync, then convert Delta-T4A
-completion artifacts to `CLOSED_PASS_BOUNDED` from the accepted-material sync
-head.
+Next allowed move: select the next high-leverage foundation tranche with fresh
+GC-018 and source-verified work order.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
