@@ -1,10 +1,12 @@
 {
   "schemaVersion": "1.0.0",
   "batchId": "GGL-T1",
-  "status": "COMPLETE_PENDING_REVIEW",
+  "status": "CLOSED_PASS_BOUNDED",
   "date": "2026-06-19",
   "dispatchCommit": "7de440d2",
   "executionBaseHead": "309e9f57",
+  "materialCommit": "b71bde91",
+  "closureBaseHead": "969455b3",
   "commandCounts": {
     "reviewerFast": 31,
     "preCommit": 54,
