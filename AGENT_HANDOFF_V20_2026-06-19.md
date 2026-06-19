@@ -76,13 +76,13 @@ commit `49f71004`, material commit `39a22e3f`, Delta-T4B closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_execution_control_selection_ready_after_mcp_composition_proof_closed`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=open Delta Execution Control selection with fresh GC-018 and source-verified work order using MCP-GW-001, the external knowledge absorption chain map, and the completed composition proof artifacts; parked checkpoint=runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, readiness, and universal enforcement claims.
+Startup acknowledged: current mode=`delta_t5_execution_control_capability_roadmap_dispatched_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=implement only the Delta-T5 capability roadmap, completion review, and evidence JSON after pre-implementation from dispatch commit `a47e185b`; parked checkpoint=runtime profiles beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, readiness, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_execution_control_selection_ready_after_mcp_composition_proof_closed`
+`delta_t5_execution_control_capability_roadmap_dispatched_ready`
 
-Current HEAD recorded for this handoff: `32530236`
+Current HEAD recorded for this handoff: `a47e185b`
 
 Material state:
 
@@ -116,6 +116,10 @@ Material state:
 - Delta-T4B final closure continuity session-sync commit: `32530236`
 - MCP to Model Gateway Composition Proof material commit: `befad4a9`
 - MCP to Model Gateway Composition Proof status: `CLOSED_PASS_BOUNDED`
+- Delta-T5 dispatch commit: `a47e185b`
+- Delta-T5 pre-dispatch gate: PASS
+- Delta-T5 dispatch commit steward: PASS
+- Delta-T5 dispatch pre-commit hook: PASS 53/53
 - Delta-T4B pre-dispatch gate: PASS
 - Delta-T4B dispatch commit steward: PASS
 - Delta-T4B dispatch pre-commit hook: PASS 52/52
@@ -205,6 +209,11 @@ recorded in `CVF_SESSION/state/entries/mcpModelGatewayCompositionProofClosure202
 This session sync corrects stale next-move surfaces so Delta Execution Control
 selection is the next gated step.
 
+Delta-T5 dispatch commit `a47e185b` opened the Execution Control Capability
+Roadmap tranche. It authorizes only roadmap/completion/evidence documentation
+that maps completed invoked-control evidence, parked runtime expansion, and
+no-receipt/no-claim boundaries.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -216,12 +225,12 @@ Delta-T4B Mutating Profile Boundary Guard is
 `5b1f7c2a`.
 
 MCP to Model Gateway Composition Proof is already `CLOSED_PASS_BOUNDED` at
-material commit `befad4a9`.
+material commit `befad4a9`. Delta-T5 Execution Control Capability Roadmap is
+`DISPATCHED` at commit `a47e185b`.
 
-Next allowed move: open Delta Execution Control selection with fresh GC-018 and
-a source-verified work order using `MCP-GW-001`, the external knowledge
-absorption chain map, and the composition proof artifacts as upstream context
-before implementation.
+Next allowed move: run pre-implementation from dispatch commit `a47e185b`, then
+implement only the Delta-T5 roadmap, completion review, and evidence JSON named
+by the work order.
 
 ## Parked Operator Checkpoints
 
@@ -263,6 +272,8 @@ LHW24 remains the latest closed numbered LHW wave.
 - MCP to Model Gateway Composition Proof work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_FOR_CODEX_2026-06-19.md`
 - MCP to Model Gateway Composition Proof completion: `docs/reviews/CVF_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_COMPLETION_2026-06-19.md`
 - MCP to Model Gateway Composition Proof evidence: `docs/reviews/evidence/mcp-model-gateway-composition-proof-2026-06-19.json`
+- Delta-T5 GC-018: `docs/baselines/CVF_GC018_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md`
+- Delta-T5 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_FOR_CODEX_2026-06-19.md`
 - Predecessor continuity: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
 
 ## Agent Operation Trace Block
@@ -271,20 +282,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | post-composition-proof next-move correction session sync, 2026-06-19 |
+| Session or invocation | Delta-T5 dispatch session sync, 2026-06-19 |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, apply_patch, session generator, governance gates |
 | Target paths | active handoff and generated session-state surfaces listed below |
-| Allowed scope source | Delta-T4B closure commit `5b1f7c2a`, final closure continuity commit `32530236`, and composition proof closure state `CVF_SESSION/state/entries/mcpModelGatewayCompositionProofClosure20260619.json` |
-| Before status evidence | next-move surfaces still pointed to composition proof selection even though composition proof is already `CLOSED_PASS_BOUNDED` at material commit `befad4a9` |
-| After status evidence | next-move surfaces point to Delta Execution Control selection with fresh GC-018 and source-verified work order before implementation |
+| Allowed scope source | Delta-T5 dispatch commit `a47e185b` and active session next-move correction commit `b88080b1` |
+| Before status evidence | Delta-T5 dispatch committed, active handoff still recorded pre-dispatch HEAD |
+| After status evidence | next-move surfaces point to Delta-T5 implementation after pre-implementation from `a47e185b` |
 | Diff evidence | `git diff --cached --name-status` and pre-commit hook |
-| Approval boundary | session-sync correction only; Delta Execution Control implementation requires fresh GC-018 and source-verified work order |
+| Approval boundary | session-sync correction only; Delta-T5 implementation remains limited to roadmap/completion/evidence |
 | Claim boundary | no runtime profile expansion beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, CVF Web action execution, direct interception, broad wrapper/proxy/runtime enforcement expansion, or universal enforcement claim in this session-sync commit |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `post-composition-proof-delta-execution-control-selection-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/postCompositionProofDeltaExecutionControlSelection20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/postCompositionProofDeltaExecutionControlSelection20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `delta-t5-dispatch-session-sync-codex-2026-06-19` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT5ExecutionControlCapabilityRoadmapDispatch20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_execution_control_selection_ready_after_mcp_composition_proof_closed`
+Current mode marker: `delta_t5_execution_control_capability_roadmap_dispatched_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_execution_control_selection_ready_after_mcp_composition_proof_closed`.
+Current mode: `delta_t5_execution_control_capability_roadmap_dispatched_ready`.
 
-Previous mode: `delta_t4b_mutating_profile_boundary_guard_closed_next_foundation_selection_ready`.
+Previous mode: `delta_execution_control_selection_ready_after_mcp_composition_proof_closed`.
 
 Active handoff:
 
@@ -803,7 +803,7 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_execution_control_selection_ready_after_mcp_composition_proof_closed`.
+Mode: `delta_t5_execution_control_capability_roadmap_dispatched_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
@@ -830,10 +830,14 @@ adapter has deterministic proof coverage showing it can call a real Model
 Gateway `ProviderExecutionBridge` through the injected executor port and
 preserve response/error/receipt evidence.
 
-Next allowed move: open Delta Execution Control selection with fresh GC-018 and
-a source-verified work order using `MCP-GW-001`, the external knowledge
-absorption chain map, and the composition proof artifacts as upstream context
-before implementation.
+Delta-T5 Execution Control Capability Roadmap is `DISPATCHED` at commit
+`a47e185b` after pre-dispatch and dispatch steward gates passed. It authorizes
+only a source-verified roadmap/capability-boundary artifact, completion review,
+and evidence JSON.
+
+Next allowed move: run pre-implementation from dispatch commit `a47e185b`, then
+implement only the Delta-T5 roadmap, completion review, and evidence JSON named
+by the work order.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

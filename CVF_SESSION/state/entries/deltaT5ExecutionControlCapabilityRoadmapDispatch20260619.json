@@ -1,0 +1,23 @@
+{
+  "stateOrder": 485,
+  "stateKey": "deltaT5ExecutionControlCapabilityRoadmapDispatch20260619",
+  "value": {
+    "status": "DISPATCHED",
+    "dispatchCommit": "a47e185b",
+    "dispatchBaseHead": "b88080b1",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_FOR_CODEX_2026-06-19.md",
+    "allowedImplementation": [
+      "docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+      "docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md",
+      "docs/reviews/evidence/delta-t5-execution-control-capability-roadmap-2026-06-19.json"
+    ],
+    "checks": [
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "pre-commit hook PASS 53/53"
+    ],
+    "claimBoundary": "Dispatch only for a source-verified Delta Execution Control capability roadmap. No runtime source change, new MCP tool, launcher profile expansion, provider/live call, public-sync, queue/daemon, CVF Web action, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, or universal governed-coding control claim is authorized.",
+    "nextAllowedMove": "Run pre-implementation from dispatch commit a47e185b, then implement only the roadmap, completion review, and evidence JSON named by the work order."
+  }
+}
