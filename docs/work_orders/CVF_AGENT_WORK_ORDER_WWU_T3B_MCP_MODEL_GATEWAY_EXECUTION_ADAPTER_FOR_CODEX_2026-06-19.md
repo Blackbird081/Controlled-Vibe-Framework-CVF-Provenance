@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-19
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `cf76e3e2`
 
-executionBaseHead: `cf76e3e2`
+executionBaseHead: `b489ffba`
 
-closureBaseHead: `cf76e3e2`
+closureBaseHead: `b489ffba`
 
 rawMemoryReleased: false
 
@@ -31,8 +31,9 @@ Canonical packet:
 
 Commit mode: `WORKER_MAY_COMMIT`.
 
-Base: dispatchBaseHead `cf76e3e2`. Align executionBaseHead and closureBaseHead
-to the committed dispatch head before implementation.
+Base: dispatchBaseHead `cf76e3e2`; executionBaseHead `b489ffba`.
+
+executionBaseHead: `b489ffba`
 
 Current-time notes: T3A is closed preview-only. The operator authorized
 continuation where prerequisites are sufficient. Source audit permits an
@@ -98,7 +99,7 @@ executable queues, broader enforcement, or readiness claims.
 | Operator authorization | current request on 2026-06-19 | ACCEPTED for bounded completion where prerequisites are met |
 | Active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | T3A closed; broader T3 needs fresh GC-018/work order |
 | WWU roadmap | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | T3 split into narrow tranches |
-| GC-018 | `docs/baselines/CVF_GC018_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_2026-06-19.md` | DISPATCH_READY |
+| GC-018 | `docs/baselines/CVF_GC018_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_2026-06-19.md` | BASELINE_SATISFIED |
 
 ## Single-Agent Multi-Role Control Block
 
@@ -121,7 +122,7 @@ executable queues, broader enforcement, or readiness claims.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | Codex worker; Codex reviewer/closer; Codex session-sync actor |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | `dispatchBaseHead=cf76e3e2`; execution/closure align to committed dispatch head |
+| baseHeadFor(phase) | `dispatchBaseHead=cf76e3e2`; `executionBaseHead=b489ffba`; `closureBaseHead=b489ffba` |
 | changedSetScope(phase) | dispatch files; named MCP/closure files; protected continuity only in session-sync |
 | traceScope(phase, actor) | exact changed set for each separate phase range |
 | commitOwner(phase) | Codex |
@@ -246,7 +247,12 @@ Allowed scope:
 - `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute.ts`
 - `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute.test.ts`
 - `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md`
-- this work order, matching baseline, completion/evidence, and GC-051 entry/aggregate
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md`
+- `docs/baselines/CVF_GC018_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_2026-06-19.md`
+- `docs/reviews/CVF_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_COMPLETION_2026-06-19.md`
+- `docs/reviews/evidence/wwu-t3b-mcp-model-gateway-execution-adapter-2026-06-19.json`
+- `docs/corpus-intelligence/registry/entries/wwu-t3b-mcp-model-gateway-execution-adapter.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 
 Forbidden paths: Web UI, workspace state, runtime queues, provider registry or
 credentials, public-sync clone, and unrelated sources.
@@ -308,10 +314,10 @@ claims require a new operator checkpoint and fresh governed tranche.
 | Fresh GC-018 | PASS |
 | Dispatch Prompt Envelope first | PASS |
 | Required control blocks | PASS |
-| Runtime implementation | OPEN |
-| Focused verification | OPEN |
-| Completion/evidence/registry | OPEN |
-| Closure/pre-push gates | OPEN |
+| Runtime implementation | PASS |
+| Focused verification | PASS: MCP 6/6; Model Gateway bridge 21/21; builds/checks PASS |
+| Completion/evidence/registry | PASS |
+| Closure/pre-push gates | PASS |
 
 ## Public Export Disposition
 
@@ -319,14 +325,40 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance runtime adapter; no public-sync authorization.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_COMPLETION_2026-06-19.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md` | `ROADMAP_ACTIVE_WWU_T3B_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate | PASS |
+| Registry Markdown | BLOCKED with reason: no separate markdown registry exists for GC-051 | no path exists | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external return was consumed | repo-local source only | N/A with reason |
+| System loop interlock | N/A with reason: no interlock mutation | no path changed | N/A with reason |
+| Session continuity | separate session-sync follows accepted material commit | protected paths excluded from material range | N/A with reason |
+| Runtime/provider proof | N/A with reason: live composition forbidden | no live call | N/A with reason |
+| Public export disposition | `DEFERRED_PRIVATE_ONLY` | private provenance | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Criterion | Required value | Observed value | Status |
+|---|---|---|---|
+| Tool id | `cvf_model_gateway_execute` | registered | PASS |
+| Executor call | exactly once for valid input | focused test PASS | PASS |
+| Receipt | executor-owned receipt preserved | focused test PASS | PASS |
+| Raw credential | rejected and not echoed | focused test PASS | PASS |
+| Default executor | unconfigured and fail closed | configured error code | PASS |
+| Provider live call | false | no live composition | PASS |
+
 ## Finding-To-Governance Learning Disposition
 
 | Field | Disposition |
 |---|---|
 | Defect class | `RUNTIME_SIGNAL_GAP` |
 | Learning lane | `GOVERNANCE_CONTROL_PLANE` |
-| Escalation state | `DISPATCHED_BOUNDED` |
-| Next control action | prove module adapter before live composition |
+| Escalation state | `WORK_ORDER_CLOSED_BOUNDED` |
+| Next control action | require a fresh tranche before live executor composition |
 | Worker blame | N/A with reason: intentional preview-to-execution module gap |
 
 ## Agent Operation Trace Block
@@ -335,20 +367,20 @@ Reason: private provenance runtime adapter; no public-sync authorization.
 |---|---|
 | Actor | Codex |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-19 WWU-T3B dispatch |
+| Session or invocation | 2026-06-19 WWU-T3B implementation and closure |
 | Working directory | repository root |
 | Command or tool surface | PowerShell, rg, apply_patch, governance gates |
-| Target paths | Allowed scope above |
+| Target paths | MCP index; execution adapter; focused test; roadmap; work order; completion; evidence; GC-051 source and aggregate |
 | Allowed scope source | this work order and GC-018 |
-| Before status evidence | clean worktree at `cf76e3e2` |
-| After status evidence | dispatch gate output |
-| Diff evidence | dispatch range diff |
+| Before status evidence | execution base `b489ffba`; pre-implementation PASS |
+| After status evidence | MCP 6/6; Model Gateway bridge 21/21; MCP build and Gateway check PASS |
+| Diff evidence | `git diff --name-status b489ffba..HEAD` after commit |
 | Approval boundary | bounded module adapter |
 | Claim boundary | no provider/live/secret/public/queue/readiness claim |
 | Agent type | Codex |
-| Invocation ID | `wwu-t3b-mcp-model-gateway-execution-adapter-dispatch-codex-2026-06-19` |
-| Expected manifest | baseline; work order; roadmap; GC-051 source and aggregate |
-| Actual changed set | baseline; work order; roadmap; GC-051 source and aggregate |
+| Invocation ID | `wwu-t3b-mcp-model-gateway-execution-adapter-closure-codex-2026-06-19` |
+| Expected manifest | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute.test.ts`; `docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md`; this work order; `docs/reviews/CVF_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/wwu-t3b-mcp-model-gateway-execution-adapter-2026-06-19.json`; `docs/corpus-intelligence/registry/entries/wwu-t3b-mcp-model-gateway-execution-adapter.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` |
+| Actual changed set | matches Expected manifest |
 | Manifest delta | MATCH |
 
 ## Claim Boundary

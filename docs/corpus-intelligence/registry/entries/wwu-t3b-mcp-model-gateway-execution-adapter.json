@@ -6,19 +6,21 @@
   "scopePaths": [
     "docs/baselines/CVF_GC018_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_2026-06-19.md",
     "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md",
+    "docs/reviews/CVF_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_COMPLETION_2026-06-19.md",
+    "docs/reviews/evidence/wwu-t3b-mcp-model-gateway-execution-adapter-2026-06-19.json",
     "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
     "docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md",
     "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute.ts",
     "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-execution-bridge.ts"
   ],
-  "fileCount": 6,
+  "fileCount": 8,
   "status": "SCANNED",
   "findings": [
     {
       "id": "wwu-t3b-execution-adapter-dispatch",
-      "summary": "Dispatch one injectable MCP adapter for the Model Gateway execution contract.",
+      "summary": "Close one injectable MCP adapter for the Model Gateway execution contract.",
       "disposition": "ACCEPT_WITH_BOUNDARY",
-      "nextAction": "Implement and close module integration before live provider composition.",
+      "nextAction": "Require fresh authorization before live provider composition.",
       "defectClass": "RUNTIME_SIGNAL_GAP",
       "learningLane": "GOVERNANCE_CONTROL_PLANE"
     }
@@ -29,11 +31,11 @@
     "runtime queue scheduler daemon",
     "public readiness from module adapter"
   ],
-  "nextScanRecommendation": "Close WWU-T3B with module tests and live-composition boundary",
+  "nextScanRecommendation": "Use this closed module adapter as input to a separately authorized runtime-composition tranche",
   "scanWave": "WWU-T3B",
   "scanDate": "2026-06-19",
   "manifestHash": null,
   "manifestPath": null,
   "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md",
-  "notes": "Dispatch only; no provider/live, secret, queue, public-sync, or readiness claim."
+  "notes": "Closed module adapter; no provider/live, secret, queue, public-sync, or readiness claim."
 }
