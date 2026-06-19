@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`
+Current mode marker: `wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`.
+Current mode: `wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`.
 
 Active handoff:
 
@@ -284,6 +284,14 @@ generated workspace state mutation, Local Runtime/MCP, provider/live proof,
 public-sync, runtime enforcement claim, governed action request, production
 readiness, public readiness, release readiness, or external-facing readiness
 was authorized or performed. WWU-T3 Local Workspace Runtime/MCP remains parked.
+
+WWU-T3B MCP Model Gateway Execution Adapter is `CLOSED_PASS_BOUNDED` at
+material commit `7e15146d`. The MCP server now has an injectable
+`cvf_model_gateway_execute` adapter module with focused deterministic tests and
+fail-closed default registration when no executor is injected. No provider/live
+composition, secrets/quota use, public-sync, runtime queue/scheduler/daemon
+work, broad runtime enforcement, readiness claim, or governed action execution
+was authorized or performed.
 
 Operator checkpoint recorded on 2026-06-19: after the future authorized
 MCP/runtime work is complete, revisit the external-agent/repo knowledge
@@ -745,18 +753,14 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`.
+Mode: `wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`.
 
-WWU-T3B MCP Model Gateway Execution Adapter is `DISPATCHED` at commit
-`9ef97f2d` with fresh GC-018 and a source-verified work order.
+WWU-T3B MCP Model Gateway Execution Adapter is `CLOSED_PASS_BOUNDED` at
+material commit `7e15146d`.
 
-Next allowed move: run pre-implementation from execution base `9ef97f2d`, then
-implement only the injectable `cvf_model_gateway_execute` adapter and focused
-deterministic tests.
-
-Post-MCP follow-up remains the external-agent/repo knowledge absorption
-workflow-chain formalization candidate, with fresh GC-018 and source
-verification required before implementation.
+Next allowed move: formalize the external-agent/repo knowledge absorption rules
+into one CVF-governed workflow chain map only after fresh GC-018 and a
+source-verified work order.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation

@@ -30,7 +30,8 @@ External agent memory files: non-canonical convenience only.
 ## Core Guard Self-Protection Authorization
 
 Authorized session-sync scope: update active handoff after WWU-T3B MCP Model
-Gateway Execution Adapter dispatch commit `9ef97f2d`, WWU-T2A CVF Web
+Gateway Execution Adapter closure material commit `7e15146d`, following
+dispatch commit `9ef97f2d`, WWU-T2A CVF Web
 Workspace Lane Summary Read Model closure material commit `acedeb28`,
 WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview closure
 material commit `10b3f886`, following dispatch material commit `9dff4a1b`,
@@ -83,6 +84,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/wwuT3ALocalWorkspaceRuntimeMcpModelGatewayExecutePreviewDispatch20260619.json`
 - `CVF_SESSION/state/entries/wwuT3ALocalWorkspaceRuntimeMcpModelGatewayExecutePreviewClosure20260619.json`
 - `CVF_SESSION/state/entries/wwuT3BMcpModelGatewayExecutionAdapterDispatch20260619.json`
+- `CVF_SESSION/state/entries/wwuT3BMcpModelGatewayExecutionAdapterClosure20260619.json`
 - `CVF_SESSION/state/entries/postMcpExternalKnowledgeAbsorptionChainFollowup20260619.json`
 - `CVF_SESSION_MEMORY.md`
 
@@ -148,14 +150,16 @@ AHB material artifacts.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=run pre-implementation from `9ef97f2d`, then implement only the injectable WWU-T3B MCP Model Gateway execution adapter and focused deterministic tests; parked checkpoint=provider/live composition, secrets/quota, public-sync, runtime queue/scheduler/daemon work, broad runtime enforcement, readiness claims, and EARC-T2 remain parked; after bounded MCP closure resume the external-agent/repo absorption workflow-chain candidate through fresh GC-018 and source verification.
+Startup acknowledged: current mode=`wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=formalize the external-agent/repo absorption workflow-chain candidate only after fresh GC-018 and source verification; parked checkpoint=provider/live composition, secrets/quota, public-sync, runtime queue/scheduler/daemon work, broad runtime enforcement, readiness claims, and EARC-T2 remain parked.
 
 ## Current Mode
 
-`wwu_t3b_mcp_execution_adapter_dispatched_implementation_ready`
+`wwu_t3b_mcp_execution_adapter_closed_absorption_chain_ready`
 
-Current HEAD recorded for this handoff: `9ef97f2d`
-(WWU-T3B MCP Model Gateway Execution Adapter dispatch commit `9ef97f2d`;
+Current HEAD recorded for this handoff: `7e15146d`
+(WWU-T3B MCP Model Gateway Execution Adapter closure material commit
+`7e15146d`;
+WWU-T3B MCP Model Gateway Execution Adapter dispatch commit `9ef97f2d`;
 WWU-T3A Local Workspace Runtime MCP Model Gateway Execute Preview closure
 material commit `10b3f886`;
 WWU-T3A dispatch material commit `9dff4a1b`;
@@ -836,16 +840,12 @@ source-verified work order.
 
 ## Next Allowed Move
 
-WWU-T3B MCP Model Gateway Execution Adapter is `DISPATCHED` at commit
-`9ef97f2d` with fresh GC-018 and a source-verified work order.
+WWU-T3B MCP Model Gateway Execution Adapter is `CLOSED_PASS_BOUNDED` at
+material commit `7e15146d`.
 
-Next allowed move: run pre-implementation from execution base `9ef97f2d`, then
-implement only the injectable `cvf_model_gateway_execute` adapter and focused
-deterministic tests.
-
-Post-MCP follow-up remains the external-agent/repo knowledge absorption
-workflow-chain formalization candidate, with fresh GC-018 and source
-verification required before implementation.
+Next allowed move: formalize the external-agent/repo knowledge absorption rules
+into one CVF-governed workflow chain map only after fresh GC-018 and a
+source-verified work order.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation remains held for explicit public-sync
