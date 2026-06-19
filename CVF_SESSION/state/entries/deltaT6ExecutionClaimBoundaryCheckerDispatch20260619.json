@@ -1,0 +1,26 @@
+{
+  "stateOrder": 491,
+  "stateKey": "deltaT6ExecutionClaimBoundaryCheckerDispatch20260619",
+  "value": {
+    "status": "DISPATCHED",
+    "dispatchBaseHead": "1092829b",
+    "dispatchCommit": "73539dab",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md",
+    "checks": [
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "dispatch pre-commit hook PASS 53/53"
+    ],
+    "allowedImplementation": [
+      "governance/compat/check_delta_execution_claim_boundary.py",
+      "governance/compat/test_check_delta_execution_claim_boundary.py",
+      "governance/compat/run_local_governance_hook_chain.py",
+      "governance/compat/run_agent_autorun_workflow_gate.py",
+      "docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md",
+      "docs/reviews/evidence/delta-t6-execution-claim-boundary-checker-2026-06-19.json"
+    ],
+    "claimBoundary": "Delta-T6 dispatch authorizes only a machine checker for future execution-control claim boundaries. It does not authorize new runtime execution control, new mutating profiles, direct IDE/shell/git/filesystem interception, provider/live calls, public-sync, queues, daemons, CVF Web action execution, wrapper/proxy runtime enforcement, EDIT/COMMIT execution, or universal governed-coding claims.",
+    "nextAllowedMove": "Run pre-implementation from the dispatch session-sync head, then implement only the bounded checker, tests, hook/autorun wiring, completion review, and evidence JSON named by the Delta-T6 work order."
+  }
+}

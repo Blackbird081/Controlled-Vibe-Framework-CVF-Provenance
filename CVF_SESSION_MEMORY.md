@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready`
+Current mode marker: `delta_t6_execution_claim_boundary_checker_dispatched_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready`.
+Current mode: `delta_t6_execution_claim_boundary_checker_dispatched_ready`.
 
-Previous mode: `delta_t5_execution_control_capability_roadmap_material_accepted_pending_closure`.
+Previous mode: `delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -803,7 +803,7 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `delta_t5_execution_control_capability_roadmap_closed_next_foundation_ready`.
+Mode: `delta_t6_execution_claim_boundary_checker_dispatched_ready`.
 
 Delta-T3 is `CLOSED_PASS_BOUNDED` at material commit `ff584e42` and closure
 commit `7a654dfb`.
@@ -835,10 +835,12 @@ material/closure commit `97a634c2`. It added a source-verified
 roadmap/capability-boundary artifact, completion review, and evidence JSON
 only.
 
-Next allowed move: select the next high-value foundation tranche with fresh
-GC-018 and source verification. Recommended candidate: Delta-T6 Execution Claim
-Boundary Checker to machine-reject universal execution-control claims that lack
-receipt/action evidence.
+Delta-T6 Execution Claim Boundary Checker is `DISPATCHED` at commit
+`73539dab`, with fresh GC-018 and source-verified work order.
+
+Next allowed move: run pre-implementation from the dispatch session-sync head,
+then implement only the bounded checker, tests, hook/autorun wiring, completion
+review, and evidence JSON named by the Delta-T6 work order.
 
 Broad WWU-T3 Local Workspace Runtime/MCP remains parked beyond WWU-T3A.
 EARC-T2 public-sync preparation and EARC-T4 MCP/workspace implementation
