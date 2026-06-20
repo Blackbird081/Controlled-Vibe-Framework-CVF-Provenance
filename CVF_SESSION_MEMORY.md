@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`
+Current mode marker: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`.
+Current mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`.
 
-Previous mode: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`.
+Previous mode: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -138,15 +138,27 @@ pre-commit hook 54/54 passed. The claim remains public documentation
 orientation only, with no runtime/provider/live/direct-interception/readiness
 or universal governed-coding control claim.
 
+GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
+`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`, after PECA-T1 closure
+session-sync `72555605`. It created a fresh GC-018 and Claude work order for a
+private governance freeze-readiness and claim-boundary audit only. Pre-dispatch
+autorun passed 43/43, dispatch-quality passed, commit steward dispatch
+preflight passed, and the dispatch pre-commit hook passed 54/54. GKF-T1 does
+not authorize freeze, freeze release, posture mutation, runtime/source edits,
+provider/live calls, public-sync work, direct interception claims, readiness
+claims, or universal governed-coding-control claims.
+
 ## Next Allowed Move
 
-Mode: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`.
+Mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`.
 
-Next allowed move: external agents/user developers can evaluate the public
-GitHub front door/catalog at public main `2017af304`. Select a fresh
-high-value governed lane with new GC-018, source verification, and claim
-boundary controls. Do not open Delta-T12 by default unless a fresh operator
-decision chooses another foundation tranche.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`
+under `WORKER_MUST_NOT_COMMIT`. Claude may create only
+`docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`
+and must return uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex owns review, commit, closure conversion, and
+session sync.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

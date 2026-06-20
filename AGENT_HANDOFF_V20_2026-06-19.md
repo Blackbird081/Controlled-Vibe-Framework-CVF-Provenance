@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current PECA-T1 closure state, the current
+This compact handoff records the current GKF-T1 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing PECA-T1 Public External
-Evaluation Package And Catalog Alignment and exporting the public-sync update.
+Target: correct next-move continuity after dispatching GKF-T1 Governance Kernel
+Freeze Readiness And Claim Boundary Audit to Claude.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,11 +35,11 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize PECA-T1 closure commit
-`17745320`, public-sync export commits `aae8fed4c` and `2017af304`, generated
-active state, compact session memory, active handoff, and the next allowed
-move after bounded public catalog alignment. This session sync does not open
-runtime, provider/live, direct-interception, or additional public push scope.
+Authorized guard-maintenance scope: synchronize GKF-T1 dispatch commit
+`6a7377b8`, generated active state, compact session memory, active handoff, and
+the next allowed move for Claude no-commit private readiness audit execution.
+This session sync does not open freeze, freeze release, posture mutation,
+runtime, provider/live, direct-interception, or public-sync scope.
 
 Protected paths:
 
@@ -70,34 +70,35 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT11DurableAuditEvidenceBundleClosure20260619.json`
 - `CVF_SESSION/state/entries/pecaT1PublicExternalEvaluationCatalogAlignmentDispatch20260620.json`
 - `CVF_SESSION/state/entries/pecaT1PublicExternalEvaluationCatalogAlignmentClosure20260620.json`
+- `CVF_SESSION/state/entries/gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditDispatch20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator approved public-sync alignment for
-external-agent/user-developer evaluation. PECA-T1 is now closed after Codex
-reviewed Claude's WORKER_MUST_NOT_COMMIT return, pushed the public-sync update,
-and recorded provenance closure without expanding runtime, provider/live,
-direct-interception, or additional public push scope.
+Operator authorization: the operator approved opening GKF-T1 as the next
+governed lane after PECA-T1 closure. GKF-T1 is dispatched to Claude under
+WORKER_MUST_NOT_COMMIT for a private governance freeze-readiness and
+claim-boundary audit only, without expanding freeze, runtime, provider/live,
+direct-interception, or public-sync scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter PECA-T1 closure commit `17745320`, public-sync commits
-`aae8fed4c` and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11
-closure commit `3d0b70c5`, material handoff bridge commit `26a9491e`, material commit
-`0a3e298e`, dispatch continuity commit `de1a39c2`, dispatch commit `53aca070`,
-or earlier Delta commits.
+Do not alter GKF-T1 dispatch commit `6a7377b8`, PECA-T1 closure commit
+`17745320`, public-sync commits `aae8fed4c` and `2017af304`, PECA-T1 dispatch
+commit `a98447c0`, Delta-T11 closure commit `3d0b70c5`, material handoff
+bridge commit `26a9491e`, material commit `0a3e298e`, dispatch continuity
+commit `de1a39c2`, dispatch commit `53aca070`, or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=external agents/user developers can evaluate the public GitHub front door/catalog at public main `2017af304`; choose a fresh governed lane with new GC-018/source verification, with no Delta-T12 opened by default; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync push without Codex review and remote verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes the GKF-T1 private readiness audit work order under WORKER_MUST_NOT_COMMIT and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`
+`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`
 
-Current HEAD recorded for this handoff: `17745320`
+Current HEAD recorded for this handoff: `6a7377b8`
 
 Material state:
 
@@ -407,6 +408,14 @@ path checks, grep scan, diff hygiene, reviewer-fast 31/31, and closure
 pre-commit hook 54/54 passed. Claim boundary remains public documentation
 orientation only.
 
+GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
+`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`, after PECA-T1 closure
+session-sync `72555605`. It created the source-verified GC-018 and Claude work
+order for a private readiness/claim-boundary audit. Pre-dispatch autorun passed
+43/43, dispatch-quality passed, commit steward dispatch preflight passed, and
+dispatch pre-commit hook passed 54/54. Claude must create only the named
+completion review and return uncommitted artifacts.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -460,14 +469,19 @@ PECA-T1 Public External Evaluation Package And Catalog Alignment is
 `CLOSED_PASS_BOUNDED` at provenance closure commit `17745320`, after dispatch
 commit `a98447c0`. Public-sync is exported at `2017af304` on public `main`.
 
-Next allowed move: external agents/user developers can evaluate the public
-GitHub front door/catalog at public main `2017af304`. Select a fresh
-high-value governed lane with new GC-018, source verification, and claim
-boundary controls. Do not open Delta-T12 by default unless a fresh operator
-decision chooses another foundation tranche.
-Keep runtime profiles, provider/live calls, public-sync push without Codex
-review and remote verification, CVF Web runtime action, direct interception,
-readiness, universal speed, and universal governed-coding claims parked.
+GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
+`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`.
+
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`
+under `WORKER_MUST_NOT_COMMIT`. Claude may create only
+`docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`
+and must return uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex owns review, commit, closure conversion, and
+session sync. Keep freeze action, freeze release, posture mutation, runtime
+profiles, provider/live calls, public-sync, CVF Web runtime action, direct
+interception, readiness, universal speed, and universal governed-coding claims
+parked.
 
 ## Parked Operator Checkpoints
 
