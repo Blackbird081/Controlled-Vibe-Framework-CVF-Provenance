@@ -11,13 +11,13 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current LSC-T6 dispatch state, the current
+This compact handoff records the current LSC-T6 closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: dispatch continuity for LSC-T6 External Agent CLI/MCP Signal Contract.
+Target: closure continuity for LSC-T6 External Agent CLI/MCP Signal Contract.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -34,9 +34,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize LSC-T6 material dispatch commit
-`cfe75f4c`, generated active state, compact session memory, active handoff, and
-the next allowed move for worker return review.
+Authorized guard-maintenance scope: synchronize LSC-T6 material closure commit
+`65af6db3`, generated active state, compact session memory, active handoff, and
+the next allowed move for LSC-T5/T7 dispatch preparation.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
@@ -96,6 +96,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/lscT3FastHelperReadoutDispatch20260621.json`
 - `CVF_SESSION/state/entries/lscT3FastHelperReadoutClosure20260621.json`
 - `CVF_SESSION/state/entries/lscT6ExternalAgentCliMcpSignalContractDispatch20260621.json`
+- `CVF_SESSION/state/entries/lscT6ExternalAgentCliMcpSignalContractClosure20260621.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -113,10 +114,12 @@ selected LSC-T2 after the lane-selection audit and approved issuing the work
 order under the LSC roadmap. After LSC-T2 closure, the operator selected the
 roadmap order `LSC-T2 -> LSC-T4 -> LSC-T3 -> LSC-T6 -> LSC-T5/T7` and
 instructed continuation without another checkpoint. The operator then requested
-creating the LSC-T6 work order.
+creating the LSC-T6 work order. LSC-T6 is now closed, and the next roadmap area
+is LSC-T5/T7 bridge and latency guard through a fresh governed packet.
 
 Rollback boundary: revert only this session-sync commit if rejected.
-Do not alter LSC-T6 dispatch commit `cfe75f4c`, LSC-T3 closure commit
+Do not alter LSC-T6 closure commit `65af6db3`, LSC-T6 dispatch commit
+`cfe75f4c`, LSC-T3 closure commit
 `fd70157a`, LSC-T3 dispatch commit `398060e7`, LSC-T4 closure commit
 `b568f248`, LSC-T4 dispatch commit
 `275eb374`, LSC-T2 closure commit
@@ -144,17 +147,18 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=await worker `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` return for LSC-T6, then Codex/reviewer owns review, allowed repairs, final commit, completion review, committed-range gates, and session sync; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`lsc_t6_external_agent_cli_mcp_signal_contract_closed_next_lsc_t5_t7_dispatch_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=create a fresh GC-018/source-verified work order for the LSC-T5/T7 bridge and latency guard roadmap area; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`
+`lsc_t6_external_agent_cli_mcp_signal_contract_closed_next_lsc_t5_t7_dispatch_ready`
 
-Current HEAD recorded for this handoff: `cfe75f4c`
+Current HEAD recorded for this handoff: `65af6db3`
 
 Material state:
 
-- LSC-T6 dispatch commit: `cfe75f4c`
+- LSC-T6 closure commit: `65af6db3`
+- LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
 - LSC-T3 closure commit: `fd70157a`
 - Delta-T3 dispatch commit: `aafcdfda`
 - Delta-T3 execution base: `aae39481`
@@ -499,21 +503,27 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after LSC-T6 dispatch:
+Current pointer after LSC-T6 closure:
 
-LSC-T6 External Agent CLI/MCP Signal Contract is `DISPATCHED_TO_WORKER` at
-material dispatch commit `cfe75f4c`, from dispatch base `5ee4b9b5`.
+LSC-T6 External Agent CLI/MCP Signal Contract is `CLOSED_PASS_BOUNDED` at
+material closure commit `65af6db3`, from execution/closure base `c4b2c061`.
 
-Dispatch artifacts:
+Accepted artifacts:
 `docs/baselines/CVF_GC018_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_2026-06-21.md`
+,
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_FOR_WORKER_2026-06-21.md`,
+`docs/reference/learning_signal_chain/README.md`,
+`docs/reference/learning_signal_chain/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md`,
+`docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_WORKER_RETURN_2026-06-21.md`,
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_FOR_WORKER_2026-06-21.md`.
+`docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_COMPLETION_2026-06-21.md`.
 
-Next allowed move: await worker `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON` return for the LSC-T6 work order, then Codex/reviewer owns
-review, allowed repairs, final commit, completion review, committed-range gates,
-and session sync. Preserve the roadmap order after LSC-T6: LSC-T5/T7 bridge and
-latency guard.
+Next allowed move: create a fresh GC-018/source-verified work order for the
+LSC-T5/T7 bridge and latency guard roadmap area. Preserve LSC-T6's boundary:
+adapter-contract-only documentation/reference closure is complete, but actual
+CLI/MCP adapter behavior, runtime mutation, provider/live proof, public-sync,
+latency guard enforcement, and direct interception remain separately
+authorized work only.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
 hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent Coding Evidence
@@ -797,20 +807,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | AAF-T5 closure session sync, 2026-06-20 |
+| Session or invocation | LSC-T6 closure session sync, 2026-06-21 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | AAF-T5 closure session-sync manifest |
-| Allowed scope source | AAF-T5 closure commit `d76a37cf` |
-| Before status evidence | material closure commit `d76a37cf` with session surfaces still pointing to AAF-T5 dispatch |
-| After status evidence | state, memory, and handoff record AAF-T5 closed and next operator checkpoint |
+| Target paths | LSC-T6 closure session-sync manifest |
+| Allowed scope source | LSC-T6 closure commit `65af6db3` |
+| Before status evidence | material closure commit `65af6db3` with session surfaces still pointing to LSC-T6 dispatch |
+| After status evidence | state, memory, and handoff record LSC-T6 closed and next LSC-T5/T7 dispatch preparation |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | dispatch session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, or public scope |
+| Approval boundary | closure session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, LSC-T5/T7 implementation, CLI/MCP adapter behavior, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `aaf-t5-closure-session-sync-2026-06-20` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `lsc-t6-closure-session-sync-2026-06-21` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT6ExternalAgentCliMcpSignalContractClosure20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT6ExternalAgentCliMcpSignalContractClosure20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
