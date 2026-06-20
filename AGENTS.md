@@ -51,6 +51,17 @@ Trivial direct answers may keep the confirmation internal, but any roadmap,
 implementation, review, live run, commit, handoff, or public-sync work must
 satisfy this acknowledgment first.
 
+## Guard Orientation Index - 2026-06-20
+
+Before authoring any governed CVF artifact, read
+`docs/reference/guard_orientation/README.md` to identify which guard surfaces
+apply to the current task class and role, what blocks or outputs are required,
+and what common failure patterns to avoid.
+
+This applies to all roles: dispatcher, worker, reviewer, closer, and
+session-sync steward. The index is an orientation layer only; canonical
+standards, work orders, and machine checkers still control.
+
 ## Mandatory Provider-Specific Agent Memory Boundary - 2026-06-13
 
 Provider-specific files and memory stores are execution aids for the agent or

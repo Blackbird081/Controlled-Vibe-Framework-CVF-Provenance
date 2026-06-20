@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-20
 
@@ -120,11 +120,14 @@ Allowed scope:
 - update `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`;
 - update `AGENTS.md`;
 - create `docs/reviews/CVF_AAF_T3_GUARD_ORIENTATION_INDEX_WORKER_RETURN_2026-06-20.md`;
+- reviewer/closer closure conversion may create
+  `docs/reviews/CVF_AAF_T3_GUARD_ORIENTATION_INDEX_COMPLETION_2026-06-20.md`
+  and update this work order status/checklist/closure package;
 - keep all normative role and return-contract language role-neutral.
 
 Forbidden scope:
 
-- no edits outside the five Required Deliverables;
+- worker role: no edits outside the five Required Deliverables;
 - no edits under `EXTENSIONS/**`, product runtime, web UI, MCP packages,
   `.github/**`, public-sync, dependency manifests, generated session state,
   active handoff, or session memory;
@@ -403,15 +406,15 @@ Any scope expansion returns to the operator.
 
 ## Closure Checklist
 
-- [ ] Worker changed only the five Required Deliverables.
-- [ ] Orientation index is role-neutral and task-first.
-- [ ] Operational reference index points to the orientation index.
-- [ ] Startup guard router points to the orientation index.
-- [ ] Root instructions include a short orientation-read instruction.
-- [ ] Worker-return packet includes required shape sections.
-- [ ] Public Export Disposition is resolved.
-- [ ] Runtime/provider/live/public-sync/checker claims are N/A with reason.
-- [ ] Reviewer/closer owns completion review and session-sync.
+- [x] Worker changed only the five Required Deliverables.
+- [x] Orientation index is role-neutral and task-first.
+- [x] Operational reference index points to the orientation index.
+- [x] Startup guard router points to the orientation index.
+- [x] Root instructions include a short orientation-read instruction.
+- [x] Worker-return packet includes required shape sections.
+- [x] Public Export Disposition is resolved.
+- [x] Runtime/provider/live/public-sync/checker claims are N/A with reason.
+- [x] Reviewer/closer owns completion review and session-sync.
 
 ## Return-To-Orchestrator Conditions
 
@@ -586,8 +589,26 @@ Return vocabulary:
 
 ## Machine Closure Package
 
-N/A with reason: this is a dispatch work order, not a closure artifact. Reviewer/
-closer owns closure conversion after worker returns `COMPLETE_PENDING_REVIEW`.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T3_GUARD_ORIENTATION_INDEX_FOR_WORKER_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_AAF_T3_GUARD_ORIENTATION_INDEX_WORKER_RETURN_2026-06-20.md` | worker return present and accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T3_GUARD_ORIENTATION_INDEX_COMPLETION_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | AAF-T3 closure state | `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no JSON registry required or changed | no generated JSON registry touched | PASS |
+| Registry Markdown | N/A with reason: no Markdown registry required; operational reference index row added | operational reference index row added instead | PASS |
+| External evidence digest | N/A with reason: no external evidence digest created | documentation/reference closure only | N/A with reason |
+| System loop interlock | N/A with reason: no system loop interlock changed | no runtime/source interlock mutation | N/A with reason |
+| Session continuity | active session front-door/state/handoff after material commit | material closure only; active session-sync follows this commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: AAF-T3 creates no runtime receipt | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: AAF-T3 performs no query acceptance | N/A_WITH_REASON |
+| Worker-return acceptance | worker return present and accepted by reviewer/closer | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` documentation/reference closure only | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 
