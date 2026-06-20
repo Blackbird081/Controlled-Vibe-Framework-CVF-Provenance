@@ -178,6 +178,14 @@ remote verification, and public export evidence would be required.
 | Public/provenance boundary | PASS; no public-sync work authorized |
 | Worker commit mode | `WORKER_MUST_NOT_COMMIT` |
 
+## Dispatch Repair Note
+
+Codex repair clarifies that `72555605` remains the dispatch base, but Claude
+must capture the current provenance HEAD as `executionBaseHead` and use that
+captured value as the `pre-implementation` base. This prevents the worker from
+including Codex session-sync or dispatch-repair commits in the worker execution
+range.
+
 ## Claim Boundary
 
 GKF-T1 may claim only that CVF has a source-backed private audit of governance

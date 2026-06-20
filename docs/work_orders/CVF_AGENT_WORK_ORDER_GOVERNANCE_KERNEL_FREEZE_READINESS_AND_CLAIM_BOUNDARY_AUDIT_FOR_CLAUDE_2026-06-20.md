@@ -36,9 +36,9 @@ control.
 
 Required first actions: read `CVF_SESSION_MEMORY.md`, resolve
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, read `AGENT_HANDOFF_V20_2026-06-19.md`,
-read this work order and the matching GC-018, capture `executionBaseHead`, run
-pre-implementation from the provenance repo, then create only the allowed
-private review artifact.
+read this work order and the matching GC-018, capture `executionBaseHead` from
+the current provenance HEAD, run pre-implementation from that captured
+execution head, then create only the allowed private review artifact.
 
 Return contract: return uncommitted provenance artifacts for Codex review with
 `COMPLETE_PENDING_REVIEW`, `executionBaseHead`, exact changed paths, commands
@@ -168,11 +168,11 @@ artifact if returned work is unsafe. Do not alter PECA-T1 closure commit
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | worker-no-commit split: Claude returns uncommitted private review artifact; Codex reviewer owns commit and closure |
 | phase | DISPATCH_AUTHORING, WORKER_EXECUTION, REVIEWER_CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatch=`72555605`; execution=worker refreshed provenance HEAD; closure=N/A pending |
+| baseHeadFor(phase) | dispatch=`72555605`; execution=worker-captured current provenance HEAD after Codex session sync or repair; closure=N/A pending |
 | changedSetScope(phase) | dispatch packet; private review artifact; reviewer closure conversion; separate sync if next move changes |
 | traceScope(phase, actor) | exact manifests and commands per phase |
 | commitOwner(phase) | Codex only |
-| crossBatchIsolation | one-batch-per-clean-worktree; before status evidence records clean worktree at HEAD `72555605` |
+| crossBatchIsolation | one-batch-per-clean-worktree; dispatch before status evidence records clean worktree at HEAD `72555605`; worker must refresh clean status at executionBaseHead |
 | nextMoveSurfaces | Claude must not edit; Codex handles during reviewer closure |
 | closerOwner | Codex is designated closer |
 
@@ -303,17 +303,20 @@ Test-Path docs/reviews/CVF_DELTA_T9_DURABLE_EXECUTION_AUDIT_CONTRACT_STORE_BOUND
 Test-Path docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md
 Test-Path docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md
 Test-Path docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 72555605 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 ```
 
-If pre-implementation fails due only to the pending dispatch artifacts already
-committed by Codex, record the failure and return `BLOCKED_WITH_REASON`.
-Otherwise repair only allowed-scope markdown/evidence defects and rerun.
+Do not use `dispatchBaseHead` as the pre-implementation base after Codex
+session-sync or dispatch-repair commits. If pre-implementation fails from the
+worker-captured `executionBaseHead`, repair only allowed-scope
+markdown/evidence defects and rerun. Return `BLOCKED_WITH_REASON` only when
+the failure cannot be repaired inside Allowed scope.
 
 ## Execution Plan
 
 1. Read the required first-read artifacts.
-2. Capture `executionBaseHead` and pre-edit `git status --short`.
+2. Capture `executionBaseHead` from current HEAD and pre-edit
+   `git status --short`.
 3. Create only the completion review path named in Required Artifact Manifest.
 4. In the review, include:
    - source evidence matrix for Delta-T9/T10/T11, PECA-T1, freeze posture, and
@@ -365,7 +368,8 @@ Required evidence:
 Base-anchor evidence:
 
 - `dispatchBaseHead`: `72555605`
-- `executionBaseHead`: worker-captured current head
+- `executionBaseHead`: worker-captured current head after Codex session sync or
+  dispatch repair; use this value for pre-implementation base
 - `closureBaseHead`: `N/A - pending Codex review`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
 - Worker-return fast gate: required before return
@@ -396,7 +400,8 @@ Implementation may proceed only after:
 
 - this work order and matching GC-018 are committed by Codex;
 - pre-dispatch gates pass for the dispatch packet;
-- Claude captures `executionBaseHead` and runs pre-implementation.
+- Claude captures `executionBaseHead` and runs pre-implementation using that
+  captured head as `--base`.
 
 Closure may proceed only after:
 
@@ -483,7 +488,7 @@ reason: <source-backed blocker>
 | Command or tool surface | startup reads, source verification, apply_patch, pre-dispatch gates |
 | Target paths | this work order and matching GKF-T1 GC-018 |
 | Allowed scope source | operator instruction, active next move, this work order, matching GC-018 |
-| Before status evidence | HEAD `72555605`; clean worktree |
+| Before status evidence | dispatch HEAD `72555605`; clean worktree; execution must refresh current HEAD/status before edits |
 | After status evidence | dispatch `git status --short` |
 | Diff evidence | dispatch `git diff --name-status` |
 | Approval boundary | Codex may create dispatch artifacts only; Claude creates one private no-commit review artifact |
