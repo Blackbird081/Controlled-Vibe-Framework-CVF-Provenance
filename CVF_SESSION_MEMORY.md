@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`
+Current mode marker: `aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`.
+Current mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`.
 
-Previous mode: `aaf_t1_agent_automation_assist_foundation_closed_cge_t3_resume_ready`.
+Previous mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`.
 
 Active handoff:
 
@@ -209,27 +209,32 @@ worker-return fast gate, reviewer-return steward, material pre-commit hook
 54/54, and committed-range pre-closure content gates with only expected
 post-material handoff HEAD drift before this sync.
 
-AAF-T2 Agent Automation Assist Early Gap Diagnostics is `DISPATCH_READY` for
-Claude at dispatch commit `1c6f8794` from base `31b7ef35`. It authorizes Claude
-under `WORKER_MUST_NOT_COMMIT` to update the existing read-only helper, update
-focused tests, and create the AAF-T2 worker-return packet. Verification passed:
-helper smoke, pre-dispatch autorun 43/43, dispatch-quality, dispatch packet
-author fast gate, dispatch steward, and dispatch pre-commit hook 54/54.
+AAF-T2 Agent Automation Assist Early Gap Diagnostics is `CLOSED_PASS_BOUNDED`
+at material commit `904eb09a`, after dispatch commit `1c6f8794` and dispatch
+continuity commit `57eada11`. It adds early `corpusDiagnostics` to the read-only
+AAF helper, makes `--enforce` fail on local corpus-shape/gate defects, preserves
+AAF-T1 CLI and reviewer-return routing, and adds worker-return packet-shape plus
+corpus-constant drift tests. Codex reviewer repaired a bounded gap by adding
+unsafe enumeration, unresolved-count, complete-verdict/exclusion, declared-
+exclusion, and placeholder-residue checks. Verification passed: focused tests
+36/36, helper smoke, worker-return fast gate with focused pytest target,
+reviewer-return steward, material pre-commit hook 54/54, and committed-range
+pre-closure content gates with only expected post-material active handoff HEAD
+drift before this sync.
 
 ## Next Allowed Move
 
-Mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`.
+Mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`.
 
-Next allowed move: give Claude
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T2_AGENT_AUTOMATION_ASSIST_EARLY_GAP_DIAGNOSTICS_FOR_CLAUDE_2026-06-20.md`.
-Claude must return `COMPLETE_PENDING_REVIEW` under `WORKER_MUST_NOT_COMMIT`
-with exactly the helper, focused test, and worker-return artifact named by the
-work order. CGE-T3 Full Knowledge Absorption Ledger is parked until AAF-T2
-review/closure or explicit operator override. Do not open runtime/product
-behavior, provider/live proof, public-sync, MCP execution, wrapper/proxy
-enforcement, direct IDE/shell/git/filesystem interception, arbitrary command
-execution, queue/daemon, watcher, readiness, full-hook equivalence, or universal
-governed-coding-control claim. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: operator may authorize AAF-T3 Guard Orientation Index /
+task-first guard map dispatch as the recommended next automation foundation
+move, before broad CGE-T3 absorption resumes. CGE-T3 Full Knowledge Absorption
+Ledger remains parked until AAF-T3 is declined/closed or the operator explicitly
+overrides this checkpoint. Do not open runtime/product behavior, provider/live
+proof, public-sync, MCP execution, wrapper/proxy enforcement, direct IDE/shell/
+git/filesystem interception, arbitrary command execution, queue/daemon, watcher,
+readiness, full-hook equivalence, or universal governed-coding-control claim.
+LHW24 remains the latest closed numbered LHW wave.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
