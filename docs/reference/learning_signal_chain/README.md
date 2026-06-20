@@ -44,6 +44,7 @@ WORK_ORDER_OR_CONTROL -> CLOSED_OR_DEFERRED`
 | LSC-T1 | [CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md](CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md) | source-layout and de-dup contract only; no ledger store implemented |
 | LSC-T1 template | [CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json](CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json) | documentation-only JSON shape; not an active runtime schema |
 | LSC-T2 | [CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX.md](CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX.md) | multi-role capture eligibility and no-signal assertion contract only; no checker, helper, ledger store, or CLI/MCP adapter implemented |
+| LSC-T3 | [CVF_LSC_T3_FAST_HELPER_READOUT.md](CVF_LSC_T3_FAST_HELPER_READOUT.md) | fast helper readout: `signalReadout` list in AAF helper JSON and human output; surfaces helper-detectable unresolved signals using LSC-T4 vocabulary; advisory and read-only; no ledger store, generator, drift checker, CLI/MCP adapter, or runtime implementation |
 | LSC-T4 | [CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY.md](CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY.md) | promotion threshold policy: readout-only, watch-for-repeat, governance-proposal, rule/checker/work-order candidate, and closure-blocker outcomes; doc-only vocabulary; no ledger store, checker, helper, or runtime implementation |
 
 ## Source Authority
@@ -55,9 +56,10 @@ LSC contracts extend, and never parallel, the Learning Plane intake bridge:
 
 ## What This Front Door Does Not Authorize
 
-No ledger store, generator, drift checker, helper readout, CLI/MCP adapter,
-runtime bridge, provider/live proof, public-sync, or reopening of AAF-T6,
-AAF-T7, CGE-T3, ACE-R1, MLW7, or MLW8.
+No ledger store, generator, drift checker, CLI/MCP adapter, runtime bridge,
+provider/live proof, public-sync, or reopening of AAF-T6, AAF-T7, CGE-T3,
+ACE-R1, MLW7, or MLW8. The only helper readout indexed here is the bounded
+LSC-T3 AAF helper output; it is advisory, read-only, and not a runtime bridge.
 
 ## Related Surfaces
 

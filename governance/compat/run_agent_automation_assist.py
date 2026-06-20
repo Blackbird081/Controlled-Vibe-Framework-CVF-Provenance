@@ -455,6 +455,25 @@ def _next_command(mode: str, base: str, head: str) -> str:
     return "No changed paths detected; no steward command required."
 
 
+@dataclass(frozen=True)
+class SignalReadoutItem:
+    """LSC-T3 advisory signal readout item derived from helper-detectable diagnostics.
+
+    Advisory only. Does not gate closure or authorize autonomous mutation.
+    repeatRisk must not be OBSERVED_REPEATED without ledger/de-dup proof (LSC-T4 policy).
+    blocking is true only when LSC-T4 blocker conditions are explicitly source-backed.
+    """
+
+    source_path: str
+    source_surface: str
+    severity: str
+    repeat_risk: str
+    recommended_outcome: str
+    next_suggested_action: str
+    blocking: bool
+    reason: str
+
+
 @dataclass
 class AssistReport:
     base: str
@@ -469,6 +488,7 @@ class AssistReport:
     session_sync_hint: str
     corpus_diagnostics: tuple[CorpusDiagnostic, ...] = field(default_factory=tuple)
     defects: list[str] = field(default_factory=list)
+    signal_readout: tuple[SignalReadoutItem, ...] = field(default_factory=tuple)
 
     def to_dict(self) -> dict:
         return {
@@ -508,7 +528,115 @@ class AssistReport:
                 for cd in self.corpus_diagnostics
             ],
             "defects": list(self.defects),
+            "signalReadout": [
+                {
+                    "sourcePath": item.source_path,
+                    "sourceSurface": item.source_surface,
+                    "severity": item.severity,
+                    "repeatRisk": item.repeat_risk,
+                    "recommendedOutcome": item.recommended_outcome,
+                    "nextSuggestedAction": item.next_suggested_action,
+                    "blocking": item.blocking,
+                    "reason": item.reason,
+                }
+                for item in self.signal_readout
+            ],
         }
+
+
+# LSC-T3: outcome vocabulary constants used in advisory signal readout items.
+_LSC_T4_READOUT_ONLY = "READOUT_ONLY"
+_LSC_T4_CHECKER_CANDIDATE = "CHECKER_CANDIDATE"
+
+
+def _build_signal_readout(
+    work_order_diagnostics: list[WorkOrderDiagnostic],
+    corpus_diagnostics: list[CorpusDiagnostic],
+    retro_diagnostics: list,
+) -> tuple[SignalReadoutItem, ...]:
+    """Build LSC-T3 advisory signal readout from existing helper diagnostics.
+
+    Advisory only. Does not add defects, block closure, or run gates internally.
+    repeatRisk defaults to POSSIBLE; OBSERVED_REPEATED requires ledger/de-dup proof (LSC-T4).
+    blocking=True only when LSC-T4 blocker conditions are met; none apply to these surfaces.
+    """
+    items: list[SignalReadoutItem] = []
+    for d in work_order_diagnostics:
+        if d.is_clean:
+            continue
+        if not d.has_contract:
+            items.append(SignalReadoutItem(
+                source_path=d.path,
+                source_surface="work-order",
+                severity="medium",
+                repeat_risk="POSSIBLE",
+                recommended_outcome=_LSC_T4_CHECKER_CANDIDATE,
+                next_suggested_action="add Worker Return Packet Shape Contract section before dispatch",
+                blocking=False,
+                reason="WORKER_MUST_NOT_COMMIT work order is missing packet-shape contract section",
+            ))
+        else:
+            if d.missing_required:
+                items.append(SignalReadoutItem(
+                    source_path=d.path,
+                    source_surface="work-order",
+                    severity="medium",
+                    repeat_risk="POSSIBLE",
+                    recommended_outcome=_LSC_T4_CHECKER_CANDIDATE,
+                    next_suggested_action="add missing required packet-shape terms to contract",
+                    blocking=False,
+                    reason=f"packet-shape contract missing required terms: {', '.join(d.missing_required[:3])}",
+                ))
+            if d.missing_conditional:
+                items.append(SignalReadoutItem(
+                    source_path=d.path,
+                    source_surface="work-order",
+                    severity="low",
+                    repeat_risk="POSSIBLE",
+                    recommended_outcome=_LSC_T4_READOUT_ONLY,
+                    next_suggested_action="add missing conditional terms or N/A-with-reason dispositions",
+                    blocking=False,
+                    reason=f"packet-shape contract missing conditional terms: {', '.join(d.missing_conditional[:3])}",
+                ))
+    for cd in corpus_diagnostics:
+        if cd.is_clean:
+            continue
+        if not cd.has_section:
+            items.append(SignalReadoutItem(
+                source_path=cd.path,
+                source_surface="corpus-completeness",
+                severity="medium",
+                repeat_risk="POSSIBLE",
+                recommended_outcome=_LSC_T4_CHECKER_CANDIDATE,
+                next_suggested_action="add Corpus Completeness And Report Integrity section before submission",
+                blocking=False,
+                reason="applicable output file is missing corpus completeness section",
+            ))
+        else:
+            items.append(SignalReadoutItem(
+                source_path=cd.path,
+                source_surface="corpus-completeness",
+                severity="low",
+                repeat_risk="POSSIBLE",
+                recommended_outcome=_LSC_T4_READOUT_ONLY,
+                next_suggested_action="repair corpus completeness section fields or verdict",
+                blocking=False,
+                reason="corpus completeness section has missing fields, invalid verdict, or local violations",
+            ))
+    for rd in retro_diagnostics:
+        if not (rd.eligible and rd.issues):
+            continue
+        items.append(SignalReadoutItem(
+            source_path=rd.path,
+            source_surface="worker-experience",
+            severity="low",
+            repeat_risk="POSSIBLE",
+            recommended_outcome=_LSC_T4_READOUT_ONLY,
+            next_suggested_action="add WORKER_EXPERIENCE_RETRO token or WORKER_EXPERIENCE_RETRO_NA_WITH_REASON",
+            blocking=False,
+            reason="worker-experience retrospective token missing or malformed in worker-return artifact",
+        ))
+    return tuple(items)
 
 
 def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
@@ -605,6 +733,7 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
         for issue in rd.issues:
             defects.append(f"{rd.path}: worker-experience retro {issue}")
 
+    signal_readout_items = _build_signal_readout(diagnostics, corpus_diagnostics_list, retro_diagnostics_list)
     return AssistReport(
         base=base,
         head=head,
@@ -618,6 +747,7 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
         session_sync_hint=session_hint,
         corpus_diagnostics=tuple(corpus_diagnostics_list),
         defects=defects,
+        signal_readout=signal_readout_items,
     )
 
 
@@ -667,6 +797,16 @@ def _print_human(report: AssistReport) -> None:
             print(f"  ! {defect}")
     else:
         print("\nNo local helper-detectable defects.")
+
+    if report.signal_readout:
+        print(f"\nLearning Signal Readout (LSC-T3): {len(report.signal_readout)} advisory signal(s)")
+        for item in report.signal_readout:
+            blocker_tag = " [BLOCKER]" if item.blocking else ""
+            print(f"  [{item.severity.upper()}]{blocker_tag} {item.source_path} ({item.source_surface})")
+            print(f"    outcome: {item.recommended_outcome}")
+            print(f"    next: {item.next_suggested_action}")
+    else:
+        print("\nLearning Signal Readout (LSC-T3): no helper-detectable signals for current changed set.")
 
 
 def main(argv: list[str] | None = None) -> int:

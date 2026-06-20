@@ -624,5 +624,113 @@ class WorkerExperienceHelperDiagnosticTests(unittest.TestCase):
         )
 
 
+class SignalReadoutTests(unittest.TestCase):
+    """LSC-T3: helper exposes advisory signalReadout from existing helper diagnostics."""
+
+    def _empty_plan_patch(self):
+        return mock.patch.object(assist, "build_path_plan", return_value=_plan())
+
+    def test_no_signal_gives_empty_readout(self):
+        """No diagnostics on empty changed set -> empty signal_readout and no defects."""
+        with self._empty_plan_patch():
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.signal_readout, ())
+        self.assertEqual(report.defects, [])
+
+    def test_worker_experience_missing_retro_yields_readout_item(self):
+        """Missing worker-experience retro -> advisory READOUT_ONLY item in signal_readout."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        worker_exp_items = [
+            item for item in report.signal_readout if item.source_surface == "worker-experience"
+        ]
+        self.assertGreater(len(worker_exp_items), 0)
+        self.assertEqual(worker_exp_items[0].recommended_outcome, "READOUT_ONLY")
+
+    def test_corpus_defect_yields_readout_item(self):
+        """Corpus completeness defect -> advisory signal_readout item with corpus-completeness surface."""
+        plan = _plan(
+            changed=("docs/reviews/x.md",),
+            material=("docs/reviews/x.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_REVIEW_COMPLETE_CLAIM_NO_SECTION
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        corpus_items = [
+            item for item in report.signal_readout if item.source_surface == "corpus-completeness"
+        ]
+        self.assertGreater(len(corpus_items), 0)
+
+    def test_json_output_has_signal_readout_key(self):
+        """--json output must include signalReadout as a list (LSC-T3 contract)."""
+        plan = _plan(
+            changed=("governance/compat/foo.py",),
+            material=("governance/compat/foo.py",),
+        )
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--json"])
+        self.assertEqual(rc, 0)
+        payload = json.loads(buf.getvalue())
+        self.assertIn("signalReadout", payload)
+        self.assertIsInstance(payload["signalReadout"], list)
+
+    def test_human_output_has_learning_signal_readout_section(self):
+        """Human output must include Learning Signal Readout section (LSC-T3 contract)."""
+        buf = io.StringIO()
+        with self._empty_plan_patch():
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD"])
+        self.assertEqual(rc, 0)
+        self.assertIn("Learning Signal Readout", buf.getvalue())
+
+    def test_readout_items_are_not_blocking_by_default(self):
+        """Routine helper-detectable items must have blocking=False (LSC-T4 policy)."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertTrue(len(report.signal_readout) > 0)
+        self.assertFalse(any(item.blocking for item in report.signal_readout))
+
+    def test_readout_outcomes_use_lsc_t4_vocabulary(self):
+        """All recommended_outcome values must be valid LSC-T4 vocabulary terms."""
+        _VALID_OUTCOMES = {
+            "READOUT_ONLY",
+            "WATCH_FOR_REPEAT",
+            "GOVERNANCE_PROPOSAL_CANDIDATE",
+            "RULE_CANDIDATE",
+            "CHECKER_CANDIDATE",
+            "WORK_ORDER_CANDIDATE",
+            "CLOSURE_BLOCKER",
+        }
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        for item in report.signal_readout:
+            self.assertIn(
+                item.recommended_outcome,
+                _VALID_OUTCOMES,
+                f"unexpected outcome: {item.recommended_outcome}",
+            )
+
+
 if __name__ == "__main__":
     unittest.main()
