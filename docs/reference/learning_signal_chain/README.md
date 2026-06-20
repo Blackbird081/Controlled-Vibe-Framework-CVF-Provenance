@@ -46,6 +46,7 @@ WORK_ORDER_OR_CONTROL -> CLOSED_OR_DEFERRED`
 | LSC-T2 | [CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX.md](CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX.md) | multi-role capture eligibility and no-signal assertion contract only; no checker, helper, ledger store, or CLI/MCP adapter implemented |
 | LSC-T3 | [CVF_LSC_T3_FAST_HELPER_READOUT.md](CVF_LSC_T3_FAST_HELPER_READOUT.md) | fast helper readout: `signalReadout` list in AAF helper JSON and human output; surfaces helper-detectable unresolved signals using LSC-T4 vocabulary; advisory and read-only; no ledger store, generator, drift checker, CLI/MCP adapter, or runtime implementation |
 | LSC-T4 | [CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY.md](CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY.md) | promotion threshold policy: readout-only, watch-for-repeat, governance-proposal, rule/checker/work-order candidate, and closure-blocker outcomes; doc-only vocabulary; no ledger store, checker, helper, or runtime implementation |
+| LSC-T6 | [CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md](CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md) | external-agent CLI/MCP signal IO contract: five-field `externalAgentSignalEvent`, exact `externalAgentNoSignalAssertion`, normalization defaults, readout relationship, absorption routing, latency boundary, and mutation boundary; adapter-contract-only and documentation/reference-only; no CLI/MCP adapter behavior, ledger store, generator, drift checker, runtime mutation, provider/live proof, or public-sync implemented |
 
 ## Source Authority
 

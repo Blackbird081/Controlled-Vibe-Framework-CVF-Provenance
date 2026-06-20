@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-21
 
@@ -205,10 +205,12 @@ Allowed scope:
 - update `docs/reference/learning_signal_chain/README.md` to list LSC-T6;
 - create `docs/reference/learning_signal_chain/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md`;
 - create `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_WORKER_RETURN_2026-06-21.md`;
+- update `docs/baselines/CVF_GC018_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_2026-06-21.md` status during reviewer/closer closure;
+- create `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_COMPLETION_2026-06-21.md` during reviewer/closer closure;
 - define documentation-only external event shape and no-signal assertion;
 - map all fields to existing LSC-T1/Learning Signal Intake ownership;
 - describe normalization defaults, readout relationship, absorption routing,
-  promotion recommendation boundary, latency budget, and mutation boundary.
+  promotion recommendation boundary, latency boundary, and mutation boundary.
 
 Reviewer/closer closure scope:
 
@@ -414,7 +416,7 @@ Required policy assertions:
 - External returned output is not directly eligible for structured signal
   capture until routed through the external knowledge absorption chain.
 - LSC-T3 `signalReadout` remains advisory.
-- LSC-T4 promotion outcomes remain advisory and do not dispatch work.
+- LSC-T4 promotion outcomes remain advisory and do not create work.
 - `autonomousMutationAuthorized=false` remains invariant.
 - No CLI/MCP adapter behavior, provider/live proof, public-sync, direct
   interception, queue/daemon, watcher, readiness, full-hook equivalence, cost
@@ -450,16 +452,16 @@ Reviewer/closer closure evidence must resolve these items:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_FOR_WORKER_2026-06-21.md` | status updated by reviewer/closer after accepted worker return | PENDING_WORKER_RETURN |
-| GC-018 status | `docs/baselines/CVF_GC018_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_2026-06-21.md` | status updated by reviewer/closer after accepted worker return | PENDING_WORKER_RETURN |
-| Worker return | `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_WORKER_RETURN_2026-06-21.md` | `Status: COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_COMPLETION_2026-06-21.md` | reviewer-owned final disposition | PENDING_REVIEWER |
-| Roadmap state | `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md` | roadmap remains governing LSC-T0 plan; row closure updated only by reviewer/closer if authorized | PENDING_REVIEWER |
-| Reference front door | `docs/reference/learning_signal_chain/README.md` | LSC-T6 row present after worker return | PENDING_WORKER_RETURN |
-| Reference contract | `docs/reference/learning_signal_chain/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md` | contract exists after worker return | PENDING_WORKER_RETURN |
-| Session continuity | active session front-door/state/handoff after material commit | session-sync follows material closure commit only if accepted | PENDING_REVIEWER |
-| Registry JSON | N/A with reason: no generated JSON registry created or changed by LSC-T6 dispatch | no registry mutation | N/A with reason |
-| Registry Markdown | N/A with reason: no generated Markdown index created in LSC-T6 dispatch | no generated Markdown registry | N/A with reason |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_FOR_WORKER_2026-06-21.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer/closer patch | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_2026-06-21.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer/closer patch | PASS |
+| Worker return | `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_WORKER_RETURN_2026-06-21.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer with source-fidelity repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_COMPLETION_2026-06-21.md` | reviewer-owned `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md` | LSC-T6 accepted by this closure; roadmap remains the governing LSC-T0 plan | PASS |
+| Reference front door | `docs/reference/learning_signal_chain/README.md` | LSC-T6 row present and bounded to adapter-contract-only documentation/reference behavior | PASS |
+| Reference contract | `docs/reference/learning_signal_chain/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| Session continuity | active session front-door/state/handoff after material commit | session-sync follows material closure commit | N/A with reason |
+| Registry JSON | N/A with reason: no generated JSON registry created or changed by LSC-T6 closure | no registry mutation | PASS |
+| Registry Markdown | N/A with reason: no generated Markdown index created in LSC-T6 closure | no generated Markdown registry | PASS |
 | External evidence digest | N/A with reason: no external benchmark/provider/live digest created | reference-contract closure only | N/A with reason |
 | System loop interlock | N/A with reason: no runtime/source interlock changed | no runtime/source mutation | N/A with reason |
 
@@ -469,8 +471,8 @@ Reviewer/closer closure evidence must resolve these items:
 |---|---|---|
 | Runtime receipt evidence | N/A with reason: LSC-T6 creates no runtime receipt | N/A_WITH_REASON |
 | Query acceptance evidence | N/A with reason: LSC-T6 performs no query acceptance | N/A_WITH_REASON |
-| Worker-return acceptance | pending worker return | PENDING_WORKER_RETURN |
-| Closure claim | no closure claim at dispatch | N/A_WITH_REASON |
+| Worker-return acceptance | worker return present and accepted by reviewer/closer | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` adapter-contract-only reference closure | PASS |
 
 ## Return-To-Orchestrator Conditions
 
