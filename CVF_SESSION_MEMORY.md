@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`
+Current mode marker: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`.
+Current mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`.
 
-Previous mode: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`.
+Previous mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`.
 
 Active handoff:
 
@@ -139,31 +139,30 @@ orientation only, with no runtime/provider/live/direct-interception/readiness
 or universal governed-coding control claim.
 
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
-`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`, after PECA-T1 closure
-session-sync `72555605`. Dispatch repair commit `218ef14d` clarified that
-Claude must capture current HEAD as `executionBaseHead` and use that value as
-the pre-implementation base. It created a fresh GC-018 and Claude work order
-for a private governance freeze-readiness and claim-boundary audit only.
-Pre-dispatch autorun passed 43/43, dispatch-quality passed, commit steward
-dispatch preflight passed, dispatch pre-commit hook passed 54/54, and the
-repair range passed pre-dispatch 43/43 plus pre-implementation 44/44. GKF-T1
-does not authorize freeze, freeze release, posture mutation, runtime/source
-edits, provider/live calls, public-sync work, direct interception claims,
-readiness claims, or universal governed-coding-control claims.
+`CLOSED_PASS_BOUNDED` at closure commit `fdd281d7`, after dispatch commit
+`6a7377b8`, dispatch repair commit `218ef14d`, and PECA-T1 closure
+session-sync `72555605`. Codex accepted Claude's no-commit worker return from
+execution base `89c3c570` and converted the GC-018, work order, and completion
+review to closure. Recommendation: `DEFER_FREEZE_SELECT_NEXT_LANE`. Evidence:
+worker-return fast gate passed, reviewer-fast passed 31/31, dispatch-quality
+passed, machine closure package passed, commit steward reviewer-return passed,
+material pre-commit hook passed 54/54, and committed-range pre-closure content
+gates passed with only expected post-closure session handoff HEAD drift before
+this sync. GKF-T1 does not authorize freeze, freeze release, posture mutation,
+runtime/source edits, provider/live calls, public-sync work, direct
+interception claims, readiness claims, or universal governed-coding-control
+claims.
 
 ## Next Allowed Move
 
-Mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`.
+Mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`.
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`
-under `WORKER_MUST_NOT_COMMIT`. Claude must capture current HEAD as
-`executionBaseHead`, run pre-implementation with
-`--base <executionBaseHead> --head HEAD`, and may create only
-`docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`
-and must return uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex owns review, commit, closure conversion, and
-session sync.
+Next allowed move: select the next high-value foundation lane with fresh GC-018
+and source verification. GKF-T1 recommends `DEFER_FREEZE_SELECT_NEXT_LANE`; do
+not open Delta-T12 by default, and do not enact freeze, freeze release, posture
+mutation, runtime/source edit, provider/live call, public-sync work, direct
+interception claim, readiness claim, or universal governed-coding-control claim
+without a separate operator checkpoint and governed packet.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

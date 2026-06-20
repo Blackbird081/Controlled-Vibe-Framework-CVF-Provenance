@@ -17,8 +17,8 @@ remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after dispatching GKF-T1 Governance Kernel
-Freeze Readiness And Claim Boundary Audit to Claude.
+Target: correct next-move continuity after closing GKF-T1 Governance Kernel
+Freeze Readiness And Claim Boundary Audit.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,11 +35,11 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize GKF-T1 dispatch repair commit
-`218ef14d`, generated active state, compact session memory, active handoff, and
-the next allowed move for Claude no-commit private readiness audit execution.
-This session sync does not open freeze, freeze release, posture mutation,
-runtime, provider/live, direct-interception, or public-sync scope.
+Authorized guard-maintenance scope: synchronize GKF-T1 closure commit
+`fdd281d7`, generated active state, compact session memory, active handoff, and
+the next allowed move after the private readiness audit. This session sync does
+not open freeze, freeze release, posture mutation, runtime, provider/live,
+direct-interception, or public-sync scope.
 
 Protected paths:
 
@@ -71,6 +71,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/pecaT1PublicExternalEvaluationCatalogAlignmentDispatch20260620.json`
 - `CVF_SESSION/state/entries/pecaT1PublicExternalEvaluationCatalogAlignmentClosure20260620.json`
 - `CVF_SESSION/state/entries/gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditDispatch20260620.json`
+- `CVF_SESSION/state/entries/gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditClosure20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -78,14 +79,15 @@ Protected paths:
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Operator authorization: the operator approved opening GKF-T1 as the next
-governed lane after PECA-T1 closure. GKF-T1 is dispatched to Claude under
-WORKER_MUST_NOT_COMMIT for a private governance freeze-readiness and
-claim-boundary audit only, without expanding freeze, runtime, provider/live,
-direct-interception, or public-sync scope.
+governed lane after PECA-T1 closure. GKF-T1 is now closed bounded after Claude
+returned a no-commit private governance freeze-readiness and claim-boundary
+audit, without expanding freeze, runtime, provider/live, direct-interception,
+or public-sync scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter GKF-T1 dispatch repair commit `218ef14d`, GKF-T1 dispatch commit
-`6a7377b8`, PECA-T1 closure commit `17745320`, public-sync commits `aae8fed4c`
+Do not alter GKF-T1 closure commit `fdd281d7`, GKF-T1 dispatch repair commit
+`218ef14d`, GKF-T1 dispatch commit `6a7377b8`, PECA-T1 closure commit
+`17745320`, public-sync commits `aae8fed4c`
 and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 `3d0b70c5`, material handoff bridge commit `26a9491e`, material commit
 `0a3e298e`, dispatch continuity commit `de1a39c2`, dispatch commit
@@ -93,13 +95,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes the repaired GKF-T1 private readiness audit work order under WORKER_MUST_NOT_COMMIT, captures current HEAD as executionBaseHead, runs pre-implementation with that base, and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation lane with fresh GC-018 and source verification after GKF-T1 recommended `DEFER_FREEZE_SELECT_NEXT_LANE`; parked checkpoint=freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`
+`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`
 
-Current HEAD recorded for this handoff: `218ef14d`
+Current HEAD recorded for this handoff: `fdd281d7`
 
 Material state:
 
@@ -410,15 +412,16 @@ pre-commit hook 54/54 passed. Claim boundary remains public documentation
 orientation only.
 
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
-`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`, after PECA-T1 closure
-session-sync `72555605`. Dispatch repair commit `218ef14d` clarified that
-Claude must capture current HEAD as `executionBaseHead` and use that value as
-the pre-implementation base. It created the source-verified GC-018 and Claude
-work order for a private readiness/claim-boundary audit. Pre-dispatch autorun
-passed 43/43, dispatch-quality passed, commit steward dispatch preflight passed,
-dispatch pre-commit hook passed 54/54, and the repair range passed
-pre-dispatch 43/43 plus pre-implementation 44/44. Claude must create only the
-named completion review and return uncommitted artifacts.
+`CLOSED_PASS_BOUNDED` at closure commit `fdd281d7`, after dispatch commit
+`6a7377b8`, dispatch repair commit `218ef14d`, and PECA-T1 closure
+session-sync `72555605`. Codex accepted Claude's no-commit worker return from
+execution base `89c3c570` and converted the GC-018, work order, and completion
+review to closure. Recommendation: `DEFER_FREEZE_SELECT_NEXT_LANE`. Evidence:
+worker-return fast gate passed, reviewer-fast passed 31/31, dispatch-quality
+passed, machine closure package passed, commit steward reviewer-return passed,
+material pre-commit hook passed 54/54, and committed-range pre-closure content
+gates passed with only expected post-closure session handoff HEAD drift before
+this sync.
 
 ## Next Allowed Move
 
@@ -474,21 +477,15 @@ PECA-T1 Public External Evaluation Package And Catalog Alignment is
 commit `a98447c0`. Public-sync is exported at `2017af304` on public `main`.
 
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
-`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`; dispatch repair commit
-`218ef14d` fixed execution-base guidance.
+`CLOSED_PASS_BOUNDED` at closure commit `fdd281d7`; recommendation:
+`DEFER_FREEZE_SELECT_NEXT_LANE`.
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`
-under `WORKER_MUST_NOT_COMMIT`. Claude must capture current HEAD as
-`executionBaseHead`, run pre-implementation with
-`--base <executionBaseHead> --head HEAD`, and may create only
-`docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`
-and must return uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex owns review, commit, closure conversion, and
-session sync. Keep freeze action, freeze release, posture mutation, runtime
-profiles, provider/live calls, public-sync, CVF Web runtime action, direct
-interception, readiness, universal speed, and universal governed-coding claims
-parked.
+Next allowed move: select the next high-value foundation lane with fresh GC-018
+and source verification. Do not open Delta-T12 by default. Keep freeze action,
+freeze release, posture mutation, runtime profiles, provider/live calls,
+public-sync, CVF Web runtime action, direct interception, readiness, universal
+speed, and universal governed-coding claims parked unless a separate operator
+checkpoint and governed packet opens them.
 
 ## Parked Operator Checkpoints
 
