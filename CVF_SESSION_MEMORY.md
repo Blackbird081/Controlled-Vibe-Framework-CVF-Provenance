@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`
+Current mode marker: `cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`.
+Current mode: `cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`.
 
-Previous mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`.
+Previous mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -153,16 +153,29 @@ runtime/source edits, provider/live calls, public-sync work, direct
 interception claims, readiness claims, or universal governed-coding-control
 claims.
 
+CGE-T1 CodeGraph External Absorption Triage Matrix is `CLOSED_PASS_BOUNDED` at
+material commit `1db59198` from base `4d004c42`. The packet retains CodeGraph
+as external advisory input only: graph-derived `freezeAllowed` is `BLOCK`,
+copied LPF-like graph core files are `REJECT_PARALLEL_CORE`, CodeGraph/KGR
+overlap requires dedupe, upstream performance claims are
+`BLOCK_UNTIL_CVF_BENCHMARK`, and ACE-R1 remains parked. Verification passed:
+worker-return fast gate, reviewer-fast 31/31, dispatch-quality, corpus scan
+registry, AOT, commit steward reviewer-return, and pre-commit hook 54/54.
+Boundary: no CodeGraph install, runtime/source/test implementation, MCP wiring,
+watcher/daemon, SQLite adoption, benchmark proof, provider/live proof,
+public-sync, ACE-R1 reopening, freeze, readiness, or universal
+governed-coding-control claim.
+
 ## Next Allowed Move
 
-Mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`.
+Mode: `cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`.
 
-Next allowed move: select the next high-value foundation lane with fresh GC-018
-and source verification. GKF-T1 recommends `DEFER_FREEZE_SELECT_NEXT_LANE`; do
-not open Delta-T12 by default, and do not enact freeze, freeze release, posture
-mutation, runtime/source edit, provider/live call, public-sync work, direct
-interception claim, readiness claim, or universal governed-coding-control claim
-without a separate operator checkpoint and governed packet.
+Next allowed move: operator selects the next high-value lane with fresh GC-018
+and source verification. Candidate directions include a post-CGE
+implementation/dedupe lane only if explicitly authorized, or ACE-R1 only if the
+operator reopens it. Do not open runtime/source/MCP/watcher/daemon/benchmark/
+provider/live/public-sync/freeze/readiness/universal-control work by default.
+Do not open Delta-T12 by default.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

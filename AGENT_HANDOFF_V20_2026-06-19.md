@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current GKF-T1 dispatch state, the current
+This compact handoff records the current CGE-T1 closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing GKF-T1 Governance Kernel
-Freeze Readiness And Claim Boundary Audit.
+Target: correct next-move continuity after closing CGE-T1 CodeGraph External
+Absorption Triage Matrix.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,11 +35,12 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize GKF-T1 closure commit
-`fdd281d7`, generated active state, compact session memory, active handoff, and
-the next allowed move after the private readiness audit. This session sync does
-not open freeze, freeze release, posture mutation, runtime, provider/live,
-direct-interception, or public-sync scope.
+Authorized guard-maintenance scope: synchronize CGE-T1 closure material commit
+`1db59198`, generated active state, compact session memory, active handoff, and
+the next allowed move after the private CodeGraph external absorption triage.
+This session sync does not open freeze, freeze release, posture mutation,
+runtime, MCP, watcher/daemon, benchmark, provider/live, direct-interception,
+ACE-R1, or public-sync scope.
 
 Protected paths:
 
@@ -72,20 +73,23 @@ Protected paths:
 - `CVF_SESSION/state/entries/pecaT1PublicExternalEvaluationCatalogAlignmentClosure20260620.json`
 - `CVF_SESSION/state/entries/gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditDispatch20260620.json`
 - `CVF_SESSION/state/entries/gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditClosure20260620.json`
+- `CVF_SESSION/state/entries/cgeT1CodeGraphExternalAbsorptionTriageClosure20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator approved opening GKF-T1 as the next
-governed lane after PECA-T1 closure. GKF-T1 is now closed bounded after Claude
-returned a no-commit private governance freeze-readiness and claim-boundary
-audit, without expanding freeze, runtime, provider/live, direct-interception,
-or public-sync scope.
+Operator authorization: the operator approved CGE-T1 as the CodeGraph external
+absorption triage matrix after reviewing the T0 rebuttal/classification. CGE-T1
+is now closed bounded after Claude returned a no-commit private triage matrix,
+without expanding CodeGraph into CVF runtime/source, MCP, watcher/daemon,
+benchmark, provider/live, ACE-R1, direct-interception, readiness, or public-sync
+scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter GKF-T1 closure commit `fdd281d7`, GKF-T1 dispatch repair commit
+Do not alter CGE-T1 closure material commit `1db59198`, GKF-T1 closure commit
+`fdd281d7`, GKF-T1 dispatch repair commit
 `218ef14d`, GKF-T1 dispatch commit `6a7377b8`, PECA-T1 closure commit
 `17745320`, public-sync commits `aae8fed4c`
 and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
@@ -95,13 +99,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value foundation lane with fresh GC-018 and source verification after GKF-T1 recommended `DEFER_FREEZE_SELECT_NEXT_LANE`; parked checkpoint=freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator selects the next high-value lane with fresh GC-018 and source verification after CGE-T1 closed bounded; parked checkpoint=CodeGraph runtime/source implementation, MCP wiring, watcher/daemon, benchmark proof, ACE-R1 reopening, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_closed_next_foundation_ready`
+`cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`
 
-Current HEAD recorded for this handoff: `fdd281d7`
+Current HEAD recorded for this handoff: `1db59198`
 
 Material state:
 
@@ -423,6 +427,18 @@ material pre-commit hook passed 54/54, and committed-range pre-closure content
 gates passed with only expected post-closure session handoff HEAD drift before
 this sync.
 
+CGE-T1 CodeGraph External Absorption Triage Matrix is `CLOSED_PASS_BOUNDED` at
+material commit `1db59198` from base `4d004c42`. CodeGraph remains external
+advisory input only; graph-derived `freezeAllowed` is `BLOCK`; copied LPF-like
+graph core files are `REJECT_PARALLEL_CORE`; CodeGraph/KGR overlap requires
+dedupe; upstream performance claims are `BLOCK_UNTIL_CVF_BENCHMARK`; ACE-R1
+remains parked. Verification passed: worker-return fast gate, reviewer-fast
+31/31, dispatch-quality, corpus scan registry, AOT, commit steward
+reviewer-return, and pre-commit hook 54/54. Boundary: no CodeGraph install,
+runtime/source/test implementation, MCP wiring, watcher/daemon, SQLite
+adoption, benchmark proof, provider/live proof, public-sync, ACE-R1 reopening,
+freeze, readiness, or universal governed-coding-control claim.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -480,8 +496,15 @@ GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
 `CLOSED_PASS_BOUNDED` at closure commit `fdd281d7`; recommendation:
 `DEFER_FREEZE_SELECT_NEXT_LANE`.
 
-Next allowed move: select the next high-value foundation lane with fresh GC-018
-and source verification. Do not open Delta-T12 by default. Keep freeze action,
+CGE-T1 CodeGraph External Absorption Triage Matrix is `CLOSED_PASS_BOUNDED` at
+material commit `1db59198`. CodeGraph remains advisory only; implementation,
+MCP, watcher/daemon, benchmark, provider/live, public-sync, and ACE-R1 are not
+opened by CGE-T1.
+
+Next allowed move: operator selects the next high-value lane with fresh GC-018
+and source verification. Candidate directions include a post-CGE
+implementation/dedupe lane only if explicitly authorized, or ACE-R1 only if the
+operator reopens it. Do not open Delta-T12 by default. Keep freeze action,
 freeze release, posture mutation, runtime profiles, provider/live calls,
 public-sync, CVF Web runtime action, direct interception, readiness, universal
 speed, and universal governed-coding claims parked unless a separate operator
