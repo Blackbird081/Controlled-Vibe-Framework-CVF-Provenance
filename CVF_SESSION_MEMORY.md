@@ -140,13 +140,16 @@ or universal governed-coding control claim.
 
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
 `DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`, after PECA-T1 closure
-session-sync `72555605`. It created a fresh GC-018 and Claude work order for a
-private governance freeze-readiness and claim-boundary audit only. Pre-dispatch
-autorun passed 43/43, dispatch-quality passed, commit steward dispatch
-preflight passed, and the dispatch pre-commit hook passed 54/54. GKF-T1 does
-not authorize freeze, freeze release, posture mutation, runtime/source edits,
-provider/live calls, public-sync work, direct interception claims, readiness
-claims, or universal governed-coding-control claims.
+session-sync `72555605`. Dispatch repair commit `218ef14d` clarified that
+Claude must capture current HEAD as `executionBaseHead` and use that value as
+the pre-implementation base. It created a fresh GC-018 and Claude work order
+for a private governance freeze-readiness and claim-boundary audit only.
+Pre-dispatch autorun passed 43/43, dispatch-quality passed, commit steward
+dispatch preflight passed, dispatch pre-commit hook passed 54/54, and the
+repair range passed pre-dispatch 43/43 plus pre-implementation 44/44. GKF-T1
+does not authorize freeze, freeze release, posture mutation, runtime/source
+edits, provider/live calls, public-sync work, direct interception claims,
+readiness claims, or universal governed-coding-control claims.
 
 ## Next Allowed Move
 
@@ -154,7 +157,9 @@ Mode: `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched
 
 Next allowed move: Claude executes
 `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`
-under `WORKER_MUST_NOT_COMMIT`. Claude may create only
+under `WORKER_MUST_NOT_COMMIT`. Claude must capture current HEAD as
+`executionBaseHead`, run pre-implementation with
+`--base <executionBaseHead> --head HEAD`, and may create only
 `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`
 and must return uncommitted `COMPLETE_PENDING_REVIEW` or
 `BLOCKED_WITH_REASON`. Codex owns review, commit, closure conversion, and

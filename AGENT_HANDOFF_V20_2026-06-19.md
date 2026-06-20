@@ -35,8 +35,8 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize GKF-T1 dispatch commit
-`6a7377b8`, generated active state, compact session memory, active handoff, and
+Authorized guard-maintenance scope: synchronize GKF-T1 dispatch repair commit
+`218ef14d`, generated active state, compact session memory, active handoff, and
 the next allowed move for Claude no-commit private readiness audit execution.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, provider/live, direct-interception, or public-sync scope.
@@ -84,21 +84,22 @@ claim-boundary audit only, without expanding freeze, runtime, provider/live,
 direct-interception, or public-sync scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter GKF-T1 dispatch commit `6a7377b8`, PECA-T1 closure commit
-`17745320`, public-sync commits `aae8fed4c` and `2017af304`, PECA-T1 dispatch
-commit `a98447c0`, Delta-T11 closure commit `3d0b70c5`, material handoff
-bridge commit `26a9491e`, material commit `0a3e298e`, dispatch continuity
-commit `de1a39c2`, dispatch commit `53aca070`, or earlier Delta commits.
+Do not alter GKF-T1 dispatch repair commit `218ef14d`, GKF-T1 dispatch commit
+`6a7377b8`, PECA-T1 closure commit `17745320`, public-sync commits `aae8fed4c`
+and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
+`3d0b70c5`, material handoff bridge commit `26a9491e`, material commit
+`0a3e298e`, dispatch continuity commit `de1a39c2`, dispatch commit
+`53aca070`, or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes the GKF-T1 private readiness audit work order under WORKER_MUST_NOT_COMMIT and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes the repaired GKF-T1 private readiness audit work order under WORKER_MUST_NOT_COMMIT, captures current HEAD as executionBaseHead, runs pre-implementation with that base, and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
 `gkf_t1_governance_kernel_freeze_readiness_claim_boundary_audit_dispatched_claude_execution_pending`
 
-Current HEAD recorded for this handoff: `6a7377b8`
+Current HEAD recorded for this handoff: `218ef14d`
 
 Material state:
 
@@ -410,11 +411,14 @@ orientation only.
 
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
 `DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`, after PECA-T1 closure
-session-sync `72555605`. It created the source-verified GC-018 and Claude work
-order for a private readiness/claim-boundary audit. Pre-dispatch autorun passed
-43/43, dispatch-quality passed, commit steward dispatch preflight passed, and
-dispatch pre-commit hook passed 54/54. Claude must create only the named
-completion review and return uncommitted artifacts.
+session-sync `72555605`. Dispatch repair commit `218ef14d` clarified that
+Claude must capture current HEAD as `executionBaseHead` and use that value as
+the pre-implementation base. It created the source-verified GC-018 and Claude
+work order for a private readiness/claim-boundary audit. Pre-dispatch autorun
+passed 43/43, dispatch-quality passed, commit steward dispatch preflight passed,
+dispatch pre-commit hook passed 54/54, and the repair range passed
+pre-dispatch 43/43 plus pre-implementation 44/44. Claude must create only the
+named completion review and return uncommitted artifacts.
 
 ## Next Allowed Move
 
@@ -470,11 +474,14 @@ PECA-T1 Public External Evaluation Package And Catalog Alignment is
 commit `a98447c0`. Public-sync is exported at `2017af304` on public `main`.
 
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
-`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`.
+`DISPATCHED_TO_CLAUDE` at dispatch commit `6a7377b8`; dispatch repair commit
+`218ef14d` fixed execution-base guidance.
 
 Next allowed move: Claude executes
 `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`
-under `WORKER_MUST_NOT_COMMIT`. Claude may create only
+under `WORKER_MUST_NOT_COMMIT`. Claude must capture current HEAD as
+`executionBaseHead`, run pre-implementation with
+`--base <executionBaseHead> --head HEAD`, and may create only
 `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`
 and must return uncommitted `COMPLETE_PENDING_REVIEW` or
 `BLOCKED_WITH_REASON`. Codex owns review, commit, closure conversion, and
