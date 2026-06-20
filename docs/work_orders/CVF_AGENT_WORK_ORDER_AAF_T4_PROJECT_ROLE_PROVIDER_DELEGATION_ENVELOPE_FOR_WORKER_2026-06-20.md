@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-20
 
@@ -127,6 +127,9 @@ Allowed scope:
 - update `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`;
 - update `docs/reference/guard_orientation/README.md`;
 - create `docs/reviews/CVF_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_WORKER_RETURN_2026-06-20.md`;
+- reviewer/closer closure conversion may create
+  `docs/reviews/CVF_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_COMPLETION_2026-06-20.md`
+  and update this work order status/checklist/closure package;
 - keep all normative role/provider wording role-neutral and project-configurable.
 
 Forbidden scope:
@@ -370,15 +373,15 @@ Any scope expansion returns to the operator.
 
 ## Closure Checklist
 
-- [ ] Worker changed only the four Required Deliverables.
-- [ ] Delegation envelope is role-neutral and project-configurable.
-- [ ] Operational reference index points to the envelope.
-- [ ] Guard Orientation Index points project delegation tasks to the envelope.
-- [ ] Worker-return packet includes required shape sections.
-- [ ] Public Export Disposition is resolved.
-- [ ] Automated provider selection, runtime/provider/live/public-sync/cost
+- [x] Worker changed only the four Required Deliverables.
+- [x] Delegation envelope is role-neutral and project-configurable.
+- [x] Operational reference index points to the envelope.
+- [x] Guard Orientation Index points project delegation tasks to the envelope.
+- [x] Worker-return packet includes required shape sections.
+- [x] Public Export Disposition is resolved.
+- [x] Automated provider selection, runtime/provider/live/public-sync/cost
   optimization/readiness claims are N/A with reason.
-- [ ] Reviewer/closer owns completion review and session-sync.
+- [x] Reviewer/closer owns completion review and session-sync.
 
 ## Return-To-Orchestrator Conditions
 
@@ -568,9 +571,28 @@ narrows, or rejects the dispatch prediction.
 
 ## Machine Closure Package
 
-N/A with reason: this is a dispatch work order, not a closure artifact.
-Reviewer/closer owns closure conversion after worker returns
-`COMPLETE_PENDING_REVIEW`.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_FOR_WORKER_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_WORKER_RETURN_2026-06-20.md` | worker return present and accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_COMPLETION_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Delegation envelope | `docs/reference/project_role_provider_delegation/README.md` | `Status: ACTIVE_REFERENCE`; `docType: reference` | PASS |
+| Reference routing | `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reference/guard_orientation/README.md` | bounded routing rows present | PASS |
+| Roadmap state | AAF-T4 closure state | `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no JSON registry required or changed | no generated JSON registry touched | PASS |
+| Registry Markdown | N/A with reason: no Markdown registry required; operational reference and guard orientation rows added | routing rows added instead | PASS |
+| External evidence digest | N/A with reason: no external evidence digest created | documentation/reference closure only | N/A with reason |
+| System loop interlock | N/A with reason: no system loop interlock changed | no runtime/source interlock mutation | N/A with reason |
+| Session continuity | active session front-door/state/handoff after material commit | material closure only; active session-sync follows this commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: AAF-T4 creates no runtime receipt | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: AAF-T4 performs no query acceptance | N/A_WITH_REASON |
+| Worker-return acceptance | worker return present and accepted by reviewer/closer | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` documentation/reference closure only | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 
