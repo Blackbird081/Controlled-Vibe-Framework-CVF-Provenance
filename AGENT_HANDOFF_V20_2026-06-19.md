@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current CGE-T1 closure state, the current
+This compact handoff records the current CGE-T2 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing CGE-T1 CodeGraph External
-Absorption Triage Matrix.
+Target: correct next-move continuity after dispatching CGE-T2 CodeGraph LPF/KGR
+Adaptation Contract.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,12 +35,12 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize CGE-T1 closure material commit
-`1db59198`, generated active state, compact session memory, active handoff, and
-the next allowed move after the private CodeGraph external absorption triage.
-This session sync does not open freeze, freeze release, posture mutation,
-runtime, MCP, watcher/daemon, benchmark, provider/live, direct-interception,
-ACE-R1, or public-sync scope.
+Authorized guard-maintenance scope: synchronize CGE-T2 dispatch material commit
+`1c8103fe`, generated active state, compact session memory, active handoff, and
+the next allowed move after the private CodeGraph LPF/KGR adaptation-contract
+dispatch. This session sync does not open freeze, freeze release, posture
+mutation, runtime, MCP, watcher/daemon, benchmark, provider/live,
+direct-interception, ACE-R1, or public-sync scope.
 
 Protected paths:
 
@@ -74,21 +74,22 @@ Protected paths:
 - `CVF_SESSION/state/entries/gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditDispatch20260620.json`
 - `CVF_SESSION/state/entries/gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditClosure20260620.json`
 - `CVF_SESSION/state/entries/cgeT1CodeGraphExternalAbsorptionTriageClosure20260620.json`
+- `CVF_SESSION/state/entries/cgeT2CodeGraphLpfKgrAdaptationContractDispatch20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator approved CGE-T1 as the CodeGraph external
-absorption triage matrix after reviewing the T0 rebuttal/classification. CGE-T1
-is now closed bounded after Claude returned a no-commit private triage matrix,
-without expanding CodeGraph into CVF runtime/source, MCP, watcher/daemon,
-benchmark, provider/live, ACE-R1, direct-interception, readiness, or public-sync
-scope.
+Operator authorization: the operator asked Codex to issue the next work order
+for Claude after CGE-T1 closure. Codex dispatched CGE-T2 as a documentation/
+reference adaptation-contract tranche only, without expanding CodeGraph into
+CVF runtime/source, MCP, watcher/daemon, benchmark, provider/live, ACE-R1,
+direct-interception, readiness, or public-sync scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter CGE-T1 closure material commit `1db59198`, GKF-T1 closure commit
+Do not alter CGE-T2 dispatch material commit `1c8103fe`, CGE-T1 closure
+material commit `1db59198`, GKF-T1 closure commit
 `fdd281d7`, GKF-T1 dispatch repair commit
 `218ef14d`, GKF-T1 dispatch commit `6a7377b8`, PECA-T1 closure commit
 `17745320`, public-sync commits `aae8fed4c`
@@ -99,13 +100,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator selects the next high-value lane with fresh GC-018 and source verification after CGE-T1 closed bounded; parked checkpoint=CodeGraph runtime/source implementation, MCP wiring, watcher/daemon, benchmark proof, ACE-R1 reopening, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`cge_t2_codegraph_lpf_kgr_adaptation_contract_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes the CGE-T2 work order under `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; parked checkpoint=CodeGraph runtime/source implementation, MCP wiring, watcher/daemon, benchmark proof, ACE-R1 reopening, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`
+`cge_t2_codegraph_lpf_kgr_adaptation_contract_dispatched_claude_execution_pending`
 
-Current HEAD recorded for this handoff: `1db59198`
+Current HEAD recorded for this handoff: `1c8103fe`
 
 Material state:
 
@@ -439,6 +440,19 @@ runtime/source/test implementation, MCP wiring, watcher/daemon, SQLite
 adoption, benchmark proof, provider/live proof, public-sync, ACE-R1 reopening,
 freeze, readiness, or universal governed-coding-control claim.
 
+CGE-T2 CodeGraph LPF/KGR Adaptation Contract is `DISPATCHED` at material commit
+`1c8103fe` from dispatch base `5cb5a8e1`. Artifacts: GC-018
+`docs/baselines/CVF_GC018_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_2026-06-20.md`
+and work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_FOR_CLAUDE_2026-06-20.md`.
+Claude must not commit and may create exactly two uncommitted artifacts: the
+reference adaptation contract and the worker-return artifact. Verification
+before dispatch passed: pre-dispatch autorun 43/43, dispatch-quality, AOT,
+commit steward dispatch, and pre-commit hook 54/54. Boundary: documentation/
+reference only; no runtime, source/test implementation, CodeGraph install/init/
+`.codegraph`, MCP wiring, watcher/daemon, benchmark, provider/live, public-sync,
+ACE-R1 reopening, freeze, readiness, or universal governed-coding-control claim.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -501,14 +515,18 @@ material commit `1db59198`. CodeGraph remains advisory only; implementation,
 MCP, watcher/daemon, benchmark, provider/live, public-sync, and ACE-R1 are not
 opened by CGE-T1.
 
-Next allowed move: operator selects the next high-value lane with fresh GC-018
-and source verification. Candidate directions include a post-CGE
-implementation/dedupe lane only if explicitly authorized, or ACE-R1 only if the
-operator reopens it. Do not open Delta-T12 by default. Keep freeze action,
-freeze release, posture mutation, runtime profiles, provider/live calls,
-public-sync, CVF Web runtime action, direct interception, readiness, universal
-speed, and universal governed-coding claims parked unless a separate operator
-checkpoint and governed packet opens them.
+CGE-T2 CodeGraph LPF/KGR Adaptation Contract is `DISPATCHED` at material commit
+`1c8103fe`.
+
+Next allowed move: Claude executes the CGE-T2 work order under
+`WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` with
+exactly the authorized reference contract and worker-return artifact, or
+`BLOCKED_WITH_REASON`. Codex reviews/closes after return. Do not open Delta-T12
+by default. Keep freeze action, freeze release, posture mutation, runtime
+profiles, provider/live calls, public-sync, CVF Web runtime action, direct
+interception, readiness, universal speed, and universal governed-coding claims
+parked unless a separate operator checkpoint and governed packet opens them.
+LHW24 remains the latest closed numbered LHW wave.
 
 ## Parked Operator Checkpoints
 
