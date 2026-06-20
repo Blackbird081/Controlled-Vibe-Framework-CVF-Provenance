@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-21
 
-Current mode marker: `lsc_t2_multi_role_capture_contract_dispatched_to_worker`
+Current mode marker: `lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `lsc_t2_multi_role_capture_contract_dispatched_to_worker`.
+Current mode: `lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`.
 
-Previous mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`.
+Previous mode: `lsc_t2_multi_role_capture_contract_dispatched_to_worker`.
 
 Active handoff:
 
@@ -332,17 +332,36 @@ watcher, readiness, cost optimization, full-hook equivalence, universal
 governed-coding control, or reopening of AAF-T6, AAF-T7, CGE-T3, ACE-R1,
 MLW7, or MLW8.
 
+LSC-T2 Multi-Role Capture Contract And Eligibility Matrix is
+`CLOSED_PASS_BOUNDED` at material closure commit `00214e9a`, after dispatch
+commit `98ff0510` and dispatch continuity commit `fe0e8f44`. It adds
+`docs/reference/learning_signal_chain/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX.md`,
+updates the LSC reference front door, records worker return, and files the
+completion review. Result: CVF now has a bounded role-neutral capture
+eligibility contract for worker, reviewer/reviewer-closer, dispatch author/
+orchestrator, session-sync steward, operator, and external-agent returned
+output signals. Evidence: AAF helper PASS, worker-return fast gate PASS with
+reviewer-fast 32/32, dispatch-quality PASS, machine closure package PASS,
+corpus registry repair PASS after replacing a glob-like review phrase, and
+material pre-commit hook PASS 55/55. Post-commit pre-closure content gates
+passed 42/43 with only expected active-handoff HEAD drift before this session
+sync. Boundary: documentation/reference contract only; no ledger store, source
+directory, generator, drift checker, helper readout, runtime Learning Plane
+mutation, provider/live proof, CLI/MCP adapter behavior, public-sync, direct
+interception, wrapper/proxy enforcement, arbitrary command execution,
+EDIT/COMMIT execution, queue/daemon, watcher, readiness, cost optimization,
+full-hook equivalence, universal governed-coding control, or reopening of
+AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, or MLW8.
+
 ## Next Allowed Move
 
-Mode: `lsc_t2_multi_role_capture_contract_dispatched_to_worker`.
+Mode: `lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`.
 
-Next allowed move: worker executes the LSC-T2 work order under
-`WORKER_MUST_NOT_COMMIT`, captures `executionBaseHead`, runs
-pre-implementation from the dispatch/current worker-start base, creates only
-the required LSC-T2 reference/front-door/worker-return artifacts, and returns
-uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Codex owns
-review, allowed reviewer repairs, final gates, commit, closure conversion, and
-session sync.
+Next allowed move: operator checkpoint to select the next Learning Signal Chain
+tranche or another parked lane through fresh GC-018 and a source-verified work
+order. Candidate directions include LSC-T4 Promotion Threshold Policy, LSC-T3
+Fast Helper Readout, LSC-T6 External Agent CLI/MCP Signal Contract, or another
+explicitly selected bounded foundation lane.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
