@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `aaf_t5_worker_experience_retrospective_capture_dispatched_to_worker`
+Current mode marker: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t5_worker_experience_retrospective_capture_dispatched_to_worker`.
+Current mode: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`.
 
-Previous mode: `aaf_t4_project_role_provider_delegation_closed_aaf_t5_read_receipt_gate_recommended`.
+Previous mode: `aaf_t5_worker_experience_retrospective_capture_dispatched_to_worker`.
 
 Active handoff:
 
@@ -270,26 +270,41 @@ wrapper/proxy enforcement, direct interception, arbitrary command execution,
 EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook equivalence,
 cost optimization claim, or universal governed-coding-control claim.
 
+AAF-T5 Worker Experience Retrospective Capture Foundation is
+`CLOSED_PASS_BOUNDED` at material closure commit `d76a37cf`, after dispatch
+commit `59c50a9d` and dispatch continuity commit `bd3d6834`. It adds
+`docs/reference/worker_experience_retrospective/README.md`,
+`governance/compat/check_worker_experience_retrospective.py`, focused tests,
+AAF helper diagnostics, hook-chain wiring, operational index routing, worker
+return, and completion review. Evidence: focused tests pass 53 tests,
+worker-experience checker passes with 1 eligible worker-return artifact,
+AAF helper passes with `resolvedMode=reviewer-return` and `defects=[]`,
+worker-return fast gate passes with focused pytest 53 passed and reviewer-fast
+32/32, and material pre-commit hook passes 55/55. Reviewer corrections added
+exact NA assertion, duplicate-token rejection, and work-order marker
+false-positive exclusion. Boundary: artifact-level worker-experience capture
+only; no AAF-T6 read-receipt gate, no AAF-T7 helper/index hardening beyond
+AAF-T5 checker enum coverage, runtime/provider/live proof, public-sync, MCP
+execution, wrapper/proxy enforcement, direct interception, arbitrary command
+execution, EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook
+equivalence, cost optimization claim, or universal governed-coding-control
+claim.
+
 ## Next Allowed Move
 
-Mode: `aaf_t5_worker_experience_retrospective_capture_dispatched_to_worker`.
+Mode: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`.
 
-Next allowed move: give the worker
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_FOR_WORKER_2026-06-20.md`.
-Worker must use `WORKER_MUST_NOT_COMMIT` and return uncommitted
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with actual
-`executionBaseHead`, `git status --short`, focused tests, AAF helper result,
-worker-return fast gate result, and `WORKER_EXPERIENCE_RETRO` or the exact
-`WORKER_EXPERIENCE_RETRO_NA_WITH_REASON` token. Do not open AAF-T6 Guard
-Orientation Read-Receipt Gate, AAF-T7 helper/index friction hardening beyond
-AAF-T5 token enum capture, automated provider selection, runtime/source/product
-implementation outside AAF-T5 checker/helper scope, runtime provider routing,
-provider/live proof, public-sync, MCP execution, wrapper/proxy enforcement,
-direct IDE/shell/git/filesystem interception, arbitrary command execution,
-EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook equivalence,
-cost optimization claim, or universal governed-coding-control claim. CGE-T3
-Full Knowledge Absorption Ledger and ACE-R1 remain parked until explicit
-operator selection. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: operator checkpoint to choose the next governed lane.
+Candidate parked lanes are AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7
+helper/index friction hardening, CGE-T3 Full Knowledge Absorption Ledger, or
+ACE-R1 Agent Coding Evidence Replay Roadmap. Do not open automated provider
+selection, runtime/source/product implementation outside a fresh governed work
+order, runtime provider routing, provider/live proof, public-sync, MCP
+execution, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
+interception, arbitrary command execution, EDIT/COMMIT execution, queue/daemon,
+watcher, readiness, full-hook equivalence, cost optimization claim, or
+universal governed-coding-control claim without explicit operator selection and
+fresh governed packet. LHW24 remains the latest closed numbered LHW wave.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

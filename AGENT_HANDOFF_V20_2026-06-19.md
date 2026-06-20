@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current AAF-T5 dispatch state, the current
+This compact handoff records the current AAF-T5 closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after dispatching AAF-T5 Worker
-Experience Retrospective Capture Foundation to the worker.
+Target: correct next-move continuity after closing AAF-T5 Worker Experience
+Retrospective Capture Foundation.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,9 +35,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize AAF-T5 dispatch commit
-`59c50a9d`, generated active state, compact session memory, active handoff, and
-the next allowed move after AAF-T5 dispatch was accepted.
+Authorized guard-maintenance scope: synchronize AAF-T5 closure commit
+`d76a37cf`, generated active state, compact session memory, active handoff, and
+the next allowed move after AAF-T5 closure was accepted.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, automated provider selection, runtime provider
@@ -86,6 +86,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeDispatch20260620.json`
 - `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeClosure20260620.json`
 - `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureDispatch20260620.json`
+- `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureClosure20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -97,11 +98,12 @@ noncoder and external-agent use, authorized AAF-T3 Guard Orientation Index /
 task-first guard map dispatch with role-neutral instructions, then directed
 the sequence to process AAF-T3 before AAF-T4. The operator approved moving to
 AAF-T4 after AAF-T3 closure and then approved the worker-experience governance
-uplift. AAF-T5 is now dispatched as Worker Experience Retrospective Capture
+uplift. AAF-T5 is now closed as Worker Experience Retrospective Capture
 Foundation, not the Guard Orientation Read-Receipt Gate.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter AAF-T5 dispatch commit `59c50a9d`, AAF-T4 closure commit
+Do not alter AAF-T5 closure commit `d76a37cf`, AAF-T5 dispatch commit
+`59c50a9d`, AAF-T4 closure commit
 `518d4131`, AAF-T4 dispatch commit
 `473e96ba`, AAF-T3 closure commit `45fd5468`, AAF-T3 dispatch commit
 `a5efb7b2`, AAF-T2 closure commit
@@ -121,13 +123,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t5_worker_experience_retrospective_capture_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=give the worker the AAF-T5 Worker Experience Retrospective Capture Foundation work order; parked checkpoint=CGE-T3 absorption, ACE-R1, AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to choose AAF-T6, AAF-T7, CGE-T3, ACE-R1, or another fresh governed lane; parked checkpoint=CGE-T3 absorption, ACE-R1, AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`aaf_t5_worker_experience_retrospective_capture_dispatched_to_worker`
+`aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`
 
-Current HEAD recorded for this handoff: `59c50a9d`
+Current HEAD recorded for this handoff: `d76a37cf`
 
 Material state:
 
@@ -622,21 +624,34 @@ reviewer-return steward passed, material pre-commit hook passed 54/54, and
 committed-range pre-closure content gates passed with only expected
 post-material handoff HEAD drift before this sync.
 
-Next allowed move: give the worker
+AAF-T5 Worker Experience Retrospective Capture Foundation is
+`CLOSED_PASS_BOUNDED` at material closure commit `d76a37cf`, after dispatch
+commit `59c50a9d` and dispatch continuity commit `bd3d6834`. Artifacts:
+`docs/reference/worker_experience_retrospective/README.md`,
+`governance/compat/check_worker_experience_retrospective.py`,
+`governance/compat/test_check_worker_experience_retrospective.py`,
+`governance/compat/run_agent_automation_assist.py`,
+`governance/compat/test_run_agent_automation_assist.py`,
+`governance/compat/run_local_governance_hook_chain.py`,
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`,
+`docs/reviews/CVF_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_WORKER_RETURN_2026-06-20.md`,
+`docs/reviews/CVF_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_COMPLETION_2026-06-20.md`,
+and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_FOR_WORKER_2026-06-20.md`.
-Worker must use `WORKER_MUST_NOT_COMMIT` and return uncommitted
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with actual
-`executionBaseHead`, `git status --short`, focused tests, AAF helper result,
-worker-return fast gate result, and `WORKER_EXPERIENCE_RETRO` or the exact
-`WORKER_EXPERIENCE_RETRO_NA_WITH_REASON` token. Do not open AAF-T6 Guard
-Orientation Read-Receipt Gate, AAF-T7 helper/index friction hardening beyond
-AAF-T5 token enum capture, automated provider selection, runtime/product
-behavior outside AAF-T5 checker/helper scope, provider/live proof, public-sync,
-MCP execution, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
-interception, arbitrary command execution, queue/daemon, watcher, readiness,
-full-hook equivalence, cost optimization claim, or universal
-governed-coding-control claim unless a separate checkpoint and governed packet
-opens them. LHW24 remains the latest closed numbered LHW wave.
+Result: eligible worker-return artifacts now have a bounded
+worker-experience retrospective token/checker/helper/hook foundation. Evidence:
+focused tests pass 53 tests, worker-experience checker passes, AAF helper
+passes with `defects=[]`, worker-return fast gate passes, reviewer-fast passes
+32/32, and material pre-commit hook passes 55/55.
+
+Next allowed move: operator checkpoint to choose the next governed lane.
+Candidate parked lanes are AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7
+helper/index friction hardening, CGE-T3 Full Knowledge Absorption Ledger, or
+ACE-R1 Agent Coding Evidence Replay Roadmap. Do not open runtime/provider/live,
+public-sync, MCP execution, wrapper/proxy enforcement, direct interception,
+arbitrary commands, EDIT/COMMIT execution, queue/daemon, watcher, readiness,
+full-hook equivalence, cost optimization, or universal governed-coding-control
+claims without explicit operator selection and a fresh governed packet.
 
 ## Parked Operator Checkpoints
 
@@ -701,20 +716,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | AAF-T5 dispatch session sync, 2026-06-20 |
+| Session or invocation | AAF-T5 closure session sync, 2026-06-20 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | AAF-T5 dispatch session-sync manifest |
-| Allowed scope source | AAF-T5 dispatch commit `59c50a9d` |
-| Before status evidence | material dispatch commit `59c50a9d` with session surfaces still pointing to AAF-T4 checkpoint |
-| After status evidence | state, memory, and handoff record AAF-T5 dispatched to worker |
+| Target paths | AAF-T5 closure session-sync manifest |
+| Allowed scope source | AAF-T5 closure commit `d76a37cf` |
+| Before status evidence | material closure commit `d76a37cf` with session surfaces still pointing to AAF-T5 dispatch |
+| After status evidence | state, memory, and handoff record AAF-T5 closed and next operator checkpoint |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
 | Approval boundary | dispatch session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `aaf-t5-dispatch-session-sync-2026-06-20` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `aaf-t5-closure-session-sync-2026-06-20` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
