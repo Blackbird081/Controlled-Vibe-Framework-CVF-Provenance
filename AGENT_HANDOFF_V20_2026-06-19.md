@@ -11,15 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current AAF-T1 closure state, the current
+This compact handoff records the current AAF-T2 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing AAF-T1 Agent Automation
-Assist Foundation and returning the parked CodeGraph absorption lane to ready
-status.
+Target: correct next-move continuity after dispatching AAF-T2 Agent Automation
+Assist Early Gap Diagnostics to Claude.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -36,12 +35,12 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize AAF-T1 closure commit
-`3b26e23a`, generated active state, compact session memory, active handoff, and
-the next allowed move after AAF-T1 closed as a bounded read-only automation
-assist foundation. This session sync does not open freeze, freeze release,
-posture mutation, runtime, MCP execution, watcher/daemon, benchmark,
-provider/live, direct-interception, ACE-R1, AAF-T2, or public-sync scope.
+Authorized guard-maintenance scope: synchronize AAF-T2 dispatch commit
+`1c6f8794`, generated active state, compact session memory, active handoff, and
+the next allowed move after the operator selected AAF-T2 before resuming CGE-T3.
+This session sync does not open freeze, freeze release, posture mutation,
+runtime, MCP execution, watcher/daemon, benchmark, provider/live,
+direct-interception, ACE-R1, AAF-T3, or public-sync scope.
 
 Protected paths:
 
@@ -79,6 +78,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/workerReturnPacketShapeContractGuardHardeningClosure20260620.json`
 - `CVF_SESSION/state/entries/aafT1AgentAutomationAssistFoundationDispatch20260620.json`
 - `CVF_SESSION/state/entries/aafT1AgentAutomationAssistFoundationClosure20260620.json`
+- `CVF_SESSION/state/entries/aafT2AgentAutomationAssistEarlyGapDiagnosticsDispatch20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -90,8 +90,8 @@ noncoder and external-agent use, and instructed Codex to issue AAF-T1 to Claude
 as the first test of the new worker-return packet-shape guard.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter AAF-T1 closure commit `3b26e23a`, AAF-T1 dispatch commit
-`c5b3af92`, worker-return guard hardening material commit `640f27a1`, CGE-T2
+Do not alter AAF-T2 dispatch commit `1c6f8794`, AAF-T1 closure commit
+`3b26e23a`, AAF-T1 dispatch commit `c5b3af92`, worker-return guard hardening material commit `640f27a1`, CGE-T2
 closure material commit `1055dce2`, CGE-T2 dispatch material commit `1c8103fe`,
 CGE-T1 closure
 material commit `1db59198`, GKF-T1 closure commit
@@ -105,13 +105,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t1_agent_automation_assist_foundation_closed_cge_t3_resume_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=resume CGE-T3 Full Knowledge Absorption Ledger with a fresh governed packet; parked checkpoint=optional AAF-T2 automation helper drift/CLI/MCP integration unless explicitly selected, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, ACE-R1 reopening without operator selection, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=give Claude the AAF-T2 Agent Automation Assist Early Gap Diagnostics work order; parked checkpoint=CGE-T3 absorption until AAF-T2 review/closure or explicit override, AAF-T3 without operator selection, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, ACE-R1 reopening without operator selection, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`aaf_t1_agent_automation_assist_foundation_closed_cge_t3_resume_ready`
+`aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`
 
-Current HEAD recorded for this handoff: `3b26e23a`
+Current HEAD recorded for this handoff: `1c6f8794`
 
 Material state:
 
@@ -552,16 +552,25 @@ worker-return fast gate, reviewer-return steward, pre-commit hook 54/54, and
 pre-closure content gates passed with only expected session handoff HEAD drift
 before this sync.
 
-Next allowed move: resume CGE-T3 Full Knowledge Absorption Ledger as the parked
-CodeGraph knowledge-absorption lane, using a fresh governed packet and
-source-verification boundary. Optional AAF-T2 automation helper drift/CLI/MCP
-integration remains parked unless the operator explicitly selects it with fresh
-GC-018. Do not open runtime/product behavior, provider/live proof, public-sync,
-MCP execution, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
-interception, arbitrary command execution, queue/daemon, watcher, readiness,
-universal speed, or universal governed-coding-control claims unless a separate
-operator checkpoint and governed packet opens them. LHW24 remains the latest
-closed numbered LHW wave.
+AAF-T2 Agent Automation Assist Early Gap Diagnostics is `DISPATCH_READY` for
+Claude at dispatch commit `1c6f8794` from base `31b7ef35`. Artifacts: GC-018
+`docs/baselines/CVF_GC018_AAF_T2_AGENT_AUTOMATION_ASSIST_EARLY_GAP_DIAGNOSTICS_2026-06-20.md`
+and work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T2_AGENT_AUTOMATION_ASSIST_EARLY_GAP_DIAGNOSTICS_FOR_CLAUDE_2026-06-20.md`.
+Verification passed: helper smoke, pre-dispatch autorun 43/43,
+dispatch-quality, dispatch packet author fast gate, dispatch steward, and
+dispatch pre-commit hook 54/54.
+
+Next allowed move: give Claude the AAF-T2 work order. Claude must return
+`COMPLETE_PENDING_REVIEW` under `WORKER_MUST_NOT_COMMIT` with exactly the helper,
+focused test, and worker-return artifact named by the work order. CGE-T3 Full
+Knowledge Absorption Ledger remains parked until AAF-T2 review/closure or
+explicit operator override. Do not open runtime/product behavior, provider/live
+proof, public-sync, MCP execution, wrapper/proxy enforcement, direct
+IDE/shell/git/filesystem interception, arbitrary command execution, queue/daemon,
+watcher, readiness, full-hook equivalence, universal speed, or universal
+governed-coding-control claims unless a separate operator checkpoint and
+governed packet opens them. LHW24 remains the latest closed numbered LHW wave.
 
 ## Parked Operator Checkpoints
 
@@ -626,20 +635,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | AAF-T1 closure session sync, 2026-06-20 |
+| Session or invocation | AAF-T2 dispatch session sync, 2026-06-20 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | AAF-T1 closure session-sync manifest |
-| Allowed scope source | AAF-T1 closure commit `3b26e23a` |
-| Before status evidence | material closure commit `3b26e23a` with expected pre-sync handoff HEAD drift |
-| After status evidence | state, memory, and handoff record AAF-T1 closed and CGE-T3 resume-ready |
+| Target paths | AAF-T2 dispatch session-sync manifest |
+| Allowed scope source | AAF-T2 dispatch commit `1c6f8794` |
+| Before status evidence | dispatch commit `1c6f8794` with expected pre-sync handoff HEAD drift |
+| After status evidence | state, memory, and handoff record AAF-T2 dispatched to Claude |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | closure session continuity only; no new runtime or public scope |
+| Approval boundary | dispatch session continuity only; no new runtime or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `aaf-t1-closure-session-sync-codex-2026-06-20` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT1AgentAutomationAssistFoundationClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT1AgentAutomationAssistFoundationClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `aaf-t2-dispatch-session-sync-codex-2026-06-20` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT2AgentAutomationAssistEarlyGapDiagnosticsDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT2AgentAutomationAssistEarlyGapDiagnosticsDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 

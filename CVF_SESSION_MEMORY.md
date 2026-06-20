@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `aaf_t1_agent_automation_assist_foundation_closed_cge_t3_resume_ready`
+Current mode marker: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t1_agent_automation_assist_foundation_closed_cge_t3_resume_ready`.
+Current mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`.
 
-Previous mode: `aaf_t1_agent_automation_assist_foundation_dispatched_to_claude`.
+Previous mode: `aaf_t1_agent_automation_assist_foundation_closed_cge_t3_resume_ready`.
 
 Active handoff:
 
@@ -209,19 +209,27 @@ worker-return fast gate, reviewer-return steward, material pre-commit hook
 54/54, and committed-range pre-closure content gates with only expected
 post-material handoff HEAD drift before this sync.
 
+AAF-T2 Agent Automation Assist Early Gap Diagnostics is `DISPATCH_READY` for
+Claude at dispatch commit `1c6f8794` from base `31b7ef35`. It authorizes Claude
+under `WORKER_MUST_NOT_COMMIT` to update the existing read-only helper, update
+focused tests, and create the AAF-T2 worker-return packet. Verification passed:
+helper smoke, pre-dispatch autorun 43/43, dispatch-quality, dispatch packet
+author fast gate, dispatch steward, and dispatch pre-commit hook 54/54.
+
 ## Next Allowed Move
 
-Mode: `aaf_t1_agent_automation_assist_foundation_closed_cge_t3_resume_ready`.
+Mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`.
 
-Next allowed move: resume CGE-T3 Full Knowledge Absorption Ledger as the parked
-CodeGraph knowledge-absorption lane, using a fresh governed packet and
-source-verification boundary. Optional AAF-T2 automation helper drift/CLI/MCP
-integration remains parked unless the operator explicitly selects it with fresh
-GC-018. Do not open runtime/product behavior, provider/live proof, public-sync,
-MCP execution, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
-interception, arbitrary command execution, queue/daemon, watcher, readiness, or
-universal governed-coding-control claim. LHW24 remains the latest closed
-numbered LHW wave.
+Next allowed move: give Claude
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T2_AGENT_AUTOMATION_ASSIST_EARLY_GAP_DIAGNOSTICS_FOR_CLAUDE_2026-06-20.md`.
+Claude must return `COMPLETE_PENDING_REVIEW` under `WORKER_MUST_NOT_COMMIT`
+with exactly the helper, focused test, and worker-return artifact named by the
+work order. CGE-T3 Full Knowledge Absorption Ledger is parked until AAF-T2
+review/closure or explicit operator override. Do not open runtime/product
+behavior, provider/live proof, public-sync, MCP execution, wrapper/proxy
+enforcement, direct IDE/shell/git/filesystem interception, arbitrary command
+execution, queue/daemon, watcher, readiness, full-hook equivalence, or universal
+governed-coding-control claim. LHW24 remains the latest closed numbered LHW wave.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
