@@ -11,13 +11,13 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current LSC-T3 closure state, the current
+This compact handoff records the current LSC-T6 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: closure continuity for LSC-T3 Fast Helper Readout.
+Target: dispatch continuity for LSC-T6 External Agent CLI/MCP Signal Contract.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -34,9 +34,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize LSC-T3 material closure commit
-`fd70157a`, generated active state, compact session memory, active handoff, and
-the next allowed move for LSC-T6 dispatch preparation.
+Authorized guard-maintenance scope: synchronize LSC-T6 material dispatch commit
+`cfe75f4c`, generated active state, compact session memory, active handoff, and
+the next allowed move for worker return review.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
@@ -95,6 +95,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/lscT4PromotionThresholdPolicyClosure20260621.json`
 - `CVF_SESSION/state/entries/lscT3FastHelperReadoutDispatch20260621.json`
 - `CVF_SESSION/state/entries/lscT3FastHelperReadoutClosure20260621.json`
+- `CVF_SESSION/state/entries/lscT6ExternalAgentCliMcpSignalContractDispatch20260621.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -111,11 +112,12 @@ Foundation, not the Guard Orientation Read-Receipt Gate. The operator then
 selected LSC-T2 after the lane-selection audit and approved issuing the work
 order under the LSC roadmap. After LSC-T2 closure, the operator selected the
 roadmap order `LSC-T2 -> LSC-T4 -> LSC-T3 -> LSC-T6 -> LSC-T5/T7` and
-instructed continuation without another checkpoint.
+instructed continuation without another checkpoint. The operator then requested
+creating the LSC-T6 work order.
 
-Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter LSC-T3 closure commit `fd70157a`, LSC-T3 dispatch commit
-`398060e7`, LSC-T4 closure commit
+Rollback boundary: revert only this session-sync commit if rejected.
+Do not alter LSC-T6 dispatch commit `cfe75f4c`, LSC-T3 closure commit
+`fd70157a`, LSC-T3 dispatch commit `398060e7`, LSC-T4 closure commit
 `b568f248`, LSC-T4 dispatch commit
 `275eb374`, LSC-T2 closure commit
 `00214e9a`, LSC-T2 dispatch commit `98ff0510`, LSC-T1 closure commit
@@ -142,16 +144,18 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_t3_fast_helper_readout_closed_next_lsc_t6_dispatch_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=dispatcher may open fresh GC-018/source-verified LSC-T6 External Agent CLI/MCP Signal Contract work order, then LSC-T5/T7 bridge and latency guard; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=await worker `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` return for LSC-T6, then Codex/reviewer owns review, allowed repairs, final commit, completion review, committed-range gates, and session sync; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`lsc_t3_fast_helper_readout_closed_next_lsc_t6_dispatch_ready`
+`lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `fd70157a`
+Current HEAD recorded for this handoff: `cfe75f4c`
 
 Material state:
 
+- LSC-T6 dispatch commit: `cfe75f4c`
+- LSC-T3 closure commit: `fd70157a`
 - Delta-T3 dispatch commit: `aafcdfda`
 - Delta-T3 execution base: `aae39481`
 - Delta-T3 accepted material commit: `ff584e42`
@@ -495,16 +499,21 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after LSC-T3 closure:
+Current pointer after LSC-T6 dispatch:
 
-LSC-T3 Fast Helper Readout is `CLOSED_PASS_BOUNDED` at material closure commit
-`fd70157a`, after dispatch commit `398060e7` and dispatch continuity commit
-`07f66934`.
+LSC-T6 External Agent CLI/MCP Signal Contract is `DISPATCHED_TO_WORKER` at
+material dispatch commit `cfe75f4c`, from dispatch base `5ee4b9b5`.
 
-Next allowed move: dispatcher may open a fresh GC-018 baseline and
-source-verified work order for LSC-T6 External Agent CLI/MCP Signal Contract,
-preserving the roadmap order LSC-T6 next, then LSC-T5/T7 bridge and latency
-guard.
+Dispatch artifacts:
+`docs/baselines/CVF_GC018_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_2026-06-21.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_FOR_WORKER_2026-06-21.md`.
+
+Next allowed move: await worker `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON` return for the LSC-T6 work order, then Codex/reviewer owns
+review, allowed repairs, final commit, completion review, committed-range gates,
+and session sync. Preserve the roadmap order after LSC-T6: LSC-T5/T7 bridge and
+latency guard.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
 hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent Coding Evidence
@@ -514,9 +523,10 @@ runtime Learning Plane mutation, provider/live proof, public-sync,
 wrapper/proxy enforcement, direct IDE/shell/git/filesystem interception,
 arbitrary command execution, EDIT/COMMIT execution, queue/daemon, watcher,
 readiness, full-hook equivalence, cost optimization claim, or universal
-governed-coding-control claim without fresh governed authorization. Public repo
-work, if later authorized, must use the sibling public-sync clone with remote
-verification; do not push public changes from the provenance workspace.
+governed-coding-control claim, or actual CLI/MCP adapter behavior without fresh
+governed authorization. Public repo work, if later authorized, must use the
+sibling public-sync clone with remote verification; do not push public changes
+from the provenance workspace.
 
 Historical closure context:
 

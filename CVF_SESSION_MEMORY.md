@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-21
 
-Current mode marker: `lsc_t3_fast_helper_readout_closed_next_lsc_t6_dispatch_ready`
+Current mode marker: `lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `lsc_t3_fast_helper_readout_closed_next_lsc_t6_dispatch_ready`.
+Current mode: `lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`.
 
-Previous mode: `lsc_t3_fast_helper_readout_dispatched_to_worker`.
+Previous mode: `lsc_t3_fast_helper_readout_closed_next_lsc_t6_dispatch_ready`.
 
 Active handoff:
 
@@ -399,14 +399,38 @@ execution, EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook
 equivalence, cost optimization claim, or universal governed-coding-control
 claim.
 
+LSC-T6 External Agent CLI/MCP Signal Contract is `DISPATCHED_TO_WORKER` at
+material dispatch commit `cfe75f4c`, from dispatch base `5ee4b9b5`. Dispatch
+artifacts:
+`docs/baselines/CVF_GC018_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_2026-06-21.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_FOR_WORKER_2026-06-21.md`.
+Worker route is `WORKER_MUST_NOT_COMMIT` and must return uncommitted
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Scope is
+adapter-contract-only documentation/reference work: update
+`docs/reference/learning_signal_chain/README.md`, create
+`docs/reference/learning_signal_chain/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md`,
+and create
+`docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_WORKER_RETURN_2026-06-21.md`.
+Evidence: AAF helper PASS with defects `[]` and `signalReadout=[]`,
+dispatch-quality PASS, pre-dispatch autorun PASS 43/43, dispatch steward PASS,
+pre-commit hook PASS 55/55, and commit hook PASS 55/55. Boundary: no ledger
+store, source directory, generator, drift checker, durable store, runtime
+Learning Plane mutation, provider/live proof, actual CLI/MCP adapter behavior,
+public-sync, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
+interception, arbitrary command execution, EDIT/COMMIT execution, queue/daemon,
+watcher, readiness, full-hook equivalence, cost optimization claim, or
+universal governed-coding-control claim.
+
 ## Next Allowed Move
 
-Mode: `lsc_t3_fast_helper_readout_closed_next_lsc_t6_dispatch_ready`.
+Mode: `lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`.
 
-Next allowed move: dispatcher may open a fresh GC-018 baseline and
-source-verified work order for LSC-T6 External Agent CLI/MCP Signal Contract,
-preserving the roadmap order LSC-T6 next, then LSC-T5/T7 bridge and latency
-guard.
+Next allowed move: await worker `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON` return for the LSC-T6 work order, then Codex/reviewer owns
+review, allowed repairs, final commit, completion review, committed-range gates,
+and session sync. Preserve the roadmap order after LSC-T6: LSC-T5/T7 bridge and
+latency guard.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
