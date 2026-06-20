@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`
+Current mode marker: `lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`.
+Current mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`.
 
-Previous mode: `aaf_t5_worker_experience_retrospective_capture_dispatched_to_worker`.
+Previous mode: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`.
 
 Active handoff:
 
@@ -292,19 +292,20 @@ claim.
 
 ## Next Allowed Move
 
-Mode: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`.
+Mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`.
 
-Next allowed move: operator checkpoint to choose the next governed lane.
-Candidate parked lanes are AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7
-helper/index friction hardening, CGE-T3 Full Knowledge Absorption Ledger, or
-ACE-R1 Agent Coding Evidence Replay Roadmap. Do not open automated provider
-selection, runtime/source/product implementation outside a fresh governed work
-order, runtime provider routing, provider/live proof, public-sync, MCP
-execution, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
-interception, arbitrary command execution, EDIT/COMMIT execution, queue/daemon,
-watcher, readiness, full-hook equivalence, cost optimization claim, or
-universal governed-coding-control claim without explicit operator selection and
-fresh governed packet. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: worker returns uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON` under `WORKER_MUST_NOT_COMMIT` after executing
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_FOR_WORKER_2026-06-20.md`
+from the actual executionBaseHead. Required worker deliverables are
+`docs/reference/learning_signal_chain/README.md`,
+`docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md`,
+`docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json`,
+and
+`docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md`.
+Codex/reviewer owns review, allowed repairs, final gates, commit, closure, and
+session-sync after worker return. AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, and
+MLW8 remain parked without fresh authorization.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
