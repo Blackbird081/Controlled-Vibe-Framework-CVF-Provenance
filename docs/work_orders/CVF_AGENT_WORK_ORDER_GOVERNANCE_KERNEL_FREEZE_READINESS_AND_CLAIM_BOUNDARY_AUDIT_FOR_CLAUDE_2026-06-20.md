@@ -1,15 +1,15 @@
 # CVF Agent Work Order - Governance Kernel Freeze Readiness And Claim Boundary Audit
 
 Memory class: FULL_RECORD
-Status: DISPATCHED_TO_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-06-20
 docType: work_order
 Batch ID: GKF-T1
 Owner: Claude worker, Codex reviewer
 Commit mode: WORKER_MUST_NOT_COMMIT
 dispatchBaseHead: `72555605`
-executionBaseHead: `<worker-captured>`
-closureBaseHead: `N/A - pending Codex review`
+executionBaseHead: `89c3c570`
+closureBaseHead: `89c3c570`
 rawMemoryReleased: false
 
 ## Dispatch Prompt Envelope
@@ -78,6 +78,11 @@ Allowed scope:
 
 - inspect the first-read artifacts and current session state;
 - create `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`;
+- Codex reviewer may convert this work order,
+  `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md`,
+  and
+  `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md`
+  to `CLOSED_PASS_BOUNDED` after accepting a bounded worker return;
 - fill a readiness recommendation with exactly one of:
   `FREEZE_READY_WITH_BOUNDARIES`, `NOT_READY_WITH_BLOCKERS`, or
   `DEFER_FREEZE_SELECT_NEXT_LANE`;
@@ -131,7 +136,7 @@ Codex owns any reviewer repair, commit, closure conversion, and session sync.
 | Active handoff | `AGENT_HANDOFF_V20_2026-06-19.md` | active |
 | Freeze posture | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | `governance_kernel_freeze_recommended` |
 | Freeze-release rule | `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md` | active policy rule |
-| GC-018 | `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md` | DISPATCHED_TO_CLAUDE |
+| GC-018 | `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md` | CLOSED_PASS_BOUNDED |
 
 ## Agent Roles
 
@@ -182,8 +187,8 @@ artifact if returned work is unsafe. Do not alter PECA-T1 closure commit
 | --- | --- |
 | completionReviewPath | `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md` |
 | reviewerOwnedClosurePaths | matching GC-018, this work order, completion review, and active session state/front door/handoff only if accepted |
-| workerReturnStatus | expected `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` |
-| reviewerAction | Codex will inspect actual returned files before closure |
+| workerReturnStatus | `COMPLETE_PENDING_REVIEW` |
+| reviewerAction | Codex accepted the bounded worker return after worker-return fast gate and reviewer-fast passed; closure recommendation is `DEFER_FREEZE_SELECT_NEXT_LANE` |
 
 ## Governance Kernel Freeze Readiness Control Block
 
@@ -370,7 +375,7 @@ Base-anchor evidence:
 - `dispatchBaseHead`: `72555605`
 - `executionBaseHead`: worker-captured current head after Codex session sync or
   dispatch repair; use this value for pre-implementation base
-- `closureBaseHead`: `N/A - pending Codex review`
+- `closureBaseHead`: `89c3c570`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
 - Worker-return fast gate: required before return
 - Committed-range `pre-closure`: Codex reviewer responsibility after commit
@@ -413,15 +418,41 @@ Closure may proceed only after:
 
 ## Closure Checklist
 
-- [ ] Claude returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Required completion review exists at the owned path.
-- [ ] Changed paths are inside Write Ownership.
-- [ ] Readiness recommendation uses exactly one allowed decision value.
-- [ ] Claim-boundary matrix rejects freeze/posture/runtime/provider/live/public-sync/readiness/direct-interception/universal-control expansion.
-- [ ] Worker-return fast gate result is recorded.
-- [ ] Codex reviewer runs reviewer-fast before material commit.
-- [ ] Codex reviewer runs committed-range pre-closure after accepted commit.
-- [ ] Session/front-door/handoff sync is handled only by Codex if closure changes mode or next move.
+- [x] Claude returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+- [x] Required completion review exists at the owned path.
+- [x] Changed paths are inside Write Ownership.
+- [x] Readiness recommendation uses exactly one allowed decision value.
+- [x] Claim-boundary matrix rejects freeze/posture/runtime/provider/live/public-sync/readiness/direct-interception/universal-control expansion.
+- [x] Worker-return fast gate result is recorded.
+- [x] Codex reviewer runs reviewer-fast before material commit.
+- [x] Codex reviewer runs committed-range pre-closure after accepted commit.
+- [x] Session/front-door/handoff sync is handled only by Codex if closure changes mode or next move.
+
+## Closure Evidence
+
+| Check | Evidence | Result |
+| --- | --- | --- |
+| Worker return | completion review returned `COMPLETE_PENDING_REVIEW` with `executionBaseHead` `89c3c570` | PASS |
+| Changed path boundary | worker-created path is only `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md` before Codex closure conversion | PASS |
+| Readiness recommendation | completion review selected `DEFER_FREEZE_SELECT_NEXT_LANE` | PASS |
+| Worker-return fast gate | Codex reran worker-return fast gate before acceptance | PASS |
+| Reviewer-fast | Codex reviewer-fast gate passed before material commit | PASS |
+| Public export | `DEFERRED_PRIVATE_ONLY`; no public-sync work authorized or performed | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 baseline | `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED`; recommendation `DEFER_FREEZE_SELECT_NEXT_LANE` | PASS |
+| Roadmap state | N/A with reason: GKF-T1 is a standalone audit dispatch with no parent roadmap row changed | no parent roadmap changed | N/A with reason |
+| Registry JSON | no registry JSON update authorized for a private freeze audit | no registry JSON change | BLOCKED with reason: GKF-T1 is private audit scope; no GC-051 or other registry JSON edit is authorized |
+| Registry Markdown | no registry Markdown update authorized for a private freeze audit | no registry Markdown change | BLOCKED with reason: GKF-T1 is private audit scope; no GC-051 or other registry Markdown edit is authorized |
+| External evidence digest | N/A with reason: GKF-T1 reads only in-repo governed artifacts and creates no external evidence digest | no external evidence created | N/A with reason |
+| System loop interlock | N/A with reason: no runtime, source, or generated loop is added by a private audit | no loop added | N/A with reason |
+| Session continuity | Codex-owned session sync follows material closure if mode or next move changes | pending separate session-sync commit | N/A with reason |
+| Provider/live proof | N/A with reason: no provider or live behavior is exercised by a private audit | not applicable | N/A with reason |
 
 ## Operator Checkpoint
 
@@ -481,22 +512,22 @@ reason: <source-backed blocker>
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex dispatcher |
+| Actor | Codex dispatcher and reviewer |
 | Provider or surface | Codex / local provenance workspace |
-| Session or invocation | GKF-T1 dispatch, 2026-06-20 |
+| Session or invocation | GKF-T1 dispatch and reviewer closure, 2026-06-20 |
 | Working directory | private provenance repository root |
-| Command or tool surface | startup reads, source verification, apply_patch, pre-dispatch gates |
-| Target paths | this work order and matching GKF-T1 GC-018 |
-| Allowed scope source | operator instruction, active next move, this work order, matching GC-018 |
+| Command or tool surface | startup reads, source verification, apply_patch, pre-dispatch gates, worker-return fast gate, reviewer-fast |
+| Target paths | this work order, matching GKF-T1 GC-018, and completion review |
+| Allowed scope source | operator instruction, active next move, this work order, matching GC-018, reviewer closure conversion |
 | Before status evidence | dispatch HEAD `72555605`; clean worktree; execution must refresh current HEAD/status before edits |
-| After status evidence | dispatch `git status --short` |
-| Diff evidence | dispatch `git diff --name-status` |
-| Approval boundary | Codex may create dispatch artifacts only; Claude creates one private no-commit review artifact |
+| After status evidence | dispatch `git status --short`; reviewer closure conversion changed the three GKF-T1 closure artifacts |
+| Diff evidence | dispatch `git diff --name-status`; reviewer closure diff before material commit |
+| Approval boundary | Codex may create dispatch artifacts and reviewer-owned closure conversion; Claude creates one private no-commit review artifact |
 | Claim boundary | private readiness audit only; no freeze/release/runtime/provider/live/public-sync/readiness/direct-interception/universal-control claim |
 | Agent type | dispatcher under `MULTI_AGENT_MULTI_ROLE` |
-| Invocation ID | `gkf-t1-governance-kernel-freeze-readiness-claim-boundary-audit-dispatch-2026-06-20` |
-| Expected manifest | `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md` |
+| Invocation ID | `gkf-t1-governance-kernel-freeze-readiness-claim-boundary-audit-dispatch-and-closure-2026-06-20` |
+| Expected manifest | `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`; `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md`; `docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: deletion/rename forbidden |
 
