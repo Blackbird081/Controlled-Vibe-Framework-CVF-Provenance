@@ -48,6 +48,7 @@ NEGATIVE_SEARCH_COLLISION_MARKER = "Negative Search And Collision Discipline"
 SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
 INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
 EVIDENCE_REUSE_ENCODING_PLAN_MARKER = "Evidence Reuse And Encoding Plan"
+WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER = "Worker Return Packet Shape Contract"
 REQUIRED_PROOF_ATOMIC_LITERAL_MARKER = "Required Proof Manifest Atomic Literal Discipline"
 LEGACY_COVERAGE_DISPOSITION_MARKER = "Legacy Absorption Coverage Index Disposition"
 PROVIDER_MEMORY_AUTHORITY_BOUNDARY_MARKER = "Provider Memory Authority Boundary"
@@ -155,6 +156,26 @@ ROLE_ROUTING_MODES = {
     "MULTI_AGENT_MULTI_ROLE",
     "MULTI_AGENT_SINGLE_ROLE",
 }
+WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS = (
+    "Purpose",
+    "Scope / Methodology",
+    "Findings / Position",
+    "Risk / Corrective Action",
+    "Claim Boundary",
+    "Agent Operation Trace Block",
+    "Delta Execution Claim Boundary Control Block",
+    "Public Export Disposition",
+    "executionBaseHead",
+    "git status --short",
+)
+WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS = (
+    "External Knowledge Intake Routing",
+    "Rescan Intelligence Hardening",
+    "Corpus Completeness And Report Integrity",
+    "Finding-To-Governance Learning Disposition",
+    "Epistemic Process Block",
+    "Machine Closure Package",
+)
 EVIDENCE_REUSE_VERIFICATION_MODES = {
     "REUSE_PRIOR_VERIFICATION",
     "RECOMPUTE_REQUIRED",
@@ -749,6 +770,40 @@ def _validate_no_commit_reviewer_closure_contract(text: str) -> list[str]:
         issues.append(
             "WORKER_MUST_NOT_COMMIT dispatch treats mutable ACTIVE_SESSION_STATE.json as a closure invariant; "
             "cite stable completion/review artifacts for predecessor closure facts"
+        )
+    return issues
+
+
+def _validate_worker_return_packet_shape_contract(text: str) -> list[str]:
+    if not _is_worker_must_not_commit(text):
+        return []
+
+    section = _extract_section(text, WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER)
+    if not section:
+        return [
+            "WORKER_MUST_NOT_COMMIT dispatch lacks "
+            f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}`; "
+            "pre-dispatch must give the worker the packet-shape sections needed "
+            "to pass worker-return fast gate without reviewer repair"
+        ]
+
+    issues: list[str] = []
+    for term in WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS:
+        if term not in section:
+            issues.append(
+                f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` missing required worker-return term `{term}`"
+            )
+
+    for term in WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS:
+        if term not in section:
+            issues.append(
+                f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` missing conditional gate term `{term}`"
+            )
+
+    if "N/A with reason" not in section and "NOT_APPLICABLE_WITH_REASON" not in section:
+        issues.append(
+            f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` must instruct workers "
+            "to use `N/A with reason` or `NOT_APPLICABLE_WITH_REASON` for non-applicable conditional blocks"
         )
     return issues
 
@@ -2287,6 +2342,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_commit_mode_and_anchor_lifecycle(text))
         issues.extend(_validate_worker_completion_review_boundary(text))
         issues.extend(_validate_no_commit_reviewer_closure_contract(text))
+        issues.extend(_validate_worker_return_packet_shape_contract(text))
         issues.extend(_validate_source_verification_table_shape(text))
         issues.extend(_validate_source_verification_disposition_discipline(text))
         issues.extend(_validate_intake_role_routing_decision(text, "work order"))

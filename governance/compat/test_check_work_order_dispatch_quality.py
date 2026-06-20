@@ -951,6 +951,12 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "reviewerOwnedClosurePaths:",
                     "- `docs/work_orders/CVF_WO_VALID_NO_COMMIT_TEST_2026-06-02.md`",
                     "- `docs/reviews/CVF_VALID_NO_COMMIT_COMPLETION_2026-06-02.md`",
+                    "## Worker Return Packet Shape Contract",
+                    "- Required sections: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary.",
+                    "- Required trace: Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition.",
+                    "- Required evidence: executionBaseHead and git status --short.",
+                    "- Conditional gate sections: External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package.",
+                    "- Non-applicable conditional blocks must say N/A with reason.",
                 ]
             ),
         )
@@ -990,6 +996,78 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         )
         self.assertIn(
             "WORKER_MUST_NOT_COMMIT dispatch lacks `reviewerOwnedClosurePaths` for closure scope",
+            issues,
+        )
+
+    def test_ready_no_commit_work_order_without_worker_return_shape_contract_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_NO_WORKER_RETURN_SHAPE_TEST_2026-06-20.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                    "## Reviewer Closure Conversion Block",
+                    "completionReviewPath: `docs/reviews/CVF_NO_SHAPE_COMPLETION_2026-06-20.md`",
+                    "reviewerOwnedClosurePaths:",
+                    "- `docs/reviews/CVF_NO_SHAPE_COMPLETION_2026-06-20.md`",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertTrue(
+            any(MODULE.WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER in issue for issue in issues),
+            issues,
+        )
+
+    def test_ready_no_commit_work_order_with_incomplete_worker_return_shape_contract_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_INCOMPLETE_WORKER_RETURN_SHAPE_TEST_2026-06-20.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                    "## Reviewer Closure Conversion Block",
+                    "completionReviewPath: `docs/reviews/CVF_INCOMPLETE_SHAPE_COMPLETION_2026-06-20.md`",
+                    "reviewerOwnedClosurePaths:",
+                    "- `docs/reviews/CVF_INCOMPLETE_SHAPE_COMPLETION_2026-06-20.md`",
+                    "## Worker Return Packet Shape Contract",
+                    "- Required sections: Purpose; Scope / Methodology; Claim Boundary.",
+                    "- Required evidence: executionBaseHead and git status --short.",
+                    "- Non-applicable conditional blocks must say N/A with reason.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "`## Worker Return Packet Shape Contract` missing required worker-return term `Findings / Position`",
+            issues,
+        )
+        self.assertIn(
+            "`## Worker Return Packet Shape Contract` missing conditional gate term `Rescan Intelligence Hardening`",
             issues,
         )
 
