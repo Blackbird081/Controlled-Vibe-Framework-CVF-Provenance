@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-21
 
@@ -148,6 +148,8 @@ Allowed scope:
 - update `docs/reference/learning_signal_chain/README.md` to list LSC-T2;
 - create `docs/reference/learning_signal_chain/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX.md`;
 - create `docs/reviews/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_WORKER_RETURN_2026-06-21.md`;
+- update `docs/baselines/CVF_GC018_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_2026-06-21.md` status during reviewer/closer closure;
+- create `docs/reviews/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_COMPLETION_2026-06-21.md` during reviewer/closer closure;
 - define role-neutral actor categories and capture eligibility;
 - define no-signal assertion guidance and latency-preserving capture shape;
 - define mapping from role signals to existing LSC-T1 extension fields and
@@ -236,18 +238,18 @@ packet shape.
 
 ## Closure Checklist
 
-Reviewer/closer closure is blocked unless:
+Reviewer/closer closure evidence:
 
-- Required deliverables exist.
-- No forbidden paths changed.
-- Source Verification claims remain current.
-- Role-specific eligibility matrix is present.
-- No-signal assertion guidance is present.
-- External returned-output routing is bound to the chain map.
-- Worker-return packet includes required sections and token.
-- Reviewer-fast or stricter gate passes.
-- Commit ownership remains reviewer/closer only.
-- Session-sync is performed only if mode or next-move surfaces change.
+- Required deliverables exist: PASS.
+- No forbidden paths changed: PASS.
+- Source Verification claims remain current: PASS.
+- Role-specific eligibility matrix is present: PASS.
+- No-signal assertion guidance is present: PASS.
+- External returned-output routing is bound to the chain map: PASS.
+- Worker-return packet includes required sections and token: PASS.
+- Reviewer-fast or stricter gate passes: PASS.
+- Commit ownership remains reviewer/closer only: PASS.
+- Session-sync is performed only if mode or next-move surfaces change: PASS.
 
 ## Return-To-Orchestrator Conditions
 
@@ -256,6 +258,32 @@ and required gate evidence is recorded. Return `BLOCKED_WITH_REASON` if the task
 requires forbidden paths, runtime/source/test/checker/helper/generator
 implementation, provider/live proof, public-sync, session-sync during worker
 execution, dependency install, destructive actions, or parked-lane reopening.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_FOR_WORKER_2026-06-21.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_2026-06-21.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_WORKER_RETURN_2026-06-21.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_COMPLETION_2026-06-21.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md` | LSC-T2 dispatched and accepted by this closure; roadmap remains the governing LSC-T0 plan | PASS |
+| Reference front door | `docs/reference/learning_signal_chain/README.md` | LSC-T2 row present | PASS |
+| Reference contract | `docs/reference/learning_signal_chain/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| Session continuity | active session front-door/state/handoff after material commit | session-sync follows material closure commit | N/A with reason |
+| Registry JSON | N/A with reason: no generated JSON registry created or changed | no registry mutation | PASS |
+| Registry Markdown | N/A with reason: no generated Markdown index created in LSC-T2 | no generated readout | PASS |
+| External evidence digest | N/A with reason: no external benchmark/provider/live digest created | docs/reference closure only | N/A with reason |
+| System loop interlock | N/A with reason: no runtime/source interlock changed | no runtime/source mutation | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: LSC-T2 creates no runtime receipt | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: LSC-T2 performs no query acceptance | N/A_WITH_REASON |
+| Worker-return acceptance | worker return present and accepted by reviewer/closer | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` documentation/reference contract closure only | PASS |
 
 ## Operator Checkpoint
 
@@ -374,6 +402,17 @@ The LSC-T2 contract must include these sections:
 
 These fields are documentation/reference vocabulary only. They must not be used
 as Source Verification ACCEPT rows or claimed as current runtime fields.
+
+## Current Runtime Freshness Verification
+
+| Runtime surface | Verification | Disposition |
+|---|---|---|
+| Runtime/source implementation | N/A with reason: LSC-T2 authorized documentation/reference contract work only | NOT_APPLICABLE_WITH_REASON |
+| Provider/live behavior | N/A with reason: no provider/live proof authorized or claimed | NOT_APPLICABLE_WITH_REASON |
+| CLI/MCP adapter behavior | N/A with reason: external-agent returned-output routing is a contract boundary only | NOT_APPLICABLE_WITH_REASON |
+| Ledger store/source directory/generator/drift checker/helper readout | N/A with reason: future LSC implementation tranche only | NOT_APPLICABLE_WITH_REASON |
+| Public-sync behavior | N/A with reason: private provenance closure only | NOT_APPLICABLE_WITH_REASON |
+| Checker/helper enforcement | N/A with reason: LSC-T2 adds no machine check or helper implementation | NOT_APPLICABLE_WITH_REASON |
 
 ## Roadmap-to-Work-Order Trace Matrix
 
