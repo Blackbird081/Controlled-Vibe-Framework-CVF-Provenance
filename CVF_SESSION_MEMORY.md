@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-19
 
-Current mode marker: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`
+Current mode marker: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`.
+Current mode: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`.
 
-Previous mode: `delta_t11_durable_audit_evidence_bundle_dispatched_claude_execution_pending`.
+Previous mode: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`.
 
 Active handoff:
 
@@ -126,22 +126,34 @@ passed 39/39, full MCP tests passed 34 files / 727 tests, build passed,
 worker-return fast gate passed, reviewer-fast passed 31/31, and closure
 pre-commit hook passed 54/54.
 
+PECA-T1 Public External Evaluation Package And Catalog Alignment is
+`DISPATCHED_TO_CLAUDE` at dispatch commit `a98447c0`, after Delta-T11 closure
+session-sync `f2330d0e`. It created a fresh GC-018 and Claude work order for
+public-sync README/catalog/external-agent-guide/snapshot wording alignment so
+external agents and user developers can distinguish the durable technical
+product catalog from the dated 2026-06-19 evidence snapshot. Pre-dispatch
+autorun passed 43/43, dispatch-quality passed, commit steward reused the exact
+PASS receipt, and the dispatch pre-commit hook passed 54/54.
+
 ## Next Allowed Move
 
-Mode: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`.
+Mode: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`.
 
-Next allowed move: select the next high-value lane with fresh GC-018 and source
-verification. Recommended lane: public/external-evaluation package and catalog
-alignment from the public-sync clone only, so external agents and user
-developers can inspect the latest bounded CVF evidence without treating the
-2026-06-19 snapshot as the whole catalog. Do not open Delta-T12 by default
-unless a fresh operator decision chooses another foundation tranche.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md`
+under `WORKER_MUST_NOT_COMMIT` in the sibling public-sync clone only, after
+verifying remote `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+Claude must return uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex owns review, public-sync commit/push decision,
+provenance closure conversion, and session sync. Do not open Delta-T12 by
+default unless a fresh operator decision chooses another foundation tranche.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
-provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct
-IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement,
-readiness claims, and universal governed-coding claims. LHW24 remains the latest
-closed numbered LHW wave.
+provider/live calls, public-sync push without Codex review and remote
+verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
+filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
+claims, and universal governed-coding claims. LHW24 remains the latest closed
+numbered LHW wave.
 
 ## Active Rule Additions
 

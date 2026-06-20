@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current Delta-T11 closure state, the current
+This compact handoff records the current PECA-T1 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing Delta-T11 Durable Audit
-Evidence Bundle External Reviewer Readout.
+Target: correct next-move continuity after dispatching PECA-T1 Public External
+Evaluation Package And Catalog Alignment to Claude.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,10 +35,11 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize Delta-T11 closure commit
-`3d0b70c5`, generated active state, compact session memory, active handoff, and
-the next allowed move after Codex reviewer closure conversion. This session
-sync does not open runtime, provider, public, or direct-interception scope.
+Authorized guard-maintenance scope: synchronize PECA-T1 dispatch commit
+`a98447c0`, generated active state, compact session memory, active handoff, and
+the next allowed move for Claude no-commit public-sync execution. This session
+sync does not open runtime, provider/live, direct-interception, or public push
+scope.
 
 Protected paths:
 
@@ -67,31 +68,33 @@ Protected paths:
 - `CVF_SESSION/state/entries/deltaT10DurableAuditIntegrityReadoutClosure20260619.json`
 - `CVF_SESSION/state/entries/deltaT11DurableAuditEvidenceBundleDispatch20260619.json`
 - `CVF_SESSION/state/entries/deltaT11DurableAuditEvidenceBundleClosure20260619.json`
+- `CVF_SESSION/state/entries/pecaT1PublicExternalEvaluationCatalogAlignmentDispatch20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator returned Claude COMPLETE_PENDING_REVIEW
-for Delta-T11 and approved continuing the bounded review/closure flow. Delta-T11
-is now CLOSED_PASS_BOUNDED, and this session sync records the closure plus the
-next valuable lane without expanding runtime, public, provider, or execution
-scope.
+Operator authorization: the operator approved continuing to a Claude work order
+for the post-T11 public/external-evaluation package and catalog alignment lane.
+PECA-T1 is now dispatched to Claude under WORKER_MUST_NOT_COMMIT, and this
+session sync records the dispatch without expanding runtime, provider/live,
+direct-interception, or public push scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter Delta-T11 closure commit `3d0b70c5`, material handoff bridge commit
-`26a9491e`, material commit `0a3e298e`, dispatch continuity commit `de1a39c2`,
-dispatch commit `53aca070`, or earlier Delta commits.
+Do not alter PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
+`3d0b70c5`, material handoff bridge commit `26a9491e`, material commit
+`0a3e298e`, dispatch continuity commit `de1a39c2`, dispatch commit `53aca070`,
+or earlier Delta commits.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value lane with fresh GC-018 and source verification; recommended lane is public/external-evaluation package and catalog alignment from the public-sync clone only; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync without explicit authorization and remote verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes the PECA-T1 public-sync work order under WORKER_MUST_NOT_COMMIT and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync push without Codex review and remote verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`
+`peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`
 
-Current HEAD recorded for this handoff: `3d0b70c5`
+Current HEAD recorded for this handoff: `a98447c0`
 
 Material state:
 
@@ -390,6 +393,15 @@ direct interception, arbitrary command execution, EDIT/COMMIT execution,
 provider/live behavior, public-sync, CVF Web action execution, queue/daemon,
 readiness, or universal governed-coding control claim.
 
+PECA-T1 dispatch commit `a98447c0` creates the fresh GC-018 and Claude work
+order for Public External Evaluation Package And Catalog Alignment. The worker
+must operate only in the sibling public-sync clone, verify remote
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`, keep
+`WORKER_MUST_NOT_COMMIT`, and return uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Dispatch-quality passed, pre-dispatch autorun passed
+43/43, commit steward reused the exact PASS receipt, and dispatch pre-commit
+hook passed 54/54.
+
 ## Next Allowed Move
 
 Delta-T4A Approval-Backed Mutating Profile Boundary is
@@ -439,15 +451,21 @@ MCP tests passed 34 files / 727 tests, build passed, worker-return fast gate
 passed, reviewer-fast passed 31/31, material pre-commit hook passed 54/54, and
 closure pre-commit hook passed 54/54.
 
-Next allowed move: select the next high-value lane with fresh GC-018 and source
-verification. Recommended lane: public/external-evaluation package and catalog
-alignment from the public-sync clone only, so external agents and user
-developers can inspect the latest bounded CVF evidence without treating the
-2026-06-19 snapshot as the whole catalog. Do not open Delta-T12 by default
-unless a fresh operator decision chooses another foundation tranche.
-Keep runtime profiles, provider/live calls, public-sync, CVF Web runtime action,
-direct interception, readiness, universal speed, and universal governed-coding
-claims parked.
+PECA-T1 Public External Evaluation Package And Catalog Alignment is
+`DISPATCHED_TO_CLAUDE` at dispatch commit `a98447c0`, after Delta-T11 closure
+session-sync `f2330d0e`.
+
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md`
+under `WORKER_MUST_NOT_COMMIT` in the sibling public-sync clone only, after
+verifying remote `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+Claude must return uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex owns review, public-sync commit/push decision,
+provenance closure conversion, and session sync. Do not open Delta-T12 by
+default unless a fresh operator decision chooses another foundation tranche.
+Keep runtime profiles, provider/live calls, public-sync push without Codex
+review and remote verification, CVF Web runtime action, direct interception,
+readiness, universal speed, and universal governed-coding claims parked.
 
 ## Parked Operator Checkpoints
 
@@ -457,7 +475,8 @@ fresh GC-018 and source-verified work order:
 1. npm script, arbitrary, EDIT, or COMMIT execution profiles.
 2. Direct IDE, shell, git, or filesystem interception outside the wrapper.
 3. Queue, scheduler, daemon, workspace-state, or CVF Web runtime expansion.
-4. Provider/live calls, secrets/quota use, or public-sync.
+4. Provider/live calls, secrets/quota use, or public-sync push without Codex
+   review and remote verification.
 5. Public, production, release, or universal governed-coding claims.
 6. Broader external knowledge absorption router/checker implementation.
 7. Delta Execution Control runtime expansion, runtime profiles, arbitrary
