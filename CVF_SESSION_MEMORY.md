@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `aaf_t3_guard_orientation_index_closed_aaf_t4_project_role_provider_delegation_next_ready`
+Current mode marker: `aaf_t4_project_role_provider_delegation_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t3_guard_orientation_index_closed_aaf_t4_project_role_provider_delegation_next_ready`.
+Current mode: `aaf_t4_project_role_provider_delegation_dispatched_to_worker`.
 
-Previous mode: `aaf_t3_guard_orientation_index_dispatched_to_worker`.
+Previous mode: `aaf_t3_guard_orientation_index_closed_aaf_t4_project_role_provider_delegation_next_ready`.
 
 Active handoff:
 
@@ -237,24 +237,36 @@ execution, wrapper/proxy enforcement, direct interception, arbitrary command
 execution, queue/daemon, watcher, readiness, full-hook equivalence, automated
 provider selection, or universal governed-coding-control claim.
 
+AAF-T4 Project Role And Provider Delegation Envelope is `DISPATCH_READY` at
+dispatch commit `473e96ba` from base `f209d973`. It adds the source-verified
+GC-018 and role-neutral `WORKER_MUST_NOT_COMMIT` work order for a private
+project delegation envelope behind public multi-agent/provider routing
+guidance. The public guide is context only, not provenance source authority.
+Verification passed: AAF helper resolved `dispatch` with `defects=[]`,
+pre-dispatch autorun 43/43, dispatch-quality, dispatch steward, and dispatch
+pre-commit hook 54/54. Boundary: documentation/reference delegation envelope
+only; no automated provider selection, runtime/source/test implementation,
+provider/live proof, public-sync, MCP execution, wrapper/proxy enforcement,
+direct interception, arbitrary command execution, queue/daemon, watcher,
+readiness, full-hook equivalence, cost optimization claim, or universal
+governed-coding-control claim.
+
 ## Next Allowed Move
 
-Mode: `aaf_t3_guard_orientation_index_closed_aaf_t4_project_role_provider_delegation_next_ready`.
+Mode: `aaf_t4_project_role_provider_delegation_dispatched_to_worker`.
 
-Next allowed move: prepare AAF-T4 Project Role And Provider Delegation Envelope
-as a governed documentation/reference foundation for project-level
-operator-approved role delegation and provider-lane selection. AAF-T4 should
-build from `docs/guides/CVF_MULTI_AGENT_PROVIDER_ROUTING.md` as public
-north-star context and create private CVF source-backed delegation substrate:
-operator approval envelope, role/delegation responsibility map, provider/model
-selection boundary, cost/quota ceiling, evidence log, and reapproval triggers.
-Do not open automated provider selection, runtime/product behavior,
-provider/live proof, public-sync, MCP execution, wrapper/proxy enforcement,
-direct IDE/shell/git/filesystem interception, arbitrary command execution,
-queue/daemon, watcher, readiness, full-hook equivalence, or universal
-governed-coding-control claim. CGE-T3 Full Knowledge Absorption Ledger and
-ACE-R1 remain parked until explicit operator selection. LHW24 remains the
-latest closed numbered LHW wave.
+Next allowed move: give the role-neutral worker
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_FOR_WORKER_2026-06-20.md`.
+The worker must run `WORKER_MUST_NOT_COMMIT` and return
+`COMPLETE_PENDING_REVIEW` with exactly the four artifacts named by the work
+order. Public guide context remains context-only and not CVF source authority.
+Do not open automated provider selection, runtime/source/test implementation,
+runtime provider routing, provider/live proof, public-sync, MCP execution,
+wrapper/proxy enforcement, direct IDE/shell/git/filesystem interception,
+arbitrary command execution, queue/daemon, watcher, readiness, full-hook
+equivalence, cost optimization claim, or universal governed-coding-control
+claim. CGE-T3 Full Knowledge Absorption Ledger and ACE-R1 remain parked until
+explicit operator selection. LHW24 remains the latest closed numbered LHW wave.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
