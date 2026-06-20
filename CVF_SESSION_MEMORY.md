@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`
+Current mode marker: `worker_return_packet_shape_guard_hardened_cge_absorption_resume_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`.
+Current mode: `worker_return_packet_shape_guard_hardened_cge_absorption_resume_ready`.
 
 Previous mode: `cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`.
 
@@ -186,17 +186,28 @@ reference only; no runtime, source/test implementation, CodeGraph install/init/
 public-sync, ACE-R1 reopening without operator selection, freeze, readiness, or
 universal governed-coding-control claim.
 
+Worker Return Packet Shape Contract Guard Hardening is `CLOSED_PASS_BOUNDED` at
+material commit `640f27a1`, after CGE-T2 closure continuity commit `8780953a`.
+It promotes the CGE-T2 closure latency finding into dispatch-quality machine
+enforcement: future `WORKER_MUST_NOT_COMMIT` dispatch packets must include a
+`Worker Return Packet Shape Contract` naming always-required return sections,
+AOT, Delta execution claim boundary, public export disposition,
+`executionBaseHead`, `git status --short`, conditional gate sections, and
+N/A-with-reason handling. Verification passed: focused unittest 86/86,
+worker-return fast gate with pytest target, material pre-commit hook 54/54, and
+committed-range pre-closure content gates with only expected post-material
+handoff HEAD drift before this sync.
+
 ## Next Allowed Move
 
-Mode: `cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`.
+Mode: `worker_return_packet_shape_guard_hardened_cge_absorption_resume_ready`.
 
-Next allowed move: select the next high-value governed tranche with fresh
-GC-018 and source verification. Recommended candidates are either CGE-T3
-checker-candidate decision/guard work derived from CC-CGE-1..4, or resuming the
-parked ACE-R1 replay roadmap if the operator explicitly selects it. Do not open
-runtime/source/test implementation, CodeGraph install/init/`.codegraph`, MCP
-wiring, watcher/daemon, benchmark proof, provider/live proof, public-sync,
-ACE-R1 reopening without selection, freeze, readiness, or universal
+Next allowed move: resume CodeGraph absorption with a fresh GC-018 for CGE-T3
+Full Knowledge Absorption Ledger. Any `WORKER_MUST_NOT_COMMIT` dispatch must
+include the new Worker Return Packet Shape Contract. Do not open runtime/source/
+test implementation, CodeGraph install/init/`.codegraph`, MCP wiring,
+watcher/daemon, benchmark proof, provider/live proof, public-sync, ACE-R1
+reopening without selection, freeze, readiness, or universal
 governed-coding-control claim. LHW24 remains the latest closed numbered LHW
 wave.
 
