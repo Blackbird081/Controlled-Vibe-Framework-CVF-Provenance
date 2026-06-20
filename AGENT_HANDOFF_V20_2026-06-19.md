@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current LSC-T1 closure state, the current
+This compact handoff records the current LSC-T2 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing LSC-T1 Signal Ledger Source
-Layout And De-Dup Contract.
+Target: correct next-move continuity after dispatching LSC-T2 Multi-Role
+Capture Contract And Eligibility Matrix.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,13 +35,14 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize LSC-T1 closure commit
-`3599441a`, generated active state, compact session memory, active handoff, and
-the next allowed move after LSC-T1 closure was accepted.
+Authorized guard-maintenance scope: synchronize LSC-T2 dispatch commit
+`98ff0510`, generated active state, compact session memory, active handoff, and
+the next allowed move after the LSC-T2 work order was dispatched.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
-runtime provider routing, AAF-T6, AAF-T7, or public-sync scope.
+runtime provider routing, AAF-T6, AAF-T7, checker/helper/generator build,
+CLI/MCP adapter behavior, or public-sync scope.
 
 Protected paths:
 
@@ -89,6 +90,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureClosure20260620.json`
 - `CVF_SESSION/state/entries/lscT1SignalLedgerSourceLayoutDedupContractDispatch20260620.json`
 - `CVF_SESSION/state/entries/lscT1SignalLedgerSourceLayoutDedupContractClosure20260620.json`
+- `CVF_SESSION/state/entries/lscT2MultiRoleCaptureContractDispatch20260621.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -101,11 +103,14 @@ task-first guard map dispatch with role-neutral instructions, then directed
 the sequence to process AAF-T3 before AAF-T4. The operator approved moving to
 AAF-T4 after AAF-T3 closure and then approved the worker-experience governance
 uplift. AAF-T5 is now closed as Worker Experience Retrospective Capture
-Foundation, not the Guard Orientation Read-Receipt Gate.
+Foundation, not the Guard Orientation Read-Receipt Gate. The operator then
+selected LSC-T2 after the lane-selection audit and approved issuing the work
+order under the LSC roadmap.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter LSC-T1 closure commit `3599441a`, LSC-T1 dispatch commit
-`84ba827f`, LSC-T1 dispatch continuity commit `b528e8ca`,
+Do not alter LSC-T2 dispatch commit `98ff0510`, LSC-T1 closure commit
+`3599441a`, LSC-T1 dispatch commit `84ba827f`, LSC-T1 dispatch continuity
+commit `b528e8ca`,
 AAF-T5 closure commit `d76a37cf`, AAF-T5 dispatch commit
 `59c50a9d`, AAF-T4 closure commit
 `518d4131`, AAF-T4 dispatch commit
@@ -127,13 +132,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select the next Learning Signal Chain tranche or another parked lane; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`lsc_t2_multi_role_capture_contract_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker executes the LSC-T2 work order under WORKER_MUST_NOT_COMMIT and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`
+`lsc_t2_multi_role_capture_contract_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `3599441a`
+Current HEAD recorded for this handoff: `98ff0510`
 
 Material state:
 
