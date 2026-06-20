@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-20
 
@@ -89,7 +89,7 @@ The worker must return uncommitted `COMPLETE_PENDING_REVIEW` with only these
 worker-owned artifacts changed or created:
 
 - `docs/reference/learning_signal_chain/README.md`
-- `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md`
+- `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md`
 - `docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json`
 - `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md`
 

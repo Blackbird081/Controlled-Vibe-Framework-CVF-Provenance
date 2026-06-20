@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-20
 
@@ -145,7 +145,7 @@ Success means future workers can read one contract and know:
 Allowed scope:
 
 - create `docs/reference/learning_signal_chain/README.md`;
-- create `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md`;
+- create `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md`;
 - create `docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json`;
 - create `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md`;
 - define documentation-only field mappings from LSC event/template fields to
@@ -158,6 +158,14 @@ Allowed scope:
   derived/advisory, or define a strict allowed-pairs table and conflict rule;
 - define JSON source plus generated Markdown index discipline for a future
   implementation tranche.
+
+Reviewer/closer closure scope:
+
+- update this work order status and closure checklist;
+- update `docs/baselines/CVF_GC018_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md`;
+- create `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_COMPLETION_2026-06-20.md`;
+- repair citations to accepted LSC-T1 deliverables when a machine gate requires
+  reviewer-owned path normalization.
 
 Forbidden scope:
 
@@ -228,16 +236,48 @@ return packet shape.
 
 ## Closure Checklist
 
-- [ ] Required deliverables exist.
-- [ ] No forbidden paths changed.
-- [ ] JSON template validates.
-- [ ] Source Verification claims remain current.
-- [ ] N4 severity/no-entry mapping is present.
-- [ ] N5 disposition/captureState authority rule is present.
-- [ ] Worker-return packet includes required sections and token.
-- [ ] Reviewer-fast or stricter gate passes.
-- [ ] Commit ownership remains reviewer/closer only.
-- [ ] Session-sync is performed only if mode or next-move surfaces change.
+- [x] Required deliverables exist.
+- [x] No forbidden paths changed.
+- [x] JSON template validates.
+- [x] Source Verification claims remain current.
+- [x] N4 severity/no-entry mapping is present.
+- [x] N5 disposition/captureState authority rule is present.
+- [x] Worker-return packet includes required sections and token.
+- [x] Reviewer-fast or stricter gate passes.
+- [x] Commit ownership remains reviewer/closer only.
+- [x] Session-sync is performed only if mode or next-move surfaces change.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_FOR_WORKER_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_COMPLETION_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md` | LSC-T1 dispatched and accepted by this closure; roadmap remains the governing LSC-T0 plan | PASS |
+| Registry JSON | N/A with reason: no generated JSON registry created or changed | no registry mutation | PASS |
+| Registry Markdown | N/A with reason: no generated Markdown index created in LSC-T1 | future generated readout only | PASS |
+| External evidence digest | N/A with reason: no external benchmark/provider/live digest created | docs/reference closure only | N/A with reason |
+| System loop interlock | N/A with reason: no runtime/source interlock changed | no runtime/source mutation | N/A with reason |
+| Session continuity | active session front-door/state/handoff after material commit | session-sync follows material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: LSC-T1 creates no runtime receipt | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: LSC-T1 performs no query acceptance | N/A_WITH_REASON |
+| Worker-return acceptance | worker return present and accepted by reviewer/closer | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` documentation/reference and JSON-template closure only | PASS |
+
+## Current Runtime Freshness Verification
+
+| Runtime surface | Verification | Disposition |
+|---|---|---|
+| Runtime/source implementation | N/A with reason: LSC-T1 authorized documentation/reference and JSON-template contract only | NOT_APPLICABLE_WITH_REASON |
+| Provider/live behavior | N/A with reason: no provider/live proof authorized or claimed | NOT_APPLICABLE_WITH_REASON |
+| CLI/MCP adapter behavior | N/A with reason: future CLI/MCP capture is a payload-boundary note only | NOT_APPLICABLE_WITH_REASON |
+| Ledger store/generator/checker/helper readout | N/A with reason: future LSC implementation tranche only | NOT_APPLICABLE_WITH_REASON |
+| Public-sync behavior | N/A with reason: private provenance closure only | NOT_APPLICABLE_WITH_REASON |
 
 ## Return-To-Orchestrator Conditions
 
@@ -289,7 +329,7 @@ and avoid editing outside Required Deliverables.
 | Path | Owner | Disposition |
 |---|---|---|
 | `docs/reference/learning_signal_chain/README.md` | worker | create |
-| `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md` | worker | create |
+| `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md` | worker | create |
 | `docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json` | worker | create as template only |
 | `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md` | worker | create |
 | Any other path | Not worker-owned | forbidden unless a revised work order authorizes it |
@@ -319,7 +359,7 @@ scope, or any forbidden path.
 The worker must leave exactly these uncommitted artifact changes:
 
 - `docs/reference/learning_signal_chain/README.md`
-- `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md`
+- `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md`
 - `docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json`
 - `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md`
 
@@ -441,9 +481,18 @@ The contract must decide:
 | Required artifact | Required content | Worker disposition |
 |---|---|---|
 | `docs/reference/learning_signal_chain/README.md` | stable front door pointing to LSC-T1 contract and future chain surfaces | create |
-| `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md` | source layout, de-dup, mapping, generated-index, claim boundary | create |
+| `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md` | source layout, de-dup, mapping, generated-index, claim boundary | create |
 | `docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json` | valid JSON template aligned to intake and LSC extension fields | create |
 | `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md` | worker return with evidence and token | create |
+
+## Required Artifact Manifest
+
+| Required artifact | Required content | Owner | Disposition |
+|---|---|---|---|
+| `docs/reference/learning_signal_chain/README.md` | stable front door pointing to LSC-T1 contract and future chain surfaces | worker | ACCEPT |
+| `docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md` | source layout, de-dup, mapping, generated-index, claim boundary | worker | ACCEPT |
+| `docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json` | valid JSON template aligned to intake and LSC extension fields | worker | ACCEPT |
+| `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md` | worker return with evidence and token | worker | ACCEPT |
 
 ## Worker Return Packet Shape Contract
 
