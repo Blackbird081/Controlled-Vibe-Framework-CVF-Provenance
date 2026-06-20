@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-20
 
@@ -32,6 +32,9 @@ is point-in-time evidence, not the whole catalog.
 | Execution surface | sibling public-sync clone only |
 | Public remote | `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` |
 | Risk ceiling | R1 public documentation alignment; no runtime/provider/live behavior |
+| Public-sync material commit | `aae8fed4c` |
+| Public-sync export evidence commit | `2017af304` |
+| Reviewer disposition | CLOSED_PASS_BOUNDED |
 
 ## Scope / Target / Owner Boundary
 
@@ -195,27 +198,54 @@ reader mistakes are checked below.
 
 ## Evidence / Verification Plan
 
-Required worker evidence:
+Closure evidence:
 
-- `git remote -v` from the public-sync clone;
-- `git status --short` before and after edits from the public-sync clone;
-- path existence checks for every README/guide/catalog/snapshot link touched;
-- textual duplicate/ambiguity scan for "catalog", "snapshot", "latest public",
-  and "front-door";
-- focused markdown/link sanity checks available in the public-sync repo;
-- completion review with changed-file manifest and claim boundary.
+- public-sync remote verified:
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`;
+- public-sync base head before worker edits: `94bb69dc8`;
+- public-sync material commit: `aae8fed4c`;
+- public-sync export evidence commit: `2017af304`;
+- public push evidence: `94bb69dc8..aae8fed4c main -> main`, then
+  `aae8fed4c..2017af304 main -> main`;
+- public-sync status after push: clean;
+- path existence checks passed for README, catalog, external-agent guide,
+  2026-06-19 snapshot, and completion review;
+- grep scan found no stale "latest public front-door/catalog sync" row and
+  confirmed catalog/snapshot role separation;
+- public-sync `git diff --check` passed before commit.
 
 Provider/live proof is not applicable because this tranche is public
 documentation alignment only.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: this dispatch authorizes the public-sync work, but no reviewed
-public-sync commit or push exists yet for PECA-T1. Next action is Claude
-uncommitted worker return, then Codex review, public-sync commit, and public
-push only if the remote remains `Controlled-Vibe-Framework-CVF.git`.
+Remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+
+Public-sync commits:
+
+- `aae8fed4c` - `Clarify public catalog and evidence snapshot`;
+- `2017af304` - `Record public catalog sync export evidence`.
+
+Public artifact paths:
+
+- `README.md`;
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`;
+- `docs/guides/external-agent-review-guide.md`;
+- `docs/evidence/public-external-review-snapshot-2026-06-19.md`;
+- `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md`.
+
+## Machine Closure Package
+
+| Closure item | Artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Baseline status | this GC-018 | `Status: CLOSED_PASS_BOUNDED` | CLOSED_PASS_BOUNDED |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | CLOSED_PASS_BOUNDED |
+| Public-sync material commit | public-sync repo | `aae8fed4c` | PASS |
+| Public-sync export evidence commit | public-sync repo | `2017af304` | PASS |
+| Public export | public-sync remote | `EXPORTED` to `Controlled-Vibe-Framework-CVF.git` | EXPORTED |
+| Provider/live proof | N/A documentation-only | not applicable | N/A with reason |
 
 ## Claim Boundary
 

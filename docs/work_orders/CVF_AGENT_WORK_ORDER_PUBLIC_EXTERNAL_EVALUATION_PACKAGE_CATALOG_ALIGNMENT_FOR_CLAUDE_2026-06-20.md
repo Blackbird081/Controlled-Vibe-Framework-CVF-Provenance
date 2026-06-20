@@ -1,15 +1,15 @@
 # CVF Agent Work Order - Public External Evaluation Package And Catalog Alignment
 
 Memory class: FULL_RECORD
-Status: DISPATCHED_TO_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-06-20
 docType: work_order
 Batch ID: PECA-T1
 Owner: Claude worker, Codex reviewer
 Commit mode: WORKER_MUST_NOT_COMMIT
 dispatchBaseHead: `f2330d0e`
-executionBaseHead: worker must refresh with `git rev-parse --short HEAD` before editing and report the value.
-closureBaseHead: N/A - pending Codex reviewer conversion once worker returns.
+executionBaseHead: `94bb69dc8`
+closureBaseHead: `2017af304`
 rawMemoryReleased: false
 
 ## Dispatch Prompt Envelope
@@ -132,7 +132,7 @@ session-sync edits once the uncommitted worker return is reviewed.
 | Public/provenance boundary | `AGENTS.md` | binding |
 | Catalog authority | `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` | active provenance source catalog |
 | External review reference | `docs/reference/external_agent_review/README.md` | active index |
-| GC-018 | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md` | DISPATCHED_TO_CLAUDE |
+| GC-018 | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md` | CLOSED_PASS_BOUNDED |
 
 ## Agent Roles
 
@@ -183,8 +183,8 @@ tree changes if returned work is unsafe. Do not alter Delta-T11 closure commit
 | --- | --- |
 | completionReviewPath | public-sync `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md` |
 | reviewerOwnedClosurePaths | matching GC-018, this work order, public-sync completion review, public-sync changed docs, and active session state/front door/handoff only if accepted |
-| workerReturnStatus | `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` |
-| reviewerAction | Codex must review uncommitted public-sync diff before any public commit or push |
+| workerReturnStatus | `COMPLETE_PENDING_REVIEW` |
+| reviewerAction | Codex accepted public-sync documentation alignment after adding missing completion review and export evidence |
 
 ## Public Catalog Alignment Control Block
 
@@ -320,11 +320,11 @@ reader mistakes are checked below.
 
 | Path | Required at handoff | Purpose |
 | --- | --- | --- |
-| public-sync `README.md` | Yes | public front-door start-here routing |
-| public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` | Yes | durable catalog orientation |
-| public-sync `docs/guides/external-agent-review-guide.md` | Yes | external-agent reading order and prompt |
-| public-sync `docs/evidence/public-external-review-snapshot-2026-06-19.md` | Yes | dated evidence snapshot |
-| public-sync `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md` | Yes | worker-return completion packet |
+| `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\README.md` | Yes | public front-door start-here routing |
+| `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\docs\reference\CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` | Yes | durable catalog orientation |
+| `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\docs\guides\external-agent-review-guide.md` | Yes | external-agent reading order and prompt |
+| `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\docs\evidence\public-external-review-snapshot-2026-06-19.md` | Yes | dated evidence snapshot |
+| `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\docs\reviews\CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md` | Yes | worker-return completion packet |
 
 ## Forbidden Path Manifest
 
@@ -336,6 +336,17 @@ reader mistakes are checked below.
 | public-sync `package.json`; `package-lock.json` | no package/dependency changes |
 | public-sync runtime/source files under `EXTENSIONS/**` | documentation-only public alignment |
 | private/session files `CVF_SESSION/**`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF*.md` | Codex-only session sync after review |
+
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden surface | Dispatch state | Disposition |
+| --- | --- | --- |
+| private provenance non-dispatch files | no Claude edit authority at dispatch | PASS |
+| public-sync `.git/**` | Git metadata must change only through normal Git commands owned by Codex after review | PASS |
+| public-sync `.github/**` | unchanged; no workflow edit authorized | PASS |
+| public-sync `package.json` and `package-lock.json` | unchanged; no dependency edit authorized | PASS |
+| public-sync runtime/source files under `EXTENSIONS/**` | unchanged; PECA-T1 is documentation-only | PASS |
+| private/session files | Codex-only session-sync path after closure; not part of Claude dispatch | PASS |
 
 ## Pre-Flight Checks
 
@@ -384,41 +395,57 @@ evidence found the public-sync worktree clean at public-sync HEAD `94bb69dc8`.
 
 ## Evidence Requirements
 
-Claude must report:
+Closure evidence:
 
-- `git remote -v` from public-sync;
-- `git rev-parse --short HEAD` from public-sync;
-- `git status --short` before and after edits from public-sync;
-- path existence proof for every touched public link;
-- grep scan for stale duplicate rows or ambiguous phrases:
-  `catalog`, `snapshot`, `latest public`, `front-door`;
-- any public-sync markdown/link validation command available without network;
-- exact changed-file manifest.
+- public-sync remote verified:
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`;
+- public-sync base head before worker edits: `94bb69dc8`;
+- public-sync material commit: `aae8fed4c`;
+- public-sync export evidence commit: `2017af304`;
+- public push evidence: `94bb69dc8..aae8fed4c main -> main`, then
+  `aae8fed4c..2017af304 main -> main`;
+- public-sync status after push: clean;
+- path existence checks passed for README, catalog, external-agent guide,
+  2026-06-19 snapshot, and completion review;
+- grep scan found no stale "latest public front-door/catalog sync" row and
+  confirmed catalog/snapshot role separation;
+- public-sync `git diff --check` passed before commit.
 
 Provider/live proof is not applicable because this tranche is public
 documentation alignment only.
 
+## Current Runtime Freshness Verification
+
+| Surface | Evidence |
+| --- | --- |
+| runtime/source behavior | N/A with reason: no runtime/source file changed |
+| provider/live behavior | N/A with reason: no provider/live call was authorized or run |
+| public-sync documentation | public-sync commits `aae8fed4c` and `2017af304` |
+| catalog wording | public documentation only; no catalog runtime/search/classification registry changed |
+| registry surfaces | N/A with reason: no registry JSON or Markdown surface was in scope |
+
 ## Review Gate
 
-Codex must not accept the worker return unless:
+Codex accepted the worker return because:
 
-- public-sync remote evidence still points to
+- public-sync remote evidence points to
   `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`;
-- the changed paths stay inside Allowed scope;
-- every touched README/guide/catalog/snapshot link resolves in public-sync;
-- the completion review records public export disposition and claim boundary;
+- changed paths stayed inside Allowed scope;
+- every touched README/guide/catalog/snapshot link resolved in public-sync;
+- Codex added the missing completion review and export evidence inside
+  reviewer-owned closure scope;
 - no private provenance, runtime/provider/live, readiness, or universal-control
   claim was added.
 
 ## Closure Checklist
 
-- [ ] Claude returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Codex reviewed public-sync diff against this work order.
-- [ ] Codex ran public-sync path/link checks.
-- [ ] Codex committed/pushed public-sync only if remote verification passed.
-- [ ] Codex converted this GC-018/work order to closure status or recorded
-  blocked disposition.
-- [ ] Codex updated active session continuity only once the outcome is accepted.
+- [x] Claude returned `COMPLETE_PENDING_REVIEW`.
+- [x] Codex reviewed public-sync diff against this work order.
+- [x] Codex ran public-sync path/link checks.
+- [x] Codex committed/pushed public-sync only after remote verification passed.
+- [x] Codex converted this GC-018/work order to closure status.
+- N/A with reason: active session continuity is protected and handled in a
+  separate session-sync commit immediately after closure conversion.
 
 ## Operator Checkpoint
 
@@ -492,28 +519,56 @@ reason: <source-backed blocker>
 | Claim boundary | public documentation alignment only; no runtime/provider/live/readiness/universal-control claim |
 | Agent type | dispatcher under `MULTI_AGENT_MULTI_ROLE` |
 | Invocation ID | `peca-t1-public-external-evaluation-package-catalog-alignment-dispatch-2026-06-20` |
-| Expected manifest | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md`; `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md`; `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: deletion/rename forbidden |
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: this work order dispatches the public-sync update, but no reviewed
-public-sync commit or push exists yet for PECA-T1. Next action is Claude
-uncommitted worker return, then Codex review, public-sync commit, and public
-push only if the remote remains `Controlled-Vibe-Framework-CVF.git`.
+Remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+
+Public-sync commits:
+
+- `aae8fed4c` - `Clarify public catalog and evidence snapshot`;
+- `2017af304` - `Record public catalog sync export evidence`.
+
+Public artifact paths:
+
+- `README.md`;
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`;
+- `docs/guides/external-agent-review-guide.md`;
+- `docs/evidence/public-external-review-snapshot-2026-06-19.md`;
+- `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker return status | `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | `COMPLETE_PENDING_REVIEW` | PASS |
+| Public-sync base head | worker refreshed public-sync HEAD | `94bb69dc8` observed by Codex reviewer | PASS |
+| Public-sync remote | `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` | `origin` fetch/push matched required remote | PASS |
+| Changed paths | public documentation only | README, catalog, guide, snapshot, completion review | PASS |
+| Public export disposition | `EXPORTED` only after public push evidence | `2017af304` pushed to public `main` | PASS |
+| Runtime/provider/live claim | no new runtime/provider/live claim | none added | PASS |
 
 ## Machine Closure Package
 
-| Closure item | Artifact/path | Machine-readable evidence | Final status |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| GC-018 baseline | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md` | `Status: DISPATCHED_TO_CLAUDE` | DISPATCHED_TO_CLAUDE |
-| Work order | this file | `Status: DISPATCHED_TO_CLAUDE` | DISPATCHED_TO_CLAUDE |
-| Public-sync completion review | public-sync `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md` | pending worker return | BLOCKED |
-| Public-sync commit/push | public-sync repo | pending Codex review | BLOCKED |
+| GC-018 baseline | `docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | CLOSED_PASS_BOUNDED |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md`; public-sync `docs/reviews/CVF_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_COMPLETION_2026-06-20.md` | both record `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A documentation alignment dispatch | no parent roadmap changed | N/A with reason |
+| Registry JSON | N/A documentation alignment dispatch | BLOCKED with reason: no registry JSON update was authorized or required for public wording alignment | BLOCKED with reason |
+| Registry Markdown | N/A documentation alignment dispatch | BLOCKED with reason: no registry Markdown update was authorized or required for public wording alignment | BLOCKED with reason |
+| External evidence digest | public-sync completion review | SHA256 `DBB867AFAC5AE8697F0E77E0992024B3BC90737A7648B13772BDE6006567B424`; public commits `aae8fed4c` and `2017af304`; path/grep checks PASS | PASS |
+| System loop interlock | N/A public documentation alignment | no runtime/source/registry loop added | N/A with reason |
+| Session continuity | protected session-sync commit pending after closure | closure artifact records separate sync requirement | N/A with reason |
+| Public-sync commit/push | public-sync repo | `aae8fed4c`; `2017af304`; pushed to origin/main | PASS |
+| Public export | public-sync remote | `EXPORTED` to `Controlled-Vibe-Framework-CVF.git` | EXPORTED |
 | Provider/live proof | N/A documentation-only | not applicable | N/A with reason |
 
 ## Claim Boundary
