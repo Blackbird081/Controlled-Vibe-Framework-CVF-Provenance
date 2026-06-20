@@ -4124,6 +4124,59 @@
       "manifestPath": null,
       "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md",
       "notes": "Closed module adapter; no provider/live, secret, queue, public-sync, or readiness claim."
+    },
+    {
+      "id": "cge-t1-lpf-graph-owner-source-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CGE-T1 LPF graph owner source surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context_builder/graph/",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/storage/graph-sqlite-store.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/authority/graph-authority-gate.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context_builder/graph/task-query-mapper.ts"
+      ],
+      "fileCount": 6,
+      "status": "SCANNED",
+      "scanWave": "CGE-T1",
+      "scanDate": "2026-06-20",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_COMPLETION_2026-06-20.md",
+      "completionReviewPath": "docs/reviews/CVF_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_COMPLETION_2026-06-20.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_2026-06-20.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "LPF_GRAPH_SCHEMA",
+        "LPF_SYMBOL_INDEX",
+        "LPF_SQLITE_GRAPH_STORE",
+        "LPF_GRAPH_AUTHORITY_GATE",
+        "LPF_TASK_QUERY_MAPPING"
+      ],
+      "priorAbsorption": "CGE-T1 read current LPF graph owner source surfaces while triaging external CodeGraph ideas. This registry entry covers source paths cited as CVF owner surfaces only; it does not register the local copied CodeGraph package as canonical CVF source.",
+      "findings": [
+        {
+          "id": "CGE-T1-F1-lpf-graph-owner-surfaces-current",
+          "summary": "Current LPF graph source surfaces provide the owner boundary for schema, symbol index, SQLite graph store, authority gate, and task query mapping references used during CodeGraph absorption triage.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future CGE implementation must extend current LPF/KGR owners through a fresh source-verified work order instead of importing parallel graph-core files.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_COMPLETION_2026-06-20.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "parallel LPF graph core import (rejected by CGE-T1)",
+        "CodeGraph performance proof in CVF (not present)",
+        "CodeGraph MCP/runtime integration in CVF (not authorized)"
+      ],
+      "nextScanRecommendation": "Re-scan only if a future CGE implementation, KGR dedupe, or LPF graph owner extension work order is authorized."
     }
   ]
 }
