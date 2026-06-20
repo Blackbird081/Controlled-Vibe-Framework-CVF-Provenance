@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `cge_t2_codegraph_lpf_kgr_adaptation_contract_dispatched_claude_execution_pending`
+Current mode marker: `cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `cge_t2_codegraph_lpf_kgr_adaptation_contract_dispatched_claude_execution_pending`.
+Current mode: `cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`.
 
 Previous mode: `cge_t1_codegraph_external_absorption_triage_closed_next_lane_selection_ready`.
 
@@ -166,32 +166,39 @@ watcher/daemon, SQLite adoption, benchmark proof, provider/live proof,
 public-sync, ACE-R1 reopening, freeze, readiness, or universal
 governed-coding-control claim.
 
-CGE-T2 CodeGraph LPF/KGR Adaptation Contract is `DISPATCHED` at material commit
-`1c8103fe` from dispatch base `5cb5a8e1`. Artifacts: GC-018
-`docs/baselines/CVF_GC018_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_2026-06-20.md`
-and work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_FOR_CLAUDE_2026-06-20.md`.
-Claude must not commit and may create exactly two uncommitted artifacts: the
-reference adaptation contract under `docs/reference/` and the worker-return
-artifact under `docs/reviews/`. Verification before dispatch passed:
-pre-dispatch autorun 43/43, dispatch-quality, AOT, commit steward dispatch, and
-pre-commit hook 54/54. Boundary: documentation/reference only; no runtime,
-source/test implementation, CodeGraph install/init/`.codegraph`, MCP wiring,
-watcher/daemon, benchmark, provider/live, public-sync, ACE-R1 reopening,
-freeze, readiness, or universal governed-coding-control claim.
+CGE-T2 CodeGraph LPF/KGR Adaptation Contract is `CLOSED_PASS_BOUNDED` at
+material closure commit `1055dce2`, after dispatch commit `1c8103fe` and
+session-sync base `cf2db0ff`. Artifacts: reference contract
+`docs/reference/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_2026-06-20.md`,
+worker return
+`docs/reviews/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_WORKER_RETURN_2026-06-20.md`,
+and completion review
+`docs/reviews/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_COMPLETION_2026-06-20.md`.
+Result: CodeGraph R7/R8/R9 were absorbed only as bounded LPF/KGR
+owner-surface reference vocabulary, stale-index/source-read fallback
+discipline, and field-normalized receipt/query-plan template language. Future
+checker candidates CC-CGE-1..4 are documented but not implemented. Verification
+passed: worker-return fast gate, commit steward reviewer-return, material
+pre-commit hook 54/54, and committed-range pre-closure content gates with only
+expected session handoff HEAD drift before this sync. Boundary: documentation/
+reference only; no runtime, source/test implementation, CodeGraph install/init/
+`.codegraph`, MCP wiring, watcher/daemon, benchmark, provider/live,
+public-sync, ACE-R1 reopening without operator selection, freeze, readiness, or
+universal governed-coding-control claim.
 
 ## Next Allowed Move
 
-Mode: `cge_t2_codegraph_lpf_kgr_adaptation_contract_dispatched_claude_execution_pending`.
+Mode: `cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`.
 
-Next allowed move: Claude executes the CGE-T2 work order under
-`WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` with
-exactly the authorized reference contract and worker-return artifact, or
-`BLOCKED_WITH_REASON`. Codex reviews/closes after return. Do not open runtime/
-source/test implementation, CodeGraph install/init/`.codegraph`, MCP wiring,
-watcher/daemon, benchmark proof, provider/live proof, public-sync, ACE-R1
-reopening, freeze, readiness, or universal governed-coding-control claim.
-LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select the next high-value governed tranche with fresh
+GC-018 and source verification. Recommended candidates are either CGE-T3
+checker-candidate decision/guard work derived from CC-CGE-1..4, or resuming the
+parked ACE-R1 replay roadmap if the operator explicitly selects it. Do not open
+runtime/source/test implementation, CodeGraph install/init/`.codegraph`, MCP
+wiring, watcher/daemon, benchmark proof, provider/live proof, public-sync,
+ACE-R1 reopening without selection, freeze, readiness, or universal
+governed-coding-control claim. LHW24 remains the latest closed numbered LHW
+wave.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

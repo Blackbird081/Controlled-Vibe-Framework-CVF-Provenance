@@ -17,7 +17,7 @@ remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after dispatching CGE-T2 CodeGraph LPF/KGR
+Target: correct next-move continuity after closing CGE-T2 CodeGraph LPF/KGR
 Adaptation Contract.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
@@ -35,10 +35,10 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize CGE-T2 dispatch material commit
-`1c8103fe`, generated active state, compact session memory, active handoff, and
+Authorized guard-maintenance scope: synchronize CGE-T2 closure material commit
+`1055dce2`, generated active state, compact session memory, active handoff, and
 the next allowed move after the private CodeGraph LPF/KGR adaptation-contract
-dispatch. This session sync does not open freeze, freeze release, posture
+closure. This session sync does not open freeze, freeze release, posture
 mutation, runtime, MCP, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, or public-sync scope.
 
@@ -81,14 +81,16 @@ Protected paths:
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_GGL_T1_COMPACTION_2026-06-19.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator asked Codex to issue the next work order
-for Claude after CGE-T1 closure. Codex dispatched CGE-T2 as a documentation/
-reference adaptation-contract tranche only, without expanding CodeGraph into
-CVF runtime/source, MCP, watcher/daemon, benchmark, provider/live, ACE-R1,
-direct-interception, readiness, or public-sync scope.
+Operator authorization: the operator returned Claude's CGE-T2
+`COMPLETE_PENDING_REVIEW` packet. Codex reviewed, repaired packet-shape gates,
+accepted, and closed CGE-T2 as a documentation/reference adaptation-contract
+tranche only, without expanding CodeGraph into CVF runtime/source, MCP,
+watcher/daemon, benchmark, provider/live, ACE-R1, direct-interception,
+readiness, or public-sync scope.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter CGE-T2 dispatch material commit `1c8103fe`, CGE-T1 closure
+Do not alter CGE-T2 closure material commit `1055dce2`, CGE-T2 dispatch
+material commit `1c8103fe`, CGE-T1 closure
 material commit `1db59198`, GKF-T1 closure commit
 `fdd281d7`, GKF-T1 dispatch repair commit
 `218ef14d`, GKF-T1 dispatch commit `6a7377b8`, PECA-T1 closure commit
@@ -100,13 +102,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_t2_codegraph_lpf_kgr_adaptation_contract_dispatched_claude_execution_pending`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude executes the CGE-T2 work order under `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; parked checkpoint=CodeGraph runtime/source implementation, MCP wiring, watcher/daemon, benchmark proof, ACE-R1 reopening, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=select the next high-value governed tranche with fresh GC-018 and source verification; parked checkpoint=CodeGraph runtime/source implementation, MCP wiring, watcher/daemon, benchmark proof, ACE-R1 reopening without operator selection, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`cge_t2_codegraph_lpf_kgr_adaptation_contract_dispatched_claude_execution_pending`
+`cge_t2_codegraph_lpf_kgr_adaptation_contract_closed_next_lane_selection_ready`
 
-Current HEAD recorded for this handoff: `1c8103fe`
+Current HEAD recorded for this handoff: `1055dce2`
 
 Material state:
 
@@ -515,18 +517,28 @@ material commit `1db59198`. CodeGraph remains advisory only; implementation,
 MCP, watcher/daemon, benchmark, provider/live, public-sync, and ACE-R1 are not
 opened by CGE-T1.
 
-CGE-T2 CodeGraph LPF/KGR Adaptation Contract is `DISPATCHED` at material commit
-`1c8103fe`.
+CGE-T2 CodeGraph LPF/KGR Adaptation Contract is `CLOSED_PASS_BOUNDED` at
+material closure commit `1055dce2`, after dispatch commit `1c8103fe` and
+session-sync base `cf2db0ff`. Artifacts: reference
+`docs/reference/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_2026-06-20.md`,
+worker return
+`docs/reviews/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_WORKER_RETURN_2026-06-20.md`,
+and completion
+`docs/reviews/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_COMPLETION_2026-06-20.md`.
+Result: CodeGraph R7/R8/R9 are accepted only as LPF/KGR owner-surface reference
+vocabulary, stale-index/source-read fallback discipline, and field-normalized
+receipt/query-plan template language. Future checker candidates CC-CGE-1..4
+are documented but not implemented.
 
-Next allowed move: Claude executes the CGE-T2 work order under
-`WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` with
-exactly the authorized reference contract and worker-return artifact, or
-`BLOCKED_WITH_REASON`. Codex reviews/closes after return. Do not open Delta-T12
-by default. Keep freeze action, freeze release, posture mutation, runtime
-profiles, provider/live calls, public-sync, CVF Web runtime action, direct
-interception, readiness, universal speed, and universal governed-coding claims
-parked unless a separate operator checkpoint and governed packet opens them.
-LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select the next high-value governed tranche with fresh
+GC-018 and source verification. Recommended candidates are either CGE-T3
+checker-candidate decision/guard work derived from CC-CGE-1..4, or resuming the
+parked ACE-R1 replay roadmap if the operator explicitly selects it. Do not open
+Delta-T12 by default. Keep freeze action, freeze release, posture mutation,
+runtime profiles, provider/live calls, public-sync, CVF Web runtime action,
+direct interception, readiness, universal speed, and universal governed-coding
+claims parked unless a separate operator checkpoint and governed packet opens
+them. LHW24 remains the latest closed numbered LHW wave.
 
 ## Parked Operator Checkpoints
 
@@ -591,20 +603,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | Delta-T7 closure final session sync, 2026-06-19 |
+| Session or invocation | CGE-T2 closure session sync, 2026-06-20 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | six-path Delta-T7 final session-sync manifest |
-| Allowed scope source | Delta-T7 closure commit `d82870b9` |
-| Before status evidence | closure handoff bridge `c4b49fbd` with pre-Delta-T7 mode still active |
-| After status evidence | state, memory, and handoff record Delta-T7 closed and next-foundation selection ready |
-| Diff evidence | exact six-path session-sync diff, generated-state drift check, and governance hooks |
+| Target paths | CGE-T2 final session-sync manifest |
+| Allowed scope source | CGE-T2 closure commit `1055dce2` |
+| Before status evidence | material closure commit `1055dce2` with CGE-T2 closure content and pre-sync handoff drift |
+| After status evidence | state, memory, and handoff record CGE-T2 closed and next-lane selection ready |
+| Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
 | Approval boundary | final session continuity only; no new runtime or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `delta-t7-closure-session-sync-codex-2026-06-19` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/deltaT7ReceiptToExecutionEvidenceAuditorClosure20260619.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `cge-t2-closure-session-sync-codex-2026-06-20` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/cgeT2CodeGraphLpfKgrAdaptationContractClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/cgeT2CodeGraphLpfKgrAdaptationContractClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
