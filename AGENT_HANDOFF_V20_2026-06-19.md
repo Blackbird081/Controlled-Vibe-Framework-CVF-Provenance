@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current AAF-T2 closure state, the current
+This compact handoff records the current AAF-T3 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing AAF-T2 Agent Automation
-Assist Early Gap Diagnostics.
+Target: correct next-move continuity after dispatching AAF-T3 Guard Orientation
+Index / task-first guard map to a role-neutral worker.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,13 +35,13 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize AAF-T2 material closure commit
-`904eb09a`, generated active state, compact session memory, active handoff, and
-the next allowed move after Codex accepted the AAF-T2 worker return before
-resuming CGE-T3.
+Authorized guard-maintenance scope: synchronize AAF-T3 dispatch commit
+`a5efb7b2`, generated active state, compact session memory, active handoff, and
+the next allowed move after the role-neutral AAF-T3 work order became
+dispatch-ready before resuming CGE-T3.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
-direct-interception, ACE-R1, AAF-T3, or public-sync scope.
+direct-interception, ACE-R1, AAF-T3 implementation, or public-sync scope.
 
 Protected paths:
 
@@ -81,6 +81,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/aafT1AgentAutomationAssistFoundationClosure20260620.json`
 - `CVF_SESSION/state/entries/aafT2AgentAutomationAssistEarlyGapDiagnosticsDispatch20260620.json`
 - `CVF_SESSION/state/entries/aafT2AgentAutomationAssistEarlyGapDiagnosticsClosure20260620.json`
+- `CVF_SESSION/state/entries/aafT3GuardOrientationIndexDispatch20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -88,11 +89,12 @@ Protected paths:
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Operator authorization: the operator approved raising CVF automation for
-noncoder and external-agent use, and instructed Codex to issue AAF-T1 to Claude
-as the first test of the new worker-return packet-shape guard.
+noncoder and external-agent use, then authorized AAF-T3 Guard Orientation Index
+/ task-first guard map dispatch with role-neutral instructions.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter AAF-T2 closure commit `904eb09a`, AAF-T2 dispatch commit
+Do not alter AAF-T3 dispatch commit `a5efb7b2`, AAF-T2 closure commit
+`904eb09a`, AAF-T2 dispatch commit
 `1c6f8794`, AAF-T1 closure commit
 `3b26e23a`, AAF-T1 dispatch commit `c5b3af92`, worker-return guard hardening material commit `640f27a1`, CGE-T2
 closure material commit `1055dce2`, CGE-T2 dispatch material commit `1c8103fe`,
@@ -108,13 +110,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator may authorize AAF-T3 Guard Orientation Index / task-first guard map dispatch before broad CGE-T3 resumes; parked checkpoint=CGE-T3 absorption until AAF-T3 is declined/closed or explicit override, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, ACE-R1 reopening without operator selection, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`aaf_t3_guard_orientation_index_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=give the role-neutral worker `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T3_GUARD_ORIENTATION_INDEX_FOR_WORKER_2026-06-20.md`; parked checkpoint=CGE-T3 absorption until AAF-T3 review/closure or explicit override, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, ACE-R1 reopening without operator selection, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`
+`aaf_t3_guard_orientation_index_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `904eb09a`
+Current HEAD recorded for this handoff: `a5efb7b2`
 
 Material state:
 
@@ -352,7 +354,7 @@ governed-coding control claim.
 
 Delta-T9 accepted material commit `ac390222` adds the durable audit
 contract/store module, focused tests, completion review, and evidence JSON.
-Codex reviewer tightened store append/read validation so forged or corrupted
+Reviewer tightened store append/read validation so forged or corrupted
 mandatory-invocation/direct-interception claims are rejected. Verification:
 focused 30/30 PASS, full MCP 32 files / 658 tests PASS, build PASS,
 worker-return fast gate PASS.
@@ -380,8 +382,8 @@ and does not open runtime, provider, public, direct-interception, readiness, or
 universal-control scope.
 
 Delta-T10 accepted material commit `8f4abb28` adds the durable audit integrity
-readout module, focused tests, completion packet, and evidence JSON. Codex
-reviewer hardened JSONL primitive/null classification and secret-like receipt
+readout module, focused tests, completion packet, and evidence JSON. Reviewer
+hardened JSONL primitive/null classification and secret-like receipt
 identity handling before acceptance. Verification: focused 30/30 PASS, full
 MCP 33 files / 688 tests PASS, build PASS, worker-return fast gate PASS.
 
@@ -394,8 +396,8 @@ readout only, with no wrapper/proxy enforcement, direct interception, arbitrary
 command execution, provider/live, public-sync, CVF Web action execution,
 queue/daemon, readiness, or universal governed-coding control claim.
 
-Delta-T11 material commit `0a3e298e` accepts the Claude no-commit worker return
-after Codex reviewer repair. It adds the durable audit evidence bundle module,
+Delta-T11 material commit `0a3e298e` accepts the no-commit worker return after
+reviewer repair. It adds the durable audit evidence bundle module,
 focused tests, worker-return completion packet, and evidence JSON. Reviewer
 repair changed `bundledAt` defaulting to supplied `readout.readoutAt`, rejected
 forged readout contract/bounded-flag inputs, corrected worker changed-set
@@ -427,7 +429,7 @@ orientation only.
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
 `CLOSED_PASS_BOUNDED` at closure commit `fdd281d7`, after dispatch commit
 `6a7377b8`, dispatch repair commit `218ef14d`, and PECA-T1 closure
-session-sync `72555605`. Codex accepted Claude's no-commit worker return from
+session-sync `72555605`. Reviewer accepted the no-commit worker return from
 execution base `89c3c570` and converted the GC-018, work order, and completion
 review to closure. Recommendation: `DEFER_FREEZE_SELECT_NEXT_LANE`. Evidence:
 worker-return fast gate passed, reviewer-fast passed 31/31, dispatch-quality
@@ -548,7 +550,7 @@ commit `3b26e23a`, after dispatch commit `c5b3af92` and session-sync base
 `docs/reviews/CVF_AAF_T1_AGENT_AUTOMATION_ASSIST_FOUNDATION_WORKER_RETURN_2026-06-20.md`,
 and completion
 `docs/reviews/CVF_AAF_T1_AGENT_AUTOMATION_ASSIST_FOUNDATION_COMPLETION_2026-06-20.md`.
-Codex reviewer repaired a real helper auto-mode defect so the live AAF-T1
+Reviewer repaired a real helper auto-mode defect so the live AAF-T1
 worker-return changed set resolves as `reviewer-return` instead of
 `implementation`. Evidence: focused tests 19/19, helper smoke,
 worker-return fast gate, reviewer-return steward, pre-commit hook 54/54, and
@@ -566,7 +568,7 @@ and completion
 Result: the helper now emits early `corpusDiagnostics` for changed active
 Markdown, makes `--enforce` fail on local corpus-shape/gate defects, preserves
 AAF-T1 CLI and reviewer-return routing, and includes worker-return packet-shape
-plus corpus-constant drift tests. Codex reviewer repaired a bounded gap by
+plus corpus-constant drift tests. Reviewer repaired a bounded gap by
 adding unsafe enumeration, unresolved-count, complete-verdict/exclusion,
 declared-exclusion, and placeholder-residue checks. Evidence: focused tests
 36/36, helper smoke, worker-return fast gate with focused pytest target,
@@ -574,12 +576,24 @@ reviewer-return steward, material pre-commit hook 54/54, and committed-range
 pre-closure content gates with only expected post-material active handoff HEAD
 drift before this sync.
 
-Next allowed move: operator may authorize AAF-T3 Guard Orientation Index /
-task-first guard map dispatch as the recommended next automation foundation
-move, before broad CGE-T3 absorption resumes. CGE-T3 Full Knowledge Absorption
-Ledger remains parked until AAF-T3 is declined/closed or the operator explicitly
-overrides this checkpoint. Do not open runtime/product behavior, provider/live
-proof, public-sync, MCP execution, wrapper/proxy enforcement, direct
+AAF-T3 Guard Orientation Index / task-first guard map is `DISPATCH_READY` at
+dispatch commit `a5efb7b2`, from base `ab3854d9`. Artifacts:
+`docs/baselines/CVF_GC018_AAF_T3_GUARD_ORIENTATION_INDEX_2026-06-20.md` and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T3_GUARD_ORIENTATION_INDEX_FOR_WORKER_2026-06-20.md`.
+Result: the role-neutral worker is authorized under `WORKER_MUST_NOT_COMMIT` to
+create/update exactly the five artifacts named in the work order and return
+`COMPLETE_PENDING_REVIEW`. Normative AAF-T3 instructions must describe roles
+and required work, not bind the flow to a specific agent/provider/model.
+Evidence: helper smoke resolved `dispatch`, pre-dispatch autorun 43/43,
+dispatch-quality, dispatch packet author fast gate, dispatch steward, and
+dispatch pre-commit hook 54/54 passed.
+
+Next allowed move: give the role-neutral worker
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T3_GUARD_ORIENTATION_INDEX_FOR_WORKER_2026-06-20.md`.
+CGE-T3 Full Knowledge Absorption Ledger remains parked until AAF-T3
+review/closure or the operator explicitly overrides this checkpoint. Do not
+open checker implementation, runtime/product behavior, provider/live proof,
+public-sync, MCP execution, wrapper/proxy enforcement, direct
 IDE/shell/git/filesystem interception, arbitrary command execution, queue/daemon,
 watcher, readiness, full-hook equivalence, universal speed, or universal
 governed-coding-control claims unless a separate operator checkpoint and
@@ -646,22 +660,22 @@ LHW24 remains the latest closed numbered LHW wave.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex session-sync steward |
-| Provider or surface | Codex local workspace |
-| Session or invocation | AAF-T2 closure session sync, 2026-06-20 |
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | AAF-T3 dispatch session sync, 2026-06-20 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | AAF-T2 closure session-sync manifest |
-| Allowed scope source | AAF-T2 closure commit `904eb09a` |
-| Before status evidence | material commit `904eb09a` with expected pre-sync handoff HEAD drift |
-| After status evidence | state, memory, and handoff record AAF-T2 closed with Guard Orientation Index next-ready |
+| Target paths | AAF-T3 dispatch session-sync manifest |
+| Allowed scope source | AAF-T3 dispatch commit `a5efb7b2` |
+| Before status evidence | dispatch commit `a5efb7b2` with expected pre-sync handoff HEAD drift |
+| After status evidence | state, memory, and handoff record AAF-T3 dispatched to role-neutral worker |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
 | Approval boundary | dispatch session continuity only; no new runtime or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `aaf-t2-closure-session-sync-codex-2026-06-20` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT2AgentAutomationAssistEarlyGapDiagnosticsClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT2AgentAutomationAssistEarlyGapDiagnosticsClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `aaf-t3-dispatch-session-sync-2026-06-20` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT3GuardOrientationIndexDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT3GuardOrientationIndexDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 

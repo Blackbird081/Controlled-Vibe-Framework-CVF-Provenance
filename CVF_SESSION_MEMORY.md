@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`
+Current mode marker: `aaf_t3_guard_orientation_index_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`.
+Current mode: `aaf_t3_guard_orientation_index_dispatched_to_worker`.
 
-Previous mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_dispatched_to_claude`.
+Previous mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`.
 
 Active handoff:
 
@@ -108,7 +108,7 @@ Delta-T10 Durable Audit Integrity Readout is `CLOSED_PASS_BOUNDED` at closure
 commit `b496146f`, after dispatch `0b286d03`, dispatch repair `b14df7b4`,
 material commit `8f4abb28`, and material handoff bridge `1a08cbd0`. It adds a
 bounded deterministic integrity readout for supplied Delta-T9 durable audit
-records only. Codex reviewer hardened JSONL primitive/null classification and
+records only. Reviewer hardened JSONL primitive/null classification and
 secret-like receipt identity handling. Focused tests passed 30/30, full MCP
 tests passed 33 files / 688 tests, build passed, worker-return fast gate
 passed, and pre-closure content gates passed with only expected post-closure
@@ -119,7 +119,7 @@ Delta-T11 Durable Audit Evidence Bundle External Reviewer Readout is
 `53aca070`, material commit `0a3e298e`, and material handoff bridge
 `26a9491e`. It adds a bounded deterministic evidence bundle and external
 reviewer readout over supplied Delta-T9/T10 durable audit artifacts only.
-Codex reviewer hardened deterministic `bundledAt` defaulting, rejected forged
+Reviewer hardened deterministic `bundledAt` defaulting, rejected forged
 readout contract/bounded-flag inputs, repaired packet evidence/scaffold, and
 preserved `NOT_CLAIMED` rows for forbidden expansion claims. Focused tests
 passed 39/39, full MCP tests passed 34 files / 727 tests, build passed,
@@ -141,7 +141,7 @@ or universal governed-coding control claim.
 GKF-T1 Governance Kernel Freeze Readiness And Claim Boundary Audit is
 `CLOSED_PASS_BOUNDED` at closure commit `fdd281d7`, after dispatch commit
 `6a7377b8`, dispatch repair commit `218ef14d`, and PECA-T1 closure
-session-sync `72555605`. Codex accepted Claude's no-commit worker return from
+session-sync `72555605`. Reviewer accepted the no-commit worker return from
 execution base `89c3c570` and converted the GC-018, work order, and completion
 review to closure. Recommendation: `DEFER_FREEZE_SELECT_NEXT_LANE`. Evidence:
 worker-return fast gate passed, reviewer-fast passed 31/31, dispatch-quality
@@ -201,8 +201,8 @@ handoff HEAD drift before this sync.
 AAF-T1 Agent Automation Assist Foundation is `CLOSED_PASS_BOUNDED` at material
 commit `3b26e23a`, after dispatch commit `c5b3af92` and session-sync base
 `922eb4bb`. It adds a read-only local governance automation-assist helper,
-focused tests, Claude worker-return evidence, and Codex completion review.
-Codex reviewer repaired a real auto-mode defect: the live worker-return changed
+focused tests, worker-return evidence, and completion review. Reviewer repaired
+a real auto-mode defect: the live worker-return changed
 set initially resolved as `implementation`; after repair it resolves as
 `reviewer-return`. Verification passed: focused tests 19/19, helper smoke,
 worker-return fast gate, reviewer-return steward, material pre-commit hook
@@ -214,7 +214,7 @@ at material commit `904eb09a`, after dispatch commit `1c6f8794` and dispatch
 continuity commit `57eada11`. It adds early `corpusDiagnostics` to the read-only
 AAF helper, makes `--enforce` fail on local corpus-shape/gate defects, preserves
 AAF-T1 CLI and reviewer-return routing, and adds worker-return packet-shape plus
-corpus-constant drift tests. Codex reviewer repaired a bounded gap by adding
+corpus-constant drift tests. Reviewer repaired a bounded gap by adding
 unsafe enumeration, unresolved-count, complete-verdict/exclusion, declared-
 exclusion, and placeholder-residue checks. Verification passed: focused tests
 36/36, helper smoke, worker-return fast gate with focused pytest target,
@@ -222,19 +222,34 @@ reviewer-return steward, material pre-commit hook 54/54, and committed-range
 pre-closure content gates with only expected post-material active handoff HEAD
 drift before this sync.
 
+AAF-T3 Guard Orientation Index / task-first guard map is `DISPATCH_READY` at
+dispatch commit `a5efb7b2`, from base `ab3854d9`. It adds the source-verified
+GC-018 and role-neutral `WORKER_MUST_NOT_COMMIT` work order for a task-first
+guard orientation front door. Normative AAF-T3 instructions must describe
+roles and required work, not bind the flow to a specific agent/provider/model.
+Verification passed: helper smoke resolved `dispatch`, pre-dispatch autorun
+43/43, dispatch-quality, dispatch packet author fast gate, dispatch steward,
+and dispatch pre-commit hook 54/54. Boundary: orientation/reference
+documentation only; no checker implementation, runtime/product behavior,
+provider/live proof, public-sync, MCP execution, wrapper/proxy enforcement,
+direct interception, arbitrary command execution, queue/daemon, watcher,
+readiness, full-hook equivalence, or universal governed-coding-control claim.
+
 ## Next Allowed Move
 
-Mode: `aaf_t2_agent_automation_assist_early_gap_diagnostics_closed_guard_orientation_index_next_ready`.
+Mode: `aaf_t3_guard_orientation_index_dispatched_to_worker`.
 
-Next allowed move: operator may authorize AAF-T3 Guard Orientation Index /
-task-first guard map dispatch as the recommended next automation foundation
-move, before broad CGE-T3 absorption resumes. CGE-T3 Full Knowledge Absorption
-Ledger remains parked until AAF-T3 is declined/closed or the operator explicitly
-overrides this checkpoint. Do not open runtime/product behavior, provider/live
-proof, public-sync, MCP execution, wrapper/proxy enforcement, direct IDE/shell/
-git/filesystem interception, arbitrary command execution, queue/daemon, watcher,
-readiness, full-hook equivalence, or universal governed-coding-control claim.
-LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: give the role-neutral worker
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T3_GUARD_ORIENTATION_INDEX_FOR_WORKER_2026-06-20.md`.
+The worker must run `WORKER_MUST_NOT_COMMIT` and return
+`COMPLETE_PENDING_REVIEW` with exactly the five artifacts named by the work
+order. CGE-T3 Full Knowledge Absorption Ledger remains parked until AAF-T3
+review/closure or explicit operator override. Do not open checker
+implementation, runtime/product behavior, provider/live proof, public-sync, MCP
+execution, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
+interception, arbitrary command execution, queue/daemon, watcher, readiness,
+full-hook equivalence, or universal governed-coding-control claim. LHW24
+remains the latest closed numbered LHW wave.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
