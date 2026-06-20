@@ -11,14 +11,13 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current LSC-T2 closure state, the current
+This compact handoff records the current LSC-T4 dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after closing LSC-T2 Multi-Role Capture
-Contract And Eligibility Matrix.
+Target: dispatch continuity for LSC-T4 Promotion Threshold Policy.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,9 +34,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize LSC-T2 closure commit
-`00214e9a`, generated active state, compact session memory, active handoff, and
-the next allowed move after LSC-T2 was accepted.
+Authorized guard-maintenance scope: synchronize LSC-T4 dispatch commit
+`275eb374`, generated active state, compact session memory, active handoff, and
+the next allowed move for worker execution.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
@@ -92,6 +91,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/lscT1SignalLedgerSourceLayoutDedupContractClosure20260620.json`
 - `CVF_SESSION/state/entries/lscT2MultiRoleCaptureContractDispatch20260621.json`
 - `CVF_SESSION/state/entries/lscT2MultiRoleCaptureContractClosure20260621.json`
+- `CVF_SESSION/state/entries/lscT4PromotionThresholdPolicyDispatch20260621.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -106,11 +106,13 @@ AAF-T4 after AAF-T3 closure and then approved the worker-experience governance
 uplift. AAF-T5 is now closed as Worker Experience Retrospective Capture
 Foundation, not the Guard Orientation Read-Receipt Gate. The operator then
 selected LSC-T2 after the lane-selection audit and approved issuing the work
-order under the LSC roadmap.
+order under the LSC roadmap. After LSC-T2 closure, the operator selected the
+roadmap order `LSC-T2 -> LSC-T4 -> LSC-T3 -> LSC-T6 -> LSC-T5/T7` and
+instructed continuation without another checkpoint.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter LSC-T2 closure commit `00214e9a`, LSC-T2 dispatch commit
-`98ff0510`, LSC-T1 closure commit
+Do not alter LSC-T4 dispatch commit `275eb374`, LSC-T2 closure commit
+`00214e9a`, LSC-T2 dispatch commit `98ff0510`, LSC-T1 closure commit
 `3599441a`, LSC-T1 dispatch commit `84ba827f`, LSC-T1 dispatch continuity
 commit `b528e8ca`,
 AAF-T5 closure commit `d76a37cf`, AAF-T5 dispatch commit
@@ -134,13 +136,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select the next Learning Signal Chain tranche or another parked lane through fresh GC-018 and source-verified work order; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`lsc_t4_promotion_threshold_policy_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker executes LSC-T4 under `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; parked checkpoint=LSC-T3, LSC-T6, LSC-T5/T7, AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`
+`lsc_t4_promotion_threshold_policy_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `00214e9a`
+Current HEAD recorded for this handoff: `275eb374`
 
 Material state:
 
@@ -487,16 +489,22 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after LSC-T2 closure:
+Current pointer after LSC-T4 dispatch:
 
-LSC-T2 Multi-Role Capture Contract And Eligibility Matrix is
-`CLOSED_PASS_BOUNDED` at material closure commit `00214e9a`.
+LSC-T4 Promotion Threshold Policy is `DISPATCHED_TO_WORKER` at material
+dispatch commit `275eb374`.
 
-Next allowed move: operator checkpoint to select the next Learning Signal Chain
-tranche or another parked lane through fresh GC-018 and a source-verified work
-order. Candidate directions include LSC-T4 Promotion Threshold Policy, LSC-T3
-Fast Helper Readout, LSC-T6 External Agent CLI/MCP Signal Contract, or another
-explicitly selected bounded foundation lane.
+Next allowed move: worker executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T4_PROMOTION_THRESHOLD_POLICY_FOR_WORKER_2026-06-21.md`
+under `WORKER_MUST_NOT_COMMIT` and returns uncommitted
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Worker may only update
+`docs/reference/learning_signal_chain/README.md`, create
+`docs/reference/learning_signal_chain/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY.md`,
+and create
+`docs/reviews/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY_WORKER_RETURN_2026-06-21.md`.
+After LSC-T4 review/closure, roadmap order remains LSC-T3 Fast Helper Readout,
+then LSC-T6 External Agent CLI/MCP Signal Contract, then LSC-T5/T7 bridge and
+latency guard.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
 hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent Coding Evidence

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-21
 
-Current mode marker: `lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`
+Current mode marker: `lsc_t4_promotion_threshold_policy_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`.
+Current mode: `lsc_t4_promotion_threshold_policy_dispatched_to_worker`.
 
-Previous mode: `lsc_t2_multi_role_capture_contract_dispatched_to_worker`.
+Previous mode: `lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`.
 
 Active handoff:
 
@@ -353,15 +353,42 @@ EDIT/COMMIT execution, queue/daemon, watcher, readiness, cost optimization,
 full-hook equivalence, universal governed-coding control, or reopening of
 AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, or MLW8.
 
+LSC-T4 Promotion Threshold Policy is `DISPATCHED_TO_WORKER` at material
+dispatch commit `275eb374`, from dispatch base `cae048a3`. Dispatch artifacts:
+`docs/baselines/CVF_GC018_LSC_T4_PROMOTION_THRESHOLD_POLICY_2026-06-21.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T4_PROMOTION_THRESHOLD_POLICY_FOR_WORKER_2026-06-21.md`.
+Worker route: `WORKER_MUST_NOT_COMMIT`; worker must return uncommitted
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Required worker manifest:
+update `docs/reference/learning_signal_chain/README.md`, create
+`docs/reference/learning_signal_chain/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY.md`,
+and create
+`docs/reviews/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY_WORKER_RETURN_2026-06-21.md`.
+Pre-dispatch evidence: AAF helper PASS, dispatch-quality PASS, pre-dispatch
+autorun PASS 43/43, dispatch steward PASS, and pre-commit hook PASS 55/55.
+Boundary: documentation/reference policy only; no ledger store, source
+directory, generator, drift checker, helper readout, runtime Learning Plane
+mutation, provider/live proof, CLI/MCP adapter behavior, public-sync, direct
+interception, wrapper/proxy enforcement, arbitrary command execution,
+EDIT/COMMIT execution, queue/daemon, watcher, readiness, cost optimization,
+full-hook equivalence, universal governed-coding control, or reopening of
+LSC-T3, LSC-T5, LSC-T6, LSC-T7, AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, or MLW8.
+
 ## Next Allowed Move
 
-Mode: `lsc_t2_multi_role_capture_contract_closed_next_operator_checkpoint`.
+Mode: `lsc_t4_promotion_threshold_policy_dispatched_to_worker`.
 
-Next allowed move: operator checkpoint to select the next Learning Signal Chain
-tranche or another parked lane through fresh GC-018 and a source-verified work
-order. Candidate directions include LSC-T4 Promotion Threshold Policy, LSC-T3
-Fast Helper Readout, LSC-T6 External Agent CLI/MCP Signal Contract, or another
-explicitly selected bounded foundation lane.
+Next allowed move: worker executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T4_PROMOTION_THRESHOLD_POLICY_FOR_WORKER_2026-06-21.md`
+under `WORKER_MUST_NOT_COMMIT` and returns uncommitted
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Worker may only update
+`docs/reference/learning_signal_chain/README.md`, create
+`docs/reference/learning_signal_chain/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY.md`,
+and create
+`docs/reviews/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY_WORKER_RETURN_2026-06-21.md`.
+After LSC-T4 review/closure, roadmap order remains LSC-T3 Fast Helper Readout,
+then LSC-T6 External Agent CLI/MCP Signal Contract, then LSC-T5/T7 bridge and
+latency guard.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
