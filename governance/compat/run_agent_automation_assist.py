@@ -70,6 +70,75 @@ WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS = (
     "Machine Closure Package",
 )
 
+# ---------------------------------------------------------------------------
+# AAF-T2: Early corpus-completeness diagnostics.
+# Mirror the applicable-path boundary and key constants from
+# check_corpus_completeness_report_integrity so the helper can detect
+# changed active Markdown with a defective Corpus Completeness And Report
+# Integrity block before a full gate run. These mirrors are validated by
+# the focused drift test in test_run_agent_automation_assist.py.
+# ---------------------------------------------------------------------------
+
+CORPUS_REQUIRED_SECTION = "## Corpus Completeness And Report Integrity"
+CORPUS_APPLICABLE_PREFIXES = (
+    "docs/audits/",
+    "docs/reviews/",
+    "docs/assessments/",
+    "docs/logs/",
+    "docs/reports/",
+    "docs/baselines/",
+    "docs/roadmaps/",
+    "docs/work_orders/",
+)
+CORPUS_ARCHIVE_MARKER = "/archive/"
+CORPUS_EXCLUDED_PATHS = frozenset({
+    "docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md",
+    "governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md",
+    "docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md",
+})
+CORPUS_ALLOWED_VERDICTS = (
+    "COMPLETE_VERIFIED",
+    "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "PARTIAL",
+    "BLOCKED",
+    "STALE_SNAPSHOT",
+)
+CORPUS_ALLOWED_TERMINAL_STATUSES = (
+    "READ",
+    "SKIPPED_WITH_REASON",
+    "DEFERRED",
+    "BLOCKED_UNREADABLE",
+)
+CORPUS_REQUIRED_SECTION_FIELDS = (
+    "Corpus task class:",
+    "Corpus root:",
+    "Snapshot time:",
+    "Enumeration command:",
+    "Manifest artifact or inline manifest:",
+    "Manifest hash:",
+    "Processing ledger artifact or inline ledger:",
+    "Allowed terminal statuses:",
+    "Reconciliation:",
+    "Unresolved files:",
+    "Declared exclusions:",
+    "Unreadable or unsupported files:",
+    "Aggregation check:",
+    "Drift check:",
+    "Output traceability:",
+    "Adversarial verification:",
+    "Corpus verdict:",
+)
+_CORPUS_COMPLETE_CLAIM_PATTERNS = (
+    re.compile(r"\ball files (?:were )?(?:read|processed|reviewed|scanned)\b", re.I),
+    re.compile(r"\bno files? (?:were )?skipped\b", re.I),
+    re.compile(r"\bnone skipped\b", re.I),
+    re.compile(r"\bfull(?:y)? file(?:-level)? (?:read|scan|inventory|coverage)\b", re.I),
+    re.compile(r"\bcomplete(?:d)? (?:corpus|inventory|scan|coverage)\b", re.I),
+    re.compile(r"\bblind-spot verdict:\s*clear\b", re.I),
+    re.compile(r"\bblindspot risk verdict:\s*clear\b", re.I),
+)
+_CORPUS_RECONCILIATION_MARKERS = ("manifest=", "ledger_terminal=", "exclusions=", "unresolved=")
+
 ALLOWED_MODES = (
     "auto",
     "dispatch",
@@ -142,6 +211,32 @@ class WorkOrderDiagnostic:
         )
 
 
+@dataclass(frozen=True)
+class CorpusDiagnostic:
+    path: str
+    applicable: bool
+    has_section: bool
+    missing_fields: tuple[str, ...]
+    missing_terminal_statuses: tuple[str, ...]
+    verdict: str | None
+    verdict_valid: bool
+    missing_reconciliation_markers: tuple[str, ...]
+    extra_violations: tuple[str, ...] = ()
+
+    @property
+    def is_clean(self) -> bool:
+        if not self.applicable:
+            return True
+        return (
+            self.has_section
+            and not self.missing_fields
+            and not self.missing_terminal_statuses
+            and self.verdict_valid
+            and not self.missing_reconciliation_markers
+            and not self.extra_violations
+        )
+
+
 def diagnose_no_commit_work_order(path: str, text: str) -> WorkOrderDiagnostic:
     """Mirror the dispatch-quality gate's packet-shape contract check."""
     section = _extract_section(text, WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER)
@@ -171,6 +266,121 @@ def diagnose_no_commit_work_order(path: str, text: str) -> WorkOrderDiagnostic:
         missing_required=missing_required,
         missing_conditional=missing_conditional,
         missing_na_instruction=missing_na,
+    )
+
+
+def _is_applicable_corpus_output(path: str, text: str) -> bool:
+    """Mirror check_corpus_completeness_report_integrity._is_applicable_output."""
+    normalized = path.replace("\\", "/")
+    if not normalized.endswith(".md"):
+        return False
+    if CORPUS_ARCHIVE_MARKER in normalized:
+        return False
+    if normalized in CORPUS_EXCLUDED_PATHS:
+        return False
+    if not any(normalized.startswith(prefix) for prefix in CORPUS_APPLICABLE_PREFIXES):
+        return False
+    if CORPUS_REQUIRED_SECTION in text:
+        return True
+    lowered = text.lower()
+    return any(pattern.search(lowered) for pattern in _CORPUS_COMPLETE_CLAIM_PATTERNS)
+
+
+def _extract_unresolved_count(section: str) -> int | None:
+    match = re.search(r"\bunresolved\s*=\s*(\d+)\b", section, re.I)
+    if match:
+        return int(match.group(1))
+    match = re.search(r"^\s*-\s*Unresolved files:\s*(\d+)\s*$", section, re.I | re.M)
+    return int(match.group(1)) if match else None
+
+
+def _field_value(section: str, label: str) -> str:
+    match = re.search(rf"^\s*-\s*{re.escape(label)}\s*(.+?)\s*$", section, re.I | re.M)
+    return match.group(1).strip() if match else ""
+
+
+def _is_none_like(value: str) -> bool:
+    return value.strip().lower() in {"none", "n/a", "0", "none.", "n/a."}
+
+
+def _is_safe_enumeration(value: str) -> bool:
+    lowered = value.lower()
+    if "rg --files" in lowered:
+        return "--hidden" in lowered and "--no-ignore" in lowered
+    if any(marker in lowered for marker in ("get-childitem", "filesystem", "structured complete api")):
+        return True
+    return bool(re.search(r"(?:^|[;&|]\s*)find\s+(?:[/.\-~]|[A-Za-z]:\\)", value, re.I))
+
+
+def diagnose_corpus_completeness(path: str, text: str) -> CorpusDiagnostic:
+    """Early local diagnostic for the Corpus Completeness And Report Integrity block shape."""
+    if not _is_applicable_corpus_output(path, text):
+        return CorpusDiagnostic(
+            path=path,
+            applicable=False,
+            has_section=False,
+            missing_fields=(),
+            missing_terminal_statuses=(),
+            verdict=None,
+            verdict_valid=True,
+            missing_reconciliation_markers=(),
+            extra_violations=(),
+        )
+    has_section = CORPUS_REQUIRED_SECTION in text
+    if not has_section:
+        return CorpusDiagnostic(
+            path=path,
+            applicable=True,
+            has_section=False,
+            missing_fields=CORPUS_REQUIRED_SECTION_FIELDS,
+            missing_terminal_statuses=CORPUS_ALLOWED_TERMINAL_STATUSES,
+            verdict=None,
+            verdict_valid=False,
+            missing_reconciliation_markers=_CORPUS_RECONCILIATION_MARKERS,
+            extra_violations=("corpus_integrity_section_missing",),
+        )
+    section = _extract_section(text, "Corpus Completeness And Report Integrity")
+    missing_fields = tuple(f for f in CORPUS_REQUIRED_SECTION_FIELDS if f not in section)
+    missing_statuses = tuple(s for s in CORPUS_ALLOWED_TERMINAL_STATUSES if s not in section)
+    verdict_match = re.search(r"^\s*-\s*Corpus verdict:\s*([A-Z_]+)\s*$", section, re.M)
+    verdict = verdict_match.group(1) if verdict_match else None
+    verdict_valid = verdict in CORPUS_ALLOWED_VERDICTS
+    recon_match = re.search(r"^\s*-\s*Reconciliation:\s*(.+?)\s*$", section, re.I | re.M)
+    reconciliation = recon_match.group(1) if recon_match else ""
+    missing_recon = tuple(m for m in _CORPUS_RECONCILIATION_MARKERS if m not in reconciliation)
+    extra_violations: list[str] = []
+    unresolved = _extract_unresolved_count(section)
+    if unresolved is None:
+        extra_violations.append("unresolved_count_missing")
+    elif verdict in {"COMPLETE_VERIFIED", "COMPLETE_WITH_DECLARED_EXCLUSIONS"} and unresolved != 0:
+        extra_violations.append("complete_verdict_has_unresolved_files")
+    exclusions = _field_value(section, "Declared exclusions:")
+    unreadable = _field_value(section, "Unreadable or unsupported files:")
+    enumeration = _field_value(section, "Enumeration command:")
+    if not _is_safe_enumeration(enumeration):
+        extra_violations.append("unsafe_enumeration")
+    if verdict == "COMPLETE_VERIFIED":
+        if exclusions and not _is_none_like(exclusions):
+            extra_violations.append("complete_verified_has_exclusions")
+        if unreadable and not _is_none_like(unreadable):
+            extra_violations.append("complete_verified_has_unreadable_files")
+    if verdict == "COMPLETE_WITH_DECLARED_EXCLUSIONS" and (
+        not exclusions or _is_none_like(exclusions)
+    ):
+        extra_violations.append("declared_exclusions_missing")
+    lowered = section.lower()
+    if any(token in lowered for token in ("<path", "<timestamp", "<exact", "<hash", "<n>", "todo", "tbd")):
+        extra_violations.append("placeholder_residue")
+    return CorpusDiagnostic(
+        path=path,
+        applicable=True,
+        has_section=True,
+        missing_fields=missing_fields,
+        missing_terminal_statuses=missing_statuses,
+        verdict=verdict,
+        verdict_valid=verdict_valid,
+        missing_reconciliation_markers=missing_recon,
+        extra_violations=tuple(extra_violations),
     )
 
 
@@ -255,6 +465,7 @@ class AssistReport:
     no_commit_work_orders: tuple[WorkOrderDiagnostic, ...]
     next_command: str
     session_sync_hint: str
+    corpus_diagnostics: tuple[CorpusDiagnostic, ...] = field(default_factory=tuple)
     defects: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
@@ -279,6 +490,21 @@ class AssistReport:
             ],
             "nextCommand": self.next_command,
             "sessionSyncHint": self.session_sync_hint,
+            "corpusDiagnostics": [
+                {
+                    "path": cd.path,
+                    "applicable": cd.applicable,
+                    "hasSection": cd.has_section,
+                    "missingFields": list(cd.missing_fields),
+                    "missingTerminalStatuses": list(cd.missing_terminal_statuses),
+                    "verdict": cd.verdict,
+                    "verdictValid": cd.verdict_valid,
+                    "missingReconciliationMarkers": list(cd.missing_reconciliation_markers),
+                    "extraViolations": list(cd.extra_violations),
+                    "isClean": cd.is_clean,
+                }
+                for cd in self.corpus_diagnostics
+            ],
             "defects": list(self.defects),
         }
 
@@ -291,10 +517,14 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
     resolved = recommend_mode(plan) if requested_mode == "auto" else requested_mode
 
     diagnostics: list[WorkOrderDiagnostic] = []
+    corpus_diagnostics_list: list[CorpusDiagnostic] = []
     for path in plan.changed_paths:
         text = _read_changed_text(path)
         if _is_no_commit_work_order(path, text):
             diagnostics.append(diagnose_no_commit_work_order(path, text))
+        cd = diagnose_corpus_completeness(path, text)
+        if cd.applicable:
+            corpus_diagnostics_list.append(cd)
 
     command_mode = resolved
     if requested_mode == "auto" and resolved in {"none", "split"}:
@@ -335,6 +565,34 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
                 f"{d.path}: packet-shape contract missing `N/A with reason` instruction"
             )
 
+    for cd in corpus_diagnostics_list:
+        if not cd.is_clean:
+            if not cd.has_section:
+                defects.append(
+                    f"{cd.path}: missing `{CORPUS_REQUIRED_SECTION}`"
+                )
+            else:
+                for f in cd.missing_fields:
+                    defects.append(
+                        f"{cd.path}: corpus section missing field `{f}`"
+                    )
+                for s in cd.missing_terminal_statuses:
+                    defects.append(
+                        f"{cd.path}: corpus section missing terminal status `{s}`"
+                    )
+                if not cd.verdict_valid:
+                    defects.append(
+                        f"{cd.path}: corpus section has invalid or missing verdict `{cd.verdict}`"
+                    )
+                for m in cd.missing_reconciliation_markers:
+                    defects.append(
+                        f"{cd.path}: corpus section reconciliation missing `{m}`"
+                    )
+                for violation in cd.extra_violations:
+                    defects.append(
+                        f"{cd.path}: corpus section local gate violation `{violation}`"
+                    )
+
     return AssistReport(
         base=base,
         head=head,
@@ -346,6 +604,7 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
         no_commit_work_orders=tuple(diagnostics),
         next_command=next_command,
         session_sync_hint=session_hint,
+        corpus_diagnostics=tuple(corpus_diagnostics_list),
         defects=defects,
     )
 
@@ -371,6 +630,24 @@ def _print_human(report: AssistReport) -> None:
         print("\nNo changed WORKER_MUST_NOT_COMMIT work orders detected.")
 
     print(f"\nExact next command:\n  {report.next_command}")
+
+    if report.corpus_diagnostics:
+        print(f"\nEarly corpus diagnostics: {len(report.corpus_diagnostics)} applicable changed file(s)")
+        for cd in report.corpus_diagnostics:
+            status = "CLEAN" if cd.is_clean else "CORPUS-SHAPE DEFECT"
+            print(f"  - {cd.path}: {status}")
+            if not cd.is_clean:
+                if not cd.has_section:
+                    print(f"    ! missing `{CORPUS_REQUIRED_SECTION}`")
+                else:
+                    for f in cd.missing_fields:
+                        print(f"    ! missing field: {f}")
+                    if not cd.verdict_valid:
+                        print(f"    ! invalid verdict: {cd.verdict!r}")
+                    for violation in cd.extra_violations:
+                        print(f"    ! local gate violation: {violation}")
+    else:
+        print("\nNo applicable changed Markdown for early corpus diagnostics.")
 
     if report.defects:
         print(f"\nLocal helper-detectable defects: {len(report.defects)}")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Focused tests for the AAF-T1 read-only agent automation assist helper."""
+"""Focused tests for the AAF read-only agent automation assist helper (AAF-T1 + AAF-T2)."""
 
 from __future__ import annotations
 
@@ -67,6 +67,89 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`
 ## Purpose
 
 Do something.
+"""
+
+# AAF-T2 corpus diagnostics fixtures
+_REVIEW_COMPLETE_CLAIM_NO_SECTION = """# Review
+
+All files were read and processed.
+"""
+
+_REVIEW_CLEAN_NA_CORPUS = """# Review
+
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: N/A with reason - not a corpus scan.
+- Corpus root: N/A with reason - no corpus root.
+- Snapshot time: 2026-06-20
+- Enumeration command: filesystem-backed direct file reads
+- Manifest artifact or inline manifest: N/A with reason
+- Manifest hash: N/A with reason
+- Processing ledger artifact or inline ledger: N/A with reason
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE
+- Reconciliation: manifest=inline; ledger_terminal=inline; exclusions=none; unresolved=0
+- Unresolved files: 0
+- Declared exclusions: none
+- Unreadable or unsupported files: none
+- Aggregation check: N/A with reason
+- Drift check: N/A with reason
+- Output traceability: N/A with reason
+- Adversarial verification: N/A with reason
+- Corpus verdict: PARTIAL
+"""
+
+_REVIEW_CORPUS_SECTION_MISSING_FIELDS = """# Review
+
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: some task class
+- Corpus verdict: PARTIAL
+"""
+
+_REVIEW_UNSAFE_ENUMERATION = """# Review
+
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: N/A with reason - not a corpus scan.
+- Corpus root: N/A with reason - no corpus root.
+- Snapshot time: 2026-06-20
+- Enumeration command: rg --files
+- Manifest artifact or inline manifest: N/A with reason
+- Manifest hash: N/A with reason
+- Processing ledger artifact or inline ledger: N/A with reason
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE
+- Reconciliation: manifest=inline; ledger_terminal=inline; exclusions=none; unresolved=0
+- Unresolved files: 0
+- Declared exclusions: none
+- Unreadable or unsupported files: none
+- Aggregation check: N/A with reason
+- Drift check: N/A with reason
+- Output traceability: N/A with reason
+- Adversarial verification: N/A with reason
+- Corpus verdict: PARTIAL
+"""
+
+_REVIEW_COMPLETE_VERIFIED_WITH_EXCLUSIONS = """# Review
+
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: N/A with reason - not a corpus scan.
+- Corpus root: N/A with reason - no corpus root.
+- Snapshot time: 2026-06-20
+- Enumeration command: filesystem-backed direct file reads
+- Manifest artifact or inline manifest: N/A with reason
+- Manifest hash: N/A with reason
+- Processing ledger artifact or inline ledger: N/A with reason
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE
+- Reconciliation: manifest=inline; ledger_terminal=inline; exclusions=some; unresolved=0
+- Unresolved files: 0
+- Declared exclusions: some files
+- Unreadable or unsupported files: none
+- Aggregation check: N/A with reason
+- Drift check: N/A with reason
+- Output traceability: N/A with reason
+- Adversarial verification: N/A with reason
+- Corpus verdict: COMPLETE_VERIFIED
 """
 
 
@@ -277,6 +360,222 @@ class CliOutputTests(unittest.TestCase):
         self.assertEqual(rc, 0)
         self.assertIn("CVF Agent Automation Assist", buf.getvalue())
         self.assertIn("Exact next command", buf.getvalue())
+
+
+class CorpusDiagnosticTests(unittest.TestCase):
+    def test_non_applicable_prefix_is_not_flagged(self):
+        """docs/reference/ is not in CORPUS_APPLICABLE_PREFIXES."""
+        diag = assist.diagnose_corpus_completeness(
+            "docs/reference/foo.md", "content without corpus section"
+        )
+        self.assertFalse(diag.applicable)
+        self.assertTrue(diag.is_clean)
+
+    def test_archive_path_is_not_applicable(self):
+        """Files under /archive/ are excluded."""
+        text = assist.CORPUS_REQUIRED_SECTION + "\n\n- Corpus verdict: PARTIAL\n"
+        diag = assist.diagnose_corpus_completeness(
+            "docs/reviews/archive/old.md", text
+        )
+        self.assertFalse(diag.applicable)
+        self.assertTrue(diag.is_clean)
+
+    def test_review_with_complete_claim_and_no_section_is_defect(self):
+        """A review file with complete-claim language but no section header is a defect."""
+        diag = assist.diagnose_corpus_completeness(
+            "docs/reviews/x.md", _REVIEW_COMPLETE_CLAIM_NO_SECTION
+        )
+        self.assertTrue(diag.applicable)
+        self.assertFalse(diag.has_section)
+        self.assertFalse(diag.is_clean)
+        self.assertEqual(diag.missing_fields, assist.CORPUS_REQUIRED_SECTION_FIELDS)
+
+    def test_clean_na_corpus_block_is_not_a_defect(self):
+        """A review with all N/A-with-reason fields and a valid verdict is clean."""
+        diag = assist.diagnose_corpus_completeness("docs/reviews/x.md", _REVIEW_CLEAN_NA_CORPUS)
+        self.assertTrue(diag.applicable)
+        self.assertTrue(diag.has_section)
+        self.assertEqual(diag.missing_fields, ())
+        self.assertEqual(diag.missing_terminal_statuses, ())
+        self.assertTrue(diag.verdict_valid)
+        self.assertEqual(diag.missing_reconciliation_markers, ())
+        self.assertTrue(diag.is_clean)
+
+    def test_missing_fields_in_corpus_section_is_defect(self):
+        """Corpus section present but missing most required fields."""
+        diag = assist.diagnose_corpus_completeness(
+            "docs/reviews/x.md", _REVIEW_CORPUS_SECTION_MISSING_FIELDS
+        )
+        self.assertTrue(diag.applicable)
+        self.assertTrue(diag.has_section)
+        self.assertGreater(len(diag.missing_fields), 0)
+        self.assertFalse(diag.is_clean)
+
+    def test_unsafe_enumeration_is_defect(self):
+        """Mirror canonical gate behavior for unsafe rg enumeration."""
+        diag = assist.diagnose_corpus_completeness(
+            "docs/reviews/x.md", _REVIEW_UNSAFE_ENUMERATION
+        )
+        self.assertTrue(diag.applicable)
+        self.assertIn("unsafe_enumeration", diag.extra_violations)
+        self.assertFalse(diag.is_clean)
+
+    def test_complete_verified_with_exclusions_is_defect(self):
+        """Mirror canonical gate behavior for incompatible complete verdict."""
+        diag = assist.diagnose_corpus_completeness(
+            "docs/reviews/x.md", _REVIEW_COMPLETE_VERIFIED_WITH_EXCLUSIONS
+        )
+        self.assertTrue(diag.applicable)
+        self.assertIn("complete_verified_has_exclusions", diag.extra_violations)
+        self.assertFalse(diag.is_clean)
+
+    def test_non_md_path_is_not_applicable(self):
+        diag = assist.diagnose_corpus_completeness("docs/reviews/x.py", "content")
+        self.assertFalse(diag.applicable)
+        self.assertTrue(diag.is_clean)
+
+
+class BuildReportCorpusTests(unittest.TestCase):
+    def test_corpus_defect_appears_in_defects_list(self):
+        """Changed review with complete-claim but no corpus section adds to defects."""
+        plan = _plan(
+            changed=("docs/reviews/x.md",),
+            material=("docs/reviews/x.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_REVIEW_COMPLETE_CLAIM_NO_SECTION
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertTrue(report.defects)
+        self.assertTrue(any("Corpus Completeness" in d for d in report.defects))
+        self.assertEqual(len(report.corpus_diagnostics), 1)
+        self.assertFalse(report.corpus_diagnostics[0].is_clean)
+
+    def test_clean_na_corpus_block_produces_no_defect(self):
+        """A clean N/A corpus block does not add defects and enforce exits zero."""
+        plan = _plan(
+            changed=("docs/reviews/x.md",),
+            material=("docs/reviews/x.md",),
+        )
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_REVIEW_CLEAN_NA_CORPUS
+        ):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--enforce"])
+        self.assertEqual(rc, 0)
+
+    def test_corpus_defect_enforce_exits_nonzero(self):
+        """--enforce returns non-zero when a corpus defect is detected."""
+        plan = _plan(
+            changed=("docs/reviews/x.md",),
+            material=("docs/reviews/x.md",),
+        )
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_REVIEW_COMPLETE_CLAIM_NO_SECTION
+        ):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--enforce"])
+        self.assertEqual(rc, 1)
+
+    def test_json_output_has_corpus_diagnostics_key(self):
+        """JSON output includes corpusDiagnostics list."""
+        plan = _plan(
+            changed=("docs/reviews/x.md",),
+            material=("docs/reviews/x.md",),
+        )
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_REVIEW_CLEAN_NA_CORPUS
+        ):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--json"])
+        self.assertEqual(rc, 0)
+        payload = json.loads(buf.getvalue())
+        self.assertIn("corpusDiagnostics", payload)
+        self.assertIsInstance(payload["corpusDiagnostics"], list)
+        self.assertEqual(len(payload["corpusDiagnostics"]), 1)
+        self.assertTrue(payload["corpusDiagnostics"][0]["isClean"])
+
+
+class PacketShapeConstantDriftTests(unittest.TestCase):
+    """AC6 drift tests: helper mirrors must match canonical dispatch-quality constants."""
+
+    @classmethod
+    def _load_dispatch_quality(cls):
+        spec = importlib.util.spec_from_file_location(
+            "check_work_order_dispatch_quality",
+            _COMPAT_DIR / "check_work_order_dispatch_quality.py",
+        )
+        if spec is None or spec.loader is None:
+            return None
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod
+
+    def test_required_terms_mirror_matches_canonical(self):
+        dq = self._load_dispatch_quality()
+        self.assertIsNotNone(dq, "check_work_order_dispatch_quality could not be loaded")
+        self.assertEqual(
+            assist.WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS,
+            dq.WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS,
+        )
+
+    def test_conditional_terms_mirror_matches_canonical(self):
+        dq = self._load_dispatch_quality()
+        self.assertIsNotNone(dq)
+        self.assertEqual(
+            assist.WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS,
+            dq.WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS,
+        )
+
+    def test_contract_marker_mirror_matches_canonical(self):
+        dq = self._load_dispatch_quality()
+        self.assertIsNotNone(dq)
+        self.assertEqual(
+            assist.WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER,
+            dq.WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER,
+        )
+
+
+class CorpusConstantDriftTests(unittest.TestCase):
+    """Reviewer-added drift tests for corpus gate mirrors used by AAF-T2."""
+
+    @classmethod
+    def _load_corpus_checker(cls):
+        spec = importlib.util.spec_from_file_location(
+            "check_corpus_completeness_report_integrity",
+            _COMPAT_DIR / "check_corpus_completeness_report_integrity.py",
+        )
+        if spec is None or spec.loader is None:
+            return None
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod
+
+    def test_corpus_constant_mirrors_match_canonical(self):
+        corpus = self._load_corpus_checker()
+        self.assertIsNotNone(corpus)
+        self.assertEqual(assist.CORPUS_REQUIRED_SECTION, corpus.REQUIRED_SECTION)
+        self.assertEqual(assist.CORPUS_APPLICABLE_PREFIXES, corpus.APPLICABLE_PREFIXES)
+        self.assertEqual(assist.CORPUS_ALLOWED_VERDICTS, corpus.ALLOWED_VERDICTS)
+        self.assertEqual(
+            assist.CORPUS_ALLOWED_TERMINAL_STATUSES,
+            corpus.ALLOWED_TERMINAL_STATUSES,
+        )
+        self.assertEqual(
+            assist.CORPUS_REQUIRED_SECTION_FIELDS,
+            corpus.REQUIRED_SECTION_FIELDS,
+        )
+
+    def test_corpus_complete_claim_pattern_mirrors_match_canonical(self):
+        corpus = self._load_corpus_checker()
+        self.assertIsNotNone(corpus)
+        self.assertEqual(
+            tuple(pattern.pattern for pattern in assist._CORPUS_COMPLETE_CLAIM_PATTERNS),
+            corpus.COMPLETE_CLAIM_PATTERNS,
+        )
 
 
 if __name__ == "__main__":
