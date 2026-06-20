@@ -578,5 +578,51 @@ class CorpusConstantDriftTests(unittest.TestCase):
         )
 
 
+_WORKER_RETURN_MISSING_RETRO = (
+    "# Worker Return\n\n"
+    "Status: COMPLETE_PENDING_REVIEW\n\n"
+    "Responds to work order: docs/work_orders/x.md\n\n"
+    "## Findings\n\nDid the work.\n"
+)
+
+_WORKER_RETURN_WITH_RETRO = (
+    "# Worker Return\n\n"
+    "Status: COMPLETE_PENDING_REVIEW\n\n"
+    "Responds to work order: docs/work_orders/x.md\n\n"
+    "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: no friction beyond normal gates; "
+    "no gate surprise, no helper gap, no worktree contamination this return\n"
+)
+
+
+class WorkerExperienceHelperDiagnosticTests(unittest.TestCase):
+    """AAF-T5: helper reports missing worker-experience retro early, read-only."""
+
+    def test_missing_retro_token_produces_defect(self):
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertTrue(
+            any("worker-experience retro" in d for d in report.defects), report.defects
+        )
+
+    def test_valid_retro_token_no_defect(self):
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_WITH_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertFalse(
+            any("worker-experience retro" in d for d in report.defects), report.defects
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

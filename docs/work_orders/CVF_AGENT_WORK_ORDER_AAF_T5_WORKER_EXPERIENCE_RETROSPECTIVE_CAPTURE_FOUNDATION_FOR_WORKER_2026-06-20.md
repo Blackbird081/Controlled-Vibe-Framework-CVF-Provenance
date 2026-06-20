@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-20
 
@@ -142,6 +142,9 @@ Allowed scope:
 - update `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` only
   to route worker-experience retrospective lookup;
 - create `docs/reviews/CVF_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_WORKER_RETURN_2026-06-20.md`.
+- reviewer/closer closure conversion may create
+  `docs/reviews/CVF_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_COMPLETION_2026-06-20.md`
+  and update this work order status/checklist/closure package;
 
 Forbidden scope:
 
@@ -606,6 +609,32 @@ Return `COMPLETE_PENDING_REVIEW` only when required deliverables are left
 uncommitted with passing focused evidence. Return `BLOCKED_WITH_REASON` when an
 in-scope remediation cannot clear a machine check or scope expansion would be
 required.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_FOR_WORKER_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_WORKER_RETURN_2026-06-20.md` | worker return present and accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_COMPLETION_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Reference standard | `docs/reference/worker_experience_retrospective/README.md` | `Status: ACTIVE_REFERENCE`; `docType: reference` | PASS |
+| Checker and tests | `governance/compat/check_worker_experience_retrospective.py`; focused tests | 53 tests PASS | PASS |
+| Hook wiring | `governance/compat/run_local_governance_hook_chain.py` | worker-experience retrospective checker wired into reviewer-fast, pre-commit, and pre-push | PASS |
+| Roadmap state | AAF-T5 closure state | `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no JSON registry required or changed | no generated JSON registry touched | PASS |
+| Registry Markdown | N/A with reason: no Markdown registry required; operational reference row added | routing row added instead | PASS |
+| External evidence digest | N/A with reason: no external evidence digest created | governance helper/checker closure only | N/A with reason |
+| System loop interlock | N/A with reason: no system loop interlock changed | no runtime/source interlock mutation | N/A with reason |
+| Session continuity | active session front-door/state/handoff after material commit | material closure only; session-sync follows only if next allowed move changes | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: AAF-T5 creates no runtime receipt | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: AAF-T5 performs no query acceptance | N/A_WITH_REASON |
+| Worker-return acceptance | worker return present and accepted by reviewer/closer | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` governance helper/checker closure only | PASS |
 
 ## Operator Checkpoint
 

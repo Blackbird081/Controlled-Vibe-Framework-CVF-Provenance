@@ -33,6 +33,7 @@ try:
         PathPlan,
         build_path_plan,
     )
+    import check_worker_experience_retrospective as worker_experience
 except ModuleNotFoundError:  # imported as governance.compat.run_agent_automation_assist
     import sys as _sys
 
@@ -41,6 +42,7 @@ except ModuleNotFoundError:  # imported as governance.compat.run_agent_automatio
         PathPlan,
         build_path_plan,
     )
+    import check_worker_experience_retrospective as worker_experience
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -518,6 +520,7 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
 
     diagnostics: list[WorkOrderDiagnostic] = []
     corpus_diagnostics_list: list[CorpusDiagnostic] = []
+    retro_diagnostics_list = []
     for path in plan.changed_paths:
         text = _read_changed_text(path)
         if _is_no_commit_work_order(path, text):
@@ -525,6 +528,11 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
         cd = diagnose_corpus_completeness(path, text)
         if cd.applicable:
             corpus_diagnostics_list.append(cd)
+        # AAF-T5: reuse the canonical worker-experience checker for an early,
+        # read-only diagnostic on self-declared worker-return artifacts.
+        rd = worker_experience.diagnose(path, text)
+        if rd.eligible:
+            retro_diagnostics_list.append(rd)
 
     command_mode = resolved
     if requested_mode == "auto" and resolved in {"none", "split"}:
@@ -592,6 +600,10 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
                     defects.append(
                         f"{cd.path}: corpus section local gate violation `{violation}`"
                     )
+
+    for rd in retro_diagnostics_list:
+        for issue in rd.issues:
+            defects.append(f"{rd.path}: worker-experience retro {issue}")
 
     return AssistReport(
         base=base,
