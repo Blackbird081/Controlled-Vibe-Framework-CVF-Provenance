@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `aaf_t4_project_role_provider_delegation_dispatched_to_worker`
+Current mode marker: `aaf_t4_project_role_provider_delegation_closed_aaf_t5_read_receipt_gate_recommended`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t4_project_role_provider_delegation_dispatched_to_worker`.
+Current mode: `aaf_t4_project_role_provider_delegation_closed_aaf_t5_read_receipt_gate_recommended`.
 
-Previous mode: `aaf_t3_guard_orientation_index_closed_aaf_t4_project_role_provider_delegation_next_ready`.
+Previous mode: `aaf_t4_project_role_provider_delegation_dispatched_to_worker`.
 
 Active handoff:
 
@@ -237,31 +237,35 @@ execution, wrapper/proxy enforcement, direct interception, arbitrary command
 execution, queue/daemon, watcher, readiness, full-hook equivalence, automated
 provider selection, or universal governed-coding-control claim.
 
-AAF-T4 Project Role And Provider Delegation Envelope is `DISPATCH_READY` at
-dispatch commit `473e96ba` from base `f209d973`. It adds the source-verified
-GC-018 and role-neutral `WORKER_MUST_NOT_COMMIT` work order for a private
-project delegation envelope behind public multi-agent/provider routing
-guidance. The public guide is context only, not provenance source authority.
-Verification passed: AAF helper resolved `dispatch` with `defects=[]`,
-pre-dispatch autorun 43/43, dispatch-quality, dispatch steward, and dispatch
-pre-commit hook 54/54. Boundary: documentation/reference delegation envelope
-only; no automated provider selection, runtime/source/test implementation,
-provider/live proof, public-sync, MCP execution, wrapper/proxy enforcement,
-direct interception, arbitrary command execution, queue/daemon, watcher,
-readiness, full-hook equivalence, cost optimization claim, or universal
-governed-coding-control claim.
+AAF-T4 Project Role And Provider Delegation Envelope is `CLOSED_PASS_BOUNDED`
+at material closure commit `518d4131`, after dispatch commit `473e96ba` and
+dispatch continuity commit `5b0dadca`. It adds a private project role/provider
+delegation envelope for operator-approved role lanes, bounded delegation,
+configured provider lane, cost/quota ceiling, evidence log, and reapproval
+triggers before governed project work. Verification passed: worker-return fast
+gate, reviewer-fast 31/31, AAF helper with `resolvedMode=reviewer-return` and
+`defects=[]`, reviewer-return steward, material pre-commit hook 54/54, and
+committed-range pre-closure content gates with only expected post-material
+handoff HEAD drift before this sync. Boundary: documentation/reference
+delegation envelope only; no automated provider selection, runtime/source/test
+implementation, provider/live proof, public-sync, MCP execution, wrapper/proxy
+enforcement, direct interception, arbitrary command execution, queue/daemon,
+watcher, readiness, full-hook equivalence, cost optimization claim, or
+universal governed-coding-control claim. Follow-up: AAF-T5 Guard Orientation
+Read-Receipt Gate is recommended but not dispatched until explicit operator
+approval.
 
 ## Next Allowed Move
 
-Mode: `aaf_t4_project_role_provider_delegation_dispatched_to_worker`.
+Mode: `aaf_t4_project_role_provider_delegation_closed_aaf_t5_read_receipt_gate_recommended`.
 
-Next allowed move: give the role-neutral worker
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_FOR_WORKER_2026-06-20.md`.
-The worker must run `WORKER_MUST_NOT_COMMIT` and return
-`COMPLETE_PENDING_REVIEW` with exactly the four artifacts named by the work
-order. Public guide context remains context-only and not CVF source authority.
-Do not open automated provider selection, runtime/source/test implementation,
-runtime provider routing, provider/live proof, public-sync, MCP execution,
+Next allowed move: operator checkpoint to approve or reject AAF-T5 Guard
+Orientation Read-Receipt Gate as the recommended next foundation. If approved,
+AAF-T5 should turn the voluntary Guard Orientation Read Receipt seen in AAF-T4
+into an artifact-level machine gate for worker-return/reviewer-fast packets.
+Do not dispatch AAF-T5 without explicit operator approval. Do not open
+automated provider selection, runtime/source/test implementation, runtime
+provider routing, provider/live proof, public-sync, MCP execution,
 wrapper/proxy enforcement, direct IDE/shell/git/filesystem interception,
 arbitrary command execution, queue/daemon, watcher, readiness, full-hook
 equivalence, cost optimization claim, or universal governed-coding-control

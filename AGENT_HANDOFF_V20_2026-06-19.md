@@ -11,14 +11,15 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current AAF-T4 dispatch state, the current
+This compact handoff records the current AAF-T4 closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after dispatching AAF-T4 Project Role And
-Provider Delegation Envelope to a role-neutral worker.
+Target: correct next-move continuity after closing AAF-T4 Project Role And
+Provider Delegation Envelope and recommending the AAF-T5 read-receipt gate as
+the next operator checkpoint.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,14 +36,13 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize AAF-T4 dispatch commit
-`473e96ba`, generated active state, compact session memory, active handoff, and
-the next allowed move after the role-neutral AAF-T4 work order became
-dispatch-ready.
+Authorized guard-maintenance scope: synchronize AAF-T4 closure commit
+`518d4131`, generated active state, compact session memory, active handoff, and
+the next allowed move after the AAF-T4 worker return was reviewed and accepted.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, automated provider selection, runtime provider
-routing, AAF-T4 implementation, or public-sync scope.
+routing, AAF-T5 dispatch, or public-sync scope.
 
 Protected paths:
 
@@ -85,6 +85,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/aafT3GuardOrientationIndexDispatch20260620.json`
 - `CVF_SESSION/state/entries/aafT3GuardOrientationIndexClosure20260620.json`
 - `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeDispatch20260620.json`
+- `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeClosure20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -95,10 +96,12 @@ Operator authorization: the operator approved raising CVF automation for
 noncoder and external-agent use, authorized AAF-T3 Guard Orientation Index /
 task-first guard map dispatch with role-neutral instructions, then directed
 the sequence to process AAF-T3 before AAF-T4. The operator approved moving to
-AAF-T4 after AAF-T3 closure.
+AAF-T4 after AAF-T3 closure. AAF-T4 is now closed; AAF-T5 is only a
+recommended next checkpoint, not dispatched.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter AAF-T4 dispatch commit `473e96ba`, AAF-T3 closure commit `45fd5468`, AAF-T3 dispatch commit
+Do not alter AAF-T4 closure commit `518d4131`, AAF-T4 dispatch commit
+`473e96ba`, AAF-T3 closure commit `45fd5468`, AAF-T3 dispatch commit
 `a5efb7b2`, AAF-T2 closure commit
 `904eb09a`, AAF-T2 dispatch commit
 `1c6f8794`, AAF-T1 closure commit
@@ -116,13 +119,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t4_project_role_provider_delegation_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=give the role-neutral worker `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_FOR_WORKER_2026-06-20.md`; parked checkpoint=CGE-T3 absorption, ACE-R1, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`aaf_t4_project_role_provider_delegation_closed_aaf_t5_read_receipt_gate_recommended`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to approve or reject AAF-T5 Guard Orientation Read-Receipt Gate; parked checkpoint=CGE-T3 absorption, ACE-R1, AAF-T5 dispatch until approval, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`aaf_t4_project_role_provider_delegation_dispatched_to_worker`
+`aaf_t4_project_role_provider_delegation_closed_aaf_t5_read_receipt_gate_recommended`
 
-Current HEAD recorded for this handoff: `473e96ba`
+Current HEAD recorded for this handoff: `518d4131`
 
 Material state:
 
@@ -598,22 +601,30 @@ operational reference index. Evidence: worker-return fast gate passed,
 reviewer-fast passed 31/31, AAF helper passed with `defects=[]`,
 finding-to-governance passed, and material pre-commit hook passed 54/54.
 
-AAF-T4 Project Role And Provider Delegation Envelope is `DISPATCH_READY` at
-dispatch commit `473e96ba`, from base `f209d973`. Artifacts:
-`docs/baselines/CVF_GC018_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_2026-06-20.md`
+AAF-T4 Project Role And Provider Delegation Envelope is `CLOSED_PASS_BOUNDED`
+at material closure commit `518d4131`, after dispatch commit `473e96ba` and
+dispatch continuity commit `5b0dadca`. Artifacts:
+`docs/reference/project_role_provider_delegation/README.md`,
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`,
+`docs/reference/guard_orientation/README.md`,
+`docs/reviews/CVF_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_WORKER_RETURN_2026-06-20.md`,
+`docs/reviews/CVF_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_COMPLETION_2026-06-20.md`,
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_FOR_WORKER_2026-06-20.md`.
-Result: role-neutral worker authorized under `WORKER_MUST_NOT_COMMIT` to
-create/update exactly the four artifacts named by the work order. The public
-multi-agent provider routing guide remains context only, not provenance source
-authority. Evidence: AAF helper passed with `defects=[]`, pre-dispatch autorun
-passed 43/43, dispatch-quality passed, dispatch steward passed, and dispatch
-pre-commit hook passed 54/54.
+Result: AAF-T4 adds a private project role/provider delegation envelope for
+operator-approved role lanes, bounded delegation, configured provider lane,
+cost/quota ceiling, evidence log, and reapproval triggers before governed
+project work. Evidence: worker-return fast gate passed, reviewer-fast passed
+31/31, AAF helper passed with `resolvedMode=reviewer-return` and `defects=[]`,
+reviewer-return steward passed, material pre-commit hook passed 54/54, and
+committed-range pre-closure content gates passed with only expected
+post-material handoff HEAD drift before this sync.
 
-Next allowed move: give the role-neutral worker
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T4_PROJECT_ROLE_PROVIDER_DELEGATION_ENVELOPE_FOR_WORKER_2026-06-20.md`.
-The worker must return `COMPLETE_PENDING_REVIEW`, must not commit, and must
-produce exactly the four artifacts named by the work order. CGE-T3 Full
+Next allowed move: operator checkpoint to approve or reject AAF-T5 Guard
+Orientation Read-Receipt Gate as the recommended next foundation. If approved,
+AAF-T5 should turn the voluntary Guard Orientation Read Receipt seen in AAF-T4
+into an artifact-level machine gate for worker-return/reviewer-fast packets.
+Do not dispatch AAF-T5 without explicit operator approval. CGE-T3 Full
 Knowledge Absorption Ledger and ACE-R1 remain parked until explicit operator
 selection. Do not open automated provider selection, runtime/product behavior,
 provider/live proof, public-sync, MCP execution, wrapper/proxy enforcement,
@@ -686,20 +697,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | AAF-T4 dispatch session sync, 2026-06-20 |
+| Session or invocation | AAF-T4 closure session sync, 2026-06-20 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | AAF-T4 dispatch session-sync manifest |
-| Allowed scope source | AAF-T4 dispatch commit `473e96ba` |
-| Before status evidence | dispatch commit `473e96ba` with expected pre-sync handoff HEAD drift |
-| After status evidence | state, memory, and handoff record AAF-T4 dispatched to role-neutral worker |
+| Target paths | AAF-T4 closure session-sync manifest |
+| Allowed scope source | AAF-T4 closure commit `518d4131` |
+| Before status evidence | material closure commit `518d4131` with expected pre-sync handoff HEAD drift |
+| After status evidence | state, memory, and handoff record AAF-T4 closed and AAF-T5 recommended for operator checkpoint |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | dispatch session continuity only; no new runtime, provider, live, or public scope |
+| Approval boundary | closure session continuity only; no new runtime, provider, live, AAF-T5 dispatch, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `aaf-t4-dispatch-session-sync-2026-06-20` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeDispatch20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `aaf-t4-closure-session-sync-2026-06-20` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT4ProjectRoleProviderDelegationEnvelopeClosure20260620.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
