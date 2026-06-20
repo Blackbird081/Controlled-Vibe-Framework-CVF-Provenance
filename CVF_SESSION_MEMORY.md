@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-19
+Last updated: 2026-06-20
 
-Current mode marker: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`
+Current mode marker: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`.
+Current mode: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`.
 
-Previous mode: `delta_t11_durable_audit_evidence_bundle_closed_next_foundation_ready`.
+Previous mode: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`.
 
 Active handoff:
 
@@ -127,26 +127,26 @@ worker-return fast gate passed, reviewer-fast passed 31/31, and closure
 pre-commit hook passed 54/54.
 
 PECA-T1 Public External Evaluation Package And Catalog Alignment is
-`DISPATCHED_TO_CLAUDE` at dispatch commit `a98447c0`, after Delta-T11 closure
-session-sync `f2330d0e`. It created a fresh GC-018 and Claude work order for
-public-sync README/catalog/external-agent-guide/snapshot wording alignment so
-external agents and user developers can distinguish the durable technical
-product catalog from the dated 2026-06-19 evidence snapshot. Pre-dispatch
-autorun passed 43/43, dispatch-quality passed, commit steward reused the exact
-PASS receipt, and the dispatch pre-commit hook passed 54/54.
+`CLOSED_PASS_BOUNDED` at provenance closure commit `17745320`, after dispatch
+commit `a98447c0`. Public-sync material commit `aae8fed4c` clarified the
+public README, durable technical product catalog, external-agent guide, and
+dated 2026-06-19 evidence snapshot. Public-sync export-evidence commit
+`2017af304` recorded public completion evidence and was pushed to
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`. Public
+path checks, grep scan, diff hygiene, reviewer-fast 31/31, and closure
+pre-commit hook 54/54 passed. The claim remains public documentation
+orientation only, with no runtime/provider/live/direct-interception/readiness
+or universal governed-coding control claim.
 
 ## Next Allowed Move
 
-Mode: `peca_t1_public_external_evaluation_catalog_alignment_dispatched_claude_execution_pending`.
+Mode: `peca_t1_public_external_evaluation_catalog_alignment_closed_next_foundation_ready`.
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md`
-under `WORKER_MUST_NOT_COMMIT` in the sibling public-sync clone only, after
-verifying remote `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
-Claude must return uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex owns review, public-sync commit/push decision,
-provenance closure conversion, and session sync. Do not open Delta-T12 by
-default unless a fresh operator decision chooses another foundation tranche.
+Next allowed move: external agents/user developers can evaluate the public
+GitHub front door/catalog at public main `2017af304`. Select a fresh
+high-value governed lane with new GC-018, source verification, and claim
+boundary controls. Do not open Delta-T12 by default unless a fresh operator
+decision chooses another foundation tranche.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
