@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current LSC-T1 dispatch state, the current
+This compact handoff records the current LSC-T1 closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: correct next-move continuity after dispatching LSC-T1 Signal Ledger
-Source Layout And De-Dup Contract.
+Target: correct next-move continuity after closing LSC-T1 Signal Ledger Source
+Layout And De-Dup Contract.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,9 +35,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize LSC-T1 dispatch commit
-`84ba827f`, generated active state, compact session memory, active handoff, and
-the next allowed move after LSC-T1 dispatch was accepted.
+Authorized guard-maintenance scope: synchronize LSC-T1 closure commit
+`3599441a`, generated active state, compact session memory, active handoff, and
+the next allowed move after LSC-T1 closure was accepted.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
@@ -88,6 +88,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureDispatch20260620.json`
 - `CVF_SESSION/state/entries/aafT5WorkerExperienceRetrospectiveCaptureClosure20260620.json`
 - `CVF_SESSION/state/entries/lscT1SignalLedgerSourceLayoutDedupContractDispatch20260620.json`
+- `CVF_SESSION/state/entries/lscT1SignalLedgerSourceLayoutDedupContractClosure20260620.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -103,7 +104,9 @@ uplift. AAF-T5 is now closed as Worker Experience Retrospective Capture
 Foundation, not the Guard Orientation Read-Receipt Gate.
 
 Rollback boundary: revert only this final session-sync commit if rejected.
-Do not alter AAF-T5 closure commit `d76a37cf`, AAF-T5 dispatch commit
+Do not alter LSC-T1 closure commit `3599441a`, LSC-T1 dispatch commit
+`84ba827f`, LSC-T1 dispatch continuity commit `b528e8ca`,
+AAF-T5 closure commit `d76a37cf`, AAF-T5 dispatch commit
 `59c50a9d`, AAF-T4 closure commit
 `518d4131`, AAF-T4 dispatch commit
 `473e96ba`, AAF-T3 closure commit `45fd5468`, AAF-T3 dispatch commit
@@ -124,13 +127,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON for LSC-T1 under WORKER_MUST_NOT_COMMIT; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
+Startup acknowledged: current mode=`lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select the next Learning Signal Chain tranche or another parked lane; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, and universal enforcement claims.
 
 ## Current Mode
 
-`lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`
+`lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`
 
-Current HEAD recorded for this handoff: `84ba827f`
+Current HEAD recorded for this handoff: `3599441a`
 
 Material state:
 
@@ -645,8 +648,9 @@ focused tests pass 53 tests, worker-experience checker passes, AAF helper
 passes with `defects=[]`, worker-return fast gate passes, reviewer-fast passes
 32/32, and material pre-commit hook passes 55/55.
 
-LSC-T1 Signal Ledger Source Layout And De-Dup Contract is `DISPATCHED_TO_WORKER`
-at material dispatch commit `84ba827f`. Artifacts:
+LSC-T1 Signal Ledger Source Layout And De-Dup Contract is `CLOSED_PASS_BOUNDED`
+at material closure commit `3599441a`, after dispatch commit `84ba827f` and
+dispatch continuity commit `b528e8ca`. Dispatch artifacts:
 `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md`,
 `docs/reviews/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_CLAUDE_REBUTTAL_2026-06-20.md`,
 `docs/reviews/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_CLAUDE_REBUTTAL_ROUND2_2026-06-20.md`,
@@ -654,25 +658,31 @@ at material dispatch commit `84ba827f`. Artifacts:
 `docs/baselines/CVF_GC018_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md`,
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_FOR_WORKER_2026-06-20.md`.
-Result: LSC-T1 is dispatched as a bounded documentation/reference and
+Closure artifacts:
+`docs/reference/learning_signal_chain/README.md`,
+`docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md`,
+`docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json`,
+`docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md`,
+and
+`docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_COMPLETION_2026-06-20.md`.
+Result: LSC-T1 is accepted as a bounded documentation/reference and
 JSON-template contract for signal-ledger source layout, de-dup, exact
 AAF-to-intake severity/no-entry mapping, disposition/captureState authority,
 rootCauseGroupId derivation, and generated Markdown index discipline. Evidence:
-pre-dispatch autorun passed 43/43, dispatch-quality passed, commit steward
-dispatch passed, git diff hygiene passed, and material pre-commit hook passed
-55/55.
+JSON parse passed, AAF helper passed, worker-return fast gate passed with
+reviewer-fast 32/32, foundation storage layout passed, dispatch-quality passed,
+machine closure package passed, material pre-commit hook passed 55/55, and
+post-commit pre-closure content gates passed 42/43 with only expected active
+handoff HEAD drift before this sync.
 
-Next allowed move: worker returns uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON` under `WORKER_MUST_NOT_COMMIT` after executing
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_FOR_WORKER_2026-06-20.md`
-from the actual executionBaseHead. Codex/reviewer owns review, allowed repairs,
-final gates, commit, closure, and session-sync after worker return. AAF-T6,
-AAF-T7, CGE-T3, ACE-R1, MLW7, and MLW8 remain parked. Do not open ledger store,
-generator, drift checker, helper readout, runtime Learning Plane mutation,
-provider/live proof, CLI/MCP adapter behavior, public-sync, wrapper/proxy
-enforcement, direct interception, arbitrary commands, EDIT/COMMIT execution,
-queue/daemon, watcher, readiness, full-hook equivalence, cost optimization, or
-universal governed-coding-control claims without fresh governed authorization.
+Next allowed move: operator checkpoint to select the next Learning Signal Chain
+tranche or another parked lane. AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, and MLW8
+remain parked. Do not open ledger store, generator, drift checker, helper
+readout, runtime Learning Plane mutation, provider/live proof, CLI/MCP adapter
+behavior, public-sync, wrapper/proxy enforcement, direct interception,
+arbitrary commands, EDIT/COMMIT execution, queue/daemon, watcher, readiness,
+full-hook equivalence, cost optimization, or universal governed-coding-control
+claims without fresh governed authorization.
 
 ## Parked Operator Checkpoints
 

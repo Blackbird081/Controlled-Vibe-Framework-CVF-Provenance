@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-20
 
-Current mode marker: `lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`
+Current mode marker: `lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`.
+Current mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`.
 
-Previous mode: `aaf_t5_worker_experience_retrospective_capture_closed_next_operator_checkpoint`.
+Previous mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`.
 
 Active handoff:
 
@@ -290,22 +290,37 @@ execution, EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook
 equivalence, cost optimization claim, or universal governed-coding-control
 claim.
 
+LSC-T1 Signal Ledger Source Layout And De-Dup Contract is
+`CLOSED_PASS_BOUNDED` at material closure commit `3599441a`, after dispatch
+commit `84ba827f` and dispatch continuity commit `b528e8ca`. It adds the
+Learning Signal Chain reference front door, a stable undated source-layout and
+de-dup contract bound to the existing Learning Plane intake bridge, a valid
+JSON entry template, worker return, and completion review. Reviewer/closer
+repaired a dispatch-authoring path gap by normalizing the accepted contract to
+`docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT.md`
+and adding the Required Artifact Manifest, Machine Closure Package, acceptance
+matrix, and runtime-freshness N/A evidence needed after work-order closure.
+Evidence: JSON parse PASS, AAF helper PASS, worker-return fast gate PASS with
+reviewer-fast 32/32, foundation storage layout PASS, dispatch-quality PASS,
+machine closure package PASS, material pre-commit hook PASS 55/55, and
+post-commit pre-closure content gates passed 42/43 with only expected active
+handoff HEAD drift before this session sync. Boundary: documentation/reference
+and JSON-template contract only; no ledger store, generator, drift checker,
+helper readout, runtime Learning Plane mutation, provider/live proof, CLI/MCP
+adapter behavior, public-sync, direct interception, wrapper/proxy enforcement,
+arbitrary command execution, EDIT/COMMIT execution, queue/daemon, watcher,
+readiness, cost optimization, full-hook equivalence, universal governed-coding
+control, or reopening of AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, or MLW8.
+
 ## Next Allowed Move
 
-Mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_dispatched_to_worker`.
+Mode: `lsc_t1_signal_ledger_source_layout_dedup_contract_closed_next_operator_checkpoint`.
 
-Next allowed move: worker returns uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON` under `WORKER_MUST_NOT_COMMIT` after executing
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_FOR_WORKER_2026-06-20.md`
-from the actual executionBaseHead. Required worker deliverables are
-`docs/reference/learning_signal_chain/README.md`,
-`docs/reference/learning_signal_chain/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_2026-06-20.md`,
-`docs/reference/learning_signal_chain/CVF_LEARNING_SIGNAL_LEDGER_ENTRY_TEMPLATE.json`,
-and
-`docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_WORKER_RETURN_2026-06-20.md`.
-Codex/reviewer owns review, allowed repairs, final gates, commit, closure, and
-session-sync after worker return. AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, and
-MLW8 remain parked without fresh authorization.
+Next allowed move: operator checkpoint to select the next Learning Signal Chain
+tranche or another parked lane. Recommended next LSC direction is a fresh
+GC-018/work-order for the next bounded Learning Signal Chain foundation only if
+the operator authorizes it. AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7, and MLW8
+remain parked without fresh authorization.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
