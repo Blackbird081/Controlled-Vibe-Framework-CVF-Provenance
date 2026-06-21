@@ -11,13 +11,13 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current REF-T0 closure state, the current
+This compact handoff records the current AAF-T6A dispatch state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: closure continuity for REF-T0 Active Reference Path Repair.
+Target: dispatch continuity for AAF-T6A Early Diagnostic Wire-in.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -34,14 +34,14 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize REF-T0 closure commit
-`8e024b2f`, generated active state, compact session memory, active handoff, and
-the next allowed AAF-T6A checkpoint.
+Authorized guard-maintenance scope: synchronize AAF-T6A dispatch commit
+`4e6813eb`, generated active state, compact session memory, active handoff, and
+the next allowed AAF-T6A worker-execution checkpoint.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime beyond the closed MPI-T2 helper scope, MCP execution,
 watcher/daemon, benchmark, provider/live, direct-interception, ACE-R1, CGE-T3,
-MLW7/8, automated provider selection, runtime provider routing, AAF-T6,
-AAF-T7, MPI-T3/T4, route edit, route schema change, registry
+MLW7/8, automated provider selection, runtime provider routing, full AAF-T6,
+AAF-T7A, MPI-T3/T4, route edit, route schema change, registry
 source or aggregate edit, durable write, registry generator change, helper or
 checker implementation, scaffold implementation, patch apply behavior, CLI/MCP
 adapter behavior, broader Learning Plane runtime mutation, or public-sync scope.
@@ -105,6 +105,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/l2aT0LearningToAccelerationClassificationClosure20260622.json`
 - `CVF_SESSION/state/entries/refT0ActiveReferencePathRepairDispatch20260622.json`
 - `CVF_SESSION/state/entries/refT0ActiveReferencePathRepairClosure20260622.json`
+- `CVF_SESSION/state/entries/aafT6AEarlyDiagnosticWireInDispatch20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -131,7 +132,7 @@ paused MPI and selected the learning layer. L2A-T0 is now closed so repeated
 findings can be classified into prevention and acceleration outcomes before
 MPI resumes. The operator also approved repairing active reference path drift
 before AAF-T6A. REF-T0 is now closed, and AAF-T6A Early Diagnostic Wire-in is
-the next allowed work-order step if the operator continues the learning lane.
+now dispatched to worker at material commit `4e6813eb`.
 
 Rollback boundary: revert only this session-sync commit if rejected.
 Do not alter LSC-T5/T7 closure commit `03fe8ca2`, LSC-T5/T7 dispatch commit
@@ -165,13 +166,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ref_t0_active_reference_path_repair_closed_aaf_t6a_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=create the AAF-T6A Early Diagnostic Wire-in work order if the operator continues the learning lane; parked checkpoint=MPI-T3/MPI-T4, AAF-T7A, AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond MPI-T2 closed helper scope, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker executes AAF-T6A as `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; parked checkpoint=MPI-T3/MPI-T4, AAF-T7A, full AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`ref_t0_active_reference_path_repair_closed_aaf_t6a_checkpoint`
+`aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `8e024b2f`
+Current HEAD recorded for this handoff: `4e6813eb`
 
 Material state:
 
@@ -629,10 +630,35 @@ PASS, material pre-commit hook PASS 55/55, material commit `468ca3be`, and
 committed-range pre-closure content gates PASS with only expected
 session-continuity HEAD drift before this sync.
 
-Next allowed move: create the AAF-T6A Early Diagnostic Wire-in work order if
-the operator continues the learning lane. After AAF-T6A, operator-selected
-order remains AAF-T7A closure-conversion acceleration helper, then resume MPI
-if reselected.
+AAF-T6A Early Diagnostic Wire-in is `DISPATCHED_TO_WORKER` at material dispatch
+commit `4e6813eb`, from dispatch base `d11e0522`.
+
+Dispatch artifacts:
+`docs/baselines/CVF_GC018_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_FOR_WORKER_2026-06-22.md`.
+
+Next allowed move: worker executes AAF-T6A as `WORKER_MUST_NOT_COMMIT` and
+returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+
+Allowed worker scope only:
+`governance/compat/run_agent_autorun_workflow_gate.py`,
+`governance/compat/test_run_agent_autorun_workflow_gate.py`, optional
+`governance/compat/test_run_agent_automation_assist.py` only if a focused
+helper contract fixture is required, and
+`docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md`.
+
+Required worker checks:
+`git rev-parse --short HEAD`; `git status --short`;
+`python -m unittest governance.compat.test_run_agent_autorun_workflow_gate`;
+`python -m unittest governance.compat.test_run_agent_automation_assist`;
+`python governance/compat/run_agent_automation_assist.py --base <executionBaseHead> --head HEAD --json --enforce`;
+`python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD`;
+`python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_run_agent_autorun_workflow_gate.py`.
+Replace `<executionBaseHead>` with worker-start HEAD.
+
+After AAF-T6A review/closure, operator-selected order remains AAF-T7A
+closure-conversion acceleration helper, then resume MPI if reselected.
 
 Keep AAF-T6A early diagnostic wire-in, AAF-T7A closure-conversion acceleration
 helper, AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index

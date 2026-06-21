@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `ref_t0_active_reference_path_repair_closed_aaf_t6a_checkpoint`
+Current mode marker: `aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `ref_t0_active_reference_path_repair_closed_aaf_t6a_checkpoint`.
+Current mode: `aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`.
 
-Previous mode: `ref_t0_active_reference_path_repair_dispatched_to_worker`.
+Previous mode: `ref_t0_active_reference_path_repair_closed_aaf_t6a_checkpoint`.
 
 Active handoff:
 
@@ -515,14 +515,26 @@ the L2A pointer to the active learning-philosophy path, and registers both
 restored dated references in the active-window registry so archive hygiene
 preserves their binding active paths.
 
+AAF-T6A Early Diagnostic Wire-in is `DISPATCHED_TO_WORKER` at material dispatch
+commit `4e6813eb`, from dispatch base `d11e0522`. Dispatch artifacts:
+`docs/baselines/CVF_GC018_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_FOR_WORKER_2026-06-22.md`.
+Worker route is `WORKER_MUST_NOT_COMMIT`; worker must return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
+
 ## Next Allowed Move
 
-Mode: `ref_t0_active_reference_path_repair_closed_aaf_t6a_checkpoint`.
+Mode: `aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`.
 
-Next allowed move: create the AAF-T6A Early Diagnostic Wire-in work order if
-the operator continues the learning lane. After AAF-T6A, operator-selected
-order remains AAF-T7A closure-conversion acceleration helper, then resume MPI
-if reselected.
+Next allowed move: worker executes AAF-T6A as `WORKER_MUST_NOT_COMMIT`.
+Allowed scope only: update `governance/compat/run_agent_autorun_workflow_gate.py`,
+update `governance/compat/test_run_agent_autorun_workflow_gate.py`, optionally
+update `governance/compat/test_run_agent_automation_assist.py` only if a
+focused helper contract fixture is required, and create
+`docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md`.
+After AAF-T6A, operator-selected order remains AAF-T7A closure-conversion
+acceleration helper, then resume MPI if reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
