@@ -35,9 +35,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize MPI-T1 material closure commit
-`24f3b958`, generated active state, compact session memory, active handoff, and
-the next allowed move operator checkpoint.
+Authorized guard-maintenance scope: synchronize INDEX-T1 dispatch commit
+`64516525`, generated active state, compact session memory, active handoff, and
+the next allowed worker move.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
@@ -121,7 +121,8 @@ instructed continuation without another checkpoint. The operator then requested
 creating the LSC-T6 work order. LSC-T6 is now closed. The operator requested
 continuing to create the next work order, LSC-T5/T7 bridge and latency
 guard was dispatched through a fresh governed packet, and the worker return is
-now accepted as `CLOSED_PASS_BOUNDED`.
+now accepted as `CLOSED_PASS_BOUNDED`. The operator then selected INDEX-T1, and
+INDEX-T1 dispatch is recorded at material commit `64516525`.
 
 Rollback boundary: revert only this session-sync commit if rejected.
 Do not alter LSC-T5/T7 closure commit `03fe8ca2`, LSC-T5/T7 dispatch commit
@@ -155,13 +156,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select MPI-T2, MPI-T3, INDEX-T1, or hold; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, runtime projection, registry write, ledger/generator/durable-store work, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`index_t1_forward_only_index_checker_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker implements INDEX-T1 under the dispatched work order in `WORKER_MUST_NOT_COMMIT` mode and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, MPI-T2/T3/T4, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, runtime projection, registry write, ledger/generator/durable-store work, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`
+`index_t1_forward_only_index_checker_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `24f3b958`
+Current HEAD recorded for this handoff: `64516525`
 
 Material state:
 
@@ -169,6 +170,7 @@ Material state:
 - LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
 - LSC-T5/T7 closure commit: `03fe8ca2`
 - MPI-T1 Memory Plane Front-Door Map material commit: `24f3b958`
+- INDEX-T1 dispatch commit: `64516525`
 - LSC-T5/T7 dispatch commit: `7bcdcc31`
 - LSC-T3 closure commit: `fd70157a`
 - Delta-T3 dispatch commit: `aafcdfda`
@@ -514,13 +516,19 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after MPI-T1 closure:
+Current pointer after INDEX-T1 dispatch:
 
 MPI-T1 Memory Plane Front-Door Map is `CLOSED_PASS_BOUNDED` at material commit
 `24f3b958`. The batch closes MPI-T0 INDEX Legacy Memory/Graph Recheck, creates
-the forward-only INDEX standard, keeps INDEX-T1 parked for operator selection,
-and creates `docs/reference/CVF_MEMORY_PLANE_MAP.md` as the active Memory Plane
+the forward-only INDEX standard, and creates
+`docs/reference/CVF_MEMORY_PLANE_MAP.md` as the active Memory Plane
 POINTER_RECORD map.
+
+INDEX-T1 Forward-Only INDEX Classification Checker is `DISPATCHED_TO_WORKER`
+at material commit `64516525`. Active packet:
+`docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`.
+Active baseline:
+`docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`.
 
 Accepted artifacts:
 `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md`,
@@ -528,6 +536,8 @@ Accepted artifacts:
 `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md`,
 `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md`,
 `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`,
+`docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
+`docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
 `docs/work_orders/CVF_WO_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_2026-06-21.md`,
 and
 `docs/work_orders/CVF_WO_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_2026-06-21.md`.
@@ -538,13 +548,17 @@ Reviewer correction applied: BLI-01 Graphify is 5/5 files and `Thong_tin.md`
 is `ACCEPT_AS_INDEX_INPUT`; worker-skipped first reads were supplemented before
 acceptance. Evidence: worker-return fast gate PASS, reviewer-fast PASS,
 reviewer-return commit steward PASS, material pre-commit hook PASS 55/55, and
-material commit `24f3b958`.
+material commit `24f3b958`. INDEX-T1 dispatch evidence: dispatch-quality PASS,
+core guard self-protection PASS, pre-dispatch autorun PASS 43/43, commit
+steward dispatch PASS, governed file-size guard PASS, material pre-commit hook
+PASS 55/55, and material commit `64516525`.
 
-Next allowed move: operator checkpoint to select MPI-T2 Scan Registry Episodic
-Read Projection, MPI-T3 External Agent Memory Read Contract, INDEX-T1
-Forward-Only INDEX Classification Checker, or hold. MPI-T2/T3/T4 and INDEX-T1
-remain parked until separately authorized through fresh governed work-order
-scope.
+Next allowed move: worker implements INDEX-T1 exactly under
+`docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
+changes only the allowed scope named there, runs the required checks, and
+returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
+MPI-T2/T3/T4 remain parked until separately authorized through fresh governed
+work-order scope.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
 hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent Coding Evidence
@@ -830,18 +844,18 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | MPI-T1 Memory Plane Front-Door Map session sync, 2026-06-21 |
+| Session or invocation | INDEX-T1 checker dispatch session sync, 2026-06-21 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | MPI-T1 closure session-sync manifest |
-| Allowed scope source | MPI-T1 material commit `24f3b958` |
-| Before status evidence | material commit `24f3b958` with session surfaces still pointing to LSC-T5/T7 checkpoint |
-| After status evidence | state, memory, and handoff record MPI-T1 closed and next move operator checkpoint |
+| Target paths | INDEX-T1 dispatch session-sync manifest |
+| Allowed scope source | INDEX-T1 dispatch material commit `64516525` |
+| Before status evidence | material commit `64516525` with session surfaces still pointing to MPI-T1 operator checkpoint |
+| After status evidence | state, memory, and handoff record INDEX-T1 dispatched to worker |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | closure session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, MPI-T2/T3/T4 execution, INDEX-T1 execution, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
+| Approval boundary | dispatch session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, MPI-T2/T3/T4 execution, INDEX-T1 implementation by Codex, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `mpi-t1-memory-plane-front-door-map-session-sync-2026-06-21` |
+| Invocation ID | `index-t1-forward-only-index-checker-dispatch-session-sync-2026-06-21` |
 | Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
