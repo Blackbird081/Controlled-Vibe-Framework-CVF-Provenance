@@ -11,13 +11,13 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current LSC-T5/T7 dispatch state, the current
+This compact handoff records the current LSC-T5/T7 closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: dispatch continuity for LSC-T5/T7 Learning Plane Bridge And Latency
+Target: closure continuity for LSC-T5/T7 Learning Plane Bridge And Latency
 Guard.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
@@ -35,9 +35,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize LSC-T5/T7 material dispatch
-commit `7bcdcc31`, generated active state, compact session memory, active
-handoff, and the next allowed move waiting for worker return.
+Authorized guard-maintenance scope: synchronize LSC-T5/T7 material closure
+commit `03fe8ca2`, generated active state, compact session memory, active
+handoff, and the next allowed move operator checkpoint.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
@@ -100,6 +100,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/lscT6ExternalAgentCliMcpSignalContractDispatch20260621.json`
 - `CVF_SESSION/state/entries/lscT6ExternalAgentCliMcpSignalContractClosure20260621.json`
 - `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardDispatch20260621.json`
+- `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardClosure20260621.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -118,11 +119,13 @@ order under the LSC roadmap. After LSC-T2 closure, the operator selected the
 roadmap order `LSC-T2 -> LSC-T4 -> LSC-T3 -> LSC-T6 -> LSC-T5/T7` and
 instructed continuation without another checkpoint. The operator then requested
 creating the LSC-T6 work order. LSC-T6 is now closed. The operator requested
-continuing to create the next work order, and LSC-T5/T7 bridge and latency
-guard is now dispatched through a fresh governed packet.
+continuing to create the next work order, LSC-T5/T7 bridge and latency
+guard was dispatched through a fresh governed packet, and the worker return is
+now accepted as `CLOSED_PASS_BOUNDED`.
 
 Rollback boundary: revert only this session-sync commit if rejected.
-Do not alter LSC-T5/T7 dispatch commit `7bcdcc31`,
+Do not alter LSC-T5/T7 closure commit `03fe8ca2`, LSC-T5/T7 dispatch commit
+`7bcdcc31`,
 LSC-T6 closure commit `65af6db3`, LSC-T6 dispatch commit
 `cfe75f4c`, LSC-T3 closure commit
 `fd70157a`, LSC-T3 dispatch commit `398060e7`, LSC-T4 closure commit
@@ -152,18 +155,19 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=wait for LSC-T5/T7 worker return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, uncommitted; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, ledger/generator/durable-store work, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select the next governed lane or explicitly authorize a fresh governed work order; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, ledger/generator/durable-store work, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`
+`lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`
 
-Current HEAD recorded for this handoff: `7bcdcc31`
+Current HEAD recorded for this handoff: `03fe8ca2`
 
 Material state:
 
 - LSC-T6 closure commit: `65af6db3`
 - LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
+- LSC-T5/T7 closure commit: `03fe8ca2`
 - LSC-T5/T7 dispatch commit: `7bcdcc31`
 - LSC-T3 closure commit: `fd70157a`
 - Delta-T3 dispatch commit: `aafcdfda`
@@ -509,20 +513,35 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after LSC-T5/T7 dispatch:
+Current pointer after LSC-T5/T7 closure:
 
-LSC-T5/T7 Learning Plane Bridge And Latency Guard is `DISPATCHED_TO_WORKER` at
-material dispatch commit `7bcdcc31`, from dispatch base `749dc791`.
+LSC-T5/T7 Learning Plane Bridge And Latency Guard is `CLOSED_PASS_BOUNDED` at
+material closure commit `03fe8ca2`, after material dispatch commit `7bcdcc31`
+and dispatch continuity commit `eff8ce94`.
 
 Accepted artifacts:
+`docs/reference/learning_signal_chain/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD.md`,
+`docs/reference/learning_signal_chain/README.md`,
+`governance/compat/run_agent_automation_assist.py`,
+`governance/compat/test_run_agent_automation_assist.py`,
+`docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_WORKER_RETURN_2026-06-21.md`,
+`docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md`,
 `docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_FOR_WORKER_2026-06-21.md`.
 
-Next allowed move: wait for the worker to return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`, uncommitted. Reviewer/closer must validate source
-fidelity, worker-return shape, scope, and gates before any accepted material
-commit or session sync.
+Result: the LSC bridge/latency reference is active and the read-only AAF helper
+emits bounded `latencyGuardDisposition` readout values without runtime
+Learning Plane mutation. Evidence: focused unittest PASS 53/53, AAF helper
+PASS with `resolvedMode=reviewer-return`, `defects=[]`, and `signalReadout=[]`,
+worker-return fast gate PASS with focused pytest 53/53 and reviewer-fast 32/32,
+reviewer-return steward PASS, material pre-commit hook PASS 55/55, and material
+commit hook PASS 55/55.
+
+Next allowed move: operator checkpoint to select the next governed lane or
+explicitly authorize a fresh governed work order. LSC-T1/T2/T3/T4/T5/T6/T7
+foundation contracts are closed bounded, with LSC-T5/T7 closed as the combined
+bridge and latency guard tranche.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
 hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent Coding Evidence
@@ -531,9 +550,10 @@ ledger store, source directory, generator, drift checker, durable store,
 runtime Learning Plane mutation, provider/live proof, public-sync,
 wrapper/proxy enforcement, direct IDE/shell/git/filesystem interception,
 arbitrary command execution, EDIT/COMMIT execution, queue/daemon, watcher,
-readiness, full-hook equivalence, cost optimization claim, or universal
-governed-coding-control claim, actual CLI/MCP adapter behavior, RT2/RT3 runtime
-source edits, or broader Learning Plane runtime work without fresh governed
+readiness, full-hook equivalence, cost optimization claim, latency enforcement,
+or universal governed-coding-control claim, actual CLI/MCP adapter behavior,
+RT2/RT3 runtime source edits, MLW reference edits, or broader Learning Plane
+runtime work without fresh governed
 authorization. Public repo work, if later authorized, must use the
 sibling public-sync clone with remote verification; do not push public changes
 from the provenance workspace.
@@ -807,20 +827,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | LSC-T5/T7 dispatch session sync, 2026-06-21 |
+| Session or invocation | LSC-T5/T7 closure session sync, 2026-06-21 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | LSC-T5/T7 dispatch session-sync manifest |
-| Allowed scope source | LSC-T5/T7 dispatch commit `7bcdcc31` |
-| Before status evidence | material dispatch commit `7bcdcc31` with session surfaces still pointing to LSC-T5/T7 dispatch preparation |
-| After status evidence | state, memory, and handoff record LSC-T5/T7 dispatched and next move waiting for worker return |
+| Target paths | LSC-T5/T7 closure session-sync manifest |
+| Allowed scope source | LSC-T5/T7 closure commit `03fe8ca2` |
+| Before status evidence | material closure commit `03fe8ca2` with session surfaces still pointing to LSC-T5/T7 dispatched/waiting for worker return |
+| After status evidence | state, memory, and handoff record LSC-T5/T7 closed and next move operator checkpoint |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | dispatch session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, LSC-T5/T7 implementation by session-sync steward, CLI/MCP adapter behavior, or public scope |
+| Approval boundary | closure session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, further LSC-T5/T7 implementation by session-sync steward, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `lsc-t5-t7-dispatch-session-sync-2026-06-21` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardDispatch20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardDispatch20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `lsc-t5-t7-closure-session-sync-2026-06-21` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardClosure20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardClosure20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 

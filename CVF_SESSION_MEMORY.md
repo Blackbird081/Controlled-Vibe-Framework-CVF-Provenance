@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-21
 
-Current mode marker: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`
+Current mode marker: `lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`.
+Current mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`.
 
-Previous mode: `lsc_t6_external_agent_cli_mcp_signal_contract_closed_next_lsc_t5_t7_dispatch_ready`.
+Previous mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`.
 
 Active handoff:
 
@@ -427,35 +427,44 @@ execution, EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook
 equivalence, cost optimization claim, latency guard enforcement, or universal
 governed-coding-control claim.
 
-LSC-T5/T7 Learning Plane Bridge And Latency Guard is `DISPATCHED_TO_WORKER` at
-material dispatch commit `7bcdcc31`, from dispatch base `749dc791`. Dispatch
-artifacts:
-`docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md`
+LSC-T5/T7 Learning Plane Bridge And Latency Guard is `CLOSED_PASS_BOUNDED` at
+material closure commit `03fe8ca2`, after dispatch commit `7bcdcc31` and
+dispatch continuity commit `eff8ce94`. Accepted artifacts:
+`docs/reference/learning_signal_chain/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD.md`,
+`docs/reference/learning_signal_chain/README.md`,
+`governance/compat/run_agent_automation_assist.py`,
+`governance/compat/test_run_agent_automation_assist.py`,
+`docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_WORKER_RETURN_2026-06-21.md`,
+`docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md`,
+`docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md`,
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_FOR_WORKER_2026-06-21.md`.
-Worker route: `WORKER_MUST_NOT_COMMIT`; worker must return uncommitted
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Scope is limited to the
-LSC-T5/T7 reference contract, LSC reference front door, optional narrow
-read-only AAF helper/test fast-path, and worker-return artifact. Evidence:
-AAF helper PASS with defects `[]` and `signalReadout=[]`, dispatch-quality
-PASS, pre-dispatch autorun PASS 43/43, dispatch steward PASS, pre-commit hook
-PASS 55/55, and commit hook PASS 55/55. Boundary: no EXTENSIONS edits, RT2/RT3
-runtime source edits, MLW reference edits, session/handoff edits by worker,
-ledger store, source directory, generator, drift checker, durable store,
-runtime Learning Plane mutation, provider/live proof, public-sync, actual
-CLI/MCP adapter behavior, wrapper/proxy enforcement, direct IDE/shell/git/
-filesystem interception, arbitrary command execution, EDIT/COMMIT execution,
-queue/daemon, watcher, readiness, full-hook equivalence, cost optimization
-claim, or universal governed-coding-control claim.
+Result: the LSC bridge/latency reference is active and the read-only AAF helper
+emits bounded `latencyGuardDisposition` readout values without runtime
+Learning Plane mutation. Reviewer repairs corrected worker-return test-count
+wording from 7 to 8 focused tests and replaced a glob-like `EXTENSIONS`
+sentence with corpus-safe wording. Evidence: focused unittest PASS 53/53, AAF
+helper PASS with `resolvedMode=reviewer-return`, `defects=[]`, and
+`signalReadout=[]`, worker-return fast gate PASS with focused pytest 53/53 and
+reviewer-fast 32/32, reviewer-return steward PASS, material pre-commit hook
+PASS 55/55, and material commit hook PASS 55/55. Boundary: bridge/latency
+reference plus read-only helper/test only; no ledger store, source directory,
+generator, drift checker, durable store, runtime Learning Plane mutation,
+provider/live proof, public-sync, actual CLI/MCP adapter behavior,
+wrapper/proxy enforcement, direct IDE/shell/git/filesystem interception,
+arbitrary command execution, EDIT/COMMIT execution, queue/daemon, watcher,
+readiness, full-hook equivalence, cost optimization claim, latency enforcement,
+RT2/RT3 runtime source edits, MLW reference edits, or universal
+governed-coding-control claim.
 
 ## Next Allowed Move
 
-Mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`.
+Mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`.
 
-Next allowed move: wait for the LSC-T5/T7 worker to return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, uncommitted. Reviewer/
-closer must validate source fidelity, worker-return shape, scope, and gates
-before any accepted material commit or session sync.
+Next allowed move: operator checkpoint to select the next governed lane or
+explicitly authorize a fresh governed work order. LSC-T1/T2/T3/T4/T5/T6/T7
+foundation contracts are closed bounded, with LSC-T5/T7 closed as the combined
+bridge and latency guard tranche.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
