@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-21
 
-Current mode marker: `index_t1_forward_only_index_checker_dispatched_to_worker`
+Current mode marker: `index_t1_forward_only_index_checker_closed_operator_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `index_t1_forward_only_index_checker_dispatched_to_worker`.
+Current mode: `index_t1_forward_only_index_checker_closed_operator_checkpoint`.
 
 Previous mode: `mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`.
 
@@ -468,23 +468,23 @@ runtime projection, route/helper/schema/test edit, registry write, durable
 write, provider/live proof, public-sync, CLI/MCP adapter behavior, readiness,
 or universal governed-coding-control claim.
 
-INDEX-T1 Forward-Only INDEX Classification Checker is `DISPATCHED_TO_WORKER`
-at material commit `64516525`. Active packet:
+INDEX-T1 Forward-Only INDEX Classification Checker is `CLOSED_PASS_BOUNDED`
+at material commit `993a8460`. Closed packet:
 `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`.
-Active baseline:
+Completion review:
+`docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md`.
+Baseline:
 `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`.
-Worker mode is `WORKER_MUST_NOT_COMMIT`; worker must return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with uncommitted artifacts.
+Worker returned `COMPLETE_PENDING_REVIEW`; reviewer accepted after exact INDEX
+type matching repair and IDX-10 regression coverage.
 
 ## Next Allowed Move
 
-Mode: `index_t1_forward_only_index_checker_dispatched_to_worker`.
+Mode: `index_t1_forward_only_index_checker_closed_operator_checkpoint`.
 
-Next allowed move: worker implements INDEX-T1 exactly under
-`docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
-changes only the allowed scope named there, runs the required checks, and
-returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
-MPI-T2/T3/T4 remain parked until separately authorized through fresh governed
+Next allowed move: operator checkpoint to select MPI-T2 Scan Registry Episodic
+Read Projection, MPI-T3 External Agent Memory Read Contract, or hold. MPI-T4
+remains optional/parked until separately authorized through fresh governed
 work-order scope.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,

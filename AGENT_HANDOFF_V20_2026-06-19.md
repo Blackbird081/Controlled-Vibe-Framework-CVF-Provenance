@@ -156,13 +156,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`index_t1_forward_only_index_checker_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker implements INDEX-T1 under the dispatched work order in `WORKER_MUST_NOT_COMMIT` mode and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, MPI-T2/T3/T4, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, runtime projection, registry write, ledger/generator/durable-store work, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`index_t1_forward_only_index_checker_closed_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select MPI-T2 Scan Registry Episodic Read Projection, MPI-T3 External Agent Memory Read Contract, or hold; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, MPI-T4, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, runtime projection, registry write, ledger/generator/durable-store work, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`index_t1_forward_only_index_checker_dispatched_to_worker`
+`index_t1_forward_only_index_checker_closed_operator_checkpoint`
 
-Current HEAD recorded for this handoff: `64516525`
+Current HEAD recorded for this handoff: `993a8460`
 
 Material state:
 
@@ -170,6 +170,7 @@ Material state:
 - LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
 - LSC-T5/T7 closure commit: `03fe8ca2`
 - MPI-T1 Memory Plane Front-Door Map material commit: `24f3b958`
+- INDEX-T1 closure commit: `993a8460`
 - INDEX-T1 dispatch commit: `64516525`
 - LSC-T5/T7 dispatch commit: `7bcdcc31`
 - LSC-T3 closure commit: `fd70157a`
@@ -516,7 +517,7 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after INDEX-T1 dispatch:
+Current pointer after INDEX-T1 closure:
 
 MPI-T1 Memory Plane Front-Door Map is `CLOSED_PASS_BOUNDED` at material commit
 `24f3b958`. The batch closes MPI-T0 INDEX Legacy Memory/Graph Recheck, creates
@@ -524,10 +525,12 @@ the forward-only INDEX standard, and creates
 `docs/reference/CVF_MEMORY_PLANE_MAP.md` as the active Memory Plane
 POINTER_RECORD map.
 
-INDEX-T1 Forward-Only INDEX Classification Checker is `DISPATCHED_TO_WORKER`
-at material commit `64516525`. Active packet:
+INDEX-T1 Forward-Only INDEX Classification Checker is `CLOSED_PASS_BOUNDED`
+at material commit `993a8460`. Closed packet:
 `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`.
-Active baseline:
+Completion review:
+`docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md`.
+Baseline:
 `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`.
 
 Accepted artifacts:
@@ -537,6 +540,7 @@ Accepted artifacts:
 `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md`,
 `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`,
 `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
+`docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md`,
 `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
 `docs/work_orders/CVF_WO_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_2026-06-21.md`,
 and
@@ -551,13 +555,14 @@ reviewer-return commit steward PASS, material pre-commit hook PASS 55/55, and
 material commit `24f3b958`. INDEX-T1 dispatch evidence: dispatch-quality PASS,
 core guard self-protection PASS, pre-dispatch autorun PASS 43/43, commit
 steward dispatch PASS, governed file-size guard PASS, material pre-commit hook
-PASS 55/55, and material commit `64516525`.
+PASS 55/55, and material commit `64516525`. INDEX-T1 closure evidence:
+worker-return fast gate PASS with focused INDEX tests 40/40, corpus completeness
+and report integrity PASS, reviewer-return commit steward PASS, material
+pre-commit hook PASS 55/55, and material commit `993a8460`.
 
-Next allowed move: worker implements INDEX-T1 exactly under
-`docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
-changes only the allowed scope named there, runs the required checks, and
-returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
-MPI-T2/T3/T4 remain parked until separately authorized through fresh governed
+Next allowed move: operator checkpoint to select MPI-T2 Scan Registry Episodic
+Read Projection, MPI-T3 External Agent Memory Read Contract, or hold. MPI-T4
+remains optional/parked until separately authorized through fresh governed
 work-order scope.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
@@ -844,18 +849,18 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | INDEX-T1 checker dispatch session sync, 2026-06-21 |
+| Session or invocation | INDEX-T1 checker closure session sync, 2026-06-22 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | INDEX-T1 dispatch session-sync manifest |
-| Allowed scope source | INDEX-T1 dispatch material commit `64516525` |
-| Before status evidence | material commit `64516525` with session surfaces still pointing to MPI-T1 operator checkpoint |
-| After status evidence | state, memory, and handoff record INDEX-T1 dispatched to worker |
+| Target paths | INDEX-T1 closure session-sync manifest |
+| Allowed scope source | INDEX-T1 closure material commit `993a8460` |
+| Before status evidence | material commit `993a8460` with session surfaces still pointing to INDEX-T1 dispatch |
+| After status evidence | state, memory, and handoff record INDEX-T1 closed with operator checkpoint for MPI-T2/MPI-T3/hold |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | dispatch session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, MPI-T2/T3/T4 execution, INDEX-T1 implementation by Codex, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
+| Approval boundary | closure session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, MPI-T2/T3/T4 execution, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `index-t1-forward-only-index-checker-dispatch-session-sync-2026-06-21` |
+| Invocation ID | `index-t1-forward-only-index-checker-closure-session-sync-2026-06-22` |
 | Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
