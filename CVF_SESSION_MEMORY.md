@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`
+Current mode marker: `l2a_t0_learning_to_acceleration_classification_standard_closed_ref_t0_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`.
+Current mode: `l2a_t0_learning_to_acceleration_classification_standard_closed_ref_t0_checkpoint`.
 
-Previous mode: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`.
+Previous mode: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`.
 
 Active handoff:
 
@@ -496,25 +496,27 @@ deterministic read-only helper; the helper is not route-wired and writes no
 registry or durable state.
 
 L2A-T0 Learning-To-Acceleration Classification Standard is
-`DISPATCHED_TO_WORKER` at dispatch commit `3f2d9973`. Dispatch artifacts:
-`docs/baselines/CVF_GC018_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD_2026-06-22.md`
-and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD_FOR_CLAUDE_2026-06-22.md`.
-The operator intentionally paused MPI while the learning layer is clarified.
+`CLOSED_PASS_BOUNDED` at material closure commit `bf0c9de1`, after dispatch
+commit `3f2d9973` and session-sync base `d75a5e71`. It adds
+`docs/reference/learning_to_acceleration/README.md`,
+`docs/reference/learning_to_acceleration/CVF_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD.md`,
+a compact pointer in
+`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`, worker
+return, completion review, and closed GC-018/work-order records. Result: CVF
+now has a documentation/reference L2A taxonomy for classifying repeated
+findings into prevention and acceleration outcomes without implementing
+helper/checker/scaffold/patch behavior.
 
 ## Next Allowed Move
 
-Mode: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`.
+Mode: `l2a_t0_learning_to_acceleration_classification_standard_closed_ref_t0_checkpoint`.
 
-Next allowed move: Claude/worker executes L2A-T0 and returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. Worker mode:
-`WORKER_MUST_NOT_COMMIT`.
+Next allowed move: create REF-T0 Active Reference Path Repair work order to
+restore or reroute active authority paths currently referenced as active but
+stored under `docs/reference/archive/`, before dispatching AAF-T6A.
 
-Allowed worker scope only:
-`docs/reference/learning_to_acceleration/README.md`,
-`docs/reference/learning_to_acceleration/CVF_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD.md`,
-`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`, and
-`docs/reviews/CVF_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD_WORKER_RETURN_2026-06-22.md`.
+After REF-T0, operator-selected order remains AAF-T6A early diagnostic wire-in,
+AAF-T7A closure-conversion acceleration helper, then resume MPI if reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
@@ -522,9 +524,10 @@ verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
 Memory readout route edits, route schema changes, registry source or aggregate
-edits, durable writes, registry generator changes, MPI-T3/MPI-T4, AAF-T6A,
-AAF-T7A, AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7/8, helper/checker/scaffold
-implementation, patch apply behavior, and universal governed-coding claims.
+edits, durable writes, registry generator changes, MPI-T3/MPI-T4, AAF-T6,
+AAF-T7, CGE-T3, ACE-R1, MLW7/8, helper/checker/scaffold implementation beyond
+an authorized tranche, patch apply behavior, and universal governed-coding
+claims.
 LHW24 remains the latest closed numbered LHW wave.
 
 ## Active Rule Additions
