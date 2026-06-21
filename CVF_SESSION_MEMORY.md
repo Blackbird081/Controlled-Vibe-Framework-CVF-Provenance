@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `l2a_t0_learning_to_acceleration_classification_standard_closed_ref_t0_checkpoint`
+Current mode marker: `ref_t0_active_reference_path_repair_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `l2a_t0_learning_to_acceleration_classification_standard_closed_ref_t0_checkpoint`.
+Current mode: `ref_t0_active_reference_path_repair_dispatched_to_worker`.
 
-Previous mode: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`.
+Previous mode: `l2a_t0_learning_to_acceleration_classification_standard_closed_ref_t0_checkpoint`.
 
 Active handoff:
 
@@ -507,16 +507,31 @@ now has a documentation/reference L2A taxonomy for classifying repeated
 findings into prevention and acceleration outcomes without implementing
 helper/checker/scaffold/patch behavior.
 
+REF-T0 Active Reference Path Repair is `DISPATCHED_TO_WORKER` at material
+dispatch commit `2645d8ae`, from dispatch base `938cfb2d`. Dispatch artifacts:
+`docs/baselines/CVF_GC018_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_FOR_WORKER_2026-06-22.md`.
+It restores active reference paths before AAF-T6A; worker must return
+uncommitted.
+
 ## Next Allowed Move
 
-Mode: `l2a_t0_learning_to_acceleration_classification_standard_closed_ref_t0_checkpoint`.
+Mode: `ref_t0_active_reference_path_repair_dispatched_to_worker`.
 
-Next allowed move: create REF-T0 Active Reference Path Repair work order to
-restore or reroute active authority paths currently referenced as active but
-stored under `docs/reference/archive/`, before dispatching AAF-T6A.
+Next allowed move: Claude/worker executes REF-T0 and returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. Worker mode:
+`WORKER_MUST_NOT_COMMIT`.
 
-After REF-T0, operator-selected order remains AAF-T6A early diagnostic wire-in,
-AAF-T7A closure-conversion acceleration helper, then resume MPI if reselected.
+Allowed worker scope only:
+`docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`,
+`docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`,
+`docs/reference/learning_to_acceleration/README.md`, and
+`docs/reviews/CVF_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_WORKER_RETURN_2026-06-22.md`.
+
+After REF-T0 review/closure, operator-selected order remains AAF-T6A early
+diagnostic wire-in, AAF-T7A closure-conversion acceleration helper, then resume
+MPI if reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
