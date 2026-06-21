@@ -2,52 +2,51 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_MPI_T0_CLOSURE
+Status: DISPATCHED_TO_WORKER
 
 Date: 2026-06-21
 
 docType: work_order
 
-dispatchBaseHead: acb2b980
+dispatchBaseHead: 8ce1fd86
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 ## Dispatch Prompt Envelope
 
-Role: Worker after dependency release. Reviewer/closer is a separate role after
-worker return.
+Role: Worker. Reviewer/closer is a separate role after worker return.
 
 Canonical packet:
 `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`
 
-Current status: `HOLD_UNTIL_MPI_T0_CLOSURE`. Do not execute until the
-Dependency Release Gate is refreshed by dispatcher/reviewer after MPI-T0 closes.
+Current status: `DISPATCHED_TO_WORKER`. Dependencies are released by MPI-T0
+and MPI-T1 closure evidence plus the 2026-06-21 operator selection of
+INDEX-T1.
 
-Commit mode after release: `WORKER_MUST_NOT_COMMIT`.
+Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
-executionBaseHead: to be confirmed with `git rev-parse --short HEAD` at worker
-start after dependency release.
+executionBaseHead: worker must capture with `git rev-parse --short HEAD` at
+worker start.
 
 Current-time notes: INDEX-T1 is a small checker tranche after MPI-T0. MPI-T0
 creates the forward-only INDEX standard and legacy recheck. INDEX-T1 only
 promotes that accepted standard into deterministic governance checking for
 future classification artifacts and agent handoffs.
 
-Do-not-misread notes: do not implement this while the work order remains HOLD.
-Do not rescan legacy, mutate Memory runtime, edit generated registries, build a
-vector DB, implement graph persistence, build CLI/MCP adapters, run provider or
-live proof, touch public-sync, or claim universal governed-coding control.
+Do-not-misread notes: do not rescan legacy, mutate Memory runtime, edit
+generated registries, build a vector DB, implement graph persistence, build
+CLI/MCP adapters, run provider or live proof, touch public-sync, or claim
+universal governed-coding control.
 
-Required first actions after release: read this work order, read the
-INDEX-T1 GC-018 baseline, read the accepted MPI-T0 INDEX standard and completion
-review, refresh `executionBaseHead`, inspect `git status --short`, then
-implement only the Allowed scope.
+Required first actions: read this work order, read the INDEX-T1 GC-018
+baseline, read the accepted MPI-T0 INDEX standard and completion review,
+capture `executionBaseHead`, inspect `git status --short`, then implement only
+the Allowed scope.
 
-Return contract after release: return `COMPLETE_PENDING_REVIEW` with only
-allowed uncommitted artifacts, actual `executionBaseHead`, actual
-`git status --short`, focused unittest/checker/fast-gate evidence, and no
-commit. If blocked, return `BLOCKED_WITH_REASON` and name the exact dependency,
-source, or gate.
+Return contract: return `COMPLETE_PENDING_REVIEW` with only allowed
+uncommitted artifacts, actual `executionBaseHead`, actual `git status --short`,
+focused unittest/checker/fast-gate evidence, and no commit. If blocked, return
+`BLOCKED_WITH_REASON` and name the exact dependency, source, or gate.
 
 The worker-return artifact must include either the structured
 `WORKER_EXPERIENCE_RETRO` block or the exact asserting
@@ -59,30 +58,47 @@ Create the post-MPI-T0 checker tranche that makes INDEX a forward-only,
 machine-enforced classification discipline for future CVF classification
 artifacts and agent handoffs that enter governed workflows.
 
-This work order is not dispatch-ready yet. It is a dependency-held packet that
-preserves the operator decision without disrupting MPI-T0 or MPI-T1 sequencing.
+This work order is dispatch-ready for a worker. It preserves the operator
+decision without disrupting MPI-T2/MPI-T3/MPI-T4 sequencing.
 
 ## Dependency Release Gate
 
-| Dependency | Required release evidence | Current status |
+| Dependency | Release evidence | Current status |
 |---|---|---|
-| MPI-T0 INDEX standard | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` exists and is accepted by reviewer | HOLD |
-| MPI-T0 worker return | `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_WORKER_RETURN_2026-06-21.md` accepted or superseded by reviewer completion | HOLD |
-| MPI-T0 completion review | `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md` records closure disposition | HOLD |
-| Source verification refresh | this work order cites actual sections of the accepted INDEX standard | HOLD |
+| MPI-T0 INDEX standard | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md`; status `ACTIVE_FORWARD_ONLY`; material commit `24f3b958` | RELEASED |
+| MPI-T0 worker return | `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_WORKER_RETURN_2026-06-21.md`; accepted by reviewer completion at material commit `24f3b958` | RELEASED |
+| MPI-T0 completion review | `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md`; status `CLOSED_PASS_BOUNDED`; material commit `24f3b958` | RELEASED |
+| MPI-T1 operator selection evidence | `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`; status `CLOSED_PASS_BOUNDED`; next action permits INDEX-T1 selection | RELEASED |
+| Source verification refresh | this work order cites actual sections of the accepted INDEX standard after release | RELEASED |
 
-Dispatcher/reviewer must keep this work order in `HOLD_UNTIL_MPI_T0_CLOSURE`
-until every dependency row has concrete artifact evidence. A worker must return
-`BLOCKED_WITH_REASON` if asked to execute before release.
+Worker execution is authorized after this dispatch update. A worker must still
+return `BLOCKED_WITH_REASON` if the worktree contains unrelated uncommitted
+changes, an allowed-scope gate cannot be fixed inside scope, or a necessary
+action would exceed the claim boundary.
 
 ## Agent Roles
 
 | Role | Owner | Commitment boundary |
 |---|---|---|
-| Dispatcher | Codex/orchestrator | creates dependency-held GC-018 baseline and work order; refreshes after MPI-T0 closure |
-| Worker | future worker after release | edits only Allowed scope and returns uncommitted |
+| Dispatcher | Codex/orchestrator | releases GC-018 baseline and work order after dependency evidence and operator selection |
+| Worker | assigned worker | edits only Allowed scope and returns uncommitted |
 | Reviewer/closer | Codex/orchestrator after worker return | validates checker behavior, hook wiring, protected-path authorization, and commits accepted material |
 | Operator | human operator | checkpoint for dependency release, scope expansion, runtime/provider/public work, secrets, or destructive action |
+
+## Intake Role Routing Decision
+
+| Field | Disposition |
+|---|---|
+| Selected route | `MULTI_AGENT_SINGLE_ROLE` |
+| Intake summary | operator request selected INDEX-T1 from the MPI-T1 completion checkpoint |
+| Scope classification | bounded allowed scope: checker source, focused tests, narrow hook wiring, guard/template references, and worker-return packet |
+| Risk sensitivity | R1 governance checker work; no public-sync, provider/live proof, secrets, production runtime mutation, readiness claim, or Memory runtime change |
+| Intake owner | dispatcher/reviewer |
+| Execution owner | worker |
+| Review owner | reviewer/closer |
+| Commit mode | `WORKER_MUST_NOT_COMMIT` |
+| Escalation condition | `BLOCKED_WITH_REASON` if a necessary action would exceed allowed scope, touch forbidden paths, or require public/provider/runtime/session/generated work |
+| Rationale | released governance checker tranche with protected helper paths; worker returns uncommitted artifacts for reviewer conversion |
 
 ## Authority Chain
 
@@ -93,7 +109,9 @@ until every dependency row has concrete artifact evidence. A worker must return
 | MPI roadmap | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` row `INDEX-T1` | ACCEPT |
 | Guard orientation index | `docs/reference/guard_orientation/README.md` | ACCEPT |
 | Work order template family | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/work_order_template/README.md` | ACCEPT |
-| Accepted INDEX standard | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | ACCEPT - created by MPI-T0 and accepted by reviewer; INDEX-T1 remains parked for operator selection |
+| Accepted INDEX standard | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | ACCEPT - created by MPI-T0 and accepted by reviewer |
+| MPI-T1 completion checkpoint | `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md` | ACCEPT - records operator selection of INDEX-T1 |
+| Operator selection | 2026-06-21 instruction: select `INDEX-T1` work order | ACCEPT - releases this checker work order for dispatch |
 
 ## External Knowledge Intake Routing
 
@@ -104,8 +122,15 @@ until every dependency row has concrete artifact evidence. A worker must return
 | Chain map route | REVIEW_AND_CLASSIFY_BEFORE_ABSORPTION |
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
 | Owner surface | INDEX-T1 work order |
-| Disposition | ADAPT as dependency-held checker implementation packet |
+| Disposition | ADAPT as released checker implementation packet |
 | Claim boundary | no external input is source authority; accepted MPI-T0 standard controls future enforcement |
+
+## Legacy Absorption Coverage Index Disposition
+
+NOT_APPLICABLE_WITH_REASON: INDEX-T1 does not read, scan, classify, or absorb
+legacy corpus inputs. MPI-T0 owns the bounded legacy recheck and created the
+forward-only INDEX standard; this tranche implements only a structural checker
+for future INDEX-governed artifacts.
 
 ## Agent Handoff Contract Control Block
 
@@ -113,15 +138,15 @@ until every dependency row has concrete artifact evidence. A worker must return
 |---|---|
 | Contract source | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` |
 | route | `MULTI_AGENT_SINGLE_ROLE` |
-| rolePattern | dispatcher creates held packet; future worker implements checker after release; reviewer/closer validates and commits if accepted |
-| phase | HOLD; DISPATCH_REFRESH; EXECUTION_AFTER_RELEASE; CLOSURE; SESSION_SYNC_IF_NEEDED |
-| baseHeadFor(phase) | `dispatchBaseHead=acb2b980`; `executionBaseHead` set after MPI-T0 release; `closureBaseHead` set by reviewer before closure commit |
-| changedSetScope(phase) | worker changes only Allowed scope after release; reviewer/closer owns status/closure/session-sync if accepted |
-| traceScope(phase, actor) | future worker-return trace covers INDEX-T1 artifacts; reviewer trace covers review/closure |
+| rolePattern | dispatcher releases packet; worker implements checker; reviewer/closer validates and commits if accepted |
+| phase | DISPATCH; EXECUTION; CLOSURE; SESSION_SYNC_IF_NEEDED |
+| baseHeadFor(phase) | `dispatchBaseHead=8ce1fd86`; `executionBaseHead` captured by worker at start; `closureBaseHead` set by reviewer before closure commit |
+| changedSetScope(phase) | worker changes only Allowed scope; reviewer/closer owns status/closure/session-sync if accepted |
+| traceScope(phase, actor) | worker-return trace covers INDEX-T1 artifacts; reviewer trace covers review/closure |
 | commitOwner(phase) | worker commits nothing; reviewer/closer owns accepted material/closure/session-sync commit |
-| crossBatchIsolation | do not mix INDEX-T1 with MPI-T0 implementation, MPI-T1/T2/T3/T4 runtime, Memory runtime, public-sync, provider/live, adapter work, legacy rescan, or session-sync unless separately authorized |
-| Before status evidence | committed base `acb2b980`; current packet is uncommitted and dependency-held |
-| nextMoveSurfaces | update only after closure if current mode or next allowed move changes |
+| crossBatchIsolation | do not mix INDEX-T1 with MPI-T2/T3/T4 runtime, Memory runtime, public-sync, provider/live, adapter work, legacy rescan, or session-sync unless separately authorized |
+| Before status evidence | committed base `8ce1fd86`; MPI-T1 closure checkpoint selected INDEX-T1 as an allowed next move |
+| nextMoveSurfaces | reviewer updates only during INDEX-T1 closure if current mode or next allowed move changes |
 | Closer designation | reviewer/closer role is the designated closer |
 
 ## Reviewer Closure Conversion
@@ -130,20 +155,46 @@ until every dependency row has concrete artifact evidence. A worker must return
 |---|---|
 | completionReviewPath | `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md` |
 | reviewerOwnedClosurePaths | this work order; GC-018 baseline; worker-return artifact; reviewer-owned completion review; optional roadmap status/session-sync surfaces if accepted |
-| workerReturnStatus | `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` after release |
+| workerReturnStatus | `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` |
 | closer | reviewer/closer role |
 
 ## Core Guard Self-Protection Authorization
 
 | Field | Disposition |
 |---|---|
-| Protected paths authorized | `governance/compat/check_index_classification.py`; `governance/compat/test_check_index_classification.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py` |
-| Authorization source | operator instruction; INDEX-T1 GC-018 baseline; this work order |
-| Authorized scope | add deterministic INDEX classification checker, focused tests, and narrow hook/autorun wiring after MPI-T0 dependency release |
+| Protected paths | `governance/compat/check_index_classification.py`; `governance/compat/test_check_index_classification.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_local_governance_hook_chain.py` |
+| Operator authorization | 2026-06-21 operator instruction selecting `INDEX-T1`; matching GC-018 baseline and this work order |
+| Authorized guard-maintenance scope | add deterministic INDEX classification checker, focused tests, and narrow hook/autorun wiring after dependency release |
 | Rollback boundary | revert only INDEX-T1 checker/test/wiring/template/reference edits if checker gate fails or exceeds scope |
 | Not authorized | runtime Memory changes, provider/live proof, public-sync, external dependency adoption, adapter behavior, generated aggregate edits, session-sync, or retroactive rewrite |
 
-## Required First Reads After Release
+## Worker Return Packet Shape Contract
+
+The worker-return packet must include these required sections and evidence
+terms so reviewer-fast can evaluate it without reviewer repair:
+
+- `Purpose`
+- `Scope / Methodology`
+- `Findings / Position`
+- `Risk / Corrective Action`
+- `Claim Boundary`
+- `Agent Operation Trace Block`
+- `Delta Execution Claim Boundary Control Block`
+- `Public Export Disposition`
+- `executionBaseHead`
+- `git status --short`
+
+Conditional gate terms must appear as real sections when applicable, or as
+`N/A with reason` / `NOT_APPLICABLE_WITH_REASON` lines when not applicable:
+
+- `External Knowledge Intake Routing`
+- `Rescan Intelligence Hardening`
+- `Corpus Completeness And Report Integrity`
+- `Finding-To-Governance Learning Disposition`
+- `Epistemic Process Block`
+- `Machine Closure Package`
+
+## Required First Reads
 
 | Source | Reason |
 |---|---|
@@ -159,9 +210,9 @@ until every dependency row has concrete artifact evidence. A worker must return
 | `governance/compat/run_local_governance_hook_chain.py` | local hook chain wiring surface |
 | `governance/compat/check_corpus_intelligence_classification.py` | nearby range-aware classification checker pattern |
 
-## Allowed Scope After Release
+## Allowed Scope
 
-The future worker may change only:
+The worker may change only:
 
 - `governance/compat/check_index_classification.py`
 - `governance/compat/test_check_index_classification.py`
@@ -173,7 +224,7 @@ The future worker may change only:
 
 ## Write Ownership
 
-| Path | Owner during worker execution after release | Disposition |
+| Path | Owner during worker execution | Disposition |
 |---|---|---|
 | `governance/compat/check_index_classification.py` | worker | create |
 | `governance/compat/test_check_index_classification.py` | worker | create |
@@ -206,29 +257,50 @@ The worker must not:
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |
 |---|---|---|---|---|---|---|
 | INDEX-T1 is a planned checker tranche | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | Tranche Plan | `INDEX-T1` | MPI roadmap | VALUE_SET | ACCEPT |
-| INDEX-T1 is held after MPI-T0 | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | Work Plan | `HOLD_AFTER_MPI_T0` | MPI roadmap | VALUE_SET | ACCEPT |
+| INDEX-T1 follows MPI-T0 standard creation | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | Work Plan | `INDEX-T1` | MPI roadmap | VALUE_SET | ACCEPT |
+| INDEX standard is active and forward-only | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | Status; Purpose; Forward-Only Application Rules | `ACTIVE_FORWARD_ONLY`; `INDEX-T1` | INDEX standard | VALUE_SET | ACCEPT |
+| MPI-T1 closure permits operator selection of INDEX-T1 | `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md` | Current Position; Next Move Handoff | `INDEX-T1` | MPI-T1 completion review | VALUE_SET | ACCEPT |
 | Protected checker work needs guard authorization | `docs/reference/guard_orientation/README.md` | Task Class Guard Map | `Guard / checker maintenance` | Guard orientation index | VALUE_SET | ACCEPT |
 | Work orders require source verification | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | Enforcement / Verification | Source Verification Block | Work order template | VALUE_SET | ACCEPT |
 | Template family README is the stable index for template references | `docs/reference/work_order_template/README.md` | Scope / Target / Owner Boundary; Canonical Template | `docs/reference/work_order_template/README.md` | Work order template family | EXISTS | ACCEPT |
 | Autorun gate wiring surface exists | `governance/compat/run_agent_autorun_workflow_gate.py` | `_common_commands` | `GateCommand` | Autorun workflow gate | EXISTS | ACCEPT |
 | Local hook chain wiring surface exists | `governance/compat/run_local_governance_hook_chain.py` | `HOOK_CHAINS` | `reviewer-fast`; `pre-commit`; `pre-push` | Local governance hook chain | EXISTS | ACCEPT |
 | Range-aware classification checker pattern exists | `governance/compat/check_corpus_intelligence_classification.py` | script constants and range helpers | `THIS_SCRIPT_PATH` | Corpus intelligence classification checker | EXISTS | ACCEPT |
-| INDEX standard exists and defines enforceable blocks | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | created by MPI-T0 and accepted by reviewer | `CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | INDEX standard | EXISTS | ACCEPT |
+| INDEX standard exists and defines required metadata | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | Required Metadata Per INDEX Artifact | `INDEX type`; `Source authority`; `Status`; `Date`; `Human-reviewable`; `Claim boundary`; `Public Export Disposition` | INDEX standard | VALUE_SET | ACCEPT |
+
+## Evidence Reuse And Encoding Plan
+
+verificationMode: RECOMPUTE_REQUIRED
+recomputeReason: dispatch packet was refreshed from current repo state after
+MPI-T0 and MPI-T1 closure commits; worker must recompute checker/test evidence
+from the execution worktree.
+unicodePathHandling: use literal repo-relative paths and UTF-8-safe readers for
+any path evidence; no external Unicode path evidence is consumed.
+extractedTextAuthority: N/A with reason
+freshRecomputeRequired: YES
+
+## Current Runtime Freshness Verification
+
+| Claim | Current evidence | Disposition |
+|---|---|---|
+| INDEX checker source is not present before worker execution | `Test-Path governance/compat/check_index_classification.py` -> `False` | ACCEPT |
+| INDEX checker tests are not present before worker execution | `Test-Path governance/compat/test_check_index_classification.py` -> `False` | ACCEPT |
+| Dispatch batch is docs-only | `git diff --name-status` shows only the INDEX-T1 baseline and work order | ACCEPT |
+| Provider/live/runtime proof | N/A with reason: dispatch does not claim provider/live/runtime behavior | ACCEPT |
 
 ## Pre-Flight Checks
 
-Before this work order can move out of HOLD, dispatcher/reviewer must run:
+Before dispatching this work order, dispatcher/reviewer must run:
 
 ```powershell
 git rev-parse --short HEAD
 git status --short
-python governance/compat/check_work_order_dispatch_quality.py --base acb2b980 --head HEAD --enforce
-python governance/compat/check_core_guard_self_protection.py --base acb2b980 --head HEAD --enforce
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base acb2b980 --head HEAD
+python governance/compat/check_work_order_dispatch_quality.py --base 8ce1fd86 --head HEAD --enforce
+python governance/compat/check_core_guard_self_protection.py --base 8ce1fd86 --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 8ce1fd86 --head HEAD
 ```
 
-After dependency release, worker must also run the Required Checks After
-Release section.
+Worker must also run the Required Checks section.
 
 ## Negative Search And Collision Discipline
 
@@ -242,9 +314,9 @@ artifacts under the searched roots.
 
 | Check | Command or evidence | Result | Collision / disposition |
 |---|---|---|---|
-| INDEX standard present after MPI-T0 closure | `Test-Path docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | `True` | keep work order parked until operator selects INDEX-T1 |
-| INDEX checker not yet present | `Test-Path governance/compat/check_index_classification.py` | `False` | create only after dependency release |
-| INDEX checker tests not yet present | `Test-Path governance/compat/test_check_index_classification.py` | `False` | create only after dependency release |
+| INDEX standard present | `Test-Path docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` | `True` | released for INDEX-T1 worker dispatch |
+| INDEX checker not yet present | `Test-Path governance/compat/check_index_classification.py` | `False` | create in allowed worker scope |
+| INDEX checker tests not yet present | `Test-Path governance/compat/test_check_index_classification.py` | `False` | create in allowed worker scope |
 | `CVF_AGENT_WORK_ORDER_TEMPLATE_2026` same-token collision occurrence | template references appear elsewhere | non-authoritative collision | not binding as INDEX standard/checker evidence |
 | `CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026` same-token collision occurrence | handoff contract references appear elsewhere | non-authoritative collision | not binding as INDEX standard/checker evidence |
 | `EXISTS` same-token collision occurrence | source-verification vocabulary appears elsewhere | non-authoritative collision | not binding for the missing INDEX standard/checker files |
@@ -262,19 +334,10 @@ artifacts under the searched roots.
 |---|---|---|
 | MPI-T0 authors the INDEX standard | Dependency Release Gate blocks execution until accepted standard exists | ACCEPT |
 | INDEX-T1 promotes policy to machine enforcement | Allowed scope includes checker, tests, hook/autorun wiring, and references | ACCEPT |
-| Do not merge checker into MPI-T0 | Status remains HOLD until MPI-T0 closure; worker cannot execute early | ACCEPT |
+| Do not merge checker into MPI-T0 | INDEX-T1 is dispatched using MPI-T0 and MPI-T1 reviewer completion evidence | ACCEPT |
 | Avoid runtime/readout/vector/graph expansion | Forbidden Scope excludes runtime, Memory, vector, graph, provider/live, public-sync, and adapter work | ACCEPT |
 
 ## Execution Plan
-
-Held packet phase:
-
-1. Keep this work order in `HOLD_UNTIL_MPI_T0_CLOSURE`.
-2. Wait for MPI-T0 worker return and reviewer completion.
-3. Refresh Source Verification rows against the accepted INDEX standard.
-4. Rerun pre-dispatch gate before any worker execution.
-
-After dependency release:
 
 1. Capture `executionBaseHead`.
 2. Capture `git status --short`.
@@ -308,22 +371,22 @@ blocks, allowed tokens, path scope, and claim-boundary language. It must not
 judge the truth of legacy findings, execute external agents, read provider
 memory, run live proof, or mutate artifacts.
 
-## Required Checks After Release
+## Required Checks
 
-The future worker must run:
+The worker must run:
 
 ```powershell
 git rev-parse --short HEAD
 git status --short
 python -m unittest governance.compat.test_check_index_classification
-python governance/compat/check_index_classification.py --base <releasedBaseHead> --head HEAD --enforce
+python governance/compat/check_index_classification.py --base <executionBaseHead> --head HEAD --enforce
 python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_index_classification.py
 ```
 
 If hook/autorun wiring is changed, reviewer may additionally require:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <releasedBaseHead> --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast
 ```
 
@@ -367,7 +430,7 @@ public-sync/MCP/generated/session/handoff edits, release a new dependency,
 consume secrets or quota, alter parked-lane ordering, touch forbidden paths, or
 perform destructive or irreversible actions.
 
-## Acceptance Criteria After Release
+## Acceptance Criteria
 
 | Criterion | Required evidence |
 |---|---|
@@ -394,14 +457,13 @@ outside worker-owned scope, or a necessary action would exceed Allowed scope.
 
 ## Operator Checkpoint
 
-Operator checkpoint is required before releasing this HOLD packet for worker
-execution, broadening checker scope, touching runtime/provider/live/public/MCP/
-generated/session/handoff surfaces, adopting dependencies, changing MPI
-sequence, or claiming INDEX is fully enforced outside governed CVF artifact
-flows.
+Human authorization is required before broadening checker scope, touching
+runtime/provider/live/public/MCP/generated/session/handoff surfaces, adopting
+dependencies, changing MPI sequence, or claiming INDEX is fully enforced
+outside governed CVF artifact flows.
 
-No operator checkpoint is needed for keeping this packet held or for
-allowed-scope remediation after dependency release.
+No human authorization is needed for allowed-scope remediation during worker
+execution.
 
 ## Foundation Storage Layout Block
 
@@ -418,11 +480,11 @@ allowed-scope remediation after dependency release.
 
 | Field | Disposition |
 |---|---|
-| claimScope | INDEX-T1 dependency-held checker packet and future structural checker only |
+| claimScope | INDEX-T1 released checker packet and future structural checker only |
 | claimDisposition | N/A with reason: no Delta execution-control behavior is implemented or claimed |
 | receiptEvidence | N/A with reason: no Delta receipt is created or consumed |
 | actionEvidence | N/A with reason: no runtime action is executed or observed |
-| invocationBoundary | future worker execution only after MPI-T0 dependency release |
+| invocationBoundary | worker execution only after dependency release and dispatch |
 | interceptionBoundary | no IDE/shell/git/filesystem/provider interception claim |
 | claimLanguage | checker planning and future structural validation only |
 | forbiddenExpansion | enforcement wrapper, proxy enforcement, interception, arbitrary-command execution, EDIT/COMMIT execution, provider/live, public-sync, queue/daemon, watcher, readiness, full-hook equivalence, cost optimization, and universal control remain out of scope |
@@ -436,22 +498,22 @@ allowed-scope remediation after dependency release.
 | Session or invocation | INDEX-T1 work order authoring, 2026-06-21 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Codex apply_patch |
-| Target paths | `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`; `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`; `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` |
+| Target paths | `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`; `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md` |
 | Allowed scope source | operator instruction to create post-MPI-T0 checker work order |
-| Before status evidence | HEAD `acb2b980`; existing MPI packet files uncommitted |
-| After status evidence | INDEX-T1 GC-018/work order created; roadmap work-order list updated; uncommitted |
-| Diff evidence | new held baseline and work order; roadmap trace update |
-| Approval boundary | dependency-held checker packet only; no implementation before MPI-T0 release |
-| Claim boundary | planning/dispatch artifact only; no current machine enforcement claim |
+| Before status evidence | HEAD `8ce1fd86`; `git status --short` (empty) before dispatcher edits; MPI-T1 completion checkpoint selected INDEX-T1 as an allowed next move |
+| After status evidence | INDEX-T1 GC-018/work order released for worker dispatch; uncommitted until dispatcher commit |
+| Diff evidence | released baseline and work order; no checker implementation in dispatcher batch |
+| Approval boundary | checker dispatch packet only; worker implementation remains uncommitted |
+| Claim boundary | dispatch artifact only; no current machine enforcement claim |
 | Agent type | dispatcher |
 | Invocation ID | index-t1-work-order-authoring-2026-06-21 |
-| Expected manifest | INDEX-T1 GC-018 baseline; INDEX-T1 work order; MPI roadmap trace update |
+| Expected manifest | INDEX-T1 GC-018 baseline; INDEX-T1 work order |
 | Actual changed set | pending git status |
 | Manifest delta | MATCH |
 
 ## Closure Checklist
 
-Reviewer/closer closure evidence must resolve these items after release:
+Reviewer/closer closure evidence must resolve these items after worker return:
 
 - MPI-T0 dependency release is refreshed.
 - Accepted INDEX standard sections are source-verified.
@@ -467,13 +529,27 @@ Reviewer/closer closure evidence must resolve these items after release:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Dependency release | MPI-T0 completion review and accepted INDEX standard | dispatcher/reviewer refresh | HOLD |
-| GC-018 status | `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md` | reviewer updates after accepted worker return | HOLD |
-| Work order status | this work order | reviewer updates after dependency release and closure | HOLD |
-| Checker | `governance/compat/check_index_classification.py` | exists after worker return | HOLD |
-| Tests | `governance/compat/test_check_index_classification.py` | unittest pass after worker return | HOLD |
-| Worker return | `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_WORKER_RETURN_2026-06-21.md` | status row | HOLD |
-| Completion review | `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md` | reviewer-owned final disposition | HOLD |
+| Dependency release | MPI-T0 completion review, MPI-T1 checkpoint, accepted INDEX standard, and operator selection | this work order | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md` | `Status: DISPATCHED_TO_WORKER` | PASS_FOR_DISPATCH |
+| Work order status | this work order | `Status: DISPATCHED_TO_WORKER` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md` | N/A with reason: reviewer completion is created only after worker return | N/A with reason |
+| Roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | INDEX-T1 row exists; dispatch release is bounded to this work order and baseline | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation is authorized or required for INDEX-T1 dispatch | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry Markdown/source mutation is authorized or required for INDEX-T1 dispatch | PASS |
+| External evidence digest | N/A with reason: no external evidence artifact is consumed in this dispatch | N/A with reason | N/A with reason |
+| System loop interlock | N/A with reason: no runtime/system loop behavior is changed in this dispatch | N/A with reason | N/A with reason |
+| Session continuity | N/A with reason: worker return is pending; dispatcher session-sync is separate if next move changes | N/A with reason | N/A with reason |
+| Checker | `governance/compat/check_index_classification.py` | N/A with reason: worker-owned file is created during execution, not dispatch | N/A with reason |
+| Tests | `governance/compat/test_check_index_classification.py` | N/A with reason: worker-owned file is created during execution, not dispatch | N/A with reason |
+| Worker return | `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_WORKER_RETURN_2026-06-21.md` | N/A with reason: worker return is produced after execution | N/A with reason |
+| Completion review | `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md` | N/A with reason: reviewer-owned final disposition follows worker return | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Delta receipt evidence | N/A with reason: no Delta receipt is created or consumed in this dispatch | PASS |
+| Acceptance query evidence | N/A with reason: INDEX-T1 dispatch does not perform receipt/query acceptance | PASS |
 
 ## Public Export Disposition
 
@@ -484,11 +560,10 @@ public-facing claim, or public repository mutation is authorized.
 
 ## Claim Boundary
 
-This work order is a dependency-held future checker packet. It does not claim
-INDEX is currently machine-enforced, does not dispatch implementation before
-MPI-T0 closure, and does not authorize Memory runtime changes, legacy rescan,
-provider/live proof, public-sync, vector DB, graph persistence, CLI/MCP adapter
-behavior, wrapper/proxy enforcement, direct IDE/shell/git/filesystem
-interception, arbitrary command execution, EDIT/COMMIT execution, queue,
-daemon, watcher, readiness, full-hook equivalence, cost optimization, or
+This work order is a released checker dispatch packet. It does not claim INDEX
+is already machine-enforced, and does not authorize Memory runtime changes,
+legacy rescan, provider/live proof, public-sync, vector DB, graph persistence,
+CLI/MCP adapter behavior, wrapper/proxy enforcement, direct IDE/shell/git/
+filesystem interception, arbitrary command execution, EDIT/COMMIT execution,
+queue, daemon, watcher, readiness, full-hook equivalence, cost optimization, or
 universal governed-coding control.
