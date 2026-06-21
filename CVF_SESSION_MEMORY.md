@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`
+Current mode marker: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`.
+Current mode: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`.
 
-Previous mode: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`.
+Previous mode: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`.
 
 Active handoff:
 
@@ -495,13 +495,26 @@ entries into Memory readout candidate-compatible summary records through a
 deterministic read-only helper; the helper is not route-wired and writes no
 registry or durable state.
 
+L2A-T0 Learning-To-Acceleration Classification Standard is
+`DISPATCHED_TO_WORKER` at dispatch commit `3f2d9973`. Dispatch artifacts:
+`docs/baselines/CVF_GC018_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD_FOR_CLAUDE_2026-06-22.md`.
+The operator intentionally paused MPI while the learning layer is clarified.
+
 ## Next Allowed Move
 
-Mode: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`.
+Mode: `l2a_t0_learning_to_acceleration_classification_standard_dispatched_to_worker`.
 
-Next allowed move: operator checkpoint to select MPI-T3 External Agent Memory
-Read Contract, hold, or authorize a fresh governed tranche. MPI-T4 remains
-optional parked unless separately authorized.
+Next allowed move: Claude/worker executes L2A-T0 and returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. Worker mode:
+`WORKER_MUST_NOT_COMMIT`.
+
+Allowed worker scope only:
+`docs/reference/learning_to_acceleration/README.md`,
+`docs/reference/learning_to_acceleration/CVF_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD.md`,
+`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`, and
+`docs/reviews/CVF_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD_WORKER_RETURN_2026-06-22.md`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
@@ -509,9 +522,10 @@ verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
 Memory readout route edits, route schema changes, registry source or aggregate
-edits, durable writes, registry generator changes, AAF-T6, AAF-T7, CGE-T3,
-ACE-R1, MLW7/8, and universal governed-coding claims. LHW24 remains the latest
-closed numbered LHW wave.
+edits, durable writes, registry generator changes, MPI-T3/MPI-T4, AAF-T6A,
+AAF-T7A, AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7/8, helper/checker/scaffold
+implementation, patch apply behavior, and universal governed-coding claims.
+LHW24 remains the latest closed numbered LHW wave.
 
 ## Active Rule Additions
 
