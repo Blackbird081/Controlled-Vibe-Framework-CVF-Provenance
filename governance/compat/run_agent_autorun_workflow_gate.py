@@ -233,6 +233,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "index classification",
+            "governance/compat/check_index_classification.py",
+            base,
+            head,
+        ),
+        _range_command(
             "corpus packet source hash (NR-04)",
             "governance/compat/check_corpus_packet_source_hash.py",
             base,

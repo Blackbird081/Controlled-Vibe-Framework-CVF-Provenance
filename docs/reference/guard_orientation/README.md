@@ -94,6 +94,7 @@ Forbidden normative patterns:
 | Corpus Completeness enumeration command is unsafe | `check_corpus_completeness_report_integrity.py` | Use `filesystem-backed direct file reads` or a fully qualified safe enumeration command; bare `rg --files` without `--hidden --no-ignore` is rejected |
 | AGENTS.md or governance/compat files changed without authorization | `check_core_guard_self_protection.py` | Include Core Guard Self-Protection Authorization block in a docs/reviews/, docs/work_orders/, or AGENT_HANDOFF*.md file in the same changed set |
 | Provider-specific memory file cited as CVF source authority | `check_work_order_dispatch_quality.py`; manual review | Use only CVF-governed surfaces; re-verify against runtime source before promoting any claim |
+| INDEX artifact missing required metadata block | `governance/compat/check_index_classification.py` | Any artifact that declares `INDEX type:` must also include all seven required fields: `INDEX type:`, `Source authority:`, `Status:`, `Date:`, `Human-reviewable:`, `Claim boundary:`, `Public Export Disposition:` |
 
 ## Claim Boundary
 
@@ -151,3 +152,5 @@ still control.
 - `governance/compat/run_worker_return_fast_gate.py` - worker-return fast gate
 - `governance/compat/run_agent_autorun_workflow_gate.py` - pre-dispatch gate
 - `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` - external knowledge intake routing
+- `governance/compat/check_index_classification.py` - INDEX classification gate (INDEX-T1)
+- `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` - accepted forward-only INDEX classification standard

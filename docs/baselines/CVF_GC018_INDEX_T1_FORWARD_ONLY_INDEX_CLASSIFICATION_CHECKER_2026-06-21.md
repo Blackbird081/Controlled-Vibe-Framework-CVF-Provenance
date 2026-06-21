@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-21
 
@@ -16,10 +16,10 @@ Authorize a small post-MPI-T0 checker tranche that promotes the INDEX
 classification standard from packet-bound policy to machine-enforced
 governance for future CVF classification artifacts and agent handoffs.
 
-This baseline is released for worker execution after MPI-T0 and MPI-T1
-reviewer closure. The accepted INDEX standard exists, the operator selected
-INDEX-T1 on 2026-06-21, and implementation remains bounded to the checker
-tranche described below.
+This baseline is closed after worker execution and reviewer repair. The
+accepted INDEX standard exists, INDEX-T1 implementation remains bounded to the
+checker tranche described below, and no runtime/provider/public scope was
+opened.
 
 ## Authority Chain
 
@@ -44,9 +44,10 @@ tranche described below.
 | MPI-T1 operator selection evidence | `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`; status `CLOSED_PASS_BOUNDED`; next action permits INDEX-T1 selection | RELEASED |
 | INDEX-T1 source verification refresh | this baseline and matching work order cite the accepted INDEX standard sections after release | RELEASED |
 
-Worker execution is now authorized in `WORKER_MUST_NOT_COMMIT` mode. The
-worker must still keep all changes within the allowed scope and return
-uncommitted artifacts for reviewer closure.
+Worker execution returned `COMPLETE_PENDING_REVIEW` in
+`WORKER_MUST_NOT_COMMIT` mode. Reviewer closure accepted the bounded checker
+after adding one focused `IDX-10` prefix-collision regression test and exact
+INDEX type matching.
 
 ## External Knowledge Intake Routing
 
@@ -99,7 +100,7 @@ uncommitted artifacts for reviewer closure.
 
 | Routing lane | Disposition |
 |---|---|
-| DO_NOW | Dispatch the released INDEX-T1 baseline/work order to a worker. |
+| DO_NOW | CLOSED_PASS_BOUNDED - checker implemented, tested, wired, and reviewed. |
 | SEPARATE_RUNTIME_TRANCHE | Runtime Memory, vector, graph, adapter, provider/live, and public-sync work remain out of scope. |
 | STRATEGIC_OPERATOR_DECISION | SATISFIED - operator selected INDEX-T1 from the MPI-T1 completion checkpoint. |
 | OUT_OF_SCOPE | Legacy rescan, direct runtime promotion, public claim, and universal-control claims. |
@@ -188,9 +189,9 @@ Tranche ID: `INDEX-T1`
 
 Name: `Forward-Only INDEX Classification Checker`
 
-Dependency status: `RELEASED_FOR_WORKER`
+Dependency status: `CLOSED_PASS_BOUNDED`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: `WORKER_MUST_NOT_COMMIT` during worker execution; reviewer/closer owns closure commit
 
 Primary worker return:
 
@@ -198,7 +199,7 @@ Primary worker return:
 
 ## Required Future Checks
 
-Worker must run:
+Worker/reviewer checks:
 
 ```powershell
 git rev-parse --short HEAD
@@ -208,8 +209,8 @@ python governance/compat/check_index_classification.py --base <executionBaseHead
 python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_index_classification.py
 ```
 
-Reviewer/closer may add stricter pre-closure and commit steward gates after the
-worker return is accepted.
+Reviewer/closer added one regression test and reran focused gates before
+closure.
 
 ## Evidence / Verification
 
@@ -218,7 +219,7 @@ worker return is accepted.
 | Dispatch quality | `python governance/compat/check_work_order_dispatch_quality.py --base 8ce1fd86 --head HEAD --enforce` | required for dispatch packet |
 | Core guard authorization | `python governance/compat/check_core_guard_self_protection.py --base 8ce1fd86 --head HEAD --enforce` | required for protected-path authorization |
 | Pre-dispatch autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 8ce1fd86 --head HEAD` | required before claiming packet-ready |
-| Worker checks | commands listed in Required Future Checks | required after worker implementation |
+| Worker checks | commands listed in Required Future Checks | PASS - 40 unittest tests; checker compliant; worker-return fast gate passed |
 
 ## Public Export Disposition
 
@@ -229,8 +230,7 @@ public-facing claim, or public repository mutation is authorized.
 
 ## Claim Boundary
 
-This GC-018 baseline authorizes only the released INDEX-T1 checker tranche. It
-does not claim that INDEX is already machine-enforced, and does not authorize
-runtime Memory, legacy rescan, provider/live, public-sync, CLI/MCP adapter,
-vector DB, graph persistence, interception, queue, daemon, watcher, or
-universal governed-coding control.
+This GC-018 baseline closes only the INDEX-T1 static checker tranche. It does
+not claim runtime Memory enforcement, legacy rescan, provider/live,
+public-sync, CLI/MCP adapter behavior, vector DB, graph persistence,
+interception, queue, daemon, watcher, or universal governed-coding control.

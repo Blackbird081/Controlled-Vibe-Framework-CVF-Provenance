@@ -123,6 +123,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_rescan_intelligence_hardening.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "index classification",
+        ["python", "governance/compat/check_index_classification.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "corpus scan registry",
         ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

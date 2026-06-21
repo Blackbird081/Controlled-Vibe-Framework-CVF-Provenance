@@ -3,6 +3,8 @@
 Memory class: POINTER_RECORD
 
 Status: ACTIVE_INDEX
+EPISTEMIC_PROCESS_NA_WITH_REASON: pointer-record folder index; no evidence claims or source-backed assertions are made.
+
 
 docType: reference
 
@@ -98,6 +100,7 @@ Then read addenda only when the work order type requires them:
 | `WORKER_MAY_COMMIT` or `WORKER_MUST_NOT_COMMIT` | Finality and Review Conversion Addendum |
 | Scan / classify / corpus / route / close / handoff | Machine Closure Package Addendum |
 | High-evidence findings, claim updates, benchmarks | Epistemic Process Block Addendum |
+| INDEX-tranche work orders (GC-018 for `INDEX type:` artifacts) | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md`; `governance/compat/check_index_classification.py` |
 
 ## Archive Policy
 
