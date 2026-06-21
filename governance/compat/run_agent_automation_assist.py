@@ -25,7 +25,7 @@ import argparse
 import json
 import re
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 try:
@@ -472,6 +472,7 @@ class SignalReadoutItem:
     next_suggested_action: str
     blocking: bool
     reason: str
+    latency_guard_disposition: str = ""
 
 
 @dataclass
@@ -538,6 +539,7 @@ class AssistReport:
                     "nextSuggestedAction": item.next_suggested_action,
                     "blocking": item.blocking,
                     "reason": item.reason,
+                    "latencyGuardDisposition": item.latency_guard_disposition,
                 }
                 for item in self.signal_readout
             ],
@@ -547,6 +549,28 @@ class AssistReport:
 # LSC-T3: outcome vocabulary constants used in advisory signal readout items.
 _LSC_T4_READOUT_ONLY = "READOUT_ONLY"
 _LSC_T4_CHECKER_CANDIDATE = "CHECKER_CANDIDATE"
+
+# LSC-T5/T7: latency guard disposition constants derived from LSC-T4 outcome vocabulary.
+_LSC_T5_T7_FAST_PATH = "FAST_PATH"
+_LSC_T5_T7_GOVERNED_PROMOTION = "GOVERNED_PROMOTION"
+_LSC_T5_T7_BLOCKER_PENDING_EVIDENCE = "BLOCKER_PENDING_EVIDENCE"
+_LSC_T5_T7_FAST_OUTCOMES = frozenset({_LSC_T4_READOUT_ONLY, "WATCH_FOR_REPEAT"})
+_LSC_T5_T7_BLOCKER_OUTCOMES = frozenset({"CLOSURE_BLOCKER"})
+
+
+def _derive_latency_guard_disposition(recommended_outcome: str) -> str:
+    """LSC-T5/T7: derive latencyGuardDisposition from LSC-T4 recommendedOutcome.
+
+    Advisory only. Does not enforce latency, block closure, or run gates.
+    FAST_PATH: routine readout-only signals; no additional gate cost.
+    GOVERNED_PROMOTION: proposal candidates route through RT2/RT3/MLW3 pipeline.
+    BLOCKER_PENDING_EVIDENCE: source-backed LSC-T4 CLOSURE_BLOCKER only.
+    """
+    if recommended_outcome in _LSC_T5_T7_FAST_OUTCOMES:
+        return _LSC_T5_T7_FAST_PATH
+    if recommended_outcome in _LSC_T5_T7_BLOCKER_OUTCOMES:
+        return _LSC_T5_T7_BLOCKER_PENDING_EVIDENCE
+    return _LSC_T5_T7_GOVERNED_PROMOTION
 
 
 def _build_signal_readout(
@@ -636,7 +660,10 @@ def _build_signal_readout(
             blocking=False,
             reason="worker-experience retrospective token missing or malformed in worker-return artifact",
         ))
-    return tuple(items)
+    return tuple(
+        replace(item, latency_guard_disposition=_derive_latency_guard_disposition(item.recommended_outcome))
+        for item in items
+    )
 
 
 def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
@@ -803,7 +830,7 @@ def _print_human(report: AssistReport) -> None:
         for item in report.signal_readout:
             blocker_tag = " [BLOCKER]" if item.blocking else ""
             print(f"  [{item.severity.upper()}]{blocker_tag} {item.source_path} ({item.source_surface})")
-            print(f"    outcome: {item.recommended_outcome}")
+            print(f"    outcome: {item.recommended_outcome} [{item.latency_guard_disposition}]")
             print(f"    next: {item.next_suggested_action}")
     else:
         print("\nLearning Signal Readout (LSC-T3): no helper-detectable signals for current changed set.")

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-21
 
@@ -241,6 +241,11 @@ Allowed scope:
 - define bridge eligibility, proposal-only Learning Plane routing, `EVALUATED`
   mapping to MLW5/MLW6, latency guard rules, fast-path no-blocker behavior,
   and mutation boundary.
+- update `docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md`
+  status and closure evidence as reviewer/closer only;
+- update this work order status and closure evidence as reviewer/closer only;
+- create `docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md`
+  as reviewer/closer only.
 
 Reviewer/closer closure scope:
 
@@ -415,18 +420,18 @@ Reviewer/closer closure evidence must resolve these items:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_FOR_WORKER_2026-06-21.md` | status updated by reviewer/closer after accepted worker return | PENDING_WORKER_RETURN |
-| GC-018 status | `docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md` | status updated by reviewer/closer after accepted worker return | PENDING_WORKER_RETURN |
-| Worker return | `docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_WORKER_RETURN_2026-06-21.md` | `Status: COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | `docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md` | reviewer-owned final disposition | PENDING_REVIEWER |
-| Roadmap state | `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md` | roadmap remains governing LSC-T0 plan; row closure updated only by reviewer/closer if authorized | PENDING_REVIEWER |
-| Reference front door | `docs/reference/learning_signal_chain/README.md` | LSC-T5/T7 row present after worker return | PENDING_WORKER_RETURN |
-| Reference contract | `docs/reference/learning_signal_chain/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD.md` | contract exists after worker return | PENDING_WORKER_RETURN |
-| Helper implementation | `governance/compat/run_agent_automation_assist.py` | focused read-only helper/latency change or N/A_WITH_REASON | PENDING_WORKER_RETURN |
-| Focused tests | `governance/compat/test_run_agent_automation_assist.py` | focused tests pass if helper changed | PENDING_WORKER_RETURN |
-| Session continuity | active session front-door/state/handoff after material commit | session-sync follows material closure commit only if accepted | PENDING_REVIEWER |
-| Registry JSON | N/A with reason: no generated JSON registry created or changed by LSC-T5/T7 dispatch | no registry mutation | N/A with reason |
-| Registry Markdown | N/A with reason: no generated Markdown index created in LSC-T5/T7 dispatch | no generated Markdown registry | N/A with reason |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_FOR_WORKER_2026-06-21.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer/closer patch | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer/closer patch | PASS |
+| Worker return | `docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_WORKER_RETURN_2026-06-21.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md` | reviewer-owned final disposition `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md` | roadmap top `Status: LSC_T1_DISPATCH_READY`; roadmap remains governing LSC-T0 plan | PASS |
+| Reference front door | `docs/reference/learning_signal_chain/README.md` | LSC-T5/T7 row present | PASS |
+| Reference contract | `docs/reference/learning_signal_chain/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| Helper implementation | `governance/compat/run_agent_automation_assist.py` | read-only `latencyGuardDisposition` helper field accepted | PASS |
+| Focused tests | `governance/compat/test_run_agent_automation_assist.py` | focused tests pass: 53/53 | PASS |
+| Session continuity | active session front-door/state/handoff after material commit | session-sync follows material closure commit | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; `python governance/compat/generate_corpus_scan_registry.py --check` PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | unchanged; no per-entry registry source changed in LSC-T5/T7 | PASS |
 | External evidence digest | N/A with reason: no external benchmark/provider/live digest created | reference/helper closure only | N/A with reason |
 | System loop interlock | N/A with reason: no runtime/source interlock changed by dispatch | no runtime/source mutation by dispatch | N/A with reason |
 
@@ -436,8 +441,8 @@ Reviewer/closer closure evidence must resolve these items:
 |---|---|---|
 | Runtime receipt evidence | N/A with reason: LSC-T5/T7 dispatch creates no runtime receipt | N/A_WITH_REASON |
 | Query acceptance evidence | N/A with reason: LSC-T5/T7 dispatch performs no query acceptance | N/A_WITH_REASON |
-| Worker-return acceptance | pending worker return | PENDING_WORKER_RETURN |
-| Closure claim | no closure claim at dispatch | N/A_WITH_REASON |
+| Worker-return acceptance | worker return present and accepted by reviewer/closer | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` bridge/latency reference and read-only helper closure | PASS |
 
 ## Return-To-Orchestrator Conditions
 

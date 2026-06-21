@@ -732,5 +732,101 @@ class SignalReadoutTests(unittest.TestCase):
             )
 
 
+class BridgeLatencyGuardTests(unittest.TestCase):
+    """LSC-T5/T7: latency guard disposition derived from LSC-T4 outcome; no mutation, no blocker inflation."""
+
+    def _empty_plan_patch(self):
+        return mock.patch.object(assist, "build_path_plan", return_value=_plan())
+
+    def test_readout_only_outcome_gives_fast_path_disposition(self):
+        """READOUT_ONLY outcome must derive FAST_PATH latencyGuardDisposition (LSC-T5/T7)."""
+        self.assertEqual(
+            assist._derive_latency_guard_disposition("READOUT_ONLY"),
+            assist._LSC_T5_T7_FAST_PATH,
+        )
+
+    def test_watch_for_repeat_outcome_gives_fast_path_disposition(self):
+        """WATCH_FOR_REPEAT outcome must derive FAST_PATH latencyGuardDisposition (LSC-T5/T7)."""
+        self.assertEqual(
+            assist._derive_latency_guard_disposition("WATCH_FOR_REPEAT"),
+            assist._LSC_T5_T7_FAST_PATH,
+        )
+
+    def test_closure_blocker_outcome_gives_blocker_pending_evidence(self):
+        """CLOSURE_BLOCKER must derive BLOCKER_PENDING_EVIDENCE; not FAST_PATH or GOVERNED_PROMOTION."""
+        self.assertEqual(
+            assist._derive_latency_guard_disposition("CLOSURE_BLOCKER"),
+            assist._LSC_T5_T7_BLOCKER_PENDING_EVIDENCE,
+        )
+
+    def test_checker_candidate_outcome_gives_governed_promotion(self):
+        """CHECKER_CANDIDATE must derive GOVERNED_PROMOTION latencyGuardDisposition (LSC-T5/T7)."""
+        for outcome in ("CHECKER_CANDIDATE", "RULE_CANDIDATE", "WORK_ORDER_CANDIDATE", "GOVERNANCE_PROPOSAL_CANDIDATE"):
+            self.assertEqual(
+                assist._derive_latency_guard_disposition(outcome),
+                assist._LSC_T5_T7_GOVERNED_PROMOTION,
+                f"expected GOVERNED_PROMOTION for {outcome}",
+            )
+
+    def test_json_output_has_latency_guard_disposition_key(self):
+        """--json signalReadout items must include latencyGuardDisposition key (LSC-T5/T7)."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--json"])
+        self.assertEqual(rc, 0)
+        payload = json.loads(buf.getvalue())
+        self.assertIn("signalReadout", payload)
+        for item in payload["signalReadout"]:
+            self.assertIn("latencyGuardDisposition", item, "missing latencyGuardDisposition key")
+            self.assertIn(
+                item["latencyGuardDisposition"],
+                {assist._LSC_T5_T7_FAST_PATH, assist._LSC_T5_T7_GOVERNED_PROMOTION, assist._LSC_T5_T7_BLOCKER_PENDING_EVIDENCE},
+            )
+
+    def test_readout_items_latency_guard_disposition_never_empty(self):
+        """latency_guard_disposition must never be empty string for helper-produced items (LSC-T5/T7)."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        for item in report.signal_readout:
+            self.assertNotEqual(item.latency_guard_disposition, "", "latency_guard_disposition must not be empty")
+
+    def test_no_learning_plane_mutation_on_empty_set(self):
+        """Empty changed set must produce empty readout with no mutation (LSC-T5/T7 mutation boundary)."""
+        with self._empty_plan_patch():
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.signal_readout, ())
+        self.assertEqual(report.defects, [])
+
+    def test_routine_items_do_not_inflate_blockers(self):
+        """Routine helper-produced items must not produce BLOCKER_PENDING_EVIDENCE (LSC-T5/T7 fast-path rule)."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-20.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        for item in report.signal_readout:
+            self.assertNotEqual(
+                item.latency_guard_disposition,
+                assist._LSC_T5_T7_BLOCKER_PENDING_EVIDENCE,
+                f"routine item must not produce BLOCKER_PENDING_EVIDENCE: {item.source_path}",
+            )
+
+
 if __name__ == "__main__":
     unittest.main()
