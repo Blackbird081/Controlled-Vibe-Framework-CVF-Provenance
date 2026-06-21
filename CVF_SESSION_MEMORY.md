@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-21
 
-Current mode marker: `lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`
+Current mode marker: `mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`.
+Current mode: `mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`.
 
-Previous mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`.
+Previous mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`.
 
 Active handoff:
 
@@ -457,20 +457,33 @@ readiness, full-hook equivalence, cost optimization claim, latency enforcement,
 RT2/RT3 runtime source edits, MLW reference edits, or universal
 governed-coding-control claim.
 
+MPI-T1 Memory Plane Front-Door Map is `CLOSED_PASS_BOUNDED` at material commit
+`24f3b958`. The batch closes MPI-T0 INDEX Legacy Memory/Graph Recheck, creates
+the forward-only INDEX standard, keeps INDEX-T1 parked for operator selection,
+and creates `docs/reference/CVF_MEMORY_PLANE_MAP.md` as the active Memory Plane
+POINTER_RECORD map. Reviewer correction applied: BLI-01 Graphify is 5/5 files
+and `Thong_tin.md` is `ACCEPT_AS_INDEX_INPUT`; worker-skipped required reads
+were supplemented before acceptance. Boundary: documentation/reference only; no
+runtime projection, route/helper/schema/test edit, registry write, durable
+write, provider/live proof, public-sync, CLI/MCP adapter behavior, readiness,
+or universal governed-coding-control claim.
+
 ## Next Allowed Move
 
-Mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`.
+Mode: `mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`.
 
-Next allowed move: operator checkpoint to select the next governed lane or
-explicitly authorize a fresh governed work order. LSC-T1/T2/T3/T4/T5/T6/T7
-foundation contracts are closed bounded, with LSC-T5/T7 closed as the combined
-bridge and latency guard tranche.
+Next allowed move: operator checkpoint to select MPI-T2 Scan Registry Episodic
+Read Projection, MPI-T3 External Agent Memory Read Contract, INDEX-T1
+Forward-Only INDEX Classification Checker, or hold. MPI-T2/T3/T4 and INDEX-T1
+remain parked until separately authorized through fresh governed work-order
+scope.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
 verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
+runtime projection, readout route changes, registry write,
 ledger/generator/durable-store work, AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7/8,
 and universal governed-coding claims. LHW24 remains the latest closed numbered
 LHW wave.

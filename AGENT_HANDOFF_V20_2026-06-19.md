@@ -35,15 +35,15 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize LSC-T5/T7 material closure
-commit `03fe8ca2`, generated active state, compact session memory, active
-handoff, and the next allowed move operator checkpoint.
+Authorized guard-maintenance scope: synchronize MPI-T1 material closure commit
+`24f3b958`, generated active state, compact session memory, active handoff, and
+the next allowed move operator checkpoint.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime, MCP execution, watcher/daemon, benchmark, provider/live,
 direct-interception, ACE-R1, CGE-T3, MLW7/8, automated provider selection,
 runtime provider routing, AAF-T6, AAF-T7, checker/helper/generator build,
-CLI/MCP adapter behavior, Learning Plane runtime mutation, or public-sync
-scope.
+CLI/MCP adapter behavior, Learning Plane runtime mutation, Memory readout
+projection, registry write, durable write, or public-sync scope.
 
 Protected paths:
 
@@ -155,19 +155,20 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select the next governed lane or explicitly authorize a fresh governed work order; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, ledger/generator/durable-store work, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select MPI-T2, MPI-T3, INDEX-T1, or hold; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, runtime projection, registry write, ledger/generator/durable-store work, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`lsc_t5_t7_learning_plane_bridge_latency_guard_closed_operator_checkpoint`
+`mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`
 
-Current HEAD recorded for this handoff: `03fe8ca2`
+Current HEAD recorded for this handoff: `24f3b958`
 
 Material state:
 
 - LSC-T6 closure commit: `65af6db3`
 - LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
 - LSC-T5/T7 closure commit: `03fe8ca2`
+- MPI-T1 Memory Plane Front-Door Map material commit: `24f3b958`
 - LSC-T5/T7 dispatch commit: `7bcdcc31`
 - LSC-T3 closure commit: `fd70157a`
 - Delta-T3 dispatch commit: `aafcdfda`
@@ -513,48 +514,50 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after LSC-T5/T7 closure:
+Current pointer after MPI-T1 closure:
 
-LSC-T5/T7 Learning Plane Bridge And Latency Guard is `CLOSED_PASS_BOUNDED` at
-material closure commit `03fe8ca2`, after material dispatch commit `7bcdcc31`
-and dispatch continuity commit `eff8ce94`.
+MPI-T1 Memory Plane Front-Door Map is `CLOSED_PASS_BOUNDED` at material commit
+`24f3b958`. The batch closes MPI-T0 INDEX Legacy Memory/Graph Recheck, creates
+the forward-only INDEX standard, keeps INDEX-T1 parked for operator selection,
+and creates `docs/reference/CVF_MEMORY_PLANE_MAP.md` as the active Memory Plane
+POINTER_RECORD map.
 
 Accepted artifacts:
-`docs/reference/learning_signal_chain/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD.md`,
-`docs/reference/learning_signal_chain/README.md`,
-`governance/compat/run_agent_automation_assist.py`,
-`governance/compat/test_run_agent_automation_assist.py`,
-`docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_WORKER_RETURN_2026-06-21.md`,
-`docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md`,
-`docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md`
+`docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md`,
+`docs/reference/CVF_MEMORY_PLANE_MAP.md`,
+`docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md`,
+`docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md`,
+`docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`,
+`docs/work_orders/CVF_WO_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_2026-06-21.md`,
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_FOR_WORKER_2026-06-21.md`.
+`docs/work_orders/CVF_WO_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_2026-06-21.md`.
 
-Result: the LSC bridge/latency reference is active and the read-only AAF helper
-emits bounded `latencyGuardDisposition` readout values without runtime
-Learning Plane mutation. Evidence: focused unittest PASS 53/53, AAF helper
-PASS with `resolvedMode=reviewer-return`, `defects=[]`, and `signalReadout=[]`,
-worker-return fast gate PASS with focused pytest 53/53 and reviewer-fast 32/32,
-reviewer-return steward PASS, material pre-commit hook PASS 55/55, and material
-commit hook PASS 55/55.
+Result: the Memory Plane now has a source-verified front-door map separating
+human-reviewable governed records from bounded readout/retrieval surfaces.
+Reviewer correction applied: BLI-01 Graphify is 5/5 files and `Thong_tin.md`
+is `ACCEPT_AS_INDEX_INPUT`; worker-skipped first reads were supplemented before
+acceptance. Evidence: worker-return fast gate PASS, reviewer-fast PASS,
+reviewer-return commit steward PASS, material pre-commit hook PASS 55/55, and
+material commit `24f3b958`.
 
-Next allowed move: operator checkpoint to select the next governed lane or
-explicitly authorize a fresh governed work order. LSC-T1/T2/T3/T4/T5/T6/T7
-foundation contracts are closed bounded, with LSC-T5/T7 closed as the combined
-bridge and latency guard tranche.
+Next allowed move: operator checkpoint to select MPI-T2 Scan Registry Episodic
+Read Projection, MPI-T3 External Agent Memory Read Contract, INDEX-T1
+Forward-Only INDEX Classification Checker, or hold. MPI-T2/T3/T4 and INDEX-T1
+remain parked until separately authorized through fresh governed work-order
+scope.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
 hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent Coding Evidence
 Replay Roadmap, MLW7, and MLW8 parked unless separately authorized. Do not open
-ledger store, source directory, generator, drift checker, durable store,
-runtime Learning Plane mutation, provider/live proof, public-sync,
-wrapper/proxy enforcement, direct IDE/shell/git/filesystem interception,
-arbitrary command execution, EDIT/COMMIT execution, queue/daemon, watcher,
-readiness, full-hook equivalence, cost optimization claim, latency enforcement,
-or universal governed-coding-control claim, actual CLI/MCP adapter behavior,
-RT2/RT3 runtime source edits, MLW reference edits, or broader Learning Plane
-runtime work without fresh governed
-authorization. Public repo work, if later authorized, must use the
+runtime projection, readout route changes, helper/test/schema/runtime edits,
+registry write, durable write, ledger store, source directory, generator, drift
+checker, provider/live proof, public-sync, wrapper/proxy enforcement, direct
+IDE/shell/git/filesystem interception, arbitrary command execution,
+EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook equivalence,
+cost optimization claim, latency enforcement, or universal
+governed-coding-control claim, actual CLI/MCP adapter behavior, RT2/RT3 runtime
+source edits, MLW reference edits, or broader Learning Plane runtime work
+without fresh governed authorization. Public repo work, if later authorized, must use the
 sibling public-sync clone with remote verification; do not push public changes
 from the provenance workspace.
 
@@ -827,20 +830,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | LSC-T5/T7 closure session sync, 2026-06-21 |
+| Session or invocation | MPI-T1 Memory Plane Front-Door Map session sync, 2026-06-21 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | LSC-T5/T7 closure session-sync manifest |
-| Allowed scope source | LSC-T5/T7 closure commit `03fe8ca2` |
-| Before status evidence | material closure commit `03fe8ca2` with session surfaces still pointing to LSC-T5/T7 dispatched/waiting for worker return |
-| After status evidence | state, memory, and handoff record LSC-T5/T7 closed and next move operator checkpoint |
+| Target paths | MPI-T1 closure session-sync manifest |
+| Allowed scope source | MPI-T1 material commit `24f3b958` |
+| Before status evidence | material commit `24f3b958` with session surfaces still pointing to LSC-T5/T7 checkpoint |
+| After status evidence | state, memory, and handoff record MPI-T1 closed and next move operator checkpoint |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | closure session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, further LSC-T5/T7 implementation by session-sync steward, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
+| Approval boundary | closure session continuity only; no runtime, provider, live, AAF-T6, AAF-T7, MPI-T2/T3/T4 execution, INDEX-T1 execution, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `lsc-t5-t7-closure-session-sync-2026-06-21` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardClosure20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lscT5T7LearningPlaneBridgeLatencyGuardClosure20260621.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `mpi-t1-memory-plane-front-door-map-session-sync-2026-06-21` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
