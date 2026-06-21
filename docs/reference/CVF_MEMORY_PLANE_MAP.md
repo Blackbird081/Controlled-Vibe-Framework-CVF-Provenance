@@ -67,7 +67,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 | LPF Memory runtime readout route | IDX-4 RUNTIME_READOUT | RUNNING | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts` | POST /api/memory/readout; service-token OR session auth |
 | LPF Memory readout projection | IDX-4 support layer | RUNNING (paired with route) | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/memory-runtime-readout.ts` | called by readout route only |
 | LPF durable store | (future IDX-4 input) | CONTRACT_ONLY (present, fail-closed, UNWIRED) | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | not wired; no active read/write route |
-| Corpus Scan Registry / GC-051 | IDX-1 CORPUS_FAMILY_INDEX | RUNNING (generated aggregate) | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` from `registry/entries/*.json` | read directly; NOT reachable via Memory readout (MPI-T2 parked) |
+| Corpus Scan Registry / GC-051 | IDX-1 CORPUS_FAMILY_INDEX | RUNNING (generated aggregate) | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` from `registry/entries/*.json` | read directly; read-only projection into Memory readout candidates available via MPI-T2 helper `scan-registry-memory-projection.ts` (not yet route-wired) |
 | LSC signal reference and helper readout | (signal reference; adapterContractOnly) | RUNNING helper stdout; CONTRACT_ONLY adapter | `docs/reference/learning_signal_chain/`; `governance/compat/run_agent_automation_assist.py` | Python stdout only; adapterContractOnly=true |
 | docs/ GC-022 memory records | IDX-6 (absorption/review records) | RUNNING (human read) | `docs/reference/CVF_MEMORY_RECORD_CLASSIFICATION.md` | read directly by agents and humans; GC-023 applies |
 | Governed docs and active markdown | IDX-2 PLANE_OWNER_MAP support | RUNNING (human read, source-of-truth) | GC-023: `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md` | read directly; NOT the fast retrieval layer |
@@ -105,7 +105,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 - **Standard:** `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`.
 - **Rule 1 (inherit-before-rescan):** read registry before scanning; inherit prior state if SCANNED/DEEP_CLASSIFIED. Source: GC-051 standard lines 209-220.
 - **Finding Discovery rule:** read all findings[] before working in the same corpus area.
-- **Read projection:** NOT YET connected to Memory readout surface -- parked as MPI-T2; separate GC-018 required.
+- **Read projection:** MPI-T2 helper `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/scan-registry-memory-projection.ts` projects findings into Memory readout candidate-compatible summary records (read-only, derived view, no registry write, no route edit). Contract: `docs/reference/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION.md`. The helper produces candidates usable by `buildMemoryRuntimeReadout`; it is NOT yet wired into the route as an automatic data source (route wiring remains a separate later tranche).
 - **Do not hand-edit aggregate:** add/update per-entry source, then run generate_corpus_scan_registry.py.
 
 ### Learning Signal Chain Reference And Helper Readout
@@ -146,7 +146,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 | LPF durable store | CONTRACT_ONLY (present, fail-closed, UNWIRED) | write() exists with gates; not wired into any route |
 | LSC-T6 CLI/MCP adapter | CONTRACT_ONLY | adapterContractOnly=true; no adapter implementation |
 | CI1-T11 / MLW0 / MLW1-MLW6 | CLOSED (predecessor authority) | absorption closed; cite as authority, not as runtime |
-| Scan-registry read projection | PARKED (MPI-T2) | not wired; separate GC-018 required after MPI-T1 |
+| Scan-registry read projection | RUNNING (helper) | MPI-T2 helper `scan-registry-memory-projection.ts` produces readout-compatible candidates; deterministic, read-only, derived view; not auto-wired into the route |
 | External read contract (LSC read side) | PARKED (MPI-T3) | not defined; separate GC-018 after MPI-T1 |
 | Federated helper | PARKED (MPI-T4) | not implemented; separate GC-018 after MPI-T1 |
 
@@ -156,7 +156,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 |---|---|---|
 | MPI-T0 | INDEX legacy memory/KGR/graph recheck; INDEX classification standard | CLOSED_PASS_BOUNDED (2026-06-21) |
 | MPI-T1 | Memory Plane front-door map (this document) | CLOSED_PASS_BOUNDED; reviewer correction applied |
-| MPI-T2 | Scan-registry read projection through Memory readout surface | PARKED -- separate GC-018 required |
+| MPI-T2 | Scan-registry read projection through Memory readout surface | HELPER IMPLEMENTED (pending reviewer closure); read-only derived view, not route-wired |
 | MPI-T3 | External-agent read contract (read side mirroring LSC-T6) | PARKED -- separate GC-018 required |
 | MPI-T4 | Federated helper for memory + scan-registry federated read | PARKED -- separate GC-018 required |
 

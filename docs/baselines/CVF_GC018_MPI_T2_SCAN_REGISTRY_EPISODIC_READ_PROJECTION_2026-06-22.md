@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -200,7 +200,7 @@ function over parsed data is preferred.
 | Delta category | Evidence |
 |---|---|
 | UNCHANGED_FROM_INTAKE | `rawMemoryReleased=false`, `canReinject=false`, and RAW sentinel remain inherited from existing readout surface. |
-| CHANGED_DISPOSITION | MPI-T2 projection moves from PARKED to DISPATCHED_TO_WORKER. |
+| CHANGED_DISPOSITION | MPI-T2 projection moved from PARKED to CLOSED_PASS_BOUNDED helper/reference closure. |
 | NEW_FINDING | The existing route already accepts sanitized candidate inputs, so a pure helper can project registry findings without route schema edits. |
 | REMOVED_OR_REJECTED | Direct route edit, registry write, generator mutation, provider/live proof, public-sync, and adapter behavior remain rejected. |
 

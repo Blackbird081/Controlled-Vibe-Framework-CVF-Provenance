@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -19,7 +19,7 @@ Role: Worker. Reviewer/closer is a separate role after worker return.
 Canonical packet:
 `docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`
 
-Current status: `DISPATCHED_TO_WORKER`. Dependencies released by MPI-T1 closure
+Current status: `CLOSED_PASS_BOUNDED`. Dependencies released by MPI-T1 closure
 artifact `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`
 at material commit `24f3b958` and INDEX-T1 closure artifact
 `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md`
@@ -552,16 +552,27 @@ Reviewer/closer closure evidence must resolve these items:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: DISPATCHED_TO_WORKER` | PASS_FOR_DISPATCH |
-| GC-018 status | `docs/baselines/CVF_GC018_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` | PASS_FOR_DISPATCH |
-| Worker return | `docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_WORKER_RETURN_2026-06-22.md` | worker-owned return after execution | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_COMPLETION_2026-06-22.md` | reviewer-owned after worker return | PENDING_REVIEWER |
-| Roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | MPI-T2 row updated to dispatch | PASS_FOR_DISPATCH |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation authorized | N/A with reason |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry Markdown mutation authorized | N/A with reason |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_WORKER_RETURN_2026-06-22.md` | worker-owned return accepted by reviewer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_COMPLETION_2026-06-22.md` | reviewer-owned completion review | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | MPI-T2 row updated to closure | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry Markdown mutation; no generated Markdown registry required by MPI-T2 | PASS |
 | External evidence digest | N/A | no external evidence digest created | N/A with reason |
 | System loop interlock | N/A | no system-loop behavior changed by dispatch | N/A with reason |
-| Session continuity | active session front-door/state/handoff after material dispatch | session-sync follows material dispatch if accepted | PENDING_SESSION_SYNC |
+| Session continuity | active session front-door/state/handoff after material closure | session-sync follows material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: MPI-T2 creates no runtime receipt | N/A_WITH_REASON |
+| `rawMemoryReleased` | `false` through `buildMemoryRuntimeReadout` focused test | PASS |
+| `canReinject` | `false` through `buildMemoryRuntimeReadout` focused test | PASS |
+| Raw content release | no `content` field in projected candidates; no RAW sentinel leakage in serialized readout | PASS |
+| Route behavior | unchanged; no Memory readout route file in changed set | PASS |
+| Registry write | unchanged; no registry source, aggregate, Markdown, or generator path in changed set | PASS |
 
 ## Public Export Disposition
 
