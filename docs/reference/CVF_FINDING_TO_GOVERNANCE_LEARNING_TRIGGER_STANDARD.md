@@ -5,6 +5,10 @@ Memory class: POINTER_RECORD
 Status: canonical and machine-enforced standard for turning findings into
 governance/control-plane or runtime-learning follow-up.
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: routing/trigger standard - it defines learning
+dispositions and enforcement, not an evidence comparison verdict; no epistemic
+process block is required.
+
 ## Purpose
 
 This standard removes the human-reminder dependency from CVF learning loops.
@@ -131,6 +135,16 @@ This standard forces routing and disposition. It does not decide that every
 finding must become a machine check. Some findings are design-review items,
 some belong in runtime/data learning, and some are out of scope with an
 explicit reason.
+
+## Learning-To-Acceleration Extension
+
+F2G classifies the prevention direction of a finding. The Learning-To-
+Acceleration (L2A) standard adds an optional acceleration axis: whether a
+repeated finding can also become a safe helper, scaffold, patch preview, or
+template (or an explicit no-automation disposition). L2A consults F2G; it does
+not replace it or change F2G checker semantics. See
+`docs/reference/learning_to_acceleration/README.md` and
+`docs/reference/learning_to_acceleration/CVF_L2A_T0_LEARNING_TO_ACCELERATION_CLASSIFICATION_STANDARD.md`.
 
 ## Failure Modes
 
