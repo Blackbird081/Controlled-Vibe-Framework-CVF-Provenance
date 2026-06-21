@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-21
+Last updated: 2026-06-22
 
-Current mode marker: `index_t1_forward_only_index_checker_closed_operator_checkpoint`
+Current mode marker: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `index_t1_forward_only_index_checker_closed_operator_checkpoint`.
+Current mode: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`.
 
-Previous mode: `mpi_t1_memory_plane_front_door_map_closed_operator_checkpoint`.
+Previous mode: `index_t1_forward_only_index_checker_closed_operator_checkpoint`.
 
 Active handoff:
 
@@ -478,13 +478,23 @@ Baseline:
 Worker returned `COMPLETE_PENDING_REVIEW`; reviewer accepted after exact INDEX
 type matching repair and IDX-10 regression coverage.
 
+MPI-T2 Scan Registry Episodic Read Projection is `DISPATCHED_TO_WORKER` at
+material commit `8ae299f1`. Active packet:
+`docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`.
+Active baseline:
+`docs/baselines/CVF_GC018_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`.
+Worker mode is `WORKER_MUST_NOT_COMMIT`; worker must return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with uncommitted artifacts.
+
 ## Next Allowed Move
 
-Mode: `index_t1_forward_only_index_checker_closed_operator_checkpoint`.
+Mode: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`.
 
-Next allowed move: operator checkpoint to select MPI-T2 Scan Registry Episodic
-Read Projection, MPI-T3 External Agent Memory Read Contract, or hold. MPI-T4
-remains optional/parked until separately authorized through fresh governed
+Next allowed move: worker implements MPI-T2 exactly under
+`docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`,
+changes only the allowed scope named there, runs the required checks, and
+returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
+MPI-T3/MPI-T4 remain parked until separately authorized through fresh governed
 work-order scope.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
@@ -492,10 +502,10 @@ provider/live calls, public-sync push without Codex review and remote
 verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
-runtime projection, readout route changes, registry write,
-ledger/generator/durable-store work, AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7/8,
-and universal governed-coding claims. LHW24 remains the latest closed numbered
-LHW wave.
+Memory readout route edits, route schema changes, registry source or aggregate
+edits, durable writes, registry generator changes, AAF-T6, AAF-T7, CGE-T3,
+ACE-R1, MLW7/8, and universal governed-coding claims. LHW24 remains the latest
+closed numbered LHW wave.
 
 ## Active Rule Additions
 
