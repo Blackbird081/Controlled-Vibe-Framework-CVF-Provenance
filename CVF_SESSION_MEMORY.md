@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-21
 
-Current mode marker: `lsc_t6_external_agent_cli_mcp_signal_contract_closed_next_lsc_t5_t7_dispatch_ready`
+Current mode marker: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `lsc_t6_external_agent_cli_mcp_signal_contract_closed_next_lsc_t5_t7_dispatch_ready`.
+Current mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`.
 
-Previous mode: `lsc_t6_external_agent_cli_mcp_signal_contract_dispatched_to_worker`.
+Previous mode: `lsc_t6_external_agent_cli_mcp_signal_contract_closed_next_lsc_t5_t7_dispatch_ready`.
 
 Active handoff:
 
@@ -427,23 +427,44 @@ execution, EDIT/COMMIT execution, queue/daemon, watcher, readiness, full-hook
 equivalence, cost optimization claim, latency guard enforcement, or universal
 governed-coding-control claim.
 
+LSC-T5/T7 Learning Plane Bridge And Latency Guard is `DISPATCHED_TO_WORKER` at
+material dispatch commit `7bcdcc31`, from dispatch base `749dc791`. Dispatch
+artifacts:
+`docs/baselines/CVF_GC018_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_2026-06-21.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_FOR_WORKER_2026-06-21.md`.
+Worker route: `WORKER_MUST_NOT_COMMIT`; worker must return uncommitted
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Scope is limited to the
+LSC-T5/T7 reference contract, LSC reference front door, optional narrow
+read-only AAF helper/test fast-path, and worker-return artifact. Evidence:
+AAF helper PASS with defects `[]` and `signalReadout=[]`, dispatch-quality
+PASS, pre-dispatch autorun PASS 43/43, dispatch steward PASS, pre-commit hook
+PASS 55/55, and commit hook PASS 55/55. Boundary: no EXTENSIONS edits, RT2/RT3
+runtime source edits, MLW reference edits, session/handoff edits by worker,
+ledger store, source directory, generator, drift checker, durable store,
+runtime Learning Plane mutation, provider/live proof, public-sync, actual
+CLI/MCP adapter behavior, wrapper/proxy enforcement, direct IDE/shell/git/
+filesystem interception, arbitrary command execution, EDIT/COMMIT execution,
+queue/daemon, watcher, readiness, full-hook equivalence, cost optimization
+claim, or universal governed-coding-control claim.
+
 ## Next Allowed Move
 
-Mode: `lsc_t6_external_agent_cli_mcp_signal_contract_closed_next_lsc_t5_t7_dispatch_ready`.
+Mode: `lsc_t5_t7_learning_plane_bridge_latency_guard_dispatched_to_worker`.
 
-Next allowed move: create a fresh GC-018/source-verified work order for the
-LSC-T5/T7 bridge and latency guard roadmap area. Preserve LSC-T6's boundary:
-adapter-contract-only documentation/reference closure is complete, but actual
-CLI/MCP adapter behavior, runtime mutation, provider/live proof, public-sync,
-latency guard enforcement, and direct interception remain separately
-authorized work only.
+Next allowed move: wait for the LSC-T5/T7 worker to return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, uncommitted. Reviewer/
+closer must validate source fidelity, worker-return shape, scope, and gates
+before any accepted material commit or session sync.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
 verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
-claims, and universal governed-coding claims. LHW24 remains the latest closed
-numbered LHW wave.
+claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
+ledger/generator/durable-store work, AAF-T6, AAF-T7, CGE-T3, ACE-R1, MLW7/8,
+and universal governed-coding claims. LHW24 remains the latest closed numbered
+LHW wave.
 
 ## Active Rule Additions
 
