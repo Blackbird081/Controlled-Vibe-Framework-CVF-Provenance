@@ -35,11 +35,11 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize MPI-T2 dispatch commit
-`8ae299f1`, generated active state, compact session memory, active handoff, and
-the next allowed worker move.
+Authorized guard-maintenance scope: synchronize MPI-T2 closure commit
+`468ca3be`, generated active state, compact session memory, active handoff, and
+the next allowed operator checkpoint.
 This session sync does not open freeze, freeze release, posture mutation,
-runtime beyond the MPI-T2 dispatched worker helper scope, MCP execution,
+runtime beyond the closed MPI-T2 helper scope, MCP execution,
 watcher/daemon, benchmark, provider/live, direct-interception, ACE-R1, CGE-T3,
 MLW7/8, automated provider selection, runtime provider routing, AAF-T6, AAF-T7,
 route edit, route schema change, registry source or aggregate edit, durable
@@ -157,13 +157,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker implements MPI-T2 under the dispatched work order in `WORKER_MUST_NOT_COMMIT` mode and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, MPI-T3/MPI-T4, runtime/product behavior beyond MPI-T2 allowed helper scope, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator checkpoint to select MPI-T3 External Agent Memory Read Contract, hold, or authorize a fresh governed tranche; parked checkpoint=AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, MPI-T4, runtime/product behavior beyond MPI-T2 closed helper scope, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`
+`mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`
 
-Current HEAD recorded for this handoff: `8ae299f1`
+Current HEAD recorded for this handoff: `468ca3be`
 
 Material state:
 
@@ -171,6 +171,7 @@ Material state:
 - LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
 - LSC-T5/T7 closure commit: `03fe8ca2`
 - MPI-T1 Memory Plane Front-Door Map material commit: `24f3b958`
+- MPI-T2 Scan Registry Episodic Read Projection closure commit: `468ca3be`
 - MPI-T2 Scan Registry Episodic Read Projection dispatch commit: `8ae299f1`
 - INDEX-T1 closure commit: `993a8460`
 - INDEX-T1 dispatch commit: `64516525`
@@ -519,7 +520,7 @@ governed-coding-control claim.
 
 ## Next Allowed Move
 
-Current pointer after MPI-T2 dispatch:
+Current pointer after MPI-T2 closure:
 
 MPI-T1 Memory Plane Front-Door Map is `CLOSED_PASS_BOUNDED` at material commit
 `24f3b958`. The batch closes MPI-T0 INDEX Legacy Memory/Graph Recheck, creates
@@ -535,12 +536,9 @@ Completion review:
 Baseline:
 `docs/baselines/CVF_GC018_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`.
 
-MPI-T2 Scan Registry Episodic Read Projection is `DISPATCHED_TO_WORKER` at
-material commit `8ae299f1`. Active packet:
-`docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`.
-Active baseline:
-`docs/baselines/CVF_GC018_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`.
-Worker mode is `WORKER_MUST_NOT_COMMIT`.
+MPI-T2 Scan Registry Episodic Read Projection is `CLOSED_PASS_BOUNDED` at
+material closure commit `468ca3be`, after dispatch commit `8ae299f1` and
+session-sync base `71206a8d`.
 
 Accepted artifacts:
 `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md`,
@@ -552,6 +550,11 @@ Accepted artifacts:
 `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md`,
 `docs/baselines/CVF_GC018_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`,
 `docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`,
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/scan-registry-memory-projection.ts`,
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/scan-registry-memory-projection.test.ts`,
+`docs/reference/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION.md`,
+`docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_WORKER_RETURN_2026-06-22.md`,
+`docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_COMPLETION_2026-06-22.md`,
 `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`,
 `docs/work_orders/CVF_WO_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_2026-06-21.md`,
 and
@@ -569,17 +572,16 @@ steward dispatch PASS, governed file-size guard PASS, material pre-commit hook
 PASS 55/55, and material commit `64516525`. INDEX-T1 closure evidence:
 worker-return fast gate PASS with focused INDEX tests 40/40, corpus completeness
 and report integrity PASS, reviewer-return commit steward PASS, material
-pre-commit hook PASS 55/55, and material commit `993a8460`. MPI-T2 dispatch
-evidence: dispatch-quality PASS, pre-dispatch autorun PASS 44/44, commit
-steward dispatch PASS, material pre-commit hook PASS 55/55, and material commit
-`8ae299f1`.
+pre-commit hook PASS 55/55, and material commit `993a8460`. MPI-T2 closure
+evidence: focused Vitest PASS 3 files / 23 tests, `npm run check` PASS,
+worker-return fast gate PASS, reviewer-fast PASS 33/33, reviewer-return steward
+PASS, material pre-commit hook PASS 55/55, material commit `468ca3be`, and
+committed-range pre-closure content gates PASS with only expected
+session-continuity HEAD drift before this sync.
 
-Next allowed move: worker implements MPI-T2 exactly under
-`docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`,
-changes only the allowed scope named there, runs the required checks, and
-returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
-MPI-T3/MPI-T4 remain parked until separately authorized through fresh governed
-work-order scope.
+Next allowed move: operator checkpoint to select MPI-T3 External Agent Memory
+Read Contract, hold, or authorize a fresh governed tranche. MPI-T4 remains
+optional parked unless separately authorized.
 
 Keep AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index friction
 hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent Coding Evidence
@@ -865,18 +867,18 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | MPI-T2 scan registry projection dispatch session sync, 2026-06-22 |
+| Session or invocation | MPI-T2 scan registry projection closure session sync, 2026-06-22 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | MPI-T2 dispatch session-sync manifest |
-| Allowed scope source | MPI-T2 dispatch material commit `8ae299f1` |
-| Before status evidence | material commit `8ae299f1` with session surfaces still pointing to INDEX-T1 closure checkpoint |
-| After status evidence | state, memory, and handoff record MPI-T2 dispatched to worker |
+| Target paths | MPI-T2 closure session-sync manifest |
+| Allowed scope source | MPI-T2 closure material commit `468ca3be` |
+| Before status evidence | material commit `468ca3be` with session surfaces still pointing to MPI-T2 dispatched worker mode |
+| After status evidence | state, memory, and handoff record MPI-T2 closed operator checkpoint |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | dispatch session continuity only; no provider, live, AAF-T6, AAF-T7, MPI-T3/T4 execution, route edit, registry write, durable write, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
+| Approval boundary | closure session continuity only; no provider, live, AAF-T6, AAF-T7, MPI-T3/T4 execution, route edit, registry write, durable write, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `mpi-t2-scan-registry-projection-dispatch-session-sync-2026-06-22` |
+| Invocation ID | `mpi-t2-scan-registry-projection-closure-session-sync-2026-06-22` |
 | Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |

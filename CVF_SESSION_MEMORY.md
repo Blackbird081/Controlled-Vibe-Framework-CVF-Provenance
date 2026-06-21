@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`
+Current mode marker: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`.
+Current mode: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`.
 
-Previous mode: `index_t1_forward_only_index_checker_closed_operator_checkpoint`.
+Previous mode: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`.
 
 Active handoff:
 
@@ -478,24 +478,30 @@ Baseline:
 Worker returned `COMPLETE_PENDING_REVIEW`; reviewer accepted after exact INDEX
 type matching repair and IDX-10 regression coverage.
 
-MPI-T2 Scan Registry Episodic Read Projection is `DISPATCHED_TO_WORKER` at
-material commit `8ae299f1`. Active packet:
-`docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`.
-Active baseline:
-`docs/baselines/CVF_GC018_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`.
-Worker mode is `WORKER_MUST_NOT_COMMIT`; worker must return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with uncommitted artifacts.
+MPI-T2 Scan Registry Episodic Read Projection is `CLOSED_PASS_BOUNDED` at
+material closure commit `468ca3be`, after dispatch commit `8ae299f1` and
+session-sync base `71206a8d`. Accepted artifacts:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/scan-registry-memory-projection.ts`,
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/scan-registry-memory-projection.test.ts`,
+`docs/reference/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION.md`,
+`docs/reference/CVF_MEMORY_PLANE_MAP.md`,
+`docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_WORKER_RETURN_2026-06-22.md`,
+`docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_COMPLETION_2026-06-22.md`,
+`docs/baselines/CVF_GC018_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`,
+`docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`,
+and `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md`.
+Result: GC-051 findings can be projected by caller-supplied parsed registry
+entries into Memory readout candidate-compatible summary records through a
+deterministic read-only helper; the helper is not route-wired and writes no
+registry or durable state.
 
 ## Next Allowed Move
 
-Mode: `mpi_t2_scan_registry_episodic_read_projection_dispatched_to_worker`.
+Mode: `mpi_t2_scan_registry_episodic_read_projection_closed_operator_checkpoint`.
 
-Next allowed move: worker implements MPI-T2 exactly under
-`docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`,
-changes only the allowed scope named there, runs the required checks, and
-returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
-MPI-T3/MPI-T4 remain parked until separately authorized through fresh governed
-work-order scope.
+Next allowed move: operator checkpoint to select MPI-T3 External Agent Memory
+Read Contract, hold, or authorize a fresh governed tranche. MPI-T4 remains
+optional parked unless separately authorized.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
