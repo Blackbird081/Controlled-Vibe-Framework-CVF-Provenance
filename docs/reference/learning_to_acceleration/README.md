@@ -60,7 +60,7 @@ public-sync, or universal-control behavior.
 | Surface | Relationship |
 |---|---|
 | `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md` | F2G is the source learning surface and machine-enforced trigger. L2A extends it with an acceleration axis; it does not replace it. |
-| `docs/reference/archive/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` | The Escalation Ladder formalizes the prevention direction (rule to machine check to earliest phase gate). L2A adds the acceleration direction. |
+| `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` | The Escalation Ladder formalizes the prevention direction (rule to machine check to earliest phase gate). L2A adds the acceleration direction. |
 | `docs/reviews/CVF_AAF_T5_WORKER_EXPERIENCE_RETROSPECTIVE_CAPTURE_FOUNDATION_COMPLETION_2026-06-20.md` | AAF-T5 captures worker-experience friction. AAF-T7A closure-conversion assistance is one example L2A use case, deferred until after L2A-T0 closure. |
 
 ## How To Use

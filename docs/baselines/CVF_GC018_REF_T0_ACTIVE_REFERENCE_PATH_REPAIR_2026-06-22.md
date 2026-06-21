@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -158,6 +158,7 @@ python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch -
 | Runtime behavior claimed | N/A_WITH_REASON |
 | Helper/checker implementation claimed | N/A_WITH_REASON |
 | Provider/live proof claimed | N/A_WITH_REASON |
+| Provider registry surfaces | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` are out of scope and untouched; REF-T0 makes no provider registry absence, hardcoded-provider, provider-selection, or live-governance claim |
 | Public-sync claimed | N/A_WITH_REASON |
 | Freshness disposition | PASS - no runtime, provider, helper/checker, public-sync, generated aggregate, or provider registry behavior is claimed |
 
@@ -282,6 +283,44 @@ public-sync repository work or public catalog claim is authorized.
 | AC3 | L2A README points to restored active learning-philosophy path. |
 | AC4 | No AGENTS/session/handoff/governance/compat/runtime/public/provider/generated path is edited by worker. |
 | AC5 | Worker return records actual base, status, source inventory, gates, and claim boundary. |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Active autorun standard | `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` | active file exists; restored from archive source with one non-semantic gate NA line | PASS |
+| Active learning philosophy | `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` | active file exists; restored from archive source with one non-semantic gate NA line | PASS |
+| L2A pointer | `docs/reference/learning_to_acceleration/README.md` | related-surface pointer uses the restored active learning-philosophy path | PASS |
+| Roadmap state | N/A | no roadmap status is changed by REF-T0 closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; drift gate passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
+| Active window registry | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` | two restored binding active references registered as `PERMANENT_ACTIVE_WINDOW` so active/archive hygiene does not treat them as stale cleanup candidates | PASS |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: register the two restored REF-T0 active
+reference standards in `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` as
+permanent active windows so the active archive hygiene gate recognizes their
+binding active paths.
+
+Protected path:
+
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
+
+Operator authorization: the operator directed that important active reference
+files incorrectly stored under archive should be restored to active state.
+REF-T0 closure applies that decision to the active-window registry without
+changing active archive checker semantics.
+
+Rollback boundary: revert the REF-T0 material closure commit to remove the two
+active-window entries and restored active reference copies together.
 
 ## Claim Boundary
 

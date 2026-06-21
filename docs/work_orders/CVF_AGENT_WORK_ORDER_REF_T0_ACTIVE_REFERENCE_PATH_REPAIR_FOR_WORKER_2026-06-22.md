@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -181,6 +181,11 @@ Allowed scope:
 - reviewer/closer closure conversion may update this work order, the GC-018
   baseline, and create
   `docs/reviews/CVF_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_COMPLETION_2026-06-22.md`.
+- reviewer/closer closure conversion may update
+  `docs/baselines/CVF_GC018_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_2026-06-22.md`,
+  this work order, and `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
+  only to record accepted closure and active-window protection for the two
+  restored binding references.
 
 Forbidden scope:
 
@@ -295,6 +300,7 @@ perform destructive actions.
 | Runtime behavior claimed | N/A_WITH_REASON |
 | Helper/checker implementation claimed | N/A_WITH_REASON |
 | Provider/live proof claimed | N/A_WITH_REASON |
+| Provider registry surfaces | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` are out of scope and untouched; REF-T0 makes no provider registry absence, hardcoded-provider, provider-selection, or live-governance claim |
 | Public-sync claimed | N/A_WITH_REASON |
 | Freshness disposition | PASS - no runtime, provider, helper/checker, public-sync, generated aggregate, or provider registry behavior is claimed |
 
@@ -386,6 +392,59 @@ items the worker cannot own.
 
 Reviewer/closer owns the final closure package in the completion review.
 
+Reviewer/closer conversion result: worker returned `COMPLETE_PENDING_REVIEW`;
+reviewer accepted the bounded active-path repair and converted REF-T0 to
+`CLOSED_PASS_BOUNDED`.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_REF_T0_ACTIVE_REFERENCE_PATH_REPAIR_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Active autorun standard | `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` | active copy exists from archive source, plus one non-semantic gate NA line | PASS |
+| Active learning philosophy | `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` | active copy exists from archive source, plus one non-semantic gate NA line | PASS |
+| L2A pointer | `docs/reference/learning_to_acceleration/README.md` | related-surface pointer uses the active learning-philosophy path | PASS |
+| Roadmap state | N/A | no roadmap status is changed by REF-T0 closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; drift gate passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
+| Active window registry | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` | two restored binding active references registered as `PERMANENT_ACTIVE_WINDOW` so active/archive hygiene does not treat them as stale cleanup candidates | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker-return packet status | `COMPLETE_PENDING_REVIEW` | PASS |
+| Active autorun standard | `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` exists | PASS |
+| Active learning philosophy | `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` exists | PASS |
+| Archive preservation | both source files under `docs/reference/archive/` remain unchanged | PASS |
+| L2A pointer | related-surface pointer uses the active learning-philosophy path | PASS |
+| Provider registry behavior | N/A with reason: `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` are untouched and not evidence for REF-T0 | N/A_WITH_REASON |
+| Runtime/provider/live evidence | N/A with reason: REF-T0 creates no runtime/provider/live behavior | N/A_WITH_REASON |
+| Public export evidence | N/A with reason: no public-sync authorized | N/A_WITH_REASON |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: register the two restored REF-T0 active
+reference standards in `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` as
+permanent active windows so the active archive hygiene gate recognizes their
+binding active paths.
+
+Protected path:
+
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
+
+Operator authorization: the operator directed that important active reference
+files incorrectly stored under archive should be restored to active state.
+REF-T0 closure applies that decision to the active-window registry without
+changing active archive checker semantics.
+
+Rollback boundary: revert the REF-T0 material closure commit to remove the two
+active-window entries and restored active reference copies together.
+
 ## Evidence Requirements
 
 The worker-return artifact must record:
@@ -410,14 +469,14 @@ and only then convert accepted material into a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed files stay inside Required Deliverables.
-- [ ] Active copies exist for both restored standards if complete.
-- [ ] Archive copies remain unchanged.
-- [ ] L2A README pointer update is narrow.
-- [ ] No AGENTS/session/handoff/governance/compat/runtime/public/provider path changed.
-- [ ] Worker-return fast gate passes or blocker is source-scoped.
-- [ ] Reviewer-owned completion review created if accepted.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW`.
+- [x] Changed files stay inside Required Deliverables.
+- [x] Active copies exist for both restored standards.
+- [x] Archive copies remain unchanged.
+- [x] L2A README pointer update is narrow.
+- [x] No AGENTS/session/handoff/governance/compat/runtime/public/provider path changed.
+- [x] Worker-return fast gate passes.
+- [x] Reviewer-owned completion review created.
 
 ## Return-To-Orchestrator Conditions
 
