@@ -351,6 +351,7 @@ Stop or return to orchestrator if a future tranche:
 | Select continuous execution order | Operator checkpoint | PASS - `T0 -> T1 -> T2 -> (T3 || T4) -> T5` selected |
 | Author continuous authorization and master Claude work order | Codex dispatch author | PASS |
 | Execute T0/T1/T2 sequential checkpoints | Claude orchestrator/worker | ADIF-T0, T1, and T2 accepted for continuation pending final review; T2 reviewer-hardened |
+| Execute T3/T4 joint parallel dispatch and T5 as one continuous sequence | Claude orchestrator/worker | ADIF-T3/T4 dispatched jointly with disjoint write ownership; isolated-worktree execution, integration, convergence, and ADIF-T5 follow without a Codex pause, per the Continuous Execution Handoff-Sync Bridge Standard |
 | Execute T3/T4 from identical post-T2 bridge HEAD in isolated worktrees | Claude parallel workers | CONTINUOUS_RELEASE_READY - no intermediate Codex review |
 | Integrate T3/T4 and execute T5 | Claude orchestrator/worker | CONTINUOUS_MACHINE_GATED - root-handoff-only bridges permitted; stop once after T5 |
 | Review and close the full chain | Codex reviewer/closer | HOLD_UNTIL_CLAUDE_COMPLETE_PENDING_REVIEW |

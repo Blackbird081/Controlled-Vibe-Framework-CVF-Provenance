@@ -30,8 +30,8 @@ ADIF itself owns.
 | ADIF-T0 | Owner reconciliation and taxonomy contract | committed (this folder) |
 | ADIF-T1 | Entry schema, source layout, seed dictionary | committed (`CVF_ADIF_ENTRY_TEMPLATE.md` and `entries/`) |
 | ADIF-T2 | Task/role/phase defect packet resolver | committed (`CVF_ADIF_T2_RESOLVER_CONTRACT.md`; `governance/compat/run_adif_defect_resolver.py`) |
-| ADIF-T3 | Early preflight integration | not started |
-| ADIF-T4 | Reviewer finding intake and de-dup bridge | not started |
+| ADIF-T3 | Early preflight integration | dispatched (joint with T4; `governance/compat/run_adif_preflight_readout.py`) |
+| ADIF-T4 | Reviewer finding intake and de-dup bridge | dispatched (joint with T3; `governance/compat/run_adif_finding_intake_bridge.py`) |
 | ADIF-T5 | Promotion lifecycle, drift, and quality guard | not started |
 
 ## Read This First
