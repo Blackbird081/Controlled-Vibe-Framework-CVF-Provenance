@@ -1,5 +1,5 @@
 {
-  "stateOrder": 642,
+  "stateOrder": 644,
   "stateKey": "nextAllowedMove",
-  "value": "ADIF continuous execution is DISPATCH_READY at commit 783b2b8a. Claude executes T0 -> T1 -> T2 -> (T3 || T4) -> T5 under docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_CONTINUOUS_EXECUTION_T0_T5_FOR_CLAUDE_2026-06-22.md. Claude may create private checkpoint commits and isolated T3/T4 branches, must not push or edit session continuity, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Codex is the designated final reviewer/closer after T5. Runtime/provider/live proof, public-sync, secrets/quota, MPI runtime expansion, readiness, and universal correctness/control claims remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "ADIF-T0 is committed at 7c0480bc with work-order status COMPLETE_PENDING_REVIEW. Codex must perform the T0 checkpoint review and record ACCEPT_FOR_CONTINUATION or return repairs before T1 may release. Claude remains paused and must not author T1 from pending-review evidence. After accepted checkpoint and continuity sync, Claude resumes T1 -> T2 -> (T3 || T4) -> T5 under the continuous authorization. Runtime/provider/live proof, public-sync, secrets/quota, MPI runtime expansion, readiness, and universal correctness/control claims remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

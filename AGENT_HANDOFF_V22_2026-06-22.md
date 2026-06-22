@@ -52,6 +52,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/mpiT6RuntimeCandidateDecisionClosure20260622.json`
 - `CVF_SESSION/state/entries/adifFoundationRoadmap20260622.json`
 - `CVF_SESSION/state/entries/adifContinuousExecutionDispatch20260622.json`
+- `CVF_SESSION/state/entries/adifT0CheckpointPendingReview20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
@@ -68,13 +69,15 @@ history.
 
 ## Current Mode
 
-`adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`
+`adif_t0_committed_pending_codex_checkpoint_review`
+
+ADIF-T0 execution checkpoint HEAD: `7c0480bc`
 
 ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `783b2b8a`
+Current material HEAD recorded for this handoff: `7c0480bc`
 
 Current session-sync HEAD recorded for this handoff: `8534621c`
 
@@ -206,14 +209,14 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ADIF continuous execution is dispatched at `783b2b8a`. Claude executes
-`T0 -> T1 -> T2 -> (T3 || T4) -> T5`, may create private checkpoint commits,
-must not push or edit session continuity, and returns for Codex final review.
-Runtime/provider/live/public expansion remains parked.
+ADIF-T0 is committed at `7c0480bc` with `COMPLETE_PENDING_REVIEW`. Codex now
+performs the checkpoint review and continuity release. Claude remains paused;
+T1 is not released from pending-review evidence. Runtime/provider/live/public
+expansion remains parked.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes the ADIF continuous work order and returns for Codex review; parked checkpoint=runtime/provider/live/public expansion remains parked.
+Startup acknowledged: current mode=`adif_t0_committed_pending_codex_checkpoint_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Codex reviews ADIF-T0 at 7c0480bc and records dependency release; parked checkpoint=Claude T1 and runtime/provider/live/public expansion remain parked.
 
 ## Parked Checkpoints
 
@@ -221,8 +224,8 @@ Startup acknowledged: current mode=`adif_continuous_execution_dispatched_to_clau
 - MPI-T5 is closed bounded and public-synced at public commit `602550404`.
 - MPI-T6 decision packet is closed bounded with `DEFER` at `14f8e5f9`; runtime
   authorization remains parked.
-- ADIF T0-T5 continuous execution is dispatched to Claude at `783b2b8a`; Codex
-  final review is pending worker return.
+- ADIF-T0 is committed at `7c0480bc`; Codex checkpoint review is pending and
+  Claude T1 remains paused.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -234,8 +237,8 @@ Startup acknowledged: current mode=`adif_continuous_execution_dispatched_to_clau
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record ADIF continuous dispatch commit
-`783b2b8a`, update current mode and next move, and regenerate active session
+Authorized guard-maintenance scope: record ADIF-T0 checkpoint commit
+`7c0480bc`, update current mode and next move, and regenerate active session
 state.
 
 Protected paths:
@@ -244,16 +247,15 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/adifContinuousExecutionDispatch20260622.json`
+- `CVF_SESSION/state/entries/adifT0CheckpointPendingReview20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator explicitly selected the ADIF continuous
-execution order and assigned Codex as final reviewer. Session continuity is a
-mandatory consequence of dispatch commit `783b2b8a`.
+Operator authorization: the operator selected continuous ADIF execution and
+assigned Codex review authority. Session continuity is a mandatory consequence
+of Claude checkpoint commit `7c0480bc`.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert ADIF dispatch `783b2b8a`, MPI-T6 material closure `14f8e5f9`, or prior
-dispatch/closure history.
+revert ADIF-T0 commit `7c0480bc`, ADIF dispatch `783b2b8a`, or prior history.
 
 ## Agent Operation Trace Block
 
@@ -261,26 +263,25 @@ dispatch/closure history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ADIF continuous execution dispatch session sync, 2026-06-22 |
+| Session or invocation | ADIF-T0 checkpoint pending-review session sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
 | Target paths | V22; session front door; state source entries; generated active state |
-| Allowed scope source | ADIF dispatch commit `783b2b8a` and mandatory continuity rules |
-| Before status evidence | clean worktree after dispatch commit; active state still parked ADIF-T0 |
-| After status evidence | active mode routes Claude continuous execution and Codex final review |
+| Allowed scope source | ADIF-T0 checkpoint `7c0480bc` and mandatory continuity rules |
+| Before status evidence | clean worktree after Claude T0 commit; active handoff still recorded pre-T0 HEAD |
+| After status evidence | active mode routes Codex T0 checkpoint review; Claude T1 paused |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `adif-continuous-execution-dispatch-session-sync-2026-06-22` |
-| Expected manifest | V22; front door; state core; ADIF dispatch entry; next move; generated active state |
-| Actual changed set | V22; front door; state core; ADIF dispatch entry; next move; generated active state |
+| Invocation ID | `adif-t0-checkpoint-pending-review-session-sync-2026-06-23` |
+| Expected manifest | V22; front door; state core; ADIF-T0 pending-review entry; next move; generated active state |
+| Actual changed set | V22; front door; state core; ADIF-T0 pending-review entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records the ADIF continuous
-execution dispatch and Codex final-review boundary. It does not expand the
-work order into runtime/provider/live/public behavior, session edits by Claude,
-or universal governed-coding control.
+This handoff is session continuity only. It records ADIF-T0 pending checkpoint
+review and keeps Claude T1 paused. It does not accept T0, release T1, or expand
+runtime/provider/live/public behavior.

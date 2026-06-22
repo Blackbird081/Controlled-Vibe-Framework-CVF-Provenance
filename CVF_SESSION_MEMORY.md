@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`
+Current mode marker: `adif_t0_committed_pending_codex_checkpoint_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`.
+Current mode: `adif_t0_committed_pending_codex_checkpoint_review`.
 
-Previous mode: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`.
+Previous mode: `adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`.
 
 Active handoff:
 
@@ -63,6 +63,11 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ADIF-T0 is committed at `7c0480bc` with status
+`COMPLETE_PENDING_REVIEW`. Claude correctly stopped when GC-020 required a
+handoff HEAD sync outside worker scope. Codex must review T0 and record an
+accepted continuation checkpoint before T1 releases.
 
 ADIF continuous execution is dispatch-ready at commit `783b2b8a`. Claude runs
 `T0 -> T1 -> T2 -> (T3 || T4) -> T5` with committed dependency checkpoints;
@@ -708,11 +713,11 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`.
+Mode: `adif_t0_committed_pending_codex_checkpoint_review`.
 
-Next allowed move: Claude executes the committed ADIF continuous work order and
-returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Codex then reviews
-the complete commit graph. Runtime/provider/live/public expansion remains
+Next allowed move: Codex reviews the committed ADIF-T0 checkpoint at
+`7c0480bc`. Claude remains paused until Codex records dependency-release
+acceptance and syncs continuity. Runtime/provider/live/public expansion remains
 parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
