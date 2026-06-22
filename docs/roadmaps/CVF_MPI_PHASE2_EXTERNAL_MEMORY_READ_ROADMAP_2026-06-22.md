@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC
+Status: MPI_T6_DECIDED_DEFER_PHASE2_FULLY_DECIDED_PRIVATE_ONLY
 
 docType: roadmap
 
@@ -64,16 +64,32 @@ symbols, fields, existing paths, and new doc-only fields before dispatch.
 ## Current State
 
 MPI-T0, INDEX-T1, MPI-T1, MPI-T2, MPI-T3, MPI-T4, and MPI-T5 are closed
-bounded. The Memory Plane Map
-records the current running, contract-only, and parked surfaces. The scan
-registry can already be projected into summary-only candidate-compatible
-records by caller-supplied parsed entries, but it is not auto-wired into the
-Memory readout route. MPI-T6 remains parked until a fresh GC-018 and work
-order are authored.
+bounded. MPI-T6 is closed bounded with an accepted `DEFER` decision. The
+Memory Plane Map records the
+current running, contract-only, and parked surfaces. The scan registry can
+already be projected into summary-only candidate-compatible records by
+caller-supplied parsed entries, but the MPI lane's own changed set has not
+auto-wired that projection into the existing `app/api/memory/readout/route.ts`
+Memory readout route. That route, plus `app/api/memory/write/route.ts`,
+`durable-memory-route.ts`, and `aif-memory-reinjection-route.ts`, are
+pre-existing wired runtime surfaces outside the MPI-T2 through MPI-T5
+changed set (see the MPI-T6 decision packet's Source Refresh table for
+verified paths and commit history). MPI-T6 asks whether to expand the MPI
+lane's own scope into runtime/vector/durable work; it does not ask whether
+those pre-existing surfaces exist, since they already do.
 
 The important distinction for Phase 2 is this: CVF should provide a governed
 read contract for external agents before it attempts any runtime adapter,
 vector database, durable store, or federated helper expansion.
+
+## Current Runtime Freshness Verification
+
+| Claim | Current evidence | Disposition |
+|---|---|---|
+| Existing Memory Plane runtime routes and helpers are not created by MPI-T6 | direct source reads and path-history evidence in the MPI-T6 Source Refresh Table, refreshed at `dc329a99` | ACCEPT |
+| Provider registry surface is accounted for | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` exists and exports `ProviderRegistry` at line 31; exact search for `PROVIDER_CAPABILITY_REGISTRY` returned no match in that file | ACCEPT |
+| Provider/live behavior | N/A with reason: MPI-T6 changes no provider registry, provider call, model route, or live governance behavior | N/A_WITH_REASON |
+| MPI runtime expansion | `DEFER`; no runtime candidate work order or source implementation is authorized | ACCEPT |
 
 ## Scope
 
@@ -117,7 +133,7 @@ Learning Plane mutation from this roadmap.
 | MPI-T3 | External Agent Memory Summary Contract | Reference contract defining summary-only read request/response and adapter-contract-only boundary | CLOSED_PASS_BOUNDED |
 | MPI-T4 | Federated Memory Read Helper | Optional read-only helper/readout that combines allowed summary sources deterministically | CLOSED_PASS_BOUNDED |
 | MPI-T5 | Memory Access Claim Checker | Optional checker that rejects overclaims such as raw memory, vector DB, runtime store, or live external access without proof | CLOSED_PASS_BOUNDED |
-| MPI-T6 | Runtime Candidate Decision Packet | Decision packet only: whether later runtime route/vector/durable work is worth authorizing | PARKED_DECISION_ONLY |
+| MPI-T6 | Runtime Candidate Decision Packet | Decision packet only: whether later runtime route/vector/durable work is worth authorizing | DECIDED_DEFER (`docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`) |
 
 ## MPI-T3 External Agent Memory Summary Contract
 
@@ -191,12 +207,12 @@ active boundary.
 |---|---|
 | MPI-T3 is the next recommended work-order candidate | REQUIRED |
 | MPI-T3 remains contract-first and documentation-only unless a future work order says otherwise | REQUIRED |
-| External memory read claims remain summary-only | REQUIRED |
-| `rawMemoryReleased=false`, `canReinject=false`, and no raw `content` are carried forward as source-verified invariants | REQUIRED |
-| CLI/MCP adapter behavior, runtime route wiring, vector DB, durable store, provider/live proof, and public-sync remain out of scope | REQUIRED |
+| External memory read claims authored by the MPI lane's own changed set remain summary-only; this does not describe the pre-existing `durable-memory-route.ts`/`aif-memory-reinjection.ts` surfaces, which are outside the MPI-T2 through MPI-T5 changed set and have their own gated, non-blanket invariants | REQUIRED |
+| Within the MPI lane's own changed set, `rawMemoryReleased=false` and no raw `content` release are carried forward as source-verified invariants; `canReinject` is not a universal false invariant repo-wide, since `aif-memory-reinjection.ts` implements a policy-gated `canReinject=true` summary-only reinjection path outside the MPI lane | REQUIRED |
+| CLI/MCP adapter behavior, runtime route wiring, vector DB, durable store, provider/live proof, and public-sync remain out of scope for the MPI lane's own future work orders | REQUIRED |
 | Future work orders include Source Verification and Agent Handoff Contract Control blocks | REQUIRED |
 | Future worker returns use RSE routing for findings and promotion candidates | REQUIRED |
-| MPI-T4 is released only from fresh MPI-T3 closure, operator-selection, GC-018, and source-verification evidence; MPI-T5/MPI-T6 remain parked | REQUIRED |
+| MPI-T4 was released only from fresh MPI-T3 closure, operator-selection, GC-018, and source-verification evidence; MPI-T5 followed the same pattern after MPI-T4 closure; MPI-T6 closed as a decision-only `DEFER`, not an implementation release | REQUIRED |
 
 ## MPI-T5 Memory Access Claim Checker
 
@@ -246,7 +262,7 @@ secrets/quota handling if applicable.
 
 | Step | Owner role | Status |
 |---|---|---|
-| Author this Phase 2 roadmap | Codex roadmap author | COMPLETE_PENDING_GATES |
+| Author this Phase 2 roadmap | Codex roadmap author | PASS |
 | Author MPI-T3 GC-018 and source-verified work order | Dispatch author if assigned | PASS |
 | Execute MPI-T3 under selected worker boundary | Worker if dispatched | PASS_BOUNDED |
 | Review and close or reject MPI-T3 | Reviewer/closer | PASS_BOUNDED |
@@ -258,7 +274,9 @@ secrets/quota handling if applicable.
 | Author and gate MPI-T5 GC-018/work order | Dispatch author/reviewer | PASS |
 | Execute MPI-T5 bounded checker/test tranche | Worker | PASS_BOUNDED |
 | Review and close or reject MPI-T5 | Reviewer/closer | PASS_BOUNDED |
-| Decide whether MPI-T6 runtime candidate packet is needed | Operator checkpoint after T3/T4 evidence | PARKED |
+| Decide whether MPI-T6 runtime candidate packet is needed | Operator checkpoint after T3/T4 evidence | PASS - operator selected MPI-T6 after MPI-T5 closure; decision recorded DEFER |
+| Author MPI-T6 decision packet | Decision-packet author | PASS_BOUNDED - `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md` |
+| Review and close or reject MPI-T6 | Reviewer/closer | PASS_BOUNDED - `DEFER` accepted in `docs/reviews/CVF_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_COMPLETION_2026-06-22.md` |
 
 ## Future Work-Order Authoring Constraints
 
@@ -382,18 +400,19 @@ contract-only surfaces; MPI-T2 reference and source helper show summary-only
 projection without route wiring; RSE references route routine finding and
 promotion decisions to reviewer/closer.
 
-Contradiction Or Gap Disposition: no contradiction found. The gap is intentional
-and remains open: no external memory read contract exists yet, and no federated
-helper/checker/runtime decision packet is authorized.
+Contradiction Or Gap Disposition: no contradiction found at roadmap-authoring
+time. MPI-T3 through MPI-T5 have since closed bounded, and MPI-T6 has closed
+bounded with `DEFER`; see `## Current State` above for the current status of
+each tranche.
 
-Claim Update: MPI Phase 2 is roadmap-ready for work-order authoring only. MPI-T3
-is the recommended next work order; MPI-T4, MPI-T5, and MPI-T6 remain parked
-until their prerequisite evidence exists.
+Claim Update: this paragraph described the roadmap-authoring-time state only
+and is superseded by `## Current State` and the Work Plan table above.
 
 ## Claim Boundary
 
-This roadmap creates a planning artifact only. It does not create an MPI-T3
-work order, implement a helper or checker, edit runtime routes, wire scan
+This roadmap and its completed child tranches establish bounded contract,
+helper, checker, and decision evidence only. MPI-T6 does not implement a
+runtime candidate. This roadmap does not edit runtime routes, wire scan
 registry into memory readout, create a vector DB, create a durable store,
 mutate Learning Plane runtime state, build CLI/MCP adapter behavior, run
 provider/live proof, touch public-sync, read or write secrets, execute arbitrary
@@ -450,25 +469,25 @@ catalog claim is authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC` | PASS |
-| Closure state | this file | MPI-T5 child tranche closed bounded; roadmap remains open for public-sync, MPI-T6, hold, or another lane | PASS |
-| Parent roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | records MPI-T2 closed bounded and MPI-T3/MPI-T4 parked | PASS |
-| Implementation state | MPI-T5 checker/test | focused pytest 13/13, checker self-run PASS, worker-return fast gate PASS, and reviewer-fast PASS | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; aggregate drift check passes | PASS |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; no MPI-T4 registry row required | PASS |
+| Work order status | N/A | MPI-T6 is a decision-only packet and required no worker implementation work order | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: MPI_T6_DECIDED_DEFER_PHASE2_FULLY_DECIDED_PRIVATE_ONLY` | PASS |
+| Closure state | this file | MPI-T3 through MPI-T5 closed bounded; MPI-T6 `DEFER` accepted; Phase 2 is fully decided private-only | PASS |
+| Parent roadmap state | N/A | the parent roadmap retains historical parked text and is not used as current closure authority for this child roadmap | N/A with reason |
+| Implementation state | N/A | MPI-T6 is decision-only; no source, test, runtime, route, provider, or adapter implementation changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; generated aggregate drift check is required before commit | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; no MPI-T6 registry row is required for a decision-only packet | PASS |
 | External evidence digest | N/A | no external evidence is consumed | N/A with reason |
 | System loop interlock | N/A | no runtime/system loop is changed | N/A with reason |
-| Session continuity | active state/front door/handoff | continuity marker repaired in this closure; final public-sync/session surfaces follow material closure | PASS |
-| Next authorized move | active session state/front door/handoff | public-sync from sibling public-sync clone after private material closure and remote verification; MPI-T6 remains parked | PASS |
+| Session continuity | active state/front door/handoff | reviewer-owned session-sync follows the material closure commit in a separate commit | PASS |
+| Next authorized move | active session state/front door/handoff | select ADIF-T0 at the parked operator checkpoint or another separately authorized lane; MPI runtime expansion remains deferred | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Runtime receipt evidence | N/A with reason: MPI-T4 creates no runtime receipt | N/A with reason |
-| `rawMemoryReleased` | false on helper result and readout | PASS |
-| `canReinject` | false on helper result and readout | PASS |
-| Registry input degradation | absent, empty, malformed, or projection-failed input is advisory/degraded | PASS |
-| Adapter/runtime implementation | none in MPI-T4 changed set | PASS |
+| MPI-T6 decision | `DEFER`, bounded to the MPI lane and current cited authority | PASS |
+| Source refresh | existing memory routes, helpers, wiring references, and relevant commit history are directly cited | PASS |
+| Runtime/source implementation | N/A with reason: MPI-T6 changes documentation only and authorizes no runtime build | N/A with reason |
+| Provider/live proof | N/A with reason: no governance runtime behavior is asserted | N/A with reason |
+| Public export | `DEFERRED_PRIVATE_ONLY`; no public artifact or claim is authorized | PASS |
