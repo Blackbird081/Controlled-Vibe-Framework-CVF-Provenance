@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -194,6 +194,11 @@ Allowed scope:
   needed for a focused fixture or helper-contract assertion;
 - create
   `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md`.
+- reviewer/closer closure conversion may update
+  `docs/baselines/CVF_GC018_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_2026-06-22.md`,
+  this work order, and create
+  `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_COMPLETION_2026-06-22.md`
+  after accepting the worker return.
 
 Forbidden scope:
 
@@ -419,15 +424,30 @@ Reviewer/closer owns the final closure package in the completion review.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this artifact | `Status: DISPATCHED_TO_WORKER` now; reviewer updates after return | PENDING_REVIEWER |
-| GC-018 status | `docs/baselines/CVF_GC018_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` now; reviewer updates after return | PENDING_REVIEWER |
-| Worker return | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md` | expected `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_COMPLETION_2026-06-22.md` | reviewer-owned if accepted | PENDING_REVIEWER |
-| Autorun gate source | `governance/compat/run_agent_autorun_workflow_gate.py` | helper command appears in pre-implementation branch | PENDING_WORKER |
-| Focused tests | `governance/compat/test_run_agent_autorun_workflow_gate.py` | unit tests pass | PENDING_WORKER |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Autorun gate source | `governance/compat/run_agent_autorun_workflow_gate.py` | helper command appears in pre-implementation branch; reviewer added package-import fallback | PASS |
+| Focused tests | `governance/compat/test_run_agent_autorun_workflow_gate.py` | pytest focused tests pass 19/19; unittest import check succeeds | PASS |
 | Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
 | Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
-| Session continuity | active session front-door/state/handoff | session-sync follows accepted dispatch/closure commits | PENDING_REVIEWER |
+| Roadmap state | N/A | no roadmap status is changed by AAF-T6A closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; drift gate passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows accepted material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker-return packet status | `COMPLETE_PENDING_REVIEW` | PASS |
+| Pre-implementation helper command | `run_agent_automation_assist.py --json --enforce` appears in `_pre_implementation_commands` | PASS |
+| Helper mutation behavior | no helper mutation or apply/write/provider/live flag added | PASS |
+| Focused test evidence | pytest focused tests pass 19/19; unittest import command succeeds | PASS |
+| Public export evidence | N/A with reason: no public-sync authorized | N/A_WITH_REASON |
 
 ## Core Guard Self-Protection Authorization
 
@@ -477,15 +497,15 @@ and only then convert accepted material into a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW`.
-- [ ] Changed files stay inside Required Deliverables.
-- [ ] Pre-implementation autorun invokes the AAF helper with `--json --enforce`.
-- [ ] Focused tests cover helper placement and failure propagation.
-- [ ] Existing helper remains read-only; no helper mutation behavior is added.
-- [ ] No full AAF-T6, AAF-T7A, scaffold, patch/apply, runtime/provider/live,
+- [x] Worker returned `COMPLETE_PENDING_REVIEW`.
+- [x] Changed files stay inside Required Deliverables.
+- [x] Pre-implementation autorun invokes the AAF helper with `--json --enforce`.
+- [x] Focused tests cover helper placement and failure propagation.
+- [x] Existing helper remains read-only; no helper mutation behavior is added.
+- [x] No full AAF-T6, AAF-T7A, scaffold, patch/apply, runtime/provider/live,
   public-sync, CLI/MCP adapter, generated aggregate, or session/handoff path changed.
-- [ ] Worker-return fast gate passes.
-- [ ] Reviewer-owned completion review created.
+- [x] Worker-return fast gate passes.
+- [x] Reviewer-owned completion review created.
 
 ## Return-To-Orchestrator Conditions
 

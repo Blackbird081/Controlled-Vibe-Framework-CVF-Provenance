@@ -208,3 +208,89 @@ def test_closure_finality_blocks_nonzero_git_status(monkeypatch, capsys) -> None
     output = capsys.readouterr().out
     assert "Git status diagnostics:" in output
     assert "git status --short failed" in output
+
+
+# --- AAF-T6A: early diagnostic wire-in of the read-only AAF helper ---
+
+AAF_HELPER_SCRIPT = "governance/compat/run_agent_automation_assist.py"
+
+
+def _has_aaf_helper(commands) -> bool:
+    return any(AAF_HELPER_SCRIPT in command.command for command in commands)
+
+
+def test_pre_implementation_commands_include_aaf_helper_json_enforce() -> None:
+    commands = autorun._pre_implementation_commands("base", "head")
+
+    aaf = [c for c in commands if AAF_HELPER_SCRIPT in c.command]
+    assert len(aaf) == 1, "AAF helper must be wired exactly once at pre-implementation"
+    command = aaf[0].command
+    # AC1: helper runs over the worker range in JSON enforce mode.
+    assert command == (
+        "python",
+        AAF_HELPER_SCRIPT,
+        "--base",
+        "base",
+        "--head",
+        "head",
+        "--json",
+        "--enforce",
+    )
+
+
+def test_aaf_helper_is_read_only_no_mutating_flags() -> None:
+    # AC4: the wired command must not introduce any mutate/apply/fix/write or
+    # provider/live flag; it stays a read-only advisory invocation.
+    commands = autorun._pre_implementation_commands("base", "head")
+    aaf = next(c for c in commands if AAF_HELPER_SCRIPT in c.command)
+    forbidden = {"--apply", "--fix", "--write", "--mutate", "--patch", "--live", "--provider"}
+    assert not (set(aaf.command) & forbidden)
+
+
+def test_aaf_helper_not_in_all_phase_common_commands() -> None:
+    # AC2: the helper is a pre-implementation-only command, not an all-phase
+    # common command.
+    assert not _has_aaf_helper(autorun._common_commands("base", "head"))
+    assert not _has_aaf_helper(autorun.PRE_PUSH_COMMANDS)
+
+
+def test_forbidden_state_remains_first_pre_implementation_command() -> None:
+    commands = autorun._pre_implementation_commands("base", "head")
+    assert "governance/compat/check_forbidden_filesystem_state.py" in commands[0].command
+
+
+def _stub_phase_environment(monkeypatch) -> None:
+    monkeypatch.setattr(autorun, "_git_rev_parse", lambda ref: ref)
+    monkeypatch.setattr(autorun, "_write_receipt", lambda *a, **k: None)
+
+
+def test_pre_implementation_passes_when_aaf_helper_passes(monkeypatch) -> None:
+    _stub_phase_environment(monkeypatch)
+
+    def fake_execute(index, command):
+        return autorun.GateResult(index, command.name, command.command, 0, 0.01, "")
+
+    monkeypatch.setattr(autorun, "_execute", fake_execute)
+
+    assert autorun._run_phase("pre-implementation", "base", "head") == 0
+
+
+def test_pre_implementation_fails_when_aaf_helper_fails(monkeypatch) -> None:
+    # AC3: a nonzero AAF helper exit propagates to gate failure through the
+    # existing command-result aggregation.
+    _stub_phase_environment(monkeypatch)
+
+    def fake_execute(index, command):
+        failed = AAF_HELPER_SCRIPT in command.command
+        return autorun.GateResult(
+            index,
+            command.name,
+            command.command,
+            1 if failed else 0,
+            0.01,
+            "",
+        )
+
+    monkeypatch.setattr(autorun, "_execute", fake_execute)
+
+    assert autorun._run_phase("pre-implementation", "base", "head") == 1

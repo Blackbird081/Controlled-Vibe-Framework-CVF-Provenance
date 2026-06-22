@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -326,13 +326,13 @@ remove the helper command insertion and focused tests together.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCHED_TO_WORKER` now; reviewer updates after return | PENDING_REVIEWER |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_FOR_WORKER_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` now; reviewer updates after return | PENDING_REVIEWER |
-| Worker return | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md` | expected `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_COMPLETION_2026-06-22.md` | reviewer-owned if accepted | PENDING_REVIEWER |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
 | Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
-| Session continuity | active session front-door/state/handoff | session-sync follows accepted dispatch/closure commits | PENDING_REVIEWER |
+| Session continuity | active session front-door/state/handoff | session-sync follows accepted material closure commit | N/A with reason |
 
 ## Claim Boundary
 

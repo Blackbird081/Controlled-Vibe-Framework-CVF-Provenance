@@ -19,7 +19,10 @@ import sys
 import time
 from pathlib import Path
 
-import run_agent_commit_steward_preflight as steward
+try:
+    import run_agent_commit_steward_preflight as steward
+except ModuleNotFoundError:  # imported as governance.compat.run_agent_autorun_workflow_gate
+    from governance.compat import run_agent_commit_steward_preflight as steward
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -314,6 +317,36 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         ),
     )
 
+
+def _pre_implementation_commands(base: str, head: str) -> tuple[GateCommand, ...]:
+    """Phase-specific commands prepended only at pre-implementation.
+
+    These run before a worker writes material files so known local defects
+    surface early.
+
+    1. forbidden filesystem state (Fix (B)): catches the pattern where a prior
+       tranche left untracked files in paths the current work order forbids.
+    2. AAF early diagnostics (AAF-T6A): runs the existing read-only AAF helper
+       in enforce mode so helper-detectable packet, corpus, worker-experience,
+       and signal-readout defects surface at pre-implementation rather than at
+       a late reviewer gate. The helper is read-only and advisory; only a
+       nonzero helper exit (enforced defects) makes this gate fail through the
+       existing command-result aggregation.
+    """
+    return (
+        GateCommand(
+            "forbidden filesystem state",
+            ("python", "governance/compat/check_forbidden_filesystem_state.py",
+             "--base", base, "--head", head, "--enforce"),
+        ),
+        GateCommand(
+            "agent automation assist early diagnostics",
+            ("python", "governance/compat/run_agent_automation_assist.py",
+             "--base", base, "--head", head, "--json", "--enforce"),
+        ),
+    )
+
+
 PRE_PUSH_COMMANDS: tuple[GateCommand, ...] = (
     GateCommand("git remote verification", ("git", "remote", "-v")),
     GateCommand(
@@ -604,16 +637,13 @@ def _run_phase(
     failures = 0
     common_commands: list[GateCommand] = list(_common_commands(resolved_base, head))
 
-    # Fix (B): at pre-implementation, check that no forbidden-path files
-    # already exist on disk before a worker begins. This catches the pattern
-    # where a prior tranche left untracked files in paths the current work
-    # order explicitly forbids.
+    # At pre-implementation, prepend phase-specific early-diagnostic commands
+    # (forbidden filesystem state plus the AAF early diagnostics wire-in) so a
+    # worker sees local defects before writing material files. See
+    # _pre_implementation_commands for the per-command rationale.
     if phase == "pre-implementation":
-        common_commands.insert(0, GateCommand(
-            "forbidden filesystem state",
-            ("python", "governance/compat/check_forbidden_filesystem_state.py",
-             "--base", resolved_base, "--head", head, "--enforce"),
-        ))
+        phase_commands = _pre_implementation_commands(resolved_base, head)
+        common_commands[:0] = phase_commands
 
     if phase in {"pre-closure", "pre-push"} and base_sha == head_sha:
         print(
