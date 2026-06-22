@@ -111,9 +111,9 @@ Dispatch checks passed before commit:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: update V21 after RSE-T0 dispatch material
-commit `3842b0f7`, update generated active session state and compact front-door
-routing, and set the RSE-T0 worker execution next move.
+Authorized guard-maintenance scope: update V21 after RSE-T0 material closure
+commit `c0664784`, update generated active session state and compact front-door
+routing, and set the post-RSE-T0 next move.
 
 Protected paths:
 
@@ -123,33 +123,44 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardDispatch20260622.json`
+- `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardClosure20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator reported that RSE-T0 work order authoring
-was complete and ready for Codex review. Codex reviewed the dispatch packet and
-accepted it for no-commit worker execution.
+Operator authorization: the operator reported the RSE-T0 worker return as
+`COMPLETE_PENDING_REVIEW`. Codex reviewed and accepted the worker return,
+closed the material tranche, and now records continuity.
 
 Rollback boundary: revert only this session-sync commit if rejected. Do not
-alter RSE-T0 dispatch commit `3842b0f7`, RSE roadmap commit `6608be51`,
+alter RSE-T0 closure commit `c0664784`, RSE-T0 dispatch commit `3842b0f7`,
+RSE roadmap commit `6608be51`,
 AAF-T7B closure commit `a82440ca`, dispatch commit `2d3c1a5d`, AAF-T7A.1
 closure commit `5fc456a4`, or AAF-T7A.1 dispatch commit `af615d1e`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rse_t0_role_switch_envelope_standard_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=worker executes RSE-T0 under `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; Codex remains reviewer/closer; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=operator may authorize RSE-T1 Operator Question Boundary through fresh GC-018 and source-verified work order, or choose another governed lane; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`rse_t0_role_switch_envelope_standard_dispatched_to_worker`
+`rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`
 
-Current HEAD recorded for this handoff: `3842b0f7`
+Current HEAD recorded for this handoff: `c0664784`
 
 Material state:
 
+- RSE-T0 Role Switch Envelope Standard closure commit: `c0664784`
 - RSE-T0 Role Switch Envelope Standard dispatch commit: `3842b0f7`
 - RSE Role Switch Envelope Protocol roadmap commit: `6608be51`
+- RSE-T0 standard:
+  `docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md`
+- RSE-T0 front door:
+  `docs/reference/role_switch_envelope/README.md`
+- RSE-T0 worker return:
+  `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_WORKER_RETURN_2026-06-22.md`
+- RSE-T0 completion review:
+  `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md`
 - RSE-T0 GC-018 baseline:
   `docs/baselines/CVF_GC018_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_2026-06-22.md`
 - RSE-T0 work order:
@@ -170,28 +181,10 @@ Material state:
 
 ## Next Allowed Move
 
-Primary next move: worker executes RSE-T0 from current clean HEAD, records
-actual `executionBaseHead`, and returns uncommitted `COMPLETE_PENDING_REVIEW`
-or `BLOCKED_WITH_REASON`. Codex remains reviewer/closer.
-
-Worker packet:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_FOR_WORKER_2026-06-22.md`
-
-Allowed worker paths:
-
-- `docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md`
-- `docs/reference/role_switch_envelope/README.md`
-- `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_WORKER_RETURN_2026-06-22.md`
-
-Required worker checks:
-
-```powershell
-git rev-parse --short HEAD
-git status --short
-python governance/compat/run_agent_automation_assist.py --base <executionBaseHead> --head HEAD --json --enforce
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
-python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_run_agent_automation_assist.py
-```
+Primary next move: operator may authorize RSE-T1 Operator Question Boundary
+through fresh GC-018 and source-verified work order, or choose another governed
+lane. RSE-T1/T2/T3 implementation remains unauthorized until a fresh work order
+is reviewed and dispatched.
 
 ## Parked Checkpoints
 
@@ -211,18 +204,18 @@ python governance/compat/run_worker_return_fast_gate.py --pytest-target governan
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | RSE-T0 dispatch session sync, 2026-06-22 |
+| Session or invocation | RSE-T0 closure session sync, 2026-06-22 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | source reads, file edits, generator, session-sync gates |
-| Target paths | `AGENT_HANDOFF_V21_2026-06-22.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardDispatch20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Allowed scope source | RSE-T0 dispatch material commit `3842b0f7` and post-dispatch state-sync need |
-| Before status evidence | material dispatch commit `3842b0f7`; state still named RSE roadmap-ready mode |
-| After status evidence | active handoff remains V21; generated active session state names RSE-T0 dispatched mode |
+| Target paths | `AGENT_HANDOFF_V21_2026-06-22.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardClosure20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Allowed scope source | RSE-T0 closure material commit `c0664784` and post-closure state-sync need |
+| Before status evidence | material closure commit `c0664784`; state still named RSE-T0 dispatched mode |
+| After status evidence | active handoff remains V21; generated active session state names RSE-T0 closed mode |
 | Diff evidence | session-sync diff and gates |
 | Approval boundary | session continuity only |
 | Claim boundary | no runtime/provider/live/public-sync behavior; no worker implementation in this session-sync |
 | Agent type | session-sync steward |
-| Invocation ID | `rse-t0-role-switch-envelope-dispatch-session-sync-v21-2026-06-22` |
+| Invocation ID | `rse-t0-role-switch-envelope-closure-session-sync-v21-2026-06-22` |
 | Expected manifest | session-sync target paths listed above |
 | Actual changed set | session-sync target paths listed above |
 | Manifest delta | MATCH |
@@ -233,14 +226,14 @@ python governance/compat/run_worker_return_fast_gate.py --pytest-target governan
 |---|---|---|---|
 | Active handoff | `AGENT_HANDOFF_V21_2026-06-22.md` | `Status: ACTIVE HANDOFF` | PASS |
 | Archived predecessor | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V20_2026-06-19.md` | V20 moved out of root | PASS |
-| Active state source | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | `activeHandoff` names V21 and current mode names RSE-T0 dispatched | PASS |
+| Active state source | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | `activeHandoff` names V21 and current mode names RSE-T0 closed | PASS |
 | Active state aggregate | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | regenerated from source | PASS |
 | Front door | `CVF_SESSION_MEMORY.md` | startup order and current state name V21 | PASS |
 | Public-sync | N/A | no public-sync authorized | N/A with reason |
 
 ## Claim Boundary
 
-This handoff only records RSE-T0 dispatch continuity. It does not authorize
+This handoff only records RSE-T0 closure continuity. It does not authorize
 RSE-T1/T2/T3 implementation, AAF-T7 L2 patch preview, L3 apply,
 runtime/provider/live/public behavior, public-sync, checker/helper
 implementation, or relaxed worker `WORKER_MUST_NOT_COMMIT` mode.

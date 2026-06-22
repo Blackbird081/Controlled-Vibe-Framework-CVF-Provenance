@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_t0_role_switch_envelope_standard_dispatched_to_worker`
+Current mode marker: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_t0_role_switch_envelope_standard_dispatched_to_worker`.
+Current mode: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`.
 
 Previous mode: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`.
 
@@ -557,20 +557,29 @@ It defines RSE-T0 through RSE-T3 for role-switch envelopes, operator-question
 boundary, worker-return jurisdiction blocks, and later diagnostics. It creates
 no work order and implements no checker/helper/runtime behavior.
 
-RSE-T0 Role Switch Envelope Standard is dispatched at material commit
-`3842b0f7`. Artifacts:
+RSE-T0 Role Switch Envelope Standard is `CLOSED_PASS_BOUNDED` at material
+closure commit `c0664784`, after dispatch commit `3842b0f7` and dispatch
+session-sync commit `124a372b`. Accepted artifacts:
+`docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md`,
+`docs/reference/role_switch_envelope/README.md`,
+`docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_WORKER_RETURN_2026-06-22.md`,
+`docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md`,
 `docs/baselines/CVF_GC018_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_2026-06-22.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_FOR_WORKER_2026-06-22.md`.
-Worker mode is `WORKER_MUST_NOT_COMMIT`.
+Result: documentation-only Role Switch Envelope standard defines the role-switch
+field set, operator-question boundary rule, compliant worker-to-reviewer
+example, and forbidden operator-question example. No checker, helper, runtime,
+provider/live, public-sync, AHB semantics, or RSE-T1/T2/T3 content was added.
 
 ## Next Allowed Move
 
-Mode: `rse_t0_role_switch_envelope_standard_dispatched_to_worker`.
+Mode: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`.
 
-Next allowed move: worker executes RSE-T0 under `WORKER_MUST_NOT_COMMIT` and
-returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Codex
-remains reviewer/closer. MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: operator may authorize RSE-T1 Operator Question Boundary
+through fresh GC-018 and source-verified work order, or choose another governed
+lane. RSE-T1/T2/T3 implementation remains unauthorized until a fresh work order
+is reviewed and dispatched. MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
