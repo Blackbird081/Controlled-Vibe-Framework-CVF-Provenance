@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t4_federated_memory_read_helper_dispatched_to_worker`
+Current mode marker: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t4_federated_memory_read_helper_dispatched_to_worker`.
+Current mode: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`.
 
-Previous mode: `mpi_t3_external_agent_memory_summary_contract_closed_pending_operator_selection`.
+Previous mode: `mpi_t4_federated_memory_read_helper_dispatched_to_worker`.
 
 Active handoff:
 
@@ -64,20 +64,27 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-MPI-T4 Federated Memory Read Helper is `DISPATCHED_TO_WORKER` at material
-dispatch commit `98709fd0` from `dispatchBaseHead=355d4774`.
+MPI-T4 Federated Memory Read Helper is `CLOSED_PASS_BOUNDED` at material
+closure commit `28373d14`, after dispatch commit `98709fd0` and dispatch
+session-sync commit `bfc5843a`.
 
-Dispatch artifacts:
+Accepted artifacts:
 
 - `docs/baselines/CVF_GC018_MPI_T4_FEDERATED_MEMORY_READ_HELPER_2026-06-22.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md`
 - `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.test.ts`
+- `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_WORKER_RETURN_2026-06-22.md`
+- `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md`
 
-Worker mode: `WORKER_MUST_NOT_COMMIT`. Worker scope is exactly one helper, one
-focused test, and one worker-return packet named by the work order. Next move:
-execute MPI-T4 exactly within the work order and return uncommitted
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. MPI-T5/MPI-T6 and all
-runtime/provider/live/public-sync expansion remain parked.
+Result: one deterministic read-only helper composes caller-supplied LPF memory
+candidates and caller-supplied parsed scan-registry entries through existing
+source-verified projection/readout helpers. Reviewer repaired one allowed-scope
+semantic defect so malformed non-empty registry input sets
+`registryDegraded=true`. Next move: operator checkpoint for MPI-T5, MPI-T6,
+hold Phase 2, or another separately authorized lane. Runtime/provider/live/
+public-sync expansion remains parked.
 
 Detailed pre-GGL-T1 continuity was compacted to:
 
@@ -631,18 +638,19 @@ flagged. Evidence: focused unittest PASS 81/81, AAF helper PASS `defects=[]`,
 worker-return fast gate PASS with reviewer-fast 33/33, reviewer-return steward
 PASS, material pre-commit hook PASS 55/55, and material commit hook PASS 55/55.
 
-MPI Phase 2 External Memory Read roadmap is `MPI_T4_DISPATCHED_TO_WORKER` at
-material dispatch commit `98709fd0`.
+MPI Phase 2 External Memory Read roadmap is
+`MPI_T4_CLOSED_PASS_BOUNDED_PENDING_OPERATOR_SELECTION` at material closure
+commit `28373d14`.
 Artifact:
 `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md`.
-MPI-T4 now has a GC-018 and source-verified work order. MPI-T5 Memory Access
-Claim Checker and MPI-T6 Runtime Candidate Decision Packet remain parked behind
-prerequisite evidence and operator selection. It creates no worker
-implementation yet, route edit, scan-registry route wiring, vector DB, durable
-store, CLI/MCP adapter behavior, provider/live proof, public-sync, or runtime
-readiness claim. Verification passed: dispatch-quality, pre-dispatch autorun
-44/44, dispatch commit steward, pre-commit hook 55/55, and material commit hook
-55/55.
+MPI-T4 is closed bounded. MPI-T5 Memory Access Claim Checker and MPI-T6 Runtime
+Candidate Decision Packet remain parked behind prerequisite evidence and
+operator selection. MPI-T4 creates no route edit, scan-registry route wiring,
+vector DB, durable store, CLI/MCP adapter behavior, provider/live proof,
+public-sync, or runtime readiness claim. Verification passed: focused Vitest
+24/24, TypeScript check, AAF reviewer-return, worker-return fast gate,
+reviewer-return steward, pre-commit hook 55/55, and committed-range pre-closure
+with only session continuity sync outstanding.
 
 MPI-T3 External Agent Memory Summary Contract is `CLOSED_PASS_BOUNDED` at
 material commit `c4c53588`. Reviewer packet hardening closed at commits
@@ -655,13 +663,11 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `mpi_t4_federated_memory_read_helper_dispatched_to_worker`.
+Mode: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`.
 
-Next allowed move: execute MPI-T4 exactly within
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md`.
-Worker returns uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`; reviewer/closer owns review, commit, closure conversion,
-and session sync.
+Next allowed move: operator checkpoint. Select MPI-T5 Memory Access Claim
+Checker, select MPI-T6 Runtime Candidate Decision Packet, hold MPI Phase 2, or
+select another separately authorized lane.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

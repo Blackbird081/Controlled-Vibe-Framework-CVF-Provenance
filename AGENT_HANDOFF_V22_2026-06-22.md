@@ -11,13 +11,13 @@ Supersedes:
 
 ## Purpose
 
-Record MPI-T4 dispatch continuity after MPI-T3 bounded closure. Detailed
+Record MPI-T4 closure continuity after MPI-T3 bounded closure. Detailed
 history remains in completion artifacts, generated session state entries, and
 archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record MPI-T4 dispatch continuity and route the worker execution step.
+Target: record MPI-T4 closure continuity and route the next operator checkpoint.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -36,31 +36,37 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Current Mode
 
-`mpi_t4_federated_memory_read_helper_dispatched_to_worker`
+`mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`
 
-Current material HEAD recorded for this handoff: `98709fd0`
+Current material HEAD recorded for this handoff: `28373d14`
 
 ## Latest Work / Changes
 
-MPI-T4 Federated Memory Read Helper is `DISPATCHED_TO_WORKER` at material
-dispatch commit `98709fd0` from `dispatchBaseHead=355d4774`.
+MPI-T4 Federated Memory Read Helper is `CLOSED_PASS_BOUNDED` at material
+closure commit `28373d14`, after dispatch commit `98709fd0` and dispatch
+session-sync commit `bfc5843a`.
 
-Dispatch artifacts:
+Accepted artifacts:
 
 - `docs/baselines/CVF_GC018_MPI_T4_FEDERATED_MEMORY_READ_HELPER_2026-06-22.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md`
 - `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md`
-
-Worker mode: `WORKER_MUST_NOT_COMMIT`.
-
-Allowed worker paths:
-
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.test.ts`
 - `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_WORKER_RETURN_2026-06-22.md`
+- `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md`
 
-Dispatch verification passed: dispatch-quality, pre-dispatch autorun,
-dispatch commit steward, pre-commit hook, and material commit hook.
+Result: deterministic read-only helper `buildFederatedMemoryRead` composes
+caller-supplied LPF candidates and caller-supplied parsed scan-registry entries
+through existing source-verified projection/readout helpers. Output remains
+summary-only with `rawMemoryReleased=false` and `canReinject=false`. Reviewer
+repaired one allowed-scope semantic defect so malformed non-empty registry input
+sets `registryDegraded=true`.
+
+Verification passed: focused Vitest 24/24, TypeScript check, AAF
+reviewer-return, worker-return fast gate, reviewer-return steward, pre-commit
+hook 55/55, and committed-range pre-closure with only this session continuity
+sync outstanding.
 
 Prior MPI-T3 External Agent Memory Summary Contract is `CLOSED_PASS_BOUNDED` at
 material commit `c4c53588`, after dispatch commit `7e0cf980`, reviewer packet
@@ -95,21 +101,19 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Execute MPI-T4 exactly within
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md`.
-
-The worker returns uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Reviewer/closer owns review, commit, closure conversion,
-and session sync.
+Operator checkpoint. Select MPI-T5 Memory Access Claim Checker, select MPI-T6
+Runtime Candidate Decision Packet, hold MPI Phase 2, or select another
+separately authorized lane.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t4_federated_memory_read_helper_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=worker executes MPI-T4 exactly within the dispatched work order and returns uncommitted; parked checkpoint=MPI-T5/MPI-T6 and all runtime/provider/live/public-sync expansion remain parked pending explicit authorization.
+Startup acknowledged: current mode=`mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator selects MPI-T5, selects MPI-T6, holds MPI Phase 2, or selects another separately authorized lane; parked checkpoint=MPI-T5/MPI-T6 and all runtime/provider/live/public-sync expansion remain parked pending explicit authorization.
 
 ## Parked Checkpoints
 
-- MPI-T4 worker execution is authorized only inside the dispatched work order.
-- MPI-T5 and MPI-T6 remain parked behind their prerequisites.
+- MPI-T4 is closed bounded.
+- MPI-T5 and MPI-T6 remain parked behind their prerequisites and operator
+  selection.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -121,8 +125,8 @@ Startup acknowledged: current mode=`mpi_t4_federated_memory_read_helper_dispatch
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record MPI-T4 material dispatch commit
-`98709fd0`, update current mode and next move, and regenerate active session
+Authorized guard-maintenance scope: record MPI-T4 material closure commit
+`28373d14`, update current mode and next move, and regenerate active session
 state.
 
 Protected paths:
@@ -137,17 +141,18 @@ Protected paths:
 - `CVF_SESSION/state/entries/mpiPhase2ExternalMemoryReadRoadmap20260622.json`
 - `CVF_SESSION/state/entries/mpiT3ExternalAgentMemorySummaryContractClosure20260622.json`
 - `CVF_SESSION/state/entries/mpiT4FederatedMemoryReadHelperDispatch20260622.json`
+- `CVF_SESSION/state/entries/mpiT4FederatedMemoryReadHelperClosure20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 
 Operator authorization: the operator explicitly selected MPI-T4, and material
-dispatch commit `98709fd0` released the bounded worker step. Session continuity
-is a mandatory consequence of the accepted material dispatch.
+closure commit `28373d14` closed the bounded worker step. Session continuity is
+a mandatory consequence of the accepted material closure.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert MPI-T4 material dispatch `98709fd0`, MPI-T3 material closure
-`c4c53588`, hardening commits `c23587e0` and `02a7162e`, or prior
-dispatch/closure history.
+revert MPI-T4 material closure `28373d14`, MPI-T4 material dispatch
+`98709fd0`, MPI-T3 material closure `c4c53588`, hardening commits `c23587e0`
+and `02a7162e`, or prior dispatch/closure history.
 
 ## Agent Operation Trace Block
 
@@ -155,27 +160,26 @@ dispatch/closure history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | MPI-T4 dispatch session sync, 2026-06-22 |
+| Session or invocation | MPI-T4 closure session sync, 2026-06-22 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
 | Target paths | V22; session front door; state source entries; generated active state |
-| Allowed scope source | accepted MPI-T4 dispatch commit `98709fd0` and mandatory continuity rules |
-| Before status evidence | material dispatch committed; active state still named MPI-T3 pending operator selection |
-| After status evidence | active mode names MPI-T4 dispatched to worker |
+| Allowed scope source | accepted MPI-T4 closure commit `28373d14` and mandatory continuity rules |
+| Before status evidence | material closure committed; active state still named MPI-T4 dispatched to worker |
+| After status evidence | active mode names MPI-T4 closed pending operator selection |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
 | Invocation ID | `mpi-t3-closure-session-sync-2026-06-22` |
-| Expected manifest | V22; front door; state core; roadmap entry; MPI-T4 dispatch entry; next move; last updated; generated active state |
-| Actual changed set | V22; front door; state core; roadmap entry; MPI-T4 dispatch entry; next move; last updated; generated active state |
+| Expected manifest | V22; front door; state core; roadmap entry; MPI-T4 closure entry; next move; last updated; generated active state |
+| Actual changed set | V22; front door; state core; roadmap entry; MPI-T4 closure entry; next move; last updated; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records MPI-T4 worker execution
-authorization already bounded by the dispatched work order. It does not
-authorize MPI-T5, MPI-T6, route/schema/auth changes, registry/durable writes,
-provider/live proof, public-sync, CLI/MCP adapter behavior, or universal
-governed-coding control.
+This handoff is session continuity only. It records MPI-T4 bounded closure and
+the next operator checkpoint. It does not authorize MPI-T5, MPI-T6,
+route/schema/auth changes, registry/durable writes, provider/live proof,
+public-sync, CLI/MCP adapter behavior, or universal governed-coding control.
