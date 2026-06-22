@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -600,13 +600,15 @@ Reviewer/closer closure evidence must resolve these items:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PASS |
-| GC-018 status | `docs/baselines/CVF_GC018_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PASS |
-| Worker return | `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_WORKER_RETURN_2026-06-22.md` | reviewer creates closure after accepting this worker-owned return | PASS |
-| Completion or reviewer artifact | reviewer creates the completion review after accepting this return | reviewer-owned completion review | PASS |
-| Roadmap state | `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` | MPI-T3 row updated at closure by reviewer | PASS |
-| External evidence digest | N/A with reason: no external evidence digest created | N/A with reason |
-| System loop interlock | N/A with reason: no system-loop behavior changed by dispatch | N/A with reason |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_WORKER_RETURN_2026-06-22.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` | `Status: MPI_T3_PASS_BOUNDED_PENDING_OPERATOR_SELECTION` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; no MPI-T3 registry row required | PASS |
+| External evidence digest | N/A | no external evidence digest created | N/A with reason |
+| System loop interlock | N/A | no system-loop behavior changed by MPI-T3 | N/A with reason |
 | Session continuity | active session front-door/state/handoff in reviewer-owned closure phase | PASS session-sync follows the accepted material closure commit if state changes | PASS |
 
 ## Acceptance Receipt Assertion Matrix

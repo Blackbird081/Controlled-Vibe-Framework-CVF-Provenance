@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_WORK_ORDER_AUTHORING
+Status: MPI_T3_PASS_BOUNDED_PENDING_OPERATOR_SELECTION
 
 docType: roadmap
 
@@ -113,7 +113,7 @@ Learning Plane mutation from this roadmap.
 
 | Tranche | Purpose | Output | Initial status |
 |---|---|---|---|
-| MPI-T3 | External Agent Memory Summary Contract | Reference contract defining summary-only read request/response and adapter-contract-only boundary | READY_FOR_WORK_ORDER_AUTHORING |
+| MPI-T3 | External Agent Memory Summary Contract | Reference contract defining summary-only read request/response and adapter-contract-only boundary | CLOSED_PASS_BOUNDED |
 | MPI-T4 | Federated Memory Read Helper | Optional read-only helper/readout that combines allowed summary sources deterministically | PARKED_AFTER_MPI_T3 |
 | MPI-T5 | Memory Access Claim Checker | Optional checker that rejects overclaims such as raw memory, vector DB, runtime store, or live external access without proof | PARKED_AFTER_T3_T4_DECISION |
 | MPI-T6 | Runtime Candidate Decision Packet | Decision packet only: whether later runtime route/vector/durable work is worth authorizing | PARKED_DECISION_ONLY |
@@ -244,9 +244,9 @@ secrets/quota handling if applicable.
 | Step | Owner role | Status |
 |---|---|---|
 | Author this Phase 2 roadmap | Codex roadmap author | COMPLETE_PENDING_GATES |
-| Author MPI-T3 GC-018 and source-verified work order | Dispatch author if assigned | NOT_STARTED |
-| Execute MPI-T3 under selected worker boundary | Worker if dispatched | NOT_STARTED |
-| Review and close or reject MPI-T3 | Codex reviewer/closer | NOT_STARTED |
+| Author MPI-T3 GC-018 and source-verified work order | Dispatch author if assigned | PASS |
+| Execute MPI-T3 under selected worker boundary | Worker if dispatched | PASS_BOUNDED |
+| Review and close or reject MPI-T3 | Reviewer/closer | PASS_BOUNDED |
 | Decide whether MPI-T4 is needed | Operator/reviewer checkpoint after MPI-T3 closure | PARKED |
 | Decide whether MPI-T5 checker is needed | Operator/reviewer checkpoint after repeated evidence | PARKED |
 | Decide whether MPI-T6 runtime candidate packet is needed | Operator checkpoint after T3/T4 evidence | PARKED |
@@ -441,9 +441,9 @@ catalog claim is authorized.
 
 | Field | Disposition |
 |---|---|
-| Roadmap state | `Status: ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` |
+| Roadmap state | `Status: MPI_T3_PASS_BOUNDED_PENDING_OPERATOR_SELECTION` |
 | Closure state | N/A with reason: this roadmap is not closed; it is ready for future work-order authoring |
 | Parent roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` records MPI-T2 closed bounded and MPI-T3/MPI-T4 parked |
-| Work-order state | N/A with reason: no MPI-T3 work order is created in this roadmap-only tranche |
+| Work-order state | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_FOR_WORKER_2026-06-22.md` is `CLOSED_PASS_BOUNDED` |
 | Implementation state | N/A with reason: no helper, checker, runtime, adapter, route, or provider implementation is authorized or performed |
-| Next authorized move | dispatch author may author a source-verified MPI-T3 GC-018 baseline and work order from this roadmap if the operator assigns that role; Codex remains reviewer/closer |
+| Next authorized move | operator checkpoint: hold or explicitly select whether MPI-T4 is needed; MPI-T5/MPI-T6 and all runtime/provider/live/public-sync scope remain parked |
