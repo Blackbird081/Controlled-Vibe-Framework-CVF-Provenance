@@ -106,3 +106,103 @@ def test_cvf_session_memory_front_door_not_confused_with_provider_memory() -> No
         text,
     )
     assert issues == []
+
+
+def test_source_verification_rejects_value_assignment_in_symbol_cell() -> None:
+    text = (
+        "## Source Verification Block\n\n"
+        "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |\n"
+        "|---|---|---|---|---|---|---|\n"
+        "| false invariant | `src/example.ts` | line 4 | `rawMemoryReleased: false` | result | LITERAL_INVARIANT | ACCEPT |\n"
+    )
+    issues = MODULE.find_source_verification_fidelity_violations(
+        "docs/reference/CVF_EXAMPLE.md", text
+    )
+    assert any("value assignment or type annotation" in issue for issue in issues)
+
+
+def test_source_verification_accepts_bare_symbol_cell() -> None:
+    text = (
+        "## Source Verification Block\n\n"
+        "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |\n"
+        "|---|---|---|---|---|---|---|\n"
+        "| false invariant | `src/example.ts` | line 4 | `rawMemoryReleased` | result | LITERAL_INVARIANT | ACCEPT |\n"
+    )
+    issues = MODULE.find_source_verification_fidelity_violations(
+        "docs/reference/CVF_EXAMPLE.md", text
+    )
+    assert issues == []
+
+
+def test_source_verification_requires_doc_only_new_fact_type() -> None:
+    text = (
+        "## Source Verification Block\n\n"
+        "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |\n"
+        "|---|---|---|---|---|---|---|\n"
+        "| new doc-only field | `docs/work_orders/example.md` | New Doc-Only Terms | `memorySummaryRequest` | contract | VALUE_SET | ACCEPT |\n"
+    )
+    issues = MODULE.find_source_verification_fidelity_violations(
+        "docs/reference/CVF_EXAMPLE.md", text
+    )
+    assert any("DOC_ONLY_NEW" in issue for issue in issues)
+
+
+def test_pending_worker_return_rejects_missing_gate_pass_and_required_reads() -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        repo_root = Path(tmp)
+        work_order_path = repo_root / "docs" / "work_orders" / "example.md"
+        work_order_path.parent.mkdir(parents=True, exist_ok=True)
+        work_order_path.write_text(
+            "## Required First Reads\n\n"
+            "| Source | Reason |\n|---|---|\n"
+            "| `docs/reference/guard_orientation/README.md` | guard |\n"
+            "| `docs/reference/source.md` | source |\n\n"
+            "## Required Checks\n\n"
+            "`python governance/compat/run_worker_return_fast_gate.py`\n",
+            encoding="utf-8",
+        )
+        text = (
+            "Status: COMPLETE_PENDING_REVIEW\n\n"
+            "dispatchWorkOrder: `docs/work_orders/example.md`\n\n"
+            "## Source Inventory\n\n"
+            "| File | Action | Reason |\n|---|---|---|\n"
+            "| `docs/reference/source.md` | READ-POINTER | cited |\n\n"
+            "## Gate Evidence\n\nWorker-return fast gate expected to pass.\n"
+        )
+        with patch.object(MODULE, "REPO_ROOT", repo_root):
+            issues = MODULE.find_pending_worker_evidence_violations(
+                "docs/reviews/CVF_EXAMPLE_WORKER_RETURN_2026-06-22.md", text
+            )
+    assert any("lacks executed PASS evidence" in issue for issue in issues)
+    assert any("absent from Source Inventory" in issue for issue in issues)
+    assert any("non-read action" in issue for issue in issues)
+
+
+def test_pending_worker_return_accepts_executed_gate_and_required_reads() -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        repo_root = Path(tmp)
+        work_order_path = repo_root / "docs" / "work_orders" / "example.md"
+        work_order_path.parent.mkdir(parents=True, exist_ok=True)
+        work_order_path.write_text(
+            "## Required First Reads\n\n"
+            "| Source | Reason |\n|---|---|\n"
+            "| `docs/reference/source.md` | source |\n\n"
+            "## Required Checks\n\n"
+            "`python governance/compat/run_worker_return_fast_gate.py`\n",
+            encoding="utf-8",
+        )
+        text = (
+            "Status: COMPLETE_PENDING_REVIEW\n\n"
+            "dispatchWorkOrder: `docs/work_orders/example.md`\n\n"
+            "## Source Inventory\n\n"
+            "| File | Action | Reason |\n|---|---|---|\n"
+            "| `docs/reference/source.md` | READ | verified |\n\n"
+            "## Gate Evidence\n\n"
+            "`python governance/compat/run_worker_return_fast_gate.py`\n\n"
+            "COMPLIANT: worker-return fast gate passed.\n"
+        )
+        with patch.object(MODULE, "REPO_ROOT", repo_root):
+            issues = MODULE.find_pending_worker_evidence_violations(
+                "docs/reviews/CVF_EXAMPLE_WORKER_RETURN_2026-06-22.md", text
+            )
+    assert issues == []

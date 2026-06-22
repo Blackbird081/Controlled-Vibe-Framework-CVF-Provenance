@@ -2,9 +2,13 @@
 """
 CVF Agent Packet Authority And Encoding Gate
 
-Blocks two recurring no-commit worker packet defects early:
+Blocks recurring no-commit worker packet defects early:
 - reviewer packets that cite missing authority artifacts;
 - newly added agent-authored non-ASCII text without a local exception note.
+- pending worker returns that report required gates without executed PASS evidence;
+- pending worker returns that skip Required First Reads; and
+- changed Source Verification tables that place values/types in symbol cells or
+  misclassify new doc-only fields.
 """
 
 from __future__ import annotations
@@ -22,6 +26,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[2]
 THIS_SCRIPT = "governance/compat/check_agent_packet_authority_and_encoding.py"
 STANDARD_PATH = "docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md"
+CLOSURE_STANDARD_PATH = "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md"
 
 AUTHORITY_REFERENCE_RE = re.compile(
     r"(docs/(?:baselines|roadmaps|work_orders|reviews)/[A-Za-z0-9_./ -]+?\.md)"
@@ -69,6 +74,14 @@ PROVIDER_SPECIFIC_AUTHORITY_ALLOW_MARKERS = (
     "not CVF source",
     "not source of truth",
 )
+WORKER_RETURN_RE = re.compile(r"(?:^|/)CVF_.+_WORKER_RETURN_\d{4}-\d{2}-\d{2}\.md$")
+DISPATCH_WORK_ORDER_RE = re.compile(r"(?im)^dispatchWorkOrder:\s*`([^`]+)`\s*$")
+PASS_EVIDENCE_RE = re.compile(
+    r"(?:COMPLIANT[^\n]*worker-return fast gate passed|worker-return fast gate[^\n]*\bPASS(?:ED)?\b)",
+    re.IGNORECASE,
+)
+SOURCE_VERIFICATION_HEADINGS = ("Source Verification Block", "Source Verification Table")
+READ_ACTIONS = {"READ", "FULL_READ", "PARTIAL_READ", "SOURCE_VERIFIED"}
 
 
 @dataclass(frozen=True)
@@ -136,6 +149,143 @@ def _read_rel(path: str) -> str:
     if not full.exists() or full.is_dir():
         return ""
     return full.read_text(encoding="utf-8", errors="replace")
+
+
+def _extract_heading_section(text: str, heading_fragment: str) -> str:
+    lines = text.splitlines()
+    start: int | None = None
+    needle = heading_fragment.lower()
+    for index, line in enumerate(lines):
+        stripped = line.strip().lower()
+        if stripped.startswith("#") and needle in stripped:
+            start = index + 1
+            break
+    if start is None:
+        return ""
+    end = len(lines)
+    for index in range(start, len(lines)):
+        if lines[index].startswith("#"):
+            end = index
+            break
+    return "\n".join(lines[start:end])
+
+
+def _parse_markdown_tables(section: str) -> list[list[dict[str, str]]]:
+    lines = section.splitlines()
+    tables: list[list[dict[str, str]]] = []
+    index = 0
+    while index + 1 < len(lines):
+        header_line = lines[index].strip()
+        separator_line = lines[index + 1].strip()
+        if not (header_line.startswith("|") and separator_line.startswith("|")):
+            index += 1
+            continue
+        headers = [cell.strip() for cell in header_line.strip("|").split("|")]
+        separators = [cell.strip() for cell in separator_line.strip("|").split("|")]
+        if len(headers) != len(separators) or not all(
+            re.fullmatch(r":?-{3,}:?", cell) for cell in separators
+        ):
+            index += 1
+            continue
+        rows: list[dict[str, str]] = []
+        index += 2
+        while index < len(lines) and lines[index].strip().startswith("|"):
+            cells = [cell.strip() for cell in lines[index].strip().strip("|").split("|")]
+            if len(cells) == len(headers):
+                rows.append(dict(zip(headers, cells)))
+            index += 1
+        tables.append(rows)
+    return tables
+
+
+def _table_rows(text: str, heading: str) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    for table in _parse_markdown_tables(_extract_heading_section(text, heading)):
+        rows.extend(table)
+    return rows
+
+
+def _cell_path(cell: str) -> str:
+    match = re.search(r"`([^`]+)`", cell)
+    return (match.group(1) if match else cell).replace("\\", "/").strip()
+
+
+def find_source_verification_fidelity_violations(path: str, text: str) -> list[str]:
+    normalized = path.replace("\\", "/")
+    if not normalized.endswith(".md") or "/archive/" in normalized:
+        return []
+    issues: list[str] = []
+    for heading in SOURCE_VERIFICATION_HEADINGS:
+        for row_number, row in enumerate(_table_rows(text, heading), start=1):
+            symbol_cell = row.get("Verified path or symbol", "").strip()
+            if symbol_cell:
+                tokens = re.findall(r"`([^`]+)`", symbol_cell) or [symbol_cell]
+                invalid = [
+                    token
+                    for token in tokens
+                    if re.search(r"\s*=\s*|:\s*(?:false|true|string|number|boolean|null|\d+|['\"])", token, re.IGNORECASE)
+                ]
+                if invalid:
+                    issues.append(
+                        f"Source Verification row {row_number} `Verified path or symbol` contains "
+                        "a value assignment or type annotation; keep only the field/path/symbol: "
+                        + ", ".join(invalid)
+                    )
+            row_text = " ".join(row.values())
+            if re.search(r"\b(?:DOC_ONLY_NEW|doc[- ]only)\b", row_text, re.IGNORECASE):
+                fact_type = row.get("Source fact type", "").strip().strip("`").upper()
+                if fact_type != "DOC_ONLY_NEW":
+                    issues.append(
+                        f"Source Verification row {row_number} describes a new doc-only field but "
+                        f"Source fact type is `{fact_type or '<missing>'}` instead of `DOC_ONLY_NEW`"
+                    )
+    return issues
+
+
+def find_pending_worker_evidence_violations(path: str, text: str) -> list[str]:
+    normalized = path.replace("\\", "/")
+    if not WORKER_RETURN_RE.search(normalized):
+        return []
+    status_match = re.search(r"(?im)^Status:\s*(.+?)\s*$", text)
+    if not status_match or "COMPLETE_PENDING_REVIEW" not in status_match.group(1).upper():
+        return []
+    work_order_match = DISPATCH_WORK_ORDER_RE.search(text)
+    if not work_order_match:
+        return ["pending worker return lacks dispatchWorkOrder path"]
+    work_order_path = work_order_match.group(1).replace("\\", "/")
+    work_order_text = _read_rel(work_order_path)
+    if not work_order_text:
+        return [f"pending worker return dispatchWorkOrder cannot be read: `{work_order_path}`"]
+
+    issues: list[str] = []
+    required_checks = _extract_heading_section(work_order_text, "Required Checks")
+    gate_evidence = _extract_heading_section(text, "Gate Evidence")
+    if "run_worker_return_fast_gate.py" in required_checks:
+        if "run_worker_return_fast_gate.py" not in gate_evidence or not PASS_EVIDENCE_RE.search(gate_evidence):
+            issues.append(
+                "pending worker return lacks executed PASS evidence for required "
+                "`run_worker_return_fast_gate.py`; future/expected language is not gate evidence"
+            )
+
+    required_paths = {
+        _cell_path(row.get("Source", ""))
+        for row in _table_rows(work_order_text, "Required First Reads")
+        if _cell_path(row.get("Source", "")).startswith(("docs/", "governance/", "EXTENSIONS/", "CVF_SESSION/"))
+    }
+    inventory_actions = {
+        _cell_path(row.get("File", "")): row.get("Action", "").strip().upper()
+        for row in _table_rows(text, "Source Inventory")
+    }
+    for required_path in sorted(required_paths):
+        action = inventory_actions.get(required_path)
+        if action is None:
+            issues.append(f"Required First Read is absent from Source Inventory: `{required_path}`")
+        elif action not in READ_ACTIONS:
+            issues.append(
+                f"Required First Read `{required_path}` uses non-read action `{action}`; "
+                "pointer/citation evidence is not a source read"
+            )
+    return issues
 
 
 def _is_review_packet(path: str) -> bool:
@@ -307,6 +457,8 @@ def _run_check(base: str | None, head: str | None) -> dict[str, Any]:
         if text:
             path_issues.extend(find_authority_reference_violations(path, text))
             path_issues.extend(find_provider_specific_authority_violations(path, text))
+            path_issues.extend(find_source_verification_fidelity_violations(path, text))
+            path_issues.extend(find_pending_worker_evidence_violations(path, text))
             path_issues.extend(
                 find_non_ascii_line_violations(
                     path,
@@ -319,6 +471,7 @@ def _run_check(base: str | None, head: str | None) -> dict[str, Any]:
 
     return {
         "policy": STANDARD_PATH,
+        "additionalPolicies": [CLOSURE_STANDARD_PATH],
         "script": THIS_SCRIPT,
         "changedFileCount": len(changed),
         "violationCount": len(violations),
@@ -341,9 +494,9 @@ def _print_report(report: dict[str, Any], base: str | None, head: str | None) ->
             for issue in violation["issues"]:
                 print(f"    - {issue}")
     if report["compliant"]:
-        print("\nCOMPLIANT - authority references exist and added agent text is ASCII-disciplined.")
+        print("\nCOMPLIANT - packet authority, encoding, source fidelity, and pending-return evidence pass.")
     else:
-        print("\nVIOLATION - repair missing authority artifacts or record a bounded encoding exception.")
+        print("\nVIOLATION - repair packet authority, encoding, source fidelity, or pending-return evidence.")
 
 
 def main() -> int:
