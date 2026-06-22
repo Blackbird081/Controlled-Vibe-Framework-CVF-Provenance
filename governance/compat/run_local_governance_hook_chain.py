@@ -127,6 +127,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_index_classification.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "memory access claim",
+        ["python", "governance/compat/check_memory_access_claim.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "corpus scan registry",
         ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

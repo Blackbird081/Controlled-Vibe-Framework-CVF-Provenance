@@ -242,6 +242,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "memory access claim",
+            "governance/compat/check_memory_access_claim.py",
+            base,
+            head,
+        ),
+        _range_command(
             "corpus packet source hash (NR-04)",
             "governance/compat/check_corpus_packet_source_hash.py",
             base,

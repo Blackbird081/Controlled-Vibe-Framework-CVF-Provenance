@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -140,8 +140,7 @@ without special-casing.
 The checker must, over changed files in the given `--base`..`--head` range
 (or `HEAD`..`HEAD` working-tree mode, matching the sibling checker's own
 range-resolution convention) restricted to governed Markdown under
-`docs/baselines/`, `docs/work_orders/`, `docs/reviews/`, and
-`docs/reference/`:
+docs/baselines, docs/work_orders, docs/reviews, and docs/reference:
 
 1. flag claim language asserting external agents can read CVF memory through
    a live runtime/MCP/CLI route when the changed file does not also cite a

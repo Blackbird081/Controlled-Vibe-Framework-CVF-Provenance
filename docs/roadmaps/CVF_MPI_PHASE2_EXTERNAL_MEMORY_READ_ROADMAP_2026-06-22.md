@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MPI_T4_CLOSED_PASS_BOUNDED_PENDING_OPERATOR_SELECTION
+Status: MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC
 
 docType: roadmap
 
@@ -63,12 +63,13 @@ symbols, fields, existing paths, and new doc-only fields before dispatch.
 
 ## Current State
 
-MPI-T0, INDEX-T1, MPI-T1, and MPI-T2 are closed bounded. The Memory Plane Map
+MPI-T0, INDEX-T1, MPI-T1, MPI-T2, MPI-T3, MPI-T4, and MPI-T5 are closed
+bounded. The Memory Plane Map
 records the current running, contract-only, and parked surfaces. The scan
 registry can already be projected into summary-only candidate-compatible
 records by caller-supplied parsed entries, but it is not auto-wired into the
-Memory readout route. MPI-T3 and MPI-T4 remain parked until a fresh GC-018 and
-work order are authored.
+Memory readout route. MPI-T6 remains parked until a fresh GC-018 and work
+order are authored.
 
 The important distinction for Phase 2 is this: CVF should provide a governed
 read contract for external agents before it attempts any runtime adapter,
@@ -115,7 +116,7 @@ Learning Plane mutation from this roadmap.
 |---|---|---|---|
 | MPI-T3 | External Agent Memory Summary Contract | Reference contract defining summary-only read request/response and adapter-contract-only boundary | CLOSED_PASS_BOUNDED |
 | MPI-T4 | Federated Memory Read Helper | Optional read-only helper/readout that combines allowed summary sources deterministically | CLOSED_PASS_BOUNDED |
-| MPI-T5 | Memory Access Claim Checker | Optional checker that rejects overclaims such as raw memory, vector DB, runtime store, or live external access without proof | PARKED_AFTER_T3_T4_DECISION |
+| MPI-T5 | Memory Access Claim Checker | Optional checker that rejects overclaims such as raw memory, vector DB, runtime store, or live external access without proof | CLOSED_PASS_BOUNDED |
 | MPI-T6 | Runtime Candidate Decision Packet | Decision packet only: whether later runtime route/vector/durable work is worth authorizing | PARKED_DECISION_ONLY |
 
 ## MPI-T3 External Agent Memory Summary Contract
@@ -253,7 +254,10 @@ secrets/quota handling if applicable.
 | Author and gate MPI-T4 GC-018/work order | Dispatch author/reviewer | PASS |
 | Execute MPI-T4 bounded helper/test tranche | Worker | PASS_BOUNDED |
 | Review and close or reject MPI-T4 | Reviewer/closer | PASS_BOUNDED |
-| Decide whether MPI-T5 checker is needed | Operator/reviewer checkpoint after repeated evidence | PARKED |
+| Decide whether MPI-T5 checker is needed | Operator/reviewer checkpoint after repeated evidence | PASS - operator selected MPI-T5 after MPI-T4 closure |
+| Author and gate MPI-T5 GC-018/work order | Dispatch author/reviewer | PASS |
+| Execute MPI-T5 bounded checker/test tranche | Worker | PASS_BOUNDED |
+| Review and close or reject MPI-T5 | Reviewer/closer | PASS_BOUNDED |
 | Decide whether MPI-T6 runtime candidate packet is needed | Operator checkpoint after T3/T4 evidence | PARKED |
 
 ## Future Work-Order Authoring Constraints
@@ -446,18 +450,18 @@ catalog claim is authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: MPI_T4_CLOSED_PASS_BOUNDED_PENDING_OPERATOR_SELECTION` | PASS |
-| Closure state | this file | MPI-T4 child tranche closed bounded; roadmap remains open for operator selection of MPI-T5, MPI-T6, hold, or another lane | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC` | PASS |
+| Closure state | this file | MPI-T5 child tranche closed bounded; roadmap remains open for public-sync, MPI-T6, hold, or another lane | PASS |
 | Parent roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | records MPI-T2 closed bounded and MPI-T3/MPI-T4 parked | PASS |
-| Implementation state | MPI-T4 helper/test | focused Vitest 24/24, TypeScript check PASS, worker-return fast gate PASS, and reviewer repair for malformed registry degradation | PASS |
+| Implementation state | MPI-T5 checker/test | focused pytest 13/13, checker self-run PASS, worker-return fast gate PASS, and reviewer-fast PASS | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; no MPI-T4 registry row required | PASS |
 | External evidence digest | N/A | no external evidence is consumed | N/A with reason |
 | System loop interlock | N/A | no runtime/system loop is changed | N/A with reason |
-| Session continuity | active state/front door/handoff | dedicated session-sync follows material closure | PASS |
-| Next authorized move | active session state/front door/handoff | operator checkpoint: select MPI-T5, select MPI-T6 decision packet, hold MPI Phase 2, or select another separately authorized lane; route/provider/live/public-sync scope remains parked | PASS |
+| Session continuity | active state/front door/handoff | continuity marker repaired in this closure; final public-sync/session surfaces follow material closure | PASS |
+| Next authorized move | active session state/front door/handoff | public-sync from sibling public-sync clone after private material closure and remote verification; MPI-T6 remains parked | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 

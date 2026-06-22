@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -308,8 +308,7 @@ authority, not implementation collisions.
 
 The worker must implement a static checker module that, over changed files in
 the given `--base`..`--head` range restricted to governed Markdown under
-`docs/baselines/`, `docs/work_orders/`, `docs/reviews/`, and
-`docs/reference/`:
+docs/baselines, docs/work_orders, docs/reviews, and docs/reference:
 
 1. flags claim language asserting external agents can read CVF memory through
    a live runtime/MCP/CLI route when the changed file does not also cite a
@@ -593,11 +592,11 @@ source file or command result.
 
 | Required artifact | Required path | Final evidence | Status |
 |---|---|---|---|
-| Memory access claim checker | `governance/compat/check_memory_access_claim.py` | created; focused pytest PASS | OPEN |
-| Focused test | `governance/compat/test_check_memory_access_claim.py` | created; focused pytest PASS | OPEN |
-| Hook-chain wiring | `governance/compat/run_local_governance_hook_chain.py` | one new tuple entry only | OPEN |
-| Autorun wiring | `governance/compat/run_agent_autorun_workflow_gate.py` | one new `_range_command` call only | OPEN |
-| Worker return | `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | OPEN |
+| Memory access claim checker | `governance/compat/check_memory_access_claim.py` | created; focused pytest PASS | PASS |
+| Focused test | `governance/compat/test_check_memory_access_claim.py` | created; focused pytest PASS | PASS |
+| Hook-chain wiring | `governance/compat/run_local_governance_hook_chain.py` | one new tuple entry only | PASS |
+| Autorun wiring | `governance/compat/run_agent_autorun_workflow_gate.py` | one new `_range_command` call only | PASS |
+| Worker return | `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_WORKER_RETURN_2026-06-22.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
 
 ## Self-Reported Gate Evidence Consistency
 
@@ -631,17 +630,17 @@ PASS, `N/A with reason`, or BLOCKED.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED_TO_WORKER` | PASS |
-| Completion or reviewer artifact | a completion review the reviewer creates after accepting this return | N/A with reason: not yet created | N/A with reason |
-| Roadmap state | `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` | MPI-T5 row remains `PARKED_AFTER_T3_T4_DECISION`; reviewer updates this row only when accepting the material closure commit | N/A with reason: worker return not yet accepted |
-| Registry JSON | N/A | no registry JSON changes authorized; verify unchanged with `git diff --name-status` before closure | N/A with reason |
-| Registry Markdown | N/A | no registry Markdown changes authorized; verify unchanged with `git diff --name-status` before closure | N/A with reason |
-| External evidence digest | this work order and paired GC-018 | External Knowledge Intake Routing present | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` | MPI-T5 row updated to `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; no MPI-T5 registry row required | PASS |
+| External evidence digest | N/A | no external evidence consumed | N/A with reason |
 | System loop interlock | this work order | no system loop, wrapper, proxy, queue, daemon, watcher, or universal-control expansion | PASS |
-| GC-018 | paired baseline | `Status: DISPATCHED_TO_WORKER` | PASS |
-| Worker return | a target inside the reviews directory the worker creates | not yet created at dispatch time | N/A with reason: worker has not executed yet |
-| Runtime checker/tests | three new worker source paths | not yet created at dispatch time | N/A with reason: worker has not executed yet |
-| Session continuity | reviewer-owned later phase | dedicated session-sync follows material closure | N/A with reason: closure not yet reached |
+| GC-018 | paired baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_WORKER_RETURN_2026-06-22.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Runtime checker/tests | checker, test, and two wiring edits | focused pytest 13/13; worker-return fast gate PASS | PASS |
+| Session continuity | reviewer-owned later phase | continuity marker repaired for MPI-T5 dispatch; final session-sync follows public-sync decision | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
