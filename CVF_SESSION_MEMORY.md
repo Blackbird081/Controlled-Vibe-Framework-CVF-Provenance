@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`
+Current mode marker: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -23,7 +23,7 @@ Previous long front-door snapshot:
 
 Active handoff predecessor archived in this batch:
 
-`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V19_2026-06-15.md`
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V20_2026-06-19.md`
 
 Compaction archive (prior closed-tranche prose from this file):
 
@@ -37,18 +37,18 @@ Compaction archive (prior closed-tranche prose from this file):
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff from the state registry:
-   `AGENT_HANDOFF_V20_2026-06-19.md`
+   `AGENT_HANDOFF_V21_2026-06-22.md`
 5. Read mandatory startup guards listed in the state registry.
 
 ## Current State
 
-Current mode: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`.
+Current mode: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`.
 
-Previous mode: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`.
+Previous mode: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`.
 
 Active handoff:
 
-`AGENT_HANDOFF_V20_2026-06-19.md`
+`AGENT_HANDOFF_V21_2026-06-22.md`
 
 Active state registry:
 
@@ -539,14 +539,20 @@ dispatch session-sync commit `26cfaa0c`. Accepted artifacts:
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_FOR_WORKER_2026-06-22.md`.
 
+AAF-T7B Reviewer Completion Scaffold Helper is dispatched at material commit
+`2d3c1a5d`. It authorizes only the bounded L1 scaffold helper work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_FOR_WORKER_2026-06-22.md`.
+
 ## Next Allowed Move
 
-Mode: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`.
+Mode: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`.
 
-Next allowed move: operator selects the next governed tranche. Parked future
-tranche to retain: Role Handoff Protocol / Role Switch Envelope for
-standardized role-switch declarations across internal/external agents and
-future runtime projects. MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: Claude/worker executes AAF-T7B under
+`WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Parked future tranche to retain: Role Handoff Protocol /
+Role Switch Envelope for standardized role-switch declarations across
+internal/external agents and future runtime projects. MPI-T3/MPI-T4 remain
+paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
@@ -555,9 +561,9 @@ filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
 Memory readout route edits, route schema changes, registry source or aggregate
 edits, durable writes, registry generator changes, MPI-T3/MPI-T4, full AAF-T6,
-AAF-T7 beyond closed AAF-T7A.1, CGE-T3, ACE-R1, MLW7/8,
-helper/checker/scaffold implementation beyond an authorized tranche, patch
-apply behavior, and universal governed-coding claims.
+AAF-T7 L2 patch preview beyond AAF-T7B, CGE-T3, ACE-R1, MLW7/8, helper/checker
+implementation beyond an authorized tranche, patch apply behavior, and
+universal governed-coding claims.
 LHW24 remains the latest closed numbered LHW wave.
 
 ## Active Rule Additions
@@ -584,7 +590,7 @@ gates, and governed file-size checks enforce this front-door contract.
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `AGENT_HANDOFF_V20_2026-06-19.md`
+- `AGENT_HANDOFF_V21_2026-06-22.md`
 - `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`
