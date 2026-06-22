@@ -74,7 +74,7 @@ source/test paths. Do not revert MPI-T3 closure or prior packet hardening.
 
 | Check | Command | Result |
 |---|---|---|
-| Focused steward tests | `python -m pytest governance/compat/test_run_agent_commit_steward_preflight.py -q` | required before commit |
+| Focused steward tests | `python -m pytest governance/compat/test_run_agent_commit_steward_preflight.py -q` | PASS 13/13 after newline-normalization follow-up |
 | Pre-implementation | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base f53d5fa0 --head HEAD` | required before commit |
 | Implementation steward | `python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base f53d5fa0 --head HEAD --enforce` | required before commit |
 | Material pre-commit | `python governance/compat/run_local_governance_hook_chain.py --hook pre-commit` | required before commit |
@@ -125,6 +125,10 @@ only the canonical active-handoff filename pointer.
 
 Prediction confirmed bounded when focused tests and the resumed real session
 steward pass.
+
+Follow-up dogfood correction: `git show` output is stripped while the working
+file may retain a trailing LF or CRLF. Pointer comparison now normalizes line
+endings and trailing whitespace before equality, with a direct regression test.
 
 ## Acceptance Receipt Assertion Matrix
 

@@ -135,7 +135,8 @@ def _agents_change_is_handoff_routing_only(base: str) -> bool:
     after = agents_file.read_text(encoding="utf-8", errors="replace")
 
     def normalize(text: str) -> str:
-        return HANDOFF_REFERENCE_RE.sub("AGENT_HANDOFF_ACTIVE.md", text).replace("\r\n", "\n")
+        normalized = HANDOFF_REFERENCE_RE.sub("AGENT_HANDOFF_ACTIVE.md", text)
+        return normalized.replace("\r\n", "\n").strip()
 
     return before != after and normalize(before) == normalize(after)
 

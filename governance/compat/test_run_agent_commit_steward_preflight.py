@@ -88,6 +88,24 @@ def test_agents_rule_change_remains_material(monkeypatch) -> None:
     assert plan.protected_session_paths == ("AGENT_HANDOFF_V22_2026-06-22.md",)
 
 
+def test_agents_pointer_comparison_normalizes_line_endings_and_trailing_newline(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    monkeypatch.setattr(steward, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(
+        steward,
+        "_git_output",
+        lambda *args, **kwargs: "Active: `AGENT_HANDOFF_V21_2026-06-22.md`",
+    )
+    (tmp_path / "AGENTS.md").write_text(
+        "Active: `AGENT_HANDOFF_V22_2026-06-22.md`\r\n",
+        encoding="utf-8",
+    )
+
+    assert steward._agents_change_is_handoff_routing_only("base")
+
+
 def test_handoff_sync_only_lane(monkeypatch) -> None:
     monkeypatch.setattr(
         steward,
