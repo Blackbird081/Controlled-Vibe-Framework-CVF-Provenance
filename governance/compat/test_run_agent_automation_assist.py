@@ -988,6 +988,37 @@ class ReviewerCompletionScaffoldTests(unittest.TestCase):
         self.assertTrue(text.startswith("# Example Review"))
         for section in assist.REVIEWER_COMPLETION_SCAFFOLD_SECTIONS:
             self.assertIn(f"## {section}", text)
+        self.assertIn("## Claim Boundary", text)
+
+    def test_scaffold_text_front_loads_review_friction_gate_shapes(self):
+        """AAF-T7C: scaffold includes repeated closure-gate skeleton shapes."""
+        text = assist.build_reviewer_completion_scaffold("Example Review")
+        self.assertIn("## Required Artifact Manifest", text)
+        self.assertIn(
+            "| Artifact path | Required? | Final disposition |",
+            text,
+        )
+        self.assertIn("## Acceptance Receipt Assertion Matrix", text)
+        self.assertIn(
+            "| Required value | Observed value | Status |",
+            text,
+        )
+        self.assertIn(
+            "| Closure item | Required artifact/path | Machine-readable evidence | Final status |",
+            text,
+        )
+        for row in (
+            "Work order status",
+            "Completion or reviewer artifact",
+            "Roadmap state",
+            "Registry JSON",
+            "Registry Markdown",
+            "External evidence digest",
+            "System loop interlock",
+            "Session continuity",
+        ):
+            self.assertIn(f"| {row} |", text)
+        self.assertIn("Path discipline:", text)
 
     def test_scaffold_text_is_empty_skeleton_not_a_closure(self):
         """AC1/AC4: skeleton fields are TODO and the scaffold disclaims closure."""

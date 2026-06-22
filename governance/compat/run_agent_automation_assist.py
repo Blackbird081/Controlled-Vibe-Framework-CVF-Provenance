@@ -871,12 +871,76 @@ REVIEWER_COMPLETION_SCAFFOLD_SECTIONS = (
     "Findings / Position",
     "Risk / Corrective Action",
     "Claim Boundary",
+    "Required Artifact Manifest",
     "Public Export Disposition",
     "Agent Operation Trace Block",
+    "Acceptance Receipt Assertion Matrix",
     "Machine Closure Package",
 )
 
 _SCAFFOLD_TODO = "TODO: reviewer/closer fills this section before completion."
+_SCAFFOLD_TABLE_TODO = "TODO: fill before completion"
+
+
+def _reviewer_completion_scaffold_section_body(section: str) -> list[str]:
+    """Return an empty but gate-shaped skeleton body for a scaffold section."""
+    if section == "Status":
+        return [
+            "Status: TODO_CLOSURE_STATUS",
+            "",
+            _SCAFFOLD_TODO,
+        ]
+    if section == "Required Artifact Manifest":
+        return [
+            "| Artifact path | Required? | Final disposition |",
+            "|---|---|---|",
+            f"| {_SCAFFOLD_TABLE_TODO} | yes/no | {_SCAFFOLD_TABLE_TODO} |",
+            "",
+            (
+                "Path discipline: cite only real changed artifacts as backtick "
+                "paths. Describe demonstration paths or glob examples in plain "
+                "words unless they are actual artifacts in the closure range."
+            ),
+        ]
+    if section == "Agent Operation Trace Block":
+        return [
+            "| Field | Evidence |",
+            "|---|---|",
+            f"| Actor | {_SCAFFOLD_TABLE_TODO} |",
+            f"| Provider or surface | {_SCAFFOLD_TABLE_TODO} |",
+            f"| Working directory | {_SCAFFOLD_TABLE_TODO} |",
+            f"| Command or tool surface | {_SCAFFOLD_TABLE_TODO} |",
+            f"| Target paths | {_SCAFFOLD_TABLE_TODO} |",
+            f"| Before status evidence | {_SCAFFOLD_TABLE_TODO} |",
+            f"| After status evidence | {_SCAFFOLD_TABLE_TODO} |",
+            f"| Diff evidence | {_SCAFFOLD_TABLE_TODO} |",
+            f"| Claim boundary | {_SCAFFOLD_TABLE_TODO} |",
+        ]
+    if section == "Acceptance Receipt Assertion Matrix":
+        return [
+            "| Required value | Observed value | Status |",
+            "|---|---|---|",
+            f"| {_SCAFFOLD_TABLE_TODO} | {_SCAFFOLD_TABLE_TODO} | TODO_PASS_FAIL_NA |",
+            "",
+            (
+                "Use N/A with reason when the tranche has no receipt/query "
+                "acceptance requirement."
+            ),
+        ]
+    if section == "Machine Closure Package":
+        return [
+            "| Closure item | Required artifact/path | Machine-readable evidence | Final status |",
+            "|---|---|---|---|",
+            f"| Work order status | {_SCAFFOLD_TABLE_TODO} | Status line | TODO_PASS_FAIL_NA |",
+            f"| Completion or reviewer artifact | {_SCAFFOLD_TABLE_TODO} | Status line | TODO_PASS_FAIL_NA |",
+            f"| Roadmap state | {_SCAFFOLD_TABLE_TODO} | Status line or N/A with reason | TODO_PASS_FAIL_NA |",
+            f"| Registry JSON | {_SCAFFOLD_TABLE_TODO} | generator/drift check or N/A with reason | TODO_PASS_FAIL_NA |",
+            f"| Registry Markdown | {_SCAFFOLD_TABLE_TODO} | path/status check or N/A with reason | TODO_PASS_FAIL_NA |",
+            f"| External evidence digest | {_SCAFFOLD_TABLE_TODO} | source digest or N/A with reason | TODO_PASS_FAIL_NA |",
+            f"| System loop interlock | {_SCAFFOLD_TABLE_TODO} | command output or N/A with reason | TODO_PASS_FAIL_NA |",
+            f"| Session continuity | {_SCAFFOLD_TABLE_TODO} | state/front-door/handoff evidence or N/A with reason | TODO_PASS_FAIL_NA |",
+        ]
+    return [_SCAFFOLD_TODO]
 
 
 def build_reviewer_completion_scaffold(title: str = "") -> str:
@@ -905,7 +969,7 @@ def build_reviewer_completion_scaffold(title: str = "") -> str:
     for section in REVIEWER_COMPLETION_SCAFFOLD_SECTIONS:
         lines.append(f"## {section}")
         lines.append("")
-        lines.append(_SCAFFOLD_TODO)
+        lines.extend(_reviewer_completion_scaffold_section_body(section))
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
