@@ -1,5 +1,5 @@
 {
   "stateOrder": 648,
   "stateKey": "nextAllowedMove",
-  "value": "ADIF-T0 checkpoint is ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW at Codex review commit 6277cb28, based on execution commit 7c0480bc. Claude may resume by authoring and gating the fresh T1 child packet from the current post-sync HEAD, then continue T1 -> T2 -> (T3 || T4) -> T5 under the continuous authorization. After every worker checkpoint commit, Claude must stop for Codex-owned continuity sync and checkpoint acceptance when the child remains pending review; worker scope still forbids session/handoff edits. Runtime/provider/live proof, public-sync, secrets/quota, readiness, and universal correctness/control claims remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "ADIF-T1 is committed at 2fcd2395 with COMPLETE_PENDING_REVIEW. Codex must run the T1 checkpoint review and record accepted dependency-release evidence before T2 authoring or execution. Claude remains stopped and must not edit session/handoff surfaces. Runtime/provider/live proof, public-sync, secrets/quota, readiness, and universal correctness/control claims remain parked. The Agent System Skills Foundation roadmap remains parked until ADIF. LHW24 remains the latest closed numbered LHW wave."
 }
