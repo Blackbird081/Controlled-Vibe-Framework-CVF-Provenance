@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`
+Current mode marker: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`.
+Current mode: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`.
 
-Previous mode: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`.
+Previous mode: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`.
 
 Active handoff:
 
@@ -63,6 +63,16 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+MPI-T6 Review Gate Hardening is `CLOSED_PASS_BOUNDED` at material commit
+`df4029e2`. Three existing checker owners now reject narrow exhaustive
+directory overclaims, missing Machine Closure Package on closed GC-018
+baselines, decided-versus-parked roadmap residue, closed
+`COMPLETE_PENDING_GATES` residue, and provider-local `AskUserQuestion` rows
+marked `ACCEPT` authority. Focused tests pass 41 tests; worker-return fast gate
+and reviewer-fast 34/34 pass. Next move: Claude repairs the retained MPI-T6
+packet/roadmap, then Codex reviews it under these hardened gates. MPI-T6 runtime
+authorization and runtime/provider/live/public expansion remain parked.
 
 MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` and public-synced
 from the sibling public-sync clone. Public remote was verified as
@@ -677,10 +687,11 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`.
+Mode: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`.
 
-Next allowed move: operator checkpoint to select MPI-T6, hold MPI Phase 2, or
-choose another separately authorized lane. MPI-T6 remains parked.
+Next allowed move: Claude repairs the retained MPI-T6 decision packet and
+roadmap, then Codex reviews the revision under the hardened gates. Runtime
+authorization remains parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
