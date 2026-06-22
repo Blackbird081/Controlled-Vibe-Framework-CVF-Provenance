@@ -34,13 +34,68 @@ Active front door: `CVF_SESSION_MEMORY.md`.
 This provenance workspace remains private. Public changes require separate
 authorization and the sibling public-sync clone with remote verification.
 
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: session-sync update after AAF-T7C material
+commit `b7601865` and LPF TypeScript config material commit `bf8ff950`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/aafT7CReviewerScaffoldShapeHardeningClosure20260622.json`
+- `CVF_SESSION/state/entries/lpfTsconfigRootDirSyncFix20260622.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator requested sync after confirming the local
+LPF config issue was fixed on 2026-06-22.
+
+Rollback boundary: revert only this session-sync commit if rejected; do not
+revert AAF-T7C material commit `b7601865`, LPF config material commit
+`bf8ff950`, MPI-T4 closure, or earlier session history.
+
 ## Current Mode
 
 `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`
 
-Current material HEAD recorded for this handoff: `28373d14`
+Current material HEAD recorded for this handoff: `bf8ff950`
+
+Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
+
+Exact remote SHA must be derived live from git when needed; this handoff does
+not claim a current remote SHA.
+
+External agent memory files: non-canonical convenience only. Use CVF-governed
+front doors, state sources, handoffs, standards, work orders, reviews, and
+runtime source as authority.
 
 ## Latest Work / Changes
+
+LPF TypeScript config rootDir sync fix is `CLOSED_PASS_BOUNDED` at material
+commit `bf8ff950`. Accepted artifacts:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tsconfig.json`
+- `docs/baselines/CVF_GC018_LPF_TSCONFIG_ROOTDIR_SYNC_FIX_2026-06-22.md`
+
+Result: Learning Plane package check uses an explicit `rootDir` that covers
+existing sibling extension contract imports. Verification passed:
+`npm run check` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` and material
+pre-commit hook 55/55.
+
+AAF-T7C Reviewer Scaffold Shape Hardening is `CLOSED_PASS_BOUNDED` at material
+commit `b7601865`. It hardened the existing AAF reviewer-completion scaffold
+with Required Artifact Manifest, Acceptance Receipt Assertion Matrix, Machine
+Closure Package, and path-discipline skeletons while preserving L1-only helper
+behavior. Accepted artifacts:
+
+- `docs/baselines/CVF_GC018_AAF_T7C_REVIEWER_SCAFFOLD_SHAPE_HARDENING_2026-06-22.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7C_REVIEWER_SCAFFOLD_SHAPE_HARDENING_FOR_CODEX_2026-06-22.md`
+- `docs/reviews/CVF_AAF_T7C_REVIEWER_SCAFFOLD_SHAPE_HARDENING_COMPLETION_2026-06-22.md`
+- `governance/compat/run_agent_automation_assist.py`
+- `governance/compat/test_run_agent_automation_assist.py`
+
+Verification passed: focused AAF helper tests 82/82, pre-implementation
+autorun, commit steward preflight, and material pre-commit hook 55/55.
 
 MPI-T4 Federated Memory Read Helper is `CLOSED_PASS_BOUNDED` at material
 closure commit `28373d14`, after dispatch commit `98709fd0` and dispatch

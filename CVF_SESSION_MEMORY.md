@@ -64,6 +64,11 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Latest material work: AAF-T7C Reviewer Scaffold Shape Hardening is
+`CLOSED_PASS_BOUNDED` at material commit `b7601865`, and the LPF TypeScript
+config rootDir sync fix is `CLOSED_PASS_BOUNDED` at material commit
+`bf8ff950`.
+
 MPI-T4 Federated Memory Read Helper is `CLOSED_PASS_BOUNDED` at material
 closure commit `28373d14`, after dispatch commit `98709fd0` and dispatch
 session-sync commit `bfc5843a`.
