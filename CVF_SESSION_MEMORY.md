@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`
+Current mode marker: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`.
+Current mode: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`.
 
-Previous mode: `rse_t1_operator_question_boundary_dispatched_to_worker`.
+Previous mode: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`.
 
 Active handoff:
 
@@ -592,14 +592,25 @@ execution and completed the required source ledger. Verification passed:
 focused pytest 72/72, AAF helper with `defects=[]`, reviewer-fast 33/33,
 reviewer-return steward, and pre-commit 55/55.
 
+RSE-T2 Worker Return Jurisdiction Block is `DISPATCHED_TO_WORKER` at material
+dispatch commit `2d05a060` from dispatch base `2dd54bc5`. Artifacts:
+`docs/baselines/CVF_GC018_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_FOR_WORKER_2026-06-22.md`.
+Worker mode is `WORKER_MUST_NOT_COMMIT`; only the RSE-T2 addendum and worker
+return are authorized. Reviewer repaired provider-specific role labels and made
+reviewer-owned closure paths exact before dispatch. No checker, helper, AAF
+diagnostic, work-order template enforcement edit, RSE-T0 or RSE-T1 edit, AHB
+semantics change, or RSE-T3 content is authorized.
+
 ## Next Allowed Move
 
-Mode: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`.
+Mode: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`.
 
-Next allowed move: operator may select RSE-T2 Worker Return Jurisdiction Block
-for fresh GC-018 and source-verified work-order authoring, or select another
-parked lane. RSE-T2 and RSE-T3 are not yet authorized for implementation.
-MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: worker creates only the RSE-T2 addendum and worker-return
+paths named by the dispatched work order, then returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without committing. RSE-T3
+remains unauthorized. MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

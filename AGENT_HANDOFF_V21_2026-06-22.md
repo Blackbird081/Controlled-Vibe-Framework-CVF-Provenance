@@ -140,13 +140,13 @@ closure commit `5fc456a4`, or AAF-T7A.1 dispatch commit `af615d1e`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rse_t1_operator_question_boundary_closed_pending_next_operator_selection`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=operator may select RSE-T2 work-order authoring or another parked lane; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=worker creates only the two RSE-T2 deliverables and returns uncommitted; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`rse_t1_operator_question_boundary_closed_pending_next_operator_selection`
+`rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `50679d36`
+Current HEAD recorded for this handoff: `2d05a060`
 
 Material state:
 
@@ -186,9 +186,12 @@ Material state:
 
 ## Next Allowed Move
 
-Primary next move: operator may select RSE-T2 Worker Return Jurisdiction Block
-for fresh GC-018 and source-verified work-order authoring, or select another
-parked lane. RSE-T2 and RSE-T3 remain unauthorized for implementation.
+Primary next move: worker creates only
+`docs/reference/role_switch_envelope/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_ADDENDUM.md`
+and
+`docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_WORKER_RETURN_2026-06-22.md`,
+then returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
+RSE-T3 remains unauthorized.
 
 ## Parked Checkpoints
 
@@ -220,6 +223,90 @@ parked lane. RSE-T2 and RSE-T3 remain unauthorized for implementation.
 | Claim boundary | no runtime/provider/live/public-sync behavior; no worker implementation in this session-sync |
 | Agent type | session-sync steward |
 | Invocation ID | `rse-t0-role-switch-envelope-closure-session-sync-v21-2026-06-22` |
+| Expected manifest | session-sync target paths listed above |
+| Actual changed set | session-sync target paths listed above |
+| Manifest delta | MATCH |
+
+---
+
+## RSE-T2 Dispatch Continuity - 2026-06-22
+
+RSE-T2 Worker Return Jurisdiction Block is `DISPATCHED_TO_WORKER` at material
+dispatch commit `2d05a060` from dispatch base `2dd54bc5`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_2026-06-22.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_FOR_WORKER_2026-06-22.md`
+
+Reviewer disposition: `ACCEPT_FOR_DISPATCH` after replacing provider-specific
+role labels with role-neutral terms and making reviewer-owned closure paths
+exact.
+
+Verification passed before dispatch:
+
+- AAF helper: `resolvedMode=dispatch`, `defects=[]`
+- pre-dispatch autorun: PASS 44/44
+- dispatch-quality: PASS, 0 violations
+- dispatch commit steward: PASS
+- pre-commit hook: PASS 55/55
+
+Current mode:
+`rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`.
+
+Next allowed move: worker creates only
+`docs/reference/role_switch_envelope/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_ADDENDUM.md`
+and
+`docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_WORKER_RETURN_2026-06-22.md`,
+then returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
+
+RSE-T3, checker/helper implementation, work-order template enforcement edits,
+RSE-T0/RSE-T1 edits, AHB semantic changes, runtime/provider/live/public-sync,
+CLI/MCP adapter behavior, direct interception, arbitrary command execution,
+EDIT/COMMIT execution, queue/daemon/watcher, readiness, speed/cost claims, and
+universal governed-coding control remain unauthorized.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: record RSE-T2 dispatch commit `2d05a060`,
+set the worker next move, and regenerate active session state.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V21_2026-06-22.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/rseT2WorkerReturnJurisdictionBlockDispatch20260622.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator submitted the RSE-T2 work order for
+review. The reviewer accepted and committed the bounded dispatch packet at
+`2d05a060`; this authorization covers session continuity only.
+
+Rollback boundary: revert only the RSE-T2 dispatch session-sync commit if
+rejected. Do not alter material dispatch commit `2d05a060` or RSE-T1 closure
+commit `50679d36`.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | RSE-T2 dispatch session sync, 2026-06-22 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | source reads, file edits, state generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V21_2026-06-22.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/rseT2WorkerReturnJurisdictionBlockDispatch20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Allowed scope source | accepted RSE-T2 dispatch commit `2d05a060` and mandatory dispatch continuity |
+| Before status evidence | material dispatch commit `2d05a060`; state still named RSE-T1 closed mode |
+| After status evidence | generated active session state names RSE-T2 dispatched mode and worker next move |
+| Diff evidence | session-sync diff, generator check, state compatibility, mode consistency, and local hook receipts |
+| Approval boundary | session continuity only |
+| Claim boundary | no worker implementation, runtime/provider/live/public-sync, checker/helper, RSE-T3, or AHB semantic change |
+| Agent type | session-sync steward |
+| Invocation ID | `rse-t2-worker-return-jurisdiction-block-dispatch-session-sync-v21-2026-06-22` |
 | Expected manifest | session-sync target paths listed above |
 | Actual changed set | session-sync target paths listed above |
 | Manifest delta | MATCH |
