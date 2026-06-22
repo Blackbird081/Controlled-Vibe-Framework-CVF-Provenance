@@ -66,6 +66,8 @@ history.
 
 Current material HEAD recorded for this handoff: `97e7f9fc`
 
+Current session-sync HEAD recorded for this handoff: `8534621c`
+
 Current public-sync commit recorded for this handoff: `602550404`
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
