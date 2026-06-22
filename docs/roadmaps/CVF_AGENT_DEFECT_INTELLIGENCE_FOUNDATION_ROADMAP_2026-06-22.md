@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_PENDING_OPERATOR_TRANCHE_SELECTION
+Status: ADIF_CONTINUOUS_EXECUTION_DISPATCH_READY
 
 docType: roadmap
 
@@ -35,9 +35,11 @@ The operator requested this roadmap after MPI-T6 review-gate hardening and
 proposed a categorized defect dictionary plus one pre-work scan so agents can
 avoid known mistakes before execution.
 
-This authorization covers roadmap authoring only. It does not authorize an
-ADIF schema, directory, index, helper, checker, autorun integration, generated
-aggregate, historical migration, runtime behavior, or public export.
+The operator subsequently selected continuous execution in the order
+`T0 -> T1 -> T2 -> (T3 || T4) -> T5`. Canonical authorization:
+`docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md`.
+Child execution remains conditional on fresh source-verified packets and
+dependency evidence; runtime/provider/live/public expansion remains excluded.
 
 ## Source Verification Block
 
@@ -214,7 +216,8 @@ helper, checker, generator, hook, or historical migration.
 
 ### ADIF-T1 - Entry Schema, Source Layout, And Seed Dictionary
 
-Prerequisite: ADIF-T0 `CLOSED_PASS_BOUNDED` and operator selection.
+Prerequisite: ADIF-T0 committed checkpoint evidence accepted for continuation
+under the continuous authorization. Codex retains final closure authority.
 
 Outputs may include:
 
@@ -230,7 +233,8 @@ bulk historical import is authorized.
 
 ### ADIF-T2 - Task/Role/Phase Defect Packet Resolver
 
-Prerequisite: ADIF-T1 closure and operator selection.
+Prerequisite: ADIF-T1 committed checkpoint evidence accepted for continuation
+under the continuous authorization.
 
 Output: deterministic read-only resolver that accepts task class, role,
 lifecycle phase, surface selectors, and optional risk ceiling, then returns a
@@ -247,7 +251,8 @@ Required properties:
 
 ### ADIF-T3 - Early Preflight Integration
 
-Prerequisite: ADIF-T2 closure, measured usefulness, and operator selection.
+Prerequisite: ADIF-T2 committed checkpoint evidence, bounded usefulness
+evidence, and a source-verified T3 child packet.
 
 Candidate integration: extend the existing AAF read-only diagnostic surface or
 another source-verified owner so pre-implementation can display the relevant
@@ -259,7 +264,8 @@ source-verified and coordinated with the parked AAF-T6 read-receipt lane.
 
 ### ADIF-T4 - Reviewer Finding Intake And De-Dup Bridge
 
-Prerequisite: T1/T2 stable IDs and operator selection.
+Prerequisite: the same committed T2 fork HEAD used by T3, stable T1/T2 IDs,
+and a source-verified T4 child packet.
 
 Output: bounded intake that maps new completion findings and worker friction to
 candidate entries while preserving F2G disposition and FPRC root-cause roles.
@@ -274,7 +280,8 @@ It must not auto-promote every finding. Required outcomes include:
 
 ### ADIF-T5 - Promotion Lifecycle, Drift, And Quality Guard
 
-Prerequisite: recurring real use through T2/T4 and operator selection.
+Prerequisite: integrated T3/T4 checkpoint commits plus recurring-use evidence
+and a source-verified T5 child packet.
 
 Output: machine guard for entry integrity, dangling sources/checker bindings,
 duplicate IDs, stale supersession, invalid enum values, and dishonest
@@ -308,7 +315,7 @@ behavior.
 | enforcement level distinguishes guidance from machine checks | REQUIRED |
 | provider-local memory is never canonical authority | REQUIRED |
 | no automatic runtime/provider/public action is authorized | REQUIRED |
-| each child tranche requires fresh GC-018, source verification, and operator selection | REQUIRED |
+| each child tranche requires fresh GC-018 and source verification; operator selection is satisfied only for the authorized continuous T0-T5 sequence | REQUIRED |
 
 ## Fail Conditions
 
@@ -341,9 +348,12 @@ Stop or return to orchestrator if a future tranche:
 |---|---|---|
 | Author ADIF roadmap | Codex roadmap author | PASS |
 | Review source-owner overlap and roadmap closure quality | Codex reviewer | PASS |
-| Select ADIF-T0 or hold roadmap | Operator checkpoint | PARKED |
-| Author ADIF-T0 GC-018 and work order | future dispatch author | PARKED |
-| Implement later ADIF tranches | future workers/reviewers | PARKED |
+| Select continuous execution order | Operator checkpoint | PASS - `T0 -> T1 -> T2 -> (T3 || T4) -> T5` selected |
+| Author continuous authorization and master Claude work order | Codex dispatch author | PASS |
+| Execute T0/T1/T2 sequential checkpoints | Claude orchestrator/worker | DISPATCH_READY |
+| Execute T3/T4 from identical T2 HEAD in isolated worktrees | Claude parallel workers | HOLD_UNTIL_T2_CHECKPOINT_PASS |
+| Integrate T3/T4 and execute T5 | Claude orchestrator/worker | HOLD_UNTIL_T3_T4_CONVERGENCE_PASS |
+| Review and close the full chain | Codex reviewer/closer | HOLD_UNTIL_CLAUDE_COMPLETE_PENDING_REVIEW |
 
 ## Verification / Evidence
 
@@ -488,6 +498,7 @@ not create the defect dictionary, entry schema, source layout, index, resolver,
 prompt packet, helper, checker, read receipt, generated aggregate, runtime
 behavior, provider integration, public artifact, or effectiveness proof.
 
-ADIF-T0 is the only recommended next child tranche. Every later tranche remains
-parked behind prior closure evidence, fresh operator selection, GC-018, source
-verification, and applicable autorun gates.
+The continuous sequence is operator-selected. T0 is the first executable child;
+later tranches auto-release only from committed checkpoint evidence, fresh
+child GC-018/work orders, source verification, and applicable autorun gates.
+Codex remains the final reviewer/closer after T5.
