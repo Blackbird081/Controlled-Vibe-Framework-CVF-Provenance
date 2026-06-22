@@ -74,6 +74,8 @@ MPI-T6 review-gate hardening dispatch HEAD: `760d74b0`
 
 MPI-T6 review-gate hardening material HEAD: `df4029e2`
 
+Integrated MPI-T6 hardening session HEAD: `69155f1f`
+
 Current public-sync commit recorded for this handoff: `602550404`
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
