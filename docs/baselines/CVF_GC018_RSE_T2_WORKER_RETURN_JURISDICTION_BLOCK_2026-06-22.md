@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -126,7 +126,7 @@ material if gates pass.
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|
 | Roadmap T2 names the Worker Return Jurisdiction Block and its candidate fields | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | line 220 | T2 - Worker Return Jurisdiction Block | RSE roadmap T2 section | ACCEPT |
-| Roadmap T2 acceptance criteria require separate capture and promotion fields and the operator-action condition | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | line 250 | Acceptance criteria for a future T2 work order | RSE roadmap T2 section | ACCEPT |
+| Roadmap T2 acceptance criteria require separate capture and promotion fields and the operator-action condition | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | line 250 | RSE-T2 acceptance criteria | RSE roadmap T2 section | ACCEPT |
 | RSE-T1 addendum defines the four question classes the block routes against | `docs/reference/role_switch_envelope/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_ADDENDUM.md` | line 48 | Question Classification | RSE-T1 addendum | ACCEPT |
 | RSE-T1 addendum separates finding capture from promotion routing | `docs/reference/role_switch_envelope/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_ADDENDUM.md` | line 74 | Finding Capture And Promotion Are Separate | RSE-T1 addendum | ACCEPT |
 | RSE-T0 standard defines the findingCaptureSurface envelope field | `docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md` | line 98 | findingCaptureSurface | RSE-T0 envelope field set | ACCEPT |
@@ -301,13 +301,13 @@ the new worker-return jurisdiction block addendum and the worker return together
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_FOR_WORKER_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Worker return | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_WORKER_RETURN_2026-06-22.md` | worker returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_COMPLETION_2026-06-22.md` | reviewer/closer creates only if accepted | PENDING_REVIEW |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
 | Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
-| Session continuity | active session front-door/state/handoff | session-sync follows accepted dispatch/closure commit if needed | PENDING_SESSION_SYNC |
+| Session continuity | active session front-door/state/handoff | session-sync follows accepted closure commit | PASS |
 
 ## Claim Boundary
 

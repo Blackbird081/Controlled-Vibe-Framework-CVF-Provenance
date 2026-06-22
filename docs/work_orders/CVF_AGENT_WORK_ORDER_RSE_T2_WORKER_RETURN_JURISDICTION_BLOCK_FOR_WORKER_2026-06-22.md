@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -288,7 +288,7 @@ Forbidden scope:
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|
 | Roadmap T2 names the Worker Return Jurisdiction Block and its candidate fields | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | line 220 | T2 - Worker Return Jurisdiction Block | RSE roadmap T2 section | ACCEPT |
-| Roadmap T2 acceptance criteria require separate capture and promotion fields and the operator-action condition | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | line 250 | Acceptance criteria for a future T2 work order | RSE roadmap T2 section | ACCEPT |
+| Roadmap T2 acceptance criteria require separate capture and promotion fields and the operator-action condition | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | line 250 | RSE-T2 acceptance criteria | RSE roadmap T2 section | ACCEPT |
 | RSE-T1 addendum defines the four question classes the block routes against | `docs/reference/role_switch_envelope/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_ADDENDUM.md` | line 48 | Question Classification | RSE-T1 addendum | ACCEPT |
 | RSE-T1 addendum separates finding capture from promotion routing | `docs/reference/role_switch_envelope/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_ADDENDUM.md` | line 74 | Finding Capture And Promotion Are Separate | RSE-T1 addendum | ACCEPT |
 | RSE-T0 standard defines the findingCaptureSurface envelope field | `docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md` | line 98 | findingCaptureSurface | RSE-T0 envelope field set | ACCEPT |
@@ -453,18 +453,18 @@ unchanged, and only then convert accepted material into a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed files stay inside Required Deliverables.
-- [ ] Addendum defines the Worker Return Jurisdiction Block and candidate fields.
-- [ ] Capture and promotion are separate fields.
-- [ ] Operator action is tied to an RSE-T1 ASK_OPERATOR class.
-- [ ] Addendum states no worker edits out-of-scope lane memory or checkers.
-- [ ] Addendum records a placement recommendation and defers enforcement to RSE-T3.
-- [ ] Addendum states documentation-only and AHB local-view boundary.
-- [ ] Closed RSE-T0 standard, RSE-T1 addendum, and front door are unchanged.
-- [ ] Worker performed no checker, helper, template enforcement edit, RSE-T0 or RSE-T1 edit, AHB semantics, RSE-T3, staging, commit, push, provider/live call, or closure decision.
-- [ ] Worker-return fast gate passes or records `BLOCKED_WITH_REASON`.
-- [ ] Reviewer-owned completion review created if accepted.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW`.
+- [x] Changed files stay inside Required Deliverables.
+- [x] Addendum defines the Worker Return Jurisdiction Block and candidate fields.
+- [x] Capture and promotion are separate fields.
+- [x] Operator action is tied to an RSE-T1 ASK_OPERATOR class.
+- [x] Addendum states no worker edits out-of-scope lane memory or checkers.
+- [x] Addendum records a placement recommendation and defers enforcement to RSE-T3.
+- [x] Addendum states documentation-only and AHB local-view boundary.
+- [x] Closed RSE-T0 standard, RSE-T1 addendum, and front door are unchanged.
+- [x] Worker performed no checker, helper, template enforcement edit, RSE-T0 or RSE-T1 edit, AHB semantics, RSE-T3, staging, commit, push, provider/live call, or closure decision.
+- [x] Worker-return fast gate passes.
+- [x] Reviewer-owned completion review created.
 
 ## Return-To-Orchestrator Conditions
 
@@ -487,6 +487,31 @@ scope.
 | AC4 | The addendum states no worker is granted authority to edit out-of-scope lane memory or checkers | source diff |
 | AC5 | The addendum records a placement recommendation, defers enforcement to RSE-T3, and states documentation-only plus AHB local-view boundary built on RSE-T0 and RSE-T1 | claim boundary and source diff |
 | AC6 | No forbidden paths changed, the closed RSE-T0 and RSE-T1 files are unchanged, and the worker commits nothing | `git status --short`; worker-return gate |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 status | `docs/baselines/CVF_GC018_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED`; checklist checked | PASS |
+| Worker return | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | roadmap remains `ROADMAP_READY_FOR_WORK_ORDER_AUTHORING`; T2 closed by completion review | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passes; no mutation required | PASS |
+| Registry Markdown | `docs/reference/role_switch_envelope/README.md` | active RSE reference front door remains present and unchanged | PASS |
+| External evidence digest | N/A | no external evidence digest created or consumed | N/A with reason |
+| System loop interlock | N/A | no interlock surface changed | N/A with reason |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active session front-door, state, and handoff | separate session-sync follows material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Receipt/query acceptance evidence | N/A with reason: RSE-T2 creates no receipt/query acceptance surface | PASS |
+| Runtime receipt value | N/A with reason: no runtime execution or provider call | PASS |
+| Delta receipt value | N/A with reason: no Delta execution-control claim | PASS |
 
 ## Public Export Disposition
 
