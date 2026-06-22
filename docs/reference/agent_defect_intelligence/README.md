@@ -1,0 +1,67 @@
+# CVF Agent Defect Intelligence Foundation (ADIF) - Front Door
+
+Memory class: POINTER_RECORD
+
+Status: ACTIVE_REFERENCE
+
+docType: reference
+
+Date: 2026-06-22
+
+Index classification: GOVERNED_DOC (not an INDEX_ARTIFACT). This front door
+points to the ADIF owner-reconciliation contract; it does not itself
+enumerate, map, or project CVF state.
+
+**Applies to:** any agent or operator working on a future ADIF tranche
+(ADIF-T1 through T5).
+
+## Purpose
+
+ADIF is a planned, bounded, task-scoped defect-intelligence lookup layer.
+Before any ADIF schema, source, resolver, or integration code is authored,
+read the ADIF-T0 owner-reconciliation contract linked below. It defines
+which fields ADIF must reuse from existing canonical owners and which fields
+ADIF itself owns.
+
+## Current State
+
+| Tranche | Output | Status |
+|---|---|---|
+| ADIF-T0 | Owner reconciliation and taxonomy contract | committed (this folder) |
+| ADIF-T1 | Entry schema, source layout, seed dictionary | not started |
+| ADIF-T2 | Task/role/phase defect packet resolver | not started |
+| ADIF-T3 | Early preflight integration | not started |
+| ADIF-T4 | Reviewer finding intake and de-dup bridge | not started |
+| ADIF-T5 | Promotion lifecycle, drift, and quality guard | not started |
+
+## Read This First
+
+1. `docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md`
+   - the full tranche sequence and design principles.
+2. `docs/reference/agent_defect_intelligence/CVF_ADIF_T0_OWNER_RECONCILIATION_TAXONOMY_CONTRACT.md`
+   - the binding ownership and taxonomy contract.
+3. `docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md`
+   - the continuous-execution authorization governing T0 through T5.
+
+## Canonical Owners ADIF Must Not Duplicate
+
+| Concern | Owner |
+|---|---|
+| `defectClass`, learning lane, disposition | `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md` |
+| `defectRole`, root-cause grouping | `docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md` |
+| Worker friction capture | `docs/reference/worker_experience_retrospective/README.md` |
+| Task-class / role guard map | `docs/reference/guard_orientation/README.md` |
+| INDEX artifact classification | `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md` |
+
+## Claim Boundary
+
+This front door is a navigation pointer only. It does not implement any
+ADIF tranche, change any canonical standard, or claim defect-prevention
+effectiveness.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private provenance reference front door. No public-sync repository
+work or public catalog claim is authorized.
