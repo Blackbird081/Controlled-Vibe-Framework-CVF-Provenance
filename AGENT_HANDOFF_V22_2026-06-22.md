@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`adif_t2_committed_pending_codex_checkpoint_review`
+`adif_t2_accepted_t3_t5_continuous_execution_released`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -215,23 +215,25 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ADIF-T2 is committed at `b19a1918` with `COMPLETE_PENDING_REVIEW`. Codex must
-review T2, then harden the T3-T5 continuation pattern before release. The
-hardened route must use bounded machine-gated session-sync bridges and must not
-pause for Codex review between T3, T4, and T5.
+ADIF-T2 is accepted after reviewer hardening at `07000fd6`. The reusable bridge
+standard and hardened T3-T5 authorization are committed at `dfaae2e7`. Claude
+may run T3/T4 convergence and T5 continuously with root-handoff-only bridge
+commits, then stop once for Codex final review. No intermediate Codex review is
+required.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
 | Stage | Material HEAD | Bridge status | Next machine-authorized move | Boundary |
 |---|---|---|---|---|
 | ADIF-T2 reviewer acceptance | `07000fd6` | `HANDOFF_SYNC_BRIDGE_PASS` | author and gate T3-T5 continuous-execution hardening | continuity only; no T3 release or final closure claim |
+| ADIF T3-T5 hardening | `dfaae2e7` | `HANDOFF_SYNC_BRIDGE_PASS` | execute joint T3/T4 dispatch, parallel evidence branches, convergence, then T5 | root handoff only between transitions; final review after T5 |
 
 The Agent System Skills roadmap and mandatory internal/external CLI/MCP
 accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`adif_t2_committed_pending_codex_checkpoint_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Codex reviews ADIF-T2 then hardens T3-T5 continuous execution; parked checkpoint=final review after T5, runtime/provider/live/public expansion, and ASSF roadmap until ADIF.
+Startup acknowledged: current mode=`adif_t2_accepted_t3_t5_continuous_execution_released`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes continuous T3/T4 convergence then T5 using root-handoff-only bridges; parked checkpoint=single Codex final review after T5, runtime/provider/live/public expansion, and ASSF roadmap until ADIF.
 
 ## Parked Checkpoints
 
@@ -239,7 +241,7 @@ Startup acknowledged: current mode=`adif_t2_committed_pending_codex_checkpoint_r
 - MPI-T5 is closed bounded and public-synced at public commit `602550404`.
 - MPI-T6 decision packet is closed bounded with `DEFER` at `14f8e5f9`; runtime
   authorization remains parked.
-- ADIF-T2 is committed at `b19a1918`; T3-T5 await T2 review and choreography hardening.
+- ADIF-T2 is accepted at `07000fd6`; continuous T3-T5 is released at `dfaae2e7`.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -251,8 +253,8 @@ Startup acknowledged: current mode=`adif_t2_committed_pending_codex_checkpoint_r
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record ADIF-T2 checkpoint commit
-`b19a1918`, pause for bounded T2 review/hardening, and regenerate active state.
+Authorized guard-maintenance scope: record T2 acceptance `07000fd6`, T3-T5
+hardening `dfaae2e7`, release continuous execution, and regenerate active state.
 
 Protected paths:
 
@@ -260,14 +262,14 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/adifT2CheckpointPendingReview20260623.json`
+- `CVF_SESSION/state/entries/adifT2AcceptedT3T5ContinuousRelease20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator reported T2 committed, requested Codex
-review, and required T3-T5 continuous execution hardening immediately after.
+Operator authorization: the operator required T2 review followed by hardened
+continuous T3-T5 execution with no intermediate review pause.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert worker commit `b19a1918` or prior history.
+revert hardening `dfaae2e7`, T2 review `07000fd6`, or prior history.
 
 ## Agent Operation Trace Block
 
@@ -275,25 +277,26 @@ revert worker commit `b19a1918` or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ADIF-T2 pending-review continuity sync, 2026-06-23 |
+| Session or invocation | ADIF-T2 accepted / continuous T3-T5 release sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
-| Target paths | V22; session front door; T2 pending-review state entry; next move; generated active state |
-| Allowed scope source | worker commit `b19a1918`, operator instruction, and mandatory continuity rules |
-| Before status evidence | clean worktree at worker checkpoint; handoff recorded T2 release mode |
-| After status evidence | active mode pauses for T2 review and continuation hardening |
+| Target paths | V22; session front door; continuous-release state entry; next move; generated active state |
+| Allowed scope source | operator instruction, T2 review `07000fd6`, hardening `dfaae2e7` |
+| Before status evidence | clean worktree after hardening commit; handoff bridge ledger contains accepted material heads |
+| After status evidence | active mode releases T3-T5 continuous execution with one final review checkpoint |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `adif-t2-checkpoint-pending-review-sync-2026-06-23` |
-| Expected manifest | V22; front door; T2 pending-review state entry; next move; generated active state |
-| Actual changed set | V22; front door; T2 pending-review state entry; next move; generated active state |
+| Invocation ID | `adif-t2-accepted-t3-t5-continuous-release-sync-2026-06-23` |
+| Expected manifest | V22; front door; continuous-release state entry; next move; generated active state |
+| Actual changed set | V22; front door; continuous-release state entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records ADIF-T2 pending review and
-the required T3-T5 choreography hardening. It does not release T3, dispatch
-ASSF, or expand external CLI/MCP, runtime/provider/live/public behavior.
+This handoff is session continuity only. It releases the already-authorized
+hardened T3-T5 sequence and preserves one final Codex review after T5. It does
+not dispatch ASSF or expand external CLI/MCP, runtime/provider/live/public
+behavior.
