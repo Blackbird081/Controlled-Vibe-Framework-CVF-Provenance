@@ -1,0 +1,5 @@
+{
+  "stateOrder": 638,
+  "stateKey": "adifFoundationRoadmap20260622",
+  "value": "Agent Defect Intelligence Foundation roadmap is ROADMAP_READY_PENDING_OPERATOR_TRANCHE_SELECTION at material commit 1edf8efd after handoff anchor repair fd1907e9. Artifact: docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md. The roadmap proposes ADIF-T0 owner reconciliation, ADIF-T1 entry schema/source layout/seed dictionary, ADIF-T2 task-role-phase defect packet resolver, ADIF-T3 early preflight integration, ADIF-T4 reviewer intake and de-dup bridge, and ADIF-T5 lifecycle/drift guard. It keeps defectCategory orthogonal to canonical F2G defectClass, returns bounded packets instead of the full dictionary, and distinguishes GUIDANCE_ONLY, PARTIAL_CHECK, MACHINE_CHECKED, and RETIRED. Evidence: AAF helper defects empty, pre-implementation 47/47 PASS, reviewer-fast 34/34 PASS, and pre-commit 55/55 PASS. Boundary: roadmap only; no ADIF schema, entry, index, registry, helper, checker, generator, hook integration, historical migration, runtime/provider/live behavior, public-sync, comprehension claim, or effectiveness claim."
+}

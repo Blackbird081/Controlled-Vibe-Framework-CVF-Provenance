@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`
+Current mode marker: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`.
+Current mode: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`.
 
-Previous mode: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`.
+Previous mode: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`.
 
 Active handoff:
 
@@ -63,6 +63,15 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Agent Defect Intelligence Foundation roadmap is
+`ROADMAP_READY_PENDING_OPERATOR_TRANCHE_SELECTION` at material commit
+`1edf8efd`. It preserves F2G/FPRC/Worker Experience/Guard Orientation/INDEX
+ownership and proposes bounded task-role-phase defect packets rather than a
+full-dictionary read. Recommended first child: ADIF-T0 Owner Reconciliation And
+Taxonomy Contract, parked pending explicit operator selection and fresh
+GC-018/work order. Immediate MPI next move remains Claude's MPI-T6 packet repair
+followed by Codex review under the hardened gates.
 
 MPI-T6 Review Gate Hardening is `CLOSED_PASS_BOUNDED` at material commit
 `df4029e2`. Three existing checker owners now reject narrow exhaustive
@@ -687,11 +696,12 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`.
+Mode: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`.
 
 Next allowed move: Claude repairs the retained MPI-T6 decision packet and
-roadmap, then Codex reviews the revision under the hardened gates. Runtime
-authorization remains parked.
+roadmap, then Codex reviews the revision under hardened gates. ADIF-T0 is an
+operator checkpoint and remains parked until explicitly selected. Runtime
+authorization and ADIF implementation remain parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

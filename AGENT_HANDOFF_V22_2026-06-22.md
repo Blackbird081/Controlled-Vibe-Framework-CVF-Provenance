@@ -49,13 +49,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerDispatch20260622.json`
 - `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerPublicSync20260622.json`
 - `CVF_SESSION/state/entries/mpiT6ReviewGateHardeningClosure20260622.json`
+- `CVF_SESSION/state/entries/adifFoundationRoadmap20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
 Operator authorization: the operator requested MPI-T5 review, execution, and
 public sync, then explicitly prioritized CVF hardening before Claude repairs
-MPI-T6 on 2026-06-22.
+MPI-T6 and requested the Agent Defect Intelligence Foundation roadmap on
+2026-06-22.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
 revert MPI-T5 dispatch commit `501fcafa`, AAF-T7C material commit `b7601865`,
@@ -64,7 +66,7 @@ history.
 
 ## Current Mode
 
-`mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`
+`adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`
 
 Current material HEAD recorded for this handoff: `97e7f9fc`
 
@@ -75,6 +77,8 @@ MPI-T6 review-gate hardening dispatch HEAD: `760d74b0`
 MPI-T6 review-gate hardening material HEAD: `df4029e2`
 
 Integrated MPI-T6 hardening session HEAD: `69155f1f`
+
+ADIF foundation roadmap material HEAD: `1edf8efd`
 
 Current public-sync commit recorded for this handoff: `602550404`
 
@@ -193,12 +197,13 @@ passed 43/44 with only this required session continuity sync outstanding.
 ## Next Allowed Move
 
 Claude repairs the retained MPI-T6 decision packet and roadmap in the operator
-worktree. Codex then reviews the revision under the hardened gates. MPI-T6
-runtime authorization and runtime/provider/live expansion remain parked.
+worktree. Codex then reviews the revision under the hardened gates. ADIF-T0 is
+parked at an operator checkpoint. MPI-T6 runtime authorization, ADIF
+implementation, and runtime/provider/live expansion remain parked.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude repairs the retained MPI-T6 packet/roadmap and Codex reviews it under hardened gates; parked checkpoint=MPI-T6 runtime authorization and runtime/provider/live expansion remain parked.
+Startup acknowledged: current mode=`adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude repairs MPI-T6 and Codex reviews it; parked checkpoint=ADIF-T0 selection, MPI-T6 runtime authorization, and runtime/provider/live expansion remain parked.
 
 ## Parked Checkpoints
 
@@ -206,6 +211,8 @@ Startup acknowledged: current mode=`mpi_t6_review_gate_hardening_closed_pending_
 - MPI-T5 is closed bounded and public-synced at public commit `602550404`.
 - MPI-T6 decision packet repair/review is next; runtime authorization remains
   parked.
+- ADIF-T0 Owner Reconciliation And Taxonomy Contract is roadmap-ready but
+  parked pending explicit operator selection.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
