@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_PENDING_T0_SELECTION_AFTER_ADIF
+Status: ASSF_T0_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION
 
 Date: 2026-06-23
 
@@ -29,8 +29,9 @@ for the Learning Plane to finish. Future skills formed from learning, absorbed
 from external sources, or recovered from legacy must all converge through the
 same package, index, provenance, risk, UAT, and lifecycle architecture.
 
-ADIF remains the active execution lane. This roadmap is parked until ADIF
-review/closure or a separately authorized isolated tranche.
+ADIF is closed bounded. ASSF-T0 is closed bounded as an owner/surface/legacy
+absorption audit. ASSF-T1 remains parked pending explicit operator selection
+and fresh source-verified GC-018/work order.
 
 ## Scope
 
@@ -117,10 +118,10 @@ T0/T1 must reconcile, not blindly adopt, these field families:
 
 ## Mandatory Dual Agent Surface Matrix
 
-| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
-|---|---|---|---|---|
-| `INTERNAL_AGENT` | future system-skill resolver and package loader | governed task/role/phase/risk selection; no authority expansion from loading | T1/T2 contract and tests required | `CONTRACT_ONLY` |
-| `EXTERNAL_AGENT_CLI_MCP` | future CLI/MCP skill discovery/load adapter | adapter contract, authentication/approval/receipt and mutation boundary required | separate source-verified adapter tranche | `DEFERRED_WITH_REASON` |
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | future system-skill resolver and package loader; proposed root `docs/reference/agent_system_skills/` | governed task/role/phase/risk selection; no authority expansion from loading | T0 audit; T1/T2 contract and tests still required | N/A with reason: no adapter implemented by roadmap/T0 | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | future CLI/MCP skill discovery/load adapter | adapter contract, authentication/approval/receipt and mutation boundary required | separate source-verified adapter tranche | deferred adapter owner; requires separate GC-018/work order | `DEFERRED_WITH_REASON` |
 
 Reason for deferral: architecture accounting is required now, but CLI/MCP
 runtime implementation is not authorized by this roadmap.
@@ -133,6 +134,19 @@ Enumerate CVF Web templates, governance skill specs/registries, Toolkit and
 Guard Contract registries, rollout/intake/certification surfaces, archived
 skill roadmaps, external-skill analyses, and unabsorbed legacy. Produce an
 owner map, contradiction ledger, and proposed canonical root. No migration.
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md`
+- `docs/audits/CVF_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md`
+- `docs/reviews/CVF_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_COMPLETION_2026-06-23.md`
+
+T0 proposed canonical root for future T1/T2 work:
+`docs/reference/agent_system_skills/`. The path is proposed only and is not
+created by T0.
 
 ### ASSF-T1 - Canonical Package Contract And Storage Topology
 
@@ -226,8 +240,8 @@ behavior without fresh authority.
 |---|---|---|
 | Record architecture roadmap and dual-agent rule | Codex roadmap author | PASS |
 | Complete current ADIF continuous lane and Codex review | Claude worker; Codex reviewer/closer | IN_PROGRESS |
-| Select and dispatch ASSF-T0 | operator checkpoint after ADIF or explicit isolated authorization | PARKED |
-| Implement ASSF-T1/T2 early foundation | future source-verified tranches | PARKED |
+| Select and dispatch ASSF-T0 | operator checkpoint after ADIF or explicit isolated authorization | PASS |
+| Implement ASSF-T1/T2 early foundation | future source-verified tranches | PARKED - T1 next |
 | Connect learning/external/legacy lanes | future T3/T4 tranches | PARKED |
 
 ## Finding-To-Governance Learning Disposition
@@ -235,7 +249,8 @@ behavior without fresh authority.
 - Defect class: `RULE_GAP`
 - Learning lane: `GOVERNANCE_CONTROL_PLANE`
 - Disposition: `DESIGN_REVIEW_REQUIRED`
-- Next control action: ASSF-T0 owner and legacy absorption audit after ADIF.
+- Next control action: ASSF-T1 canonical package contract and storage topology,
+  after explicit operator selection and fresh GC-018/work order.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - roadmap-only.
 
 ## Verification / Evidence
@@ -243,8 +258,9 @@ behavior without fresh authority.
 Roadmap verification uses direct reads of the named skill spec, rollout policy,
 current skill concept, legacy rescreen roadmap, external screening matrix,
 archived evolution roadmap, generated aggregate discipline, and dual-agent
-standard. ASSF-T0 must replace this bounded orientation set with a complete
-filesystem-backed skill-surface inventory and reconciliation ledger.
+standard. ASSF-T0 replaced the bounded orientation set with a filesystem-backed
+skill-surface owner inventory and reconciliation ledger. T1 must not treat T0
+owner counts as final package inventory.
 
 ## External Knowledge Intake Routing
 
@@ -265,6 +281,32 @@ DEFERRED_PRIVATE_ONLY
 Reason: private provenance architecture roadmap. Public skill architecture or
 catalog changes require a later public-safe artifact and public-sync batch.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Roadmap state | this roadmap | `Status: ASSF_T0_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_COMPLETION_2026-06-23.md` | reviewer-owned closure review | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence imported; external skill screening remains reference input | N/A with reason |
+| System loop interlock | this roadmap | T1 remains parked; no automatic package activation | PASS |
+| Session continuity | active session sync if next move changes | separate session-sync lane after material commit | PASS |
+| Public export | this roadmap | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Roadmap status | `ASSF_T0_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | `ASSF_T0_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
+| T0 closure artifacts | baseline, work order, audit, completion review | all named in T0 closure artifacts | PASS |
+| Package root | proposed only | proposed only | PASS |
+| External CLI/MCP adapter | deferred | `DEFERRED_WITH_REASON` | PASS |
+| Runtime/provider/live claim | none | none | PASS |
+
 ## Delta Execution Claim Boundary Control Block
 
 | Field | Disposition |
@@ -284,26 +326,27 @@ catalog changes require a later public-safe artifact and public-sync batch.
 |---|---|
 | Actor | Codex roadmap author |
 | Provider or surface | local workspace |
-| Session or invocation | Agent System Skills roadmap, 2026-06-23 |
+| Session or invocation | Agent System Skills roadmap T0 closure update, 2026-06-23 |
 | Working directory | repository root |
-| Command or tool surface | source reads, apply_patch, governance gates, git commit |
-| Target paths | this roadmap and Dual Agent Surface Accounting Standard |
-| Allowed scope source | operator instruction to record the architecture rule and roadmap while preserving ADIF focus |
-| Before status evidence | clean HEAD `7c0480bc`; Claude ADIF-T0 checkpoint committed |
-| After status evidence | two documentation-only architecture artifacts |
+| Command or tool surface | source reads, filesystem inventory commands, apply_patch, governance gates, git commit |
+| Target paths | this roadmap; ASSF-T0 baseline; ASSF-T0 work order; ASSF-T0 audit; ASSF-T0 completion review |
+| Allowed scope source | operator instruction to continue the package-skills roadmap; active session next move |
+| Before status evidence | clean HEAD `87e2013a`; ADIF and dual-surface hardening closed |
+| After status evidence | ASSF-T0 closed bounded; ASSF-T1 parked |
 | Diff evidence | real-range name-status and gate output |
-| Approval boundary | roadmap/standard authoring only; ASSF execution parked |
-| Claim boundary | no ADIF edits, skill package/index/runtime, CLI/MCP implementation, or public-sync |
-| Agent type | roadmap author |
-| Invocation ID | `cvf-agent-system-skills-foundation-roadmap-2026-06-23` |
-| Expected manifest | this roadmap; Dual Agent Surface Accounting Standard |
-| Actual changed set | this roadmap; Dual Agent Surface Accounting Standard |
+| Approval boundary | ASSF-T0 documentation/audit only |
+| Claim boundary | no skill package root creation, generated index, resolver, runtime, CLI/MCP implementation, or public-sync |
+| Agent type | roadmap author and T0 closer |
+| Invocation ID | `cvf-agent-system-skills-foundation-t0-closure-2026-06-23` |
+| Expected manifest | this roadmap; ASSF-T0 baseline; ASSF-T0 work order; ASSF-T0 audit; ASSF-T0 completion review |
+| Actual changed set | this roadmap; ASSF-T0 baseline; ASSF-T0 work order; ASSF-T0 audit; ASSF-T0 completion review |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Claim Boundary
 
-This roadmap records the architecture and sequencing decision only. It does not
-create a canonical package root, `SKILL.md`, source schema, registry, generated
-index, resolver, Learning Plane bridge, external intake adapter, Web migration,
-guard, or runtime CLI/MCP surface.
+This roadmap now records the architecture sequence and the closed bounded
+ASSF-T0 owner/surface audit. It does not create a canonical package root,
+`SKILL.md`, source schema, registry, generated index, resolver, Learning Plane
+bridge, external intake adapter, Web migration, guard, or runtime CLI/MCP
+surface.
