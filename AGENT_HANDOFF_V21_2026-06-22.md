@@ -50,6 +50,28 @@ Active front door:
 
 ## Latest Work / Changes
 
+MPI Phase 2 External Memory Read roadmap is
+`ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` at material commit `70963abc`.
+
+Artifact:
+
+- `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md`
+
+The roadmap sequences MPI-T3 External Agent Memory Summary Contract first, then
+parks MPI-T4 Federated Memory Read Helper, MPI-T5 Memory Access Claim Checker,
+and MPI-T6 Runtime Candidate Decision Packet behind prerequisite evidence and
+operator selection. It creates no GC-018, work order, helper, checker, runtime
+route edit, scan-registry route wiring, vector DB, durable store, CLI/MCP
+adapter behavior, provider/live proof, public-sync, or runtime readiness claim.
+
+Roadmap checks passed before material commit:
+
+- AAF helper `--json --enforce`: PASS, `defects=[]`
+- pre-dispatch autorun: PASS 44/44
+- commit steward dispatch: PASS
+- pre-commit hook: PASS 55/55
+- material commit hook: PASS 55/55
+
 AAF-T7B is `CLOSED_PASS_BOUNDED` at material closure commit `a82440ca`, after
 dispatch commit `2d3c1a5d`, dispatch session-sync commit `953d86cc`, and
 dispatch handoff-head sync commit `7e52ab68`.
@@ -111,9 +133,9 @@ Dispatch checks passed before commit:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: update V21 after RSE-T0 material closure
-commit `c0664784`, update generated active session state and compact front-door
-routing, and set the post-RSE-T0 next move.
+Authorized guard-maintenance scope: update V21 after MPI Phase 2 roadmap
+material commit `70963abc`, update generated active session state and compact
+front-door routing, and set the MPI-T3 work-order-authoring next move.
 
 Protected paths:
 
@@ -124,35 +146,39 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardDispatch20260622.json`
 - `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardClosure20260622.json`
+- `CVF_SESSION/state/entries/mpiPhase2ExternalMemoryReadRoadmap20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator reported the RSE-T0 worker return as
-`COMPLETE_PENDING_REVIEW`. Codex reviewed and accepted the worker return,
-closed the material tranche, and now records continuity.
+Operator authorization: the operator asked Codex to write the next roadmap
+under the existing role rule. Codex authored and committed the roadmap and now
+records continuity.
 
 Rollback boundary: revert only this session-sync commit if rejected. Do not
-alter RSE-T0 closure commit `c0664784`, RSE-T0 dispatch commit `3842b0f7`,
-RSE roadmap commit `6608be51`,
+alter MPI Phase 2 roadmap commit `70963abc`, RSE-T0 closure commit `c0664784`,
+RSE-T0 dispatch commit `3842b0f7`, RSE roadmap commit `6608be51`,
 AAF-T7B closure commit `a82440ca`, dispatch commit `2d3c1a5d`, AAF-T7A.1
 closure commit `5fc456a4`, or AAF-T7A.1 dispatch commit `af615d1e`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=operator may select the next lane, including resuming MPI-T3/MPI-T4 or authorizing a separate future diagnostics slice for remaining RSE-T3 candidates; parked checkpoint=remaining RSE-T3 diagnostics, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=a dispatch author may author a source-verified MPI-T3 GC-018 baseline and work order from the Phase 2 roadmap if assigned; parked checkpoint=MPI-T4/MPI-T5/MPI-T6, remaining RSE-T3 diagnostics, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`
+`mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`
 
-Current HEAD recorded for this handoff: `e23b54df`
+Current HEAD recorded for this handoff: `70963abc`
 
 Material state:
 
 - RSE-T0 Role Switch Envelope Standard closure commit: `c0664784`
 - RSE-T0 Role Switch Envelope Standard dispatch commit: `3842b0f7`
 - RSE Role Switch Envelope Protocol roadmap commit: `6608be51`
+- MPI Phase 2 External Memory Read roadmap commit: `70963abc`
+- MPI Phase 2 roadmap:
+  `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md`
 - RSE-T0 standard:
   `docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md`
 - RSE-T0 front door:
@@ -204,15 +230,18 @@ Material state:
 
 ## Next Allowed Move
 
-Primary next move: operator may select the next lane, including resuming
-MPI-T3/MPI-T4 or authorizing a separate future diagnostics slice for remaining
-RSE-T3 candidates.
+Primary next move: a dispatch author may author a source-verified MPI-T3 GC-018
+baseline and work order from
+`docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` if
+assigned. No worker implementation is authorized until that dispatch packet
+passes gates and is accepted. Codex remains reviewer/closer.
 
 ## Parked Checkpoints
 
 - Remaining RSE-T3 candidate diagnostics remain separate.
 - AAF-T7 L2 patch preview remains separate after AAF-T7B closes.
-- MPI-T3/MPI-T4 remain paused unless reselected.
+- MPI-T4/MPI-T5/MPI-T6 remain paused until their prerequisite evidence and
+  operator selection exist.
 - Full AAF-T6 read-receipt gate remains parked unless separately authorized.
 - Public repo work, if later authorized, must use the sibling public-sync clone
   with remote verification; do not push public changes from provenance.

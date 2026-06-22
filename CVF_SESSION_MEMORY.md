@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`
+Current mode marker: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`.
+Current mode: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`.
 
-Previous mode: `rse_t3_jurisdiction_block_diagnostic_dispatched_to_worker`.
+Previous mode: `rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`.
 
 Active handoff:
 
@@ -616,13 +616,28 @@ flagged. Evidence: focused unittest PASS 81/81, AAF helper PASS `defects=[]`,
 worker-return fast gate PASS with reviewer-fast 33/33, reviewer-return steward
 PASS, material pre-commit hook PASS 55/55, and material commit hook PASS 55/55.
 
+MPI Phase 2 External Memory Read roadmap is
+`ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` at material commit `70963abc`.
+Artifact:
+`docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md`.
+It sequences MPI-T3 External Agent Memory Summary Contract first, then parks
+MPI-T4 Federated Memory Read Helper, MPI-T5 Memory Access Claim Checker, and
+MPI-T6 Runtime Candidate Decision Packet behind prerequisite evidence and
+operator selection. It creates no GC-018, work order, helper, checker, runtime
+route edit, scan-registry route wiring, vector DB, durable store, CLI/MCP
+adapter behavior, provider/live proof, public-sync, or runtime readiness claim.
+Verification passed: AAF helper with `defects=[]`, pre-dispatch autorun 44/44,
+dispatch commit steward, pre-commit hook 55/55, and material commit hook 55/55.
+
 ## Next Allowed Move
 
-Mode: `rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`.
+Mode: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`.
 
-Next allowed move: operator may select the next lane, including resuming
-MPI-T3/MPI-T4 or authorizing a separate future diagnostics slice for remaining
-RSE-T3 candidates.
+Next allowed move: a dispatch author may author a source-verified MPI-T3
+GC-018 baseline and work order from
+`docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` if
+assigned. No worker implementation is authorized until that dispatch packet
+passes gates and is accepted. Codex remains reviewer/closer.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
@@ -630,10 +645,10 @@ verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
 Memory readout route edits, route schema changes, registry source or aggregate
-edits, durable writes, registry generator changes, MPI-T3/MPI-T4, full AAF-T6,
-AAF-T7 L2 patch preview beyond AAF-T7B, CGE-T3, ACE-R1, MLW7/8, helper/checker
-implementation beyond an authorized tranche, patch apply behavior, and
-universal governed-coding claims.
+edits, durable writes, registry generator changes, MPI-T4/MPI-T5/MPI-T6 until
+their prerequisites are selected, full AAF-T6, AAF-T7 L2 patch preview beyond
+AAF-T7B, CGE-T3, ACE-R1, MLW7/8, helper/checker implementation beyond an
+authorized tranche, patch apply behavior, and universal governed-coding claims.
 LHW24 remains the latest closed numbered LHW wave.
 
 ## Active Rule Additions
