@@ -193,7 +193,7 @@ Startup acknowledged: current mode=`mpi_t3_external_agent_memory_summary_contrac
 
 `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `3fdc6781`
+Current HEAD recorded for this handoff: `c6fab84a`
 
 Material state:
 
