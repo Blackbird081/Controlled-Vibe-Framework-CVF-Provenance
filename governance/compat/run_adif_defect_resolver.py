@@ -17,8 +17,10 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
 ENTRIES_DIR = (
-    Path(__file__).resolve().parents[2]
+    REPO_ROOT
     / "docs"
     / "reference"
     / "agent_defect_intelligence"
@@ -29,7 +31,7 @@ _FIELD_BLOCK_RE = re.compile(r"```text\n(.*?)\n```", re.DOTALL)
 
 _LIST_FIELDS = {"taskClasses", "roles", "lifecyclePhases"}
 
-_EXCLUDED_LIFECYCLE_STATES = {"RETIRED", "SUPERSEDED"}
+_ELIGIBLE_LIFECYCLE_STATE = "ACTIVE"
 
 _SEVERITY_RANK = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
 
@@ -151,8 +153,17 @@ def _load_entry(path: Path) -> DefectEntry | None:
         supersedes=fields.get("supersedes", ""),
         last_verified_commit=fields.get("lastVerifiedCommit", ""),
         roadmap_seed_id=fields.get("roadmapSeedId", ""),
-        source_path=str(path),
+        source_path=_source_citation(path),
     )
+
+
+def _source_citation(path: Path) -> str:
+    """Return a portable repo-relative citation when the source is governed."""
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return resolved.as_posix()
 
 
 def load_entries(entries_dir: Path | None = None) -> tuple[DefectEntry, ...]:
@@ -176,7 +187,7 @@ def _matches(
     surface_selector: str | None,
     risk_ceiling: str | None,
 ) -> bool:
-    if entry.lifecycle_state.upper() in _EXCLUDED_LIFECYCLE_STATES:
+    if entry.lifecycle_state.upper() != _ELIGIBLE_LIFECYCLE_STATE:
         return False
     if task_class is not None and task_class not in entry.task_classes:
         return False
@@ -217,6 +228,8 @@ def resolve_defect_packet(
     """
     if max_results <= 0:
         raise ValueError("max_results must be a positive integer")
+    if risk_ceiling is not None and risk_ceiling.upper() not in _SEVERITY_RANK:
+        raise ValueError("risk_ceiling must be one of LOW, MEDIUM, or HIGH")
 
     candidates = entries if entries is not None else load_entries()
     matched = [

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION
+Status: CHECKPOINT_ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW
 
 Date: 2026-06-23
 
@@ -56,7 +56,7 @@ by this baseline.
 | Mandatory Dual Agent Surface Matrix requires INTERNAL_AGENT and EXTERNAL_AGENT_CLI_MCP rows, each with exactly one disposition from IMPLEMENTED/CONTRACT_ONLY/DEFERRED_WITH_REASON/N/A_WITH_REASON | `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | Mandatory Dual Agent Surface Matrix | matrix table | Dual Agent Surface Accounting Standard | VALUE_SET | ACCEPT |
 | Eight stable seed entries with fixed field shape exist | `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md` | Required Fields | `defectId`; `defectCategory`; `taskClasses`; `roles`; `lifecyclePhases`; `surfaceSelectors`; `enforcementLevel`; `severity`; `lifecycleState` | ADIF entry template | VALUE_SET | ACCEPT |
 | Each seed entry's exact field values | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0001.md` through `CVF_ADIF-0008.md` | fenced field block in each file | per-entry field values | ADIF-T1 seed entries | EXISTS | ACCEPT |
-| `RETIRED` and `SUPERSEDED` entries must be excluded from default resolver results without being made unreadable | `docs/reference/agent_defect_intelligence/CVF_ADIF_T0_OWNER_RECONCILIATION_TAXONOMY_CONTRACT.md` | Entry Lifecycle | lifecycle exclusion rule | ADIF-T0 contract | LITERAL_INVARIANT | ACCEPT |
+| Only `ACTIVE` entries are resolver-eligible; all other lifecycle states remain readable but excluded | `docs/reference/agent_defect_intelligence/CVF_ADIF_T0_OWNER_RECONCILIATION_TAXONOMY_CONTRACT.md` | Entry Lifecycle | lifecycle eligibility rule | ADIF-T0 contract | LITERAL_INVARIANT | ACCEPT |
 | Guard Orientation owns the task-class and role vocabulary the resolver's `taskClasses`/`roles` inputs must align with | `docs/reference/guard_orientation/README.md` | Task Class Guard Map; Role Glossary | task-class and role columns | guard orientation front door | VALUE_SET | ACCEPT |
 | `governance/compat/` is the existing location for read-only diagnostic/helper modules with frozen-dataclass output items | `governance/compat/run_agent_automation_assist.py` | `SignalReadoutItem`; `_build_signal_readout` | frozen dataclass + builder pattern | AAF helper | EXISTS | ACCEPT |
 
@@ -232,7 +232,7 @@ python -m pytest governance/compat/test_run_adif_defect_resolver.py -v
 | sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
 |---|---|---|---|---|---|
 | ADIF-T2-RS1 | ADIF roadmap Required properties | no filesystem mutation; no provider/model selection; no prompt execution or agent-memory reinjection | DO_NOW | Does the resolver implementation write any file, call any provider, or execute a prompt? | PASS - implementation is verified read-only with no provider/prompt surface before commit |
-| ADIF-T2-RS2 | ADIF-T0 contract Entry Lifecycle | `RETIRED`/`SUPERSEDED` entries must be excluded from default results without being made unreadable | DO_NOW | Does the resolver's default call path silently include retired entries, or does it delete/hide the underlying files? | PASS - resolver filters by `lifecycleState` in its ranking logic; files themselves are never modified |
+| ADIF-T2-RS2 | ADIF-T0 contract Entry Lifecycle | only `ACTIVE` entries are eligible without making other states unreadable | DO_NOW | Does the resolver include proposed/rejected/retired/superseded entries or delete their files? | PASS_AFTER_REVIEWER_REPAIR - eligibility now requires `ACTIVE`; files remain unchanged |
 | ADIF-T2-RS3 | Dual Agent Surface Accounting Standard Core Rule | silence is not a valid disposition; each consumer row needs exactly one disposition | DO_NOW | Does this baseline declare a disposition for both `INTERNAL_AGENT` and `EXTERNAL_AGENT_CLI_MCP`? | PASS - matrix above declares `IMPLEMENTED` and `DEFERRED_WITH_REASON` respectively |
 
 ## Corpus Completeness And Report Integrity
@@ -303,7 +303,7 @@ public-sync repository work or public catalog claim is authorized.
 | AC1 | Resolver accepts task class, role, lifecycle phase, surface selectors, and an optional risk ceiling. |
 | AC2 | Resolver returns a bounded, deterministically ordered list with source citations and enforcement labels. |
 | AC3 | Resolver never mutates the filesystem, never calls a provider/model, never executes a prompt. |
-| AC4 | Resolver excludes `RETIRED`/`SUPERSEDED` entries from default results without deleting or hiding their source files. |
+| AC4 | Resolver returns only `ACTIVE` entries without deleting or hiding other lifecycle-state source files. |
 | AC5 | Resolver's docstring/contract explicitly disclaims that returning a packet proves comprehension. |
 | AC6 | Focused tests cover matching, ordering, bounding, lifecycle exclusion, and no-match cases, and all pass. |
 | AC7 | Dual Agent Surface Matrix is present at dispatch time with both rows populated. |

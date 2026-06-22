@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW
 
 Date: 2026-06-23
 
@@ -64,18 +64,17 @@ MCP registration, or autorun/hook wiring is created.
 
 Do-not-misread notes: the resolver only reads the eight committed seed
 entries; it does not mutate the filesystem, select a provider/model, or
-execute a prompt. `RETIRED`/`SUPERSEDED` entries are excluded from
-resolution results but their source files are never modified.
+execute a prompt. Only `ACTIVE` entries are resolver-eligible; all other
+lifecycle states remain readable but are not returned.
 
 Required first actions: read the canonical authorization, the master work
 order, the ADIF roadmap, the ADIF-T0 contract, the ADIF-T1 checkpoint
 review, and the Dual Agent Surface Accounting Standard before implementing
 the resolver.
 
-Return contract: this packet is returned `COMPLETE_PENDING_REVIEW`; per the
-operator's instruction, Claude stops here after committing the T2
-checkpoint and returns it to Codex for GC-020 session-sync and checkpoint
-review before any further tranche.
+Return contract: the worker returned `COMPLETE_PENDING_REVIEW`; Codex accepted
+the checkpoint after bounded reviewer hardening. T3-T5 now follow the separate
+continuous-execution bridge hardening authorized after this review.
 
 ## Mission
 
@@ -271,7 +270,7 @@ before T3.
 | sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
 |---|---|---|---|---|---|
 | ADIF-T2-WO-RS1 | ADIF roadmap Required properties | no filesystem mutation; no provider/model selection; no prompt execution | DO_NOW | Does the implemented resolver write any file or call any provider? | PASS - reviewed implementation contains only `Path.read_text` calls, no write/provider/prompt surface |
-| ADIF-T2-WO-RS2 | ADIF-T0 contract Entry Lifecycle | `RETIRED`/`SUPERSEDED` entries excluded from default results without deletion | DO_NOW | Does a focused test prove this exclusion without modifying entry files? | PASS - `test_retired_and_superseded_entries_excluded_by_default` uses in-memory fixtures, not the committed entry files, and never mutates disk |
+| ADIF-T2-WO-RS2 | ADIF-T0 contract Entry Lifecycle | only `ACTIVE` entries are resolver-eligible without deletion | DO_NOW | Does a focused test cover every non-active state without modifying entry files? | PASS_AFTER_REVIEWER_REPAIR - `test_only_active_entries_are_eligible_by_default` covers proposed, rejected, retired, and superseded fixtures |
 
 ## Corpus Completeness And Report Integrity
 
@@ -323,13 +322,13 @@ choreography finding.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this artifact | `Status: COMPLETE_PENDING_REVIEW` | PASS |
-| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T2_TASK_ROLE_PHASE_DEFECT_PACKET_RESOLVER_2026-06-23.md` | `Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION` | PASS |
-| Resolver module | `governance/compat/run_adif_defect_resolver.py` | 11/11 focused tests pass | PASS |
+| Work order status | this artifact | `Status: ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T2_TASK_ROLE_PHASE_DEFECT_PACKET_RESOLVER_2026-06-23.md` | `Status: CHECKPOINT_ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW` | PASS |
+| Resolver module | `governance/compat/run_adif_defect_resolver.py` | 13/13 focused tests pass | PASS |
 | Resolver contract | `docs/reference/agent_defect_intelligence/CVF_ADIF_T2_RESOLVER_CONTRACT.md` | `Status: ACTIVE_REFERENCE` | PASS |
 | Completion or reviewer artifact | N/A with reason: Codex performs a checkpoint review of this tranche, then reviews and closes the complete T0-T5 chain after T5 | N/A with reason | N/A with reason |
 | Session continuity | active session front-door/state/handoff | N/A with reason: session-sync is forbidden in this batch and remains Codex-owned | N/A with reason |
-| System loop interlock | focused tests | 11 passed | PASS |
+| System loop interlock | focused tests | 13 passed | PASS |
 
 ## Public Export Disposition
 
@@ -350,7 +349,7 @@ public-sync repository work or public catalog claim is authorized.
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
 |---|---|---|---|---|
-| `INTERNAL_AGENT` | direct Python import / function call of `governance/compat/run_adif_defect_resolver.py` | read-only function call inside CVF-governed workspace; no commit/action authority | `governance/compat/test_run_adif_defect_resolver.py` (11 passing focused tests) | `IMPLEMENTED` |
+| `INTERNAL_AGENT` | direct Python import / function call of `governance/compat/run_adif_defect_resolver.py` | read-only function call inside CVF-governed workspace; no commit/action authority | `governance/compat/test_run_adif_defect_resolver.py` (13 passing focused tests) | `IMPLEMENTED` |
 | `EXTERNAL_AGENT_CLI_MCP` | future separately authorized CLI/MCP adapter, not created in this tranche | no ingress, authentication, approval, receipt, raw-data release, mutation, runtime, or public claim exists or is authorized | ADIF-T1 checkpoint review's deferred disposition; Forbidden Scope above | `DEFERRED_WITH_REASON` - no adapter exists; requires a separate source-verified GC-018/work order |
 
 ## Delta Execution Claim Boundary Control Block
@@ -408,7 +407,7 @@ one named above.
 | AC1 | Resolver accepts task class, role, lifecycle phase, surface selectors, and an optional risk ceiling | resolver review |
 | AC2 | Resolver returns a bounded, deterministically ordered list with source citations and enforcement labels | focused tests |
 | AC3 | Resolver never mutates the filesystem, never calls a provider/model, never executes a prompt | implementation review |
-| AC4 | Resolver excludes `RETIRED`/`SUPERSEDED` entries from default results without deleting their source files | focused test |
+| AC4 | Resolver returns only `ACTIVE` entries without deleting other lifecycle-state source files | focused test |
 | AC5 | Focused tests cover matching, ordering, bounding, lifecycle exclusion, and no-match cases, and all pass | `pytest` run |
 | AC6 | Dual Agent Surface Matrix is present at dispatch time with both rows populated | this work order and GC-018 baseline |
 | AC7 | No CLI entry point, MCP registration, or autorun/hook wiring is created | `git status --short`; diff |
@@ -428,17 +427,17 @@ T0-T5 committed graph after T5 for final closure.
 - [x] ADIF-T2 child GC-018 and work order exist and are source-verified.
 - [x] ADIF-T2 deliverables are created inside Allowed scope only.
 - [x] Pre-implementation autorun gate passes over the real range.
-- [x] Focused tests pass (11/11).
+- [x] Focused tests pass (13/13 after reviewer hardening).
 - [x] No CLI/MCP/autorun/hook file was created.
 - [x] Execution stopped after the T2 checkpoint commit.
-- [ ] Codex checkpoint review and continuity sync for ADIF-T2 (pending; not
-      owned by this child packet).
+- [x] Codex checkpoint review accepted ADIF-T2 after bounded lifecycle,
+      source-citation, and input-validation hardening.
 
 ## Return-To-Orchestrator Conditions
 
-Return success only as `COMPLETE_PENDING_REVIEW` for this child tranche.
-Return `BLOCKED_WITH_REASON` for any Stop Condition in the canonical
-authorization packet. Do not continue into ADIF-T3 in this batch.
+The worker return was `COMPLETE_PENDING_REVIEW`; the accepted checkpoint is
+now governed by the T3-T5 continuous-execution bridge hardening. Future stop
+conditions remain binding.
 
 ## Claim Boundary
 

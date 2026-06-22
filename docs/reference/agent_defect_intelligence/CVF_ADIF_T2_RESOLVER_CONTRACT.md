@@ -53,7 +53,8 @@ input.
 
 - `items`: an ordered tuple of `ResolvedDefectPacketItem`, each carrying
   `defect_id`, `title`, `defect_category`, `defect_class`, `severity`,
-  `enforcement_level`, `checker_bindings`, and `source_path`;
+  `enforcement_level`, `checker_bindings`, and a portable repository-relative
+  `source_path` for governed ADIF entry files;
 - `truncated`: `True` if more candidates matched than `max_results`;
 - `total_candidates`: the full match count before bounding;
 - `to_dict()`: a JSON-serializable projection including an explicit
@@ -68,10 +69,13 @@ same entry set always produce the same output order.
 
 ## Lifecycle Exclusion
 
-Entries with `lifecycleState` of `RETIRED` or `SUPERSEDED` are excluded from
-every default resolution. Their source files are never deleted, renamed, or
-hidden by the resolver - it only filters them out of the returned packet,
-per the ADIF-T0 contract's Entry Lifecycle section.
+Only entries with `lifecycleState: ACTIVE` are eligible for resolver results.
+`PROPOSED`, `REJECTED`, `RETIRED`, and `SUPERSEDED` entries remain readable in
+their source files but are excluded from returned packets, per the ADIF-T0
+contract's rule that only reviewed active entries are resolver-eligible.
+
+An unknown non-null `risk_ceiling` is rejected with `ValueError` instead of
+silently disabling the ceiling.
 
 ## Read-Only Guarantee
 
@@ -84,7 +88,7 @@ memory.
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
 |---|---|---|---|---|
-| `INTERNAL_AGENT` | direct Python import / function call of `governance/compat/run_adif_defect_resolver.py` | read-only function call inside CVF-governed workspace; no commit/action authority | `governance/compat/test_run_adif_defect_resolver.py` (11 passing focused tests) | `IMPLEMENTED` |
+| `INTERNAL_AGENT` | direct Python import / function call of `governance/compat/run_adif_defect_resolver.py` | read-only function call inside CVF-governed workspace; no commit/action authority | `governance/compat/test_run_adif_defect_resolver.py` (13 passing focused tests) | `IMPLEMENTED` |
 | `EXTERNAL_AGENT_CLI_MCP` | future separately authorized CLI/MCP adapter | no ingress, authentication, approval, receipt, raw-data release, mutation, runtime, or public claim exists | ADIF-T1 checkpoint review's deferred disposition; ADIF-T2 GC-018 Forbidden Scope | `DEFERRED_WITH_REASON` - no adapter exists; requires a separate source-verified GC-018/work order |
 
 ## Claim Boundary

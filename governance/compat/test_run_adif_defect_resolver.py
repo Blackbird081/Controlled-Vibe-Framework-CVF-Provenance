@@ -93,6 +93,13 @@ class RealEntriesTests(unittest.TestCase):
         payload = packet.to_dict()
         self.assertIn("not evidence", payload["claimBoundary"])
 
+    def test_real_entry_source_citations_are_repo_relative(self) -> None:
+        packet = MODULE.resolve_defect_packet(entries=MODULE.load_entries())
+        self.assertTrue(packet.items)
+        for item in packet.items:
+            self.assertTrue(item.source_path.startswith("docs/reference/"))
+            self.assertNotIn("\\", item.source_path)
+
 
 class FixtureEntryTests(unittest.TestCase):
     def test_deterministic_ordering_is_severity_descending_then_defect_id(self) -> None:
@@ -113,11 +120,13 @@ class FixtureEntryTests(unittest.TestCase):
         self.assertTrue(packet.truncated)
         self.assertEqual(packet.total_candidates, 5)
 
-    def test_retired_and_superseded_entries_excluded_by_default(self) -> None:
+    def test_only_active_entries_are_eligible_by_default(self) -> None:
         fixtures = (
             _make_entry("ADIF-9101", lifecycle_state="RETIRED"),
             _make_entry("ADIF-9102", lifecycle_state="SUPERSEDED"),
             _make_entry("ADIF-9103", lifecycle_state="ACTIVE"),
+            _make_entry("ADIF-9104", lifecycle_state="PROPOSED"),
+            _make_entry("ADIF-9105", lifecycle_state="REJECTED"),
         )
         packet = MODULE.resolve_defect_packet(entries=fixtures)
         defect_ids = {item.defect_id for item in packet.items}
@@ -145,6 +154,10 @@ class FixtureEntryTests(unittest.TestCase):
     def test_max_results_must_be_positive(self) -> None:
         with self.assertRaises(ValueError):
             MODULE.resolve_defect_packet(max_results=0)
+
+    def test_risk_ceiling_rejects_unknown_value(self) -> None:
+        with self.assertRaises(ValueError):
+            MODULE.resolve_defect_packet(risk_ceiling="CRITICAL")
 
 
 if __name__ == "__main__":
