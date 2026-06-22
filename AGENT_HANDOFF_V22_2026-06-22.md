@@ -229,6 +229,7 @@ required.
 | ADIF T3-T5 hardening | `dfaae2e7` | `HANDOFF_SYNC_BRIDGE_PASS` | execute joint T3/T4 dispatch, parallel evidence branches, convergence, then T5 | root handoff only between transitions; final review after T5 |
 | ADIF-T3/T4 joint dispatch | `af56db7c` | `HANDOFF_SYNC_BRIDGE_PASS` | fork isolated worktrees from this bridge HEAD; execute T3 and T4 in parallel; integrate both branches without squashing | root handoff only between transitions; no per-tranche review pause; final review after T5 |
 | ADIF-T3 branch integration | `41b026a6` | `HANDOFF_SYNC_BRIDGE_PASS` | execute the T4 branch (serialized in this working directory; real `EnterWorktree` isolation failed on a pre-existing long filename and was replaced by disjoint write-ownership serialization), then converge | root handoff only between transitions; no per-tranche review pause; final review after T5 |
+| ADIF-T3/T4 convergence | `fb4bac23` | `HANDOFF_SYNC_BRIDGE_PASS` | run combined tests/gates over the converged T3+T4 range, then author and execute ADIF-T5 | root handoff only between transitions; no per-tranche review pause; final review after T5 |
 
 The Agent System Skills roadmap and mandatory internal/external CLI/MCP
 accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
