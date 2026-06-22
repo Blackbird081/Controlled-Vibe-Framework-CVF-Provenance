@@ -64,6 +64,13 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Dual Agent Surface Matrix hardening is recorded at material commit `104b3267`.
+Applicable roadmaps, GC-018 baselines, work orders, reference/architecture
+packets, completion reviews, closure packets, and public-sync claims must carry
+both `INTERNAL_AGENT` and `EXTERNAL_AGENT_CLI_MCP` rows plus an explicit adapter
+boundary. Missing external-agent disposition or adapter boundary is now an
+architecture defect and a machine-check candidate.
+
 ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
 `fd5414b7`. The integrated suite passes 52/52 and the entry-integrity guard
 reports zero violations across eight entries. Public export remains deferred.
@@ -746,8 +753,9 @@ pre-closure content gates 43/44 before this required continuity sync.
 Mode: `adif_t0_t5_closed_pass_bounded`.
 
 Next allowed move: the operator may select ASSF-T0 or another separately
-governed lane. External CLI/MCP, runtime/provider/live, public,
-automatic-promotion, and universal-control expansion remains parked.
+governed lane. Dual Agent Surface Matrix hardening is complete at `104b3267`.
+External CLI/MCP, runtime/provider/live, public, automatic-promotion, and
+universal-control expansion remains parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

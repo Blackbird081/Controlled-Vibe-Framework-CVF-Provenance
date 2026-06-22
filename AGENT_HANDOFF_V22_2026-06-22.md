@@ -83,7 +83,7 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `fd5414b7`
+Current material HEAD recorded for this handoff: `104b3267`
 
 Prior session-sync HEAD recorded for this handoff: `c08f810e`
 
@@ -111,6 +111,17 @@ front doors, state sources, handoffs, standards, work orders, reviews, and
 runtime source as authority.
 
 ## Latest Work / Changes
+
+Dual Agent Surface Matrix hardening is committed at material commit `104b3267`.
+The canonical standard now requires applicable roadmap, GC-018, work-order,
+reference, architecture, completion-review, closure, and public-sync artifacts
+to include both `INTERNAL_AGENT` and `EXTERNAL_AGENT_CLI_MCP` rows with an
+explicit adapter boundary. Missing external-agent disposition or missing
+adapter boundary is now an architecture defect. Guard Orientation routes
+dispatcher, reviewer, and closer roles to the standard. Machine-check candidate:
+`governance/compat/check_dual_agent_surface_matrix.py`. Boundary: documentation
+and reference hardening only; no checker implementation, runtime/provider/live,
+external CLI/MCP adapter, public-sync, or readiness claim.
 
 MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` and public-synced
 from the sibling public-sync clone. Public remote was verified as
@@ -216,9 +227,11 @@ passed 43/44 with only this required session continuity sync outstanding.
 ## Next Allowed Move
 
 ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
-`fd5414b7`. The operator may select ASSF-T0 or another separately governed
+`fd5414b7`. Dual Agent Surface Matrix hardening is complete at material commit
+`104b3267`. The operator may select ASSF-T0 or another separately governed
 lane. No external CLI/MCP, runtime/provider/live/public, automatic-promotion,
-or universal-control expansion is released by this closure.
+or universal-control expansion is released by ADIF closure or the dual-surface
+hardening.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -245,6 +258,8 @@ Startup acknowledged: current mode=`adif_t0_t5_closed_pass_bounded`; active hand
 - MPI-T6 decision packet is closed bounded with `DEFER` at `14f8e5f9`; runtime
   authorization remains parked.
 - ADIF T0-T5 is closed bounded at final-review material commit `fd5414b7`.
+- Dual Agent Surface Matrix hardening is complete at material commit
+  `104b3267`; the checker remains a machine-check candidate, not implemented.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -256,24 +271,25 @@ Startup acknowledged: current mode=`adif_t0_t5_closed_pass_bounded`; active hand
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record final ADIF closure material
-`fd5414b7`, expose the post-closure next move, and regenerate active session
-state.
+Authorized guard-maintenance scope: record Dual Agent Surface Matrix hardening
+material `104b3267`, keep the post-ADIF next move current, and regenerate active
+session state.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/adifT0T5ClosedPassBounded20260623.json`
+- `CVF_SESSION/state/entries/dualAgentSurfaceMatrixHardening20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator returned the full continuous batch to
-Codex for final review and closure.
+Operator authorization: the operator requested the dual-agent roadmap/work-order/
+closure matrix rule be moved from memory into canonical standard, Guard
+Orientation, and machine-check candidate.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert reviewer material `fd5414b7` or prior history.
+revert material hardening `104b3267`, ADIF reviewer material `fd5414b7`, or
+prior history.
 
 ## Agent Operation Trace Block
 
@@ -281,25 +297,25 @@ revert reviewer material `fd5414b7` or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ADIF full-chain closed-pass-bounded sync, 2026-06-23 |
+| Session or invocation | dual-agent surface matrix hardening sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
-| Target paths | V22; session front door; closure state entry; next move; generated active state |
-| Allowed scope source | reviewer material `fd5414b7` and final completion review |
-| Before status evidence | material closure commit passes pre-commit 55/55; bridge ledger preserves intermediate heads |
-| After status evidence | active mode records ADIF `CLOSED_PASS_BOUNDED` and operator lane selection |
+| Target paths | V22; session front door; dual-surface hardening state entry; next move; generated active state |
+| Allowed scope source | material hardening `104b3267` and operator matrix-hardening instruction |
+| Before status evidence | material hardening commit passes pre-commit 55/55 |
+| After status evidence | active continuity records `104b3267` and preserves operator lane selection |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
 | Invocation ID | `adif-t0-t5-closed-pass-bounded-sync-2026-06-23` |
-| Expected manifest | V22; front door; closure state entry; next move; generated active state |
-| Actual changed set | V22; front door; closure state entry; next move; generated active state |
+| Expected manifest | V22; front door; dual-surface hardening state entry; next move; generated active state |
+| Actual changed set | V22; front door; dual-surface hardening state entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
 This handoff is session continuity only. It records ADIF bounded closure at
-`fd5414b7`. It does not dispatch ASSF or expand external CLI/MCP,
-runtime/provider/live/public behavior.
+`fd5414b7` and Dual Agent Surface Matrix hardening at `104b3267`. It does not
+dispatch ASSF or expand external CLI/MCP, runtime/provider/live/public behavior.
