@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`
+Current mode marker: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`.
+Current mode: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`.
 
-Previous mode: `aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`.
+Previous mode: `aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`.
 
 Active handoff:
 
@@ -522,13 +522,20 @@ read-only AAF helper in `--json --enforce` mode before worker material edits,
 with focused tests and a reviewer import fallback for package-style test
 execution.
 
+AAF-T7A Reviewer/Closer Acceleration Helper roadmap is
+`ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` at material commit `e0bbce53`.
+Artifact:
+`docs/roadmaps/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_ROADMAP_2026-06-22.md`.
+It creates no work order and implements no helper.
+
 ## Next Allowed Move
 
-Mode: `aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`.
+Mode: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`.
 
-Next allowed move: create the AAF-T7A Reviewer/Closer Acceleration Helper work
-order if the operator continues the learning lane. After AAF-T7A, resume MPI if
-reselected.
+Next allowed move: Claude/orchestrator may author a source-verified AAF-T7A
+GC-018 baseline and work order from the roadmap if the operator assigns that
+role; worker execution must remain governed by the future work order. Codex
+remains reviewer/closer. After AAF-T7A, resume MPI if reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

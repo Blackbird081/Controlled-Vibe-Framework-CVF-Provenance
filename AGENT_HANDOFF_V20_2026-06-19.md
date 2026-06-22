@@ -11,13 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current AAF-T6A closure state, the current
-mode, the next allowed move, and parked operator checkpoints. Detailed history
+This compact handoff records the current AAF-T7A roadmap-ready state, the
+current mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: closure continuity for AAF-T6A Early Diagnostic Wire-in.
+Target: continuity for AAF-T7A Reviewer/Closer Acceleration Helper roadmap
+readiness after AAF-T6A Early Diagnostic Wire-in closure.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -34,14 +35,14 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize AAF-T6A closure commit
-`2f3aa913`, generated active state, compact session memory, active handoff, and
-the next allowed AAF-T7A checkpoint.
+Authorized guard-maintenance scope: synchronize AAF-T7A roadmap material commit
+`e0bbce53`, generated active state, compact session memory, active handoff, and
+the next allowed AAF-T7A work-order-authoring checkpoint.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime beyond the closed MPI-T2 helper scope, MCP execution,
 watcher/daemon, benchmark, provider/live, direct-interception, ACE-R1, CGE-T3,
 MLW7/8, automated provider selection, runtime provider routing, full AAF-T6,
-AAF-T7A, MPI-T3/T4, route edit, route schema change, registry
+AAF-T7A implementation, MPI-T3/T4, route edit, route schema change, registry
 source or aggregate edit, durable write, registry generator change, helper or
 checker implementation, scaffold implementation, patch apply behavior, CLI/MCP
 adapter behavior, broader Learning Plane runtime mutation, or public-sync scope.
@@ -167,19 +168,20 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=create the AAF-T7A Reviewer/Closer Acceleration Helper work order if the operator continues the learning lane; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening outside AAF-T7A, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=Claude/orchestrator may author a source-verified AAF-T7A GC-018 baseline and work order from the roadmap if the operator assigns that role; Codex remains reviewer/closer; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening outside AAF-T7A, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`
+`aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`
 
-Current HEAD recorded for this handoff: `2f3aa913`
+Current HEAD recorded for this handoff: `e0bbce53`
 
 Material state:
 
 - LSC-T6 closure commit: `65af6db3`
 - LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
 - LSC-T5/T7 closure commit: `03fe8ca2`
+- AAF-T7A Reviewer/Closer Acceleration Helper roadmap commit: `e0bbce53`
 - MPI-T1 Memory Plane Front-Door Map material commit: `24f3b958`
 - L2A-T0 Learning-To-Acceleration Classification Standard closure commit: `bf0c9de1`
 - L2A-T0 Learning-To-Acceleration Classification Standard dispatch commit: `3f2d9973`
@@ -648,12 +650,19 @@ Result: `pre-implementation` autorun now runs the existing read-only AAF helper
 in `--json --enforce` mode before worker material edits, with focused tests and
 a reviewer import fallback for package-style test execution.
 
-Next allowed move: create the AAF-T7A Reviewer/Closer Acceleration Helper work
-order if the operator continues the learning lane. After AAF-T7A, resume MPI if
-reselected.
+AAF-T7A Reviewer/Closer Acceleration Helper roadmap is
+`ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` at material commit `e0bbce53`.
+Artifact:
+`docs/roadmaps/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_ROADMAP_2026-06-22.md`.
+It creates no work order and implements no helper.
 
-Keep AAF-T7A closure-conversion acceleration helper, AAF-T6 Guard Orientation
-Read-Receipt Gate, AAF-T7 helper/index friction hardening, CGE-T3 Full Knowledge
+Next allowed move: Claude/orchestrator may author a source-verified AAF-T7A
+GC-018 baseline and work order from the roadmap if the operator assigns that
+role; worker execution must remain governed by the future work order. Codex
+remains reviewer/closer. After AAF-T7A, resume MPI if reselected.
+
+Keep AAF-T7A implementation beyond roadmap/work-order authoring, AAF-T6 Guard
+Orientation Read-Receipt Gate, AAF-T7 helper/index friction hardening, CGE-T3 Full Knowledge
 Absorption Ledger, ACE-R1 Agent
 Coding Evidence Replay Roadmap, MLW7, and MLW8 parked unless separately
 authorized. Do not open
@@ -939,19 +948,19 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | AAF-T6A early diagnostic wire-in closure session sync, 2026-06-22 |
+| Session or invocation | AAF-T7A roadmap-ready session sync, 2026-06-22 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | AAF-T6A closure session-sync manifest |
-| Allowed scope source | AAF-T6A closure material commit `2f3aa913` |
-| Before status evidence | material closure commit `2f3aa913` with session surfaces still pointing to AAF-T6A dispatched-to-worker mode |
-| After status evidence | state, memory, and handoff record AAF-T6A closed mode and AAF-T7A checkpoint |
+| Target paths | AAF-T7A roadmap-ready session-sync manifest |
+| Allowed scope source | AAF-T7A roadmap material commit `e0bbce53` |
+| Before status evidence | material roadmap commit `e0bbce53` with session surfaces still pointing to AAF-T6A closed checkpoint |
+| After status evidence | state, memory, and handoff record AAF-T7A roadmap-ready mode and work-order-authoring next move |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | closure session continuity only; no provider, live, AAF-T7A execution, full AAF-T6, MPI-T3/T4 execution, route edit, durable write, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
+| Approval boundary | roadmap session continuity only; no provider, live, AAF-T7A implementation, full AAF-T6, MPI-T3/T4 execution, route edit, durable write, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `aaf-t6a-closure-session-sync-2026-06-22` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT6AEarlyDiagnosticWireInClosure20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `aaf-t7a-roadmap-ready-session-sync-2026-06-22` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT7AReviewerCloserAccelerationRoadmap20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
 | Actual changed set | session-sync steward records exact status before commit |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
