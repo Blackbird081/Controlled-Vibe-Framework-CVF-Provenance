@@ -11,13 +11,13 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current AAF-T6A dispatch state, the current
+This compact handoff records the current AAF-T6A closure state, the current
 mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: dispatch continuity for AAF-T6A Early Diagnostic Wire-in.
+Target: closure continuity for AAF-T6A Early Diagnostic Wire-in.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -34,9 +34,9 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize AAF-T6A dispatch commit
-`4e6813eb`, generated active state, compact session memory, active handoff, and
-the next allowed AAF-T6A worker-execution checkpoint.
+Authorized guard-maintenance scope: synchronize AAF-T6A closure commit
+`2f3aa913`, generated active state, compact session memory, active handoff, and
+the next allowed AAF-T7A checkpoint.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime beyond the closed MPI-T2 helper scope, MCP execution,
 watcher/daemon, benchmark, provider/live, direct-interception, ACE-R1, CGE-T3,
@@ -106,6 +106,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/refT0ActiveReferencePathRepairDispatch20260622.json`
 - `CVF_SESSION/state/entries/refT0ActiveReferencePathRepairClosure20260622.json`
 - `CVF_SESSION/state/entries/aafT6AEarlyDiagnosticWireInDispatch20260622.json`
+- `CVF_SESSION/state/entries/aafT6AEarlyDiagnosticWireInClosure20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -132,7 +133,7 @@ paused MPI and selected the learning layer. L2A-T0 is now closed so repeated
 findings can be classified into prevention and acceleration outcomes before
 MPI resumes. The operator also approved repairing active reference path drift
 before AAF-T6A. REF-T0 is now closed, and AAF-T6A Early Diagnostic Wire-in is
-now dispatched to worker at material commit `4e6813eb`.
+now closed at material commit `2f3aa913`.
 
 Rollback boundary: revert only this session-sync commit if rejected.
 Do not alter LSC-T5/T7 closure commit `03fe8ca2`, LSC-T5/T7 dispatch commit
@@ -166,13 +167,13 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker executes AAF-T6A as `WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; parked checkpoint=MPI-T3/MPI-T4, AAF-T7A, full AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=create the AAF-T7A Reviewer/Closer Acceleration Helper work order if the operator continues the learning lane; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening outside AAF-T7A, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`aaf_t6a_early_diagnostic_wire_in_dispatched_to_worker`
+`aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`
 
-Current HEAD recorded for this handoff: `4e6813eb`
+Current HEAD recorded for this handoff: `2f3aa913`
 
 Material state:
 
@@ -630,39 +631,30 @@ PASS, material pre-commit hook PASS 55/55, material commit `468ca3be`, and
 committed-range pre-closure content gates PASS with only expected
 session-continuity HEAD drift before this sync.
 
-AAF-T6A Early Diagnostic Wire-in is `DISPATCHED_TO_WORKER` at material dispatch
-commit `4e6813eb`, from dispatch base `d11e0522`.
+AAF-T6A Early Diagnostic Wire-in is `CLOSED_PASS_BOUNDED` at material closure
+commit `2f3aa913`, after dispatch commit `4e6813eb` and dispatch session-sync
+commit `2f744382`.
 
-Dispatch artifacts:
+Accepted artifacts:
+`governance/compat/run_agent_autorun_workflow_gate.py`,
+`governance/compat/test_run_agent_autorun_workflow_gate.py`,
+`docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md`,
+`docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_COMPLETION_2026-06-22.md`,
 `docs/baselines/CVF_GC018_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_2026-06-22.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_FOR_WORKER_2026-06-22.md`.
 
-Next allowed move: worker executes AAF-T6A as `WORKER_MUST_NOT_COMMIT` and
-returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Result: `pre-implementation` autorun now runs the existing read-only AAF helper
+in `--json --enforce` mode before worker material edits, with focused tests and
+a reviewer import fallback for package-style test execution.
 
-Allowed worker scope only:
-`governance/compat/run_agent_autorun_workflow_gate.py`,
-`governance/compat/test_run_agent_autorun_workflow_gate.py`, optional
-`governance/compat/test_run_agent_automation_assist.py` only if a focused
-helper contract fixture is required, and
-`docs/reviews/CVF_AAF_T6A_EARLY_DIAGNOSTIC_WIRE_IN_WORKER_RETURN_2026-06-22.md`.
+Next allowed move: create the AAF-T7A Reviewer/Closer Acceleration Helper work
+order if the operator continues the learning lane. After AAF-T7A, resume MPI if
+reselected.
 
-Required worker checks:
-`git rev-parse --short HEAD`; `git status --short`;
-`python -m unittest governance.compat.test_run_agent_autorun_workflow_gate`;
-`python -m unittest governance.compat.test_run_agent_automation_assist`;
-`python governance/compat/run_agent_automation_assist.py --base <executionBaseHead> --head HEAD --json --enforce`;
-`python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD`;
-`python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_run_agent_autorun_workflow_gate.py`.
-Replace `<executionBaseHead>` with worker-start HEAD.
-
-After AAF-T6A review/closure, operator-selected order remains AAF-T7A
-closure-conversion acceleration helper, then resume MPI if reselected.
-
-Keep AAF-T6A early diagnostic wire-in, AAF-T7A closure-conversion acceleration
-helper, AAF-T6 Guard Orientation Read-Receipt Gate, AAF-T7 helper/index
-friction hardening, CGE-T3 Full Knowledge Absorption Ledger, ACE-R1 Agent
+Keep AAF-T7A closure-conversion acceleration helper, AAF-T6 Guard Orientation
+Read-Receipt Gate, AAF-T7 helper/index friction hardening, CGE-T3 Full Knowledge
+Absorption Ledger, ACE-R1 Agent
 Coding Evidence Replay Roadmap, MLW7, and MLW8 parked unless separately
 authorized. Do not open
 Memory readout route edits, route schema changes, registry source or aggregate
@@ -947,20 +939,20 @@ LHW24 remains the latest closed numbered LHW wave.
 | --- | --- |
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | REF-T0 active reference path repair closure session sync, 2026-06-22 |
+| Session or invocation | AAF-T6A early diagnostic wire-in closure session sync, 2026-06-22 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, active state generator, session-sync steward, governance hooks |
-| Target paths | REF-T0 closure session-sync manifest |
-| Allowed scope source | REF-T0 closure material commit `8e024b2f` |
-| Before status evidence | material closure commit `8e024b2f` with session surfaces still pointing to REF-T0 dispatched-to-worker mode |
-| After status evidence | state, memory, and handoff record REF-T0 closed mode and AAF-T6A checkpoint |
+| Target paths | AAF-T6A closure session-sync manifest |
+| Allowed scope source | AAF-T6A closure material commit `2f3aa913` |
+| Before status evidence | material closure commit `2f3aa913` with session surfaces still pointing to AAF-T6A dispatched-to-worker mode |
+| After status evidence | state, memory, and handoff record AAF-T6A closed mode and AAF-T7A checkpoint |
 | Diff evidence | exact session-sync diff, generated-state drift check, and governance hooks |
-| Approval boundary | closure session continuity only; no provider, live, AAF-T6A execution, AAF-T7A execution, AAF-T6, AAF-T7, MPI-T3/T4 execution, route edit, durable write, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
+| Approval boundary | closure session continuity only; no provider, live, AAF-T7A execution, full AAF-T6, MPI-T3/T4 execution, route edit, durable write, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, CLI/MCP adapter behavior, RT2/RT3 runtime source edits, MLW reference edits, or public scope |
 | Claim boundary | no runtime mutation, provider/live, public-sync, direct interception, or universal enforcement claim |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | `ref-t0-closure-session-sync-2026-06-22` |
-| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/refT0ActiveReferencePathRepairClosure20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/refT0ActiveReferencePathRepairClosure20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Invocation ID | `aaf-t6a-closure-session-sync-2026-06-22` |
+| Expected manifest | `AGENT_HANDOFF_V20_2026-06-19.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/aafT6AEarlyDiagnosticWireInClosure20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | session-sync steward records exact status before commit |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in final session sync |
 
