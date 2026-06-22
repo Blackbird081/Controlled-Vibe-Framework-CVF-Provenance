@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_t2_worker_return_jurisdiction_block_closed_pending_next_operator_selection`
+Current mode marker: `rse_t3_jurisdiction_block_diagnostic_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_t2_worker_return_jurisdiction_block_closed_pending_next_operator_selection`.
+Current mode: `rse_t3_jurisdiction_block_diagnostic_dispatched_to_worker`.
 
-Previous mode: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`.
+Previous mode: `rse_t2_worker_return_jurisdiction_block_closed_pending_next_operator_selection`.
 
 Active handoff:
 
@@ -605,14 +605,28 @@ RSE-T3 enforcement is still separate. Verification passed: AAF helper with
 33/33, pre-commit hook 55/55, and committed-range pre-closure content gates with
 only expected active-handoff HEAD drift before this session sync.
 
+RSE-T3 Jurisdiction Block Diagnostic is `DISPATCHED_TO_WORKER` at material
+dispatch commit `963ea3c0` from dispatch base `31faa6bc`. Artifacts:
+`docs/baselines/CVF_GC018_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_FOR_WORKER_2026-06-22.md`.
+Worker mode is `WORKER_MUST_NOT_COMMIT`; only the AAF helper source, its focused
+test file, and the RSE-T3 worker return are authorized. The dispatch is a bounded
+L0 read-only advisory diagnostic only: no closure-blocking enforcement, new
+exit-nonzero defect, enforce-mode behavior change, remaining T3 diagnostics,
+runtime/provider/live/public-sync, session/handoff edit by worker, direct
+interception, readiness, speed/cost, or universal governed-coding-control claim.
+
 ## Next Allowed Move
 
-Mode: `rse_t2_worker_return_jurisdiction_block_closed_pending_next_operator_selection`.
+Mode: `rse_t3_jurisdiction_block_diagnostic_dispatched_to_worker`.
 
-Next allowed move: operator may authorize RSE-T3 early diagnostic/checker
-wire-in work-order authoring or select another parked lane. RSE-T3 implementation
-remains unauthorized until a fresh GC-018 baseline and work order are accepted.
-MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: worker updates only `governance/compat/run_agent_automation_assist.py`
+and `governance/compat/test_run_agent_automation_assist.py`, creates
+`docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_WORKER_RETURN_2026-06-22.md`,
+runs the required checks, and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON` uncommitted. Remaining RSE-T3 candidate diagnostics remain
+unauthorized. MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
