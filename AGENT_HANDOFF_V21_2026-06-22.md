@@ -99,11 +99,12 @@ Startup acknowledged: current mode=`aaf_t7b_reviewer_completion_scaffold_helper_
 
 `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `2d3c1a5d`
+Current HEAD recorded for this handoff: `953d86cc`
 
 Material state:
 
 - AAF-T7B Reviewer Completion Scaffold Helper dispatch commit: `2d3c1a5d`
+- AAF-T7B dispatch session-sync commit: `953d86cc`
 - AAF-T7B GC-018 baseline:
   `docs/baselines/CVF_GC018_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_2026-06-22.md`
 - AAF-T7B work order:
