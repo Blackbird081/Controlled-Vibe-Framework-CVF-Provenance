@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`
+Current mode marker: `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`.
+Current mode: `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`.
 
-Previous mode: `rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`.
+Previous mode: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`.
 
 Active handoff:
 
@@ -629,15 +629,27 @@ adapter behavior, provider/live proof, public-sync, or runtime readiness claim.
 Verification passed: AAF helper with `defects=[]`, pre-dispatch autorun 44/44,
 dispatch commit steward, pre-commit hook 55/55, and material commit hook 55/55.
 
+MPI-T3 External Agent Memory Summary Contract is `DISPATCHED_TO_WORKER` at
+material dispatch commit `7e0cf980` from dispatchBaseHead `a224da57`.
+Dispatch artifacts:
+`docs/baselines/CVF_GC018_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_FOR_WORKER_2026-06-22.md`.
+Worker mode is `WORKER_MUST_NOT_COMMIT`. Allowed worker scope is exactly:
+create `docs/reference/memory_plane/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT.md`,
+create `docs/reference/memory_plane/README.md`, and create
+`docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_WORKER_RETURN_2026-06-22.md`.
+Dispatch evidence: dispatch-quality PASS, pre-dispatch autorun 44/44, dispatch
+commit steward PASS, pre-commit hook 55/55, and material commit hook 55/55.
+
 ## Next Allowed Move
 
-Mode: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`.
+Mode: `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`.
 
-Next allowed move: a dispatch author may author a source-verified MPI-T3
-GC-018 baseline and work order from
-`docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` if
-assigned. No worker implementation is authorized until that dispatch packet
-passes gates and is accepted. Codex remains reviewer/closer.
+Next allowed move: Claude/worker executes only the MPI-T3 allowed
+documentation scope from the work order, then returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. Codex owns
+review, allowed reviewer repairs, final gates, commit, and session sync.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

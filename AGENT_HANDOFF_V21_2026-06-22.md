@@ -50,6 +50,28 @@ Active front door:
 
 ## Latest Work / Changes
 
+MPI-T3 External Agent Memory Summary Contract is `DISPATCHED_TO_WORKER` at
+material dispatch commit `7e0cf980` from dispatchBaseHead `a224da57`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_2026-06-22.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_FOR_WORKER_2026-06-22.md`
+
+Worker mode is `WORKER_MUST_NOT_COMMIT`. Worker scope is exactly:
+
+- create `docs/reference/memory_plane/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT.md`
+- create `docs/reference/memory_plane/README.md`
+- create `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_WORKER_RETURN_2026-06-22.md`
+
+Dispatch checks passed before material commit:
+
+- dispatch-quality: PASS
+- pre-dispatch autorun: PASS 44/44
+- commit steward dispatch: PASS
+- pre-commit hook: PASS 55/55
+- material commit hook: PASS 55/55
+
 MPI Phase 2 External Memory Read roadmap is
 `ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` at material commit `70963abc`.
 
@@ -133,9 +155,9 @@ Dispatch checks passed before commit:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: update V21 after MPI Phase 2 roadmap
-material commit `70963abc`, update generated active session state and compact
-front-door routing, and set the MPI-T3 work-order-authoring next move.
+Authorized guard-maintenance scope: update V21 after MPI-T3 dispatch material
+commit `7e0cf980`, update generated active session state and compact front-door
+routing, and set the MPI-T3 worker next move.
 
 Protected paths:
 
@@ -147,29 +169,31 @@ Protected paths:
 - `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardDispatch20260622.json`
 - `CVF_SESSION/state/entries/rseT0RoleSwitchEnvelopeStandardClosure20260622.json`
 - `CVF_SESSION/state/entries/mpiPhase2ExternalMemoryReadRoadmap20260622.json`
+- `CVF_SESSION/state/entries/mpiT3ExternalAgentMemorySummaryContractDispatch20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator asked Codex to write the next roadmap
-under the existing role rule. Codex authored and committed the roadmap and now
-records continuity.
+Operator authorization: the operator asked to continue the incomplete work
+order and move to the next tranche. Codex repaired and committed the MPI-T3
+dispatch packet and now records continuity.
 
 Rollback boundary: revert only this session-sync commit if rejected. Do not
-alter MPI Phase 2 roadmap commit `70963abc`, RSE-T0 closure commit `c0664784`,
+alter MPI-T3 dispatch commit `7e0cf980`, MPI Phase 2 roadmap commit
+`70963abc`, RSE-T0 closure commit `c0664784`,
 RSE-T0 dispatch commit `3842b0f7`, RSE roadmap commit `6608be51`,
 AAF-T7B closure commit `a82440ca`, dispatch commit `2d3c1a5d`, AAF-T7A.1
 closure commit `5fc456a4`, or AAF-T7A.1 dispatch commit `af615d1e`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=a dispatch author may author a source-verified MPI-T3 GC-018 baseline and work order from the Phase 2 roadmap if assigned; parked checkpoint=MPI-T4/MPI-T5/MPI-T6, remaining RSE-T3 diagnostics, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=Claude/worker executes only the MPI-T3 allowed documentation scope and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted; parked checkpoint=MPI-T4/MPI-T5/MPI-T6, remaining RSE-T3 diagnostics, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`
+`mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `70963abc`
+Current HEAD recorded for this handoff: `7e0cf980`
 
 Material state:
 
@@ -177,8 +201,13 @@ Material state:
 - RSE-T0 Role Switch Envelope Standard dispatch commit: `3842b0f7`
 - RSE Role Switch Envelope Protocol roadmap commit: `6608be51`
 - MPI Phase 2 External Memory Read roadmap commit: `70963abc`
+- MPI-T3 External Agent Memory Summary Contract dispatch commit: `7e0cf980`
 - MPI Phase 2 roadmap:
   `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md`
+- MPI-T3 GC-018 baseline:
+  `docs/baselines/CVF_GC018_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_2026-06-22.md`
+- MPI-T3 work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_FOR_WORKER_2026-06-22.md`
 - RSE-T0 standard:
   `docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md`
 - RSE-T0 front door:
@@ -230,11 +259,12 @@ Material state:
 
 ## Next Allowed Move
 
-Primary next move: a dispatch author may author a source-verified MPI-T3 GC-018
-baseline and work order from
-`docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` if
-assigned. No worker implementation is authorized until that dispatch packet
-passes gates and is accepted. Codex remains reviewer/closer.
+Primary next move: Claude/worker executes only the MPI-T3 allowed
+documentation scope from
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_FOR_WORKER_2026-06-22.md`,
+then returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted.
+Codex owns review, allowed reviewer repairs, final gates, commit, and session
+sync.
 
 ## Parked Checkpoints
 
