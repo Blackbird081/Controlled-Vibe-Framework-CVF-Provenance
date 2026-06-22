@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION
+Status: CHECKPOINT_ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW
 
 Date: 2026-06-23
 
@@ -108,6 +108,13 @@ Risk ceiling: R0/R1 documentation/reference only.
   (ADIF-T1 row update only)
 - this GC-018 baseline
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_T1_ENTRY_SCHEMA_SOURCE_LAYOUT_SEED_DICTIONARY_2026-06-23.md`
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
+|---|---|---|---|---|
+| `INTERNAL_AGENT` | direct governed reads of `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md` and compact entries | read-only lookup guidance; no proof of reading, comprehension, or prevention | T1 template and eight committed entries | `IMPLEMENTED` |
+| `EXTERNAL_AGENT_CLI_MCP` | future ADIF resolver/CLI/MCP adapter owner, not created by T1 | no ingress, authentication, approval, receipt, raw-data release, mutation, runtime, or public claim is authorized | `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md`; T1 forbidden scope | `DEFERRED_WITH_REASON` - ADIF-T2 may build only a local read-only resolver; any CLI/MCP adapter requires a separate source-verified packet |
 
 ## Decision / Baseline / Proposed Tranche
 

@@ -96,6 +96,17 @@ entry is authored or last re-verified. If the cited path cannot be confirmed,
 the entry must fall back to `PARTIAL_CHECK` or `GUIDANCE_ONLY` per the
 ADIF-T0 contract's Guidance Versus Enforcement Distinction.
 
+## Dual Agent Surface Matrix
+
+This package-level matrix applies to every compact entry that conforms to this
+template. Individual entries record defect evidence; they do not independently
+create an agent interface.
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
+|---|---|---|---|---|
+| `INTERNAL_AGENT` | direct governed file read of this template and `entries/` | read-only guidance; no execution, mutation, comprehension, or prevention claim | this template and committed entry files | `IMPLEMENTED` |
+| `EXTERNAL_AGENT_CLI_MCP` | future ADIF resolver/adapter owner | no CLI/MCP ingress, authentication, approval, receipt, raw-data release, mutation, runtime, or public behavior exists in T1 | T1 claim boundary and Dual Agent Surface Accounting Standard | `DEFERRED_WITH_REASON` - separately authorize and source-verify any external adapter after the local resolver contract exists |
+
 ## Lifecycle And Retirement
 
 An entry is never deleted once committed. Retirement or supersession is a

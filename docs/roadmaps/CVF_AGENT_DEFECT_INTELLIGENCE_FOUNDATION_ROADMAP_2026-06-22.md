@@ -350,10 +350,17 @@ Stop or return to orchestrator if a future tranche:
 | Review source-owner overlap and roadmap closure quality | Codex reviewer | PASS |
 | Select continuous execution order | Operator checkpoint | PASS - `T0 -> T1 -> T2 -> (T3 || T4) -> T5` selected |
 | Author continuous authorization and master Claude work order | Codex dispatch author | PASS |
-| Execute T0/T1/T2 sequential checkpoints | Claude orchestrator/worker | ADIF-T0 accepted for continuation; ADIF-T1 bounded pass pending checkpoint review; T2 remains pending execution |
+| Execute T0/T1/T2 sequential checkpoints | Claude orchestrator/worker | ADIF-T0 and ADIF-T1 accepted for continuation pending final review; T2 releases only after Codex continuity sync |
 | Execute T3/T4 from identical T2 HEAD in isolated worktrees | Claude parallel workers | HOLD_UNTIL_T2_CHECKPOINT_PASS |
 | Integrate T3/T4 and execute T5 | Claude orchestrator/worker | HOLD_UNTIL_T3_T4_CONVERGENCE_PASS |
 | Review and close the full chain | Codex reviewer/closer | HOLD_UNTIL_CLAUDE_COMPLETE_PENDING_REVIEW |
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
+|---|---|---|---|---|
+| `INTERNAL_AGENT` | ADIF compact entries and planned task/role/phase resolver | bounded read-only defect packets; no comprehension, prevention, or action claim | T1 template/entries; T2 roadmap contract | `CONTRACT_ONLY` - direct entry reads exist, while the resolver is not yet implemented |
+| `EXTERNAL_AGENT_CLI_MCP` | future CLI/MCP/adapter owner, deliberately separate from the local resolver | ingress, authentication, approval, receipts, raw-data, mutation, runtime, and public export require separate authorization | Dual Agent Surface Accounting Standard; current tranche boundaries | `DEFERRED_WITH_REASON` - no external adapter is authorized by ADIF-T0 through T5 |
 
 ## Verification / Evidence
 

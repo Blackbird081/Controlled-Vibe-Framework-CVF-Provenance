@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW
 
 Date: 2026-06-23
 
@@ -195,6 +195,13 @@ before T2.
 | Existing aggregate impact | none |
 | Generated state impact | none during this tranche |
 | Durable governance boundary | documentation/reference only; no runtime memory store |
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
+|---|---|---|---|---|
+| `INTERNAL_AGENT` | direct governed reads of the T1 entry template and compact entry files | read-only lookup guidance; no proof of reading, comprehension, prevention, or action authority | committed T1 reference paths | `IMPLEMENTED` |
+| `EXTERNAL_AGENT_CLI_MCP` | future resolver/adapter boundary; no T1 implementation owner | ingress, authentication, approval, receipt, raw-data, mutation, runtime, and public boundaries remain outside T1 | Dual Agent Surface Accounting Standard and this packet's forbidden scope | `DEFERRED_WITH_REASON` - a future CLI/MCP surface requires its own source verification and authorization |
 
 ## External Knowledge Intake Routing
 
@@ -396,8 +403,8 @@ T0-T5 committed graph after T5 for final closure.
 - [x] Pre-implementation autorun gate passes over the real range.
 - [x] No resolver/helper/checker/generator/hook file was created.
 - [x] Execution stopped after the T1 checkpoint commit.
-- [ ] Codex checkpoint review and continuity sync for ADIF-T1 (pending; not
-      owned by this child packet).
+- [x] Codex checkpoint review accepted ADIF-T1 for continuation; continuity
+      release remains a separate Codex-owned sync commit.
 
 ## Return-To-Orchestrator Conditions
 
