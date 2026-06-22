@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`
+Current mode marker: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`.
+Current mode: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`.
 
-Previous mode: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`.
+Previous mode: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`.
 
 Active handoff:
 
@@ -539,20 +539,24 @@ dispatch session-sync commit `26cfaa0c`. Accepted artifacts:
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_FOR_WORKER_2026-06-22.md`.
 
-AAF-T7B Reviewer Completion Scaffold Helper is dispatched at material commit
-`2d3c1a5d`. It authorizes only the bounded L1 scaffold helper work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_FOR_WORKER_2026-06-22.md`.
+AAF-T7B Reviewer Completion Scaffold Helper is `CLOSED_PASS_BOUNDED` at
+material closure commit `a82440ca`, after dispatch commit `2d3c1a5d`,
+dispatch session-sync commit `953d86cc`, and dispatch handoff-head sync commit
+`7e52ab68`. It adds a bounded L1 reviewer-completion scaffold helper to the
+read-only AAF helper, with one explicit docs/reviews scaffold-write exception
+that refuses existing files, non-Markdown paths, and paths outside
+`docs/reviews/`. Reviewer accepted the worker-return gate-trap finding as a
+reviewer-owned learning adjunct and kept checker/standard promotion deferred to
+a future authorized tranche.
 
 ## Next Allowed Move
 
-Mode: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`.
+Mode: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`.
 
-Next allowed move: Claude/worker executes AAF-T7B under
-`WORKER_MUST_NOT_COMMIT` and returns uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Parked future tranche to retain: Role Handoff Protocol /
-Role Switch Envelope for standardized role-switch declarations across
-internal/external agents and future runtime projects. MPI-T3/MPI-T4 remain
-paused unless reselected.
+Next allowed move: operator selects the next governed tranche after AAF-T7B
+closure. Candidate parked next moves remain Role Handoff Protocol / Role Switch
+Envelope, AAF-T7 L2 patch preview, or a future learning/checker tranche for
+gate-trap capture. MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
