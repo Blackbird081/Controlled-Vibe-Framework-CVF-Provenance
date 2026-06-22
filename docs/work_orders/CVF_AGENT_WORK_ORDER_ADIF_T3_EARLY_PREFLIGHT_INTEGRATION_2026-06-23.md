@@ -2,13 +2,13 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
 docType: work_order
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 ## Dispatch Prompt Envelope
 
@@ -186,7 +186,7 @@ python -m pytest governance/compat/test_run_adif_preflight_readout.py -v
 | AC2 | No filesystem mutation | `test_human_text_includes_claim_boundary_and_does_not_mutate_filesystem` |
 | AC3 | Bounded by `max_results` | `test_readout_is_bounded_by_max_results` |
 | AC4 | No competing autorun process created | `grep` against `run_agent_autorun_workflow_gate.py` |
-| AC5 | Focused tests pass | `pytest` run: 7/7 |
+| AC5 | Focused tests pass and formatted results retain repository-relative source citations | `pytest` run: 7/7 after reviewer hardening |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -196,6 +196,14 @@ python -m pytest governance/compat/test_run_adif_preflight_readout.py -v
 
 Runtime/provider/cost learning lane: N/A_WITH_REASON - the worktree failure
 is a local filesystem/git-config condition, not provider/cost behavior.
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | current ADIF governed source, tests, and final-review diff |
+| Provider registry surfaces | not changed or claimed by this bounded foundation batch |
+| Freshness disposition | PASS - no runtime, provider, live-proof, or external-adapter behavior is claimed |
 
 ## Public Export Disposition
 
@@ -240,8 +248,7 @@ Standard.
 - [x] No autorun wiring confirmed via `grep`.
 - [x] Core Guard Self-Protection Authorization block present for both
       protected paths.
-- [ ] Codex review of the complete T0-T5 graph after T5 (pending; not
-      owned by this branch packet).
+- [x] Codex review accepted the complete T0-T5 graph after bounded repair.
 
 ## Return-To-Orchestrator Conditions
 
@@ -258,6 +265,22 @@ runtime/provider/live/public work, secrets/quota, destructive action,
 canonical-owner semantic change, write ownership overlap that cannot be
 safely serialized, or a different execution order than the one named
 above.
+
+## Claim Boundary
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | joint T3/T4 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | final ADIF completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session surfaces | separate post-closure sync follows | N/A with reason |
+| System loop interlock | N/A | no runtime loop changed | N/A with reason |
 
 ## Claim Boundary
 

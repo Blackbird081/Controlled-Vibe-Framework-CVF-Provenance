@@ -77,10 +77,10 @@ candidate, reject as non-reusable) without ever auto-promoting it.
 ## Entry Integrity Guard
 
 `governance/compat/check_adif_entry_integrity.py` is a standalone,
-read-only diagnostic that detects dangling checker bindings, dangling
-supersession references, duplicate IDs, stale supersession, invalid enum
-values, and dishonest enforcement-level claims across the committed entry
-set. It is not wired into any autorun phase or hook chain.
+read-only diagnostic that detects dangling canonical source paths and checker
+bindings, dangling supersession references, duplicate IDs, stale supersession
+cycles, invalid enums, and dishonest enforcement-level claims across the
+committed entry set. It is not wired into any autorun phase or hook chain.
 
 ## Canonical Owners ADIF Must Not Duplicate
 

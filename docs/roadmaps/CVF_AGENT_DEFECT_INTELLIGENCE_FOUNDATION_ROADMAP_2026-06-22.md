@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ADIF_CONTINUOUS_EXECUTION_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -352,9 +352,9 @@ Stop or return to orchestrator if a future tranche:
 | Author continuous authorization and master Claude work order | Codex dispatch author | PASS |
 | Execute T0/T1/T2 sequential checkpoints | Claude orchestrator/worker | ADIF-T0, T1, and T2 accepted for continuation pending final review; T2 reviewer-hardened |
 | Execute T3/T4 joint parallel dispatch and T5 as one continuous sequence | Claude orchestrator/worker | ADIF-T3/T4 dispatched jointly with disjoint write ownership; serialized-worktree-fallback execution, integration, convergence, and ADIF-T5 executed without a Codex pause; complete T0-T5 graph returned for Codex final review |
-| Execute T3/T4 from identical post-T2 bridge HEAD in isolated worktrees | Claude parallel workers | CONTINUOUS_RELEASE_READY - no intermediate Codex review |
-| Integrate T3/T4 and execute T5 | Claude orchestrator/worker | CONTINUOUS_MACHINE_GATED - root-handoff-only bridges permitted; stop once after T5 |
-| Review and close the full chain | Codex reviewer/closer | HOLD_UNTIL_CLAUDE_COMPLETE_PENDING_REVIEW |
+| Execute T3/T4 from identical post-T2 bridge HEAD in isolated worktrees | Claude parallel workers | PASS_WITH_SERIALIZATION - disjoint scope preserved; worktree creation failed on a pre-existing long filename |
+| Integrate T3/T4 and execute T5 | Claude orchestrator/worker | PASS - bridge continuity and convergence evidence retained |
+| Review and close the full chain | Codex reviewer/closer | CLOSED_PASS_BOUNDED - semantic repairs applied; no external/runtime/public expansion |
 
 ## Dual Agent Surface Matrix
 
@@ -466,6 +466,14 @@ without claiming the proposed design is implemented.
 | Disposition | ADAPT as bounded owner-reconciliation roadmap; no runtime or provider-memory promotion |
 | Claim boundary | operator proposal is design input; CVF-governed standards and source verification control |
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| ADIF governed artifact | committed implementation and final-review acceptance | PASS |
+| GC-051 corpus registration | generated JSON aggregate and retained human companion | PASS |
+| Runtime/provider receipt | N/A with reason: no runtime/provider/live claim | N/A with reason |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -507,6 +515,22 @@ remote verification, or public-sync batch is authorized.
 | Expected manifest | this roadmap only for material batch |
 | Actual changed set | this roadmap only before session sync |
 | Manifest delta | MATCH |
+
+## Claim Boundary
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | ADIF master work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | ADIF continuous authorization | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ADIF_CONTINUOUS_EXECUTION_T0_T5_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session surfaces | separate post-closure sync follows | N/A with reason |
+| System loop interlock | N/A | no runtime loop changed | N/A with reason |
 
 ## Claim Boundary
 

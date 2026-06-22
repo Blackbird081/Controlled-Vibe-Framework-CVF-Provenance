@@ -35,6 +35,7 @@ class PreflightReadoutLine:
     severity: str
     enforcement_level: str
     checker_bindings: str
+    source_path: str
 
 
 @dataclass(frozen=True)
@@ -51,7 +52,7 @@ class PreflightReadout:
             return "ADIF preflight readout: no matching defect entries for the given context."
         rows = [
             f"  - {line.defect_id} [{line.severity}/{line.enforcement_level}] {line.title}"
-            f" (checker: {line.checker_bindings})"
+            f" (checker: {line.checker_bindings}; source: {line.source_path})"
             for line in self.lines
         ]
         header = f"ADIF preflight readout ({len(self.lines)} of {self.total_candidates} candidate(s)):"
@@ -69,6 +70,7 @@ class PreflightReadout:
                     "severity": line.severity,
                     "enforcementLevel": line.enforcement_level,
                     "checkerBindings": line.checker_bindings,
+                    "sourcePath": line.source_path,
                 }
                 for line in self.lines
             ],
@@ -107,6 +109,7 @@ def build_preflight_readout(
             severity=item.severity,
             enforcement_level=item.enforcement_level,
             checker_bindings=item.checker_bindings,
+            source_path=item.source_path,
         )
         for item in packet.items
     )

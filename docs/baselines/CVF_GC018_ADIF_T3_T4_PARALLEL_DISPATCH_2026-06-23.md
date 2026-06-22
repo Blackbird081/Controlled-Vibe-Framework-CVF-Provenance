@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -10,9 +10,9 @@ docType: gc018_baseline
 
 dispatchBaseHead: adaecb04
 
-executionBaseHead: NOT_EXECUTED_YET
+executionBaseHead: 617b041f
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 Commit mode: `WORKER_MAY_COMMIT`
 
@@ -328,6 +328,14 @@ python -m pytest governance/compat/test_run_adif_finding_intake_bridge.py -v
   ownership overlap, and auto-promotion risk before authoring.
 - Corpus verdict: COMPLETE_WITH_DECLARED_EXCLUSIONS
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| ADIF governed artifact | committed implementation and final-review acceptance | PASS |
+| GC-051 corpus registration | generated JSON aggregate and retained human companion | PASS |
+| Runtime/provider receipt | N/A with reason: no runtime/provider/live claim | N/A with reason |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -370,6 +378,22 @@ public-sync repository work or public catalog claim is authorized.
 | AC7 | Dual Agent Surface Matrix is present at dispatch time with both rows populated. |
 | AC8 | No CLI entry point, MCP registration, or autorun/hook wiring is created by either tranche. |
 | AC9 | Joint dispatch commit, then isolated worktree execution per the bridge protocol, with no Codex pause between T3, T4, and T5. |
+
+## Claim Boundary
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | joint T3/T4 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | final ADIF completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session surfaces | separate post-closure sync follows | N/A with reason |
+| System loop interlock | N/A | no runtime loop changed | N/A with reason |
 
 ## Claim Boundary
 

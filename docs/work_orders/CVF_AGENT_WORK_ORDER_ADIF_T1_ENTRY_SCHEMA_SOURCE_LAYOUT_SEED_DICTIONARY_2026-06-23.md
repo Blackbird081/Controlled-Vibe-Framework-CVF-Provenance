@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -14,7 +14,7 @@ dispatchBaseHead: 0fde5cf2
 
 executionBaseHead: 0fde5cf2
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 ## Dispatch Prompt Envelope
 
@@ -305,13 +305,24 @@ choreography finding.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this artifact | `Status: COMPLETE_PENDING_REVIEW` | PASS |
-| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T1_ENTRY_SCHEMA_SOURCE_LAYOUT_SEED_DICTIONARY_2026-06-23.md` | `Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T1_ENTRY_SCHEMA_SOURCE_LAYOUT_SEED_DICTIONARY_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ADIF entry template | `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md` | `Status: ACTIVE_REFERENCE` | PASS |
 | Seed entries | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0001.md` through `CVF_ADIF-0008.md` | `Status: ACTIVE` each | PASS |
-| Completion or reviewer artifact | N/A with reason: Codex performs a checkpoint review of this tranche, then reviews and closes the complete T0-T5 chain after T5 | N/A with reason | N/A with reason |
+| Completion or reviewer artifact | final ADIF completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Session continuity | active session front-door/state/handoff | N/A with reason: session-sync is forbidden in this batch and remains Codex-owned | N/A with reason |
 | System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| eight seed entries | committed and integrity-checked | PASS |
+| External adapter receipt | N/A with reason: adapter deferred | N/A with reason |
 
 ## Public Export Disposition
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_HARDENED_CONTINUOUS_T3_T5
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -14,7 +14,7 @@ dispatchBaseHead: 60751daf
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: REVIEWER_MUST_CAPTURE_AT_CLOSURE
+closureBaseHead: c08f810e
 
 ## Dispatch Prompt Envelope
 
@@ -361,6 +361,22 @@ tranches. Claude checkpoint commits do not constrain Codex's final disposition.
 | `INTERNAL_AGENT` | local continuous orchestrator, child workers, resolver, and bridge steward | machine-gated private commits; root handoff bridge only; Codex retains review/closure | bridge standard and hardened execution plan | `IMPLEMENTED` |
 | `EXTERNAL_AGENT_CLI_MCP` | no execution adapter in T3-T5 | ingress, authentication, approval, receipt, raw-data, mutation, runtime, and public boundaries remain outside scope | Forbidden Scope and T2 review | `DEFERRED_WITH_REASON` - future adapter requires separate authorization |
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| ADIF governed artifact | committed implementation and final-review acceptance | PASS |
+| GC-051 corpus registration | generated JSON aggregate and retained human companion | PASS |
+| Runtime/provider receipt | N/A with reason: no runtime/provider/live claim | N/A with reason |
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | current ADIF governed source, tests, and final-review diff |
+| Provider registry surfaces | not changed or claimed by this bounded foundation batch |
+| Freshness disposition | PASS - no runtime, provider, live-proof, or external-adapter behavior is claimed |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -403,6 +419,22 @@ authorized.
 | Actual changed set | canonical authorization; this work order; ADIF roadmap |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Claim Boundary
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | ADIF continuous authorization | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | final ADIF completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session surfaces | separate post-closure sync follows | N/A with reason |
+| System loop interlock | N/A | no runtime loop changed | N/A with reason |
 
 ## Claim Boundary
 

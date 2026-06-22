@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -14,7 +14,7 @@ dispatchBaseHead: 479e98e3
 
 executionBaseHead: 479e98e3
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 ## Core Guard Self-Protection Authorization
 
@@ -329,6 +329,17 @@ choreography finding.
 | Completion or reviewer artifact | N/A with reason: Codex performs a checkpoint review of this tranche, then reviews and closes the complete T0-T5 chain after T5 | N/A with reason | N/A with reason |
 | Session continuity | active session front-door/state/handoff | N/A with reason: session-sync is forbidden in this batch and remains Codex-owned | N/A with reason |
 | System loop interlock | focused tests | 13 passed | PASS |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| active-only bounded resolver | reviewer-hardened and tested | PASS |
+| External adapter receipt | N/A with reason: adapter deferred | N/A with reason |
 
 ## Public Export Disposition
 

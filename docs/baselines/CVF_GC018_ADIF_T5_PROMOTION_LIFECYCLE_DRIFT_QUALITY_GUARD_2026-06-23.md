@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -10,9 +10,9 @@ docType: gc018_baseline
 
 dispatchBaseHead: 2b93b314
 
-executionBaseHead: NOT_EXECUTED_YET
+executionBaseHead: 2b93b314
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 Commit mode: `WORKER_MAY_COMMIT`
 
@@ -149,8 +149,8 @@ complete T0-T5 graph.
 | Prerequisite artifact | Closure or dispatch commit | Disposition | Gate evidence |
 |---|---|---|---|
 | ADIF-T3 branch checkpoint | `41b026a6` | ACCEPT | committed; 7/7 focused tests pass |
-| ADIF-T4 branch checkpoint | `fb4bac23` | ACCEPT | committed; 10/10 focused tests pass |
-| ADIF-T3/T4 convergence bridge | `2b93b314` | ACCEPT | combined 30/30 focused tests pass; pre-implementation autorun 47/47 PASS over the converged range |
+| ADIF-T4 branch checkpoint | `fb4bac23` | ACCEPT | committed; reviewer-expanded coverage passes 13/13 |
+| ADIF-T3/T4 convergence bridge | `2b93b314` | ACCEPT | combined reviewer suite passes; pre-implementation autorun 47/47 PASS over the converged range |
 
 ## Mandatory Dual Agent Surface Matrix
 
@@ -284,6 +284,14 @@ python governance/compat/check_adif_entry_integrity.py --enforce
   autorun-wiring risk before implementation.
 - Corpus verdict: COMPLETE_WITH_DECLARED_EXCLUSIONS
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| ADIF governed artifact | committed implementation and final-review acceptance | PASS |
+| GC-051 corpus registration | generated JSON aggregate and retained human companion | PASS |
+| Runtime/provider receipt | N/A with reason: no runtime/provider/live claim | N/A with reason |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -317,16 +325,32 @@ public-sync repository work or public catalog claim is authorized.
 
 | ID | Criterion |
 |---|---|
-| AC1 | Guard detects dangling `checkerBindings` paths. |
+| AC1 | Guard detects dangling canonical source paths and `checkerBindings` paths. |
 | AC2 | Guard detects dangling `supersedes` references. |
 | AC3 | Guard detects duplicate `defectId` values. |
-| AC4 | Guard detects stale supersession (e.g., an `ACTIVE` entry pointed to by `supersedes` from another `ACTIVE` entry, or a supersession cycle). |
+| AC4 | Guard detects stale supersession and cycles of any bounded length. |
 | AC5 | Guard detects invalid `severity`/`lifecycleState`/`enforcementLevel` enum values. |
 | AC6 | Guard detects dishonest enforcement claims (`MACHINE_CHECKED`/`PARTIAL_CHECK` with a non-existent `checkerBindings` path). |
 | AC7 | Guard never mutates any entry file; it reports violations only. |
 | AC8 | Guard is not wired into any autorun phase or hook chain in this tranche. |
 | AC9 | Focused tests cover every violation class plus a clean-pass case, and all pass. |
 | AC10 | Execution stops once after the T5 checkpoint commit; the complete T0-T5 graph is returned to Codex for final review. |
+
+## Claim Boundary
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T5 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | final ADIF completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session surfaces | separate post-closure sync follows | N/A with reason |
+| System loop interlock | N/A | no runtime loop changed | N/A with reason |
 
 ## Claim Boundary
 

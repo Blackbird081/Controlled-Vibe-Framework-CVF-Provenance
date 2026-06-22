@@ -35,7 +35,7 @@ class FindingIntakeBridgeTests(unittest.TestCase):
         request = MODULE.FindingIntakeRequest(
             summary="new checker evidence for known pattern",
             matching_defect_id="ADIF-0001",
-            has_checker_binding=True,
+            checker_binding="governance/compat/check_machine_closure_package.py",
         )
         outcome = MODULE.classify_finding(request)
         self.assertEqual(outcome.outcome, MODULE.PROPOSE_UPDATE_TO_EXISTING_ENTRY)
@@ -53,7 +53,7 @@ class FindingIntakeBridgeTests(unittest.TestCase):
     def test_new_finding_with_checker_binding_proposes_machine_check_candidate(self) -> None:
         request = MODULE.FindingIntakeRequest(
             summary="new pattern with an existing checker that already covers it",
-            has_checker_binding=True,
+            checker_binding="governance/compat/check_machine_closure_package.py",
         )
         outcome = MODULE.classify_finding(request)
         self.assertEqual(outcome.outcome, MODULE.PROPOSE_MACHINE_CHECK_CANDIDATE)
@@ -67,13 +67,37 @@ class FindingIntakeBridgeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             MODULE.classify_finding(MODULE.FindingIntakeRequest(summary="   "))
 
+    def test_invalid_canonical_defect_class_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            MODULE.classify_finding(
+                MODULE.FindingIntakeRequest(summary="x", defect_class="INVENTED_CLASS")
+            )
+
+    def test_invalid_canonical_defect_role_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            MODULE.classify_finding(
+                MODULE.FindingIntakeRequest(summary="x", defect_role="INVENTED_ROLE")
+            )
+
+    def test_missing_checker_binding_path_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            MODULE.classify_finding(
+                MODULE.FindingIntakeRequest(
+                    summary="x",
+                    checker_binding="governance/compat/check_missing_adif_fixture.py",
+                )
+            )
+
     def test_classification_never_mutates_entries_directory(self) -> None:
         entries_dir = MODULE.resolver.ENTRIES_DIR
         before_listing = sorted(p.name for p in entries_dir.glob("*"))
         for request in (
             MODULE.FindingIntakeRequest(summary="a", is_session_local=True),
             MODULE.FindingIntakeRequest(summary="b", matching_defect_id="ADIF-0001"),
-            MODULE.FindingIntakeRequest(summary="c", has_checker_binding=True),
+            MODULE.FindingIntakeRequest(
+                summary="c",
+                checker_binding="governance/compat/check_machine_closure_package.py",
+            ),
             MODULE.FindingIntakeRequest(summary="d"),
         ):
             MODULE.classify_finding(request)

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -23,6 +24,7 @@ def _entry(
     enforcement_level: str = "GUIDANCE_ONLY",
     checker_bindings: str = "NOT_APPLICABLE_WITH_REASON: guidance only",
     supersedes: str = "NONE",
+    source_path: str | None = None,
 ):
     return MODULE.resolver.DefectEntry(
         defect_id=defect_id,
@@ -43,7 +45,7 @@ def _entry(
         supersedes=supersedes,
         last_verified_commit="0000000",
         roadmap_seed_id="NONE",
-        source_path=f"/fake/{defect_id}.md",
+        source_path=source_path or f"/fake/{defect_id}.md",
     )
 
 
@@ -94,6 +96,43 @@ class EntryIntegrityGuardTests(unittest.TestCase):
         violations = MODULE.check_entry_integrity(entries=entries)
         classes = {v.violation_class for v in violations}
         self.assertIn("STALE_SUPERSESSION", classes)
+
+    def test_detects_three_entry_supersession_cycle(self) -> None:
+        entries = (
+            _entry("ADIF-9001", supersedes="ADIF-9002"),
+            _entry("ADIF-9002", supersedes="ADIF-9003"),
+            _entry("ADIF-9003", supersedes="ADIF-9001"),
+        )
+        violations = MODULE.check_entry_integrity(entries=entries)
+        self.assertTrue(
+            any(v.violation_class == "STALE_SUPERSESSION" and "ADIF-9003" in v.detail for v in violations)
+        )
+
+    def test_detects_dangling_canonical_source_path(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            entry_file = Path(temp_dir) / "entry.md"
+            entry_file.write_text(
+                "# Entry\n\n## Canonical Sources\n\n- `docs/reference/DOES_NOT_EXIST_ADIF.md`\n\n## Remediation\n\nNone.\n",
+                encoding="utf-8",
+            )
+            violations = MODULE.check_entry_integrity(
+                entries=(_entry("ADIF-9001", source_path=str(entry_file)),)
+            )
+        self.assertTrue(any(v.violation_class == "DANGLING_CANONICAL_SOURCE" for v in violations))
+
+    def test_existing_canonical_source_path_passes_source_check(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            entry_file = Path(temp_dir) / "entry.md"
+            entry_file.write_text(
+                "# Entry\n\n## Canonical Sources\n\n- `AGENTS.md`\n\n## Remediation\n\nNone.\n",
+                encoding="utf-8",
+            )
+            violations = MODULE.check_entry_integrity(
+                entries=(_entry("ADIF-9001", source_path=str(entry_file)),)
+            )
+        self.assertFalse(
+            any(v.violation_class in {"DANGLING_CANONICAL_SOURCE", "MISSING_CANONICAL_SOURCES"} for v in violations)
+        )
 
     def test_detects_invalid_severity_enum(self) -> None:
         entries = (_entry("ADIF-9001", severity="CRITICAL"),)

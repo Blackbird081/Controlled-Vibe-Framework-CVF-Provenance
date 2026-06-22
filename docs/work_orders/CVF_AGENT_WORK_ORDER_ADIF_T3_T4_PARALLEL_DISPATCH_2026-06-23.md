@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -12,9 +12,9 @@ Commit mode: `WORKER_MAY_COMMIT`
 
 dispatchBaseHead: adaecb04
 
-executionBaseHead: NOT_EXECUTED_YET
+executionBaseHead: 617b041f
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 ## Dispatch Prompt Envelope
 
@@ -400,13 +400,33 @@ closure of the whole T0-T5 chain belongs to Codex after T5.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this artifact | `Status: DISPATCHED_TO_WORKER` at dispatch; updated at execution | PASS |
-| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T3_T4_PARALLEL_DISPATCH_2026-06-23.md` | `Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T3_T4_PARALLEL_DISPATCH_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | T3 readout module | `governance/compat/run_adif_preflight_readout.py` | focused tests pass | PASS (after execution) |
 | T4 intake bridge module | `governance/compat/run_adif_finding_intake_bridge.py` | focused tests pass | PASS (after execution) |
-| Completion or reviewer artifact | N/A with reason: Codex reviews and closes the complete T0-T5 chain once after T5 | N/A with reason | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_ADIF_CONTINUOUS_EXECUTION_T0_T5_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
 | Session continuity | active handoff bridge ledger row only | bounded per bridge standard | PASS |
-| System loop interlock | focused tests for both branches | pending until execution | PASS (after execution) |
+| System loop interlock | focused tests for both branches | 20/20 pass | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| T3/T4 branch artifacts | committed and final-review accepted | PASS |
+| Focused test receipt | 20/20 passing before integrated closure suite | PASS |
+| Runtime/provider receipt | N/A with reason: local governance helpers only | N/A with reason |
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | current ADIF governed source, tests, and final-review diff |
+| Provider registry surfaces | not changed or claimed by this bounded foundation batch |
+| Freshness disposition | PASS - no runtime, provider, live-proof, or external-adapter behavior is claimed |
 
 ## Public Export Disposition
 
@@ -500,13 +520,11 @@ checkpoint review is required between T3, T4, and T5.
       source-verified.
 - [x] ADIF-T3/T4 deliverables are created inside Allowed scope only, with
       disjoint write ownership.
-- [ ] Pre-implementation autorun gate passes over the joint dispatch
-      range (pending dispatch commit).
-- [ ] Focused tests pass for both T3 and T4 (pending execution).
-- [ ] No CLI/MCP/autorun/hook file was created (pending execution).
-- [ ] T5 authored, gated, executed, and committed (pending).
-- [ ] Final batch packet returned to Codex for complete-graph review
-      (pending).
+- [x] Pre-implementation autorun gate passed over the joint dispatch range.
+- [x] Focused tests pass for both T3 and T4 after reviewer hardening.
+- [x] No CLI/MCP/autorun/hook file was created.
+- [x] T5 authored, gated, executed, and committed.
+- [x] Final batch returned to Codex and accepted with bounded repairs.
 
 ## Return-To-Orchestrator Conditions
 

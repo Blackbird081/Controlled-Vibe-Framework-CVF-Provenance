@@ -44,6 +44,7 @@ class PreflightReadoutTests(unittest.TestCase):
         self.assertEqual(before_listing, after_listing)
         text = readout.to_human_text()
         self.assertIn("not evidence", text)
+        self.assertIn("source: docs/reference/", text)
 
     def test_to_dict_round_trips_line_fields(self) -> None:
         readout = MODULE.build_preflight_readout(max_results=1)
@@ -53,6 +54,8 @@ class PreflightReadoutTests(unittest.TestCase):
         self.assertEqual(len(payload["lines"]), len(readout.lines))
         first = payload["lines"][0]
         self.assertEqual(first["defectId"], readout.lines[0].defect_id)
+        self.assertTrue(first["sourcePath"].startswith("docs/reference/"))
+        self.assertEqual(first["sourcePath"], readout.lines[0].source_path)
 
     def test_truncated_flag_propagates_from_resolver(self) -> None:
         readout = MODULE.build_preflight_readout(max_results=1)

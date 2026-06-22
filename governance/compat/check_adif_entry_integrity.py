@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -36,6 +37,12 @@ _VALID_SEVERITY = frozenset({"LOW", "MEDIUM", "HIGH"})
 _VALID_LIFECYCLE_STATE = frozenset({"PROPOSED", "ACTIVE", "SUPERSEDED", "RETIRED", "REJECTED"})
 _VALID_ENFORCEMENT_LEVEL = frozenset({"GUIDANCE_ONLY", "PARTIAL_CHECK", "MACHINE_CHECKED", "RETIRED"})
 _ENFORCEMENT_LEVELS_REQUIRING_CHECKER = frozenset({"MACHINE_CHECKED", "PARTIAL_CHECK"})
+_CANONICAL_SOURCES_SECTION_RE = re.compile(
+    r"^## Canonical Sources\s*$\n(.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL
+)
+_GOVERNED_PATH_RE = re.compile(
+    r"`((?:docs|governance|EXTENSIONS)/[^`]+|AGENTS\.md)`"
+)
 
 
 @dataclass(frozen=True)
@@ -66,6 +73,48 @@ def _check_dangling_checker_bindings(entry, violations: list[IntegrityViolation]
                     defect_id=entry.defect_id,
                     violation_class="DANGLING_CHECKER_BINDING",
                     detail=f"checkerBindings path does not exist: {path}",
+                )
+            )
+
+
+def _entry_source_file(entry) -> Path | None:
+    source = Path(entry.source_path)
+    candidate = source if source.is_absolute() else REPO_ROOT / source
+    return candidate if candidate.is_file() else None
+
+
+def _check_dangling_canonical_sources(entry, violations: list[IntegrityViolation]) -> None:
+    source_file = _entry_source_file(entry)
+    if source_file is None:
+        return
+    text = source_file.read_text(encoding="utf-8")
+    match = _CANONICAL_SOURCES_SECTION_RE.search(text)
+    if not match:
+        violations.append(
+            IntegrityViolation(
+                defect_id=entry.defect_id,
+                violation_class="MISSING_CANONICAL_SOURCES",
+                detail="entry has no parseable Canonical Sources section",
+            )
+        )
+        return
+    governed_paths = _GOVERNED_PATH_RE.findall(match.group(1))
+    if not governed_paths:
+        violations.append(
+            IntegrityViolation(
+                defect_id=entry.defect_id,
+                violation_class="MISSING_CANONICAL_SOURCES",
+                detail="Canonical Sources section names no governed path",
+            )
+        )
+        return
+    for path in governed_paths:
+        if not (REPO_ROOT / path).exists():
+            violations.append(
+                IntegrityViolation(
+                    defect_id=entry.defect_id,
+                    violation_class="DANGLING_CANONICAL_SOURCE",
+                    detail=f"canonical source path does not exist: {path}",
                 )
             )
 
@@ -162,14 +211,35 @@ def _check_dangling_and_stale_supersession(entries: tuple, violations: list[Inte
                     ),
                 )
             )
-        if target.supersedes == entry.defect_id:
-            violations.append(
-                IntegrityViolation(
-                    defect_id=entry.defect_id,
-                    violation_class="STALE_SUPERSESSION",
-                    detail=f"supersession cycle detected between {entry.defect_id} and {entry.supersedes}",
-                )
-            )
+
+
+def _check_supersession_cycles(entries: tuple, violations: list[IntegrityViolation]) -> None:
+    by_id = {entry.defect_id: entry for entry in entries}
+    reported: set[frozenset[str]] = set()
+    for start in by_id:
+        order: list[str] = []
+        positions: dict[str, int] = {}
+        current = start
+        while current in by_id:
+            if current in positions:
+                cycle = order[positions[current] :]
+                cycle_key = frozenset(cycle)
+                if cycle_key not in reported:
+                    reported.add(cycle_key)
+                    violations.append(
+                        IntegrityViolation(
+                            defect_id=current,
+                            violation_class="STALE_SUPERSESSION",
+                            detail=f"supersession cycle detected: {' -> '.join([*cycle, current])}",
+                        )
+                    )
+                break
+            positions[current] = len(order)
+            order.append(current)
+            target = by_id[current].supersedes
+            if not target or target.upper() == "NONE":
+                break
+            current = target
 
 
 def check_entry_integrity(entries: tuple | None = None) -> tuple[IntegrityViolation, ...]:
@@ -178,7 +248,9 @@ def check_entry_integrity(entries: tuple | None = None) -> tuple[IntegrityViolat
     violations: list[IntegrityViolation] = []
     _check_duplicate_defect_ids(candidates, violations)
     _check_dangling_and_stale_supersession(candidates, violations)
+    _check_supersession_cycles(candidates, violations)
     for entry in candidates:
+        _check_dangling_canonical_sources(entry, violations)
         _check_dangling_checker_bindings(entry, violations)
         _check_dishonest_enforcement_claim(entry, violations)
         _check_invalid_enum_values(entry, violations)

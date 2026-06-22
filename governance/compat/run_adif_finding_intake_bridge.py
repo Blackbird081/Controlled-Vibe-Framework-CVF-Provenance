@@ -24,6 +24,29 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+_VALID_DEFECT_CLASSES = frozenset(
+    {
+        "WORKER_EXECUTION_ERROR",
+        "ORCHESTRATOR_PACKET_GAP",
+        "RULE_GAP",
+        "MACHINE_GATE_GAP",
+        "PHASE_GATE_PLACEMENT_GAP",
+        "OPERATOR_SCOPE_CLARITY_GAP",
+        "RUNTIME_SIGNAL_GAP",
+    }
+)
+_VALID_DEFECT_ROLES = frozenset(
+    {
+        "ROOT_CAUSE",
+        "PROPAGATED_SYMPTOM",
+        "EVIDENCE_REPLICATION",
+        "STALE_SYNC",
+        "REVIEWER_REPAIR_SIDE_EFFECT",
+    }
+)
+
 _RESOLVER_PATH = Path(__file__).resolve().with_name("run_adif_defect_resolver.py")
 _RESOLVER_SPEC = importlib.util.spec_from_file_location("run_adif_defect_resolver", _RESOLVER_PATH)
 assert _RESOLVER_SPEC and _RESOLVER_SPEC.loader
@@ -56,7 +79,7 @@ class FindingIntakeRequest:
     defect_class: str | None = None
     defect_role: str | None = None
     is_session_local: bool = False
-    has_checker_binding: bool = False
+    checker_binding: str | None = None
     matching_defect_id: str | None = None
 
 
@@ -88,6 +111,19 @@ def _entry_exists(defect_id: str, entries: tuple) -> bool:
     return any(entry.defect_id == defect_id for entry in entries)
 
 
+def _validate_request(request: FindingIntakeRequest) -> None:
+    if request.defect_class is not None and request.defect_class not in _VALID_DEFECT_CLASSES:
+        raise ValueError("defect_class must use the canonical F2G defect-class vocabulary")
+    if request.defect_role is not None and request.defect_role not in _VALID_DEFECT_ROLES:
+        raise ValueError("defect_role must use the canonical FPRC defect-role vocabulary")
+    if request.checker_binding is not None:
+        path = request.checker_binding.strip()
+        if not path.startswith("governance/compat/") or not path.endswith(".py"):
+            raise ValueError("checker_binding must be a governance/compat/*.py path")
+        if not (REPO_ROOT / path).is_file():
+            raise ValueError("checker_binding must name an existing checker source file")
+
+
 def classify_finding(
     request: FindingIntakeRequest,
     *,
@@ -100,6 +136,7 @@ def classify_finding(
     """
     if not request.summary or not request.summary.strip():
         raise ValueError("FindingIntakeRequest.summary must be a non-empty string")
+    _validate_request(request)
 
     candidates = entries if entries is not None else resolver.load_entries()
 
@@ -113,7 +150,7 @@ def classify_finding(
         )
 
     if request.matching_defect_id and _entry_exists(request.matching_defect_id, candidates):
-        if request.has_checker_binding:
+        if request.checker_binding is not None:
             return FindingIntakeOutcome(
                 outcome=PROPOSE_UPDATE_TO_EXISTING_ENTRY,
                 reason=(
@@ -144,7 +181,7 @@ def classify_finding(
             defect_role=request.defect_role,
         )
 
-    if request.has_checker_binding:
+    if request.checker_binding is not None:
         return FindingIntakeOutcome(
             outcome=PROPOSE_MACHINE_CHECK_CANDIDATE,
             reason="finding cites an existing checker binding; propose a machine-check candidate through F2G",

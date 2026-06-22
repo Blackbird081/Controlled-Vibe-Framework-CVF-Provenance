@@ -2,13 +2,13 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
 docType: work_order
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 ## Dispatch Prompt Envelope
 
@@ -192,8 +192,8 @@ a finding into a canonical entry or checker.
 | AC1 | Returns exactly one of five required outcomes per finding | `test_all_five_outcomes_are_distinct_and_in_valid_set` |
 | AC2 | Never auto-promotes; no entry file mutation | `test_classification_never_mutates_entries_directory` |
 | AC3 | Reject outcome always carries a non-empty reason | `test_session_local_finding_is_rejected_with_reason`; `test_unknown_defect_id_is_rejected_pending_source_verification` |
-| AC4 | Preserves F2G/FPRC vocabularies without redefining them | module review (no new canonical enum defined) |
-| AC5 | Focused tests pass | `pytest` run: 10/10 |
+| AC4 | Preserves F2G/FPRC vocabularies without redefining them and rejects non-canonical supplied values | reviewer-hardened validation tests |
+| AC5 | Focused tests pass | `pytest` run: 13/13 after reviewer hardening |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -203,6 +203,14 @@ a finding into a canonical entry or checker.
 
 Runtime/provider/cost learning lane: N/A_WITH_REASON - no runtime,
 provider, or cost behavior is executed.
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | current ADIF governed source, tests, and final-review diff |
+| Provider registry surfaces | not changed or claimed by this bounded foundation batch |
+| Freshness disposition | PASS - no runtime, provider, live-proof, or external-adapter behavior is claimed |
 
 ## Public Export Disposition
 
@@ -243,12 +251,11 @@ Standard.
 ## Closure Checklist
 
 - [x] T4 intake bridge module and test created inside Allowed scope only.
-- [x] Focused tests pass (10/10).
+- [x] Focused tests pass (13/13 after reviewer hardening).
 - [x] No ADIF entry file created, modified, or promoted.
 - [x] Core Guard Self-Protection Authorization block present for both
       protected paths.
-- [ ] Codex review of the complete T0-T5 graph after T5 (pending; not
-      owned by this branch packet).
+- [x] Codex review accepted the complete T0-T5 graph after bounded repair.
 
 ## Return-To-Orchestrator Conditions
 
@@ -266,6 +273,22 @@ runtime/provider/live/public work, secrets/quota, destructive action,
 canonical-owner semantic change, write ownership overlap that cannot be
 safely serialized, or a different execution order than the one named
 above.
+
+## Claim Boundary
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | joint T3/T4 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | final ADIF completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session surfaces | separate post-closure sync follows | N/A with reason |
+| System loop interlock | N/A | no runtime loop changed | N/A with reason |
 
 ## Claim Boundary
 

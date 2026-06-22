@@ -1,0 +1,50 @@
+{
+  "registryOrder": 112,
+  "id": "adif-t0-t5-agent-defect-intelligence-foundation",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF ADIF T0-T5 agent defect intelligence foundation",
+  "scopePaths": [
+    "docs/reference/agent_defect_intelligence/README.md",
+    "docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md",
+    "docs/reference/agent_defect_intelligence/CVF_ADIF_T0_OWNER_RECONCILIATION_TAXONOMY_CONTRACT.md",
+    "docs/reference/agent_defect_intelligence/CVF_ADIF_T2_RESOLVER_CONTRACT.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0001.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0002.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0003.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0004.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0005.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0006.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0007.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0008.md",
+    "governance/compat/run_adif_defect_resolver.py",
+    "governance/compat/run_adif_preflight_readout.py",
+    "governance/compat/run_adif_finding_intake_bridge.py",
+    "governance/compat/check_adif_entry_integrity.py",
+    "docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md"
+  ],
+  "fileCount": 17,
+  "status": "SCANNED_WITH_FINDINGS",
+  "findings": [
+    {
+      "id": "adif-t0-t5-final-review-hardening",
+      "summary": "Final review repaired source-citation projection, intake enum and checker validation, canonical-source integrity, and arbitrary-length supersession-cycle detection.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Keep CLI/MCP adapters, runtime integration, live proof, and public export deferred to separately authorized work.",
+      "defectClass": "MACHINE_GATE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "automatic defect promotion",
+    "external agent adapter implemented",
+    "runtime enforcement complete",
+    "public export complete"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "ADIF-T0-T5",
+  "scanDate": "2026-06-23",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_ADIF_CONTINUOUS_EXECUTION_T0_T5_COMPLETION_2026-06-23.md",
+  "notes": "Foundation corpus registration after full-chain final review."
+}

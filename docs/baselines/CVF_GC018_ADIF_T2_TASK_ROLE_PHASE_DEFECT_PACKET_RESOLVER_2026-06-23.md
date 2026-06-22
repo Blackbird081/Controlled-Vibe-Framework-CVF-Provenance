@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CHECKPOINT_ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -12,7 +12,7 @@ dispatchBaseHead: 479e98e3
 
 executionBaseHead: 479e98e3
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 Commit mode: `WORKER_MAY_COMMIT`
 
@@ -267,6 +267,14 @@ python -m pytest governance/compat/test_run_adif_defect_resolver.py -v
   implementation.
 - Corpus verdict: COMPLETE_WITH_DECLARED_EXCLUSIONS
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| ADIF governed artifact | committed implementation and final-review acceptance | PASS |
+| GC-051 corpus registration | generated JSON aggregate and retained human companion | PASS |
+| Runtime/provider receipt | N/A with reason: no runtime/provider/live claim | N/A with reason |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -309,6 +317,22 @@ public-sync repository work or public catalog claim is authorized.
 | AC7 | Dual Agent Surface Matrix is present at dispatch time with both rows populated. |
 | AC8 | No CLI entry point, MCP registration, or autorun/hook wiring is created. |
 | AC9 | Execution stops after the T2 checkpoint commit; no T3 work begins in this batch. |
+
+## Claim Boundary
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T2 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | final ADIF completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | ADIF roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session surfaces | separate post-closure sync follows | N/A with reason |
+| System loop interlock | N/A | no runtime loop changed | N/A with reason |
 
 ## Claim Boundary
 

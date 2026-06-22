@@ -2,13 +2,13 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
 docType: work_order
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c08f810e
 
 ## Dispatch Prompt Envelope
 
@@ -315,12 +315,24 @@ of the complete T0-T5 chain belongs to Codex after this batch returns.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this artifact | `Status: COMPLETE_PENDING_REVIEW` | PASS |
-| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T5_PROMOTION_LIFECYCLE_DRIFT_QUALITY_GUARD_2026-06-23.md` | `Status: AUTHORIZED_FOR_CONTINUOUS_EXECUTION` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ADIF_T5_PROMOTION_LIFECYCLE_DRIFT_QUALITY_GUARD_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Integrity guard module | `governance/compat/check_adif_entry_integrity.py` | focused tests pass | PASS |
-| Completion or reviewer artifact | N/A with reason: Codex reviews and closes the complete T0-T5 chain once after this tranche | N/A with reason | N/A with reason |
-| Session continuity | active session front-door/state/handoff | N/A with reason: session-sync is forbidden in this batch and remains Codex-owned | N/A with reason |
-| System loop interlock | focused tests | all pass | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ADIF_CONTINUOUS_EXECUTION_T0_T5_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | ADIF-T0-T5 entry generated from registry source | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion retained; no quick-lookup delta required | PASS |
+| External evidence digest | N/A | no external evidence intake | N/A with reason |
+| Session continuity | active session front-door/state/handoff | separate post-closure sync follows | N/A with reason |
+| System loop interlock | focused tests | 19/19 pass before integrated closure suite | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| T5 integrity guard | committed and final-review accepted | PASS |
+| Focused test receipt | 19/19 passing before integrated closure suite | PASS |
+| Runtime/provider receipt | N/A with reason: local read-only integrity guard only | N/A with reason |
 
 ## Public Export Disposition
 
@@ -395,7 +407,7 @@ one named above.
 
 | ID | Requirement | Evidence |
 |---|---|---|
-| AC1 | Guard detects dangling `checkerBindings` paths | focused test |
+| AC1 | Guard detects dangling canonical source paths and `checkerBindings` paths | focused tests |
 | AC2 | Guard detects dangling `supersedes` references | focused test |
 | AC3 | Guard detects duplicate `defectId` values | focused test |
 | AC4 | Guard detects stale supersession | focused test |
@@ -403,7 +415,7 @@ one named above.
 | AC6 | Guard detects dishonest enforcement claims | focused test |
 | AC7 | Guard never mutates any entry file | focused test |
 | AC8 | Guard is not wired into autorun/hook chains | `grep` |
-| AC9 | Focused tests pass | `pytest` run |
+| AC9 | Focused tests pass | `pytest` run: 19/19 after reviewer hardening |
 | AC10 | Execution stops once after T5; complete graph returned to Codex | this return |
 
 ## Review Gate
@@ -420,8 +432,7 @@ this tranche, per the canonical authorization's Return Contract.
 - [x] Focused tests pass.
 - [x] No CLI/MCP/autorun/hook file was created or modified.
 - [x] Execution stopped after the T5 checkpoint commit.
-- [ ] Codex final review and closure of the complete T0-T5 graph (pending;
-      owned by Codex, not this child packet).
+- [x] Codex final review accepted the complete T0-T5 graph with bounded repairs.
 
 ## Return-To-Orchestrator Conditions
 
