@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -249,8 +249,13 @@ Allowed scope:
   explicit documentation-only and AHB-local-view boundary;
 - create
   `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_WORKER_RETURN_2026-06-22.md`;
-- reviewer/closer closure conversion may update this work order, paired
-  GC-018, and create the completion review after accepting the worker return.
+- reviewer/closer closure conversion may update
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T1_OPERATOR_QUESTION_BOUNDARY_FOR_WORKER_2026-06-22.md`;
+- reviewer/closer closure conversion may update
+  `docs/baselines/CVF_GC018_RSE_T1_OPERATOR_QUESTION_BOUNDARY_2026-06-22.md`;
+- reviewer/closer closure conversion may create
+  `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_COMPLETION_2026-06-22.md`
+  after accepting the worker return.
 
 Forbidden scope:
 
@@ -433,16 +438,16 @@ accepted material into a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed files stay inside Required Deliverables.
-- [ ] Addendum defines the four canonical question classes.
-- [ ] Addendum encodes the AAF-T7B forbidden operator-question pattern.
-- [ ] Addendum states finding capture is mandatory and promotion is routed.
-- [ ] Addendum states documentation-only and AHB local-view boundary.
-- [ ] Closed RSE-T0 standard and front door are unchanged.
-- [ ] Worker performed no checker, helper, RSE-T0 edit, AHB semantics, RSE-T2/T3, staging, commit, push, provider/live call, or closure decision.
-- [ ] Worker-return fast gate passes or records `BLOCKED_WITH_REASON`.
-- [ ] Reviewer-owned completion review created if accepted.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW`.
+- [x] Changed files stay inside Required Deliverables.
+- [x] Addendum defines the four canonical question classes.
+- [x] Addendum encodes the AAF-T7B forbidden operator-question pattern.
+- [x] Addendum states finding capture is mandatory and promotion is routed.
+- [x] Addendum states documentation-only and AHB local-view boundary.
+- [x] Closed RSE-T0 standard and front door are unchanged.
+- [x] Worker performed no checker, helper, RSE-T0 edit, AHB semantics, RSE-T2/T3, staging, commit, push, provider/live call, or closure decision.
+- [x] Worker-return fast gate passes.
+- [x] Reviewer-owned completion review created.
 
 ## Return-To-Orchestrator Conditions
 
@@ -465,6 +470,31 @@ scope.
 | AC4 | The addendum states promotion is routed, not performed, and no operator-facing prompt should ask whether to do reviewer or closer work | source diff |
 | AC5 | The addendum states documentation-only, builds on the closed RSE-T0 standard, and is an AHB local view | claim boundary and source diff |
 | AC6 | No forbidden paths changed, the closed RSE-T0 files are unchanged, and the worker commits nothing | `git status --short`; worker-return gate |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 status | `docs/baselines/CVF_GC018_RSE_T1_OPERATOR_QUESTION_BOUNDARY_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED`; checklist checked | PASS |
+| Worker return | `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | roadmap remains `ROADMAP_READY_FOR_WORK_ORDER_AUTHORING`; T1 closed by completion review | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passes; no mutation required | PASS |
+| Registry Markdown | `docs/reference/role_switch_envelope/README.md` | active RSE reference front door remains present and unchanged | PASS |
+| External evidence digest | N/A | no external evidence digest | N/A with reason |
+| System loop interlock | N/A | no interlock surface changed | N/A with reason |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active session front-door, state, and handoff | separate session-sync follows material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Receipt/query acceptance evidence | N/A with reason: RSE-T1 creates no receipt/query acceptance surface | PASS |
+| Runtime receipt value | N/A with reason: no runtime execution or provider call | PASS |
+| Delta receipt value | N/A with reason: no Delta execution-control claim | PASS |
 
 ## Public Export Disposition
 
