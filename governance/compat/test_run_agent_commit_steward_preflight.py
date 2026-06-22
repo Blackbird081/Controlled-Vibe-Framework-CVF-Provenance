@@ -52,6 +52,42 @@ def test_path_plan_collision_risk(monkeypatch) -> None:
     assert steward._recommended_mode(plan) == "split: material first, session-sync/handoff-sync second"
 
 
+def test_agents_handoff_pointer_change_joins_session_sync(monkeypatch) -> None:
+    monkeypatch.setattr(
+        steward,
+        "_range_paths",
+        lambda base, head: ("AGENTS.md", "AGENT_HANDOFF_V22_2026-06-22.md"),
+    )
+    monkeypatch.setattr(steward, "_status_paths", lambda: ())
+    monkeypatch.setattr(steward, "_agents_change_is_handoff_routing_only", lambda base: True)
+    monkeypatch.setattr(steward, "_has_agent_operation_trace", lambda path: False)
+
+    plan = steward.build_path_plan("base", "head")
+
+    assert plan.material_paths == ()
+    assert plan.protected_session_paths == (
+        "AGENTS.md",
+        "AGENT_HANDOFF_V22_2026-06-22.md",
+    )
+    assert steward._recommended_mode(plan) == "session-sync"
+
+
+def test_agents_rule_change_remains_material(monkeypatch) -> None:
+    monkeypatch.setattr(
+        steward,
+        "_range_paths",
+        lambda base, head: ("AGENTS.md", "AGENT_HANDOFF_V22_2026-06-22.md"),
+    )
+    monkeypatch.setattr(steward, "_status_paths", lambda: ())
+    monkeypatch.setattr(steward, "_agents_change_is_handoff_routing_only", lambda base: False)
+    monkeypatch.setattr(steward, "_has_agent_operation_trace", lambda path: False)
+
+    plan = steward.build_path_plan("base", "head")
+
+    assert plan.material_paths == ("AGENTS.md",)
+    assert plan.protected_session_paths == ("AGENT_HANDOFF_V22_2026-06-22.md",)
+
+
 def test_handoff_sync_only_lane(monkeypatch) -> None:
     monkeypatch.setattr(
         steward,

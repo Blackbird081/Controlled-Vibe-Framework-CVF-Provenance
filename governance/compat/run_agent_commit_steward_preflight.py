@@ -13,6 +13,7 @@ from dataclasses import dataclass
 import subprocess
 import sys
 from pathlib import Path
+import re
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -29,6 +30,8 @@ HANDOFF_PREFIXES = (
     "AGENT_HANDOFF",
     "CVF_SESSION/handoffs/",
 )
+AGENTS_PATH = "AGENTS.md"
+HANDOFF_REFERENCE_RE = re.compile(r"AGENT_HANDOFF(?:_V\d+_\d{4}-\d{2}-\d{2})?\.md")
 
 
 @dataclass(frozen=True)
@@ -124,6 +127,19 @@ def _is_protected_session_path(path: str) -> bool:
     return path.startswith(SESSION_PREFIXES) or path.startswith(HANDOFF_PREFIXES)
 
 
+def _agents_change_is_handoff_routing_only(base: str) -> bool:
+    before = _git_output("show", f"{base}:{AGENTS_PATH}", check=False)
+    agents_file = REPO_ROOT / AGENTS_PATH
+    if not before or not agents_file.exists():
+        return False
+    after = agents_file.read_text(encoding="utf-8", errors="replace")
+
+    def normalize(text: str) -> str:
+        return HANDOFF_REFERENCE_RE.sub("AGENT_HANDOFF_ACTIVE.md", text).replace("\r\n", "\n")
+
+    return before != after and normalize(before) == normalize(after)
+
+
 def _is_active_handoff_path(path: str) -> bool:
     return path.startswith("AGENT_HANDOFF") and path.endswith(".md")
 
@@ -140,8 +156,18 @@ def build_path_plan(base: str, head: str) -> PathPlan:
     changed = set(_range_paths(base, head))
     changed.update(_status_paths())
     changed_paths = tuple(sorted(changed))
-    protected = tuple(path for path in changed_paths if _is_protected_session_path(path))
-    material = tuple(path for path in changed_paths if not _is_protected_session_path(path))
+    has_session_companion = any(_is_protected_session_path(path) for path in changed_paths)
+    agents_is_session_router = (
+        AGENTS_PATH in changed_paths
+        and has_session_companion
+        and _agents_change_is_handoff_routing_only(base)
+    )
+    protected = tuple(
+        path
+        for path in changed_paths
+        if _is_protected_session_path(path) or (path == AGENTS_PATH and agents_is_session_router)
+    )
+    material = tuple(path for path in changed_paths if path not in protected)
     trace_artifacts = tuple(path for path in changed_paths if _has_agent_operation_trace(path))
     mixed = bool(protected and material)
     exact_manifest_collision_risk = mixed and bool(trace_artifacts)
