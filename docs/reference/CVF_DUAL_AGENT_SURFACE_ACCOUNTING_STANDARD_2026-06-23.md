@@ -45,15 +45,32 @@ Silence is not a valid disposition.
 ## Mandatory Dual Agent Surface Matrix
 
 Applicable roadmaps, baselines, work orders, reference contracts, completion
-reviews, and architecture packets must include:
+reviews, closure packets, and architecture packets must include a
+`Dual Agent Surface Matrix` before they are dispatched, marked ready, or closed.
 
-| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
-|---|---|---|---|---|
-| `INTERNAL_AGENT` | exact internal owner, path, or proposed doc-only contract | permissions, commit/action authority, and claim boundary | source/test/review evidence or reason | allowed disposition |
-| `EXTERNAL_AGENT_CLI_MCP` | exact CLI/MCP/adapter owner, proposed contract, or deferred owner | ingress, authentication, approval, receipt, raw-data, mutation, and public boundary | source/live/contract evidence or reason | allowed disposition |
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | exact internal owner, path, or proposed doc-only contract | permissions, commit/action authority, and claim boundary | source/test/review evidence or reason | N/A with reason, internal-only adapter, or separation from external adapter | allowed disposition |
+| `EXTERNAL_AGENT_CLI_MCP` | exact CLI/MCP/adapter owner, proposed contract, or deferred owner | ingress, authentication, approval, receipt, raw-data, mutation, and public boundary | source/live/contract evidence or reason | implemented adapter, adapter-contract-only, deferred adapter owner, or N/A with reason | allowed disposition |
 
 The matrix must distinguish interface existence from runtime behavior and must
 not promote a proposed CLI/MCP field into a current source fact.
+
+For roadmap, work-order, and closure-equivalent artifacts, omission of the
+`EXTERNAL_AGENT_CLI_MCP` row or omission of the adapter boundary cell is an
+architecture defect. It may be repaired as `DEFERRED_WITH_REASON` or
+`N/A_WITH_REASON` only when the reason is explicit and source-bounded.
+
+## Required Placement By Artifact Type
+
+| Artifact type | Required matrix timing | Minimum closure expectation |
+|---|---|---|
+| Roadmap | before `ROADMAP_READY`, `WORK_ORDER_READY`, or equivalent | internal and external consumer posture is visible before tranche selection |
+| GC-018 baseline | before dispatch or dependency release | exact allowed scope and forbidden adapter expansion are stated |
+| Work order | before worker execution | both consumer rows are actionable enough that the worker cannot infer hidden external scope |
+| Reference contract or architecture packet | before active-reference claim | adapter-contract-only, runtime, and public boundaries are separated |
+| Completion review / closure packet | before `CLOSED`, `CLOSED_PASS`, `CLOSED_PASS_BOUNDED`, or equivalent | implemented rows are evidence-backed and deferred external rows remain explicit |
+| Public-sync claim | before public export | public-facing external claims cite public-safe artifact evidence or remain deferred |
 
 ## Lifecycle Placement
 
@@ -71,6 +88,8 @@ not promote a proposed CLI/MCP field into a current source fact.
 Return to the orchestrator or block closure when an applicable artifact:
 
 - designs only for internal agents and omits external CLI/MCP disposition;
+- includes a matrix but omits the adapter boundary column or leaves the
+  external adapter boundary implicit;
 - claims external-agent support from an internal helper or document alone;
 - treats `CONTRACT_ONLY` as runtime availability;
 - implements CLI/MCP behavior from a roadmap-only or adapter-contract-only
@@ -78,6 +97,39 @@ Return to the orchestrator or block closure when an applicable artifact:
 - omits authentication, approval, receipt, raw-data, mutation, or claim
   boundary where the external surface can act;
 - uses provider-local memory as authority for either consumer class.
+
+## Machine Check Candidate
+
+Candidate checker: `governance/compat/check_dual_agent_surface_matrix.py`.
+
+Candidate phase placement:
+
+- `pre-dispatch`: changed active roadmaps, GC-018 baselines, and work orders
+  that are ready, dispatched, or dependency-released.
+- `reviewer-fast`: changed worker-return and completion-review artifacts.
+- `pre-closure`: changed closed-equivalent roadmaps, baselines, work orders,
+  reference contracts, architecture packets, and completion reviews.
+
+Candidate structural checks:
+
+1. Detect a heading named `Dual Agent Surface Matrix` or
+   `Mandatory Dual Agent Surface Matrix`.
+2. Require rows for both `INTERNAL_AGENT` and `EXTERNAL_AGENT_CLI_MCP` when the
+   artifact is in scope.
+3. Require columns for interface or owner surface, authority/risk boundary,
+   evidence, adapter boundary, and disposition.
+4. Require each row to contain exactly one allowed disposition:
+   `IMPLEMENTED`, `CONTRACT_ONLY`, `DEFERRED_WITH_REASON`, or
+   `N/A_WITH_REASON`.
+5. Reject empty or implicit external-agent adapter boundaries such as
+   `TBD`, `TODO`, `later`, `implicit`, `same as internal`, or blank cells.
+6. Treat this as a structural guard only; semantic truth of the cited evidence
+   still belongs to source verification, reviewer judgment, and applicable
+   domain checkers.
+
+Promotion trigger: after one more forward governed batch uses the six-column
+matrix without material exception, promote this candidate into the earliest
+applicable autorun phase gate.
 
 ## Source Verification Block
 
@@ -89,13 +141,19 @@ Return to the orchestrator or block closure when an applicable artifact:
 | Memory summary contract distinguishes adapter contract from runtime behavior | `docs/reference/memory_plane/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT.md` | claim boundary and adapter contract | `adapterContractOnly` | external-agent memory contract | LITERAL_INVARIANT | ACCEPT |
 | Current continuity model excludes external-agent memory from canonical authority | `docs/reference/CVF_CONTEXT_CONTINUITY_MODEL.md` | source hierarchy | `external agent memory files` | context continuity model | LITERAL_INVARIANT | ACCEPT |
 
+## Revision Ledger
+
+| Date | Change | Reason |
+|---|---|---|
+| 2026-06-23 | Hardened the matrix into a six-column required shape with explicit adapter boundary and machine-check candidate | operator finding that roadmap, work order, and closure artifacts must not leave external-agent disposition implicit |
+
 ## Finding-To-Governance Learning Disposition
 
 - Defect class: `RULE_GAP`
 - Learning lane: `GOVERNANCE_CONTROL_PLANE`
-- Disposition: `STANDARD_ADDED`
-- Next control action: add a deterministic checker candidate after sufficient
-  forward use proves stable applicability rules.
+- Disposition: `STANDARD_HARDENED_WITH_MACHINE_CHECK_CANDIDATE`
+- Next control action: promote `check_dual_agent_surface_matrix.py` when the
+  six-column matrix shape is stable across the next governed batch.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - this standard changes
   design accounting only.
 
@@ -152,17 +210,17 @@ summary requires an authorized public-sync batch from the sibling clone.
 | Session or invocation | dual-agent surface rule authoring, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | source reads, apply_patch, governance gates, git commit |
-| Target paths | this standard and System Skills roadmap |
-| Allowed scope source | operator instruction to record a mandatory internal/external-agent rule and roadmap |
-| Before status evidence | clean HEAD `7c0480bc` after Claude ADIF-T0 checkpoint |
-| After status evidence | two documentation-only architecture artifacts |
+| Target paths | this standard and `docs/reference/guard_orientation/README.md` |
+| Allowed scope source | operator instruction to canonicalize mandatory roadmap/work-order/closure dual-agent matrix, guard orientation routing, and machine-check candidate |
+| Before status evidence | clean HEAD `4ee4194f` after ADIF bounded closure session sync |
+| After status evidence | standard hardened and guard orientation routed to the standard |
 | Diff evidence | real-range name-status and governance gate output |
 | Approval boundary | architecture documentation only |
 | Claim boundary | no ADIF edit, runtime, CLI/MCP implementation, provider/live, or public-sync |
 | Agent type | standard/roadmap author |
-| Invocation ID | `cvf-dual-agent-surface-system-skills-roadmap-2026-06-23` |
-| Expected manifest | this standard; System Skills roadmap |
-| Actual changed set | this standard; System Skills roadmap |
+| Invocation ID | `cvf-dual-agent-surface-matrix-hardening-2026-06-23` |
+| Expected manifest | this standard; guard orientation index |
+| Actual changed set | this standard; guard orientation index |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

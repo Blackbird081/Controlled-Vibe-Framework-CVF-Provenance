@@ -71,10 +71,10 @@ Forbidden normative patterns:
 | Task class | Active role | Read first | Required blocks or outputs | Common failure to avoid | Fast command or gate | Boundary |
 |---|---|---|---|---|---|---|
 | Startup / resume | Any | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; active handoff named by registry | Startup acknowledgment (mode, handoff, next-move, parked checkpoint) | Skipping acknowledgment; appending status to archived handoffs | `git rev-parse --short HEAD; git status --short` | Session memory and active handoff are the only sources of truth; provider memory files are not CVF authority |
-| Work-order authoring / dispatch | Dispatcher | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `AGENTS.md` Mandatory Work Order Source Verification section | Source Verification Block (ACCEPT/REJECT/BLOCKED_SOURCE_NOT_FOUND per item); Agent Handoff Contract Control Block; Reviewer Closure Conversion; Commit Prompt Readiness | ACCEPT row cites no source file; work order dispatched without pre-dispatch gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch` | Source facts require file and line/section before dispatch; doc-only fields must be separated from source facts |
+| Work-order authoring / dispatch | Dispatcher | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md`; `AGENTS.md` Mandatory Work Order Source Verification section | Source Verification Block (ACCEPT/REJECT/BLOCKED_SOURCE_NOT_FOUND per item); Agent Handoff Contract Control Block; Dual Agent Surface Matrix with `INTERNAL_AGENT`, `EXTERNAL_AGENT_CLI_MCP`, and adapter boundary; Reviewer Closure Conversion; Commit Prompt Readiness | ACCEPT row cites no source file; work order dispatched without pre-dispatch gate; internal-only design omits external-agent disposition | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch` | Source facts require file and line/section before dispatch; doc-only fields must be separated from source facts; external CLI/MCP support requires separate source-verified authorization |
 | Worker execution (`WORKER_MUST_NOT_COMMIT`) | Worker | This index; governing GC-018 baseline; the work order; source files named in Source Verification Block | Worker-return packet: Purpose, Scope / Methodology, Findings / Position, Risk / Corrective Action, Claim Boundary, Agent Operation Trace Block, Delta Execution Claim Boundary Control Block, Public Export Disposition, executionBaseHead, git status; N/A-with-reason for conditional sections (External Knowledge Intake Routing, Rescan Intelligence Hardening, Corpus Completeness And Report Integrity, Finding-To-Governance Learning Disposition, Epistemic Process Block, Machine Closure Package) | Committing before reviewer accepts; missing required packet shape sections; recording git status as clean when the worker-return file is untracked; ACCEPT rows using bare filename instead of full repo path | `python governance/compat/run_agent_automation_assist.py --base <base> --head HEAD --json --enforce`; `python governance/compat/run_worker_return_fast_gate.py` | Worker must not commit; all artifacts remain uncommitted until reviewer accepts |
-| Reviewer-return review | Reviewer | Work order; worker-return packet; GC-018 baseline | Completion review (Target or Reviewed source, Scope / Methodology, Findings / Position, Risk / Corrective Action, decision/disposition); reviewer-fast governance gate pass | Accepting a packet without running reviewer-fast gate; committing without verifying all required deliverables | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | Reviewer may repair only allowed-scope defects; scope expansion returns to operator |
-| Closure | Closer | Completion review; active session state; `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md` | Committed closure artifacts; session-sync surfaces updated if mode or next allowed move changes | Mixing closure commits with worker changes; updating generated state source files without a separate state-generator run | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base <closureBase> --head HEAD --enforce` | Closer commits only reviewer-owned and closure-owned paths |
+| Reviewer-return review | Reviewer | Work order; worker-return packet; GC-018 baseline; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | Completion review (Target or Reviewed source, Scope / Methodology, Findings / Position, Risk / Corrective Action, decision/disposition); Dual Agent Surface Matrix if the reviewed artifact is agent-facing; reviewer-fast governance gate pass | Accepting a packet without running reviewer-fast gate; committing without verifying all required deliverables; treating internal helper evidence as external CLI/MCP support | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | Reviewer may repair only allowed-scope defects; scope expansion returns to operator; external-agent disposition must stay explicit |
+| Closure | Closer | Completion review; active session state; `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | Committed closure artifacts; Dual Agent Surface Matrix preserved for applicable roadmap/work-order/closure surfaces; session-sync surfaces updated if mode or next allowed move changes | Mixing closure commits with worker changes; updating generated state source files without a separate state-generator run; closing with no external-agent disposition or no adapter boundary | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base <closureBase> --head HEAD --enforce` | Closer commits only reviewer-owned and closure-owned paths; closure does not convert `CONTRACT_ONLY` or deferred adapter rows into runtime support |
 | Session-sync | Session-sync steward | Active handoff; `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Updated handoff, session state, and next-move surfaces; no change to archived handoffs | Appending new status to superseded handoffs; updating generated state without running the generator | `python governance/compat/generate_active_session_state.py` | Only the active handoff named by the registry receives new status |
 | External knowledge absorption | Worker / dispatch author | `docs/reference/external_agent_review/README.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | External Knowledge Intake Routing table (chain map, input type, route, local guard, disposition, claim boundary); absorb / adapt / defer / reject classification per item | Treating external input as CVF authority without source verification; absorbing without classification | Classify each external item before authoring a CVF-owned reference | CVF remains source of truth; external material is reference input only |
 | Public-sync | Session-sync steward / operator | `AGENTS.md` critical repository boundary section; `git remote -v` output | Confirmed `origin` points to public-sync clone, not provenance repository | Pushing provenance tree to the public repository; running public push from the provenance clone | `git remote -v` (confirm remote before push) | Never push provenance archive to the public repository; public-sync requires separate authorization |
@@ -95,6 +95,7 @@ Forbidden normative patterns:
 | AGENTS.md or governance/compat files changed without authorization | `check_core_guard_self_protection.py` | Include Core Guard Self-Protection Authorization block in a docs/reviews/, docs/work_orders/, or AGENT_HANDOFF*.md file in the same changed set |
 | Provider-specific memory file cited as CVF source authority | `check_work_order_dispatch_quality.py`; manual review | Use only CVF-governed surfaces; re-verify against runtime source before promoting any claim |
 | INDEX artifact missing required metadata block | `governance/compat/check_index_classification.py` | Any artifact that declares `INDEX type:` must also include all seven required fields: `INDEX type:`, `Source authority:`, `Status:`, `Date:`, `Human-reviewable:`, `Claim boundary:`, `Public Export Disposition:` |
+| Roadmap, work order, or closure omits external-agent disposition | machine-check candidate in `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | Include a six-column Dual Agent Surface Matrix with `INTERNAL_AGENT`, `EXTERNAL_AGENT_CLI_MCP`, interface, authority/risk boundary, evidence, adapter boundary, and allowed disposition |
 
 ## Claim Boundary
 
@@ -123,22 +124,22 @@ still control.
 
 | Field | Evidence |
 |---|---|
-| Actor | worker role |
+| Actor | Codex standard hardening role |
 | Provider or surface | local workspace |
-| Session or invocation | AAF-T3 worker execution, 2026-06-20 |
+| Session or invocation | dual-agent surface matrix guard-orientation hardening, 2026-06-23 |
 | Working directory | repository root |
-| Command or tool surface | write_to_file governance tool |
-| Target paths | `docs/reference/guard_orientation/README.md` |
-| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T3_GUARD_ORIENTATION_INDEX_FOR_WORKER_2026-06-20.md`; `docs/baselines/CVF_GC018_AAF_T3_GUARD_ORIENTATION_INDEX_2026-06-20.md` |
-| Before status evidence | HEAD `bfacfd2a`; no prior version of this file |
-| After status evidence | new file created; uncommitted worker artifact |
-| Diff evidence | new file; all sections match Required Orientation Index Contract from the work order |
-| Approval boundary | worker role: create this file only; no commit |
-| Claim boundary | orientation layer only; no enforcement, runtime, or public-sync claim |
-| Agent type | worker role |
-| Invocation ID | `aaf-t3-worker-2026-06-20` |
-| Expected manifest | `docs/reference/guard_orientation/README.md` |
-| Actual changed set | `docs/reference/guard_orientation/README.md` |
+| Command or tool surface | apply_patch, reviewer-fast gate, git commit |
+| Target paths | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` |
+| Allowed scope source | operator instruction to record mandatory roadmap/work-order/closure dual-agent matrix rule in canonical standard, Guard Orientation, and machine-check candidate |
+| Before status evidence | HEAD `4ee4194f`; worktree clean before patch |
+| After status evidence | Guard Orientation routes dispatcher, reviewer, and closer roles to the dual-agent surface standard |
+| Diff evidence | changed standard and this orientation index; reviewer-fast and commit gates |
+| Approval boundary | documentation/reference hardening only |
+| Claim boundary | orientation layer only; no checker implementation, runtime, provider/live, external adapter, or public-sync claim |
+| Agent type | standard hardening role |
+| Invocation ID | `dual-agent-surface-matrix-guard-orientation-2026-06-23` |
+| Expected manifest | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` |
+| Actual changed set | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` |
 | Manifest delta | MATCH |
 
 ## Related Surfaces
@@ -148,6 +149,7 @@ still control.
 - `AGENTS.md` - root agent instructions and mandatory acknowledgment
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` - work order template
 - `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md` - commit choreography
+- `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` - internal/external agent surface accounting and matrix checker candidate
 - `governance/compat/run_agent_automation_assist.py` - AAF helper smoke command
 - `governance/compat/run_worker_return_fast_gate.py` - worker-return fast gate
 - `governance/compat/run_agent_autorun_workflow_gate.py` - pre-dispatch gate
