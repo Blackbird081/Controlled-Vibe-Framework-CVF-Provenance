@@ -62,8 +62,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "adif_t1_checkpoint_accepted_t2_released_to_claude",
-  "previousMode": "adif_t1_committed_pending_codex_checkpoint_review",
+  "currentMode": "adif_t2_committed_pending_codex_checkpoint_review",
+  "previousMode": "adif_t1_checkpoint_accepted_t2_released_to_claude",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

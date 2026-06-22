@@ -1,0 +1,5 @@
+{
+  "stateOrder": 651,
+  "stateKey": "adifT2CheckpointPendingReview20260623",
+  "value": "Claude committed ADIF-T2 at b19a1918 from release sync HEAD 479e98e3 and correctly stopped under the prior instruction. Codex now owns T2 checkpoint review. After T2 acceptance, the operator requires immediate hardening of the continuation pattern so T3 through T5 run continuously with bounded machine-gated session-sync bridges and no intermediate Codex review pause."
+}
