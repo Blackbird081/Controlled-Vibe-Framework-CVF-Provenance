@@ -30,6 +30,21 @@ def _package(registry_status: str = "PASS") -> str:
 
 
 class MachineClosurePackageTests(unittest.TestCase):
+    def test_closed_gc018_baseline_requires_package(self) -> None:
+        text = """
+# GC-018 Example
+
+Status: CLOSED_PASS_BOUNDED
+"""
+        self.assertTrue(MODULE._is_active_governed_doc("docs/baselines/CVF_GC018_EXAMPLE.md"))
+        issues = MODULE.validate_machine_closure_package(
+            "docs/baselines/CVF_GC018_EXAMPLE.md", text
+        )
+        self.assertIn(
+            "closed-equivalent artifact is missing `Machine Closure Package` section",
+            issues,
+        )
+
     def test_closed_artifact_requires_package(self) -> None:
         text = """
 # Example

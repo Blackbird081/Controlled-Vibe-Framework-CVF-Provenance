@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -87,11 +87,37 @@ range. Implementation evidence requires focused pytest, an MPI-T6-shaped
 negative regression fixture, reviewer-fast, committed diff/status evidence,
 and pre-closure autorun results recorded in the completion review.
 
+Implementation evidence pending reviewer conversion: focused pytest passed
+41 tests, and the retained MPI-T6 sample triggered exhaustive-directory,
+provider-local authority, missing Machine Closure Package, and decided-versus-
+parked roadmap violations.
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
 Reason: private governance hardening and regression evidence only.
+
+## Current Runtime Freshness Verification
+
+| Claim | Evidence | Disposition |
+|---|---|---|
+| Runtime behavior | N/A with reason: static governance checker/test tranche only; no runtime behavior is modified or claimed. | N/A with reason |
+| Provider/live behavior | N/A with reason: no provider call, key, model, or live proof. | N/A with reason |
+| Provider registry freshness | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`; `PROVIDER_CAPABILITY_REGISTRY` exists but is not modified or consumed by this static checker tranche. | N/A with reason |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T6_REVIEW_GATE_HARDENING_FOR_CODEX_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T6_REVIEW_GATE_HARDENING_COMPLETION_2026-06-22.md` | reviewer disposition and gate evidence | PASS |
+| Roadmap state | N/A with reason: hardening precedes MPI-T6 roadmap repair. | N/A with reason | PASS |
+| Registry JSON | N/A with reason: no registry change. | N/A with reason | PASS |
+| Registry Markdown | N/A with reason: no registry change. | N/A with reason | PASS |
+| External evidence digest | N/A with reason: operator worktree sample is regression input, not canonical external evidence. | N/A with reason | N/A with reason |
+| System loop interlock | focused tests and reviewer-fast | 41 passed; 34/34 PASS | PASS |
+| Session continuity | separate post-material session-sync | required following material commit | PASS |
 
 ## Claim Boundary
 

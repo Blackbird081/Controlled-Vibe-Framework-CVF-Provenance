@@ -24,6 +24,7 @@ STANDARD_PATH = "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_202
 AUTH_MARKER = "Core Guard Self-Protection Authorization"
 
 ACTIVE_DOC_PREFIXES = (
+    "docs/baselines/",
     "docs/work_orders/",
     "docs/reviews/",
     "docs/roadmaps/",
@@ -48,6 +49,7 @@ PROTECTED_EXACT = {
 }
 
 STALE_CLOSED_PATTERNS = (
+    r"\bCOMPLETE_PENDING_GATES\b",
     r"\bREADY_FOR_OPERATOR_REVIEW\b",
     r"\bREADY_FOR_DISPATCH\b",
     r"\bDISPATCH_READY\b",
@@ -316,12 +318,79 @@ def _validate_diff_claim_paths(text: str, changed_files: set[str]) -> list[str]:
     ]
 
 
+def _validate_exhaustive_directory_claims(text: str) -> list[str]:
+    """Validate narrow, explicit `directory contains only file...` claims.
+
+    This is intentionally not general prose fact checking. It fires only when
+    one line contains the phrase `contains only`, a repo-local backtick-quoted
+    directory, and one or more backtick-quoted direct-child filenames.
+    """
+    issues: list[str] = []
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if "contains only" not in line.lower():
+            continue
+        quoted = re.findall(r"`([^`]+)`", line)
+        directory_token = next(
+            (
+                token.replace("\\", "/")
+                for token in quoted
+                if token.endswith(("/", "\\"))
+            ),
+            "",
+        )
+        claimed_files = {
+            Path(token.replace("\\", "/")).name
+            for token in quoted
+            if "/" not in token.replace("\\", "/") and "." in token
+        }
+        if not directory_token or not claimed_files:
+            continue
+        directory = REPO_ROOT / directory_token.rstrip("/")
+        if not directory.is_dir():
+            issues.append(
+                f"line {line_number}: exhaustive directory claim cites missing repo directory `{directory_token}`"
+            )
+            continue
+        actual_files = {child.name for child in directory.iterdir() if child.is_file()}
+        if actual_files != claimed_files:
+            omitted = sorted(actual_files - claimed_files)
+            extra = sorted(claimed_files - actual_files)
+            details: list[str] = []
+            if omitted:
+                preview = ", ".join(omitted[:5])
+                suffix = f" (+{len(omitted) - 5} more)" if len(omitted) > 5 else ""
+                details.append(f"omits {preview}{suffix}")
+            if extra:
+                details.append("names absent child files " + ", ".join(extra))
+            issues.append(
+                f"line {line_number}: unsupported exhaustive directory claim for `{directory_token}`; "
+                + "; ".join(details)
+            )
+    return issues
+
+
+def _validate_decided_roadmap_residue(path: str, text: str) -> list[str]:
+    if not path.replace("\\", "/").startswith("docs/roadmaps/"):
+        return []
+    status = _extract_status(text).upper()
+    decided = sorted(set(re.findall(r"MPI_T(\d+)_DECIDED", status)))
+    issues: list[str] = []
+    for tranche in decided:
+        if re.search(rf"\bMPI-T{tranche}\s+remains\s+parked\b", text, re.IGNORECASE):
+            issues.append(
+                f"roadmap status marks MPI-T{tranche} decided but body still says MPI-T{tranche} remains parked"
+            )
+    return issues
+
+
 def validate_doc(path: str, text: str, changed_files: set[str]) -> list[str]:
     issues: list[str] = []
     if not _is_active_doc(path):
         return issues
     issues.extend(_validate_stale_closed_language(path, text))
     issues.extend(_validate_corpus_enumeration(text))
+    issues.extend(_validate_exhaustive_directory_claims(text))
+    issues.extend(_validate_decided_roadmap_residue(path, text))
     if _is_closed_equivalent(text):
         issues.extend(_validate_diff_claim_paths(text, changed_files))
     return issues

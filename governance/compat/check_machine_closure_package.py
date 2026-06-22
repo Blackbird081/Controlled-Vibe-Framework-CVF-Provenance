@@ -25,6 +25,7 @@ STANDARD_PATH = "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_202
 THIS_SCRIPT_PATH = "governance/compat/check_machine_closure_package.py"
 
 ACTIVE_PREFIXES = (
+    "docs/baselines/",
     "docs/work_orders/",
     "docs/reviews/",
     "docs/roadmaps/",

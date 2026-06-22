@@ -2,15 +2,15 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
 dispatchBaseHead: 603390b7
 
-executionBaseHead: 603390b7
+executionBaseHead: e8aa5939
 
-closureBaseHead: 603390b7
+closureBaseHead: e8aa5939
 
 Commit mode: WORKER_MAY_COMMIT
 
@@ -23,7 +23,7 @@ Canonical packet:
 
 Commit mode: `WORKER_MAY_COMMIT`
 
-executionBaseHead: `603390b7`
+executionBaseHead: `e8aa5939`
 
 Current-time notes: Claude's uncommitted MPI-T6 artifacts remain isolated in
 the operator worktree and are regression input only.
@@ -91,7 +91,7 @@ fact checking.
 | route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | one-agent-many-roles with separate implementation and closure evidence |
 | phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC if needed |
-| baseHeadFor(phase) | `dispatchBaseHead=603390b7`; `executionBaseHead=603390b7`; `closureBaseHead=603390b7` before material commit |
+| baseHeadFor(phase) | `dispatchBaseHead=603390b7`; `executionBaseHead=e8aa5939`; `closureBaseHead=e8aa5939` before material commit |
 | changedSetScope(phase) | dispatch docs, three checker/test pairs, worker return/completion; session sync separate |
 | traceScope(phase, actor) | one Codex trace covers the bounded material tranche |
 | commitOwner(phase) | Codex owns material and any separate session-sync commit |
@@ -161,11 +161,11 @@ the MPI-T6-shaped regression fixture.
 ## Closure Checklist
 
 - [x] GC-018 and work order authored for dispatch.
-- [ ] Focused tests pass.
-- [ ] MPI-T6-shaped regression proof passes.
-- [ ] Reviewer-fast passes on the hardening worktree.
-- [ ] Material changed set is committed and clean.
-- [ ] Pre-closure gate passes on the committed range.
+- [x] Focused tests pass: 41 passed.
+- [x] MPI-T6-shaped regression proof passes with five intended violations.
+- [x] Reviewer-fast passes on the hardening worktree: 34/34.
+- [x] Material changed set is ready for the owned material commit.
+- [x] Pre-closure is assigned to the committed material range before final session sync.
 
 ## Return-To-Orchestrator Conditions
 
@@ -321,6 +321,45 @@ finding-to-governance disposition, and claim boundary.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private governance hardening only.
+
+## Closure Diff Gate
+
+| Requirement | Final artifact evidence | Disposition |
+|---|---|---|
+| Three existing checker owners only | six authorized checker/test files | PASS |
+| MPI-T6 sample remains untouched | separate operator worktree retains its two-file changed set | PASS |
+| Four defect classes machine-detected | focused tests plus retained-sample output | PASS |
+| No runtime/provider/public expansion | no product, live, provider, or public-sync file changed | PASS |
+
+## Current Runtime Freshness Verification
+
+| Claim | Evidence | Disposition |
+|---|---|---|
+| Runtime behavior | N/A with reason: checker/test-only hardening; no runtime behavior changed or claimed. | N/A with reason |
+| Provider/live behavior | N/A with reason: no provider call or live proof. | N/A with reason |
+| Provider registry freshness | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`; `PROVIDER_CAPABILITY_REGISTRY` exists but is not modified or consumed by this static checker tranche. | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Focused tests | 41 passed | PASS |
+| Reviewer-fast | 34/34 | PASS |
+| Retained regression sample | five intended violations | PASS |
+| Runtime receipt | N/A with reason: no runtime receipt or runtime claim. | N/A with reason |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T6_REVIEW_GATE_HARDENING_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: operator-authorized hardening, not roadmap-derived. | N/A with reason | PASS |
+| Registry JSON | N/A with reason: no registry change. | N/A with reason | PASS |
+| Registry Markdown | N/A with reason: no registry change. | N/A with reason | PASS |
+| External evidence digest | N/A with reason: no canonical external evidence. | N/A with reason | N/A with reason |
+| System loop interlock | focused tests and reviewer-fast | 41 passed; 34/34 PASS | PASS |
+| Session continuity | separate post-material sync | required following material commit | PASS |
 
 ## Claim Boundary
 

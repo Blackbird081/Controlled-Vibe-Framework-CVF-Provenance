@@ -108,6 +108,32 @@ def test_cvf_session_memory_front_door_not_confused_with_provider_memory() -> No
     assert issues == []
 
 
+def test_provider_local_interaction_cannot_be_accepted_as_authority() -> None:
+    text = (
+        "## Authority Chain\n\n"
+        "| Authority | Evidence | Disposition |\n"
+        "|---|---|---|\n"
+        "| Role selection | AskUserQuestion, 2026-06-22 | ACCEPT |\n"
+    )
+    issues = MODULE.find_provider_specific_authority_violations(
+        "docs/baselines/CVF_GC018_EXAMPLE.md", text
+    )
+    assert any("provider-local interaction" in issue for issue in issues)
+
+
+def test_provider_local_interaction_can_be_marked_not_cvf_source() -> None:
+    text = (
+        "## Authority Chain\n\n"
+        "| Authority | Evidence | Disposition |\n"
+        "|---|---|---|\n"
+        "| Role selection | AskUserQuestion, 2026-06-22 | NOT_CVF_SOURCE |\n"
+    )
+    issues = MODULE.find_provider_specific_authority_violations(
+        "docs/baselines/CVF_GC018_EXAMPLE.md", text
+    )
+    assert issues == []
+
+
 def test_source_verification_rejects_value_assignment_in_symbol_cell() -> None:
     text = (
         "## Source Verification Block\n\n"

@@ -74,6 +74,9 @@ PROVIDER_SPECIFIC_AUTHORITY_ALLOW_MARKERS = (
     "not CVF source",
     "not source of truth",
 )
+PROVIDER_LOCAL_INTERACTION_TOKENS = (
+    "AskUserQuestion",
+)
 WORKER_RETURN_RE = re.compile(r"(?:^|/)CVF_.+_WORKER_RETURN_\d{4}-\d{2}-\d{2}\.md$")
 DISPATCH_WORK_ORDER_RE = re.compile(r"(?im)^dispatchWorkOrder:\s*`([^`]+)`\s*$")
 PASS_EVIDENCE_RE = re.compile(
@@ -343,6 +346,27 @@ def find_provider_specific_authority_violations(path: str, text: str) -> list[st
             )
             continue
         line_lower = raw.lower()
+        provider_interaction = next(
+            (
+                token
+                for token in PROVIDER_LOCAL_INTERACTION_TOKENS
+                if token.lower() in line_lower
+            ),
+            None,
+        )
+        if (
+            provider_interaction
+            and "|" in raw
+            and re.search(r"\|\s*ACCEPT\s*\|", raw, re.IGNORECASE)
+            and not any(
+                marker.lower() in line_lower
+                for marker in PROVIDER_SPECIFIC_AUTHORITY_ALLOW_MARKERS
+            )
+        ):
+            issues.append(
+                f"line {line_number}: provider-local interaction `{provider_interaction}` "
+                "cannot be ACCEPT authority; cite a CVF-governed record or mark NOT_CVF_SOURCE"
+            )
         has_provider_file = False
         for provider_file in PROVIDER_SPECIFIC_AUTHORITY_FILES:
             pattern = re.escape(provider_file.lower())
