@@ -193,7 +193,7 @@ Startup acknowledged: current mode=`mpi_t3_external_agent_memory_summary_contrac
 
 `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `7e0cf980`
+Current HEAD recorded for this handoff: `c23587e0`
 
 Material state:
 
@@ -279,6 +279,37 @@ sync.
   EDIT/COMMIT execution, queue/daemon/watcher, readiness, full-hook
   equivalence, cost optimization, and universal governed-coding-control claims
   remain out of scope.
+
+## MPI-T3 Reviewer Packet Hardening Continuity - 2026-06-22
+
+Reviewer packet evidence and Source Verification fidelity hardening is
+`CLOSED_PASS_BOUNDED` at material commit `c23587e0` from base `ef6df616`.
+
+The existing reviewer-fast packet checker now rejects missing executed
+worker-return fast-gate evidence, missing or pointer-only Required First Reads,
+value/type syntax in Source Verification symbol cells, and incorrect doc-only
+fact classification. Focused tests passed 12/12; reviewer-fast passed 33/33;
+pre-implementation passed 46/46; material pre-commit passed 55/55. Material
+pre-closure content gates passed with only this expected handoff HEAD sync
+remaining before the dedicated continuity commit.
+
+Current mode and next move remain MPI-T3 reviewer closure. MPI-T4/MPI-T5/MPI-T6
+and all runtime/provider/live/public-sync expansion remain parked.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: record governance-hardening material commit
+`c23587e0` in the active handoff without changing mode or next-move authority.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V21_2026-06-22.md`
+
+Operator authorization: the operator directed CVF foundation hardening before
+MPI-T3 completion review, commit, or movement to a later tranche.
+
+Rollback boundary: revert only this handoff-only continuity commit if rejected.
+Do not revert material hardening commit `c23587e0` or MPI-T3 dispatch history.
 
 ## RSE-T3 Closure Continuity - 2026-06-22
 
