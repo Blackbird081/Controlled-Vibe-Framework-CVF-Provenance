@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`
+Current mode marker: `mpi_t3_external_agent_memory_summary_contract_closed_pending_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -23,7 +23,7 @@ Previous long front-door snapshot:
 
 Active handoff predecessor archived in this batch:
 
-`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V20_2026-06-19.md`
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V21_2026-06-22.md`
 
 Compaction archive (prior closed-tranche prose from this file):
 
@@ -37,18 +37,18 @@ Compaction archive (prior closed-tranche prose from this file):
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff from the state registry:
-   `AGENT_HANDOFF_V21_2026-06-22.md`
+   `AGENT_HANDOFF_V22_2026-06-22.md`
 5. Read mandatory startup guards listed in the state registry.
 
 ## Current State
 
-Current mode: `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`.
+Current mode: `mpi_t3_external_agent_memory_summary_contract_closed_pending_operator_selection`.
 
 Previous mode: `mpi_phase2_external_memory_read_roadmap_ready_for_work_order_authoring`.
 
 Active handoff:
 
-`AGENT_HANDOFF_V21_2026-06-22.md`
+`AGENT_HANDOFF_V22_2026-06-22.md`
 
 Active state registry:
 
@@ -629,27 +629,22 @@ adapter behavior, provider/live proof, public-sync, or runtime readiness claim.
 Verification passed: AAF helper with `defects=[]`, pre-dispatch autorun 44/44,
 dispatch commit steward, pre-commit hook 55/55, and material commit hook 55/55.
 
-MPI-T3 External Agent Memory Summary Contract is `DISPATCHED_TO_WORKER` at
-material dispatch commit `7e0cf980` from dispatchBaseHead `a224da57`.
-Dispatch artifacts:
-`docs/baselines/CVF_GC018_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_2026-06-22.md`
-and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_FOR_WORKER_2026-06-22.md`.
-Worker mode is `WORKER_MUST_NOT_COMMIT`. Allowed worker scope is exactly:
-create `docs/reference/memory_plane/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT.md`,
-create `docs/reference/memory_plane/README.md`, and create
-`docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_WORKER_RETURN_2026-06-22.md`.
-Dispatch evidence: dispatch-quality PASS, pre-dispatch autorun 44/44, dispatch
-commit steward PASS, pre-commit hook 55/55, and material commit hook 55/55.
+MPI-T3 External Agent Memory Summary Contract is `CLOSED_PASS_BOUNDED` at
+material commit `c4c53588`. Reviewer packet hardening closed at commits
+`c23587e0` and `02a7162e`. The accepted contract is documentation-only,
+summary-only, and adapter-contract-only; no runtime/helper/checker/route,
+registry, durable, provider/live, or public-sync behavior was added. Evidence:
+focused hardening tests 13/13, worker-return fast gate PASS, reviewer-fast 33/33,
+reviewer-return steward PASS, material pre-commit 55/55, and committed-range
+pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`.
+Mode: `mpi_t3_external_agent_memory_summary_contract_closed_pending_operator_selection`.
 
-Next allowed move: Claude/worker executes only the MPI-T3 allowed
-documentation scope from the work order, then returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. Codex owns
-review, allowed reviewer repairs, final gates, commit, and session sync.
+Next allowed move: operator checkpoint. Explicitly select MPI-T4, hold MPI
+Phase 2, or select another separately authorized lane. No new tranche is
+automatically selected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
@@ -687,7 +682,7 @@ gates, and governed file-size checks enforce this front-door contract.
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `AGENT_HANDOFF_V21_2026-06-22.md`
+- `AGENT_HANDOFF_V22_2026-06-22.md`
 - `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_DELTA_T7_RECEIPT_TO_EXECUTION_EVIDENCE_AUDITOR_COMPLETION_2026-06-19.md`
 - `docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md`
