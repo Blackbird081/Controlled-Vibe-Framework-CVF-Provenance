@@ -80,6 +80,10 @@ Integrated MPI-T6 hardening session HEAD: `69155f1f`
 
 ADIF foundation roadmap material HEAD: `1edf8efd`
 
+Integrated ADIF roadmap material HEAD: `d86f49e9`
+
+Integrated ADIF roadmap session HEAD: `206632bb`
+
 Current public-sync commit recorded for this handoff: `602550404`
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`

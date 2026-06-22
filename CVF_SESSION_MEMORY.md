@@ -66,7 +66,7 @@ Pain-point closure direction:
 
 Agent Defect Intelligence Foundation roadmap is
 `ROADMAP_READY_PENDING_OPERATOR_TRANCHE_SELECTION` at material commit
-`1edf8efd`. It preserves F2G/FPRC/Worker Experience/Guard Orientation/INDEX
+`d86f49e9`. It preserves F2G/FPRC/Worker Experience/Guard Orientation/INDEX
 ownership and proposes bounded task-role-phase defect packets rather than a
 full-dictionary read. Recommended first child: ADIF-T0 Owner Reconciliation And
 Taxonomy Contract, parked pending explicit operator selection and fresh
