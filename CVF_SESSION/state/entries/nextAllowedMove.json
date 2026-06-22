@@ -1,5 +1,5 @@
 {
   "stateOrder": 648,
   "stateKey": "nextAllowedMove",
-  "value": "ADIF T0-T5 returned COMPLETE_PENDING_REVIEW at final material commit 5f7eb42a. Codex must perform the single intended full-chain final review, recompute T3/T4/T5 tests and committed manifests, inspect serialized convergence and handoff-bridge evidence, repair allowed-scope defects, and either close bounded or return blocked findings. No further ADIF implementation, ASSF execution, external CLI/MCP adapter, runtime/provider/live/public work, secrets/quota, readiness, or universal-control claim is released before final disposition. LHW24 remains the latest closed numbered LHW wave."
+  "value": "ADIF T0-T5 is CLOSED_PASS_BOUNDED at final-review material commit fd5414b7. The operator may select the parked Agent System Skills Foundation roadmap T0 or another separately governed lane. No external CLI/MCP adapter, runtime/provider/live/public work, secrets/quota, readiness, automatic promotion, or universal-control claim is released by ADIF closure. LHW24 remains the latest closed numbered LHW wave."
 }

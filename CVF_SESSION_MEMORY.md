@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `adif_t0_t5_complete_pending_codex_final_review`
+Current mode marker: `adif_t0_t5_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `adif_t0_t5_complete_pending_codex_final_review`.
+Current mode: `adif_t0_t5_closed_pass_bounded`.
 
-Previous mode: `adif_t2_accepted_t3_t5_continuous_execution_released`.
+Previous mode: `adif_t0_t5_complete_pending_codex_final_review`.
 
 Active handoff:
 
@@ -64,9 +64,9 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-ADIF T3-T5 continuous execution returned `COMPLETE_PENDING_REVIEW` at final
-material commit `5f7eb42a`. Codex now owns the one intended final review across
-T0-T5; no further ADIF implementation is released before disposition.
+ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
+`fd5414b7`. The integrated suite passes 52/52 and the entry-integrity guard
+reports zero violations across eight entries. Public export remains deferred.
 
 ADIF-T2 is accepted after reviewer hardening at `07000fd6`. The reusable
 handoff-sync bridge standard and hardened T3-T5 authorization are committed at
@@ -743,12 +743,11 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `adif_t0_t5_complete_pending_codex_final_review`.
+Mode: `adif_t0_t5_closed_pass_bounded`.
 
-Next allowed move: Claude authors and gates the fresh ADIF-T1 child packet from
-the current post-sync HEAD, then executes within the continuous authorization.
-Claude stops again after its checkpoint commit for Codex continuity/review.
-Runtime/provider/live/public expansion remains parked.
+Next allowed move: the operator may select ASSF-T0 or another separately
+governed lane. External CLI/MCP, runtime/provider/live, public,
+automatic-promotion, and universal-control expansion remains parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

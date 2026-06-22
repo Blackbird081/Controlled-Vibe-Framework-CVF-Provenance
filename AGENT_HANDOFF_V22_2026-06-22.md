@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`adif_t0_t5_complete_pending_codex_final_review`
+`adif_t0_t5_closed_pass_bounded`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -83,9 +83,9 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `6abda284`
+Current material HEAD recorded for this handoff: `fd5414b7`
 
-Current session-sync HEAD recorded for this handoff: `8534621c`
+Prior session-sync HEAD recorded for this handoff: `c08f810e`
 
 MPI-T6 review-gate hardening dispatch HEAD: `760d74b0`
 
@@ -215,9 +215,10 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ADIF T0-T5 returned `COMPLETE_PENDING_REVIEW` at final material commit
-`5f7eb42a`. Codex now performs the single intended full-chain final review.
-No further ADIF implementation is released before that disposition.
+ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
+`fd5414b7`. The operator may select ASSF-T0 or another separately governed
+lane. No external CLI/MCP, runtime/provider/live/public, automatic-promotion,
+or universal-control expansion is released by this closure.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -228,14 +229,14 @@ No further ADIF implementation is released before that disposition.
 | ADIF-T3/T4 joint dispatch | `af56db7c` | `HANDOFF_SYNC_BRIDGE_PASS` | fork isolated worktrees from this bridge HEAD; execute T3 and T4 in parallel; integrate both branches without squashing | root handoff only between transitions; no per-tranche review pause; final review after T5 |
 | ADIF-T3 branch integration | `41b026a6` | `HANDOFF_SYNC_BRIDGE_PASS` | execute the T4 branch (serialized in this working directory; real `EnterWorktree` isolation failed on a pre-existing long filename and was replaced by disjoint write-ownership serialization), then converge | root handoff only between transitions; no per-tranche review pause; final review after T5 |
 | ADIF-T3/T4 convergence | `fb4bac23` | `HANDOFF_SYNC_BRIDGE_PASS` | run combined tests/gates over the converged T3+T4 range, then author and execute ADIF-T5 | root handoff only between transitions; no per-tranche review pause; final review after T5 |
-| ADIF-T5 final material | `5f7eb42a` | `FINAL_REVIEW_PENDING` | Codex recomputes full-chain evidence and closes or returns findings | no worker acceptance/closure claim; final reviewer owns disposition |
+| ADIF-T5 final material | `5f7eb42a` | `FINAL_REVIEW_PASS_BOUNDED` | ADIF closed at reviewer material commit `fd5414b7`; operator may select ASSF-T0 or another governed lane | no runtime/provider/live/public or external-adapter expansion |
 
 The Agent System Skills roadmap and mandatory internal/external CLI/MCP
 accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`adif_t0_t5_complete_pending_codex_final_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Codex performs full-chain ADIF final review; parked checkpoint=closure/session sync, runtime/provider/live/public expansion, and ASSF roadmap until ADIF disposition.
+Startup acknowledged: current mode=`adif_t0_t5_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T0 or another governed lane; parked checkpoint=external CLI/MCP, runtime/provider/live/public, automatic-promotion, and universal-control expansion.
 
 ## Parked Checkpoints
 
@@ -243,7 +244,7 @@ Startup acknowledged: current mode=`adif_t0_t5_complete_pending_codex_final_revi
 - MPI-T5 is closed bounded and public-synced at public commit `602550404`.
 - MPI-T6 decision packet is closed bounded with `DEFER` at `14f8e5f9`; runtime
   authorization remains parked.
-- ADIF T0-T5 is complete pending final review at `5f7eb42a`.
+- ADIF T0-T5 is closed bounded at final-review material commit `fd5414b7`.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -255,8 +256,9 @@ Startup acknowledged: current mode=`adif_t0_t5_complete_pending_codex_final_revi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record final ADIF material `5f7eb42a`,
-pause for full-chain Codex review, and regenerate active session state.
+Authorized guard-maintenance scope: record final ADIF closure material
+`fd5414b7`, expose the post-closure next move, and regenerate active session
+state.
 
 Protected paths:
 
@@ -264,14 +266,14 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/adifT0T5CompletePendingFinalReview20260623.json`
+- `CVF_SESSION/state/entries/adifT0T5ClosedPassBounded20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator reported full ADIF completion and returned
-the continuous batch to Codex for final review.
+Operator authorization: the operator returned the full continuous batch to
+Codex for final review and closure.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert final material `5f7eb42a` or prior history.
+revert reviewer material `fd5414b7` or prior history.
 
 ## Agent Operation Trace Block
 
@@ -279,25 +281,25 @@ revert final material `5f7eb42a` or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ADIF full-chain pending-final-review sync, 2026-06-23 |
+| Session or invocation | ADIF full-chain closed-pass-bounded sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
-| Target paths | V22; session front door; final-review state entry; next move; generated active state |
-| Allowed scope source | final material `5f7eb42a` and operator final-review return |
-| Before status evidence | clean worktree at final worker material commit; bridge ledger preserves intermediate heads |
-| After status evidence | active mode pauses for one Codex full-chain final review |
+| Target paths | V22; session front door; closure state entry; next move; generated active state |
+| Allowed scope source | reviewer material `fd5414b7` and final completion review |
+| Before status evidence | material closure commit passes pre-commit 55/55; bridge ledger preserves intermediate heads |
+| After status evidence | active mode records ADIF `CLOSED_PASS_BOUNDED` and operator lane selection |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `adif-t0-t5-complete-pending-final-review-sync-2026-06-23` |
-| Expected manifest | V22; front door; final-review state entry; next move; generated active state |
-| Actual changed set | V22; front door; final-review state entry; next move; generated active state |
+| Invocation ID | `adif-t0-t5-closed-pass-bounded-sync-2026-06-23` |
+| Expected manifest | V22; front door; closure state entry; next move; generated active state |
+| Actual changed set | V22; front door; closure state entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records the one intended final ADIF
-review checkpoint. It does not close ADIF, dispatch ASSF, or expand external
-CLI/MCP, runtime/provider/live/public behavior.
+This handoff is session continuity only. It records ADIF bounded closure at
+`fd5414b7`. It does not dispatch ASSF or expand external CLI/MCP,
+runtime/provider/live/public behavior.
