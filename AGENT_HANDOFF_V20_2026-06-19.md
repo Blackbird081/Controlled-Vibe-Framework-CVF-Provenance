@@ -11,14 +11,14 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the current AAF-T7A.1 dispatch-to-worker state, the
+This compact handoff records the current AAF-T7A.1 closed state, the
 current mode, the next allowed move, and parked operator checkpoints. Detailed history
 remains in governed completion artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: continuity for AAF-T7A.1 Reviewer/Closer Acceleration Helper dispatch
-after AAF-T7A roadmap readiness.
+Target: continuity for AAF-T7A.1 Reviewer/Closer Acceleration Helper closure
+after no-commit worker return review.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, roadmaps, and prior continuity remain in their governed owner paths.
@@ -35,14 +35,15 @@ the sibling public-sync clone after separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize AAF-T7A.1 dispatch material
-commit `af615d1e`, generated active state, compact session memory, active
-handoff, and the next allowed AAF-T7A.1 worker-execution checkpoint.
+Authorized guard-maintenance scope: synchronize AAF-T7A.1 closure material
+commit `5fc456a4`, generated active state, compact session memory, active
+handoff, and the next operator-selection checkpoint.
 This session sync does not open freeze, freeze release, posture mutation,
 runtime beyond the closed MPI-T2 helper scope, MCP execution,
 watcher/daemon, benchmark, provider/live, direct-interception, ACE-R1, CGE-T3,
 MLW7/8, automated provider selection, runtime provider routing, full AAF-T6,
-AAF-T7A implementation beyond the dispatched AAF-T7A.1 work order, MPI-T3/T4,
+AAF-T7A implementation beyond closed AAF-T7A.1, MPI-T3/T4,
+Role Switch Envelope implementation without a fresh tranche,
 route edit, route schema change, registry
 source or aggregate edit, durable write, registry generator change, helper or
 checker implementation, scaffold implementation, patch apply behavior, CLI/MCP
@@ -109,6 +110,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/refT0ActiveReferencePathRepairClosure20260622.json`
 - `CVF_SESSION/state/entries/aafT6AEarlyDiagnosticWireInDispatch20260622.json`
 - `CVF_SESSION/state/entries/aafT6AEarlyDiagnosticWireInClosure20260622.json`
+- `CVF_SESSION/state/entries/aafT7AReviewerCloserAccelerationHelperClosure20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -169,19 +171,20 @@ and `2017af304`, PECA-T1 dispatch commit `a98447c0`, Delta-T11 closure commit
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=worker executes the AAF-T7A.1 work order under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, uncommitted; Codex remains reviewer/closer; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening outside AAF-T7A.1, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`; active handoff=`AGENT_HANDOFF_V20_2026-06-19.md`; next allowed move=operator selects the next governed tranche; parked checkpoint=Role Handoff Protocol / Role Switch Envelope, MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 helper/index friction hardening beyond closed AAF-T7A.1, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, helper/checker/scaffold implementation beyond an authorized tranche, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`
+`aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`
 
-Current HEAD recorded for this handoff: `af615d1e`
+Current HEAD recorded for this handoff: `5fc456a4`
 
 Material state:
 
 - LSC-T6 closure commit: `65af6db3`
 - LSC-T6 dispatch/session-sync commits: `cfe75f4c`, `c4b2c061`
 - LSC-T5/T7 closure commit: `03fe8ca2`
+- AAF-T7A.1 Reviewer/Closer Acceleration Helper closure commit: `5fc456a4`
 - AAF-T7A.1 Reviewer/Closer Acceleration Helper dispatch commit: `af615d1e`
 - AAF-T7A Reviewer/Closer Acceleration Helper roadmap commit: `e0bbce53`
 - MPI-T1 Memory Plane Front-Door Map material commit: `24f3b958`
@@ -658,19 +661,23 @@ Artifact:
 `docs/roadmaps/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_ROADMAP_2026-06-22.md`.
 It creates no work order and implements no helper.
 
-AAF-T7A.1 Reviewer/Closer Acceleration Helper is `DISPATCHED_TO_WORKER` at
-material dispatch commit `af615d1e`, from dispatchBaseHead `68d5044a`.
-Dispatch artifacts:
+AAF-T7A.1 Reviewer/Closer Acceleration Helper is `CLOSED_PASS_BOUNDED` at
+material closure commit `5fc456a4`, after dispatch commit `af615d1e` and
+dispatch session-sync commit `26cfaa0c`. Accepted artifacts:
+`governance/compat/run_agent_automation_assist.py`,
+`governance/compat/test_run_agent_automation_assist.py`,
+`docs/reviews/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_WORKER_RETURN_2026-06-22.md`,
+`docs/reviews/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_COMPLETION_2026-06-22.md`,
 `docs/baselines/CVF_GC018_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_2026-06-22.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_FOR_WORKER_2026-06-22.md`.
 
-Next allowed move: worker executes the AAF-T7A.1 work order under
-`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`, uncommitted. Codex remains reviewer/closer after worker
-return. After AAF-T7A.1, resume MPI if reselected.
+Next allowed move: operator selects the next governed tranche. Parked future
+tranche to retain: Role Handoff Protocol / Role Switch Envelope for
+standardized role-switch declarations across internal/external agents and
+future runtime projects. MPI-T3/MPI-T4 remain paused unless reselected.
 
-Keep AAF-T7A implementation beyond roadmap/work-order authoring, AAF-T6 Guard
+Keep AAF-T7A implementation beyond closed AAF-T7A.1, AAF-T6 Guard
 Orientation Read-Receipt Gate, AAF-T7 helper/index friction hardening, CGE-T3 Full Knowledge
 Absorption Ledger, ACE-R1 Agent
 Coding Evidence Replay Roadmap, MLW7, and MLW8 parked unless separately

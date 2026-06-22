@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`
+Current mode marker: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`.
+Current mode: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`.
 
-Previous mode: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`.
+Previous mode: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`.
 
 Active handoff:
 
@@ -528,21 +528,25 @@ Artifact:
 `docs/roadmaps/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_ROADMAP_2026-06-22.md`.
 It creates no work order and implements no helper.
 
-AAF-T7A.1 Reviewer/Closer Acceleration Helper is `DISPATCHED_TO_WORKER` at
-material dispatch commit `af615d1e`, from dispatchBaseHead `68d5044a`.
-Dispatch artifacts:
+AAF-T7A.1 Reviewer/Closer Acceleration Helper is `CLOSED_PASS_BOUNDED` at
+material closure commit `5fc456a4`, after dispatch commit `af615d1e` and
+dispatch session-sync commit `26cfaa0c`. Accepted artifacts:
+`governance/compat/run_agent_automation_assist.py`,
+`governance/compat/test_run_agent_automation_assist.py`,
+`docs/reviews/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_WORKER_RETURN_2026-06-22.md`,
+`docs/reviews/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_COMPLETION_2026-06-22.md`,
 `docs/baselines/CVF_GC018_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_2026-06-22.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_FOR_WORKER_2026-06-22.md`.
 
 ## Next Allowed Move
 
-Mode: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`.
+Mode: `aaf_t7a_reviewer_closer_acceleration_helper_closed_pending_next_operator_selection`.
 
-Next allowed move: worker executes the AAF-T7A.1 work order under
-`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`, uncommitted. Codex remains reviewer/closer after worker
-return. After AAF-T7A.1, resume MPI if reselected.
+Next allowed move: operator selects the next governed tranche. Parked future
+tranche to retain: Role Handoff Protocol / Role Switch Envelope for
+standardized role-switch declarations across internal/external agents and
+future runtime projects. MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
@@ -550,10 +554,10 @@ verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
 Memory readout route edits, route schema changes, registry source or aggregate
-edits, durable writes, registry generator changes, MPI-T3/MPI-T4, AAF-T6,
-AAF-T7, CGE-T3, ACE-R1, MLW7/8, helper/checker/scaffold implementation beyond
-an authorized tranche, patch apply behavior, and universal governed-coding
-claims.
+edits, durable writes, registry generator changes, MPI-T3/MPI-T4, full AAF-T6,
+AAF-T7 beyond closed AAF-T7A.1, CGE-T3, ACE-R1, MLW7/8,
+helper/checker/scaffold implementation beyond an authorized tranche, patch
+apply behavior, and universal governed-coding claims.
 LHW24 remains the latest closed numbered LHW wave.
 
 ## Active Rule Additions
