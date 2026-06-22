@@ -37,7 +37,7 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync update after MPI-T5 private
-closure and pending public-sync routing.
+closure and completed public-sync routing.
 
 Protected paths:
 
@@ -47,6 +47,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/lpfTsconfigRootDirSyncFix20260622.json`
 - `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerClosure20260622.json`
 - `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerDispatch20260622.json`
+- `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerPublicSync20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
@@ -61,9 +62,11 @@ history.
 
 ## Current Mode
 
-`mpi_t5_memory_access_claim_checker_closed_pending_public_sync`
+`mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`
 
 Current material HEAD recorded for this handoff: `97e7f9fc`
+
+Current public-sync commit recorded for this handoff: `602550404`
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
@@ -76,8 +79,10 @@ runtime source as authority.
 
 ## Latest Work / Changes
 
-MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` pending public-sync
-from the sibling public-sync clone. Accepted private closure artifacts:
+MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` and public-synced
+from the sibling public-sync clone. Public remote was verified as
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`; public
+commit `602550404` pushed to `main`. Accepted private closure artifacts:
 
 - `docs/baselines/CVF_GC018_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md`
@@ -89,8 +94,8 @@ from the sibling public-sync clone. Accepted private closure artifacts:
 Result: local static Memory Plane claim checker is wired into reviewer-fast and
 autorun common gates. Focused pytest passed 13/13, checker self-run passed,
 pre-implementation autorun passed, and worker-return fast gate passed. Public
-GitHub sync is operator-authorized only from the sibling public-sync clone after
-remote verification.
+sync exported only public-safe checker, test, public hook wiring, assessment
+note, and generated workflow evidence.
 
 LPF TypeScript config rootDir sync fix is `CLOSED_PASS_BOUNDED` at material
 commit `bf8ff950`. Accepted artifacts:
@@ -177,20 +182,18 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Complete public/provenance boundary review, verify the sibling public-sync clone
-remote is `Blackbird081/Controlled-Vibe-Framework-CVF.git`, sync public-safe
-MPI-T5 checker/wiring artifacts only, commit and push from the public-sync
-clone, then record session-sync. MPI-T6 and runtime/provider/live expansion
-remain parked.
+Operator checkpoint: select MPI-T6, hold MPI Phase 2, or choose another
+separately authorized lane. MPI-T6 and runtime/provider/live expansion remain
+parked.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t5_memory_access_claim_checker_closed_pending_public_sync`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=public-sync from sibling public-sync clone after remote verification; parked checkpoint=MPI-T6 and runtime/provider/live expansion remain parked pending explicit authorization.
+Startup acknowledged: current mode=`mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator checkpoint for MPI-T6, hold MPI Phase 2, or another separately authorized lane; parked checkpoint=MPI-T6 and runtime/provider/live expansion remain parked pending explicit authorization.
 
 ## Parked Checkpoints
 
 - MPI-T4 is closed bounded.
-- MPI-T5 is closed bounded pending public-sync.
+- MPI-T5 is closed bounded and public-synced at public commit `602550404`.
 - MPI-T6 remains parked behind its prerequisites and operator selection.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.

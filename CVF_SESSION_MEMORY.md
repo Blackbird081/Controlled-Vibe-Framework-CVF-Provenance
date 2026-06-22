@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`
+Current mode marker: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`.
+Current mode: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`.
 
-Previous mode: `mpi_t5_memory_access_claim_checker_dispatched_to_worker`.
+Previous mode: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`.
 
 Active handoff:
 
@@ -64,11 +64,14 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` pending public-sync
-from the sibling public-sync clone. Private closure artifacts: accepted worker
-return, completion review, closed GC-018/work order, roadmap status
-`MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC`, new static checker/test, and
-one reviewer-fast plus one autorun wiring entry.
+MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` and public-synced
+from the sibling public-sync clone. Public remote was verified as
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`; public
+commit `602550404` pushed to `main` with public-safe checker, test, hook wiring,
+assessment note, and generated workflow evidence only. Private closure
+artifacts: accepted worker return, completion review, closed GC-018/work order,
+roadmap status `MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC`, new static
+checker/test, and one reviewer-fast plus one autorun wiring entry.
 
 Latest prior material work: AAF-T7C Reviewer Scaffold Shape Hardening is
 `CLOSED_PASS_BOUNDED` at material commit `b7601865`, and the LPF TypeScript
@@ -674,20 +677,18 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`.
+Mode: `mpi_t5_memory_access_claim_checker_closed_public_synced_pending_operator_selection`.
 
-Next allowed move: complete public/provenance boundary review, verify the
-sibling public-sync clone remote is `Blackbird081/Controlled-Vibe-Framework-CVF.git`,
-sync public-safe MPI-T5 checker/wiring artifacts only, commit and push from the
-public-sync clone, then record session-sync. MPI-T6 remains parked.
+Next allowed move: operator checkpoint to select MPI-T6, hold MPI Phase 2, or
+choose another separately authorized lane. MPI-T6 remains parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
-provider/live calls, public-sync push without Codex review and remote
+provider/live calls, future public-sync push without Codex review and remote
 verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
 Memory readout route edits, route schema changes, registry source or aggregate
-edits, durable writes, registry generator changes, MPI-T5/MPI-T6 until their
+edits, durable writes, registry generator changes, MPI-T6 until its
 prerequisites are selected, full AAF-T6, AAF-T7 L2 patch preview beyond AAF-T7B,
 CGE-T3, ACE-R1, MLW7/8, helper/checker implementation beyond the authorized
 MPI-T4 work order, patch apply behavior, and universal governed-coding claims.
