@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_t1_operator_question_boundary_dispatched_to_worker`
+Current mode marker: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_t1_operator_question_boundary_dispatched_to_worker`.
+Current mode: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`.
 
-Previous mode: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`.
+Previous mode: `rse_t1_operator_question_boundary_dispatched_to_worker`.
 
 Active handoff:
 
@@ -582,14 +582,24 @@ the role-neutral RSE route before dispatch. No checker, helper, runtime,
 provider/live, public-sync, RSE-T0 edit, AHB semantics change, or RSE-T2/T3
 content is authorized.
 
+RSE-T1 Operator Question Boundary is `CLOSED_PASS_BOUNDED` at material closure
+commit `50679d36`, after dispatch commit `57a32070` and dispatch continuity
+commit `77f676bf`. It adds the four canonical question classes, makes finding
+capture mandatory inside allowed scope, routes out-of-scope promotion to
+reviewer/closer, and forbids the AAF-T7B merged operator question. Reviewer
+repaired an implied automatic operator checkpoint for ordinary worker
+execution and completed the required source ledger. Verification passed:
+focused pytest 72/72, AAF helper with `defects=[]`, reviewer-fast 33/33,
+reviewer-return steward, and pre-commit 55/55.
+
 ## Next Allowed Move
 
-Mode: `rse_t1_operator_question_boundary_dispatched_to_worker`.
+Mode: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`.
 
-Next allowed move: worker executes only the RSE-T1 addendum and worker-return
-paths named by the dispatched work order, then returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without committing. RSE-T2
-and RSE-T3 remain unauthorized. MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: operator may select RSE-T2 Worker Return Jurisdiction Block
+for fresh GC-018 and source-verified work-order authoring, or select another
+parked lane. RSE-T2 and RSE-T3 are not yet authorized for implementation.
+MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote

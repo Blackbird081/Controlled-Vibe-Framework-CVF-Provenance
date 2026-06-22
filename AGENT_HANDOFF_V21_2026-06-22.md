@@ -140,13 +140,13 @@ closure commit `5fc456a4`, or AAF-T7A.1 dispatch commit `af615d1e`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rse_t1_operator_question_boundary_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=worker executes only the two RSE-T1 deliverables named by the dispatched work order and returns uncommitted; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`rse_t1_operator_question_boundary_closed_pending_next_operator_selection`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=operator may select RSE-T2 work-order authoring or another parked lane; parked checkpoint=MPI-T3/MPI-T4, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`rse_t1_operator_question_boundary_dispatched_to_worker`
+`rse_t1_operator_question_boundary_closed_pending_next_operator_selection`
 
-Current HEAD recorded for this handoff: `57a32070`
+Current HEAD recorded for this handoff: `50679d36`
 
 Material state:
 
@@ -186,10 +186,9 @@ Material state:
 
 ## Next Allowed Move
 
-Primary next move: worker creates only the RSE-T1 addendum and worker-return
-paths named by the dispatched work order, then returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. RSE-T2 and
-RSE-T3 remain unauthorized.
+Primary next move: operator may select RSE-T2 Worker Return Jurisdiction Block
+for fresh GC-018 and source-verified work-order authoring, or select another
+parked lane. RSE-T2 and RSE-T3 remain unauthorized for implementation.
 
 ## Parked Checkpoints
 
@@ -221,6 +220,87 @@ RSE-T3 remain unauthorized.
 | Claim boundary | no runtime/provider/live/public-sync behavior; no worker implementation in this session-sync |
 | Agent type | session-sync steward |
 | Invocation ID | `rse-t0-role-switch-envelope-closure-session-sync-v21-2026-06-22` |
+| Expected manifest | session-sync target paths listed above |
+| Actual changed set | session-sync target paths listed above |
+| Manifest delta | MATCH |
+
+---
+
+## RSE-T1 Closure Continuity - 2026-06-22
+
+RSE-T1 Operator Question Boundary is `CLOSED_PASS_BOUNDED` at material closure
+commit `50679d36`, after dispatch commit `57a32070` and dispatch session-sync
+commit `77f676bf`.
+
+Accepted artifacts:
+
+- `docs/reference/role_switch_envelope/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_ADDENDUM.md`
+- `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_WORKER_RETURN_2026-06-22.md`
+- `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_COMPLETION_2026-06-22.md`
+- `docs/baselines/CVF_GC018_RSE_T1_OPERATOR_QUESTION_BOUNDARY_2026-06-22.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T1_OPERATOR_QUESTION_BOUNDARY_FOR_WORKER_2026-06-22.md`
+
+Result: the addendum defines all four question classes, requires finding
+capture inside allowed scope, routes promotion to reviewer/closer, and forbids
+the merged AAF-T7B operator question. Reviewer repaired an implied automatic
+operator checkpoint for ordinary worker execution and completed the required
+source ledger.
+
+Verification:
+
+- focused pytest: PASS 72/72
+- AAF helper: PASS, `defects=[]`
+- reviewer-fast: PASS 33/33
+- reviewer-return steward: PASS
+- pre-commit hook: PASS 55/55
+
+Current mode:
+`rse_t1_operator_question_boundary_closed_pending_next_operator_selection`.
+
+Next allowed move: operator may select RSE-T2 work-order authoring or another
+parked lane. RSE-T2/T3 implementation remains unauthorized.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: record RSE-T1 material closure commit
+`50679d36`, set the post-closure next move, and regenerate active session state.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V21_2026-06-22.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/rseT1OperatorQuestionBoundaryClosure20260622.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator submitted the RSE-T1 worker return as
+`COMPLETE_PENDING_REVIEW`; reviewer/closer accepted and committed bounded
+closure at `50679d36`. This authorization covers session continuity only.
+
+Rollback boundary: revert only the RSE-T1 closure session-sync commit if
+rejected. Do not alter material closure commit `50679d36`, dispatch commit
+`57a32070`, or dispatch session-sync commit `77f676bf`.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | RSE-T1 closure session sync, 2026-06-22 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | source reads, file edits, state generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V21_2026-06-22.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/rseT1OperatorQuestionBoundaryClosure20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION_MEMORY.md` |
+| Allowed scope source | accepted RSE-T1 closure commit `50679d36` and mandatory closure continuity |
+| Before status evidence | material closure commit `50679d36`; state still named RSE-T1 dispatched mode |
+| After status evidence | generated active state names RSE-T1 closed mode and operator selection next move |
+| Diff evidence | session-sync diff, generator check, state compatibility, mode consistency, and local hook receipts |
+| Approval boundary | session continuity only |
+| Claim boundary | no RSE-T2/T3 implementation, runtime/provider/live/public-sync, checker/helper, or AHB semantic change |
+| Agent type | session-sync steward |
+| Invocation ID | `rse-t1-operator-question-boundary-closure-session-sync-v21-2026-06-22` |
 | Expected manifest | session-sync target paths listed above |
 | Actual changed set | session-sync target paths listed above |
 | Manifest delta | MATCH |
