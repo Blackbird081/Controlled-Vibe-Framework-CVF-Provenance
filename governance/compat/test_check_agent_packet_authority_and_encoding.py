@@ -198,6 +198,7 @@ def test_pending_worker_return_accepts_executed_gate_and_required_reads() -> Non
             "| File | Action | Reason |\n|---|---|---|\n"
             "| `docs/reference/source.md` | READ | verified |\n\n"
             "## Gate Evidence\n\n"
+            "### Worker-return fast gate\n\n"
             "`python governance/compat/run_worker_return_fast_gate.py`\n\n"
             "COMPLIANT: worker-return fast gate passed.\n"
         )
@@ -206,3 +207,15 @@ def test_pending_worker_return_accepts_executed_gate_and_required_reads() -> Non
                 "docs/reviews/CVF_EXAMPLE_WORKER_RETURN_2026-06-22.md", text
             )
     assert issues == []
+
+
+def test_heading_section_keeps_nested_subheadings() -> None:
+    text = (
+        "## Gate Evidence\n\n"
+        "### Worker-return fast gate\n\nPASS\n\n"
+        "## Claim Boundary\n\nNo runtime claim.\n"
+    )
+    section = MODULE._extract_heading_section(text, "Gate Evidence")
+    assert "### Worker-return fast gate" in section
+    assert "PASS" in section
+    assert "Claim Boundary" not in section

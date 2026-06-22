@@ -154,17 +154,21 @@ def _read_rel(path: str) -> str:
 def _extract_heading_section(text: str, heading_fragment: str) -> str:
     lines = text.splitlines()
     start: int | None = None
+    start_level: int | None = None
     needle = heading_fragment.lower()
     for index, line in enumerate(lines):
         stripped = line.strip().lower()
         if stripped.startswith("#") and needle in stripped:
             start = index + 1
+            heading_match = re.match(r"^(#{1,6})\s", line.strip())
+            start_level = len(heading_match.group(1)) if heading_match else 6
             break
     if start is None:
         return ""
     end = len(lines)
     for index in range(start, len(lines)):
-        if lines[index].startswith("#"):
+        heading_match = re.match(r"^(#{1,6})\s", lines[index].strip())
+        if heading_match and len(heading_match.group(1)) <= (start_level or 6):
             end = index
             break
     return "\n".join(lines[start:end])

@@ -79,7 +79,7 @@ session continuity, provider/live behavior, or public-sync.
 
 | Check | Command | Result |
 |---|---|---|
-| Focused tests | `python -m pytest governance/compat/test_check_agent_packet_authority_and_encoding.py -q` | PASS 12/12 |
+| Focused tests | `python -m pytest governance/compat/test_check_agent_packet_authority_and_encoding.py -q` | PASS 13/13 |
 | Checker compilation | `python -m py_compile governance/compat/check_agent_packet_authority_and_encoding.py` | PASS |
 | Reviewer-fast | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | required before material commit |
 | Governed file size | `python governance/compat/check_governed_file_size.py --enforce` | required before material commit |
@@ -136,6 +136,11 @@ required.
 
 Prediction confirmed bounded: future changed pending worker returns and changed
 governed Source Verification tables reach machine enforcement in reviewer-fast.
+
+Follow-up dogfood correction: the first material commit exposed that the
+section parser stopped at nested `###` headings inside `## Gate Evidence`.
+The parser now stops only at a heading of the same or higher level, and a
+focused regression test covers the real nested packet shape.
 
 ## Acceptance Receipt Assertion Matrix
 
