@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`
+Current mode marker: `adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`.
+Current mode: `adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`.
 
-Previous mode: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`.
+Previous mode: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`.
 
 Active handoff:
 
@@ -63,6 +63,12 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ADIF continuous execution is dispatch-ready at commit `783b2b8a`. Claude runs
+`T0 -> T1 -> T2 -> (T3 || T4) -> T5` with committed dependency checkpoints;
+parallel T3/T4 work requires isolated worktrees from identical T2 HEAD and
+disjoint manifests. Claude must not push or edit session continuity. Codex is
+the designated final reviewer/closer after `COMPLETE_PENDING_REVIEW`.
 
 Agent Defect Intelligence Foundation roadmap is
 `ROADMAP_READY_PENDING_OPERATOR_TRANCHE_SELECTION` at material commit
@@ -702,12 +708,12 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`.
+Mode: `adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`.
 
-Next allowed move: operator checkpoint for ADIF-T0 Owner Reconciliation And
-Taxonomy Contract. It remains parked until explicitly selected and requires a
-fresh GC-018 plus source-verified work order. MPI runtime expansion and ADIF
-implementation remain parked.
+Next allowed move: Claude executes the committed ADIF continuous work order and
+returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Codex then reviews
+the complete commit graph. Runtime/provider/live/public expansion remains
+parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

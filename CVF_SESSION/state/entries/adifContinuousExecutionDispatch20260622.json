@@ -1,0 +1,5 @@
+{
+  "stateOrder": 641,
+  "stateKey": "adifContinuousExecutionDispatch20260622",
+  "value": "ADIF continuous execution dispatch is committed at 783b2b8a from dispatch base 60751daf. The operator preselected T0 -> T1 -> T2 -> (T3 || T4) -> T5. Canonical authorization: docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md. Master work order: docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_CONTINUOUS_EXECUTION_T0_T5_FOR_CLAUDE_2026-06-22.md. Commit mode WORKER_MAY_COMMIT enables real dependency checkpoint commits and isolated parallel worktrees from identical T2 HEAD. Claude must source-verify and gate every child packet, must not push or edit session continuity, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Codex is the designated final reviewer/closer. Dispatch evidence: reviewer-fast 34/34 PASS, pre-dispatch 45/45 PASS, dispatch steward PASS, and pre-commit 55/55 PASS."
+}

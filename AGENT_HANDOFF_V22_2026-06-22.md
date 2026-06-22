@@ -51,6 +51,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/mpiT6ReviewGateHardeningClosure20260622.json`
 - `CVF_SESSION/state/entries/mpiT6RuntimeCandidateDecisionClosure20260622.json`
 - `CVF_SESSION/state/entries/adifFoundationRoadmap20260622.json`
+- `CVF_SESSION/state/entries/adifContinuousExecutionDispatch20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
@@ -67,11 +68,13 @@ history.
 
 ## Current Mode
 
-`mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`
+`adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`
+
+ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `14f8e5f9`
+Current material HEAD recorded for this handoff: `783b2b8a`
 
 Current session-sync HEAD recorded for this handoff: `8534621c`
 
@@ -203,15 +206,14 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-MPI Phase 2 is fully decided private-only; MPI-T6 closed bounded with `DEFER`
-at material commit `14f8e5f9`. ADIF-T0 is parked at an operator checkpoint and
-requires explicit selection, fresh GC-018, and a source-verified work order.
-MPI runtime authorization, ADIF implementation, and runtime/provider/live
-expansion remain parked.
+ADIF continuous execution is dispatched at `783b2b8a`. Claude executes
+`T0 -> T1 -> T2 -> (T3 || T4) -> T5`, may create private checkpoint commits,
+must not push or edit session continuity, and returns for Codex final review.
+Runtime/provider/live/public expansion remains parked.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator checkpoint for ADIF-T0; parked checkpoint=ADIF-T0 selection, MPI runtime authorization, and runtime/provider/live expansion remain parked.
+Startup acknowledged: current mode=`adif_continuous_execution_dispatched_to_claude_pending_final_codex_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes the ADIF continuous work order and returns for Codex review; parked checkpoint=runtime/provider/live/public expansion remains parked.
 
 ## Parked Checkpoints
 
@@ -219,8 +221,8 @@ Startup acknowledged: current mode=`mpi_t6_decided_defer_phase2_fully_decided_pe
 - MPI-T5 is closed bounded and public-synced at public commit `602550404`.
 - MPI-T6 decision packet is closed bounded with `DEFER` at `14f8e5f9`; runtime
   authorization remains parked.
-- ADIF-T0 Owner Reconciliation And Taxonomy Contract is roadmap-ready but
-  parked pending explicit operator selection.
+- ADIF T0-T5 continuous execution is dispatched to Claude at `783b2b8a`; Codex
+  final review is pending worker return.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -232,8 +234,8 @@ Startup acknowledged: current mode=`mpi_t6_decided_defer_phase2_fully_decided_pe
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record MPI-T6 decision closure commit
-`14f8e5f9`, update current mode and next move, and regenerate active session
+Authorized guard-maintenance scope: record ADIF continuous dispatch commit
+`783b2b8a`, update current mode and next move, and regenerate active session
 state.
 
 Protected paths:
@@ -242,16 +244,16 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mpiT6RuntimeCandidateDecisionClosure20260622.json`
+- `CVF_SESSION/state/entries/adifContinuousExecutionDispatch20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator explicitly asked Codex to fix remaining
-MPI-T6 findings and commit cleanly before the next roadmap. Session continuity
-is a mandatory consequence of material closure `14f8e5f9`.
+Operator authorization: the operator explicitly selected the ADIF continuous
+execution order and assigned Codex as final reviewer. Session continuity is a
+mandatory consequence of dispatch commit `783b2b8a`.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert MPI-T6 material closure `14f8e5f9`, ADIF roadmap material commit
-`d86f49e9`, or prior dispatch/closure history.
+revert ADIF dispatch `783b2b8a`, MPI-T6 material closure `14f8e5f9`, or prior
+dispatch/closure history.
 
 ## Agent Operation Trace Block
 
@@ -259,27 +261,26 @@ revert MPI-T6 material closure `14f8e5f9`, ADIF roadmap material commit
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | MPI-T6 decision closure session sync, 2026-06-22 |
+| Session or invocation | ADIF continuous execution dispatch session sync, 2026-06-22 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
 | Target paths | V22; session front door; state source entries; generated active state |
-| Allowed scope source | accepted MPI-T6 closure commit `14f8e5f9` and mandatory continuity rules |
-| Before status evidence | material closure committed; active state still routed MPI-T6 repair/review |
-| After status evidence | active mode names MPI Phase 2 fully decided pending ADIF-T0 selection |
+| Allowed scope source | ADIF dispatch commit `783b2b8a` and mandatory continuity rules |
+| Before status evidence | clean worktree after dispatch commit; active state still parked ADIF-T0 |
+| After status evidence | active mode routes Claude continuous execution and Codex final review |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `mpi-t6-decision-closure-session-sync-2026-06-22` |
-| Expected manifest | V22; front door; state core; MPI-T6 closure entry; next move; generated active state |
-| Actual changed set | V22; front door; state core; MPI-T6 closure entry; next move; generated active state |
+| Invocation ID | `adif-continuous-execution-dispatch-session-sync-2026-06-22` |
+| Expected manifest | V22; front door; state core; ADIF dispatch entry; next move; generated active state |
+| Actual changed set | V22; front door; state core; ADIF dispatch entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records MPI-T6 bounded `DEFER`
-closure and the ADIF-T0 operator checkpoint. It does not authorize MPI runtime
-expansion, ADIF implementation, route/schema/auth changes, registry/durable
-writes, provider/live proof, public-sync, CLI/MCP adapter behavior, or
-universal governed-coding control.
+This handoff is session continuity only. It records the ADIF continuous
+execution dispatch and Codex final-review boundary. It does not expand the
+work order into runtime/provider/live/public behavior, session edits by Claude,
+or universal governed-coding control.
