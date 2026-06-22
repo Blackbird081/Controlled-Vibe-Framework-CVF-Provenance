@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED_CONTINUOUS_EXECUTION
+Status: AUTHORIZED_CONTINUOUS_EXECUTION_HARDENED_T3_T5
 
 Date: 2026-06-22
 
@@ -70,6 +70,8 @@ implementation.
 | Reviewer-fast registry exists | `governance/compat/run_local_governance_hook_chain.py` | `REVIEWER_FAST_CHECKS` | `REVIEWER_FAST_CHECKS` | local governance hook chain | EXISTS | ACCEPT |
 | Dependency release needs artifact, commit, disposition, anchors, and gates | `docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md` | Required Dependency Release Evidence; Dependency Release Workflow | `Dependency Release Evidence` | dependency release standard | VALUE_SET | ACCEPT |
 | Four canonical handoff routes and phase-specific commit ownership exist | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | CF-01 through CF-08 | `MULTI_AGENT_MULTI_ROLE`; `commitOwner(phase)` | Agent Handoff Contract | VALUE_SET | ACCEPT |
+| Root-active-handoff-only bridge lane and stop boundaries | `docs/reference/CVF_CONTINUOUS_EXECUTION_HANDOFF_SYNC_BRIDGE_STANDARD_2026-06-23.md` | Exact Write Boundary; Required Command And Commit Shape | `HANDOFF_SYNC_BRIDGE_PASS` | continuous bridge standard | VALUE_SET | ACCEPT |
+| ADIF-T2 checkpoint is accepted after resolver hardening | `docs/reviews/CVF_ADIF_T2_TASK_ROLE_PHASE_DEFECT_PACKET_RESOLVER_CHECKPOINT_REVIEW_2026-06-23.md` | Findings / Position; Gate Evidence | `ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW` | T2 checkpoint review | VALUE_SET | ACCEPT |
 
 ## New Doc-Only Fields
 
@@ -109,30 +111,51 @@ the designated independent reviewer and sole final closer.
 | commitOwner(DISPATCH_AUTHORING) | Codex |
 | commitOwner(EXECUTION) | Claude and explicitly named T3/T4 branch workers under `WORKER_MAY_COMMIT` |
 | commitOwner(CLOSURE) | Codex only |
-| commitOwner(SESSION_SYNC) | Codex unless separately reassigned |
+| commitOwner(SESSION_SYNC) | Codex only |
+| commitOwner(HANDOFF_SYNC_BRIDGE) | continuous orchestrator for T3-T5 under the 2026-06-23 bridge standard; root active handoff only |
 | crossBatchIsolation | T0/T1/T2 sequential on execution branch; T3 and T4 use separate worktrees from identical T2 HEAD; T5 starts only after integration |
-| nextMoveSurfaces | Claude must not edit active session state/front door/handoff; Codex owns final session sync |
+| nextMoveSurfaces | active state/front door remain Codex-owned; T3-T5 orchestrator may edit only the root active handoff in a dedicated bridge commit; Codex owns final session sync |
 
 Designated closer: Codex.
 
+## T3-T5 Continuous Execution Hardening - 2026-06-23
+
+`docs/reference/CVF_CONTINUOUS_EXECUTION_HANDOFF_SYNC_BRIDGE_STANDARD_2026-06-23.md`
+is incorporated as a binding addendum and supersedes any earlier instruction
+that would pause for Codex between T3, T4, integration, and T5.
+
+- T3/T4 child success status: `CHECKPOINT_PASS_PENDING_FINAL_REVIEW`.
+- Machine evidence releases continuation; Codex does not accept/review either
+  child before T5.
+- After a material, dispatch, or integration commit that precedes another
+  gate, the orchestrator may create a dedicated root-handoff-only
+  `HANDOFF_SYNC_BRIDGE_PASS` commit.
+- The bridge cannot edit session state/front door/review queue, change current
+  mode/next move, or claim review/closure.
+- Stop for Codex only after T5 final return or an existing Stop Condition.
+
 ## Parallel Fork And Convergence Protocol
 
-1. Claude completes and commits T2, then records the exact T2 HEAD.
-2. Create two isolated worktrees/branches from that identical T2 HEAD.
+1. Author and gate both T3/T4 child packets in one joint dispatch batch after
+   accepted T2 evidence, commit it, then create one handoff-sync bridge.
+2. Create two isolated worktrees/branches from that identical bridge HEAD.
 3. T3 and T4 child packets must declare disjoint write ownership. If paths
    overlap, parallel execution is forbidden and Claude must serialize them.
 4. Each branch runs focused tests, worker-return fast checks, and pre-commit
    gates before its checkpoint commit.
-5. Claude integrates T3 and T4 without rewriting or squashing evidence commits.
-6. Run integration-focused tests and autorun gates on the combined range.
-7. Only then author/release the T5 child packet.
+5. Integrate the first evidence branch without rewriting/squashing, create a
+   handoff-sync bridge, then integrate the second evidence branch.
+6. Create a convergence handoff-sync bridge and run combined tests/gates.
+7. Author/gate the T5 child packet, bridge its dispatch commit, execute T5,
+   commit the final return, and stop for Codex final review.
 
 ## Commit And Push Boundary
 
-Claude may create private local commits required for dependency release and
-parallel convergence. Claude must not push, public-sync, force-push, rebase
-published history, alter remotes, or update session continuity. Codex reviews
-the complete commit graph after T5 and owns final closure and any later push.
+Claude may create private local commits required for dependency release,
+parallel convergence, and the root-handoff-only bridge defined above. Claude
+must not push, public-sync, force-push, rebase published history, alter remotes,
+or edit other session continuity. Codex reviews the complete graph after T5 and
+owns final closure, final session sync, and any later push.
 
 ## Stop Conditions
 
@@ -171,6 +194,13 @@ commit-steward dispatch mode, and pre-commit checks over the real dispatch
 range. Execution evidence is tranche-local: child source verification,
 focused tests, real-range autorun gates, committed dependency anchors, and the
 final graph/manifest return. Codex recomputes closure evidence after T5.
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
+|---|---|---|---|---|
+| `INTERNAL_AGENT` | local child packets, resolver, isolated worktrees, and root-handoff-only bridges | private machine-gated commits; no self-review or final closure authority | T0-T2 commits/reviews and bridge standard | `IMPLEMENTED` |
+| `EXTERNAL_AGENT_CLI_MCP` | no adapter authorized in this sequence | no ingress, authentication, approval, receipt, raw-data, mutation, runtime, or public claim | forbidden scope and T2 contract | `DEFERRED_WITH_REASON` - separate source-verified authorization required |
 
 ## Public Export Disposition
 

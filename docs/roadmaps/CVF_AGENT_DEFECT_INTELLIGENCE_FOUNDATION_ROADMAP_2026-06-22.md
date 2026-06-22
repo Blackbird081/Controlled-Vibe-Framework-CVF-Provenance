@@ -351,16 +351,25 @@ Stop or return to orchestrator if a future tranche:
 | Select continuous execution order | Operator checkpoint | PASS - `T0 -> T1 -> T2 -> (T3 || T4) -> T5` selected |
 | Author continuous authorization and master Claude work order | Codex dispatch author | PASS |
 | Execute T0/T1/T2 sequential checkpoints | Claude orchestrator/worker | ADIF-T0, T1, and T2 accepted for continuation pending final review; T2 reviewer-hardened |
-| Execute T3/T4 from identical T2 HEAD in isolated worktrees | Claude parallel workers | HOLD_UNTIL_T2_CHECKPOINT_PASS |
-| Integrate T3/T4 and execute T5 | Claude orchestrator/worker | HOLD_UNTIL_T3_T4_CONVERGENCE_PASS |
+| Execute T3/T4 from identical post-T2 bridge HEAD in isolated worktrees | Claude parallel workers | CONTINUOUS_RELEASE_READY - no intermediate Codex review |
+| Integrate T3/T4 and execute T5 | Claude orchestrator/worker | CONTINUOUS_MACHINE_GATED - root-handoff-only bridges permitted; stop once after T5 |
 | Review and close the full chain | Codex reviewer/closer | HOLD_UNTIL_CLAUDE_COMPLETE_PENDING_REVIEW |
 
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
 |---|---|---|---|---|
-| `INTERNAL_AGENT` | ADIF compact entries and planned task/role/phase resolver | bounded read-only defect packets; no comprehension, prevention, or action claim | T1 template/entries; T2 roadmap contract | `CONTRACT_ONLY` - direct entry reads exist, while the resolver is not yet implemented |
+| `INTERNAL_AGENT` | ADIF compact entries and implemented task/role/phase resolver | bounded read-only defect packets; no comprehension, prevention, or action claim | T1 template/entries; T2 resolver and focused tests | `IMPLEMENTED` |
 | `EXTERNAL_AGENT_CLI_MCP` | future CLI/MCP/adapter owner, deliberately separate from the local resolver | ingress, authentication, approval, receipts, raw-data, mutation, runtime, and public export require separate authorization | Dual Agent Surface Accounting Standard; current tranche boundaries | `DEFERRED_WITH_REASON` - no external adapter is authorized by ADIF-T0 through T5 |
+
+## T3-T5 Continuous Execution Choreography
+
+The binding bridge standard is
+`docs/reference/CVF_CONTINUOUS_EXECUTION_HANDOFF_SYNC_BRIDGE_STANDARD_2026-06-23.md`.
+For T3 through T5, a material checkpoint and a root-handoff-only bridge are not
+a reviewer checkpoint. T3/T4 use `CHECKPOINT_PASS_PENDING_FINAL_REVIEW`,
+continue through convergence and T5 using machine evidence, and return once to
+Codex after T5. Session state/front door and final acceptance remain Codex-owned.
 
 ## Verification / Evidence
 

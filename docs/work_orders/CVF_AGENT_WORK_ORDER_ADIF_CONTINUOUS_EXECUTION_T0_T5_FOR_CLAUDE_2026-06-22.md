@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: DISPATCH_READY_HARDENED_CONTINUOUS_T3_T5
 
 Date: 2026-06-22
 
@@ -33,8 +33,9 @@ Current-time notes: the operator preselected the exact sequence
 release.
 
 Do-not-misread notes: continuous does not mean gate-free. Parallel means
-isolated worktrees with identical T2 base and disjoint manifests, otherwise
-serialize. Do not push or edit session continuity.
+isolated worktrees with an identical post-T2 bridge base and disjoint manifests,
+otherwise serialize. Do not push. The only permitted continuity edit is the
+root-handoff-only bridge defined by the 2026-06-23 hardening standard.
 
 Required first actions: read the canonical packet and Required First Reads,
 capture HEAD/status, run pre-implementation, and author the T0 child packet.
@@ -64,6 +65,8 @@ review.
 | Active session state | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | ACCEPT |
 | Active handoff | `AGENT_HANDOFF_V22_2026-06-22.md` | ACCEPT |
 | Handoff contract | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` | ACCEPT |
+| T2 accepted checkpoint review | `docs/reviews/CVF_ADIF_T2_TASK_ROLE_PHASE_DEFECT_PACKET_RESOLVER_CHECKPOINT_REVIEW_2026-06-23.md`; commit `07000fd6` | ACCEPT |
+| Continuous bridge standard | `docs/reference/CVF_CONTINUOUS_EXECUTION_HANDOFF_SYNC_BRIDGE_STANDARD_2026-06-23.md` | ACCEPT - binding T3-T5 addendum |
 
 ## Agent Roles
 
@@ -75,6 +78,7 @@ review.
 | Parallel T3/T4 workers | Claude-isolated agents/worktrees, if disjointness is proven |
 | Reviewer/closer | Codex, explicitly designated |
 | Session-sync steward | Codex following accepted closure |
+| Handoff-sync bridge steward | Claude orchestrator for T3-T5 only, root active handoff only |
 
 ## Required First Reads
 
@@ -86,6 +90,8 @@ review.
 - `docs/reference/CVF_INDEX_CLASSIFICATION_STANDARD_2026-06-21.md`
 - `docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md`
 - `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
+- `docs/reference/CVF_CONTINUOUS_EXECUTION_HANDOFF_SYNC_BRIDGE_STANDARD_2026-06-23.md`
+- `docs/reviews/CVF_ADIF_T2_TASK_ROLE_PHASE_DEFECT_PACKET_RESOLVER_CHECKPOINT_REVIEW_2026-06-23.md`
 
 ## Pre-Flight Checks
 
@@ -126,27 +132,31 @@ Roadmap:
 
 ## Allowed Scope
 
-- author one fresh child GC-018, work order, checkpoint review, and worker
-  evidence packet per tranche;
+- author fresh child GC-018/work orders and worker checkpoint evidence; no
+  intermediate Codex review artifact is required for T3 or T4;
 - create the ADIF reference family, compact entry sources, template, seed
   entries, bounded resolver, focused tests, T3 integration, T4 intake bridge,
   and T5 integrity guard only as source-verified by each child packet;
 - update this roadmap's tranche/checkpoint rows during execution;
 - create local private commits and isolated T3/T4 worktrees/branches;
 - make allowed-scope gate repairs and rerun gates.
+- create dedicated root-active-handoff-only bridge commits between T3-T5
+  material transitions when required by GC-020.
 
 ## Write Ownership
 
 This master packet owns no implementation filenames beyond its dispatch
 artifacts. Each child packet must declare exact write paths before that tranche
 starts. Claude owns those child-declared paths and private execution commits.
-T3/T4 workers must own disjoint paths. Codex owns final completion/status and
+T3/T4 workers must own disjoint paths. Claude owns only the root handoff during
+an authorized bridge commit. Codex owns final completion/status and all other
 session-sync paths.
 
 ## Forbidden Scope
 
-- active session state, session front door, active handoff, review queue, or
-  generated active-session aggregate;
+- active session state, session front door, review queue, or generated
+  active-session aggregate; active handoff is forbidden except for the exact
+  root-handoff-only bridge commit authorized by the hardening standard;
 - public-sync clone, remote push, remote changes, or public claims;
 - provider/live calls, secrets/quota, runtime/product behavior, model routing,
   memory reinjection, arbitrary command execution, or direct interception;
@@ -177,11 +187,14 @@ to `ACCEPT`.
 1. Execute and commit T0 from a fresh child packet.
 2. Release, execute, and commit T1 from T0 checkpoint evidence.
 3. Release, execute, and commit T2 from T1 checkpoint evidence.
-4. Fork T3 and T4 from identical T2 HEAD into isolated worktrees when their
-   child manifests are disjoint; otherwise serialize them.
-5. Integrate both branches and run combined tests/gates.
-6. Release, execute, and commit T5 from convergence evidence.
-7. Produce the final worker return and stop for Codex review.
+4. Jointly author/gate T3/T4 child packets, commit, bridge, then fork identical
+   bridge HEAD into isolated worktrees when manifests are disjoint.
+5. Execute both branches with `CHECKPOINT_PASS_PENDING_FINAL_REVIEW`; do not
+   pause for Codex.
+6. Integrate branch one, bridge; integrate branch two, bridge; run combined
+   tests/gates without squashing evidence.
+7. Author/gate T5, bridge its dispatch commit, execute/commit T5.
+8. Produce the final worker return and stop once for Codex review.
 
 ## Evidence Requirements
 
@@ -246,6 +259,8 @@ as runtime or canonical governance enums.
 | ADIF roadmap | `d86f49e9` | ACCEPT | roadmap gates and commit evidence recorded in session state |
 | MPI-T6 decision closure before ADIF selection | `14f8e5f9` | ACCEPT | committed-range pre-closure PASS |
 | Operator continuous-selection decision | this authorization packet | ACCEPT | dispatch gates required before Claude starts |
+| ADIF-T2 accepted checkpoint | `07000fd6` | ACCEPT | 13 focused tests, reviewer-fast, and pre-commit PASS; handoff bridge `4527c55a` |
+| T3-T5 choreography hardening | this changed master packet and bridge standard | ACCEPT | real-range pre-dispatch and pre-commit required before release |
 
 Later tranche dependencies are not claimed released by this table. Claude must
 append source-backed checkpoint rows to the matching child packet before each
@@ -289,10 +304,10 @@ transition.
 | baseHeadFor(phase) | `dispatchBaseHead=60751daf`; Claude captures execution bases; Codex captures closure base |
 | changedSetScope(phase) | dispatch=three dispatch artifacts; execution=child-declared paths; closure=reviewer-owned conversion paths; session-sync=continuity only |
 | traceScope(phase, actor) | one trace per dispatch/execution branch/closure/session-sync actor-phase |
-| commitOwner(phase) | Codex dispatch; Claude execution; Codex closure and session sync |
+| commitOwner(phase) | Codex dispatch; Claude execution; Claude root-handoff-only bridge for T3-T5; Codex closure and session sync |
 | crossBatchIsolation | T0/T1/T2 sequential; T3/T4 separate clean worktrees from identical T2 HEAD; T5 after integration |
 | Before status evidence | clean worktree before dispatch authoring at base `60751daf`; current pending set is exactly the three dispatch artifacts and must be committed before Claude starts |
-| nextMoveSurfaces | Claude does not edit them; Codex updates following final closure |
+| nextMoveSurfaces | Claude does not edit mode/state/front door/next move; only the root handoff bridge ledger is permitted before final Codex sync |
 | Closer designation | Codex |
 
 ## Worker Autonomy / No-Question Rule
@@ -338,6 +353,13 @@ reviewerOwnedClosurePaths:
 
 Codex may accept, repair within scope, partially accept, or reject individual
 tranches. Claude checkpoint commits do not constrain Codex's final disposition.
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
+|---|---|---|---|---|
+| `INTERNAL_AGENT` | local continuous orchestrator, child workers, resolver, and bridge steward | machine-gated private commits; root handoff bridge only; Codex retains review/closure | bridge standard and hardened execution plan | `IMPLEMENTED` |
+| `EXTERNAL_AGENT_CLI_MCP` | no execution adapter in T3-T5 | ingress, authentication, approval, receipt, raw-data, mutation, runtime, and public boundaries remain outside scope | Forbidden Scope and T2 review | `DEFERRED_WITH_REASON` - future adapter requires separate authorization |
 
 ## Public Export Disposition
 
