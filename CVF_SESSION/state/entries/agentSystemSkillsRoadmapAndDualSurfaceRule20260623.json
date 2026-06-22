@@ -1,0 +1,5 @@
+{
+  "stateOrder": 647,
+  "stateKey": "agentSystemSkillsRoadmapAndDualSurfaceRule20260623",
+  "value": "The mandatory Dual Agent Surface Accounting Standard and parked Agent System Skills Foundation roadmap are committed at 6abda284. Standard: docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md. Roadmap: docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md. Every applicable future CVF foundation must account for INTERNAL_AGENT and EXTERNAL_AGENT_CLI_MCP consumers with IMPLEMENTED, CONTRACT_ONLY, DEFERRED_WITH_REASON, or N/A_WITH_REASON. ASSF-T0 through T7 cover owner/legacy audit, package contract, generated index/progressive resolver, learning promotion, external/legacy normalization, composition controls, CVF Web projection, and lifecycle guards. ASSF remains parked while ADIF is active."
+}

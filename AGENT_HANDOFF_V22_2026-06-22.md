@@ -54,6 +54,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/adifContinuousExecutionDispatch20260622.json`
 - `CVF_SESSION/state/entries/adifT0CheckpointPendingReview20260623.json`
 - `CVF_SESSION/state/entries/adifT0CheckpointAcceptedT1Release20260623.json`
+- `CVF_SESSION/state/entries/agentSystemSkillsRoadmapAndDualSurfaceRule20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
@@ -74,13 +75,15 @@ history.
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
+Agent System Skills roadmap and dual-surface rule HEAD: `6abda284`
+
 ADIF-T0 execution checkpoint HEAD: `7c0480bc`
 
 ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `6277cb28`
+Current material HEAD recorded for this handoff: `6abda284`
 
 Current session-sync HEAD recorded for this handoff: `8534621c`
 
@@ -217,6 +220,9 @@ execution commit `7c0480bc`. Claude may author and gate T1 after this sync and
 must stop again after its checkpoint commit for Codex continuity/review.
 Runtime/provider/live/public expansion remains parked.
 
+The Agent System Skills roadmap and mandatory internal/external CLI/MCP
+accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`adif_t0_checkpoint_accepted_t1_released_to_claude`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude authors/gates and executes ADIF-T1 from the post-sync HEAD; parked checkpoint=post-T1 Codex continuity/review and runtime/provider/live/public expansion.
@@ -240,8 +246,8 @@ Startup acknowledged: current mode=`adif_t0_checkpoint_accepted_t1_released_to_c
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record ADIF-T0 checkpoint review commit
-`6277cb28`, release T1, and regenerate active session state.
+Authorized guard-maintenance scope: record Agent System Skills roadmap commit
+`6abda284`, preserve the ADIF-T1 release, and regenerate active session state.
 
 Protected paths:
 
@@ -249,15 +255,15 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/adifT0CheckpointAcceptedT1Release20260623.json`
+- `CVF_SESSION/state/entries/agentSystemSkillsRoadmapAndDualSurfaceRule20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator selected continuous ADIF execution and
-assigned Codex review authority. Session continuity follows Codex checkpoint
-review commit `6277cb28`.
+Operator authorization: the operator required the dual-agent rule and System
+Skills roadmap while keeping ADIF as the active lane. Session continuity
+follows roadmap material commit `6abda284`.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert review commit `6277cb28`, ADIF-T0 commit `7c0480bc`, or prior history.
+revert roadmap commit `6abda284`, review commit `6277cb28`, or prior history.
 
 ## Agent Operation Trace Block
 
@@ -265,25 +271,25 @@ revert review commit `6277cb28`, ADIF-T0 commit `7c0480bc`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ADIF-T0 checkpoint acceptance and T1 release sync, 2026-06-23 |
+| Session or invocation | System Skills roadmap record and ADIF-T1 release-preserving sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
 | Target paths | V22; session front door; state source entries; generated active state |
-| Allowed scope source | Codex checkpoint review `6277cb28` and mandatory continuity rules |
-| Before status evidence | clean worktree after checkpoint review; active state still paused T1 |
-| After status evidence | active mode releases Claude T1 from the post-sync HEAD |
+| Allowed scope source | roadmap/rule commit `6abda284` and mandatory continuity rules |
+| Before status evidence | clean worktree after roadmap material commit; handoff recorded prior material HEAD |
+| After status evidence | active mode still releases Claude T1; ASSF roadmap is parked |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `adif-t0-checkpoint-accepted-t1-release-sync-2026-06-23` |
-| Expected manifest | V22; front door; state core; ADIF-T0 accepted entry; next move; generated active state |
-| Actual changed set | V22; front door; state core; ADIF-T0 accepted entry; next move; generated active state |
+| Invocation ID | `system-skills-roadmap-adif-t1-release-sync-2026-06-23` |
+| Expected manifest | V22; front door; System Skills roadmap state entry; next move; generated active state |
+| Actual changed set | V22; front door; System Skills roadmap state entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records ADIF-T0 continuation
-acceptance and releases T1. It does not finally close ADIF or expand
+This handoff is session continuity only. It records the parked System Skills
+roadmap while preserving ADIF-T1 release. It does not dispatch ASSF or expand
 runtime/provider/live/public behavior.

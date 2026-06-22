@@ -64,6 +64,10 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Dual Agent Surface Accounting is now mandatory and the Agent System Skills
+Foundation roadmap is parked at commit `6abda284`. ASSF work waits while ADIF
+remains active; the immediate next move is still Claude ADIF-T1.
+
 ADIF-T0 is accepted for continuation at Codex checkpoint review commit
 `6277cb28`, based on Claude commit `7c0480bc`. T1 child packet authoring is
 released after this continuity sync. Final full-chain review remains pending.
