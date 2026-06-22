@@ -140,13 +140,13 @@ closure commit `5fc456a4`, or AAF-T7A.1 dispatch commit `af615d1e`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rse_t3_jurisdiction_block_diagnostic_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=worker updates only the two AAF helper files, creates the RSE-T3 worker return, runs required checks, and returns uncommitted; parked checkpoint=MPI-T3/MPI-T4, remaining RSE-T3 diagnostics, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
+Startup acknowledged: current mode=`rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`; active handoff=`AGENT_HANDOFF_V21_2026-06-22.md`; next allowed move=operator may select the next lane, including resuming MPI-T3/MPI-T4 or authorizing a separate future diagnostics slice for remaining RSE-T3 candidates; parked checkpoint=remaining RSE-T3 diagnostics, full AAF-T6 read-receipt gate, AAF-T7 L2 patch preview, CGE-T3 absorption, ACE-R1, MLW7/8, runtime/product behavior beyond authorized helper/gate wiring, MCP execution, watcher/daemon, benchmark proof, automated provider selection, runtime provider routing, freeze action, freeze release, posture mutation, runtime profiles, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement, readiness, full-hook equivalence, universal speed, universal enforcement claims, Learning Plane runtime mutation, Memory readout route edits, route schema changes, registry source or aggregate edits, durable writes, registry generator changes, RT2/RT3 runtime source edits, MLW reference edits, patch apply behavior, and actual CLI/MCP adapter behavior.
 
 ## Current Mode
 
-`rse_t3_jurisdiction_block_diagnostic_dispatched_to_worker`
+`rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`
 
-Current HEAD recorded for this handoff: `963ea3c0`
+Current HEAD recorded for this handoff: `e23b54df`
 
 Material state:
 
@@ -166,6 +166,7 @@ Material state:
 - RSE-T0 work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_FOR_WORKER_2026-06-22.md`
 - RSE-T1 Operator Question Boundary dispatch commit: `57a32070`
+- RSE-T3 Jurisdiction Block Diagnostic closure commit: `e23b54df`
 - RSE-T3 Jurisdiction Block Diagnostic dispatch commit: `963ea3c0`
 - RSE-T3 GC-018 baseline:
   `docs/baselines/CVF_GC018_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_2026-06-22.md`
@@ -203,12 +204,9 @@ Material state:
 
 ## Next Allowed Move
 
-Primary next move: worker updates only `governance/compat/run_agent_automation_assist.py`
-and `governance/compat/test_run_agent_automation_assist.py`, creates
-`docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_WORKER_RETURN_2026-06-22.md`,
-runs the required checks, and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON` uncommitted. Remaining RSE-T3 candidate diagnostics remain
-unauthorized.
+Primary next move: operator may select the next lane, including resuming
+MPI-T3/MPI-T4 or authorizing a separate future diagnostics slice for remaining
+RSE-T3 candidates.
 
 ## Parked Checkpoints
 
@@ -222,6 +220,97 @@ unauthorized.
   EDIT/COMMIT execution, queue/daemon/watcher, readiness, full-hook
   equivalence, cost optimization, and universal governed-coding-control claims
   remain out of scope.
+
+## RSE-T3 Closure Continuity - 2026-06-22
+
+RSE-T3 Jurisdiction Block Diagnostic is `CLOSED_PASS_BOUNDED` at material
+closure commit `e23b54df`, after dispatch commit `963ea3c0` and dispatch
+session-sync commit `955b3ad7`.
+
+Accepted artifacts:
+
+- `governance/compat/run_agent_automation_assist.py`
+- `governance/compat/test_run_agent_automation_assist.py`
+- `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_WORKER_RETURN_2026-06-22.md`
+- `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_COMPLETION_2026-06-22.md`
+- `docs/baselines/CVF_GC018_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_2026-06-22.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_FOR_WORKER_2026-06-22.md`
+
+Result: the AAF helper now emits a bounded read-only `jurisdictionReadout` for
+changed worker-return artifacts whose filename is a worker-return artifact and
+whose text carries finding or gate-trap language without the Worker Return
+Jurisdiction Block. Reviewer repaired a target-class overreach so completion
+reviews that discuss findings or worker returns are not flagged.
+
+Verification passed before this session sync:
+
+- focused unittest: PASS 81/81
+- AAF helper: `resolvedMode=reviewer-return`, `defects=[]`
+- worker-return fast gate: PASS with reviewer-fast 33/33
+- reviewer-return steward: PASS
+- material pre-commit hook: PASS 55/55
+- material commit hook: PASS 55/55
+
+Current mode:
+`rse_t3_jurisdiction_block_diagnostic_closed_pending_next_operator_selection`.
+
+Next allowed move: operator may select the next lane, including resuming
+MPI-T3/MPI-T4 or authorizing a separate future diagnostics slice for remaining
+RSE-T3 candidates.
+
+Remaining RSE-T3 candidate diagnostics, closure-blocking enforcement, new
+exit-nonzero defects, enforce-mode behavior changes, other checker edits,
+autorun wiring changes, work-order template edits, closed RSE document edits,
+runtime/provider/live/public-sync, CLI/MCP adapter behavior, direct
+interception, arbitrary command execution, EDIT/COMMIT execution,
+queue/daemon/watcher, readiness, speed/cost claims, and universal governed-
+coding control remain unauthorized.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: record RSE-T3 material closure commit
+`e23b54df`, set the post-closure next move, and regenerate active session state.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V21_2026-06-22.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/rseT3JurisdictionBlockDiagnosticClosure20260622.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator submitted the RSE-T3 worker return as
+`COMPLETE_PENDING_REVIEW`; reviewer/closer accepted and committed bounded
+closure at `e23b54df`. This authorization covers session continuity only.
+
+Rollback boundary: revert only the RSE-T3 closure session-sync commit if
+rejected. Do not alter material closure commit `e23b54df`, material dispatch
+commit `963ea3c0`, or RSE-T2 closure commit `6ab1eaf6`.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | RSE-T3 closure session sync, 2026-06-22 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | source reads, file edits, state generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V21_2026-06-22.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/rseT3JurisdictionBlockDiagnosticClosure20260622.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md` |
+| Allowed scope source | accepted RSE-T3 closure commit `e23b54df` and mandatory closure continuity |
+| Before status evidence | material closure commit `e23b54df`; state still named RSE-T3 dispatched mode |
+| After status evidence | generated active session state names RSE-T3 closed mode and operator-selection next move |
+| Diff evidence | session-sync diff, generator check, state compatibility, mode consistency, and local hook receipts |
+| Approval boundary | session continuity only |
+| Claim boundary | no worker implementation in this session-sync; no runtime/provider/live/public-sync, remaining T3 diagnostics, closure-blocking enforcement, or AHB semantic change |
+| Agent type | session-sync steward |
+| Invocation ID | `rse-t3-jurisdiction-block-diagnostic-closure-session-sync-v21-2026-06-22` |
+| Expected manifest | session-sync target paths listed above |
+| Actual changed set | session-sync target paths listed above |
+| Manifest delta | MATCH |
+
+---
 
 ## Agent Operation Trace Block
 
