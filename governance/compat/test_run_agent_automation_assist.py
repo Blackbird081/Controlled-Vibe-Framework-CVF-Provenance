@@ -828,5 +828,150 @@ class BridgeLatencyGuardTests(unittest.TestCase):
             )
 
 
+class ReviewerReadoutTests(unittest.TestCase):
+    """AAF-T7A.1: L0 read-only reviewer/closer acceleration readout.
+
+    Advisory only: populated solely for reviewer-return shape, derived from
+    existing diagnostics, never mutating files or deciding closure.
+    """
+
+    def _empty_plan_patch(self):
+        return mock.patch.object(assist, "build_path_plan", return_value=_plan())
+
+    def test_reviewer_readout_empty_for_non_reviewer_return_mode(self):
+        """AC1/AC4: a dispatch-shape changed set must not populate reviewerReadout."""
+        plan = _plan(
+            changed=("docs/work_orders/x.md",),
+            material=("docs/work_orders/x.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_NO_COMMIT_WO_MISSING_CONTRACT
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertNotEqual(report.resolved_mode, "reviewer-return")
+        self.assertEqual(report.reviewer_readout, ())
+
+    def test_reviewer_readout_present_for_reviewer_return_with_gap(self):
+        """AC1: reviewer-return shape with a worker-experience gap yields an advisory item."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.resolved_mode, "reviewer-return")
+        self.assertGreater(len(report.reviewer_readout), 0)
+
+    def test_reviewer_readout_uses_l2a_vocabulary(self):
+        """AC2: every acceleratorDisposition must be a known L2A vocabulary term."""
+        valid = {assist._L2A_ACCELERATOR_CANDIDATE, assist._L2A_READOUT_ONLY}
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        for item in report.reviewer_readout:
+            self.assertIn(item.accelerator_disposition, valid)
+
+    def test_reviewer_readout_clean_reviewer_return_is_empty(self):
+        """AC1: reviewer-return shape with no detectable gap yields an empty readout."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_WITH_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.resolved_mode, "reviewer-return")
+        self.assertEqual(report.reviewer_readout, ())
+
+    def test_reviewer_readout_makes_no_closure_decision(self):
+        """AC3: readout items carry advisory text only; no closed/accepted decision field."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        for item in report.reviewer_readout:
+            self.assertNotIn("CLOSED", item.suggested_action.upper())
+            self.assertNotIn("ACCEPTED", item.suggested_action.upper())
+
+    def test_reviewer_readout_does_not_mutate_filesystem(self):
+        """AC3: building the report opens no file for writing."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        real_open = open
+
+        def guarded_open(file, mode="r", *args, **kwargs):
+            if any(flag in mode for flag in ("w", "a", "x", "+")):
+                raise AssertionError(f"reviewer readout attempted a write open: {file!r} mode={mode!r}")
+            return real_open(file, mode, *args, **kwargs)
+
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ), mock.patch("builtins.open", side_effect=guarded_open):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.resolved_mode, "reviewer-return")
+
+    def test_json_output_has_reviewer_readout_key(self):
+        """AC4: --json output must include reviewerReadout as a list."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--json"])
+        self.assertEqual(rc, 0)
+        payload = json.loads(buf.getvalue())
+        self.assertIn("reviewerReadout", payload)
+        self.assertIsInstance(payload["reviewerReadout"], list)
+        self.assertGreater(len(payload["reviewerReadout"]), 0)
+        for key in ("sourcePath", "conversionStep", "suggestedAction", "acceleratorDisposition", "reason"):
+            self.assertIn(key, payload["reviewerReadout"][0])
+
+    def test_human_output_has_reviewer_readout_section_for_reviewer_return(self):
+        """AC4: human output includes the reviewer acceleration readout section for reviewer-return."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_MISSING_RETRO
+        ):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD"])
+        self.assertEqual(rc, 0)
+        self.assertIn("Reviewer/Closer Acceleration Readout", buf.getvalue())
+
+    def test_reviewer_readout_does_not_add_defects(self):
+        """AC3: the advisory readout must not change enforce-mode defect behavior."""
+        plan = _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch.object(
+            assist, "_read_changed_text", return_value=_WORKER_RETURN_WITH_RETRO
+        ):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.defects, [])
+        self.assertEqual(report.reviewer_readout, ())
+
+
 if __name__ == "__main__":
     unittest.main()

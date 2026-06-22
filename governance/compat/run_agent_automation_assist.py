@@ -475,6 +475,23 @@ class SignalReadoutItem:
     latency_guard_disposition: str = ""
 
 
+@dataclass(frozen=True)
+class ReviewerReadoutItem:
+    """AAF-T7A.1 L0 read-only reviewer/closer acceleration advisory item.
+
+    Advisory text only. Per L2A safety level L0 this changes nothing on disk,
+    makes no closure decision, and authorizes no mutation. Every item is derived
+    from diagnostics build_report already computed for the changed range; no new
+    source read or runtime call is performed.
+    """
+
+    source_path: str
+    conversion_step: str
+    suggested_action: str
+    accelerator_disposition: str
+    reason: str
+
+
 @dataclass
 class AssistReport:
     base: str
@@ -490,6 +507,7 @@ class AssistReport:
     corpus_diagnostics: tuple[CorpusDiagnostic, ...] = field(default_factory=tuple)
     defects: list[str] = field(default_factory=list)
     signal_readout: tuple[SignalReadoutItem, ...] = field(default_factory=tuple)
+    reviewer_readout: tuple[ReviewerReadoutItem, ...] = field(default_factory=tuple)
 
     def to_dict(self) -> dict:
         return {
@@ -542,6 +560,16 @@ class AssistReport:
                     "latencyGuardDisposition": item.latency_guard_disposition,
                 }
                 for item in self.signal_readout
+            ],
+            "reviewerReadout": [
+                {
+                    "sourcePath": item.source_path,
+                    "conversionStep": item.conversion_step,
+                    "suggestedAction": item.suggested_action,
+                    "acceleratorDisposition": item.accelerator_disposition,
+                    "reason": item.reason,
+                }
+                for item in self.reviewer_readout
             ],
         }
 
@@ -666,6 +694,62 @@ def _build_signal_readout(
     )
 
 
+# AAF-T7A.1: L2A acceleration disposition constants for the reviewer readout.
+_L2A_ACCELERATOR_CANDIDATE = "ACCELERATOR_CANDIDATE"
+_L2A_READOUT_ONLY = "READOUT_ONLY"
+
+
+def _build_reviewer_readout(
+    resolved_mode: str,
+    work_order_diagnostics: list[WorkOrderDiagnostic],
+    corpus_diagnostics: list[CorpusDiagnostic],
+    retro_diagnostics: list,
+) -> tuple[ReviewerReadoutItem, ...]:
+    """Build the AAF-T7A.1 L0 read-only reviewer/closer acceleration readout.
+
+    Advisory only (L2A safety level L0): assembles the mechanical closure-
+    conversion steps a reviewer/closer repeats, derived solely from diagnostics
+    build_report already computed. It makes no closure decision, performs no
+    filesystem mutation, and is populated only when the changed range resolves
+    to the reviewer-return shape.
+    """
+    if resolved_mode != "reviewer-return":
+        return ()
+
+    items: list[ReviewerReadoutItem] = []
+    for d in work_order_diagnostics:
+        if d.is_clean:
+            continue
+        items.append(ReviewerReadoutItem(
+            source_path=d.path,
+            conversion_step="confirm worker-return packet-shape contract before closure conversion",
+            suggested_action="repair packet-shape contract terms or N/A-with-reason rows before converting status to closed",
+            accelerator_disposition=_L2A_ACCELERATOR_CANDIDATE,
+            reason="changed work order has packet-shape contract gaps a reviewer would otherwise hand-check",
+        ))
+    for cd in corpus_diagnostics:
+        if cd.is_clean:
+            continue
+        items.append(ReviewerReadoutItem(
+            source_path=cd.path,
+            conversion_step="confirm corpus completeness section before accepting closure evidence",
+            suggested_action="repair corpus completeness fields, reconciliation markers, or verdict before closure",
+            accelerator_disposition=_L2A_ACCELERATOR_CANDIDATE,
+            reason="changed closure artifact has corpus-shape gaps a reviewer would otherwise hand-check",
+        ))
+    for rd in retro_diagnostics:
+        if not (rd.eligible and rd.issues):
+            continue
+        items.append(ReviewerReadoutItem(
+            source_path=rd.path,
+            conversion_step="confirm worker-experience retrospective token before closure conversion",
+            suggested_action="ensure WORKER_EXPERIENCE_RETRO or WORKER_EXPERIENCE_RETRO_NA_WITH_REASON is present",
+            accelerator_disposition=_L2A_READOUT_ONLY,
+            reason="worker-return artifact is missing or has a malformed worker-experience retrospective token",
+        ))
+    return tuple(items)
+
+
 def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
     if requested_mode not in ALLOWED_MODES:
         raise ValueError(f"unsupported mode: {requested_mode}")
@@ -761,6 +845,9 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
             defects.append(f"{rd.path}: worker-experience retro {issue}")
 
     signal_readout_items = _build_signal_readout(diagnostics, corpus_diagnostics_list, retro_diagnostics_list)
+    reviewer_readout_items = _build_reviewer_readout(
+        resolved, diagnostics, corpus_diagnostics_list, retro_diagnostics_list
+    )
     return AssistReport(
         base=base,
         head=head,
@@ -775,6 +862,7 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
         corpus_diagnostics=tuple(corpus_diagnostics_list),
         defects=defects,
         signal_readout=signal_readout_items,
+        reviewer_readout=reviewer_readout_items,
     )
 
 
@@ -834,6 +922,22 @@ def _print_human(report: AssistReport) -> None:
             print(f"    next: {item.next_suggested_action}")
     else:
         print("\nLearning Signal Readout (LSC-T3): no helper-detectable signals for current changed set.")
+
+    if report.resolved_mode == "reviewer-return":
+        if report.reviewer_readout:
+            print(
+                f"\nReviewer/Closer Acceleration Readout (AAF-T7A.1, L0 read-only): "
+                f"{len(report.reviewer_readout)} advisory item(s)"
+            )
+            for item in report.reviewer_readout:
+                print(f"  [{item.accelerator_disposition}] {item.source_path}")
+                print(f"    step: {item.conversion_step}")
+                print(f"    next: {item.suggested_action}")
+        else:
+            print(
+                "\nReviewer/Closer Acceleration Readout (AAF-T7A.1, L0 read-only): "
+                "no helper-detectable conversion gaps; reviewer authors closure normally."
+            )
 
 
 def main(argv: list[str] | None = None) -> int:
