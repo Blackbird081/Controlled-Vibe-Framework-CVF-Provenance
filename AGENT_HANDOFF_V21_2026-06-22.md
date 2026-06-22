@@ -193,7 +193,7 @@ Startup acknowledged: current mode=`mpi_t3_external_agent_memory_summary_contrac
 
 `mpi_t3_external_agent_memory_summary_contract_dispatched_to_worker`
 
-Current HEAD recorded for this handoff: `c23587e0`
+Current HEAD recorded for this handoff: `02a7162e`
 
 Material state:
 
@@ -293,13 +293,17 @@ pre-implementation passed 46/46; material pre-commit passed 55/55. Material
 pre-closure content gates passed with only this expected handoff HEAD sync
 remaining before the dedicated continuity commit.
 
+Nested Gate Evidence heading parsing was hardened in follow-up material commit
+`02a7162e`; focused tests now pass 13/13.
+
 Current mode and next move remain MPI-T3 reviewer closure. MPI-T4/MPI-T5/MPI-T6
 and all runtime/provider/live/public-sync expansion remain parked.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record governance-hardening material commit
-`c23587e0` in the active handoff without changing mode or next-move authority.
+Authorized guard-maintenance scope: record governance-hardening material commits
+`c23587e0` and `02a7162e` in the active handoff without changing mode or
+next-move authority.
 
 Protected paths:
 
@@ -309,7 +313,8 @@ Operator authorization: the operator directed CVF foundation hardening before
 MPI-T3 completion review, commit, or movement to a later tranche.
 
 Rollback boundary: revert only this handoff-only continuity commit if rejected.
-Do not revert material hardening commit `c23587e0` or MPI-T3 dispatch history.
+Do not revert material hardening commits `c23587e0`, `02a7162e`, or MPI-T3
+dispatch history.
 
 ## RSE-T3 Closure Continuity - 2026-06-22
 
