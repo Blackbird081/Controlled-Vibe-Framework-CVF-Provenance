@@ -227,6 +227,7 @@ required.
 |---|---|---|---|---|
 | ADIF-T2 reviewer acceptance | `07000fd6` | `HANDOFF_SYNC_BRIDGE_PASS` | author and gate T3-T5 continuous-execution hardening | continuity only; no T3 release or final closure claim |
 | ADIF T3-T5 hardening | `dfaae2e7` | `HANDOFF_SYNC_BRIDGE_PASS` | execute joint T3/T4 dispatch, parallel evidence branches, convergence, then T5 | root handoff only between transitions; final review after T5 |
+| ADIF-T3/T4 joint dispatch | `af56db7c` | `HANDOFF_SYNC_BRIDGE_PASS` | fork isolated worktrees from this bridge HEAD; execute T3 and T4 in parallel; integrate both branches without squashing | root handoff only between transitions; no per-tranche review pause; final review after T5 |
 
 The Agent System Skills roadmap and mandatory internal/external CLI/MCP
 accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
