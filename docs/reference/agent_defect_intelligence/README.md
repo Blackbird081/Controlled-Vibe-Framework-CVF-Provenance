@@ -28,7 +28,7 @@ ADIF itself owns.
 | Tranche | Output | Status |
 |---|---|---|
 | ADIF-T0 | Owner reconciliation and taxonomy contract | committed (this folder) |
-| ADIF-T1 | Entry schema, source layout, seed dictionary | not started |
+| ADIF-T1 | Entry schema, source layout, seed dictionary | committed (`CVF_ADIF_ENTRY_TEMPLATE.md` and `entries/`) |
 | ADIF-T2 | Task/role/phase defect packet resolver | not started |
 | ADIF-T3 | Early preflight integration | not started |
 | ADIF-T4 | Reviewer finding intake and de-dup bridge | not started |
@@ -40,8 +40,20 @@ ADIF itself owns.
    - the full tranche sequence and design principles.
 2. `docs/reference/agent_defect_intelligence/CVF_ADIF_T0_OWNER_RECONCILIATION_TAXONOMY_CONTRACT.md`
    - the binding ownership and taxonomy contract.
-3. `docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md`
+3. `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`
+   - the fixed entry field template every entry must follow.
+4. `docs/reference/agent_defect_intelligence/entries/` - eight seed entries
+   (`ADIF-0001` through `ADIF-0008`), each citing canonical evidence and an
+   `enforcementLevel`.
+5. `docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md`
    - the continuous-execution authorization governing T0 through T5.
+
+## Reading An Entry
+
+Each file under `entries/` opens with a fenced field block (`defectId`,
+`defectCategory`, `defectClass`, `enforcementLevel`, etc.) followed by a bad
+example, a good example, canonical sources, and remediation. No resolver
+exists yet (ADIF-T2); read entries directly until then.
 
 ## Canonical Owners ADIF Must Not Duplicate
 
