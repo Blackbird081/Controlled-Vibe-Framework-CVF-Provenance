@@ -36,17 +36,20 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync update after MPI-T5 dispatch
-commit `501fcafa`.
+Authorized guard-maintenance scope: session-sync update after MPI-T5 private
+closure and pending public-sync routing.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/aafT7CReviewerScaffoldShapeHardeningClosure20260622.json`
 - `CVF_SESSION/state/entries/lpfTsconfigRootDirSyncFix20260622.json`
+- `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerClosure20260622.json`
 - `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerDispatch20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V22_2026-06-22.md`
 
 Operator authorization: the operator requested MPI-T5 review, worker execution,
 commit, and public GitHub sync on 2026-06-22.
@@ -58,9 +61,9 @@ history.
 
 ## Current Mode
 
-`mpi_t5_memory_access_claim_checker_dispatched_to_worker`
+`mpi_t5_memory_access_claim_checker_closed_pending_public_sync`
 
-Current material HEAD recorded for this handoff: `501fcafa`
+Current material HEAD recorded for this handoff: `97e7f9fc`
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
@@ -73,17 +76,21 @@ runtime source as authority.
 
 ## Latest Work / Changes
 
-MPI-T5 Memory Access Claim Checker is `DISPATCHED_TO_WORKER` at dispatch commit
-`501fcafa`. Accepted dispatch artifacts:
+MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` pending public-sync
+from the sibling public-sync clone. Accepted private closure artifacts:
 
 - `docs/baselines/CVF_GC018_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md`
+- `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_WORKER_RETURN_2026-06-22.md`
+- `docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_COMPLETION_2026-06-22.md`
+- `governance/compat/check_memory_access_claim.py`
+- `governance/compat/test_check_memory_access_claim.py`
 
-Worker scope is limited to the static checker, focused test, worker return, and
-exactly one wiring entry each in the reviewer-fast hook chain and autorun common
-bundle. Public GitHub sync is operator-authorized only as a later separate
-public-sync step from the sibling public-sync clone after private material
-closure and public/provenance boundary review.
+Result: local static Memory Plane claim checker is wired into reviewer-fast and
+autorun common gates. Focused pytest passed 13/13, checker self-run passed,
+pre-implementation autorun passed, and worker-return fast gate passed. Public
+GitHub sync is operator-authorized only from the sibling public-sync clone after
+remote verification.
 
 LPF TypeScript config rootDir sync fix is `CLOSED_PASS_BOUNDED` at material
 commit `bf8ff950`. Accepted artifacts:
@@ -170,20 +177,21 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Worker executes only the MPI-T5 allowed static-checker scope and returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. Reviewer/closer
-then reviews, commits accepted material, and performs session-sync. MPI-T6 and
-runtime/provider/live expansion remain parked.
+Complete public/provenance boundary review, verify the sibling public-sync clone
+remote is `Blackbird081/Controlled-Vibe-Framework-CVF.git`, sync public-safe
+MPI-T5 checker/wiring artifacts only, commit and push from the public-sync
+clone, then record session-sync. MPI-T6 and runtime/provider/live expansion
+remain parked.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t5_memory_access_claim_checker_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=worker executes only MPI-T5 allowed static-checker scope and returns uncommitted; parked checkpoint=MPI-T6 and runtime/provider/live expansion remain parked pending explicit authorization, with public GitHub sync authorized only as a later separate public-sync step from the sibling public-sync clone after private material closure.
+Startup acknowledged: current mode=`mpi_t5_memory_access_claim_checker_closed_pending_public_sync`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=public-sync from sibling public-sync clone after remote verification; parked checkpoint=MPI-T6 and runtime/provider/live expansion remain parked pending explicit authorization.
 
 ## Parked Checkpoints
 
 - MPI-T4 is closed bounded.
-- MPI-T5 and MPI-T6 remain parked behind their prerequisites and operator
-  selection.
+- MPI-T5 is closed bounded pending public-sync.
+- MPI-T6 remains parked behind its prerequisites and operator selection.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t5_memory_access_claim_checker_dispatched_to_worker`
+Current mode marker: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t5_memory_access_claim_checker_dispatched_to_worker`.
+Current mode: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`.
 
-Previous mode: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`.
+Previous mode: `mpi_t5_memory_access_claim_checker_dispatched_to_worker`.
 
 Active handoff:
 
@@ -64,9 +64,11 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-MPI-T5 Memory Access Claim Checker is `DISPATCHED_TO_WORKER` at dispatch commit
-`501fcafa`. Worker executes only the bounded static checker/test/two-line
-wiring scope and returns uncommitted for reviewer/closer acceptance.
+MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` pending public-sync
+from the sibling public-sync clone. Private closure artifacts: accepted worker
+return, completion review, closed GC-018/work order, roadmap status
+`MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC`, new static checker/test, and
+one reviewer-fast plus one autorun wiring entry.
 
 Latest prior material work: AAF-T7C Reviewer Scaffold Shape Hardening is
 `CLOSED_PASS_BOUNDED` at material commit `b7601865`, and the LPF TypeScript
@@ -672,11 +674,12 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`.
+Mode: `mpi_t5_memory_access_claim_checker_closed_pending_public_sync`.
 
-Next allowed move: operator checkpoint. Select MPI-T5 Memory Access Claim
-Checker, select MPI-T6 Runtime Candidate Decision Packet, hold MPI Phase 2, or
-select another separately authorized lane.
+Next allowed move: complete public/provenance boundary review, verify the
+sibling public-sync clone remote is `Blackbird081/Controlled-Vibe-Framework-CVF.git`,
+sync public-safe MPI-T5 checker/wiring artifacts only, commit and push from the
+public-sync clone, then record session-sync. MPI-T6 remains parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
