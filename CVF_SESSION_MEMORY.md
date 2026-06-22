@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`
+Current mode marker: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`.
+Current mode: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`.
 
-Previous mode: `mpi_t6_review_gate_hardening_closed_pending_claude_packet_repair`.
+Previous mode: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`.
 
 Active handoff:
 
@@ -70,8 +70,14 @@ Agent Defect Intelligence Foundation roadmap is
 ownership and proposes bounded task-role-phase defect packets rather than a
 full-dictionary read. Recommended first child: ADIF-T0 Owner Reconciliation And
 Taxonomy Contract, parked pending explicit operator selection and fresh
-GC-018/work order. Immediate MPI next move remains Claude's MPI-T6 packet repair
-followed by Codex review under the hardened gates.
+GC-018/work order.
+
+MPI-T6 Runtime Candidate Decision Packet is `CLOSED_PASS_BOUNDED` with `DEFER`
+at material commit `14f8e5f9`. Reviewer corrections closed incomplete source
+enumeration, file-history wording, stale parent-state evidence, and premature
+continuity claims. MPI Phase 2 is fully decided private-only. No MPI runtime,
+route, vector/durable store, MCP/CLI adapter, provider/live, or public export is
+authorized.
 
 MPI-T6 Review Gate Hardening is `CLOSED_PASS_BOUNDED` at material commit
 `df4029e2`. Three existing checker owners now reject narrow exhaustive
@@ -79,9 +85,9 @@ directory overclaims, missing Machine Closure Package on closed GC-018
 baselines, decided-versus-parked roadmap residue, closed
 `COMPLETE_PENDING_GATES` residue, and provider-local `AskUserQuestion` rows
 marked `ACCEPT` authority. Focused tests pass 41 tests; worker-return fast gate
-and reviewer-fast 34/34 pass. Next move: Claude repairs the retained MPI-T6
-packet/roadmap, then Codex reviews it under these hardened gates. MPI-T6 runtime
-authorization and runtime/provider/live/public expansion remain parked.
+and reviewer-fast 34/34 pass. Its regression target has now closed bounded at
+`14f8e5f9`; MPI runtime authorization and runtime/provider/live/public
+expansion remain parked.
 
 MPI-T5 Memory Access Claim Checker is `CLOSED_PASS_BOUNDED` and public-synced
 from the sibling public-sync clone. Public remote was verified as
@@ -696,12 +702,12 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`.
+Mode: `mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`.
 
-Next allowed move: Claude repairs the retained MPI-T6 decision packet and
-roadmap, then Codex reviews the revision under hardened gates. ADIF-T0 is an
-operator checkpoint and remains parked until explicitly selected. Runtime
-authorization and ADIF implementation remain parked.
+Next allowed move: operator checkpoint for ADIF-T0 Owner Reconciliation And
+Taxonomy Contract. It remains parked until explicitly selected and requires a
+fresh GC-018 plus source-verified work order. MPI runtime expansion and ADIF
+implementation remain parked.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
@@ -709,8 +715,8 @@ verification, queue/daemon, CVF Web action execution, direct IDE/shell/git/
 filesystem interception, broad wrapper/proxy/runtime enforcement, readiness
 claims, actual CLI/MCP adapter behavior, Learning Plane runtime mutation,
 Memory readout route edits, route schema changes, registry source or aggregate
-edits, durable writes, registry generator changes, MPI-T6 until its
-prerequisites are selected, full AAF-T6, AAF-T7 L2 patch preview beyond AAF-T7B,
+edits, durable writes, registry generator changes, MPI runtime expansion, full
+AAF-T6, AAF-T7 L2 patch preview beyond AAF-T7B,
 CGE-T3, ACE-R1, MLW7/8, helper/checker implementation beyond the authorized
 MPI-T4 work order, patch apply behavior, and universal governed-coding claims.
 LHW24 remains the latest closed numbered LHW wave.

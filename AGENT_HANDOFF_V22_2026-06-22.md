@@ -11,9 +11,9 @@ Supersedes:
 
 ## Purpose
 
-Record MPI-T4 closure continuity after MPI-T3 bounded closure. Detailed
-history remains in completion artifacts, generated session state entries, and
-archived handoffs.
+Record current MPI Phase 2 and ADIF roadmap continuity. Detailed history
+remains in completion artifacts, generated session state entries, and archived
+handoffs.
 
 ## Scope / Target / Owner Boundary
 
@@ -36,8 +36,8 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync update after MPI-T5 private
-closure and completed public-sync routing.
+Authorized guard-maintenance scope: session-sync update after MPI-T6 bounded
+decision closure at material commit `14f8e5f9`.
 
 Protected paths:
 
@@ -49,15 +49,16 @@ Protected paths:
 - `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerDispatch20260622.json`
 - `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerPublicSync20260622.json`
 - `CVF_SESSION/state/entries/mpiT6ReviewGateHardeningClosure20260622.json`
+- `CVF_SESSION/state/entries/mpiT6RuntimeCandidateDecisionClosure20260622.json`
 - `CVF_SESSION/state/entries/adifFoundationRoadmap20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
 Operator authorization: the operator requested MPI-T5 review, execution, and
-public sync, then explicitly prioritized CVF hardening before Claude repairs
-MPI-T6 and requested the Agent Defect Intelligence Foundation roadmap on
-2026-06-22.
+public sync, then explicitly prioritized CVF hardening before Claude repaired
+MPI-T6, requested the Agent Defect Intelligence Foundation roadmap, and
+authorized Codex to fix and commit remaining MPI-T6 findings on 2026-06-22.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
 revert MPI-T5 dispatch commit `501fcafa`, AAF-T7C material commit `b7601865`,
@@ -66,9 +67,11 @@ history.
 
 ## Current Mode
 
-`adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`
+`mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`
 
-Current material HEAD recorded for this handoff: `97e7f9fc`
+MPI-T6 decision material HEAD: `14f8e5f9`
+
+Current material HEAD recorded for this handoff: `14f8e5f9`
 
 Current session-sync HEAD recorded for this handoff: `8534621c`
 
@@ -200,21 +203,22 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Claude repairs the retained MPI-T6 decision packet and roadmap in the operator
-worktree. Codex then reviews the revision under the hardened gates. ADIF-T0 is
-parked at an operator checkpoint. MPI-T6 runtime authorization, ADIF
-implementation, and runtime/provider/live expansion remain parked.
+MPI Phase 2 is fully decided private-only; MPI-T6 closed bounded with `DEFER`
+at material commit `14f8e5f9`. ADIF-T0 is parked at an operator checkpoint and
+requires explicit selection, fresh GC-018, and a source-verified work order.
+MPI runtime authorization, ADIF implementation, and runtime/provider/live
+expansion remain parked.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`adif_foundation_roadmap_ready_pending_t0_selection_and_mpi_t6_repair_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude repairs MPI-T6 and Codex reviews it; parked checkpoint=ADIF-T0 selection, MPI-T6 runtime authorization, and runtime/provider/live expansion remain parked.
+Startup acknowledged: current mode=`mpi_t6_decided_defer_phase2_fully_decided_pending_adif_t0_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator checkpoint for ADIF-T0; parked checkpoint=ADIF-T0 selection, MPI runtime authorization, and runtime/provider/live expansion remain parked.
 
 ## Parked Checkpoints
 
 - MPI-T4 is closed bounded.
 - MPI-T5 is closed bounded and public-synced at public commit `602550404`.
-- MPI-T6 decision packet repair/review is next; runtime authorization remains
-  parked.
+- MPI-T6 decision packet is closed bounded with `DEFER` at `14f8e5f9`; runtime
+  authorization remains parked.
 - ADIF-T0 Owner Reconciliation And Taxonomy Contract is roadmap-ready but
   parked pending explicit operator selection.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
@@ -228,34 +232,26 @@ Startup acknowledged: current mode=`adif_foundation_roadmap_ready_pending_t0_sel
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record MPI-T4 material closure commit
-`28373d14`, update current mode and next move, and regenerate active session
+Authorized guard-maintenance scope: record MPI-T6 decision closure commit
+`14f8e5f9`, update current mode and next move, and regenerate active session
 state.
 
 Protected paths:
 
-- `AGENTS.md`
-- `AGENT_HANDOFF_V21_2026-06-22.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V21_2026-06-22.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mpiPhase2ExternalMemoryReadRoadmap20260622.json`
-- `CVF_SESSION/state/entries/mpiT3ExternalAgentMemorySummaryContractClosure20260622.json`
-- `CVF_SESSION/state/entries/mpiT4FederatedMemoryReadHelperDispatch20260622.json`
-- `CVF_SESSION/state/entries/mpiT4FederatedMemoryReadHelperClosure20260622.json`
+- `CVF_SESSION/state/entries/mpiT6RuntimeCandidateDecisionClosure20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/lastUpdated.json`
 
-Operator authorization: the operator explicitly selected MPI-T4, and material
-closure commit `28373d14` closed the bounded worker step. Session continuity is
-a mandatory consequence of the accepted material closure.
+Operator authorization: the operator explicitly asked Codex to fix remaining
+MPI-T6 findings and commit cleanly before the next roadmap. Session continuity
+is a mandatory consequence of material closure `14f8e5f9`.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert MPI-T4 material closure `28373d14`, MPI-T4 material dispatch
-`98709fd0`, MPI-T3 material closure `c4c53588`, hardening commits `c23587e0`
-and `02a7162e`, or prior dispatch/closure history.
+revert MPI-T6 material closure `14f8e5f9`, ADIF roadmap material commit
+`d86f49e9`, or prior dispatch/closure history.
 
 ## Agent Operation Trace Block
 
@@ -263,26 +259,27 @@ and `02a7162e`, or prior dispatch/closure history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | MPI-T4 closure session sync, 2026-06-22 |
+| Session or invocation | MPI-T6 decision closure session sync, 2026-06-22 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
 | Target paths | V22; session front door; state source entries; generated active state |
-| Allowed scope source | accepted MPI-T4 closure commit `28373d14` and mandatory continuity rules |
-| Before status evidence | material closure committed; active state still named MPI-T4 dispatched to worker |
-| After status evidence | active mode names MPI-T4 closed pending operator selection |
+| Allowed scope source | accepted MPI-T6 closure commit `14f8e5f9` and mandatory continuity rules |
+| Before status evidence | material closure committed; active state still routed MPI-T6 repair/review |
+| After status evidence | active mode names MPI Phase 2 fully decided pending ADIF-T0 selection |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `mpi-t3-closure-session-sync-2026-06-22` |
-| Expected manifest | V22; front door; state core; roadmap entry; MPI-T4 closure entry; next move; last updated; generated active state |
-| Actual changed set | V22; front door; state core; roadmap entry; MPI-T4 closure entry; next move; last updated; generated active state |
+| Invocation ID | `mpi-t6-decision-closure-session-sync-2026-06-22` |
+| Expected manifest | V22; front door; state core; MPI-T6 closure entry; next move; generated active state |
+| Actual changed set | V22; front door; state core; MPI-T6 closure entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records MPI-T4 bounded closure and
-the next operator checkpoint. It does not authorize MPI-T5, MPI-T6,
-route/schema/auth changes, registry/durable writes, provider/live proof,
-public-sync, CLI/MCP adapter behavior, or universal governed-coding control.
+This handoff is session continuity only. It records MPI-T6 bounded `DEFER`
+closure and the ADIF-T0 operator checkpoint. It does not authorize MPI runtime
+expansion, ADIF implementation, route/schema/auth changes, registry/durable
+writes, provider/live proof, public-sync, CLI/MCP adapter behavior, or
+universal governed-coding control.
