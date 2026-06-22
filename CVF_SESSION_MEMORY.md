@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`
+Current mode marker: `mpi_t5_memory_access_claim_checker_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`.
+Current mode: `mpi_t5_memory_access_claim_checker_dispatched_to_worker`.
 
-Previous mode: `mpi_t4_federated_memory_read_helper_dispatched_to_worker`.
+Previous mode: `mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`.
 
 Active handoff:
 
@@ -64,7 +64,11 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Latest material work: AAF-T7C Reviewer Scaffold Shape Hardening is
+MPI-T5 Memory Access Claim Checker is `DISPATCHED_TO_WORKER` at dispatch commit
+`501fcafa`. Worker executes only the bounded static checker/test/two-line
+wiring scope and returns uncommitted for reviewer/closer acceptance.
+
+Latest prior material work: AAF-T7C Reviewer Scaffold Shape Hardening is
 `CLOSED_PASS_BOUNDED` at material commit `b7601865`, and the LPF TypeScript
 config rootDir sync fix is `CLOSED_PASS_BOUNDED` at material commit
 `bf8ff950`.

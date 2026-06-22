@@ -36,29 +36,31 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync update after AAF-T7C material
-commit `b7601865` and LPF TypeScript config material commit `bf8ff950`.
+Authorized guard-maintenance scope: session-sync update after MPI-T5 dispatch
+commit `501fcafa`.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/entries/aafT7CReviewerScaffoldShapeHardeningClosure20260622.json`
 - `CVF_SESSION/state/entries/lpfTsconfigRootDirSyncFix20260622.json`
+- `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerDispatch20260622.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator requested sync after confirming the local
-LPF config issue was fixed on 2026-06-22.
+Operator authorization: the operator requested MPI-T5 review, worker execution,
+commit, and public GitHub sync on 2026-06-22.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert AAF-T7C material commit `b7601865`, LPF config material commit
-`bf8ff950`, MPI-T4 closure, or earlier session history.
+revert MPI-T5 dispatch commit `501fcafa`, AAF-T7C material commit `b7601865`,
+LPF config material commit `bf8ff950`, MPI-T4 closure, or earlier session
+history.
 
 ## Current Mode
 
-`mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`
+`mpi_t5_memory_access_claim_checker_dispatched_to_worker`
 
-Current material HEAD recorded for this handoff: `bf8ff950`
+Current material HEAD recorded for this handoff: `501fcafa`
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
@@ -70,6 +72,18 @@ front doors, state sources, handoffs, standards, work orders, reviews, and
 runtime source as authority.
 
 ## Latest Work / Changes
+
+MPI-T5 Memory Access Claim Checker is `DISPATCHED_TO_WORKER` at dispatch commit
+`501fcafa`. Accepted dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md`
+
+Worker scope is limited to the static checker, focused test, worker return, and
+exactly one wiring entry each in the reviewer-fast hook chain and autorun common
+bundle. Public GitHub sync is operator-authorized only as a later separate
+public-sync step from the sibling public-sync clone after private material
+closure and public/provenance boundary review.
 
 LPF TypeScript config rootDir sync fix is `CLOSED_PASS_BOUNDED` at material
 commit `bf8ff950`. Accepted artifacts:
@@ -156,13 +170,14 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Operator checkpoint. Select MPI-T5 Memory Access Claim Checker, select MPI-T6
-Runtime Candidate Decision Packet, hold MPI Phase 2, or select another
-separately authorized lane.
+Worker executes only the MPI-T5 allowed static-checker scope and returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` uncommitted. Reviewer/closer
+then reviews, commits accepted material, and performs session-sync. MPI-T6 and
+runtime/provider/live expansion remain parked.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t4_federated_memory_read_helper_closed_pending_operator_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator selects MPI-T5, selects MPI-T6, holds MPI Phase 2, or selects another separately authorized lane; parked checkpoint=MPI-T5/MPI-T6 and all runtime/provider/live/public-sync expansion remain parked pending explicit authorization.
+Startup acknowledged: current mode=`mpi_t5_memory_access_claim_checker_dispatched_to_worker`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=worker executes only MPI-T5 allowed static-checker scope and returns uncommitted; parked checkpoint=MPI-T6 and runtime/provider/live expansion remain parked pending explicit authorization, with public GitHub sync authorized only as a later separate public-sync step from the sibling public-sync clone after private material closure.
 
 ## Parked Checkpoints
 
