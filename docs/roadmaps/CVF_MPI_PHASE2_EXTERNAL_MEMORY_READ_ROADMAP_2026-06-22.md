@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MPI_T4_DISPATCHED_TO_WORKER
+Status: MPI_T4_CLOSED_PASS_BOUNDED_PENDING_OPERATOR_SELECTION
 
 docType: roadmap
 
@@ -114,7 +114,7 @@ Learning Plane mutation from this roadmap.
 | Tranche | Purpose | Output | Initial status |
 |---|---|---|---|
 | MPI-T3 | External Agent Memory Summary Contract | Reference contract defining summary-only read request/response and adapter-contract-only boundary | CLOSED_PASS_BOUNDED |
-| MPI-T4 | Federated Memory Read Helper | Optional read-only helper/readout that combines allowed summary sources deterministically | DISPATCHED_TO_WORKER |
+| MPI-T4 | Federated Memory Read Helper | Optional read-only helper/readout that combines allowed summary sources deterministically | CLOSED_PASS_BOUNDED |
 | MPI-T5 | Memory Access Claim Checker | Optional checker that rejects overclaims such as raw memory, vector DB, runtime store, or live external access without proof | PARKED_AFTER_T3_T4_DECISION |
 | MPI-T6 | Runtime Candidate Decision Packet | Decision packet only: whether later runtime route/vector/durable work is worth authorizing | PARKED_DECISION_ONLY |
 
@@ -154,8 +154,10 @@ call, live proof, public-sync, worker apply mode, or commit automation.
 ## MPI-T4 Federated Memory Read Helper
 
 MPI-T4 was explicitly selected by the operator after MPI-T3 closed at material
-commit `c4c53588`. Its fresh GC-018 and source-verified work order release only
-the bounded local helper, focused tests, and uncommitted worker return.
+commit `c4c53588`. Its fresh GC-018 and source-verified work order released
+only the bounded local helper, focused tests, and uncommitted worker return.
+Reviewer accepted the worker return with one allowed-scope semantic repair:
+malformed non-empty registry input now marks `registryDegraded=true`.
 
 Recommended helper shape, if opened:
 
@@ -248,8 +250,9 @@ secrets/quota handling if applicable.
 | Execute MPI-T3 under selected worker boundary | Worker if dispatched | PASS_BOUNDED |
 | Review and close or reject MPI-T3 | Reviewer/closer | PASS_BOUNDED |
 | Decide whether MPI-T4 is needed | Operator/reviewer checkpoint | PASS - operator selected MPI-T4 after MPI-T3 closure |
-| Author and gate MPI-T4 GC-018/work order | Dispatch author/reviewer | DISPATCHED_TO_WORKER |
-| Execute MPI-T4 bounded helper/test tranche | Worker | DISPATCHED_TO_WORKER |
+| Author and gate MPI-T4 GC-018/work order | Dispatch author/reviewer | PASS |
+| Execute MPI-T4 bounded helper/test tranche | Worker | PASS_BOUNDED |
+| Review and close or reject MPI-T4 | Reviewer/closer | PASS_BOUNDED |
 | Decide whether MPI-T5 checker is needed | Operator/reviewer checkpoint after repeated evidence | PARKED |
 | Decide whether MPI-T6 runtime candidate packet is needed | Operator checkpoint after T3/T4 evidence | PARKED |
 
@@ -441,11 +444,27 @@ catalog claim is authorized.
 
 ## Machine Closure Package
 
-| Field | Disposition |
-|---|---|
-| Roadmap state | `Status: MPI_T4_DISPATCHED_TO_WORKER` |
-| Closure state | N/A with reason: this roadmap is not closed; it is ready for future work-order authoring |
-| Parent roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` records MPI-T2 closed bounded and MPI-T3/MPI-T4 parked |
-| Work-order state | MPI-T3 work order is `CLOSED_PASS_BOUNDED`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md` is `DISPATCHED_TO_WORKER` |
-| Implementation state | MPI-T4 helper/test execution is released to the worker but no implementation artifact is present in the dispatch batch |
-| Next authorized move | execute MPI-T4 exactly within its work order and return uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; MPI-T5/MPI-T6 and route/provider/live/public-sync scope remain parked |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: MPI_T4_CLOSED_PASS_BOUNDED_PENDING_OPERATOR_SELECTION` | PASS |
+| Closure state | this file | MPI-T4 child tranche closed bounded; roadmap remains open for operator selection of MPI-T5, MPI-T6, hold, or another lane | PASS |
+| Parent roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | records MPI-T2 closed bounded and MPI-T3/MPI-T4 parked | PASS |
+| Implementation state | MPI-T4 helper/test | focused Vitest 24/24, TypeScript check PASS, worker-return fast gate PASS, and reviewer repair for malformed registry degradation | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; no MPI-T4 registry row required | PASS |
+| External evidence digest | N/A | no external evidence is consumed | N/A with reason |
+| System loop interlock | N/A | no runtime/system loop is changed | N/A with reason |
+| Session continuity | active state/front door/handoff | dedicated session-sync follows material closure | PASS |
+| Next authorized move | active session state/front door/handoff | operator checkpoint: select MPI-T5, select MPI-T6 decision packet, hold MPI Phase 2, or select another separately authorized lane; route/provider/live/public-sync scope remains parked | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: MPI-T4 creates no runtime receipt | N/A with reason |
+| `rawMemoryReleased` | false on helper result and readout | PASS |
+| `canReinject` | false on helper result and readout | PASS |
+| Registry input degradation | absent, empty, malformed, or projection-failed input is advisory/degraded | PASS |
+| Adapter/runtime implementation | none in MPI-T4 changed set | PASS |

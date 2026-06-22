@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -525,6 +525,15 @@ The worker fulfills the proof manifest only with the exact three Allowed Scope
 paths, actual command outputs, and actual git evidence. No inferred or
 chat-memory evidence substitutes for a source file or command result.
 
+## Required Artifact Manifest
+
+| Required artifact | Required path | Final evidence | Status |
+|---|---|---|---|
+| Federated helper | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.ts` | created; focused Vitest and TypeScript check PASS | PASS |
+| Focused test | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.test.ts` | created; focused Vitest PASS 24/24 with sibling projection tests | PASS |
+| Worker return | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_WORKER_RETURN_2026-06-22.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Completion review | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+
 ## Self-Reported Gate Evidence Consistency
 
 Any claimed PASS must match the recorded command exit/result. A skipped or
@@ -555,17 +564,17 @@ if current mode changes. Each item must be PASS, `N/A with reason`, or BLOCKED.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | target closure status `CLOSED_PASS_BOUNDED` in reviewer-owned completion review path `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md` | N/A with reason: dispatch packet awaits worker return |
-| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md` | completion review status and closure commit recorded by reviewer/closer | N/A with reason: reviewer artifact is created during reviewer-owned closure |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | `docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md` | current top status and Machine Closure Package row match | PASS |
 | Registry JSON | N/A | no registry JSON changes authorized; verify unchanged with `git diff --name-status` before closure | PASS |
 | Registry Markdown | N/A | no registry Markdown changes authorized; verify unchanged with `git diff --name-status` before closure | PASS |
 | External evidence digest | this work order and paired GC-018 | External Knowledge Intake Routing present; chain map sha256=09CD47C35F9A271748B8D51CC4C682426C74E9E2D4C2B211C5C189A7E66F98D7 | PASS |
 | System loop interlock | this work order | no system loop, wrapper, proxy, queue, daemon, watcher, or universal-control expansion | PASS |
-| GC-018 | paired baseline | target closure status `CLOSED_PASS_BOUNDED` in reviewer-owned completion review | N/A with reason: awaits worker return |
-| Worker return | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_WORKER_RETURN_2026-06-22.md` | `Status: ACCEPTED_BY_REVIEWER` | N/A with reason: awaits worker return |
-| Runtime helper/tests | two worker source paths | committed diff plus focused checks | N/A with reason: awaits worker return |
-| Session continuity | reviewer-owned later phase | current mode/next move aligned | N/A with reason: session update occurs during material closure |
+| GC-018 | paired baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_WORKER_RETURN_2026-06-22.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Runtime helper/tests | two worker source paths | focused Vitest 24/24 and TypeScript check PASS | PASS |
+| Session continuity | reviewer-owned later phase | dedicated session-sync follows material closure | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
