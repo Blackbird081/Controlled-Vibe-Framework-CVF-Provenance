@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -296,13 +296,13 @@ together; the new directory is removed if it becomes empty.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_FOR_WORKER_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Worker return | `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_WORKER_RETURN_2026-06-22.md` | worker returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md` | reviewer/closer creates only if accepted | PENDING_REVIEW |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` after reviewer closure | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer closure | PASS |
+| Worker return | `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_WORKER_RETURN_2026-06-22.md` | worker returned `COMPLETE_PENDING_REVIEW` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md` | reviewer/closer accepted bounded documentation standard | PASS |
 | Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
 | Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
-| Session continuity | active session front-door/state/handoff | session-sync follows accepted dispatch/closure commit if needed | PENDING_SESSION_SYNC |
+| Session continuity | active session front-door/state/handoff | session-sync follows accepted material closure commit | PASS |
 
 ## Claim Boundary
 

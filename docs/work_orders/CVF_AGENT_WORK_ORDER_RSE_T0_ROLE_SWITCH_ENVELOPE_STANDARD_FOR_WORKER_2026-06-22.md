@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -243,8 +243,12 @@ Allowed scope:
 - create `docs/reference/role_switch_envelope/README.md` as a compact front door;
 - create
   `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_WORKER_RETURN_2026-06-22.md`;
-- reviewer/closer closure conversion may update this work order, paired
-  GC-018, and create the completion review after accepting the worker return.
+- reviewer/closer closure conversion may update
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_FOR_WORKER_2026-06-22.md`,
+  `docs/baselines/CVF_GC018_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_2026-06-22.md`,
+  and create
+  `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md`
+  after accepting the worker return.
 
 Forbidden scope:
 
@@ -422,16 +426,16 @@ material into a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed files stay inside Required Deliverables.
-- [ ] Standard names every minimum role-switch envelope field.
-- [ ] Standard includes a compliant worker-to-reviewer example.
-- [ ] Standard includes a forbidden operator-question example matching the AAF-T7B pattern.
-- [ ] Standard states documentation-only and AHB local-view boundary.
-- [ ] Front-door README points to the standard.
-- [ ] Worker performed no checker, helper, AHB semantics, RSE-T1/T2/T3, staging, commit, push, provider/live call, or closure decision.
-- [ ] Worker-return fast gate passes or records `BLOCKED_WITH_REASON`.
-- [ ] Reviewer-owned completion review created if accepted.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+- [x] Changed files stay inside Required Deliverables.
+- [x] Standard names every minimum role-switch envelope field.
+- [x] Standard includes a compliant worker-to-reviewer example.
+- [x] Standard includes a forbidden operator-question example matching the AAF-T7B pattern.
+- [x] Standard states documentation-only and AHB local-view boundary.
+- [x] Front-door README points to the standard.
+- [x] Worker performed no checker, helper, AHB semantics, RSE-T1/T2/T3, staging, commit, push, provider/live call, or closure decision.
+- [x] Worker-return fast gate passes or records `BLOCKED_WITH_REASON`.
+- [x] Reviewer-owned completion review created if accepted.
 
 ## Return-To-Orchestrator Conditions
 
@@ -453,6 +457,27 @@ checker/helper/AHB-semantics/RSE-T1-T2-T3/runtime/provider/public/session scope.
 | AC4 | The standard states RSE is documentation and reference only and an AHB local view, not a replacement | claim boundary and source diff |
 | AC5 | A compact front-door README points to the standard | source diff |
 | AC6 | No forbidden paths changed and the worker commits nothing | `git status --short`; worker-return gate |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md` | completion review created by reviewer/closer | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | roadmap remains `ROADMAP_READY_FOR_WORK_ORDER_AUTHORING`; RSE-T0 closed by separate completion review | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 registry aggregate drift check passes; no registry mutation required for RSE-T0 closure | PASS |
+| Registry Markdown | `docs/reference/role_switch_envelope/README.md` | RSE-T0 front-door reference exists and no corpus registry markdown mutation is required | PASS |
+| External evidence digest | N/A | no external evidence digest created or consumed | N/A with reason |
+| System loop interlock | N/A | no system-loop interlock surface changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows accepted material closure commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Receipt/query acceptance evidence | N/A with reason: RSE-T0 creates no receipt/query acceptance surface | PASS |
+| Runtime receipt value | N/A with reason: no runtime execution or provider call | PASS |
+| Delta receipt value | N/A with reason: no Delta execution-control claim | PASS |
 
 ## Public Export Disposition
 
