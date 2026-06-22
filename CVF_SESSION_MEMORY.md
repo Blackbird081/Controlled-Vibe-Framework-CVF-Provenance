@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`
+Current mode marker: `rse_t2_worker_return_jurisdiction_block_closed_pending_next_operator_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`.
+Current mode: `rse_t2_worker_return_jurisdiction_block_closed_pending_next_operator_selection`.
 
-Previous mode: `rse_t1_operator_question_boundary_closed_pending_next_operator_selection`.
+Previous mode: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`.
 
 Active handoff:
 
@@ -592,25 +592,27 @@ execution and completed the required source ledger. Verification passed:
 focused pytest 72/72, AAF helper with `defects=[]`, reviewer-fast 33/33,
 reviewer-return steward, and pre-commit 55/55.
 
-RSE-T2 Worker Return Jurisdiction Block is `DISPATCHED_TO_WORKER` at material
-dispatch commit `2d05a060` from dispatch base `2dd54bc5`. Artifacts:
-`docs/baselines/CVF_GC018_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_2026-06-22.md`
-and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_FOR_WORKER_2026-06-22.md`.
-Worker mode is `WORKER_MUST_NOT_COMMIT`; only the RSE-T2 addendum and worker
-return are authorized. Reviewer repaired provider-specific role labels and made
-reviewer-owned closure paths exact before dispatch. No checker, helper, AAF
-diagnostic, work-order template enforcement edit, RSE-T0 or RSE-T1 edit, AHB
-semantics change, or RSE-T3 content is authorized.
+RSE-T2 Worker Return Jurisdiction Block is `CLOSED_PASS_BOUNDED` at material
+closure commit `6ab1eaf6`, after dispatch commit `2d05a060` and dispatch
+session-sync commit `45247ab0`. It accepts the documentation-only addendum,
+worker return, completion review, GC-018 status conversion, and work-order
+status/checklist conversion. Result: the Worker Return Jurisdiction Block fields
+are active documentation guidance; capture and promotion are distinct;
+`operatorActionRequired` is tied to RSE-T1 `ASK_OPERATOR` classes; worker
+self-widening is forbidden; placement recommendation remains advisory and
+RSE-T3 enforcement is still separate. Verification passed: AAF helper with
+`defects=[]`, worker-return fast gate with focused pytest 72/72 and reviewer-fast
+33/33, pre-commit hook 55/55, and committed-range pre-closure content gates with
+only expected active-handoff HEAD drift before this session sync.
 
 ## Next Allowed Move
 
-Mode: `rse_t2_worker_return_jurisdiction_block_dispatched_to_worker`.
+Mode: `rse_t2_worker_return_jurisdiction_block_closed_pending_next_operator_selection`.
 
-Next allowed move: worker creates only the RSE-T2 addendum and worker-return
-paths named by the dispatched work order, then returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without committing. RSE-T3
-remains unauthorized. MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: operator may authorize RSE-T3 early diagnostic/checker
+wire-in work-order authoring or select another parked lane. RSE-T3 implementation
+remains unauthorized until a fresh GC-018 baseline and work order are accepted.
+MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
