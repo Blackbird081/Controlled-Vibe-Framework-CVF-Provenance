@@ -1,5 +1,5 @@
 {
-  "stateOrder": 644,
+  "stateOrder": 646,
   "stateKey": "nextAllowedMove",
-  "value": "ADIF-T0 is committed at 7c0480bc with work-order status COMPLETE_PENDING_REVIEW. Codex must perform the T0 checkpoint review and record ACCEPT_FOR_CONTINUATION or return repairs before T1 may release. Claude remains paused and must not author T1 from pending-review evidence. After accepted checkpoint and continuity sync, Claude resumes T1 -> T2 -> (T3 || T4) -> T5 under the continuous authorization. Runtime/provider/live proof, public-sync, secrets/quota, MPI runtime expansion, readiness, and universal correctness/control claims remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "ADIF-T0 checkpoint is ACCEPTED_FOR_CONTINUATION_PENDING_FINAL_REVIEW at Codex review commit 6277cb28, based on execution commit 7c0480bc. Claude may resume by authoring and gating the fresh T1 child packet from the current post-sync HEAD, then continue T1 -> T2 -> (T3 || T4) -> T5 under the continuous authorization. After every worker checkpoint commit, Claude must stop for Codex-owned continuity sync and checkpoint acceptance when the child remains pending review; worker scope still forbids session/handoff edits. Runtime/provider/live proof, public-sync, secrets/quota, readiness, and universal correctness/control claims remain parked. LHW24 remains the latest closed numbered LHW wave."
 }
