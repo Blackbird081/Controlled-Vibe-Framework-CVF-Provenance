@@ -61,8 +61,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection",
-  "previousMode": "aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker",
+  "currentMode": "rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring",
+  "previousMode": "aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

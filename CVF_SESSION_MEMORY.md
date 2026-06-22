@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`
+Current mode marker: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`.
+Current mode: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`.
 
-Previous mode: `aaf_t7b_reviewer_completion_scaffold_helper_dispatched_to_worker`.
+Previous mode: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`.
 
 Active handoff:
 
@@ -549,14 +549,22 @@ that refuses existing files, non-Markdown paths, and paths outside
 reviewer-owned learning adjunct and kept checker/standard promotion deferred to
 a future authorized tranche.
 
+RSE Role Switch Envelope Protocol roadmap is
+`ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` at material commit `6608be51`.
+Artifact:
+`docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md`.
+It defines RSE-T0 through RSE-T3 for role-switch envelopes, operator-question
+boundary, worker-return jurisdiction blocks, and later diagnostics. It creates
+no work order and implements no checker/helper/runtime behavior.
+
 ## Next Allowed Move
 
-Mode: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`.
+Mode: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`.
 
-Next allowed move: operator selects the next governed tranche after AAF-T7B
-closure. Candidate parked next moves remain Role Handoff Protocol / Role Switch
-Envelope, AAF-T7 L2 patch preview, or a future learning/checker tranche for
-gate-trap capture. MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: Claude/orchestrator may author a source-verified RSE-T0
+GC-018 baseline and work order from the RSE roadmap if assigned by the
+operator. Codex remains reviewer/closer. MPI-T3/MPI-T4 remain paused unless
+reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
