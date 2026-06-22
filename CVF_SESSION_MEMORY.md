@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`
+Current mode marker: `rse_t1_operator_question_boundary_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`.
+Current mode: `rse_t1_operator_question_boundary_dispatched_to_worker`.
 
-Previous mode: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`.
+Previous mode: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`.
 
 Active handoff:
 
@@ -572,14 +572,24 @@ field set, operator-question boundary rule, compliant worker-to-reviewer
 example, and forbidden operator-question example. No checker, helper, runtime,
 provider/live, public-sync, AHB semantics, or RSE-T1/T2/T3 content was added.
 
+RSE-T1 Operator Question Boundary is `DISPATCHED_TO_WORKER` at material dispatch
+commit `57a32070` from dispatch base `ad365c43`. Artifacts:
+`docs/baselines/CVF_GC018_RSE_T1_OPERATOR_QUESTION_BOUNDARY_2026-06-22.md` and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T1_OPERATOR_QUESTION_BOUNDARY_FOR_WORKER_2026-06-22.md`.
+Worker mode is `WORKER_MUST_NOT_COMMIT`; only the RSE-T1 addendum and worker
+return are authorized. Reviewer normalized provider-specific role labels into
+the role-neutral RSE route before dispatch. No checker, helper, runtime,
+provider/live, public-sync, RSE-T0 edit, AHB semantics change, or RSE-T2/T3
+content is authorized.
+
 ## Next Allowed Move
 
-Mode: `rse_t0_role_switch_envelope_standard_closed_pending_next_operator_selection`.
+Mode: `rse_t1_operator_question_boundary_dispatched_to_worker`.
 
-Next allowed move: operator may authorize RSE-T1 Operator Question Boundary
-through fresh GC-018 and source-verified work order, or choose another governed
-lane. RSE-T1/T2/T3 implementation remains unauthorized until a fresh work order
-is reviewed and dispatched. MPI-T3/MPI-T4 remain paused unless reselected.
+Next allowed move: worker executes only the RSE-T1 addendum and worker-return
+paths named by the dispatched work order, then returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without committing. RSE-T2
+and RSE-T3 remain unauthorized. MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
