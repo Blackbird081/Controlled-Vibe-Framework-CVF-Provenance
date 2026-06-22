@@ -1104,5 +1104,155 @@ class ReviewerCompletionScaffoldTests(unittest.TestCase):
         self.assertEqual(rc, 0)
 
 
+_RSE_WR_FINDING_NO_BLOCK = (
+    "# Worker Return\n\n"
+    "Status: COMPLETE_PENDING_REVIEW\n\n"
+    "Commit mode: `WORKER_MUST_NOT_COMMIT`\n\n"
+    "## Findings\n\nCaptured a reusable gate-trap lesson during this tranche.\n"
+)
+
+_RSE_WR_FINDING_WITH_BLOCK = (
+    "# Worker Return\n\n"
+    "Status: COMPLETE_PENDING_REVIEW\n\n"
+    "Commit mode: `WORKER_MUST_NOT_COMMIT`\n\n"
+    "## Findings\n\nCaptured a reusable gate-trap lesson during this tranche.\n\n"
+    "## Worker Return Jurisdiction Block\n\n"
+    "- findingRecorded: yes\n- reviewerActionRequested: decide promotion\n"
+    "- operatorActionRequired: no\n"
+)
+
+_RSE_WR_NO_FINDING_LANGUAGE = (
+    "# Worker Return\n\n"
+    "Status: COMPLETE_PENDING_REVIEW\n\n"
+    "Commit mode: `WORKER_MUST_NOT_COMMIT`\n\n"
+    "## Findings\n\nDid the routine work; nothing notable to route.\n"
+)
+
+
+class JurisdictionReadoutTests(unittest.TestCase):
+    """RSE-T3: L0 read-only jurisdiction-block diagnostic.
+
+    Advisory only: flags a changed worker-return carrying finding/gate-trap
+    language but lacking a `## Worker Return Jurisdiction Block`. Read-only,
+    reviewer-return-shape only, no defect, no mutation.
+    """
+
+    def _plan_one_review(self):
+        return _plan(
+            changed=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+            material=("docs/reviews/x_WORKER_RETURN_2026-06-22.md",),
+        )
+
+    def test_flags_worker_return_with_finding_but_no_block(self):
+        """AC1: finding/gate-trap language without the block yields one advisory item."""
+        with mock.patch.object(assist, "build_path_plan", return_value=self._plan_one_review()), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_RSE_WR_FINDING_NO_BLOCK):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.resolved_mode, "reviewer-return")
+        self.assertEqual(len(report.jurisdiction_readout), 1)
+        item = report.jurisdiction_readout[0]
+        self.assertEqual(item.missing_block, "## Worker Return Jurisdiction Block")
+        self.assertEqual(item.routing_disposition, assist._RSE_T3_ROUTING_DISPOSITION)
+
+    def test_no_item_when_block_present(self):
+        """AC2: block present -> no advisory item."""
+        with mock.patch.object(assist, "build_path_plan", return_value=self._plan_one_review()), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_RSE_WR_FINDING_WITH_BLOCK):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.resolved_mode, "reviewer-return")
+        self.assertEqual(report.jurisdiction_readout, ())
+
+    def test_no_item_when_no_finding_language(self):
+        """AC2: no finding/gate-trap language -> no advisory item even without the block."""
+        with mock.patch.object(assist, "build_path_plan", return_value=self._plan_one_review()), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_RSE_WR_NO_FINDING_LANGUAGE):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.resolved_mode, "reviewer-return")
+        self.assertEqual(report.jurisdiction_readout, ())
+
+    def test_empty_for_non_reviewer_return_mode(self):
+        """AC1: a non-reviewer-return changed set must not populate jurisdictionReadout."""
+        plan = _plan(
+            changed=("docs/work_orders/x.md",),
+            material=("docs/work_orders/x.md",),
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_NO_COMMIT_WO_MISSING_CONTRACT):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertNotEqual(report.resolved_mode, "reviewer-return")
+        self.assertEqual(report.jurisdiction_readout, ())
+
+    def test_completion_review_with_finding_language_is_not_target_artifact(self):
+        """AC1: completion reviews are not worker-return artifacts for this readout."""
+        plan = _plan(
+            changed=("docs/reviews/x_COMPLETION_2026-06-22.md",),
+            material=("docs/reviews/x_COMPLETION_2026-06-22.md",),
+        )
+        text = (
+            "# Completion Review\n\n"
+            "Status: CLOSED_PASS_BOUNDED\n\n"
+            "## Findings / Position\n\n"
+            "This review discusses a reusable gate-trap lesson and worker return routing.\n"
+        )
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), \
+             mock.patch.object(assist, "_read_changed_text", return_value=text):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(report.resolved_mode, "reviewer-return")
+        self.assertEqual(report.jurisdiction_readout, ())
+
+    def test_diagnostic_adds_no_defect_and_no_exit_change(self):
+        """AC3: the advisory item must not add defects; --enforce stays exit 0 for it."""
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=self._plan_one_review()), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_RSE_WR_FINDING_NO_BLOCK):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--json", "--enforce"])
+        self.assertEqual(rc, 0)
+        payload = json.loads(buf.getvalue())
+        self.assertEqual(len(payload["jurisdictionReadout"]), 1)
+        # the jurisdiction finding must not have leaked into defects
+        self.assertFalse(any("jurisdiction" in d.lower() for d in payload["defects"]))
+
+    def test_diagnostic_does_not_mutate_filesystem(self):
+        """AC3: building the report opens no file for writing."""
+        real_open = open
+
+        def guarded_open(file, mode="r", *args, **kwargs):
+            if any(flag in mode for flag in ("w", "a", "x", "+")):
+                raise AssertionError(f"jurisdiction readout attempted a write open: {file!r} mode={mode!r}")
+            return real_open(file, mode, *args, **kwargs)
+
+        with mock.patch.object(assist, "build_path_plan", return_value=self._plan_one_review()), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_RSE_WR_FINDING_NO_BLOCK), \
+             mock.patch("builtins.open", side_effect=guarded_open):
+            report = assist.build_report("HEAD", "HEAD", "auto")
+        self.assertEqual(len(report.jurisdiction_readout), 1)
+
+    def test_json_output_has_jurisdiction_readout_key(self):
+        """AC4: --json output includes jurisdictionReadout as a list with expected sub-keys."""
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=self._plan_one_review()), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_RSE_WR_FINDING_NO_BLOCK):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD", "--json"])
+        self.assertEqual(rc, 0)
+        payload = json.loads(buf.getvalue())
+        self.assertIn("jurisdictionReadout", payload)
+        self.assertIsInstance(payload["jurisdictionReadout"], list)
+        self.assertGreater(len(payload["jurisdictionReadout"]), 0)
+        for key in ("sourcePath", "missingBlock", "suggestedAction", "routingDisposition", "reason"):
+            self.assertIn(key, payload["jurisdictionReadout"][0])
+
+    def test_human_output_has_jurisdiction_readout_section(self):
+        """AC4: human output includes the RSE-T3 jurisdiction readout section."""
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=self._plan_one_review()), \
+             mock.patch.object(assist, "_read_changed_text", return_value=_RSE_WR_FINDING_NO_BLOCK):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD"])
+        self.assertEqual(rc, 0)
+        self.assertIn("Jurisdiction Block Readout", buf.getvalue())
+
+
 if __name__ == "__main__":
     unittest.main()

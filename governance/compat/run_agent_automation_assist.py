@@ -500,6 +500,25 @@ class ReviewerReadoutItem:
     reason: str
 
 
+@dataclass(frozen=True)
+class JurisdictionReadoutItem:
+    """RSE-T3 L0 read-only jurisdiction-block advisory item.
+
+    Advisory text only. Per L2A safety level L0 this changes nothing on disk,
+    makes no closure decision, and adds no defect or exit-nonzero behavior. It
+    flags a changed worker-return that carries finding or gate-trap language but
+    lacks a `## Worker Return Jurisdiction Block` (RSE-T2 addendum). Derived only
+    from changed-file text the helper already read; no new source read or runtime
+    call is performed.
+    """
+
+    source_path: str
+    missing_block: str
+    suggested_action: str
+    routing_disposition: str
+    reason: str
+
+
 @dataclass
 class AssistReport:
     base: str
@@ -516,6 +535,7 @@ class AssistReport:
     defects: list[str] = field(default_factory=list)
     signal_readout: tuple[SignalReadoutItem, ...] = field(default_factory=tuple)
     reviewer_readout: tuple[ReviewerReadoutItem, ...] = field(default_factory=tuple)
+    jurisdiction_readout: tuple[JurisdictionReadoutItem, ...] = field(default_factory=tuple)
 
     def to_dict(self) -> dict:
         return {
@@ -578,6 +598,16 @@ class AssistReport:
                     "reason": item.reason,
                 }
                 for item in self.reviewer_readout
+            ],
+            "jurisdictionReadout": [
+                {
+                    "sourcePath": item.source_path,
+                    "missingBlock": item.missing_block,
+                    "suggestedAction": item.suggested_action,
+                    "routingDisposition": item.routing_disposition,
+                    "reason": item.reason,
+                }
+                for item in self.jurisdiction_readout
             ],
         }
 
@@ -758,6 +788,62 @@ def _build_reviewer_readout(
     return tuple(items)
 
 
+# RSE-T3: jurisdiction-block diagnostic constants.
+# The block heading defined by the RSE-T2 addendum.
+_RSE_JURISDICTION_BLOCK_RE = re.compile(
+    r"(?im)^##\s+Worker Return Jurisdiction Block\s*$"
+)
+_RSE_WORKER_RETURN_PATH_RE = re.compile(
+    r"(?i)^docs/reviews/.*WORKER_RETURN.*\.md$"
+)
+# Finding / gate-trap language that, per RSE-T2, should be paired with the block.
+_RSE_FINDING_LANGUAGE_RE = re.compile(
+    r"(?i)\b(?:gate[- ]?trap|out[- ]?of[- ]?scope promotion|promotion candidate|"
+    r"finding[- ]?to[- ]?governance|reusable (?:lesson|finding)|"
+    r"jurisdiction (?:block|owner))\b"
+)
+_RSE_T3_ROUTING_DISPOSITION = "ROUTE_TO_REVIEWER"
+
+
+def _build_jurisdiction_readout(
+    resolved_mode: str,
+    worker_return_texts: list[tuple[str, str]],
+) -> tuple[JurisdictionReadoutItem, ...]:
+    """Build the RSE-T3 L0 read-only jurisdiction-block diagnostic readout.
+
+    Advisory only (L2A safety level L0): flags a changed worker-return that
+    carries finding or gate-trap language but lacks a
+    `## Worker Return Jurisdiction Block` (RSE-T2 addendum). It makes no closure
+    decision, adds no defect, changes no exit code, performs no filesystem
+    mutation, and is populated only when the changed range resolves to the
+    worker-return (reviewer-return) shape. Each item is derived solely from
+    changed-file text the helper already read.
+    """
+    if resolved_mode != "reviewer-return":
+        return ()
+
+    items: list[JurisdictionReadoutItem] = []
+    for path, text in worker_return_texts:
+        if not _RSE_FINDING_LANGUAGE_RE.search(text):
+            continue
+        if _RSE_JURISDICTION_BLOCK_RE.search(text):
+            continue
+        items.append(JurisdictionReadoutItem(
+            source_path=path,
+            missing_block="## Worker Return Jurisdiction Block",
+            suggested_action=(
+                "add a Worker Return Jurisdiction Block (RSE-T2) recording capture, "
+                "promotion candidate, reviewer action requested, and operator-action flag"
+            ),
+            routing_disposition=_RSE_T3_ROUTING_DISPOSITION,
+            reason=(
+                "worker-return carries finding or gate-trap language but no "
+                "`## Worker Return Jurisdiction Block`, leaving routing implicit"
+            ),
+        ))
+    return tuple(items)
+
+
 # ---------------------------------------------------------------------------
 # AAF-T7B: L1 reviewer-completion scaffold generation.
 #
@@ -876,6 +962,7 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
     diagnostics: list[WorkOrderDiagnostic] = []
     corpus_diagnostics_list: list[CorpusDiagnostic] = []
     retro_diagnostics_list = []
+    worker_return_texts: list[tuple[str, str]] = []
     for path in plan.changed_paths:
         text = _read_changed_text(path)
         if _is_no_commit_work_order(path, text):
@@ -888,6 +975,11 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
         rd = worker_experience.diagnose(path, text)
         if rd.eligible:
             retro_diagnostics_list.append(rd)
+        # RSE-T3: collect changed worker-return artifacts only. Completion
+        # reviews can discuss worker returns and findings, but are not the
+        # target artifact class for the jurisdiction-block advisory.
+        if _RSE_WORKER_RETURN_PATH_RE.search(path) and _WORKER_RETURN_RE.search(text):
+            worker_return_texts.append((path, text))
 
     command_mode = resolved
     if requested_mode == "auto" and resolved in {"none", "split"}:
@@ -964,6 +1056,9 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
     reviewer_readout_items = _build_reviewer_readout(
         resolved, diagnostics, corpus_diagnostics_list, retro_diagnostics_list
     )
+    jurisdiction_readout_items = _build_jurisdiction_readout(
+        resolved, worker_return_texts
+    )
     return AssistReport(
         base=base,
         head=head,
@@ -979,6 +1074,7 @@ def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
         defects=defects,
         signal_readout=signal_readout_items,
         reviewer_readout=reviewer_readout_items,
+        jurisdiction_readout=jurisdiction_readout_items,
     )
 
 
@@ -1053,6 +1149,22 @@ def _print_human(report: AssistReport) -> None:
             print(
                 "\nReviewer/Closer Acceleration Readout (AAF-T7A.1, L0 read-only): "
                 "no helper-detectable conversion gaps; reviewer authors closure normally."
+            )
+
+    if report.resolved_mode == "reviewer-return":
+        if report.jurisdiction_readout:
+            print(
+                f"\nJurisdiction Block Readout (RSE-T3, L0 read-only): "
+                f"{len(report.jurisdiction_readout)} advisory item(s)"
+            )
+            for item in report.jurisdiction_readout:
+                print(f"  [{item.routing_disposition}] {item.source_path}")
+                print(f"    missing: {item.missing_block}")
+                print(f"    next: {item.suggested_action}")
+        else:
+            print(
+                "\nJurisdiction Block Readout (RSE-T3, L0 read-only): "
+                "no worker-return with finding or gate-trap language is missing the block."
             )
 
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -256,8 +256,13 @@ Allowed scope:
   and the no-defect property;
 - create
   `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_WORKER_RETURN_2026-06-22.md`;
-- reviewer/closer closure conversion may update this work order, paired GC-018,
-  and create the completion review after accepting the worker return.
+- reviewer/closer closure conversion may update
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_FOR_WORKER_2026-06-22.md`;
+- reviewer/closer closure conversion may update
+  `docs/baselines/CVF_GC018_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_2026-06-22.md`;
+- reviewer/closer closure conversion may create
+  `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_COMPLETION_2026-06-22.md`
+  after accepting the worker return.
 
 Forbidden scope:
 
@@ -447,16 +452,16 @@ then convert accepted material into a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed files stay inside Required Deliverables.
-- [ ] The diagnostic emits an advisory item for a block-missing worker-return.
-- [ ] The diagnostic emits nothing when the block is present or no finding or gate-trap language exists.
-- [ ] The diagnostic makes no closure decision, writes no file, and adds no exit-nonzero defect.
-- [ ] Focused tests cover positive, negative, read-only, and no-defect cases.
-- [ ] The worker return carries a Core Guard Self-Protection block listing both protected paths.
-- [ ] No other checker, autorun wiring, work-order template, or closed RSE document changed.
-- [ ] Worker-return fast gate passes or records `BLOCKED_WITH_REASON`.
-- [ ] Reviewer-owned completion review created if accepted.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+- [x] Changed files stay inside Required Deliverables.
+- [x] The diagnostic emits an advisory item for a block-missing worker-return.
+- [x] The diagnostic emits nothing when the block is present or no finding or gate-trap language exists.
+- [x] The diagnostic makes no closure decision, writes no file, and adds no exit-nonzero defect.
+- [x] Focused tests cover positive, negative, read-only, and no-defect cases.
+- [x] The worker return carries a Core Guard Self-Protection block listing both protected paths.
+- [x] No other checker, autorun wiring, work-order template, or closed RSE document changed.
+- [x] Worker-return fast gate passes or records `BLOCKED_WITH_REASON`.
+- [x] Reviewer-owned completion review created if accepted.
 
 ## Return-To-Orchestrator Conditions
 
@@ -508,6 +513,31 @@ repository work or public catalog claim is authorized.
 | Expected manifest | helper source; focused tests; worker return |
 | Actual changed set | worker records in return packet |
 | Manifest delta | worker records in return packet |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 status | `docs/baselines/CVF_GC018_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED`; checklist checked | PASS |
+| Worker return | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md` | roadmap remains `ROADMAP_READY_FOR_WORK_ORDER_AUTHORING`; T3 closed by completion review | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passes; no mutation required | PASS |
+| Registry Markdown | `docs/reference/role_switch_envelope/README.md` | active RSE reference front door remains present and unchanged | PASS |
+| External evidence digest | N/A | no external evidence digest created or consumed | N/A with reason |
+| System loop interlock | N/A | no system-loop interlock surface changed | N/A with reason |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active session front-door, state, and handoff | separate session-sync follows material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Receipt/query acceptance evidence | N/A with reason: no receipt/query surface | PASS |
+| Runtime receipt value | N/A with reason: no runtime execution | PASS |
+| Delta receipt value | N/A with reason: no Delta execution claim | PASS |
 
 ## Claim Boundary
 

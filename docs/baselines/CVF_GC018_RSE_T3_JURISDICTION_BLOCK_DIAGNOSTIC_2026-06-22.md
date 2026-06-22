@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -115,8 +115,8 @@ No worker commit is authorized.
 
 ## Decision / Baseline / Proposed Tranche
 
-Baseline decision: RSE-T3 is dispatched to worker as a bounded read-only
-diagnostic tranche, one diagnostic in the first slice.
+Baseline decision: RSE-T3 is closed as a bounded read-only diagnostic tranche,
+one diagnostic in the first slice.
 
 Proposed tranche: `RSE-T3 Jurisdiction Block Diagnostic`.
 
@@ -302,13 +302,13 @@ the read-only diagnostic and its focused tests together.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_FOR_WORKER_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Worker return | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_WORKER_RETURN_2026-06-22.md` | worker returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_COMPLETION_2026-06-22.md` | reviewer/closer creates only if accepted | PENDING_REVIEW |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED`; checklist checked | PASS |
+| Worker return | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
 | Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
-| Session continuity | active session front-door/state/handoff | session-sync follows accepted dispatch/closure commit if needed | PENDING_SESSION_SYNC |
+| Session continuity | active session front-door/state/handoff | separate session-sync follows accepted material closure commit | PASS |
 
 ## Claim Boundary
 
