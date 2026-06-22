@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`
+Current mode marker: `rse_t0_role_switch_envelope_standard_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`.
+Current mode: `rse_t0_role_switch_envelope_standard_dispatched_to_worker`.
 
-Previous mode: `aaf_t7b_reviewer_completion_scaffold_helper_closed_pending_next_operator_selection`.
+Previous mode: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`.
 
 Active handoff:
 
@@ -557,14 +557,20 @@ It defines RSE-T0 through RSE-T3 for role-switch envelopes, operator-question
 boundary, worker-return jurisdiction blocks, and later diagnostics. It creates
 no work order and implements no checker/helper/runtime behavior.
 
+RSE-T0 Role Switch Envelope Standard is dispatched at material commit
+`3842b0f7`. Artifacts:
+`docs/baselines/CVF_GC018_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_FOR_WORKER_2026-06-22.md`.
+Worker mode is `WORKER_MUST_NOT_COMMIT`.
+
 ## Next Allowed Move
 
-Mode: `rse_role_switch_envelope_protocol_roadmap_ready_for_work_order_authoring`.
+Mode: `rse_t0_role_switch_envelope_standard_dispatched_to_worker`.
 
-Next allowed move: Claude/orchestrator may author a source-verified RSE-T0
-GC-018 baseline and work order from the RSE roadmap if assigned by the
-operator. Codex remains reviewer/closer. MPI-T3/MPI-T4 remain paused unless
-reselected.
+Next allowed move: worker executes RSE-T0 under `WORKER_MUST_NOT_COMMIT` and
+returns uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Codex
+remains reviewer/closer. MPI-T3/MPI-T4 remain paused unless reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
