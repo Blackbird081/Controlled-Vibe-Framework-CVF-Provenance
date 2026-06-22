@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`
+Current mode marker: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`.
+Current mode: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`.
 
-Previous mode: `aaf_t6a_early_diagnostic_wire_in_closed_aaf_t7a_checkpoint`.
+Previous mode: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`.
 
 Active handoff:
 
@@ -528,14 +528,21 @@ Artifact:
 `docs/roadmaps/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_ROADMAP_2026-06-22.md`.
 It creates no work order and implements no helper.
 
+AAF-T7A.1 Reviewer/Closer Acceleration Helper is `DISPATCHED_TO_WORKER` at
+material dispatch commit `af615d1e`, from dispatchBaseHead `68d5044a`.
+Dispatch artifacts:
+`docs/baselines/CVF_GC018_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_2026-06-22.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_FOR_WORKER_2026-06-22.md`.
+
 ## Next Allowed Move
 
-Mode: `aaf_t7a_reviewer_closer_acceleration_roadmap_ready_for_work_order_authoring`.
+Mode: `aaf_t7a_reviewer_closer_acceleration_helper_dispatched_to_worker`.
 
-Next allowed move: Claude/orchestrator may author a source-verified AAF-T7A
-GC-018 baseline and work order from the roadmap if the operator assigns that
-role; worker execution must remain governed by the future work order. Codex
-remains reviewer/closer. After AAF-T7A, resume MPI if reselected.
+Next allowed move: worker executes the AAF-T7A.1 work order under
+`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`, uncommitted. Codex remains reviewer/closer after worker
+return. After AAF-T7A.1, resume MPI if reselected.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, public-sync push without Codex review and remote
