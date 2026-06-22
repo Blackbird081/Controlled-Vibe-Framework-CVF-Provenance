@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `adif_t1_committed_pending_codex_checkpoint_review`
+Current mode marker: `adif_t1_checkpoint_accepted_t2_released_to_claude`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `adif_t1_committed_pending_codex_checkpoint_review`.
+Current mode: `adif_t1_checkpoint_accepted_t2_released_to_claude`.
 
-Previous mode: `adif_t0_checkpoint_accepted_t1_released_to_claude`.
+Previous mode: `adif_t1_committed_pending_codex_checkpoint_review`.
 
 Active handoff:
 
@@ -63,6 +63,11 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ADIF-T1 is accepted for continuation at reviewer commit `755785ce`, based on
+worker checkpoint `2fcd2395`. The reviewer repaired missing mandatory dual-agent
+surface matrices and recorded the checker gap. ADIF-T2 child-packet authoring is
+released from this post-review continuity sync.
 
 ADIF-T1 is committed at `2fcd2395` with status `COMPLETE_PENDING_REVIEW`.
 Codex now owns the T1 checkpoint review and continuity decision. T2 remains
@@ -725,7 +730,7 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `adif_t1_committed_pending_codex_checkpoint_review`.
+Mode: `adif_t1_checkpoint_accepted_t2_released_to_claude`.
 
 Next allowed move: Claude authors and gates the fresh ADIF-T1 child packet from
 the current post-sync HEAD, then executes within the continuous authorization.

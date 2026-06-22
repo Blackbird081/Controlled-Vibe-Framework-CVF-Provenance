@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`adif_t1_committed_pending_codex_checkpoint_review`
+`adif_t1_checkpoint_accepted_t2_released_to_claude`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -215,17 +215,18 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ADIF-T1 is committed at `2fcd2395` with `COMPLETE_PENDING_REVIEW`. Codex must
-review the T1 checkpoint and record accepted dependency-release evidence before
-T2 authoring or execution. Claude remains stopped. Runtime/provider/live/public
-expansion remains parked.
+ADIF-T1 is accepted for continuation at review commit `755785ce`, based on
+worker checkpoint `2fcd2395`. Claude may author, gate, and execute the bounded
+ADIF-T2 resolver child from this post-sync HEAD, then must stop after its
+checkpoint commit for Codex continuity/review. T2 must include dual-agent
+surface accounting; external CLI/MCP adapter behavior remains unauthorized.
 
 The Agent System Skills roadmap and mandatory internal/external CLI/MCP
 accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`adif_t1_committed_pending_codex_checkpoint_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Codex reviews ADIF-T1 checkpoint before T2 release; parked checkpoint=runtime/provider/live/public expansion and ASSF roadmap until ADIF.
+Startup acknowledged: current mode=`adif_t1_checkpoint_accepted_t2_released_to_claude`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude authors/gates and executes ADIF-T2 from the post-sync HEAD; parked checkpoint=post-T2 Codex continuity/review, runtime/provider/live/public expansion, and ASSF roadmap until ADIF.
 
 ## Parked Checkpoints
 
@@ -233,7 +234,7 @@ Startup acknowledged: current mode=`adif_t1_committed_pending_codex_checkpoint_r
 - MPI-T5 is closed bounded and public-synced at public commit `602550404`.
 - MPI-T6 decision packet is closed bounded with `DEFER` at `14f8e5f9`; runtime
   authorization remains parked.
-- ADIF-T1 is committed at `2fcd2395`; T2 awaits Codex checkpoint review.
+- ADIF-T1 is accepted at `755785ce`; Claude T2 is released after this sync.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -245,8 +246,8 @@ Startup acknowledged: current mode=`adif_t1_committed_pending_codex_checkpoint_r
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record ADIF-T1 checkpoint commit
-`2fcd2395`, pause T2 for Codex review, and regenerate active session state.
+Authorized guard-maintenance scope: record ADIF-T1 acceptance commit
+`755785ce`, release T2 after review, and regenerate active session state.
 
 Protected paths:
 
@@ -254,15 +255,15 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/adifT1CheckpointPendingReview20260623.json`
+- `CVF_SESSION/state/entries/adifT1CheckpointAcceptedT2Release20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator reported ADIF-T1 complete and committed;
-the continuous authorization requires Codex-owned checkpoint continuity and
-review before the next dependency releases.
+Operator authorization: the continuous ADIF authorization pre-selected T2 after
+accepted T1 dependency evidence; Codex checkpoint review `755785ce` satisfies
+that dependency.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert worker commit `2fcd2395` or prior history.
+revert review commit `755785ce`, worker commit `2fcd2395`, or prior history.
 
 ## Agent Operation Trace Block
 
@@ -270,25 +271,25 @@ revert worker commit `2fcd2395` or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ADIF-T1 pending-review continuity sync, 2026-06-23 |
+| Session or invocation | ADIF-T1 accepted / T2 release continuity sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
-| Target paths | V22; session front door; T1 pending-review state entry; next move; generated active state |
-| Allowed scope source | worker commit `2fcd2395` and mandatory continuity rules |
-| Before status evidence | clean worktree at worker checkpoint `2fcd2395`; handoff recorded prior release HEAD |
-| After status evidence | active mode records T1 pending review; T2 remains blocked |
+| Target paths | V22; session front door; T1 acceptance/T2 release state entry; next move; generated active state |
+| Allowed scope source | review commit `755785ce` and mandatory continuity rules |
+| Before status evidence | clean worktree after accepted T1 review; handoff recorded pending-review mode |
+| After status evidence | active mode releases bounded T2 child authoring/execution |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `adif-t1-checkpoint-pending-review-sync-2026-06-23` |
-| Expected manifest | V22; front door; T1 pending-review state entry; next move; generated active state |
-| Actual changed set | V22; front door; T1 pending-review state entry; next move; generated active state |
+| Invocation ID | `adif-t1-accepted-t2-release-sync-2026-06-23` |
+| Expected manifest | V22; front door; T1 acceptance/T2 release state entry; next move; generated active state |
+| Actual changed set | V22; front door; T1 acceptance/T2 release state entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records ADIF-T1 pending review and
-does not release T2, dispatch ASSF, or expand runtime/provider/live/public
-behavior.
+This handoff is session continuity only. It records ADIF-T1 acceptance and
+releases the already-authorized bounded T2 child. It does not dispatch ASSF or
+expand external CLI/MCP, runtime/provider/live/public behavior.
