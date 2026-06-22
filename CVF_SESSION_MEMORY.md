@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-22
 
-Current mode marker: `adif_t2_accepted_t3_t5_continuous_execution_released`
+Current mode marker: `adif_t0_t5_complete_pending_codex_final_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `adif_t2_accepted_t3_t5_continuous_execution_released`.
+Current mode: `adif_t0_t5_complete_pending_codex_final_review`.
 
-Previous mode: `adif_t2_committed_pending_codex_checkpoint_review`.
+Previous mode: `adif_t2_accepted_t3_t5_continuous_execution_released`.
 
 Active handoff:
 
@@ -63,6 +63,10 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ADIF T3-T5 continuous execution returned `COMPLETE_PENDING_REVIEW` at final
+material commit `5f7eb42a`. Codex now owns the one intended final review across
+T0-T5; no further ADIF implementation is released before disposition.
 
 ADIF-T2 is accepted after reviewer hardening at `07000fd6`. The reusable
 handoff-sync bridge standard and hardened T3-T5 authorization are committed at
@@ -739,7 +743,7 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `adif_t2_accepted_t3_t5_continuous_execution_released`.
+Mode: `adif_t0_t5_complete_pending_codex_final_review`.
 
 Next allowed move: Claude authors and gates the fresh ADIF-T1 child packet from
 the current post-sync HEAD, then executes within the continuous authorization.

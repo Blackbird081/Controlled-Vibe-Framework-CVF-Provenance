@@ -1,0 +1,5 @@
+{
+  "stateOrder": 653,
+  "stateKey": "adifT0T5CompletePendingFinalReview20260623",
+  "value": "The hardened ADIF T3-T5 continuous batch completed at material commit 5f7eb42a after joint dispatch af56db7c, T3 checkpoint 41b026a6, T4 checkpoint fb4bac23, convergence bridge 2b93b314, and final T5 commit. Claude returned COMPLETE_PENDING_REVIEW exactly once for the full chain. Codex owns final T0-T5 review, allowed-scope repairs, closure decision, and final session sync."
+}

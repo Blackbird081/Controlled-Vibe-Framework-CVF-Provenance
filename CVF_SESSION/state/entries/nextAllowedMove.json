@@ -1,5 +1,5 @@
 {
   "stateOrder": 648,
   "stateKey": "nextAllowedMove",
-  "value": "ADIF-T2 is accepted after reviewer hardening at 07000fd6. The T3-T5 continuous bridge standard and hardened authorization are committed at dfaae2e7. Claude may execute T3 and T4 from one jointly gated identical post-T2 bridge HEAD, integrate both evidence branches using root-active-handoff-only bridge commits, then author/gate/execute T5 and stop once for Codex final review. No intermediate Codex review is required. Claude must not edit session state/front door/review queue, claim acceptance/closure, push, or expand external CLI/MCP, runtime/provider/live/public, secret/quota, readiness, or universal-control scope. ASSF remains parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "ADIF T0-T5 returned COMPLETE_PENDING_REVIEW at final material commit 5f7eb42a. Codex must perform the single intended full-chain final review, recompute T3/T4/T5 tests and committed manifests, inspect serialized convergence and handoff-bridge evidence, repair allowed-scope defects, and either close bounded or return blocked findings. No further ADIF implementation, ASSF execution, external CLI/MCP adapter, runtime/provider/live/public work, secrets/quota, readiness, or universal-control claim is released before final disposition. LHW24 remains the latest closed numbered LHW wave."
 }
