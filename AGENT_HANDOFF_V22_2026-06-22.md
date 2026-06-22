@@ -220,6 +220,12 @@ review T2, then harden the T3-T5 continuation pattern before release. The
 hardened route must use bounded machine-gated session-sync bridges and must not
 pause for Codex review between T3, T4, and T5.
 
+## Continuous Execution Handoff-Sync Bridge Ledger
+
+| Stage | Material HEAD | Bridge status | Next machine-authorized move | Boundary |
+|---|---|---|---|---|
+| ADIF-T2 reviewer acceptance | `07000fd6` | `HANDOFF_SYNC_BRIDGE_PASS` | author and gate T3-T5 continuous-execution hardening | continuity only; no T3 release or final closure claim |
+
 The Agent System Skills roadmap and mandatory internal/external CLI/MCP
 accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
