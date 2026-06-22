@@ -8,10 +8,18 @@ current changed batch, recommends the correct commit-steward lane, lists missing
 Worker Return Packet Shape Contract blocks for changed WORKER_MUST_NOT_COMMIT
 work orders, and prints the exact next command.
 
-This helper is read-only by design. It never writes, stages, commits, pushes,
-deletes, moves, runs provider/live checks, or shells into arbitrary user
-commands. It only inspects the git changed set and changed-file text, and prints
-recommended commands for the operator or reviewer to run themselves.
+This helper is read-only by default. Its report, diagnostics, and readouts
+never write, stage, commit, push, delete, move, run provider/live checks, or
+shell into arbitrary user commands. It only inspects the git changed set and
+changed-file text, and prints recommended commands for the operator or reviewer
+to run themselves.
+
+The single exception is the explicit AAF-T7B L1 reviewer-completion scaffold
+write mode (--write-reviewer-completion-scaffold): per L2A safety level L1 it
+creates exactly one new skeleton markdown file under docs/reviews/, refusing to
+overwrite and refusing any path outside docs/reviews/. That bounded write never
+edits an existing file, stages, commits, applies a diff, or makes a closure
+decision. No L2 patch preview or L3 apply behavior exists in this helper.
 
 It reuses the canonical commit-steward path classification
 (`run_agent_commit_steward_preflight.build_path_plan`) instead of duplicating it,
@@ -750,6 +758,114 @@ def _build_reviewer_readout(
     return tuple(items)
 
 
+# ---------------------------------------------------------------------------
+# AAF-T7B: L1 reviewer-completion scaffold generation.
+#
+# L2A safety level L1 (classification standard line 105): the helper writes a
+# new skeleton file or section with required structure and empty fields; the
+# human fills content and reviews before use. This is the only level above L0
+# read-only that AAF-T7B authorizes. It is NOT L2 patch preview and NOT L3
+# apply: it never edits an existing file, never stages, never commits, never
+# applies a diff, and never makes a closure decision. The single write only
+# creates one new markdown file under docs/reviews/ and refuses to overwrite.
+# ---------------------------------------------------------------------------
+
+# Directory under which a scaffold file may be created. Any other location is
+# refused so the helper cannot write outside the reviews surface.
+REVIEWER_COMPLETION_SCAFFOLD_ALLOWED_DIR = "docs/reviews/"
+
+# Required completion-review headings the scaffold emits as empty skeleton
+# sections. A reviewer/closer fills every TODO line before the artifact is a
+# real completion review; the scaffold itself asserts it is not a closure.
+REVIEWER_COMPLETION_SCAFFOLD_SECTIONS = (
+    "Status",
+    "Target / Source",
+    "Purpose",
+    "Scope / Methodology",
+    "Findings / Position",
+    "Risk / Corrective Action",
+    "Claim Boundary",
+    "Public Export Disposition",
+    "Agent Operation Trace Block",
+    "Machine Closure Package",
+)
+
+_SCAFFOLD_TODO = "TODO: reviewer/closer fills this section before completion."
+
+
+def build_reviewer_completion_scaffold(title: str = "") -> str:
+    """Build the AAF-T7B L1 reviewer-completion scaffold text (pure, no I/O).
+
+    Returns a skeleton completion-review markdown body with the required
+    governance headings present and empty TODO fields, per L2A safety level L1.
+    The scaffold is explicitly not a completed review and makes no closure
+    decision; a reviewer/closer fills every TODO line and reviews before use.
+    """
+    heading = title.strip() or "Reviewer Completion Scaffold"
+    lines: list[str] = [
+        f"# {heading}",
+        "",
+        "Memory class: FULL_RECORD",
+        "",
+        "docType: review",
+        "",
+        (
+            "NOTE: AAF-T7B L1 scaffold. This is an empty skeleton, not a "
+            "completed review and not a closure decision. A reviewer/closer "
+            "must fill every TODO line and review before use."
+        ),
+        "",
+    ]
+    for section in REVIEWER_COMPLETION_SCAFFOLD_SECTIONS:
+        lines.append(f"## {section}")
+        lines.append("")
+        lines.append(_SCAFFOLD_TODO)
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _scaffold_path_is_allowed(path: Path) -> bool:
+    """True only when path resolves inside the repo's docs/reviews/ directory."""
+    allowed_root = (REPO_ROOT / REVIEWER_COMPLETION_SCAFFOLD_ALLOWED_DIR).resolve()
+    try:
+        resolved = path.resolve()
+    except (OSError, RuntimeError):
+        return False
+    if resolved == allowed_root:
+        return False
+    return allowed_root in resolved.parents
+
+
+def write_reviewer_completion_scaffold(target: str, title: str = "") -> Path:
+    """Write one new L1 scaffold markdown file under docs/reviews/.
+
+    This is the only filesystem write in this module and is reached only via
+    the explicit --write-reviewer-completion-scaffold CLI flag. It refuses any
+    path outside docs/reviews/, refuses a non-.md target, and refuses to
+    overwrite an existing file. It never edits an existing file, never stages,
+    never commits, and never applies a diff.
+    """
+    candidate = Path(target)
+    if not candidate.is_absolute():
+        candidate = REPO_ROOT / candidate
+    if candidate.suffix.lower() != ".md":
+        raise ValueError(
+            f"scaffold target must be a .md file under {REVIEWER_COMPLETION_SCAFFOLD_ALLOWED_DIR}: {target}"
+        )
+    if not _scaffold_path_is_allowed(candidate):
+        raise ValueError(
+            f"scaffold target must be inside {REVIEWER_COMPLETION_SCAFFOLD_ALLOWED_DIR}: {target}"
+        )
+    if candidate.exists():
+        raise ValueError(f"refusing to overwrite existing file: {target}")
+    derived_title = title.strip() or candidate.stem.replace("_", " ")
+    # Exclusive create ('x') so a concurrent create also fails instead of
+    # clobbering; this never opens an existing file for write/append.
+    with open(candidate, "x", encoding="utf-8") as handle:
+        handle.write(build_reviewer_completion_scaffold(derived_title))
+    return candidate
+
+
 def build_report(base: str, head: str, requested_mode: str) -> AssistReport:
     if requested_mode not in ALLOWED_MODES:
         raise ValueError(f"unsupported mode: {requested_mode}")
@@ -959,7 +1075,47 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Exit non-zero on local helper-detectable defects.",
     )
+    parser.add_argument(
+        "--emit-reviewer-completion-scaffold",
+        action="store_true",
+        help=(
+            "Print an L1 reviewer-completion scaffold skeleton to stdout without "
+            "writing any file (AAF-T7B, L2A safety level L1)."
+        ),
+    )
+    parser.add_argument(
+        "--write-reviewer-completion-scaffold",
+        metavar="PATH",
+        default=None,
+        help=(
+            "Write one new L1 reviewer-completion scaffold .md file under "
+            "docs/reviews/. Refuses overwrite and refuses paths outside "
+            "docs/reviews/ (AAF-T7B, L2A safety level L1)."
+        ),
+    )
+    parser.add_argument(
+        "--scaffold-title",
+        default="",
+        help="Optional heading for the generated reviewer-completion scaffold.",
+    )
     args = parser.parse_args(argv)
+
+    # AAF-T7B L1 scaffold modes short-circuit the read-only report. They are the
+    # only paths that may emit or write a scaffold and only run when their
+    # explicit flag is passed.
+    if args.emit_reviewer_completion_scaffold:
+        print(build_reviewer_completion_scaffold(args.scaffold_title), end="")
+        return 0
+    if args.write_reviewer_completion_scaffold is not None:
+        try:
+            written = write_reviewer_completion_scaffold(
+                args.write_reviewer_completion_scaffold, args.scaffold_title
+            )
+        except ValueError as exc:
+            print(f"VIOLATION: {exc}", file=sys.stderr)
+            return 2
+        print(f"Wrote reviewer-completion scaffold: {written}")
+        return 0
 
     try:
         report = build_report(args.base, args.head, args.mode)

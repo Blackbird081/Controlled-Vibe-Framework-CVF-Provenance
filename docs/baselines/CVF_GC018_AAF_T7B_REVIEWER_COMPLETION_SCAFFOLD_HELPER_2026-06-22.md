@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -103,8 +103,7 @@ No worker commit is authorized.
 
 ## Decision / Baseline / Proposed Tranche
 
-Baseline decision: AAF-T7B is dispatched to worker as a bounded L1 scaffold
-helper tranche.
+Baseline decision: AAF-T7B is closed as a bounded L1 scaffold helper tranche.
 
 Proposed tranche: `AAF-T7B Reviewer Completion Scaffold Helper (L1)`.
 
@@ -277,13 +276,14 @@ remove the scaffold helper and focused tests together.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_FOR_WORKER_2026-06-22.md` | `Status: DISPATCHED_TO_WORKER` until reviewer closure | PENDING_REVIEW |
-| Worker return | `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_WORKER_RETURN_2026-06-22.md` | worker returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | PENDING_WORKER |
-| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_COMPLETION_2026-06-22.md` | reviewer/closer creates only if accepted | PENDING_REVIEW |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_FOR_WORKER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Gate-trap learning adjunct | `docs/reviews/CVF_AAF_T7B_WORKER_RETURN_GATE_TRAP_FINDING_2026-06-22.md` | `Status: FINDING_RECORDED`; accepted as closure learning adjunct, not worker implementation scope expansion | PASS |
 | Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
 | Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
-| Session continuity | active session front-door/state/handoff | session-sync follows accepted dispatch/closure commit if needed | PENDING_SESSION_SYNC |
+| Session continuity | active session front-door/state/handoff | session-sync follows accepted closure commit if next move changes | N/A with reason |
 
 ## Claim Boundary
 

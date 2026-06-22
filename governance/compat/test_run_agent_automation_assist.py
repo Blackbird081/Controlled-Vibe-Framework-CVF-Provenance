@@ -7,6 +7,7 @@ import importlib.util
 import io
 import json
 import sys
+import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
@@ -971,6 +972,136 @@ class ReviewerReadoutTests(unittest.TestCase):
             report = assist.build_report("HEAD", "HEAD", "auto")
         self.assertEqual(report.defects, [])
         self.assertEqual(report.reviewer_readout, ())
+
+
+class ReviewerCompletionScaffoldTests(unittest.TestCase):
+    """AAF-T7B: L1 reviewer-completion scaffold generation.
+
+    L2A safety level L1: writes a new skeleton file with required structure and
+    empty fields only via an explicit flag; never edits, stages, commits,
+    applies, or decides closure; refuses overwrite and out-of-reviews paths.
+    """
+
+    def test_scaffold_text_has_required_headings(self):
+        """AC1: the scaffold body contains every required completion heading."""
+        text = assist.build_reviewer_completion_scaffold("Example Review")
+        self.assertTrue(text.startswith("# Example Review"))
+        for section in assist.REVIEWER_COMPLETION_SCAFFOLD_SECTIONS:
+            self.assertIn(f"## {section}", text)
+
+    def test_scaffold_text_is_empty_skeleton_not_a_closure(self):
+        """AC1/AC4: skeleton fields are TODO and the scaffold disclaims closure."""
+        text = assist.build_reviewer_completion_scaffold()
+        self.assertIn(assist._SCAFFOLD_TODO, text)
+        self.assertIn("not a", text.lower())
+        self.assertIn("closure", text.lower())
+
+    def test_emit_flag_prints_scaffold_without_writing(self):
+        """AC1: --emit prints the scaffold and opens no file for writing."""
+        real_open = open
+
+        def guarded_open(file, mode="r", *args, **kwargs):
+            if any(flag in mode for flag in ("w", "a", "x", "+")):
+                raise AssertionError(f"emit attempted a write open: {file!r} mode={mode!r}")
+            return real_open(file, mode, *args, **kwargs)
+
+        buf = io.StringIO()
+        with mock.patch("builtins.open", side_effect=guarded_open):
+            with redirect_stdout(buf):
+                rc = assist.main(["--emit-reviewer-completion-scaffold"])
+        self.assertEqual(rc, 0)
+        self.assertIn("## Status", buf.getvalue())
+
+    def test_write_creates_one_new_file_under_reviews(self):
+        """AC2: --write creates exactly one new .md file under docs/reviews/."""
+        with tempfile.TemporaryDirectory() as tmp:
+            reviews = Path(tmp) / "docs" / "reviews"
+            reviews.mkdir(parents=True)
+            target = reviews / "CVF_SCAFFOLD_SAMPLE_2026-06-22.md"
+            with mock.patch.object(assist, "REPO_ROOT", Path(tmp)):
+                written = assist.write_reviewer_completion_scaffold(str(target))
+            self.assertTrue(written.exists())
+            body = written.read_text(encoding="utf-8")
+            self.assertIn("## Findings / Position", body)
+            # exactly one markdown file created under reviews
+            self.assertEqual(list(reviews.glob("*.md")), [written])
+
+    def test_write_refuses_overwrite(self):
+        """AC3: --write refuses to overwrite an existing file."""
+        with tempfile.TemporaryDirectory() as tmp:
+            reviews = Path(tmp) / "docs" / "reviews"
+            reviews.mkdir(parents=True)
+            target = reviews / "EXISTING.md"
+            target.write_text("original content", encoding="utf-8")
+            with mock.patch.object(assist, "REPO_ROOT", Path(tmp)):
+                with self.assertRaises(ValueError):
+                    assist.write_reviewer_completion_scaffold(str(target))
+            # original content untouched
+            self.assertEqual(target.read_text(encoding="utf-8"), "original content")
+
+    def test_write_refuses_path_outside_reviews(self):
+        """AC3: --write refuses paths outside docs/reviews/."""
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / "docs" / "baselines").mkdir(parents=True)
+            outside = Path(tmp) / "docs" / "baselines" / "X.md"
+            with mock.patch.object(assist, "REPO_ROOT", Path(tmp)):
+                with self.assertRaises(ValueError):
+                    assist.write_reviewer_completion_scaffold(str(outside))
+            self.assertFalse(outside.exists())
+
+    def test_write_refuses_non_markdown_target(self):
+        """AC3: --write refuses a non-.md target even under docs/reviews/."""
+        with tempfile.TemporaryDirectory() as tmp:
+            reviews = Path(tmp) / "docs" / "reviews"
+            reviews.mkdir(parents=True)
+            target = reviews / "notes.txt"
+            with mock.patch.object(assist, "REPO_ROOT", Path(tmp)):
+                with self.assertRaises(ValueError):
+                    assist.write_reviewer_completion_scaffold(str(target))
+            self.assertFalse(target.exists())
+
+    def test_write_cli_returns_nonzero_on_invalid_path(self):
+        """AC3: the --write CLI exits non-zero on an out-of-scope path."""
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / "docs" / "baselines").mkdir(parents=True)
+            outside = Path(tmp) / "docs" / "baselines" / "X.md"
+            with mock.patch.object(assist, "REPO_ROOT", Path(tmp)):
+                rc = assist.main(
+                    ["--write-reviewer-completion-scaffold", str(outside)]
+                )
+            self.assertEqual(rc, 2)
+            self.assertFalse(outside.exists())
+
+    def test_scaffold_helper_performs_no_apply_or_commit(self):
+        """AC4: no patch-apply, staging, or commit symbol exists in the helper.
+
+        The L1 scaffold path must not introduce L2 patch preview, L3 apply, git
+        staging, or commit behavior. Assert the only write is the exclusive
+        create in write_reviewer_completion_scaffold.
+        """
+        source = (assist.__file__ and Path(assist.__file__).read_text(encoding="utf-8")) or ""
+        for forbidden in ("subprocess.run([\"git\", \"add\"", "git commit", "apply_patch", "--apply"):
+            self.assertNotIn(forbidden, source)
+        # exactly one open(...) with a write/exclusive mode in the module
+        self.assertEqual(source.count('open(candidate, "x"'), 1)
+
+    def test_default_report_does_not_write(self):
+        """AC4: a normal (non-scaffold) invocation still opens no file for write."""
+        real_open = open
+
+        def guarded_open(file, mode="r", *args, **kwargs):
+            if any(flag in mode for flag in ("w", "a", "x", "+")):
+                raise AssertionError(f"report path attempted a write open: {file!r} mode={mode!r}")
+            return real_open(file, mode, *args, **kwargs)
+
+        plan = _plan()
+        buf = io.StringIO()
+        with mock.patch.object(assist, "build_path_plan", return_value=plan), mock.patch(
+            "builtins.open", side_effect=guarded_open
+        ):
+            with redirect_stdout(buf):
+                rc = assist.main(["--base", "HEAD", "--head", "HEAD"])
+        self.assertEqual(rc, 0)
 
 
 if __name__ == "__main__":

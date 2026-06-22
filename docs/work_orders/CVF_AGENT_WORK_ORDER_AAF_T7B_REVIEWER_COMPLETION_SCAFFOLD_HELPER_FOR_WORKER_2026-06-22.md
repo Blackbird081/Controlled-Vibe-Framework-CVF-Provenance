@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-22
 
@@ -242,8 +242,17 @@ Allowed scope:
   tests for the behavior above;
 - create
   `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_WORKER_RETURN_2026-06-22.md`;
-- reviewer/closer closure conversion may update this work order, paired
-  GC-018, and create the completion review after accepting the worker return.
+- reviewer/closer closure conversion may update
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_FOR_WORKER_2026-06-22.md`,
+  update
+  `docs/baselines/CVF_GC018_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_2026-06-22.md`,
+  accept
+  `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_WORKER_RETURN_2026-06-22.md`,
+  accept or defer
+  `docs/reviews/CVF_AAF_T7B_WORKER_RETURN_GATE_TRAP_FINDING_2026-06-22.md`,
+  and create
+  `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_COMPLETION_2026-06-22.md`
+  after accepting the worker return.
 
 Forbidden scope:
 
@@ -311,6 +320,7 @@ Forbidden scope:
 | Runtime behavior claimed | N/A_WITH_REASON: governance compatibility helper only; no product runtime, provider route, web route, CLI/MCP adapter, or Learning Plane mutation |
 | Helper/checker implementation claimed | BOUNDED: add explicit L1 scaffold output/write mode and focused tests |
 | Provider/live proof claimed | N/A_WITH_REASON |
+| Provider registry surfaces | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` are out of scope and untouched; AAF-T7B makes no provider registry absence, hardcoded-provider, provider-selection, or live-governance claim |
 | Public-sync claimed | N/A_WITH_REASON |
 | Freshness disposition | PASS - bounded helper scaffold only; no provider, public-sync, runtime product behavior, or generated aggregate behavior is claimed |
 
@@ -425,14 +435,14 @@ material into a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed files stay inside Required Deliverables.
-- [ ] Scaffold output requires an explicit scaffold flag.
-- [ ] Scaffold write creates only one new markdown file under `docs/reviews/`.
-- [ ] Existing file overwrite and out-of-scope paths are refused.
-- [ ] Helper performs no L2 patch preview, L3 apply, staging, commit, push, provider/live call, or closure decision.
-- [ ] Worker-return fast gate passes or records `BLOCKED_WITH_REASON`.
-- [ ] Reviewer-owned completion review created if accepted.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW`.
+- [x] Changed helper/test/worker-return files stay inside Required Deliverables.
+- [x] Scaffold output requires an explicit scaffold flag.
+- [x] Scaffold write creates only one new markdown file under `docs/reviews/`.
+- [x] Existing file overwrite and out-of-scope paths are refused.
+- [x] Helper performs no L2 patch preview, L3 apply, staging, commit, push, provider/live call, or closure decision.
+- [x] Worker-return fast gate passes.
+- [x] Reviewer-owned completion review created and gate-trap finding recorded as a closure learning adjunct.
 
 ## Return-To-Orchestrator Conditions
 
@@ -454,6 +464,31 @@ L2/L3/runtime/provider/public/session scope.
 | AC4 | The helper performs no L2 patch preview, L3 apply, staging, commit, provider/live call, or arbitrary command | diff review and focused test |
 | AC5 | No forbidden paths changed | `git status --short`; diff |
 | AC6 | Worker return contains required packet shape and no commit | worker-return gate |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 status | `docs/baselines/CVF_GC018_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_WORKER_RETURN_2026-06-22.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T7B_REVIEWER_COMPLETION_SCAFFOLD_HELPER_COMPLETION_2026-06-22.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AAF_T7A_REVIEWER_CLOSER_ACCELERATION_HELPER_ROADMAP_2026-06-22.md` | roadmap remains the upstream AAF-T7 plan and is unchanged for this bounded closure | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; GC-051 aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows closure commit if next move changes | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker-return packet status | `COMPLETE_PENDING_REVIEW` | PASS |
+| Focused tests | unittest 72/72; focused pytest 72/72 | PASS |
+| Helper self-smoke | `defects=[]` | PASS |
+| Worker-return fast gate | PASS after reviewer-owned closure-shape repairs | PASS |
+| Public export evidence | N/A with reason: no public-sync authorized | N/A_WITH_REASON |
 
 ## Public Export Disposition
 
