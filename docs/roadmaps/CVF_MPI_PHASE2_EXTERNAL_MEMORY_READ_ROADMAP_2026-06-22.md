@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MPI_T3_PASS_BOUNDED_PENDING_OPERATOR_SELECTION
+Status: MPI_T4_DISPATCHED_TO_WORKER
 
 docType: roadmap
 
@@ -114,7 +114,7 @@ Learning Plane mutation from this roadmap.
 | Tranche | Purpose | Output | Initial status |
 |---|---|---|---|
 | MPI-T3 | External Agent Memory Summary Contract | Reference contract defining summary-only read request/response and adapter-contract-only boundary | CLOSED_PASS_BOUNDED |
-| MPI-T4 | Federated Memory Read Helper | Optional read-only helper/readout that combines allowed summary sources deterministically | PARKED_AFTER_MPI_T3 |
+| MPI-T4 | Federated Memory Read Helper | Optional read-only helper/readout that combines allowed summary sources deterministically | DISPATCHED_TO_WORKER |
 | MPI-T5 | Memory Access Claim Checker | Optional checker that rejects overclaims such as raw memory, vector DB, runtime store, or live external access without proof | PARKED_AFTER_T3_T4_DECISION |
 | MPI-T6 | Runtime Candidate Decision Packet | Decision packet only: whether later runtime route/vector/durable work is worth authorizing | PARKED_DECISION_ONLY |
 
@@ -153,9 +153,9 @@ call, live proof, public-sync, worker apply mode, or commit automation.
 
 ## MPI-T4 Federated Memory Read Helper
 
-MPI-T4 should remain optional until MPI-T3 closes. It may be opened only if the
-closed MPI-T3 contract shows that a deterministic local helper would materially
-reduce repeated reviewer/worker lookup work.
+MPI-T4 was explicitly selected by the operator after MPI-T3 closed at material
+commit `c4c53588`. Its fresh GC-018 and source-verified work order release only
+the bounded local helper, focused tests, and uncommitted worker return.
 
 Recommended helper shape, if opened:
 
@@ -193,7 +193,7 @@ active boundary.
 | CLI/MCP adapter behavior, runtime route wiring, vector DB, durable store, provider/live proof, and public-sync remain out of scope | REQUIRED |
 | Future work orders include Source Verification and Agent Handoff Contract Control blocks | REQUIRED |
 | Future worker returns use RSE routing for findings and promotion candidates | REQUIRED |
-| MPI-T4, MPI-T5, and MPI-T6 remain parked until their prerequisite evidence exists | REQUIRED |
+| MPI-T4 is released only from fresh MPI-T3 closure, operator-selection, GC-018, and source-verification evidence; MPI-T5/MPI-T6 remain parked | REQUIRED |
 
 ## MPI-T5 Memory Access Claim Checker
 
@@ -247,7 +247,9 @@ secrets/quota handling if applicable.
 | Author MPI-T3 GC-018 and source-verified work order | Dispatch author if assigned | PASS |
 | Execute MPI-T3 under selected worker boundary | Worker if dispatched | PASS_BOUNDED |
 | Review and close or reject MPI-T3 | Reviewer/closer | PASS_BOUNDED |
-| Decide whether MPI-T4 is needed | Operator/reviewer checkpoint after MPI-T3 closure | PARKED |
+| Decide whether MPI-T4 is needed | Operator/reviewer checkpoint | PASS - operator selected MPI-T4 after MPI-T3 closure |
+| Author and gate MPI-T4 GC-018/work order | Dispatch author/reviewer | DISPATCHED_TO_WORKER |
+| Execute MPI-T4 bounded helper/test tranche | Worker | DISPATCHED_TO_WORKER |
 | Decide whether MPI-T5 checker is needed | Operator/reviewer checkpoint after repeated evidence | PARKED |
 | Decide whether MPI-T6 runtime candidate packet is needed | Operator checkpoint after T3/T4 evidence | PARKED |
 
@@ -441,9 +443,9 @@ catalog claim is authorized.
 
 | Field | Disposition |
 |---|---|
-| Roadmap state | `Status: MPI_T3_PASS_BOUNDED_PENDING_OPERATOR_SELECTION` |
+| Roadmap state | `Status: MPI_T4_DISPATCHED_TO_WORKER` |
 | Closure state | N/A with reason: this roadmap is not closed; it is ready for future work-order authoring |
 | Parent roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` records MPI-T2 closed bounded and MPI-T3/MPI-T4 parked |
-| Work-order state | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_SUMMARY_CONTRACT_FOR_WORKER_2026-06-22.md` is `CLOSED_PASS_BOUNDED` |
-| Implementation state | N/A with reason: no helper, checker, runtime, adapter, route, or provider implementation is authorized or performed |
-| Next authorized move | operator checkpoint: hold or explicitly select whether MPI-T4 is needed; MPI-T5/MPI-T6 and all runtime/provider/live/public-sync scope remain parked |
+| Work-order state | MPI-T3 work order is `CLOSED_PASS_BOUNDED`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md` is `DISPATCHED_TO_WORKER` |
+| Implementation state | MPI-T4 helper/test execution is released to the worker but no implementation artifact is present in the dispatch batch |
+| Next authorized move | execute MPI-T4 exactly within its work order and return uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; MPI-T5/MPI-T6 and route/provider/live/public-sync scope remain parked |
