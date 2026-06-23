@@ -341,32 +341,48 @@ Startup acknowledged: current mode=`assf_t2_closed_pass_bounded_pending_t3_selec
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: add ADIF-0009 (backtick-quoted heading
-name truncates real section) to the ADIF defect entry registry, and update
-the hardcoded real-entry count assertions in
-`governance/compat/test_run_adif_defect_resolver.py` from 8 to 9 to match,
-under the existing glob-discovery resolver contract. No resolver/checker
-logic changed.
+Authorized guard-maintenance scope: add a new read-only range-aware
+checker `governance/compat/check_adif_defect_registry_disclosure.py` that
+fails any changed `docs/baselines/CVF_GC018_*.md` or
+`docs/work_orders/CVF_AGENT_WORK_ORDER_*.md` lacking an
+`## ADIF Defect Registry Disclosure` section whose declared resolver query
+omits a defectId the resolver actually returns; wire it into
+`run_agent_autorun_workflow_gate.py`'s `_common_commands` (runs at
+pre-dispatch and pre-implementation) immediately after the existing
+work-order dispatch quality gate; add its focused test module; add a
+matching "Mandatory ADIF Defect Registry Disclosure" section to both
+`AGENTS.md` and `CLAUDE.md` so every agent reading either startup file at
+session start, not only one that happens to author a dispatch, learns the
+rule exists; rotate the "Critical Repository Boundary" rule out of
+`AGENTS.md` into a new companion reference doc to stay under the GC-023
+near-threshold line limit triggered by the new section. This closes the
+gap where `governance/compat/run_adif_defect_resolver.py` and the ADIF
+entry registry existed but no gate forced any agent to query or disclose
+them before dispatch, and no startup-read file even mentioned the registry.
 
 Protected paths:
 
-- `governance/compat/test_run_adif_defect_resolver.py`
+- `governance/compat/check_adif_defect_registry_disclosure.py`
+- `governance/compat/run_agent_autorun_workflow_gate.py`
+- `governance/compat/test_check_adif_defect_registry_disclosure.py`
+- `AGENTS.md`
+- `CLAUDE.md`
 
-Operator authorization: the operator's "Bạn là reviewer" instruction for
-ASSF-T2 plus the standing CLAUDE.md Agent Error To Governance Learning
-Philosophy requirement to promote repeated defect patterns into a written,
-CVF-governed rule rather than leaving them only in provider memory (this is
-itself the exact pattern recorded in `CVF_ADIF-0008`).
+Operator authorization: the operator explicitly asked "review quá lâu...
+cần bổ sung vào category/dictionary... cho các agent khác không vướng
+tiếp" then, when told the prior ADIF-0009 entry alone would not be
+self-enforcing, selected "Wire resolver vào autorun gate (machine-enforced)"
+via an explicit AskUserQuestion choice over template-only or AGENTS.md-only
+alternatives.
 
-Rollback boundary: revert only this ADIF-0009 entry-addition batch if
-rejected (delete `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0009.md`,
-revert the README table row, and revert the two count assertions in
-`test_run_adif_defect_resolver.py` back to 8). Do not revert ASSF-T2 closure
-material `3746bd48`, ASSF-T2 session-sync `631071dd`, ASSF-T1 dispatch
-material `013cc91a`, ASSF-T0.1 closure material `c76cbac7`, ASSF-T0.1
-dispatch material `e9bdcc48`, ASSF roadmap hardening `67fb5b7c`, ASSF-T0
-material `4ed53398`, material hardening `104b3267`, ADIF reviewer material
-`fd5414b7`, or prior history.
+Rollback boundary: revert only this batch if rejected (delete the new
+checker and test file, and remove the new `GateCommand` entry added to
+`_common_commands`). Do not revert ADIF-0009 entry-addition material
+`520b5653`, ASSF-T2 closure material `3746bd48`, ASSF-T2 session-sync
+`631071dd`, ASSF-T1 dispatch material `013cc91a`, ASSF-T0.1 closure material
+`c76cbac7`, ASSF-T0.1 dispatch material `e9bdcc48`, ASSF roadmap hardening
+`67fb5b7c`, ASSF-T0 material `4ed53398`, material hardening `104b3267`,
+ADIF reviewer material `fd5414b7`, or prior history.
 
 ## Agent Operation Trace Block
 

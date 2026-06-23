@@ -140,6 +140,22 @@ This is a scope label, not a value judgment on the worker or source family.
 route execution belongs in a separate live-proof roadmap after LHW connector
 absorption of remaining `PARTIALLY_ABSORBED` LH1 families is complete.
 
+## Mandatory ADIF Defect Registry Disclosure
+
+CVF accumulates recurring agent-defect patterns (gate-trap quirks,
+dispatch-quality requirements, role-boundary rules) as governed entries
+under `docs/reference/agent_defect_intelligence/entries/`, queryable
+through the read-only resolver `governance/compat/run_adif_defect_resolver.py`.
+Do not record a reusable lesson only in Claude's own session memory -
+`CVF_ADIF-0008` names that exact anti-pattern as a defect. Any GC-018 or
+work order must include an `## ADIF Defect Registry Disclosure` section
+naming the resolver query and every defectId it returns;
+`governance/compat/check_adif_defect_registry_disclosure.py` enforces this
+at pre-dispatch and pre-implementation. If a new repeated or non-obvious
+defect pattern is found while executing a tranche, add it to the ADIF
+registry before closing, per
+`docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`.
+
 ## Mandatory Work Order Source Verification
 
 Before authoring or dispatching a CVF work order, follow the canonical template:

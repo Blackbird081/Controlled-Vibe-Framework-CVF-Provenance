@@ -165,28 +165,14 @@ README/catalog claim is made.
 
 ## Critical Repository Boundary - 2026-05-09
 
-This workspace is the private provenance/archive repository:
+Rotated under the Governed File Size Guard (GC-023) to:
 
-`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git`
+`docs/reference/CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md`
 
-It contains full historical development material, evidence records, handoffs,
-reviews, and internal continuity files. Treat it as locked for private audit and
-deep review. Do not use this workspace as the public CVF product front door.
-
-The only GitHub repository intended for public/external CVF information is:
-
-`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-
-Public-facing architecture, README, contributor, setup, governance, provider,
-cost, or evidence-summary changes must be prepared and pushed from the sibling
-public-sync clone:
-
-`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
-
-Before any push that is meant for the public repository, run `git remote -v`.
-If the current working directory is this provenance workspace or `origin`
-contains `Controlled-Vibe-Framework-CVF-Provenance`, stop and switch to the
-public-sync clone. Do not push the full provenance tree into the public repo.
+Read that file before any push, public-sync work, or repository-boundary
+decision. Summary: this workspace is the private provenance repository;
+public-facing changes must go through the sibling public-sync clone; run
+`git remote -v` before any push intended for the public repository.
 
 ## UI / Web Design Contract
 
@@ -243,6 +229,30 @@ was impossible.
 Benchmark evidence that emits multiple events per live call must report both
 the call-level result and the event-model denominator so readers do not confuse
 event ratios with execution pass rate.
+
+## Mandatory ADIF Defect Registry Disclosure - 2026-06-23
+
+CVF accumulates recurring agent-defect patterns (gate-trap quirks,
+dispatch-quality requirements, role-boundary rules) as governed entries
+under `docs/reference/agent_defect_intelligence/entries/`, queryable
+through the read-only resolver `governance/compat/run_adif_defect_resolver.py`.
+A pattern recorded only in one provider's session memory is invisible to
+every other agent and every future session; it is the registry, not any
+single agent's memory, that all agents share.
+
+Any GC-018 baseline or work order an agent files must include an
+`## ADIF Defect Registry Disclosure` section: query the resolver for this
+dispatch's own task class, role, and lifecycle phase, then list every
+returned defectId. `governance/compat/check_adif_defect_registry_disclosure.py`
+(wired into the pre-dispatch and pre-implementation autorun phases) blocks
+dispatch if this section is missing, the query line is missing, or any
+defectId the resolver actually returns is omitted from the disclosed list.
+
+If a reviewer or worker observes a new repeated or non-obvious defect
+pattern while executing a tranche, add a new entry to the ADIF registry
+(following `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`)
+before closing that tranche, rather than recording the lesson only in
+provider-specific memory (`CVF_ADIF-0008` names this exact anti-pattern).
 
 ## Mandatory Work Order Source Verification - 2026-05-27
 

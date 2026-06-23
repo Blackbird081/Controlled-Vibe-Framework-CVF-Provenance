@@ -295,6 +295,27 @@ Risk ceiling:
 
 - <R0 | R1 | R2 | R3>
 
+## ADIF Defect Registry Disclosure
+
+Before filing this work order, query the read-only ADIF defect resolver
+(`governance/compat/run_adif_defect_resolver.py`) for this dispatch's own
+task class, role, and lifecycle phase, then list every returned defectId
+below. `check_adif_defect_registry_disclosure.py` (wired into the
+pre-dispatch and pre-implementation autorun phases) fails this work order
+if this section is missing, if the query line is missing, or if any
+defectId the resolver actually returns for the declared query is omitted
+from the list.
+
+Resolver query: taskClass=`<task class>`, role=`<dispatcher | worker |
+reviewer | closer>`, lifecyclePhase=`<pre-dispatch | pre-implementation |
+pre-closure | pre-push>`
+
+Returned defects (or `Returned defects: NONE_RETURNED` if the query matches
+zero entries):
+
+- <defectId> - <one-line note on whether/how this dispatch avoids the
+  pattern>
+
 ## 5. Required First Reads
 
 Before filing GC-018 or editing files, read:
@@ -313,6 +334,7 @@ git rev-parse --short HEAD
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD
 python governance/compat/check_work_order_dispatch_quality.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_adif_defect_registry_disclosure.py --base <baseHead> --head HEAD --enforce
 ```
 
 Expected results:
@@ -992,6 +1014,30 @@ A work order is not ready for execution unless it answers:
 - Which command proves pre-flight readiness?
 - Which evidence proves completion, including dispatch prompt envelope evidence per `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md` when delegated?
 - What stops the agent from continuing?
+
+## Delta Execution Claim Boundary Control Block
+
+A real work order built from this template must include this block with
+the 8 canonical fields (`claimScope`, `claimDisposition`, `receiptEvidence`,
+`actionEvidence`, `invocationBoundary`, `interceptionBoundary`,
+`claimLanguage`, `forbiddenExpansion`), populated with the actual
+dispatch's scope and boundary. This template's own placeholder copy below
+exists only so `check_delta_execution_claim_boundary.py` recognizes the
+template file itself when it mentions runtime-enforcement language in
+prose (e.g. the Minimum Quality Bar's `runtime enforcement behavior`
+wording); it is not a real dispatch's claim and must not be copied
+verbatim into an actual work order.
+
+| Field | Disposition |
+|---|---|
+| claimScope | `<bounded scope of this specific dispatch>` |
+| claimDisposition | `<BOUNDED_CLAIM_WITH_EVIDENCE | N/A with reason>` |
+| receiptEvidence | `<CVF_RECEIPT_PRESENT | N/A with reason>` |
+| actionEvidence | `<ACTION_EVIDENCE_PRESENT | N/A with reason>` |
+| invocationBoundary | `<governed local document/code editing, no broader claim>` |
+| interceptionBoundary | `<no IDE/shell/git/filesystem/provider interception claim>` |
+| claimLanguage | `<plain description of what this dispatch actually does>` |
+| forbiddenExpansion | `<explicitly list what this dispatch does not do>` |
 
 ## Related Artifacts
 
