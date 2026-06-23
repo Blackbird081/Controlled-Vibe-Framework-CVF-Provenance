@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -257,10 +257,10 @@ silently worked around).
 
 | Required output | Path or evidence | Owner | Status |
 |---|---|---|---|
-| Learning And ADIF Promotion Bridge contract | `docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md` | worker | PENDING_WORKER_RETURN |
-| T3 worker return | `docs/reviews/CVF_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_WORKER_RETURN_2026-06-23.md` | worker | PENDING_WORKER_RETURN |
-| T3 completion review | a reviewer-created completion review under the reviews directory | reviewer | REVIEWER_OWNED_AFTER_RETURN |
-| Material commit | git commit after reviewer acceptance | reviewer | REVIEWER_OWNED_AFTER_RETURN |
+| Learning And ADIF Promotion Bridge contract | `docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md` | worker | WORKER_RETURNED |
+| T3 worker return | `docs/reviews/CVF_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_WORKER_RETURN_2026-06-23.md` | worker | WORKER_RETURNED |
+| T3 completion review | `docs/reviews/CVF_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_COMPLETION_2026-06-23.md` | reviewer | CLOSED_PASS_BOUNDED |
+| Material commit | git commit after reviewer acceptance | reviewer | CLOSURE_READY |
 
 ## Foundation Storage Layout Block
 
@@ -530,16 +530,16 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | reviewer updates roadmap status on closure | PENDING |
-| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Completion or reviewer artifact | a reviewer-created completion review under the reviews directory | reviewer-owned after return | PENDING |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T3_CLOSED_PASS_BOUNDED_PENDING_T4_SELECTION` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_WORKER_RETURN_2026-06-23.md` | `Status: COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, accepted after reviewer handoff repair | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T3 is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T3 is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported in this tranche | N/A with reason |
 | System loop interlock | this work order | T2 data plane was required before T3 and is now closed; T3 is required before T4 | PASS |
-| Session continuity | active session sync after material commit | separate session-sync lane after material commit | PENDING |
+| Session continuity | active session sync after material commit | separate session-sync lane after material commit | PASS |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
@@ -547,7 +547,7 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Work order status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Work order status | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
 | Build scope | bridge contract document plus worker return only | as specified | PASS |
 | T1 contract consumption | required | required | PASS |

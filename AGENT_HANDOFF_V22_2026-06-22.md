@@ -83,9 +83,9 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `b1969159`
+Current material HEAD recorded for this handoff: `e69a836e`
 
-Prior material HEAD recorded for this handoff: `520b5653`
+Prior material HEAD recorded for this handoff: `b1969159`
 
 Prior session-sync HEAD recorded for this handoff: `631071dd`
 
@@ -96,6 +96,8 @@ ASSF-T2 session-sync HEAD: `631071dd`
 ADIF-0009 entry material HEAD: `520b5653`
 
 ADIF disclosure gate wiring material HEAD: `b1969159`
+
+ASSF-T3 dispatch material HEAD: `e69a836e`
 
 MPI-T6 review-gate hardening dispatch HEAD: `760d74b0`
 
