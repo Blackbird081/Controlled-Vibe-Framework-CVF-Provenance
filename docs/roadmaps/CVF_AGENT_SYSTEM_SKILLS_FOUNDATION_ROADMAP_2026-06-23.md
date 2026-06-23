@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ASSF_T0_1_DISPATCH_READY
+Status: ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION
 
 Date: 2026-06-23
 
@@ -32,10 +32,11 @@ same package, index, provenance, risk, UAT, and lifecycle architecture.
 ADIF is closed bounded. ASSF-T0 is closed bounded as an owner/surface/legacy
 absorption audit. The operator identified that the currently opened legacy
 folders are only seed examples, not the complete skill-related legacy corpus.
-ASSF-T0.1 legacy skill corpus rescan is therefore mandatory before ASSF-T1 can
+ASSF-T0.1 legacy skill corpus rescan is closed bounded. It produced the
+filesystem-backed absorption candidate ledger required before ASSF-T1 can
 freeze any package schema or storage topology. ASSF-T1 remains parked pending
-ASSF-T0.1 closure. The operator selected T0.1, and Codex created a
-source-verified GC-018 baseline plus no-commit worker-return work order.
+fresh operator selection, GC-018, Source Verification, roadmap trace, Dual
+Agent Surface Matrix, and work order.
 
 ## Scope
 
@@ -202,17 +203,20 @@ limited to ADK SkillToolset, Windows Skill Normalization, ADDING CVF Skill
 Formation Layer, and Memento-Skills. Classify candidate files and folders into
 an absorption ledger before ASSF-T1 schema work starts.
 
-Status: `DISPATCH_READY`.
+Status: `CLOSED_PASS_BOUNDED`.
 
 Dispatch artifacts:
 
 - `docs/baselines/CVF_GC018_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_2026-06-23.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_FOR_WORKER_2026-06-23.md`
+- `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md`
+- `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md`
+- `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md`
 
-Execution rule: `WORKER_MUST_NOT_COMMIT`. The worker may create only the
-T0.1 audit ledger and worker-return packet named in the work order. Codex
-reviewer/closer owns material closure, roadmap update, session sync, and any
-commit after validating the worker return.
+Closure result: worker respected `WORKER_MUST_NOT_COMMIT`; Codex reviewer
+accepted the worker return after independent count verification and gates. The
+rescan enumerated 629 legacy files, found 4855 keyword hits across 422 files,
+and classified the highest-signal candidates in a 24-row absorption ledger.
 
 ASSF-T0.1 is not authorized to migrate files, create packages, create the
 canonical root, generate an index, implement resolvers, activate skills, expose
@@ -311,8 +315,9 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 | Record architecture roadmap and dual-agent rule | Codex roadmap author | PASS |
 | Complete current ADIF continuous lane and Codex review | Claude worker; Codex reviewer/closer | IN_PROGRESS |
 | Select and dispatch ASSF-T0 | operator checkpoint after ADIF or explicit isolated authorization | PASS |
-| Select and dispatch ASSF-T0.1 legacy skill corpus rescan | operator checkpoint after T0 | DISPATCH_READY |
-| Implement ASSF-T1/T2 early foundation | future source-verified tranches | PARKED - blocked by T0.1 |
+| Select and dispatch ASSF-T0.1 legacy skill corpus rescan | operator checkpoint after T0 | PASS |
+| Close ASSF-T0.1 worker-return rescan | Codex reviewer/closer | CLOSED_PASS_BOUNDED |
+| Implement ASSF-T1/T2 early foundation | future source-verified tranches | PARKED - pending operator selection |
 | Connect learning/external/legacy lanes | future T3/T4 tranches | PARKED |
 
 ## Finding-To-Governance Learning Disposition
@@ -320,9 +325,10 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 - Defect class: `RULE_GAP`
 - Learning lane: `GOVERNANCE_CONTROL_PLANE`
 - Disposition: `DESIGN_REVIEW_REQUIRED`
-- Next control action: execute ASSF-T0.1 no-commit worker-return legacy skill
-  corpus rescan and absorption candidate ledger, before ASSF-T1 canonical
-  package contract and storage topology.
+- Next control action: operator may select ASSF-T1 canonical package contract
+  and storage topology or another governed lane through fresh source-verified
+  dispatch. ASSF-T1 must consume the T0.1 candidate ledger before schema
+  freeze.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - roadmap-only.
 
 ## Verification / Evidence
@@ -331,30 +337,29 @@ Roadmap verification uses direct reads of the named skill spec, rollout policy,
 current skill concept, legacy rescreen roadmap, external screening matrix,
 archived evolution roadmap, generated aggregate discipline, and dual-agent
 standard. ASSF-T0 replaced the bounded orientation set with a filesystem-backed
-skill-surface owner inventory and reconciliation ledger. The operator has now
+skill-surface owner inventory and reconciliation ledger. The operator
 identified additional skill-relevant legacy seed folders, including ADK
 SkillToolset, Windows Skill Normalization, ADDING CVF Skill Formation Layer,
-and Memento-Skills. T1 must not treat T0 owner counts or the operator's open
-tabs as final package inventory; T0.1 must scan and classify the broader legacy
-skill corpus first.
+and Memento-Skills. T0.1 has now scanned the broader legacy skill corpus and
+produced the candidate ledger that T1 must consume.
 
 ## Corpus Completeness And Report Integrity
 
-- Corpus task class: ROADMAP_DISPATCH_UPDATE.
-- Corpus root: this roadmap; dispatched ASSF-T0.1 scan root `.private_reference/legacy/`.
+- Corpus task class: ROADMAP_CLOSURE_UPDATE.
+- Corpus root: this roadmap; closed ASSF-T0.1 scan root `.private_reference/legacy/`.
 - Snapshot time: 2026-06-23.
-- Enumeration command: filesystem-backed direct file reads for this roadmap dispatch update; worker must run `rg --files --hidden --no-ignore .private_reference/legacy` plus keyword searches recorded in the work order.
-- Manifest artifact or inline manifest: Mandatory Legacy Skill Rescan Gate, ASSF-T0.1 tranche section, and T0.1 work order.
-- Manifest hash: N/A with reason: roadmap dispatch update only; worker must create the legacy corpus manifest or inline manifest.
-- Processing ledger artifact or inline ledger: PENDING_WORKER_RETURN at `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md`.
+- Enumeration command: worker and reviewer verified `rg --files --hidden --no-ignore .private_reference/legacy` -> 629 files, plus the required keyword search -> 4855 hits across 422 files.
+- Manifest artifact or inline manifest: T0.1 audit Legacy Manifest Summary and worker-return Corpus Completeness section.
+- Manifest hash: N/A with reason: text inline manifest summary; no generated manifest artifact.
+- Processing ledger artifact or inline ledger: `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` Absorption Candidate Ledger.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE.
-- Reconciliation: manifest=PENDING_WORKER_RETURN; ledger_terminal=PENDING_WORKER_RETURN; exclusions=actual legacy scan by roadmap author, migration, package creation, runtime/provider/public/CLI/MCP adapter; unresolved=0 for this roadmap dispatch update.
-- Unresolved files: 0 for this roadmap dispatch update; ASSF-T0.1 worker owns legacy unresolved counts.
+- Reconciliation: manifest=629; keyword_hits=4855 across 422 files; ledger_terminal=24 ledger rows; exclusions=full line-by-line direct reads of all 422 matched files, migration, package creation, runtime/provider/public/CLI/MCP adapter; unresolved=0.
+- Unresolved files: 0.
 - Declared exclusions: actual legacy scan, per-file absorption ledger, source hashes, migration, package creation, generated index, resolver, runtime/provider/live/public behavior, and CLI/MCP adapter.
 - Unreadable or unsupported files: 0 for this roadmap edit.
 - Aggregation check: N/A with reason: no generated aggregate created by this roadmap edit.
 - Drift check: N/A with reason: no generated aggregate created by this roadmap edit.
-- Output traceability: ASSF-T0.1 dispatch is recorded in Authorization / Decision, Design Control Gate, Mandatory Legacy Skill Rescan Gate, Tranche Sequence, Work Plan, and Machine Closure Package.
+- Output traceability: ASSF-T0.1 closure is recorded in Authorization / Decision, Design Control Gate, Mandatory Legacy Skill Rescan Gate, Tranche Sequence, Work Plan, and Machine Closure Package.
 - Adversarial verification: the roadmap explicitly rejects treating operator open tabs or T0 owner counts as full legacy skill corpus coverage.
 - Corpus verdict: PARTIAL
 
@@ -381,14 +386,15 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: ASSF_T0_1_DISPATCH_READY` | PASS |
+| Roadmap state | this roadmap | `Status: ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
 | GC-018 status | `docs/baselines/CVF_GC018_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_COMPLETION_2026-06-23.md` | reviewer-owned closure review | PASS |
-| ASSF-T0.1 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| ASSF-T0.1 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_FOR_WORKER_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| ASSF-T0.1 worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| ASSF-T0.1 audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
+| ASSF-T0.1 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T0.1 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T0.1 worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| ASSF-T0.1 audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T0.1 completion review | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported; external skill screening remains reference input | N/A with reason |
@@ -401,9 +407,9 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Roadmap status | `ASSF_T0_1_DISPATCH_READY` | `ASSF_T0_1_DISPATCH_READY` | PASS |
+| Roadmap status | `ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | `ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
 | T0 closure artifacts | baseline, work order, audit, completion review | all named in T0 closure artifacts | PASS |
-| T0.1 dispatch artifacts | GC-018 baseline and work order | both named in ASSF-T0.1 dispatch section | PASS |
+| T0.1 closure artifacts | GC-018, work order, audit, worker return, completion review | all named in ASSF-T0.1 tranche section | PASS |
 | Package root | proposed only | proposed only | PASS |
 | External CLI/MCP adapter | deferred | `DEFERRED_WITH_REASON` | PASS |
 | Runtime/provider/live claim | none | none | PASS |
@@ -412,10 +418,10 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Field | Disposition |
 |---|---|
-| claimScope | Agent System Skills architecture roadmap and ASSF-T0.1 dispatch update |
-| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE - dispatch-ready no-commit worker-return lane only |
+| claimScope | Agent System Skills architecture roadmap and ASSF-T0.1 closure update |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE - T0.1 worker-return scan accepted only |
 | receiptEvidence | N/A with reason: no runtime receipt |
-| actionEvidence | ACTION_EVIDENCE_PRESENT - T0.1 GC-018 baseline and work order paths |
+| actionEvidence | ACTION_EVIDENCE_PRESENT - T0.1 audit, worker return, completion review, and gate evidence |
 | invocationBoundary | governed roadmap and dispatch authoring only |
 | interceptionBoundary | no IDE/shell/git/filesystem/provider interception claim |
 | claimLanguage | proposed canonical package/index/progressive-loading foundation |
@@ -427,27 +433,27 @@ catalog changes require a later public-safe artifact and public-sync batch.
 |---|---|
 | Actor | Codex roadmap author |
 | Provider or surface | local workspace |
-| Session or invocation | Agent System Skills roadmap T0.1 dispatch update, 2026-06-23 |
+| Session or invocation | Agent System Skills roadmap T0.1 closure update, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | source reads, filesystem inventory commands, apply_patch, governance gates, git commit |
-| Target paths | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order |
+| Target paths | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order; T0.1 audit; worker return; completion review |
 | Allowed scope source | operator instruction to continue the package-skills roadmap; active session next move |
-| Before status evidence | clean HEAD `ab7ca99b`; ASSF-T0 closed bounded; ASSF-T0.1 required before ASSF-T1 |
-| After status evidence | ASSF-T0.1 dispatch ready; worker-return lane required |
+| Before status evidence | clean HEAD `3f51a4cc`; ASSF-T0.1 dispatch ready |
+| After status evidence | ASSF-T0.1 closed bounded; ASSF-T1 pending operator selection |
 | Diff evidence | real-range name-status and gate output |
 | Approval boundary | ASSF-T0 documentation/audit only |
-| Claim boundary | no worker execution, skill package root creation, generated index, resolver, runtime, CLI/MCP implementation, or public-sync |
+| Claim boundary | T0.1 scan/ledger acceptance only; no skill package root creation, generated index, resolver, runtime, CLI/MCP implementation, or public-sync |
 | Agent type | roadmap author and T0 closer |
-| Invocation ID | `cvf-agent-system-skills-foundation-t0-1-dispatch-2026-06-23` |
-| Expected manifest | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order |
-| Actual changed set | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order |
+| Invocation ID | `cvf-agent-system-skills-foundation-t0-1-closure-2026-06-23` |
+| Expected manifest | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order; T0.1 audit; worker return; completion review |
+| Actual changed set | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order; T0.1 audit; worker return; completion review |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## Claim Boundary
 
 This roadmap now records the architecture sequence, the closed bounded ASSF-T0
-owner/surface audit, and ASSF-T0.1 dispatch readiness. It does not execute the
-legacy scan, create a canonical package root, `SKILL.md`, source schema,
-registry, generated index, resolver, Learning Plane bridge, external intake
-adapter, Web migration, guard, public-sync, or runtime CLI/MCP surface.
+owner/surface audit, and closed bounded ASSF-T0.1 legacy rescan. It does not
+create a canonical package root, `SKILL.md`, source schema, registry, generated
+index, resolver, Learning Plane bridge, external intake adapter, Web migration,
+guard, public-sync, runtime CLI/MCP surface, or ASSF-T1 dispatch.

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -14,9 +14,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: ab7ca99b
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: `3f51a4cc`
 
-closureBaseHead: PENDING_WORKER_RETURN
+closureBaseHead: `3f51a4cc`
 
 ## Dispatch Prompt Envelope
 
@@ -34,11 +34,11 @@ Do-not-misread notes: seed folders are required inputs, not complete corpus cove
 
 Required first actions: read front door/state/handoff/guard orientation, read this packet, capture `git status --short`, run pre-implementation gate.
 
-Return contract: return `COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, or `BLOCKED_WITH_REASON` without committing.
+Return contract: return a review-ready, limitations, or blocked status without committing.
 
 You are the ASSF-T0.1 worker. Execute only the bounded legacy skill corpus
 rescan and absorption candidate ledger described in this work order. You must
-not commit. Return `COMPLETE_PENDING_REVIEW` only with the required worker
+not commit. Return review-ready status only with the required worker
 return artifacts present and the reviewer-fast evidence captured, or return
 `BLOCKED_WITH_REASON` if a gate fails outside allowed scope.
 
@@ -127,8 +127,8 @@ accepting worker output. Worker self-approval is not closure.
 
 ## Return-To-Orchestrator Conditions
 
-Return `BLOCKED_WITH_REASON` only for Stop Conditions. Return
-`COMPLETE_PENDING_REVIEW` only after required artifacts and gate evidence exist.
+Return `BLOCKED_WITH_REASON` only for Stop Conditions. Return review-ready
+status only after required artifacts and gate evidence exist.
 
 ## Operator Checkpoint
 
@@ -175,7 +175,7 @@ required before bounded worker execution; stop conditions define the return path
 | completionReviewPath | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` |
 | workerReturnPath | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` |
 | reviewerOwnedClosurePaths | ASSF roadmap update, T0.1 completion review, active session state/front door/handoff sync, material commit, and session-sync commit if accepted |
-| workerReturnDisposition | `COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, or `BLOCKED_WITH_REASON` |
+| workerReturnDisposition | review-ready, limitations, or `BLOCKED_WITH_REASON` |
 | reviewerCommitRule | Reviewer may commit only after validating worker evidence, rerunning gates, and resolving closure defects |
 
 ## Worker Autonomy / No-Question Rule
@@ -199,7 +199,7 @@ release a new prerequisite, or require session/front-door/handoff ownership.
 | Scope classification | bounded no-commit worker-return over two allowed output paths |
 | Risk sensitivity | high because legacy absorption affects future package authority, external CLI/MCP disposition, public-sync boundary, provider/live claim boundary, and production-readiness language |
 | Escalation condition | stop with `BLOCKED_WITH_REASON` if remediation exceeds allowed scope, touches forbidden paths, needs new human authorization, or requires session/front-door/handoff ownership |
-| Dispatch status | ACCEPT |
+| Dispatch status | CLOSED_PASS_BOUNDED |
 | Reason | T0.1 is selected, source-verified, and bounded to no-commit worker-return execution |
 
 ## Legacy Absorption Coverage Index Disposition
@@ -215,11 +215,11 @@ release a new prerequisite, or require session/front-door/handoff ownership.
 
 | Required output | Path or evidence | Owner | Status |
 |---|---|---|---|
-| T0.1 audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | worker | AWAITING_WORKER_RETURN |
-| T0.1 worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | worker | AWAITING_WORKER_RETURN |
-| T0.1 completion review | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | reviewer | REVIEWER_OWNED_AFTER_RETURN |
-| Reviewer-fast evidence | command output in worker return | worker | AWAITING_WORKER_RETURN |
-| Material commit | git commit after reviewer acceptance | reviewer | REVIEWER_OWNED_AFTER_RETURN |
+| T0.1 audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | worker | ACCEPTED_BY_REVIEWER |
+| T0.1 worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | worker | ACCEPTED_BY_REVIEWER |
+| T0.1 completion review | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | reviewer | CLOSED_PASS_BOUNDED |
+| Reviewer-fast evidence | command output in worker return and reviewer run | worker/reviewer | PASS |
+| Material commit | git commit after reviewer acceptance | reviewer | READY_FOR_COMMIT |
 
 ## Allowed Scope
 
@@ -275,8 +275,8 @@ The worker must not:
 9. Run:
    - `python governance/compat/run_worker_return_fast_gate.py`
    - `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`
-10. Return `COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`,
-    or `BLOCKED_WITH_REASON` without committing.
+10. Return review-ready, limitations, or `BLOCKED_WITH_REASON` status without
+    committing.
 
 ## Required Deliverables
 
@@ -540,14 +540,18 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T0_1_DISPATCH_READY` | PASS |
-| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Completion review | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | REVIEWER_OWNED_AFTER_RETURN | PENDING |
-| Registry JSON | N/A with reason | no GC-051 registry update authorized | N/A with reason |
-| Registry Markdown | N/A with reason | no GC-051 registry update authorized | N/A with reason |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | reviewer closure artifact present | PASS |
+| External evidence digest | N/A with reason | no external artifact digest; evidence is local private governed documentation in this provenance repository | N/A with reason |
+| System loop interlock | N/A with reason | no loop, queue, daemon, runtime, or automatic execution created | N/A with reason |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized by T0.1; future registry work requires a separate source-verified tranche | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry Markdown update authorized by T0.1; future registry work requires a separate source-verified tranche | BLOCKED with reason |
+| Session continuity | active session sync after material commit if next move changes | separate post-material session-sync lane | N/A with reason |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
@@ -565,7 +569,7 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Work order status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Work order status | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
 | Worker commit mode | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
 | Allowed output paths | audit and worker-return only | audit and worker-return only | PASS |
 | External-agent disposition required | yes | yes | PASS |
@@ -609,8 +613,8 @@ Return `BLOCKED_WITH_REASON` if:
 
 ## Claim Boundary
 
-This work order authorizes only a no-commit worker-return legacy scan and
-absorption candidate ledger. It does not authorize ASSF-T1, package contract
-freeze, storage topology creation, skill package creation, generated index,
-resolver, runtime/provider/live proof, public-sync, CLI/MCP adapter
-implementation, session sync, or worker commit.
+This work order is closed bounded after reviewer acceptance of the no-commit
+worker-return legacy scan and absorption candidate ledger. It does not
+authorize ASSF-T1, package contract freeze, storage topology creation, skill
+package creation, generated index, resolver, runtime/provider/live proof,
+public-sync, CLI/MCP adapter implementation, or worker commit.

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -14,9 +14,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: ab7ca99b
 
-executionBaseHead: PENDING_WORKER_START
+executionBaseHead: `3f51a4cc`
 
-closureBaseHead: PENDING_WORKER_RETURN
+closureBaseHead: `3f51a4cc`
 
 ## Purpose
 
@@ -84,7 +84,7 @@ artifacts.
 | Field | Disposition |
 |---|---|
 | Selected tranche | ASSF-T0.1 - Legacy Skill Corpus Rescan And Absorption Candidate Ledger |
-| Dispatch status | DISPATCH_READY |
+| Dispatch status | CLOSED_PASS_BOUNDED |
 | Worker commit authority | WORKER_MUST_NOT_COMMIT |
 | Reviewer closer | Codex reviewer/closer |
 | Reason for no worker commit | Legacy absorption affects future canonical package architecture; reviewer must validate corpus coverage and source-fidelity before material closure |
@@ -138,12 +138,13 @@ artifacts.
 - Enumeration command: dispatch source reads plus future worker command `rg --files --hidden --no-ignore .private_reference/legacy`.
 - Manifest artifact or inline manifest: this baseline and the matching T0.1 work order define the required manifest; future worker must create the actual scan manifest or inline manifest in the worker-return audit.
 - Manifest hash: N/A with reason: dispatch packet only; worker owns corpus snapshot evidence.
-- Processing ledger artifact or inline ledger: PENDING_WORKER_RETURN.
+- Processing ledger artifact or inline ledger:
+  `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md`.
 - Allowed terminal statuses: `READ`, `SKIPPED_WITH_REASON`, `DEFERRED`, `BLOCKED_UNREADABLE`.
 - Reconciliation: manifest=dispatch_packet_only; ledger_terminal=deferred_to_worker_return; exclusions=package creation, migration, runtime, provider/live, public-sync, generated index, resolver, and adapter implementation; unresolved=0.
 - Unresolved files: 0
 - Declared exclusions: no edits under `.private_reference/legacy/`; no canonical package root; no generated index; no resolver; no runtime/provider/live/public behavior; no CLI/MCP adapter implementation.
-- Unreadable or unsupported files: PENDING_WORKER_RETURN.
+- Unreadable or unsupported files: 0 reported by worker.
 - Aggregation check: N/A with reason: no generated aggregate created by dispatch.
 - Drift check: N/A with reason: no generated aggregate created by dispatch.
 - Output traceability: worker return must map every terminal conclusion to a manifest row, source path, command evidence, and allowed disposition.
@@ -236,14 +237,18 @@ or claims closure without filesystem-backed manifest and ledger evidence.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T0_1_DISPATCH_READY` | PASS |
-| GC-018 status | this file | `Status: DISPATCH_READY` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_FOR_WORKER_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Registry JSON | N/A with reason | no GC-051 registry update authorized by dispatch | N/A with reason |
-| Registry Markdown | N/A with reason | no GC-051 registry update authorized by dispatch | N/A with reason |
-| Session continuity | active session sync after material commit if next move changes | separate session-sync lane | PENDING |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | reviewer closure artifact present | PASS |
+| External evidence digest | N/A with reason | no external artifact digest; evidence is local private governed documentation in this provenance repository | N/A with reason |
+| System loop interlock | N/A with reason | no loop, queue, daemon, runtime, or automatic execution created | N/A with reason |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized by T0.1; future registry work requires a separate source-verified tranche | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry Markdown update authorized by T0.1; future registry work requires a separate source-verified tranche | BLOCKED with reason |
+| Session continuity | active session sync after material commit if next move changes | separate post-material session-sync lane | N/A with reason |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
@@ -251,7 +256,7 @@ or claims closure without filesystem-backed manifest and ledger evidence.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Dispatch status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Closure status | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
 | Worker commit authority | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
 | Legacy scan root | `.private_reference/legacy/` | `.private_reference/legacy/` | PASS |
 | External CLI/MCP disposition | present | Dual Agent Surface Matrix row present | PASS |
@@ -295,8 +300,8 @@ or claims closure without filesystem-backed manifest and ledger evidence.
 
 ## Claim Boundary
 
-This baseline authorizes ASSF-T0.1 worker-return execution only. It does not
-perform the legacy scan, close T0.1, create the canonical skill package root,
-generate an index, implement a resolver, migrate legacy files, activate any
-skill, implement CLI/MCP adapters, run provider/live proof, public-sync, or
+This baseline is closed bounded after reviewer acceptance of the T0.1
+worker-return scan and audit. It does not create the canonical skill package
+root, generate an index, implement a resolver, migrate legacy files, activate
+any skill, implement CLI/MCP adapters, run provider/live proof, public-sync, or
 authorize ASSF-T1.
