@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION
+Status: ASSF_T1_CLOSED_PASS_BOUNDED_PENDING_T2_SELECTION
 
 Date: 2026-06-23
 
@@ -229,6 +229,15 @@ authority/risk/lifecycle fields, package layout, dual-agent matrix, and
 provider-adapter boundary. Reconcile existing CVF Skill Spec and the ASSF-T0.1
 legacy absorption ledger instead of creating a competing definition.
 
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure artifacts:
+
+- `docs/reference/agent_system_skills/README.md`
+- `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`
+- `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md`
+- `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md`
+
 ### ASSF-T2 - Generated Index And Progressive Resolver
 
 Create compact registry sources, deterministic generator, drift check, and a
@@ -317,7 +326,8 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 | Select and dispatch ASSF-T0 | operator checkpoint after ADIF or explicit isolated authorization | PASS |
 | Select and dispatch ASSF-T0.1 legacy skill corpus rescan | operator checkpoint after T0 | PASS |
 | Close ASSF-T0.1 worker-return rescan | Codex reviewer/closer | CLOSED_PASS_BOUNDED |
-| Implement ASSF-T1/T2 early foundation | future source-verified tranches | PARKED - pending operator selection |
+| Close ASSF-T1 canonical package contract | Codex reviewer/closer | CLOSED_PASS_BOUNDED |
+| Implement ASSF-T2 generated index/resolver foundation | future source-verified tranche | PARKED - pending operator selection |
 | Connect learning/external/legacy lanes | future T3/T4 tranches | PARKED |
 
 ## Finding-To-Governance Learning Disposition
@@ -325,9 +335,10 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 - Defect class: `RULE_GAP`
 - Learning lane: `GOVERNANCE_CONTROL_PLANE`
 - Disposition: `DESIGN_REVIEW_REQUIRED`
-- Next control action: operator may select ASSF-T1 canonical package contract
-  and storage topology or another governed lane through fresh source-verified
-  dispatch. ASSF-T1 must consume the T0.1 candidate ledger before schema
+- Next control action: operator may select ASSF-T2 generated index and
+  progressive resolver foundation or another governed lane through fresh
+  source-verified dispatch. ASSF-T2 must consume the ASSF-T1 package contract
+  before creating generated index or resolver surfaces.
   freeze.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - roadmap-only.
 
@@ -386,7 +397,7 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
+| Roadmap state | this roadmap | `Status: ASSF_T1_CLOSED_PASS_BOUNDED_PENDING_T2_SELECTION` | PASS |
 | GC-018 status | `docs/baselines/CVF_GC018_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_COMPLETION_2026-06-23.md` | reviewer-owned closure review | PASS |
@@ -395,10 +406,16 @@ catalog changes require a later public-safe artifact and public-sync batch.
 | ASSF-T0.1 worker return | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_WORKER_RETURN_2026-06-23.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
 | ASSF-T0.1 audit ledger | `docs/audits/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_AUDIT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T0.1 completion review | `docs/reviews/CVF_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T1 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T1 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T1 package contract | `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| ASSF-T1 reference README | `docs/reference/agent_system_skills/README.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| ASSF-T1 worker return | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| ASSF-T1 completion review | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported; external skill screening remains reference input | N/A with reason |
-| System loop interlock | this roadmap | T0.1 is required before T1; no automatic package activation | PASS |
+| System loop interlock | this roadmap | T1 is required before T2; no automatic package activation | PASS |
 | Session continuity | active session sync if next move changes | separate session-sync lane after material commit | PASS |
 | Public export | this roadmap | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
@@ -407,7 +424,7 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Roadmap status | `ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | `ASSF_T0_1_CLOSED_PASS_BOUNDED_PENDING_T1_SELECTION` | PASS |
+| Roadmap status | `ASSF_T1_CLOSED_PASS_BOUNDED_PENDING_T2_SELECTION` | `ASSF_T1_CLOSED_PASS_BOUNDED_PENDING_T2_SELECTION` | PASS |
 | T0 closure artifacts | baseline, work order, audit, completion review | all named in T0 closure artifacts | PASS |
 | T0.1 closure artifacts | GC-018, work order, audit, worker return, completion review | all named in ASSF-T0.1 tranche section | PASS |
 | Package root | proposed only | proposed only | PASS |

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -230,10 +230,10 @@ a new prerequisite, or require session/front-door/handoff ownership.
 
 | Required output | Path or evidence | Owner | Status |
 |---|---|---|---|
-| T1 contract reference doc | `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` | worker | AWAITING_WORKER_RETURN |
-| T1 worker return | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md` | worker | AWAITING_WORKER_RETURN |
+| T1 contract reference doc | `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` | worker | ACCEPTED_BY_REVIEWER |
+| T1 worker return | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md` | worker | ACCEPTED_BY_REVIEWER |
 | T1 completion review | a reviewer-created completion review under the reviews directory | reviewer | REVIEWER_OWNED_AFTER_RETURN |
-| Reviewer-fast evidence | command output in worker return | worker | AWAITING_WORKER_RETURN |
+| Reviewer-fast evidence | command output in worker return | worker | PASS |
 | Material commit | git commit after reviewer acceptance | reviewer | REVIEWER_OWNED_AFTER_RETURN |
 
 ## Allowed Scope
@@ -475,14 +475,18 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | reviewer updates roadmap status on closure | PENDING |
-| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Contract reference doc | `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` | PENDING_WORKER_RETURN | PENDING |
-| Completion review | a reviewer-created completion review under the reviews directory | REVIEWER_OWNED_AFTER_RETURN | PENDING |
-| Registry JSON | N/A with reason | no GC-051 registry update authorized | N/A with reason |
-| Registry Markdown | N/A with reason | no GC-051 registry update authorized | N/A with reason |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T1_CLOSED_PASS_BOUNDED_PENDING_T2_SELECTION` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Contract reference doc | `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry or generated skill-index update authorized by T1 | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry Markdown or generated skill-index update authorized by T1 | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external artifact digest; evidence is local governed documentation | N/A with reason |
+| System loop interlock | this file | no loop, queue, daemon, runtime, or automatic activation created | PASS |
+| Session continuity | active session sync after material commit if next move changes | separate session-sync lane after material commit | N/A with reason |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
@@ -500,9 +504,9 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Work order status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Work order status | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
 | Worker commit mode | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
-| Allowed output paths | contract doc and worker-return only | contract doc and worker-return only | PASS |
+| Allowed output paths | contract doc, worker-return, and reviewer-added folder README front door | contract doc, worker-return, and guard README only | PASS |
 | T0.1 ledger consumption required | yes | yes | PASS |
 | Package/root/index/resolver implementation | forbidden | forbidden | PASS |
 

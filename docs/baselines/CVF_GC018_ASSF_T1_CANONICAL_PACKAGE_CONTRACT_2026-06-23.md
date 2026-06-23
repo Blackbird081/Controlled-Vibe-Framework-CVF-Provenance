@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -16,7 +16,7 @@ dispatchBaseHead: ed7d0580
 
 executionBaseHead: PENDING_WORKER_START
 
-closureBaseHead: PENDING_WORKER_RETURN
+closureBaseHead: f79853a4
 
 ## Purpose
 
@@ -90,7 +90,7 @@ preflight. Worker execution evidence belongs in the worker-return artifacts.
 | Field | Disposition |
 |---|---|
 | Selected tranche | ASSF-T1 - Canonical Package Contract And Storage Topology (contract-definition-only) |
-| Dispatch status | DISPATCH_READY |
+| Closure status | CLOSED_PASS_BOUNDED |
 | Worker commit authority | WORKER_MUST_NOT_COMMIT |
 | Reviewer closer | Codex reviewer/closer |
 | Reason for no worker commit | The package contract becomes the authority every later ASSF tranche depends on; the reviewer must validate reconciliation fidelity against the CVF Skill Spec and the T0.1 ledger before material closure |
@@ -144,12 +144,13 @@ preflight. Worker execution evidence belongs in the worker-return artifacts.
 - Enumeration command: dispatch source reads of the named authority files plus inheritance of the ASSF-T0.1 `rg --files --hidden --no-ignore .private_reference/legacy` evidence.
 - Manifest artifact or inline manifest: this baseline and the matching T1 work order define the required output manifest; the legacy corpus manifest is inherited from the accepted ASSF-T0.1 audit.
 - Manifest hash: N/A with reason: dispatch packet only; the legacy corpus snapshot was owned and accepted by ASSF-T0.1.
-- Processing ledger artifact or inline ledger: PENDING_WORKER_RETURN.
+- Processing ledger artifact or inline ledger: ASSF-T1 worker return and
+  completion review.
 - Allowed terminal statuses: `READ`, `SKIPPED_WITH_REASON`, `DEFERRED`, `BLOCKED_UNREADABLE`.
 - Reconciliation: manifest=dispatch_packet_only; legacy_ledger=inherited_from_accepted_T0_1; ledger_terminal=deferred_to_worker_return; exclusions=package root creation, SKILL.md, source schema files, generated index, resolver, example package, migration, runtime, provider/live, public-sync; unresolved=0.
 - Unresolved files: 0
 - Declared exclusions: no canonical package root directory; no `SKILL.md`; no `skill.source.json`; no generated index; no resolver; no example package; no migration of existing CVF Web examples; no runtime/provider/live/public behavior; no CLI/MCP adapter implementation.
-- Unreadable or unsupported files: PENDING_WORKER_RETURN.
+- Unreadable or unsupported files: 0.
 - Aggregation check: N/A with reason: no generated aggregate created by dispatch.
 - Drift check: N/A with reason: no generated aggregate created by dispatch.
 - Output traceability: worker return must map every contract field to a CVF Skill Spec section, a T0.1 ledger row, a roadmap requirement, or an explicit new-field justification.
@@ -246,14 +247,18 @@ changes forbidden paths, or claims runtime/provider/live/public behavior.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | reviewer updates roadmap status on closure | PENDING |
-| GC-018 status | this file | `Status: DISPATCH_READY` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_FOR_WORKER_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Contract reference doc | `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` | PENDING_WORKER_RETURN | PENDING |
-| Registry JSON | N/A with reason | no GC-051 registry update authorized by dispatch | N/A with reason |
-| Registry Markdown | N/A with reason | no GC-051 registry update authorized by dispatch | N/A with reason |
-| Session continuity | active session sync after material commit if next move changes | separate session-sync lane | PENDING |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T1_CLOSED_PASS_BOUNDED_PENDING_T2_SELECTION` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md` | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Contract reference doc | `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry or generated skill-index update authorized by T1 | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry Markdown or generated skill-index update authorized by T1 | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external artifact digest; evidence is local governed documentation | N/A with reason |
+| System loop interlock | this file | no loop, queue, daemon, runtime, or automatic activation created | PASS |
+| Session continuity | active session sync after material commit if next move changes | separate session-sync lane after material commit | N/A with reason |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
@@ -261,7 +266,7 @@ changes forbidden paths, or claims runtime/provider/live/public behavior.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Dispatch status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Closure status | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
 | Worker commit authority | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
 | Contract scope | contract-definition-only | contract-definition-only | PASS |
 | T0.1 ledger consumption | required | required by work order | PASS |
