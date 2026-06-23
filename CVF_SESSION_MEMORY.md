@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-23
 
-Current mode marker: `assf_t0_1_closed_pass_bounded_pending_t1_selection`
+Current mode marker: `assf_t1_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t0_1_closed_pass_bounded_pending_t1_selection`.
+Current mode: `assf_t1_dispatch_ready`.
 
-Previous mode: `assf_t0_1_dispatch_ready`.
+Previous mode: `assf_t0_1_closed_pass_bounded_pending_t1_selection`.
 
 Active handoff:
 
@@ -63,6 +63,20 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-T1 Canonical Package Contract is `DISPATCH_READY` at material commit
+`013cc91a`. Dispatch artifacts:
+`docs/baselines/CVF_GC018_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_2026-06-23.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_FOR_WORKER_2026-06-23.md`.
+The worker may create only
+`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` and
+`docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md`
+under `WORKER_MUST_NOT_COMMIT`. T1 is contract-definition-only and must
+reconcile the existing CVF Skill Spec with the accepted T0.1 ledger; no
+`SKILL.md`, `skill.source.json`, generated index, resolver, example package,
+migration, CLI/MCP adapter implementation, runtime/provider/live/public
+behavior, activation, readiness, or automatic-promotion behavior is released.
 
 ASSF-T0.1 Legacy Skill Corpus Rescan And Absorption Candidate Ledger is
 `CLOSED_PASS_BOUNDED` at material commit `c76cbac7`. It accepted the no-commit
@@ -774,13 +788,12 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t0_1_closed_pass_bounded_pending_t1_selection`.
+Mode: `assf_t1_dispatch_ready`.
 
-Next allowed move: operator checkpoint for ASSF-T1 package-root/schema/index/
-resolver foundation work or another governed lane. If ASSF-T1 is selected,
-create a fresh GC-018 baseline and source-verified work order that consumes the
-T0.1 audit ledger. ASSF-T0 is closed bounded at material commit `4ed53398`;
-ASSF-T0.1 is closed bounded at material commit `c76cbac7`.
+Next allowed move: execute the ASSF-T1 no-commit worker order at material
+commit `013cc91a`, creating only the package contract reference document and
+worker-return packet for Codex review. ASSF-T0 is closed bounded at material
+commit `4ed53398`; ASSF-T0.1 is closed bounded at material commit `c76cbac7`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
