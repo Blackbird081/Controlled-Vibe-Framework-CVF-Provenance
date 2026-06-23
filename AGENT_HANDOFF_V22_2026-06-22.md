@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`assf_t0_closed_pass_bounded_t0_1_required`
+`assf_t0_1_dispatch_ready`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -83,7 +83,7 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `67fb5b7c`
+Current material HEAD recorded for this handoff: `e9bdcc48`
 
 Prior session-sync HEAD recorded for this handoff: `73ad6937`
 
@@ -136,6 +136,17 @@ mandatory precondition before ASSF-T1. The operator clarified that currently
 opened legacy folders are seed examples only; T0.1 must scan the broader
 `.private_reference/legacy/` skill-related corpus and classify candidates
 before schema freeze.
+
+ASSF-T0.1 Legacy Skill Corpus Rescan And Absorption Candidate Ledger is
+`DISPATCH_READY` at material commit `e9bdcc48`. Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_2026-06-23.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_FOR_WORKER_2026-06-23.md`
+- `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md`
+
+Execution rule: `WORKER_MUST_NOT_COMMIT`. The worker may create only the T0.1
+audit ledger and worker-return packet named in the work order. Codex owns final
+review, closure, material commit, and session sync.
 
 Dual Agent Surface Matrix hardening is committed at material commit `104b3267`.
 The canonical standard now requires applicable roadmap, GC-018, work-order,
@@ -254,12 +265,12 @@ passed 43/44 with only this required session continuity sync outstanding.
 ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
 `fd5414b7`. Dual Agent Surface Matrix hardening is complete at material commit
 `104b3267`. ASSF-T0 is `CLOSED_PASS_BOUNDED` at material commit `4ed53398`.
-The operator may select ASSF-T1 or another separately governed lane only
-through fresh authorization, fresh GC-018, Source Verification, roadmap trace,
-Dual Agent Surface Matrix, and work order. No package root, generated index,
+ASSF-T0.1 is `DISPATCH_READY` at material commit `e9bdcc48`. Next allowed move:
+execute the no-commit T0.1 worker order and return the audit ledger plus
+worker-return packet for Codex review. No package root, generated index,
 resolver, migration, external CLI/MCP, runtime/provider/live/public,
 automatic-promotion, activation, readiness, or universal-control expansion is
-released by ASSF-T0.
+released by the T0.1 dispatch.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -277,7 +288,7 @@ accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t0_closed_pass_bounded_t0_1_required`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T0.1 or another governed lane only through fresh GC-018/source-verified work order; parked checkpoint=ASSF-T1 package root/schema/index/resolver/migration until T0.1 closure, external CLI/MCP, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
+Startup acknowledged: current mode=`assf_t0_1_dispatch_ready`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=execute ASSF-T0.1 no-commit worker order and return audit ledger plus worker-return packet for Codex review; parked checkpoint=ASSF-T1 package root/schema/index/resolver/migration until T0.1 closure, external CLI/MCP, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
 
 ## Parked Checkpoints
 
@@ -288,9 +299,10 @@ Startup acknowledged: current mode=`assf_t0_closed_pass_bounded_t0_1_required`; 
 - ADIF T0-T5 is closed bounded at final-review material commit `fd5414b7`.
 - Dual Agent Surface Matrix hardening is complete at material commit
   `104b3267`; the checker remains a machine-check candidate, not implemented.
-- ASSF-T0 is closed bounded at material commit `4ed53398`; ASSF-T1 requires
-  ASSF-T0.1 closure, fresh authorization, GC-018, Source Verification, Dual
-  Agent Surface Matrix, and work order.
+- ASSF-T0 is closed bounded at material commit `4ed53398`; ASSF-T0.1 is
+  dispatch-ready at material commit `e9bdcc48`; ASSF-T1 requires ASSF-T0.1
+  closure, fresh authorization, GC-018, Source Verification, Dual Agent Surface
+  Matrix, and work order.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -302,8 +314,8 @@ Startup acknowledged: current mode=`assf_t0_closed_pass_bounded_t0_1_required`; 
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record ASSF roadmap hardening material
-`67fb5b7c`, keep the post-hardening next move current, and regenerate active
+Authorized guard-maintenance scope: record ASSF-T0.1 dispatch material
+`e9bdcc48`, keep the post-dispatch next move current, and regenerate active
 session state.
 
 Protected paths:
@@ -315,11 +327,13 @@ Protected paths:
 - `CVF_SESSION/state/entries/agentSystemSkillsRoadmapAndDualSurfaceRule20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator clarified that broader legacy skill corpus
-scan and classification is mandatory before ASSF-T1.
+Operator authorization: the operator requested creating the ASSF-T0.1 work
+order after clarifying that broader legacy skill corpus scan and classification
+is mandatory before ASSF-T1.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert ASSF roadmap hardening `67fb5b7c`, ASSF-T0 material `4ed53398`,
+revert ASSF-T0.1 dispatch material `e9bdcc48`, ASSF roadmap hardening
+`67fb5b7c`, ASSF-T0 material `4ed53398`,
 material hardening `104b3267`, ADIF reviewer material `fd5414b7`, or prior
 history.
 
@@ -329,18 +343,18 @@ history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ASSF-T0.1 legacy rescan precondition sync, 2026-06-23 |
+| Session or invocation | ASSF-T0.1 dispatch sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
 | Target paths | V22; session front door; active-state core; ASSF state entry; next move; generated active state |
-| Allowed scope source | ASSF roadmap hardening material `67fb5b7c` and operator legacy-rescan instruction |
-| Before status evidence | ASSF roadmap hardening material commit passes pre-commit 55/55 and content pre-closure gates |
-| After status evidence | active continuity records `67fb5b7c` and routes next move to ASSF-T0.1 before ASSF-T1 |
+| Allowed scope source | ASSF-T0.1 dispatch material `e9bdcc48` and operator work-order instruction |
+| Before status evidence | ASSF-T0.1 dispatch material commit `e9bdcc48` passes pre-commit 55/55 and pre-dispatch gates |
+| After status evidence | active continuity records `e9bdcc48` and routes next move to T0.1 worker execution before ASSF-T1 |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `assf-t0-1-required-sync-2026-06-23` |
+| Invocation ID | `assf-t0-1-dispatch-sync-2026-06-23` |
 | Expected manifest | V22; front door; active-state core; ASSF state entry; next move; generated active state |
 | Actual changed set | V22; front door; active-state core; ASSF state entry; next move; generated active state |
 | Manifest delta | MATCH |
@@ -348,8 +362,8 @@ history.
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records ASSF roadmap hardening at
-`67fb5b7c` and the mandatory ASSF-T0.1 legacy rescan precondition. It does not
-dispatch ASSF-T0.1 or ASSF-T1, and does not expand package root/schema/index,
-external CLI/MCP, runtime/provider/live/public behavior, activation, readiness,
-or automatic promotion.
+This handoff is session continuity only. It records ASSF-T0.1 dispatch at
+`e9bdcc48` and routes the next move to no-commit worker execution. It does not
+execute or close ASSF-T0.1 or dispatch ASSF-T1, and does not expand package
+root/schema/index, external CLI/MCP, runtime/provider/live/public behavior,
+activation, readiness, or automatic promotion.
