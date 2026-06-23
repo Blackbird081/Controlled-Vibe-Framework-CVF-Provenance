@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`assf_t2_closed_pass_bounded_pending_t3_selection`
+`assf_t3_closed_pass_bounded_pending_t4_selection`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -83,9 +83,9 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `e69a836e`
+Current material HEAD recorded for this handoff: `3a481db5`
 
-Prior material HEAD recorded for this handoff: `b1969159`
+Prior material HEAD recorded for this handoff: `e69a836e`
 
 Prior session-sync HEAD recorded for this handoff: `631071dd`
 
@@ -98,6 +98,8 @@ ADIF-0009 entry material HEAD: `520b5653`
 ADIF disclosure gate wiring material HEAD: `b1969159`
 
 ASSF-T3 dispatch material HEAD: `e69a836e`
+
+ASSF-T3 closure material HEAD: `3a481db5`
 
 MPI-T6 review-gate hardening dispatch HEAD: `760d74b0`
 
@@ -324,7 +326,7 @@ accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t2_closed_pass_bounded_pending_t3_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T3 Learning And ADIF Promotion Bridge or another governed lane through fresh source-verified dispatch; parked checkpoint=external CLI/MCP adapter implementation, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
+Startup acknowledged: current mode=`assf_t3_closed_pass_bounded_pending_t4_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T4 External And Legacy Intake Normalization or another governed lane through fresh source-verified dispatch; parked checkpoint=external CLI/MCP adapter implementation, executable ASSF promoter, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
 
 ## Parked Checkpoints
 
