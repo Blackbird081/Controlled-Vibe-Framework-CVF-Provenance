@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-23
 
-Current mode marker: `assf_t0_1_dispatch_ready`
+Current mode marker: `assf_t0_1_closed_pass_bounded_pending_t1_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t0_1_dispatch_ready`.
+Current mode: `assf_t0_1_closed_pass_bounded_pending_t1_selection`.
 
-Previous mode: `assf_t0_closed_pass_bounded_t0_1_required`.
+Previous mode: `assf_t0_1_dispatch_ready`.
 
 Active handoff:
 
@@ -64,6 +64,19 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+ASSF-T0.1 Legacy Skill Corpus Rescan And Absorption Candidate Ledger is
+`CLOSED_PASS_BOUNDED` at material commit `c76cbac7`. It accepted the no-commit
+worker return and created/closed the T0.1 audit ledger, worker return,
+completion review, GC-018 baseline, work order, and roadmap update. Evidence:
+legacy manifest count 629 files; required skill-keyword search 4855 hits across
+422 files; 24-row absorption candidate ledger; reviewer-fast PASS; commit hook
+PASS 55/55; committed-range pre-closure content gates pass with only this
+session continuity sync outstanding. Corpus verdict remains `PARTIAL`, and
+registry JSON/Markdown updates are blocked with reason because no GC-051
+registry update was authorized by T0.1. Next move is operator selection for
+ASSF-T1 or another governed lane; ASSF-T1 requires fresh GC-018 and a
+source-verified work order that consumes the T0.1 ledger.
+
 ASSF-T0 Skill Surface Owner And Legacy Absorption Audit is
 `CLOSED_PASS_BOUNDED` at material commit `4ed53398`. It produced the
 source-verified GC-018 baseline, work order, audit, completion review, and
@@ -71,16 +84,9 @@ roadmap update for the Agent System Skills Foundation. T0 proposes
 `docs/reference/agent_system_skills/` as a future root only; it does not create
 a package root, schema, generated index, resolver, migration, CLI/MCP adapter,
 runtime/provider/live/public behavior, activation, readiness, or automatic
-promotion. ASSF-T0.1 worker execution is the next skills-package move; ASSF-T1
-remains parked until T0.1 closure.
-
-ASSF-T0.1 Legacy Skill Corpus Rescan And Absorption Candidate Ledger is
-`DISPATCH_READY` at material commit `e9bdcc48`. The next allowed move is
-worker execution of
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_1_LEGACY_SKILL_CORPUS_RESCAN_FOR_WORKER_2026-06-23.md`
-under `WORKER_MUST_NOT_COMMIT`, producing the T0.1 audit ledger and
-worker-return packet for Codex review. ASSF-T1 remains parked until T0.1
-closure.
+promotion. ASSF-T0.1 has now closed bounded at material commit `c76cbac7`, so
+ASSF-T1 is parked pending fresh operator selection and source-verified
+dispatch.
 
 Dual Agent Surface Matrix hardening is recorded at material commit `104b3267`.
 Applicable roadmaps, GC-018 baselines, work orders, reference/architecture
@@ -768,14 +774,13 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t0_1_dispatch_ready`.
+Mode: `assf_t0_1_closed_pass_bounded_pending_t1_selection`.
 
-Next allowed move: execute the ASSF-T0.1 Legacy Skill Corpus Rescan And
-Absorption Candidate Ledger worker order at material commit `e9bdcc48` under
-`WORKER_MUST_NOT_COMMIT`, producing the audit ledger and worker-return packet
-for Codex review. ASSF-T1 remains parked until ASSF-T0.1 closes. ASSF-T0 is
-closed bounded at material commit `4ed53398`; the T0.1 dispatch is recorded at
-`e9bdcc48`.
+Next allowed move: operator checkpoint for ASSF-T1 package-root/schema/index/
+resolver foundation work or another governed lane. If ASSF-T1 is selected,
+create a fresh GC-018 baseline and source-verified work order that consumes the
+T0.1 audit ledger. ASSF-T0 is closed bounded at material commit `4ed53398`;
+ASSF-T0.1 is closed bounded at material commit `c76cbac7`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
