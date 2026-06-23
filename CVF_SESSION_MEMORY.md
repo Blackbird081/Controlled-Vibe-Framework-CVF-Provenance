@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-22
+Last updated: 2026-06-23
 
-Current mode marker: `adif_t0_t5_closed_pass_bounded`
+Current mode marker: `assf_t0_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `adif_t0_t5_closed_pass_bounded`.
+Current mode: `assf_t0_closed_pass_bounded`.
 
-Previous mode: `adif_t0_t5_complete_pending_codex_final_review`.
+Previous mode: `adif_t0_t5_closed_pass_bounded`.
 
 Active handoff:
 
@@ -63,6 +63,16 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-T0 Skill Surface Owner And Legacy Absorption Audit is
+`CLOSED_PASS_BOUNDED` at material commit `4ed53398`. It produced the
+source-verified GC-018 baseline, work order, audit, completion review, and
+roadmap update for the Agent System Skills Foundation. T0 proposes
+`docs/reference/agent_system_skills/` as a future root only; it does not create
+a package root, schema, generated index, resolver, migration, CLI/MCP adapter,
+runtime/provider/live/public behavior, activation, readiness, or automatic
+promotion. ASSF-T1 is the next possible skills-package tranche only through
+fresh authorization, fresh GC-018, Source Verification, and work order.
 
 Dual Agent Surface Matrix hardening is recorded at material commit `104b3267`.
 Applicable roadmaps, GC-018 baselines, work orders, reference/architecture
@@ -750,12 +760,13 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `adif_t0_t5_closed_pass_bounded`.
+Mode: `assf_t0_closed_pass_bounded`.
 
-Next allowed move: the operator may select ASSF-T0 or another separately
-governed lane. Dual Agent Surface Matrix hardening is complete at `104b3267`.
-External CLI/MCP, runtime/provider/live, public, automatic-promotion, and
-universal-control expansion remains parked.
+Next allowed move: the operator may select ASSF-T1 Canonical Package Contract
+And Storage Topology or another separately governed lane only through fresh
+operator authorization, fresh GC-018, Source Verification, roadmap trace, Dual
+Agent Surface Matrix, and work order. ASSF-T0 is closed bounded at material
+commit `4ed53398`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

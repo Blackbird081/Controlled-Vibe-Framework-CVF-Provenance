@@ -11,7 +11,7 @@ Supersedes:
 
 ## Purpose
 
-Record current MPI Phase 2 and ADIF roadmap continuity. Detailed history
+Record current MPI Phase 2, ADIF, and ASSF roadmap continuity. Detailed history
 remains in completion artifacts, generated session state entries, and archived
 handoffs.
 
@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`adif_t0_t5_closed_pass_bounded`
+`assf_t0_closed_pass_bounded`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -83,9 +83,9 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `104b3267`
+Current material HEAD recorded for this handoff: `4ed53398`
 
-Prior session-sync HEAD recorded for this handoff: `c08f810e`
+Prior session-sync HEAD recorded for this handoff: `87e2013a`
 
 MPI-T6 review-gate hardening dispatch HEAD: `760d74b0`
 
@@ -111,6 +111,24 @@ front doors, state sources, handoffs, standards, work orders, reviews, and
 runtime source as authority.
 
 ## Latest Work / Changes
+
+ASSF-T0 Skill Surface Owner And Legacy Absorption Audit is
+`CLOSED_PASS_BOUNDED` at material commit `4ed53398`. Accepted artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md`
+- `docs/audits/CVF_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_AUDIT_2026-06-23.md`
+- `docs/reviews/CVF_ASSF_T0_SKILL_SURFACE_OWNER_LEGACY_ABSORPTION_COMPLETION_2026-06-23.md`
+- `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md`
+
+Result: T0 reconciled skill-owner surfaces, recorded contradiction ledger,
+and proposed `docs/reference/agent_system_skills/` as a future canonical root
+only. Verification passed: reviewer-fast 34/34, commit steward
+pre-implementation bundle, pre-commit 55/55, and committed-range pre-closure
+content gates with only this GC-020 session continuity sync outstanding.
+Boundary: no package root creation, schema/source JSON, generated index,
+resolver, migration, runtime/provider/live/public behavior, external CLI/MCP
+adapter, activation, readiness, or automatic promotion.
 
 Dual Agent Surface Matrix hardening is committed at material commit `104b3267`.
 The canonical standard now requires applicable roadmap, GC-018, work-order,
@@ -228,10 +246,13 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
 `fd5414b7`. Dual Agent Surface Matrix hardening is complete at material commit
-`104b3267`. The operator may select ASSF-T0 or another separately governed
-lane. No external CLI/MCP, runtime/provider/live/public, automatic-promotion,
-or universal-control expansion is released by ADIF closure or the dual-surface
-hardening.
+`104b3267`. ASSF-T0 is `CLOSED_PASS_BOUNDED` at material commit `4ed53398`.
+The operator may select ASSF-T1 or another separately governed lane only
+through fresh authorization, fresh GC-018, Source Verification, roadmap trace,
+Dual Agent Surface Matrix, and work order. No package root, generated index,
+resolver, migration, external CLI/MCP, runtime/provider/live/public,
+automatic-promotion, activation, readiness, or universal-control expansion is
+released by ASSF-T0.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -249,7 +270,7 @@ accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`adif_t0_t5_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T0 or another governed lane; parked checkpoint=external CLI/MCP, runtime/provider/live/public, automatic-promotion, and universal-control expansion.
+Startup acknowledged: current mode=`assf_t0_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T1 or another governed lane only through fresh GC-018/source-verified work order; parked checkpoint=package root/schema/index/resolver/migration, external CLI/MCP, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
 
 ## Parked Checkpoints
 
@@ -260,6 +281,9 @@ Startup acknowledged: current mode=`adif_t0_t5_closed_pass_bounded`; active hand
 - ADIF T0-T5 is closed bounded at final-review material commit `fd5414b7`.
 - Dual Agent Surface Matrix hardening is complete at material commit
   `104b3267`; the checker remains a machine-check candidate, not implemented.
+- ASSF-T0 is closed bounded at material commit `4ed53398`; ASSF-T1 requires
+  fresh authorization, GC-018, Source Verification, Dual Agent Surface Matrix,
+  and work order.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -271,25 +295,24 @@ Startup acknowledged: current mode=`adif_t0_t5_closed_pass_bounded`; active hand
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record Dual Agent Surface Matrix hardening
-material `104b3267`, keep the post-ADIF next move current, and regenerate active
-session state.
+Authorized guard-maintenance scope: record ASSF-T0 material `4ed53398`, keep
+the post-ASSF-T0 next move current, and regenerate active session state.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/entries/dualAgentSurfaceMatrixHardening20260623.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agentSystemSkillsRoadmapAndDualSurfaceRule20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: the operator requested the dual-agent roadmap/work-order/
-closure matrix rule be moved from memory into canonical standard, Guard
-Orientation, and machine-check candidate.
+Operator authorization: the operator requested continuing with the package
+skills roadmap; ASSF-T0 closed the bounded owner/surface audit.
 
 Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert material hardening `104b3267`, ADIF reviewer material `fd5414b7`, or
-prior history.
+revert ASSF-T0 material `4ed53398`, material hardening `104b3267`, ADIF
+reviewer material `fd5414b7`, or prior history.
 
 ## Agent Operation Trace Block
 
@@ -297,25 +320,26 @@ prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | dual-agent surface matrix hardening sync, 2026-06-23 |
+| Session or invocation | ASSF-T0 closure sync, 2026-06-23 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
-| Target paths | V22; session front door; dual-surface hardening state entry; next move; generated active state |
-| Allowed scope source | material hardening `104b3267` and operator matrix-hardening instruction |
-| Before status evidence | material hardening commit passes pre-commit 55/55 |
-| After status evidence | active continuity records `104b3267` and preserves operator lane selection |
+| Target paths | V22; session front door; active-state core; ASSF state entry; next move; generated active state |
+| Allowed scope source | ASSF-T0 material `4ed53398` and operator package-skills roadmap instruction |
+| Before status evidence | ASSF-T0 material commit passes pre-commit 55/55 and content pre-closure gates |
+| After status evidence | active continuity records `4ed53398` and releases only ASSF-T1 selection through fresh governance |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `adif-t0-t5-closed-pass-bounded-sync-2026-06-23` |
-| Expected manifest | V22; front door; dual-surface hardening state entry; next move; generated active state |
-| Actual changed set | V22; front door; dual-surface hardening state entry; next move; generated active state |
+| Invocation ID | `assf-t0-closed-pass-bounded-sync-2026-06-23` |
+| Expected manifest | V22; front door; active-state core; ASSF state entry; next move; generated active state |
+| Actual changed set | V22; front door; active-state core; ASSF state entry; next move; generated active state |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records ADIF bounded closure at
-`fd5414b7` and Dual Agent Surface Matrix hardening at `104b3267`. It does not
-dispatch ASSF or expand external CLI/MCP, runtime/provider/live/public behavior.
+This handoff is session continuity only. It records ASSF-T0 bounded closure at
+`4ed53398`. It does not dispatch ASSF-T1 or expand package root/schema/index,
+external CLI/MCP, runtime/provider/live/public behavior, activation,
+readiness, or automatic promotion.
