@@ -53,12 +53,12 @@ class RealEntriesTests(unittest.TestCase):
         entries_dir = MODULE.ENTRIES_DIR
         before_listing = sorted(p.name for p in entries_dir.glob("*"))
         entries = MODULE.load_entries()
-        self.assertEqual(len(entries), 8)
+        self.assertEqual(len(entries), 9)
         after_listing = sorted(p.name for p in entries_dir.glob("*"))
         self.assertEqual(before_listing, after_listing)
 
         packet = MODULE.resolve_defect_packet(entries=entries)
-        self.assertEqual(packet.total_candidates, 8)
+        self.assertEqual(packet.total_candidates, 9)
         self.assertLessEqual(len(packet.items), 10)
         self.assertTrue(packet.to_dict()["claimBoundary"])
 

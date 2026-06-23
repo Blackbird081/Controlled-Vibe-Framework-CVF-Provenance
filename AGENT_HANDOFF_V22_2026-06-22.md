@@ -341,28 +341,32 @@ Startup acknowledged: current mode=`assf_t2_closed_pass_bounded_pending_t3_selec
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record ASSF-T1 dispatch material
-`013cc91a`, keep the post-dispatch next move current, and regenerate active
-session state.
+Authorized guard-maintenance scope: add ADIF-0009 (backtick-quoted heading
+name truncates real section) to the ADIF defect entry registry, and update
+the hardcoded real-entry count assertions in
+`governance/compat/test_run_adif_defect_resolver.py` from 8 to 9 to match,
+under the existing glob-discovery resolver contract. No resolver/checker
+logic changed.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V22_2026-06-22.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/agentSystemSkillsRoadmapAndDualSurfaceRule20260623.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `governance/compat/test_run_adif_defect_resolver.py`
 
-Operator authorization: the operator selected ASSF-T1 and authorized Codex to
-review, execute, and commit after Claude authored the dispatch pair.
+Operator authorization: the operator's "Bạn là reviewer" instruction for
+ASSF-T2 plus the standing CLAUDE.md Agent Error To Governance Learning
+Philosophy requirement to promote repeated defect patterns into a written,
+CVF-governed rule rather than leaving them only in provider memory (this is
+itself the exact pattern recorded in `CVF_ADIF-0008`).
 
-Rollback boundary: revert only this session-sync batch if rejected. Do not
-revert ASSF-T1 dispatch material `013cc91a`, ASSF-T0.1 closure material
-`c76cbac7`, ASSF-T0.1 dispatch material `e9bdcc48`, ASSF roadmap hardening
-`67fb5b7c`, ASSF-T0 material `4ed53398`,
-material hardening `104b3267`, ADIF reviewer material `fd5414b7`, or prior
-history.
+Rollback boundary: revert only this ADIF-0009 entry-addition batch if
+rejected (delete `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0009.md`,
+revert the README table row, and revert the two count assertions in
+`test_run_adif_defect_resolver.py` back to 8). Do not revert ASSF-T2 closure
+material `3746bd48`, ASSF-T2 session-sync `631071dd`, ASSF-T1 dispatch
+material `013cc91a`, ASSF-T0.1 closure material `c76cbac7`, ASSF-T0.1
+dispatch material `e9bdcc48`, ASSF roadmap hardening `67fb5b7c`, ASSF-T0
+material `4ed53398`, material hardening `104b3267`, ADIF reviewer material
+`fd5414b7`, or prior history.
 
 ## Agent Operation Trace Block
 

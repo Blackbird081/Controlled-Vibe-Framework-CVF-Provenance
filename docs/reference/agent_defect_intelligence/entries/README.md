@@ -18,9 +18,11 @@ dictionary.
 ## Purpose
 
 This folder holds one compact source file per ADIF entry, following
-`docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`. No
-generated aggregate exists yet; read entries directly until ADIF-T2 builds a
-resolver.
+`docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`.
+ADIF-T2 closed the read-only task/role/phase resolver at
+`governance/compat/run_adif_defect_resolver.py`; it discovers any
+`CVF_ADIF-*.md` file in this folder by filename glob, so no separate
+registry edit is required when adding a new entry beyond this table.
 
 ## Current Entries
 
@@ -34,6 +36,7 @@ resolver.
 | `CVF_ADIF-0006.md` | ADIF-0006 | SOURCE_FIDELITY | MACHINE_CHECKED |
 | `CVF_ADIF-0007.md` | ADIF-0007 | GATE_TRIGGER_FRICTION | PARTIAL_CHECK |
 | `CVF_ADIF-0008.md` | ADIF-0008 | AUTHORITY_BOUNDARY | MACHINE_CHECKED |
+| `CVF_ADIF-0009.md` | ADIF-0009 | GATE_TRIGGER_FRICTION | PARTIAL_CHECK |
 
 ## Claim Boundary
 
