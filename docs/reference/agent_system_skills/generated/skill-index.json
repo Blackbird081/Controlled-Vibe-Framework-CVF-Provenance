@@ -1,0 +1,174 @@
+{
+  "claimBoundary": "This index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope.",
+  "generatedBy": "governance/compat/generate_assf_skill_index.py",
+  "indexId": "cvf-assf-skill-index",
+  "schemaVersion": "assf-t2-v1",
+  "skills": [
+    {
+      "acceptanceEvidence": "check_work_order_dispatch_quality.py PASS; run_dispatch_packet_author_fast_gate.py 5/5 PASS",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not yet authored; separate ASSF adapter work order required",
+      "adapterEvidence": "N/A with reason: no adapter implemented in ASSF-T2",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "read-only inspection of governed markdown files",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json",
+      "capabilityBoundary": "no commit, no provider call, no runtime activation, no external-agent adapter, no session-sync",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 1,
+      "conflicts": [],
+      "contextProfile": "governance-compat-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "Worker execution is already in progress; do not re-validate mid-execution. Do not use as a substitute for the full pre-implementation autorun gate.",
+      "executionConstraints": "read-only filesystem access; no provider calls; no commits; no session-sync edits",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "work order markdown path",
+        "baseline markdown path",
+        "base commit SHA"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to commit, activate, execute, or expand external-agent scope",
+      "name": "CVF Dispatch Quality Reviewer",
+      "originLane": "ASSF-T2",
+      "osConstraints": "none",
+      "outputs": [
+        "dispatch quality verdict",
+        "structural completeness result",
+        "authority and encoding result",
+        "agent operation trace result",
+        "dispatch prompt envelope result"
+      ],
+      "owner": "CVF governance/compat automation surface",
+      "permissions": "read governed markdown files under docs/ and governance/",
+      "phases": [
+        "DISPATCH_AUTHORING",
+        "PRE_DISPATCH"
+      ],
+      "platformCompatibility": "cross-platform; Python 3.11+",
+      "purpose": "Provide deterministic dispatch-quality validation of work-order and baseline artifacts before worker execution begins.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "roles": [
+        "dispatcher",
+        "reviewer"
+      ],
+      "rollback": "N/A with reason: read-only; no filesystem mutation",
+      "safeStop": "return failing gate verdict and exit non-zero; no cleanup required",
+      "shellAssumptions": "no shell execution required; pure Python",
+      "sideEffects": "none",
+      "skillId": "cvf-dispatch-quality-reviewer",
+      "sourceArtifacts": [
+        "docs/baselines/CVF_GC018_ASSF_T2_GENERATED_INDEX_AND_PROGRESSIVE_RESOLVER_2026-06-23.md",
+        "governance/compat/check_work_order_dispatch_quality.py",
+        "governance/compat/run_dispatch_packet_author_fast_gate.py"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "governance/compat"
+      ],
+      "taskClasses": [
+        "dispatch-authoring",
+        "reviewer"
+      ],
+      "triggerPatterns": [
+        "dispatch review",
+        "work order review",
+        "baseline review",
+        "pre-dispatch gate",
+        "dispatch quality check"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A dispatcher or reviewer must verify that a work-order and baseline pair satisfy all dispatch-quality gates before worker execution.",
+      "version": "0.1.0"
+    },
+    {
+      "acceptanceEvidence": "run_worker_return_fast_gate.py PASS; reviewer-fast gate PASS",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not yet authored; separate ASSF adapter work order required",
+      "adapterEvidence": "N/A with reason: no adapter implemented in ASSF-T2",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "read-only authoring of a single markdown review artifact under docs/reviews/",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-worker-return-author.json",
+      "capabilityBoundary": "no commit, no session-sync, no provider call, no runtime activation, no external-agent adapter",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 2,
+      "conflicts": [],
+      "contextProfile": "governance-docs-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "Implementation is not yet complete; stop conditions require BLOCKED_WITH_REASON; reviewer closure or commit is already in progress.",
+      "executionConstraints": "read-only access to worker outputs; no commits; no session-sync edits; no front-door or handoff edits",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "completed deliverables list",
+        "execution base HEAD SHA",
+        "git status output",
+        "gate receipts",
+        "pre-implementation autorun receipt"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to commit, activate, execute, or expand external-agent scope",
+      "name": "CVF Worker Return Author",
+      "originLane": "ASSF-T2",
+      "osConstraints": "none",
+      "outputs": [
+        "worker return markdown packet conforming to the work order's return packet shape contract under docs/reviews/"
+      ],
+      "owner": "CVF governance docs surface",
+      "permissions": "create docs/reviews/<worker-return-filename>.md",
+      "phases": [
+        "WORKER_EXECUTION",
+        "WORKER_RETURN"
+      ],
+      "platformCompatibility": "cross-platform",
+      "purpose": "Guide a no-commit worker in producing a properly shaped worker-return packet after completing all in-scope deliverables, so the reviewer/closer can validate and commit without rework.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "roles": [
+        "worker"
+      ],
+      "rollback": "delete the worker return file if the reviewer rejects it",
+      "safeStop": "mark Status: BLOCKED_WITH_REASON in the return packet and stop; do not commit",
+      "shellAssumptions": "no shell execution required",
+      "sideEffects": "creates one markdown file under docs/reviews/; no git mutation",
+      "skillId": "cvf-worker-return-author",
+      "sourceArtifacts": [
+        "docs/baselines/CVF_GC018_ASSF_T2_GENERATED_INDEX_AND_PROGRESSIVE_RESOLVER_2026-06-23.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T2_GENERATED_INDEX_AND_PROGRESSIVE_RESOLVER_FOR_WORKER_2026-06-23.md"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "docs/reviews"
+      ],
+      "taskClasses": [
+        "worker-execution",
+        "worker-return"
+      ],
+      "triggerPatterns": [
+        "worker return",
+        "no-commit return",
+        "COMPLETE_PENDING_REVIEW",
+        "worker packet",
+        "worker return packet shape"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A worker has completed all required in-scope deliverables and must produce a return packet for reviewer acceptance before any commit.",
+      "version": "0.1.0"
+    }
+  ]
+}
