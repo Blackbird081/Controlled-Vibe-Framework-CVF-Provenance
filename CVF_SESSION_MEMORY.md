@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-23
 
-Current mode marker: `assf_t0_closed_pass_bounded`
+Current mode marker: `assf_t0_closed_pass_bounded_t0_1_required`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t0_closed_pass_bounded`.
+Current mode: `assf_t0_closed_pass_bounded_t0_1_required`.
 
-Previous mode: `adif_t0_t5_closed_pass_bounded`.
+Previous mode: `assf_t0_closed_pass_bounded`.
 
 Active handoff:
 
@@ -73,6 +73,11 @@ a package root, schema, generated index, resolver, migration, CLI/MCP adapter,
 runtime/provider/live/public behavior, activation, readiness, or automatic
 promotion. ASSF-T1 is the next possible skills-package tranche only through
 fresh authorization, fresh GC-018, Source Verification, and work order.
+
+ASSF roadmap hardening at material commit `67fb5b7c` makes ASSF-T0.1 Legacy
+Skill Corpus Rescan And Absorption Candidate Ledger mandatory before ASSF-T1.
+The operator clarified that currently opened legacy folders are only seed
+examples, not complete skill-related legacy coverage.
 
 Dual Agent Surface Matrix hardening is recorded at material commit `104b3267`.
 Applicable roadmaps, GC-018 baselines, work orders, reference/architecture
@@ -760,13 +765,14 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t0_closed_pass_bounded`.
+Mode: `assf_t0_closed_pass_bounded_t0_1_required`.
 
-Next allowed move: the operator may select ASSF-T1 Canonical Package Contract
-And Storage Topology or another separately governed lane only through fresh
-operator authorization, fresh GC-018, Source Verification, roadmap trace, Dual
-Agent Surface Matrix, and work order. ASSF-T0 is closed bounded at material
-commit `4ed53398`.
+Next allowed move: the operator may select ASSF-T0.1 Legacy Skill Corpus
+Rescan And Absorption Candidate Ledger or another separately governed lane
+only through fresh operator authorization, fresh GC-018, Source Verification,
+roadmap trace, Dual Agent Surface Matrix, and work order. ASSF-T1 remains
+parked until ASSF-T0.1 closes. ASSF-T0 is closed bounded at material commit
+`4ed53398`; the T0.1 precondition is recorded at `67fb5b7c`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
