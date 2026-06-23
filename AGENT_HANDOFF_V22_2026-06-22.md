@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`assf_t1_dispatch_ready`
+`assf_t1_closed_pass_bounded_pending_t2_selection`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -83,9 +83,9 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `013cc91a`
+Current material HEAD recorded for this handoff: `2752d04e`
 
-Prior session-sync HEAD recorded for this handoff: `ed7d0580`
+Prior session-sync HEAD recorded for this handoff: `f79853a4`
 
 MPI-T6 review-gate hardening dispatch HEAD: `760d74b0`
 
@@ -155,20 +155,21 @@ T0.1 did not authorize GC-051 registry updates. No package root, schema,
 generated index, resolver, migration, adapter, runtime/provider/live/public,
 activation, readiness, or automatic-promotion behavior was created.
 
-ASSF-T1 Canonical Package Contract is `DISPATCH_READY` at material commit
-`013cc91a`. Dispatch artifacts:
+ASSF-T1 Canonical Package Contract is `CLOSED_PASS_BOUNDED` at material commit
+`2752d04e`. Closure artifacts:
 
 - `docs/baselines/CVF_GC018_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_2026-06-23.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_FOR_WORKER_2026-06-23.md`
+- `docs/reference/agent_system_skills/README.md`
+- `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`
+- `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md`
+- `docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md`
 
-Execution rule: `WORKER_MUST_NOT_COMMIT`. The worker may create only
-`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` and
-`docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md`.
-T1 is contract-definition-only and must reconcile the existing CVF Skill Spec
-with the accepted T0.1 ledger. No `SKILL.md`, `skill.source.json`, generated
-index, resolver, example package, migration, CLI/MCP adapter implementation,
-runtime/provider/live/public behavior, activation, readiness, or
-automatic-promotion behavior is released.
+T1 is contract-definition-only and reconciles the existing CVF Skill Spec with
+the accepted T0.1 ledger. No package instance, `SKILL.md`,
+`skill.source.json`, generated index, resolver, example package, migration,
+CLI/MCP adapter implementation, runtime/provider/live/public behavior,
+activation, readiness, or automatic-promotion behavior is released.
 
 Dual Agent Surface Matrix hardening is committed at material commit `104b3267`.
 The canonical standard now requires applicable roadmap, GC-018, work-order,
@@ -287,13 +288,13 @@ passed 43/44 with only this required session continuity sync outstanding.
 ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
 `fd5414b7`. Dual Agent Surface Matrix hardening is complete at material commit
 `104b3267`. ASSF-T0 is `CLOSED_PASS_BOUNDED` at material commit `4ed53398`.
-ASSF-T1 is `DISPATCH_READY` at material commit `013cc91a`. Next allowed move:
-execute the no-commit ASSF-T1 worker order and return the package contract
-reference document plus worker-return packet for Codex review. No package root
-beyond the single reference-doc parent, `SKILL.md`, `skill.source.json`,
-generated index, resolver, migration, external CLI/MCP adapter implementation,
-runtime/provider/live/public, automatic-promotion, activation, readiness, or
-universal-control expansion is released.
+ASSF-T1 is `CLOSED_PASS_BOUNDED` at material commit `2752d04e`. Next allowed
+move: operator may select ASSF-T2 Generated Index And Progressive Resolver or
+another governed lane through fresh source-verified dispatch. No package
+instance, `SKILL.md`, `skill.source.json`, generated index, resolver,
+migration, external CLI/MCP adapter implementation, runtime/provider/live/
+public, automatic-promotion, activation, readiness, or universal-control
+expansion is released by T1.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -311,7 +312,7 @@ accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t1_dispatch_ready`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=execute ASSF-T1 no-commit worker order and return contract reference plus worker-return packet for Codex review; parked checkpoint=ASSF-T2 package root/index/resolver, external CLI/MCP adapter implementation, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
+Startup acknowledged: current mode=`assf_t1_closed_pass_bounded_pending_t2_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T2 Generated Index And Progressive Resolver or another governed lane through fresh source-verified dispatch; parked checkpoint=ASSF-T2 package root/index/resolver until dispatched, external CLI/MCP adapter implementation, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
 
 ## Parked Checkpoints
 

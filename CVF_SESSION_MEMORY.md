@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-23
 
-Current mode marker: `assf_t1_dispatch_ready`
+Current mode marker: `assf_t1_closed_pass_bounded_pending_t2_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t1_dispatch_ready`.
+Current mode: `assf_t1_closed_pass_bounded_pending_t2_selection`.
 
-Previous mode: `assf_t0_1_closed_pass_bounded_pending_t1_selection`.
+Previous mode: `assf_t1_dispatch_ready`.
 
 Active handoff:
 
@@ -64,19 +64,21 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-ASSF-T1 Canonical Package Contract is `DISPATCH_READY` at material commit
-`013cc91a`. Dispatch artifacts:
+ASSF-T1 Canonical Package Contract is `CLOSED_PASS_BOUNDED` at material commit
+`2752d04e`. Closure artifacts:
 `docs/baselines/CVF_GC018_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_2026-06-23.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_FOR_WORKER_2026-06-23.md`.
-The worker may create only
-`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` and
-`docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md`
-under `WORKER_MUST_NOT_COMMIT`. T1 is contract-definition-only and must
-reconcile the existing CVF Skill Spec with the accepted T0.1 ledger; no
-`SKILL.md`, `skill.source.json`, generated index, resolver, example package,
-migration, CLI/MCP adapter implementation, runtime/provider/live/public
-behavior, activation, readiness, or automatic-promotion behavior is released.
+It created the guard-required reference folder README,
+`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`,
+`docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_WORKER_RETURN_2026-06-23.md`,
+and
+`docs/reviews/CVF_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_COMPLETION_2026-06-23.md`.
+T1 is contract-definition-only and reconciles the existing CVF Skill Spec with
+the accepted T0.1 ledger; no package instance, `SKILL.md`,
+`skill.source.json`, generated index, resolver, example package, migration,
+CLI/MCP adapter implementation, runtime/provider/live/public behavior,
+activation, readiness, or automatic-promotion behavior is released.
 
 ASSF-T0.1 Legacy Skill Corpus Rescan And Absorption Candidate Ledger is
 `CLOSED_PASS_BOUNDED` at material commit `c76cbac7`. It accepted the no-commit
@@ -87,9 +89,9 @@ legacy manifest count 629 files; required skill-keyword search 4855 hits across
 PASS 55/55; committed-range pre-closure content gates pass with only this
 session continuity sync outstanding. Corpus verdict remains `PARTIAL`, and
 registry JSON/Markdown updates are blocked with reason because no GC-051
-registry update was authorized by T0.1. Next move is operator selection for
-ASSF-T1 or another governed lane; ASSF-T1 requires fresh GC-018 and a
-source-verified work order that consumes the T0.1 ledger.
+registry update was authorized by T0.1. ASSF-T1 has now closed bounded at
+material commit `2752d04e`; ASSF-T2 requires fresh operator selection and a
+source-verified work order that consumes the T1 package contract.
 
 ASSF-T0 Skill Surface Owner And Legacy Absorption Audit is
 `CLOSED_PASS_BOUNDED` at material commit `4ed53398`. It produced the
@@ -98,9 +100,9 @@ roadmap update for the Agent System Skills Foundation. T0 proposes
 `docs/reference/agent_system_skills/` as a future root only; it does not create
 a package root, schema, generated index, resolver, migration, CLI/MCP adapter,
 runtime/provider/live/public behavior, activation, readiness, or automatic
-promotion. ASSF-T0.1 has now closed bounded at material commit `c76cbac7`, so
-ASSF-T1 is parked pending fresh operator selection and source-verified
-dispatch.
+promotion. ASSF-T0.1 closed bounded at material commit `c76cbac7`, and
+ASSF-T1 closed bounded at material commit `2752d04e`; ASSF-T2 is parked
+pending fresh operator selection and source-verified dispatch.
 
 Dual Agent Surface Matrix hardening is recorded at material commit `104b3267`.
 Applicable roadmaps, GC-018 baselines, work orders, reference/architecture
@@ -788,12 +790,13 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t1_dispatch_ready`.
+Mode: `assf_t1_closed_pass_bounded_pending_t2_selection`.
 
-Next allowed move: execute the ASSF-T1 no-commit worker order at material
-commit `013cc91a`, creating only the package contract reference document and
-worker-return packet for Codex review. ASSF-T0 is closed bounded at material
-commit `4ed53398`; ASSF-T0.1 is closed bounded at material commit `c76cbac7`.
+Next allowed move: operator may select ASSF-T2 Generated Index And Progressive
+Resolver or another governed lane through fresh source-verified dispatch.
+ASSF-T0 is closed bounded at material commit `4ed53398`; ASSF-T0.1 is closed
+bounded at material commit `c76cbac7`; ASSF-T1 is closed bounded at material
+commit `2752d04e`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
