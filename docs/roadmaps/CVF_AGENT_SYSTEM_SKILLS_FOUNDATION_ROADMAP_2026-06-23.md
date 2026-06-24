@@ -351,7 +351,15 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
   (`docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md`)
   as authority, and any ASSF-T5 packet must cite the ASSF-T1 package contract
   and the ASSF-T2 generated index/resolver foundation rather than re-deriving
-  schema or resolution logic from scratch.
+  schema or resolution logic from scratch. The ASSF-T4 completion review
+  (`docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_COMPLETION_2026-06-23.md`,
+  Finding-To-Governance Learning Disposition) escalated this defect pattern
+  to `MACHINE_CHECK_CANDIDATE`: two consecutive tranches (T3, T4) returned a
+  worker-stated source-equivalence claim ("verbatim", "no new field") that
+  was wrong and was caught only by manual reviewer re-derivation. A future
+  governed lane should evaluate a worker-return/completion-review linter that
+  requires a literal grep/diff command-and-result pair beside any equivalence
+  claim about a named source file.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - roadmap-only.
 
 ## Verification / Evidence
