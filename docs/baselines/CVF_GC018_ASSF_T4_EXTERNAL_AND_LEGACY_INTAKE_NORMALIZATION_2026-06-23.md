@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -14,9 +14,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: 050741bb
 
-executionBaseHead: PENDING_WORKER_START
+executionBaseHead: 5a4f9591
 
-closureBaseHead: PENDING_WORKER_RETURN
+closureBaseHead: 5a4f9591
 
 ## Purpose
 
@@ -117,7 +117,7 @@ Returned defects:
 | Field | Disposition |
 |---|---|
 | Selected tranche | ASSF-T4 - External And Legacy Intake Normalization (contract-definition-only) |
-| Dispatch status | DISPATCH_READY |
+| Dispatch status | CLOSED_PASS_BOUNDED |
 | Worker commit authority | WORKER_MUST_NOT_COMMIT |
 | Reviewer closer | Codex reviewer/closer |
 | Reason for no worker commit | The normalization contract defines how external and legacy evidence become skill candidates and how unverifiable claims are rejected; the reviewer must validate that the mapping preserves provenance/license/security, reuses the no-self-activation pattern, and rejects unreverifiable claims before material closure |
@@ -278,16 +278,16 @@ changes forbidden paths, or claims runtime/provider/live/public behavior.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | reviewer updates roadmap status on closure | PENDING |
-| GC-018 status | this file | `Status: DISPATCH_READY` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_FOR_WORKER_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Completion or reviewer artifact | a reviewer-created completion review under the reviews directory | reviewer-owned after return | PENDING |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_WORKER_RETURN_2026-06-23.md` | `Status: COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, accepted after reviewer repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T4 is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T4 is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | External evidence digest | N/A with reason | no new external evidence imported; T4 reuses existing screening and ledger dispositions | N/A with reason |
 | System loop interlock | this baseline | T3 bridge contract was required before T4 and is now closed; T4 is required before T5; no automatic package activation | PASS |
-| Session continuity | active session sync after material commit | separate session-sync lane after material commit | PENDING |
+| Session continuity | active session sync after material commit | separate session-sync lane after material commit | PASS |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
@@ -295,7 +295,7 @@ changes forbidden paths, or claims runtime/provider/live/public behavior.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Dispatch status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Dispatch status | dispatched then closed | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Worker commit authority | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
 | Build scope | normalization contract document plus worker return only | as specified | PASS |
 | T1 contract consumption | required | required by work order | PASS |
@@ -310,8 +310,8 @@ changes forbidden paths, or claims runtime/provider/live/public behavior.
 | Field | Disposition |
 |---|---|
 | claimScope | ASSF-T4 dispatch baseline only |
-| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE - dispatch-ready contract-definition worker-return lane only |
-| receiptEvidence | N/A with reason: worker has not authored the normalization contract yet |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE - contract-definition worker-return lane, now closed |
+| receiptEvidence | CVF_RECEIPT_PRESENT - pre-closure and reviewer-fast autorun receipts recorded in the completion review |
 | actionEvidence | ACTION_EVIDENCE_PRESENT - Source Verification rows and governed dispatch artifact |
 | invocationBoundary | roadmap-derived work-order authoring |
 | interceptionBoundary | no IDE/shell/git/filesystem/provider interception claim |

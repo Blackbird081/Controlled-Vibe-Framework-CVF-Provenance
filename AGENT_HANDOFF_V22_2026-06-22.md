@@ -71,7 +71,7 @@ history.
 
 ## Current Mode
 
-`assf_t3_closed_pass_bounded_pending_t4_selection`
+`assf_t4_closed_pass_bounded_pending_t5_selection`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -83,11 +83,13 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `050741bb`
+Current material HEAD recorded for this handoff: `5a4f9591`
 
-Prior material HEAD recorded for this handoff: `3a481db5`
+Prior material HEAD recorded for this handoff: `050741bb`
 
 Prior session-sync HEAD recorded for this handoff: `631071dd`
+
+ASSF-T4 dispatch material HEAD: `5a4f9591`
 
 ASSF-T2 closure material HEAD: `3746bd48`
 
@@ -326,7 +328,7 @@ accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t3_closed_pass_bounded_pending_t4_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T4 External And Legacy Intake Normalization or another governed lane through fresh source-verified dispatch; parked checkpoint=external CLI/MCP adapter implementation, executable ASSF promoter, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
+Startup acknowledged: current mode=`assf_t4_closed_pass_bounded_pending_t5_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T5 Composition, Dependency, Conflict, And Capability Controls or another governed lane through fresh source-verified dispatch; any future normalizer must cite the ASSF-T4 normalization contract and resolve the two contract-introduced fields (security_notes, sourceRevision) against ASSF-T1; parked checkpoint=external CLI/MCP adapter implementation, executable ASSF normalizer/promoter, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
 
 ## Parked Checkpoints
 

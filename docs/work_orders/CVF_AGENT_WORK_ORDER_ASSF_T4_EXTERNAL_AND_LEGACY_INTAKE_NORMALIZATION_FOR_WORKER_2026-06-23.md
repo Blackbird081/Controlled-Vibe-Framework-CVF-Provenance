@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -261,10 +261,10 @@ silently worked around).
 
 | Required output | Path or evidence | Owner | Status |
 |---|---|---|---|
-| External And Legacy Intake Normalization contract | `docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md` | worker | PENDING_WORKER_RETURN |
-| T4 worker return | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_WORKER_RETURN_2026-06-23.md` | worker | PENDING_WORKER_RETURN |
-| T4 completion review | a reviewer-created completion review under the reviews directory | reviewer | REVIEWER_OWNED_AFTER_RETURN |
-| Material commit | git commit after reviewer acceptance | reviewer | REVIEWER_OWNED_AFTER_RETURN |
+| External And Legacy Intake Normalization contract | `docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md` | worker | DELIVERED |
+| T4 worker return | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_WORKER_RETURN_2026-06-23.md` | worker | DELIVERED |
+| T4 completion review | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_COMPLETION_2026-06-23.md` | reviewer | DELIVERED |
+| Material commit | git commit after reviewer acceptance | reviewer | DONE |
 
 ## Foundation Storage Layout Block
 
@@ -562,16 +562,16 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | reviewer updates roadmap status on closure | PENDING |
-| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_2026-06-23.md` | `Status: DISPATCH_READY` | PASS |
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Worker return | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_WORKER_RETURN_2026-06-23.md` | PENDING_WORKER_RETURN | PENDING |
-| Completion or reviewer artifact | a reviewer-created completion review under the reviews directory | reviewer-owned after return | PENDING |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_WORKER_RETURN_2026-06-23.md` | `Status: COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, accepted after reviewer repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T4 is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T4 is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | External evidence digest | N/A with reason | no new external evidence imported; T4 reuses existing screening and ledger dispositions | N/A with reason |
 | System loop interlock | this work order | T3 bridge contract was required before T4 and is now closed; T4 is required before T5 | PASS |
-| Session continuity | active session sync after material commit | separate session-sync lane after material commit | PENDING |
+| Session continuity | active session sync after material commit | separate session-sync lane after material commit | PASS |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
@@ -579,7 +579,7 @@ Return `BLOCKED_WITH_REASON` if:
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Work order status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Work order status | dispatched then closed | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
 | Build scope | normalization contract document plus worker return only | as specified | PASS |
 | T1 contract consumption | required | required | PASS |

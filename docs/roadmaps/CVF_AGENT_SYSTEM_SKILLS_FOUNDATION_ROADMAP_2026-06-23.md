@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ASSF_T3_CLOSED_PASS_BOUNDED_PENDING_T4_SELECTION
+Status: ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION
 
 Date: 2026-06-23
 
@@ -329,19 +329,27 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 | Close ASSF-T1 canonical package contract | Codex reviewer/closer | CLOSED_PASS_BOUNDED |
 | Implement ASSF-T2 generated index/resolver foundation | Codex worker; Claude reviewer/closer | CLOSED_PASS_BOUNDED |
 | Define ASSF-T3 learning and ADIF promotion bridge contract | Codex worker; Claude reviewer/closer | CLOSED_PASS_BOUNDED |
-| Connect external/legacy intake normalization | future T4 tranche | PARKED - pending operator selection |
+| Define ASSF-T4 external and legacy intake normalization contract | Codex worker; Claude reviewer/closer | CLOSED_PASS_BOUNDED |
+| Define ASSF-T5 composition/dependency/conflict/capability controls | future T5 tranche | PARKED - pending operator selection |
 
 ## Finding-To-Governance Learning Disposition
 
 - Defect class: `RULE_GAP`
 - Learning lane: `GOVERNANCE_CONTROL_PLANE`
 - Disposition: `DESIGN_REVIEW_REQUIRED`
-- Next control action: ASSF-T3 Learning And ADIF Promotion Bridge contract
-  is closed. Operator may select ASSF-T4 (External And Legacy Intake
-  Normalization) or another governed lane through fresh source-verified
-  dispatch. Any future promoter implementation must cite the ASSF-T3 bridge
-  contract (`docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md`)
-  as authority, and any ASSF-T4 packet must cite the ASSF-T1 package contract
+- Next control action: ASSF-T4 External And Legacy Intake Normalization
+  contract is closed. Operator may select ASSF-T5 (Composition, Dependency,
+  Conflict, And Capability Controls) or another governed lane through fresh
+  source-verified dispatch. Any future normalizer implementation must cite the
+  ASSF-T4 normalization contract
+  (`docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md`)
+  as authority and must resolve the two contract-introduced fields
+  (`security_notes`, `sourceRevision`) against ASSF-T1 (add to T1 schema or
+  remap `security_notes` onto T1 `sideEffects`) before an executable normalizer
+  is built. Any future promoter implementation must still cite the ASSF-T3
+  bridge contract
+  (`docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md`)
+  as authority, and any ASSF-T5 packet must cite the ASSF-T1 package contract
   and the ASSF-T2 generated index/resolver foundation rather than re-deriving
   schema or resolution logic from scratch.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - roadmap-only.
@@ -401,7 +409,12 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: ASSF_T3_CLOSED_PASS_BOUNDED_PENDING_T4_SELECTION` | PASS |
+| Roadmap state | this roadmap | `Status: ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | PASS |
+| ASSF-T4 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T4 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T4 normalization contract | `docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md` | `Status: CANDIDATE` reference contract | PASS |
+| ASSF-T4 worker return | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_WORKER_RETURN_2026-06-23.md` | `Status: COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, accepted after reviewer repair | PASS |
+| ASSF-T4 completion review | `docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_COMPLETION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T3 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T3 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T3_LEARNING_AND_ADIF_PROMOTION_BRIDGE_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T3 bridge contract | `docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md` | `Status: CANDIDATE` reference contract | PASS |
@@ -431,7 +444,7 @@ catalog changes require a later public-safe artifact and public-sync batch.
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported; external skill screening remains reference input | N/A with reason |
-| System loop interlock | this roadmap | T1->T2->T3 are closed in order and consumed; T3 is required before T4; no automatic package activation | PASS |
+| System loop interlock | this roadmap | T1->T2->T3->T4 are closed in order and consumed; T4 is required before T5; no automatic package activation | PASS |
 | Session continuity | active session sync if next move changes | separate session-sync lane after material commit | PASS |
 | Public export | this roadmap | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
@@ -440,7 +453,7 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Roadmap status | `ASSF_T3_CLOSED_PASS_BOUNDED_PENDING_T4_SELECTION` | `ASSF_T3_CLOSED_PASS_BOUNDED_PENDING_T4_SELECTION` | PASS |
+| Roadmap status | `ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | `ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | PASS |
 | T0 closure artifacts | baseline, work order, audit, completion review | all named in T0 closure artifacts | PASS |
 | T0.1 closure artifacts | GC-018, work order, audit, worker return, completion review | all named in ASSF-T0.1 tranche section | PASS |
 | Package root | proposed only | proposed only | PASS |
