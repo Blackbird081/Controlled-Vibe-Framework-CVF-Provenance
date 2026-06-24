@@ -83,9 +83,9 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `3a481db5`
+Current material HEAD recorded for this handoff: `050741bb`
 
-Prior material HEAD recorded for this handoff: `e69a836e`
+Prior material HEAD recorded for this handoff: `3a481db5`
 
 Prior session-sync HEAD recorded for this handoff: `631071dd`
 
