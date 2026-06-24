@@ -83,13 +83,15 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `5a4f9591`
+Current material HEAD recorded for this handoff: `40b904bc`
 
-Prior material HEAD recorded for this handoff: `050741bb`
+Prior material HEAD recorded for this handoff: `5a4f9591`
 
-Prior session-sync HEAD recorded for this handoff: `631071dd`
+Prior session-sync HEAD recorded for this handoff: `050741bb`
 
 ASSF-T4 dispatch material HEAD: `5a4f9591`
+
+ASSF-T4 closure material HEAD: `40b904bc`
 
 ASSF-T2 closure material HEAD: `3746bd48`
 

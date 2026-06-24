@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-23
 
-Current mode marker: `assf_t3_closed_pass_bounded_pending_t4_selection`
+Current mode marker: `assf_t4_closed_pass_bounded_pending_t5_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t3_closed_pass_bounded_pending_t4_selection`.
+Current mode: `assf_t4_closed_pass_bounded_pending_t5_selection`.
 
-Previous mode: `assf_t2_closed_pass_bounded_pending_t3_selection`.
+Previous mode: `assf_t3_closed_pass_bounded_pending_t4_selection`.
 
 Active handoff:
 
@@ -790,18 +790,26 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t3_closed_pass_bounded_pending_t4_selection`.
+Mode: `assf_t4_closed_pass_bounded_pending_t5_selection`.
 
-Next allowed move: operator may select ASSF-T4 External And Legacy Intake
-Normalization or another governed lane through fresh source-verified dispatch.
-Any future ASSF promoter implementation must cite the ASSF-T3 bridge contract
+Next allowed move: operator may select ASSF-T5 Composition, Dependency,
+Conflict, And Capability Controls or another governed lane through fresh
+source-verified dispatch. Any future ASSF normalizer implementation must cite
+the ASSF-T4 normalization contract
+(`docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md`)
+and must first resolve the two contract-introduced fields (`security_notes`,
+`sourceRevision`) against ASSF-T1 (add to the T1 schema or remap
+`security_notes` onto T1 `sideEffects`) before an executable normalizer is
+built. Any future ASSF promoter implementation must still cite the ASSF-T3
+bridge contract
 (`docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md`);
-ASSF-T4 must consume the ASSF-T1 package contract and the ASSF-T2 generated
+ASSF-T5 must consume the ASSF-T1 package contract and the ASSF-T2 generated
 index/resolver foundation rather than re-deriving schema or resolution logic
 from scratch. ASSF-T0 is closed bounded at material commit `4ed53398`;
 ASSF-T0.1 is closed bounded at material commit `c76cbac7`; ASSF-T1 is closed
 bounded at material commit `2752d04e`; ASSF-T2 is closed bounded at material
-commit `3746bd48`; ASSF-T3 is closed bounded at material commit `3a481db5`.
+commit `3746bd48`; ASSF-T3 is closed bounded at material commit `3a481db5`;
+ASSF-T4 is closed bounded at material commit `40b904bc`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
