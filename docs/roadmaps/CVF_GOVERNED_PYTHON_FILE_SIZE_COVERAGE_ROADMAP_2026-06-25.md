@@ -117,10 +117,18 @@ split happens in T0.
 
 ### T1 - Split markdown table parsing / source verification helpers
 
-HOLD_UNTIL_T0_PASS. Extract pure helpers (table-row parsing, source-verification
-cell readers) from `check_work_order_dispatch_quality.py` into a dedicated
-module, behavior-preserving, with the existing test suite as the regression
-anchor.
+DISPATCHED (T0 passed at material `fad16208`). Extract the pure markdown-table
+parsing helpers (`_parse_markdown_tables`, `_parse_any_markdown_tables`,
+`_normalize_table_key`, `_row_value`, `_section_tables`, `_truthy_cell`,
+`_clean_manifest_path`, with `_extract_section` moved or imported cleanly) from
+`check_work_order_dispatch_quality.py` into a dedicated module,
+behavior-preserving, with the existing test suite as the regression anchor, and
+ratchet the monolith's registry `approvedMaxLines` down to the new line count.
+Dispatch packet:
+`docs/baselines/CVF_GC018_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_2026-06-25.md`
+and `docs/work_orders/CVF_AGENT_WORK_ORDER_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_2026-06-25.md`.
+Source-verification cell readers are deferred to a later split if they prove to
+carry validator logic rather than pure parsing.
 
 ### T2 - Split work-order lifecycle / status validators
 
@@ -146,7 +154,7 @@ existing dispatch-quality test suite plus any added focused tests.
 | Tranche | Work | State |
 | --- | --- | --- |
 | T0 | upgrade the guard to per-class thresholds, add the touch rule, wire it locally and in autorun, seed legacy exceptions | DONE |
-| T1 | split markdown table / source-verification helpers out of the monolith | HELD |
+| T1 | split markdown table-parsing helpers out of the monolith | DISPATCHED |
 | T2 | split work-order lifecycle / status validators | HELD |
 | T3 | split source-verification / token-collision validators | HELD |
 | T4 | reduce the monolith to an orchestrator shell | HELD |
