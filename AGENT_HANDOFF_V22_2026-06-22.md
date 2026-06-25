@@ -36,11 +36,12 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync continuity update after ASSF-T6
-Codex final-review addendum commit `b31b4aca`. This sync advances the handoff
-HEAD block and next-move pointers after the material review commit. The
-material commits already created the T6 closure artifacts, ADIF entries, and
-Codex review addendum; this dedicated sync changes only continuity surfaces.
+Authorized guard-maintenance scope: session-sync continuity update after ADIF
+authoring and review-latency hardening material commit `8afbe0aa`. This sync
+advances the handoff HEAD block, current mode, and next-move pointers after the
+material hardening commit. The material commit already updated the ADIF
+integrity checker/test, ADIF template, ADIF-0011, Guard Orientation, gotchas,
+and completion packet; this dedicated sync changes only continuity surfaces.
 
 Protected paths:
 
@@ -63,13 +64,14 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator selected ASSF-T6 after ASSF-T5, asked
-Codex to create the work order for Claude to execute, and returned after Claude
-reported completion for Codex review.
+Operator authorization: after ASSF-T6 review, the operator agreed with Codex's
+proposal to harden ADIF authoring friction and review/commit latency before the
+next tranche, then asked Codex to handle these issues first.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-T6 Codex review addendum `b31b4aca`, ASSF-T6 closure `489ff38a`,
-ADIF learning records `49661fc6`, ASSF-T6 dispatch `229725e0`, ASSF-T5
+revert ADIF authoring hardening `8afbe0aa`, ASSF-T6 Codex review addendum
+`b31b4aca`, ASSF-T6 closure `489ff38a`, ADIF learning records `49661fc6`,
+ASSF-T6 dispatch `229725e0`, ASSF-T5
 reviewer evidence repair `d0a24e90`, ASSF-T5 closure `afeb2673`, the gotchas
 checklist material commit `ec3975f8`, GFS-PY-T1 material commit `fad16208`,
 EQC-T1 closure material commit `ccee892d`, MPI-T5 dispatch commit `501fcafa`,
@@ -77,7 +79,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`assf_t6_closed_pass_bounded_pending_next_selection`
+`adif_authoring_latency_hardening_closed_pending_next_selection`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -111,7 +113,11 @@ ADIF-0010/0011/0012 entry material HEAD: `49661fc6`
 
 ASSF-T6 Codex final-review addendum material HEAD: `b31b4aca`
 
-Current material HEAD recorded for this handoff: `b31b4aca`
+ADIF authoring and review-latency hardening material HEAD: `8afbe0aa`
+
+Current material HEAD recorded for this handoff: `8afbe0aa`
+
+Prior material HEAD recorded for this handoff (ASSF-T6 Codex final-review addendum): `b31b4aca`
 
 Prior material HEAD recorded for this handoff (ADIF-0010/0011/0012 entries): `49661fc6`
 
@@ -346,7 +352,11 @@ passed 43/44 with only this required session continuity sync outstanding.
 ASSF-T6 CVF Web Projection And Existing Example Migration is
 `CLOSED_PASS_BOUNDED` at material commit `489ff38a`; ADIF-0010/0011/0012
 learning records are committed at `49661fc6`; Codex final-review addendum is
-committed at `b31b4aca`. Next allowed move: operator may select among:
+committed at `b31b4aca`. ADIF authoring and review-latency hardening is
+closed at material commit `8afbe0aa`; it hardens ADIF entry integrity so every
+committed ADIF entry must carry the full Agent Operation Trace label set,
+repairs ADIF-0011 missing `Diff evidence`, and documents the ADIF
+material/session-sync split rule. Next allowed move: operator may select among:
 
 - ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard;
 - GFS-PY T2 dispatch-quality monolith-split tranche;
@@ -382,7 +392,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t6_closed_pass_bounded_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T7, GFS-PY T2, or another governed lane with fresh GC-018 and source-verified work order; parked checkpoint=no runtime/provider/live/public-sync/adapter authorization released.
+Startup acknowledged: current mode=`adif_authoring_latency_hardening_closed_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T7, GFS-PY T2, or another governed lane with fresh GC-018 and source-verified work order; parked checkpoint=no runtime/provider/live/public-sync/adapter authorization released.
 
 ## Parked Checkpoints
 

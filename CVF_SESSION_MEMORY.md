@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `assf_t6_closed_pass_bounded_pending_next_selection`
+Current mode marker: `adif_authoring_latency_hardening_closed_pending_next_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t6_closed_pass_bounded_pending_next_selection`.
+Current mode: `adif_authoring_latency_hardening_closed_pending_next_selection`.
 
-Previous mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
+Previous mode: `assf_t6_closed_pass_bounded_pending_next_selection`.
 
 Active handoff:
 
@@ -87,6 +87,17 @@ material entries with an active-handoff protected-path update; Codex repaired
 continuity in the current session-sync lane. T6 remains documentation and audit
 only: no runtime Web code, generated-index mutation, package activation,
 public-sync, provider/live proof, or CLI/MCP adapter behavior is released.
+
+ADIF authoring and review-latency hardening is closed at material commit
+`8afbe0aa`. It hardened `check_adif_entry_integrity.py` so every committed
+ADIF entry must carry the full Agent Operation Trace label set, repaired
+ADIF-0011 missing `Diff evidence`, updated the ADIF entry template with
+copy-ready trace labels and ADIF material/session-sync split guidance, and
+added Guard Orientation plus literal-format gotchas guidance. Evidence:
+focused ADIF integrity tests passed 22/22, `check_adif_entry_integrity.py
+--enforce` reported 12 entries and 0 violations, reviewer-fast passed 35/35,
+and the pre-commit hook passed 56/56. This hardening is governance-authoring
+only and releases no runtime/provider/live/public-sync/adapter behavior.
 
 ASSF-T5 Composition, Dependency, Conflict, And Capability Controls is
 `CLOSED_PASS_BOUNDED` at material commit `afeb2673`, with reviewer evidence
@@ -825,10 +836,11 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t6_closed_pass_bounded_pending_next_selection`.
+Mode: `adif_authoring_latency_hardening_closed_pending_next_selection`.
 
-Latest material HEAD: `b31b4aca` (ASSF-T6 Codex final-review addendum after
-closure `489ff38a` and ADIF-0010/0011/0012 learning records `49661fc6`).
+Latest material HEAD: `8afbe0aa` (ADIF authoring and review-latency hardening
+after ASSF-T6 Codex final-review addendum `b31b4aca`, closure `489ff38a`, and
+ADIF-0010/0011/0012 learning records `49661fc6`).
 
 Next allowed move: operator may select among:
 
