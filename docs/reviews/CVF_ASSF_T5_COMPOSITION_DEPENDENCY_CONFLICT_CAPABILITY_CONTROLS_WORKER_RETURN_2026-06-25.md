@@ -173,12 +173,14 @@ This worker return does not claim to have executed this command in a live termin
   `capabilityClaims`, `compositionFailureDisposition`) must be routed through
   a separate ASSF-T1 schema amendment work order before any implementation
   consumes them as stable field names.
-- Machine-check candidate escalation (from T4, reconfirmed): a future worker-return
-  linter should require a literal grep/diff command result beside any claim of
-  the form "verbatim", "identical", "no new field", "same as", or "maps to
-  existing" about a named source file. The schema alignment verification block
-  above is a first attempt at that evidence pattern; formal machine enforcement
-  remains a future-tranche item.
+- Machine-check candidate escalation (from T4, reconfirmed):
+  NOT_LITERAL_WITH_REASON: this row describes future linter trigger phrases; it
+  does not make a source-equivalence claim about any current named source file.
+  A future worker-return linter should require a literal grep/diff command
+  result beside any claim of the form "verbatim", "identical", "no new field",
+  "same as", or "maps to existing" about a named source file. The schema
+  alignment verification block above is a first attempt at that evidence
+  pattern; formal machine enforcement remains a future-tranche item.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` -- this is a
   contract-definition tranche; no runtime execution is performed.
 
@@ -310,9 +312,39 @@ This worker return does not claim to have executed this command in a live termin
 | Public export | this return | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 | Pre-dispatch gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch` | 47/47 PASS | PASS |
-| Pre-implementation gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation` | run in progress | IN_PROGRESS |
-| Pre-closure gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head HEAD` | run in progress | IN_PROGRESS |
-| Reviewer-fast gate | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | run in progress | IN_PROGRESS |
+| Pre-implementation gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation` | 49/49 PASS on reviewer re-run at session-sync HEAD `793b4298` | PASS |
+| Pre-closure gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head afeb2673` | material split-range 47/47 PASS | PASS |
+| Reviewer-fast gate | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS 35/35 | PASS |
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+If the ASSF-T5 closure evidence is accurate, the material split range
+`cb063785..afeb2673` should pass pre-closure and reviewer-return steward gates
+without mixing session-sync paths, and reviewer-fast should pass after the
+closure evidence rows are updated.
+
+### Evidence Comparison
+
+The reviewer re-ran the split material range:
+`python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head afeb2673`
+returned 47/47 PASS, and
+`python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base cb063785 --head afeb2673 --enforce`
+returned PASS. A full-range run from `cb063785..HEAD` correctly failed shape
+because it mixed material docs with the later handoff-sync commit.
+
+### Contradiction Or Gap Disposition
+
+The apparent contradiction is resolved by split-range accounting: material
+closure evidence is valid for `cb063785..afeb2673`; session-sync evidence is
+valid separately for `afeb2673..793b4298`. The combined range is not valid
+single-batch closure evidence and must not be cited that way.
+
+### Claim Update
+
+Worker-return closure evidence now cites the valid material split range and
+does not claim that `cb063785..HEAD` is a valid single closure range.
 
 ## Claim Boundary
 

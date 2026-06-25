@@ -33,10 +33,11 @@ ADIF is closed bounded. ASSF-T0 is closed bounded as an owner/surface/legacy
 absorption audit. The operator identified that the currently opened legacy
 folders are only seed examples, not the complete skill-related legacy corpus.
 ASSF-T0.1 legacy skill corpus rescan is closed bounded. It produced the
-filesystem-backed absorption candidate ledger required before ASSF-T1 can
-freeze any package schema or storage topology. ASSF-T1 remains parked pending
-fresh operator selection, GC-018, Source Verification, roadmap trace, Dual
-Agent Surface Matrix, and work order.
+filesystem-backed absorption candidate ledger required before ASSF-T1 could
+freeze any package schema or storage topology. ASSF-T1 through ASSF-T5 are now
+closed bounded; ASSF-T6 remains parked pending fresh operator selection,
+GC-018, Source Verification, roadmap trace, Dual Agent Surface Matrix, and
+work order.
 
 ## Scope
 
@@ -352,10 +353,11 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 - Defect class: `RULE_GAP`
 - Learning lane: `GOVERNANCE_CONTROL_PLANE`
 - Disposition: `DESIGN_REVIEW_REQUIRED`
-- Next control action: ASSF-T4 External And Legacy Intake Normalization
-  contract is closed. Operator may select ASSF-T5 (Composition, Dependency,
-  Conflict, And Capability Controls) or another governed lane through fresh
-  source-verified dispatch. Any future normalizer implementation must cite the
+- Next control action: ASSF-T5 Composition, Dependency, Conflict, And
+  Capability Controls is closed. Operator may select ASSF-T6 (CVF Web
+  Projection And Existing Example Migration), GFS-PY T2, or another governed
+  lane through fresh source-verified dispatch. Any future normalizer
+  implementation must cite the
   ASSF-T4 normalization contract
   (`docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md`)
   as authority and must resolve the two contract-introduced fields
@@ -364,9 +366,10 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
   is built. Any future promoter implementation must still cite the ASSF-T3
   bridge contract
   (`docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md`)
-  as authority, and any ASSF-T5 packet must cite the ASSF-T1 package contract
-  and the ASSF-T2 generated index/resolver foundation rather than re-deriving
-  schema or resolution logic from scratch. The ASSF-T4 completion review
+  as authority. Any future ASSF-T6 packet must cite the ASSF-T1 package
+  contract, the ASSF-T2 generated index/resolver foundation, and the ASSF-T5
+  composition control contract rather than re-deriving schema, resolution, or
+  composition logic from scratch. The ASSF-T4 completion review
   (`docs/reviews/CVF_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_COMPLETION_2026-06-23.md`,
   Finding-To-Governance Learning Disposition) escalated this defect pattern
   to `MACHINE_CHECK_CANDIDATE`: two consecutive tranches (T3, T4) returned a
@@ -439,8 +442,8 @@ catalog changes require a later public-safe artifact and public-sync batch.
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
 | Roadmap state | this roadmap | `Status: ASSF_T5_CLOSED_PASS_BOUNDED` | PASS |
-| ASSF-T5 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_2026-06-25.md` | `Status: DISPATCH_READY` | PASS |
-| ASSF-T5 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_FOR_WORKER_2026-06-25.md` | `Status: DISPATCH_READY` | PASS |
+| ASSF-T5 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T5 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_FOR_WORKER_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T5 composition control contract | `docs/reference/agent_system_skills/CVF_ASSF_COMPOSITION_CONTROL_CONTRACT.md` | `Status: CANDIDATE` reference contract | PASS |
 | ASSF-T5 worker return | `docs/reviews/CVF_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_WORKER_RETURN_2026-06-25.md` | `Status: WORKER_RETURN_COMPLETE` | PASS |
 | ASSF-T5 completion review | `docs/reviews/CVF_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
@@ -478,7 +481,7 @@ catalog changes require a later public-safe artifact and public-sync batch.
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: ASSF-T0 is not authorized to update GC-051 registry surfaces and no generated skill index is created | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported; external skill screening remains reference input | N/A with reason |
-| System loop interlock | this roadmap | T1->T2->T3->T4 are closed in order and consumed; T4 is required before T5; no automatic package activation | PASS |
+| System loop interlock | this roadmap | T1->T2->T3->T4->T5 are closed in order and consumed; T5 is required before T6; no automatic package activation | PASS |
 | Session continuity | active session sync if next move changes | separate session-sync lane after material commit | PASS |
 | Public export | this roadmap | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
@@ -512,22 +515,22 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex roadmap author |
+| Actor | combined ASSF-T5 dispatcher/worker/reviewer with Codex reviewer repair |
 | Provider or surface | local workspace |
-| Session or invocation | Agent System Skills roadmap T0.1 closure update, 2026-06-23 |
+| Session or invocation | Agent System Skills roadmap ASSF-T5 closure update, 2026-06-25 |
 | Working directory | repository root |
-| Command or tool surface | source reads, filesystem inventory commands, apply_patch, governance gates, git commit |
-| Target paths | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order; T0.1 audit; worker return; completion review |
-| Allowed scope source | operator instruction to continue the package-skills roadmap; active session next move |
-| Before status evidence | clean HEAD `3f51a4cc`; ASSF-T0.1 dispatch ready |
-| After status evidence | ASSF-T0.1 closed bounded; ASSF-T1 pending operator selection |
+| Command or tool surface | source reads, apply_patch, governance gates, git commit |
+| Target paths | this roadmap; ASSF-T5 baseline; ASSF-T5 work order; T5 composition control contract; worker return; completion review |
+| Allowed scope source | operator instruction to execute ASSF-T5; active session next move |
+| Before status evidence | clean HEAD `cb063785`; ASSF-T5 dispatch ready |
+| After status evidence | ASSF-T5 closed bounded; ASSF-T6 pending operator selection |
 | Diff evidence | real-range name-status and gate output |
-| Approval boundary | ASSF-T0 documentation/audit only |
-| Claim boundary | T0.1 scan/ledger acceptance only; no skill package root creation, generated index, resolver, runtime, CLI/MCP implementation, or public-sync |
+| Approval boundary | ASSF-T5 documentation/reference contract only |
+| Claim boundary | T5 composition control contract only; no composition engine, loader, conflict checker, resolver change, package instance, registry entry, runtime, CLI/MCP implementation, or public-sync |
 | Agent type | roadmap author and T0 closer |
-| Invocation ID | `cvf-agent-system-skills-foundation-t0-1-closure-2026-06-23` |
-| Expected manifest | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order; T0.1 audit; worker return; completion review |
-| Actual changed set | this roadmap; ASSF-T0.1 baseline; ASSF-T0.1 work order; T0.1 audit; worker return; completion review |
+| Invocation ID | `cvf-agent-system-skills-foundation-t5-closure-2026-06-25` |
+| Expected manifest | this roadmap; ASSF-T5 baseline; ASSF-T5 work order; T5 composition control contract; worker return; completion review |
+| Actual changed set | this roadmap; ASSF-T5 baseline; ASSF-T5 work order; T5 composition control contract; worker return; completion review |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

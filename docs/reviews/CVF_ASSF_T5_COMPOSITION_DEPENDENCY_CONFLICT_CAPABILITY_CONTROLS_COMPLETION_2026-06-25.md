@@ -126,10 +126,10 @@ provided a literal field-verification statement alongside each reuse claim.
 | Gate | Command | Result |
 |---|---|---|
 | Pre-dispatch autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch` | 47/47 PASS |
-| Pre-implementation autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation` | pending -- will be updated before commit |
-| Pre-closure autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head HEAD` | pending -- will be updated before commit |
-| Commit steward | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base cb063785 --head HEAD` | pending -- will be updated before commit |
-| Reviewer-fast | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | pending -- will be updated before commit |
+| Pre-implementation autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation` | 49/49 PASS on reviewer re-run at session-sync HEAD `793b4298` |
+| Pre-closure autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head afeb2673` | material split-range 47/47 PASS |
+| Commit steward | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base cb063785 --head afeb2673 --enforce` | material split-range PASS |
+| Reviewer-fast | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS 35/35 |
 
 ## Deferred Items
 
@@ -283,10 +283,39 @@ tranche.
 | Public export | this review | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 | Pre-dispatch autorun gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch` | 47/47 PASS | PASS |
-| Pre-implementation autorun gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation` | gate violations being fixed iteratively | PASS |
-| Pre-closure autorun gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head HEAD` | to be run after pre-implementation passes | PASS |
-| Commit steward | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base cb063785 --head HEAD` | to be run at commit | PASS |
-| Reviewer-fast gate | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | to be run at closure | PASS |
+| Pre-implementation autorun gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation` | 49/49 PASS on reviewer re-run at session-sync HEAD `793b4298` | PASS |
+| Pre-closure autorun gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head afeb2673` | material split-range 47/47 PASS | PASS |
+| Commit steward | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base cb063785 --head afeb2673 --enforce` | material split-range PASS | PASS |
+| Reviewer-fast gate | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS 35/35 | PASS |
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+If ASSF-T5 is closed cleanly, the T5 material range should pass pre-closure and
+reviewer-return steward gates without session-sync mixing, and the post-material
+handoff-sync range should pass session-sync steward gates separately.
+
+### Evidence Comparison
+
+The material range `cb063785..afeb2673` passed
+`python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base cb063785 --head afeb2673`
+with 47/47 PASS and passed
+`python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base cb063785 --head afeb2673 --enforce`.
+The handoff-sync range `afeb2673..793b4298` passed
+`python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base afeb2673 --head 793b4298 --enforce`.
+
+### Contradiction Or Gap Disposition
+
+A full-range gate over `cb063785..HEAD` failed because it mixed material
+artifacts with `AGENT_HANDOFF_V22_2026-06-22.md`. That is expected under the
+commit-steward split rule and does not invalidate the material or session-sync
+split ranges.
+
+### Claim Update
+
+The completion review now records split-range evidence and no longer treats
+pending or mixed-range gate placeholders as PASS evidence.
 
 ## Claim Boundary
 
