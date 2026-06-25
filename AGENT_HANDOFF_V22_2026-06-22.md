@@ -36,11 +36,12 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: handoff-sync continuity update advancing the
-handoff HEAD block to the GFS-PY T1 dispatch-quality helper split dispatch commit
-`9035df3c` and the current mode to the T1-split lane. This dedicated handoff-sync
-commit changes only this handoff file; the GFS-PY T1 closure material and the
-remaining session-state continuity follow in their own commits.
+Authorized guard-maintenance scope: session-sync continuity update after the
+GFS-PY T1 dispatch-quality helper split closure material commit `10d0459d`. This
+sync advances the handoff HEAD block, the current mode, the active session state
+sources, and `CVF_SESSION_MEMORY.md`. The material commit already changed the
+guard, the new module, and the registry; this dedicated session-sync commit
+changes only continuity surfaces.
 
 Protected paths:
 
@@ -79,6 +80,8 @@ Discipline standard commit `75af9858`, the EQC-T1 closure material commit
 
 `gfs_py_t1_split_t1_closed_t2_work_order_ready`
 
+GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
+
 GFS-PY T1 dispatch-quality helper split dispatch HEAD: `9035df3c`
 
 GFS-PY-T1 governed Python file size coverage material HEAD: `fad16208`
@@ -95,9 +98,9 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `fad16208`
+Current material HEAD recorded for this handoff: `10d0459d`
 
-Prior material HEAD recorded for this handoff: `75af9858`
+Prior material HEAD recorded for this handoff: `fad16208`
 
 Prior session-sync HEAD recorded for this handoff: `92199d9f`
 

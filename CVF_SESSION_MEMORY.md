@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `gfs_py_t1_closed_pass_bounded_t2_t4_split_held`
+Current mode marker: `gfs_py_t1_split_t1_closed_t2_work_order_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfs_py_t1_closed_pass_bounded_t2_t4_split_held`.
+Current mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
 
 Previous mode: `eqc_t1_closed_pass_bounded_assf_t5_still_parked`.
 
