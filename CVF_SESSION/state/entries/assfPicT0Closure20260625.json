@@ -1,0 +1,5 @@
+{
+  "stateOrder": 661,
+  "stateKey": "assfPicT0Closure20260625",
+  "value": "ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is CLOSED_PASS_BOUNDED at material commit 24b49017 after Claude returned BLOCKED_WITH_REASON and Codex completed reviewer-owned closure. The selected candidate is cvf-dispatch-quality-reviewer. Evidence: docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md; docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_COMPLETION_2026-06-25.md; worker return docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md. ASSF-PIC-T1 remains held until Active Session State Bootstrap Read Model And Aggregate Size Refactor closes."
+}

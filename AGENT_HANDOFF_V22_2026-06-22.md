@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record ASSF-PIC-T0 dispatch continuity and route the next worker
-execution checkpoint.
+Target: record ASSF-PIC-T0 closure continuity and route the Active Session
+State Bootstrap Read Model And Aggregate Size Refactor checkpoint.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -38,30 +38,33 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory dispatch material
-commit `9e08f11a`, plus handoff-only HEAD bridge for governed artifact
-literal-format gotchas checklist material commit `f013e7d5`. This sync advances
-the handoff HEAD block without releasing package instance, certification,
-generated-index, resolver, Web, adapter, provider/live, public-sync, or push
-scope. The material dispatch commit created only the ASSF-PIC-T0 GC-018
-baseline and Claude work order, and released Claude worker execution as the
-next move; this dedicated bridge changes only continuity surfaces.
+ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory closure material
+commit `24b49017`, plus the prior handoff-only HEAD bridge `78b9e270` for
+governed artifact literal-format gotchas checklist material commit `f013e7d5`.
+This sync advances the handoff HEAD block, current mode, generated active
+session state, front door, and next-move pointers without releasing package
+instance, certification, generated-index, resolver, Web, adapter,
+provider/live, public-sync, or push scope. The next authorized work is the
+Active Session State Bootstrap Read Model And Aggregate Size Refactor
+GC-018/work order creation.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/assfPicT0Closure20260625.json`
 - `CVF_SESSION/state/entries/assfPicT0Dispatch20260625.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator requested a Claude work order for
-ASSF-PIC-T0 after approving the package-instance certification pilot roadmap.
-The material dispatch commit succeeded separately before this session-sync.
+Operator authorization: the operator directed Codex to finish T0 after Claude
+returned `BLOCKED_WITH_REASON` and to keep T1 held until Active Session State
+Bootstrap Read Model And Aggregate Size Refactor is handled.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-PIC-T0 dispatch `9e08f11a`, ASSF-PIC roadmap `916c6908`,
+revert ASSF-PIC-T0 closure `24b49017`, handoff bridge `78b9e270`,
+ASSF-PIC-T0 dispatch `9e08f11a`, ASSF-PIC roadmap `916c6908`,
 ASSF-T7 closure `e76e4d09`, ASSF-T7 dispatch `3a3bbe05`, ADIF authoring
 hardening `8afbe0aa`,
 ASSF-T6 Codex review addendum
@@ -74,7 +77,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`assf_pic_t0_dispatched_pending_claude_worker_return`
+`assf_pic_t0_closed_pass_bounded_state_bootstrap_refactor_pending`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -120,7 +123,13 @@ ASSF-PIC-T0 dispatch material HEAD: `9e08f11a`
 
 Governed artifact literal-format gotchas checklist material HEAD: `f013e7d5`
 
-Current material HEAD recorded for this handoff: `f013e7d5`
+ASSF-PIC-T0 handoff HEAD bridge: `78b9e270`
+
+ASSF-PIC-T0 closure material HEAD: `24b49017`
+
+Current material HEAD recorded for this handoff: `24b49017`
+
+Prior material HEAD recorded for this handoff (gotchas checklist hardening): `f013e7d5`
 
 Prior material HEAD recorded for this handoff (ASSF-PIC-T0 dispatch): `9e08f11a`
 
@@ -375,28 +384,25 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is dispatched to
-Claude at material commit `9e08f11a`. Dispatch artifacts:
-`docs/baselines/CVF_GC018_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_2026-06-25.md`
+ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is
+`CLOSED_PASS_BOUNDED` at material commit `24b49017`. Claude returned
+`BLOCKED_WITH_REASON`; Codex completed reviewer-owned closure and selected
+`cvf-dispatch-quality-reviewer` as the single pilot candidate. Evidence:
+`docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md`,
+`docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_COMPLETION_2026-06-25.md`,
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_FOR_CLAUDE_2026-06-25.md`.
+`docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md`.
 
-Next allowed move: Claude worker execution using the ASSF-PIC-T0 work order.
-Claude must create only:
-
-- `docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md`
-- `docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md`
-
-Claude must use `WORKER_MUST_NOT_COMMIT` and return `COMPLETE_PENDING_REVIEW`
-or `BLOCKED_WITH_REASON`. Codex owns review, material commit, closure
-conversion, roadmap update, and session sync after worker return.
+Next allowed move: create the GC-018/work order for Active Session State
+Bootstrap Read Model And Aggregate Size Refactor. ASSF-PIC-T1 package instance
+evidence and skeleton hardening remains held until that refactor closes.
 
 No package instance creation, certification decision, `SKILL.md`,
 `skill.source.json`, generated-index mutation, registry-source mutation,
-resolver mutation, checker/generator mutation, CVF Web runtime change, CLI/MCP
-adapter behavior, provider/live proof, public-sync, push, activation,
-readiness, session-sync edit by Claude, or package instruction execution is
-released.
+resolver mutation, checker/generator mutation except the future active-session
+refactor work order, CVF Web runtime change, CLI/MCP adapter behavior,
+provider/live proof, public-sync, push, activation, readiness, or package
+instruction execution is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -441,7 +447,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_pic_t0_dispatched_pending_claude_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude worker execution for ASSF-PIC-T0 pilot candidate selection and source inventory; parked checkpoint=no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
+Startup acknowledged: current mode=`assf_pic_t0_closed_pass_bounded_state_bootstrap_refactor_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Active Session State Bootstrap Read Model And Aggregate Size Refactor GC-018/work order creation; parked checkpoint=ASSF-PIC-T1 held until that refactor closes; no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
 
 ## Parked Checkpoints
 
@@ -460,8 +466,10 @@ Startup acknowledged: current mode=`assf_pic_t0_dispatched_pending_claude_worker
   source-equivalence defect escalation at material commit `1c89d540`;
   ASSF-T5 is closed bounded at material commit `afeb2673`.
 - ASSF-PIC roadmap is ready at material commit `916c6908`.
-- ASSF-PIC-T0 is dispatched to Claude at material commit `9e08f11a`; next move
-  is Claude worker execution only under `WORKER_MUST_NOT_COMMIT`.
+- ASSF-PIC-T0 is closed bounded at material commit `24b49017`; selected
+  candidate is `cvf-dispatch-quality-reviewer`.
+- ASSF-PIC-T1 remains held until Active Session State Bootstrap Read Model And
+  Aggregate Size Refactor closes.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
