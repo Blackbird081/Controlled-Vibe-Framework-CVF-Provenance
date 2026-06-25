@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `assf_pic_t0_closed_pass_bounded_state_bootstrap_refactor_pending`
+Current mode marker: `state_br_t1_dispatched_pending_claude_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t0_closed_pass_bounded_state_bootstrap_refactor_pending`.
+Current mode: `state_br_t1_dispatched_pending_claude_worker_return`.
 
-Previous mode: `assf_pic_t0_dispatched_pending_claude_worker_return`.
+Previous mode: `assf_pic_t0_closed_pass_bounded_state_bootstrap_refactor_pending`.
 
 Active handoff:
 
@@ -64,23 +64,23 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is
-`CLOSED_PASS_BOUNDED` at material commit `24b49017`. Claude returned
-`BLOCKED_WITH_REASON`; Codex completed reviewer-owned closure and selected
-`cvf-dispatch-quality-reviewer` as the single pilot candidate. Evidence:
-`docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md`,
-`docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_COMPLETION_2026-06-25.md`,
-and
-`docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md`.
+STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size
+Refactor is dispatched to Claude at material commit `06d54319`. Dispatch
+artifacts:
 
-Next allowed move: create the GC-018/work order for Active Session State
-Bootstrap Read Model And Aggregate Size Refactor. ASSF-PIC-T1 package instance
-evidence and skeleton hardening remains held until that refactor closes. No
-package instance creation, certification decision, generated-index mutation,
-registry-source mutation, resolver mutation, checker/generator mutation except
-the future active-session refactor work order, Web runtime change, CLI/MCP
-adapter behavior, provider/live proof, public-sync, push, activation, readiness,
-or package instruction execution is released.
+- `docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_2026-06-25.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md`
+
+Claude must follow `WORKER_MUST_NOT_COMMIT`, update only the active-session
+generator/checker/test/front-door/read-model paths authorized by the work
+order, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+ASSF-PIC-T1 package instance evidence and skeleton hardening remains held
+until STATE-BR-T1 closes.
+
+No package instance creation, certification decision, generated-index mutation,
+registry-source mutation, resolver mutation, Web runtime change, CLI/MCP
+adapter behavior, provider/live proof, public-sync, push, activation,
+readiness, or package instruction execution is released.
 
 ASSF Package Instance Certification Pilot roadmap is `ROADMAP_READY` at
 material commit `916c6908`. Artifact:
@@ -895,16 +895,18 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t0_closed_pass_bounded_state_bootstrap_refactor_pending`.
+Mode: `state_br_t1_dispatched_pending_claude_worker_return`.
 
-Latest material HEAD: `24b49017` (ASSF-PIC-T0 candidate selection closure after
-handoff bridge `78b9e270` and dispatch material `9e08f11a`).
+Latest material HEAD: `06d54319` (STATE-BR-T1 active-session bootstrap read
+model refactor dispatch after ASSF-PIC-T0 closure material `24b49017`).
 
-Next allowed move: create the GC-018/work order for Active Session State
-Bootstrap Read Model And Aggregate Size Refactor.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md`
+in `WORKER_MUST_NOT_COMMIT` mode and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`.
 
 ASSF-PIC-T1 package instance evidence and skeleton hardening remains held until
-that refactor closes. EQC-T2 remains parked unless one of its recorded reopen
+STATE-BR-T1 closes. EQC-T2 remains parked unless one of its recorded reopen
 conditions is cited.
 
 No normalizer code, promoter code, composition engine, loader, package
