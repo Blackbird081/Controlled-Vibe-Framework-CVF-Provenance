@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION
+Status: ASSF_T5_CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -262,6 +262,21 @@ Define deterministic composition order, incompatibility handling, authority
 ceiling, side-effect budget, tool/CLI/MCP capability boundaries, rollback, and
 failure reporting. Loading a skill must never grant new authority.
 
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_2026-06-25.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_FOR_WORKER_2026-06-25.md`
+- `docs/reference/agent_system_skills/CVF_ASSF_COMPOSITION_CONTROL_CONTRACT.md`
+- `docs/reviews/CVF_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_WORKER_RETURN_2026-06-25.md`
+- `docs/reviews/CVF_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_COMPLETION_2026-06-25.md`
+
+T5 is contract-definition-only. No composition engine, loader, resolver change,
+conflict checker, package instance, SKILL.md, skill.source.json, registry entry,
+normalizer, promoter, CLI/MCP adapter, runtime/provider/live/public behavior,
+activation, readiness, or automatic-promotion behavior is released.
+
 ### ASSF-T6 - CVF Web Projection And Existing Example Migration
 
 Project certified packages into CVF Web while preserving plain-language forms.
@@ -330,7 +345,7 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 | Implement ASSF-T2 generated index/resolver foundation | Codex worker; Claude reviewer/closer | CLOSED_PASS_BOUNDED |
 | Define ASSF-T3 learning and ADIF promotion bridge contract | Codex worker; Claude reviewer/closer | CLOSED_PASS_BOUNDED |
 | Define ASSF-T4 external and legacy intake normalization contract | Codex worker; Claude reviewer/closer | CLOSED_PASS_BOUNDED |
-| Define ASSF-T5 composition/dependency/conflict/capability controls | future T5 tranche | PARKED - pending operator selection |
+| Define ASSF-T5 composition/dependency/conflict/capability controls | dispatcher/worker/reviewer combined role | CLOSED_PASS_BOUNDED |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -359,7 +374,13 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
   was wrong and was caught only by manual reviewer re-derivation. A future
   governed lane should evaluate a worker-return/completion-review linter that
   requires a literal grep/diff command-and-result pair beside any equivalence
-  claim about a named source file.
+  claim about a named source file. The T5 tranche applied the evidence discipline
+  (section-and-field verification for every reuse claim in the ASSF-T1 Schema
+  Alignment Decision table) as a first practice of this pattern. The machine-check
+  candidate escalation carries forward to ASSF-T7 or a future checker tranche.
+  T5 also defined four new schema extension fields (`extends`, `replaces`,
+  `capabilityClaims`, `compositionFailureDisposition`) as `PROPOSE_SCHEMA_EXTENSION`;
+  a separate ASSF-T1 schema amendment work order is required before implementation.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - roadmap-only.
 
 ## Verification / Evidence
@@ -417,7 +438,12 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | PASS |
+| Roadmap state | this roadmap | `Status: ASSF_T5_CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T5 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_2026-06-25.md` | `Status: DISPATCH_READY` | PASS |
+| ASSF-T5 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_FOR_WORKER_2026-06-25.md` | `Status: DISPATCH_READY` | PASS |
+| ASSF-T5 composition control contract | `docs/reference/agent_system_skills/CVF_ASSF_COMPOSITION_CONTROL_CONTRACT.md` | `Status: CANDIDATE` reference contract | PASS |
+| ASSF-T5 worker return | `docs/reviews/CVF_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_WORKER_RETURN_2026-06-25.md` | `Status: WORKER_RETURN_COMPLETE` | PASS |
+| ASSF-T5 completion review | `docs/reviews/CVF_ASSF_T5_COMPOSITION_DEPENDENCY_CONFLICT_CAPABILITY_CONTROLS_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T4 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T4 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T4_EXTERNAL_AND_LEGACY_INTAKE_NORMALIZATION_FOR_WORKER_2026-06-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T4 normalization contract | `docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md` | `Status: CANDIDATE` reference contract | PASS |
@@ -461,21 +487,22 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Roadmap status | `ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | `ASSF_T4_CLOSED_PASS_BOUNDED_PENDING_T5_SELECTION` | PASS |
+| Roadmap status | `ASSF_T5_CLOSED_PASS_BOUNDED` | `ASSF_T5_CLOSED_PASS_BOUNDED` | PASS |
 | T0 closure artifacts | baseline, work order, audit, completion review | all named in T0 closure artifacts | PASS |
 | T0.1 closure artifacts | GC-018, work order, audit, worker return, completion review | all named in ASSF-T0.1 tranche section | PASS |
 | Package root | proposed only | proposed only | PASS |
 | External CLI/MCP adapter | deferred | `DEFERRED_WITH_REASON` | PASS |
 | Runtime/provider/live claim | none | none | PASS |
+| T5 composition control contract | CLOSED_PASS_BOUNDED | all T5 artifacts present; schema alignment decision table present | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 
 | Field | Disposition |
 |---|---|
-| claimScope | Agent System Skills architecture roadmap and ASSF-T0.1 closure update |
-| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE - T0.1 worker-return scan accepted only |
+| claimScope | Agent System Skills architecture roadmap through ASSF-T5 closure update |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE -- T5 composition control contract closed as CLOSED_PASS_BOUNDED |
 | receiptEvidence | N/A with reason: no runtime receipt |
-| actionEvidence | ACTION_EVIDENCE_PRESENT - T0.1 audit, worker return, completion review, and gate evidence |
+| actionEvidence | ACTION_EVIDENCE_PRESENT -- T5 GC-018, work order, composition control contract, worker return, completion review, and gate evidence |
 | invocationBoundary | governed roadmap and dispatch authoring only |
 | interceptionBoundary | no IDE/shell/git/filesystem/provider interception claim |
 | claimLanguage | proposed canonical package/index/progressive-loading foundation |
@@ -507,7 +534,10 @@ catalog changes require a later public-safe artifact and public-sync batch.
 ## Claim Boundary
 
 This roadmap now records the architecture sequence, the closed bounded ASSF-T0
-owner/surface audit, and closed bounded ASSF-T0.1 legacy rescan. It does not
-create a canonical package root, `SKILL.md`, source schema, registry, generated
-index, resolver, Learning Plane bridge, external intake adapter, Web migration,
-guard, public-sync, runtime CLI/MCP surface, or ASSF-T1 dispatch.
+through ASSF-T5 tranches. ASSF-T5 is a contract-definition-only closure; it does
+not create a composition engine, loader, conflict checker, resolver change,
+generator change, drift checker, test code, package instance, SKILL.md,
+skill.source.json, registry entry, normalizer, promoter, CLI/MCP adapter,
+migration, runtime/provider/live/public behavior, activation, readiness, or
+automatic-promotion behavior. ASSF-T6 (CVF Web Projection) is the next tranche
+and requires fresh operator selection, GC-018, and source-verified work order.
