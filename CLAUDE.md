@@ -156,6 +156,20 @@ defect pattern is found while executing a tranche, add it to the ADIF
 registry before closing, per
 `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`.
 
+## Mandatory Value-Parked Lane Reopen Discipline
+
+Canonical standard:
+
+`docs/reference/CVF_VALUE_PARKED_LANE_REOPEN_DISCIPLINE_STANDARD_2026-06-25.md`
+
+A lane declined for low expected value (not blocked by a missing
+authority/credential/dependency) needs a concrete, checkable reopen
+condition recorded in `nextAllowedMove`, not a vague restatement. Recording
+it only in Claude's own session memory does not satisfy this rule - per the
+same ADIF-0008 anti-pattern above, it must be in `nextAllowedMove` or
+another CVF-governed artifact every agent reads at startup. Do not
+re-propose a value-declined lane without first checking that condition.
+
 ## Mandatory Work Order Source Verification
 
 Before authoring or dispatching a CVF work order, follow the canonical template:

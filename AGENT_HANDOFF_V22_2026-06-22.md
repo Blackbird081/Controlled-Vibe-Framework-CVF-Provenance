@@ -36,12 +36,16 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync update after EQC-T1
-Worker Return Equivalence Claim Evidence Linter closure at material commit
-`ccee892d`.
+Authorized guard-maintenance scope: add the cross-agent
+"Mandatory Value-Parked Lane Reopen Discipline" rule to `AGENTS.md` and
+`CLAUDE.md`, and rewrite the EQC-T2 reopen-condition prose in
+`nextAllowedMove` to be concrete and checkable, after EQC-T1 Worker Return
+Equivalence Claim Evidence Linter closure at material commit `ccee892d`.
 
 Protected paths:
 
+- `AGENTS.md`
+- `CLAUDE.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/aafT7CReviewerScaffoldShapeHardeningClosure20260622.json`
@@ -61,14 +65,15 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator requested EQC-T1 worker dispatch, then
-directed Claude to independently verify the worker-return claims, repair the
-defects found during that verification, commit the closure, and sync
-session continuity to the new HEAD on 2026-06-25.
+Operator authorization: the operator observed that the EQC-T2
+deferred-for-low-value decision was only recorded in Claude's own session
+memory and directed that the rule and the reopen condition be made visible
+to every agent through CVF-governed artifacts, on 2026-06-25.
 
-Rollback boundary: revert only this session-sync commit if rejected; do not
-revert the EQC-T1 closure material commit `ccee892d`, MPI-T5 dispatch commit
-`501fcafa`, AAF-T7C material commit `b7601865`, LPF config material commit
+Rollback boundary: revert only this rule-addition commit if rejected; do not
+revert the EQC-T1 closure material commit `ccee892d`, the EQC-T1 session-sync
+commit `92199d9f`, MPI-T5 dispatch commit `501fcafa`, AAF-T7C material commit
+`b7601865`, LPF config material commit
 `bf8ff950`, MPI-T4 closure, or earlier session history.
 
 ## Current Mode

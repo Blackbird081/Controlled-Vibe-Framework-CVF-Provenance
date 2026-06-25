@@ -254,6 +254,17 @@ pattern while executing a tranche, add a new entry to the ADIF registry
 before closing that tranche, rather than recording the lesson only in
 provider-specific memory (`CVF_ADIF-0008` names this exact anti-pattern).
 
+## Mandatory Value-Parked Lane Reopen Discipline - 2026-06-25
+
+Canonical standard:
+
+`docs/reference/CVF_VALUE_PARKED_LANE_REOPEN_DISCIPLINE_STANDARD_2026-06-25.md`
+
+A lane declined for low expected value (not blocked by a missing
+authority/credential/dependency) needs a concrete, checkable reopen
+condition recorded in `nextAllowedMove`, not a vague restatement. No agent
+may re-propose such a lane without first checking that condition.
+
 ## Mandatory Work Order Source Verification - 2026-05-27
 
 Canonical work-order template:
@@ -519,7 +530,8 @@ it added, reused, or explicitly did not need a generated source layout.
 
 ## Mandatory Agent Autorun Workflow Control - 2026-05-28
 
-Canonical standard:
+Canonical standard (read this for the full rule set, phase-gate commands,
+remediation policy, and commit steward usage):
 
 `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
 
@@ -527,96 +539,23 @@ Agent-neutral commit steward standard:
 
 `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`
 
-For latency control, agents must use the narrowest steward lane that matches
-the changed set. Use `session-sync` for generated/front-door session updates,
-and use `handoff-sync` only for a dedicated root active-handoff-only continuity
-commit after the material/session commit is already aligned.
-
 Agent-error learning philosophy:
 
 `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
 
-Any agent-led CVF workflow that drafts, dispatches, implements, reviews, closes,
-commits, pushes, or public-syncs governed work must use the autorun workflow
-gates. The intent is to protect non-coder operators from having to manually
-inspect whether a worker agent followed the process.
-
-Repeated agent errors are governance training samples, not merely worker blame.
-If a defect pattern repeats, promote it from finding to written rule; if the
-rule remains interpretable, promote it to machine check; if the machine check
-only catches the issue at closure, move it into the earliest applicable autorun
-phase gate. CVF trust belongs to the governance control chain, not to any one
-agent model.
-
-Required phase gates:
-
-- before ready/dispatch:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD`
-- before material implementation:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD`
-- before any `CLOSED`, `CLOSED_PASS`, `CLOSED_PASS_BOUNDED`, or equivalent
-  claim:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
-- before push:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base <baseHead> --head HEAD`
-
-Reviewer fast preflight:
-
-- when a no-commit worker returns uncommitted or staged governed artifacts for
-  Codex/orchestrator review, run the focused reviewer gate before attempting a
-  full commit:
-  `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`
-- for lower total operator wait time, workers/reviewers may run the one-command
-  fast bundle first:
-  `python governance/compat/run_worker_return_fast_gate.py`
-  and add `--pytest-target <path>` for focused tests named by the work order.
-- This gate is not closure evidence and does not replace pre-closure or
-  pre-push autorun gates. It is an early defect filter for reviewer-return
-  packets: closure residue, source/registry coverage, public export
-  disposition, machine closure rows, finding-learning disposition, and active
-  session continuity.
-- `reviewer-fast`, `pre-commit`, and `pre-push` local hook modes run in
-  parallel by default for latency control. Use `--serial` only for debugging
-  order-dependent output.
-
-If a phase gate fails, the agent must stop at that phase and mark the artifact
-`DRAFT`, `HOLD_*`, `BLOCKED`, or return it to Orchestrator. A worker may not
-"fix while implementing" a failed dispatch packet unless that remediation is
-the explicitly assigned task. A reviewer may not accept handwritten PASS
-claims when the autorun gate fails. Operator silence is not a waiver.
-
-Allowed-scope gate remediation is mandatory, not optional. Once a work order is
-dispatched, any machine-gate failure inside its Allowed scope must be repaired
-and rerun by the assigned agent instead of escalated as "do you want me to fix
-this?" to the operator. Ask the operator only when the repair would exceed
-Allowed scope, change the claim boundary, release a `HOLD_*` prerequisite,
-alter risk level, open public-sync, run live/provider proof, consume
-secrets/quota, touch forbidden paths, or perform destructive/irreversible
-actions. Treat an agent asking whether to fix an allowed-scope guard failure as
-a governance/control-plane learning signal.
-
-Pre-closure must not accept untracked, modified, or unresolved worktree changes
-as a clean closure claim. Closure must be backed by committed diff evidence,
-`git status --short`, receipts, command output, or explicit `N/A with reason`.
-
-Before a governed commit or worker-return handoff, run the agent-neutral commit
-steward preflight for the matching mode:
-
-```bash
-python governance/compat/run_agent_commit_steward_preflight.py --mode <dispatch|implementation|reviewer-return|closure|push|session-sync> --base <baseHead> --head HEAD --enforce
-```
-
-The steward preflight does not replace autorun phase gates or git hooks. It
-reduces total elapsed time by running the correct phase gate early, printing the
-material/session split plan, and blocking high-risk commit shapes such as
-Agent Operation Trace exact-manifest artifacts mixed with active handoff/session
-sync. This rule is provider-neutral and applies when a single agent performs
-multiple roles.
-
-Latest-closure continuity is mandatory. If the state registry contains a
-higher closed `lhwN...CLOSED_PASS_BOUNDED` record, then `nextAllowedMove`,
-`CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff must
-reference that same latest `LHWN`; stale lower-wave text blocks closure.
+Any agent-led CVF workflow that drafts, dispatches, implements, reviews,
+closes, commits, pushes, or public-syncs governed work must run the matching
+`run_agent_autorun_workflow_gate.py` phase (`pre-dispatch`,
+`pre-implementation`, `pre-closure`, `pre-push`) before that step, and use
+`run_agent_commit_steward_preflight.py` before any governed commit or
+worker-return handoff. A failed gate blocks the claim - mark the artifact
+`DRAFT`/`HOLD_*`/`BLOCKED` instead of writing a handwritten PASS.
+Allowed-scope gate failures must be repaired and rerun by the assigned
+agent, not escalated to the operator as a preference question. Pre-closure
+must not accept untracked/unresolved worktree changes as clean closure.
+Latest-closure continuity is mandatory: `nextAllowedMove`,
+`CVF_SESSION_MEMORY.md`, and the active handoff must all reference the same
+latest closed `LHWN` wave.
 
 ## Mandatory Agent Handoff Boundary Contract Guard - 2026-06-17
 
