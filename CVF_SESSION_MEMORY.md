@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`
+Current mode marker: `assf_pic_t1_dispatched_pending_claude_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`.
+Current mode: `assf_pic_t1_dispatched_pending_claude_worker_return`.
 
-Previous mode: `state_br_t1_dispatched_pending_claude_worker_return`.
+Previous mode: `state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`.
 
 Active handoff:
 
@@ -65,6 +65,19 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is dispatched for
+Claude worker execution at material commit `af09f072`. Accepted dispatch
+artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
+
+Claude must run as `WORKER_MUST_NOT_COMMIT`, create only the planned audit and
+worker-return artifacts, use `governance/compat/run_worker_return_scaffold.py`
+before drafting the worker return, and return `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex owns review, closure conversion, material commit,
+and session-sync after worker return.
 
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
@@ -87,8 +100,8 @@ artifacts:
 - `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_WORKER_RETURN_2026-06-25.md`
 
 Result: compact startup bootstrap read model exists and validates with the full
-active-session aggregate. Next allowed move is ASSF-PIC-T1 GC-018 baseline and
-source-verified work-order creation only.
+active-session aggregate. ASSF-PIC-T1 dispatch is now released to Claude worker
+execution only under the work order above.
 
 No package instance creation, certification decision, generated-index mutation,
 registry-source mutation, resolver mutation, Web runtime change, CLI/MCP
@@ -908,25 +921,25 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`.
+Mode: `assf_pic_t1_dispatched_pending_claude_worker_return`.
 
-Latest material HEAD: `3ab844fd` (worker-return/report enforcement friction
-reduction after STATE-BR-T1 closure `4ddf5352`).
+Latest material HEAD: `af09f072` (ASSF-PIC-T1 evidence skeleton work order
+dispatch).
 
-Next allowed move: create ASSF-PIC-T1 GC-018 baseline and source-verified work
-order for package instance evidence and skeleton hardening only.
+Next allowed move: Claude executes ASSF-PIC-T1 work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
+as `WORKER_MUST_NOT_COMMIT` and returns audit plus worker-return artifacts for
+Codex review.
 
-ASSF-PIC-T1 implementation remains held until that new work order is authored,
-reviewed, and dispatched. EQC-T2 remains parked unless one of its recorded
-reopen conditions is cited.
+EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 
 No normalizer code, promoter code, composition engine, loader, package
 instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
 external CLI/MCP adapter implementation, runtime/provider/live/public work,
 secrets/quota, readiness, automatic promotion, activation, monolith split
 inside a non-split tranche, non-governance Python enforcement, or
-universal-control claim is released by GFS-PY-T1, EQC-T1, ASSF-T1 through
-ASSF-T6 closure, or the gotchas checklist commit.
+worker commit, universal-control claim, or package instruction execution is
+released by this dispatch.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

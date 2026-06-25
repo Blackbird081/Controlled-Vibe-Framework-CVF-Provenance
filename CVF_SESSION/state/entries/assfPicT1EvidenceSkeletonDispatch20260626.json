@@ -1,0 +1,18 @@
+{
+  "stateOrder": 670,
+  "stateKey": "assfPicT1EvidenceSkeletonDispatch20260626",
+  "value": {
+    "status": "DISPATCHED_PENDING_CLAUDE_WORKER_RETURN",
+    "materialCommit": "af09f072",
+    "baseline": "docs/baselines/CVF_GC018_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md",
+    "workerMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedCandidate": "cvf-dispatch-quality-reviewer",
+    "workerAllowedPaths": [
+      "docs/audits/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_AUDIT_2026-06-26.md",
+      "docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md"
+    ],
+    "requiredScaffoldHelper": "governance/compat/run_worker_return_scaffold.py",
+    "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter, provider/live proof, public-sync, push, activation, readiness, package instruction execution, or worker commit."
+  }
+}

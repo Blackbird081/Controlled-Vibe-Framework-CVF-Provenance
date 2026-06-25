@@ -17,9 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record worker-return/report enforcement friction reduction continuity
-and keep the next allowed move routed to ASSF-PIC-T1 GC-018/work-order
-creation only.
+Target: record ASSF-PIC-T1 evidence skeleton work order dispatch continuity
+and route the next allowed move to Claude no-commit worker execution only.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -41,27 +40,27 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-worker-return/report enforcement friction reduction material commit
-`3ab844fd`. This sync advances the handoff HEAD block, generated active
-session state, bootstrap read model, front door, and next-move pointers while
-keeping ASSF-PIC-T1 implementation held until GC-018/work-order creation.
+ASSF-PIC-T1 evidence skeleton work order dispatch material commit `af09f072`.
+This sync advances the handoff HEAD block, generated active session state,
+bootstrap read model, front door, and next-move pointers while routing
+ASSF-PIC-T1 to Claude no-commit worker execution only.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/workerReturnReportEnforcementFrictionReduction20260626.json`
+- `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator requested immediate handling of the
-worker-return/report enforcement pressure and asked to separate strict controls
-from non-critical report format so time and token quota are not burned on
-repeated format repairs.
+Operator authorization: the operator requested a Claude work order to test the
+recent worker-return/report-friction reduction with Claude as worker.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert worker-return/report enforcement material `3ab844fd`,
+revert ASSF-PIC-T1 dispatch material `af09f072`,
+worker-return/report enforcement material `3ab844fd`,
 STATE-BR-T1 dispatch `06d54319`, ASSF-PIC-T0 closure `24b49017`, handoff bridge `78b9e270`,
 ASSF-PIC-T0 dispatch `9e08f11a`, ASSF-PIC roadmap `916c6908`,
 ASSF-T7 closure `e76e4d09`, ASSF-T7 dispatch `3a3bbe05`, ADIF authoring
@@ -76,7 +75,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`
+`assf_pic_t1_dispatched_pending_claude_worker_return`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -140,7 +139,11 @@ Worker-return/report enforcement friction reduction material HEAD: `3ab844fd`
 
 Worker-return/report enforcement session-sync HEAD: `ae74b40f`
 
-Current material HEAD recorded for this handoff: `3ab844fd`
+ASSF-PIC-T1 evidence skeleton dispatch material HEAD: `af09f072`
+
+Current material HEAD recorded for this handoff: `af09f072`
+
+Prior material HEAD recorded for this handoff (worker-return/report enforcement): `3ab844fd`
 
 Prior material HEAD recorded for this handoff (STATE-BR-T1 closure): `4ddf5352`
 
@@ -219,6 +222,19 @@ runtime source as authority.
 
 ## Latest Work / Changes
 
+ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is dispatched for
+Claude worker execution at material commit `af09f072`. Accepted dispatch
+artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
+
+Claude must run as `WORKER_MUST_NOT_COMMIT`, create only the planned audit and
+worker-return artifacts, use `governance/compat/run_worker_return_scaffold.py`
+before drafting the worker return, and return `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex owns review, closure conversion, material commit,
+and session-sync after worker return.
+
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
 receipt presence, protected paths, public/provenance boundary, and runtime/
@@ -240,8 +256,8 @@ artifacts:
 - `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_WORKER_RETURN_2026-06-25.md`
 
 Result: compact startup bootstrap read model exists and validates with the full
-active-session aggregate. Next allowed move is ASSF-PIC-T1 GC-018 baseline and
-source-verified work-order creation only.
+active-session aggregate. ASSF-PIC-T1 dispatch is now released to Claude worker
+execution only under the work order above.
 
 ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is dispatched to
 Claude at material commit `9e08f11a`. Accepted dispatch artifacts:
@@ -427,15 +443,16 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Create ASSF-PIC-T1 GC-018 baseline and source-verified work order for package
-instance evidence and skeleton hardening only.
+Claude executes ASSF-PIC-T1 work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
+as `WORKER_MUST_NOT_COMMIT` and returns audit plus worker-return artifacts for
+Codex review.
 
-ASSF-PIC-T1 implementation remains held until that new work order is authored,
-reviewed, and dispatched. No package instance creation, certification decision,
-`SKILL.md`, `skill.source.json`, generated-index mutation, registry-source
-mutation, resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior,
-provider/live proof, public-sync, push, activation, readiness, or package
-instruction execution is released.
+No package instance creation, certification decision, `SKILL.md`,
+`skill.source.json`, generated-index mutation, registry-source mutation,
+resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior,
+provider/live proof, public-sync, push, activation, readiness, worker commit,
+or package instruction execution is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -480,7 +497,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=create ASSF-PIC-T1 GC-018 baseline and source-verified work order only; parked checkpoint=no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
+Startup acknowledged: current mode=`assf_pic_t1_dispatched_pending_claude_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes ASSF-PIC-T1 work order as WORKER_MUST_NOT_COMMIT and returns audit plus worker-return artifacts for Codex review; parked checkpoint=no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
 
 ## Parked Checkpoints
 
@@ -504,8 +521,9 @@ Startup acknowledged: current mode=`state_br_t1_closed_pass_bounded_assf_pic_t1_
 - STATE-BR-T1 is closed bounded at material commit `4ddf5352`.
 - Worker-return/report enforcement friction reduction is recorded at material
   commit `3ab844fd`.
-- ASSF-PIC-T1 is released only for GC-018 baseline and source-verified work
-  order creation; implementation remains held until that packet is dispatched.
+- ASSF-PIC-T1 evidence skeleton work order is dispatched at material commit
+  `af09f072`; Claude worker execution is released only under that no-commit
+  work order.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -566,27 +584,28 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ASSF-T1 dispatch sync, 2026-06-23 |
-| Working directory | repository root |
+| Session or invocation | ASSF-PIC-T1 dispatch session-sync, 2026-06-26 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
-| Target paths | V22; session front door; active-state core; ASSF state entry; next move; generated active state |
-| Allowed scope source | ASSF-T1 dispatch material `013cc91a` and operator role-switch instruction |
-| Before status evidence | ASSF-T1 dispatch material commit `013cc91a` passes pre-commit 55/55 |
-| After status evidence | active continuity records `013cc91a` and routes next move to ASSF-T1 worker execution |
+| Target paths | V22; session front door; active-state core; ASSF-PIC-T1 state entry; next move; generated active state; bootstrap read model |
+| Allowed scope source | ASSF-PIC-T1 dispatch material `af09f072` and operator request for Claude worker work order |
+| Before status evidence | ASSF-PIC-T1 dispatch material commit `af09f072`; clean worktree before session-sync |
+| After status evidence | active continuity records `af09f072` and routes next move to ASSF-PIC-T1 Claude worker execution |
 | Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `assf-t1-dispatch-sync-2026-06-23` |
-| Expected manifest | V22; front door; active-state core; ASSF state entry; next move; generated active state |
-| Actual changed set | V22; front door; active-state core; ASSF state entry; next move; generated active state |
+| Invocation ID | `assf-pic-t1-dispatch-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records ASSF-T1 dispatch at
-`013cc91a` and routes the next move to no-commit worker execution. It does not
-execute or close ASSF-T1, and does not expand package root/index/resolver,
-external CLI/MCP adapter implementation, runtime/provider/live/public behavior,
+This handoff is session continuity only. It records ASSF-PIC-T1 evidence
+skeleton dispatch at `af09f072` and routes the next move to Claude no-commit
+worker execution. It does not execute or close ASSF-PIC-T1, create a package
+instance, certify a package, or expand package root/index/resolver, external
+CLI/MCP adapter implementation, runtime/provider/live/public behavior,
 activation, readiness, or automatic promotion.
