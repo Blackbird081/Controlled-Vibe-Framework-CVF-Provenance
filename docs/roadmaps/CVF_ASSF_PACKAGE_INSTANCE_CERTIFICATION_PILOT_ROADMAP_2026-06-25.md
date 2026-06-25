@@ -157,7 +157,14 @@ source inventory, authority boundary, and rejection fallback. Do not change the
 generated index, resolver, Web runtime, package lifecycle state, or external
 adapter.
 
-Status: `NEXT_WORK_ORDER_CANDIDATE`.
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure note: PIC-T0 selected exactly one pilot candidate,
+`cvf-dispatch-quality-reviewer`, in
+`docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md`.
+The selection is bounded to candidate identity and source inventory only.
+PIC-T1 is not released until the Active Session State Bootstrap Read Model And
+Aggregate Size Refactor is handled.
 
 Required outputs:
 
@@ -174,7 +181,7 @@ artifacts only if PIC-T0 selected a candidate. The work must preserve the T1
 package schema and T7 lifecycle guard. If an existing registry entry is used,
 the generated source layout must be respected and drift checks must pass.
 
-Status: `HOLD_UNTIL_PIC_T0_PASS`.
+Status: `HOLD_UNTIL_STATE_BOOTSTRAP_REFACTOR`.
 
 Required outputs:
 
@@ -307,8 +314,9 @@ Return to orchestrator if any ASSF-PIC work order:
 - Learning lane: `DOCUMENTATION_ONLY_LEARNING`
 - Disposition: `N/A_WITH_REASON` - this roadmap records a forward execution
   lane, not a new repeated defect pattern.
-- Next control action: create ASSF-PIC-T0 GC-018 and work order for candidate
-  selection and source inventory.
+- Next control action: handle Active Session State Bootstrap Read Model And
+  Aggregate Size Refactor before ASSF-PIC-T1 package instance evidence or
+  skeleton hardening is released.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - this roadmap does
   not run provider calls or cost-bearing tests.
 

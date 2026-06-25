@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -22,8 +22,8 @@ does not change package lifecycle state.
 Verdicts:
 
 - Dispatcher verdict: DISPATCH_APPROVED
-- Worker verdict: NOT_EXECUTED_YET
-- Reviewer verdict: NOT_EXECUTED_YET
+- Worker verdict: BLOCKED_WITH_REASON_ACCEPTED_AS_PROCESS_HALT
+- Reviewer verdict: CLOSED_PASS_BOUNDED_WITH_T1_HOLD
 
 ## Purpose
 
@@ -172,14 +172,14 @@ Remediation applied:
 
 | Criterion | Required disposition |
 |---|---|
-| Candidate-selection audit enumerates current registry source entries with command-backed evidence | REQUIRED |
-| Audit selects exactly one pilot candidate or records `PILOT_CANDIDATE_REJECTED` with reason | REQUIRED |
-| Audit records source inventory, selector inventory, authority boundary, and rejection fallback | REQUIRED |
-| Audit preserves T1 package schema, T2 metadata-only boundary, and T7 certification lifecycle boundary | REQUIRED |
-| Audit includes Dual Agent Surface Matrix with internal and external rows | REQUIRED |
-| Worker return includes changed files, gate evidence, execution base, and claim boundary | REQUIRED |
-| Worker does not edit generated index, resolver, registry source entries, package instance files, Web runtime, session state, public-sync, or adapter source | REQUIRED |
-| Worker does not commit | REQUIRED |
+| Candidate-selection audit enumerates current registry source entries with command-backed evidence | PASS |
+| Audit selects exactly one pilot candidate or records `PILOT_CANDIDATE_REJECTED` with reason | PASS - selected `cvf-dispatch-quality-reviewer` |
+| Audit records source inventory, selector inventory, authority boundary, and rejection fallback | PASS |
+| Audit preserves T1 package schema, T2 metadata-only boundary, and T7 certification lifecycle boundary | PASS |
+| Audit includes Dual Agent Surface Matrix with internal and external rows | PASS |
+| Worker return includes changed files, gate evidence, execution base, and claim boundary | PASS - `BLOCKED_WITH_REASON` return accepted as process evidence |
+| Worker does not edit generated index, resolver, registry source entries, package instance files, Web runtime, session state, public-sync, or adapter source | PASS |
+| Worker does not commit | PASS |
 
 ## Fail Conditions
 
@@ -216,16 +216,38 @@ Reason: this dispatch references private provenance architecture and repository
 source surfaces. Public-safe export requires a separate redaction and
 public-sync authorization.
 
-## Dispatch Readiness Package
+## Closure Package
 
-| Readiness item | Required artifact/path | Evidence | Status |
+| Closure item | Required artifact/path | Evidence | Status |
 |---|---|---|---|
-| Roadmap source | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | `Status: ROADMAP_READY` | PASS |
-| GC-018 status | this file | `Status: DISPATCH_READY` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_FOR_CLAUDE_2026-06-25.md` | `Status: DISPATCH_READY` | PASS |
-| Worker output paths | this file | Required Worker Deliverables table | PASS |
+| Roadmap source | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | PIC-T0 `CLOSED_PASS_BOUNDED`; PIC-T1 `HOLD_UNTIL_STATE_BOOTSTRAP_REFACTOR` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_FOR_CLAUDE_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker output paths | worker return and reviewer-owned audit/completion | worker return `BLOCKED_WITH_REASON`; audit `COMPLETE_PENDING_REVIEW`; completion `CLOSED_PASS_BOUNDED` | PASS |
 | External adapter boundary | this file | Dual Agent Surface Matrix | PASS |
 | Runtime implementation | N/A with reason | runtime implementation is forbidden in this tranche | N/A with reason |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_FOR_CLAUDE_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | PIC-T0 `CLOSED_PASS_BOUNDED`; PIC-T1 held for Active Session State Bootstrap Read Model And Aggregate Size Refactor | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | not authorized for PIC-T0 closure; no GC-051 corpus registry mutation in scope | BLOCKED with reason |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | not authorized for PIC-T0 closure; no GC-051 corpus registry mutation in scope | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence imported | N/A with reason |
+| System loop interlock | this baseline | PIC-T0 selected one candidate; PIC-T1 held for state-bootstrap/read-model refactor | PASS |
+| Session continuity | N/A with reason | session-sync is split into a separate follow-up commit by commit split rule | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence absent for T0 | `receiptEvidence` is `N/A with reason` | PASS |
+| Candidate decision recorded | `PILOT_CANDIDATE_SELECTED` | PASS |
+| Selected candidate recorded | `cvf-dispatch-quality-reviewer` | PASS |
+| PIC-T1 release blocked | state-bootstrap/read-model refactor required before PIC-T1 | PASS |
 
 ## Claim Boundary
 
