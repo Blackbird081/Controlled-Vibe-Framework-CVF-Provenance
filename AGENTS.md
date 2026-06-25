@@ -6,8 +6,12 @@ The active session front door for new or resumed agents is:
 
 `CVF_SESSION_MEMORY.md`
 
-Resolve the machine-readable state registry before treating any root handoff as
-current:
+For compact startup facts (current mode, active handoff, next allowed move),
+read the bootstrap read model first:
+
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+For complete canonical state, resolve the full machine-readable state registry:
 
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 

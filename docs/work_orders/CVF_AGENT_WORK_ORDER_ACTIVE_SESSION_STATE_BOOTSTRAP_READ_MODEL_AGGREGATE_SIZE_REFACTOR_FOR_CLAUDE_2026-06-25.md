@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -409,14 +409,45 @@ a completion review.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed paths stay inside Write Ownership.
-- [ ] Compact bootstrap read model is generated or checked from governed state sources.
-- [ ] Full aggregate remains canonical and validates against sources.
-- [ ] Focused tests and active-session checks pass or block with reason.
-- [ ] Startup/front-door text updates are bounded to read order and do not add long history.
-- [ ] ASSF-PIC-T1 remains held until reviewer closure.
-- [ ] Worker did not commit, push, public-sync, run provider/live proof, or change ASSF package surfaces.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+- [x] Changed paths stay inside Write Ownership.
+- [x] Compact bootstrap read model is generated or checked from governed state sources.
+- [x] Full aggregate remains canonical and validates against sources.
+- [x] Focused tests and active-session checks pass or block with reason.
+- [x] Startup/front-door text updates are bounded to read order and do not add long history.
+- [x] ASSF-PIC-T1 remains held until reviewer closure.
+- [x] Worker did not commit, push, public-sync, run provider/live proof, or change ASSF package surfaces.
+
+## Reviewer Closure Package
+
+| Closure item | Evidence | Disposition |
+|---|---|---|
+| Worker return | `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_WORKER_RETURN_2026-06-25.md` | ACCEPTED |
+| Protected bootstrap surface commit | `4c0d29e0` | ACCEPTED_WITH_REASON: isolated before material closure because commit steward blocks AOT review artifacts mixed with protected session/handoff paths |
+| Completion review | `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_COMPLETION_2026-06-25.md` | PRESENT |
+| Closure disposition | reviewer reran focused tests, generator check, active-session compatibility, worker-return fast gate, pre-implementation autorun gate | CLOSED_PASS_BOUNDED |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; closure checklist all checked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | ASSF-PIC-T1 dependency on STATE-BR-T1 closure is satisfied for later GC-018/work-order authoring only | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | protected bootstrap surface committed at `4c0d29e0` | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V22_2026-06-22.md`; `AGENTS.md` | compact startup read-order pointers present | PASS |
+| External evidence digest | N/A with reason | no external-source authority accepted; operator report used only as trigger | N/A with reason |
+| System loop interlock | generator/checker/test changes only | no runtime loop, Web adapter, provider, or package execution released | PASS |
+| Session continuity | separate session-sync after material closure | REQUIRED_AFTER_MATERIAL_COMMIT | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker return accepted | reviewer accepts `COMPLETE_PENDING_REVIEW` return | accepted in completion review | PASS |
+| Bootstrap read model exists | file committed and size-bounded | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; 1377 bytes at worker return | PASS |
+| Full aggregate remains canonical | `activeStateRegistry` remains `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generator/checker preserve full aggregate pointer | PASS |
+| Forbidden scope remains closed | no ASSF package/runtime/adapter/live/public/push release | closure claim boundary keeps all forbidden scope closed | PASS |
 
 ## Return-To-Orchestrator Conditions
 

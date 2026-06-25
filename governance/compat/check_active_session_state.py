@@ -24,16 +24,23 @@ from typing import Any
 
 try:
     from governance.compat.generate_active_session_state import (
+        CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES,
         validate_aggregate_matches_sources,
+        validate_bootstrap_read_model_matches_sources,
     )
 except ModuleNotFoundError:  # direct script execution from governance/compat
-    from generate_active_session_state import validate_aggregate_matches_sources
+    from generate_active_session_state import (  # type: ignore[no-redef]
+        CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES,
+        validate_aggregate_matches_sources,
+        validate_bootstrap_read_model_matches_sources,
+    )
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 FRONT_DOOR_PATH = "CVF_SESSION_MEMORY.md"
 STATE_PATH = "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+BOOTSTRAP_PATH_STR = "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
 REVIEW_QUEUE_PATH = "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json"
 PAIN_POINT_DIRECTION_PATH = "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md"
 READ_FIRST_PATH = "CVF_SESSION/READ_FIRST.md"
@@ -46,6 +53,7 @@ THIS_SCRIPT_PATH = "governance/compat/check_active_session_state.py"
 REQUIRED_STATIC_FILES = (
     FRONT_DOOR_PATH,
     STATE_PATH,
+    BOOTSTRAP_PATH_STR,
     REVIEW_QUEUE_PATH,
     PAIN_POINT_DIRECTION_PATH,
     READ_FIRST_PATH,
@@ -342,6 +350,21 @@ def _classify() -> dict[str, Any]:
     archive_path = None
     ready_review_items: list[str] = []
 
+    bootstrap_violations: list[str] = []
+    bootstrap_path = REPO_ROOT / BOOTSTRAP_PATH_STR
+    if bootstrap_path.exists():
+        bootstrap_size = bootstrap_path.stat().st_size
+        if bootstrap_size > CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES:
+            bootstrap_violations.append(
+                f"{BOOTSTRAP_PATH_STR} size {bootstrap_size} bytes exceeds "
+                f"CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES "
+                f"{CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES}; "
+                "regenerate with a smaller field set or increase the ceiling"
+            )
+        bootstrap_violations.extend(
+            validate_bootstrap_read_model_matches_sources()
+        )
+
     if state_error:
         state_violations.append(state_error)
     elif state is not None:
@@ -587,6 +610,7 @@ def _classify() -> dict[str, Any]:
     compliant = (
         not missing_files
         and not state_violations
+        and not bootstrap_violations
         and not review_queue_violations
         and not continuity_violations
         and not marker_violations
@@ -623,6 +647,8 @@ def _classify() -> dict[str, Any]:
         "parentShaInHandoff": parent_sha_in_handoff,
         "activeHandoffChangedInHead": active_handoff_changed_in_head,
         "handoffSyncCommitOnly": handoff_sync_commit_only,
+        "bootstrapViolations": bootstrap_violations,
+        "bootstrapViolationCount": len(bootstrap_violations),
         "compliant": compliant,
     }
 
@@ -673,6 +699,11 @@ def _print_report(report: dict[str, Any]) -> None:
         print("\nMissing files:")
         for path in report["missingFiles"]:
             print(f"  - {path}")
+
+    if report.get("bootstrapViolations"):
+        print("\nBootstrap read model violations:")
+        for issue in report["bootstrapViolations"]:
+            print(f"  - {issue}")
 
     if report["stateViolations"]:
         print("\nState violations:")

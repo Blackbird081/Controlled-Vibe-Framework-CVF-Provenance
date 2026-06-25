@@ -16,8 +16,25 @@ STATE_PATH = REPO_ROOT / "CVF_SESSION" / "ACTIVE_SESSION_STATE.json"
 SOURCE_DIR = REPO_ROOT / "CVF_SESSION" / "state"
 CORE_PATH = SOURCE_DIR / "ACTIVE_SESSION_STATE_CORE.json"
 ENTRIES_DIR = SOURCE_DIR / "entries"
+BOOTSTRAP_PATH = REPO_ROOT / "CVF_SESSION" / "ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
 SOURCE_ONLY_ENTRY_FIELDS = {"stateOrder", "stateKey"}
 CORE_KEY_COUNT = 49
+
+BOOTSTRAP_FIELDS = (
+    "schemaVersion",
+    "currentMode",
+    "activeHandoff",
+    "nextAllowedMove",
+    "activeStateRegistry",
+    "activeSessionFrontDoor",
+    "freezePosture",
+    "activeReviewQueue",
+)
+BOOTSTRAP_CLAIM_BOUNDARY = (
+    "Compact bootstrap read model for startup facts only. "
+    "For complete canonical state, read activeStateRegistry."
+)
+CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES = 4096
 
 
 def entry_filename(state_key: str) -> str:
@@ -125,13 +142,55 @@ def bootstrap_from_current(
         )
 
 
+def generate_bootstrap_read_model(
+    state_path: Path = STATE_PATH,
+    bootstrap_path: Path = BOOTSTRAP_PATH,
+) -> None:
+    state = load_json(state_path)
+    if not isinstance(state, dict):
+        raise ValueError(f"{state_path}: active session aggregate must be a JSON object")
+    model: dict[str, Any] = {}
+    for field in BOOTSTRAP_FIELDS:
+        if field in state:
+            model[field] = state[field]
+    model["claimBoundary"] = BOOTSTRAP_CLAIM_BOUNDARY
+    bootstrap_path.parent.mkdir(parents=True, exist_ok=True)
+    bootstrap_path.write_text(render_json(model), encoding="utf-8")
+
+
+def validate_bootstrap_read_model_matches_sources(
+    state_path: Path = STATE_PATH,
+    bootstrap_path: Path = BOOTSTRAP_PATH,
+) -> list[str]:
+    if not bootstrap_path.exists():
+        return [f"bootstrap read model is missing: {bootstrap_path.relative_to(REPO_ROOT).as_posix()}"]
+    violations: list[str] = []
+    try:
+        state = load_json(state_path)
+        bootstrap = load_json(bootstrap_path)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        return [f"bootstrap read model load failed: {exc}"]
+    if not isinstance(state, dict) or not isinstance(bootstrap, dict):
+        return ["bootstrap read model or aggregate is not a JSON object"]
+    for field in BOOTSTRAP_FIELDS:
+        if field in state and bootstrap.get(field) != state[field]:
+            violations.append(
+                f"bootstrap read model field `{field}` does not match aggregate; "
+                "run `python governance/compat/generate_active_session_state.py --generate` "
+                "to regenerate"
+            )
+    return violations
+
+
 def generate_aggregate(
     state_path: Path = STATE_PATH,
     core_path: Path = CORE_PATH,
     entries_dir: Path = ENTRIES_DIR,
+    bootstrap_path: Path = BOOTSTRAP_PATH,
 ) -> None:
     state = load_source_state(core_path, entries_dir)
     state_path.write_text(render_json(state), encoding="utf-8")
+    generate_bootstrap_read_model(state_path, bootstrap_path)
 
 
 def validate_aggregate_matches_sources(
@@ -175,12 +234,13 @@ def main() -> int:
         return 0
 
     violations = validate_aggregate_matches_sources()
+    violations.extend(validate_bootstrap_read_model_matches_sources())
     if violations:
-        print("Active session state aggregate drift violations:")
+        print("Active session state drift violations:")
         for violation in violations:
             print(f"  - {violation}")
         return 1
-    print("ACTIVE_SESSION_STATE aggregate matches generated sources.")
+    print("ACTIVE_SESSION_STATE aggregate and bootstrap read model match generated sources.")
     return 0
 
 

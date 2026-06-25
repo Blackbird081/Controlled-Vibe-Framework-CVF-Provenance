@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -28,8 +28,8 @@ ASSF-PIC-T1 package-instance evidence or skeleton hardening.
 Verdicts:
 
 - Dispatcher verdict: DISPATCH_APPROVED
-- Worker verdict: PENDING_WORKER_RETURN
-- Reviewer verdict: PENDING_REVIEW
+- Worker verdict: COMPLETE_PENDING_REVIEW_ACCEPTED
+- Reviewer verdict: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -227,6 +227,37 @@ layout, or any prior closed tranche.
 | this baseline | Codex reviewer/closer | status conversion after review |
 | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md` | Codex reviewer/closer | status conversion after review |
 | active session front door, state sources, generated state, and active handoff | Codex session-sync steward | session continuity after material review commit |
+
+## Reviewer Closure Package
+
+| Closure item | Evidence | Disposition |
+|---|---|---|
+| Worker return reviewed | `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_WORKER_RETURN_2026-06-25.md` | ACCEPTED |
+| Protected bootstrap surface commit | `4c0d29e0` | ACCEPTED_WITH_REASON: split required by commit steward to keep protected session/handoff paths out of AOT material review commit |
+| Completion review | `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_COMPLETION_2026-06-25.md` | PRESENT |
+| Final disposition | focused tests, generator drift check, active-session compatibility, worker-return fast gate, pre-implementation autorun gate | CLOSED_PASS_BOUNDED |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | ASSF-PIC-T1 dependency on STATE-BR-T1 closure is satisfied for later GC-018/work-order authoring only | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | protected bootstrap surface committed at `4c0d29e0` | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V22_2026-06-22.md`; `AGENTS.md` | compact startup read-order pointers present | PASS |
+| External evidence digest | N/A with reason | no external-source authority accepted; operator report used only as trigger | N/A with reason |
+| System loop interlock | active-session generator/checker/test changes | no runtime loop, Web adapter, provider, or package execution released | PASS |
+| Session continuity | separate session-sync after material closure | REQUIRED_AFTER_MATERIAL_COMMIT | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker return accepted | reviewer accepts `COMPLETE_PENDING_REVIEW` return | accepted in completion review | PASS |
+| Bootstrap read model exists | file committed and size-bounded | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; 1377 bytes at worker return | PASS |
+| Full aggregate remains canonical | `activeStateRegistry` remains `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generator/checker preserve full aggregate pointer | PASS |
+| Forbidden scope remains closed | no ASSF package/runtime/adapter/live/public/push release | closure claim boundary keeps all forbidden scope closed | PASS |
 
 ## Acceptance Criteria
 

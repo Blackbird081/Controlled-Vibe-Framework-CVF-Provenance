@@ -4,11 +4,15 @@ import unittest
 from pathlib import Path
 
 from governance.compat.generate_active_session_state import (
+    BOOTSTRAP_FIELDS,
+    CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES,
     aggregate_entry,
     build_state,
     entry_filename,
+    generate_bootstrap_read_model,
     render_json,
     validate_aggregate_matches_sources,
+    validate_bootstrap_read_model_matches_sources,
 )
 
 
@@ -66,6 +70,89 @@ class GenerateActiveSessionStateTests(unittest.TestCase):
 
         self.assertEqual(len(violations), 1)
         self.assertIn("ACTIVE_SESSION_STATE.json drifted", violations[0])
+
+
+    def test_generate_bootstrap_read_model_creates_file_with_required_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            aggregate = root / "aggregate.json"
+            bootstrap = root / "bootstrap.json"
+            state = {
+                "schemaVersion": "0.1.0",
+                "currentMode": "test_mode",
+                "activeHandoff": "AGENT_HANDOFF_TEST.md",
+                "nextAllowedMove": "test move",
+                "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+                "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
+                "freezePosture": "none",
+                "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
+                "extraField": "should not appear",
+            }
+            aggregate.write_text(render_json(state), encoding="utf-8")
+
+            generate_bootstrap_read_model(aggregate, bootstrap)
+
+            self.assertTrue(bootstrap.exists())
+            model = json.loads(bootstrap.read_text(encoding="utf-8"))
+            for field in BOOTSTRAP_FIELDS:
+                self.assertIn(field, model)
+            self.assertNotIn("extraField", model)
+            self.assertIn("claimBoundary", model)
+            self.assertIn("compact bootstrap", model["claimBoundary"].lower())
+
+    def test_validate_bootstrap_read_model_detects_drift(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            aggregate = root / "aggregate.json"
+            bootstrap = root / "bootstrap.json"
+            state = {
+                "schemaVersion": "0.1.0",
+                "currentMode": "mode_a",
+                "activeHandoff": "HANDOFF.md",
+                "nextAllowedMove": "move",
+                "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+                "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
+            }
+            aggregate.write_text(render_json(state), encoding="utf-8")
+            stale_model = {
+                "schemaVersion": "0.1.0",
+                "currentMode": "stale_mode",
+                "claimBoundary": "bootstrap",
+            }
+            bootstrap.write_text(render_json(stale_model), encoding="utf-8")
+
+            violations = validate_bootstrap_read_model_matches_sources(aggregate, bootstrap)
+
+            self.assertGreater(len(violations), 0)
+            drift_fields = " ".join(violations)
+            self.assertIn("currentMode", drift_fields)
+
+    def test_bootstrap_read_model_size_is_within_ceiling(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            aggregate = root / "aggregate.json"
+            bootstrap = root / "bootstrap.json"
+            state = {
+                "schemaVersion": "0.1.0",
+                "currentMode": "test_mode",
+                "activeHandoff": "AGENT_HANDOFF_TEST.md",
+                "nextAllowedMove": "test move description",
+                "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+                "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
+                "freezePosture": "none",
+                "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
+            }
+            aggregate.write_text(render_json(state), encoding="utf-8")
+
+            generate_bootstrap_read_model(aggregate, bootstrap)
+
+            size = bootstrap.stat().st_size
+            self.assertLessEqual(
+                size,
+                CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES,
+                f"bootstrap read model {size} bytes exceeds ceiling "
+                f"{CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES}",
+            )
 
 
 if __name__ == "__main__":
