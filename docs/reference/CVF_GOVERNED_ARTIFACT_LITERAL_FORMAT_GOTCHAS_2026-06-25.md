@@ -143,7 +143,7 @@ runtime/product code, and does not itself implement or modify any checker.
     explicitly, and guard every `.stdout`/`.stderr` access for `None`.
 
 14. **ADIF entries need the full trace label set.** ADIF entry files carry
-    their own `## Agent Operation Trace Block`. The ADIF integrity guard
+    their own Agent Operation Trace Block section. The ADIF integrity guard
     now checks the exact labels, including `Diff evidence`; copying a
     nearby entry or older template that omits one label will fail. Copy the
     block from `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`
@@ -156,6 +156,40 @@ runtime/product code, and does not itself implement or modify any checker.
     review session. Do not mix it with `AGENT_HANDOFF_*.md`,
     `CVF_SESSION_MEMORY.md`, or `CVF_SESSION/` updates; commit the learning
     record first, then use a dedicated session-sync or handoff-sync commit.
+
+16. **Closed-equivalent tokens can reclassify a dispatch artifact.** A
+    `DISPATCH_READY` GC-018 or work order can be treated like a closure
+    artifact if its top section uses closure-status tokens such as
+    `CLOSED_PASS_BOUNDED` for prerequisite rows or dependency prose. For
+    dispatch packets, record prerequisite release as `SATISFIED` or
+    `PASS` with the artifact path and commit evidence; reserve
+    `CLOSED_PASS_BOUNDED` for the referenced artifact's own closure packet
+    or for the actual closure conversion.
+
+17. **Future deliverables are not present proof manifests.** Headings like
+    `## Required Artifact Manifest` and `## Required Proof Manifest` can
+    trigger artifact-existence checks immediately. In a dispatch packet,
+    use `## Planned Artifact Manifest`, `## Planned Worker Fulfillment
+    Manifest`, or another clearly planned/future heading for worker
+    deliverables that do not exist yet. Use the exact required-manifest
+    headings only when the listed paths are present for the current phase
+    or the checker explicitly requires that heading for the artifact type.
+
+18. **Closure-only sections change the artifact's parsing lane.** Adding
+    closure-oriented sections such as `## Machine Closure Package` to a
+    dispatch-only GC-018 baseline can make closure gates look for closure
+    invariants before the tranche has executed. Keep dispatch baselines to
+    dispatch-readiness evidence, dependency release, source verification,
+    acceptance criteria, fail conditions, and claim boundary. Add machine
+    closure packaging during the reviewer/closer conversion phase unless
+    the governing template for that specific dispatch artifact requires it.
+
+19. **Trace-checked reference files need their own trace block.** Some
+    active reference/checklist files under `docs/reference/` are scanned by
+    `check_agent_operation_trace.py` when changed. If the file lacks a full
+    Agent Operation Trace Block section, pre-implementation can fail even when
+    the edit is a small checklist note. Add or update the complete trace
+    label set in the same changed file before rerunning the gate.
 
 ## When This Checklist Is Not Enough
 
@@ -175,3 +209,26 @@ This file records observed literal-format gate-failure patterns only. It
 does not implement, modify, or supersede any `governance/compat/check_*.py`
 checker, does not define new governance semantics, and is not itself a
 verification or closure artifact for any tranche.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex checklist hardening role |
+| Provider or surface | local workspace |
+| Session or invocation | ASSF-PIC-T0 dispatch checklist learning, 2026-06-25 |
+| Working directory | repository root |
+| Command or tool surface | apply_patch, pre-implementation autorun, commit steward, git commit |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Allowed scope source | operator request to capture observed work-order authoring errors in the checklist |
+| Before status evidence | HEAD `6d8713ac`; worktree clean before checklist patch |
+| After status evidence | checklist records dispatch closed-token, future-manifest, closure-section, and trace-block gotchas |
+| Diff evidence | single-file docs/reference checklist diff; pre-implementation rerun; commit steward rerun; pre-commit hook |
+| Approval boundary | documentation/reference checklist hardening only |
+| Claim boundary | no checker implementation, runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
+| Agent type | checklist hardening role |
+| Invocation ID | `assf-pic-t0-dispatch-checklist-learning-2026-06-25` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this checklist hardening batch |
