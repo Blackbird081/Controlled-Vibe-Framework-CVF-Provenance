@@ -83,15 +83,17 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `40b904bc`
+Current material HEAD recorded for this handoff: `1c89d540`
 
-Prior material HEAD recorded for this handoff: `5a4f9591`
+Prior material HEAD recorded for this handoff: `40b904bc`
 
-Prior session-sync HEAD recorded for this handoff: `050741bb`
+Prior session-sync HEAD recorded for this handoff: `bd9680b7`
 
 ASSF-T4 dispatch material HEAD: `5a4f9591`
 
 ASSF-T4 closure material HEAD: `40b904bc`
+
+ASSF-T4 source-equivalence defect escalation HEAD: `1c89d540`
 
 ASSF-T2 closure material HEAD: `3746bd48`
 
@@ -328,6 +330,16 @@ expansion is released by T1.
 The Agent System Skills roadmap and mandatory internal/external CLI/MCP
 accounting rule are recorded at `6abda284` and remain parked while ADIF runs.
 
+ASSF-T4 post-review hardening is recorded at material commit `1c89d540`.
+The operator challenged the earlier `RULE_EXISTS` self-assessment as too
+lenient after two consecutive ASSF tranches (T3/T4) returned wrong
+source-equivalence self-descriptions caught only by reviewer re-derivation.
+The T4 completion review and roadmap now classify the repeated pattern as
+`MACHINE_CHECK_CANDIDATE` and propose a future linter requiring literal
+grep/diff evidence beside claims such as `verbatim`, `identical`,
+`no new field`, `maps to existing`, `unchanged`, or `same as` about a named
+source file.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`assf_t4_closed_pass_bounded_pending_t5_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T5 Composition, Dependency, Conflict, And Capability Controls or another governed lane through fresh source-verified dispatch; any future normalizer must cite the ASSF-T4 normalization contract and resolve the two contract-introduced fields (security_notes, sourceRevision) against ASSF-T1; parked checkpoint=external CLI/MCP adapter implementation, executable ASSF normalizer/promoter, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
@@ -342,8 +354,11 @@ Startup acknowledged: current mode=`assf_t4_closed_pass_bounded_pending_t5_selec
 - Dual Agent Surface Matrix hardening is complete at material commit
   `104b3267`; the checker remains a machine-check candidate, not implemented.
 - ASSF-T0 is closed bounded at material commit `4ed53398`; ASSF-T0.1 is
-  closed bounded at material commit `c76cbac7`; ASSF-T1 is dispatch-ready at
-  material commit `013cc91a`.
+  closed bounded at material commit `c76cbac7`; ASSF-T1 is closed bounded at
+  material commit `2752d04e`; ASSF-T2 is closed bounded at material commit
+  `3746bd48`; ASSF-T3 is closed bounded at material commit `3a481db5`; ASSF-T4
+  is closed bounded at closure material commit `40b904bc` with post-review
+  source-equivalence defect escalation at material commit `1c89d540`.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout

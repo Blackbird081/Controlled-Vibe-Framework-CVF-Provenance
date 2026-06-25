@@ -64,6 +64,14 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+ASSF-T4 External And Legacy Intake Normalization is `CLOSED_PASS_BOUNDED` at
+closure material commit `40b904bc`, with post-review hardening at material
+commit `1c89d540`. The hardening escalated the repeated source-equivalence
+worker-return defect pattern to `MACHINE_CHECK_CANDIDATE`: T3/T4 both had a
+worker-stated source-equivalence claim (`verbatim`, `no new field`) caught by
+manual reviewer re-derivation rather than a machine gate. Next move remains
+operator selection for ASSF-T5 or another governed lane.
+
 ASSF-T1 Canonical Package Contract is `CLOSED_PASS_BOUNDED` at material commit
 `2752d04e`. Closure artifacts:
 `docs/baselines/CVF_GC018_ASSF_T1_CANONICAL_PACKAGE_CONTRACT_2026-06-23.md`
@@ -809,7 +817,8 @@ from scratch. ASSF-T0 is closed bounded at material commit `4ed53398`;
 ASSF-T0.1 is closed bounded at material commit `c76cbac7`; ASSF-T1 is closed
 bounded at material commit `2752d04e`; ASSF-T2 is closed bounded at material
 commit `3746bd48`; ASSF-T3 is closed bounded at material commit `3a481db5`;
-ASSF-T4 is closed bounded at material commit `40b904bc`.
+ASSF-T4 is closed bounded at closure material commit `40b904bc` with
+post-review hardening at material commit `1c89d540`.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
