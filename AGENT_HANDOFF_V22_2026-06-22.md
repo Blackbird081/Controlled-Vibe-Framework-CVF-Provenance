@@ -36,12 +36,11 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync continuity update after ADIF
-authoring and review-latency hardening material commit `8afbe0aa`. This sync
-advances the handoff HEAD block, current mode, and next-move pointers after the
-material hardening commit. The material commit already updated the ADIF
-integrity checker/test, ADIF template, ADIF-0011, Guard Orientation, gotchas,
-and completion packet; this dedicated sync changes only continuity surfaces.
+Authorized guard-maintenance scope: session-sync continuity update after
+ASSF-T7 dispatch material commit `3a3bbe05`. This sync advances the handoff
+HEAD block, current mode, and next-move pointers after the dispatch commit.
+The material commit created the ASSF-T7 GC-018 baseline and Claude work order;
+this dedicated sync changes only continuity surfaces.
 
 Protected paths:
 
@@ -64,12 +63,12 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: after ASSF-T6 review, the operator agreed with Codex's
-proposal to harden ADIF authoring friction and review/commit latency before the
-next tranche, then asked Codex to handle these issues first.
+Operator authorization: after ADIF authoring hardening, the operator asked
+Codex to create the ASSF-T7 work order for Claude worker execution.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ADIF authoring hardening `8afbe0aa`, ASSF-T6 Codex review addendum
+revert ASSF-T7 dispatch `3a3bbe05`, ADIF authoring hardening `8afbe0aa`,
+ASSF-T6 Codex review addendum
 `b31b4aca`, ASSF-T6 closure `489ff38a`, ADIF learning records `49661fc6`,
 ASSF-T6 dispatch `229725e0`, ASSF-T5
 reviewer evidence repair `d0a24e90`, ASSF-T5 closure `afeb2673`, the gotchas
@@ -79,7 +78,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`adif_authoring_latency_hardening_closed_pending_next_selection`
+`assf_t7_dispatched_pending_claude_worker_return`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -115,7 +114,11 @@ ASSF-T6 Codex final-review addendum material HEAD: `b31b4aca`
 
 ADIF authoring and review-latency hardening material HEAD: `8afbe0aa`
 
-Current material HEAD recorded for this handoff: `8afbe0aa`
+ASSF-T7 dispatch material HEAD: `3a3bbe05`
+
+Current material HEAD recorded for this handoff: `3a3bbe05`
+
+Prior material HEAD recorded for this handoff (ADIF authoring and review-latency hardening): `8afbe0aa`
 
 Prior material HEAD recorded for this handoff (ASSF-T6 Codex final-review addendum): `b31b4aca`
 
@@ -349,22 +352,22 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ASSF-T6 CVF Web Projection And Existing Example Migration is
-`CLOSED_PASS_BOUNDED` at material commit `489ff38a`; ADIF-0010/0011/0012
-learning records are committed at `49661fc6`; Codex final-review addendum is
-committed at `b31b4aca`. ADIF authoring and review-latency hardening is
-closed at material commit `8afbe0aa`; it hardens ADIF entry integrity so every
-committed ADIF entry must carry the full Agent Operation Trace label set,
-repairs ADIF-0011 missing `Diff evidence`, and documents the ADIF
-material/session-sync split rule. Next allowed move: operator may select among:
-
-- ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard;
-- GFS-PY T2 dispatch-quality monolith-split tranche;
-- another governed lane with fresh GC-018 and source-verified work order.
+ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
+dispatched for Claude worker execution at material commit `3a3bbe05`.
+Dispatch artifacts:
+`docs/baselines/CVF_GC018_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_2026-06-25.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md`.
+Pre-dispatch autorun passed 47/47, commit steward preflight passed, and the
+pre-commit governance hook passed 56/56. Next allowed move: Claude executes
+the work order with `WORKER_MUST_NOT_COMMIT` and returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; Codex then reviews,
+commits, closes, updates roadmap closure rows, and session-syncs if accepted.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
-No runtime/provider/live/public-sync/adapter/new-tranche authorization is
-released by ASSF-T6, GFS-PY-T1, EQC-T1, or the gotchas checklist commit.
+No runtime/provider/live/public-sync/adapter, generated-index mutation,
+resolver mutation, package activation, readiness, push, or worker commit is
+released by ASSF-T7 dispatch.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -392,7 +395,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`adif_authoring_latency_hardening_closed_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T7, GFS-PY T2, or another governed lane with fresh GC-018 and source-verified work order; parked checkpoint=no runtime/provider/live/public-sync/adapter authorization released.
+Startup acknowledged: current mode=`assf_t7_dispatched_pending_claude_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes ASSF-T7 work order with WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no runtime/provider/live/public-sync/adapter/generated-index/resolver/package-activation authorization released.
 
 ## Parked Checkpoints
 

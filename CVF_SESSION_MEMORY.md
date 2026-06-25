@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `adif_authoring_latency_hardening_closed_pending_next_selection`
+Current mode marker: `assf_t7_dispatched_pending_claude_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `adif_authoring_latency_hardening_closed_pending_next_selection`.
+Current mode: `assf_t7_dispatched_pending_claude_worker_return`.
 
-Previous mode: `assf_t6_closed_pass_bounded_pending_next_selection`.
+Previous mode: `adif_authoring_latency_hardening_closed_pending_next_selection`.
 
 Active handoff:
 
@@ -63,6 +63,21 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
+dispatched for Claude worker execution at material commit `3a3bbe05`.
+Dispatch artifacts:
+`docs/baselines/CVF_GC018_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_2026-06-25.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md`.
+Pre-dispatch autorun passed 47/47, commit steward preflight passed, and the
+pre-commit governance hook passed 56/56. Claude must follow
+`WORKER_MUST_NOT_COMMIT`, create only the T7 guard contract and worker-return
+artifact, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Codex owns review, commit, closure conversion, roadmap closure update, and
+session sync after worker return. No runtime Web code, generated-index
+mutation, resolver mutation, package activation, public-sync, provider/live
+proof, CLI/MCP adapter behavior, readiness, push, or worker commit is released.
 
 ASSF-T6 CVF Web Projection And Existing Example Migration is dispatched to
 Claude at material commit `229725e0`. Dispatch artifacts:
@@ -836,17 +851,18 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `adif_authoring_latency_hardening_closed_pending_next_selection`.
+Mode: `assf_t7_dispatched_pending_claude_worker_return`.
 
-Latest material HEAD: `8afbe0aa` (ADIF authoring and review-latency hardening
-after ASSF-T6 Codex final-review addendum `b31b4aca`, closure `489ff38a`, and
-ADIF-0010/0011/0012 learning records `49661fc6`).
+Latest material HEAD: `3a3bbe05` (ASSF-T7 dispatch after ADIF authoring
+hardening `8afbe0aa`, ASSF-T6 Codex final-review addendum `b31b4aca`, closure
+`489ff38a`, and ADIF-0010/0011/0012 learning records `49661fc6`).
 
-Next allowed move: operator may select among:
+Next allowed move: Claude executes ASSF-T7 with `WORKER_MUST_NOT_COMMIT` and
+returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Claude may create
+only:
 
-- ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard;
-- GFS-PY T2 dispatch-quality monolith-split tranche;
-- another governed lane with fresh GC-018 and source-verified work order.
+- `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`
+- `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_WORKER_RETURN_2026-06-25.md`
 
 ASSF-T7 must cite the ASSF-T1 package contract, ASSF-T2 generated
 index/resolver foundation, ASSF-T5 composition control contract, and ASSF-T6
