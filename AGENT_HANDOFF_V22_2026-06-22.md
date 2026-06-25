@@ -37,11 +37,12 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after the
-GFS-PY T1 dispatch-quality helper split closure material commit `10d0459d`. This
-sync advances the handoff HEAD block, the current mode, the active session state
-sources, and `CVF_SESSION_MEMORY.md`. The material commit already changed the
-guard, the new module, and the registry; this dedicated session-sync commit
-changes only continuity surfaces.
+governed artifact literal-format gotchas checklist material commit `ec3975f8`.
+This sync advances the handoff HEAD block, the startup acknowledgment, the
+current next-move wording, and `CVF_SESSION_MEMORY.md`. The material commit
+already added the gotchas checklist and pointed to it from `AGENTS.md` and
+`CLAUDE.md`; this dedicated session-sync commit changes only continuity
+surfaces.
 
 Protected paths:
 
@@ -67,10 +68,12 @@ Protected paths:
 Operator authorization: the operator selected GFS-PY-T1 to close the governed
 Python file-size coverage blind spot and confirmed the per-class thresholds,
 the touch rule, the wiring point, and the non-governance deferral on
-2026-06-25.
+2026-06-25. The operator then asked for a prompt to let the session-sync steward
+clean the post-gotchas continuity state before opening a new tranche.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert the GFS-PY-T1 material commit `fad16208`, the Value-Parked Lane Reopen
+revert the gotchas checklist material commit `ec3975f8`, the GFS-PY-T1 material
+commit `fad16208`, the Value-Parked Lane Reopen
 Discipline standard commit `75af9858`, the EQC-T1 closure material commit
 `ccee892d`, the EQC-T1 session-sync commit `92199d9f`, MPI-T5 dispatch commit
 `501fcafa`, AAF-T7C material commit `b7601865`, LPF config material commit
@@ -104,7 +107,9 @@ Current material HEAD recorded for this handoff: `ec3975f8`
 
 Prior material HEAD recorded for this handoff: `10d0459d`
 
-Prior session-sync HEAD recorded for this handoff: `92199d9f`
+Prior session-sync HEAD recorded for this handoff: `df24514f`
+
+Earlier session-sync HEAD recorded for this handoff: `92199d9f`
 
 EQC-T1 worker return equivalence claim evidence linter closure material HEAD: `ccee892d`
 
