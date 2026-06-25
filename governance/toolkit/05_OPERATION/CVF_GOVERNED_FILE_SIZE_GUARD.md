@@ -17,6 +17,9 @@ Some CVF artifacts already use dedicated rotation or archive controls, such as:
 - `docs/CVF_INCREMENTAL_TEST_LOG.md`
 - governed conformance trace logs
 - governed Python automation covered by `check_python_automation_size.py`
+  (class-aware per-class thresholds for `python_checker`, `python_test`,
+  `python_library_helper`, and `python_cli_orchestrator`, wired into the local
+  hook chain and the autorun `pre-implementation` phase as of GFS-PY-T1)
 
 `GC-023` covers the remaining governed file surface that would otherwise lack a global maintainability boundary.
 

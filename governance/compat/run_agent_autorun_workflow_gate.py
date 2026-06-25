@@ -327,6 +327,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "governed file size compatibility",
             ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
         ),
+        GateCommand(
+            "governed python automation size",
+            ("python", "governance/compat/check_python_automation_size.py", "--enforce"),
+        ),
     )
 
 

@@ -190,6 +190,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_governed_file_size.py", "--enforce"],
         ),
         (
+            "governed python automation size",
+            ["python", "governance/compat/check_python_automation_size.py", "--enforce"],
+        ),
+        (
             "governed exception registry integrity",
             ["python", "governance/compat/check_governed_exception_registry.py", "--enforce"],
         ),
@@ -657,6 +661,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "governed file size compatibility",
             ["python", "governance/compat/check_governed_file_size.py", "--enforce"],
+        ),
+        (
+            "governed python automation size",
+            ["python", "governance/compat/check_python_automation_size.py", "--enforce"],
         ),
         (
             "test partition ownership compatibility",
