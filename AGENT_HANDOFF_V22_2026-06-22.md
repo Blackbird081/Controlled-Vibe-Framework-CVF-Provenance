@@ -141,7 +141,11 @@ Worker-return/report enforcement session-sync HEAD: `ae74b40f`
 
 ASSF-PIC-T1 evidence skeleton dispatch material HEAD: `af09f072`
 
+ASSF-PIC-T1 evidence skeleton dispatch session-sync HEAD: `0ee48d23`
+
 Current material HEAD recorded for this handoff: `af09f072`
+
+Current session-sync HEAD recorded for this handoff: `0ee48d23`
 
 Prior material HEAD recorded for this handoff (worker-return/report enforcement): `3ab844fd`
 
@@ -584,20 +588,20 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ASSF-PIC-T1 dispatch session-sync, 2026-06-26 |
+| Session or invocation | ASSF-PIC-T1 dispatch handoff-head bridge, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | apply_patch, generated-state source edits, state generator, session-sync gates, git commit |
-| Target paths | V22; session front door; active-state core; ASSF-PIC-T1 state entry; next move; generated active state; bootstrap read model |
-| Allowed scope source | ASSF-PIC-T1 dispatch material `af09f072` and operator request for Claude worker work order |
-| Before status evidence | ASSF-PIC-T1 dispatch material commit `af09f072`; clean worktree before session-sync |
-| After status evidence | active continuity records `af09f072` and routes next move to ASSF-PIC-T1 Claude worker execution |
-| Diff evidence | state generator drift check; session-sync steward; pre-commit hook; git diff/status |
+| Command or tool surface | apply_patch, active-session compatibility gate, git commit |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Allowed scope source | session-sync commit `0ee48d23` after ASSF-PIC-T1 dispatch material `af09f072` |
+| Before status evidence | session-sync commit `0ee48d23`; active-session checker required handoff HEAD update |
+| After status evidence | active handoff records session-sync parent SHA `0ee48d23` for dedicated handoff-head bridge validation |
+| Diff evidence | `git diff --name-status` and active-session compatibility gate |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `assf-pic-t1-dispatch-session-sync-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | `assf-pic-t1-dispatch-handoff-head-bridge-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
