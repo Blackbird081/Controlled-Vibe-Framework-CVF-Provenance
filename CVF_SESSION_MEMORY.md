@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-23
+Last updated: 2026-06-25
 
-Current mode marker: `assf_t4_closed_pass_bounded_pending_t5_selection`
+Current mode marker: `eqc_t1_closed_pass_bounded_assf_t5_still_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t4_closed_pass_bounded_pending_t5_selection`.
+Current mode: `eqc_t1_closed_pass_bounded_assf_t5_still_parked`.
 
-Previous mode: `assf_t3_closed_pass_bounded_pending_t4_selection`.
+Previous mode: `assf_t4_closed_pass_bounded_pending_t5_selection`.
 
 Active handoff:
 

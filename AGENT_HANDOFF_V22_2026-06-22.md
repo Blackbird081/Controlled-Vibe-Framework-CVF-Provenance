@@ -36,8 +36,9 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync update after MPI-T6 bounded
-decision closure at material commit `14f8e5f9`.
+Authorized guard-maintenance scope: session-sync update after EQC-T1
+Worker Return Equivalence Claim Evidence Linter closure at material commit
+`ccee892d`.
 
 Protected paths:
 
@@ -56,22 +57,23 @@ Protected paths:
 - `CVF_SESSION/state/entries/adifT0CheckpointAcceptedT1Release20260623.json`
 - `CVF_SESSION/state/entries/agentSystemSkillsRoadmapAndDualSurfaceRule20260623.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/eqcT1WorkerReturnEquivalenceClaimEvidenceLinterClosure20260625.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator requested MPI-T5 review, execution, and
-public sync, then explicitly prioritized CVF hardening before Claude repaired
-MPI-T6, requested the Agent Defect Intelligence Foundation roadmap, and
-authorized Codex to fix and commit remaining MPI-T6 findings on 2026-06-22.
+Operator authorization: the operator requested EQC-T1 worker dispatch, then
+directed Claude to independently verify the worker-return claims, repair the
+defects found during that verification, commit the closure, and sync
+session continuity to the new HEAD on 2026-06-25.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert MPI-T5 dispatch commit `501fcafa`, AAF-T7C material commit `b7601865`,
-LPF config material commit `bf8ff950`, MPI-T4 closure, or earlier session
-history.
+revert the EQC-T1 closure material commit `ccee892d`, MPI-T5 dispatch commit
+`501fcafa`, AAF-T7C material commit `b7601865`, LPF config material commit
+`bf8ff950`, MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`assf_t4_closed_pass_bounded_pending_t5_selection`
+`eqc_t1_closed_pass_bounded_assf_t5_still_parked`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -83,11 +85,13 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `1c89d540`
+Current material HEAD recorded for this handoff: `ccee892d`
 
-Prior material HEAD recorded for this handoff: `40b904bc`
+Prior material HEAD recorded for this handoff: `1c89d540`
 
-Prior session-sync HEAD recorded for this handoff: `bd9680b7`
+Prior session-sync HEAD recorded for this handoff: `a63de6d3`
+
+EQC-T1 worker return equivalence claim evidence linter closure material HEAD: `ccee892d`
 
 ASSF-T4 dispatch material HEAD: `5a4f9591`
 
