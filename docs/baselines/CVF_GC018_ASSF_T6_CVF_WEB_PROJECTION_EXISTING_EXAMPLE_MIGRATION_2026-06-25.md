@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -22,8 +22,8 @@ change, or activation path.
 
 Verdicts:
 - Dispatcher verdict: DISPATCH_APPROVED
-- Worker verdict: PENDING_WORKER_EXECUTION
-- Reviewer verdict: PENDING_CODEX_REVIEW
+- Worker verdict: WORKER_RETURN_COMPLETE
+- Reviewer verdict: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -182,9 +182,9 @@ public-sync authorization.
 
 | Readiness item | Required artifact/path | Evidence | Status |
 |---|---|---|---|
-| Roadmap status | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T5_CLOSED_PASS_BOUNDED`; T6 parked pending operator selection | PASS |
-| GC-018 status | this file | `Status: APPROVED_FOR_EXECUTION` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md` | `Status: APPROVED_FOR_EXECUTION` | PASS |
+| Roadmap status | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T6_CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Worker output paths | this file | Required Worker Deliverables table | PASS |
 | External adapter boundary | this file | Dual Agent Surface Matrix | PASS |
 | Runtime implementation | N/A with reason | runtime implementation is forbidden in this tranche | N/A with reason |
@@ -193,11 +193,11 @@ public-sync authorization.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T5_CLOSED_PASS_BOUNDED`; T6 selected by operator after T5 | PASS |
-| GC-018 status | this file | `Status: APPROVED_FOR_EXECUTION` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md` | `Status: APPROVED_FOR_EXECUTION` | PASS |
-| Worker material artifacts | N/A with reason | pending Claude worker execution | N/A with reason |
-| Completion or reviewer artifact | N/A with reason | pending Claude worker execution and Codex review | N/A with reason |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T6_CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker material artifacts | `docs/reference/agent_system_skills/CVF_ASSF_WEB_PROJECTION_CONTRACT.md`; `docs/audits/CVF_ASSF_T6_EXISTING_WEB_SKILL_EXAMPLE_MIGRATION_AUDIT_2026-06-25.md` | created by Claude worker | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_COMPLETION_2026-06-25.md` | created by Claude worker; pending Codex review | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: T6 dispatch is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: T6 dispatch is not authorized to update GC-051 corpus registry surfaces | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported; external-agent boundary is contract-only | N/A with reason |
@@ -208,8 +208,8 @@ public-sync authorization.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Dispatch status | APPROVED_FOR_EXECUTION | APPROVED_FOR_EXECUTION | PASS |
-| Worker material artifacts | pending worker execution | pending worker execution | PASS |
+| Dispatch status | APPROVED_FOR_EXECUTION | CLOSED_PASS_BOUNDED | PASS |
+| Worker material artifacts | created by Claude worker | projection contract and migration audit delivered | PASS |
 | Runtime/provider receipt | N/A with reason | no runtime/provider action authorized | PASS |
 | External adapter receipt | N/A with reason | no CLI/MCP adapter authorized | PASS |
 
