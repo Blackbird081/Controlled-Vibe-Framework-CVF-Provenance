@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ASSF_T6_CLOSED_PASS_BOUNDED
+Status: ASSF_T7_CLOSED_PASS_BOUNDED
 
 Date: 2026-06-23
 
@@ -304,6 +304,22 @@ Check package/index consistency, dangling sources, invalid selectors, dishonest
 enforcement or adapter claims, duplicate IDs, stale successors, missing UAT,
 and lifecycle violations. Integrate gates only after stable repeated use.
 
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure artifacts:
+- GC-018 baseline: `docs/baselines/CVF_GC018_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_2026-06-25.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md`
+- Certification lifecycle guard contract: `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`
+- Worker return: `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_WORKER_RETURN_2026-06-25.md`
+- Completion review: `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_COMPLETION_2026-06-25.md`
+
+Key finding: ASSF-T7 defines certification/UAT state proposals, lifecycle
+violation taxonomy, drift classes, deprecation/successor/retirement rules,
+adapter claim honesty rules, Web projection certification bridge, and
+machine-check candidates. It remains documentation-only and releases no checker,
+generated-index mutation, resolver mutation, package activation, Web runtime
+change, provider/live proof, public-sync, or CLI/MCP adapter behavior.
+
 ## Non-Goals
 
 - one monolithic skill prompt loaded for every task;
@@ -361,16 +377,18 @@ packages, or implements CLI/MCP/runtime behavior without fresh authority.
 | Define ASSF-T4 external and legacy intake normalization contract | Codex worker; Claude reviewer/closer | CLOSED_PASS_BOUNDED |
 | Define ASSF-T5 composition/dependency/conflict/capability controls | dispatcher/worker/reviewer combined role | CLOSED_PASS_BOUNDED |
 | Define ASSF-T6 Web projection contract and classify existing examples | Codex dispatcher; Claude worker; Codex reviewer/closer | CLOSED_PASS_BOUNDED |
+| Define ASSF-T7 certification lifecycle guard contract | Codex dispatcher; Claude worker; Codex reviewer/closer | CLOSED_PASS_BOUNDED |
 
 ## Finding-To-Governance Learning Disposition
 
 - Defect class: `RULE_GAP`
 - Learning lane: `GOVERNANCE_CONTROL_PLANE`
 - Disposition: `DESIGN_REVIEW_REQUIRED`
-- Next control action: ASSF-T6 CVF Web Projection And Existing Example
-  Migration is closed. Operator may select ASSF-T7 (Certification, UAT,
-  Drift, Deprecation, And Retirement Guard), GFS-PY T2, or another governed
-  lane through fresh source-verified dispatch. Any future normalizer
+- Next control action: ASSF-T7 Certification, UAT, Drift, Deprecation, And
+  Retirement Guard is closed bounded. Operator may select a future ASSF checker
+  implementation tranche, a package-instance/certification pilot, GFS-PY T2,
+  EQC-T2 if a reopen condition is met, or another governed lane through fresh
+  source-verified dispatch. Any future normalizer
   implementation must cite the
   ASSF-T4 normalization contract
   (`docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md`)
@@ -456,7 +474,12 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: ASSF_T6_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: ASSF_T7_CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T7 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T7 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| ASSF-T7 certification lifecycle guard contract | `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md` | `Status: CANDIDATE` reference contract | PASS |
+| ASSF-T7 worker return | `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_WORKER_RETURN_2026-06-25.md` | `Status: COMPLETE_PENDING_REVIEW`, accepted by Codex review | PASS |
+| ASSF-T7 completion review | `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T6 GC-018 status | `docs/baselines/CVF_GC018_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T6 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | ASSF-T6 Web projection contract | `docs/reference/agent_system_skills/CVF_ASSF_WEB_PROJECTION_CONTRACT.md` | `Status: CANDIDATE` reference contract | PASS |
@@ -511,7 +534,7 @@ catalog changes require a later public-safe artifact and public-sync batch.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Roadmap status | `ASSF_T6_CLOSED_PASS_BOUNDED` | `ASSF_T6_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap status | `ASSF_T7_CLOSED_PASS_BOUNDED` | `ASSF_T7_CLOSED_PASS_BOUNDED` | PASS |
 | T0 closure artifacts | baseline, work order, audit, completion review | all named in T0 closure artifacts | PASS |
 | T0.1 closure artifacts | GC-018, work order, audit, worker return, completion review | all named in ASSF-T0.1 tranche section | PASS |
 | Package root | proposed only | proposed only | PASS |
@@ -519,6 +542,7 @@ catalog changes require a later public-safe artifact and public-sync batch.
 | Runtime/provider/live claim | none | none | PASS |
 | T5 composition control contract | CLOSED_PASS_BOUNDED | all T5 artifacts present; schema alignment decision table present | PASS |
 | T6 Web projection contract and migration audit | CLOSED_PASS_BOUNDED | 67 entries classified PACKAGE_CANDIDATE; 0 CERTIFIED_PACKAGE_PROJECTION; schema gap escalated to T7 | PASS |
+| T7 certification lifecycle guard contract | CLOSED_PASS_BOUNDED | certification/UAT, drift, deprecation, retirement, adapter-claim honesty, and Web projection bridge defined as contract-only | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 

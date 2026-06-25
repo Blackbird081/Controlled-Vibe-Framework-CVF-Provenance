@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -23,9 +23,9 @@ adapter, provider call, live proof, public-sync, or session-sync edit.
 
 Verdicts:
 
-- Dispatcher verdict: DISPATCH_READY
-- Worker verdict: PENDING
-- Reviewer verdict: PENDING
+- Dispatcher verdict: DISPATCH_APPROVED
+- Worker verdict: COMPLETE_PENDING_REVIEW_ACCEPTED
+- Reviewer verdict: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -38,11 +38,11 @@ claims that outrun canonical package evidence.
 
 ## Evidence / Verification
 
-Dispatch evidence is limited to source verification, dependency release
-evidence, ADIF disclosure, Dual Agent Surface Matrix, planned worker artifact
-paths, and the matching ASSF-T7 work order. Worker-created contract and worker
-return artifacts do not exist at dispatch time and must not be claimed as
-complete until the worker return supplies command-backed evidence.
+Closure evidence includes source verification, dependency release evidence,
+ADIF disclosure, Dual Agent Surface Matrix, worker artifact paths, the matching
+ASSF-T7 work order, the worker-return packet, reviewer gate evidence, and the
+completion review. Worker-created contract and worker return artifacts were
+reviewed by Codex and accepted as bounded documentation-only closure.
 
 ## Roadmap-to-Work-Order Trace Matrix
 
@@ -173,8 +173,8 @@ Remediation applied:
 | Readiness item | Required artifact/path | Evidence | Status |
 |---|---|---|---|
 | Roadmap source | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | ASSF-T7 section exists | PASS |
-| GC-018 status | this file | `Status: PROPOSED` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md` | `Status: DISPATCH_READY` expected | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Worker output paths | this file | Required Worker Deliverables table | PASS |
 | External adapter boundary | this file | Dual Agent Surface Matrix | PASS |
 | Runtime implementation | N/A with reason | runtime implementation is forbidden in this tranche | N/A with reason |
@@ -225,17 +225,31 @@ public-sync authorization.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T6_CLOSED_PASS_BOUNDED`; ASSF-T7 selected by operator after T6 | PENDING |
-| GC-018 status | this file | `Status: PROPOSED` | PENDING |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md` | `Status: DISPATCH_READY` | PENDING |
-| Worker material artifacts | `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`; `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_WORKER_RETURN_2026-06-25.md` | pending Claude worker execution | PENDING |
-| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_COMPLETION_2026-06-25.md` | reviewer-owned after worker return | PENDING |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T7_CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker material artifacts | `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`; `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_WORKER_RETURN_2026-06-25.md` | created by Claude worker and accepted by Codex review | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | T7 closure is not authorized to update GC-051 corpus registry or generated ASSF index surfaces | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | T7 closure is not authorized to update GC-051 corpus registry Markdown surfaces | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported; external-agent boundary is contract-only | N/A with reason |
+| System loop interlock | this baseline | T7 closes after T1/T2/T5/T6 prerequisites and releases no package activation | PASS |
 | Session continuity | N/A with reason | Codex session-sync occurs after dispatch commit and after review if accepted; worker must not edit session surfaces | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Roadmap status | `ASSF_T7_CLOSED_PASS_BOUNDED` | `ASSF_T7_CLOSED_PASS_BOUNDED` | PASS |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT` | worker left two uncommitted deliverables for Codex review | PASS |
+| T7 contract | created | `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md` | PASS |
+| Worker return | `COMPLETE_PENDING_REVIEW` | accepted by Codex completion review | PASS |
+| Runtime/provider/live claim | none | none | PASS |
+| External CLI/MCP adapter | deferred | `DEFERRED_WITH_REASON` | PASS |
 
 ## Claim Boundary
 
-This baseline is dispatch authority only. It does not prove the T7 guard
-contract exists, does not certify any package, does not change any generated
-index, does not classify any Web example as certified, does not create a
-checker, and does not authorize public-sync or external adapter behavior.
+This baseline records bounded ASSF-T7 closure only. It does not certify any
+package, does not change any generated index, does not classify any Web example
+as certified, does not create a checker, and does not authorize public-sync or
+external adapter behavior.

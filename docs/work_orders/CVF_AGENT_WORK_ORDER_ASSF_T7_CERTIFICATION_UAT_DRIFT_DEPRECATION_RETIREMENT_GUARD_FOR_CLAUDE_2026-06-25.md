@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -16,7 +16,7 @@ dispatchBaseHead: `eb269c4c`
 
 executionBaseHead: capture with `git rev-parse --short HEAD` before edits
 
-closureBaseHead: N/A with reason: pending worker execution and Codex review
+closureBaseHead: `d78630be`
 
 ## Dispatch Prompt Envelope
 
@@ -47,10 +47,9 @@ instance, `SKILL.md`, `skill.source.json`, Web runtime/source change, CLI/MCP
 adapter, provider call, live proof, public-sync, push, commit, or session-sync
 edit.
 
-Return contract: after material artifacts are complete and gates pass, return
-`COMPLETE_PENDING_REVIEW` to Codex with changed files, gate evidence, exact
-remaining review boundary, and no material commit identifier. If a gate fails outside Allowed
-scope, return `BLOCKED_WITH_REASON`.
+Return contract: satisfied. Claude returned `COMPLETE_PENDING_REVIEW` to Codex
+with changed files, gate evidence, exact remaining review boundary, and no
+material commit identifier.
 
 ## Purpose
 
@@ -158,6 +157,10 @@ Allowed scope:
   gates.
 - Update no other file unless a gate failure inside Allowed scope requires a
   narrowly scoped repair in one of the two allowed worker deliverables.
+- Codex reviewer/closer may update `docs/baselines/CVF_GC018_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_2026-06-25.md`.
+- Codex reviewer/closer may update `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md`.
+- Codex reviewer/closer may update `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md`.
+- Codex reviewer/closer may create `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_COMPLETION_2026-06-25.md`.
 
 Forbidden scope:
 
@@ -542,8 +545,33 @@ Reason: this dispatch references private provenance architecture and repository
 source surfaces. Public-safe export requires a separate redaction and
 public-sync authorization.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SYSTEM_SKILLS_FOUNDATION_ROADMAP_2026-06-23.md` | `Status: ASSF_T7_CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker material artifacts | `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`; `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_WORKER_RETURN_2026-06-25.md` | created by Claude worker and accepted by Codex review | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | T7 closure is not authorized to update GC-051 corpus registry or generated ASSF index surfaces | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | T7 closure is not authorized to update GC-051 corpus registry Markdown surfaces | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence imported; external-agent boundary is contract-only | N/A with reason |
+| System loop interlock | this work order | T7 closes after T1/T2/T5/T6 prerequisites and releases no package activation | PASS |
+| Session continuity | N/A with reason | separate session-sync lane follows material closure if next move changes | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Work order status | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT` | worker left deliverables uncommitted for Codex review | PASS |
+| Worker return | `COMPLETE_PENDING_REVIEW` | accepted by Codex completion review | PASS |
+| Runtime/provider/live claim | none | none | PASS |
+| External CLI/MCP adapter | deferred | `DEFERRED_WITH_REASON` | PASS |
+
 ## Claim Boundary
 
-This work order does not close ASSF-T7. It authorizes Claude to create the
-bounded T7 guard contract and worker return only. Codex owns review, commit,
-closure conversion, roadmap update, and session sync after the worker returns.
+This work order is closed bounded after Codex review. It authorized Claude to
+create the bounded T7 guard contract and worker return only. Codex owns the
+material closure commit and separate session sync after acceptance.
