@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -27,8 +27,8 @@ adapter, run provider/live proof, public-sync, push, or activate a package.
 Verdicts:
 
 - Dispatcher verdict: DISPATCH_APPROVED
-- Worker verdict: PENDING
-- Reviewer verdict: PENDING
+- Worker verdict: COMPLETE_PENDING_REVIEW
+- Reviewer verdict: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -156,6 +156,42 @@ Remediation applied:
 | AC4 | Audit and worker return include exact changed paths and command-backed evidence. |
 | AC5 | No generated index, resolver, Web runtime, CLI/MCP adapter, provider/live proof, public-sync, push, package activation, or certification claim appears in worker changes. |
 | AC6 | Claude returns uncommitted artifacts only under `WORKER_MUST_NOT_COMMIT`. |
+
+## Reviewer Closure Conversion
+
+| Field | Disposition |
+|---|---|
+| Worker return | `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md` |
+| Completion review | `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md` |
+| Closure decision | `CLOSED_PASS_BOUNDED` |
+| Roadmap disposition | ASSF-PIC-T1 closed bounded; ASSF-PIC-T2 parked pending work-order dispatch scaffold optimization |
+| Session-sync disposition | required after material closure commit, in a separate commit |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md` | `Status: COMPLETE_PENDING_REVIEW` | PASS |
+| Evidence audit | `docs/audits/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_AUDIT_2026-06-26.md` | `EVIDENCE_SKELETON_MAPPED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | PIC-T1 `CLOSED_PASS_BOUNDED`; PIC-T2 parked for work-order dispatch scaffold optimization | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | not authorized for PIC-T1 closure; no GC-051 corpus registry mutation in scope | BLOCKED with reason |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | not authorized for PIC-T1 closure; no GC-051 corpus registry mutation in scope | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence imported | N/A with reason |
+| System loop interlock | this baseline | T1 closed bounded; T2 parked; next lane is optimization | PASS |
+| Session continuity | N/A with reason | separate session-sync commit required after material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence absent for T1 | `receiptEvidence` is `N/A with reason` | PASS |
+| Evidence skeleton mapped | `EVIDENCE_SKELETON_MAPPED` | PASS |
+| Selected candidate unchanged | `cvf-dispatch-quality-reviewer` | PASS |
+| UAT/certification not advanced | `uatState` and `certificationState` remain `NOT_STARTED` | PASS |
+| PIC-T2 not released | roadmap T2 parked for optimization lane | PASS |
 
 ## Claim Boundary
 

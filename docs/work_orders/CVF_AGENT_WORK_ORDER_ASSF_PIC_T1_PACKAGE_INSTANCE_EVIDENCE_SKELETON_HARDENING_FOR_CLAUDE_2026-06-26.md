@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -431,9 +431,9 @@ Remediation applied:
 | Roadmap or checkpoint requirement | Work-order coverage | Output artifact or field | Verification command or check | Status |
 |---|---|---|---|---|
 | PIC-T0 selects exactly one candidate before later tranches | Authority Chain and Source Verification | selected candidate `cvf-dispatch-quality-reviewer` | T0 audit/completion review | SATISFIED |
-| PIC-T1 hardens package evidence skeleton | Required Audit Shape | T1 audit path | reviewer diff and worker return | READY |
-| No certification claim before later evidence | Lifecycle And Certification Boundary | audit and worker return claim boundary | reviewer closure | READY |
-| Report-friction changes should be tested with a worker | Worker Return Scaffold Effectiveness Measurement | worker return measurement section | `run_worker_return_fast_gate.py` result | READY |
+| PIC-T1 hardens package evidence skeleton | Required Audit Shape | T1 audit `EVIDENCE_SKELETON_MAPPED` | reviewer diff and worker return | PASS |
+| No certification claim before later evidence | Lifecycle And Certification Boundary | audit and worker return claim boundary | reviewer closure | PASS |
+| Report-friction changes should be tested with a worker | Worker Return Scaffold Effectiveness Measurement | worker return measurement section | `run_worker_return_fast_gate.py` result | PASS |
 
 ## Dual Agent Surface Matrix
 
@@ -463,16 +463,21 @@ completion review and material commit.
 
 ## Closure Checklist
 
-- [ ] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Changed paths stay inside Write Ownership.
-- [ ] Worker return was created through `run_worker_return_scaffold.py --write`.
-- [ ] Worker return includes scaffold effectiveness measurement rows.
-- [ ] Audit maps selected-candidate evidence skeleton requirements without
+- [x] Worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+- [x] Changed paths stay inside Write Ownership.
+- [x] Worker return was created through `run_worker_return_scaffold.py --write`.
+- [x] Worker return includes scaffold effectiveness measurement rows.
+- [x] Audit maps selected-candidate evidence skeleton requirements without
   creating a package instance.
-- [ ] Required commands are recorded with PASS or blocking reason.
-- [ ] Worker did not commit, push, public-sync, run provider/live proof, mutate
+- [x] Required commands are recorded with PASS or blocking reason.
+- [x] Worker did not commit, push, public-sync, run provider/live proof, mutate
   generated index/resolver/Web/adapter/session state, activate a package, or
   claim certification.
+
+Reviewer closure note: Codex accepted the worker return in
+`docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md`
+and converted this work order to `CLOSED_PASS_BOUNDED`. ASSF-PIC-T2 is parked
+pending a separate work-order dispatch scaffold optimization tranche.
 
 ## Return-To-Orchestrator Conditions
 
@@ -506,6 +511,32 @@ secrets/quota, destructive action, or a change to the claim boundary.
 | interceptionBoundary | no IDE, shell, git, filesystem, provider, CLI, MCP, Web runtime, or adapter interception claim |
 | claimLanguage | authorizes bounded no-commit documentation/audit execution by Claude worker |
 | forbiddenExpansion | no package instance, certification decision, lifecycle advancement, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, package instruction execution, or session-sync |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Baseline status | `docs/baselines/CVF_GC018_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md` | `Status: COMPLETE_PENDING_REVIEW` | PASS |
+| Evidence audit | `docs/audits/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_AUDIT_2026-06-26.md` | `EVIDENCE_SKELETON_MAPPED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | PIC-T1 `CLOSED_PASS_BOUNDED`; PIC-T2 parked for work-order dispatch scaffold optimization | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | not authorized for PIC-T1 closure; no GC-051 corpus registry mutation in scope | BLOCKED with reason |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | not authorized for PIC-T1 closure; no GC-051 corpus registry mutation in scope | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence imported | N/A with reason |
+| System loop interlock | this work order | T1 closed bounded; T2 parked; next lane is optimization | PASS |
+| Session continuity | N/A with reason | separate session-sync commit required after material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence absent for T1 | `receiptEvidence` is `N/A with reason` | PASS |
+| Evidence skeleton mapped | `EVIDENCE_SKELETON_MAPPED` | PASS |
+| Selected candidate unchanged | `cvf-dispatch-quality-reviewer` | PASS |
+| UAT/certification not advanced | `uatState` and `certificationState` remain `NOT_STARTED` | PASS |
+| PIC-T2 not released | roadmap T2 parked for optimization lane | PASS |
 
 ## Agent Operation Trace Block
 

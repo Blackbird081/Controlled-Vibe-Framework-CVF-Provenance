@@ -181,7 +181,19 @@ artifacts only if PIC-T0 selected a candidate. The work must preserve the T1
 package schema and T7 lifecycle guard. If an existing registry entry is used,
 the generated source layout must be respected and drift checks must pass.
 
-Status: `HOLD_UNTIL_STATE_BOOTSTRAP_REFACTOR`.
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure note: PIC-T1 mapped the selected candidate's package evidence skeleton
+in
+`docs/audits/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_AUDIT_2026-06-26.md`
+and accepted the worker-return scaffold-effectiveness measurement in
+`docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md`.
+The result is bounded: `cvf-dispatch-quality-reviewer` has no current schema
+field-family gap, but UAT/certification evidence remains absent and no package
+instance or certification decision was made. The same return shows the recent
+report-friction reduction is only partially effective; therefore PIC-T2 is
+parked until work-order dispatch scaffold optimization is handled or the
+operator explicitly reopens PIC-T2.
 
 Required outputs:
 
@@ -196,7 +208,12 @@ Run the first manual UAT/certification review for the selected package. The
 review may accept, reject, or hold certification. It must not treat a generated
 metadata packet or Web display as certification evidence.
 
-Status: `HOLD_UNTIL_PIC_T1_PASS`.
+Status: `PARKED_PENDING_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION`.
+
+Parked note: PIC-T1 closed bounded, but the operator instructed that PIC-T2
+must not start yet. The next allowed move is a separate source-verified
+work-order dispatch scaffold optimization batch to address recurring dispatch
+and worker-return report-friction before manual UAT/certification review.
 
 Required outputs:
 
@@ -314,9 +331,8 @@ Return to orchestrator if any ASSF-PIC work order:
 - Learning lane: `DOCUMENTATION_ONLY_LEARNING`
 - Disposition: `N/A_WITH_REASON` - this roadmap records a forward execution
   lane, not a new repeated defect pattern.
-- Next control action: handle Active Session State Bootstrap Read Model And
-  Aggregate Size Refactor before ASSF-PIC-T1 package instance evidence or
-  skeleton hardening is released.
+- Next control action: create a source-verified work-order dispatch scaffold
+  optimization GC-018/work order before any ASSF-PIC-T2 dispatch.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - this roadmap does
   not run provider calls or cost-bearing tests.
 
