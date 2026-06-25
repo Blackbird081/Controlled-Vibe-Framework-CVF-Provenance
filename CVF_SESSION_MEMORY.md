@@ -64,13 +64,13 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-ASSF-T4 External And Legacy Intake Normalization is `CLOSED_PASS_BOUNDED` at
-closure material commit `40b904bc`, with post-review hardening at material
-commit `1c89d540`. The hardening escalated the repeated source-equivalence
-worker-return defect pattern to `MACHINE_CHECK_CANDIDATE`: T3/T4 both had a
-worker-stated source-equivalence claim (`verbatim`, `no new field`) caught by
-manual reviewer re-derivation rather than a machine gate. Next move remains
-operator selection for ASSF-T5 or another governed lane.
+Governed artifact literal-format gotchas checklist added at material commit
+`ec3975f8`: `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+pointed from `AGENTS.md` and `CLAUDE.md`. This is a pre-write orientation
+checklist of literal-format failure modes already caught by `governance/compat/
+check_*.py` gates. No new tranche, runtime, provider/live, public-sync, or
+adapter change is released by this commit. Next allowed move remains operator
+selection among GFS-PY T2, ASSF-T5, or EQC-T2 (under its reopen conditions).
 
 ASSF-T1 Canonical Package Contract is `CLOSED_PASS_BOUNDED` at material commit
 `2752d04e`. Closure artifacts:
@@ -798,27 +798,35 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t4_closed_pass_bounded_pending_t5_selection`.
+Mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
 
-Next allowed move: operator may select ASSF-T5 Composition, Dependency,
-Conflict, And Capability Controls or another governed lane through fresh
-source-verified dispatch. Any future ASSF normalizer implementation must cite
-the ASSF-T4 normalization contract
-(`docs/reference/agent_system_skills/CVF_ASSF_INTAKE_NORMALIZATION_CONTRACT.md`)
-and must first resolve the two contract-introduced fields (`security_notes`,
-`sourceRevision`) against ASSF-T1 (add to the T1 schema or remap
-`security_notes` onto T1 `sideEffects`) before an executable normalizer is
-built. Any future ASSF promoter implementation must still cite the ASSF-T3
-bridge contract
-(`docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md`);
-ASSF-T5 must consume the ASSF-T1 package contract and the ASSF-T2 generated
-index/resolver foundation rather than re-deriving schema or resolution logic
-from scratch. ASSF-T0 is closed bounded at material commit `4ed53398`;
-ASSF-T0.1 is closed bounded at material commit `c76cbac7`; ASSF-T1 is closed
-bounded at material commit `2752d04e`; ASSF-T2 is closed bounded at material
-commit `3746bd48`; ASSF-T3 is closed bounded at material commit `3a481db5`;
-ASSF-T4 is closed bounded at closure material commit `40b904bc` with
-post-review hardening at material commit `1c89d540`.
+Latest material HEAD: `ec3975f8` (governed artifact literal-format gotchas
+checklist added and pointed from `AGENTS.md` and `CLAUDE.md`).
+
+Next allowed move: operator may select among:
+
+- GFS-PY T2 (next dispatch-quality monolith-split tranche, WORK_ORDER_READY;
+  must be behavior-preserving, proven by unchanged dispatch-quality suite, and
+  must ratchet the monolith cap down again; needs fresh GC-018 and
+  source-verified work order);
+- ASSF-T5 Composition, Dependency, Conflict, And Capability Controls (must
+  consume the ASSF-T1 package contract and the ASSF-T2 generated index/resolver
+  foundation; any future normalizer must cite ASSF-T4 normalization contract and
+  resolve `security_notes`/`sourceRevision` against ASSF-T1 first; needs fresh
+  GC-018 and source-verified work order);
+- EQC-T2 only if one of its recorded reopen conditions is cited: (i) a reviewer
+  reports actually missing a real equivalence-claim defect buried in EQC-T1
+  dry-run noise, or (ii) the unchanged-in-metadata-row false-positive pattern
+  occurs in `docs/baselines/*.md` or another governed surface outside the
+  checker's current scanned set.
+
+No normalizer code, promoter code, package instance, SKILL.md,
+skill.source.json, real candidate entry, skill migration, external CLI/MCP
+adapter implementation, runtime/provider/live/public work, secrets/quota,
+readiness, automatic promotion, activation, monolith split inside a non-split
+tranche, non-governance Python enforcement, or universal-control claim is
+released by GFS-PY-T1, EQC-T1, ASSF-T1 through ASSF-T4, or the gotchas
+checklist commit.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

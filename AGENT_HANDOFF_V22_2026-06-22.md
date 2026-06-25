@@ -98,9 +98,11 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `10d0459d`
+Governed artifact literal-format gotchas checklist material HEAD: `ec3975f8`
 
-Prior material HEAD recorded for this handoff: `fad16208`
+Current material HEAD recorded for this handoff: `ec3975f8`
+
+Prior material HEAD recorded for this handoff: `10d0459d`
 
 Prior session-sync HEAD recorded for this handoff: `92199d9f`
 
@@ -322,16 +324,20 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ADIF T0-T5 is `CLOSED_PASS_BOUNDED` at final-review material commit
-`fd5414b7`. Dual Agent Surface Matrix hardening is complete at material commit
-`104b3267`. ASSF-T0 is `CLOSED_PASS_BOUNDED` at material commit `4ed53398`.
-ASSF-T1 is `CLOSED_PASS_BOUNDED` at material commit `2752d04e`. Next allowed
-move: operator may select ASSF-T2 Generated Index And Progressive Resolver or
-another governed lane through fresh source-verified dispatch. No package
-instance, `SKILL.md`, `skill.source.json`, generated index, resolver,
-migration, external CLI/MCP adapter implementation, runtime/provider/live/
-public, automatic-promotion, activation, readiness, or universal-control
-expansion is released by T1.
+GFS-PY-T1 split T1 is `CLOSED_PASS_BOUNDED` at closure material commit
+`10d0459d`. Governed artifact literal-format gotchas checklist is added at
+material commit `ec3975f8`, pointed from `AGENTS.md` and `CLAUDE.md`. Next
+allowed move: operator may select among:
+
+- GFS-PY T2 (next dispatch-quality monolith-split tranche, WORK_ORDER_READY;
+  needs fresh GC-018 and source-verified work order);
+- ASSF-T5 Composition, Dependency, Conflict, And Capability Controls (must
+  consume ASSF-T1 package contract and ASSF-T2 generated index/resolver;
+  needs fresh GC-018 and source-verified work order);
+- EQC-T2 only under its recorded reopen conditions.
+
+No runtime/provider/live/public-sync/adapter/new-tranche authorization is
+released by GFS-PY-T1, EQC-T1, or the gotchas checklist commit.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -359,7 +365,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t4_closed_pass_bounded_pending_t5_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-T5 Composition, Dependency, Conflict, And Capability Controls or another governed lane through fresh source-verified dispatch; any future normalizer must cite the ASSF-T4 normalization contract and resolve the two contract-introduced fields (security_notes, sourceRevision) against ASSF-T1; parked checkpoint=external CLI/MCP adapter implementation, executable ASSF normalizer/promoter, runtime/provider/live/public, automatic-promotion, activation, readiness, and universal-control expansion.
+Startup acknowledged: current mode=`gfs_py_t1_split_t1_closed_t2_work_order_ready`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select among GFS-PY T2, ASSF-T5, or EQC-T2 (under its reopen conditions) — each requires fresh GC-018 and source-verified work order; latest material HEAD=`ec3975f8` (governed artifact literal-format gotchas checklist added and pointed from AGENTS.md and CLAUDE.md); parked checkpoint=no runtime/provider/live/public-sync/adapter/new-tranche authorization released.
 
 ## Parked Checkpoints
 
