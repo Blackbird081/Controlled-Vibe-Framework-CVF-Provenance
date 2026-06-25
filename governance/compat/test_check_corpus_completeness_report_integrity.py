@@ -42,6 +42,43 @@ def test_valid_complete_verified_passes() -> None:
     assert MODULE._validate_output("docs/audits/CVF_TEST.md", VALID_COMPLETE) == []
 
 
+def test_not_applicable_with_reason_allows_short_non_corpus_block() -> None:
+    text = """
+# Worker Return
+
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - worker return does not make a corpus completeness claim.
+"""
+    assert MODULE._validate_output("docs/reviews/CVF_TEST.md", text) == []
+
+
+def test_not_applicable_requires_reason() -> None:
+    text = """
+# Worker Return
+
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON
+"""
+    issues = MODULE._validate_output("docs/reviews/CVF_TEST.md", text)
+    assert any("requires a visible reason" in message for message in _messages(issues))
+
+
+def test_not_applicable_rejects_complete_claim_outside_block() -> None:
+    text = """
+# Worker Return
+
+All files were read.
+
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - not a corpus task.
+"""
+    issues = MODULE._validate_output("docs/reviews/CVF_TEST.md", text)
+    assert any("cannot accompany" in message for message in _messages(issues))
+
+
 def test_complete_claim_without_section_fails() -> None:
     issues = MODULE._validate_output("docs/reviews/CVF_TEST.md", "# Review\n\nAll files were read.")
     assert any("Corpus Completeness" in message for message in _messages(issues))

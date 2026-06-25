@@ -106,13 +106,7 @@ CORPUS_EXCLUDED_PATHS = frozenset({
     "governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md",
     "docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md",
 })
-CORPUS_ALLOWED_VERDICTS = (
-    "COMPLETE_VERIFIED",
-    "COMPLETE_WITH_DECLARED_EXCLUSIONS",
-    "PARTIAL",
-    "BLOCKED",
-    "STALE_SNAPSHOT",
-)
+CORPUS_ALLOWED_VERDICTS = ("COMPLETE_VERIFIED", "COMPLETE_WITH_DECLARED_EXCLUSIONS", "PARTIAL", "BLOCKED", "STALE_SNAPSHOT", "NOT_APPLICABLE_WITH_REASON")
 CORPUS_ALLOWED_TERMINAL_STATUSES = (
     "READ",
     "SKIPPED_WITH_REASON",
@@ -350,11 +344,16 @@ def diagnose_corpus_completeness(path: str, text: str) -> CorpusDiagnostic:
             extra_violations=("corpus_integrity_section_missing",),
         )
     section = _extract_section(text, "Corpus Completeness And Report Integrity")
-    missing_fields = tuple(f for f in CORPUS_REQUIRED_SECTION_FIELDS if f not in section)
-    missing_statuses = tuple(s for s in CORPUS_ALLOWED_TERMINAL_STATUSES if s not in section)
-    verdict_match = re.search(r"^\s*-\s*Corpus verdict:\s*([A-Z_]+)\s*$", section, re.M)
+    verdict_match = re.search(r"^\s*-\s*Corpus verdict:\s*([A-Z_]+)(?:\s+-\s*.+)?\s*$", section, re.M)
     verdict = verdict_match.group(1) if verdict_match else None
     verdict_valid = verdict in CORPUS_ALLOWED_VERDICTS
+    if verdict == "NOT_APPLICABLE_WITH_REASON":
+        extra_violations: list[str] = []
+        if not re.search(r"^\s*-\s*Corpus verdict:\s*NOT_APPLICABLE_WITH_REASON\s+-\s*\S", section, re.M): extra_violations.append("corpus_na_reason_missing")
+        if any(pattern.search(text.replace(section, "").lower()) for pattern in _CORPUS_COMPLETE_CLAIM_PATTERNS): extra_violations.append("corpus_na_with_complete_claim")
+        return CorpusDiagnostic(path, True, True, (), (), verdict, verdict_valid, (), tuple(extra_violations))
+    missing_fields = tuple(f for f in CORPUS_REQUIRED_SECTION_FIELDS if f not in section)
+    missing_statuses = tuple(s for s in CORPUS_ALLOWED_TERMINAL_STATUSES if s not in section)
     recon_match = re.search(r"^\s*-\s*Reconciliation:\s*(.+?)\s*$", section, re.I | re.M)
     reconciliation = recon_match.group(1) if recon_match else ""
     missing_recon = tuple(m for m in _CORPUS_RECONCILIATION_MARKERS if m not in reconciliation)
@@ -1292,7 +1291,6 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         print(f"Wrote reviewer-completion scaffold: {written}")
         return 0
-
     try:
         report = build_report(args.base, args.head, args.mode)
     except ValueError as exc:

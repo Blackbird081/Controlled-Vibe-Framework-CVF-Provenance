@@ -79,7 +79,7 @@ def test_allows_claim_with_disposition_token():
     """No violation when a disposition token is adjacent to the same cited path."""
     for token in DISPOSITION_TOKENS:
         text = (
-            f"The field is unchanged from `docs/reference/some_contract.md`. "
+            f"The field is identical to `docs/reference/some_contract.md`. "
             f"{token} - confirmed after review."
         )
         violations = check_text(REVIEWS_PATH, text)
@@ -184,7 +184,7 @@ def test_work_order_with_worker_return_block_is_checked():
     """Work-order file containing a worker-return marker is checked."""
     text = (
         "Worker Status: COMPLETE_PENDING_REVIEW\n\n"
-        "The field is unchanged from `docs/reference/some_contract.md`."
+        "The field is identical to `docs/reference/some_contract.md`."
     )
     violations = check_text(WORK_ORDER_PATH, text)
     assert len(violations) >= 1
@@ -194,7 +194,7 @@ def test_work_order_without_worker_return_block_is_skipped():
     """Work-order file with no worker-return marker is not checked."""
     text = (
         "This is a dispatch-only work order.\n\n"
-        "The field is unchanged from `docs/reference/some_contract.md`. "
+        "The field is identical to `docs/reference/some_contract.md`. "
         "No worker-return block present."
     )
     violations = check_text(WORK_ORDER_PATH, text)
@@ -251,11 +251,21 @@ def test_disposition_token_far_away_does_not_clear():
     spacer = " " * 500
     text = (
         f"MATCH - confirmed.{spacer}"
-        "The field is unchanged from `docs/reference/some_contract.md`."
+        "The field is identical to `docs/reference/some_contract.md`."
     )
     violations = check_text(REVIEWS_PATH, text)
     # The disposition token is more than 400 chars away; expect a violation.
     assert len(violations) >= 1
+
+
+def test_unchanged_is_not_a_hard_equivalence_trigger():
+    """Plain status wording should not force evidence when it only says unchanged."""
+    text = (
+        "The changed set status for `docs/reference/some_contract.md` is "
+        "unchanged after review."
+    )
+    violations = check_text(REVIEWS_PATH, text)
+    assert violations == []
 
 
 # ---------------------------------------------------------------------------

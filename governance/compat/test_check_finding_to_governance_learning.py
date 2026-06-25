@@ -40,6 +40,17 @@ def test_finding_doc_without_disposition_fails() -> None:
     assert any("Finding-To-Governance" in message for message in _messages(issues))
 
 
+def test_worker_return_position_heading_alone_is_not_finding_marker() -> None:
+    doc = """
+# Worker Return
+
+## Findings / Position
+
+The worker completed the assigned source inventory and returned evidence.
+"""
+    assert MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", doc) == []
+
+
 def test_runtime_finding_requires_runtime_lane() -> None:
     invalid = VALID_DOC.replace("GOVERNANCE_CONTROL_PLANE", "DOCUMENTATION_ONLY_LEARNING")
     invalid = invalid.replace("Missing guard", "Runtime provider timeout")

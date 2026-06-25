@@ -38,7 +38,6 @@ EQUIVALENCE_PHRASES: tuple[str, ...] = (
     "identical",
     "no new field",
     "maps to existing",
-    "unchanged",
     "same as",
     "reused exactly",
 )

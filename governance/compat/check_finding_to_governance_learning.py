@@ -30,7 +30,9 @@ DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 APPLICABLE_PREFIXES = ("docs/logs/", "docs/reviews/", "docs/assessments/", "docs/audits/")
 PROVIDER_MEMORY_ESCAPE_PREFIXES = APPLICABLE_PREFIXES + ("docs/work_orders/",)
 ARCHIVE_PATH_MARKER = "/archive/"
-FINDING_MARKERS = ("## Quality Findings", "## Findings", "## Known Issues", "Known Issues", "| Finding |", "finding |")
+FINDING_HEADING_RE = re.compile(r"(?im)^##\s+(?:Quality Findings|Findings|Known Issues)\s*$")
+FINDING_TABLE_RE = re.compile(r"(?im)^\s*\|\s*Finding\s*\|")
+KNOWN_ISSUES_RE = re.compile(r"(?im)^Known Issues\s*$")
 REQUIRED_SECTION = "## Finding-To-Governance Learning Disposition"
 DEFECT_CLASSES = (
     "WORKER_EXECUTION_ERROR",
@@ -318,9 +320,17 @@ def _validate_binding(path: str, text: str) -> list[dict[str, str]]:
     return violations
 
 
+def _has_finding_marker(text: str) -> bool:
+    return bool(
+        FINDING_HEADING_RE.search(text)
+        or FINDING_TABLE_RE.search(text)
+        or KNOWN_ISSUES_RE.search(text)
+    )
+
+
 def _validate_finding_doc(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
-    if not _is_applicable_path(path) or not _has_any(text, FINDING_MARKERS):
+    if not _is_applicable_path(path) or not _has_finding_marker(text):
         return violations
     if REQUIRED_SECTION not in text:
         _add(violations, path, "learning_disposition_section_missing", f"finding-bearing artifact must include `{REQUIRED_SECTION}`")
