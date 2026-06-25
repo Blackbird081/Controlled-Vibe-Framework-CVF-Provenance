@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `assf_t7_dispatched_pending_claude_worker_return`
+Current mode marker: `assf_t7_closed_pass_bounded_pending_next_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t7_dispatched_pending_claude_worker_return`.
+Current mode: `assf_t7_closed_pass_bounded_pending_next_selection`.
 
-Previous mode: `adif_authoring_latency_hardening_closed_pending_next_selection`.
+Previous mode: `assf_t7_dispatched_pending_claude_worker_return`.
 
 Active handoff:
 
@@ -63,6 +63,18 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
+`CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
+`docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`
+and closed the matching GC-018 baseline, work order, worker return, completion
+review, and ASSF roadmap update. Reviewer-return steward passed,
+pre-commit hook passed 56/56, and committed-range pre-closure content gates
+passed with only this required GC-020 session-sync outstanding before sync.
+T7 is documentation-only: no checker implementation, generated-index mutation,
+resolver mutation, package activation/certification, Web runtime change,
+public-sync, provider/live proof, CLI/MCP adapter behavior, readiness, push, or
+external-agent runtime behavior is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 dispatched for Claude worker execution at material commit `3a3bbe05`.
@@ -851,23 +863,23 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t7_dispatched_pending_claude_worker_return`.
+Mode: `assf_t7_closed_pass_bounded_pending_next_selection`.
 
-Latest material HEAD: `3a3bbe05` (ASSF-T7 dispatch after ADIF authoring
-hardening `8afbe0aa`, ASSF-T6 Codex final-review addendum `b31b4aca`, closure
-`489ff38a`, and ADIF-0010/0011/0012 learning records `49661fc6`).
+Latest material HEAD: `e76e4d09` (ASSF-T7 closure after dispatch `3a3bbe05`,
+ADIF authoring hardening `8afbe0aa`, ASSF-T6 Codex final-review addendum
+`b31b4aca`, closure `489ff38a`, and ADIF-0010/0011/0012 learning records
+`49661fc6`).
 
-Next allowed move: Claude executes ASSF-T7 with `WORKER_MUST_NOT_COMMIT` and
-returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Claude may create
-only:
+Next allowed move: operator may select among:
 
-- `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`
-- `docs/reviews/CVF_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_WORKER_RETURN_2026-06-25.md`
+- future ASSF checker implementation tranche;
+- package-instance/certification pilot;
+- GFS-PY T2;
+- EQC-T2 if one recorded reopen condition is cited;
+- another governed lane with fresh GC-018 and source-verified work order.
 
-ASSF-T7 must cite the ASSF-T1 package contract, ASSF-T2 generated
-index/resolver foundation, ASSF-T5 composition control contract, and ASSF-T6
-Web projection contract/migration audit. EQC-T2 remains parked unless one of
-its recorded reopen conditions is cited.
+ASSF-T7 is closed bounded and remains documentation-only. EQC-T2 remains parked
+unless one of its recorded reopen conditions is cited.
 
 No normalizer code, promoter code, composition engine, loader, package
 instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
