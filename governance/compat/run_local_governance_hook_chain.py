@@ -158,6 +158,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         "epistemic process packet",
         ["python", "governance/compat/check_epistemic_process_packet.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
+    (
+        "equivalence claim evidence",
+        ["python", "governance/compat/check_equivalence_claim_evidence.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
 ]
 
 PARALLEL_BY_DEFAULT_HOOKS = {"pre-commit", "pre-push", "reviewer-fast"}
