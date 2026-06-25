@@ -103,9 +103,13 @@ MPI-T6 decision material HEAD: `14f8e5f9`
 
 Governed artifact literal-format gotchas checklist material HEAD: `ec3975f8`
 
-Current material HEAD recorded for this handoff: `ec3975f8`
+ASSF-T5 closure material HEAD: `afeb2673`
 
-Prior material HEAD recorded for this handoff: `10d0459d`
+Current material HEAD recorded for this handoff: `afeb2673`
+
+Prior material HEAD recorded for this handoff (pre-ASSF-T5): `ec3975f8`
+
+Prior-prior material HEAD recorded for this handoff: `10d0459d`
 
 Prior session-sync HEAD recorded for this handoff: `df24514f`
 
@@ -386,7 +390,8 @@ Startup acknowledged: current mode=`gfs_py_t1_split_t1_closed_t2_work_order_read
   material commit `2752d04e`; ASSF-T2 is closed bounded at material commit
   `3746bd48`; ASSF-T3 is closed bounded at material commit `3a481db5`; ASSF-T4
   is closed bounded at closure material commit `40b904bc` with post-review
-  source-equivalence defect escalation at material commit `1c89d540`.
+  source-equivalence defect escalation at material commit `1c89d540`;
+  ASSF-T5 is closed bounded at material commit `afeb2673`.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
