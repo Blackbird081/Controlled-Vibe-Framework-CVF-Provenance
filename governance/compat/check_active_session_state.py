@@ -269,6 +269,7 @@ def _is_session_sync_path(path: str) -> bool:
     normalized = path.replace("\\", "/")
     return (
         normalized == "CVF_SESSION_MEMORY.md"
+        or normalized == "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
         or normalized == "CVF_SESSION/ACTIVE_SESSION_STATE.json"
         or normalized == "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json"
         or normalized.startswith("CVF_SESSION/state/")

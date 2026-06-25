@@ -91,7 +91,9 @@ Protected paths:
 
 - `governance/compat/check_rescan_intelligence_hardening.py`
 - `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
+- `governance/compat/check_active_session_state.py`
 - `governance/compat/run_worker_return_scaffold.py`
+- `governance/compat/test_check_active_session_state.py`
 - `governance/compat/test_check_rescan_intelligence_hardening.py`
 - `governance/compat/test_run_worker_return_scaffold.py`
 
@@ -108,8 +110,10 @@ material commit.
 | Command | Result |
 |---|---|
 | `python -m pytest governance/compat/test_run_worker_return_scaffold.py governance/compat/test_check_rescan_intelligence_hardening.py` | PASS - 17 passed |
+| `python -m pytest governance/compat/test_check_active_session_state.py` | PASS - 18 passed |
 | `python governance/compat/check_corpus_completeness_report_integrity.py --base c98ee85b --head HEAD --enforce` | PASS |
 | `python governance/compat/check_rescan_intelligence_hardening.py --base c98ee85b --head HEAD --enforce` | PASS |
+| `python governance/compat/check_active_session_state.py --enforce` | PASS after recognizing bootstrap read-model as a session-sync path |
 | `python governance/compat/check_active_archive_hygiene.py --json` | PASS after registering the rescan standard as a permanent active reference |
 | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS - 35 checks |
 | `git diff --check` | PASS |
@@ -124,8 +128,10 @@ receiptEvidence: CVF_RECEIPT_PRESENT - focused pytest output captured in local c
 - `docs/reference/guard_orientation/README.md`
 - `docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`
 - `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
+- `governance/compat/check_active_session_state.py`
 - `governance/compat/check_rescan_intelligence_hardening.py`
 - `governance/compat/run_worker_return_scaffold.py`
+- `governance/compat/test_check_active_session_state.py`
 - `governance/compat/test_check_rescan_intelligence_hardening.py`
 - `governance/compat/test_run_worker_return_scaffold.py`
 
@@ -189,6 +195,7 @@ source-backed reassessment output.
 | Worker-return scaffold lacked sections already required by worker-return packet-shape guidance | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | Keep scaffold and packet-shape guidance aligned through focused tests | handled |
 | True non-rescan reports were forced into full rescan matrices | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Preserve full enforcement for real rescan/intake outputs; allow compact N/A for non-rescan packets | handled |
 | Work-order authoring text could lead agents to invalid steward modes or non-bare Source Inventory action cells | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | Use scaffold-first and early fast gate before long worker-return prose | handled |
+| GC-020 did not classify the generated bootstrap read-model as a session-sync path | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | CHECKER_UPDATED | Keep generated active-session aggregate and bootstrap surfaces aligned as session-sync paths | handled |
 
 Runtime/provider/cost lane: N/A_WITH_REASON - this finding set concerns local
 governance authoring format and checker scope, not runtime/provider/cost
@@ -212,7 +219,7 @@ learning.
 | Session or invocation | work-order dispatch scaffold optimization, 2026-06-26 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, focused pytest, autorun gates, commit steward, git commit |
-| Target paths | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/CVF_RESCAN_INTELLIGENCE_HARDENING_STANDARD_2026-06-05.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `governance/compat/test_run_worker_return_scaffold.py` |
+| Target paths | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/CVF_RESCAN_INTELLIGENCE_HARDENING_STANDARD_2026-06-05.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/check_active_session_state.py`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_check_active_session_state.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `governance/compat/test_run_worker_return_scaffold.py` |
 | Allowed scope source | operator instruction to self-handle Claude T1 feedback and optimize dispatch authoring |
 | Before status evidence | HEAD `c98ee85b`; worktree clean before patch |
 | After status evidence | focused scaffold/rescan tests pass; reviewer-fast pass; corpus and rescan direct gates pass |

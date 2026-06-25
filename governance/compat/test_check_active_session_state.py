@@ -28,6 +28,7 @@ class ActiveSessionStateTests(unittest.TestCase):
 
         for rel in (
             "CVF_SESSION_MEMORY.md",
+            "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
             "CVF_SESSION/ACTIVE_SESSION_STATE.json",
             "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
             "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
@@ -63,6 +64,16 @@ class ActiveSessionStateTests(unittest.TestCase):
         }
         (self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json").write_text(
             json.dumps(state),
+            encoding="utf-8",
+        )
+        (self.repo_root / "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json").write_text(
+            json.dumps(
+                {
+                    "bootstrapReadModelVersion": "0.1.0",
+                    "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+                    "activeHandoff": "AGENT_HANDOFF_V8_2026-05-17.md",
+                }
+            ),
             encoding="utf-8",
         )
         review_queue = {
@@ -294,7 +305,11 @@ class ActiveSessionStateTests(unittest.TestCase):
             MODULE, "_head_changed_path", return_value=True
         ), patch.object(
             MODULE, "_head_changed_paths",
-            return_value={"AGENT_HANDOFF_V8_2026-05-17.md", "CVF_SESSION/ACTIVE_SESSION_STATE.json"},
+            return_value={
+                "AGENT_HANDOFF_V8_2026-05-17.md",
+                "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+                "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+            },
         ):
             report = MODULE._classify()
 
@@ -311,6 +326,11 @@ class ActiveSessionStateTests(unittest.TestCase):
         self.assertTrue(
             MODULE._is_session_sync_path(
                 "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json"
+            )
+        )
+        self.assertTrue(
+            MODULE._is_session_sync_path(
+                "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
             )
         )
 
