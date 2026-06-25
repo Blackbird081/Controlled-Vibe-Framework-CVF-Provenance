@@ -36,13 +36,11 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync continuity update after the
-GFS-PY-T1 Governed Python File Size Coverage material commit `fad16208`
-(class-aware Python size guard upgrade, registry seed, local + autorun
-wiring). This sync advances the current mode, the handoff HEAD block, the
-active session state sources, and `CVF_SESSION_MEMORY.md`. The material commit
-itself already changed the guard checkers and registry; this dedicated
-session-sync commit changes only continuity surfaces.
+Authorized guard-maintenance scope: handoff-sync continuity update advancing the
+handoff HEAD block to the GFS-PY T1 dispatch-quality helper split dispatch commit
+`9035df3c` and the current mode to the T1-split lane. This dedicated handoff-sync
+commit changes only this handoff file; the GFS-PY T1 closure material and the
+remaining session-state continuity follow in their own commits.
 
 Protected paths:
 
@@ -79,7 +77,9 @@ Discipline standard commit `75af9858`, the EQC-T1 closure material commit
 
 ## Current Mode
 
-`gfs_py_t1_closed_pass_bounded_t2_t4_split_held`
+`gfs_py_t1_split_t1_closed_t2_work_order_ready`
+
+GFS-PY T1 dispatch-quality helper split dispatch HEAD: `9035df3c`
 
 GFS-PY-T1 governed Python file size coverage material HEAD: `fad16208`
 
