@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `assf_t5_closed_pass_bounded_pending_t6_selection`
+Current mode marker: `assf_t6_dispatched_to_claude_pending_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t5_closed_pass_bounded_pending_t6_selection`.
+Current mode: `assf_t6_dispatched_to_claude_pending_worker_return`.
 
 Previous mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
 
@@ -64,6 +64,20 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+ASSF-T6 CVF Web Projection And Existing Example Migration is dispatched to
+Claude at material commit `229725e0`. Dispatch artifacts:
+`docs/baselines/CVF_GC018_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_2026-06-25.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md`.
+Pre-dispatch autorun passed 47/47, commit steward preflight passed, and the
+pre-commit governance hook passed 56/56. Claude may execute only the T6
+documentation/audit work order, may commit material T6 artifacts if gates pass,
+and must return `COMPLETE_PENDING_REVIEW` to Codex. Claude must not edit active
+session state, active handoff, session front door, generated active-session
+aggregate, public-sync, runtime Web source, generated ASSF index, package
+instances, or CLI/MCP adapters. Codex owns review, closure decision, and final
+session sync after worker return.
+
 ASSF-T5 Composition, Dependency, Conflict, And Capability Controls is
 `CLOSED_PASS_BOUNDED` at material commit `afeb2673`, with reviewer evidence
 repair at `d0a24e90`. It created
@@ -73,8 +87,7 @@ roadmap update. T5 is contract-definition-only: no composition engine, loader,
 resolver change, generator change, drift checker, package instance, SKILL.md,
 skill.source.json, registry entry, normalizer, promoter, CLI/MCP adapter,
 migration, runtime/provider/live/public behavior, activation, readiness, or
-automatic-promotion behavior is released. Next allowed move is operator
-selection among ASSF-T6, GFS-PY T2, or EQC-T2 under its reopen conditions.
+automatic-promotion behavior is released.
 
 ASSF-T1 Canonical Package Contract is `CLOSED_PASS_BOUNDED` at material commit
 `2752d04e`. Closure artifacts:
@@ -802,26 +815,20 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t5_closed_pass_bounded_pending_t6_selection`.
+Mode: `assf_t6_dispatched_to_claude_pending_worker_return`.
 
-Latest material HEAD: `d0a24e90` (ASSF-T5 closure evidence repair after
-material closure `afeb2673`).
+Latest material HEAD: `229725e0` (ASSF-T6 dispatch work order for Claude).
 
-Next allowed move: operator may select among:
+Next allowed move: Claude executes ASSF-T6 using:
 
-- ASSF-T6 CVF Web Projection And Existing Example Migration (must consume the
-  ASSF-T1 package contract, ASSF-T2 generated index/resolver foundation, and
-  ASSF-T5 composition control contract; needs fresh GC-018 and source-verified
-  work order);
-- GFS-PY T2 (next dispatch-quality monolith-split tranche, WORK_ORDER_READY;
-  must be behavior-preserving, proven by unchanged dispatch-quality suite, and
-  must ratchet the monolith cap down again; needs fresh GC-018 and
-  source-verified work order);
-- EQC-T2 only if one of its recorded reopen conditions is cited: (i) a reviewer
-  reports actually missing a real equivalence-claim defect buried in EQC-T1
-  dry-run noise, or (ii) the unchanged-in-metadata-row false-positive pattern
-  occurs in `docs/baselines/*.md` or another governed surface outside the
-  checker's current scanned set.
+- `docs/baselines/CVF_GC018_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_2026-06-25.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md`
+
+Claude may commit material T6 documentation/audit artifacts if gates pass and
+must return `COMPLETE_PENDING_REVIEW` to Codex with commit SHA, changed files,
+gate evidence, and remaining review boundary. Codex owns review, closure
+decision, and session sync after worker return. GFS-PY T2 and EQC-T2 remain
+parked until selected after T6 review boundary clears.
 
 No normalizer code, promoter code, composition engine, loader, package
 instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
@@ -829,7 +836,7 @@ external CLI/MCP adapter implementation, runtime/provider/live/public work,
 secrets/quota, readiness, automatic promotion, activation, monolith split
 inside a non-split tranche, non-governance Python enforcement, or
 universal-control claim is released by GFS-PY-T1, EQC-T1, ASSF-T1 through
-ASSF-T5, or the gotchas checklist commit.
+ASSF-T6 dispatch, or the gotchas checklist commit.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

@@ -36,13 +36,13 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync continuity update after the
-governed artifact literal-format gotchas checklist material commit `ec3975f8`.
-This sync advances the handoff HEAD block, the startup acknowledgment, the
-current next-move wording, and `CVF_SESSION_MEMORY.md`. The material commit
-already added the gotchas checklist and pointed to it from `AGENTS.md` and
-`CLAUDE.md`; this dedicated session-sync commit changes only continuity
-surfaces.
+Authorized guard-maintenance scope: session-sync continuity update after ASSF-T6
+dispatch material commit `229725e0`. This sync advances the handoff HEAD block,
+startup acknowledgment, current mode, next-move wording,
+`CVF_SESSION_MEMORY.md`, and generated active session state so Claude can run
+pre-implementation gates without a stale active-handoff HEAD blocker. The
+material commit created only the T6 GC-018 baseline and work order; this
+dedicated session-sync commit changes only continuity surfaces.
 
 Protected paths:
 
@@ -65,23 +65,20 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator selected GFS-PY-T1 to close the governed
-Python file-size coverage blind spot and confirmed the per-class thresholds,
-the touch rule, the wiring point, and the non-governance deferral on
-2026-06-25. The operator then asked for a prompt to let the session-sync steward
-clean the post-gotchas continuity state before opening a new tranche.
+Operator authorization: the operator selected ASSF-T6 after ASSF-T5 and asked
+Codex to create the work order for Claude to execute. Codex owns session sync
+after dispatch and review.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert the gotchas checklist material commit `ec3975f8`, the GFS-PY-T1 material
-commit `fad16208`, the Value-Parked Lane Reopen
-Discipline standard commit `75af9858`, the EQC-T1 closure material commit
-`ccee892d`, the EQC-T1 session-sync commit `92199d9f`, MPI-T5 dispatch commit
-`501fcafa`, AAF-T7C material commit `b7601865`, LPF config material commit
-`bf8ff950`, MPI-T4 closure, or earlier session history.
+revert ASSF-T6 dispatch material commit `229725e0`, ASSF-T5 reviewer evidence
+repair `d0a24e90`, ASSF-T5 closure `afeb2673`, the gotchas checklist material
+commit `ec3975f8`, GFS-PY-T1 material commit `fad16208`, EQC-T1 closure
+material commit `ccee892d`, MPI-T5 dispatch commit `501fcafa`, MPI-T4 closure,
+or earlier session history.
 
 ## Current Mode
 
-`assf_t5_closed_pass_bounded_pending_t6_selection`
+`assf_t6_dispatched_to_claude_pending_worker_return`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -107,11 +104,13 @@ ASSF-T5 closure material HEAD: `afeb2673`
 
 ASSF-T5 reviewer evidence repair material HEAD: `d0a24e90`
 
-Current material HEAD recorded for this handoff: `d0a24e90`
+ASSF-T6 dispatch material HEAD: `229725e0`
 
-Prior material HEAD recorded for this handoff (ASSF-T5 closure): `afeb2673`
+Current material HEAD recorded for this handoff: `229725e0`
 
-Prior-prior material HEAD recorded for this handoff (pre-ASSF-T5): `ec3975f8`
+Prior material HEAD recorded for this handoff (ASSF-T5 reviewer repair): `d0a24e90`
+
+Prior-prior material HEAD recorded for this handoff (ASSF-T5 closure): `afeb2673`
 
 Earlier material HEAD recorded for this handoff: `10d0459d`
 
@@ -378,7 +377,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t5_closed_pass_bounded_pending_t6_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select among ASSF-T6, GFS-PY T2, or EQC-T2 (under its reopen conditions) — each requires fresh GC-018 and source-verified work order; latest material HEAD=`d0a24e90` (ASSF-T5 closure evidence repaired after material closure `afeb2673`); parked checkpoint=no runtime/provider/live/public-sync/adapter/new-tranche authorization released.
+Startup acknowledged: current mode=`assf_t6_dispatched_to_claude_pending_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes ASSF-T6 from the dispatched GC-018 baseline and work order at material commit `229725e0`, then returns `COMPLETE_PENDING_REVIEW` to Codex; parked checkpoint=Codex review and session-sync remain pending after Claude worker return; no runtime/provider/live/public-sync/adapter authorization released.
 
 ## Parked Checkpoints
 
