@@ -39,11 +39,13 @@ authorization and the sibling public-sync clone with remote verification.
 
 Authorized guard-maintenance scope: session-sync continuity update after
 ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory dispatch material
-commit `9e08f11a`. This sync advances the handoff HEAD block, current mode, and
-next-move pointers after the dispatch commit. The material commit created only
-the ASSF-PIC-T0 GC-018 baseline and Claude work order, and released Claude
-worker execution as the next move; this dedicated sync changes only continuity
-surfaces.
+commit `9e08f11a`, plus handoff-only HEAD bridge for governed artifact
+literal-format gotchas checklist material commit `f013e7d5`. This sync advances
+the handoff HEAD block without releasing package instance, certification,
+generated-index, resolver, Web, adapter, provider/live, public-sync, or push
+scope. The material dispatch commit created only the ASSF-PIC-T0 GC-018
+baseline and Claude work order, and released Claude worker execution as the
+next move; this dedicated bridge changes only continuity surfaces.
 
 Protected paths:
 
@@ -116,7 +118,11 @@ ASSF-PIC roadmap material HEAD: `916c6908`
 
 ASSF-PIC-T0 dispatch material HEAD: `9e08f11a`
 
-Current material HEAD recorded for this handoff: `9e08f11a`
+Governed artifact literal-format gotchas checklist material HEAD: `f013e7d5`
+
+Current material HEAD recorded for this handoff: `f013e7d5`
+
+Prior material HEAD recorded for this handoff (ASSF-PIC-T0 dispatch): `9e08f11a`
 
 Prior material HEAD recorded for this handoff (ASSF-PIC roadmap): `916c6908`
 
