@@ -62,7 +62,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "assf_t6_dispatched_to_claude_pending_worker_return",
+  "currentMode": "assf_t6_closed_pass_bounded_pending_next_selection",
   "previousMode": "gfs_py_t1_split_t1_closed_t2_work_order_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

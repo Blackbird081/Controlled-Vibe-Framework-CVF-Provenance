@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `assf_t6_dispatched_to_claude_pending_worker_return`
+Current mode marker: `assf_t6_closed_pass_bounded_pending_next_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t6_dispatched_to_claude_pending_worker_return`.
+Current mode: `assf_t6_closed_pass_bounded_pending_next_selection`.
 
 Previous mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
 
@@ -77,6 +77,16 @@ session state, active handoff, session front door, generated active-session
 aggregate, public-sync, runtime Web source, generated ASSF index, package
 instances, or CLI/MCP adapters. Codex owns review, closure decision, and final
 session sync after worker return.
+
+ASSF-T6 is accepted `CLOSED_PASS_BOUNDED` at material commit `489ff38a`.
+Codex final review confirmed the T6 material range `ffa421f2..489ff38a` with
+content gates passing except for the later unsynced HEAD state, and accepted
+ADIF-0010/0011/0012 at commit `49661fc6` after ADIF entry integrity reported
+12 entries and 0 violations. Reviewer finding: commit `49661fc6` mixed ADIF
+material entries with an active-handoff protected-path update; Codex repaired
+continuity in the current session-sync lane. T6 remains documentation and audit
+only: no runtime Web code, generated-index mutation, package activation,
+public-sync, provider/live proof, or CLI/MCP adapter behavior is released.
 
 ASSF-T5 Composition, Dependency, Conflict, And Capability Controls is
 `CLOSED_PASS_BOUNDED` at material commit `afeb2673`, with reviewer evidence
@@ -815,20 +825,21 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t6_dispatched_to_claude_pending_worker_return`.
+Mode: `assf_t6_closed_pass_bounded_pending_next_selection`.
 
-Latest material HEAD: `229725e0` (ASSF-T6 dispatch work order for Claude).
+Latest material HEAD: `49661fc6` (ASSF-T6 closure `489ff38a` plus
+ADIF-0010/0011/0012 learning records).
 
-Next allowed move: Claude executes ASSF-T6 using:
+Next allowed move: operator may select among:
 
-- `docs/baselines/CVF_GC018_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_2026-06-25.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T6_CVF_WEB_PROJECTION_EXISTING_EXAMPLE_MIGRATION_FOR_WORKER_2026-06-25.md`
+- ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard;
+- GFS-PY T2 dispatch-quality monolith-split tranche;
+- another governed lane with fresh GC-018 and source-verified work order.
 
-Claude may commit material T6 documentation/audit artifacts if gates pass and
-must return `COMPLETE_PENDING_REVIEW` to Codex with commit SHA, changed files,
-gate evidence, and remaining review boundary. Codex owns review, closure
-decision, and session sync after worker return. GFS-PY T2 and EQC-T2 remain
-parked until selected after T6 review boundary clears.
+ASSF-T7 must cite the ASSF-T1 package contract, ASSF-T2 generated
+index/resolver foundation, ASSF-T5 composition control contract, and ASSF-T6
+Web projection contract/migration audit. EQC-T2 remains parked unless one of
+its recorded reopen conditions is cited.
 
 No normalizer code, promoter code, composition engine, loader, package
 instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
@@ -836,7 +847,7 @@ external CLI/MCP adapter implementation, runtime/provider/live/public work,
 secrets/quota, readiness, automatic promotion, activation, monolith split
 inside a non-split tranche, non-governance Python enforcement, or
 universal-control claim is released by GFS-PY-T1, EQC-T1, ASSF-T1 through
-ASSF-T6 dispatch, or the gotchas checklist commit.
+ASSF-T6 closure, or the gotchas checklist commit.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
