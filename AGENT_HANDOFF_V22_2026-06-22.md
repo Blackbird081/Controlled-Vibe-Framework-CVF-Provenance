@@ -36,40 +36,29 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync continuity update after
-ASSF-T7 closure material commit `e76e4d09`. This sync advances the handoff
-HEAD block, current mode, and next-move pointers after the closure commit.
-The material commit created the ASSF-T7 certification lifecycle guard contract
-and closed the matching baseline, work order, worker return, completion review,
-and roadmap update; this dedicated sync changes only continuity surfaces.
+Authorized guard-maintenance scope: session-sync continuity update after ASSF
+Package Instance Certification Pilot roadmap material commit `916c6908`. This
+sync advances the handoff HEAD block, current mode, and next-move pointers
+after the roadmap commit. The material commit created only the ASSF-PIC roadmap
+and released PIC-T0 dispatch authoring as the next move; this dedicated sync
+changes only continuity surfaces.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/aafT7CReviewerScaffoldShapeHardeningClosure20260622.json`
-- `CVF_SESSION/state/entries/lpfTsconfigRootDirSyncFix20260622.json`
-- `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerClosure20260622.json`
-- `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerDispatch20260622.json`
-- `CVF_SESSION/state/entries/mpiT5MemoryAccessClaimCheckerPublicSync20260622.json`
-- `CVF_SESSION/state/entries/mpiT6ReviewGateHardeningClosure20260622.json`
-- `CVF_SESSION/state/entries/mpiT6RuntimeCandidateDecisionClosure20260622.json`
-- `CVF_SESSION/state/entries/adifFoundationRoadmap20260622.json`
-- `CVF_SESSION/state/entries/adifContinuousExecutionDispatch20260622.json`
-- `CVF_SESSION/state/entries/adifT0CheckpointPendingReview20260623.json`
-- `CVF_SESSION/state/entries/adifT0CheckpointAcceptedT1Release20260623.json`
-- `CVF_SESSION/state/entries/agentSystemSkillsRoadmapAndDualSurfaceRule20260623.json`
+- `CVF_SESSION/state/entries/assfPicRoadmap20260625.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/eqcT1WorkerReturnEquivalenceClaimEvidenceLinterClosure20260625.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: after Claude returned ASSF-T7 `COMPLETE_PENDING_REVIEW`,
-Codex reviewed, closed, and committed the bounded documentation-only closure.
+Operator authorization: the operator selected the ASSF package-instance
+certification pilot roadmap and directed a separate session-sync after the
+material roadmap commit.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-T7 closure `e76e4d09`, ASSF-T7 dispatch `3a3bbe05`,
-ADIF authoring hardening `8afbe0aa`,
+revert ASSF-PIC roadmap `916c6908`, ASSF-T7 closure `e76e4d09`, ASSF-T7
+dispatch `3a3bbe05`, ADIF authoring hardening `8afbe0aa`,
 ASSF-T6 Codex review addendum
 `b31b4aca`, ASSF-T6 closure `489ff38a`, ADIF learning records `49661fc6`,
 ASSF-T6 dispatch `229725e0`, ASSF-T5
@@ -80,7 +69,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`assf_t7_closed_pass_bounded_pending_next_selection`
+`assf_pic_roadmap_ready_pending_t0_dispatch`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -120,7 +109,11 @@ ASSF-T7 dispatch material HEAD: `3a3bbe05`
 
 ASSF-T7 closure material HEAD: `e76e4d09`
 
-Current material HEAD recorded for this handoff: `e76e4d09`
+ASSF-PIC roadmap material HEAD: `916c6908`
+
+Current material HEAD recorded for this handoff: `916c6908`
+
+Prior material HEAD recorded for this handoff (ASSF-PIC predecessor, ASSF-T7 closure): `e76e4d09`
 
 Prior material HEAD recorded for this handoff (ASSF-T7 dispatch): `3a3bbe05`
 
@@ -358,6 +351,23 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
+ASSF Package Instance Certification Pilot roadmap is `ROADMAP_READY` at
+material commit `916c6908`. Artifact:
+`docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md`.
+The roadmap selects a strict single-candidate pilot sequence after ASSF-T7:
+PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence
+and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3
+generated index/resolver integration decision, PIC-T4 Web projection bridge
+decision, and PIC-T5 checker-readiness decision.
+
+Next allowed move: create ASSF-PIC-T0 GC-018 baseline and source-verified work
+order for pilot candidate selection and source inventory. PIC-T0 may select
+exactly one candidate or reject/hold with reason. It must not create a package
+instance, make a certification decision, mutate the generated index, mutate the
+resolver, change CVF Web runtime, implement CLI/MCP adapter behavior, run
+provider/live proof, public-sync, push, activate a package, or execute package
+instructions.
+
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
 `docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md`
@@ -368,10 +378,7 @@ and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_T7_CERTIFICATION_UAT_DRIFT_DEPRECATION_RETIREMENT_GUARD_FOR_CLAUDE_2026-06-25.md`.
 Reviewer-return steward passed, pre-commit hook passed 56/56, and committed
 range pre-closure content gates passed with only this required GC-020
-session-sync outstanding before sync. Next allowed move: operator may select a
-future ASSF checker implementation tranche, a package-instance/certification
-pilot, GFS-PY T2, EQC-T2 if one recorded reopen condition is cited, or another
-governed lane with fresh GC-018 and source-verified work order.
+session-sync outstanding before sync.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 No runtime/provider/live/public-sync/adapter, generated-index mutation,
@@ -404,7 +411,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t7_closed_pass_bounded_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select future ASSF checker implementation, package-instance/certification pilot, GFS-PY T2, EQC-T2 with reopen condition, or another governed lane; parked checkpoint=no runtime/provider/live/public-sync/adapter/generated-index/resolver/package-activation authorization released.
+Startup acknowledged: current mode=`assf_pic_roadmap_ready_pending_t0_dispatch`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=ASSF-PIC-T0 GC-018/work-order creation for pilot candidate selection and source inventory; parked checkpoint=no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
 
 ## Parked Checkpoints
 
@@ -422,6 +429,8 @@ Startup acknowledged: current mode=`assf_t7_closed_pass_bounded_pending_next_sel
   is closed bounded at closure material commit `40b904bc` with post-review
   source-equivalence defect escalation at material commit `1c89d540`;
   ASSF-T5 is closed bounded at material commit `afeb2673`.
+- ASSF-PIC roadmap is ready at material commit `916c6908`; next move is
+  ASSF-PIC-T0 GC-018/work-order creation only.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `assf_t7_closed_pass_bounded_pending_next_selection`
+Current mode marker: `assf_pic_roadmap_ready_pending_t0_dispatch`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_t7_closed_pass_bounded_pending_next_selection`.
+Current mode: `assf_pic_roadmap_ready_pending_t0_dispatch`.
 
-Previous mode: `assf_t7_dispatched_pending_claude_worker_return`.
+Previous mode: `assf_t7_closed_pass_bounded_pending_next_selection`.
 
 Active handoff:
 
@@ -63,6 +63,20 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF Package Instance Certification Pilot roadmap is `ROADMAP_READY` at
+material commit `916c6908`. Artifact:
+`docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md`.
+It selects the next forward ASSF lane as a strict single-candidate pilot:
+PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence
+and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3
+generated index/resolver integration decision, PIC-T4 Web projection bridge
+decision, and PIC-T5 checker-readiness decision. The roadmap authorizes
+planning only. Next allowed move is ASSF-PIC-T0 GC-018 and source-verified work
+order creation. No package instance creation, certification decision,
+generated-index mutation, resolver mutation, Web runtime change, CLI/MCP
+adapter, provider/live proof, public-sync, push, activation, or package
+instruction execution is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -863,23 +877,20 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_t7_closed_pass_bounded_pending_next_selection`.
+Mode: `assf_pic_roadmap_ready_pending_t0_dispatch`.
 
-Latest material HEAD: `e76e4d09` (ASSF-T7 closure after dispatch `3a3bbe05`,
-ADIF authoring hardening `8afbe0aa`, ASSF-T6 Codex final-review addendum
-`b31b4aca`, closure `489ff38a`, and ADIF-0010/0011/0012 learning records
-`49661fc6`).
+Latest material HEAD: `916c6908` (ASSF Package Instance Certification Pilot
+roadmap after ASSF-T7 closure `e76e4d09`).
 
-Next allowed move: operator may select among:
+Next allowed move: create ASSF-PIC-T0 GC-018 baseline and source-verified work
+order for pilot candidate selection and source inventory.
 
-- future ASSF checker implementation tranche;
-- package-instance/certification pilot;
-- GFS-PY T2;
-- EQC-T2 if one recorded reopen condition is cited;
-- another governed lane with fresh GC-018 and source-verified work order.
-
-ASSF-T7 is closed bounded and remains documentation-only. EQC-T2 remains parked
-unless one of its recorded reopen conditions is cited.
+PIC-T0 must select exactly one pilot candidate or reject/hold with reason. It
+must not create a package instance, make a certification decision, mutate the
+generated index, mutate the resolver, change CVF Web runtime, implement CLI/MCP
+adapter behavior, run provider/live proof, public-sync, push, activate a
+package, or execute package instructions. EQC-T2 remains parked unless one of
+its recorded reopen conditions is cited.
 
 No normalizer code, promoter code, composition engine, loader, package
 instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
