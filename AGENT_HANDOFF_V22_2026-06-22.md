@@ -81,7 +81,7 @@ Discipline standard commit `75af9858`, the EQC-T1 closure material commit
 
 ## Current Mode
 
-`gfs_py_t1_split_t1_closed_t2_work_order_ready`
+`assf_t5_closed_pass_bounded_pending_t6_selection`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -105,11 +105,15 @@ Governed artifact literal-format gotchas checklist material HEAD: `ec3975f8`
 
 ASSF-T5 closure material HEAD: `afeb2673`
 
-Current material HEAD recorded for this handoff: `afeb2673`
+ASSF-T5 reviewer evidence repair material HEAD: `d0a24e90`
 
-Prior material HEAD recorded for this handoff (pre-ASSF-T5): `ec3975f8`
+Current material HEAD recorded for this handoff: `d0a24e90`
 
-Prior-prior material HEAD recorded for this handoff: `10d0459d`
+Prior material HEAD recorded for this handoff (ASSF-T5 closure): `afeb2673`
+
+Prior-prior material HEAD recorded for this handoff (pre-ASSF-T5): `ec3975f8`
+
+Earlier material HEAD recorded for this handoff: `10d0459d`
 
 Prior session-sync HEAD recorded for this handoff: `df24514f`
 
@@ -333,20 +337,20 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-GFS-PY-T1 split T1 is `CLOSED_PASS_BOUNDED` at closure material commit
-`10d0459d`. Governed artifact literal-format gotchas checklist is added at
-material commit `ec3975f8`, pointed from `AGENTS.md` and `CLAUDE.md`. Next
-allowed move: operator may select among:
+ASSF-T5 Composition, Dependency, Conflict, And Capability Controls is
+`CLOSED_PASS_BOUNDED` at material commit `afeb2673`, with reviewer evidence
+repair at `d0a24e90`. Next allowed move: operator may select among:
 
+- ASSF-T6 CVF Web Projection And Existing Example Migration (must consume the
+  ASSF-T1 package contract, ASSF-T2 generated index/resolver foundation, and
+  ASSF-T5 composition control contract; needs fresh GC-018 and source-verified
+  work order);
 - GFS-PY T2 (next dispatch-quality monolith-split tranche, WORK_ORDER_READY;
-  needs fresh GC-018 and source-verified work order);
-- ASSF-T5 Composition, Dependency, Conflict, And Capability Controls (must
-  consume ASSF-T1 package contract and ASSF-T2 generated index/resolver;
   needs fresh GC-018 and source-verified work order);
 - EQC-T2 only under its recorded reopen conditions.
 
 No runtime/provider/live/public-sync/adapter/new-tranche authorization is
-released by GFS-PY-T1, EQC-T1, or the gotchas checklist commit.
+released by ASSF-T5, GFS-PY-T1, EQC-T1, or the gotchas checklist commit.
 
 ## Continuous Execution Handoff-Sync Bridge Ledger
 
@@ -374,7 +378,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gfs_py_t1_split_t1_closed_t2_work_order_ready`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select among GFS-PY T2, ASSF-T5, or EQC-T2 (under its reopen conditions) — each requires fresh GC-018 and source-verified work order; latest material HEAD=`ec3975f8` (governed artifact literal-format gotchas checklist added and pointed from AGENTS.md and CLAUDE.md); parked checkpoint=no runtime/provider/live/public-sync/adapter/new-tranche authorization released.
+Startup acknowledged: current mode=`assf_t5_closed_pass_bounded_pending_t6_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select among ASSF-T6, GFS-PY T2, or EQC-T2 (under its reopen conditions) — each requires fresh GC-018 and source-verified work order; latest material HEAD=`d0a24e90` (ASSF-T5 closure evidence repaired after material closure `afeb2673`); parked checkpoint=no runtime/provider/live/public-sync/adapter/new-tranche authorization released.
 
 ## Parked Checkpoints
 

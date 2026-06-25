@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-25
 
-Current mode marker: `gfs_py_t1_split_t1_closed_t2_work_order_ready`
+Current mode marker: `assf_t5_closed_pass_bounded_pending_t6_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
+Current mode: `assf_t5_closed_pass_bounded_pending_t6_selection`.
 
-Previous mode: `eqc_t1_closed_pass_bounded_assf_t5_still_parked`.
+Previous mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
 
 Active handoff:
 
@@ -64,13 +64,17 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Governed artifact literal-format gotchas checklist added at material commit
-`ec3975f8`: `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
-pointed from `AGENTS.md` and `CLAUDE.md`. This is a pre-write orientation
-checklist of literal-format failure modes already caught by `governance/compat/
-check_*.py` gates. No new tranche, runtime, provider/live, public-sync, or
-adapter change is released by this commit. Next allowed move remains operator
-selection among GFS-PY T2, ASSF-T5, or EQC-T2 (under its reopen conditions).
+ASSF-T5 Composition, Dependency, Conflict, And Capability Controls is
+`CLOSED_PASS_BOUNDED` at material commit `afeb2673`, with reviewer evidence
+repair at `d0a24e90`. It created
+`docs/reference/agent_system_skills/CVF_ASSF_COMPOSITION_CONTROL_CONTRACT.md`
+and closed the T5 GC-018, work order, worker return, completion review, and
+roadmap update. T5 is contract-definition-only: no composition engine, loader,
+resolver change, generator change, drift checker, package instance, SKILL.md,
+skill.source.json, registry entry, normalizer, promoter, CLI/MCP adapter,
+migration, runtime/provider/live/public behavior, activation, readiness, or
+automatic-promotion behavior is released. Next allowed move is operator
+selection among ASSF-T6, GFS-PY T2, or EQC-T2 under its reopen conditions.
 
 ASSF-T1 Canonical Package Contract is `CLOSED_PASS_BOUNDED` at material commit
 `2752d04e`. Closure artifacts:
@@ -798,35 +802,34 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `gfs_py_t1_split_t1_closed_t2_work_order_ready`.
+Mode: `assf_t5_closed_pass_bounded_pending_t6_selection`.
 
-Latest material HEAD: `ec3975f8` (governed artifact literal-format gotchas
-checklist added and pointed from `AGENTS.md` and `CLAUDE.md`).
+Latest material HEAD: `d0a24e90` (ASSF-T5 closure evidence repair after
+material closure `afeb2673`).
 
 Next allowed move: operator may select among:
 
+- ASSF-T6 CVF Web Projection And Existing Example Migration (must consume the
+  ASSF-T1 package contract, ASSF-T2 generated index/resolver foundation, and
+  ASSF-T5 composition control contract; needs fresh GC-018 and source-verified
+  work order);
 - GFS-PY T2 (next dispatch-quality monolith-split tranche, WORK_ORDER_READY;
   must be behavior-preserving, proven by unchanged dispatch-quality suite, and
   must ratchet the monolith cap down again; needs fresh GC-018 and
   source-verified work order);
-- ASSF-T5 Composition, Dependency, Conflict, And Capability Controls (must
-  consume the ASSF-T1 package contract and the ASSF-T2 generated index/resolver
-  foundation; any future normalizer must cite ASSF-T4 normalization contract and
-  resolve `security_notes`/`sourceRevision` against ASSF-T1 first; needs fresh
-  GC-018 and source-verified work order);
 - EQC-T2 only if one of its recorded reopen conditions is cited: (i) a reviewer
   reports actually missing a real equivalence-claim defect buried in EQC-T1
   dry-run noise, or (ii) the unchanged-in-metadata-row false-positive pattern
   occurs in `docs/baselines/*.md` or another governed surface outside the
   checker's current scanned set.
 
-No normalizer code, promoter code, package instance, SKILL.md,
-skill.source.json, real candidate entry, skill migration, external CLI/MCP
-adapter implementation, runtime/provider/live/public work, secrets/quota,
-readiness, automatic promotion, activation, monolith split inside a non-split
-tranche, non-governance Python enforcement, or universal-control claim is
-released by GFS-PY-T1, EQC-T1, ASSF-T1 through ASSF-T4, or the gotchas
-checklist commit.
+No normalizer code, promoter code, composition engine, loader, package
+instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
+external CLI/MCP adapter implementation, runtime/provider/live/public work,
+secrets/quota, readiness, automatic promotion, activation, monolith split
+inside a non-split tranche, non-governance Python enforcement, or
+universal-control claim is released by GFS-PY-T1, EQC-T1, ASSF-T1 through
+ASSF-T5, or the gotchas checklist commit.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote
