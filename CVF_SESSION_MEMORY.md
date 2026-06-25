@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`
+Current mode marker: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`.
+Current mode: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`.
 
-Previous mode: `assf_pic_t1_dispatched_pending_claude_worker_return`.
+Previous mode: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`.
 
 Active handoff:
 
@@ -66,6 +66,17 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Work-order dispatch scaffold optimization is closed bounded at material commit
+`d08e8ab6`. It handled the Claude T1 feedback before ASSF-PIC-T2: worker-return
+scaffold coverage now includes the previously missing conditional sections;
+Rescan Intelligence Hardening now allows compact true non-rescan N/A with a
+concrete reason while retaining full enforcement for real rescan/intake
+outputs; the work-order template now instructs scaffold-first/early fast-gate
+authoring and valid `reviewer-return` steward mode; the Source Inventory bare
+action-token gotcha is recorded; the rescan standard is registered as a
+permanent active reference. Completion:
+`docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`.
+
 ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is closed bounded at
 material commit `11a49bbd`. Closure artifacts:
 
@@ -79,11 +90,9 @@ Result: `cvf-dispatch-quality-reviewer` evidence skeleton is mapped, with no
 package instance, certification decision, lifecycle-state advancement, index,
 resolver, Web, adapter, provider/live, public-sync, push, activation,
 readiness, or package-execution release. The worker-return/report friction
-trial was partially effective only: scaffolded boilerplate and corpus N/A
-worked, but scaffold coverage gaps and rescan-hardening exact-shape pressure
-remain. Next allowed move is a source-verified GC-018/work order for work-order
-dispatch scaffold optimization. ASSF-PIC-T2 is parked until that optimization
-lane closes or the operator explicitly reopens PIC-T2.
+trial follow-up is now closed at `d08e8ab6`. ASSF-PIC-T2 remains parked until
+the operator explicitly selects it through fresh GC-018 and a source-verified
+work order.
 
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
@@ -927,19 +936,18 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`.
+Mode: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`.
 
-Latest material HEAD: `11a49bbd` (ASSF-PIC-T1 evidence skeleton hardening
+Latest material HEAD: `d08e8ab6` (work-order dispatch scaffold optimization
 closure).
 
-Next allowed move: create a source-verified GC-018 baseline and work order for
-work-order dispatch scaffold optimization, using ASSF-PIC-T1 worker-return
-findings about scaffold section coverage, Rescan Intelligence Hardening N/A
-friction, bare `READ` Source Inventory actions, and invalid
-`--mode worker-return` commit-steward text.
+Next allowed move: operator may select ASSF-PIC-T2 manual UAT/certification
+review only through fresh GC-018 and a source-verified work order, or select
+another bounded governance lane.
 
-ASSF-PIC-T2 manual UAT/certification review remains parked until that
-optimization lane closes or the operator explicitly reopens PIC-T2.
+ASSF-PIC-T2 manual UAT/certification review remains parked until explicitly
+selected. Do not create a package instance or make a certification decision
+from this sync.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 

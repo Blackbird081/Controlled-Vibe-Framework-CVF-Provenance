@@ -17,8 +17,9 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record ASSF-PIC-T1 evidence skeleton closure continuity and route the
-next allowed move to work-order dispatch scaffold optimization only.
+Target: record work-order dispatch scaffold optimization closure continuity and
+route the next allowed move to operator-selected ASSF-PIC-T2 GC-018/work order
+or another bounded governance lane.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,11 +41,11 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-ASSF-PIC-T1 evidence skeleton closure material commit `11a49bbd`.
+work-order dispatch scaffold optimization material commit `d08e8ab6`.
 This sync advances the handoff HEAD block, generated active session state,
 bootstrap read model, front door, and next-move pointers while routing
-ASSF-PIC-T2 to parked status and routing the next move to work-order dispatch
-scaffold optimization only.
+ASSF-PIC-T2 to parked status unless explicitly selected through fresh GC-018
+and a source-verified work order.
 
 Protected paths:
 
@@ -52,16 +53,17 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`
 - `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator requested a Claude work order to test the
-recent worker-return/report-friction reduction with Claude as worker.
+Operator authorization: the operator instructed Codex to self-handle Claude T1
+feedback and optimize dispatch authoring, then synchronize session continuity
+after the material commit.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-PIC-T1 closure material `11a49bbd`, ASSF-PIC-T1 dispatch material `af09f072`,
+revert work-order dispatch scaffold optimization material `d08e8ab6`,
+ASSF-PIC-T1 closure material `11a49bbd`, ASSF-PIC-T1 dispatch material `af09f072`,
 worker-return/report enforcement material `3ab844fd`,
 STATE-BR-T1 dispatch `06d54319`, ASSF-PIC-T0 closure `24b49017`, handoff bridge `78b9e270`,
 ASSF-PIC-T0 dispatch `9e08f11a`, ASSF-PIC roadmap `916c6908`,
@@ -77,7 +79,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`
+`assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -149,9 +151,13 @@ ASSF-PIC-T1 evidence skeleton closure material HEAD: `11a49bbd`
 
 ASSF-PIC-T1 evidence skeleton closure session-sync HEAD: `f5d3a499`
 
-Current material HEAD recorded for this handoff: `11a49bbd`
+Work-order dispatch scaffold optimization material HEAD: `d08e8ab6`
 
-Current session-sync HEAD recorded for this handoff: `f5d3a499`
+Current material HEAD recorded for this handoff: `d08e8ab6`
+
+Current session-sync parent material HEAD recorded for this handoff: `d08e8ab6`
+
+Prior session-sync HEAD recorded for this handoff: `f5d3a499`
 
 Prior material HEAD recorded for this handoff (worker-return/report enforcement): `3ab844fd`
 
@@ -232,6 +238,17 @@ runtime source as authority.
 
 ## Latest Work / Changes
 
+Work-order dispatch scaffold optimization is closed bounded at material commit
+`d08e8ab6`. It handled Claude T1 feedback before ASSF-PIC-T2: worker-return
+scaffold coverage now includes the previously missing conditional sections;
+Rescan Intelligence Hardening now allows compact true non-rescan N/A with a
+concrete reason while retaining full enforcement for real rescan/intake
+outputs; the work-order template now instructs scaffold-first/early fast-gate
+authoring and valid `reviewer-return` steward mode; the Source Inventory bare
+action-token gotcha is recorded; the rescan standard is registered as a
+permanent active reference. Completion:
+`docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`.
+
 ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is closed bounded at
 material commit `11a49bbd`. Closure artifacts:
 
@@ -242,11 +259,8 @@ material commit `11a49bbd`. Closure artifacts:
 - `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md`
 
 Result: `cvf-dispatch-quality-reviewer` evidence skeleton is mapped. The
-worker-return scaffold and enforcement-tier reduction were partially effective:
-scaffolded boilerplate and corpus N/A worked, but scaffold coverage gaps,
-rescan-hardening exact-shape pressure, bare `READ` Source Inventory action
-requirements, and invalid `--mode worker-return` dispatch text remain follow-up
-inputs for work-order dispatch scaffold optimization.
+worker-return scaffold and enforcement-tier reduction trial follow-up is now
+closed at `d08e8ab6`.
 
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
@@ -456,14 +470,13 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Create a source-verified GC-018 baseline and work order for work-order dispatch
-scaffold optimization. The new packet should use ASSF-PIC-T1 closure findings:
-scaffold section coverage gaps, Rescan Intelligence Hardening N/A friction,
-bare `READ` Source Inventory actions, and invalid `--mode worker-return`
-commit-steward text.
+Operator may select ASSF-PIC-T2 manual UAT/certification review only through
+fresh GC-018 and a source-verified work order, or select another bounded
+governance lane.
 
-ASSF-PIC-T2 manual UAT/certification review is parked. Do not dispatch PIC-T2
-until the optimization lane closes or the operator explicitly reopens PIC-T2.
+ASSF-PIC-T2 manual UAT/certification review remains parked until explicitly
+selected. Do not dispatch PIC-T2, create a package instance, or make a
+certification decision from this sync.
 
 No package instance creation, certification decision, `SKILL.md`,
 `skill.source.json`, generated-index mutation, registry-source mutation,
@@ -514,7 +527,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=create source-verified GC-018/work order for work-order dispatch scaffold optimization; parked checkpoint=ASSF-PIC-T2 manual UAT/certification review remains parked unless optimization closes or operator explicitly reopens PIC-T2.
+Startup acknowledged: current mode=`assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-PIC-T2 manual UAT/certification review only through fresh GC-018 and a source-verified work order, or select another bounded governance lane; parked checkpoint=ASSF-PIC-T2 remains parked until explicitly selected.
 
 ## Parked Checkpoints
 
@@ -539,8 +552,9 @@ Startup acknowledged: current mode=`assf_pic_t1_closed_pass_bounded_work_order_d
 - Worker-return/report enforcement friction reduction is recorded at material
   commit `3ab844fd`.
 - ASSF-PIC-T1 evidence skeleton hardening is closed bounded at material commit
-  `11a49bbd`; ASSF-PIC-T2 is parked pending work-order dispatch scaffold
-  optimization.
+  `11a49bbd`; work-order dispatch scaffold optimization is closed bounded at
+  material commit `d08e8ab6`; ASSF-PIC-T2 is parked pending explicit operator
+  selection through fresh GC-018 and a source-verified work order.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -601,28 +615,29 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ASSF-PIC-T1 closure handoff-head bridge, 2026-06-26 |
+| Session or invocation | WODS-T1 dispatch-authoring optimization session sync, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, active-session compatibility gate, git commit |
-| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md` |
-| Allowed scope source | GC-020 handoff HEAD update after session-sync commit `f5d3a499` |
-| Before status evidence | session-sync commit `f5d3a499`; active-session checker required handoff HEAD update |
-| After status evidence | active handoff records session-sync parent SHA `f5d3a499` for dedicated handoff-head bridge validation |
-| Diff evidence | `git diff --name-status` and active-session compatibility gate |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json` |
+| Allowed scope source | GC-020 session-sync update after material commit `d08e8ab6` |
+| Before status evidence | material commit `d08e8ab6`; active-session checker required handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `d08e8ab6` for dedicated session-sync validation |
+| Diff evidence | `git diff --name-status`, active-session compatibility gate, and session-sync commit steward |
 | Approval boundary | continuity and generated state only; no new material tranche |
-| Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
+| Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, or certification decision |
 | Agent type | session-sync steward |
-| Invocation ID | `assf-pic-t1-closure-handoff-head-bridge-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Invocation ID | `wods-t1-dispatch-authoring-optimization-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records ASSF-PIC-T1 evidence
-skeleton closure at `11a49bbd` and routes the next move to work-order dispatch
-scaffold optimization. It does not dispatch ASSF-PIC-T2, create a package
-instance, certify a package, or expand package root/index/resolver, external
-CLI/MCP adapter implementation, runtime/provider/live/public behavior,
-activation, readiness, or automatic promotion.
+This handoff is session continuity only. It records work-order dispatch
+scaffold optimization closure at `d08e8ab6` and routes the next move to
+operator-selected ASSF-PIC-T2 GC-018/work order or another bounded governance
+lane. It does not dispatch ASSF-PIC-T2, create a package instance, certify a
+package, or expand package root/index/resolver, external CLI/MCP adapter
+implementation, runtime/provider/live/public behavior, activation, readiness,
+or automatic promotion.
