@@ -30,11 +30,18 @@ WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Gate Evidence",
     "Actual Changed Set",
     "Core Guard Self-Protection Authorization",
+    "External Knowledge Intake Routing",
+    "Rescan Intelligence Hardening",
     "Corpus Completeness And Report Integrity",
+    "Finding-To-Governance Learning Disposition",
+    "Epistemic Process Block",
     "Worker Experience Retrospective",
+    "Worker Return Scaffold Effectiveness Measurement",
+    "Worker Return Jurisdiction Block",
     "Agent Operation Trace Block",
     "Delta Execution Claim Boundary Control Block",
     "Public Export Disposition",
+    "Machine Closure Package",
 )
 
 
@@ -66,13 +73,54 @@ def _section_body(section: str) -> list[str]:
             "",
             "Rollback boundary: TODO or N/A with reason",
         ]
+    if section == "External Knowledge Intake Routing":
+        return [
+            "| External item | Route | Local guard | Disposition | Claim boundary |",
+            "|---|---|---|---|---|",
+            "| N/A with reason: no external knowledge intake in this worker return | N/A_WITH_REASON | N/A_WITH_REASON | N/A_WITH_REASON | CVF source authority remains repo-governed surfaces only |",
+        ]
+    if section == "Rescan Intelligence Hardening":
+        return [
+            "- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON",
+            "",
+            "Reason: N/A with reason: this worker return is not a rescan, intake-refresh, or source-backed reassessment output.",
+        ]
     if section == "Corpus Completeness And Report Integrity":
         return [
             "- Corpus verdict: NOT_APPLICABLE_WITH_REASON - no corpus completeness claim in this worker return.",
         ]
+    if section == "Finding-To-Governance Learning Disposition":
+        return [
+            "| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |",
+            "|---|---|---|---|---|---|",
+            "| N/A with reason: no new repeated or non-obvious defect observed yet | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | N/A_WITH_REASON | Replace this row if a real finding exists | deferred until worker completion evidence exists |",
+        ]
+    if section == "Epistemic Process Block":
+        return [
+            "Epistemic Process Applicability: EPISTEMIC_PROCESS_NA_WITH_REASON: scaffold placeholder; replace if the worker return makes evidence comparison, contradiction, or claim-update assertions.",
+        ]
     if section == "Worker Experience Retrospective":
         return [
             "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - TODO or replace with concise retrospective.",
+        ]
+    if section == "Worker Return Scaffold Effectiveness Measurement":
+        return [
+            "| Measurement | Result |",
+            "|---|---|",
+            "| scaffoldUsedBeforeLongDraft | TODO_YES_NO |",
+            "| scaffoldMissingSectionFound | TODO_NONE_OR_SECTION |",
+            "| firstWorkerReturnFastGateResult | TODO_PASS_FAIL_BLOCKED |",
+            "| postScaffoldManualRepairCount | TODO_NUMBER |",
+        ]
+    if section == "Worker Return Jurisdiction Block":
+        return [
+            "| Field | Disposition |",
+            "|---|---|",
+            "| capturedArtifacts | TODO_actual_worker_owned_paths |",
+            "| capturedOperations | TODO_commands_or_N/A_with_reason |",
+            "| deferredOperations | TODO_reviewer_or_orchestrator_owned_operations |",
+            "| outOfScopeRequests | TODO_or_N/A_with_reason |",
+            "| reviewerActionNeeded | TODO_review_commit_or_scope_decision |",
         ]
     if section == "Agent Operation Trace Block":
         return [
@@ -110,6 +158,15 @@ def _section_body(section: str) -> list[str]:
             "DEFERRED_PRIVATE_ONLY",
             "",
             "Reason: worker return in private provenance workspace; no public-sync authorization.",
+        ]
+    if section == "Machine Closure Package":
+        return [
+            "| Artifact | Evidence | Disposition |",
+            "|---|---|---|",
+            "| Worker return status | `Status: TODO_WORKER_STATUS` | pending reviewer closure; worker must not mark closed-equivalent unless authorized |",
+            "| Work order status | `dispatchWorkOrder: TODO_WORK_ORDER_PATH` | N/A with reason: reviewer/closer owns closure conversion |",
+            "| Changed set | `## Actual Changed Set` | must list real paths before review |",
+            "| Gate evidence | `## Gate Evidence` | must record pass/fail/blocked before review |",
         ]
     return [SCAFFOLD_TODO]
 

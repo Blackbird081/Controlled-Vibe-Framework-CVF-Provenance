@@ -90,7 +90,7 @@ Forbidden normative patterns:
 | Worker commits before reviewer accepts | Core guard self-protection; tranche commit choreography | Check commit mode in work order; always use `WORKER_MUST_NOT_COMMIT` |
 | Source Verification ACCEPT row uses bare filename, not full repo path | `check_work_order_dispatch_quality.py` | Use path starting from repo root (e.g., `governance/compat/foo.py`) |
 | Worker-return records `git status --short` as clean when the packet itself is untracked | `check_work_order_dispatch_quality.py` | Record actual pending paths in the git status field at COMPLETE_PENDING_REVIEW |
-| Rescan Intelligence Hardening section missing required subsections | `check_rescan_intelligence_hardening.py` | Include all three subsections and full delta / routing / sampling vocabulary even when each entry is NOT_APPLICABLE_WITH_REASON |
+| Rescan Intelligence Hardening section overbuilt for true non-rescan packets | `check_rescan_intelligence_hardening.py` | Use compact `NOT_APPLICABLE_WITH_REASON` plus a concrete reason for non-rescan worker-return/report packets; include the full delta / routing / sampling vocabulary only for real rescan or intake-refresh outputs |
 | Evidence-heavy packet missing Epistemic Process required fields | `check_epistemic_process_packet.py` | Include Evidence Comparison (capital C on Comparison), Contradiction or Gap Disposition, and Claim Update; use EPISTEMIC_PROCESS_NA_WITH_REASON when truly not applicable |
 | Corpus Completeness enumeration command is unsafe | `check_corpus_completeness_report_integrity.py` | Use `filesystem-backed direct file reads` or a fully qualified safe enumeration command; bare `rg --files` without `--hidden --no-ignore` is rejected |
 | AGENTS.md or governance/compat files changed without authorization | `check_core_guard_self_protection.py` | Include Core Guard Self-Protection Authorization block in a docs/reviews/, docs/work_orders/, or AGENT_HANDOFF*.md file in the same changed set |
@@ -129,20 +129,20 @@ still control.
 |---|---|
 | Actor | Codex standard hardening role |
 | Provider or surface | local workspace |
-| Session or invocation | dual-agent surface matrix guard-orientation hardening, 2026-06-23 |
+| Session or invocation | work-order dispatch scaffold optimization, 2026-06-26 |
 | Working directory | repository root |
-| Command or tool surface | apply_patch, reviewer-fast gate, git commit |
-| Target paths | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` |
-| Allowed scope source | operator instruction to record mandatory roadmap/work-order/closure dual-agent matrix rule in canonical standard, Guard Orientation, and machine-check candidate |
-| Before status evidence | HEAD `4ee4194f`; worktree clean before patch |
-| After status evidence | Guard Orientation routes dispatcher, reviewer, and closer roles to the dual-agent surface standard |
-| Diff evidence | changed standard and this orientation index; reviewer-fast and commit gates |
-| Approval boundary | documentation/reference hardening only |
-| Claim boundary | orientation layer only; no checker implementation, runtime, provider/live, external adapter, or public-sync claim |
-| Agent type | standard hardening role |
-| Invocation ID | `dual-agent-surface-matrix-guard-orientation-2026-06-23` |
-| Expected manifest | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` |
-| Actual changed set | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` |
+| Command or tool surface | apply_patch, focused pytest, autorun gates, git commit |
+| Target paths | `docs/reference/guard_orientation/README.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py` |
+| Allowed scope source | operator instruction to handle Claude T1 feedback and optimize dispatch authoring before ASSF-PIC-T2 |
+| Before status evidence | HEAD `c98ee85b`; worktree clean before patch |
+| After status evidence | Guard Orientation distinguishes compact non-rescan N/A from full rescan evidence requirements |
+| Diff evidence | changed orientation index and focused guard/scaffold tests |
+| Approval boundary | dispatch-authoring and worker-return friction hardening only |
+| Claim boundary | orientation layer plus local guard/scaffold support; no runtime, provider/live, external adapter, public-sync, package instance, or certification claim |
+| Agent type | dispatch-authoring optimization role |
+| Invocation ID | `wods-t1-dispatch-authoring-optimization-2026-06-26` |
+| Expected manifest | `docs/reference/guard_orientation/README.md`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py` |
+| Actual changed set | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/CVF_RESCAN_INTELLIGENCE_HARDENING_STANDARD_2026-06-05.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `governance/compat/test_run_worker_return_scaffold.py` |
 | Manifest delta | MATCH |
 
 ## Related Surfaces

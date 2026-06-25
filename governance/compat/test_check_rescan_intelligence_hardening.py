@@ -113,7 +113,56 @@ This document performs a full rescan of the prior intake findings.
     assert any(item["type"] == "rescan_hardening_section_missing" for item in violations)
 
 
-def test_complete_claim_cannot_use_not_applicable():
+def test_compact_not_applicable_non_rescan_completion_passes():
+    text = """
+# Worker Return
+
+Status: CLOSED_PASS_BOUNDED
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is a worker return, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_WORKER_RETURN.md", text) == []
+
+
+def test_compact_not_applicable_can_discuss_rescan_checker_scope():
+    text = """
+# Checker Maintenance Completion
+
+Status: CLOSED_PASS_BOUNDED
+
+## Purpose
+
+This updates the rescan guard and rescan standard so non-rescan packets do not
+need empty rescan matrices. Real rescan outputs still need full evidence.
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is checker maintenance, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_CHECKER_MAINTENANCE_COMPLETION.md", text) == []
+
+
+def test_compact_not_applicable_requires_concrete_reason():
+    text = """
+# Worker Return
+
+Status: CLOSED_PASS_BOUNDED
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+"""
+    violations = check_text("docs/reviews/CVF_WORKER_RETURN.md", text)
+    assert any(item["type"] == "not_applicable_reason_missing" for item in violations)
+
+
+def test_rescan_output_cannot_use_compact_not_applicable():
     text = VALID_BLOCK.replace("COMPLETE_WITH_DELTA_ROUTING_SAMPLE", "NOT_APPLICABLE_WITH_REASON")
     violations = check_text("docs/assessments/CVF_RESCAN_SAMPLE.md", text)
-    assert any(item["type"] == "not_applicable_used_for_completion_claim" for item in violations)
+    assert any(item["type"] == "not_applicable_used_for_rescan_output" for item in violations)

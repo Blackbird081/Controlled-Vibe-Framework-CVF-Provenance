@@ -191,6 +191,13 @@ runtime/product code, and does not itself implement or modify any checker.
     the edit is a small checklist note. Add or update the complete trace
     label set in the same changed file before rerunning the gate.
 
+20. **Source Inventory action cells are bare tokens.** Worker-return
+    `## Source Inventory` and Required First Read tables are parsed by exact
+    action-cell vocabulary. Use only `READ`, `FULL_READ`, `PARTIAL_READ`, or
+    `SOURCE_VERIFIED` in the action cell; do not write `READ - targeted grep`,
+    `READ (lines only)`, or other prose there. Put qualifiers in adjacent prose
+    or a separate note row.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -216,19 +223,19 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex checklist hardening role |
 | Provider or surface | local workspace |
-| Session or invocation | ASSF-PIC-T0 dispatch checklist learning, 2026-06-25 |
+| Session or invocation | work-order dispatch scaffold optimization, 2026-06-26 |
 | Working directory | repository root |
-| Command or tool surface | apply_patch, pre-implementation autorun, commit steward, git commit |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
-| Allowed scope source | operator request to capture observed work-order authoring errors in the checklist |
-| Before status evidence | HEAD `6d8713ac`; worktree clean before checklist patch |
-| After status evidence | checklist records dispatch closed-token, future-manifest, closure-section, and trace-block gotchas |
-| Diff evidence | single-file docs/reference checklist diff; pre-implementation rerun; commit steward rerun; pre-commit hook |
-| Approval boundary | documentation/reference checklist hardening only |
-| Claim boundary | no checker implementation, runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
-| Agent type | checklist hardening role |
-| Invocation ID | `assf-pic-t0-dispatch-checklist-learning-2026-06-25` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Command or tool surface | apply_patch, focused pytest, autorun gates, commit steward, git commit |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py` |
+| Allowed scope source | operator instruction to handle Claude T1 feedback and optimize dispatch authoring before ASSF-PIC-T2 |
+| Before status evidence | HEAD `c98ee85b`; worktree clean before patch |
+| After status evidence | checklist records bare Source Inventory action-cell gotcha for worker-return packet authoring |
+| Diff evidence | docs/reference checklist diff plus focused scaffold tests and autorun gates |
+| Approval boundary | dispatch-authoring and worker-return friction hardening only |
+| Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
+| Agent type | dispatch-authoring optimization role |
+| Invocation ID | `wods-t1-source-inventory-action-token-gotcha-2026-06-26` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this checklist hardening batch |

@@ -26,6 +26,14 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
             self.assertIn(f"## {section}", text)
         self.assertIn("CVF_RECEIPT_PRESENT", text)
         self.assertIn("NOT_APPLICABLE_WITH_REASON", text)
+        self.assertIn("## External Knowledge Intake Routing", text)
+        self.assertIn("## Rescan Intelligence Hardening", text)
+        self.assertIn("## Finding-To-Governance Learning Disposition", text)
+        self.assertIn("## Epistemic Process Block", text)
+        self.assertIn("## Worker Return Scaffold Effectiveness Measurement", text)
+        self.assertIn("## Worker Return Jurisdiction Block", text)
+        self.assertIn("## Machine Closure Package", text)
+        self.assertIn("| TODO: fill before review | READ |", text)
 
     def test_emit_prints_without_writing(self):
         real_open = open
