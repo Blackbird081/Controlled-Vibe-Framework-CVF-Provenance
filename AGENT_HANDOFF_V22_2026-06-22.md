@@ -41,7 +41,8 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-work-order dispatch scaffold optimization material commit `d08e8ab6`.
+work-order dispatch scaffold optimization material commit `d08e8ab6` and
+GC-020 bootstrap read-model classifier hotfix material commit `59197332`.
 This sync advances the handoff HEAD block, generated active session state,
 bootstrap read model, front door, and next-move pointers while routing
 ASSF-PIC-T2 to parked status unless explicitly selected through fresh GC-018
@@ -62,7 +63,8 @@ feedback and optimize dispatch authoring, then synchronize session continuity
 after the material commit.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert work-order dispatch scaffold optimization material `d08e8ab6`,
+revert GC-020 bootstrap classifier hotfix material `59197332`,
+work-order dispatch scaffold optimization material `d08e8ab6`,
 ASSF-PIC-T1 closure material `11a49bbd`, ASSF-PIC-T1 dispatch material `af09f072`,
 worker-return/report enforcement material `3ab844fd`,
 STATE-BR-T1 dispatch `06d54319`, ASSF-PIC-T0 closure `24b49017`, handoff bridge `78b9e270`,
@@ -153,9 +155,11 @@ ASSF-PIC-T1 evidence skeleton closure session-sync HEAD: `f5d3a499`
 
 Work-order dispatch scaffold optimization material HEAD: `d08e8ab6`
 
-Current material HEAD recorded for this handoff: `d08e8ab6`
+Work-order dispatch scaffold optimization GC-020 bootstrap classifier hotfix material HEAD: `59197332`
 
-Current session-sync parent material HEAD recorded for this handoff: `d08e8ab6`
+Current material HEAD recorded for this handoff: `59197332`
+
+Current session-sync parent material HEAD recorded for this handoff: `59197332`
 
 Prior session-sync HEAD recorded for this handoff: `f5d3a499`
 

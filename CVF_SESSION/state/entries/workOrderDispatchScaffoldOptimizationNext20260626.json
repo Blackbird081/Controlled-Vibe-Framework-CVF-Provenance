@@ -5,6 +5,7 @@
     "status": "CLOSED_PASS_BOUNDED",
     "trigger": "ASSF-PIC-T1 closure material commit 11a49bbd",
     "materialCommit": "d08e8ab6",
+    "followUpMaterialCommit": "59197332",
     "completionReview": "docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md",
     "sourceFindings": [
       "worker-return scaffold does not cover all sections required by the ASSF-PIC-T1 work order",
@@ -12,7 +13,7 @@
       "Source Inventory action cells must use bare READ tokens",
       "dispatch text used invalid run_agent_commit_steward_preflight.py --mode worker-return"
     ],
-    "result": "Worker-return scaffold now includes the previously missing conditional sections, rescan hardening allows compact true non-rescan N/A with concrete reason, work-order template now instructs scaffold-first/early fast-gate authoring and valid reviewer-return steward mode, Source Inventory bare action-token gotcha is recorded, and the rescan standard is registered as a permanent active reference.",
+    "result": "Worker-return scaffold now includes the previously missing conditional sections, rescan hardening allows compact true non-rescan N/A with concrete reason, work-order template now instructs scaffold-first/early fast-gate authoring and valid reviewer-return steward mode, Source Inventory bare action-token gotcha is recorded, the rescan standard is registered as a permanent active reference, and GC-020 recognizes the generated bootstrap read-model as a session-sync path.",
     "nextAction": "Operator may select ASSF-PIC-T2 manual UAT/certification review only through fresh GC-018 and a source-verified work order, or select another bounded governance lane.",
     "parkedLane": "ASSF-PIC-T2 manual UAT/certification review",
     "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, or package instruction execution."

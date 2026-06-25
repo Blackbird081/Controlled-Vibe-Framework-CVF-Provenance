@@ -67,14 +67,16 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 Work-order dispatch scaffold optimization is closed bounded at material commit
-`d08e8ab6`. It handled the Claude T1 feedback before ASSF-PIC-T2: worker-return
+`d08e8ab6`, with GC-020 bootstrap read-model session-sync classifier hotfix at
+`59197332`. It handled the Claude T1 feedback before ASSF-PIC-T2: worker-return
 scaffold coverage now includes the previously missing conditional sections;
 Rescan Intelligence Hardening now allows compact true non-rescan N/A with a
 concrete reason while retaining full enforcement for real rescan/intake
 outputs; the work-order template now instructs scaffold-first/early fast-gate
 authoring and valid `reviewer-return` steward mode; the Source Inventory bare
 action-token gotcha is recorded; the rescan standard is registered as a
-permanent active reference. Completion:
+permanent active reference; and GC-020 recognizes the generated bootstrap
+read-model as a session-sync path. Completion:
 `docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`.
 
 ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is closed bounded at
@@ -90,7 +92,8 @@ Result: `cvf-dispatch-quality-reviewer` evidence skeleton is mapped, with no
 package instance, certification decision, lifecycle-state advancement, index,
 resolver, Web, adapter, provider/live, public-sync, push, activation,
 readiness, or package-execution release. The worker-return/report friction
-trial follow-up is now closed at `d08e8ab6`. ASSF-PIC-T2 remains parked until
+trial follow-up is now closed at `d08e8ab6` plus hotfix `59197332`.
+ASSF-PIC-T2 remains parked until
 the operator explicitly selects it through fresh GC-018 and a source-verified
 work order.
 
@@ -938,8 +941,9 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 Mode: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`.
 
-Latest material HEAD: `d08e8ab6` (work-order dispatch scaffold optimization
-closure).
+Latest material HEAD: `59197332` (GC-020 bootstrap read-model session-sync
+classifier hotfix after work-order dispatch scaffold optimization closure
+`d08e8ab6`).
 
 Next allowed move: operator may select ASSF-PIC-T2 manual UAT/certification
 review only through fresh GC-018 and a source-verified work order, or select
