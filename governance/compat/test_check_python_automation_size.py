@@ -117,6 +117,45 @@ class CheckPythonAutomationSizeTests(unittest.TestCase):
         self.assertIn("new_exception_requires_manual_review", {v["type"] for v in report["violations"]})
 
 
+class RatchetDownTests(unittest.TestCase):
+    def _entry(self, cap: int, **overrides) -> dict:
+        entry = {
+            "path": "governance/compat/check_x.py",
+            "fileClass": "python_checker",
+            "approvedMaxLines": cap,
+            "status": "ACTIVE_EXCEPTION",
+            "rationale": "Legacy.",
+            "requiredFollowup": "Split.",
+            "seedAuthorization": "docs/baselines/EXISTS.md",
+        }
+        entry.update(overrides)
+        return entry
+
+    def test_lowering_cap_on_seeded_entry_is_authorized(self) -> None:
+        base = self._entry(3056)
+        current = self._entry(2972)
+        with patch.object(MODULE, "_has_valid_seed_authorization", return_value=True):
+            self.assertTrue(MODULE._is_authorized_ratchet_down(base, current))
+
+    def test_raising_cap_is_not_authorized(self) -> None:
+        base = self._entry(3056)
+        current = self._entry(3100)
+        with patch.object(MODULE, "_has_valid_seed_authorization", return_value=True):
+            self.assertFalse(MODULE._is_authorized_ratchet_down(base, current))
+
+    def test_lowering_cap_but_editing_another_field_is_not_authorized(self) -> None:
+        base = self._entry(3056)
+        current = self._entry(2972, rationale="Changed.")
+        with patch.object(MODULE, "_has_valid_seed_authorization", return_value=True):
+            self.assertFalse(MODULE._is_authorized_ratchet_down(base, current))
+
+    def test_lowering_cap_without_seed_authorization_is_not_authorized(self) -> None:
+        base = self._entry(3056)
+        current = self._entry(2972)
+        with patch.object(MODULE, "_has_valid_seed_authorization", return_value=False):
+            self.assertFalse(MODULE._is_authorized_ratchet_down(base, current))
+
+
 class ClassifyPythonTests(unittest.TestCase):
     def test_test_files_classified_by_name_or_location(self) -> None:
         self.assertEqual(MODULE._classify_python("governance/compat/test_x.py"), "python_test")

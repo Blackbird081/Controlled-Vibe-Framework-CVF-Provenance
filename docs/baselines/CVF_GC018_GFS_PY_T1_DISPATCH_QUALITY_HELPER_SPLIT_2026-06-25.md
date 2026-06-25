@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -16,7 +16,7 @@ dispatchBaseHead: 47a473fc
 
 executionBaseHead: 47a473fc
 
-closureBaseHead: 47a473fc
+closureBaseHead: 9035df3c
 
 ## Purpose
 
@@ -137,7 +137,7 @@ Returned defects:
 | Field | Disposition |
 | --- | --- |
 | Selected tranche | GFS-PY T1 - dispatch-quality pure table-parsing helper split |
-| Dispatch status | DISPATCH_READY |
+| Dispatch status | CLOSED_PASS_BOUNDED |
 | Worker commit authority | WORKER_MUST_NOT_COMMIT |
 | Reviewer closer | Claude reviewer/closer |
 | Reason for no worker commit | the monolith is the central dispatch-quality checker that gates every governed work order; the reviewer must independently confirm the extraction is behavior-identical and the full suite passes before it is committed |
@@ -291,9 +291,9 @@ anything, introduces a circular import, or scopes into T2-T4.
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
 | Roadmap state | `docs/roadmaps/CVF_GOVERNED_PYTHON_FILE_SIZE_COVERAGE_ROADMAP_2026-06-25.md` | T1 dispatched by this baseline; T2-T4 held | PASS |
-| GC-018 status | this file | `Status: DISPATCH_READY` advancing to closed after reviewer acceptance | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_2026-06-25.md` | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | reviewer completion authored after worker return | pending worker return then reviewer closure | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `governance/compat/CVF_PYTHON_AUTOMATION_SIZE_EXCEPTION_REGISTRY.json` | monolith approvedMaxLines lowered to the new count after return | PASS |
 | Registry Markdown | N/A with reason | the Python size guard has no companion markdown registry | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external evidence imported | N/A with reason |
@@ -306,11 +306,11 @@ anything, introduces a circular import, or scopes into T2-T4.
 
 | Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
-| Dispatch status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Closure status | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
 | Worker commit authority | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` | PASS |
 | Build scope | one new module, re-import, lowered cap, focused test, worker return | as specified | PASS |
-| Behavior change | none | forbidden by work order | PASS |
-| Monolith size | strictly smaller, cap lowered | required by work order | PASS |
+| Behavior change | none | 86/86 suite unchanged | PASS |
+| Monolith size | strictly smaller, cap lowered | 3056 -> 2972, cap 2972 | PASS |
 | Runtime/provider/live claim | none | none | PASS |
 
 ## Delta Execution Claim Boundary Control Block

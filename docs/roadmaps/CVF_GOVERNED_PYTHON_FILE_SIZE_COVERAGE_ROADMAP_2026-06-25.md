@@ -117,7 +117,7 @@ split happens in T0.
 
 ### T1 - Split markdown table parsing / source verification helpers
 
-DISPATCHED (T0 passed at material `fad16208`). Extract the pure markdown-table
+DONE (closed at completion `docs/reviews/CVF_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_COMPLETION_2026-06-25.md`; monolith 3056 -> 2972, cap lowered to 2972, full suite 86/86 unchanged). Extract the pure markdown-table
 parsing helpers (`_parse_markdown_tables`, `_parse_any_markdown_tables`,
 `_normalize_table_key`, `_row_value`, `_section_tables`, `_truthy_cell`,
 `_clean_manifest_path`, with `_extract_section` moved or imported cleanly) from
@@ -132,8 +132,10 @@ carry validator logic rather than pure parsing.
 
 ### T2 - Split work-order lifecycle / status validators
 
-HOLD_UNTIL_T1_PASS. Extract lifecycle and status validators into their own
-module.
+WORK_ORDER_READY (T1 passed). Extract lifecycle and status validators into their
+own module, behavior-preserving, proven by the unchanged dispatch-quality suite,
+ratcheting the monolith cap down again. Requires a fresh operator selection and a
+fresh GC-018/work order.
 
 ### T3 - Split source-verification / token-collision validators
 
@@ -154,8 +156,8 @@ existing dispatch-quality test suite plus any added focused tests.
 | Tranche | Work | State |
 | --- | --- | --- |
 | T0 | upgrade the guard to per-class thresholds, add the touch rule, wire it locally and in autorun, seed legacy exceptions | DONE |
-| T1 | split markdown table-parsing helpers out of the monolith | DISPATCHED |
-| T2 | split work-order lifecycle / status validators | HELD |
+| T1 | split markdown table-parsing helpers out of the monolith | DONE |
+| T2 | split work-order lifecycle / status validators | WORK_ORDER_READY |
 | T3 | split source-verification / token-collision validators | HELD |
 | T4 | reduce the monolith to an orchestrator shell | HELD |
 

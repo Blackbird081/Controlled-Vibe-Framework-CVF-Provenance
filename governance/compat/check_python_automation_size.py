@@ -88,10 +88,12 @@ def _head_line_count(rel_path: str) -> int | None:
         cwd=REPO_ROOT,
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
     )
     if proc.returncode != 0:
         return None
-    if proc.stdout == "":
+    if not proc.stdout:
         return 0
     return proc.stdout.count("\n") + (0 if proc.stdout.endswith("\n") else 1)
 
@@ -109,19 +111,51 @@ def _has_valid_seed_authorization(exception: dict[str, Any]) -> bool:
     return seed_path.is_file()
 
 
+def _is_authorized_ratchet_down(baseline_entry: dict[str, Any], current_entry: dict[str, Any]) -> bool:
+    """True when the only change is lowering approvedMaxLines on a seeded entry.
+
+    A split tranche shrinks a monolith and tightens its cap to the new line
+    count. That is the intended outcome, not silent drift, so it is allowed when
+    the exception is seedAuthorization-backed and every other field is identical
+    and the new cap is strictly smaller. Raising the cap or editing any other
+    field still requires explicit human review.
+    """
+    if not _has_valid_seed_authorization(current_entry):
+        return False
+    base_cap = baseline_entry.get("approvedMaxLines")
+    new_cap = current_entry.get("approvedMaxLines")
+    if not isinstance(base_cap, int) or not isinstance(new_cap, int):
+        return False
+    if new_cap >= base_cap:
+        return False
+    # Every field other than approvedMaxLines must be unchanged.
+    base_rest = {key: value for key, value in baseline_entry.items() if key != "approvedMaxLines"}
+    current_rest = {key: value for key, value in current_entry.items() if key != "approvedMaxLines"}
+    return base_rest == current_rest
+
+
 def _changed_paths_against_head() -> set[str]:
     changed: set[str] = set()
     for args in (["diff", "--name-only"], ["diff", "--name-only", "--cached"]):
-        proc = subprocess.run(["git", *args], cwd=REPO_ROOT, capture_output=True, text=True)
-        if proc.returncode == 0:
+        proc = subprocess.run(
+            ["git", *args],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+        if proc.returncode == 0 and proc.stdout:
             changed.update(line.strip().replace("\\", "/") for line in proc.stdout.splitlines() if line.strip())
     proc = subprocess.run(
         ["git", "ls-files", "--others", "--exclude-standard"],
         cwd=REPO_ROOT,
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
     )
-    if proc.returncode == 0:
+    if proc.returncode == 0 and proc.stdout:
         changed.update(line.strip().replace("\\", "/") for line in proc.stdout.splitlines() if line.strip())
     return changed
 
@@ -230,13 +264,20 @@ def build_report(registry_path: Path) -> dict[str, Any]:
                     }
                 )
             elif current_entry != baseline_entry:
+                if _is_authorized_ratchet_down(baseline_entry, current_entry):
+                    # Lowering approvedMaxLines on a seedAuthorization-backed
+                    # exception (and changing nothing else) is the intended
+                    # split outcome: as a monolith shrinks, its cap tightens.
+                    # Raising the cap or changing any other field still fails.
+                    continue
                 violations.append(
                     {
                         "type": "exception_mutated_from_baseline",
                         "path": path_key,
                         "message": (
                             "Python automation size exception differs from the protected baseline. "
-                            "Registry mutations require explicit human review."
+                            "Registry mutations require explicit human review, except lowering "
+                            "approvedMaxLines on a seedAuthorization-backed exception."
                         ),
                     }
                 )

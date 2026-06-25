@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -105,7 +105,7 @@ Owner boundary:
 
 | Roadmap tranche | Work order | Disposition |
 | --- | --- | --- |
-| GFS-PY T1 (split markdown table-parsing helpers) | this work order | dispatched |
+| GFS-PY T1 (split markdown table-parsing helpers) | this work order | closed |
 | GFS-PY T2-T4 | none | HOLD_UNTIL_PREDECESSOR_PASS; no work order authored |
 
 ## Authority Chain
@@ -179,22 +179,22 @@ The worker must not touch any other file and must not commit.
 
 | Artifact | Path | Status |
 | --- | --- | --- |
-| New table-parsing module | `governance/compat/check_work_order_dispatch_quality_tables.py` | PENDING |
-| New focused test | `governance/compat/test_check_work_order_dispatch_quality_tables.py` | PENDING |
-| Monolith with re-imports | `governance/compat/check_work_order_dispatch_quality.py` | PENDING |
-| Lowered registry cap | `governance/compat/CVF_PYTHON_AUTOMATION_SIZE_EXCEPTION_REGISTRY.json` | PENDING |
-| Worker-return packet | `docs/reviews/CVF_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_WORKER_RETURN_2026-06-25.md` | PENDING |
+| New table-parsing module | `governance/compat/check_work_order_dispatch_quality_tables.py` | COMPLETE |
+| New focused test | `governance/compat/test_check_work_order_dispatch_quality_tables.py` | COMPLETE |
+| Monolith with re-imports | `governance/compat/check_work_order_dispatch_quality.py` | COMPLETE |
+| Lowered registry cap | `governance/compat/CVF_PYTHON_AUTOMATION_SIZE_EXCEPTION_REGISTRY.json` | COMPLETE |
+| Worker-return packet | `docs/reviews/CVF_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_WORKER_RETURN_2026-06-25.md` | COMPLETE |
 
 ## Work-Order Fulfillment Manifest
 
 | Deliverable | Fulfillment status at dispatch |
 | --- | --- |
-| New table-parsing module | PENDING_WORKER |
-| New focused test | PENDING_WORKER |
-| Monolith re-import + net-shrink | PENDING_WORKER |
-| Lowered registry cap | PENDING_WORKER |
-| Full dispatch-quality suite green | PENDING_WORKER |
-| Worker-return packet | PENDING_WORKER |
+| New table-parsing module | COMPLETE |
+| New focused test | COMPLETE |
+| Monolith re-import + net-shrink | COMPLETE |
+| Lowered registry cap | COMPLETE |
+| Full dispatch-quality suite green | COMPLETE |
+| Worker-return packet | COMPLETE |
 
 ## Forbidden Path Manifest
 
@@ -333,35 +333,35 @@ Reason: references internal governance checker internals and the GFS-PY split ro
 
 ## Acceptance Criteria
 
-- [ ] the named pure parsers are extracted into one new module and re-imported so call sites are unchanged;
-- [ ] `_extract_section` resolves with no circular import;
-- [ ] no `_validate_*`/rule logic, failure message, threshold, or test expectation changed;
-- [ ] the full dispatch-quality suite passes unchanged (same pass count);
-- [ ] the monolith line count is strictly smaller after the split;
-- [ ] the registry `approvedMaxLines` is lowered to the new line count;
-- [ ] the Python size guard is COMPLIANT with the lowered cap;
-- [ ] a focused test file covers the extracted module;
-- [ ] the worker did not commit and did not edit any closed artifact.
+- [x] the named pure parsers are extracted into one new module and re-imported so call sites are unchanged;
+- [x] `_extract_section` resolves with no circular import;
+- [x] no `_validate_*`/rule logic, failure message, threshold, or test expectation changed;
+- [x] the full dispatch-quality suite passes unchanged (same pass count);
+- [x] the monolith line count is strictly smaller after the split;
+- [x] the registry `approvedMaxLines` is lowered to the new line count;
+- [x] the Python size guard is COMPLIANT with the lowered cap;
+- [x] a focused test file covers the extracted module;
+- [x] the worker did not commit and did not edit any closed artifact.
 
 ## Fail Conditions
 
-- [ ] no `_validate_*`/rule logic moved (confirms ABSENCE);
-- [ ] no failure message or threshold changed (confirms ABSENCE);
-- [ ] the monolith did not stay the same size or grow (confirms ABSENCE);
-- [ ] the registry cap was not left at 3056 (confirms ABSENCE).
+- [x] no `_validate_*`/rule logic moved (confirms ABSENCE);
+- [x] no failure message or threshold changed (confirms ABSENCE);
+- [x] the monolith did not stay the same size or grow (confirms ABSENCE);
+- [x] the registry cap was not left at 3056 (confirms ABSENCE).
 
 ## Closure Checklist
 
-- [ ] new module and focused test created;
-- [ ] monolith re-imports parsers; call sites unchanged;
-- [ ] monolith net-shrink confirmed; registry cap lowered to match;
-- [ ] full dispatch-quality suite green (unchanged pass count);
-- [ ] Python size guard COMPLIANT with lowered cap;
-- [ ] worker-return packet authored; no worker commit;
-- [ ] reviewer independently reran the suite and confirmed behavior preservation;
-- [ ] roadmap T1 moved to done; T2-T4 still held;
-- [ ] GC-018 and work order closed;
-- [ ] session continuity synced after the closing commit.
+- [x] new module and focused test created;
+- [x] monolith re-imports parsers; call sites unchanged;
+- [x] monolith net-shrink confirmed; registry cap lowered to match;
+- [x] full dispatch-quality suite green (unchanged pass count);
+- [x] Python size guard COMPLIANT with lowered cap;
+- [x] worker-return packet authored; no worker commit;
+- [x] reviewer independently reran the suite and confirmed behavior preservation;
+- [x] roadmap T1 moved to done; T2-T4 still held;
+- [x] GC-018 and work order closed;
+- [x] session continuity synced after the closing commit.
 
 ## Operator Checkpoint
 
@@ -392,6 +392,22 @@ commit and does not close.
 | Before status evidence | clean worktree at dispatch base `47a473fc` |
 | nextMoveSurfaces | Claude updates next-move surfaces only after review if mode or next allowed move changes |
 | Closer designation | Claude is the designated reviewer and closer |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Roadmap state | `docs/roadmaps/CVF_GOVERNED_PYTHON_FILE_SIZE_COVERAGE_ROADMAP_2026-06-25.md` | T1 done; T2 work-order-ready; T3-T4 held | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFS_PY_T1_DISPATCH_QUALITY_HELPER_SPLIT_COMPLETION_2026-06-25.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `governance/compat/CVF_PYTHON_AUTOMATION_SIZE_EXCEPTION_REGISTRY.json` | monolith approvedMaxLines lowered to 2972 | PASS |
+| Registry Markdown | N/A with reason | the Python size guard has no companion markdown registry | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence imported | N/A with reason |
+| System loop interlock | this file | T0 closure was required before T1; T1 closure is required before T2 | PASS |
+| Session continuity | active session sync after the closing commit | separate session-sync lane | PASS |
+| Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Runtime/provider/live | N/A with reason | no runtime/provider/live claim | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
