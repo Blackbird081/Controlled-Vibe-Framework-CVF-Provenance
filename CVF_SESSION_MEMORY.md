@@ -827,8 +827,8 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 Mode: `assf_t6_closed_pass_bounded_pending_next_selection`.
 
-Latest material HEAD: `49661fc6` (ASSF-T6 closure `489ff38a` plus
-ADIF-0010/0011/0012 learning records).
+Latest material HEAD: `b31b4aca` (ASSF-T6 Codex final-review addendum after
+closure `489ff38a` and ADIF-0010/0011/0012 learning records `49661fc6`).
 
 Next allowed move: operator may select among:
 

@@ -37,13 +37,10 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after ASSF-T6
-closure material commit `489ff38a` and ADIF-0010/0011/0012 learning-record
-commit `49661fc6`. This sync advances the handoff HEAD block, startup
-acknowledgment, current mode, next-move wording, `CVF_SESSION_MEMORY.md`, and
-generated active session state after Codex review. The material commits already
-created the T6 closure artifacts and ADIF entries; this dedicated sync changes
-continuity surfaces and the Codex final-review addendum in the T6 completion
-review.
+Codex final-review addendum commit `b31b4aca`. This sync advances the handoff
+HEAD block and next-move pointers after the material review commit. The
+material commits already created the T6 closure artifacts, ADIF entries, and
+Codex review addendum; this dedicated sync changes only continuity surfaces.
 
 Protected paths:
 
@@ -70,13 +67,13 @@ Operator authorization: the operator selected ASSF-T6 after ASSF-T5, asked
 Codex to create the work order for Claude to execute, and returned after Claude
 reported completion for Codex review.
 
-Rollback boundary: revert only this session-sync/reviewer-addendum commit if
-rejected; do not revert ASSF-T6 closure `489ff38a`, ADIF learning records
-`49661fc6`, ASSF-T6 dispatch `229725e0`, ASSF-T5 reviewer evidence repair
-`d0a24e90`, ASSF-T5 closure `afeb2673`, the gotchas checklist material commit
-`ec3975f8`, GFS-PY-T1 material commit `fad16208`, EQC-T1 closure material
-commit `ccee892d`, MPI-T5 dispatch commit `501fcafa`, MPI-T4 closure, or
-earlier session history.
+Rollback boundary: revert only this session-sync commit if rejected; do not
+revert ASSF-T6 Codex review addendum `b31b4aca`, ASSF-T6 closure `489ff38a`,
+ADIF learning records `49661fc6`, ASSF-T6 dispatch `229725e0`, ASSF-T5
+reviewer evidence repair `d0a24e90`, ASSF-T5 closure `afeb2673`, the gotchas
+checklist material commit `ec3975f8`, GFS-PY-T1 material commit `fad16208`,
+EQC-T1 closure material commit `ccee892d`, MPI-T5 dispatch commit `501fcafa`,
+MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
@@ -112,11 +109,13 @@ ASSF-T6 closure and gate-fix material HEAD: `489ff38a`
 
 ADIF-0010/0011/0012 entry material HEAD: `49661fc6`
 
-Current material HEAD recorded for this handoff: `49661fc6`
+ASSF-T6 Codex final-review addendum material HEAD: `b31b4aca`
 
-Prior material HEAD recorded for this handoff (ASSF-T6 closure): `489ff38a`
+Current material HEAD recorded for this handoff: `b31b4aca`
 
-Prior-prior material HEAD recorded for this handoff (ASSF-T6 dispatch): `229725e0`
+Prior material HEAD recorded for this handoff (ADIF-0010/0011/0012 entries): `49661fc6`
+
+Prior-prior material HEAD recorded for this handoff (ASSF-T6 closure): `489ff38a`
 
 Prior-prior material HEAD recorded for this handoff (ASSF-T5 closure): `afeb2673`
 
@@ -346,8 +345,8 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ASSF-T6 CVF Web Projection And Existing Example Migration is
 `CLOSED_PASS_BOUNDED` at material commit `489ff38a`; ADIF-0010/0011/0012
-learning records are committed at `49661fc6`. Next allowed move: operator may
-select among:
+learning records are committed at `49661fc6`; Codex final-review addendum is
+committed at `b31b4aca`. Next allowed move: operator may select among:
 
 - ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard;
 - GFS-PY T2 dispatch-quality monolith-split tranche;
