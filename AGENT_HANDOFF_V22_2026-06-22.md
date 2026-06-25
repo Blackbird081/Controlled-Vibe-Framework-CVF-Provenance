@@ -140,6 +140,8 @@ STATE-BR-T1 handoff bridge HEAD: `8f54c0d7`
 
 STATE-BR-T1 closure material HEAD: `4ddf5352`
 
+STATE-BR-T1 closure session-sync HEAD: `e0febe76`
+
 Current material HEAD recorded for this handoff: `4ddf5352`
 
 Prior material HEAD recorded for this handoff (STATE-BR-T1 dispatch): `06d54319`
