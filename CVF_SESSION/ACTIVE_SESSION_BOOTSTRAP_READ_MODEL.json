@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection",
+  "currentMode": "assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V22_2026-06-22.md",
-  "nextAllowedMove": "Work-order dispatch scaffold optimization is CLOSED_PASS_BOUNDED at material commit d08e8ab6, with GC-020 bootstrap read-model session-sync classifier hotfix at 59197332. Next allowed move: operator may select ASSF-PIC-T2 manual UAT/certification review only through fresh GC-018 and a source-verified work order, or select another bounded governance lane. ASSF-PIC-T2 remains parked until explicitly selected; do not create a package instance or make a certification decision from this sync. No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, or package instruction execution is released. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "ASSF-PIC-T2 Manual UAT And Certification Review is DISPATCHED_TO_WORKER at material commit 7cf1b2cb. Next allowed move: Claude worker executes the committed work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Codex reviewer then performs reviewer closure conversion if accepted. No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, active session mutation by worker, or worker commit is authorized. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

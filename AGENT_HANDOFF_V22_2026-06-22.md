@@ -17,9 +17,9 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record work-order dispatch scaffold optimization closure continuity and
-route the next allowed move to operator-selected ASSF-PIC-T2 GC-018/work order
-or another bounded governance lane.
+Target: record ASSF-PIC-T2 manual UAT/certification review dispatch continuity
+and route the next allowed move to Claude worker execution under the committed
+no-commit work order.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -41,12 +41,10 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-work-order dispatch scaffold optimization material commit `d08e8ab6` and
-GC-020 bootstrap read-model classifier hotfix material commit `59197332`.
-This sync advances the handoff HEAD block, generated active session state,
-bootstrap read model, front door, and next-move pointers while routing
-ASSF-PIC-T2 to parked status unless explicitly selected through fresh GC-018
-and a source-verified work order.
+ASSF-PIC-T2 dispatch material commit `7cf1b2cb`. This sync advances the
+handoff HEAD block, generated active session state, bootstrap read model, front
+door, and next-move pointers while routing ASSF-PIC-T2 to Claude worker
+execution under `WORKER_MUST_NOT_COMMIT`.
 
 Protected paths:
 
@@ -54,16 +52,17 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json`
+- `CVF_SESSION/state/entries/assfPicT2ManualUatCertificationReviewDispatch20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator instructed Codex to self-handle Claude T1
-feedback and optimize dispatch authoring, then synchronize session continuity
-after the material commit.
+Operator authorization: the operator instructed Codex to issue the ASSF-PIC-T2
+work order, continue until done, and synchronize session continuity after the
+material commit.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert GC-020 bootstrap classifier hotfix material `59197332`,
+revert ASSF-PIC-T2 dispatch material `7cf1b2cb`,
+GC-020 bootstrap classifier hotfix material `59197332`,
 work-order dispatch scaffold optimization material `d08e8ab6`,
 ASSF-PIC-T1 closure material `11a49bbd`, ASSF-PIC-T1 dispatch material `af09f072`,
 worker-return/report enforcement material `3ab844fd`,
@@ -81,7 +80,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`
+`assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -157,9 +156,11 @@ Work-order dispatch scaffold optimization material HEAD: `d08e8ab6`
 
 Work-order dispatch scaffold optimization GC-020 bootstrap classifier hotfix material HEAD: `59197332`
 
-Current material HEAD recorded for this handoff: `59197332`
+ASSF-PIC-T2 manual UAT/certification review dispatch material HEAD: `7cf1b2cb`
 
-Current session-sync parent material HEAD recorded for this handoff: `59197332`
+Current material HEAD recorded for this handoff: `7cf1b2cb`
+
+Current session-sync parent material HEAD recorded for this handoff: `7cf1b2cb`
 
 Prior session-sync HEAD recorded for this handoff: `f5d3a499`
 
@@ -241,6 +242,21 @@ front doors, state sources, handoffs, standards, work orders, reviews, and
 runtime source as authority.
 
 ## Latest Work / Changes
+
+ASSF-PIC-T2 Manual UAT And Certification Review is dispatched to Claude at
+material commit `7cf1b2cb`. Accepted dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_FOR_CLAUDE_2026-06-26.md`
+
+Worker boundary: Claude must execute under `WORKER_MUST_NOT_COMMIT` and may
+return only `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Codex reviewer
+owns closure conversion if accepted. No package instance creation,
+certification decision, lifecycle-state mutation, generated-index mutation,
+registry-source mutation, resolver mutation, Web runtime change, CLI/MCP
+adapter behavior, provider/live proof, public-sync, push, activation,
+readiness, package instruction execution, active session mutation by worker, or
+worker commit is authorized.
 
 Work-order dispatch scaffold optimization is closed bounded at material commit
 `d08e8ab6`. It handled Claude T1 feedback before ASSF-PIC-T2: worker-return
@@ -474,19 +490,20 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Operator may select ASSF-PIC-T2 manual UAT/certification review only through
-fresh GC-018 and a source-verified work order, or select another bounded
-governance lane.
+ASSF-PIC-T2 Manual UAT And Certification Review is dispatched to Claude at
+material commit `7cf1b2cb`.
 
-ASSF-PIC-T2 manual UAT/certification review remains parked until explicitly
-selected. Do not dispatch PIC-T2, create a package instance, or make a
-certification decision from this sync.
+Next allowed move: Claude worker executes the committed work order under
+`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex reviewer then performs reviewer closure
+conversion if accepted.
 
 No package instance creation, certification decision, `SKILL.md`,
 `skill.source.json`, generated-index mutation, registry-source mutation,
 resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior,
-provider/live proof, public-sync, push, activation, readiness, worker commit,
-or package instruction execution is released.
+provider/live proof, public-sync, push, activation, readiness, active session
+mutation by worker, worker commit, or package instruction execution is
+released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -531,7 +548,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator may select ASSF-PIC-T2 manual UAT/certification review only through fresh GC-018 and a source-verified work order, or select another bounded governance lane; parked checkpoint=ASSF-PIC-T2 remains parked until explicitly selected.
+Startup acknowledged: current mode=`assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude worker executes the committed ASSF-PIC-T2 work order under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; parked checkpoint=no package instance creation or certification decision is authorized.
 
 ## Parked Checkpoints
 
@@ -557,8 +574,8 @@ Startup acknowledged: current mode=`assf_pic_t1_dispatch_authoring_optimization_
   commit `3ab844fd`.
 - ASSF-PIC-T1 evidence skeleton hardening is closed bounded at material commit
   `11a49bbd`; work-order dispatch scaffold optimization is closed bounded at
-  material commit `d08e8ab6`; ASSF-PIC-T2 is parked pending explicit operator
-  selection through fresh GC-018 and a source-verified work order.
+  material commit `d08e8ab6`; ASSF-PIC-T2 is dispatched to Claude at material
+  commit `7cf1b2cb` under `WORKER_MUST_NOT_COMMIT`.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -619,29 +636,29 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | WODS-T1 dispatch-authoring optimization session sync, 2026-06-26 |
+| Session or invocation | ASSF-PIC-T2 manual UAT/certification review dispatch session sync, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | apply_patch, active-session compatibility gate, git commit |
-| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json` |
-| Allowed scope source | GC-020 session-sync update after material commit `d08e8ab6` |
-| Before status evidence | material commit `d08e8ab6`; active-session checker required handoff HEAD update |
-| After status evidence | active handoff records parent material SHA `d08e8ab6` for dedicated session-sync validation |
-| Diff evidence | `git diff --name-status`, active-session compatibility gate, and session-sync commit steward |
+| Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT2ManualUatCertificationReviewDispatch20260626.json` |
+| Allowed scope source | GC-020 session-sync update after ASSF-PIC-T2 dispatch material commit `7cf1b2cb` |
+| Before status evidence | material commit `7cf1b2cb`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `7cf1b2cb` for dedicated session-sync validation |
+| Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, or certification decision |
 | Agent type | session-sync steward |
-| Invocation ID | `wods-t1-dispatch-authoring-optimization-session-sync-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json` |
+| Invocation ID | `assf-pic-t2-manual-uat-certification-review-dispatch-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT2ManualUatCertificationReviewDispatch20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT2ManualUatCertificationReviewDispatch20260626.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records work-order dispatch
-scaffold optimization closure at `d08e8ab6` and routes the next move to
-operator-selected ASSF-PIC-T2 GC-018/work order or another bounded governance
-lane. It does not dispatch ASSF-PIC-T2, create a package instance, certify a
-package, or expand package root/index/resolver, external CLI/MCP adapter
+This handoff is session continuity only. It records ASSF-PIC-T2 manual
+UAT/certification review dispatch at material commit `7cf1b2cb` and routes the
+next move to Claude worker execution under the committed no-commit work order.
+It does not create a package instance, certify a package, mutate lifecycle
+state, or expand package root/index/resolver, external CLI/MCP adapter
 implementation, runtime/provider/live/public behavior, activation, readiness,
 or automatic promotion.

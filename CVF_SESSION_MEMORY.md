@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`
+Current mode marker: `assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`.
+Current mode: `assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`.
 
-Previous mode: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`.
+Previous mode: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`.
 
 Active handoff:
 
@@ -65,6 +65,21 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-PIC-T2 Manual UAT And Certification Review is dispatched to Claude at
+material commit `7cf1b2cb`. Accepted dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_FOR_CLAUDE_2026-06-26.md`
+
+Next allowed move: Claude worker executes the committed work order under
+`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex reviewer owns closure conversion if accepted. No
+package instance creation, certification decision, lifecycle-state mutation,
+generated-index mutation, registry-source mutation, resolver mutation, Web
+runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync,
+push, activation, readiness, package instruction execution, active session
+mutation by worker, or worker commit is authorized.
 
 Work-order dispatch scaffold optimization is closed bounded at material commit
 `d08e8ab6`, with GC-020 bootstrap read-model session-sync classifier hotfix at
@@ -93,9 +108,8 @@ package instance, certification decision, lifecycle-state advancement, index,
 resolver, Web, adapter, provider/live, public-sync, push, activation,
 readiness, or package-execution release. The worker-return/report friction
 trial follow-up is now closed at `d08e8ab6` plus hotfix `59197332`.
-ASSF-PIC-T2 remains parked until
-the operator explicitly selects it through fresh GC-018 and a source-verified
-work order.
+ASSF-PIC-T2 is now dispatched at material commit `7cf1b2cb` for Claude worker
+execution under `WORKER_MUST_NOT_COMMIT`.
 
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
@@ -939,19 +953,18 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`.
+Mode: `assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`.
 
-Latest material HEAD: `59197332` (GC-020 bootstrap read-model session-sync
-classifier hotfix after work-order dispatch scaffold optimization closure
-`d08e8ab6`).
+Latest material HEAD: `7cf1b2cb` (ASSF-PIC-T2 manual UAT/certification review
+dispatch).
 
-Next allowed move: operator may select ASSF-PIC-T2 manual UAT/certification
-review only through fresh GC-018 and a source-verified work order, or select
-another bounded governance lane.
+Next allowed move: Claude worker executes the committed ASSF-PIC-T2 work order
+under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Codex reviewer then performs reviewer closure
+conversion if accepted.
 
-ASSF-PIC-T2 manual UAT/certification review remains parked until explicitly
-selected. Do not create a package instance or make a certification decision
-from this sync.
+Do not create a package instance or make a certification decision from this
+sync.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 
