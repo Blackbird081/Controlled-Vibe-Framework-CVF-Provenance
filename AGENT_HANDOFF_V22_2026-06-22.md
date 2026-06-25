@@ -17,9 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record STATE-BR-T1 dispatch continuity and route Claude worker
-execution for the Active Session State Bootstrap Read Model And Aggregate Size
-Refactor checkpoint.
+Target: record STATE-BR-T1 closure continuity and route the next allowed move
+to ASSF-PIC-T1 GC-018/work-order creation only.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -42,11 +41,11 @@ authorization and the sibling public-sync clone with remote verification.
 
 Authorized guard-maintenance scope: session-sync continuity update after
 STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size
-Refactor dispatch material commit `06d54319`. This sync advances the handoff
+Refactor closure material commit `4ddf5352`. This sync advances the handoff
 HEAD block, current mode, generated active session state, front door, and
-next-move pointers to Claude worker execution without releasing ASSF-PIC-T1,
-package instance, certification, generated-index, resolver, Web, adapter,
-provider/live, public-sync, or push scope.
+next-move pointers to ASSF-PIC-T1 GC-018/work-order creation only without
+releasing package instance, certification, generated-index, resolver, Web,
+adapter, provider/live, public-sync, or push scope.
 
 Protected paths:
 
@@ -56,6 +55,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/assfPicT0Closure20260625.json`
 - `CVF_SESSION/state/entries/assfPicT0Dispatch20260625.json`
 - `CVF_SESSION/state/entries/stateBrT1Dispatch20260625.json`
+- `CVF_SESSION/state/entries/stateBrT1Closure20260626.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
@@ -82,7 +82,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`state_br_t1_dispatched_pending_claude_worker_return`
+`state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -136,7 +136,13 @@ STATE-BR-T1 dispatch material HEAD: `06d54319`
 
 STATE-BR-T1 bootstrap read-model surface HEAD: `4c0d29e0`
 
-Current material HEAD recorded for this handoff: `06d54319`
+STATE-BR-T1 handoff bridge HEAD: `8f54c0d7`
+
+STATE-BR-T1 closure material HEAD: `4ddf5352`
+
+Current material HEAD recorded for this handoff: `4ddf5352`
+
+Prior material HEAD recorded for this handoff (STATE-BR-T1 dispatch): `06d54319`
 
 Prior material HEAD recorded for this handoff (ASSF-PIC-T0 closure): `24b49017`
 
@@ -212,17 +218,18 @@ runtime source as authority.
 ## Latest Work / Changes
 
 STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size
-Refactor is dispatched to Claude at material commit `06d54319`. Accepted
-dispatch artifacts:
+Refactor is closed bounded at material commit `4ddf5352`. Protected bootstrap
+surface commit: `4c0d29e0`; handoff bridge commit: `8f54c0d7`. Closure
+artifacts:
 
 - `docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_2026-06-25.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md`
+- `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_COMPLETION_2026-06-25.md`
+- `docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_WORKER_RETURN_2026-06-25.md`
 
-Result: STATE-BR-T1 is ready for Claude worker execution only. Claude must not
-commit and may update only the active-session generator/checker/test/front-door
-and bootstrap read-model paths named in the work order. Codex owns review,
-commit, closure conversion, and session sync after worker return. ASSF-PIC-T1
-remains held.
+Result: compact startup bootstrap read model exists and validates with the full
+active-session aggregate. Next allowed move is ASSF-PIC-T1 GC-018 baseline and
+source-verified work-order creation only.
 
 ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is dispatched to
 Claude at material commit `9e08f11a`. Accepted dispatch artifacts:
@@ -408,15 +415,11 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size
-Refactor is dispatched to Claude at material commit `06d54319`. Claude may
-execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md`
-in `WORKER_MUST_NOT_COMMIT` mode and return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`.
+Create ASSF-PIC-T1 GC-018 baseline and source-verified work order for package
+instance evidence and skeleton hardening only.
 
-ASSF-PIC-T1 package instance evidence and skeleton hardening remains held until
-STATE-BR-T1 closes. No package instance creation, certification decision,
+ASSF-PIC-T1 implementation remains held until that new work order is authored,
+reviewed, and dispatched. No package instance creation, certification decision,
 `SKILL.md`, `skill.source.json`, generated-index mutation, registry-source
 mutation, resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior,
 provider/live proof, public-sync, push, activation, readiness, or package
@@ -465,7 +468,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`state_br_t1_dispatched_pending_claude_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size Refactor in WORKER_MUST_NOT_COMMIT mode; parked checkpoint=ASSF-PIC-T1 held until that refactor closes; no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
+Startup acknowledged: current mode=`state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=create ASSF-PIC-T1 GC-018 baseline and source-verified work order only; parked checkpoint=no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
 
 ## Parked Checkpoints
 
@@ -486,9 +489,9 @@ Startup acknowledged: current mode=`state_br_t1_dispatched_pending_claude_worker
 - ASSF-PIC roadmap is ready at material commit `916c6908`.
 - ASSF-PIC-T0 is closed bounded at material commit `24b49017`; selected
   candidate is `cvf-dispatch-quality-reviewer`.
-- STATE-BR-T1 is dispatched to Claude at material commit `06d54319`.
-- ASSF-PIC-T1 remains held until Active Session State Bootstrap Read Model And
-  Aggregate Size Refactor closes.
+- STATE-BR-T1 is closed bounded at material commit `4ddf5352`.
+- ASSF-PIC-T1 is released only for GC-018 baseline and source-verified work
+  order creation; implementation remains held until that packet is dispatched.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
