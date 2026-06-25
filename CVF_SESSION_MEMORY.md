@@ -32,13 +32,15 @@ Compaction archive (prior closed-tranche prose from this file):
 ## Startup Order
 
 1. Read this file.
-2. Resolve machine-readable state:
+2. Read compact startup facts (current mode, active handoff, next allowed move):
+   `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+3. Resolve full canonical state when complete state is required:
    `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. Resolve review queue:
+4. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-4. Resolve active handoff from the state registry:
+5. Resolve active handoff from the state registry:
    `AGENT_HANDOFF_V22_2026-06-22.md`
-5. Read mandatory startup guards listed in the state registry.
+6. Read mandatory startup guards listed in the state registry.
 
 ## Current State
 

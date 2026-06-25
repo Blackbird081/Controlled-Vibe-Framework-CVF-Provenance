@@ -31,6 +31,8 @@ Active handoff: `AGENT_HANDOFF_V22_2026-06-22.md`.
 
 Active state registry: `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
+Active bootstrap read model: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (compact startup facts; read before full registry when only mode/handoff/next-move are needed).
+
 Active front door: `CVF_SESSION_MEMORY.md`.
 
 This provenance workspace remains private. Public changes require separate
