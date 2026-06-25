@@ -147,9 +147,11 @@ ASSF-PIC-T1 evidence skeleton dispatch session-sync HEAD: `0ee48d23`
 
 ASSF-PIC-T1 evidence skeleton closure material HEAD: `11a49bbd`
 
+ASSF-PIC-T1 evidence skeleton closure session-sync HEAD: `f5d3a499`
+
 Current material HEAD recorded for this handoff: `11a49bbd`
 
-Current session-sync HEAD recorded for this handoff: `0ee48d23`
+Current session-sync HEAD recorded for this handoff: `f5d3a499`
 
 Prior material HEAD recorded for this handoff (worker-return/report enforcement): `3ab844fd`
 
@@ -599,20 +601,20 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ASSF-PIC-T1 closure session-sync, 2026-06-26 |
+| Session or invocation | ASSF-PIC-T1 closure handoff-head bridge, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, active-session compatibility gate, git commit |
-| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V22_2026-06-22.md` |
-| Allowed scope source | session-sync requirement after ASSF-PIC-T1 closure material `11a49bbd` |
-| Before status evidence | material closure commit `11a49bbd`; worktree clean before session-sync edits |
-| After status evidence | pending session-sync commit |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Allowed scope source | GC-020 handoff HEAD update after session-sync commit `f5d3a499` |
+| Before status evidence | session-sync commit `f5d3a499`; active-session checker required handoff HEAD update |
+| After status evidence | active handoff records session-sync parent SHA `f5d3a499` for dedicated handoff-head bridge validation |
 | Diff evidence | `git diff --name-status` and active-session compatibility gate |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `assf-pic-t1-closure-session-sync-2026-06-26` |
-| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V22_2026-06-22.md` |
-| Actual changed set | pending session-sync diff |
+| Invocation ID | `assf-pic-t1-closure-handoff-head-bridge-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
