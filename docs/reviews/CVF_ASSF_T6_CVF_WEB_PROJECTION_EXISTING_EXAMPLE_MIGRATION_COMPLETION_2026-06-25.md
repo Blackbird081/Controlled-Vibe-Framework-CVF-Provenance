@@ -27,7 +27,7 @@ findings before this closure is final.
 | Reviewer role | Claude (worker/reviewer combined for this closure packet); Codex final validation required |
 | Dispatch base HEAD | `15f1ea2a` |
 | Execution base HEAD | `ffa421f2` |
-| Material commit | Codex records after review closure |
+| Material commit | `489ff38a` |
 
 ## Risk / Corrective Action
 
@@ -60,6 +60,25 @@ The reviewer verified:
 | 4 | External CLI/MCP adapter disposition: `DEFERRED_WITH_REASON` for all entries | Recorded in projection contract adapter-separation invariant | ACCEPTED |
 
 No blocking findings. No forbidden-scope violations detected.
+
+## Codex Final Review Addendum
+
+Codex final review on 2026-06-25 accepts ASSF-T6 as
+`CLOSED_PASS_BOUNDED` after independent gate verification.
+
+Additional reviewer findings:
+
+| # | Finding | Evidence | Disposition |
+|---|---|---|---|
+| C1 | T6 material range is gate-clean when checked from the correct execution base | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base ffa421f2 --head 489ff38a` passed 47/47 after Codex session repair | ACCEPTED |
+| C2 | Claude added ADIF-0010/0011/0012 and updated the ADIF entries README after T6 closure | `python governance/compat/check_adif_entry_integrity.py --enforce` reports 12 entries checked and 0 violations | ACCEPTED_AS_BOUNDED_LEARNING_RECORD |
+| C3 | Commit `49661fc6` mixed ADIF material entries with an active-handoff protected-path update | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 489ff38a --head 49661fc6` stopped at committed-range shape preflight | REPAIRED_BY_CODEX_SESSION_SYNC |
+
+Reviewer decision: accept T6 material closure at `489ff38a`; accept ADIF
+entries at `49661fc6` as bounded learning records; preserve the commit-shape
+finding as reviewer evidence. This does not authorize runtime Web code,
+generated-index mutation, package activation, public-sync, provider/live proof,
+or CLI/MCP adapter behavior.
 
 ## Acceptance Criteria Check
 
