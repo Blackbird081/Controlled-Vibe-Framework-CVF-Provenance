@@ -36,16 +36,16 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: add the cross-agent
-"Mandatory Value-Parked Lane Reopen Discipline" rule to `AGENTS.md` and
-`CLAUDE.md`, and rewrite the EQC-T2 reopen-condition prose in
-`nextAllowedMove` to be concrete and checkable, after EQC-T1 Worker Return
-Equivalence Claim Evidence Linter closure at material commit `ccee892d`.
+Authorized guard-maintenance scope: session-sync continuity update after the
+GFS-PY-T1 Governed Python File Size Coverage material commit `fad16208`
+(class-aware Python size guard upgrade, registry seed, local + autorun
+wiring). This sync advances the current mode, the handoff HEAD block, the
+active session state sources, and `CVF_SESSION_MEMORY.md`. The material commit
+itself already changed the guard checkers and registry; this dedicated
+session-sync commit changes only continuity surfaces.
 
 Protected paths:
 
-- `AGENTS.md`
-- `CLAUDE.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/aafT7CReviewerScaffoldShapeHardeningClosure20260622.json`
@@ -65,20 +65,25 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator observed that the EQC-T2
-deferred-for-low-value decision was only recorded in Claude's own session
-memory and directed that the rule and the reopen condition be made visible
-to every agent through CVF-governed artifacts, on 2026-06-25.
+Operator authorization: the operator selected GFS-PY-T1 to close the governed
+Python file-size coverage blind spot and confirmed the per-class thresholds,
+the touch rule, the wiring point, and the non-governance deferral on
+2026-06-25.
 
-Rollback boundary: revert only this rule-addition commit if rejected; do not
-revert the EQC-T1 closure material commit `ccee892d`, the EQC-T1 session-sync
-commit `92199d9f`, MPI-T5 dispatch commit `501fcafa`, AAF-T7C material commit
-`b7601865`, LPF config material commit
+Rollback boundary: revert only this session-sync commit if rejected; do not
+revert the GFS-PY-T1 material commit `fad16208`, the Value-Parked Lane Reopen
+Discipline standard commit `75af9858`, the EQC-T1 closure material commit
+`ccee892d`, the EQC-T1 session-sync commit `92199d9f`, MPI-T5 dispatch commit
+`501fcafa`, AAF-T7C material commit `b7601865`, LPF config material commit
 `bf8ff950`, MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`eqc_t1_closed_pass_bounded_assf_t5_still_parked`
+`gfs_py_t1_closed_pass_bounded_t2_t4_split_held`
+
+GFS-PY-T1 governed Python file size coverage material HEAD: `fad16208`
+
+Value-Parked Lane Reopen Discipline standard material HEAD: `75af9858`
 
 ADIF-T0 checkpoint review HEAD: `6277cb28`
 
@@ -90,11 +95,11 @@ ADIF continuous execution dispatch HEAD: `783b2b8a`
 
 MPI-T6 decision material HEAD: `14f8e5f9`
 
-Current material HEAD recorded for this handoff: `ccee892d`
+Current material HEAD recorded for this handoff: `fad16208`
 
-Prior material HEAD recorded for this handoff: `1c89d540`
+Prior material HEAD recorded for this handoff: `75af9858`
 
-Prior session-sync HEAD recorded for this handoff: `a63de6d3`
+Prior session-sync HEAD recorded for this handoff: `92199d9f`
 
 EQC-T1 worker return equivalence claim evidence linter closure material HEAD: `ccee892d`
 
