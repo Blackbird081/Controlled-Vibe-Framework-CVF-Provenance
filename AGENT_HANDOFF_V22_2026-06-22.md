@@ -138,6 +138,8 @@ STATE-BR-T1 closure session-sync HEAD: `e0febe76`
 
 Worker-return/report enforcement friction reduction material HEAD: `3ab844fd`
 
+Worker-return/report enforcement session-sync HEAD: `ae74b40f`
+
 Current material HEAD recorded for this handoff: `3ab844fd`
 
 Prior material HEAD recorded for this handoff (STATE-BR-T1 closure): `4ddf5352`
