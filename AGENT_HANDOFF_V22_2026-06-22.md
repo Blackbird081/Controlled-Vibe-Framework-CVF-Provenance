@@ -78,7 +78,7 @@ or earlier session history.
 
 ## Current Mode
 
-`assf_t6_dispatched_to_claude_pending_worker_return`
+`assf_t6_closed_pass_bounded_adif_entries_pending_codex_review`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -106,9 +106,15 @@ ASSF-T5 reviewer evidence repair material HEAD: `d0a24e90`
 
 ASSF-T6 dispatch material HEAD: `229725e0`
 
-Current material HEAD recorded for this handoff: `229725e0`
+ASSF-T6 closure and gate-fix material HEAD: `489ff38a`
 
-Prior material HEAD recorded for this handoff (ASSF-T5 reviewer repair): `d0a24e90`
+ADIF-0010/0011/0012 entry material HEAD: pending ADIF commit
+
+Current material HEAD recorded for this handoff: `489ff38a`
+
+Prior material HEAD recorded for this handoff (ASSF-T6 dispatch): `229725e0`
+
+Prior-prior material HEAD recorded for this handoff (ASSF-T5 reviewer repair): `d0a24e90`
 
 Prior-prior material HEAD recorded for this handoff (ASSF-T5 closure): `afeb2673`
 
@@ -377,7 +383,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_t6_dispatched_to_claude_pending_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes ASSF-T6 from the dispatched GC-018 baseline and work order at material commit `229725e0`, then returns `COMPLETE_PENDING_REVIEW` to Codex; parked checkpoint=Codex review and session-sync remain pending after Claude worker return; no runtime/provider/live/public-sync/adapter authorization released.
+Startup acknowledged: current mode=`assf_t6_closed_pass_bounded_adif_entries_pending_codex_review`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Codex reviews ASSF-T6 closure artifacts at material commit `489ff38a` and performs session-sync; parked checkpoint=Codex review and session-sync pending; ADIF-0010/0011/0012 entries committed; no runtime/provider/live/public-sync/adapter authorization released.
 
 ## Parked Checkpoints
 
