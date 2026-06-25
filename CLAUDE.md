@@ -203,6 +203,21 @@ MA1 section references must match
 exactly. Do not invent MA1 labels such as `Input Package`, `Purpose`, or
 `Return Protocol`.
 
+## Governed Artifact Literal-Format Gotchas
+
+Before drafting a GC-018, work order, worker-return, or completion review,
+read:
+
+`docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+It is a pre-write checklist of literal-format failure modes already hit by
+`governance/compat/check_*.py` gates (self-recomputed line numbers,
+word-wrapped multi-word terms, trailing punctuation after verdict tokens,
+bare directory-path substrings, heading-collision false matches, ADIF
+disclosure query exactness, and more). Reading it before writing avoids
+discovering these one gate-run at a time. Any new literal-format trap found
+while authoring an artifact should be added there in the same batch.
+
 ---
 
 ## Commands
