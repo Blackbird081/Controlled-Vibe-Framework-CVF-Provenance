@@ -51,6 +51,7 @@ provider/live, public-sync, or push scope.
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/assfPicT0Closure20260625.json`
 - `CVF_SESSION/state/entries/assfPicT0Dispatch20260625.json`
@@ -132,6 +133,8 @@ ASSF-PIC-T0 handoff HEAD bridge: `78b9e270`
 ASSF-PIC-T0 closure material HEAD: `24b49017`
 
 STATE-BR-T1 dispatch material HEAD: `06d54319`
+
+STATE-BR-T1 bootstrap read-model surface HEAD: `4c0d29e0`
 
 Current material HEAD recorded for this handoff: `06d54319`
 
