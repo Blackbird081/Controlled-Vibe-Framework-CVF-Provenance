@@ -66,6 +66,16 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Worker-return/report enforcement friction reduction is recorded at material
+commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
+receipt presence, protected paths, public/provenance boundary, and runtime/
+provider/live claims, while reducing non-critical report-format hard-fails:
+plain `unchanged` status wording is no longer an equivalence hard trigger,
+`## Findings / Position` alone no longer creates a learning-disposition burden,
+non-corpus worker returns may use compact
+`NOT_APPLICABLE_WITH_REASON`, and a bounded worker-return scaffold helper now
+exists at `governance/compat/run_worker_return_scaffold.py`.
+
 STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size
 Refactor is closed bounded at material commit `4ddf5352`. Protected bootstrap
 surface commit: `4c0d29e0`; handoff bridge commit: `8f54c0d7`. Closure
@@ -900,9 +910,8 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 Mode: `state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`.
 
-Latest material HEAD: `4ddf5352` (STATE-BR-T1 active-session bootstrap read
-model refactor closure after bootstrap surface commit `4c0d29e0` and handoff
-bridge `8f54c0d7`).
+Latest material HEAD: `3ab844fd` (worker-return/report enforcement friction
+reduction after STATE-BR-T1 closure `4ddf5352`).
 
 Next allowed move: create ASSF-PIC-T1 GC-018 baseline and source-verified work
 order for package instance evidence and skeleton hardening only.

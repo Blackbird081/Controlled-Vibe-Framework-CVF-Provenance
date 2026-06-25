@@ -17,8 +17,9 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record STATE-BR-T1 closure continuity and route the next allowed move
-to ASSF-PIC-T1 GC-018/work-order creation only.
+Target: record worker-return/report enforcement friction reduction continuity
+and keep the next allowed move routed to ASSF-PIC-T1 GC-018/work-order
+creation only.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,35 +41,28 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size
-Refactor closure material commit `4ddf5352`. This sync advances the handoff
-HEAD block, current mode, generated active session state, front door, and
-next-move pointers to ASSF-PIC-T1 GC-018/work-order creation only without
-releasing package instance, certification, generated-index, resolver, Web,
-adapter, provider/live, public-sync, or push scope.
+worker-return/report enforcement friction reduction material commit
+`3ab844fd`. This sync advances the handoff HEAD block, generated active
+session state, bootstrap read model, front door, and next-move pointers while
+keeping ASSF-PIC-T1 implementation held until GC-018/work-order creation.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/assfPicT0Closure20260625.json`
-- `CVF_SESSION/state/entries/assfPicT0Dispatch20260625.json`
-- `CVF_SESSION/state/entries/stateBrT1Dispatch20260625.json`
-- `CVF_SESSION/state/entries/stateBrT1Closure20260626.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/workerReturnReportEnforcementFrictionReduction20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator requested the T1 work order after the
-active-session aggregate-size blocker and directed that ASSF-PIC-T1 remain held
-until Active Session State Bootstrap Read Model And Aggregate Size Refactor is
-handled.
+Operator authorization: the operator requested immediate handling of the
+worker-return/report enforcement pressure and asked to separate strict controls
+from non-critical report format so time and token quota are not burned on
+repeated format repairs.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert STATE-BR-T1 dispatch `06d54319`, ASSF-PIC-T0 closure `24b49017`,
-handoff bridge `78b9e270`,
+revert worker-return/report enforcement material `3ab844fd`,
+STATE-BR-T1 dispatch `06d54319`, ASSF-PIC-T0 closure `24b49017`, handoff bridge `78b9e270`,
 ASSF-PIC-T0 dispatch `9e08f11a`, ASSF-PIC roadmap `916c6908`,
 ASSF-T7 closure `e76e4d09`, ASSF-T7 dispatch `3a3bbe05`, ADIF authoring
 hardening `8afbe0aa`,
@@ -142,7 +136,11 @@ STATE-BR-T1 closure material HEAD: `4ddf5352`
 
 STATE-BR-T1 closure session-sync HEAD: `e0febe76`
 
-Current material HEAD recorded for this handoff: `4ddf5352`
+Worker-return/report enforcement friction reduction material HEAD: `3ab844fd`
+
+Current material HEAD recorded for this handoff: `3ab844fd`
+
+Prior material HEAD recorded for this handoff (STATE-BR-T1 closure): `4ddf5352`
 
 Prior material HEAD recorded for this handoff (STATE-BR-T1 dispatch): `06d54319`
 
@@ -218,6 +216,16 @@ front doors, state sources, handoffs, standards, work orders, reviews, and
 runtime source as authority.
 
 ## Latest Work / Changes
+
+Worker-return/report enforcement friction reduction is recorded at material
+commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
+receipt presence, protected paths, public/provenance boundary, and runtime/
+provider/live claims, while reducing non-critical report-format hard-fails:
+plain `unchanged` status wording is no longer an equivalence hard trigger,
+`## Findings / Position` alone no longer creates a learning-disposition burden,
+non-corpus worker returns may use compact
+`NOT_APPLICABLE_WITH_REASON`, and a bounded worker-return scaffold helper now
+exists at `governance/compat/run_worker_return_scaffold.py`.
 
 STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size
 Refactor is closed bounded at material commit `4ddf5352`. Protected bootstrap
@@ -492,6 +500,8 @@ Startup acknowledged: current mode=`state_br_t1_closed_pass_bounded_assf_pic_t1_
 - ASSF-PIC-T0 is closed bounded at material commit `24b49017`; selected
   candidate is `cvf-dispatch-quality-reviewer`.
 - STATE-BR-T1 is closed bounded at material commit `4ddf5352`.
+- Worker-return/report enforcement friction reduction is recorded at material
+  commit `3ab844fd`.
 - ASSF-PIC-T1 is released only for GC-018 baseline and source-verified work
   order creation; implementation remains held until that packet is dispatched.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain

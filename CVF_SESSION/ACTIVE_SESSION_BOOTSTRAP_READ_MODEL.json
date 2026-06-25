@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending",
   "activeHandoff": "AGENT_HANDOFF_V22_2026-06-22.md",
-  "nextAllowedMove": "STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size Refactor is CLOSED_PASS_BOUNDED at material commit 4ddf5352, with protected bootstrap surface commit 4c0d29e0 and handoff bridge 8f54c0d7. Next allowed move: create ASSF-PIC-T1 GC-018 baseline and source-verified work order for package instance evidence and skeleton hardening only. No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, or package instruction execution is released. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Worker-return/report enforcement friction reduction is recorded at material commit 3ab844fd after STATE-BR-T1 closure 4ddf5352. Next allowed move remains: create ASSF-PIC-T1 GC-018 baseline and source-verified work order for package instance evidence and skeleton hardening only. No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, or package instruction execution is released. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

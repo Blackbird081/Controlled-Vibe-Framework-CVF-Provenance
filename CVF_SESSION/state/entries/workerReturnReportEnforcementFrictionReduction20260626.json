@@ -1,0 +1,13 @@
+{
+  "stateOrder": 665,
+  "stateKey": "workerReturnReportEnforcementFrictionReduction20260626",
+  "value": {
+    "status": "BOUNDED_GOVERNANCE_HELPER_HARDENING",
+    "materialCommit": "3ab844fd",
+    "reviewArtifact": "docs/reviews/CVF_WORKER_RETURN_REPORT_ENFORCEMENT_TIER_REVIEW_2026-06-26.md",
+    "helper": "governance/compat/run_worker_return_scaffold.py",
+    "summary": "Reduced non-critical worker-return/report format hard-fails while preserving hard gates for authority, scope, source evidence, receipt presence, protected paths, public/provenance boundary, and runtime/provider/live claims.",
+    "nextAllowedMove": "ASSF-PIC-T1 GC-018 baseline and source-verified work order creation only",
+    "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime, CLI/MCP adapter, provider/live proof, public-sync, push, activation, readiness, or package instruction execution."
+  }
+}
