@@ -8,6 +8,10 @@ docType: reference_checklist
 
 Date: 2026-06-25
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: reference checklist of observed literal
+format traps; this file records prevention notes and does not compare
+evidence or update an empirical claim.
+
 ## Purpose
 
 A pre-write checklist of literal-format failure modes that several
@@ -137,6 +141,21 @@ runtime/product code, and does not itself implement or modify any checker.
     `UnicodeDecodeError` or silently returns `None` for `stdout` on
     non-ASCII output. Always pass `encoding="utf-8", errors="replace"`
     explicitly, and guard every `.stdout`/`.stderr` access for `None`.
+
+14. **ADIF entries need the full trace label set.** ADIF entry files carry
+    their own `## Agent Operation Trace Block`. The ADIF integrity guard
+    now checks the exact labels, including `Diff evidence`; copying a
+    nearby entry or older template that omits one label will fail. Copy the
+    block from `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`
+    and run `python governance/compat/check_adif_entry_integrity.py --enforce`
+    before committing ADIF entries.
+
+15. **Learning-record commits are material, not session-sync.** A commit
+    that adds or edits `docs/reference/agent_defect_intelligence/entries/`
+    is a material learning-record commit even when it happens during a
+    review session. Do not mix it with `AGENT_HANDOFF_*.md`,
+    `CVF_SESSION_MEMORY.md`, or `CVF_SESSION/` updates; commit the learning
+    record first, then use a dedicated session-sync or handoff-sync commit.
 
 ## When This Checklist Is Not Enough
 

@@ -5,6 +5,7 @@ Detects entry-integrity drift across the committed ADIF entries:
 - dangling `checkerBindings` paths;
 - dangling `supersedes` references;
 - duplicate `defectId` values;
+- missing or incomplete `Agent Operation Trace Block` evidence;
 - stale supersession (an active entry superseded by another active
   entry, or a supersession cycle);
 - invalid `severity` / `lifecycleState` / `enforcementLevel` enum values;
@@ -42,6 +43,26 @@ _CANONICAL_SOURCES_SECTION_RE = re.compile(
 )
 _GOVERNED_PATH_RE = re.compile(
     r"`((?:docs|governance|EXTENSIONS)/[^`]+|AGENTS\.md)`"
+)
+_TRACE_MARKER = "## Agent Operation Trace Block"
+_TRACE_REQUIRED_LABELS = (
+    "Actor",
+    "Provider or surface",
+    "Session or invocation",
+    "Working directory",
+    "Command or tool surface",
+    "Target paths",
+    "Allowed scope source",
+    "Before status evidence",
+    "After status evidence",
+    "Diff evidence",
+    "Approval boundary",
+    "Claim boundary",
+    "Agent type",
+    "Invocation ID",
+    "Expected manifest",
+    "Actual changed set",
+    "Manifest delta",
 )
 
 
@@ -117,6 +138,49 @@ def _check_dangling_canonical_sources(entry, violations: list[IntegrityViolation
                     detail=f"canonical source path does not exist: {path}",
                 )
             )
+
+
+def _extract_trace_block(text: str) -> str:
+    if _TRACE_MARKER not in text:
+        return ""
+    after_marker = text.split(_TRACE_MARKER, 1)[1]
+    lines: list[str] = []
+    for line in after_marker.splitlines():
+        if line.startswith("## ") and lines:
+            break
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def _check_agent_operation_trace_block(entry, violations: list[IntegrityViolation]) -> None:
+    source_file = _entry_source_file(entry)
+    if source_file is None:
+        return
+    text = source_file.read_text(encoding="utf-8")
+    trace_block = _extract_trace_block(text)
+    if not trace_block:
+        violations.append(
+            IntegrityViolation(
+                defect_id=entry.defect_id,
+                violation_class="MISSING_AGENT_OPERATION_TRACE",
+                detail=f"entry must include {_TRACE_MARKER}",
+            )
+        )
+        return
+    lower_trace = trace_block.lower()
+    missing = [
+        label
+        for label in _TRACE_REQUIRED_LABELS
+        if label.lower() not in lower_trace
+    ]
+    if missing:
+        violations.append(
+            IntegrityViolation(
+                defect_id=entry.defect_id,
+                violation_class="INCOMPLETE_AGENT_OPERATION_TRACE",
+                detail="missing trace labels: " + ", ".join(missing),
+            )
+        )
 
 
 def _check_dishonest_enforcement_claim(entry, violations: list[IntegrityViolation]) -> None:
@@ -251,6 +315,7 @@ def check_entry_integrity(entries: tuple | None = None) -> tuple[IntegrityViolat
     _check_supersession_cycles(candidates, violations)
     for entry in candidates:
         _check_dangling_canonical_sources(entry, violations)
+        _check_agent_operation_trace_block(entry, violations)
         _check_dangling_checker_bindings(entry, violations)
         _check_dishonest_enforcement_claim(entry, violations)
         _check_invalid_enum_values(entry, violations)

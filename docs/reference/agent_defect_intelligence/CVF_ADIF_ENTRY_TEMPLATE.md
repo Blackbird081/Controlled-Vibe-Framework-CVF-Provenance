@@ -77,7 +77,50 @@ Followed by:
 - `goodExample`: short corrected pattern (prose section);
 - `canonicalSources`: bulleted list of governed authority paths and
   sections this entry cites;
-- `remediation`: bounded corrective action (prose section).
+- `remediation`: bounded corrective action (prose section);
+- `Agent Operation Trace Block`: exact trace table defined below;
+- `Public Export Disposition`: one allowed export disposition;
+- `Claim Boundary`: bounded entry claim.
+
+## Required Agent Operation Trace Block
+
+Every ADIF entry must include a complete `## Agent Operation Trace Block`.
+This requirement is checked by
+`governance/compat/check_adif_entry_integrity.py`; do not rely on the
+general trace checker to infer whether an entry is in scope. Copy these labels
+exactly:
+
+```markdown
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | <role and provider/surface, role-neutral when possible> |
+| Provider or surface | <local workspace, external packet, or other surface> |
+| Session or invocation | <bounded session or invocation label> |
+| Working directory | repository root |
+| Command or tool surface | <commands, tool names, or manual source reads used> |
+| Target paths | <entry file and any registry row changed> |
+| Allowed scope source | <operator instruction, standard, or work order authority> |
+| Before status evidence | <where the pattern existed before this entry> |
+| After status evidence | <entry discoverability or resolver/checker state after change> |
+| Diff evidence | <git diff, new-file creation, or committed range evidence> |
+| Approval boundary | <what this entry may change or not change> |
+| Claim boundary | <defect-record only; no runtime or checker claim unless true> |
+| Agent type | <dispatcher, worker, reviewer, closer, or session-sync steward> |
+| Invocation ID | <stable short invocation id> |
+| Expected manifest | <entry path and any README/index row> |
+| Actual changed set | <actual changed path list for this entry batch> |
+| Manifest delta | MATCH or explicit mismatch with reason |
+```
+
+If the entry is authored in the same conversation as a session-sync action,
+split commits: first commit the ADIF material entry or entry group, then let
+the session-sync steward commit active handoff/session surfaces separately.
+Do not mix `docs/reference/agent_defect_intelligence/entries/` changes with
+`AGENT_HANDOFF_*.md`, `CVF_SESSION_MEMORY.md`, or `CVF_SESSION/` changes in
+one material commit unless a specific session-sync standard explicitly
+authorizes that shape.
 
 ## Severity Enum
 
@@ -102,10 +145,15 @@ This package-level matrix applies to every compact entry that conforms to this
 template. Individual entries record defect evidence; they do not independently
 create an agent interface.
 
-| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Disposition |
-|---|---|---|---|---|
-| `INTERNAL_AGENT` | direct governed file read of this template and `entries/` | read-only guidance; no execution, mutation, comprehension, or prevention claim | this template and committed entry files | `IMPLEMENTED` |
-| `EXTERNAL_AGENT_CLI_MCP` | future ADIF resolver/adapter owner | no CLI/MCP ingress, authentication, approval, receipt, raw-data release, mutation, runtime, or public behavior exists in T1 | T1 claim boundary and Dual Agent Surface Accounting Standard | `DEFERRED_WITH_REASON` - separately authorize and source-verify any external adapter after the local resolver contract exists |
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | direct governed file read of this template and `entries/` | read-only guidance; no execution, mutation, comprehension, or prevention claim | this template and committed entry files | local file read only; no adapter behavior | `IMPLEMENTED` |
+| `EXTERNAL_AGENT_CLI_MCP` | future ADIF resolver/adapter owner | no CLI/MCP ingress, authentication, approval, receipt, raw-data release, mutation, runtime, or public behavior exists in T1 | T1 claim boundary and Dual Agent Surface Accounting Standard | deferred adapter; separately authorize and source-verify any external adapter after the local resolver contract exists | `DEFERRED_WITH_REASON` |
+
+Adapter boundary: this template is readable by external agents only as a
+governed repository file or resolver result. It does not create CLI/MCP
+ingress, an adapter contract, external authentication, receipts, mutation
+rights, runtime behavior, public export, or automatic prevention.
 
 ## Lifecycle And Retirement
 

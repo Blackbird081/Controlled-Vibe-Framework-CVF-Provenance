@@ -4,6 +4,10 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: ADIF registry entry; canonical sources and
+trace evidence are recorded, but this entry does not perform a separate
+evidence-comparison process.
+
 ```text
 defectId: ADIF-0011
 title: Non-ASCII Unicode characters in governed markdown trigger encoding violation
@@ -98,6 +102,7 @@ committing.
 | Allowed scope source | AGENTS.md: new repeated defect patterns must be added to ADIF registry before tranche close |
 | Before status evidence | pattern existed only in session memory, not in any CVF-governed artifact |
 | After status evidence | entry created under ADIF defect registry, discoverable by run_adif_defect_resolver.py |
+| Diff evidence | new-file creation in this commit |
 | Approval boundary | ADIF entry addition only; no checker code change |
 | Claim boundary | records observed defect pattern; does not modify the encoding checker |
 | Agent type | worker/reviewer |

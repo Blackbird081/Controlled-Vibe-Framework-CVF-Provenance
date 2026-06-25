@@ -49,6 +49,34 @@ def _entry(
     )
 
 
+def _trace_block(*, omit: str | None = None) -> str:
+    rows = [
+        ("Actor", "test"),
+        ("Provider or surface", "local workspace"),
+        ("Session or invocation", "test invocation"),
+        ("Working directory", "repository root"),
+        ("Command or tool surface", "unit test"),
+        ("Target paths", "test entry"),
+        ("Allowed scope source", "unit test"),
+        ("Before status evidence", "before"),
+        ("After status evidence", "after"),
+        ("Diff evidence", "git diff"),
+        ("Approval boundary", "test only"),
+        ("Claim boundary", "test only"),
+        ("Agent type", "test"),
+        ("Invocation ID", "test-adif-entry"),
+        ("Expected manifest", "test entry"),
+        ("Actual changed set", "test entry"),
+        ("Manifest delta", "MATCH"),
+    ]
+    lines = ["## Agent Operation Trace Block", "", "| Field | Evidence |", "|---|---|"]
+    for label, value in rows:
+        if label == omit:
+            continue
+        lines.append(f"| {label} | {value} |")
+    return "\n".join(lines)
+
+
 class EntryIntegrityGuardTests(unittest.TestCase):
     def test_real_committed_entries_pass_with_zero_violations(self) -> None:
         violations = MODULE.check_entry_integrity()
@@ -133,6 +161,52 @@ class EntryIntegrityGuardTests(unittest.TestCase):
         self.assertFalse(
             any(v.violation_class in {"DANGLING_CANONICAL_SOURCE", "MISSING_CANONICAL_SOURCES"} for v in violations)
         )
+
+    def test_detects_missing_agent_operation_trace_block(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            entry_file = Path(temp_dir) / "entry.md"
+            entry_file.write_text(
+                "# Entry\n\n## Canonical Sources\n\n- `AGENTS.md`\n\n## Remediation\n\nNone.\n",
+                encoding="utf-8",
+            )
+            violations = MODULE.check_entry_integrity(
+                entries=(_entry("ADIF-9001", source_path=str(entry_file)),)
+            )
+        self.assertTrue(any(v.violation_class == "MISSING_AGENT_OPERATION_TRACE" for v in violations))
+
+    def test_detects_incomplete_agent_operation_trace_block(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            entry_file = Path(temp_dir) / "entry.md"
+            entry_file.write_text(
+                "# Entry\n\n## Canonical Sources\n\n- `AGENTS.md`\n\n## Remediation\n\nNone.\n\n"
+                + _trace_block(omit="Diff evidence")
+                + "\n",
+                encoding="utf-8",
+            )
+            violations = MODULE.check_entry_integrity(
+                entries=(_entry("ADIF-9001", source_path=str(entry_file)),)
+            )
+        self.assertTrue(
+            any(
+                v.violation_class == "INCOMPLETE_AGENT_OPERATION_TRACE"
+                and "Diff evidence" in v.detail
+                for v in violations
+            )
+        )
+
+    def test_complete_agent_operation_trace_block_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            entry_file = Path(temp_dir) / "entry.md"
+            entry_file.write_text(
+                "# Entry\n\n## Canonical Sources\n\n- `AGENTS.md`\n\n## Remediation\n\nNone.\n\n"
+                + _trace_block()
+                + "\n",
+                encoding="utf-8",
+            )
+            violations = MODULE.check_entry_integrity(
+                entries=(_entry("ADIF-9001", source_path=str(entry_file)),)
+            )
+        self.assertEqual(violations, ())
 
     def test_detects_invalid_severity_enum(self) -> None:
         entries = (_entry("ADIF-9001", severity="CRITICAL"),)
