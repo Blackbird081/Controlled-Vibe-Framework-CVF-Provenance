@@ -1,0 +1,17 @@
+{
+  "stateOrder": 671,
+  "stateKey": "workOrderDispatchScaffoldOptimizationNext20260626",
+  "value": {
+    "status": "NEXT_ALLOWED_MOVE_PENDING_GC018_WORK_ORDER",
+    "trigger": "ASSF-PIC-T1 closure material commit 11a49bbd",
+    "sourceFindings": [
+      "worker-return scaffold does not cover all sections required by the ASSF-PIC-T1 work order",
+      "Rescan Intelligence Hardening exact-shape requirements still create multi-round repair loops for true N/A cases",
+      "Source Inventory action cells must use bare READ tokens",
+      "dispatch text used invalid run_agent_commit_steward_preflight.py --mode worker-return"
+    ],
+    "nextAction": "Create a source-verified GC-018 baseline and work order for work-order dispatch scaffold optimization before any ASSF-PIC-T2 dispatch.",
+    "parkedLane": "ASSF-PIC-T2 manual UAT/certification review",
+    "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, or package instruction execution."
+  }
+}

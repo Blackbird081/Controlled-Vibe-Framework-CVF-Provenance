@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_pic_t1_dispatched_pending_claude_worker_return`
+Current mode marker: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t1_dispatched_pending_claude_worker_return`.
+Current mode: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`.
 
-Previous mode: `state_br_t1_closed_pass_bounded_assf_pic_t1_work_order_pending`.
+Previous mode: `assf_pic_t1_dispatched_pending_claude_worker_return`.
 
 Active handoff:
 
@@ -66,18 +66,24 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is dispatched for
-Claude worker execution at material commit `af09f072`. Accepted dispatch
-artifacts:
+ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is closed bounded at
+material commit `11a49bbd`. Closure artifacts:
 
 - `docs/baselines/CVF_GC018_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_2026-06-26.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
+- `docs/audits/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_AUDIT_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md`
 
-Claude must run as `WORKER_MUST_NOT_COMMIT`, create only the planned audit and
-worker-return artifacts, use `governance/compat/run_worker_return_scaffold.py`
-before drafting the worker return, and return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex owns review, closure conversion, material commit,
-and session-sync after worker return.
+Result: `cvf-dispatch-quality-reviewer` evidence skeleton is mapped, with no
+package instance, certification decision, lifecycle-state advancement, index,
+resolver, Web, adapter, provider/live, public-sync, push, activation,
+readiness, or package-execution release. The worker-return/report friction
+trial was partially effective only: scaffolded boilerplate and corpus N/A
+worked, but scaffold coverage gaps and rescan-hardening exact-shape pressure
+remain. Next allowed move is a source-verified GC-018/work order for work-order
+dispatch scaffold optimization. ASSF-PIC-T2 is parked until that optimization
+lane closes or the operator explicitly reopens PIC-T2.
 
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
@@ -921,25 +927,28 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t1_dispatched_pending_claude_worker_return`.
+Mode: `assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`.
 
-Latest material HEAD: `af09f072` (ASSF-PIC-T1 evidence skeleton work order
-dispatch).
+Latest material HEAD: `11a49bbd` (ASSF-PIC-T1 evidence skeleton hardening
+closure).
 
-Next allowed move: Claude executes ASSF-PIC-T1 work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
-as `WORKER_MUST_NOT_COMMIT` and returns audit plus worker-return artifacts for
-Codex review.
+Next allowed move: create a source-verified GC-018 baseline and work order for
+work-order dispatch scaffold optimization, using ASSF-PIC-T1 worker-return
+findings about scaffold section coverage, Rescan Intelligence Hardening N/A
+friction, bare `READ` Source Inventory actions, and invalid
+`--mode worker-return` commit-steward text.
+
+ASSF-PIC-T2 manual UAT/certification review remains parked until that
+optimization lane closes or the operator explicitly reopens PIC-T2.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 
 No normalizer code, promoter code, composition engine, loader, package
 instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
 external CLI/MCP adapter implementation, runtime/provider/live/public work,
-secrets/quota, readiness, automatic promotion, activation, monolith split
-inside a non-split tranche, non-governance Python enforcement, or
-worker commit, universal-control claim, or package instruction execution is
-released by this dispatch.
+secrets/quota, readiness, automatic promotion, activation, certification,
+generated-index mutation, resolver mutation, public-sync, push, universal-control
+claim, or package instruction execution is released by this closure.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

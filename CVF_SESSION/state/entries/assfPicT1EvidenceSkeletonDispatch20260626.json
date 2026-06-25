@@ -2,10 +2,14 @@
   "stateOrder": 670,
   "stateKey": "assfPicT1EvidenceSkeletonDispatch20260626",
   "value": {
-    "status": "DISPATCHED_PENDING_CLAUDE_WORKER_RETURN",
+    "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "af09f072",
+    "closureMaterialCommit": "11a49bbd",
     "baseline": "docs/baselines/CVF_GC018_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_2026-06-26.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md",
+    "audit": "docs/audits/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_AUDIT_2026-06-26.md",
+    "workerReturn": "docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md",
+    "completionReview": "docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md",
     "workerMode": "WORKER_MUST_NOT_COMMIT",
     "selectedCandidate": "cvf-dispatch-quality-reviewer",
     "workerAllowedPaths": [
@@ -13,6 +17,7 @@
       "docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md"
     ],
     "requiredScaffoldHelper": "governance/compat/run_worker_return_scaffold.py",
+    "result": "Evidence skeleton mapped; no package instance or certification decision. Worker-return friction reduction was partially effective and routes a follow-up optimization lane before PIC-T2.",
     "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter, provider/live proof, public-sync, push, activation, readiness, package instruction execution, or worker commit."
   }
 }

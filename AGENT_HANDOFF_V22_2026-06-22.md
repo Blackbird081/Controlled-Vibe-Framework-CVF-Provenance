@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record ASSF-PIC-T1 evidence skeleton work order dispatch continuity
-and route the next allowed move to Claude no-commit worker execution only.
+Target: record ASSF-PIC-T1 evidence skeleton closure continuity and route the
+next allowed move to work-order dispatch scaffold optimization only.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,10 +40,11 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-ASSF-PIC-T1 evidence skeleton work order dispatch material commit `af09f072`.
+ASSF-PIC-T1 evidence skeleton closure material commit `11a49bbd`.
 This sync advances the handoff HEAD block, generated active session state,
 bootstrap read model, front door, and next-move pointers while routing
-ASSF-PIC-T1 to Claude no-commit worker execution only.
+ASSF-PIC-T2 to parked status and routing the next move to work-order dispatch
+scaffold optimization only.
 
 Protected paths:
 
@@ -52,6 +53,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`
+- `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
@@ -59,7 +61,7 @@ Operator authorization: the operator requested a Claude work order to test the
 recent worker-return/report-friction reduction with Claude as worker.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-PIC-T1 dispatch material `af09f072`,
+revert ASSF-PIC-T1 closure material `11a49bbd`, ASSF-PIC-T1 dispatch material `af09f072`,
 worker-return/report enforcement material `3ab844fd`,
 STATE-BR-T1 dispatch `06d54319`, ASSF-PIC-T0 closure `24b49017`, handoff bridge `78b9e270`,
 ASSF-PIC-T0 dispatch `9e08f11a`, ASSF-PIC roadmap `916c6908`,
@@ -75,7 +77,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`assf_pic_t1_dispatched_pending_claude_worker_return`
+`assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -143,7 +145,9 @@ ASSF-PIC-T1 evidence skeleton dispatch material HEAD: `af09f072`
 
 ASSF-PIC-T1 evidence skeleton dispatch session-sync HEAD: `0ee48d23`
 
-Current material HEAD recorded for this handoff: `af09f072`
+ASSF-PIC-T1 evidence skeleton closure material HEAD: `11a49bbd`
+
+Current material HEAD recorded for this handoff: `11a49bbd`
 
 Current session-sync HEAD recorded for this handoff: `0ee48d23`
 
@@ -226,18 +230,21 @@ runtime source as authority.
 
 ## Latest Work / Changes
 
-ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is dispatched for
-Claude worker execution at material commit `af09f072`. Accepted dispatch
-artifacts:
+ASSF-PIC-T1 Package Instance Evidence Skeleton Hardening is closed bounded at
+material commit `11a49bbd`. Closure artifacts:
 
 - `docs/baselines/CVF_GC018_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_2026-06-26.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
+- `docs/audits/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_AUDIT_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_WORKER_RETURN_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_COMPLETION_2026-06-26.md`
 
-Claude must run as `WORKER_MUST_NOT_COMMIT`, create only the planned audit and
-worker-return artifacts, use `governance/compat/run_worker_return_scaffold.py`
-before drafting the worker return, and return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex owns review, closure conversion, material commit,
-and session-sync after worker return.
+Result: `cvf-dispatch-quality-reviewer` evidence skeleton is mapped. The
+worker-return scaffold and enforcement-tier reduction were partially effective:
+scaffolded boilerplate and corpus N/A worked, but scaffold coverage gaps,
+rescan-hardening exact-shape pressure, bare `READ` Source Inventory action
+requirements, and invalid `--mode worker-return` dispatch text remain follow-up
+inputs for work-order dispatch scaffold optimization.
 
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
@@ -447,10 +454,14 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-Claude executes ASSF-PIC-T1 work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T1_PACKAGE_INSTANCE_EVIDENCE_SKELETON_HARDENING_FOR_CLAUDE_2026-06-26.md`
-as `WORKER_MUST_NOT_COMMIT` and returns audit plus worker-return artifacts for
-Codex review.
+Create a source-verified GC-018 baseline and work order for work-order dispatch
+scaffold optimization. The new packet should use ASSF-PIC-T1 closure findings:
+scaffold section coverage gaps, Rescan Intelligence Hardening N/A friction,
+bare `READ` Source Inventory actions, and invalid `--mode worker-return`
+commit-steward text.
+
+ASSF-PIC-T2 manual UAT/certification review is parked. Do not dispatch PIC-T2
+until the optimization lane closes or the operator explicitly reopens PIC-T2.
 
 No package instance creation, certification decision, `SKILL.md`,
 `skill.source.json`, generated-index mutation, registry-source mutation,
@@ -501,7 +512,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_pic_t1_dispatched_pending_claude_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes ASSF-PIC-T1 work order as WORKER_MUST_NOT_COMMIT and returns audit plus worker-return artifacts for Codex review; parked checkpoint=no package instance/certification/generated-index/resolver/Web/runtime/adapter/live/public-sync/push authorization released.
+Startup acknowledged: current mode=`assf_pic_t1_closed_pass_bounded_work_order_dispatch_scaffold_optimization_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=create source-verified GC-018/work order for work-order dispatch scaffold optimization; parked checkpoint=ASSF-PIC-T2 manual UAT/certification review remains parked unless optimization closes or operator explicitly reopens PIC-T2.
 
 ## Parked Checkpoints
 
@@ -525,9 +536,9 @@ Startup acknowledged: current mode=`assf_pic_t1_dispatched_pending_claude_worker
 - STATE-BR-T1 is closed bounded at material commit `4ddf5352`.
 - Worker-return/report enforcement friction reduction is recorded at material
   commit `3ab844fd`.
-- ASSF-PIC-T1 evidence skeleton work order is dispatched at material commit
-  `af09f072`; Claude worker execution is released only under that no-commit
-  work order.
+- ASSF-PIC-T1 evidence skeleton hardening is closed bounded at material commit
+  `11a49bbd`; ASSF-PIC-T2 is parked pending work-order dispatch scaffold
+  optimization.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -588,28 +599,28 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | ASSF-PIC-T1 dispatch handoff-head bridge, 2026-06-26 |
+| Session or invocation | ASSF-PIC-T1 closure session-sync, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, active-session compatibility gate, git commit |
-| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md` |
-| Allowed scope source | session-sync commit `0ee48d23` after ASSF-PIC-T1 dispatch material `af09f072` |
-| Before status evidence | session-sync commit `0ee48d23`; active-session checker required handoff HEAD update |
-| After status evidence | active handoff records session-sync parent SHA `0ee48d23` for dedicated handoff-head bridge validation |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Allowed scope source | session-sync requirement after ASSF-PIC-T1 closure material `11a49bbd` |
+| Before status evidence | material closure commit `11a49bbd`; worktree clean before session-sync edits |
+| After status evidence | pending session-sync commit |
 | Diff evidence | `git diff --name-status` and active-session compatibility gate |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync; no runtime/provider/live/public behavior |
 | Agent type | session-sync steward |
-| Invocation ID | `assf-pic-t1-dispatch-handoff-head-bridge-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Invocation ID | `assf-pic-t1-closure-session-sync-2026-06-26` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT1EvidenceSkeletonDispatch20260626.json`; `CVF_SESSION/state/entries/workOrderDispatchScaffoldOptimizationNext20260626.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Actual changed set | pending session-sync diff |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
 This handoff is session continuity only. It records ASSF-PIC-T1 evidence
-skeleton dispatch at `af09f072` and routes the next move to Claude no-commit
-worker execution. It does not execute or close ASSF-PIC-T1, create a package
+skeleton closure at `11a49bbd` and routes the next move to work-order dispatch
+scaffold optimization. It does not dispatch ASSF-PIC-T2, create a package
 instance, certify a package, or expand package root/index/resolver, external
 CLI/MCP adapter implementation, runtime/provider/live/public behavior,
 activation, readiness, or automatic promotion.
