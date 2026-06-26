@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_WORK_ORDER_AUTHORING
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -138,10 +138,10 @@ operator-facing automation flow.
 
 | Step | Owner | Status |
 |---|---|---|
-| Author this roadmap | Codex | COMPLETE_PENDING_GATES |
-| Author RSE-T0 GC-018 and work order from this roadmap | Claude/orchestrator if assigned | NOT_STARTED |
-| Execute each RSE work order under selected worker boundary | Worker if dispatched | NOT_STARTED |
-| Review returned work and close or reject | Codex reviewer/closer | NOT_STARTED |
+| Author this roadmap | Codex | CLOSED at roadmap commit `6608be51` |
+| Author RSE-T0 GC-018 and work order from this roadmap | Claude/orchestrator if assigned | CLOSED at material commit `c0664784` |
+| Execute each RSE work order under selected worker boundary | Worker if dispatched | CLOSED for RSE-T0 through RSE-T3 |
+| Review returned work and close or reject | Codex reviewer/closer | CLOSED for RSE-T0 `c0664784`, RSE-T1 `50679d36`, RSE-T2 `6ab1eaf6`, RSE-T3 `e23b54df` |
 
 ## Proposed Tranche Sequence
 
@@ -151,6 +151,21 @@ operator-facing automation flow.
 | RSE-T1 | Worker if dispatched | Add Operator Question Boundary rules to governed authoring surfaces: worker must classify ask-vs-route decisions and must not ask the operator about reviewer/closer jurisdiction | reference addendum and/or dispatch-quality wording; no runtime behavior | Documentation/reference only, optional checker candidate list |
 | RSE-T2 | Worker if dispatched | Add Worker Return Jurisdiction Block requirement for worker returns that contain findings, gate traps, or out-of-scope promotion candidates | work-order template guidance and optional checker/readout plan | Documentation plus bounded helper/readout only if explicitly authorized |
 | RSE-T3 | Worker if dispatched | Promote repeated RSE defects into earliest practical machine/AAF diagnostics | checker or AAF diagnostic wire-in with focused tests, if authorized | Machine-check/local helper only; no runtime/provider/public behavior |
+
+## Roadmap Closure Reconciliation - 2026-06-26
+
+This roadmap originally remained at `ROADMAP_READY_FOR_WORK_ORDER_AUTHORING`
+after all planned RSE tranches had closed in governed completion reviews.
+This reconciliation updates the parent roadmap status and records same-file
+closure evidence without re-opening or modifying the closed RSE-T0 through
+RSE-T3 child artifacts.
+
+| Tranche | Completion artifact | Material closure commit | Disposition |
+|---|---|---|---|
+| RSE-T0 | `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md` | `c0664784` | CLOSED_PASS_BOUNDED |
+| RSE-T1 | `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_COMPLETION_2026-06-22.md` | `50679d36` | CLOSED_PASS_BOUNDED |
+| RSE-T2 | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_COMPLETION_2026-06-22.md` | `6ab1eaf6` | CLOSED_PASS_BOUNDED |
+| RSE-T3 | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_COMPLETION_2026-06-22.md` | `e23b54df` | CLOSED_PASS_BOUNDED |
 
 ## T0 - Role Switch Envelope Standard
 
@@ -496,10 +511,32 @@ catalog claim is authorized.
 
 ## Machine Closure Package
 
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_ROADMAP_STATUS_RECONCILIATION_FOR_CODEX_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSE_ROADMAP_STATUS_RECONCILIATION_COMPLETION_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no registry JSON mutation is authorized by this reconciliation | no registry JSON in changed set | BLOCKED with reason: out of scope |
+| Registry Markdown | N/A with reason: no registry Markdown mutation is authorized by this reconciliation | no registry Markdown in changed set | BLOCKED with reason: out of scope |
+| External evidence digest | N/A with reason: no external evidence digest | no external digest | N/A with reason |
+| System loop interlock | N/A with reason: no loop interlock mutation | no system loop path in changed set | N/A with reason |
+| Session continuity | active session front door/state/handoff after material commit | session-sync follows material commit if this reconciliation is accepted | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| RSE-ROADMAP-STATUS | this roadmap | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| RSE-T0-CLOSURE | `docs/reviews/CVF_RSE_T0_ROLE_SWITCH_ENVELOPE_STANDARD_COMPLETION_2026-06-22.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| RSE-T1-CLOSURE | `docs/reviews/CVF_RSE_T1_OPERATOR_QUESTION_BOUNDARY_COMPLETION_2026-06-22.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| RSE-T2-CLOSURE | `docs/reviews/CVF_RSE_T2_WORKER_RETURN_JURISDICTION_BLOCK_COMPLETION_2026-06-22.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| RSE-T3-CLOSURE | `docs/reviews/CVF_RSE_T3_JURISDICTION_BLOCK_DIAGNOSTIC_COMPLETION_2026-06-22.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+
+## Current Runtime Freshness Verification
+
 | Field | Disposition |
 |---|---|
-| Roadmap state | `Status: ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` |
-| Closure state | N/A with reason: this roadmap is not closed; it is ready for future work-order authoring |
-| Work-order state | N/A with reason: no RSE work order is created in this roadmap-only tranche |
-| Implementation state | N/A with reason: no standard, checker, helper, or runtime implementation is authorized or performed |
-| Next authorized move | Claude/orchestrator may author source-verified RSE-T0 work order from this roadmap if the operator assigns that role; Codex remains reviewer/closer |
+| Runtime files changed | N/A with reason: no runtime files are in this reconciliation changed set |
+| Runtime behavior claim | N/A with reason: this roadmap closure records documentation state only |
+| Verification command | `git diff --name-status` |
+| Freshness conclusion | documentation-only roadmap reconciliation |
