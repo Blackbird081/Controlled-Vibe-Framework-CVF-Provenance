@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first; parked checkpoint=no package instance/runtime/adapter/public-sync/Web implementation without future source-verified work order.
+Startup acknowledged: current mode=`assf_web_projection_schema_mapping_decision_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute ASSF-WEBPROJ-T0 decision-only work order; parked checkpoint=no Web runtime/source mutation, adapter, public-sync, push, package instance, certification decision, generated-index mutation, resolver mutation, or package execution.
 
 ## Current Mode
 
-Current mode marker: `guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`
+Current mode marker: `assf_web_projection_schema_mapping_decision_dispatched_pending_execution`
 
-Current mode: `guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`
+Current mode: `assf_web_projection_schema_mapping_decision_dispatched_pending_execution`
 
-`guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`
+`assf_web_projection_schema_mapping_decision_dispatched_pending_execution`
 
 Previous mode:
 
-`orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending`
+`guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`
 
 ## Latest Closed Work
 
@@ -52,18 +52,19 @@ Previous mode:
 | Orchestration command catalog refactor | `10dee6e9` | CLOSED_PASS_BOUNDED |
 | Orchestration session sync | `f73546c5` | CLOSED_PASS |
 | Guard binding catalog-aware checker hardening | `4927687c` | CLOSED_PASS_BOUNDED |
+| ASSF Web projection schema/mapping dispatch | `b233ad46` | DISPATCH_READY |
 
 ## Next Allowed Move
 
-Mode: `guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`
+Mode: `assf_web_projection_schema_mapping_decision_dispatched_pending_execution`
 
-Next allowed move: operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: execute `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_FOR_CODEX_2026-06-26.md` as a decision-only work order. Produce the decision review and completion review named by that work order. LHW24 remains the latest closed numbered LHW wave.
 
-No package instance creation, certification decision, generated-index mutation, resolver source mutation, Web implementation, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, package integration, worker commit, or worker session-sync is authorized by this front door.
+No Web runtime/source mutation, package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver source mutation, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, package integration, worker commit, or worker session-sync is authorized by this front door.
 
 ## Parked Checkpoint
 
-ASSF Web projection is decision-first. Open a GC-018 and source-verified work order before any implementation.
+ASSF Web projection remains decision-first. Execute the dispatched decision work order before any implementation work order.
 
 ## Continuity Markers
 

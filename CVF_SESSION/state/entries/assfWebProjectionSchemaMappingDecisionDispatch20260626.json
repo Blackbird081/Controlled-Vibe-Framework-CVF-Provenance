@@ -1,0 +1,5 @@
+{
+  "stateOrder": 584,
+  "stateKey": "assfWebProjectionSchemaMappingDecisionDispatch20260626",
+  "value": "ASSF-WEBPROJ-T0 Web projection schema/mapping decision is DISPATCH_READY at material commit b233ad46. Dispatch artifacts: docs/baselines/CVF_GC018_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_2026-06-26.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_FOR_CODEX_2026-06-26.md. The work order is decision-only and authorizes future creation of docs/reviews/CVF_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_2026-06-26.md and docs/reviews/CVF_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_COMPLETION_2026-06-26.md. Boundary: no Web runtime/source mutation, package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver source mutation, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, package integration, or session-sync in material execution commit."
+}

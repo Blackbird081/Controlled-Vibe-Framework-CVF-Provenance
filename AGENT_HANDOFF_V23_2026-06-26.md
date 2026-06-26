@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first; parked checkpoint=no package instance/runtime/adapter/public-sync/Web implementation without future source-verified work order.
+Startup acknowledged: current mode=`assf_web_projection_schema_mapping_decision_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute ASSF-WEBPROJ-T0 decision-only work order; parked checkpoint=no Web runtime/source mutation, adapter, public-sync, push, package instance, certification decision, generated-index mutation, resolver mutation, or package execution.
 
 ## Current State
 
@@ -19,12 +19,13 @@ Startup acknowledged: current mode=`guard_binding_catalog_aware_checker_hardenin
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md` |
 | Material checker hardening commit | `4927687c` |
 | Front-door compaction commit | `fd37d969` |
+| ASSF Web projection schema/mapping dispatch | `b233ad46` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending`
+`assf_web_projection_schema_mapping_decision_dispatched_pending_execution`
 
 ## Purpose
 
@@ -48,8 +49,8 @@ Archived predecessor:
 
 ## Latest Work / Changes
 
-Latest material work: commit `4927687c` closed guard-binding catalog-aware
-checker hardening.
+Latest material work: commit `b233ad46` dispatched ASSF-WEBPROJ-T0 Web
+projection schema/mapping decision GC-018 and source-verified work order.
 
 Latest session work: commit `fd37d969` compacts the active startup surfaces,
 archives V22, opens V23, and keeps the next allowed move on ASSF Web projection
@@ -58,6 +59,9 @@ decision-first governance.
 ## What Just Closed
 
 The guard-binding catalog-aware checker hardening batch is closed at material commit `4927687c`.
+
+The ASSF Web projection schema/mapping decision dispatch packet is ready at
+material commit `b233ad46`.
 
 Material result:
 
@@ -75,9 +79,14 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_FOR_CODEX_2026-06-26.md`
+as a decision-only work order. Produce the decision review and completion
+review named by that work order. LHW24 remains the latest closed numbered LHW
+wave.
 
-Do not start Web implementation or package instance work from this handoff alone. The next move is a governed decision and work-order packet.
+Do not start Web implementation or package instance work from this handoff
+alone. The next move is execution of the governed decision-only work order.
 
 ## Parked Boundaries
 
@@ -85,9 +94,11 @@ Not authorized by this handoff:
 
 - Package instance creation.
 - Certification decision.
+- Lifecycle mutation.
+- Registry-source mutation.
 - Generated-index mutation.
 - Resolver mutation.
-- Web runtime implementation.
+- Web runtime/source implementation.
 - CLI/MCP adapter behavior change.
 - Provider/live proof.
 - Public-sync or push.
@@ -112,7 +123,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 4927687c --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base b233ad46 --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -120,25 +131,26 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-26 session-maintenance batch |
+| Session or invocation | 2026-06-26 ASSF-WEBPROJ-T0 dispatch session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | operator request to compact handoff/front door before next tranche |
-| Before status evidence | clean worktree after material commit `4927687c` |
+| Allowed scope source | material dispatch commit `b233ad46` and active next-move continuity update |
+| Before status evidence | clean worktree after material dispatch commit `b233ad46` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
-| Claim boundary | no material runtime, Web, package, provider, public-sync, or resolver work |
+| Claim boundary | session-sync only; no Web runtime/source, package, provider, public-sync, generated-index, registry-source, adapter, or resolver mutation |
 | Agent type | single-agent session-sync steward |
 | Invocation ID | local Codex session 2026-06-26 |
 | Expected manifest | this handoff and active session/front-door files |
 | Actual changed set | session-sync commit manifest |
-| Manifest delta | N/A with reason: material checker hardening already committed separately |
+| Manifest delta | N/A with reason: material dispatch already committed separately |
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session front-door and active handoff compaction only.
+Authorized guard-maintenance scope: session front-door, generated active state,
+and active handoff update after ASSF-WEBPROJ-T0 material dispatch only.
 
 Protected paths:
 
@@ -150,13 +162,17 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
+- `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionDispatch20260626.json`
 - `AGENT_HANDOFF_V23_2026-06-26.md`
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
-Operator authorization: operator requested proactive refactor/compaction of large handoff/front-door files before moving to a new tranche.
+Operator authorization: operator selected the next allowed move and Codex
+committed the material dispatch packet at `b233ad46`; this update only routes
+the active session to execution of that decision-only work order.
 
-Rollback boundary: revert the session-sync commit only; do not revert material commit `4927687c`.
+Rollback boundary: revert the session-sync commit only; do not revert material
+commit `b233ad46`.
 
 ## Claim Boundary
 
