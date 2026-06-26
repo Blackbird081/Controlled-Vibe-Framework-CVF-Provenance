@@ -1,0 +1,24 @@
+{
+  "stateOrder": 674,
+  "stateKey": "wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "77f795be",
+    "sessionSyncParent": "77f795be",
+    "baseline": "docs/baselines/CVF_GC018_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_FOR_CLAUDE_2026-06-26.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md",
+    "executionMode": "WORKER_MUST_NOT_COMMIT",
+    "worker": "Claude",
+    "nextAction": "Claude executes WODS-T2 and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with uncommitted artifacts.",
+    "t3Disposition": "ASSF-PIC-T3 remains held and is not released.",
+    "targetedDefects": [
+      "External Knowledge Intake Routing scaffold table shape",
+      "UAT-review required-section template coverage for Risk / Corrective Action, External Knowledge Intake Routing, and Epistemic Process Block",
+      "rescan guard self-reference phrase gap for compound or wrapped maintenance wording",
+      "separate material and session-sync range guidance for trace gates"
+    ],
+    "effectivenessAssessmentSoFar": "WODS-T1 clearly improved the original missing-section and compact-N/A friction, but ASSF-PIC-T2 proved the dispatch/scaffold lane is not solved. WODS-T2 requires worker measurement of first/final fast-gate results, repair count, remaining defects, and improvement verdict.",
+    "forbiddenExpansion": "No ASSF-PIC-T3 dispatch, package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, package integration, worker commit, or worker session-sync."
+  }
+}
