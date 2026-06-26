@@ -198,6 +198,32 @@ runtime/product code, and does not itself implement or modify any checker.
     `READ (lines only)`, or other prose there. Put qualifiers in adjacent prose
     or a separate note row.
 
+21. **`## External Knowledge Intake Routing` is a `Field`/`Value` row-label
+    table, not a 5-column table.** `check_external_knowledge_intake_routing.py`
+    requires exactly the seven row labels `Chain map`, `Input type`,
+    `Chain map route`, `Matching local-view guard`, `Owner surface`,
+    `Disposition`, `Claim boundary` as the first cell of each row. A table with
+    columns like `External item | Route | Local guard | Disposition | Claim
+    boundary` looks plausible but fails the guard outright because none of its
+    column headers match a required row label. `Input type` must also be one
+    of the guard's canonical enum values (for example `operator-provided
+    external comparison, critique, or recommendation`), not a free-form `N/A
+    with reason` string - see gotcha B20 in agent memory for the same
+    enum-not-free-N/A rule.
+
+22. **Describing the rescan guard's own keyword matching can itself trigger
+    the rescan guard.** `check_rescan_intelligence_hardening.py` matches the
+    bare word `rescan` anywhere in non-excluded prose. Writing about the guard's
+    behavior - for example calling out that "rescan" and "hardening" or
+    "rescan" and "body" appear near each other in a sentence, while compactly
+    marking the section `NOT_APPLICABLE_WITH_REASON` - can re-trigger the same
+    applicability pattern the sentence is describing. If a worker return must
+    discuss this class of false trigger, prefer the guard's own already-safe
+    vocabulary (`rescan guard`, `rescan standard`, `non-rescan`, `real rescan
+    output`) instead of inventing new word pairings, and verify with
+    `python governance/compat/check_rescan_intelligence_hardening.py --base <executionBaseHead> --head HEAD --enforce`
+    before relying on the worker-return fast gate alone to catch it.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -221,21 +247,21 @@ verification or closure artifact for any tranche.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex checklist hardening role |
+| Actor | Claude worker role |
 | Provider or surface | local workspace |
-| Session or invocation | work-order dispatch scaffold optimization, 2026-06-26 |
-| Working directory | repository root |
-| Command or tool surface | apply_patch, focused pytest, autorun gates, commit steward, git commit |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py` |
-| Allowed scope source | operator instruction to handle Claude T1 feedback and optimize dispatch authoring before ASSF-PIC-T2 |
-| Before status evidence | HEAD `c98ee85b`; worktree clean before patch |
-| After status evidence | checklist records bare Source Inventory action-cell gotcha for worker-return packet authoring |
-| Diff evidence | docs/reference checklist diff plus focused scaffold tests and autorun gates |
-| Approval boundary | dispatch-authoring and worker-return friction hardening only |
+| Session or invocation | WODS-T2 dispatch and worker-return scaffold hardening, 2026-06-26 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | Read, Edit, focused pytest, direct guard commands |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/check_rescan_intelligence_hardening.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
+| Allowed scope source | WODS-T2 work order Write Ownership |
+| Before status evidence | executionBaseHead `1c145137`; worktree clean before patch |
+| After status evidence | checklist records the External Knowledge Intake Routing table-shape gotcha (item 21) and the rescan-guard self-reference compound-phrasing gotcha (item 22), both discovered live during ASSF-PIC-T2 and this WODS-T2 batch |
+| Diff evidence | `git diff --name-status` against `executionBaseHead` |
+| Approval boundary | WODS-T2 dispatch-authoring and worker-return friction hardening only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
-| Agent type | dispatch-authoring optimization role |
-| Invocation ID | `wods-t1-source-inventory-action-token-gotcha-2026-06-26` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py` |
+| Agent type | worker |
+| Invocation ID | `wods-t2-dispatch-and-worker-return-scaffold-hardening-2026-06-26` |
+| Expected manifest | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md` |
+| Actual changed set | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this checklist hardening batch |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this WODS-T2 hardening batch |

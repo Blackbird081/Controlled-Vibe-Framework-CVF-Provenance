@@ -166,3 +166,27 @@ def test_rescan_output_cannot_use_compact_not_applicable():
     text = VALID_BLOCK.replace("COMPLETE_WITH_DELTA_ROUTING_SAMPLE", "NOT_APPLICABLE_WITH_REASON")
     violations = check_text("docs/assessments/CVF_RESCAN_SAMPLE.md", text)
     assert any(item["type"] == "not_applicable_used_for_rescan_output" for item in violations)
+
+
+def test_compact_not_applicable_can_discuss_rescan_hardening_compound_phrasing():
+    text = """
+# Worker Return
+
+Status: COMPLETE_PENDING_REVIEW
+
+## Findings / Position
+
+A 4th fast-gate run failed on this file's own edits to the rescan-hardening
+section: compound phrasing joining the bare words rescan and hardening with a
+hyphen, and rescan combined with body, matched the rescan guard's bare-keyword
+applicability pattern even though the sentence was describing the guard's
+maintenance, not performing a rescan.
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is a worker return discussing a prior gate
+failure, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_WORKER_RETURN_COMPOUND_PHRASING.md", text) == []

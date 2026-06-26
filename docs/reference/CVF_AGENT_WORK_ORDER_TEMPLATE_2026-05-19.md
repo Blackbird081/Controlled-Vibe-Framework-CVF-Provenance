@@ -937,6 +937,30 @@ action cell: `READ`, `FULL_READ`, `PARTIAL_READ`, or `SOURCE_VERIFIED`. Put
 qualifiers such as targeted grep, line-range read, or reason text outside the
 action cell.
 
+When a work order requires a `docs/reviews/` review artifact (a worker return,
+a UAT review, or a completion review), name these three sections explicitly in
+the work order's required-shape guidance, in addition to the scaffold-emitted
+sections, because separate generic gates require them on review-classed
+artifacts even when the scaffold alone would not surface the gap until a fast
+gate run: `Risk / Corrective Action`, `External Knowledge Intake Routing`, and
+`Epistemic Process Block`. If any of the three is not applicable to that
+specific review artifact, instruct the worker to include it anyway with an
+explicit `N/A with reason` or `NOT_APPLICABLE_WITH_REASON` value rather than
+omitting the heading.
+
+When session-sync happens in a separate commit after the material worker/
+reviewer commit, the work order and any worker-return gate evidence should
+record material-range and session-sync-range gate results as two distinct
+rows or commands, not one combined range. Mixing a material commit range with
+a later session-sync commit range in a single gate invocation (for example
+`--base <dispatchBaseHead> --head HEAD` after a session-sync commit has
+already landed on top of the material commit) can fail range-sensitive
+checks such as `check_agent_operation_trace.py` on paths that the
+session-sync commit legitimately touched outside the worker's changed-set
+manifest. Record the material-only range result and the full-range result
+separately so a reviewer can distinguish a real packet defect from this
+range-comparison artifact.
+
 Mandatory remediation rule:
 
 - A gate failure inside this work order's Allowed scope is authorization to

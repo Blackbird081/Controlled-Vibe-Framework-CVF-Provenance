@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -54,7 +54,7 @@ Verdicts:
 
 - Dispatcher verdict: DISPATCH_APPROVED
 - Worker verdict: PENDING_WORKER_RETURN
-- Reviewer verdict: PENDING_REVIEW
+- Reviewer verdict: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -244,14 +244,22 @@ unrelated session history.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired work order | `Status: DISPATCH_READY` at dispatch | PENDING |
-| Completion or reviewer artifact | completion review path | created only by reviewer if accepted | PENDING |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_COMPLETION_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | N/A with reason: WODS-T2 is a follow-up hardening lane, not ASSF-PIC-T3 | N/A with reason | N/A with reason |
 | Registry JSON | N/A with reason: no registry JSON mutation is authorized | no registry mutation in planned manifest | BLOCKED with reason: out of scope |
 | Registry Markdown | N/A with reason: no markdown registry mutation is authorized | no registry mutation in planned manifest | BLOCKED with reason: out of scope |
 | External evidence digest | N/A with reason: no external evidence artifact import is authorized | N/A with reason | N/A with reason |
-| System loop interlock | focused tests and governance gates | worker/reviewer evidence | PENDING |
+| System loop interlock | focused tests and governance gates | worker/reviewer evidence | PASS |
 | Session continuity | N/A with reason: session-sync is separate from the material commit | active session paths excluded from material dispatch commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Focused scaffold and guard tests pass | `python -m pytest governance/compat/test_run_worker_return_scaffold.py governance/compat/test_check_rescan_intelligence_hardening.py -q` PASS - 19 passed | PASS |
+| Worker-return fast gate passes | reviewer rerun PASS | PASS |
+| No runtime/provider/adapter receipt required | N/A with reason: local governance helper/checker/test/template hardening only | PASS |
 
 ## Public Export Disposition
 

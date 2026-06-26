@@ -35,6 +35,24 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         self.assertIn("## Machine Closure Package", text)
         self.assertIn("| TODO: fill before review | READ |", text)
 
+    def test_external_knowledge_intake_routing_uses_required_row_label_shape(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        section_start = text.index("## External Knowledge Intake Routing")
+        section_end = text.index("## Rescan Intelligence Hardening", section_start)
+        section = text[section_start:section_end]
+        self.assertIn("| Field | Value |", section)
+        self.assertNotIn("| External item | Route | Local guard | Disposition | Claim boundary |", section)
+        for required_row_label in (
+            "Chain map",
+            "Input type",
+            "Chain map route",
+            "Matching local-view guard",
+            "Owner surface",
+            "Disposition",
+            "Claim boundary",
+        ):
+            self.assertIn(f"| {required_row_label} |", section)
+
     def test_emit_prints_without_writing(self):
         real_open = open
 

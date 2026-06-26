@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -33,11 +33,11 @@ Current-time notes: ASSF-PIC-T2 is closed bounded with
 the first worker-return friction sources, but T2 exposed remaining scaffold and
 template defects. This work order fixes those authoring surfaces only.
 
-Do-not-misread notes: do not dispatch ASSF-PIC-T3, create package roots,
-`SKILL.md`, `skill.source.json`, registry entries, generated index changes,
-resolver changes, Web runtime changes, CLI/MCP adapter behavior, provider/live
-proof, public-sync, push, package activation, lifecycle state mutation,
-session-sync, or commits.
+Do-not-misread notes: ASSF-PIC-T3 remains held; package roots, `SKILL.md`,
+`skill.source.json`, registry entries, generated index changes, resolver
+changes, Web runtime changes, CLI/MCP adapter behavior, provider/live proof,
+public-sync, push, package activation, lifecycle state mutation, session-sync,
+and worker commits remain forbidden.
 
 Required first actions: read this work order, read the paired GC-018 baseline,
 read `CVF_SESSION_MEMORY.md`, read
@@ -553,14 +553,22 @@ secrets/quota, destructive action, or a change to the claim boundary.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_FOR_CLAUDE_2026-06-26.md` | `Status: DISPATCH_READY` at dispatch | PENDING |
-| Completion or reviewer artifact | `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_COMPLETION_2026-06-26.md` | reviewer-owned for accepted worker return | PENDING |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_FOR_CLAUDE_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_COMPLETION_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | N/A with reason: WODS-T2 is not ASSF-PIC-T3 | T3 remains held | N/A with reason |
 | Registry JSON | N/A with reason: no registry JSON mutation is authorized by WODS-T2 | worker must not change registry JSON | BLOCKED with reason: out of scope |
 | Registry Markdown | N/A with reason: no registry Markdown mutation is authorized by WODS-T2 | worker must not change registry Markdown | BLOCKED with reason: out of scope |
 | External evidence digest | N/A with reason: no external evidence artifact is created by this local hardening tranche | no external artifact hash applies | N/A with reason |
-| System loop interlock | worker return and reviewer completion | no package activation, runtime loop, provider call, public-sync, or worker commit occurs | PENDING |
+| System loop interlock | worker return and reviewer completion | no package activation, runtime loop, provider call, public-sync, or worker commit occurs | PASS |
 | Session continuity | N/A with reason: session-sync is separate from material closure | active session paths excluded from worker changed set | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Focused scaffold and guard tests pass | `python -m pytest governance/compat/test_run_worker_return_scaffold.py governance/compat/test_check_rescan_intelligence_hardening.py -q` PASS - 19 passed | PASS |
+| Worker-return fast gate passes | reviewer rerun PASS | PASS |
+| No runtime/provider/adapter receipt required | N/A with reason: local governance helper/checker/test/template hardening only | PASS |
 
 ## Public Export Disposition
 

@@ -75,9 +75,15 @@ def _section_body(section: str) -> list[str]:
         ]
     if section == "External Knowledge Intake Routing":
         return [
-            "| External item | Route | Local guard | Disposition | Claim boundary |",
-            "|---|---|---|---|---|",
-            "| N/A with reason: no external knowledge intake in this worker return | N/A_WITH_REASON | N/A_WITH_REASON | N/A_WITH_REASON | CVF source authority remains repo-governed surfaces only |",
+            "| Field | Value |",
+            "|---|---|",
+            "| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |",
+            "| Input type | operator-provided external comparison, critique, or recommendation |",
+            "| Chain map route | TODO or N/A with reason: describe how operator/external input reached this worker return |",
+            "| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |",
+            "| Owner surface | this worker return |",
+            "| Disposition | TODO or N/A with reason |",
+            "| Claim boundary | CVF source authority remains repo-governed surfaces only |",
         ]
     if section == "Rescan Intelligence Hardening":
         return [
