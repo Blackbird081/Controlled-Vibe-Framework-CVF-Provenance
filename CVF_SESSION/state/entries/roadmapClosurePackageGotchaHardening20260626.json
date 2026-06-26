@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1214,
+  "stateKey": "roadmapClosurePackageGotchaHardening20260626",
+  "value": "Roadmap closure package gotcha hardening is CLOSED_PASS_BOUNDED at material commit 9cd46bd2. Material artifact: docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md. Disposition: CHECKLIST_GUIDANCE_ADDED. Lesson recorded: changing a roadmap top Status line to a closed-equivalent token requires adding the roadmap-local Machine Closure Package and, when receipt/query acceptance language is used, the Acceptance Receipt Assertion Matrix before the first gate run. Boundary: documentation/reference checklist guidance only; no checker implementation, package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, or readiness claim."
+}

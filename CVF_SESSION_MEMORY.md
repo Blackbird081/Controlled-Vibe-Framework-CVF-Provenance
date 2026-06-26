@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`
+Current mode marker: `roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`.
+Current mode: `roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`.
 
-Previous mode: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`.
+Previous mode: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`.
 
 Active handoff:
 
@@ -65,6 +65,13 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Roadmap closure package gotcha hardening is closed bounded at material commit
+`9cd46bd2`. Gotcha 26 now records that changing a roadmap top `Status:` line
+to a closed-equivalent token requires adding the roadmap-local
+`## Machine Closure Package` and, when receipt/query acceptance language is
+used, `## Acceptance Receipt Assertion Matrix` in the same edit before the
+first gate run.
 
 ASSF-PIC-T5 Checker Readiness And Next-Control Decision is closed bounded at
 material closure commit `410818fc`, and the ASSF-PIC roadmap is closed bounded.
@@ -994,10 +1001,9 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`.
+Mode: `roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`.
 
-Latest material HEAD: `410818fc` (ASSF-PIC-T5 Checker Readiness And
-Next-Control Decision closure).
+Latest material HEAD: `9cd46bd2` (roadmap closure package gotcha hardening).
 
 Next allowed move: operator-authorized GC-018 and source-verified work order
 for UAT/certification evidence collection on one selected package candidate.

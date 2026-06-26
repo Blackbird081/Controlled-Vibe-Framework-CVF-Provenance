@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record ASSF-PIC-T5 bounded closure continuity after the checker
-readiness and next-control decision closed at material commit `410818fc`.
+Target: record roadmap closure package gotcha hardening continuity after the
+checklist material update at commit `9cd46bd2`.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,36 +40,37 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-ASSF-PIC-T5 Checker Readiness And Next-Control Decision closure material commit
-`410818fc`.
+roadmap closure package gotcha hardening material commit `9cd46bd2`.
 This sync advances the handoff HEAD block, generated active session state,
-bootstrap read model, front door, and next-move pointers while recording
-ASSF-PIC-T5 and the ASSF-PIC roadmap as closed bounded and routing the next
-move to operator-authorized UAT/certification evidence collection.
+bootstrap read model, front door, and next-move pointers while preserving the
+next move to operator-authorized UAT/certification evidence collection.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/assfPicT5CheckerReadinessNextControlDecisionClosure20260626.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator approved Codex taking multiple roles to
-process ASSF-PIC-T4 and ASSF-PIC-T5 after WODS-T4 closure released the held
-ASSF-PIC lane.
+Operator authorization: the operator explicitly directed Codex to fix the
+remaining lesson that roadmap top-status closure should add Machine Closure
+Package and Acceptance Receipt Assertion Matrix sections from the start.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-PIC-T5 material `410818fc`, ASSF-PIC-T4 material `60ffa4de`,
-WODS-T4 closure material `0d81a814`, WODS-T4 pilot material `b01b8771`,
-WODS-T3 closure material `b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`,
-or earlier session history.
+revert roadmap closure gotcha hardening material `9cd46bd2`, ASSF-PIC-T5
+material `410818fc`, ASSF-PIC-T4 material `60ffa4de`, WODS-T4 closure material
+`0d81a814`, WODS-T4 pilot material `b01b8771`, WODS-T3 closure material
+`b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`, or earlier session
+history.
 
 ## Current Mode
 
-`assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`
+`roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`
+
+Roadmap closure package gotcha hardening material HEAD: `9cd46bd2`
 
 ASSF-PIC-T5 Checker Readiness And Next-Control Decision material HEAD:
 `410818fc`
@@ -583,7 +584,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized UAT/certification evidence collection GC-018 and source-verified work order; parked checkpoint=no package instance or certification decision authorized by this sync.
+Startup acknowledged: current mode=`roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized UAT/certification evidence collection GC-018 and source-verified work order; parked checkpoint=no package instance or certification decision authorized by this sync.
 
 ## Parked Checkpoints
 
@@ -621,6 +622,10 @@ Startup acknowledged: current mode=`assf_pic_t5_closed_pass_bounded_uat_evidence
 - ASSF-PIC-T5 Checker Readiness And Next-Control Decision is closed bounded at
   material commit `410818fc`; ASSF-PIC roadmap is closed bounded and checker
   implementation remains deferred pending first certification evidence.
+- Roadmap closure package gotcha hardening is closed bounded at material commit
+  `9cd46bd2`; gotcha 26 now tells closers to add roadmap-local closure package
+  and receipt assertion sections when changing a roadmap top status to a
+  closed-equivalent token.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -681,20 +686,20 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | WODS-T3 dispatch session sync, 2026-06-26 |
+| Session or invocation | roadmap closure package gotcha hardening session sync, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
-| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT3DeltaBlockTableShapeAndTemplateHardeningClosure20260626.json` |
-| Allowed scope source | session-sync update after WODS-T3 closure material commit `b14260a4` |
-| Before status evidence | material commit `b14260a4`; active-session checker requires handoff HEAD update |
-| After status evidence | active handoff records parent material SHA `b14260a4` for dedicated session-sync validation |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json` |
+| Allowed scope source | session-sync update after roadmap closure gotcha hardening material commit `9cd46bd2` |
+| Before status evidence | material commit `9cd46bd2`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `9cd46bd2` for dedicated session-sync validation |
 | Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, or certification decision |
 | Agent type | session-sync steward |
-| Invocation ID | `wods-t3-dispatch-session-sync-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT3DeltaBlockTableShapeAndTemplateHardeningClosure20260626.json` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT3DeltaBlockTableShapeAndTemplateHardeningClosure20260626.json` |
+| Invocation ID | `roadmap-closure-package-gotcha-hardening-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
@@ -750,5 +755,25 @@ closure at commit `410818fc` and routes the next move to an operator-authorized
 UAT/certification evidence collection lane. It does not create a package
 instance, certify a package, mutate lifecycle state, mutate package
 root/index/resolver, implement external CLI/MCP adapter behavior, run
+runtime/provider/live/public work, activate a package, claim readiness, or
+authorize automatic promotion.
+
+## Roadmap Closure Package Gotcha Hardening Session Sync - 2026-06-26
+
+Roadmap closure package gotcha hardening is closed bounded at material commit
+`9cd46bd2`. Material artifact:
+
+- `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+Disposition: `CHECKLIST_GUIDANCE_ADDED`.
+
+Next allowed move remains: operator-authorized GC-018 and source-verified work
+order for UAT/certification evidence collection on one selected package
+candidate.
+
+This handoff is session continuity only. It records the checklist hardening
+material commit and preserves the UAT/certification evidence lane. It does not
+create a package instance, certify a package, mutate lifecycle state, mutate
+package root/index/resolver, implement external CLI/MCP adapter behavior, run
 runtime/provider/live/public work, activate a package, claim readiness, or
 authorize automatic promotion.
