@@ -69,6 +69,8 @@ revert WODS-T3 closure material `b14260a4`, WODS-T3 dispatch material `f275b5ba`
 
 WODS-T3 closure material HEAD: `b14260a4`
 
+WODS-T4 guard-behavior discussion pilot material HEAD: `b01b8771`
+
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
 GFS-PY T1 dispatch-quality helper split dispatch HEAD: `9035df3c`
