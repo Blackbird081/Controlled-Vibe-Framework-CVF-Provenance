@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record roadmap closure package gotcha hardening continuity after the
-checklist material update at commit `9cd46bd2`.
+Target: record ASSF-UAT T0-T4 evidence collection continuity after the material
+closure at commit `a3805d26`.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,10 +40,11 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-roadmap closure package gotcha hardening material commit `9cd46bd2`.
+ASSF-UAT T0-T4 evidence collection material commit `a3805d26`.
 This sync advances the handoff HEAD block, generated active session state,
-bootstrap read model, front door, and next-move pointers while preserving the
-next move to operator-authorized UAT/certification evidence collection.
+bootstrap read model, front door, and next-move pointers while routing the next
+move to real manual UAT evidence or a certification-decision packet only after
+real UAT evidence exists.
 
 Protected paths:
 
@@ -51,24 +52,26 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json`
+- `CVF_SESSION/state/entries/assfUatEvidenceCollectionT0T4Closure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator explicitly directed Codex to fix the
-remaining lesson that roadmap top-status closure should add Machine Closure
-Package and Acceptance Receipt Assertion Matrix sections from the start.
+Operator authorization: the operator accepted the ASSF package candidate UAT
+evidence collection roadmap and directed Codex to complete T0 through T4 while
+taking multiple roles.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert roadmap closure gotcha hardening material `9cd46bd2`, ASSF-PIC-T5
-material `410818fc`, ASSF-PIC-T4 material `60ffa4de`, WODS-T4 closure material
-`0d81a814`, WODS-T4 pilot material `b01b8771`, WODS-T3 closure material
-`b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`, or earlier session
-history.
+revert ASSF-UAT T0-T4 material `a3805d26`, roadmap closure gotcha hardening
+material `9cd46bd2`, ASSF-PIC-T5 material `410818fc`, ASSF-PIC-T4 material
+`60ffa4de`, WODS-T4 closure material `0d81a814`, WODS-T4 pilot material
+`b01b8771`, WODS-T3 closure material `b14260a4`, ASSF-PIC-T3 closure material
+`9c621ba6`, or earlier session history.
 
 ## Current Mode
 
-`roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`
+`assf_uat_t0_t4_closed_pass_bounded_real_uat_execution_pending`
+
+ASSF-UAT T0-T4 evidence collection material HEAD: `a3805d26`
 
 Roadmap closure package gotcha hardening material HEAD: `9cd46bd2`
 
@@ -584,7 +587,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized UAT/certification evidence collection GC-018 and source-verified work order; parked checkpoint=no package instance or certification decision authorized by this sync.
+Startup acknowledged: current mode=`assf_uat_t0_t4_closed_pass_bounded_real_uat_execution_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized real manual UAT execution evidence for `cvf-dispatch-quality-reviewer`, or source-verified certification-decision GC-018/work order only after real UAT evidence exists; parked checkpoint=no package instance or certification decision authorized by this sync.
 
 ## Parked Checkpoints
 
@@ -626,6 +629,11 @@ Startup acknowledged: current mode=`roadmap_closure_gotcha_hardening_closed_pass
   `9cd46bd2`; gotcha 26 now tells closers to add roadmap-local closure package
   and receipt assertion sections when changing a roadmap top status to a
   closed-equivalent token.
+- ASSF-UAT T0-T4 evidence collection is closed bounded at material commit
+  `a3805d26`; it produced protocol, static evidence, manual UAT script,
+  readiness decision, checker-reopen decision, and completion review for
+  `cvf-dispatch-quality-reviewer`. Real UAT remains not executed and
+  certification remains not authorized.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -686,20 +694,20 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | roadmap closure package gotcha hardening session sync, 2026-06-26 |
+| Session or invocation | ASSF-UAT T0-T4 evidence collection session sync, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
-| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json` |
-| Allowed scope source | session-sync update after roadmap closure gotcha hardening material commit `9cd46bd2` |
-| Before status evidence | material commit `9cd46bd2`; active-session checker requires handoff HEAD update |
-| After status evidence | active handoff records parent material SHA `9cd46bd2` for dedicated session-sync validation |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfUatEvidenceCollectionT0T4Closure20260626.json` |
+| Allowed scope source | session-sync update after ASSF-UAT T0-T4 material commit `a3805d26` |
+| Before status evidence | material commit `a3805d26`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `a3805d26` for dedicated session-sync validation |
 | Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, or certification decision |
 | Agent type | session-sync steward |
-| Invocation ID | `roadmap-closure-package-gotcha-hardening-session-sync-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/roadmapClosurePackageGotchaHardening20260626.json` |
+| Invocation ID | `assf-uat-evidence-collection-t0-t4-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfUatEvidenceCollectionT0T4Closure20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfUatEvidenceCollectionT0T4Closure20260626.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
@@ -777,3 +785,32 @@ create a package instance, certify a package, mutate lifecycle state, mutate
 package root/index/resolver, implement external CLI/MCP adapter behavior, run
 runtime/provider/live/public work, activate a package, claim readiness, or
 authorize automatic promotion.
+
+## ASSF-UAT T0-T4 Evidence Collection Session Sync - 2026-06-26
+
+ASSF-UAT T0-T4 evidence collection is closed bounded at material commit
+`a3805d26`. Material artifacts:
+
+- `docs/roadmaps/CVF_ASSF_PACKAGE_CANDIDATE_UAT_EVIDENCE_COLLECTION_ROADMAP_2026-06-26.md`
+- `docs/baselines/CVF_GC018_ASSF_UAT_EVIDENCE_COLLECTION_T0_T4_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_UAT_EVIDENCE_COLLECTION_T0_T4_FOR_CODEX_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_UAT_T0_EVIDENCE_PROTOCOL_AND_WORK_ORDER_COMPLETION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_UAT_T1_STATIC_PACKAGE_CANDIDATE_EVIDENCE_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_UAT_T2_MANUAL_OPERATOR_UAT_SCRIPT_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_UAT_T3_EVIDENCE_REVIEW_CERTIFICATION_READINESS_DECISION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_UAT_T4_CHECKER_IMPLEMENTATION_REOPEN_DECISION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_UAT_EVIDENCE_COLLECTION_T0_T4_COMPLETION_2026-06-26.md`
+
+Disposition:
+`READY_FOR_FUTURE_CERTIFICATION_DECISION_AFTER_REAL_UAT`.
+
+Next allowed move: operator-authorized real manual UAT execution evidence for
+`cvf-dispatch-quality-reviewer`, or a source-verified certification-decision
+GC-018/work order only after real UAT evidence exists.
+
+This handoff is session continuity only. It records ASSF-UAT material closure
+and routes the next move to real UAT evidence or later certification decision.
+It does not create a package instance, certify a package, mutate lifecycle
+state, mutate package root/index/resolver, implement external CLI/MCP adapter
+behavior, run runtime/provider/live/public work, activate a package, claim
+readiness, or authorize automatic promotion.

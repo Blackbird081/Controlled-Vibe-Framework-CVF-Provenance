@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1215,
+  "stateKey": "assfUatEvidenceCollectionT0T4Closure20260626",
+  "value": "ASSF-UAT T0-T4 evidence collection is CLOSED_PASS_BOUNDED at material commit a3805d26. Material artifacts: docs/roadmaps/CVF_ASSF_PACKAGE_CANDIDATE_UAT_EVIDENCE_COLLECTION_ROADMAP_2026-06-26.md; docs/baselines/CVF_GC018_ASSF_UAT_EVIDENCE_COLLECTION_T0_T4_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_UAT_EVIDENCE_COLLECTION_T0_T4_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_UAT_T0_EVIDENCE_PROTOCOL_AND_WORK_ORDER_COMPLETION_2026-06-26.md; docs/reviews/CVF_ASSF_UAT_T1_STATIC_PACKAGE_CANDIDATE_EVIDENCE_2026-06-26.md; docs/reviews/CVF_ASSF_UAT_T2_MANUAL_OPERATOR_UAT_SCRIPT_2026-06-26.md; docs/reviews/CVF_ASSF_UAT_T3_EVIDENCE_REVIEW_CERTIFICATION_READINESS_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_UAT_T4_CHECKER_IMPLEMENTATION_REOPEN_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_UAT_EVIDENCE_COLLECTION_T0_T4_COMPLETION_2026-06-26.md. Disposition: READY_FOR_FUTURE_CERTIFICATION_DECISION_AFTER_REAL_UAT. Certification decision remains not authorized, checker implementation remains parked, and candidate lifecycle source state remains not started."
+}

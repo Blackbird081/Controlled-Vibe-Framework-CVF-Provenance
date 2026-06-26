@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`
+Current mode marker: `assf_uat_t0_t4_closed_pass_bounded_real_uat_execution_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`.
+Current mode: `assf_uat_t0_t4_closed_pass_bounded_real_uat_execution_pending`.
 
-Previous mode: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`.
+Previous mode: `roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`.
 
 Active handoff:
 
@@ -65,6 +65,16 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-UAT T0-T4 evidence collection is closed bounded at material commit
+`a3805d26`. It produced the UAT evidence collection roadmap, GC-018 baseline,
+work order, T0 protocol closure, T1 static evidence review, T2 manual operator
+UAT script, T3 certification-readiness decision, T4 checker-reopen decision,
+and completion review for `cvf-dispatch-quality-reviewer`. Certification
+remains not authorized; source state still records UAT and certification as not
+started. Next allowed move: operator-authorized real manual UAT execution
+evidence for `cvf-dispatch-quality-reviewer`, or a source-verified
+certification-decision GC-018/work order only after real UAT evidence exists.
 
 Roadmap closure package gotcha hardening is closed bounded at material commit
 `9cd46bd2`. Gotcha 26 now records that changing a roadmap top `Status:` line
@@ -1001,12 +1011,13 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `roadmap_closure_gotcha_hardening_closed_pass_bounded_uat_evidence_lane_pending`.
+Mode: `assf_uat_t0_t4_closed_pass_bounded_real_uat_execution_pending`.
 
-Latest material HEAD: `9cd46bd2` (roadmap closure package gotcha hardening).
+Latest material HEAD: `a3805d26` (ASSF-UAT evidence collection T0-T4 closure).
 
-Next allowed move: operator-authorized GC-018 and source-verified work order
-for UAT/certification evidence collection on one selected package candidate.
+Next allowed move: operator-authorized real manual UAT execution evidence for
+`cvf-dispatch-quality-reviewer`, or a source-verified certification-decision
+GC-018/work order only after real UAT evidence exists.
 
 ASSF-PIC-T3 remains closed bounded with
 `INTEGRATION_DEFERRED_CERTIFICATION_HELD`; ASSF-PIC-T4 is
