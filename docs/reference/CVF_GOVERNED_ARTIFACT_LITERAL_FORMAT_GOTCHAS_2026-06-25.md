@@ -263,6 +263,20 @@ runtime/product code, and does not itself implement or modify any checker.
     argument-parse failure does not consume a repair round that looks like a
     governance gate failure but is actually unrelated to any checker.
 
+26. **Closing a roadmap top `Status:` line makes the roadmap itself need
+    closure package sections immediately.** If a roadmap top status is changed
+    to `CLOSED`, `CLOSED_PASS_BOUNDED`, or another closed-equivalent token,
+    add a roadmap-local `## Machine Closure Package` in the same edit before
+    the first gate run. A completion review or work-order closure package does
+    not satisfy the roadmap-local requirement once the roadmap itself carries
+    the closed top status. If the roadmap closure uses receipt/query
+    acceptance language or receipt-based PASS claims, also add
+    `## Acceptance Receipt Assertion Matrix` immediately with the template
+    columns `Query ID`, `Receipt artifact`, `JSON path`, `Required value`,
+    `Observed value`, and `Status`. This prevents `check_machine_closure_package.py`
+    from discovering the missing sections only after the closer has already
+    edited the top status.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -286,21 +300,21 @@ verification or closure artifact for any tranche.
 
 | Field | Evidence |
 |---|---|
-| Actor | Claude worker role |
+| Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | WODS-T3 delta block table shape and template hardening, 2026-06-26 |
+| Session or invocation | roadmap closure package gotcha hardening, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read, Edit, focused pytest, direct guard commands |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
-| Allowed scope source | WODS-T3 work order Write Ownership |
-| Before status evidence | executionBaseHead `f5a2bec2`; worktree clean before patch |
-| After status evidence | checklist records the Delta block prose-vs-table gotcha (item 23), the review structural-group pre-drafting gotcha (item 24), and the long-content/backtick tool-parsing caution (item 25), all routed from the ASSF-PIC-T3 completion review |
-| Diff evidence | `git diff --name-status` against `executionBaseHead` |
-| Approval boundary | WODS-T3 dispatch-authoring and worker-return friction hardening only |
+| Command or tool surface | Read, rg, apply_patch, governance gates |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Allowed scope source | operator instruction: fix the roadmap top-status closure-package lesson immediately |
+| Before status evidence | baseHead `8c4f843a`; worktree clean before patch |
+| After status evidence | checklist records the closed-roadmap top-status closure package and Acceptance Receipt Assertion Matrix pre-write gotcha as item 26 |
+| Diff evidence | `git diff --name-status` against baseHead `8c4f843a` |
+| Approval boundary | roadmap closure authoring friction hardening only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
-| Agent type | worker |
-| Invocation ID | `wods-t3-delta-block-table-shape-and-template-hardening-2026-06-26` |
-| Expected manifest | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_WORKER_RETURN_2026-06-26.md` |
-| Actual changed set | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_WORKER_RETURN_2026-06-26.md` |
+| Agent type | reviewer/closer |
+| Invocation ID | `roadmap-closure-package-gotcha-hardening-2026-06-26` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this WODS-T3 hardening batch |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this hardening batch |
