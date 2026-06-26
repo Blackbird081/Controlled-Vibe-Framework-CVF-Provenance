@@ -77,6 +77,10 @@ External workspace package absorption map:
 
 `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md`
 
+Workspace layer full package absorption inventory:
+
+`docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md`
+
 External-agent review context:
 
 `docs/reference/external_agent_review/README.md`
