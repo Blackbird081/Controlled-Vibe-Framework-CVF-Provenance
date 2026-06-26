@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`roadmap_status_reconciliation_sweep_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation; parked checkpoint=no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
+Startup acknowledged: current mode=`workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open a decision-first Local Workspace Projection Read Model roadmap or GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, or push without separate authorization.
 
 ## Current State
 
@@ -31,12 +31,13 @@ Startup acknowledged: current mode=`roadmap_status_reconciliation_sweep_closed_p
 | LSC roadmap status reconciliation closure | `46a1f17a` |
 | RSE roadmap status reconciliation closure | `23d99200` |
 | Roadmap status reconciliation sweep T0-T4 closure | `3ccf574c` |
+| Workspace layer full package absorption WLFA-T0-T4 closure | `fd8b1987` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`roadmap_status_reconciliation_sweep_closed_pass_bounded_pending_next_roadmap_selection`
+`workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`
 
 ## Purpose
 
@@ -46,12 +47,13 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after roadmap status reconciliation sweep closure.
+after workspace layer full package absorption closure.
 
-Owner boundary: this handoff authorizes only next-roadmap selection or a fresh
-GC-018/source-verified work order before implementation. It does not authorize
-validation semantics change, runtime/provider/live proof, public-sync, push,
-resolver mutation, or adapter mutation.
+Owner boundary: this handoff authorizes only a decision-first Local Workspace
+Projection Read Model roadmap or fresh GC-018/source-verified work order before
+implementation. It does not authorize runtime/MCP/CLI/IDE bridge
+implementation, provider/live proof, public-sync, push, resolver mutation,
+adapter mutation, package activation, certification decision, or DICE work.
 
 ## Active Boundary
 
@@ -162,6 +164,9 @@ The RSE parent roadmap status reconciliation closed at material commit
 The roadmap status reconciliation sweep T0-T4 closed at material commit
 `3ccf574c`.
 
+The Workspace Layer Full Package Absorption WLFA-T0-T4 foundation batch closed
+at material commit `fd8b1987`.
+
 Material result:
 
 - Reduced `governance/compat/check_work_order_dispatch_quality.py` from 2213
@@ -180,13 +185,17 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: select the next high-value governed roadmap or open a fresh
-GC-018/source-verified work order before implementation.
+Next allowed move: open a decision-first Local Workspace Projection Read Model
+roadmap or GC-018/source-verified work order before implementation.
 LHW24 remains the latest closed numbered LHW wave.
 
-Do not start validation semantics change, runtime/provider/live proof,
-public-sync, push, generated aggregate mutation beyond session sync, resolver
-mutation, or adapter mutation without future accepted work order authorization.
+Use `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md`
+as advisory reference evidence only.
+
+Do not start runtime/MCP/CLI/IDE bridge implementation, provider/live proof,
+public-sync, push, resolver mutation, adapter mutation, package activation,
+certification decision, or DICE work without future accepted work order
+authorization.
 
 ## Parked Boundaries
 
@@ -206,6 +215,7 @@ Not authorized by this handoff:
 - Provider/live proof.
 - Public-sync or push.
 - Package activation, package instruction execution, or package integration.
+- DICE roadmap execution until the operator reopens it.
 
 ## Required Startup Reads
 
@@ -253,46 +263,27 @@ Read in this order:
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after roadmap status reconciliation sweep closure only.
+and active handoff update after workspace layer full package absorption closure
+only.
 
 Protected paths:
 
-- `AGENTS.md`
+- `AGENT_HANDOFF_V23_2026-06-26.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionClosure20260626.json`
-- `CVF_SESSION/state/entries/assfWebProjectionImplementationDispatch20260626.json`
-- `CVF_SESSION/state/entries/assfWebProjectionImplementationClosure20260626.json`
-- `CVF_SESSION/state/entries/assfExternalAgentReadoutCliMcpBoundaryClosure20260626.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
-- `CVF_SESSION/state/entries/governedArtifactLiteralFormatChecklistLearning20260626.json`
-- `CVF_SESSION/state/entries/assfExternalAgentMetadataReadoutImplementationDispatch20260626.json`
-- `CVF_SESSION/state/entries/assfExternalAgentMetadataReadoutImplementationClosure20260626.json`
-- `CVF_SESSION/state/entries/assfMetadataReadoutGuardWiringDispatch20260626.json`
-- `CVF_SESSION/state/entries/assfMetadataReadoutGuardWiringClosure20260626.json`
-- `CVF_SESSION/state/entries/aafT7ARoadmapStatusReconciliationClosure20260626.json`
-- `CVF_SESSION/state/entries/gfsPyT2LifecycleStatusValidatorSplitClosure20260626.json`
-- `CVF_SESSION/state/entries/gfsPyT3SourceVerificationTokenCollisionSplitClosure20260626.json`
-- `CVF_SESSION/state/entries/gfsPyT4OrchestratorShellReductionClosure20260626.json`
-- `CVF_SESSION/state/entries/lscRoadmapStatusReconciliationClosure20260626.json`
-- `CVF_SESSION/state/entries/rseRoadmapStatusReconciliationClosure20260626.json`
-- `CVF_SESSION/state/entries/roadmapStatusReconciliationSweepClosure20260627.json`
-- `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
-- `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
-- `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionDispatch20260626.json`
-- `AGENT_HANDOFF_V23_2026-06-26.md`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
-- `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
+- `CVF_SESSION/state/entries/workspaceLayerFullPackageAbsorptionClosure20260627.json`
 
-Operator authorization: user approved the roadmap status reconciliation sweep
-T0-T4 and Codex committed the material closure at `3ccf574c`; this update
-routes the active session to next roadmap selection.
+Operator authorization: user directed DICE to remain parked and asked Codex to
+prioritize CVF foundation uplift from T0-T4; Codex committed the material
+closure at `fd8b1987`; this update routes the active session to the decision-
+first Local Workspace Projection Read Model next move.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `3ccf574c`.
+commit `fd8b1987`.
 
 ## Claim Boundary
 

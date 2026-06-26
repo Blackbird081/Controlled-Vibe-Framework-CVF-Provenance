@@ -63,8 +63,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "roadmap_status_reconciliation_sweep_closed_pass_bounded_pending_next_roadmap_selection",
-  "previousMode": "rse_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection",
+  "currentMode": "workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision",
+  "previousMode": "roadmap_status_reconciliation_sweep_closed_pass_bounded_pending_next_roadmap_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
