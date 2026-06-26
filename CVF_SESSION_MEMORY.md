@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute the dispatched ASSF external-agent metadata readout implementation work order as WORKER_MUST_NOT_COMMIT; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration.
+Startup acknowledged: current mode=`assf_external_agent_metadata_readout_implementation_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration without future accepted work order authorization.
 
 ## Current Mode
 
-Current mode marker: `assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`
+Current mode marker: `assf_external_agent_metadata_readout_implementation_closed_pass_bounded_pending_next_roadmap_selection`
 
-Current mode: `assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`
+Current mode: `assf_external_agent_metadata_readout_implementation_closed_pass_bounded_pending_next_roadmap_selection`
 
-`assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`
+`assf_external_agent_metadata_readout_implementation_closed_pass_bounded_pending_next_roadmap_selection`
 
 Previous mode:
 
-`assf_external_agent_readout_adapter_boundary_closed_pass_bounded_pending_readout_implementation_gc018`
+`assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`
 
 ## Latest Closed Work
 
@@ -59,18 +59,19 @@ Previous mode:
 | ASSF external-agent readout / CLI-MCP adapter boundary | `99fabd26` | CLOSED_PASS_BOUNDED |
 | Governed artifact literal-format checklist learning | `13dcb7ad` | CLOSED_PASS_BOUNDED |
 | ASSF external-agent metadata readout implementation dispatch | `ce102d77` | DISPATCH_READY |
+| ASSF external-agent metadata readout implementation | `1f93ea33` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`
+Mode: `assf_external_agent_metadata_readout_implementation_closed_pass_bounded_pending_next_roadmap_selection`
 
-Next allowed move: execute `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_FOR_CODEX_2026-06-26.md` as `WORKER_MUST_NOT_COMMIT` from executionBaseHead `c2d2ee17`, producing the helper, focused tests, worker return, and completion review named in the work order. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation. LHW24 remains the latest closed numbered LHW wave.
 
-No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized.
+No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized without future accepted work order authorization.
 
 ## Parked Checkpoint
 
-ASSF external-agent metadata readout implementation is dispatched only. Adapter behavior, provider/live proof, package execution, public-sync, and push remain parked until separately authorized.
+ASSF external-agent metadata readout implementation is closed bounded. Adapter behavior, provider/live proof, package execution, public-sync, and push remain parked until separately authorized.
 
 ## Continuity Markers
 

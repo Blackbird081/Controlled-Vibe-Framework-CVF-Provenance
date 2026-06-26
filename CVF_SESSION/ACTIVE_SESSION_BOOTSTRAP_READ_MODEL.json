@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "assf_external_agent_metadata_readout_implementation_dispatched_pending_execution",
+  "currentMode": "assf_external_agent_metadata_readout_implementation_closed_pass_bounded_pending_next_roadmap_selection",
   "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
-  "nextAllowedMove": "ASSF external-agent metadata readout implementation dispatch is DISPATCH_READY at material commit ce102d77. Next allowed move: execute docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_FOR_CODEX_2026-06-26.md as WORKER_MUST_NOT_COMMIT from executionBaseHead c2d2ee17, producing the helper, focused tests, worker return, and completion review named in the work order. No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "ASSF external-agent metadata readout implementation is CLOSED_PASS_BOUNDED at material commit 1f93ea33. Next allowed move: select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation. No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized without that future accepted work order. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
