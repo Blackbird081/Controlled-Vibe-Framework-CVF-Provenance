@@ -8,6 +8,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+try:
+    from guard_binding_catalog import effective_binding_text
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import effective_binding_text
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SKELETON_ROOT = "CVF_SESSION/agent_workspace/workspace"
@@ -109,7 +114,7 @@ def _validate_markers() -> list[str]:
     }
     violations: list[str] = []
     for path, required_markers in markers.items():
-        text = _read_text(path)
+        text = effective_binding_text(path, _read_text(path))
         for marker in required_markers:
             if marker not in text:
                 violations.append(f"{path} missing marker `{marker}`")

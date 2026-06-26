@@ -19,6 +19,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from guard_binding_catalog import effective_binding_text
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import effective_binding_text
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
@@ -467,7 +472,7 @@ def _validate_markdown(path: str) -> list[str]:
 def _check_required_markers() -> list[dict[str, Any]]:
     violations: list[dict[str, Any]] = []
     for path in REQUIRED_FILES:
-        text = _read_rel(path)
+        text = effective_binding_text(path, _read_rel(path))
         if not text:
             violations.append({"path": path, "issues": ["required file missing"]})
             continue

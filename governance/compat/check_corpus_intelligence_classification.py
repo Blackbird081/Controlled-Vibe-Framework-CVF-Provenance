@@ -20,6 +20,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from guard_binding_catalog import has_binding_marker
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import has_binding_marker
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
@@ -281,7 +286,7 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
 
 
 def _validate_binding(path: str, text: str) -> list[dict[str, str]]:
-    if THIS_SCRIPT_PATH in text:
+    if has_binding_marker(path, THIS_SCRIPT_PATH, text):
         return []
     return [{"path": path, "type": "binding_missing", "message": f"must cite `{THIS_SCRIPT_PATH}`"}]
 

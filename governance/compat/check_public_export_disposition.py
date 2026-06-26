@@ -19,6 +19,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from guard_binding_catalog import has_binding_marker
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import has_binding_marker
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 STANDARD_PATH = "docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md"
@@ -214,9 +219,9 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
 
 def _validate_binding(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
-    if path == AUTORUN_PATH and THIS_SCRIPT_PATH not in text:
+    if path == AUTORUN_PATH and not has_binding_marker(path, THIS_SCRIPT_PATH, text):
         _add(violations, path, "autorun_binding_missing", f"autorun gate must run `{THIS_SCRIPT_PATH}`")
-    if path == HOOK_CHAIN_PATH and THIS_SCRIPT_PATH not in text:
+    if path == HOOK_CHAIN_PATH and not has_binding_marker(path, THIS_SCRIPT_PATH, text):
         _add(violations, path, "hook_binding_missing", f"local hook chain must run `{THIS_SCRIPT_PATH}`")
     if path == AGENTS_PATH and THIS_SCRIPT_PATH not in text:
         _add(violations, path, "agents_binding_missing", f"AGENTS.md must cite `{THIS_SCRIPT_PATH}`")

@@ -35,6 +35,11 @@ except ModuleNotFoundError:  # direct script execution from governance/compat
         validate_bootstrap_read_model_matches_sources,
     )
 
+try:
+    from guard_binding_catalog import effective_binding_text
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import effective_binding_text
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -524,7 +529,7 @@ def _classify() -> dict[str, Any]:
                     for handoff in sorted(set(stale_handoffs))
                 )
 
-    hook_text = _read_text(HOOK_CHAIN_PATH)
+    hook_text = effective_binding_text(HOOK_CHAIN_PATH, _read_text(HOOK_CHAIN_PATH))
     if THIS_SCRIPT_PATH not in hook_text:
         marker_violations[HOOK_CHAIN_PATH] = [THIS_SCRIPT_PATH]
 

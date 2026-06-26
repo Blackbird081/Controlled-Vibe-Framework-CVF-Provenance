@@ -15,6 +15,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from guard_binding_catalog import has_binding_marker
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import has_binding_marker
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REGISTRY_PATH = REPO_ROOT / "docs" / "reference" / "CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json"
@@ -124,11 +129,13 @@ def _validate_connection(conn: dict[str, Any], index: int) -> list[str]:
             violations.append(f"{cid}: `{field}` must not be empty")
 
     if status == "ACTIVE" and automation in MACHINE_LEVELS:
+        autorun_path = str(AUTORUN_PATH.relative_to(REPO_ROOT)).replace("\\", "/")
+        hook_path = str(HOOK_CHAIN_PATH.relative_to(REPO_ROOT)).replace("\\", "/")
         autorun_text = _read_text(AUTORUN_PATH)
         hook_text = _read_text(HOOK_CHAIN_PATH)
-        if "check_system_loop_interlock.py" not in autorun_text:
+        if not has_binding_marker(autorun_path, "check_system_loop_interlock.py", autorun_text):
             violations.append(f"{cid}: machine interlock is ACTIVE but autorun gate is not wired")
-        if "check_system_loop_interlock.py" not in hook_text:
+        if not has_binding_marker(hook_path, "check_system_loop_interlock.py", hook_text):
             violations.append(f"{cid}: machine interlock is ACTIVE but local hook chain is not wired")
 
     return violations
@@ -203,4 +210,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

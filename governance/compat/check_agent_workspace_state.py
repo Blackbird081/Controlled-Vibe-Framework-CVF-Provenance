@@ -21,6 +21,11 @@ except ModuleNotFoundError:  # direct script execution from governance/compat
         validate_aggregate_matches_sources,
     )
 
+try:
+    from guard_binding_catalog import has_binding_marker
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import has_binding_marker
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 STATE_PATH = "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
@@ -211,7 +216,7 @@ def _validate_binding() -> list[str]:
     violations: list[str] = []
     for path in (AUTORUN_PATH, HOOK_CHAIN_PATH):
         text = _read_text(path)
-        if THIS_SCRIPT_PATH not in text:
+        if not has_binding_marker(path, THIS_SCRIPT_PATH, text):
             violations.append(f"{path} does not run {THIS_SCRIPT_PATH}")
     return violations
 

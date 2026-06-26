@@ -30,7 +30,7 @@ from check_work_order_dispatch_quality_tables import (
     _section_tables,
     _truthy_cell,
 )
-
+from guard_binding_catalog import effective_binding_text
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
@@ -2879,7 +2879,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         # Skip marker check for files that no longer exist on disk (e.g., archived files).
         if not (REPO_ROOT / path).exists():
             continue
-        text = _read_rel(path)
+        text = effective_binding_text(path, _read_rel(path))
         missing = [marker for marker in markers if marker not in text]
         if missing:
             marker_violations[path] = missing
