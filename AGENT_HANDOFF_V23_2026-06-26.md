@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_metadata_readout_guard_wiring_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute the dispatched ASSF metadata readout guard wiring work order as WORKER_MUST_NOT_COMMIT; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration.
+Startup acknowledged: current mode=`assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration without future accepted work order authorization.
 
 ## Current State
 
@@ -29,7 +29,7 @@ Startup acknowledged: current mode=`assf_metadata_readout_guard_wiring_dispatche
 
 ## Current Mode
 
-`assf_metadata_readout_guard_wiring_dispatched_pending_execution`
+`assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`
 
 ## Purpose
 
@@ -71,6 +71,9 @@ Latest material dispatch: commit `810f3440` dispatched
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_METADATA_READOUT_GUARD_WIRING_FOR_CODEX_2026-06-26.md`
 for ASSF metadata readout guard wiring.
 
+Latest material closure: commit `e04ed428` closed ASSF metadata readout guard
+wiring as `CLOSED_PASS_BOUNDED`.
+
 Latest checklist learning work: commit `13dcb7ad` updated
 `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 with the GC-051 extension-path review/audit mention trap.
@@ -109,6 +112,9 @@ commit `1f93ea33`.
 The ASSF metadata readout guard wiring work order dispatched at material
 commit `810f3440`.
 
+The ASSF metadata readout guard wiring tranche closed at material commit
+`e04ed428`.
+
 Material result:
 
 - Added `governance/compat/guard_binding_catalog.py`.
@@ -125,10 +131,8 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_METADATA_READOUT_GUARD_WIRING_FOR_CODEX_2026-06-26.md`
-as `WORKER_MUST_NOT_COMMIT`, then reviewer/closer validates and commits
-material closure separately.
+Next allowed move: select the next high-value governed roadmap lane and open a
+fresh GC-018/source-verified roadmap or work order before implementation.
 LHW24 remains the latest closed numbered LHW wave.
 
 Do not start package instance creation, certification decision, lifecycle
@@ -183,8 +187,8 @@ Read in this order:
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | material boundary closure commit `99fabd26` and active next-move continuity update |
-| Before status evidence | clean worktree after dispatch commit `810f3440` |
+| Allowed scope source | ASSF metadata readout guard wiring closure commit `e04ed428` and active next-move continuity update |
+| Before status evidence | clean worktree after material closure commit `e04ed428` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
@@ -218,6 +222,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/assfExternalAgentMetadataReadoutImplementationDispatch20260626.json`
 - `CVF_SESSION/state/entries/assfExternalAgentMetadataReadoutImplementationClosure20260626.json`
 - `CVF_SESSION/state/entries/assfMetadataReadoutGuardWiringDispatch20260626.json`
+- `CVF_SESSION/state/entries/assfMetadataReadoutGuardWiringClosure20260626.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionDispatch20260626.json`
@@ -229,8 +234,8 @@ Operator authorization: operator selected the next roadmap lane and Codex
 committed the material boundary closure at `99fabd26`, checklist learning
 commit `13dcb7ad`, readout implementation dispatch commit `ce102d77`, readout
 implementation closure commit `1f93ea33`, and metadata readout guard wiring
-dispatch commit `810f3440`; this update routes the active session to worker
-execution for that dispatched guard-wiring work order.
+dispatch commit `810f3440`, and guard wiring closure commit `e04ed428`; this
+update routes the active session to next roadmap selection.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
 commit `99fabd26`.

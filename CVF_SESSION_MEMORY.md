@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_metadata_readout_guard_wiring_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute the dispatched ASSF metadata readout guard wiring work order as WORKER_MUST_NOT_COMMIT; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration.
+Startup acknowledged: current mode=`assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration without future accepted work order authorization.
 
 ## Current Mode
 
-Current mode marker: `assf_metadata_readout_guard_wiring_dispatched_pending_execution`
+Current mode marker: `assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`
 
-Current mode: `assf_metadata_readout_guard_wiring_dispatched_pending_execution`
+Current mode: `assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`
 
-`assf_metadata_readout_guard_wiring_dispatched_pending_execution`
+`assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`
 
 Previous mode:
 
-`assf_external_agent_metadata_readout_implementation_closed_pass_bounded_pending_next_roadmap_selection`
+`assf_metadata_readout_guard_wiring_dispatched_pending_execution`
 
 ## Latest Closed Work
 
@@ -61,18 +61,19 @@ Previous mode:
 | ASSF external-agent metadata readout implementation dispatch | `ce102d77` | DISPATCH_READY |
 | ASSF external-agent metadata readout implementation | `1f93ea33` | CLOSED_PASS_BOUNDED |
 | ASSF metadata readout guard wiring dispatch | `810f3440` | DISPATCH_READY |
+| ASSF metadata readout guard wiring | `e04ed428` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `assf_metadata_readout_guard_wiring_dispatched_pending_execution`
+Mode: `assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`
 
-Next allowed move: execute `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_METADATA_READOUT_GUARD_WIRING_FOR_CODEX_2026-06-26.md` as `WORKER_MUST_NOT_COMMIT`, then reviewer/closer validates and commits material closure separately. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation. LHW24 remains the latest closed numbered LHW wave.
 
 No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized without future accepted work order authorization.
 
 ## Parked Checkpoint
 
-ASSF metadata readout guard wiring is dispatched at material commit `810f3440`. Adapter behavior, provider/live proof, package execution, public-sync, and push remain parked until separately authorized.
+ASSF metadata readout guard wiring is closed bounded at material commit `e04ed428`. Adapter behavior, provider/live proof, package execution, public-sync, and push remain parked until separately authorized.
 
 ## Continuity Markers
 
