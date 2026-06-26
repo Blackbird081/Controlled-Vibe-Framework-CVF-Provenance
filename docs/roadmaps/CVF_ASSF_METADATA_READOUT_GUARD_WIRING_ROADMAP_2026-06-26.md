@@ -1,6 +1,6 @@
 # CVF ASSF Metadata Readout Guard Wiring Roadmap
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Memory class: FULL_RECORD
 
@@ -64,11 +64,11 @@ Out of scope:
 
 | Step | Objective | Status |
 |---|---|---|
-| T0 | Source inventory and guard target decision | DISPATCH_READY |
-| T1 | Implement metadata-readout guard | DISPATCH_READY |
-| T2 | Add focused guard tests | DISPATCH_READY |
-| T3 | Wire guard into standard command catalogs | DISPATCH_READY |
-| T4 | Review, close, and sync next move separately | DISPATCH_READY |
+| T0 | Source inventory and guard target decision | CLOSED |
+| T1 | Implement metadata-readout guard | CLOSED |
+| T2 | Add focused guard tests | CLOSED |
+| T3 | Wire guard into standard command catalogs | CLOSED |
+| T4 | Review, close, and sync next move separately | CLOSED |
 
 ## Source Verification Block
 
@@ -131,6 +131,29 @@ Task-specific returned defects:
 | AC4 | focused tests pass |
 | AC5 | checker is present in autorun, pre-commit, and reviewer-fast catalogs |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_METADATA_READOUT_GUARD_WIRING_FOR_CODEX_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_COMPLETION_2026-06-26.md` | completion review status `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation authorized or required | no registry path in changed set | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation authorized or required | no registry Markdown path in changed set | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence artifact absorbed | local command evidence only | N/A with reason |
+| System loop interlock | N/A with reason: no runtime loop, provider route, adapter, or package execution changed | checker-only tranche | N/A with reason |
+| Session continuity | N/A with reason: material closure first; session-sync must be separate | no session path in material changed set | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Acceptance criterion | Receipt evidence | Disposition |
+|---|---|---|
+| AC1 checker fails non-allowlisted fields | focused unittest PASS | PASS |
+| AC2 checker fails widened adapter implementation | focused unittest PASS | PASS |
+| AC3 checker fails weak claim boundary | focused unittest PASS | PASS |
+| AC4 focused tests pass | `python -m unittest governance.compat.test_check_assf_external_agent_metadata_readout` PASS | PASS |
+| AC5 catalog wiring complete | direct source diff and pre-commit hook PASS | PASS |
+
 ## Verification / Evidence
 
 | Verification | Evidence | Disposition |
@@ -139,6 +162,14 @@ Task-specific returned defects:
 | Worktree checked before dispatch authoring | `git status --short` empty before dispatch authoring | PASS |
 | ADIF dispatch query run | API resolver returned ADIF-0001, ADIF-0002, ADIF-0007, ADIF-0006 | PASS |
 | Task-specific ADIF query run | API resolver returned no checker-implementation entries | PASS |
+
+## Current Runtime Freshness Verification
+
+| Runtime claim | Verification command or source | Observed value | Disposition |
+|---|---|---|---|
+| Checker does not implement adapter behavior | `governance/compat/check_assf_external_agent_metadata_readout.py` | validates readout metadata only | PASS |
+| Readout helper still marks adapter as not implemented | `python governance/compat/check_assf_external_agent_metadata_readout.py --enforce` | PASS | PASS |
+| ASSF generated index remains metadata-only | `python governance/compat/check_assf_skill_index_drift.py` | PASS | PASS |
 
 ## Public Export Disposition
 

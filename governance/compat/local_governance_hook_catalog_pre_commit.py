@@ -176,6 +176,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_assf_certified_metadata_admission.py"],
         ),
         (
+            "ASSF external-agent metadata readout",
+            ["python", "governance/compat/check_assf_external_agent_metadata_readout.py", "--enforce"],
+        ),
+        (
             "changed corpus registry coverage",
             ["python", "governance/compat/check_changed_corpus_registry_coverage.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

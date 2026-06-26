@@ -256,6 +256,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "ASSF certified metadata admission",
             ("python", "governance/compat/check_assf_certified_metadata_admission.py"),
         ),
+        GateCommand(
+            "ASSF external-agent metadata readout",
+            ("python", "governance/compat/check_assf_external_agent_metadata_readout.py", "--enforce"),
+        ),
         _range_command(
             "system loop interlock",
             "governance/compat/check_system_loop_interlock.py",

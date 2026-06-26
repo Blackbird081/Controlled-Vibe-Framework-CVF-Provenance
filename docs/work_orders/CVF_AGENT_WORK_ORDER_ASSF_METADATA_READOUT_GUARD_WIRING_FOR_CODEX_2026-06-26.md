@@ -1,7 +1,7 @@
 # CVF Agent Work Order: ASSF Metadata Readout Guard Wiring
 
 Memory class: FULL_RECORD
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-06-26
 docType: work_order
 Batch ID: ASSF-MRGW-T0-T4
@@ -280,6 +280,27 @@ requires forbidden scope or a separate governed batch.
 | Worker return | `docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_WORKER_RETURN_2026-06-26.md` | CREATE |
 | Completion review | `docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_COMPLETION_2026-06-26.md` | CREATE |
 
+## Required Artifact Manifest
+
+| Artifact | Required status | Evidence |
+|---|---|---|
+| `governance/compat/check_assf_external_agent_metadata_readout.py` | PRESENT | checker created in closure changed set |
+| `governance/compat/test_check_assf_external_agent_metadata_readout.py` | PRESENT | focused tests created in closure changed set |
+| `docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_WORKER_RETURN_2026-06-26.md` | PRESENT | worker return status `COMPLETE_PENDING_REVIEW` |
+| `docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_COMPLETION_2026-06-26.md` | PRESENT | completion review status `CLOSED_PASS_BOUNDED` |
+
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | Dispatch-state evidence | Closure disposition |
+|---|---|---|
+| `CVF_SESSION/**` | session-sync is separate | unchanged in material closure |
+| `CVF_SESSION_MEMORY.md` | read-only startup source only | unchanged in material closure |
+| `AGENT_HANDOFF_*.md` | session-sync is separate | unchanged in material closure |
+| `docs/reference/agent_system_skills/registry/entries/**` | forbidden by work order | unchanged in material closure |
+| `docs/reference/agent_system_skills/generated/skill-index.json` | forbidden by work order | unchanged in material closure |
+| `governance/compat/generate_assf_skill_index.py` | source-verified read only | unchanged in material closure |
+| `governance/compat/run_assf_skill_resolver.py` | source-verified read only | unchanged in material closure |
+
 ## Write Ownership
 
 Allowed paths:
@@ -334,6 +355,14 @@ git diff --check
 | Catalog wiring proof | diff and hook/autorun gates show checker command present | reviewer |
 | No forbidden mutation proof | `git diff --name-status` excludes forbidden paths | reviewer |
 
+## Current Runtime Freshness Verification
+
+| Runtime claim | Verification command or source | Observed value | Disposition |
+|---|---|---|---|
+| Checker does not implement adapter behavior | `governance/compat/check_assf_external_agent_metadata_readout.py` | validates readout metadata only | PASS |
+| Readout helper still marks adapter as not implemented | `python governance/compat/check_assf_external_agent_metadata_readout.py --enforce` | PASS | PASS |
+| ASSF generated index remains metadata-only | `python governance/compat/check_assf_skill_index_drift.py` | PASS | PASS |
+
 ## Review Gate
 
 Reviewer must reject closure unless all changed paths are inside Write
@@ -366,6 +395,29 @@ mutation, ASSF registry/generated-index source mutation, or resolver mutation.
 | Catalog wiring complete | PASS |
 | Worker return fast gate passes | PASS |
 | Pre-closure gates pass | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_COMPLETION_2026-06-26.md` | completion review status `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_ROADMAP_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation authorized or required | no registry path in changed set | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation authorized or required | no registry Markdown path in changed set | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence artifact absorbed | local command evidence only | N/A with reason |
+| System loop interlock | N/A with reason: no runtime loop, provider route, adapter, or package execution changed | checker-only tranche | N/A with reason |
+| Session continuity | N/A with reason: material closure first; session-sync must be separate | no session path in material changed set | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Acceptance criterion | Receipt evidence | Disposition |
+|---|---|---|
+| AC1 checker passes current helper output | direct checker PASS | PASS |
+| AC2 checker fails non-allowlisted fields | focused unittest PASS | PASS |
+| AC3 checker fails widened adapter implementation | focused unittest PASS | PASS |
+| AC4 checker fails weak claim boundary | focused unittest PASS | PASS |
+| AC5 catalog wiring complete | source diff and pre-commit hook PASS | PASS |
 
 ## Foundation Storage Layout Block
 
