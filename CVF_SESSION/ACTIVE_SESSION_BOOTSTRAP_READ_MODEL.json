@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order",
+  "currentMode": "gfs_py_t4_orchestrator_shell_reduction_closed_pass_bounded_pending_next_roadmap_selection",
   "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
-  "nextAllowedMove": "GFS-PY T3 source-verification/token-collision validator split is CLOSED_PASS_BOUNDED at material commit f8f35e3e. Next allowed move: author fresh GFS-PY T4 GC-018/source-verified work order to reduce check_work_order_dispatch_quality.py to an orchestrator shell and remove or shrink its remaining exception before any T4 implementation. No GFS-PY T4 implementation without that accepted work order, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GFS-PY T4 orchestrator-shell reduction is CLOSED_PASS_BOUNDED at material commit 78798cd0, and the GFS-PY roadmap is CLOSED_PASS_BOUNDED. Next allowed move: select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation. No validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
