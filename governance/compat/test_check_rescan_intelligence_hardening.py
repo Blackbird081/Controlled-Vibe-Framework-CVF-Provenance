@@ -113,6 +113,19 @@ This document performs a full rescan of the prior intake findings.
     assert any(item["type"] == "rescan_hardening_section_missing" for item in violations)
 
 
+def test_marked_guard_behavior_discussion_is_not_rescan_output():
+    text = """
+# Plain Note
+
+## Guard Behavior Discussion
+
+Discussion-only disposition: META_DISCUSSION_ONLY
+
+This note explains a rescan self-reference false trigger.
+"""
+    assert check_text("docs/reviews/CVF_PLAIN_NOTE.md", text) == []
+
+
 def test_compact_not_applicable_non_rescan_completion_passes():
     text = """
 # Worker Return

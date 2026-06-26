@@ -16,6 +16,11 @@ import re
 import subprocess
 from pathlib import Path
 
+try:
+    from governance.compat.guard_behavior_discussion import strip_marked_discussion_sections
+except ModuleNotFoundError:
+    from guard_behavior_discussion import strip_marked_discussion_sections
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -181,7 +186,7 @@ def _is_applicable(path: str, text: str) -> bool:
         return True
     if any(marker in upper_path for marker in BOUNDARY_PATH_MARKERS):
         return True
-    lowered = text.casefold()
+    lowered = strip_marked_discussion_sections(text).casefold()
     return any(marker in lowered for marker in BOUNDARY_TEXT_MARKERS)
 
 

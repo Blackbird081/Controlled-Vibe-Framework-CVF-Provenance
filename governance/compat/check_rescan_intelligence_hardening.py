@@ -18,6 +18,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from governance.compat.guard_behavior_discussion import strip_marked_discussion_sections
+except ModuleNotFoundError:
+    from guard_behavior_discussion import strip_marked_discussion_sections
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
@@ -262,7 +267,9 @@ def _has_real_rescan_signal_outside_section(path: str, text: str) -> bool:
         path_haystack = path.lower().replace("_", " ").replace("-", " ")
         if any(re.search(pattern, path_haystack, re.I) for pattern in APPLICABILITY_PATTERNS):
             return True
-    signal_text = _strip_non_signal_text(_remove_section(text, REQUIRED_SECTION))
+    signal_text = _strip_non_signal_text(
+        strip_marked_discussion_sections(_remove_section(text, REQUIRED_SECTION))
+    )
     non_rescan_discussion_phrases = (
         "rescan guard",
         "rescan standard",
@@ -333,7 +340,7 @@ def _is_applicable_output(path: str, text: str) -> bool:
     if path.startswith("docs/work_orders/"):
         path_haystack = path.lower().replace("_", " ").replace("-", " ")
         return any(re.search(pattern, path_haystack, re.I) for pattern in APPLICABILITY_PATTERNS)
-    signal_text = _strip_non_signal_text(text)
+    signal_text = _strip_non_signal_text(strip_marked_discussion_sections(text))
     lowered = re.sub(r"rescan[- ]intelligence(?:[- ]hardening)?", "", signal_text.lower())
     return any(re.search(pattern, lowered, re.I) for pattern in APPLICABILITY_PATTERNS)
 

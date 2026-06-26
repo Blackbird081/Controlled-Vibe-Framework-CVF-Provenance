@@ -91,6 +91,16 @@ class DeltaExecutionClaimBoundaryTests(unittest.TestCase):
             any("missing `## Delta Execution Claim Boundary Control Block`" in item for item in violations)
         )
 
+    def test_marked_guard_behavior_discussion_does_not_require_section(self) -> None:
+        text = """
+## Guard Behavior Discussion
+
+Discussion-only disposition: META_DISCUSSION_ONLY
+
+This note explains the execution claim boundary guard without making a claim.
+"""
+        self.assertEqual([], MODULE.check_text("docs/reviews/CVF_PLAIN_NOTE.md", text))
+
     def test_missing_field_fails(self) -> None:
         text = VALID_EVIDENCE_BLOCK.replace(
             "| actionEvidence | ACTION_EVIDENCE_PRESENT in focused test output |\n",
