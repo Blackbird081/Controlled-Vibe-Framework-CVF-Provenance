@@ -802,6 +802,65 @@ This session-sync records the latest completed tranche and next allowed move
 only. It does not certify, activate, project, execute package instructions,
 export, adapt, machine-enforce, or mutate any package or runtime surface.
 
+## Small Governed Artifact Checklist Learning Session Sync - 2026-06-26
+
+Small governed artifact authoring gotchas are recorded at material commit
+`9e226e54`. Material artifact:
+
+- `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+Disposition: `CHECKLIST_GUIDANCE_ADDED`.
+
+The update added gotchas for work-order `## Execution Plan` sections and
+Source Verification real-symbol cells. Next allowed move remains:
+operator-authorized ASSF package certification-decision roadmap or GC-018 plus
+source-verified work order for `cvf-dispatch-quality-reviewer`.
+
+This handoff is session continuity only. It records the checklist material
+commit and preserves the certification-decision lane. It does not create a
+package instance, certify a package, mutate lifecycle state, mutate package
+root/index/resolver, implement external CLI/MCP adapter behavior, run
+runtime/provider/live/public work, activate a package, claim readiness, or
+authorize automatic promotion.
+
+### Core Guard Self-Protection Authorization
+
+Authorized session-sync scope: update the active handoff after small governed
+artifact checklist material commit `9e226e54`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V22_2026-06-22.md`
+
+Operator authorization: the operator asked to put the small findings into the
+checklist so other agents learn them.
+
+Rollback boundary: revert only this handoff-sync batch if rejected. Do not
+revert material commit `9e226e54` or earlier ASSF material/session commits.
+
+### Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | small governed artifact checklist handoff sync, 2026-06-26 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | apply_patch, active-session compatibility gate, git commit |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Allowed scope source | handoff sync after checklist material commit `9e226e54` |
+| Before status evidence | material commit `9e226e54`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `9e226e54` for dedicated handoff-sync validation |
+| Diff evidence | `git diff --name-status`, active-session compatibility gate, and session-sync commit steward |
+| Approval boundary | continuity only; no new material tranche |
+| Claim boundary | handoff sync only; no runtime/provider/live/public behavior, package instance, certification decision, or lifecycle mutation |
+| Agent type | session-sync steward |
+| Invocation ID | `small-governed-artifact-checklist-handoff-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no rename or deletion in this handoff-sync batch |
+
 ## ASSF-PIC-T4 Session Sync - 2026-06-26
 
 ASSF-PIC-T4 Web Projection Bridge Decision is closed bounded at material commit
