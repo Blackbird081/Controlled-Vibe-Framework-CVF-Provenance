@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -14,7 +14,7 @@ dispatchBaseHead: 42bdf2f6
 
 executionBaseHead: 42bdf2f6
 
-closureBaseHead: 42bdf2f6
+closureBaseHead: 3d983897
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -399,6 +399,38 @@ Operator checkpoint is required before:
 - implementing CLI/MCP adapter behavior;
 - changing registry source, generated index, or resolver behavior;
 - public-sync or push.
+
+## Current Runtime Freshness Verification
+
+| Runtime claim | Verification command or source | Observed value | Disposition |
+|---|---|---|---|
+| Web runtime/source mutation is outside this work order | `git diff --name-status` for ASSF-WEBPROJ-T0 material range | No cvf-web runtime path is in the expected material manifest | PASS |
+| CLI/MCP adapter implementation is outside this work order | Work order forbidden scope and claim boundary | Adapter work remains deferred to a separate contract decision | PASS |
+| Provider/live proof is outside this work order | Work order forbidden scope and claim boundary | No provider or live proof command is authorized | PASS |
+| Package instance/certification mutation is outside this work order | Work order forbidden scope and claim boundary | No package instance or certification decision is authorized | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_FOR_CODEX_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_COMPLETION_2026-06-26.md` | `closureDisposition: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason | No roadmap status changed by this decision-only execution. | N/A with reason |
+| Registry JSON | N/A with reason | ASSF registry and GC-051 registry mutation are outside this decision-only work order. | BLOCKED with reason |
+| Registry Markdown | N/A with reason | No registry markdown mutation is authorized by this decision-only work order. | BLOCKED with reason |
+| External evidence digest | N/A with reason | No external evidence or live provider proof used. | N/A with reason |
+| System loop interlock | `governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 3d983897 --head HEAD` | Required before commit. | PASS |
+| Session continuity | Session-sync separate from material closure | Session surfaces intentionally unchanged in material commit. | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Receipt ID | Required value | Observed value | Status |
+|---|---|---|---|
+| ARAM-WEBPROJ-WO-001 | Decision artifact exists | `docs/reviews/CVF_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_2026-06-26.md` | PASS |
+| ARAM-WEBPROJ-WO-002 | Completion artifact exists | `docs/reviews/CVF_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_COMPLETION_2026-06-26.md` | PASS |
+| ARAM-WEBPROJ-WO-003 | Next recommendation is allowed | `OPEN_WEB_PROJECTION_IMPLEMENTATION_WORK_ORDER` | PASS |
+| ARAM-WEBPROJ-WO-004 | Runtime mutation remains forbidden | No cvf-web runtime path in material manifest | PASS |
+| ARAM-WEBPROJ-WO-005 | Session-sync remains separate | No session path in material manifest | PASS |
 
 ## Public Export Disposition
 
