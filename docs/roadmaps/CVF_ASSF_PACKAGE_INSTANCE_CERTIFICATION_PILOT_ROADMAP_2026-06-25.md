@@ -265,7 +265,19 @@ candidate-only, or receive a Web projection bridge work order. This tranche
 does not mutate Web runtime unless a later work order explicitly releases that
 scope and source-verifies the schema bridge.
 
-Status: `HOLD_WODS_REOPEN_AFTER_PIC_T3`.
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure evidence:
+
+- baseline:
+  `docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md`;
+- decision review:
+  `docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md`;
+- completion review:
+  `docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md`;
+- disposition: `WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD`.
 
 Required outputs:
 
@@ -281,7 +293,7 @@ for implementation: certification lifecycle, generated-index/resolver drift,
 Web projection drift, or adapter-claim honesty. This tranche may dispatch a
 new checker roadmap or keep machine checks deferred with reason.
 
-Status: `HOLD_UNTIL_PIC_T4_PASS_OR_EXPLICIT_SKIP`.
+Status: `READY_FOR_GC018_AFTER_T4_CLOSURE`.
 
 Required outputs:
 
