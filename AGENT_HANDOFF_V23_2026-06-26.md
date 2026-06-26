@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_web_projection_implementation_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute ASSF Web projection implementation work order as no-commit worker; parked checkpoint=no ASSF registry/generated-index source mutation, resolver mutation, adapter, public-sync, push, package instance, certification decision, lifecycle mutation, provider/live proof, activation, package execution, package integration, or session-sync inside material implementation.
+Startup acknowledged: current mode=`assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open and execute the ASSF external-agent readout / CLI-MCP adapter boundary roadmap T0-T4, decision-first; parked checkpoint=no package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, adapter behavior implementation, provider/live proof, public-sync, push, activation, package execution, or package integration without fresh source-verified authorization.
 
 ## Current State
 
@@ -22,12 +22,13 @@ Startup acknowledged: current mode=`assf_web_projection_implementation_dispatche
 | ASSF Web projection schema/mapping dispatch | `b233ad46` |
 | ASSF Web projection schema/mapping decision closure | `a408c13e` |
 | ASSF Web projection implementation dispatch | `0ba6eaee` |
+| ASSF Web projection implementation closure | `0b57a4de` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`assf_web_projection_implementation_dispatched_pending_execution`
+`assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`
 
 ## Purpose
 
@@ -37,12 +38,12 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after ASSF-WEBPROJ-T1 implementation dispatch.
+after ASSF-WEBPROJ-T1 implementation closure.
 
-Owner boundary: this handoff authorizes only the next worker execution of the
-dispatched Web projection implementation work order. It does not authorize
-package instance creation, certification decision, runtime adapter work,
-provider proof, public-sync, push, or session-sync inside material execution.
+Owner boundary: this handoff authorizes only the next decision-first roadmap
+step for ASSF external-agent readout / CLI-MCP adapter boundary planning. It
+does not authorize package instance creation, certification decision, runtime
+adapter behavior, provider proof, public-sync, push, or package execution.
 
 ## Active Boundary
 
@@ -53,8 +54,8 @@ Archived predecessor:
 
 ## Latest Work / Changes
 
-Latest material work: commit `0ba6eaee` dispatched ASSF-WEBPROJ-T1 Web
-projection implementation as `DISPATCH_READY`.
+Latest material work: commit `0b57a4de` closed ASSF-WEBPROJ-T1 Web projection
+implementation as `CLOSED_PASS_BOUNDED`.
 
 Latest session work: commit `fd37d969` compacts the active startup surfaces,
 archives V22, opens V23, and keeps the next allowed move on ASSF Web projection
@@ -73,6 +74,8 @@ The ASSF Web projection schema/mapping decision closed at material commit
 The ASSF Web projection implementation work order dispatched at material
 commit `0ba6eaee`.
 
+The ASSF Web projection implementation closed at material commit `0b57a4de`.
+
 Material result:
 
 - Added `governance/compat/guard_binding_catalog.py`.
@@ -89,17 +92,15 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md`
-as Codex no-commit worker, record actual worker-start `executionBaseHead`,
-implement only within Write Ownership, create
-`docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md`,
-and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` for reviewer
-closure. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: open and execute the ASSF external-agent readout / CLI-MCP
+adapter boundary roadmap T0-T4, decision-first. Begin with a fresh
+GC-018/source-verified roadmap or work-order packet before implementation.
+LHW24 remains the latest closed numbered LHW wave.
 
-Do not start package instance, adapter, provider/live, public-sync, push, or
-session-sync work from this handoff. The next move is bounded worker execution
-under the dispatched Web projection implementation work order.
+Do not start package instance creation, certification decision, lifecycle
+mutation, adapter behavior implementation, provider/live proof, public-sync,
+push, activation, package instruction execution, or package integration without
+fresh source-verified authorization.
 
 ## Parked Boundaries
 
@@ -108,8 +109,8 @@ Not authorized by this handoff:
 - Package instance creation.
 - Certification decision.
 - Lifecycle mutation.
-- Registry-source mutation.
-- Generated-index mutation.
+- ASSF registry-source mutation.
+- ASSF generated-index mutation.
 - Resolver mutation.
 - Web runtime/source implementation outside the dispatched work order.
 - CLI/MCP adapter behavior change.
@@ -136,7 +137,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 0ba6eaee --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 0b57a4de --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -144,26 +145,26 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-26 ASSF-WEBPROJ-T1 dispatch session-sync |
+| Session or invocation | 2026-06-26 ASSF-WEBPROJ-T1 closure session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | material dispatch commit `0ba6eaee` and active next-move continuity update |
-| Before status evidence | clean worktree after material dispatch commit `0ba6eaee` |
+| Allowed scope source | material implementation closure commit `0b57a4de` and active next-move continuity update |
+| Before status evidence | clean worktree after material implementation closure commit `0b57a4de` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
-| Claim boundary | session-sync only; no Web runtime/source, package, provider, public-sync, generated-index, registry-source, adapter, or resolver mutation |
+| Claim boundary | session-sync only; no Web runtime/source, package, provider, public-sync, ASSF generated-index, ASSF registry-source, adapter, or resolver mutation |
 | Agent type | single-agent session-sync steward |
 | Invocation ID | local Codex session 2026-06-26 |
 | Expected manifest | this handoff and active session/front-door files |
 | Actual changed set | session-sync commit manifest |
-| Manifest delta | N/A with reason: material dispatch already committed separately |
+| Manifest delta | N/A with reason: material implementation closure already committed separately |
 
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after ASSF-WEBPROJ-T1 material dispatch only.
+and active handoff update after ASSF-WEBPROJ-T1 material closure only.
 
 Protected paths:
 
@@ -175,6 +176,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionClosure20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionImplementationDispatch20260626.json`
+- `CVF_SESSION/state/entries/assfWebProjectionImplementationClosure20260626.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
@@ -183,12 +185,12 @@ Protected paths:
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
-Operator authorization: operator selected the next allowed move and Codex
-committed the material dispatch packet at `0ba6eaee`; this update only routes
-the active session to the implementation worker execution step.
+Operator authorization: operator selected the next roadmap lane and Codex
+committed the material implementation closure at `0b57a4de`; this update only
+routes the active session to the next decision-first roadmap step.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `0ba6eaee`.
+commit `0b57a4de`.
 
 ## Claim Boundary
 

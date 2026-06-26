@@ -1,0 +1,5 @@
+{
+  "stateOrder": 643,
+  "stateKey": "assfWebProjectionImplementationClosure20260626",
+  "value": "ASSF-WEBPROJ-T1 Web projection implementation closed CLOSED_PASS_BOUNDED at material commit 0b57a4de. Artifacts: docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md, docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md, and docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md. Implementation projected certified ASSF package metadata into the CVF Web public skill index as read-only presentation data and added GC-051 coverage for the Web projection public skill-index surfaces. Boundary retained: no package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, or package integration."
+}

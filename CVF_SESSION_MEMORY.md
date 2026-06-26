@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_web_projection_implementation_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute ASSF Web projection implementation work order as no-commit worker; parked checkpoint=no ASSF registry/generated-index source mutation, resolver mutation, adapter, public-sync, push, package instance, certification decision, lifecycle mutation, provider/live proof, activation, package execution, package integration, or session-sync inside material implementation.
+Startup acknowledged: current mode=`assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open and execute the ASSF external-agent readout / CLI-MCP adapter boundary roadmap T0-T4, decision-first; parked checkpoint=no package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, adapter behavior implementation, provider/live proof, public-sync, push, activation, package execution, or package integration without fresh source-verified authorization.
 
 ## Current Mode
 
-Current mode marker: `assf_web_projection_implementation_dispatched_pending_execution`
+Current mode marker: `assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`
 
-Current mode: `assf_web_projection_implementation_dispatched_pending_execution`
+Current mode: `assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`
 
-`assf_web_projection_implementation_dispatched_pending_execution`
+`assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`
 
 Previous mode:
 
-`assf_web_projection_schema_mapping_decision_closed_pass_bounded_pending_web_projection_implementation_work_order`
+`assf_web_projection_implementation_dispatched_pending_execution`
 
 ## Latest Closed Work
 
@@ -55,18 +55,19 @@ Previous mode:
 | ASSF Web projection schema/mapping dispatch | `b233ad46` | DISPATCH_READY |
 | ASSF Web projection schema/mapping decision | `a408c13e` | CLOSED_PASS_BOUNDED |
 | ASSF Web projection implementation dispatch | `0ba6eaee` | DISPATCH_READY |
+| ASSF Web projection implementation | `0b57a4de` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `assf_web_projection_implementation_dispatched_pending_execution`
+Mode: `assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`
 
-Next allowed move: execute `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md` as Codex no-commit worker, record actual worker-start `executionBaseHead`, implement only within Write Ownership, create `docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md`, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` for reviewer closure. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: open and execute the ASSF external-agent readout / CLI-MCP adapter boundary roadmap T0-T4, decision-first. Begin with a fresh GC-018/source-verified roadmap or work-order packet before any implementation. LHW24 remains the latest closed numbered LHW wave.
 
-No ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, package instance creation, certification decision, lifecycle mutation, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, package integration, or session-sync inside the material implementation range is authorized by this front door.
+No package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, adapter behavior implementation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized without a fresh source-verified tranche.
 
 ## Parked Checkpoint
 
-ASSF Web projection implementation work order is dispatched. Certification, adapter, provider/live, package execution, public-sync, and session-sync remain parked outside the material implementation range.
+ASSF Web projection implementation is closed bounded. Certification, adapter behavior, provider/live proof, package execution, public-sync, and push remain parked until separately authorized.
 
 ## Continuity Markers
 
