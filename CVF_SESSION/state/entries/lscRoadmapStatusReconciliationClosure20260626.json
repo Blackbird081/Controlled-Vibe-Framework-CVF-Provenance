@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1232,
+  "stateKey": "lscRoadmapStatusReconciliationClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "46a1f17a",
+    "roadmap": "docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md",
+    "baseline": "docs/baselines/CVF_GC018_LSC_ROADMAP_STATUS_RECONCILIATION_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_ROADMAP_STATUS_RECONCILIATION_FOR_CODEX_2026-06-26.md",
+    "completionReview": "docs/reviews/CVF_LSC_ROADMAP_STATUS_RECONCILIATION_COMPLETION_2026-06-26.md",
+    "claimBoundary": "Parent roadmap status reconciliation only; no LSC tranche re-execution, runtime/provider/live proof, public-sync, generated aggregate mutation beyond session sync, resolver mutation, adapter mutation, or push."
+  }
+}

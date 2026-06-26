@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gfs_py_t4_orchestrator_shell_reduction_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation; parked checkpoint=no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
+Startup acknowledged: current mode=`lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation; parked checkpoint=no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
 
 ## Current State
 
@@ -28,12 +28,13 @@ Startup acknowledged: current mode=`gfs_py_t4_orchestrator_shell_reduction_close
 | GFS-PY T2 lifecycle/status validator split closure | `3f7cb4e8` |
 | GFS-PY T3 source-verification/token-collision split closure | `f8f35e3e` |
 | GFS-PY T4 orchestrator-shell reduction / roadmap closure | `78798cd0` |
+| LSC roadmap status reconciliation closure | `46a1f17a` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`gfs_py_t4_orchestrator_shell_reduction_closed_pass_bounded_pending_next_roadmap_selection`
+`lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
 
 ## Purpose
 
@@ -43,7 +44,7 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after GFS-PY T4 orchestrator-shell reduction and GFS-PY roadmap closure.
+after LSC parent roadmap status reconciliation closure.
 
 Owner boundary: this handoff authorizes only next-roadmap selection or a fresh
 GC-018/source-verified work order before implementation. It does not authorize
@@ -88,6 +89,9 @@ source-verification/token-collision validator split as `CLOSED_PASS_BOUNDED`.
 
 Latest material closure: commit `78798cd0` closed GFS-PY T4
 orchestrator-shell reduction and the GFS-PY roadmap as `CLOSED_PASS_BOUNDED`.
+
+Latest material closure: commit `46a1f17a` closed LSC parent roadmap status
+reconciliation as `CLOSED_PASS_BOUNDED`.
 
 Latest checklist learning work: commit `13dcb7ad` updated
 `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
@@ -140,6 +144,9 @@ material commit `f8f35e3e`.
 
 The GFS-PY T4 orchestrator-shell reduction and GFS-PY roadmap closed at
 material commit `78798cd0`.
+
+The LSC parent roadmap status reconciliation closed at material commit
+`46a1f17a`.
 
 Material result:
 
@@ -205,7 +212,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 78798cd0 --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 46a1f17a --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -213,11 +220,11 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-26 GFS-PY T4 orchestrator-shell reduction session-sync |
+| Session or invocation | 2026-06-26 LSC roadmap status reconciliation session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | GFS-PY T4 material closure commit `78798cd0` and active next-move continuity update |
+| Allowed scope source | LSC material closure commit `46a1f17a` and active next-move continuity update |
 | Before status evidence | clean worktree after material closure commit `78798cd0` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
@@ -232,7 +239,7 @@ Read in this order:
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after GFS-PY T2 material closure only.
+and active handoff update after LSC roadmap status reconciliation closure only.
 
 Protected paths:
 
@@ -256,6 +263,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/gfsPyT2LifecycleStatusValidatorSplitClosure20260626.json`
 - `CVF_SESSION/state/entries/gfsPyT3SourceVerificationTokenCollisionSplitClosure20260626.json`
 - `CVF_SESSION/state/entries/gfsPyT4OrchestratorShellReductionClosure20260626.json`
+- `CVF_SESSION/state/entries/lscRoadmapStatusReconciliationClosure20260626.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionDispatch20260626.json`
@@ -263,12 +271,12 @@ Protected paths:
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
-Operator authorization: operator selected GFS-PY T4 and Codex committed the
-material closure at `78798cd0`; this update routes the active session to next
+Operator authorization: user agreed to the LSC lane and Codex committed the
+material closure at `46a1f17a`; this update routes the active session to next
 roadmap selection.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `78798cd0`.
+commit `46a1f17a`.
 
 ## Claim Boundary
 
