@@ -1,7 +1,7 @@
 # CVF Agent Work Order: ASSF External-Agent Metadata Readout Implementation
 
 Memory class: FULL_RECORD
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-06-26
 docType: work_order
 Batch ID: ASSF-EAMR-T1
@@ -349,6 +349,27 @@ Forbidden paths:
 | worker return | `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` | handwritten chat-only status |
 | completion review | reviewer-owned closure artifact | session-sync commit |
 
+## Required Artifact Manifest
+
+| Artifact | Required status | Evidence |
+|---|---|---|
+| `governance/compat/run_assf_external_agent_metadata_readout.py` | PRESENT | helper created in closure changed set |
+| `governance/compat/test_run_assf_external_agent_metadata_readout.py` | PRESENT | focused tests created in closure changed set |
+| `docs/reviews/CVF_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md` | PRESENT | worker return status `COMPLETE_PENDING_REVIEW` |
+| `docs/reviews/CVF_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_COMPLETION_2026-06-26.md` | PRESENT | completion review status `CLOSED_PASS_BOUNDED` |
+
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | Dispatch-state evidence | Closure disposition |
+|---|---|---|
+| `CVF_SESSION/**` | no session path in worker material Write Ownership | unchanged in material closure |
+| `CVF_SESSION_MEMORY.md` | read-only startup source only | unchanged in material closure |
+| `AGENT_HANDOFF_*.md` | session-sync separate | unchanged in material closure |
+| `docs/reference/agent_system_skills/registry/entries/**` | forbidden by work order | unchanged in material closure |
+| `docs/reference/agent_system_skills/generated/skill-index.json` | forbidden by work order | unchanged in material closure |
+| `governance/compat/generate_assf_skill_index.py` | source-verified read only | unchanged in material closure |
+| `governance/compat/run_assf_skill_resolver.py` | source-verified read only | unchanged in material closure |
+
 ## Evidence Requirements
 
 | Evidence item | Required form | Owner |
@@ -388,12 +409,12 @@ mutation, ASSF registry/generated-index source mutation, or resolver mutation.
 
 | Item | Required disposition |
 |---|---|
-| Write Ownership respected | PASS or BLOCKED with reason |
-| Readout allowlist preserved | PASS or BLOCKED with reason |
-| No adapter behavior claim | PASS or BLOCKED with reason |
-| Focused tests pass | PASS or BLOCKED with reason |
-| Worker return fast gate pass | PASS or BLOCKED with reason |
-| Pre-closure gates pass | PASS or BLOCKED with reason |
+| Write Ownership respected | PASS |
+| Readout allowlist preserved | PASS |
+| No adapter behavior claim | PASS |
+| Focused tests pass | PASS |
+| Worker return fast gate pass | PASS |
+| Pre-closure gates pass | PASS |
 
 ## Foundation Storage Layout Block
 
@@ -496,6 +517,29 @@ read-only metadata readout implementation.
 Rollback boundary: delete the newly created helper/test and reviewer artifacts;
 do not revert prior ASSF package, Web projection, boundary contract, or session
 continuity commits.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_COMPLETION_2026-06-26.md` | completion review status `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: this is a session-next-move work order, not roadmap closure | N/A with reason | N/A with reason |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation authorized or required for this read-only helper | no registry path in changed set | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation authorized or required for this read-only helper | no registry Markdown path in changed set | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence artifact absorbed | local command evidence only | N/A with reason |
+| System loop interlock | N/A with reason: no runtime loop, provider route, adapter, or package execution changed | read-only helper only | N/A with reason |
+| Session continuity | N/A with reason: material closure only; session-sync is separate after material commit | no session path in changed set | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Acceptance criterion | Receipt evidence | Disposition |
+|---|---|---|
+| AC1 helper emits only allowlisted fields | focused unittest `test_readout_uses_only_allowlisted_skill_fields` PASS | PASS |
+| AC2 helper is read-only and does not open instruction bodies | focused unittest `test_no_filesystem_write_or_instruction_body_open` PASS | PASS |
+| AC3 helper does not mutate registry/index/resolver/lifecycle/package roots | changed set excludes forbidden paths and helper has no write API | PASS |
+| AC4 CLI/json output states no adapter behavior is implemented | helper output and tests show `adapterImplementation: NOT_IMPLEMENTED` | PASS |
+| AC5 focused tests and governance gates pass | unittest, ASSF drift/admission, pre-implementation, and diff check PASS | PASS |
 
 ## Agent Operation Trace Block
 
