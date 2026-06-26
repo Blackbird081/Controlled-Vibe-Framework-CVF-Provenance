@@ -1,0 +1,5 @@
+{
+  "stateOrder": 638,
+  "stateKey": "assfWebProjectionSchemaMappingDecisionClosure20260626",
+  "value": "ASSF-WEBPROJ-T0 Web projection schema/mapping decision closed CLOSED_PASS_BOUNDED at material commit a408c13e. Artifacts: docs/reviews/CVF_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_2026-06-26.md and docs/reviews/CVF_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_COMPLETION_2026-06-26.md. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_SCHEMA_MAPPING_DECISION_FOR_CODEX_2026-06-26.md is closed bounded. Decision recommendation: OPEN_WEB_PROJECTION_IMPLEMENTATION_WORK_ORDER. Boundary: implementation requires a fresh GC-018 baseline and source-verified work order; no direct Web runtime/source mutation, package instance, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, push, activation, package instruction execution, or package integration was authorized or performed."
+}
