@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record WODS-T4 bounded closure continuity after the operator-authorized
-guard-behavior discussion pilot closed at material commit `0d81a814`.
+Target: record ASSF-PIC-T4 bounded closure continuity after the Web projection
+bridge decision closed at material commit `60ffa4de`.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,35 +40,36 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-WODS-T4 Guard Behavior Discussion Pilot closure material commit `0d81a814`.
+ASSF-PIC-T4 Web Projection Bridge Decision closure material commit `60ffa4de`.
 This sync advances the handoff HEAD block, generated active session state,
 bootstrap read model, front door, and next-move pointers while recording
-WODS-T4 as closed bounded and routing the next move to operator tranche
-selection.
+ASSF-PIC-T4 as closed bounded and routing the next move to ASSF-PIC-T5
+GC-018/source-verified work-order creation.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/assfPicT4WebProjectionBridgeDecisionClosure20260626.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/wodsT4GuardBehaviorDiscussionPilotClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator directed Codex to handle the WODS-T4
-tranche directly after reviewing the recurring WODS authoring-friction cycle.
-Codex closed the pilot as a bounded operator-authorized exception, not as a
-reusable dispatch pattern.
+Operator authorization: the operator approved Codex taking multiple roles to
+process ASSF-PIC-T4 and ASSF-PIC-T5 after WODS-T4 closure released the held
+ASSF-PIC lane.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert WODS-T4 closure material `0d81a814`, WODS-T4 pilot material `b01b8771`,
-WODS-T3 closure material `b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`,
-or earlier session history.
+revert ASSF-PIC-T4 material `60ffa4de`, WODS-T4 closure material `0d81a814`,
+WODS-T4 pilot material `b01b8771`, WODS-T3 closure material `b14260a4`,
+ASSF-PIC-T3 closure material `9c621ba6`, or earlier session history.
 
 ## Current Mode
 
-`wods_t4_closed_pass_bounded_next_tranche_selection_pending`
+`assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`
+
+ASSF-PIC-T4 Web Projection Bridge Decision material HEAD: `60ffa4de`
 
 WODS-T3 closure material HEAD: `b14260a4`
 
@@ -526,7 +527,8 @@ passed 43/44 with only this required session continuity sync outstanding.
 WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
 commit `0d81a814`. Next allowed move: operator selection of the next tranche.
 ASSF-PIC-T4 may be selected only through a fresh GC-018/source-verified work
-order; it is not automatically released by this sync.
+order; that selection has now closed as ASSF-PIC-T4 at material commit
+`60ffa4de`.
 
 No package instance creation, certification decision, `SKILL.md`,
 `skill.source.json`, generated-index mutation, registry-source mutation,
@@ -577,7 +579,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wods_t4_closed_pass_bounded_next_tranche_selection_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator selection of the next tranche; parked checkpoint=ASSF-PIC-T4 requires fresh GC-018/source-verified work order before any execution.
+Startup acknowledged: current mode=`assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=ASSF-PIC-T5 GC-018 and source-verified work-order creation; parked checkpoint=no package instance or certification decision authorized.
 
 ## Parked Checkpoints
 
@@ -607,7 +609,11 @@ Startup acknowledged: current mode=`wods_t4_closed_pass_bounded_next_tranche_sel
   `ee5f2c42` with `CERTIFICATION_HELD_WITH_REASON`; ASSF-PIC-T3 is closed
   bounded at material commit `9c621ba6`.
 - WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
-  commit `0d81a814`; next move is operator selection of the next tranche.
+  commit `0d81a814`; next selection closed as ASSF-PIC-T4 at material commit
+  `60ffa4de`.
+- ASSF-PIC-T4 Web Projection Bridge Decision is closed bounded at material
+  commit `60ffa4de`; ASSF-PIC-T5 is the next allowed GC-018/source-verified
+  work-order candidate.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -687,9 +693,29 @@ ADIF reviewer material `fd5414b7`, or prior history.
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records WODS-T3 dispatch at material
-commit `b14260a4` and routes the next move to an operator decision while
-retaining the ASSF-PIC-T4 hold. It does not create a package instance,
-certify a package, mutate lifecycle state, mutate package root/index/resolver,
-implement external CLI/MCP adapter behavior, run runtime/provider/live/public
-work, activate a package, claim readiness, or authorize automatic promotion.
+## ASSF-PIC-T4 Session Sync - 2026-06-26
+
+ASSF-PIC-T4 Web Projection Bridge Decision is closed bounded at material commit
+`60ffa4de`. Material artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md`
+
+Dispositions:
+
+- `WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD`
+- `SCHEMA_BRIDGE_DEFERRED_CERTIFICATION_HELD`
+- `EXTERNAL_ADAPTER_DEFERRED_NO_EVIDENCE`
+
+Next allowed move: ASSF-PIC-T5 GC-018 and source-verified work-order creation
+for checker readiness and next-control decision.
+
+This handoff is session continuity only. It records ASSF-PIC-T4 material
+closure at commit `60ffa4de` and routes the next move to ASSF-PIC-T5
+GC-018/source-verified work-order creation. It does not create a package
+instance, certify a package, mutate lifecycle state, mutate package
+root/index/resolver, implement external CLI/MCP adapter behavior, run
+runtime/provider/live/public work, activate a package, claim readiness, or
+authorize automatic promotion.

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`
+Current mode marker: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`.
+Current mode: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`.
 
-Previous mode: `wods_t3_closed_pass_bounded_operator_decision_pending`.
+Previous mode: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`.
 
 Active handoff:
 
@@ -66,13 +66,21 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+ASSF-PIC-T4 Web Projection Bridge Decision is closed bounded at material
+closure commit `60ffa4de`. Web projection, schema bridge, and external adapter
+remain deferred because the selected candidate still has `uatState:
+NOT_STARTED` and `certificationState: NOT_STARTED`. Next allowed move:
+ASSF-PIC-T5 GC-018 and source-verified work-order creation for checker
+readiness and next-control decision.
+
 WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
 commit `0d81a814`, after pilot material commit `b01b8771` and handoff bridge
 `9f85418c`. It accepts a bounded shared discussion-section parser for the
 Delta execution-claim guard and intake-analysis guard only, with effectiveness
 verdict `IMPROVED_BOUNDED`. Next allowed move: operator selection of the next
 tranche. ASSF-PIC-T4 may be selected only through fresh GC-018 and a
-source-verified work order; it is not automatically released by this sync.
+source-verified work order; that selection has now closed as ASSF-PIC-T4 at
+material commit `60ffa4de`.
 
 WODS-T3 Delta Block Table Shape And Template Hardening is closed bounded at
 material commit `b14260a4` with `IMPROVED_WITH_NEW_FINDING`. It repaired the
@@ -81,11 +89,11 @@ The new cross-guard phrase-marker finding is recorded through ADIF-0007.
 
 ASSF-PIC-T3 remains `CLOSED_PASS_BOUNDED` at `9c621ba6` with
 `INTEGRATION_DEFERRED_CERTIFICATION_HELD`. The WODS reopen condition fired from
-3 gate runs and recurring scaffold/template/format friction. ASSF-PIC-T4 remains
-`HOLD_WODS_REOPEN_AFTER_PIC_T3`.
+3 gate runs and recurring scaffold/template/format friction. ASSF-PIC-T4 is
+now `CLOSED_PASS_BOUNDED` at material commit `60ffa4de`.
 
-Next allowed move: operator selection of the next tranche. ASSF-PIC-T4 may be
-selected only through fresh GC-018 and a source-verified work order.
+Next allowed move: ASSF-PIC-T5 GC-018 and source-verified work-order creation
+for checker readiness and next-control decision.
 
 WODS-T2 Dispatch And Worker-Return Scaffold Hardening is closed bounded at
 material commit `397d1fe4`, with effectiveness verdict
@@ -980,18 +988,17 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`.
+Mode: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`.
 
-Latest material HEAD: `0d81a814` (WODS-T4 Guard Behavior Discussion Pilot
+Latest material HEAD: `60ffa4de` (ASSF-PIC-T4 Web Projection Bridge Decision
 closure).
 
-Next allowed move: operator selection of the next tranche. ASSF-PIC-T4 may be
-selected only through a fresh GC-018/source-verified work order; it is not
-automatically released by this sync.
+Next allowed move: ASSF-PIC-T5 GC-018 and source-verified work-order creation
+for checker readiness and next-control decision.
 
 ASSF-PIC-T3 remains closed bounded with
 `INTEGRATION_DEFERRED_CERTIFICATION_HELD`; ASSF-PIC-T4 is
-`SELECTION_ALLOWED_WITH_FRESH_GC018_WORK_ORDER_ONLY`.
+`CLOSED_PASS_BOUNDED`.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 
