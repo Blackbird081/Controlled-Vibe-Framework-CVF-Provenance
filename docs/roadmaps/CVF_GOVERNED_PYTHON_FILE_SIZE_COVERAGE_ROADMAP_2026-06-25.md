@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORK_ORDER_READY (T0 only)
+Status: T2_PASS_BOUNDED_T3_WORK_ORDER_READY
 
 docType: roadmap
 
@@ -132,15 +132,16 @@ carry validator logic rather than pure parsing.
 
 ### T2 - Split work-order lifecycle / status validators
 
-WORK_ORDER_READY (T1 passed). Extract lifecycle and status validators into their
-own module, behavior-preserving, proven by the unchanged dispatch-quality suite,
-ratcheting the monolith cap down again. Requires a fresh operator selection and a
-fresh GC-018/work order.
+DONE (closed at completion `docs/reviews/CVF_GFS_PY_T2_LIFECYCLE_STATUS_VALIDATOR_SPLIT_COMPLETION_2026-06-26.md`; monolith 2972 -> 2720, cap lowered to 2720, combined dispatch-quality suites 144/144 unchanged). Extracted lifecycle/status validators into
+`governance/compat/check_work_order_dispatch_quality_lifecycle.py`,
+behavior-preserving, with focused module tests and the unchanged dispatch-quality
+suite as regression anchors.
 
 ### T3 - Split source-verification / token-collision validators
 
-HOLD_UNTIL_T2_PASS. Extract source-verification and token-collision validators
-into their own module.
+WORK_ORDER_READY (T2 passed). Extract source-verification and token-collision
+validators into their own module. Requires a fresh operator selection and a
+fresh GC-018/work order.
 
 ### T4 - Leave check_work_order_dispatch_quality.py as an orchestrator shell
 
@@ -157,8 +158,8 @@ existing dispatch-quality test suite plus any added focused tests.
 | --- | --- | --- |
 | T0 | upgrade the guard to per-class thresholds, add the touch rule, wire it locally and in autorun, seed legacy exceptions | DONE |
 | T1 | split markdown table-parsing helpers out of the monolith | DONE |
-| T2 | split work-order lifecycle / status validators | WORK_ORDER_READY |
-| T3 | split source-verification / token-collision validators | HELD |
+| T2 | split work-order lifecycle / status validators | DONE |
+| T3 | split source-verification / token-collision validators | WORK_ORDER_READY |
 | T4 | reduce the monolith to an orchestrator shell | HELD |
 
 ## Acceptance Criteria

@@ -24,7 +24,7 @@
     {
       "path": "governance/compat/check_work_order_dispatch_quality.py",
       "fileClass": "python_checker",
-      "approvedMaxLines": 2972,
+      "approvedMaxLines": 2720,
       "status": "ACTIVE_EXCEPTION",
       "rationale": "Dispatch-quality monolith is the central nervous system of work-order validation. It predates the class-aware Python size guard and must be split with order and evidence, not in one regression-prone rewrite.",
       "requiredFollowup": "Split per the GFS-PY roadmap T1-T4 (docs/roadmaps/CVF_GOVERNED_PYTHON_FILE_SIZE_COVERAGE_ROADMAP_2026-06-25.md): T1 markdown table/source-verification helpers, T2 lifecycle/status validators, T3 source-verification/token-collision validators, T4 orchestrator shell. Do NOT add a new validator directly to this file; new validators go into a split module. Frozen at current line count: any touch must keep net line delta <= 0.",
