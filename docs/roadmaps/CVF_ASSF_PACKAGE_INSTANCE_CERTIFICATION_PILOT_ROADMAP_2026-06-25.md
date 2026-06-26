@@ -237,16 +237,19 @@ and resolver tests should be updated. This tranche may be doc-only or
 implementation-bearing depending on the work order. Any source mutation must
 edit generated source entries first and run the generator/checker path.
 
-Status: `DISPATCHED_DECISION_ONLY_CERTIFICATION_HELD`.
+Status: `CLOSED_PASS_BOUNDED`.
 
-Dispatch note: PIC-T2 did not certify the package. The operator separately
-authorized ASSF-PIC-T3 after value-parking residual WODS defects with a concrete
-reopen condition. T3 is therefore dispatched as a decision-only review under
-the certification hold, expected to decide `INTEGRATION_DEFERRED_CERTIFICATION_HELD`
-unless source evidence blocks the decision. This dispatch does not authorize
-generated-index source mutation, generated aggregate mutation, resolver
-mutation, registry mutation, package integration, package activation, or
-certification state advancement.
+Closure note: PIC-T2 did not certify the package. ASSF-PIC-T3 therefore closed
+as a decision-only review under the certification hold with disposition
+`INTEGRATION_DEFERRED_CERTIFICATION_HELD` in
+`docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_COMPLETION_2026-06-26.md`.
+The worker and reviewer confirmed generated-index drift check PASS and resolver
+readout metadata-only behavior. This closure does not authorize generated-index
+source mutation, generated aggregate mutation, resolver mutation, registry
+mutation, package integration, package activation, or certification state
+advancement. The operator-reported T3 worker experience also fired the parked
+WODS reopen condition, so PIC-T4 remains held while WODS follow-up is the next
+material lane.
 
 Required outputs:
 
@@ -262,7 +265,7 @@ candidate-only, or receive a Web projection bridge work order. This tranche
 does not mutate Web runtime unless a later work order explicitly releases that
 scope and source-verifies the schema bridge.
 
-Status: `HOLD_UNTIL_PIC_T3_PASS_OR_EXPLICIT_SKIP`.
+Status: `HOLD_WODS_REOPEN_AFTER_PIC_T3`.
 
 Required outputs:
 
@@ -343,12 +346,13 @@ Return to orchestrator if any ASSF-PIC work order:
 
 ## Finding-To-Governance Learning Disposition
 
-- Defect class: `N/A_WITH_REASON`
-- Learning lane: `DOCUMENTATION_ONLY_LEARNING`
-- Disposition: `N/A_WITH_REASON` - this roadmap records a forward execution
-  lane, not a new repeated defect pattern.
-- Next control action: create a source-verified work-order dispatch scaffold
-  optimization GC-018/work order before any ASSF-PIC-T2 dispatch.
+- Defect class: `ORCHESTRATOR_PACKET_GAP`
+- Learning lane: `GOVERNANCE_CONTROL_PLANE`
+- Disposition: `CAPTURED_FOR_FOLLOW_UP` - ASSF-PIC-T3 closed bounded, but the
+  operator-reported worker experience hit the parked WODS reopen condition:
+  3 gate runs and recurring scaffold/template/format defects.
+- Next control action: create a source-verified WODS follow-up GC-018/work
+  order before ASSF-PIC-T4 dispatch.
 - Runtime/provider/cost learning lane: `N/A_WITH_REASON` - this roadmap does
   not run provider calls or cost-bearing tests.
 

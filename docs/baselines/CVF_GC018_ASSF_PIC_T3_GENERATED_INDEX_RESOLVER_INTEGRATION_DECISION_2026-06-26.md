@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -50,8 +50,8 @@ blocker that requires `BLOCKED_WITH_REASON`.
 Verdicts:
 
 - Dispatcher verdict: DISPATCH_APPROVED_DECISION_ONLY
-- Worker verdict: PENDING_WORKER_RETURN
-- Reviewer verdict: PENDING_REVIEW
+- Worker verdict: COMPLETE_PENDING_REVIEW
+- Reviewer verdict: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -179,7 +179,7 @@ Remediation applied:
 
 | Parked lane | Reopen condition | Current disposition |
 |---|---|---|
-| residual WODS defects after WODS-T2 | reopen only if the next delegated worker-return still needs more than 2 fast-gate repair rounds for scaffold/template/keyword-guard format defects, or if the same recursive keyword false-trigger appears again despite gotcha 22 | parked; not part of ASSF-PIC-T3 execution |
+| residual WODS defects after WODS-T2 | reopen only if the next delegated worker-return still needs more than 2 fast-gate repair rounds for scaffold/template/keyword-guard format defects, or if the same recursive keyword false-trigger appears again despite gotcha 22 | reopen condition fired during ASSF-PIC-T3 review: operator-reported worker experience required 3 gate runs and exposed scaffold/template/format defects; next material lane should be WODS follow-up, with PIC-T4 held |
 
 ## Dual Agent Surface Matrix
 
@@ -259,6 +259,25 @@ Reason: private provenance governance dispatch; no public-sync authorization.
 | Actual changed set | `docs/baselines/CVF_GC018_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md`; `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_COMPLETION_2026-06-26.md` | `Reviewer verdict: CLOSED_PASS_BOUNDED`; `Integration disposition: INTEGRATION_DEFERRED_CERTIFICATION_HELD` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | T3 `Status: CLOSED_PASS_BOUNDED`; T4 `Status: HOLD_WODS_REOPEN_AFTER_PIC_T3` | PASS |
+| Registry JSON | N/A with reason: no registry JSON mutation is authorized by ASSF-PIC-T3 | no registry JSON in changed set | BLOCKED with reason: out of scope |
+| Registry Markdown | N/A with reason: no registry Markdown mutation is authorized by ASSF-PIC-T3 | no registry Markdown in changed set | BLOCKED with reason: out of scope |
+| External evidence digest | N/A with reason: no external evidence artifact is created by this local documentation tranche | no external artifact hash applies | N/A with reason |
+| System loop interlock | completion review | no package activation, runtime loop, provider call, public-sync, or worker commit occurred | PASS |
+| Session continuity | N/A with reason: session-sync is separate after material closure | active session paths excluded from material changed set | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| No runtime/provider/adapter receipt required for this documentation-only closure | `receiptEvidence` remains N/A with reason; reviewer-fast and worker-return fast gate evidence recorded in completion review | PASS |
 
 ## Claim Boundary
 
