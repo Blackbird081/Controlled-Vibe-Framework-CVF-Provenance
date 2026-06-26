@@ -1,0 +1,5 @@
+{
+  "stateOrder": 585,
+  "stateKey": "frontDoorHandoffCompaction20260626",
+  "value": "Session-maintenance compaction opened AGENT_HANDOFF_V23_2026-06-26.md, archived AGENT_HANDOFF_V22_2026-06-22.md under CVF_SESSION/handoffs/archive/, archived the previous CVF_SESSION_MEMORY.md snapshot, and compacted the active front door to pointer form."
+}

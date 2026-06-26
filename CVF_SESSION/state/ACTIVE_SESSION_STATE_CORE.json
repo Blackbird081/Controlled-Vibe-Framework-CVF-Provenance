@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
-  "sessionMemoryFrontDoorArchive": "CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_ROTATION_ARCHIVE_2026-05-28.md",
+  "sessionMemoryFrontDoorArchive": "CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V22_2026-06-22.md",
+  "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -55,15 +55,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V17_2026-06-07.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V20_2026-06-19.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V21_2026-06-22.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V21_2026-06-22.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending",
-  "previousMode": "assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending",
+  "currentMode": "guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending",
+  "previousMode": "orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

@@ -9,6 +9,12 @@ Date opened: 2026-06-22
 Supersedes:
 `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V21_2026-06-22.md`
 
+## Text Encoding Exception
+
+This archived handoff preserves historical operator quotes that contain
+non-ASCII Vietnamese text. No new semantic content is added to those quoted
+lines during archive rotation.
+
 ## Purpose
 
 Record current MPI Phase 2, ADIF, and ASSF roadmap continuity. Detailed history

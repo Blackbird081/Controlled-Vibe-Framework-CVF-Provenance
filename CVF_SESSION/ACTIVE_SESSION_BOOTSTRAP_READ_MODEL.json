@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending",
-  "activeHandoff": "AGENT_HANDOFF_V22_2026-06-22.md",
-  "nextAllowedMove": "Orchestration command catalog refactor and ASSF gate wiring is CLOSED_PASS_BOUNDED at material commit 10dee6e9. It extracted local hook and autorun command catalogs from the near-limit orchestration runners, wired governance/compat/check_assf_certified_metadata_admission.py into reviewer-fast, pre-commit, pre-push, and autorun common bundles, and preserved file-size headroom. Next allowed move remains: operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first. No package instance creation, certification decision, generated-index mutation, resolver source mutation, Web implementation, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, package integration, worker commit, or worker session-sync is authorized by this session-sync. LHW24 remains the latest closed numbered LHW wave.",
+  "currentMode": "guard_binding_catalog_aware_checker_hardening_closed_pass_bounded_front_door_compacted_web_projection_control_pending",
+  "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
+  "nextAllowedMove": "Guard binding catalog-aware checker hardening is CLOSED_PASS_BOUNDED at material commit 4927687c, and active handoff/front-door compaction is in session-sync closure. Next allowed move remains: operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first. No package instance creation, certification decision, generated-index mutation, resolver source mutation, Web implementation, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, package integration, worker commit, or worker session-sync is authorized by this session-sync. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

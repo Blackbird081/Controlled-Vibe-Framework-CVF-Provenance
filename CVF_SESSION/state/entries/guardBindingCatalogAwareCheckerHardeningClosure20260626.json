@@ -1,0 +1,5 @@
+{
+  "stateOrder": 584,
+  "stateKey": "guardBindingCatalogAwareCheckerHardeningClosure20260626",
+  "value": "CLOSED_PASS_BOUNDED at material commit 4927687c. Added guard_binding_catalog.py, converted binding-sensitive checkers to read runner catalogs, removed marker-only constants from local hook and autorun runners, and passed pre-dispatch plus commit steward implementation gates."
+}
