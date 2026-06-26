@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T2_PASS_BOUNDED_T3_WORK_ORDER_READY
+Status: T3_PASS_BOUNDED_T4_WORK_ORDER_READY
 
 docType: roadmap
 
@@ -139,14 +139,16 @@ suite as regression anchors.
 
 ### T3 - Split source-verification / token-collision validators
 
-WORK_ORDER_READY (T2 passed). Extract source-verification and token-collision
-validators into their own module. Requires a fresh operator selection and a
-fresh GC-018/work order.
+DONE (closed at completion `docs/reviews/CVF_GFS_PY_T3_SOURCE_VERIFICATION_TOKEN_COLLISION_SPLIT_COMPLETION_2026-06-26.md`; monolith 2720 -> 2213, cap lowered to 2213, combined dispatch-quality suites 150/150 unchanged). Extracted source-verification and token-collision validators into
+`governance/compat/check_work_order_dispatch_quality_source.py`,
+behavior-preserving, with focused module tests and the unchanged dispatch-quality
+suite as regression anchors.
 
 ### T4 - Leave check_work_order_dispatch_quality.py as an orchestrator shell
 
-HOLD_UNTIL_T3_PASS. Reduce the monolith to an orchestrator that wires the
-extracted modules; remove or shrink its legacy exception accordingly.
+WORK_ORDER_READY (T3 passed). Reduce the monolith to an orchestrator that wires
+the extracted modules; remove or shrink its legacy exception accordingly.
+Requires a fresh operator selection and a fresh GC-018/work order.
 
 Each child tranche requires a fresh operator selection, a fresh GC-018, and a
 source-verified work order. Splits must be behavior-preserving and proven by the
@@ -159,8 +161,8 @@ existing dispatch-quality test suite plus any added focused tests.
 | T0 | upgrade the guard to per-class thresholds, add the touch rule, wire it locally and in autorun, seed legacy exceptions | DONE |
 | T1 | split markdown table-parsing helpers out of the monolith | DONE |
 | T2 | split work-order lifecycle / status validators | DONE |
-| T3 | split source-verification / token-collision validators | WORK_ORDER_READY |
-| T4 | reduce the monolith to an orchestrator shell | HELD |
+| T3 | split source-verification / token-collision validators | DONE |
+| T4 | reduce the monolith to an orchestrator shell | WORK_ORDER_READY |
 
 ## Acceptance Criteria
 
