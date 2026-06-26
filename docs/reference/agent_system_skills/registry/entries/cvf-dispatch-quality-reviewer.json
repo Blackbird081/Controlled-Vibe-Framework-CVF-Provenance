@@ -14,7 +14,11 @@
   ],
   "legacyRows": [],
   "license": "CVF_PRIVATE_GOVERNED",
-  "reviewArtifacts": [],
+  "reviewArtifacts": [
+    "docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md",
+    "docs/reviews/CVF_ASSF_CERT_T2_CERTIFICATION_DECISION_2026-06-26.md",
+    "docs/reviews/CVF_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_COMPLETION_2026-06-26.md"
+  ],
   "purpose": "Provide deterministic dispatch-quality validation of work-order and baseline artifacts before worker execution begins.",
   "triggerPatterns": [
     "dispatch review",
@@ -64,8 +68,8 @@
   "safeStop": "return failing gate verdict and exit non-zero; no cleanup required",
   "candidateState": "CANDIDATE",
   "approvalState": "AWAITING_REVIEW",
-  "uatState": "NOT_STARTED",
-  "certificationState": "NOT_STARTED",
+  "uatState": "PASSED",
+  "certificationState": "CERTIFIED",
   "deprecation": "none",
   "successor": "none",
   "retirement": "none",

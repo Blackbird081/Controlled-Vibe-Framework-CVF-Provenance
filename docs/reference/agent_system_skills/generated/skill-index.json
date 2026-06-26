@@ -13,7 +13,7 @@
       "candidateState": "CANDIDATE",
       "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json",
       "capabilityBoundary": "no commit, no provider call, no runtime activation, no external-agent adapter, no session-sync",
-      "certificationState": "NOT_STARTED",
+      "certificationState": "CERTIFIED",
       "compositionOrder": 1,
       "conflicts": [],
       "contextProfile": "governance-compat-only",
@@ -52,7 +52,11 @@
       "purpose": "Provide deterministic dispatch-quality validation of work-order and baseline artifacts before worker execution begins.",
       "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
       "retirement": "none",
-      "reviewArtifacts": [],
+      "reviewArtifacts": [
+        "docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md",
+        "docs/reviews/CVF_ASSF_CERT_T2_CERTIFICATION_DECISION_2026-06-26.md",
+        "docs/reviews/CVF_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_COMPLETION_2026-06-26.md"
+      ],
       "riskCeiling": "R0",
       "riskProfile": "R0",
       "roles": [
@@ -85,7 +89,7 @@
         "pre-dispatch gate",
         "dispatch quality check"
       ],
-      "uatState": "NOT_STARTED",
+      "uatState": "PASSED",
       "useWhen": "A dispatcher or reviewer must verify that a work-order and baseline pair satisfy all dispatch-quality gates before worker execution.",
       "version": "0.1.0"
     },
