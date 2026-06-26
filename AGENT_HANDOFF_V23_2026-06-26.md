@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_external_agent_readout_adapter_boundary_closed_pass_bounded_pending_readout_implementation_gc018`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open a fresh GC-018/source-verified work order for read-only external-agent metadata readout implementation; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration without future accepted work order authorization.
+Startup acknowledged: current mode=`assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=execute the dispatched ASSF external-agent metadata readout implementation work order as WORKER_MUST_NOT_COMMIT; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration.
 
 ## Current State
 
@@ -29,7 +29,7 @@ Startup acknowledged: current mode=`assf_external_agent_readout_adapter_boundary
 
 ## Current Mode
 
-`assf_external_agent_readout_adapter_boundary_closed_pass_bounded_pending_readout_implementation_gc018`
+`assf_external_agent_metadata_readout_implementation_dispatched_pending_execution`
 
 ## Purpose
 
@@ -58,6 +58,11 @@ Archived predecessor:
 
 Latest material work: commit `99fabd26` closed the ASSF external-agent readout
 / CLI-MCP adapter boundary roadmap T0-T4 as `CLOSED_PASS_BOUNDED`.
+
+Latest material work: commit `ce102d77` dispatched
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_FOR_CODEX_2026-06-26.md`
+and paired GC-018 baseline for read-only external-agent metadata readout
+implementation.
 
 Latest checklist learning work: commit `13dcb7ad` updated
 `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
@@ -88,6 +93,9 @@ material commit `99fabd26`.
 The governed artifact literal-format checklist was updated at material commit
 `13dcb7ad` with the GC-051 extension-path review/audit mention trap.
 
+The ASSF external-agent metadata readout implementation work order dispatched
+at material commit `ce102d77`.
+
 Material result:
 
 - Added `governance/compat/guard_binding_catalog.py`.
@@ -104,15 +112,15 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: open a fresh GC-018/source-verified work order for
-read-only external-agent metadata readout implementation, using
-`docs/reference/agent_system_skills/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_CONTRACT.md`
-as the boundary source. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_FOR_CODEX_2026-06-26.md`
+as `WORKER_MUST_NOT_COMMIT` from executionBaseHead `c2d2ee17`. Produce the
+helper, focused tests, worker return, and completion review named in the work
+order. LHW24 remains the latest closed numbered LHW wave.
 
 Do not start package instance creation, certification decision, lifecycle
 mutation, adapter behavior implementation, provider/live proof, public-sync,
-push, activation, package instruction execution, or package integration until
-that future work order is accepted and closed.
+push, activation, package instruction execution, or package integration.
 
 ## Parked Boundaries
 
@@ -162,7 +170,7 @@ Read in this order:
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
 | Allowed scope source | material boundary closure commit `99fabd26` and active next-move continuity update |
-| Before status evidence | clean worktree after checklist learning commit `13dcb7ad` |
+| Before status evidence | clean worktree after dispatch material commit `ce102d77` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
@@ -193,6 +201,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/assfExternalAgentReadoutCliMcpBoundaryClosure20260626.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/governedArtifactLiteralFormatChecklistLearning20260626.json`
+- `CVF_SESSION/state/entries/assfExternalAgentMetadataReadoutImplementationDispatch20260626.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionDispatch20260626.json`
@@ -201,9 +210,10 @@ Protected paths:
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
 Operator authorization: operator selected the next roadmap lane and Codex
-committed the material boundary closure at `99fabd26` and checklist learning
-commit `13dcb7ad`; this update only preserves active session continuity while
-leaving the next source-verified implementation work-order step unchanged.
+committed the material boundary closure at `99fabd26`, checklist learning
+commit `13dcb7ad`, and readout implementation dispatch commit `ce102d77`; this
+update routes the active session to execution of the dispatched no-commit work
+order.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
 commit `99fabd26`.
