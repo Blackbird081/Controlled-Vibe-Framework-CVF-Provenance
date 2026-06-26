@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1228,
+  "stateKey": "gfsPyT3SourceVerificationTokenCollisionSplitClosure20260626",
+  "value": "GFS-PY T3 source-verification/token-collision validator split closed as CLOSED_PASS_BOUNDED at material commit f8f35e3e. Added governance/compat/check_work_order_dispatch_quality_source.py and focused tests, preserved dispatch-quality behavior with 150/150 tests passing, lowered monolith cap to 2213, and moved next allowed move to fresh GFS-PY T4 GC-018/work-order authoring only."
+}

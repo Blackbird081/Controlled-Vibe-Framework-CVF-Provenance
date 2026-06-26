@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=author fresh GFS-PY T3 GC-018/source-verified work order for source-verification/token-collision validator split before any T3 implementation; parked checkpoint=no GFS-PY T3 implementation without that accepted work order, no T4 orchestrator-shell reduction, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
+Startup acknowledged: current mode=`gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=author fresh GFS-PY T4 GC-018/source-verified work order to reduce `check_work_order_dispatch_quality.py` to an orchestrator shell before any T4 implementation; parked checkpoint=no GFS-PY T4 implementation without that accepted work order, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
 
 ## Current State
 
@@ -26,12 +26,13 @@ Startup acknowledged: current mode=`gfs_py_t2_lifecycle_status_validator_split_c
 | ASSF external-agent readout / CLI-MCP adapter boundary closure | `99fabd26` |
 | AAF-T7A roadmap status reconciliation closure | `766f81e7` |
 | GFS-PY T2 lifecycle/status validator split closure | `3f7cb4e8` |
+| GFS-PY T3 source-verification/token-collision split closure | `f8f35e3e` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
+`gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order`
 
 ## Purpose
 
@@ -41,13 +42,12 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after GFS-PY T2 lifecycle/status validator split closure.
+after GFS-PY T3 source-verification/token-collision validator split closure.
 
-Owner boundary: this handoff authorizes only fresh GFS-PY T3 GC-018/source-
+Owner boundary: this handoff authorizes only fresh GFS-PY T4 GC-018/source-
 verified work-order authoring before implementation. It does not authorize
-GFS-PY T3 implementation, T4 orchestrator-shell reduction, validation semantics
-change, runtime/provider/live proof, public-sync, push, resolver mutation, or
-adapter mutation.
+GFS-PY T4 implementation, validation semantics change, runtime/provider/live
+proof, public-sync, push, resolver mutation, or adapter mutation.
 
 ## Active Boundary
 
@@ -81,6 +81,9 @@ reconciliation as `CLOSED_PASS_BOUNDED`.
 
 Latest material closure: commit `3f7cb4e8` closed GFS-PY T2 lifecycle/status
 validator split as `CLOSED_PASS_BOUNDED`.
+
+Latest material closure: commit `f8f35e3e` closed GFS-PY T3
+source-verification/token-collision validator split as `CLOSED_PASS_BOUNDED`.
 
 Latest checklist learning work: commit `13dcb7ad` updated
 `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
@@ -128,14 +131,17 @@ The AAF-T7A roadmap status reconciliation closed at material commit `766f81e7`.
 The GFS-PY T2 lifecycle/status validator split closed at material commit
 `3f7cb4e8`.
 
+The GFS-PY T3 source-verification/token-collision validator split closed at
+material commit `f8f35e3e`.
+
 Material result:
 
-- Extracted lifecycle/status helpers from
+- Extracted source-verification/token-collision helpers from
   `governance/compat/check_work_order_dispatch_quality.py` into
-  `governance/compat/check_work_order_dispatch_quality_lifecycle.py`.
-- Added focused lifecycle/status tests and preserved the combined
-  dispatch-quality suite.
-- Lowered the monolith exception cap to 2720 lines.
+  `governance/compat/check_work_order_dispatch_quality_source.py`.
+- Added focused source-verification/token-collision tests and preserved the
+  combined dispatch-quality suite at 150/150 passing.
+- Lowered the monolith exception cap to 2213 lines.
 
 Session-maintenance result in progress for this handoff:
 
@@ -146,15 +152,15 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: author fresh GFS-PY T3 GC-018/source-verified work order for
-source-verification/token-collision validator split before any T3
-implementation.
+Next allowed move: author fresh GFS-PY T4 GC-018/source-verified work order to
+reduce `check_work_order_dispatch_quality.py` to an orchestrator shell and
+remove or shrink its remaining exception before any T4 implementation.
 LHW24 remains the latest closed numbered LHW wave.
 
-Do not start GFS-PY T3 implementation, T4 orchestrator-shell reduction,
-validation semantics change, runtime/provider/live proof, public-sync, push,
-generated aggregate mutation beyond session sync, resolver mutation, or adapter
-mutation without future accepted work order authorization.
+Do not start GFS-PY T4 implementation, validation semantics change,
+runtime/provider/live proof, public-sync, push, generated aggregate mutation
+beyond session sync, resolver mutation, or adapter mutation without future
+accepted work order authorization.
 
 ## Parked Boundaries
 
@@ -163,7 +169,6 @@ Not authorized by this handoff:
 - Package instance creation.
 - Certification decision.
 - Lifecycle mutation.
-- GFS-PY T3 implementation.
 - GFS-PY T4 orchestrator-shell reduction.
 - Dispatch-quality validation semantics change.
 - Duplicate AAF-T7A helper implementation.
@@ -196,7 +201,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 3f7cb4e8 --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base f8f35e3e --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -204,12 +209,12 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-26 GFS-PY T2 lifecycle/status validator split session-sync |
+| Session or invocation | 2026-06-26 GFS-PY T3 source-verification/token-collision split session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | GFS-PY T2 material closure commit `3f7cb4e8` and active next-move continuity update |
-| Before status evidence | clean worktree after material closure commit `3f7cb4e8` |
+| Allowed scope source | GFS-PY T3 material closure commit `f8f35e3e` and active next-move continuity update |
+| Before status evidence | clean worktree after material closure commit `f8f35e3e` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
@@ -245,6 +250,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/assfMetadataReadoutGuardWiringClosure20260626.json`
 - `CVF_SESSION/state/entries/aafT7ARoadmapStatusReconciliationClosure20260626.json`
 - `CVF_SESSION/state/entries/gfsPyT2LifecycleStatusValidatorSplitClosure20260626.json`
+- `CVF_SESSION/state/entries/gfsPyT3SourceVerificationTokenCollisionSplitClosure20260626.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionDispatch20260626.json`
@@ -252,12 +258,12 @@ Protected paths:
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
-Operator authorization: operator selected GFS-PY T2 and Codex committed the
-material closure at `3f7cb4e8`; this update routes the active session to GFS-PY
-T3 work-order authoring.
+Operator authorization: operator selected GFS-PY T3 and Codex committed the
+material closure at `f8f35e3e`; this update routes the active session to GFS-PY
+T4 work-order authoring.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `3f7cb4e8`.
+commit `f8f35e3e`.
 
 ## Claim Boundary
 

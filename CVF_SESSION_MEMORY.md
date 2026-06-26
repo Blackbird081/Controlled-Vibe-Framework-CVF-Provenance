@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=author fresh GFS-PY T3 GC-018/source-verified work order for source-verification/token-collision validator split before any T3 implementation; parked checkpoint=no GFS-PY T3 implementation without that accepted work order, no T4 orchestrator-shell reduction, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
+Startup acknowledged: current mode=`gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=author fresh GFS-PY T4 GC-018/source-verified work order to reduce `check_work_order_dispatch_quality.py` to an orchestrator shell before any T4 implementation; parked checkpoint=no GFS-PY T4 implementation without that accepted work order, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
+Current mode marker: `gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order`
 
-Current mode: `gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
+Current mode: `gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order`
 
-`gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
+`gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order`
 
 Previous mode:
 
-`aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+`gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
 
 ## Latest Closed Work
 
@@ -64,18 +64,19 @@ Previous mode:
 | ASSF metadata readout guard wiring | `e04ed428` | CLOSED_PASS_BOUNDED |
 | AAF-T7A roadmap status reconciliation | `766f81e7` | CLOSED_PASS_BOUNDED |
 | GFS-PY T2 lifecycle/status validator split | `3f7cb4e8` | CLOSED_PASS_BOUNDED |
+| GFS-PY T3 source-verification/token-collision split | `f8f35e3e` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
+Mode: `gfs_py_t3_source_verification_token_collision_split_closed_pass_bounded_pending_gfs_py_t4_work_order`
 
-Next allowed move: author fresh GFS-PY T3 GC-018/source-verified work order for source-verification/token-collision validator split before any T3 implementation. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: author fresh GFS-PY T4 GC-018/source-verified work order to reduce `check_work_order_dispatch_quality.py` to an orchestrator shell and remove or shrink its remaining exception before any T4 implementation. LHW24 remains the latest closed numbered LHW wave.
 
-No GFS-PY T3 implementation without that accepted work order, no T4 orchestrator-shell reduction, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
+No GFS-PY T4 implementation without that accepted work order, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
 
 ## Parked Checkpoint
 
-GFS-PY T2 lifecycle/status validator split is closed bounded at material commit `3f7cb4e8`. GFS-PY T3 implementation and T4 orchestrator-shell reduction remain parked until separately authorized by a fresh accepted work order.
+GFS-PY T3 source-verification/token-collision validator split is closed bounded at material commit `f8f35e3e`. GFS-PY T4 orchestrator-shell reduction remains parked until separately authorized by a fresh accepted work order.
 
 ## Continuity Markers
 
