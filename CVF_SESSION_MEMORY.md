@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_pic_t3_closed_pass_bounded_wods_followup_pending`
+Current mode marker: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t3_closed_pass_bounded_wods_followup_pending`.
+Current mode: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`.
 
-Previous mode: `assf_pic_t3_generated_index_resolver_integration_decision_dispatched_pending_worker_return`.
+Previous mode: `assf_pic_t3_closed_pass_bounded_wods_followup_pending`.
 
 Active handoff:
 
@@ -66,24 +66,19 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-ASSF-PIC-T3 Generated Index And Resolver Integration Decision is closed bounded
-at material commit `9c621ba6` with disposition
-`INTEGRATION_DEFERRED_CERTIFICATION_HELD`. Artifacts:
+WODS-T3 Delta Block Table Shape And Template Hardening is dispatched at material
+commit `f275b5ba`. The packet repairs the worker-return scaffold Delta block
+table shape, decision-review structural-heading guidance, and literal-format
+gotchas for table-shape, tool-parsing, and ASCII friction. The worker is
+`WORKER_MUST_NOT_COMMIT` and returns only the named worker-return artifact to
+Codex reviewer/closer.
 
-- `docs/baselines/CVF_GC018_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md`
-- `docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md`
-- `docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_WORKER_RETURN_2026-06-26.md`
-- `docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_COMPLETION_2026-06-26.md`
-
-Generated-index drift check passed and resolver readout remained metadata-only.
-The worker/operator report fired the value-parked WODS reopen condition through
+ASSF-PIC-T3 remains `CLOSED_PASS_BOUNDED` at `9c621ba6` with
+`INTEGRATION_DEFERRED_CERTIFICATION_HELD`. The WODS reopen condition fired from
 3 gate runs and recurring scaffold/template/format friction. ASSF-PIC-T4 remains
 `HOLD_WODS_REOPEN_AFTER_PIC_T3`.
 
-Next allowed move: create a fresh source-verified WODS follow-up GC-018 baseline
-and work order to address the T3-observed residual work-order/scaffold defects
-before any ASSF-PIC-T4 dispatch.
+Next allowed move: worker execution of WODS-T3 only, then reviewer closure.
 
 WODS-T2 Dispatch And Worker-Return Scaffold Hardening is closed bounded at
 material commit `397d1fe4`, with effectiveness verdict
@@ -978,18 +973,17 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t3_closed_pass_bounded_wods_followup_pending`.
+Mode: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`.
 
-Latest material HEAD: `9c621ba6` (ASSF-PIC-T3 generated-index and resolver
-integration decision closure).
+Latest material HEAD: `f275b5ba` (WODS-T3 Delta Block Table Shape And Template
+Hardening dispatch).
 
-Next allowed move: create a fresh source-verified WODS follow-up GC-018 baseline
-and work order for the T3-observed residual work-order/scaffold defects before
-any ASSF-PIC-T4 dispatch.
+Next allowed move: Claude executes the committed WODS-T3 work order under
+`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON` with uncommitted artifacts for Codex review.
 
-ASSF-PIC-T3 closed bounded with `INTEGRATION_DEFERRED_CERTIFICATION_HELD`.
-The WODS reopen condition fired during T3 worker execution: 3 gate runs and
-recurring scaffold/template/format friction. ASSF-PIC-T4 remains
+ASSF-PIC-T3 remains closed bounded with
+`INTEGRATION_DEFERRED_CERTIFICATION_HELD`; ASSF-PIC-T4 remains
 `HOLD_WODS_REOPEN_AFTER_PIC_T3`.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.

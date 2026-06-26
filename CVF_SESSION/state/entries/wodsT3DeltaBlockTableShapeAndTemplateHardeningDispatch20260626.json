@@ -1,0 +1,23 @@
+{
+  "stateOrder": 678,
+  "stateKey": "wodsT3DeltaBlockTableShapeAndTemplateHardeningDispatch20260626",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "f275b5ba",
+    "dispatchBaseHead": "d09ea747",
+    "baseline": "docs/baselines/CVF_GC018_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_FOR_CLAUDE_2026-06-26.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_WORKER_RETURN_2026-06-26.md",
+    "executionMode": "WORKER_MUST_NOT_COMMIT",
+    "worker": "Claude",
+    "nextAction": "Claude executes WODS-T3 and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with uncommitted artifacts for Codex reviewer/closer.",
+    "targetedDefects": [
+      "Delta Execution Claim Boundary scaffold prose instead of table rows",
+      "decision-review generic structural-section guidance gap",
+      "literal-format gotchas missing Delta table-shape, tool-parsing, and ASCII friction"
+    ],
+    "effectivenessMeasurement": "Worker compares first/final fast-gate results and repair count against WODS-T1, WODS-T2, and ASSF-PIC-T3 observations; reviewer decides whether improvement is bounded, unchanged, or blocked by a new defect.",
+    "picT4Disposition": "HOLD_WODS_REOPEN_AFTER_PIC_T3",
+    "forbiddenExpansion": "No ASSF-PIC-T4 dispatch, package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, package integration, worker commit, or worker session-sync."
+  }
+}
