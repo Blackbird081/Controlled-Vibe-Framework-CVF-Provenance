@@ -39,11 +39,11 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync continuity update after ASSF
-certified metadata admission gate material commit `cf9748f4`. This sync
+Authorized guard-maintenance scope: session-sync continuity update after
+orchestration command catalog refactor material commit `10dee6e9`. This sync
 advances the handoff HEAD block, generated active session state, bootstrap read
-model, front door, and next-move pointers while routing the next move to a Web
-projection schema/mapping decision work order.
+model, front door, and next-move pointers while keeping the next move routed to
+a Web projection schema/mapping decision work order.
 
 Protected paths:
 
@@ -51,7 +51,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/assfCertifiedMetadataAdmissionGateClosure20260626.json`
+- `CVF_SESSION/state/entries/orchestrationCommandCatalogRefactorClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
@@ -59,15 +59,17 @@ Operator authorization: the operator instructed Codex to continue according to
 the next allowed move and finish this tranche before moving to a new roadmap.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF certified metadata admission material `cf9748f4`, lifecycle
+revert orchestration command catalog material `10dee6e9`, ASSF certified metadata admission material `cf9748f4`, lifecycle
 source-state material `121aafcf`, certification decision material `208ae418`,
 or earlier session history.
 
 ## Current Mode
 
-`assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending`
+`orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending`
 
 ASSF package lifecycle source-state update T0-T4 material HEAD: `121aafcf`
+
+Orchestration command catalog refactor material HEAD: `10dee6e9`
 
 ASSF certified metadata admission gate material HEAD: `cf9748f4`
 
@@ -537,18 +539,19 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ASSF certified metadata admission gate and Web projection decision T0-T4 is
-closed bounded at material commit `cf9748f4`. Next allowed move:
+Orchestration command catalog refactor and ASSF gate wiring is
+closed bounded at material commit `10dee6e9`. It extracted local hook
+and autorun command catalogs from the near-limit orchestration runners and
+wired the ASSF certified metadata admission checker into the standard
+local and autorun bundles. Next allowed move remains:
 operator-authorized ASSF Web projection schema/mapping decision GC-018 plus
-source-verified work order, decision-first. The certified metadata admission
-checker is installed as a direct material gate; Web projection implementation
-remains parked until the later schema/mapping work order source-verifies exact
-Web fields.
+source-verified work order, decision-first. Web projection implementation
+remains parked until that later work order source-verifies exact Web fields.
 
-No package instance creation, certification decision, generated-index mutation,
-resolver source mutation, CVF Web runtime change, CLI/MCP adapter behavior,
-provider/live proof, public-sync, push, activation, worker commit, package
-integration, or package instruction execution is released.
+No package instance creation, certification decision, generated-index
+mutation, resolver source mutation, CVF Web runtime change, CLI/MCP adapter
+behavior, provider/live proof, public-sync, push, activation, worker commit,
+package integration, or package instruction execution is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -593,7 +596,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first; parked checkpoint=no package instance/runtime/adapter/public-sync, and no Web implementation without a future source-verified work order.
+Startup acknowledged: current mode=`orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first; parked checkpoint=no package instance/runtime/adapter/public-sync, and no Web implementation without a future source-verified work order.
 
 ## Parked Checkpoints
 

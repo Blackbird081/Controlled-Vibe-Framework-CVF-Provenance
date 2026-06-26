@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending`
+Current mode marker: `orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,7 +44,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending`.
+Current mode: `orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending`.
 
 Previous mode: `assf_certification_evidence_approved_source_state_update_pending`.
 
@@ -66,17 +66,24 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+Orchestration command catalog refactor and ASSF gate wiring is closed
+bounded at material commit `10dee6e9`. It extracted local hook and
+autorun command catalogs from the near-limit orchestration runners, wired
+`governance/compat/check_assf_certified_metadata_admission.py` into the
+standard local and autorun bundles, and preserved file-size headroom. Next
+allowed move remains operator-authorized ASSF Web projection schema/mapping
+decision GC-018 plus source-verified work order, decision-first. This sync
+does not authorize package instance creation, certification decision,
+generated-index mutation, resolver source mutation, Web implementation,
+CLI/MCP adapter behavior, provider/live proof, public-sync, push,
+activation, package instruction execution, package integration, worker
+commit, or worker session-sync.
+
 ASSF certified metadata admission gate and Web projection decision T0-T4 is
 closed bounded at material commit `cf9748f4`. It added
 `governance/compat/check_assf_certified_metadata_admission.py` and focused
-tests, proved the current registry/index certified metadata passes the direct
-gate, and parked Web projection implementation. Next allowed move:
-operator-authorized ASSF Web projection schema/mapping decision GC-018 plus
-source-verified work order, decision-first. This sync does not authorize
-package instance creation, certification decision, generated-index mutation,
-resolver source mutation, Web implementation, CLI/MCP adapter behavior,
-provider/live proof, public-sync, push, activation, package instruction
-execution, package integration, worker commit, or worker session-sync.
+tests, proved the current registry/index certified metadata passes the
+direct gate, and parked Web projection implementation.
 
 ASSF package lifecycle source-state update T0-T4 is closed bounded at material
 commit `121aafcf`. It updated `cvf-dispatch-quality-reviewer` registry source
@@ -1054,7 +1061,7 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending`.
+Mode: `orchestration_command_catalog_refactor_closed_pass_bounded_web_projection_control_pending`.
 
 Latest material HEAD: `cf9748f4` (ASSF certified metadata admission gate and Web projection decision T0-T4 closure).
 
