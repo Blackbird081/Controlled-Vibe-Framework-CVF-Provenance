@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1220,
+  "stateKey": "assfMetadataReadoutGuardWiringDispatch20260626",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "810f3440",
+    "dispatchBaseHead": "a9adf3cb",
+    "roadmap": "docs/roadmaps/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_ROADMAP_2026-06-26.md",
+    "baseline": "docs/baselines/CVF_GC018_ASSF_METADATA_READOUT_GUARD_WIRING_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_METADATA_READOUT_GUARD_WIRING_FOR_CODEX_2026-06-26.md",
+    "workerMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAction": "Codex executes the ASSF metadata readout guard wiring work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON before reviewer/closer material commit.",
+    "forbiddenExpansion": "No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration."
+  }
+}
