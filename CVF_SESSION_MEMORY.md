@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation; parked checkpoint=no duplicate AAF-T7A helper implementation, L2 patch preview, L3 apply, adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration without future accepted work order authorization.
+Startup acknowledged: current mode=`gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=author fresh GFS-PY T3 GC-018/source-verified work order for source-verification/token-collision validator split before any T3 implementation; parked checkpoint=no GFS-PY T3 implementation without that accepted work order, no T4 orchestrator-shell reduction, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+Current mode marker: `gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
 
-Current mode: `aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+Current mode: `gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
 
-`aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+`gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
 
 Previous mode:
 
-`assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection`
+`aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
 
 ## Latest Closed Work
 
@@ -63,18 +63,19 @@ Previous mode:
 | ASSF metadata readout guard wiring dispatch | `810f3440` | DISPATCH_READY |
 | ASSF metadata readout guard wiring | `e04ed428` | CLOSED_PASS_BOUNDED |
 | AAF-T7A roadmap status reconciliation | `766f81e7` | CLOSED_PASS_BOUNDED |
+| GFS-PY T2 lifecycle/status validator split | `3f7cb4e8` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+Mode: `gfs_py_t2_lifecycle_status_validator_split_closed_pass_bounded_pending_gfs_py_t3_work_order`
 
-Next allowed move: select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: author fresh GFS-PY T3 GC-018/source-verified work order for source-verification/token-collision validator split before any T3 implementation. LHW24 remains the latest closed numbered LHW wave.
 
-No duplicate AAF-T7A helper implementation, L2 patch preview, L3 apply, adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized without future accepted work order authorization.
+No GFS-PY T3 implementation without that accepted work order, no T4 orchestrator-shell reduction, no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
 
 ## Parked Checkpoint
 
-AAF-T7A roadmap status reconciliation is closed bounded at material commit `766f81e7`. Duplicate AAF-T7A helper implementation, L2/L3 automation, adapter behavior, provider/live proof, package execution, public-sync, and push remain parked until separately authorized.
+GFS-PY T2 lifecycle/status validator split is closed bounded at material commit `3f7cb4e8`. GFS-PY T3 implementation and T4 orchestrator-shell reduction remain parked until separately authorized by a fresh accepted work order.
 
 ## Continuity Markers
 
