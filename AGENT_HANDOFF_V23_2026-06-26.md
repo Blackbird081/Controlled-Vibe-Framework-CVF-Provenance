@@ -18,6 +18,7 @@ Startup acknowledged: current mode=`guard_binding_catalog_aware_checker_hardenin
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md` |
 | Material checker hardening commit | `4927687c` |
+| Front-door compaction commit | `fd37d969` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
@@ -50,8 +51,8 @@ Archived predecessor:
 Latest material work: commit `4927687c` closed guard-binding catalog-aware
 checker hardening.
 
-Latest session work: this batch compacts the active startup surfaces, archives
-V22, opens V23, and keeps the next allowed move on ASSF Web projection
+Latest session work: commit `fd37d969` compacts the active startup surfaces,
+archives V22, opens V23, and keeps the next allowed move on ASSF Web projection
 decision-first governance.
 
 ## What Just Closed
