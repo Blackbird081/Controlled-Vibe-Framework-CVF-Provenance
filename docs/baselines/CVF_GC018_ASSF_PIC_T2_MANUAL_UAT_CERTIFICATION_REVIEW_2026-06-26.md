@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -234,6 +234,25 @@ repository paths are cited literally.
 | Closure decision | reviewer determines after worker return |
 | Roadmap disposition | update only after accepted material review |
 | Session-sync disposition | required after material closure commit if next allowed move changes |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_FOR_CLAUDE_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_COMPLETION_2026-06-26.md` | `Reviewer verdict: CLOSED_PASS_BOUNDED`; `Lifecycle disposition: CERTIFICATION_HELD_WITH_REASON` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md` | T2 `Status: CLOSED_PASS_BOUNDED`; T3 `Status: HOLD_CERTIFICATION_HELD_BY_PIC_T2` | PASS |
+| Registry JSON | N/A with reason: no registry JSON mutation is authorized by ASSF-PIC-T2 | worker review confirms no lifecycle registry mutation | BLOCKED with reason: out of scope |
+| Registry Markdown | N/A with reason: no registry Markdown mutation is authorized by ASSF-PIC-T2 | no registry documentation mutation in changed set | BLOCKED with reason: out of scope |
+| External evidence digest | N/A with reason: no external evidence artifact is created by this local documentation tranche | no external artifact hash applies | N/A with reason |
+| System loop interlock | closure review | no package activation, runtime loop, provider call, public-sync, or worker commit occurred | PASS |
+| Session continuity | N/A with reason: session-sync is separate after material closure | active session paths excluded from material changed set | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| No runtime/provider/adapter receipt required for this documentation-only closure | `receiptEvidence` remains N/A with reason; reviewer-fast and worker-return fast gate evidence recorded in completion review | PASS |
 
 ## Public Export Disposition
 

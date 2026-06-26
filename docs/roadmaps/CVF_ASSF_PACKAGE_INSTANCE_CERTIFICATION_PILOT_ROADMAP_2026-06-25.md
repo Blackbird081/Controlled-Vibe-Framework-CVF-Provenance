@@ -208,12 +208,19 @@ Run the first manual UAT/certification review for the selected package. The
 review may accept, reject, or hold certification. It must not treat a generated
 metadata packet or Web display as certification evidence.
 
-Status: `PARKED_PENDING_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION`.
+Status: `CLOSED_PASS_BOUNDED`.
 
-Parked note: PIC-T1 closed bounded, but the operator instructed that PIC-T2
-must not start yet. The next allowed move is a separate source-verified
-work-order dispatch scaffold optimization batch to address recurring dispatch
-and worker-return report-friction before manual UAT/certification review.
+Closure note: PIC-T2 accepted the Claude worker return and UAT/certification
+review in
+`docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md`
+and
+`docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_WORKER_RETURN_2026-06-26.md`.
+The lifecycle recommendation is `CERTIFICATION_HELD_WITH_REASON`: local
+dispatch-quality evidence is sufficient to hold rather than reject, but
+`uatState` and `certificationState` remain `NOT_STARTED`, no registry mutation
+is authorized, and no final certification decision is made. The worker also
+confirmed WODS-T1 improved scaffold/rescan friction but found three remaining
+dispatch-authoring defects for a follow-up WODS hardening lane.
 
 Required outputs:
 
@@ -230,7 +237,13 @@ and resolver tests should be updated. This tranche may be doc-only or
 implementation-bearing depending on the work order. Any source mutation must
 edit generated source entries first and run the generator/checker path.
 
-Status: `HOLD_UNTIL_PIC_T2_PASS`.
+Status: `HOLD_CERTIFICATION_HELD_BY_PIC_T2`.
+
+Hold note: PIC-T2 did not certify the package. T3 remains held until a future
+source-verified lane resolves the certification hold or the operator separately
+authorizes an explicit skip/redirect. The immediate next value lane is
+work-order/scaffold hardening for the T2-discovered defects, not generated-index
+or resolver integration.
 
 Required outputs:
 
