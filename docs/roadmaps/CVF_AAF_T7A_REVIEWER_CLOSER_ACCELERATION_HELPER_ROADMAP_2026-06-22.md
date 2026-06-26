@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_WORK_ORDER_AUTHORING
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -102,19 +102,21 @@ closure bot.
 
 | Step | Owner | Status |
 |---|---|---|
-| Author this roadmap | Codex | COMPLETE_PENDING_GATES |
-| Author AAF-T7A GC-018 and work order from this roadmap | Claude/orchestrator if assigned | NOT_STARTED |
-| Execute the work order under the selected worker boundary | Worker if dispatched | NOT_STARTED |
-| Review returned work and close or reject | Codex reviewer/closer | NOT_STARTED |
+| Author this roadmap | Codex | COMPLETE |
+| Author AAF-T7A GC-018 and work order from this roadmap | governed dispatcher | COMPLETE |
+| Execute the work order under the selected worker boundary | worker | COMPLETE |
+| Review returned work and close or reject | Codex reviewer/closer | COMPLETE |
+| Reconcile parent roadmap status after child closures | Codex reviewer/closer | COMPLETE |
 
 ## Proposed Tranche Sequence
 
 | Tranche | Owner role | Purpose | Output |
 |---|---|---|---|
-| AAF-T7A.0 | Codex reviewer/roadmap author | This roadmap only | Roadmap ready for work-order authoring |
-| AAF-T7A.1 | Claude/orchestrator if operator assigns | Author GC-018 baseline and source-verified work order | Work order only, no implementation unless separately assigned |
-| AAF-T7A.2 | Worker if dispatched | Implement the bounded helper/readout/test scope in the work order | `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, uncommitted unless explicitly authorized otherwise |
-| AAF-T7A.3 | Codex reviewer/closer | Review returned work, remediate only within allowed reviewer scope, close or reject | Completion review, gates, commits, session sync as applicable |
+| AAF-T7A.0 | Codex reviewer/roadmap author | This roadmap only | COMPLETE |
+| AAF-T7A.1 | governed dispatcher and worker | L0 reviewer/closer readout | CLOSED_PASS_BOUNDED at material commit `5fc456a4` |
+| AAF-T7B | governed dispatcher and worker | L1 reviewer-completion scaffold | CLOSED_PASS_BOUNDED at material commit `a82440ca` |
+| AAF-T7C hardening | Codex reviewer/closer | scaffold shape hardening | CLOSED_PASS_BOUNDED at material commit `b7601865` |
+| AAF-T7A-RSR | Codex reviewer/closer | parent roadmap status reconciliation | CLOSED_PASS_BOUNDED |
 
 ## Recommended First Implementation Shape
 
@@ -245,8 +247,8 @@ must include focused tests for the exact helper behavior implemented.
 
 | Finding | Defect class | Prevention disposition | Acceleration disposition | Safe automation level | Handled or deferred |
 |---|---|---|---|---|---|
-| Reviewer/closer repetitive text edits remain mechanical and repeatable | ACCELERATION_GAP | SEPARATE_TRANCHE | ACCELERATOR_CANDIDATE | L0 first; L1/L2 only by future work order; L3 out of scope | deferred to AAF-T7A work order |
-| Late closure-conversion omissions should not be fixed only by final gates | MACHINE_GATE_GAP | covered by AAF-T6A early diagnostics for reminder/checking direction | helper/readout may reduce repeated authoring effort | L0 first | deferred to AAF-T7A work order |
+| Reviewer/closer repetitive text edits remain mechanical and repeatable | ACCELERATION_GAP | SEPARATE_TRANCHE | ACCELERATOR_ADDED | L0 readout added; L1 scaffold added separately; L2/L3 remain out of scope | handled |
+| Late closure-conversion omissions should not be fixed only by final gates | MACHINE_GATE_GAP | covered by AAF-T6A early diagnostics for reminder/checking direction | helper/readout may reduce repeated authoring effort | L0 and L1 delivered; L2/L3 remain out of scope | handled |
 
 ## Corpus Completeness And Report Integrity
 
@@ -278,31 +280,31 @@ must include focused tests for the exact helper behavior implemented.
 ## Epistemic Process Block
 
 Expected Result / Prediction: a roadmap-only AAF-T7A artifact should safely
-convert the deferred reviewer/closer acceleration finding into a future
-work-order path without implementing helper behavior or overclaiming
-automation.
+convert the deferred reviewer/closer acceleration finding into governed
+work-order paths without overclaiming automation.
 
-Evidence Comparison: L2A-T0 explicitly classifies AAF-T7A closure-conversion
-assistance as an `ACCELERATOR_CANDIDATE`; AAF-T6A closure records reviewer/
-closer repetitive text edits as a deferred acceleration gap; existing helper
-and test paths exist for future source-verified consideration.
+Evidence Comparison: later governed closures implemented the L0 reviewer
+readout at material commit `5fc456a4`, the L1 reviewer-completion scaffold at
+material commit `a82440ca`, and scaffold shape hardening at material commit
+`b7601865`. Current reconciliation updates this parent roadmap to match those
+accepted child closures.
 
-Contradiction Or Gap Disposition: no contradiction found. The gap is that no
-AAF-T7A work order or helper implementation exists yet; this is intentional per
-operator direction.
+Contradiction Or Gap Disposition: no implementation contradiction found. The
+remaining gap was stale parent-roadmap status metadata.
 
-Claim Update: AAF-T7A is roadmap-ready for work-order authoring only. No helper
-implementation, scaffold generator, patch preview, apply behavior, runtime
-behavior, provider/live behavior, public-sync, commit execution, or universal
-control is claimed.
+Claim Update: AAF-T7A parent roadmap is closed bounded by child-closure
+evidence and this reconciliation. No new helper implementation, patch preview,
+apply behavior, runtime behavior, provider/live behavior, public-sync, commit
+execution, or universal control is claimed by this reconciliation.
 
 ## Claim Boundary
 
-This roadmap creates an AAF-T7A planning artifact only. It does not create an
-AAF-T7A work order, implement a helper, change autorun behavior, generate a
-scaffold, produce or apply a patch, mutate files beyond this roadmap, make a
-closure decision, run provider/live proof, touch public-sync, or claim speed,
-cost, readiness, full-hook equivalence, or universal governed-coding control.
+This roadmap is closed bounded as the parent planning surface for AAF-T7A
+reviewer/closer acceleration. It records existing child closures and this
+status reconciliation only. It does not add new helper behavior, change autorun
+behavior, produce or apply a patch, make a closure decision through the helper,
+run provider/live proof, touch public-sync, or claim speed, cost, readiness,
+full-hook equivalence, or universal governed-coding control.
 
 ## Public Export Disposition
 
@@ -311,6 +313,18 @@ DEFERRED_PRIVATE_ONLY
 Reason: AAF-T7A roadmap authoring is private provenance governance-learning
 work. No public-sync repository work, public commit, public artifact path, or
 public catalog claim is authorized.
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | `governance/compat/run_agent_automation_assist.py`; `governance/compat/test_run_agent_automation_assist.py` |
+| Runtime behavior claimed | N/A_WITH_REASON: this reconciliation changes only roadmap status and closure evidence |
+| Helper/checker implementation claimed | N/A_WITH_REASON: existing helper implementation is cited but not modified |
+| Provider/live proof claimed | N/A_WITH_REASON |
+| Provider registry surfaces | Checked by boundary only: `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` are out of scope and not used as evidence; this roadmap makes no provider-selection, provider-routing, provider-registry, or live-governance claim |
+| Public-sync claimed | N/A_WITH_REASON |
+| Freshness disposition | PASS - parent roadmap reconciliation only |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -350,10 +364,24 @@ public catalog claim is authorized.
 
 ## Machine Closure Package
 
-| Field | Disposition |
-|---|---|
-| Roadmap state | `Status: ROADMAP_READY_FOR_WORK_ORDER_AUTHORING` |
-| Closure state | N/A with reason: this roadmap is not closed; it is ready for a future work-order authoring step |
-| Work-order state | N/A with reason: no AAF-T7A work order is created in this roadmap-only tranche |
-| Implementation state | N/A with reason: no helper implementation is authorized or performed |
-| Next authorized move | Claude/orchestrator may author a source-verified AAF-T7A work order from this roadmap if the operator assigns that role; Codex remains reviewer/closer |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7A_ROADMAP_STATUS_RECONCILIATION_T0_T4_FOR_CODEX_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AAF_T7A_ROADMAP_STATUS_RECONCILIATION_T0_T4_COMPLETION_2026-06-26.md` | `Reviewer verdict: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material commit if needed | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| AAF-T7A.1 L0 readout closure | material commit `5fc456a4` | PASS |
+| AAF-T7B L1 scaffold closure | material commit `a82440ca` | PASS |
+| AAF scaffold hardening closure | material commit `b7601865` | PASS |
+| Parent roadmap status | `CLOSED_PASS_BOUNDED` | PASS |
+| L2/L3 automation boundary | remains out of scope | PASS |
+| Public export evidence | N/A with reason: no public-sync authorized | N/A_WITH_REASON |
