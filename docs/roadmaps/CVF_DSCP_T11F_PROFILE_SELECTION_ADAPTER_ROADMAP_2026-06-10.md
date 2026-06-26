@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -55,13 +55,13 @@ Out of scope:
 
 | Step | Deliverable | Status |
 |---|---|---|
-| 1 | GC-018 baseline | DISPATCHED |
-| 2 | Work order for Claude | DISPATCHED |
-| 3 | CPF profile selection adapter source | WORKER_ASSIGNED |
-| 4 | CPF focused adapter tests | WORKER_ASSIGNED |
-| 5 | GC-051 registry JSON and Markdown updates | WORKER_ASSIGNED |
-| 6 | Worker return packet | WORKER_ASSIGNED |
-| 7 | Codex reviewer closure and session sync | NOT_STARTED_BY_DESIGN |
+| 1 | GC-018 baseline | CLOSED_PASS_BOUNDED |
+| 2 | Work order for Claude | CLOSED_PASS_BOUNDED |
+| 3 | CPF profile selection adapter source | CLOSED_PASS_BOUNDED |
+| 4 | CPF focused adapter tests | CLOSED_PASS_BOUNDED |
+| 5 | GC-051 registry JSON and Markdown updates | CLOSED_PASS_BOUNDED |
+| 6 | Worker return packet | CLOSED_PASS_BOUNDED |
+| 7 | Codex reviewer closure and session sync | CLOSED_PASS_BOUNDED |
 
 ## Implementation Targets
 
@@ -108,16 +108,25 @@ Expected worker return:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md` | `Status: DISPATCHED` before worker execution | READY |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md` | reviewer-authored on worker-return review | NOT_STARTED_BY_DESIGN |
-| Roadmap state | this file | `Status: DISPATCHED` before worker execution | READY |
-| Adapter source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts` | worker-created source | WORKER_ASSIGNED |
-| Focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts` | focused test evidence | WORKER_ASSIGNED |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | DSCP-T11F source/test coverage | WORKER_ASSIGNED |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11F quick lookup rows | WORKER_ASSIGNED |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Adapter source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts` | source exists and current typecheck PASS | PASS |
+| Focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts` | 14/14 focused tests PASS | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11F quick lookup rows present | PASS |
 | External evidence digest | N/A | N/A with reason: no external product, corpus, provider, or public-sync artifact consumed or produced | N/A with reason |
 | System loop interlock | no system-loop mutation | local CPF adapter only | N/A with reason |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned sync in DSCP-T11F closure batch | NOT_STARTED_BY_DESIGN |
+| Session continuity | active front door/state/handoff after material commit | session-sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| DSCP-T11F-ROADMAP-STATUS | this roadmap | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| DSCP-T11F-WORK-ORDER | work order | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| DSCP-T11F-COMPLETION | completion review | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| DSCP-T11F-FOCUSED-TESTS | current command output | tests count | 14 passed | 14 passed | PASS |
 
 ## Claim Boundary
 

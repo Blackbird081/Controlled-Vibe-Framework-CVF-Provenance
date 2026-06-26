@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -96,7 +96,7 @@ P3 fixes this by defining a single `UnifiedGatewayInterfaceContract` that:
 | C-02 Rewrite Planning | 3-layer / 5-component boundary rewrite plan | `CLOSED_PASS_BOUNDED` 2026-06-14 |
 | C-02 P1 Routing Pipeline | Routing context, pluggable pipeline, snapshot fields | `CLOSED_PASS_BOUNDED` 2026-06-14 |
 | C-02 P2 Dynamic Model Registry Boundary | DMR contract + boundary doc + type tests | `CLOSED_PASS_BOUNDED` 2026-06-15 |
-| **C-02 P3 Unified Gateway Interface** | **Unified entry-point contract + boundary doc + type tests (this tranche)** | `ROADMAP_READY` |
+| **C-02 P3 Unified Gateway Interface** | **Unified entry-point contract + boundary doc + type tests (this tranche)** | `CLOSED_PASS_BOUNDED` |
 | C-02 P4 Implementation (TBD) | Runtime DMR class + UnifiedGatewayInterface class | `PARKED` -- after P3; requires separate GC-018 |
 
 ---
@@ -275,6 +275,45 @@ export interface UnifiedGatewayInterfaceContract {
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance planning roadmap. Public-sync not authorized.
+
+---
+
+## Roadmap Closure Reconciliation - 2026-06-27
+
+This roadmap top status was reconciled by the roadmap status reconciliation
+sweep after existing closure evidence showed P3 had already closed.
+
+| Item | Evidence | Disposition |
+|---|---|---|
+| P3 completion review | `docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` |
+| P3 material implementation | commit `5d46bc62` | CLOSED_PASS_BOUNDED |
+| P3/P4A closure sync | commit `21c8a9e2` | CLOSED_PASS_BOUNDED |
+| Session state closure entry | `CVF_SESSION/state/entries/modelGatewayC02P3P4AUnifiedGatewayClosure20260615.json` | `status: CLOSED_PASS_BOUNDED` |
+
+Reconciliation boundary: status evidence only. No P3 implementation,
+provider/live proof, public-sync, resolver, adapter, or generated corpus
+registry mutation occurs in this sweep.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_FOR_CLAUDE_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | P3 registry coverage existed before this sweep | PASS |
+| Registry Markdown | N/A with reason: no roadmap-local Markdown registry mutation in this sweep | no Markdown registry change in this sweep | BLOCKED with reason: out of scope |
+| External evidence digest | N/A with reason: repo-local governed closure artifacts only | no external digest | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop mutation | no system-loop path in changed set | N/A with reason |
+| Session continuity | active front door/state/handoff after material commit | session-sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| P3-ROADMAP-STATUS | this roadmap | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| P3-COMPLETION | P3 completion review | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| P3-STATE-ENTRY | active session state source | `value.status` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
 
 ---
 

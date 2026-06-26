@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -329,20 +329,83 @@ Worker returns when:
 - no forbidden path is modified;
 - worker return packet is complete.
 
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`roadmap-status-reconciliation`, role=`reviewer`, lifecyclePhase=`pre-dispatch`
+
+Returned defects: NONE_RETURNED
+
+## Agent Handoff Contract Control Block
+
+| Field | Disposition |
+|---|---|
+| Contract source | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` |
+| route | `MULTI_AGENT_SINGLE_ROLE` |
+| rolePattern | worker implemented DSCP-T11F and returned uncommitted artifacts; reviewer/closer performs closure conversion in this sweep |
+| phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC |
+| baseHeadFor(phase) | `dispatchBaseHead=8a7cd134`; worker return records execution evidence; reviewer closure uses sweep base `ae385d7a` |
+| changedSetScope(phase) | worker implementation already landed; reviewer/closer owns this status reconciliation and completion review |
+| traceScope(phase, actor) | DSCP-T11F worker return plus reviewer completion trace |
+| commitOwner(phase) | worker committed nothing for the return packet; reviewer/closer owns material closure and later session-sync commits |
+| crossBatchIsolation | do not mix DSCP-T11F closure with runtime/provider/live proof, public-sync, resolver mutation, adapter behavior change, generated corpus registry mutation, or push |
+| Before status evidence | work order status was `DISPATCHED`; DSCP-T11F source and focused tests exist |
+| nextMoveSurfaces | reviewer/closer updates next-move surfaces only after material commit |
+| Closer designation | Codex reviewer/closer |
+
+## Reviewer Closure Conversion
+
+| Field | Disposition |
+|---|---|
+| completionReviewPath | `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md` |
+| reviewerOwnedClosurePaths | this work order; DSCP-T11F GC-018 baseline; DSCP-T11F roadmap; DSCP-T11F completion review |
+| workerReturnStatus | `COMPLETE_PENDING_REVIEW` as represented by the worker-return artifact |
+| closer | Codex reviewer/closer |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer |
+| Provider or surface | local repository tools |
+| Session or invocation | DSCP-T11F closure conversion inside roadmap status reconciliation sweep |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, npm, Python gates, git |
+| Target paths | DSCP-T11F work order, GC-018 baseline, roadmap, completion review |
+| Allowed scope source | operator-approved roadmap status reconciliation sweep T0-T4 |
+| Before status evidence | work order `Status: DISPATCHED`; source/test artifacts present |
+| After status evidence | work order `Status: CLOSED_PASS_BOUNDED`; focused verification PASS |
+| Diff evidence | `git diff --name-status` in sweep material range |
+| Approval boundary | reviewer closure conversion only |
+| Claim boundary | no runtime/provider/live/public-sync/resolver/adapter/generated corpus registry mutation |
+| Agent type | reviewer/closer |
+| Invocation ID | `dscp-t11f-closure-conversion-2026-06-27` |
+| Expected manifest | DSCP-T11F roadmap, GC-018 baseline, work order, completion review |
+| Actual changed set | DSCP-T11F roadmap, GC-018 baseline, work order, completion review |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED` before worker execution | READY |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md` | reviewer-authored on worker-return review | NOT_STARTED_BY_DESIGN |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md` | `Status: DISPATCHED` before worker execution | READY |
-| Adapter source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts` | source file required from worker | WORKER_ASSIGNED |
-| Focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts` | focused test evidence required from worker | WORKER_ASSIGNED |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | DSCP-T11F source/test entries required | WORKER_ASSIGNED |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11F quick lookup rows required | WORKER_ASSIGNED |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Adapter source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts` | source exists and current typecheck PASS | PASS |
+| Focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts` | 14/14 focused tests PASS | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11F quick lookup rows present | PASS |
 | External evidence digest | N/A | N/A with reason: no external product, corpus, provider, or public-sync artifact consumed or produced | N/A with reason |
 | System loop interlock | no system-loop mutation | local CPF adapter only | N/A with reason |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned sync in DSCP-T11F closure batch | NOT_STARTED_BY_DESIGN |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| DSCP-T11F-WORK-ORDER | this work order | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| DSCP-T11F-COMPLETION | completion review | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| DSCP-T11F-FOCUSED-TESTS | current command output | tests count | 14 passed | 14 passed | PASS |
 
 ## Review Gate
 
@@ -358,14 +421,14 @@ Reviewer must confirm:
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed and accepted
-- [ ] CPF `npm run check` PASS confirmed
-- [ ] Focused DSCP-T11F vitest PASS confirmed
-- [ ] GC-051 registry PASS confirmed
-- [ ] Reviewer-fast PASS confirmed
-- [ ] Completion review authored by reviewer
-- [ ] Reviewer commits material artifacts
-- [ ] Session continuity synced by reviewer
+- [x] Worker return reviewed and accepted
+- [x] CPF `npm run check` PASS confirmed
+- [x] Focused DSCP-T11F vitest PASS confirmed
+- [x] GC-051 registry PASS confirmed
+- [x] Reviewer-fast PASS confirmed
+- [x] Completion review authored by reviewer
+- [x] Reviewer commits material artifacts
+- [x] Session continuity synced by reviewer
 
 ## Operator Checkpoint
 

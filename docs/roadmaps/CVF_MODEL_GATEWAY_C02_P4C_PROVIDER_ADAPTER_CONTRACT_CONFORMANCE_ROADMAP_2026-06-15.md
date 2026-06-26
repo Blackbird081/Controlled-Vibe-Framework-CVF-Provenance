@@ -6,7 +6,7 @@ rawMemoryReleased: false
 
 Date: 2026-06-15
 
-Status: P4C_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Roadmap class: model-gateway-implementation
 
@@ -195,6 +195,55 @@ Disposition: DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance runtime-foundation work. Public sync is not
 authorized.
+
+## Roadmap Closure Reconciliation - 2026-06-27
+
+This roadmap top status was reconciled by the roadmap status reconciliation
+sweep after existing closure evidence showed P4C had already closed.
+
+| Item | Evidence | Disposition |
+|---|---|---|
+| P4C completion review | `docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` |
+| P4C material implementation | commit `8d8f0871` | CLOSED_PASS_BOUNDED |
+| P4C closure commit | commit `64a80684` | CLOSED_PASS_BOUNDED |
+| Session state closure entry | `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceClosure20260615.json` | `status: CLOSED_PASS_BOUNDED` |
+
+Reconciliation boundary: status evidence only. P4B-B remains held; no
+provider/live proof, credential use, public-sync, resolver mutation, adapter
+behavior change, or generated corpus registry mutation occurs in this sweep.
+
+## External Knowledge Intake Routing
+
+| Field | Disposition |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | operator-provided external comparison, critique, or recommendation |
+| Chain map route | N/A with reason: repo-local governed closure artifacts only |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_ROADMAP_2026-06-15.md` |
+| Disposition | N/A with reason: no external knowledge intake |
+| Claim boundary | repo-local P4C roadmap status reconciliation only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_FOR_CLAUDE_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | P4C registry coverage existed before this sweep | PASS |
+| Registry Markdown | N/A with reason: no roadmap-local Markdown registry mutation in this sweep | no Markdown registry change in this sweep | BLOCKED with reason: out of scope |
+| External evidence digest | N/A with reason: repo-local governed closure artifacts only | no external digest | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop mutation | no system-loop path in changed set | N/A with reason |
+| Session continuity | active front door/state/handoff after material commit | session-sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| P4C-ROADMAP-STATUS | this roadmap | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| P4C-COMPLETION | P4C completion review | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| P4C-STATE-ENTRY | active session state source | `value.status` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
 
 ## Agent Operation Trace Block
 

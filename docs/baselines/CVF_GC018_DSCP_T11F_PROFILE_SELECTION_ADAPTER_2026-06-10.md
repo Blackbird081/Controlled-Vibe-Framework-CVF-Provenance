@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -98,18 +98,34 @@ focused tests and completion evidence.
 | GC-051 registry coverage | PASS |
 | Forbidden paths | none modified |
 
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`roadmap-status-reconciliation`, role=`reviewer`, lifecyclePhase=`pre-dispatch`
+
+Returned defects: NONE_RETURNED
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md` | `Status: DISPATCHED` before worker execution | READY |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md` | reviewer-authored on worker-return review | NOT_STARTED_BY_DESIGN |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md` | `Status: DISPATCHED` before worker execution | READY |
-| Adapter source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts` | source file required from worker | NOT_STARTED_BY_DESIGN |
-| Focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts` | focused test evidence required from worker | NOT_STARTED_BY_DESIGN |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | DSCP-T11F source/test paths required | NOT_STARTED_BY_DESIGN |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11F quick lookup rows required | NOT_STARTED_BY_DESIGN |
-| Session continuity | active handoff and state registry | reviewer sync in DSCP-T11F closure batch | NOT_STARTED_BY_DESIGN |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Adapter source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts` | source exists and current typecheck PASS | PASS |
+| Focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts` | 14/14 focused tests PASS | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11F quick lookup rows present | PASS |
+| External evidence digest | N/A with reason: no external evidence digest | no external digest | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop mutation | no system-loop path in changed set | N/A with reason |
+| Session continuity | active front door/state/handoff after material commit | session-sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| DSCP-T11F-GC018-STATUS | this baseline | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| DSCP-T11F-COMPLETION | completion review | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| DSCP-T11F-FOCUSED-TESTS | current command output | tests count | 14 passed | 14 passed | PASS |
 
 ## Claim Boundary
 
