@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open and execute the ASSF external-agent readout / CLI-MCP adapter boundary roadmap T0-T4, decision-first; parked checkpoint=no package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, adapter behavior implementation, provider/live proof, public-sync, push, activation, package execution, or package integration without fresh source-verified authorization.
+Startup acknowledged: current mode=`assf_external_agent_readout_adapter_boundary_closed_pass_bounded_pending_readout_implementation_gc018`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open a fresh GC-018/source-verified work order for read-only external-agent metadata readout implementation; parked checkpoint=no adapter behavior implementation, package instance, certification decision, lifecycle mutation, ASSF registry/generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package execution, or package integration without future accepted work order authorization.
 
 ## Current State
 
@@ -23,12 +23,13 @@ Startup acknowledged: current mode=`assf_web_projection_implementation_closed_pa
 | ASSF Web projection schema/mapping decision closure | `a408c13e` |
 | ASSF Web projection implementation dispatch | `0ba6eaee` |
 | ASSF Web projection implementation closure | `0b57a4de` |
+| ASSF external-agent readout / CLI-MCP adapter boundary closure | `99fabd26` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`assf_web_projection_implementation_closed_pass_bounded_pending_external_agent_readout_adapter_roadmap`
+`assf_external_agent_readout_adapter_boundary_closed_pass_bounded_pending_readout_implementation_gc018`
 
 ## Purpose
 
@@ -38,12 +39,13 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after ASSF-WEBPROJ-T1 implementation closure.
+after ASSF external-agent readout / CLI-MCP adapter boundary closure.
 
-Owner boundary: this handoff authorizes only the next decision-first roadmap
-step for ASSF external-agent readout / CLI-MCP adapter boundary planning. It
-does not authorize package instance creation, certification decision, runtime
-adapter behavior, provider proof, public-sync, push, or package execution.
+Owner boundary: this handoff authorizes only the next fresh GC-018/source-
+verified work order for read-only external-agent metadata readout
+implementation. It does not authorize package instance creation, certification
+decision, runtime adapter behavior, provider proof, public-sync, push, or
+package execution.
 
 ## Active Boundary
 
@@ -54,8 +56,8 @@ Archived predecessor:
 
 ## Latest Work / Changes
 
-Latest material work: commit `0b57a4de` closed ASSF-WEBPROJ-T1 Web projection
-implementation as `CLOSED_PASS_BOUNDED`.
+Latest material work: commit `99fabd26` closed the ASSF external-agent readout
+/ CLI-MCP adapter boundary roadmap T0-T4 as `CLOSED_PASS_BOUNDED`.
 
 Latest session work: commit `fd37d969` compacts the active startup surfaces,
 archives V22, opens V23, and keeps the next allowed move on ASSF Web projection
@@ -76,6 +78,9 @@ commit `0ba6eaee`.
 
 The ASSF Web projection implementation closed at material commit `0b57a4de`.
 
+The ASSF external-agent readout / CLI-MCP adapter boundary roadmap closed at
+material commit `99fabd26`.
+
 Material result:
 
 - Added `governance/compat/guard_binding_catalog.py`.
@@ -92,15 +97,15 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: open and execute the ASSF external-agent readout / CLI-MCP
-adapter boundary roadmap T0-T4, decision-first. Begin with a fresh
-GC-018/source-verified roadmap or work-order packet before implementation.
-LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: open a fresh GC-018/source-verified work order for
+read-only external-agent metadata readout implementation, using
+`docs/reference/agent_system_skills/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_CONTRACT.md`
+as the boundary source. LHW24 remains the latest closed numbered LHW wave.
 
 Do not start package instance creation, certification decision, lifecycle
 mutation, adapter behavior implementation, provider/live proof, public-sync,
-push, activation, package instruction execution, or package integration without
-fresh source-verified authorization.
+push, activation, package instruction execution, or package integration until
+that future work order is accepted and closed.
 
 ## Parked Boundaries
 
@@ -137,7 +142,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 0b57a4de --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 99fabd26 --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -145,12 +150,12 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-26 ASSF-WEBPROJ-T1 closure session-sync |
+| Session or invocation | 2026-06-26 ASSF external-agent readout boundary session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | material implementation closure commit `0b57a4de` and active next-move continuity update |
-| Before status evidence | clean worktree after material implementation closure commit `0b57a4de` |
+| Allowed scope source | material boundary closure commit `99fabd26` and active next-move continuity update |
+| Before status evidence | clean worktree after material boundary closure commit `99fabd26` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
@@ -159,12 +164,13 @@ Read in this order:
 | Invocation ID | local Codex session 2026-06-26 |
 | Expected manifest | this handoff and active session/front-door files |
 | Actual changed set | session-sync commit manifest |
-| Manifest delta | N/A with reason: material implementation closure already committed separately |
+| Manifest delta | N/A with reason: material boundary closure already committed separately |
 
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after ASSF-WEBPROJ-T1 material closure only.
+and active handoff update after ASSF external-agent readout boundary material
+closure only.
 
 Protected paths:
 
@@ -177,6 +183,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionClosure20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionImplementationDispatch20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionImplementationClosure20260626.json`
+- `CVF_SESSION/state/entries/assfExternalAgentReadoutCliMcpBoundaryClosure20260626.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
@@ -186,11 +193,11 @@ Protected paths:
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
 Operator authorization: operator selected the next roadmap lane and Codex
-committed the material implementation closure at `0b57a4de`; this update only
-routes the active session to the next decision-first roadmap step.
+committed the material boundary closure at `99fabd26`; this update only routes
+the active session to the next source-verified implementation work-order step.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `0b57a4de`.
+commit `99fabd26`.
 
 ## Claim Boundary
 
