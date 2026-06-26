@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_certification_evidence_approved_source_state_update_pending`
+Current mode marker: `assf_lifecycle_source_state_update_closed_pass_bounded_next_control_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_certification_evidence_approved_source_state_update_pending`.
+Current mode: `assf_lifecycle_source_state_update_closed_pass_bounded_next_control_pending`.
 
-Previous mode: `assf_real_manual_uat_evidence_closed_pass_bounded_certification_decision_roadmap_pending`.
+Previous mode: `assf_certification_evidence_approved_source_state_update_pending`.
 
 Active handoff:
 
@@ -66,21 +66,26 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+ASSF package lifecycle source-state update T0-T4 is closed bounded at material
+commit `121aafcf`. It updated `cvf-dispatch-quality-reviewer` registry source
+to `uatState PASSED` and `certificationState CERTIFIED`, recorded three review
+artifacts, regenerated the ASSF generated skill index, proved drift PASS, and
+verified metadata-only resolver projection. Next allowed move:
+operator-authorized ASSF certified metadata checker or Web projection decision
+roadmap/GC-018 plus source-verified work order. Recommended first control is a
+certified-metadata checker/read-model gate before any Web projection
+implementation. This sync does not authorize package instance creation,
+runtime behavior, resolver source mutation, Web implementation, CLI/MCP adapter
+behavior, provider/live proof, public-sync, push, activation, package
+instruction execution, package integration, worker commit, or worker
+session-sync.
+
 ASSF package certification decision T0-T3 is closed bounded at material commit
 `208ae418`. It closed the certification-decision roadmap, GC-018 baseline,
 source-verified work order, T0 protocol, T1 evidence review, T2 certification
 decision, T3 post-decision next-control review, and completion review for
 `cvf-dispatch-quality-reviewer`. Decision disposition:
-`CERTIFICATION_EVIDENCE_APPROVED_SOURCE_STATE_UPDATE_DEFERRED`. Next allowed
-move: operator-authorized ASSF package lifecycle source-state update roadmap or
-GC-018 plus source-verified work order for `cvf-dispatch-quality-reviewer`.
-That future lane may propose registry source update to `uatState PASSED` and
-`certificationState CERTIFIED` plus generated-index regeneration and drift
-checks. This sync does not authorize package instance creation, runtime
-behavior, resolver source mutation, Web projection, CLI/MCP adapter behavior,
-provider/live proof, public-sync, push, activation, readiness, package
-instruction execution, package integration, worker commit, or worker
-session-sync.
+`CERTIFICATION_EVIDENCE_APPROVED_SOURCE_STATE_UPDATE_DEFERRED`.
 
 ASSF real manual UAT execution evidence is closed bounded at material commit
 `ec911be2`. It recorded real UAT execution for
@@ -1037,29 +1042,29 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_certification_evidence_approved_source_state_update_pending`.
+Mode: `assf_lifecycle_source_state_update_closed_pass_bounded_next_control_pending`.
 
-Latest material HEAD: `208ae418` (ASSF package certification decision T0-T3 closure).
+Latest material HEAD: `121aafcf` (ASSF package lifecycle source-state update T0-T4 closure).
 
-Next allowed move: operator-authorized ASSF package lifecycle source-state
-update roadmap or GC-018 plus source-verified work order for
-`cvf-dispatch-quality-reviewer`, using the certification evidence disposition
-recorded at material commit `208ae418`.
+Next allowed move: operator-authorized ASSF certified metadata checker or Web
+projection decision roadmap/GC-018 plus source-verified work order. Recommended
+first control is a certified-metadata checker/read-model gate before any Web
+projection implementation.
 
-ASSF package certification decision T0-T3 is `CLOSED_PASS_BOUNDED` with
-`CERTIFICATION_EVIDENCE_APPROVED_SOURCE_STATE_UPDATE_DEFERRED`.
+ASSF package lifecycle source-state update T0-T4 is `CLOSED_PASS_BOUNDED` with
+`SOURCE_STATE_UPDATED_INDEX_REGENERATED_RESOLVER_VERIFIED`.
 
 ASSF-PIC-T5 and the ASSF-PIC roadmap are `CLOSED_PASS_BOUNDED`.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 
 No normalizer code, promoter code, composition engine, loader, package instance,
-SKILL.md, skill.source.json, real candidate entry, skill migration, external
-CLI/MCP adapter implementation, runtime/provider/live/public work,
-secrets/quota, readiness, automatic promotion, activation, Web projection,
-resolver source mutation, public-sync, push, universal-control claim, package
-instruction execution, package integration, worker commit, or worker
-session-sync is released by this closure.
+SKILL.md, skill.source.json, skill migration, external CLI/MCP adapter
+implementation, runtime/provider/live/public work, secrets/quota, automatic
+promotion, activation, Web implementation, resolver source mutation,
+public-sync, push, universal-control claim, package instruction execution,
+package integration, worker commit, or worker session-sync is released by this
+closure.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

@@ -70,7 +70,9 @@ earlier session history.
 
 ## Current Mode
 
-`assf_certification_evidence_approved_source_state_update_pending`
+`assf_lifecycle_source_state_update_closed_pass_bounded_next_control_pending`
+
+ASSF package lifecycle source-state update T0-T4 material HEAD: `121aafcf`
 
 ASSF package certification decision T0-T3 material HEAD: `208ae418`
 
@@ -538,16 +540,16 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ASSF-PIC-T5 Checker Readiness And Next-Control Decision is closed bounded at
-material commit `410818fc`, and the ASSF-PIC roadmap is closed bounded. Next
-allowed move: operator-authorized GC-018 and source-verified work order for
-UAT/certification evidence collection on one selected package candidate.
+ASSF package lifecycle source-state update T0-T4 is closed bounded at material
+commit `121aafcf`. Next allowed move: operator-authorized ASSF certified
+metadata checker or Web projection decision roadmap/GC-018 plus source-verified
+work order. Recommended first control is a certified-metadata checker/read-model
+gate before any Web projection implementation.
 
-No package instance creation, certification decision, `SKILL.md`,
-`skill.source.json`, generated-index mutation, registry-source mutation,
-resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior,
-provider/live proof, public-sync, push, activation, readiness, worker commit,
-package integration, or package instruction execution is released.
+No package instance creation, `SKILL.md`, `skill.source.json`, resolver
+mutation, CVF Web runtime change, CLI/MCP adapter behavior, provider/live
+proof, public-sync, push, activation, worker commit, package integration, or
+package instruction execution is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -592,7 +594,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_certification_evidence_approved_source_state_update_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF package lifecycle source-state update roadmap or GC-018 plus source-verified work order for `cvf-dispatch-quality-reviewer`; parked checkpoint=no package instance/runtime/adapter/public-sync, and no lifecycle source mutation without a future source-verified work order.
+Startup acknowledged: current mode=`assf_lifecycle_source_state_update_closed_pass_bounded_next_control_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF certified metadata checker or Web projection decision roadmap/GC-018 plus source-verified work order; parked checkpoint=no package instance/runtime/adapter/public-sync, and no Web implementation without a future source-verified work order.
 
 ## Parked Checkpoints
 
@@ -951,6 +953,97 @@ revert material commit `208ae418` or earlier ASSF material/session commits.
 ### Claim Boundary
 
 This session-sync records the latest completed certification-decision tranche
+and next allowed move only. It does not mutate registry source, generated
+package indexes, resolver source, runtime, Web projection, adapter behavior, or
+public surfaces.
+
+## ASSF Package Lifecycle Source-State Update T0-T4 Session Sync - 2026-06-26
+
+ASSF package lifecycle source-state update T0-T4 is closed bounded at material
+commit `121aafcf`. Material artifacts:
+
+- `docs/roadmaps/CVF_ASSF_PACKAGE_LIFECYCLE_SOURCE_STATE_UPDATE_ROADMAP_2026-06-26.md`
+- `docs/baselines/CVF_GC018_ASSF_PACKAGE_LIFECYCLE_SOURCE_STATE_UPDATE_T0_T4_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PACKAGE_LIFECYCLE_SOURCE_STATE_UPDATE_T0_T4_FOR_CODEX_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_LIFECYCLE_T0_SOURCE_AUTHORITY_MUTATION_PROTOCOL_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_LIFECYCLE_T1_REGISTRY_SOURCE_UPDATE_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_LIFECYCLE_T2_GENERATED_INDEX_REGENERATION_DRIFT_PROOF_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_LIFECYCLE_T3_RESOLVER_PROJECTION_VERIFICATION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_LIFECYCLE_T4_CLOSURE_NEXT_CONTROL_DECISION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PACKAGE_LIFECYCLE_SOURCE_STATE_UPDATE_T0_T4_COMPLETION_2026-06-26.md`
+
+Source-state disposition:
+`SOURCE_STATE_UPDATED_INDEX_REGENERATED_RESOLVER_VERIFIED`.
+
+Updated package metadata:
+
+- target package: `cvf-dispatch-quality-reviewer`
+- `uatState`: `PASSED`
+- `certificationState`: `CERTIFIED`
+- generated skill index: regenerated from registry source
+- resolver projection: metadata-only target result verified
+
+Next allowed move: operator-authorized ASSF certified metadata checker or Web
+projection decision roadmap/GC-018 plus source-verified work order. Recommended
+first control is a certified-metadata checker/read-model gate before any Web
+projection implementation.
+
+This handoff is session continuity only. It records lifecycle source-state
+material closure at commit `121aafcf` and routes the next move. It does not
+create a package instance, mutate runtime behavior, mutate resolver source,
+implement Web projection, implement CLI/MCP adapter behavior, run provider/live
+or public work, activate a package, execute package instructions, integrate a
+package, authorize worker commit, or authorize worker session-sync.
+
+### Core Guard Self-Protection Authorization
+
+Authorized session-sync scope: update active session/front-door/handoff state
+after ASSF package lifecycle source-state update material commit `121aafcf`,
+and regenerate the generated active session aggregate/read model from compact
+state sources.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V22_2026-06-22.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/assfPackageLifecycleSourceStateUpdateT0T4Closure20260626.json`
+
+Operator authorization: the operator instructed Codex to continue from T0-T4
+and finish this tranche before moving to another roadmap.
+
+Rollback boundary: revert only this session-sync batch if rejected. Do not
+revert material commit `121aafcf` or earlier ASSF material/session commits.
+
+### Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | ASSF package lifecycle source-state update T0-T4 session sync, 2026-06-26 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPackageLifecycleSourceStateUpdateT0T4Closure20260626.json` |
+| Allowed scope source | session-sync update after ASSF package lifecycle source-state material commit `121aafcf` |
+| Before status evidence | material commit `121aafcf`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `121aafcf` for dedicated session-sync validation |
+| Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
+| Approval boundary | continuity and generated state only; no new material tranche |
+| Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, resolver source mutation, Web implementation, or lifecycle source mutation |
+| Agent type | session-sync steward |
+| Invocation ID | `assf-package-lifecycle-source-state-update-t0-t4-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPackageLifecycleSourceStateUpdateT0T4Closure20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPackageLifecycleSourceStateUpdateT0T4Closure20260626.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
+
+### Claim Boundary
+
+This session-sync records the latest completed lifecycle source-state tranche
 and next allowed move only. It does not mutate registry source, generated
 package indexes, resolver source, runtime, Web projection, adapter behavior, or
 public surfaces.
