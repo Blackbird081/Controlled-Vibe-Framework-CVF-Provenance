@@ -1,5 +1,5 @@
 {
   "stateOrder": 641,
   "stateKey": "nextAllowedMove",
-  "value": "RSE parent roadmap status reconciliation is CLOSED_PASS_BOUNDED at material commit 23d99200, and the RSE roadmap is CLOSED_PASS_BOUNDED. Next allowed move: select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation. No validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Roadmap status reconciliation sweep T0-T4 is CLOSED_PASS_BOUNDED at material commit 3ccf574c. P3, P4C, and DSCP-T11F stale status surfaces were reconciled; compound/held roadmaps remain deferred. Next allowed move: select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation. No validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization. LHW24 remains the latest closed numbered LHW wave."
 }
