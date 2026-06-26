@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`
+Current mode marker: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`.
+Current mode: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`.
 
-Previous mode: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`.
+Previous mode: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`.
 
 Active handoff:
 
@@ -65,6 +65,12 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+ASSF-PIC-T5 Checker Readiness And Next-Control Decision is closed bounded at
+material closure commit `410818fc`, and the ASSF-PIC roadmap is closed bounded.
+Checker implementation remains deferred pending first certification evidence.
+Next allowed move: operator-authorized GC-018 and source-verified work order
+for UAT/certification evidence collection on one selected package candidate.
 
 ASSF-PIC-T4 Web Projection Bridge Decision is closed bounded at material
 closure commit `60ffa4de`. Web projection, schema bridge, and external adapter
@@ -988,17 +994,19 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`.
+Mode: `assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`.
 
-Latest material HEAD: `60ffa4de` (ASSF-PIC-T4 Web Projection Bridge Decision
-closure).
+Latest material HEAD: `410818fc` (ASSF-PIC-T5 Checker Readiness And
+Next-Control Decision closure).
 
-Next allowed move: ASSF-PIC-T5 GC-018 and source-verified work-order creation
-for checker readiness and next-control decision.
+Next allowed move: operator-authorized GC-018 and source-verified work order
+for UAT/certification evidence collection on one selected package candidate.
 
 ASSF-PIC-T3 remains closed bounded with
 `INTEGRATION_DEFERRED_CERTIFICATION_HELD`; ASSF-PIC-T4 is
 `CLOSED_PASS_BOUNDED`.
+
+ASSF-PIC-T5 and the ASSF-PIC roadmap are `CLOSED_PASS_BOUNDED`.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 

@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record ASSF-PIC-T4 bounded closure continuity after the Web projection
-bridge decision closed at material commit `60ffa4de`.
+Target: record ASSF-PIC-T5 bounded closure continuity after the checker
+readiness and next-control decision closed at material commit `410818fc`.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,18 +40,19 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-ASSF-PIC-T4 Web Projection Bridge Decision closure material commit `60ffa4de`.
+ASSF-PIC-T5 Checker Readiness And Next-Control Decision closure material commit
+`410818fc`.
 This sync advances the handoff HEAD block, generated active session state,
 bootstrap read model, front door, and next-move pointers while recording
-ASSF-PIC-T4 as closed bounded and routing the next move to ASSF-PIC-T5
-GC-018/source-verified work-order creation.
+ASSF-PIC-T5 and the ASSF-PIC roadmap as closed bounded and routing the next
+move to operator-authorized UAT/certification evidence collection.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/assfPicT4WebProjectionBridgeDecisionClosure20260626.json`
+- `CVF_SESSION/state/entries/assfPicT5CheckerReadinessNextControlDecisionClosure20260626.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
@@ -61,13 +62,17 @@ process ASSF-PIC-T4 and ASSF-PIC-T5 after WODS-T4 closure released the held
 ASSF-PIC lane.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-PIC-T4 material `60ffa4de`, WODS-T4 closure material `0d81a814`,
-WODS-T4 pilot material `b01b8771`, WODS-T3 closure material `b14260a4`,
-ASSF-PIC-T3 closure material `9c621ba6`, or earlier session history.
+revert ASSF-PIC-T5 material `410818fc`, ASSF-PIC-T4 material `60ffa4de`,
+WODS-T4 closure material `0d81a814`, WODS-T4 pilot material `b01b8771`,
+WODS-T3 closure material `b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`,
+or earlier session history.
 
 ## Current Mode
 
-`assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`
+`assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`
+
+ASSF-PIC-T5 Checker Readiness And Next-Control Decision material HEAD:
+`410818fc`
 
 ASSF-PIC-T4 Web Projection Bridge Decision material HEAD: `60ffa4de`
 
@@ -524,11 +529,10 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
-commit `0d81a814`. Next allowed move: operator selection of the next tranche.
-ASSF-PIC-T4 may be selected only through a fresh GC-018/source-verified work
-order; that selection has now closed as ASSF-PIC-T4 at material commit
-`60ffa4de`.
+ASSF-PIC-T5 Checker Readiness And Next-Control Decision is closed bounded at
+material commit `410818fc`, and the ASSF-PIC roadmap is closed bounded. Next
+allowed move: operator-authorized GC-018 and source-verified work order for
+UAT/certification evidence collection on one selected package candidate.
 
 No package instance creation, certification decision, `SKILL.md`,
 `skill.source.json`, generated-index mutation, registry-source mutation,
@@ -579,7 +583,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_pic_t4_closed_pass_bounded_t5_gc018_ready_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=ASSF-PIC-T5 GC-018 and source-verified work-order creation; parked checkpoint=no package instance or certification decision authorized.
+Startup acknowledged: current mode=`assf_pic_t5_closed_pass_bounded_uat_evidence_lane_recommended_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized UAT/certification evidence collection GC-018 and source-verified work order; parked checkpoint=no package instance or certification decision authorized by this sync.
 
 ## Parked Checkpoints
 
@@ -614,6 +618,9 @@ Startup acknowledged: current mode=`assf_pic_t4_closed_pass_bounded_t5_gc018_rea
 - ASSF-PIC-T4 Web Projection Bridge Decision is closed bounded at material
   commit `60ffa4de`; ASSF-PIC-T5 is the next allowed GC-018/source-verified
   work-order candidate.
+- ASSF-PIC-T5 Checker Readiness And Next-Control Decision is closed bounded at
+  material commit `410818fc`; ASSF-PIC roadmap is closed bounded and checker
+  implementation remains deferred pending first certification evidence.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -715,6 +722,32 @@ for checker readiness and next-control decision.
 This handoff is session continuity only. It records ASSF-PIC-T4 material
 closure at commit `60ffa4de` and routes the next move to ASSF-PIC-T5
 GC-018/source-verified work-order creation. It does not create a package
+instance, certify a package, mutate lifecycle state, mutate package
+root/index/resolver, implement external CLI/MCP adapter behavior, run
+runtime/provider/live/public work, activate a package, claim readiness, or
+authorize automatic promotion.
+
+## ASSF-PIC-T5 Session Sync - 2026-06-26
+
+ASSF-PIC-T5 Checker Readiness And Next-Control Decision is closed bounded at
+material commit `410818fc`, and the ASSF-PIC roadmap is closed bounded.
+Material artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md`
+
+Disposition: `CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE`.
+
+Next-control recommendation: `OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE`.
+
+Next allowed move: operator-authorized GC-018 and source-verified work order
+for UAT/certification evidence collection on one selected package candidate.
+
+This handoff is session continuity only. It records ASSF-PIC-T5 material
+closure at commit `410818fc` and routes the next move to an operator-authorized
+UAT/certification evidence collection lane. It does not create a package
 instance, certify a package, mutate lifecycle state, mutate package
 root/index/resolver, implement external CLI/MCP adapter behavior, run
 runtime/provider/live/public work, activate a package, claim readiness, or
