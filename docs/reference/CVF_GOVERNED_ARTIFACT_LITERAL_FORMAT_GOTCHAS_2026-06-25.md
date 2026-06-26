@@ -277,6 +277,24 @@ runtime/product code, and does not itself implement or modify any checker.
     from discovering the missing sections only after the closer has already
     edited the top status.
 
+27. **A closed or closeable work order still needs `## Execution Plan`.**
+    `check_markdown_structural_completeness.py` treats work orders as a
+    structural artifact class and requires an execution-plan section even when
+    the work order is authored and closed by the same agent in a small evidence
+    tranche. Do not rely on `Scope / Methodology`, `Evidence Requirements`, or
+    `Acceptance Criteria` as substitutes. Add `## Execution Plan` before the
+    first dispatch-quality or structural-completeness gate run, with a compact
+    step/action/evidence table if the work is already executed.
+
+28. **Source Verification `Verified path or symbol` cells need a real symbol,
+    not the filename being cited.** A row that cites
+    `governance/compat/check_work_order_dispatch_quality.py` in the Source file
+    column and then repeats `check_work_order_dispatch_quality.py` as the
+    verified symbol looks readable to humans, but the dispatch-quality checker
+    searches for that symbol inside the file and fails because filenames are
+    not source symbols. Use an actual function, constant, section marker, or
+    field present in the cited source, such as `main` or `GATE_COMMANDS`.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -302,18 +320,18 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | roadmap closure package gotcha hardening, 2026-06-26 |
+| Session or invocation | small governed-artifact checklist learning update, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
 | Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
-| Allowed scope source | operator instruction: fix the roadmap top-status closure-package lesson immediately |
-| Before status evidence | baseHead `8c4f843a`; worktree clean before patch |
-| After status evidence | checklist records the closed-roadmap top-status closure package and Acceptance Receipt Assertion Matrix pre-write gotcha as item 26 |
-| Diff evidence | `git diff --name-status` against baseHead `8c4f843a` |
-| Approval boundary | roadmap closure authoring friction hardening only |
+| Allowed scope source | operator instruction to add the small findings from ASSF real manual UAT evidence closure to the checklist |
+| Before status evidence | baseHead `36c569c1`; worktree clean before patch |
+| After status evidence | checklist records work-order `Execution Plan` and Source Verification real-symbol gotchas as items 27 and 28 |
+| Diff evidence | `git diff --name-status` against baseHead `36c569c1` |
+| Approval boundary | governed artifact authoring friction checklist only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
-| Invocation ID | `roadmap-closure-package-gotcha-hardening-2026-06-26` |
+| Invocation ID | `small-governed-artifact-checklist-learning-update-2026-06-26` |
 | Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
 | Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
 | Manifest delta | MATCH |
