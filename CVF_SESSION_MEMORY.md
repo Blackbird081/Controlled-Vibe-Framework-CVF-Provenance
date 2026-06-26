@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`
+Current mode marker: `wods_t3_closed_pass_bounded_operator_decision_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`.
+Current mode: `wods_t3_closed_pass_bounded_operator_decision_pending`.
 
-Previous mode: `assf_pic_t3_closed_pass_bounded_wods_followup_pending`.
+Previous mode: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`.
 
 Active handoff:
 
@@ -66,19 +66,18 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-WODS-T3 Delta Block Table Shape And Template Hardening is dispatched at material
-commit `f275b5ba`. The packet repairs the worker-return scaffold Delta block
-table shape, decision-review structural-heading guidance, and literal-format
-gotchas for table-shape, tool-parsing, and ASCII friction. The worker is
-`WORKER_MUST_NOT_COMMIT` and returns only the named worker-return artifact to
-Codex reviewer/closer.
+WODS-T3 Delta Block Table Shape And Template Hardening is closed bounded at
+material commit `b14260a4` with `IMPROVED_WITH_NEW_FINDING`. It repaired the
+Delta scaffold table shape, review structural-group guidance, and gotchas 23-25.
+The new cross-guard phrase-marker finding is recorded through ADIF-0007.
 
 ASSF-PIC-T3 remains `CLOSED_PASS_BOUNDED` at `9c621ba6` with
 `INTEGRATION_DEFERRED_CERTIFICATION_HELD`. The WODS reopen condition fired from
 3 gate runs and recurring scaffold/template/format friction. ASSF-PIC-T4 remains
 `HOLD_WODS_REOPEN_AFTER_PIC_T3`.
 
-Next allowed move: worker execution of WODS-T3 only, then reviewer closure.
+Next allowed move: operator decision on a fresh WODS-T4 checker-applicability
+hardening GC-018 versus another lane; ASSF-PIC-T4 remains held.
 
 WODS-T2 Dispatch And Worker-Return Scaffold Hardening is closed bounded at
 material commit `397d1fe4`, with effectiveness verdict
@@ -973,14 +972,13 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`.
+Mode: `wods_t3_closed_pass_bounded_operator_decision_pending`.
 
-Latest material HEAD: `f275b5ba` (WODS-T3 Delta Block Table Shape And Template
-Hardening dispatch).
+Latest material HEAD: `b14260a4` (WODS-T3 Delta Block Table Shape And Template
+Hardening closure).
 
-Next allowed move: Claude executes the committed WODS-T3 work order under
-`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON` with uncommitted artifacts for Codex review.
+Next allowed move: operator decision whether to authorize WODS-T4
+checker-applicability hardening. ASSF-PIC-T4 remains held.
 
 ASSF-PIC-T3 remains closed bounded with
 `INTEGRATION_DEFERRED_CERTIFICATION_HELD`; ASSF-PIC-T4 remains
