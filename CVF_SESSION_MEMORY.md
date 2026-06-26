@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`
+Current mode marker: `assf_pic_t3_generated_index_resolver_integration_decision_dispatched_pending_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`.
+Current mode: `assf_pic_t3_generated_index_resolver_integration_decision_dispatched_pending_worker_return`.
 
-Previous mode: `wods_t2_dispatch_and_worker_return_scaffold_hardening_dispatched_pending_worker_return`.
+Previous mode: `wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`.
 
 Active handoff:
 
@@ -66,6 +66,30 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+ASSF-PIC-T3 Generated Index And Resolver Integration Decision is dispatched to
+Claude at material commit `b9c5e547`. Artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md`
+
+Claude must run `WORKER_MUST_NOT_COMMIT` and may create only:
+
+- `docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_WORKER_RETURN_2026-06-26.md`
+
+Expected T3 decision under the PIC-T2 certification hold is
+`INTEGRATION_DEFERRED_CERTIFICATION_HELD` unless source evidence blocks the
+decision. No package instance, certification decision, lifecycle mutation,
+registry-source mutation, generated-index mutation, resolver mutation, Web
+runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync,
+push, activation, readiness, package instruction execution, package
+integration, worker commit, or worker session-sync is authorized.
+
+Residual WODS defects are value-parked. Reopen WODS residual hardening only if
+the next delegated worker-return still needs more than 2 fast-gate repair
+rounds for scaffold/template/keyword-guard format defects, or if the same
+recursive keyword false-trigger appears again despite gotcha 22.
+
 WODS-T2 Dispatch And Worker-Return Scaffold Hardening is closed bounded at
 material commit `397d1fe4`, with effectiveness verdict
 `IMPROVED_BUT_NOT_SOLVED`. Artifacts:
@@ -81,17 +105,9 @@ material/session-sync ranges, and recorded gotchas 21 and 22. Reviewer repair:
 the focused pytest evidence row in the worker return was corrected from
 `25 passed` to the reproduced `19 passed` before closure.
 
-ASSF-PIC-T3 remains held. No package instance creation, certification
-decision, lifecycle-state mutation, generated-index mutation,
-registry-source mutation, resolver mutation, Web runtime change, CLI/MCP
-adapter behavior, provider/live proof, public-sync, push, activation,
-readiness, package instruction execution, T3 dispatch, package integration, or
-worker session-sync is authorized.
-
-Next allowed move: operator/Codex may choose a fresh GC-018/source-verified
-follow-up for the residual WODS defects documented in the WODS-T2 completion:
-recursive keyword-guard self-reference risk and advisory-only review-section
-template guidance.
+Next allowed move: Claude executes ASSF-PIC-T3 decision-only worker task and
+returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with uncommitted
+artifacts.
 
 Work-order dispatch scaffold optimization is closed bounded at material commit
 `d08e8ab6`, with GC-020 bootstrap read-model session-sync classifier hotfix at
@@ -965,16 +981,19 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`.
+Mode: `assf_pic_t3_generated_index_resolver_integration_decision_dispatched_pending_worker_return`.
 
-Latest material HEAD: `397d1fe4` (WODS-T2 dispatch and worker-return scaffold
-hardening closure).
+Latest material HEAD: `b9c5e547` (ASSF-PIC-T3 generated-index and resolver
+integration decision dispatch).
 
-Next allowed move: operator/Codex may choose a fresh GC-018/source-verified
-follow-up for the residual WODS defects documented in the WODS-T2 completion.
+Next allowed move: Claude executes the ASSF-PIC-T3 decision-only work order and
+returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with uncommitted
+artifacts.
 
-ASSF-PIC-T3 remains held. Do not create a package instance or make a
-certification decision from this sync.
+Residual WODS defects are value-parked with this reopen condition: reopen only
+if the next delegated worker-return still needs more than 2 fast-gate repair
+rounds for scaffold/template/keyword-guard format defects, or if the same
+recursive keyword false-trigger appears again despite gotcha 22.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 
@@ -982,9 +1001,10 @@ No normalizer code, promoter code, composition engine, loader, package
 instance, SKILL.md, skill.source.json, real candidate entry, skill migration,
 external CLI/MCP adapter implementation, runtime/provider/live/public work,
 secrets/quota, readiness, automatic promotion, activation, certification,
-generated-index mutation, resolver mutation, public-sync, push, universal-control
-claim, package instruction execution, ASSF-PIC-T3 dispatch, or worker
-session-sync is released by this dispatch.
+registry-source mutation, generated-index mutation, resolver mutation,
+public-sync, push, universal-control claim, package instruction execution,
+package integration, worker commit, or worker session-sync is released by this
+dispatch.
 
 Parked: runtime profile expansion, arbitrary commands, EDIT/COMMIT execution,
 provider/live calls, future public-sync push without Codex review and remote

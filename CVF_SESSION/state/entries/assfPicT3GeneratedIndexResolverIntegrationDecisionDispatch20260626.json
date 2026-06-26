@@ -1,0 +1,22 @@
+{
+  "stateOrder": 676,
+  "stateKey": "assfPicT3GeneratedIndexResolverIntegrationDecisionDispatch20260626",
+  "value": {
+    "status": "DISPATCHED_TO_WORKER",
+    "materialCommit": "b9c5e547",
+    "dispatchBaseHead": "1d17f8bf",
+    "baseline": "docs/baselines/CVF_GC018_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md",
+    "roadmap": "docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md",
+    "workerMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedCandidate": "cvf-dispatch-quality-reviewer",
+    "expectedWorkerArtifacts": [
+      "docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md",
+      "docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_WORKER_RETURN_2026-06-26.md"
+    ],
+    "expectedDecision": "INTEGRATION_DEFERRED_CERTIFICATION_HELD unless source evidence blocks the decision",
+    "wodsResidualReopenCondition": "Reopen WODS residual hardening only if the next delegated worker-return still needs more than 2 fast-gate repair rounds for scaffold/template/keyword-guard format defects, or if the same recursive keyword false-trigger appears again despite gotcha 22.",
+    "nextAction": "Claude executes ASSF-PIC-T3 decision-only worker task and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with uncommitted artifacts.",
+    "forbiddenExpansion": "No package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, package integration, worker commit, or worker session-sync."
+  }
+}

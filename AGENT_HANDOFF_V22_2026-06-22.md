@@ -17,9 +17,9 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record WODS-T2 closure continuity, keep ASSF-PIC-T3 held, and route
-the next allowed move to a fresh source-verified follow-up selection for the
-residual WODS defects if the operator chooses to continue hardening.
+Target: record ASSF-PIC-T3 dispatch continuity, route Claude to the
+decision-only worker task, and value-park residual WODS defects with a concrete
+reopen condition.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -41,10 +41,11 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-WODS-T2 closure material commit `397d1fe4`. This sync advances the handoff
+ASSF-PIC-T3 dispatch material commit `b9c5e547`. This sync advances the handoff
 HEAD block, generated active session state, bootstrap read model, front door,
-and next-move pointers while recording WODS-T2 as closed bounded with
-`IMPROVED_BUT_NOT_SOLVED` and keeping ASSF-PIC-T3 held.
+and next-move pointers while recording ASSF-PIC-T3 as dispatched to Claude in
+decision-only `WORKER_MUST_NOT_COMMIT` mode and value-parking residual WODS
+defects with a concrete reopen condition.
 
 Protected paths:
 
@@ -52,17 +53,19 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/assfPicT3GeneratedIndexResolverIntegrationDecisionDispatch20260626.json`
 - `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`
 - `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator reported Claude's WODS-T2
-`COMPLETE_PENDING_REVIEW`, asked Codex to continue closure, and asked whether
-the hardening is improving.
+Operator authorization: the operator accepted parking residual WODS hardening
+with a concrete reopen condition and explicitly asked Codex to issue the
+ASSF-PIC-T3 work order.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert WODS-T2 closure material `397d1fe4`,
+revert ASSF-PIC-T3 dispatch material `b9c5e547`,
+WODS-T2 closure material `397d1fe4`,
 WODS-T2 dispatch material `77f795be`,
 ASSF-PIC-T2 closure material `ee5f2c42`,
 ASSF-PIC-T2 dispatch material `7cf1b2cb`,
@@ -84,7 +87,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`
+`assf_pic_t3_generated_index_resolver_integration_decision_dispatched_pending_worker_return`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -165,6 +168,8 @@ ASSF-PIC-T2 manual UAT/certification review dispatch material HEAD: `7cf1b2cb`
 ASSF-PIC-T2 manual UAT/certification review closure material HEAD: `ee5f2c42`
 
 Current material HEAD recorded for this handoff: `ee5f2c42`
+
+ASSF-PIC-T3 generated index and resolver integration decision dispatch material HEAD: `b9c5e547`
 
 Current session-sync parent material HEAD recorded for this handoff: `ee5f2c42`
 
@@ -249,6 +254,26 @@ runtime source as authority.
 
 ## Latest Work / Changes
 
+ASSF-PIC-T3 Generated Index And Resolver Integration Decision is dispatched to
+Claude at material commit `b9c5e547`. Artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md`
+
+Claude must run `WORKER_MUST_NOT_COMMIT` and may create only the two T3 review
+artifacts named in the work order. Expected T3 decision under the PIC-T2
+certification hold is `INTEGRATION_DEFERRED_CERTIFICATION_HELD` unless source
+evidence blocks it. No package instance creation, certification decision,
+lifecycle mutation, registry-source mutation, generated-index mutation,
+resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live
+proof, public-sync, push, activation, readiness, package instruction execution,
+package integration, worker commit, or worker session-sync is authorized.
+
+Residual WODS defects are value-parked. Reopen WODS residual hardening only if
+the next delegated worker-return still needs more than 2 fast-gate repair
+rounds for scaffold/template/keyword-guard format defects, or if the same
+recursive keyword false-trigger appears again despite gotcha 22.
+
 ASSF-PIC-T2 Manual UAT And Certification Review is closed bounded at material
 commit `ee5f2c42`, with lifecycle disposition
 `CERTIFICATION_HELD_WITH_REASON`. Accepted artifacts:
@@ -259,16 +284,8 @@ commit `ee5f2c42`, with lifecycle disposition
 - `docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_WORKER_RETURN_2026-06-26.md`
 - `docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_COMPLETION_2026-06-26.md`
 
-ASSF-PIC-T3 remains held because PIC-T2 did not certify the package. The next
-allowed material move is a fresh GC-018/source-verified WODS hardening work
-order for the T2-discovered dispatch/scaffold defects: External Knowledge
-Intake Routing scaffold table shape, UAT-review required-section template
-coverage, rescan guard self-reference phrase gap, and mixed material+session-sync
-range wording for trace gates. No package instance creation, certification
-decision, lifecycle-state mutation, generated-index mutation, registry-source
-mutation, resolver mutation, Web runtime change, CLI/MCP adapter behavior,
-provider/live proof, public-sync, push, activation, readiness, package
-instruction execution, T3 dispatch, or package integration is authorized.
+PIC-T2 did not certify the package; T3 is therefore decision-only and must not
+mutate generated-index, resolver, registry, or lifecycle surfaces.
 
 Work-order dispatch scaffold optimization is closed bounded at material commit
 `d08e8ab6`. It handled Claude T1 feedback before ASSF-PIC-T2: worker-return
@@ -506,14 +523,21 @@ ASSF-PIC-T2 Manual UAT And Certification Review is closed bounded at material
 commit `ee5f2c42` with lifecycle disposition
 `CERTIFICATION_HELD_WITH_REASON`.
 
-Next allowed move: create a fresh GC-018 and source-verified work order for
-WODS hardening that addresses T2-discovered dispatch/scaffold defects.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md`
+and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with
+uncommitted artifacts.
 
-ASSF-PIC-T3 remains held. No package instance creation, certification decision,
-`SKILL.md`, `skill.source.json`, generated-index mutation, registry-source
-mutation, resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior,
+Residual WODS defects are value-parked with a concrete reopen condition: reopen
+only if the next delegated worker-return still needs more than 2 fast-gate
+repair rounds for scaffold/template/keyword-guard format defects, or if the
+same recursive keyword false-trigger appears again despite gotcha 22.
+
+No package instance creation, certification decision, `SKILL.md`,
+`skill.source.json`, generated-index mutation, registry-source mutation,
+resolver mutation, CVF Web runtime change, CLI/MCP adapter behavior,
 provider/live proof, public-sync, push, activation, readiness, worker commit,
-T3 dispatch, package integration, or package instruction execution is released.
+package integration, or package instruction execution is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -558,7 +582,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator/Codex may choose a fresh GC-018/source-verified follow-up for residual WODS defects; parked checkpoint=ASSF-PIC-T3 remains held and no package certification/integration is authorized.
+Startup acknowledged: current mode=`assf_pic_t3_generated_index_resolver_integration_decision_dispatched_pending_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes ASSF-PIC-T3 decision-only work order and returns uncommitted artifacts; parked checkpoint=residual WODS hardening is value-parked unless the recorded reopen condition fires.
 
 ## Parked Checkpoints
 
@@ -585,7 +609,8 @@ Startup acknowledged: current mode=`wods_t2_closed_pass_bounded_improved_but_not
 - ASSF-PIC-T1 evidence skeleton hardening is closed bounded at material commit
   `11a49bbd`; work-order dispatch scaffold optimization is closed bounded at
   material commit `d08e8ab6`; ASSF-PIC-T2 is closed bounded at material commit
-  `ee5f2c42` with `CERTIFICATION_HELD_WITH_REASON`; ASSF-PIC-T3 remains held.
+  `ee5f2c42` with `CERTIFICATION_HELD_WITH_REASON`; ASSF-PIC-T3 is dispatched
+  decision-only at material commit `b9c5e547`.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -646,30 +671,28 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | WODS-T2 closure session sync, 2026-06-26 |
+| Session or invocation | ASSF-PIC-T3 dispatch session sync, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
-| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json` |
-| Allowed scope source | session-sync update after WODS-T2 closure material commit `397d1fe4` |
-| Before status evidence | material commit `397d1fe4`; active-session checker requires handoff HEAD update |
-| After status evidence | active handoff records parent material SHA `397d1fe4` for dedicated session-sync validation |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT3GeneratedIndexResolverIntegrationDecisionDispatch20260626.json` |
+| Allowed scope source | session-sync update after ASSF-PIC-T3 dispatch material commit `b9c5e547` |
+| Before status evidence | material commit `b9c5e547`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `b9c5e547` for dedicated session-sync validation |
 | Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, or certification decision |
 | Agent type | session-sync steward |
 | Invocation ID | `wods-t2-closure-session-sync-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT3GeneratedIndexResolverIntegrationDecisionDispatch20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPicT3GeneratedIndexResolverIntegrationDecisionDispatch20260626.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records WODS-T2 closure at material
-commit `397d1fe4` with `IMPROVED_BUT_NOT_SOLVED`, keeps ASSF-PIC-T3 held, and
-routes the next move to fresh source-verified follow-up selection if the
-operator chooses to continue WODS hardening. It does not create a package
-instance, certify a package, mutate lifecycle state, dispatch T3, or expand
-package root/index/resolver, external CLI/MCP adapter implementation,
-runtime/provider/live/public behavior, activation, readiness, or automatic
-promotion.
+This handoff is session continuity only. It records ASSF-PIC-T3 dispatch at
+material commit `b9c5e547` and value-parks residual WODS hardening with a
+concrete reopen condition. It does not create a package instance, certify a
+package, mutate lifecycle state, mutate package root/index/resolver,
+implement external CLI/MCP adapter behavior, run runtime/provider/live/public
+work, activate a package, claim readiness, or authorize automatic promotion.
