@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record ASSF-UAT T0-T4 evidence collection continuity after the material
-closure at commit `a3805d26`.
+Target: record ASSF real manual UAT execution evidence continuity after the
+material closure at commit `ec911be2`.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,11 +40,10 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-ASSF-UAT T0-T4 evidence collection material commit `a3805d26`.
+ASSF real manual UAT execution evidence material commit `ec911be2`.
 This sync advances the handoff HEAD block, generated active session state,
 bootstrap read model, front door, and next-move pointers while routing the next
-move to real manual UAT evidence or a certification-decision packet only after
-real UAT evidence exists.
+move to a certification-decision roadmap or source-verified work order.
 
 Protected paths:
 
@@ -52,24 +51,26 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/assfUatEvidenceCollectionT0T4Closure20260626.json`
+- `CVF_SESSION/state/entries/assfRealManualUatExecutionEvidenceClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator accepted the ASSF package candidate UAT
-evidence collection roadmap and directed Codex to complete T0 through T4 while
-taking multiple roles.
+Operator authorization: the operator instructed Codex to continue according to
+the next allowed move and finish this tranche before moving to a new roadmap.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF-UAT T0-T4 material `a3805d26`, roadmap closure gotcha hardening
-material `9cd46bd2`, ASSF-PIC-T5 material `410818fc`, ASSF-PIC-T4 material
-`60ffa4de`, WODS-T4 closure material `0d81a814`, WODS-T4 pilot material
-`b01b8771`, WODS-T3 closure material `b14260a4`, ASSF-PIC-T3 closure material
-`9c621ba6`, or earlier session history.
+revert ASSF real manual UAT evidence material `ec911be2`, ASSF-UAT T0-T4
+material `a3805d26`, roadmap closure gotcha hardening material `9cd46bd2`,
+ASSF-PIC-T5 material `410818fc`, ASSF-PIC-T4 material `60ffa4de`, WODS-T4
+closure material `0d81a814`, WODS-T4 pilot material `b01b8771`, WODS-T3
+closure material `b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`, or
+earlier session history.
 
 ## Current Mode
 
-`assf_uat_t0_t4_closed_pass_bounded_real_uat_execution_pending`
+`assf_real_manual_uat_evidence_closed_pass_bounded_certification_decision_roadmap_pending`
+
+ASSF real manual UAT execution evidence material HEAD: `ec911be2`
 
 ASSF-UAT T0-T4 evidence collection material HEAD: `a3805d26`
 
@@ -587,7 +588,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_uat_t0_t4_closed_pass_bounded_real_uat_execution_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized real manual UAT execution evidence for `cvf-dispatch-quality-reviewer`, or source-verified certification-decision GC-018/work order only after real UAT evidence exists; parked checkpoint=no package instance or certification decision authorized by this sync.
+Startup acknowledged: current mode=`assf_real_manual_uat_evidence_closed_pass_bounded_certification_decision_roadmap_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF package certification-decision roadmap or GC-018 plus source-verified work order for `cvf-dispatch-quality-reviewer`; parked checkpoint=no package instance or certification decision authorized by this sync.
 
 ## Parked Checkpoints
 
@@ -632,8 +633,10 @@ Startup acknowledged: current mode=`assf_uat_t0_t4_closed_pass_bounded_real_uat_
 - ASSF-UAT T0-T4 evidence collection is closed bounded at material commit
   `a3805d26`; it produced protocol, static evidence, manual UAT script,
   readiness decision, checker-reopen decision, and completion review for
-  `cvf-dispatch-quality-reviewer`. Real UAT remains not executed and
-  certification remains not authorized.
+  `cvf-dispatch-quality-reviewer`.
+- ASSF real manual UAT execution evidence is closed bounded at material commit
+  `ec911be2`; next allowed move is a certification-decision roadmap or
+  source-verified GC-018/work order, not certification itself.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -712,6 +715,92 @@ ADIF reviewer material `fd5414b7`, or prior history.
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
+
+## ASSF Real Manual UAT Execution Evidence Session Sync - 2026-06-26
+
+ASSF real manual UAT execution evidence is closed bounded at material commit
+`ec911be2`. Material artifacts:
+
+- `docs/baselines/CVF_GC018_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_FOR_CODEX_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_COMPLETION_2026-06-26.md`
+
+Evidence disposition: `UAT_EXECUTION_PASS_EVIDENCE_RECORDED`.
+
+Observed UAT evidence:
+
+- dispatch-quality PASS on `110b64bf..a3805d26`, with 9 files checked, 0
+  violations, and 0 marker violations;
+- dispatch packet author fast gate PASS on `110b64bf..a3805d26`, with 5/5
+  checks passed;
+- ASSF generated index drift PASS;
+- ASSF resolver readout PASS with one metadata-only candidate,
+  `cvf-dispatch-quality-reviewer`.
+
+Next allowed move: operator-authorized ASSF package certification-decision
+roadmap or GC-018 plus source-verified work order for
+`cvf-dispatch-quality-reviewer`, using the UAT evidence reviews above as
+source evidence.
+
+This handoff is session continuity only. It records real UAT evidence material
+closure at commit `ec911be2` and routes the next move to certification-decision
+roadmap authoring. It does not create a package instance, certify a package,
+mutate lifecycle state, mutate package root/index/resolver, implement external
+CLI/MCP adapter behavior, run runtime/provider/live/public work, activate a
+package, claim readiness, or authorize automatic promotion.
+
+### Core Guard Self-Protection Authorization
+
+Authorized session-sync scope: update active session/front-door/handoff state
+after ASSF real manual UAT execution evidence material commit `ec911be2`, and
+regenerate the generated active session aggregate/read model from compact
+state sources.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V22_2026-06-22.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/assfRealManualUatExecutionEvidenceClosure20260626.json`
+
+Operator authorization: the operator instructed Codex to continue according to
+the next allowed move and finish this tranche before moving to a new roadmap.
+
+Rollback boundary: revert only this session-sync batch if rejected. Do not
+revert material commit `ec911be2` or earlier ASSF-UAT material/session commits.
+
+### Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | ASSF real manual UAT execution evidence session sync, 2026-06-26 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfRealManualUatExecutionEvidenceClosure20260626.json` |
+| Allowed scope source | session-sync update after ASSF real manual UAT evidence material commit `ec911be2` |
+| Before status evidence | material commit `ec911be2`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `ec911be2` for dedicated session-sync validation |
+| Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
+| Approval boundary | continuity and generated state only; no new material tranche |
+| Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, or certification decision |
+| Agent type | session-sync steward |
+| Invocation ID | `assf-real-manual-uat-execution-evidence-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfRealManualUatExecutionEvidenceClosure20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfRealManualUatExecutionEvidenceClosure20260626.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
+
+### Claim Boundary
+
+This session-sync records the latest completed tranche and next allowed move
+only. It does not certify, activate, project, execute package instructions,
+export, adapt, machine-enforce, or mutate any package or runtime surface.
 
 ## ASSF-PIC-T4 Session Sync - 2026-06-26
 
