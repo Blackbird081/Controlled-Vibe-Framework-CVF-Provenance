@@ -295,6 +295,16 @@ runtime/product code, and does not itself implement or modify any checker.
     not source symbols. Use an actual function, constant, section marker, or
     field present in the cited source, such as `main` or `GATE_COMMANDS`.
 
+29. **Mentioning a real `EXTENSIONS/...` path in review or audit prose can
+    trigger GC-051 corpus registry expectations.** If a changed review or audit
+    cites an extension path as closure evidence, `check_corpus_scan_registry.py`
+    can require a matching source entry under the corpus scan registry source
+    layout. Do not silently avoid a required path when it is real evidence;
+    either keep nonessential extension examples out of governed prose, or add a
+    narrow registry source entry and regenerate the aggregate in the same
+    material batch. Treat this as a corpus-source accountability issue, not as
+    a reason to hide material evidence from the review.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -320,14 +330,14 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | small governed-artifact checklist learning update, 2026-06-26 |
+| Session or invocation | governed-artifact checklist learning update, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
 | Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
-| Allowed scope source | operator instruction to add the small findings from ASSF real manual UAT evidence closure to the checklist |
-| Before status evidence | baseHead `36c569c1`; worktree clean before patch |
-| After status evidence | checklist records work-order `Execution Plan` and Source Verification real-symbol gotchas as items 27 and 28 |
-| Diff evidence | `git diff --name-status` against baseHead `36c569c1` |
+| Allowed scope source | operator instruction to add small findings to the checklist before continuing the roadmap |
+| Before status evidence | baseHead `b58d1cd3`; worktree clean before patch |
+| After status evidence | checklist records the GC-051 extension-path review/audit mention trap as item 29 |
+| Diff evidence | `git diff --name-status` against baseHead `b58d1cd3` |
 | Approval boundary | governed artifact authoring friction checklist only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
