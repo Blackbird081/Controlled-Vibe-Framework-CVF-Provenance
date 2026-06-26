@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`
+Current mode marker: `assf_pic_t2_closed_pass_bounded_certification_held_wods_hardening_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`.
+Current mode: `assf_pic_t2_closed_pass_bounded_certification_held_wods_hardening_pending`.
 
-Previous mode: `assf_pic_t1_dispatch_authoring_optimization_closed_pass_bounded_pending_next_selection`.
+Previous mode: `assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`.
 
 Active handoff:
 
@@ -66,20 +66,26 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-ASSF-PIC-T2 Manual UAT And Certification Review is dispatched to Claude at
-material commit `7cf1b2cb`. Accepted dispatch artifacts:
+ASSF-PIC-T2 Manual UAT And Certification Review is closed bounded at material
+commit `ee5f2c42`, with lifecycle disposition
+`CERTIFICATION_HELD_WITH_REASON`. Accepted artifacts:
 
 - `docs/baselines/CVF_GC018_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_FOR_CLAUDE_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_WORKER_RETURN_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_COMPLETION_2026-06-26.md`
 
-Next allowed move: Claude worker executes the committed work order under
-`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex reviewer owns closure conversion if accepted. No
-package instance creation, certification decision, lifecycle-state mutation,
-generated-index mutation, registry-source mutation, resolver mutation, Web
-runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync,
-push, activation, readiness, package instruction execution, active session
-mutation by worker, or worker commit is authorized.
+ASSF-PIC-T3 remains held. Next allowed move: create a fresh GC-018 and
+source-verified work order for WODS hardening that addresses the T2-discovered
+dispatch/scaffold defects: External Knowledge Intake Routing scaffold table
+shape, UAT-review required-section template coverage, rescan guard
+self-reference phrase gap, and mixed material+session-sync range wording for
+trace gates. No package instance creation, certification decision,
+lifecycle-state mutation, generated-index mutation, registry-source mutation,
+resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live
+proof, public-sync, push, activation, readiness, package instruction execution,
+T3 dispatch, or package integration is authorized.
 
 Work-order dispatch scaffold optimization is closed bounded at material commit
 `d08e8ab6`, with GC-020 bootstrap read-model session-sync classifier hotfix at
@@ -108,8 +114,8 @@ package instance, certification decision, lifecycle-state advancement, index,
 resolver, Web, adapter, provider/live, public-sync, push, activation,
 readiness, or package-execution release. The worker-return/report friction
 trial follow-up is now closed at `d08e8ab6` plus hotfix `59197332`.
-ASSF-PIC-T2 is now dispatched at material commit `7cf1b2cb` for Claude worker
-execution under `WORKER_MUST_NOT_COMMIT`.
+ASSF-PIC-T2 is now closed bounded at material commit `ee5f2c42` with
+`CERTIFICATION_HELD_WITH_REASON`; ASSF-PIC-T3 remains held.
 
 Worker-return/report enforcement friction reduction is recorded at material
 commit `3ab844fd`. It keeps hard gates for authority, scope, source evidence,
@@ -953,18 +959,16 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `assf_pic_t2_manual_uat_certification_review_dispatched_pending_worker_return`.
+Mode: `assf_pic_t2_closed_pass_bounded_certification_held_wods_hardening_pending`.
 
-Latest material HEAD: `7cf1b2cb` (ASSF-PIC-T2 manual UAT/certification review
-dispatch).
+Latest material HEAD: `ee5f2c42` (ASSF-PIC-T2 manual UAT/certification review
+closure).
 
-Next allowed move: Claude worker executes the committed ASSF-PIC-T2 work order
-under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Codex reviewer then performs reviewer closure
-conversion if accepted.
+Next allowed move: create a fresh GC-018 and source-verified work order for
+WODS hardening that addresses T2-discovered dispatch/scaffold defects.
 
-Do not create a package instance or make a certification decision from this
-sync.
+ASSF-PIC-T3 remains held. Do not create a package instance or make a
+certification decision from this sync.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 

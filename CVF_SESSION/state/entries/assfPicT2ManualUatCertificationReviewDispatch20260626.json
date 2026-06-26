@@ -2,8 +2,9 @@
   "stateOrder": 672,
   "stateKey": "assfPicT2ManualUatCertificationReviewDispatch20260626",
   "value": {
-    "status": "DISPATCHED_TO_WORKER",
+    "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "7cf1b2cb",
+    "closureMaterialCommit": "ee5f2c42",
     "baseline": "docs/baselines/CVF_GC018_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_FOR_CLAUDE_2026-06-26.md",
     "workerMode": "WORKER_MUST_NOT_COMMIT",
@@ -13,7 +14,7 @@
       "docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_WORKER_RETURN_2026-06-26.md"
     ],
     "requiredScaffoldHelper": "governance/compat/run_worker_return_scaffold.py",
-    "nextAction": "Claude worker executes the committed work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON for Codex reviewer closure conversion.",
+    "nextAction": "ASSF-PIC-T3 remains held; next material focus is WODS hardening for T2-discovered dispatch/scaffold defects.",
     "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, active session mutation by worker, or worker commit."
   }
 }
