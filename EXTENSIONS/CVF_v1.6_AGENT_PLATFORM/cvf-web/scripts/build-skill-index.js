@@ -10,6 +10,8 @@ const SKILLS_ROOT = path.resolve(BASE_DIR, '../../CVF_v1.5.2_SKILL_LIBRARY_FOR_E
 const UAT_ROOT = path.resolve(BASE_DIR, '../../../governance/skill-library/uat/results');
 const UAT_REPORT_PATH = path.resolve(BASE_DIR, '../../../governance/skill-library/uat/reports/uat_score_report.json');
 const SPEC_REPORT_PATH = path.resolve(BASE_DIR, '../../../governance/skill-library/registry/reports/spec_metrics_report.json');
+const ASSF_INDEX_PATH = path.resolve(BASE_DIR, '../../../docs/reference/agent_system_skills/generated/skill-index.json');
+const PUBLIC_INDEX_PATH = path.resolve(BASE_DIR, 'public', 'data', 'skills-index.json');
 
 const DOMAIN_RISK_MAP = {
     ai_ml_evaluation: 'R1',
@@ -268,6 +270,123 @@ function loadSpecReportMap() {
     }
 }
 
+function loadExistingPublicSkillRecords() {
+    try {
+        if (!fs.existsSync(PUBLIC_INDEX_PATH)) {
+            return new Map();
+        }
+        const raw = fs.readFileSync(PUBLIC_INDEX_PATH, 'utf-8');
+        const data = JSON.parse(raw);
+        if (!data || !Array.isArray(data.categories)) {
+            return new Map();
+        }
+        const records = new Map();
+        for (const category of data.categories) {
+            if (!category || !Array.isArray(category.skills)) continue;
+            for (const skill of category.skills) {
+                if (!skill || !skill.id) continue;
+                records.set(`${category.id}::${skill.id}`, skill);
+            }
+        }
+        return records;
+    } catch (error) {
+        console.warn('Failed to load existing public skill records', error);
+        return new Map();
+    }
+}
+
+function loadAssfSkillIndex() {
+    try {
+        if (!fs.existsSync(ASSF_INDEX_PATH)) {
+            return { claimBoundary: '', skills: [] };
+        }
+        const raw = fs.readFileSync(ASSF_INDEX_PATH, 'utf-8');
+        const data = JSON.parse(raw);
+        if (!data || !Array.isArray(data.skills)) {
+            return { claimBoundary: '', skills: [] };
+        }
+        return {
+            claimBoundary: typeof data.claimBoundary === 'string' ? data.claimBoundary : '',
+            skills: data.skills,
+        };
+    } catch (error) {
+        console.error('Failed to load ASSF skill index', error);
+        return { claimBoundary: '', skills: [] };
+    }
+}
+
+function buildAssfContent(skill, claimBoundary) {
+    const lines = [
+        `# ${skill.name || skill.skillId}`,
+        '',
+        skill.purpose || 'ASSF package metadata projection.',
+        '',
+        '## Projection Boundary',
+        claimBoundary || 'Metadata-only projection. No package activation or execution authority is granted.',
+        '',
+        '## Source Trace',
+        `- Canonical root: ${skill.canonicalRoot || 'N/A with reason: source root not declared'}`,
+        `- Certification state: ${skill.certificationState || 'UNKNOWN'}`,
+        `- UAT state: ${skill.uatState || 'UNKNOWN'}`,
+        `- External CLI/MCP disposition: ${skill.externalCliMcpDisposition || 'UNKNOWN'}`,
+    ];
+
+    if (Array.isArray(skill.reviewArtifacts) && skill.reviewArtifacts.length > 0) {
+        lines.push('', '## Review Artifacts');
+        for (const artifact of skill.reviewArtifacts) {
+            lines.push(`- ${artifact}`);
+        }
+    }
+
+    return lines.join('\n');
+}
+
+function buildAssfProjectedSkills() {
+    const assfIndex = loadAssfSkillIndex();
+    const projectedSkills = [];
+
+    for (const skill of assfIndex.skills) {
+        if (!skill || skill.certificationState !== 'CERTIFIED' || skill.uatState !== 'PASSED') {
+            continue;
+        }
+
+        projectedSkills.push({
+            id: skill.skillId,
+            title: skill.name || deriveTitleFromFilename(skill.skillId || 'assf-package'),
+            domain: 'Agent System Skills',
+            difficulty: 'Governed',
+            summary: skill.purpose || 'Certified ASSF package metadata projection.',
+            path: skill.canonicalRoot || '',
+            content: buildAssfContent(skill, assfIndex.claimBoundary),
+            riskLevel: skill.riskProfile || skill.riskCeiling || 'R0',
+            allowedRoles: Array.isArray(skill.roles) ? skill.roles.join(', ') : 'User, Reviewer',
+            allowedPhases: Array.isArray(skill.phases) ? skill.phases.join(', ') : 'Discovery, Review',
+            authorityScope: skill.authorityCeiling || 'Read-only metadata projection',
+            autonomy: 'Read-only metadata projection',
+            uatStatus: skill.uatState,
+            uatQuality: 'Passed',
+            specGate: skill.certificationState,
+            corpusClass: 'AGENT_SYSTEM_SKILL_PACKAGE',
+            frontDoorVisible: true,
+            frontDoorTier: 'ASSF_CERTIFIED',
+            trustedBenchmarkSurface: false,
+            hasRestrictedLinks: false,
+            linkedTemplates: [],
+            corpusNote: 'ASSF certified package metadata projection; certificationState is separate from corpusClass.',
+            assfProjectionClass: 'CERTIFIED_PACKAGE_PROJECTION',
+            certificationState: skill.certificationState,
+            uatState: skill.uatState,
+            reviewArtifacts: Array.isArray(skill.reviewArtifacts) ? skill.reviewArtifacts : [],
+            canonicalRoot: skill.canonicalRoot,
+            externalCliMcpDisposition: skill.externalCliMcpDisposition,
+            adapterContract: skill.adapterContract,
+            projectionClaimBoundary: assfIndex.claimBoundary,
+        });
+    }
+
+    return projectedSkills;
+}
+
 function buildSkillIndex() {
     if (!fs.existsSync(SKILLS_ROOT)) {
         console.warn(`Skills root not found: ${SKILLS_ROOT}`);
@@ -280,6 +399,8 @@ function buildSkillIndex() {
     const categories = [];
     let totalScannedSkills = 0;
     let nonPublicSkills = 0;
+    const existingPublicSkillRecords = loadExistingPublicSkillRecords();
+    const assfProjectedSkills = buildAssfProjectedSkills();
 
     const entries = fs.readdirSync(SKILLS_ROOT, { withFileTypes: true });
     for (const entry of entries) {
@@ -362,6 +483,15 @@ function buildSkillIndex() {
                 linkedTemplates: governanceEntry ? governanceEntry.linkedTemplates : [],
                 corpusNote: governanceEntry ? governanceEntry.corpusNote : 'Unscreened legacy surface; excluded from front-door truth until classified.',
             };
+            const existingPublicSkill = existingPublicSkillRecords.get(`${folderName}::${skillId}`);
+            if (existingPublicSkill && typeof existingPublicSkill.content === 'string') {
+                // Keep this projection tranche from refreshing unrelated legacy
+                // skill markdown content in the generated public index.
+                skillRecord.content = existingPublicSkill.content;
+            }
+            if (existingPublicSkill && typeof existingPublicSkill.uatContent === 'string') {
+                skillRecord.uatContent = existingPublicSkill.uatContent;
+            }
 
             if (skillRecord.frontDoorVisible) {
                 visibleSkills.push(skillRecord);
@@ -384,6 +514,14 @@ function buildSkillIndex() {
         // only exposes agent-ready public skills with a governed template path.
     }
 
+    if (assfProjectedSkills.length > 0) {
+        categories.push({
+            id: 'agent_system_skills',
+            name: 'Agent System Skills',
+            skills: assfProjectedSkills,
+        });
+    }
+
     return {
         generatedAt: new Date().toISOString(),
         categories,
@@ -394,7 +532,9 @@ function buildSkillIndex() {
             trustedMappedSkills: corpusGovernance.summary.trustedSkills,
             reviewMappedSkills: corpusGovernance.summary.reviewSkills,
             trustedBenchmarkSkills: corpusGovernance.summary.trustedBenchmarkSkills,
-            governanceSource: corpusGovernance.sourcePaths,
+            governanceSource: [...corpusGovernance.sourcePaths, path.relative(BASE_DIR, ASSF_INDEX_PATH)],
+            assfProjectedSkills: assfProjectedSkills.length,
+            certifiedPackageProjections: assfProjectedSkills.filter((skill) => skill.assfProjectionClass === 'CERTIFIED_PACKAGE_PROJECTION').length,
         },
     };
 }
@@ -412,7 +552,7 @@ function normalizeIndexPayload(payload) {
 function writeIndex(indexPayload) {
     const outDir = path.resolve(BASE_DIR, 'public', 'data');
     fs.mkdirSync(outDir, { recursive: true });
-    const outPath = path.join(outDir, 'skills-index.json');
+    const outPath = PUBLIC_INDEX_PATH;
     if (fs.existsSync(outPath)) {
         try {
             const existingRaw = fs.readFileSync(outPath, 'utf-8');

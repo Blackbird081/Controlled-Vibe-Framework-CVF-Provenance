@@ -17,6 +17,20 @@
         "specScore": 90,
         "specQuality": "Excellent",
         "specGate": "PASS"
+      },
+      {
+        "id": "cvf-dispatch-quality-reviewer",
+        "title": "CVF Dispatch Quality Reviewer",
+        "domain": "Agent System Skills",
+        "difficulty": "Governed",
+        "summary": "Certified ASSF projection fixture",
+        "path": "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json",
+        "content": "# CVF Dispatch Quality Reviewer",
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "uatState": "PASSED",
+        "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json"
       }
     ]
   }

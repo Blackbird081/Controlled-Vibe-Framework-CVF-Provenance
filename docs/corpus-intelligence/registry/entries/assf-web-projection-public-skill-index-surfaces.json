@@ -1,0 +1,36 @@
+{
+  "registryOrder": 113,
+  "id": "assf-web-projection-public-skill-index-surfaces",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "ASSF Web projection public skill-index surfaces",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/build-skill-index.js",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/skills-index.json"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "ASSF-WEBPROJ-T1",
+  "scanDate": "2026-06-26",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
+  "completionReviewPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_ASSF_WEB_PROJECTION_IMPLEMENTATION_2026-06-26.md",
+  "verdicts": {
+    "gc047": "N/A",
+    "gc048": "N/A",
+    "gc050": "N/A"
+  },
+  "semanticRegions": [
+    "ASSF_WEB_PROJECTION",
+    "PUBLIC_SKILL_INDEX_GENERATION"
+  ],
+  "priorAbsorption": "ASSF-WEBPROJ-T1 reads certified ASSF metadata and projects it into the Web public skill-index read model without package execution, adapter behavior, provider proof, or ASSF registry mutation.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "ASSF package execution by Web projection",
+    "CLI MCP adapter implemented by Web skill index",
+    "certification state derived from corpusClass"
+  ],
+  "nextScanRecommendation": "Open a separate source-verified roadmap before adapter, provider, package execution, or public-sync behavior."
+}

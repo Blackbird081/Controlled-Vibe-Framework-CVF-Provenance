@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T23:22:28.865Z",
+  "generatedAt": "2026-06-26T13:38:27.725Z",
   "categories": [
     {
       "id": "ai_ml_evaluation",
@@ -1072,11 +1072,53 @@
           "corpusNote": "Trusted benchmark surface under GC-044 / D3 trusted subset."
         }
       ]
+    },
+    {
+      "id": "agent_system_skills",
+      "name": "Agent System Skills",
+      "skills": [
+        {
+          "id": "cvf-dispatch-quality-reviewer",
+          "title": "CVF Dispatch Quality Reviewer",
+          "domain": "Agent System Skills",
+          "difficulty": "Governed",
+          "summary": "Provide deterministic dispatch-quality validation of work-order and baseline artifacts before worker execution begins.",
+          "path": "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json",
+          "content": "# CVF Dispatch Quality Reviewer\n\nProvide deterministic dispatch-quality validation of work-order and baseline artifacts before worker execution begins.\n\n## Projection Boundary\nThis index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope.\n\n## Source Trace\n- Canonical root: docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json\n- Certification state: CERTIFIED\n- UAT state: PASSED\n- External CLI/MCP disposition: DEFERRED_WITH_REASON\n\n## Review Artifacts\n- docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md\n- docs/reviews/CVF_ASSF_CERT_T2_CERTIFICATION_DECISION_2026-06-26.md\n- docs/reviews/CVF_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_COMPLETION_2026-06-26.md",
+          "riskLevel": "R0",
+          "allowedRoles": "dispatcher, reviewer",
+          "allowedPhases": "DISPATCH_AUTHORING, PRE_DISPATCH",
+          "authorityScope": "read-only inspection of governed markdown files",
+          "autonomy": "Read-only metadata projection",
+          "uatStatus": "PASSED",
+          "uatQuality": "Passed",
+          "specGate": "CERTIFIED",
+          "corpusClass": "AGENT_SYSTEM_SKILL_PACKAGE",
+          "frontDoorVisible": true,
+          "frontDoorTier": "ASSF_CERTIFIED",
+          "trustedBenchmarkSurface": false,
+          "hasRestrictedLinks": false,
+          "linkedTemplates": [],
+          "corpusNote": "ASSF certified package metadata projection; certificationState is separate from corpusClass.",
+          "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+          "certificationState": "CERTIFIED",
+          "uatState": "PASSED",
+          "reviewArtifacts": [
+            "docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md",
+            "docs/reviews/CVF_ASSF_CERT_T2_CERTIFICATION_DECISION_2026-06-26.md",
+            "docs/reviews/CVF_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_COMPLETION_2026-06-26.md"
+          ],
+          "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json",
+          "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+          "adapterContract": "N/A with reason: external CLI/MCP adapter not yet authored; separate ASSF adapter work order required",
+          "projectionClaimBoundary": "This index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope."
+        }
+      ]
     }
   ],
   "meta": {
     "totalScannedSkills": 62,
-    "frontDoorSkills": 27,
+    "frontDoorSkills": 28,
     "quarantinedSkills": 35,
     "trustedMappedSkills": 27,
     "reviewMappedSkills": 0,
@@ -1084,7 +1126,10 @@
     "governanceSource": [
       "docs/baselines/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md",
       "docs/baselines/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md",
-      "docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md"
-    ]
+      "docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md",
+      "..\\..\\..\\docs\\reference\\agent_system_skills\\generated\\skill-index.json"
+    ],
+    "assfProjectedSkills": 1,
+    "certifiedPackageProjections": 1
   }
 }
