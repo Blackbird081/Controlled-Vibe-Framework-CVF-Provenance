@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation; parked checkpoint=no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
+Startup acknowledged: current mode=`rse_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation; parked checkpoint=no validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+Current mode marker: `rse_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
 
-Current mode: `lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+Current mode: `rse_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
 
-`lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+`rse_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
 
 Previous mode:
 
-`gfs_py_t4_orchestrator_shell_reduction_closed_pass_bounded_pending_next_roadmap_selection`
+`lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
 
 ## Latest Closed Work
 
@@ -67,10 +67,11 @@ Previous mode:
 | GFS-PY T3 source-verification/token-collision split | `f8f35e3e` | CLOSED_PASS_BOUNDED |
 | GFS-PY T4 orchestrator-shell reduction / roadmap closure | `78798cd0` | CLOSED_PASS_BOUNDED |
 | LSC roadmap status reconciliation | `46a1f17a` | CLOSED_PASS_BOUNDED |
+| RSE roadmap status reconciliation | `23d99200` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `lsc_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
+Mode: `rse_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection`
 
 Next allowed move: select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation. LHW24 remains the latest closed numbered LHW wave.
 
@@ -78,7 +79,7 @@ No validation semantics change, no runtime/provider/live proof, no public-sync, 
 
 ## Parked Checkpoint
 
-LSC parent roadmap status reconciliation is closed bounded at material commit `46a1f17a`. Next roadmap selection remains pending user direction.
+RSE parent roadmap status reconciliation is closed bounded at material commit `23d99200`. Next roadmap selection remains pending user direction.
 
 ## Continuity Markers
 

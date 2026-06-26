@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1234,
+  "stateKey": "rseRoadmapStatusReconciliationClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "23d99200",
+    "roadmap": "docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md",
+    "baseline": "docs/baselines/CVF_GC018_RSE_ROADMAP_STATUS_RECONCILIATION_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_ROADMAP_STATUS_RECONCILIATION_FOR_CODEX_2026-06-26.md",
+    "completionReview": "docs/reviews/CVF_RSE_ROADMAP_STATUS_RECONCILIATION_COMPLETION_2026-06-26.md",
+    "claimBoundary": "Parent roadmap status reconciliation only; no RSE tranche re-execution, runtime/provider/live proof, public-sync, generated aggregate mutation beyond session sync, resolver mutation, adapter mutation, or push."
+  }
+}

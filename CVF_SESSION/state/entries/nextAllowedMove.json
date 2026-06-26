@@ -1,5 +1,5 @@
 {
   "stateOrder": 641,
   "stateKey": "nextAllowedMove",
-  "value": "LSC parent roadmap status reconciliation is CLOSED_PASS_BOUNDED at material commit 46a1f17a, and the LSC roadmap is CLOSED_PASS_BOUNDED. Next allowed move: select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation. No validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization. LHW24 remains the latest closed numbered LHW wave."
+  "value": "RSE parent roadmap status reconciliation is CLOSED_PASS_BOUNDED at material commit 23d99200, and the RSE roadmap is CLOSED_PASS_BOUNDED. Next allowed move: select the next high-value governed roadmap or open a fresh GC-018/source-verified work order before implementation. No validation semantics change, no runtime/provider/live proof, no public-sync, no generated aggregate mutation beyond session sync, no resolver mutation, no adapter mutation, and no push without separate authorization. LHW24 remains the latest closed numbered LHW wave."
 }
