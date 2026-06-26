@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `wods_t2_dispatch_and_worker_return_scaffold_hardening_dispatched_pending_worker_return`
+Current mode marker: `wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wods_t2_dispatch_and_worker_return_scaffold_hardening_dispatched_pending_worker_return`.
+Current mode: `wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`.
 
-Previous mode: `assf_pic_t2_closed_pass_bounded_certification_held_wods_hardening_pending`.
+Previous mode: `wods_t2_dispatch_and_worker_return_scaffold_hardening_dispatched_pending_worker_return`.
 
 Active handoff:
 
@@ -66,16 +66,20 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-WODS-T2 Dispatch And Worker-Return Scaffold Hardening is dispatched at material
-commit `77f795be`. Artifacts:
+WODS-T2 Dispatch And Worker-Return Scaffold Hardening is closed bounded at
+material commit `397d1fe4`, with effectiveness verdict
+`IMPROVED_BUT_NOT_SOLVED`. Artifacts:
 
 - `docs/baselines/CVF_GC018_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_2026-06-26.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_FOR_CLAUDE_2026-06-26.md`
+- `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md`
+- `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_COMPLETION_2026-06-26.md`
 
-Next allowed move: Claude executes the WODS-T2 work order under
-`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON` with scaffold-first worker-return evidence at
-`docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md`.
+WODS-T2 fixed the scaffold table shape, added focused regressions, added
+work-order template guidance for review-section coverage and separated
+material/session-sync ranges, and recorded gotchas 21 and 22. Reviewer repair:
+the focused pytest evidence row in the worker return was corrected from
+`25 passed` to the reproduced `19 passed` before closure.
 
 ASSF-PIC-T3 remains held. No package instance creation, certification
 decision, lifecycle-state mutation, generated-index mutation,
@@ -84,12 +88,10 @@ adapter behavior, provider/live proof, public-sync, push, activation,
 readiness, package instruction execution, T3 dispatch, package integration, or
 worker session-sync is authorized.
 
-Effectiveness note: WODS-T1 clearly improved the original missing-section and
-compact-N/A friction, but ASSF-PIC-T2 proved the lane is not solved. WODS-T2
-targets the scaffold table shape, UAT-review section coverage, maintenance
-phrase false trigger, and separated material/session-sync range guidance; its
-worker return must measure whether the hardening actually reduces repair
-rounds.
+Next allowed move: operator/Codex may choose a fresh GC-018/source-verified
+follow-up for the residual WODS defects documented in the WODS-T2 completion:
+recursive keyword-guard self-reference risk and advisory-only review-section
+template guidance.
 
 Work-order dispatch scaffold optimization is closed bounded at material commit
 `d08e8ab6`, with GC-020 bootstrap read-model session-sync classifier hotfix at
@@ -963,14 +965,13 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `wods_t2_dispatch_and_worker_return_scaffold_hardening_dispatched_pending_worker_return`.
+Mode: `wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`.
 
-Latest material HEAD: `77f795be` (WODS-T2 dispatch and worker-return scaffold
-hardening dispatch).
+Latest material HEAD: `397d1fe4` (WODS-T2 dispatch and worker-return scaffold
+hardening closure).
 
-Next allowed move: Claude executes the WODS-T2 work order under
-`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON` with uncommitted worker-return evidence.
+Next allowed move: operator/Codex may choose a fresh GC-018/source-verified
+follow-up for the residual WODS defects documented in the WODS-T2 completion.
 
 ASSF-PIC-T3 remains held. Do not create a package instance or make a
 certification decision from this sync.

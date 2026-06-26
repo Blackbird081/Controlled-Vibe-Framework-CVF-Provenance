@@ -17,9 +17,9 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record WODS-T2 dispatch continuity, keep ASSF-PIC-T3 held, and route
-the next allowed move to Claude worker execution for the WODS-T2 scaffold and
-work-order authoring hardening tranche.
+Target: record WODS-T2 closure continuity, keep ASSF-PIC-T3 held, and route
+the next allowed move to a fresh source-verified follow-up selection for the
+residual WODS defects if the operator chooses to continue hardening.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -41,10 +41,10 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-WODS-T2 dispatch material commit `77f795be`. This sync advances the handoff
+WODS-T2 closure material commit `397d1fe4`. This sync advances the handoff
 HEAD block, generated active session state, bootstrap read model, front door,
-and next-move pointers while routing Claude to execute WODS-T2 under
-`WORKER_MUST_NOT_COMMIT` and keeping ASSF-PIC-T3 held.
+and next-move pointers while recording WODS-T2 as closed bounded with
+`IMPROVED_BUT_NOT_SOLVED` and keeping ASSF-PIC-T3 held.
 
 Protected paths:
 
@@ -53,15 +53,17 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`
+- `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator asked Codex to continue with the next
-tranche work order and evaluate whether hardening has improved after WODS-T1
-and ASSF-PIC-T2.
+Operator authorization: the operator reported Claude's WODS-T2
+`COMPLETE_PENDING_REVIEW`, asked Codex to continue closure, and asked whether
+the hardening is improving.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert WODS-T2 dispatch material `77f795be`,
+revert WODS-T2 closure material `397d1fe4`,
+WODS-T2 dispatch material `77f795be`,
 ASSF-PIC-T2 closure material `ee5f2c42`,
 ASSF-PIC-T2 dispatch material `7cf1b2cb`,
 GC-020 bootstrap classifier hotfix material `59197332`,
@@ -82,7 +84,7 @@ MPI-T4 closure, or earlier session history.
 
 ## Current Mode
 
-`wods_t2_dispatch_and_worker_return_scaffold_hardening_dispatched_pending_worker_return`
+`wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -556,7 +558,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wods_t2_dispatch_and_worker_return_scaffold_hardening_dispatched_pending_worker_return`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=Claude executes the WODS-T2 scaffold hardening work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=ASSF-PIC-T3 remains held and no package certification/integration is authorized.
+Startup acknowledged: current mode=`wods_t2_closed_pass_bounded_improved_but_not_solved_pending_next_selection`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator/Codex may choose a fresh GC-018/source-verified follow-up for residual WODS defects; parked checkpoint=ASSF-PIC-T3 remains held and no package certification/integration is authorized.
 
 ## Parked Checkpoints
 
@@ -644,29 +646,30 @@ ADIF reviewer material `fd5414b7`, or prior history.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | WODS-T2 dispatch session sync, 2026-06-26 |
+| Session or invocation | WODS-T2 closure session sync, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
-| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json` |
-| Allowed scope source | session-sync update after WODS-T2 dispatch material commit `77f795be` |
-| Before status evidence | material commit `77f795be`; active-session checker requires handoff HEAD update |
-| After status evidence | active handoff records parent material SHA `77f795be` for dedicated session-sync validation |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json` |
+| Allowed scope source | session-sync update after WODS-T2 closure material commit `397d1fe4` |
+| Before status evidence | material commit `397d1fe4`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `397d1fe4` for dedicated session-sync validation |
 | Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
 | Approval boundary | continuity and generated state only; no new material tranche |
 | Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, or certification decision |
 | Agent type | session-sync steward |
-| Invocation ID | `wods-t2-dispatch-session-sync-2026-06-26` |
-| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json` |
-| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json` |
+| Invocation ID | `wods-t2-closure-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningDispatch20260626.json`; `CVF_SESSION/state/entries/wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
 
 ## Claim Boundary
 
-This handoff is session continuity only. It records WODS-T2 dispatch at
-material commit `77f795be`, keeps ASSF-PIC-T3 held, and routes the next move
-to Claude worker execution under `WORKER_MUST_NOT_COMMIT`. It does not create a
-package instance, certify a package, mutate lifecycle state, dispatch T3, or
-expand package root/index/resolver, external CLI/MCP adapter implementation,
+This handoff is session continuity only. It records WODS-T2 closure at material
+commit `397d1fe4` with `IMPROVED_BUT_NOT_SOLVED`, keeps ASSF-PIC-T3 held, and
+routes the next move to fresh source-verified follow-up selection if the
+operator chooses to continue WODS hardening. It does not create a package
+instance, certify a package, mutate lifecycle state, dispatch T3, or expand
+package root/index/resolver, external CLI/MCP adapter implementation,
 runtime/provider/live/public behavior, activation, readiness, or automatic
 promotion.
