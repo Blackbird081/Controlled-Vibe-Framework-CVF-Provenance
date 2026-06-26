@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-25
 
@@ -293,7 +293,22 @@ for implementation: certification lifecycle, generated-index/resolver drift,
 Web projection drift, or adapter-claim honesty. This tranche may dispatch a
 new checker roadmap or keep machine checks deferred with reason.
 
-Status: `READY_FOR_GC018_AFTER_T4_CLOSURE`.
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure evidence:
+
+- baseline:
+  `docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md`;
+- decision review:
+  `docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md`;
+- completion review:
+  `docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md`;
+- disposition:
+  `CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE`;
+- next-control recommendation:
+  `OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE`.
 
 Required outputs:
 
@@ -436,6 +451,26 @@ public-sync authorization.
 | Claim boundary | no runtime, provider/live, public-sync, external adapter, generated index, resolver, Web runtime, or package activation claim |
 | Expected manifest | this roadmap only |
 | Actual manifest | this roadmap only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md` | `Reviewer verdict: CLOSED_PASS_BOUNDED`; `Checker readiness disposition: CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED`; T5 `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no registry JSON mutation is authorized by ASSF-PIC-T5 | no registry JSON mutation in changed set | BLOCKED with reason: out of scope |
+| Registry Markdown | N/A with reason: no registry Markdown mutation is authorized by ASSF-PIC-T5 | no registry Markdown mutation in changed set | BLOCKED with reason: out of scope |
+| External evidence digest | N/A with reason: no external artifact is created | no external digest applies | N/A with reason |
+| System loop interlock | T5 completion review | no package activation, runtime loop, provider call, public-sync, or worker commit occurred | PASS |
+| Session continuity | N/A with reason: session-sync is separate after material closure | active session paths excluded from material changed set | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| T5 checker-readiness decision requires only local documentation and gate receipts | `CVF_RECEIPT_PRESENT` recorded in T5 baseline, work order, decision review, and completion review; no runtime/provider/adapter receipt is required | PASS |
+| Roadmap closure must not claim package certification | T2/T3/T4/T5 closure artifacts keep certification, integration, Web projection, and adapter work deferred | PASS |
 
 ## Claim Boundary
 
