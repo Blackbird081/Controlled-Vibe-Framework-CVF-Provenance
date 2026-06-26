@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T3_PASS_BOUNDED_T4_WORK_ORDER_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -105,7 +105,7 @@ Application:
 
 ### T0 - Bring governed Python under class-aware, locally-enforced size coverage
 
-WORK_ORDER_READY. Upgrade `check_python_automation_size.py` to per-class
+DONE. Upgraded `check_python_automation_size.py` to per-class
 thresholds; add the touch rule (excepted file modified in a batch must be net
 `<= 0` lines versus `HEAD`); add the near-hard touched-file shrink/split
 requirement; wire the guard into `run_local_governance_hook_chain.py` and the
@@ -146,9 +146,11 @@ suite as regression anchors.
 
 ### T4 - Leave check_work_order_dispatch_quality.py as an orchestrator shell
 
-WORK_ORDER_READY (T3 passed). Reduce the monolith to an orchestrator that wires
-the extracted modules; remove or shrink its legacy exception accordingly.
-Requires a fresh operator selection and a fresh GC-018/work order.
+DONE (closed at completion `docs/reviews/CVF_GFS_PY_T4_ORCHESTRATOR_SHELL_REDUCTION_COMPLETION_2026-06-26.md`; monolith 2213 -> 313, exception ratcheted to 313, combined dispatch-quality suites 150/150 pass). Reduced the file to an
+orchestrator shell that loads split implementation modules:
+`governance/compat/check_work_order_dispatch_quality_core.py`,
+`governance/compat/check_work_order_dispatch_quality_artifacts.py`, and
+`governance/compat/check_work_order_dispatch_quality_range.py`.
 
 Each child tranche requires a fresh operator selection, a fresh GC-018, and a
 source-verified work order. Splits must be behavior-preserving and proven by the
@@ -162,7 +164,7 @@ existing dispatch-quality test suite plus any added focused tests.
 | T1 | split markdown table-parsing helpers out of the monolith | DONE |
 | T2 | split work-order lifecycle / status validators | DONE |
 | T3 | split source-verification / token-collision validators | DONE |
-| T4 | reduce the monolith to an orchestrator shell | WORK_ORDER_READY |
+| T4 | reduce the monolith to an orchestrator shell | DONE |
 
 ## Acceptance Criteria
 
@@ -187,11 +189,44 @@ touches those surfaces, a separate coverage decision is required before
 enforcing size thresholds there. This is a `DEFERRED_RECORDED` scope boundary,
 not a value-declined lane.
 
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: internal governance checker refactor; no public-sync authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GFS_PY_T4_ORCHESTRATOR_SHELL_REDUCTION_FOR_CODEX_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GFS_PY_T4_ORCHESTRATOR_SHELL_REDUCTION_COMPLETION_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `governance/compat/CVF_PYTHON_AUTOMATION_SIZE_EXCEPTION_REGISTRY.json` | monolith exception ratcheted to 313 | PASS |
+| Registry Markdown | N/A with reason | Python size guard has no companion markdown registry | BLOCKED with reason |
+| External evidence digest | N/A | no external evidence digest | N/A with reason |
+| System loop interlock | this roadmap | GFS-PY T0-T4 closed | PASS |
+| Public export | this roadmap | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | active session state/front door/handoff | update separately after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| T0 status | DONE | PASS |
+| T1 status | DONE | PASS |
+| T2 status | DONE | PASS |
+| T3 status | DONE | PASS |
+| T4 status | DONE | PASS |
+| Final roadmap status | CLOSED_PASS_BOUNDED | PASS |
+| Dispatch-quality monolith exception | ratcheted to 313 | PASS |
+| Python size guard | COMPLIANT | PASS |
+
 ## Claim Boundary
 
-This roadmap plans an authoring-time size-governance upgrade and an ordered
+This roadmap completed an authoring-time size-governance upgrade and an ordered
 monolith split. It does not prove runtime behavior of any checker beyond the
 size guard, does not change any dispatch-quality validation semantics, and does
-not claim production, public, or provider readiness. T0 is the only tranche
-authorized for execution by this roadmap; T1-T4 remain `HOLD_*` until their
-predecessor passes.
+not claim production, public, or provider readiness. GFS-PY T0-T4 are closed;
+future governed Python size work requires fresh operator authorization and a
+fresh source-verified work order.
