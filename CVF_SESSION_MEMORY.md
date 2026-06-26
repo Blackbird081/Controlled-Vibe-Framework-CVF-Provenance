@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-26
 
-Current mode marker: `wods_t3_closed_pass_bounded_operator_decision_pending`
+Current mode marker: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -44,9 +44,9 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `wods_t3_closed_pass_bounded_operator_decision_pending`.
+Current mode: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`.
 
-Previous mode: `wods_t3_delta_block_table_shape_and_template_hardening_dispatched_pending_worker_return`.
+Previous mode: `wods_t3_closed_pass_bounded_operator_decision_pending`.
 
 Active handoff:
 
@@ -66,6 +66,14 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
+commit `0d81a814`, after pilot material commit `b01b8771` and handoff bridge
+`9f85418c`. It accepts a bounded shared discussion-section parser for the
+Delta execution-claim guard and intake-analysis guard only, with effectiveness
+verdict `IMPROVED_BOUNDED`. Next allowed move: operator selection of the next
+tranche. ASSF-PIC-T4 may be selected only through fresh GC-018 and a
+source-verified work order; it is not automatically released by this sync.
+
 WODS-T3 Delta Block Table Shape And Template Hardening is closed bounded at
 material commit `b14260a4` with `IMPROVED_WITH_NEW_FINDING`. It repaired the
 Delta scaffold table shape, review structural-group guidance, and gotchas 23-25.
@@ -76,8 +84,8 @@ ASSF-PIC-T3 remains `CLOSED_PASS_BOUNDED` at `9c621ba6` with
 3 gate runs and recurring scaffold/template/format friction. ASSF-PIC-T4 remains
 `HOLD_WODS_REOPEN_AFTER_PIC_T3`.
 
-Next allowed move: operator decision on a fresh WODS-T4 checker-applicability
-hardening GC-018 versus another lane; ASSF-PIC-T4 remains held.
+Next allowed move: operator selection of the next tranche. ASSF-PIC-T4 may be
+selected only through fresh GC-018 and a source-verified work order.
 
 WODS-T2 Dispatch And Worker-Return Scaffold Hardening is closed bounded at
 material commit `397d1fe4`, with effectiveness verdict
@@ -972,17 +980,18 @@ pre-closure content gates 43/44 before this required continuity sync.
 
 ## Next Allowed Move
 
-Mode: `wods_t3_closed_pass_bounded_operator_decision_pending`.
+Mode: `wods_t4_closed_pass_bounded_next_tranche_selection_pending`.
 
-Latest material HEAD: `b14260a4` (WODS-T3 Delta Block Table Shape And Template
-Hardening closure).
+Latest material HEAD: `0d81a814` (WODS-T4 Guard Behavior Discussion Pilot
+closure).
 
-Next allowed move: operator decision whether to authorize WODS-T4
-checker-applicability hardening. ASSF-PIC-T4 remains held.
+Next allowed move: operator selection of the next tranche. ASSF-PIC-T4 may be
+selected only through a fresh GC-018/source-verified work order; it is not
+automatically released by this sync.
 
 ASSF-PIC-T3 remains closed bounded with
-`INTEGRATION_DEFERRED_CERTIFICATION_HELD`; ASSF-PIC-T4 remains
-`HOLD_WODS_REOPEN_AFTER_PIC_T3`.
+`INTEGRATION_DEFERRED_CERTIFICATION_HELD`; ASSF-PIC-T4 is
+`SELECTION_ALLOWED_WITH_FRESH_GC018_WORK_ORDER_ONLY`.
 
 EQC-T2 remains parked unless one of its recorded reopen conditions is cited.
 

@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record WODS-T3 dispatch continuity after the ASSF-PIC-T3 worker report
-fired the parked residual-defect reopen condition.
+Target: record WODS-T4 bounded closure continuity after the operator-authorized
+guard-behavior discussion pilot closed at material commit `0d81a814`.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,10 +40,11 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-WODS-T3 closure material commit `b14260a4`. This sync advances the handoff
-HEAD block, generated active session state, bootstrap read model, front door,
-and next-move pointers while recording WODS-T3 as the active no-commit worker
-lane and retaining the ASSF-PIC-T4 hold.
+WODS-T4 Guard Behavior Discussion Pilot closure material commit `0d81a814`.
+This sync advances the handoff HEAD block, generated active session state,
+bootstrap read model, front door, and next-move pointers while recording
+WODS-T4 as closed bounded and routing the next move to operator tranche
+selection.
 
 Protected paths:
 
@@ -51,25 +52,29 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/wodsT3DeltaBlockTableShapeAndTemplateHardeningClosure20260626.json`
+- `CVF_SESSION/state/entries/wodsT4GuardBehaviorDiscussionPilotClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
-Operator authorization: the operator directed the WODS follow-up; Claude
-authored the source-verified dispatch packet as an operator-authorized one-off
-exception, and Codex reviewer accepted and committed it after gate review.
+Operator authorization: the operator directed Codex to handle the WODS-T4
+tranche directly after reviewing the recurring WODS authoring-friction cycle.
+Codex closed the pilot as a bounded operator-authorized exception, not as a
+reusable dispatch pattern.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert WODS-T3 closure material `b14260a4`, WODS-T3 dispatch material `f275b5ba`, ASSF-PIC-T3 closure material
-`9c621ba6`, or earlier session history.
+revert WODS-T4 closure material `0d81a814`, WODS-T4 pilot material `b01b8771`,
+WODS-T3 closure material `b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`,
+or earlier session history.
 
 ## Current Mode
 
-`wods_t3_closed_pass_bounded_operator_decision_pending`
+`wods_t4_closed_pass_bounded_next_tranche_selection_pending`
 
 WODS-T3 closure material HEAD: `b14260a4`
 
 WODS-T4 guard-behavior discussion pilot material HEAD: `b01b8771`
+
+WODS-T4 guard-behavior discussion pilot closure material HEAD: `0d81a814`
 
 GFS-PY T1 dispatch-quality helper split closure material HEAD: `10d0459d`
 
@@ -149,13 +154,13 @@ ASSF-PIC-T2 manual UAT/certification review dispatch material HEAD: `7cf1b2cb`
 
 ASSF-PIC-T2 manual UAT/certification review closure material HEAD: `ee5f2c42`
 
-Current material HEAD recorded for this handoff: `ee5f2c42`
+Current material HEAD recorded for this handoff: `0d81a814`
 
 ASSF-PIC-T3 generated index and resolver integration decision dispatch material HEAD: `b9c5e547`
 
 ASSF-PIC-T3 generated index and resolver integration decision closure material HEAD: `9c621ba6`
 
-Current session-sync parent material HEAD recorded for this handoff: `ee5f2c42`
+Current session-sync parent material HEAD recorded for this handoff: `0d81a814`
 
 Prior session-sync HEAD recorded for this handoff: `f5d3a499`
 
@@ -238,11 +243,18 @@ runtime source as authority.
 
 ## Latest Work / Changes
 
+WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
+commit `0d81a814`, after pilot material commit `b01b8771` and handoff bridge
+`9f85418c`. It accepts a bounded shared discussion-section parser for the
+Delta execution-claim guard and intake-analysis guard only, with effectiveness
+verdict `IMPROVED_BOUNDED`. It does not create a global exclusion rule and
+does not release ASSF-PIC-T4 automatically.
+
 WODS-T3 Delta Block Table Shape And Template Hardening is closed bounded at
 material commit `b14260a4` with `IMPROVED_WITH_NEW_FINDING`. It repaired the
 scaffold/table and template/gotcha defects; ADIF-0007 now records the confirmed
-phrase-marker false positive. ASSF-PIC-T4 remains
-`HOLD_WODS_REOPEN_AFTER_PIC_T3` pending operator decision on WODS-T4.
+phrase-marker false positive. WODS-T4 accepted the bounded two-guard pilot
+described above.
 
 ASSF-PIC-T3 Generated Index And Resolver Integration Decision is closed bounded
 at material commit `9c621ba6` with disposition
@@ -262,9 +274,9 @@ push, activation, readiness, package instruction execution, package
 integration, worker commit, or worker session-sync is authorized.
 
 The T3 worker/operator report fired the value-parked WODS reopen condition
-through 3 gate runs and recurring scaffold/template/format friction. WODS-T3
-is now the active remediation lane; ASSF-PIC-T4 remains
-`HOLD_WODS_REOPEN_AFTER_PIC_T3`.
+through 3 gate runs and recurring scaffold/template/format friction. WODS-T4
+has now closed the direct pilot selected for that condition. ASSF-PIC-T4 may be
+selected only through fresh GC-018 and a source-verified work order.
 
 ASSF-PIC-T2 Manual UAT And Certification Review is closed bounded at material
 commit `ee5f2c42`, with lifecycle disposition
@@ -511,9 +523,10 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-WODS-T3 Delta Block Table Shape And Template Hardening is closed bounded at
-material commit `b14260a4`. Next allowed move: operator decision on WODS-T4
-checker-applicability hardening; ASSF-PIC-T4 remains `HOLD_WODS_REOPEN_AFTER_PIC_T3`.
+WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
+commit `0d81a814`. Next allowed move: operator selection of the next tranche.
+ASSF-PIC-T4 may be selected only through a fresh GC-018/source-verified work
+order; it is not automatically released by this sync.
 
 No package instance creation, certification decision, `SKILL.md`,
 `skill.source.json`, generated-index mutation, registry-source mutation,
@@ -564,7 +577,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wods_t3_closed_pass_bounded_operator_decision_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator decision on WODS-T4 checker-applicability hardening; parked checkpoint=ASSF-PIC-T4 remains HOLD_WODS_REOPEN_AFTER_PIC_T3.
+Startup acknowledged: current mode=`wods_t4_closed_pass_bounded_next_tranche_selection_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator selection of the next tranche; parked checkpoint=ASSF-PIC-T4 requires fresh GC-018/source-verified work order before any execution.
 
 ## Parked Checkpoints
 
@@ -593,6 +606,8 @@ Startup acknowledged: current mode=`wods_t3_closed_pass_bounded_operator_decisio
   material commit `d08e8ab6`; ASSF-PIC-T2 is closed bounded at material commit
   `ee5f2c42` with `CERTIFICATION_HELD_WITH_REASON`; ASSF-PIC-T3 is closed
   bounded at material commit `9c621ba6`.
+- WODS-T4 Guard Behavior Discussion Pilot is closed bounded at material closure
+  commit `0d81a814`; next move is operator selection of the next tranche.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
