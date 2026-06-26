@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -35,7 +35,7 @@ guard defects from the prior cycle, but T3 exposed a new prose-vs-table
 scaffold gap and a template pre-drafting guidance gap. This work order fixes
 those authoring surfaces only.
 
-Do-not-misread notes: do not dispatch ASSF-PIC-T4, create package roots,
+Closure boundary: ASSF-PIC-T4 remained unreleased; package roots,
 `SKILL.md`, `skill.source.json`, registry entries, generated index changes,
 resolver changes, Web runtime changes, CLI/MCP adapter behavior,
 provider/live proof, public-sync, push, package activation, lifecycle state
@@ -288,8 +288,7 @@ The worker must not change:
 
 The worker must not commit, push, run live/provider proof, create package
 roots, create `SKILL.md`, create `skill.source.json`, activate a package,
-advance `uatState`, advance `certificationState`, dispatch ASSF-PIC-T4, or
-claim final certification.
+advance `uatState`, advance `certificationState`, or claim final certification.
 
 ## Foundation Storage Layout Block
 
@@ -526,13 +525,13 @@ claim boundary.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_FOR_CLAUDE_2026-06-26.md` | `Status: DISPATCH_READY` at dispatch | PENDING |
-| Completion or reviewer artifact | `docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_COMPLETION_2026-06-26.md` | reviewer-owned for accepted worker return | PENDING |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_FOR_CLAUDE_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer acceptance | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_COMPLETION_2026-06-26.md` | reviewer-owned accepted closure | PASS |
 | Roadmap state | N/A with reason: WODS-T3 is not ASSF-PIC-T4 | T4 remains held | N/A with reason |
 | Registry JSON | N/A with reason: no registry JSON mutation is authorized by WODS-T3 | worker must not change registry JSON | BLOCKED with reason: out of scope |
 | Registry Markdown | N/A with reason: no registry Markdown mutation is authorized by WODS-T3 | worker must not change registry Markdown | BLOCKED with reason: out of scope |
 | External evidence digest | N/A with reason: no external evidence artifact is created by this local hardening tranche | no external artifact hash applies | N/A with reason |
-| System loop interlock | worker return and reviewer completion | no package activation, runtime loop, provider call, public-sync, or worker commit occurs | PENDING |
+| System loop interlock | worker return and reviewer completion | no package activation, runtime loop, provider call, public-sync, or worker commit occurred | PASS |
 | Session continuity | N/A with reason: session-sync is separate from material closure | active session paths excluded from worker changed set | N/A with reason |
 
 ## Public Export Disposition
@@ -541,6 +540,15 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance governance dispatch; no public-sync
 authorization.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker return status | `COMPLETE_PENDING_REVIEW`, reviewed by Codex | PASS |
+| Worker commit mode | no worker commit; material closure owned by reviewer | PASS |
+| Delta table-shape evidence | focused scaffold regression and direct guard pass | PASS |
+| Completion review | reviewer-owned completion review exists | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 

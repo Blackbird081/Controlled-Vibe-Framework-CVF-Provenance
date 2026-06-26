@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-26
 
@@ -63,8 +63,8 @@ Disposition table:
 Verdicts:
 
 - Dispatcher verdict: DISPATCH_APPROVED
-- Worker verdict: PENDING_WORKER_RETURN
-- Reviewer verdict: PENDING_REVIEW
+- Worker verdict: COMPLETE_PENDING_REVIEW_ACCEPTED
+- Reviewer verdict: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -254,13 +254,13 @@ ASSF-PIC-T3 closure history.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired work order | `Status: DISPATCH_READY` at dispatch | PENDING |
-| Completion or reviewer artifact | completion review path | created only by reviewer if accepted | PENDING |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` after reviewer acceptance | PASS |
+| Completion or reviewer artifact | completion review path | `docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_COMPLETION_2026-06-26.md` | PASS |
 | Roadmap state | N/A with reason: WODS-T3 is a follow-up hardening lane, not ASSF-PIC-T4 | N/A with reason | N/A with reason |
 | Registry JSON | N/A with reason: no registry JSON mutation is authorized | no registry mutation in planned manifest | BLOCKED with reason: out of scope |
 | Registry Markdown | N/A with reason: no markdown registry mutation is authorized | no registry mutation in planned manifest | BLOCKED with reason: out of scope |
 | External evidence digest | N/A with reason: no external evidence artifact import is authorized | N/A with reason | N/A with reason |
-| System loop interlock | focused tests and governance gates | worker/reviewer evidence | PENDING |
+| System loop interlock | focused tests and governance gates | reviewer evidence in completion review | PASS |
 | Session continuity | N/A with reason: session-sync is separate from the material commit | active session paths excluded from material dispatch commit | N/A with reason |
 
 ## Public Export Disposition
@@ -269,6 +269,15 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance governance dispatch; no public-sync
 authorization.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker return status | `COMPLETE_PENDING_REVIEW`, reviewed by Codex | PASS |
+| Worker commit mode | no worker commit; material closure owned by reviewer | PASS |
+| Delta table-shape evidence | focused scaffold regression and direct guard pass | PASS |
+| Completion review | reviewer-owned completion review exists | PASS |
 
 ## Rescan Intelligence Hardening
 

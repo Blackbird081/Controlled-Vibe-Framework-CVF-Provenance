@@ -948,6 +948,19 @@ specific review artifact, instruct the worker to include it anyway with an
 explicit `N/A with reason` or `NOT_APPLICABLE_WITH_REASON` value rather than
 omitting the heading.
 
+`check_markdown_structural_completeness.py` separately classifies any
+`docs/reviews/*.md` artifact as `review` type and requires one heading from
+each of five generic groups before drafting begins, not only after a gate
+failure: a target/source group (`## Target`, `## Source`, or
+`## Reviewed`-prefixed heading), a scope/methodology group (`## Scope` or
+`## Methodology`-prefixed heading), a findings/position group (`## Findings`,
+`## Position`, or `## Bottom Line`-prefixed heading), the risk/corrective
+action group already named above, and a decision/recommendation/disposition
+group (`## Decision`, `## Recommendation`, or a heading containing
+`Disposition`). When drafting the work order's required-shape list for a new
+review artifact, include at least one heading per group up front rather than
+discovering the gap during a live fast-gate run.
+
 When session-sync happens in a separate commit after the material worker/
 reviewer commit, the work order and any worker-return gate evidence should
 record material-range and session-sync-range gate results as two distinct

@@ -53,6 +53,25 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         ):
             self.assertIn(f"| {required_row_label} |", section)
 
+    def test_delta_execution_claim_boundary_uses_required_field_table_shape(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        section_start = text.index("## Delta Execution Claim Boundary Control Block")
+        section_end = text.index("## Public Export Disposition", section_start)
+        section = text[section_start:section_end]
+        self.assertIn("| Field | Disposition |", section)
+        self.assertNotIn("executionBaseHead: `TODO_EXECUTION_BASE_HEAD`", section)
+        for required_row_label in (
+            "claimScope",
+            "claimDisposition",
+            "receiptEvidence",
+            "actionEvidence",
+            "invocationBoundary",
+            "interceptionBoundary",
+            "claimLanguage",
+            "forbiddenExpansion",
+        ):
+            self.assertIn(f"| {required_row_label} |", section)
+
     def test_emit_prints_without_writing(self):
         real_open = open
 

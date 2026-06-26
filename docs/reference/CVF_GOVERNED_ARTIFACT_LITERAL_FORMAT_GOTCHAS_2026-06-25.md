@@ -224,6 +224,45 @@ runtime/product code, and does not itself implement or modify any checker.
     `python governance/compat/check_rescan_intelligence_hardening.py --base <executionBaseHead> --head HEAD --enforce`
     before relying on the worker-return fast gate alone to catch it.
 
+23. **The Delta block guard's own required section must be an actual
+    `Field`/`Disposition` markdown table, not `key: value` prose lines.**
+    `check_delta_execution_claim_boundary.py` parses only `|`-delimited
+    table rows (`_field_rows`) for the eight required fields (`claimScope`,
+    `claimDisposition`, `receiptEvidence`, `actionEvidence`,
+    `invocationBoundary`, `interceptionBoundary`, `claimLanguage`,
+    `forbiddenExpansion`). Writing `executionBaseHead: ...` or
+    `receiptEvidence: CVF_RECEIPT_PRESENT - ...` as plain prose lines, even
+    with the right-looking field names, produces zero parsed rows and fails
+    all eight required-field checks at once. Use a real two-column table with
+    one row per required field. Caution: this same guard's applicability
+    check fires on a short boundary-related word sequence naming its own
+    domain anywhere in a document, so describing this gotcha itself can make
+    an otherwise-unrelated reference file subject to the guard - prefer
+    "Delta block guard" or "Delta block control section" when discussing this
+    trap in a document that does not already carry that section, and verify
+    with a direct guard command rather than only the bundled fast gate.
+
+24. **A new `docs/reviews/*.md` artifact needs at least one heading from
+    every `review`-type structural group before the first fast-gate run, not
+    only the three named in gotcha 19/B19.** `check_markdown_structural_
+    completeness.py` requires one heading matching each of five groups:
+    target/source, scope/methodology, findings/position, risk/corrective
+    action, and decision/recommendation/disposition. A draft that supplies
+    only the scaffold's default sections plus the three named in the
+    work-order template's no-commit guidance can still be missing a
+    target/source or decision/disposition heading, which only surfaces as a
+    violation once `run_worker_return_fast_gate.py` actually runs.
+
+25. **Long markdown content with backticks and an em dash in a single
+    `write_to_file`-style call can fail to parse as a tool argument before
+    any CVF guard ever runs.** This is an agent-tooling caution, not a CVF
+    checker. Draft long review/work-order bodies without an em-dash
+    character (use ` - ` per gotcha B1) and prefer writing or editing the
+    file in smaller sections when a single call mixes long prose, multiple
+    fenced code blocks, and many backticked inline tokens, so a tool-call
+    argument-parse failure does not consume a repair round that looks like a
+    governance gate failure but is actually unrelated to any checker.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -249,19 +288,19 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Claude worker role |
 | Provider or surface | local workspace |
-| Session or invocation | WODS-T2 dispatch and worker-return scaffold hardening, 2026-06-26 |
+| Session or invocation | WODS-T3 delta block table shape and template hardening, 2026-06-26 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, Edit, focused pytest, direct guard commands |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/check_rescan_intelligence_hardening.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
-| Allowed scope source | WODS-T2 work order Write Ownership |
-| Before status evidence | executionBaseHead `1c145137`; worktree clean before patch |
-| After status evidence | checklist records the External Knowledge Intake Routing table-shape gotcha (item 21) and the rescan-guard self-reference compound-phrasing gotcha (item 22), both discovered live during ASSF-PIC-T2 and this WODS-T2 batch |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
+| Allowed scope source | WODS-T3 work order Write Ownership |
+| Before status evidence | executionBaseHead `f5a2bec2`; worktree clean before patch |
+| After status evidence | checklist records the Delta block prose-vs-table gotcha (item 23), the review structural-group pre-drafting gotcha (item 24), and the long-content/backtick tool-parsing caution (item 25), all routed from the ASSF-PIC-T3 completion review |
 | Diff evidence | `git diff --name-status` against `executionBaseHead` |
-| Approval boundary | WODS-T2 dispatch-authoring and worker-return friction hardening only |
+| Approval boundary | WODS-T3 dispatch-authoring and worker-return friction hardening only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | worker |
-| Invocation ID | `wods-t2-dispatch-and-worker-return-scaffold-hardening-2026-06-26` |
-| Expected manifest | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md` |
-| Actual changed set | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md` |
+| Invocation ID | `wods-t3-delta-block-table-shape-and-template-hardening-2026-06-26` |
+| Expected manifest | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_WORKER_RETURN_2026-06-26.md` |
+| Actual changed set | `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_run_worker_return_scaffold.py`; `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_WORKER_RETURN_2026-06-26.md` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this WODS-T2 hardening batch |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this WODS-T3 hardening batch |

@@ -153,11 +153,16 @@ def _section_body(section: str) -> list[str]:
         ]
     if section == "Delta Execution Claim Boundary Control Block":
         return [
-            "executionBaseHead: `TODO_EXECUTION_BASE_HEAD`",
-            "",
-            "receiptEvidence: CVF_RECEIPT_PRESENT - TODO_receipt_or_reason",
-            "",
-            "Runtime/provider/live/public-sync claims: N/A with reason unless explicitly authorized.",
+            "| Field | Disposition |",
+            "|---|---|",
+            f"| claimScope | {SCAFFOLD_TABLE_TODO} |",
+            "| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE or N/A with reason |",
+            "| receiptEvidence | CVF_RECEIPT_PRESENT or N/A with reason |",
+            "| actionEvidence | ACTION_EVIDENCE_PRESENT or N/A with reason |",
+            f"| invocationBoundary | {SCAFFOLD_TABLE_TODO} |",
+            "| interceptionBoundary | no IDE, shell, git, filesystem, provider, CLI, MCP, Web runtime, or adapter interception claim unless explicitly authorized |",
+            f"| claimLanguage | {SCAFFOLD_TABLE_TODO} |",
+            f"| forbiddenExpansion | {SCAFFOLD_TABLE_TODO} |",
         ]
     if section == "Public Export Disposition":
         return [
