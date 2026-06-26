@@ -39,11 +39,11 @@ authorization and the sibling public-sync clone with remote verification.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync continuity update after
-ASSF package certification decision T0-T3 material commit `208ae418`.
-This sync advances the handoff HEAD block, generated active session state,
-bootstrap read model, front door, and next-move pointers while routing the next
-move to a lifecycle source-state update roadmap or source-verified work order.
+Authorized guard-maintenance scope: session-sync continuity update after ASSF
+certified metadata admission gate material commit `cf9748f4`. This sync
+advances the handoff HEAD block, generated active session state, bootstrap read
+model, front door, and next-move pointers while routing the next move to a Web
+projection schema/mapping decision work order.
 
 Protected paths:
 
@@ -51,8 +51,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/assfPackageCertificationDecisionT0T3Closure20260626.json`
-- `CVF_SESSION/state/entries/assfRealManualUatExecutionEvidenceClosure20260626.json`
+- `CVF_SESSION/state/entries/assfCertifiedMetadataAdmissionGateClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
 
@@ -60,19 +59,17 @@ Operator authorization: the operator instructed Codex to continue according to
 the next allowed move and finish this tranche before moving to a new roadmap.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF package certification decision material `208ae418`, ASSF real
-manual UAT evidence material `ec911be2`, ASSF-UAT T0-T4
-material `a3805d26`, roadmap closure gotcha hardening material `9cd46bd2`,
-ASSF-PIC-T5 material `410818fc`, ASSF-PIC-T4 material `60ffa4de`, WODS-T4
-closure material `0d81a814`, WODS-T4 pilot material `b01b8771`, WODS-T3
-closure material `b14260a4`, ASSF-PIC-T3 closure material `9c621ba6`, or
-earlier session history.
+revert ASSF certified metadata admission material `cf9748f4`, lifecycle
+source-state material `121aafcf`, certification decision material `208ae418`,
+or earlier session history.
 
 ## Current Mode
 
-`assf_lifecycle_source_state_update_closed_pass_bounded_next_control_pending`
+`assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending`
 
 ASSF package lifecycle source-state update T0-T4 material HEAD: `121aafcf`
+
+ASSF certified metadata admission gate material HEAD: `cf9748f4`
 
 ASSF package certification decision T0-T3 material HEAD: `208ae418`
 
@@ -540,16 +537,18 @@ passed 43/44 with only this required session continuity sync outstanding.
 
 ## Next Allowed Move
 
-ASSF package lifecycle source-state update T0-T4 is closed bounded at material
-commit `121aafcf`. Next allowed move: operator-authorized ASSF certified
-metadata checker or Web projection decision roadmap/GC-018 plus source-verified
-work order. Recommended first control is a certified-metadata checker/read-model
-gate before any Web projection implementation.
+ASSF certified metadata admission gate and Web projection decision T0-T4 is
+closed bounded at material commit `cf9748f4`. Next allowed move:
+operator-authorized ASSF Web projection schema/mapping decision GC-018 plus
+source-verified work order, decision-first. The certified metadata admission
+checker is installed as a direct material gate; Web projection implementation
+remains parked until the later schema/mapping work order source-verifies exact
+Web fields.
 
-No package instance creation, `SKILL.md`, `skill.source.json`, resolver
-mutation, CVF Web runtime change, CLI/MCP adapter behavior, provider/live
-proof, public-sync, push, activation, worker commit, package integration, or
-package instruction execution is released.
+No package instance creation, certification decision, generated-index mutation,
+resolver source mutation, CVF Web runtime change, CLI/MCP adapter behavior,
+provider/live proof, public-sync, push, activation, worker commit, package
+integration, or package instruction execution is released.
 
 ASSF-T7 Certification, UAT, Drift, Deprecation, And Retirement Guard is
 `CLOSED_PASS_BOUNDED` at material commit `e76e4d09`. It created
@@ -594,7 +593,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_lifecycle_source_state_update_closed_pass_bounded_next_control_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF certified metadata checker or Web projection decision roadmap/GC-018 plus source-verified work order; parked checkpoint=no package instance/runtime/adapter/public-sync, and no Web implementation without a future source-verified work order.
+Startup acknowledged: current mode=`assf_certified_metadata_admission_gate_closed_pass_bounded_web_projection_control_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF Web projection schema/mapping decision GC-018 plus source-verified work order, decision-first; parked checkpoint=no package instance/runtime/adapter/public-sync, and no Web implementation without a future source-verified work order.
 
 ## Parked Checkpoints
 
