@@ -237,13 +237,16 @@ and resolver tests should be updated. This tranche may be doc-only or
 implementation-bearing depending on the work order. Any source mutation must
 edit generated source entries first and run the generator/checker path.
 
-Status: `HOLD_CERTIFICATION_HELD_BY_PIC_T2`.
+Status: `DISPATCHED_DECISION_ONLY_CERTIFICATION_HELD`.
 
-Hold note: PIC-T2 did not certify the package. T3 remains held until a future
-source-verified lane resolves the certification hold or the operator separately
-authorizes an explicit skip/redirect. The immediate next value lane is
-work-order/scaffold hardening for the T2-discovered defects, not generated-index
-or resolver integration.
+Dispatch note: PIC-T2 did not certify the package. The operator separately
+authorized ASSF-PIC-T3 after value-parking residual WODS defects with a concrete
+reopen condition. T3 is therefore dispatched as a decision-only review under
+the certification hold, expected to decide `INTEGRATION_DEFERRED_CERTIFICATION_HELD`
+unless source evidence blocks the decision. This dispatch does not authorize
+generated-index source mutation, generated aggregate mutation, resolver
+mutation, registry mutation, package integration, package activation, or
+certification state advancement.
 
 Required outputs:
 
