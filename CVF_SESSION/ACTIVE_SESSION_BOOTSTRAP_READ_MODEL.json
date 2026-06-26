@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "assf_metadata_readout_guard_wiring_closed_pass_bounded_pending_next_roadmap_selection",
+  "currentMode": "aaf_t7a_roadmap_status_reconciliation_closed_pass_bounded_pending_next_roadmap_selection",
   "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
-  "nextAllowedMove": "ASSF metadata readout guard wiring is CLOSED_PASS_BOUNDED at material commit e04ed428. Next allowed move: select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation. No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized without that future accepted work order. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "AAF-T7A roadmap status reconciliation is CLOSED_PASS_BOUNDED at material commit 766f81e7. Next allowed move: select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation. No duplicate AAF-T7A helper implementation, L2 patch preview, L3 apply, adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration is authorized without that future accepted work order. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
