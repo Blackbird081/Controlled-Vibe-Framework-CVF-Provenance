@@ -1,0 +1,24 @@
+{
+  "stateOrder": 677,
+  "stateKey": "assfPicT3GeneratedIndexResolverIntegrationDecisionClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "9c621ba6",
+    "dispatchMaterialCommit": "b9c5e547",
+    "sessionSyncParent": "9c621ba6",
+    "baseline": "docs/baselines/CVF_GC018_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_FOR_CLAUDE_2026-06-26.md",
+    "decisionReview": "docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_2026-06-26.md",
+    "workerReturn": "docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_WORKER_RETURN_2026-06-26.md",
+    "completionReview": "docs/reviews/CVF_ASSF_PIC_T3_GENERATED_INDEX_RESOLVER_INTEGRATION_DECISION_COMPLETION_2026-06-26.md",
+    "selectedCandidate": "cvf-dispatch-quality-reviewer",
+    "integrationDisposition": "INTEGRATION_DEFERRED_CERTIFICATION_HELD",
+    "generatedIndexDisposition": "INDEX_NO_DRIFT_MUTATION_NOT_AUTHORIZED",
+    "resolverDisposition": "RESOLVER_BEHAVING_CORRECTLY_NO_MUTATION_AUTHORIZED",
+    "wodsReopenCondition": "FIRED_BY_T3_WORKER_EXPERIENCE",
+    "wodsReopenEvidence": "Operator-reported T3 worker execution needed 3 gate runs and hit recurring scaffold/template/format defects.",
+    "nextAction": "Create a fresh source-verified WODS follow-up GC-018 baseline and work order before ASSF-PIC-T4 dispatch.",
+    "picT4Disposition": "HOLD_WODS_REOPEN_AFTER_PIC_T3",
+    "forbiddenExpansion": "No package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, package integration, worker commit, or worker session-sync."
+  }
+}
