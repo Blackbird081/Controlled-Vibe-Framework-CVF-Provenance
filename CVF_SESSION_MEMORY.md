@@ -57,6 +57,7 @@ Previous mode:
 | ASSF Web projection implementation dispatch | `0ba6eaee` | DISPATCH_READY |
 | ASSF Web projection implementation | `0b57a4de` | CLOSED_PASS_BOUNDED |
 | ASSF external-agent readout / CLI-MCP adapter boundary | `99fabd26` | CLOSED_PASS_BOUNDED |
+| Governed artifact literal-format checklist learning | `13dcb7ad` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 

@@ -59,9 +59,13 @@ Archived predecessor:
 Latest material work: commit `99fabd26` closed the ASSF external-agent readout
 / CLI-MCP adapter boundary roadmap T0-T4 as `CLOSED_PASS_BOUNDED`.
 
-Latest session work: commit `fd37d969` compacts the active startup surfaces,
-archives V22, opens V23, and keeps the next allowed move on ASSF Web projection
-decision-first governance.
+Latest checklist learning work: commit `13dcb7ad` updated
+`docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+with the GC-051 extension-path review/audit mention trap.
+
+Latest session work before this update: commit `fd37d969` compacts the active
+startup surfaces, archives V22, opens V23, and keeps the next allowed move on
+ASSF Web projection decision-first governance.
 
 ## What Just Closed
 
@@ -80,6 +84,9 @@ The ASSF Web projection implementation closed at material commit `0b57a4de`.
 
 The ASSF external-agent readout / CLI-MCP adapter boundary roadmap closed at
 material commit `99fabd26`.
+
+The governed artifact literal-format checklist was updated at material commit
+`13dcb7ad` with the GC-051 extension-path review/audit mention trap.
 
 Material result:
 
@@ -155,7 +162,7 @@ Read in this order:
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
 | Allowed scope source | material boundary closure commit `99fabd26` and active next-move continuity update |
-| Before status evidence | clean worktree after material boundary closure commit `99fabd26` |
+| Before status evidence | clean worktree after checklist learning commit `13dcb7ad` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
@@ -185,6 +192,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/assfWebProjectionImplementationClosure20260626.json`
 - `CVF_SESSION/state/entries/assfExternalAgentReadoutCliMcpBoundaryClosure20260626.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/governedArtifactLiteralFormatChecklistLearning20260626.json`
 - `CVF_SESSION/state/entries/guardBindingCatalogAwareCheckerHardeningClosure20260626.json`
 - `CVF_SESSION/state/entries/frontDoorHandoffCompaction20260626.json`
 - `CVF_SESSION/state/entries/assfWebProjectionSchemaMappingDecisionDispatch20260626.json`
@@ -193,8 +201,9 @@ Protected paths:
 - `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
 Operator authorization: operator selected the next roadmap lane and Codex
-committed the material boundary closure at `99fabd26`; this update only routes
-the active session to the next source-verified implementation work-order step.
+committed the material boundary closure at `99fabd26` and checklist learning
+commit `13dcb7ad`; this update only preserves active session continuity while
+leaving the next source-verified implementation work-order step unchanged.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
 commit `99fabd26`.
