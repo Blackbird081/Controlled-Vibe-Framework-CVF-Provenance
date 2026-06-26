@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LSC_T1_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -15,9 +15,9 @@ findings, reviewer/orchestrator/operator friction, external-agent critique,
 Finding-To-Governance disposition, RT2/RT3 readouts, and the MLW Learning Plane
 contracts become one system chain instead of separate local mechanisms.
 
-This roadmap is a rebuttal packet for review. It does not dispatch
-implementation, create runtime behavior, or replace existing Learning Plane
-contracts.
+This roadmap began as a rebuttal packet for review and now records the closed
+LSC reconciliation chain. It authorizes no implementation work, runtime
+behavior, or replacement of existing Learning Plane contracts.
 
 ## Authorization/Decision
 
@@ -249,13 +249,13 @@ Future work must pass this gate before dispatch:
 | Tranche | Name | Objective | Exit criteria | Depends on |
 |---|---|---|---|---|
 | LSC-T0 | Learning Signal Chain Reconciliation | map AAF-T5, Finding-To-Governance, RT2/RT3, MLW3/MLW5/MLW6, external agents, and parked lanes into one chain | accepted roadmap and rebuttal resolution; no runtime implementation | current roadmap |
-| LSC-T1 | Signal Ledger Source Layout And De-Dup Contract | define durable governed source layout for signal entries and unresolved signal state; bind to `LearningSignalIntakeRecord`; define root-cause grouping and projection de-dup | reference contract, schema/template, generated aggregate decision, deterministic AAF-T5-to-signal mapping, rootCauseGroupId rules | LSC-T0 |
-| LSC-T2 | Multi-Role Capture Contract | extend capture beyond workers to reviewer, orchestrator, operator, and external-agent returns | role-neutral shared contract with separate eligibility per role to avoid false positives | LSC-T1 |
-| LSC-T3 | Fast Helper Readout | make helper surface unresolved relevant signals and next suggested action without deep gate cost | read-only helper diagnostic and focused tests | LSC-T1/T2 |
-| LSC-T4 | Promotion Threshold Policy | define repeated-signal thresholds and blocking-vs-readout behavior after LSC-T1 de-dup exists | promotion matrix and guard plan | LSC-T1 |
-| LSC-T5 | Learning Plane Bridge Alignment | align signal ledger entries with RT2/RT3 and MLW3 proposal-only pipeline; map `EVALUATED` to MLW5/MLW6 validators for high-risk promotion | source-verified bridge contract; no autonomous mutation; no new evaluator | LSC-T1/T4 |
-| LSC-T6 | External Agent CLI/MCP Signal Contract | define external-agent portable signal IO for CLI/MCP adapters | CLI/MCP schema and boundary contract only | LSC-T0/T1 |
-| LSC-T7 | Latency Guard And Fast Path | enforce capture-fast/promotion-slow budget and avoid retrospective overburden | helper/checker latency rules and tests | LSC-T3/T4 |
+| LSC-T1 | Signal Ledger Source Layout And De-Dup Contract | define durable governed source layout for signal entries and unresolved signal state; bind to `LearningSignalIntakeRecord`; define root-cause grouping and projection de-dup | CLOSED_PASS_BOUNDED at material commit `3599441a` | LSC-T0 |
+| LSC-T2 | Multi-Role Capture Contract | extend capture beyond workers to reviewer, orchestrator, operator, and external-agent returns | CLOSED_PASS_BOUNDED at material commit `00214e9a` | LSC-T1 |
+| LSC-T3 | Fast Helper Readout | make helper surface unresolved relevant signals and next suggested action without deep gate cost | CLOSED_PASS_BOUNDED at material commit `fd70157a` | LSC-T1/T2 |
+| LSC-T4 | Promotion Threshold Policy | define repeated-signal thresholds and blocking-vs-readout behavior after LSC-T1 de-dup exists | CLOSED_PASS_BOUNDED at material commit `b568f248` | LSC-T1 |
+| LSC-T5 | Learning Plane Bridge Alignment | align signal ledger entries with RT2/RT3 and MLW3 proposal-only pipeline; map `EVALUATED` to MLW5/MLW6 validators for high-risk promotion | CLOSED_PASS_BOUNDED with LSC-T7 at material commit `03fe8ca2` | LSC-T1/T4 |
+| LSC-T6 | External Agent CLI/MCP Signal Contract | define external-agent portable signal IO for CLI/MCP adapters | CLOSED_PASS_BOUNDED at material commit `65af6db3` | LSC-T0/T1 |
+| LSC-T7 | Latency Guard And Fast Path | enforce capture-fast/promotion-slow budget and avoid retrospective overburden | CLOSED_PASS_BOUNDED with LSC-T5 at material commit `03fe8ca2` | LSC-T3/T4 |
 
 ## Relationship To AAF-T6 And AAF-T7
 
@@ -344,10 +344,10 @@ evidence for any implementation tranche.
 | Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
 |---|---|---|---|---|---|
 | AAF-T5 alone captures only worker-return friction | RULE_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | LSC-T0 chain reconciliation | handled by this roadmap draft |
-| Reviewer/orchestrator/operator friction can still remain chat-only | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | LSC-T2 multi-role capture contract | deferred |
-| External CLI/MCP agents need portable signal IO | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | LSC-T6 external-agent signal contract | deferred |
+| Reviewer/orchestrator/operator friction can still remain chat-only | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | LSC-T2 multi-role capture contract | handled by LSC-T2 closure |
+| External CLI/MCP agents need portable signal IO | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | LSC-T6 external-agent signal contract | handled by LSC-T6 closure |
 | Learning Plane already has proposal-only contracts that LSC must reuse | RULE_EXISTS | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | cite RT2/RT3/MLW3 in future work orders | handled |
-| Runtime/provider/cost signal routing requires Learning Plane normalization | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RUNTIME_LEARNING_CANDIDATE | LSC-T5 bridge alignment after T0/T1 | deferred |
+| Runtime/provider/cost signal routing requires Learning Plane normalization | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RUNTIME_LEARNING_CANDIDATE | LSC-T5 bridge alignment after T0/T1 | handled by LSC-T5/T7 closure as reference/helper boundary only |
 | Minimal Signal Event Contract risked duplicating `LearningSignalIntakeRecord` | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | LSC-T1 must extend existing intake record and define projection de-dup | handled by rebuttal incorporation |
 
 ## Rebuttal Incorporation Ledger
@@ -372,6 +372,61 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: LSC-T0 is private provenance roadmap/rebuttal planning. Public export
 requires separate public-sync authorization and public-safe claim calibration.
+
+## Roadmap Closure Reconciliation - 2026-06-26
+
+This reconciliation updates the parent LSC roadmap after later governed
+tranche artifacts already closed. It does not reopen or re-execute any LSC
+tranche.
+
+| Tranche | Dispatch commit | Closure commit | Closure artifact | Final disposition |
+|---|---|---|---|---|
+| LSC-T1 | `84ba827f` | `3599441a` | `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_COMPLETION_2026-06-20.md` | CLOSED_PASS_BOUNDED |
+| LSC-T2 | `98ff0510` | `00214e9a` | `docs/reviews/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_COMPLETION_2026-06-21.md` | CLOSED_PASS_BOUNDED |
+| LSC-T3 | `398060e7` | `fd70157a` | `docs/reviews/CVF_LSC_T3_FAST_HELPER_READOUT_COMPLETION_2026-06-21.md` | CLOSED_PASS_BOUNDED |
+| LSC-T4 | `275eb374` | `b568f248` | `docs/reviews/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY_COMPLETION_2026-06-21.md` | CLOSED_PASS_BOUNDED |
+| LSC-T5/T7 | `7bcdcc31` | `03fe8ca2` | `docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md` | CLOSED_PASS_BOUNDED |
+| LSC-T6 | `cfe75f4c` | `65af6db3` | `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_COMPLETION_2026-06-21.md` | CLOSED_PASS_BOUNDED |
+
+Reconciliation artifact:
+`docs/reviews/CVF_LSC_ROADMAP_STATUS_RECONCILIATION_COMPLETION_2026-06-26.md`.
+
+Next control: return to high-value roadmap selection through fresh GC-018 and
+source-verified work order before implementation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LSC_ROADMAP_STATUS_RECONCILIATION_FOR_CODEX_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LSC_ROADMAP_STATUS_RECONCILIATION_COMPLETION_2026-06-26.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LSC_T0_LEARNING_SIGNAL_CHAIN_RECONCILIATION_ROADMAP_2026-06-20.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no registry JSON mutation is authorized by this reconciliation | no registry JSON in changed set | BLOCKED with reason: out of scope |
+| Registry Markdown | N/A with reason: no registry Markdown mutation is authorized by this reconciliation | no registry Markdown in changed set | BLOCKED with reason: out of scope |
+| External evidence digest | N/A with reason: no external provider/live/public evidence is created | no external digest | N/A with reason |
+| System loop interlock | this roadmap and completion review | roadmap status reconciliation only; no runtime/source interlock mutation | PASS |
+| Session continuity | active session front door/state/handoff after material commit | session-sync follows material commit if this reconciliation is accepted | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| LSC-ROADMAP-STATUS | this roadmap | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| LSC-T1-CLOSURE | `docs/reviews/CVF_LSC_T1_SIGNAL_LEDGER_SOURCE_LAYOUT_AND_DEDUP_CONTRACT_COMPLETION_2026-06-20.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| LSC-T2-CLOSURE | `docs/reviews/CVF_LSC_T2_MULTI_ROLE_CAPTURE_CONTRACT_AND_ELIGIBILITY_MATRIX_COMPLETION_2026-06-21.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| LSC-T3-CLOSURE | `docs/reviews/CVF_LSC_T3_FAST_HELPER_READOUT_COMPLETION_2026-06-21.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| LSC-T4-CLOSURE | `docs/reviews/CVF_LSC_T4_PROMOTION_THRESHOLD_POLICY_COMPLETION_2026-06-21.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| LSC-T5-T7-CLOSURE | `docs/reviews/CVF_LSC_T5_T7_LEARNING_PLANE_BRIDGE_LATENCY_GUARD_COMPLETION_2026-06-21.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+| LSC-T6-CLOSURE | `docs/reviews/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT_COMPLETION_2026-06-21.md` | top-level `Status:` | CLOSED_PASS_BOUNDED | CLOSED_PASS_BOUNDED | PASS |
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime files changed | N/A with reason: no runtime files are in this reconciliation changed set |
+| Runtime behavior claim | N/A with reason: this roadmap closure records documentation state only |
+| Verification command | `git diff --name-status` |
+| Freshness conclusion | documentation-only roadmap reconciliation |
 
 ## Delta Execution Claim Boundary Control Block
 
