@@ -17,8 +17,8 @@ handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: record ASSF real manual UAT execution evidence continuity after the
-material closure at commit `ec911be2`.
+Target: record ASSF package certification decision T0-T3 continuity after the
+material closure at commit `208ae418`.
 
 Owner boundary: this file is a compact pointer record. Material contracts,
 reviews, work orders, baselines, roadmaps, and prior continuity remain in their
@@ -40,10 +40,10 @@ authorization and the sibling public-sync clone with remote verification.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session-sync continuity update after
-ASSF real manual UAT execution evidence material commit `ec911be2`.
+ASSF package certification decision T0-T3 material commit `208ae418`.
 This sync advances the handoff HEAD block, generated active session state,
 bootstrap read model, front door, and next-move pointers while routing the next
-move to a certification-decision roadmap or source-verified work order.
+move to a lifecycle source-state update roadmap or source-verified work order.
 
 Protected paths:
 
@@ -51,6 +51,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/assfPackageCertificationDecisionT0T3Closure20260626.json`
 - `CVF_SESSION/state/entries/assfRealManualUatExecutionEvidenceClosure20260626.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V22_2026-06-22.md`
@@ -59,7 +60,8 @@ Operator authorization: the operator instructed Codex to continue according to
 the next allowed move and finish this tranche before moving to a new roadmap.
 
 Rollback boundary: revert only this session-sync commit if rejected; do not
-revert ASSF real manual UAT evidence material `ec911be2`, ASSF-UAT T0-T4
+revert ASSF package certification decision material `208ae418`, ASSF real
+manual UAT evidence material `ec911be2`, ASSF-UAT T0-T4
 material `a3805d26`, roadmap closure gotcha hardening material `9cd46bd2`,
 ASSF-PIC-T5 material `410818fc`, ASSF-PIC-T4 material `60ffa4de`, WODS-T4
 closure material `0d81a814`, WODS-T4 pilot material `b01b8771`, WODS-T3
@@ -68,7 +70,9 @@ earlier session history.
 
 ## Current Mode
 
-`assf_real_manual_uat_evidence_closed_pass_bounded_certification_decision_roadmap_pending`
+`assf_certification_evidence_approved_source_state_update_pending`
+
+ASSF package certification decision T0-T3 material HEAD: `208ae418`
 
 ASSF real manual UAT execution evidence material HEAD: `ec911be2`
 
@@ -165,7 +169,7 @@ ASSF-PIC-T2 manual UAT/certification review dispatch material HEAD: `7cf1b2cb`
 
 ASSF-PIC-T2 manual UAT/certification review closure material HEAD: `ee5f2c42`
 
-Current material HEAD recorded for this handoff: `0d81a814`
+Current material HEAD recorded for this handoff: `208ae418`
 
 ASSF-PIC-T3 generated index and resolver integration decision dispatch material HEAD: `b9c5e547`
 
@@ -588,7 +592,7 @@ source file.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`assf_real_manual_uat_evidence_closed_pass_bounded_certification_decision_roadmap_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF package certification-decision roadmap or GC-018 plus source-verified work order for `cvf-dispatch-quality-reviewer`; parked checkpoint=no package instance or certification decision authorized by this sync.
+Startup acknowledged: current mode=`assf_certification_evidence_approved_source_state_update_pending`; active handoff=`AGENT_HANDOFF_V22_2026-06-22.md`; next allowed move=operator-authorized ASSF package lifecycle source-state update roadmap or GC-018 plus source-verified work order for `cvf-dispatch-quality-reviewer`; parked checkpoint=no package instance/runtime/adapter/public-sync, and no lifecycle source mutation without a future source-verified work order.
 
 ## Parked Checkpoints
 
@@ -635,8 +639,11 @@ Startup acknowledged: current mode=`assf_real_manual_uat_evidence_closed_pass_bo
   readiness decision, checker-reopen decision, and completion review for
   `cvf-dispatch-quality-reviewer`.
 - ASSF real manual UAT execution evidence is closed bounded at material commit
-  `ec911be2`; next allowed move is a certification-decision roadmap or
-  source-verified GC-018/work order, not certification itself.
+  `ec911be2`; the certification-decision follow-up is now closed at material
+  commit `208ae418`.
+- ASSF package certification decision T0-T3 is closed bounded at material
+  commit `208ae418`; next allowed move is lifecycle source-state update
+  roadmap or source-verified GC-018/work order, not lifecycle mutation itself.
 - Full AAF-T6, AAF-T7 L2 patch preview, CGE-T3, ACE-R1, MLW7, and MLW8 remain
   parked unless separately authorized.
 - Runtime/provider/live/public-sync, CLI/MCP adapter behavior, Memory readout
@@ -860,6 +867,93 @@ revert material commit `9e226e54` or earlier ASSF material/session commits.
 | Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no rename or deletion in this handoff-sync batch |
+
+## ASSF Package Certification Decision T0-T3 Session Sync - 2026-06-26
+
+ASSF package certification decision T0-T3 is closed bounded at material commit
+`208ae418`. Material artifacts:
+
+- `docs/roadmaps/CVF_ASSF_PACKAGE_CERTIFICATION_DECISION_ROADMAP_2026-06-26.md`
+- `docs/baselines/CVF_GC018_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_2026-06-26.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_FOR_CODEX_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_CERT_T0_CERTIFICATION_DECISION_PROTOCOL_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_CERT_T1_EVIDENCE_REVIEW_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_CERT_T2_CERTIFICATION_DECISION_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_CERT_T3_POST_DECISION_NEXT_CONTROL_2026-06-26.md`
+- `docs/reviews/CVF_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_COMPLETION_2026-06-26.md`
+
+Decision disposition:
+`CERTIFICATION_EVIDENCE_APPROVED_SOURCE_STATE_UPDATE_DEFERRED`.
+
+Next-control recommendation:
+`OPEN_ASSF_PACKAGE_LIFECYCLE_STATE_UPDATE_ROADMAP`.
+
+Next allowed move: operator-authorized ASSF package lifecycle source-state
+update roadmap or GC-018 plus source-verified work order for
+`cvf-dispatch-quality-reviewer`. That future lane may propose registry source
+update to `uatState PASSED` and `certificationState CERTIFIED` plus
+generated-index regeneration and drift checks.
+
+This handoff is session continuity only. It records certification-decision
+material closure at commit `208ae418` and routes the next move to lifecycle
+source-state update planning. It does not create a package instance, mutate
+runtime behavior, mutate resolver source, project Web state, implement CLI/MCP
+adapter behavior, run provider/live/public work, activate a package, claim
+readiness, execute package instructions, integrate a package, authorize worker
+commit, or authorize worker session-sync.
+
+### Core Guard Self-Protection Authorization
+
+Authorized session-sync scope: update active session/front-door/handoff state
+after ASSF package certification decision T0-T3 material commit `208ae418`,
+and regenerate the generated active session aggregate/read model from compact
+state sources.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V22_2026-06-22.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/assfPackageCertificationDecisionT0T3Closure20260626.json`
+
+Operator authorization: the operator instructed Codex to continue from T0-T3
+and finish this tranche before moving to another roadmap.
+
+Rollback boundary: revert only this session-sync batch if rejected. Do not
+revert material commit `208ae418` or earlier ASSF material/session commits.
+
+### Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | ASSF package certification decision T0-T3 session sync, 2026-06-26 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | apply_patch, `generate_active_session_state.py --generate`, active-session compatibility gate, git commit |
+| Target paths | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPackageCertificationDecisionT0T3Closure20260626.json` |
+| Allowed scope source | session-sync update after ASSF package certification decision material commit `208ae418` |
+| Before status evidence | material commit `208ae418`; active-session checker requires handoff HEAD update |
+| After status evidence | active handoff records parent material SHA `208ae418` for dedicated session-sync validation |
+| Diff evidence | `git diff --name-status`, active-session compatibility gate, generated aggregate drift check, and session-sync commit steward |
+| Approval boundary | continuity and generated state only; no new material tranche |
+| Claim boundary | pointer/state sync only; no runtime/provider/live/public behavior, package instance, resolver source mutation, Web projection, or lifecycle source mutation |
+| Agent type | session-sync steward |
+| Invocation ID | `assf-package-certification-decision-t0-t3-session-sync-2026-06-26` |
+| Expected manifest | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPackageCertificationDecisionT0T3Closure20260626.json` |
+| Actual changed set | `AGENT_HANDOFF_V22_2026-06-22.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/assfPackageCertificationDecisionT0T3Closure20260626.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no rename or deletion in this session-sync batch |
+
+### Claim Boundary
+
+This session-sync records the latest completed certification-decision tranche
+and next allowed move only. It does not mutate registry source, generated
+package indexes, resolver source, runtime, Web projection, adapter behavior, or
+public surfaces.
 
 ## ASSF-PIC-T4 Session Sync - 2026-06-26
 
