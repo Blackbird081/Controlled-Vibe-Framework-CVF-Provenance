@@ -44,6 +44,7 @@ Startup acknowledged: current mode=`foundation_plane_system_chain_gap_guidance_a
 | MPI-T6 reopen-condition session sync | `d172fe48d7048847fb1c32c32609bff8a5d808c2` |
 | Foundation Plane System-Chain Gap Priority Guidance | `2fc14fde` |
 | GC-032 pre-push marker repair | `ab76d077552213c8de1dcf7b567394198c985df8` |
+| GC-020 pre-push marker repair | `d7eeb790148f0f8bfb76cd258e7e1d5e13bc403d` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
@@ -73,6 +74,13 @@ reopening without a separate governed tranche.
 ## Active Boundary
 
 Active handoff: `AGENT_HANDOFF_V23_2026-06-26.md`.
+
+Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
+
+Exact remote SHA must be derived live from git when needed; do not
+hand-maintain it in handoff.
+
+External agent memory files: non-canonical convenience only.
 
 Archived predecessor:
 `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`.
@@ -391,7 +399,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base ab76d077 --head HEAD --enforce` | PASS before handoff-sync commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base d7eeb790 --head HEAD --enforce` | PASS before handoff-sync commit |
 
 ## Agent Operation Trace Block
 
@@ -399,37 +407,37 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 GC-032 pre-push marker repair handoff-sync |
+| Session or invocation | 2026-06-27 GC-020 pre-push handoff guard repair sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
-| Allowed scope source | GC-020 active handoff HEAD marker requirement after GC-032 pre-push marker repair commit `ab76d077` |
-| Before status evidence | material repair committed at `ab76d077`; active-session gate reported handoff HEAD marker missing |
+| Allowed scope source | GC-020 handoff guard compatibility pre-push failure after material repair commit `d7eeb790` |
+| Before status evidence | material repair committed at `d7eeb790`; pre-push gate reported missing tracked remote branch and handoff context-boundary markers |
 | After status evidence | handoff-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | handoff-sync only |
 | Claim boundary | handoff HEAD marker sync only; no registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 GC-032 marker repair handoff-sync |
+| Invocation ID | local Codex session 2026-06-27 GC-020 handoff guard repair sync |
 | Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: active handoff HEAD marker sync after
-GC-032 pre-push marker repair only.
+Authorized guard-maintenance scope: active handoff GC-020 compatibility sync
+after GC-020 pre-push marker repair only.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V23_2026-06-26.md`
 
-Operator authorization: user requested updating local CVF to GitHub; material
-repair commit `ab76d077` required the active handoff to record the latest HEAD
-before provenance push could proceed through the mandatory gates.
+Operator authorization: user requested updating local CVF to GitHub; pre-push
+GC-020 gate required the active handoff to record the tracked remote branch and
+external-memory/context-boundary markers before provenance push could proceed.
 
 Rollback boundary: revert the handoff-sync commit only; do not revert material
-repair commit `ab76d077`.
+repair commit `d7eeb790`.
 
 ## Claim Boundary
 
