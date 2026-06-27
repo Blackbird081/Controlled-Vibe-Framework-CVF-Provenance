@@ -76,6 +76,7 @@ Forbidden normative patterns:
 | Reviewer-return review | Reviewer | Work order; worker-return packet; GC-018 baseline; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | Completion review (Target or Reviewed source, Scope / Methodology, Findings / Position, Risk / Corrective Action, decision/disposition); Dual Agent Surface Matrix if the reviewed artifact is agent-facing; reviewer-fast governance gate pass | Accepting a packet without running reviewer-fast gate; committing without verifying all required deliverables; treating internal helper evidence as external CLI/MCP support | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | Reviewer may repair only allowed-scope defects; scope expansion returns to operator; external-agent disposition must stay explicit |
 | Closure | Closer | Completion review; active session state; `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`; `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | Committed closure artifacts; Dual Agent Surface Matrix preserved for applicable roadmap/work-order/closure surfaces; session-sync surfaces updated if mode or next allowed move changes | Mixing closure commits with worker changes; updating generated state source files without a separate state-generator run; closing with no external-agent disposition or no adapter boundary | `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base <closureBase> --head HEAD --enforce` | Closer commits only reviewer-owned and closure-owned paths; closure does not convert `CONTRACT_ONLY` or deferred adapter rows into runtime support |
 | Session-sync | Session-sync steward | Active handoff; `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Updated handoff, session state, and next-move surfaces; no change to archived handoffs | Appending new status to superseded handoffs; updating generated state without running the generator | `python governance/compat/generate_active_session_state.py` | Only the active handoff named by the registry receives new status |
+| Push-readiness preview | Reviewer / closer / session-sync steward | `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` | Read-only preview readout before full pre-push gate; commit-shape split recommendation; final base/head range recorded | Discovering GC-020, front-door marker, active-window, review-retention, repository-lifecycle, pre-public P3, or knowledge-absorption marker defects one full pre-push rerun at a time | `python governance/compat/run_agent_push_readiness_preview.py --base <baseHead> --head HEAD --enforce` | Preview is diagnostic only; canonical pre-push autorun gate remains required before push |
 | ADIF entry authoring | Worker / reviewer / closer | `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`; `governance/compat/check_adif_entry_integrity.py`; this index | Entry field block; Canonical Sources; Remediation; complete Agent Operation Trace Block with `Diff evidence`; Public Export Disposition; Claim Boundary | Copying the template without all trace labels; adding an entry to record an entry-authoring error without a recurrence/latency threshold; mixing ADIF material entries with active handoff/session-sync paths | `python governance/compat/check_adif_entry_integrity.py --enforce` | ADIF entries are material learning records; session-sync surfaces must be committed separately by the session-sync steward |
 | External knowledge absorption | Worker / dispatch author | `docs/reference/external_agent_review/README.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | External Knowledge Intake Routing table (chain map, input type, route, local guard, disposition, claim boundary); absorb / adapt / defer / reject classification per item | Treating external input as CVF authority without source verification; absorbing without classification | Classify each external item before authoring a CVF-owned reference | CVF remains source of truth; external material is reference input only |
 | Public-sync | Session-sync steward / operator | `AGENTS.md` critical repository boundary section; `git remote -v` output | Confirmed `origin` points to public-sync clone, not provenance repository | Pushing provenance tree to the public repository; running public push from the provenance clone | `git remote -v` (confirm remote before push) | Never push provenance archive to the public repository; public-sync requires separate authorization |
@@ -99,6 +100,7 @@ Forbidden normative patterns:
 | Roadmap, work order, or closure omits external-agent disposition | machine-check candidate in `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | Include a six-column Dual Agent Surface Matrix with `INTERNAL_AGENT`, `EXTERNAL_AGENT_CLI_MCP`, interface, authority/risk boundary, evidence, adapter boundary, and allowed disposition |
 | ADIF entry trace table omits `Diff evidence` or another exact label | `check_adif_entry_integrity.py` | Copy the trace block from `CVF_ADIF_ENTRY_TEMPLATE.md`; run the ADIF integrity guard before commit |
 | ADIF material entry is committed with active handoff/session state | commit steward preflight | Split into material entry commit first, then a dedicated session-sync or handoff-sync commit |
+| Push readiness relies only on the full late pre-push gate | push-readiness preview helper; pre-push autorun gate | Run `python governance/compat/run_agent_push_readiness_preview.py --base <baseHead> --head HEAD --enforce` before the full pre-push gate, repair local marker/continuity findings first, and split material from protected session/handoff paths |
 
 ## Claim Boundary
 
@@ -127,22 +129,22 @@ still control.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex standard hardening role |
+| Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | work-order dispatch scaffold optimization, 2026-06-26 |
+| Session or invocation | push-readiness preview standardization, 2026-06-27 |
 | Working directory | repository root |
-| Command or tool surface | apply_patch, focused pytest, autorun gates, git commit |
-| Target paths | `docs/reference/guard_orientation/README.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py` |
-| Allowed scope source | operator instruction to handle Claude T1 feedback and optimize dispatch authoring before ASSF-PIC-T2 |
-| Before status evidence | HEAD `c98ee85b`; worktree clean before patch |
-| After status evidence | Guard Orientation distinguishes compact non-rescan N/A from full rescan evidence requirements |
-| Diff evidence | changed orientation index and focused guard/scaffold tests |
-| Approval boundary | dispatch-authoring and worker-return friction hardening only |
-| Claim boundary | orientation layer plus local guard/scaffold support; no runtime, provider/live, external adapter, public-sync, package instance, or certification claim |
-| Agent type | dispatch-authoring optimization role |
-| Invocation ID | `wods-t1-dispatch-authoring-optimization-2026-06-26` |
-| Expected manifest | `docs/reference/guard_orientation/README.md`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py` |
-| Actual changed set | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/CVF_RESCAN_INTELLIGENCE_HARDENING_STANDARD_2026-06-05.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_WODS_T1_WORK_ORDER_DISPATCH_SCAFFOLD_OPTIMIZATION_COMPLETION_2026-06-26.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/run_worker_return_scaffold.py`; `governance/compat/test_check_rescan_intelligence_hardening.py`; `governance/compat/test_run_worker_return_scaffold.py` |
+| Command or tool surface | apply_patch, focused pytest, preview helper, governance gates |
+| Target paths | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reviews/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARDIZATION_COMPLETION_2026-06-27.md`; `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json` |
+| Allowed scope source | operator instruction to standardize prevention of provenance pre-push cascade before returning to FPC-SCG next move |
+| Before status evidence | baseHead `3e4b7266`; worktree clean before patch |
+| After status evidence | push-readiness preview row and common-failure prevention note added |
+| Diff evidence | `git diff --name-status 3e4b7266..HEAD` after material commit |
+| Approval boundary | push-readiness preview standardization only |
+| Claim boundary | orientation layer plus read-only preview routing; no runtime, provider/live, external adapter, public-sync, package instance, certification, push authorization, MPI-T6 work, or FPC implementation claim |
+| Agent type | reviewer/closer |
+| Invocation ID | `agent-push-readiness-preview-standardization-2026-06-27` |
+| Expected manifest | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reviews/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARDIZATION_COMPLETION_2026-06-27.md`; `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json` |
+| Actual changed set | `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARDIZATION_COMPLETION_2026-06-27.md`; `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py` |
 | Manifest delta | MATCH |
 
 ## Related Surfaces
