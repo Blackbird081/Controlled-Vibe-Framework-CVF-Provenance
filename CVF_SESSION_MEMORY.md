@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T5/MPI-T6 not reopened by MPI-T4 reconciliation; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push without separate authorization.
+Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T6 runtime work not reopened by MPI-T5 reconciliation; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Current mode marker: `mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
-Current mode: `mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Current mode: `mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
-`mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
 Previous mode:
 
-`mpi_t3_external_agent_memory_read_contract_closed_pass_bounded_pending_next_foundation_selection`
+`mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
 ## Latest Closed Work
 
@@ -78,18 +78,19 @@ Previous mode:
 | MKG Owner Verification Decision MKGOV-T0-T4 | `dcdbac64` | CLOSED_PASS_BOUNDED |
 | MPI-T3 External Agent Memory Read Contract | `b825a69c` | CLOSED_PASS_BOUNDED |
 | MPI-T4 Current-State Reconciliation | `d85dd329` | CLOSED_PASS_BOUNDED |
+| MPI-T5 Current-State Reconciliation | `ec7da05c` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Mode: `mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
-Next allowed move: select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold. Use `docs/reviews/CVF_MPI_T4_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MEMORY_PLANE_MAP.md`, `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md`, `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md`, `docs/reviews/CVF_MKG_OWNER_VERIFICATION_DECISION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md`, `docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md`, `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`, `docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`, `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`, and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. MPI-T5 and MPI-T6 are not reopened by MPI-T4 reconciliation. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold. Use `docs/reviews/CVF_MPI_T5_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_MPI_T4_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MEMORY_PLANE_MAP.md`, `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md`, `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md`, `docs/reviews/CVF_MKG_OWNER_VERIFICATION_DECISION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md`, `docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md`, `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`, `docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`, `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`, and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. MPI-T6 runtime work is not reopened by MPI-T5 reconciliation. LHW24 remains the latest closed numbered LHW wave.
 
-No runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push without separate authorization.
+No runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
 
 ## Parked Checkpoint
 
-MPI-T4 Current-State Reconciliation is closed bounded at material commit `d85dd329`. It aligned the parent MPI roadmap and Memory Plane map with the existing local federated helper while preserving no route wiring, no adapter, no provider/live, no public-sync, and no helper/source/test edit in this tranche. DICE remains parked; MPI-T5 and MPI-T6 are not reopened; next value is selecting another high-value foundation lane through fresh GC-018/source-verified work order or holding.
+MPI-T5 Current-State Reconciliation is closed bounded at material commit `ec7da05c`. It aligned the parent MPI roadmap and Memory Plane map with the existing local static Memory Access Claim checker while preserving no runtime memory access, no adapter, no provider/live, no public-sync, and no checker/source/test/wiring edit in this tranche. DICE remains parked; MPI-T6 runtime work is not reopened; next value is selecting another high-value foundation lane through fresh GC-018/source-verified work order or holding.
 
 ## Continuity Markers
 

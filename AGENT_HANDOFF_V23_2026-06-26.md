@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T5/MPI-T6 not reopened by MPI-T4 reconciliation; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push without separate authorization.
+Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T6 runtime work not reopened by MPI-T5 reconciliation; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
 
 ## Current State
 
@@ -40,12 +40,13 @@ Startup acknowledged: current mode=`mpi_t4_current_state_reconciliation_closed_p
 | MKG Owner Verification Decision MKGOV-T0-T4 closure | `dcdbac64` |
 | MPI-T3 External Agent Memory Read Contract closure | `b825a69c` |
 | MPI-T4 Current-State Reconciliation closure | `d85dd329` |
+| MPI-T5 Current-State Reconciliation closure | `ec7da05c` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
 ## Purpose
 
@@ -55,14 +56,14 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after MPI-T4 Current-State Reconciliation closure.
+after MPI-T5 Current-State Reconciliation closure.
 
 Owner boundary: this handoff authorizes only another fresh CVF foundation
 roadmap through GC-018/source-verified work order before implementation. It does not authorize
 runtime/MCP/CLI/IDE bridge implementation, further provider/live proof,
 public-sync, push, checker implementation, resolver mutation, adapter mutation,
 registry mutation, package activation, certification decision, generated
-workspace state mutation, DICE work, or MPI-T5/MPI-T6 reopening without a
+workspace state mutation, DICE work, or MPI-T6 runtime reopening without a
 separate governed tranche.
 
 ## Active Boundary
@@ -132,6 +133,9 @@ Latest material closure: commit `b825a69c` closed the MPI-T3 External Agent
 Memory Read Contract batch as `CLOSED_PASS_BOUNDED`.
 
 Latest material closure: commit `d85dd329` closed the MPI-T4 Current-State
+Reconciliation batch as `CLOSED_PASS_BOUNDED`.
+
+Latest material closure: commit `ec7da05c` closed the MPI-T5 Current-State
 Reconciliation batch as `CLOSED_PASS_BOUNDED`.
 
 Latest checklist learning work: commit `13dcb7ad` updated
@@ -222,6 +226,21 @@ The MPI-T3 External Agent Memory Read Contract batch closed at material commit
 The MPI-T4 Current-State Reconciliation batch closed at material commit
 `d85dd329`.
 
+The MPI-T5 Current-State Reconciliation batch closed at material commit
+`ec7da05c`.
+
+Material result from the latest MPI-T5 reconciliation:
+
+- Created and closed the MPI-T5 current-state reconciliation GC-018, work
+  order, and completion review.
+- Updated `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md`
+  and `docs/reference/CVF_MEMORY_PLANE_MAP.md` so the existing MPI-T5 local
+  static checker is recorded as running in local governance.
+- Preserved the boundary: no checker/source/test/wiring edit, route wiring,
+  CLI/MCP adapter, provider/live proof, public-sync, registry mutation,
+  durable write, generated-state mutation, resolver, package, DICE, MPI-T6
+  runtime work, or push scope.
+
 Material result from the latest MPI-T4 reconciliation:
 
 - Created and closed the MPI-T4 current-state reconciliation GC-018, work
@@ -263,7 +282,7 @@ Prior MKGOV material result:
 Session-maintenance result for this handoff update:
 
 - Updates active front door, generated state sources, bootstrap read model, and
-  active handoff after MPI-T4 material closure.
+  active handoff after MPI-T5 material closure.
 - Keeps the next move on selecting another fresh foundation lane through
   GC-018/source-verified work order or holding.
 
@@ -274,11 +293,16 @@ fresh GC-018/source-verified work order before implementation, or hold.
 LHW24 remains the latest closed numbered LHW wave.
 
 Use
+`docs/reviews/CVF_MPI_T5_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`
+as the current MPI-T5 reconciliation completion reference.
+
+Use
 `docs/reviews/CVF_MPI_T4_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`
 as the current MPI-T4 reconciliation completion reference.
 
 Use `docs/reference/CVF_MEMORY_PLANE_MAP.md` as the current Memory Plane
-navigation reference; it records MPI-T4 as a local helper, not route-wired.
+navigation reference; it records MPI-T4 as a local helper and MPI-T5 as a
+local static checker, with neither treated as route-wired runtime access.
 
 Use `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md` as the
 current external-agent memory read contract reference.
@@ -326,7 +350,7 @@ Do not start runtime/MCP/CLI/IDE bridge implementation, further provider/live
 proof, public-sync, push, checker implementation, resolver mutation, adapter
 mutation, registry mutation, package activation, certification decision,
 generated workspace state mutation, or DICE work without future accepted work
-order authorization. MPI-T5 and MPI-T6 are not reopened by MPI-T4
+order authorization. MPI-T6 runtime work is not reopened by MPI-T5
 reconciliation.
 
 ## Parked Boundaries
@@ -369,7 +393,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base d85dd329 --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base ec7da05c --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -377,26 +401,26 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 MPI-T4 Current-State Reconciliation session-sync |
+| Session or invocation | 2026-06-27 MPI-T5 Current-State Reconciliation session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | MPI-T4 material closure commit `d85dd329` and active next-move continuity update |
-| Before status evidence | clean worktree after material closure commit `d85dd329` |
+| Allowed scope source | MPI-T5 material closure commit `ec7da05c` and active next-move continuity update |
+| Before status evidence | clean worktree after material closure commit `ec7da05c` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
-| Claim boundary | session-sync only; no Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, checker implementation, or DICE work |
+| Claim boundary | session-sync only; no Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, checker implementation, DICE work, or MPI-T6 runtime |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 MPI-T4 reconciliation session-sync |
-| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mpiT4CurrentStateReconciliationClosure20260627.json` |
-| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mpiT4CurrentStateReconciliationClosure20260627.json` |
+| Invocation ID | local Codex session 2026-06-27 MPI-T5 reconciliation session-sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mpiT5CurrentStateReconciliationClosure20260627.json` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mpiT5CurrentStateReconciliationClosure20260627.json` |
 | Manifest delta | N/A with reason: material boundary closure already committed separately |
 
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after MPI-T4 Current-State Reconciliation closure
+and active handoff update after MPI-T5 Current-State Reconciliation closure
 only.
 
 Protected paths:
@@ -407,14 +431,14 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/mpiT4CurrentStateReconciliationClosure20260627.json`
+- `CVF_SESSION/state/entries/mpiT5CurrentStateReconciliationClosure20260627.json`
 
-Operator authorization: user requested continuation according to next move;
-Codex committed the MPI-T4 reconciliation material closure at `d85dd329`; this
+Operator authorization: user requested T5 cleanup;
+Codex committed the MPI-T5 reconciliation material closure at `ec7da05c`; this
 update routes the active session to another foundation lane selection.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `d85dd329`.
+commit `ec7da05c`.
 
 ## Claim Boundary
 

@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1255,
+  "stateKey": "mpiT5CurrentStateReconciliationClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "ec7da05c",
+    "roadmap": "docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md",
+    "baseline": "docs/baselines/CVF_GC018_MPI_T5_CURRENT_STATE_RECONCILIATION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_CURRENT_STATE_RECONCILIATION_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_MPI_T5_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md",
+    "reference": "docs/reference/CVF_MEMORY_PLANE_MAP.md",
+    "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold. MPI-T6 runtime work is not reopened by the reconciliation.",
+    "claimBoundary": "MPI-T5 current-state reconciliation only; no checker/source/test/wiring edit, route wiring, CLI/MCP adapter, provider-live proof, public-sync, registry mutation, durable write, resolver, package, generated-state, DICE, MPI-T6 runtime, or push scope."
+  }
+}
