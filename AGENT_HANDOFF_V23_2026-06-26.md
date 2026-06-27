@@ -41,6 +41,7 @@ Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_p
 | MPI-T3 External Agent Memory Read Contract closure | `b825a69c` |
 | MPI-T4 Current-State Reconciliation closure | `d85dd329` |
 | MPI-T5 Current-State Reconciliation closure | `ec7da05c` |
+| MPI-T6 reopen-condition session sync | `d172fe48d7048847fb1c32c32609bff8a5d808c2` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
@@ -412,7 +413,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base ec7da05c --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base d172fe48 --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -420,44 +421,36 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 MPI-T5 Current-State Reconciliation session-sync |
+| Session or invocation | 2026-06-27 MPI-T6 reopen-condition handoff SHA repair |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
-| Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | MPI-T5 material closure commit `ec7da05c` and active next-move continuity update |
-| Before status evidence | clean worktree after material closure commit `ec7da05c` |
+| Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Allowed scope source | active-session state gate requiring the handoff to contain current HEAD `d172fe48d7048847fb1c32c32609bff8a5d808c2` before new material work |
+| Before status evidence | clean worktree after stashing uncommitted foundation-gap guidance |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
-| Claim boundary | session-sync only; no Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, checker implementation, DICE work, or MPI-T6 runtime |
+| Claim boundary | handoff SHA repair only; no front-door/state next-move change, no Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, checker implementation, DICE work, or MPI-T6 runtime |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 MPI-T5 reconciliation session-sync |
-| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mpiT5CurrentStateReconciliationClosure20260627.json` |
-| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mpiT5CurrentStateReconciliationClosure20260627.json` |
-| Manifest delta | N/A with reason: material boundary closure already committed separately |
+| Invocation ID | local Codex session 2026-06-27 handoff SHA repair |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after MPI-T5 Current-State Reconciliation closure
-only.
+Authorized guard-maintenance scope: active handoff SHA repair only.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V23_2026-06-26.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/mpiT5CurrentStateReconciliationClosure20260627.json`
 
-Operator authorization: user requested T5 cleanup;
-Codex committed the MPI-T5 reconciliation material closure at `ec7da05c`; this
-update routes the active session to another foundation lane selection.
+Operator authorization: active-session state gate reported that the handoff did
+not contain current HEAD `d172fe48d7048847fb1c32c32609bff8a5d808c2`; this
+update records that commit before further material work.
 
-Rollback boundary: revert the session-sync commit only; do not revert material
-commit `ec7da05c`.
+Rollback boundary: revert the handoff SHA repair commit only; do not revert
+material commit `ec7da05c` or session-sync commit `d172fe48`.
 
 ## Claim Boundary
 
