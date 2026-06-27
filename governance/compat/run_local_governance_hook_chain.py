@@ -26,6 +26,74 @@ Compatibility marker block for self-checking guards:
 - governance/compat/check_session_governance_bootstrap.py
 - governance/compat/check_template_skill_standard_guard_compat.py
 
+Pre-push catalog marker coverage:
+- governance/compat/check_active_archive_hygiene.py
+- governance/compat/check_active_session_state.py
+- governance/compat/check_active_window_registry.py
+- governance/compat/check_agent_handoff_boundary.py
+- governance/compat/check_agent_operation_trace.py
+- governance/compat/check_agent_packet_authority_and_encoding.py
+- governance/compat/check_agent_workspace_design.py
+- governance/compat/check_agent_workspace_runtime_boundary.py
+- governance/compat/check_agent_workspace_skeleton.py
+- governance/compat/check_agent_workspace_state.py
+- governance/compat/check_assf_certified_metadata_admission.py
+- governance/compat/check_audit_retention_registry.py
+- governance/compat/check_baseline_update_compat.py
+- governance/compat/check_batch_contract_determinism.py
+- governance/compat/check_bug_doc_compat.py
+- governance/compat/check_canon_summary_evidence_separation.py
+- governance/compat/check_closure_packaging_preflight.py
+- governance/compat/check_conformance_trace_rotation.py
+- governance/compat/check_continuation_chain.py
+- governance/compat/check_core_guard_self_protection.py
+- governance/compat/check_corpus_completeness_report_integrity.py
+- governance/compat/check_corpus_intelligence_classification.py
+- governance/compat/check_corpus_packet_disposition_canonical.py
+- governance/compat/check_corpus_packet_normalized_path.py
+- governance/compat/check_corpus_packet_source_hash.py
+- governance/compat/check_corpus_to_knowledge_map_reconciliation.py
+- governance/compat/check_cpf_batch_helper_adoption.py
+- governance/compat/check_cpf_public_surface_maintainability.py
+- governance/compat/check_delta_execution_claim_boundary.py
+- governance/compat/check_delta_mutating_profile_boundary.py
+- governance/compat/check_depth_audit_continuation_compat.py
+- governance/compat/check_docs_governance_compat.py
+- governance/compat/check_erh_ci_public_evaluation_workflow.py
+- governance/compat/check_erh_public_surface_drift_workflow.py
+- governance/compat/check_execute_route_step_sequence.py
+- governance/compat/check_external_agent_absorption_table.py
+- governance/compat/check_external_knowledge_intake_routing.py
+- governance/compat/check_finding_to_governance_learning.py
+- governance/compat/check_foundation_storage_layout.py
+- governance/compat/check_foundational_guard_surfaces.py
+- governance/compat/check_gc018_stop_boundary_semantics.py
+- governance/compat/check_governed_file_size.py
+- governance/compat/check_governed_pack_contract.py
+- governance/compat/check_guard_authoring_standard.py
+- governance/compat/check_guard_contract_compat.py
+- governance/compat/check_guard_registry.py
+- governance/compat/check_incremental_test_log_rotation.py
+- governance/compat/check_machine_closure_package.py
+- governance/compat/check_multi_provider_execution_log.py
+- governance/compat/check_next_move_freshness.py
+- governance/compat/check_plcs_companion_routing_block.py
+- governance/compat/check_prepublic_p3_readiness.py
+- governance/compat/check_public_doc_drift_phrases.py
+- governance/compat/check_public_export_disposition.py
+- governance/compat/check_python_automation_size.py
+- governance/compat/check_repository_exposure_classification.py
+- governance/compat/check_repository_lifecycle_classification.py
+- governance/compat/check_rescan_intelligence_hardening.py
+- governance/compat/check_review_retention_registry.py
+- governance/compat/check_roadmap_closure_freshness.py
+- governance/compat/check_surface_scan_registry.py
+- governance/compat/check_system_loop_interlock.py
+- governance/compat/check_test_doc_compat.py
+- governance/compat/check_test_partition_ownership.py
+- governance/compat/check_work_order_dispatch_quality.py
+- governance/compat/check_worker_experience_retrospective.py
+
 Default mode: pre-push
 """
 
