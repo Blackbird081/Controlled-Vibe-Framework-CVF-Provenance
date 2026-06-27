@@ -34,8 +34,8 @@ any surface.
 
 MKG7 closed (CLOSED_PASS_BOUNDED) and owns the LPF Memory operational contract. MPI closes
 three integration gaps MKG7 left untouched: (1) no single front-door map, (2) Corpus Scan
-Registry not reachable through Memory readout (MPI-T2, parked), (3) no external read contract
-(MPI-T3, parked). MPI-T1 addresses gap (1) only.
+Registry not reachable through Memory readout (MPI-T2, helper implemented), (3) no external
+read contract (MPI-T3, active reference). MPI-T1 addresses gap (1) only.
 
 ## How To Use This Map
 
@@ -87,7 +87,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 - **Response shape:** { success:true, routeVersion, memoryRuntimeReadout, rawMemoryReleased:false, canReinject:false }. Source: `route.ts` lines 198-204.
 - **RAW sentinel:** RAW_MEMORY_CONTENT_MUST_NOT_LEAK -- HTTP 500 if serialized projection contains it. Source: `route.ts` lines 7, 193-196.
 - **Operational contract:** `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-01.md` (MKG7, PENDING documentation-only).
-- **MPI gap:** Corpus Scan Registry findings not yet reachable through this route (MPI-T2, parked; separate GC-018 required).
+- **MPI gap:** Corpus Scan Registry findings have a bounded MPI-T2 helper but are not route-wired; route wiring remains a separate later tranche.
 
 ### LPF Durable Store
 
@@ -114,7 +114,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 - **adapterContractOnly:** true. Source: `CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md` lines 38-50.
 - **Helper readout:** governance/compat/run_agent_automation_assist.py -- read-only signalReadout via Python stdout; no mutation, no ledger store, no durable write.
 - **No ledger store:** LSC has no ledger store, no source directory for a store, and no durable store implementation.
-- **External read contract:** not yet defined -- parked as MPI-T3 until after MPI-T1 closes and operator selects next tranche.
+- **External read contract:** defined by `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md` as `adapterContractOnly=true`.
 
 ### Legacy Absorption Predecessor Authority (CI1-T11, MLW0, MLW1-MLW6)
 
@@ -147,7 +147,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 | LSC-T6 CLI/MCP adapter | CONTRACT_ONLY | adapterContractOnly=true; no adapter implementation |
 | CI1-T11 / MLW0 / MLW1-MLW6 | CLOSED (predecessor authority) | absorption closed; cite as authority, not as runtime |
 | Scan-registry read projection | RUNNING (helper) | MPI-T2 helper `scan-registry-memory-projection.ts` produces readout-compatible candidates; deterministic, read-only, derived view; not auto-wired into the route |
-| External read contract (LSC read side) | PARKED (MPI-T3) | not defined; separate GC-018 after MPI-T1 |
+| External read contract (LSC read side) | ACTIVE_REFERENCE (MPI-T3) | `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md`; `adapterContractOnly=true`; no CLI/MCP adapter implementation |
 | Federated helper | PARKED (MPI-T4) | not implemented; separate GC-018 after MPI-T1 |
 
 ## MPI Tranche Progression
@@ -156,8 +156,8 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 |---|---|---|
 | MPI-T0 | INDEX legacy memory/KGR/graph recheck; INDEX classification standard | CLOSED_PASS_BOUNDED (2026-06-21) |
 | MPI-T1 | Memory Plane front-door map (this document) | CLOSED_PASS_BOUNDED; reviewer correction applied |
-| MPI-T2 | Scan-registry read projection through Memory readout surface | HELPER IMPLEMENTED (pending reviewer closure); read-only derived view, not route-wired |
-| MPI-T3 | External-agent read contract (read side mirroring LSC-T6) | PARKED -- separate GC-018 required |
+| MPI-T2 | Scan-registry read projection through Memory readout surface | CLOSED_PASS_BOUNDED; read-only derived view, not route-wired |
+| MPI-T3 | External-agent read contract (read side mirroring LSC-T6) | ACTIVE_REFERENCE -- `adapterContractOnly=true`; no CLI/MCP adapter implementation |
 | MPI-T4 | Federated helper for memory + scan-registry federated read | PARKED -- separate GC-018 required |
 
 ## External Knowledge Intake Routing
@@ -180,8 +180,8 @@ This POINTER_RECORD navigation map does not implement, redefine, or mutate any m
 surface. It does not authorize:
 
 - runtime projection, helper, test, schema, route, registry write, durable write, or generator run;
-- provider/live proof, public-sync, CLI/MCP adapter behavior, or actual external-agent read contract;
-- any MPI-T2, MPI-T3, or MPI-T4 work;
+- provider/live proof, public-sync, CLI/MCP adapter behavior, or external-agent adapter implementation;
+- any MPI-T4 work or MPI-T2/MPI-T3 runtime expansion;
 - re-absorption of legacy artifacts or direct legacy runtime promotion;
 - new vector DB, embedding index, or graph persistence capability.
 

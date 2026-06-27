@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MPI_T2_CLOSED_PASS_BOUNDED
+Status: MPI_T3_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -141,7 +141,7 @@ boundaries, not merely a filesystem inventory:
 | Plane/layer owner index | MPI-T1 Memory Plane map | create a pointer record that maps surfaces, owners, readers, runtime state, and gaps | navigation only; no runtime mutation |
 | Structural graph/context index | KGR1 and Graphify/KGR predecessor artifacts | classify as adjacent structural retrieval layer and record partial legacy coverage | no durable graph persistence, vector DB, or web-route graph integration claim |
 | Runtime readout/projection index | MKG7 readout; future MPI-T2 projection | requires separate GC-018 after T1 | summary-only; no raw release or reinjection |
-| External-agent access index | LSC-T6 write-side signal contract; future MPI-T3 read contract | requires separate GC-018 after T1 | contract-only unless separately implemented |
+| External-agent access index | LSC-T6 write-side signal contract; MPI-T3 read contract | MPI-T3 closed as contract-only reference | no CLI/MCP adapter implementation unless separately authorized |
 
 ## INDEX Standard
 
@@ -271,7 +271,7 @@ Chain map: `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTI
 | INDEX-T1 | Forward-Only INDEX Classification Checker | Promote the MPI-T0 INDEX standard from packet-bound policy to machine-enforced governance for future classification artifacts and agent handoffs | checker, focused tests, guard orientation/template references, hook integration evidence | CLOSED_PASS_BOUNDED |
 | MPI-T1 | Memory Plane Front-Door Map | Source-verified map of the memory-facing surfaces: purpose, owner, reader, boundary, what is runtime vs parked | reference POINTER_RECORD map | CLOSED_PASS_BOUNDED |
 | MPI-T2 | Scan Registry Episodic Read Projection | Expose GC-051 findings as a read-only summary-only projection consumable through the existing Memory readout surface | projection helper, focused tests, contract section | CLOSED_PASS_BOUNDED |
-| MPI-T3 | External Agent Memory Read Contract | Define the summary-only read-direction contract for external CLI/MCP agents, mirroring LSC-T6 write-side boundary | reference contract, `adapterContractOnly=true` | PARKED_AFTER_T1 |
+| MPI-T3 | External Agent Memory Read Contract | Define the summary-only read-direction contract for external CLI/MCP agents, mirroring LSC-T6 write-side boundary | reference contract, `adapterContractOnly=true` | CLOSED_PASS_BOUNDED |
 | MPI-T4 | Federated Read Helper Fast-Path | Optional bounded read-only helper/test that returns the federated advisory read deterministically, no mutation | helper, focused tests | OPTIONAL_PARKED |
 
 MPI must not be dispatched as one broad assignment. Each tranche gets its own
@@ -288,7 +288,7 @@ GC-018 and work order.
 | 5 | Dispatcher opens a small INDEX-T1 checker tranche if operator confirms machine enforcement | completed; INDEX-T1 dispatched at `64516525` and closed after worker return |
 | 6 | Dispatcher releases MPI-T1 only after MPI-T0 closure, and after INDEX-T1 if mandatory enforcement is selected before continuation | completed for MPI-T1 by `CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md`; INDEX-T1 is now closed |
 | 7 | Worker creates the Memory Plane Front-Door Map as a reference POINTER_RECORD | completed; worker returned `COMPLETE_PENDING_REVIEW`, reviewer correction applied |
-| 8 | Operator decides whether MPI-T2 or MPI-T3 should follow | MPI-T2 selected, implemented, and closed; MPI-T3 remains parked |
+| 8 | Operator decides whether MPI-T2 or MPI-T3 should follow | MPI-T2 selected, implemented, and closed; MPI-T3 selected, contract created, and closed |
 | 9 | MPI-T4 remains optional | only opened if T2/T3 closure shows a real helper need |
 
 ## Workstream Details
@@ -418,7 +418,7 @@ recorded `N/A_WITH_REASON` and the contract from MPI-T2/T3 stands alone. R1/R2.
 | KGR gap is visible | MPI-T1 map records KGR1 bounded current owner surfaces and marks Graphify/KGR legacy coverage as partial recheck, not fully absorbed |
 | Front-door clarity | The map names purpose, owner, reader, boundary, and runtime status for all memory-facing surfaces with source citations |
 | Episodic read projection | MPI-T2 helper implemented; scan-registry findings can be projected into existing summary-only readout candidates by caller-supplied parsed entries; route-side automatic data loading remains parked |
-| External read contract | PARKED for MPI-T3; a summary-only read contract may mirror LSC-T6 boundary only after separate authorization |
+| External read contract | MPI-T3 reference contract created; `adapterContractOnly=true`; no CLI/MCP adapter implementation |
 | Safety invariants | `rawMemoryReleased=false` and `canReinject=false` preserved on every MPI surface; RAW sentinel unbroken |
 | No write authority | MPI adds no write path to the registry, durable store, or LPF runtime |
 | Maintainability | near-threshold source files are split or reduced before growth |
@@ -442,9 +442,9 @@ recorded `N/A_WITH_REASON` and the contract from MPI-T2/T3 stands alone. R1/R2.
 | Claim | Verified path or symbol | Source fact type |
 | --- | --- | --- |
 | MKG7 closed and owns the LPF operational contract | `docs/roadmaps/CVF_MKG7_MEMORY_PLANE_OPERATIONALIZATION_ROADMAP_2026-06-01.md` (`Status: CLOSED_PASS_BOUNDED`) | EXISTS |
-| Readout route is authenticated and summary-only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts` (`rawMemoryReleased:false`, `canReinject:false`, RAW sentinel) | EXISTS |
+| Readout route is authenticated and summary-only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts`; `rawMemoryReleased`; `canReinject`; RAW sentinel | EXISTS |
 | Readout projection strips raw content | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/memory-runtime-readout.ts` | EXISTS |
-| Durable store fails closed and is unwired | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` (`write()` deny branch, `MIN_PROVENANCE_SCORE=0.7`) | EXISTS |
+| Durable store fails closed and is unwired | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts`; `write()` deny branch; `MIN_PROVENANCE_SCORE` | EXISTS |
 | Scan registry is a generated aggregate over per-entry sources | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/registry/entries/` | EXISTS |
 | Scan registry defines Finding Discovery Rule and inherit-before-rescan | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md` (Rule 1, Finding Discovery Rule) | VALUE_SET |
 | GC-023 keeps governed files reviewable by humans | `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md` (`## Purpose`; `## Rule`) | VALUE_SET |
@@ -454,7 +454,7 @@ recorded `N/A_WITH_REASON` and the contract from MPI-T2/T3 stands alone. R1/R2.
 | KGR pre-review distinguishes Memory Plane from KGR and records partial Graphify/KGR absorption | `docs/reference/CVF_KGR_ABSORPTION_PREREVIEW_2026-06-01.md` | VALUE_SET |
 | KGR1 bounded current owner exists | `docs/roadmaps/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_ROADMAP_2026-06-01.md`; `docs/reviews/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_LOCAL_REVIEW_2026-06-02.md` | EXISTS |
 | Graphify/KGR corpus registry entry remains partial coverage input | `docs/corpus-intelligence/registry/entries/legacy-cvf-important-graphify.json` | EXISTS |
-| LSC-T6 defines external write-side signal IO only, adapter-contract-only | `docs/reference/learning_signal_chain/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md` (`adapterContractOnly=true`) | VALUE_SET |
+| LSC-T6 defines external write-side signal IO only, adapter-contract-only | `docs/reference/learning_signal_chain/CVF_LSC_T6_EXTERNAL_AGENT_CLI_MCP_SIGNAL_CONTRACT.md`; `adapterContractOnly` | VALUE_SET |
 | Memory record classes FULL/SUMMARY/POINTER | `docs/reference/CVF_MEMORY_RECORD_CLASSIFICATION.md` | VALUE_SET |
 | LSC remains signal/reference/readout only | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V20_2026-06-19.md` | VALUE_SET |
 
@@ -464,8 +464,8 @@ recorded `N/A_WITH_REASON` and the contract from MPI-T2/T3 stands alone. R1/R2.
 - `CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`;
 - `CVF_WO_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_2026-06-21.md`;
 - `CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`;
-- `CVF_WO_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_2026-06-21.md`;
-- `CVF_WO_MPI_T4_FEDERATED_READ_HELPER_FAST_PATH_2026-06-21.md`.
+- `CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_FOR_CODEX_2026-06-27.md`;
+- MPI-T4 remains optional parked until a separate governed tranche is selected.
 
 Each work order must include a Source Verification Block, Roadmap-to-Work-Order
 Trace Matrix, Allowed and Forbidden Scope, Public Export Disposition, and Claim
@@ -495,9 +495,9 @@ included.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | `Status: MPI_T2_CLOSED_PASS_BOUNDED` | PASS |
-| Work order status | `docs/work_orders/CVF_WO_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_2026-06-21.md`; `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`; `docs/work_orders/CVF_WO_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_2026-06-21.md`; `docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md` | MPI-T0 closed; MPI-T1 closed; INDEX-T1 closed; MPI-T2 closed | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_CODEX_REBUTTAL_2026-06-21.md`; `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md`; `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`; `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md`; `docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_COMPLETION_2026-06-22.md` | Codex rebuttal absorbed; MPI-T0 closure released MPI-T1; MPI-T1 closure accepted map with reviewer correction; INDEX-T1 closure accepted checker with reviewer repair; MPI-T2 closure accepted helper/test/reference/map | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md` | `Status: MPI_T3_CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_WO_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_2026-06-21.md`; `docs/work_orders/CVF_WO_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_2026-06-21.md`; `docs/work_orders/CVF_WO_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_2026-06-21.md`; `docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_FOR_CODEX_2026-06-27.md` | MPI-T0 closed; MPI-T1 closed; INDEX-T1 closed; MPI-T2 closed; MPI-T3 closed | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_CODEX_REBUTTAL_2026-06-21.md`; `docs/reviews/CVF_MPI_T0_INDEX_LEGACY_MEMORY_GRAPH_RECHECK_COMPLETION_2026-06-21.md`; `docs/reviews/CVF_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_COMPLETION_2026-06-21.md`; `docs/reviews/CVF_INDEX_T1_FORWARD_ONLY_INDEX_CLASSIFICATION_CHECKER_COMPLETION_2026-06-21.md`; `docs/reviews/CVF_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_COMPLETION_2026-06-22.md`; `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_COMPLETION_2026-06-27.md` | Codex rebuttal absorbed; MPI-T0 closure released MPI-T1; MPI-T1 closure accepted map with reviewer correction; INDEX-T1 closure accepted checker with reviewer repair; MPI-T2 closure accepted helper/test/reference/map; MPI-T3 closure accepted contract-only external read reference | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON update; MPI-T2 consumes parsed registry entries as a derived view and writes no registry aggregate; drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry Markdown update; MPI-T2 does not mutate registry reports | PASS |
 | External evidence digest | N/A | no external evidence digest; Claude roadmap is absorbed through External Knowledge Intake Routing | N/A with reason |
@@ -507,7 +507,7 @@ included.
 | Dispatch authority | MPI-T0 GC-018/work order; INDEX-T1 GC-018/work order; MPI-T1 GC-018/work order; MPI-T2 GC-018/work order | MPI-T0 closed; MPI-T1 closed; INDEX-T1 closed; MPI-T2 dispatched and closed | PASS |
 | Runtime implementation | `docs/work_orders/CVF_WO_MPI_T2_SCAN_REGISTRY_EPISODIC_READ_PROJECTION_2026-06-22.md` | bounded projection helper/test/reference only; route edit, registry write, durable write, provider/live, public-sync, and adapter behavior remain forbidden | PASS |
 | Public export | `Public Export Disposition` | `DEFERRED_PRIVATE_ONLY` | PASS |
-| Next action | operator checkpoint after MPI-T2 closure | select MPI-T3, hold, or open a fresh governed tranche; MPI-T4 remains optional parked | PASS |
+| Next action | operator checkpoint after MPI-T3 closure | select another high-value foundation roadmap, hold, or open a fresh governed tranche; MPI-T4 remains optional parked | PASS |
 
 ## Claim Boundary
 
