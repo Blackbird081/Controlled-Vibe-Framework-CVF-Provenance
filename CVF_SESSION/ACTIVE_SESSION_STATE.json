@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
+  "activeHandoff": "AGENT_HANDOFF_V24_2026-06-27.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -56,15 +56,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V20_2026-06-19.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V21_2026-06-22.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V23_2026-06-26.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection",
-  "previousMode": "mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection",
+  "currentMode": "fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche",
+  "previousMode": "fpc_uap_t1_public_surface_inventory_closed_pass_bounded_pending_fpc_uap_t2_public_export_or_hold",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2761,7 +2762,7 @@
   "mpiT5MemoryAccessClaimCheckerClosure20260622": "MPI-T5 Memory Access Claim Checker is CLOSED_PASS_BOUNDED; public-sync completion is recorded separately in mpiT5MemoryAccessClaimCheckerPublicSync20260622. Closure artifacts: docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_WORKER_RETURN_2026-06-22.md accepted by reviewer, docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_COMPLETION_2026-06-22.md closed bounded, docs/baselines/CVF_GC018_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md closed bounded, docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md closed bounded, and docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md updated to MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC at private closure time. Material scope: new governance/compat/check_memory_access_claim.py, new governance/compat/test_check_memory_access_claim.py, one reviewer-fast hook entry, and one autorun bundle entry. Evidence: focused pytest 13/13 PASS, checker self-run PASS, pre-implementation autorun PASS, worker-return fast gate PASS. Boundary: local static changed-governed-Markdown checker only; no route/schema/auth/helper/provider/live/durable/registry/generated/adapter/runtime behavior.",
   "adifContinuousExecutionDispatch20260622": "ADIF continuous execution dispatch is committed at 783b2b8a from dispatch base 60751daf. The operator preselected T0 -> T1 -> T2 -> (T3 || T4) -> T5. Canonical authorization: docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md. Master work order: docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_CONTINUOUS_EXECUTION_T0_T5_FOR_CLAUDE_2026-06-22.md. Commit mode WORKER_MAY_COMMIT enables real dependency checkpoint commits and isolated parallel worktrees from identical T2 HEAD. Claude must source-verify and gate every child packet, must not push or edit session continuity, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Codex is the designated final reviewer/closer. Dispatch evidence: reviewer-fast 34/34 PASS, pre-dispatch 45/45 PASS, dispatch steward PASS, and pre-commit 55/55 PASS.",
   "mpiT5MemoryAccessClaimCheckerPublicSync20260622": "MPI-T5 Memory Access Claim Checker public sync completed from sibling clone D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-public-sync after remote verification. Public remote: https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git. Public branch: main. Public commit: 602550404 Add MPI-T5 memory access claim checker. Public-safe changed set: governance/compat/check_memory_access_claim.py, governance/compat/test_check_memory_access_claim.py, governance/compat/run_local_governance_hook_chain.py, docs/assessments/CVF_PUBLIC_SYNC_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md, and docs/evidence/workflow-orchestration-guard.jsonl. Public checks before commit/push: focused pytest 13/13 PASS, check_memory_access_claim self-run PASS, public pre-commit hook PASS, public pre-push hook PASS. Boundary: no private work order, private review, private session state, active handoff, secrets, provider/live proof, runtime/provider behavior, registry/durable/vector/graph store, route/schema/auth/helper behavior, direct interception, readiness, or universal governed-coding-control claim was public-synced.",
-  "nextAllowedMove": "Foundation Plane System-Chain Gap Priority Guidance is ACTIVE_REFERENCE at material commit 2fc14fde. Next allowed move: open a fresh GC-018/source-verified roadmap or work order to handle FPC system-chain gaps first, using docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md as the routing reference. Priority order: P0 system-loop interlock registry gap for FPC-T2-C01 through C05; P1 machine-check coverage gap for FPC-T3-C06, C02, C05, and C03; P2 downstream use-case restraint. Recommended first work order candidate: FPC-SCG-T1 Foundation Plane System-Chain Interlock Registry Decision And Edit. Fallback: FPC-SCG-T0 Foundation Plane System-Chain Gap Closure Roadmap. LHW24 remains the latest closed numbered LHW wave. Preserve downstream boundaries: no registry edit, checker implementation, Policy_Local, Document Translator, DICE runtime expansion, MPI-T6 runtime, provider/live proof, public-sync, Model Gateway/Sandbox runtime expansion, generated workspace state mutation, runtime/MCP/CLI/IDE bridge implementation, resolver mutation, adapter mutation, package activation, certification decision, push, or other use-case/runtime work before separate fresh authorization. MPI-T6 remains parked unless a recorded reopen condition is verified.",
+  "nextAllowedMove": "FPC-UAP-T2 Use-Case Adapter Public Export README Catalog Snapshot Refresh is CLOSED_PASS_BOUNDED at provenance material commit be253923 and public-sync commit 04d88109317c780ceb2062a257c0e863e2379276 after UAP-T1 closed public surface inventory at be253923 and UAP-T0 closed public/provenance boundary routing at be253923. Next allowed move: hold, or open a fresh GC-018/source-verified next tranche only after operator selection. Recommended posture is to return to foundation-plane system-chain priorities or a new governed downstream-selection decision, not runtime/provider/live/MPI-T6/package activation by default. LHW24 remains the latest closed numbered LHW wave. Runtime/provider/live/MPI-T6, Policy_Local, Document Translator, adapter implementation, package activation, certification, registry/checker/generated-state mutation beyond session sync, private provenance evidence export to public, and push from the provenance workspace remain forbidden unless separately authorized. Public repo is current for UAP public comprehension at commit 04d88109317c780ceb2062a257c0e863e2379276. Live/API keys may be used only in a future authorized live-proof tranche; UAP-T2 did not use live keys because it made no runtime/provider governance claim.",
   "adifT0CheckpointPendingReview20260623": "Claude committed ADIF-T0 at 7c0480bc from continuous-dispatch session commit 7745339c. The changed set contains the T0 GC-018, T0 work order, taxonomy contract, ADIF reference front door, and roadmap checkpoint row. The work order remains COMPLETE_PENDING_REVIEW, so this commit is real execution evidence but not accepted dependency release for T1. Codex owns checkpoint review and continuity; Claude correctly stopped when pre-implementation exposed stale active-handoff HEAD and the authorization forbade worker-owned session sync.",
   "assfWebProjectionImplementationClosure20260626": "ASSF-WEBPROJ-T1 Web projection implementation closed CLOSED_PASS_BOUNDED at material commit 0b57a4de. Artifacts: docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md, docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md, and docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md. Implementation projected certified ASSF package metadata into the CVF Web public skill index as read-only presentation data and added GC-051 coverage for the Web projection public skill-index surfaces. Boundary retained: no package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, or package integration.",
   "adifT0CheckpointAcceptedT1Release20260623": "Codex accepted ADIF-T0 for continuation at review commit 6277cb28 after Claude execution commit 7c0480bc and continuity commit e454191f. Review artifact: docs/reviews/CVF_ADIF_T0_OWNER_RECONCILIATION_CHECKPOINT_REVIEW_2026-06-23.md. Reviewer-fast and pre-commit passed; T0 remains pending final full-chain review rather than independently closed. T1 dependency authoring is released from the post-sync HEAD. Learning: continuous WORKER_MAY_COMMIT chains with reviewer-owned continuity require an explicit Codex checkpoint sync/review boundary after each worker commit; this is not worker scope.",
@@ -3249,5 +3250,275 @@
     "recommendedNextWorkOrder": "FPC-SCG-T1 Foundation Plane System-Chain Interlock Registry Decision And Edit",
     "fallbackNextRoadmap": "FPC-SCG-T0 Foundation Plane System-Chain Gap Closure Roadmap",
     "boundary": "Guidance only. No registry edit, checker implementation, runtime/provider/live proof, public-sync, generated workspace state mutation, use-case adapter work, MPI-T6 runtime work, or push is authorized without a separate fresh GC-018/source-verified work order."
+  },
+  "fpcScgT1SystemChainRegistryClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "75fcad20",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_COMPLETION_2026-06-27.md",
+    "registry": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json",
+    "activeWindowRegistry": "governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json",
+    "entriesAdded": [
+      "governance-hook-chain-to-learning-intake",
+      "memory-consolidation-to-learning-signal",
+      "memory-knowledge-graph-to-retrieval",
+      "dir-dice-to-downstream-adapter-eligibility",
+      "epistemic-process-to-claim-update"
+    ],
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit 75fcad20",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync",
+      "check_system_loop_interlock.py PASS with registry count 20"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 machine-check coverage tranche for remaining FPC checker gaps, recommended first source-verified candidate FPC-T3-C06 rawMemoryReleased=false/local-governance autorun coverage or FPC-T3-C02 DICE machine-candidate coverage.",
+    "claimBoundary": "Structural system-loop interlock registry visibility only. No runtime/provider/live/public/use-case readiness, downstream adapter capability, Policy_Local, Document Translator, Model Gateway/Sandbox runtime, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  },
+  "fpcScgT2RawMemoryReleaseInvariantClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T2_RAW_MEMORY_RELEASE_INVARIANT_AUTORUN_COVERAGE_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T2_RAW_MEMORY_RELEASE_INVARIANT_AUTORUN_COVERAGE_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T2_RAW_MEMORY_RELEASE_INVARIANT_AUTORUN_COVERAGE_COMPLETION_2026-06-27.md",
+    "checker": "governance/compat/check_raw_memory_release_invariant.py",
+    "focusedTests": "governance/compat/test_check_raw_memory_release_invariant.py",
+    "autorunCatalog": "governance/compat/agent_autorun_command_catalog.py",
+    "reviewerFastCatalog": "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "focused pytest PASS 25/25 for raw memory invariant and MPI-T5 memory access claim tests",
+      "pre-implementation commit steward PASS before material commit",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 machine-check coverage tranche for FPC-T3-C02 DICE machine-candidate checker. Fallback candidates: FPC-T3-C05 worker-return fast-gate epistemic fixture or FPC-T3-C03 interlock registry coverage checker extension after source verification.",
+    "claimBoundary": "Static governed Markdown assertion coverage only. No runtime/provider/live/public/use-case readiness, MCP/CLI route behavior, durable store mutation, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  },
+  "fpcScgT3DiceMachineCandidateClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T3_DICE_MACHINE_CANDIDATE_CHECKER_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T3_DICE_MACHINE_CANDIDATE_CHECKER_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T3_DICE_MACHINE_CANDIDATE_CHECKER_COMPLETION_2026-06-27.md",
+    "checker": "governance/compat/check_dice_machine_candidates.py",
+    "focusedTests": "governance/compat/test_check_dice_machine_candidates.py",
+    "diceFocusedSuite": "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py",
+    "autorunCatalog": "governance/compat/agent_autorun_command_catalog.py",
+    "reviewerFastCatalog": "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "focused pytest PASS 34/34 for DICE machine-candidate checker and DICE focused suite",
+      "pre-implementation commit steward PASS before material commit",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 machine-check coverage tranche for FPC-T3-C05 worker-return fast-gate epistemic fixture. Fallback candidate: FPC-T3-C03 interlock registry coverage checker extension after expected-chain manifest source verification.",
+    "claimBoundary": "Static DICE/DIR local-governance visibility only. No runtime/provider/live/public/use-case readiness, OCR/provider route behavior, downstream adapter mutation, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  },
+  "fpcScgT4WorkerReturnFastGateEpistemicFixtureClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_COMPLETION_2026-06-27.md",
+    "fastGate": "governance/compat/run_worker_return_fast_gate.py",
+    "focusedTests": "governance/compat/test_run_worker_return_fast_gate.py",
+    "epistemicChecker": "governance/compat/check_epistemic_process_packet.py",
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "focused pytest PASS 18/18 for worker-return fast gate and epistemic checker tests",
+      "worker-return fast gate PASS with epistemic process packet step before reviewer-fast",
+      "pre-implementation commit steward PASS before material commit",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 tranche for FPC-SCG-T5 interlock registry expected-chain manifest source verification before any FPC-T3-C03 checker extension.",
+    "claimBoundary": "Static worker-return fast-gate local-governance visibility only. No runtime/provider/live/public/use-case readiness, registry mutation, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  },
+  "fpcScgT5InterlockExpectedChainManifestClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_COMPLETION_2026-06-27.md",
+    "manifestJson": "docs/reference/CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.json",
+    "manifestMarkdown": "docs/reference/CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.md",
+    "registry": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json",
+    "checkerCandidate": "governance/compat/check_system_loop_interlock.py",
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "manifest parse PASS with five expected chains",
+      "system loop interlock checker PASS on current registry",
+      "pre-implementation commit steward PASS before material commit",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 tranche for FPC-SCG-T6 interlock registry expected-chain checker extension using the T5 manifest as authority.",
+    "claimBoundary": "Static expected-chain manifest source verification only. No checker implementation, registry mutation, runtime/provider/live/public/use-case readiness, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  },
+  "fpcScgT6InterlockExpectedChainCheckerClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T6_INTERLOCK_EXPECTED_CHAIN_CHECKER_EXTENSION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T6_INTERLOCK_EXPECTED_CHAIN_CHECKER_EXTENSION_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T6_INTERLOCK_EXPECTED_CHAIN_CHECKER_EXTENSION_COMPLETION_2026-06-27.md",
+    "checker": "governance/compat/check_system_loop_interlock.py",
+    "focusedTest": "governance/compat/test_check_system_loop_interlock.py",
+    "guidance": "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+    "manifestJson": "docs/reference/CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.json",
+    "registry": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json",
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "system loop interlock checker PASS with manifest comparison enabled",
+      "focused pytest PASS: governance/compat/test_check_system_loop_interlock.py 5 passed",
+      "pre-implementation commit steward PASS before material commit",
+      "post-commit material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified FPC-SCG-T0 roadmap refresh or equivalent next-tranche decision before selecting downstream runtime/use-case/provider/public work.",
+    "claimBoundary": "Manifest-backed structural checker extension only. No registry mutation, manifest expansion, runtime/provider/live/public/use-case readiness, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  },
+  "fpcScgT0FoundationSystemChainGapClosureRoadmapRefreshClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "roadmap": "docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md",
+    "guidance": "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+    "upstreamClosures": [
+      "FPC-SCG-T1 P0 registry visibility at 75fcad20",
+      "FPC-SCG-T2 FPC-T3-C06 raw-memory invariant coverage at be253923",
+      "FPC-SCG-T3 FPC-T3-C02 DICE machine-candidate coverage at be253923",
+      "FPC-SCG-T4 FPC-T3-C05 worker-return fast-gate coverage at be253923",
+      "FPC-SCG-T5 expected-chain manifest source verification at be253923",
+      "FPC-SCG-T6 expected-chain checker extension at be253923"
+    ],
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "system loop interlock checker PASS",
+      "focused pytest PASS: governance/compat/test_check_system_loop_interlock.py 5 passed",
+      "pre-implementation commit steward PASS before material commit",
+      "post-commit material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open fresh GC-018/source-verified FPC-SCG-T7 Foundation Plane System-Chain Acceptance Ledger And Downstream Reopen Gate before any downstream runtime/use-case/provider/public/MPI-T6 runtime work.",
+    "claimBoundary": "Roadmap refresh and next-tranche routing only. No downstream runtime/provider/public/use-case implementation, MPI-T6 runtime, resolver, adapter, package, certification, generated workspace state mutation beyond session sync, public-sync, push, or reopening of P0/C06/C02/C05/T5/T6 without regression evidence."
+  },
+  "fpcScgT7FoundationSystemChainAcceptanceLedgerClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_AND_DOWNSTREAM_REOPEN_GATE_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_AND_DOWNSTREAM_REOPEN_GATE_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_AND_DOWNSTREAM_REOPEN_GATE_COMPLETION_2026-06-27.md",
+    "ledger": "docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json",
+    "checker": "governance/compat/check_fpc_system_chain_acceptance_ledger.py",
+    "focusedTest": "governance/compat/test_check_fpc_system_chain_acceptance_ledger.py",
+    "guidance": "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+    "upstreamClosures": [
+      "FPC-SCG-T1 P0 registry visibility at 75fcad20",
+      "FPC-SCG-T2 FPC-T3-C06 raw-memory invariant coverage at be253923",
+      "FPC-SCG-T3 FPC-T3-C02 DICE machine-candidate coverage at be253923",
+      "FPC-SCG-T4 FPC-T3-C05 worker-return fast-gate coverage at be253923",
+      "FPC-SCG-T5 expected-chain manifest source verification at be253923",
+      "FPC-SCG-T6 expected-chain checker extension at be253923",
+      "FPC-SCG-T0 roadmap refresh at be253923"
+    ],
+    "verification": [
+      "pre-implementation autorun PASS at receipt .cvf/runtime/autorun-receipts/pre-implementation.json",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "focused checker PASS: python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce",
+      "focused pytest PASS: python -m pytest governance/compat/test_check_fpc_system_chain_acceptance_ledger.py -q, 4 passed",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "acceptanceVerdict": "FOUNDATION_SYSTEM_CHAIN_ACCEPTED_BOUNDED",
+    "downstreamGatePosture": "PARKED_UNTIL_OPERATOR_LANE_SELECTION_AND_T7_CHECKER_PASS",
+    "nextAllowedMove": "Hold downstream lanes, or open a fresh GC-018/source-verified downstream-lane selection decision only if the operator selects one specific downstream lane and the FPC system-chain acceptance ledger checker passes on current HEAD.",
+    "claimBoundary": "Acceptance ledger/checker and reopen-gate definition only. No downstream runtime/provider/public/use-case implementation, MPI-T6 runtime, resolver, adapter, package, certification, generated workspace state mutation beyond session sync, public-sync, push, or reopening of P0/C06/C02/C05/T5/T6/T0/T7 without regression evidence."
+  },
+  "fpcDsdT0FoundationDownstreamLaneSelectionClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "roadmap": "docs/roadmaps/CVF_FPC_DSD_T0_FOUNDATION_DOWNSTREAM_LANE_SELECTION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_FPC_DSD_T0_FOUNDATION_DOWNSTREAM_LANE_SELECTION_DECISION_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_DSD_T0_FOUNDATION_DOWNSTREAM_LANE_SELECTION_DECISION_COMPLETION_2026-06-27.md",
+    "selectedLane": "use-case-adapter-public",
+    "nextRecommendedRoadmap": "FPC-UAP-T0 Use-Case Adapter Public Boundary And Dev-Facing Comprehension Roadmap",
+    "upstreamClosure": "FPC-SCG-T7 acceptance ledger and downstream reopen gate at be253923",
+    "verification": [
+      "focused checker PASS: python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce",
+      "pre-implementation autorun PASS at receipt .cvf/runtime/autorun-receipts/pre-implementation.json",
+      "reviewer-fast PASS 40/40",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "liveProofDisposition": "N/A with reason: FPC-DSD-T0 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Downstream lane selection and next-roadmap routing only. No public-sync, no public README/catalog/snapshot edits, no runtime/MCP/CLI/IDE bridge implementation, no provider/live proof, no Policy_Local or Document Translator implementation, no Model Gateway/Sandbox Runtime expansion, no MPI-T6 runtime work, no resolver/adapter/package/certification/registry/checker/generated-state mutation, and no push."
+  },
+  "fpcUapT0UseCaseAdapterPublicBoundaryRoadmapClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "roadmap": "docs/roadmaps/CVF_FPC_UAP_T0_USE_CASE_ADAPTER_PUBLIC_BOUNDARY_AND_DEV_FACING_COMPREHENSION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_FPC_UAP_T0_USE_CASE_ADAPTER_PUBLIC_BOUNDARY_AND_DEV_FACING_COMPREHENSION_ROADMAP_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_UAP_T0_USE_CASE_ADAPTER_PUBLIC_BOUNDARY_AND_DEV_FACING_COMPREHENSION_ROADMAP_COMPLETION_2026-06-27.md",
+    "selectedLane": "use-case-adapter-public",
+    "nextRecommendedTranche": "FPC-UAP-T1 Use-Case Adapter Public Comprehension Surface Inventory And Boundary Work Order",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "upstreamClosure": "FPC-DSD-T0 downstream lane selection at be253923",
+    "verification": [
+      "focused checker PASS: python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce",
+      "pre-implementation autorun PASS at receipt .cvf/runtime/autorun-receipts/pre-implementation.json",
+      "reviewer-fast PASS 40/40",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "liveProofDisposition": "N/A with reason: FPC-UAP-T0 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Public/provenance boundary and dev-facing comprehension roadmap only. No public-sync, no public README/catalog/snapshot edits, no runtime/MCP/CLI/IDE bridge implementation, no provider/live proof, no Policy_Local or Document Translator implementation, no Model Gateway/Sandbox Runtime expansion, no MPI-T6 runtime work, no resolver/adapter/package/certification/registry/checker/generated-state mutation, and no push."
+  },
+  "fpcUapT1UseCaseAdapterPublicComprehensionSurfaceInventoryClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_UAP_T1_USE_CASE_ADAPTER_PUBLIC_COMPREHENSION_SURFACE_INVENTORY_AND_BOUNDARY_WORK_ORDER_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_UAP_T1_USE_CASE_ADAPTER_PUBLIC_COMPREHENSION_SURFACE_INVENTORY_AND_BOUNDARY_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_UAP_T1_USE_CASE_ADAPTER_PUBLIC_COMPREHENSION_SURFACE_INVENTORY_AND_BOUNDARY_COMPLETION_2026-06-27.md",
+    "selectedLane": "use-case-adapter-public",
+    "publicSyncReadOnlyHead": "d86a52980",
+    "publicSyncDecision": "READY_FOR_SEPARATE_PUBLIC_EXPORT_WORK_ORDER",
+    "nextRecommendedTranche": "FPC-UAP-T2 Use-Case Adapter Public Export Work Order For README Catalog Snapshot Boundary Refresh",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "upstreamClosure": "FPC-UAP-T0 public boundary roadmap at be253923",
+    "verification": [
+      "public-sync fetch/status PASS: HEAD d86a52980 equals origin/main d86a52980 and worktree clean",
+      "reviewer-fast PASS 40/40 before material commit",
+      "pre-implementation autorun PASS through commit steward",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "liveProofDisposition": "N/A with reason: FPC-UAP-T1 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Public/provenance surface inventory and boundary decision only. No public-sync edit, no public push, no runtime/provider/live proof, no MPI-T6 runtime work, no Policy_Local or Document Translator implementation, no adapter implementation, no package activation, no certification, no registry/checker/generated-state mutation beyond session sync, and no private provenance evidence export."
+  },
+  "fpcUapT2UseCaseAdapterPublicExportClosure20260627": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "publicSyncCommit": "04d88109317c780ceb2062a257c0e863e2379276",
+    "publicSyncRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "baseline": "docs/baselines/CVF_GC018_FPC_UAP_T2_USE_CASE_ADAPTER_PUBLIC_EXPORT_README_CATALOG_SNAPSHOT_REFRESH_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_UAP_T2_USE_CASE_ADAPTER_PUBLIC_EXPORT_README_CATALOG_SNAPSHOT_REFRESH_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_UAP_T2_USE_CASE_ADAPTER_PUBLIC_EXPORT_README_CATALOG_SNAPSHOT_REFRESH_COMPLETION_2026-06-27.md",
+    "publicChangedPaths": [
+      "README.md",
+      "docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md",
+      "docs/evidence/public-current-state-snapshot-2026-06-27.md"
+    ],
+    "publicExportDisposition": "EXPORTED",
+    "upstreamClosures": [
+      "FPC-UAP-T1 public surface inventory at be253923",
+      "FPC-UAP-T0 public boundary roadmap at be253923",
+      "FPC-DSD-T0 downstream lane selection at be253923"
+    ],
+    "verification": [
+      "public-sync fetch/status PASS before edit: HEAD d86a52980 equals origin/main d86a52980 and worktree clean",
+      "public checks PASS: scripts/check_public_surface.py, check_docs_governance_compat.py, check_markdown_structural_completeness.py, check_public_export_disposition.py, check_memory_access_claim.py, git diff --check",
+      "public-sync push PASS: d86a52980..04d881093 main -> main",
+      "provenance pre-implementation autorun PASS through commit steward before material commit",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "liveProofDisposition": "N/A with reason: FPC-UAP-T2 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Public README/catalog/snapshot documentation export only. No runtime/provider/live proof, no MPI-T6 runtime work, no Policy_Local or Document Translator implementation, no adapter implementation, no package activation, no certification, no registry/checker/generated-state mutation beyond session sync, no raw private package material export, and no push from the provenance workspace."
   }
 }
