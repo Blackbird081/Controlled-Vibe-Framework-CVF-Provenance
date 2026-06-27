@@ -11,6 +11,21 @@ enforced through governance/compat/local_governance_hook_catalog_pre_push.py.
 GC-020 marker: governance/compat/check_agent_handoff_guard_compat.py is
 enforced through governance/compat/local_governance_hook_catalog_pre_push.py.
 
+Compatibility marker block for self-checking guards:
+- governance/compat/check_agent_handoff_guard_compat.py
+- governance/compat/check_boardroom_runtime_governance_compat.py
+- governance/compat/check_extension_package_check.py
+- governance/compat/check_fast_lane_governance_compat.py
+- governance/compat/check_governed_artifact_authoring.py
+- governance/compat/check_knowledge_absorption_priority_compat.py
+- governance/compat/check_markdown_structural_completeness.py
+- governance/compat/check_memory_governance_compat.py
+- governance/compat/check_multi_agent_review_governance_compat.py
+- governance/compat/check_product_value_validation_guard_compat.py
+- governance/compat/check_progress_tracker_sync.py
+- governance/compat/check_session_governance_bootstrap.py
+- governance/compat/check_template_skill_standard_guard_compat.py
+
 Default mode: pre-push
 """
 
