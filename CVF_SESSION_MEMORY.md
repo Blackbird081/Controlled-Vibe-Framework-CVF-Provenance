@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`; active handoff=AGENT_HANDOFF_V24_2026-06-27.md; next allowed move=hold, or open a fresh GC-018/source-verified next tranche only after operator selection; parked checkpoint=P0 registry visibility, FPC-T3-C06 raw-memory invariant coverage, FPC-T3-C02 DICE machine-candidate coverage, FPC-T3-C05 worker-return fast-gate coverage, FPC-T3-C03 expected-chain manifest source verification/checker extension, FPC-SCG-T0 roadmap refresh, FPC-SCG-T7 acceptance ledger/reopen gate, FPC-DSD-T0 downstream lane selection, FPC-UAP-T0 public-boundary roadmap, FPC-UAP-T1 public surface inventory, and FPC-UAP-T2 public export are closed bounded through material commit `be253923`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`; active handoff=AGENT_HANDOFF_V24_2026-06-27.md; next allowed move=hold, or open a fresh GC-018/source-verified downstream-selection tranche only after explicit selection and recorded reopen condition; parked checkpoint=P0 registry visibility, FPC-T3-C06 raw-memory invariant coverage, FPC-T3-C02 DICE machine-candidate coverage, FPC-T3-C05 worker-return fast-gate coverage, FPC-T3-C03 expected-chain manifest source verification/checker extension, FPC-SCG-T0 roadmap refresh, FPC-SCG-T7 acceptance ledger/reopen gate, FPC-DSD-T0 downstream lane selection, FPC-UAP-T0 public-boundary roadmap, FPC-UAP-T1 public surface inventory, FPC-UAP-T2 public export, and FPC-SCG-T8 acceptance-ledger carrier reconciliation are closed bounded through material commit `e278c039`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Current Mode
 
-Current mode marker: `fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`
+Current mode marker: `fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`
 
-Current mode: `fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`
+Current mode: `fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`
 
-`fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`
+`fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`
 
 Previous mode:
 
-`fpc_uap_t1_public_surface_inventory_closed_pass_bounded_pending_fpc_uap_t2_public_export_or_hold`
+`fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`
 
 ## Latest Closed Work
 
@@ -92,12 +92,13 @@ Previous mode:
 | FPC-UAP-T0 Use-Case Adapter Public Boundary And Dev-Facing Comprehension Roadmap | `be253923` | CLOSED_PASS_BOUNDED |
 | FPC-UAP-T1 Use-Case Adapter Public Comprehension Surface Inventory And Boundary | `be253923` | CLOSED_PASS_BOUNDED |
 | FPC-UAP-T2 Use-Case Adapter Public Export README Catalog Snapshot Refresh | `be253923` | CLOSED_PASS_BOUNDED; public `04d88109317c780ceb2062a257c0e863e2379276` |
+| FPC-SCG-T8 Foundation System-Chain Acceptance Ledger Provenance Carrier Reconciliation | `e278c039` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`
+Mode: `fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`
 
-Next allowed move: hold, or open a fresh GC-018/source-verified next tranche only after operator selection. FPC-UAP-T2 is closed bounded at provenance material commit `be253923`; public-sync commit `04d88109317c780ceb2062a257c0e863e2379276` updated `README.md`, `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, and `docs/evidence/public-current-state-snapshot-2026-06-27.md`. Recommended posture is to return to foundation-plane system-chain priorities or a new governed downstream-selection decision, not runtime/provider/live/MPI-T6/package activation by default. P0/C06/C02/C05/T5/T6/T0/T7, FPC-DSD-T0, FPC-UAP-T0, FPC-UAP-T1, and FPC-UAP-T2 remain closed bounded unless recorded evidence regresses. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: hold, or open a fresh GC-018/source-verified downstream-selection tranche only after explicit selection and recorded reopen condition. FPC-SCG-T8 is closed bounded at material commit `e278c039`; it reconciled the T7 acceptance ledger carrier evidence and hardened the T7 acceptance-ledger checker against stale carrier rows. FPC-UAP-T2 remains closed bounded at provenance material commit `be253923`; public-sync commit `04d88109317c780ceb2062a257c0e863e2379276` updated `README.md`, `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, and `docs/evidence/public-current-state-snapshot-2026-06-27.md`. Recommended posture is not runtime/provider/live/MPI-T6/package activation by default. P0/C06/C02/C05/T5/T6/T0/T7/T8, FPC-DSD-T0, FPC-UAP-T0, FPC-UAP-T1, and FPC-UAP-T2 remain closed bounded unless recorded evidence regresses. LHW24 remains the latest closed numbered LHW wave.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -105,7 +106,7 @@ No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resol
 
 ## Parked Checkpoint
 
-FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 closed FPC-T3-C06 raw-memory-release invariant autorun coverage at material commit `be253923`. FPC-SCG-T3 closed FPC-T3-C02 DICE machine-candidate coverage at material commit `be253923`. FPC-SCG-T4 closed FPC-T3-C05 worker-return fast-gate epistemic fixture coverage at material commit `be253923`. FPC-SCG-T5 closed FPC-T3-C03 expected-chain manifest source verification at material commit `be253923`. FPC-SCG-T6 closed FPC-T3-C03 expected-chain checker extension at material commit `be253923`. FPC-SCG-T0 closed the foundation system-chain roadmap refresh at material commit `be253923`. FPC-SCG-T7 closed the acceptance ledger and downstream reopen gate at material commit `be253923`. FPC-DSD-T0 selected `use-case-adapter-public` as the next valuable downstream lane at material commit `be253923`. FPC-UAP-T0 closed the public/provenance boundary and dev-facing comprehension roadmap at material commit `be253923`. FPC-UAP-T1 closed the public comprehension surface inventory and boundary decision at material commit `be253923`. FPC-UAP-T2 closed the bounded public README/catalog/snapshot export at provenance material commit `be253923` and public-sync commit `04d88109317c780ceb2062a257c0e863e2379276`. Runtime-provider-live lanes, package activation, and MPI-T6 runtime work remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 closed FPC-T3-C06 raw-memory-release invariant autorun coverage at material commit `be253923`. FPC-SCG-T3 closed FPC-T3-C02 DICE machine-candidate coverage at material commit `be253923`. FPC-SCG-T4 closed FPC-T3-C05 worker-return fast-gate epistemic fixture coverage at material commit `be253923`. FPC-SCG-T5 closed FPC-T3-C03 expected-chain manifest source verification at material commit `be253923`. FPC-SCG-T6 closed FPC-T3-C03 expected-chain checker extension at material commit `be253923`. FPC-SCG-T0 closed the foundation system-chain roadmap refresh at material commit `be253923`. FPC-SCG-T7 closed the acceptance ledger and downstream reopen gate at material commit `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T0 selected `use-case-adapter-public` as the next valuable downstream lane at material commit `be253923`. FPC-UAP-T0 closed the public/provenance boundary and dev-facing comprehension roadmap at material commit `be253923`. FPC-UAP-T1 closed the public comprehension surface inventory and boundary decision at material commit `be253923`. FPC-UAP-T2 closed the bounded public README/catalog/snapshot export at provenance material commit `be253923` and public-sync commit `04d88109317c780ceb2062a257c0e863e2379276`. Runtime-provider-live lanes, package activation, and MPI-T6 runtime work remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Knowledge Absorption Priority Boundary
 

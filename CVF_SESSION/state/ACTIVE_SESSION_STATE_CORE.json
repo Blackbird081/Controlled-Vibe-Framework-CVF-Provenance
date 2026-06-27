@@ -64,8 +64,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche",
-  "previousMode": "fpc_uap_t1_public_surface_inventory_closed_pass_bounded_pending_fpc_uap_t2_public_export_or_hold",
+  "currentMode": "fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection",
+  "previousMode": "fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

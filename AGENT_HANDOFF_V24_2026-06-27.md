@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V23_2026-06-26.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`; active handoff=AGENT_HANDOFF_V24_2026-06-27.md; next allowed move=hold, or open a fresh GC-018/source-verified next tranche only after operator selection; parked checkpoint=P0 registry visibility, FPC-T3-C06 raw-memory invariant coverage, FPC-T3-C02 DICE machine-candidate coverage, FPC-T3-C05 worker-return fast-gate coverage, FPC-T3-C03 expected-chain manifest source verification/checker extension, FPC-SCG-T0 roadmap refresh, FPC-SCG-T7 acceptance ledger/reopen gate, FPC-DSD-T0 downstream lane selection, FPC-UAP-T0 public-boundary roadmap, FPC-UAP-T1 public surface inventory, and FPC-UAP-T2 public export are closed bounded through material commit `be253923`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime-provider-live lanes and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`; active handoff=AGENT_HANDOFF_V24_2026-06-27.md; next allowed move=hold, or open a fresh GC-018/source-verified downstream-selection tranche only after explicit selection and recorded reopen condition; parked checkpoint=P0 registry visibility, FPC-T3-C06 raw-memory invariant coverage, FPC-T3-C02 DICE machine-candidate coverage, FPC-T3-C05 worker-return fast-gate coverage, FPC-T3-C03 expected-chain manifest source verification/checker extension, FPC-SCG-T0 roadmap refresh, FPC-SCG-T7 acceptance ledger/reopen gate, FPC-DSD-T0 downstream lane selection, FPC-UAP-T0 public-boundary roadmap, FPC-UAP-T1 public surface inventory, FPC-UAP-T2 public export, and FPC-SCG-T8 acceptance-ledger carrier reconciliation are closed bounded through material commit `e278c039`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime-provider-live lanes and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Current State
 
@@ -29,10 +29,11 @@ Startup acknowledged: current mode=`fpc_uap_t2_public_export_closed_pass_bounded
 | FPC-UAP-T0 public boundary roadmap closure | `be253923` |
 | FPC-UAP-T1 public surface inventory closure | `be253923` |
 | FPC-UAP-T2 public export closure | `be253923`; public `04d88109317c780ceb2062a257c0e863e2379276` |
+| FPC-SCG-T8 acceptance-ledger carrier reconciliation closure | `e278c039` |
 
 ## Current Mode
 
-`fpc_uap_t2_public_export_closed_pass_bounded_pending_hold_or_fresh_governed_next_tranche`
+`fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`
 
 ## Purpose
 
@@ -903,3 +904,78 @@ material commits.
 This handoff update records GC-020 remote-tracking marker alignment only.
 Complete canonical state lives in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Provenance push still requires split-range pre-push evidence.
+
+## FPC-SCG-T8 Session Sync - 2026-06-27
+
+Material commit `e278c039` closed FPC-SCG-T8 Foundation System-Chain
+Acceptance Ledger Provenance Carrier Reconciliation as
+`CLOSED_PASS_BOUNDED`.
+
+T8 reconciled
+`docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json`
+so FPC-SCG-T0 and FPC-SCG-T2 through FPC-SCG-T6 use the current provenance
+carrier `be253923`; FPC-SCG-T1 remains anchored to `75fcad20`. It also
+hardened `governance/compat/check_fpc_system_chain_acceptance_ledger.py` with
+`EXPECTED_MATERIAL_COMMITS` and added stale-carrier regression coverage in
+`governance/compat/test_check_fpc_system_chain_acceptance_ledger.py`.
+
+Validation summary:
+
+- `python governance\compat\check_fpc_system_chain_acceptance_ledger.py --enforce` PASS with 0 violations.
+- `python -m pytest governance\compat\test_check_fpc_system_chain_acceptance_ledger.py -q` PASS with 5 tests.
+- `python governance\compat\run_agent_autorun_workflow_gate.py --phase pre-implementation --base 1f229fc6 --head HEAD --serial` PASS.
+- `python governance\compat\run_agent_commit_steward_preflight.py --mode implementation --base 1f229fc6 --head HEAD --enforce` PASS.
+- Pre-commit hook PASS 59/59 at material commit `e278c039`.
+
+Next allowed move: hold, or open a fresh GC-018/source-verified
+downstream-selection tranche only after explicit selection and recorded reopen
+condition. Runtime/provider/live/MPI-T6, package activation, Policy_Local,
+Document Translator, adapter implementation, certification, and public-sync
+mutation remain parked unless separately authorized.
+
+## Core Guard Self-Protection Authorization - FPC-SCG-T8 Session Sync
+
+Authorized guard-maintenance scope: update active handoff continuity after
+FPC-SCG-T8 material commit `e278c039` only.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V24_2026-06-27.md`
+
+Operator authorization: current session-sync is required by GC-020 after
+material commit `e278c039`.
+
+Rollback boundary: if this sync is rejected, revert only this handoff-sync
+section and matching active-session source updates. Do not revert material
+commit `e278c039`, FPC-UAP-T2 material commit `be253923`, public-sync commit
+`04d88109317c780ceb2062a257c0e863e2379276`, or prior FPC-SCG/FPC-DSD/FPC-UAP
+material commits.
+
+## Agent Operation Trace Block - FPC-SCG-T8 Session Sync
+
+| Field | Value |
+|---|---|
+| Actor | Codex |
+| Provider or surface | OpenAI Codex CLI |
+| Session or invocation | 2026-06-27 FPC-SCG-T8 session-sync |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, apply_patch, generator, governance gates |
+| Target paths | `AGENT_HANDOFF_V24_2026-06-27.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/fpcScgT8AcceptanceLedgerCarrierReconciliationClosure20260627.json` |
+| Allowed scope source | GC-020 session continuity after material commit `e278c039` |
+| Before status evidence | push-readiness preview blocked because active handoff did not contain current HEAD `e278c039` |
+| After status evidence | session-sync gates before commit |
+| Diff evidence | `git diff --name-status e278c039..HEAD` |
+| Approval boundary | active session continuity sync only |
+| Claim boundary | handoff/front-door/state sync only; no runtime/provider/live/public-sync/generated workspace state beyond active session/resolver/adapter/certification/Policy_Local/Document Translator/Model Gateway/Sandbox/DICE/MPI-T6 implementation |
+| Agent type | session-sync steward |
+| Invocation ID | `fpc-scg-t8-session-sync-2026-06-27` |
+| Expected manifest | `AGENT_HANDOFF_V24_2026-06-27.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/fpcScgT8AcceptanceLedgerCarrierReconciliationClosure20260627.json` |
+| Actual changed set | `AGENT_HANDOFF_V24_2026-06-27.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/fpcScgT8AcceptanceLedgerCarrierReconciliationClosure20260627.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Claim Boundary - FPC-SCG-T8 Session Sync
+
+This handoff update records FPC-SCG-T8 closure and next-move routing only.
+Complete canonical state lives in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+Provenance push still requires pre-push evidence on the current range.
