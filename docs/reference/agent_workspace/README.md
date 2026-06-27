@@ -81,6 +81,10 @@ Workspace layer full package absorption inventory:
 
 `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md`
 
+Local workspace projection read-model decision:
+
+`docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`
+
 External-agent review context:
 
 `docs/reference/external_agent_review/README.md`
@@ -146,6 +150,7 @@ Read this folder when a task:
 | `CVF_SESSION/agent_workspace/runtime_queue/queues/README.md` | Queue-family index |
 | `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md` | Operator-facing read-model plan |
 | `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md` | CVF-owned absorption map for the local external workspace package |
+| `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md` | CVF-owned projection read-model decision after full package absorption |
 | `docs/reference/external_agent_review/README.md` | External-agent context and public/private review boundary |
 | `governance/compat/check_agent_workspace_design.py` | Machine-enforced local view for Agent Workspace Design Control Block |
 | `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json` | Generated compact active workspace state view |
