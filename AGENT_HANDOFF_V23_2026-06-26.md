@@ -46,6 +46,7 @@ Startup acknowledged: current mode=`foundation_plane_system_chain_gap_guidance_a
 | GC-032 pre-push marker repair | `ab76d077552213c8de1dcf7b567394198c985df8` |
 | GC-020 pre-push marker repair | `d7eeb790148f0f8bfb76cd258e7e1d5e13bc403d` |
 | Pre-push compatibility marker block repair | `bc0f7c4447c698286496d89389c4df2b8d4aa885` |
+| Pre-push catalog marker coverage repair | `cd9e84cc8c6ae3edcfc69ea6f41547c1e3e55793` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
@@ -400,7 +401,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base bc0f7c44 --head HEAD --enforce` | PASS before handoff-sync commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base cd9e84cc --head HEAD --enforce` | PASS before handoff-sync commit |
 
 ## Agent Operation Trace Block
 
@@ -408,18 +409,18 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 pre-push compatibility marker block handoff-sync |
+| Session or invocation | 2026-06-27 pre-push catalog marker coverage handoff-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
-| Allowed scope source | GC-020 active handoff HEAD marker requirement after pre-push compatibility marker block repair commit `bc0f7c44` |
-| Before status evidence | material marker block repair committed at `bc0f7c44`; active-session gate requires handoff to track current material HEAD before provenance push |
+| Allowed scope source | GC-020 active handoff HEAD marker requirement after pre-push catalog marker coverage repair commit `cd9e84cc` |
+| Before status evidence | material marker coverage repair committed at `cd9e84cc`; active-session gate requires handoff to track current material HEAD before provenance push |
 | After status evidence | handoff-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | handoff-sync only |
 | Claim boundary | handoff HEAD marker sync only; no registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 pre-push marker block handoff-sync |
+| Invocation ID | local Codex session 2026-06-27 pre-push catalog marker handoff-sync |
 | Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Manifest delta | MATCH |
@@ -427,18 +428,18 @@ Read in this order:
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: active handoff HEAD marker sync after
-pre-push compatibility marker block repair only.
+pre-push catalog marker coverage repair only.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V23_2026-06-26.md`
 
 Operator authorization: user requested updating local CVF to GitHub; material
-marker block repair commit `bc0f7c44` required the active handoff to record the
+marker coverage repair commit `cd9e84cc` required the active handoff to record the
 latest HEAD before provenance push could proceed.
 
 Rollback boundary: revert the handoff-sync commit only; do not revert material
-repair commit `bc0f7c44`.
+repair commit `cd9e84cc`.
 
 ## Claim Boundary
 
