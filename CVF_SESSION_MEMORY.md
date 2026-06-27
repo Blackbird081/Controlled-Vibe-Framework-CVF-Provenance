@@ -95,6 +95,14 @@ No registry edit, checker implementation, runtime/MCP/CLI/IDE bridge implementat
 
 Foundation Plane System-Chain Gap Priority Guidance is active at material commit `2fc14fde`. The next tranche should prioritize P0/P1 foundation system-chain gaps before downstream runtime, provider, public-sync, use-case, or MPI-T6 runtime work. MPI-T6 remains parked unless a recorded reopen condition is verified.
 
+## Knowledge Absorption Priority Boundary
+
+broad external knowledge absorption remains a governed, trigger-based lane.
+Current blocked work classes include runtime/provider/live expansion,
+public-sync content mutation, downstream use-case work, registry mutation,
+checker implementation, and MPI-T6 runtime work unless separately authorized by
+fresh GC-018/source-verified work order.
+
 ## Continuity Markers
 
 | Field | Value |
