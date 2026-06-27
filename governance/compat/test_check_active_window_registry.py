@@ -26,6 +26,7 @@ class CheckActiveWindowRegistryTests(unittest.TestCase):
         (self.repo_root / "governance" / "compat").mkdir(parents=True, exist_ok=True)
         (self.repo_root / "governance" / "toolkit" / "05_OPERATION").mkdir(parents=True, exist_ok=True)
         (self.repo_root / "docs" / "reference").mkdir(parents=True, exist_ok=True)
+        (self.repo_root / "docs" / "reference" / "archive").mkdir(parents=True, exist_ok=True)
         (self.repo_root / ".github" / "workflows").mkdir(parents=True, exist_ok=True)
         (self.repo_root / "scripts").mkdir(parents=True, exist_ok=True)
         (self.repo_root / "docs" / "logs").mkdir(parents=True, exist_ok=True)
@@ -33,10 +34,14 @@ class CheckActiveWindowRegistryTests(unittest.TestCase):
 
         (self.repo_root / "docs" / "CVF_INCREMENTAL_TEST_LOG.md").write_text("log\n", encoding="utf-8")
         (self.repo_root / "docs" / "reviews" / "cvf_phase_governance" / "CVF_CONFORMANCE_TRACE_2026-03-07.md").write_text("trace\n", encoding="utf-8")
+        (self.repo_root / "docs" / "reference" / "CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md").write_text("standard\n", encoding="utf-8")
+        (self.repo_root / "docs" / "reference" / "CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md").write_text("standard\n", encoding="utf-8")
         (self.repo_root / "governance" / "compat" / "check_incremental_test_log_rotation.py").write_text("print('ok')\n", encoding="utf-8")
         (self.repo_root / "governance" / "compat" / "check_conformance_trace_rotation.py").write_text("print('ok')\n", encoding="utf-8")
+        (self.repo_root / "governance" / "compat" / "check_active_archive_hygiene.py").write_text("print('ok')\n", encoding="utf-8")
         (self.repo_root / "scripts" / "rotate_cvf_incremental_test_log.py").write_text("print('ok')\n", encoding="utf-8")
         (self.repo_root / "scripts" / "rotate_cvf_conformance_trace.py").write_text("print('ok')\n", encoding="utf-8")
+        (self.repo_root / "scripts" / "cvf_active_archive.py").write_text("print('ok')\n", encoding="utf-8")
         (self.repo_root / "governance" / "toolkit" / "05_OPERATION" / "CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md").write_text(
             "**Applies to:** `docs/CVF_INCREMENTAL_TEST_LOG.md` and `docs/logs/CVF_INCREMENTAL_TEST_LOG_ARCHIVE_*.md`\n\n"
             "canonical entrypoint\nactive working window\n",
@@ -128,6 +133,52 @@ class CheckActiveWindowRegistryTests(unittest.TestCase):
         self.registry_path.write_text(json.dumps(current, indent=2), encoding="utf-8")
         report = self._build_report(baseline=baseline)
         self.assertTrue(any(v["type"] == "window_mutated_from_baseline" for v in report["violations"]))
+
+    def test_allows_binding_reference_windows_to_share_archive_hygiene(self) -> None:
+        current = json.loads(self.registry_path.read_text(encoding="utf-8"))
+        current["classes"].append({"id": "BINDING_REFERENCE_ACTIVE_WINDOW", "description": "binding"})
+        current["windows"].extend(
+            [
+                {
+                    "id": "agent_autorun_workflow_control_standard_active_reference",
+                    "windowClass": "BINDING_REFERENCE_ACTIVE_WINDOW",
+                    "activePath": "docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md",
+                    "archiveDir": "docs/reference/archive",
+                    "archivePattern": "^CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28\\.md$",
+                    "rotationGuard": "governance/compat/check_active_archive_hygiene.py",
+                    "rotationCheck": "governance/compat/check_active_archive_hygiene.py",
+                    "rotationScript": "scripts/cvf_active_archive.py",
+                    "protectionMode": "PERMANENT_ACTIVE_WINDOW",
+                    "status": "ACTIVE",
+                },
+                {
+                    "id": "agent_error_to_governance_learning_philosophy_active_reference",
+                    "windowClass": "BINDING_REFERENCE_ACTIVE_WINDOW",
+                    "activePath": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+                    "archiveDir": "docs/reference/archive",
+                    "archivePattern": "^CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28\\.md$",
+                    "rotationGuard": "governance/compat/check_active_archive_hygiene.py",
+                    "rotationCheck": "governance/compat/check_active_archive_hygiene.py",
+                    "rotationScript": "scripts/cvf_active_archive.py",
+                    "protectionMode": "PERMANENT_ACTIVE_WINDOW",
+                    "status": "ACTIVE",
+                },
+            ]
+        )
+        self.registry_path.write_text(json.dumps(current, indent=2), encoding="utf-8")
+        report = self._build_report()
+        self.assertTrue(report["compliant"], report["violations"])
+
+    def test_blocks_duplicate_dedicated_rotation_guard(self) -> None:
+        (self.repo_root / "docs" / "CVF_INCREMENTAL_TEST_LOG_COPY.md").write_text("log\n", encoding="utf-8")
+        current = json.loads(self.registry_path.read_text(encoding="utf-8"))
+        duplicate = dict(current["windows"][0])
+        duplicate["id"] = "incremental_test_log_duplicate_active_window"
+        duplicate["activePath"] = "docs/CVF_INCREMENTAL_TEST_LOG_COPY.md"
+        current["windows"].append(duplicate)
+        self.registry_path.write_text(json.dumps(current, indent=2), encoding="utf-8")
+        report = self._build_report()
+        self.assertTrue(any(v["type"] == "duplicate_rotation_guard" for v in report["violations"]))
 
 
 if __name__ == "__main__":

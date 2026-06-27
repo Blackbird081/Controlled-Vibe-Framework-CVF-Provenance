@@ -35,6 +35,7 @@ ROTATION_GUARD_DIR = REPO_ROOT / "governance" / "toolkit" / "05_OPERATION"
 
 ALLOWED_PROTECTION_MODES = {"PERMANENT_ACTIVE_WINDOW"}
 ALLOWED_STATUSES = {"ACTIVE", "SUPERSEDED", "RETIRED"}
+SHARED_ROTATION_GUARD_WINDOW_CLASSES = {"BINDING_REFERENCE_ACTIVE_WINDOW"}
 ROTATION_GUARD_GLOB = "CVF_*ROTATION_GUARD.md"
 ACTIVE_WINDOW_TRIGGER_MARKERS = (
     "canonical entrypoint",
@@ -215,6 +216,7 @@ def build_report() -> dict[str, Any]:
         active_path = entry["activePath"]
         archive_pattern = entry["archivePattern"]
         rotation_guard = entry["rotationGuard"]
+        shared_rotation_guard_allowed = window_class in SHARED_ROTATION_GUARD_WINDOW_CLASSES
 
         if window_id in window_ids:
             violations.append(
@@ -236,7 +238,7 @@ def build_report() -> dict[str, Any]:
             )
         active_paths.add(active_path)
 
-        if rotation_guard in rotation_guards:
+        if not shared_rotation_guard_allowed and rotation_guard in rotation_guards:
             violations.append(
                 {
                     "type": "duplicate_rotation_guard",
@@ -244,8 +246,9 @@ def build_report() -> dict[str, Any]:
                     "message": f"Multiple active windows point to the same rotation guard `{rotation_guard}`.",
                 }
             )
-        rotation_guards.add(rotation_guard)
-        window_map_by_guard[rotation_guard] = entry
+        if not shared_rotation_guard_allowed:
+            rotation_guards.add(rotation_guard)
+            window_map_by_guard[rotation_guard] = entry
 
         if window_class not in class_ids:
             violations.append(
