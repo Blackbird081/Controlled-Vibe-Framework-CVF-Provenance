@@ -35,7 +35,9 @@ any surface.
 MKG7 closed (CLOSED_PASS_BOUNDED) and owns the LPF Memory operational contract. MPI closes
 three integration gaps MKG7 left untouched: (1) no single front-door map, (2) Corpus Scan
 Registry not reachable through Memory readout (MPI-T2, helper implemented), (3) no external
-read contract (MPI-T3, active reference). MPI-T1 addresses gap (1) only.
+read contract (MPI-T3, active reference), and (4) no current parent-map record
+for the already implemented federated helper (MPI-T4, reconciled on
+2026-06-27). MPI-T1 originally addressed gap (1) only.
 
 ## How To Use This Map
 
@@ -68,6 +70,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 | LPF Memory readout projection | IDX-4 support layer | RUNNING (paired with route) | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/memory-runtime-readout.ts` | called by readout route only |
 | LPF durable store | (future IDX-4 input) | CONTRACT_ONLY (present, fail-closed, UNWIRED) | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | not wired; no active read/write route |
 | Corpus Scan Registry / GC-051 | IDX-1 CORPUS_FAMILY_INDEX | RUNNING (generated aggregate) | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` from `registry/entries/*.json` | read directly; read-only projection into Memory readout candidates available via MPI-T2 helper `scan-registry-memory-projection.ts` (not yet route-wired) |
+| Federated Memory read helper | IDX-4 support layer | RUNNING (local helper, not route-wired) | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.ts` | direct library call by separately authorized local caller/tests only |
 | LSC signal reference and helper readout | (signal reference; adapterContractOnly) | RUNNING helper stdout; CONTRACT_ONLY adapter | `docs/reference/learning_signal_chain/`; `governance/compat/run_agent_automation_assist.py` | Python stdout only; adapterContractOnly=true |
 | docs/ GC-022 memory records | IDX-6 (absorption/review records) | RUNNING (human read) | `docs/reference/CVF_MEMORY_RECORD_CLASSIFICATION.md` | read directly by agents and humans; GC-023 applies |
 | Governed docs and active markdown | IDX-2 PLANE_OWNER_MAP support | RUNNING (human read, source-of-truth) | GC-023: `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md` | read directly; NOT the fast retrieval layer |
@@ -148,7 +151,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 | CI1-T11 / MLW0 / MLW1-MLW6 | CLOSED (predecessor authority) | absorption closed; cite as authority, not as runtime |
 | Scan-registry read projection | RUNNING (helper) | MPI-T2 helper `scan-registry-memory-projection.ts` produces readout-compatible candidates; deterministic, read-only, derived view; not auto-wired into the route |
 | External read contract (LSC read side) | ACTIVE_REFERENCE (MPI-T3) | `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md`; `adapterContractOnly=true`; no CLI/MCP adapter implementation |
-| Federated helper | PARKED (MPI-T4) | not implemented; separate GC-018 after MPI-T1 |
+| Federated helper | RUNNING (local helper, not route-wired) | `buildFederatedMemoryRead` composes caller-supplied LPF candidates and caller-supplied parsed scan-registry entries; no route, filesystem, provider, registry-write, durable-store, adapter, or public behavior |
 
 ## MPI Tranche Progression
 
@@ -158,7 +161,7 @@ Source authority: `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-
 | MPI-T1 | Memory Plane front-door map (this document) | CLOSED_PASS_BOUNDED; reviewer correction applied |
 | MPI-T2 | Scan-registry read projection through Memory readout surface | CLOSED_PASS_BOUNDED; read-only derived view, not route-wired |
 | MPI-T3 | External-agent read contract (read side mirroring LSC-T6) | ACTIVE_REFERENCE -- `adapterContractOnly=true`; no CLI/MCP adapter implementation |
-| MPI-T4 | Federated helper for memory + scan-registry federated read | PARKED -- separate GC-018 required |
+| MPI-T4 | Federated helper for memory + scan-registry federated read | CLOSED_PASS_BOUNDED; current-state reconciled on 2026-06-27; no route wiring or adapter behavior |
 
 ## External Knowledge Intake Routing
 
@@ -181,7 +184,7 @@ surface. It does not authorize:
 
 - runtime projection, helper, test, schema, route, registry write, durable write, or generator run;
 - provider/live proof, public-sync, CLI/MCP adapter behavior, or external-agent adapter implementation;
-- any MPI-T4 work or MPI-T2/MPI-T3 runtime expansion;
+- any MPI-T4 expansion beyond the existing local helper, or any MPI-T2/MPI-T3 runtime expansion;
 - re-absorption of legacy artifacts or direct legacy runtime promotion;
 - new vector DB, embedding index, or graph persistence capability.
 
@@ -193,22 +196,22 @@ accepting.
 
 | Field | Evidence |
 |---|---|
-| Actor | worker role; reviewer correction applied by reviewer/closer |
+| Actor | Codex reviewer/closer |
 | Provider or surface | local workspace |
-| Session or invocation | MPI-T1 Memory Plane Front-Door Map, 2026-06-21 |
+| Session or invocation | MPI-T4 current-state reconciliation, 2026-06-27 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | documentation file creation and reviewer apply_patch correction |
+| Command or tool surface | source reads, focused Vitest, TypeScript check, apply_patch, governance gates |
 | Target paths | `docs/reference/CVF_MEMORY_PLANE_MAP.md` |
-| Allowed scope source | `docs/work_orders/CVF_WO_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_2026-06-21.md`; `docs/baselines/CVF_GC018_MPI_T1_MEMORY_PLANE_FRONT_DOOR_MAP_2026-06-21.md` |
-| Before status evidence | HEAD `acb2b980`; map did not exist before worker execution |
-| After status evidence | map created as POINTER_RECORD; reviewer corrected stale BLI-01 wording and MPI-T1 status row |
-| Diff evidence | new reference file plus reviewer correction; no runtime/source/test path touched |
-| Approval boundary | documentation/reference navigation only; reviewer correction inside closure scope |
-| Claim boundary | map is POINTER_RECORD navigation only; no runtime/provider/public/adapter/registry/durable claim |
-| Agent type | worker plus reviewer/closer correction |
-| Invocation ID | mpi-t1-memory-plane-map-2026-06-21 |
-| Expected manifest | `docs/reference/CVF_MEMORY_PLANE_MAP.md` |
-| Actual changed set | `docs/reference/CVF_MEMORY_PLANE_MAP.md` |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_CURRENT_STATE_RECONCILIATION_FOR_CODEX_2026-06-27.md`; `docs/baselines/CVF_GC018_MPI_T4_CURRENT_STATE_RECONCILIATION_2026-06-27.md` |
+| Before status evidence | HEAD `6b9176bd`; map still recorded MPI-T4 as PARKED |
+| After status evidence | map records current MPI-T4 local helper as RUNNING but not route-wired |
+| Diff evidence | current-state reconciliation diff; no runtime/source/test path changed |
+| Approval boundary | parent navigation reconciliation only |
+| Claim boundary | map remains POINTER_RECORD navigation; no route/provider/public/adapter/registry/durable expansion |
+| Agent type | single-agent dispatcher/implementer/reviewer/closer |
+| Invocation ID | mpi-t4-current-state-reconciliation-2026-06-27 |
+| Expected manifest | `docs/reference/CVF_MEMORY_PLANE_MAP.md`; `docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md`; `docs/baselines/CVF_GC018_MPI_T4_CURRENT_STATE_RECONCILIATION_2026-06-27.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_CURRENT_STATE_RECONCILIATION_FOR_CODEX_2026-06-27.md`; `docs/reviews/CVF_MPI_T4_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md` |
+| Actual changed set | Memory Plane map; MPI parent roadmap; MPI-T4 reconciliation baseline; work order; completion review |
 | Manifest delta | MATCH |
 
 ## Public Export Disposition
