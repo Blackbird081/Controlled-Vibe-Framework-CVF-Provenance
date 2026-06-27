@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V24_2026-06-27.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_prg_t0_parked_reopen_gate_systemization_closed_pass_bounded_pending_prg_t1_source_inventory`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=open fresh GC-018/source-verified FPC-PRG-T1 Parked Reopen Condition Source Inventory only; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, and PRG-T0 are closed bounded through material commit `8d4ed2f4`; public repo remains current for UAP public comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, checker implementation, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`fpc_prg_t1_parked_reopen_condition_source_inventory_closed_pass_bounded_pending_prg_t2_checker`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=FPC-PRG-T2 Parked Reopen Gate Checker only; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, PRG-T0, and PRG-T1 are closed bounded through material commit `ca60e1fd`; public repo remains current for UAP public comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, hook wiring, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Current State
 
@@ -20,14 +20,14 @@ Startup acknowledged: current mode=`fpc_prg_t0_parked_reopen_gate_systemization_
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Current local/remote base before V25 rotation | `743b24ad` |
 | V25 root exposure classification | `f7f4294d` |
-| Latest material closure | `8d4ed2f4` FPC-PRG-T0 parked reopen gate systemization |
+| Latest material closure | `ca60e1fd` FPC-PRG-T1 parked reopen condition source inventory |
 | Latest session sync before V25 rotation | `743b24ad` |
 | Public UAP comprehension export | `04d88109317c780ceb2062a257c0e863e2379276` |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`fpc_prg_t0_parked_reopen_gate_systemization_closed_pass_bounded_pending_prg_t1_source_inventory`
+`fpc_prg_t1_parked_reopen_condition_source_inventory_closed_pass_bounded_pending_prg_t2_checker`
 
 ## Purpose
 
@@ -62,8 +62,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Latest Work / Changes
 
-Latest material closure: commit `8d4ed2f4` closed FPC-PRG-T0 Parked Reopen
-Gate Systemization Roadmap as `CLOSED_PASS_BOUNDED`.
+Latest material closure: commit `ca60e1fd` closed FPC-PRG-T1 Parked Reopen
+Condition Source Inventory as `CLOSED_PASS_BOUNDED`.
 
 Prior material closure: commit `24726307` closed FPC-DSD-T1 Foundation
 Downstream Post-Public-Export Lane Selection Decision as
@@ -77,8 +77,8 @@ Prerequisite maintenance commit: `f7f4294d` classified
 registry so the new active handoff can exist as a root file without P3 drift.
 
 Current session-sync change: refresh active startup/state pointers and this
-handoff so next work routes to PRG-T1 inventory before any checker
-implementation or downstream runtime lane.
+handoff so next work routes to PRG-T2 checker before any hook wiring or
+downstream runtime lane.
 
 ## Latest Closed Work
 
@@ -87,20 +87,19 @@ implementation or downstream runtime lane.
 | FPC-SCG-T8 acceptance-ledger carrier reconciliation | `e278c039` | CLOSED_PASS_BOUNDED |
 | FPC-DSD-T1 downstream post-public-export lane selection | `24726307` | CLOSED_PASS_BOUNDED; decision `HOLD_DOWNSTREAM_IMPLEMENTATION` |
 | FPC-PRG-T0 parked reopen gate systemization | `8d4ed2f4` | CLOSED_PASS_BOUNDED; decision `SYSTEMIZE_PARKED_REOPEN_GATE_BEFORE_DOWNSTREAM_IMPLEMENTATION` |
+| FPC-PRG-T1 parked reopen condition source inventory | `ca60e1fd` | CLOSED_PASS_BOUNDED; decision `INVENTORY_REOPEN_CONDITIONS_BEFORE_CHECKER_IMPLEMENTATION` |
 | DSD-T1 session sync | `743b24ad` | CLOSED_PASS |
 | V25 root exposure classification | `f7f4294d` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Open fresh GC-018/source-verified FPC-PRG-T1 Parked Reopen Condition Source
-Inventory only.
+FPC-PRG-T2 Parked Reopen Gate Checker only.
 
-PRG-T1 must inventory lane IDs, recorded condition text, owning artifacts,
-evidence fields, and forbidden-until-gate-passes lists from the active front
-door, active handoff, DSD-T1, T7 ledger, and value-parked standard. PRG-T1 must
-not implement checker code, hook wiring, runtime/provider/live work,
-public-sync, adapter/package/certification, or MPI-T6 runtime. Checker
-implementation is deferred to T2 after T1 inventory exists.
+PRG-T2 may add a focused local checker and tests for the PRG-T1 inventory
+against DSD-T1 and T7, and may correct source-path drift the checker exposes.
+PRG-T2 must not add hook/catalog wiring, runtime/provider/live work,
+public-sync, adapter/package/certification, downstream implementation, or
+MPI-T6 runtime. Gate wiring is deferred to PRG-T3 after the checker exists.
 
 Recorded reopen conditions:
 
@@ -130,11 +129,11 @@ FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`.
 FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at
 `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision
 at `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at
-`8d4ed2f4`. Runtime/provider-live lanes, package activation, adapter
-implementation, public-sync expansion, checker implementation, and MPI-T6
-runtime work remain parked unless a recorded reopen condition is verified
-through a fresh governed tranche. LHW24 remains the latest closed numbered LHW
-wave.
+`8d4ed2f4`. FPC-PRG-T1 closed parked reopen condition source inventory at
+`ca60e1fd`. Runtime/provider-live lanes, package activation, adapter
+implementation, public-sync expansion, hook wiring, and MPI-T6 runtime work
+remain parked unless a recorded reopen condition is verified through a fresh
+governed tranche. LHW24 remains the latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - V25 Handoff Rotation
 
@@ -191,6 +190,55 @@ session-sync edits listed above. Do not revert PRG-T0 material commit
 `8d4ed2f4`, DSD-T1 material commit `24726307`, public-sync commit
 `04d88109317c780ceb2062a257c0e863e2379276`, or earlier FPC-SCG/FPC-DSD/FPC-UAP
 closures.
+
+## Core Guard Self-Protection Authorization - PRG-T1 Session Sync
+
+Authorized guard-maintenance scope: sync compact session front door, generated
+active-session state, source state fragments, and active handoff after
+FPC-PRG-T1 material closure at `ca60e1fd`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/fpcPrgT1ParkedReopenConditionSourceInventoryClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: approved T1-T5 continuation; PRG-T1 changed the
+current mode, latest material closure, and next allowed move. CVF session
+governance requires front door, generated state, state sources, and active
+handoff to stay aligned after such a change.
+
+Rollback boundary: if this session-sync is rejected, revert only the PRG-T1
+session-sync edits listed above. Do not revert PRG-T1 material commit
+`ca60e1fd`, PRG-T0 material commit `8d4ed2f4`, DSD-T1 material commit
+`24726307`, public-sync commit `04d88109317c780ceb2062a257c0e863e2379276`, or
+earlier FPC-SCG/FPC-DSD/FPC-UAP closures.
+
+## Agent Operation Trace Block - PRG-T1 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | local repository tools |
+| Session or invocation | 2026-06-28 PRG-T1 session sync |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, apply_patch, active-session generator, governance gates |
+| Target paths | `AGENT_HANDOFF_V25_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/fpcPrgT1ParkedReopenConditionSourceInventoryClosure20260628.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Allowed scope source | PRG-T1 material closure at `ca60e1fd` and session-governance next-move sync requirement |
+| Before status evidence | HEAD `ca60e1fd`; PRG-T1 material closure committed separately |
+| After status evidence | active-session generator run completed before governance gates |
+| Diff evidence | `git diff --name-status ca60e1fd` |
+| Approval boundary | PRG-T1 session-sync and pointer refresh only |
+| Claim boundary | session-maintenance only; no downstream implementation, runtime/provider/live proof, public-sync mutation, generated workspace state mutation beyond active session, resolver, adapter, package activation, certification, DICE runtime expansion, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime |
+| Agent type | single-agent session-sync steward |
+| Invocation ID | `fpc-prg-t1-session-sync-2026-06-28` |
+| Expected manifest | `AGENT_HANDOFF_V25_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/fpcPrgT1ParkedReopenConditionSourceInventoryClosure20260628.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V25_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/fpcPrgT1ParkedReopenConditionSourceInventoryClosure20260628.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
 
 ## Agent Operation Trace Block
 
