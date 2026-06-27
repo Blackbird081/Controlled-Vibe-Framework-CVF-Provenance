@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V24_2026-06-27.md`
+4. `AGENT_HANDOFF_V25_2026-06-28.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,14 +24,14 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V24_2026-06-27.md` |
+| Active handoff | `AGENT_HANDOFF_V25_2026-06-28.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_dsd_t1_downstream_hold_closed_pass_bounded_pending_hold_or_fresh_reopen_condition`; active handoff=AGENT_HANDOFF_V24_2026-06-27.md; next allowed move=hold downstream implementation by default, or open a fresh GC-018/source-verified tranche only if a concrete lane-specific reopen condition is satisfied by current source evidence; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, and DSD-T1 are closed bounded through material commit `24726307`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`fpc_dsd_t1_downstream_hold_closed_pass_bounded_pending_hold_or_fresh_reopen_condition`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=hold downstream implementation by default, or open a fresh GC-018/source-verified tranche only if a concrete lane-specific reopen condition is satisfied by current source evidence; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, and DSD-T1 are closed bounded through material commit `24726307`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Current Mode
 
