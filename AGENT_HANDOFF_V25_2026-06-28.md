@@ -58,6 +58,8 @@ Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 Exact remote SHA must be derived live from git when needed; do not hand-maintain
 remote SHA in handoff.
 
+External agent memory files: non-canonical convenience only.
+
 ## Latest Work / Changes
 
 Latest material closure: commit `24726307` closed FPC-DSD-T1 Foundation
@@ -182,6 +184,9 @@ only. Complete canonical state lives in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Session-sync commit `2a04e28e` rotated the active handoff from V24 to V25,
 archived V24, and updated front-door/state pointers after prerequisite root
 exposure classification commit `f7f4294d`.
+
+Handoff marker commit `8abba150` recorded `2a04e28e` in this active handoff so
+the GC-020 in-place handoff HEAD rule can verify the V25 rotation chain.
 
 This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 the committed V25 rotation. It does not reopen downstream implementation,
