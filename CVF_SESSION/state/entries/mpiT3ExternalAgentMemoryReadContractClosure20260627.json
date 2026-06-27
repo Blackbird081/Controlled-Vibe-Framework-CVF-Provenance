@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1252,
+  "stateKey": "mpiT3ExternalAgentMemoryReadContractClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "b825a69c",
+    "roadmap": "docs/roadmaps/CVF_MPI_MEMORY_PLANE_INTEGRATION_ROADMAP_2026-06-21.md",
+    "baseline": "docs/baselines/CVF_GC018_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_FOR_CODEX_2026-06-27.md",
+    "reference": "docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md",
+    "completionReview": "docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_COMPLETION_2026-06-27.md",
+    "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation; MPI-T4 remains optional parked unless selected through a separate governed tranche.",
+    "claimBoundary": "MPI-T3 external-agent memory read contract only; adapterContractOnly=true; no runtime, route, schema, service-token bridge, helper, CLI/MCP adapter, provider-live, public-sync, registry, durable-write, resolver, package, generated-state, DICE, or push scope."
+  }
+}
