@@ -69,7 +69,7 @@
       "owningArtifacts": [
         "docs/baselines/CVF_GC018_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_2026-06-28.md",
         "docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json",
-        "docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md"
+        "docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md"
       ],
       "evidenceFields": [
         "concrete runtime governance behavior claim",
