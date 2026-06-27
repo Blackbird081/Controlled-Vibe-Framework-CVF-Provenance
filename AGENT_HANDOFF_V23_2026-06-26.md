@@ -51,6 +51,7 @@ Startup acknowledged: current mode=`foundation_plane_system_chain_gap_guidance_a
 | Active-window registry pre-push repair | `8eca0fddb76b9891c5c5bc6df8d30b001885ca6c` |
 | Review retention registry pre-push scope repair | `1daab6ba887ae511329e28e23b440397f1dd44f2` |
 | CodeGraph root lifecycle pre-push repair | `6e52fd9eac35cc3c00d5db423406f3c9f3950a2c` |
+| Active handoff root-file exposure pre-push repair | `f9844ccc36d02719eb1732bbdbf27611a6718573` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
@@ -405,7 +406,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 6e52fd9e --head HEAD --enforce` | PASS before session-sync commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base f9844ccc --head HEAD --enforce` | PASS before session-sync commit |
 
 ## Agent Operation Trace Block
 
@@ -525,6 +526,33 @@ for the following handoff-only sync commit.
 | Claim boundary | handoff sync only; no next-move change, registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, CodeGraph runtime adoption, or MPI-T6 runtime |
 | Agent type | single-agent session-sync steward |
 | Invocation ID | local Codex session 2026-06-27 CodeGraph root lifecycle repair handoff sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Manifest delta | MATCH |
+
+## Push Gate Handoff Root File Exposure Session Sync
+
+Session-sync reason: material commit `f9844ccc` classified the active root
+handoff file for pre-public P3 readiness; active handoff now records that
+commit so GC-020 can verify parent-present continuity for the following
+handoff-only sync commit.
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | local repository tools |
+| Session or invocation | 2026-06-27 active handoff root-file exposure pre-push repair handoff sync |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, Python, git |
+| Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Allowed scope source | GC-020 active handoff continuity requirement after material commit `f9844ccc` |
+| Before status evidence | HEAD `f9844ccc`; active-session check required handoff to contain current HEAD or parent-present session-sync evidence |
+| After status evidence | session-sync gates before commit |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | handoff continuity sync only |
+| Claim boundary | handoff sync only; no next-move change, registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, CodeGraph runtime adoption, or MPI-T6 runtime |
+| Agent type | single-agent session-sync steward |
+| Invocation ID | local Codex session 2026-06-27 active handoff root-file exposure repair handoff sync |
 | Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Manifest delta | MATCH |
