@@ -43,6 +43,7 @@ Startup acknowledged: current mode=`foundation_plane_system_chain_gap_guidance_a
 | MPI-T5 Current-State Reconciliation closure | `ec7da05c` |
 | MPI-T6 reopen-condition session sync | `d172fe48d7048847fb1c32c32609bff8a5d808c2` |
 | Foundation Plane System-Chain Gap Priority Guidance | `2fc14fde` |
+| GC-032 pre-push marker repair | `ab76d077552213c8de1dcf7b567394198c985df8` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
@@ -390,7 +391,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 2fc14fde --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base ab76d077 --head HEAD --enforce` | PASS before handoff-sync commit |
 
 ## Agent Operation Trace Block
 
@@ -398,44 +399,37 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 foundation plane system-chain gap guidance session-sync |
+| Session or invocation | 2026-06-27 GC-032 pre-push marker repair handoff-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
-| Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | Foundation Plane System-Chain Gap Priority Guidance material commit `2fc14fde` and operator instruction to make it next-roadmap/tranche guidance |
-| Before status evidence | material guidance committed at `2fc14fde` |
-| After status evidence | session-sync gates before commit |
+| Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Allowed scope source | GC-020 active handoff HEAD marker requirement after GC-032 pre-push marker repair commit `ab76d077` |
+| Before status evidence | material repair committed at `ab76d077`; active-session gate reported handoff HEAD marker missing |
+| After status evidence | handoff-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | session-maintenance only |
-| Claim boundary | session-sync only; no registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime |
+| Approval boundary | handoff-sync only |
+| Claim boundary | handoff HEAD marker sync only; no registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 foundation gap guidance session-sync |
-| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/foundationPlaneSystemChainGapPriorityGuidance20260627.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
-| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/foundationPlaneSystemChainGapPriorityGuidance20260627.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Invocation ID | local Codex session 2026-06-27 GC-032 marker repair handoff-sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after Foundation Plane System-Chain Gap Priority
-Guidance only.
+Authorized guard-maintenance scope: active handoff HEAD marker sync after
+GC-032 pre-push marker repair only.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V23_2026-06-26.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/foundationPlaneSystemChainGapPriorityGuidance20260627.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: user requested this assessment be recorded as guidance
-for opening the next roadmap/tranche in the right direction and prioritizing
-the identified gaps.
+Operator authorization: user requested updating local CVF to GitHub; material
+repair commit `ab76d077` required the active handoff to record the latest HEAD
+before provenance push could proceed through the mandatory gates.
 
-Rollback boundary: revert the session-sync commit only; do not revert material
-guidance commit `2fc14fde`.
+Rollback boundary: revert the handoff-sync commit only; do not revert material
+repair commit `ab76d077`.
 
 ## Claim Boundary
 
