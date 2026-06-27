@@ -48,6 +48,7 @@ Startup acknowledged: current mode=`foundation_plane_system_chain_gap_guidance_a
 | Pre-push compatibility marker block repair | `bc0f7c4447c698286496d89389c4df2b8d4aa885` |
 | Pre-push catalog marker coverage repair | `cd9e84cc8c6ae3edcfc69ea6f41547c1e3e55793` |
 | Pre-push catalog marker handoff sync | `fd2f54190d539d6ddceaabb9833ec18cd5e66402` |
+| Active-window registry pre-push repair | `8eca0fddb76b9891c5c5bc6df8d30b001885ca6c` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
@@ -402,7 +403,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base fd2f5419 --head HEAD --enforce` | PASS before session-sync commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 8eca0fdd --head HEAD --enforce` | PASS before session-sync commit |
 
 ## Agent Operation Trace Block
 
@@ -445,3 +446,29 @@ repair commits or prior session-sync commits.
 ## Claim Boundary
 
 This handoff is a compact routing document. Complete canonical state remains in `CVF_SESSION/ACTIVE_SESSION_STATE.json`, generated from `CVF_SESSION/state/`.
+
+## Push Gate Active Window Registry Session Sync
+
+Session-sync reason: material commit `8eca0fdd` repaired the active-window
+registry pre-push guard; active handoff now records that commit so GC-020 can
+verify parent-present continuity for the following handoff-only sync commit.
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | local repository tools |
+| Session or invocation | 2026-06-27 active-window registry pre-push repair handoff sync |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, Python, git |
+| Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Allowed scope source | GC-020 active handoff continuity requirement after material commit `8eca0fdd` |
+| Before status evidence | HEAD `8eca0fdd`; active-session check required handoff to contain current HEAD or parent-present session-sync evidence |
+| After status evidence | session-sync gates before commit |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | handoff continuity sync only |
+| Claim boundary | handoff sync only; no next-move change, registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime |
+| Agent type | single-agent session-sync steward |
+| Invocation ID | local Codex session 2026-06-27 active-window registry repair handoff sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Manifest delta | MATCH |
