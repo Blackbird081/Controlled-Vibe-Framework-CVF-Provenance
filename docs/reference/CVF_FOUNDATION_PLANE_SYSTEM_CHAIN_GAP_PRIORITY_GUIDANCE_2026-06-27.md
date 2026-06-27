@@ -245,6 +245,17 @@ README/catalog/snapshot export; runtime-provider-live, use-case implementation,
 package activation, public-sync expansion, and MPI-T6 runtime remain parked
 until a fresh source-verified GC-018 proves a lane-specific reopen condition.
 
+Completed parked-reopen-gate systemization roadmap:
+
+`FPC-PRG-T0 Parked Reopen Gate Systemization Roadmap`
+
+PRG-T0 result: the next foundation-maintenance lane is source-verified as
+parked reopen gate systemization, not downstream implementation. The next
+recommended tranche is `FPC-PRG-T1 Parked Reopen Condition Source Inventory`;
+checker implementation is deferred to T2 after the inventory exists. Runtime,
+provider-live, use-case implementation, public-sync expansion, adapter,
+package, certification, and MPI-T6 runtime work remain parked.
+
 ## Acceptance Criteria For The Next Tranche
 
 The next tranche is correctly aligned only if it:
@@ -259,6 +270,8 @@ The next tranche is correctly aligned only if it:
   out of scope unless separately authorized.
 - if downstream work is selected later, cites the T7 ledger checker evidence
   and records lane-specific reopen conditions before implementation.
+- if parked reopen gate systemization continues, starts with PRG-T1 source
+  inventory before checker implementation or gate wiring.
 
 ## Not Authorized
 
@@ -274,6 +287,21 @@ This guidance does not authorize:
 - running provider/live proof;
 - changing generated session state except through a separate session-sync pass;
 - public-sync or push.
+
+## PRG-T0 Parked Reopen Gate Systemization Direction
+
+PRG-T0 records a bounded foundation-maintenance roadmap for converting current
+parked-lane reopen discipline into a source inventory and later checker. It
+does not reopen implementation lanes.
+
+Recommended next tranche:
+
+`FPC-PRG-T1 Parked Reopen Condition Source Inventory`
+
+PRG-T1 should inventory lane IDs, recorded condition text, owning artifacts,
+evidence fields, and forbidden-until-gate-passes lists from the active front
+door, active handoff, DSD-T1, T7 ledger, and value-parked standard. PRG-T1
+must not implement checker code or hook wiring.
 
 ## Epistemic Process Block
 
