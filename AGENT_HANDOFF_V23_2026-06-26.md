@@ -476,6 +476,34 @@ verify parent-present continuity for the following handoff-only sync commit.
 | Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Manifest delta | MATCH |
 
+## Push Debt Rebuild Base Session Repair
+
+Session-sync reason: provenance remote already contains material commit
+`75fcad20` but the active handoff on the rebuild branch did not yet record that
+HEAD marker. This handoff-only repair records the pushed material commit so
+GC-020 can verify parent-present continuity before the material rebuild and
+final session-sync commits are published.
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | local repository tools |
+| Session or invocation | 2026-06-27 provenance push debt rebuild base session repair |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, git stash, apply_patch, governance gates |
+| Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Allowed scope source | GC-020 active handoff continuity requirement after pushed material commit `75fcad20` and operator instruction to repair provenance push debt |
+| Before status evidence | HEAD `75fcad20c74e57bcafa292671d2aeec971208ec8`; parent `1eb8de763353dcb288c24f3df0fa3e4726ddf3bc`; active-session check required handoff to contain current HEAD or parent-present session-sync evidence |
+| After status evidence | session-repair gates before commit |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | handoff continuity repair only |
+| Claim boundary | handoff sync only; no material rebuild, next-move change, registry edit, checker implementation, runtime/provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE runtime expansion, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, CodeGraph runtime adoption, or MPI-T6 runtime |
+| Agent type | single-agent session-sync steward |
+| Invocation ID | local Codex session 2026-06-27 provenance push debt rebuild base session repair |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Manifest delta | MATCH |
+
 ## Push Readiness Preview Standardization Session Sync
 
 Session-sync reason: material commit `0cf584e0` added the push-readiness
