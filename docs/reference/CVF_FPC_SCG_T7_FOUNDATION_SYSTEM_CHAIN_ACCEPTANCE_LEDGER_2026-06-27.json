@@ -27,7 +27,7 @@
       "trancheId": "FPC-SCG-T2",
       "gapId": "P1:FPC-T3-C06",
       "acceptanceLevel": "MACHINE_CHECKED_BOUNDED_ACCEPTED",
-      "materialCommit": "62a76d05",
+      "materialCommit": "be253923",
       "closureArtifact": "docs/reviews/CVF_FPC_SCG_T2_RAW_MEMORY_RELEASE_INVARIANT_AUTORUN_COVERAGE_COMPLETION_2026-06-27.md",
       "evidenceSurface": "governance/compat/check_raw_memory_release_invariant.py",
       "reopenCondition": "Reopen only if raw-memory-release invariant checker, focused tests, autorun wiring, or reviewer-fast wiring regresses."
@@ -36,7 +36,7 @@
       "trancheId": "FPC-SCG-T3",
       "gapId": "P1:FPC-T3-C02",
       "acceptanceLevel": "MACHINE_CHECKED_BOUNDED_ACCEPTED",
-      "materialCommit": "2cff8570",
+      "materialCommit": "be253923",
       "closureArtifact": "docs/reviews/CVF_FPC_SCG_T3_DICE_MACHINE_CANDIDATE_CHECKER_COMPLETION_2026-06-27.md",
       "evidenceSurface": "governance/compat/check_dice_machine_candidates.py",
       "reopenCondition": "Reopen only if DICE machine-candidate checker, focused tests, autorun wiring, or reviewer-fast wiring regresses."
@@ -45,7 +45,7 @@
       "trancheId": "FPC-SCG-T4",
       "gapId": "P1:FPC-T3-C05",
       "acceptanceLevel": "MACHINE_CHECKED_BOUNDED_ACCEPTED",
-      "materialCommit": "bd8aa898",
+      "materialCommit": "be253923",
       "closureArtifact": "docs/reviews/CVF_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_COMPLETION_2026-06-27.md",
       "evidenceSurface": "governance/compat/run_worker_return_fast_gate.py",
       "reopenCondition": "Reopen only if worker-return fast gate stops invoking the epistemic process packet check or focused fixture coverage regresses."
@@ -54,7 +54,7 @@
       "trancheId": "FPC-SCG-T5",
       "gapId": "P1:FPC-T3-C03-MANIFEST",
       "acceptanceLevel": "SOURCE_VERIFIED_MANIFEST_ACCEPTED",
-      "materialCommit": "fbd98f61",
+      "materialCommit": "be253923",
       "closureArtifact": "docs/reviews/CVF_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_COMPLETION_2026-06-27.md",
       "evidenceSurface": "docs/reference/CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.json",
       "reopenCondition": "Reopen only if the expected-chain manifest is missing, stops parsing, or loses one of the five source-verified expected ids."
@@ -63,7 +63,7 @@
       "trancheId": "FPC-SCG-T6",
       "gapId": "P1:FPC-T3-C03-CHECKER",
       "acceptanceLevel": "MACHINE_CHECKED_BOUNDED_ACCEPTED",
-      "materialCommit": "3a3f6906",
+      "materialCommit": "be253923",
       "closureArtifact": "docs/reviews/CVF_FPC_SCG_T6_INTERLOCK_EXPECTED_CHAIN_CHECKER_EXTENSION_COMPLETION_2026-06-27.md",
       "evidenceSurface": "governance/compat/check_system_loop_interlock.py",
       "reopenCondition": "Reopen only if the checker stops consuming the expected-chain manifest or focused missing-id/status/automation mismatch tests regress."
@@ -72,7 +72,7 @@
       "trancheId": "FPC-SCG-T0",
       "gapId": "ROUTING:FPC-SCG-ROADMAP-REFRESH",
       "acceptanceLevel": "ROUTING_ACCEPTED",
-      "materialCommit": "497fdd62",
+      "materialCommit": "be253923",
       "closureArtifact": "docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md",
       "evidenceSurface": "docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md",
       "reopenCondition": "Reopen only if T0 source evidence is superseded or a P0/P1 regression invalidates acceptance routing."

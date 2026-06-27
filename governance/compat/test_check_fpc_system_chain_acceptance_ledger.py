@@ -31,7 +31,7 @@ class TestFpcSystemChainAcceptanceLedger(unittest.TestCase):
                     "trancheId": tranche,
                     "gapId": tranche,
                     "acceptanceLevel": "MACHINE_CHECKED_BOUNDED_ACCEPTED",
-                    "materialCommit": "abc12345",
+                    "materialCommit": checker.EXPECTED_MATERIAL_COMMITS[tranche],
                     "closureArtifact": str(closure),
                     "evidenceSurface": str(evidence),
                     "reopenCondition": "regression only",
@@ -113,6 +113,15 @@ class TestFpcSystemChainAcceptanceLedger(unittest.TestCase):
             _write(ledger_path, ledger)
             violations = checker.validate_ledger(ledger_path, registry_path, manifest_path)
             self.assertTrue(any("gateStatus must remain PARKED" in item for item in violations))
+
+    def test_stale_material_carrier_is_detected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            ledger_path, registry_path, manifest_path = self._fixture(Path(tmp_dir))
+            ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+            ledger["acceptedClosureChain"][0]["materialCommit"] = "62a76d05"
+            _write(ledger_path, ledger)
+            violations = checker.validate_ledger(ledger_path, registry_path, manifest_path)
+            self.assertTrue(any("current provenance carrier" in item for item in violations))
 
 
 if __name__ == "__main__":

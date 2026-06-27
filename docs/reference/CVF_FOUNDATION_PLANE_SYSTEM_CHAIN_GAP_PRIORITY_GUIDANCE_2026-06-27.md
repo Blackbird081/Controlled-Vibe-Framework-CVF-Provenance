@@ -224,6 +224,17 @@ Recommended next decision:
 Hold, or open a fresh source-verified downstream-lane selection GC-018 only if
 the T7 checker passes and the operator selects a specific downstream lane.
 
+Completed provenance-carrier reconciliation candidate:
+
+`FPC-SCG-T8 Foundation System-Chain Acceptance Ledger Provenance Carrier Reconciliation`
+
+T8 result: the T7 ledger now records current provenance carrier commits after
+the 2026-06-27 rebuild. FPC-SCG-T1 remains anchored to pushed base `75fcad20`;
+FPC-SCG-T0 and FPC-SCG-T2 through FPC-SCG-T6 now record `be253923` as the
+current material carrier. `governance/compat/check_fpc_system_chain_acceptance_ledger.py`
+now rejects stale pre-rebuild material carrier SHAs for required FPC-SCG
+closure-chain rows.
+
 ## Acceptance Criteria For The Next Tranche
 
 The next tranche is correctly aligned only if it:

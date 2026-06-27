@@ -65,6 +65,15 @@ REQUIRED_DOWNSTREAM_LANES = {
     "use-case-adapter-public",
     "MPI-T6-runtime",
 }
+EXPECTED_MATERIAL_COMMITS = {
+    "FPC-SCG-T0": "be253923",
+    "FPC-SCG-T1": "75fcad20",
+    "FPC-SCG-T2": "be253923",
+    "FPC-SCG-T3": "be253923",
+    "FPC-SCG-T4": "be253923",
+    "FPC-SCG-T5": "be253923",
+    "FPC-SCG-T6": "be253923",
+}
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -180,6 +189,13 @@ def validate_ledger(
                 violations.append(f"{tranche_id}: reopenCondition must not be empty")
             if not str(closure.get("materialCommit") or "").strip():
                 violations.append(f"{tranche_id}: materialCommit must not be empty")
+            expected_commit = EXPECTED_MATERIAL_COMMITS.get(tranche_id)
+            observed_commit = str(closure.get("materialCommit") or "").strip()
+            if expected_commit is not None and observed_commit != expected_commit:
+                violations.append(
+                    f"{tranche_id}: materialCommit must be current provenance carrier "
+                    f"{expected_commit}; observed {observed_commit}"
+                )
         missing = sorted(REQUIRED_TRANCHE_IDS - seen_tranches)
         if missing:
             violations.append("acceptedClosureChain missing required tranche ids: " + ", ".join(missing))
