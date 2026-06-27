@@ -113,6 +113,18 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_memory_access_claim.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "raw memory release invariant",
+        ["python", "governance/compat/check_raw_memory_release_invariant.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "DICE machine-candidate coverage",
+        ["python", "governance/compat/check_dice_machine_candidates.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "FPC system-chain acceptance ledger",
+        ["python", "governance/compat/check_fpc_system_chain_acceptance_ledger.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "corpus scan registry",
         ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

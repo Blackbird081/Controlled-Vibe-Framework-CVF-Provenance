@@ -229,6 +229,18 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "raw memory release invariant",
+            "governance/compat/check_raw_memory_release_invariant.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "DICE machine-candidate coverage",
+            "governance/compat/check_dice_machine_candidates.py",
+            base,
+            head,
+        ),
+        _range_command(
             "corpus packet source hash (NR-04)",
             "governance/compat/check_corpus_packet_source_hash.py",
             base,
@@ -263,6 +275,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "system loop interlock",
             "governance/compat/check_system_loop_interlock.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "FPC system-chain acceptance ledger",
+            "governance/compat/check_fpc_system_chain_acceptance_ledger.py",
             base,
             head,
         ),

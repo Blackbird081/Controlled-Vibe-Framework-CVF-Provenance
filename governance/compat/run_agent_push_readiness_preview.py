@@ -24,6 +24,7 @@ except ModuleNotFoundError:  # imported as governance.compat.run_agent_push_read
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_UPSTREAM_AHEAD_LIMIT = 2
 
 
 @dataclass(frozen=True)
@@ -97,7 +98,17 @@ def _short_ref(ref: str) -> str:
     return _git_output("rev-parse", "--short", ref, check=True)[1]
 
 
-def _upstream_status() -> PreviewResult:
+def _parse_behind_ahead(counts: str) -> tuple[int, int] | None:
+    parts = counts.split()
+    if len(parts) != 2:
+        return None
+    try:
+        return int(parts[0]), int(parts[1])
+    except ValueError:
+        return None
+
+
+def _upstream_status(ahead_limit: int) -> PreviewResult:
     started = time.perf_counter()
     upstream_code, upstream = _git_output(
         "rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"
@@ -116,10 +127,20 @@ def _upstream_status() -> PreviewResult:
     output = f"upstream={upstream}"
     if counts:
         output = f"{output}; behind_ahead={counts}"
+        parsed = _parse_behind_ahead(counts)
+        if parsed:
+            _behind, ahead = parsed
+            if ahead > ahead_limit:
+                status = "FAIL"
+                output = (
+                    f"{output}; VIOLATION: upstream push debt exceeds "
+                    f"limit {ahead_limit}. Push or record the blocker before "
+                    "opening another governed tranche."
+                )
     return PreviewResult(
         label="upstream tracking branch",
         command=("git", "rev-list", "--left-right", "--count", f"{upstream}...HEAD"),
-        returncode=counts_code,
+        returncode=counts_code if status == "PASS" else 1,
         duration_s=time.perf_counter() - started,
         status=status,
         output=output,
@@ -228,12 +249,18 @@ def _preview_commands(base: str, head: str) -> tuple[tuple[str, tuple[str, ...]]
     )
 
 
-def _run_preview(base: str, head: str, *, include_upstream: bool) -> tuple[ShapeResult, tuple[PreviewResult, ...]]:
+def _run_preview(
+    base: str,
+    head: str,
+    *,
+    include_upstream: bool,
+    upstream_ahead_limit: int,
+) -> tuple[ShapeResult, tuple[PreviewResult, ...]]:
     _short_ref(base)
     _short_ref(head)
     results: list[PreviewResult] = []
     if include_upstream:
-        results.append(_upstream_status())
+        results.append(_upstream_status(upstream_ahead_limit))
     for label, command in _preview_commands(base, head):
         results.append(_run_command(label, command))
     return _shape_result(base, head), tuple(results)
@@ -276,6 +303,15 @@ def main() -> int:
         action="store_true",
         help="Skip upstream tracking readout when previewing an untracked branch.",
     )
+    parser.add_argument(
+        "--upstream-ahead-limit",
+        type=int,
+        default=DEFAULT_UPSTREAM_AHEAD_LIMIT,
+        help=(
+            "Maximum allowed local commits ahead of upstream before preview fails. "
+            "Default: 2, matching one material commit plus one session-sync commit."
+        ),
+    )
     args = parser.parse_args()
 
     try:
@@ -283,6 +319,7 @@ def main() -> int:
             args.base,
             args.head,
             include_upstream=not args.skip_upstream,
+            upstream_ahead_limit=args.upstream_ahead_limit,
         )
     except RuntimeError as exc:
         if args.json:

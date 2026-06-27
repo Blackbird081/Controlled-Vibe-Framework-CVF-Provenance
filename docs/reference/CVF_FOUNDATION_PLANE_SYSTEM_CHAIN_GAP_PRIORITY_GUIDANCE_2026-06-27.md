@@ -10,6 +10,8 @@ Date: 2026-06-27
 
 Owner: Codex
 
+rawMemoryReleased: false
+
 ## Purpose
 
 Record the operator-prioritized assessment that the next roadmap or tranche
@@ -57,6 +59,15 @@ The operator direction on 2026-06-27 is:
 | FPC-T3-C04+C01 completion | `docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_COMPLETION_2026-06-13.md` | evidence that C04 template anchor and C01 epistemic process checker are implemented |
 | System-loop interlock registry | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | current registered ACTIVE interlock connections |
 | MPI-T5 current-state completion | `docs/reviews/CVF_MPI_T5_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md` | current memory-access checker reconciliation and no MPI-T6 runtime reopen boundary |
+| FPC-SCG-T2 completion | `docs/reviews/CVF_FPC_SCG_T2_RAW_MEMORY_RELEASE_INVARIANT_AUTORUN_COVERAGE_COMPLETION_2026-06-27.md` | FPC-T3-C06 raw-memory-release invariant checker closure |
+| FPC-SCG-T3 completion | `docs/reviews/CVF_FPC_SCG_T3_DICE_MACHINE_CANDIDATE_CHECKER_COMPLETION_2026-06-27.md` | FPC-T3-C02 DICE machine-candidate checker closure |
+| FPC-SCG-T4 completion | `docs/reviews/CVF_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_COMPLETION_2026-06-27.md` | FPC-T3-C05 worker-return fast-gate epistemic fixture closure |
+| FPC-SCG-T5 completion | `docs/reviews/CVF_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_COMPLETION_2026-06-27.md` | FPC-T3-C03 expected-chain manifest source-verification closure |
+| FPC-T3-C03 expected-chain manifest | `docs/reference/CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.json` | stable expected-chain manifest for later checker extension |
+| FPC-SCG-T6 completion | `docs/reviews/CVF_FPC_SCG_T6_INTERLOCK_EXPECTED_CHAIN_CHECKER_EXTENSION_COMPLETION_2026-06-27.md` | FPC-T3-C03 manifest-backed checker-extension closure |
+| FPC-SCG-T7 acceptance ledger | `docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json` | bounded foundation system-chain acceptance ledger and downstream reopen gates |
+| FPC-SCG-T7 checker | `governance/compat/check_fpc_system_chain_acceptance_ledger.py` | local governance checker for acceptance ledger, closure chain, and parked downstream gates |
+| FPC-SCG-T7 completion | `docs/reviews/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_AND_DOWNSTREAM_REOPEN_GATE_COMPLETION_2026-06-27.md` | T7 closure evidence |
 | Active session state | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | current next-move and parked-boundary routing |
 
 No provider-specific memory file, chat transcript, external app source tree, or
@@ -81,11 +92,12 @@ system-loop interlock, a machine-check owner, or a claim-update path.
 | Corpus / Scan / Extraction Plane | `SYSTEM_CHAIN_MACHINE_CHECKED` with registered interlocks | adequate for current FPC purposes |
 | Public Evaluation / Export Boundary Plane | `SYSTEM_CHAIN_MACHINE_CHECKED` with registered interlock | adequate for current FPC purposes |
 | Control Plane | `SYSTEM_CHAIN_STRUCTURAL_GUARDED` | needs formal Control/Governance hook-chain-to-learning interlock |
-| Memory / Knowledge Plane | `SYSTEM_CHAIN_STRUCTURAL_GUARDED` | needs Memory-to-Learning and Memory-to-Retrieval interlocks; raw memory invariant should remain machine-check candidate |
-| Learning Plane | partial system chain | evidence-to-truth and claim-update promotion remains proposal/structural unless C05 is registered and enforced |
-| Evidence / Metadata Resolution Plane | partial system chain | evidence-to-claim-update interlock is now eligible for a narrow follow-up because FPC-T3-C04+C01 exists |
-| Document Intelligence foundation lane | partial system chain | DIR/DICE-to-downstream-adapter eligibility interlock and DICE ownership checker remain pending |
+| Memory / Knowledge Plane | `SYSTEM_CHAIN_MACHINE_CHECKED_BOUNDED` for raw-memory assertion discipline; structural interlocks registered by FPC-SCG-T1 | remaining gaps move to downstream P1 checker candidates rather than raw-memory invariant coverage |
+| Learning Plane | `SYSTEM_CHAIN_MACHINE_CHECKED_BOUNDED` for worker-return epistemic packet visibility; expected-chain manifest consumed by checker | broader completion claims still require roadmap refresh before downstream runtime/use-case selection |
+| Evidence / Metadata Resolution Plane | `SYSTEM_CHAIN_MACHINE_CHECKED_BOUNDED` for worker-return epistemic packet visibility; expected-chain manifest consumed by checker | evidence-to-claim-update interlock is registered and manifest-backed checker coverage is closed bounded |
+| Document Intelligence foundation lane | `SYSTEM_CHAIN_MACHINE_CHECKED_BOUNDED` for DICE-MC visibility when DICE/DIR paths change; structural interlock registered by FPC-SCG-T1 | downstream adapter eligibility remains a separate use-case/runtime boundary |
 | Use-case adapter layer | downstream boundary, not a CVF plane | Policy_Local and Document Translator remain separate fresh-GC-018 use cases after foundation routing gaps are handled |
+| Foundation system-chain acceptance | `FOUNDATION_SYSTEM_CHAIN_ACCEPTED_BOUNDED` by FPC-SCG-T7 ledger and checker | downstream reopen remains a separate operator decision and fresh-GC-018 lane |
 
 ## Priority Gap List
 
@@ -114,10 +126,10 @@ turn structural plane posture into enforceable workflow-system posture:
 
 | Candidate | Required direction | Why it matters |
 |---|---|---|
-| FPC-T3-C06 | memory `rawMemoryReleased=false` autorun check | protects Memory/Knowledge plane claim boundary and prevents raw-memory-release drift |
-| FPC-T3-C02 | DICE machine-candidate checker | moves DIR/DICE invariants from focused tests into governance workflow visibility |
-| FPC-T3-C05 | worker-return fast-gate epistemic fixture | lets no-commit workers catch epistemic packet gaps before reviewer intake |
-| FPC-T3-C03 | interlock registry coverage checker extension | detects closed chains that produce downstream signals but lack interlock disposition; requires a stable expected-chain manifest first |
+| FPC-T3-C06 | CLOSED_BOUNDED by `governance/compat/check_raw_memory_release_invariant.py` | raw-memory-release assertion discipline is now checked in agent autorun and reviewer-fast local governance |
+| FPC-T3-C02 | CLOSED_BOUNDED by `governance/compat/check_dice_machine_candidates.py` | DICE-MC-01 through DICE-MC-10 focused coverage is now visible to autorun and reviewer-fast local governance when DICE/DIR paths change |
+| FPC-T3-C05 | CLOSED_BOUNDED by `governance/compat/run_worker_return_fast_gate.py` explicit `check_epistemic_process_packet.py --enforce` step | no-commit workers now catch epistemic packet gaps before reviewer intake through the fast gate |
+| FPC-T3-C03 | manifest-backed checker extension is CLOSED_BOUNDED by `governance/compat/check_system_loop_interlock.py` and `governance/compat/test_check_system_loop_interlock.py` | detects the five source-verified expected-chain ids from the T5 manifest against registry id/status/automationLevel; future expansion requires later manifest update |
 
 ### P2 - Downstream Use-Case Restraint
 
@@ -139,22 +151,78 @@ Minimum scope:
 2. Source-verify whether FPC-T2-C01 through C04 are still absent from the
    registry and whether their proposed upstream/downstream artifacts still
    exist.
-3. Source-verify whether FPC-T2-C05 is now eligible after
-   FPC-T3-C04+C01 and `governance/compat/check_epistemic_process_packet.py`.
-4. Decide whether the next implementation tranche edits the registry directly,
-   authors an expected-chain manifest first, or splits C01-C04 and C05 into two
-   smaller work orders.
-5. Preserve downstream boundaries: no use-case adapter work, no runtime
+3. Treat FPC-T3-C06 as closed bounded unless a future regression removes
+   `governance/compat/check_raw_memory_release_invariant.py` or its autorun /
+   reviewer-fast wiring.
+4. Treat FPC-T3-C02 as closed bounded unless a future regression removes
+   `governance/compat/check_dice_machine_candidates.py`, its focused tests, or
+   autorun / reviewer-fast wiring.
+5. Treat FPC-T3-C05 as closed bounded unless a future regression removes the
+   explicit `epistemic process packet` step from `run_worker_return_fast_gate.py`
+   or breaks its focused fixture test.
+6. Treat FPC-T3-C03 expected-chain manifest source verification as closed
+   bounded unless a future regression removes the manifest or invalidates its
+   five expected-chain ids.
+7. Treat FPC-T3-C03 checker extension as closed bounded unless a future
+   regression removes `EXPECTED_CHAIN_MANIFEST_PATH`, stops calling the
+   expected-chain comparison from `validate_registry`, or breaks focused
+   tests for missing id/status/automationLevel mismatch.
+8. Preserve downstream boundaries: no use-case adapter work, no runtime
    provider proof, no MPI-T6 runtime, no public-sync, no generated state
    mutation except session sync after closure.
 
-Recommended first work order candidate:
+Completed first work order candidate:
 
 `FPC-SCG-T1 Foundation Plane System-Chain Interlock Registry Decision And Edit`
 
-Recommended fallback if registry-edit scope is too broad:
+Completed P1 work order candidate:
 
-`FPC-SCG-T0 Foundation Plane System-Chain Gap Closure Roadmap`
+`FPC-SCG-T2 Raw Memory Release Invariant Autorun Coverage`
+
+Completed P1 work order candidate:
+
+`FPC-SCG-T3 DICE Machine-Candidate Checker`
+
+Completed P1 work order candidate:
+
+`FPC-SCG-T4 Worker-Return Fast-Gate Epistemic Fixture`
+
+Completed P1 prerequisite candidate:
+
+`FPC-SCG-T5 Interlock Registry Expected-Chain Manifest Source Verification`
+
+Completed P1 work order candidate:
+
+`FPC-SCG-T6 Interlock Registry Expected-Chain Checker Extension`
+
+Recommended next work order candidate:
+
+`FPC-SCG-T7 Foundation Plane System-Chain Acceptance Ledger And Downstream Reopen Gate`
+
+Completed roadmap refresh candidate:
+
+`FPC-SCG-T0 Foundation Plane System-Chain Gap Closure Roadmap Refresh`
+
+T0 refresh result: P0 and P1 are closed bounded through FPC-SCG-T1 through
+FPC-SCG-T6. The next useful work is an acceptance/reopen-gate packet that
+records foundation acceptance and blocks or authorizes downstream lane reopen
+requests through source-verified conditions.
+
+Completed acceptance/reopen-gate candidate:
+
+`FPC-SCG-T7 Foundation Plane System-Chain Acceptance Ledger And Downstream Reopen Gate`
+
+T7 result: foundation system-chain acceptance is bounded and machine-checkable
+through `docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json`
+and `governance/compat/check_fpc_system_chain_acceptance_ledger.py`. Downstream
+runtime/use-case/provider/public and MPI-T6 runtime lanes remain parked until a
+fresh operator decision and source-verified GC-018 selects a specific lane and
+records that lane's reopen conditions.
+
+Recommended next decision:
+
+Hold, or open a fresh source-verified downstream-lane selection GC-018 only if
+the T7 checker passes and the operator selects a specific downstream lane.
 
 ## Acceptance Criteria For The Next Tranche
 
@@ -162,19 +230,23 @@ The next tranche is correctly aligned only if it:
 
 - starts from the FPC source surfaces above;
 - lists the exact interlock candidates it will decide or edit;
-- proves whether each candidate is currently absent, present, or superseded in
+- proves whether each candidate is currently absent, present, closed bounded, or superseded in
   `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`;
 - distinguishes architecture closure from workflow-system-chain completion;
 - records why any non-gap runtime/use-case lane is not being selected;
 - keeps all use-case, provider, runtime, public-sync, and MPI-T6 runtime work
   out of scope unless separately authorized.
+- if downstream work is selected later, cites the T7 ledger checker evidence
+  and records lane-specific reopen conditions before implementation.
 
 ## Not Authorized
 
 This guidance does not authorize:
 
 - editing the system-loop interlock registry;
-- implementing FPC-T3-C02, C03, C05, or C06;
+- reopening FPC-T3-C02 without checker/test/autorun/reviewer-fast regression evidence;
+- reopening FPC-T3-C05 without fast-gate/checker/test regression evidence;
+- reopening FPC-T3-C03 without manifest/checker/test regression evidence;
 - opening MPI-T6 runtime work;
 - opening Policy_Local or Document Translator source work;
 - opening Model Gateway or Sandbox runtime expansion;
@@ -216,20 +288,20 @@ public-sync authorization and artifact review.
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 foundation plane gap priority guidance |
+| Session or invocation | 2026-06-27 FPC-SCG-T6 interlock expected-chain checker extension |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
-| Allowed scope source | operator instruction to record the assessment as next-roadmap guidance and prioritize the gaps |
-| Before status evidence | HEAD `d172fe48`; worktree clean before patch |
-| After status evidence | guidance file added; gates run before commit |
+| Command or tool surface | PowerShell, rg, source reads, apply_patch, Python, pytest, governance gates |
+| Target paths | `docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/baselines/CVF_GC018_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_FOR_CODEX_2026-06-27.md`; `docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
+| Allowed scope source | operator instruction to continue according to next move; active session state; this guidance's recommended FPC-SCG-T0 roadmap-refresh candidate |
+| Before status evidence | HEAD `0990e16c`; worktree clean before material patch |
+| After status evidence | guidance updated to record T0 roadmap-refresh closure and route next candidate to FPC-SCG-T7 acceptance/reopen gate |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | reference guidance only |
-| Claim boundary | records next-roadmap priority; no registry edit, checker implementation, runtime/provider/live proof, public-sync, generated state mutation, use-case work, or MPI-T6 runtime work |
-| Agent type | single-agent reference author |
-| Invocation ID | `foundation-plane-system-chain-gap-priority-guidance-2026-06-27` |
-| Expected manifest | `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
-| Actual changed set | `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
+| Approval boundary | bounded FPC-SCG-T0 roadmap refresh and guidance update only |
+| Claim boundary | records source-verified routing guidance; no registry edit, manifest expansion, checker implementation, runtime/provider/live proof, public-sync, generated state mutation, use-case work, or MPI-T6 runtime work |
+| Agent type | single-agent dispatcher/implementer/reviewer |
+| Invocation ID | `fpc-scg-t0-foundation-system-chain-gap-closure-roadmap-refresh-2026-06-27` |
+| Expected manifest | `docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/baselines/CVF_GC018_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_FOR_CODEX_2026-06-27.md`; `docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
+| Actual changed set | `docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/baselines/CVF_GC018_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_FOR_CODEX_2026-06-27.md`; `docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
 | Manifest delta | MATCH |
 
 ## Claim Boundary

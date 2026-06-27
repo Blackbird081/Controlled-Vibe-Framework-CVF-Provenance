@@ -31,6 +31,13 @@ Required command:
 python governance/compat/run_agent_push_readiness_preview.py --base <baseHead> --head HEAD --enforce
 ```
 
+Default upstream debt rule: the preview fails when the local branch is more
+than 2 commits ahead of its upstream tracking branch. The normal safe shape is
+one material commit plus one dedicated session-sync or handoff-sync commit.
+If a governed batch truly needs a larger local stack, the agent must either
+push the completed pair first, or record a concrete blocker and operator
+authorization before continuing into the next tranche.
+
 If the branch intentionally has no upstream tracking branch, use
 `--skip-upstream` and record that reason in the closure packet. For final push
 evidence, the preview range must be non-stale and must not be confused with the
@@ -42,6 +49,7 @@ full gate required by
 The preview must report:
 
 - repository remote and upstream tracking branch;
+- upstream push-debt status and the local commit count ahead of upstream;
 - `git status --short`;
 - commit-shape split risk between material paths and protected
   session/handoff paths;
@@ -64,6 +72,12 @@ split the batch:
 2. Commit a dedicated session-sync or handoff-sync update second.
 3. Run preview again over the relevant final range.
 4. Then run the canonical pre-push gate.
+
+If the preview reports upstream push debt over the default limit, the agent
+must not open or continue another governed tranche on that branch. The next
+action is to push the already-complete safe range, rebuild/split the unpushed
+range if it is already malformed, or record a concrete blocker in the active
+handoff and stop new material work.
 
 ## Findings / Position
 
@@ -88,6 +102,14 @@ Risk: an agent may preview an empty or stale range.
 Corrective action: the closure packet must name the base/head range used for
 final push readiness and must keep material and session-sync ranges separate
 when commit-shape says to split them.
+
+Risk: an agent may keep committing multiple governed tranches locally and defer
+push until the resulting range mixes material, protected session surfaces, and
+handoff rotation history.
+
+Corrective action: the preview helper fails by default when upstream ahead
+count exceeds 2. The agent must clear or explicitly park that push debt before
+starting another governed tranche.
 
 ## Decision / Disposition
 
@@ -136,7 +158,7 @@ public-facing artifact is authorized in this batch.
 | Target paths | `docs/reference/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARD_2026-06-27.md`; `governance/compat/run_agent_push_readiness_preview.py`; `governance/compat/test_run_agent_push_readiness_preview.py`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_AGENT_PUSH_READINESS_PREVIEW_STANDARDIZATION_COMPLETION_2026-06-27.md`; `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json` |
 | Allowed scope source | operator instruction to standardize the prevention path for provenance pre-push cascades before returning to FPC-SCG next move |
 | Before status evidence | baseHead `3e4b7266`; worktree clean before patch |
-| After status evidence | read-only helper and standard added; focused tests PASS 5/5; push-readiness preview PASS |
+| After status evidence | read-only helper and standard added; upstream push-debt limit documented; focused tests updated |
 | Diff evidence | `git diff --name-status` against baseHead `3e4b7266` |
 | Approval boundary | push-readiness preview standardization only |
 | Claim boundary | read-only preview; no public-sync, runtime/provider/live behavior, registry edit beyond documentation, push authorization, MPI-T6 work, or FPC implementation |

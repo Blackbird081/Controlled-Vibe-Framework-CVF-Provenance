@@ -63,10 +63,43 @@ def test_upstream_status_reports_missing_tracking_branch(monkeypatch) -> None:
 
     monkeypatch.setattr(preview, "_git_output", fake_git_output)
 
-    result = preview._upstream_status()
+    result = preview._upstream_status(ahead_limit=2)
 
     assert result.status == "FAIL"
     assert "no upstream" in result.output
+
+
+def test_upstream_status_fails_when_push_debt_exceeds_limit(monkeypatch) -> None:
+    def fake_git_output(*args, check=False):
+        if args[:4] == ("rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"):
+            return 0, "origin/main"
+        if args[:3] == ("rev-list", "--left-right", "--count"):
+            return 0, "0\t3"
+        return 1, "unexpected git call"
+
+    monkeypatch.setattr(preview, "_git_output", fake_git_output)
+
+    result = preview._upstream_status(ahead_limit=2)
+
+    assert result.status == "FAIL"
+    assert result.returncode == 1
+    assert "upstream push debt exceeds limit 2" in result.output
+
+
+def test_upstream_status_passes_within_push_debt_limit(monkeypatch) -> None:
+    def fake_git_output(*args, check=False):
+        if args[:4] == ("rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"):
+            return 0, "origin/main"
+        if args[:3] == ("rev-list", "--left-right", "--count"):
+            return 0, "0\t2"
+        return 1, "unexpected git call"
+
+    monkeypatch.setattr(preview, "_git_output", fake_git_output)
+
+    result = preview._upstream_status(ahead_limit=2)
+
+    assert result.status == "PASS"
+    assert result.returncode == 0
 
 
 def test_main_json_returns_nonzero_only_when_enforced(monkeypatch, capsys) -> None:
@@ -90,7 +123,11 @@ def test_main_json_returns_nonzero_only_when_enforced(monkeypatch, capsys) -> No
             output="bad",
         ),
     )
-    monkeypatch.setattr(preview, "_run_preview", lambda base, head, include_upstream: (shape, checks))
+    monkeypatch.setattr(
+        preview,
+        "_run_preview",
+        lambda base, head, include_upstream, upstream_ahead_limit: (shape, checks),
+    )
     monkeypatch.setattr(preview.sys, "argv", ["prog", "--json"])
 
     assert preview.main() == 0
