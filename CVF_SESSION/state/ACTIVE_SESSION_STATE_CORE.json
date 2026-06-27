@@ -65,8 +65,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "fpc_prg_t1_parked_reopen_condition_source_inventory_closed_pass_bounded_pending_prg_t2_checker",
-  "previousMode": "fpc_prg_t0_parked_reopen_gate_systemization_closed_pass_bounded_pending_prg_t1_source_inventory",
+  "currentMode": "fpc_prg_t2_parked_reopen_gate_checker_closed_pass_bounded_pending_prg_t3_gate_wiring",
+  "previousMode": "fpc_prg_t1_parked_reopen_condition_source_inventory_closed_pass_bounded_pending_prg_t2_checker",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
