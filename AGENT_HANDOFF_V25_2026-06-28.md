@@ -176,3 +176,20 @@ FPC-SCG/FPC-DSD/FPC-UAP closures.
 
 This handoff is a compact session-continuity and next-move routing surface
 only. Complete canonical state lives in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+
+## GC-020 Marker - V25 Rotation Session Sync
+
+Session-sync commit `2a04e28e` rotated the active handoff from V24 to V25,
+archived V24, and updated front-door/state pointers after prerequisite root
+exposure classification commit `f7f4294d`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed V25 rotation. It does not reopen downstream implementation,
+runtime/provider/live work, public-sync mutation, adapter implementation,
+package activation, certification, Policy_Local, Document Translator,
+Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime.
+
+Rollback boundary: if this marker is rejected, revert only this marker commit.
+Do not revert V25 rotation commit `2a04e28e`, root exposure classification
+commit `f7f4294d`, material commit `24726307`, or public-sync commit
+`04d88109317c780ceb2062a257c0e863e2379276`.
