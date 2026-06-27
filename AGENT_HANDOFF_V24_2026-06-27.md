@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V23_2026-06-26.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`; active handoff=AGENT_HANDOFF_V24_2026-06-27.md; next allowed move=hold, or open a fresh GC-018/source-verified downstream-selection tranche only after explicit selection and recorded reopen condition; parked checkpoint=P0 registry visibility, FPC-T3-C06 raw-memory invariant coverage, FPC-T3-C02 DICE machine-candidate coverage, FPC-T3-C05 worker-return fast-gate coverage, FPC-T3-C03 expected-chain manifest source verification/checker extension, FPC-SCG-T0 roadmap refresh, FPC-SCG-T7 acceptance ledger/reopen gate, FPC-DSD-T0 downstream lane selection, FPC-UAP-T0 public-boundary roadmap, FPC-UAP-T1 public surface inventory, FPC-UAP-T2 public export, and FPC-SCG-T8 acceptance-ledger carrier reconciliation are closed bounded through material commit `e278c039`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime-provider-live lanes and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`fpc_dsd_t1_downstream_hold_closed_pass_bounded_pending_hold_or_fresh_reopen_condition`; active handoff=AGENT_HANDOFF_V24_2026-06-27.md; next allowed move=hold downstream implementation by default, or open a fresh GC-018/source-verified tranche only if a concrete lane-specific reopen condition is satisfied by current source evidence; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, and DSD-T1 are closed bounded through material commit `24726307`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime-provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Current State
 
@@ -30,10 +30,11 @@ Startup acknowledged: current mode=`fpc_scg_t8_acceptance_ledger_carrier_reconci
 | FPC-UAP-T1 public surface inventory closure | `be253923` |
 | FPC-UAP-T2 public export closure | `be253923`; public `04d88109317c780ceb2062a257c0e863e2379276` |
 | FPC-SCG-T8 acceptance-ledger carrier reconciliation closure | `e278c039` |
+| FPC-DSD-T1 downstream hold decision closure | `24726307` |
 
 ## Current Mode
 
-`fpc_scg_t8_acceptance_ledger_carrier_reconciliation_closed_pass_bounded_pending_hold_or_fresh_downstream_selection`
+`fpc_dsd_t1_downstream_hold_closed_pass_bounded_pending_hold_or_fresh_reopen_condition`
 
 ## Purpose
 
@@ -73,11 +74,11 @@ Archived predecessor:
 
 ## Latest Work / Changes
 
-Latest material closure: commit `be253923` closed
-FPC-UAP-T2 Use-Case Adapter Public Export README Catalog Snapshot Refresh as
+Latest material closure: commit `24726307` closed
+FPC-DSD-T1 Foundation Downstream Post-Public-Export Lane Selection Decision as
 `CLOSED_PASS_BOUNDED`.
 
-Latest session sync base: parent HEAD `be253923`.
+Latest session sync base: parent HEAD `24726307`.
 
 Latest session sync commit: `f1cfad952c66d4b2b20751913604b2f4552c74a4`.
 
@@ -979,3 +980,61 @@ material commits.
 This handoff update records FPC-SCG-T8 closure and next-move routing only.
 Complete canonical state lives in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Provenance push still requires pre-push evidence on the current range.
+
+## FPC-DSD-T1 Session Sync - 2026-06-28
+
+Material commit `24726307` closed FPC-DSD-T1 Foundation Downstream
+Post-Public-Export Lane Selection Decision as `CLOSED_PASS_BOUNDED`.
+
+Decision: `HOLD_DOWNSTREAM_IMPLEMENTATION`; selected implementation lane:
+none.
+
+Next allowed move: hold downstream implementation by default. A fresh
+GC-018/source-verified downstream or foundation maintenance tranche may open
+only if a concrete lane-specific reopen condition is satisfied by current
+source evidence.
+
+Lane-specific reopen conditions:
+
+- `use-case-adapter-public`: fresh GC-018 proves a concrete adapter behavior or
+  public-surface gap remains after UAP-T2.
+- `runtime-provider-live`: fresh GC-018 proves a concrete runtime governance
+  behavior claim needs live proof with secret-safe diagnostics.
+- `MPI-T6-runtime`: fresh GC-018 proves an operator-stated product requirement
+  explicitly needs the MPI lane itself and current MPI contract/helper/durable
+  surfaces are insufficient.
+
+No runtime/MCP/CLI/IDE bridge implementation, provider/live proof,
+Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion,
+MPI-T6 runtime work, resolver mutation, adapter implementation, package
+activation, certification decision, generated workspace state mutation beyond
+active session sync, public-sync expansion, private provenance evidence export,
+or push from the provenance workspace is authorized by this next move.
+
+## Agent Operation Trace Block - FPC-DSD-T1 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | local repository tools |
+| Session or invocation | 2026-06-28 FPC-DSD-T1 session sync |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, apply_patch, active-session generator, governance gates |
+| Target paths | active session front door, active session state sources/aggregate/bootstrap, active handoff |
+| Allowed scope source | GC-020 session continuity after material commit `24726307` |
+| Before status evidence | active-session check required handoff to contain current HEAD `24726307` |
+| After status evidence | session-sync gates before commit |
+| Diff evidence | `git diff --name-status 24726307..HEAD` |
+| Approval boundary | active session continuity sync only |
+| Claim boundary | handoff/front-door/state sync only; no runtime/provider/live/public-sync/generated workspace state beyond active session/resolver/adapter/certification/Policy_Local/Document Translator/Model Gateway/Sandbox/DICE/MPI-T6 implementation |
+| Agent type | session-sync steward |
+| Invocation ID | `fpc-dsd-t1-session-sync-2026-06-28` |
+| Expected manifest | `AGENT_HANDOFF_V24_2026-06-27.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/fpcDsdT1FoundationDownstreamPostPublicExportLaneSelectionClosure20260628.json` |
+| Actual changed set | `AGENT_HANDOFF_V24_2026-06-27.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/fpcDsdT1FoundationDownstreamPostPublicExportLaneSelectionClosure20260628.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Claim Boundary - FPC-DSD-T1 Session Sync
+
+This handoff update records FPC-DSD-T1 closure and next-move routing only.
+Complete canonical state lives in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
