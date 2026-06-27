@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T6 runtime work not reopened by MPI-T5 reconciliation; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
+Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T6 runtime work not reopened by MPI-T5 reconciliation unless a recorded T6 reopen condition is verified; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
 
 ## Current State
 
@@ -352,6 +352,25 @@ mutation, registry mutation, package activation, certification decision,
 generated workspace state mutation, or DICE work without future accepted work
 order authorization. MPI-T6 runtime work is not reopened by MPI-T5
 reconciliation.
+
+Do not re-propose MPI-T6 runtime work unless one of the recorded reopen
+conditions in
+`docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`
+is verified:
+
+- an operator-stated product requirement explicitly needs the MPI lane itself
+  to add live runtime memory read, vector/durable-store query, or
+  external-agent MCP/CLI read not satisfied by current MPI contract/helper or
+  pre-existing durable/reinjection surfaces;
+- MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by
+  an actual missing MPI-lane capability rather than wording error;
+- an external integration partner requires the MPI lane specifically, not
+  pre-existing memory routes, to expose live MCP/CLI memory read access.
+
+Any reopened runtime work still requires fresh operator decision, fresh
+GC-018, source verification, live/provider proof when governance behavior is
+claimed, public/provenance boundary review, and secrets/quota handling if
+applicable.
 
 ## Parked Boundaries
 
