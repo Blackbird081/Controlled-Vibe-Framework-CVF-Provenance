@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1256,
+  "stateKey": "foundationPlaneSystemChainGapPriorityGuidance20260627",
+  "value": {
+    "status": "ACTIVE_REFERENCE",
+    "materialCommit": "2fc14fde",
+    "referenceGuidance": "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+    "operatorDirection": "Record the plane system-chain gap assessment as governed guidance and use it to open the next roadmap or tranche in the right direction.",
+    "priority": [
+      "P0 system-loop interlock registry gap: FPC-T2-C01 through C05",
+      "P1 machine-check coverage gap: FPC-T3-C06, FPC-T3-C02, FPC-T3-C05, FPC-T3-C03",
+      "P2 downstream use-case restraint until P0/P1 are handled or explicitly deprioritized"
+    ],
+    "recommendedNextWorkOrder": "FPC-SCG-T1 Foundation Plane System-Chain Interlock Registry Decision And Edit",
+    "fallbackNextRoadmap": "FPC-SCG-T0 Foundation Plane System-Chain Gap Closure Roadmap",
+    "boundary": "Guidance only. No registry edit, checker implementation, runtime/provider/live proof, public-sync, generated workspace state mutation, use-case adapter work, MPI-T6 runtime work, or push is authorized without a separate fresh GC-018/source-verified work order."
+  }
+}

@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T6 runtime work not reopened by MPI-T5 reconciliation unless a recorded T6 reopen condition is verified; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
+Startup acknowledged: current mode=`foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open fresh GC-018/source-verified FPC system-chain gap roadmap or work order from `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md`; parked checkpoint=P0/P1 foundation system-chain gaps are highest priority and downstream runtime/use-case lanes remain parked; no registry edit, checker implementation, runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
 
 ## Current State
 
@@ -42,12 +42,13 @@ Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_p
 | MPI-T4 Current-State Reconciliation closure | `d85dd329` |
 | MPI-T5 Current-State Reconciliation closure | `ec7da05c` |
 | MPI-T6 reopen-condition session sync | `d172fe48d7048847fb1c32c32609bff8a5d808c2` |
+| Foundation Plane System-Chain Gap Priority Guidance | `2fc14fde` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+`foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection`
 
 ## Purpose
 
@@ -57,15 +58,16 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after MPI-T5 Current-State Reconciliation closure.
+after Foundation Plane System-Chain Gap Priority Guidance was recorded.
 
-Owner boundary: this handoff authorizes only another fresh CVF foundation
-roadmap through GC-018/source-verified work order before implementation. It does not authorize
-runtime/MCP/CLI/IDE bridge implementation, further provider/live proof,
-public-sync, push, checker implementation, resolver mutation, adapter mutation,
-registry mutation, package activation, certification decision, generated
-workspace state mutation, DICE work, or MPI-T6 runtime reopening without a
-separate governed tranche.
+Owner boundary: this handoff authorizes only fresh GC-018/source-verified
+roadmap or work-order authoring for FPC system-chain gap closure. It does not
+authorize registry edit, checker implementation, runtime/MCP/CLI/IDE bridge
+implementation, further provider/live proof, public-sync, push, resolver
+mutation, adapter mutation, package activation, certification decision,
+generated workspace state mutation, DICE work, Policy_Local, Document
+Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime
+reopening without a separate governed tranche.
 
 ## Active Boundary
 
@@ -138,6 +140,11 @@ Reconciliation batch as `CLOSED_PASS_BOUNDED`.
 
 Latest material closure: commit `ec7da05c` closed the MPI-T5 Current-State
 Reconciliation batch as `CLOSED_PASS_BOUNDED`.
+
+Latest material guidance: commit `2fc14fde` recorded
+`docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md`
+as active routing guidance for next FPC system-chain gap roadmap/tranche
+selection.
 
 Latest checklist learning work: commit `13dcb7ad` updated
 `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
@@ -230,6 +237,10 @@ The MPI-T4 Current-State Reconciliation batch closed at material commit
 The MPI-T5 Current-State Reconciliation batch closed at material commit
 `ec7da05c`.
 
+The Foundation Plane System-Chain Gap Priority Guidance was recorded at
+material commit `2fc14fde` as an `ACTIVE_REFERENCE` for next roadmap/tranche
+selection.
+
 Material result from the latest MPI-T5 reconciliation:
 
 - Created and closed the MPI-T5 current-state reconciliation GC-018, work
@@ -283,76 +294,38 @@ Prior MKGOV material result:
 Session-maintenance result for this handoff update:
 
 - Updates active front door, generated state sources, bootstrap read model, and
-  active handoff after MPI-T5 material closure.
-- Keeps the next move on selecting another fresh foundation lane through
-  GC-018/source-verified work order or holding.
+  active handoff after Foundation Plane System-Chain Gap Priority Guidance.
+- Keeps the next move on FPC system-chain gap closure through fresh
+  GC-018/source-verified roadmap or work order.
 
 ## Next Allowed Move
 
-Next allowed move: select another high-value CVF foundation roadmap through
-fresh GC-018/source-verified work order before implementation, or hold.
-LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: open a fresh GC-018/source-verified roadmap or work order
+to handle FPC system-chain gaps first, using
+`docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md`
+as the routing reference. LHW24 remains the latest closed numbered LHW wave.
 
-Use
-`docs/reviews/CVF_MPI_T5_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`
-as the current MPI-T5 reconciliation completion reference.
+Priority order:
 
-Use
-`docs/reviews/CVF_MPI_T4_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`
-as the current MPI-T4 reconciliation completion reference.
+1. P0 system-loop interlock registry gap for FPC-T2-C01 through C05.
+2. P1 machine-check coverage gap for FPC-T3-C06, C02, C05, and C03.
+3. P2 downstream use-case restraint.
 
-Use `docs/reference/CVF_MEMORY_PLANE_MAP.md` as the current Memory Plane
-navigation reference; it records MPI-T4 as a local helper and MPI-T5 as a
-local static checker, with neither treated as route-wired runtime access.
+Recommended first work order candidate:
 
-Use `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md` as the
-current external-agent memory read contract reference.
+`FPC-SCG-T1 Foundation Plane System-Chain Interlock Registry Decision And Edit`
 
-Use
-`docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_COMPLETION_2026-06-27.md`
-as the current MPI-T3 completion reference.
+Fallback if registry-edit scope is too broad:
 
-Use `docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md` as the current MKG
-owner-verification routing reference.
+`FPC-SCG-T0 Foundation Plane System-Chain Gap Closure Roadmap`
 
-Use
-`docs/reviews/CVF_MKG_OWNER_VERIFICATION_DECISION_COMPLETION_2026-06-27.md`
-as the current MKGOV completion reference.
-
-Use `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md` as
-the current MKG finality reconciliation reference.
-
-Use
-`docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md`
-as the current MPFR completion reference.
-
-Use `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md` as the
-current manual evidence/readout packet template reference.
-
-Use
-`docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md`
-as the current ERQP completion reference.
-
-Use `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`
-as the current evidence/readout source-selection reference.
-
-Use
-`docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`
-as the current EFRD completion reference.
-
-Use `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`
-as the current value-proof reference.
-
-Use `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`
-and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md`
-as reference evidence only.
-
-Do not start runtime/MCP/CLI/IDE bridge implementation, further provider/live
-proof, public-sync, push, checker implementation, resolver mutation, adapter
-mutation, registry mutation, package activation, certification decision,
-generated workspace state mutation, or DICE work without future accepted work
-order authorization. MPI-T6 runtime work is not reopened by MPI-T5
-reconciliation.
+Do not start registry edit, checker implementation,
+runtime/MCP/CLI/IDE bridge implementation, further provider/live proof,
+public-sync, push, resolver mutation, adapter mutation, package activation,
+certification decision, generated workspace state mutation, DICE work,
+Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or
+other downstream use-case/runtime work without future accepted work-order
+authorization. MPI-T6 runtime work remains parked.
 
 Do not re-propose MPI-T6 runtime work unless one of the recorded reopen
 conditions in
@@ -387,12 +360,16 @@ Not authorized by this handoff:
 - ASSF generated-index mutation.
 - Resolver mutation.
 - Web runtime/source implementation outside the dispatched work order.
+- Registry edit.
 - Checker implementation.
 - CLI/MCP adapter behavior change.
 - Further provider/live proof.
 - Public-sync or push.
 - Package activation, package instruction execution, or package integration.
 - DICE roadmap execution until the operator reopens it.
+- Policy_Local or Document Translator use-case work.
+- MPI-T6 runtime work unless a recorded reopen condition is verified.
+- Model Gateway/Sandbox runtime expansion.
 
 ## Required Startup Reads
 
@@ -413,7 +390,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base d172fe48 --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 2fc14fde --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -421,36 +398,44 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 MPI-T6 reopen-condition handoff SHA repair |
+| Session or invocation | 2026-06-27 foundation plane system-chain gap guidance session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
-| Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
-| Allowed scope source | active-session state gate requiring the handoff to contain current HEAD `d172fe48d7048847fb1c32c32609bff8a5d808c2` before new material work |
-| Before status evidence | clean worktree after stashing uncommitted foundation-gap guidance |
+| Target paths | front door, active handoff, active session state sources and generated state |
+| Allowed scope source | Foundation Plane System-Chain Gap Priority Guidance material commit `2fc14fde` and operator instruction to make it next-roadmap/tranche guidance |
+| Before status evidence | material guidance committed at `2fc14fde` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
-| Claim boundary | handoff SHA repair only; no front-door/state next-move change, no Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, checker implementation, DICE work, or MPI-T6 runtime |
+| Claim boundary | session-sync only; no registry edit, checker implementation, Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or MPI-T6 runtime |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 handoff SHA repair |
-| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
-| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Invocation ID | local Codex session 2026-06-27 foundation gap guidance session-sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/foundationPlaneSystemChainGapPriorityGuidance20260627.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/foundationPlaneSystemChainGapPriorityGuidance20260627.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: active handoff SHA repair only.
+Authorized guard-maintenance scope: session front-door, generated active state,
+and active handoff update after Foundation Plane System-Chain Gap Priority
+Guidance only.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V23_2026-06-26.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/foundationPlaneSystemChainGapPriorityGuidance20260627.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: active-session state gate reported that the handoff did
-not contain current HEAD `d172fe48d7048847fb1c32c32609bff8a5d808c2`; this
-update records that commit before further material work.
+Operator authorization: user requested this assessment be recorded as guidance
+for opening the next roadmap/tranche in the right direction and prioritizing
+the identified gaps.
 
-Rollback boundary: revert the handoff SHA repair commit only; do not revert
-material commit `ec7da05c` or session-sync commit `d172fe48`.
+Rollback boundary: revert the session-sync commit only; do not revert material
+guidance commit `2fc14fde`.
 
 ## Claim Boundary
 

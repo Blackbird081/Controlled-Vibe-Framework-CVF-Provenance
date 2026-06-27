@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold; parked checkpoint=DICE remains parked, MPI-T6 runtime work not reopened by MPI-T5 reconciliation unless a recorded T6 reopen condition is verified; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
+Startup acknowledged: current mode=`foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open fresh GC-018/source-verified FPC system-chain gap roadmap or work order from `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md`; parked checkpoint=P0/P1 foundation system-chain gaps are highest priority and downstream runtime/use-case lanes remain parked; no registry edit, checker implementation, runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Current mode marker: `foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection`
 
-Current mode: `mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Current mode: `foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection`
 
-`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+`foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection`
 
 Previous mode:
 
-`mpi_t4_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+`mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
 ## Latest Closed Work
 
@@ -79,20 +79,21 @@ Previous mode:
 | MPI-T3 External Agent Memory Read Contract | `b825a69c` | CLOSED_PASS_BOUNDED |
 | MPI-T4 Current-State Reconciliation | `d85dd329` | CLOSED_PASS_BOUNDED |
 | MPI-T5 Current-State Reconciliation | `ec7da05c` | CLOSED_PASS_BOUNDED |
+| Foundation Plane System-Chain Gap Priority Guidance | `2fc14fde` | ACTIVE_REFERENCE |
 
 ## Next Allowed Move
 
-Mode: `mpi_t5_current_state_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Mode: `foundation_plane_system_chain_gap_guidance_active_pending_fpc_scg_tranche_selection`
 
-Next allowed move: select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation, or hold. Use `docs/reviews/CVF_MPI_T5_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_MPI_T4_CURRENT_STATE_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MEMORY_PLANE_MAP.md`, `docs/reference/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT.md`, `docs/reviews/CVF_MPI_T3_EXTERNAL_AGENT_MEMORY_READ_CONTRACT_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md`, `docs/reviews/CVF_MKG_OWNER_VERIFICATION_DECISION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md`, `docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md`, `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`, `docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`, `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`, and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. MPI-T6 runtime work is not reopened by MPI-T5 reconciliation and must not be re-proposed unless a recorded T6 reopen condition is verified. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: open a fresh GC-018/source-verified roadmap or work order to handle FPC system-chain gaps first, using `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` as the routing reference. Priority order: P0 system-loop interlock registry gap for FPC-T2-C01 through C05; P1 machine-check coverage gap for FPC-T3-C06, C02, C05, and C03; P2 downstream use-case restraint. Recommended first work order candidate: `FPC-SCG-T1 Foundation Plane System-Chain Interlock Registry Decision And Edit`. Fallback: `FPC-SCG-T0 Foundation Plane System-Chain Gap Closure Roadmap`. LHW24 remains the latest closed numbered LHW wave.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
-No runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, or push without separate authorization.
+No registry edit, checker implementation, runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, MPI-T6 runtime work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, or push without separate authorization.
 
 ## Parked Checkpoint
 
-MPI-T5 Current-State Reconciliation is closed bounded at material commit `ec7da05c`. It aligned the parent MPI roadmap and Memory Plane map with the existing local static Memory Access Claim checker while preserving no runtime memory access, no adapter, no provider/live, no public-sync, and no checker/source/test/wiring edit in this tranche. DICE remains parked; MPI-T6 runtime work is not reopened unless a recorded reopen condition is verified; next value is selecting another high-value foundation lane through fresh GC-018/source-verified work order or holding.
+Foundation Plane System-Chain Gap Priority Guidance is active at material commit `2fc14fde`. The next tranche should prioritize P0/P1 foundation system-chain gaps before downstream runtime, provider, public-sync, use-case, or MPI-T6 runtime work. MPI-T6 remains parked unless a recorded reopen condition is verified.
 
 ## Continuity Markers
 
