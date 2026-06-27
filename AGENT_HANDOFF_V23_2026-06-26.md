@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open a decision-first Local Workspace Projection Read Model roadmap or GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, or push without separate authorization.
+Startup acknowledged: current mode=`local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value CVF foundation roadmap or open fresh GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
 
 ## Current State
 
@@ -32,12 +32,13 @@ Startup acknowledged: current mode=`workspace_layer_full_package_absorption_clos
 | RSE roadmap status reconciliation closure | `23d99200` |
 | Roadmap status reconciliation sweep T0-T4 closure | `3ccf574c` |
 | Workspace layer full package absorption WLFA-T0-T4 closure | `fd8b1987` |
+| Local workspace projection read model LWPRM-T0-T4 closure | `8be9f9b6` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`
+`local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection`
 
 ## Purpose
 
@@ -47,13 +48,14 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after workspace layer full package absorption closure.
+after local workspace projection read-model closure.
 
-Owner boundary: this handoff authorizes only a decision-first Local Workspace
-Projection Read Model roadmap or fresh GC-018/source-verified work order before
-implementation. It does not authorize runtime/MCP/CLI/IDE bridge
+Owner boundary: this handoff authorizes only next CVF foundation roadmap
+selection or fresh GC-018/source-verified work order before implementation. It
+does not authorize runtime/MCP/CLI/IDE bridge
 implementation, provider/live proof, public-sync, push, resolver mutation,
-adapter mutation, package activation, certification decision, or DICE work.
+adapter mutation, package activation, certification decision, generated
+workspace state mutation, or DICE work.
 
 ## Active Boundary
 
@@ -167,6 +169,9 @@ The roadmap status reconciliation sweep T0-T4 closed at material commit
 The Workspace Layer Full Package Absorption WLFA-T0-T4 foundation batch closed
 at material commit `fd8b1987`.
 
+The Local Workspace Projection Read Model LWPRM-T0-T4 foundation batch closed
+at material commit `8be9f9b6`.
+
 Material result:
 
 - Reduced `governance/compat/check_work_order_dispatch_quality.py` from 2213
@@ -185,17 +190,18 @@ Session-maintenance result in progress for this handoff:
 
 ## Next Allowed Move
 
-Next allowed move: open a decision-first Local Workspace Projection Read Model
-roadmap or GC-018/source-verified work order before implementation.
+Next allowed move: select the next high-value CVF foundation roadmap or open a
+fresh GC-018/source-verified work order before implementation.
 LHW24 remains the latest closed numbered LHW wave.
 
-Use `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md`
-as advisory reference evidence only.
+Use `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`
+and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md`
+as reference evidence only.
 
 Do not start runtime/MCP/CLI/IDE bridge implementation, provider/live proof,
 public-sync, push, resolver mutation, adapter mutation, package activation,
-certification decision, or DICE work without future accepted work order
-authorization.
+certification decision, generated workspace state mutation, or DICE work
+without future accepted work order authorization.
 
 ## Parked Boundaries
 
@@ -236,7 +242,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 3ccf574c --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 8be9f9b6 --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -244,26 +250,26 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 roadmap status reconciliation sweep session-sync |
+| Session or invocation | 2026-06-27 local workspace projection read-model session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | roadmap status reconciliation sweep material closure commit `3ccf574c` and active next-move continuity update |
-| Before status evidence | clean worktree after material closure commit `3ccf574c` |
+| Allowed scope source | LWPRM-T0-T4 material closure commit `8be9f9b6` and active next-move continuity update |
+| Before status evidence | clean worktree after material closure commit `8be9f9b6` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
-| Claim boundary | session-sync only; no Web runtime/source, package, provider, public-sync, ASSF generated-index, ASSF registry-source, adapter, or resolver mutation |
+| Claim boundary | session-sync only; no Web runtime/source, package activation, provider/live, public-sync, generated workspace state mutation, adapter, resolver, certification, or DICE work |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-26 |
-| Expected manifest | this handoff and active session/front-door files |
-| Actual changed set | session-sync commit manifest |
+| Invocation ID | local Codex session 2026-06-27 LWPRM session-sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/localWorkspaceProjectionReadModelClosure20260627.json` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/localWorkspaceProjectionReadModelClosure20260627.json` |
 | Manifest delta | N/A with reason: material boundary closure already committed separately |
 
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after workspace layer full package absorption closure
+and active handoff update after local workspace projection read-model closure
 only.
 
 Protected paths:
@@ -275,15 +281,15 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
-- `CVF_SESSION/state/entries/workspaceLayerFullPackageAbsorptionClosure20260627.json`
+- `CVF_SESSION/state/entries/localWorkspaceProjectionReadModelClosure20260627.json`
 
 Operator authorization: user directed DICE to remain parked and asked Codex to
-prioritize CVF foundation uplift from T0-T4; Codex committed the material
-closure at `fd8b1987`; this update routes the active session to the decision-
-first Local Workspace Projection Read Model next move.
+prioritize CVF foundation uplift; Codex committed the LWPRM-T0-T4 material
+closure at `8be9f9b6`; this update routes the active session to next foundation
+selection.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `fd8b1987`.
+commit `8be9f9b6`.
 
 ## Claim Boundary
 

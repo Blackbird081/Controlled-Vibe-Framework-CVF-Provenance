@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision",
+  "currentMode": "local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection",
   "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
-  "nextAllowedMove": "Workspace Layer Full Package Absorption WLFA-T0-T4 is CLOSED_PASS_BOUNDED at material commit fd8b1987. The frozen workspace-layer package now has a full non-cache inventory, absorption matrix, stable workspace reference, and GC-051 registry coverage. Next allowed move: open a decision-first Local Workspace Projection Read Model roadmap or GC-018/source-verified work order before implementation. DICE remains parked. LHW24 remains the latest closed numbered LHW wave. No runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, or push without separate authorization.",
+  "nextAllowedMove": "Local Workspace Projection Read Model foundation LWPRM-T0-T4 is CLOSED_PASS_BOUNDED at material commit 8be9f9b6. The workspace layer package now has both full absorption inventory and a CVF-owned read-model decision reference. Next allowed move: select the next high-value CVF foundation roadmap or open a fresh GC-018/source-verified work order before implementation. Recommended direction: continue workspace foundation hardening only if it remains decision/reference/read-model scope; otherwise choose another CVF foundation debt lane. DICE remains parked. LHW24 remains the latest closed numbered LHW wave. No runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

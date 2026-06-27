@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=open a decision-first Local Workspace Projection Read Model roadmap or GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, or push without separate authorization.
+Startup acknowledged: current mode=`local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select the next high-value CVF foundation roadmap or open fresh GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`
+Current mode marker: `local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection`
 
-Current mode: `workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`
+Current mode: `local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection`
 
-`workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`
+`local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection`
 
 Previous mode:
 
-`roadmap_status_reconciliation_sweep_closed_pass_bounded_pending_next_roadmap_selection`
+`workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`
 
 ## Latest Closed Work
 
@@ -70,18 +70,19 @@ Previous mode:
 | RSE roadmap status reconciliation | `23d99200` | CLOSED_PASS_BOUNDED |
 | Roadmap status reconciliation sweep T0-T4 | `3ccf574c` | CLOSED_PASS_BOUNDED |
 | Workspace layer full package absorption WLFA-T0-T4 | `fd8b1987` | CLOSED_PASS_BOUNDED |
+| Local workspace projection read model LWPRM-T0-T4 | `8be9f9b6` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `workspace_layer_full_package_absorption_closed_pass_bounded_pending_projection_read_model_decision`
+Mode: `local_workspace_projection_read_model_closed_pass_bounded_pending_next_foundation_selection`
 
-Next allowed move: open a decision-first Local Workspace Projection Read Model roadmap or GC-018/source-verified work order before implementation. Use `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as advisory reference evidence only. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select the next high-value CVF foundation roadmap or open fresh GC-018/source-verified work order before implementation. Use `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md` and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. LHW24 remains the latest closed numbered LHW wave.
 
-No runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, DICE work, or push without separate authorization.
+No runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push without separate authorization.
 
 ## Parked Checkpoint
 
-Workspace Layer Full Package Absorption WLFA-T0-T4 is closed bounded at material commit `fd8b1987`. The frozen package now has a stable full inventory, absorption matrix, and GC-051 registry coverage. DICE remains parked; next value is a decision-first Local Workspace Projection Read Model foundation tranche.
+Local Workspace Projection Read Model LWPRM-T0-T4 is closed bounded at material commit `8be9f9b6`. The frozen package now has a stable full inventory, absorption matrix, GC-051 registry coverage, and CVF-owned read-model decision reference. DICE remains parked; next value is selecting the next CVF foundation roadmap.
 
 ## Continuity Markers
 
