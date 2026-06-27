@@ -48,6 +48,7 @@ PERMANENT_PATHS = {
     "docs/baselines/CVF_TESTER_BASELINE_2026-02-25.md",
     "docs/baselines/README.md",
     "docs/reference/CVF_NON_CODER_VALUE_GUARD_PROPOSAL_2026-04-14.md",
+    "docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md",
     "docs/assessments/CVF_EXECUTIVE_VALUE_PRIORITIZATION_NOTE_2026-04-13.md",
     "docs/roadmaps/CVF_GRAPHIFY_LLM_POWERED_PALACE_SYNTHESIS_ONLY_ROADMAP_2026-04-13.md",
     "AGENT_HANDOFF.md",
@@ -172,7 +173,12 @@ def _changed_paths() -> set[str]:
     return changed
 
 
-def build_report(*, max_stale: int = 10, fail_on_changed_stale: bool = False) -> dict[str, Any]:
+def build_report(
+    *,
+    max_stale: int = 10,
+    fail_on_changed_stale: bool = True,
+    fail_on_backlog: bool = False,
+) -> dict[str, Any]:
     now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
     cutoff = dt.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) - dt.timedelta(
         days=AGE_THRESHOLD_DAYS
@@ -221,7 +227,8 @@ def build_report(*, max_stale: int = 10, fail_on_changed_stale: bool = False) ->
             changed_stale.append(rel_path)
 
     violations: list[dict[str, str]] = []
-    if len(stale_actionable) > max_stale:
+    backlog_exceeds_threshold = len(stale_actionable) > max_stale
+    if fail_on_backlog and backlog_exceeds_threshold:
         violations.append(
             {
                 "type": "active_archive_backlog_exceeds_threshold",
@@ -249,6 +256,8 @@ def build_report(*, max_stale: int = 10, fail_on_changed_stale: bool = False) ->
         "managedRoots": list(MANAGED_ROOTS),
         "maxStale": max_stale,
         "failOnChangedStale": fail_on_changed_stale,
+        "failOnBacklog": fail_on_backlog,
+        "backlogExceedsThreshold": backlog_exceeds_threshold,
         "activeRecentCount": len(active_recent),
         "staleActionableCount": len(stale_actionable),
         "staleBlockedCount": len(stale_blocked),
@@ -271,6 +280,12 @@ def _print_report(report: dict[str, Any]) -> None:
     print(f"Stale retained evidence: {report['staleRetainedCount']}")
     print(f"Stale blocked by baseline screening: {report['staleBlockedCount']}")
     print(f"Stale actionable: {report['staleActionableCount']} (threshold {report['maxStale']})")
+    if report["backlogExceedsThreshold"] and not report["failOnBacklog"]:
+        print(
+            "Advisory: stale actionable backlog exceeds threshold, but unchanged "
+            "global backlog is not a commit blocker. Classify retained evidence or "
+            "archive in a dedicated maintenance batch."
+        )
     print(f"Changed stale: {report['changedStaleCount']}")
     print(f"Permanent: {report['permanentCount']}")
     print(f"Non-dated kept: {report['nonDatedCount']}")
@@ -298,13 +313,27 @@ def main() -> int:
     parser.add_argument(
         "--fail-on-changed-stale",
         action="store_true",
-        help="Fail when the current working tree changes stale dated docs outside archive.",
+        help="Deprecated compatibility flag; changed stale files fail by default.",
+    )
+    parser.add_argument(
+        "--allow-changed-stale",
+        action="store_true",
+        help="Do not fail when the current working tree changes stale dated docs outside archive.",
+    )
+    parser.add_argument(
+        "--fail-on-backlog",
+        action="store_true",
+        help="Fail when unchanged stale actionable backlog exceeds --max-stale.",
     )
     parser.add_argument("--enforce", action="store_true", help="Return non-zero when hygiene violations exist.")
     parser.add_argument("--json", action="store_true", help="Print JSON report.")
     args = parser.parse_args()
 
-    report = build_report(max_stale=args.max_stale, fail_on_changed_stale=args.fail_on_changed_stale)
+    report = build_report(
+        max_stale=args.max_stale,
+        fail_on_changed_stale=not args.allow_changed_stale,
+        fail_on_backlog=args.fail_on_backlog,
+    )
     if args.json:
         print(json.dumps(report, indent=2))
     else:

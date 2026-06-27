@@ -17,7 +17,9 @@ corpus.
 
 **Standard:** `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
-**Registry:** `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+**Generated registry:** `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+**Authoring sources:** `docs/corpus-intelligence/registry/`
 
 ---
 
@@ -40,17 +42,20 @@ Stop agents from:
 1. Read `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`.
 2. Check whether the target corpus path matches any `scopePaths` entry.
 3. Act on the match:
-   - `NOT_STARTED` → proceed with new scan; register entry before starting.
-   - `PARTIALLY_SCANNED` → continue from prior state; do not restart from zero.
-   - `SCANNED` / `SCANNED_WITH_FINDINGS` / `DEEP_CLASSIFIED` → inherit prior
+   - `NOT_STARTED` -> proceed with new scan; register entry before starting.
+   - `PARTIALLY_SCANNED` -> continue from prior state; do not restart from zero.
+   - `SCANNED` / `SCANNED_WITH_FINDINGS` / `DEEP_CLASSIFIED` -> inherit prior
      state; get explicit operator authorization before re-scanning.
-   - `DEFERRED` / `OUT_OF_SCOPE` → do not scan without operator authorization.
+   - `DEFERRED` / `OUT_OF_SCOPE` -> do not scan without operator authorization.
 
 ### After completing a corpus scan
 
-1. Update the registry entry with all required fields.
+1. Update the per-entry registry source under
+   `docs/corpus-intelligence/registry/entries/`.
 2. Add new `findings[]` entries.
-3. Include the registry update in the same governed commit as the scan evidence.
+3. Run `python governance/compat/generate_corpus_scan_registry.py --generate`.
+4. Include the entry source and generated aggregate update in the same governed
+   commit as the scan evidence.
 
 ### Before implementing features derived from a scanned corpus
 
@@ -64,15 +69,18 @@ Stop agents from:
 
 `governance/compat/check_corpus_scan_registry.py` checks:
 
-1. **Required fields** — every entry has all mandatory fields.
-2. **Finding disposition** — `SCANNED_WITH_FINDINGS` entries have at least one
+1. **Required fields** - every entry has all mandatory fields.
+2. **Finding disposition** - `SCANNED_WITH_FINDINGS` entries have at least one
    dispositioned finding.
-3. **Manifest hash** — `COMPLETE_VERIFIED` GC-047 entries have non-null
+3. **Manifest hash** - `COMPLETE_VERIFIED` GC-047 entries have non-null
    `manifestHash`.
-4. **Changed audit coverage** — any changed `docs/audits/` file mentioning a
+4. **Changed audit coverage** - any changed `docs/audits/` file mentioning a
    corpus path has a registry entry for that path.
-5. **Status vocabulary** — all `status` and `disposition` values are from allowed
+5. **Status vocabulary** - all `status` and `disposition` values are from allowed
    enums.
+6. **Generated aggregate drift** - when per-entry sources exist,
+   `CVF_CORPUS_SCAN_REGISTRY.json` must match the registry generated from
+   `docs/corpus-intelligence/registry/`.
 
 ---
 
@@ -86,14 +94,20 @@ the agent must add a `TEST_CORPUS` entry with `status: OUT_OF_SCOPE` and a
 
 ## Enforcement Surface
 
-`governance/compat/check_corpus_scan_registry.py` — wired into autorun gate
+`governance/compat/check_corpus_scan_registry.py` - wired into autorun gate
 (gate 20) and local hook chain pre-commit. Checks required fields, finding
-dispositions, manifest hashes, and audit file coverage.
+dispositions, manifest hashes, audit file coverage, and generated aggregate
+drift.
+
+`governance/compat/generate_corpus_scan_registry.py` - generates the aggregate
+registry from reviewable per-entry source files and bootstraps the source
+directory from the current aggregate.
 
 ## Related Artifacts
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 Registry: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+Registry source: `docs/corpus-intelligence/registry/`
 Human companion: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
 Findings folder: `docs/corpus-intelligence/findings/`
 

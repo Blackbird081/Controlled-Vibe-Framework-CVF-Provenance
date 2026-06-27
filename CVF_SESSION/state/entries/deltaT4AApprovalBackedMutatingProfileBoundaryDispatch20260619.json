@@ -1,0 +1,23 @@
+{
+  "stateOrder": 472,
+  "stateKey": "deltaT4AApprovalBackedMutatingProfileBoundaryDispatch20260619",
+  "value": {
+    "status": "DISPATCH_READY_FOR_CODEX",
+    "dispatchCommit": "0caf8ec1",
+    "dispatchBaseHead": "5c718d46",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "commitMode": "WORKER_MAY_COMMIT",
+    "workerReviewerCloser": "Codex",
+    "profileCandidate": "approval-marker-write",
+    "checks": [
+      "focused dispatch-quality repairs PASS",
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "pre-commit hook PASS 52/52"
+    ],
+    "claimBoundary": "Dispatch only for one bounded approval-backed local mutating profile that may write a fixed workspace-local marker file after Delta-T1/T2/T3-style durable admission. No arbitrary command, EDIT or COMMIT profile, provider/live call, public-sync, queue/daemon, CVF Web action, direct IDE/shell/git/filesystem interception, or universal governed-coding claim is authorized.",
+    "nextAllowedMove": "Codex runs pre-implementation from the refreshed clean HEAD, then implements only the source/test/package/completion/evidence scope in the Delta-T4A work order."
+  }
+}

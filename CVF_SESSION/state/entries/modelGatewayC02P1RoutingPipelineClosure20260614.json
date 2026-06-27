@@ -1,0 +1,15 @@
+{
+  "stateOrder": 252,
+  "stateKey": "modelGatewayC02P1RoutingPipelineClosure20260614",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "24a3c30a",
+    "handoffSyncCommit": "00b96357",
+    "completionReview": "docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md",
+    "workerReturn": "docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md",
+    "closedScope": "P1 routing context fields, routing policy pipeline, exports, focused tests, and GC-051 coverage for new/cited source paths.",
+    "nextAllowedMove": "Fresh authorization only: Model Gateway C-02 P2 dynamic model registry boundary, Model Gateway C-02 P3 unified gateway interface boundary, or another foundation follow-up may open only through fresh operator authorization, fresh GC-018, and source-verified work order.",
+    "claimBoundary": "No provider/API use, live proof, public-sync, strategy-layer implementation, AI Gateway absorption, readiness/cost/quality claim, raw memory release, co-work product development, or autonomous mutation."
+  }
+}

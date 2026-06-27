@@ -1,0 +1,47 @@
+{
+  "registryOrder": 23,
+  "id": "p1-p5-auth-runtime-source-verification",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "P1-P5 auth runtime source verification subset",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/auth/[...nextauth]/route.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "P1-P5",
+  "scanDate": "2026-06-06",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/work_orders/CVF_WO_DEP2_NEXT_AUTH_STABLE_MIGRATION_DECISION_2026-06-06.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+    "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+  },
+  "semanticRegions": [
+    "AUTH_RUNTIME",
+    "AUTH_ROUTE_HANDLER",
+    "DEPENDENCY_MIGRATION_BOUNDARY"
+  ],
+  "priorAbsorption": "P1-P5 audit reads only the auth runtime and NextAuth route handler needed to classify next-auth beta migration risk; no auth runtime change is authorized.",
+  "findings": [
+    {
+      "id": "P1-P5-F1-next-auth-stable-target-absent",
+      "summary": "Auth runtime uses v5-style handlers while npm metadata shows no stable v5 target on 2026-06-06.",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "Use DEP2 backlog work order before any auth migration.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "stable Auth.js v5 migration claim (not made)",
+    "production auth readiness claim (not made)",
+    "auth provider replacement claim (not made)"
+  ],
+  "nextScanRecommendation": "Open DEP2 before scanning broader auth runtime or package migration surfaces."
+}

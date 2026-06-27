@@ -1,0 +1,20 @@
+{
+  "registryOrder": 39,
+  "id": "dscp-t11e-domain-profile-registry-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF CPF DSCP-T11E domain profile registry source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.registry.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "DSCP-T11E",
+  "scanDate": "2026-06-10",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md",
+  "notes": "DSCP-T11E new registry contract. DscpDomainProfileRegistry class + createDscpDomainProfileRegistry factory; no corpus content ingested; no findings."
+}

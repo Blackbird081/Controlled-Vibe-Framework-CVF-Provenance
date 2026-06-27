@@ -1,0 +1,36 @@
+{
+  "stateOrder": 395,
+  "stateKey": "modelGatewayC02P4CProviderAdapterConformanceClosure20260615",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchBaseHead": "1baba8c9",
+    "dispatchCommit": "10b9626b",
+    "executionBaseHead": "b692273c",
+    "materialCommit": "8d8f0871",
+    "handoffSyncCommit": "85c126df",
+    "closureCommit": "64a80684",
+    "roadmap": "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_ROADMAP_2026-06-15.md",
+    "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_2026-06-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_FOR_CLAUDE_2026-06-15.md",
+    "workerReturn": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_WORKER_RETURN_2026-06-15.md",
+    "completionReview": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_COMPLETION_2026-06-15.md",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "reviewDisposition": "ACCEPT_AFTER_REVIEWER_REPAIR",
+    "reviewerRepairs": [
+      "Split forbidden-token negative assertions so simple rg evidence is truly zero-match.",
+      "Added missing structural, epistemic, and finding-to-governance learning sections to the worker return.",
+      "Closed the work order and authored the completion review in a separate closure-doc commit."
+    ],
+    "verification": [
+      "npm run check PASS in EXTENSIONS/CVF_MODEL_GATEWAY",
+      "npm test -- --run tests/provider-adapter-conformance.test.ts PASS 1 file / 23 tests",
+      "npm test -- --run PASS 26 files / 177 tests",
+      "python governance/compat/generate_corpus_scan_registry.py --check PASS",
+      "python governance/compat/run_worker_return_fast_gate.py PASS reviewer-fast 16/16",
+      "pre-commit hooks PASS 40/40 on material commit 8d8f0871 and closure commit 64a80684"
+    ],
+    "nextAllowedMove": "Select the next high-foundation-value roadmap through fresh audit and authorization. P4B-B concrete provider wiring and live proof remain HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION.",
+    "boundary": "Deterministic provider-agnostic adapter contract conformance only. No concrete provider binding, live provider/API call, runtime secret use, network, provider/model addition, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, provider quality/cost claim, production readiness, public readiness, raw memory release, co-work product development, or autonomous mutation."
+  }
+}

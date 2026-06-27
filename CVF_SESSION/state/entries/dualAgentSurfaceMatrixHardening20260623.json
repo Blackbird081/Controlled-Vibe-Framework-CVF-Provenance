@@ -1,0 +1,5 @@
+{
+  "stateOrder": 655,
+  "stateKey": "dualAgentSurfaceMatrixHardening20260623",
+  "value": "Dual Agent Surface Matrix hardening is committed at material commit 104b3267. The canonical standard now requires applicable roadmap, GC-018, work-order, reference, architecture, completion-review, closure, and public-sync artifacts to carry a six-column Dual Agent Surface Matrix with INTERNAL_AGENT and EXTERNAL_AGENT_CLI_MCP rows, interface/owner surface, authority/risk boundary, evidence, adapter boundary, and an allowed disposition. Missing external-agent disposition or missing adapter boundary is recorded as an architecture defect. Guard Orientation now routes dispatcher, reviewer, and closer roles to this standard. Machine-check candidate: governance/compat/check_dual_agent_surface_matrix.py. Boundary: documentation/reference hardening only; no checker implementation, runtime/provider/live behavior, external CLI/MCP adapter behavior, public-sync, or readiness claim."
+}

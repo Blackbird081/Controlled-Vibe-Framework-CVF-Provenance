@@ -1,0 +1,40 @@
+{
+  "registryOrder": 100,
+  "id": "rtad-t6-external-agent-review-context-reference",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF RTAD-T6 external agent review context reference",
+  "scopePaths": [
+    "docs/reference/external_agent_review/README.md",
+    "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md",
+    "docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md",
+    "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md",
+    "docs/reference/mcp_gateway/README.md",
+    "docs/reference/agent_workspace/README.md"
+  ],
+  "fileCount": 6,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "rtad-t6-public-workflow-facade-authority-gap",
+      "summary": "External agents can mistake public/simple lifecycle vocabulary for internal CVF workflow-chain authority.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use docs/reference/external_agent_review/README.md before external-agent review or external package absorption.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "public workflow enum as internal authority",
+    "raw external package import",
+    "MCP implementation",
+    "workspace runtime execution",
+    "public readiness claim"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "RTAD-T6",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md",
+  "notes": "Stable external-agent review context and workspace package absorption map. Reference only; no runtime implementation."
+}

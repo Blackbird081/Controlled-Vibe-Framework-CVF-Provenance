@@ -1,0 +1,5 @@
+{
+  "stateOrder": 63,
+  "stateKey": "rt1LearningPlaneRuntimeWiring",
+  "value": "CLOSED_PASS_BOUNDED. cvf.learningPlaneRuntimeWiring.rt1.v1 \u2014 buildLearningPlaneReadout() wired into /api/execute ALLOW response. Inline doctrine logic (avoids Turbopack .js-extension LPF resolution issue). outcome=DOCTRINE_APPLIED, compositeScore=93/100 (STRONG), isProvisional=false, runtimeScoringAuthorized=false. 8/8 unit tests PASS. Live receipt rcpt-env-mptbpftd-1yfw15 (alibaba/qwen-turbo/ALLOW/R1). next.config.ts updated with turbopack.resolveExtensions + webpack.extensionAlias. GC-018 docs/baselines/CVF_GC018_RT1_LEARNING_PLANE_RUNTIME_WIRING_2026-05-31.md."
+}

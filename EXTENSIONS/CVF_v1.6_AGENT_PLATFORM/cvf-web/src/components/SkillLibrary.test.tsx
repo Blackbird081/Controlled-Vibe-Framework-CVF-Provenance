@@ -193,4 +193,19 @@ describe('SkillLibrary', () => {
             skillTitle: 'Test Skill',
         }));
     });
+
+    it('renders ASSF projection metadata only for projected package records', async () => {
+        render(<SkillLibrary />);
+        await waitFor(() => expect(screen.getByText('CVF Dispatch Quality Reviewer')).toBeTruthy());
+
+        fireEvent.click(screen.getByText('CVF Dispatch Quality Reviewer'));
+
+        await waitFor(() => {
+            expect(screen.getByText('Certified ASSF')).toBeTruthy();
+            expect(screen.getByText('ASSF package projection')).toBeTruthy();
+            expect(screen.getByText('Certification: CERTIFIED')).toBeTruthy();
+            expect(screen.getByText('UAT: PASSED')).toBeTruthy();
+            expect(screen.getByText('Adapter: DEFERRED_WITH_REASON')).toBeTruthy();
+        });
+    });
 });

@@ -10,7 +10,7 @@ Purpose: provide one fresh live Strategy workflow response for a human non-coder
 
 - Provider/model: `alibaba/qwen-turbo`
 - Template/workflow: `strategy_analysis / workflow.strategy.strategy_analysis.v1`
-- Receipt id: `rcpt-env-mpta24du-mi058m`
+- Receipt id: `rcpt-env-mq29wip8-jcfhrt`
 - Receipt mode/decision: `live / ALLOW`
 - Trace id: `not_emitted`
 - Secret handling: raw API keys were not printed or written.
@@ -36,39 +36,38 @@ Constraints: No production rollout claim from this sample. No tool execution or 
 - **Do now / MVP:** Chạy thử nghiệm nhỏ với người dùng không lập trình (non-coder) trên workflow "Strategy" và đánh giá gói bằng chứng.
 - **Do next:** Tối ưu hóa trải nghiệm người dùng dựa trên phản hồi từ thử nghiệm, sau đó mở rộng coverage workflow/provider.
 - **Defer:** Không xây dựng thêm coverage workflow/provider trước khi có phản hồi thực tế từ người dùng.
-- **Explicit non-goals:** Không triển khai sản phẩm ra thị trường hoặc cam kết về việc triển khai sản phẩm.
-- **First validation or build step:** Thiết kế và triển khai thử nghiệm với nhóm nhỏ người dùng không lập trình.
-- **Owner/role:** Đội ngũ vận hành CVF (operator), hỗ trợ bởi nhóm phân tích chiến lược.
-- **Acceptance check:** Người dùng không lập trình có thể hoàn thành workflow "Strategy" và cung cấp phản hồi cụ thể về trải nghiệm.
+- **Explicit non-goals:** Không triển khai sản phẩm ra thị trường hoặc yêu cầu chi phí đầu tư.
+- **First validation or build step:** Thiết kế mẫu thử nghiệm cho người dùng không lập trình, bao gồm các bước trong workflow "Strategy" và bộ bằng chứng cần thiết.
+- **Owner/role:** Đội ngũ vận hành và nhóm phân tích chiến lược.
+- **Acceptance check:** Người dùng không lập trình có thể hoàn thành workflow "Strategy" và cung cấp phản hồi về trải nghiệm.
 
 ## 2. Why This Scope
 - **Product/operator goal:** Chứng minh giá trị thực tế của CVF cho người dùng không lập trình thông qua thử nghiệm thực tế.
-- **Constraints:** Không được triển khai sản phẩm ra thị trường, không được sử dụng ngân sách hoặc công cụ để thực hiện.
-- **Main tradeoff:** Lựa chọn giữa việc tối ưu hóa nền tảng trước hay chạy thử nghiệm ngay lập tức để thu thập phản hồi.
-- **Assumptions to confirm:**
-  - Nhóm người dùng không lập trình sẽ dễ dàng tương tác với workflow "Strategy".
-  - Phản hồi từ người dùng sẽ giúp xác định các điểm cần cải thiện trong trải nghiệm tổng thể.
-  - Việc chạy thử nghiệm nhỏ sẽ không gây rủi ro lớn cho hệ thống.
+- **Constraints:** Không được triển khai vào sản phẩm chính, không được sử dụng công cụ hoặc chi tiêu tài nguyên.
+- **Main tradeoff:** Chọn giữa việc chạy thử nghiệm nhanh để thu thập phản hồi hoặc xây dựng thêm coverage trước khi kiểm tra.
+- **Assumptions to confirm:** 
+  - Người dùng không lập trình sẽ dễ dàng hiểu và thực hiện workflow "Strategy".
+  - Phản hồi từ thử nghiệm sẽ giúp xác định cải tiến cần thiết trước khi mở rộng.
 
 ## 3. Supporting Scoring Matrix
 | Item | User/Business Value | Effort | Risk | Confidence | Score/Rank | Rationale |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1. Run a small non-coder pilot with Strategy workflow and evidence package review | Cao | Trung bình | Thấp | Cao | 1 | Giúp xác định giá trị thực tế cho người dùng không lập trình, đồng thời giảm rủi ro nếu có lỗi. |
-| 2. Build more workflow/provider coverage before user testing | Trung bình | Cao | Trung bình | Trung bình | 2 | Có thể làm chậm tiến độ và không đảm bảo giá trị thực tế cho người dùng. |
-| 3. Prepare hosted readiness first, then test with users later | Trung bình | Cao | Trung bình | Trung bình | 3 | Cần thời gian dài để chuẩn bị, không mang lại giá trị nhanh chóng cho người dùng. |
+| 1. Chạy thử nghiệm với người dùng không lập trình | Cao | Trung bình | Thấp | Cao | 1 | Giúp xác định giá trị thực tế và cải thiện trải nghiệm người dùng |
+| 2. Xây dựng thêm coverage workflow/provider | Trung bình | Cao | Trung bình | Trung bình | 2 | Cần thiết nhưng chưa cần thiết trước khi có phản hồi từ người dùng |
+| 3. Chuẩn bị sẵn sàng cho môi trường hosted | Trung bình | Trung bình | Trung bình | Trung bình | 3 | Cần thiết nhưng có thể trì hoãn nếu không có dữ liệu phản hồi |
 
 ## 4. Implementation Or Validation Steps
 | Step | Owner/Role | Action | Artifact | Success Metric | Acceptance Check |
 | --- | --- | --- | --- | --- | --- |
-| 1. | Đội ngũ vận hành CVF | Thiết kế thử nghiệm với nhóm người dùng không lập trình | Kế hoạch thử nghiệm | Người dùng hoàn thành workflow "Strategy" và cung cấp phản hồi | Người dùng có thể mô tả trải nghiệm và đề xuất cải tiến. |
-| 2. | Nhóm phân tích chiến lược | Thu thập và phân tích phản hồi từ người dùng | Báo cáo phản hồi | Phản hồi có thể được phân loại theo mức độ quan trọng và đề xuất cải tiến | Báo cáo có thể được chia sẻ với đội ngũ phát triển để cải thiện trải nghiệm. |
-| 3. | Đội ngũ vận hành CVF | Tối ưu hóa trải nghiệm dựa trên phản hồi | Phiên bản mới của workflow "Strategy" | Người dùng cảm thấy dễ sử dụng hơn và hài lòng hơn | Người dùng cung cấp phản hồi tích cực về trải nghiệm mới. |
+| 1. Thiết kế thử nghiệm | Đội ngũ vận hành | Lên kế hoạch thử nghiệm với người dùng không lập trình, bao gồm workflow "Strategy" và bộ bằng chứng | Kế hoạch thử nghiệm | Người dùng tham gia thử nghiệm | Có ít nhất 5 người dùng tham gia thử nghiệm |
+| 2. Triển khai thử nghiệm | Đội ngũ vận hành | Thực hiện thử nghiệm với người dùng không lập trình | Báo cáo phản hồi từ người dùng | Người dùng hoàn thành thử nghiệm | Có ít nhất 3 phản hồi tích cực về trải nghiệm |
+| 3. Đánh giá và tối ưu hóa | Đội ngũ phân tích chiến lược | Tổng hợp phản hồi và đề xuất cải tiến | Báo cáo đánh giá | Các cải tiến được xác định và ghi nhận | Có ít nhất 2 cải tiến được xác định |
 
 ## 5. Risk And Deferral Checks
-- [ ] Người vận hành có thể giải thích tại sao lựa chọn này được đưa ra: Vì nó tập trung vào giá trị thực tế cho người dùng không lập trình, đồng thời giảm rủi ro.
-- [ ] Các mục đã trì hoãn có lý do và điều kiện tái xem xét: Việc xây dựng thêm coverage workflow/provider sẽ được xem xét sau khi có phản hồi từ người dùng.
-- [ ] Bước đầu tiên trong quá trình triển khai hoặc kiểm tra là rõ ràng: Triển khai thử nghiệm với nhóm người dùng không lập trình.
-- [ ] Kiểm tra chấp nhận là quan sát được bởi người vận hành không kỹ thuật: Người dùng có thể mô tả trải nghiệm và cung cấp phản hồi cụ thể.
+- [ ] Đội ngũ vận hành có thể giải thích tại sao họ chọn thử nghiệm với người dùng không lập trình.
+- [ ] Việc trì hoãn xây dựng coverage workflow/provider có lý do rõ ràng và thời điểm tái xem xét đã được xác định.
+- [ ] Bước đầu tiên trong quá trình thử nghiệm là rõ ràng và có thể thực hiện.
+- [ ] Người dùng không lập trình có thể quan sát và xác nhận kết quả của thử nghiệm.
 ```
 
 ## VI4 Evidence Quick Read

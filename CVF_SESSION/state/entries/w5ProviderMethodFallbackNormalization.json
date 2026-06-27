@@ -1,0 +1,5 @@
+{
+  "stateOrder": 196,
+  "stateKey": "w5ProviderMethodFallbackNormalization",
+  "value": "CLOSED_PASS_BOUNDED at docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md. Added Model Gateway cvf.providerMethodFallbackNormalization.w5.v1 and evaluateProviderMethodFallback() for local provider method/fallback/error clarity. Verification: focused W5 tests PASS 9/9; adjacent provider method/fallback/output tests PASS 29/29; full Model Gateway tests PASS 91/91; TypeScript check PASS. Boundary: no live provider execution, new adapter, OpenRouter runtime, /api/execute, receipt envelope, provider router behavior, proxy server, raw prompt/output logging, auth/RBAC, public-sync, hosted readiness, production readiness, or freeze release."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 153,
+  "stateKey": "lhw14WorkflowConnectorWave14",
+  "value": "CLOSED_PASS_BOUNDED. T1 Agent Memory Capture Packaging Advisory Connector spec docs/reference/CVF_LHW14_T1_AGENT_MEMORY_CAPTURE_PACKAGING_ADVISORY_CONNECTOR_SPEC_2026-05-29.md; T2 Spec-Change Workflow Advisory Connector spec docs/reference/CVF_LHW14_T2_SPEC_CHANGE_WORKFLOW_ADVISORY_CONNECTOR_SPEC_2026-05-29.md; T3 Noncoder Clarification and Recovery Advisory Connector spec docs/reference/CVF_LHW14_T3_NONCODER_CLARIFICATION_RECOVERY_ADVISORY_CONNECTOR_SPEC_2026-05-29.md. Advisory types: agentMemoryCapturePackagingAdvisoryType + capturePackagingGuidance (T1); specChangeWorkflowAdvisoryType + workflowPauseAdvisory (T2); noncoderClarificationAdvisoryType + clarificationNextStep (T3). LH1 agentmemory (line 133), OpenSpec (line 140), and Human System Harness (line 160) triggers closed. No code file. No runtime enforcement. No memory reinjection. No pack execution. No spec-change enforcement. Boundary: documentation-only connector specs; no hosted readiness, production readiness, or public release readiness."
+}

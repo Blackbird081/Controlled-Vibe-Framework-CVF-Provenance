@@ -1,0 +1,5 @@
+{
+  "stateOrder": 203,
+  "stateKey": "phase2BLiveGovernanceProofClosure",
+  "value": "CLOSED_LIVE_GOVERNANCE_PROOF at docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md; mandatory release gate PASS; focused live receipt probe PASS; provider alibaba; model qwen-turbo; decision ALLOW; receipt rcpt-env-mpepcnmc-ier7bt; trace env-mpepcnmc-ier7bt; runtime coherence checksum fnv1a32:5d3d2dac"
+}

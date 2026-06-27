@@ -1,0 +1,15 @@
+{
+  "stateOrder": 509,
+  "stateKey": "deltaT11DurableAuditEvidenceBundleDispatch20260619",
+  "value": "DISPATCHED at commit 53aca070 from dispatch base 66cb8494. Artifacts: GC-018 docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md. Pre-dispatch autorun gate PASS 43/43; dispatch-quality gate PASS; commit steward dispatch preflight PASS; pre-commit governance hook PASS 54/54. Worker route: Claude WORKER_MUST_NOT_COMMIT. Claim boundary: supplied Delta-T9/T10 durable audit evidence bundle and external reviewer readout only; no wrapper/proxy enforcement, direct interception, arbitrary command execution, EDIT/COMMIT execution, provider/live behavior, public-sync, CVF Web action execution, queue/daemon, readiness, or universal governed-coding control claim.",
+  "metadata": {
+    "status": "DISPATCHED",
+    "dispatchCommit": "53aca070",
+    "dispatchBaseHead": "66cb8494",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_FOR_CLAUDE_2026-06-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Claude executes Delta-T11 work order and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED; Codex owns review, commit, closure conversion, and session sync.",
+    "claimBoundary": "Supplied Delta-T9/T10 durable audit evidence bundle and external reviewer readout only; no wrapper/proxy enforcement, direct interception, arbitrary command execution, EDIT/COMMIT execution, provider/live behavior, public-sync, CVF Web action execution, queue/daemon, readiness, or universal governed-coding control claim."
+  }
+}

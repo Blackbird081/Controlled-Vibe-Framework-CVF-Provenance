@@ -28,9 +28,10 @@ class ActiveSessionStateTests(unittest.TestCase):
 
         for rel in (
             "CVF_SESSION_MEMORY.md",
+            "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
             "CVF_SESSION/ACTIVE_SESSION_STATE.json",
             "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
-            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
             "CVF_SESSION/READ_FIRST.md",
             "CVF_SESSION/REQUIRED_STARTUP_GUARDS.md",
             "AGENTS.md",
@@ -47,7 +48,7 @@ class ActiveSessionStateTests(unittest.TestCase):
             "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
             "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
             "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
-            "painPointClosureDirection": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
+            "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
             "activeHandoff": "AGENT_HANDOFF_V8_2026-05-17.md",
             "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
             "supersededHandoffs": ["CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md"],
@@ -63,6 +64,16 @@ class ActiveSessionStateTests(unittest.TestCase):
         }
         (self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json").write_text(
             json.dumps(state),
+            encoding="utf-8",
+        )
+        (self.repo_root / "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json").write_text(
+            json.dumps(
+                {
+                    "bootstrapReadModelVersion": "0.1.0",
+                    "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+                    "activeHandoff": "AGENT_HANDOFF_V8_2026-05-17.md",
+                }
+            ),
             encoding="utf-8",
         )
         review_queue = {
@@ -94,7 +105,7 @@ class ActiveSessionStateTests(unittest.TestCase):
         (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
             "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
             "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
-            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
             "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
             "AGENT_HANDOFF_V8_2026-05-17.md\n",
             encoding="utf-8",
@@ -115,7 +126,7 @@ class ActiveSessionStateTests(unittest.TestCase):
         )
         (self.repo_root / self.first_read).write_text("Memory class: POINTER_RECORD\n", encoding="utf-8")
         (self.repo_root / self.startup_guard).write_text("Memory class: POINTER_RECORD\n", encoding="utf-8")
-        (self.repo_root / "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md").write_text(
+        (self.repo_root / "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md").write_text(
             "Status: ACTIVE_DIRECTION_RECORD\n",
             encoding="utf-8",
         )
@@ -180,7 +191,7 @@ class ActiveSessionStateTests(unittest.TestCase):
         (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
             "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
             "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
-            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
             "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
             "AGENT_HANDOFF_V8_2026-05-17.md\n"
             "Resolve active handoff from registry: AGENT_HANDOFF_V7_2026-05-16.md\n",
@@ -200,7 +211,7 @@ class ActiveSessionStateTests(unittest.TestCase):
         (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
             "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
             "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
-            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
             "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
             "AGENT_HANDOFF_V8_2026-05-17.md\n"
             "Archive: CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md\n",
@@ -231,7 +242,7 @@ class ActiveSessionStateTests(unittest.TestCase):
                 for issue in report["stateViolations"])
         )
         self.assertTrue(
-            any("archived handoff remains at repository root" in issue
+            any("non-active root handoff must be archived or removed" in issue
                 for issue in report["handoffViolations"])
         )
 
@@ -246,7 +257,37 @@ class ActiveSessionStateTests(unittest.TestCase):
 
         self.assertFalse(report["compliant"])
         self.assertTrue(
-            any("archived handoff remains at repository root" in issue
+            any("non-active root handoff must be archived or removed" in issue
+                for issue in report["handoffViolations"])
+        )
+
+    def test_superseded_root_handoff_fails(self) -> None:
+        (self.repo_root / "AGENT_HANDOFF_V7_2026-05-16.md").write_text(
+            "Status: SUPERSEDED -- archived to CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("non-active root handoff must be archived or removed" in issue
+                for issue in report["handoffViolations"])
+        )
+
+    def test_unexpected_status_root_handoff_fails(self) -> None:
+        (self.repo_root / "AGENT_HANDOFF_V7_2026-05-16.md").write_text(
+            "Status: DRAFT\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("non-active root handoff must be archived or removed" in issue
                 for issue in report["handoffViolations"])
         )
 
@@ -262,12 +303,36 @@ class ActiveSessionStateTests(unittest.TestCase):
             MODULE, "_git_parent_sha", return_value="parent12390abcdef"
         ), patch.object(
             MODULE, "_head_changed_path", return_value=True
+        ), patch.object(
+            MODULE, "_head_changed_paths",
+            return_value={
+                "AGENT_HANDOFF_V8_2026-05-17.md",
+                "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+                "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+            },
         ):
             report = MODULE._classify()
 
         self.assertTrue(report["compliant"])
         self.assertFalse(report["headShaInHandoff"])
         self.assertTrue(report["parentShaInHandoff"])
+
+    def test_generated_active_state_sources_are_session_sync_paths(self) -> None:
+        self.assertTrue(
+            MODULE._is_session_sync_path(
+                "CVF_SESSION/state/entries/exampleStateMarker.json"
+            )
+        )
+        self.assertTrue(
+            MODULE._is_session_sync_path(
+                "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json"
+            )
+        )
+        self.assertTrue(
+            MODULE._is_session_sync_path(
+                "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+            )
+        )
 
     def test_non_handoff_commit_must_reference_current_head(self) -> None:
         (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
@@ -281,6 +346,8 @@ class ActiveSessionStateTests(unittest.TestCase):
             MODULE, "_git_parent_sha", return_value="parent12390abcdef"
         ), patch.object(
             MODULE, "_head_changed_path", return_value=False
+        ), patch.object(
+            MODULE, "_head_changed_paths", return_value={"governance/compat/check_active_session_state.py"}
         ):
             report = MODULE._classify()
 
@@ -296,7 +363,7 @@ class ActiveSessionStateTests(unittest.TestCase):
         (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
             "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
             "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
-            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
             "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
             "AGENT_HANDOFF_V8_2026-05-17.md\n"
             "## Next Allowed Move\nLHW8 is present in HEAD as CLOSED_PASS_BOUNDED.\n",
@@ -323,7 +390,7 @@ class ActiveSessionStateTests(unittest.TestCase):
         (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
             "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
             "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
-            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
             "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
             "AGENT_HANDOFF_V8_2026-05-17.md\n"
             "## Next Allowed Move\nLHW9 is present in HEAD as CLOSED_PASS_BOUNDED.\n",
@@ -339,6 +406,92 @@ class ActiveSessionStateTests(unittest.TestCase):
 
         self.assertTrue(report["compliant"])
         self.assertEqual(report["latestClosedLhwWave"], 9)
+
+    def test_front_door_next_allowed_primary_token_must_match_state(self) -> None:
+        state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["nextAllowedMove"] = "Next allowed move: DIR-T2 only through fresh GC-018."
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+        (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
+            "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
+            "AGENT_HANDOFF_V8_2026-05-17.md\n"
+            "## Next Allowed Move\nNext allowed move: DIR-T1 only through stale text.\n",
+            encoding="utf-8",
+        )
+        (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
+            "Status: ACTIVE - current\n## Next Allowed Move\nDIR-T2 may be opened.\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any(
+                "CVF_SESSION_MEMORY.md Next Allowed Move primary token `dir-t1`"
+                in issue
+                for issue in report["continuityViolations"]
+            )
+        )
+
+    def test_handoff_next_allowed_primary_token_must_match_state(self) -> None:
+        state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["nextAllowedMove"] = "Next allowed move: DIR-T2 only through fresh GC-018."
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+        (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
+            "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
+            "AGENT_HANDOFF_V8_2026-05-17.md\n"
+            "## Next Allowed Move\nNext allowed move: DIR-T2 only through fresh GC-018.\n",
+            encoding="utf-8",
+        )
+        (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
+            "Status: ACTIVE - current\n## Next Allowed Move\nDIR-T1 may be opened.\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any(
+                "active handoff Next Allowed Move primary token `dir-t1`"
+                in issue
+                for issue in report["continuityViolations"]
+            )
+        )
+
+    def test_next_allowed_primary_token_alignment_passes_when_synced(self) -> None:
+        state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["nextAllowedMove"] = "Next allowed move: DIR-T2 only through fresh GC-018."
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+        (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
+            "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
+            "AGENT_HANDOFF_V8_2026-05-17.md\n"
+            "## Next Allowed Move\nNext allowed move: DIR-T2 only through fresh GC-018.\n",
+            encoding="utf-8",
+        )
+        (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
+            "Status: ACTIVE - current\n## Next Allowed Move\nDIR-T2 may be opened.\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertTrue(report["compliant"])
 
 
 if __name__ == "__main__":

@@ -30,6 +30,21 @@ def _package(registry_status: str = "PASS") -> str:
 
 
 class MachineClosurePackageTests(unittest.TestCase):
+    def test_closed_gc018_baseline_requires_package(self) -> None:
+        text = """
+# GC-018 Example
+
+Status: CLOSED_PASS_BOUNDED
+"""
+        self.assertTrue(MODULE._is_active_governed_doc("docs/baselines/CVF_GC018_EXAMPLE.md"))
+        issues = MODULE.validate_machine_closure_package(
+            "docs/baselines/CVF_GC018_EXAMPLE.md", text
+        )
+        self.assertIn(
+            "closed-equivalent artifact is missing `Machine Closure Package` section",
+            issues,
+        )
+
     def test_closed_artifact_requires_package(self) -> None:
         text = """
 # Example
@@ -85,6 +100,41 @@ Status: CLOSED_PASS_BOUNDED
             "Source Verification contains external/local filesystem path; use a repo-local External Evidence Digest instead",
             issues,
         )
+
+    def test_corpus_signal_inside_code_fence_is_not_applicability(self) -> None:
+        text = """
+# Example
+
+Status: CLOSED_PASS_BOUNDED
+
+```text
+this corpus classification readiness example is fenced sample text only
+```
+""" + _package("N/A with reason - doc-only")
+        issues = MODULE.validate_machine_closure_package("docs/reviews/CVF_EXAMPLE.md", text)
+        self.assertFalse(any("corpus/search/classification closure" in issue for issue in issues))
+
+    def test_corpus_signal_inside_na_line_is_not_applicability(self) -> None:
+        text = """
+# Example
+
+Status: CLOSED_PASS_BOUNDED
+
+- Corpus classification readiness check: N/A with reason: not a corpus scan
+""" + _package("N/A with reason - doc-only")
+        issues = MODULE.validate_machine_closure_package("docs/reviews/CVF_EXAMPLE.md", text)
+        self.assertFalse(any("corpus/search/classification closure" in issue for issue in issues))
+
+    def test_corpus_signal_in_real_prose_still_fires(self) -> None:
+        text = """
+# LPCI Example
+
+Status: CLOSED_PASS_BOUNDED
+
+This corpus classification closure updates search/filter readiness for real.
+""" + _package("N/A with reason - doc-only")
+        issues = MODULE.validate_machine_closure_package("docs/reviews/CVF_LPCI_EXAMPLE.md", text)
+        self.assertTrue(any("corpus/search/classification closure" in issue for issue in issues))
 
     def test_invalid_defect_class_is_rejected(self) -> None:
         text = """

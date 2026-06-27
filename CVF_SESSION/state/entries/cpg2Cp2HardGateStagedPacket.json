@@ -1,0 +1,5 @@
+{
+  "stateOrder": 74,
+  "stateKey": "cpg2Cp2HardGateStagedPacket",
+  "value": "CLOSED_PASS_BOUNDED. Roadmap docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md, work order docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md, fresh GC-018 docs/baselines/CVF_GC018_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md, and completion review docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md. Code/test fixes in commit 5e1c6e9d: advisory mode remains non-blocking, enforce review deterministically holds progression, and MCP description names bounded enforce semantics. Closure commit 9fe32058 records release-quality governance bundle PASS 7/7 and resolves the prior timeout diagnostic."
+}

@@ -1,0 +1,40 @@
+{
+  "registryOrder": 106,
+  "id": "wwu-t1-cvf-web-workspace-surface-audit",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF WWU-T1 cvf-web workspace surface audit",
+  "scopePaths": [
+    "docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md",
+    "docs/baselines/CVF_GC018_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_FOR_CODEX_2026-06-18.md",
+    "docs/reviews/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_COMPLETION_2026-06-18.md",
+    "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/docs/reference/CVF_W112_WEB_GOVERNANCE_SURFACE_INVENTORY_2026-04-22.md"
+  ],
+  "fileCount": 7,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "wwu-t1-missing-active-session-read-model",
+      "summary": "Current cvf-web has governance, evidence, health, operations, approvals, and work-transfer surfaces, but no active CVF session-state/handoff/workspace read-model endpoint.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Open WWU-T2 fresh GC-018 for a read-only CVF Web Workspace operator dashboard/read model before any UI implementation.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "currentMode chat mode as CVF session mode",
+    "api sessions as ACTIVE_SESSION_STATE",
+    "web operations as Local Runtime MCP",
+    "approval inbox as closure gate"
+  ],
+  "nextScanRecommendation": "WWU-T2 fresh GC-018",
+  "scanWave": "WWU-T1",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_COMPLETION_2026-06-18.md",
+  "notes": "Audit-only closure; no cvf-web product source changed."
+}

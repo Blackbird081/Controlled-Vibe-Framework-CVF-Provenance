@@ -1,0 +1,5 @@
+{
+  "stateOrder": 281,
+  "stateKey": "mlw7OptionalExternalCapabilityIngestionWorkOrder",
+  "value": "CLOSED_PASS_BOUNDED. Work order docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md and completion docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md close a bounded intake-only helper at EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-external-capability-ingestion.ts with focused tests. Boundary: no external capability install/execute, external repo ingestion, marketplace/public catalog claim, runtime adapter authority, live proof, public-sync, hosted readiness, production readiness, public readiness, or autonomous mutation."
+}

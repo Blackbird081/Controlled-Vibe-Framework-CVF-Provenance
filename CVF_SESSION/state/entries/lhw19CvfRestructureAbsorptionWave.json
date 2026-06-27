@@ -1,0 +1,5 @@
+{
+  "stateOrder": 50,
+  "stateKey": "lhw19CvfRestructureAbsorptionWave",
+  "value": "CLOSED_PASS_BOUNDED. T1 cvf.integrationArchitectureControlPointsAdvisory.lhw19.t1.v1 \u2014 4 integration points + 5 control points (CP1-CP5) mapped to CVF owner surfaces; adapter layer rejected from wave (doc-only scope). T2 cvf.eventModelGovernanceAdvisory.lhw19.t2.v1 \u2014 5 events (intent/plan/tool/execution/result) mapped to CVF receipt lifecycle; event bus rejected from wave. T3 cvf.strategicCompassAdvisory.lhw19.t3.v1 \u2014 canonical mission + 3 focuses + anti-focus + phase timeline advisory; Phase 2/3 locked as FUTURE. All doc-only; runtimeExecutionAuthorized=false. Source: .private_reference/legacy/CVF_Restructure/. GC-018 docs/baselines/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md."
+}

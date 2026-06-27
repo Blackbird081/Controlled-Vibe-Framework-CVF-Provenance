@@ -1,0 +1,26 @@
+{
+  "registryOrder": 97,
+  "id": "model-gateway-rtad-t4-alibaba-stream-adapter-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway RTAD-T4 Alibaba stream adapter source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/stream-adapter.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw API key value (adapter receives secret at runtime only)",
+    "hardcoded mainland endpoint (default endpoint now resolves through helper)",
+    "provider ranking (adapter is provider-specific capability only)",
+    "broad provider parity claim (stream support remains bounded)",
+    "secret logging (adapter throws status/detail only)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "RTAD-T4",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+  "notes": "Alibaba stream adapter source updated by RTAD-T4 to use the shared DashScope endpoint resolver instead of a fixed mainland endpoint default."
+}

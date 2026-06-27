@@ -1,0 +1,26 @@
+{
+  "registryOrder": 75,
+  "id": "model-gateway-c02-p2-dynamic-model-registry-contract",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P2 dynamic model registry contract source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/dynamic-model-registry-contract.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "DynamicModelRegistry class (not implemented in P2 - contract only)",
+    "findOptimal runtime logic (not implemented - interface declaration only)",
+    "health-poll scheduling (not in P2)",
+    "provider/API call (not in P2)",
+    "unified gateway interface (deferred to P3)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P2",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md",
+  "notes": "Types-only contract file for C-02 P2. Declares ModelTier, DynamicModelRecord, FindOptimalQuery, and DynamicModelRegistryContract. No class body, no runtime logic. Imports ProviderHealthState, ProviderMethodName, and ProviderStatus from existing Model Gateway sources. No mutation of provider-capability-registry.ts or provider-registry.ts."
+}

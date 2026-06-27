@@ -1,0 +1,5 @@
+{
+  "stateOrder": 239,
+  "stateKey": "p3HostedProofClarifyBlocker",
+  "value": "RETURNED_BLOCKED_CLARIFY at docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md; authorization commit b6af38e2; blocker commit 63b90530. GC-018 docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_2026-05-23.md and work order docs/work_orders/CVF_WO_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_2026-05-23.md authorized one hosted signed service-token call to https://vibcode.netlify.app/api/execute. Result: HTTP 422, success=false, error Spec needs clarification before execution, enforcementStatus=CLARIFY, evidenceMode=live, provider=alibaba, model=clarify, receipt rcpt-env-mpi3w54q-p5p7bj, trace env-mpi3w54q-p5p7bj, rawSecretPrinted=false. Boundary: hosted reachability/auth/governance-evidence path partially proven; superseded for P3 pass status by the authorized concrete-payload rerun completion."
+}

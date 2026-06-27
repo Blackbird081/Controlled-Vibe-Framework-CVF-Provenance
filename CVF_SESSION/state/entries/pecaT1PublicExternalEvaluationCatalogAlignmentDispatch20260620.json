@@ -1,0 +1,16 @@
+{
+  "stateOrder": 512,
+  "stateKey": "pecaT1PublicExternalEvaluationCatalogAlignmentDispatch20260620",
+  "value": "DISPATCHED_TO_CLAUDE at dispatch commit a98447c0 after Delta-T11 closure session-sync f2330d0e. Artifacts: GC-018 docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md. Claude must work in the sibling public-sync clone only, verify origin remote is https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git, keep WORKER_MUST_NOT_COMMIT, and return uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Scope: public README/catalog/external-agent guide/2026-06-19 snapshot wording and public-sync completion review only. Boundary: no provenance edits by Claude, no commit/push/tag/release, no private provenance publication, no runtime/provider/live/dependency/CI changes, no direct interception, no readiness, and no universal governed-coding control claim.",
+  "metadata": {
+    "status": "DISPATCHED_TO_CLAUDE",
+    "dispatchCommit": "a98447c0",
+    "dispatchBaseHead": "f2330d0e",
+    "publicSyncHeadAtDispatch": "94bb69dc8",
+    "publicSyncRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "gc018": "docs/baselines/CVF_GC018_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_2026-06-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_EXTERNAL_EVALUATION_PACKAGE_CATALOG_ALIGNMENT_FOR_CLAUDE_2026-06-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "claimBoundary": "Public documentation alignment only; no provenance edits by Claude, no commit/push/tag/release, no private provenance publication, no runtime/provider/live/dependency/CI changes, no direct interception, no readiness, and no universal governed-coding control claim."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 255,
+  "stateKey": "reviewCvfPostBcRemainingPainPointRoadmap",
+  "value": "CLOSED_ROADMAP_G1_D2_E2_H2_F2_A2 at docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md; commit add446a5. Default sequence G1, D2, E2, H2, F2, and A2 is closed for the current private baseline. A2 closed as audit-only coherence equivalence with no new kernel-law docs and no freeze release."
+}

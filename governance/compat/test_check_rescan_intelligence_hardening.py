@@ -77,7 +77,129 @@ Convert one external-review architecture finding into runtime hardening.
     assert check_text("docs/work_orders/CVF_WO_RUNTIME_DURABILITY_2026-06-05.md", text) == []
 
 
-def test_complete_claim_cannot_use_not_applicable():
+def test_rescan_keyword_inside_code_fence_is_not_applicable():
+    text = """
+# Plain Note
+
+Status: CLOSED_PASS_BOUNDED
+
+```text
+this is a rescan example used only as fenced sample text
+```
+"""
+    assert check_text("docs/reviews/CVF_PLAIN_NOTE.md", text) == []
+
+
+def test_rescan_keyword_inside_na_line_is_not_applicable():
+    text = """
+# Plain Note
+
+Status: CLOSED_PASS_BOUNDED
+
+- Rescan applicability: N/A with reason: not a rescan or knowledge absorption output
+"""
+    assert check_text("docs/reviews/CVF_PLAIN_NOTE.md", text) == []
+
+
+def test_rescan_keyword_in_real_prose_still_applicable():
+    text = """
+# Real Rescan Note
+
+Status: CLOSED_PASS_BOUNDED
+
+This document performs a full rescan of the prior intake findings.
+"""
+    violations = check_text("docs/reviews/CVF_REAL_RESCAN.md", text)
+    assert any(item["type"] == "rescan_hardening_section_missing" for item in violations)
+
+
+def test_marked_guard_behavior_discussion_is_not_rescan_output():
+    text = """
+# Plain Note
+
+## Guard Behavior Discussion
+
+Discussion-only disposition: META_DISCUSSION_ONLY
+
+This note explains a rescan self-reference false trigger.
+"""
+    assert check_text("docs/reviews/CVF_PLAIN_NOTE.md", text) == []
+
+
+def test_compact_not_applicable_non_rescan_completion_passes():
+    text = """
+# Worker Return
+
+Status: CLOSED_PASS_BOUNDED
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is a worker return, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_WORKER_RETURN.md", text) == []
+
+
+def test_compact_not_applicable_can_discuss_rescan_checker_scope():
+    text = """
+# Checker Maintenance Completion
+
+Status: CLOSED_PASS_BOUNDED
+
+## Purpose
+
+This updates the rescan guard and rescan standard so non-rescan packets do not
+need empty rescan matrices. Real rescan outputs still need full evidence.
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is checker maintenance, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_CHECKER_MAINTENANCE_COMPLETION.md", text) == []
+
+
+def test_compact_not_applicable_requires_concrete_reason():
+    text = """
+# Worker Return
+
+Status: CLOSED_PASS_BOUNDED
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+"""
+    violations = check_text("docs/reviews/CVF_WORKER_RETURN.md", text)
+    assert any(item["type"] == "not_applicable_reason_missing" for item in violations)
+
+
+def test_rescan_output_cannot_use_compact_not_applicable():
     text = VALID_BLOCK.replace("COMPLETE_WITH_DELTA_ROUTING_SAMPLE", "NOT_APPLICABLE_WITH_REASON")
     violations = check_text("docs/assessments/CVF_RESCAN_SAMPLE.md", text)
-    assert any(item["type"] == "not_applicable_used_for_completion_claim" for item in violations)
+    assert any(item["type"] == "not_applicable_used_for_rescan_output" for item in violations)
+
+
+def test_compact_not_applicable_can_discuss_rescan_hardening_compound_phrasing():
+    text = """
+# Worker Return
+
+Status: COMPLETE_PENDING_REVIEW
+
+## Findings / Position
+
+A 4th fast-gate run failed on this file's own edits to the rescan-hardening
+section: compound phrasing joining the bare words rescan and hardening with a
+hyphen, and rescan combined with body, matched the rescan guard's bare-keyword
+applicability pattern even though the sentence was describing the guard's
+maintenance, not performing a rescan.
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is a worker return discussing a prior gate
+failure, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_WORKER_RETURN_COMPOUND_PHRASING.md", text) == []

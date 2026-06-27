@@ -1,0 +1,20 @@
+{
+  "registryOrder": 58,
+  "id": "meor-t3-dscp-profile-requirement-bridge-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF MEOR-T3 DSCP profile requirement bridge tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.metadata.requirement.bridge.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MEOR-T3",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_T3_DSCP_PROFILE_REQUIREMENT_BRIDGE_COMPLETION_2026-06-12.md",
+  "notes": "12 focused tests for omitted requirements, normalization, non-mutation, invalid identifiers, owner mismatch, duplicates, invalid evidence, and invalid required flags."
+}

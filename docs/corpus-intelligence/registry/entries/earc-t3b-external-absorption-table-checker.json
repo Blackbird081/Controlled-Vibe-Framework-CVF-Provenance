@@ -1,0 +1,40 @@
+{
+  "registryOrder": 104,
+  "id": "earc-t3b-external-absorption-table-checker",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF EARC-T3B external absorption table checker",
+  "scopePaths": [
+    "governance/compat/check_external_agent_absorption_table.py",
+    "governance/compat/test_check_external_agent_absorption_table.py",
+    "governance/compat/run_local_governance_hook_chain.py",
+    "governance/compat/run_agent_autorun_workflow_gate.py",
+    "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+    "docs/reference/external_agent_review/README.md",
+    "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md"
+  ],
+  "fileCount": 7,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "earc-t3b-required-absorption-table-machine-check",
+      "summary": "The EARC-T3 Required Absorption Table is now enforced by a range-aware checker on changed external-return absorption reviews.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Keep EARC-T2 and EARC-T4 parked until explicit authorization.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "external package as CVF authority",
+    "absorption table optional",
+    "completion prose false positive",
+    "public-sync implied by checker"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EARC-T3B",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_EARC_T3B_ABSORPTION_TABLE_CHECKER_COMPLETION_2026-06-18.md",
+  "notes": "Checker hardening for the external-agent review absorption workflow."
+}

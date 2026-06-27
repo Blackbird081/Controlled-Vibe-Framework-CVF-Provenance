@@ -1,0 +1,5 @@
+{
+  "stateOrder": 172,
+  "stateKey": "alphaMandatoryStartupAcknowledgment",
+  "value": "CLOSED_PASS_BOUNDED. Current HEAD before implementation commit 34ed43b8. Implementation commit 910043af. Added mandatory startup acknowledgment sections to AGENTS.md and CLAUDE.md. New/resumed agents must read CVF_SESSION_MEMORY.md, resolve CVF_SESSION/ACTIVE_SESSION_STATE.json, identify active handoff AGENT_HANDOFF_V13_2026-05-25.md, and state or record current mode, active handoff, next allowed move, and any parked operator checkpoint before material governed work. Public catalog update N/A because Alpha is an internal front-door accountability rule only. Boundary: soft accountability only; no runtime auto-load, universal tool support, MCP availability, hidden cross-agent memory transfer, provider/route behavior, public-sync, hosted readiness, production readiness, or freeze release."
+}

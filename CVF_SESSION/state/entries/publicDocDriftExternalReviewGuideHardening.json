@@ -1,0 +1,5 @@
+{
+  "stateOrder": 297,
+  "stateKey": "publicDocDriftExternalReviewGuideHardening",
+  "value": "READY_FOR_EXTERNAL_REVIEW. Adds governance/compat/check_public_doc_drift_phrases.py with focused tests and local hook wiring to catch repeat stale public-doc version, skill-count, placeholder security-contact, and public handoff-label defects. Same batch repairs docs/reference/CVF_POSITIONING.md stale 131 active skills and March 20, 2026 footer. Public-sync branch adds docs/guides/external-agent-review-guide.md and links it from README.md, docs/GET_STARTED.md, and docs/reference/CVF_PUBLIC_EVALUATION_CLAIM_BOUNDARY_2026-06-04.md. Boundary: public-doc and guard hardening only; no runtime/source behavior, dependency migration, live/provider proof, hosted readiness, production readiness, provider parity, public readiness beyond bounded public-sync documentation, memory reinjection, high-risk promotion implementation, Learning Orchestrator runtime behavior, or autonomous mutation."
+}

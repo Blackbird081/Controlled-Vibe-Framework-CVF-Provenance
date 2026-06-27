@@ -1,0 +1,16 @@
+{
+  "stateOrder": 435,
+  "stateKey": "gfcT2T4T5FoundationCloseout20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "bfc30dbd",
+    "baseHead": "0560f525",
+    "roadmap": "docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_GFC_T2_T4_T5_FOUNDATION_CLOSEOUT_COMPLETION_2026-06-18.md",
+    "ccLvDecision": "CCLV-T4 is opt-in/conditional, not a broad hard-fail requirement.",
+    "roadmapFreshnessGuard": "governance/compat/check_roadmap_closure_freshness.py",
+    "roadmapFreshnessFrontDoor": "docs/reference/roadmap_closure_freshness/README.md",
+    "claimBoundary": "Pre-runtime governance foundation closeout only; no runtime/provider/live/public-sync/registry/product authorization.",
+    "nextAllowedMove": "Fresh runtime-specific GC-018/work order or another bounded foundation audit only if operator authorizes."
+  }
+}

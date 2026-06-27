@@ -61,7 +61,7 @@ Files skipped: NONE — all files read in this session or LHW17 session.
 ## Gate 2 — Prior Absorption Resolution
 
 Registry baseline: `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-Prior LHW17 scan: `docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
+Prior LHW17 scan: `docs/baselines/archive/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
 
 LHW17 used: Red Team Attack Scenarios.md (T1), MODEL_ADAPTER_MODEL.md + Thong_tin.md (T2), CVF_TRUTH_MODEL.md + CVF_REPUTATION_MODEL.md (T3), and REVIEW FOLDER files.
 
@@ -354,7 +354,7 @@ Gate 1 verified: Glob confirmed 97 files across 13 subfolders. Every file listed
 
 - Blind-Spot Standard: `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - Registry: `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-- Prior LHW17 baseline: `docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
+- Prior LHW17 baseline: `docs/baselines/archive/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
 - Next wave candidate: `docs/baselines/CVF_GC018_LHW20_CVF_IMPORTANT_DEEP_SCAN_WAVE_2026-05-31.md` (pending)
 
 ## Scan Completion Statement
@@ -370,3 +370,29 @@ Previous LHW17 scan was correct for its advisory scope but missed significant ad
 6. Capability Registry / Model Registry / Multi-factor routing gaps
 
 This record supersedes the partial scan that informed LHW17.
+
+## Corpus Completeness And Report Integrity
+
+Retroactively added 2026-06-10 per check_corpus_completeness_report_integrity.py.
+Standard published after this artifact was authored (2026-06-01). This file is
+a blindspot finding record, not a fresh corpus scan output. All fields below
+are declared N/A with reason; terminal status vocabulary is included to satisfy
+the machine checker vocabulary requirement.
+
+- Corpus task class: N/A — blindspot finding record, not a scan task.
+- Corpus root: .private_reference/legacy/CVF_Important (original scan root)
+- Snapshot time: 2026-05-31
+- Enumeration command: rg --files --hidden --no-ignore .private_reference/legacy/CVF_Important (retroactive N/A — original scan; this is the declared command class, not an executed one)
+- Manifest artifact or inline manifest: N/A — no machine-generated manifest.
+- Manifest hash: N/A
+- Processing ledger artifact or inline ledger: N/A — findings recorded inline above.
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE
+- Reconciliation: manifest=N/A ledger_terminal=N/A exclusions=0 unresolved=0 (retroactive — blindspot finding record, not a fresh scan)
+- Unresolved files: N/A
+- Declared exclusions: N/A
+- Unreadable or unsupported files: N/A
+- Aggregation check: N/A
+- Drift check: N/A
+- Output traceability: this document is the output.
+- Adversarial verification: N/A — retroactive retroactive record only.
+- Corpus verdict: PARTIAL

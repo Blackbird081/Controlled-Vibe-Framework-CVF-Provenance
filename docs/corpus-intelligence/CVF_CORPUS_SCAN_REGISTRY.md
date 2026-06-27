@@ -8,11 +8,17 @@ docType: reference
 
 Date: 2026-06-02
 
+Last updated: 2026-06-12 (EXA-T2 scan route decision contracts closure)
+
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
 Guard: `governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md`
 
 Machine registry: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+Registry authoring sources: `docs/corpus-intelligence/registry/`
+
+Generator: `governance/compat/generate_corpus_scan_registry.py`
 
 ---
 
@@ -80,12 +86,43 @@ prior scan here before starting new work.
 | `CVF 17.05 + 25.05 + 28.05` | LEGACY | SCANNED | LHW-RESCAN-B | 38 | Governance decision artifacts; low priority |
 | `CVF Edit/` | LEGACY | PARTIALLY_SCANNED | LHW18 | 10 | Integration SDK deferred; GC-047/050 not yet run |
 | `App onboarding/` | LEGACY | NOT_STARTED | — | ? | UI design reference; low priority |
-| `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T8 | 2 | t8 query receipt + retrieval trace + negative search evidence; final readiness READY; runtime still requires fresh work order |
+| `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T10 | 2 | T10 foundation readiness closed; verifier/report hash-bound T9 scripts, corpus, chunks, and receipts; 76 chunks; 5/5 acceptance queries PASS; AQ-05 EC-02 freshness assertion preserved; EC-02 rescan required on or after 2026-07-01 |
+| `DSCP-T1 domain-agnostic owner source surfaces` | CVF_EXTENSION | SCANNED | DSCP-T1 | 3 | Context pack, RAG convergence, and RAG pipeline type surfaces mapped for doc-only domain-agnostic schema proposal; TypeScript contracts deferred to DSCP-T2 |
 | `MLW2-RT1 Context Bundle Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW2-RT1 | 8 | route-visible metadata-only contextBundleReadout; deterministic + Alibaba live proof; no full RAG/vector/public claim |
 | `MLW3-RT1 Evidence-To-Learning Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW3-RT1 | 8 | route-visible metadata-only evidenceToLearningReadout; deterministic + Alibaba live proof; no truth mutation/orchestrator/public claim |
 | `MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW4-MLW6-RT1 | 8 | route-visible metadata-only continuity/audit/simulation readouts; deterministic + Alibaba live proof; no mutation/promotion/orchestrator/public claim |
 | `External Review GAP1 extension README owner surfaces` | CVF_EXTENSION | SCANNED | ER-GAP1 | 2 | Skill Library and MCP README owner surfaces accepted only for Core KB overlap mapping; no runtime/public readiness claim |
+| `CVF CPF DSCP-T10 domain profile contract source/export` | CVF_EXTENSION | SCANNED | DSCP-T10 | 2 | New deterministic domain-profile contract plus CPF export barrel; no corpus content ingested; no findings |
+| `CVF CPF DSCP-T10 domain profile contract tests` | CVF_EXTENSION | SCANNED | DSCP-T10 | 1 | 17 vitest assertions covering legal_policy/company_docs/technical_project profiles; no corpus content ingested; no findings |
+| `CVF CPF DSCP-T11 profile-aware pipeline harness tests` | CVF_EXTENSION | SCANNED | DSCP-T11 | 1 | 4 vitest assertions proving profile metadata/gates flow descriptor to ECO/LPF package without content release or cross-profile gate bleed |
+| `CVF CPF DSCP-T11E domain profile registry source` | CVF_EXTENSION | SCANNED | DSCP-T11E | 1 | DscpDomainProfileRegistry class + factory; in-memory deterministic selection by domainFamily/languageCode/facetKey; no corpus content ingested |
+| `CVF CPF DSCP-T11E domain profile registry tests` | CVF_EXTENSION | SCANNED | DSCP-T11E | 1 | 18 vitest assertions covering registration/selection/ambiguity/no-match/requiredFacetKey/select-then-apply pipeline integration |
+| `CVF CPF DSCP-T11F profile selection adapter source` | CVF_EXTENSION | SCANNED | DSCP-T11F | 1 | selectAndApplyDscpDomainProfile combining registry selection + profile application in one deterministic pipeline; no corpus content ingested |
+| `CVF CPF DSCP-T11F profile selection adapter tests` | CVF_EXTENSION | SCANNED | DSCP-T11F | 1 | 14 vitest assertions covering unique selection, no-match stop, ambiguous stop, blocked application stop, and profile isolation/no gate bleed |
+| `CVF Extraction Foundation EX-T2 Tier 1 extractor source` | CVF_EXTENSION | SCANNED | EX-T2 | 1 | extract_docx + extract_pdf_text_layer + extract_tier1 dispatcher; MIN_CHARS_PER_PAGE=100; language-transparent; no OCR in this module |
+| `CVF Extraction Foundation EX-T2 Tier 1 extractor tests` | CVF_EXTENSION | SCANNED | EX-T2 | 1 | 21 pytest assertions covering docx extraction, PDF text-layer extraction, dispatcher routing, UnsupportedFileTypeError, MIN_CHARS boundary, language_codes passthrough, and no-OCR source guard |
+| `CVF Extraction Foundation EX-T2 package stubs` | CVF_EXTENSION | SCANNED | EX-T2 | 3 | Package marker stubs for EX-T2 source, src, and tests directories; no runtime behavior |
+| `CVF Extraction Foundation EX-T3 through EX-T6 pipeline source` | CVF_EXTENSION | SCANNED | EX-T3-EX-T6 | 1 | Deterministic OCR adapter boundary, OCR language mapping, quality gate, chunk schema, and DSCP descriptor handoff; no OCR model download or corpus ingestion |
+| `CVF Extraction Foundation EX-T3 through EX-T6 pipeline tests` | CVF_EXTENSION | SCANNED | EX-T3-EX-T6 | 1 | 10 pytest assertions covering language mapping, explicit OCR adapter requirement, confidence capture, quality flags, fixed-window chunking, and raw-content-release boundary |
+| `CVF Extraction Foundation EX-T7 sentence-boundary chunking source` | CVF_EXTENSION | SCANNED | EX-T7 | 1 | Optional deterministic sentence-boundary strategy with fixed-window fallback and charStart/charEnd metadata; fixed-window default preserved |
+| `CVF Extraction Foundation EX-T7 sentence-boundary chunking tests` | CVF_EXTENSION | SCANNED | EX-T7 | 1 | Focused pytest coverage for sentence grouping, long-span fallback, deterministic IDs, offset metadata, and raw-content-release boundary |
+| `CVF Extraction Foundation EX-T8 authority/storage boundary source` | CVF_EXTENSION | SCANNED | EX-T8 | 1 | Extraction authority, rebuild class, raw OCR retention flag, storage boundary, boundary hash, and descriptor metadata propagation |
+| `CVF Extraction Foundation EX-T8 authority/storage boundary tests` | CVF_EXTENSION | SCANNED | EX-T8 | 1 | Focused pytest coverage for authority, Tier 1/Tier 2 rebuild class, raw OCR retention default, descriptor metadata, and boundary hash determinism |
+| `CVF Extraction Foundation EX-T9 scan outcome report source` | CVF_EXTENSION | SCANNED | EX-T9 | 1 | Domain-agnostic operator findings, stable actions, deterministic JSON/Markdown, and UTF-8 caller-selected output paths without raw content release |
+| `CVF Extraction Foundation EX-T9 scan outcome report tests` | CVF_EXTENSION | SCANNED | EX-T9 | 1 | Focused pytest coverage for PASS, all current quality signals, generic blocking findings, deterministic rendering, raw-content non-release, and Unicode filenames |
+| `CVF MEOR-T1 metadata evidence resolution contract` | PROJECT_SOURCE | SCANNED | MEOR-T1 | 2 | Domain-agnostic requirement, evidence, resolution, re-evaluation, failure-token, and cross-domain isolation semantics; specification only |
+| `CVF MEOR-T2 metadata evidence normalization source` | CVF_EXTENSION | SCANNED | MEOR-T2 | 1 | Deterministic T1 matrix evaluation, failure tokens, profile ownership validation, bounded pointers, and EX-T9 finding adapter |
+| `CVF MEOR-T2 metadata evidence normalization tests` | CVF_EXTENSION | SCANNED | MEOR-T2 | 1 | 30 focused pytest cases covering 21 allowed pairs, invalid records, provenance distinction, hint blocking, and report integration |
+| `CVF MEOR-T3 DSCP profile requirement bridge source` | CVF_EXTENSION | SCANNED | MEOR-T3 | 3 | Optional profile-scoped declarations, evidence-basis literals, owner-map normalization, fail-closed validation, and no descriptor/gate mutation |
+| `CVF MEOR-T3 DSCP profile requirement bridge tests` | CVF_EXTENSION | SCANNED | MEOR-T3 | 1 | 12 focused tests covering empty profiles, invalid declarations, owner mismatch, duplicates, evidence values, deterministic order, and non-mutation |
+| `CVF MEOR-T4 cross-domain conformance fixture` | PROJECT_SOURCE | SCANNED | MEOR-T4 | 1 | Shared synthetic legal-policy and technical-project requirements plus four T1 resolution paths; no real use-case data |
+| `CVF MEOR-T4 cross-domain conformance tests` | CVF_EXTENSION | SCANNED | MEOR-T4 | 2 | TypeScript and Python proof for exact sets, non-bleed, owner rejection, shared semantics, and bounded fixture content |
+| `CVF MEOR-RDA-T2 regulated-domain adapter source and export surface` | CVF_EXTENSION | SCANNED | MEOR-RDA-T2 | 2 | Local deterministic helper and CPF context-barrel export generating four profile-owned regulated MEOR requirements for supportsDocumentStatus=true profiles; non-regulatory profiles receive eligible=false |
+| `CVF MEOR-RDA-T2 regulated-domain adapter tests` | CVF_EXTENSION | SCANNED | MEOR-RDA-T2 | 1 | 16 focused TypeScript tests covering non-regulatory rejection, empty-ID failure, regulated eligible=true, owner scoping, evidence bases, concept keys, bridge-pass, bridge-mismatch, frozen result, and no gate activation |
+| `CVF MEOR-RDA-T3 regulated-domain cross-domain conformance tests` | CVF_EXTENSION | SCANNED | MEOR-RDA-T3 | 1 | Focused TypeScript conformance tests proving explicit legal-policy support, non-regulatory default non-bleed, support-flag rejection, owner mismatch fail-closed behavior, and two-profile ownership isolation |
 
+| `CVF Extraction Foundation EXA-T2 scan route decision source` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Deterministic DocumentScanSignals + ScanRouteDecision + decide_scan_route(); maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL/EMPTY to four stable dispositions; unsupported source type or language -> BLOCKED_UNSUPPORTED; no OCR, provider, or raw content |
+| `CVF Extraction Foundation EXA-T2 scan route decision tests` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Focused pytest coverage for PASS/local route, OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source-type blocking, docx support, deterministic repeatability, version+claim-boundary presence, and no raw-content fields |
 ---
 
 ## Finding Index
@@ -117,6 +154,12 @@ Use this index to find prior findings by domain keyword.
 | --- | --- | --- | --- |
 | LHW18-integration-sdk | `CVF Edit/` | Integration SDK adapters not absorbed; frameworks connect INTO CVF | DEFER_DEMAND_GATED |
 
+### PolicyLocal
+
+| Finding ID | Corpus | Summary | Disposition |
+| --- | --- | --- | --- |
+| T9-F1-aq05-freshness-assertion-gap | `Policy_Local/data_input/` | Original T9 verifier marked AQ-05 PASS without asserting required freshness disclosure | ACCEPT_NO_ACTION - resolved by T9 correction |
+
 ### Memory / Learning Runtime
 
 | Finding ID | Corpus | Summary | Disposition |
@@ -124,6 +167,12 @@ Use this index to find prior findings by domain keyword.
 | MLW4-MLW6-RT1-F1-runtime-chain-proof-added | `MLW4-MLW6 RT1` | continuity, audit-feedback, and simulation/failure gates advanced from contract-only to route-visible metadata evidence | ACCEPT |
 | MLW4-MLW6-RT1-F2-mutation-promotion-boundary | `MLW4-MLW6 RT1` | audit and simulation readouts remain proposal/review only; no mutation or auto-promotion authorized | ACCEPT_WITH_BOUNDARY |
 | ER-GAP1-F1-extension-owner-surface | `External Review GAP1 extension README owner surfaces` | extension README files are owner surfaces for Core KB overlap mapping only; no runtime or public readiness claim | ACCEPT_WITH_BOUNDARY |
+
+### Domain-Agnostic Scan Context Pack
+
+| Finding ID | Corpus | Summary | Disposition |
+| --- | --- | --- | --- |
+| DSCP-T1-F1-governance-envelope-wrapper-needed | `DSCP-T1 domain-agnostic owner source surfaces` | ContextPackagerRequest and RAG pipeline types are reusable owner surfaces but need a governance envelope wrapper before cross-domain runtime use | DEFER_WITH_ROADMAP |
 
 ---
 
@@ -142,8 +191,9 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | `direct external MCP access` | manual read of 7-file code-review-graph corpus | code-review-graph | FOUND as forbidden pattern, not allowed implementation |
 | `graph service directly invoking LLMs` | manual read of 7-file code-review-graph corpus | code-review-graph | FOUND as forbidden pattern, not allowed implementation |
 | full `CVF ADD/` sibling scan | CI1-T3 work-order boundary | code-review-graph | NOT SEARCHED — out of scope |
-| `PolicyLocal search/chat runtime readiness` | LPCI2-T6/T7/T8 readiness gates | PolicyLocal | Governance scaffold READY after T8; search/chat runtime implementation still blocked pending fresh operator-authorized work order |
-| `PolicyLocal live query negative evidence` | LPCI2-T8 completion review | PolicyLocal | NOT PRODUCED — T8 negativeSearchEvidence is structural; implementation tranche must produce live query receipts |
+| `PolicyLocal search/chat runtime readiness` | LPCI2-T6/T7/T8 readiness gates | PolicyLocal | T9 search runtime IMPLEMENTED; local-deterministic only; no production deployment; no provider calls |
+| `PolicyLocal live query negative evidence` | LPCI2-T8 completion review | PolicyLocal | PRODUCED at T9 and correction-cleaned; 5 acceptance query receipts generated; AQ-01 SUMMARY_WITH_SOURCE, AQ-02 through AQ-05 ESCALATE_OR_ABSTAIN; AQ-05 freshnessDisclosureApplied=true |
+| `PolicyLocal foundation readiness` | LPCI2-T10 verifier/report | PolicyLocal | PRODUCED; hash-bound T9 external artifacts and assertion-checked AQ-01 through AQ-05; no provider, LLM, vector, corpus expansion, deployment, public-sync, current-law, or production readiness claim |
 
 ---
 
@@ -158,15 +208,32 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | MEDIUM | `CVF_Important/` remaining subfamilies | 230 files inventoried; deep classification pending per-family |
 | LOW | `CVF 16.5/` + `CVF_Restructure/` deep scan | Broad routing done; deep classification when operator prioritizes |
 | LOW | `App onboarding/` | UI design reference; not a knowledge absorption target |
-| READY_FOR_OPERATOR_AUTH | PolicyLocal search implementation work order | PolicyLocal T8 governance scaffold is READY; EC-02 rescan required on or after 2026-07-01 before production runtime |
+| COMPLETE_T10 | PolicyLocal foundation readiness T10 | T10 verifier/report hash-binds T9 scripts, corpus, chunks, and receipts; all schema, hash, receipt assertion, and boundary checks PASS |
+| HIGH | PolicyLocal corpus expansion readiness T11 | Inventory and source-verify candidate corpus additions before any runtime expansion; preserve EC-02 boundary until on or after 2026-07-01 |
+| MEDIUM | PolicyLocal production deployment | T10 local-deterministic foundation ready; production deployment requires fresh operator-authorized work order and must not bypass EC-02/current-law review |
 
 ---
 
 ## How to Add a New Entry
 
-1. Add to `CVF_CORPUS_SCAN_REGISTRY.json` (machine truth).
-2. Add a row to the Quick Lookup table above.
-3. Add any findings to the Finding Index.
-4. Add any negative searches to the Negative Search Evidence Index.
-5. Add a next scan recommendation row if applicable.
-6. Commit both files together in the same governed batch.
+1. Add or update one per-entry source file under
+   `docs/corpus-intelligence/registry/entries/`.
+2. Run:
+
+   ```text
+   python governance/compat/generate_corpus_scan_registry.py --generate
+   ```
+
+3. Confirm:
+
+   ```text
+   python governance/compat/check_corpus_scan_registry.py --enforce
+   ```
+
+4. Update this human companion only when the quick lookup, finding index,
+   negative search index, or next-scan recommendation needs operator-facing
+   text.
+5. Commit the entry source and generated aggregate in the same governed batch.
+
+Do not hand-edit `CVF_CORPUS_SCAN_REGISTRY.json` for ordinary entry updates.
+The checker fails when the aggregate drifts from the per-entry sources.

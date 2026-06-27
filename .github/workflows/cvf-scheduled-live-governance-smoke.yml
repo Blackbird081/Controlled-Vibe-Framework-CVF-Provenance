@@ -64,20 +64,14 @@ jobs:
 
       - name: Run scheduled live governance smoke
         shell: bash
-        run: |
-          set -o pipefail
-          python scripts/run_cvf_release_gate_bundle.py --e2e-live --json | tee cvf-scheduled-live-governance-smoke-result.json
-
-      - name: Build signed/hash evidence manifest
-        if: always()
-        shell: bash
         env:
           CVF_AUDIT_SIGNING_KEY: ${{ secrets.CVF_AUDIT_SIGNING_KEY }}
         run: |
-          python scripts/build_cvf_live_evidence_manifest.py \
-            --evidence cvf-scheduled-live-governance-smoke-result.json \
-            --command "python scripts/run_cvf_release_gate_bundle.py --e2e-live --json" \
-            --output cvf-scheduled-live-governance-smoke-manifest.json
+          python scripts/run_cvf_release_gate_bundle.py \
+            --e2e-live \
+            --json \
+            --output cvf-scheduled-live-governance-smoke-result.json \
+            --manifest-output cvf-scheduled-live-governance-smoke-manifest.json
 
       - name: Upload live smoke result
         if: always()

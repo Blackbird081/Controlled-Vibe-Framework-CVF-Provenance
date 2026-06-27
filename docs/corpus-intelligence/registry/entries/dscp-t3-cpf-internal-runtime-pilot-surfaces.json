@@ -1,0 +1,47 @@
+{
+  "registryOrder": 28,
+  "id": "dscp-t3-cpf-internal-runtime-pilot-surfaces",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "DSCP-T3 CPF internal governed context packer and tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.context.packer.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "DSCP-T3-RUNTIME-PILOT-CPF-INTERNAL-2026-06-07",
+  "scanDate": "2026-06-07",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_COMPLETION_2026-06-07.md",
+  "completionReviewPath": "docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_COMPLETION_2026-06-07.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_2026-06-07.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+    "GOVERNED_CONTEXT_RUNTIME_WRAPPER",
+    "CONTRACT_TEST_COVERAGE"
+  ],
+  "priorAbsorption": "DSCP-T3 wires DSCP-T2 type contracts into a deterministic CPF internal governed wrapper around ContextPackagerContract.pack(). No retrieval receipt runtime, provider call, or corpus ingestion is authorized.",
+  "findings": [
+    {
+      "id": "DSCP-T3-F1-retrieval-receipt-runtime-deferred",
+      "summary": "GovernedContextPackerContract creates governed packages, but GovernedRetrievalReceipt remains a type-only contract with no runtime instantiation.",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "Use a separate DSCP-T4 receipt runtime boundary roadmap only after Codex audit and operator authorization.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "GovernedRetrievalReceipt runtime instance (not made)",
+    "provider call (not made)",
+    "public readiness claim (not made)"
+  ],
+  "nextScanRecommendation": "Audit DSCP-T3 closure before opening DSCP-T4. If authorized, DSCP-T4 should be receipt runtime boundary only, deterministic and provider-free unless a separate live-proof lane is authorized."
+}

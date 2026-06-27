@@ -1,0 +1,5 @@
+{
+  "stateOrder": 645,
+  "stateKey": "assfExternalAgentReadoutCliMcpBoundaryClosure20260626",
+  "value": "ASSF external-agent readout / CLI-MCP adapter boundary T0-T4 closed CLOSED_PASS_BOUNDED at material commit 99fabd26. Artifacts: docs/roadmaps/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_ROADMAP_2026-06-26.md, docs/baselines/CVF_GC018_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_2026-06-26.md, docs/reference/agent_system_skills/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_CONTRACT.md, and docs/reviews/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_COMPLETION_2026-06-26.md. Boundary: decision-first contract/readiness only; no adapter implementation, package instance, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration."
+}

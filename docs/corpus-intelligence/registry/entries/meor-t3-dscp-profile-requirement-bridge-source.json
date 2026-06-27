@@ -1,0 +1,22 @@
+{
+  "registryOrder": 57,
+  "id": "meor-t3-dscp-profile-requirement-bridge-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF MEOR-T3 DSCP profile requirement bridge source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.contract.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.metadata.requirement.bridge.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts"
+  ],
+  "fileCount": 3,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Re-scan when requirement declaration semantics or profile ownership validation changes.",
+  "scanWave": "MEOR-T3",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_T3_DSCP_PROFILE_REQUIREMENT_BRIDGE_COMPLETION_2026-06-12.md",
+  "notes": "Optional profile-scoped declarations, canonical evidence-basis literals, deterministic owner map, fail-closed validation, and no descriptor or gate mutation."
+}

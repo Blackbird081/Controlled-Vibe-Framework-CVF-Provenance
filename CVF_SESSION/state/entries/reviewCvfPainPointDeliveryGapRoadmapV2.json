@@ -1,0 +1,5 @@
+{
+  "stateOrder": 220,
+  "stateKey": "reviewCvfPainPointDeliveryGapRoadmapV2",
+  "value": "ACTIVE_ROADMAP_T1_T2_T3_T4_T5_CLOSED_PENDING_OPERATOR_REVIEW at docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md. Operator authorized Codex to execute T1->T5 sequentially. T1 closed intake pipeline and reference pack; T2 closed product skill pack MVP; T3 closed workflow composition outcome surface with bounded new_receipt_envelopes override; T4 closed provider method coverage with bounded new_provider_execution_semantics override; T5 closed runtime memory wiring with bounded new_memory_tiers_beyond_lane_h_scope override for ephemeral in-process task memory only. No durable memory, public-sync, route, provider-runtime broadening, Maika proof, or freeze release claim."
+}

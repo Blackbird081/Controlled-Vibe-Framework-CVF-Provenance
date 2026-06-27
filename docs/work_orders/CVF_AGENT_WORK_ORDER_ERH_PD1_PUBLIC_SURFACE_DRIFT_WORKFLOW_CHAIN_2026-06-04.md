@@ -77,7 +77,7 @@ Forbidden scope:
 | `CVF_SESSION_MEMORY.md` | startup front door |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | active handoff and guard registry |
 | `AGENT_HANDOFF_V15_2026-05-29.md` | current session continuity |
-| `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public export boundary |
+| `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public export boundary |
 | `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md` | closure quality requirements |
 
 ## Pre-Flight Checks

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "cvf.wwuT2A.evidence.v1",
+  "status": "CLOSED_PASS_BOUNDED",
+  "date": "2026-06-19",
+  "materialBaseHead": "3742f811",
+  "targetLayer": "CVF_WEB_WORKSPACE",
+  "runtimeExpansionMode": "READ_MODEL_ONLY",
+  "changedPathAllowlist": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/cvf-workspace-read-model.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/cvf-workspace-read-model.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/workspace/state/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.test.tsx",
+    "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_FOR_CODEX_2026-06-19.md",
+    "docs/reviews/CVF_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_COMPLETION_2026-06-19.md",
+    "docs/reviews/evidence/wwu-t2a-cvf-web-workspace-lane-summary-read-model-2026-06-19.json"
+  ],
+  "sourceInputsReadOnly": [
+    "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION_MEMORY.md",
+    "AGENT_HANDOFF_V19_2026-06-15.md"
+  ],
+  "verification": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 3742f811 --head HEAD",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run test:run -- src/lib/server/cvf-workspace-read-model.test.ts src/app/api/workspace/state/route.test.ts \"src/app/(dashboard)/workspace/page.test.tsx\"",
+      "workdir": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+      "result": "PASS",
+      "testFiles": 3,
+      "tests": 4
+    },
+    {
+      "command": "npm run check",
+      "workdir": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+      "result": "PASS",
+      "note": "Initial run failed on stale untracked .next/dev generated validator cache; deleting .next/dev and rerunning passed without source workaround."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py",
+      "result": "PASS"
+    }
+  ],
+  "claimBoundary": {
+    "localRuntimeOrMcp": false,
+    "providerLiveProof": false,
+    "credentialUse": false,
+    "publicSync": false,
+    "generatedWorkspaceStateMutation": false,
+    "activeSessionMutationInMaterialRange": false,
+    "runtimeEnforcementClaim": false,
+    "governedActionRequest": false,
+    "readinessClaim": false
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "findingToGovernanceLearningDisposition": {
+    "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+    "learningLane": "GOVERNANCE_CONTROL_PLANE",
+    "escalationState": "PRODUCT_READ_MODEL_ADDED"
+  }
+}

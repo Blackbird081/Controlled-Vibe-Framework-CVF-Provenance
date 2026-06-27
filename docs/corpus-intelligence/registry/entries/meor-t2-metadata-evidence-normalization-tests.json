@@ -1,0 +1,20 @@
+{
+  "registryOrder": 56,
+  "id": "meor-t2-metadata-evidence-normalization-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF MEOR-T2 metadata evidence normalization tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_metadata_evidence.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MEOR-T2",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_T2_EXTRACTION_METADATA_FINDING_NORMALIZATION_COMPLETION_2026-06-12.md",
+  "notes": "30 focused pytest cases covering all 21 allowed pairs, canonical failures, provenance distinction, derived-hint blocking, and EX-T9 report integration."
+}

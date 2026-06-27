@@ -1,0 +1,5 @@
+{
+  "stateOrder": 148,
+  "stateKey": "wceWorkflowChainExecution",
+  "value": "CLOSED_PASS_BOUNDED. W1+W2+W3 all closed. W1 cvf.workflowChainExecution.wce.w1.v1 + W2 cvf.ma1CliSerialization.wce.w2.v1 + W3 cvf.perRoleProviderRouting.wce.w3.v1. WCE wave complete."
+}

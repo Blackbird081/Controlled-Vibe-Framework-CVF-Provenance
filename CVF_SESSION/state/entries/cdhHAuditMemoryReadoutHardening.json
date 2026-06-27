@@ -1,0 +1,5 @@
+{
+  "stateOrder": 208,
+  "stateKey": "cdhHAuditMemoryReadoutHardening",
+  "value": "CLOSED_AUDIT_MEMORY_READOUT_HARDENED at docs/reviews/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md; GC-018 docs/baselines/CVF_GC018_CDH_H_AUDIT_MEMORY_READOUT_2026-05-21.md; route-level audit readout payload surfaces writesRequireReceipt, privacyFilters, memoryReceiptDecision, memoryCaptureMode, and memoryCaptureReason; targeted tests PASS 6/6; cvf-web TypeScript check PASS; no route change, reinjection, persistent/archive/provider memory, new memory tier, public-sync update, or live provider claim."
+}

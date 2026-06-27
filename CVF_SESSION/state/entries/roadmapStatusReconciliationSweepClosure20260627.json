@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1236,
+  "stateKey": "roadmapStatusReconciliationSweepClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "3ccf574c",
+    "roadmap": "docs/roadmaps/CVF_ROADMAP_STATUS_RECONCILIATION_SWEEP_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_ROADMAP_STATUS_RECONCILIATION_SWEEP_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATUS_RECONCILIATION_SWEEP_T0_T4_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_ROADMAP_STATUS_RECONCILIATION_SWEEP_T0_T4_COMPLETION_2026-06-27.md",
+    "reconciledTargets": [
+      "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_ROADMAP_2026-06-15.md",
+      "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_ROADMAP_2026-06-15.md",
+      "docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md"
+    ],
+    "claimBoundary": "Roadmap status reconciliation and DSCP-T11F closure conversion only; no validation semantics change, runtime/provider/live proof, public-sync, generated aggregate mutation beyond session sync, resolver mutation, adapter mutation, package activation, or push."
+  }
+}

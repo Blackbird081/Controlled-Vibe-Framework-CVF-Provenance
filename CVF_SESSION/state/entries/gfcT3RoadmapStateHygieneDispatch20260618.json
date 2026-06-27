@@ -1,0 +1,25 @@
+{
+  "stateOrder": 434,
+  "stateKey": "gfcT3RoadmapStateHygieneDispatch20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "21cf3793",
+    "acceptedMaterialCommit": "f68ff8ce",
+    "acceptedMaterialSessionSyncCommit": "d64bd56d",
+    "closureCommit": "d5146cce",
+    "dispatchBaseHead": "ecd74bbe",
+    "gc018": "docs/baselines/CVF_GC018_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_2026-06-18.md",
+    "roadmap": "docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_FOR_CLAUDE_2026-06-18.md",
+    "assignedWorker": "Claude",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedWorkerPacket": "docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_PACKET_2026-06-18.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_WORKER_RETURN_2026-06-18.md",
+    "codexOwnedClosurePath": "docs/reviews/CVF_GFC_T3_ROADMAP_STATE_HYGIENE_REMEDIATION_COMPLETION_2026-06-18.md",
+    "codexReviewerRepair": "Clarified dispatch wording from ambiguous eight-plus-P5C language to seven accepted GFC-T1 rows plus re-verified P5C, eight rows total, and aligned the GC-018 reviewer owner with Codex.",
+    "targetRoadmapRows": 8,
+    "scope": "Roadmap-state hygiene only: update eight named roadmap top-of-file Status lines, plus the AHB roadmap Machine Closure Package roadmap-state self-reference.",
+    "claimBoundary": "No runtime, provider/live proof, public-sync, registry edit, source/test code edit, workspace runtime queue, session mutation by worker, or product/public-readiness claim.",
+    "nextAllowedMove": "GFC-T3 is closed. Operator may choose the next bounded GFC tranche, pre-runtime readiness review, or fresh runtime authorization. Runtime/provider/live/public-sync/registry/product work remains parked without fresh authorization."
+  }
+}

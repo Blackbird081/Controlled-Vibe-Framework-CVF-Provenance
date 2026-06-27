@@ -1,0 +1,17 @@
+{
+  "stateOrder": 517,
+  "stateKey": "gkfT1GovernanceKernelFreezeReadinessClaimBoundaryAuditDispatch20260620",
+  "value": "DISPATCHED_TO_CLAUDE at dispatch commit 6a7377b8 from dispatch base 72555605; dispatch repair commit 218ef14d clarified that Claude must capture current HEAD as executionBaseHead and use that value as pre-implementation base. Artifacts: GC-018 docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md. Claude must create only docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md, preserve WORKER_MUST_NOT_COMMIT, and return uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Pre-dispatch autorun PASS 43/43; repair-range pre-dispatch PASS 43/43; repair-range pre-implementation PASS 44/44 from base be728385; dispatch-quality PASS; commit steward dispatch preflight PASS; pre-commit governance hook PASS 54/54 for dispatch and repair. Boundary: private governance freeze-readiness and claim-boundary audit only; no freeze, freeze release, posture mutation, runtime/source edit, provider/live call, public-sync work, direct interception claim, readiness claim, or universal governed-coding-control claim.",
+  "metadata": {
+    "status": "DISPATCHED_TO_CLAUDE",
+    "dispatchCommit": "6a7377b8",
+    "dispatchRepairCommit": "218ef14d",
+    "dispatchBaseHead": "72555605",
+    "gc018": "docs/baselines/CVF_GC018_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_2026-06-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_FOR_CLAUDE_2026-06-20.md",
+    "expectedCompletionReview": "docs/reviews/CVF_GOVERNANCE_KERNEL_FREEZE_READINESS_AND_CLAIM_BOUNDARY_AUDIT_COMPLETION_2026-06-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "claimBoundary": "Private governance freeze-readiness and claim-boundary audit only; no freeze, freeze release, posture mutation, runtime/source edit, provider/live call, public-sync work, direct interception claim, readiness claim, or universal governed-coding-control claim.",
+    "nextAllowedMove": "Claude executes the repaired GKF-T1 work order, captures current HEAD as executionBaseHead, runs pre-implementation with --base <executionBaseHead> --head HEAD, and returns uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; Codex owns review, commit, closure conversion, and session sync."
+  }
+}

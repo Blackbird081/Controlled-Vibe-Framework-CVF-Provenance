@@ -1,0 +1,26 @@
+{
+  "stateOrder": 673,
+  "stateKey": "assfPicT2ManualUatCertificationReviewClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "ee5f2c42",
+    "dispatchMaterialCommit": "7cf1b2cb",
+    "sessionSyncParent": "ee5f2c42",
+    "baseline": "docs/baselines/CVF_GC018_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_FOR_CLAUDE_2026-06-26.md",
+    "uatReview": "docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_2026-06-26.md",
+    "workerReturn": "docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_WORKER_RETURN_2026-06-26.md",
+    "completionReview": "docs/reviews/CVF_ASSF_PIC_T2_MANUAL_UAT_CERTIFICATION_REVIEW_COMPLETION_2026-06-26.md",
+    "roadmap": "docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md",
+    "lifecycleDisposition": "CERTIFICATION_HELD_WITH_REASON",
+    "t3Disposition": "HOLD_CERTIFICATION_HELD_BY_PIC_T2",
+    "nextAction": "Create a fresh GC-018/source-verified WODS hardening work order for T2-discovered dispatch/scaffold defects before any ASSF-PIC-T3 movement.",
+    "capturedFollowUps": [
+      "run_worker_return_scaffold.py External Knowledge Intake Routing default table shape",
+      "UAT-review required-section template coverage for Risk / Corrective Action, External Knowledge Intake Routing, and Epistemic Process Block",
+      "rescan guard self-reference phrase gap for compound or wrapped inline-code wording",
+      "mixed material+session-sync range wording for trace comparison gates"
+    ],
+    "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, T3 dispatch, package integration, or certification state advancement."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "registryOrder": 89,
+  "id": "model-gateway-provider-method-contract",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway provider method contract source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "fetch (not in method contract)",
+    "http request (not in method contract)",
+    "resolveSecretForRuntime (not in method contract)",
+    ".env.local (not in method contract)",
+    "DASHSCOPE_API_KEY (not in method contract)",
+    "DEEPSEEK_API_KEY (not in method contract)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P5",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+  "notes": "Existing Model Gateway provider method capability contract cited by P5 capability negotiation closure evidence. Source declares provider capability registry structure consumed by P5 negotiation."
+}

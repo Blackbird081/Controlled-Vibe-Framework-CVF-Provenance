@@ -1,0 +1,49 @@
+{
+  "stateOrder": 372,
+  "stateKey": "fpcT1FoundationPlanesWorkflowChainSystemAuditClosure20260613",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "91e8f10f",
+    "closureBaseHead": "17f45c94",
+    "dispatchMaterialCommit": "6ae97055",
+    "dispatchSessionSyncCommit": "17f45c94",
+    "roadmap": "docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md",
+    "gc018": "docs/baselines/CVF_GC018_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md",
+    "matrix": "docs/reference/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_MATRIX_2026-06-13.md",
+    "workerReturn": "docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_WORKER_RETURN_2026-06-13.md",
+    "completionReview": "docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md",
+    "reviewerRepairs": [
+      "Replaced provider-specific CLAUDE.md citations with CVF-governed source paths and marked provider-specific agent files as NOT_CVF_SOURCE for authority claims.",
+      "Added provider-specific authority coverage to check_agent_packet_authority_and_encoding.py.",
+      "Corrected system-loop interlock registry count from 14 to 15 after direct JSON verification.",
+      "Removed a worker-return EXTENSIONS glob that created a false GC-051 path claim.",
+      "Recorded unsupported worker-return fast gate --base/--head flags as a tool-contract learning candidate."
+    ],
+    "acceptedCandidates": {
+      "fpcT2": [
+        "FPC-T2-C01 Control Plane hook-chain-to-learning-intake",
+        "FPC-T2-C02 Memory-to-Learning signal interlock",
+        "FPC-T2-C03 Memory-to-Retrieval signal interlock",
+        "FPC-T2-C04 DIR/DICE-to-downstream-adapter eligibility interlock",
+        "FPC-T2-C05 Evidence-to-claim-update workflow-chain interlock reconciled against MLW3"
+      ],
+      "fpcT3": [
+        "FPC-T3-C01 epistemic process packet checker candidate",
+        "FPC-T3-C02 DICE machine-candidate autorun candidate",
+        "FPC-T3-C03 interlock registry coverage checker extension candidate",
+        "FPC-T3-C04 work-order template epistemic block candidate",
+        "FPC-T3-C05 worker-return fast gate epistemic fixture candidate",
+        "FPC-T3-C06 rawMemoryReleased=false autorun check candidate"
+      ]
+    },
+    "verification": [
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS 14/14",
+      "git diff --cached --check PASS",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 39/39",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 17f45c94 --head HEAD PASS except expected session-sync HEAD pointer before this sync"
+    ],
+    "nextAllowedMove": "FPC-T2 may be opened only through a fresh GC-018 and source-verified work order for system-loop interlock expansion decisions using the FPC-T1 matrix evidence. FPC-T3 remains parked until FPC-T2 closes or the operator separately authorizes a small governance batch.",
+    "boundary": "FPC-T1 closed a read-only audit matrix only. No interlock registry edit, checker/template implementation, runtime/source/test mutation, generated aggregate mutation beyond session-state regeneration, external Document Translator or Policy_Local inspection/mutation, OCR/provider/API/live proof, retrieval route wiring, corpus ingestion, public-sync, T12 unlock, readiness/cost/quality claim, memory reinjection, high-risk promotion, or autonomous mutation was authorized."
+  }
+}

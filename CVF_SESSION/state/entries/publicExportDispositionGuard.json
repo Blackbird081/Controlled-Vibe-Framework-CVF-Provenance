@@ -1,0 +1,5 @@
+{
+  "stateOrder": 160,
+  "stateKey": "publicExportDispositionGuard",
+  "value": "MACHINE_ENFORCED. Standard docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md and guard governance/compat/check_public_export_disposition.py require changed closed roadmaps, final wave completion packets, public-sync batches, and public catalog claims to state EXPORTED, DEFERRED_PRIVATE_ONLY, or BLOCKED_MISSING_PUBLIC_ARTIFACTS. EXPORTED requires public-sync remote, commit, and artifact path evidence. Private provenance closure is not public catalog export."
+}

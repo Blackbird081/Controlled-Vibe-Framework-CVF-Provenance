@@ -6,20 +6,24 @@ The active session front door for new or resumed agents is:
 
 `CVF_SESSION_MEMORY.md`
 
-Resolve the machine-readable state registry before treating any root handoff as
-current:
+For compact startup facts (current mode, active handoff, next allowed move),
+read the bootstrap read model first:
+
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+For complete canonical state, resolve the full machine-readable state registry:
 
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V16_2026-06-06.md`
+`AGENT_HANDOFF_V23_2026-06-26.md`
 
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`
 
-This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V15, and
+This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V20, and
 side-channel handoff files. Do not append new status to archived handoffs;
 update the active handoff named by `CVF_SESSION/ACTIVE_SESSION_STATE.json` or
 open a later versioned handoff when the active handoff approaches the limit.
@@ -50,6 +54,45 @@ universal tool support, MCP availability, or hidden cross-agent memory transfer.
 Trivial direct answers may keep the confirmation internal, but any roadmap,
 implementation, review, live run, commit, handoff, or public-sync work must
 satisfy this acknowledgment first.
+
+## Guard Orientation Index - 2026-06-20
+
+Before authoring any governed CVF artifact, read
+`docs/reference/guard_orientation/README.md` to identify which guard surfaces
+apply to the current task class and role, what blocks or outputs are required,
+and what common failure patterns to avoid.
+
+This applies to all roles: dispatcher, worker, reviewer, closer, and
+session-sync steward. The index is an orientation layer only; canonical
+standards, work orders, and machine checkers still control.
+
+## Mandatory Provider-Specific Agent Memory Boundary - 2026-06-13
+
+Provider-specific files and memory stores are execution aids for the agent or
+provider that owns them. They are not CVF source of truth and must not be cited
+as canonical CVF authority in Source Authority tables, Source Verification
+ACCEPT rows, corpus manifests, closure proof, or roadmap/work-order evidence.
+
+Examples include `CLAUDE.md`, Codex memory files, Claude memory files, IDE
+side-channel summaries, provider-local memories, and other agent-private
+continuity mechanisms.
+
+Canonical CVF continuity and authority must come from CVF-governed surfaces:
+
+- `AGENTS.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- the active handoff named by the state registry;
+- canonical standards under `docs/reference/`;
+- governed roadmaps, baselines, work orders, reviews, registries, checkers, and
+  runtime source.
+
+Provider-specific files may be read as local operating guidance for that agent
+only. Any source fact learned from them must be re-verified against a
+CVF-governed surface before it is used as evidence or dispatched to another
+agent. If no CVF-governed source exists, mark the claim
+`BLOCKED_SOURCE_NOT_FOUND`, `DOCUMENTATION_ONLY_WITH_REASON`, or
+`NOT_CVF_SOURCE` instead of promoting the provider-specific file to authority.
 
 ## Mandatory F-1 Diminishing Returns Stop Rule - 2026-05-15
 
@@ -126,28 +169,14 @@ README/catalog claim is made.
 
 ## Critical Repository Boundary - 2026-05-09
 
-This workspace is the private provenance/archive repository:
+Rotated under the Governed File Size Guard (GC-023) to:
 
-`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git`
+`docs/reference/CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md`
 
-It contains full historical development material, evidence records, handoffs,
-reviews, and internal continuity files. Treat it as locked for private audit and
-deep review. Do not use this workspace as the public CVF product front door.
-
-The only GitHub repository intended for public/external CVF information is:
-
-`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-
-Public-facing architecture, README, contributor, setup, governance, provider,
-cost, or evidence-summary changes must be prepared and pushed from the sibling
-public-sync clone:
-
-`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
-
-Before any push that is meant for the public repository, run `git remote -v`.
-If the current working directory is this provenance workspace or `origin`
-contains `Controlled-Vibe-Framework-CVF-Provenance`, stop and switch to the
-public-sync clone. Do not push the full provenance tree into the public repo.
+Read that file before any push, public-sync work, or repository-boundary
+decision. Summary: this workspace is the private provenance repository;
+public-facing changes must go through the sibling public-sync clone; run
+`git remote -v` before any push intended for the public repository.
 
 ## UI / Web Design Contract
 
@@ -204,6 +233,41 @@ was impossible.
 Benchmark evidence that emits multiple events per live call must report both
 the call-level result and the event-model denominator so readers do not confuse
 event ratios with execution pass rate.
+
+## Mandatory ADIF Defect Registry Disclosure - 2026-06-23
+
+CVF accumulates recurring agent-defect patterns (gate-trap quirks,
+dispatch-quality requirements, role-boundary rules) as governed entries
+under `docs/reference/agent_defect_intelligence/entries/`, queryable
+through the read-only resolver `governance/compat/run_adif_defect_resolver.py`.
+A pattern recorded only in one provider's session memory is invisible to
+every other agent and every future session; it is the registry, not any
+single agent's memory, that all agents share.
+
+Any GC-018 baseline or work order an agent files must include an
+`## ADIF Defect Registry Disclosure` section: query the resolver for this
+dispatch's own task class, role, and lifecycle phase, then list every
+returned defectId. `governance/compat/check_adif_defect_registry_disclosure.py`
+(wired into the pre-dispatch and pre-implementation autorun phases) blocks
+dispatch if this section is missing, the query line is missing, or any
+defectId the resolver actually returns is omitted from the disclosed list.
+
+If a reviewer or worker observes a new repeated or non-obvious defect
+pattern while executing a tranche, add a new entry to the ADIF registry
+(following `docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`)
+before closing that tranche, rather than recording the lesson only in
+provider-specific memory (`CVF_ADIF-0008` names this exact anti-pattern).
+
+## Mandatory Value-Parked Lane Reopen Discipline - 2026-06-25
+
+Canonical standard:
+
+`docs/reference/CVF_VALUE_PARKED_LANE_REOPEN_DISCIPLINE_STANDARD_2026-06-25.md`
+
+A lane declined for low expected value (not blocked by a missing
+authority/credential/dependency) needs a concrete, checkable reopen
+condition recorded in `nextAllowedMove`, not a vague restatement. No agent
+may re-propose such a lane without first checking that condition.
 
 ## Mandatory Work Order Source Verification - 2026-05-27
 
@@ -265,6 +329,21 @@ defect note that blocks dispatch. They must not appear in acceptance criteria,
 evidence requirements, completion reviews, or closure checklists as if they were
 allowed dispositions.
 
+## Governed Artifact Literal-Format Gotchas - 2026-06-25
+
+Before drafting a GC-018, work order, worker-return, or completion review,
+read:
+
+`docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+It is a pre-write checklist of literal-format failure modes already hit by
+`governance/compat/check_*.py` gates (self-recomputed line numbers,
+word-wrapped multi-word terms, trailing punctuation after verdict tokens,
+bare directory-path substrings, heading-collision false matches, ADIF
+disclosure query exactness, and more). Reading it before writing avoids
+discovering these one gate-run at a time. Any new literal-format trap found
+while authoring an artifact should be added there in the same batch.
+
 ## Mandatory Work Order Closure Quality Gate - 2026-05-28
 
 Canonical standard:
@@ -298,6 +377,35 @@ Binding requirements:
 Open checkbox residue, stale continuity state, memory-based file-change claims,
 and roadmap requirements lost between dispatch and final artifact are closure
 defects. Operator silence is not a waiver.
+
+## Mandatory Roadmap Closure Freshness Guard - 2026-06-18
+
+Stable front door:
+
+`docs/reference/roadmap_closure_freshness/README.md`
+
+Canonical standard:
+
+`docs/reference/roadmap_closure_freshness/CVF_ROADMAP_CLOSURE_FRESHNESS_STANDARD.md`
+
+Machine guard:
+
+`governance/compat/check_roadmap_closure_freshness.py`
+
+Any agent that changes a roadmap top-of-file `Status:` line, edits a roadmap
+`## Machine Closure Package`, closes or reopens a roadmap tranche, or updates a
+roadmap self-reference must keep same-file roadmap closure state
+self-consistent.
+
+If a changed active roadmap's `Machine Closure Package` `Roadmap state` row
+refers to the same roadmap file, the row's cited `Status:` value must match the
+actual top-of-file `Status:` value exactly. Do not retype closure status from
+provider memory, chat history, or a previous packet; copy it from the roadmap's
+current top `Status:` line after the closure/status decision is made.
+
+This guard is mandatory in reviewer-fast, pre-commit, pre-push, and autorun
+workflow gates. It is intentionally range-aware and forward-only: archived or
+unchanged historical roadmaps are not reopened solely for this rule.
 
 ## Mandatory Work Order Dependency Release Evidence - 2026-06-03
 
@@ -395,64 +503,271 @@ The guard now hard-fails touched near-hard-threshold governed files without
 same-domain rotation/split evidence or meaningful shrink. Maintainability
 planning is part of the work, not cleanup left for testers.
 
-## Mandatory Agent Autorun Workflow Control - 2026-05-28
+## Mandatory Text Encoding And Symbol Discipline - 2026-06-07
 
 Canonical standard:
 
+`docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md`
+
+Agent-authored source comments, tests, governed markdown, work orders,
+completion packets, handoffs, registries, and public-sync summaries must
+default to ASCII. Non-ASCII is allowed only for explicit exceptions such as
+existing file convention, user-facing language requirements, protocol/data
+contracts, existing Unicode filenames, or evidence quotes.
+
+Do not introduce smart punctuation, decorative bullets, Unicode arrows,
+non-breaking spaces, zero-width characters, or invisible control characters
+unless the changed artifact records the exception and reason. Do not perform
+broad Unicode normalization outside the assigned scope.
+
+## Mandatory JSON Generated Aggregate Discipline - 2026-06-12
+
+Canonical standard:
+
+`docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`
+
+Large governed JSON aggregates that are repeatedly edited by agents should not
+remain hand-edited monoliths. Once a generated source layout exists, agents must
+edit the compact source files and run the matching generator instead of editing
+only the aggregate.
+
+Current generated JSON aggregates:
+
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+  - source: `docs/corpus-intelligence/registry/`
+  - generator: `governance/compat/generate_corpus_scan_registry.py`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+  - source: `CVF_SESSION/state/`
+  - generator: `governance/compat/generate_active_session_state.py`
+- `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+  - source: `CVF_SESSION/agent_workspace/state/`
+  - generator: `governance/compat/generate_agent_workspace_state.py`
+
+Changed generated aggregates must pass their drift check before dispatch,
+closure, or commit. A future large governed JSON aggregate must record whether
+it added, reused, or explicitly did not need a generated source layout.
+
+## Mandatory Agent Autorun Workflow Control - 2026-05-28
+
+Canonical standard (read this for the full rule set, phase-gate commands,
+remediation policy, and commit steward usage):
+
 `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
+
+Agent-neutral commit steward standard:
+
+`docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`
 
 Agent-error learning philosophy:
 
 `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
 
-Any agent-led CVF workflow that drafts, dispatches, implements, reviews, closes,
-commits, pushes, or public-syncs governed work must use the autorun workflow
-gates. The intent is to protect non-coder operators from having to manually
-inspect whether a worker agent followed the process.
+Any agent-led CVF workflow that drafts, dispatches, implements, reviews,
+closes, commits, pushes, or public-syncs governed work must run the matching
+`run_agent_autorun_workflow_gate.py` phase (`pre-dispatch`,
+`pre-implementation`, `pre-closure`, `pre-push`) before that step, and use
+`run_agent_commit_steward_preflight.py` before any governed commit or
+worker-return handoff. A failed gate blocks the claim - mark the artifact
+`DRAFT`/`HOLD_*`/`BLOCKED` instead of writing a handwritten PASS.
+Allowed-scope gate failures must be repaired and rerun by the assigned
+agent, not escalated to the operator as a preference question. Pre-closure
+must not accept untracked/unresolved worktree changes as clean closure.
+Latest-closure continuity is mandatory: `nextAllowedMove`,
+`CVF_SESSION_MEMORY.md`, and the active handoff must all reference the same
+latest closed `LHWN` wave.
 
-Repeated agent errors are governance training samples, not merely worker blame.
-If a defect pattern repeats, promote it from finding to written rule; if the
-rule remains interpretable, promote it to machine check; if the machine check
-only catches the issue at closure, move it into the earliest applicable autorun
-phase gate. CVF trust belongs to the governance control chain, not to any one
-agent model.
+## Mandatory Agent Handoff Boundary Contract Guard - 2026-06-17
 
-Required phase gates:
+Stable front door:
 
-- before ready/dispatch:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD`
-- before material implementation:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD`
-- before any `CLOSED`, `CLOSED_PASS`, `CLOSED_PASS_BOUNDED`, or equivalent
-  claim:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
-- before push:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base <baseHead> --head HEAD`
+`docs/reference/agent_handoff/README.md`
 
-If a phase gate fails, the agent must stop at that phase and mark the artifact
-`DRAFT`, `HOLD_*`, `BLOCKED`, or return it to Orchestrator. A worker may not
-"fix while implementing" a failed dispatch packet unless that remediation is
-the explicitly assigned task. A reviewer may not accept handwritten PASS
-claims when the autorun gate fails. Operator silence is not a waiver.
+Canonical machine-check standard:
 
-Allowed-scope gate remediation is mandatory, not optional. Once a work order is
-dispatched, any machine-gate failure inside its Allowed scope must be repaired
-and rerun by the assigned agent instead of escalated as "do you want me to fix
-this?" to the operator. Ask the operator only when the repair would exceed
-Allowed scope, change the claim boundary, release a `HOLD_*` prerequisite,
-alter risk level, open public-sync, run live/provider proof, consume
-secrets/quota, touch forbidden paths, or perform destructive/irreversible
-actions. Treat an agent asking whether to fix an allowed-scope guard failure as
-a governance/control-plane learning signal.
+`docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md`
 
-Pre-closure must not accept untracked, modified, or unresolved worktree changes
-as a clean closure claim. Closure must be backed by committed diff evidence,
-`git status --short`, receipts, command output, or explicit `N/A with reason`.
+Machine guard:
 
-Latest-closure continuity is mandatory. If the state registry contains a
-higher closed `lhwN...CLOSED_PASS_BOUNDED` record, then `nextAllowedMove`,
-`CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff must
-reference that same latest `LHWN`; stale lower-wave text blocks closure.
+`governance/compat/check_agent_handoff_boundary.py`
+
+The ratified Agent Handoff Contract is the Central Core for all governed
+handoff semantics:
+
+`docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
+
+Any changed governed work order that uses agent handoff semantics, including
+`dispatchBaseHead`, `executionBaseHead`, `closureBaseHead`,
+`WORKER_MAY_COMMIT`, `WORKER_MUST_NOT_COMMIT`, multi-agent role routing,
+reviewer closure conversion, AOT trace scope, commit ownership, session-sync,
+or next-move surface updates, must include an
+`Agent Handoff Contract Control Block`.
+
+The block must select exactly one canonical route token, name the `rolePattern`,
+state the phase/base-head/changed-set/trace/commit-owner dispositions, record
+cross-batch isolation, and state how next-move surfaces are handled.
+
+`WORKER_MUST_NOT_COMMIT` work orders must also include
+`Reviewer Closure Conversion` with `completionReviewPath` and
+`reviewerOwnedClosurePaths`. Three-or-more-agent chains must designate one
+closer before dispatch.
+
+This guard is mandatory in the autorun workflow and local hook chain. It does
+not replace the AOT trace guard, commit steward, or next-move freshness guard;
+it binds their local views back to the ratified handoff Central Core.
+
+## Mandatory Agent Interaction Workspace Design Boundary - 2026-06-17
+
+Stable front door:
+
+`docs/reference/agent_workspace/README.md`
+
+Canonical design standard:
+
+`docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md`
+
+Canonical state topology contract:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`
+
+Canonical state lane taxonomy:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`
+
+Canonical state item template:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`
+
+Machine guard:
+
+`governance/compat/check_agent_workspace_design.py`
+
+Any future task that proposes, analyzes, designs, builds, or modifies a
+dedicated Claude/Codex/other-agent interaction workspace must read the stable
+agent workspace front door before implementation.
+
+The AHB-Tn.1 design foundation is not workspace build authorization. A future
+workspace build, runtime state file, UI, queue, provider proof, public-sync, or
+registry edit requires fresh GC-018, a separate work order, Agent Handoff
+Contract Control Block evidence, and an Agent Workspace Design Control Block.
+
+The workspace design guard is mandatory in the autorun workflow and local hook
+chain. Changed workspace work orders must explicitly account for workspace
+purpose, contract source, front door, storage class, handoff fields, state
+ownership, guard owner, and build boundary before dispatch or closure.
+
+Future workspace state, generated workspace state, workspace queues, inboxes,
+review lanes, dashboards, or runtime work must also cite the state topology
+contract and map proposed records to its required state fields before
+implementation.
+
+Stable workspace foundation rules live under `docs/reference/agent_workspace/`.
+Dated GC-018 packets, work orders, reviews, and evidence remain in their normal
+execution folders. Do not use provider-local memory, chat history, or an
+unindexed folder as the source of truth for workspace design.
+
+## Mandatory Agent Workspace State Generated Aggregate Guard - 2026-06-17
+
+Generated workspace state aggregate:
+
+`CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`
+
+Generated source layout:
+
+`CVF_SESSION/agent_workspace/state/`
+
+Generator:
+
+`governance/compat/generate_agent_workspace_state.py`
+
+Machine guard:
+
+`governance/compat/check_agent_workspace_state.py`
+
+Any future task that changes the agent workspace generated state must edit the
+source fragments under `CVF_SESSION/agent_workspace/state/` and run the
+generator. Direct aggregate-only edits are drift defects.
+
+The generated workspace state is a compact governed state view, not a chat log,
+provider-local memory store, runtime queue, UI, public surface, or production
+claim. Items must map to the required fields in
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md`,
+the lane vocabulary in
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`,
+and the source shape in
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json`.
+
+The agent workspace state guard is mandatory in the autorun workflow and local
+hook chain. It checks drift, required state fields, source/front-door pointers,
+and hook binding. A future workspace build, runtime queue, provider proof,
+public-sync, registry edit, or generated-state expansion still requires fresh
+GC-018 and a separate work order.
+
+## Mandatory Agent Workspace Skeleton Guard - 2026-06-17
+
+Bounded local workspace skeleton:
+
+`CVF_SESSION/agent_workspace/workspace/README.md`
+
+Lane index:
+
+`CVF_SESSION/agent_workspace/workspace/lanes/README.md`
+
+Machine guard:
+
+`governance/compat/check_agent_workspace_skeleton.py`
+
+The workspace skeleton is a repo-local governance coordination surface. It is
+not a runtime queue, scheduler, UI, provider route, public-sync surface,
+registry entry, production claim, or public readiness claim.
+
+Any future task that modifies the local workspace skeleton, lane folders, lane
+index, or workspace front doors must keep the skeleton bound to the stable
+agent workspace reference front door, lane taxonomy, generated workspace state,
+and machine guard. Agents must not create active work by dropping ad hoc files
+into lane folders; active workspace state remains governed by source fragments
+under `CVF_SESSION/agent_workspace/state/` plus the generator and checker.
+
+The agent workspace skeleton guard is mandatory in the autorun workflow and
+local hook chain. Future runtime/build expansion beyond this skeleton requires
+fresh GC-018 and a source-verified work order.
+
+## Mandatory Agent Workspace Runtime Boundary Guard - 2026-06-17
+
+Stable front door:
+
+`docs/reference/agent_workspace/README.md`
+
+Canonical runtime expansion readiness contract:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`
+
+Bounded runtime queue skeleton:
+
+`CVF_SESSION/agent_workspace/runtime_queue/README.md`
+
+Operator-facing read model plan:
+
+`docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`
+
+Machine guard:
+
+`governance/compat/check_agent_workspace_runtime_boundary.py`
+
+The runtime queue skeleton is `QUEUE_SKELETON_ONLY`. It is not an executable
+queue, scheduler, worker daemon, provider route, UI, public-sync surface,
+registry edit, production claim, or public readiness claim.
+
+Any future task that proposes or modifies workspace runtime queues, queue
+records, operator views, dashboards, provider proof, public-sync, registries,
+or runtime execution must read the runtime expansion readiness contract and
+include a Runtime Expansion Control Block. Queue skeleton and read-model work
+must preserve the no-runtime/no-provider/no-public/no-registry boundary unless
+a fresh GC-018 explicitly authorizes the wider mode.
+
+The agent workspace runtime boundary guard is mandatory in the autorun workflow
+and local hook chain. It binds the runtime-readiness contract, queue skeleton,
+operator view plan, AGENTS.md, and hook placement so agents cannot silently
+promote workspace folders into runtime behavior.
 
 ## Mandatory IDE Extension Multi-Provider Execution Log Guard - 2026-05-29
 
@@ -496,7 +811,7 @@ blocks governed closure.
 
 Canonical standard:
 
-`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`
 
 Machine guard:
 
@@ -704,9 +1019,13 @@ Canonical standard:
 
 `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
-Registry front door:
+Generated registry front door:
 
 `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+Registry authoring sources:
+
+`docs/corpus-intelligence/registry/`
 
 Guard (GC-051):
 
@@ -726,10 +1045,12 @@ If the target corpus path is already registered:
   before starting related implementation work.
 - `NOT_STARTED` / absent → proceed with new scan; add a registry entry first.
 
-After completing a scan, the agent MUST update the registry entry
-(status, scanDate, manifestHash, findings, negativeSearchTerms,
-nextScanRecommendation) and commit the update in the same governed batch as
-the scan evidence.
+After completing a scan, the agent MUST update the per-entry source under
+`docs/corpus-intelligence/registry/entries/`, run
+`python governance/compat/generate_corpus_scan_registry.py --generate`, and
+commit the source entry plus generated aggregate in the same governed batch as
+the scan evidence. Do not hand-edit the generated aggregate for ordinary entry
+updates.
 
 Manifest hash standard: SHA-256 of sorted filesystem paths joined with `\n`
 (newline-separated, with trailing newline). Record `hashAlgorithm: sha256`

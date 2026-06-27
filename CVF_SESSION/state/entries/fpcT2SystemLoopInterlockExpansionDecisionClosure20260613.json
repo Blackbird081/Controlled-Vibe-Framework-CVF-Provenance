@@ -1,0 +1,40 @@
+{
+  "stateOrder": 374,
+  "stateKey": "fpcT2SystemLoopInterlockExpansionDecisionClosure20260613",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "c12c65b1",
+    "closureBaseHead": "1831606b",
+    "dispatchMaterialCommit": "4193fcd6",
+    "dispatchSessionSyncCommit": "1831606b",
+    "roadmap": "docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md",
+    "gc018": "docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_FOR_CLAUDE_2026-06-13.md",
+    "decisionMatrix": "docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md",
+    "workerReturn": "docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md",
+    "completionReview": "docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md",
+    "acceptedDispositions": {
+      "addInterlockEntryProposalOnly": [
+        "FPC-T2-C01 Control Plane hook-chain-to-learning-intake",
+        "FPC-T2-C02 Memory-to-Learning signal interlock",
+        "FPC-T2-C03 Memory-to-Retrieval signal interlock",
+        "FPC-T2-C04 DIR/DICE-to-downstream-adapter eligibility interlock"
+      ],
+      "machineCheckFirst": [
+        "FPC-T2-C05 Evidence-to-claim-update workflow-chain interlock requires FPC-T3-C01 before registry entry"
+      ]
+    },
+    "reviewerRepairs": [
+      "Added required worker-return review scaffold sections.",
+      "Corrected first-read ledger wording so provider-local memory is not cited as CVF source authority.",
+      "Aligned machine closure package rows with registry JSON, registry Markdown, and system-loop interlock gate vocabulary."
+    ],
+    "verification": [
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS 14/14 after reviewer repair",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 39/39",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 1831606b --head HEAD PASS except expected session-sync handoff HEAD pointer before this sync"
+    ],
+    "nextAllowedMove": "Fresh authorization only: open a source-verified registry-edit work order for C01-C04 proposal-only interlocks, or open FPC-T3 only through fresh GC-018/source-verified work order to plan checker/template/standard coverage.",
+    "boundary": "FPC-T2 closure only. No interlock registry mutation, FPC-T3 implementation, runtime/source/test change, external Document Translator or Policy_Local inspection/mutation, OCR/provider/API/live proof, retrieval route wiring, public-sync, T12 unlock, readiness/cost/quality claim, raw memory release, high-risk promotion, or autonomous mutation is authorized."
+  }
+}

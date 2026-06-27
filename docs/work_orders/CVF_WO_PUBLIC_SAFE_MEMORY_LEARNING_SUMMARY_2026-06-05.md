@@ -42,7 +42,7 @@ runtime implementation, public-sync, live proof, or public-readiness claims.
 | GC-018 baseline | `docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | ACCEPT |
 | Active session state | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | ACCEPT |
 | Active handoff | `AGENT_HANDOFF_V15_2026-05-29.md` | ACCEPT |
-| Public export standard | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | ACCEPT |
+| Public export standard | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | ACCEPT |
 
 Authority boundary:
 
@@ -100,7 +100,7 @@ Risk ceiling: R1 documentation packaging only.
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | current mode and closed state records | READ |
 | `AGENT_HANDOFF_V15_2026-05-29.md` | active handoff continuity | READ |
 | `AGENTS.md` | public/provenance repository boundary | READ |
-| `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public export disposition rules | READ |
+| `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public export disposition rules | READ |
 | `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` | LO1 public-safe boundary source | READ |
 | `docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md` | LO1 closure evidence | READ |
 | `docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md` | LO2 closure evidence | READ |
@@ -182,7 +182,7 @@ Missing or ambiguous source facts:
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
 | EXISTS - active front door allows public-safe summary as a next move | `CVF_SESSION_MEMORY.md` | lines 106-114 | `Next allowed move` | active session front door | ACCEPT |
-| EXISTS - public export disposition has exact private-only option | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | lines 31-36 | `DEFERRED_PRIVATE_ONLY` | public export disposition standard | ACCEPT |
+| EXISTS - public export disposition has exact private-only option | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | lines 31-36 | `DEFERRED_PRIVATE_ONLY` | public export disposition standard | ACCEPT |
 | EXISTS - public work must use sibling public-sync clone | `AGENTS.md` | lines 127-150 | `Controlled-Vibe-Framework-CVF-public-sync` | repository boundary standard | ACCEPT |
 | EXISTS - LO1 blocks runtime Learning Orchestrator and public claims | `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` | lines 13-24, 180-186 | `LearningOrchestrator` | LO1 boundary | ACCEPT |
 | EXISTS - LO2 is review-only and blocks runtime promotion | `docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md` | lines 17-24, 168-173 | `promotionVerdict` | LO2 completion review | ACCEPT |
@@ -464,7 +464,7 @@ Return to Orchestrator without continuing if:
 - Corpus task class: WORK_ORDER_AUTHORING.
 - Corpus root: bounded current closed-artifact source list.
 - Snapshot time: 2026-06-05 at base `a3f8bc85`.
-- Enumeration command: `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
+- Enumeration command: `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
 - Manifest artifact or inline manifest: Required First Reads table.
 - Manifest hash: N/A with reason - bounded source list is inline.
 - Processing ledger artifact or inline ledger: Required First Reads table.

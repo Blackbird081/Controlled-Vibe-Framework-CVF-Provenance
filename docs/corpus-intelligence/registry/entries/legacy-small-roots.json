@@ -1,0 +1,34 @@
+{
+  "registryOrder": 9,
+  "id": "legacy-small-roots",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "CVF 17.05 + CVF 25.05 + CVF 28.05 (small roots \u2014 LHW-RESCAN-B)",
+  "scopePaths": [
+    ".private_reference/legacy/CVF 17.05/",
+    ".private_reference/legacy/CVF 25.05/",
+    ".private_reference/legacy/CVF 28.05/"
+  ],
+  "fileCount": 38,
+  "status": "SCANNED",
+  "scanWave": "LHW-RESCAN-B",
+  "scanDate": "2026-06-01",
+  "manifestHash": "093a0d7b67b8526b9dbed8c74ca2313f567f40b8bdfd4d864cf198852f34a851",
+  "manifestPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+  "packetPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+  "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "PARTIAL",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "broad routing across 3 roots"
+  ],
+  "priorAbsorption": "CVF 17.05 stop decision, kernel freeze recommendation, agent handoff gap audit",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Low priority for CI1 deep scan \u2014 small roots, primarily governance decision artifacts",
+  "hashAlgorithm": "sha256",
+  "hashInput": "manifest-internal-hash-from-script-output"
+}

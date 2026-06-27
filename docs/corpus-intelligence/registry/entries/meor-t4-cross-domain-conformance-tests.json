@@ -1,0 +1,21 @@
+{
+  "registryOrder": 60,
+  "id": "meor-t4-cross-domain-conformance-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF MEOR-T4 cross-domain conformance tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.metadata.requirement.cross.domain.conformance.test.ts",
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_metadata_evidence_cross_domain.py"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MEOR-T4",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_T4_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
+  "notes": "TypeScript and Python suites consume the same fixture and prove exact requirement sets, cross-profile rejection, four deterministic outcomes, and absence of real use-case coupling."
+}

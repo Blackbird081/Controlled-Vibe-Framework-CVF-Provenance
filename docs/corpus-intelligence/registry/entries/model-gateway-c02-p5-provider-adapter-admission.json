@@ -1,0 +1,32 @@
+{
+  "registryOrder": 86,
+  "id": "model-gateway-c02-p5-provider-adapter-admission",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P5 provider adapter admission source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-admission.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "fetch (not in admission - no network call)",
+    "http request (not in admission)",
+    "resolveSecretForRuntime (forbidden - metadata only)",
+    "providers/alibaba (no concrete adapter import)",
+    "providers/deepseek (no concrete adapter import)",
+    "createAlibaba (no concrete adapter factory)",
+    "createDeepSeek (no concrete adapter factory)",
+    ".env.local (no credential file access)",
+    "DASHSCOPE_API_KEY (no API key reference)",
+    "DEEPSEEK_API_KEY (no API key reference)",
+    "ALIBABA_API_KEY (no API key reference)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P5",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+  "notes": "Provider-agnostic adapter admission evaluator above P4C conformance. Pure local, deterministic, no-network. Exports AdapterAdmissionStatus, AdapterAdmissionReasonCode, AdapterAdmissionRecord, admitProviderAdapter, and PROVIDER_ADAPTER_ADMISSION_VERSION. liveExecutionAuthorized is always false."
+}

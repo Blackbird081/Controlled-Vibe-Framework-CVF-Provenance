@@ -53,6 +53,21 @@ const fullSkill = {
     authorityScope: 'Global',
 };
 
+const assfProjectedSkill = {
+    id: 'cvf-dispatch-quality-reviewer',
+    title: 'CVF Dispatch Quality Reviewer',
+    domain: 'Agent System Skills',
+    difficulty: 'Governed' as const,
+    summary: 'Certified ASSF package metadata projection',
+    path: 'docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json',
+    content: '# CVF Dispatch Quality Reviewer',
+    assfProjectionClass: 'CERTIFIED_PACKAGE_PROJECTION',
+    certificationState: 'CERTIFIED',
+    uatState: 'PASSED',
+    externalCliMcpDisposition: 'DEFERRED_WITH_REASON',
+    canonicalRoot: 'docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json',
+};
+
 const minimalSkill = {
     id: 'minimal',
     title: 'Minimal Skill',
@@ -165,5 +180,14 @@ describe('SkillDetailView — uncovered branches', () => {
         expect(screen.queryByText(/Spec Gate:/)).toBeNull();
         expect(screen.queryByText(/Score:/)).toBeNull();
         expect(screen.queryByText(/Spec Quality:/)).toBeNull();
+    });
+
+    it('renders ASSF projection metadata when present', () => {
+        render(<SkillDetailView skill={assfProjectedSkill} />);
+        expect(screen.getByText('Certified ASSF')).toBeTruthy();
+        expect(screen.getByText('ASSF package projection')).toBeTruthy();
+        expect(screen.getByText('Certification: CERTIFIED')).toBeTruthy();
+        expect(screen.getByText('UAT: PASSED')).toBeTruthy();
+        expect(screen.getByText('Adapter: DEFERRED_WITH_REASON')).toBeTruthy();
     });
 });

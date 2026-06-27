@@ -1,0 +1,28 @@
+{
+  "registryOrder": 11,
+  "id": "legacy-cvf-app-onboarding",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "App onboarding (UI design reference)",
+  "scopePaths": [
+    ".private_reference/legacy/App onboarding/"
+  ],
+  "fileCount": null,
+  "status": "NOT_STARTED",
+  "scanWave": null,
+  "scanDate": null,
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": null,
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [],
+  "priorAbsorption": "None \u2014 UI design mockups, referenced in CLAUDE.md App onboarding/ section",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Low priority \u2014 UI design reference, not knowledge absorption target"
+}

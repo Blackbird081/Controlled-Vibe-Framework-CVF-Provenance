@@ -1,0 +1,40 @@
+{
+  "registryOrder": 34,
+  "id": "mcp-server-v2.5-generic-agent-adapter",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF ECO v2.5 MCP Server / generic-agent-adapter source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/"
+  ],
+  "fileCount": null,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "LHW21-IS1",
+  "scanDate": "2026-05-31",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_IS1_GENERIC_AGENT_ADAPTER_FAST_LANE_2026-05-31.md",
+  "notes": "Retroactively registered 2026-06-10. Source files reviewed during IS1 and LHW21 intake (2026-05-31). Registry entry added to satisfy GC-051 coverage requirement.",
+  "findings": [
+    {
+      "id": "F1-is1-lhw21-intake",
+      "summary": "MCP Server generic-agent-adapter.ts and index.ts reviewed during IS1 Fast Lane and LHW21 integration point intake (2026-05-31). Adapter pattern confirmed compatible with CVF IS1 integration contract.",
+      "disposition": "ACCEPT_NO_ACTION",
+      "nextAction": "None \u2014 IS1 integration is closed.",
+      "defectClass": "N/A",
+      "learningLane": "N/A"
+    }
+  ],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "N/A \u2014 IS1 closed; re-scan on next MCP server major version.",
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_APPLICABLE",
+    "gc050": "NOT_APPLICABLE"
+  },
+  "semanticRegions": {},
+  "priorAbsorption": {},
+  "hashAlgorithm": null,
+  "hashInput": null
+}

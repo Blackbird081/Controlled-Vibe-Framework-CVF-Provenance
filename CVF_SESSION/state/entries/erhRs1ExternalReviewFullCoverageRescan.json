@@ -1,0 +1,5 @@
+{
+  "stateOrder": 116,
+  "stateKey": "erhRs1ExternalReviewFullCoverageRescan",
+  "value": "CLOSED_PASS_BOUNDED. Commit 75d2fa89. Claude executed RS1 under WORKER_MUST_NOT_COMMIT; Codex reviewed and committed closure. Artifacts: docs/baselines/CVF_GC018_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_2026-06-04.md, docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_FOR_CLAUDE_2026-06-04.md, docs/assessments/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_2026-06-04.md, docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md. Verdict COMPLETE_VERIFIED: 162/162 paragraphs, 22/22 sections, 17/17 findings; section 4.4 five architecture weaknesses covered. Safety recommendation ERH-SAF1_READY. Boundary: source-backed private rescan only; no runtime safety implementation, ML DLP, provider-risk config, durable audit, policy snapshot persistence, distributed rate limiting, public-sync, hosted, production, public readiness, or live proof."
+}

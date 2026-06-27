@@ -1,0 +1,20 @@
+{
+  "registryOrder": 41,
+  "id": "dscp-t11f-profile-selection-adapter-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF CPF DSCP-T11F profile selection adapter source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "DSCP-T11F",
+  "scanDate": "2026-06-10",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md",
+  "notes": "DSCP-T11F profile selection adapter. selectAndApplyDscpDomainProfile combines DscpDomainProfileRegistry.select() + applyDomainProfileToDescriptorInput() in a single pipeline; no corpus content ingested; no findings."
+}

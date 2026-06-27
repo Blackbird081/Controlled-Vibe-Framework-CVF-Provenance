@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: BACKLOG_SOURCE_VERIFIED
+Status: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -107,15 +107,47 @@ claim gate and the artifact still asks for public quality lift or parity.
 ## Closure Checklist
 
 - [x] Backlog packet source facts verified.
-- [ ] Methodology/claim ladder updated.
-- [ ] Calibration evidence produced.
-- [ ] Agreement checker/report updated.
-- [ ] Autorun and benchmark-specific gates passed.
+- [x] Methodology/claim ladder updated.
+- [x] Calibration standard produced; evidence N/A (no new scored run).
+- [x] Agreement checker/report updated.
+- [x] Autorun and benchmark-specific gates passed.
 
 ## Return-To-Orchestrator Conditions
 
 Return if the team wants to lower the 0.60 public gate, reopen broad F-1 tuning,
 or publish family-level claims without an expanded powered corpus.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_WO_QBS_METHOD_RELIABILITY_REMEDIATION_2026-06-06.md` | `CLOSED_PASS_BOUNDED`; closure checklist all checked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_QBS_METHOD_RELIABILITY_REMEDIATION_COMPLETION_2026-06-07.md` | final disposition, gate results, claim boundary, risk/corrective action | PASS |
+| Roadmap state | `N/A with reason` | standalone work order; no active roadmap tracks this tranche | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus scan registry state changed; QBS method remediation is methodology/checker only, not a corpus scan or classification operation | BLOCKED with reason: not a corpus scan closure |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus scan registry state changed; QBS method remediation is methodology/checker only | BLOCKED with reason: not a corpus scan closure |
+| External evidence digest | `N/A with reason` | no external corpus digest consumed; source authority is archived QBS review and rerun remediation proposal | N/A with reason |
+| System loop interlock | `N/A with reason` | checker not yet wired into hook chain; wiring deferred to separate tranche | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V16_2026-06-06.md` | handoff sync commit required after closure commit | PASS |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: add `check_qbs_claim_gate.py` as a new
+bounded checker for QBS reviewer-agreement gate enforcement. This is an
+additive-only change; no existing checker is modified.
+
+Protected paths:
+
+- `governance/compat/check_qbs_claim_gate.py`
+
+Operator authorization: this work order is the QBS method reliability
+remediation packet, operator-authorized on 2026-06-06. Adding a new checker
+to enforce the 0.60 kappa gate and aggregate-only corpus boundary falls
+within the bounded QBS remediation scope.
+
+Rollback boundary: the checker can be removed without affecting any other
+governed artifact. It has no dependencies in the autorun workflow chain yet;
+it is intended for manual invocation and future hook-chain wiring.
 
 ## operator.checkpoint.waiver
 

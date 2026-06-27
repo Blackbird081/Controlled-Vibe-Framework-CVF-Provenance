@@ -1,0 +1,5 @@
+{
+  "stateOrder": 209,
+  "stateKey": "cdhDVisionRuntime",
+  "value": "CLOSED_BY_ROUTE_WIRING_PROOF; adapter evidence at docs/reviews/CVF_CDH_D_VISION_RUNTIME_COMPLETION_2026-05-21.md and route proof at docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md. No vision-runtime-adapter.ts, vision-contract.ts, or reasoning-contract.ts changes in route-wiring tranche."
+}

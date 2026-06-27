@@ -96,9 +96,9 @@ Risk ceiling: R1 source-analysis and documentation evidence.
 - `docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json`
 - `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
 - `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
-- `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
-- `docs/reference/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
-- `docs/reference/CVF_LHW14_T1_AGENT_MEMORY_CAPTURE_PACKAGING_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+- `docs/reference/archive/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+- `docs/reference/archive/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
+- `docs/reference/archive/CVF_LHW14_T1_AGENT_MEMORY_CAPTURE_PACKAGING_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
 - `docs/reference/CVF_LHW24_T2_MEMORY_SYNC_PROTOCOL_ADVISORY_CONNECTOR_SPEC_2026-05-31.md`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts`
@@ -136,10 +136,10 @@ consume secrets/quota, touch forbidden paths, or perform destructive action.
 | RESCAN-C synthesis recommends MKG owner review | VALUE_SET | `docs/reviews/CVF_LHW_RESCAN_C_CROSS_CORPUS_SEMANTIC_REGION_SYNTHESIS_2026-06-01.md` | lines 298-300 | `Memory/Knowledge/Graph Owner-Surface Review` | RESCAN-C synthesis review | ACCEPT |
 | RESCAN-C Memory/Knowledge/Graph region has 47 assets | VALUE_SET | `docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md` | line 119 | `memory_knowledge_graph` | RESCAN-C reconciliation audit | ACCEPT |
 | RESCAN-C manifest hash is current source authority | VALUE_SET | `docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md` | line 60 | `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff` | RESCAN-C completion review | ACCEPT |
-| Graph context resolver advisory is documentation-only | EXISTS | `docs/reference/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` | line 100 | `graphContextResolverBoundaryAdvisoryType` | LHW13-T3 connector spec | ACCEPT |
-| Memory continuity advisory is not a runtime assertion | EXISTS | `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | line 47 | `memoryContinuityLevelAdvisoryType` | LHW13-T2 connector spec | ACCEPT |
+| Graph context resolver advisory is documentation-only | EXISTS | `docs/reference/archive/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` | line 100 | `graphContextResolverBoundaryAdvisoryType` | LHW13-T3 connector spec | ACCEPT |
+| Memory continuity advisory is not a runtime assertion | EXISTS | `docs/reference/archive/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | line 47 | `memoryContinuityLevelAdvisoryType` | LHW13-T2 connector spec | ACCEPT |
 | Learning signal intake record exists | EXISTS | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts` | line 51 | `LearningSignalIntakeRecord` | Learning Signal Intake Bridge | ACCEPT |
-| Learning intake keeps autonomous mutation false | LITERAL_INVARIANT | `docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | line 47 | `autonomousMutationAuthorized` | Learning Signal Intake Bridge standard | ACCEPT |
+| Learning intake keeps autonomous mutation false | LITERAL_INVARIANT | `docs/reference/archive/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | line 47 | `autonomousMutationAuthorized` | Learning Signal Intake Bridge standard | ACCEPT |
 | Knowledge store owner surface exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | line 28 | `KnowledgeStore` | knowledge store | ACCEPT |
 | Ephemeral runtime ingest registration exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | line 36 | `registerEphemeral` | knowledge store | ACCEPT |
 | File-backed knowledge store exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | line 110 | `FileBackedKnowledgeStore` | knowledge store | ACCEPT |
@@ -357,3 +357,19 @@ This work order authorizes documentation-only review. It does not authorize
 runtime implementation, graph retrieval, Memory reinjection, skill mutation,
 provider behavior, public claims, hosted readiness, production readiness, or
 autonomous mutation.
+
+## Machine Closure Package
+
+Retroactively added 2026-06-10 per check_machine_closure_package.py.
+Standard published after this artifact was authored.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A — pre-standard artifact | N/A | N/A with reason: artifact authored before Machine Closure Package standard |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | docs/roadmaps/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_ROADMAP_2026-06-01.md | roadmap closed at original MKG1 delivery; MKG2 roadmap also closed at original delivery | PASS |
+| Registry JSON | N/A — no new corpus registry entry | N/A with reason: no corpus scan performed in this artifact | BLOCKED: pre-standard artifact — no corpus registry update required |
+| Registry Markdown | N/A — see above | N/A with reason: see above | BLOCKED: pre-standard artifact — no corpus registry update required |
+| External evidence digest | N/A — no external evidence | N/A | N/A with reason: all evidence is repo-local |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | N/A — pre-standard artifact | N/A with reason: session continuity not tracked at original delivery time |

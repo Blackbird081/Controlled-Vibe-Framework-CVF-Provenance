@@ -8,6 +8,7 @@ Validates docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json for:
   3. Manifest hash format (must be 64-char hex SHA-256, not a path or description)
   4. Changed docs/audits/*.md AND docs/reviews/*.md coverage (corpus paths need registry entries)
   5. Status and disposition vocabulary (allowed enums only)
+  6. Aggregate drift from per-entry source files
 
 Standard: docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md
 Guard:    governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md
@@ -24,6 +25,8 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+
+from generate_corpus_scan_registry import validate_aggregate_matches_sources
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REGISTRY_PATH = REPO_ROOT / "docs" / "corpus-intelligence" / "CVF_CORPUS_SCAN_REGISTRY.json"
@@ -355,6 +358,11 @@ def main(enforce: bool = False, base: str | None = None, head: str | None = None
         return 1 if enforce else 0
 
     violations: list[str] = []
+
+    # If per-entry source files exist, the aggregate JSON must be generated from
+    # those sources. This keeps agents from hand-editing the monolithic registry
+    # and silently drifting from the reviewable source entries.
+    violations.extend(validate_aggregate_matches_sources())
 
     # Validate schema version
     if "schemaVersion" not in registry:

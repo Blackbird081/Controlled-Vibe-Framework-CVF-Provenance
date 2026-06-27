@@ -1,0 +1,5 @@
+{
+  "stateOrder": 241,
+  "stateKey": "d3Qwen3ProviderExpansionBlocker",
+  "value": "RETURNED_BLOCKED_PROVIDER_PARAMETER at docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md; GC-018 docs/baselines/CVF_GC018_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md; work order docs/work_orders/CVF_WO_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md. Implemented additive Model Gateway registry entries for qwen3-32b and qwen3-235b-a22b-thinking under Alibaba, capability.json entries, and provider capability registry assertions. CVF_MODEL_GATEWAY npm test PASS 20/20 files and 81/81 tests. Hosted proof qwen3-32b returned HTTP 200, success=false, error parameter.enable_thinking must be set to false for non-streaming calls, decision=ALLOW, routingDecision=ALLOW, enforcementStatus=ALLOW, evidenceMode=live, provider=alibaba, model=qwen3-32b, receipt rcpt-env-mpi67ivg-pdduob, trace env-mpi67ivg-pdduob, rawSecretPrinted=false. qwen3-235b-a22b-thinking proof not attempted per stop rule. Boundary: no route/provider behavior change, no enable_thinking fix, no broad Qwen3 stability, no production/hosted readiness, no public-sync, no freeze release."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 131,
+  "stateKey": "dscpT8Mke1CrossLaneWireIn",
+  "value": "CLOSED_PASS_BOUNDED at closure commit e96aacaf. Adds deterministic buildLPFGovernedPackage() at EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts with focused tests at EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts. Completion docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md. Parent roadmap docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md is closed after T1-T8 completion. Verification: CPF npm run check PASS, focused vitest 9/9 PASS, GC-051 registry coverage added. Boundary: deterministic local adapter only; no live memory retrieval, provider call, corpus ingestion, T12 authorization, public-sync, hosted readiness, production readiness, public readiness, answer-quality claim, or live governance proof."
+}

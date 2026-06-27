@@ -1,0 +1,16 @@
+{
+  "stateOrder": 664,
+  "stateKey": "stateBrT1Closure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "STATE-BR-T1",
+    "materialCommit": "4ddf5352",
+    "bootstrapSurfaceCommit": "4c0d29e0",
+    "handoffBridgeCommit": "8f54c0d7",
+    "completionReview": "docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_COMPLETION_2026-06-25.md",
+    "workerReturn": "docs/reviews/CVF_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_WORKER_RETURN_2026-06-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md",
+    "nextAllowedMove": "ASSF-PIC-T1 GC-018 baseline and source-verified work order creation only",
+    "forbiddenExpansion": "No package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime, CLI/MCP adapter, provider/live proof, public-sync, push, activation, readiness, or package instruction execution."
+  }
+}

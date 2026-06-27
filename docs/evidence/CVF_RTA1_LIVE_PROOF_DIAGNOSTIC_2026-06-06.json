@@ -1,0 +1,22 @@
+{
+  "schema": "cvf.liveRunDiagnostic.v1",
+  "recordedAt": "2026-06-06T22:44:33+07:00",
+  "workOrder": "docs/work_orders/CVF_WO_RTA1_RECEIPT_TRACE_ANCHOR_2026-06-06.md",
+  "command": "npx vitest run src/app/api/execute/route.rta1-receipt-integrity.alibaba.live.test.ts --reporter verbose",
+  "stage": "input_safety_filter",
+  "class": "test_prompt_contained_secret_keyword",
+  "retryability": "retry_after_test_prompt_cleanup",
+  "provider": "alibaba",
+  "model": "qwen-turbo",
+  "httpStatus": 400,
+  "latencyMs": null,
+  "receiptId": null,
+  "traceId": null,
+  "safeMessage": "The first focused RTA1 live proof had an opaque missing-receipt assertion. After adding safe status diagnostics, rerun showed the route returned HTTP 400 Safety filter triggered because the test prompt used blocked credential-leak terms. This is a test-input issue before provider execution, not a provider behavior failure.",
+  "secretSafety": {
+    "rawProviderKeyPrinted": false,
+    "rawSigningSecretPrinted": false,
+    "rawPromptOrOutputPrinted": false
+  },
+  "nextAction": "Remove blocked credential-leak terms from the live test request payload and rerun the focused live proof."
+}

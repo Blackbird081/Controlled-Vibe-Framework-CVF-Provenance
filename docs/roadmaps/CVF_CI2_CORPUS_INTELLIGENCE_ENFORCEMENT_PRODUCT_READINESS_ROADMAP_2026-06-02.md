@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_T2_CLOSED_T3_DISPATCH_READY
+Status: ALL_TRANCHES_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -66,8 +66,8 @@ separate product roadmap authorizes implementation.
 | CI1 operational chain | `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md` | T1-T7 closed |
 | NR-05 path standard | `docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md` | authored |
 | NR-11 disposition merge rule | `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md` | authored |
-| NR-04 source hash standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` | authored — CI2-T1 CLOSED_PASS_BOUNDED |
-| NR-04/NR-05/NR-11 checkers | `docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md` | implemented — CI2-T2 CLOSED_PASS_BOUNDED |
+| NR-04 source hash standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` | authored - CI2-T1 CLOSED_PASS_BOUNDED |
+| NR-04/NR-05/NR-11 checkers | `docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md` | implemented - CI2-T2 CLOSED_PASS_BOUNDED |
 | LPCI product runtime | blocked by CI1-T7 | not authorized |
 
 ## Tranche Plan
@@ -76,9 +76,9 @@ separate product roadmap authorizes implementation.
 | --- | --- | --- | --- |
 | CI2-T1 | NR-04 Source Hash Standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` + readiness-template update | CLOSED_PASS_BOUNDED |
 | CI2-T2 | Packet Normalization Checkers | checker scripts/tests for NR-04, NR-05, NR-11 + hook/autorun integration | CLOSED_PASS_BOUNDED |
-| CI2-T3 | Enforced Cross-Corpus Index Model | versioned enforced index schema/model | DISPATCH_READY |
-| CI2-T4 | Product Readiness Pilot Corpus Pack | pilot pack proving enforced fields can be consumed | HOLD_UNTIL_T3_PASS |
-| CI2-T5 | LPCI Product Roadmap Packet | LPCI GC-018 + MVP roadmap proposal, no implementation | HOLD_UNTIL_T4_PASS |
+| CI2-T3 | Enforced Cross-Corpus Index Model | versioned enforced index schema/model | CLOSED_PASS_BOUNDED - see `docs/reviews/CVF_CI2_T3_ENFORCED_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md` |
+| CI2-T4 | Product Readiness Pilot Corpus Pack | pilot pack proving enforced fields can be consumed | CLOSED_PASS_BOUNDED - see `docs/reviews/CVF_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_COMPLETION_2026-06-02.md` |
+| CI2-T5 | LPCI Product Roadmap Packet | LPCI GC-018 + MVP roadmap proposal, no implementation | CLOSED_PASS_BOUNDED - see `docs/reviews/CVF_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_COMPLETION_2026-06-02.md` |
 
 ## Dependency Lock
 
@@ -113,9 +113,9 @@ work order.
 | --- | --- | --- | --- |
 | C2.1 | Author NR-04 source hash standard | reference doc + template update | CLOSED_PASS_BOUNDED |
 | C2.2 | Implement packet normalization checkers | scripts/tests/hook integration | CLOSED_PASS_BOUNDED |
-| C2.3 | Publish enforced index model | JSON model + schema reference | DISPATCH_READY |
-| C2.4 | Build pilot product-readiness pack | pilot JSON + reference explanation | HOLD_UNTIL_T3_PASS |
-| C2.5 | Draft LPCI product roadmap packet | GC-018 + roadmap + future T1 WO | HOLD_UNTIL_T4_PASS |
+| C2.3 | Publish enforced index model | JSON model + schema reference | CLOSED_PASS_BOUNDED |
+| C2.4 | Build pilot product-readiness pack | pilot JSON + reference explanation | CLOSED_PASS_BOUNDED |
+| C2.5 | Draft LPCI product roadmap packet | GC-018 + roadmap + future T1 WO | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -163,6 +163,42 @@ CI2 provides standards, structural enforcement, index model, pilot pack, and
 LPCI roadmap proposal. It does not implement LPCI runtime, prove legal answer
 truth, run provider/live calls, build embeddings/vector stores, or claim public
 readiness.
+
+## RSF-T1 Reconciliation Note
+
+Reconciled: 2026-06-16 by Claude worker under RSF-T1 (work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md`).
+
+Before reconciliation the roadmap status still carried a T3-ready token, and
+T3/T4/T5 tranche rows still carried old ready/hold tokens. All three
+completion reviews existed and were `CLOSED_PASS_BOUNDED` at the following
+base heads:
+
+| Tranche | Completion review | Closure head |
+| --- | --- | --- |
+| CI2-T3 | `docs/reviews/CVF_CI2_T3_ENFORCED_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md` | `7c5b8564` |
+| CI2-T4 | `docs/reviews/CVF_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_COMPLETION_2026-06-02.md` | `99f6a13b` |
+| CI2-T5 | `docs/reviews/CVF_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_COMPLETION_2026-06-02.md` | `c0ebfd9c`/`1ab83302` |
+
+Next-move boundary after reconciliation: CI2 is fully closed. Any follow-on
+work derives from LPCI1 roadmap packet (CI2-T5 output), not from this roadmap's
+tranche table. Do not create new CI2 work orders.
+
+RSF-T2 (machine guard for stale-roadmap redispatch) is separately authorized
+after RSF-T1 review commit.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T1_CI2_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: ALL_TRANCHES_CLOSED_PASS_BOUNDED`; CI2-T3/T4/T5 rows closed bounded | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged by RSF-T1; registry update not required for roadmap state reconciliation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | unchanged by RSF-T1; registry entry update not required for roadmap state reconciliation | PASS |
+| External evidence digest | N/A | no external evidence used | N/A with reason |
+| System loop interlock | N/A | no system-loop interlock mutation required | N/A with reason |
+| Session continuity | N/A | session sync deferred to reviewer after material commit | N/A with reason |
 
 ## Public Export Disposition
 

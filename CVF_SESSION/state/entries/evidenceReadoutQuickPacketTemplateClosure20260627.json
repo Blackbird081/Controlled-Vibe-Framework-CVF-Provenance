@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1246,
+  "stateKey": "evidenceReadoutQuickPacketTemplateClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "37f2d7bd",
+    "roadmap": "docs/roadmaps/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_FOR_CODEX_2026-06-27.md",
+    "reference": "docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md",
+    "completionReview": "docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md",
+    "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation.",
+    "claimBoundary": "Manual evidence/readout quick-packet template only; no runtime/UI/dashboard/checker/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push."
+  }
+}

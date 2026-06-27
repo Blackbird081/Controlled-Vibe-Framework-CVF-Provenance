@@ -1,0 +1,5 @@
+{
+  "stateOrder": 62,
+  "stateKey": "lhw21IntegrationConnectionPointAdvisoryWave",
+  "value": "CLOSED_PASS_BOUNDED. T1 cvf.eventTaxonomySchemaAdvisory.lhw21.t1.v1 publishes the source-verified IS1 canonical event/control-point taxonomy and distinguishes the INT1 dotted transport vocabulary. T2 cvf.hardGateModeAdvisory.lhw21.t2.v1 distinguishes current advisory behavior from a future proposed enforce mode. T3 cvf.receiptEnrichmentAdvisory.lhw21.t3.v1 proposes governanceTrace as a doc-only future receipt enrichment. All three tranches are documentation-only; runtimeExecutionAuthorized=false; no adapter code, hard-gate runtime change, receipt runtime field, live provider proof, or public-sync export. GC-018 docs/baselines/CVF_GC018_LHW21_INTEGRATION_CONNECTION_POINT_ADVISORY_WAVE_2026-05-31.md."
+}

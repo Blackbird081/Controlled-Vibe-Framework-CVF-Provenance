@@ -1,0 +1,5 @@
+{
+  "stateOrder": 359,
+  "stateKey": "documentIntelligenceRouterFoundationRoadmapDraft20260613",
+  "value": "DRAFT_FOR_CLAUDE_REBUTTAL at material commit 05cb953e. Roadmap: docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md. Purpose: define a CVF-owned Document Intelligence Router foundation layer above the existing extraction scan layer, reusing EXA-T2 DocumentScanSignals, ScanRouteDecision, and decide_scan_route() instead of replacing them. Claude rebuttal completed at commit fc79fcdf and final roadmap incorporation closed at material commit 075679f3. Boundary: no runtime implementation, external repo edit, code import, dependency install, OCR/provider/API execution, retrieval behavior change, corpus ingestion, public-sync, production/public/readiness/cost/quality claim, memory reinjection, high-risk promotion, or autonomous mutation."
+}

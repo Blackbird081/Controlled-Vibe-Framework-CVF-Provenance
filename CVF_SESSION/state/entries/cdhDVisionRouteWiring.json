@@ -1,0 +1,5 @@
+{
+  "stateOrder": 215,
+  "stateKey": "cdhDVisionRouteWiring",
+  "value": "CLOSED_VISION_ROUTE_WIRING_PROOF at docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md; GC-018 docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md; live /api/execute proof on Alibaba qwen-vl-plus returned receipt rcpt-env-mpfdb3kj-4d7o8r, trace env-mpfdb3kj-4d7o8r, decision ALLOW, evidenceMode live, vision=true; cvf-web check PASS; full npm run test:run PASS 217 files / 2739 tests / 2 skipped; route.ts line count 1001."
+}

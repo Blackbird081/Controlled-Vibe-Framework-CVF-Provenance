@@ -1,0 +1,5 @@
+{
+  "stateOrder": 101,
+  "stateKey": "lpci1T1ProductIntakeArchitecture",
+  "value": "CLOSED_PASS_BOUNDED at commit 62976163. Work order docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md closed; created docs/reference/CVF_LPCI1_T1_ARCHITECTURE_2026-06-02.md, docs/reference/CVF_LPCI1_T1_CORPUS_INTAKE_SPEC_2026-06-02.md, docs/baselines/CVF_GC018_LPCI1_T1_SUPPLEMENT_2026-06-02.md, and docs/reviews/CVF_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_COMPLETION_2026-06-02.md. Reviewer correction: answerClass vocabulary canonicalized to DIRECT_CITED_ANSWER, SUMMARY_WITH_SOURCE, PROCEDURAL_GUIDANCE, ESCALATE_OR_ABSTAIN before commit. Boundary: architecture/planning only; no LPCI runtime, UI, API, vector DB, embeddings, provider proof, legal advice quality claim, production readiness, public-sync, or autonomous mutation."
+}

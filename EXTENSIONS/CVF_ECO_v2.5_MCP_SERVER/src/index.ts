@@ -10,6 +10,8 @@
  *   5. cvf_advance_phase      — Request phase advancement
  *   6. cvf_get_audit_log      — Retrieve audit trail
  *   7. cvf_evaluate_full      — Run full guard pipeline
+ *   8. cvf_model_gateway_execute_preview - Preview Model Gateway execute mapping
+ *   9. cvf_model_gateway_execute - Call an injected Model Gateway executor
  *
  * @module index
  */
@@ -19,6 +21,20 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod';
 import { getMcpToolAuditSnapshot, withMcpToolAudit } from './audit/mcp-tool-audit.js';
 import { emitInt1AgentEvent, validateInt1Plan } from './tools/int1-connection-point-policy.js';
+import { registerModelGatewayExecutePreviewTool } from './tools/model-gateway-execute-preview.js';
+import { registerModelGatewayExecuteTool } from './tools/model-gateway-execute.js';
+import {
+  registerGovernanceActionPreflightTool,
+  serializePreflightPersistence,
+} from './tools/governance-action-preflight.js';
+import {
+  registerGovernanceActionReceiptConsumerTool,
+  resolveReceiptTtlMs,
+} from './tools/governance-action-receipt-consumer.js';
+import { JsonFileAdapter } from './persistence/json-file.adapter.js';
+import { JsonReceiptConsumptionStore } from './persistence/json-receipt-consumption.store.js';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
 import {
   createGuardEngine,
   GuardRuntimeEngine,
@@ -422,6 +438,39 @@ server.tool(
     };
   }
 );
+
+registerModelGatewayExecutePreviewTool(server);
+registerModelGatewayExecuteTool(server);
+
+// --- Delta-T1: cvf_preflight_governance_action -----------------------
+// Durable, secret-safe pre-action governance receipt. The audit JSON is
+// written to CVF_MCP_DELTA_AUDIT_DIR when set, otherwise a user-local
+// directory outside the repository. The adapter initializes lazily on first
+// save, so no audit data is written at module import.
+
+function resolveDeltaAuditDir(): string {
+  const configured = process.env.CVF_MCP_DELTA_AUDIT_DIR;
+  if (configured && configured.trim().length > 0) {
+    return configured.trim();
+  }
+  return join(homedir(), '.cvf', 'mcp-delta-audit');
+}
+
+const deltaAuditDir = resolveDeltaAuditDir();
+const deltaAuditAdapter = new JsonFileAdapter({ dataDir: deltaAuditDir });
+const deltaAuditPersistence = serializePreflightPersistence(deltaAuditAdapter);
+registerGovernanceActionPreflightTool(server, engine, deltaAuditPersistence);
+
+// --- Delta-T2: cvf_consume_governance_action_receipt -----------------
+// Validates one fresh matching Delta-T1 receipt and atomically claims a
+// secret-safe one-time marker. It does not execute the planned action.
+const deltaReceiptConsumptionStore = new JsonReceiptConsumptionStore({
+  dataDir: deltaAuditDir,
+  auditReader: deltaAuditAdapter,
+});
+registerGovernanceActionReceiptConsumerTool(server, deltaReceiptConsumptionStore, {
+  maxReceiptAgeMs: resolveReceiptTtlMs(process.env.CVF_MCP_DELTA_RECEIPT_TTL_SECONDS),
+});
 
 // ─── Gamma Tool 8: cvf_get_session_memory ─────────────────────────────
 

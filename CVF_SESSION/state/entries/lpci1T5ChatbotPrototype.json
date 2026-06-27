@@ -1,0 +1,5 @@
+{
+  "stateOrder": 105,
+  "stateKey": "lpci1T5ChatbotPrototype",
+  "value": "CLOSED_PASS_BOUNDED at commit 47519c15. Routes: POST /api/lpci/query (T4 C1-C9 satisfied), POST /api/lpci/intake, GET /api/lpci/corpus/:id/status. UI: /lpci dashboard page. Lib: src/lib/lpci/ (types, filter-pipeline, retrieval, audit-receipt). Tests: 37/37 PASS. Build: PASS. Live proof 6/6 PASS (receipt lpci1-t5-live-2026-06-03-6tests). LPCI1-T5 completion review: docs/reviews/CVF_LPCI1_T5_CHATBOT_PROTOTYPE_COMPLETION_2026-06-03.md."
+}

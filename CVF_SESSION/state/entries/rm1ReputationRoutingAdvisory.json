@@ -1,0 +1,5 @@
+{
+  "stateOrder": 57,
+  "stateKey": "rm1ReputationRoutingAdvisory",
+  "value": "CLOSED_PASS_BOUNDED. cvf.reputationRoutingAdvisory.rm1.v1 \u2014 computeRoutingAdvisory(). TRUSTED/RELIABLE->PROCEED; PROVISIONAL->CAUTION; UNTRUSTED->DEFER. r2ReviewRecommended on degradation. runtimeRoutingAuthorized=false. 68 files, 1655/1655 PASS. Closes LHW17 T3 Step 7. GC-018 docs/baselines/CVF_GC018_RM1_REPUTATION_ROUTING_ADVISORY_2026-05-31.md."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 181,
+  "stateKey": "vi4VerticalEvidenceSurfaceExpansion",
+  "value": "CLOSED_PASS_BOUNDED. Added cvf.verticalEvidencePackage.vi4.v1 inside verticalIntegrationReadout with W3 tool/action taxonomy, TA1 approval readout, W5 provider-method readiness/fallback posture, and W4-style current-call operational scorecard/event-denominator clarity. Verification: vertical readout tests PASS 2/2; route tests PASS 31/31; combined focused tests PASS 33/33; cvf-web check PASS; live Alibaba-compatible 2-turn proof PASS with receipts turn1=rcpt-env-mpkkmldw-j6hzrr turn2=rcpt-env-mpkkmvtx-szulhn. route.ts unchanged at 999 lines and route.test.ts remains 1199 lines. Completion: docs/reviews/CVF_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_COMPLETION_2026-05-25.md. Boundary: response-level evidence package only; no route blocking, tool/MCP/database/browser execution, provider routing/adapter changes, receipt envelope change, prompt mutation, memory reinjection, public-sync, hosted readiness, production readiness, or freeze release."
+}

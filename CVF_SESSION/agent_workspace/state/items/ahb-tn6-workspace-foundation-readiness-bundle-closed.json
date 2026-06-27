@@ -1,0 +1,30 @@
+{
+  "stateOrder": 5,
+  "workspaceItemId": "ahb-tn6-workspace-foundation-readiness-bundle-closed-2026-06-17",
+  "lane": "accepted_material",
+  "itemKind": "accepted_material",
+  "status": "CLOSED_PASS_BOUNDED",
+  "ownerRole": "closer",
+  "route": "SINGLE_AGENT_MULTI_ROLE",
+  "rolePattern": "codex_dispatch_implement_review_close_session_sync",
+  "phase": "closure",
+  "baseHead": "736fef37",
+  "changedSetScope": "AHB-Tn.6 combined workspace foundation readiness bundle: lane taxonomy, item template, checker hardening, source item upgrade, front-door/index updates, and closure evidence.",
+  "traceScope": "Agent Operation Trace Blocks in AHB-Tn.6 GC-018, work order, and completion review.",
+  "commitOwner": "Codex owns material commit and separate session-sync commit.",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_FOR_CODEX_2026-06-17.md",
+  "evidencePaths": [
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json",
+    "docs/reviews/CVF_AHB_TN6_AGENT_WORKSPACE_FOUNDATION_READINESS_BUNDLE_COMPLETION_2026-06-17.md",
+    "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+  ],
+  "claimBoundary": "Foundation readiness only; no workspace build, runtime/product mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+  "nextMoveImpact": "Leaves only bounded workspace build as the remaining parked workspace option; future build still requires fresh GC-018 and source-verified work order.",
+  "resumeCondition": "Future runtime/build work resumes only after operator explicitly authorizes a bounded workspace build tranche with fresh GC-018.",
+  "supersedes": [
+    "ahb-tn5-richer-state-lanes-option-parked-2026-06-17",
+    "ahb-tn5-foundation-hardening-option-parked-2026-06-17"
+  ],
+  "archivePolicy": "Keep active until the first future workspace build or archive-cleanup tranche records that this foundation bundle is no longer needed as an active read-first item."
+}

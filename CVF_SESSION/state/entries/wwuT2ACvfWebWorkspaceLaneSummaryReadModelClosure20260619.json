@@ -1,0 +1,31 @@
+{
+  "stateOrder": 448,
+  "stateKey": "wwuT2ACvfWebWorkspaceLaneSummaryReadModelClosure20260619",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "acedeb28",
+    "executionBaseHead": "3742f811",
+    "dispatchCommit": "b3d89c60",
+    "handoffSyncBeforeImplementation": "3742f811",
+    "roadmap": "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/wwu-t2a-cvf-web-workspace-lane-summary-read-model-2026-06-19.json",
+    "implemented": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/cvf-workspace-read-model.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/workspace/state/route.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.tsx"
+    ],
+    "checks": [
+      "pre-implementation autorun PASS",
+      "focused Vitest PASS 3 files / 4 tests",
+      "npm run check PASS",
+      "git diff --check PASS",
+      "worker-return fast gate PASS",
+      "pre-commit hook PASS 51/51",
+      "pre-closure material range PASS except expected pre-session-sync handoff HEAD drift"
+    ],
+    "claimBoundary": "Read-only CVF Web Workspace lane summary read model only; no Local Runtime mutation, MCP implementation, provider/live call, public-sync, raw external package import, generated workspace state mutation, runtime enforcement, governed action request, production readiness, public readiness, release readiness, or external-facing readiness.",
+    "nextAllowedMove": "No WWU-T3 Local Workspace Runtime/MCP implementation until explicit runtime/MCP authorization, fresh GC-018, and a source-verified work order. Any later bounded Web Workspace follow-up also requires fresh GC-018 and a source-verified work order."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 638,
+  "stateKey": "lpfTsconfigRootDirSyncFix20260622",
+  "value": "LPF TypeScript config rootDir sync fix is CLOSED_PASS_BOUNDED at material commit bf8ff950. Accepted artifacts: EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tsconfig.json and docs/baselines/CVF_GC018_LPF_TSCONFIG_ROOTDIR_SYNC_FIX_2026-06-22.md. Result: the Learning Plane package check uses an explicit rootDir that covers existing sibling extension contract imports. Verification: npm run check in EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION PASS and material pre-commit hook PASS 55/55."
+}

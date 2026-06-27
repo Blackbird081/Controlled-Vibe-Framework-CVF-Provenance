@@ -44,6 +44,8 @@ Canonical sources:
   typed handoff bridge.
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` - tactical
   work order form.
+- `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md` -
+  expanded intake/design/spec/work-order/build/review/freeze control map.
 
 ## Protocol / Contract / Requirements
 
@@ -54,6 +56,8 @@ Operator / CEO intent
   -> Intake or review packet
   -> Decision pack when multiple agents or disputed scope are involved
   -> Final roadmap
+  -> Spec or contract when implementation depends on fields, schemas, enums,
+     failure tokens, or machine-readable semantics
   -> Agent Work Order
   -> Lane-specific GC-018 when implementation scope opens
   -> Implementation
@@ -112,6 +116,18 @@ Requirement 10: every governed batch must capture `baseHead` with
 `git rev-parse --short HEAD` before implementation. Range-aware gates must use
 `--base <baseHead> --head HEAD`; empty closure ranges are not valid evidence for
 changed governed artifacts.
+
+Requirement 11: roadmaps must pass a design-control gate before they become
+work-order authority. The design-control gate must resolve scope, non-goals,
+lane split, dependency/source-verification plan, claim boundary, acceptance
+criteria, verification evidence, and dispatch-readiness decision. A roadmap
+that mixes lanes must include a dispatch boundary before any child work order
+is authored.
+
+Requirement 12: build must not absorb unresolved design ambiguity. If the
+roadmap has not locked source facts, dependency posture, lane boundaries, or
+machine-readable semantics, the next work order must be a source-verification,
+design-audit, or spec task, not an implementation task.
 
 ## Inputs And Outputs
 
@@ -222,7 +238,7 @@ Output:
 - accepted decision pack;
 - selected lane or hold decision.
 
-### Step 2 - Final Roadmap
+### Step 2 - Final Roadmap / Design Control
 
 The roadmap defines strategic scope, order, non-goals, and acceptance at lane
 level.
@@ -231,9 +247,26 @@ Output:
 
 - final roadmap path;
 - lane order;
+- design-control gate result;
+- dispatch boundary when multiple lanes exist;
 - claim boundary.
 
-### Step 3 - Agent Work Order
+### Step 3 - Spec / Contract
+
+Use this step when implementation depends on a source field, schema, enum,
+receipt key, failure token, CLI/MCP surface, external dependency, or
+machine-readable semantics.
+
+Output:
+
+- contract, schema, reference, or machine-readable artifact;
+- invariant and failure-token definitions;
+- evidence requirements for the work order.
+
+If no spec/contract is needed, record `N/A with reason` in the work order trace
+matrix.
+
+### Step 4 - Agent Work Order
 
 The work order translates the roadmap into executable instructions.
 
@@ -246,6 +279,7 @@ Minimum content:
 - required first reads;
 - pre-flight commands;
 - Roadmap-to-Work-Order Trace Matrix when roadmap-derived;
+- design-control carry-forward or `N/A with reason`;
 - write ownership;
 - execution plan;
 - evidence requirements;
@@ -303,7 +337,7 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
 
 If this command fails, keep the work order in `DRAFT`, `HOLD_*`, or `BLOCKED`.
 
-### Step 4 - GC-018 Authorization
+### Step 5 - GC-018 Authorization
 
 Use before implementation when the lane opens new implementation scope,
 runtime behavior, public claim posture, or meaningful proof work.
@@ -312,7 +346,7 @@ Output:
 
 - `docs/baselines/CVF_GC018_<SCOPE>_<DATE>.md`.
 
-### Step 5 - Implementation
+### Step 6 - Implementation
 
 Implementation follows only the current work order and GC-018.
 
@@ -327,7 +361,7 @@ Output:
 - scoped file changes;
 - no unrelated cleanup unless required by the work order.
 
-### Step 6 - Evidence
+### Step 7 - Evidence
 
 Evidence must be proportional to the claim:
 
@@ -336,7 +370,7 @@ Evidence must be proportional to the claim:
 - governance behavior: live proof when repository rules require it;
 - public claim: public-sync catalog evidence and source path verification.
 
-### Step 7 - Review
+### Step 8 - Review
 
 Reviewer checks:
 
@@ -350,7 +384,7 @@ Output:
 
 - no-blocking disposition, required correction, or operator arbitration.
 
-### Step 8 - Closure
+### Step 9 - Closure
 
 Closure records:
 

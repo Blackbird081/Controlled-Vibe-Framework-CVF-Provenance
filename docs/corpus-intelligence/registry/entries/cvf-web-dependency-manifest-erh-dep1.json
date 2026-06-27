@@ -1,0 +1,35 @@
+{
+  "registryOrder": 20,
+  "id": "cvf-web-dependency-manifest-erh-dep1",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "CVF web dependency manifest and lockfile for ERH-DEP1",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "ERH-DEP1",
+  "scanDate": "2026-06-04",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_LEDGER_2026-06-04.md",
+  "completionReviewPath": "docs/reviews/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_2026-06-04.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "N/A",
+    "gc050": "N/A"
+  },
+  "semanticRegions": [
+    "DEPENDENCY_MANIFEST",
+    "AUTH_DEPENDENCY_RISK"
+  ],
+  "priorAbsorption": "ERH-DEP1 uses package manifest and lockfile only to classify next-auth beta posture; no dependency migration or auth runtime change authorized.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "next-auth CVE in npm audit snapshot (not present in ERH-DEP1 ledger)",
+    "stable v5 migration target (not available in npm metadata snapshot)"
+  ],
+  "nextScanRecommendation": "Open a separate dependency/toolchain upgrade work order before treating broader cvf-web dependency audit as fully scanned."
+}

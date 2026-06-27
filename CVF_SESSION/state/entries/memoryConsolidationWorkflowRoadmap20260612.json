@@ -1,0 +1,5 @@
+{
+  "stateOrder": 346,
+  "stateKey": "memoryConsolidationWorkflowRoadmap20260612",
+  "value": "MEMCON roadmap revised after Claude rebuttal at material commit 4cb775b3. Added docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md, docs/reviews/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_CLAUDE_REBUTTAL_2026-06-12.md, and GC-051 registry coverage for Control Plane owner surfaces referenced by the rebuttal. Roadmap now frames MEMCON as a pre-store consolidation chain feeding existing retrieval-time memory workflow, splits T1 into T1a existing-owner reconciliation and T1b schema appendix, moves retrieval-pack integration before cross-agent consistency, and keeps Policy_Local PL-S1 held until MEMCON foundation decision. Verification: GC-051 PASS; reviewer-fast PASS 12/12; full pre-commit governance chain PASS 37/37. Boundary: roadmap/rebuttal/registry only; no runtime implementation, Policy_Local mutation, EC activation, retrieval change, OCR/provider/API use, corpus ingestion, public-sync, T12 unlock, readiness claim, memory reinjection, or autonomous mutation."
+}

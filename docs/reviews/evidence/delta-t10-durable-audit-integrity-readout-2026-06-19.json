@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "DELTA-T10",
+  "docType": "worker_evidence",
+  "workerReturnStatus": "CLOSED_PASS_BOUNDED",
+  "date": "2026-06-19",
+  "worker": "Claude",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "executionBaseHead": "b8545740",
+  "dispatchBaseHead": "5f774742",
+  "invocationId": "delta-t10-durable-audit-integrity-readout-claude-2026-06-19",
+  "acceptedMaterialCommit": "8f4abb28",
+  "materialHandoffBridge": "1a08cbd0",
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base b14df7b4 --head HEAD",
+    "base": "b14df7b4",
+    "head": "b8545740",
+    "result": "44/44 PASS",
+    "failedGates": [],
+    "finding": "COMPLIANT: clean dispatch bridge; no GC-020 drift",
+    "result_text": "COMPLIANT"
+  },
+  "focusedTests": {
+    "command": "npx vitest run src/audit/durable-execution-audit-readout.test.ts --reporter verbose",
+    "files": 1,
+    "tests": 30,
+    "passed": 30,
+    "failed": 0,
+    "result": "PASS",
+    "reviewerHardened": true
+  },
+  "fullMcpTests": {
+    "command": "npm run test:run",
+    "files": 33,
+    "tests": 688,
+    "passed": 688,
+    "failed": 0,
+    "result": "PASS",
+    "reviewerHardened": true
+  },
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "result": "PASS"
+  },
+  "workerReturnFastGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py",
+    "reviewerFastChecks": "31/31 PASS",
+    "failedGates": [],
+    "result": "COMPLIANT",
+    "reviewerRerun": "PASS after completion packet repair"
+  },
+  "gitStatus": {
+    "command": "git status --short",
+    "output": [
+      "?? EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.test.ts",
+      "?? EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.ts"
+    ]
+  },
+  "gitDiffNameStatus": {
+    "command": "git diff --name-status",
+    "output": "(empty - new files are untracked, no staged or tracked changes)"
+  },
+  "changedSet": [
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.ts",
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.test.ts",
+    "docs/reviews/CVF_DELTA_T10_DURABLE_AUDIT_INTEGRITY_READOUT_COMPLETION_2026-06-19.md",
+    "docs/reviews/evidence/delta-t10-durable-audit-integrity-readout-2026-06-19.json"
+  ],
+  "acceptanceCriteria": {
+    "AC1": { "status": "PASS", "evidence": "focused test AC1 group (4 tests): contract version, single and multiple valid records, empty array" },
+    "AC2": { "status": "PASS", "evidence": "focused test AC2 group (8 tests): wrong contract, malformed IDs, invalid hash, JSONL parse error, mixed valid/invalid, parseDurableAuditJsonlLines, JSONL null record" },
+    "AC3": { "status": "PASS", "evidence": "focused test AC3 group (6 tests): forged mandatoryInvocationProved/directInterceptionProved, readout bounded false invariants, INVALID_PROOF_CONSISTENCY" },
+    "AC4": { "status": "PASS", "evidence": "focused test AC4 group (5 tests): sk- prefix, api_key= pattern, raw secret-value echo suppressed for request/profile values and receipt identity" },
+    "AC5": { "status": "PASS", "evidence": "focused test AC5 group (3 tests): finding code order determinism, count stability, JSONL readout determinism" },
+    "AC6": { "status": "PASS", "evidence": "focused 30/30 PASS; full MCP 33/33 files 688/688 tests PASS; build PASS; worker-return fast gate PASS" }
+  },
+  "requiredProofManifest": {
+    "DURABLE_AUDIT_INTEGRITY_READOUT_CONTRACT": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.ts",
+      "line": 12,
+      "present": true
+    },
+    "mandatoryInvocationProved": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.ts",
+      "present": true,
+      "value": "false (literal typed constant in DurableAuditIntegrityReadout; builder always emits false)"
+    },
+    "directInterceptionProved": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.ts",
+      "present": true,
+      "value": "false (literal typed constant in DurableAuditIntegrityReadout; builder always emits false)"
+    },
+    "secretSafetyTest": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-execution-audit-readout.test.ts",
+      "present": true,
+      "tests": 5,
+      "note": "finding message does not echo raw secret-like value; verified by AC4 tests"
+    }
+  },
+  "reviewerHardening": {
+    "status": "APPLIED",
+    "changes": [
+      "classify JSONL null or primitive records with findings instead of throwing",
+      "avoid echoing secret-like receiptId values through finding receipt identity"
+    ],
+    "focusedTestsAfterHardening": "1 file / 30 tests PASS",
+    "buildAfterHardening": "PASS"
+  },
+  "encodingCompliance": {
+    "repair": "none required",
+    "finalState": "ASCII-safe"
+  },
+  "forbiddenPathCompliance": {
+    "indexTs": "NOT_CHANGED",
+    "cli": "NOT_CHANGED",
+    "packageJson": "NOT_CHANGED",
+    "cvfSession": "NOT_CHANGED",
+    "cvfSessionMemory": "NOT_CHANGED",
+    "agentHandoff": "NOT_CHANGED",
+    "publicSync": "NOT_TOUCHED"
+  },
+  "claimBoundary": {
+    "mandatoryInvocation": false,
+    "directInterception": false,
+    "providerLive": false,
+    "publicSync": false,
+    "universalGovernedCoding": false,
+    "externalReadiness": false,
+    "deploymentReadiness": false,
+    "releaseReadiness": false
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

@@ -1,0 +1,38 @@
+{
+  "registryOrder": 98,
+  "id": "model-gateway-rtad-t5-mcp-bridge-boundary-reference",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF RTAD-T5 Model Gateway MCP bridge boundary reference",
+  "scopePaths": [
+    "docs/reference/mcp_gateway/README.md",
+    "docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md",
+    "docs/reference/model_gateway/README.md",
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/README.md"
+  ],
+  "fileCount": 4,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "rtad-t5-mcp-reference-front-door-gap",
+      "summary": "MCP package README previously linked to a missing dated prepublic export surface; remediated by stable MCP reference front door.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use docs/reference/mcp_gateway/README.md as the stable front door before future MCP bridge work.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "MCP implementation (boundary only)",
+    "provider live call (not authorized)",
+    "raw API key value (no credential file read)",
+    "public readiness claim (explicitly out of scope)",
+    "provider ranking (explicitly out of scope)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "RTAD-T5",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+  "notes": "Stable MCP Gateway front door plus Model Gateway MCP runtime bridge boundary contract. Design and reference only; no MCP runtime tool was implemented."
+}

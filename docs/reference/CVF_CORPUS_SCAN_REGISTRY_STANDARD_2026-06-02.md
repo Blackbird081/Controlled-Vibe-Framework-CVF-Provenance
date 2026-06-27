@@ -50,7 +50,11 @@ or absorb knowledge from, including but not limited to:
 
 ## Registry Location
 
-**Canonical registry:** `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+**Generated machine registry:** `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+**Authoring header source:** `docs/corpus-intelligence/registry/CVF_CORPUS_SCAN_REGISTRY_HEADER.json`
+
+**Authoring entry sources:** `docs/corpus-intelligence/registry/entries/*.json`
 
 **Human companion:** `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
 
@@ -58,8 +62,17 @@ or absorb knowledge from, including but not limited to:
 
 **Manifests:** `docs/corpus-intelligence/manifests/<corpus-slug>.json`
 
-The registry is the **front door** for any corpus work. It is not a replacement
-for evidence — it points to evidence.
+The generated registry is the **front door** for any corpus work. It is not a
+replacement for evidence; it points to evidence. Agents must not hand-edit the
+generated aggregate for ordinary entry changes. Add or update the per-entry
+source file, then run:
+
+```text
+python governance/compat/generate_corpus_scan_registry.py --generate
+```
+
+`governance/compat/check_corpus_scan_registry.py` fails if the generated
+aggregate drifts from the per-entry sources.
 
 ---
 
@@ -208,15 +221,28 @@ Before any agent opens a corpus scan, it MUST:
 
 ### Rule 2 — Update registry after scanning
 
-After completing a corpus scan, the agent MUST update the registry entry:
+After completing a corpus scan, the agent MUST update the registry entry source:
 
 - Update `status`, `scanDate`, `manifestHash`, `manifestPath`, `packetPath`,
   `completionReviewPath`, `verdicts`, `semanticRegions`, `findings`.
 - Add new `findings[]` entries for any findings not already recorded.
 - Update `negativeSearchTerms` with any zero-result searches performed.
 - Update `nextScanRecommendation`.
+- Run `python governance/compat/generate_corpus_scan_registry.py --generate`.
+- Commit the changed entry source and generated aggregate together.
 
 Registry updates require the same governance gate pass as the scan itself.
+
+### Rule 2A - Generated aggregate discipline
+
+`docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` is retained as the
+machine-readable front door for existing guards and agents, but it is now a
+generated aggregate. Direct aggregate edits are allowed only for bootstrap or
+emergency repair and must be reconciled into
+`docs/corpus-intelligence/registry/` before closure.
+
+Per-entry sources may include `registryOrder` as a source-only ordering field.
+The generated aggregate must not include `registryOrder`.
 
 ### Rule 3 — Add new corpus entries proactively
 

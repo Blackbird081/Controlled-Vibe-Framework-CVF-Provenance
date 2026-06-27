@@ -1,0 +1,5 @@
+{
+  "stateOrder": 60,
+  "stateKey": "cbg1ContextBudgetGuard",
+  "value": "CLOSED_PASS_BOUNDED. cvf.contextBudgetGuard.cbg1.v1 \u2014 checkContextBudgetGuard(role, estimatedTokens) + checkContextBudgetGuardForTaskClass(taskClass, estimatedTokens). Disposition PASS/ESCALATE; runtimeExecutionAuthorized=false; ESCALATE advisory only. Reuses CBP-1 resolveTaskClass() + getContextBudget(). 65 test files, 1595/1595 PASS. TypeScript PASS. Closes LHW18 T3 P2 MACHINE_CHECK_CANDIDATE. Source: EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context-budget-guard.ts. GC-018 docs/baselines/CVF_GC018_CBG1_CONTEXT_BUDGET_GUARD_2026-05-31.md."
+}

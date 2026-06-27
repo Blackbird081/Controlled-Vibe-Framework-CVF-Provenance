@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1240,
+  "stateKey": "localWorkspaceProjectionReadModelClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "8be9f9b6",
+    "roadmap": "docs/roadmaps/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_FOUNDATION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_LWPRM_T0_T4_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_FOUNDATION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LWPRM_T0_T4_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_FOUNDATION_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_LWPRM_T0_T4_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_FOUNDATION_COMPLETION_2026-06-27.md",
+    "readModelReference": "docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md",
+    "nextAllowedMove": "Select the next high-value CVF foundation roadmap or open fresh GC-018/source-verified work order before implementation.",
+    "claimBoundary": "Read-model foundation only; no runtime/MCP/CLI/IDE bridge implementation, provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push."
+  }
+}

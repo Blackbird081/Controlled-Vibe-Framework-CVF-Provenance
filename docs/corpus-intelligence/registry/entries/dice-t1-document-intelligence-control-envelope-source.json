@@ -1,0 +1,26 @@
+{
+  "registryOrder": 71,
+  "id": "dice-t1-document-intelligence-control-envelope-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation DICE-T1 document intelligence control envelope source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw_text (not present - confirmed by no-raw-content test)",
+    "ocr_output (not present - confirmed by no-raw-content test)",
+    "provider_response (not present - confirmed by no-raw-content test)",
+    "Document_Translator external tree (not accessed)",
+    "Policy_Local (not mutated)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "DICE-T1",
+  "scanDate": "2026-06-13",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md",
+  "notes": "Local deterministic Document Intelligence Control Envelope composer that consumes existing DIR, EXA-T2 scan-route, and scan outcome report owner surfaces. No OCR/provider execution, retrieval change, corpus ingestion, public-sync, external use-case tree access, or readiness/cost/quality claim."
+}

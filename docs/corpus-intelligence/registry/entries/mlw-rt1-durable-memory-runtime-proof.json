@@ -1,0 +1,66 @@
+{
+  "registryOrder": 16,
+  "id": "mlw-rt1-durable-memory-runtime-proof",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "MLW-RT1 Durable Memory Runtime Proof",
+  "scopePaths": [
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.durable-memory.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw-rt1-durable-memory.alibaba.live.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/alibaba-env.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/durable-memory-route.ts",
+    "docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md",
+    "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+    "docs/work_orders/CVF_WO_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md"
+  ],
+  "fileCount": 9,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "MLW-RT1",
+  "scanDate": "2026-06-05",
+  "manifestHash": "1dcfdfc6dc7b2b74779c528d56bc830bc4e9a8bd193db0e93044734a52b9c3aa",
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+  "completionReviewPath": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+    "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+  },
+  "semanticRegions": [
+    "DURABLE_MEMORY_RUNTIME",
+    "EXECUTE_ROUTE_GOVERNANCE",
+    "LIVE_PROVIDER_PROOF"
+  ],
+  "priorAbsorption": "MLW1-MLW6 contract closure defined memory/context boundaries; MLW-RT1 proves the existing file-backed durable memory execute-route chain with deterministic regression and Alibaba live proof.",
+  "findings": [
+    {
+      "id": "MLW-RT1-F1-write-read-continuity-proof-added",
+      "summary": "Existing route tests covered durable write and read separately; MLW-RT1 adds a write-then-read continuity regression.",
+      "disposition": "ACCEPT",
+      "nextAction": "Retain focused regression for future execute-route memory changes.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+      "f2gRef": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "MLW-RT1-F2-live-write-guard-authority-clarified",
+      "summary": "Live write proof must satisfy real guard authority with BUILD phase and aiCommit metadata.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use the same authority pattern for future modifying live proofs.",
+      "defectClass": "PHASE_GATE_PLACEMENT_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "production-grade durable memory claim (not made)",
+    "distributed storage claim (not made)",
+    "autonomous learning mutation claim (not made)",
+    "public memory feature claim (not made)"
+  ],
+  "nextScanRecommendation": "A backend migration, public-safe summary, MLW7, or MLW8 requires a separate fresh GC-018/work order.",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+}

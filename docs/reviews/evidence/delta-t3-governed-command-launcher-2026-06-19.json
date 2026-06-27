@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceId": "delta-t3-governed-command-launcher-2026-06-19",
+  "status": "PASS_BOUNDED",
+  "executionBaseHead": "aae39481",
+  "acceptedMaterialCommit": "ff584e42",
+  "closureBaseHead": "febf67fc",
+  "binary": "cvf-governed-exec",
+  "launcherContractVersion": "cvf.delta.governedCommandLauncher.v1",
+  "executionReceiptContractVersion": "cvf.delta.governedExecutionReceipt.v1",
+  "shippedProfiles": [
+    "git-status",
+    "git-diff-check"
+  ],
+  "rejectedProfiles": [
+    "npm-test",
+    "npm-build",
+    "npm-check"
+  ],
+  "assertions": {
+    "preflightAllowRequired": true,
+    "atomicConsumptionRequired": true,
+    "durableExecutionIntentRequired": true,
+    "runnerAfterAdmissionOnly": true,
+    "staticProfilesOnly": true,
+    "arbitraryExecutableRejected": true,
+    "arbitraryArgumentsRejected": true,
+    "callerEnvironmentOverrideRejected": true,
+    "shellFalse": true,
+    "workspaceRealPathRequired": true,
+    "cwdEscapeRejected": true,
+    "executionReceiptOmitsOutput": true,
+    "knownCredentialPatternsRedacted": true,
+    "externalInterceptionProved": false
+  },
+  "verification": [
+    {
+      "command": "npx vitest run src/cli/governed-command-launcher.test.ts src/persistence/json-governed-execution.store.test.ts --reporter verbose",
+      "result": "PASS_2_FILES_15_TESTS"
+    },
+    {
+      "command": "npm run test:run",
+      "result": "PASS_29_FILES_610_TESTS"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "node dist/cli/governed-exec.js --profile git-status --workspace <repo> --json",
+      "result": "PASS_EXIT_0_T1_T2_T3_RECEIPTS_COMPLETED"
+    }
+  ],
+  "reviewerRepairs": [
+    "use positional offset-zero write when finalizing a read file handle",
+    "remove npm project-script profiles because static CLI tokens do not prove non-destructive command semantics"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Wrapper-owned execution of two exact Git inspection profiles after durable T1/T2/T3 admission only; no arbitrary or mutating command, EDIT/COMMIT, external interception, provider/live behavior, public readiness, or universal governed-coding control."
+}

@@ -1,0 +1,32 @@
+{
+  "stateOrder": 379,
+  "stateKey": "aotT2ExpectedManifestTraceCoveragePlanClosure20260613",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "688bd97e",
+    "closureBaseHead": "9581a2e3",
+    "dispatchBaseHead": "ce369ab6",
+    "gc018": "docs/baselines/CVF_GC018_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md",
+    "coveragePlan": "docs/reference/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md",
+    "workerReturn": "docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_WORKER_RETURN_2026-06-13.md",
+    "completionReview": "docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_COMPLETION_2026-06-13.md",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewDisposition": "ACCEPT_AFTER_REVIEWER_REPAIR",
+    "reviewerRepairs": [
+      "Added Agent Operation Trace Block to coverage plan",
+      "Corrected worker-return git status evidence rows to list both untracked worker artifacts",
+      "Added public catalog N/A disposition in follow-up session-sync commit"
+    ],
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS before material commit",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 40/40 during material closure commit",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 9581a2e3 --head 688bd97e PASS for material gates; blocked only by expected post-commit session drift and uncommitted session-sync amendment",
+      "git diff --check PASS"
+    ],
+    "acceptedNextMove": "Fresh authorization only: open AOT-T2-C01+C02 implementation work order for expected-manifest trace fields, manifest-delta enforcement, and agent-type / invocation-ID fields; or resume FPC work by separate operator decision and fresh work order.",
+    "boundary": "AOT-T2 planning closure only. No checker implementation, test implementation, hook or autorun mutation, runtime/source mutation, OS audit, Sysmon, endpoint monitoring, file watcher service, destructive broker, agent computer-control permission change, runtime/provider/live-proof work, public-sync, external Document Translator inspection or mutation, Policy_Local mutation, EC activation/retrieval, corpus ingestion, T12, readiness/cost/quality claim, raw memory release, high-risk promotion, or autonomous mutation is authorized."
+  }
+}

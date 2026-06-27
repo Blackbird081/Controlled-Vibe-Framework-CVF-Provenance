@@ -1,0 +1,5 @@
+{
+  "stateOrder": 649,
+  "stateKey": "assfExternalAgentMetadataReadoutImplementationDispatch20260626",
+  "value": "ASSF external-agent metadata readout implementation dispatch packet is DISPATCH_READY at material commit ce102d77. Artifacts: docs/baselines/CVF_GC018_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_2026-06-26.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_FOR_CODEX_2026-06-26.md. Next allowed move is execute the dispatched work order as WORKER_MUST_NOT_COMMIT from executionBaseHead c2d2ee17, with reviewer/closer commit only after worker return, focused tests, and gates pass."
+}

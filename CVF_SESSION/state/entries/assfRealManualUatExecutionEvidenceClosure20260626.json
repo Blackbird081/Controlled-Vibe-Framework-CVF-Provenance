@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1216,
+  "stateKey": "assfRealManualUatExecutionEvidenceClosure20260626",
+  "value": "ASSF real manual UAT execution evidence is CLOSED_PASS_BOUNDED at material commit ec911be2. Material artifacts: docs/baselines/CVF_GC018_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md; docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_COMPLETION_2026-06-26.md. Evidence disposition: UAT_EXECUTION_PASS_EVIDENCE_RECORDED. Next recommended lane: OPEN_ASSF_PACKAGE_CERTIFICATION_DECISION_ROADMAP. Certification decision remains not authorized until that future roadmap or work order."
+}

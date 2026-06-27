@@ -1,0 +1,24 @@
+{
+  "stateOrder": 428,
+  "stateKey": "ahbTn7BoundedWorkspaceBuildSkeletonClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4e6f9afe",
+    "executionBaseHead": "338c34e2",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_COMPLETION_2026-06-17.md",
+    "workspaceFrontDoor": "docs/reference/agent_workspace/README.md",
+    "workspaceSkeleton": "CVF_SESSION/agent_workspace/workspace/README.md",
+    "laneIndex": "CVF_SESSION/agent_workspace/workspace/lanes/README.md",
+    "workspaceStateAggregate": "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+    "workspaceStateSourceItems": "CVF_SESSION/agent_workspace/state/items/",
+    "skeletonChecker": "governance/compat/check_agent_workspace_skeleton.py",
+    "skeletonCheckerTests": "governance/compat/test_agent_workspace_skeleton.py",
+    "aotChecker": "governance/compat/check_agent_operation_trace.py",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.7 executed AHB-Tn.5-A as a bounded local workspace skeleton with indexed lane pointers, machine guard binding, generated workspace state disposition, and finding-to-governance learning disposition.",
+    "claimBoundary": "Skeleton only. No runtime queue, scheduler, UI, provider/live proof, public-sync, registry edit, product runtime mutation, production readiness, or public readiness.",
+    "nextAllowedMove": "AHB workspace skeleton is closed. Runtime expansion remains parked and requires fresh GC-018 plus source-verified work order before any queue, UI, provider/live, public-sync, registry, or product-runtime work."
+  }
+}

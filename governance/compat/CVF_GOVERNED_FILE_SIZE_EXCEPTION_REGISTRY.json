@@ -45,6 +45,17 @@
         "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/"
       ],
       "rationale": "The execute route is an active cvf-web API owner entrypoint. New API route work must carry execute-route shrink or split evidence while this owner remains near the hard threshold."
+    },
+    {
+      "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "status": "ACTIVE",
+      "domainPrefixes": [
+        "docs/reference/CVF_AGENT_WORK_ORDER_"
+      ],
+      "domainFileClasses": [
+        "active_markdown"
+      ],
+      "rationale": "The work-order template is the active owner entrypoint for delegated-work authoring rules. Adjacent template addendum changes must not bypass GC-023 while the owner remains near the hard threshold; same-batch owner split, rotation, or meaningful shrink evidence is required."
     }
   ],
   "exceptions": [

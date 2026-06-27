@@ -1,0 +1,22 @@
+{
+  "stateOrder": 464,
+  "stateKey": "deltaT3GovernedCommandLauncherDispatch20260619",
+  "value": {
+    "status": "DISPATCH_READY_FOR_CODEX",
+    "dispatchCommit": "aafcdfda",
+    "dispatchBaseHead": "f50e2903",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "commitMode": "WORKER_MAY_COMMIT",
+    "workerReviewerCloser": "Codex",
+    "binaryCandidate": "cvf-governed-exec",
+    "checks": [
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Dispatch only for a static-profile non-destructive RUN launcher that requires durable Delta-T1/T2/T3 admission before its own direct child process. No arbitrary or mutating command, EDIT/COMMIT, shell/interpreter, provider/live, public-sync, queue/daemon, external interception, readiness, or universal governed-coding claim.",
+    "nextAllowedMove": "Codex runs pre-implementation from the refreshed clean HEAD, then implements only the source/test/package/completion/evidence scope in the Delta-T3 work order."
+  }
+}

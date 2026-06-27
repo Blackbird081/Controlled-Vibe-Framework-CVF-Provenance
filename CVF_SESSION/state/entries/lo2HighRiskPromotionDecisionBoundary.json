@@ -1,0 +1,5 @@
+{
+  "stateOrder": 280,
+  "stateKey": "lo2HighRiskPromotionDecisionBoundary",
+  "value": "CLOSED_PASS_BOUNDED. Baseline docs/baselines/CVF_GC018_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md, work order docs/work_orders/CVF_WO_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md, reference docs/reference/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md, and completion docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md close LO2 as review-only high-risk promotion decision boundary. Boundary: no runtime high-risk promotion implementation, automatic promotion, autonomous mutation, Learning Orchestrator runtime, truth/trust/policy mutation, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness."
+}

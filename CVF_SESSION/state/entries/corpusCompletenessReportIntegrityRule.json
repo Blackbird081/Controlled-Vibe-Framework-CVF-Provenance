@@ -1,0 +1,5 @@
+{
+  "stateOrder": 166,
+  "stateKey": "corpusCompletenessReportIntegrityRule",
+  "value": "CLOSED_PASS_BOUNDED. Implementation commit f078fe91. Completion docs/reviews/CVF_CCG1_CORPUS_COMPLETENESS_REPORT_INTEGRITY_GUARD_COMPLETION_2026-06-01.md. Standard docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md, operational guard governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md, and checker governance/compat/check_corpus_completeness_report_integrity.py generalize the Legacy scan lesson to any bounded project corpus used for inventory, report, comparison, extraction, audit, migration, roadmap, work order, or knowledge-absorption decisions. COMPLETE_VERIFIED requires filesystem-backed manifest, file-level processing ledger, reconciliation with zero unresolved files, explicit exclusions and unreadable formats, aggregation check, drift check, output traceability, and adversarial verification. Boundary: evidence discipline only; no perfect semantic-understanding claim."
+}

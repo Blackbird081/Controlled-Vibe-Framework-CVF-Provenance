@@ -24,6 +24,7 @@ STANDARD_PATH = "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_202
 AUTH_MARKER = "Core Guard Self-Protection Authorization"
 
 ACTIVE_DOC_PREFIXES = (
+    "docs/baselines/",
     "docs/work_orders/",
     "docs/reviews/",
     "docs/roadmaps/",
@@ -48,6 +49,7 @@ PROTECTED_EXACT = {
 }
 
 STALE_CLOSED_PATTERNS = (
+    r"\bCOMPLETE_PENDING_GATES\b",
     r"\bREADY_FOR_OPERATOR_REVIEW\b",
     r"\bREADY_FOR_DISPATCH\b",
     r"\bDISPATCH_READY\b",
@@ -62,6 +64,35 @@ PATH_RE = re.compile(
     r"`((?:docs|governance|EXTENSIONS|CVF_SESSION|scripts|sdk|\.github|\.private_reference)/[^`|)]+)`"
     r"|`((?:AGENTS\.md|CLAUDE\.md|CVF_SESSION_MEMORY\.md|AGENT_HANDOFF[^`|)]+\.md))`"
 )
+NA_LINE_RE = re.compile(r"(?im)^\s*[-|].{0,40}N/A\s+with\s+reason\b")
+INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
+
+
+def _is_in_code_fence(lines: list[str], target_idx: int) -> bool:
+    """Return True if the line at target_idx is inside a markdown code fence."""
+    fence_count = 0
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            fence_count += 1
+        if i == target_idx:
+            break
+    return (fence_count % 2) == 1
+
+
+def _strip_non_signal_text(text: str) -> str:
+    """Remove code fences, inline-code spans, and N/A-with-reason lines before
+    bare-keyword/status signal matching, so incidental trigger words quoted as
+    evidence or describing another tranche do not count as real signal."""
+    lines = text.splitlines()
+    kept: list[str] = []
+    for idx, line in enumerate(lines):
+        if _is_in_code_fence(lines, idx):
+            continue
+        if NA_LINE_RE.match(line):
+            continue
+        kept.append(INLINE_CODE_RE.sub(" ", line))
+    return "\n".join(kept)
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -134,7 +165,8 @@ def _is_closed_equivalent(text: str) -> bool:
     status = _extract_status(text).upper()
     if re.match(r"^CLOSED(?:\b|_)", status):
         return True
-    return "CLOSED_PASS" in "\n".join(text.splitlines()[:80]).upper()
+    signal_chunk = _strip_non_signal_text("\n".join(text.splitlines()[:80]))
+    return "CLOSED_PASS" in signal_chunk.upper()
 
 
 def _is_active_doc(path: str) -> bool:
@@ -224,11 +256,12 @@ def _validate_stale_closed_language(path: str, text: str) -> list[str]:
     if not _is_closed_equivalent(text):
         return []
     issues: list[str] = []
+    signal_text = _strip_non_signal_text(text)
     matches = sorted(
         {
             match.group(0)
             for pattern in STALE_CLOSED_PATTERNS
-            for match in re.finditer(pattern, text, re.IGNORECASE)
+            for match in re.finditer(pattern, signal_text, re.IGNORECASE)
         }
     )
     if matches:
@@ -285,12 +318,79 @@ def _validate_diff_claim_paths(text: str, changed_files: set[str]) -> list[str]:
     ]
 
 
+def _validate_exhaustive_directory_claims(text: str) -> list[str]:
+    """Validate narrow, explicit `directory contains only file...` claims.
+
+    This is intentionally not general prose fact checking. It fires only when
+    one line contains the phrase `contains only`, a repo-local backtick-quoted
+    directory, and one or more backtick-quoted direct-child filenames.
+    """
+    issues: list[str] = []
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if "contains only" not in line.lower():
+            continue
+        quoted = re.findall(r"`([^`]+)`", line)
+        directory_token = next(
+            (
+                token.replace("\\", "/")
+                for token in quoted
+                if token.endswith(("/", "\\"))
+            ),
+            "",
+        )
+        claimed_files = {
+            Path(token.replace("\\", "/")).name
+            for token in quoted
+            if "/" not in token.replace("\\", "/") and "." in token
+        }
+        if not directory_token or not claimed_files:
+            continue
+        directory = REPO_ROOT / directory_token.rstrip("/")
+        if not directory.is_dir():
+            issues.append(
+                f"line {line_number}: exhaustive directory claim cites missing repo directory `{directory_token}`"
+            )
+            continue
+        actual_files = {child.name for child in directory.iterdir() if child.is_file()}
+        if actual_files != claimed_files:
+            omitted = sorted(actual_files - claimed_files)
+            extra = sorted(claimed_files - actual_files)
+            details: list[str] = []
+            if omitted:
+                preview = ", ".join(omitted[:5])
+                suffix = f" (+{len(omitted) - 5} more)" if len(omitted) > 5 else ""
+                details.append(f"omits {preview}{suffix}")
+            if extra:
+                details.append("names absent child files " + ", ".join(extra))
+            issues.append(
+                f"line {line_number}: unsupported exhaustive directory claim for `{directory_token}`; "
+                + "; ".join(details)
+            )
+    return issues
+
+
+def _validate_decided_roadmap_residue(path: str, text: str) -> list[str]:
+    if not path.replace("\\", "/").startswith("docs/roadmaps/"):
+        return []
+    status = _extract_status(text).upper()
+    decided = sorted(set(re.findall(r"MPI_T(\d+)_DECIDED", status)))
+    issues: list[str] = []
+    for tranche in decided:
+        if re.search(rf"\bMPI-T{tranche}\s+remains\s+parked\b", text, re.IGNORECASE):
+            issues.append(
+                f"roadmap status marks MPI-T{tranche} decided but body still says MPI-T{tranche} remains parked"
+            )
+    return issues
+
+
 def validate_doc(path: str, text: str, changed_files: set[str]) -> list[str]:
     issues: list[str] = []
     if not _is_active_doc(path):
         return issues
     issues.extend(_validate_stale_closed_language(path, text))
     issues.extend(_validate_corpus_enumeration(text))
+    issues.extend(_validate_exhaustive_directory_claims(text))
+    issues.extend(_validate_decided_roadmap_residue(path, text))
     if _is_closed_equivalent(text):
         issues.extend(_validate_diff_claim_paths(text, changed_files))
     return issues

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 279,
+  "stateKey": "lo1LearningOrchestratorAdvisoryWorkOrder",
+  "value": "CLOSED_PASS_BOUNDED at commit bec18eba. Work order docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md, reference docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md, and completion docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md define and close a source-verified advisory/proposal-only LO1 boundary over LO0, MLW0, T11, LearningSignalIntakeBridge, finding-to-learning bridge, orchestratorFeedback, MLW5/MLW6 readouts, adaptation policy Tier 0 evidence gate, and simulation dry-run source. Next LO2/high-risk promotion requires separate GC-018/work order authorization. Boundary: no Learning Orchestrator runtime implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness."
+}

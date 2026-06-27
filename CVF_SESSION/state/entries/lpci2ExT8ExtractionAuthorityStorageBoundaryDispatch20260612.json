@@ -1,0 +1,5 @@
+{
+  "stateOrder": 333,
+  "stateKey": "lpci2ExT8ExtractionAuthorityStorageBoundaryDispatch20260612",
+  "value": "DISPATCHED at commit f6d1cd15. GC-018 docs/baselines/CVF_GC018_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_2026-06-12.md and work order docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_FOR_CLAUDE_2026-06-12.md authorized Claude WORKER_MUST_NOT_COMMIT implementation before operator redirected Codex to complete the EX tranche. Reviewer-fast PASS and pre-dispatch autorun PASS before dispatch. Boundary: dispatch package only; no implementation in dispatch commit."
+}

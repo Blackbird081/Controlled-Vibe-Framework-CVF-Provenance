@@ -1,0 +1,5 @@
+{
+  "stateOrder": 312,
+  "stateKey": "lpci2EcT1RegulatoryDateDecisionBaseline20260611",
+  "value": "CLOSED_PASS_BOUNDED at material commit 5e184d00. GC-018 docs/baselines/CVF_GC018_LPCI2_EC_T1_REGULATORY_DATE_MODEL_GOVERNANCE_DECISION_2026-06-11.md records D-01 documentStatus accepted, D-02 QUERY_CLASS_GATED accepted, D-03 non-regulatory records omit EC-02 lifecycle fields, and D-04 BLOCKED_UNTIL_2026-07-01 remains active through EC-T4. Codex closure fixed a source-verification false negative: documentStatus exists once as a company-docs DSCP-T10 test fixture and must be treated as a collision/isolation constraint, not EC-02 lifecycle support. Template/addendum hardened negative-search and collision discipline. Boundary: decision-baseline closure and authoring-rule hardening only; no EC-T2 work order, runtime/source change, corpus migration, DSCP profile update, provider call, public-sync, current-law/legal-quality claim, production/public readiness, memory reinjection, high-risk promotion, or autonomous mutation."
+}

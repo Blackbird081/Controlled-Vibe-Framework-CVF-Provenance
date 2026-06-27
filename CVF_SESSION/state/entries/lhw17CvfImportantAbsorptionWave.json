@@ -1,0 +1,5 @@
+{
+  "stateOrder": 140,
+  "stateKey": "lhw17CvfImportantAbsorptionWave",
+  "value": "CLOSED_PASS_BOUNDED. T1 cvf.trustIsolationHardeningAdvisory.lhw17.t1.v1 \u2014 closes Trust & Isolation EA CONDITIONAL finding (3 hardening items: Path Normalization, No Direct Execution, Capability Request Governance); T2 cvf.modelGatewayUnificationAdvisory.lhw17.t2.v1 \u2014 closes Model Gateway duplicate-module EA finding (Reviews 7+8+9 unified: Routing Layer + Strategy Layer); T3 cvf.learningPlaneTruthReputationAdvisory.lhw17.t3.v1 \u2014 establishes Truth Model + Reputation advisory boundary with 8-step activation order. All doc-only; runtimeExecutionAuthorized=false. Source: .private_reference/legacy/CVF_Important/. GC-018 docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md."
+}

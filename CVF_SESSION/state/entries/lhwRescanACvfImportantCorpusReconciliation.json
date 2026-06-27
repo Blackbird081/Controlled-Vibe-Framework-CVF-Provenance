@@ -1,0 +1,5 @@
+{
+  "stateOrder": 78,
+  "stateKey": "lhwRescanACvfImportantCorpusReconciliation",
+  "value": "CLOSED_PASS_BOUNDED. Authorization packet commit d89743d0 and implementation commit eefd6934 add scripts/build_cvf_important_rescan_manifest.py, a filesystem-backed manifest, terminal processing ledger, reconciliation audit, and completion review. Current CVF_Important source truth: 24 top-level folders, 230 visible files, 229 text-like authority assets with READ status, one generated .pyc retained visibly as SKIPPED_WITH_REASON, zero unresolved files, and 229 broad semantic-region mappings. Prior LHW20 evidence omitted 11 folders and 95 visible files. GC-047 and GC-048 direct checks PASS; pre-closure and pre-push autorun PASS at 28d85533; no push performed. Boundary: inventory visibility and rebuildable broad routing only; no deep semantic absorption, Legacy edits, runtime mutation, public-sync, provider proof, hosted readiness, production readiness, or autonomous mutation authority."
+}

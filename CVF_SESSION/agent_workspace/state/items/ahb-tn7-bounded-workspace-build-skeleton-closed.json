@@ -1,0 +1,29 @@
+{
+  "stateOrder": 6,
+  "workspaceItemId": "ahb-tn7-bounded-workspace-build-skeleton-closed-2026-06-17",
+  "lane": "accepted_material",
+  "itemKind": "accepted_material",
+  "status": "CLOSED_PASS_BOUNDED",
+  "ownerRole": "closer",
+  "route": "SINGLE_AGENT_MULTI_ROLE",
+  "rolePattern": "codex_dispatch_implementation_review_closure",
+  "phase": "closure",
+  "baseHead": "338c34e2",
+  "changedSetScope": "Bounded local agent workspace skeleton, lane index, generated workspace state item disposition, skeleton checker/test, reference front doors, roadmap, work order, GC-018, and completion review.",
+  "traceScope": "AHB-Tn.7 Agent Operation Trace Block in work order and completion review.",
+  "commitOwner": "Codex",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_FOR_CODEX_2026-06-17.md",
+  "evidencePaths": [
+    "CVF_SESSION/agent_workspace/workspace/README.md",
+    "CVF_SESSION/agent_workspace/workspace/lanes/README.md",
+    "governance/compat/check_agent_workspace_skeleton.py",
+    "docs/reviews/CVF_AHB_TN7_BOUNDED_AGENT_WORKSPACE_BUILD_SKELETON_COMPLETION_2026-06-17.md"
+  ],
+  "claimBoundary": "Bounded local workspace skeleton only; no runtime queue, scheduler, UI, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+  "nextMoveImpact": "Closes AHB-Tn.5-A at skeleton level; future runtime expansion requires fresh GC-018 and source-verified work order.",
+  "resumeCondition": "N/A with reason: skeleton foundation is closed; runtime expansion is separate future authorization.",
+  "supersedes": [
+    "ahb-tn5-workspace-build-option-parked-2026-06-17"
+  ],
+  "archivePolicy": "Remain active until session-sync records AHB-Tn.7 closure and a future archive batch compacts closed workspace foundation items."
+}

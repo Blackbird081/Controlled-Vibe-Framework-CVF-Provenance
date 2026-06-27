@@ -1,0 +1,26 @@
+{
+  "registryOrder": 91,
+  "id": "model-gateway-c02-p4b-b-live-proof-harness",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P4B-B live proof harness source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw API key value (never returned, logged, or embedded)",
+    "secret in result (wrapper output never contains the secret)",
+    "network when liveAuthorized=false (no fetch and no secret read)",
+    "canonical provider (live-test adapters only, not product scope)",
+    "new provider-execution semantic (thin bridge wrapper only)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+  "notes": "Live-proof harness building the existing governed chain (routing, credential boundary, health, quota, receipt, P5-A admission, P5-C bridge admission, ProviderExecutionBridge.execute) around a thin OpenAI-compatible execute adapter. liveAuthorized=false performs no network call and reads no secret. Not a new canonical provider or provider-execution semantic."
+}

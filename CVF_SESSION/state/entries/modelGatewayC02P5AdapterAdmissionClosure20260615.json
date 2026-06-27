@@ -1,0 +1,29 @@
+{
+  "stateOrder": 398,
+  "stateKey": "modelGatewayC02P5AdapterAdmissionClosure20260615",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "f26afe68",
+    "dispatchSessionSyncCommit": "fbbec2e4",
+    "materialCommit": "a4907f2c",
+    "roadmapCommit": "4c888aa0",
+    "completionReview": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+    "activeWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md",
+    "sourceArtifacts": [
+      "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-admission.ts",
+      "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-negotiation.ts",
+      "EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts"
+    ],
+    "testArtifact": "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-admission.test.ts",
+    "verification": [
+      "npm run check",
+      "npm test -- --run tests/provider-adapter-admission.test.ts",
+      "npm test -- --run",
+      "python governance/compat/generate_corpus_scan_registry.py --check",
+      "python governance/compat/run_worker_return_fast_gate.py",
+      "git diff --check"
+    ],
+    "boundary": "Provider-agnostic deterministic P5-A/P5-B only. No concrete provider binding, live provider/API call, runtime secret use, network, provider/model addition, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, provider quality/cost claim, production readiness, public readiness, raw memory release, co-work product development, P5-C bridge mutation, or P4B-B release.",
+    "nextRecommendedRoadmap": "Model Gateway C-02 P5-C Bridge Admission Boundary roadmap, no-network/no-secret and provider-agnostic, so bridge execution can consume P5 admission/negotiation decisions before any live-provider release."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "stateOrder": 458,
+  "stateKey": "deltaT1GovernanceActionPreflightReceiptClosure20260619",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "acceptedMaterialCommit": "156b0610",
+    "acceptedMaterialSessionSyncCommit": "6d7f4d94",
+    "closureCommit": "a196e42f",
+    "executionBaseHead": "d0dca484",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_FOR_CLAUDE_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/delta-t1-governance-action-preflight-receipt-2026-06-19.json",
+    "implemented": [
+      "cvf_preflight_governance_action",
+      "cvf.delta.governanceActionPreflight.v1",
+      "serialized secret-safe durable audit persistence"
+    ],
+    "checks": [
+      "focused Vitest PASS 2 files / 48 tests",
+      "MCP package test suite PASS 26 files / 584 tests",
+      "MCP package build PASS",
+      "reviewer-fast PASS 28/28",
+      "closure pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Delta-T1 proves only an invoked deterministic MCP preflight with guard evaluation, serialized secret-safe durable persistence, and a correlated bounded receipt. It does not prove mandatory invocation, action execution, receipt consumption, external interception, provider/live behavior, public readiness, or universal governed-coding control.",
+    "nextAllowedMove": "Operator decision whether to authorize a fresh receipt-consumption enforcement tranche through wrapper/CLI/proxy with fresh GC-018 and a source-verified work order, or choose another bounded CVF lane."
+  }
+}

@@ -7,7 +7,7 @@ CVF Guard Runtime exposed as MCP (Model Context Protocol) tools for IDE integrat
 **Status**: CANDIDATE (Phase A)  
 **Target Date**: 2026-05-01  
 **Blockers**: None  
-**Documentation**: [Export Surface Definition](../../docs/reference/CVF_PREPUBLIC_MCP_SERVER_EXPORT_SURFACE_2026-04-08.md)
+**Documentation**: [MCP Gateway Reference Front Door](../../docs/reference/mcp_gateway/README.md)
 
 This package is part of the CVF pre-public packaging lane. It is not yet published to a public registry.
 

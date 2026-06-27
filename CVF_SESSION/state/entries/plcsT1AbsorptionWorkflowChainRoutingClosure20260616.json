@@ -1,0 +1,5 @@
+{
+  "stateOrder": 413,
+  "stateKey": "plcsT1AbsorptionWorkflowChainRoutingClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material closure commit 9f7cd413. Worker material was accepted at b05286fe after Claude returned COMPLETE_PENDING_REVIEW under WORKER_MUST_NOT_COMMIT. Handoff-sync commit dbddf213 recorded the worker-material parent before closure. Completion: docs/reviews/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_COMPLETION_2026-06-16.md. Matrix: docs/reference/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md. Roadmap status is ROADMAP_ACTIVE_AFTER_PLCS_T1 with PLCS-T1 row CLOSED_PASS_BOUNDED; PLCS-T2 and PLCS-T3 remain candidates requiring fresh authorization. Boundary: documentation-only routing matrix; no runtime/source/test mutation, registry edit, provider/live proof, public-sync, new legacy scan, Model Gateway redispatch, or public/production readiness claim."
+}

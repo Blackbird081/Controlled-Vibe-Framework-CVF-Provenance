@@ -1,0 +1,5 @@
+{
+  "stateOrder": 322,
+  "stateKey": "lpci2ExT2Tier1DigitalNativeExtractorDispatch20260611",
+  "value": "DISPATCHED at material commit 3c96b229. GC-018 docs/baselines/CVF_GC018_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_2026-06-11.md and work order docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md authorize Claude WORKER_MUST_NOT_COMMIT implementation of Tier 1 digital-native extraction only: python-docx .docx path, pdfplumber PDF text-layer path, focused tests, and GC-051 entries. Reviewer-fast PASS and pre-dispatch autorun PASS on base 2d6510ca before commit; pre-commit governance chain PASS. Boundary: dispatch package only; no extractor implementation yet, OCR fallback, Tier 3 quality gate, DSCP wire-in, dependency addition, OCR model download, corpus ingestion, EC-02 semantic change, T12 authoring, provider/API key use, public-sync, production readiness, or public readiness."
+}

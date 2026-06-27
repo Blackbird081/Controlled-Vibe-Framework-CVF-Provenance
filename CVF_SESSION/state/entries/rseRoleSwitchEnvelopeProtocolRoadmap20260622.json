@@ -1,0 +1,5 @@
+{
+  "stateOrder": 610,
+  "stateKey": "rseRoleSwitchEnvelopeProtocolRoadmap20260622",
+  "value": "RSE Role Switch Envelope Protocol roadmap is ROADMAP_READY_FOR_WORK_ORDER_AUTHORING at material commit 6608be51. Artifact: docs/roadmaps/CVF_RSE_ROLE_SWITCH_ENVELOPE_PROTOCOL_ROADMAP_2026-06-22.md. The roadmap defines RSE-T0 Role Switch Envelope standard, RSE-T1 Operator Question Boundary, RSE-T2 Worker Return Jurisdiction Block, and RSE-T3 early diagnostic/checker wire-in. It absorbs the AAF-T7B operator-question confusion as a role-boundary learning: workers must record material findings in the allowed return surface, must not self-widen scope into lane memory/checker/standard edits, and must route reviewer/closer jurisdiction to reviewer/closer instead of asking the non-coder operator. The roadmap creates no work order and implements no standard, checker, helper, runtime/provider/live/public-sync, workspace, direct-interception, arbitrary-command, patch-apply, or universal governed-coding-control behavior. Verification: AAF helper --json --enforce PASS defects [], pre-dispatch autorun PASS 44/44, commit steward dispatch PASS, pre-commit hook PASS 55/55."
+}

@@ -22,11 +22,30 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from governance.compat.generate_active_session_state import (
+        CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES,
+        validate_aggregate_matches_sources,
+        validate_bootstrap_read_model_matches_sources,
+    )
+except ModuleNotFoundError:  # direct script execution from governance/compat
+    from generate_active_session_state import (  # type: ignore[no-redef]
+        CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES,
+        validate_aggregate_matches_sources,
+        validate_bootstrap_read_model_matches_sources,
+    )
+
+try:
+    from guard_binding_catalog import effective_binding_text
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import effective_binding_text
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 FRONT_DOOR_PATH = "CVF_SESSION_MEMORY.md"
 STATE_PATH = "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+BOOTSTRAP_PATH_STR = "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
 REVIEW_QUEUE_PATH = "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json"
 PAIN_POINT_DIRECTION_PATH = "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md"
 READ_FIRST_PATH = "CVF_SESSION/READ_FIRST.md"
@@ -39,6 +58,7 @@ THIS_SCRIPT_PATH = "governance/compat/check_active_session_state.py"
 REQUIRED_STATIC_FILES = (
     FRONT_DOOR_PATH,
     STATE_PATH,
+    BOOTSTRAP_PATH_STR,
     REVIEW_QUEUE_PATH,
     PAIN_POINT_DIRECTION_PATH,
     READ_FIRST_PATH,
@@ -65,6 +85,18 @@ LHW_FILENAME_PATTERN = re.compile(r"LHW(?P<wave>\d+)", re.IGNORECASE)
 HANDOFF_FILENAME_PATTERN = re.compile(
     r"AGENT_HANDOFF(?:_V\d+_\d{4}-\d{2}-\d{2})?\.md"
 )
+NEXT_ALLOWED_MOVE_TOKEN_PATTERN = re.compile(
+    r"\b("
+    r"DIR-T\d+[A-Za-z0-9-]*|"
+    r"MEMCON-T\d+[A-Za-z0-9-]*|"
+    r"LPCI2-[A-Za-z0-9-]*|"
+    r"DT-CVF-T\d+[A-Za-z0-9-]*|"
+    r"PL-S\d+[A-Za-z0-9-]*|"
+    r"Policy_Local|"
+    r"EC(?:-\d+)?|"
+    r"DEP\d+[A-Za-z0-9-]*"
+    r")\b"
+)
 
 
 def _extract_markdown_section(text: str, heading: str) -> str:
@@ -81,6 +113,61 @@ def _extract_markdown_section(text: str, heading: str) -> str:
         if capture:
             section.append(line)
     return "\n".join(section)
+
+
+def _next_allowed_move_signature(text: str) -> str | None:
+    if not text:
+        return None
+    match = re.search(r"(?is)next allowed move:\s*(.+)", text)
+    candidate = match.group(1) if match else text
+    token_match = NEXT_ALLOWED_MOVE_TOKEN_PATTERN.search(candidate)
+    if not token_match:
+        return None
+    return token_match.group(1).lower()
+
+
+def _check_next_allowed_move_alignment(
+    state: dict[str, Any] | None,
+    front_door_text: str,
+    active_handoff: str | None,
+) -> list[str]:
+    if not state:
+        return []
+    state_next_allowed = state.get("nextAllowedMove")
+    if not isinstance(state_next_allowed, str):
+        return []
+
+    state_signature = _next_allowed_move_signature(state_next_allowed)
+    if not state_signature:
+        return []
+
+    violations: list[str] = []
+    front_section = _extract_markdown_section(front_door_text, "## Next Allowed Move")
+    front_signature = _next_allowed_move_signature(front_section)
+    if not front_signature:
+        violations.append(
+            f"{FRONT_DOOR_PATH} Next Allowed Move is missing a parser-visible primary next-move token"
+        )
+    elif front_signature != state_signature:
+        violations.append(
+            f"{FRONT_DOOR_PATH} Next Allowed Move primary token `{front_signature}` "
+            f"does not match state nextAllowedMove primary token `{state_signature}`"
+        )
+
+    if active_handoff:
+        handoff_section = _extract_markdown_section(_read_text(active_handoff), "## Next Allowed Move")
+        handoff_signature = _next_allowed_move_signature(handoff_section)
+        if not handoff_signature:
+            violations.append(
+                f"active handoff Next Allowed Move is missing a parser-visible primary next-move token"
+            )
+        elif handoff_signature != state_signature:
+            violations.append(
+                f"active handoff Next Allowed Move primary token `{handoff_signature}` "
+                f"does not match state nextAllowedMove primary token `{state_signature}`"
+            )
+
+    return violations
 
 
 def _latest_closed_lhw_wave(state: dict[str, Any] | None) -> int | None:
@@ -187,8 +274,10 @@ def _is_session_sync_path(path: str) -> bool:
     normalized = path.replace("\\", "/")
     return (
         normalized == "CVF_SESSION_MEMORY.md"
+        or normalized == "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
         or normalized == "CVF_SESSION/ACTIVE_SESSION_STATE.json"
         or normalized == "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json"
+        or normalized.startswith("CVF_SESSION/state/")
         or normalized.startswith("AGENT_HANDOFF")
         or normalized.startswith("CVF_SESSION/handoffs/")
     )
@@ -267,9 +356,25 @@ def _classify() -> dict[str, Any]:
     archive_path = None
     ready_review_items: list[str] = []
 
+    bootstrap_violations: list[str] = []
+    bootstrap_path = REPO_ROOT / BOOTSTRAP_PATH_STR
+    if bootstrap_path.exists():
+        bootstrap_size = bootstrap_path.stat().st_size
+        if bootstrap_size > CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES:
+            bootstrap_violations.append(
+                f"{BOOTSTRAP_PATH_STR} size {bootstrap_size} bytes exceeds "
+                f"CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES "
+                f"{CVF_ACTIVE_SESSION_BOOTSTRAP_READ_MODEL_MAX_BYTES}; "
+                "regenerate with a smaller field set or increase the ceiling"
+            )
+        bootstrap_violations.extend(
+            validate_bootstrap_read_model_matches_sources()
+        )
+
     if state_error:
         state_violations.append(state_error)
     elif state is not None:
+        state_violations.extend(validate_aggregate_matches_sources())
         if state.get("activeSessionFrontDoor") != FRONT_DOOR_PATH:
             state_violations.append("activeSessionFrontDoor must point to CVF_SESSION_MEMORY.md")
         if state.get("activeStateRegistry") != STATE_PATH:
@@ -424,7 +529,7 @@ def _classify() -> dict[str, Any]:
                     for handoff in sorted(set(stale_handoffs))
                 )
 
-    hook_text = _read_text(HOOK_CHAIN_PATH)
+    hook_text = effective_binding_text(HOOK_CHAIN_PATH, _read_text(HOOK_CHAIN_PATH))
     if THIS_SCRIPT_PATH not in hook_text:
         marker_violations[HOOK_CHAIN_PATH] = [THIS_SCRIPT_PATH]
 
@@ -438,16 +543,14 @@ def _classify() -> dict[str, Any]:
         handoff_violations.append(
             f"active handoff registry mismatch: registry={active_handoff}, detected={active_handoffs}"
         )
-    if archive_path:
-        for path in _root_handoff_paths():
-            rel = path.relative_to(REPO_ROOT).as_posix()
-            if rel == active_handoff:
-                continue
-            status = _handoff_status(path) or ""
-            if status.startswith("Status: ARCHIVED"):
-                handoff_violations.append(
-                    f"archived handoff remains at repository root instead of historicalHandoffArchive: {rel}"
-                )
+    for path in _root_handoff_paths():
+        rel = path.relative_to(REPO_ROOT).as_posix()
+        if rel == active_handoff:
+            continue
+        status = _handoff_status(path) or "(no status found)"
+        handoff_violations.append(
+            f"non-active root handoff must be archived or removed: {rel} ({status})"
+        )
 
     # GC-020 In-Place Update Rule: active handoff must contain the current HEAD SHA.
     # For a dedicated handoff-sync commit, the handoff cannot name its own future
@@ -506,9 +609,14 @@ def _classify() -> dict[str, Any]:
                     f"active handoff must reference latest closed LHW wave {latest_marker}"
                 )
 
+    continuity_violations.extend(
+        _check_next_allowed_move_alignment(state, front_door_text, active_handoff)
+    )
+
     compliant = (
         not missing_files
         and not state_violations
+        and not bootstrap_violations
         and not review_queue_violations
         and not continuity_violations
         and not marker_violations
@@ -545,6 +653,8 @@ def _classify() -> dict[str, Any]:
         "parentShaInHandoff": parent_sha_in_handoff,
         "activeHandoffChangedInHead": active_handoff_changed_in_head,
         "handoffSyncCommitOnly": handoff_sync_commit_only,
+        "bootstrapViolations": bootstrap_violations,
+        "bootstrapViolationCount": len(bootstrap_violations),
         "compliant": compliant,
     }
 
@@ -595,6 +705,11 @@ def _print_report(report: dict[str, Any]) -> None:
         print("\nMissing files:")
         for path in report["missingFiles"]:
             print(f"  - {path}")
+
+    if report.get("bootstrapViolations"):
+        print("\nBootstrap read model violations:")
+        for issue in report["bootstrapViolations"]:
+            print(f"  - {issue}")
 
     if report["stateViolations"]:
         print("\nState violations:")

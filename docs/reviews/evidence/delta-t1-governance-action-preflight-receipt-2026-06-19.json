@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceId": "delta-t1-governance-action-preflight-receipt-2026-06-19",
+  "status": "PASS_BOUNDED",
+  "executionBaseHead": "d0dca484",
+  "acceptedMaterialCommit": "156b0610",
+  "tool": "cvf_preflight_governance_action",
+  "contractVersion": "cvf.delta.governanceActionPreflight.v1",
+  "acceptedActionClasses": [
+    "EDIT",
+    "RUN",
+    "COMMIT"
+  ],
+  "assertions": {
+    "allowReceiptAfterPersistence": true,
+    "receiptIdEqualsRequestId": true,
+    "blockProceedClaimFalse": true,
+    "escalateProceedClaimFalse": true,
+    "persistenceFailureFailsClosed": true,
+    "structuredSecretRejected": true,
+    "actionSecretRedacted": true,
+    "rawSecretAbsentFromJson": true,
+    "concurrentWritesSerialized": true,
+    "failedQueuedWriteDoesNotPoisonNextWrite": true,
+    "gammaClassifierPreserved": true,
+    "externalInterceptionClaimed": false
+  },
+  "verification": [
+    {
+      "command": "npx vitest run src/tools/governance-action-preflight.test.ts src/prompt/system-prompt.test.ts --reporter verbose",
+      "result": "PASS_2_FILES_48_TESTS"
+    },
+    {
+      "command": "npm run test:run",
+      "result": "PASS_26_FILES_584_TESTS"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py",
+      "result": "PASS_REVIEWER_FAST_28_OF_28"
+    },
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base d0dca484 --head HEAD",
+      "result": "PASS"
+    }
+  ],
+  "reviewerRepairs": [
+    "reject secret-bearing values in structured context fields",
+    "serialize durable audit writes and recover the queue after a failed write",
+    "add checker-required work-order artifact manifest"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Deterministic invoked MCP preflight component only; no mandatory invocation, action execution, receipt consumption, external interception, provider/live behavior, public readiness, or universal governed-coding control."
+}

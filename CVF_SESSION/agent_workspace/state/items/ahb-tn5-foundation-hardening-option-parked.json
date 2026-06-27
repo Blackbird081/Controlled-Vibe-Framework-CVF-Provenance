@@ -1,0 +1,26 @@
+{
+  "stateOrder": 4,
+  "workspaceItemId": "ahb-tn5-foundation-hardening-option-parked-2026-06-17",
+  "lane": "parked",
+  "itemKind": "parked",
+  "status": "CLOSED_PASS_BOUNDED",
+  "ownerRole": "operator",
+  "route": "SINGLE_AGENT_MULTI_ROLE",
+  "rolePattern": "operator_decision_to_future_dispatch",
+  "phase": "parked",
+  "baseHead": "8cfe709e",
+  "changedSetScope": "Superseded by AHB-Tn.6 combined foundation readiness bundle.",
+  "traceScope": "AHB-Tn.6 closure evidence records template, front-door, checker, and state-source hardening.",
+  "commitOwner": "N/A with reason: no future foundation-hardening commit implied by this parked option item.",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN5_AGENT_WORKSPACE_OPTION_READINESS_FOR_CODEX_2026-06-17.md",
+  "evidencePaths": [
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPTION_READINESS_MATRIX.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json",
+    "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json"
+  ],
+  "claimBoundary": "Further foundation hardening is closed at foundation level only; no runtime/product mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+  "nextMoveImpact": "Superseded by AHB-Tn.6 foundation readiness bundle; future workspace work must use the template and lane taxonomy.",
+  "resumeCondition": "N/A with reason: AHB-Tn.6 absorbed this option at foundation level.",
+  "supersedes": [],
+  "archivePolicy": "Remove from active workspace state only after a future governed foundation-hardening decision is committed and session-sync records the selected path."
+}

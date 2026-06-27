@@ -1,0 +1,5 @@
+{
+  "stateOrder": 651,
+  "stateKey": "assfExternalAgentMetadataReadoutImplementationClosure20260626",
+  "value": "ASSF external-agent metadata readout implementation closed CLOSED_PASS_BOUNDED at material commit 1f93ea33. Artifacts: governance/compat/run_assf_external_agent_metadata_readout.py, governance/compat/test_run_assf_external_agent_metadata_readout.py, docs/reviews/CVF_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md, docs/reviews/CVF_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_COMPLETION_2026-06-26.md, and docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_FOR_CODEX_2026-06-26.md. Boundary: read-only metadata helper only; no adapter behavior, package instance, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration."
+}

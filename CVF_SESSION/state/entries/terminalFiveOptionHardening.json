@@ -1,0 +1,5 @@
+{
+  "stateOrder": 218,
+  "stateKey": "terminalFiveOptionHardening",
+  "value": "CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES at docs/reviews/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_COMPLETION_2026-05-21.md; main commit 4369691d; clean-room public static CI gate PASS 7/7 at public commit 51133d4 after Windows core.longpaths=true checkout retry; public cvf-web npm ci PASS with 12 npm audit advisories recorded; external hosted proof blocked pending operator host target; longer-horizon stability deferred pending scheduled soak profile; secret/auth boundary healthy; public claim audit required no public-sync edit; next move stop."
+}

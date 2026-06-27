@@ -65,7 +65,7 @@ describe('/api/execute governanceTrace receipt enrichment', () => {
         checkTeamQuotaMock.mockReset();
         appendAuditEventMock.mockReset();
         appendCostEventMock.mockReset();
-        process.env = { ...originalEnv, OPENAI_API_KEY: 'test-key' };
+        process.env = { ...originalEnv, OPENAI_API_KEY: 'test-key', CVF_RECEIPT_HMAC_SECRET: 'route-test-signing-secret' };
         evaluateEnforcementMock.mockReturnValue({ status: 'ALLOW', reasons: [], riskGate: { riskLevel: 'R1' } });
         checkTeamQuotaMock.mockResolvedValue({
             exceeded: false,
@@ -87,6 +87,12 @@ describe('/api/execute governanceTrace receipt enrichment', () => {
             output: validOutput,
             provider: 'openai',
             model: 'gpt-4o-mini',
+            executionTime: 123,
+            usage: {
+                inputTokens: 10,
+                outputTokens: 20,
+                totalTokens: 30,
+            },
         });
     });
 
@@ -148,5 +154,35 @@ describe('/api/execute governanceTrace receipt enrichment', () => {
         expect(serialized).not.toContain('BASE_SYSTEM_PROMPT');
         expect(serialized).not.toContain('Create Product Brief for TaskFlow');
         expect(serialized).not.toContain('This response provides a structured recommendation');
+        expect(data.governanceEvidenceReceipt?.runtimeTelemetry).toMatchObject({
+            schemaVersion: 'cvf.runtimeTelemetry.v1',
+            providerLatencyMs: 123,
+            tokenUsage: {
+                inputTokens: 10,
+                outputTokens: 20,
+                totalTokens: 30,
+            },
+            costEstimateSource: 'cvf_model_pricing_table_or_fallback',
+            governanceTraceEntryCount: data.governanceEvidenceReceipt.governanceTrace.length,
+            redactionApplied: true,
+            claimBoundary: 'summary_only_no_raw_prompt_output_key_or_provider_payload',
+        });
+        expect(data.governanceEvidenceReceipt.runtimeTelemetry.routeElapsedMs).toBeGreaterThanOrEqual(0);
+        expect(data.governanceEvidenceReceipt.runtimeTelemetry.estimatedCostUSD).toBeGreaterThan(0);
+        expect(JSON.stringify(data.governanceEvidenceReceipt.runtimeTelemetry)).not.toContain('test-key');
+        expect(data.governanceEvidenceReceipt?.receiptIntegrity).toMatchObject({
+            schemaVersion: 'cvf.receiptIntegrity.v1',
+            canonicalization: 'stable-json-v1',
+            digestAlgorithm: 'sha256',
+            hmacAlgorithm: 'hmac-sha256',
+            signatureStatus: 'SIGNED',
+            externalAnchorStatus: 'NOT_PROVIDED',
+            redactionApplied: true,
+            claimBoundary: 'local_receipt_integrity_only_no_third_party_immutability_without_external_anchor',
+        });
+        expect(data.governanceEvidenceReceipt.receiptIntegrity.receiptHash).toMatch(/^[a-f0-9]{64}$/);
+        expect(data.governanceEvidenceReceipt.receiptIntegrity.signatureDigest).toMatch(/^[a-f0-9]{64}$/);
+        expect(JSON.stringify(data.governanceEvidenceReceipt.receiptIntegrity)).not.toContain('route-test-signing-secret');
+        expect(JSON.stringify(data.governanceEvidenceReceipt.receiptIntegrity)).not.toContain('test-key');
     });
 });

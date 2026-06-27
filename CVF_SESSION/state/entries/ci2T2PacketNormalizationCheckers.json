@@ -1,0 +1,5 @@
+{
+  "stateOrder": 269,
+  "stateKey": "ci2T2PacketNormalizationCheckers",
+  "value": "CLOSED_PASS_BOUNDED at commit 9ea5c98f plus handoff sync 73079521. Implemented governance/compat/check_corpus_packet_source_hash.py, check_corpus_packet_normalized_path.py, and check_corpus_packet_disposition_canonical.py with focused tests and hook/autorun wiring. Completion review: docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md. Pre-T3 packet/template hardening committed at 2ffb93ae."
+}

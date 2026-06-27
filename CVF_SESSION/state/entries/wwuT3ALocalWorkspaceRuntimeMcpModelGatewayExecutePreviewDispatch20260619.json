@@ -1,0 +1,20 @@
+{
+  "stateOrder": 449,
+  "stateKey": "wwuT3ALocalWorkspaceRuntimeMcpModelGatewayExecutePreviewDispatch20260619",
+  "value": {
+    "status": "DISPATCH_READY",
+    "dispatchCommit": "9dff4a1b",
+    "dispatchBaseHead": "7879f23f",
+    "roadmap": "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md",
+    "toolCandidate": "cvf_model_gateway_execute_preview",
+    "checks": [
+      "pre-dispatch autorun PASS on 7879f23f..HEAD",
+      "dispatch commit steward PASS on 7879f23f..HEAD",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Dispatch only for one deterministic MCP Model Gateway execute preview tool. No provider/live calls, secrets/quota, broad MCP gateway, runtime queue/scheduler/daemon, public-sync, production readiness, public readiness, release readiness, external-facing readiness, or runtime enforcement claim.",
+    "nextAllowedMove": "Run pre-implementation on dispatch commit 9dff4a1b, then implement only the bounded WWU-T3A MCP execute preview tool and focused deterministic tests."
+  }
+}

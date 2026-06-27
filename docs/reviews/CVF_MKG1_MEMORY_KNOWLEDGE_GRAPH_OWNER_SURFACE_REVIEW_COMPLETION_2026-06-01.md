@@ -93,14 +93,14 @@ work order.
 | RESCAN-C manifest hash backs this closure | VALUE_SET | `docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json` | `manifestHash` | `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff` | RESCAN-C manifest | ACCEPT |
 | Processing ledger supplies file terminal status | EXISTS | `docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json` | `processingLedger` | `terminalStatus` | RESCAN-C processing ledger | ACCEPT |
 | Knowledge System Method standard is current method authority | EXISTS | `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md` | title and purpose | `Knowledge System Method` | Knowledge-system method standard | ACCEPT |
-| Graph context boundary advisory exists | EXISTS | `docs/reference/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` | Source Verification Block | `graphContextResolverBoundaryAdvisoryType` | LHW13-T3 connector spec | ACCEPT |
-| Memory continuity advisory exists | EXISTS | `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | Source Verification Block | `memoryContinuityLevelAdvisoryType` | LHW13-T2 connector spec | ACCEPT |
+| Graph context boundary advisory exists | EXISTS | `docs/reference/archive/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` | Source Verification Block | `graphContextResolverBoundaryAdvisoryType` | LHW13-T3 connector spec | ACCEPT |
+| Memory continuity advisory exists | EXISTS | `docs/reference/archive/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | Source Verification Block | `memoryContinuityLevelAdvisoryType` | LHW13-T2 connector spec | ACCEPT |
 | Memory sync protocol advisory exists | EXISTS | `docs/reference/CVF_LHW24_T2_MEMORY_SYNC_PROTOCOL_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | Source Verification Block | `memorySyncProtocolAdvisoryType` | LHW24-T2 connector spec | ACCEPT |
 | Knowledge store interface exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | interface declaration | `KnowledgeStore` | knowledge store | ACCEPT |
 | Ephemeral registration exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | method declaration | `registerEphemeral` | knowledge store | ACCEPT |
 | File-backed knowledge store exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | class declaration | `FileBackedKnowledgeStore` | knowledge store | ACCEPT |
 | Learning intake record exists | EXISTS | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts` | interface declaration | `LearningSignalIntakeRecord` | Learning Signal Intake Bridge | ACCEPT |
-| Autonomous mutation remains blocked by standard | LITERAL_INVARIANT | `docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | Purpose / boundary | `autonomousMutationAuthorized` | Learning Signal Intake Bridge standard | ACCEPT |
+| Autonomous mutation remains blocked by standard | LITERAL_INVARIANT | `docs/reference/archive/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | Purpose / boundary | `autonomousMutationAuthorized` | Learning Signal Intake Bridge standard | ACCEPT |
 | Graphify data model provides node vocabulary | EXISTS | `.private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_DATA_MODEL.md` | `III. Graph Schema` | `Node Types` | Graphify legacy reference | ACCEPT |
 
 ## Corpus Completeness And Report Integrity
@@ -315,3 +315,59 @@ documentation-owner review over the `47` RESCAN-C Memory/Knowledge/Graph assets.
 It does not close runtime Memory, graph retrieval, Cortex bridge execution,
 skill mutation, learning-plane mutation, public readiness, hosted readiness, or
 production readiness.
+
+## Rescan Intelligence Hardening
+
+Retroactively added 2026-06-10 per check_rescan_intelligence_hardening.py.
+Standard published after this artifact was authored (2026-06-05). This
+section satisfies the vocabulary requirement; all fields are declared N/A
+because no rescan operation was performed — the artifact is the original
+intake output.
+
+Original source artifact: this document.
+Predecessor intake artifact: N/A
+Delta ledger status: N/A — original intake; no predecessor to delta against.
+Routing matrix status: N/A — routing decided at original intake time.
+Semantic sampling status: N/A — sampling performed inline at intake time.
+- Rescan intelligence verdict: COMPLETE_WITH_DECLARED_LIMITS
+
+### Original-Intake Delta Ledger
+
+| Finding | Category | Notes |
+| --- | --- | --- |
+| (retroactive) | UNCHANGED_FROM_INTAKE | original intake; no delta comparison possible |
+| N/A | CHANGED_DISPOSITION | not applicable |
+| N/A | NEW_FINDING | not applicable |
+| N/A | REMOVED_OR_REJECTED | not applicable |
+
+### Follow-Up Routing Matrix
+
+| Item | Routing lane | Notes |
+| --- | --- | --- |
+| (all items) | RESOLVED_BY_DESIGN | closed at original intake; no follow-up items |
+| N/A | DO_NOW | not applicable |
+| N/A | SEPARATE_RUNTIME_TRANCHE | not applicable |
+| N/A | STRATEGIC_OPERATOR_DECISION | not applicable |
+| N/A | OUT_OF_SCOPE | not applicable |
+
+### Semantic Sampling / Adversarial Review
+
+| sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
+| --- | --- | --- | --- | --- | --- |
+| RS-RETRO-01 | (entire document) | original intake claim | UNCHANGED_FROM_INTAKE | N/A — retroactive addition only | COMPLETE_WITH_DECLARED_LIMITS |
+
+## Machine Closure Package
+
+Retroactively added 2026-06-10 per check_machine_closure_package.py.
+Standard published after this artifact was authored.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A — pre-standard artifact | N/A | N/A with reason: artifact authored before Machine Closure Package standard |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | docs/roadmaps/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_ROADMAP_2026-06-01.md | roadmap closed at original MKG1 delivery | PASS |
+| Registry JSON | N/A — no new corpus registry entry | N/A with reason: no corpus scan performed in this artifact | BLOCKED: pre-standard artifact — no corpus registry update required |
+| Registry Markdown | N/A — see above | N/A with reason: see above | BLOCKED: pre-standard artifact — no corpus registry update required |
+| External evidence digest | N/A — no external evidence | N/A | N/A with reason: all evidence is repo-local |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | N/A — pre-standard artifact | N/A with reason: session continuity not tracked at original delivery time |

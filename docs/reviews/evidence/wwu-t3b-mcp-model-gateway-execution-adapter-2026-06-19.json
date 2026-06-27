@@ -1,0 +1,18 @@
+{
+  "evidenceId": "wwu-t3b-mcp-model-gateway-execution-adapter-2026-06-19",
+  "status": "CLOSED_PASS_BOUNDED",
+  "executionBaseHead": "b489ffba",
+  "tool": "cvf_model_gateway_execute",
+  "contractVersion": "cvf.mcpModelGatewayExecuteAdapter.wwuT3B.v1",
+  "executorBoundary": "injected_provider_execution_bridge_compatible_port",
+  "defaultExecutorConfigured": false,
+  "providerLiveCallPerformed": false,
+  "rawCredentialAccepted": false,
+  "checks": {
+    "mcpFocusedTests": "PASS_6_OF_6",
+    "mcpBuild": "PASS",
+    "modelGatewayCheck": "PASS",
+    "providerExecutionBridgeTests": "PASS_21_OF_21"
+  },
+  "claimBoundary": "Module adapter only. No live provider composition, secret or quota use, runtime queue, public-sync, broad runtime enforcement, or readiness claim."
+}

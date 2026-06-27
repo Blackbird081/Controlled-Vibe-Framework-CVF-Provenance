@@ -1,0 +1,5 @@
+{
+  "stateOrder": 179,
+  "stateKey": "cWorkflowScaleViProof",
+  "value": "CLOSED_PASS_BOUNDED. Added deterministic workflow bindings for strategy_analysis, marketing_campaign_wizard, and brand_voice; registered resolver bindings; added focused resolver and Alibaba live route proof. Verification: workflow-resolver PASS 6/6; cvf-web check PASS; live Alibaba qwen-turbo proof PASS with receipts strategy_analysis=rcpt-env-mpkllvuc-ob4af6, marketing_campaign_wizard=rcpt-env-mpklmhlb-sj4uju, brand_voice=rcpt-env-mpklmr3d-pkhoeb. First live run diagnostic: test_harness_contract_mismatch because route spreads workflow fields at response root, corrected before rerun. Completion: docs/reviews/CVF_C_WORKFLOW_SCALE_VI_PROOF_COMPLETION_2026-05-25.md. Boundary: exactly three workflow bindings only; no /api/execute route behavior changes, provider routing/adapter changes, prompts, receipt envelopes, workflow transition blocking, public-sync, hosted readiness, production readiness, broad workflow platform claims, or freeze release."
+}

@@ -1,0 +1,20 @@
+{
+  "registryOrder": 38,
+  "id": "dscp-t11-profile-aware-pipeline-harness-test",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF CPF DSCP-T11 profile-aware pipeline harness tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.aware.pipeline.harness.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "DSCP-T11",
+  "scanDate": "2026-06-10",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_WORKER_RETURN_2026-06-10.md",
+  "notes": "DSCP-T11 profile-aware pipeline harness. 4 vitest assertions proving profile metadata and gate keys flow through descriptor to ECO/LPF package without content release and without cross-profile bleed."
+}

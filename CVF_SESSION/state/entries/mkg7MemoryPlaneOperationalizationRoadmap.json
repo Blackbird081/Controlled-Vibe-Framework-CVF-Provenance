@@ -1,0 +1,5 @@
+{
+  "stateOrder": 90,
+  "stateKey": "mkg7MemoryPlaneOperationalizationRoadmap",
+  "value": "CLOSED_PASS_BOUNDED. All T1-T7 complete. Roadmap docs/roadmaps/CVF_MKG7_MEMORY_PLANE_OPERATIONALIZATION_ROADMAP_2026-06-01.md. T1 contract, T2 readout-eligibility policy, T3 advisory wire-in, T4 retrieval attribution, T5 fail-closed durable store regression tests, T6 derived-graph boundary, T7 decision (no live proof required). Committed through 7564f57b."
+}

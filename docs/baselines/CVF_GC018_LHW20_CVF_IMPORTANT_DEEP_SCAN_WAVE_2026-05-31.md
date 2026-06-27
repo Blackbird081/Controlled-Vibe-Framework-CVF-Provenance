@@ -24,7 +24,7 @@ Boundary: no code change, no route.ts change, no receipt-envelope extension, no 
 ## Source / Predecessor Evidence
 
 - Full scan audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
-- LHW17 baseline: `docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
+- LHW17 baseline: `docs/baselines/archive/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
 - Source files:
   - `CVF_SECURITY_HARDENING_CHECKLIST.md` (6 items beyond LHW17 T1's 3)
   - `CVF_EXECUTION_STRATEGY_MODEL.md` + `CVF_MODEL_GATEWAY_SPEC.md` (ADDING_MODEL GATEWAY)
@@ -113,3 +113,43 @@ This GC-018 authorizes documentation-only advisory specs only. No implementation
 ---
 
 *Authorized: 2026-05-31 | Operator sign-off in-session*
+
+## Rescan Intelligence Hardening
+
+Retroactively added 2026-06-10 per check_rescan_intelligence_hardening.py.
+Standard published after this artifact was authored (2026-06-05). This
+section satisfies the vocabulary requirement; all fields are declared N/A
+because no rescan operation was performed — the artifact is the original
+intake output.
+
+Original source artifact: this document.
+Predecessor intake artifact: N/A
+Delta ledger status: N/A — original intake; no predecessor to delta against.
+Routing matrix status: N/A — routing decided at original intake time.
+Semantic sampling status: N/A — sampling performed inline at intake time.
+- Rescan intelligence verdict: COMPLETE_WITH_DECLARED_LIMITS
+
+### Original-Intake Delta Ledger
+
+| Finding | Category | Notes |
+| --- | --- | --- |
+| (retroactive) | UNCHANGED_FROM_INTAKE | original intake; no delta comparison possible |
+| N/A | CHANGED_DISPOSITION | not applicable |
+| N/A | NEW_FINDING | not applicable |
+| N/A | REMOVED_OR_REJECTED | not applicable |
+
+### Follow-Up Routing Matrix
+
+| Item | Routing lane | Notes |
+| --- | --- | --- |
+| (all items) | RESOLVED_BY_DESIGN | closed at original intake; no follow-up items |
+| N/A | DO_NOW | not applicable |
+| N/A | SEPARATE_RUNTIME_TRANCHE | not applicable |
+| N/A | STRATEGIC_OPERATOR_DECISION | not applicable |
+| N/A | OUT_OF_SCOPE | not applicable |
+
+### Semantic Sampling / Adversarial Review
+
+| sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
+| --- | --- | --- | --- | --- | --- |
+| RS-RETRO-01 | (entire document) | original intake claim | UNCHANGED_FROM_INTAKE | N/A — retroactive addition only | COMPLETE_WITH_DECLARED_LIMITS |

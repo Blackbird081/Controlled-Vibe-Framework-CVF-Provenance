@@ -1,0 +1,5 @@
+{
+  "stateOrder": 662,
+  "stateKey": "stateBrT1Dispatch20260625",
+  "value": "STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size Refactor is DISPATCHED_TO_WORKER at material commit 06d54319. Dispatch artifacts: docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_2026-06-25.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md. Worker mode is WORKER_MUST_NOT_COMMIT. Claude may update only the authorized active-session generator/checker/test/front-door/read-model paths and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. ASSF-PIC-T1 remains held until this refactor closes."
+}

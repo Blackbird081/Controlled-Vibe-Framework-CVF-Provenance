@@ -1,0 +1,29 @@
+{
+  "stateOrder": 675,
+  "stateKey": "wodsT2DispatchAndWorkerReturnScaffoldHardeningClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "397d1fe4",
+    "dispatchMaterialCommit": "77f795be",
+    "sessionSyncParent": "397d1fe4",
+    "baseline": "docs/baselines/CVF_GC018_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_FOR_CLAUDE_2026-06-26.md",
+    "workerReturn": "docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_WORKER_RETURN_2026-06-26.md",
+    "completionReview": "docs/reviews/CVF_WODS_T2_DISPATCH_AND_WORKER_RETURN_SCAFFOLD_HARDENING_COMPLETION_2026-06-26.md",
+    "effectivenessVerdict": "IMPROVED_BUT_NOT_SOLVED",
+    "reviewerRepair": "Corrected focused pytest evidence row from 25 passed to reproduced 19 passed before closure.",
+    "acceptedChanges": [
+      "worker-return scaffold External Knowledge Intake Routing Field/Value table shape",
+      "focused scaffold table-shape regression test",
+      "work-order template review-section and separated material/session-sync range guidance",
+      "rescan guard maintenance-phrase filtering and focused regression test",
+      "literal-format gotchas 21 and 22"
+    ],
+    "residualDefects": [
+      "recursive keyword-guard self-reference risk remains pattern-based rather than semantic",
+      "review-section template guidance remains advisory prose rather than a new checker"
+    ],
+    "nextAction": "Operator/Codex may choose a fresh GC-018/source-verified follow-up for residual WODS defects; ASSF-PIC-T3 remains held.",
+    "forbiddenExpansion": "No ASSF-PIC-T3 dispatch, package instance creation, certification decision, generated-index mutation, registry-source mutation, resolver mutation, Web runtime, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, package integration, worker commit, or session-sync by worker."
+  }
+}

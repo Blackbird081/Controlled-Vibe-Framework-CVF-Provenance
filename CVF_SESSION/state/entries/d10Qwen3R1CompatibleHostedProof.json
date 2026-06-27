@@ -1,0 +1,5 @@
+{
+  "stateOrder": 248,
+  "stateKey": "d10Qwen3R1CompatibleHostedProof",
+  "value": "CLOSED_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_PASS at docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md; GC-018 docs/baselines/CVF_GC018_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md; work order docs/work_orders/CVF_WO_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md. Public repo commit 811e59f6 pushed the Qwen3 thinking adapter split. Public providers test PASS 42/42 and public cvf-web check PASS. Private providers test PASS 42/42, cvf-web check PASS, local router preflight for Alibaba R1 PASS. Single hosted proof returned HTTP 200 success=true decision/routing/enforcement ALLOW evidenceMode live provider alibaba model qwen3-235b-a22b-thinking-2507 receipt rcpt-env-mpigxtmn-pml5ky trace env-mpigxtmn-pml5ky outputLength 4057 rawSecretPrinted=false. Boundary: one R1-compatible hosted proof only; no Alibaba R2 routing, broad Qwen3 stability, hosted SaaS readiness, production readiness, public release readiness, or freeze release."
+}

@@ -28,6 +28,11 @@ export function SkillDetailView({ skill }: { skill: Skill }) {
                     <div>
                         <div className="flex items-center gap-2 mb-2">
                             <span className="rounded-full bg-indigo-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">{skill.domain}</span>
+                            {skill.assfProjectionClass === 'CERTIFIED_PACKAGE_PROJECTION' && (
+                                <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                                    Certified ASSF
+                                </span>
+                            )}
                             {skill.difficulty && (
                                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
                                     {t('skills.difficultyLabel')}: {skill.difficulty}
@@ -39,6 +44,15 @@ export function SkillDetailView({ skill }: { skill: Skill }) {
                             <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 dark:text-white/55">
                                 {skill.summary}
                             </p>
+                        )}
+                        {skill.assfProjectionClass === 'CERTIFIED_PACKAGE_PROJECTION' && (
+                            <div className="mt-4 grid gap-1 rounded-2xl border border-emerald-200/80 bg-emerald-50/80 p-3 text-xs text-emerald-950 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-100">
+                                <div className="font-semibold">ASSF package projection</div>
+                                <div>Certification: {skill.certificationState}</div>
+                                <div>UAT: {skill.uatState}</div>
+                                <div>Adapter: {skill.externalCliMcpDisposition}</div>
+                                {skill.canonicalRoot && <div className="break-all">Source: {skill.canonicalRoot}</div>}
+                            </div>
                         )}
                     </div>
                     <div className="flex items-center gap-2">

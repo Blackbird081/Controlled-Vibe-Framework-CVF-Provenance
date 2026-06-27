@@ -18,6 +18,16 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from governance.compat.guard_behavior_discussion import strip_marked_discussion_sections
+except ModuleNotFoundError:
+    from guard_behavior_discussion import strip_marked_discussion_sections
+
+try:
+    from guard_binding_catalog import has_binding_marker
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import has_binding_marker
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
@@ -83,6 +93,48 @@ APPLICABILITY_PATTERNS = (
     r"\bknowledge absorption\b",
     r"\bintake refresh\b",
 )
+
+RESCAN_GUARD_MAINTENANCE_NOUNS = (
+    r"hardening|guard(?:'s)?|checker|standard|section|body|block|verdict|"
+    r"packet|rule|filtering|phrase|phrasing|exclusion|defect|trigger|"
+    r"maintenance|false[- ]trigger"
+)
+RESCAN_SELF_REFERENCE_COMPOUND_RE = re.compile(
+    rf"\brescan\b(?:[\s,-]+\w+){{0,3}}[\s,-]+(?:{RESCAN_GUARD_MAINTENANCE_NOUNS})\b"
+    rf"|\b(?:{RESCAN_GUARD_MAINTENANCE_NOUNS})\b(?:[\s,-]+\w+){{0,3}}[\s,-]+\brescan\b",
+    re.I,
+)
+
+NA_LINE_RE = re.compile(r"(?im)^\s*[-|].{0,40}N/A\s+with\s+reason\b")
+INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
+
+
+def _is_in_code_fence(lines: list[str], target_idx: int) -> bool:
+    """Return True if the line at target_idx is inside a markdown code fence."""
+    fence_count = 0
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            fence_count += 1
+        if i == target_idx:
+            break
+    return (fence_count % 2) == 1
+
+
+def _strip_non_signal_text(text: str) -> str:
+    """Remove code fences, inline-code/cited-path spans, and N/A-with-reason
+    lines before bare-keyword applicability matching, so incidental trigger
+    words cited as evidence or declared non-applicable do not count as real
+    rescan-applicability signal."""
+    lines = text.splitlines()
+    kept: list[str] = []
+    for idx, line in enumerate(lines):
+        if _is_in_code_fence(lines, idx):
+            continue
+        if NA_LINE_RE.match(line):
+            continue
+        kept.append(INLINE_CODE_RE.sub(" ", line))
+    return "\n".join(kept)
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -194,9 +246,82 @@ def _extract_section(text: str, heading: str) -> str:
     return text[start:start + len(heading) + match.start()]
 
 
+def _remove_section(text: str, heading: str) -> str:
+    start = text.find(heading)
+    if start == -1:
+        return text
+    match = re.search(r"\n##\s+", text[start + len(heading):])
+    end = len(text) if not match else start + len(heading) + match.start()
+    return text[:start] + "\n" + text[end:]
+
+
 def _extract_verdict(section: str) -> str | None:
     match = re.search(r"^\s*-\s*Rescan intelligence verdict:\s*([A-Z_]+)\s*$", section, re.M)
     return match.group(1) if match else None
+
+
+def _has_concrete_not_applicable_reason(section: str) -> bool:
+    if not re.search(r"\bN/A\s+with\s+reason\b|\bReason:\s*\S", section, re.I):
+        return False
+    lowered = section.lower()
+    return not any(token in lowered for token in ("<reason", "todo", "tbd", "confirm later"))
+
+
+def _has_real_rescan_signal_outside_section(path: str, text: str) -> bool:
+    if path.startswith("docs/work_orders/"):
+        path_haystack = path.lower().replace("_", " ").replace("-", " ")
+        if any(re.search(pattern, path_haystack, re.I) for pattern in APPLICABILITY_PATTERNS):
+            return True
+    signal_text = _strip_non_signal_text(
+        strip_marked_discussion_sections(_remove_section(text, REQUIRED_SECTION))
+    )
+    non_rescan_discussion_phrases = (
+        "rescan guard",
+        "rescan standard",
+        "rescan checker",
+        "rescan section",
+        "rescan block",
+        "rescan matrices",
+        "rescan compact",
+        "rescan test",
+        "rescan tests",
+        "scaffold/rescan",
+        "non-rescan",
+        "non rescan",
+        "not a rescan",
+        "real rescan output",
+        "real rescan outputs",
+        "actual rescan output",
+        "actual rescan outputs",
+        "true rescan output",
+        "true rescan outputs",
+        "rescan/intake output",
+        "rescan/intake outputs",
+        "intake refresh output",
+        "intake-refresh output",
+    )
+    signal_text = "\n".join(
+        line
+        for line in signal_text.splitlines()
+        if not any(phrase in line.lower() for phrase in non_rescan_discussion_phrases)
+    )
+    lowered = re.sub(r"rescan[- ]intelligence(?:[- ]hardening)?", "", signal_text.lower())
+    lowered = re.sub(r"check_rescan_intelligence_hardening\.py", " ", lowered)
+    lowered = re.sub(
+        r"\brescan[- ](?:guard|checker|standard|section|block|verdict|packet|rule|hardening)\b",
+        " ",
+        lowered,
+    )
+    lowered = re.sub(
+        r"\b(?:real|actual|true)\s+rescan(?:/intake)?\s+(?:output|outputs|artifact|artifacts)\b",
+        " ",
+        lowered,
+    )
+    lowered = re.sub(r"\bnot\s+(?:a|itself\s+a)\s+rescan[^.\n]*", " ", lowered)
+    lowered = re.sub(r"\bnot\s+performing\s+a\s+rescan[^.\n]*", " ", lowered)
+    for _ in range(3):
+        lowered = RESCAN_SELF_REFERENCE_COMPOUND_RE.sub(" ", lowered)
+    return any(re.search(pattern, lowered, re.I) for pattern in APPLICABILITY_PATTERNS)
 
 
 def _is_active_markdown(path: str) -> bool:
@@ -220,7 +345,8 @@ def _is_applicable_output(path: str, text: str) -> bool:
     if path.startswith("docs/work_orders/"):
         path_haystack = path.lower().replace("_", " ").replace("-", " ")
         return any(re.search(pattern, path_haystack, re.I) for pattern in APPLICABILITY_PATTERNS)
-    lowered = re.sub(r"rescan[- ]intelligence(?:[- ]hardening)?", "", text.lower())
+    signal_text = _strip_non_signal_text(strip_marked_discussion_sections(text))
+    lowered = re.sub(r"rescan[- ]intelligence(?:[- ]hardening)?", "", signal_text.lower())
     return any(re.search(pattern, lowered, re.I) for pattern in APPLICABILITY_PATTERNS)
 
 
@@ -246,7 +372,7 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
 
 
 def _validate_binding(path: str, text: str) -> list[dict[str, str]]:
-    if THIS_SCRIPT_PATH in text:
+    if has_binding_marker(path, THIS_SCRIPT_PATH, text):
         return []
     return [{"path": path, "type": "binding_missing", "message": f"must cite `{THIS_SCRIPT_PATH}`"}]
 
@@ -265,20 +391,33 @@ def check_text(path: str, text: str) -> list[dict[str, str]]:
         return violations
 
     section = _extract_section(text, REQUIRED_SECTION)
-    for field in REQUIRED_FIELDS:
-        if field not in section:
-            _add(violations, path, "rescan_hardening_field_missing", f"missing field `{field}`")
-
     verdict = _extract_verdict(section)
     if verdict not in ALLOWED_VERDICTS:
         _add(violations, path, "rescan_verdict_invalid", "missing or invalid rescan intelligence verdict")
-    if verdict == "NOT_APPLICABLE_WITH_REASON" and re.search(r"\bcomplete_verified\b|closed_pass", text, re.I):
-        _add(
-            violations,
-            path,
-            "not_applicable_used_for_completion_claim",
-            "completion or complete-rescan claims cannot use NOT_APPLICABLE_WITH_REASON",
-        )
+
+    if verdict == "NOT_APPLICABLE_WITH_REASON":
+        if not _has_concrete_not_applicable_reason(section):
+            _add(
+                violations,
+                path,
+                "not_applicable_reason_missing",
+                "NOT_APPLICABLE_WITH_REASON requires a concrete N/A with reason statement",
+            )
+        if _has_real_rescan_signal_outside_section(path, text):
+            _add(
+                violations,
+                path,
+                "not_applicable_used_for_rescan_output",
+                "rescan/intake output cannot use compact NOT_APPLICABLE_WITH_REASON",
+            )
+        lowered = section.lower()
+        if any(token in lowered for token in ("<path", "<reason", "<finding", "todo", "tbd", "confirm later")):
+            _add(violations, path, "placeholder_residue", "rescan intelligence block contains placeholder residue")
+        return violations
+
+    for field in REQUIRED_FIELDS:
+        if field not in section:
+            _add(violations, path, "rescan_hardening_field_missing", f"missing field `{field}`")
 
     required_headings = (
         "### Original-Intake Delta Ledger",

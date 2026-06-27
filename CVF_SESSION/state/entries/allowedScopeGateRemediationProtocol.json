@@ -1,0 +1,5 @@
+{
+  "stateOrder": 76,
+  "stateKey": "allowedScopeGateRemediationProtocol",
+  "value": "ENFORCED. Commit 343b43bd adds mandatory gate-failure remediation to AGENTS.md, the autorun workflow standard, the work-order template, the closure-quality standard, and check_work_order_dispatch_quality.py. Machine-gate failures inside a dispatched work order's Allowed scope must be repaired and rerun, not escalated as operator preference questions. Escalation remains required for scope expansion, claim-boundary changes, HOLD_* release, risk changes, public-sync, live/provider proof, secrets/quota, forbidden paths, or destructive/irreversible operations."
+}

@@ -1,0 +1,28 @@
+{
+  "registryOrder": 74,
+  "id": "model-gateway-c02-p1-existing-routing-touchpoints",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P1 existing routing touchpoints",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts",
+    "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phase2b-runtime-coherence.test.ts"
+  ],
+  "fileCount": 4,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "ROUTING_POLICY_CONTRACT_VERSION (unchanged)",
+    "PolicyDecision (not introduced - name collision avoided)",
+    "Guard Contract phase2b consumer edit (not performed)",
+    "provider/API/live proof (not authorized for P1)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P1",
+  "scanDate": "2026-06-14",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md",
+  "notes": "Existing source/test touchpoints cited by the Model Gateway C-02 P1 closure packet. Coverage documents additive routing-policy integration, barrel export, focused routing tests, and the unedited Guard Contract phase2b external consumer."
+}

@@ -1,0 +1,41 @@
+{
+  "registryOrder": 107,
+  "id": "wwu-t2-cvf-web-workspace-operator-dashboard-read-model",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF WWU-T2 cvf-web workspace operator dashboard read model dispatch",
+  "scopePaths": [
+    "docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md",
+    "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md",
+    "docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+    "DESIGN.md",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/"
+  ],
+  "fileCount": 8,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "wwu-t2-read-model-dispatch",
+      "summary": "WWU-T2 dispatch authorizes a read-only CVF Web Workspace operator dashboard/read model from governed continuity sources.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Execute WWU-T2 implementation inside the source-verified work order boundary.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "chat currentMode as activeSessionMode",
+    "api sessions as CVF active session state",
+    "workspace dashboard as Local Runtime MCP enforcement",
+    "Web read model as provider live proof"
+  ],
+  "nextScanRecommendation": "WWU-T2 material implementation closure",
+  "scanWave": "WWU-T2",
+  "scanDate": "2026-06-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md",
+  "notes": "Dispatch-only packet; no cvf-web product source changed in this authoring batch."
+}

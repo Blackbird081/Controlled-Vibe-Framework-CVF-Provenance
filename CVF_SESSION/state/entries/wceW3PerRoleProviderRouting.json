@@ -1,0 +1,5 @@
+{
+  "stateOrder": 150,
+  "stateKey": "wceW3PerRoleProviderRouting",
+  "value": "CLOSED_PASS_BOUNDED. Contract cvf.perRoleProviderRouting.wce.w3.v1. parseProviderMap() + resolveProviderForRole() in execute.client.ts; --providers flag on execute + workflow commands; all tests PASS; TypeScript PASS; live receipt rcpt-env-mpqlrk1z-xhs73v (deepseek via per-role routing, ALLOW, live). No route.ts change. No MCP server change."
+}

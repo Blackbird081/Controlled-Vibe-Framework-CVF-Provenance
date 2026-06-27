@@ -1,0 +1,5 @@
+{
+  "stateOrder": 408,
+  "stateKey": "roadmapStateReconciliationT2Dispatch20260616",
+  "value": "Roadmap State Reconciliation RSF-T2 dispatch is committed at 221a5f08. Dispatch packet: docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_FOR_CLAUDE_2026-06-16.md. GC-018: docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T2_STALE_ROADMAP_REDISPATCH_GUARD_2026-06-16.md. Claude may execute as WORKER_MUST_NOT_COMMIT; Codex remains reviewer and closer. Claim boundary: narrow dispatch-quality stale-roadmap redispatch guard only; no runtime/provider/public/legacy broad scan or product implementation is authorized."
+}

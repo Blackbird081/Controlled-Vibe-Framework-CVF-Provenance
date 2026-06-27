@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
         const limitIdentity = session?.userId
             ?? session?.user
             ?? (serviceIdentity || 'service');
-        const limitResult = limiter.consume(request, limitIdentity, body.provider);
+        const limitResult = await limiter.consume(request, limitIdentity, body.provider);
         if (!limitResult.allowed) {
             return NextResponse.json(
                 { success: false, error: 'Too many requests. Please slow down.' },

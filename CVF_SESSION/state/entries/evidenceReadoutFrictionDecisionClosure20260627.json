@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1244,
+  "stateKey": "evidenceReadoutFrictionDecisionClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "7a973124",
+    "roadmap": "docs/roadmaps/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_FOR_CODEX_2026-06-27.md",
+    "reference": "docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md",
+    "completionReview": "docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md",
+    "nextAllowedMove": "Optionally open an EVIDENCE_READOUT_QUICK_PACKET non-runtime template lane through fresh GC-018/source-verified work order, or select another high-value CVF foundation roadmap before implementation.",
+    "claimBoundary": "Evidence/readout source-selection decision only; no runtime/UI/dashboard/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push."
+  }
+}

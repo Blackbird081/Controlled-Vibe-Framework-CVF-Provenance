@@ -1,0 +1,5 @@
+{
+  "stateOrder": 82,
+  "stateKey": "mkg2DeferredRuntimeCandidateTriage",
+  "value": "REVIEW_READY. Worker review filed at docs/reviews/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_REVIEW_2026-06-01.md. GC-018 docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md, roadmap docs/roadmaps/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_ROADMAP_2026-06-01.md, work order docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md. Scope: classify the 21 MKG1 deferred assets into source-verified future work packets. Boundary: no implementation, live proof, graph retrieval, reinjection, skill mutation, public-sync, push, or provider use."
+}

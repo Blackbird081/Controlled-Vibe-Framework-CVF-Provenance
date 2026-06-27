@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "GGL-T1",
+  "status": "CLOSED_PASS_BOUNDED",
+  "date": "2026-06-19",
+  "dispatchCommit": "7de440d2",
+  "executionBaseHead": "309e9f57",
+  "materialCommit": "b71bde91",
+  "closureBaseHead": "969455b3",
+  "commandCounts": {
+    "reviewerFast": 31,
+    "preCommit": 54,
+    "prePush": 76,
+    "autorunCommon": 43,
+    "preImplementationTotal": 44
+  },
+  "observedTimingSeconds": {
+    "preChangeDirectAutorunApprox": 9.7,
+    "preChangeDuplicateStewardApprox": 9.9,
+    "postChangeParallelAutorun": 3.35,
+    "postChangeExactReuseStewardTotal": 1.2,
+    "postChangeSerialAutorun": 9.19
+  },
+  "checks": [
+    "focused pytest PASS 19/19",
+    "parallel pre-implementation PASS 44/44",
+    "serial pre-implementation PASS 44/44",
+    "exact local PASS receipt reuse PASS",
+    "stale and malformed receipt validation tests PASS",
+    "core guard and AOT checks PASS"
+  ],
+  "receipt": {
+    "schema": "cvf.autorun.pass-receipt.v1",
+    "location": ".cvf/runtime/autorun-receipts/",
+    "tracked": false,
+    "canonicalAuthority": false,
+    "fallback": "full autorun execution on any mismatch or error"
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Host-specific bounded local orchestration optimization only; no checker suppression, hook bypass, runtime governance, provider/live behavior, readiness, universal speedup, or universal governed-coding control claim."
+}

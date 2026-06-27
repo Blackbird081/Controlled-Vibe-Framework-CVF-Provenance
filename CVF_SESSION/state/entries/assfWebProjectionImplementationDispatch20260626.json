@@ -1,0 +1,5 @@
+{
+  "stateOrder": 640,
+  "stateKey": "assfWebProjectionImplementationDispatch20260626",
+  "value": "ASSF-WEBPROJ-T1 Web projection implementation dispatch is DISPATCH_READY at material commit 0ba6eaee. Dispatch artifacts: docs/baselines/CVF_GC018_ASSF_WEB_PROJECTION_IMPLEMENTATION_2026-06-26.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md. The work order authorizes bounded Web read-model, generator, generated public index, display, and focused-test implementation only within Write Ownership, with WORKER_MUST_NOT_COMMIT. Boundary: no ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, package instance creation, certification decision, lifecycle mutation, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, package integration, or session-sync inside material implementation range."
+}

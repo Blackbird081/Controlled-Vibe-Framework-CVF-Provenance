@@ -1,0 +1,5 @@
+{
+  "stateOrder": 58,
+  "stateKey": "tm1TruthModelCalibration",
+  "value": "CLOSED_PASS_BOUNDED. cvf.truthModelCalibration.tm1.v1 \u2014 runCalibrationSession() with APE-1 preflight gate + TruthModelContract.build() + TruthScoreContract.score(). LHW17 T3 Step 6 closed. isProvisional=true always. runtimeCalibrationAuthorized=false. 67 test files, 1644/1644 PASS. TypeScript PASS. GC-018 docs/baselines/CVF_GC018_TM1_TRUTH_MODEL_CALIBRATION_2026-05-31.md."
+}

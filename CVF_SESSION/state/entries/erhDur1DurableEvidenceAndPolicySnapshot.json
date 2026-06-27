@@ -1,0 +1,5 @@
+{
+  "stateOrder": 119,
+  "stateKey": "erhDur1DurableEvidenceAndPolicySnapshot",
+  "value": "CLOSED_PASS_BOUNDED. Claude implemented DUR1 under WORKER_MUST_NOT_COMMIT; Codex reviewed and closed bounded. closureBaseHead=49e6725a. Artifacts: docs/reviews/CVF_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_COMPLETION_2026-06-05.md, docs/reference/CVF_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_WORKFLOW_CHAIN_2026-06-05.md, docs/reference/CVF_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_LEDGER_2026-06-05.md, governance/compat/check_erh_durable_evidence_policy_snapshot.py. DUR1 moves control-plane event default storage from OS tmp to .cvf/runtime, adds bounded local policy snapshot registry delegation, focused tests, checker/hook wiring, and GC-052 interlock. Original DUR2 verdict DUR2_NOT_NEEDED_NOW was superseded by operator explicit authorization 2026-06-05. Boundary: no external DB/Redis, distributed durability, rate limiter, provider-risk config, package/lockfile edit, public-sync, live proof, hosted readiness, production readiness, public readiness, or production-grade durability claim."
+}

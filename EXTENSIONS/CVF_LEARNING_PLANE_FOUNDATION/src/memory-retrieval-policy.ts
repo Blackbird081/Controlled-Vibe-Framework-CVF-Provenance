@@ -90,6 +90,7 @@ export function kgrNodeToMemoryCandidate(
     content: node.description ?? "KGR output is advisory evidence only",
     createdAt: Date.parse(node.createdAt) || 0,
     auditTrust: node.confidence,
+    // G-GM-08 Compliance Guard: non-compliant nodes enter disputed lifecycle and are excluded
     lifecycleState: node.governanceTag === "CVF_COMPLIANT" ? "semantic" : "disputed",
   };
 }
@@ -223,6 +224,7 @@ export function evaluateRetrievalRequest(
       excluded.push({ id: candidate.id, reason: "out_of_scope" });
       return false;
     }
+    // G-GM-06 Confidentiality Guard: secret-bearing candidates are excluded from retrieval
     if (candidate.containsSecret === true) {
       excluded.push({ id: candidate.id, reason: "privacy_filtered" });
       return false;

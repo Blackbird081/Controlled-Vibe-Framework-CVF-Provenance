@@ -41,7 +41,7 @@ advisory-only feedback surface.
 - Prior MLW8 closure:
   `docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md`.
 - Public export standard:
-  `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`.
+  `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`.
 - Work-order template:
   `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`.
 
@@ -213,7 +213,7 @@ additional questions for allowed-scope actions.
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts` - existing MLW8 owner.
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-cost-quota.ts` - cost quota owner.
 - `scripts/run_cvf_release_gate_bundle.py` - release-quality live governance proof owner.
-- `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` - public export disposition owner.
+- `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` - public export disposition owner.
 - `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md` - closure-quality owner.
 
 ## 6. Pre-Flight Checks
@@ -246,7 +246,7 @@ Existing paths verified:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-cost-quota.ts`
 - `scripts/run_cvf_release_gate_bundle.py`
-- `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
+- `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
 - `docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
 
 Planned new paths clearly marked as new:
@@ -279,8 +279,8 @@ Runtime/source facts verified from current source or canonical contract:
 | RUNTIME_BEHAVIOR - release gate live E2E exists | `scripts/run_cvf_release_gate_bundle.py` | Lines 230-271 | `check_e2e` | Release gate bundle | ACCEPT |
 | RUNTIME_BEHAVIOR - release gate emits JSON | `scripts/run_cvf_release_gate_bundle.py` | Lines 318-328 | `json_output` | Release gate bundle | ACCEPT |
 | EXISTS - Alibaba API key aliases exist | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/alibaba-env.ts` | Lines 1-18 | `resolveAlibabaApiKey` | Alibaba env resolver | ACCEPT |
-| EXISTS - public export disposition values exist | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 29-36 | `Public Export Disposition` | Public export standard | ACCEPT |
-| RUNTIME_BEHAVIOR - public export requires remote, commit, and path evidence | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 53-63 | `EXPORTED` | Public export standard | ACCEPT |
+| EXISTS - public export disposition values exist | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 29-36 | `Public Export Disposition` | Public export standard | ACCEPT |
+| RUNTIME_BEHAVIOR - public export requires remote, commit, and path evidence | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 53-63 | `EXPORTED` | Public export standard | ACCEPT |
 | EXISTS - public-sync repository boundary exists | `AGENTS.md` | Lines 127-150 | `Controlled-Vibe-Framework-CVF-public-sync` | Repository boundary instructions | ACCEPT |
 | EXISTS - public-safe MLW8 claim boundary exists | `docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | Lines 34-39, 92-122 | `Blocked public wording` | Public-safe summary | ACCEPT |
 | RUNTIME_BEHAVIOR - visible root files must be exposure-classified | `governance/compat/check_prepublic_p3_readiness.py` | Lines 275-280 | `unclassified_root_file` | P3 readiness checker | ACCEPT |
@@ -498,7 +498,7 @@ Public-sync evidence:
 | Roadmap state | `docs/baselines/CVF_GC018_MLW8_PROOF_EXPORT_LIVE_2026-06-06.md` | operator-derived GC-018 baseline; no separate roadmap | PASS |
 | Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode=mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic` | PASS |
 | Registry Markdown | `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V16_2026-06-06.md` | active handoff and next allowed move updated | PASS |
-| External evidence digest | `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`, public commit `d97f38c08` | live diagnostic plus public export evidence; no live-pass claim | PASS |
+| External evidence digest | `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`, public commit `d97f38c08` | live diagnostic plus public export evidence; sha256: see External Artifact Hash Manifest below; no live-pass claim | PASS |
 | System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | N/A with reason - no new system loop edge introduced | PASS |
 | Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V16_2026-06-06.md` | active-session checker PASS | PASS |
 
@@ -513,3 +513,10 @@ Evidence:
 - Public-sync commit: `d97f38c08`
 - Public artifact:
   `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md`
+
+## External Artifact Hash Manifest
+
+| Artifact path | sha256 |
+| --- | --- |
+| docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json | e84d5eec0f95faf3b7087e56861c26416360a9577f11f9aa4436198fb8b1019f |
+

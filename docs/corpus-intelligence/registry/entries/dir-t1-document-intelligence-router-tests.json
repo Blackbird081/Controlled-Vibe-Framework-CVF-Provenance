@@ -1,0 +1,25 @@
+{
+  "registryOrder": 69,
+  "id": "dir-t1-document-intelligence-router-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation DIR-T1 document intelligence router tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw document text (not asserted or stored)",
+    "OCR execution (not invoked)",
+    "provider call (not invoked)",
+    "Policy_Local (not present)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "DIR-T1",
+  "scanDate": "2026-06-13",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md",
+  "notes": "Focused pytest coverage for gate/scan-disposition disjointness, total derivation map over four scan dispositions, scan-route passthrough, operator-review and blocked-source preservation, no-raw-content dataclass fields, capability composition, digest presence, and use-case-name leakage prevention."
+}

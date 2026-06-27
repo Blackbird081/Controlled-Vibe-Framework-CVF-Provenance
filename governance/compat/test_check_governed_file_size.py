@@ -164,6 +164,57 @@ class GovernedFileSizeTests(unittest.TestCase):
             "near_hard_owner_surface_adjacent_change_without_rotation",
         )
 
+    def test_adjacent_domain_markdown_change_requires_near_hard_owner_rotation_when_registered(self) -> None:
+        registry = json.loads(self.registry.read_text(encoding="utf-8"))
+        registry["proactiveOwnerSurfaces"] = [
+            {
+                "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+                "status": "ACTIVE",
+                "domainPrefixes": ["docs/reference/CVF_AGENT_WORK_ORDER_"],
+                "domainFileClasses": ["active_markdown"],
+                "rationale": "test markdown owner",
+            }
+        ]
+        self.registry.write_text(json.dumps(registry), encoding="utf-8")
+        self._write_lines("docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md", 118)
+        self._write_lines("docs/reference/CVF_AGENT_WORK_ORDER_ADDENDUM_TEST.md", 10)
+
+        report = self._report_for(
+            {"docs/reference/CVF_AGENT_WORK_ORDER_ADDENDUM_TEST.md": {"A"}},
+            previous_lines=119,
+        )
+
+        self.assertFalse(report["compliant"])
+        self.assertEqual(
+            report["violations"][0]["type"],
+            "near_hard_owner_surface_adjacent_change_without_rotation",
+        )
+
+    def test_adjacent_domain_markdown_change_passes_when_owner_is_rotated(self) -> None:
+        registry = json.loads(self.registry.read_text(encoding="utf-8"))
+        registry["proactiveOwnerSurfaces"] = [
+            {
+                "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+                "status": "ACTIVE",
+                "domainPrefixes": ["docs/reference/CVF_AGENT_WORK_ORDER_"],
+                "domainFileClasses": ["active_markdown"],
+                "rationale": "test markdown owner",
+            }
+        ]
+        self.registry.write_text(json.dumps(registry), encoding="utf-8")
+        self._write_lines("docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md", 118)
+        self._write_lines("docs/reference/CVF_AGENT_WORK_ORDER_ADDENDUM_TEST.md", 10)
+
+        report = self._report_for(
+            {
+                "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md": {"M"},
+                "docs/reference/CVF_AGENT_WORK_ORDER_ADDENDUM_TEST.md": {"A"},
+            },
+            previous_lines=119,
+        )
+
+        self.assertTrue(report["compliant"])
+
 
 if __name__ == "__main__":
     unittest.main()

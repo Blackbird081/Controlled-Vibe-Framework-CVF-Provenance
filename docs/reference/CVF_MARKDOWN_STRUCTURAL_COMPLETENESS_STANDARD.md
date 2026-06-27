@@ -38,6 +38,12 @@ elements plus that type's required sections.
 When a file intentionally mixes artifact types, it must satisfy the stricter
 section set for the highest-risk role it performs.
 
+Classifier precedence is part of the rule. An explicit `docType` or governed
+path classification must win over subject keywords in the filename. For
+example, an audit under `docs/audits/` whose filename contains `HANDOFF` is an
+audit/review artifact, not an active session handoff, unless it is actually an
+`AGENT_HANDOFF*.md` or archived handoff path.
+
 ## Exceptions
 
 Legacy dense documents are grandfathered until a material rewrite, split, or
@@ -132,10 +138,23 @@ Required sections:
 - Why This Tranche / Purpose
 - Scope
 - Non-Goals
+- Design Control Gate, Dispatch Boundary, or Governed Work Lifecycle
 - Work Plan
 - Acceptance Criteria
 - Verification or Evidence
 - Claim Boundary
+
+Roadmaps are design artifacts. A roadmap that can lead to implementation must
+record the controls that prevent an agent from jumping directly from broad
+intent into build. At minimum, the design-control section must identify scope,
+non-goals, lane split when applicable, dependency/source-verification plan,
+claim boundary, acceptance criteria, verification evidence, and
+dispatch-readiness decision. Parent roadmaps with more than one lane should use
+`Dispatch Boundary` to state which child GC-018/work order may proceed first
+and which cross-lane claims remain forbidden.
+
+Lifecycle/design-control details are governed by
+`docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`.
 
 ### Work Order
 

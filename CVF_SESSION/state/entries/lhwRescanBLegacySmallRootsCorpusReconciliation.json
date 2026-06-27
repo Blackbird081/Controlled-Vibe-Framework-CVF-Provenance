@@ -1,0 +1,5 @@
+{
+  "stateOrder": 79,
+  "stateKey": "lhwRescanBLegacySmallRootsCorpusReconciliation",
+  "value": "CLOSED_PASS_BOUNDED. Authorization packet commit 193f218a and implementation commit 563c61b7 add scripts/build_legacy_rescan_b_manifest.py, a filesystem-backed three-root manifest, terminal processing ledger, reconciliation audit, and completion review. Current source truth: CVF 17.05=31 files, CVF 25.05=2 files, CVF 28.05=5 files; total 38 text-like authority assets with READ status, zero exclusions, zero unresolved files, and 38 broad semantic-region mappings. GC-047 and GC-048 direct checks PASS. Boundary: inventory visibility and rebuildable broad routing only; no deep semantic absorption, Legacy edits, runtime mutation, public-sync, provider proof, hosted readiness, production readiness, or autonomous mutation authority."
+}

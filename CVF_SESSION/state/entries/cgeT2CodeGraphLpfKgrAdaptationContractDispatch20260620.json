@@ -1,0 +1,5 @@
+{
+  "stateOrder": 524,
+  "stateKey": "cgeT2CodeGraphLpfKgrAdaptationContractDispatch20260620",
+  "value": "DISPATCHED at material commit 1c8103fe from dispatch base 5cb5a8e1. Artifacts: GC-018 docs/baselines/CVF_GC018_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_2026-06-20.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_FOR_CLAUDE_2026-06-20.md. Claude is authorized under WORKER_MUST_NOT_COMMIT to create exactly two uncommitted artifacts: docs/reference/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_2026-06-20.md and docs/reviews/CVF_CGE_T2_CODEGRAPH_LPF_KGR_ADAPTATION_CONTRACT_WORKER_RETURN_2026-06-20.md. Verification before dispatch: pre-dispatch autorun PASS 43/43, dispatch-quality PASS, AOT PASS, commit steward dispatch PASS, pre-commit hook PASS 54/54. Boundary: documentation/reference contract only; no runtime/source/test implementation, CodeGraph install/init/.codegraph, MCP wiring, watcher/daemon, benchmark proof, provider/live proof, public-sync, ACE-R1 reopening, freeze, readiness, or universal governed-coding-control claim."
+}

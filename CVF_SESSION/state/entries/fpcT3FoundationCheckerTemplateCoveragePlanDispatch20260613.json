@@ -1,0 +1,33 @@
+{
+  "stateOrder": 375,
+  "stateKey": "fpcT3FoundationCheckerTemplateCoveragePlanDispatch20260613",
+  "value": {
+    "status": "DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT",
+    "materialCommit": "b6a06e70",
+    "dispatchBaseHead": "6047e18f",
+    "roadmap": "docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md",
+    "gc018": "docs/baselines/CVF_GC018_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md",
+    "workerExpectedArtifacts": [
+      "docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md",
+      "docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md"
+    ],
+    "candidateSet": [
+      "FPC-T3-C01 epistemic process packet checker candidate",
+      "FPC-T3-C02 DICE machine-candidate autorun candidate",
+      "FPC-T3-C03 interlock registry coverage checker extension candidate",
+      "FPC-T3-C04 work-order template epistemic block candidate",
+      "FPC-T3-C05 worker-return fast gate epistemic fixture candidate",
+      "FPC-T3-C06 rawMemoryReleased=false autorun check candidate",
+      "FPC-T3-C07 workspace-integrity and agent-operation-audit control design candidate"
+    ],
+    "verification": [
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS 14/14",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 6047e18f --head HEAD PASS",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 39/39",
+      "git diff --check PASS"
+    ],
+    "nextAllowedMove": "Claude worker return only for the FPC-T3 coverage plan and worker-return packet under WORKER_MUST_NOT_COMMIT. Codex owns review, final gates, commit, and session sync.",
+    "boundary": "Planning-only governance foundation work. No checker implementation, template mutation, registry edit, runtime/source/test change, OS audit installation, Sysmon installation, file watcher service, destructive broker, agent computer-control permission change, external Document Translator or Policy_Local inspection/mutation, OCR/provider/API/live proof, retrieval route wiring, public-sync, T12 unlock, readiness/cost/quality claim, raw memory release, high-risk promotion, or autonomous mutation is authorized."
+  }
+}

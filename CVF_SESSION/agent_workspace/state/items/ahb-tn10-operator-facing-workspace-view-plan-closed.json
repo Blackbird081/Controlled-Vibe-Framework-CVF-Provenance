@@ -1,0 +1,26 @@
+{
+  "stateOrder": 9,
+  "workspaceItemId": "ahb-tn10-operator-facing-workspace-view-plan-closed-2026-06-17",
+  "lane": "accepted_material",
+  "itemKind": "accepted_material",
+  "status": "CLOSED_PASS_BOUNDED",
+  "ownerRole": "closer",
+  "route": "SINGLE_AGENT_MULTI_ROLE",
+  "rolePattern": "codex_dispatch_implementation_review_closure",
+  "phase": "closure",
+  "baseHead": "3619ab8d",
+  "changedSetScope": "Operator-facing workspace read-model plan and runtime boundary guard linkage.",
+  "traceScope": "AHB-Tn.8 through AHB-Tn.10 Agent Operation Trace Block in work order and completion review.",
+  "commitOwner": "Codex",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN8_TN10_WORKSPACE_RUNTIME_READINESS_QUEUE_SKELETON_OPERATOR_VIEW_FOR_CODEX_2026-06-17.md",
+  "evidencePaths": [
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+    "governance/compat/check_agent_workspace_runtime_boundary.py"
+  ],
+  "claimBoundary": "Operator read-model plan only; no UI implementation, runtime mutation, provider/live proof, public-sync, registry edit, production readiness, or public readiness.",
+  "nextMoveImpact": "Future UI/dashboard work has a stable read model but remains blocked until fresh GC-018.",
+  "resumeCondition": "N/A with reason: read-model plan is closed; UI implementation requires fresh GC-018.",
+  "supersedes": [],
+  "archivePolicy": "Remain active until a future archive batch compacts closed workspace foundation items after UI work is either opened or explicitly parked."
+}

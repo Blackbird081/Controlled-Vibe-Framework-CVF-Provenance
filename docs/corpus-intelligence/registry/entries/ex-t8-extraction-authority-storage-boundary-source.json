@@ -1,0 +1,20 @@
+{
+  "registryOrder": 50,
+  "id": "ex-t8-extraction-authority-storage-boundary-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EX-T8 authority/storage boundary source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EX-T8",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md",
+  "notes": "ExtractionAuthorityLevel, RebuildClass, raw OCR retention flag, ExtractionStorageBoundary, deterministic boundary hash, and descriptor metadata propagation. No raw OCR persistence, corpus ingestion, retrieval behavior, provider call, or legal/current-status claim."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 310,
+  "stateKey": "lpci2T11cPolicyLocalClassificationPreCheck",
+  "value": "CLOSED_PASS_BOUNDED at material commit 6a42a9a4. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_FOR_CLAUDE_2026-06-07.md; report docs/reference/CVF_LPCI2_T11_CLASSIFICATION_PRE_CHECK_2026-06-07.md; worker return docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_WORKER_RETURN_2026-06-07.md; completion docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md. Result: 6/6 corpus candidates ESCALATE_OR_ABSTAIN, BLOCKED_UNTIL_2026-07-01, t12Eligible=CONDITIONAL; BNDL-006 non-corpus t12Eligible=NO; EC-02 invariant violations=0; candidate manifest sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a. Boundary: metadata-only classification pre-check; no body extraction, OCR, ingestion, chunking, runtime query, provider calls, public-sync, current-law claim, legal advice quality claim, production/public readiness, memory reinjection, high-risk promotion, or autonomous mutation."
+}

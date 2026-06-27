@@ -1,0 +1,32 @@
+{
+  "registryOrder": 89,
+  "id": "model-gateway-c02-p5c-bridge-admission-guard-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P5-C bridge admission guard tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-bridge-admission-guard.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "fetch (not in tests - no network call)",
+    "http request (not in tests)",
+    "resolveSecretForRuntime (forbidden - no credential access)",
+    "providers/alibaba (no concrete adapter import)",
+    "providers/deepseek (no concrete adapter import)",
+    "createAlibaba (no concrete adapter factory)",
+    "createDeepSeek (no concrete adapter factory)",
+    ".env.local (no credential file access)",
+    "DASHSCOPE_API_KEY (no API key reference)",
+    "DEEPSEEK_API_KEY (no API key reference)",
+    "ALIBABA_API_KEY (no API key reference)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P5C",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_COMPLETION_2026-06-15.md",
+  "notes": "Deterministic tests T1-T12 for P5-C bridge admission guard. Covers admitted pass, blocked block, needs_operator_authorization block, guard never calls adapter.execute, guard never calls network, backward-compatible bridge (no admissionRecords), admitted proceeds to execute, blocked returns admission_blocked, needs_operator_authorization returns admission_blocked, retryable=false, no hardcoded provider ID, and negative-search module-load check."
+}

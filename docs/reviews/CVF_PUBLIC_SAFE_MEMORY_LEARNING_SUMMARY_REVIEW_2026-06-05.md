@@ -99,7 +99,7 @@ runtime, public-sync, live-proof, hosted, production, or public-readiness lane.
 | Operator completion instruction | 2026-06-05: "lam di, hoan thien de qua tranche moi" | ACCEPT |
 | Dispatched work order | `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | ACCEPT |
 | Worker summary artifact | `docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | ACCEPT |
-| Public export standard | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | ACCEPT |
+| Public export standard | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | ACCEPT |
 | Repository boundary | `AGENTS.md` | ACCEPT |
 
 ## Roadmap-To-Work-Order Trace Matrix

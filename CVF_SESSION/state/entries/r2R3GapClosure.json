@@ -1,0 +1,5 @@
+{
+  "stateOrder": 201,
+  "stateKey": "r2R3GapClosure",
+  "value": "CLOSED_PASS_BOUNDED at docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md. R2 delivered explicit policy-gated /api/execute durable skill/long-term memory reads with receipt evidence, summary-only prompt context, rawMemoryReleased=false, and canReinject=false; live proof receipt rcpt-env-mpjdj5rc-p1g9go trace env-mpjdj5rc-p1g9go; release gate PASS 7/7. R3 delivered private and public-safe Step 0 provider-key setup guide, linked the first-receipt guide, updated public catalog evidence, verified public-sync remote, secret hygiene, and committed public-sync 1160f1b9. P2 label is SUPERSEDED_BY_R3."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 394,
+  "stateKey": "modelGatewayC02P4BBLiveProofT2Closure20260615",
+  "value": "CLOSED_PASS_BOUNDED. Material commit d15f973e closes Model Gateway C-02 P4B-B Live Proof T2. Claude returned uncommitted artifacts under WORKER_MUST_NOT_COMMIT; Codex repaired closure evidence, added receipt assertion and machine closure package evidence, and committed the material batch. DeepSeek deepseek-chat completed one governed live call through ProviderExecutionBridge.execute with admissionStatus=admitted, receipt gw_20260615155616612_f0mwl515, output pong, and no raw-key leakage. Alibaba qwen-turbo reached provider but returned HTTP 401 and is parked as a credential follow-up, not a CVF chain defect. Boundary: one selected live provider path only; no provider preference, provider ranking, adapter marketplace support, production readiness, public readiness, EPF, Strategy Layer, or AI Gateway claim."
+}

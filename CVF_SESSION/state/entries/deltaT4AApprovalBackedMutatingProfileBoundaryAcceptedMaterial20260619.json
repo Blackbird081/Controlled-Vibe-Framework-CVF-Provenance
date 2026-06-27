@@ -1,0 +1,27 @@
+{
+  "stateOrder": 473,
+  "stateKey": "deltaT4AApprovalBackedMutatingProfileBoundaryAcceptedMaterial20260619",
+  "value": {
+    "status": "COMPLETE_PENDING_CLOSURE",
+    "dispatchCommit": "0caf8ec1",
+    "dispatchSessionSyncCommit": "22f35116",
+    "executionBaseHead": "22f35116",
+    "acceptedMaterialCommit": "d2fc4f5b",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19.json",
+    "profileCandidate": "approval-marker-write",
+    "checks": [
+      "focused Vitest PASS 2 files / 19 tests",
+      "full MCP npm test:run PASS 30 files / 617 tests",
+      "MCP package build PASS",
+      "bounded temp-workspace binary smoke PASS",
+      "worker-return fast gate PASS",
+      "implementation commit steward PASS",
+      "pre-commit hook PASS 52/52"
+    ],
+    "claimBoundary": "Material implements exactly one approval-backed local mutating profile, approval-marker-write, with fixed marker target .cvf/delta/approval-marker-write.json and durable approval/marker evidence. It does not prove mandatory invocation, direct IDE/shell/git/filesystem interception, arbitrary commands, EDIT/COMMIT profiles, provider/live calls, public-sync, queue/daemon, CVF Web action execution, or universal governed-coding control.",
+    "nextAllowedMove": "Run accepted-material session sync, then convert Delta-T4A completion artifacts to CLOSED_PASS_BOUNDED from the accepted-material sync head."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "registryOrder": 24,
+  "id": "graphify-guard-source-verification-kgr-tests",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "Graphify Guard Source Verification \u2014 KGR test corpus",
+  "scopePaths": [
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/knowledge-graph-store.test.ts",
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-retrieval-policy.kgr.test.ts",
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "GRAPHIFY-SOURCE-VERIFICATION-2026-06-07",
+  "scanDate": "2026-06-07",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md",
+  "completionReviewPath": "docs/reviews/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md",
+  "gcBaselineRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "GRAPH_KNOWLEDGE_RETRIEVAL",
+    "ACCESS_CONTROL_GATE",
+    "CONFIDENTIALITY_FILTER",
+    "COMPLIANCE_LIFECYCLE_TAG"
+  ],
+  "priorAbsorption": "KGR1 delivered KgrGuardPolicyId registry and tests. This entry registers the test corpus read during Graphify guard enforcement source verification (doc-only, no runtime change).",
+  "findings": [
+    {
+      "id": "GRAPHIFY-SV-F1-tests-confirm-g-gm-05-08",
+      "summary": "KGR tests confirm actorAuthorized gate (G-GM-05) and PENDING_REVIEW exclusion (G-GM-08). Named guard assertion is the bounded next step.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Follow-up work order to add named G-GM-05 and G-GM-08 test assertions in memory-retrieval-policy.kgr.test.ts.",
+      "defectClass": "MACHINE_GATE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md"
+    }
+  ],
+  "negativeSearchTerms": [
+    "named G-GM-05 guard assertion (not yet present in tests)",
+    "named G-GM-08 guard assertion (not yet present in tests)",
+    "full guard enforcement claim (not made)"
+  ],
+  "nextScanRecommendation": "Open G-GM-08 + G-GM-06 named guard annotation work order before re-scanning this test corpus."
+}

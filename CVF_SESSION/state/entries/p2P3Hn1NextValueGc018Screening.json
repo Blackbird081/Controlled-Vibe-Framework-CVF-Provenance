@@ -1,0 +1,5 @@
+{
+  "stateOrder": 236,
+  "stateKey": "p2P3Hn1NextValueGc018Screening",
+  "value": "CLOSED_P2_HN1_P3_CONDITIONAL_HOLD at docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md; screening commit 87ff23b5; closure commit 38d64a21. P2 provider soak closed with 12/12 live governed /api/execute passes across Alibaba qwen-turbo 6/6 and DeepSeek deepseek-chat 6/6; evidence docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.md and .json. HN1 linkage hygiene revalidated with targeted vitest 22/22 and existing exemptTemplateIds for individual_skills_folder and vibe_workflow_folder. P3 hosted protected workflow proof remains conditional hold pending hosted target/workflow/auth details. No implementation/runtime/provider semantics/public-sync/hosted-readiness/broad provider stability/Maika/persistence/freeze release claim."
+}

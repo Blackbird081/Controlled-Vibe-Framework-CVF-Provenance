@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
+  "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
+  "checker": "governance/compat/check_corpus_scan_registry.py",
+  "lastUpdated": "2026-06-23",
+  "updatedBy": "Codex (ADIF T0-T5 full-chain closure)",
+  "allowedCorpusTypes": [
+    "LEGACY_FOLDER",
+    "PROJECT_SOURCE",
+    "POLICY_DOCUMENT",
+    "COMPANY_DOCS",
+    "EXTERNAL_SOURCE",
+    "CVF_EXTENSION",
+    "TEST_CORPUS"
+  ],
+  "allowedStatuses": [
+    "NOT_STARTED",
+    "PARTIALLY_SCANNED",
+    "SCANNED",
+    "SCANNED_WITH_FINDINGS",
+    "DEEP_CLASSIFIED",
+    "DEFERRED",
+    "OUT_OF_SCOPE"
+  ],
+  "allowedFindingDispositions": [
+    "ACCEPT",
+    "ACCEPT_NO_ACTION",
+    "ACCEPT_WITH_BOUNDARY",
+    "DEFER_WITH_ROADMAP",
+    "DEFER_PHASED",
+    "DEFER_DEMAND_GATED",
+    "REJECT",
+    "BLOCKED_PENDING_DECISION"
+  ]
+}

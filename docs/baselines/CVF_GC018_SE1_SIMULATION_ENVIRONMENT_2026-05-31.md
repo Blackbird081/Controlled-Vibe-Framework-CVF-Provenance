@@ -35,7 +35,7 @@ Boundary:
 
 ## Source / Predecessor Evidence
 
-- LHW17 T3 spec: `docs/reference/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md` (Step 8)
+- LHW17 T3 spec: `docs/reference/archive/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md` (Step 8)
 - RM1: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/reputation-routing-advisory.ts` (Step 7 prerequisite)
 - TM1: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/truth-model-calibration.ts` (Step 6)
 - APE-1: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/adaptation-policy-engine.ts` (Step 5)

@@ -13,22 +13,31 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from guard_binding_catalog import has_binding_marker
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import has_binding_marker
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-STANDARD_PATH = "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md"
+STANDARD_PATH = "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md"
 THIS_SCRIPT_PATH = "governance/compat/check_finding_to_governance_learning.py"
 AUTORUN_PATH = "governance/compat/run_agent_autorun_workflow_gate.py"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 
 APPLICABLE_PREFIXES = ("docs/logs/", "docs/reviews/", "docs/assessments/", "docs/audits/")
+PROVIDER_MEMORY_ESCAPE_PREFIXES = APPLICABLE_PREFIXES + ("docs/work_orders/",)
 ARCHIVE_PATH_MARKER = "/archive/"
-FINDING_MARKERS = ("## Quality Findings", "## Findings", "## Known Issues", "Known Issues", "| Finding |", "finding |")
+FINDING_HEADING_RE = re.compile(r"(?im)^##\s+(?:Quality Findings|Findings|Known Issues)\s*$")
+FINDING_TABLE_RE = re.compile(r"(?im)^\s*\|\s*Finding\s*\|")
+KNOWN_ISSUES_RE = re.compile(r"(?im)^Known Issues\s*$")
 REQUIRED_SECTION = "## Finding-To-Governance Learning Disposition"
 DEFECT_CLASSES = (
     "WORKER_EXECUTION_ERROR",
@@ -96,6 +105,72 @@ GENERALIZABLE_PROMOTION_DISPOSITIONS = (
     "PHASE_GATE_PLACEMENT_GAP",
     "DESIGN_REVIEW_REQUIRED",
     "N/A_WITH_REASON",
+)
+
+# Phrases that indicate a lesson was stored only in provider-specific memory.
+# Detection is lower-cased before matching.
+PROVIDER_MEMORY_ONLY_SIGNALS = (
+    "stored in claude memory",
+    "saved to claude memory",
+    "recorded in claude memory",
+    "captured in claude memory",
+    "claude memory only",
+    "codex memory only",
+    "provider memory only",
+    "in provider-specific memory",
+    "lessons captured in memory",
+    "gate lessons captured in memory",
+    "new gate lessons captured in memory",
+    "stored in memory.md",
+    "saved to memory.md",
+    "recorded in memory.md",
+    "written to memory.md",
+    "added to memory.md",
+    "updated memory.md",
+    "memory.md updated",
+    "in memory.md",
+    "in claude.md",
+    "added to claude.md",
+    "written to claude.md",
+)
+
+# Dispositions that prove a reusable lesson was promoted to CVF governance.
+# If none of these appear alongside a provider-memory signal, it is a learning escape.
+PROVIDER_MEMORY_GOVERNED_DISPOSITIONS = (
+    "RULE_ADDED",
+    "STANDARD_UPDATED",
+    "STANDARD_ADDED",
+    "MACHINE_CHECK_ADDED",
+    "MACHINE_CHECK_CANDIDATE",
+    "TEMPLATE_UPDATED",
+)
+
+PROVIDER_MEMORY_REUSABLE_SIGNALS = (
+    "lesson",
+    "lessons",
+    "gate lesson",
+    "guard lesson",
+    "reusable",
+    "future agent",
+    "future agents",
+    "future work order",
+    "same kind of work order",
+    "next time",
+    "will be faster",
+    "b7",
+    "b8",
+    "b9",
+    "b10",
+)
+
+PROVIDER_MEMORY_LOCAL_NA_SIGNALS = (
+    "session-local",
+    "session local",
+    "operator preference",
+    "personal preference",
+    "not reusable",
+    "non-reusable",
+    "one-off",
 )
 
 
@@ -215,6 +290,14 @@ def _is_applicable_path(path: str) -> bool:
     )
 
 
+def _is_provider_memory_escape_path(path: str) -> bool:
+    return (
+        path.endswith(".md")
+        and ARCHIVE_PATH_MARKER not in path
+        and any(path.startswith(prefix) for prefix in PROVIDER_MEMORY_ESCAPE_PREFIXES)
+    )
+
+
 def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     required = (
@@ -235,16 +318,24 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
 
 def _validate_binding(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
-    if path == AUTORUN_PATH and THIS_SCRIPT_PATH not in text:
+    if path == AUTORUN_PATH and not has_binding_marker(path, THIS_SCRIPT_PATH, text):
         _add(violations, path, "autorun_binding_missing", f"autorun gate must run `{THIS_SCRIPT_PATH}`")
-    if path == HOOK_CHAIN_PATH and THIS_SCRIPT_PATH not in text:
+    if path == HOOK_CHAIN_PATH and not has_binding_marker(path, THIS_SCRIPT_PATH, text):
         _add(violations, path, "hook_binding_missing", f"local hook chain must run `{THIS_SCRIPT_PATH}`")
     return violations
 
 
+def _has_finding_marker(text: str) -> bool:
+    return bool(
+        FINDING_HEADING_RE.search(text)
+        or FINDING_TABLE_RE.search(text)
+        or KNOWN_ISSUES_RE.search(text)
+    )
+
+
 def _validate_finding_doc(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
-    if not _is_applicable_path(path) or not _has_any(text, FINDING_MARKERS):
+    if not _is_applicable_path(path) or not _has_finding_marker(text):
         return violations
     if REQUIRED_SECTION not in text:
         _add(violations, path, "learning_disposition_section_missing", f"finding-bearing artifact must include `{REQUIRED_SECTION}`")
@@ -281,6 +372,35 @@ def _validate_finding_doc(path: str, text: str) -> list[dict[str, str]]:
         has_explicit_na = "N/A_WITH_REASON" in text
         if not has_runtime_lane and not has_explicit_na:
             _add(violations, path, "runtime_learning_lane_missing", "runtime/provider/cost findings require runtime/provider/cost learning lane or explicit N/A")
+
+    return violations
+
+
+def _validate_provider_memory_learning_escape(path: str, text: str) -> list[dict[str, str]]:
+    violations: list[dict[str, str]] = []
+    if not _is_provider_memory_escape_path(path):
+        return violations
+    lowered = text.lower()
+    has_memory_signal = any(signal in lowered for signal in PROVIDER_MEMORY_ONLY_SIGNALS)
+    has_memory_md_signal = re.search(r"\bmemory\.md\b", lowered) is not None
+    if not has_memory_signal and not has_memory_md_signal:
+        return violations
+    has_governed = any(disp in text for disp in PROVIDER_MEMORY_GOVERNED_DISPOSITIONS)
+    if has_governed:
+        return violations
+    has_na = "N/A_WITH_REASON" in text
+    has_reusable_signal = any(signal in lowered for signal in PROVIDER_MEMORY_REUSABLE_SIGNALS)
+    has_local_na_signal = any(signal in lowered for signal in PROVIDER_MEMORY_LOCAL_NA_SIGNALS)
+    if has_na and has_local_na_signal and not has_reusable_signal:
+        return violations
+    _add(
+        violations,
+        path,
+        "provider_memory_only_learning_escape",
+        "reusable lesson stored only in provider-specific memory must have a CVF-governed "
+        "promotion disposition (RULE_ADDED, STANDARD_ADDED, MACHINE_CHECK_ADDED, etc.) "
+        "or an explicit non-reusable/session-local N/A_WITH_REASON - provider memory is not CVF source authority",
+    )
     return violations
 
 
@@ -290,6 +410,7 @@ def _validate_path_with_text(path: str, text: str) -> list[dict[str, str]]:
         violations.extend(_validate_standard(path, text))
     if path in {AUTORUN_PATH, HOOK_CHAIN_PATH}:
         violations.extend(_validate_binding(path, text))
+    violations.extend(_validate_provider_memory_learning_escape(path, text))
     violations.extend(_validate_finding_doc(path, text))
     return violations
 
@@ -310,7 +431,12 @@ def _classify(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
     scoped_paths = sorted(
         path
         for path in paths_to_check
-        if path == STANDARD_PATH or path in {AUTORUN_PATH, HOOK_CHAIN_PATH} or _is_applicable_path(path)
+        if (
+            path == STANDARD_PATH
+            or path in {AUTORUN_PATH, HOOK_CHAIN_PATH}
+            or _is_applicable_path(path)
+            or _is_provider_memory_escape_path(path)
+        )
     )
     violations: list[dict[str, str]] = []
     for path in scoped_paths:

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 86,
+  "stateKey": "mkg6MemoryRuntimeReadoutRoute",
+  "value": "IMPLEMENTATION_REVIEW_READY. GC-018 docs/baselines/CVF_GC018_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_2026-06-01.md, roadmap docs/roadmaps/CVF_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_ROADMAP_2026-06-01.md, work order docs/work_orders/CVF_WO_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_2026-06-01.md, completion docs/reviews/CVF_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_COMPLETION_2026-06-01.md. Runtime surface: LPF memory-runtime subpath export plus authenticated POST /api/memory/readout with sanitized summary-only projection and focused tests. Verification PASS: LPF focused tests 3/3, cvf-web focused tests 9/9, both TypeScript checks, dispatch-quality, markdown structural, public-export, finding-learning, execute-route sequence, governed file-size, and pre-implementation autorun. Boundary: private uncommitted implementation review only; no /api/execute behavior expansion, no raw candidate content release, prompt injection, reinjection, live/provider proof, persistence mutation, public-sync, push, or local commit."
+}

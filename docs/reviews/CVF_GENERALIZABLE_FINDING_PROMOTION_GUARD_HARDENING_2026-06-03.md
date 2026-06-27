@@ -22,7 +22,7 @@ This implements the operator principle: fix once, reuse many times.
 Allowed changed paths:
 
 - `AGENTS.md`
-- `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+- `docs/reference/archive/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
 - `docs/reviews/CVF_GENERALIZABLE_FINDING_PROMOTION_GUARD_HARDENING_2026-06-03.md`
 - `governance/compat/check_finding_to_governance_learning.py`
 - `governance/compat/test_check_finding_to_governance_learning.py`
@@ -38,7 +38,7 @@ Target: Finding-To-Governance learning promotion discipline.
 Source evidence:
 
 - canonical F2G standard:
-  `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`;
+  `docs/reference/archive/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`;
 - machine guard:
   `governance/compat/check_finding_to_governance_learning.py`;
 - startup front door:
@@ -70,7 +70,7 @@ heuristic and restore prior F2G standard/front-door wording.
 | Evidence | Value |
 | --- | --- |
 | Operator principle | Generalizable findings must be promoted into reusable CVF controls |
-| Standard updated | `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md` |
+| Standard updated | `docs/reference/archive/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md` |
 | Front-door updated | `AGENTS.md` |
 | Guard updated | `governance/compat/check_finding_to_governance_learning.py` |
 | Tests updated | `governance/compat/test_check_finding_to_governance_learning.py` |

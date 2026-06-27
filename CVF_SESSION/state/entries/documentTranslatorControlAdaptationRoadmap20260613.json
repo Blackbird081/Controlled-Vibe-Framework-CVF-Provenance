@@ -1,0 +1,5 @@
+{
+  "stateOrder": 358,
+  "stateKey": "documentTranslatorControlAdaptationRoadmap20260613",
+  "value": "PROPOSED_READY_FOR_FRESH_AUTHORIZATION at material commit db59d570. Roadmap: docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md. Operator priority: CVF foundation quality remains priority one; Document Translator is a downstream CVF-controlled use-case repo similar to Policy_Local. External clone: D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\Document_Translator at remote https://github.com/nclamvn/dich-tai-lieu and HEAD 92c5aeb3b4886b6d5a14ea4682dc5e4e1bc1a336, with 1140 tracked files and untracked Thong_tin.md operator note. Next eligible move is DT-CVF-T0 only through fresh GC-018 and source-verified work order for source custody, repo inventory, secret-safety, and control-baseline audit. Boundary: no external repo edit, code import, dependency install, OCR/provider/API execution, Document Translator data mutation, Policy_Local mutation, EC activation, retrieval, corpus ingestion, public-sync, T12 unlock, production/public/readiness/cost/quality claim, memory reinjection, high-risk promotion, or autonomous mutation."
+}

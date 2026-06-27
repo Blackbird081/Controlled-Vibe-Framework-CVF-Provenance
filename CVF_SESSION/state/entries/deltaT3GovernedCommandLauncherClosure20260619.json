@@ -1,0 +1,35 @@
+{
+  "stateOrder": 468,
+  "stateKey": "deltaT3GovernedCommandLauncherClosure20260619",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "aafcdfda",
+    "executionBaseHead": "aae39481",
+    "acceptedMaterialCommit": "ff584e42",
+    "acceptedMaterialSessionSyncCommit": "febf67fc",
+    "closureCommit": "7a654dfb",
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md",
+    "evidence": "docs/reviews/evidence/delta-t3-governed-command-launcher-2026-06-19.json",
+    "shippedProfiles": [
+      "git-status",
+      "git-diff-check"
+    ],
+    "rejectedProfiles": [
+      "npm-test",
+      "npm-build",
+      "npm-check"
+    ],
+    "checks": [
+      "focused Vitest PASS 2 files / 15 tests",
+      "MCP package test suite PASS 29 files / 610 tests",
+      "MCP package build PASS",
+      "bounded git-status binary smoke PASS with durable T1/T2/T3 receipts",
+      "reviewer-fast PASS 28/28",
+      "material, rotation, session-sync, and closure pre-commit hooks PASS 51/51"
+    ],
+    "claimBoundary": "CLOSED_PASS_BOUNDED proves wrapper-owned execution for two fixed read-only Git profiles after durable Delta-T1 ALLOW, atomic Delta-T2 consumption, and durable Delta-T3 intent. It does not intercept direct IDE or shell actions, permit arbitrary or mutating commands, prove mandatory invocation, use a live provider, authorize public-sync, or establish universal governed-coding control.",
+    "nextAllowedMove": "Operator decision whether to authorize a fresh Delta-T4 approval-backed mutating execution profile/EDIT-COMMIT boundary through fresh GC-018 and source verification, or stop Delta expansion and select another bounded CVF lane. No Delta-T4 work is auto-authorized."
+  }
+}

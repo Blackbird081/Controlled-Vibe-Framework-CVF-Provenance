@@ -1,0 +1,5 @@
+{
+  "stateOrder": 130,
+  "stateKey": "dscpT7EcoMultiDomainPilot",
+  "value": "CLOSED_PASS_BOUNDED at closure commit 958f8d2b. Adds deterministic buildECOGovernedPackRequest() at EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts with focused tests at EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts. Completion docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md. Verification: cross-extension TypeScript command PASS, focused vitest 6/6 PASS, GC-051 registry coverage added. Boundary: deterministic local adapter only; no live ECO retrieval, provider call, corpus ingestion, T12 authorization, public-sync, hosted readiness, production readiness, public readiness, answer-quality claim, or live governance proof."
+}

@@ -1,0 +1,20 @@
+{
+  "stateOrder": 420,
+  "stateKey": "ahbT2F2FoundationStorageAndMemoryLearningEnforcementClosure20260616",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "abfd9015",
+    "executionBaseHead": "46abc24e",
+    "gc018": "docs/baselines/CVF_GC018_AHB_T2_F2_FOUNDATION_STORAGE_AND_MEMORY_LEARNING_ENFORCEMENT_2026-06-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T2_F2_FOUNDATION_STORAGE_AND_MEMORY_LEARNING_ENFORCEMENT_FOR_CODEX_2026-06-16.md",
+    "completionReview": "docs/reviews/CVF_AHB_T2_F2_FOUNDATION_STORAGE_AND_MEMORY_LEARNING_ENFORCEMENT_COMPLETION_2026-06-16.md",
+    "foundationStorageChecker": "governance/compat/check_foundation_storage_layout.py",
+    "foundationStorageCheckerTests": "governance/compat/test_check_foundation_storage_layout.py",
+    "findingToGovernanceChecker": "governance/compat/check_finding_to_governance_learning.py",
+    "findingToGovernanceStandard": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md",
+    "foundationStorageStandard": "docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-T2-F2 converted foundation storage/layout from artifact-only guidance into a machine gate and stabilized the Finding-To-Governance standard path used by all agents.",
+    "nextAllowedMove": "Operator decision whether to authorize AHB-T3 unified handoff-boundary checker dispatch with fresh GC-018. AHB-T3 is not auto-dispatched by this closure."
+  }
+}

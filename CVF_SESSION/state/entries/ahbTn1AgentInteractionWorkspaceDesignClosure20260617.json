@@ -1,0 +1,17 @@
+{
+  "stateOrder": 422,
+  "stateKey": "ahbTn1AgentInteractionWorkspaceDesignClosure20260617",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4b8278be",
+    "executionBaseHead": "05f3f795",
+    "gc018": "docs/baselines/CVF_GC018_AHB_TN1_AGENT_INTERACTION_WORKSPACE_ANALYSIS_DESIGN_2026-06-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_TN1_AGENT_INTERACTION_WORKSPACE_ANALYSIS_DESIGN_FOR_CODEX_2026-06-17.md",
+    "completionReview": "docs/reviews/CVF_AHB_TN1_AGENT_INTERACTION_WORKSPACE_ANALYSIS_DESIGN_COMPLETION_2026-06-17.md",
+    "standardFrontDoor": "docs/reference/agent_workspace/README.md",
+    "designStandard": "docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "result": "AHB-Tn.1 created the stable agent-workspace design front door and standard without building the workspace.",
+    "nextAllowedMove": "Superseded by AHB-Tn.2 closure. Future workspace build or generated workspace state remains unauthorized until AHB-Tn.3 or another fresh operator-authorized tranche."
+  }
+}

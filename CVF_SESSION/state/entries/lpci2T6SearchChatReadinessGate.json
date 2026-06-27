@@ -1,0 +1,5 @@
+{
+  "stateOrder": 113,
+  "stateKey": "lpci2T6SearchChatReadinessGate",
+  "value": "CLOSED_PASS_BOUNDED. dispatchBaseHead=802ec7f3; executionBaseHead=03429c15. readinessVerdict=NOT_READY. 10 gaps total (7 MUST_CLOSE_BEFORE_SEARCH). Completion review docs/reviews/CVF_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_COMPLETION_2026-06-04.md."
+}

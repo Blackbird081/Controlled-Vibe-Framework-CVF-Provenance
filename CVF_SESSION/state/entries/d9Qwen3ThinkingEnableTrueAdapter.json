@@ -1,0 +1,5 @@
+{
+  "stateOrder": 247,
+  "stateKey": "d9Qwen3ThinkingEnableTrueAdapter",
+  "value": "RETURNED_BLOCKED_PROVIDER_ROUTER_RISK_POSTURE at docs/reviews/CVF_D9_QWEN3_THINKING_ENABLE_TRUE_ADAPTER_BLOCKER_REVIEW_2026-05-23.md; public commit 811e59f6 carried the adapter split. Hosted D9 returned HTTP 403 success=false decision ALLOW routingDecision DENY enforcementStatus ALLOW evidenceMode live provider alibaba response model router-denied receipt rcpt-env-mpigusm2-kco50q trace env-mpigusm2-kco50q error No provider matches policy constraints rawSecretPrinted=false. Cause: D9 payload used cvfRiskLevel=R2 while web provider router bounds Alibaba at maxRiskLevel=R1."
+}

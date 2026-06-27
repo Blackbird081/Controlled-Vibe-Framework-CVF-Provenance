@@ -140,6 +140,36 @@ This is a scope label, not a value judgment on the worker or source family.
 route execution belongs in a separate live-proof roadmap after LHW connector
 absorption of remaining `PARTIALLY_ABSORBED` LH1 families is complete.
 
+## Mandatory ADIF Defect Registry Disclosure
+
+CVF accumulates recurring agent-defect patterns (gate-trap quirks,
+dispatch-quality requirements, role-boundary rules) as governed entries
+under `docs/reference/agent_defect_intelligence/entries/`, queryable
+through the read-only resolver `governance/compat/run_adif_defect_resolver.py`.
+Do not record a reusable lesson only in Claude's own session memory -
+`CVF_ADIF-0008` names that exact anti-pattern as a defect. Any GC-018 or
+work order must include an `## ADIF Defect Registry Disclosure` section
+naming the resolver query and every defectId it returns;
+`governance/compat/check_adif_defect_registry_disclosure.py` enforces this
+at pre-dispatch and pre-implementation. If a new repeated or non-obvious
+defect pattern is found while executing a tranche, add it to the ADIF
+registry before closing, per
+`docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md`.
+
+## Mandatory Value-Parked Lane Reopen Discipline
+
+Canonical standard:
+
+`docs/reference/CVF_VALUE_PARKED_LANE_REOPEN_DISCIPLINE_STANDARD_2026-06-25.md`
+
+A lane declined for low expected value (not blocked by a missing
+authority/credential/dependency) needs a concrete, checkable reopen
+condition recorded in `nextAllowedMove`, not a vague restatement. Recording
+it only in Claude's own session memory does not satisfy this rule - per the
+same ADIF-0008 anti-pattern above, it must be in `nextAllowedMove` or
+another CVF-governed artifact every agent reads at startup. Do not
+re-propose a value-declined lane without first checking that condition.
+
 ## Mandatory Work Order Source Verification
 
 Before authoring or dispatching a CVF work order, follow the canonical template:
@@ -172,6 +202,21 @@ MA1 section references must match
 `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 exactly. Do not invent MA1 labels such as `Input Package`, `Purpose`, or
 `Return Protocol`.
+
+## Governed Artifact Literal-Format Gotchas
+
+Before drafting a GC-018, work order, worker-return, or completion review,
+read:
+
+`docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+It is a pre-write checklist of literal-format failure modes already hit by
+`governance/compat/check_*.py` gates (self-recomputed line numbers,
+word-wrapped multi-word terms, trailing punctuation after verdict tokens,
+bare directory-path substrings, heading-collision false matches, ADIF
+disclosure query exactness, and more). Reading it before writing avoids
+discovering these one gate-run at a time. Any new literal-format trap found
+while authoring an artifact should be added there in the same batch.
 
 ---
 

@@ -1,0 +1,20 @@
+{
+  "registryOrder": 42,
+  "id": "dscp-t11f-profile-selection-adapter-test",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF CPF DSCP-T11F profile selection adapter tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "DSCP-T11F",
+  "scanDate": "2026-06-10",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md",
+  "notes": "DSCP-T11F focused test file. 14 vitest assertions covering unique selection, no-match stop, ambiguous stop, blocked application stop, and profile isolation with no gate bleed."
+}

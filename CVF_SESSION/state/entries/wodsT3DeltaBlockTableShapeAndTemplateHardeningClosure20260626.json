@@ -1,0 +1,15 @@
+{
+  "stateOrder": 679,
+  "stateKey": "wodsT3DeltaBlockTableShapeAndTemplateHardeningClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "b14260a4",
+    "dispatchMaterialCommit": "f275b5ba",
+    "sessionSyncParent": "b14260a4",
+    "completionReview": "docs/reviews/CVF_WODS_T3_DELTA_BLOCK_TABLE_SHAPE_AND_TEMPLATE_HARDENING_COMPLETION_2026-06-26.md",
+    "effectivenessVerdict": "IMPROVED_WITH_NEW_FINDING",
+    "residualFinding": "Phrase-marker applicability can false-trigger a guard when authoring explanatory prose in a file that guard scans.",
+    "nextAction": "Operator decides whether a fresh WODS-T4 GC-018 checker-applicability hardening tranche is worth authorizing; ASSF-PIC-T4 remains held.",
+    "picT4Disposition": "HOLD_WODS_REOPEN_AFTER_PIC_T3"
+  }
+}

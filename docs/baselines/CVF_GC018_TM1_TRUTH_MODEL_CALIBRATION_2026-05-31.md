@@ -37,7 +37,7 @@ Boundary:
 
 ## Source / Predecessor Evidence
 
-- LHW17 T3 spec: `docs/reference/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW17 T3 spec: `docs/reference/archive/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
 - APE-1 gate: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/adaptation-policy-engine.ts`
 - Truth score: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/truth.score.contract.ts`
 - Truth model: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/truth.model.contract.ts`

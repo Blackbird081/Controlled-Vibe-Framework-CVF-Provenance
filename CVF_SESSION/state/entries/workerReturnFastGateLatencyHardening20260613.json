@@ -1,0 +1,26 @@
+{
+  "stateOrder": 371,
+  "stateKey": "workerReturnFastGateLatencyHardening20260613",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "5e605862",
+    "closureBaseHead": "9ee5bd00",
+    "completionReview": "docs/reviews/CVF_WORKER_RETURN_FAST_GATE_LATENCY_HARDENING_COMPLETION_2026-06-13.md",
+    "runner": "governance/compat/run_worker_return_fast_gate.py",
+    "changedRegistryCoverageChecker": "governance/compat/check_changed_corpus_registry_coverage.py",
+    "hookChain": "governance/compat/run_local_governance_hook_chain.py",
+    "updatedStandards": [
+      "AGENTS.md",
+      "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md"
+    ],
+    "verification": [
+      "python -m unittest governance.compat.test_check_changed_corpus_registry_coverage governance.compat.test_run_worker_return_fast_gate governance.compat.test_run_local_governance_hook_chain governance.compat.test_check_active_archive_hygiene PASS 13/13",
+      "python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_changed_corpus_registry_coverage.py --pytest-target governance/compat/test_run_worker_return_fast_gate.py --pytest-target governance/compat/test_run_local_governance_hook_chain.py --pytest-target governance/compat/test_check_active_archive_hygiene.py PASS 13 focused tests plus reviewer-fast 14/14",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 39/39",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 9ee5bd00 --head 5e605862 PASS except expected session-sync HEAD pointer before this sync"
+    ],
+    "nextAllowedMove": "DIR-T2 foundation follow-up may open DICE-T2 only through a fresh GC-018 and source-verified work order for an operator-visible document control packet sample or another CVF foundation lane.",
+    "boundary": "Governance control-plane latency hardening only. No runtime behavior, provider routing, OCR behavior, Document Translator source, Policy_Local source, public-sync, production readiness, or live governance proof changed."
+  }
+}

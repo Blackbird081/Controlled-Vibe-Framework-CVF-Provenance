@@ -1,0 +1,41 @@
+{
+  "registryOrder": 108,
+  "id": "wwu-t2a-cvf-web-workspace-lane-summary-read-model",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF WWU-T2A cvf-web workspace lane summary read model dispatch",
+  "scopePaths": [
+    "docs/baselines/CVF_GC018_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_2026-06-19.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_FOR_CODEX_2026-06-19.md",
+    "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+    "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md",
+    "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/"
+  ],
+  "fileCount": 8,
+  "status": "SCANNED",
+  "findings": [
+    {
+      "id": "wwu-t2a-lane-summary-dispatch",
+      "summary": "WWU-T2A dispatch authorizes a read-only CVF Web Workspace lane summary from generated workspace state.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Execute WWU-T2A implementation inside the source-verified work order boundary.",
+      "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "workspace lane summary as Local Runtime MCP enforcement",
+    "generated workspace state mutation",
+    "governed action request in WWU-T2A",
+    "provider live proof for lane summary"
+  ],
+  "nextScanRecommendation": "WWU-T2A material implementation closure",
+  "scanWave": "WWU-T2A",
+  "scanDate": "2026-06-19",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_FOR_CODEX_2026-06-19.md",
+  "notes": "Dispatch-only packet; no cvf-web product source changed in this authoring batch."
+}

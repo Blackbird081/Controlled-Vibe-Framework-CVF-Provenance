@@ -19,6 +19,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from guard_binding_catalog import has_binding_marker
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import has_binding_marker
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
@@ -41,6 +46,7 @@ ALLOWED_VERDICTS = (
     "PARTIAL",
     "BLOCKED",
     "STALE_SNAPSHOT",
+    "NOT_APPLICABLE_WITH_REASON",
 )
 ALLOWED_TERMINAL_STATUSES = (
     "READ",
@@ -226,8 +232,13 @@ def _extract_unresolved_count(section: str) -> int | None:
 
 
 def _extract_verdict(section: str) -> str | None:
-    match = re.search(r"^\s*-\s*Corpus verdict:\s*([A-Z_]+)\s*$", section, re.M)
+    match = re.search(r"^\s*-\s*Corpus verdict:\s*([A-Z_]+)(?:\s+-\s*.+)?\s*$", section, re.M)
     return match.group(1) if match else None
+
+
+def _extract_verdict_line(section: str) -> str:
+    match = re.search(r"^\s*-\s*Corpus verdict:\s*(.+?)\s*$", section, re.M)
+    return match.group(1).strip() if match else ""
 
 
 def _field_value(section: str, label: str) -> str:
@@ -269,7 +280,7 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
 
 def _validate_binding(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
-    if THIS_SCRIPT_PATH not in text:
+    if not has_binding_marker(path, THIS_SCRIPT_PATH, text):
         _add(violations, path, "binding_missing", f"must cite `{THIS_SCRIPT_PATH}`")
     return violations
 
@@ -288,6 +299,27 @@ def _validate_output(path: str, text: str) -> list[dict[str, str]]:
         return violations
 
     section = _extract_section(text, REQUIRED_SECTION)
+    verdict = _extract_verdict(section)
+    verdict_line = _extract_verdict_line(section)
+    if verdict == "NOT_APPLICABLE_WITH_REASON":
+        if verdict_line == verdict:
+            _add(
+                violations,
+                path,
+                "corpus_na_reason_missing",
+                "NOT_APPLICABLE_WITH_REASON requires a visible reason on the Corpus verdict line",
+            )
+        text_without_section = text.replace(section, "")
+        lowered_without_section = text_without_section.lower()
+        if any(re.search(pattern, lowered_without_section, re.I) for pattern in COMPLETE_CLAIM_PATTERNS):
+            _add(
+                violations,
+                path,
+                "corpus_na_with_complete_claim",
+                "NOT_APPLICABLE_WITH_REASON cannot accompany a corpus completeness claim outside the N/A block",
+            )
+        return violations
+
     for field in REQUIRED_SECTION_FIELDS:
         if field not in section:
             _add(violations, path, "corpus_integrity_field_missing", f"missing field `{field}`")
@@ -296,7 +328,6 @@ def _validate_output(path: str, text: str) -> list[dict[str, str]]:
         if status not in section:
             _add(violations, path, "terminal_status_vocabulary_missing", f"missing terminal status `{status}`")
 
-    verdict = _extract_verdict(section)
     if verdict not in ALLOWED_VERDICTS:
         _add(violations, path, "corpus_verdict_invalid", "missing or invalid corpus verdict")
         return violations

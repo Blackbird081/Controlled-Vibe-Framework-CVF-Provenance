@@ -130,7 +130,7 @@ runtime edits, or commit/push.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| Public export disposition standard exists | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | file source | `Public Export Disposition` | public export standard | ACCEPT |
+| Public export disposition standard exists | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | file source | `Public Export Disposition` | public export standard | ACCEPT |
 | F-1 closure artifact exists | `docs/reviews/archive/CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md` | file source | `CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md` | F-1 closure | ACCEPT |
 | Benchmark live emission field exists | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts` | lines 85-90 | `liveEmissionWired` | `OperationalBenchmarkExtension` | ACCEPT |
 | Safety filter pattern source exists | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/safety.ts` | lines 1-35 | `PII_PATTERNS` | `applySafetyFilters` | ACCEPT |

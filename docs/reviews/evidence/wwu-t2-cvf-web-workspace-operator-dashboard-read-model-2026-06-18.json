@@ -1,0 +1,56 @@
+{
+  "artifact": "WWU-T2 CVF Web Workspace operator dashboard read model evidence",
+  "status": "CLOSED_PASS_BOUNDED",
+  "date": "2026-06-18",
+  "executionBaseHead": "c31e0069",
+  "target": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+  "commands": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c31e0069 --head HEAD",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run test:run -- src/lib/server/cvf-workspace-read-model.test.ts src/app/api/workspace/state/route.test.ts \"src/app/(dashboard)/workspace/page.test.tsx\"",
+      "result": "PASS",
+      "summary": "3 test files passed; 4 tests passed"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS",
+      "summary": "tsc --noEmit passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "Invoke-WebRequest http://127.0.0.1:3026/workspace",
+      "result": "PASS",
+      "summary": "HTTP 200"
+    }
+  ],
+  "playwrightVisualCheck": {
+    "result": "PASS",
+    "url": "http://127.0.0.1:3026/workspace",
+    "viewport": "1365x1800",
+    "colorScheme": "dark",
+    "localStorage": {
+      "cvf_onboarding_complete": "true"
+    },
+    "counts": {
+      "operatorDashboardHeading": 1,
+      "activeModeText": 2,
+      "sourcePresentText": 2,
+      "evidenceLink": 2,
+      "mainButtons": 0
+    },
+    "localOnlyScreenshotPath": "C:/Users/DELL/AppData/Local/Temp/cvf-wwu-t2-final-after-dedupe.png"
+  },
+  "claimBoundary": {
+    "localRuntimeOrMcp": "not implemented",
+    "providerOrLiveCall": "not run",
+    "publicSync": "not run",
+    "runtimeMutation": "not implemented",
+    "readinessClaim": "not made"
+  }
+}

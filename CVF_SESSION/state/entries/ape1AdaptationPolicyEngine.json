@@ -1,0 +1,5 @@
+{
+  "stateOrder": 59,
+  "stateKey": "ape1AdaptationPolicyEngine",
+  "value": "CLOSED_PASS_BOUNDED. cvf.adaptationPolicyEngine.ape1.v1 \u2014 checkA1RiskBudget + checkA2ConfidenceGating + checkA3MultiSignal + checkA4Cooldown + checkA5TieredAuthority + checkA6Rollback + checkAdaptationPolicy(). Satisfies LHW17 T3 Step 5. runtimeAdaptationAuthorized=false always. 66 test files, 1631/1631 PASS. TypeScript PASS. Source: EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/adaptation-policy-engine.ts. GC-018 docs/baselines/CVF_GC018_APE1_ADAPTATION_POLICY_ENGINE_2026-05-31.md."
+}

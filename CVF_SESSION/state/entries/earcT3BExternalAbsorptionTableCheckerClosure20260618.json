@@ -1,0 +1,19 @@
+{
+  "stateOrder": 408,
+  "stateKey": "earcT3BExternalAbsorptionTableCheckerClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "6de12f33",
+    "roadmap": "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_EARC_T3B_EXTERNAL_ABSORPTION_TABLE_CHECKER_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T3B_EXTERNAL_ABSORPTION_TABLE_CHECKER_FOR_CODEX_2026-06-18.md",
+    "completion": "docs/reviews/CVF_EARC_T3B_ABSORPTION_TABLE_CHECKER_COMPLETION_2026-06-18.md",
+    "checker": "governance/compat/check_external_agent_absorption_table.py",
+    "test": "governance/compat/test_check_external_agent_absorption_table.py",
+    "claimBoundary": "Range-aware Required Absorption Table checker only; no public-sync, MCP implementation, provider/live call, workspace runtime mutation, raw external package import, retroactive historical cleanup, or readiness claim.",
+    "parked": [
+      "EARC-T2 public-sync preparation requires explicit public-sync authorization",
+      "EARC-T4 MCP/workspace implementation decision requires explicit MCP/runtime authorization"
+    ]
+  }
+}

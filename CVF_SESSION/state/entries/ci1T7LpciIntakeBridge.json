@@ -1,0 +1,5 @@
+{
+  "stateOrder": 98,
+  "stateKey": "ci1T7LpciIntakeBridge",
+  "value": "CLOSED_PASS_BOUNDED. Commit 0ad3db1f. Completion docs/reviews/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_COMPLETION_2026-06-02.md. Intake bridge docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md maps the CI1 chain (T2-T6) into a typed LPCI product intake spec: corpus input contract (T4/T5/T6 named inputs), claim boundary inheritance, NR-04/NR-05/NR-11 deferred gap obligations, governance gate requirements, and an 8-row blocked-scope catalog. CI1 chain fully closed (T1-T7 all CLOSED_PASS_BOUNDED). GC-052 checker-decision-to-lpci-intake route added. Boundary: documentation-only design synthesis; no LPCI chatbot/runtime/route/UI/embedding/vector-db, no checker code, no provider proof, no public-sync, no autonomous mutation. LPCI implementation requires a separate governed product roadmap."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 345,
+  "stateKey": "activeSessionStateJsonAuthoringHardening20260612",
+  "value": "CLOSED_PASS_BOUNDED at material commit e9c96ba3 from execution base 005b5944. Added CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json, per-entry state sources under CVF_SESSION/state/entries/, governance/compat/generate_active_session_state.py, focused tests, active-session aggregate/source drift validation, and the JSON generated aggregate discipline standard. Corrected stale nextAllowedMove to PL-S1 boundary. Verification: generator check PASS; active session checker PASS; focused unittest PASS 4/4; reviewer-fast PASS 12/12; full pre-commit governance chain PASS 37/37. Boundary: no Policy_Local mutation, external dich-tai-lieu edit, EC activation, retrieval, OCR/provider/API use, corpus ingestion, public-sync, T12 unlock, readiness claim, memory reinjection, high-risk promotion, or autonomous mutation."
+}

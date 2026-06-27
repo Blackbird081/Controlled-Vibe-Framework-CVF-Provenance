@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "0.1.0",
+  "artifactId": "eka-r1-external-knowledge-intake-routing-guard-2026-06-19",
+  "status": "CLOSED_PASS_BOUNDED",
+  "date": "2026-06-19",
+  "dispatchBaseHead": "84e9d190",
+  "executionBaseHead": "56b70cca",
+  "closureBaseHead": "56b70cca",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_FOR_CODEX_2026-06-19.md",
+  "gc018": "docs/baselines/CVF_GC018_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_2026-06-19.md",
+  "completion": "docs/reviews/CVF_EKA_R1_EXTERNAL_KNOWLEDGE_INTAKE_ROUTING_GUARD_COMPLETION_2026-06-19.md",
+  "implementedArtifacts": [
+    "governance/compat/check_external_knowledge_intake_routing.py",
+    "governance/compat/test_check_external_knowledge_intake_routing.py",
+    "governance/compat/run_local_governance_hook_chain.py",
+    "governance/compat/run_agent_autorun_workflow_gate.py",
+    "governance/compat/test_run_local_governance_hook_chain.py"
+  ],
+  "verification": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 56b70cca --head HEAD",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest governance.compat.test_check_external_knowledge_intake_routing governance.compat.test_run_local_governance_hook_chain",
+      "result": "PASS 11/11"
+    },
+    {
+      "command": "python governance/compat/check_external_knowledge_intake_routing.py --base 56b70cca --head HEAD --enforce",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/check_external_knowledge_intake_routing.py --base 84e9d190 --head HEAD --enforce",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_external_knowledge_intake_routing.py --pytest-target governance/compat/test_run_local_governance_hook_chain.py",
+      "result": "PASS"
+    }
+  ],
+  "claimBoundary": "Bounded changed-artifact routing guard only; no broad external router, runtime interception, provider/live proof, public-sync, or universal governed-coding control claim.",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

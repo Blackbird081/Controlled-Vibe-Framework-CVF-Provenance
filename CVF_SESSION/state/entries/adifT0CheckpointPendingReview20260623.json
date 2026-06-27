@@ -1,0 +1,5 @@
+{
+  "stateOrder": 643,
+  "stateKey": "adifT0CheckpointPendingReview20260623",
+  "value": "Claude committed ADIF-T0 at 7c0480bc from continuous-dispatch session commit 7745339c. The changed set contains the T0 GC-018, T0 work order, taxonomy contract, ADIF reference front door, and roadmap checkpoint row. The work order remains COMPLETE_PENDING_REVIEW, so this commit is real execution evidence but not accepted dependency release for T1. Codex owns checkpoint review and continuity; Claude correctly stopped when pre-implementation exposed stale active-handoff HEAD and the authorization forbade worker-owned session sync."
+}

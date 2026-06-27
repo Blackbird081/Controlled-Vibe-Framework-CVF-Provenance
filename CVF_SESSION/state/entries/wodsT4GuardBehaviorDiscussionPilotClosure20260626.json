@@ -1,0 +1,24 @@
+{
+  "stateOrder": 680,
+  "stateKey": "wodsT4GuardBehaviorDiscussionPilotClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "pilotMaterialCommit": "b01b8771",
+    "handoffBridgeCommit": "9f85418c",
+    "materialClosureCommit": "0d81a814",
+    "sessionSyncParent": "0d81a814",
+    "reviewArtifact": "docs/reviews/CVF_WODS_T4_GUARD_BEHAVIOR_DISCUSSION_PILOT_2026-06-26.md",
+    "acceptedPaths": [
+      "governance/compat/guard_behavior_discussion.py",
+      "governance/compat/check_delta_execution_claim_boundary.py",
+      "governance/compat/check_rescan_intelligence_hardening.py",
+      "governance/compat/test_check_delta_execution_claim_boundary.py",
+      "governance/compat/test_check_rescan_intelligence_hardening.py"
+    ],
+    "effectivenessVerdict": "IMPROVED_BOUNDED",
+    "result": "Bounded shared discussion-section parser accepted for two proven full-text applicability guards only. Marked discussion prose no longer creates applicability positives for those guards; unmarked prose remains checked.",
+    "nextAction": "Operator selects next tranche. ASSF-PIC-T4 may be selected only through fresh GC-018 and source-verified work order; no automatic release.",
+    "picT4Disposition": "SELECTION_ALLOWED_WITH_FRESH_GC018_WORK_ORDER_ONLY",
+    "forbiddenExpansion": "No package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, package integration, worker commit, or worker session-sync."
+  }
+}

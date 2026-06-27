@@ -1,0 +1,25 @@
+{
+  "stateOrder": 457,
+  "stateKey": "deltaT1GovernanceActionPreflightReceiptAcceptedMaterial20260619",
+  "value": {
+    "status": "ACCEPTED_MATERIAL_PENDING_CLOSURE",
+    "acceptedMaterialCommit": "156b0610",
+    "executionBaseHead": "d0dca484",
+    "workerReturn": "docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_WORKER_RETURN_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md",
+    "reviewerRepairs": [
+      "structured secret-bearing values are rejected before persistence",
+      "durable JSON audit writes are serialized and recover after a failed queued write",
+      "work-order Required Artifact Manifest is present"
+    ],
+    "checks": [
+      "focused Vitest PASS 2 files / 48 tests",
+      "MCP package test suite PASS 26 files / 584 tests",
+      "MCP package build PASS",
+      "reviewer-fast PASS 28/28 before accepted-material commit",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Accepted material proves only an invoked deterministic MCP preflight with serialized secret-safe durable persistence and a correlated bounded receipt. It does not prove mandatory invocation, action execution, receipt consumption, external interception, provider/live behavior, public readiness, or universal governed-coding control.",
+    "nextAllowedMove": "Codex converts the four reviewer-owned closure artifacts to CLOSED_PASS_BOUNDED, runs closure gates on a dedicated range, commits closure, then performs final session sync."
+  }
+}

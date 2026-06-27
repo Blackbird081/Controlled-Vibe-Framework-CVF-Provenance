@@ -1,0 +1,5 @@
+{
+  "stateOrder": 650,
+  "stateKey": "adifT1CheckpointAcceptedT2Release20260623",
+  "value": "Codex accepted ADIF-T1 for continuation at review commit 755785ce after worker checkpoint 2fcd2395 and continuity commit d59c5205. Review artifact: docs/reviews/CVF_ADIF_T1_ENTRY_SCHEMA_SOURCE_LAYOUT_SEED_DICTIONARY_CHECKPOINT_REVIEW_2026-06-23.md. One reviewer repair added mandatory INTERNAL_AGENT and EXTERNAL_AGENT_CLI_MCP matrices to applicable T1 surfaces; external adapter behavior remains deferred. Reviewer-fast and pre-commit passed. T2 child-packet authoring is released from the post-sync HEAD and must stop after its checkpoint commit for Codex continuity/review."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 205,
+  "stateKey": "postPublicizationProviderStabilityHardening",
+  "value": "CLOSED_PROVIDER_STABILITY_HARDENING_BOUNDED at docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md; second-window provider repeatability PASS 6/6 across Alibaba qwen-turbo and DeepSeek deepseek-chat; mandatory release gate PASS 7/7; public-sync bounded evidence delta pushed at public commit 51133d4d; total public-safe two-window repeatability is 10/10 but still not broad provider stability."
+}

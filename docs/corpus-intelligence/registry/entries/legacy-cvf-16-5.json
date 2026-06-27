@@ -1,0 +1,32 @@
+{
+  "registryOrder": 7,
+  "id": "legacy-cvf-16-5",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "CVF 16.5 (partial root \u2014 LHW-RESCAN-C)",
+  "scopePaths": [
+    ".private_reference/legacy/CVF 16.5/"
+  ],
+  "fileCount": 100,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "LHW-RESCAN-C",
+  "scanDate": "2026-06-01",
+  "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+  "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+  "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+  "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "PARTIAL",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "broad routing \u2014 deep classification deferred"
+  ],
+  "priorAbsorption": "LHW13-16 connector specs",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+}

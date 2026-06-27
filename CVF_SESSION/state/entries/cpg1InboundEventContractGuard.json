@@ -1,0 +1,5 @@
+{
+  "stateOrder": 69,
+  "stateKey": "cpg1InboundEventContractGuard",
+  "value": "CLOSED_PASS_BOUNDED. cvf.connectionPointEventContractGuard.cpg1.v1 extracts INT1 policy ownership to EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts, wires cvf_validate_plan and cvf_emit_agent_event through that owner module, and replaces duplicated test helpers with direct owner tests. Existing advisory-only behavior and five dotted event values are preserved; runtimeExecutionAuthorized=false remains literal. MCP index reduced from 917 to 873 physical lines. Verification: targeted INT1 8/8, MCP build PASS, full MCP suite 554/554, governed file-size guard PASS, release-quality governed-route bundle PASS 7/7 after classified timeout isolation. Implementation commit 1ff0354c. Completion docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md."
+}

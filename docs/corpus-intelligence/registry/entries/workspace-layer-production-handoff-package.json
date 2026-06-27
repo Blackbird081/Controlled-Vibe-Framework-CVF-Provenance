@@ -1,0 +1,54 @@
+{
+  "registryOrder": 114,
+  "id": "workspace-layer-production-handoff-package",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "Workspace Layer Production Handoff Package",
+  "scopePaths": [
+    "CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE/EXTENSIONS/CVF_WORKSPACE_LAYER/",
+    "CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE/EXTENSIONS/CVF_WORKSPACE_LAYER",
+    "EXTENSIONS/CVF_WORKSPACE_LAYER/",
+    "EXTENSIONS/CVF_WORKSPACE_LAYER"
+  ],
+  "fileCount": 68,
+  "status": "SCANNED",
+  "scanWave": "WLFA-T0-T4",
+  "scanDate": "2026-06-27",
+  "manifestHash": "c8f475d0462b8810728a279971590641bdd9e9749923d48114208631cd6c73c9",
+  "hashAlgorithm": "sha256",
+  "hashInput": "manifest-internal-hash-from-script-output",
+  "manifestPath": "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md",
+  "packetPath": "docs/baselines/CVF_GC018_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_2026-06-27.md",
+  "completionReviewPath": "docs/reviews/CVF_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_COMPLETION_2026-06-27.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_2026-06-27.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+    "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+  },
+  "semanticRegions": [
+    "WORKSPACE_LAYER_CONTRACTS",
+    "LOCAL_RUNTIME_REFERENCE_IMPLEMENTATION",
+    "MCP_AND_CLI_ADVISORY_SURFACES",
+    "STATE_SCHEMA_REFERENCE",
+    "PACKAGE_SMOKE_EVIDENCE"
+  ],
+  "priorAbsorption": "Earlier EARC-T3A and RTAD-T6 work performed selective package absorption only; WLFA-T0-T4 records complete non-cache inventory and CVF-owned disposition without runtime import.",
+  "findings": [
+    {
+      "id": "WLFA-F1-full-inventory-needed-before-runtime-use",
+      "summary": "The frozen workspace-layer package needed a complete non-cache inventory before future workspace runtime or MCP work could safely cite it.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use the stable inventory reference as advisory evidence; open fresh GC-018 before runtime, MCP, CLI, IDE bridge, provider, public-sync, resolver, adapter, or generated aggregate work.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_COMPLETION_2026-06-27.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "raw package as CVF authority",
+    "package smoke result as CVF runtime proof",
+    "package reference implementation imported directly",
+    "MCP readiness claim from package scaffold"
+  ],
+  "nextScanRecommendation": "No rescan required unless the frozen package changes or a future runtime/MCP roadmap opens with fresh source verification."
+}

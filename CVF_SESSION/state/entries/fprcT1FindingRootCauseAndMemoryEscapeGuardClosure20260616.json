@@ -1,0 +1,5 @@
+{
+  "stateOrder": 410,
+  "stateKey": "fprcT1FindingRootCauseAndMemoryEscapeGuardClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material commit 51f56133 from execution base ba902737. Codex accepted the Claude worker return after reviewer repairs to closure status, machine-closure table shape, work-order closure state, runtime-freshness evidence, and trace manifest coverage. Artifacts: docs/reference/CVF_FINDING_PROPAGATION_AND_ROOT_CAUSE_GROUPING_STANDARD_2026-06-16.md; docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md; governance/compat/check_finding_to_governance_learning.py; governance/compat/test_check_finding_to_governance_learning.py; docs/reviews/CVF_FPRC_T1_FINDING_ROOT_CAUSE_AND_MEMORY_ESCAPE_GUARD_COMPLETION_2026-06-16.md. Focused pytest passed 12/12, worker-return fast gate passed, pre-commit hooks passed, and material pre-closure passed except expected active-session sync. Boundary: governance guard hardening only; no provider/API, public-sync, legacy absorption, historical migration, runtime product mutation outside governance/compat, or CCLV-T2 execution."
+}

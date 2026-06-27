@@ -1,0 +1,5 @@
+{
+  "stateOrder": 224,
+  "stateKey": "t3WorkflowCompositionOutcomeSurface",
+  "value": "CLOSED_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE at docs/reviews/CVF_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_COMPLETION_2026-05-22.md; override new_receipt_envelopes GRANTED only for optional workflowComposition field; receipt field count 18->19; targeted tests PASS 6/6; check PASS; full-suite live retrieval transient passed on isolated rerun."
+}

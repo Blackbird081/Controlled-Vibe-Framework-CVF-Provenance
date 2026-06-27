@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceId": "delta-t4a-approval-backed-mutating-profile-boundary-2026-06-19",
+  "status": "PASS_BOUNDED",
+  "executionBaseHead": "22f35116",
+  "materialCommit": "d2fc4f5b",
+  "acceptedMaterialSessionSyncCommit": "136b9095",
+  "closureBaseHead": "136b9095",
+  "binary": "cvf-governed-exec",
+  "launcherContractVersion": "cvf.delta.governedCommandLauncher.v1",
+  "approvalContractVersion": "cvf.delta.mutatingProfileApprovalPolicy.v1",
+  "markerContractVersion": "cvf.delta.approvalMarkerWrite.v1",
+  "newProfile": "approval-marker-write",
+  "fixedTargetRelativePath": ".cvf/delta/approval-marker-write.json",
+  "assertions": {
+    "preflightAllowRequired": true,
+    "atomicConsumptionRequired": true,
+    "durableExecutionIntentRequired": true,
+    "approvalVerdictRequired": true,
+    "runnerAfterApprovalOnly": true,
+    "fixedTargetOnly": true,
+    "callerSelectedTargetRejected": true,
+    "arbitraryExecutableRejected": true,
+    "arbitraryArgumentsRejected": true,
+    "callerEnvironmentOverrideRejected": true,
+    "shellFalseForDirectRunner": true,
+    "knownCredentialPatternsRedacted": true,
+    "approvalBackedMutationProved": true,
+    "externalInterceptionProved": false
+  },
+  "verification": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 22f35116 --head HEAD",
+      "result": "PASS"
+    },
+    {
+      "command": "npx vitest run src/cli/mutating-profile-approval.test.ts src/cli/governed-command-launcher.test.ts --reporter verbose",
+      "result": "PASS_2_FILES_19_TESTS"
+    },
+    {
+      "command": "npm run test:run",
+      "result": "PASS_30_FILES_617_TESTS"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "node dist/cli/governed-exec.js --profile approval-marker-write --workspace <temp> --json",
+      "result": "PASS_EXIT_0_T1_T2_T3_T4A_MARKER_COMPLETED"
+    }
+  ],
+  "reviewerRepairs": [
+    "classify the fixed marker runtime action as R1 under current AI-agent guard semantics while retaining tranche-level R2 sensitivity",
+    "widen TypeScript target-path validation to avoid unsafe literal narrowing"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "claimBoundary": "Opt-in wrapper-owned execution of one fixed approval-backed marker-write profile after durable T1/T2/T3/T4A admission only; no arbitrary command, EDIT/COMMIT, external interception, provider/live behavior, public readiness, or universal governed-coding control."
+}

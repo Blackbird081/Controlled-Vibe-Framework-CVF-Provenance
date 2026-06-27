@@ -5,7 +5,8 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "cvf-mcp-server": "dist/index.js"
+    "cvf-mcp-server": "dist/index.js",
+    "cvf-governed-exec": "dist/cli/governed-exec.js"
   },
   "scripts": {
     "build": "tsc",

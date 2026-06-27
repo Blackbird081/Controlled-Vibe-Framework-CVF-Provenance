@@ -1,0 +1,5 @@
+{
+  "stateOrder": 88,
+  "stateKey": "workerAutonomyDispatchPromptStandard",
+  "value": "ACTIVE. docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md plus check_work_order_dispatch_quality enforcement require READY/DISPATCHED work orders to carry Worker Autonomy / No-Question Rule."
+}

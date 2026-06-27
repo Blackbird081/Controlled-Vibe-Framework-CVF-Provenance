@@ -1,0 +1,5 @@
+{
+  "stateOrder": 64,
+  "stateKey": "rt2FindingToLearningSignalBridge",
+  "value": "CLOSED_PASS_BOUNDED. cvf.findingToLearningSignalBridge.rt2.v1 \u2014 buildFindingToLearningRecord() closes the protocol-only gap between finding guard taxonomy and LPF intake bridge. Inline implementation (no LPF import, Turbopack-safe). 10/10 unit tests PASS. Live proof finding-to-learning-bridge.live.test.ts 1/1 PASS: lane=GOVERNANCE_CONTROL_PLANE, defectClass=RULE_GAP, feedbackClass=ACCEPT, autonomousMutationAuthorized=false. route.ts wiring deferred (1000-line hard limit). GC-018 docs/baselines/CVF_GC018_RT2_FINDING_TO_LEARNING_SIGNAL_BRIDGE_2026-05-31.md."
+}

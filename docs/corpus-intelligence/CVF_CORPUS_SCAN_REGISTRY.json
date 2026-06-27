@@ -3,8 +3,8 @@
   "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
-  "lastUpdated": "2026-06-06",
-  "updatedBy": "P1-P5 small debt remediation audit",
+  "lastUpdated": "2026-06-23",
+  "updatedBy": "Codex (ADIF T0-T5 full-chain closure)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -638,7 +638,7 @@
       "manifestPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
       "packetPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
       "completionReviewPath": null,
-      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md",
+      "gcBaselineRef": "docs/baselines/archive/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md",
       "verdicts": {
         "gc047": "COMPLETE_VERIFIED",
         "gc048": "RECONCILED_VERIFIED",
@@ -780,8 +780,8 @@
       ],
       "fileCount": 2,
       "status": "DEEP_CLASSIFIED",
-      "scanWave": "LPCI2-T8",
-      "scanDate": "2026-06-04",
+      "scanWave": "LPCI2-T9",
+      "scanDate": "2026-06-07",
       "manifestHash": "b7878246e29ab104df404d4d5c558de66a256d6be80073524cc7bafd3dde8d71",
       "manifestPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data/generated/policylocal-data-input-manifest.json",
       "corpusRecordsPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data/generated/policylocal-corpus-records.json",
@@ -842,9 +842,43 @@
         "revisedReadinessVerdict": "READY",
         "finalReadinessVerdict": "READY",
         "negativeSearchEvidenceEntries": 6,
-        "remainingT8Gaps": []
+        "remainingT8Gaps": [],
+        "searchRuntimeVersion": "lpci2.t9.search_runtime.v1",
+        "chunkSchemaVersion": "policylocal.chunk.t8.v1",
+        "chunkCount": 76,
+        "acceptanceQueryCount": 5,
+        "acceptanceQueryAllPass": true,
+        "freshnessDisclosureAllRequiredPass": true,
+        "aq05FreshnessDisclosureApplied": true,
+        "acceptanceReceiptGeneratedAt": "2026-06-07T05:48:52.523037+00:00"
       },
-      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY.",
+      "externalEvidenceHashes": {
+        "chunkGeneratorScript": "sha256:77fd13ba3397b6fdaca32e4246a85598117891fa754f05f243884fd5a2699602",
+        "searchRuntimeScript": "sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78",
+        "chunksFile": "sha256:fe3bf3c36df509b584958da06796795c791fba2d0faeab2a188cc0abd626819c",
+        "acceptanceReceiptsFile": "sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f",
+        "corpusRecordsFile": "sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff",
+        "foundationReadinessScript": "sha256:b5f25ad12225f04a4efc94408779af599d6fdc8be1c9d930300cb3301131a4e1",
+        "foundationReadinessReport": "sha256:2db39d4450485f073c4ad8965c8f0a3ddaffb64337049cf53df0b68699a8baa6"
+      },
+      "foundationReadiness": {
+        "status": "CLOSED_PASS_BOUNDED",
+        "wave": "LPCI2-T10",
+        "schemaVersion": "policylocal.foundationReadiness.t10.v1",
+        "verdict": "PASS",
+        "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md",
+        "workerReturnPath": "docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md",
+        "completionReviewPath": "docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md",
+        "verifierPath": "CVF-Workspace/Policy_Local/scripts/policylocal-foundation-readiness.py",
+        "reportPath": "CVF-Workspace/Policy_Local/data/generated/policylocal-foundation-readiness-report.json",
+        "artifactHashesAllPass": true,
+        "schemaChecksAllPass": true,
+        "receiptAssertionsAllPass": true,
+        "boundaryChecksAllPass": true,
+        "freshnessReviewRequiredOnOrAfter": "2026-07-01",
+        "claimBoundary": "local deterministic foundation-readiness only; no provider, LLM, vector, corpus expansion, deployment, public-sync, current-law, legal advice quality, production, hosted, public, or release readiness claim"
+      },
+      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY. LPCI2-T9: search runtime implemented; policylocal-chunk-generator.py (76 chunks, schema policylocal.chunk.t8.v1) and policylocal-search-runtime.py (filter-first/keyword-rank, EC-01--EC-04, receipt emission) created; 5/5 acceptance queries PASS; AQ-01 and AQ-05 required freshness disclosures observed true after correction; policylocal-chunks.json and policylocal-query-receipts-acceptance.json generated.",
       "findings": [
         {
           "id": "T4S-F1-docx-text-extraction-deferred",
@@ -869,24 +903,36 @@
         {
           "id": "T4-F2-search-chat-blocked",
           "summary": "SUMMARY_WITH_SOURCE with READ_SHALLOW classification is not sufficient for search/chat runtime.",
-          "disposition": "DEFER_PHASED",
-          "nextAction": "Open a bounded search/chat readiness work order after T5 operator commit. Do not open search/chat runtime until that readiness gate closes.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "RESOLVED by LPCI2-T9: search runtime implemented; 5/5 acceptance queries PASS; chunks generated; receipts emitted.",
           "defectClass": "RUNTIME_SIGNAL_GAP",
           "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
-          "f2gRef": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition"
+          "f2gRef": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition",
+          "resolvedBy": "LPCI2-T9"
+        },
+        {
+          "id": "T9-F1-aq05-freshness-assertion-gap",
+          "summary": "Original T9 verifier marked AQ-05 PASS without asserting freshnessDisclosureApplied=true even though the work order required it for the EC-02 not_yet_in_force path.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "RESOLVED by T9 correction: runtime/verifier updated; AQ-05 now emits freshnessDisclosureApplied=true; template and machine closure checker hardened.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition",
+          "resolvedBy": "LPCI2-T9-CORRECTION"
         }
       ],
       "negativeSearchTerms": [
         "DIRECT_CITED_ANSWER from 116_2025_QH15_666020.docx or 148_2025_QH15_675262.docx (blocked; amended laws use SUMMARY_WITH_SOURCE; citation depth insufficient)",
         "effectiveDate unknown (T5 resolved: 2026-07-01 confirmed P1_effective_clause for both files)",
-        "search/chat runtime readiness (governance scaffold READY after T8; implementation still blocked until fresh operator-authorized work order)",
+        "search/chat runtime production deployment (search runtime IMPLEMENTED at T9 for pilot corpus; not production-deployed; no provider calls; no live hosted API)",
         "live query negative evidence (not produced; T8 negativeSearchEvidence is structural and implementation tests must produce live receipts)",
         "provider call in T5 deep scan (none; local python-docx only; no model inference)",
         "both laws currently in force (effectiveDate=2026-07-01; not yet in force as of 2026-06-04)"
       ],
-      "nextScanRecommendation": "T8 governance scaffold complete. PolicyLocal is READY for a fresh operator-authorized search implementation work order; do not begin runtime work from this registry entry alone. EC-02 rescan required on or after 2026-07-01 before any production runtime opens.",
+      "nextScanRecommendation": "T10 foundation readiness is CLOSED_PASS_BOUNDED with hash-bound verifier/report. Recommended next: LPCI2-T11 PolicyLocal Corpus Expansion Readiness to inventory and source-verify candidate corpus additions. EC-02 rescan remains required on or after 2026-07-01 before any current-law or production runtime claim.",
       "hashAlgorithm": "sha256",
-      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "t9CompletionReviewPath": "docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md"
     },
     {
       "id": "mlw0-current-source-verification-map",
@@ -1477,6 +1523,2797 @@
         "auth provider replacement claim (not made)"
       ],
       "nextScanRecommendation": "Open DEP2 before scanning broader auth runtime or package migration surfaces."
+    },
+    {
+      "id": "graphify-guard-source-verification-kgr-tests",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "Graphify Guard Source Verification — KGR test corpus",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/knowledge-graph-store.test.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-retrieval-policy.kgr.test.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "GRAPHIFY-SOURCE-VERIFICATION-2026-06-07",
+      "scanDate": "2026-06-07",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md",
+      "completionReviewPath": "docs/reviews/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md",
+      "gcBaselineRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "GRAPH_KNOWLEDGE_RETRIEVAL",
+        "ACCESS_CONTROL_GATE",
+        "CONFIDENTIALITY_FILTER",
+        "COMPLIANCE_LIFECYCLE_TAG"
+      ],
+      "priorAbsorption": "KGR1 delivered KgrGuardPolicyId registry and tests. This entry registers the test corpus read during Graphify guard enforcement source verification (doc-only, no runtime change).",
+      "findings": [
+        {
+          "id": "GRAPHIFY-SV-F1-tests-confirm-g-gm-05-08",
+          "summary": "KGR tests confirm actorAuthorized gate (G-GM-05) and PENDING_REVIEW exclusion (G-GM-08). Named guard assertion is the bounded next step.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Follow-up work order to add named G-GM-05 and G-GM-08 test assertions in memory-retrieval-policy.kgr.test.ts.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md"
+        }
+      ],
+      "negativeSearchTerms": [
+        "named G-GM-05 guard assertion (not yet present in tests)",
+        "named G-GM-08 guard assertion (not yet present in tests)",
+        "full guard enforcement claim (not made)"
+      ],
+      "nextScanRecommendation": "Open G-GM-08 + G-GM-06 named guard annotation work order before re-scanning this test corpus."
+    },
+    {
+      "id": "graphify-guard-source-verification-cli-src",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "Graphify Guard Source Verification — CLI source drift check",
+      "scopePaths": [
+        "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts",
+        "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "scanWave": "GRAPHIFY-SOURCE-VERIFICATION-2026-06-07",
+      "scanDate": "2026-06-07",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md",
+      "completionReviewPath": "docs/reviews/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md",
+      "gcBaselineRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "CLI_COMMAND_REGISTRY",
+        "GRAPH_CLI_ABSENCE_CONFIRMED"
+      ],
+      "priorAbsorption": "CLI command registry read during Graphify guard enforcement source verification to confirm 'cvf graph' commands are still absent. CI1-T2 F3 CLI-absence finding confirmed current.",
+      "findings": [
+        {
+          "id": "GRAPHIFY-SV-F2-cli-graph-still-absent",
+          "summary": "rg 'cvf graph' in CLI src confirms no graph commands in command.registry.ts at HEAD 74ba8033. CI1-T2 F3 finding is still current.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "CLI graph commands remain parked in CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md. No action required from this verification.",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md#cli-boundary"
+        }
+      ],
+      "negativeSearchTerms": [
+        "cvf graph command in command.registry.ts (absent — F3 finding current)",
+        "CLI graph enforcement claim (not made)"
+      ],
+      "nextScanRecommendation": "Re-scan only when a CLI graph work order is authorized. Parked roadmap: docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md."
+    },
+    {
+      "id": "dscp-t1-domain-agnostic-owner-source-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T1 domain-agnostic owner source surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/rag.context.engine.convergence.contract.ts",
+        "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/types.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T1-OWNER-SURFACE-MAP-2026-06-07",
+      "scanDate": "2026-06-07",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reference/CVF_DSCP_T1_OWNER_SURFACE_MAP_2026-06-07.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_COMPLETION_2026-06-07.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T1_OWNER_SURFACE_MAP_AND_SCHEMA_PROPOSAL_2026-06-07.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "CONTEXT_PACK_CONTRACT",
+        "RAG_CONTEXT_CONVERGENCE",
+        "RAG_PIPELINE_TYPES",
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK"
+      ],
+      "priorAbsorption": "DSCP-T1 read these source surfaces to map existing scan, context-pack, and retrieval owner interfaces into a domain-agnostic doc-only schema proposal.",
+      "findings": [
+        {
+          "id": "DSCP-T1-F1-governance-envelope-wrapper-needed",
+          "summary": "ContextPackagerRequest and RAG pipeline types are reusable owner surfaces but need a governance envelope wrapper before cross-domain runtime use.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open DSCP-T2 only with explicit operator authorization to author TypeScript contracts and tests.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "DSCP runtime pilot claim (not made)",
+        "new TypeScript contract implementation (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Use DSCP-T2 for contract authoring only after explicit operator authorization; DSCP-T1 is doc-only."
+    },
+    {
+      "id": "dscp-t2-domain-agnostic-contract-and-test-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T2 domain-agnostic governed context contract and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.context.contract.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T2-STANDARD-CONTRACT-AUTHORING-2026-06-07",
+      "scanDate": "2026-06-07",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T2_STANDARD_CONTRACT_AUTHORING_COMPLETION_2026-06-07.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T2_STANDARD_CONTRACT_AUTHORING_COMPLETION_2026-06-07.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T2_STANDARD_CONTRACT_AUTHORING_2026-06-07.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "GOVERNED_CONTEXT_CONTRACT",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T2 converted the DSCP-T1 doc-only schema proposal into type-only CPF contract and focused test surfaces. No runtime pilot or corpus ingestion was authorized.",
+      "findings": [
+        {
+          "id": "DSCP-T2-F1-runtime-pilot-deferred",
+          "summary": "Type-only contract is ready, but runtime pilot remains separate and operator-authorized.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open DSCP-T3 only after operator selects a named runtime pilot scope.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_DSCP_T2_STANDARD_CONTRACT_AUTHORING_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "runtime pilot claim (not made)",
+        "provider call (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Use DSCP-T3 only for a separately authorized runtime pilot with named domain and deterministic proof scope."
+    },
+    {
+      "id": "dscp-t3-cpf-internal-runtime-pilot-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T3 CPF internal governed context packer and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.context.packer.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T3-RUNTIME-PILOT-CPF-INTERNAL-2026-06-07",
+      "scanDate": "2026-06-07",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_COMPLETION_2026-06-07.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_COMPLETION_2026-06-07.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_2026-06-07.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "GOVERNED_CONTEXT_RUNTIME_WRAPPER",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T3 wires DSCP-T2 type contracts into a deterministic CPF internal governed wrapper around ContextPackagerContract.pack(). No retrieval receipt runtime, provider call, or corpus ingestion is authorized.",
+      "findings": [
+        {
+          "id": "DSCP-T3-F1-retrieval-receipt-runtime-deferred",
+          "summary": "GovernedContextPackerContract creates governed packages, but GovernedRetrievalReceipt remains a type-only contract with no runtime instantiation.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use a separate DSCP-T4 receipt runtime boundary roadmap only after Codex audit and operator authorization.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "GovernedRetrievalReceipt runtime instance (not made)",
+        "provider call (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Audit DSCP-T3 closure before opening DSCP-T4. If authorized, DSCP-T4 should be receipt runtime boundary only, deterministic and provider-free unless a separate live-proof lane is authorized."
+    },
+    {
+      "id": "dscp-t4-retrieval-receipt-runtime-boundary-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T4 retrieval receipt runtime helper and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T4-RETRIEVAL-RECEIPT-RUNTIME-BOUNDARY-2026-06-07",
+      "scanDate": "2026-06-07",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_2026-06-07.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "GOVERNED_RETRIEVAL_RECEIPT_RUNTIME",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T4 wires DSCP-T2 receipt contracts to DSCP-T3 governed package output through a deterministic local receipt builder. No provider call, live retrieval query, response hash computation, or corpus ingestion is authorized.",
+      "findings": [
+        {
+          "id": "DSCP-T4-F1-source-artifact-id-snapshot-copy",
+          "summary": "Reviewer corrected sourceArtifactIds from direct package evidence array reference to snapshot copy and added focused coverage.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "No further action required for DSCP-T4; future runtime receipt helpers should avoid retaining mutable evidence-array references.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "provider call (not made)",
+        "live retrieval query (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Use separate operator-authorized roadmap before any live/provider retrieval, response-hash computation, public-sync, or domain-specific corpus ingestion work."
+    },
+    {
+      "id": "dscp-t6-scan-descriptor-runtime-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T6 scan descriptor runtime helper and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T6-SCAN-DESCRIPTOR-RUNTIME-2026-06-08",
+      "scanDate": "2026-06-08",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_2026-06-08.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "SCAN_DESCRIPTOR_RUNTIME",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T6 worker return adds a deterministic local scan descriptor builder and focused tests. No provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+      "findings": [
+        {
+          "id": "DSCP-T6-F1-gc051-reviewer-fast-gap",
+          "summary": "Reviewer-fast caught missing GC-051 coverage for the new T6 source and test paths after worker return.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Keep source/test path registry coverage in the same governed batch as future worker returns that mention new source paths.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "provider call (not made)",
+        "corpus ingestion (not made)",
+        "T12 authorization claim (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Re-scan only when DSCP scan descriptor runtime behavior changes or a future domain adapter consumes this helper."
+    },
+    {
+      "id": "dscp-t7-eco-multi-domain-adapter-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T7 ECO multi-domain adapter and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts",
+        "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T7-ECO-MULTI-DOMAIN-ADAPTER-2026-06-08",
+      "scanDate": "2026-06-08",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_WORKER_RETURN_2026-06-08.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_2026-06-08.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "ECO_RAG_PIPELINE_ADAPTER",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T7 adds a deterministic local ECO-to-DSCP adapter and focused tests. No live ECO retrieval, provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+      "findings": [
+        {
+          "id": "DSCP-T7-F1-cross-extension-tsc-command",
+          "summary": "Reviewer used a widened rootDir TypeScript command because ECO rootDir is package-local while T7 intentionally imports sibling CPF types.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future cross-extension work orders should record the package-specific TypeScript command before dispatch.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "provider call (not made)",
+        "live ECO retrieval (not made)",
+        "corpus ingestion (not made)",
+        "T12 authorization claim (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Re-scan only when DSCP ECO adapter behavior changes or future ECO retrieval runtime integration is authorized."
+    },
+    {
+      "id": "dscp-t8-lpf-cross-lane-adapter-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T8 LPF cross-lane adapter and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T8-LPF-CROSS-LANE-ADAPTER-2026-06-08",
+      "scanDate": "2026-06-08",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_WORKER_RETURN_2026-06-08.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T8_MKE1_CROSS_LANE_WIREIN_2026-06-08.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "LPF_MEMORY_CONTEXT_ADAPTER",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T8 adds a deterministic local LPF-to-DSCP adapter and focused tests. No live memory retrieval, provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+      "findings": [
+        {
+          "id": "DSCP-T8-F1-deferred-source-verification-wording",
+          "summary": "Reviewer replaced worker-later verification wording for TypedContextPackage shape with source-verified fields before closure.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Continue using dispatch-quality guard to block deferred source-verification wording before execution.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "provider call (not made)",
+        "live memory retrieval (not made)",
+        "corpus ingestion (not made)",
+        "T12 authorization claim (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Re-scan only when DSCP LPF adapter behavior changes or future memory retrieval runtime integration is authorized."
+    },
+    {
+      "id": "dscp-t9-local-pipeline-harness",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T9 local pipeline harness test",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.local.pipeline.harness.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T9-LOCAL-PIPELINE-HARNESS-2026-06-08",
+      "scanDate": "2026-06-08",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_WORKER_RETURN_2026-06-08.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T9_LOCAL_PIPELINE_HARNESS_2026-06-08.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "LOCAL_PIPELINE_INTEGRATION_HARNESS",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T9 adds a deterministic local harness proving T6/T7/T8/T3/T4 surfaces compose without raw content release, raw source release, or governance bypass. No live provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "provider call (not made)",
+        "live retrieval (not made)",
+        "corpus ingestion (not made)",
+        "T12 authorization claim (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Re-scan only when DSCP pipeline surface behavior changes or a new integration tranche is authorized."
+    },
+    {
+      "id": "mcp-server-v2.5-generic-agent-adapter",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF ECO v2.5 MCP Server / generic-agent-adapter source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/"
+      ],
+      "fileCount": null,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "LHW21-IS1",
+      "scanDate": "2026-05-31",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_IS1_GENERIC_AGENT_ADAPTER_FAST_LANE_2026-05-31.md",
+      "notes": "Retroactively registered 2026-06-10. Source files reviewed during IS1 and LHW21 intake (2026-05-31). Registry entry added to satisfy GC-051 coverage requirement.",
+      "findings": [
+        {
+          "id": "F1-is1-lhw21-intake",
+          "summary": "MCP Server generic-agent-adapter.ts and index.ts reviewed during IS1 Fast Lane and LHW21 integration point intake (2026-05-31). Adapter pattern confirmed compatible with CVF IS1 integration contract.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None — IS1 integration is closed.",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "N/A — IS1 closed; re-scan on next MCP server major version.",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_APPLICABLE",
+        "gc050": "NOT_APPLICABLE"
+      },
+      "semanticRegions": {},
+      "priorAbsorption": {},
+      "hashAlgorithm": null,
+      "hashInput": null
+    },
+    {
+      "id": "private-reference-legacy-all",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": ".private_reference/legacy (full tree)",
+      "scopePaths": [
+        ".private_reference/legacy/"
+      ],
+      "fileCount": null,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "LHW-RESCAN-C-MKG1",
+      "scanDate": "2026-06-01",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_COMPLETION_2026-06-01.md",
+      "notes": "Retroactively registered 2026-06-10. Legacy folder was scanned during MKG1 owner surface review (2026-06-01). Registry entry added to satisfy GC-051 coverage requirement.",
+      "findings": [
+        {
+          "id": "F1-mkg1-legacy-owner-surface",
+          "summary": ".private_reference/legacy/** scanned during MKG1 Memory/Knowledge/Graph owner surface review (2026-06-01). 47 Memory/Knowledge/Graph assets identified and triaged.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None — MKG1 closed; legacy absorption complete for this corpus.",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "N/A — legacy absorption closed for this corpus.",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_APPLICABLE",
+        "gc050": "NOT_APPLICABLE"
+      },
+      "semanticRegions": {},
+      "priorAbsorption": {},
+      "hashAlgorithm": null,
+      "hashInput": null
+    },
+    {
+      "id": "dscp-t10-domain-profile-contract-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T10 domain profile contract source/export",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T10",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T10 new source contract plus CPF export barrel. Domain-profile helper; no corpus content ingested; no findings.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED"
+    },
+    {
+      "id": "dscp-t10-domain-profile-contract-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T10 domain profile contract tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.contract.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T10",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T10 focused test file. 17 vitest assertions; no corpus content ingested; no findings.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED"
+    },
+    {
+      "id": "dscp-t11-profile-aware-pipeline-harness-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11 profile-aware pipeline harness tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.aware.pipeline.harness.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11 profile-aware pipeline harness. 4 vitest assertions proving profile metadata and gate keys flow through descriptor to ECO/LPF package without content release and without cross-profile bleed."
+    },
+    {
+      "id": "dscp-t11e-domain-profile-registry-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11E domain profile registry source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.registry.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11E",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11E new registry contract. DscpDomainProfileRegistry class + createDscpDomainProfileRegistry factory; no corpus content ingested; no findings."
+    },
+    {
+      "id": "dscp-t11e-domain-profile-registry-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11E domain profile registry tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.registry.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11E",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11E focused test file. 18 vitest assertions covering registration, selection, ambiguity, no-match, requiredFacetKey, and select-then-apply pipeline integration."
+    },
+    {
+      "id": "dscp-t11f-profile-selection-adapter-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11F profile selection adapter source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11F",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11F profile selection adapter. selectAndApplyDscpDomainProfile combines DscpDomainProfileRegistry.select() + applyDomainProfileToDescriptorInput() in a single pipeline; no corpus content ingested; no findings."
+    },
+    {
+      "id": "dscp-t11f-profile-selection-adapter-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11F profile selection adapter tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11F",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11F focused test file. 14 vitest assertions covering unique selection, no-match stop, ambiguous stop, blocked application stop, and profile isolation with no gate bleed."
+    },
+    {
+      "id": "ex-t2-tier1-extractor-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T2 Tier 1 extractor source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T2",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+      "notes": "CVF Extraction Foundation Tier 1 digital-native extractor. extract_docx (python-docx) + extract_pdf_text_layer (pdfplumber) + extract_tier1 dispatcher. MIN_CHARS_PER_PAGE=100. Language-transparent: language_codes copied from DscpDomainProfile, never inferred from content. No OCR in this module."
+    },
+    {
+      "id": "ex-t2-tier1-extractor-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T2 Tier 1 extractor tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T2",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+      "notes": "EX-T2 focused test file. 21 pytest assertions covering extract_docx, extract_pdf_text_layer, extract_tier1 dispatcher (routing + UnsupportedFileTypeError), MIN_CHARS_PER_PAGE boundary, language_codes passthrough, and no-OCR source guard."
+    },
+    {
+      "id": "ex-t2-extraction-foundation-package-stubs",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T2 package stubs",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/__init__.py",
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/__init__.py",
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/__init__.py"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T2",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+      "notes": "Package marker stubs for the EX-T2 CVF Extraction Foundation source, src, and tests directories. No runtime behavior."
+    },
+    {
+      "id": "ex-t3-t6-extraction-pipeline-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T3 through EX-T6 pipeline source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T3-EX-T6",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md",
+      "notes": "Deterministic local extraction pipeline contracts for Tier 2 OCR adapter boundary, OCR language mapping, Tier 3 quality gate, fixed-window chunk schema, and DSCP descriptor handoff. No OCR dependency install, model download, corpus ingestion, provider call, or legal/current-status claim."
+    },
+    {
+      "id": "ex-t3-t6-extraction-pipeline-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T3 through EX-T6 pipeline tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T3-EX-T6",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md",
+      "notes": "Focused pytest coverage for OCR language mapping, explicit OCR adapter boundary, confidence capture, quality flags, fixed-window chunking, and DSCP descriptor handoff without raw-content release."
+    },
+    {
+      "id": "ex-t7-sentence-boundary-chunking-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T7 sentence-boundary chunking source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T7",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_COMPLETION_2026-06-12.md",
+      "notes": "Optional deterministic sentence-boundary chunking strategy with fixed-window fallback, page-local charStart/charEnd trace metadata, and fixed-window default preserved. No OCR dependency install, model download, corpus ingestion, provider call, retrieval behavior, or legal/current-status claim."
+    },
+    {
+      "id": "ex-t7-sentence-boundary-chunking-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T7 sentence-boundary chunking tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T7",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_COMPLETION_2026-06-12.md",
+      "notes": "Focused pytest coverage for sentence boundary grouping, long-span fixed-window fallback, deterministic chunk IDs, offset metadata, and raw-content-release boundary."
+    },
+    {
+      "id": "ex-t8-extraction-authority-storage-boundary-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T8 authority/storage boundary source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T8",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md",
+      "notes": "ExtractionAuthorityLevel, RebuildClass, raw OCR retention flag, ExtractionStorageBoundary, deterministic boundary hash, and descriptor metadata propagation. No raw OCR persistence, corpus ingestion, retrieval behavior, provider call, or legal/current-status claim."
+    },
+    {
+      "id": "ex-t8-extraction-authority-storage-boundary-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T8 authority/storage boundary tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T8",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md",
+      "notes": "Focused pytest coverage for extracted-text authority, Tier 1 char-offset rebuild, Tier 2 page-reOCR rebuild, raw OCR retention default, descriptor metadata propagation, and storage-boundary hash determinism."
+    },
+    {
+      "id": "ex-t9-scan-outcome-report-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T9 scan outcome report source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T9",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md",
+      "notes": "Domain-agnostic immutable scan outcome records, stable quality-signal actions, deterministic JSON/Markdown rendering, and caller-selected UTF-8 output paths. No descriptor list, raw chunk text, raw OCR text, domain decision, provider call, or retrieval behavior."
+    },
+    {
+      "id": "ex-t9-scan-outcome-report-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T9 scan outcome report tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_outcome_report.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T9",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md",
+      "notes": "Focused pytest coverage for PASS, all current extraction quality signals, generic blocking findings, deterministic JSON, Markdown evidence, raw-content non-release, and Unicode filename writes."
+    },
+    {
+      "id": "meor-t1-metadata-evidence-resolution-contract",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CVF MEOR-T1 metadata evidence resolution contract",
+      "scopePaths": [
+        "docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_CONTRACT_2026-06-12.md",
+        "docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_SEMANTICS_2026-06-12.json"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Re-scan when the contract version changes or a new profile-scoped requirement class is added.",
+      "scanWave": "MEOR-T1",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_COMPLETION_2026-06-12.md",
+      "notes": "Domain-agnostic metadata requirement, evidence basis, operator resolution, downstream re-evaluation, failure-token, and cross-domain isolation semantics. Specification only; no runtime, source-authenticity, domain-truth, gate-activation, or readiness claim."
+    },
+    {
+      "id": "meor-t2-metadata-evidence-normalization-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-T2 metadata evidence normalization source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/metadata_evidence.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T2_EXTRACTION_METADATA_FINDING_NORMALIZATION_COMPLETION_2026-06-12.md",
+      "notes": "Deterministic T1 rule evaluation, canonical failure tokens, profile ownership validation, bounded evidence pointers, and adapter to existing EX-T9 ScanOutcomeFinding."
+    },
+    {
+      "id": "meor-t2-metadata-evidence-normalization-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-T2 metadata evidence normalization tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_metadata_evidence.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T2_EXTRACTION_METADATA_FINDING_NORMALIZATION_COMPLETION_2026-06-12.md",
+      "notes": "30 focused pytest cases covering all 21 allowed pairs, canonical failures, provenance distinction, derived-hint blocking, and EX-T9 report integration."
+    },
+    {
+      "id": "meor-t3-dscp-profile-requirement-bridge-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-T3 DSCP profile requirement bridge source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.metadata.requirement.bridge.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Re-scan when requirement declaration semantics or profile ownership validation changes.",
+      "scanWave": "MEOR-T3",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T3_DSCP_PROFILE_REQUIREMENT_BRIDGE_COMPLETION_2026-06-12.md",
+      "notes": "Optional profile-scoped declarations, canonical evidence-basis literals, deterministic owner map, fail-closed validation, and no descriptor or gate mutation."
+    },
+    {
+      "id": "meor-t3-dscp-profile-requirement-bridge-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-T3 DSCP profile requirement bridge tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.metadata.requirement.bridge.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-T3",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T3_DSCP_PROFILE_REQUIREMENT_BRIDGE_COMPLETION_2026-06-12.md",
+      "notes": "12 focused tests for omitted requirements, normalization, non-mutation, invalid identifiers, owner mismatch, duplicates, invalid evidence, and invalid required flags."
+    },
+    {
+      "id": "meor-t4-cross-domain-conformance-fixture",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CVF MEOR-T4 cross-domain conformance fixture",
+      "scopePaths": [
+        "docs/reference/CVF_MEOR_T4_CROSS_DOMAIN_CONFORMANCE_FIXTURES_2026-06-12.json"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "policy_local",
+        "cand-",
+        "raw:",
+        "ocr:",
+        "content:"
+      ],
+      "nextScanRecommendation": "Re-scan when MEOR machine semantics or supported profile families change.",
+      "scanWave": "MEOR-T4",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T4_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
+      "notes": "One shared synthetic JSON authority for legal-policy and technical-project requirement ownership plus resolved, unresolved, conflict, and not-applicable cases."
+    },
+    {
+      "id": "meor-t4-cross-domain-conformance-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-T4 cross-domain conformance tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.metadata.requirement.cross.domain.conformance.test.ts",
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_metadata_evidence_cross_domain.py"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-T4",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T4_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
+      "notes": "TypeScript and Python suites consume the same fixture and prove exact requirement sets, cross-profile rejection, four deterministic outcomes, and absence of real use-case coupling."
+    },
+    {
+      "id": "meor-rda-t2-regulated-domain-adapter-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-RDA-T2 regulated-domain adapter source and export surface",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.regulated.domain.adapter.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "policy_local",
+        "QUERY_CLASS_GATED",
+        "ec_activation",
+        "ocr:",
+        "raw:"
+      ],
+      "nextScanRecommendation": "Re-scan if regulated concept mappings or RDA-T1 semantics change.",
+      "scanWave": "MEOR-RDA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md",
+      "notes": "Local deterministic helper and CPF context-barrel export converting DscpDomainProfile into four profile-owned regulated MEOR requirements when supportsDocumentStatus=true; non-regulatory profiles receive eligible=false with no requirements generated."
+    },
+    {
+      "id": "meor-rda-t2-regulated-domain-adapter-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-RDA-T2 regulated-domain adapter tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.regulated.domain.adapter.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-RDA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md",
+      "notes": "16 focused TypeScript tests covering: non-regulatory profile rejection, false flag rejection, empty-ID failure, regulated profile eligible=true, owner-profile scoping, evidence-basis values, all four concept keys, requirement IDs, required=true, two-profile isolation, non-bleed proof, bridge-pass with correct owner, bridge OWNER_PROFILE_MISMATCH with foreign profile, frozen mapping table, frozen result, and no QUERY_CLASS_GATED write. All 16 pass."
+    },
+    {
+      "id": "meor-rda-t3-regulated-domain-conformance-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-RDA-T3 regulated-domain cross-domain conformance tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.regulated.domain.adapter.conformance.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "Policy_Local",
+        "QUERY_CLASS_GATED",
+        "ec_activation",
+        "ocr:",
+        "raw:"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-RDA-T3",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
+      "notes": "Focused TypeScript conformance tests proving explicit legal-policy support generates exactly four regulated requirements, company_docs/technical_project/governance_docs/mixed_corpus profiles receive no lifecycle requirements by default, legal-policy without the support flag is rejected, cross-profile attachment fails with OWNER_PROFILE_MISMATCH, and two regulated profiles keep requirement ownership isolated."
+    },
+    {
+      "id": "exa-t2-scan-route-decision-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EXA-T2 scan route decision source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "DocumentScanSignals (absent before EXA-T2 - confirmed by pre-flight search)",
+        "ScanRouteDecision (absent before EXA-T2 - confirmed by pre-flight search)",
+        "ExtractionStrategy (not imported - confirmed by pre-flight search)",
+        "EQSReport (not imported - confirmed by pre-flight search)",
+        "provider fallback (not present)",
+        "Policy_Local (not present)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EXA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md",
+      "notes": "Deterministic DocumentScanSignals dataclass and ScanRouteDecision contract. decide_scan_route() maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL_EXTRACTION/EMPTY to four stable route dispositions, and treats unsupported source types and language codes as BLOCKED_UNSUPPORTED via the governed OCR language mapping table. No OCR execution, no provider call, no Policy_Local mutation, no raw content release."
+    },
+    {
+      "id": "exa-t2-scan-route-decision-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EXA-T2 scan route decision tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EXA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md",
+      "notes": "Focused pytest coverage for PASS/local route, NEEDS_TIER2_OCR/OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source type blocking, source-type priority over language check, docx support, empty language codes, deterministic repeatability, version+claim-boundary presence, no raw-content fields, and parametrized status-to-route mapping."
+    },
+    {
+      "id": "memory-consolidation-control-plane-owner-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "Memory consolidation control-plane owner surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/knowledge.refactor.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/knowledge.maintenance.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "runtime memory mutation (not authorized)",
+        "Policy_Local mutation (not authorized)",
+        "provider call (not made)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEMCON-ROADMAP-REBUTTAL-2026-06-12",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_CLAUDE_REBUTTAL_2026-06-12.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MEMORY_PLANE_OWNER_SURFACE",
+        "KNOWLEDGE_MAINTENANCE_CONTRACT",
+        "W7_MEMORY_RECORD_CONTRACT"
+      ],
+      "priorAbsorption": "Bounded source coverage for the memory consolidation roadmap rebuttal only. No runtime change, provider proof, Policy_Local mutation, or autonomous memory mutation is authorized by this registry entry.",
+      "notes": "Covers Control Plane owner surfaces referenced by the MEMCON roadmap rebuttal as partial existing memory and knowledge lifecycle primitives."
+    },
+    {
+      "id": "memory-consolidation-schema-appendix",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "Memory consolidation schema appendix",
+      "scopePaths": [
+        "docs/reference/CVF_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md",
+        "docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md",
+        "docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "MemorySignal runtime type owner not found",
+        "MemoryCandidate runtime type owner not found",
+        "ConsolidatedMemoryRecord runtime type owner not found"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEMCON-T1B-2026-06-13",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md",
+      "completionReviewPath": "docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MEMORY_CONSOLIDATION_SCHEMA",
+        "MEMORY_PLANE_OWNER_SURFACE",
+        "DOC_ONLY_SCHEMA_APPENDIX"
+      ],
+      "priorAbsorption": "MEMCON-T1a closed the standard and owner reconciliation. T1b adds doc-only field tables and runtime collision evidence, with no runtime source mutation.",
+      "notes": "Covers the Memory Consolidation schema appendix and its direct T1a owner references. The proposed symbols remain doc-only until a later authorized runtime implementation tranche."
+    },
+    {
+      "id": "dir-t1-document-intelligence-router-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DIR-T1 document intelligence router source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_router.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw_text (not present - confirmed by no-raw-content test)",
+        "ocr_output (not present - confirmed by no-raw-content test)",
+        "provider_response (not present - confirmed by no-raw-content test)",
+        "TRANSLATION_PREP (rejected use-case name - not a capability value)",
+        "POLICY_EVIDENCE_REVIEW (rejected use-case name - not a capability value)",
+        "Policy_Local (not present)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DIR-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md",
+      "notes": "Deterministic local Document Intelligence Router that composes EXA-T2 scan-route contracts by import, derives a disjoint AuthorizationGate via a total map over scan dispositions, and stores no raw content, OCR output, or provider response. No OCR/provider execution, retrieval change, corpus ingestion, or external use-case tree read."
+    },
+    {
+      "id": "dir-t1-document-intelligence-router-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DIR-T1 document intelligence router tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw document text (not asserted or stored)",
+        "OCR execution (not invoked)",
+        "provider call (not invoked)",
+        "Policy_Local (not present)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DIR-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md",
+      "notes": "Focused pytest coverage for gate/scan-disposition disjointness, total derivation map over four scan dispositions, scan-route passthrough, operator-review and blocked-source preservation, no-raw-content dataclass fields, capability composition, digest presence, and use-case-name leakage prevention."
+    },
+    {
+      "id": "dir-t2-document-intelligence-router-foundation-pilot-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DIR-T2 document intelligence router foundation pilot tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router_foundation_pilot.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw document text (not asserted or stored)",
+        "OCR execution (not invoked)",
+        "provider call (not invoked)",
+        "Document_Translator external tree (not accessed)",
+        "Policy_Local (not mutated)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DIR-T2",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md",
+      "notes": "Focused pytest coverage for synthetic metadata-only sample fixtures across all four EXA-T2 scan dispositions, DIR authorization gate derivation, operator action, downstream eligibility, scan-route passthrough, digest presence, claim-boundary invariants, and use-case leakage prevention."
+    },
+    {
+      "id": "dice-t1-document-intelligence-control-envelope-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DICE-T1 document intelligence control envelope source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw_text (not present - confirmed by no-raw-content test)",
+        "ocr_output (not present - confirmed by no-raw-content test)",
+        "provider_response (not present - confirmed by no-raw-content test)",
+        "Document_Translator external tree (not accessed)",
+        "Policy_Local (not mutated)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DICE-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md",
+      "notes": "Local deterministic Document Intelligence Control Envelope composer that consumes existing DIR, EXA-T2 scan-route, and scan outcome report owner surfaces. No OCR/provider execution, retrieval change, corpus ingestion, public-sync, external use-case tree access, or readiness/cost/quality claim."
+    },
+    {
+      "id": "dice-t1-document-intelligence-control-envelope-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DICE-T1 document intelligence control envelope tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw document text (not asserted or stored)",
+        "OCR execution (not invoked)",
+        "provider call (not invoked)",
+        "Document_Translator external tree (not accessed)",
+        "Policy_Local (not mutated)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DICE-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md",
+      "notes": "Focused pytest coverage for DICE-MC-01 through DICE-MC-10, including owner literal non-redefinition, blocked handoff behavior, operator-review preservation, scan digest and decision version preservation, DIR downstream eligibility passthrough, no new OCR confidence threshold, and scan finding preservation."
+    },
+    {
+      "id": "model-gateway-c02-p1-routing-policy-pipeline-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P1 routing policy pipeline source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "PolicyDecision (not introduced - name collision avoided)",
+        "dynamic model registry (not implemented in P1)",
+        "unified gateway interface (not implemented in P1)",
+        "AI Gateway environment signal capture (not implemented in P1)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P1",
+      "scanDate": "2026-06-14",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md",
+      "notes": "Routing-scoped pipeline source for C-02 P1. Implements capability, stage, complexity, risk, and cost candidate stages for RoutingPolicyEngine without provider/API calls, dynamic registry P2, unified gateway interface P3, strategy layer, AI Gateway, or public-sync."
+    },
+    {
+      "id": "model-gateway-c02-p1-existing-routing-touchpoints",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P1 existing routing touchpoints",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phase2b-runtime-coherence.test.ts"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "ROUTING_POLICY_CONTRACT_VERSION (unchanged)",
+        "PolicyDecision (not introduced - name collision avoided)",
+        "Guard Contract phase2b consumer edit (not performed)",
+        "provider/API/live proof (not authorized for P1)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P1",
+      "scanDate": "2026-06-14",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md",
+      "notes": "Existing source/test touchpoints cited by the Model Gateway C-02 P1 closure packet. Coverage documents additive routing-policy integration, barrel export, focused routing tests, and the unedited Guard Contract phase2b external consumer."
+    },
+    {
+      "id": "model-gateway-c02-p2-dynamic-model-registry-contract",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P2 dynamic model registry contract source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/dynamic-model-registry-contract.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "DynamicModelRegistry class (not implemented in P2 - contract only)",
+        "findOptimal runtime logic (not implemented - interface declaration only)",
+        "health-poll scheduling (not in P2)",
+        "provider/API call (not in P2)",
+        "unified gateway interface (deferred to P3)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P2",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md",
+      "notes": "Types-only contract file for C-02 P2. Declares ModelTier, DynamicModelRecord, FindOptimalQuery, and DynamicModelRegistryContract. No class body, no runtime logic. Imports ProviderHealthState, ProviderMethodName, and ProviderStatus from existing Model Gateway sources. No mutation of provider-capability-registry.ts or provider-registry.ts."
+    },
+    {
+      "id": "model-gateway-c02-p2-dynamic-model-registry-contract-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P2 dynamic model registry contract type-level tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/dynamic-model-registry-contract.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "DynamicModelRegistry class instantiation (not in tests - interface stub only)",
+        "network call (not in tests)",
+        "provider/API call (not in tests)",
+        "runtime registry instantiation (not in tests)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P2",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md",
+      "notes": "Type-level tests for C-02 P2 contract. Covers DynamicModelRecord shape, FindOptimalQuery shape, type reuse (ProviderMethodName, ProviderHealthState, ProviderStatus), interface implementable via local stub, and version constant. 10 tests PASS. No runtime registry instantiation, no network, no provider call."
+    },
+    {
+      "id": "model-gateway-c02-p3-unified-gateway-interface-contract",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P3 unified gateway interface contract source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/unified-gateway-interface-contract.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "UnifiedGatewayInterface class (not implemented in P3 - contract only)",
+        "runtime execute logic (not implemented - interface declaration only)",
+        "provider/API call (not in P3)",
+        "credential shielding runtime enforcement (not in P3 - declaration only)",
+        "EPF integration wiring (not in P3)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P3",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Types-only contract file for C-02 P3. Declares GatewayErrorClass, GatewayErrorEnvelope, GatewayExecuteRequest, GatewayExecuteResponse, GatewayStreamRequest, GatewayStreamChunk, GatewayEmbeddingRequest, GatewayEmbeddingResponse, GatewayHealthResponse, and UnifiedGatewayInterfaceContract. Reuses GatewayPolicyContext, RoutingRequest, DynamicModelRecord, and ProviderHealthState by import. No class body, no runtime logic. No mutation of any existing fragment contract."
+    },
+    {
+      "id": "model-gateway-c02-p3-unified-gateway-interface-contract-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P3 unified gateway interface contract type-level tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/unified-gateway-interface-contract.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "UnifiedGatewayInterface class instantiation (not in tests - interface stub only)",
+        "network call (not in tests)",
+        "provider/API call (not in tests)",
+        "runtime registry instantiation (not in tests)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P3",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Type-level tests for C-02 P3 contract. Covers GatewayExecuteRequest shape, GatewayStreamChunk shape, GatewayEmbeddingRequest/Response shapes, GatewayHealthResponse with ProviderHealthState summary, GatewayErrorEnvelope with all 7 GatewayErrorClass values, UnifiedGatewayInterfaceContract implementable via local test-only stub, and version constant. 16 tests PASS. No runtime class instantiation beyond local stub, no network, no provider call."
+    },
+    {
+      "id": "model-gateway-c02-p4a-unified-gateway-skeleton",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4A unified gateway runtime skeleton source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/unified-gateway-skeleton.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in skeleton - no live provider call)",
+        "http request (not in skeleton)",
+        "provider API key (not in skeleton - credential shielded)",
+        "new UnifiedGatewayInterfaceContract (interface not instantiated directly)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4A",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_WORKER_RETURN_2026-06-15.md",
+      "notes": "Runtime skeleton class implementing UnifiedGatewayInterfaceContract. Provides UnifiedGatewaySkeletonImpl and UnifiedGatewaySkeletonOptions. All four methods (execute, stream, embedding, health) use local deterministic logic only. No live provider fetch. Credential shielding enforced via credentialShielded: true on all GatewayErrorEnvelope denials. Reuses ProviderRegistry, ProviderHealthMonitor, QuotaLedger, isPolicyAllowed from existing primitives."
+    },
+    {
+      "id": "model-gateway-c02-p4a-unified-gateway-skeleton-tests",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "CVF Model Gateway C-02 P4A unified gateway runtime skeleton conformance tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/unified-gateway-skeleton.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no network calls)",
+        "http request (not in tests)",
+        "process.env (not in tests - no env key injection)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4A",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_WORKER_RETURN_2026-06-15.md",
+      "notes": "Conformance test suite for UnifiedGatewaySkeletonImpl. 13 test cases covering: compile-time typecheck, execute allowed/denied/empty, stream allowed/denied, embedding allowed/denied, health basic/degraded, credential shielding (secret not in envelope), providerIdShielded on all deny paths. All tests use local deterministic helpers (makeRegistry, makeOptions, ALLOW_POLICY, DENY_POLICY) with no live network calls. All 13 tests pass as of 2026-06-15."
+    },
+    {
+      "id": "session-front-door-v19",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF Session Front Door Handoff V19 compact pointer record",
+      "scopePaths": [
+        "AGENT_HANDOFF_V19_2026-06-15.md"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in handoff - no network call)",
+        "rawMemoryReleased: true (not in handoff - stays false)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "SESSION-FRONT-DOOR-ROTATION-2026-06-15",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_SESSION_FRONT_DOOR_ROTATION_AND_CONTINUITY_COMPACTION_WORKER_RETURN_2026-06-15.md",
+      "notes": "Compact active handoff pointer record opened 2026-06-15. Supersedes V18 (archived at CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md). Contains current mode, next allowed move, parked lane pointers, and Core Guard Self-Protection Authorization. No runtime source. No live call. No provider data."
+    },
+    {
+      "id": "model-gateway-c02-p4b-a-provider-execution-bridge",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-A provider execution bridge source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-execution-bridge.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in bridge - no live provider call)",
+        "http request (not in bridge)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "alibaba (no concrete adapter reference)",
+        "deepseek (no concrete adapter reference)",
+        "dashscope (no concrete adapter reference)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-A",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Deterministic provider-execution orchestration bridge. Connects existing routing, credential metadata, health, quota, and receipt owners to an injected provider-neutral adapter contract. Requires the injected adapter providerId to match the selected provider. Exports ProviderExecutionBridge, ProviderExecutionAdapter, ProviderExecutionAdapterInput, ProviderExecutionAdapterResult, ProviderExecutionBridgeOptions, ProviderExecutionBridgeResult, and PROVIDER_EXECUTION_BRIDGE_VERSION. No concrete provider binding, credential secret resolution, network call, or live proof."
+    },
+    {
+      "id": "model-gateway-c02-p4b-a-provider-execution-bridge-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-A provider execution bridge tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-execution-bridge.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no live provider call)",
+        "http request (not in tests)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "alibaba (no concrete adapter reference)",
+        "deepseek (no concrete adapter reference)",
+        "dashscope (no concrete adapter reference)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-A",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Deterministic test suite for ProviderExecutionBridge. 21 tests covering denied/approval/no-candidate routing, missing or provider-mismatched adapter, missing/unavailable credential metadata, unusable health (routing-layer and bridge-layer), over-quota (routing-layer and bridge-layer), successful adapter invocation, health/quota recording, provider/model response, adapter error shielding, serialized secret non-leakage, ordered execution spy verification, and negative source assertions. No concrete adapter import, network call, credential secret, or live proof."
+    },
+    {
+      "id": "model-gateway-c02-p4c-provider-adapter-conformance",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4C provider adapter contract conformance source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-conformance.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in conformance - no network call)",
+        "http request (not in conformance)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Provider-agnostic adapter conformance evaluator. Pure local, deterministic, no-network. Exports ProviderAdapterConformanceStatus, ProviderAdapterConformanceInput, ProviderAdapterConformanceReport, evaluateProviderAdapterConformance, and PROVIDER_ADAPTER_CONFORMANCE_VERSION. Uses existing method-gate helpers (findProviderCapability, listRegistrySupportedMethods, normalizeProviderMethodName) and ProviderExecutionAdapter from bridge. liveExecutionAuthorized is always false. adapter.execute() is never called."
+    },
+    {
+      "id": "model-gateway-c02-p4c-provider-adapter-conformance-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4C provider adapter contract conformance tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-conformance.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no network call)",
+        "http request (not in tests)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Deterministic test suite for evaluateProviderAdapterConformance. 23 tests covering conformant path, provider mismatch, missing provider capability, missing model capability, unsupported method, alias normalization, optional credential metadata block, liveExecutionAuthorized always-false invariant, no adapter.execute() call, provider agnosticism with arbitrary IDs, serialized secret non-leakage, negative source assertions, and report shape completeness. No concrete adapter import, network call, credential secret, or hardcoded required provider ID."
+    },
+    {
+      "id": "model-gateway-c02-p5-provider-adapter-admission",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5 provider adapter admission source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-admission.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in admission - no network call)",
+        "http request (not in admission)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Provider-agnostic adapter admission evaluator above P4C conformance. Pure local, deterministic, no-network. Exports AdapterAdmissionStatus, AdapterAdmissionReasonCode, AdapterAdmissionRecord, admitProviderAdapter, and PROVIDER_ADAPTER_ADMISSION_VERSION. liveExecutionAuthorized is always false."
+    },
+    {
+      "id": "model-gateway-c02-p5-provider-adapter-admission-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5 provider adapter admission tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-admission.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no network call)",
+        "http request (not in tests)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Deterministic tests for P5 adapter admission and capability negotiation. Covers admitted, blocked, needs_operator_authorization, method normalization, provider agnosticism, no secret leakage, negative source assertions, negotiated, fallback_available, and blocked negotiation paths."
+    },
+    {
+      "id": "model-gateway-c02-p5-provider-capability-negotiation",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5 provider capability negotiation source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-negotiation.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in negotiation - no network call)",
+        "http request (not in negotiation)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Provider-agnostic capability negotiation helper over existing provider-method gate helpers. Exports CapabilityNegotiationStatus, CapabilityNegotiationResult, negotiateProviderCapability, and PROVIDER_CAPABILITY_NEGOTIATION_VERSION. No provider-specific branching or concrete adapter import."
+    },
+    {
+      "id": "model-gateway-c02-p5c-bridge-admission-guard",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5-C bridge admission guard source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-bridge-admission-guard.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in guard - no network call)",
+        "http request (not in guard)",
+        "resolveSecretForRuntime (forbidden - no credential access)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)",
+        "adapter.execute (guard does not call adapter)",
+        "assertAllowed (guard does not call registry)",
+        "PROVIDER_CAPABILITY_REGISTRY (guard does not re-evaluate capability)",
+        "findProviderCapability (guard does not re-evaluate capability)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_COMPLETION_2026-06-15.md",
+      "notes": "Provider-agnostic bridge admission guard for P5-C. Consumes AdapterAdmissionRecord from P5-A and returns BridgeAdmissionGuardResult with verdict pass/block. Never calls adapter.execute(), ProviderRegistry.assertAllowed(), findProviderCapability(), any network, or any secret helper. Exports BRIDGE_ADMISSION_BOUNDARY_VERSION, BridgeAdmissionVerdict, BridgeAdmissionGuardResult, and checkBridgeAdmission."
+    },
+    {
+      "id": "model-gateway-c02-p5c-bridge-admission-guard-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5-C bridge admission guard tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-bridge-admission-guard.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no network call)",
+        "http request (not in tests)",
+        "resolveSecretForRuntime (forbidden - no credential access)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_COMPLETION_2026-06-15.md",
+      "notes": "Deterministic tests T1-T12 for P5-C bridge admission guard. Covers admitted pass, blocked block, needs_operator_authorization block, guard never calls adapter.execute, guard never calls network, backward-compatible bridge (no admissionRecords), admitted proceeds to execute, blocked returns admission_blocked, needs_operator_authorization returns admission_blocked, retryable=false, no hardcoded provider ID, and negative-search module-load check."
+    },
+    {
+      "id": "model-gateway-provider-method-contract",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway provider method contract source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in method contract)",
+        "http request (not in method contract)",
+        "resolveSecretForRuntime (not in method contract)",
+        ".env.local (not in method contract)",
+        "DASHSCOPE_API_KEY (not in method contract)",
+        "DEEPSEEK_API_KEY (not in method contract)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Existing Model Gateway provider method capability contract cited by P5 capability negotiation closure evidence. Source declares provider capability registry structure consumed by P5 negotiation."
+    },
+    {
+      "id": "model-gateway-provider-method-gate",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway provider method gate source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-gate.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in method gate)",
+        "http request (not in method gate)",
+        "resolveSecretForRuntime (not in method gate)",
+        ".env.local (not in method gate)",
+        "DASHSCOPE_API_KEY (not in method gate)",
+        "DEEPSEEK_API_KEY (not in method gate)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Existing Model Gateway provider method helper source cited by P5 capability negotiation closure evidence. P5 reuses normalizeProviderMethodName, findProviderCapability, and listRegistrySupportedMethods instead of duplicating method-gate logic."
+    },
+    {
+      "id": "model-gateway-c02-p4b-b-live-proof-harness",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-B live proof harness source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (never returned, logged, or embedded)",
+        "secret in result (wrapper output never contains the secret)",
+        "network when liveAuthorized=false (no fetch and no secret read)",
+        "canonical provider (live-test adapters only, not product scope)",
+        "new provider-execution semantic (thin bridge wrapper only)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+      "notes": "Live-proof harness building the existing governed chain (routing, credential boundary, health, quota, receipt, P5-A admission, P5-C bridge admission, ProviderExecutionBridge.execute) around a thin OpenAI-compatible execute adapter. liveAuthorized=false performs no network call and reads no secret. Not a new canonical provider or provider-execution semantic."
+    },
+    {
+      "id": "model-gateway-c02-p4b-b-dry-run-gate-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-B dry-run gate tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/p4b-b-dry-run-gate.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "real network call (injected fetch double only)",
+        "real credential (fake-test-secret only)",
+        "liveAuthorized=true against real endpoint (uses fetch double)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+      "notes": "Deterministic dry-run gate tests proving the harness makes no network call and reads no secret when liveAuthorized=false, and flows a fake response through the governed bridge with an admitted record when liveAuthorized=true via an injected fetch double. No real provider, credential, or network."
+    },
+    {
+      "id": "model-gateway-c02-p4b-b-live-proof-script",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4B-B live proof runner script",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/scripts/run-p4b-b-live-proof.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw key print (only alias name and presence boolean reported)",
+        "secret in receipt (receipt is secret-safe)",
+        "provider preference (candidates tried in order, none ranked or canonical)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+      "notes": "Operator-authorized runner that tries operator-approved available-key candidates in order and runs one bounded live proof through the governed bridge. Writes a secret-safe receipt/diagnostic artifact. Reports only key alias name and presence boolean, never a raw key value. Provider order is attempt order, not preference."
+    },
+    {
+      "id": "model-gateway-rtad-t4-alibaba-free-quota-ledger-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway RTAD-T4 Alibaba free-quota ledger source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (ledger contains no secrets)",
+        "provider ranking (bounded free-quota candidates only)",
+        "broad provider parity claim (explicitly out of scope)",
+        "network call (helper only, no fetch)",
+        "credential resolution (helper only, no secret read)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Runtime mirror of the governed Alibaba free-quota model ledger. Provides endpoint constants, env-overridable DashScope endpoint resolution, model expiration metadata, and free-quota usability classification before live harness calls."
+    },
+    {
+      "id": "model-gateway-rtad-t4-provider-capability-registry-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway RTAD-T4 provider capability registry source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (registry metadata contains no secrets)",
+        "network call (registry only, no fetch)",
+        "provider ranking (bounded capability metadata only)",
+        "broad provider parity claim (explicitly out of scope)",
+        "credential resolution (registry only, no secret read)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Provider capability registry source updated by RTAD-T4 to expose operator-confirmed Alibaba free-quota models as bounded complete/chat candidates with metadata pointing to the governed ledger."
+    },
+    {
+      "id": "model-gateway-rtad-t4-provider-capability-registry-tests",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "CVF Model Gateway RTAD-T4 provider capability registry tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (tests use no real secrets)",
+        "network call (unit test only)",
+        "provider ranking (asserts bounded metadata only)",
+        "broad provider parity claim (unsupported methods still fail)",
+        "live provider call (not in test)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Focused tests proving that all Alibaba free-quota ledger rows are registry-visible as bounded complete/chat candidates and that expiration preflight classifies usable, expired, and unknown models."
+    },
+    {
+      "id": "model-gateway-rtad-t4-alibaba-stream-adapter-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway RTAD-T4 Alibaba stream adapter source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/stream-adapter.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key value (adapter receives secret at runtime only)",
+        "hardcoded mainland endpoint (default endpoint now resolves through helper)",
+        "provider ranking (adapter is provider-specific capability only)",
+        "broad provider parity claim (stream support remains bounded)",
+        "secret logging (adapter throws status/detail only)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T4",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T4_ALIBABA_ENDPOINT_REGISTRY_HARNESS_HARDENING_COMPLETION_2026-06-18.md",
+      "notes": "Alibaba stream adapter source updated by RTAD-T4 to use the shared DashScope endpoint resolver instead of a fixed mainland endpoint default."
+    },
+    {
+      "id": "model-gateway-rtad-t5-mcp-bridge-boundary-reference",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF RTAD-T5 Model Gateway MCP bridge boundary reference",
+      "scopePaths": [
+        "docs/reference/mcp_gateway/README.md",
+        "docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md",
+        "docs/reference/model_gateway/README.md",
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/README.md"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "rtad-t5-mcp-reference-front-door-gap",
+          "summary": "MCP package README previously linked to a missing dated prepublic export surface; remediated by stable MCP reference front door.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use docs/reference/mcp_gateway/README.md as the stable front door before future MCP bridge work.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "MCP implementation (boundary only)",
+        "provider live call (not authorized)",
+        "raw API key value (no credential file read)",
+        "public readiness claim (explicitly out of scope)",
+        "provider ranking (explicitly out of scope)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T5",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+      "notes": "Stable MCP Gateway front door plus Model Gateway MCP runtime bridge boundary contract. Design and reference only; no MCP runtime tool was implemented."
+    },
+    {
+      "id": "model-gateway-rtad-t5-mcp-bridge-boundary-completion",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF RTAD-T5 Model Gateway MCP bridge boundary completion",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_2026-06-18.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_FOR_CODEX_2026-06-18.md",
+        "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+        "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "rtad-t5-mcp-implementation-parked-boundary",
+          "summary": "RTAD-T5 closed a boundary/design tranche and kept MCP implementation parked.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Open a fresh GC-018 before any MCP runtime tool implementation.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "MCP runtime source mutation (none)",
+        "Model Gateway runtime source mutation (none)",
+        "provider live proof (none)",
+        "raw secret disclosure (none)",
+        "public-sync (not authorized)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T5",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T5_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY_COMPLETION_2026-06-18.md",
+      "notes": "GC-018, work order, completion, and roadmap closure for the bounded MCP-to-Model-Gateway bridge boundary."
+    },
+    {
+      "id": "rtad-t6-external-agent-review-context-reference",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF RTAD-T6 external agent review context reference",
+      "scopePaths": [
+        "docs/reference/external_agent_review/README.md",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md",
+        "docs/reference/external_agent_review/CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md",
+        "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md",
+        "docs/reference/mcp_gateway/README.md",
+        "docs/reference/agent_workspace/README.md"
+      ],
+      "fileCount": 6,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "rtad-t6-public-workflow-facade-authority-gap",
+          "summary": "External agents can mistake public/simple lifecycle vocabulary for internal CVF workflow-chain authority.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use docs/reference/external_agent_review/README.md before external-agent review or external package absorption.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "public workflow enum as internal authority",
+        "raw external package import",
+        "MCP implementation",
+        "workspace runtime execution",
+        "public readiness claim"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T6",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md",
+      "notes": "Stable external-agent review context and workspace package absorption map. Reference only; no runtime implementation."
+    },
+    {
+      "id": "earc-t1-external-agent-review-packet-template",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF EARC-T1 external agent review packet template",
+      "scopePaths": [
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md",
+        "docs/reference/external_agent_review/README.md",
+        "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 5,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "earc-t1-one-off-external-review-prompt-gap",
+          "summary": "External-agent review context should be packetized before critique instead of recreated as one-off prompts.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md and checklist before external-agent review.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external review prompt without CVF source authority",
+        "public lifecycle label as internal state",
+        "raw external package as CVF authority",
+        "readiness claim from external critique",
+        "provider memory as reusable governance learning"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EARC-T1",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_COMPLETION_2026-06-18.md",
+      "notes": "Stable packet template, authoring checklist, and bounded sample for external-agent review context. Reference only; no public-sync or runtime implementation."
+    },
+    {
+      "id": "rtad-t6-external-agent-mcp-workspace-absorption-completion",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF RTAD-T6 external agent MCP workspace absorption completion",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_2026-06-18.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_FOR_CODEX_2026-06-18.md",
+        "docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md",
+        "docs/roadmaps/CVF_RUNTIME_ENTRY_ADMISSION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "rtad-t6-raw-external-package-boundary",
+          "summary": "Operator-copied workspace package is useful reference material but not CVF authority and must not be raw-imported.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Keep raw package ignored; absorb useful patterns only through CVF-owned reference surfaces.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external package as CVF source of truth",
+        "provider-local memory as authority",
+        "raw scaffold production claim",
+        "public-sync",
+        "production readiness"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "RTAD-T6",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RTAD_T6_EXTERNAL_AGENT_MCP_WORKSPACE_ABSORPTION_COMPLETION_2026-06-18.md",
+      "notes": "GC-018, work order, completion, and roadmap closure for bounded external-agent MCP/workspace absorption."
+    },
+    {
+      "id": "earc-t3-external-finding-absorption-workflow",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF EARC-T3 external finding absorption workflow",
+      "scopePaths": [
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md",
+        "docs/reference/external_agent_review/README.md",
+        "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 5,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "earc-t3-external-output-absorption-route-gap",
+          "summary": "External-agent output needs a governed classification route before CVF acts on it.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md for returned external-agent review output.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external output as CVF authority without verification",
+        "external review finding stored only in provider memory",
+        "public assumption treated as internal workflow fact",
+        "readiness claim from external output without CVF proof",
+        "raw private source request accepted"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EARC-T3",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EARC_T3_EXTERNAL_FINDING_ABSORPTION_WORKFLOW_COMPLETION_2026-06-18.md",
+      "notes": "Stable workflow for classifying returned external-agent review output. Reference only; no public-sync, checker, or runtime implementation."
+    },
+    {
+      "id": "earc-t3a-external-return-absorption-pilot",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF EARC-T3A external return absorption pilot",
+      "scopePaths": [
+        "docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_WORKSPACE_LAYER_2026-06-18.md",
+        "docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_COMPLETION_2026-06-18.md",
+        "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md",
+        "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "earc-t3a-absorption-table-checker-ready",
+          "summary": "The first real external-return absorption pilot exercised the EARC-T3 Required Absorption Table and made a future checker tranche ready.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Open EARC-T3B with fresh GC-018 if operator authorizes checker hardening.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "workspace package as CVF authority",
+        "package smoke result as CVF runtime proof",
+        "hard-coded workflow enum as internal CVF state",
+        "external handoff package readiness claim"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EARC-T3A",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EARC_T3A_EXTERNAL_RETURN_ABSORPTION_PILOT_WORKSPACE_LAYER_2026-06-18.md",
+      "notes": "First real EARC-T3 absorption pilot using the copied workspace-layer package as advisory input only."
+    },
+    {
+      "id": "earc-t3b-external-absorption-table-checker",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF EARC-T3B external absorption table checker",
+      "scopePaths": [
+        "governance/compat/check_external_agent_absorption_table.py",
+        "governance/compat/test_check_external_agent_absorption_table.py",
+        "governance/compat/run_local_governance_hook_chain.py",
+        "governance/compat/run_agent_autorun_workflow_gate.py",
+        "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+        "docs/reference/external_agent_review/README.md",
+        "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 7,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "earc-t3b-required-absorption-table-machine-check",
+          "summary": "The EARC-T3 Required Absorption Table is now enforced by a range-aware checker on changed external-return absorption reviews.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Keep EARC-T2 and EARC-T4 parked until explicit authorization.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external package as CVF authority",
+        "absorption table optional",
+        "completion prose false positive",
+        "public-sync implied by checker"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EARC-T3B",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EARC_T3B_ABSORPTION_TABLE_CHECKER_COMPLETION_2026-06-18.md",
+      "notes": "Checker hardening for the external-agent review absorption workflow."
+    },
+    {
+      "id": "wwu-t0-workspace-two-layer-foundation",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF WWU-T0 workspace two-layer foundation",
+      "scopePaths": [
+        "docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md",
+        "docs/reference/agent_workspace/README.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+        "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md",
+        "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md"
+      ],
+      "fileCount": 6,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "wwu-t0-two-layer-workspace-rule",
+          "summary": "CVF Web Workspace and CVF Local Workspace Runtime are now separated as two first-class workspace layers before CVF Web upgrade work.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Run WWU-T1 source-verification audit of current cvf-web surfaces before any UI implementation.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "web dashboard implies runtime enforcement",
+        "mcp scaffold implies operator workspace",
+        "external workflow enum as authority",
+        "external smoke as CVF proof"
+      ],
+      "nextScanRecommendation": "WWU-T1",
+      "scanWave": "WWU-T0",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_WWU_T0_WORKSPACE_TWO_LAYER_FOUNDATION_COMPLETION_2026-06-18.md",
+      "notes": "Foundation clarification for CVF Web Workspace upgrade sequencing."
+    },
+    {
+      "id": "wwu-t1-cvf-web-workspace-surface-audit",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF WWU-T1 cvf-web workspace surface audit",
+      "scopePaths": [
+        "docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md",
+        "docs/baselines/CVF_GC018_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_FOR_CODEX_2026-06-18.md",
+        "docs/reviews/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_COMPLETION_2026-06-18.md",
+        "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/docs/reference/CVF_W112_WEB_GOVERNANCE_SURFACE_INVENTORY_2026-04-22.md"
+      ],
+      "fileCount": 7,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "wwu-t1-missing-active-session-read-model",
+          "summary": "Current cvf-web has governance, evidence, health, operations, approvals, and work-transfer surfaces, but no active CVF session-state/handoff/workspace read-model endpoint.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Open WWU-T2 fresh GC-018 for a read-only CVF Web Workspace operator dashboard/read model before any UI implementation.",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "currentMode chat mode as CVF session mode",
+        "api sessions as ACTIVE_SESSION_STATE",
+        "web operations as Local Runtime MCP",
+        "approval inbox as closure gate"
+      ],
+      "nextScanRecommendation": "WWU-T2 fresh GC-018",
+      "scanWave": "WWU-T1",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_COMPLETION_2026-06-18.md",
+      "notes": "Audit-only closure; no cvf-web product source changed."
+    },
+    {
+      "id": "wwu-t2-cvf-web-workspace-operator-dashboard-read-model",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF WWU-T2 cvf-web workspace operator dashboard read model dispatch",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_2026-06-18.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md",
+        "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+        "docs/audits/CVF_WWU_T1_CVF_WEB_WORKSPACE_SURFACE_AUDIT_2026-06-18.md",
+        "docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+        "DESIGN.md",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "wwu-t2-read-model-dispatch",
+          "summary": "WWU-T2 dispatch authorizes a read-only CVF Web Workspace operator dashboard/read model from governed continuity sources.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Execute WWU-T2 implementation inside the source-verified work order boundary.",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "chat currentMode as activeSessionMode",
+        "api sessions as CVF active session state",
+        "workspace dashboard as Local Runtime MCP enforcement",
+        "Web read model as provider live proof"
+      ],
+      "nextScanRecommendation": "WWU-T2 material implementation closure",
+      "scanWave": "WWU-T2",
+      "scanDate": "2026-06-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md",
+      "notes": "Dispatch-only packet; no cvf-web product source changed in this authoring batch."
+    },
+    {
+      "id": "wwu-t2a-cvf-web-workspace-lane-summary-read-model",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF WWU-T2A cvf-web workspace lane summary read model dispatch",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_2026-06-19.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_FOR_CODEX_2026-06-19.md",
+        "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md",
+        "CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "wwu-t2a-lane-summary-dispatch",
+          "summary": "WWU-T2A dispatch authorizes a read-only CVF Web Workspace lane summary from generated workspace state.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Execute WWU-T2A implementation inside the source-verified work order boundary.",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "workspace lane summary as Local Runtime MCP enforcement",
+        "generated workspace state mutation",
+        "governed action request in WWU-T2A",
+        "provider live proof for lane summary"
+      ],
+      "nextScanRecommendation": "WWU-T2A material implementation closure",
+      "scanWave": "WWU-T2A",
+      "scanDate": "2026-06-19",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2A_CVF_WEB_WORKSPACE_LANE_SUMMARY_READ_MODEL_FOR_CODEX_2026-06-19.md",
+      "notes": "Dispatch-only packet; no cvf-web product source changed in this authoring batch."
+    },
+    {
+      "id": "wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF WWU-T3A local workspace runtime MCP Model Gateway execute preview closure",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_2026-06-19.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md",
+        "docs/reviews/CVF_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_COMPLETION_2026-06-19.md",
+        "docs/reviews/evidence/wwu-t3a-local-workspace-runtime-mcp-model-gateway-execute-preview-2026-06-19.json",
+        "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+        "docs/reference/agent_workspace/CVF_WORKSPACE_TWO_LAYER_ARCHITECTURE_STANDARD.md",
+        "docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md",
+        "docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md",
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/"
+      ],
+      "fileCount": 10,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "wwu-t3a-mcp-execute-preview-dispatch",
+          "summary": "WWU-T3A closes one deterministic MCP Model Gateway execute preview tool under Local Workspace Runtime boundary.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use WWU-T3A as bounded input for any later fresh runtime/MCP tranche; do not infer live provider execution or broad runtime readiness.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "broad MCP gateway implementation",
+        "provider live proof for WWU-T3A",
+        "raw API key through MCP request",
+        "runtime queue scheduler worker daemon",
+        "public readiness from MCP preview"
+      ],
+      "nextScanRecommendation": "Future WWU-T3B or external-agent absorption-chain roadmap only after fresh GC-018",
+      "scanWave": "WWU-T3A",
+      "scanDate": "2026-06-19",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3A_LOCAL_WORKSPACE_RUNTIME_MCP_MODEL_GATEWAY_EXECUTE_PREVIEW_FOR_CODEX_2026-06-19.md",
+      "notes": "Closure packet; deterministic MCP preview only, no provider/live/public-sync/runtime-queue/readiness claim."
+    },
+    {
+      "id": "wwu-t3b-mcp-model-gateway-execution-adapter",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF WWU-T3B MCP Model Gateway execution adapter",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_2026-06-19.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md",
+        "docs/reviews/CVF_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_COMPLETION_2026-06-19.md",
+        "docs/reviews/evidence/wwu-t3b-mcp-model-gateway-execution-adapter-2026-06-19.json",
+        "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+        "docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md",
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-execute.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-execution-bridge.ts"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED",
+      "findings": [
+        {
+          "id": "wwu-t3b-execution-adapter-dispatch",
+          "summary": "Close one injectable MCP adapter for the Model Gateway execution contract.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Require fresh authorization before live provider composition.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "raw API key through MCP",
+        "provider live proof in WWU-T3B",
+        "runtime queue scheduler daemon",
+        "public readiness from module adapter"
+      ],
+      "nextScanRecommendation": "Use this closed module adapter as input to a separately authorized runtime-composition tranche",
+      "scanWave": "WWU-T3B",
+      "scanDate": "2026-06-19",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T3B_MCP_MODEL_GATEWAY_EXECUTION_ADAPTER_FOR_CODEX_2026-06-19.md",
+      "notes": "Closed module adapter; no provider/live, secret, queue, public-sync, or readiness claim."
+    },
+    {
+      "id": "cge-t1-lpf-graph-owner-source-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CGE-T1 LPF graph owner source surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context_builder/graph/",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/storage/graph-sqlite-store.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/authority/graph-authority-gate.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context_builder/graph/task-query-mapper.ts"
+      ],
+      "fileCount": 6,
+      "status": "SCANNED",
+      "scanWave": "CGE-T1",
+      "scanDate": "2026-06-20",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_COMPLETION_2026-06-20.md",
+      "completionReviewPath": "docs/reviews/CVF_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_COMPLETION_2026-06-20.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_2026-06-20.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "LPF_GRAPH_SCHEMA",
+        "LPF_SYMBOL_INDEX",
+        "LPF_SQLITE_GRAPH_STORE",
+        "LPF_GRAPH_AUTHORITY_GATE",
+        "LPF_TASK_QUERY_MAPPING"
+      ],
+      "priorAbsorption": "CGE-T1 read current LPF graph owner source surfaces while triaging external CodeGraph ideas. This registry entry covers source paths cited as CVF owner surfaces only; it does not register the local copied CodeGraph package as canonical CVF source.",
+      "findings": [
+        {
+          "id": "CGE-T1-F1-lpf-graph-owner-surfaces-current",
+          "summary": "Current LPF graph source surfaces provide the owner boundary for schema, symbol index, SQLite graph store, authority gate, and task query mapping references used during CodeGraph absorption triage.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future CGE implementation must extend current LPF/KGR owners through a fresh source-verified work order instead of importing parallel graph-core files.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CGE_T1_CODEGRAPH_EXTERNAL_ABSORPTION_TRIAGE_MATRIX_COMPLETION_2026-06-20.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "parallel LPF graph core import (rejected by CGE-T1)",
+        "CodeGraph performance proof in CVF (not present)",
+        "CodeGraph MCP/runtime integration in CVF (not authorized)"
+      ],
+      "nextScanRecommendation": "Re-scan only if a future CGE implementation, KGR dedupe, or LPF graph owner extension work order is authorized."
+    },
+    {
+      "id": "adif-t0-t5-agent-defect-intelligence-foundation",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF ADIF T0-T5 agent defect intelligence foundation",
+      "scopePaths": [
+        "docs/reference/agent_defect_intelligence/README.md",
+        "docs/reference/agent_defect_intelligence/CVF_ADIF_ENTRY_TEMPLATE.md",
+        "docs/reference/agent_defect_intelligence/CVF_ADIF_T0_OWNER_RECONCILIATION_TAXONOMY_CONTRACT.md",
+        "docs/reference/agent_defect_intelligence/CVF_ADIF_T2_RESOLVER_CONTRACT.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0001.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0002.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0003.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0004.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0005.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0006.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0007.md",
+        "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0008.md",
+        "governance/compat/run_adif_defect_resolver.py",
+        "governance/compat/run_adif_preflight_readout.py",
+        "governance/compat/run_adif_finding_intake_bridge.py",
+        "governance/compat/check_adif_entry_integrity.py",
+        "docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md"
+      ],
+      "fileCount": 17,
+      "status": "SCANNED_WITH_FINDINGS",
+      "findings": [
+        {
+          "id": "adif-t0-t5-final-review-hardening",
+          "summary": "Final review repaired source-citation projection, intake enum and checker validation, canonical-source integrity, and arbitrary-length supersession-cycle detection.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Keep CLI/MCP adapters, runtime integration, live proof, and public export deferred to separately authorized work.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "automatic defect promotion",
+        "external agent adapter implemented",
+        "runtime enforcement complete",
+        "public export complete"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "ADIF-T0-T5",
+      "scanDate": "2026-06-23",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_ADIF_CONTINUOUS_EXECUTION_T0_T5_COMPLETION_2026-06-23.md",
+      "notes": "Foundation corpus registration after full-chain final review."
+    },
+    {
+      "id": "assf-web-projection-public-skill-index-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "ASSF Web projection public skill-index surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/build-skill-index.js",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/skills-index.json"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "ASSF-WEBPROJ-T1",
+      "scanDate": "2026-06-26",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
+      "completionReviewPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_ASSF_WEB_PROJECTION_IMPLEMENTATION_2026-06-26.md",
+      "verdicts": {
+        "gc047": "N/A",
+        "gc048": "N/A",
+        "gc050": "N/A"
+      },
+      "semanticRegions": [
+        "ASSF_WEB_PROJECTION",
+        "PUBLIC_SKILL_INDEX_GENERATION"
+      ],
+      "priorAbsorption": "ASSF-WEBPROJ-T1 reads certified ASSF metadata and projects it into the Web public skill-index read model without package execution, adapter behavior, provider proof, or ASSF registry mutation.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "ASSF package execution by Web projection",
+        "CLI MCP adapter implemented by Web skill index",
+        "certification state derived from corpusClass"
+      ],
+      "nextScanRecommendation": "Open a separate source-verified roadmap before adapter, provider, package execution, or public-sync behavior."
+    },
+    {
+      "id": "workspace-layer-production-handoff-package",
+      "corpusType": "EXTERNAL_SOURCE",
+      "displayName": "Workspace Layer Production Handoff Package",
+      "scopePaths": [
+        "CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE/EXTENSIONS/CVF_WORKSPACE_LAYER/",
+        "CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE/EXTENSIONS/CVF_WORKSPACE_LAYER",
+        "EXTENSIONS/CVF_WORKSPACE_LAYER/",
+        "EXTENSIONS/CVF_WORKSPACE_LAYER"
+      ],
+      "fileCount": 68,
+      "status": "SCANNED",
+      "scanWave": "WLFA-T0-T4",
+      "scanDate": "2026-06-27",
+      "manifestHash": "c8f475d0462b8810728a279971590641bdd9e9749923d48114208631cd6c73c9",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output",
+      "manifestPath": "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md",
+      "packetPath": "docs/baselines/CVF_GC018_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_2026-06-27.md",
+      "completionReviewPath": "docs/reviews/CVF_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_COMPLETION_2026-06-27.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_2026-06-27.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "WORKSPACE_LAYER_CONTRACTS",
+        "LOCAL_RUNTIME_REFERENCE_IMPLEMENTATION",
+        "MCP_AND_CLI_ADVISORY_SURFACES",
+        "STATE_SCHEMA_REFERENCE",
+        "PACKAGE_SMOKE_EVIDENCE"
+      ],
+      "priorAbsorption": "Earlier EARC-T3A and RTAD-T6 work performed selective package absorption only; WLFA-T0-T4 records complete non-cache inventory and CVF-owned disposition without runtime import.",
+      "findings": [
+        {
+          "id": "WLFA-F1-full-inventory-needed-before-runtime-use",
+          "summary": "The frozen workspace-layer package needed a complete non-cache inventory before future workspace runtime or MCP work could safely cite it.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use the stable inventory reference as advisory evidence; open fresh GC-018 before runtime, MCP, CLI, IDE bridge, provider, public-sync, resolver, adapter, or generated aggregate work.",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_WLFA_T0_T4_FULL_PACKAGE_ABSORPTION_FOUNDATION_COMPLETION_2026-06-27.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "raw package as CVF authority",
+        "package smoke result as CVF runtime proof",
+        "package reference implementation imported directly",
+        "MCP readiness claim from package scaffold"
+      ],
+      "nextScanRecommendation": "No rescan required unless the frozen package changes or a future runtime/MCP roadmap opens with fresh source verification."
     }
   ]
 }

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 225,
+  "stateKey": "t4ProviderMethodCoverage",
+  "value": "CLOSED_T4_PROVIDER_METHOD_COVERAGE at docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md; override new_provider_execution_semantics GRANTED only for Alibaba qwen-turbo stream(), DeepSeek deepseek-chat json_mode(), and negative gate; Model Gateway tests PASS 73/73; check PASS."
+}

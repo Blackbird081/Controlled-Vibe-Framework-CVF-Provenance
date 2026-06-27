@@ -1,0 +1,20 @@
+{
+  "stateOrder": 418,
+  "stateKey": "ahbT2AgentHandoffContractRatificationClosure20260616",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "cabbca87",
+    "dispatchCommit": "4b78355f",
+    "dispatchBaseHead": "88111c19",
+    "workerExecutionBaseHeadAccepted": "cc84e772",
+    "gc018": "docs/baselines/CVF_GC018_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_FOR_CLAUDE_2026-06-16.md",
+    "roadmap": "docs/roadmaps/CVF_AGENT_HANDOFF_BOUNDARY_SYSTEMIZATION_ROADMAP_2026-06-16.md",
+    "contract": "docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md",
+    "workerReturn": "docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_WORKER_RETURN_2026-06-16.md",
+    "completionReview": "docs/reviews/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_COMPLETION_2026-06-16.md",
+    "result": "AHB-T2 ratified the bounded Agent Handoff Contract and closed the Claude worker return after Codex reviewer repairs.",
+    "standingFinding": "AHB-T2-F1: foundation/governance refactor work must include stable folder/index/storage layout review; foundation files need stable indexed paths and execution/evidence files remain dated/archive-bound.",
+    "nextControlAction": "Open or dispatch a bounded foundation storage/layout remediation before AHB-T3 unless the operator explicitly redirects."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 649,
+  "stateKey": "adifT1CheckpointPendingReview20260623",
+  "value": "Claude committed ADIF-T1 at 2fcd2395 from release sync HEAD 0fde5cf2. The changed set contains the T1 GC-018, work order, entry template, reference routing updates, eight seed defect entries, and roadmap checkpoint row. The work order remains COMPLETE_PENDING_REVIEW, so T2 remains blocked until Codex checkpoint review and accepted dependency-release evidence. Claude correctly stopped without editing reviewer-owned session continuity."
+}

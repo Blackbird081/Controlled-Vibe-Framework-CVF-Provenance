@@ -397,9 +397,9 @@ here are the authoritative counts for the 2026-06-01 state of each legacy folder
 - Blind-Spot Standard v2: `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
 - Fast Lane authorization: `docs/baselines/CVF_GC021_BLINDSPOT_STANDARD_UPGRADE_2026-06-01.md`
 - Prior full scan record (now superseded): `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
-- LHW17 baseline: `docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
-- LHW18 baseline: `docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md`
-- LHW19 baseline: `docs/baselines/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md`
+- LHW17 baseline: `docs/baselines/archive/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`
+- LHW18 baseline: `docs/baselines/archive/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md`
+- LHW19 baseline: `docs/baselines/archive/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md`
 - LHW20 baseline: `docs/baselines/CVF_GC018_LHW20_CVF_IMPORTANT_DEEP_SCAN_WAVE_2026-05-31.md`
 - LH1 closeout ledger: `docs/baselines/archive/CVF_GC018_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - CVF 16.5 classification: `docs/baselines/archive/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
@@ -415,3 +415,43 @@ own GC-018. `runtimeExecutionAuthorized=false` for all concepts until then.
 ---
 
 *Audit completed: 2026-06-01 | Shell-verified by Claude Sonnet 4.6 in-session*
+
+## Rescan Intelligence Hardening
+
+Retroactively added 2026-06-10 per check_rescan_intelligence_hardening.py.
+Standard published after this artifact was authored (2026-06-05). This
+section satisfies the vocabulary requirement; all fields are declared N/A
+because no rescan operation was performed — the artifact is the original
+intake output.
+
+Original source artifact: this document.
+Predecessor intake artifact: N/A
+Delta ledger status: N/A — original intake; no predecessor to delta against.
+Routing matrix status: N/A — routing decided at original intake time.
+Semantic sampling status: N/A — sampling performed inline at intake time.
+- Rescan intelligence verdict: COMPLETE_WITH_DECLARED_LIMITS
+
+### Original-Intake Delta Ledger
+
+| Finding | Category | Notes |
+| --- | --- | --- |
+| (retroactive) | UNCHANGED_FROM_INTAKE | original intake; no delta comparison possible |
+| N/A | CHANGED_DISPOSITION | not applicable |
+| N/A | NEW_FINDING | not applicable |
+| N/A | REMOVED_OR_REJECTED | not applicable |
+
+### Follow-Up Routing Matrix
+
+| Item | Routing lane | Notes |
+| --- | --- | --- |
+| (all items) | RESOLVED_BY_DESIGN | closed at original intake; no follow-up items |
+| N/A | DO_NOW | not applicable |
+| N/A | SEPARATE_RUNTIME_TRANCHE | not applicable |
+| N/A | STRATEGIC_OPERATOR_DECISION | not applicable |
+| N/A | OUT_OF_SCOPE | not applicable |
+
+### Semantic Sampling / Adversarial Review
+
+| sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
+| --- | --- | --- | --- | --- | --- |
+| RS-RETRO-01 | (entire document) | original intake claim | UNCHANGED_FROM_INTAKE | N/A — retroactive addition only | COMPLETE_WITH_DECLARED_LIMITS |

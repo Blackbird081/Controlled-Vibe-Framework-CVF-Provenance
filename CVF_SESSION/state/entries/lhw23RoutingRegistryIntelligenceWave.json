@@ -1,0 +1,5 @@
+{
+  "stateOrder": 72,
+  "stateKey": "lhw23RoutingRegistryIntelligenceWave",
+  "value": "CLOSED_PASS_BOUNDED. T1 cvf.modelRegistryServiceAdvisory.lhw23.t1.v1, T2 cvf.multiFactorRoutingPolicyAdvisory.lhw23.t2.v1, T3 cvf.executionStrategyModelAdvisory.lhw23.t3.v1. All doc-only; runtimeExecutionAuthorized=false. Specs at docs/reference/CVF_LHW23_T* and reviews at docs/reviews/CVF_LHW23_T*."
+}

@@ -1,0 +1,49 @@
+{
+  "registryOrder": 26,
+  "id": "dscp-t1-domain-agnostic-owner-source-surfaces",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "DSCP-T1 domain-agnostic owner source surfaces",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/rag.context.engine.convergence.contract.ts",
+    "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/types.ts"
+  ],
+  "fileCount": 3,
+  "status": "SCANNED",
+  "scanWave": "DSCP-T1-OWNER-SURFACE-MAP-2026-06-07",
+  "scanDate": "2026-06-07",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reference/CVF_DSCP_T1_OWNER_SURFACE_MAP_2026-06-07.md",
+  "completionReviewPath": "docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_COMPLETION_2026-06-07.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T1_OWNER_SURFACE_MAP_AND_SCHEMA_PROPOSAL_2026-06-07.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "CONTEXT_PACK_CONTRACT",
+    "RAG_CONTEXT_CONVERGENCE",
+    "RAG_PIPELINE_TYPES",
+    "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK"
+  ],
+  "priorAbsorption": "DSCP-T1 read these source surfaces to map existing scan, context-pack, and retrieval owner interfaces into a domain-agnostic doc-only schema proposal.",
+  "findings": [
+    {
+      "id": "DSCP-T1-F1-governance-envelope-wrapper-needed",
+      "summary": "ContextPackagerRequest and RAG pipeline types are reusable owner surfaces but need a governance envelope wrapper before cross-domain runtime use.",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "Open DSCP-T2 only with explicit operator authorization to author TypeScript contracts and tests.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "DSCP runtime pilot claim (not made)",
+    "new TypeScript contract implementation (not made)",
+    "public readiness claim (not made)"
+  ],
+  "nextScanRecommendation": "Use DSCP-T2 for contract authoring only after explicit operator authorization; DSCP-T1 is doc-only."
+}

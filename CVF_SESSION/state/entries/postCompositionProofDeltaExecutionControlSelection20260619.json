@@ -1,0 +1,21 @@
+{
+  "stateOrder": 483,
+  "stateKey": "postCompositionProofDeltaExecutionControlSelection20260619",
+  "value": {
+    "status": "NEXT_MOVE_CORRECTED",
+    "reason": "Current next-move surfaces still pointed to MCP to Model Gateway Composition Proof selection even though the composition proof is already CLOSED_PASS_BOUNDED.",
+    "deltaT4BClosureCommit": "5b1f7c2a",
+    "deltaT4BClosureState": "CVF_SESSION/state/entries/deltaT4BMutatingProfileBoundaryGuardClosure20260619.json",
+    "compositionProofStatus": "CLOSED_PASS_BOUNDED",
+    "compositionProofMaterialCommit": "befad4a9",
+    "compositionProofClosureState": "CVF_SESSION/state/entries/mcpModelGatewayCompositionProofClosure20260619.json",
+    "compositionProofArtifacts": [
+      "docs/baselines/CVF_GC018_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_2026-06-19.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_FOR_CODEX_2026-06-19.md",
+      "docs/reviews/CVF_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_COMPLETION_2026-06-19.md",
+      "docs/reviews/evidence/mcp-model-gateway-composition-proof-2026-06-19.json"
+    ],
+    "nextAllowedMove": "Open Delta Execution Control selection only through fresh GC-018 and a source-verified work order using MCP-GW-001, the external knowledge absorption chain map, and the composition proof artifacts as upstream context before implementation.",
+    "parkedScope": "No runtime profile expansion beyond existing bounded Delta evidence, arbitrary commands, EDIT/COMMIT execution, provider/live calls, public-sync, queue/daemon, CVF Web action execution, direct IDE/shell/git/filesystem interception, broad wrapper/proxy/runtime enforcement expansion, or universal governed-coding control claim is authorized by this session-sync correction."
+  }
+}

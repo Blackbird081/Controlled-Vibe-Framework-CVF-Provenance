@@ -1,0 +1,5 @@
+{
+  "stateOrder": 652,
+  "stateKey": "adifT2AcceptedT3T5ContinuousRelease20260623",
+  "value": "ADIF-T2 worker commit b19a1918 was accepted after bounded resolver repair at 07000fd6: only ACTIVE entries are eligible, governed citations are repo-relative, invalid risk ceilings fail closed, and 13 focused tests pass. Handoff bridge proof commit 4527c55a demonstrated the root-handoff-only lane. The reusable bridge standard and hardened ADIF authorization/master work order are committed at dfaae2e7. T3 through T5 are released as one continuous sequence with no intermediate Codex review; machine-gated root-handoff-only bridges preserve GC-020, while final review and session sync remain Codex-owned after T5."
+}

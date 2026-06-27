@@ -1,0 +1,5 @@
+{
+  "stateOrder": 159,
+  "stateKey": "workOrderDispatchQualityGate",
+  "value": "ENFORCED. Script governance/compat/check_work_order_dispatch_quality.py hard-fails changed work orders, connector roadmaps, Fast Lane audits, completion reviews, and LHW connector specs when ready/dispatch/closure status lacks fresh LHW GC-018, roadmap trace matrix, valid Source Verification ACCEPT source paths/value coverage, source-invariant proof, non-empty verification ranges, prerequisite completion evidence, status-token hygiene, source-symbol hygiene, or source-backed install policy language. Unit tests pass 14/14. Range proof against 68e3fa54..dc1feffb catches LHW6 dispatch defects; LHW8 range proof catches semantic false-invariant and empty-range defects; 2026-05-29 rule hardening catches HOLD/DRAFT/PROPOSED statuses containing CLOSED, Source Verification symbol cells containing value assignments or type annotations, single-work-order closure ranges outside Allowed scope, LHW wave roadmap closures without full T1/T2/T3 changed-range evidence, and stale connector spec line-count claims."
+}

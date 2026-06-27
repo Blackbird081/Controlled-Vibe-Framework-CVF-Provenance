@@ -1,0 +1,5 @@
+{
+  "stateOrder": 318,
+  "stateKey": "publicReadmeGovernedWorkControlMap20260611",
+  "value": "EXPORTED at public-sync commit eb2ea138d pushed to https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git after remote verification. README What CVF Is now expands INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE into detailed intake, design, spec, work order, build, review, and freeze control gates. Boundary: public documentation clarification only; no runtime/source behavior, governance claim expansion, live proof, provider behavior, production readiness, or public readiness expansion."
+}

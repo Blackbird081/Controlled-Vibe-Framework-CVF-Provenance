@@ -1,0 +1,5 @@
+{
+  "stateOrder": 61,
+  "stateKey": "lhw20CvfImportantDeepScanWave",
+  "value": "CLOSED_PASS_BOUNDED. T1 cvf.securityHardeningChecklistFull.lhw20.t1.v1 \u2014 6 additional hardening items (H4-H9) from CVF_SECURITY_HARDENING_CHECKLIST.md; full 9-item checklist now documented. T2 cvf.executionStrategyModelAdvisory.lhw20.t2.v1 \u2014 5 execution patterns (SINGLE_SHOT/ITERATIVE/MULTI_STEP/PARALLEL/TREE) + 5 enhancement techniques + strategy selection rules. T3 cvf.adaptationPolicyAdvisory.lhw20.t3.v1 \u2014 6 mandatory constraints (A1-A6: Risk Budget, Confidence Gating, Multi-Signal, Cooldown, Tiered Authority, Rollback) as prerequisite for LHW17 T3 Step 5 Learning Plane activation. All doc-only; runtimeExecutionAuthorized=false. Source: .private_reference/legacy/CVF_Important/ (full 97-file scan). GC-018 docs/baselines/CVF_GC018_LHW20_CVF_IMPORTANT_DEEP_SCAN_WAVE_2026-05-31.md."
+}

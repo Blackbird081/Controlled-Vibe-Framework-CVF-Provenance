@@ -1,0 +1,31 @@
+{
+  "stateOrder": 377,
+  "stateKey": "agentOperationTraceFoundationClosure20260613",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "41977f58",
+    "executionBaseHead": "f789498d",
+    "trigger": "Operator clarified that CVF does not develop codex_cowork or claude_cowork platforms; CVF core controls agents/providers by requiring agents to leave repo-local traces.",
+    "standard": "docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md",
+    "gc018": "docs/baselines/CVF_GC018_AGENT_OPERATION_TRACE_FOUNDATION_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_OPERATION_TRACE_FOUNDATION_FOR_CODEX_2026-06-13.md",
+    "completionReview": "docs/reviews/CVF_AGENT_OPERATION_TRACE_FOUNDATION_COMPLETION_2026-06-13.md",
+    "checker": "governance/compat/check_agent_operation_trace.py",
+    "focusedTests": "governance/compat/test_check_agent_operation_trace.py",
+    "updatedTemplate": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+    "hookWiring": [
+      "governance/compat/run_local_governance_hook_chain.py",
+      "governance/compat/run_agent_autorun_workflow_gate.py"
+    ],
+    "verification": [
+      "python -m unittest governance.compat.test_check_agent_operation_trace PASS 6/6",
+      "python governance/compat/check_agent_operation_trace.py --base f789498d --head HEAD --enforce PASS",
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS 15/15",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 40/40",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base f789498d --head HEAD PASS except expected session-sync handoff HEAD pointer before this sync",
+      "git diff --check PASS"
+    ],
+    "nextAllowedMove": "Fresh authorization only: open FPC-T3-C04 plus FPC-T3-C01 implementation work order, open FPC-T2 C01-C04 registry-edit work order, open AOT-T2 deeper expected-manifest/trace hardening, or move to FPC-T4 only after explicit operator decision.",
+    "boundary": "Repo-local governance trace foundation only. CVF does not develop codex_cowork or claude_cowork platforms and does not claim OS/user attribution, endpoint monitoring, OS audit installation, Sysmon installation, file watcher service, destructive broker, agent computer-control permission changes, runtime/provider behavior, live governance proof, public-sync, external Document Translator inspection or mutation, Policy_Local mutation, readiness/cost/quality, raw memory release, high-risk promotion, or autonomous mutation."
+  }
+}

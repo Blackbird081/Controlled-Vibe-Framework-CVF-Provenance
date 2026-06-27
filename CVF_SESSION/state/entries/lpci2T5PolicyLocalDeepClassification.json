@@ -1,0 +1,5 @@
+{
+  "stateOrder": 112,
+  "stateKey": "lpci2T5PolicyLocalDeepClassification",
+  "value": "CLOSED_PASS_BOUNDED. Commit 53b2bac4. Work order docs/work_orders/CVF_WO_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_2026-06-04.md. dispatchBaseHead=80a9662c; executionBaseHead=408cbfcf; closureBaseHead=53b2bac4. effectiveDate=2026-07-01 confirmed P1_effective_clause for both DOCX files (Article 44 file-116 charPos=84776; Article 47 file-148 charPos=54874; both laws NOT YET IN FORCE as of 2026-06-04). GC-048 RECONCILED_VERIFIED; assets=2; mapped=2; deferred=0; unmapped=0. Adversarial sampling 4/4 PASS (S1-S4). Script: Policy_Local/scripts/policylocal-docx-deep-scan.py (lpci2.t5.deep_scan.v1; reviewer-hardened for Windows UTF-8 console output). Evidence: Policy_Local/data/generated/policylocal-t5-deep-scan-evidence.json. Corpus records upgraded to READ_DEEP. Completion review: docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md. Readiness gate is a separate work order after T5."
+}

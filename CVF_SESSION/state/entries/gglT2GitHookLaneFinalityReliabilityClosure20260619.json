@@ -1,0 +1,19 @@
+{
+  "stateOrder": 503,
+  "stateKey": "gglT2GitHookLaneFinalityReliabilityClosure20260619",
+  "value": "CLOSED_PASS_BOUNDED at closure commit a7b2f1d2 after dispatch cc6e4666, dispatch handoff bridge 01836f18, material commit 02678968, and material handoff bridge 96a3611b. GGL-T2 removed the installed pre-commit hook's hardcoded --serial flag so it uses the existing parallel default, added stderr-safe Git status finality through GitStatusResult, and added focused regression tests. Evidence: focused tests PASS 17/17; direct hook proof PASS 54/54 with parallel preflight enabled; worker-return fast gate PASS; implementation steward PASS with pre-implementation rerun 44/44; material-range pre-closure PASS 43/43 with clean finality; closure pre-commit PASS 54/54. Boundary: bounded local hook/finality reliability only; no checker suppression, hook bypass, runtime execution control, provider/live proof, public-sync, direct interception, readiness, universal speed, or universal governed-coding claim.",
+  "metadata": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "cc6e4666",
+    "dispatchHandoffBridgeCommit": "01836f18",
+    "materialCommit": "02678968",
+    "materialHandoffBridgeCommit": "96a3611b",
+    "closureCommit": "a7b2f1d2",
+    "gc018": "docs/baselines/CVF_GC018_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_FOR_CODEX_2026-06-19.md",
+    "completionReview": "docs/reviews/CVF_GGL_T2_GIT_HOOK_LANE_AND_WORKTREE_FINALITY_RELIABILITY_COMPLETION_2026-06-19.md",
+    "evidenceJson": "docs/reviews/evidence/ggl-t2-git-hook-lane-and-worktree-finality-reliability-2026-06-19.json",
+    "claimBoundary": "Bounded local hook-lane and worktree-finality reliability only; no runtime execution control, provider/live behavior, public readiness, direct interception, universal speed, or universal governed-coding control claim.",
+    "nextAllowedMove": "Select the next high-value foundation tranche through fresh GC-018 and source verification. Runtime/provider/public/direct-interception and universal-control scope remain parked."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 226,
+  "stateKey": "t5RuntimeMemoryWiring",
+  "value": "CLOSED_T5_RUNTIME_MEMORY_WIRING at docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md; GC-018 docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md; override new_memory_tiers_beyond_lane_h_scope GRANTED only for ephemeral in-process task memory. Delivered retention policy, Learning Plane task-memory store, and audit-memory readout taskMemoryDecision/taskMemoryReason. Targeted tests PASS 7/7 and 9/9; Learning Plane full tests PASS 1521/1521; checks PASS; local hook chain PASS 43/43. cvf-web full suite had live/test-order variance and isolated failing files reran PASS. GovernanceEvidenceReceipt unchanged; canReinject=false preserved; no durable persistence, route, provider, or public-sync change."
+}

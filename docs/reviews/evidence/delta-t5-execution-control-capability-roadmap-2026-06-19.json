@@ -1,0 +1,81 @@
+{
+  "schema": "cvf.deltaT5.executionControlCapabilityRoadmapEvidence.v1",
+  "date": "2026-06-19",
+  "status": "CLOSED_PASS_BOUNDED",
+  "batchId": "DELTA-T5",
+  "dispatchCommit": "a47e185b",
+  "sessionSyncBeforeImplementation": "c320ca36",
+  "executionBaseHead": "c320ca36",
+  "materialCommit": "f2ac570f",
+  "closureBase": "fb9bf935",
+  "allowedScope": [
+    "docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md",
+    "docs/reviews/evidence/delta-t5-execution-control-capability-roadmap-2026-06-19.json",
+    "docs/baselines/CVF_GC018_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_FOR_CODEX_2026-06-19.md"
+  ],
+  "changedSet": [
+    "docs/roadmaps/CVF_DELTA_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "docs/reviews/CVF_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_COMPLETION_2026-06-19.md",
+    "docs/reviews/evidence/delta-t5-execution-control-capability-roadmap-2026-06-19.json",
+    "docs/baselines/CVF_GC018_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_2026-06-19.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T5_EXECUTION_CONTROL_CAPABILITY_ROADMAP_FOR_CODEX_2026-06-19.md"
+  ],
+  "forbiddenScopeAdded": {
+    "runtimeSource": false,
+    "mcpTool": false,
+    "launcherBehavior": false,
+    "modelGatewaySource": false,
+    "cvfWebSource": false,
+    "workspaceState": false,
+    "providerLive": false,
+    "publicSync": false,
+    "queueOrDaemon": false,
+    "directInterceptionClaim": false,
+    "universalGovernedCodingClaim": false
+  },
+  "sourceFacts": [
+    {
+      "claim": "MCP-GW-001 requires pre-action governance/preflight, no direct provider bypass, no raw MCP/tool bypass, durable audit/receipt, and no governed-coding claim without CVF receipt.",
+      "source": "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
+      "verifiedLineOrSection": "line 79",
+      "disposition": "ACCEPT"
+    },
+    {
+      "claim": "Composition Proof is closed bounded and excludes mandatory MCP runtime, durable audit, wrapper/proxy enforcement, and Delta Execution Control.",
+      "source": "docs/reviews/CVF_MCP_MODEL_GATEWAY_COMPOSITION_PROOF_COMPLETION_2026-06-19.md",
+      "verifiedLineOrSection": "lines 221-224",
+      "disposition": "ACCEPT"
+    },
+    {
+      "claim": "Delta-T1 through Delta-T4B are bounded invoked-control or document-control artifacts, not universal runtime enforcement.",
+      "source": "docs/reviews/CVF_DELTA_T1_GOVERNANCE_ACTION_PREFLIGHT_RECEIPT_COMPLETION_2026-06-19.md; docs/reviews/CVF_DELTA_T2_GOVERNANCE_ACTION_RECEIPT_CONSUMPTION_COMPLETION_2026-06-19.md; docs/reviews/CVF_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_COMPLETION_2026-06-19.md; docs/reviews/CVF_DELTA_T4A_APPROVAL_BACKED_MUTATING_PROFILE_BOUNDARY_COMPLETION_2026-06-19.md; docs/reviews/CVF_DELTA_T4B_MUTATING_PROFILE_BOUNDARY_GUARD_COMPLETION_2026-06-19.md",
+      "verifiedLineOrSection": "Delta-T1 lines 202-204; Delta-T2 lines 47 and 112; Delta-T3 lines 55 and 128; Delta-T4A lines 54 and 120; Delta-T4B lines 58-65",
+      "disposition": "ACCEPT"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c320ca36 --head HEAD",
+      "result": "PASS"
+    },
+    {
+      "command": "git status --short",
+      "result": "PASS: three allowed untracked material paths only before material commit"
+    },
+    {
+      "command": "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base c320ca36 --head HEAD --enforce",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base fb9bf935 --head HEAD",
+      "result": "PASS in closure conversion range"
+    },
+    {
+      "command": "python governance/compat/run_agent_commit_steward_preflight.py --mode closure --base fb9bf935 --head HEAD --enforce",
+      "result": "PASS in closure conversion range"
+    }
+  ],
+  "claimBoundary": "Planning and claim-boundary artifact only; no mandatory invocation, direct interception, provider/live behavior, public readiness, production readiness, release readiness, durable execution audit, wrapper/proxy enforcement, or universal governed-coding control."
+}

@@ -1,0 +1,25 @@
+{
+  "registryOrder": 76,
+  "id": "model-gateway-c02-p2-dynamic-model-registry-contract-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P2 dynamic model registry contract type-level tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/dynamic-model-registry-contract.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "DynamicModelRegistry class instantiation (not in tests - interface stub only)",
+    "network call (not in tests)",
+    "provider/API call (not in tests)",
+    "runtime registry instantiation (not in tests)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P2",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md",
+  "notes": "Type-level tests for C-02 P2 contract. Covers DynamicModelRecord shape, FindOptimalQuery shape, type reuse (ProviderMethodName, ProviderHealthState, ProviderStatus), interface implementable via local stub, and version constant. 10 tests PASS. No runtime registry instantiation, no network, no provider call."
+}

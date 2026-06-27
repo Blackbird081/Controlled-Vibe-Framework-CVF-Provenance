@@ -1,0 +1,5 @@
+{
+  "stateOrder": 319,
+  "stateKey": "governedWorkDesignControlHardening20260611",
+  "value": "MATERIAL_COMMITTED at private commit 84217223. Added docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md, hardened docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md and docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md, and extended governance/compat/check_markdown_structural_completeness.py plus focused tests so roadmap-derived work carries Design Control Gate/Dispatch Boundary/Governed Work Lifecycle evidence before work-order dispatch. Boundary: control-plane documentation/template/checker hardening only; no runtime/source behavior outside the checker, provider behavior, live proof, public-sync, production readiness, public readiness, or governance-behavior claim expansion."
+}

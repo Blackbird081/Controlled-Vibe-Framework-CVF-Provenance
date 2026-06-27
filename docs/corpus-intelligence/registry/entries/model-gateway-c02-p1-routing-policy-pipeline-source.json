@@ -1,0 +1,25 @@
+{
+  "registryOrder": 73,
+  "id": "model-gateway-c02-p1-routing-policy-pipeline-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P1 routing policy pipeline source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "PolicyDecision (not introduced - name collision avoided)",
+    "dynamic model registry (not implemented in P1)",
+    "unified gateway interface (not implemented in P1)",
+    "AI Gateway environment signal capture (not implemented in P1)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P1",
+  "scanDate": "2026-06-14",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md",
+  "notes": "Routing-scoped pipeline source for C-02 P1. Implements capability, stage, complexity, risk, and cost candidate stages for RoutingPolicyEngine without provider/API calls, dynamic registry P2, unified gateway interface P3, strategy layer, AI Gateway, or public-sync."
+}

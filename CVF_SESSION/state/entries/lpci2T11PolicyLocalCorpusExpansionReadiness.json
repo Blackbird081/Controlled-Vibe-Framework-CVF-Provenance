@@ -1,0 +1,5 @@
+{
+  "stateOrder": 306,
+  "stateKey": "lpci2T11PolicyLocalCorpusExpansionReadiness",
+  "value": "CLOSED_PASS_BOUNDED at material commit bd36e808. Roadmap docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md; T11D work order docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11D_POLICYLOCAL_READINESS_GATE_FOR_CLAUDE_2026-06-07.md; completion docs/reviews/CVF_LPCI2_T11D_READINESS_GATE_COMPLETION_2026-06-07.md. T11A/T11B/T11C/T11D are closed. T11D verdict READY_WITH_CONDITIONS; 0 t12Eligible=YES; 6 t12Eligible=CONDITIONAL; BNDL-006 t12Eligible=NO; EC-02 invariant violations=0. T12 remains NOT_YET_AUTHORIZED until separate operator-authorized EC-02/status/jurisdiction evidence resolution and later eligibility re-evaluation produce at least one t12Eligible=YES. Boundary: readiness aggregation only; no ingestion/runtime/provider/public/current-law/legal-quality/production/public readiness claim."
+}

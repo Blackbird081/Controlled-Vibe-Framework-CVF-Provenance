@@ -1,0 +1,48 @@
+{
+  "registryOrder": 30,
+  "id": "dscp-t6-scan-descriptor-runtime-surfaces",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "DSCP-T6 scan descriptor runtime helper and tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "DSCP-T6-SCAN-DESCRIPTOR-RUNTIME-2026-06-08",
+  "scanDate": "2026-06-08",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_2026-06-08.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+    "SCAN_DESCRIPTOR_RUNTIME",
+    "CONTRACT_TEST_COVERAGE"
+  ],
+  "priorAbsorption": "DSCP-T6 worker return adds a deterministic local scan descriptor builder and focused tests. No provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+  "findings": [
+    {
+      "id": "DSCP-T6-F1-gc051-reviewer-fast-gap",
+      "summary": "Reviewer-fast caught missing GC-051 coverage for the new T6 source and test paths after worker return.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Keep source/test path registry coverage in the same governed batch as future worker returns that mention new source paths.",
+      "defectClass": "MACHINE_GATE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "provider call (not made)",
+    "corpus ingestion (not made)",
+    "T12 authorization claim (not made)",
+    "public readiness claim (not made)"
+  ],
+  "nextScanRecommendation": "Re-scan only when DSCP scan descriptor runtime behavior changes or a future domain adapter consumes this helper."
+}

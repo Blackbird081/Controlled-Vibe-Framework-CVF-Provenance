@@ -1,0 +1,5 @@
+{
+  "stateOrder": 175,
+  "stateKey": "vi5T1LanguageStateAndStrategyGuidedCatalog",
+  "value": "CLOSED_PASS_BOUNDED. GC-018 docs/baselines/CVF_GC018_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_2026-05-25.md; work order docs/work_orders/CVF_WO_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_2026-05-25.md; completion docs/reviews/CVF_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_COMPLETION_2026-05-25.md. Delivered additive /api/execute readouts languageState cvf.languageState.vi5.t1.v1, guidedStepState cvf.guidedStepState.vi5.t1.v1, specBoundary cvf.specBoundary.vi5.t1.v1, Strategy presentation catalogs en/vi, and guided_mode_available marker for all ten certified packs. Verification: focused tests PASS 5 files / 45 tests; cvf-web npm run check PASS; live Alibaba qwen-turbo proof PASS receipt rcpt-env-mpl53gd9-0s260r with observedSpecBodyLanguage=mixed, englishFreezeEnforced=false, rawSecretPrinted=false. Boundary: no Spec English Freeze, all-pack guided catalogs, UI shell i18n, provider/prompt/receipt changes, workflow blocking, hosted/public/production readiness, runtime multi-agent scheduling, or freeze release."
+}

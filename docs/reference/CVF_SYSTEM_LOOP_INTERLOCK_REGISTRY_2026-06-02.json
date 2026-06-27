@@ -36,7 +36,7 @@
       "signalContract": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
       "downstreamLoop": "LEARNING_LOOP_F2G",
       "downstreamPlane": "LEARNING_PLANE",
-      "inputArtifact": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md",
+      "inputArtifact": "docs/reference/archive/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md",
       "routingRule": "Every scan finding must carry F2G-compatible defectClass and learningLane; deferred or blocked scan findings must cite a real f2gRef, roadmapRef, or workOrderRef artifact.",
       "evidenceRefs": [
         "governance/compat/check_corpus_scan_registry.py",

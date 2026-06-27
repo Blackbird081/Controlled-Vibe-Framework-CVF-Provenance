@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1242,
+  "stateKey": "workflowValueProofClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "00c2bc40",
+    "roadmap": "docs/roadmaps/CVF_WORKFLOW_VALUE_PROOF_T0_T4_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_WORKFLOW_VALUE_PROOF_T0_T4_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WORKFLOW_VALUE_PROOF_T0_T4_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md",
+    "liveGateCommand": "python scripts/run_cvf_release_gate_bundle.py --json",
+    "liveGateResult": "PASS",
+    "valueVerdict": "Lifecycle continuity, live governance proof, and workspace read-model orientation provide real value; paperwork load remains friction.",
+    "nextAllowedMove": "Open a small decision-first roadmap to reduce operator friction in existing evidence/readout surfaces, or select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation.",
+    "claimBoundary": "Workflow value proof only; no DICE, package activation, package certification decision, runtime/MCP/CLI/IDE bridge implementation, generated workspace state mutation, resolver mutation, adapter mutation, public-sync, push, production readiness, or public readiness."
+  }
+}

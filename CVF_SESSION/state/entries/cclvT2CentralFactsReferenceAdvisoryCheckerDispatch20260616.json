@@ -1,0 +1,5 @@
+{
+  "stateOrder": 408,
+  "stateKey": "cclvT2CentralFactsReferenceAdvisoryCheckerDispatch20260616",
+  "value": "RECONCILED_SUPERSEDED_BY_CLOSURE. Original CCLV-T2 dispatch commit 7e11c39c was superseded by accepted combined-role execution and bounded closure at material commit bf938549 after FPRC-T1 closed at material commit 51f56133. Codex audited and accepted the implementation in docs/reviews/CVF_CCLV_T2_CLAUDE_ACTUAL_WORK_AUDIT_AND_RSF_T3_SELECTION_2026-06-16.md. Completion evidence: docs/reviews/CVF_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_COMPLETION_2026-06-16.md. GC-018: docs/baselines/CVF_GC018_CCLV_T2_CENTRAL_FACTS_REFERENCE_ADVISORY_CHECKER_2026-06-16.md. Current-state reconciliation: PRFC-T1 removes the obsolete pause boundary from live agent-facing state while preserving historical dispatch provenance."
+}

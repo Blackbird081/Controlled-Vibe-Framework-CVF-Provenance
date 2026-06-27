@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1222,
+  "stateKey": "assfMetadataReadoutGuardWiringClosure20260626",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "e04ed428",
+    "dispatchMaterialCommit": "810f3440",
+    "sessionSyncParent": "e04ed428",
+    "roadmap": "docs/roadmaps/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_ROADMAP_2026-06-26.md",
+    "baseline": "docs/baselines/CVF_GC018_ASSF_METADATA_READOUT_GUARD_WIRING_2026-06-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_METADATA_READOUT_GUARD_WIRING_FOR_CODEX_2026-06-26.md",
+    "workerReturn": "docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_WORKER_RETURN_2026-06-26.md",
+    "completionReview": "docs/reviews/CVF_ASSF_METADATA_READOUT_GUARD_WIRING_COMPLETION_2026-06-26.md",
+    "acceptedChanges": [
+      "read-only ASSF external-agent metadata readout checker",
+      "focused checker tests",
+      "autorun, pre-commit, and reviewer-fast catalog wiring"
+    ],
+    "nextAction": "Select the next high-value governed roadmap lane and open a fresh GC-018/source-verified roadmap or work order before implementation.",
+    "forbiddenExpansion": "No adapter behavior implementation, package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "registryOrder": 47,
+  "id": "ex-t3-t6-extraction-pipeline-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EX-T3 through EX-T6 pipeline tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EX-T3-EX-T6",
+  "scanDate": "2026-06-11",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md",
+  "notes": "Focused pytest coverage for OCR language mapping, explicit OCR adapter boundary, confidence capture, quality flags, fixed-window chunking, and DSCP descriptor handoff without raw-content release."
+}

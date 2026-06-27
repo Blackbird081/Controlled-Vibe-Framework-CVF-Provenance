@@ -137,6 +137,8 @@ If commit mode is WORKER_MUST_NOT_COMMIT:
 - run working-tree-aware component gates;
 - repair allowed-scope defects and rerun those component gates;
 - record actual git status --short;
+- record the Worker Pending-Return Gate table;
+- include a Reviewer Closure Conversion Block in the work order before dispatch;
 - return COMPLETE_PENDING_REVIEW;
 - return a worker handoff/evaluation artifact, not a reviewer completion review;
 - do not claim autorun pre-closure PASS.
@@ -157,6 +159,62 @@ Anchor vocabulary:
 This prevents a no-commit worker from being trapped between two contradictory
 instructions: leave pending artifacts for review, but prove committed closure
 before handoff.
+
+Required no-commit reviewer conversion fields:
+
+```text
+## Reviewer Closure Conversion Block
+
+completionReviewPath: `docs/reviews/<CVF_*_COMPLETION_YYYY-MM-DD.md>`
+reviewerOwnedClosurePaths:
+- `<work order path>`
+- `<worker return or evaluation path>`
+- `<completionReviewPath>`
+- `<roadmap, registry, session, or handoff paths if reviewer closure may touch them>`
+pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW, IMPLEMENTATION_COMPLETE_PENDING_REVIEW, DRAFT, HOLD_*
+forbiddenClosedEquivalentResidue: COMPLETE_PENDING_REVIEW, NOT_EXECUTED_YET, WORKER_RETURNS_PENDING, PRE_CLOSURE_NOT_RUN, FAIL_EXPECTED_PENDING_FINALITY, DISPATCHED as current status
+predecessorClosureFactSource: stable completion/review artifact, not mutable ACTIVE_SESSION_STATE.json currentMode
+```
+
+The reviewer completion artifact is the closure artifact. A worker return is
+evidence input for reviewer closure, not a substitute for it.
+
+## Worker Pending-Return Gate For No-Commit Workers
+
+`WORKER_MUST_NOT_COMMIT` means the worker must leave commit finality to the
+reviewer / committer. It does not mean the worker may skip component gates or
+return repairable section defects inside Allowed scope.
+
+Every no-commit worker return must include this table or an equivalent table
+with the same fields:
+
+| Gate | Applies when | Command or evidence | Worker result |
+| --- | --- | --- | --- |
+| Execution anchor | every worker run | `git rev-parse --short HEAD` before edits | `executionBaseHead=<hash>` |
+| Pending worktree | every no-commit return | `git status --short` | actual pending file list |
+| Worker-return fast gate | every no-commit return before handoff | `python governance/compat/run_worker_return_fast_gate.py` plus `--pytest-target <path>` for focused tests when applicable | `PASS` or `BLOCKED` |
+| Markdown structural completeness | changed governed markdown, reference, roadmap, work order, review, handoff, or registry markdown | `python governance/compat/check_markdown_structural_completeness.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, `N/A with reason`, or `BLOCKED` |
+| Finding-To-Governance learning | changed artifact records findings, defects, known issues, risks, or quality gaps | `python governance/compat/check_finding_to_governance_learning.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, `N/A with reason`, or `BLOCKED` |
+| Machine Closure Package | changed artifact uses closed-equivalent, readiness, handoff-complete, or downstream-loop language | `python governance/compat/check_machine_closure_package.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, `N/A with reason`, or `BLOCKED` |
+| Dispatch quality | changed work order, roadmap-derived packet, ready/dispatch packet, or closed-equivalent work-order packet | `python governance/compat/check_work_order_dispatch_quality.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, `N/A with reason`, or `BLOCKED` |
+| New governed source/test registry coverage | new `EXTENSIONS/` source or test file | included in worker-return fast gate through `check_changed_corpus_registry_coverage.py`; standalone command: `python governance/compat/check_changed_corpus_registry_coverage.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, `N/A with reason`, or `BLOCKED` |
+| Domain gates | domain-specific guard named by the work order | `<command>` | `PASS`, `N/A with reason`, or `BLOCKED` |
+
+Rules:
+
+- the worker-return fast gate is an early filter, not closure evidence and not
+  a substitute for committed-range `pre-closure`;
+- component-gate failures inside Allowed scope must be repaired and rerun
+  before return;
+- failures outside Allowed scope must return `BLOCKED` with the required
+  orchestrator/reviewer action;
+- pending-finality failures caused only by uncommitted artifacts may be
+  recorded as `FAIL_EXPECTED_PENDING_FINALITY`, but never as closure PASS;
+- no-commit workers must record actual pending files and must not claim a clean
+  worktree;
+- startup acknowledgments must copy the active session state and active handoff
+  parked checkpoint. `parked checkpoint=none` is valid only when the front
+  doors record no parked checkpoint.
 
 ## Enforcement / Verification
 

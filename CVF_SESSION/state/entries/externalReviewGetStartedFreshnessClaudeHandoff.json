@@ -1,0 +1,5 @@
+{
+  "stateOrder": 291,
+  "stateKey": "externalReviewGetStartedFreshnessClaudeHandoff",
+  "value": "HANDOFF_PACKET_FOR_CLAUDE at material commit b0debdaf. Audit docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md was repaired and tracked after removing a local .git/info/exclude entry that hid it from git. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md is source-verified for Claude execution. Pre-dispatch autorun PASS on c55697ac..HEAD. Boundary: documentation-only GET_STARTED freshness, public glossary, and release-readiness freshness-check repair; Claude must not commit; no runtime/source code, dependency changes, public-sync, live/provider proof, durable persistence work, governance-rule removal, hosted readiness, production readiness, public readiness, cost/performance/provider-quality claim, memory reinjection, high-risk promotion implementation, Learning Orchestrator runtime behavior, or autonomous mutation."
+}

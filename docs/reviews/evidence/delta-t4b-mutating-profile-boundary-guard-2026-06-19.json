@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceId": "delta-t4b-mutating-profile-boundary-guard-2026-06-19",
+  "status": "CLOSED_PASS_BOUNDED",
+  "dispatchCommit": "49f71004",
+  "executionBaseHead": "dc96f4fe",
+  "materialCommit": "39a22e3f",
+  "acceptedMaterialSessionSyncCommit": "e25f5c7a",
+  "closureBaseHead": "e25f5c7a",
+  "checker": "governance/compat/check_delta_mutating_profile_boundary.py",
+  "testFile": "governance/compat/test_check_delta_mutating_profile_boundary.py",
+  "requiredSection": "## Delta Mutating Profile Boundary Control Block",
+  "requiredFields": [
+    "profileScope",
+    "fixedTargetPolicy",
+    "approvalEvidenceSource",
+    "callerPathInput",
+    "commandAuthority",
+    "receiptChain",
+    "claimBoundary",
+    "forbiddenExpansion"
+  ],
+  "callerPathInputAllowedMarkers": [
+    "NO_CALLER_PATH_INPUT",
+    "CALLER_PATH_INPUT_FORBIDDEN",
+    "N/A with reason"
+  ],
+  "verification": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base dc96f4fe --head HEAD",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest governance.compat.test_check_delta_mutating_profile_boundary",
+      "result": "PASS_9_TESTS"
+    },
+    {
+      "command": "python governance/compat/check_delta_mutating_profile_boundary.py --base dc96f4fe --head HEAD --enforce",
+      "result": "PASS"
+    }
+  ],
+  "hookWiring": {
+    "reviewerFast": true,
+    "preCommit": true,
+    "prePush": true,
+    "autorunCommonCommands": true
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "runtimeScopeAdded": false,
+  "providerLiveScopeAdded": false,
+  "publicSyncPerformed": false,
+  "directInterceptionClaimed": false,
+  "universalGovernedCodingClaimed": false,
+  "claimBoundary": "Local governed Markdown checker only; no runtime profile expansion, arbitrary command execution, EDIT/COMMIT execution, provider/live behavior, public-sync, direct interception, production readiness, or universal governed-coding control."
+}

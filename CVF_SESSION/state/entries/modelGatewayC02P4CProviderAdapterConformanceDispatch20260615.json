@@ -1,0 +1,16 @@
+{
+  "stateOrder": 394,
+  "stateKey": "modelGatewayC02P4CProviderAdapterConformanceDispatch20260615",
+  "value": {
+    "status": "DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT",
+    "dispatchBaseHead": "1baba8c9",
+    "dispatchCommit": "10b9626b",
+    "roadmap": "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_ROADMAP_2026-06-15.md",
+    "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_2026-06-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_FOR_CLAUDE_2026-06-15.md",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "nextAllowedMove": "Claude COMPLETE_PENDING_REVIEW worker return only. Codex owns review, allowed repairs, completion evidence, committed-range gates, final commit, and session sync.",
+    "boundary": "Deterministic provider-agnostic adapter contract conformance only. CVF validates user-supplied adapter contract shape and registry/method compatibility; it does not canonicalize Alibaba, DeepSeek, or any concrete provider as product scope. No provider/API call, credential/network use, provider/model addition, concrete adapter execution, P4B-B live proof, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, production readiness, public readiness, raw memory release, co-work product development, or autonomous mutation is authorized."
+  }
+}

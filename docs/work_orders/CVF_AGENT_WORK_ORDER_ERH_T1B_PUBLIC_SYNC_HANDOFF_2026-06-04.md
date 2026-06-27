@@ -152,7 +152,7 @@ T1C from the public-sync clone.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| Public-sync boundary standard exists | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | file source | `Public Export Disposition` | public export standard | ACCEPT |
+| Public-sync boundary standard exists | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | file source | `Public Export Disposition` | public export standard | ACCEPT |
 | Private public claim calibration exists | `docs/reference/CVF_ERH_T1A_PUBLIC_CLAIM_CALIBRATION_2026-06-04.md` | file source | `CVF_ERH_T1A_PUBLIC_CLAIM_CALIBRATION_2026-06-04.md` | ERH-T1A output | ACCEPT |
 | Private route ledger exists | `docs/reference/CVF_ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER_2026-06-04.md` | file source | `CVF_ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER_2026-06-04.md` | ERH-T2A output | ACCEPT |
 | Public-sync remote was inspected | canonical-command-evidence | `git remote -v` in public-sync clone | `Controlled-Vibe-Framework-CVF.git` | public-sync inspection evidence | ACCEPT |

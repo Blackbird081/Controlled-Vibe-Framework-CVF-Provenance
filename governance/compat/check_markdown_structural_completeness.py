@@ -19,11 +19,17 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from guard_binding_catalog import effective_binding_text
+except ModuleNotFoundError:
+    from governance.compat.guard_binding_catalog import effective_binding_text
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 
 STANDARD_PATH = "docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md"
+LIFECYCLE_STANDARD_PATH = "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md"
 GUARD_PATH = "governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md"
 MASTER_POLICY_PATH = "governance/toolkit/02_POLICY/CVF_MASTER_POLICY.md"
 CONTROL_MATRIX_PATH = "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md"
@@ -38,6 +44,7 @@ OPERATOR_CHECKPOINT_GRANDFATHER_REF = "c043fa33"
 
 REQUIRED_FILES = (
     STANDARD_PATH,
+    LIFECYCLE_STANDARD_PATH,
     GUARD_PATH,
     MASTER_POLICY_PATH,
     CONTROL_MATRIX_PATH,
@@ -59,11 +66,25 @@ REQUIRED_MARKERS: dict[str, tuple[str, ...]] = {
         "SOP",
         "Roadmap",
         "Work Order",
+        "Design Control Gate",
+        LIFECYCLE_STANDARD_PATH,
         "Review / Rebuttal / Response",
         "Baseline / Evidence / Authorization",
         "ADR",
         "Handoff",
         GUARD_PATH,
+        THIS_SCRIPT_PATH,
+    ),
+    LIFECYCLE_STANDARD_PATH: (
+        "INTAKE",
+        "DESIGN",
+        "SPEC",
+        "WORK ORDER",
+        "BUILD",
+        "REVIEW",
+        "FREEZE",
+        "Design Control Gate",
+        "Dispatch Boundary",
         THIS_SCRIPT_PATH,
     ),
     GUARD_PATH: (
@@ -165,6 +186,14 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
         ("why/purpose", (r"^##\s+Why", r"^##\s+Purpose")),
         ("scope", (r"^##\s+Scope\b",)),
         ("non-goals", (r"^##\s+Non-Goals",)),
+        (
+            "design control gate",
+            (
+                r"^##\s+Design Control Gate\b",
+                r"^##\s+Dispatch Boundary\b",
+                r"^##\s+Governed Work Lifecycle\b",
+            ),
+        ),
         ("work plan", (r"^##\s+Work Plan",)),
         ("acceptance criteria", (r"^##\s+Acceptance Criteria",)),
         ("verification/evidence", (r"^##\s+Verification", r"^##\s+Evidence")),
@@ -243,6 +272,13 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
         ("related artifacts", (r"^##\s+Related Artifacts\b",)),
         ("final clause", (r"^##\s+Final Clause\b",)),
     ),
+}
+
+DOC_TYPE_ALIASES: dict[str, str] = {
+    "audit": "review",
+    "completion_review": "review",
+    "rebuttal_review": "review",
+    "gc018": "baseline",
 }
 
 
@@ -364,6 +400,7 @@ def _classify(path: str, text: str) -> str:
     doc_type_match = re.search(r"^docType:\s*([A-Za-z_ -]+)\s*$", text, re.M)
     if doc_type_match:
         declared = doc_type_match.group(1).strip().lower().replace("-", "_").replace(" ", "_")
+        declared = DOC_TYPE_ALIASES.get(declared, declared)
         if declared in SECTION_GROUPS:
             return declared
     name = Path(path).name.upper()
@@ -374,6 +411,8 @@ def _classify(path: str, text: str) -> str:
     if normalized_path.startswith("docs/roadmaps/"):
         return "roadmap"
     if normalized_path.startswith("docs/reviews/"):
+        return "review"
+    if normalized_path.startswith("docs/audits/"):
         return "review"
     if normalized_path.startswith("docs/baselines/") or normalized_path.startswith("docs/assessments/"):
         return "baseline"
@@ -433,7 +472,7 @@ def _validate_markdown(path: str) -> list[str]:
 def _check_required_markers() -> list[dict[str, Any]]:
     violations: list[dict[str, Any]] = []
     for path in REQUIRED_FILES:
-        text = _read_rel(path)
+        text = effective_binding_text(path, _read_rel(path))
         if not text:
             violations.append({"path": path, "issues": ["required file missing"]})
             continue

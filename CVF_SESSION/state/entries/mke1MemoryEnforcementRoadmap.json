@@ -1,0 +1,5 @@
+{
+  "stateOrder": 91,
+  "stateKey": "mke1MemoryEnforcementRoadmap",
+  "value": "CLOSED_PASS_BOUNDED. All E1-E3 complete. Roadmap docs/roadmaps/CVF_MKE1_MEMORY_ENFORCEMENT_ROADMAP_2026-06-01.md. E1 enforcement gate wire-in (08c1b54f): REVOKED/DENIED \u2192 BLOCK in evaluateEnforcement; E2 durable write route (bf4dd9c3): POST /api/memory/write governed with actor auth + provenance \u2265 0.7; E3 live governance proof (a732b74d): REVOKED \u2192 BLOCK Playwright live spec PASS, release gate bundle PASS 7/7. Fix A/B/C (1a18ddd2): check_forbidden_filesystem_state.py added. Aggregate completion: docs/reviews/CVF_MKE1_MEMORY_ENFORCEMENT_COMPLETION_2026-06-02.md."
+}

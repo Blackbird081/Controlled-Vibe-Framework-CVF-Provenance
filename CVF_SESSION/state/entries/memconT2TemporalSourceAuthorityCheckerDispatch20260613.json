@@ -1,0 +1,5 @@
+{
+  "stateOrder": 350,
+  "stateKey": "memconT2TemporalSourceAuthorityCheckerDispatch20260613",
+  "value": "DISPATCHED at material commit b76794f9 from dispatch base 3f4ddda6. Artifacts: GC-018 docs/baselines/CVF_GC018_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_2026-06-13.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md; roadmap docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md. Result: Claude is authorized to implement a deterministic MEMCON temporal ambiguity and source-authority checker under WORKER_MUST_NOT_COMMIT, create focused tests, wire reviewer-fast and pre-commit hook placement, and return uncommitted artifacts for Codex review. Verification before dispatch: reviewer-fast PASS 12/12; pre-dispatch autorun PASS on range 3f4ddda6..HEAD; material pre-commit governance chain PASS 37/37. Boundary: no runtime memory implementation, storage, retrieval behavior, provider/API proof, OCR, Policy_Local mutation, EC activation, corpus ingestion, public-sync, T12 unlock, readiness claim, memory reinjection, high-risk promotion, or autonomous mutation."
+}

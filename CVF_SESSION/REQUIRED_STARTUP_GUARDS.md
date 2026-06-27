@@ -50,6 +50,7 @@ Out of scope:
 | `governance/toolkit/05_OPERATION/CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD.md` | GC-032 governed artifact authoring and source-truth rules. |
 | `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md` | GC-047 manifest, terminal-ledger, reconciliation, and honest-verdict rules for bounded corpus tasks. |
 | `governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md` | GC-048 authority/derived-view, semantic-region, orphan, drift, rebuildability, and retrieval-boundary rules for corpus-derived knowledge maps. |
+| `docs/reference/guard_orientation/README.md` | AAF-T3 task-first orientation index: read before authoring governed artifacts to identify required guard surfaces, required blocks, and common failure patterns per task class and role. |
 
 ## Protocol Requirements
 

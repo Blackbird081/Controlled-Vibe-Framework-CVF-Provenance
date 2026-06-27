@@ -25,7 +25,7 @@ Framework-neutral; no LangChain/CrewAI/AutoGen specific code.
 
 - New: `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.ts`
 - Tests: `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.test.ts`
-- Advisory source: `docs/reference/CVF_LHW19_T1_INTEGRATION_ARCHITECTURE_CONTROL_POINTS_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- Advisory source: `docs/reference/archive/CVF_LHW19_T1_INTEGRATION_ARCHITECTURE_CONTROL_POINTS_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
 
 ## Scope / Methodology
 
@@ -73,3 +73,19 @@ require separate tranches. CP2 Plan Validator remains PARTIAL until full plan ri
 
 IS1 implements a framework-neutral advisory adapter. It does not integrate live
 LangChain/CrewAI/AutoGen frameworks, spawn agent processes, or claim production readiness.
+
+## Machine Closure Package
+
+Retroactively added 2026-06-10 per check_machine_closure_package.py.
+Standard published after this artifact was authored.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A — pre-standard artifact | N/A | N/A with reason: artifact authored before Machine Closure Package standard |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | N/A — roadmap closed at original delivery time | N/A | N/A with reason: roadmap state resolved at original delivery |
+| Registry JSON | N/A — no new corpus registry entry | N/A with reason: no corpus scan performed in this artifact | BLOCKED: pre-standard artifact — no corpus registry update required |
+| Registry Markdown | N/A — see above | N/A with reason: see above | BLOCKED: pre-standard artifact — no corpus registry update required |
+| External evidence digest | N/A — no external evidence | N/A | N/A with reason: all evidence is repo-local |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | N/A — pre-standard artifact | N/A with reason: session continuity not tracked at original delivery time |

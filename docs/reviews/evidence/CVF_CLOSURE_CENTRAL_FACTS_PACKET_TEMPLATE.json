@@ -1,0 +1,82 @@
+{
+  "schemaId": "cvf.closureCentralFacts.v1",
+  "schemaVersion": "0.1.0",
+  "docType": "reference-template",
+  "status": "ACTIVE_TEMPLATE",
+  "authorityStandard": "docs/reference/CVF_CENTRAL_CORE_LOCAL_VIEW_GOVERNANCE_REFACTOR_STANDARD_2026-06-16.md",
+  "localReferenceRules": "docs/reference/CVF_CLOSURE_CENTRAL_FACTS_LOCAL_REFERENCE_RULES.md",
+  "markdownCompanion": "docs/reviews/evidence/CVF_CLOSURE_CENTRAL_FACTS_PACKET_TEMPLATE.md",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "fieldOrder": [
+    "batchId",
+    "baseHead",
+    "materialCommit",
+    "sessionSyncCommit",
+    "expectedChangedSet",
+    "actualChangedSet",
+    "roadmapStatus",
+    "workOrderStatus",
+    "completionReview",
+    "publicExportDisposition",
+    "findingRootCauseSummary",
+    "claimBoundary"
+  ],
+  "fieldRules": {
+    "batchId": "Stable identifier; must match GC-018 and work order Batch ID.",
+    "baseHead": "Material or dispatch base SHA used for evidence.",
+    "materialCommit": "Material closure commit SHA, or the literal PENDING before commit.",
+    "sessionSyncCommit": "Session-sync commit SHA, or 'N/A with reason: <reason>'.",
+    "expectedChangedSet": "Array of canonical expected repo-relative paths for the material batch.",
+    "actualChangedSet": "Array of command-backed actual repo-relative paths for the material batch.",
+    "roadmapStatus": "Final or current roadmap tranche status, or 'N/A with reason: <reason>'.",
+    "workOrderStatus": "Final or current work-order status.",
+    "completionReview": "Path to reviewer completion artifact, or 'N/A with reason: <reason>'.",
+    "publicExportDisposition": "One of EXPORTED, DEFERRED_PRIVATE_ONLY, or a named blocked state.",
+    "findingRootCauseSummary": "Root finding summary, or 'N/A with reason: <reason>'.",
+    "claimBoundary": "What this batch proves and does not prove; shared by every local artifact."
+  },
+  "templateInstance": {
+    "batchId": "<BATCH_ID>",
+    "baseHead": "<BASE_SHA>",
+    "materialCommit": "PENDING",
+    "sessionSyncCommit": "N/A with reason: <reason>",
+    "expectedChangedSet": ["<repo/relative/path>"],
+    "actualChangedSet": ["<repo/relative/path>"],
+    "roadmapStatus": "<status or N/A with reason>",
+    "workOrderStatus": "<status>",
+    "completionReview": "<path or N/A with reason>",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "findingRootCauseSummary": "<summary or N/A with reason>",
+    "claimBoundary": "<what this batch proves and does not prove>"
+  },
+  "filledExampleIllustrative": {
+    "note": "Illustrative only; documents an already-closed batch and does not reopen it.",
+    "batchId": "CCLV-T1A",
+    "baseHead": "71b4f2ce",
+    "materialCommit": "dcc114e6",
+    "sessionSyncCommit": "9be27628",
+    "expectedChangedSet": [
+      "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "docs/reference/work_order_template/README.md",
+      "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md",
+      "docs/reference/work_order_template/CVF_WORK_ORDER_MACHINE_CLOSURE_PACKAGE_ADDENDUM.md",
+      "docs/baselines/CVF_GC018_CCLV_T1A_WORK_ORDER_TEMPLATE_POINTER_REFACTOR_2026-06-16.md",
+      "docs/reviews/CVF_CCLV_T1A_WORK_ORDER_TEMPLATE_POINTER_REFACTOR_WORKER_RETURN_2026-06-16.md"
+    ],
+    "actualChangedSet": [
+      "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "docs/reference/work_order_template/README.md",
+      "docs/reference/work_order_template/CVF_WORK_ORDER_SOURCE_VERIFICATION_ADDENDUM.md",
+      "docs/reference/work_order_template/CVF_WORK_ORDER_MACHINE_CLOSURE_PACKAGE_ADDENDUM.md",
+      "docs/baselines/CVF_GC018_CCLV_T1A_WORK_ORDER_TEMPLATE_POINTER_REFACTOR_2026-06-16.md",
+      "docs/reviews/CVF_CCLV_T1A_WORK_ORDER_TEMPLATE_POINTER_REFACTOR_WORKER_RETURN_2026-06-16.md"
+    ],
+    "roadmapStatus": "CCLV-T1A application closed; CCLV roadmap unchanged by T1A",
+    "workOrderStatus": "COMPLETE_PENDING_REVIEW then committed by reviewer",
+    "completionReview": "docs/reviews/CVF_CCLV_T1A_WORK_ORDER_TEMPLATE_POINTER_REFACTOR_WORKER_RETURN_2026-06-16.md",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "findingRootCauseSummary": "RULE_GAP: template bloat via inline rule accumulation; resolved by addendum extraction",
+    "claimBoundary": "Documentation/governance structure only; template reduced 1200->994 lines; no runtime, provider, live, or public scope"
+  },
+  "claimBoundary": "Defines the machine shape of a closure central facts packet only; no runtime/provider/live/public claim and no reduction of evidence requirements."
+}

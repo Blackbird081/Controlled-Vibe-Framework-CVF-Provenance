@@ -1,0 +1,5 @@
+{
+  "stateOrder": 274,
+  "stateKey": "lpci2T4CorpusIntelligenceImportClassificationEvidence",
+  "value": "DISPATCH_READY. Work order docs/work_orders/CVF_WO_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_2026-06-04.md opens a bounded evidence tranche to extract DOCX text locally, produce corpus records, populate conservative legal/policy domain fields, update GC-051, and run GC-047/GC-050. Boundary: PolicyLocal remains a test use case proving CVF Corpus Intelligence as a foundation capability; no search/chat/runtime/provider/product implementation, no legal advice quality claim, no latest-law claim, no hosted readiness, no production readiness, no public export, and no claim that Memory/Knowledge legacy absorption is complete."
+}

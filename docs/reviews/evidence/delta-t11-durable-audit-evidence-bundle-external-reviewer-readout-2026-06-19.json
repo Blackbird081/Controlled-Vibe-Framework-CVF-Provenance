@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "DELTA-T11",
+  "docType": "worker_evidence",
+  "workerReturnStatus": "CLOSED_PASS_BOUNDED",
+  "date": "2026-06-19",
+  "worker": "Claude",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "executionBaseHead": "de1a39c2",
+  "dispatchBaseHead": "66cb8494",
+  "materialCommit": "0a3e298e",
+  "closureBaseHead": "26a9491e",
+  "closureStatus": "CLOSED_PASS_BOUNDED",
+  "invocationId": "delta-t11-durable-audit-evidence-bundle-external-reviewer-readout-claude-2026-06-19",
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 53aca070 --head HEAD",
+    "base": "53aca070",
+    "head": "de1a39c2",
+    "result": "44/44 PASS",
+    "failedGates": [],
+    "finding": "COMPLIANT: clean dispatch bridge; no GC-020 drift",
+    "result_text": "COMPLIANT"
+  },
+  "focusedTests": {
+    "command": "npx vitest run src/audit/durable-audit-evidence-bundle.test.ts --reporter verbose",
+    "files": 1,
+    "tests": 39,
+    "passed": 39,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "fullMcpTests": {
+    "command": "npm run test:run",
+    "files": 34,
+    "tests": 727,
+    "passed": 727,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "result": "PASS"
+  },
+  "workerReturnFastGate": {
+    "command": "python governance/compat/run_worker_return_fast_gate.py",
+    "reviewerFastChecks": "31/31 PASS",
+    "failedGates": [],
+    "result": "COMPLIANT_AFTER_REVIEWER_REPAIR"
+  },
+  "reviewerFastGate": {
+    "command": "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast",
+    "reviewerFastChecks": "31/31 PASS",
+    "failedGates": [],
+    "result": "PASS"
+  },
+  "gitStatus": {
+    "command": "git status --short",
+    "output": [
+      "?? EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.test.ts",
+      "?? EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts",
+      "?? docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md",
+      "?? docs/reviews/evidence/delta-t11-durable-audit-evidence-bundle-external-reviewer-readout-2026-06-19.json"
+    ]
+  },
+  "gitDiffNameStatus": {
+    "command": "git diff --name-status",
+    "output": "(empty - new files are untracked, no staged or tracked changes)"
+  },
+  "changedSet": [
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts",
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.test.ts",
+    "docs/reviews/CVF_DELTA_T11_DURABLE_AUDIT_EVIDENCE_BUNDLE_EXTERNAL_REVIEWER_READOUT_COMPLETION_2026-06-19.md",
+    "docs/reviews/evidence/delta-t11-durable-audit-evidence-bundle-external-reviewer-readout-2026-06-19.json"
+  ],
+  "acceptanceCriteria": {
+    "AC1": {
+      "status": "PASS",
+      "evidence": "focused test AC1 group (8 tests): contract version, stable counts, 10 claim names, provided bundledAt, readoutAt deterministic default, sourceRefs, empty sourceRefs default, deterministic claim matrix"
+    },
+    "AC2": {
+      "status": "PASS",
+      "evidence": "focused test AC2 group (12 tests): empty records REJECTED for receipt/action/integrity, readoutAllValid=false, all-invalid REJECTED, mixed BOUNDED, invalid readout contract and forbidden readout proof claims rejected"
+    },
+    "AC3": {
+      "status": "PASS",
+      "evidence": "focused test AC3 group (9 tests): 6 NOT_CLAIMED rows for forbidden expansion, mandatoryInvocationProved=false, directInterceptionProved=false, NOT_CLAIMED stable for empty input"
+    },
+    "AC4": {
+      "status": "PASS",
+      "evidence": "focused test AC4 group (5 tests): determinism, 10 claim rows in markdown, secret-like label suppressed, bounded false statement, 3-call stability"
+    },
+    "AC5": {
+      "status": "PASS",
+      "evidence": "focused test AC5 group (5 tests): all-valid=PROVED, durable_storage=always BOUNDED, partial=BOUNDED not PROVED, all-invalid=REJECTED, NOT_CLAIMED never PROVED/BOUNDED/REJECTED"
+    },
+    "AC6": {
+      "status": "PASS_AFTER_REVIEWER_REPAIR",
+      "evidence": "focused 39/39 PASS; full MCP 34/34 files 727/727 tests PASS; build exit 0 PASS; worker-return fast gate COMPLIANT; reviewer-fast 31/31 PASS"
+    }
+  },
+  "requiredProofManifest": {
+    "DURABLE_AUDIT_EVIDENCE_BUNDLE_CONTRACT": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts",
+      "line": 12,
+      "present": true
+    },
+    "NOT_CLAIMED": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts",
+      "present": true,
+      "note": "6 NOT_CLAIMED rows: mandatory_invocation, direct_interception, provider_live, public_sync, readiness, universal_control"
+    },
+    "mandatoryInvocationProved": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts",
+      "present": true,
+      "value": "false (literal typed constant in DurableAuditEvidenceBundle; builder always emits false)"
+    },
+    "directInterceptionProved": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.ts",
+      "present": true,
+      "value": "false (literal typed constant in DurableAuditEvidenceBundle; builder always emits false)"
+    },
+    "secretSafeReviewerReadout": {
+      "file": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/audit/durable-audit-evidence-bundle.test.ts",
+      "present": true,
+      "tests": 5,
+      "note": "AC4 tests: determinism, 10 claim rows, secret-like label suppressed in markdown, bounded false statement"
+    }
+  },
+  "reviewerRepairs": [
+    "bundledAt default changed from wall-clock time to supplied readout.readoutAt",
+    "runtime validation rejects invalid readout contract version",
+    "runtime validation rejects forbidden mandatoryInvocationProved/directInterceptionProved readout claims",
+    "worker-return packet scaffold, Delta execution claim boundary block, epistemic process block, and git status evidence repaired"
+  ],
+  "encodingCompliance": {
+    "repair": "none required",
+    "finalState": "ASCII-safe"
+  },
+  "forbiddenPathCompliance": {
+    "indexTs": "NOT_CHANGED",
+    "cli": "NOT_CHANGED",
+    "packageManifest": "NOT_CHANGED",
+    "cvfSession": "NOT_CHANGED",
+    "cvfSessionMemory": "NOT_CHANGED",
+    "agentHandoff": "NOT_CHANGED",
+    "publicSync": "NOT_TOUCHED"
+  },
+  "claimBoundary": {
+    "mandatoryInvocation": false,
+    "directInterception": false,
+    "providerLive": false,
+    "publicSync": false,
+    "universalGovernedCoding": false,
+    "externalReadiness": false,
+    "deploymentReadiness": false,
+    "releaseReadiness": false
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

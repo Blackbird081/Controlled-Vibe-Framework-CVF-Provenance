@@ -31,7 +31,7 @@ Boundary:
 
 ## Source / Predecessor Evidence
 
-- LHW18 T3 spec: `docs/reference/CVF_LHW18_T3_CONTEXT_MANAGEMENT_STRATEGY_ADVISORY_CONNECTOR_SPEC_2026-05-30.md` (P2 advisory, line 87-93)
+- LHW18 T3 spec: `docs/reference/archive/CVF_LHW18_T3_CONTEXT_MANAGEMENT_STRATEGY_ADVISORY_CONNECTOR_SPEC_2026-05-30.md` (P2 advisory, line 87-93)
 - CBP-1: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context-budget-policy.ts` (policy + resolveTaskClass)
 - Packager: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts` (tokenBudgetExceeded flag exists but not enforced)
 

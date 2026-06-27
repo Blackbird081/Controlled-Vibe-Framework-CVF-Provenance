@@ -1,0 +1,5 @@
+{
+  "stateOrder": 149,
+  "stateKey": "wceW1WorkflowChainCommand",
+  "value": "CLOSED_PASS_BOUNDED. Contract cvf.workflowChainExecution.wce.w1.v1. New module EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/workflow.client.ts; workflow command registered in command.registry.ts; 7/7 tests PASS; TypeScript PASS; 2-turn live chain receipts rcpt-env-mpqlsyzl-c3m76f (AI_AGENT) + rcpt-env-mpqlt87n-vl8eny (REVIEWER chained). No governance bypass. No route.ts change. No MCP server change. W2 gate satisfied and W2 is CLOSED_PASS_BOUNDED; WCE wave complete."
+}

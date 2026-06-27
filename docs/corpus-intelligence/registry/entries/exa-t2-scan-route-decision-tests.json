@@ -1,0 +1,20 @@
+{
+  "registryOrder": 65,
+  "id": "exa-t2-scan-route-decision-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EXA-T2 scan route decision tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EXA-T2",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md",
+  "notes": "Focused pytest coverage for PASS/local route, NEEDS_TIER2_OCR/OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source type blocking, source-type priority over language check, docx support, empty language codes, deterministic repeatability, version+claim-boundary presence, no raw-content fields, and parametrized status-to-route mapping."
+}

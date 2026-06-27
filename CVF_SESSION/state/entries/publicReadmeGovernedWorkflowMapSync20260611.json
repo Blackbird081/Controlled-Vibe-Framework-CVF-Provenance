@@ -1,0 +1,5 @@
+{
+  "stateOrder": 325,
+  "stateKey": "publicReadmeGovernedWorkflowMapSync20260611",
+  "value": "EXPORTED at public-sync commit 49f65cdb0 pushed to https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git after remote verification. README What CVF Is now states the governed workflow as INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW -> FREEZE. Boundary: public documentation clarification only; no runtime/source behavior, provider behavior, live proof, production readiness, or public readiness expansion."
+}

@@ -1,0 +1,31 @@
+{
+  "stateOrder": 447,
+  "stateKey": "wwuT2CvfWebWorkspaceOperatorDashboardReadModelClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "b3593e1b",
+    "executionBaseHead": "c31e0069",
+    "dispatchCommit": "1bbf3046",
+    "roadmap": "docs/roadmaps/CVF_WEB_WORKSPACE_UPGRADE_ROADMAP_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_FOR_CODEX_2026-06-18.md",
+    "completionReview": "docs/reviews/CVF_WWU_T2_CVF_WEB_WORKSPACE_OPERATOR_DASHBOARD_READ_MODEL_COMPLETION_2026-06-18.md",
+    "evidence": "docs/reviews/evidence/wwu-t2-cvf-web-workspace-operator-dashboard-read-model-2026-06-18.json",
+    "implemented": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/cvf-workspace-read-model.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/workspace/state/route.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Sidebar.tsx"
+    ],
+    "checks": [
+      "focused Vitest PASS 3 files / 4 tests",
+      "npm run check PASS",
+      "git diff --check PASS",
+      "HTTP /workspace PASS 200",
+      "Playwright visual/read check PASS",
+      "worker-return fast gate PASS",
+      "pre-commit hook PASS 51/51"
+    ],
+    "claimBoundary": "Read-only CVF Web Workspace dashboard/read model only; no Local Runtime mutation, MCP implementation, provider/live call, public-sync, raw external package import, runtime enforcement, governed action request, production readiness, public readiness, release readiness, or external-facing readiness.",
+    "nextAllowedMove": "No WWU-T3 Local Workspace Runtime/MCP implementation until explicit runtime/MCP authorization, fresh GC-018, and a source-verified work order. A later bounded Web Workspace follow-up also requires fresh GC-018 and source-verified work order."
+  }
+}

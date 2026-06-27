@@ -1,0 +1,5 @@
+{
+  "stateOrder": 327,
+  "stateKey": "lpci2EcT2ClosureSessionSync20260611",
+  "value": "SESSION_SYNC_ONLY at commit 4ca9b861. Records LPCI2 EC-T2 closure state in CVF_SESSION_MEMORY.md, CVF_SESSION/ACTIVE_SESSION_STATE.json, and AGENT_HANDOFF_V17_2026-06-07.md after material closure commit cb026168. Boundary: continuity sync only; no runtime/source change, public-sync, provider/API key use, current-law/legal-quality claim, production/public readiness, memory reinjection, high-risk promotion, or autonomous mutation."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 405,
+  "stateKey": "roadmapStateReconciliationT1Dispatch20260616",
+  "value": "Roadmap State Reconciliation RSF-T1 dispatch packet committed at 0977365e. Artifacts: docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md; docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T1_2026-06-16.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md. Purpose: reconcile stale CI2 roadmap state after source audit found CI2-T3/T4/T5 completion reviews already exist. Claim boundary: documentation-only dispatch; RSF-T2 machine guard not yet implemented."
+}

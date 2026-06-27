@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "0.1.0",
+  "artifact": "Delta-T6 Execution Claim Boundary Checker",
+  "status": "CLOSED_PASS_BOUNDED",
+  "date": "2026-06-19",
+  "dispatchCommit": "73539dab",
+  "dispatchSessionSyncCommit": "1fbe968e",
+  "executionBase": "1fbe968e",
+  "materialCommit": "3ef55abc",
+  "closureBase": "c72449cf",
+  "changedRuntimeScope": false,
+  "providerLiveProof": "N/A with reason: local governance checker only",
+  "publicSync": false,
+  "directInterceptionClaimed": false,
+  "universalGovernedCodingClaimed": false,
+  "artifacts": {
+    "gc018": "docs/baselines/CVF_GC018_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_2026-06-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_FOR_CODEX_2026-06-19.md",
+    "checker": "governance/compat/check_delta_execution_claim_boundary.py",
+    "tests": "governance/compat/test_check_delta_execution_claim_boundary.py",
+    "completion": "docs/reviews/CVF_DELTA_T6_EXECUTION_CLAIM_BOUNDARY_CHECKER_COMPLETION_2026-06-19.md"
+  },
+  "checks": [
+    {
+      "command": "python governance/compat/test_check_delta_execution_claim_boundary.py",
+      "result": "PASS 11/11"
+    },
+    {
+      "command": "python governance/compat/check_delta_execution_claim_boundary.py --base 1fbe968e --head HEAD --enforce",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_delta_execution_claim_boundary.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 1fbe968e --head HEAD --enforce",
+      "result": "PASS"
+    },
+    {
+      "command": "material pre-commit hook",
+      "result": "PASS 54/54"
+    }
+  ],
+  "claimBoundary": "Delta-T6 is a forward-only governed Markdown claim-boundary checker. It does not provide runtime execution control, mandatory invocation, direct IDE/shell/git/filesystem interception, provider/live behavior, public readiness, production readiness, release readiness, wrapper/proxy enforcement, EDIT/COMMIT execution, or universal governed-coding control."
+}

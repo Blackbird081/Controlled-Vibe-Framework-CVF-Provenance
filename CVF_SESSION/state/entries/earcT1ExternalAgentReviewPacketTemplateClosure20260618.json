@@ -1,0 +1,35 @@
+{
+  "stateOrder": 444,
+  "stateKey": "earcT1ExternalAgentReviewPacketTemplateClosure20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "ab8382f3",
+    "roadmap": "docs/roadmaps/CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_SYSTEMIZATION_ROADMAP_2026-06-18.md",
+    "gc018": "docs/baselines/CVF_GC018_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_FOR_CODEX_2026-06-18.md",
+    "completion": "docs/reviews/CVF_EARC_T1_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE_COMPLETION_2026-06-18.md",
+    "deliveredReferenceFiles": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md",
+      "docs/reference/external_agent_review/README.md"
+    ],
+    "registryEntry": "docs/corpus-intelligence/registry/entries/earc-t1-external-agent-review-packet-template.json",
+    "nextDispatchCandidate": "EARC-T3",
+    "nextDispatchRequirement": "Fresh GC-018 and source-verified work order for external-finding absorption workflow.",
+    "parkedBoundaries": [
+      "EARC-T2 public-sync preparation until explicit public-sync authorization",
+      "EARC-T4 MCP/workspace implementation decision until explicit MCP/runtime authorization",
+      "public-sync",
+      "MCP implementation",
+      "provider/live calls",
+      "workspace runtime mutation",
+      "raw external package import",
+      "public readiness",
+      "production readiness",
+      "release readiness",
+      "external-facing readiness"
+    ],
+    "gateSummary": "worker-return fast gate passed, git diff --check passed, commit steward implementation preflight passed, and pre-commit hook passed 50/50 checks on material commit ab8382f3."
+  }
+}

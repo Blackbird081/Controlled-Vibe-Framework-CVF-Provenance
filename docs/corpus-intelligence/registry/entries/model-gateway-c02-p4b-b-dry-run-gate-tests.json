@@ -1,0 +1,24 @@
+{
+  "registryOrder": 92,
+  "id": "model-gateway-c02-p4b-b-dry-run-gate-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P4B-B dry-run gate tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/p4b-b-dry-run-gate.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "real network call (injected fetch double only)",
+    "real credential (fake-test-secret only)",
+    "liveAuthorized=true against real endpoint (uses fetch double)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P4B-B",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md",
+  "notes": "Deterministic dry-run gate tests proving the harness makes no network call and reads no secret when liveAuthorized=false, and flows a fake response through the governed bridge with an admitted record when liveAuthorized=true via an injected fetch double. No real provider, credential, or network."
+}

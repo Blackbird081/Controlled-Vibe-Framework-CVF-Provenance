@@ -1,0 +1,25 @@
+{
+  "stateOrder": 432,
+  "stateKey": "gfcT1FoundationConsolidationAuditDispatch20260618",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "62b2fa27",
+    "acceptedMaterialCommit": "c8034a81",
+    "acceptedMaterialSessionSyncCommit": "f764f449",
+    "closureCommit": "81669ff5",
+    "postClosureStateDriftFindingCommit": "da09980e",
+    "gc018": "docs/baselines/CVF_GC018_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_2026-06-18.md",
+    "roadmap": "docs/roadmaps/CVF_GOVERNANCE_FOUNDATION_CONSOLIDATION_ROADMAP_2026-06-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_FOR_CLAUDE_2026-06-18.md",
+    "assignedWorker": "Claude",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedDecisionPacket": "docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_DECISION_PACKET_2026-06-18.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_WORKER_RETURN_2026-06-18.md",
+    "codexOwnedClosurePath": "docs/reviews/CVF_GFC_T1_CCLV_FPRC_STATE_HYGIENE_AUDIT_COMPLETION_2026-06-18.md",
+    "codexReviewerRepair": "Aligned the stale-roadmap count from five to seven before accepted-material commit.",
+    "recommendedNextTranche": "GFC-T3 roadmap-state hygiene remediation, with P5C re-read before any edit.",
+    "scope": "Combined audit and decision packet for CCLV-T4, FPRC-T3, and roadmap-state hygiene.",
+    "claimBoundary": "Audit/decision only. No runtime, provider/live proof, public-sync, registry edit, existing roadmap direct edit, workspace runtime queue, source code, or session-sync ownership for Claude.",
+    "nextAllowedMove": "Superseded by GFC-T3 dispatch commit 21cf3793. GFC-T1 is closed bounded at closure commit 81669ff5, and post-closure state drift finding remediation is committed at da09980e. GFC-T3 now owns the roadmap-state hygiene remediation next move. GFC-T2 and GFC-T4 remain optional operator decisions. Runtime/provider/live/public-sync/registry/product work remains parked."
+  }
+}

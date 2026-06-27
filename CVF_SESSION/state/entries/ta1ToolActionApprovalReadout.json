@@ -1,0 +1,5 @@
+{
+  "stateOrder": 188,
+  "stateKey": "ta1ToolActionApprovalReadout",
+  "value": "CLOSED_PASS_BOUNDED. Added deterministic cvf.toolActionApprovalReadout.ta1.v1 and buildToolActionApprovalReadout() on top of W3 cvf.toolActionTaxonomy.w3.v1. Readout reports approval state, required evidence, missing evidence, next safe action, safe message, diagnostic, and explicit boundaries while preserving runtimeExecutionAuthorized=false. States covered: not_required, pending_approval, satisfied_but_not_executable, blocked_before_approval, blocked_by_policy, incomplete_approval. Verification: npm test -- tool-action-taxonomy.test.ts PASS 16/16; governance/contracts npm test PASS 3 files, 114/114. Completion review: docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md. Boundary: no real tool/command/MCP/database/browser/provider execution, MCP bridge, database adapter/driver/query/mutation/export/migration, /api/execute route change, receipt envelope, auth/RBAC, public-sync, hosted readiness, production readiness, or freeze release."
+}

@@ -38,6 +38,7 @@
   "ignoredRoots": [
     ".private_reference",
     ".git",
+    ".codex",
     "node_modules",
     ".cache",
     ".pytest_cache"
@@ -73,6 +74,22 @@
       "lifecycleClass": "ACTIVE_CANONICAL",
       "exposureClass": "INTERNAL_ONLY",
       "rationale": "Active session-memory front door support root. Holds machine-readable active state, startup guard routing, handoff staging, and acknowledgment placeholders for agents and future cvf-cli/cvf-mcp-server entrypoints."
+    },
+    {
+      "path": "CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE",
+      "lifecycleClass": "FROZEN_REFERENCE",
+      "exposureClass": "INTERNAL_ONLY",
+      "retentionPolicy": "LOCAL_REFERENCE_ONLY_DO_NOT_COMMIT_RAW_PACKAGE",
+      "relocationPolicy": "ABSORB_USEFUL_CONTENT_THROUGH_GOVERNED_CVF_ARTIFACTS",
+      "rationale": "External-agent workspace-layer handoff package copied into the private provenance workspace for local absorption audit. It is not CVF source of truth and is ignored from git; useful content must be absorbed only through governed CVF reference, work-order, review, or roadmap artifacts."
+    },
+    {
+      "path": "CodeGraph",
+      "lifecycleClass": "FROZEN_REFERENCE",
+      "exposureClass": "INTERNAL_ONLY",
+      "retentionPolicy": "LOCAL_REFERENCE_ONLY_DO_NOT_PROMOTE_TO_CANONICAL_RUNTIME",
+      "relocationPolicy": "ABSORB_ONLY_THROUGH_CGE_GOVERNED_REFERENCE_CONTRACTS",
+      "rationale": "Local copied external CodeGraph package used as advisory evidence for CGE triage and LPF/KGR adaptation contracts. It is not canonical CVF runtime, not public-sync content, and does not authorize CodeGraph install, init, watcher, daemon, MCP, provider proof, or direct source import."
     },
     {
       "path": "docs",

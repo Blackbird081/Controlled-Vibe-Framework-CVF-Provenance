@@ -1,0 +1,36 @@
+{
+  "stateOrder": 381,
+  "stateKey": "aotT2C01C02ManifestTraceImplementationClosure20260613",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "7206852b",
+    "closureBaseHead": "6b5504f7",
+    "dispatchBaseHead": "6ca6a748",
+    "dispatchCommit": "5ba9e071",
+    "gc018": "docs/baselines/CVF_GC018_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md",
+    "standard": "docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md",
+    "checker": "governance/compat/check_agent_operation_trace.py",
+    "tests": "governance/compat/test_check_agent_operation_trace.py",
+    "workerReturn": "docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md",
+    "completionReview": "docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewDisposition": "ACCEPT_AFTER_REVIEWER_REPAIR",
+    "reviewerRepairs": [
+      "Scoped manifest field extraction to the Agent Operation Trace Block",
+      "Required exact trace-table label matching",
+      "Added Actual changed set comparison against observed changed paths",
+      "Clarified trace artifact self-inclusion behavior in the standard"
+    ],
+    "verification": [
+      "python -m unittest governance.compat.test_check_agent_operation_trace -v PASS 17/17",
+      "python governance/compat/check_agent_operation_trace.py --enforce PASS before material commit",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 40/40 before material commit",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 6b5504f7 --head 7206852b PASS for all material gates; blocked only by expected post-commit session continuity drift"
+    ],
+    "acceptedNextMove": "Fresh authorization only: select the next bounded AOT/foundation hardening tranche, or resume FPC implementation/registry work through a separate source-verified work order.",
+    "boundary": "AOT-T2-C01+C02 closure only. Repo-local trace enforcement, attribution labels, manifest comparison, and narrow worker-authored docs/reference trace eligibility. No OS/user attribution, endpoint telemetry, provider-internal logging, runtime behavior, public-sync, live governance proof, production readiness, public readiness, raw memory release, high-risk promotion, or autonomous mutation is authorized."
+  }
+}

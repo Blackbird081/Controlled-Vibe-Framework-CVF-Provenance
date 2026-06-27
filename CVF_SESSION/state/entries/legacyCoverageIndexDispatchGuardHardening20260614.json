@@ -1,0 +1,23 @@
+{
+  "stateOrder": 388,
+  "stateKey": "legacyCoverageIndexDispatchGuardHardening20260614",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "3423d82e",
+    "traceAlignmentCommit": "da725c1a",
+    "closureBaseHead": "825f7340",
+    "completionReview": "docs/reviews/CVF_LEGACY_COVERAGE_INDEX_DISPATCH_GUARD_HARDENING_COMPLETION_2026-06-14.md",
+    "guard": "governance/compat/check_work_order_dispatch_quality.py",
+    "tests": "governance/compat/test_check_work_order_dispatch_quality.py",
+    "enforcedRequirement": "Ready/dispatch work orders that are both foundation/workflow-chain scoped and legacy-adjacent must include Legacy Absorption Coverage Index Disposition with coverage-index row evidence or NOT_APPLICABLE_WITH_REASON.",
+    "coverageIndex": "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
+    "verification": [
+      "python -m pytest governance/compat/test_check_work_order_dispatch_quality.py -q PASS 74/74",
+      "python governance/compat/check_work_order_dispatch_quality.py --base 825f7340 --head HEAD --enforce PASS",
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS 16/16",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 40/40"
+    ],
+    "nextAllowedMove": "C-02 Model Gateway planning may resume only through a fresh rewritten planning packet or work order that cites the Model Gateway legacy recheck plan, completion review, and satisfies the legacy coverage-index dispatch guard.",
+    "boundary": "Governance control-plane dispatch guard only. No Model Gateway implementation, runtime/provider behavior, document scan runtime indexing, public-sync, production readiness, or live governance proof changed."
+  }
+}
