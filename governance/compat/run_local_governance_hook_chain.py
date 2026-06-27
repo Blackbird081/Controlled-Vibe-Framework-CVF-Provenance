@@ -5,6 +5,9 @@ CVF Local Governance Hook Chain
 Runs the standard local governance checks used by Git hooks in one place so
 the hook files stay small and output remains consistent.
 
+GC-032 marker: governance/compat/check_governed_artifact_authoring.py is
+enforced through governance/compat/local_governance_hook_catalog_pre_push.py.
+
 Default mode: pre-push
 """
 
