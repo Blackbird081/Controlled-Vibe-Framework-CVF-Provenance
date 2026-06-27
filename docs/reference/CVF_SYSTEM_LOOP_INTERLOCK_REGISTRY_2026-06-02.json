@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "standard": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_STANDARD_2026-06-02.md",
   "checker": "governance/compat/check_system_loop_interlock.py",
-  "lastUpdated": "2026-06-04",
+  "lastUpdated": "2026-06-27",
   "connections": [
     {
       "id": "scan-packets-to-cross-corpus-index",
@@ -335,6 +335,116 @@
       ],
       "automationLevel": "MACHINE_CHECKED",
       "claimBoundary": "This connection proves pluggable storage adapter interface wiring and file-backed implementation continuity. It does not prove live Redis connectivity, production database, distributed durability, external storage service, tamper-proof audit, hosted readiness, public readiness, or production-grade distributed retention."
+    },
+    {
+      "id": "governance-hook-chain-to-learning-intake",
+      "status": "ACTIVE",
+      "upstreamLoop": "GOVERNANCE_HOOK_CHAIN_ENFORCEMENT_LOOP",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "governance/compat/run_local_governance_hook_chain.py",
+      "outputSignal": "governance-phase enforcement findings and Finding-To-Governance Learning Disposition rows with defectClass, learningLane, escalationState, and nextControlAction",
+      "signalContract": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "downstreamLoop": "LEARNING_SIGNAL_INTAKE_F2G_LOOP",
+      "downstreamPlane": "LEARNING_PLANE",
+      "inputArtifact": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts",
+      "routingRule": "When a governed worker return or completion review records a Finding-To-Governance Learning Disposition row from hook-chain or reviewer-fast evidence, the row must remain traceable to a governance rule, checker candidate, roadmap, work order, or explicit no-action reason before closure. The routing does not authorize autonomous rule creation, checker implementation, runtime mutation, registry mutation beyond this entry, or public claims.",
+      "evidenceRefs": [
+        "docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md",
+        "docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md",
+        "docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md",
+        "governance/compat/check_finding_to_governance_learning.py",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves governance-phase findings have a registered path into the learning intake surface. It does not prove semantic correctness of agent findings, completeness of all hook-chain outputs, live learning promotion, runtime behavior, autonomous mutation, or public claims."
+    },
+    {
+      "id": "memory-consolidation-to-learning-signal",
+      "status": "ACTIVE",
+      "upstreamLoop": "MEMORY_CONSOLIDATION_WORKFLOW_LOOP",
+      "upstreamPlane": "MEMORY_KNOWLEDGE_PLANE",
+      "outputArtifact": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts",
+      "outputSignal": "memory consolidation result with conflict-resolution decision, staleness verdict, workflow step completion status, and rawMemoryReleased=false boundary",
+      "signalContract": "docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md",
+      "downstreamLoop": "LEARNING_SIGNAL_INTAKE_F2G_LOOP",
+      "downstreamPlane": "LEARNING_PLANE",
+      "inputArtifact": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts",
+      "routingRule": "When a MEMCON workflow produces a conflict-resolution decision or staleness verdict, the result may be surfaced only as a proposal learning-signal candidate, not a direct truth, policy, or memory mutation. rawMemoryReleased=false must be preserved. The routing does not authorize autonomous memory mutation, learning orchestration, runtime promotion, provider calls, or public claims.",
+      "evidenceRefs": [
+        "docs/roadmaps/CVF_MKG7_MEMORY_PLANE_OPERATIONALIZATION_ROADMAP_2026-06-01.md",
+        "docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md",
+        "docs/reference/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves memory consolidation outputs have a registered proposal-only learning-signal route. It does not prove live learning promotion, autonomous memory mutation, truth-model correctness, production memory readiness, Redis connectivity, or public claims."
+    },
+    {
+      "id": "memory-knowledge-graph-to-retrieval",
+      "status": "ACTIVE",
+      "upstreamLoop": "MEMORY_KNOWLEDGE_GRAPH_OUTPUT_LOOP",
+      "upstreamPlane": "MEMORY_KNOWLEDGE_PLANE",
+      "outputArtifact": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge-graph-store.ts",
+      "outputSignal": "bounded knowledge graph node, edge, or query result eligible for summary-only retrieval under provenance and lifecycle constraints",
+      "signalContract": "docs/roadmaps/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_ROADMAP_2026-06-01.md",
+      "downstreamLoop": "RETRIEVAL_ANSWER_LOOP",
+      "downstreamPlane": "MEMORY_KNOWLEDGE_PLANE",
+      "inputArtifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts",
+      "routingRule": "When a governed memory readout request passes the memory retrieval policy boundary, knowledge-graph output may be consumed as summary-only memory readout evidence. The routing does not authorize raw memory release, live Redis retrieval, external embedding, autonomous mutation, provider calls, or public claims.",
+      "evidenceRefs": [
+        "docs/roadmaps/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_ROADMAP_2026-06-01.md",
+        "docs/reference/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge-graph-store.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves memory knowledge-graph outputs have a registered summary-only retrieval route. It does not prove semantic retrieval correctness, live Redis connectivity, external KGR behavior, production memory readiness, autonomous mutation, or public claims."
+    },
+    {
+      "id": "dir-dice-to-downstream-adapter-eligibility",
+      "status": "ACTIVE",
+      "upstreamLoop": "DIR_DICE_AUTHORIZATION_GATE_LOOP",
+      "upstreamPlane": "DOCUMENT_INTELLIGENCE_FOUNDATION_LANE",
+      "outputArtifact": "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py",
+      "outputSignal": "DICE authorization decision and operator_review_required flag with DIR document type classification and downstream eligibility boundary",
+      "signalContract": "docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md",
+      "downstreamLoop": "DOWNSTREAM_ADAPTER_ELIGIBILITY_LOOP",
+      "downstreamPlane": "USE_CASE_ADAPTER_LAYER_BOUNDARY",
+      "inputArtifact": "docs/reference/CVF_PLCS_T1_ABSORPTION_TO_WORKFLOW_CHAIN_ROUTING_MATRIX_2026-06-16.md",
+      "routingRule": "When DICE authorization gate output is cited by a downstream adapter work order, the output may be consumed only as eligibility evidence and only after a separate adapter GC-018 authorizes that adapter lane. This interlock maps the signal path only; it does not authorize Document Translator, Policy_Local, OCR/provider execution, adapter mutation, runtime dispatch, or public claims.",
+      "evidenceRefs": [
+        "docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md",
+        "docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md",
+        "docs/reference/CVF_PLCS_T2_REGISTRY_COMPANION_DECISION_2026-06-16.md",
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py",
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_router.py"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves DIR/DICE authorization output has a registered eligibility signal route for future downstream adapter authorization packets. It does not authorize Document Translator, Policy_Local, OCR/provider execution, live document routing, production use-case work, autonomous mutation, or public claims."
+    },
+    {
+      "id": "epistemic-process-to-claim-update",
+      "status": "ACTIVE",
+      "upstreamLoop": "EPISTEMIC_PROCESS_PACKET_LOOP",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "governance/compat/check_epistemic_process_packet.py",
+      "outputSignal": "expected-result, evidence-comparison, contradiction-or-gap disposition, and claim-update structure for evidence-heavy governed packets",
+      "signalContract": "governance/compat/check_epistemic_process_packet.py",
+      "downstreamLoop": "CLAIM_UPDATE_REVIEWER_DECISION_LOOP",
+      "downstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "inputArtifact": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "routingRule": "When evidence-heavy governed work is reviewed, the epistemic process packet gate requires expected result, evidence comparison, contradiction or gap disposition, and claim update evidence before a PASS-looking closure can stand. Any resulting learning finding must then route through Finding-To-Governance disposition. The routing does not score semantic truth, authorize autonomous mutation, run providers, change runtime behavior, or make public claims.",
+      "evidenceRefs": [
+        "docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_COMPLETION_2026-06-13.md",
+        "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+        "governance/compat/check_epistemic_process_packet.py",
+        "governance/compat/test_check_epistemic_process_packet.py",
+        "governance/compat/check_finding_to_governance_learning.py"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves the FPC-T2-C05 machine-check prerequisite now has a registered claim-update routing surface. It does not prove semantic truth, reasoning quality, provider behavior, runtime governance behavior, autonomous mutation safety, production readiness, or public readiness."
     }
   ]
 }
