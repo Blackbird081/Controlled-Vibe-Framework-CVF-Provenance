@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1250,
+  "stateKey": "mkgOwnerVerificationDecisionClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "dcdbac64",
+    "roadmap": "docs/roadmaps/CVF_MKG_OWNER_VERIFICATION_DECISION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_MKG_OWNER_VERIFICATION_DECISION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MKG_OWNER_VERIFICATION_DECISION_FOR_CODEX_2026-06-27.md",
+    "reference": "docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md",
+    "completionReview": "docs/reviews/CVF_MKG_OWNER_VERIFICATION_DECISION_COMPLETION_2026-06-27.md",
+    "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation.",
+    "claimBoundary": "MKG owner-verification decision only; no runtime, UI, checker, MCP, CLI, IDE bridge, provider-live, public-sync, generated-state, resolver, adapter, registry, package, certification, DICE, or push scope."
+  }
+}

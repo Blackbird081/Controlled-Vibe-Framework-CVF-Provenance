@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order, or open a source-verified MKG owner-verification lane before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
+Startup acknowledged: current mode=`mkg_owner_verification_decision_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Current mode marker: `mkg_owner_verification_decision_closed_pass_bounded_pending_next_foundation_selection`
 
-Current mode: `mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Current mode: `mkg_owner_verification_decision_closed_pass_bounded_pending_next_foundation_selection`
 
-`mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+`mkg_owner_verification_decision_closed_pass_bounded_pending_next_foundation_selection`
 
 Previous mode:
 
-`evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`
+`mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
 ## Latest Closed Work
 
@@ -75,18 +75,19 @@ Previous mode:
 | Evidence Readout Friction Reduction Decision EFRD-T0-T4 | `7a973124` | CLOSED_PASS_BOUNDED |
 | Evidence Readout Quick Packet Template ERQP-T0-T4 | `37f2d7bd` | CLOSED_PASS_BOUNDED |
 | MKG Pending Finality Reconciliation MPFR-T0-T4 | `6cd88162` | CLOSED_PASS_BOUNDED |
+| MKG Owner Verification Decision MKGOV-T0-T4 | `dcdbac64` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+Mode: `mkg_owner_verification_decision_closed_pass_bounded_pending_next_foundation_selection`
 
-Next allowed move: select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order, or open a source-verified MKG owner-verification lane before implementation. Use `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md`, `docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md`, `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`, `docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`, `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`, and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation. Use `docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md`, `docs/reviews/CVF_MKG_OWNER_VERIFICATION_DECISION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md`, `docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md`, `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md`, `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`, `docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`, `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`, and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. LHW24 remains the latest closed numbered LHW wave.
 
 No runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push without separate authorization.
 
 ## Parked Checkpoint
 
-MKG Pending Finality Reconciliation MPFR-T0-T4 is closed bounded at material commit `6cd88162`. It added a stable decision reference that records MKG3/MKG4 as historical source-visible finality probes, not active uncommitted work. DICE remains parked; next value is selecting another high-value foundation lane through fresh GC-018/source-verified work order, or opening a source-verified MKG owner-verification lane.
+MKG Owner Verification Decision MKGOV-T0-T4 is closed bounded at material commit `dcdbac64`. It added a stable decision reference that records cortex as metadata intake owner only, governed skill evolution as ASSF package contract owner only, and graph as local advisory graph owner only. DICE remains parked; next value is selecting another high-value foundation lane through fresh GC-018/source-verified work order.
 
 ## Continuity Markers
 

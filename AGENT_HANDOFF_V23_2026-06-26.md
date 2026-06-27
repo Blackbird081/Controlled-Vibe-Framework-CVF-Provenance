@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order, or open a source-verified MKG owner-verification lane before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
+Startup acknowledged: current mode=`mkg_owner_verification_decision_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
 
 ## Current State
 
@@ -37,12 +37,13 @@ Startup acknowledged: current mode=`mkg_pending_finality_reconciliation_closed_p
 | Evidence Readout Friction Reduction Decision EFRD-T0-T4 closure | `7a973124` |
 | Evidence Readout Quick Packet Template ERQP-T0-T4 closure | `37f2d7bd` |
 | MKG Pending Finality Reconciliation MPFR-T0-T4 closure | `6cd88162` |
+| MKG Owner Verification Decision MKGOV-T0-T4 closure | `dcdbac64` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
+`mkg_owner_verification_decision_closed_pass_bounded_pending_next_foundation_selection`
 
 ## Purpose
 
@@ -52,11 +53,10 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after MKG Pending Finality Reconciliation MPFR-T0-T4 closure.
+after MKG Owner Verification Decision MKGOV-T0-T4 closure.
 
 Owner boundary: this handoff authorizes only another fresh CVF foundation
-roadmap through GC-018/source-verified work order, or a source-verified MKG
-owner-verification lane, before implementation. It does not authorize
+roadmap through GC-018/source-verified work order before implementation. It does not authorize
 runtime/MCP/CLI/IDE bridge implementation, further provider/live proof,
 public-sync, push, checker implementation, resolver mutation, adapter mutation,
 registry mutation, package activation, certification decision, generated
@@ -121,6 +121,9 @@ Packet Template ERQP-T0-T4 batch as `CLOSED_PASS_BOUNDED`.
 
 Latest material closure: commit `6cd88162` closed the MKG Pending Finality
 Reconciliation MPFR-T0-T4 batch as `CLOSED_PASS_BOUNDED`.
+
+Latest material closure: commit `dcdbac64` closed the MKG Owner Verification
+Decision MKGOV-T0-T4 batch as `CLOSED_PASS_BOUNDED`.
 
 Latest checklist learning work: commit `13dcb7ad` updated
 `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
@@ -201,31 +204,40 @@ commit `37f2d7bd`.
 The MKG Pending Finality Reconciliation MPFR-T0-T4 batch closed at material
 commit `6cd88162`.
 
+The MKG Owner Verification Decision MKGOV-T0-T4 batch closed at material
+commit `dcdbac64`.
+
 Material result:
 
-- Created and closed the MPFR-T0-T4 roadmap, GC-018, work order, stable
+- Created and closed the MKGOV-T0-T4 roadmap, GC-018, work order, stable
   decision reference, and completion review.
-- Added `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md`
-  to record MKG3/MKG4 as historical source-visible finality probes, not active
-  uncommitted work.
-- Preserved original MKG3/MKG4 artifacts unchanged and kept the lane
-  `REFERENCE_ONLY`: no runtime, UI/dashboard, checker, MCP/CLI/IDE bridge,
+- Added `docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md` to record
+  cortex as metadata intake owner only, governed skill evolution as ASSF
+  package contract owner only, and graph as local advisory graph owner only.
+- Preserved original MKG1/MKG2/MKG3/MKG4 artifacts unchanged and kept the lane
+  bounded: no runtime, UI/dashboard, checker, MCP/CLI/IDE bridge,
   provider/live proof, public-sync, resolver, adapter, registry,
-  generated-state, package, certification, or DICE mutation.
+  generated-state, package activation, certification, or DICE mutation.
 
 Session-maintenance result for this handoff update:
 
 - Updates active front door, generated state sources, bootstrap read model, and
-  active handoff after MPFR-T0-T4 material closure.
-- Keeps the next move on selecting another fresh foundation lane or opening a
-  source-verified MKG owner-verification lane.
+  active handoff after MKGOV-T0-T4 material closure.
+- Keeps the next move on selecting another fresh foundation lane through
+  GC-018/source-verified work order.
 
 ## Next Allowed Move
 
 Next allowed move: select another high-value CVF foundation roadmap through
-fresh GC-018/source-verified work order, or open a source-verified MKG
-owner-verification lane before implementation.
+fresh GC-018/source-verified work order before implementation.
 LHW24 remains the latest closed numbered LHW wave.
+
+Use `docs/reference/CVF_MKG_OWNER_VERIFICATION_DECISION.md` as the current MKG
+owner-verification routing reference.
+
+Use
+`docs/reviews/CVF_MKG_OWNER_VERIFICATION_DECISION_COMPLETION_2026-06-27.md`
+as the current MKGOV completion reference.
 
 Use `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md` as
 the current MKG finality reconciliation reference.
@@ -301,7 +313,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 6cd88162 --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base dcdbac64 --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -309,26 +321,26 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 MKG Pending Finality Reconciliation session-sync |
+| Session or invocation | 2026-06-27 MKG Owner Verification Decision session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | MPFR-T0-T4 material closure commit `6cd88162` and active next-move continuity update |
-| Before status evidence | clean worktree after material closure commit `6cd88162` |
+| Allowed scope source | MKGOV-T0-T4 material closure commit `dcdbac64` and active next-move continuity update |
+| Before status evidence | clean worktree after material closure commit `dcdbac64` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
 | Claim boundary | session-sync only; no Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, checker implementation, or DICE work |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 MPFR session-sync |
-| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mkgPendingFinalityReconciliationClosure20260627.json` |
-| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mkgPendingFinalityReconciliationClosure20260627.json` |
+| Invocation ID | local Codex session 2026-06-27 MKGOV session-sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mkgOwnerVerificationDecisionClosure20260627.json` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mkgOwnerVerificationDecisionClosure20260627.json` |
 | Manifest delta | N/A with reason: material boundary closure already committed separately |
 
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after MKG Pending Finality Reconciliation closure only.
+and active handoff update after MKG Owner Verification Decision closure only.
 
 Protected paths:
 
@@ -339,15 +351,14 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
-- `CVF_SESSION/state/entries/mkgPendingFinalityReconciliationClosure20260627.json`
+- `CVF_SESSION/state/entries/mkgOwnerVerificationDecisionClosure20260627.json`
 
 Operator authorization: user requested continuation according to next move;
-Codex committed the MPFR-T0-T4 material closure at `6cd88162`; this update
-routes the active session to another foundation lane selection or MKG
-owner-verification lane selection.
+Codex committed the MKGOV-T0-T4 material closure at `dcdbac64`; this update
+routes the active session to another foundation lane selection.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `6cd88162`.
+commit `dcdbac64`.
 
 ## Claim Boundary
 
