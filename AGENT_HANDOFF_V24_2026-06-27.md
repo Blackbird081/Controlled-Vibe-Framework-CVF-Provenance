@@ -78,7 +78,9 @@ FPC-UAP-T2 Use-Case Adapter Public Export README Catalog Snapshot Refresh as
 
 Latest session sync base: parent HEAD `be253923`.
 
-Latest session sync commit: pending in this session.
+Latest session sync commit: `f1cfad952c66d4b2b20751913604b2f4552c74a4`.
+
+Latest handoff marker commit: pending in this session.
 
 ## Provenance Push Debt Rebuild Sync - 2026-06-27
 
@@ -251,6 +253,19 @@ Rollback boundary: if this sync is rejected, revert only this final session
 sync. Do not revert pushed base `75fcad20`, base repair `062ce053`, material
 rebuild commit `be253923`, public-sync commit
 `04d88109317c780ceb2062a257c0e863e2379276`, or the backup branches.
+
+## GC-020 Marker - Provenance Push Debt Rebuild Session Sync
+
+Session-sync commit `f1cfad952c66d4b2b20751913604b2f4552c74a4` updated V24,
+front-door state, generated active session state, and state source entries
+after material rebuild commit `be253923`. This handoff-only marker records
+that session-sync commit so the next pre-push gate can verify GC-020 continuity
+without mixing material and session ranges.
+
+Rollback boundary: if this marker is rejected, revert only the marker commit.
+Do not revert material rebuild commit `be253923`, session-sync commit
+`f1cfad95`, public-sync commit
+`04d88109317c780ceb2062a257c0e863e2379276`, or backup branches.
 
 ## FPC-SCG-T7 Session Sync - 2026-06-27
 
