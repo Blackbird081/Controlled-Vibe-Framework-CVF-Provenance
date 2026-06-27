@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "evidence_readout_friction_decision_closed_pass_bounded_pending_quick_packet_or_foundation_selection",
+  "currentMode": "evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection",
   "activeHandoff": "AGENT_HANDOFF_V23_2026-06-26.md",
-  "nextAllowedMove": "Evidence Readout Friction Reduction Decision EFRD-T0-T4 is CLOSED_PASS_BOUNDED at material commit 7a973124. Stable reference docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md now selects existing evidence/readout surfaces for common operator questions without adding runtime behavior. Next allowed move: optionally open an EVIDENCE_READOUT_QUICK_PACKET non-runtime template lane through fresh GC-018/source-verified work order, or select another high-value CVF foundation roadmap before implementation. DICE remains parked. LHW24 remains the latest closed numbered LHW wave. No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.",
+  "nextAllowedMove": "Evidence Readout Quick Packet Template ERQP-T0-T4 is CLOSED_PASS_BOUNDED at material commit 37f2d7bd. Stable template docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md now provides a manual one-page evidence/readout packet shape without adding runtime behavior. Next allowed move: select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation. DICE remains parked. LHW24 remains the latest closed numbered LHW wave. No runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

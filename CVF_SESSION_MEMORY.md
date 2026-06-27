@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`evidence_readout_friction_decision_closed_pass_bounded_pending_quick_packet_or_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=optionally open an EVIDENCE_READOUT_QUICK_PACKET non-runtime template lane through fresh GC-018/source-verified work order, or select another high-value CVF foundation roadmap before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
+Startup acknowledged: current mode=`evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
 
 ## Current Mode
 
-Current mode marker: `evidence_readout_friction_decision_closed_pass_bounded_pending_quick_packet_or_foundation_selection`
+Current mode marker: `evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`
 
-Current mode: `evidence_readout_friction_decision_closed_pass_bounded_pending_quick_packet_or_foundation_selection`
+Current mode: `evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`
 
-`evidence_readout_friction_decision_closed_pass_bounded_pending_quick_packet_or_foundation_selection`
+`evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`
 
 Previous mode:
 
-`workflow_value_proof_closed_pass_bounded_pending_friction_readout_roadmap_selection`
+`evidence_readout_friction_decision_closed_pass_bounded_pending_quick_packet_or_foundation_selection`
 
 ## Latest Closed Work
 
@@ -73,18 +73,19 @@ Previous mode:
 | Local workspace projection read model LWPRM-T0-T4 | `8be9f9b6` | CLOSED_PASS_BOUNDED |
 | Workflow Value Proof WVP-T0-T4 | `00c2bc40` | CLOSED_PASS_BOUNDED |
 | Evidence Readout Friction Reduction Decision EFRD-T0-T4 | `7a973124` | CLOSED_PASS_BOUNDED |
+| Evidence Readout Quick Packet Template ERQP-T0-T4 | `37f2d7bd` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Mode: `evidence_readout_friction_decision_closed_pass_bounded_pending_quick_packet_or_foundation_selection`
+Mode: `evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`
 
-Next allowed move: optionally open an EVIDENCE_READOUT_QUICK_PACKET non-runtime template lane through fresh GC-018/source-verified work order, or select another high-value CVF foundation roadmap before implementation. Use `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`, `docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`, `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`, and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation. Use `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md`, `docs/reference/CVF_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION.md`, `docs/reviews/CVF_ERQP_T0_T4_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_EFRD_T0_T4_EVIDENCE_READOUT_FRICTION_REDUCTION_DECISION_COMPLETION_2026-06-27.md`, `docs/reviews/CVF_WORKFLOW_VALUE_PROOF_T0_T4_COMPLETION_2026-06-27.md`, `docs/reference/agent_workspace/CVF_LOCAL_WORKSPACE_PROJECTION_READ_MODEL_DECISION.md`, and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md` as reference evidence only. LHW24 remains the latest closed numbered LHW wave.
 
-No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push without separate authorization.
+No runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, DICE work, or push without separate authorization.
 
 ## Parked Checkpoint
 
-Evidence Readout Friction Reduction Decision EFRD-T0-T4 is closed bounded at material commit `7a973124`. It created a stable source-selection reference for common evidence/readout questions without adding runtime behavior. DICE remains parked; next value is either a small EVIDENCE_READOUT_QUICK_PACKET non-runtime template lane or another fresh foundation lane.
+Evidence Readout Quick Packet Template ERQP-T0-T4 is closed bounded at material commit `37f2d7bd`. It created a stable manual one-page evidence/readout packet template without adding runtime behavior. DICE remains parked; next value is selecting another high-value foundation lane through fresh GC-018/source-verified work order.
 
 ## Continuity Markers
 
