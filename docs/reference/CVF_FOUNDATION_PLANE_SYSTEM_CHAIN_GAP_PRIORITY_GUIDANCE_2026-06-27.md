@@ -235,6 +235,16 @@ current material carrier. `governance/compat/check_fpc_system_chain_acceptance_l
 now rejects stale pre-rebuild material carrier SHAs for required FPC-SCG
 closure-chain rows.
 
+Completed post-public-export downstream decision candidate:
+
+`FPC-DSD-T1 Foundation Downstream Post-Public-Export Lane Selection Decision`
+
+DSD-T1 result: downstream implementation remains held after UAP-T2. The
+use-case-adapter-public lane already completed the docs-only public
+README/catalog/snapshot export; runtime-provider-live, use-case implementation,
+package activation, public-sync expansion, and MPI-T6 runtime remain parked
+until a fresh source-verified GC-018 proves a lane-specific reopen condition.
+
 ## Acceptance Criteria For The Next Tranche
 
 The next tranche is correctly aligned only if it:
@@ -299,20 +309,20 @@ public-sync authorization and artifact review.
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 FPC-SCG-T6 interlock expected-chain checker extension |
+| Session or invocation | 2026-06-28 FPC-DSD-T1 post-public-export downstream hold decision |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, rg, source reads, apply_patch, Python, pytest, governance gates |
-| Target paths | `docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/baselines/CVF_GC018_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_FOR_CODEX_2026-06-27.md`; `docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
-| Allowed scope source | operator instruction to continue according to next move; active session state; this guidance's recommended FPC-SCG-T0 roadmap-refresh candidate |
-| Before status evidence | HEAD `0990e16c`; worktree clean before material patch |
-| After status evidence | guidance updated to record T0 roadmap-refresh closure and route next candidate to FPC-SCG-T7 acceptance/reopen gate |
-| Diff evidence | `git diff --name-status` |
-| Approval boundary | bounded FPC-SCG-T0 roadmap refresh and guidance update only |
-| Claim boundary | records source-verified routing guidance; no registry edit, manifest expansion, checker implementation, runtime/provider/live proof, public-sync, generated state mutation, use-case work, or MPI-T6 runtime work |
+| Command or tool surface | PowerShell, rg, source reads, apply_patch, Python governance gates |
+| Target paths | `docs/roadmaps/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_ROADMAP_2026-06-28.md`; `docs/baselines/CVF_GC018_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_2026-06-28.md`; `docs/reviews/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_COMPLETION_2026-06-28.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
+| Allowed scope source | operator continuation after T8/UAP-T2 and active next move allowing hold or fresh source-verified downstream selection |
+| Before status evidence | HEAD `77b30456`; worktree clean before material patch |
+| After status evidence | guidance updated to record DSD-T1 hold result after UAP-T2 |
+| Diff evidence | `git diff --name-status 77b30456 --` |
+| Approval boundary | bounded DSD-T1 decision-only hold and guidance update |
+| Claim boundary | records source-verified routing guidance; no registry edit, checker implementation, runtime/provider/live proof, public-sync, generated state mutation, adapter implementation, package activation, or MPI-T6 runtime work |
 | Agent type | single-agent dispatcher/implementer/reviewer |
-| Invocation ID | `fpc-scg-t0-foundation-system-chain-gap-closure-roadmap-refresh-2026-06-27` |
-| Expected manifest | `docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/baselines/CVF_GC018_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_FOR_CODEX_2026-06-27.md`; `docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
-| Actual changed set | `docs/roadmaps/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/baselines/CVF_GC018_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_2026-06-27.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_FOR_CODEX_2026-06-27.md`; `docs/reviews/CVF_FPC_SCG_T0_FOUNDATION_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_REFRESH_COMPLETION_2026-06-27.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
+| Invocation ID | `fpc-dsd-t1-post-public-export-lane-selection-2026-06-28` |
+| Expected manifest | `docs/roadmaps/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_ROADMAP_2026-06-28.md`; `docs/baselines/CVF_GC018_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_2026-06-28.md`; `docs/reviews/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_COMPLETION_2026-06-28.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
+| Actual changed set | `docs/roadmaps/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_ROADMAP_2026-06-28.md`; `docs/baselines/CVF_GC018_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_2026-06-28.md`; `docs/reviews/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_COMPLETION_2026-06-28.md`; `docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md` |
 | Manifest delta | MATCH |
 
 ## Claim Boundary
