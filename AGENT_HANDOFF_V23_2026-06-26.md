@@ -476,6 +476,34 @@ verify parent-present continuity for the following handoff-only sync commit.
 | Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
 | Manifest delta | MATCH |
 
+## Push Readiness Preview Standardization Session Sync
+
+Session-sync reason: material commit `0cf584e0` added the push-readiness
+preview standard/helper/test bundle and repaired the review-retention registry
+entries surfaced by the preview; active handoff now records that commit so
+GC-020 can verify parent-present continuity for the following handoff-only
+sync commit. Next allowed move remains FPC-SCG-T1, with FPC-SCG-T0 as fallback.
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | local repository tools |
+| Session or invocation | 2026-06-27 push-readiness preview standardization handoff sync |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, Python, git |
+| Target paths | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Allowed scope source | GC-020 active handoff continuity requirement after material commit `0cf584e0` |
+| Before status evidence | HEAD `0cf584e0`; active-session check required handoff to contain current HEAD or parent-present session-sync evidence |
+| After status evidence | handoff-sync gates before commit |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | handoff continuity sync only |
+| Claim boundary | handoff sync only; no next-move change, registry edit, checker implementation, runtime/provider/live proof, public-sync content mutation, generated workspace state mutation, adapter, resolver, certification, DICE work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, FPC-SCG implementation, or MPI-T6 runtime |
+| Agent type | single-agent session-sync steward |
+| Invocation ID | local Codex session 2026-06-27 push-readiness preview standardization handoff sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md` |
+| Manifest delta | MATCH |
+
 ## Push Gate Review Retention Registry Session Sync
 
 Session-sync reason: material commit `1daab6ba` repaired the review retention
