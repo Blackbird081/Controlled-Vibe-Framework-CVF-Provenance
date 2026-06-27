@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1248,
+  "stateKey": "mkgPendingFinalityReconciliationClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "6cd88162",
+    "roadmap": "docs/roadmaps/CVF_MKG_PENDING_FINALITY_RECONCILIATION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_MKG_PENDING_FINALITY_RECONCILIATION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MKG_PENDING_FINALITY_RECONCILIATION_FOR_CODEX_2026-06-27.md",
+    "reference": "docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md",
+    "completionReview": "docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md",
+    "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order, or open a source-verified MKG owner-verification lane before implementation.",
+    "claimBoundary": "MKG historical finality reconciliation only; no runtime, UI, checker, MCP, CLI, IDE bridge, provider-live, public-sync, generated-state, resolver, adapter, registry, package, certification, DICE, or push scope."
+  }
+}

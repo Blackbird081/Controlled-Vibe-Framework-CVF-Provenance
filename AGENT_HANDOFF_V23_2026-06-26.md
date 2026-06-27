@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V22_2026-06-22.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
+Startup acknowledged: current mode=`mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`; active handoff=AGENT_HANDOFF_V23_2026-06-26.md; next allowed move=select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order, or open a source-verified MKG owner-verification lane before implementation; parked checkpoint=DICE remains parked; no runtime/MCP/CLI/IDE bridge implementation, checker implementation, further provider/live proof, public-sync, resolver mutation, adapter mutation, registry mutation, package activation, certification decision, generated workspace state mutation, or push without separate authorization.
 
 ## Current State
 
@@ -36,12 +36,13 @@ Startup acknowledged: current mode=`evidence_readout_quick_packet_template_close
 | Workflow Value Proof WVP-T0-T4 closure | `00c2bc40` |
 | Evidence Readout Friction Reduction Decision EFRD-T0-T4 closure | `7a973124` |
 | Evidence Readout Quick Packet Template ERQP-T0-T4 closure | `37f2d7bd` |
+| MKG Pending Finality Reconciliation MPFR-T0-T4 closure | `6cd88162` |
 | Prior orchestration catalog material commit | `10dee6e9` |
 | Prior orchestration catalog session-sync commit | `f73546c5` |
 
 ## Current Mode
 
-`evidence_readout_quick_packet_template_closed_pass_bounded_pending_next_foundation_selection`
+`mkg_pending_finality_reconciliation_closed_pass_bounded_pending_next_foundation_selection`
 
 ## Purpose
 
@@ -51,15 +52,15 @@ advisory limit.
 ## Scope / Target / Owner Boundary
 
 Target: record session continuity, front-door routing, and next-move boundaries
-after evidence/readout quick-packet template closure.
+after MKG Pending Finality Reconciliation MPFR-T0-T4 closure.
 
 Owner boundary: this handoff authorizes only another fresh CVF foundation
-roadmap through GC-018/source-verified work order before implementation. It
-does not
-authorize runtime/MCP/CLI/IDE bridge implementation, further provider/live
-proof, public-sync, push, checker implementation, resolver mutation, adapter mutation, package
-activation, certification decision, generated workspace state mutation, or DICE
-work.
+roadmap through GC-018/source-verified work order, or a source-verified MKG
+owner-verification lane, before implementation. It does not authorize
+runtime/MCP/CLI/IDE bridge implementation, further provider/live proof,
+public-sync, push, checker implementation, resolver mutation, adapter mutation,
+registry mutation, package activation, certification decision, generated
+workspace state mutation, or DICE work.
 
 ## Active Boundary
 
@@ -117,6 +118,9 @@ Friction Reduction Decision EFRD-T0-T4 batch as `CLOSED_PASS_BOUNDED`.
 
 Latest material closure: commit `37f2d7bd` closed the Evidence Readout Quick
 Packet Template ERQP-T0-T4 batch as `CLOSED_PASS_BOUNDED`.
+
+Latest material closure: commit `6cd88162` closed the MKG Pending Finality
+Reconciliation MPFR-T0-T4 batch as `CLOSED_PASS_BOUNDED`.
 
 Latest checklist learning work: commit `13dcb7ad` updated
 `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
@@ -194,27 +198,41 @@ material commit `7a973124`.
 The Evidence Readout Quick Packet Template ERQP-T0-T4 batch closed at material
 commit `37f2d7bd`.
 
+The MKG Pending Finality Reconciliation MPFR-T0-T4 batch closed at material
+commit `6cd88162`.
+
 Material result:
 
-- Created and closed the ERQP-T0-T4 roadmap, GC-018, work order, template
-  reference, and completion review.
-- Added `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md` as a
-  stable manual one-page evidence/readout packet template.
-- Kept the lane `REFERENCE_ONLY`: no runtime, UI/dashboard, checker,
-  MCP/CLI/IDE bridge, provider/live proof, public-sync, resolver, adapter,
+- Created and closed the MPFR-T0-T4 roadmap, GC-018, work order, stable
+  decision reference, and completion review.
+- Added `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md`
+  to record MKG3/MKG4 as historical source-visible finality probes, not active
+  uncommitted work.
+- Preserved original MKG3/MKG4 artifacts unchanged and kept the lane
+  `REFERENCE_ONLY`: no runtime, UI/dashboard, checker, MCP/CLI/IDE bridge,
+  provider/live proof, public-sync, resolver, adapter, registry,
   generated-state, package, certification, or DICE mutation.
 
 Session-maintenance result for this handoff update:
 
 - Updates active front door, generated state sources, bootstrap read model, and
-  active handoff after ERQP-T0-T4 material closure.
-- Keeps the next move on selecting another fresh foundation lane.
+  active handoff after MPFR-T0-T4 material closure.
+- Keeps the next move on selecting another fresh foundation lane or opening a
+  source-verified MKG owner-verification lane.
 
 ## Next Allowed Move
 
 Next allowed move: select another high-value CVF foundation roadmap through
-fresh GC-018/source-verified work order before implementation.
+fresh GC-018/source-verified work order, or open a source-verified MKG
+owner-verification lane before implementation.
 LHW24 remains the latest closed numbered LHW wave.
+
+Use `docs/reference/CVF_MKG_PENDING_FINALITY_RECONCILIATION_DECISION.md` as
+the current MKG finality reconciliation reference.
+
+Use
+`docs/reviews/CVF_MKG_PENDING_FINALITY_RECONCILIATION_COMPLETION_2026-06-27.md`
+as the current MPFR completion reference.
 
 Use `docs/reference/CVF_EVIDENCE_READOUT_QUICK_PACKET_TEMPLATE.md` as the
 current manual evidence/readout packet template reference.
@@ -238,9 +256,10 @@ and `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_
 as reference evidence only.
 
 Do not start runtime/MCP/CLI/IDE bridge implementation, further provider/live
-proof, public-sync, push, checker implementation, resolver mutation, adapter mutation, package
-activation, certification decision, generated workspace state mutation, or DICE
-work without future accepted work order authorization.
+proof, public-sync, push, checker implementation, resolver mutation, adapter
+mutation, registry mutation, package activation, certification decision,
+generated workspace state mutation, or DICE work without future accepted work
+order authorization.
 
 ## Parked Boundaries
 
@@ -282,7 +301,7 @@ Read in this order:
 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 | `python governance/compat/check_session_mode_consistency.py --enforce` | PASS |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
-| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 37f2d7bd --head HEAD --enforce` | PASS before session commit |
+| `python governance/compat/run_agent_commit_steward_preflight.py --mode session-sync --base 6cd88162 --head HEAD --enforce` | PASS before session commit |
 
 ## Agent Operation Trace Block
 
@@ -290,26 +309,26 @@ Read in this order:
 |---|---|
 | Actor | Codex |
 | Provider or surface | local repository tools |
-| Session or invocation | 2026-06-27 evidence readout quick packet template session-sync |
+| Session or invocation | 2026-06-27 MKG Pending Finality Reconciliation session-sync |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, Python, git |
 | Target paths | front door, active handoff, active session state sources and generated state |
-| Allowed scope source | ERQP-T0-T4 material closure commit `37f2d7bd` and active next-move continuity update |
-| Before status evidence | clean worktree after material closure commit `37f2d7bd` |
+| Allowed scope source | MPFR-T0-T4 material closure commit `6cd88162` and active next-move continuity update |
+| Before status evidence | clean worktree after material closure commit `6cd88162` |
 | After status evidence | session-sync gates before commit |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | session-maintenance only |
 | Claim boundary | session-sync only; no Web runtime/source, package activation, further provider/live proof, public-sync, generated workspace state mutation, adapter, resolver, certification, checker implementation, or DICE work |
 | Agent type | single-agent session-sync steward |
-| Invocation ID | local Codex session 2026-06-27 ERQP session-sync |
-| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/evidenceReadoutQuickPacketTemplateClosure20260627.json` |
-| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/evidenceReadoutQuickPacketTemplateClosure20260627.json` |
+| Invocation ID | local Codex session 2026-06-27 MPFR session-sync |
+| Expected manifest | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mkgPendingFinalityReconciliationClosure20260627.json` |
+| Actual changed set | `AGENT_HANDOFF_V23_2026-06-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mkgPendingFinalityReconciliationClosure20260627.json` |
 | Manifest delta | N/A with reason: material boundary closure already committed separately |
 
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session front-door, generated active state,
-and active handoff update after evidence readout quick-packet template closure only.
+and active handoff update after MKG Pending Finality Reconciliation closure only.
 
 Protected paths:
 
@@ -320,14 +339,15 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
-- `CVF_SESSION/state/entries/evidenceReadoutQuickPacketTemplateClosure20260627.json`
+- `CVF_SESSION/state/entries/mkgPendingFinalityReconciliationClosure20260627.json`
 
 Operator authorization: user requested continuation according to next move;
-Codex committed the ERQP-T0-T4 material closure at `37f2d7bd`; this update
-routes the active session to another foundation lane selection.
+Codex committed the MPFR-T0-T4 material closure at `6cd88162`; this update
+routes the active session to another foundation lane selection or MKG
+owner-verification lane selection.
 
 Rollback boundary: revert the session-sync commit only; do not revert material
-commit `37f2d7bd`.
+commit `6cd88162`.
 
 ## Claim Boundary
 
