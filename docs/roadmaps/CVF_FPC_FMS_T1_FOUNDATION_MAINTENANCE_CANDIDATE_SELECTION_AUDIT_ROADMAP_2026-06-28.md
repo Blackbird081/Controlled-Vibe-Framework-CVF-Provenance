@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_FPC_T2_C05_GC018_AUTHORING
+Status: ROADMAP_CORRECTED_C05_ALREADY_PRESENT_PENDING_NEXT_SELECTION
 
 docType: roadmap
 
@@ -17,22 +17,26 @@ rawMemoryReleased: false
 User instruction approved continuing to the next foundation maintenance step
 after FMS-T0 created the selection lane.
 
-Decision: `SELECT_FPC_T2_C05_REGISTRY_ENTRY_GC018`.
+Decision: `HOLD_FPC_T2_C05_REGISTRY_ENTRY_GC018_ALREADY_PRESENT`.
 
 Selected implementation lane: none.
 
 Recommended next tranche:
 
-`FPC-T2-C05 Registry Entry GC-018`
+`FPC-FMS-T2 Current Registry Evidence Reconciliation And Next Candidate Selection`
 
 ## Purpose
 
-Execute the FMS-T1 candidate selection audit at roadmap level and choose the
-next foundation maintenance dispatch candidate.
+Execute the FMS-T1 candidate selection audit at roadmap level and correct the
+next foundation maintenance dispatch target against current registry evidence.
 
-This roadmap selects a follow-on GC-018 authoring target only. It does not
-implement the selected candidate, edit the system-loop registry, edit a checker,
-or reopen downstream runtime/provider/public/MPI implementation lanes.
+Initial FMS-T1 evidence selected C05 for a follow-on GC-018. A later current
+registry check shows that `epistemic-process-to-claim-update` already exists as
+the FPC-T2-C05 registry surface, and the SCG-T1 GC-018 already authorized and
+closed the C01-C05 registry edit. This roadmap therefore holds duplicate C05
+GC-018 authoring and routes the next move to a fresh source reconciliation
+selector. It does not implement or edit the system-loop registry, edit a
+checker, or reopen downstream runtime/provider/public/MPI implementation lanes.
 
 ## Scope / Target / Owner Boundary
 
@@ -56,6 +60,8 @@ Out of scope:
 - MPI-T6 runtime work;
 - adapter, resolver, package, or certification work;
 - push from the provenance workspace.
+- duplicate FPC-T2-C05 registry-entry GC-018 authoring while the current
+  registry already carries the C05 entry.
 
 ## Non-Goals
 
@@ -67,6 +73,7 @@ This roadmap does not:
 - prove runtime, provider, live, adapter, package, certification, public-sync, or
   MPI behavior;
 - replace the later GC-018 source-verification duty.
+- treat stale foundation-roadmap prose as stronger than the current registry.
 
 ## Source Authority
 
@@ -78,6 +85,7 @@ This roadmap does not:
 | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | foundation roadmap status, C01 result, and viable next candidates | SOURCE_VERIFIED |
 | `docs/roadmaps/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_ROADMAP_2026-06-28.md` | downstream no-implementation audit boundary | SOURCE_VERIFIED |
 | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | current interlock registry surface and checker pointer | SOURCE_VERIFIED |
+| `docs/baselines/CVF_GC018_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_2026-06-27.md` | prior C01-C05 registry edit authorization and closure evidence | SOURCE_VERIFIED |
 
 ## Source Verification Block
 
@@ -89,46 +97,49 @@ This roadmap does not:
 | FMS-T0 candidate matrix names `FPC-T2-C05 registry-entry work order` and requires source-backed gap evidence after C01 exists | `docs/roadmaps/CVF_FPC_FMS_T0_FOUNDATION_MAINTENANCE_SELECTION_AND_SYSTEM_CHAIN_REFRESH_ROADMAP_2026-06-28.md` | lines 137-146 | `FPC-T2-C05 registry-entry work order` | FMS-T0 candidate matrix | VALUE_SET | ACCEPT |
 | Foundation roadmap status is `FPC_T3_C04_C01_CLOSED_PASS_BOUNDED` | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | lines 1-5 | `Status` | foundation roadmap | VALUE_SET | ACCEPT |
 | C01 exists as an epistemic process packet checker and reviewer-fast now includes that gate | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | lines 512-522 | `governance/compat/check_epistemic_process_packet.py` | FPC-T3-C04+C01 closure result | VALUE_SET | ACCEPT |
-| The C04/C01 closure made no registry edit and no FPC-T2-C05 entry | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | lines 524-527 | `FPC-T2-C05 entry` | FPC-T3-C04+C01 closure boundary | VALUE_SET | ACCEPT |
-| Foundation roadmap lists opening an FPC-T2-C05 registry-entry work order as a viable next candidate now that C01 exists | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | lines 534-539 | `FPC-T2-C05 registry-entry work order` | foundation roadmap next candidates | VALUE_SET | ACCEPT |
+| Historical foundation roadmap listed opening an FPC-T2-C05 registry-entry work order as viable before later SCG registry work | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | lines 534-539 | `FPC-T2-C05 registry-entry work order` | foundation roadmap next candidates | VALUE_SET | ACCEPT |
 | FPC-T4 remains available only after explicit operator decision | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | lines 534-539 and 625-635 | `FPC-T4` | foundation roadmap future control action | VALUE_SET | ACCEPT |
 | DLR-T1 remains an audit-definition roadmap and selects no downstream implementation lane | `docs/roadmaps/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_ROADMAP_2026-06-28.md` | lines 28-36 and 55-70 | `Selected implementation lane` | DLR-T1 roadmap boundary | VALUE_SET | ACCEPT |
 | System-loop registry has current standard, checker, lastUpdated, and connection array fields | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | lines 1-6 | `connections` | system-loop interlock registry | VALUE_SET | ACCEPT |
+| Current system-loop registry already contains the FPC-T2-C05 epistemic process claim-update entry | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | lines 428-447 | `epistemic-process-to-claim-update` | system-loop interlock registry | VALUE_SET | ACCEPT |
+| SCG-T1 GC-018 authorized C01-C05 registry entries and required the C05 entry to cite the epistemic checker without semantic-truth overclaiming | `docs/baselines/CVF_GC018_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_2026-06-27.md` | lines 23-43 and 104-112 | `FPC-T2-C05` | SCG-T1 GC-018 baseline | VALUE_SET | ACCEPT |
 
 ## Current Gate Readout
 
 | Gate | Command | Result |
 |---|---|---|
-| Parked reopen inventory | `python governance/compat/check_fpc_parked_reopen_inventory.py --base a62cd5f7 --head HEAD --enforce` | Required before commit |
-| System-loop interlock registry | `python governance/compat/check_system_loop_interlock.py --base a62cd5f7 --head HEAD --enforce` | Required before commit |
+| Parked reopen inventory | `python governance/compat/check_fpc_parked_reopen_inventory.py --base f2ee995a --head HEAD --enforce` | Required before commit |
+| System-loop interlock registry | `python governance/compat/check_system_loop_interlock.py --base f2ee995a --head HEAD --enforce` | Required before commit |
 
 ## Candidate Selection Matrix
 
 | Candidate | conditionMet | Source-backed evidence | Missing evidence | Risk | Value | recommendedDisposition |
 |---|---|---|---|---|---|---|
-| `FPC-T2-C05 registry-entry work order` | YES | Foundation roadmap states C01 exists, states no FPC-T2-C05 entry was made, and lists this work order as viable now that C01 exists. | Exact registry-entry content and owner paths must be source-verified in the later GC-018. | Medium: registry mutation must not occur from this roadmap. | High: turns the completed C01 checker into discoverable system-loop governance without reopening downstream use cases. | `SELECT_FOR_FRESH_GC018` |
-| `FPC-T2 C01-C04 registry-edit work order` | PARTIAL | Foundation roadmap lists it as viable, but FMS-T1 evidence is narrower for C05 because C01 exists and the missing C05 entry is explicit. | Specific C01-C04 registry-edit requirement and mutation plan are not yet separated from the C05 entry question. | Medium: broader registry edit could overreach this selector. | Medium: useful after C05 scope is source-verified. | `HOLD_BEHIND_C05_GC018` |
+| `FPC-T2-C05 registry-entry work order` | NO | Current registry already contains `epistemic-process-to-claim-update`, and SCG-T1 GC-018 already authorized C01-C05 registry entries. | No missing C05 registry-entry gap remains in current source evidence. | High if reopened: duplicate dispatch would create stale governance work. | Low now: current source evidence says the entry is already present. | `HOLD_ALREADY_PRESENT` |
+| `FPC-T2 C01-C04 registry-edit work order` | NO | SCG-T1 already authorized C01-C05 entries, and the expected-chain manifest marks C01-C05 present active. | A specific post-SCG-T1 registry-edit gap has not been source-backed. | Medium: broad registry edit could duplicate prior SCG work. | Unknown until a fresh reconciliation selector compares all current registry rows. | `HOLD_PENDING_FMS_T2_RECONCILIATION` |
 | `FPC-T4` | NO | Foundation roadmap allows FPC-T4 only after explicit operator decision. | No explicit operator decision to bypass FPC-T2 candidate selection. | High: would skip the recorded interlock-decision dependency. | Unknown until FPC-T2 evidence is resolved. | `BLOCKED_UNTIL_EXPLICIT_OPERATOR_DECISION` |
 | `HOLD foundation maintenance pending DLR-T1` | NO | DLR-T1 remains a downstream audit-definition roadmap, and the operator approved continuing the foundation maintenance next step. | No source-backed reason that DLR-T1 must close before this no-implementation FMS selector. | Low: holding would preserve safety but delay foundation closure. | Low for current objective because this roadmap can select a no-implementation GC-018 target. | `NOT_SELECTED` |
 
 ## Selected Routing Outcome
 
-Selected routing outcome:
+Corrected routing outcome:
 
-`OPEN_FPC_T2_C05_REGISTRY_ENTRY_GC018`.
+`HOLD_FPC_T2_C05_REGISTRY_ENTRY_GC018_ALREADY_PRESENT`.
 
-Follow-on GC-018 title:
+Follow-on roadmap title:
 
-`CVF GC-018 FPC-T2-C05 System-Loop Registry Entry Decision And Work Order`.
+`CVF FPC-FMS-T2 Current Registry Evidence Reconciliation And Next Candidate Selection`.
 
-Forbidden follow-on scope unless that later GC-018 explicitly authorizes it:
+Forbidden follow-on scope unless a later source-verified artifact explicitly
+authorizes it:
 
 - runtime/provider/live proof;
 - public-sync mutation;
 - downstream use-case implementation;
 - MPI-T6 runtime work;
 - package activation or certification;
-- broad registry rewrite beyond the source-verified C05 entry;
+- duplicate C05 registry-entry authoring while the current entry is present;
+- broad registry rewrite;
 - generated active-session or workspace-state mutation outside session-sync;
 - push from the provenance workspace.
 
@@ -136,10 +147,12 @@ Forbidden follow-on scope unless that later GC-018 explicitly authorizes it:
 
 Accepted design:
 
-- select C05 only as a later GC-018 authoring target;
+- hold duplicate C05 GC-018 authoring because current source evidence shows the
+  C05 registry entry is already present;
 - keep the selected next step inside foundation maintenance;
-- require fresh source verification before any registry mutation;
-- hold broader C01-C04 registry-edit work behind the C05 decision;
+- require fresh source reconciliation before any further registry mutation;
+- hold broader C01-C04 registry-edit work until a specific post-SCG-T1 gap is
+  source-backed;
 - keep FPC-T4 blocked without explicit operator decision;
 - keep downstream lanes in audit/hold posture.
 
@@ -147,6 +160,8 @@ Rejected design:
 
 - editing the registry directly from FMS-T1;
 - treating C01 existence as automatic mutation authority;
+- authoring duplicate C05 GC-018 after current registry evidence shows C05 is
+  present;
 - opening FPC-T4 without explicit operator decision;
 - treating DLR-T1 as downstream implementation authorization;
 - reopening Policy_Local, Document Translator, runtime/provider/live, public-sync,
@@ -160,26 +175,26 @@ Rejected design:
 | Re-run system-loop interlock gate | Required before FMS-T1 commit | FMS-T1 closer |
 | Source-verify front door, handoff, DLR-T1, foundation roadmap, and registry | Completed in Source Verification Block | FMS-T1 roadmap |
 | Evaluate every candidate in the Candidate Selection Matrix | Completed in Candidate Selection Matrix | FMS-T1 roadmap |
-| Select exactly one routing outcome | `OPEN_FPC_T2_C05_REGISTRY_ENTRY_GC018` | FMS-T1 roadmap |
-| Name follow-on GC-018 title and forbidden scope | Completed in Selected Routing Outcome | Future FPC-T2-C05 GC-018 |
+| Select exactly one routing outcome | `HOLD_FPC_T2_C05_REGISTRY_ENTRY_GC018_ALREADY_PRESENT` | FMS-T1 roadmap |
+| Name follow-on roadmap title and forbidden scope | Completed in Selected Routing Outcome | Future FMS-T2 selector |
 
 ## Work Plan
 
-The next tranche should author the FPC-T2-C05 GC-018 only. It should not
-implement a registry entry until that GC-018 and any source-verified work order
-pass their dispatch gates.
+The next tranche should author a current registry evidence reconciliation
+roadmap or decision packet. It should not author a duplicate FPC-T2-C05 GC-018
+while the current registry already contains the C05 entry.
 
 Required next steps:
 
 1. Capture a fresh `dispatchBaseHead`.
-2. Read the active front door, active state, active handoff, this roadmap, FMS-T0,
-   the foundation roadmap, and the system-loop registry standard/checker.
-3. Source-verify the exact registry owner path and schema fields for any
-   proposed C05 entry.
-4. Author the FPC-T2-C05 GC-018 with Source Verification Block, dependency
-   release evidence, Roadmap-to-Work-Order Trace Matrix, Public Export
-   Disposition, and Claim Boundary.
-5. Keep the GC-018 in dispatch-only posture unless its gates pass.
+2. Read the active front door, active state, active handoff, this roadmap,
+   FMS-T0, the SCG-T1/SCG-T6 baselines, the current registry, and the
+   expected-chain manifest.
+3. Source-verify whether any foundation maintenance gap remains after C01-C05
+   registry entries and expected-chain checking are present.
+4. Select one current next candidate or hold foundation maintenance with a
+   concrete reopen condition.
+5. Keep any later GC-018 in dispatch-only posture unless its gates pass.
 
 ## Acceptance Criteria
 
@@ -188,20 +203,20 @@ Required next steps:
 | AC1 | Parked reopen inventory gate runs on current FMS-T1 range | PASS before commit |
 | AC2 | System-loop interlock gate runs on current FMS-T1 range | PASS before commit |
 | AC3 | Every FMS-T0 candidate row is evaluated | PASS |
-| AC4 | Candidate selection is source-backed by current roadmap and registry evidence | PASS |
+| AC4 | Candidate correction is source-backed by current registry and SCG-T1 evidence | PASS |
 | AC5 | Exactly one routing outcome is selected | PASS |
-| AC6 | Follow-on GC-018 title and forbidden scope are named | PASS |
+| AC6 | Follow-on reconciliation title and forbidden scope are named | PASS |
 | AC7 | No implementation, live proof, public-sync, adapter, package, registry, checker, or generated-state mutation occurs | PASS |
 
 ## Verification / Evidence
 
 | Evidence item | Command or artifact | Required result |
 |---|---|---|
-| Parked reopen inventory gate | `python governance/compat/check_fpc_parked_reopen_inventory.py --base a62cd5f7 --head HEAD --enforce` | PASS before commit |
-| System-loop interlock gate | `python governance/compat/check_system_loop_interlock.py --base a62cd5f7 --head HEAD --enforce` | PASS before commit |
-| Roadmap structural gate | `python governance/compat/check_markdown_structural_completeness.py --base a62cd5f7 --head HEAD --enforce` | PASS before commit |
-| Dispatch-quality gate | `python governance/compat/check_work_order_dispatch_quality.py --base a62cd5f7 --head HEAD --enforce` | PASS before commit |
-| Pre-implementation autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a62cd5f7 --head HEAD --serial` | PASS before commit |
+| Parked reopen inventory gate | `python governance/compat/check_fpc_parked_reopen_inventory.py --base f2ee995a --head HEAD --enforce` | PASS before commit |
+| System-loop interlock gate | `python governance/compat/check_system_loop_interlock.py --base f2ee995a --head HEAD --enforce` | PASS before commit |
+| Roadmap structural gate | `python governance/compat/check_markdown_structural_completeness.py --base f2ee995a --head HEAD --enforce` | PASS before commit |
+| Dispatch-quality gate | `python governance/compat/check_work_order_dispatch_quality.py --base f2ee995a --head HEAD --enforce` | PASS before commit |
+| Pre-implementation autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base f2ee995a --head HEAD --serial` | PASS before commit |
 | Diff hygiene | `git diff --check` | PASS before commit |
 
 ## Fail Conditions
@@ -210,8 +225,8 @@ FMS-T1 must fail or block if:
 
 - fewer than all FMS-T0 candidate rows are evaluated;
 - more than one routing outcome is selected;
-- C05 is selected without source-backed evidence that C01 exists and the C05
-  entry remains undone;
+- duplicate C05 GC-018 authoring is selected despite current registry evidence
+  showing the C05 entry is present;
 - FPC-T4 is selected without explicit operator decision;
 - downstream implementation, live proof, public-sync, package activation, or
   MPI-T6 runtime work is reopened;
@@ -222,15 +237,15 @@ FMS-T1 must fail or block if:
 
 ## Roadmap-To-Work-Order Expectations
 
-Any FPC-T2-C05 GC-018 or work order must include:
+Any later FMS-T2 reconciliation artifact or follow-on GC-018 must include:
 
 - Source Verification Block;
 - ADIF Defect Registry Disclosure if the artifact is dispatch-equivalent;
 - Agent Handoff Contract Control Block if agent handoff semantics are used;
 - Roadmap-to-Work-Order Trace Matrix;
-- dependency release evidence from FMS-T0, this FMS-T1 selector, and the current
-  foundation system roadmap;
-- exact registry owner path and schema fields;
+- dependency release evidence from FMS-T0, this corrected FMS-T1 selector, SCG-T1,
+  SCG-T6, and the current registry;
+- exact registry owner path, schema fields, and current-entry disposition;
 - explicit forbidden scope for runtime/provider/live proof, public-sync,
   downstream implementation, MPI runtime, package activation, certification,
   and broad registry rewrite;
@@ -246,16 +261,18 @@ foundation evidence shows C01 exists and the C05 registry-entry step remains
 undone; otherwise FMS-T1 should hold or request operator evidence.
 
 Evidence Comparison: current source evidence shows C01 exists, reviewer-fast
-includes the C01 gate, the prior closure made no FPC-T2-C05 entry, and the
-foundation roadmap lists the C05 registry-entry work order as viable now that
-C01 exists.
+includes the C01 gate, but the current system-loop registry already contains
+`epistemic-process-to-claim-update`, and SCG-T1 already authorized and closed
+C01-C05 registry entries.
 
-Contradiction Or Gap Disposition: the evidence does not authorize direct
-registry mutation from this roadmap. The gap is routed to a later fresh GC-018
-with source verification and forbidden scope.
+Contradiction Or Gap Disposition: the historical foundation roadmap still lists
+C05 as viable because it predates later SCG registry work. Current registry
+evidence supersedes that stale candidate, so duplicate C05 GC-018 authoring is
+held and routed to FMS-T2 reconciliation.
 
 Claim Update: FMS-T1 updates the next foundation maintenance recommendation
-from open candidate selection to `OPEN_FPC_T2_C05_REGISTRY_ENTRY_GC018`.
+from `OPEN_FPC_T2_C05_REGISTRY_ENTRY_GC018` to
+`HOLD_FPC_T2_C05_REGISTRY_ENTRY_GC018_ALREADY_PRESENT`.
 
 ## Public Export Disposition
 
@@ -273,15 +290,16 @@ surface.
 | Runtime behavior claimed | N/A_WITH_REASON: no runtime, route, CLI/MCP, adapter, provider, public, or MPI-T6 behavior is changed |
 | Live/provider proof claimed | N/A_WITH_REASON: no live governance behavior is claimed |
 | Public-sync claimed | N/A_WITH_REASON: no public-sync is authorized or performed |
-| Freshness disposition | PASS: this roadmap selects a later GC-018 target only and records no implementation authorization |
+| Freshness disposition | PASS: this roadmap corrects a stale C05 target against current registry evidence and records no implementation authorization |
 
 ## Machine Closure Package
 
-This roadmap is not closed; it is ready for FPC-T2-C05 GC-018 authoring.
+This roadmap is not closed; it is corrected and ready for FMS-T2 source
+reconciliation.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this file | `Status: ROADMAP_READY_FOR_FPC_T2_C05_GC018_AUTHORING` | PASS |
+| Roadmap state | this file | `Status: ROADMAP_CORRECTED_C05_ALREADY_PRESENT_PENDING_NEXT_SELECTION` | PASS |
 | Work order status | N/A with reason: this roadmap does not create a work order | no work order path created | N/A with reason |
 | Completion or reviewer artifact | N/A with reason: this roadmap is a selector for later GC-018 authoring | no completion review required yet | N/A with reason |
 | Registry JSON | BLOCKED with reason: no registry JSON mutation is authorized | no registry path changed | BLOCKED with reason |
@@ -293,8 +311,9 @@ This roadmap is not closed; it is ready for FPC-T2-C05 GC-018 authoring.
 
 ## Claim Boundary
 
-This roadmap selects a later FPC-T2-C05 GC-018 authoring target only. It does
-not authorize or perform registry mutation, checker mutation, runtime/provider
-work, live proof, public-sync, downstream implementation, package activation,
-certification, generated-state mutation, MPI-T6 runtime work, or push from the
-provenance workspace.
+This roadmap corrects the FPC-T2-C05 selection against current registry
+evidence only. It does not authorize or perform registry mutation, checker
+mutation, runtime/provider work, live proof, public-sync, downstream
+implementation, package activation, certification, generated-state mutation,
+MPI-T6 runtime work, duplicate C05 GC-018 authoring, or push from the provenance
+workspace.
