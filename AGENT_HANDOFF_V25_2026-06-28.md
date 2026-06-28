@@ -683,3 +683,38 @@ the committed PRG-T1 contract promotion. It does not implement validators,
 fixtures, runtime/source changes, provider/live proof, public-sync mutation,
 adapter activation, package activation, certification, generated registries,
 or downstream execution.
+
+## Core Guard Self-Protection Authorization - EVEROS-T0 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+roadmap commit `d8ad9024` so GC-020 active-session compatibility recognizes
+the current HEAD after EVEROS-T0 external memory foundation absorption
+roadmap filing.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator authorized moving to
+`https://github.com/EverMind-AI/EverOS.git` under the existing external
+absorption rules.
+
+Rollback boundary: if this handoff marker is rejected, revert only this marker.
+Do not revert EVEROS-T0 material commit `d8ad9024`, PRG-T1 handoff sync commit
+`8eb10d12`, PRG-T1 material commit `6ee1b306`, PRG-T0 package absorption
+roadmap commit `efb45892`, or earlier FPC/session-sync commits.
+
+## GC-020 Marker - EVEROS-T0 External Memory Foundation Roadmap Commit
+
+Material commit `d8ad9024` added the EVEROS-T0 external memory foundation
+absorption roadmap. The roadmap accepts EverOS as a memory-foundation doctrine
+seed with runtime deferred, classifies direct EverOS audit evidence plus the
+operator-provided advisory package, and recommends a future T1 CVF-native
+contract for Markdown truth, derived indexes, replay/rebuild, retrieval
+receipts, and timestamp discipline.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed EVEROS-T0 roadmap. It does not implement EverOS runtime, vector
+memory, database migrations, provider/live proof, public-sync mutation,
+adapter activation, package activation, certification, generated registries,
+route-side federation, OME runtime, or MPI-T6 runtime.
