@@ -942,3 +942,38 @@ Truth Kernel runtime, obligation registry runtime, evidence database, SOT
 index runtime, provider/live proof, public-sync export, CLI/MCP adapter,
 package activation, certification, generated aggregate, or production/hosted
 readiness.
+
+## Core Guard Self-Protection Authorization - TKG-T1 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+contract-promotion commit `97669068` so GC-020 active-session compatibility
+recognizes the current HEAD after TKG-T1 truth foundation contract promotion.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved continuing from the TKG-T0
+recommendation and asked for the next tranche.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert TKG-T1 material commit `97669068`, TKG-T0 handoff sync
+commit `9c56a16e`, TKG-T0 material commit `036350d5`, or earlier
+EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - TKG-T1 Truth Foundation Contract Commit
+
+Material commit `97669068` added the TKG-T1 truth foundation reference front
+door and contract under `docs/reference/truth_foundation/`. The contract
+promotes selected AGT and Truth Kernel doctrine into CVF-owned documentation
+for source authority, provenance labels, evidence and obligation record
+minimums, verification-result semantics, strict movement boundaries, and
+future TKG-T2/TKG-T3 routing.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed TKG-T1 contract promotion. It does not implement AGT runtime
+governance, MCP gateway interception, hypervisor execution rings, circuit
+breakers, Truth Kernel runtime, evidence database, obligation registry runtime,
+SOT index runtime, independent verifier service, provider/live proof,
+public-sync export, CLI/MCP adapter, package activation, certification,
+generated aggregate, or production/hosted readiness.
