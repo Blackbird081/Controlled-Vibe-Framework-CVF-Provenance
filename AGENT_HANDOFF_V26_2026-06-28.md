@@ -160,3 +160,37 @@ proof, public-sync export, CodeGraph install/init, MCP wiring, watcher/daemon,
 merge automation, hook repair, package activation, certification, checker
 implementation, generated aggregate beyond session sync, or
 production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AECG-T0 Handoff Sync Marker
+
+Authorized guard-maintenance scope: update the active handoff with session-sync
+commit `4cedb4cb` so GC-020 active-session compatibility recognizes the
+dedicated handoff-sync parent after the AECG-T0 roadmap session sync and V25 to
+V26 handoff rotation.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+
+Operator authorization: the operator instructed Codex to continue with
+`colbymchenry/codegraph` and `CVF_Agent_Engineering_Control_Standard`, then
+finish the resulting roadmap/session continuity.
+
+Rollback boundary: if this marker is rejected, revert only this marker. Do not
+revert session-sync commit `4cedb4cb`, AECG-T0 material commit `edee01a0`, or
+earlier TKG/EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - AECG-T0 Session Sync Commit
+
+Session-sync commit `4cedb4cb` rotated active handoff V25 into
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`, opened compact
+active handoff V26, updated active session front doors and generated state to
+the AECG-T1 next move, and repaired the FPC parked reopen inventory source
+authority pointer to the archived V25 path.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AECG-T0 session-sync batch. It does not implement runtime,
+provider/live proof, public-sync export, CodeGraph install/init, MCP wiring,
+watcher/daemon, merge automation, hook repair, package activation,
+certification, checker implementation, generated aggregate beyond session
+sync, or production/hosted readiness.
