@@ -791,3 +791,40 @@ database, vector store, embeddings, rerank, watcher, daemon, generated
 aggregate, checker, provider/live proof, public-sync mutation, adapter
 activation, package activation, certification, route-side federation, OME
 runtime, or MPI-T6 runtime.
+
+## Core Guard Self-Protection Authorization - EVEROS-T3 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+roadmap commit `ed10ced8` so GC-020 active-session compatibility recognizes
+the current HEAD after EVEROS-T3 source-derived memory claim guard plan
+roadmap closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved continuing from the EVEROS-T3
+recommendation after EVEROS-T2 selected the source-derived memory claim guard
+plan candidate.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert EVEROS-T3 material commit `ed10ced8`, EVEROS-T2 handoff
+sync commit `6772bb6b`, EVEROS-T2 material commit `c18656e4`, EVEROS-T1
+handoff sync commit `4cff1ec6`, or earlier EverOS/PRG/FPC/session-sync
+commits.
+
+## GC-020 Marker - EVEROS-T3 Source-Derived Memory Claim Guard Plan Commit
+
+Material commit `ed10ced8` added the EVEROS-T3 roadmap
+`docs/roadmaps/CVF_EVEROS_T3_SOURCE_DERIVED_MEMORY_CLAIM_GUARD_PLAN_ROADMAP_2026-06-28.md`.
+The roadmap closes a documentation-only plan that maps EVEROS-T1/T2 memory
+foundation doctrine to a future static claim-language guard candidate for
+derived-view authority, stale/degraded/conflicted derived-view use, runtime
+capability overclaims, and raw-memory/reinjection overclaims.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed EVEROS-T3 roadmap. It does not implement memory runtime,
+database, vector store, graph store, semantic index, embeddings, rerank,
+watcher, daemon, generated aggregate, checker, provider/live proof,
+public-sync mutation, adapter activation, package activation, certification,
+route-side federation, OME runtime, or MPI-T6 runtime.
