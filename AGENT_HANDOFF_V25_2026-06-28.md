@@ -73,6 +73,13 @@ GC-018 authoring target only; no registry, checker, runtime, generated-state,
 provider/live, public-sync, downstream implementation, package, certification,
 MPI-T6 runtime, or provenance push work is authorized by that roadmap.
 
+Latest material correction: commit `7b0b4bc4` corrected FPC-FMS-T1 against
+current registry evidence. The current registry already contains
+`epistemic-process-to-claim-update`, and SCG-T1 already authorized C01-C05
+registry entries, so duplicate FPC-T2-C05 GC-018 authoring is held. The
+recommended next target is FPC-FMS-T2 current registry evidence reconciliation
+and next candidate selection only.
+
 Prior material closure: commit `24726307` closed FPC-DSD-T1 Foundation
 Downstream Post-Public-Export Lane Selection Decision as
 `CLOSED_PASS_BOUNDED`.
@@ -200,6 +207,27 @@ contain the current HEAD marker before the session can be considered clean.
 Rollback boundary: if this handoff-marker sync is rejected, revert only this
 handoff marker update. Do not revert material roadmap commit `ae37f05f`,
 earlier session-sync commits, public-sync commits, or previous FPC closures.
+
+## Core Guard Self-Protection Authorization - FMS-T1 Correction Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+correction commit `7b0b4bc4` so GC-020 active-session compatibility recognizes
+the current HEAD after FPC-FMS-T1 C05 selection was corrected against current
+registry evidence.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator asked to continue to the next step; source
+verification found the C05 registry entry already present, the material
+correction was committed at `7b0b4bc4`, and the active handoff must contain the
+current HEAD marker before the session is clean.
+
+Rollback boundary: if this handoff-marker sync is rejected, revert only this
+handoff marker update. Do not revert material correction commit `7b0b4bc4`,
+material roadmap commit `ae37f05f`, earlier session-sync commits, public-sync
+commits, or previous FPC closures.
 
 ## Core Guard Self-Protection Authorization - PRG-T0 Session Sync
 
