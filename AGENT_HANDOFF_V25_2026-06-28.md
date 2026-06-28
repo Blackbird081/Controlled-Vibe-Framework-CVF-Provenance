@@ -719,6 +719,44 @@ memory, database migrations, provider/live proof, public-sync mutation,
 adapter activation, package activation, certification, generated registries,
 route-side federation, OME runtime, or MPI-T6 runtime.
 
+## Core Guard Self-Protection Authorization - EVEROS-T4 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+checker hardening commit `cac4947e` so GC-020 active-session compatibility
+recognizes the current HEAD after EVEROS-T4 source-derived memory claim guard
+implementation closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved continuing after EVEROS-T3, which
+recommended `EVEROS-T4 Source-Derived Memory Claim Guard Implementation`.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert EVEROS-T4 material commit `cac4947e`, EVEROS-T3 handoff
+sync commit `17cdde42`, EVEROS-T3 material commit `ed10ced8`, EVEROS-T2
+handoff sync commit `6772bb6b`, or earlier EverOS/PRG/FPC/session-sync
+commits.
+
+## GC-020 Marker - EVEROS-T4 Source-Derived Memory Claim Guard Implementation Commit
+
+Material commit `cac4947e` implemented the EVEROS-T4 static checker hardening.
+It extended `governance/compat/check_memory_access_claim.py` to include
+roadmap artifacts and source-derived memory claim classes for derived-view
+authority overclaims, stale/degraded/conflicted derived-view use, derived-view
+runtime capability overclaims, and retrieval-result raw-memory/reinjection
+overclaims. It also extended
+`governance/compat/test_check_memory_access_claim.py` and added the paired
+T4 GC-018 baseline and completion review.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed EVEROS-T4 checker hardening. It does not implement memory
+runtime, database, vector store, graph store, semantic index, embeddings,
+rerank, watcher, daemon, generated aggregate, provider/live proof,
+public-sync mutation, adapter activation, package activation, certification,
+route-side federation, OME runtime, or MPI-T6 runtime.
+
 ## Core Guard Self-Protection Authorization - EVEROS-T1 Handoff Marker
 
 Authorized guard-maintenance scope: update the active handoff with material
