@@ -1011,3 +1011,38 @@ the committed TKG-T2 reconciliation. It does not implement a checker, runtime,
 provider/live proof, public-sync export, evidence database, obligation registry
 runtime, SOT index runtime, MCP gateway, hypervisor, adapter, package
 activation, certification, generated aggregate, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - TKG-T3 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+roadmap-plan commit `5ee0765c` so GC-020 active-session compatibility
+recognizes the current HEAD after TKG-T3 truth foundation static claim-guard
+planning.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator instructed Codex to continue through the
+remaining TKG roadmap after TKG-T2.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert TKG-T3 material commit `5ee0765c`, TKG-T2 handoff sync
+commit `19ac0faf`, TKG-T2 material commit `d4ed93f0`, or earlier
+EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - TKG-T3 Truth Foundation Static Claim-Guard Plan Commit
+
+Material commit `5ee0765c` added
+`docs/roadmaps/CVF_TKG_T3_TRUTH_FOUNDATION_STATIC_CLAIM_GUARD_PLAN_ROADMAP_2026-06-28.md`.
+The roadmap selects a bounded TKG-T4 static claim guard candidate for
+integrity-as-truth, LLM/reviewer-as-sole-verifier, and external-input
+authority overclaim language while deferring repo-wide provenance-label
+enforcement until an owner surface adopts labels.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed TKG-T3 roadmap. It does not implement a checker, runtime,
+provider/live proof, public-sync export, evidence database, obligation registry
+runtime, SOT index runtime, MCP gateway, hypervisor, adapter, package
+activation, certification, generated aggregate, hook wiring, or
+production/hosted readiness.
