@@ -42,6 +42,7 @@ registry edit is required when adding a new entry beyond this table.
 | `CVF_ADIF-0012.md` | ADIF-0012 | CLOSURE_EVIDENCE | MACHINE_CHECKED |
 | `CVF_ADIF-0013.md` | ADIF-0013 | STATE_CONTINUITY | MACHINE_CHECKED |
 | `CVF_ADIF-0014.md` | ADIF-0014 | SOURCE_FIDELITY | GUIDANCE_ONLY |
+| `CVF_ADIF-0015.md` | ADIF-0015 | AUTHORITY_BOUNDARY | GUIDANCE_ONLY |
 
 ## Claim Boundary
 
