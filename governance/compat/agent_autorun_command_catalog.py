@@ -284,6 +284,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        _range_command(
+            "FPC parked reopen inventory",
+            "governance/compat/check_fpc_parked_reopen_inventory.py",
+            base,
+            head,
+        ),
         GateCommand(
             "ERH CI public-evaluation workflow chain",
             ("python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"),

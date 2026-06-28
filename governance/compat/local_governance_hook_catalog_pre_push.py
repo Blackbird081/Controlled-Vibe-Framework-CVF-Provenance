@@ -145,6 +145,10 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_fpc_system_chain_acceptance_ledger.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "FPC parked reopen inventory",
+            ["python", "governance/compat/check_fpc_parked_reopen_inventory.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "ERH CI public-evaluation workflow chain",
             ["python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"],
         ),
