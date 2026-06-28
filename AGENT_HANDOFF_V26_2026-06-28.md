@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsg_t1_t3_agent_skills_governance_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator may select the next external repo/folder absorption target or request a high-value roadmap audit; parked checkpoint=AGSG-T1 through T3 closed at material commit `66eb39ac`, retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/checker/adapter/public/provider/live/production-readiness claims remain parked behind AGSG-T3 reopen conditions and fresh governed authorization.
+Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_dispatch_packet_hold_pending_executor`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator may dispatch the AGSG-BSH-T1 work order (`HOLD_PENDING_EXECUTOR`) to an executor to implement the scope-triggered presence checker, or select the next external repo/folder absorption target; parked checkpoint=AGSG-T1 through T3 closed at material commit `66eb39ac`; AGSG-BSH-T1 blind-spot hardening dispatch packet and ADIF-0014/ADIF-0015 recorded at material commit `5ae9cb9e`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/checker/adapter/public/provider/live/production-readiness claims remain parked behind AGSG-T3 reopen conditions and fresh governed authorization.
 
 ## Current State
 
@@ -18,7 +18,7 @@ Startup acknowledged: current mode=`agsg_t1_t3_agent_skills_governance_absorptio
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `66eb39ac` AGSG-T1 through T3 Agent Skills Governance absorption closeout |
+| Latest material closeout | `5ae9cb9e` AGSG-BSH-T1 blind-spot presence dispatch packet (ADIF-0014) |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
@@ -563,3 +563,24 @@ import, persona orchestration, hook install, package activation, resolver
 mutation, certification, checker implementation, CLI/MCP adapter, benchmark,
 security certification, automatic skill invocation, generated aggregate beyond
 session sync, or production/hosted readiness.
+
+## GC-020 Marker - AGSG-BSH-T1 Blind-Spot Presence Dispatch Packet
+
+Material commit `5ae9cb9e` (current HEAD) recorded ADIF-0014: CVF's Mandatory
+Knowledge Absorption Blind-Spot Control and Mandatory Corpus Completeness
+controls are claim-triggered, so the AGSG-T1 baseline closed `PASS` while
+carrying neither control block. The commit adds a GC-018 baseline and a
+`HOLD_PENDING_EXECUTOR` work order delegating a scope-triggered presence
+checker (`governance/compat/check_absorption_blindspot_control_presence.py`,
+not yet created) to an executor, per the dispatch-author-is-not-executor rule.
+
+A self-review during authoring also surfaced ADIF-0015: the dispatching agent
+declared `route: SINGLE_AGENT_SINGLE_ROLE` while performing many
+executor-shaped self-correction passes on the artifact's own content -
+recorded as a checklist item for other agents, not a retroactive change to the
+AGSG-BSH-T1 baseline/work order route fields.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `5ae9cb9e`. It does not implement the planned presence
+checker, runtime, provider/live proof, public-sync export, or any AGSG-T3
+reopen-gated capability.
