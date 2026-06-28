@@ -107,6 +107,42 @@ class TestFpcParkedReopenInventory(unittest.TestCase):
             violations = checker.validate_inventory(inventory_path, ledger_path, dsd_path)
             self.assertTrue(any("requiredConditions drifted" in item for item in violations))
 
+    def test_wrong_lane_id_is_detected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            inventory_path, ledger_path, dsd_path = self._fixture(Path(tmp_dir))
+            inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+            inventory["laneInventories"][0]["laneId"] = "unrecorded-lane"
+            _write(inventory_path, inventory)
+            violations = checker.validate_inventory(inventory_path, ledger_path, dsd_path)
+            self.assertTrue(any("exactly parked lane ids" in item for item in violations))
+
+    def test_empty_evidence_fields_are_detected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            inventory_path, ledger_path, dsd_path = self._fixture(Path(tmp_dir))
+            inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+            inventory["laneInventories"][0]["evidenceFields"] = []
+            _write(inventory_path, inventory)
+            violations = checker.validate_inventory(inventory_path, ledger_path, dsd_path)
+            self.assertTrue(any("`evidenceFields` must be" in item for item in violations))
+
+    def test_boundary_flag_drift_is_detected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            inventory_path, ledger_path, dsd_path = self._fixture(Path(tmp_dir))
+            inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+            inventory["inventoryBoundary"][checker.REQUIRED_BOUNDARY_FALSE_FIELDS[0]] = True
+            _write(inventory_path, inventory)
+            violations = checker.validate_inventory(inventory_path, ledger_path, dsd_path)
+            self.assertTrue(any("inventoryBoundary" in item for item in violations))
+
+    def test_forbidden_list_drift_is_detected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            inventory_path, ledger_path, dsd_path = self._fixture(Path(tmp_dir))
+            inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+            inventory["laneInventories"][0]["forbiddenUntilGatePasses"] = ["different"]
+            _write(inventory_path, inventory)
+            violations = checker.validate_inventory(inventory_path, ledger_path, dsd_path)
+            self.assertTrue(any("forbiddenUntilGatePasses drifted" in item for item in violations))
+
 
 if __name__ == "__main__":
     unittest.main()
