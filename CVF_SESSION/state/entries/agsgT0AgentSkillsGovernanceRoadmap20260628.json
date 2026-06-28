@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1310,
+  "stateKey": "agsgT0AgentSkillsGovernanceRoadmap20260628",
+  "value": {
+    "status": "ROADMAP_READY_FOR_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION",
+    "materialCommit": "b7b31f4e",
+    "roadmap": "docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md",
+    "upstreamRepo": "addyosmani/agent-skills",
+    "upstreamCommit": "30e55cb",
+    "upstreamClone": ".private_reference/external_repos/agent-skills",
+    "sourceFolder": ".private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack",
+    "decision": "OPEN_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION",
+    "nextAllowedMove": "AUTHOR_AGSG_T1_GC018_FOR_SOURCE_VERIFIED_ASSF_RECONCILIATION",
+    "summary": "AGSG-T0 audited addyosmani/agent-skills and the operator-supplied Agent Skills Governance Absorption Pack. The roadmap absorbs high-value skill anatomy, anti-rationalization, progressive disclosure, persona-boundary, validator-owned exemption, and evidence-receipt patterns as advisory input to ASSF, rejects direct plugin/runtime/command/persona/hook import, moves the local pack to ignored private legacy storage, and selects AGSG-T1 source-verified ASSF reconciliation as the next governed move."
+  }
+}
