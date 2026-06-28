@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author MSEA-T1 GC-018 for source-verified document extraction reconciliation and gateway adaptation; parked checkpoint=MSEA-T0 added MinerU Structured Extraction roadmap at material commit `3776d5db`, retained upstream clone is `.private_reference/external_repos/MinerU` at `opendatalab/MinerU@3e60291`, retained local folder is `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter`, and MinerU runtime/install/model-download/OCR/provider/live/VLM/hybrid/RAG/checker/public-sync work remains parked behind fresh GC-018 and source verification.
+Startup acknowledged: current mode=`msea_t1_t3_mineru_structured_extraction_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator selects the next external absorption repo/folder or another high-value roadmap audit before implementation; parked checkpoint=MSEA-T1 through T3 closed MinerU Structured Extraction absorption at material commit `38f236bc`, retained upstream clone is `.private_reference/external_repos/MinerU` at `opendatalab/MinerU@3e60291`, retained local folder is `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter`, and MinerU runtime/install/model-download/OCR/provider/live/VLM/hybrid/RAG/checker/public-sync work remains parked behind MSEA-T3 reopen conditions and fresh GC-018.
 
 ## Current Mode
 
-Current mode marker: `msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`
+Current mode marker: `msea_t1_t3_mineru_structured_extraction_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-Current mode: `msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`
+Current mode: `msea_t1_t3_mineru_structured_extraction_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-`msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`
+`msea_t1_t3_mineru_structured_extraction_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
 Previous mode:
 
-`pint_t1_t3_provider_intelligence_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
+`msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`
 
 ## Latest Closed Work
 
@@ -108,12 +108,13 @@ Previous mode:
 | Provider Intelligence / PINT-T1 source-verified reconciliation | `3a729e83` | CLOSED_PASS_BOUNDED; decision `AUTHOR_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_REFERENCE` |
 | Provider Intelligence / PINT-T1-T3 absorption closeout | `c21cd0e9` | CLOSED_PASS_BOUNDED; decision `CLOSE_PINT_ABSORPTION_LANE_NO_CHECKER_NOW` |
 | MinerU Structured Extraction / MSEA-T0 external absorption roadmap | `3776d5db` | ROADMAP_READY_FOR_MSEA_T1_SOURCE_VERIFIED_RECONCILIATION |
+| MinerU Structured Extraction / MSEA-T1-T3 absorption closeout | `38f236bc` | CLOSED_PASS_BOUNDED; decision `CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW` |
 
 ## Next Allowed Move
 
-Mode: `msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`
+Mode: `msea_t1_t3_mineru_structured_extraction_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-Next allowed move: author MSEA-T1 GC-018 for source-verified document extraction reconciliation and gateway adaptation. MSEA-T0 MinerU Structured Extraction external absorption roadmap was added at material commit `3776d5db`. The upstream clone is retained under `.private_reference/external_repos/MinerU` at `opendatalab/MinerU@3e60291`, and the copied folder is retained under `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter` as external source input only. MSEA-T1 must map MinerU and the retained adapter folder to `CVF_EXTRACTION_FOUNDATION`, corpus/RAG handoff, and receipt/quality owner surfaces before any promotion. No MinerU runtime, install, model download, API/router/Gradio service, OCR/provider/live proof, VLM/hybrid route, remote backend, RAG index write, checker implementation, public-sync, runtime/source/test mutation, generated aggregate mutation, extraction accuracy claim, document-truth claim, or production-readiness claim is authorized unless a fresh GC-018 satisfies MSEA-T0 boundaries. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: operator selects the next external absorption repo/folder or another high-value roadmap audit before implementation. MSEA-T1 through T3 closed MinerU Structured Extraction absorption at material commit `38f236bc`; MSEA-T0 remains the external source-boundary roadmap at `3776d5db`. The upstream clone is retained under `.private_reference/external_repos/MinerU` at `opendatalab/MinerU@3e60291`, and the copied folder is retained under `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter` as external source input only. No MinerU runtime, install, model download, API/router/Gradio service, OCR/provider/live proof, VLM/hybrid route, remote backend, RAG index write, checker implementation, public-sync, runtime/source/test mutation, generated aggregate mutation, extraction accuracy claim, document-truth claim, or production-readiness claim is authorized now. Reopen MSEA only through fresh GC-018 if MSEA-T3 conditions are met: repeated real overclaim misses, a CVF-owned extraction receipt schema proposal, or explicit runtime product requirement with dependency/license/security/model lifecycle/sample-corpus/live-diagnostic plan. LHW24 remains the latest closed numbered LHW wave.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -121,15 +122,17 @@ No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resol
 
 ## Parked Checkpoint
 
-FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T1 through T3 closed the CodeGraph and Agent Engineering Control absorption roadmap at material commit `7701abb8`; no AECG checker is implemented now. PINT-T1 through T3 closed Provider Intelligence absorption at material commit `c21cd0e9`; no PINT checker is implemented now. MSEA-T0 added the MinerU Structured Extraction absorption roadmap at material commit `3776d5db`; MSEA-T1 source-verified reconciliation is the next allowed move. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC package import, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, provider-intelligence checker implementation, MinerU runtime/install/model-download/OCR/provider-live/VLM-hybrid/RAG-index/checker implementation, extraction accuracy, document-truth, and production-readiness claims remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T1 through T3 closed the CodeGraph and Agent Engineering Control absorption roadmap at material commit `7701abb8`; no AECG checker is implemented now. PINT-T1 through T3 closed Provider Intelligence absorption at material commit `c21cd0e9`; no PINT checker is implemented now. MSEA-T1 through T3 closed MinerU Structured Extraction absorption at material commit `38f236bc`; no MSEA checker is implemented now. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC package import, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, provider-intelligence checker implementation, MinerU runtime/install/model-download/OCR/provider-live/VLM-hybrid/RAG-index/checker implementation, extraction accuracy, document-truth, and production-readiness claims remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Knowledge Absorption Priority Boundary
 
 Broad external knowledge absorption remains a governed, trigger-based lane.
-MSEA-T0 opened the MinerU Structured Extraction absorption lane. The next move
-is MSEA-T1 source-verified reconciliation against `CVF_EXTRACTION_FOUNDATION`,
-corpus/RAG handoff, and receipt/quality owner surfaces. Current blocked work
-classes include runtime/provider/live expansion, public-sync content mutation,
+MSEA-T1 through T3 closed the MinerU Structured Extraction absorption lane.
+The next move is operator selection of another external absorption repo/folder
+or another high-value roadmap audit before implementation. The exact markers
+`broad external knowledge absorption` and `blocked work classes` remain active
+for compatibility gates. Current blocked work classes include
+runtime/provider/live expansion, public-sync content mutation,
 downstream use-case work, registry mutation, checker implementation, merge
 automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC
 package import, OpenRouter dependency, MCP production routing, benchmark
