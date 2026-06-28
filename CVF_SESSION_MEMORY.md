@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=operator selects one of `OPEN_DLR_T1_AUDIT_GC018`, `REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`, `EXPLICITLY_AUTHORIZE_FPC_T4_DECISION`, or `HOLD_ALL_FOUNDATION_AND_DOWNSTREAM_LANES` after FMS-T2 held foundation maintenance with no current source-backed P0/P1 gap; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, PRG-T0 through PRG-T5, FMS-T0, FMS-T1, and FMS-T2 are bounded decision surfaces through material commit `9c6f43de`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=operator may select the next external repository/folder for governed absorption under the old rule, or hold; parked checkpoint=TKG-T0 through TKG-T5 are closed bounded through material commit `6ce94464`, TKG-T4 checker is wired at `79f26845`, and TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/provenance-label enforcement remain parked behind TKG-T5 reopen conditions; FPC/FMS parked checkpoint and UAP public repo commit `04d88109317c780ceb2062a257c0e863e2379276` still apply.
 
 ## Current Mode
 
-Current mode marker: `fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`
+Current mode marker: `tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-Current mode: `fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`
+Current mode: `tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-`fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`
+`tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
 Previous mode:
 
-`fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`
+`fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`
 
 ## Latest Closed Work
 
@@ -101,12 +101,13 @@ Previous mode:
 | FPC-PRG-T4 Parked Reopen Fixture Coverage | `aa0d1276` | CLOSED_PASS_BOUNDED; decision `FOCUSED_FIXTURE_COVERAGE_COMPLETE` |
 | FPC-PRG-T5 Final Session/Front-Door Sync | `d749823c` | CLOSED_PASS; final sync for PRG-T1-T5 chain |
 | FPC-FMS-T2 Current Registry Evidence Reconciliation | `9c6f43de` | ROADMAP_READY_FOR_OPERATOR_NEXT_LANE_DECISION; decision `HOLD_FOUNDATION_MAINTENANCE_NO_CURRENT_SOURCE_BACKED_GAP` |
+| Truth Foundation / TKG-T0-T5 external absorption lane | `6ce94464` | CLOSED_PASS_BOUNDED; checker wired at `79f26845`; decision `CLOSE_TKG_ABSORPTION_LANE_NO_NEXT_TRANCHE` |
 
 ## Next Allowed Move
 
-Mode: `fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`
+Mode: `tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-Next allowed move: operator selects one of `OPEN_DLR_T1_AUDIT_GC018`, `REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`, `EXPLICITLY_AUTHORIZE_FPC_T4_DECISION`, or `HOLD_ALL_FOUNDATION_AND_DOWNSTREAM_LANES`. FPC-FMS-T2 current registry evidence reconciliation was added at material commit `9c6f43de` and selected `HOLD_FOUNDATION_MAINTENANCE_NO_CURRENT_SOURCE_BACKED_GAP`: duplicate FPC-T2-C05 authoring is held, P0/P1 foundation maintenance remains closed bounded unless regression evidence appears, and FPC-T4 remains blocked without explicit operator decision. Before any parked runtime/provider/public/MPI lane is proposed again, check the recorded reopen condition for that lane and run `governance/compat/check_fpc_parked_reopen_inventory.py`. No runtime/provider/live work, public-sync mutation, adapter/package/certification work, downstream implementation, or MPI-T6 runtime may be reopened merely because FMS-T2 exists or because the parked reopen checker passes. Public-sync commit `04d88109317c780ceb2062a257c0e863e2379276` remains the latest UAP public comprehension export. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: TKG-T0 through TKG-T5 truth foundation absorption is CLOSED_PASS_BOUNDED through material commit `6ce94464`. Operator may select the next external repository/folder for governed absorption under the old rule, or hold. Do not reopen TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/provenance-label enforcement unless the concrete TKG-T5 reopen condition is met and a fresh governed tranche authorizes it. Before any parked runtime/provider/public/MPI/FPC lane is proposed again, check the recorded reopen condition for that lane and run the applicable parked-reopen guard where one exists. Public-sync commit `04d88109317c780ceb2062a257c0e863e2379276` remains the latest UAP public comprehension export. LHW24 remains the latest closed numbered LHW wave.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -114,15 +115,17 @@ No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resol
 
 ## Parked Checkpoint
 
-FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, and MPI-T6 runtime work remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, and parked TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/provenance-label enforcement remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Knowledge Absorption Priority Boundary
 
-broad external knowledge absorption remains a governed, trigger-based lane.
-Current blocked work classes include runtime/provider/live expansion,
-public-sync content mutation, downstream use-case work, registry mutation,
-checker implementation, and MPI-T6 runtime work unless separately authorized by
-fresh GC-018/source-verified work order.
+Broad external knowledge absorption remains a governed, trigger-based lane.
+The TKG lane has no remaining recommended tranche after TKG-T5. Next absorption
+requires a new operator-selected repo/folder or explicit roadmap. Current
+blocked work classes include runtime/provider/live expansion, public-sync
+content mutation, downstream use-case work, registry mutation, checker
+implementation outside an authorized static guard, and MPI-T6 runtime work
+unless separately authorized by fresh GC-018/source-verified work order.
 
 ## Continuity Markers
 

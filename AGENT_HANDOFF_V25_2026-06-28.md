@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V24_2026-06-27.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=operator selects one of `OPEN_DLR_T1_AUDIT_GC018`, `REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`, `EXPLICITLY_AUTHORIZE_FPC_T4_DECISION`, or `HOLD_ALL_FOUNDATION_AND_DOWNSTREAM_LANES` after FMS-T2 held foundation maintenance with no current source-backed P0/P1 gap; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, PRG-T0 through PRG-T5, FMS-T0, FMS-T1, and FMS-T2 are bounded decision surfaces through material commit `9c6f43de`; public repo remains current for UAP public comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=operator may select the next external repository/folder for governed absorption under the old rule, or hold; parked checkpoint=TKG-T0 through TKG-T5 are closed bounded through material commit `6ce94464`, TKG-T4 checker is wired at `79f26845`, and TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/provenance-label enforcement remain parked behind TKG-T5 reopen conditions; FPC/FMS parked checkpoint and UAP public repo commit `04d88109317c780ceb2062a257c0e863e2379276` still apply.
 
 ## Current State
 
@@ -20,15 +20,15 @@ Startup acknowledged: current mode=`fpc_fms_t2_registry_reconciliation_ready_for
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Current local/remote base before V25 rotation | `743b24ad` |
 | V25 root exposure classification | `f7f4294d` |
-| Latest material closure | `aa0d1276` FPC-PRG-T4 parked reopen fixture coverage |
-| Latest material roadmap | `9c6f43de` FPC-FMS-T2 current registry evidence reconciliation |
+| Latest material closure | `6ce94464` TKG-T5 truth foundation remaining-value audit and lane closeout |
+| Latest material roadmap | `6ce94464` TKG-T0 through TKG-T5 truth foundation absorption lane closeout |
 | Latest session sync before V25 rotation | `743b24ad` |
 | Public UAP comprehension export | `04d88109317c780ceb2062a257c0e863e2379276` |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`
+`tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
 ## Purpose
 
@@ -1079,3 +1079,60 @@ the committed TKG-T4 checker implementation. It does not implement runtime,
 provider/live proof, public-sync export, evidence database, obligation registry
 runtime, SOT index runtime, MCP gateway, hypervisor, adapter, package
 activation, certification, generated aggregate, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - TKG-T5 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+closeout commit `6ce94464` so GC-020 active-session compatibility recognizes
+the current HEAD after TKG-T5 remaining-value audit and lane closeout.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator instructed Codex to continue through the
+roadmap.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert TKG-T5 material commit `6ce94464`, TKG-T4 handoff sync
+commit `8f6c3d7d`, TKG-T4 material commit `79f26845`, or earlier
+TKG/EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - TKG-T5 Truth Foundation Remaining-Value Audit Commit
+
+Material commit `6ce94464` added
+`docs/reviews/CVF_TKG_T5_TRUTH_FOUNDATION_REMAINING_VALUE_AUDIT_AND_LANE_CLOSEOUT_2026-06-28.md`.
+The review closes TKG-T0 through TKG-T5 as `CLOSED_PASS_BOUNDED`, records
+decision `CLOSE_TKG_ABSORPTION_LANE_NO_NEXT_TRANCHE`, and parks remaining TKG
+runtime/package/MCP/hypervisor/evidence database/obligation registry/
+provenance-label enforcement candidates behind explicit reopen conditions.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed TKG-T5 closeout. It does not implement runtime, provider/live
+proof, public-sync export, evidence database, obligation registry runtime, SOT
+index runtime, MCP gateway, hypervisor, adapter, package activation,
+certification, generated aggregate, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - TKG-T5 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+TKG-T5 closeout commit `6ce94464` so the front door, generated state sources,
+generated aggregates, bootstrap read model, and active handoff all point to the
+closed TKG absorption lane and the next external absorption selection boundary.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/tkgT0T5TruthFoundationAbsorptionClosure20260628.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator instructed Codex to continue through the
+roadmap.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert TKG-T5 material commit `6ce94464`, TKG-T4
+handoff sync commit `8f6c3d7d`, TKG-T4 material commit `79f26845`, or earlier
+TKG/EverOS/PRG/FPC/session-sync commits.
