@@ -462,3 +462,23 @@ Do not revert frozen-reference relocation commit `9e733ab8`, V25 rotation
 commit `2a04e28e`, root exposure classification commit `f7f4294d`, material
 commit `24726307`, or public-sync commit
 `04d88109317c780ceb2062a257c0e863e2379276`.
+
+## GC-020 Marker - DLR-T0 Roadmap Commit
+
+Material commit `a264287e` added the FPC-DLR-T0 downstream lane reopen
+evidence readiness and selection roadmap. The roadmap is a private provenance
+decision/audit plan only: it recommends DLR-T1 evidence audit review before any
+fresh downstream GC-018, and it selects no implementation lane.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed DLR-T0 roadmap. It does not change the active next allowed move
+and does not reopen downstream implementation, runtime/provider/live work,
+public-sync mutation, adapter implementation, package activation,
+certification, Policy_Local, Document Translator, Model Gateway/Sandbox
+runtime expansion, or MPI-T6 runtime.
+
+Rollback boundary: if this marker is rejected, revert only this marker commit.
+Do not revert DLR-T0 roadmap commit `a264287e`, session-sync commit
+`24252825`, frozen-reference relocation commit `9e733ab8`, V25 rotation commit
+`2a04e28e`, root exposure classification commit `f7f4294d`, material commit
+`24726307`, or public-sync commit `04d88109317c780ceb2062a257c0e863e2379276`.
