@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pint_t1_t3_provider_intelligence_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator-selected next external absorption repo/folder or roadmap audit; parked checkpoint=PINT-T1 through PINT-T3 closed at material commit `c21cd0e9`, the retained source bundle path is `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE`, and runtime/provider/live/OpenRouter/MCP production routing/checker/import work remains parked behind fresh GC-018 and source verification.
+Startup acknowledged: current mode=`msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author MSEA-T1 GC-018 for source-verified document extraction reconciliation and gateway adaptation; parked checkpoint=MSEA-T0 added MinerU Structured Extraction roadmap at material commit `3776d5db`, retained upstream clone is `.private_reference/external_repos/MinerU` at `opendatalab/MinerU@3e60291`, retained local folder is `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter`, and MinerU runtime/install/model-download/OCR/provider/live/VLM/hybrid/RAG/checker/public-sync work remains parked behind fresh GC-018 and source verification.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`pint_t1_t3_provider_intelligence_absorption_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `c21cd0e9` PINT-T1-T3 Provider Intelligence absorption closeout |
+| Latest material closeout | `3776d5db` MSEA-T0 MinerU Structured Extraction absorption roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`pint_t1_t3_provider_intelligence_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
+`msea_t0_mineru_structured_extraction_roadmap_ready_for_t1_source_verified_reconciliation`
 
 ## Purpose
 
@@ -34,7 +34,7 @@ active handoff.
 ## Scope / Target / Owner Boundary
 
 Target: maintain compact active handoff V26, update active startup pointers,
-and preserve the next external-absorption selection boundary.
+and preserve the MSEA-T1 source-verified reconciliation boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize downstream implementation, runtime/provider/live work,
@@ -55,40 +55,43 @@ against CVF-governed surfaces.
 
 ## Latest Work / Changes
 
-Material commit `c21cd0e9` added
-`docs/reference/CVF_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_2026-06-28.md`,
-`docs/reviews/CVF_PINT_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`,
-and updated
-`docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
-to `CLOSED_PASS_BOUNDED`.
+Material commit `3776d5db` added
+`docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
 
-The closeout promotes the useful Provider Intelligence subset into a CVF-owned
-claim-boundary and receipt-advisory reference, rejects direct package,
-OpenRouter, and prototype-checker import, and closes PINT with no checker now.
+The roadmap audits current upstream `opendatalab/MinerU` at commit `3e60291`
+and the operator-provided MinerU Structured Extraction Adapter folder, moves
+the folder to ignored legacy reference storage, rejects direct runtime/package
+and checker import, and selects MSEA-T1 source-verified reconciliation against
+`CVF_EXTRACTION_FOUNDATION`, corpus/RAG handoff, and receipt/quality owner
+surfaces.
 
 ## Next Allowed Move
 
-Operator-selected next external absorption repo/folder or roadmap audit.
+Author MSEA-T1 GC-018 for source-verified document extraction reconciliation
+and gateway adaptation.
 
 Required boundaries:
 
-- Treat completed PINT artifacts as bounded reference/closeout surfaces, not
-  runtime or checker authorization.
-- Use `docs/reference/CVF_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_2026-06-28.md`
-  before proposing future provider-intelligence package/checker/runtime work.
-- Do not reopen OpenRouter dependency, provider/live proof, MCP production
-  routing, benchmark campaign, cost/latency measurement, automatic model
-  selection, public-sync, or checker implementation unless a fresh GC-018
-  satisfies PINT-T3 reopen conditions.
+- Treat MSEA-T0 as a roadmap/source-boundary artifact, not runtime or checker
+  authorization.
+- Use `docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
+  before authoring MSEA-T1.
+- MSEA-T1 must source-verify MinerU and the retained adapter folder against
+  current CVF Extraction Foundation, corpus/RAG handoff, and receipt/quality
+  owner surfaces.
+- Do not reopen MinerU install, model download, OCR/provider-live proof,
+  VLM/hybrid route, remote backend, API/router/Gradio service, RAG index write,
+  public-sync, runtime/source/test mutation, generated aggregate mutation, or
+  checker implementation unless a fresh GC-018 satisfies MSEA-T0 boundaries.
 
 ## Parked Checkpoint
 
-PINT-T1 through T3 are source-verified documentation/reference closeout commits
-only. They do not implement runtime behavior, provider/live proof, OpenRouter
-integration, MCP production routing, benchmark/cost/latency measurement,
-automatic model selection, package activation, certification, checker
-implementation, public export, or generated aggregates beyond active-session
-sync.
+MSEA-T0 is a source-boundary and roadmap commit only. It does not implement
+runtime behavior, MinerU install, model download, OCR/provider-live proof,
+VLM/hybrid route, remote backend, API/router/Gradio service, RAG index write,
+parser execution, extraction receipt samples, extraction accuracy, document
+truth, package activation, certification, checker implementation, public
+export, or generated aggregates beyond active-session sync.
 
 TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/
 provenance-label enforcement candidates remain parked behind their recorded
@@ -96,11 +99,11 @@ reopen conditions.
 
 ## Claim Boundary
 
-This handoff may be cited only as session-continuity evidence for the PINT
-closeout and active-session routing state. It is not runtime, provider/live,
-public-sync, package, MCP production routing, OpenRouter dependency,
-benchmark/cost/latency measurement, automatic model-selection, checker, or
-production-readiness evidence.
+This handoff may be cited only as session-continuity evidence for the MSEA-T0
+roadmap and active-session routing state. It is not runtime, provider/live,
+public-sync, package, MinerU install, model download, OCR/VLM/hybrid execution,
+remote backend, RAG index write, checker, extraction accuracy, document-truth,
+or production-readiness evidence.
 
 Verification for this batch must come from the active-session generator,
 session-mode, next-move freshness, core-guard self-protection, governed
@@ -362,3 +365,49 @@ runtime, provider/live proof, public-sync export, OpenRouter integration, MCP
 production routing, benchmark campaign, cost/latency measurement, automatic
 model selection, package activation, certification, checker implementation,
 generated aggregate beyond session sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - MSEA-T0 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+MSEA-T0 material roadmap commit `3776d5db` so the front door, generated state
+sources, generated aggregates, bootstrap read model, and active handoff all
+point to MSEA-T1 source-verified document extraction reconciliation and gateway
+adaptation as the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaT0MineruStructuredExtractionRoadmap20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: active session next allowed move after PINT closeout and
+operator instruction to continue with `opendatalab/MinerU` plus the
+operator-provided MinerU Structured Extraction Adapter folder.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert MSEA-T0 material commit `3776d5db`, PINT
+material commits `c21cd0e9`, `3a729e83`, and `658bc76d`, AECG material commits
+`7701abb8` and `edee01a0`, or earlier TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - MSEA-T0 MinerU Structured Extraction Roadmap Commit
+
+Material commit `3776d5db` added
+`docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap audits current upstream `opendatalab/MinerU` at commit `3e60291`
+and the operator-provided MinerU Structured Extraction Adapter folder, moves
+the folder to `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter`,
+rejects direct runtime/package/checker import, and selects MSEA-T1
+source-verified reconciliation as the next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed MSEA-T0 material roadmap. It does not implement runtime,
+provider/live proof, public-sync export, MinerU install, model download,
+OCR/VLM/hybrid execution, remote backend routing, API/router/Gradio service,
+RAG index write, parser execution, extraction receipt samples, extraction
+accuracy claim, document-truth claim, package activation, certification,
+checker implementation, generated aggregate beyond session sync, or
+production/hosted readiness.
