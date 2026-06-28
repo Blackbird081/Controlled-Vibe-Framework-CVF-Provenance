@@ -34,6 +34,7 @@ surface, adapter, package activation, certification, or generated aggregate.
 | Reference | Role |
 |---|---|
 | `CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md` | Canonical TKG-T1 contract for source authority, provenance labels, evidence and obligation record minimums, verification semantics, and strict movement boundaries |
+| `CVF_TRUTH_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md` | TKG-T2 reconciliation matrix mapping the TKG-T1 contract to existing CVF evidence, learning, release-truth, scoring, and claim-boundary owner surfaces |
 
 ## Existing CVF Owner Surfaces
 
@@ -43,6 +44,7 @@ surface, adapter, package activation, certification, or generated aggregate.
 | `docs/reference/CVF_MLW3_EVIDENCE_TO_TRUTH_LEARNING_SIGNAL_PIPELINE_2026-06-05.md` | learning-signal route remains owner for evidence-to-truth learning updates |
 | `docs/reference/CVF_RELEASE_CANDIDATE_TRUTH_PACKET_2026-04-21.md` | release truth packet remains owner for milestone claim boundary wording |
 | `docs/reviews/CVF_WD1_TRUTHSCORE_WEIGHTING_DOCTRINE_COMPLETION_2026-05-31.md` | TruthScore weighting doctrine remains owner for scoring behavior already delivered in WD1 |
+| `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` | workflow control remains owner for claim/evidence gate sequencing and source-proof triage |
 
 ## External Knowledge Intake Routing
 
