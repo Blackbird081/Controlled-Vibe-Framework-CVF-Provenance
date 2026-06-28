@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1306,
+  "stateKey": "pintT1ProviderIntelligenceReconciliationClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "3a729e83",
+    "baseline": "docs/baselines/CVF_GC018_PINT_T1_SOURCE_VERIFIED_PROVIDER_INTELLIGENCE_RECONCILIATION_2026-06-28.md",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE",
+    "decision": "AUTHOR_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_REFERENCE",
+    "nextAllowedMove": "AUTHOR_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_REFERENCE",
+    "summary": "PINT-T1 reconciled the provider-intelligence source bundle against current Model Gateway/provider-lane owner surfaces, corrected the retained source path, rejected direct package/OpenRouter/checker import, and selected PINT-T2 as a documentation/reference tranche. Runtime/provider/live, MCP production routing, benchmark/cost/latency measurement, automatic model selection, checker implementation, public-sync, and generated aggregate mutation remain parked."
+  }
+}

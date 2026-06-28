@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane reconciliation; parked checkpoint=PINT-T0 roadmap is ready at material commit `658bc76d`, `CVF_PROVIDER_INTELLIGENCE` was moved to `.private_reference/legacy`, and runtime/provider/live/OpenRouter/MCP production routing/checker/import work remains parked behind fresh GC-018 and source verification.
+Startup acknowledged: current mode=`pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author PINT-T2 provider-intelligence claim-boundary and receipt-advisory reference; parked checkpoint=PINT-T1 closed at material commit `3a729e83`, the retained source bundle path is `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE`, and runtime/provider/live/OpenRouter/MCP production routing/checker/import work remains parked behind fresh GC-018 and source verification.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`pint_t0_provider_intelligence_absorption_roa
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material roadmap | `658bc76d` PINT-T0 Provider Intelligence external absorption roadmap |
+| Latest material baseline | `3a729e83` PINT-T1 Provider Intelligence source-verified reconciliation baseline |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`
+`pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference`
 
 ## Purpose
 
@@ -34,7 +34,7 @@ active handoff.
 ## Scope / Target / Owner Boundary
 
 Target: maintain compact active handoff V26, update active startup pointers,
-and preserve the PINT-T1 next-move boundary.
+and preserve the PINT-T2 next-move boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize downstream implementation, runtime/provider/live work,
@@ -55,36 +55,29 @@ against CVF-governed surfaces.
 
 ## Latest Work / Changes
 
-Material commit `658bc76d` added
-`docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+Material commit `3a729e83` added
+`docs/baselines/CVF_GC018_PINT_T1_SOURCE_VERIFIED_PROVIDER_INTELLIGENCE_RECONCILIATION_2026-06-28.md`.
 
-The roadmap audits the operator-provided `CVF_PROVIDER_INTELLIGENCE` folder,
-maps useful provider-intelligence concepts to current Model Gateway and
-provider-lane owner surfaces, rejects direct package/prototype-checker import,
-and selects PINT-T1 source-verified reconciliation as the next governed move.
-
-The operator-provided Provider Intelligence folder was moved from root to
-ignored legacy reference storage:
-
-` .private_reference/legacy/CVF_PROVIDER_INTELLIGENCE`
-
-The leading space above is intentional to avoid bare ignored-directory gate
-matching in this handoff prose; use the actual path without the leading space
-when reading the source bundle.
+The baseline reconciles the operator-provided Provider Intelligence source
+bundle against current Model Gateway and provider-lane owner surfaces, corrects
+the retained source path to `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE`,
+rejects direct package/OpenRouter/prototype-checker import, and selects PINT-T2
+claim-boundary plus receipt-advisory reference authoring as the next governed
+move.
 
 ## Next Allowed Move
 
-Author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane
-reconciliation.
+Author PINT-T2 provider-intelligence claim-boundary and receipt-advisory
+reference.
 
 Required boundaries:
 
-- Treat `CVF_PROVIDER_INTELLIGENCE` as source material only; adapt useful
-  concepts into CVF-owned Model Gateway/provider-lane references instead of
-  importing the package directly.
-- Map provider intelligence to existing ProviderRegistry, ProviderHealthMonitor,
-  DynamicModelRegistryContract, GatewayReceipt, MCP bridge, and provider lane
-  readiness surfaces before any new owner surface is proposed.
+- Treat the retained source bundle as advisory source material only; adapt
+  useful concepts into CVF-owned Model Gateway/provider-lane references instead
+  of importing the package directly.
+- Bind provider intelligence to existing ProviderRegistry,
+  ProviderHealthMonitor, DynamicModelRegistryContract, GatewayReceipt,
+  GatewayPolicyContext, MCP bridge, and provider lane readiness surfaces.
 - Do not reopen OpenRouter dependency, provider/live proof, MCP production
   routing, benchmark campaign, cost/latency measurement, automatic model
   selection, public-sync, or checker implementation unless a fresh
@@ -92,11 +85,11 @@ Required boundaries:
 
 ## Parked Checkpoint
 
-PINT-T0 is a roadmap and reconciliation-selection commit only. It does not
-implement runtime behavior, provider/live proof, OpenRouter integration, MCP
-production routing, benchmark/cost/latency measurement, automatic model
-selection, package activation, certification, checker implementation, public
-export, or generated aggregates beyond active-session sync.
+PINT-T1 is a source-verified reconciliation commit only. It does not implement
+runtime behavior, provider/live proof, OpenRouter integration, MCP production
+routing, benchmark/cost/latency measurement, automatic model selection, package
+activation, certification, checker implementation, public export, or generated
+aggregates beyond active-session sync.
 
 TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/
 provenance-label enforcement candidates remain parked behind their recorded
@@ -104,12 +97,11 @@ reopen conditions.
 
 ## Claim Boundary
 
-This handoff may be cited only as session-continuity evidence for the PINT-T0
-roadmap and active-session routing state. It is not final proof that the
-Provider Intelligence source bundle has been fully absorbed, and it is not
-runtime, provider/live, public-sync, package, MCP production routing,
-OpenRouter dependency, benchmark/cost/latency measurement, automatic
-model-selection, checker, or production-readiness evidence.
+This handoff may be cited only as session-continuity evidence for the PINT-T1
+reconciliation and active-session routing state. It is not runtime,
+provider/live, public-sync, package, MCP production routing, OpenRouter
+dependency, benchmark/cost/latency measurement, automatic model-selection,
+checker, or production-readiness evidence.
 
 Verification for this batch must come from the active-session generator,
 session-mode, next-move freshness, core-guard self-protection, governed
@@ -280,3 +272,49 @@ proof, public-sync export, OpenRouter integration, MCP production routing,
 benchmark campaign, cost/latency measurement, automatic model selection,
 package activation, certification, checker implementation, generated aggregate
 beyond session sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - PINT-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+PINT-T1 material reconciliation commit `3a729e83` so the front door, generated
+state sources, generated aggregates, bootstrap read model, and active handoff
+all point to PINT-T2 provider-intelligence claim-boundary and receipt-advisory
+reference authoring as the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/pintT0ProviderIntelligenceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/pintT1ProviderIntelligenceReconciliationClosure20260628.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: active session next allowed move after PINT-T0 and
+operator instruction to continue.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert PINT-T1 material commit `3a729e83`, PINT-T0
+material commit `658bc76d`, AECG material commits `7701abb8` and `edee01a0`,
+or earlier TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - PINT-T1 Provider Intelligence Reconciliation Commit
+
+Material commit `3a729e83` added
+`docs/baselines/CVF_GC018_PINT_T1_SOURCE_VERIFIED_PROVIDER_INTELLIGENCE_RECONCILIATION_2026-06-28.md`.
+The baseline reconciles the retained Provider Intelligence source bundle
+against ProviderRegistry, ProviderHealthMonitor, DynamicModelRegistryContract,
+GatewayPolicyContext, GatewayReceipt, MCP bridge, and provider-lane owner
+surfaces; corrects the retained source path to
+`.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE`; rejects direct
+package/OpenRouter/prototype-checker import; and selects PINT-T2 reference
+authoring as the next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed PINT-T1 material reconciliation. It does not implement runtime,
+provider/live proof, public-sync export, OpenRouter integration, MCP production
+routing, benchmark campaign, cost/latency measurement, automatic model
+selection, package activation, certification, checker implementation, generated
+aggregate beyond session sync, or production/hosted readiness.

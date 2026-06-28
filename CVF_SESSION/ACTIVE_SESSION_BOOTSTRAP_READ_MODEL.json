@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation",
+  "currentMode": "pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference",
   "activeHandoff": "AGENT_HANDOFF_V26_2026-06-28.md",
-  "nextAllowedMove": "PINT-T0 Provider Intelligence external absorption roadmap was added at material commit 658bc76d. LHW24 remains the latest closed numbered LHW wave. Next allowed move: author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane reconciliation. PINT-T0 keeps CVF_PROVIDER_INTELLIGENCE as external source input only under .private_reference/legacy; no direct package, prototype checker, OpenRouter dependency, provider/live proof, MCP production routing, benchmark campaign, cost/latency measurement, automatic model-selection behavior, public-sync, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions.",
+  "nextAllowedMove": "PINT-T1 Provider Intelligence source-verified reconciliation closed at material commit 3a729e83. LHW24 remains the latest closed numbered LHW wave. Next allowed move: author PINT-T2 provider-intelligence claim-boundary and receipt-advisory reference. The retained external source bundle is advisory input under .private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE. PINT-T2 may write one CVF-owned reference that binds provider-market, health, cost, latency, quality, dev-MCP, and receipt language to existing Model Gateway owner surfaces. No direct package, prototype checker, OpenRouter dependency, provider/live proof, MCP production routing, benchmark campaign, cost/latency measurement, automatic model-selection behavior, public-sync, runtime/source/test mutation, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

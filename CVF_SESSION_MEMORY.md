@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane reconciliation; parked checkpoint=PINT-T0 roadmap is ready at material commit `658bc76d`, `CVF_PROVIDER_INTELLIGENCE` was moved to `.private_reference/legacy`, and runtime/provider/live/OpenRouter/MCP production routing/checker/import work remains parked behind fresh GC-018 and source verification.
+Startup acknowledged: current mode=`pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author PINT-T2 provider-intelligence claim-boundary and receipt-advisory reference; parked checkpoint=PINT-T1 closed at material commit `3a729e83`, retained source path is `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE`, and runtime/provider/live/OpenRouter/MCP production routing/checker/import work remains parked behind fresh GC-018 and source verification.
 
 ## Current Mode
 
-Current mode marker: `pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`
+Current mode marker: `pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference`
 
-Current mode: `pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`
+Current mode: `pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference`
 
-`pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`
+`pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference`
 
 Previous mode:
 
-`aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
+`pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`
 
 ## Latest Closed Work
 
@@ -105,12 +105,13 @@ Previous mode:
 | Agent Engineering Control / AECG-T0 external absorption roadmap | `edee01a0` | ROADMAP_READY_FOR_AECG_T1_SOURCE_VERIFIED_TRIAGE |
 | Agent Engineering Control / AECG-T1-T3 absorption closeout | `7701abb8` | CLOSED_PASS_BOUNDED; decision `CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW` |
 | Provider Intelligence / PINT-T0 external absorption roadmap | `658bc76d` | ROADMAP_READY_FOR_PINT_T1_SOURCE_VERIFIED_RECONCILIATION |
+| Provider Intelligence / PINT-T1 source-verified reconciliation | `3a729e83` | CLOSED_PASS_BOUNDED; decision `AUTHOR_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_REFERENCE` |
 
 ## Next Allowed Move
 
-Mode: `pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`
+Mode: `pint_t1_provider_intelligence_reconciliation_closed_pass_bounded_ready_for_t2_reference`
 
-Next allowed move: author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane reconciliation. PINT-T0 Provider Intelligence external absorption roadmap was added at material commit `658bc76d`. The copied folder is retained under `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE` as external source input only. No direct package, prototype checker, OpenRouter dependency, provider/live proof, MCP production routing, benchmark campaign, cost/latency measurement, automatic model-selection behavior, public-sync, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: author PINT-T2 provider-intelligence claim-boundary and receipt-advisory reference. PINT-T1 source-verified reconciliation closed at material commit `3a729e83`. The copied folder is retained under `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE` as external source input only. No direct package, prototype checker, OpenRouter dependency, provider/live proof, MCP production routing, benchmark campaign, cost/latency measurement, automatic model-selection behavior, public-sync, runtime/source/test mutation, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions. LHW24 remains the latest closed numbered LHW wave.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -118,13 +119,14 @@ No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resol
 
 ## Parked Checkpoint
 
-FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T1 through T3 closed the CodeGraph and Agent Engineering Control absorption roadmap at material commit `7701abb8`; no AECG checker is implemented now. PINT-T0 added the Provider Intelligence absorption roadmap at material commit `658bc76d`; PINT-T1 GC-018 authoring is the next allowed move. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC package import, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, and provider-intelligence checker implementation remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T1 through T3 closed the CodeGraph and Agent Engineering Control absorption roadmap at material commit `7701abb8`; no AECG checker is implemented now. PINT-T1 closed Provider Intelligence reconciliation at material commit `3a729e83`; PINT-T2 reference authoring is the next allowed move. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC package import, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, and provider-intelligence checker implementation remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Knowledge Absorption Priority Boundary
 
 Broad external knowledge absorption remains a governed, trigger-based lane.
-PINT-T0 is the current selected absorption roadmap. The next move is PINT-T1
-source-verified Model Gateway/provider-lane reconciliation. Current blocked
+PINT-T1 is the latest completed Provider Intelligence absorption tranche. The
+next move is PINT-T2 provider-intelligence claim-boundary and receipt-advisory
+reference authoring. Current blocked
 work classes include runtime/provider/live expansion, public-sync content
 mutation, downstream use-case work, registry mutation, checker implementation,
 merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct
