@@ -18,7 +18,7 @@ Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_dispatch_pack
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `5ae9cb9e` AGSG-BSH-T1 blind-spot presence dispatch packet (ADIF-0014) |
+| Latest material closeout | `a8f45aa7` ADIF-0015 declared-route-vs-execution-behavior mismatch record |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
@@ -584,3 +584,15 @@ This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 material commit `5ae9cb9e`. It does not implement the planned presence
 checker, runtime, provider/live proof, public-sync export, or any AGSG-T3
 reopen-gated capability.
+
+## GC-020 Marker - ADIF-0015 Declared-Route-Vs-Execution-Behavior Record
+
+Material commit `a8f45aa7` (current HEAD) recorded ADIF-0015: a self-review
+finding that the AGSG-BSH-T1 dispatch packet declared
+`route: SINGLE_AGENT_SINGLE_ROLE` with the dispatching agent as author-only,
+while the same agent performed many executor-shaped self-correction passes on
+the artifact's substantive content to satisfy governance gates - matching
+CF-02's `one-agent-many-roles` pattern, not `author-then-executor`. This marker
+exists only to satisfy the GC-020 in-place handoff HEAD rule for commit
+`a8f45aa7`. It does not retroactively change the route/rolePattern fields
+already committed in the AGSG-BSH-T1 baseline or work order.
