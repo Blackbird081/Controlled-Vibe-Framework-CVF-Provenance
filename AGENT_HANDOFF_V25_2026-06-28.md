@@ -718,3 +718,39 @@ the committed EVEROS-T0 roadmap. It does not implement EverOS runtime, vector
 memory, database migrations, provider/live proof, public-sync mutation,
 adapter activation, package activation, certification, generated registries,
 route-side federation, OME runtime, or MPI-T6 runtime.
+
+## Core Guard Self-Protection Authorization - EVEROS-T1 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+contract-promotion commit `5da8ea9e` so GC-020 active-session compatibility
+recognizes the current HEAD after EVEROS-T1 memory foundation contract
+promotion.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved the EVEROS-T1 recommendation
+after EVEROS-T0 accepted EverOS as a memory-foundation doctrine seed with
+runtime deferred.
+
+Rollback boundary: if this handoff marker is rejected, revert only this marker.
+Do not revert EVEROS-T1 material commit `5da8ea9e`, EVEROS-T0 handoff sync
+commit `8b506360`, EVEROS-T0 material commit `d8ad9024`, PRG-T1 handoff sync
+commit `8eb10d12`, or earlier FPC/session-sync commits.
+
+## GC-020 Marker - EVEROS-T1 Memory Foundation Contract Commit
+
+Material commit `5da8ea9e` promoted the EVEROS-T0 recommendation into a
+CVF-owned memory foundation reference front door and source-derived replay
+contract under `docs/reference/memory_foundation/`. The contract preserves
+Markdown/source authority, derived-index rebuild boundaries, retrieval/rebuild
+receipt expectations, privacy and redaction boundaries, timestamp discipline,
+and `rawMemoryReleased=false`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed EVEROS-T1 contract promotion. It does not implement memory
+runtime, database, vector store, embeddings, rerank, watcher, daemon,
+generated aggregate, checker, provider/live proof, public-sync mutation,
+adapter activation, package activation, certification, route-side federation,
+OME runtime, or MPI-T6 runtime.
