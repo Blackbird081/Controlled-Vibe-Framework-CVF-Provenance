@@ -23,19 +23,19 @@ Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_dispatch_pack
 
 ## Current Mode
 
-`agsg_t1_t3_agent_skills_governance_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
+`agsg_bsh_t1_blindspot_presence_dispatch_packet_hold_pending_executor`
 
 ## Purpose
 
 Keep the active handoff compact after V25 reached the governed file-size guard
 near-threshold. V25 is archived as historical continuity; V26 is the sole root
-active handoff and now points to next external absorption or roadmap-audit
-selection after AGSG-T1 through T3 closure.
+active handoff and now points to AGSG-BSH-T1 executor dispatch or the next
+operator-selected external absorption target.
 
 ## Scope / Target / Owner Boundary
 
 Target: maintain compact active handoff V26, update active startup pointers,
-and preserve the AGSG-T1 through T3 closure boundary.
+and preserve the AGSG-BSH-T1 dispatch boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize downstream implementation, runtime/provider/live work,
@@ -79,16 +79,31 @@ validator-owned exemption, persona-boundary, and evidence-receipt patterns into
 a CVF-owned ASSF advisory reference, and closed the checker lane with no
 checker now.
 
+Material commit `5ae9cb9e` added the AGSG-BSH-T1 blind-spot presence dispatch
+packet and ADIF-0014:
+
+- `docs/baselines/CVF_GC018_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md`
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0014.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+
+Material commit `a8f45aa7` added
+`docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0015.md` and updated
+the ADIF entries README. The entry is guidance-only and does not retroactively
+change the already committed AGSG-BSH-T1 route fields.
+
 ## Next Allowed Move
 
-Operator may select the next external repo/folder absorption target or request
-a high-value roadmap audit.
+Operator may dispatch AGSG-BSH-T1 to an executor under
+`WORKER_MUST_NOT_COMMIT`, or select the next external repo/folder absorption
+target.
 
 Required boundaries:
 
-- Treat AGSG artifacts as documentation/reference absorption evidence, not
-  runtime or checker authorization.
-- Any implementation still requires fresh GC-018/source-verified work order.
+- Treat AGSG-BSH-T1 as a dispatch packet for an offline governance checker,
+  not as implemented checker evidence.
+- Executor scope is limited to the named checker, paired test/fixture, and
+  hook-chain wiring in the AGSG-BSH-T1 work order.
 - Do not import Agent Skills plugin runtime, slash commands, personas, hooks,
   prototype checkers, package instances, resolver mutations, CLI/MCP adapters,
   provider/live proof, public-sync, benchmark, security certification,
@@ -97,12 +112,12 @@ Required boundaries:
 
 ## Parked Checkpoint
 
-AGSG-T1 through T3 closed the Agent Skills Governance absorption route as
-documentation/reference absorption only. The lane does not implement runtime
-behavior, plugin install, slash command import, persona orchestration, hook
-install, package activation, resolver mutation, checker implementation,
-CLI/MCP adapter, provider/live proof, benchmark, security certification, public
-export, or generated aggregates beyond active-session sync.
+AGSG-BSH-T1 is a dispatch packet only and remains `HOLD_PENDING_EXECUTOR`.
+The lane does not yet implement the planned checker and does not implement
+runtime behavior, plugin install, slash command import, persona orchestration,
+package activation, resolver mutation, CLI/MCP adapter, provider/live proof,
+benchmark, security certification, public export, or generated aggregates
+beyond active-session sync.
 
 TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/
 provenance-label enforcement candidates remain parked behind their recorded
@@ -110,11 +125,11 @@ reopen conditions.
 
 ## Claim Boundary
 
-This handoff may be cited only as session-continuity evidence for the AGSG-T1
-through T3 documentation closeout state. It is not runtime, provider/live,
-public-sync, package, Agent Skills plugin import, slash command import, persona
-orchestration, hook install, checker, adapter, benchmark, security, automatic
-skill invocation, or production-readiness evidence.
+This handoff may be cited only as session-continuity evidence for the
+AGSG-BSH-T1 dispatch state and ADIF-0014/0015 records. It is not runtime,
+provider/live, public-sync, package, Agent Skills plugin import, slash command
+import, persona orchestration, implemented checker, adapter, benchmark,
+security, automatic skill invocation, or production-readiness evidence.
 
 Verification for this batch must come from the active-session generator,
 session-mode, next-move freshness, core-guard self-protection, governed
@@ -566,7 +581,7 @@ session sync, or production/hosted readiness.
 
 ## GC-020 Marker - AGSG-BSH-T1 Blind-Spot Presence Dispatch Packet
 
-Material commit `5ae9cb9e` (current HEAD) recorded ADIF-0014: CVF's Mandatory
+Material commit `5ae9cb9e` recorded ADIF-0014: CVF's Mandatory
 Knowledge Absorption Blind-Spot Control and Mandatory Corpus Completeness
 controls are claim-triggered, so the AGSG-T1 baseline closed `PASS` while
 carrying neither control block. The commit adds a GC-018 baseline and a
@@ -587,7 +602,7 @@ reopen-gated capability.
 
 ## GC-020 Marker - ADIF-0015 Declared-Route-Vs-Execution-Behavior Record
 
-Material commit `a8f45aa7` (current HEAD) recorded ADIF-0015: a self-review
+Material commit `a8f45aa7` recorded ADIF-0015: a self-review
 finding that the AGSG-BSH-T1 dispatch packet declared
 `route: SINGLE_AGENT_SINGLE_ROLE` with the dispatching agent as author-only,
 while the same agent performed many executor-shaped self-correction passes on
@@ -596,3 +611,30 @@ CF-02's `one-agent-many-roles` pattern, not `author-then-executor`. This marker
 exists only to satisfy the GC-020 in-place handoff HEAD rule for commit
 `a8f45aa7`. It does not retroactively change the route/rolePattern fields
 already committed in the AGSG-BSH-T1 baseline or work order.
+
+## Core Guard Self-Protection Authorization - AGSG-BSH-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSG-BSH-T1 dispatch commit `5ae9cb9e`, ADIF-0015 material commit `a8f45aa7`,
+and their handoff sync commits so the front door, generated state sources,
+generated aggregate, bootstrap read model, and active handoff all point to
+AGSG-BSH-T1 `HOLD_PENDING_EXECUTOR`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agsgBshT1BlindspotPresenceDispatch20260629.json`
+- `CVF_SESSION/state/entries/adif0015RouteExecutionMismatchRecord20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction to update the part requested from
+Claude.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSG-BSH-T1 material commit `5ae9cb9e`,
+ADIF-0015 material commit `a8f45aa7`, AGSG-T1 through T3 material commit
+`66eb39ac`, or their prior session/handoff sync commits.

@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1313,
+  "stateKey": "adif0015RouteExecutionMismatchRecord20260629",
+  "value": {
+    "status": "ACTIVE",
+    "materialCommit": "a8f45aa7",
+    "entry": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0015.md",
+    "adifIndex": "docs/reference/agent_defect_intelligence/entries/README.md",
+    "decision": "RECORD_DECLARED_ROUTE_MODE_VS_ACTUAL_EXECUTION_BEHAVIOR_MISMATCH",
+    "nextAllowedMove": "USE_ADIF_0015_AS_DISPATCH_QUALITY_CONTEXT_FOR_FUTURE_ROUTE_ROLE_DECLARATIONS",
+    "summary": "ADIF-0015 records the declared-route-vs-execution-behavior mismatch observed during AGSG-BSH-T1 dispatch authoring. It is a guidance-only ADIF record and does not retroactively change the AGSG-BSH-T1 baseline or work-order route fields."
+  }
+}
