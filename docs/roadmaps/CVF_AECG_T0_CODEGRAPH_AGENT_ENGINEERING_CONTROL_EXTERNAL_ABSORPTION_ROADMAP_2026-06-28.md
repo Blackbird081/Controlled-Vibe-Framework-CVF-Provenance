@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_AECG_T1_SOURCE_VERIFIED_TRIAGE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -129,6 +129,16 @@ authorize implementation.
 | external hash capture | recorded in External Artifact Hash Manifest |
 | expected changed set | this roadmap only |
 
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | AECG-T0 roadmap, AECG-T1 baseline, AECG-T2 matrix, AECG-T3 closeout, and current CVF static/documentation guards |
+| Runtime behavior claimed | N/A_WITH_REASON: this roadmap and closeout perform documentation/reference absorption only |
+| Live/provider proof claimed | N/A_WITH_REASON: no live governance behavior is claimed |
+| Public-sync claimed | N/A_WITH_REASON: no public-sync is authorized or performed |
+| Freshness disposition | PASS - current source evidence supports bounded documentation/reference closeout only |
+
 ## External Artifact Hash Manifest
 
 | Artifact | Source class | Commit or local source | SHA256 |
@@ -193,9 +203,9 @@ Decision: `ROADMAP_READY_FOR_AECG_T1_SOURCE_VERIFIED_TRIAGE`
 | Tranche | Status | Objective | Boundary |
 |---|---|---|---|
 | AECG-T0 | ROADMAP_READY_FOR_AECG_T1_SOURCE_VERIFIED_TRIAGE | Audit CodeGraph delta plus Agent Engineering Control folder and select next move | documentation-only |
-| AECG-T1 | RECOMMENDED_NEXT | Author GC-018 and source-verified triage/adaptation matrix mapping AEC gates and CodeGraph delta to current CVF owner surfaces | no runtime/checker/import |
-| AECG-T2 | PARKED | Promote the highest-value AEC subset into one CVF-owned agent engineering control reference or matrix | requires AECG-T1 closure |
-| AECG-T3 | PARKED | Decide whether one static checker candidate is worth implementing, likely diff-content overclaim or agent-review evidence | requires AECG-T2 and fresh GC-018 |
+| AECG-T1 | CLOSED_PASS_BOUNDED | Author GC-018 and source-verified triage/adaptation matrix mapping AEC gates and CodeGraph delta to current CVF owner surfaces | no runtime/checker/import |
+| AECG-T2 | CLOSED_PASS_BOUNDED | Promote the highest-value AEC subset into one CVF-owned agent engineering control reference or matrix | owner-surface matrix only |
+| AECG-T3 | CLOSED_PASS_BOUNDED | Decide whether one static checker candidate is worth implementing, likely diff-content overclaim or agent-review evidence | no checker now; reopen only after repeated misses |
 | AECG-RUNTIME | PARKED | CodeGraph MCP/runtime, affected-test CLI, watchers, hook repair, PR merge automation, package import | fresh operator authorization, GC-018, source verification, and live/runtime proof when behavior is claimed |
 
 ## Risk / Corrective Action
@@ -249,3 +259,32 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance external absorption roadmap. No public-sync remote,
 public commit, public artifact path, or public claim is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: direct single-agent source-verification, reference, and closeout tranche | N/A with reason | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_AECG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AECG-T1 source-verified triage | `docs/baselines/CVF_GC018_AECG_T1_SOURCE_VERIFIED_AGENT_ENGINEERING_CONTROL_TRIAGE_2026-06-28.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| AECG-T2 owner-surface matrix | `docs/reference/CVF_AECG_T2_AGENT_ENGINEERING_CONTROL_OWNER_SURFACE_MATRIX_2026-06-28.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| AECG-T3 checker value decision | `docs/reviews/CVF_AECG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | `Decision: CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW` | PASS |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation is authorized | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation is authorized | no registry path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: AECG-T0 hash manifest records external source evidence | External Artifact Hash Manifest | N/A with reason |
+| System loop interlock | N/A with reason: local documentation/reference closeout only | Claim Boundary | N/A with reason |
+| Runtime lane | `AECG-RUNTIME` row | `PARKED` | PASS |
+| Public sync | N/A with reason: no public-sync authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
+| Runtime/live proof | N/A with reason: no runtime/provider governance behavior claimed | no live run required | N/A with reason |
+| Session continuity | active session/front-door sync planned after material commit | separate session-sync commit required | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| AECG-Q1 | roadmap status | N/A with reason: Markdown status line | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
+| AECG-Q2 | T1 baseline | N/A with reason: Markdown artifact | source-verified triage present | present | PASS |
+| AECG-Q3 | T2 matrix | N/A with reason: Markdown artifact | owner-surface matrix present | present | PASS |
+| AECG-Q4 | T3 closeout | N/A with reason: Markdown artifact | no-checker-now decision present | present | PASS |
+| AECG-Q5 | runtime boundary | N/A with reason: roadmap row | runtime lane parked | parked | PASS |
