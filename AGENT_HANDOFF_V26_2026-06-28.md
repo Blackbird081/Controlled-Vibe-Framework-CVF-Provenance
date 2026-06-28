@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator-selected next external absorption lane; parked checkpoint=AECG-T1 through T3 closed bounded at material commit `7701abb8` with decision `CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW`, CodeGraph prior CGE-T1/T2 boundaries remain binding, and runtime/MCP/watcher/daemon/merge automation/hook repair/package import remain parked behind fresh GC-018 and source verification.
+Startup acknowledged: current mode=`pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane reconciliation; parked checkpoint=PINT-T0 roadmap is ready at material commit `658bc76d`, `CVF_PROVIDER_INTELLIGENCE` was moved to `.private_reference/legacy`, and runtime/provider/live/OpenRouter/MCP production routing/checker/import work remains parked behind fresh GC-018 and source verification.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`aecg_t1_t3_agent_engineering_control_absorpt
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closure | `7701abb8` AECG-T1 through T3 Agent Engineering Control absorption closeout |
+| Latest material roadmap | `658bc76d` PINT-T0 Provider Intelligence external absorption roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
+`pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation`
 
 ## Purpose
 
@@ -33,8 +33,8 @@ active handoff.
 
 ## Scope / Target / Owner Boundary
 
-Target: rotate active handoff V25 to compact active handoff V26, update active
-startup pointers, and preserve the AECG-T1 next-move boundary.
+Target: maintain compact active handoff V26, update active startup pointers,
+and preserve the PINT-T1 next-move boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize downstream implementation, runtime/provider/live work,
@@ -55,19 +55,18 @@ against CVF-governed surfaces.
 
 ## Latest Work / Changes
 
-Material commit `edee01a0` added
-`docs/roadmaps/CVF_AECG_T0_CODEGRAPH_AGENT_ENGINEERING_CONTROL_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+Material commit `658bc76d` added
+`docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
 
-The roadmap audits current `colbymchenry/codegraph` against prior CVF
-CGE-T1/CGE-T2 absorption, records that those prior CodeGraph runtime/MCP/
-watcher/daemon boundaries remain binding, reviews the operator-provided
-`CVF_Agent_Engineering_Control_Standard` folder as source input, and selects
-AECG-T1 source-verified triage/adaptation as the next governed move.
+The roadmap audits the operator-provided `CVF_PROVIDER_INTELLIGENCE` folder,
+maps useful provider-intelligence concepts to current Model Gateway and
+provider-lane owner surfaces, rejects direct package/prototype-checker import,
+and selects PINT-T1 source-verified reconciliation as the next governed move.
 
-The operator-provided Agent Engineering Control folder was moved from root to
+The operator-provided Provider Intelligence folder was moved from root to
 ignored legacy reference storage:
 
-` .private_reference/legacy/CVF_Agent_Engineering_Control_Standard`
+` .private_reference/legacy/CVF_PROVIDER_INTELLIGENCE`
 
 The leading space above is intentional to avoid bare ignored-directory gate
 matching in this handoff prose; use the actual path without the leading space
@@ -75,28 +74,29 @@ when reading the source bundle.
 
 ## Next Allowed Move
 
-Author AECG-T1 GC-018 for source-verified Agent Engineering Control triage and
-CodeGraph delta adaptation.
+Author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane
+reconciliation.
 
 Required boundaries:
 
-- Keep prior CGE-T1/CGE-T2 CodeGraph decisions binding.
-- Do not reopen CodeGraph runtime, MCP wiring, watcher/daemon, benchmark,
-  package activation, public-sync, or production-readiness claims.
-- Treat the Agent Engineering Control folder as source material only; adapt
-  useful concepts into CVF's existing guard and roadmap form instead of
+- Treat `CVF_PROVIDER_INTELLIGENCE` as source material only; adapt useful
+  concepts into CVF-owned Model Gateway/provider-lane references instead of
   importing the package directly.
-- Keep runtime/provider/live/public-sync/adapter/package/MPI-T6, merge
-  automation, hook repair, and checker implementation parked unless a fresh
+- Map provider intelligence to existing ProviderRegistry, ProviderHealthMonitor,
+  DynamicModelRegistryContract, GatewayReceipt, MCP bridge, and provider lane
+  readiness surfaces before any new owner surface is proposed.
+- Do not reopen OpenRouter dependency, provider/live proof, MCP production
+  routing, benchmark campaign, cost/latency measurement, automatic model
+  selection, public-sync, or checker implementation unless a fresh
   GC-018/source-verification packet authorizes them.
 
 ## Parked Checkpoint
 
-AECG-T0 is a roadmap and triage-selection commit only. It does not implement
-runtime behavior, provider/live proof, CodeGraph install/init, MCP integration,
-watcher/daemon adoption, merge automation, hook repair, package activation,
-certification, checker implementation, public export, or generated aggregates
-beyond active-session sync.
+PINT-T0 is a roadmap and reconciliation-selection commit only. It does not
+implement runtime behavior, provider/live proof, OpenRouter integration, MCP
+production routing, benchmark/cost/latency measurement, automatic model
+selection, package activation, certification, checker implementation, public
+export, or generated aggregates beyond active-session sync.
 
 TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/
 provenance-label enforcement candidates remain parked behind their recorded
@@ -104,11 +104,12 @@ reopen conditions.
 
 ## Claim Boundary
 
-This handoff may be cited only as session-continuity evidence for the AECG-T0
-roadmap and V25-to-V26 handoff rotation. It is not final proof that the Agent
-Engineering Control source bundle has been fully absorbed, and it is not
-runtime, provider/live, public-sync, package, MCP, watcher/daemon, merge
-automation, hook repair, checker, or production-readiness evidence.
+This handoff may be cited only as session-continuity evidence for the PINT-T0
+roadmap and active-session routing state. It is not final proof that the
+Provider Intelligence source bundle has been fully absorbed, and it is not
+runtime, provider/live, public-sync, package, MCP production routing,
+OpenRouter dependency, benchmark/cost/latency measurement, automatic
+model-selection, checker, or production-readiness evidence.
 
 Verification for this batch must come from the active-session generator,
 session-mode, next-move freshness, core-guard self-protection, governed
@@ -237,3 +238,45 @@ runtime, provider/live proof, public-sync export, CodeGraph install/init, MCP
 wiring, watcher/daemon, merge automation, hook repair, package activation,
 certification, checker implementation, generated aggregate beyond session
 sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - PINT-T0 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+PINT-T0 material roadmap commit `658bc76d` so the front door, generated state
+sources, generated aggregates, bootstrap read model, and active handoff all
+point to PINT-T1 source-verified Model Gateway/provider-lane reconciliation as
+the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/pintT0ProviderIntelligenceRoadmap20260628.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator instructed Codex to continue with folder
+`CVF_PROVIDER_INTELLIGENCE`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert PINT-T0 material commit `658bc76d`, AECG
+material commits `7701abb8` and `edee01a0`, or earlier TKG/EverOS/PRG/FPC
+commits.
+
+## GC-020 Marker - PINT-T0 Provider Intelligence Roadmap Commit
+
+Material commit `658bc76d` added
+`docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap audits the operator-provided `CVF_PROVIDER_INTELLIGENCE` folder,
+moves it to ignored legacy reference storage, rejects direct package and
+prototype-checker import, and selects PINT-T1 source-verified reconciliation as
+the next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed PINT-T0 roadmap. It does not implement runtime, provider/live
+proof, public-sync export, OpenRouter integration, MCP production routing,
+benchmark campaign, cost/latency measurement, automatic model selection,
+package activation, certification, checker implementation, generated aggregate
+beyond session sync, or production/hosted readiness.

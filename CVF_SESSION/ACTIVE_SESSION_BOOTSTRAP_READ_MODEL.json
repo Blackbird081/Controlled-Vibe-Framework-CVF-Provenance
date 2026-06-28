@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection",
+  "currentMode": "pint_t0_provider_intelligence_absorption_roadmap_ready_for_t1_source_verified_reconciliation",
   "activeHandoff": "AGENT_HANDOFF_V26_2026-06-28.md",
-  "nextAllowedMove": "AECG-T1 through AECG-T3 closed the CodeGraph and Agent Engineering Control external absorption roadmap at material commit 7701abb8. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator-selected next external absorption lane. AECG is closed bounded with decision CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW; CodeGraph prior CGE-T1/T2 boundaries remain binding; no CodeGraph runtime/MCP/watcher/daemon/benchmark adoption, AEC package import, merge automation, hook repair, public-sync, provider/live proof, checker implementation, adapter/package/MPI-T6 runtime, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions.",
+  "nextAllowedMove": "PINT-T0 Provider Intelligence external absorption roadmap was added at material commit 658bc76d. LHW24 remains the latest closed numbered LHW wave. Next allowed move: author PINT-T1 GC-018 for source-verified Model Gateway/provider-lane reconciliation. PINT-T0 keeps CVF_PROVIDER_INTELLIGENCE as external source input only under .private_reference/legacy; no direct package, prototype checker, OpenRouter dependency, provider/live proof, MCP production routing, benchmark campaign, cost/latency measurement, automatic model-selection behavior, public-sync, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
