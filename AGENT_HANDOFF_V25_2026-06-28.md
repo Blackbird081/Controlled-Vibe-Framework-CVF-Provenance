@@ -754,3 +754,40 @@ runtime, database, vector store, embeddings, rerank, watcher, daemon,
 generated aggregate, checker, provider/live proof, public-sync mutation,
 adapter activation, package activation, certification, route-side federation,
 OME runtime, or MPI-T6 runtime.
+
+## Core Guard Self-Protection Authorization - EVEROS-T2 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+owner-surface reconciliation commit `c18656e4` so GC-020 active-session
+compatibility recognizes the current HEAD after EVEROS-T2 memory foundation
+owner-surface reconciliation.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved continuing the EverOS absorption
+lane after EVEROS-T1. EVEROS-T2 stayed documentation-only and selected a
+future source-derived memory claim guard plan candidate without implementing it.
+
+Rollback boundary: if this handoff marker is rejected, revert only this marker.
+Do not revert EVEROS-T2 material commit `c18656e4`, EVEROS-T1 handoff sync
+commit `4cff1ec6`, EVEROS-T1 material commit `5da8ea9e`, EVEROS-T0 handoff
+sync commit `8b506360`, or earlier PRG/FPC/session-sync commits.
+
+## GC-020 Marker - EVEROS-T2 Memory Foundation Owner Surface Reconciliation Commit
+
+Material commit `c18656e4` added the EVEROS-T2 memory foundation owner-surface
+reconciliation set. It created the stable matrix
+`docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md`,
+updated the memory foundation front door, and added paired GC-018, work order,
+and completion review artifacts. The matrix maps the EVEROS-T1 source-derived
+replay contract to existing CVF memory owner surfaces and recommends only a
+future `EVEROS-T3 Source-Derived Memory Claim Guard Plan`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed EVEROS-T2 reconciliation. It does not implement memory runtime,
+database, vector store, embeddings, rerank, watcher, daemon, generated
+aggregate, checker, provider/live proof, public-sync mutation, adapter
+activation, package activation, certification, route-side federation, OME
+runtime, or MPI-T6 runtime.
