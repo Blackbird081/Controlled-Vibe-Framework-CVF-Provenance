@@ -33,6 +33,7 @@ watcher, daemon, provider call, public surface, adapter, or MPI-T6 runtime.
 | Reference | Role |
 |---|---|
 | `CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | Canonical T1 contract for source surfaces, derived indexes, replay/rebuild, receipts, and timestamp discipline |
+| `CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md` | T2 reconciliation matrix mapping the T1 contract to existing CVF memory owner surfaces, current guards, and future checker candidates |
 
 ## Existing CVF Owner Surfaces
 
