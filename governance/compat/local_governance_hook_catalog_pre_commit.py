@@ -196,6 +196,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_fpc_parked_reopen_inventory.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "truth foundation claim guard",
+            ["python", "governance/compat/check_truth_foundation_claim_guard.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "ERH CI public-evaluation workflow chain",
             ["python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"],
         ),

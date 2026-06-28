@@ -113,6 +113,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_memory_access_claim.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "truth foundation claim guard",
+        ["python", "governance/compat/check_truth_foundation_claim_guard.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "raw memory release invariant",
         ["python", "governance/compat/check_raw_memory_release_invariant.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

@@ -229,6 +229,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "truth foundation claim guard",
+            "governance/compat/check_truth_foundation_claim_guard.py",
+            base,
+            head,
+        ),
+        _range_command(
             "raw memory release invariant",
             "governance/compat/check_raw_memory_release_invariant.py",
             base,
