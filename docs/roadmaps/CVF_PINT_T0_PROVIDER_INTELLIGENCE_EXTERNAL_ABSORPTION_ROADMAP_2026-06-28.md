@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_PINT_T1_SOURCE_VERIFIED_RECONCILIATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -29,7 +29,7 @@ Recommended next:
 Reviewed sources:
 
 - operator-provided external folder now retained under:
-  `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE`
+  `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE`
 - external-intake chain map:
   `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
 - current Model Gateway dynamic registry boundary:
@@ -119,7 +119,7 @@ authorize implementation.
 |---|---|
 | `git rev-parse --short HEAD` before material edit | `6d2f7635` |
 | local provider-intelligence folder status before move | untracked root external source folder |
-| retained external source path | `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE` |
+| retained external source path | `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE` |
 | external hash capture | recorded in External Artifact Hash Manifest |
 | expected changed set | this roadmap only |
 
@@ -137,17 +137,17 @@ authorize implementation.
 
 | Artifact | Source class | Commit or local source | SHA256 |
 |---|---|---|---|
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/README.md` | operator-provided folder | local external folder | `99B8EC829D0D8C7BC881F2371F8A62F0C02DF8FFD181125E6DA52374E6CC9783` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/00_SCOPE_AND_CLAIM_BOUNDARY.md` | operator-provided folder | local external folder | `BE35589C6659F6BDE6688478B7ACAF38C04FDC9F6B7EB28944447F02262C0DE7` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/03_PROVIDER_INTELLIGENCE_PLANE_SPEC.md` | operator-provided folder | local external folder | `8C0C982C53EF50514749AB3787274EF36D9A38AF19F2716060A3243319771E28` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/08_MODEL_SELECTION_DECISION_POLICY.md` | operator-provided folder | local external folder | `948BBADE6AF17FF15C7E256E73DE9BB2A922C63FE3305F1F63158ED718EF1D36` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/09_DEV_MCP_VS_PRODUCTION_API_BOUNDARY.md` | operator-provided folder | local external folder | `64A01A3A42FAE5D4209F96C7BF5185139DB82E75F353EF44F5E7B116AC5AD4B2` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/10_ROUTING_DECISION_RECEIPT_CONTRACT.md` | operator-provided folder | local external folder | `2FCD162ECFC701D231465F46C1D1933456E8782D543CF9202970A126879F09AE` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/11_COST_LATENCY_QUALITY_RECEIPT_SCHEMA.md` | operator-provided folder | local external folder | `A56E2E1C5137160C73DD8636CD0D3C179BE069B398FA3C0DE26705D821F95663` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/13_ROADMAP_AND_ACCEPTANCE_CRITERIA.md` | operator-provided folder | local external folder | `6826617A06C8740B766D5D740F7100DC7A98777C5BB28B5B1F82F719866F507A` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/governance/compat/check_provider_intelligence_claim_boundary.py` | operator-provided folder | local external folder | `E695B6783D962648BE8A5A28D08D30BA1414CCDD7077FF6256A64CDA43AE3586` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/governance/compat/check_model_selection_receipt_schema.py` | operator-provided folder | local external folder | `3D567BB1182FBACFD0EBC0977392C81C03D925C52B64765A8CAB9EB2B9C664D2` |
-| `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/governance/compat/check_dev_mcp_vs_production_api_boundary.py` | operator-provided folder | local external folder | `40778CDF09A58D6081566B696FBE057F8807DDDC6D7AB63755AB98A2124CBCCB` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/README.md` | operator-provided folder | local external folder | `99B8EC829D0D8C7BC881F2371F8A62F0C02DF8FFD181125E6DA52374E6CC9783` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/00_SCOPE_AND_CLAIM_BOUNDARY.md` | operator-provided folder | local external folder | `BE35589C6659F6BDE6688478B7ACAF38C04FDC9F6B7EB28944447F02262C0DE7` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/03_PROVIDER_INTELLIGENCE_PLANE_SPEC.md` | operator-provided folder | local external folder | `8C0C982C53EF50514749AB3787274EF36D9A38AF19F2716060A3243319771E28` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/08_MODEL_SELECTION_DECISION_POLICY.md` | operator-provided folder | local external folder | `948BBADE6AF17FF15C7E256E73DE9BB2A922C63FE3305F1F63158ED718EF1D36` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/09_DEV_MCP_VS_PRODUCTION_API_BOUNDARY.md` | operator-provided folder | local external folder | `64A01A3A42FAE5D4209F96C7BF5185139DB82E75F353EF44F5E7B116AC5AD4B2` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/10_ROUTING_DECISION_RECEIPT_CONTRACT.md` | operator-provided folder | local external folder | `2FCD162ECFC701D231465F46C1D1933456E8782D543CF9202970A126879F09AE` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/11_COST_LATENCY_QUALITY_RECEIPT_SCHEMA.md` | operator-provided folder | local external folder | `A56E2E1C5137160C73DD8636CD0D3C179BE069B398FA3C0DE26705D821F95663` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/13_ROADMAP_AND_ACCEPTANCE_CRITERIA.md` | operator-provided folder | local external folder | `6826617A06C8740B766D5D740F7100DC7A98777C5BB28B5B1F82F719866F507A` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/governance/compat/check_provider_intelligence_claim_boundary.py` | operator-provided folder | local external folder | `E695B6783D962648BE8A5A28D08D30BA1414CCDD7077FF6256A64CDA43AE3586` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/governance/compat/check_model_selection_receipt_schema.py` | operator-provided folder | local external folder | `3D567BB1182FBACFD0EBC0977392C81C03D925C52B64765A8CAB9EB2B9C664D2` |
+| `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE/governance/compat/check_dev_mcp_vs_production_api_boundary.py` | operator-provided folder | local external folder | `40778CDF09A58D6081566B696FBE057F8807DDDC6D7AB63755AB98A2124CBCCB` |
 
 ## Source Verification Block
 
@@ -176,7 +176,7 @@ authorize implementation.
 | Direct `EXTENSIONS/CVF_PROVIDER_INTELLIGENCE` package import would duplicate Model Gateway | extension docs plus current Model Gateway surfaces | REJECT_DIRECT_IMPORT |
 | Best next move is source-verified reconciliation before any contract/checker/runtime work | combined audit | PINT_T1_READY |
 
-Decision: `ROADMAP_READY_FOR_PINT_T1_SOURCE_VERIFIED_RECONCILIATION`
+Decision: `CLOSE_PINT_ABSORPTION_LANE_NO_CHECKER_NOW`
 
 ## Absorption Classification
 
@@ -202,11 +202,11 @@ Decision: `ROADMAP_READY_FOR_PINT_T1_SOURCE_VERIFIED_RECONCILIATION`
 
 | Tranche | Status | Objective | Boundary |
 |---|---|---|---|
-| PINT-T0 | ROADMAP_READY_FOR_PINT_T1_SOURCE_VERIFIED_RECONCILIATION | audit folder, move it to legacy storage, and select next move | documentation-only |
-| PINT-T1 | RECOMMENDED_NEXT | author GC-018 and source-verified reconciliation matrix mapping provider-intelligence concepts to Model Gateway/provider-lane owner surfaces | no runtime/checker/import |
-| PINT-T2 | PARKED | promote the high-value subset into one CVF-owned provider-intelligence claim-boundary and receipt-advisory reference | requires PINT-T1 closure |
-| PINT-T3 | PARKED | decide whether one static checker candidate is worth implementing | requires PINT-T2 and repeated overclaim or clear value |
-| PINT-RUNTIME | PARKED | live catalog snapshot, provider-health fetcher, OpenRouter/provider adapter, benchmark/cost/latency measurement, automatic model selection | fresh operator authorization, GC-018, source verification, live proof, and secret/quota plan |
+| PINT-T0 | CLOSED_PASS_BOUNDED | audit folder, move it to legacy storage, and select next move | documentation-only |
+| PINT-T1 | CLOSED_PASS_BOUNDED | author GC-018 and source-verified reconciliation matrix mapping provider-intelligence concepts to Model Gateway/provider-lane owner surfaces | no runtime/checker/import |
+| PINT-T2 | CLOSED_PASS_BOUNDED | promote the high-value subset into one CVF-owned provider-intelligence claim-boundary and receipt-advisory reference | reference only |
+| PINT-T3 | CLOSED_PASS_BOUNDED | decide whether one static checker candidate is worth implementing | no checker now; reopen only after repeated misses |
+| PINT-RUNTIME | PARKED | live catalog snapshot, provider-health fetcher, OpenRouter/provider adapter, benchmark/cost/latency measurement, automatic model selection | fresh governed authorization, GC-018, source verification, live proof, and secret/quota plan |
 
 ## Risk / Corrective Action
 
@@ -275,7 +275,7 @@ public provider-intelligence claims require a separate public-sync decision.
 | Session or invocation | `pint-t0-provider-intelligence-external-absorption-2026-06-28` |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, rg, Get-Content, Get-FileHash, Move-Item, apply_patch, governance gates |
-| Target paths | `docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`; `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE` |
+| Target paths | `docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`; `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE` |
 | Allowed scope source | operator requested continuing with folder `CVF_PROVIDER_INTELLIGENCE` |
 | Before status evidence | baseHead `6d2f7635`; worktree had untracked root `CVF_PROVIDER_INTELLIGENCE/` before move |
 | After status evidence | PINT-T0 roadmap created and external folder moved to legacy reference storage |
@@ -287,7 +287,7 @@ public provider-intelligence claims require a separate public-sync decision.
 | Expected manifest | this roadmap only; external folder retained under ignored legacy reference storage |
 | Actual changed set | this roadmap only |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | operator-provided external folder moved from root to `.private_reference/legacy/CVF_PROVIDER_INTELLIGENCE` |
+| Deletion or rename disposition | operator-provided external folder moved from root to `.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE` |
 
 ## Claim Boundary
 
@@ -297,3 +297,32 @@ market API routing, production MCP routing, live catalog lookup, provider
 benchmarking, automatic best-model selection, cost/latency optimization,
 provider parity, public-sync export, checker enforcement, package activation,
 certification, generated aggregate mutation, or production/hosted readiness.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: direct single-agent source-verification, reference, and closeout tranche | N/A with reason | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_PINT_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| PINT-T1 source-verified reconciliation | `docs/baselines/CVF_GC018_PINT_T1_SOURCE_VERIFIED_PROVIDER_INTELLIGENCE_RECONCILIATION_2026-06-28.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| PINT-T2 provider-intelligence reference | `docs/reference/CVF_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_2026-06-28.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| PINT-T3 checker value decision | `docs/reviews/CVF_PINT_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | `Decision: CLOSE_PINT_ABSORPTION_LANE_NO_CHECKER_NOW` | PASS |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation is authorized | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation is authorized | no registry path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: PINT-T0 hash manifest and PINT-T1 path correction record external source evidence | External Artifact Hash Manifest; PINT-T1 Source Path Correction | N/A with reason |
+| System loop interlock | N/A with reason: local documentation/reference closeout only | Claim Boundary | N/A with reason |
+| Runtime lane | `PINT-RUNTIME` row | `PARKED` | PASS |
+| Public sync | N/A with reason: no public-sync authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
+| Runtime/live proof | N/A with reason: no runtime/provider governance behavior claimed | no live run required | N/A with reason |
+| Session continuity | active session/front-door sync planned after material commit | separate session-sync commit required | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| PINT-Q1 | roadmap status | N/A with reason: Markdown status line | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
+| PINT-Q2 | T1 baseline | N/A with reason: Markdown artifact | source-verified reconciliation present | present | PASS |
+| PINT-Q3 | T2 reference | N/A with reason: Markdown artifact | claim-boundary and receipt-advisory reference present | present | PASS |
+| PINT-Q4 | T3 closeout | N/A with reason: Markdown artifact | no-checker-now decision present | present | PASS |
+| PINT-Q5 | runtime boundary | N/A with reason: roadmap row | runtime lane parked | parked | PASS |
