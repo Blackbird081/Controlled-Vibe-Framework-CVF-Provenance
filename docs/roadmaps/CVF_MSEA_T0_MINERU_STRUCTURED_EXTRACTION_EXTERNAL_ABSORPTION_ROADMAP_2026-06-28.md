@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_MSEA_T1_SOURCE_VERIFIED_RECONCILIATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -20,10 +20,10 @@ folder out of the repository root into legacy reference storage, and select the
 next governed CVF tranche.
 
 Decision:
-`OPEN_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION`
+`CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW`
 
 Recommended next:
-`AUTHOR_MSEA_T1_GC018_FOR_DOCUMENT_EXTRACTION_RECONCILIATION_AND_GATEWAY_ADAPTATION`
+`SELECT_NEXT_EXTERNAL_ABSORPTION_LANE_OR_OPEN_FRESH_MSEA_RUNTIME_GC018_IF_REOPEN_CONDITIONS_ARE_MET`
 
 ## Target / Source
 
@@ -72,10 +72,10 @@ Operator authorization: continue the existing external-absorption rule for
 `CVF MinerU Structured Extraction Adapter/` folder.
 
 Roadmap decision:
-`OPEN_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION`
+`CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW`
 
-This authorizes only this roadmap and next-tranche selection. It does not
-authorize implementation.
+This closes the bounded MSEA documentation/reference absorption lane after
+MSEA-T1/T2/T3. It does not authorize implementation.
 
 ## Non-Goals
 
@@ -200,7 +200,7 @@ authorize implementation.
 | Best next move is a source-verified reconciliation before any reference, checker, or adapter implementation | combined audit | MSEA_T1_READY |
 
 Decision:
-`ROADMAP_READY_FOR_MSEA_T1_SOURCE_VERIFIED_RECONCILIATION`
+`CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW`
 
 ## Absorption Classification
 
@@ -224,10 +224,10 @@ Decision:
 
 | Tranche | Status | Objective | Boundary |
 |---|---|---|---|
-| MSEA-T0 | ROADMAP_READY_FOR_MSEA_T1_SOURCE_VERIFIED_RECONCILIATION | audit upstream MinerU and copied adapter folder, move folder to legacy storage, and select next move | documentation-only |
-| MSEA-T1 | PROPOSED | author GC-018 and source-verified reconciliation matrix mapping MinerU/external-adapter concepts to CVF Extraction Foundation, corpus, RAG, and receipt owner surfaces | no runtime/checker/import |
-| MSEA-T2 | PROPOSED | promote the highest-value subset into one CVF-owned document extraction claim-boundary, receipt, quality, and RAG-handoff advisory reference | reference only |
-| MSEA-T3 | PROPOSED | decide whether one static checker candidate is worth implementing, likely document-extraction overclaim vocabulary | no checker unless repeated miss or strong low-cost value |
+| MSEA-T0 | CLOSED_PASS_BOUNDED | audit upstream MinerU and copied adapter folder, move folder to legacy storage, and select next move | documentation-only |
+| MSEA-T1 | CLOSED_PASS_BOUNDED | author GC-018 and source-verified reconciliation matrix mapping MinerU/external-adapter concepts to CVF Extraction Foundation, corpus, RAG, and receipt owner surfaces | no runtime/checker/import |
+| MSEA-T2 | CLOSED_PASS_BOUNDED | promote the highest-value subset into one CVF-owned document extraction claim-boundary, receipt, quality, and RAG-handoff advisory reference | reference only |
+| MSEA-T3 | CLOSED_PASS_BOUNDED | decide whether one static checker candidate is worth implementing | no checker now; reopen only on concrete conditions |
 | MSEA-RUNTIME | PARKED | MinerU install, model download, CLI/API/router invocation, sample corpus run, OCR/VLM/hybrid execution, receipt samples, quality reports, RAG handoff tests | fresh governed authorization, source verification, dependency/license review, security/privacy plan, sample corpus, and reproducible proof |
 
 ## Risk / Corrective Action
@@ -251,8 +251,8 @@ Decision:
 | Chain map route | External repo or copied folder -> Root/folder lifecycle classification plus absorption map when retained -> CVF-owned reconciliation roadmap -> fresh GC-018/work order only if implementation is separately authorized |
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
 | Owner surface | `docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` |
-| Disposition | ADAPT selected MinerU and external-adapter concepts into an MSEA-T1 source-verified Extraction Foundation reconciliation matrix |
-| Claim boundary | external repo and copied folder are source input only; MSEA-T0 creates no runtime, package, public, provider, OCR, adapter, RAG, document-truth, production, or checker support |
+| Disposition | CLOSED selected MinerU and external-adapter concepts through MSEA-T1 reconciliation, MSEA-T2 reference, and MSEA-T3 no-checker-now closeout |
+| Claim boundary | external repo and copied folder are source input only; MSEA creates no runtime, package, public, provider, OCR, adapter, RAG index, document-truth, production, or checker support |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -300,17 +300,17 @@ decision and claim-boundary review.
 | Session or invocation | `msea-t0-mineru-structured-extraction-external-absorption-2026-06-28` |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, git clone, rg, Get-Content, Get-FileHash, Move-Item, apply_patch, governance gates |
-| Target paths | `docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`; `.private_reference/external_repos/MinerU`; `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter` |
-| Allowed scope source | operator requested continuing with `opendatalab/MinerU` and folder `CVF MinerU Structured Extraction Adapter` |
-| Before status evidence | baseHead `47c1720c`; worktree had untracked root `CVF MinerU Structured Extraction Adapter/` before move |
-| After status evidence | MSEA-T0 roadmap created and external folder moved to legacy reference storage |
-| Diff evidence | `git diff --name-status 47c1720c..HEAD` |
-| Approval boundary | external absorption roadmap, source-boundary selection, and root folder hygiene only |
+| Target paths | MSEA-T1 baseline, MSEA-T2 reference, MSEA-T3 closeout, MSEA-T0 roadmap update |
+| Allowed scope source | operator instruction to finish the roadmap |
+| Before status evidence | baseHead `8790a502`; worktree clean before material patch |
+| After status evidence | MSEA-T1/T2/T3 artifacts authored and MSEA-T0 closure updated |
+| Diff evidence | `git diff --name-status 8790a502 --` |
+| Approval boundary | external absorption documentation/reference/closeout only |
 | Claim boundary | no runtime, OCR/provider/live, MinerU install, model download, VLM/hybrid route, remote backend, API/router/Gradio service, RAG index write, public-sync, checker, generated aggregate, adapter implementation, package activation, certification, extraction accuracy, document-truth, or production/hosted readiness |
 | Agent type | single-agent reviewer/closer |
 | Invocation ID | `msea-t0-mineru-structured-extraction-absorption-2026-06-28` |
-| Expected manifest | this roadmap only; external repo clone and copied folder retained under ignored private reference storage |
-| Actual changed set | this roadmap only |
+| Expected manifest | `docs/baselines/CVF_GC018_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION_2026-06-28.md`; `docs/reference/CVF_MSEA_T2_DOCUMENT_EXTRACTION_CLAIM_BOUNDARY_RECEIPT_QUALITY_AND_RAG_HANDOFF_ADVISORY_2026-06-28.md`; `docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`; `docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION_2026-06-28.md`; `docs/reference/CVF_MSEA_T2_DOCUMENT_EXTRACTION_CLAIM_BOUNDARY_RECEIPT_QUALITY_AND_RAG_HANDOFF_ADVISORY_2026-06-28.md`; `docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`; `docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | operator-provided external folder moved from root to `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter/` |
 
@@ -323,3 +323,32 @@ RAG indexing, document QA, document truth verification, parser accuracy,
 table/formula correctness, public-sync export, checker enforcement, package
 activation, certification, generated aggregate mutation, or production/hosted
 readiness.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: direct single-agent roadmap/reference/closeout tranche | N/A with reason | N/A with reason |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 status | `docs/baselines/CVF_GC018_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION_2026-06-28.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Reference artifact | `docs/reference/CVF_MSEA_T2_DOCUMENT_EXTRACTION_CLAIM_BOUNDARY_RECEIPT_QUALITY_AND_RAG_HANDOFF_ADVISORY_2026-06-28.md` | `Status: ACTIVE_REFERENCE` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Checker implementation | N/A with reason: MSEA-T3 decides no checker now | no checker path changed | N/A with reason |
+| Checker tests | N/A with reason: no checker implementation | no test path changed | N/A with reason |
+| Registry JSON | BLOCKED with reason: no registry JSON mutation is authorized | no registry path changed | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no registry Markdown mutation is authorized | no registry path changed | BLOCKED with reason |
+| External evidence digest | N/A with reason: MSEA-T0 hash manifest and MSEA-T1 source verification record external source evidence | MSEA-T0 and MSEA-T1 | N/A with reason |
+| System loop interlock | N/A with reason: local documentation closeout only | Claim Boundary | N/A with reason |
+| Public sync | N/A with reason: no public-sync is authorized | no public paths changed | N/A with reason |
+| Runtime/live proof | N/A with reason: no runtime/parser/provider governance behavior is claimed | no live run required | N/A with reason |
+| Session continuity | active session/front-door sync planned after material commit | separate session-sync commit required | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| lane decision | `CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW` | PASS |
+| absorbed surfaces | MSEA-T1 and MSEA-T2 present | PASS |
+| remaining candidates | concrete reopen conditions recorded in MSEA-T3 | PASS |
+| public export | `DEFERRED_PRIVATE_ONLY` | PASS |
+| runtime/live proof | N/A with reason: no runtime/parser/provider governance behavior is asserted | N/A with reason |
