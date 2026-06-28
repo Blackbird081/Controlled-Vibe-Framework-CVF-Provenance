@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018",
+  "currentMode": "aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection",
   "activeHandoff": "AGENT_HANDOFF_V26_2026-06-28.md",
-  "nextAllowedMove": "AECG-T0 CodeGraph and Agent Engineering Control external absorption roadmap was added at material commit edee01a0. LHW24 remains the latest closed numbered LHW wave. Next allowed move: author AECG-T1 GC-018 for source-verified Agent Engineering Control triage and CodeGraph delta adaptation. CodeGraph prior CGE-T1/T2 boundaries remain binding: no CodeGraph runtime/MCP/watcher/daemon/benchmark adoption is reopened by AECG-T0. The Agent Engineering Control folder is source input only under .private_reference/legacy; do not import it directly. Runtime/provider/live/public-sync/adapter/package/MPI-T6, merge automation, hook repair, and checker implementation remain parked unless separately authorized through fresh GC-018/source verification and live proof when behavior is claimed.",
+  "nextAllowedMove": "AECG-T1 through AECG-T3 closed the CodeGraph and Agent Engineering Control external absorption roadmap at material commit 7701abb8. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator-selected next external absorption lane. AECG is closed bounded with decision CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW; CodeGraph prior CGE-T1/T2 boundaries remain binding; no CodeGraph runtime/MCP/watcher/daemon/benchmark adoption, AEC package import, merge automation, hook repair, public-sync, provider/live proof, checker implementation, adapter/package/MPI-T6 runtime, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

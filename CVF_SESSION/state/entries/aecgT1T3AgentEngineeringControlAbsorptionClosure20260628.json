@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1304,
+  "stateKey": "aecgT1T3AgentEngineeringControlAbsorptionClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "7701abb8",
+    "roadmap": "docs/roadmaps/CVF_AECG_T0_CODEGRAPH_AGENT_ENGINEERING_CONTROL_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md",
+    "gc018": "docs/baselines/CVF_GC018_AECG_T1_SOURCE_VERIFIED_AGENT_ENGINEERING_CONTROL_TRIAGE_2026-06-28.md",
+    "reference": "docs/reference/CVF_AECG_T2_AGENT_ENGINEERING_CONTROL_OWNER_SURFACE_MATRIX_2026-06-28.md",
+    "closeout": "docs/reviews/CVF_AECG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md",
+    "decision": "CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW",
+    "nextAllowedMove": "OPERATOR_SELECTED_NEXT_EXTERNAL_ABSORPTION_LANE",
+    "summary": "AECG-T1 source-verified the Agent Engineering Control and CodeGraph delta candidates, AECG-T2 promoted the high-value subset into a CVF-owned owner-surface matrix, and AECG-T3 closed the lane with no static checker now. Runtime/MCP/watcher/daemon, AEC package import, merge automation, hook repair, public-sync, provider/live proof, checker implementation, and adapter/package/runtime work remain parked behind explicit reopen conditions."
+  }
+}

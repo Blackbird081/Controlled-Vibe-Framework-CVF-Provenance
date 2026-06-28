@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author AECG-T1 GC-018 for source-verified Agent Engineering Control triage and CodeGraph delta adaptation; parked checkpoint=AECG-T0 roadmap is ready at material commit `edee01a0`, CodeGraph prior CGE-T1/T2 boundaries remain binding, the operator-provided Agent Engineering Control folder is retained under `.private_reference/legacy`, and runtime/MCP/watcher/daemon/merge automation/hook repair/package import remain parked behind fresh GC-018 and source verification.
+Startup acknowledged: current mode=`aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator-selected next external absorption lane; parked checkpoint=AECG-T1 through T3 closed bounded at material commit `7701abb8` with decision `CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW`, CodeGraph prior CGE-T1/T2 boundaries remain binding, and runtime/MCP/watcher/daemon/merge automation/hook repair/package import remain parked behind fresh GC-018 and source verification.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`aecg_t0_codegraph_agent_engineering_control_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material roadmap | `edee01a0` AECG-T0 CodeGraph and Agent Engineering Control external absorption roadmap |
+| Latest material closure | `7701abb8` AECG-T1 through T3 Agent Engineering Control absorption closeout |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`
+`aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
 ## Purpose
 
@@ -192,5 +192,48 @@ This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 the committed AECG-T0 session-sync batch. It does not implement runtime,
 provider/live proof, public-sync export, CodeGraph install/init, MCP wiring,
 watcher/daemon, merge automation, hook repair, package activation,
+certification, checker implementation, generated aggregate beyond session
+sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AECG-T1-T3 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AECG-T1 through T3 material closeout commit `7701abb8` so the front door,
+generated state sources, generated aggregates, bootstrap read model, and active
+handoff all point to the closed AECG lane and the next operator-selected
+external absorption boundary.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/aecgT1T3AgentEngineeringControlAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator instructed Codex to finish the AECG
+roadmap.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AECG-T1 through T3 material commit
+`7701abb8`, AECG-T0 material commit `edee01a0`, or earlier TKG/EverOS/PRG/FPC
+commits.
+
+## GC-020 Marker - AECG-T1-T3 Agent Engineering Control Closeout Commit
+
+Material commit `7701abb8` added
+`docs/baselines/CVF_GC018_AECG_T1_SOURCE_VERIFIED_AGENT_ENGINEERING_CONTROL_TRIAGE_2026-06-28.md`,
+`docs/reference/CVF_AECG_T2_AGENT_ENGINEERING_CONTROL_OWNER_SURFACE_MATRIX_2026-06-28.md`,
+and
+`docs/reviews/CVF_AECG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`,
+and updated the AECG-T0 roadmap to `CLOSED_PASS_BOUNDED`. The lane decision is
+`CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AECG-T1 through T3 material closeout. It does not implement
+runtime, provider/live proof, public-sync export, CodeGraph install/init, MCP
+wiring, watcher/daemon, merge automation, hook repair, package activation,
 certification, checker implementation, generated aggregate beyond session
 sync, or production/hosted readiness.

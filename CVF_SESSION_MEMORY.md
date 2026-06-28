@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author AECG-T1 GC-018 for source-verified Agent Engineering Control triage and CodeGraph delta adaptation; parked checkpoint=AECG-T0 roadmap is ready at material commit `edee01a0`, CodeGraph prior CGE-T1/T2 boundaries remain binding, the operator-provided Agent Engineering Control folder is retained under `.private_reference/legacy`, and runtime/MCP/watcher/daemon/merge automation/hook repair/package import remain parked behind fresh GC-018 and source verification.
+Startup acknowledged: current mode=`aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator-selected next external absorption lane; parked checkpoint=AECG-T1 through T3 closed bounded at material commit `7701abb8` with decision `CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW`, CodeGraph prior CGE-T1/T2 boundaries remain binding, and runtime/MCP/watcher/daemon/merge automation/hook repair/package import remain parked behind fresh GC-018 and source verification.
 
 ## Current Mode
 
-Current mode marker: `aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`
+Current mode marker: `aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-Current mode: `aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`
+Current mode: `aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-`aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`
+`aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
 Previous mode:
 
-`tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
+`aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`
 
 ## Latest Closed Work
 
@@ -103,12 +103,13 @@ Previous mode:
 | FPC-FMS-T2 Current Registry Evidence Reconciliation | `9c6f43de` | ROADMAP_READY_FOR_OPERATOR_NEXT_LANE_DECISION; decision `HOLD_FOUNDATION_MAINTENANCE_NO_CURRENT_SOURCE_BACKED_GAP` |
 | Truth Foundation / TKG-T0-T5 external absorption lane | `6ce94464` | CLOSED_PASS_BOUNDED; checker wired at `79f26845`; decision `CLOSE_TKG_ABSORPTION_LANE_NO_NEXT_TRANCHE` |
 | Agent Engineering Control / AECG-T0 external absorption roadmap | `edee01a0` | ROADMAP_READY_FOR_AECG_T1_SOURCE_VERIFIED_TRIAGE |
+| Agent Engineering Control / AECG-T1-T3 absorption closeout | `7701abb8` | CLOSED_PASS_BOUNDED; decision `CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW` |
 
 ## Next Allowed Move
 
-Mode: `aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`
+Mode: `aecg_t1_t3_agent_engineering_control_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
-Next allowed move: author AECG-T1 GC-018 for source-verified Agent Engineering Control triage and CodeGraph delta adaptation. AECG-T0 roadmap was added at material commit `edee01a0` and selected `OPEN_AECG_T1_SOURCE_VERIFIED_AGENT_ENGINEERING_CONTROL_TRIAGE`. CodeGraph prior CGE-T1/T2 boundaries remain binding: no CodeGraph runtime/MCP/watcher/daemon/benchmark adoption is reopened by AECG-T0. The Agent Engineering Control folder is source input only under `.private_reference/legacy`; do not import it directly. Runtime/provider/live/public-sync/adapter/package/MPI-T6, merge automation, hook repair, and checker implementation remain parked unless separately authorized through fresh GC-018/source verification and live proof when behavior is claimed. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: operator-selected next external absorption lane. AECG-T1 through AECG-T3 closed the CodeGraph and Agent Engineering Control external absorption roadmap at material commit `7701abb8`. AECG is closed bounded with decision `CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW`. CodeGraph prior CGE-T1/T2 boundaries remain binding. No CodeGraph runtime/MCP/watcher/daemon/benchmark adoption, AEC package import, merge automation, hook repair, public-sync, provider/live proof, checker implementation, adapter/package/MPI-T6 runtime, or generated aggregate mutation is authorized unless a fresh GC-018 satisfies the recorded reopen conditions. LHW24 remains the latest closed numbered LHW wave.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -116,19 +117,18 @@ No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resol
 
 ## Parked Checkpoint
 
-FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T0 added the CodeGraph and Agent Engineering Control absorption roadmap at material commit `edee01a0`; AECG-T1 GC-018 authoring is the next allowed move. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, and direct AEC package import remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T1 through T3 closed the CodeGraph and Agent Engineering Control absorption roadmap at material commit `7701abb8`; no AECG checker is implemented now. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, and direct AEC package import remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Knowledge Absorption Priority Boundary
 
 Broad external knowledge absorption remains a governed, trigger-based lane.
-AECG-T0 is the current selected absorption roadmap. The next move is AECG-T1
-source-verified triage/adaptation for Agent Engineering Control and CodeGraph
-delta only. Current blocked work classes include runtime/provider/live
+AECG-T1 through AECG-T3 are closed bounded. The next move is operator-selected
+external absorption. AECG must not be re-proposed unless a recorded reopen
+condition is met. Current blocked work classes include runtime/provider/live
 expansion, public-sync content mutation, downstream use-case work, registry
-mutation, checker implementation outside an authorized static guard, merge
-automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC
-package import, and MPI-T6 runtime work unless separately authorized by fresh
-GC-018/source-verified work order.
+mutation, checker implementation, merge automation, hook repair, CodeGraph
+runtime/MCP/watcher/daemon, direct AEC package import, and MPI-T6 runtime work
+unless separately authorized by fresh GC-018/source-verified work order.
 
 ## Continuity Markers
 
