@@ -2,12 +2,12 @@
   "stateOrder": 1305,
   "stateKey": "pintT0ProviderIntelligenceRoadmap20260628",
   "value": {
-    "status": "ROADMAP_READY_FOR_PINT_T1_SOURCE_VERIFIED_RECONCILIATION",
+    "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "658bc76d",
     "roadmap": "docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md",
     "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE",
-    "decision": "OPEN_PINT_T1_SOURCE_VERIFIED_PROVIDER_INTELLIGENCE_RECONCILIATION",
-    "nextAllowedMove": "AUTHOR_PINT_T1_GC018_FOR_MODEL_GATEWAY_PROVIDER_INTELLIGENCE_RECONCILIATION",
-    "summary": "PINT-T0 audited the operator-provided provider-intelligence folder, moved it to legacy reference storage, rejected direct package/prototype-checker import, and selected PINT-T1 source-verified reconciliation against Model Gateway and provider-lane owner surfaces. Runtime/provider/live, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, checker implementation, and public-sync remain parked."
+    "decision": "CLOSE_PINT_ABSORPTION_LANE_NO_CHECKER_NOW",
+    "nextAllowedMove": "CLOSE_PINT_ABSORPTION_LANE_NO_CHECKER_NOW",
+    "summary": "PINT-T0 through PINT-T3 closed the Provider Intelligence absorption lane. PINT-T0 audited the operator-provided provider-intelligence folder, PINT-T1 reconciled it against Model Gateway and provider-lane owner surfaces, PINT-T2 promoted a CVF-owned claim-boundary and receipt-advisory reference, and PINT-T3 closed the lane with no checker now. Runtime/provider/live, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, checker implementation, and public-sync remain parked behind recorded reopen conditions."
   }
 }
