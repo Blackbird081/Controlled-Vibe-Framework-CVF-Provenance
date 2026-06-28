@@ -903,3 +903,42 @@ database, vector store, graph store, semantic index, embeddings, rerank,
 watcher, daemon, generated aggregate, checker, provider/live proof,
 public-sync mutation, adapter activation, package activation, certification,
 route-side federation, OME runtime, or MPI-T6 runtime.
+
+## Core Guard Self-Protection Authorization - TKG-T0 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+roadmap commit `036350d5` so GC-020 active-session compatibility recognizes
+the current HEAD after TKG-T0 agent-governance and Truth Kernel external
+absorption.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator requested continuing the prior external
+absorption rule for `microsoft/agent-governance-toolkit` and the
+operator-provided `CVF_Truth_Kernel_Patch/` folder. TKG-T0 stayed
+documentation-only and selected TKG-T1 source/provenance/verification contract
+authoring as the recommended next move.
+
+Rollback boundary: if this handoff marker is rejected, revert only this marker.
+Do not revert TKG-T0 material commit `036350d5`, EVEROS-T5 handoff sync commit
+`f928d6f0`, EVEROS-T5 material commit `37771016`, or earlier
+EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - TKG-T0 Agent Governance And Truth Kernel Absorption Commit
+
+Material commit `036350d5` added
+`docs/roadmaps/CVF_TKG_T0_AGENT_GOVERNANCE_TRUTH_KERNEL_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap accepts Truth Kernel as a source/provenance doctrine seed with
+runtime deferred, adapts selected AGT governance doctrine, rejects direct
+runtime/package import, and records TKG-T1 as the recommended next CVF-owned
+contract tranche.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed TKG-T0 roadmap. It does not implement AGT runtime governance,
+MCP gateway interception, hypervisor execution rings, SRE circuit breakers,
+Truth Kernel runtime, obligation registry runtime, evidence database, SOT
+index runtime, provider/live proof, public-sync export, CLI/MCP adapter,
+package activation, certification, generated aggregate, or production/hosted
+readiness.
