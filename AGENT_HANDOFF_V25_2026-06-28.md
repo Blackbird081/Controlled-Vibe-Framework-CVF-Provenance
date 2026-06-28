@@ -91,6 +91,15 @@ authorizes no registry, checker, runtime, provider/live, public-sync,
 downstream implementation, package, certification, generated-state, MPI-T6, or
 provenance-push work.
 
+Latest material roadmap: commit `efb45892` added PRG-T0 Product Spec External
+Package Absorption Roadmap. It accepts the operator-provided
+`CVF_Product_Requirement_Governance/` package as a PRG-T1 hardening seed,
+rejects direct AGPL code copying, preserves the external-source boundary, and
+selects `AUTHOR_PRG_T1_GC018_FOR_PACKAGE_PROMOTION_AND_VALIDATOR_FOUNDATION`
+as the next PRG move. It authorizes no runtime validator, generated registry,
+provider/live proof, public-sync, adapter, package activation, or
+certification.
+
 Prior material closure: commit `24726307` closed FPC-DSD-T1 Foundation
 Downstream Post-Public-Export Lane Selection Decision as
 `CLOSED_PASS_BOUNDED`.
@@ -202,6 +211,24 @@ Rollback boundary: if this session-sync is rejected, revert only the FMS-T2
 session-sync edits listed above. Do not revert material roadmap commit
 `9c6f43de`, prior material correction commit `7b0b4bc4`, material roadmap
 commit `ae37f05f`, public-sync commits, or previous FPC closures.
+
+## Core Guard Self-Protection Authorization - PRG-T0 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+roadmap commit `efb45892` so active-session compatibility recognizes the
+current HEAD after PRG-T0 product-spec external package absorption.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator accepted PRG-T1 as the next move and
+confirmed the root package was intentionally provided external-agent output.
+The handoff marker records the already-committed PRG-T0 material state only.
+
+Rollback boundary: if this handoff marker is rejected, revert only this marker.
+Do not revert material roadmap commit `efb45892` or prior FPC/session-sync
+commits.
 
 ## Core Guard Self-Protection Authorization - V25 Handoff Rotation
 
