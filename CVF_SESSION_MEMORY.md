@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_prg_t3_parked_reopen_gate_wiring_closed_pass_bounded_pending_prg_t4_fixture_coverage`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=FPC-PRG-T4 Fixture Coverage only; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, PRG-T0, PRG-T1, PRG-T2, and PRG-T3 are closed bounded through T3 material commit `f74f0b7a`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=fresh source-verified next roadmap/tranche selection only after checking recorded reopen condition and running the parked reopen inventory gate; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, PRG-T0, PRG-T1, PRG-T2, PRG-T3, and PRG-T4 are closed bounded through T4 material commit `aa0d1276`; public repo current for UAP comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Current Mode
 
-Current mode marker: `fpc_prg_t3_parked_reopen_gate_wiring_closed_pass_bounded_pending_prg_t4_fixture_coverage`
+Current mode marker: `fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`
 
-Current mode: `fpc_prg_t3_parked_reopen_gate_wiring_closed_pass_bounded_pending_prg_t4_fixture_coverage`
+Current mode: `fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`
 
-`fpc_prg_t3_parked_reopen_gate_wiring_closed_pass_bounded_pending_prg_t4_fixture_coverage`
+`fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`
 
 Previous mode:
 
-`fpc_prg_t2_parked_reopen_gate_checker_closed_pass_bounded_pending_prg_t3_gate_wiring`
+`fpc_prg_t3_parked_reopen_gate_wiring_closed_pass_bounded_pending_prg_t4_fixture_coverage`
 
 ## Latest Closed Work
 
@@ -98,12 +98,14 @@ Previous mode:
 | FPC-PRG-T1 Parked Reopen Condition Source Inventory | `ca60e1fd` | CLOSED_PASS_BOUNDED; decision `INVENTORY_REOPEN_CONDITIONS_BEFORE_CHECKER_IMPLEMENTATION` |
 | FPC-PRG-T2 Parked Reopen Gate Checker | `ec7e4057` | CLOSED_PASS_BOUNDED; decision `CHECKER_EXISTS_BEFORE_GATE_WIRING` |
 | FPC-PRG-T3 Parked Reopen Gate Wiring | `f74f0b7a` | CLOSED_PASS_BOUNDED; decision `CHECKER_WIRED_INTO_LOCAL_GATES` |
+| FPC-PRG-T4 Parked Reopen Fixture Coverage | `aa0d1276` | CLOSED_PASS_BOUNDED; decision `FOCUSED_FIXTURE_COVERAGE_COMPLETE` |
+| FPC-PRG-T5 Final Session/Front-Door Sync | current commit | CLOSED_PASS; final sync for PRG-T1-T5 chain |
 
 ## Next Allowed Move
 
-Mode: `fpc_prg_t3_parked_reopen_gate_wiring_closed_pass_bounded_pending_prg_t4_fixture_coverage`
+Mode: `fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`
 
-Next allowed move: FPC-PRG-T4 Fixture Coverage only. FPC-PRG-T3 is closed bounded at material commit `f74f0b7a`; T4 may expand focused unit tests for `governance/compat/check_fpc_parked_reopen_inventory.py` to cover wired-gate drift cases such as wrong lane ID, missing evidence fields, boundary flag drift, and forbidden-list drift. Final session/front-door sync is deferred to PRG-T5 after T4 closes. FPC-DSD-T1 remains closed bounded at material commit `24726307`; FPC-SCG-T8 remains closed bounded at material commit `e278c039`; FPC-UAP-T2 remains closed bounded at provenance material commit `be253923`; public-sync commit `04d88109317c780ceb2062a257c0e863e2379276` updated `README.md`, `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, and `docs/evidence/public-current-state-snapshot-2026-06-27.md`. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: open a fresh source-verified next roadmap/tranche selection only after checking the recorded reopen condition for the target lane and running `governance/compat/check_fpc_parked_reopen_inventory.py`. FPC-PRG-T1 through FPC-PRG-T5 parked reopen gate systemization is closed bounded through T4 material commit `aa0d1276` and this final session/front-door sync. The checker exists, is wired into autorun/pre-commit/reviewer-fast/pre-push catalogs, and has focused fixture coverage. No parked lane is selected for implementation by this chain. FPC-DSD-T1 remains closed bounded at material commit `24726307`; FPC-SCG-T8 remains closed bounded at material commit `e278c039`; FPC-UAP-T2 remains closed bounded at provenance material commit `be253923`; public-sync commit `04d88109317c780ceb2062a257c0e863e2379276` updated `README.md`, `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, and `docs/evidence/public-current-state-snapshot-2026-06-27.md`. LHW24 remains the latest closed numbered LHW wave.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -111,7 +113,7 @@ No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resol
 
 ## Parked Checkpoint
 
-FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a` and routes next work to PRG-T4 fixture coverage only. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, and MPI-T6 runtime work remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-PRG-T5 is this final session/front-door sync. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, and MPI-T6 runtime work remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Knowledge Absorption Priority Boundary
 
