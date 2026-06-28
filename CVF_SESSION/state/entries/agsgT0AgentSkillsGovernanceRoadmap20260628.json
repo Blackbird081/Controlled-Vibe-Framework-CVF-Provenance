@@ -8,7 +8,7 @@
     "upstreamRepo": "addyosmani/agent-skills",
     "upstreamCommit": "30e55cb",
     "upstreamClone": ".private_reference/external_repos/agent-skills",
-    "sourceFolder": ".private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack",
     "closureCommit": "66eb39ac",
     "decision": "CLOSE_AGSG_ABSORPTION_LANE_NO_CHECKER_NOW",
     "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",

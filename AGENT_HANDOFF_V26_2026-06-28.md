@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_dispatch_packet_hold_pending_executor`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator may dispatch the AGSG-BSH-T1 work order (`HOLD_PENDING_EXECUTOR`) to an executor to implement the scope-triggered presence checker, or select the next external repo/folder absorption target; parked checkpoint=AGSG-T1 through T3 closed at material commit `66eb39ac`; AGSG-BSH-T1 blind-spot hardening dispatch packet and ADIF-0014/ADIF-0015 recorded at material commit `5ae9cb9e`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/checker/adapter/public/provider/live/production-readiness claims remain parked behind AGSG-T3 reopen conditions and fresh governed authorization.
+Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_dispatch_packet_hold_pending_executor`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator may dispatch the AGSG-BSH-T1 work order (`HOLD_PENDING_EXECUTOR`) to an executor to implement the scope-triggered presence checker, or select the next external repo/folder absorption target; parked checkpoint=AGSG-T1 through T3 closed at material commit `66eb39ac`; AGSG-BSH-T1 blind-spot hardening dispatch packet and ADIF-0014/ADIF-0015 recorded at material commit `5ae9cb9e`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`, the 2026-06-28 retained external source folders are consolidated under `.private_reference/legacy/CVF 28.06/`, and runtime/plugin/command/persona/hook/checker/adapter/public/provider/live/production-readiness claims remain parked behind AGSG-T3 reopen conditions and fresh governed authorization.
 
 ## Current State
 
@@ -102,6 +102,8 @@ Required boundaries:
 
 - Treat AGSG-BSH-T1 as a dispatch packet for an offline governance checker,
   not as implemented checker evidence.
+- Treat retained 2026-06-28 external source folders as advisory input under
+  `.private_reference/legacy/CVF 28.06/`, not as CVF source of truth.
 - Executor scope is limited to the named checker, paired test/fixture, and
   hook-chain wiring in the AGSG-BSH-T1 work order.
 - Do not import Agent Skills plugin runtime, slash commands, personas, hooks,
@@ -473,7 +475,8 @@ Material commit `3776d5db` added
 `docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
 The roadmap audits current upstream `opendatalab/MinerU` at commit `3e60291`
 and the operator-provided MinerU Structured Extraction Adapter folder, moves
-the folder to `.private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter`,
+the retained folder is now consolidated at
+`.private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter`,
 rejects direct runtime/package/checker import, and selects MSEA-T1
 source-verified reconciliation as the next governed move.
 
@@ -519,7 +522,7 @@ Material commit `b7b31f4e` added
 The roadmap audits current upstream `addyosmani/agent-skills` at commit
 `30e55cb` and the operator-provided Agent Skills Governance Absorption Pack,
 moves the folder to
-`.private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack`,
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`,
 rejects direct plugin/runtime/command/persona/hook/checker import, and selects
 AGSG-T1 source-verified ASSF reconciliation as the next governed move.
 
@@ -638,3 +641,42 @@ Rollback boundary: if this session-sync batch is rejected, revert only the
 session-sync changes. Do not revert AGSG-BSH-T1 material commit `5ae9cb9e`,
 ADIF-0015 material commit `a8f45aa7`, AGSG-T1 through T3 material commit
 `66eb39ac`, or their prior session/handoff sync commits.
+
+## GC-020 Marker - AGSG-BSH-T1 Dispatch Session Sync Commit
+
+Session-sync commit `4adb18d1` updated active session continuity after the
+AGSG-BSH-T1 dispatch packet and ADIF-0015 record. It points the active front
+door, generated session state, bootstrap read model, and active handoff to
+AGSG-BSH-T1 `HOLD_PENDING_EXECUTOR` as the current governed next move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AGSG-BSH-T1 session-sync batch. It does not implement the planned
+presence checker, runtime, provider/live proof, public-sync export, or any
+AGSG-T3 reopen-gated capability.
+
+## Core Guard Self-Protection Authorization - Legacy Source Folder Consolidation Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after the
+operator consolidated the external repos/folders absorbed on 2026-06-28 under
+`.private_reference/legacy/CVF 28.06/`. This is a path-pointer sync only.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/agsgT0AgentSkillsGovernanceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/agsgT1T3AgentSkillsGovernanceAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/legacySourceFolderConsolidation20260629.json`
+- `CVF_SESSION/state/entries/mseaT0MineruStructuredExtractionRoadmap20260628.json`
+- `CVF_SESSION/state/entries/mseaT1T3MineruStructuredExtractionAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction that the repos absorbed yesterday
+were gathered into folder `CVF 28.06`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+path-pointer update. Do not revert AGSG-BSH-T1, ADIF-0015, AGSG-T1 through T3,
+MSEA-T1 through T3, PINT-T1 through T3, AECG-T1 through T3, TKG-T0 through T5,
+or earlier material/session-sync commits.

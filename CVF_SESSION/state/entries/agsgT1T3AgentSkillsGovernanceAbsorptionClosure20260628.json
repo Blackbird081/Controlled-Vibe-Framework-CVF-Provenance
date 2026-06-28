@@ -12,7 +12,7 @@
     "closeout": "docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md",
     "upstreamRepo": "addyosmani/agent-skills",
     "upstreamCommit": "30e55cb",
-    "sourceFolder": ".private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack",
     "decision": "CLOSE_AGSG_ABSORPTION_LANE_NO_CHECKER_NOW",
     "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
     "summary": "AGSG-T1 through T3 closed the Agent Skills Governance absorption roadmap. The lane source-verified upstream agent-skills and the retained absorption pack against ASSF owner surfaces, promoted the valuable skill anatomy, progressive-disclosure, anti-rationalization, validator-owned exemption, persona-boundary, and evidence-receipt patterns into a CVF-owned ASSF advisory reference, and decided no static checker now. Runtime skill activation, plugin import, slash-command import, persona orchestration, hook install, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, and automatic skill invocation remain parked behind recorded AGSG-T3 reopen conditions."

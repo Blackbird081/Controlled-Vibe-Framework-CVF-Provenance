@@ -2764,7 +2764,7 @@
   "mpiT5MemoryAccessClaimCheckerClosure20260622": "MPI-T5 Memory Access Claim Checker is CLOSED_PASS_BOUNDED; public-sync completion is recorded separately in mpiT5MemoryAccessClaimCheckerPublicSync20260622. Closure artifacts: docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_WORKER_RETURN_2026-06-22.md accepted by reviewer, docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_COMPLETION_2026-06-22.md closed bounded, docs/baselines/CVF_GC018_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md closed bounded, docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md closed bounded, and docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md updated to MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC at private closure time. Material scope: new governance/compat/check_memory_access_claim.py, new governance/compat/test_check_memory_access_claim.py, one reviewer-fast hook entry, and one autorun bundle entry. Evidence: focused pytest 13/13 PASS, checker self-run PASS, pre-implementation autorun PASS, worker-return fast gate PASS. Boundary: local static changed-governed-Markdown checker only; no route/schema/auth/helper/provider/live/durable/registry/generated/adapter/runtime behavior.",
   "adifContinuousExecutionDispatch20260622": "ADIF continuous execution dispatch is committed at 783b2b8a from dispatch base 60751daf. The operator preselected T0 -> T1 -> T2 -> (T3 || T4) -> T5. Canonical authorization: docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md. Master work order: docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_CONTINUOUS_EXECUTION_T0_T5_FOR_CLAUDE_2026-06-22.md. Commit mode WORKER_MAY_COMMIT enables real dependency checkpoint commits and isolated parallel worktrees from identical T2 HEAD. Claude must source-verify and gate every child packet, must not push or edit session continuity, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Codex is the designated final reviewer/closer. Dispatch evidence: reviewer-fast 34/34 PASS, pre-dispatch 45/45 PASS, dispatch steward PASS, and pre-commit 55/55 PASS.",
   "mpiT5MemoryAccessClaimCheckerPublicSync20260622": "MPI-T5 Memory Access Claim Checker public sync completed from sibling clone D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-public-sync after remote verification. Public remote: https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git. Public branch: main. Public commit: 602550404 Add MPI-T5 memory access claim checker. Public-safe changed set: governance/compat/check_memory_access_claim.py, governance/compat/test_check_memory_access_claim.py, governance/compat/run_local_governance_hook_chain.py, docs/assessments/CVF_PUBLIC_SYNC_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md, and docs/evidence/workflow-orchestration-guard.jsonl. Public checks before commit/push: focused pytest 13/13 PASS, check_memory_access_claim self-run PASS, public pre-commit hook PASS, public pre-push hook PASS. Boundary: no private work order, private review, private session state, active handoff, secrets, provider/live proof, runtime/provider behavior, registry/durable/vector/graph store, route/schema/auth/helper behavior, direct interception, readiness, or universal governed-coding-control claim was public-synced.",
-  "nextAllowedMove": "AGSG-BSH-T1 blind-spot presence dispatch packet is HOLD_PENDING_EXECUTOR after material commit 5ae9cb9e, with ADIF-0014 recorded there and ADIF-0015 recorded at material commit a8f45aa7. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator may dispatch docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md to an executor under WORKER_MUST_NOT_COMMIT to implement the scope-triggered absorption blind-spot presence checker, or select the next external repo/folder absorption target. No runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim is authorized by this dispatch. Retained AGSG external sources remain advisory only: upstream clone .private_reference/external_repos/agent-skills at addyosmani/agent-skills@30e55cb and local folder .private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack.",
+  "nextAllowedMove": "AGSG-BSH-T1 blind-spot presence dispatch packet is HOLD_PENDING_EXECUTOR after material commit 5ae9cb9e, with ADIF-0014 recorded there and ADIF-0015 recorded at material commit a8f45aa7. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator may dispatch docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md to an executor under WORKER_MUST_NOT_COMMIT to implement the scope-triggered absorption blind-spot presence checker, or select the next external repo/folder absorption target. No runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim is authorized by this dispatch. Retained AGSG external sources remain advisory only: upstream clone .private_reference/external_repos/agent-skills at addyosmani/agent-skills@30e55cb and local folder .private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack. Operator consolidated the 2026-06-28 retained external source folders under .private_reference/legacy/CVF 28.06/.",
   "adifT0CheckpointPendingReview20260623": "Claude committed ADIF-T0 at 7c0480bc from continuous-dispatch session commit 7745339c. The changed set contains the T0 GC-018, T0 work order, taxonomy contract, ADIF reference front door, and roadmap checkpoint row. The work order remains COMPLETE_PENDING_REVIEW, so this commit is real execution evidence but not accepted dependency release for T1. Codex owns checkpoint review and continuity; Claude correctly stopped when pre-implementation exposed stale active-handoff HEAD and the authorization forbade worker-owned session sync.",
   "assfWebProjectionImplementationClosure20260626": "ASSF-WEBPROJ-T1 Web projection implementation closed CLOSED_PASS_BOUNDED at material commit 0b57a4de. Artifacts: docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md, docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md, and docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md. Implementation projected certified ASSF package metadata into the CVF Web public skill index as read-only presentation data and added GC-051 coverage for the Web projection public skill-index surfaces. Boundary retained: no package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, or package integration.",
   "adifT0CheckpointAcceptedT1Release20260623": "Codex accepted ADIF-T0 for continuation at review commit 6277cb28 after Claude execution commit 7c0480bc and continuity commit e454191f. Review artifact: docs/reviews/CVF_ADIF_T0_OWNER_RECONCILIATION_CHECKPOINT_REVIEW_2026-06-23.md. Reviewer-fast and pre-commit passed; T0 remains pending final full-chain review rather than independently closed. T1 dependency authoring is released from the post-sync HEAD. Learning: continuous WORKER_MAY_COMMIT chains with reviewer-owned continuity require an explicit Codex checkpoint sync/review boundary after each worker commit; this is not worker scope.",
@@ -3755,7 +3755,7 @@
     "upstreamRepo": "opendatalab/MinerU",
     "upstreamCommit": "3e60291",
     "upstreamClone": ".private_reference/external_repos/MinerU",
-    "sourceFolder": ".private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter",
     "baseline": "docs/baselines/CVF_GC018_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION_2026-06-28.md",
     "reference": "docs/reference/CVF_MSEA_T2_DOCUMENT_EXTRACTION_CLAIM_BOUNDARY_RECEIPT_QUALITY_AND_RAG_HANDOFF_ADVISORY_2026-06-28.md",
     "closeout": "docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md",
@@ -3772,7 +3772,7 @@
     "closeout": "docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md",
     "upstreamRepo": "opendatalab/MinerU",
     "upstreamCommit": "3e60291",
-    "sourceFolder": ".private_reference/legacy/CVF_MinerU_Structured_Extraction_Adapter",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter",
     "decision": "CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW",
     "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
     "summary": "MSEA-T1 through T3 closed the MinerU Structured Extraction absorption roadmap. The lane source-verified upstream MinerU and the retained adapter folder against CVF_EXTRACTION_FOUNDATION owner surfaces, promoted the high-value claim-boundary/receipt/quality/RAG-handoff doctrine into a CVF-owned reference, and decided no static checker now. Runtime, model download, OCR/VLM/hybrid/remote backend, RAG index, public-sync, checker, extraction accuracy, document truth, and production-readiness work remain parked behind recorded MSEA-T3 reopen conditions."
@@ -3784,7 +3784,7 @@
     "upstreamRepo": "addyosmani/agent-skills",
     "upstreamCommit": "30e55cb",
     "upstreamClone": ".private_reference/external_repos/agent-skills",
-    "sourceFolder": ".private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack",
     "closureCommit": "66eb39ac",
     "decision": "CLOSE_AGSG_ABSORPTION_LANE_NO_CHECKER_NOW",
     "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
@@ -3801,7 +3801,7 @@
     "closeout": "docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md",
     "upstreamRepo": "addyosmani/agent-skills",
     "upstreamCommit": "30e55cb",
-    "sourceFolder": ".private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack",
     "decision": "CLOSE_AGSG_ABSORPTION_LANE_NO_CHECKER_NOW",
     "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
     "summary": "AGSG-T1 through T3 closed the Agent Skills Governance absorption roadmap. The lane source-verified upstream agent-skills and the retained absorption pack against ASSF owner surfaces, promoted the valuable skill anatomy, progressive-disclosure, anti-rationalization, validator-owned exemption, persona-boundary, and evidence-receipt patterns into a CVF-owned ASSF advisory reference, and decided no static checker now. Runtime skill activation, plugin import, slash-command import, persona orchestration, hook install, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, and automatic skill invocation remain parked behind recorded AGSG-T3 reopen conditions."
@@ -3825,5 +3825,23 @@
     "decision": "RECORD_DECLARED_ROUTE_MODE_VS_ACTUAL_EXECUTION_BEHAVIOR_MISMATCH",
     "nextAllowedMove": "USE_ADIF_0015_AS_DISPATCH_QUALITY_CONTEXT_FOR_FUTURE_ROUTE_ROLE_DECLARATIONS",
     "summary": "ADIF-0015 records the declared-route-vs-execution-behavior mismatch observed during AGSG-BSH-T1 dispatch authoring. It is a guidance-only ADIF record and does not retroactively change the AGSG-BSH-T1 baseline or work-order route fields."
+  },
+  "legacySourceFolderConsolidation20260629": {
+    "status": "ACTIVE_PATH_POINTER_UPDATE",
+    "date": "2026-06-29",
+    "operatorInstruction": "Operator consolidated the external repos and folders absorbed on 2026-06-28 under a single ignored legacy root.",
+    "legacyRoot": ".private_reference/legacy/CVF 28.06",
+    "retainedFolders": [
+      ".private_reference/legacy/CVF 28.06/CodeGraph",
+      ".private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store",
+      ".private_reference/legacy/CVF 28.06/CVF_Agent_Engineering_Control_Standard",
+      ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack",
+      ".private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter",
+      ".private_reference/legacy/CVF 28.06/CVF_Product_Requirement_Governance",
+      ".private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE",
+      ".private_reference/legacy/CVF 28.06/CVF_Truth_Kernel_Patch",
+      ".private_reference/legacy/CVF 28.06/CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE"
+    ],
+    "boundary": "Path pointer update only. Does not reopen closed absorption lanes, change material absorption decisions, authorize runtime/provider/live/public-sync/package/import/checker work, or convert retained external folders into CVF source of truth."
   }
 }
