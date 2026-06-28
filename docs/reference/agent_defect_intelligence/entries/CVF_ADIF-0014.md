@@ -17,9 +17,9 @@ roles: dispatcher; worker; reviewer
 lifecyclePhases: pre-dispatch; pre-implementation; pre-closure
 surfaceSelectors: work orders, GC-018 baselines, and completion reviews whose changed set touches .private_reference/legacy/ or .private_reference/external_repos/ absorption sources
 detectionSignals: an absorption artifact touches a legacy/external source path but omits the `## Mandatory Blind-Spot Control Block` heading and a `## Corpus Completeness And Report Integrity` block, and never states a completeness claim, so claim-triggered checkers stay silent
-enforcementLevel: GUIDANCE_ONLY
-checkerBindings: NOT_APPLICABLE_WITH_REASON: scope-triggered presence checker not yet implemented; planned under the AGSG blind-spot hardening GC-018
-promotionState: DESIGN_REVIEW_REQUIRED
+enforcementLevel: MACHINE_CHECKED
+checkerBindings: governance/compat/check_absorption_blindspot_control_presence.py
+promotionState: PROMOTED
 supersedes: NONE
 lastVerifiedCommit: a9c79eb8
 roadmapSeedId: NONE
@@ -122,7 +122,12 @@ Reason: private provenance ADIF entry. No public-sync claim.
 
 ## Claim Boundary
 
-This entry records an observed defect pattern. It does not implement, modify,
-or extend any checker; the scope-triggered presence checker is planned under a
-separate GC-018 and work order, where its `checkerBindings` and
-`enforcementLevel` will be upgraded once the checker exists.
+This entry records an observed defect pattern. The scope-triggered presence
+checker is implemented at
+`governance/compat/check_absorption_blindspot_control_presence.py` and wired
+into the governance hook chain. The `enforcementLevel` is `MACHINE_CHECKED`
+and `checkerBindings` reference the implemented checker.
+
+## Epistemic Process Block
+
+EPISTEMIC_PROCESS_NA_WITH_REASON: this defect entry records a pattern observation, not an evidence comparison or hypothesis evaluation.

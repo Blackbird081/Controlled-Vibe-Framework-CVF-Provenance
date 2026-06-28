@@ -136,6 +136,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_public_export_disposition.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "absorption blind-spot control presence",
+            ["python", "governance/compat/check_absorption_blindspot_control_presence.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "corpus completeness and report integrity",
             ["python", "governance/compat/check_corpus_completeness_report_integrity.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

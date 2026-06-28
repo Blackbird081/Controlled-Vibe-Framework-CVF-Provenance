@@ -199,6 +199,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "absorption blind-spot control presence",
+            "governance/compat/check_absorption_blindspot_control_presence.py",
+            base,
+            head,
+        ),
+        _range_command(
             "rescan intelligence hardening",
             "governance/compat/check_rescan_intelligence_hardening.py",
             base,
