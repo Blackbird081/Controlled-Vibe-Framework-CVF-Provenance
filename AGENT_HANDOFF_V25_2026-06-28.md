@@ -65,6 +65,14 @@ External agent memory files: non-canonical convenience only.
 Latest material closure: commit `aa0d1276` closed FPC-PRG-T4 Parked Reopen
 Fixture Coverage as `CLOSED_PASS_BOUNDED`.
 
+Latest material roadmap marker: commit `ae37f05f` added FPC-FMS-T1 Foundation
+Maintenance Candidate Selection Audit Roadmap as
+`ROADMAP_READY_FOR_FPC_T2_C05_GC018_AUTHORING`. It selects
+`OPEN_FPC_T2_C05_REGISTRY_ENTRY_GC018` as the next foundation maintenance
+GC-018 authoring target only; no registry, checker, runtime, generated-state,
+provider/live, public-sync, downstream implementation, package, certification,
+MPI-T6 runtime, or provenance push work is authorized by that roadmap.
+
 Prior material closure: commit `24726307` closed FPC-DSD-T1 Foundation
 Downstream Post-Public-Export Lane Selection Decision as
 `CLOSED_PASS_BOUNDED`.
@@ -174,6 +182,24 @@ aggregate/read model. Do not revert root exposure classification commit
 `f7f4294d`, material commit `24726307`, session-sync commit `743b24ad`,
 public-sync commit `04d88109317c780ceb2062a257c0e863e2379276`, or earlier
 FPC-SCG/FPC-DSD/FPC-UAP closures.
+
+## Core Guard Self-Protection Authorization - FMS-T1 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+roadmap commit `ae37f05f` so GC-020 active-session compatibility recognizes the
+current HEAD after the FPC-FMS-T1 selection roadmap commit.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator asked to continue to the next roadmap; the
+material FMS-T1 roadmap was committed at `ae37f05f`, and the active handoff must
+contain the current HEAD marker before the session can be considered clean.
+
+Rollback boundary: if this handoff-marker sync is rejected, revert only this
+handoff marker update. Do not revert material roadmap commit `ae37f05f`,
+earlier session-sync commits, public-sync commits, or previous FPC closures.
 
 ## Core Guard Self-Protection Authorization - PRG-T0 Session Sync
 
