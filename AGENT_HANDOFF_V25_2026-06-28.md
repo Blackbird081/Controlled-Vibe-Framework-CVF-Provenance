@@ -866,3 +866,40 @@ database, vector store, graph store, semantic index, embeddings, rerank,
 watcher, daemon, generated aggregate, checker, provider/live proof,
 public-sync mutation, adapter activation, package activation, certification,
 route-side federation, OME runtime, or MPI-T6 runtime.
+
+## Core Guard Self-Protection Authorization - EVEROS-T5 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+closeout commit `37771016` so GC-020 active-session compatibility recognizes
+the current HEAD after EVEROS-T5 remaining-value audit and lane closeout.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved the proposed EVEROS-T5
+remaining-value audit and lane closeout after EVEROS-T4. T5 stayed
+documentation-only and closed the EverOS absorption lane with no immediate
+next EverOS tranche unless a recorded source-backed reopen condition is met.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert EVEROS-T5 material commit `37771016`, EVEROS-T4 handoff
+sync commit `e6ca04af`, EVEROS-T4 material commit `cac4947e`, EVEROS-T3
+handoff sync commit `17cdde42`, or earlier EverOS/PRG/FPC/session-sync
+commits.
+
+## GC-020 Marker - EVEROS-T5 Remaining Value Audit And Lane Closeout Commit
+
+Material commit `37771016` added
+`docs/reviews/CVF_EVEROS_T5_REMAINING_VALUE_AUDIT_AND_LANE_CLOSEOUT_2026-06-28.md`.
+The audit closes the EverOS absorption lane after T0-T4 by classifying the
+remaining items as absorbed, deferred with source-backed reopen conditions,
+routed to another lane, or rejected for this chain. The recorded decision is
+`CLOSE_EVEROS_ABSORPTION_LANE_NO_NEXT_TRANCHE`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed EVEROS-T5 closeout. It does not implement memory runtime,
+database, vector store, graph store, semantic index, embeddings, rerank,
+watcher, daemon, generated aggregate, checker, provider/live proof,
+public-sync mutation, adapter activation, package activation, certification,
+route-side federation, OME runtime, or MPI-T6 runtime.
