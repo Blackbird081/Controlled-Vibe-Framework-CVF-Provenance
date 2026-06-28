@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection",
-  "activeHandoff": "AGENT_HANDOFF_V25_2026-06-28.md",
-  "nextAllowedMove": "TKG-T0 through TKG-T5 truth foundation absorption is CLOSED_PASS_BOUNDED through material commit 6ce94464. TKG-T4 wired the static truth foundation claim guard at 79f26845. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator may select the next external repository/folder for governed absorption under the old rule, or hold. Do not reopen TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/provenance-label enforcement unless the concrete TKG-T5 reopen condition is met and a fresh governed tranche authorizes it. Runtime/provider/live/public-sync/adapter/package/MPI-T6 and FPC/FMS parked lanes remain parked unless their recorded reopen conditions are verified through fresh GC-018/source verification and live proof when behavior is claimed. Public repo remains current for UAP public comprehension at commit 04d88109317c780ceb2062a257c0e863e2379276.",
+  "currentMode": "aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018",
+  "activeHandoff": "AGENT_HANDOFF_V26_2026-06-28.md",
+  "nextAllowedMove": "AECG-T0 CodeGraph and Agent Engineering Control external absorption roadmap was added at material commit edee01a0. LHW24 remains the latest closed numbered LHW wave. Next allowed move: author AECG-T1 GC-018 for source-verified Agent Engineering Control triage and CodeGraph delta adaptation. CodeGraph prior CGE-T1/T2 boundaries remain binding: no CodeGraph runtime/MCP/watcher/daemon/benchmark adoption is reopened by AECG-T0. The Agent Engineering Control folder is source input only under .private_reference/legacy; do not import it directly. Runtime/provider/live/public-sync/adapter/package/MPI-T6, merge automation, hook repair, and checker implementation remain parked unless separately authorized through fresh GC-018/source verification and live proof when behavior is claimed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

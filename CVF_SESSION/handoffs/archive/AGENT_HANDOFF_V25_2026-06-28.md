@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V24_2026-06-27.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=operator may select the next external repository/folder for governed absorption under the old rule, or hold; parked checkpoint=TKG-T0 through TKG-T5 are closed bounded through material commit `6ce94464`, TKG-T4 checker is wired at `79f26845`, and TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/provenance-label enforcement remain parked behind TKG-T5 reopen conditions; FPC/FMS parked checkpoint and UAP public repo commit `04d88109317c780ceb2062a257c0e863e2379276` still apply.
+Startup acknowledged: current mode=`aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=author AECG-T1 GC-018 for source-verified Agent Engineering Control triage and CodeGraph delta adaptation; parked checkpoint=AECG-T0 roadmap is ready at material commit `edee01a0`, CodeGraph prior CGE-T1/T2 boundaries remain binding, the operator-provided Agent Engineering Control folder is retained under `.private_reference/legacy`, and runtime/MCP/watcher/daemon/merge automation/hook repair/package import remain parked behind fresh GC-018 and source verification.
 
 ## Current State
 
@@ -21,14 +21,14 @@ Startup acknowledged: current mode=`tkg_t0_t5_truth_foundation_absorption_closed
 | Current local/remote base before V25 rotation | `743b24ad` |
 | V25 root exposure classification | `f7f4294d` |
 | Latest material closure | `6ce94464` TKG-T5 truth foundation remaining-value audit and lane closeout |
-| Latest material roadmap | `6ce94464` TKG-T0 through TKG-T5 truth foundation absorption lane closeout |
+| Latest material roadmap | `edee01a0` AECG-T0 CodeGraph and Agent Engineering Control external absorption roadmap |
 | Latest session sync before V25 rotation | `743b24ad` |
 | Public UAP comprehension export | `04d88109317c780ceb2062a257c0e863e2379276` |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`tkg_t0_t5_truth_foundation_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
+`aecg_t0_codegraph_agent_engineering_control_absorption_roadmap_ready_for_t1_gc018`
 
 ## Purpose
 
@@ -1112,6 +1112,46 @@ the committed TKG-T5 closeout. It does not implement runtime, provider/live
 proof, public-sync export, evidence database, obligation registry runtime, SOT
 index runtime, MCP gateway, hypervisor, adapter, package activation,
 certification, generated aggregate, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AECG-T0 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AECG-T0 material roadmap commit `edee01a0` so the front door, generated state
+sources, generated aggregates, bootstrap read model, and active handoff point
+to AECG-T1 GC-018 authoring as the next allowed move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/aecgT0CodeGraphAgentEngineeringControlRoadmap20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator instructed Codex to continue with
+`colbymchenry/codegraph` and `CVF_Agent_Engineering_Control_Standard`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AECG-T0 material commit `edee01a0`, TKG-T5
+material commit `6ce94464`, TKG-T4 material commit `79f26845`, or earlier
+TKG/EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - AECG-T0 CodeGraph And Agent Engineering Control Roadmap Commit
+
+Material commit `edee01a0` added
+`docs/roadmaps/CVF_AECG_T0_CODEGRAPH_AGENT_ENGINEERING_CONTROL_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap keeps prior CGE-T1/CGE-T2 CodeGraph boundaries binding, retains the
+operator-provided Agent Engineering Control folder under ignored legacy
+reference storage, and selects AECG-T1 source-verified triage/adaptation as the
+next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AECG-T0 roadmap. It does not implement runtime, provider/live
+proof, public-sync export, CodeGraph install/init, MCP wiring, watcher/daemon,
+merge automation, hook repair, package activation, certification, checker
+implementation, generated aggregate beyond session sync, or
+production/hosted readiness.
 
 ## Core Guard Self-Protection Authorization - TKG-T5 Session Sync
 

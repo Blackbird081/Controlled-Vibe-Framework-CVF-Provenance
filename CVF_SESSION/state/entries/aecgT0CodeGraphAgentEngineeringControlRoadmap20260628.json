@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1303,
+  "stateKey": "aecgT0CodeGraphAgentEngineeringControlRoadmap20260628",
+  "value": {
+    "status": "ROADMAP_READY_FOR_AECG_T1_SOURCE_VERIFIED_TRIAGE",
+    "materialCommit": "edee01a0",
+    "roadmap": "docs/roadmaps/CVF_AECG_T0_CODEGRAPH_AGENT_ENGINEERING_CONTROL_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md",
+    "decision": "OPEN_AECG_T1_SOURCE_VERIFIED_AGENT_ENGINEERING_CONTROL_TRIAGE",
+    "nextAllowedMove": "AUTHOR_AECG_T1_GC018_FOR_AGENT_ENGINEERING_CONTROL_TRIAGE_AND_CODEGRAPH_DELTA",
+    "summary": "Selected a source-verified AECG-T1 triage/adaptation tranche for the operator-provided Agent Engineering Control folder and current CodeGraph delta while keeping prior CGE-T1/T2 CodeGraph boundaries binding and parking runtime/MCP/watcher/daemon/merge automation/hook repair/package import."
+  }
+}
