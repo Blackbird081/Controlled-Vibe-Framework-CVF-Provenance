@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1300,
+  "stateKey": "fpcPrgT3ParkedReopenGateWiringClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "f74f0b7a",
+    "baseline": "docs/baselines/CVF_GC018_FPC_PRG_T3_PARKED_REOPEN_GATE_WIRING_2026-06-28.md",
+    "completionReview": "docs/reviews/CVF_FPC_PRG_T3_PARKED_REOPEN_GATE_WIRING_COMPLETION_2026-06-28.md",
+    "checker": "governance/compat/check_fpc_parked_reopen_inventory.py",
+    "wiredCatalogs": [
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_pre_push.py",
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py"
+    ],
+    "decision": "CHECKER_WIRED_INTO_LOCAL_GATES",
+    "selectedImplementationLane": "none",
+    "nextRecommendedTranche": "FPC-PRG-T4 Fixture Coverage",
+    "verification": [
+      "python governance/compat/check_fpc_parked_reopen_inventory.py --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c22ef0f0 --head HEAD --serial PASS with FPC parked reopen inventory command",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base c22ef0f0 --head HEAD --enforce PASS",
+      "pre-commit hook PASS 60/60 at material commit f74f0b7a"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "liveProofDisposition": "N/A with reason: FPC-PRG-T3 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Private provenance gate wiring only. No runtime/provider/live proof, public-sync, MPI-T6 runtime work, Policy_Local or Document Translator implementation, adapter implementation, package activation, certification, generated-state mutation beyond session sync, or push from the provenance workspace."
+  }
+}
