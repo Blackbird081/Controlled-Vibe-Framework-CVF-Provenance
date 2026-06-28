@@ -650,3 +650,36 @@ Do not revert FMS-T0 roadmap commit `b9c57ba0`, DLR-T1 roadmap commit
 frozen-reference relocation commit `9e733ab8`, V25 rotation commit
 `2a04e28e`, root exposure classification commit `f7f4294d`, material commit
 `24726307`, or public-sync commit `04d88109317c780ceb2062a257c0e863e2379276`.
+
+## Core Guard Self-Protection Authorization - PRG-T1 Product Contract Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+contract-promotion commit `6ee1b306` so GC-020 active-session compatibility
+recognizes the current HEAD after PRG-T1 product requirement governance
+contract promotion.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved PRG-T1 and explicitly asked to
+reuse any valuable content from the provided folder by editing it into CVF form
+instead of rewriting from scratch.
+
+Rollback boundary: if this handoff marker is rejected, revert only this marker.
+Do not revert PRG-T1 material commit `6ee1b306`, PRG-T0 package absorption
+roadmap commit `efb45892`, PRG-T0 handoff sync commit `67250e04`, or previous
+FPC/session-sync commits.
+
+## GC-020 Marker - PRG-T1 Product Requirement Contract Commit
+
+Material commit `6ee1b306` promoted the operator-provided product-spec package
+substance into CVF-owned PRG-T1 reference form. It added the
+`docs/reference/product_requirement_governance/` front door and product
+requirement contract, plus paired GC-018, work order, and completion review.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed PRG-T1 contract promotion. It does not implement validators,
+fixtures, runtime/source changes, provider/live proof, public-sync mutation,
+adapter activation, package activation, certification, generated registries,
+or downstream execution.
