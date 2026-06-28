@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsg_t0_agent_skills_governance_roadmap_ready_for_t1_source_verified_assf_reconciliation`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author AGSG-T1 GC-018 and source-verified work order for ASSF reconciliation before implementation; parked checkpoint=AGSG-T0 added Agent Skills Governance external absorption roadmap at material commit `b7b31f4e`, retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/checker/adapter/public/provider/live/production-readiness claims remain parked behind AGSG-T1 source verification and fresh governed authorization.
+Startup acknowledged: current mode=`agsg_t1_t3_agent_skills_governance_absorption_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator may select the next external repo/folder absorption target or request a high-value roadmap audit; parked checkpoint=AGSG-T1 through T3 closed at material commit `66eb39ac`, retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/checker/adapter/public/provider/live/production-readiness claims remain parked behind AGSG-T3 reopen conditions and fresh governed authorization.
 
 ## Current State
 
@@ -18,24 +18,24 @@ Startup acknowledged: current mode=`agsg_t0_agent_skills_governance_roadmap_read
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `b7b31f4e` AGSG-T0 Agent Skills Governance external absorption roadmap |
+| Latest material closeout | `66eb39ac` AGSG-T1 through T3 Agent Skills Governance absorption closeout |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsg_t0_agent_skills_governance_roadmap_ready_for_t1_source_verified_assf_reconciliation`
+`agsg_t1_t3_agent_skills_governance_absorption_closed_pass_bounded_pending_next_external_absorption_selection`
 
 ## Purpose
 
 Keep the active handoff compact after V25 reached the governed file-size guard
 near-threshold. V25 is archived as historical continuity; V26 is the sole root
-active handoff and now points to AGSG-T1 source-verified ASSF reconciliation as
-the next governed move.
+active handoff and now points to next external absorption or roadmap-audit
+selection after AGSG-T1 through T3 closure.
 
 ## Scope / Target / Owner Boundary
 
 Target: maintain compact active handoff V26, update active startup pointers,
-and preserve the AGSG-T0 roadmap boundary.
+and preserve the AGSG-T1 through T3 closure boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize downstream implementation, runtime/provider/live work,
@@ -63,31 +63,32 @@ against CVF-governed surfaces.
 
 ## Latest Work / Changes
 
-Material commit `b7b31f4e` added
-`docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+Material commit `66eb39ac` closed AGSG-T1 through T3:
 
-The roadmap source-read `addyosmani/agent-skills` at commit `30e55cb` and the
-operator-supplied `CVF Agent Skills Governance Absorption Pack`, moved the pack
-to `.private_reference/legacy/CVF_Agent_Skills_Governance_Absorption_Pack`,
-accepted high-value skill anatomy, anti-rationalization, progressive
-disclosure, persona-boundary, validator-owned exemption, and evidence-receipt
-patterns as advisory input to ASSF, and rejected direct plugin/runtime/command/
-persona/hook/checker import.
+- `docs/baselines/CVF_GC018_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md`
+- `docs/reviews/CVF_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_COMPLETION_REVIEW_2026-06-28.md`
+- `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md`
+- `docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`
+- `docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
+
+The lane source-verified `addyosmani/agent-skills` at commit `30e55cb` and the
+operator-supplied `CVF Agent Skills Governance Absorption Pack`, promoted the
+valuable skill anatomy, progressive-disclosure, anti-rationalization,
+validator-owned exemption, persona-boundary, and evidence-receipt patterns into
+a CVF-owned ASSF advisory reference, and closed the checker lane with no
+checker now.
 
 ## Next Allowed Move
 
-Author AGSG-T1 GC-018 and source-verified work order for ASSF reconciliation
-before any implementation.
+Operator may select the next external repo/folder absorption target or request
+a high-value roadmap audit.
 
 Required boundaries:
 
-- Treat AGSG-T0 as a roadmap/source-routing artifact, not runtime or checker
-  authorization.
-- Use `docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
-  before authoring AGSG-T1.
-- AGSG-T1 must source-verify against ASSF package/intake/resolver owner
-  surfaces, dual-agent surface accounting, role assignment, and current guard
-  conventions.
+- Treat AGSG artifacts as documentation/reference absorption evidence, not
+  runtime or checker authorization.
+- Any implementation still requires fresh GC-018/source-verified work order.
 - Do not import Agent Skills plugin runtime, slash commands, personas, hooks,
   prototype checkers, package instances, resolver mutations, CLI/MCP adapters,
   provider/live proof, public-sync, benchmark, security certification,
@@ -96,12 +97,12 @@ Required boundaries:
 
 ## Parked Checkpoint
 
-AGSG-T0 opened the Agent Skills Governance absorption route as roadmap/source
-classification only. The lane does not implement runtime behavior, plugin
-install, slash command import, persona orchestration, hook install, package
-activation, resolver mutation, checker implementation, CLI/MCP adapter,
-provider/live proof, benchmark, security certification, public export, or
-generated aggregates beyond active-session sync.
+AGSG-T1 through T3 closed the Agent Skills Governance absorption route as
+documentation/reference absorption only. The lane does not implement runtime
+behavior, plugin install, slash command import, persona orchestration, hook
+install, package activation, resolver mutation, checker implementation,
+CLI/MCP adapter, provider/live proof, benchmark, security certification, public
+export, or generated aggregates beyond active-session sync.
 
 TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/
 provenance-label enforcement candidates remain parked behind their recorded
@@ -109,11 +110,11 @@ reopen conditions.
 
 ## Claim Boundary
 
-This handoff may be cited only as session-continuity evidence for the AGSG-T0
-roadmap routing state. It is not runtime, provider/live, public-sync, package,
-Agent Skills plugin import, slash command import, persona orchestration, hook
-install, checker, adapter, benchmark, security, automatic skill invocation, or
-production-readiness evidence.
+This handoff may be cited only as session-continuity evidence for the AGSG-T1
+through T3 documentation closeout state. It is not runtime, provider/live,
+public-sync, package, Agent Skills plugin import, slash command import, persona
+orchestration, hook install, checker, adapter, benchmark, security, automatic
+skill invocation, or production-readiness evidence.
 
 Verification for this batch must come from the active-session generator,
 session-mode, next-move freshness, core-guard self-protection, governed
@@ -514,3 +515,51 @@ persona orchestration, hook install, package activation, resolver mutation,
 certification, checker implementation, CLI/MCP adapter, benchmark, security
 certification, automatic skill invocation, generated aggregate beyond session
 sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AGSG-T1-T3 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSG-T1 through T3 material closeout commit `66eb39ac` so the front door,
+generated state sources, generated aggregates, bootstrap read model, and active
+handoff all point to next external absorption or roadmap-audit selection.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agsgT0AgentSkillsGovernanceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/agsgT1T3AgentSkillsGovernanceAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction to write all AGSG roadmap artifacts
+after auditing `addyosmani/agent-skills` and the operator-provided `CVF Agent
+Skills Governance Absorption Pack`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSG-T1 through T3 material commit
+`66eb39ac`, AGSG-T0 material commit `b7b31f4e`, MSEA material commits
+`38f236bc` and `3776d5db`, PINT material commits `c21cd0e9`, `3a729e83`, and
+`658bc76d`, AECG material commits `7701abb8` and `edee01a0`, or earlier
+TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - AGSG-T1-T3 Agent Skills Governance Absorption Closeout
+
+Material commit `66eb39ac` closed AGSG-T1 through T3 and added the AGSG
+baseline, work order, completion review, ASSF advisory reference, T3 closeout,
+and roadmap closure update.
+
+The closeout source-verified upstream `addyosmani/agent-skills` at commit
+`30e55cb` and the operator-provided Agent Skills Governance Absorption Pack,
+absorbed high-value patterns into a stable CVF-owned ASSF advisory reference,
+and closed the checker lane with no checker now.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AGSG-T1 through T3 material closeout. It does not implement
+runtime, provider/live proof, public-sync export, plugin install, slash-command
+import, persona orchestration, hook install, package activation, resolver
+mutation, certification, checker implementation, CLI/MCP adapter, benchmark,
+security certification, automatic skill invocation, generated aggregate beyond
+session sync, or production/hosted readiness.
