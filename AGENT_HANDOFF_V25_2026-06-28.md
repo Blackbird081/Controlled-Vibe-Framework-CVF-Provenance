@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V24_2026-06-27.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=fresh source-verified next roadmap/tranche selection only after checking recorded reopen condition and running the parked reopen inventory gate; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, PRG-T0, PRG-T1, PRG-T2, PRG-T3, and PRG-T4 are closed bounded through material commit `aa0d1276`; public repo remains current for UAP public comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+Startup acknowledged: current mode=`fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`; active handoff=AGENT_HANDOFF_V25_2026-06-28.md; next allowed move=operator selects one of `OPEN_DLR_T1_AUDIT_GC018`, `REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`, `EXPLICITLY_AUTHORIZE_FPC_T4_DECISION`, or `HOLD_ALL_FOUNDATION_AND_DOWNSTREAM_LANES` after FMS-T2 held foundation maintenance with no current source-backed P0/P1 gap; parked checkpoint=P0/P1 foundation chain, T7/T8 acceptance ledger, DSD-T0, UAP-T0/T1/T2, DSD-T1, PRG-T0 through PRG-T5, FMS-T0, FMS-T1, and FMS-T2 are bounded decision surfaces through material commit `9c6f43de`; public repo remains current for UAP public comprehension at `04d88109317c780ceb2062a257c0e863e2379276`; runtime/provider-live lanes, adapter implementation, package activation, public-sync expansion, and MPI-T6 runtime remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Current State
 
@@ -21,13 +21,14 @@ Startup acknowledged: current mode=`fpc_prg_t1_t5_parked_reopen_gate_systemizati
 | Current local/remote base before V25 rotation | `743b24ad` |
 | V25 root exposure classification | `f7f4294d` |
 | Latest material closure | `aa0d1276` FPC-PRG-T4 parked reopen fixture coverage |
+| Latest material roadmap | `9c6f43de` FPC-FMS-T2 current registry evidence reconciliation |
 | Latest session sync before V25 rotation | `743b24ad` |
 | Public UAP comprehension export | `04d88109317c780ceb2062a257c0e863e2379276` |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`fpc_prg_t1_t5_parked_reopen_gate_systemization_closed_pass_bounded_pending_next_tranche_selection`
+`fpc_fms_t2_registry_reconciliation_ready_for_operator_next_lane_decision`
 
 ## Purpose
 
@@ -80,6 +81,16 @@ registry entries, so duplicate FPC-T2-C05 GC-018 authoring is held. The
 recommended next target is FPC-FMS-T2 current registry evidence reconciliation
 and next candidate selection only.
 
+Latest material roadmap: commit `9c6f43de` added FPC-FMS-T2 Current Registry
+Evidence Reconciliation And Next Candidate Selection. It selects
+`HOLD_FOUNDATION_MAINTENANCE_NO_CURRENT_SOURCE_BACKED_GAP`: duplicate
+FPC-T2-C05 authoring is held, P0/P1 foundation maintenance remains closed
+bounded unless current regression evidence appears, and FPC-T4 remains blocked
+without explicit operator decision. It selects no implementation lane and
+authorizes no registry, checker, runtime, provider/live, public-sync,
+downstream implementation, package, certification, generated-state, MPI-T6, or
+provenance-push work.
+
 Prior material closure: commit `24726307` closed FPC-DSD-T1 Foundation
 Downstream Post-Public-Export Lane Selection Decision as
 `CLOSED_PASS_BOUNDED`.
@@ -92,8 +103,8 @@ Prerequisite maintenance commit: `f7f4294d` classified
 registry so the new active handoff can exist as a root file without P3 drift.
 
 Current session-sync change: refresh active startup/state pointers and this
-handoff so next work routes to fresh source-verified next roadmap/tranche
-selection only, with parked lane reopen checks still binding.
+handoff so next work routes to the operator next-lane decision recorded by
+FMS-T2, with parked lane reopen checks still binding.
 
 ## Latest Closed Work
 
@@ -106,21 +117,28 @@ selection only, with parked lane reopen checks still binding.
 | FPC-PRG-T2 parked reopen gate checker | `ec7e4057` | CLOSED_PASS_BOUNDED; decision `CHECKER_EXISTS_BEFORE_GATE_WIRING` |
 | FPC-PRG-T3 parked reopen gate wiring | `f74f0b7a` | CLOSED_PASS_BOUNDED; decision `CHECKER_WIRED_INTO_LOCAL_GATES` |
 | FPC-PRG-T4 parked reopen fixture coverage | `aa0d1276` | CLOSED_PASS_BOUNDED; decision `FOCUSED_FIXTURE_COVERAGE_COMPLETE` |
-| FPC-PRG-T5 final session/front-door sync | current commit | CLOSED_PASS; final sync for PRG-T1-T5 chain |
+| FPC-PRG-T5 final session/front-door sync | `d749823c` | CLOSED_PASS; final sync for PRG-T1-T5 chain |
+| FPC-FMS-T2 current registry evidence reconciliation | `9c6f43de` | ROADMAP_READY_FOR_OPERATOR_NEXT_LANE_DECISION; decision `HOLD_FOUNDATION_MAINTENANCE_NO_CURRENT_SOURCE_BACKED_GAP` |
 | DSD-T1 session sync | `743b24ad` | CLOSED_PASS |
 | V25 root exposure classification | `f7f4294d` | CLOSED_PASS_BOUNDED |
 
 ## Next Allowed Move
 
-Fresh source-verified next roadmap/tranche selection only.
+Operator next-lane decision after FMS-T2.
+
+FMS-T2 selected
+`HOLD_FOUNDATION_MAINTENANCE_NO_CURRENT_SOURCE_BACKED_GAP`. The next operator
+choice is one of `OPEN_DLR_T1_AUDIT_GC018`,
+`REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`, `EXPLICITLY_AUTHORIZE_FPC_T4_DECISION`,
+or `HOLD_ALL_FOUNDATION_AND_DOWNSTREAM_LANES`.
 
 Before any parked runtime/provider/public/MPI lane is proposed again, check the
 recorded reopen condition for that lane and run
-`governance/compat/check_fpc_parked_reopen_inventory.py`. The PRG-T1-T5 chain
-does not select any implementation lane. Runtime/provider/live work,
-public-sync, adapter/package/certification, downstream implementation, and
-MPI-T6 runtime remain parked unless separately authorized by fresh GC-018 and
-source-backed evidence.
+`governance/compat/check_fpc_parked_reopen_inventory.py`. FMS-T2 does not
+select any implementation lane. Runtime/provider/live work, public-sync,
+adapter/package/certification, downstream implementation, and MPI-T6 runtime
+remain parked unless separately authorized by fresh GC-018 and source-backed
+evidence.
 
 Recorded reopen conditions:
 
@@ -153,11 +171,37 @@ at `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at
 `8d4ed2f4`. FPC-PRG-T1 closed parked reopen condition source inventory at
 `ca60e1fd`. FPC-PRG-T2 closed parked reopen gate checker at `ec7e4057`.
 FPC-PRG-T3 closed gate wiring at `f74f0b7a`. FPC-PRG-T4 closed fixture coverage
-at `aa0d1276`. FPC-PRG-T5 is this final session/front-door sync.
+at `aa0d1276`. FPC-PRG-T5 session sync completed at `d749823c`.
+FPC-FMS-T2 added current registry reconciliation at `9c6f43de` and holds
+foundation maintenance because no current source-backed P0/P1 gap remains.
 Runtime/provider-live lanes, package activation, adapter implementation,
 public-sync expansion, and MPI-T6 runtime work remain parked unless a recorded
 reopen condition is verified through a fresh governed tranche. LHW24 remains
 the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - FMS-T2 Session Sync
+
+Authorized guard-maintenance scope: sync compact session front door, generated
+active-session state, source state fragments, and active handoff after
+FPC-FMS-T2 material roadmap commit `9c6f43de`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Authorization basis: FMS-T2 changed the current mode and next allowed move from
+fresh source-verified selection to an operator next-lane decision after holding
+foundation maintenance with no current source-backed P0/P1 gap.
+
+Rollback boundary: if this session-sync is rejected, revert only the FMS-T2
+session-sync edits listed above. Do not revert material roadmap commit
+`9c6f43de`, prior material correction commit `7b0b4bc4`, material roadmap
+commit `ae37f05f`, public-sync commits, or previous FPC closures.
 
 ## Core Guard Self-Protection Authorization - V25 Handoff Rotation
 
