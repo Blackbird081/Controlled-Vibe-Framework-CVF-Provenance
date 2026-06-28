@@ -1046,3 +1046,36 @@ provider/live proof, public-sync export, evidence database, obligation registry
 runtime, SOT index runtime, MCP gateway, hypervisor, adapter, package
 activation, certification, generated aggregate, hook wiring, or
 production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - TKG-T4 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+checker commit `79f26845` so GC-020 active-session compatibility recognizes the
+current HEAD after TKG-T4 truth foundation static claim-guard implementation.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator instructed Codex to continue through the
+remaining TKG roadmap after TKG-T3 selected the checker.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert TKG-T4 material commit `79f26845`, TKG-T3 handoff sync
+commit `230b923b`, TKG-T3 material commit `5ee0765c`, or earlier
+TKG/EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - TKG-T4 Truth Foundation Static Claim Guard Commit
+
+Material commit `79f26845` added
+`governance/compat/check_truth_foundation_claim_guard.py`, focused tests,
+TKG-T4 GC-018/completion artifacts, and autorun/reviewer-fast/pre-commit/
+pre-push catalog wiring. The checker scans changed governed Markdown for the
+three TKG-T3-approved truth-foundation claim classes and supports the standard
+`--base`, `--head`, `--enforce`, and `--json` CLI shape.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed TKG-T4 checker implementation. It does not implement runtime,
+provider/live proof, public-sync export, evidence database, obligation registry
+runtime, SOT index runtime, MCP gateway, hypervisor, adapter, package
+activation, certification, generated aggregate, or production/hosted readiness.
