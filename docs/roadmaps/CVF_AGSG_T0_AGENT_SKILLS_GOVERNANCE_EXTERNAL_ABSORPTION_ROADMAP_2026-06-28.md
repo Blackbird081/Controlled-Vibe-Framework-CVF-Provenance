@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-28
 
@@ -167,7 +167,7 @@ roadmaps, work orders, reviews, and source files.
 
 ### AGSG-T1: Source-Verified ASSF Reconciliation
 
-Status: PROPOSED_NEXT
+Status: CLOSED_PASS_BOUNDED
 
 Objective: compare upstream and local-pack patterns against the current ASSF
 contracts, generated index, resolver, normalization contract, role matrix,
@@ -195,7 +195,7 @@ Acceptance criteria:
 
 ### AGSG-T2: ASSF Capability Advisory Repair
 
-Status: HOLD_UNTIL_AGSG_T1_PASS
+Status: CLOSED_PASS_BOUNDED
 
 Objective: only if T1 proves a gap, author a compact CVF reference addendum or
 ASSF contract patch for capability anatomy, anti-rationalization, progressive
@@ -212,7 +212,7 @@ Acceptance criteria:
 
 ### AGSG-T3: Static Checker And Value Decision
 
-Status: HOLD_UNTIL_AGSG_T1_PASS
+Status: CLOSED_PASS_BOUNDED
 
 Objective: decide whether a checker is worth adding for capability-package
 claim boundary, validator-owned exemptions, or resolver schema drift. Prototype
@@ -269,6 +269,14 @@ Required checks before session-sync commit:
 - session-sync commit steward preflight;
 - session-sync commit hook chain.
 
+## Current Runtime Freshness Verification
+
+| Runtime claim | Current source checked | Evidence | Disposition |
+|---|---|---|---|
+| Runtime/checker/source files are outside this roadmap closure batch | staged changed set | `git diff --cached --name-status` shows only AGSG governed markdown/reference files | PASS |
+| ASSF generated registry/index is outside this roadmap closure batch | staged changed set | no `docs/reference/agent_system_skills/generated/` or `registry/entries/` path in the changed set | PASS |
+| Runtime behavior is not certified | roadmap claim boundary and parked lanes | no runtime test, provider call, package activation, or checker execution is used as evidence | PASS |
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -299,15 +307,50 @@ Required checks before session-sync commit:
 | Allowed scope source | operator request to audit `addyosmani/agent-skills.git` and `CVF Agent Skills Governance Absorption Pack` under old external-absorption rules |
 | Before status evidence | `git rev-parse --short HEAD` returned `75060e4f`; local pack was untracked at root before move |
 | After status evidence | roadmap authored; local pack moved into ignored private legacy reference storage |
-| Diff evidence | pre-commit gates and `git diff --name-status` to be captured before material commit |
+| Diff evidence | `git diff --cached --name-status` against baseHead `940ffadd` before material commit |
 | Approval boundary | operator requested audit and absorption; no runtime/import/push requested |
 | Claim boundary | roadmap and absorption decision only; no package implementation, checker implementation, runtime activation, provider proof, public-sync, or adapter |
 | Agent type | orchestrator/auditor |
 | Invocation ID | `cvf-agsg-t0-agent-skills-external-absorption-2026-06-28` |
 | Expected manifest | this roadmap only in tracked files; ignored private-reference legacy move outside commit manifest |
-| Actual changed set | this roadmap only in tracked files; to be verified before material commit |
-| Manifest delta | N/A with reason: no tracked legacy folder import; local pack moved to ignored legacy storage |
+| Actual changed set | `docs/baselines/CVF_GC018_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md`; `docs/reviews/CVF_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_COMPLETION_REVIEW_2026-06-28.md`; `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md`; `docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`; `docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` |
+| Manifest delta | MATCH; local pack moved to ignored legacy storage outside tracked commit manifest |
 | Deletion or rename disposition | root local pack removed from root by move into `.private_reference/legacy/`; no tracked delete because the pack was untracked |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md` | top `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_COMPLETION_REVIEW_2026-06-28.md` | top `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` | top `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no registry JSON changed | `git diff --cached --name-status` excludes registry JSON paths | PASS |
+| Registry Markdown | `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md` | top `Status: ACTIVE_REFERENCE` | PASS |
+| External evidence digest | Source Authority and T1/T2/T3 artifacts | upstream/local advisory inputs are mapped through CVF-owned artifacts; sha256 samples: upstream README `68F8BD0777211B4B368722B5DA9849D23D9BACCD660DA294E68B14C24D267FBB`; local scope `8AB56812C0FA9F036003D81C0CAA3D8255E046EBA3AF15D5892E2EEA92FCF15D` | PASS |
+| System loop interlock | this roadmap | next allowed move moves beyond AGSG and parks runtime/checker lanes | PASS |
+| Session continuity | session-sync commit after material commit | N/A with reason: intentionally split from material commit | PASS |
+| T1 baseline | `docs/baselines/CVF_GC018_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md` | top `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T1 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md` | top `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T2 advisory reference | `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md` | top `Status: ACTIVE_REFERENCE` | PASS |
+| T3 closeout | `docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | top `Status: CLOSED_PASS_BOUNDED` | PASS |
+
+| Closure item | Evidence | Status |
+|---|---|---|
+| Roadmap state | this roadmap top `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T1 baseline | `docs/baselines/CVF_GC018_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md` | PASS |
+| T1 work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md` | PASS |
+| T2 advisory reference | `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md` | PASS |
+| T3 closeout | `docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | PASS |
+| Static checker | N/A with reason: no checker now; reopen conditions recorded in T3 | PASS |
+| Runtime/provider/public proof | N/A with reason: no runtime/provider/public claim | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| AGSG-T0-Q1 | this roadmap | `Status` | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
+| AGSG-T0-Q2 | `docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md` | `Decision / Disposition` | `CLOSE_AGSG_ABSORPTION_LANE_NO_CHECKER_NOW` | `CLOSE_AGSG_ABSORPTION_LANE_NO_CHECKER_NOW` | PASS |
+| AGSG-T0-Q3 | `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md` | `Status` | `ACTIVE_REFERENCE` | `ACTIVE_REFERENCE` | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 
