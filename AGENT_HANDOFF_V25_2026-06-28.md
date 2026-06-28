@@ -977,3 +977,37 @@ breakers, Truth Kernel runtime, evidence database, obligation registry runtime,
 SOT index runtime, independent verifier service, provider/live proof,
 public-sync export, CLI/MCP adapter, package activation, certification,
 generated aggregate, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - TKG-T2 Handoff Marker
+
+Authorized guard-maintenance scope: update the active handoff with material
+reconciliation commit `d4ed93f0` so GC-020 active-session compatibility
+recognizes the current HEAD after TKG-T2 truth foundation owner-surface
+reconciliation.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V25_2026-06-28.md`
+
+Operator authorization: the operator approved continuing from the TKG-T1 next
+recommendation by asking for the next tranche.
+
+Rollback boundary: if this handoff marker is rejected, revert only this
+marker. Do not revert TKG-T2 material commit `d4ed93f0`, TKG-T1 handoff sync
+commit `fab9a28d`, TKG-T1 material commit `97669068`, or earlier
+EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - TKG-T2 Truth Foundation Owner-Surface Reconciliation Commit
+
+Material commit `d4ed93f0` added
+`docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md`
+and updated the truth foundation front door. The matrix maps TKG-T1 doctrine to
+Enterprise Evidence Pack, MLW3, Release Candidate Truth Packet, WD1
+TruthScore, existing claim-boundary standards, and current claim/equivalence
+guards. It recommends a future TKG-T3 static claim-guard plan only.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed TKG-T2 reconciliation. It does not implement a checker, runtime,
+provider/live proof, public-sync export, evidence database, obligation registry
+runtime, SOT index runtime, MCP gateway, hypervisor, adapter, package
+activation, certification, generated aggregate, or production/hosted readiness.
