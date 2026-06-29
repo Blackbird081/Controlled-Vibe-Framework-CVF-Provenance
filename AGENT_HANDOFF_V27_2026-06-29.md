@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`everos_absorption_lane_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target; parked checkpoint=EverOS memory-foundation absorption closed through T5 at `37771016`, T4 checker at `cac4947e`, T3 plan at `ed10ced8`; CGE-R1 closed at `2f106dea`; AGSK-T5 closed at `a00f7cf5`; AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`everos_absorption_lane_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target, after checking the conditional reopen index for newly eligible parked candidates; parked checkpoint=EverOS memory-foundation absorption closed through T5 at `37771016`, T4 checker at `cac4947e`, T3 plan at `ed10ced8`; CGE-R1 closed at `2f106dea`; external absorption conditional reopen index added at `cab4a16a`; AGSK-T5 closed at `a00f7cf5`; AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,7 +19,7 @@ Startup acknowledged: current mode=`everos_absorption_lane_closed_pending_next_e
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `0041218b` CGE-R1 CodeGraph full reabsorption work order |
-| Latest material closeout | `37771016` EverOS remaining value audit and lane closeout |
+| Latest material closeout | `cab4a16a` external absorption conditional reopen index |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
@@ -69,6 +69,15 @@ coverage. Decision:
 `CLOSE_EVEROS_ABSORPTION_LANE_NO_NEXT_TRANCHE`. No runtime, provider/live,
 public-sync, adapter, package activation, vector store, graph store, database,
 OME runtime, or MPI-T6 runtime was created or authorized.
+
+Material commit `cab4a16a` added
+`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`
+and updated the external absorption core standard plus front door. The index
+centralizes conditionally reopenable package, runtime, checker, and
+value-parked candidates so "not authorized in this tranche" is not mistaken for
+"no value". It is a reference index only and does not authorize runtime,
+package activation, checker wiring, provider/live proof, public-sync, or
+production-readiness claims.
 
 Material commit `cac4947e` implemented the EverOS source-derived memory claim
 guard by extending `governance/compat/check_memory_access_claim.py` and
@@ -128,12 +137,14 @@ field only as candidate metadata.
 
 ## Next Allowed Move
 
-Operator selects the next external repo/folder absorption target. EverOS is
-closed through T5 at material commit `37771016` and should not be re-executed
-unless a recorded reopen condition is met and the operator explicitly
-authorizes a fresh governed tranche. CGE-R1 is closed at material commit
-`2f106dea` and should not be re-executed unless a new source-backed gap is
-identified.
+Operator selects the next external repo/folder absorption target after checking
+`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`
+for newly eligible parked candidates. EverOS is closed through T5 at material
+commit `37771016` and should not be re-executed unless a recorded reopen
+condition is met and the operator explicitly authorizes a fresh governed
+tranche. CGE-R1 is closed at material commit `2f106dea`; CodeGraph runtime,
+package, and checker candidates are parked in the conditional reopen index
+unless the operator authorizes the bounded CGE-R2 value probe.
 
 No runtime, package root, `SKILL.md`, ASSF registry entry, generated package
 index, checker, resolver, CodeGraph install/init/index/MCP/watcher/daemon,
