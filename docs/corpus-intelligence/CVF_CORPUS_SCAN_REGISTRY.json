@@ -4314,6 +4314,61 @@
         "MCP readiness claim from package scaffold"
       ],
       "nextScanRecommendation": "No rescan required unless the frozen package changes or a future runtime/MCP roadmap opens with fresh source verification."
+    },
+    {
+      "id": "cge-r1-codegraph-full-reabsorption-snapshot",
+      "corpusType": "EXTERNAL_SOURCE",
+      "displayName": "CGE-R1 CodeGraph full reabsorption snapshot",
+      "scopePaths": [
+        ".private_reference/legacy/CVF 28.06/CodeGraph/CVF_Code_Intelligence_Capability/",
+        "EXTENSIONS/CVF_CODE_INTELLIGENCE_CAPABILITY/",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/"
+      ],
+      "fileCount": 89,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CGE-R1",
+      "scanDate": "2026-06-29",
+      "manifestHash": "89b95efad85bcc7a7a4e8f38095c658695b667f50dc13c2f980a8a011aeeeb63",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "manifestPath": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md#corpus-manifest-and-processing-ledger",
+      "packetPath": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md",
+      "completionReviewPath": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md",
+      "gcBaselineRef": "docs/work_orders/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_WORK_ORDER_2026-06-29.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "CODE_INTELLIGENCE_CLAIM_BOUNDARY",
+        "GRAPH_STALENESS_AND_SYNC",
+        "GRAPH_QUERY_SCHEMA",
+        "GRAPH_RECEIPT_PROTOCOL",
+        "CODE_INTELLIGENCE_PACKAGE_CANDIDATE",
+        "CODEGRAPH_RUNTIME_CANDIDATE",
+        "CHECKER_CANDIDATE"
+      ],
+      "priorAbsorption": "CGE-R1 reabsorbed the bounded local CodeGraph capability snapshot after earlier partial absorption. The review dispositioned all 89 files: 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE, 0 DEFERRED, and moved reusable template/example/schema value into the CVF owner-surface matrix.",
+      "findings": [
+        {
+          "id": "CGE-R1-F1-template-example-schema-overdefer-repaired",
+          "summary": "Initial worker return over-deferred 16 value-bearing template, example, and schema files; reviewer repaired by adapting artifact-shape and schema-vocabulary doctrine into the owner-surface matrix.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use the CGE-R1 owner-surface matrix as the documentation-only CVF reference; runtime, package activation, checker implementation, and public-sync require separate source-verified work orders.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "CodeGraph runtime imported into CVF",
+        "CodeGraph MCP adapter activated",
+        "code intelligence package certified active",
+        "graph checker implemented in CGE-R1",
+        "public export completed for CGE-R1"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED unless a later CGE runtime, ASSF package, checker, or public-sync tranche is explicitly authorized."
     }
   ]
 }
