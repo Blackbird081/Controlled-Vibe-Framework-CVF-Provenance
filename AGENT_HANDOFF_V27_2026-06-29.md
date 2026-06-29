@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external absorption target/tranche or authorizes a fresh bounded package-candidate work order; parked checkpoint=AGSK-T5 closed at `a00f7cf5`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute CGE-R1 as WORKER_MUST_NOT_COMMIT using `docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`; parked checkpoint=AGSK-T5 closed at `a00f7cf5`, CGE-R1 dispatched at `0041218b`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`agsk_t5_package_candidate_closed_pending_nex
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material dispatch | `1cc52d7a` AGSK-T5 package candidate work order |
+| Latest material dispatch | `0041218b` CGE-R1 CodeGraph full reabsorption work order |
 | Latest material closeout | `a00f7cf5` AGSK-T5 first external absorption package candidate |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
+`cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`
 
 ## Purpose
 
@@ -36,7 +36,7 @@ absorption selection boundary.
 ## Scope / Target / Owner Boundary
 
 Target: maintain compact active handoff V27, update active startup pointers,
-and preserve the AGSK-T5 dispatch boundary.
+and preserve the CGE-R1 dispatch boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize AGSK-T5 execution, package activation, runtime/provider/live
@@ -60,6 +60,22 @@ against CVF-governed surfaces.
 
 ## Latest Work / Changes
 
+Material commit `0041218b` dispatched CGE-R1 by adding
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`.
+The work order requires a no-commit worker to perform full CodeGraph
+reabsorption from
+`.private_reference/legacy/CVF 28.06/CodeGraph/CVF_Code_Intelligence_Capability`,
+create
+`docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`,
+and create
+`docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md`.
+It requires full manifest, processing ledger, EAC/EAVC value conversion, and
+CVF-owned owner-surface conversion. It does not authorize runtime, package root,
+`SKILL.md`, ASSF registry mutation, generated package index mutation, checker,
+resolver, CodeGraph install/init/index/MCP/watcher/daemon, provider/live proof,
+public-sync, package activation, lifecycle promotion, or production-readiness
+claim.
+
 Material commit `a00f7cf5` closed AGSK-T5 by adding
 `docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`,
 regenerating `docs/reference/agent_system_skills/generated/skill-index.json`,
@@ -82,17 +98,19 @@ field only as candidate metadata.
 
 ## Next Allowed Move
 
-Operator selects the next external absorption target/tranche or authorizes a
-fresh bounded package-candidate work order.
+Execute CGE-R1 as `WORKER_MUST_NOT_COMMIT` using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`.
 
-AGSK-T6 checker work remains value-parked because AGSK-T5 did not identify a
-concrete repeated defect or high-risk gap requiring immediate checker
-implementation.
+Worker must create
+`docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`
+and
+`docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md`.
 
-No package root, `SKILL.md`, resolver, checker, runtime/provider/live/public-sync
-artifact, plugin import, slash command, persona, hook, package activation,
+No runtime, package root, `SKILL.md`, ASSF registry entry, generated package
+index, checker, resolver, CodeGraph install/init/index/MCP/watcher/daemon,
+provider/live proof, public-sync, session-sync by worker, package activation,
 lifecycle promotion, production-readiness claim, or external CLI/MCP adapter is
-authorized by AGSK-T5 closure.
+authorized.
 
 ## Parked Checkpoint
 
@@ -108,6 +126,26 @@ Runtime-provider-live lanes, package activation, adapter implementation,
 public-sync expansion, CodeGraph runtime/MCP/watcher/daemon, Agent Skills
 plugin/command/persona/hook/runtime import, automatic skill invocation, and
 production-readiness claims remain parked behind fresh governed authorization.
+
+## Core Guard Self-Protection Authorization - CGE-R1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+CGE-R1 dispatch material commit `0041218b`, regenerate active session state, and
+align front-door, bootstrap read model, and active handoff next-move wording with
+the dispatched work order.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/cgeR1CodeGraphReabsorptionWorkOrderDispatch20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `0041218b` unless the reviewer reopens the CGE-R1 dispatch packet.
 
 ## Core Guard Self-Protection Authorization - AGSK-T5 Closure Session Sync
 

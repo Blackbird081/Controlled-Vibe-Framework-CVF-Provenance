@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external absorption target/tranche or authorizes a fresh bounded package-candidate work order; parked checkpoint=AGSK-T5 closed at material commit `a00f7cf5`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute CGE-R1 as WORKER_MUST_NOT_COMMIT using `docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`; parked checkpoint=AGSK-T5 closed at material commit `a00f7cf5`, CGE-R1 dispatched at material commit `0041218b`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current Mode
 
-Current mode marker: `agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
+Current mode marker: `cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`
 
-Current mode: `agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
+Current mode: `cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`
 
-`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
+`cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`
 
 Previous mode:
 
-`agsk_t5_work_order_dispatched_pending_worker_execution`
+`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CGE-R1 CodeGraph full reabsorption work order dispatch | `0041218b` | DISPATCH_READY; worker must not commit; full manifest/ledger/EAC/EAVC owner-surface conversion required |
 | AGSK-T5 first external absorption package candidate | `a00f7cf5` | CLOSED_PASS_BOUNDED |
 | Orchestration command catalog refactor | `10dee6e9` | CLOSED_PASS_BOUNDED |
 | Orchestration session sync | `f73546c5` | CLOSED_PASS |
@@ -125,17 +126,22 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
+Mode: `cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`
 
-Next allowed move: operator selects the next external absorption target/tranche
-or authorizes a fresh bounded package-candidate work order. AGSK-T5 closed at
-material commit `a00f7cf5`; LHW24 remains the latest closed numbered LHW wave.
-AGSK-T6 checker work remains value-parked because T5 did not identify a
-concrete repeated defect or high-risk gap requiring immediate checker
-implementation. No package root, `SKILL.md`, resolver, checker,
-runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation,
+Next allowed move: execute CGE-R1 as `WORKER_MUST_NOT_COMMIT` using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`.
+LHW24 remains the latest closed numbered LHW wave.
+Worker must create
+`docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`
+and
+`docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md`,
+with full manifest, processing ledger, EAC/EAVC value conversion, and
+owner-surface matrix from `.private_reference/legacy/CVF 28.06/CodeGraph/CVF_Code_Intelligence_Capability`.
+No runtime, package root, `SKILL.md`, ASSF registry entry, generated package
+index, checker, resolver, CodeGraph install/init/index/MCP/watcher/daemon,
+provider/live proof, public-sync, session-sync by worker, package activation,
 lifecycle promotion, production-readiness claim, or external CLI/MCP adapter is
-authorized by T5 closure.
+authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -151,8 +157,8 @@ Broad external knowledge absorption remains a governed, trigger-based lane.
 AGSG-T1 through T3 closed the Agent Skills Governance absorption roadmap, and
 EAVC-T1 now requires every external absorption to classify doctrine,
 package, runtime, checker, reject-direct-import, and no-package/runtime value.
-The next governed move is AGSK package-candidate triage before CodeGraph unless
-the operator explicitly parks that triage. The exact markers
+The next governed move is CGE-R1 CodeGraph full reabsorption because AGSK-T5
+closed and the operator requested the CodeGraph work order. The exact markers
 `broad external knowledge absorption` and `blocked work classes` remain active
 for compatibility gates. Current blocked work classes include
 runtime/provider/live expansion, public-sync content mutation,
