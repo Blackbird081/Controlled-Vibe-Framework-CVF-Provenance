@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1324,
+  "stateKey": "cgeR1CodeGraphReabsorptionClosure20260629",
+  "value": "CGE-R1 CodeGraph full reabsorption closed at material commit 2f106dea. Material artifacts: docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md; docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md; docs/corpus-intelligence/registry/entries/cge-r1-codegraph-full-reabsorption-snapshot.json; docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json; docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md. Corpus result: 89 files enumerated, 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE, 0 DEFERRED, 0 unresolved. Reviewer repair converted value-bearing template/example/schema material into artifact-shape and schema-vocabulary doctrine and added Mandatory Blind-Spot Control plus GC-051 coverage. Runtime, package activation, checker implementation, public-sync, provider/live proof, and production-readiness remain parked behind fresh governed authorization."
+}

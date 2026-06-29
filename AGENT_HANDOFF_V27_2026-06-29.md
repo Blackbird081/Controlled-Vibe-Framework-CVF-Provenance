@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute CGE-R1 as WORKER_MUST_NOT_COMMIT using `docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`; parked checkpoint=AGSK-T5 closed at `a00f7cf5`, CGE-R1 dispatched at `0041218b`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`cge_r1_codegraph_reabsorption_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target or a fresh bounded CGE follow-on; parked checkpoint=CGE-R1 closed at `2f106dea`, AGSK-T5 closed at `a00f7cf5`, CGE-R1 dispatched at `0041218b`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,12 +19,12 @@ Startup acknowledged: current mode=`cge_r1_codegraph_reabsorption_work_order_dis
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `0041218b` CGE-R1 CodeGraph full reabsorption work order |
-| Latest material closeout | `a00f7cf5` AGSK-T5 first external absorption package candidate |
+| Latest material closeout | `2f106dea` CGE-R1 CodeGraph full reabsorption closeout |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`cge_r1_codegraph_reabsorption_work_order_dispatched_pending_worker_execution`
+`cge_r1_codegraph_reabsorption_closed_pending_next_external_absorption_target`
 
 ## Purpose
 
@@ -36,7 +36,7 @@ absorption selection boundary.
 ## Scope / Target / Owner Boundary
 
 Target: maintain compact active handoff V27, update active startup pointers,
-and preserve the CGE-R1 dispatch boundary.
+and preserve the CGE-R1 closure boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize AGSK-T5 execution, package activation, runtime/provider/live
@@ -59,6 +59,16 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `2f106dea` closed CGE-R1 CodeGraph full reabsorption. It added
+`docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`,
+`docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md`,
+and GC-051 registry coverage for the bounded CodeGraph snapshot. Corpus result:
+89 files enumerated, 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE, 0 DEFERRED, and
+0 unresolved. Reviewer repair converted initially over-deferred template,
+example, and schema material into artifact-shape and schema-vocabulary doctrine.
+No runtime, package activation, checker implementation, public-sync,
+provider/live proof, or production-readiness claim was created.
 
 Material commit `0041218b` dispatched CGE-R1 by adding
 `docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`.
@@ -98,19 +108,16 @@ field only as candidate metadata.
 
 ## Next Allowed Move
 
-Execute CGE-R1 as `WORKER_MUST_NOT_COMMIT` using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`.
-
-Worker must create
-`docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`
-and
-`docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md`.
+Operator selects the next external repo/folder absorption target or an
+explicitly bounded CGE follow-on. CGE-R1 is closed at material commit
+`2f106dea` and should not be re-executed unless a new source-backed gap is
+identified.
 
 No runtime, package root, `SKILL.md`, ASSF registry entry, generated package
 index, checker, resolver, CodeGraph install/init/index/MCP/watcher/daemon,
-provider/live proof, public-sync, session-sync by worker, package activation,
-lifecycle promotion, production-readiness claim, or external CLI/MCP adapter is
-authorized.
+provider/live proof, public-sync, package activation, lifecycle promotion,
+production-readiness claim, or external CLI/MCP adapter is authorized without a
+fresh governed work order.
 
 ## Parked Checkpoint
 
@@ -126,6 +133,26 @@ Runtime-provider-live lanes, package activation, adapter implementation,
 public-sync expansion, CodeGraph runtime/MCP/watcher/daemon, Agent Skills
 plugin/command/persona/hook/runtime import, automatic skill invocation, and
 production-readiness claims remain parked behind fresh governed authorization.
+
+## Core Guard Self-Protection Authorization - CGE-R1 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+CGE-R1 closeout material commit `2f106dea`, regenerate active session state, and
+align front-door, bootstrap read model, and active handoff next-move wording with
+the reviewer-accepted closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/cgeR1CodeGraphReabsorptionClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `2f106dea` unless the reviewer reopens the CGE-R1 closeout.
 
 ## Core Guard Self-Protection Authorization - CGE-R1 Dispatch Session Sync
 
