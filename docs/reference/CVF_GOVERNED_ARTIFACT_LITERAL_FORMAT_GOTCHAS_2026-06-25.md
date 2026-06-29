@@ -305,6 +305,18 @@ runtime/product code, and does not itself implement or modify any checker.
     material batch. Treat this as a corpus-source accountability issue, not as
     a reason to hide material evidence from the review.
 
+30. **Optional completion reviews become full closure artifacts once created.**
+    If a work order says `completionReviewPath` is optional, do not create a
+    `Status: CLOSED_PASS_BOUNDED` completion review merely to make the
+    closeout feel formal. The new file can trigger Machine Closure Package
+    exact-column requirements, Delta claim-boundary requirements, work-order
+    closed-status residue checks, and Agent Operation Trace manifest checks.
+    Prefer repairing small evidence defects inside the worker return, run
+    `python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base <closureBase> --head HEAD --enforce`,
+    commit material paths, then do a separate session-sync. Create the
+    completion review only when the work order requires it or when the worker
+    return cannot safely carry the reviewer decision.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -330,19 +342,19 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | governed-artifact checklist learning update, 2026-06-26 |
+| Session or invocation | optional completion review gotcha update, 2026-06-29 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
-| Allowed scope source | operator instruction to add small findings to the checklist before continuing the roadmap |
-| Before status evidence | baseHead `b58d1cd3`; worktree clean before patch |
-| After status evidence | checklist records the GC-051 extension-path review/audit mention trap as item 29 |
-| Diff evidence | `git diff --name-status` against baseHead `b58d1cd3` |
-| Approval boundary | governed artifact authoring friction checklist only |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Allowed scope source | operator instruction to make reviewer/closure speed rules durable before future agent work |
+| Before status evidence | AGSK-T4 closeout briefly created an optional completion review that triggered avoidable closure-shape gates |
+| After status evidence | checklist records optional completion review overbuild as item 30 |
+| Diff evidence | `git diff --name-status` before material commit |
+| Approval boundary | governed artifact authoring friction checklist and ADIF/guard routing only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
-| Invocation ID | `small-governed-artifact-checklist-learning-update-2026-06-26` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Invocation ID | `optional-completion-review-gotcha-update-2026-06-29` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this hardening batch |
