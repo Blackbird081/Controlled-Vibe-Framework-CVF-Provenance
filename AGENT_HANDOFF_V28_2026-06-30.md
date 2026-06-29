@@ -166,8 +166,9 @@ import, merge authority, commit authority, or production-readiness.
 
 ## GC-020 Marker - AGSK-R7 Session Sync Commit
 
-Session-sync commit pending updates active session continuity after AGSK-R7
-material commit `19feb1f1`.
+Session-sync commit `7abcc4be` updated active session continuity after AGSK-R7
+material commit `19feb1f1`. Full session-sync SHA:
+`7abcc4bed92e453998aea27d51ddb96c50eca5ec`
 
 At session-sync authoring time, mode is:
 `agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
@@ -181,6 +182,17 @@ This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 the session-sync commit. It does not authorize automatic package activation,
 resolver mutation, CLI/MCP adapter, provider/live proof, public-sync export,
 direct import, merge authority, commit authority, or production-readiness.
+
+## GC-020 Marker - AGSK-R7 Handoff-Sync-Only Commit
+
+This handoff-sync-only commit records parent session-sync commit `7abcc4be`.
+Because the current commit SHA cannot be known before commit creation, the
+active-session checker may accept the parent SHA for this dedicated handoff-only
+sync commit.
+
+This marker does not authorize automatic package activation, resolver mutation,
+CLI/MCP adapter, provider/live proof, public-sync export, direct import, merge
+authority, commit authority, or production-readiness.
 
 ## Claim Boundary
 
