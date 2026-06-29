@@ -6,6 +6,10 @@ Status: ACTIVE_CHAIN_MAP
 
 docType: reference
 
+Canonical path:
+
+`docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
+
 ## Purpose
 
 Define the single CVF-owned sequence for absorbing external knowledge before it
@@ -84,6 +88,7 @@ Short form:
 | Authority boundary | `AGENTS.md`, `CVF_SESSION_MEMORY.md`, active state, active handoff | Machine-checked for session/front-door continuity |
 | Provider-local memory boundary | `AGENTS.md` provider-specific memory boundary | Policy-bound; checked by review/gates where applicable |
 | Knowledge blind-spot prevention | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md` | Binding standard; work-order evidence required when applicable |
+| External absorption core | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `governance/compat/check_external_absorption_core.py` | Machine-checked for changed external repo/copied-folder absorption artifacts |
 | Corpus registry | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Machine-checked generated aggregate |
 | Legacy coverage visibility | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | Governed reference index; not yet a universal router |
 | External review packet authoring | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md` | Reference/checklist |
@@ -93,10 +98,11 @@ Short form:
 
 ## Enforcement Gap
 
-This chain map records a known gap: CVF has several machine checks for parts of
-the sequence, but it does not yet have one universal trigger/router that
-machine-enforces every external repo, review, corpus, or legacy intake through
-this full chain.
+This chain map records a remaining known gap: CVF has machine checks for the
+external absorption core, external knowledge intake routing, corpus
+completeness, and absorption blind-spot control, but it does not yet have one
+universal trigger/router that machine-enforces every external repo, review,
+corpus, or legacy intake through this full chain.
 
 Until that future router exists, agents must treat this chain map as the
 required Central Core and use the most specific existing guard for each local
@@ -107,6 +113,8 @@ view.
 A future checker may enforce:
 
 - changed external knowledge intake artifacts cite this chain map;
+- changed external repo/copied-folder absorption artifacts include the external
+  absorption core ledger;
 - external-return reviews include the Required Absorption Table;
 - legacy-adjacent implementation work orders include blind-spot control
   evidence and a legacy coverage index disposition;
@@ -116,6 +124,37 @@ A future checker may enforce:
 
 That future checker requires a separate GC-018 and work order. This artifact
 does not implement the checker.
+
+## Epistemic Process Block
+
+Epistemic Process Applicability: EPISTEMIC_PROCESS_NA_WITH_REASON: governance
+routing reference; it records required route order and current guard coverage,
+but does not assert an empirical corpus result, provider behavior, runtime
+behavior, or completed external-source absorption.
+
+Expected Result / Prediction: N/A - chain-map routing artifact.
+
+Evidence Comparison: N/A with reason: checker execution evidence is recorded
+in the EAC-T1 completion review and direct gate outputs.
+
+Contradiction Or Gap Disposition: N/A with reason: the remaining universal
+router gap is explicitly recorded in this artifact rather than hidden as a
+completed claim.
+
+Claim Update: no corpus-completeness or runtime claim is promoted by this
+chain-map update.
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+| --- | --- |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | external knowledge intake routing guard implementation |
+| Chain map route | chain-map self-maintenance -> external-intake guard self-check -> bounded routing reference update |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py` |
+| Owner surface | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Disposition | ADAPT chain map to name the EAC-T1 external absorption core standard and checker |
+| Claim boundary | routing reference maintenance only; no external source absorption, runtime, provider, public, or production claim |
 
 ## Claim Boundary
 

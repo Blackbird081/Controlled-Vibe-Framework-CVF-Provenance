@@ -169,6 +169,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "external absorption core",
+            "governance/compat/check_external_absorption_core.py",
+            base,
+            head,
+        ),
+        _range_command(
             "Delta mutating profile boundary",
             "governance/compat/check_delta_mutating_profile_boundary.py",
             base,

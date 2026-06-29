@@ -85,6 +85,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_external_knowledge_intake_routing.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "external absorption core",
+        ["python", "governance/compat/check_external_absorption_core.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "Delta mutating profile boundary",
         ["python", "governance/compat/check_delta_mutating_profile_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
