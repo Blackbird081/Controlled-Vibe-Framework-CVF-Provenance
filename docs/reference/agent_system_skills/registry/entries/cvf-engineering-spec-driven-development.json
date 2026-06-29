@@ -1,0 +1,105 @@
+{
+  "registryOrder": 4,
+  "skillId": "cvf-engineering-spec-driven-development",
+  "name": "CVF Engineering Spec-Driven Development",
+  "version": "0.1.0",
+  "owner": "CVF ASSF registry and work-order governance surface",
+  "status": "CANDIDATE",
+  "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json",
+  "originLane": "AGSK-T7",
+  "sourceArtifacts": [
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+    "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+    ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/reference/CVF_AGENT_SKILL_CAPABILITY_STANDARD_2026-06-28.md",
+    ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/04_CVF_CAPABILITY_PACKAGE_STANDARD.md",
+    ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/09_SPEC_TO_WORK_ORDER_MAPPING.md"
+  ],
+  "legacyRows": [],
+  "license": "CVF_PRIVATE_GOVERNED",
+  "reviewArtifacts": [
+    "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+  ],
+  "purpose": "Guide future governed engineering changes from specification evidence into bounded work-order execution, without bypassing source verification, scope, or closure gates.",
+  "triggerPatterns": [
+    "spec driven development",
+    "engineering work order",
+    "spec to implementation",
+    "source verified engineering task",
+    "implementation from spec"
+  ],
+  "taskClasses": [
+    "spec-authoring",
+    "work-order-authoring",
+    "worker-execution",
+    "source-review",
+    "implementation-planning"
+  ],
+  "useWhen": "A governed engineering task needs a source-backed specification, bounded implementation plan, expected receipts, and acceptance evidence before edits begin.",
+  "doNotUseWhen": "The task is a direct answer, a pure review with no implementation plan, a runtime activation claim, or a change already governed by a more specific CVF work order.",
+  "riskTriggers": [
+    "implementation requested before source verification",
+    "multi-file engineering change",
+    "spec-to-work-order mapping missing",
+    "acceptance evidence unspecified"
+  ],
+  "roles": [
+    "dispatcher",
+    "worker",
+    "reviewer"
+  ],
+  "phases": [
+    "SPEC_AUTHORING",
+    "DISPATCH_AUTHORING",
+    "WORKER_EXECUTION",
+    "REVIEWER_CLOSURE"
+  ],
+  "surfaces": [
+    "docs/work_orders",
+    "docs/reviews",
+    "docs/reference/agent_system_skills/registry"
+  ],
+  "riskCeiling": "R0",
+  "contextProfile": "governed-engineering-spec-metadata-only",
+  "inputs": [
+    "source-backed spec or operator request",
+    "source verification table",
+    "allowed and forbidden path list",
+    "acceptance criteria",
+    "gate evidence requirements"
+  ],
+  "outputs": [
+    "bounded work-order or execution plan",
+    "source verification mapping",
+    "receipt and acceptance evidence plan",
+    "reviewer closure checklist"
+  ],
+  "executionConstraints": "metadata-only candidate; does not authorize code edits, commits, runtime behavior, or provider calls by itself",
+  "acceptanceEvidence": "future promotion requires package instance evidence, UAT or reviewer proof, and current CVF gates; AGSK-T7 only creates metadata",
+  "riskProfile": "R0",
+  "authorityCeiling": "metadata-only advisory selection; loading this entry cannot authorize implementation beyond the active work order",
+  "sideEffects": "none from metadata loading; future selected package may guide documentation or planning only after separate authorization",
+  "permissions": "read metadata and cited governed source artifacts only",
+  "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+  "safeStop": "if spec, source verification, or acceptance evidence is missing, stop and require a source-verified work order",
+  "candidateState": "CANDIDATE",
+  "approvalState": "AWAITING_REVIEW",
+  "uatState": "NOT_STARTED",
+  "certificationState": "NOT_STARTED",
+  "deprecation": "none",
+  "successor": "none",
+  "retirement": "none",
+  "dependencies": [],
+  "conflicts": [],
+  "compositionOrder": 4,
+  "capabilityBoundary": "no package body, no SKILL.md, no runtime activation, no checker wiring, no commit authority, no provider/live proof",
+  "internalAgentDisposition": "CANDIDATE",
+  "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+  "loaderBoundary": "loading this metadata never grants authority to edit files, commit, activate a package, or bypass work-order gates",
+  "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+  "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+  "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+  "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+  "platformCompatibility": "cross-platform",
+  "shellAssumptions": "no shell execution required for metadata-only candidate",
+  "osConstraints": "none"
+}

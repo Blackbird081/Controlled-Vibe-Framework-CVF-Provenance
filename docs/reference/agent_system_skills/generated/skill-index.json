@@ -280,6 +280,630 @@
       "uatState": "NOT_STARTED",
       "useWhen": "A dispatcher, reviewer, or worker must absorb, review, or route external agent-skill knowledge into CVF-governed surfaces; or must trace external source evidence through the intake chain.",
       "version": "0.1.0"
+    },
+    {
+      "acceptanceEvidence": "future promotion requires package instance evidence, UAT or reviewer proof, and current CVF gates; AGSK-T7 only creates metadata",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+      "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "metadata-only advisory selection; loading this entry cannot authorize implementation beyond the active work order",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json",
+      "capabilityBoundary": "no package body, no SKILL.md, no runtime activation, no checker wiring, no commit authority, no provider/live proof",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 4,
+      "conflicts": [],
+      "contextProfile": "governed-engineering-spec-metadata-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "The task is a direct answer, a pure review with no implementation plan, a runtime activation claim, or a change already governed by a more specific CVF work order.",
+      "executionConstraints": "metadata-only candidate; does not authorize code edits, commits, runtime behavior, or provider calls by itself",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "source-backed spec or operator request",
+        "source verification table",
+        "allowed and forbidden path list",
+        "acceptance criteria",
+        "gate evidence requirements"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to edit files, commit, activate a package, or bypass work-order gates",
+      "name": "CVF Engineering Spec-Driven Development",
+      "originLane": "AGSK-T7",
+      "osConstraints": "none",
+      "outputs": [
+        "bounded work-order or execution plan",
+        "source verification mapping",
+        "receipt and acceptance evidence plan",
+        "reviewer closure checklist"
+      ],
+      "owner": "CVF ASSF registry and work-order governance surface",
+      "permissions": "read metadata and cited governed source artifacts only",
+      "phases": [
+        "SPEC_AUTHORING",
+        "DISPATCH_AUTHORING",
+        "WORKER_EXECUTION",
+        "REVIEWER_CLOSURE"
+      ],
+      "platformCompatibility": "cross-platform",
+      "purpose": "Guide future governed engineering changes from specification evidence into bounded work-order execution, without bypassing source verification, scope, or closure gates.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [
+        "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+      ],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "riskTriggers": [
+        "implementation requested before source verification",
+        "multi-file engineering change",
+        "spec-to-work-order mapping missing",
+        "acceptance evidence unspecified"
+      ],
+      "roles": [
+        "dispatcher",
+        "worker",
+        "reviewer"
+      ],
+      "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+      "safeStop": "if spec, source verification, or acceptance evidence is missing, stop and require a source-verified work order",
+      "shellAssumptions": "no shell execution required for metadata-only candidate",
+      "sideEffects": "none from metadata loading; future selected package may guide documentation or planning only after separate authorization",
+      "skillId": "cvf-engineering-spec-driven-development",
+      "sourceArtifacts": [
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+        "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/reference/CVF_AGENT_SKILL_CAPABILITY_STANDARD_2026-06-28.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/04_CVF_CAPABILITY_PACKAGE_STANDARD.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/09_SPEC_TO_WORK_ORDER_MAPPING.md"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "docs/work_orders",
+        "docs/reviews",
+        "docs/reference/agent_system_skills/registry"
+      ],
+      "taskClasses": [
+        "spec-authoring",
+        "work-order-authoring",
+        "worker-execution",
+        "source-review",
+        "implementation-planning"
+      ],
+      "triggerPatterns": [
+        "spec driven development",
+        "engineering work order",
+        "spec to implementation",
+        "source verified engineering task",
+        "implementation from spec"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A governed engineering task needs a source-backed specification, bounded implementation plan, expected receipts, and acceptance evidence before edits begin.",
+      "version": "0.1.0"
+    },
+    {
+      "acceptanceEvidence": "future promotion requires package instance evidence and reviewer proof that planning reduces scope drift",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+      "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "metadata-only planning guidance; cannot create or execute a tranche without normal CVF authorization",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-planning-task-breakdown.json",
+      "capabilityBoundary": "no package body, no SKILL.md, no runtime resolver, no checker wiring, no automatic dispatch",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 5,
+      "conflicts": [],
+      "contextProfile": "planning-breakdown-metadata-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "The user asks for a simple direct answer, the task has already been dispatched, or planning would reopen a closed lane without a recorded reopen condition.",
+      "executionConstraints": "metadata-only candidate; does not authorize planning output as execution authority without a governed work order",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "operator objective",
+        "roadmap or source review",
+        "candidate lane table",
+        "dependency and reopen conditions"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to execute a plan, dispatch work, or reopen a closed lane",
+      "name": "CVF Engineering Planning Task Breakdown",
+      "originLane": "AGSK-T7",
+      "osConstraints": "none",
+      "outputs": [
+        "bounded task decomposition",
+        "sequenced work-order candidates",
+        "defer or reopen condition list",
+        "evidence requirements"
+      ],
+      "owner": "CVF ASSF registry and planning governance surface",
+      "permissions": "read metadata and cited governed source artifacts only",
+      "phases": [
+        "ROADMAP_AUTHORING",
+        "PACKAGE_CANDIDATE_TRIAGE",
+        "DISPATCH_AUTHORING",
+        "PRE_DISPATCH"
+      ],
+      "platformCompatibility": "cross-platform",
+      "purpose": "Help future CVF planning split a requested task into bounded, source-verified work units with explicit activation, defer, and evidence boundaries.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [
+        "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+      ],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "riskTriggers": [
+        "large ambiguous task",
+        "multi-tranche dependency",
+        "activation decision missing",
+        "closed lane may be reopened accidentally"
+      ],
+      "roles": [
+        "dispatcher",
+        "reviewer"
+      ],
+      "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+      "safeStop": "if dependencies or reopen conditions are unclear, mark the task blocked instead of dispatching",
+      "shellAssumptions": "no shell execution required for metadata-only candidate",
+      "sideEffects": "none from metadata loading",
+      "skillId": "cvf-engineering-planning-task-breakdown",
+      "sourceArtifacts": [
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+        "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/reference/CVF_AGENT_SKILL_CAPABILITY_STANDARD_2026-06-28.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/05_SKILL_ACTIVATION_RESOLVER.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/09_SPEC_TO_WORK_ORDER_MAPPING.md"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "docs/roadmaps",
+        "docs/work_orders",
+        "docs/reference/agent_system_skills/registry"
+      ],
+      "taskClasses": [
+        "planning",
+        "task-breakdown",
+        "package-candidate-triage",
+        "dispatch-authoring",
+        "roadmap-authoring"
+      ],
+      "triggerPatterns": [
+        "task breakdown",
+        "planning task",
+        "split roadmap into work orders",
+        "activation decision",
+        "bounded tranche planning"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A roadmap, work order, or candidate lane needs to be split into bounded tasks with source evidence, sequencing, and stop conditions.",
+      "version": "0.1.0"
+    },
+    {
+      "acceptanceEvidence": "future promotion requires repeated defect evidence, package instance proof, and reviewer acceptance",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+      "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "metadata-only review signal; cannot block or pass work without existing CVF gates or reviewer decision",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-anti-rationalization-guard.json",
+      "capabilityBoundary": "no checker wiring, no runtime block, no package activation, no authority expansion beyond reviewer decision",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 6,
+      "conflicts": [],
+      "contextProfile": "anti-rationalization-metadata-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "The claim is already backed by source verification, current gate receipts, and an explicit closure boundary.",
+      "executionConstraints": "metadata-only candidate; does not implement a machine checker or auto-blocking runtime behavior",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "worker claim",
+        "closure statement",
+        "evidence receipt list",
+        "gate output",
+        "source verification table"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to skip evidence, override gates, or claim closure",
+      "name": "CVF Governance Anti-Rationalization Guard",
+      "originLane": "AGSK-T7",
+      "osConstraints": "none",
+      "outputs": [
+        "escalation or safe-stop note",
+        "required evidence correction",
+        "reviewer finding candidate",
+        "bounded claim update"
+      ],
+      "owner": "CVF governance review and closure surface",
+      "permissions": "read metadata and cited governed source artifacts only",
+      "phases": [
+        "WORKER_EXECUTION",
+        "WORKER_RETURN",
+        "REVIEWER_CLOSURE",
+        "PRE_COMMIT"
+      ],
+      "platformCompatibility": "cross-platform",
+      "purpose": "Surface shortcut-claim patterns that require source verification, tests, review, or safe stop before a governed agent may close work.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [
+        "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+      ],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "riskTriggers": [
+        "no test needed",
+        "obvious fix",
+        "small change no work order",
+        "completion claim without receipt",
+        "external authority bypass"
+      ],
+      "roles": [
+        "worker",
+        "reviewer",
+        "closer"
+      ],
+      "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+      "safeStop": "if rationalization signals are present and evidence is absent, stop and require source verification or reviewer decision",
+      "shellAssumptions": "no shell execution required for metadata-only candidate",
+      "sideEffects": "none from metadata loading",
+      "skillId": "cvf-governance-anti-rationalization-guard",
+      "sourceArtifacts": [
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+        "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+        "docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/reference/CVF_ANTI_RATIONALIZATION_GUARD_2026-06-28.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/06_ANTI_RATIONALIZATION_GUARD.md"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "docs/reviews",
+        "docs/work_orders",
+        "docs/reference/agent_system_skills"
+      ],
+      "taskClasses": [
+        "worker-execution",
+        "worker-return",
+        "reviewer",
+        "source-review",
+        "closure-review"
+      ],
+      "triggerPatterns": [
+        "simple change no spec",
+        "obvious fix no test",
+        "trust me claim",
+        "completion without receipt",
+        "shortcut rationalization"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A worker, reviewer, or closer sees language that minimizes source verification, testing, evidence, scope, or review requirements.",
+      "version": "0.1.0"
+    },
+    {
+      "acceptanceEvidence": "future promotion requires package instance evidence showing reduced context contamination",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+      "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "metadata-only context guidance; cannot promote external or stale context to authority",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-context-packet-builder.json",
+      "capabilityBoundary": "no runtime memory read, no external-agent context injection, no package body, no SKILL.md",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 7,
+      "conflicts": [],
+      "contextProfile": "bounded-context-packet-metadata-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "The task is trivial, no governed work transfer is occurring, or full package/runtime activation is being claimed.",
+      "executionConstraints": "metadata-only candidate; does not create a runtime context loader or memory injection behavior",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "trusted instructions",
+        "canonical rules",
+        "source verification table",
+        "allowed files",
+        "forbidden files",
+        "untrusted data"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to inject context, trust external data, or bypass source verification",
+      "name": "CVF Governance Context Packet Builder",
+      "originLane": "AGSK-T7",
+      "osConstraints": "none",
+      "outputs": [
+        "bounded context packet",
+        "trusted source list",
+        "untrusted data labels",
+        "receipt linkage requirement"
+      ],
+      "owner": "CVF context and work-transfer governance surface",
+      "permissions": "read metadata and cited governed source artifacts only",
+      "phases": [
+        "CONTEXT_PREP",
+        "DISPATCH_AUTHORING",
+        "WORKER_EXECUTION",
+        "WORKER_RETURN"
+      ],
+      "platformCompatibility": "cross-platform",
+      "purpose": "Help future agents assemble bounded context packets with trusted sources, allowed files, untrusted data labels, and receipt links before package-like work begins.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [
+        "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+      ],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "riskTriggers": [
+        "untrusted data mixed with authority",
+        "missing allowed or forbidden files",
+        "stale context warning absent",
+        "receipt link missing"
+      ],
+      "roles": [
+        "dispatcher",
+        "worker",
+        "reviewer"
+      ],
+      "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+      "safeStop": "if trusted and untrusted context cannot be separated, stop and require source clarification",
+      "shellAssumptions": "no shell execution required for metadata-only candidate",
+      "sideEffects": "none from metadata loading",
+      "skillId": "cvf-governance-context-packet-builder",
+      "sourceArtifacts": [
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+        "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/08_CONTEXT_PACKET_STANDARD.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/05_SKILL_ACTIVATION_RESOLVER.md"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "docs/work_orders",
+        "docs/reviews",
+        "docs/reference/agent_system_skills/registry"
+      ],
+      "taskClasses": [
+        "context-packet",
+        "source-review",
+        "worker-execution",
+        "work-transfer",
+        "package-candidate-triage"
+      ],
+      "triggerPatterns": [
+        "context packet",
+        "progressive disclosure",
+        "trusted source bundle",
+        "context contamination",
+        "work transfer context"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A worker or dispatcher must carry only the relevant trusted sources, scope boundaries, source verification, and receipt references into a bounded task.",
+      "version": "0.1.0"
+    },
+    {
+      "acceptanceEvidence": "future promotion requires package instance evidence and reviewer proof of receipt completeness",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+      "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "metadata-only evidence guidance; cannot certify or freeze work without reviewer closure",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-evidence-receipt-review-freeze.json",
+      "capabilityBoundary": "no certification decision, no automatic freeze, no checker wiring, no runtime activation",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 8,
+      "conflicts": [],
+      "contextProfile": "evidence-receipt-metadata-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "No capability-like action is claimed, or evidence is already fully governed by a more specific closure packet.",
+      "executionConstraints": "metadata-only candidate; does not implement receipt schema validation or freeze automation",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "capability or package-like action claim",
+        "verification commands",
+        "worker return",
+        "review artifacts",
+        "closure boundary"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to certify, freeze, or close a capability claim",
+      "name": "CVF Governance Evidence Receipt Review Freeze",
+      "originLane": "AGSK-T7",
+      "osConstraints": "none",
+      "outputs": [
+        "receipt coverage statement",
+        "review gate evidence mapping",
+        "freeze or non-freeze disposition",
+        "trusted closure boundary"
+      ],
+      "owner": "CVF evidence, worker-return, and closure governance surface",
+      "permissions": "read metadata and cited governed source artifacts only",
+      "phases": [
+        "WORKER_EXECUTION",
+        "WORKER_RETURN",
+        "REVIEWER_CLOSURE",
+        "PRE_COMMIT"
+      ],
+      "platformCompatibility": "cross-platform",
+      "purpose": "Preserve the rule that no package-like capability use becomes trusted closure without receipts, review gate evidence, and an explicit freeze or non-freeze decision.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [
+        "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+      ],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "riskTriggers": [
+        "closure claim without receipt",
+        "review gate evidence missing",
+        "freeze eligibility unclear",
+        "verification level unspecified"
+      ],
+      "roles": [
+        "worker",
+        "reviewer",
+        "closer"
+      ],
+      "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+      "safeStop": "if receipts are missing for a trusted closure claim, stop and mark closure untrusted or blocked",
+      "shellAssumptions": "no shell execution required for metadata-only candidate",
+      "sideEffects": "none from metadata loading",
+      "skillId": "cvf-governance-evidence-receipt-review-freeze",
+      "sourceArtifacts": [
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+        "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/10_VERIFICATION_AND_EVIDENCE_RECEIPT.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/05_SKILL_ACTIVATION_RESOLVER.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/11_ROADMAP_AND_ACCEPTANCE_CRITERIA.md"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "docs/reviews",
+        "docs/work_orders",
+        "docs/reference/agent_system_skills/registry"
+      ],
+      "taskClasses": [
+        "worker-return",
+        "reviewer",
+        "closure-review",
+        "worker-execution",
+        "package-candidate-triage"
+      ],
+      "triggerPatterns": [
+        "evidence receipt",
+        "review gate receipt",
+        "freeze condition",
+        "trusted closure",
+        "capability receipt"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A worker or reviewer must prove that a capability-like action has receipts, verification levels, review evidence, and a closure/freeze boundary.",
+      "version": "0.1.0"
+    },
+    {
+      "acceptanceEvidence": "future promotion requires repeated boundary-defect evidence and reviewer proof",
+      "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+      "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+      "approvalState": "AWAITING_REVIEW",
+      "authorityCeiling": "metadata-only boundary guidance; cannot authorize persona orchestration or command execution",
+      "candidateState": "CANDIDATE",
+      "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-persona-skill-boundary-review.json",
+      "capabilityBoundary": "no persona creation, no agent spawning, no command import, no runtime orchestration, no package activation",
+      "certificationState": "NOT_STARTED",
+      "compositionOrder": 9,
+      "conflicts": [],
+      "contextProfile": "persona-skill-boundary-metadata-only",
+      "dependencies": [],
+      "deprecation": "none",
+      "doNotUseWhen": "The work uses ordinary CVF role routing with no persona, command, skill, fan-out, or merge boundary issue.",
+      "executionConstraints": "metadata-only candidate; does not spawn agents, create personas, install commands, or alter handoff runtime",
+      "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+      "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+      "inputs": [
+        "persona or command claim",
+        "role assignment",
+        "handoff contract route",
+        "fan-out or merge plan",
+        "reviewer owner"
+      ],
+      "internalAgentDisposition": "CANDIDATE",
+      "legacyRows": [],
+      "license": "CVF_PRIVATE_GOVERNED",
+      "loaderBoundary": "loading this metadata never grants authority to spawn agents, execute commands, or bypass the handoff contract",
+      "name": "CVF Governance Persona Skill Boundary Review",
+      "originLane": "AGSK-T7",
+      "osConstraints": "none",
+      "outputs": [
+        "boundary review note",
+        "role or handoff route correction",
+        "forbidden orchestration finding",
+        "merge decision owner"
+      ],
+      "owner": "CVF multi-agent role and handoff governance surface",
+      "permissions": "read metadata and cited governed source artifacts only",
+      "phases": [
+        "DISPATCH_AUTHORING",
+        "MULTI_AGENT_ROUTING",
+        "WORKER_RETURN",
+        "REVIEWER_CLOSURE"
+      ],
+      "platformCompatibility": "cross-platform",
+      "purpose": "Review multi-agent or persona-like requests so skills, personas, commands, roles, fan-out, and merge decisions stay under CVF-owned handoff and review control.",
+      "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+      "retirement": "none",
+      "reviewArtifacts": [
+        "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+      ],
+      "riskCeiling": "R0",
+      "riskProfile": "R0",
+      "riskTriggers": [
+        "persona spawns another persona",
+        "command bypasses work order",
+        "skill claims orchestration authority",
+        "merge decision lacks reviewer owner"
+      ],
+      "roles": [
+        "dispatcher",
+        "reviewer",
+        "closer"
+      ],
+      "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+      "safeStop": "if persona, command, or skill authority is ambiguous, stop and require CVF role/handoff owner decision",
+      "shellAssumptions": "no shell execution required for metadata-only candidate",
+      "sideEffects": "none from metadata loading",
+      "skillId": "cvf-governance-persona-skill-boundary-review",
+      "sourceArtifacts": [
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+        "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+        "docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/07_PERSONA_ORCHESTRATION_BOUNDARY.md",
+        ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/03_ABSORPTION_MAP.md"
+      ],
+      "status": "CANDIDATE",
+      "successor": "none",
+      "surfaces": [
+        "docs/work_orders",
+        "docs/reviews",
+        "docs/reference/agent_system_skills",
+        "docs/reference/agent_handoff"
+      ],
+      "taskClasses": [
+        "multi-agent-review",
+        "source-review",
+        "package-candidate-triage",
+        "dispatch-authoring",
+        "reviewer"
+      ],
+      "triggerPatterns": [
+        "persona boundary",
+        "persona orchestrates persona",
+        "multi-agent fanout",
+        "skill command boundary",
+        "role lens review"
+      ],
+      "uatState": "NOT_STARTED",
+      "useWhen": "A request, external skill, or worker packet uses persona, command, or skill concepts that might blur CVF role authority or orchestration ownership.",
+      "version": "0.1.0"
     }
   ]
 }

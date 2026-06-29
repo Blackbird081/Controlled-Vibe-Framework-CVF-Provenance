@@ -1,0 +1,103 @@
+{
+  "registryOrder": 5,
+  "skillId": "cvf-engineering-planning-task-breakdown",
+  "name": "CVF Engineering Planning Task Breakdown",
+  "version": "0.1.0",
+  "owner": "CVF ASSF registry and planning governance surface",
+  "status": "CANDIDATE",
+  "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-planning-task-breakdown.json",
+  "originLane": "AGSK-T7",
+  "sourceArtifacts": [
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+    "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+    ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/reference/CVF_AGENT_SKILL_CAPABILITY_STANDARD_2026-06-28.md",
+    ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/05_SKILL_ACTIVATION_RESOLVER.md",
+    ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/09_SPEC_TO_WORK_ORDER_MAPPING.md"
+  ],
+  "legacyRows": [],
+  "license": "CVF_PRIVATE_GOVERNED",
+  "reviewArtifacts": [
+    "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+  ],
+  "purpose": "Help future CVF planning split a requested task into bounded, source-verified work units with explicit activation, defer, and evidence boundaries.",
+  "triggerPatterns": [
+    "task breakdown",
+    "planning task",
+    "split roadmap into work orders",
+    "activation decision",
+    "bounded tranche planning"
+  ],
+  "taskClasses": [
+    "planning",
+    "task-breakdown",
+    "package-candidate-triage",
+    "dispatch-authoring",
+    "roadmap-authoring"
+  ],
+  "useWhen": "A roadmap, work order, or candidate lane needs to be split into bounded tasks with source evidence, sequencing, and stop conditions.",
+  "doNotUseWhen": "The user asks for a simple direct answer, the task has already been dispatched, or planning would reopen a closed lane without a recorded reopen condition.",
+  "riskTriggers": [
+    "large ambiguous task",
+    "multi-tranche dependency",
+    "activation decision missing",
+    "closed lane may be reopened accidentally"
+  ],
+  "roles": [
+    "dispatcher",
+    "reviewer"
+  ],
+  "phases": [
+    "ROADMAP_AUTHORING",
+    "PACKAGE_CANDIDATE_TRIAGE",
+    "DISPATCH_AUTHORING",
+    "PRE_DISPATCH"
+  ],
+  "surfaces": [
+    "docs/roadmaps",
+    "docs/work_orders",
+    "docs/reference/agent_system_skills/registry"
+  ],
+  "riskCeiling": "R0",
+  "contextProfile": "planning-breakdown-metadata-only",
+  "inputs": [
+    "operator objective",
+    "roadmap or source review",
+    "candidate lane table",
+    "dependency and reopen conditions"
+  ],
+  "outputs": [
+    "bounded task decomposition",
+    "sequenced work-order candidates",
+    "defer or reopen condition list",
+    "evidence requirements"
+  ],
+  "executionConstraints": "metadata-only candidate; does not authorize planning output as execution authority without a governed work order",
+  "acceptanceEvidence": "future promotion requires package instance evidence and reviewer proof that planning reduces scope drift",
+  "riskProfile": "R0",
+  "authorityCeiling": "metadata-only planning guidance; cannot create or execute a tranche without normal CVF authorization",
+  "sideEffects": "none from metadata loading",
+  "permissions": "read metadata and cited governed source artifacts only",
+  "rollback": "delete this registry entry and regenerate the skill index if reviewer rejects AGSK-T7",
+  "safeStop": "if dependencies or reopen conditions are unclear, mark the task blocked instead of dispatching",
+  "candidateState": "CANDIDATE",
+  "approvalState": "AWAITING_REVIEW",
+  "uatState": "NOT_STARTED",
+  "certificationState": "NOT_STARTED",
+  "deprecation": "none",
+  "successor": "none",
+  "retirement": "none",
+  "dependencies": [],
+  "conflicts": [],
+  "compositionOrder": 5,
+  "capabilityBoundary": "no package body, no SKILL.md, no runtime resolver, no checker wiring, no automatic dispatch",
+  "internalAgentDisposition": "CANDIDATE",
+  "resolverBehavior": "metadata-only; resolver returns identity and selector fields; does not open any SKILL.md or instruction body",
+  "loaderBoundary": "loading this metadata never grants authority to execute a plan, dispatch work, or reopen a closed lane",
+  "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+  "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+  "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+  "externalMutationBoundary": "no external mutation permitted until a separate ASSF adapter work order is accepted",
+  "platformCompatibility": "cross-platform",
+  "shellAssumptions": "no shell execution required for metadata-only candidate",
+  "osConstraints": "none"
+}
