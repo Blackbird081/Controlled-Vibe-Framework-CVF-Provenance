@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1326,
+  "stateKey": "agskT7PackageCandidateExpansionWorkOrderDispatch20260629",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "9ee75a5e",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+    "workerReturn": "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "execute AGSK-T7 metadata-only package-candidate expansion",
+    "claimBoundary": "no package root, SKILL.md, checker implementation, resolver mutation, runtime activation, provider/live proof, public-sync, session-sync, package activation, lifecycle promotion, external CLI/MCP adapter, direct pack checker import, or production-readiness claim"
+  }
+}

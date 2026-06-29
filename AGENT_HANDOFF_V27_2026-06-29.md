@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`everos_absorption_lane_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target, after checking the conditional reopen index for newly eligible parked candidates; parked checkpoint=EverOS memory-foundation absorption closed through T5 at `37771016`, T4 checker at `cac4947e`, T3 plan at `ed10ced8`; CGE-R1 closed at `2f106dea`; external absorption conditional reopen index added at `cab4a16a`; AGSK-T5 closed at `a00f7cf5`; AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-T7 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`; parked checkpoint=AGSK second-pass blind-spot audit found under-converted package-candidate inventory; AGSK-T7 dispatch material commit `9ee75a5e`; AGSK-T5 closed at `a00f7cf5`; AGSK-T6 checker/runtime lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,20 +18,20 @@ Startup acknowledged: current mode=`everos_absorption_lane_closed_pending_next_e
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material dispatch | `0041218b` CGE-R1 CodeGraph full reabsorption work order |
-| Latest material closeout | `cab4a16a` external absorption conditional reopen index |
+| Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
+| Latest material closeout | `37771016` EverOS memory-foundation absorption lane closeout |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`everos_absorption_lane_closed_pending_next_external_absorption_target`
+`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
 
 ## Purpose
 
 Keep the active handoff compact after V26 reached the governed file-size guard
 near-threshold. V26 is archived as historical continuity; V27 is the sole root
-active handoff and points to the latest EverOS absorption lane closeout plus
-the next external absorption selection boundary.
+active handoff and now points to the AGSK-T7 package-candidate expansion
+worker-execution boundary.
 
 ## Scope / Target / Owner Boundary
 
@@ -39,7 +39,7 @@ Target: maintain compact active handoff V27, update active startup pointers,
 and preserve the CGE-R1 closure boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
-does not authorize AGSK-T5 execution, package activation, runtime/provider/live
+does not authorize AGSK-T7 execution, package activation, runtime/provider/live
 work, public-sync mutation, checker implementation, resolver mutation, or
 generated aggregate mutation beyond active-session sync.
 
@@ -137,21 +137,20 @@ field only as candidate metadata.
 
 ## Next Allowed Move
 
-Operator selects the next external repo/folder absorption target after checking
-`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`
-for newly eligible parked candidates. EverOS is closed through T5 at material
-commit `37771016` and should not be re-executed unless a recorded reopen
-condition is met and the operator explicitly authorizes a fresh governed
-tranche. CGE-R1 is closed at material commit `2f106dea`; CodeGraph runtime,
-package, and checker candidates are parked in the conditional reopen index
-unless the operator authorizes the bounded CGE-R2 value probe.
+Execute AGSK-T7 as `WORKER_MUST_NOT_COMMIT` using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`.
+The worker must create metadata-only `CANDIDATE` ASSF registry entries for
+source-backed AGSK capability concepts, regenerate
+`docs/reference/agent_system_skills/generated/skill-index.json` through the
+existing generator, create
+`docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md`,
+and return without committing. LHW24 remains the latest closed numbered LHW
+wave.
 
-No runtime, package root, `SKILL.md`, ASSF registry entry, generated package
-index, checker, resolver, CodeGraph install/init/index/MCP/watcher/daemon,
-vector store, graph store, database, OME runtime, provider/live proof,
-public-sync, package activation, lifecycle promotion, production-readiness
-claim, MPI-T6 runtime, or external CLI/MCP adapter is authorized without a
-fresh governed work order.
+No package root, `SKILL.md`, checker implementation, resolver mutation, runtime
+activation, provider/live proof, public-sync, session-sync, package activation,
+lifecycle promotion, external CLI/MCP adapter, direct pack checker import, or
+production-readiness claim is authorized.
 
 ## Parked Checkpoint
 
@@ -337,6 +336,66 @@ At dispatch sync time, next allowed move was: execute AGSK-T5 as `WORKER_MUST_NO
 This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 session-sync commit `a327dc70`. It does not authorize package root creation,
 `SKILL.md`, resolver mutation, checker implementation, runtime behavior,
+provider/live proof, public-sync export, package activation, lifecycle
+promotion, production-readiness, or automatic skill invocation.
+
+## GC-020 Marker - AGSK-T7 Package Candidate Expansion Work Order Dispatch
+
+Material commit `9ee75a5e` added
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`.
+The work order dispatches AGSK-T7 as `WORKER_MUST_NOT_COMMIT` to convert the
+source-backed capability inventory in
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`
+into metadata-only ASSF registry candidates, regenerate
+`docs/reference/agent_system_skills/generated/skill-index.json`, and create the
+worker return
+`docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md`.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for AGSK-T7 dispatch
+material commit `9ee75a5e`. It does not authorize package root creation,
+`SKILL.md`, checker implementation, resolver mutation, runtime activation,
+provider/live proof, public-sync export, direct pack checker import, package
+activation, lifecycle promotion, production-readiness, or automatic skill
+invocation.
+
+## Agent Operation Trace Block - AGSK-T7 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T7 dispatch session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after AGSK-T7 dispatch material commit `9ee75a5e` |
+| Before status evidence | material commit `9ee75a5e` dispatched AGSK-T7 work order |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no AGSK-T7 execution |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-t7-dispatch-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT7PackageCandidateExpansionWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT7PackageCandidateExpansionWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - AGSK-T7 Dispatch Session Sync Commit
+
+Session-sync commit pending updates active session continuity after AGSK-T7
+dispatch material commit `9ee75a5e`.
+
+At session-sync authoring time, mode is:
+`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
+
+At session-sync authoring time, next allowed move is: execute AGSK-T7 as
+`WORKER_MUST_NOT_COMMIT` using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the session-sync commit. It does not authorize package root creation,
+`SKILL.md`, checker implementation, resolver mutation, runtime activation,
 provider/live proof, public-sync export, package activation, lifecycle
 promotion, production-readiness, or automatic skill invocation.
 
