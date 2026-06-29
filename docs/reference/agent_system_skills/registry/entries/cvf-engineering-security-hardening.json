@@ -1,44 +1,44 @@
 {
-  "registryOrder": 4,
-  "skillId": "cvf-engineering-spec-driven-development",
-  "name": "CVF Engineering Spec-Driven Development",
+  "registryOrder": 28,
+  "skillId": "cvf-engineering-security-hardening",
+  "name": "CVF Engineering Security Hardening",
   "version": "0.1.0",
   "owner": "CVF ASSF registry and external absorption governance surface",
   "status": "CANDIDATE",
-  "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json",
+  "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-security-hardening.json",
   "originLane": "AGSK-R2",
   "sourceArtifacts": [
-    ".private_reference/source_mirrors/addyosmani__agent-skills/skills/spec-driven-development/SKILL.md",
+    ".private_reference/source_mirrors/addyosmani__agent-skills/skills/security-and-hardening/SKILL.md",
     ".private_reference/source_mirrors/addyosmani__agent-skills/README.md",
     ".private_reference/source_mirrors/addyosmani__agent-skills/LICENSE",
-    "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
-    ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/docs/absorptions/agent-skills-governance/09_SPEC_TO_WORK_ORDER_MAPPING.md"
+    "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
   ],
   "legacyRows": [],
   "license": "Apache-2.0 upstream; CVF_PRIVATE_GOVERNED adaptation metadata",
   "reviewArtifacts": [
     "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
   ],
-  "purpose": "Guide source-backed specification before non-trivial implementation, including assumptions, commands, structure, testing, and boundaries.",
+  "purpose": "Guide threat-model-first hardening for authentication, authorization, untrusted input, secrets, external integrations, and sensitive data.",
   "triggerPatterns": [
-    "spec driven development",
-    "write spec",
-    "requirements unclear",
-    "new feature spec",
-    "spec before code"
+    "security hardening",
+    "threat model",
+    "auth",
+    "untrusted input",
+    "secrets",
+    "owasp"
   ],
   "taskClasses": [
-    "spec-authoring",
-    "work-order-authoring",
+    "security-review",
+    "threat-modeling",
     "implementation-planning"
   ],
-  "useWhen": "Use when a governed CVF task matches the upstream `spec-driven-development` skill pattern and needs CVF-owned metadata guidance before any package body, resolver, or runtime activation exists.",
+  "useWhen": "Use when a governed CVF task matches the upstream `security-and-hardening` skill pattern and needs CVF-owned metadata guidance before any package body, resolver, or runtime activation exists.",
   "doNotUseWhen": "Do not use as runtime authority, external CLI/MCP authority, provider/live proof, public-sync proof, or permission to bypass active CVF work-order, source-verification, session-sync, or commit-steward gates.",
   "riskTriggers": [
-    "requirements ambiguous",
-    "multi-file change",
-    "architecture decision",
-    "code before spec"
+    "security-sensitive change",
+    "untrusted data",
+    "secret exposure risk",
+    "auth or authorization change"
   ],
   "roles": [
     "dispatcher",
@@ -56,11 +56,11 @@
     "docs/reference/external_agent_review",
     "docs/reviews"
   ],
-  "riskCeiling": "R0",
-  "contextProfile": "agent-skills-source-mirror-candidate:spec-driven-development",
+  "riskCeiling": "R2",
+  "contextProfile": "agent-skills-source-mirror-candidate:security-and-hardening",
   "inputs": [
     "operator request or governed task context",
-    "source mirror skill file .private_reference/source_mirrors/addyosmani__agent-skills/skills/spec-driven-development/SKILL.md",
+    "source mirror skill file .private_reference/source_mirrors/addyosmani__agent-skills/skills/security-and-hardening/SKILL.md",
     "active CVF authority and allowed-scope boundaries"
   ],
   "outputs": [
@@ -71,11 +71,11 @@
   ],
   "executionConstraints": "metadata-only candidate generated from AGSK-R2 source mirror rescan; does not create SKILL.md package bodies, invoke tools, install MCP servers, or authorize runtime behavior",
   "acceptanceEvidence": "AGSK-R2 review artifact, ASSF anatomy checker, generated skill-index drift check, and source mirror migration guard; future promotion still needs UAT and certification evidence",
-  "riskProfile": "R0",
+  "riskProfile": "R2",
   "authorityCeiling": "metadata-only advisory selection; loading this entry cannot authorize implementation, commit, runtime, browser, network, provider, public, or production action beyond the active governed work order",
   "sideEffects": "none from metadata loading; any future use that edits files, runs tools, installs dependencies, opens browsers, uses providers, or affects production requires separate authorization",
   "permissions": "read this metadata, cited CVF-governed artifacts, and the pinned local source mirror only",
-  "rollback": "delete docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json or restore the prior entry, then regenerate docs/reference/agent_system_skills/generated/skill-index.json",
+  "rollback": "delete docs/reference/agent_system_skills/registry/entries/cvf-engineering-security-hardening.json or restore the prior entry, then regenerate docs/reference/agent_system_skills/generated/skill-index.json",
   "safeStop": "if the task needs active package instructions, tool execution, external adapter behavior, or authority above the active work order, stop and open a fresh ASSF promotion/runtime tranche",
   "candidateState": "CANDIDATE",
   "approvalState": "AWAITING_REVIEW",
@@ -86,7 +86,7 @@
   "retirement": "none",
   "dependencies": [],
   "conflicts": [],
-  "compositionOrder": 4,
+  "compositionOrder": 28,
   "capabilityBoundary": "no package body, no SKILL.md in CVF package root, no resolver activation, no CLI/MCP adapter, no provider/live proof, no public-sync, no commit authority, and no production-readiness claim",
   "internalAgentDisposition": "CANDIDATE",
   "resolverBehavior": "metadata-only; resolver may return identity, trigger, risk, and source fields only after a separate resolver tranche exists",

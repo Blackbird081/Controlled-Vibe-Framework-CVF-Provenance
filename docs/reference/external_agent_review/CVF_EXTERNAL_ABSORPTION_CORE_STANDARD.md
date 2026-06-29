@@ -71,6 +71,18 @@ The mirror control-plane files are:
 The cloned repository payloads under that folder are local reference material
 and must remain ignored by git. Track only the control-plane files above.
 
+Forward enforcement:
+
+`governance/compat/check_source_mirror_migration.py`
+
+Any changed governed absorption artifact that still cites
+`.private_reference/external_repos/` must include a
+`## Source Mirror Migration Control` table with the legacy path, source mirror
+path, mirror index row, pinned upstream commit, migration disposition, legacy
+cleanup disposition, and claim boundary. Allowed migration dispositions are
+`MIGRATED_TO_SOURCE_MIRROR`, `LEGACY_REFERENCE_ONLY_WITH_REASON`, and
+`BLOCKED_SOURCE_MIRROR_WITH_REASON`.
+
 Before closing a high-value external-repo absorption, the reviewer must check
 whether a pinned upstream source mirror exists or should be created. If a
 derived external-agent pack is the only local source and the upstream repo is

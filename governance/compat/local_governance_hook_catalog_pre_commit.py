@@ -128,6 +128,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_external_absorption_value_conversion.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "source mirror migration",
+            ["python", "governance/compat/check_source_mirror_migration.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "Delta mutating profile boundary",
             ["python", "governance/compat/check_delta_mutating_profile_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
