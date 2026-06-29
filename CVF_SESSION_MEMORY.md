@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence; parked checkpoint=AGSK-R4 closed at material commit `416eb689`; AGSK-R3 closed at material commit `4003289a`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence; parked checkpoint=AGSK-R5 closed at material commit `3a742e6e`; AGSK-R4 closed at material commit `416eb689`; AGSK-R3 closed at material commit `4003289a`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
+Current mode marker: `agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
 
-Current mode: `agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
+Current mode: `agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
 
-`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
+`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
 
 Previous mode:
 
-`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
+`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| AGSK-R5 runtime eligibility audit | `3a742e6e` | CLOSED_PASS_BOUNDED; no-body audit helper added; real-index audit reports 24 package roots, 0 runtime eligible, all blocked by UAT/certification/internal disposition evidence |
 | AGSK-R4 runtime package loader | `416eb689` | CLOSED_PASS_BOUNDED; bounded internal runtime package loader added; current AGSK-R3 packages return `NOT_RUNTIME_ELIGIBLE` until UAT/certification/implemented evidence exists |
 | AGSK-R3 ASSF package roots | `4003289a` | CLOSED_PASS_BOUNDED; 24 package roots added and 24 matching registry entries promoted to `PROPOSED`; generated ASSF skill index regenerated |
 | External source mirror discipline | `27c692e0` | CLOSED_PASS_BOUNDED; added `.private_reference/source_mirrors/` control plane, pinned `addyosmani/agent-skills` mirror, and made upstream mirrors preferred authority over derived external-agent packs |
@@ -135,22 +136,23 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
+Mode: `agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
 
 Next allowed move: operator may select a bounded package lifecycle promotion
 tranche for explicit UAT, certification, and internalAgentDisposition evidence,
-or select another governed lane through fresh GC-018/source-verified work
-order. AGSK-R4 runtime package loader closed at material commit `416eb689`;
-AGSK-R3 package roots closed at material commit `4003289a`; AGSK-R2 source
-mirror backfill closed at material commit `50689173`.
+preferably a pilot package or explicitly scoped batch, or select another
+governed lane through fresh GC-018/source-verified work order. AGSK-R5 runtime
+eligibility audit closed at material commit `3a742e6e`; AGSK-R4 runtime package
+loader closed at material commit `416eb689`; AGSK-R3 package roots closed at
+material commit `4003289a`.
 LHW24 remains the latest closed numbered LHW wave.
 
-Current AGSK-R3 packages remain `NOT_RUNTIME_ELIGIBLE` until
-`certificationState=CERTIFIED`, `uatState=PASSED`,
-`internalAgentDisposition=IMPLEMENTED`, and in-scope package `SKILL.md` root
-evidence exist. No automatic package activation, resolver mutation, CLI/MCP
-adapter, provider/live proof, public-sync, direct import, or production-readiness
-claim is authorized.
+Current audit evidence: 32 ASSF records, 24 package-root records, 0 runtime
+eligible package roots, and all 24 package roots blocked by
+`certificationState=NOT_STARTED`, `uatState=NOT_STARTED`, and
+`internalAgentDisposition=CANDIDATE`. No automatic package activation, resolver
+mutation, CLI/MCP adapter, provider/live proof, public-sync, direct import, or
+production-readiness claim is authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 

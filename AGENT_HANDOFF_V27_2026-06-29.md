@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence; parked checkpoint=AGSK-R4 closed at material commit `416eb689`; AGSK-R3 closed at material commit `4003289a`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence; parked checkpoint=AGSK-R5 closed at material commit `3a742e6e`; AGSK-R4 closed at material commit `416eb689`; AGSK-R3 closed at material commit `4003289a`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,12 +19,12 @@ Startup acknowledged: current mode=`agsk_r4_runtime_package_loader_closed_pendin
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
-| Latest material closeout | `416eb689` AGSK-R4 runtime package loader |
+| Latest material closeout | `3a742e6e` AGSK-R5 runtime eligibility audit |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
+`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
 
 ## Purpose
 
@@ -59,6 +59,16 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `3a742e6e` closed AGSK-R5 runtime eligibility audit. It added
+`governance/compat/run_assf_runtime_eligibility_audit.py`, focused tests, and
+governed closure artifacts. The audit summarizes generated ASSF metadata
+without requesting package instruction bodies. Current evidence: 32 ASSF
+records, 24 package-root records, 0 runtime eligible package roots, and all 24
+package roots blocked by `certificationState=NOT_STARTED`,
+`uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No package
+activation, certification, resolver mutation, CLI/MCP adapter, provider/live
+proof, public-sync, direct import, or production-readiness is authorized.
 
 Material commit `416eb689` closed AGSK-R4 runtime package loader. It added
 `governance/compat/run_assf_runtime_package_loader.py`, focused tests, and
@@ -197,13 +207,19 @@ production-readiness claim was created.
 
 ## Next Allowed Move
 
-Operator selects the next external repo/folder absorption target under the
-source-mirror-backed, full-value absorption rule. AGSK-R2 closed at material
-commit `50689173`; source mirror discipline closed at material commit
-`27c692e0`. LHW24 remains the latest closed numbered LHW wave.
+Operator may select a bounded package lifecycle promotion tranche for explicit
+UAT, certification, and internalAgentDisposition evidence, preferably a pilot
+package or explicitly scoped batch, or select another governed lane through
+fresh GC-018/source-verified work order. AGSK-R5 closed at material commit
+`3a742e6e`; AGSK-R4 closed at material commit `416eb689`; AGSK-R3 package
+roots closed at material commit `4003289a`. LHW24 remains the latest closed
+numbered LHW wave.
 
-No runtime activation, package activation, resolver mutation, CLI/MCP adapter,
-hook execution, provider/live proof, public-sync, direct import, or
+Current audit evidence: 32 ASSF records, 24 package-root records, 0 runtime
+eligible package roots, and all 24 package roots blocked by
+`certificationState=NOT_STARTED`, `uatState=NOT_STARTED`, and
+`internalAgentDisposition=CANDIDATE`. No automatic package activation, resolver
+mutation, CLI/MCP adapter, provider/live proof, public-sync, direct import, or
 production-readiness claim is authorized.
 
 ## Parked Checkpoint
@@ -910,3 +926,76 @@ This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 the session-sync commit. It does not authorize automatic package activation,
 resolver mutation, CLI/MCP adapter, provider/live proof, public-sync export,
 direct import, or production-readiness.
+
+## Core Guard Self-Protection Authorization - AGSK-R5 Runtime Eligibility Audit Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-R5 material commit `3a742e6e`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording with the
+reviewer-accepted AGSK-R5 closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/agskR5RuntimeEligibilityAuditClosure20260630.json`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `3a742e6e`, AGSK-R4 material commit `416eb689`, or AGSK-R3 material
+commit `4003289a` unless reviewer reopens those closures.
+
+## GC-020 Marker - AGSK-R5 Runtime Eligibility Audit Material Closure
+
+Material commit `3a742e6e` closed AGSK-R5 runtime eligibility audit. Full
+material SHA:
+`3a742e6ed48564ec5efcd1f48ada58030eddc044`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`3a742e6e`. It does not authorize automatic package activation, certification,
+resolver mutation, CLI/MCP adapter, provider/live proof, public-sync export,
+direct import, or production-readiness.
+
+## Agent Operation Trace Block - AGSK-R5 Runtime Eligibility Audit Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-R5 runtime eligibility audit session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after AGSK-R5 material commit `3a742e6e` |
+| Before status evidence | material commit `3a742e6e` closed AGSK-R5 runtime eligibility audit |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/resolver activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-r5-runtime-eligibility-audit-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/agskR5RuntimeEligibilityAuditClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/agskR5RuntimeEligibilityAuditClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - AGSK-R5 Runtime Eligibility Audit Session Sync Commit
+
+Session-sync commit pending updates active session continuity after AGSK-R5
+material commit `3a742e6e`.
+
+At session-sync authoring time, mode is:
+`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
+
+At session-sync authoring time, next allowed move is: operator may select a
+bounded package lifecycle promotion tranche for explicit UAT, certification,
+and internalAgentDisposition evidence, preferably a pilot package or explicitly
+scoped batch.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the session-sync commit. It does not authorize automatic package activation,
+certification, resolver mutation, CLI/MCP adapter, provider/live proof,
+public-sync export, direct import, or production-readiness.
