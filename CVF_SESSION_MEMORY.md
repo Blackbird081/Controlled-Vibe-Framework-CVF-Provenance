@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator/reviewer selects the next external repo/folder absorption target or opens a fresh source-verified AGSK-T6 checker value probe; parked checkpoint=AGSK second-pass package-candidate inventory converted at material commit `aa4d932a`; AGSK-T6 checker/runtime lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the full-value absorption rule; parked checkpoint=AGSK source pack current doctrine/package/checker value closed at material commit `1a5bdee1`; AGSK runtime/adapter/activation lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
+Current mode marker: `agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`
 
-Current mode: `agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
+Current mode: `agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`
 
-`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
+`agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`
 
 Previous mode:
 
-`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
+`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| AGSK-T6 ASSF package anatomy checker | `1a5bdee1` | CLOSED_PASS_BOUNDED; CVF-native checker added and wired; two ASSF-T2 registry entries backfilled with `riskTriggers: []`; generated skill index regenerated |
 | AGSK-T7 package-candidate expansion | `aa4d932a` | CLOSED_PASS_BOUNDED; six metadata-only ASSF `CANDIDATE` registry entries added from source-backed AGSK capability concepts and generated skill index regenerated |
 | EverOS memory-foundation absorption lane closeout | `37771016` | CLOSED_PASS_BOUNDED; T3 plan `ed10ced8`, T4 checker `cac4947e`, T5 decision `CLOSE_EVEROS_ABSORPTION_LANE_NO_NEXT_TRANCHE`; 20 focused memory-access claim tests pass |
 | CGE-R1 CodeGraph full reabsorption closeout | `2f106dea` | CLOSED_PASS_BOUNDED; 89 files dispositioned; 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE, 0 unresolved; GC-051 registry coverage added |
@@ -129,26 +130,26 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
+Mode: `agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`
 
-Next allowed move: operator/reviewer selects either the next external
-repo/folder absorption target under the full-value absorption rule, or opens a
-fresh source-verified AGSK-T6 checker value probe now that multiple ASSF
-`CANDIDATE` fixtures exist. AGSK-T7 closed at material commit `aa4d932a`.
+Next allowed move: operator selects the next external repo/folder absorption
+target under the full-value absorption rule. AGSK-T6 closed at material commit
+`1a5bdee1`; AGSK source pack current doctrine/package/checker value is closed.
 LHW24 remains the latest closed numbered LHW wave.
 
-No package root, `SKILL.md`, checker implementation, resolver mutation, runtime
-activation, provider/live proof, public-sync, package activation, lifecycle
-promotion, external CLI/MCP adapter, direct pack checker import, or
-production-readiness claim is authorized without a fresh governed work order.
+No package root, `SKILL.md`, resolver mutation, runtime activation,
+provider/live proof, public-sync, package activation, lifecycle promotion,
+external CLI/MCP adapter, direct pack checker import, automatic skill
+invocation, or production-readiness claim is authorized without a fresh
+governed work order.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
-No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation beyond session sync, DICE runtime expansion, MPI-T6 runtime work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, push from provenance workspace, P0 registry reopen, C06 checker reopen, C02 checker reopen, C05 checker reopen, T5 manifest reopen, T6 checker reopen, T7 reopen, or downstream implementation without separate authorization and regression/reopen evidence. Live/API keys may be used only in a future authorized live-proof tranche; FPC-PRG-T2 did not use live keys because it made no runtime/provider governance claim.
+No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation beyond session sync, DICE runtime expansion, MPI-T6 runtime work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, push from provenance workspace, P0 registry reopen, C06 checker reopen, C02 checker reopen, C05 checker reopen, T5 manifest reopen, further T6 checker extension/reopen, T7 reopen, or downstream implementation without separate authorization and regression/reopen evidence. Live/API keys may be used only in a future authorized live-proof tranche; FPC-PRG-T2 did not use live keys because it made no runtime/provider governance claim.
 
 ## Parked Checkpoint
 
-FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T1 through T3 closed the CodeGraph and Agent Engineering Control absorption roadmap at material commit `7701abb8`; no AECG checker is implemented now. PINT-T1 through T3 closed Provider Intelligence absorption at material commit `c21cd0e9`; no PINT checker is implemented now. MSEA-T1 through T3 closed MinerU Structured Extraction absorption at material commit `38f236bc`; no MSEA checker is implemented now. AGSG-T1 through T3 closed Agent Skills Governance absorption at material commit `66eb39ac`; AGSG-BSH-T1 closed the scope-triggered blind-spot presence checker at material commit `328de12b`; EAVC-T1 closed value conversion guard at material commit `4f0ef2c9` and applied it to AGSK. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC package import, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, provider-intelligence checker implementation, MinerU runtime/install/model-download/OCR/provider-live/VLM-hybrid/RAG-index/checker implementation, extraction accuracy, document-truth, Agent Skills plugin/command/persona/hook/runtime import, ASSF package instance mutation, CLI/MCP adapter, automatic skill invocation, and production-readiness claims remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
+FPC-SCG-T1 closed the P0 system-loop interlock registry visibility gap at material commit `75fcad20`. FPC-SCG-T2 through FPC-SCG-T7, FPC-DSD-T0, and FPC-UAP-T0 through FPC-UAP-T2 are closed bounded at current provenance carrier `be253923`. FPC-SCG-T8 closed the acceptance-ledger provenance carrier reconciliation at material commit `e278c039`. FPC-DSD-T1 closed the post-public-export downstream hold decision at material commit `24726307`. FPC-PRG-T0 closed parked reopen gate systemization at material commit `8d4ed2f4`; FPC-PRG-T1 closed parked reopen condition source inventory at material commit `ca60e1fd`; FPC-PRG-T2 closed parked reopen gate checker at material commit `ec7e4057`; FPC-PRG-T3 closed gate wiring at material commit `f74f0b7a`; FPC-PRG-T4 closed fixture coverage at material commit `aa0d1276`; FPC-FMS-T2 added current registry reconciliation at material commit `9c6f43de` and holds foundation maintenance because no current source-backed P0/P1 gap remains. TKG-T0 through TKG-T5 closed the Agent Governance Toolkit / Truth Kernel absorption lane at material commit `6ce94464`; TKG-T4 wired the truth foundation claim guard at `79f26845`. AECG-T1 through T3 closed the CodeGraph and Agent Engineering Control absorption roadmap at material commit `7701abb8`; no AECG checker is implemented now. PINT-T1 through T3 closed Provider Intelligence absorption at material commit `c21cd0e9`; no PINT checker is implemented now. MSEA-T1 through T3 closed MinerU Structured Extraction absorption at material commit `38f236bc`; no MSEA checker is implemented now. AGSG-T1 through T3 closed Agent Skills Governance absorption at material commit `66eb39ac`; AGSG-BSH-T1 closed the scope-triggered blind-spot presence checker at material commit `328de12b`; EAVC-T1 closed value conversion guard at material commit `4f0ef2c9` and applied it to AGSK; AGSK-T6 closed the ASSF package anatomy checker at material commit `1a5bdee1`. Runtime-provider-live lanes, package activation, adapter implementation, public-sync expansion, MPI-T6 runtime work, merge automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC package import, OpenRouter dependency, MCP production routing, benchmark/cost/latency measurement, automatic model selection, provider-intelligence checker implementation, MinerU runtime/install/model-download/OCR/provider-live/VLM-hybrid/RAG-index/checker implementation, extraction accuracy, document-truth, Agent Skills plugin/command/persona/hook/runtime import, CLI/MCP adapter, automatic skill invocation, and production-readiness claims remain parked unless a recorded reopen condition is verified through a fresh governed tranche.
 
 ## Knowledge Absorption Priority Boundary
 
@@ -158,20 +159,21 @@ EAVC-T1 now requires every external absorption to classify doctrine,
 package, runtime, checker, reject-direct-import, and no-package/runtime value.
 EverOS memory-foundation absorption is closed through T5 with no immediate next
 EverOS tranche. AGSK-T7 converted the second-pass package-candidate inventory at
-material commit `aa4d932a`; the next governed move is operator/reviewer
-selection of the next external repo/folder absorption target or a fresh
-source-verified AGSK-T6 checker value probe. The exact markers
+material commit `aa4d932a`; AGSK-T6 closed the package-anatomy checker gap at
+material commit `1a5bdee1`. The next governed move is operator selection of the
+next external repo/folder absorption target. The exact markers
 `broad external knowledge absorption` and `blocked work classes` remain active
 for compatibility gates. Current blocked work classes include
 runtime/provider/live expansion, public-sync content mutation,
-downstream use-case work, registry mutation, checker implementation, merge
+downstream use-case work, registry mutation, new checker implementation outside
+a fresh authorized tranche, merge
 automation, hook repair, CodeGraph runtime/MCP/watcher/daemon, direct AEC
 package import, OpenRouter dependency, MCP production routing, benchmark
 campaign, cost/latency measurement, automatic model selection, MinerU runtime
 install, model download, OCR/provider-live/VLM-hybrid execution, RAG index
 write, document-truth claim, extraction accuracy claim, Agent Skills plugin
-or command import, persona orchestration, hook install, checker implementation,
-ASSF package instance mutation, automatic skill invocation, production-readiness
+or command import, persona orchestration, hook install, additional checker implementation,
+automatic skill invocation, production-readiness
 claim, and MPI-T6 runtime work unless separately authorized by fresh
 GC-018/source-verified work order.
 
