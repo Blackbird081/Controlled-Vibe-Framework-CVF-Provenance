@@ -90,6 +90,16 @@ cvf-spec-*.md
 # Local-only hidden recovery space for retired pre-public roots
 .private_reference/
 
+# External source mirrors: cloned upstream repos are local reference only.
+# Track only the mirror control-plane files; never track cloned repo contents.
+!.private_reference/
+.private_reference/*
+!.private_reference/source_mirrors/
+.private_reference/source_mirrors/*
+!.private_reference/source_mirrors/.gitignore
+!.private_reference/source_mirrors/README.md
+!.private_reference/source_mirrors/INDEX.md
+
 # CVF_Restructure (retired from visible repo root; if retained locally it must live under .private_reference/)
 CVF_Restructure/
 

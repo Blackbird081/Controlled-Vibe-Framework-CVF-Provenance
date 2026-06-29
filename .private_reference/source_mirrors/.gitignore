@@ -1,0 +1,7 @@
+# Ignore cloned upstream repositories and generated mirror payloads by default.
+*
+
+# Keep the local source-mirror control plane tracked.
+!.gitignore
+!README.md
+!INDEX.md

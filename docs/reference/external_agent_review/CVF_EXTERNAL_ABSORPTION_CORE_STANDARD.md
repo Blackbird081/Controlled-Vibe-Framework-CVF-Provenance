@@ -51,6 +51,42 @@ external material canonical, authorize implementation, execute providers,
 install plugins, mutate runtime, publish public artifacts, or prove semantic
 quality by itself.
 
+## Source Mirror Discipline
+
+High-value external repository absorption should use the original upstream
+repository as the source authority when it is available. A derived
+external-agent pack, summary, or absorption folder is secondary evidence, not a
+replacement for the upstream source.
+
+Private local source mirrors are managed under:
+
+`.private_reference/source_mirrors/`
+
+The mirror control-plane files are:
+
+- `.private_reference/source_mirrors/README.md`
+- `.private_reference/source_mirrors/INDEX.md`
+- `.private_reference/source_mirrors/.gitignore`
+
+The cloned repository payloads under that folder are local reference material
+and must remain ignored by git. Track only the control-plane files above.
+
+Before closing a high-value external-repo absorption, the reviewer must check
+whether a pinned upstream source mirror exists or should be created. If a
+derived external-agent pack is the only local source and the upstream repo is
+available, the closeout must not claim full upstream absorption unless it
+either creates or requests a pinned source mirror, or records
+`BLOCKED_SOURCE_MIRROR_WITH_REASON`.
+
+If both a source mirror and an external-agent pack exist, source-verification
+for upstream facts must prefer the pinned source mirror. The external-agent
+pack may still be used as comparison material, gap-finding input, or a
+secondary interpretation artifact.
+
+Clone presence is not absorption evidence by itself. Absorption still requires
+the manifest, processing ledger, value-conversion matrix, owner-surface map,
+conditional reopen handling, and reviewer semantic value audit defined below.
+
 ## Required Artifact Block
 
 Any governed artifact that absorbs, audits, reabsorbs, reopens, classifies, or
@@ -72,6 +108,12 @@ closes value from an external repo or copied folder must include this block:
 | Unresolved items | <0 or explicit list> |
 | Completion claim boundary | <bounded claim; no runtime/provider/public/production expansion> |
 ```
+
+When a high-value upstream repo has a local source mirror, the `Input root or
+repository` row must include the upstream URL, pinned commit, and local mirror
+path. When the mirror is missing but needed, record
+`BLOCKED_SOURCE_MIRROR_WITH_REASON` instead of promoting a derived pack to
+upstream authority.
 
 Do not use placeholder text in the block. Do not use
 `NOT_APPLICABLE_WITH_REASON` for the paired `Corpus Completeness And Report Integrity` block when the artifact is actually absorbing an external repo or copied folder.
