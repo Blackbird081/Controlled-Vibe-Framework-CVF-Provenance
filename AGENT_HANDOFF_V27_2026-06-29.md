@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the source-mirror-backed full-value absorption rule; parked checkpoint=AGSK-R2 closed at material commit `50689173`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence; parked checkpoint=AGSK-R4 closed at material commit `416eb689`; AGSK-R3 closed at material commit `4003289a`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,12 +19,12 @@ Startup acknowledged: current mode=`agsk_r2_agent_skills_source_mirror_backfill_
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
-| Latest material closeout | `50689173` AGSK-R2 agent-skills source mirror backfill |
+| Latest material closeout | `416eb689` AGSK-R4 runtime package loader |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
+`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
 
 ## Purpose
 
@@ -59,6 +59,20 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `416eb689` closed AGSK-R4 runtime package loader. It added
+`governance/compat/run_assf_runtime_package_loader.py`, focused tests, and
+governed closure artifacts. The loader reads generated ASSF metadata, reports
+runtime eligibility, and opens package `SKILL.md` bodies only with explicit
+request and eligibility: `CERTIFIED`, `PASSED`, `IMPLEMENTED`, and in-scope
+package root. Current AGSK-R3 package roots remain `NOT_RUNTIME_ELIGIBLE`; no
+package activation, resolver mutation, CLI/MCP adapter, provider/live proof,
+public-sync, direct import, or production-readiness is authorized.
+
+Material commit `4003289a` closed AGSK-R3 package roots. It added 24 package
+roots, promoted matching registry entries to `PROPOSED`, and regenerated the
+ASSF generated index. This is package-root proposal evidence only, not
+UAT/certification/activation.
 
 Material commit `50689173` closed AGSK-R2 agent-skills source mirror backfill.
 It converted all 24 upstream `addyosmani/agent-skills` `skills/*/SKILL.md`
@@ -822,3 +836,77 @@ This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
 UAT/certification, runtime package body loading, resolver mutation, CLI/MCP
 adapter behavior, provider/live proof, public-sync export, direct import, or
 production-readiness.
+
+## Core Guard Self-Protection Authorization - AGSK-R4 Runtime Package Loader Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-R4 material commit `416eb689`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording with the
+reviewer-accepted AGSK-R4 closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/agskR3PackageRootsClosure20260629.json`
+- `CVF_SESSION/state/entries/agskR4RuntimePackageLoaderClosure20260629.json`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `416eb689`, handoff-sync commit `b517078f`, or AGSK-R3 material commit
+`4003289a` unless reviewer reopens those closures.
+
+## GC-020 Marker - AGSK-R4 Runtime Package Loader Material Closure
+
+Material commit `416eb689` closed AGSK-R4 runtime package loader. Full material
+SHA:
+`416eb68972cd44cd5f1a49e73a68ee0f1951b2d8`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`416eb689`. It does not authorize automatic package activation, resolver
+mutation, CLI/MCP adapter, provider/live proof, public-sync export, direct
+import, or production-readiness.
+
+## Agent Operation Trace Block - AGSK-R4 Runtime Package Loader Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-R4 runtime package loader session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after AGSK-R4 material commit `416eb689` |
+| Before status evidence | material commit `416eb689` closed AGSK-R4 runtime package loader |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/resolver activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-r4-runtime-package-loader-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/agskR3PackageRootsClosure20260629.json`; `CVF_SESSION/state/entries/agskR4RuntimePackageLoaderClosure20260629.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/agskR3PackageRootsClosure20260629.json`; `CVF_SESSION/state/entries/agskR4RuntimePackageLoaderClosure20260629.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - AGSK-R4 Runtime Package Loader Session Sync Commit
+
+Session-sync commit pending updates active session continuity after AGSK-R4
+material commit `416eb689`.
+
+At session-sync authoring time, mode is:
+`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
+
+At session-sync authoring time, next allowed move is: operator may select a
+bounded package lifecycle promotion tranche for explicit UAT, certification,
+and internalAgentDisposition evidence, or select another governed lane through
+fresh GC-018/source-verified work order.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the session-sync commit. It does not authorize automatic package activation,
+resolver mutation, CLI/MCP adapter, provider/live proof, public-sync export,
+direct import, or production-readiness.

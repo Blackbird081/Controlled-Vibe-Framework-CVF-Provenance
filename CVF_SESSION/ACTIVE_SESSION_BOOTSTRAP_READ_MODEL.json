@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target",
+  "currentMode": "agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion",
   "activeHandoff": "AGENT_HANDOFF_V27_2026-06-29.md",
-  "nextAllowedMove": "AGSK-R2 agent-skills source-mirror backfill is closed at material commit 50689173. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator selects the next external repo/folder absorption target under the source-mirror-backed, full-value absorption rule. Any reopened external repo must use a pinned source mirror when available, classify doctrine/package/runtime/checker/reject/no-value lanes, and convert valuable package candidates into CVF-owned metadata where authorized. No runtime activation, package activation, resolver mutation, CLI/MCP adapter, hook execution, provider/live proof, public-sync, direct import, or production-readiness claim is authorized.",
+  "nextAllowedMove": "AGSK-R4 runtime package loader is closed at material commit 416eb689. AGSK-R3 package roots are closed at material commit 4003289a with 24 PROPOSED package roots. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence, or select another governed lane through fresh GC-018/source-verified work order. Current AGSK-R3 packages remain NOT_RUNTIME_ELIGIBLE until certificationState CERTIFIED, uatState PASSED, internalAgentDisposition IMPLEMENTED, and in-scope package SKILL.md root evidence exist. No automatic package activation, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, direct import, or production-readiness claim is authorized.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
