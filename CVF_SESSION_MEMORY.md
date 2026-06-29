@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may select another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=AGSK-R7 closed at material commit `19feb1f1`; six package roots are runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=EPSOT-T1 closed at material commit `701ebd94`; AGSK-R7 remains closed at material commit `19feb1f1` with six package roots runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
+Current mode marker: `epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
 
-Current mode: `agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
+Current mode: `epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
 
-`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
+`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
 
 Previous mode:
 
-`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
+`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| EPSOT-T1 provider skill trace source-of-truth guard | `701ebd94` | CLOSED_PASS_BOUNDED; added external provider skill source-of-truth standard, trace checker, six focused tests, and reviewer-fast/pre-commit/autorun wiring; no provider runtime interception or live proof claim |
 | AGSK-R7 runtime package batch promotion | `19feb1f1` | CLOSED_PASS_BOUNDED; five additional packages promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 6 runtime eligible, 18 still blocked |
 | AGSK-R6 code-review-quality pilot runtime package | `8caef205` | CLOSED_PASS_BOUNDED; `cvf-engineering-code-review-quality` promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 1 runtime eligible, 23 still blocked |
 | AGSK-R5 runtime eligibility audit | `3a742e6e` | CLOSED_PASS_BOUNDED; no-body audit helper added; real-index audit reports 24 package roots, 0 runtime eligible, all blocked by UAT/certification/internal disposition evidence |
@@ -138,16 +139,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
+Mode: `epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
 
-Next allowed move: operator may select another bounded package lifecycle
-promotion tranche for explicit UAT, certification, and internalAgentDisposition
-evidence, choose an explicitly scoped remaining-package batch, or open a
-separate ACTIVE resolver or CLI/MCP adapter tranche through fresh
-GC-018/source-verified work order. AGSK-R7 runtime package batch promotion
-closed at material commit `19feb1f1`; AGSK-R6 code-review-quality pilot
-promotion closed at material commit `8caef205`; AGSK-R5 runtime eligibility
-audit closed at material commit `3a742e6e`; AGSK-R4 runtime package loader
+Next allowed move: operator may choose a Skill Control Plane
+inventory/reconciliation tranche, another provider-skill governance tranche,
+another bounded package lifecycle promotion tranche, an explicitly scoped
+remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche
+through fresh GC-018/source-verified work order. EPSOT-T1 provider skill trace
+guard closed at material commit `701ebd94`; AGSK-R7 runtime package batch
+promotion closed at material commit `19feb1f1`; AGSK-R6 code-review-quality
+pilot promotion closed at material commit `8caef205`; AGSK-R5 runtime
+eligibility audit closed at material commit `3a742e6e`; AGSK-R4 runtime package loader
 closed at material commit `416eb689`; AGSK-R3 package roots closed at material
 commit `4003289a`.
 LHW24 remains the latest closed numbered LHW wave.

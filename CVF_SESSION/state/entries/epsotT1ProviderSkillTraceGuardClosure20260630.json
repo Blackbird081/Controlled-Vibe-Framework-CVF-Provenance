@@ -1,0 +1,33 @@
+{
+  "stateOrder": 1346,
+  "stateKey": "epsotT1ProviderSkillTraceGuardClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "701ebd94",
+    "materialCommitFull": "701ebd94c713b21669c037823372fdc148219191",
+    "standard": "docs/reference/CVF_EXTERNAL_PROVIDER_SKILL_SOURCE_OF_TRUTH_STANDARD_2026-06-30.md",
+    "baseline": "docs/baselines/CVF_GC018_EPSOT_T1_PROVIDER_SKILL_TRACE_SOURCE_OF_TRUTH_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EPSOT_T1_PROVIDER_SKILL_TRACE_SOURCE_OF_TRUTH_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_EPSOT_T1_PROVIDER_SKILL_TRACE_SOURCE_OF_TRUTH_COMPLETION_2026-06-30.md",
+    "checker": "governance/compat/check_external_provider_skill_usage_trace.py",
+    "tests": "governance/compat/test_check_external_provider_skill_usage_trace.py",
+    "catalogWiring": [
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/agent_autorun_command_catalog.py"
+    ],
+    "verification": [
+      "py_compile PASS",
+      "unittest PASS 6/6",
+      "external provider skill usage trace guard PASS on 09a753ea..HEAD after parser repair",
+      "reviewer-fast PASS 47/47",
+      "commit-steward reviewer-return PASS",
+      "pre-commit PASS 67/67"
+    ],
+    "traceRequirement": "changed governed artifacts that claim provider-owned external skill output consumption must include External Provider Skill Usage Trace with USED_WITH_TRACE and concrete promotion evidence",
+    "authorityBoundary": "provider-owned skill output is not CVF canonical authority until promoted through governed source verification or equivalent CVF source-of-truth artifact",
+    "nextAllowedMove": "operator may choose a Skill Control Plane inventory/reconciliation tranche, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order",
+    "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
+    "claimBoundary": "no provider runtime interception, no provider-side audit access, no automatic package activation, no resolver mutation, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
+  }
+}
