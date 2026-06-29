@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V26_2026-06-28.md`
+4. `AGENT_HANDOFF_V27_2026-06-29.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,26 +24,26 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V26_2026-06-28.md` |
+| Active handoff | `AGENT_HANDOFF_V27_2026-06-29.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author and dispatch AGSK-T5 first package-candidate registry instance; parked checkpoint=AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_t5_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`; parked checkpoint=AGSK-T5 dispatch-ready at `1cc52d7a`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current Mode
 
-Current mode marker: `agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+Current mode marker: `agsk_t5_work_order_dispatched_pending_worker_execution`
 
-Current mode: `agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+Current mode: `agsk_t5_work_order_dispatched_pending_worker_execution`
 
-`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+`agsk_t5_work_order_dispatched_pending_worker_execution`
 
 Previous mode:
 
-`agsk_t4_work_order_dispatched_pending_worker_execution`
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
 
 ## Latest Closed Work
 
@@ -119,12 +119,13 @@ Previous mode:
 | AGSK package-candidate triage roadmap | `d8b14a2e` | ACTIVE_TRIAGE; opens AGSK-T4 before AGSK-T5 |
 | AGSK-T4 riskTriggers work order dispatch | `11590704` | DISPATCH_READY; worker must not commit; AGSK-T5 remains blocked until T4 closes |
 | AGSK-T4 riskTriggers contract patch | `2a84036a` | CLOSED_PASS_BOUNDED; AGSK-T5 package-candidate registry instance is next |
+| AGSK-T5 first external-absorption package candidate dispatch | `1cc52d7a` | DISPATCH_READY; worker must not commit; candidate metadata only |
 
 ## Next Allowed Move
 
-Mode: `agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+Mode: `agsk_t5_work_order_dispatched_pending_worker_execution`
 
-Next allowed move: author and dispatch AGSK-T5 first package-candidate registry instance using `docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md`, the accepted `riskTriggers` contract field in `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`, and source-verified AGSK candidate evidence. LHW24 remains the latest closed numbered LHW wave. AGSK-T5 is registry-candidate/documentation-only until separately reviewed and closed. No runtime skill activation, plugin import, slash-command import, persona orchestration, package activation, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, or automatic safe skill invocation claim is authorized now.
+Next allowed move: execute AGSK-T5 using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md` as `WORKER_MUST_NOT_COMMIT`. Worker may create `docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`, regenerate `docs/reference/agent_system_skills/generated/skill-index.json` with the ASSF generator, and create `docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`. LHW24 remains the latest closed numbered LHW wave. No package root, `SKILL.md`, resolver, checker, runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/lifecycle-promotion/production-readiness claim, session-sync edit, or worker commit is authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 

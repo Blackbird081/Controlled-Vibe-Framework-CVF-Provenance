@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author and dispatch AGSK-T5 first package-candidate registry instance; parked checkpoint=AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_t5_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`; parked checkpoint=AGSK-T5 dispatch-ready at `1cc52d7a`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`agsk_t4_risk_triggers_contract_patch_closed_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `2a84036a` AGSK-T4 riskTriggers contract patch |
+| Latest material closeout | `1cc52d7a` AGSK-T5 package candidate work-order dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+`agsk_t5_work_order_dispatched_pending_worker_execution`
 
 ## Purpose
 
@@ -107,13 +107,14 @@ dispositions.
 
 ## Next Allowed Move
 
-Execute AGSK-T4 using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md`
+Execute AGSK-T5 using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`
 as `WORKER_MUST_NOT_COMMIT`. LHW24 remains the latest closed numbered LHW wave.
-The worker may patch only
-`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` and create
-`docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md`.
-AGSK-T5 registry candidate work remains blocked until AGSK-T4 closes.
+The worker may create
+`docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`,
+regenerate `docs/reference/agent_system_skills/generated/skill-index.json`,
+and create
+`docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`.
 
 Required boundaries:
 
@@ -121,8 +122,10 @@ Required boundaries:
   provider, public-sync, package, or Agent Skills activation evidence.
 - Treat EAVC-T1 as a value-conversion evidence-shape guard, not as proof that
   AGSK packages or runtime skills have been created.
-- Treat AGSK-T4 as a documentation-only ASSF contract patch, not as a package
-  candidate, generated index mutation, checker, resolver, or runtime lane.
+- Treat AGSK-T4 as a closed documentation-only ASSF contract patch. AGSK-T5 may
+  consume `riskTriggers` only as metadata in a `CANDIDATE` registry entry.
+- Treat AGSK-T5 as metadata-only registry-candidate work, not as a package root,
+  resolver, checker, runtime lane, lifecycle promotion, or activation.
 - Treat retained 2026-06-28 external source folders as advisory input under
   `.private_reference/legacy/CVF 28.06/`, not as CVF source of truth.
 - Do not import Agent Skills plugin runtime, slash commands, personas, hooks,
@@ -1104,5 +1107,81 @@ skill invocation.
 | Invocation ID | `agsk-t4-closure-session-sync-2026-06-29` |
 | Expected manifest | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - AGSK-T5 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-T5 first external-absorption package-candidate work-order dispatch material
+commit `1cc52d7a`, so the front door, generated state sources, generated
+aggregate, bootstrap read model, and active handoff point to AGSK-T5 worker
+execution.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskT5PackageCandidateWorkOrderDispatch20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator requested the next tranche work order after
+AGSK-T4 closure. Session sync is required by GC-020 and next-move freshness
+after material dispatch commit `1cc52d7a`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+session-sync batch. Do not revert AGSK-T5 dispatch material commit `1cc52d7a`,
+AGSK-T4 material commit `2a84036a`, AGSK-T4 dispatch commit `11590704`, AGSK
+triage commit `d8b14a2e`, EAVC-T1 material commit `4f0ef2c9`, or AGSK
+reabsorption material commit `4d08aa64`.
+
+## GC-020 Marker - AGSK-T5 Package Candidate Work Order Dispatch
+
+Material commit `1cc52d7a` added
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`.
+The work order dispatches AGSK-T5 as `WORKER_MUST_NOT_COMMIT` to create one
+metadata-only `CANDIDATE` registry source entry,
+`docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`,
+regenerate `docs/reference/agent_system_skills/generated/skill-index.json`,
+and create the worker return
+`docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`.
+
+Current mode:
+`agsk_t5_work_order_dispatched_pending_worker_execution`
+
+Next allowed move: execute AGSK-T5 using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`
+as `WORKER_MUST_NOT_COMMIT`.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for AGSK-T5 dispatch
+material commit `1cc52d7a`. It does not authorize package root creation,
+`SKILL.md`, resolver mutation, checker implementation, runtime behavior,
+provider/live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, lifecycle promotion, benchmark,
+security certification, production-readiness, or automatic skill invocation.
+
+## Agent Operation Trace Block - AGSK-T5 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T5 dispatch session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces only |
+| Allowed scope source | GC-020 after AGSK-T5 dispatch material commit `1cc52d7a` |
+| Before status evidence | material commit `1cc52d7a` dispatched AGSK-T5 work order |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no AGSK-T5 execution |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-t5-dispatch-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT5PackageCandidateWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT5PackageCandidateWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
