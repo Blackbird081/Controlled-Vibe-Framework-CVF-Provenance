@@ -1,12 +1,12 @@
 # AGENT HANDOFF V27 - 2026-06-29
 
-Status: ACTIVE HANDOFF
+Status: ARCHIVED HANDOFF
 Memory class: active-handoff
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select the next bounded package lifecycle promotion tranche, an explicitly scoped batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=AGSK-R6 closed at material commit `8caef205`; one package root is runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=AGSK-R7 closed at material commit `19feb1f1`; six package roots are runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,12 +19,12 @@ Startup acknowledged: current mode=`agsk_r6_code_review_quality_pilot_runtime_pa
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
-| Latest material closeout | `8caef205` AGSK-R6 code-review-quality pilot runtime package |
+| Latest material closeout | `19feb1f1` AGSK-R7 runtime package batch promotion |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
+`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
 
 ## Purpose
 
@@ -59,6 +59,21 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `19feb1f1` closed AGSK-R7 runtime package batch promotion. It
+promotes five additional package roots to APPROVED/PASSED/CERTIFIED/IMPLEMENTED
+for explicit internal runtime-loader body reads only:
+`cvf-engineering-planning-task-breakdown`,
+`cvf-engineering-spec-driven-development`,
+`cvf-engineering-test-driven-development`,
+`cvf-engineering-debugging-error-recovery`, and
+`cvf-engineering-security-hardening`. Current evidence: 32 ASSF records, 24
+package-root records, 6 runtime eligible package roots, and 18 remaining
+package roots blocked by `certificationState=NOT_STARTED`,
+`uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No ACTIVE
+resolver, automatic invocation, CLI/MCP adapter, provider/live proof,
+public-sync, merge authority, commit authority, or production-readiness is
+authorized.
 
 Material commit `8caef205` closed AGSK-R6 code-review-quality pilot promotion.
 It promotes `cvf-engineering-code-review-quality` to
@@ -217,17 +232,18 @@ production-readiness claim was created.
 
 ## Next Allowed Move
 
-Operator may select the next bounded package lifecycle promotion tranche for
+Operator may select another bounded package lifecycle promotion tranche for
 explicit UAT, certification, and internalAgentDisposition evidence, choose an
-explicitly scoped batch, or open a separate ACTIVE resolver or CLI/MCP adapter
-tranche through fresh GC-018/source-verified work order. AGSK-R6 closed at
-material commit `8caef205`; AGSK-R5 closed at material commit `3a742e6e`;
-AGSK-R4 closed at material commit `416eb689`; AGSK-R3 package roots closed at
-material commit `4003289a`. LHW24 remains the latest closed numbered LHW wave.
+explicitly scoped remaining-package batch, or open a separate ACTIVE resolver
+or CLI/MCP adapter tranche through fresh GC-018/source-verified work order.
+AGSK-R7 closed at material commit `19feb1f1`; AGSK-R6 closed at material commit
+`8caef205`; AGSK-R5 closed at material commit `3a742e6e`; AGSK-R4 closed at
+material commit `416eb689`; AGSK-R3 package roots closed at material commit
+`4003289a`. LHW24 remains the latest closed numbered LHW wave.
 
-Current audit evidence: 32 ASSF records, 24 package-root records, 1 runtime
-eligible package root (`cvf-engineering-code-review-quality`), and 23 remaining
-package roots blocked by `certificationState=NOT_STARTED`,
+Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
+eligible package roots, and 18 remaining package roots blocked by
+`certificationState=NOT_STARTED`,
 `uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
 package activation, resolver mutation, CLI/MCP adapter, provider/live proof,
 public-sync, direct import, merge authority, commit authority, or
@@ -1084,3 +1100,89 @@ This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 the session-sync commit. It does not authorize automatic package activation,
 certification, resolver mutation, CLI/MCP adapter, provider/live proof,
 public-sync export, direct import, or production-readiness.
+
+## Core Guard Self-Protection Authorization - AGSK-R7 Runtime Package Batch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-R7 material commit `19feb1f1`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording with the
+reviewer-accepted AGSK-R7 closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/agskR7RuntimePackageBatchPromotionClosure20260630.json`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `19feb1f1`, AGSK-R6 material commit `8caef205`, AGSK-R5 material commit
+`3a742e6e`, AGSK-R4 material commit `416eb689`, or AGSK-R3 material commit
+`4003289a` unless reviewer reopens those closures.
+
+## GC-020 Marker - AGSK-R7 Runtime Package Batch Material Closure
+
+Material commit `19feb1f1` closed AGSK-R7 runtime package batch promotion. Full
+material SHA:
+`19feb1f19ee6321890ea3a2773273737d32d2c68`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`19feb1f1`. It does not authorize automatic package activation, resolver
+mutation, CLI/MCP adapter, provider/live proof, public-sync export, direct
+import, merge authority, commit authority, or production-readiness.
+
+AGSK-R7 promoted five additional package roots for explicit internal
+package-loader body reads only:
+
+- `cvf-engineering-planning-task-breakdown`
+- `cvf-engineering-spec-driven-development`
+- `cvf-engineering-test-driven-development`
+- `cvf-engineering-debugging-error-recovery`
+- `cvf-engineering-security-hardening`
+
+Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
+eligible package roots, and 18 blocked package roots.
+
+## Agent Operation Trace Block - AGSK-R7 Runtime Package Batch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-R7 runtime package batch session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after AGSK-R7 material commit `19feb1f1` |
+| Before status evidence | material commit `19feb1f1` closed AGSK-R7 runtime package batch promotion |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/resolver activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-r7-runtime-package-batch-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/agskR7RuntimePackageBatchPromotionClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/agskR7RuntimePackageBatchPromotionClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - AGSK-R7 Runtime Package Batch Session Sync Commit
+
+Session-sync commit pending updates active session continuity after AGSK-R7
+material commit `19feb1f1`.
+
+At session-sync authoring time, mode is:
+`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
+
+At session-sync authoring time, next allowed move is: operator may select
+another bounded package lifecycle promotion tranche, choose an explicitly scoped
+remaining-package batch, or open a separate ACTIVE resolver or CLI/MCP adapter
+tranche through fresh GC-018/source-verified work order.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the session-sync commit. It does not authorize automatic package activation,
+resolver mutation, CLI/MCP adapter, provider/live proof, public-sync export,
+direct import, merge authority, commit authority, or production-readiness.

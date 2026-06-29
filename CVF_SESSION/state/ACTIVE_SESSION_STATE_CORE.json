@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V27_2026-06-29.md",
+  "activeHandoff": "AGENT_HANDOFF_V28_2026-06-30.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -60,15 +60,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V23_2026-06-26.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V24_2026-06-27.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion",
-  "previousMode": "agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion",
+  "currentMode": "agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision",
+  "previousMode": "agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

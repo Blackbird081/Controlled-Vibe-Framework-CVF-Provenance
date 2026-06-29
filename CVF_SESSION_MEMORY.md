@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V27_2026-06-29.md`
+4. `AGENT_HANDOFF_V28_2026-06-30.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,31 +24,32 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V27_2026-06-29.md` |
+| Active handoff | `AGENT_HANDOFF_V28_2026-06-30.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select the next bounded package lifecycle promotion tranche, an explicitly scoped batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=AGSK-R6 closed at material commit `8caef205`; one package root is runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may select another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=AGSK-R7 closed at material commit `19feb1f1`; six package roots are runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
+Current mode marker: `agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
 
-Current mode: `agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
+Current mode: `agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
 
-`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
+`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
 
 Previous mode:
 
-`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
+`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| AGSK-R7 runtime package batch promotion | `19feb1f1` | CLOSED_PASS_BOUNDED; five additional packages promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 6 runtime eligible, 18 still blocked |
 | AGSK-R6 code-review-quality pilot runtime package | `8caef205` | CLOSED_PASS_BOUNDED; `cvf-engineering-code-review-quality` promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 1 runtime eligible, 23 still blocked |
 | AGSK-R5 runtime eligibility audit | `3a742e6e` | CLOSED_PASS_BOUNDED; no-body audit helper added; real-index audit reports 24 package roots, 0 runtime eligible, all blocked by UAT/certification/internal disposition evidence |
 | AGSK-R4 runtime package loader | `416eb689` | CLOSED_PASS_BOUNDED; bounded internal runtime package loader added; current AGSK-R3 packages return `NOT_RUNTIME_ELIGIBLE` until UAT/certification/implemented evidence exists |
@@ -137,22 +138,23 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
+Mode: `agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
 
-Next allowed move: operator may select the next bounded package lifecycle
-promotion tranche for explicit UAT, certification, and
-internalAgentDisposition evidence, choose an explicitly scoped batch, or open a
+Next allowed move: operator may select another bounded package lifecycle
+promotion tranche for explicit UAT, certification, and internalAgentDisposition
+evidence, choose an explicitly scoped remaining-package batch, or open a
 separate ACTIVE resolver or CLI/MCP adapter tranche through fresh
-GC-018/source-verified work order. AGSK-R6 code-review-quality pilot promotion
-closed at material commit `8caef205`; AGSK-R5 runtime eligibility audit closed
-at material commit `3a742e6e`; AGSK-R4 runtime package loader closed at
-material commit `416eb689`; AGSK-R3 package roots closed at material commit
-`4003289a`.
+GC-018/source-verified work order. AGSK-R7 runtime package batch promotion
+closed at material commit `19feb1f1`; AGSK-R6 code-review-quality pilot
+promotion closed at material commit `8caef205`; AGSK-R5 runtime eligibility
+audit closed at material commit `3a742e6e`; AGSK-R4 runtime package loader
+closed at material commit `416eb689`; AGSK-R3 package roots closed at material
+commit `4003289a`.
 LHW24 remains the latest closed numbered LHW wave.
 
-Current audit evidence: 32 ASSF records, 24 package-root records, 1 runtime
-eligible package root (`cvf-engineering-code-review-quality`), and 23 remaining
-package roots blocked by `certificationState=NOT_STARTED`,
+Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
+eligible package roots, and 18 remaining package roots blocked by
+`certificationState=NOT_STARTED`,
 `uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
 package activation, resolver mutation, CLI/MCP adapter, provider/live proof,
 public-sync, direct import, merge authority, commit authority, or
