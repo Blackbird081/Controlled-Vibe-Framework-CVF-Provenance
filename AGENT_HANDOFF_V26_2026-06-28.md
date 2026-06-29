@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=process the next retained external source folder under `.private_reference/legacy/CVF 28.06/` with the External Absorption Core manifest/ledger standard and checker, suggested next target `.private_reference/legacy/CVF 28.06/CodeGraph`; parked checkpoint=AGSK absorption pack reabsorption review closed at material commit `4d08aa64`; EAC-T1 external absorption core guard closed at material commit `80a87e45`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=open AGSK package-candidate triage before treating `CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or moving to CodeGraph; parked checkpoint=EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; AGSK reabsorption remains closed at `4d08aa64` with value-conversion addendum at `4f0ef2c9`; EAC-T1 closed at `80a87e45`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`agsk_reabsorption_closed_pass_bounded_pendin
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `4d08aa64` AGSK absorption pack reabsorption review |
+| Latest material closeout | `4f0ef2c9` EAVC-T1 external absorption value conversion guard |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
+`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
 
 ## Purpose
 
@@ -107,13 +107,24 @@ dispositions.
 
 ## Next Allowed Move
 
-Operator may select the next external repo/folder absorption target or ask for
-a high-value roadmap audit.
+Open an AGSK package-candidate triage decision/roadmap before treating
+`CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or moving to
+CodeGraph. Use
+`docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md`
+and its `External Absorption Value Conversion Matrix` as the source surface for
+package, runtime, checker, reject-direct-import, and no-package/runtime
+candidate decisions. LHW24 remains the latest closed numbered LHW wave.
+
+After that bounded triage is closed or explicitly parked, process the next
+retained external source folder under `.private_reference/legacy/CVF 28.06/`
+using the EAC core and EAVC value-conversion guards.
 
 Required boundaries:
 
 - Treat AGSG-BSH-T1 as a closed offline governance checker, not as runtime,
   provider, public-sync, package, or Agent Skills activation evidence.
+- Treat EAVC-T1 as a value-conversion evidence-shape guard, not as proof that
+  AGSK packages or runtime skills have been created.
 - Treat retained 2026-06-28 external source folders as advisory input under
   `.private_reference/legacy/CVF 28.06/`, not as CVF source of truth.
 - Do not import Agent Skills plugin runtime, slash commands, personas, hooks,
@@ -835,6 +846,65 @@ different folder.
 
 This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 material commit `4d08aa64`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
+
+## Core Guard Self-Protection Authorization - EAVC-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+EAVC-T1 external absorption value conversion guard material commit `4f0ef2c9`
+so the front door, generated state sources, generated aggregate, bootstrap read
+model, and active handoff all point to AGSK package-candidate triage before
+CodeGraph.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskAbsorptionPackReabsorptionClosure20260629.json`
+- `CVF_SESSION/state/entries/eavcT1ExternalAbsorptionValueConversionGuardClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator instructed Codex on 2026-06-29 to make the
+AGSK absorption principle a durable rule that always applies, and to apply it
+immediately to `CVF_Agent_Skills_Governance_Absorption_Pack`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert EAVC-T1 material commit `4f0ef2c9`, AGSK
+reabsorption material commit `4d08aa64`, EAC-T1 material commit `80a87e45`, or
+AGSG-BSH-T1 material commit `328de12b`.
+
+## GC-020 Marker - EAVC-T1 External Absorption Value Conversion Guard
+
+Material commit `4f0ef2c9` added
+`governance/compat/check_external_absorption_value_conversion.py`, focused
+tests, hook and autorun catalog wiring, an EAC standard update, chain-map
+update, and completion review
+`docs/reviews/CVF_EAVC_T1_EXTERNAL_ABSORPTION_VALUE_CONVERSION_GUARD_COMPLETION_2026-06-29.md`.
+
+The closure turns external repo/folder absorption from pattern-only or
+doctrine-only closure into a machine-checked value-conversion requirement:
+`DOCTRINE_ADAPTED`, `PACKAGE_CANDIDATE`, `RUNTIME_CANDIDATE`,
+`CHECKER_CANDIDATE`, `REJECT_DIRECT_IMPORT`, and
+`NO_PACKAGE_OR_RUNTIME_VALUE`.
+
+Current mode:
+`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+
+Next allowed move: open an AGSK package-candidate triage decision/roadmap using
+`docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md`
+before treating `CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or
+moving to CodeGraph. After that bounded triage is closed or explicitly parked,
+continue CVF 28.06 folder reabsorption under both EAC core and EAVC value
+conversion guards.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `4f0ef2c9`. It does not authorize runtime behavior, provider
 or live proof, public-sync export, plugin import, slash command import,
 persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
 benchmark, security certification, production-readiness, or automatic skill

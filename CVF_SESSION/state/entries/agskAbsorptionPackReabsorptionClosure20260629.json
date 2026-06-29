@@ -4,13 +4,14 @@
   "value": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "4d08aa64",
+    "valueConversionAddendumCommit": "4f0ef2c9",
     "review": "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
     "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack",
     "fileCount": 29,
     "manifestHashPrefix": "249dc5bf1200dbdc",
     "decision": "CLOSE_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW",
-    "nextAllowedMove": "PROCESS_NEXT_CVF_2806_FOLDER_WITH_EAC_CORE",
-    "suggestedNextTarget": ".private_reference/legacy/CVF 28.06/CodeGraph",
-    "summary": "AGSK reabsorption closed the 29-file Agent Skills Governance absorption pack under the EAC core. The review accepted 8 adapted, 16 no-new-value, 2 deferred, 3 rejected, and 0 blocked-unreadable items; it corrected reviewer-verified manifest hash and evidence rows before closure. Boundary: corpus sweep and governance evidence only; no runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim."
+    "nextAllowedMove": "OPEN_AGSK_PACKAGE_CANDIDATE_TRIAGE_BEFORE_CODEGRAPH",
+    "suggestedNextTarget": "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md value conversion matrix",
+    "summary": "AGSK reabsorption closed the 29-file Agent Skills Governance absorption pack under the EAC core, then EAVC-T1 added a value-conversion matrix at material commit 4f0ef2c9. The addendum clarifies that ADAPTED rows are doctrine adaptation, not eight created skill packages, and records package, runtime, checker, reject-direct-import, and no-package/runtime dispositions. Boundary: corpus sweep and governance evidence only; no runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim."
   }
 }
