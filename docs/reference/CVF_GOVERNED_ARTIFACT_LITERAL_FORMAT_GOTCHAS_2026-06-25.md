@@ -317,6 +317,27 @@ runtime/product code, and does not itself implement or modify any checker.
     completion review only when the work order requires it or when the worker
     return cannot safely carry the reviewer decision.
 
+31. **Worker-return fast-gate fixes are not the same as absorption acceptance.**
+    A worker may repair every parseable gate-shape failure and still leave a
+    substantive value-conversion gap for reviewer audit. In CGE-R1, ten
+    worker-repaired failures were gate-shape defects: authority citation
+    prefixes, required `Field`/`Value` table shape, rescan verdict formatting,
+    Finding-To-Governance defect-class/disposition vocabulary, Delta table
+    shape, Agent Operation Trace labels, negative-search collision records,
+    markdown `Applies To`, and the epistemic process escape line. Treat these
+    as pre-review hygiene, not as proof that the external source value was
+    fully absorbed. After the fast gate passes, still read the disposition
+    ledger and audit every `DEFERRED`, `REJECTED`, and `NO_NEW_VALUE` group for
+    latent doctrine, package, runtime, or checker value.
+
+32. **Corpus verdict lines are bullet-parsed.** The corpus completeness checker
+    extracts verdicts from a line shaped exactly like `- Corpus verdict:
+    COMPLETE_VERIFIED` or another allowed token. A prose line such as `Corpus
+    verdict: COMPLETE_NO_UNRESOLVED_VALUE` fails both because it lacks the
+    bullet shape and because the token is not in the allowed enum. Use the
+    current standard's verdict vocabulary and keep the token on the same
+    physical line as the `- Corpus verdict:` label.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -342,19 +363,19 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | optional completion review gotcha update, 2026-06-29 |
+| Session or invocation | CGE-R1 absorption lesson hardening, 2026-06-29 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Allowed scope source | operator instruction to make reviewer/closure speed rules durable before future agent work |
-| Before status evidence | AGSK-T4 closeout briefly created an optional completion review that triggered avoidable closure-shape gates |
-| After status evidence | checklist records optional completion review overbuild as item 30 |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Allowed scope source | operator instruction to make CGE-R1 worker-return gate failures and over-defer lessons durable before the next external absorption tranche |
+| Before status evidence | CGE-R1 worker return repaired ten gate-shape failures but still left 16 value-bearing template/example/schema files deferred until reviewer repair |
+| After status evidence | checklist records gate-shape versus substantive absorption acceptance as items 31 and 32 |
 | Diff evidence | `git diff --name-status` before material commit |
 | Approval boundary | governed artifact authoring friction checklist and ADIF/guard routing only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
-| Invocation ID | `optional-completion-review-gotcha-update-2026-06-29` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Invocation ID | `cge-r1-absorption-lesson-hardening-2026-06-29` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this hardening batch |

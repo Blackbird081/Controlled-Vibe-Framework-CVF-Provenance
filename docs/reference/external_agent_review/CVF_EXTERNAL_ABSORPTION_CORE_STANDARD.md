@@ -138,6 +138,31 @@ They do not activate packages, install plugins, wire hooks, mutate runtime,
 authorize provider execution, or create production claims. Those actions still
 require the normal CVF authorization chain.
 
+## Reviewer Semantic Value Audit
+
+Machine gates make external absorption reviewable; they do not prove semantic
+value conversion. Before accepting an absorption closeout, the reviewer must
+audit the disposition ledger after all fast gates pass:
+
+- inspect every `DEFERRED` row or group and decide whether its value can be
+  adapted now into CVF doctrine, a package candidate, a runtime candidate, or a
+  checker candidate;
+- inspect representative and high-risk `REJECTED` rows to confirm that direct
+  import is rejected but reusable CVF-native doctrine has not been discarded;
+- inspect `NO_NEW_VALUE` rows to confirm they are structural duplicates or
+  already-covered material, not unexamined source files;
+- if a `DEFERRED` item has value but no concrete reopen condition, either adapt
+  it in the current allowed scope or keep it visible with a source-backed
+  reopen condition;
+- treat `run_worker_return_fast_gate.py` and the external absorption guards as
+  necessary pre-review hygiene, not as proof that value-bearing files have been
+  fully converted.
+
+This rule is the reviewer-side complement to the value-conversion matrix. It
+closes the CGE-R1 lesson where a worker repaired gate-shape failures but still
+left 16 value-bearing template, example, and schema files parked until reviewer
+repair.
+
 ## Machine Guard
 
 Machine guards:
@@ -203,3 +228,25 @@ does not claim that any external source has been fully absorbed, does not make
 external material canonical, does not install runtime behavior, does not prove
 provider or live behavior, and does not authorize public-sync or production
 readiness.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer role |
+| Provider or surface | local workspace |
+| Session or invocation | CGE-R1 absorption lesson hardening, 2026-06-29 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | Read, rg, apply_patch, governance gates |
+| Target paths | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Allowed scope source | operator instruction to make CGE-R1 worker-return gate failures and over-defer lessons durable before the next external absorption tranche |
+| Before status evidence | CGE-R1 worker-return gates passed after repair, but reviewer found 16 value-bearing template/example/schema files still deferred |
+| After status evidence | standard now requires reviewer semantic value audit after fast-gate pass |
+| Diff evidence | `git diff --name-status` before material commit |
+| Approval boundary | documentation standard and learning record only; no checker, runtime, provider/live, public-sync, package activation, or adapter behavior |
+| Claim boundary | reviewer guidance only; machine guards remain necessary but not sufficient |
+| Agent type | reviewer/closer |
+| Invocation ID | `cge-r1-absorption-lesson-hardening-2026-06-29` |
+| Expected manifest | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Actual changed set | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Manifest delta | MATCH |
