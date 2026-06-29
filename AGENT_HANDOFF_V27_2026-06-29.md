@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the full-value absorption rule; parked checkpoint=AGSK source pack current doctrine/package/checker value closed at material commit `1a5bdee1`; AGSK runtime/adapter/activation lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the full-value absorption rule; parked checkpoint=CodeGraph source pack current doctrine/package-candidate/index value closed at material commit `1d693405`; CodeGraph runtime/adapter/checker/activation lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,24 +19,24 @@ Startup acknowledged: current mode=`agsk_t6_assf_package_anatomy_checker_closed_
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
-| Latest material closeout | `1a5bdee1` AGSK-T6 ASSF package anatomy checker |
+| Latest material closeout | `1d693405` CGE-R2 CodeGraph rescan correction |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`
+`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
 
 ## Purpose
 
 Keep the active handoff compact after V26 reached the governed file-size guard
 near-threshold. V26 is archived as historical continuity; V27 is the sole root
-active handoff and now points to the AGSK-T6 ASSF package anatomy checker
+active handoff and now points to the CGE-R2 CodeGraph rescan correction
 closeout boundary.
 
 ## Scope / Target / Owner Boundary
 
 Target: maintain compact active handoff V27, update active startup pointers,
-and preserve the AGSK-T6 closure boundary.
+and preserve the CGE-R2 closure boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize package activation, runtime/provider/live work, public-sync
@@ -59,6 +59,23 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `1d693405` closed CGE-R2 CodeGraph rescan correction. It added
+`docs/reviews/CVF_CGE_R2_CODEGRAPH_RESCAN_VALUE_AUDIT_AND_CORRECTION_2026-06-29.md`,
+corrected
+`docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md`,
+updated
+`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`,
+added the metadata-only ASSF candidate
+`docs/reference/agent_system_skills/registry/entries/cvf-code-intelligence-context-review.json`,
+and regenerated `docs/reference/agent_system_skills/generated/skill-index.json`.
+CGE-R2 rejected `freezeAllowed` as any CVF freeze/approval authority signal and
+converted residual query-planning, confidence/direct-read fallback, staleness,
+trace, fixture-blueprint, and package-candidate value. No CodeGraph runtime,
+package activation, package root, `SKILL.md`, resolver mutation, checker
+implementation, MCP adapter, watcher, daemon, SQLite index, provider/live
+proof, public-sync, benchmark, CI mutation, automatic freeze authority, or
+production-readiness claim was created.
 
 Material commit `37771016` closed the EverOS remaining value audit and lane
 closeout. It confirmed that EverOS T0-T4 absorbed or guarded the high-value
@@ -151,15 +168,16 @@ production-readiness claim was created.
 ## Next Allowed Move
 
 Operator selects the next external repo/folder absorption target under the
-full-value absorption rule. AGSK-T6 closed at material commit `1a5bdee1`, and
-the AGSK source pack current doctrine/package/checker value is closed. LHW24
-remains the latest closed numbered LHW wave.
+full-value absorption rule. CGE-R2 closed at material commit `1d693405`, and
+the CodeGraph source pack current doctrine/package-candidate/index value is
+closed through the bounded rescan correction. LHW24 remains the latest closed
+numbered LHW wave.
 
-No package root, `SKILL.md`, additional checker implementation, resolver
-mutation, runtime activation, provider/live proof, public-sync, package
-activation, lifecycle promotion, external CLI/MCP adapter, direct pack checker
-import, automatic skill invocation, or production-readiness claim is authorized
-without a fresh governed work order.
+No CodeGraph package root, `SKILL.md`, additional checker implementation,
+resolver mutation, runtime activation, provider/live proof, public-sync,
+package activation, lifecycle promotion, external CLI/MCP adapter, watcher,
+daemon, SQLite index, benchmark, CI mutation, automatic freeze authority, or
+production-readiness claim is authorized without a fresh governed work order.
 
 ## Parked Checkpoint
 
@@ -181,10 +199,17 @@ entries. AGSK runtime, adapter, package activation, resolver mutation, and
 automatic invocation lanes remain parked unless opened by fresh source-verified
 authorization.
 
+CGE-R2 material commit `1d693405` closed the CodeGraph second-pass rescan
+correction. It fixed the `freezeAllowed` authority leak and converted residual
+CodeGraph doctrine/package-candidate value into CVF owner surfaces while keeping
+runtime/checker/package activation lanes parked behind the conditional reopen
+index.
+
 Runtime-provider-live lanes, package activation, adapter implementation,
 public-sync expansion, CodeGraph runtime/MCP/watcher/daemon, Agent Skills
-plugin/command/persona/hook/runtime import, automatic skill invocation, and
-production-readiness claims remain parked behind fresh governed authorization.
+plugin/command/persona/hook/runtime import, CodeGraph checker implementation,
+CodeGraph benchmark/CI mutation, automatic skill invocation, and production-
+readiness claims remain parked behind fresh governed authorization.
 
 ## Core Guard Self-Protection Authorization - EverOS T0-T5 Closure Session Sync
 
@@ -545,6 +570,81 @@ the session-sync commit. It does not authorize package root creation,
 `SKILL.md`, additional checker implementation, resolver mutation, runtime
 activation, provider/live proof, public-sync export, package activation,
 lifecycle promotion, production-readiness, or automatic skill invocation.
+
+## Core Guard Self-Protection Authorization - CGE-R2 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+CGE-R2 material commit `1d693405`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording with the
+reviewer-accepted CodeGraph rescan correction closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/cgeR2CodeGraphRescanCorrectionClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `1d693405` unless the reviewer reopens CGE-R2.
+
+## GC-020 Marker - CGE-R2 CodeGraph Rescan Correction Material Closure
+
+Material commit `1d693405` closed CGE-R2 by adding the CodeGraph rescan review,
+correcting the owner-surface matrix, updating the conditional reopen index,
+adding the metadata-only ASSF Code Intelligence candidate, and regenerating the
+ASSF skill index.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for CGE-R2 material
+commit `1d693405`. It does not authorize CodeGraph runtime activation, package
+root creation, `SKILL.md`, resolver mutation, checker implementation, MCP
+adapter, watcher, daemon, SQLite index, provider/live proof, public-sync export,
+benchmark, CI mutation, automatic freeze authority, package activation,
+lifecycle promotion, or production-readiness.
+
+## Agent Operation Trace Block - CGE-R2 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | CGE-R2 closure session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after CGE-R2 material commit `1d693405` |
+| Before status evidence | material commit `1d693405` closed CGE-R2 CodeGraph rescan correction |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no CodeGraph runtime/package/checker activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `cge-r2-closure-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/cgeR2CodeGraphRescanCorrectionClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/cgeR2CodeGraphRescanCorrectionClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - CGE-R2 Closure Session Sync Commit
+
+Session-sync commit pending updates active session continuity after CGE-R2
+material commit `1d693405`.
+
+At session-sync authoring time, mode is:
+`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
+
+At session-sync authoring time, next allowed move is: operator selects the next
+external repo/folder absorption target under the full-value absorption rule.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the session-sync commit. It does not authorize CodeGraph runtime activation,
+package root creation, `SKILL.md`, resolver mutation, checker implementation,
+MCP adapter, watcher, daemon, SQLite index, provider/live proof, public-sync
+export, benchmark, CI mutation, automatic freeze authority, package activation,
+lifecycle promotion, or production-readiness.
 
 ## Claim Boundary
 

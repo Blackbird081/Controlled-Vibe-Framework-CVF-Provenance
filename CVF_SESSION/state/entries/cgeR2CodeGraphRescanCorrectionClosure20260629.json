@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1329,
+  "stateKey": "cgeR2CodeGraphRescanCorrectionClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "1d693405",
+    "reviewArtifact": "docs/reviews/CVF_CGE_R2_CODEGRAPH_RESCAN_VALUE_AUDIT_AND_CORRECTION_2026-06-29.md",
+    "correctedOwnerSurface": "docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md",
+    "conditionalReopenIndex": "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md",
+    "assfCandidate": "docs/reference/agent_system_skills/registry/entries/cvf-code-intelligence-context-review.json",
+    "generatedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "verification": [
+      "ASSF skill index drift PASS",
+      "ASSF package candidate anatomy PASS",
+      "machine closure package PASS",
+      "rescan intelligence hardening PASS",
+      "pre-implementation autorun PASS 60/60",
+      "reviewer-fast PASS 45/45",
+      "pre-commit governance hook PASS 65/65"
+    ],
+    "nextAllowedMove": "operator selects the next external repo/folder absorption target under the full-value absorption rule",
+    "claimBoundary": "CodeGraph current doctrine, package-candidate metadata, and conditional reopen index value closed through CGE-R2; no CodeGraph runtime, package activation, package root, SKILL.md, resolver mutation, checker implementation, MCP adapter, watcher, daemon, SQLite index, provider/live proof, public-sync, benchmark, CI mutation, automatic freeze authority, or production-readiness claim"
+  }
+}
