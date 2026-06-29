@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence; parked checkpoint=AGSK-R5 closed at material commit `3a742e6e`; AGSK-R4 closed at material commit `416eb689`; AGSK-R3 closed at material commit `4003289a`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator may select the next bounded package lifecycle promotion tranche, an explicitly scoped batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=AGSK-R6 closed at material commit `8caef205`; one package root is runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
+Current mode marker: `agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
 
-Current mode: `agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
+Current mode: `agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
 
-`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
+`agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
 
 Previous mode:
 
-`agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion`
+`agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| AGSK-R6 code-review-quality pilot runtime package | `8caef205` | CLOSED_PASS_BOUNDED; `cvf-engineering-code-review-quality` promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 1 runtime eligible, 23 still blocked |
 | AGSK-R5 runtime eligibility audit | `3a742e6e` | CLOSED_PASS_BOUNDED; no-body audit helper added; real-index audit reports 24 package roots, 0 runtime eligible, all blocked by UAT/certification/internal disposition evidence |
 | AGSK-R4 runtime package loader | `416eb689` | CLOSED_PASS_BOUNDED; bounded internal runtime package loader added; current AGSK-R3 packages return `NOT_RUNTIME_ELIGIBLE` until UAT/certification/implemented evidence exists |
 | AGSK-R3 ASSF package roots | `4003289a` | CLOSED_PASS_BOUNDED; 24 package roots added and 24 matching registry entries promoted to `PROPOSED`; generated ASSF skill index regenerated |
@@ -136,22 +137,25 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion`
+Mode: `agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion`
 
-Next allowed move: operator may select a bounded package lifecycle promotion
-tranche for explicit UAT, certification, and internalAgentDisposition evidence,
-preferably a pilot package or explicitly scoped batch, or select another
-governed lane through fresh GC-018/source-verified work order. AGSK-R5 runtime
-eligibility audit closed at material commit `3a742e6e`; AGSK-R4 runtime package
-loader closed at material commit `416eb689`; AGSK-R3 package roots closed at
-material commit `4003289a`.
+Next allowed move: operator may select the next bounded package lifecycle
+promotion tranche for explicit UAT, certification, and
+internalAgentDisposition evidence, choose an explicitly scoped batch, or open a
+separate ACTIVE resolver or CLI/MCP adapter tranche through fresh
+GC-018/source-verified work order. AGSK-R6 code-review-quality pilot promotion
+closed at material commit `8caef205`; AGSK-R5 runtime eligibility audit closed
+at material commit `3a742e6e`; AGSK-R4 runtime package loader closed at
+material commit `416eb689`; AGSK-R3 package roots closed at material commit
+`4003289a`.
 LHW24 remains the latest closed numbered LHW wave.
 
-Current audit evidence: 32 ASSF records, 24 package-root records, 0 runtime
-eligible package roots, and all 24 package roots blocked by
-`certificationState=NOT_STARTED`, `uatState=NOT_STARTED`, and
-`internalAgentDisposition=CANDIDATE`. No automatic package activation, resolver
-mutation, CLI/MCP adapter, provider/live proof, public-sync, direct import, or
+Current audit evidence: 32 ASSF records, 24 package-root records, 1 runtime
+eligible package root (`cvf-engineering-code-review-quality`), and 23 remaining
+package roots blocked by `certificationState=NOT_STARTED`,
+`uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
+package activation, resolver mutation, CLI/MCP adapter, provider/live proof,
+public-sync, direct import, merge authority, commit authority, or
 production-readiness claim is authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.

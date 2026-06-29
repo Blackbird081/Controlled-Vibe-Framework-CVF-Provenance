@@ -67,8 +67,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion",
-  "previousMode": "agsk_r4_runtime_package_loader_closed_pending_package_lifecycle_promotion",
+  "currentMode": "agsk_r6_code_review_quality_pilot_runtime_package_closed_pending_next_package_promotion",
+  "previousMode": "agsk_r5_runtime_eligibility_audit_closed_pending_package_lifecycle_promotion",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2765,7 +2765,7 @@
   "mpiT5MemoryAccessClaimCheckerClosure20260622": "MPI-T5 Memory Access Claim Checker is CLOSED_PASS_BOUNDED; public-sync completion is recorded separately in mpiT5MemoryAccessClaimCheckerPublicSync20260622. Closure artifacts: docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_WORKER_RETURN_2026-06-22.md accepted by reviewer, docs/reviews/CVF_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_COMPLETION_2026-06-22.md closed bounded, docs/baselines/CVF_GC018_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md closed bounded, docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_FOR_WORKER_2026-06-22.md closed bounded, and docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md updated to MPI_T5_CLOSED_PASS_BOUNDED_PENDING_PUBLIC_SYNC at private closure time. Material scope: new governance/compat/check_memory_access_claim.py, new governance/compat/test_check_memory_access_claim.py, one reviewer-fast hook entry, and one autorun bundle entry. Evidence: focused pytest 13/13 PASS, checker self-run PASS, pre-implementation autorun PASS, worker-return fast gate PASS. Boundary: local static changed-governed-Markdown checker only; no route/schema/auth/helper/provider/live/durable/registry/generated/adapter/runtime behavior.",
   "adifContinuousExecutionDispatch20260622": "ADIF continuous execution dispatch is committed at 783b2b8a from dispatch base 60751daf. The operator preselected T0 -> T1 -> T2 -> (T3 || T4) -> T5. Canonical authorization: docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md. Master work order: docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_CONTINUOUS_EXECUTION_T0_T5_FOR_CLAUDE_2026-06-22.md. Commit mode WORKER_MAY_COMMIT enables real dependency checkpoint commits and isolated parallel worktrees from identical T2 HEAD. Claude must source-verify and gate every child packet, must not push or edit session continuity, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Codex is the designated final reviewer/closer. Dispatch evidence: reviewer-fast 34/34 PASS, pre-dispatch 45/45 PASS, dispatch steward PASS, and pre-commit 55/55 PASS.",
   "mpiT5MemoryAccessClaimCheckerPublicSync20260622": "MPI-T5 Memory Access Claim Checker public sync completed from sibling clone D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF-public-sync after remote verification. Public remote: https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git. Public branch: main. Public commit: 602550404 Add MPI-T5 memory access claim checker. Public-safe changed set: governance/compat/check_memory_access_claim.py, governance/compat/test_check_memory_access_claim.py, governance/compat/run_local_governance_hook_chain.py, docs/assessments/CVF_PUBLIC_SYNC_MPI_T5_MEMORY_ACCESS_CLAIM_CHECKER_2026-06-22.md, and docs/evidence/workflow-orchestration-guard.jsonl. Public checks before commit/push: focused pytest 13/13 PASS, check_memory_access_claim self-run PASS, public pre-commit hook PASS, public pre-push hook PASS. Boundary: no private work order, private review, private session state, active handoff, secrets, provider/live proof, runtime/provider behavior, registry/durable/vector/graph store, route/schema/auth/helper behavior, direct interception, readiness, or universal governed-coding-control claim was public-synced.",
-  "nextAllowedMove": "AGSK-R5 runtime eligibility audit is closed at material commit 3a742e6e. AGSK-R4 runtime package loader is closed at material commit 416eb689. AGSK-R3 package roots are closed at material commit 4003289a with 24 PROPOSED package roots. LHW24 remains the latest closed numbered LHW wave. Current audit evidence: 32 ASSF records, 24 package-root records, 0 runtime eligible package roots, and all 24 package roots blocked by certificationState NOT_STARTED, uatState NOT_STARTED, and internalAgentDisposition CANDIDATE. Next allowed move: operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence, preferably a pilot package or explicitly scoped batch, or select another governed lane through fresh GC-018/source-verified work order. No automatic package activation, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, direct import, or production-readiness claim is authorized.",
+  "nextAllowedMove": "AGSK-R6 code-review-quality pilot promotion is closed at material commit 8caef205. One package root, cvf-engineering-code-review-quality, is runtime eligible for explicit internal package-loader body reads only. AGSK-R5 runtime eligibility audit is closed at material commit 3a742e6e; AGSK-R4 runtime package loader is closed at material commit 416eb689; AGSK-R3 package roots are closed at material commit 4003289a with 24 package roots. LHW24 remains the latest closed numbered LHW wave. Current audit evidence: 32 ASSF records, 24 package-root records, 1 runtime eligible package root, and 23 remaining package roots blocked by certificationState NOT_STARTED, uatState NOT_STARTED, and internalAgentDisposition CANDIDATE. Next allowed move: operator may select the next bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence, choose an explicitly scoped batch, or open a separate ACTIVE resolver or CLI/MCP adapter tranche through fresh GC-018/source-verified work order. No automatic package activation, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, direct import, merge authority, commit authority, or production-readiness claim is authorized.",
   "adifT0CheckpointPendingReview20260623": "Claude committed ADIF-T0 at 7c0480bc from continuous-dispatch session commit 7745339c. The changed set contains the T0 GC-018, T0 work order, taxonomy contract, ADIF reference front door, and roadmap checkpoint row. The work order remains COMPLETE_PENDING_REVIEW, so this commit is real execution evidence but not accepted dependency release for T1. Codex owns checkpoint review and continuity; Claude correctly stopped when pre-implementation exposed stale active-handoff HEAD and the authorization forbade worker-owned session sync.",
   "assfWebProjectionImplementationClosure20260626": "ASSF-WEBPROJ-T1 Web projection implementation closed CLOSED_PASS_BOUNDED at material commit 0b57a4de. Artifacts: docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md, docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md, and docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md. Implementation projected certified ASSF package metadata into the CVF Web public skill index as read-only presentation data and added GC-051 coverage for the Web projection public skill-index surfaces. Boundary retained: no package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, or package integration.",
   "adifT0CheckpointAcceptedT1Release20260623": "Codex accepted ADIF-T0 for continuation at review commit 6277cb28 after Claude execution commit 7c0480bc and continuity commit e454191f. Review artifact: docs/reviews/CVF_ADIF_T0_OWNER_RECONCILIATION_CHECKPOINT_REVIEW_2026-06-23.md. Reviewer-fast and pre-commit passed; T0 remains pending final full-chain review rather than independently closed. T1 dependency authoring is released from the post-sync HEAD. Learning: continuous WORKER_MAY_COMMIT chains with reviewer-owned continuity require an explicit Codex checkpoint sync/review boundary after each worker commit; this is not worker scope.",
@@ -4168,5 +4168,45 @@
     "runtimeBoundary": "bounded internal no-body metadata audit summary only",
     "nextAllowedMove": "operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence, preferably a pilot package or explicitly scoped batch",
     "claimBoundary": "no automatic package activation, no resolver mutation, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, and no production-readiness claim"
+  },
+  "agskR6CodeReviewQualityPilotPromotionClosure20260630": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "8caef205",
+    "materialCommitFull": "8caef205731a58b53c7c1943e58ee97dfd92cbdb",
+    "baseline": "docs/baselines/CVF_GC018_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+    "pilotPackage": "cvf-engineering-code-review-quality",
+    "registryEntry": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-review-quality.json",
+    "packageRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md",
+    "generatedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "verification": [
+      "generated ASSF skill index PASS",
+      "skill-index drift check PASS",
+      "certified metadata admission PASS",
+      "package anatomy PASS",
+      "runtime loader body-read smoke PASS with packageBodyDisposition LOADED",
+      "runtime eligibility audit reports 24 package roots, 1 runtime eligible, 23 runtime ineligible",
+      "loader and audit unittest PASS 10/10",
+      "reviewer-fast PASS 46/46",
+      "pre-commit PASS 66/66"
+    ],
+    "auditResult": {
+      "totalAssfRecords": 32,
+      "packageRootRecords": 24,
+      "runtimeEligiblePackageRoots": 1,
+      "blockedPackageRoots": 23,
+      "readyForBodyLoad": [
+        "cvf-engineering-code-review-quality"
+      ],
+      "packageRootStatus": "APPROVED=1; PROPOSED=23",
+      "packageRootUatState": "PASSED=1; NOT_STARTED=23",
+      "packageRootCertificationState": "CERTIFIED=1; NOT_STARTED=23",
+      "packageRootInternalAgentDisposition": "IMPLEMENTED=1; CANDIDATE=23"
+    },
+    "runtimeBoundary": "bounded internal explicit package-loader body read for one package root only",
+    "nextAllowedMove": "operator may select the next bounded package lifecycle promotion tranche, choose an explicitly scoped batch, or open a separate ACTIVE resolver or CLI/MCP adapter tranche through fresh GC-018/source-verified work order",
+    "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
+    "claimBoundary": "no automatic package activation, no resolver mutation, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
   }
 }
