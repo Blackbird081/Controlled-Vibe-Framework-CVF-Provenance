@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the full-value absorption rule; parked checkpoint=CodeGraph source pack current doctrine/package-candidate/index value closed at material commit `1d693405`; CodeGraph runtime/adapter/checker/activation lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-R2 source-mirror-backed agent-skills full package backfill; parked checkpoint=source mirror discipline closed at material commit `27c692e0`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
+Current mode marker: `source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
 
-Current mode: `cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
+Current mode: `source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
 
-`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
+`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
 
 Previous mode:
 
-`agsk_t6_assf_package_anatomy_checker_closed_pending_next_external_absorption_target`
+`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| External source mirror discipline | `27c692e0` | CLOSED_PASS_BOUNDED; added `.private_reference/source_mirrors/` control plane, pinned `addyosmani/agent-skills` mirror, and made upstream mirrors preferred authority over derived external-agent packs |
 | CGE-R2 CodeGraph rescan correction | `1d693405` | CLOSED_PASS_BOUNDED; corrected `freezeAllowed` authority leak, converted query-planning/fallback/staleness/trace doctrine, added metadata-only ASSF `CANDIDATE`, regenerated skill index, and updated conditional reopen index |
 | AGSK-T6 ASSF package anatomy checker | `1a5bdee1` | CLOSED_PASS_BOUNDED; CVF-native checker added and wired; two ASSF-T2 registry entries backfilled with `riskTriggers: []`; generated skill index regenerated |
 | AGSK-T7 package-candidate expansion | `aa4d932a` | CLOSED_PASS_BOUNDED; six metadata-only ASSF `CANDIDATE` registry entries added from source-backed AGSK capability concepts and generated skill index regenerated |
@@ -131,19 +132,19 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
+Mode: `source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
 
-Next allowed move: operator selects the next external repo/folder absorption
-target under the full-value absorption rule. CGE-R2 closed at material commit
-`1d693405`; CodeGraph source pack current doctrine/package-candidate/index value
-is closed through the bounded rescan correction.
+Next allowed move: execute AGSK-R2 source-mirror-backed agent-skills full package
+backfill using `.private_reference/source_mirrors/addyosmani__agent-skills/` as
+upstream source authority and the old
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/`
+as secondary comparison material. Source mirror discipline closed at material
+commit `27c692e0`.
 LHW24 remains the latest closed numbered LHW wave.
 
-No CodeGraph package root, `SKILL.md`, resolver mutation, runtime activation,
-provider/live proof, public-sync, package activation, lifecycle promotion,
-checker implementation, external CLI/MCP adapter, watcher, daemon, SQLite
-index, benchmark, CI mutation, automatic freeze authority, or
-production-readiness claim is authorized without a fresh governed work order.
+No runtime activation, package activation, resolver mutation, CLI/MCP adapter,
+hook execution, provider/live proof, public-sync, direct import, or
+production-readiness claim is authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 

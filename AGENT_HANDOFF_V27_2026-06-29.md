@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the full-value absorption rule; parked checkpoint=CodeGraph source pack current doctrine/package-candidate/index value closed at material commit `1d693405`; CodeGraph runtime/adapter/checker/activation lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-R2 source-mirror-backed agent-skills full package backfill; parked checkpoint=source mirror discipline closed at material commit `27c692e0`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,12 +19,12 @@ Startup acknowledged: current mode=`cge_r2_codegraph_rescan_correction_closed_pe
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
-| Latest material closeout | `1d693405` CGE-R2 CodeGraph rescan correction |
+| Latest material closeout | `27c692e0` external source mirror discipline |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`cge_r2_codegraph_rescan_correction_closed_pending_next_external_absorption_target`
+`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
 
 ## Purpose
 
@@ -59,6 +59,13 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `27c692e0` closed external source mirror discipline. It added
+the `.private_reference/source_mirrors/` control plane, pinned
+`https://github.com/addyosmani/agent-skills.git` at
+`aba7c4e9695c363e65cb59effe926c7f1d1abe3d`, kept cloned payload ignored by
+git, and updated external absorption guidance so upstream source mirrors are
+preferred authority over derived external-agent packs.
 
 Material commit `1d693405` closed CGE-R2 CodeGraph rescan correction. It added
 `docs/reviews/CVF_CGE_R2_CODEGRAPH_RESCAN_VALUE_AUDIT_AND_CORRECTION_2026-06-29.md`,
@@ -167,17 +174,16 @@ production-readiness claim was created.
 
 ## Next Allowed Move
 
-Operator selects the next external repo/folder absorption target under the
-full-value absorption rule. CGE-R2 closed at material commit `1d693405`, and
-the CodeGraph source pack current doctrine/package-candidate/index value is
-closed through the bounded rescan correction. LHW24 remains the latest closed
-numbered LHW wave.
+Execute AGSK-R2 source-mirror-backed agent-skills full package backfill using
+`.private_reference/source_mirrors/addyosmani__agent-skills/` as upstream
+source authority and the old
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/`
+as secondary comparison material. Source mirror discipline closed at material
+commit `27c692e0`. LHW24 remains the latest closed numbered LHW wave.
 
-No CodeGraph package root, `SKILL.md`, additional checker implementation,
-resolver mutation, runtime activation, provider/live proof, public-sync,
-package activation, lifecycle promotion, external CLI/MCP adapter, watcher,
-daemon, SQLite index, benchmark, CI mutation, automatic freeze authority, or
-production-readiness claim is authorized without a fresh governed work order.
+No runtime activation, package activation, resolver mutation, CLI/MCP adapter,
+hook execution, provider/live proof, public-sync, direct import, or
+production-readiness claim is authorized.
 
 ## Parked Checkpoint
 
@@ -651,3 +657,72 @@ lifecycle promotion, or production-readiness.
 This handoff is a compact continuity surface. It does not authorize runtime
 behavior, provider/live proof, public-sync, package activation, automatic skill
 invocation, CLI/MCP adapter implementation, or production readiness.
+
+## Core Guard Self-Protection Authorization - Source Mirror Discipline Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+source mirror discipline material commit `27c692e0`, regenerate active session
+state, and align front-door, bootstrap read model, and active handoff next-move
+wording with the reviewer-accepted source mirror closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/sourceMirrorDisciplineClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `27c692e0` unless the reviewer reopens source mirror discipline.
+
+## GC-020 Marker - Source Mirror Discipline Material Closure
+
+Material commit `27c692e0` closed the source mirror discipline reference update
+and pinned the local `addyosmani/agent-skills` source mirror for AGSK-R2.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`27c692e0`. It does not authorize runtime activation, package activation,
+resolver mutation, CLI/MCP adapter, hook execution, provider/live proof,
+public-sync export, direct import, or production-readiness.
+
+## Agent Operation Trace Block - Source Mirror Discipline Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | source mirror discipline session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after source mirror discipline material commit `27c692e0` |
+| Before status evidence | material commit `27c692e0` closed source mirror discipline |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/resolver activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `source-mirror-discipline-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/sourceMirrorDisciplineClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/sourceMirrorDisciplineClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - Source Mirror Discipline Session Sync Commit
+
+Session-sync commit pending updates active session continuity after source
+mirror discipline material commit `27c692e0`.
+
+At session-sync authoring time, mode is:
+`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
+
+At session-sync authoring time, next allowed move is: execute AGSK-R2
+source-mirror-backed agent-skills full package backfill.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the session-sync commit. It does not authorize runtime activation, package
+activation, resolver mutation, CLI/MCP adapter, hook execution, provider/live
+proof, public-sync export, direct import, or production-readiness.
