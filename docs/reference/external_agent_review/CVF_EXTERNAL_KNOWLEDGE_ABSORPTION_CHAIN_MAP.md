@@ -74,7 +74,7 @@ Short form:
 | Input type | Required first route | Required owner surface | Minimum disposition |
 | --- | --- | --- | --- |
 | Legacy source family | Knowledge Absorption Blind-Spot Control Block and legacy coverage index lookup | Existing plane, workflow-chain, roadmap, or reference owner | `ACCEPT_NOW`, `ACCEPT_AS_DOCTRINE`, `ACCEPT_AS_OWNER_MAP`, `DEFER_DEMAND_GATED`, `REJECT_DIRECT`, or `OUT_OF_SCOPE` |
-| External repo or copied folder | Root/folder lifecycle classification plus absorption map when retained | CVF-owned reference, map, roadmap, or work order | `ABSORB`, `ADAPT`, `DEFER`, `REJECT`, or `BLOCK` |
+| External repo or copied folder | Root/folder lifecycle classification plus absorption map when retained | CVF-owned reference, map, roadmap, work order, package candidate, runtime candidate, or checker candidate | `ABSORB`, `ADAPT`, `DEFER`, `REJECT`, `BLOCK`, `PACKAGE_CANDIDATE`, `RUNTIME_CANDIDATE`, `CHECKER_CANDIDATE`, or `NO_PACKAGE_OR_RUNTIME_VALUE` |
 | External-agent packet request | External-agent review front door, context standard, packet template, and authoring checklist | External-agent review packet | `PACKET_READY`, `REWRITE_REQUIRED`, or `REJECT_RAW_REQUEST` |
 | External-agent returned output | External finding absorption workflow and Required Absorption Table | Finding, standard, roadmap, work order, review, or absorption map | Matrix disposition from the absorption workflow |
 | Public/simple CVF vocabulary | Public workflow-chain review context before using as evidence | Public-safe summary or governed internal standard | `QUESTION_OR_HYPOTHESIS` until source-verified |
@@ -88,7 +88,7 @@ Short form:
 | Authority boundary | `AGENTS.md`, `CVF_SESSION_MEMORY.md`, active state, active handoff | Machine-checked for session/front-door continuity |
 | Provider-local memory boundary | `AGENTS.md` provider-specific memory boundary | Policy-bound; checked by review/gates where applicable |
 | Knowledge blind-spot prevention | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md` | Binding standard; work-order evidence required when applicable |
-| External absorption core | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `governance/compat/check_external_absorption_core.py` | Machine-checked for changed external repo/copied-folder absorption artifacts |
+| External absorption core and value conversion | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py` | Machine-checked for changed external repo/copied-folder absorption artifacts, including package/runtime/checker opportunity classification |
 | Corpus registry | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Machine-checked generated aggregate |
 | Legacy coverage visibility | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | Governed reference index; not yet a universal router |
 | External review packet authoring | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md` | Reference/checklist |
@@ -99,8 +99,8 @@ Short form:
 ## Enforcement Gap
 
 This chain map records a remaining known gap: CVF has machine checks for the
-external absorption core, external knowledge intake routing, corpus
-completeness, and absorption blind-spot control, but it does not yet have one
+external absorption core, value conversion matrix, external knowledge intake
+routing, corpus completeness, and absorption blind-spot control, but it does not yet have one
 universal trigger/router that machine-enforces every external repo, review,
 corpus, or legacy intake through this full chain.
 
@@ -114,7 +114,7 @@ A future checker may enforce:
 
 - changed external knowledge intake artifacts cite this chain map;
 - changed external repo/copied-folder absorption artifacts include the external
-  absorption core ledger;
+  absorption core ledger and value conversion matrix;
 - external-return reviews include the Required Absorption Table;
 - legacy-adjacent implementation work orders include blind-spot control
   evidence and a legacy coverage index disposition;
@@ -151,9 +151,9 @@ chain-map update.
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | external knowledge intake routing guard implementation |
 | Chain map route | chain-map self-maintenance -> external-intake guard self-check -> bounded routing reference update |
-| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py` |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py` |
 | Owner surface | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
-| Disposition | ADAPT chain map to name the EAC-T1 external absorption core standard and checker |
+| Disposition | ADAPT chain map to name the EAC-T1 external absorption core standard, value conversion rule, and checkers |
 | Claim boundary | routing reference maintenance only; no external source absorption, runtime, provider, public, or production claim |
 
 ## Claim Boundary

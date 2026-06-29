@@ -16,7 +16,8 @@ copied folder, archived external pack, or retained legacy source folder.
 Different repositories may contain different value. The core process is not
 different: every external absorption output must prove what corpus existed,
 what was read, what value was dispositioned, where accepted value maps in CVF,
-and what remains unresolved.
+what remains unresolved, and which valuable source concepts should become
+CVF-owned doctrine, package, runtime, or checker candidates.
 
 ## Scope / Applies To
 
@@ -40,6 +41,8 @@ source. It is complete only within a bounded corpus after the artifact records:
 - an absorption disposition ledger;
 - an owner-surface map for accepted value;
 - unresolved, deferred, rejected, and blocked items;
+- a value-conversion matrix that explicitly evaluates package, runtime, and
+  checker opportunities instead of stopping at pattern adaptation;
 - a claim boundary that prevents runtime, provider, public, or production
   expansion without fresh governed work.
 
@@ -100,11 +103,48 @@ Allowed disposition outcomes:
 | `BLOCK` | Stop or return because source authority or access is missing. |
 | `NO_NEW_VALUE` | No meaningful delta after reading the source. |
 
+## Required Value Conversion Matrix
+
+Every external absorption artifact must include this additional section:
+
+```text
+## External Absorption Value Conversion Matrix
+
+| Source item | Value extracted | Conversion lane | CVF target surface | Next governed action | Runtime/package boundary |
+|---|---|---|---|---|---|
+| <source row or group> | <specific value> | <lane token> | <CVF owner or pending owner> | <action or explicit none-with-reason> | <boundary statement> |
+```
+
+Allowed conversion lanes:
+
+| Lane | Meaning |
+|---|---|
+| `DOCTRINE_ADAPTED` | Value was rewritten into CVF doctrine, standards, reviews, roadmaps, or advisory references. |
+| `PACKAGE_CANDIDATE` | Value could become a CVF-owned skill, capability package, template package, or reusable package contract after fresh governed authorization. |
+| `RUNTIME_CANDIDATE` | Value could become executable runtime behavior only after fresh GC-018/work order/source verification and live/provider proof when behavior is claimed. |
+| `CHECKER_CANDIDATE` | Value could become a CVF-native machine guard or checker after source-verified guard work. |
+| `REJECT_DIRECT_IMPORT` | Direct import/copy/wiring is rejected, while a CVF-native rewrite may still be considered through a separate governed tranche. |
+| `NO_PACKAGE_OR_RUNTIME_VALUE` | The row was evaluated and has no package, runtime, or checker value; the reason must be explicit. |
+
+This matrix is mandatory even when the processing ledger already has
+`ADAPTED`, `DEFERRED`, `REJECTED`, or `NO_NEW_VALUE` rows. `ADAPTED` alone is
+not a sufficient absorption claim. A reviewer must ask whether the value should
+enrich CVF doctrine only, become a CVF-owned package or skill candidate, become
+a runtime candidate, become a checker candidate, be rejected for direct import,
+or be explicitly closed as having no package/runtime/checker value.
+
+Package, runtime, and checker candidates are opportunity classifications only.
+They do not activate packages, install plugins, wire hooks, mutate runtime,
+authorize provider execution, or create production claims. Those actions still
+require the normal CVF authorization chain.
+
 ## Machine Guard
 
-Machine guard:
+Machine guards:
 
 `governance/compat/check_external_absorption_core.py`
+
+`governance/compat/check_external_absorption_value_conversion.py`
 
 The guard is forward-only and range-aware. It checks changed active governed
 Markdown artifacts that reference external absorption sources, external
@@ -112,13 +152,18 @@ repository URLs, copied-folder intake, or the explicit marker:
 
 `External absorption core: REQUIRED`
 
-The guard requires the external absorption core block, corpus completeness
+The core guard requires the external absorption core block, corpus completeness
 evidence that is not `NOT_APPLICABLE_WITH_REASON`, external knowledge intake
 routing, non-empty manifest and ledger fields, allowed status vocabulary, and
 an owner-surface map.
 
-The guard does not prove semantic understanding. It makes the corpus and
-disposition evidence reviewable and blocks narrative-only closure.
+The value-conversion guard requires the value conversion matrix, all required
+conversion lane tokens, and next-action plus boundary evidence for package,
+runtime, and checker candidates.
+
+The guards do not prove semantic understanding. They make the corpus,
+disposition, and conversion-opportunity evidence reviewable and block
+narrative-only closure.
 
 ## Epistemic Process Block
 
@@ -145,8 +190,8 @@ reference artifact.
 |---|---|
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | external repo or copied folder |
-| Chain map route | external repo or copied folder -> external absorption core -> corpus manifest and ledger -> owner-surface disposition -> GC-018/work order/source verification if implementation is needed |
-| Matching local-view guard | `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py` |
+| Chain map route | external repo or copied folder -> external absorption core -> corpus manifest and ledger -> owner-surface disposition -> value conversion matrix -> GC-018/work order/source verification if implementation is needed |
+| Matching local-view guard | `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py` |
 | Owner surface | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` |
 | Disposition | ADAPT as central external absorption core standard and machine-check candidate |
 | Claim boundary | routing and evidence-shape standard only; no semantic-completeness, runtime, provider, public, or production claim |

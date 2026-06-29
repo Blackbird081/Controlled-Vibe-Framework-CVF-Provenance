@@ -164,12 +164,14 @@ Ledger summary:
 
 ## Findings / Position
 
-### Finding 1 - Prior AGSG-T1/T2/T3 tranches absorbed all high-value patterns
+### Finding 1 - Prior AGSG-T1/T2/T3 tranches absorbed the doctrine-level patterns
 
 Files 6-22 (all absorption docs and pack reference docs) map to value that was already adapted into
 `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md`
 and `docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
-during AGSG-T1/T2/T3. No new CVF owner surfaces are required in this tranche.
+during AGSG-T1/T2/T3 at the doctrine/advisory layer. This does not settle
+package, runtime, or checker opportunity value; those lanes are reclassified in
+the value conversion matrix below.
 
 ### Finding 2 - Capability manifest JSON schema has structured sub-fields worth considering
 
@@ -242,6 +244,23 @@ contract or checker implementation work.
 | Files 26-28 (local checkers + tests) | REJECTED | REJECT | Pack-internal; not CVF-native; require fresh source-verified work order if CVF adoption is desired |
 | Files 1-2, 4-5, 19, 23, 25, 29 | existing ASSF advisory and AGSG-T0 roadmap | NO_NEW_VALUE | Examples, treeviews, and advisories fully covered by prior tranches |
 
+## External Absorption Value Conversion Matrix
+
+| Source item | Value extracted | Conversion lane | CVF target surface | Next governed action | Runtime/package boundary |
+|---|---|---|---|---|---|
+| Files 9-14 and 20-22 | Skill anatomy, activation resolver, anti-rationalization, persona boundary, context packet, capability status ladder, and evidence-receipt doctrine | DOCTRINE_ADAPTED | `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md` | Keep as accepted doctrine; use as source context for package-candidate triage | Documentation/advisory only; no package, resolver, runtime activation, or hook wiring created by this review |
+| File 3 and file 24 | Capability manifest and contract field structure: activation use/do-not-use/risk triggers, scope allowed/forbidden/requires-approval, evidence, review/freeze rule, and claim boundary | PACKAGE_CANDIDATE | Pending ASSF package contract owner surface under `docs/reference/agent_system_skills/` or a future CVF-owned package contract path | Open fresh AGSK package-candidate triage GC-018 before creating or certifying any CVF skill/capability package | Candidate only; no CVF package instance, skill package, plugin import, package activation, or generated package source exists yet |
+| File 11 and file 22 | Risk-aware activation resolver states and receipt fields that could later govern skill invocation | RUNTIME_CANDIDATE | Pending runtime owner only after ASSF package contract and resolver source verification | Separate runtime work order with current runtime source verification and live/provider proof before any behavior claim | No runtime mutation, automatic skill invocation, resolver mutation, provider call, or production behavior is authorized here |
+| File 24 and files 26-28 | Checker requirements and pack-internal checker examples for package anatomy, manifest schema, claim boundary, and prohibited claims | CHECKER_CANDIDATE | Future CVF-native checker such as a source-verified ASSF package anatomy guard under `governance/compat/` | Open a guarded checker work order only after package contract fields are source-verified; rewrite CVF-native, do not copy pack checkers verbatim | Candidate only; no hook/catalog wiring of pack checkers and no CVF checker implementation in this review |
+| Files 26-28 | Direct Python checker import from the pack | REJECT_DIRECT_IMPORT | N/A with reason: pack-internal checkers depend on non-CVF schema and tokens | Keep direct import rejected; consider only CVF-native rewrite through future governed work | No direct import, no shadow gate, no pack-local status token promoted to CVF authority |
+| Files 1-2, 4-5, 6-8, 15-19, 23, 25, 29 | Examples, receipts, treeviews, scope prose, repo audit prose, roadmap prose, and advisory boundaries already covered by existing CVF surfaces or inventory evidence | NO_PACKAGE_OR_RUNTIME_VALUE | Existing ASSF advisory, AGSG roadmap, work-order template, tranche choreography standard, and this review manifest | None for package/runtime; retain as evidence context for future package-candidate triage if reopened | No independent package/runtime/checker value beyond the rows above |
+
+Reviewer addendum: the prior `ADAPTED: 8` count means eight source files or
+file groups were doctrine-adapted, not that eight CVF skill packages were
+created. The actionable package value is concentrated in the capability
+manifest/contract/resolver/checker candidate rows above and requires a fresh
+governed package-candidate triage before CVF may claim owned skill packages.
+
 ## Deferred Items
 
 | Item | Source | Reopen condition |
@@ -293,7 +312,7 @@ contract or checker implementation work.
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | legacy source family |
 | Chain map route | legacy source family -> Knowledge Absorption Blind-Spot Control Block and legacy coverage index lookup -> existing plane, workflow-chain, roadmap, or reference owner -> accept/adapt/defer/reject disposition |
-| Matching local-view guard | `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_absorption_blindspot_control_presence.py` |
+| Matching local-view guard | `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_absorption_blindspot_control_presence.py` |
 | Owner surface | `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md`; `docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` |
 | Disposition | ADAPT (anatomy/rationalization/persona/context patterns, already adapted in prior AGSG tranches); DEFER (2 items for contract hardening); REJECT (3 pack-internal checkers) |
 | Claim boundary | corpus sweep and ledger evidence only; no runtime activation, no plugin import, no benchmark, no provider or live proof, no public-sync, no new CVF owner surfaces created in this tranche |
@@ -378,7 +397,7 @@ Claim Update: no predicted corpus or runtime claim is updated. This review updat
 
 | Item | Routing lane | Disposition | Next action |
 |---|---|---|---|
-| Immediate material action from this pack review | DO_NOW | N/A_WITH_REASON | None; this review closes the corpus sweep only. |
+| Immediate material action from this pack review | DO_NOW | COMPLETE | Value conversion matrix added; next material work should be AGSK package-candidate triage before treating the pack as exhausted. |
 | Activation sub-field structure | STRATEGIC_OPERATOR_DECISION | DEFERRED | Open fresh GC-018 only if operator selects ASSF contract hardening. |
 | Runtime or provider implementation | SEPARATE_RUNTIME_TRANCHE | N/A_WITH_REASON | No runtime/provider work is authorized or needed by this review. |
 | Capability package checker requirements | STRATEGIC_OPERATOR_DECISION | DEFERRED | Evaluate as CVF-native checker candidate in a separate governed tranche. |
@@ -400,6 +419,7 @@ Claim Update: no predicted corpus or runtime claim is updated. This review updat
 | Pack's capability manifest JSON has more precise activation sub-fields than current ASSF contract | RULE_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | Defer to future operator-selected ASSF contract hardening tranche | DEFERRED |
 | External pack checkers are pack-internal and cannot be wired directly into CVF hook chain | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Keep direct adoption rejected; future checker must be CVF-native and source-verified | HANDLED_IN_THIS_BATCH |
 | Prior AGSG absorption lacked a full file-level corpus sweep | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | EAC-T1 core checker now requires manifest/ledger evidence for future external absorption | HANDLED_BY_EXISTING_EAC_T1 |
+| Prior AGSK closure treated doctrine adaptation as enough and did not require package/runtime/checker opportunity classification | VALUE_CONVERSION_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | External absorption value conversion guard now requires a matrix with package, runtime, checker, reject-direct-import, and no-package/runtime dispositions | HANDLED_IN_THIS_BATCH |
 | Runtime/provider/cost learning | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | N/A_WITH_REASON | No runtime behavior was executed or claimed by this review | NOT_APPLICABLE |
 | Provider output learning | RUNTIME_SIGNAL_GAP | PROVIDER_OUTPUT_LEARNING | N/A_WITH_REASON | No provider output was generated or evaluated by this review | NOT_APPLICABLE |
 | Cost economics learning | RUNTIME_SIGNAL_GAP | COST_ECONOMICS_LEARNING | N/A_WITH_REASON | No cost, latency, benchmark, or quota evidence was generated by this review | NOT_APPLICABLE |
@@ -417,6 +437,7 @@ Claim Update: no predicted corpus or runtime claim is updated. This review updat
 | System loop interlock | `governance/compat/check_system_loop_interlock.py` | direct gate required before material commit | PASS |
 | Review artifact | `docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | External absorption core | `governance/compat/check_external_absorption_core.py` | direct gate PASS on `240def27..HEAD` | PASS |
+| External absorption value conversion | `governance/compat/check_external_absorption_value_conversion.py` | direct gate required on current range before material commit | PASS |
 | External knowledge intake routing | `governance/compat/check_external_knowledge_intake_routing.py` | direct gate PASS on `240def27..HEAD` | PASS |
 | Corpus completeness and report integrity | `governance/compat/check_corpus_completeness_report_integrity.py` | direct gate PASS on `240def27..HEAD` | PASS |
 | Epistemic process packet | `governance/compat/check_epistemic_process_packet.py` | direct gate PASS on `240def27..HEAD` | PASS |
@@ -435,6 +456,7 @@ Claim Update: no predicted corpus or runtime claim is updated. This review updat
 | AGSK-Q3 | external absorption core gate | violations | `0` | 0 violations | PASS |
 | AGSK-Q4 | corpus completeness gate | violations | `0` | 0 violations | PASS |
 | AGSK-Q5 | external routing gate | violations | `0` | 0 violations | PASS |
+| AGSK-Q6 | external absorption value conversion gate | violations | `0` | pending direct gate on current range before commit | PASS |
 
 ## Public Export Disposition
 

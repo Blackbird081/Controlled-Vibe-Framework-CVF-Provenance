@@ -64,6 +64,7 @@ Pre-push catalog marker coverage:
 - governance/compat/check_erh_public_surface_drift_workflow.py
 - governance/compat/check_execute_route_step_sequence.py
 - governance/compat/check_external_absorption_core.py
+- governance/compat/check_external_absorption_value_conversion.py
 - governance/compat/check_external_agent_absorption_table.py
 - governance/compat/check_external_knowledge_intake_routing.py
 - governance/compat/check_finding_to_governance_learning.py
