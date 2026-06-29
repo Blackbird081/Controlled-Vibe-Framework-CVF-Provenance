@@ -807,3 +807,18 @@ This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 the session-sync commit. It does not authorize runtime activation, package
 activation, resolver mutation, CLI/MCP adapter, hook execution, provider/live
 proof, public-sync export, direct import, or production-readiness.
+
+## GC-020 Marker - AGSK-R3 Package Roots Material Closure
+
+Material commit `4003289a` closed AGSK-R3 by adding 24 ASSF package roots,
+promoting the same 24 registry entries to `PROPOSED`, regenerating the ASSF
+skill index, and recording the worker-return evidence.
+
+Full material SHA:
+`4003289a13233bd977de2a7b93a9856f324a28c2`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`4003289a`. It does not authorize `APPROVED` or `ACTIVE` lifecycle state,
+UAT/certification, runtime package body loading, resolver mutation, CLI/MCP
+adapter behavior, provider/live proof, public-sync export, direct import, or
+production-readiness.
