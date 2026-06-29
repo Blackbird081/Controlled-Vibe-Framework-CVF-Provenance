@@ -1,0 +1,17 @@
+{
+  "skillId": "cvf-engineering-code-simplification",
+  "upstreamSlug": "code-simplification",
+  "upstreamRepository": "https://github.com/addyosmani/agent-skills.git",
+  "upstreamCommit": "aba7c4e9695c363e65cb59effe926c7f1d1abe3d",
+  "sourceArtifacts": [
+    ".private_reference/source_mirrors/addyosmani__agent-skills/skills/code-simplification/SKILL.md",
+    "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+    "docs/baselines/CVF_GC018_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_2026-06-29.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_FOR_WORKER_2026-06-29.md"
+  ],
+  "originLane": "AGSK-R3",
+  "cvfAdaptationBoundary": "CVF-owned adaptation of upstream code simplification skill; five simplification principles and behavior-preservation invariant extracted as advisory metadata; no autonomous refactoring execution, automated file edits, or commit authority authorized",
+  "lifecycleState": "PROPOSED",
+  "workerReturnArtifact": "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+  "claimBoundary": "source evidence for CVF-adapted package-root proposal only; not activation evidence; no runtime, CLI/MCP, provider/live, public-sync, or production claim"
+}
