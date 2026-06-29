@@ -59,6 +59,7 @@
       ],
       "riskCeiling": "R0",
       "riskProfile": "R0",
+      "riskTriggers": [],
       "roles": [
         "dispatcher",
         "reviewer"
@@ -142,6 +143,7 @@
       "reviewArtifacts": [],
       "riskCeiling": "R0",
       "riskProfile": "R0",
+      "riskTriggers": [],
       "roles": [
         "worker"
       ],

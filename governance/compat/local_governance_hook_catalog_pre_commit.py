@@ -188,6 +188,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_assf_certified_metadata_admission.py"],
         ),
         (
+            "ASSF package candidate anatomy",
+            ["python", "governance/compat/check_assf_package_candidate_anatomy.py", "--enforce"],
+        ),
+        (
             "ASSF external-agent metadata readout",
             ["python", "governance/compat/check_assf_external_agent_metadata_readout.py", "--enforce"],
         ),

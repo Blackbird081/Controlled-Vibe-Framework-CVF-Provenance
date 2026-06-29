@@ -293,6 +293,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             ("python", "governance/compat/check_assf_certified_metadata_admission.py"),
         ),
         GateCommand(
+            "ASSF package candidate anatomy",
+            ("python", "governance/compat/check_assf_package_candidate_anatomy.py", "--enforce"),
+        ),
+        GateCommand(
             "ASSF external-agent metadata readout",
             ("python", "governance/compat/check_assf_external_agent_metadata_readout.py", "--enforce"),
         ),

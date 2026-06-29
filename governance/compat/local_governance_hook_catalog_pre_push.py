@@ -145,6 +145,10 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_assf_certified_metadata_admission.py"],
         ),
         (
+            "ASSF package candidate anatomy",
+            ["python", "governance/compat/check_assf_package_candidate_anatomy.py", "--enforce"],
+        ),
+        (
             "system loop interlock",
             ["python", "governance/compat/check_system_loop_interlock.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
