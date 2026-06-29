@@ -909,3 +909,23 @@ or live proof, public-sync export, plugin import, slash command import,
 persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
 benchmark, security certification, production-readiness, or automatic skill
 invocation.
+
+## GC-020 Marker - AGSK Package-Candidate Triage Roadmap
+
+Material commit `d8b14a2e` added
+`docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md`.
+The roadmap corrected the package-candidate next move after EAVC-T1 and bound
+AGSK-T4 before any AGSK-T5 package instance creation.
+
+Current mode:
+`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+
+Next allowed move: author and dispatch the AGSK-T4 ASSF `riskTriggers`
+contract-field work order, then run AGSK-T5 only after T4 closes.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `d8b14a2e`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
