@@ -170,6 +170,26 @@ security certification, production-readiness, or automatic skill invocation.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | V26 moved to archive as governed handoff rotation; active pointer moves to V27 |
 
+## GC-020 Marker - AGSK-T5 Dispatch Session Sync Commit
+
+Session-sync commit `a327dc70` updated active session continuity after AGSK-T5
+dispatch material commit `1cc52d7a`. It rotated V26 into
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`, opened compact
+active handoff V27, updated `AGENTS.md`, regenerated active session state and
+bootstrap read model, and pointed the front door to AGSK-T5 worker execution.
+
+Current mode remains:
+`agsk_t5_work_order_dispatched_pending_worker_execution`
+
+Next allowed move remains: execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+session-sync commit `a327dc70`. It does not authorize package root creation,
+`SKILL.md`, resolver mutation, checker implementation, runtime behavior,
+provider/live proof, public-sync export, package activation, lifecycle
+promotion, production-readiness, or automatic skill invocation.
+
 ## Claim Boundary
 
 This handoff is a compact continuity surface. It does not authorize runtime
