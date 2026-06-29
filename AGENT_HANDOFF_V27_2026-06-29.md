@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-R2 source-mirror-backed agent-skills full package backfill; parked checkpoint=source mirror discipline closed at material commit `27c692e0`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the source-mirror-backed full-value absorption rule; parked checkpoint=AGSK-R2 closed at material commit `50689173`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,12 +19,12 @@ Startup acknowledged: current mode=`source_mirror_discipline_closed_pending_agsk
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
-| Latest material closeout | `27c692e0` external source mirror discipline |
+| Latest material closeout | `50689173` AGSK-R2 agent-skills source mirror backfill |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
+`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
 
 ## Purpose
 
@@ -59,6 +59,15 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `50689173` closed AGSK-R2 agent-skills source mirror backfill.
+It converted all 24 upstream `addyosmani/agent-skills` `skills/*/SKILL.md`
+packages into CVF ASSF metadata-only `CANDIDATE` registry entries, regenerated
+the ASSF generated skill index, added the source mirror migration checker, and
+wired that checker into reviewer-fast, pre-commit, and autorun catalogs. The
+closure remains metadata-only and does not authorize package activation,
+runtime execution, CLI/MCP adapter behavior, provider/live proof, public-sync,
+hook import, command import, or production-readiness.
 
 Material commit `27c692e0` closed external source mirror discipline. It added
 the `.private_reference/source_mirrors/` control plane, pinned
@@ -174,12 +183,10 @@ production-readiness claim was created.
 
 ## Next Allowed Move
 
-Execute AGSK-R2 source-mirror-backed agent-skills full package backfill using
-`.private_reference/source_mirrors/addyosmani__agent-skills/` as upstream
-source authority and the old
-`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/`
-as secondary comparison material. Source mirror discipline closed at material
-commit `27c692e0`. LHW24 remains the latest closed numbered LHW wave.
+Operator selects the next external repo/folder absorption target under the
+source-mirror-backed, full-value absorption rule. AGSK-R2 closed at material
+commit `50689173`; source mirror discipline closed at material commit
+`27c692e0`. LHW24 remains the latest closed numbered LHW wave.
 
 No runtime activation, package activation, resolver mutation, CLI/MCP adapter,
 hook execution, provider/live proof, public-sync, direct import, or
@@ -651,6 +658,80 @@ package root creation, `SKILL.md`, resolver mutation, checker implementation,
 MCP adapter, watcher, daemon, SQLite index, provider/live proof, public-sync
 export, benchmark, CI mutation, automatic freeze authority, package activation,
 lifecycle promotion, or production-readiness.
+
+## Core Guard Self-Protection Authorization - AGSK-R2 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-R2 material commit `50689173`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording with the
+reviewer-accepted AGSK-R2 closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `50689173` unless the reviewer reopens AGSK-R2.
+
+## GC-020 Marker - AGSK-R2 Agent Skills Source Mirror Backfill Material Closure
+
+Material commit `50689173` closed AGSK-R2 by converting 24 upstream
+`addyosmani/agent-skills` packages into ASSF metadata-only `CANDIDATE` entries,
+regenerating the ASSF generated index, adding source mirror migration guard
+discipline, and recording
+`docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md`.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for AGSK-R2
+material commit `50689173`. It does not authorize package activation, runtime
+execution, resolver mutation, CLI/MCP adapter, hook execution, provider/live
+proof, public-sync export, direct upstream command import, direct persona
+import, or production-readiness.
+
+## Agent Operation Trace Block - AGSK-R2 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-R2 closure session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after AGSK-R2 material commit `50689173` |
+| Before status evidence | material commit `50689173` closed AGSK-R2 agent-skills source mirror backfill |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/resolver activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-r2-closure-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - AGSK-R2 Closure Session Sync Commit
+
+Session-sync commit pending updates active session continuity after AGSK-R2
+material commit `50689173`.
+
+At session-sync authoring time, mode is:
+`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
+
+At session-sync authoring time, next allowed move is: operator selects the next
+external repo/folder absorption target under the source-mirror-backed
+full-value absorption rule.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the session-sync commit. It does not authorize package activation, runtime
+execution, resolver mutation, CLI/MCP adapter, hook execution, provider/live
+proof, public-sync export, direct import, or production-readiness.
 
 ## Claim Boundary
 

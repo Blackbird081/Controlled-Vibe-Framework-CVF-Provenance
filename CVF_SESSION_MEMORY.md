@@ -31,15 +31,15 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-R2 source-mirror-backed agent-skills full package backfill; parked checkpoint=source mirror discipline closed at material commit `27c692e0`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target under the source-mirror-backed full-value absorption rule; parked checkpoint=AGSK-R2 closed at material commit `50689173`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
+Current mode marker: `agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
 
-Current mode: `source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
+Current mode: `agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
 
-`source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
+`agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
 
 Previous mode:
 
@@ -129,17 +129,16 @@ Previous mode:
 | AGSK-T4 riskTriggers contract patch | `2a84036a` | CLOSED_PASS_BOUNDED; AGSK-T5 package-candidate registry instance is next |
 | AGSK-T5 first external-absorption package candidate dispatch | `1cc52d7a` | DISPATCH_READY; worker must not commit; candidate metadata only |
 | AGSK-T5 first external-absorption package candidate | `a00f7cf5` | CLOSED_PASS_BOUNDED; first AGSK-derived ASSF registry candidate added |
+| AGSK-R2 agent-skills source mirror backfill | `50689173` | CLOSED_PASS_BOUNDED; 24 upstream `addyosmani/agent-skills` packages converted to ASSF metadata-only CANDIDATE entries; source mirror migration guard wired |
 
 ## Next Allowed Move
 
-Mode: `source_mirror_discipline_closed_pending_agsk_r2_agent_skills_rescan`
+Mode: `agsk_r2_agent_skills_source_mirror_backfill_closed_pending_next_external_absorption_target`
 
-Next allowed move: execute AGSK-R2 source-mirror-backed agent-skills full package
-backfill using `.private_reference/source_mirrors/addyosmani__agent-skills/` as
-upstream source authority and the old
-`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack/`
-as secondary comparison material. Source mirror discipline closed at material
-commit `27c692e0`.
+Next allowed move: operator selects the next external repo/folder absorption
+target under the source-mirror-backed, full-value absorption rule. AGSK-R2
+agent-skills source-mirror backfill closed at material commit `50689173`;
+source mirror discipline closed at material commit `27c692e0`.
 LHW24 remains the latest closed numbered LHW wave.
 
 No runtime activation, package activation, resolver mutation, CLI/MCP adapter,
