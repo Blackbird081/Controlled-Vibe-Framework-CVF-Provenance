@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=resume full reabsorption of `.private_reference/legacy/CVF 28.06/` with the External Absorption Core manifest/ledger standard and checker; parked checkpoint=EAC-T1 external absorption core guard closed at material commit `80a87e45`; AGSG-BSH-T1 blind-spot presence checker closed at material commit `328de12b`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=process the next retained external source folder under `.private_reference/legacy/CVF 28.06/` with the External Absorption Core manifest/ledger standard and checker, suggested next target `.private_reference/legacy/CVF 28.06/CodeGraph`; parked checkpoint=AGSK absorption pack reabsorption review closed at material commit `4d08aa64`; EAC-T1 external absorption core guard closed at material commit `80a87e45`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`eac_t1_external_absorption_core_guard_closed
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `80a87e45` EAC-T1 external absorption core guard |
+| Latest material closeout | `4d08aa64` AGSK absorption pack reabsorption review |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
+`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
 
 ## Purpose
 
@@ -790,3 +790,52 @@ or live proof, public-sync export, Agent Skills plugin import, slash command
 import, persona orchestration, package activation, resolver mutation, CLI/MCP
 adapter, benchmark, security certification, production-readiness, or automatic
 skill invocation.
+
+## Core Guard Self-Protection Authorization - AGSK Reabsorption Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK absorption pack reabsorption review material commit `4d08aa64` so the
+front door, generated state sources, generated aggregate, bootstrap read model,
+and active handoff point to the next CVF 28.06 folder under the EAC core.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskAbsorptionPackReabsorptionClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction that Codex reviews Claude's
+WORKER_MUST_NOT_COMMIT deliverable and that CVF processes the retained
+external repos/folders one by one.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSK material commit `4d08aa64`, EAC-T1
+material commit `80a87e45`, or AGSG-BSH-T1 material commit `328de12b`.
+
+## GC-020 Marker - AGSK Absorption Pack Reabsorption Review
+
+Material commit `4d08aa64` closed
+`docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md`.
+The review processed the 29-file
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`
+under the EAC core, with 8 adapted, 16 no-new-value, 2 deferred, 3 rejected,
+and 0 blocked-unreadable items.
+
+Current mode:
+`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
+
+Next allowed move: process the next retained external source folder under
+`.private_reference/legacy/CVF 28.06/` with EAC core; suggested next target is
+`.private_reference/legacy/CVF 28.06/CodeGraph` unless the operator selects a
+different folder.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `4d08aa64`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.

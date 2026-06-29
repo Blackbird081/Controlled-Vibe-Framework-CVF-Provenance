@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=resume full reabsorption of `.private_reference/legacy/CVF 28.06/` with the External Absorption Core manifest/ledger standard and checker; parked checkpoint=EAC-T1 external absorption core guard closed at material commit `80a87e45`; AGSG-BSH-T1 blind-spot presence checker closed at material commit `328de12b`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=process the next retained external source folder under `.private_reference/legacy/CVF 28.06/` with the External Absorption Core manifest/ledger standard and checker, suggested next target `.private_reference/legacy/CVF 28.06/CodeGraph`; parked checkpoint=AGSK absorption pack reabsorption review closed at material commit `4d08aa64`; EAC-T1 external absorption core guard closed at material commit `80a87e45`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current Mode
 
-Current mode marker: `eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
+Current mode marker: `agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
 
-Current mode: `eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
+Current mode: `agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
 
-`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
+`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
 
 Previous mode:
 
-`agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`
+`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
 
 ## Latest Closed Work
 
@@ -114,12 +114,13 @@ Previous mode:
 | AGSG-BSH-T1 blind-spot presence checker | `328de12b` | CLOSED_PASS_BOUNDED; ADIF-0014 machine-checked |
 | ADIF-0015 declared-route-vs-execution-behavior record | `a8f45aa7` | ACTIVE_ADIF_RECORD |
 | EAC-T1 external absorption core guard | `80a87e45` | CLOSED_PASS_BOUNDED; external repo/folder absorption now requires machine-checked manifest/ledger core |
+| AGSK absorption pack reabsorption review | `4d08aa64` | CLOSED_PASS_BOUNDED; 29-file pack sweep under EAC core |
 
 ## Next Allowed Move
 
-Mode: `eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
+Mode: `agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
 
-Next allowed move: resume full reabsorption of the 2026-06-28 retained external source folders under `.private_reference/legacy/CVF 28.06/` using `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` and `governance/compat/check_external_absorption_core.py`. If no other operator target is selected, start with `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack` and produce a manifest, processing ledger, owner-surface map, unresolved-items list, `Corpus Completeness And Report Integrity` block, and `External Knowledge Intake Routing` block before any completion claim. EAC-T1 is `CLOSED_PASS_BOUNDED` at material commit `80a87e45`; AGSG-BSH-T1 remains closed at material commit `328de12b`; LHW24 remains the latest closed numbered LHW wave. No runtime skill activation, plugin import, slash-command import, persona orchestration, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, or automatic safe skill invocation claim is authorized now.
+Next allowed move: process the next retained external source folder under `.private_reference/legacy/CVF 28.06/` using `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` and `governance/compat/check_external_absorption_core.py`; suggested next target is `.private_reference/legacy/CVF 28.06/CodeGraph` unless the operator selects a different folder. Required outputs remain manifest, processing ledger, owner-surface map, unresolved/deferred/rejected/blocked list, `Corpus Completeness And Report Integrity` block, `External Knowledge Intake Routing` block, `Rescan Intelligence Hardening` block for intake/reassessment, and bounded claim boundary. AGSK reabsorption is `CLOSED_PASS_BOUNDED` at material commit `4d08aa64`; EAC-T1 remains closed at `80a87e45`; LHW24 remains the latest closed numbered LHW wave. No runtime skill activation, plugin import, slash-command import, persona orchestration, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, or automatic safe skill invocation claim is authorized now.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
