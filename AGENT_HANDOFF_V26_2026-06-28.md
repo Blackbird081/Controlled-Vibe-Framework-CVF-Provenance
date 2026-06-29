@@ -1061,6 +1061,29 @@ persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
 benchmark, security certification, production-readiness, or automatic skill
 invocation.
 
+## GC-020 Marker - Reviewer Pre-Work Rule Hardening
+
+Material commit `3425ba7d` added durable pre-work guidance for future agents:
+
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+- `docs/reference/guard_orientation/README.md`
+- `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+The update records that optional completion reviews should not be created when
+worker-return evidence is sufficient, and that commit-shape planning should
+use commit steward before staging, stashing, or probing commits.
+
+Current mode remains:
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+
+Next allowed move remains: author and dispatch AGSK-T5 first
+package-candidate registry instance. This marker does not authorize runtime
+behavior, provider/live proof, public-sync export, plugin import, slash command
+import, persona orchestration, package activation, resolver mutation, CLI/MCP
+adapter, benchmark, security certification, production-readiness, or automatic
+skill invocation.
+
 ## Agent Operation Trace Block - AGSK-T4 Closure Session Sync
 
 | Field | Evidence |
