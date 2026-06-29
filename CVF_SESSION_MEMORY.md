@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-T7 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`; parked checkpoint=AGSK second-pass blind-spot audit found under-converted package-candidate inventory; AGSK-T7 dispatch material commit `9ee75a5e`; AGSK-T5 closed at material commit `a00f7cf5`; AGSK-T6 checker/runtime lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator/reviewer selects the next external repo/folder absorption target or opens a fresh source-verified AGSK-T6 checker value probe; parked checkpoint=AGSK second-pass package-candidate inventory converted at material commit `aa4d932a`; AGSK-T6 checker/runtime lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
+Current mode marker: `agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
 
-Current mode: `agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
+Current mode: `agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
 
-`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
+`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
 
 Previous mode:
 
-`everos_absorption_lane_closed_pending_next_external_absorption_target`
+`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| AGSK-T7 package-candidate expansion work order dispatch | `9ee75a5e` | DISPATCH_READY; worker must not commit; create metadata-only CANDIDATE registry entries from source-backed AGSK capability concepts and regenerate generated skill index |
+| AGSK-T7 package-candidate expansion | `aa4d932a` | CLOSED_PASS_BOUNDED; six metadata-only ASSF `CANDIDATE` registry entries added from source-backed AGSK capability concepts and generated skill index regenerated |
 | EverOS memory-foundation absorption lane closeout | `37771016` | CLOSED_PASS_BOUNDED; T3 plan `ed10ced8`, T4 checker `cac4947e`, T5 decision `CLOSE_EVEROS_ABSORPTION_LANE_NO_NEXT_TRANCHE`; 20 focused memory-access claim tests pass |
 | CGE-R1 CodeGraph full reabsorption closeout | `2f106dea` | CLOSED_PASS_BOUNDED; 89 files dispositioned; 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE, 0 unresolved; GC-051 registry coverage added |
 | CGE-R1 CodeGraph full reabsorption work order dispatch | `0041218b` | DISPATCH_READY; worker must not commit; full manifest/ledger/EAC/EAVC owner-surface conversion required |
@@ -129,22 +129,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
+Mode: `agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
 
-Next allowed move: execute AGSK-T7 as `WORKER_MUST_NOT_COMMIT` using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`.
-The worker must create metadata-only `CANDIDATE` ASSF registry entries for
-source-backed AGSK capability concepts, regenerate
-`docs/reference/agent_system_skills/generated/skill-index.json` through the
-existing generator, create
-`docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md`,
-and return without committing. AGSK-T7 dispatch material commit is `9ee75a5e`.
+Next allowed move: operator/reviewer selects either the next external
+repo/folder absorption target under the full-value absorption rule, or opens a
+fresh source-verified AGSK-T6 checker value probe now that multiple ASSF
+`CANDIDATE` fixtures exist. AGSK-T7 closed at material commit `aa4d932a`.
 LHW24 remains the latest closed numbered LHW wave.
 
 No package root, `SKILL.md`, checker implementation, resolver mutation, runtime
-activation, provider/live proof, public-sync, session-sync, package activation,
-lifecycle promotion, external CLI/MCP adapter, direct pack checker import, or
-production-readiness claim is authorized.
+activation, provider/live proof, public-sync, package activation, lifecycle
+promotion, external CLI/MCP adapter, direct pack checker import, or
+production-readiness claim is authorized without a fresh governed work order.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
@@ -161,9 +157,10 @@ AGSG-T1 through T3 closed the Agent Skills Governance absorption roadmap, and
 EAVC-T1 now requires every external absorption to classify doctrine,
 package, runtime, checker, reject-direct-import, and no-package/runtime value.
 EverOS memory-foundation absorption is closed through T5 with no immediate next
-EverOS tranche. The next governed move is AGSK-T7 package-candidate expansion,
-because the AGSK second pass found package-candidate inventory value that should
-be converted before moving to a different external repo. The exact markers
+EverOS tranche. AGSK-T7 converted the second-pass package-candidate inventory at
+material commit `aa4d932a`; the next governed move is operator/reviewer
+selection of the next external repo/folder absorption target or a fresh
+source-verified AGSK-T6 checker value probe. The exact markers
 `broad external knowledge absorption` and `blocked work classes` remain active
 for compatibility gates. Current blocked work classes include
 runtime/provider/live expansion, public-sync content mutation,

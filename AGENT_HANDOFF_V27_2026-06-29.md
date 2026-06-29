@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-T7 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`; parked checkpoint=AGSK second-pass blind-spot audit found under-converted package-candidate inventory; AGSK-T7 dispatch material commit `9ee75a5e`; AGSK-T5 closed at `a00f7cf5`; AGSK-T6 checker/runtime lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator/reviewer selects the next external repo/folder absorption target or opens a fresh source-verified AGSK-T6 checker value probe; parked checkpoint=AGSK second-pass package-candidate inventory converted at material commit `aa4d932a`; AGSK-T6 checker/runtime lanes remain value-parked behind fresh governed authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,19 +19,19 @@ Startup acknowledged: current mode=`agsk_t7_package_candidate_expansion_work_ord
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `9ee75a5e` AGSK-T7 package-candidate expansion work order |
-| Latest material closeout | `37771016` EverOS memory-foundation absorption lane closeout |
+| Latest material closeout | `aa4d932a` AGSK-T7 package-candidate expansion |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
+`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
 
 ## Purpose
 
 Keep the active handoff compact after V26 reached the governed file-size guard
 near-threshold. V26 is archived as historical continuity; V27 is the sole root
 active handoff and now points to the AGSK-T7 package-candidate expansion
-worker-execution boundary.
+closeout boundary.
 
 ## Scope / Target / Owner Boundary
 
@@ -39,9 +39,9 @@ Target: maintain compact active handoff V27, update active startup pointers,
 and preserve the CGE-R1 closure boundary.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
-does not authorize AGSK-T7 execution, package activation, runtime/provider/live
-work, public-sync mutation, checker implementation, resolver mutation, or
-generated aggregate mutation beyond active-session sync.
+does not authorize package activation, runtime/provider/live work, public-sync
+mutation, checker implementation, resolver mutation, or generated aggregate
+mutation beyond active-session sync.
 
 ## Active Boundary
 
@@ -137,20 +137,16 @@ field only as candidate metadata.
 
 ## Next Allowed Move
 
-Execute AGSK-T7 as `WORKER_MUST_NOT_COMMIT` using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`.
-The worker must create metadata-only `CANDIDATE` ASSF registry entries for
-source-backed AGSK capability concepts, regenerate
-`docs/reference/agent_system_skills/generated/skill-index.json` through the
-existing generator, create
-`docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md`,
-and return without committing. LHW24 remains the latest closed numbered LHW
-wave.
+Operator/reviewer selects either the next external repo/folder absorption
+target under the full-value absorption rule, or opens a fresh source-verified
+AGSK-T6 checker value probe now that multiple ASSF `CANDIDATE` fixtures exist.
+AGSK-T7 closed at material commit `aa4d932a`. LHW24 remains the latest closed
+numbered LHW wave.
 
 No package root, `SKILL.md`, checker implementation, resolver mutation, runtime
 activation, provider/live proof, public-sync, session-sync, package activation,
 lifecycle promotion, external CLI/MCP adapter, direct pack checker import, or
-production-readiness claim is authorized.
+production-readiness claim is authorized without a fresh governed work order.
 
 ## Parked Checkpoint
 
@@ -161,6 +157,11 @@ documentation-only `riskTriggers` field to
 AGSK-T5 material commit `a00f7cf5` closed the first metadata-only package
 candidate. AGSK-T6 checker work remains value-parked because T5 did not expose a
 concrete repeated defect or high-risk gap.
+
+AGSK-T7 material commit `aa4d932a` closed bounded package-candidate expansion by
+adding six metadata-only ASSF `CANDIDATE` registry entries and regenerating the
+generated skill index. AGSK-T6 checker/runtime lanes remain parked unless opened
+by fresh source-verified authorization.
 
 Runtime-provider-live lanes, package activation, adapter implementation,
 public-sync expansion, CodeGraph runtime/MCP/watcher/daemon, Agent Skills
@@ -383,15 +384,69 @@ invocation.
 
 ## GC-020 Marker - AGSK-T7 Dispatch Session Sync Commit
 
-Session-sync commit pending updates active session continuity after AGSK-T7
+Session-sync commit `7e063a7e` updated active session continuity after AGSK-T7
 dispatch material commit `9ee75a5e`.
 
-At session-sync authoring time, mode is:
+At dispatch sync time, mode was:
 `agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution`
 
-At session-sync authoring time, next allowed move is: execute AGSK-T7 as
+At dispatch sync time, next allowed move was: execute AGSK-T7 as
 `WORKER_MUST_NOT_COMMIT` using
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+session-sync commit `7e063a7e`. It does not authorize package root creation,
+`SKILL.md`, checker implementation, resolver mutation, runtime activation,
+provider/live proof, public-sync export, package activation, lifecycle
+promotion, production-readiness, or automatic skill invocation.
+
+## GC-020 Marker - AGSK-T7 Package Candidate Expansion Material Closure
+
+Material commit `aa4d932a` closed AGSK-T7 by adding six metadata-only ASSF
+`CANDIDATE` registry entries, regenerating
+`docs/reference/agent_system_skills/generated/skill-index.json`, and adding
+`docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md`.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for AGSK-T7 material
+commit `aa4d932a`. It does not authorize package root creation, `SKILL.md`,
+checker implementation, resolver mutation, runtime activation, provider/live
+proof, public-sync export, direct pack checker import, package activation,
+lifecycle promotion, production-readiness, or automatic skill invocation.
+
+## Agent Operation Trace Block - AGSK-T7 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T7 closure session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active handoff only |
+| Allowed scope source | GC-020 after AGSK-T7 material commit `aa4d932a` |
+| Before status evidence | material commit `aa4d932a` closed AGSK-T7 package-candidate expansion |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no package/runtime/checker activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-t7-closure-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT7PackageCandidateExpansionClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V27_2026-06-29.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT7PackageCandidateExpansionClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - AGSK-T7 Closure Session Sync Commit
+
+Session-sync commit pending updates active session continuity after AGSK-T7
+material commit `aa4d932a`.
+
+At session-sync authoring time, mode is:
+`agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe`
+
+At session-sync authoring time, next allowed move is: operator/reviewer selects
+the next external repo/folder absorption target or opens a fresh
+source-verified AGSK-T6 checker value probe.
 
 This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
 the session-sync commit. It does not authorize package root creation,

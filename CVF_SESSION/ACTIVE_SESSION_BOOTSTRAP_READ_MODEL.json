@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "agsk_t7_package_candidate_expansion_work_order_dispatched_pending_worker_execution",
+  "currentMode": "agsk_t7_package_candidate_expansion_closed_pending_next_external_absorption_or_agsk_t6_value_probe",
   "activeHandoff": "AGENT_HANDOFF_V27_2026-06-29.md",
-  "nextAllowedMove": "AGSK-T7 package-candidate expansion work order is dispatched at material commit 9ee75a5e. LHW24 remains the latest closed numbered LHW wave. Next allowed move: execute AGSK-T7 as WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md. Worker must create metadata-only CANDIDATE ASSF registry entries for source-backed AGSK capability concepts, regenerate docs/reference/agent_system_skills/generated/skill-index.json through the existing generator, create the worker return docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md, and return without committing. No package root, SKILL.md, checker implementation, resolver mutation, runtime activation, provider/live proof, public-sync, session-sync, package activation, lifecycle promotion, external CLI/MCP adapter, direct pack checker import, or production-readiness claim is authorized.",
+  "nextAllowedMove": "AGSK-T7 package-candidate expansion is closed at material commit aa4d932a. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator/reviewer selects either the next external repo/folder absorption target under the full-value absorption rule, or opens a fresh source-verified AGSK-T6 checker value probe now that multiple ASSF CANDIDATE fixtures exist. No package root, SKILL.md, checker implementation, resolver mutation, runtime activation, provider/live proof, public-sync, package activation, lifecycle promotion, external CLI/MCP adapter, direct pack checker import, or production-readiness claim is authorized without a fresh governed work order.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
