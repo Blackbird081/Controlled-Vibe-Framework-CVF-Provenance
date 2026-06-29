@@ -2,14 +2,14 @@
   "stateOrder": 1312,
   "stateKey": "agsgBshT1BlindspotPresenceDispatch20260629",
   "value": {
-    "status": "HOLD_PENDING_EXECUTOR",
+    "status": "CLOSED_BY_IMPLEMENTATION",
     "materialCommit": "5ae9cb9e",
     "baseline": "docs/baselines/CVF_GC018_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md",
     "adifEntry": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0014.md",
     "adifIndex": "docs/reference/agent_defect_intelligence/entries/README.md",
-    "decision": "DISPATCH_AGSG_BSH_T1_TO_EXECUTOR_UNDER_WORKER_MUST_NOT_COMMIT",
-    "nextAllowedMove": "OPERATOR_MAY_DISPATCH_AGSG_BSH_T1_TO_EXECUTOR_OR_SELECT_NEXT_EXTERNAL_ABSORPTION",
-    "summary": "AGSG-BSH-T1 records the scope-triggered absorption blind-spot presence checker dispatch packet authored by Claude. The work order is HOLD_PENDING_EXECUTOR and delegates implementation of governance/compat/check_absorption_blindspot_control_presence.py plus tests and hook-chain wiring to an executor under WORKER_MUST_NOT_COMMIT. The dispatch closes no runtime lane and does not authorize provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claims."
+    "decision": "IMPLEMENTED_AND_CLOSED_AT_328DE12B",
+    "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
+    "summary": "AGSG-BSH-T1 records the scope-triggered absorption blind-spot presence checker dispatch packet authored by Claude. The implementation and reviewer closeout landed at material commit 328de12b with the named checker, focused tests, hook/catalog wiring, worker return update, and completion review. The closure remains an offline governance checker claim only and does not authorize provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claims."
   }
 }
