@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=open AGSK package-candidate triage before treating `CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or moving to CodeGraph; parked checkpoint=EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; AGSK reabsorption remains closed at `4d08aa64` with value-conversion addendum at `4f0ef2c9`; EAC-T1 closed at `80a87e45`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_t4_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=execute AGSK-T4 work order as WORKER_MUST_NOT_COMMIT; parked checkpoint=AGSK package-candidate triage roadmap committed at `d8b14a2e` and AGSK-T4 dispatch committed at `11590704`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current Mode
 
-Current mode marker: `eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+Current mode marker: `agsk_t4_work_order_dispatched_pending_worker_execution`
 
-Current mode: `eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+Current mode: `agsk_t4_work_order_dispatched_pending_worker_execution`
 
-`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+`agsk_t4_work_order_dispatched_pending_worker_execution`
 
 Previous mode:
 
-`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
+`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
 
 ## Latest Closed Work
 
@@ -116,12 +116,14 @@ Previous mode:
 | EAC-T1 external absorption core guard | `80a87e45` | CLOSED_PASS_BOUNDED; external repo/folder absorption now requires machine-checked manifest/ledger core |
 | AGSK absorption pack reabsorption review | `4d08aa64` | CLOSED_PASS_BOUNDED; 29-file pack sweep under EAC core |
 | EAVC-T1 external absorption value conversion guard | `4f0ef2c9` | CLOSED_PASS_BOUNDED; external absorption now requires machine-checked doctrine/package/runtime/checker value conversion matrix; AGSK addendum applied |
+| AGSK package-candidate triage roadmap | `d8b14a2e` | ACTIVE_TRIAGE; opens AGSK-T4 before AGSK-T5 |
+| AGSK-T4 riskTriggers work order dispatch | `11590704` | DISPATCH_READY; worker must not commit; AGSK-T5 remains blocked until T4 closes |
 
 ## Next Allowed Move
 
-Mode: `eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+Mode: `agsk_t4_work_order_dispatched_pending_worker_execution`
 
-Next allowed move: open an AGSK package-candidate triage decision/roadmap before treating `CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or moving to CodeGraph. LHW24 remains the latest closed numbered LHW wave. Use `docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md` and its `External Absorption Value Conversion Matrix` as the source surface for package, runtime, checker, reject-direct-import, and no-package/runtime candidate decisions. After that bounded triage is closed or explicitly parked, process the next retained external source folder under `.private_reference/legacy/CVF 28.06/` using `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`, `governance/compat/check_external_absorption_core.py`, and `governance/compat/check_external_absorption_value_conversion.py`. No runtime skill activation, plugin import, slash-command import, persona orchestration, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, or automatic safe skill invocation claim is authorized now.
+Next allowed move: execute AGSK-T4 using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md` as `WORKER_MUST_NOT_COMMIT`. LHW24 remains the latest closed numbered LHW wave. The worker may patch only `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` and create `docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md`. AGSK-T5 registry candidate work remains blocked until AGSK-T4 closes. No runtime skill activation, plugin import, slash-command import, persona orchestration, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, or automatic safe skill invocation claim is authorized now.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 

@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=open AGSK package-candidate triage before treating `CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or moving to CodeGraph; parked checkpoint=EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; AGSK reabsorption remains closed at `4d08aa64` with value-conversion addendum at `4f0ef2c9`; EAC-T1 closed at `80a87e45`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_t4_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=execute AGSK-T4 work order as WORKER_MUST_NOT_COMMIT; parked checkpoint=AGSK package-candidate triage roadmap committed at `d8b14a2e` and AGSK-T4 dispatch committed at `11590704`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`eavc_t1_value_conversion_guard_closed_pendin
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `4f0ef2c9` EAVC-T1 external absorption value conversion guard |
+| Latest material closeout | `11590704` AGSK-T4 riskTriggers work order dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+`agsk_t4_work_order_dispatched_pending_worker_execution`
 
 ## Purpose
 
@@ -107,17 +107,13 @@ dispositions.
 
 ## Next Allowed Move
 
-Open an AGSK package-candidate triage decision/roadmap before treating
-`CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or moving to
-CodeGraph. Use
-`docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md`
-and its `External Absorption Value Conversion Matrix` as the source surface for
-package, runtime, checker, reject-direct-import, and no-package/runtime
-candidate decisions. LHW24 remains the latest closed numbered LHW wave.
-
-After that bounded triage is closed or explicitly parked, process the next
-retained external source folder under `.private_reference/legacy/CVF 28.06/`
-using the EAC core and EAVC value-conversion guards.
+Execute AGSK-T4 using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md`
+as `WORKER_MUST_NOT_COMMIT`. LHW24 remains the latest closed numbered LHW wave.
+The worker may patch only
+`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` and create
+`docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md`.
+AGSK-T5 registry candidate work remains blocked until AGSK-T4 closes.
 
 Required boundaries:
 
@@ -125,6 +121,8 @@ Required boundaries:
   provider, public-sync, package, or Agent Skills activation evidence.
 - Treat EAVC-T1 as a value-conversion evidence-shape guard, not as proof that
   AGSK packages or runtime skills have been created.
+- Treat AGSK-T4 as a documentation-only ASSF contract patch, not as a package
+  candidate, generated index mutation, checker, resolver, or runtime lane.
 - Treat retained 2026-06-28 external source folders as advisory input under
   `.private_reference/legacy/CVF 28.06/`, not as CVF source of truth.
 - Do not import Agent Skills plugin runtime, slash commands, personas, hooks,
@@ -910,22 +908,82 @@ persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
 benchmark, security certification, production-readiness, or automatic skill
 invocation.
 
-## GC-020 Marker - AGSK Package-Candidate Triage Roadmap
+## GC-020 Marker - AGSK Package-Candidate Triage And T4 Dispatch
+
+## Core Guard Self-Protection Authorization - AGSK-T4 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after AGSK
+package-candidate triage material commit `d8b14a2e` and AGSK-T4 work-order
+dispatch material commit `11590704`, so the front door, generated state
+sources, generated aggregate, bootstrap read model, and active handoff all
+point to AGSK-T4 worker execution.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskT4RiskTriggersWorkOrderDispatch20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator requested the AGSK-T4 work order after the
+AGSK package-candidate triage roadmap. Session sync is required by GC-020 and
+next-move freshness after material commit `11590704`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+AGSK-T4 session-sync batch. Do not revert AGSK-T4 dispatch material commit
+`11590704`, AGSK triage material commit `d8b14a2e`, EAVC-T1 material commit
+`4f0ef2c9`, or AGSK reabsorption material commit `4d08aa64`.
 
 Material commit `d8b14a2e` added
 `docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md`.
-The roadmap corrected the package-candidate next move after EAVC-T1 and bound
-AGSK-T4 before any AGSK-T5 package instance creation.
+The roadmap corrected the false "zero CANDIDATE skill candidates" claim,
+opened AGSK-T4 for `riskTriggers` contract repair, opened AGSK-T5 only after
+T4, and parked AGSK-T6 checker work.
+
+Dispatch artifact:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md`.
+
+Dispatch commit:
+`11590704`.
 
 Current mode:
-`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+`agsk_t4_work_order_dispatched_pending_worker_execution`
 
-Next allowed move: author and dispatch the AGSK-T4 ASSF `riskTriggers`
-contract-field work order, then run AGSK-T5 only after T4 closes.
+Next allowed move: execute AGSK-T4 as `WORKER_MUST_NOT_COMMIT`. Worker may
+patch only `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`
+and create
+`docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md`.
+AGSK-T5 registry candidate work remains blocked until AGSK-T4 closes.
 
-This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
-material commit `d8b14a2e`. It does not authorize runtime behavior, provider
-or live proof, public-sync export, plugin import, slash command import,
-persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
-benchmark, security certification, production-readiness, or automatic skill
-invocation.
+This marker satisfies the GC-020 in-place handoff HEAD rule for AGSK-T4
+dispatch material commit `11590704` and triage material commit `d8b14a2e`. It
+does not authorize runtime behavior, provider or live proof, public-sync
+export, plugin import, slash command import, persona orchestration, package
+activation, resolver mutation, CLI/MCP adapter, benchmark, security
+certification, production-readiness, or automatic skill invocation.
+
+## Agent Operation Trace Block - AGSK-T4 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex dispatcher/session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T4 work order dispatch and session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | source reads, ADIF resolver import, rg searches, apply_patch, active-session generator, governance gates |
+| Target paths | active session continuity surfaces only |
+| Allowed scope source | operator requested AGSK-T4 work order after AGSK package-candidate triage roadmap commit `d8b14a2e`; GC-020 required session sync after dispatch material commit `11590704` |
+| Before status evidence | AGSK-T4 dispatch committed at `11590704` |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status`; session-sync gates before commit |
+| Approval boundary | session continuity only; no AGSK-T4 contract execution |
+| Claim boundary | repo-local trace only; no runtime/provider/public claim |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `agsk-t4-risk-triggers-dispatch-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
