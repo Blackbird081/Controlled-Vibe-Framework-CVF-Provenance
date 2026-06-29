@@ -138,6 +138,33 @@ They do not activate packages, install plugins, wire hooks, mutate runtime,
 authorize provider execution, or create production claims. Those actions still
 require the normal CVF authorization chain.
 
+## Conditional Reopen Index Rule
+
+Candidate lanes are not allowed to disappear into closeout prose. Any external
+absorption closeout that records `PACKAGE_CANDIDATE`, `RUNTIME_CANDIDATE`,
+`CHECKER_CANDIDATE`, `DEFERRED`, `DEFER_WITH_REOPEN_CONDITION`,
+`DEFERRED_WITH_REOPEN_CONDITION`, or `VALUE_PARKED` must do one of these before
+closure:
+
+- add or update the matching row in
+  `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`;
+- cite the existing row in that index and state why it remains current;
+- state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON` because the value was
+  fully adapted, rejected with no remaining CVF-native value, or already owned
+  by another governed index.
+
+Do not treat "not authorized in this tranche" as a value decision. Direct
+import may be rejected while CVF-native runtime, package, checker, or doctrine
+value remains conditionally reopenable.
+
+The index is not implementation authority. A row in the index cannot activate
+packages, install plugins, wire hooks, mutate runtime, authorize provider
+execution, publish public artifacts, or create production claims. It only
+preserves the candidate, its owner surface, and its concrete reopen condition
+until a fresh governed value probe, GC-018, work order, source-verification
+pass, package promotion review, checker tranche, or runtime authorization
+exists.
+
 ## Reviewer Semantic Value Audit
 
 Machine gates make external absorption reviewable; they do not prove semantic
@@ -238,15 +265,15 @@ readiness.
 | Session or invocation | CGE-R1 absorption lesson hardening, 2026-06-29 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Allowed scope source | operator instruction to make CGE-R1 worker-return gate failures and over-defer lessons durable before the next external absorption tranche |
-| Before status evidence | CGE-R1 worker-return gates passed after repair, but reviewer found 16 value-bearing template/example/schema files still deferred |
-| After status evidence | standard now requires reviewer semantic value audit after fast-gate pass |
+| Target paths | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`; `docs/reference/external_agent_review/README.md` |
+| Allowed scope source | operator instruction to make conditionally reopenable external-absorption value visible in a separate governed index |
+| Before status evidence | candidate values could be correctly excluded from current closeout yet remain scattered across individual closeout prose |
+| After status evidence | standard now requires conditional reopen candidates to be registered, cited, or explicitly excluded with reason |
 | Diff evidence | `git diff --name-status` before material commit |
-| Approval boundary | documentation standard and learning record only; no checker, runtime, provider/live, public-sync, package activation, or adapter behavior |
-| Claim boundary | reviewer guidance only; machine guards remain necessary but not sufficient |
+| Approval boundary | documentation standard and reference-index update only; no checker, runtime, provider/live, public-sync, package activation, or adapter behavior |
+| Claim boundary | reviewer guidance and index-routing rule only; machine guards remain necessary but not sufficient |
 | Agent type | reviewer/closer |
-| Invocation ID | `cge-r1-absorption-lesson-hardening-2026-06-29` |
-| Expected manifest | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Actual changed set | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Invocation ID | `external-absorption-conditional-reopen-index-2026-06-29` |
+| Expected manifest | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`; `docs/reference/external_agent_review/README.md` |
+| Actual changed set | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`; `docs/reference/external_agent_review/README.md` |
 | Manifest delta | MATCH |
