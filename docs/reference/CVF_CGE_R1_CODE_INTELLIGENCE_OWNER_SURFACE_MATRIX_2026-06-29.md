@@ -140,7 +140,7 @@ and `docs/reference/CVF_GRAPH_CONTEXT_RECEIPT_PROTOCOL_2026-06-19.md`.
 | scopeBoundary | Allowed paths / forbidden paths from work order |
 | resultSummary | Human-readable summary of query result |
 | confidence | high / medium / low / none |
-| freezeAllowed | Boolean: whether result supports freeze trust |
+| freezeAllowed | REJECTED_AS_AUTHORITY_SIGNAL: do not use as a CVF receipt authority field; freeze trust must come from CVF review/freeze evidence outside the graph receipt |
 
 ### Receipt Requirement Rule
 
@@ -156,7 +156,15 @@ Absorbed from `docs/protocols/CVF_CODE_INTELLIGENCE_FREEZE_PROTOCOL.md`.
 A graph-assisted task must NOT proceed to the freeze phase unless:
 1. indexStatus = fresh (or stale with accepted fallback evidence).
 2. A graph context receipt is attached to the work order.
-3. The receipt shows freezeAllowed = true.
+3. The reviewer verifies direct-read fallback, scope, affected files, and test
+   surface evidence under CVF freeze/review authority.
+
+The source pack contains a prototype `freezeAllowed` field, but CGE-T2 already
+rejected any `freezeAllowed` or equivalent field as a freeze-grant authority
+signal. CGE-R2 confirms the correction: future CVF-owned receipts may record
+graph confidence, warning, fallback, reviewRequired, and decisionSupported
+fields, but no graph receipt field may grant freeze, closure, approval, or
+scope expansion.
 
 If these conditions are not met, the task is FREEZE_BLOCKED_STALE_GRAPH.
 The worker must either wait for a fresh index or proceed with FALLBACK_STATIC_EVIDENCE
@@ -221,11 +229,86 @@ separate runtime or package tranche is authorized:
 
 | Schema family | Required field families | Key enums or constants |
 |---|---|---|
-| Graph context receipt | receiptId, createdAt, cvfSessionId, workOrderId, repoHash, indexId, indexVersion, indexStatus, queryType, queryInput, scopeBoundary, resultSummary, affectedFiles, confidence, warnings, fallbackAction, usedInPhase, decisionSupported, reviewRequired, freezeAllowed | indexStatus=fresh/stale/partial/missing/unknown; confidence=high/medium/low/unknown |
+| Graph context receipt | receiptId, createdAt, cvfSessionId, workOrderId, repoHash, indexId, indexVersion, indexStatus, queryType, queryInput, scopeBoundary, resultSummary, affectedFiles, confidence, warnings, fallbackAction, usedInPhase, decisionSupported, reviewRequired | indexStatus=fresh/stale/partial/missing/unknown; confidence=high/medium/low/unknown; source `freezeAllowed` is rejected as an authority field |
 | Graph query | queryId, queryType, input, scopeBoundary, usedInPhase | queryType=symbol_lookup/route_lookup/callers/callees/dependency_trace/impact_radius/test_surface/risky_change_surface/graph_status; usedInPhase=INTAKE/DESIGN/SPEC/WORK_ORDER/BUILD/REVIEW/FREEZE |
 | Graph query result | queryId, resultId, affectedFiles, nodes, edges, confidence, warnings, optional routes/tests/tokenBudgetEstimate | confidence=high/medium/low/unknown |
 | Impact radius | reportId, workOrderId, target, primaryFiles, secondaryFiles, testFiles, routes, sharedDependencies, riskNotes, confidence, recommendation | recommendation=pass_to_work_order/require_direct_read/require_scope_revision/block_freeze |
-| Staleness warning | warningId, indexId, indexVersion, detectedAt, severity, trigger, affectedScope, requiredFallback, freezeAllowed, finalStatus | severity=low/medium/high/blocking; requiredFallback=refresh_index/direct_file_read/manual_review/narrow_scope/block_freeze; freezeAllowed=false |
+| Staleness warning | warningId, indexId, indexVersion, detectedAt, severity, trigger, affectedScope, requiredFallback, finalStatus | severity=low/medium/high/blocking; requiredFallback=refresh_index/direct_file_read/manual_review/narrow_scope/block_freeze; source `freezeAllowed=false` adapts only as blocked-freeze doctrine, not as a field to preserve |
+
+## Query Planning And Fallback Doctrine
+
+CGE-R2 re-scan read the previously rejected TypeScript planner, confidence,
+packager, policy, service, and fixture scaffolds. Direct import remains
+rejected, but the following CVF-native doctrine is retained.
+
+### Task-Type Query Planning Heuristic
+
+Absorbed from
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context_builder/graph/graph-query-planner.ts`.
+
+| Task class | Recommended graph-query plan when a future graph lane is authorized | CVF boundary |
+|---|---|---|
+| `debug` | symbol lookup, impact radius, test surface | advisory only; direct source read still required before edit/review claims |
+| `refactor` | dependency trace, impact radius, test surface | advisory only; no automatic scope expansion |
+| `review` or `change_risk` | impact radius and risky-change surface | reviewer must verify changed paths against work-order scope |
+| `test` | test surface | does not replace actual test execution evidence |
+| `onboarding` | symbol lookup | orientation only; no freeze or implementation authority |
+
+Default max-depth guidance from the source planner is 2. The source scope
+policy blocks maxDepth greater than 4. CVF adopts this as future work-order
+planning doctrine only; no query runner or max-depth checker is implemented by
+CGE-R2.
+
+### Confidence And Direct-Read Fallback Rule
+
+Absorbed from `graph-confidence-evaluator.ts` and `graph-context-packager.ts`.
+
+| Source condition | CVF-adapted confidence meaning | Required CVF action |
+|---|---|---|
+| indexStatus is `missing` or `unknown` | unknown | direct-read fallback required; no graph-backed claim |
+| indexStatus is `stale` or `partial` | low | direct-read fallback required; review/freeze trust blocked until fallback is accepted |
+| unsupported language | low | direct-read fallback required |
+| warnings are present | medium at best | direct-read fallback required before review/freeze claim |
+| affectedFilesCount is zero on a fresh index | medium, not exhaustive proof | do not claim no impact without direct-read or diff evidence |
+| clean fresh graph with affected files | high advisory confidence | still advisory; cannot bypass policy, review, or tests |
+
+Direct-read-required rule: future graph-context packages must set the practical
+equivalent of directReadRequired when confidence is not high or warnings are
+present. This is doctrine only in CGE-R2; no runtime package is active.
+
+### Trace Field Minimum
+
+Absorbed from `graph-to-work-order-trace-policy.ts`.
+
+Future graph-supported code decisions should trace at least:
+`graphQueryId`, `graphResultId`, `receiptId`, `workOrderStepId`,
+`changedFile`, and `reviewCheckId`. `freezeRecordId` may appear only as a
+separate CVF freeze-evidence reference; it must not turn graph output into
+freeze authority.
+
+### Staleness Trigger Vocabulary
+
+Absorbed from `staleness-warning.ts` and `graph-staleness-service.ts`.
+
+Future staleness records should recognize these trigger labels:
+`file_modified_after_index`, `new_file_not_indexed`,
+`deleted_file_still_in_index`, `git_branch_changed`, `lockfile_changed`,
+`framework_config_changed`, `route_config_changed`, `test_config_changed`,
+`index_metadata_missing`, and `unknown`.
+
+Missing index metadata is treated as `unknown` plus blocking fallback
+requirement, not as permission to continue with graph-backed confidence.
+
+### Value-Probe Fixture Blueprint
+
+The source fixture READMEs are placeholders, but their scenario list is useful
+for a future CGE-R2 value probe. A bounded value probe should include at least
+one small TypeScript app, one small Python/FastAPI app, and one stale-index
+case covering symbol lookup, route lookup, dependency trace, impact radius,
+test surface detection, and stale index detection.
+
+This blueprint does not import fixture code and does not authorize benchmark,
+runtime, or CI wiring.
 | Test surface | reportId, workOrderId, target, existingTests, missingTests, suggestedTests, requiredAction, confidence | requiredAction=run_existing/add_or_update/document_not_available/manual_review |
 
 Schema values are not imported as validation schemas in CGE-R1. They are
@@ -332,7 +415,7 @@ CVF owner surfaces as established by CGE-R1.
 
 | Candidate | Status | Activation path |
 |---|---|---|
-| cvf.code_intelligence (package.manifest.json) | PACKAGE_CANDIDATE; not activated | Separate ASSF package activation work order required; must not create package root without GC-018 |
+| cvf.code_intelligence (package.manifest.json) | PACKAGE_CANDIDATE; converted by CGE-R2 into metadata-only ASSF registry candidate `cvf-code-intelligence-context-review`; not activated | Separate ASSF package promotion, package-root, resolver, runtime, and activation work orders required before use |
 
 ## Runtime Candidate Ledger
 
@@ -385,8 +468,9 @@ decision is contradicted. All new ADAPTED items are captured in this artifact.
 | docs/templates/**/*.template.md and docs/templates/work-orders/*.template.md | Evidence artifact shapes for receipts, query plans, impact reports, stale warnings, test-surface reports, and graph-context work orders | DOCTRINE_ADAPTED | This document (Artifact Shape Doctrine) | No further action; do not copy external templates directly | Not a runtime or package artifact |
 | examples/* | Concrete examples of scope-bounded query planning, receipt attachment, direct-read fallback, and freeze conditions | DOCTRINE_ADAPTED | This document (Artifact Shape Doctrine) | No further action; example data is not imported | Not a runtime or package artifact |
 | src/schemas/*.schema.json | Schema field families and enums for graph receipt/query/result/impact/staleness/test-surface artifacts | DOCTRINE_ADAPTED | This document (Schema Vocabulary Doctrine) | No further action; no schema validator is implemented | Not a runtime or package artifact |
-| README.md + package.manifest.json | Root principle, allowed/forbidden ops, capability_id, status=spec_prototype_scaffold | DOCTRINE_ADAPTED | This document (Principles and Capability sections) | No further action for doctrine | Not a runtime or package artifact |
-| package.manifest.json (capability structure) | capability_id and manifest structure | PACKAGE_CANDIDATE | This document (Package Candidate Ledger) | Separate ASSF package activation work order | Candidate only; not activated |
+| README.md + package.manifest.json | Root principle, allowed/forbidden ops, capability_id, status=spec_prototype_scaffold | DOCTRINE_ADAPTED | This document (Principles and Capability sections) | No further action for doctrine | Not a runtime artifact |
+| package.manifest.json (capability structure) | capability_id and manifest structure | PACKAGE_CANDIDATE | `docs/reference/agent_system_skills/registry/entries/cvf-code-intelligence-context-review.json` plus this document | Metadata-only ASSF candidate added by CGE-R2; promotion/activation still requires fresh governed work | Candidate only; not activated |
+| LPF query planner, confidence evaluator, packager, trace policy, staleness service, and fixture READMEs | task-type query plan, direct-read-required rule, trace minimum, staleness trigger vocabulary, and value-probe fixture blueprint | DOCTRINE_ADAPTED | This document (Query Planning And Fallback Doctrine) | Use as source-backed planning doctrine; future value probe may consume it | No runtime, query execution, checker, CI, or package activation |
 | src/services/*.ts (7 files) | GraphContextResolver, ImpactAnalysisService, etc. as runtime service concepts | RUNTIME_CANDIDATE | This document (Runtime Candidate Ledger) | Separate runtime work order with live proof | REJECTED direct import; runtime candidate only |
 | governance/guards/*.md (checker logic) | Guard enforcement logic maps to CVF Python checker candidates | CHECKER_CANDIDATE | This document (Checker Candidate Ledger) | Separate GC-018 + machine-gate work order | Not a runtime artifact |
 | .github/workflows/code-intelligence-check.yml | External CI workflow | REJECT_DIRECT_IMPORT | None | No CVF action | No package or runtime value |
