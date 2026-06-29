@@ -2,17 +2,17 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: APPROVED
 
 docType: assf_package_front_door
 
-Batch ID: AGSK-R3
+Batch ID: AGSK-R3; AGSK-R7
 
 skillId: cvf-engineering-security-hardening
 
 ## Purpose
 
-Provide the stable front door for the `cvf-engineering-security-hardening` ASSF package proposal.
+Provide the stable front door for the `cvf-engineering-security-hardening` ASSF package.
 
 ## Scope / Applies-To
 
@@ -21,13 +21,13 @@ Provide the stable front door for the `cvf-engineering-security-hardening` ASSF 
 | Package root | `docs/reference/agent_system_skills/packages/cvf-engineering-security-hardening/` |
 | Canonical package body | `SKILL.md` |
 | Source evidence | `skill.source.json` |
-| Lifecycle state | PROPOSED |
-| Runtime activation | NOT_AUTHORIZED_WITH_REASON: AGSK-R3 does not activate runtime, resolver, CLI/MCP adapter, provider/live proof, public-sync, or production behavior |
+| Lifecycle state | APPROVED |
+| Runtime activation | BOUNDED_WITH_REASON: AGSK-R7 permits explicit internal runtime package-loader body read only; it does not activate resolver, CLI/MCP adapter, provider/live proof, public-sync, security change authority, commit, or production behavior |
 
 ## Owner Surface
 
-ASSF package proposal evidence under AGSK-R3. Reviewer acceptance and UAT are required before any later lifecycle promotion.
+ASSF package proposal evidence under AGSK-R3 and bounded lifecycle promotion evidence under AGSK-R7. A later ACTIVE resolver or adapter tranche is required before automatic invocation or external exposure.
 
 ## Claim Boundary
 
-This front door only orients readers to the package root. It does not approve, activate, certify, execute, export, or publish the skill.
+This front door orients readers to the APPROVED package root. It does not activate, execute, export, publish, apply security changes, commit, call providers, or grant authority beyond explicit internal package-loader body read.

@@ -2,11 +2,11 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: APPROVED
 
 docType: assf_package
 
-Batch ID: AGSK-R3
+Batch ID: AGSK-R3; AGSK-R7
 
 skillId: cvf-engineering-planning-task-breakdown
 
@@ -19,9 +19,9 @@ Guide dependency-aware task decomposition into small, verifiable units with expl
 | Field | Value |
 |---|---|
 | Package root | `docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/` |
-| Owner surface | ASSF package proposal evidence under AGSK-R3 |
-| Applies to | Metadata-only advisory package review, not runtime execution |
-| Does not apply to | `APPROVED`, `ACTIVE`, resolver/runtime mutation, CLI/MCP adapter, provider/live proof, public-sync, or production readiness |
+| Owner surface | ASSF package proposal evidence under AGSK-R3 and bounded AGSK-R7 lifecycle promotion evidence |
+| Applies to | APPROVED internal package body read through the AGSK-R4 runtime package loader after explicit request |
+| Does not apply to | `ACTIVE`, automatic resolver invocation, CLI/MCP adapter, provider/live proof, public-sync, automated task execution, commit authority, or production readiness |
 
 ## Invocation Boundary
 
@@ -66,9 +66,9 @@ Guide dependency-aware task decomposition into small, verifiable units with expl
 | Field | Value |
 |---|---|
 | Required evidence | AGSK-R3 worker return with source reads and 24-candidate coverage table; anatomy checker PASS |
-| UAT binding | NOT_STARTED; APPROVED tranche requires UAT evidence and reviewer acceptance |
-| Validation hooks | ASSF anatomy checker; generated-index drift checker; reviewer-fast gate |
-| Review evidence | docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md |
+| UAT binding | PASSED for explicit internal package-loader body read only |
+| Validation hooks | ASSF anatomy checker; certified metadata admission checker; generated-index drift checker; reviewer-fast gate |
+| Review evidence | docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md; docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md |
 
 ## External Disposition
 
@@ -94,7 +94,7 @@ Guide dependency-aware task decomposition into small, verifiable units with expl
 | After status evidence | package root exists in PROPOSED state pending reviewer acceptance |
 | Diff evidence | `git diff --name-status` over AGSK-R3 range |
 | Approval boundary | WORKER_MUST_NOT_COMMIT; reviewer/closer owns acceptance and commit |
-| Claim boundary | PROPOSED package-root evidence only; no runtime activation claim |
+| Claim boundary | Historical AGSK-R3 package-root evidence only; no runtime activation claim before AGSK-R7 |
 | Agent type | worker plus reviewer packet-shape repair |
 | Invocation ID | `agsk-r3-package-cvf-engineering-planning-task-breakdown-2026-06-29` |
 | Expected manifest | `SKILL.md`; `skill.source.json`; `README.md` |
@@ -106,27 +106,35 @@ Guide dependency-aware task decomposition into small, verifiable units with expl
 
 ### Expected Result / Prediction
 
-A PROPOSED ASSF package root should preserve the upstream skill's useful workflow discipline while keeping CVF authority, lifecycle, and runtime boundaries explicit.
+An APPROVED ASSF package root should preserve the upstream skill's useful
+workflow discipline while keeping CVF authority, lifecycle, and runtime
+boundaries explicit.
 
 ### Evidence Comparison
 
-The package cites the pinned upstream source mirror, the AGSK-R2 source-mirror backfill review, the AGSK-R3 baseline, and the AGSK-R3 worker return. The package remains PROPOSED and does not claim APPROVED, ACTIVE, UAT, certification, runtime execution, provider behavior, or external adapter support.
+The package cites the pinned upstream source mirror, AGSK-R2 source-mirror
+backfill review, AGSK-R3 package-root worker return, AGSK-R6 pilot pattern, and
+AGSK-R7 batch promotion review. The package is APPROVED for explicit internal
+package-loader body reads only and does not claim ACTIVE resolver behavior,
+provider behavior, public export, or external adapter support.
 
 ### Contradiction Or Gap Disposition
 
-No contradiction is resolved inside the package root. Any missing reviewer acceptance, UAT, certification, runtime loader, CLI/MCP adapter, provider proof, public export, or production-readiness evidence remains a blocker for later promotion.
+AGSK-R7 resolves the prior reviewer-acceptance, UAT, certification, and
+internal-disposition gap for this batch package only. ACTIVE resolver behavior,
+CLI/MCP adapter support, provider proof, public export, and production
+readiness remain blockers for later promotion.
 
 ### Claim Update
 
-The package claim is narrowed to CVF-owned PROPOSED package-root evidence only. It is not activation evidence.
+The package claim is narrowed to CVF-owned APPROVED package-loader body-read
+evidence only. It is not ACTIVE activation evidence.
 ## Claim Boundary
 
-This package root is a PROPOSED CVF adaptation sourced from the upstream `planning-and-task-breakdown` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`. It does not execute tasks automatically, trigger commits, implement a CLI/MCP adapter, or claim automatic invocation.
+This package root is an APPROVED CVF adaptation sourced from the upstream `planning-and-task-breakdown` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`. It may be opened by the AGSK-R4 runtime package loader after AGSK-R7 lifecycle gates pass. It does not execute tasks automatically, trigger commits, implement a CLI/MCP adapter, or claim automatic invocation.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
 Reason: this package root cites private source mirror and private provenance registry surfaces.
-
-
