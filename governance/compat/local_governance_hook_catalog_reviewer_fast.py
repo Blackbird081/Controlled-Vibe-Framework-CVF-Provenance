@@ -125,6 +125,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_memory_access_claim.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "external provider skill usage trace",
+        ["python", "governance/compat/check_external_provider_skill_usage_trace.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "truth foundation claim guard",
         ["python", "governance/compat/check_truth_foundation_claim_guard.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
