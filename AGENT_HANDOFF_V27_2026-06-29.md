@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t5_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`; parked checkpoint=AGSK-T5 dispatch-ready at `1cc52d7a`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external absorption target/tranche or authorizes a fresh bounded package-candidate work order; parked checkpoint=AGSK-T5 closed at `a00f7cf5`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,18 +19,19 @@ Startup acknowledged: current mode=`agsk_t5_work_order_dispatched_pending_worker
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `1cc52d7a` AGSK-T5 package candidate work order |
-| Latest material closeout | `2a84036a` AGSK-T4 riskTriggers contract patch |
+| Latest material closeout | `a00f7cf5` AGSK-T5 first external absorption package candidate |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_t5_work_order_dispatched_pending_worker_execution`
+`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
 
 ## Purpose
 
 Keep the active handoff compact after V26 reached the governed file-size guard
 near-threshold. V26 is archived as historical continuity; V27 is the sole root
-active handoff and points to AGSK-T5 worker execution.
+active handoff and points to the latest AGSK-T5 closure plus the next external
+absorption selection boundary.
 
 ## Scope / Target / Owner Boundary
 
@@ -59,6 +60,16 @@ against CVF-governed surfaces.
 
 ## Latest Work / Changes
 
+Material commit `a00f7cf5` closed AGSK-T5 by adding
+`docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`,
+regenerating `docs/reference/agent_system_skills/generated/skill-index.json`,
+and accepting
+`docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`.
+The entry remains `CANDIDATE` and metadata-only. No package root, `SKILL.md`,
+resolver, checker, runtime/provider/live proof, external CLI/MCP adapter,
+public-sync, package activation, lifecycle promotion, or production-readiness
+claim was created.
+
 Material commit `1cc52d7a` added
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`.
 The work order dispatches AGSK-T5 as `WORKER_MUST_NOT_COMMIT` and keeps the
@@ -71,20 +82,17 @@ field only as candidate metadata.
 
 ## Next Allowed Move
 
-Execute AGSK-T5 using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`
-as `WORKER_MUST_NOT_COMMIT`.
+Operator selects the next external absorption target/tranche or authorizes a
+fresh bounded package-candidate work order.
 
-Worker allowed outputs:
+AGSK-T6 checker work remains value-parked because AGSK-T5 did not identify a
+concrete repeated defect or high-risk gap requiring immediate checker
+implementation.
 
-- `docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`
-- regenerated `docs/reference/agent_system_skills/generated/skill-index.json`
-- `docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`
-
-Worker must not commit. Worker must not create a package root, `SKILL.md`,
-resolver, checker, runtime/provider/live/public-sync artifact, plugin import,
-slash command, persona, hook, package activation, lifecycle promotion,
-production-readiness claim, or session-sync edit.
+No package root, `SKILL.md`, resolver, checker, runtime/provider/live/public-sync
+artifact, plugin import, slash command, persona, hook, package activation,
+lifecycle promotion, production-readiness claim, or external CLI/MCP adapter is
+authorized by AGSK-T5 closure.
 
 ## Parked Checkpoint
 
@@ -92,14 +100,34 @@ AGSK-T4 closed bounded at material commit `2a84036a`, adding the
 documentation-only `riskTriggers` field to
 `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`.
 
-AGSK-T5 dispatch material commit `1cc52d7a` authorizes only metadata and
-documentation work. AGSK-T6 checker work remains value-parked until AGSK-T5
-closes and a concrete repeated defect or high-risk gap exists.
+AGSK-T5 material commit `a00f7cf5` closed the first metadata-only package
+candidate. AGSK-T6 checker work remains value-parked because T5 did not expose a
+concrete repeated defect or high-risk gap.
 
 Runtime-provider-live lanes, package activation, adapter implementation,
 public-sync expansion, CodeGraph runtime/MCP/watcher/daemon, Agent Skills
 plugin/command/persona/hook/runtime import, automatic skill invocation, and
 production-readiness claims remain parked behind fresh governed authorization.
+
+## Core Guard Self-Protection Authorization - AGSK-T5 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-T5 material commit `a00f7cf5`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording with the
+reviewer-accepted closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskT5PackageCandidateClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `a00f7cf5` unless the reviewer reopens AGSK-T5.
 
 ## Core Guard Self-Protection Authorization - AGSK-T5 Dispatch Session Sync And Handoff Rotation
 
@@ -178,10 +206,10 @@ dispatch material commit `1cc52d7a`. It rotated V26 into
 active handoff V27, updated `AGENTS.md`, regenerated active session state and
 bootstrap read model, and pointed the front door to AGSK-T5 worker execution.
 
-Current mode remains:
+At dispatch sync time, mode was:
 `agsk_t5_work_order_dispatched_pending_worker_execution`
 
-Next allowed move remains: execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using
+At dispatch sync time, next allowed move was: execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using
 `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`.
 
 This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for

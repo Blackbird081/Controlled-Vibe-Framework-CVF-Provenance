@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1322,
+  "stateKey": "agskT5PackageCandidateClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-06-29",
+    "roadmap": "docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md",
+    "registryEntry": "docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json",
+    "generatedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "workerReturn": "docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md",
+    "materialCommit": "a00f7cf5",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "result": "Created first AGSK-derived ASSF registry candidate for external absorption governance at CANDIDATE state and regenerated the metadata-only skill index.",
+    "nextAllowedMove": "Operator selects the next external absorption target/tranche or authorizes a fresh bounded package-candidate work order; AGSK-T6 remains value-parked absent a concrete repeated defect or high-risk gap.",
+    "claimBoundary": "metadata-only registry candidate and generated index; no package root, SKILL.md, resolver, checker, runtime/provider/live proof, public-sync, package activation, lifecycle promotion, external CLI/MCP adapter, or production-readiness claim"
+  }
+}

@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t5_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`; parked checkpoint=AGSK-T5 dispatch-ready at `1cc52d7a`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external absorption target/tranche or authorizes a fresh bounded package-candidate work order; parked checkpoint=AGSK-T5 closed at material commit `a00f7cf5`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current Mode
 
-Current mode marker: `agsk_t5_work_order_dispatched_pending_worker_execution`
+Current mode marker: `agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
 
-Current mode: `agsk_t5_work_order_dispatched_pending_worker_execution`
+Current mode: `agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
 
-`agsk_t5_work_order_dispatched_pending_worker_execution`
+`agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
 
 Previous mode:
 
-`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+`agsk_t5_work_order_dispatched_pending_worker_execution`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| AGSK-T5 first external absorption package candidate | `a00f7cf5` | CLOSED_PASS_BOUNDED |
 | Orchestration command catalog refactor | `10dee6e9` | CLOSED_PASS_BOUNDED |
 | Orchestration session sync | `f73546c5` | CLOSED_PASS |
 | Guard binding catalog-aware checker hardening | `4927687c` | CLOSED_PASS_BOUNDED |
@@ -120,12 +121,21 @@ Previous mode:
 | AGSK-T4 riskTriggers work order dispatch | `11590704` | DISPATCH_READY; worker must not commit; AGSK-T5 remains blocked until T4 closes |
 | AGSK-T4 riskTriggers contract patch | `2a84036a` | CLOSED_PASS_BOUNDED; AGSK-T5 package-candidate registry instance is next |
 | AGSK-T5 first external-absorption package candidate dispatch | `1cc52d7a` | DISPATCH_READY; worker must not commit; candidate metadata only |
+| AGSK-T5 first external-absorption package candidate | `a00f7cf5` | CLOSED_PASS_BOUNDED; first AGSK-derived ASSF registry candidate added |
 
 ## Next Allowed Move
 
-Mode: `agsk_t5_work_order_dispatched_pending_worker_execution`
+Mode: `agsk_t5_package_candidate_closed_pending_next_external_absorption_target`
 
-Next allowed move: execute AGSK-T5 using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md` as `WORKER_MUST_NOT_COMMIT`. Worker may create `docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`, regenerate `docs/reference/agent_system_skills/generated/skill-index.json` with the ASSF generator, and create `docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`. LHW24 remains the latest closed numbered LHW wave. No package root, `SKILL.md`, resolver, checker, runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/lifecycle-promotion/production-readiness claim, session-sync edit, or worker commit is authorized.
+Next allowed move: operator selects the next external absorption target/tranche
+or authorizes a fresh bounded package-candidate work order. AGSK-T5 closed at
+material commit `a00f7cf5`; LHW24 remains the latest closed numbered LHW wave.
+AGSK-T6 checker work remains value-parked because T5 did not identify a
+concrete repeated defect or high-risk gap requiring immediate checker
+implementation. No package root, `SKILL.md`, resolver, checker,
+runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation,
+lifecycle promotion, production-readiness claim, or external CLI/MCP adapter is
+authorized by T5 closure.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
