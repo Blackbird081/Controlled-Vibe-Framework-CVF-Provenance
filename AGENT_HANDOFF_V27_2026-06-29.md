@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r1_codegraph_reabsorption_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target or a fresh bounded CGE follow-on; parked checkpoint=CGE-R1 closed at `2f106dea`, AGSK-T5 closed at `a00f7cf5`, CGE-R1 dispatched at `0041218b`, AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`everos_absorption_lane_closed_pending_next_external_absorption_target`; active handoff=AGENT_HANDOFF_V27_2026-06-29.md; next allowed move=operator selects the next external repo/folder absorption target; parked checkpoint=EverOS memory-foundation absorption closed through T5 at `37771016`, T4 checker at `cac4947e`, T3 plan at `ed10ced8`; CGE-R1 closed at `2f106dea`; AGSK-T5 closed at `a00f7cf5`; AGSK-T6 checker work remains value-parked absent a concrete repeated defect or high-risk gap; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -19,19 +19,19 @@ Startup acknowledged: current mode=`cge_r1_codegraph_reabsorption_closed_pending
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material dispatch | `0041218b` CGE-R1 CodeGraph full reabsorption work order |
-| Latest material closeout | `2f106dea` CGE-R1 CodeGraph full reabsorption closeout |
+| Latest material closeout | `37771016` EverOS remaining value audit and lane closeout |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`cge_r1_codegraph_reabsorption_closed_pending_next_external_absorption_target`
+`everos_absorption_lane_closed_pending_next_external_absorption_target`
 
 ## Purpose
 
 Keep the active handoff compact after V26 reached the governed file-size guard
 near-threshold. V26 is archived as historical continuity; V27 is the sole root
-active handoff and points to the latest AGSK-T5 closure plus the next external
-absorption selection boundary.
+active handoff and points to the latest EverOS absorption lane closeout plus
+the next external absorption selection boundary.
 
 ## Scope / Target / Owner Boundary
 
@@ -59,6 +59,26 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `37771016` closed the EverOS remaining value audit and lane
+closeout. It confirmed that EverOS T0-T4 absorbed or guarded the high-value
+memory-foundation material: source authority, derived-view boundary,
+replay/rebuild doctrine, retrieval/rebuild receipt doctrine, timestamp
+doctrine, owner-surface reconciliation, and source-derived memory claim guard
+coverage. Decision:
+`CLOSE_EVEROS_ABSORPTION_LANE_NO_NEXT_TRANCHE`. No runtime, provider/live,
+public-sync, adapter, package activation, vector store, graph store, database,
+OME runtime, or MPI-T6 runtime was created or authorized.
+
+Material commit `cac4947e` implemented the EverOS source-derived memory claim
+guard by extending `governance/compat/check_memory_access_claim.py` and
+`governance/compat/test_check_memory_access_claim.py`. The current focused
+test suite reports 20 tests passing.
+
+Material commit `ed10ced8` added
+`docs/roadmaps/CVF_EVEROS_T3_SOURCE_DERIVED_MEMORY_CLAIM_GUARD_PLAN_ROADMAP_2026-06-28.md`.
+T3 selected the source-derived memory claim guard implementation lane and did
+not authorize runtime or checker mutation until the later T4 tranche.
 
 Material commit `2f106dea` closed CGE-R1 CodeGraph full reabsorption. It added
 `docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md`,
@@ -108,15 +128,18 @@ field only as candidate metadata.
 
 ## Next Allowed Move
 
-Operator selects the next external repo/folder absorption target or an
-explicitly bounded CGE follow-on. CGE-R1 is closed at material commit
+Operator selects the next external repo/folder absorption target. EverOS is
+closed through T5 at material commit `37771016` and should not be re-executed
+unless a recorded reopen condition is met and the operator explicitly
+authorizes a fresh governed tranche. CGE-R1 is closed at material commit
 `2f106dea` and should not be re-executed unless a new source-backed gap is
 identified.
 
 No runtime, package root, `SKILL.md`, ASSF registry entry, generated package
 index, checker, resolver, CodeGraph install/init/index/MCP/watcher/daemon,
-provider/live proof, public-sync, package activation, lifecycle promotion,
-production-readiness claim, or external CLI/MCP adapter is authorized without a
+vector store, graph store, database, OME runtime, provider/live proof,
+public-sync, package activation, lifecycle promotion, production-readiness
+claim, MPI-T6 runtime, or external CLI/MCP adapter is authorized without a
 fresh governed work order.
 
 ## Parked Checkpoint
@@ -133,6 +156,29 @@ Runtime-provider-live lanes, package activation, adapter implementation,
 public-sync expansion, CodeGraph runtime/MCP/watcher/daemon, Agent Skills
 plugin/command/persona/hook/runtime import, automatic skill invocation, and
 production-readiness claims remain parked behind fresh governed authorization.
+
+## Core Guard Self-Protection Authorization - EverOS T0-T5 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+EverOS T5 closeout material commit `37771016`, regenerate active session state,
+and align front-door, bootstrap read model, and active handoff next-move wording
+with the reviewer-accepted EverOS lane closure.
+
+Session-sync base HEAD: `37d1295b`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V27_2026-06-29.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/everosT0T5MemoryFoundationAbsorptionClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert this session-sync commit only; do not revert EverOS
+material commits `ed10ced8`, `cac4947e`, or `37771016` unless the reviewer
+reopens the EverOS closeout.
 
 ## Core Guard Self-Protection Authorization - CGE-R1 Closure Session Sync
 

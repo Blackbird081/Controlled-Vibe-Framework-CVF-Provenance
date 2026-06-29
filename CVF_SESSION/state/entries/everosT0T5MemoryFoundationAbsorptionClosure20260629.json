@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1325,
+  "stateKey": "everosT0T5MemoryFoundationAbsorptionClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "t3PlanCommit": "ed10ced8",
+    "t4CheckerCommit": "cac4947e",
+    "t5CloseoutCommit": "37771016",
+    "decision": "CLOSE_EVEROS_ABSORPTION_LANE_NO_NEXT_TRANCHE",
+    "summary": "EverOS memory-foundation absorption is complete through T5. T3 closed the source-derived memory claim guard plan, T4 implemented the source-derived claim classes in the existing memory access claim checker with 20 focused tests, and T5 closed remaining value with source-backed reopen conditions. No runtime, provider/live, public-sync, adapter, package activation, vector store, graph store, database, OME runtime, or MPI-T6 runtime was authorized."
+  }
+}
