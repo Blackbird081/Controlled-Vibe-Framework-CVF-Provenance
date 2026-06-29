@@ -18,7 +18,7 @@ Startup acknowledged: current mode=`agsk_t4_work_order_dispatched_pending_worker
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `11590704` AGSK-T4 riskTriggers work order dispatch |
+| Latest material closeout | `935ac253` reusable workflow defect ADIF learning |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
@@ -987,3 +987,29 @@ certification, production-readiness, or automatic skill invocation.
 | Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - Reusable Workflow Defect ADIF Learning
+
+Material commit `935ac253` added ADIF-0016 and ADIF-0017:
+
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0016.md`
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0017.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+
+ADIF-0016 records that reusable learning must not remain trapped only in a
+one-off work-order checklist. ADIF-0017 records that deterministic
+material/session commit-shape split rules must be planned with commit steward
+before staging, stashing, or probing commits.
+
+Current mode:
+`agsk_t4_work_order_dispatched_pending_worker_execution`
+
+Next allowed move remains unchanged: execute AGSK-T4 as
+`WORKER_MUST_NOT_COMMIT`, then keep AGSK-T5 blocked until AGSK-T4 closes.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `935ac253`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
