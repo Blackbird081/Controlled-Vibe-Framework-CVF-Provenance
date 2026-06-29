@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsk_t4_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=execute AGSK-T4 work order as WORKER_MUST_NOT_COMMIT; parked checkpoint=AGSK package-candidate triage roadmap committed at `d8b14a2e` and AGSK-T4 dispatch committed at `11590704`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=author and dispatch AGSK-T5 first package-candidate registry instance; parked checkpoint=AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`agsk_t4_work_order_dispatched_pending_worker
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `935ac253` reusable workflow defect ADIF learning |
+| Latest material closeout | `2a84036a` AGSK-T4 riskTriggers contract patch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsk_t4_work_order_dispatched_pending_worker_execution`
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
 
 ## Purpose
 
@@ -1002,7 +1002,7 @@ material/session commit-shape split rules must be planned with commit steward
 before staging, stashing, or probing commits.
 
 Current mode:
-`agsk_t4_work_order_dispatched_pending_worker_execution`
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
 
 Next allowed move remains unchanged: execute AGSK-T4 as
 `WORKER_MUST_NOT_COMMIT`, then keep AGSK-T5 blocked until AGSK-T4 closes.
@@ -1013,3 +1013,73 @@ or live proof, public-sync export, plugin import, slash command import,
 persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
 benchmark, security certification, production-readiness, or automatic skill
 invocation.
+
+## Core Guard Self-Protection Authorization - AGSK-T4 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-T4 riskTriggers contract patch material commit `2a84036a` so the front
+door, generated state sources, generated aggregate, bootstrap read model, and
+active handoff point to AGSK-T5 package-candidate registry-instance dispatch.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator reported the AGSK-T4 worker handoff as
+`COMPLETE_PENDING_REVIEW`; reviewer accepted and committed the bounded
+documentation-only contract patch.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+session-sync batch. Do not revert AGSK-T4 material commit `2a84036a`, AGSK-T4
+dispatch commit `11590704`, AGSK triage commit `d8b14a2e`, EAVC-T1 material
+commit `4f0ef2c9`, or AGSK reabsorption material commit `4d08aa64`.
+
+## GC-020 Marker - AGSK-T4 Risk Triggers Contract Patch
+
+Material commit `2a84036a` accepted the AGSK-T4 worker return and patched
+`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` with the
+documentation-only `riskTriggers` field. Worker return:
+`docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md`.
+
+Current mode:
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+
+Next allowed move: author and dispatch AGSK-T5 first package-candidate
+registry instance using the AGSK triage roadmap, accepted `riskTriggers`
+contract field, and source-verified AGSK candidate evidence.
+
+AGSK-T5 remains documentation/registry-candidate only until separately
+reviewed and closed. This marker does not authorize runtime behavior,
+provider/live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
+
+## Agent Operation Trace Block - AGSK-T4 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T4 closure session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces only |
+| Allowed scope source | GC-020 after AGSK-T4 material commit `2a84036a` |
+| Before status evidence | material commit `2a84036a` closed AGSK-T4 contract patch |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no AGSK-T5 implementation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-t4-closure-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |

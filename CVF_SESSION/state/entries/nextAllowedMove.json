@@ -1,5 +1,5 @@
 {
   "stateOrder": 641,
   "stateKey": "nextAllowedMove",
-  "value": "AGSK package-candidate triage roadmap is committed at d8b14a2e and opens AGSK-T4 before AGSK-T5. LHW24 remains the latest closed numbered LHW wave. AGSK-T4 work order is dispatch-ready at docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md. Next allowed move: execute AGSK-T4 as WORKER_MUST_NOT_COMMIT, patching only docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md and creating docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md. AGSK-T5 registry candidate work remains blocked until AGSK-T4 closes. No runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim is authorized."
+  "value": "AGSK-T4 riskTriggers contract patch is closed bounded at material commit 2a84036a. LHW24 remains the latest closed numbered LHW wave. Next allowed move: author and dispatch AGSK-T5 first package-candidate registry instance using the AGSK package-candidate triage roadmap, the accepted AGSK-T4 riskTriggers contract field, and source-verified package candidate evidence. AGSK-T5 remains documentation/registry-candidate only until separately closed; no runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim is authorized."
 }
