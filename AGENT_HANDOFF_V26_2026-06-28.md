@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator may select the next external repo/folder absorption target or ask for a high-value roadmap audit; parked checkpoint=AGSG-T1 through T3 closed at material commit `66eb39ac`; AGSG-BSH-T1 blind-spot presence checker closed at material commit `328de12b`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`, the 2026-06-28 retained external source folders are consolidated under `.private_reference/legacy/CVF 28.06/`, and runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind AGSG-T3 reopen conditions and fresh governed authorization.
+Startup acknowledged: current mode=`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=resume full reabsorption of `.private_reference/legacy/CVF 28.06/` with the External Absorption Core manifest/ledger standard and checker; parked checkpoint=EAC-T1 external absorption core guard closed at material commit `80a87e45`; AGSG-BSH-T1 blind-spot presence checker closed at material commit `328de12b`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current State
 
@@ -18,12 +18,12 @@ Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_checker_close
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `328de12b` AGSG-BSH-T1 blind-spot presence checker |
+| Latest material closeout | `80a87e45` EAC-T1 external absorption core guard |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`
+`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
 
 ## Purpose
 
@@ -733,3 +733,60 @@ session-sync changes. Do not revert AGSG-BSH-T1 material commit `328de12b`,
 AGSG-BSH-T1 dispatch commit `5ae9cb9e`, ADIF-0015 material commit `a8f45aa7`,
 AGSG-T1 through T3 material commit `66eb39ac`, or their prior session/handoff
 sync commits.
+
+## Core Guard Self-Protection Authorization - EAC-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+EAC-T1 external absorption core guard material commit `80a87e45` so the front
+door, generated state sources, generated aggregate, bootstrap read model, and
+active handoff all point to CVF 28.06 reabsorption under the new external
+absorption core standard and checker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/eacT1ExternalAbsorptionCoreGuardClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction that external repos may differ but
+the central absorption principle is invariant, and that agent completion claims
+need machine checking similar to the scan layer.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert EAC-T1 material commit `80a87e45`,
+AGSG-BSH-T1 material commit `328de12b`, AGSG-BSH-T1 dispatch commit
+`5ae9cb9e`, ADIF-0015 material commit `a8f45aa7`, AGSG-T1 through T3 material
+commit `66eb39ac`, or their prior session/handoff sync commits.
+
+## GC-020 Marker - EAC-T1 External Absorption Core Guard
+
+Material commit `80a87e45` added
+`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`,
+`governance/compat/check_external_absorption_core.py`, focused tests, hook and
+autorun catalog wiring, chain-map updates, and completion review
+`docs/reviews/CVF_EAC_T1_EXTERNAL_ABSORPTION_CORE_GUARD_COMPLETION_2026-06-29.md`.
+
+The closure turns external repo/folder absorption from narrative-only closure
+into a machine-checked evidence-shape requirement: manifest, processing
+ledger, allowed statuses, disposition taxonomy, owner-surface map,
+unresolved-items visibility, external knowledge intake routing, and non-N/A
+corpus completeness evidence.
+
+Current mode:
+`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
+
+Next allowed move: resume full reabsorption of
+`.private_reference/legacy/CVF 28.06/` using the External Absorption Core
+standard and checker. If no other operator target is selected, start with
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `80a87e45`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, Agent Skills plugin import, slash command
+import, persona orchestration, package activation, resolver mutation, CLI/MCP
+adapter, benchmark, security certification, production-readiness, or automatic
+skill invocation.

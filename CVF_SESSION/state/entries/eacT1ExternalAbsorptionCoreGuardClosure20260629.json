@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1316,
+  "stateKey": "eacT1ExternalAbsorptionCoreGuardClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "80a87e45",
+    "standard": "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md",
+    "checker": "governance/compat/check_external_absorption_core.py",
+    "tests": "governance/compat/test_check_external_absorption_core.py",
+    "completionReview": "docs/reviews/CVF_EAC_T1_EXTERNAL_ABSORPTION_CORE_GUARD_COMPLETION_2026-06-29.md",
+    "chainMap": "docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md",
+    "decision": "CLOSE_EAC_T1_EXTERNAL_ABSORPTION_CORE_GUARD",
+    "nextAllowedMove": "RESUME_CVF_2806_REABSORPTION_WITH_EXTERNAL_ABSORPTION_CORE",
+    "summary": "EAC-T1 closes a central governance refactor for external repo/folder absorption. It adds a machine-checked External Absorption Core standard requiring manifest, processing ledger, allowed status/disposition taxonomy, owner-surface mapping, unresolved-items visibility, External Knowledge Intake Routing, and non-N/A Corpus Completeness And Report Integrity evidence for changed external absorption artifacts. Boundary: offline governance evidence-shape checker only; no semantic-completeness, runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim."
+  }
+}

@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=operator may select the next external repo/folder absorption target or ask for a high-value roadmap audit; parked checkpoint=AGSG-T1 through T3 closed at material commit `66eb39ac`; AGSG-BSH-T1 blind-spot presence checker closed at material commit `328de12b`; ADIF-0015 recorded at material commit `a8f45aa7`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`, the 2026-06-28 retained external source folders are consolidated under `.private_reference/legacy/CVF 28.06/`, and runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+Startup acknowledged: current mode=`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=resume full reabsorption of `.private_reference/legacy/CVF 28.06/` with the External Absorption Core manifest/ledger standard and checker; parked checkpoint=EAC-T1 external absorption core guard closed at material commit `80a87e45`; AGSG-BSH-T1 blind-spot presence checker closed at material commit `328de12b`; retained upstream clone is `.private_reference/external_repos/agent-skills` at `addyosmani/agent-skills@30e55cb`, retained local folder is `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`, and runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
 
 ## Current Mode
 
-Current mode marker: `agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`
+Current mode marker: `eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
 
-Current mode: `agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`
+Current mode: `eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
 
-`agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`
+`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
 
 Previous mode:
 
-`agsg_bsh_t1_blindspot_presence_dispatch_packet_hold_pending_executor`
+`agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`
 
 ## Latest Closed Work
 
@@ -113,12 +113,13 @@ Previous mode:
 | Agent Skills Governance / AGSG-T1-T3 absorption closeout | `66eb39ac` | CLOSED_PASS_BOUNDED; decision `CLOSE_AGSG_ABSORPTION_LANE_NO_CHECKER_NOW` |
 | AGSG-BSH-T1 blind-spot presence checker | `328de12b` | CLOSED_PASS_BOUNDED; ADIF-0014 machine-checked |
 | ADIF-0015 declared-route-vs-execution-behavior record | `a8f45aa7` | ACTIVE_ADIF_RECORD |
+| EAC-T1 external absorption core guard | `80a87e45` | CLOSED_PASS_BOUNDED; external repo/folder absorption now requires machine-checked manifest/ledger core |
 
 ## Next Allowed Move
 
-Mode: `agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection`
+Mode: `eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
 
-Next allowed move: operator may select the next external repo/folder absorption target or ask for a high-value roadmap audit. AGSG-BSH-T1 is `CLOSED_PASS_BOUNDED` after material commit `328de12b`; ADIF-0014 is machine-checked there and ADIF-0015 remains active guidance from material commit `a8f45aa7`. The closure authorizes only an offline governance checker: no runtime skill activation, plugin import, slash-command import, persona orchestration, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, or automatic safe skill invocation claim is authorized now. Retained 2026-06-28 external source folders are consolidated under `.private_reference/legacy/CVF 28.06/`, with the AGSG local folder at `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: resume full reabsorption of the 2026-06-28 retained external source folders under `.private_reference/legacy/CVF 28.06/` using `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` and `governance/compat/check_external_absorption_core.py`. If no other operator target is selected, start with `.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack` and produce a manifest, processing ledger, owner-surface map, unresolved-items list, `Corpus Completeness And Report Integrity` block, and `External Knowledge Intake Routing` block before any completion claim. EAC-T1 is `CLOSED_PASS_BOUNDED` at material commit `80a87e45`; AGSG-BSH-T1 remains closed at material commit `328de12b`; LHW24 remains the latest closed numbered LHW wave. No runtime skill activation, plugin import, slash-command import, persona orchestration, package instance, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, benchmark, security certification, production-readiness, or automatic safe skill invocation claim is authorized now.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 

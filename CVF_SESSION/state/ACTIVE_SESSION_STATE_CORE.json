@@ -66,8 +66,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection",
-  "previousMode": "agsg_bsh_t1_blindspot_presence_dispatch_packet_hold_pending_executor",
+  "currentMode": "eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption",
+  "previousMode": "agsg_bsh_t1_blindspot_presence_checker_closed_pass_bounded_pending_next_external_absorption_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
