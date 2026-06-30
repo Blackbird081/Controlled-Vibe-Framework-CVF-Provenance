@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t2_activation_policy_closed_pending_ascp_t3_cli_mcp_adapter`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=ASCP-T3 CLI/MCP adapter projection through fresh GC-018/work order; parked checkpoint=ASCP-T2 closed at material commit `4d87c832`; ADIF-CLI-T1 closed at `0183e04f`; ASCP-T1 closed at `ddb65952`; SKUSE-T1 closed at `211c7bdb`; SKSOT-T1 closed at `c2278349`; EPSOT-T1 closed at `701ebd94`; AGSK-R7 closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=ASCP-T4 package lifecycle source-state decision through fresh GC-018/work order; parked checkpoint=ASCP-T3 closed at material commit `a5ab2689`; ASCP-T2 closed at `4d87c832`; ADIF-CLI-T1 closed at `0183e04f`; ASCP-T1 closed at `ddb65952`; SKUSE-T1 closed at `211c7bdb`; SKSOT-T1 closed at `c2278349`; EPSOT-T1 closed at `701ebd94`; AGSK-R7 closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `ascp_t2_activation_policy_closed_pending_ascp_t3_cli_mcp_adapter`
+Current mode marker: `ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`
 
-Current mode: `ascp_t2_activation_policy_closed_pending_ascp_t3_cli_mcp_adapter`
+Current mode: `ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`
 
-`ascp_t2_activation_policy_closed_pending_ascp_t3_cli_mcp_adapter`
+`ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`
 
 Previous mode:
 
-`adif_cli_t1_closed_pending_ascp_t2_activation_policy`
+`ascp_t2_activation_policy_closed_pending_ascp_t3_cli_mcp_adapter`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ASCP-T3 CLI/MCP adapter projection | `a5ab2689` | CLOSED_PASS_BOUNDED; added bounded `EXTERNAL_AGENT_CLI_MCP` metadata/policy projection helper, standard, tests, and roadmap update; projection emits `IMPLEMENTED_BOUNDED_PROJECTION`, exposes allowlisted metadata plus activation policy state, and denies external body reads/output use; no package body read, lifecycle mutation, skill usage receipt emission or consumption, provider/live proof, public-sync, or production claim |
 | ASCP-T2 activation policy semantics | `4d87c832` | CLOSED_PASS_BOUNDED; added activation policy semantics standard, bounded policy resolver helper, focused tests, and roadmap update; states now distinguish `SELECTED`, `ACTIVATION_READY`, `BODY_READ_REQUESTED`, `USED_WITH_RECEIPT`, `BODY_READ_DENIED`, and `USED_WITHOUT_RECEIPT_DENIED`; no package body read, lifecycle mutation, adapter implementation, provider/live proof, public-sync, or production claim |
 | ADIF-CLI-T1 CLI classification and entrypoints | `0183e04f` | CLOSED_PASS_BOUNDED; added CLI `main()` entrypoints for ADIF defect resolver, ADIF preflight readout, and ADIF finding-intake bridge; added CLI surface classification standard, JSON registry, checker, and tests; classification checker reports 9 entries and 0 violations; no ADIF entry mutation, ASSF activation, MCP adapter, provider/live proof, public-sync, or production claim |
 | ASCP-T1 active resolver pilot | `ddb65952` | CLOSED_PASS_BOUNDED; added read-only active resolver decision helper and focused tests; resolver combines generated ASSF metadata, approved STRICT truth index records, and runtime loader eligibility without package body reads; smoke observed 32 generated candidates and 6 `ACTIVATION_READY` packages; no lifecycle mutation, package body read, adapter, provider/live proof, public-sync, or production claim |
@@ -144,30 +145,33 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `ascp_t2_activation_policy_closed_pending_ascp_t3_cli_mcp_adapter`
+Mode: `ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`
 
-Next allowed move: ASCP-T3 CLI/MCP adapter projection using resolver output and
-the external readout allowlist, through fresh GC-018/work order. ASCP-T2
-activation policy semantics closed at material commit `4d87c832`; ADIF-CLI-T1
-closed at material commit `0183e04f`; ASCP-T1 active resolver pilot closed at
-material commit `ddb65952`; SKUSE-T1 skill usage receipt trace closed at
-material commit `211c7bdb`; SKSOT-T1 skill truth packet foundation closed at
-material commit `c2278349`; EPSOT-T1 provider skill trace guard closed at
-material commit `701ebd94`; AGSK-R7 runtime package batch promotion closed at
-material commit `19feb1f1`; AGSK-R6 code-review-quality pilot promotion closed
-at material commit `8caef205`; AGSK-R5 runtime eligibility audit closed at
-material commit `3a742e6e`; AGSK-R4 runtime package loader closed at material
-commit `416eb689`; AGSK-R3 package roots closed at material commit `4003289a`.
+Next allowed move: ASCP-T4 package lifecycle source-state decision through
+fresh GC-018/work order, deciding whether any package lifecycle source should
+move to `ACTIVE` after ASCP-T1 through ASCP-T3 evidence. ASCP-T3 CLI/MCP
+adapter projection closed at material commit `a5ab2689`; ASCP-T2 activation
+policy semantics closed at material commit `4d87c832`; ADIF-CLI-T1 closed at
+material commit `0183e04f`; ASCP-T1 active resolver pilot closed at material
+commit `ddb65952`; SKUSE-T1 skill usage receipt trace closed at material commit
+`211c7bdb`; SKSOT-T1 skill truth packet foundation closed at material commit
+`c2278349`; EPSOT-T1 provider skill trace guard closed at material commit
+`701ebd94`; AGSK-R7 runtime package batch promotion closed at material commit
+`19feb1f1`; AGSK-R6 code-review-quality pilot promotion closed at material
+commit `8caef205`; AGSK-R5 runtime eligibility audit closed at material commit
+`3a742e6e`; AGSK-R4 runtime package loader closed at material commit
+`416eb689`; AGSK-R3 package roots closed at material commit `4003289a`.
 LHW24 remains the latest closed numbered LHW wave.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
 eligible package roots, 6 `ACTIVATION_READY` resolver decisions, activation
-policy states for selected/ready/body-read/use classification, deterministic
-loader receipts for explicit eligible body reads, and 18 remaining package roots blocked by
+policy states for selected/ready/body-read/use classification, bounded
+external metadata/policy projection, deterministic loader receipts for explicit
+eligible body reads, and 18 remaining package roots blocked by
 `certificationState=NOT_STARTED`,
 `uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
 package activation, automatic skill invocation telemetry outside the bounded
-loader, package lifecycle mutation, provider/live proof, public-sync,
+loader, package lifecycle mutation before ASCP-T4 authorization, provider/live proof, public-sync,
 direct import, merge authority, commit authority, or production-readiness claim
 is authorized.
 
