@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T1 SOP closed at material commit `693608cb`, with ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
+Startup acknowledged: current mode=`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T2 pipeline guard closed at material commit `eaadc5ed`, with PKGSOP-T1 SOP at `693608cb` and ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
 
 ## Current Mode
 
-Current mode marker: `pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
+Current mode marker: `pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
 
-Current mode: `pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
+Current mode: `pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
 
-`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
+`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
+`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| PKGSOP-T2 package skill productionization pipeline guard | `eaadc5ed` | CLOSED_PASS_BOUNDED; added `governance/compat/check_package_skill_productionization_pipeline.py`, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring; package-skill artifacts now require `Package Skill Productionization Control Block` evidence before lifecycle/package/truth/ACTIVE production claims; no package conversion, lifecycle mutation, runtime helper behavior change, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or production-readiness expansion |
 | PKGSOP-T1 package skill productionization SOP | `693608cb` | CLOSED_PASS_BOUNDED; added the standard SOP from external repo or Learning Plane intake through ASSF metadata candidate, package root, UAT/certification, SKSOT truth packet, usage receipt readiness, resolver/projection, use-proof, and production runtime admission; documentation-only, no package conversion, lifecycle mutation, runtime helper, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or action authority |
 | ASCP-P1-P3 runtime package skills productionization | `43e4092f` | CLOSED_PASS_BOUNDED; six runtime-eligible package skills are ACTIVE and production-scoped through ASSF production executor and CLI/MCP adapter; live proof passed with `alibaba-dashscope`, `deepseek-v4-flash`, HTTP 200, production receipt `sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5`; remaining 18 package conversions, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or broader production-readiness claim require fresh GC-018/source-verified work order |
 | ASCP-T5 provider/model selection use case | `c15d9bd6` | CLOSED_PASS_BOUNDED; upgraded ASCP-T5 package use-proof selection from model-only to bounded provider-and-model selection; default provider resolves to `alibaba-dashscope`, unsupported providers are denied before package body read or provider call, live proof passed with `deepseek-v4-flash`, HTTP 200, latency 11031 ms, use-proof receipt `sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1`; this is an ASCP-T5 Model Gateway use case only, not a production Model Gateway/model router |
@@ -151,14 +152,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
+Mode: `pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value package-skill lane.
 Remaining package conversions, full MCP server, production Model Gateway/model
 router, provider registry mutation, public-sync, or broader
 production-readiness claim requires fresh GC-018/source-verified work order and
 live/provider proof when governance behavior is claimed. PKGSOP-T1 package
-skill productionization SOP closed at material commit `693608cb`. ASCP-P1-P3
+skill productionization SOP closed at material commit `693608cb`. PKGSOP-T2
+package skill productionization pipeline guard closed at material commit
+`eaadc5ed` and is wired into autorun, reviewer-fast, pre-commit, and pre-push.
+ASCP-P1-P3
 runtime package skills productionization remains the six-package production
 baseline at material commit `43e4092f`; ASCP-T5 provider/model selection use
 case closed at material commit `c15d9bd6`; ASCP-T5 corrective patch closed at

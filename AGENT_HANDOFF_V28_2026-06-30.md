@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T1 SOP closed at material commit `693608cb`, with ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
+Startup acknowledged: current mode=`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T2 pipeline guard closed at material commit `eaadc5ed`, with PKGSOP-T1 SOP at `693608cb` and ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`pkgsop_t1_package_skill_productionization_so
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `693608cb` PKGSOP-T1 package skill productionization SOP |
-| Latest session-sync target | session sync after PKGSOP-T1 material closure |
+| Latest material closeout | `eaadc5ed` PKGSOP-T2 package skill productionization pipeline guard |
+| Latest session-sync target | session sync after PKGSOP-T2 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
+`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -36,10 +36,10 @@ boundary, and next-move boundary.
 
 ## Scope / Target / Owner Boundary
 
-Target: maintain active session continuity after PKGSOP-T1 and preserve the
-package-skill SOP, bounded production package runtime, skill usage receipt
-trace, skill truth packet, provider-skill trace, and package-loader claim
-boundaries.
+Target: maintain active session continuity after PKGSOP-T2 and preserve the
+package-skill pipeline guard, package-skill SOP, bounded production package
+runtime, skill usage receipt trace, skill truth packet, provider-skill trace,
+and package-loader claim boundaries.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize remaining package conversion, full MCP server,
@@ -63,6 +63,42 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 External agent memory files: non-canonical convenience only.
+
+## Core Guard Self-Protection Authorization - PKGSOP-T2 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+PKGSOP-T2 material commit `eaadc5ed`, regenerate active session state, and
+align front-door, bootstrap read model, and active handoff next-move wording.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/pkgSopT2PackageSkillPipelineGuardClosure20260630.json`
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+
+Operator authorization: session-sync follows operator-requested PKGSOP-T2
+package skill productionization pipeline guard closure.
+
+Rollback boundary: revert this session-sync commit only; do not revert
+PKGSOP-T2 material commit `eaadc5ed`, PKGSOP-T1 material commit `693608cb`,
+ASCP-P1-P3 material commit `43e4092f`, ASCP-T5 commits, package roots, truth
+packets, or generated ASSF indexes.
+
+## GC-020 Marker - PKGSOP-T2 Package Skill Pipeline Guard Material Closure
+
+Material commit `eaadc5ed` closed PKGSOP-T2 package skill productionization
+pipeline guard. Full material SHA:
+`eaadc5ed172a6afcfb35ac5fcf80a4c5cb8ded8e`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`eaadc5ed`. It does not authorize package conversion, lifecycle mutation,
+runtime helper behavior change, provider calls, production Model Gateway/model
+router, provider registry mutation, public-sync, or production-readiness
+expansion.
 
 ## Core Guard Self-Protection Authorization - PKGSOP-T1 Session Sync
 

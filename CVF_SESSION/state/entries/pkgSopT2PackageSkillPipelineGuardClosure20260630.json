@@ -1,0 +1,30 @@
+{
+  "stateOrder": 648,
+  "stateKey": "pkgSopT2PackageSkillPipelineGuardClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "eaadc5ed",
+    "fullMaterialCommit": "eaadc5ed172a6afcfb35ac5fcf80a4c5cb8ded8e",
+    "baseline": "docs/baselines/CVF_GC018_PKGSOP_T2_PACKAGE_SKILL_PIPELINE_GUARD_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PKGSOP_T2_PACKAGE_SKILL_PIPELINE_GUARD_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_PKGSOP_T2_PACKAGE_SKILL_PIPELINE_GUARD_COMPLETION_2026-06-30.md",
+    "checker": "governance/compat/check_package_skill_productionization_pipeline.py",
+    "test": "governance/compat/test_check_package_skill_productionization_pipeline.py",
+    "catalogBindings": [
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_pre_push.py"
+    ],
+    "scope": "read-only machine guard requiring package-skill productionization pipeline evidence and preventing lifecycle/package/truth/ACTIVE skip claims",
+    "verification": [
+      "focused unittest PASS: python -m unittest governance.compat.test_check_package_skill_productionization_pipeline",
+      "checker smoke PASS: python governance/compat/check_package_skill_productionization_pipeline.py --base 046ba66d --head HEAD --enforce",
+      "pre-dispatch autorun PASS",
+      "pre-implementation autorun PASS",
+      "implementation commit steward PASS",
+      "pre-commit hook PASS 70/70 before material commit"
+    ],
+    "claimBoundary": "checker and governed artifacts only; no package conversion, lifecycle mutation, runtime helper behavior change, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or production-readiness expansion."
+  }
+}
