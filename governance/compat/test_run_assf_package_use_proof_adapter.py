@@ -154,9 +154,9 @@ class PackageUseProofAdapterTests(unittest.TestCase):
                     "statusAtCapture": "Enabled",
                 },
                 {
-                    "modelCode": "qwen3.7-plus",
-                    "expirationDate": "2026-08-31",
-                    "freeQuotaRemaining": 998474,
+                    "modelCode": "qwen3.6-flash-2026-04-16",
+                    "expirationDate": "2026-07-16",
+                    "freeQuotaRemaining": 998675,
                     "freeQuotaTotal": 1000000,
                     "statusAtCapture": "Enabled",
                     "diagnosticRerun": {"result": "PASS"},
@@ -184,7 +184,20 @@ class PackageUseProofAdapterTests(unittest.TestCase):
             "DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF",
         )
         self.assertEqual(packet["executionMode"], "DRY_RUN_NO_PROVIDER_CALL")
-        self.assertEqual(packet["model"], "qwen3.7-plus")
+        self.assertEqual(packet["provider"], "alibaba-dashscope")
+        self.assertEqual(
+            packet["providerSelection"]["requestedProvider"],
+            "AUTO_FROM_ASSF_LIVE_PROVIDER_CANDIDATES",
+        )
+        self.assertEqual(
+            packet["providerSelection"]["resolvedProvider"],
+            "alibaba-dashscope",
+        )
+        self.assertEqual(
+            packet["providerSelection"]["providerStatus"],
+            "PROVIDER_USABLE",
+        )
+        self.assertEqual(packet["model"], "qwen3.6-flash-2026-04-16")
         self.assertEqual(
             packet["modelSelection"]["status"],
             "MODEL_FREE_QUOTA_USABLE",
@@ -203,7 +216,7 @@ class PackageUseProofAdapterTests(unittest.TestCase):
     def test_live_fake_provider_emits_use_proof_receipt(self) -> None:
         def fake_caller(payload: dict, api_key: str, timeout_seconds: int):
             self.assertEqual(api_key, "test-key")
-            self.assertEqual(payload["model"], "qwen3.7-plus")
+            self.assertEqual(payload["model"], "qwen3.6-flash-2026-04-16")
             self.assertGreater(timeout_seconds, 0)
             return MODULE.ProviderResult(
                 http_status=200,
@@ -235,7 +248,7 @@ class PackageUseProofAdapterTests(unittest.TestCase):
         )
         self.assertEqual(receipt["skillId"], self.skill_id)
         self.assertEqual(receipt["provider"], "alibaba-dashscope")
-        self.assertEqual(receipt["model"], "qwen3.7-plus")
+        self.assertEqual(receipt["model"], "qwen3.6-flash-2026-04-16")
         self.assertTrue(receipt["skillUsageReceiptId"].startswith("sha256:"))
         self.assertEqual(packet["liveCall"]["providerTraceId"], "req-test")
         self.assertIsNone(packet["diagnostic"])
@@ -252,6 +265,34 @@ class PackageUseProofAdapterTests(unittest.TestCase):
             "MODEL_FREE_QUOTA_NOT_VERIFIED",
         )
         self.assertEqual(packet["diagnostic"]["stage"], "model_selection")
+        self.assertNotIn("packageRead", packet)
+
+    def test_provider_alias_normalizes_to_dashscope_candidate(self) -> None:
+        packet = self._packet(provider="alibaba")
+
+        self.assertEqual(
+            packet["executionDisposition"],
+            "DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF",
+        )
+        self.assertEqual(packet["provider"], "alibaba-dashscope")
+        self.assertEqual(packet["providerSelection"]["requestedProvider"], "alibaba")
+        self.assertEqual(
+            packet["providerSelection"]["resolvedProvider"],
+            "alibaba-dashscope",
+        )
+
+    def test_unsupported_provider_is_denied_before_package_read(self) -> None:
+        packet = self._packet(provider="deepseek", live=True)
+
+        self.assertEqual(
+            packet["executionDisposition"],
+            "LIVE_PROVIDER_DENIED_PROVIDER_SELECTION",
+        )
+        self.assertEqual(packet["diagnostic"]["stage"], "provider_selection")
+        self.assertEqual(
+            packet["diagnostic"]["class"],
+            "PROVIDER_NOT_SOURCE_BACKED_FOR_ASSF_USE_CASE",
+        )
         self.assertNotIn("packageRead", packet)
 
     def test_live_missing_key_returns_secret_safe_diagnostic(self) -> None:
@@ -310,6 +351,22 @@ class PackageUseProofAdapterTests(unittest.TestCase):
             packet["executionDisposition"],
             "DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF",
         )
+
+    def test_json_output_is_ascii_safe_for_windows_stdout(self) -> None:
+        def fake_caller(payload: dict, api_key: str, timeout_seconds: int):
+            return MODULE.ProviderResult(
+                http_status=200,
+                headers={"x-request-id": "req-test"},
+                body={"choices": [{"message": {"content": "Use <= and unicode \u2264 safely"}}]},
+                latency_ms=123,
+            )
+
+        with patch.dict(os.environ, {"DASHSCOPE_API_KEY": "test-key"}, clear=False):
+            packet = self._packet(live=True, live_caller=fake_caller)
+        encoded = json.dumps(packet, ensure_ascii=True, indent=2)
+
+        self.assertIn("\\u2264", encoded)
+        encoded.encode("cp1252")
 
 
 if __name__ == "__main__":

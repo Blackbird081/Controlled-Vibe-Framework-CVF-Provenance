@@ -1,4 +1,4 @@
-"""ASSF live-provider free-quota model selection helpers."""
+"""ASSF live provider/model selection helpers."""
 
 from __future__ import annotations
 
@@ -10,6 +10,9 @@ from typing import Any
 
 
 AUTO_FREE_QUOTA_MODEL = "AUTO_FROM_ALIBABA_FREE_QUOTA_LEDGER"
+AUTO_PROVIDER = "AUTO_FROM_ASSF_LIVE_PROVIDER_CANDIDATES"
+ALIBABA_PROVIDER = "alibaba-dashscope"
+ALIBABA_PROVIDER_ALIASES = frozenset({ALIBABA_PROVIDER, "alibaba"})
 
 
 @dataclass(frozen=True)
@@ -18,6 +21,9 @@ class ModelSelection:
     resolved_model: str | None
     status: str
     ledger_path: Path
+    requested_provider: str = AUTO_PROVIDER
+    resolved_provider: str | None = ALIBABA_PROVIDER
+    provider_status: str = "PROVIDER_USABLE"
     expiration_date: str | None = None
     free_quota_remaining: int | None = None
     diagnostic_rerun_result: str | None = None
@@ -33,6 +39,9 @@ class ModelSelection:
         else:
             ledger_path_text = ledger_path.as_posix()
         return {
+            "requestedProvider": self.requested_provider,
+            "resolvedProvider": self.resolved_provider,
+            "providerStatus": self.provider_status,
             "requestedModel": self.requested_model,
             "resolvedModel": self.resolved_model,
             "status": self.status,
@@ -75,6 +84,8 @@ def _load_free_quota_models(ledger_path: Path) -> list[dict[str, Any]]:
 
 def _entry_to_selection(
     *,
+    requested_provider: str,
+    resolved_provider: str,
     requested_model: str,
     entry: dict[str, Any],
     ledger_path: Path,
@@ -86,6 +97,9 @@ def _entry_to_selection(
     if remaining is None:
         remaining = entry.get("freeQuotaRemainingAtCapture")
     return ModelSelection(
+        requested_provider=requested_provider,
+        resolved_provider=resolved_provider,
+        provider_status="PROVIDER_USABLE",
         requested_model=requested_model,
         resolved_model=model_id,
         status=status,
@@ -103,6 +117,44 @@ def resolve_free_quota_model(
     ledger_path: Path,
     today: date | None = None,
 ) -> ModelSelection:
+    return resolve_provider_model(
+        requested_provider=ALIBABA_PROVIDER,
+        requested_model=requested_model,
+        ledger_path=ledger_path,
+        today=today,
+    )
+
+
+def resolve_provider_model(
+    *,
+    requested_provider: str,
+    requested_model: str,
+    ledger_path: Path,
+    today: date | None = None,
+) -> ModelSelection:
+    if requested_provider == AUTO_PROVIDER:
+        resolved_provider = ALIBABA_PROVIDER
+        provider_reason = (
+            "auto-selected the only source-backed ASCP-T5 live provider candidate"
+        )
+    elif requested_provider in ALIBABA_PROVIDER_ALIASES:
+        resolved_provider = ALIBABA_PROVIDER
+        provider_reason = None
+    else:
+        return ModelSelection(
+            requested_provider=requested_provider,
+            resolved_provider=None,
+            provider_status="PROVIDER_NOT_SOURCE_BACKED_FOR_ASSF_USE_CASE",
+            requested_model=requested_model,
+            resolved_model=None,
+            status="PROVIDER_MODEL_NOT_USABLE",
+            ledger_path=ledger_path,
+            reason=(
+                "provider is not implemented as a source-backed ASCP-T5 "
+                "live provider/model selection candidate"
+            ),
+        )
+
     now = today or date.today()
     models = _load_free_quota_models(ledger_path)
     by_model = {
@@ -122,6 +174,9 @@ def resolve_free_quota_model(
         entry = by_model.get(requested_model)
         if entry is None:
             return ModelSelection(
+                requested_provider=requested_provider,
+                resolved_provider=resolved_provider,
+                provider_status="PROVIDER_USABLE",
                 requested_model=requested_model,
                 resolved_model=None,
                 status="MODEL_FREE_QUOTA_NOT_VERIFIED",
@@ -131,12 +186,16 @@ def resolve_free_quota_model(
         if not is_usable(entry):
             return _entry_to_selection(
                 requested_model=requested_model,
+                requested_provider=requested_provider,
+                resolved_provider=resolved_provider,
                 entry=entry,
                 ledger_path=ledger_path,
                 status="MODEL_FREE_QUOTA_EXPIRED",
                 reason="model expiration date is before the current run date",
             )
         return _entry_to_selection(
+            requested_provider=requested_provider,
+            resolved_provider=resolved_provider,
             requested_model=requested_model,
             entry=entry,
             ledger_path=ledger_path,
@@ -146,6 +205,9 @@ def resolve_free_quota_model(
     candidates = [entry for entry in models if is_usable(entry)]
     if not candidates:
         return ModelSelection(
+            requested_provider=requested_provider,
+            resolved_provider=resolved_provider,
+            provider_status="PROVIDER_USABLE",
             requested_model=requested_model,
             resolved_model=None,
             status="NO_USABLE_FREE_QUOTA_MODEL",
@@ -161,16 +223,21 @@ def resolve_free_quota_model(
         diagnostic_pass = 1 if _diagnostic_result(entry) == "PASS" else 0
         return (
             diagnostic_pass,
-            expiration or date.min,
             remaining if isinstance(remaining, int) else 0,
+            expiration or date.min,
             _ledger_entry_model_id(entry) or "",
         )
 
     selected = max(candidates, key=sort_key)
     return _entry_to_selection(
+        requested_provider=requested_provider,
+        resolved_provider=resolved_provider,
         requested_model=requested_model,
         entry=selected,
         ledger_path=ledger_path,
         status="MODEL_FREE_QUOTA_USABLE",
-        reason="auto-selected from unexpired Alibaba free-quota ledger entries",
+        reason=(
+            provider_reason
+            or "auto-selected from unexpired Alibaba free-quota ledger entries"
+        ),
     )

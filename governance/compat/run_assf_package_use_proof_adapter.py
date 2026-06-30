@@ -37,7 +37,8 @@ try:
     from live_provider_bootstrap import bootstrap_live_provider_env
     from assf_live_model_selection import (
         AUTO_FREE_QUOTA_MODEL,
-        resolve_free_quota_model,
+        AUTO_PROVIDER,
+        resolve_provider_model,
     )
 except ModuleNotFoundError:
     from governance.compat.run_assf_activation_policy_resolver import (
@@ -53,7 +54,8 @@ except ModuleNotFoundError:
     from governance.compat.live_provider_bootstrap import bootstrap_live_provider_env
     from governance.compat.assf_live_model_selection import (
         AUTO_FREE_QUOTA_MODEL,
-        resolve_free_quota_model,
+        AUTO_PROVIDER,
+        resolve_provider_model,
     )
 
 
@@ -71,8 +73,7 @@ LIVE_PROVIDER_MODE = "LIVE_PROVIDER_USE_PROOF"
 DRY_RUN_MODE = "DRY_RUN_NO_PROVIDER_CALL"
 PROOF_RECEIPT_TYPE = "CVF_ASSF_PACKAGE_USE_PROOF_RECEIPT"
 DEFAULT_SKILL_ID = "cvf-engineering-spec-driven-development"
-DEFAULT_PROVIDER = "alibaba-dashscope"
-AUTO_FREE_QUOTA_MODEL = "AUTO_FROM_ALIBABA_FREE_QUOTA_LEDGER"
+DEFAULT_PROVIDER = AUTO_PROVIDER
 DEFAULT_MODEL = AUTO_FREE_QUOTA_MODEL
 DEFAULT_ENDPOINT = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions"
 FREE_QUOTA_LEDGER_PATH = (
@@ -322,10 +323,12 @@ def build_package_use_proof_packet(
         raise ValueError("max_output_chars must be a positive integer")
 
     requested_model = model
-    model_selection = resolve_free_quota_model(
+    model_selection = resolve_provider_model(
+        requested_provider=provider,
         requested_model=requested_model,
         ledger_path=free_quota_ledger_path,
     )
+    resolved_provider = model_selection.resolved_provider or provider
     resolved_model = model_selection.resolved_model or requested_model
     loaded_env_files = _safe_loaded_env_files() if live else []
     base: dict[str, Any] = {
@@ -335,7 +338,7 @@ def build_package_use_proof_packet(
         "lifecycleMutation": False,
         "activePromotionAuthorized": False,
         "sourceMutations": [],
-        "provider": provider,
+        "provider": resolved_provider,
         "model": resolved_model,
         "skillId": skill_id,
         "sourcePaths": {
@@ -348,8 +351,30 @@ def build_package_use_proof_packet(
             "freeQuotaLedger": _relative_path(free_quota_ledger_path),
         },
         "modelSelection": model_selection.to_dict(relative_to=REPO_ROOT),
+        "providerSelection": {
+            "requestedProvider": model_selection.requested_provider,
+            "resolvedProvider": model_selection.resolved_provider,
+            "providerStatus": model_selection.provider_status,
+            "selectionBoundary": (
+                "ASCP-T5 Model Gateway use case only; not a production model router"
+            ),
+        },
         "safeLoadedEnvFiles": loaded_env_files,
     }
+
+    if model_selection.provider_status != "PROVIDER_USABLE":
+        base["executionDisposition"] = "LIVE_PROVIDER_DENIED_PROVIDER_SELECTION"
+        base["diagnostic"] = _diagnostic(
+            stage="provider_selection",
+            failure_class=model_selection.provider_status,
+            retryable=True,
+            user_action="select a source-backed ASCP-T5 live provider candidate",
+            provider=resolved_provider,
+            model=requested_model,
+            safe_message=model_selection.reason
+            or "Requested provider is not usable for ASCP-T5 live proof.",
+        )
+        return base
 
     if model_selection.status != "MODEL_FREE_QUOTA_USABLE":
         base["executionDisposition"] = "LIVE_PROVIDER_DENIED_MODEL_FREE_QUOTA"
@@ -358,7 +383,7 @@ def build_package_use_proof_packet(
             failure_class=model_selection.status,
             retryable=True,
             user_action="select an unexpired model from the Alibaba free-quota ledger",
-            provider=provider,
+            provider=resolved_provider,
             model=requested_model,
             safe_message=model_selection.reason
             or "Requested model is not usable for free-quota live proof.",
@@ -412,7 +437,7 @@ def build_package_use_proof_packet(
             failure_class="missing_skill_usage_receipt",
             retryable=False,
             user_action="use a runtime-eligible package and request body read through the loader",
-            provider=provider,
+            provider=resolved_provider,
             model=resolved_model,
             safe_message="Package body was not loaded with a matching skill usage receipt.",
         )
@@ -445,7 +470,7 @@ def build_package_use_proof_packet(
             failure_class="policy_use_without_receipt",
             retryable=False,
             user_action="provide a matching CVF_ASSF_SKILL_USAGE_RECEIPT",
-            provider=provider,
+            provider=resolved_provider,
             model=resolved_model,
             receipt_id=str(usage_receipt.get("receiptId", "")),
             safe_message="Activation policy did not classify the package as USED_WITH_RECEIPT.",
@@ -481,7 +506,7 @@ def build_package_use_proof_packet(
             failure_class="missing_live_provider_key",
             retryable=True,
             user_action="set DASHSCOPE_API_KEY or an accepted Alibaba alias",
-            provider=provider,
+            provider=resolved_provider,
             model=resolved_model,
             receipt_id=str(usage_receipt.get("receiptId", "")),
             safe_message="No DashScope-compatible live key was available.",
@@ -505,7 +530,7 @@ def build_package_use_proof_packet(
             failure_class=exc.__class__.__name__,
             retryable=True,
             user_action="inspect provider availability and retry once if transient",
-            provider=provider,
+            provider=resolved_provider,
             model=resolved_model,
             receipt_id=str(usage_receipt.get("receiptId", "")),
             safe_message=str(exc)[:400],
@@ -533,7 +558,7 @@ def build_package_use_proof_packet(
             failure_class="provider_error_or_empty_output",
             retryable=result.http_status is None or result.http_status >= 500,
             user_action="inspect safe provider response metadata before rerun",
-            provider=provider,
+            provider=resolved_provider,
             model=resolved_model,
             http_status=result.http_status,
             latency_ms=result.latency_ms,
@@ -547,7 +572,7 @@ def build_package_use_proof_packet(
         skill_id=skill_id,
         skill_usage_receipt_id=str(usage_receipt.get("receiptId", "")),
         policy_receipt_id=str(policy_receipt.get("receiptId", "")),
-        provider=provider,
+        provider=resolved_provider,
         model=resolved_model,
         http_status=result.http_status,
         latency_ms=result.latency_ms,
@@ -613,7 +638,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     if args.json:
-        print(json.dumps(packet, ensure_ascii=False, indent=2))
+        print(json.dumps(packet, ensure_ascii=True, indent=2))
     else:
         print("ASSF package use-proof adapter")
         print(f"Skill: {packet.get('skillId')}")
@@ -630,7 +655,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.receipt_out is not None:
         args.receipt_out.parent.mkdir(parents=True, exist_ok=True)
         args.receipt_out.write_text(
-            json.dumps(packet, ensure_ascii=False, indent=2) + "\n",
+            json.dumps(packet, ensure_ascii=True, indent=2) + "\n",
             encoding="utf-8",
         )
     return 0 if packet.get("executionDisposition") in {

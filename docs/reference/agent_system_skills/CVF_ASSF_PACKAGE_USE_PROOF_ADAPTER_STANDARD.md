@@ -90,7 +90,23 @@ name used as credential source.
 
 ## Live Model Selection Guard
 
-Alibaba/DashScope free-quota live proof must select a model from
+ASCP-T5 live proof is a bounded Model Gateway use case. The adapter may
+auto-select provider and model for this use case only, but this is not a
+production model router.
+
+Binding provider rules:
+
+- the default provider selection is `AUTO_FROM_ASSF_LIVE_PROVIDER_CANDIDATES`;
+- auto-selection may resolve only to source-backed provider candidates declared
+  by the ASCP-T5 selector helper;
+- the only current source-backed provider candidate is
+  `alibaba-dashscope`;
+- unsupported providers must return `PROVIDER_NOT_SOURCE_BACKED_FOR_ASSF_USE_CASE`
+  before package body read or provider call;
+- provider selection output must include a boundary stating that the selection
+  is ASCP-T5 use-case scoped and not a production model router.
+
+Alibaba/DashScope free-quota live proof must select its model from
 `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json`
 using the `models` array only.
 
@@ -124,7 +140,8 @@ This prevents nested helper execution from reporting a false
 | Activation policy resolver requires matching usage receipt for consumed output | `governance/compat/run_assf_activation_policy_resolver.py` | `_state_for`; `build_activation_policy_packet` | `USED_WITH_RECEIPT` | activation policy resolver | RUNTIME_BEHAVIOR | ACCEPT |
 | Live key loader accepts repo env files and aliases without printing values | `scripts/_local_env.py`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/alibaba-env.ts` | `DEFAULT_ENV_FILES`; `keyCandidates` | `DEFAULT_ENV_FILES`; `DASHSCOPE_API_KEY` | repo env bootstrap and Alibaba env source | RUNTIME_BEHAVIOR | ACCEPT |
 | Live provider helper inserts repo root before loading local env files | `governance/compat/live_provider_bootstrap.py` | `ensure_repo_root_on_sys_path`; `bootstrap_live_provider_env` | `sys.path`; `scripts._local_env` | live provider bootstrap helper | RUNTIME_BEHAVIOR | ACCEPT |
-| ASSF live model selector rejects absent or expired free-quota models | `governance/compat/assf_live_model_selection.py` | `resolve_free_quota_model` | `MODEL_FREE_QUOTA_NOT_VERIFIED`; `MODEL_FREE_QUOTA_EXPIRED` | ASSF live model selection helper | RUNTIME_BEHAVIOR | ACCEPT |
+| ASSF live provider/model selector rejects unsupported providers | `governance/compat/assf_live_model_selection.py` | `resolve_provider_model` | `AUTO_FROM_ASSF_LIVE_PROVIDER_CANDIDATES`; `PROVIDER_NOT_SOURCE_BACKED_FOR_ASSF_USE_CASE` | ASSF live provider/model selection helper | RUNTIME_BEHAVIOR | ACCEPT |
+| ASSF live provider/model selector rejects absent or expired free-quota models | `governance/compat/assf_live_model_selection.py` | `resolve_provider_model`; `resolve_free_quota_model` | `MODEL_FREE_QUOTA_NOT_VERIFIED`; `MODEL_FREE_QUOTA_EXPIRED` | ASSF live provider/model selection helper | RUNTIME_BEHAVIOR | ACCEPT |
 | Alibaba free-quota model selection is controlled by the model ledger `models` array | `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json` | `models`; `useBeforeLiveTestRule` | `modelCode`; `expirationDate` | Alibaba free-quota ledger | VALUE_SET | ACCEPT |
 | Provider capability registry entries are not current free-quota selection authority | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`; `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.md` | `PROVIDER_CAPABILITY_REGISTRY`; `Use-Before-Live-Test Rule` | `qwen-turbo`; `MODEL_FREE_QUOTA_NOT_VERIFIED` | Model Gateway capability registry and free-quota ledger | LITERAL_INVARIANT | ACCEPT |
 | Live run diagnostic standard requires secret-safe failure classification | `docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | Required Diagnostic Record | `stage`; `class`; `retryable`; `safeMessage` | live run diagnostic standard | LITERAL_INVARIANT | ACCEPT |
