@@ -338,6 +338,17 @@ runtime/product code, and does not itself implement or modify any checker.
     current standard's verdict vocabulary and keep the token on the same
     physical line as the `- Corpus verdict:` label.
 
+33. **Checker-source read-ahead is now a machine-shaped block, not a memory
+    habit.** For changed governed execution artifacts under `docs/baselines`,
+    `docs/work_orders`, `docs/reviews`, and `docs/roadmaps`, add
+    `## Checker Source Read-Ahead Block` before the first bundled gate run.
+    The block must name existing `governance/compat/check_*.py` files in
+    `applicableCheckersRead`, list exact headings, table labels, enum tokens,
+    or regex-sensitive words in `literalTokensReviewed`, and set
+    `gateRunPurpose` as confirmation/evidence rather than first discovery.
+    This prevents the old loop of plausible prose, gate fail, checker read,
+    partial repair, and next-checker fail.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -363,19 +374,19 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | CGE-R1 absorption lesson hardening, 2026-06-29 |
+| Session or invocation | Checker read-ahead guard hardening, 2026-06-30 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Allowed scope source | operator instruction to make CGE-R1 worker-return gate failures and over-defer lessons durable before the next external absorption tranche |
-| Before status evidence | CGE-R1 worker return repaired ten gate-shape failures but still left 16 value-bearing template/example/schema files deferred until reviewer repair |
-| After status evidence | checklist records gate-shape versus substantive absorption acceptance as items 31 and 32 |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reviews/CVF_CHECKER_READ_AHEAD_GUARD_HARDENING_AUTH_2026-06-30.md`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/test_check_governed_artifact_checker_read_ahead.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_pre_push.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py` |
+| Allowed scope source | operator instruction to handle closure discipline and literal machine-shape failures after KIOD-R5 review findings |
+| Before status evidence | checklist did not yet require checker-source read-ahead as a machine-shaped pre-write block |
+| After status evidence | checklist item 33 records the Checker Source Read-Ahead Block requirement |
 | Diff evidence | `git diff --name-status` before material commit |
 | Approval boundary | governed artifact authoring friction checklist and ADIF/guard routing only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
 | Invocation ID | `cge-r1-absorption-lesson-hardening-2026-06-29` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_CHECKER_READ_AHEAD_GUARD_HARDENING_AUTH_2026-06-30.md`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_pre_push.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_check_governed_artifact_checker_read_ahead.py` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_CHECKER_READ_AHEAD_GUARD_HARDENING_AUTH_2026-06-30.md`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_pre_push.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_check_governed_artifact_checker_read_ahead.py` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this hardening batch |

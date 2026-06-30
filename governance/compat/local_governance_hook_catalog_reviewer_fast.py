@@ -25,6 +25,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "governed artifact checker read-ahead",
+        ["python", "governance/compat/check_governed_artifact_checker_read_ahead.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "work-order dispatch quality",
         ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

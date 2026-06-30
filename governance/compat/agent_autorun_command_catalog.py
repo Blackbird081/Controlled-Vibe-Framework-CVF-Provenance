@@ -31,6 +31,7 @@ class GitStatusResult:
 RANGE_GATE_NAMES = (
     "docs governance compatibility",
     "markdown structural completeness",
+    "governed artifact checker read-ahead",
     "work-order dispatch quality",
 )
 
@@ -69,6 +70,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "markdown structural completeness",
             "governance/compat/check_markdown_structural_completeness.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "governed artifact checker read-ahead",
+            "governance/compat/check_governed_artifact_checker_read_ahead.py",
             base,
             head,
         ),
