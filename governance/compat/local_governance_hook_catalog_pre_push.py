@@ -41,6 +41,10 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_worker_experience_retrospective.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "dispatch packet lifecycle hygiene",
+            ["python", "governance/compat/check_dispatch_packet_lifecycle_hygiene.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "PLCS companion routing block",
             ["python", "governance/compat/check_plcs_companion_routing_block.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

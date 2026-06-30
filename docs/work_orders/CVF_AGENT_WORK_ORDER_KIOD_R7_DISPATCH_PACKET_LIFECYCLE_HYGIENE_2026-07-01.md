@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 rawMemoryReleased=false
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-01
 
@@ -14,7 +14,7 @@ dispatchBaseHead: b743c085
 
 executionBaseHead: RECORD_AT_WORKER_START_AFTER_DISPATCH_SYNC
 
-closureBaseHead: REVIEWER_RECORDS_AFTER_WORKER_RETURN
+closureBaseHead: ca790a48
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -505,14 +505,14 @@ untested.
 
 ## Closure Checklist
 
-- [ ] Worker return exists and says `Status: COMPLETE_PENDING_REVIEW`.
-- [ ] Worker did not commit.
-- [ ] Changed files are within allowed scope.
-- [ ] Protected paths are covered by Core Guard Self-Protection Authorization.
-- [ ] Focused tests pass.
-- [ ] Reviewer-fast or commit-steward gate passes before material commit.
-- [ ] Material commit is separate from any session-sync commit.
-- [ ] Session front door/state/handoff are updated only after accepted material
+- [x] Worker return exists and says `Status: COMPLETE_PENDING_REVIEW`.
+- [x] Worker did not commit.
+- [x] Changed files are within allowed scope.
+- [x] Protected paths are covered by Core Guard Self-Protection Authorization.
+- [x] Focused tests pass.
+- [x] Reviewer-fast or commit-steward gate passes before material commit.
+- [x] Material commit is separate from any session-sync commit.
+- [x] Session front door/state/handoff are updated only after accepted material
   commit if current mode or next allowed move changes.
 
 ## Return-To-Orchestrator Conditions
@@ -542,8 +542,8 @@ authorized by KIOD-R7.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md` | `Status: DISPATCH_READY`; dispatch packet only, not closed | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md` | worker return required after dispatch; not part of dispatch authoring | N/A with reason |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer acceptance | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_COMPLETION_2026-07-01.md` | reviewer closure artifact required after worker return | PASS |
 | Roadmap state | N/A with reason | no dedicated R7 roadmap file is changed by this dispatch packet; operator selected the lane in chat following KIOD-R6 closure | N/A with reason |
 | Registry JSON | N/A with reason | no corpus or scan registry JSON is changed by dispatch authoring | BLOCKED with reason: not applicable to this non-corpus dispatch packet |
 | Registry Markdown | N/A with reason | no corpus or scan registry Markdown is changed by dispatch authoring | BLOCKED with reason: not applicable to this non-corpus dispatch packet |
@@ -560,6 +560,6 @@ authorized by KIOD-R7.
 
 ## Claim Boundary
 
-This work order dispatches KIOD-R7 implementation only. It does not implement
-the checker, close KIOD-R7, authorize worker commits, or authorize
+This work order authorized KIOD-R7 implementation and is now closed bounded
+after reviewer acceptance. It does not authorize worker commits or
 runtime/provider/live/public/Web/package behavior.

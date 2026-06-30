@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-01
 
@@ -225,11 +225,27 @@ Dispatcher evidence before execution:
 Worker evidence after execution is defined in the paired work order and must be
 recorded in the worker return.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | `docs/baselines/CVF_GC018_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer acceptance | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer acceptance | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_COMPLETION_2026-07-01.md` | reviewer closure artifact records acceptance and gate evidence | PASS |
+| Worker return | `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer | PASS |
+| Roadmap state | N/A with reason | no dedicated KIOD-R7 roadmap file is changed by this closure; lane selected directly after KIOD-R6 closure | N/A with reason |
+| Registry JSON | N/A with reason | no corpus, scan, package, or generated registry JSON is changed by KIOD-R7 | BLOCKED with reason: not applicable to this non-corpus governance checker closure |
+| Registry Markdown | N/A with reason | no corpus or scan registry Markdown is changed by KIOD-R7 | BLOCKED with reason: not applicable to this non-corpus governance checker closure |
+| External evidence digest | N/A with reason | KIOD-R7 consumes no external source repository and produces no external evidence digest | N/A with reason |
+| System loop interlock | N/A with reason | no system loop interlock registry is changed by KIOD-R7 | N/A with reason |
+| Public export | N/A with reason | KIOD-R7 is private provenance governance hardening; public-sync requires separate authorization | N/A with reason |
+| Runtime/provider proof | N/A with reason | no runtime/provider/live governance behavior is claimed by this tranche | N/A with reason |
+| Session continuity | active session surfaces | reviewer/closer updates after material commit in separate session-sync batch | PASS |
+
 ## Claim Boundary
 
-KIOD-R7 dispatch authorizes only a bounded governance checker tranche. It does
-not prove the checker is implemented, does not close KIOD-R7, and does not
-authorize runtime/provider/public/Web/package behavior.
+KIOD-R7 is closed as a bounded governance checker tranche after reviewer
+acceptance. It does not authorize runtime/provider/public/Web/package behavior.
 
 Public Export Disposition: DEFERRED_PRIVATE_ONLY
 
