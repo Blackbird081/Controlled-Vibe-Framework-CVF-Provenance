@@ -125,6 +125,13 @@ activation, automatic invocation, action authority, direct external source
 import, dashboard, MCP/CLI adapter, checker implementation, or production
 behavior.
 
+Session-sync commit requiring follow-up handoff capstone marker:
+`dc7146cc23551c0b3a2458704eaee81c10254179`
+
+Short SHA: `dc7146cc`
+
+Session-sync work: KIOD-R6 enrichment session sync and V30 handoff rotation.
+
 ## Agent Operation Trace Block - KIOD-R6 Enrichment Session Sync
 
 | Field | Evidence |
