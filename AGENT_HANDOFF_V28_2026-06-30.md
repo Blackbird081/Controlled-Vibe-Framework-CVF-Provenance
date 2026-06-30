@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche over usage receipts, truth packets, and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=SKUSE-T1 closed at material commit `211c7bdb`; SKSOT-T1 remains closed at `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=ASCP-T2 activation policy semantics before CLI/MCP adapter implementation; parked checkpoint=ASCP-T1 closed at material commit `ddb65952`; SKUSE-T1 remains closed at `211c7bdb`; SKSOT-T1 remains closed at `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`skuse_t1_skill_usage_receipt_trace_closed_pe
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `211c7bdb` SKUSE-T1 skill usage receipt trace |
-| Latest session-sync target | session sync after SKUSE-T1 material closure |
+| Latest material closeout | `ddb65952` ASCP-T1 active resolver pilot |
+| Latest session-sync target | session sync after ASCP-T1 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
+`ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`
 
 ## Purpose
 
@@ -120,12 +120,27 @@ for explicit internal runtime-loader body reads only:
 `cvf-engineering-security-hardening`.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
-eligible package roots, and 18 remaining package roots blocked by
+eligible package roots, 6 `ACTIVATION_READY` resolver decisions, and 18 remaining package roots blocked by
 `certificationState=NOT_STARTED`, `uatState=NOT_STARTED`, and
 `internalAgentDisposition=CANDIDATE`.
 
+Material commit `ddb65952` closed ASCP-T1 active resolver pilot. It added:
+
+- `docs/roadmaps/CVF_ASSF_ACTIVE_RESOLVER_AND_ADAPTER_PILOT_ROADMAP_2026-06-30.md`
+- `governance/compat/run_assf_active_resolver.py`
+- `governance/compat/test_run_assf_active_resolver.py`
+- ASCP-T1 GC-018 baseline, work order, and completion review
+
+The resolver combines generated ASSF metadata, approved STRICT truth index
+records, and existing runtime loader eligibility without package body reads. It
+observed 32 generated-index candidates and 6 `ACTIVATION_READY` packages. It
+does not mutate package lifecycle sources, read package bodies, emit skill
+usage receipts, implement adapters, call providers, public-sync, or claim
+production readiness.
+
 Recent material chain:
 
+- `ddb65952` ASCP-T1 active resolver pilot.
 - `211c7bdb` SKUSE-T1 skill usage receipt trace.
 - `c2278349` SKSOT-T1 skill truth packet foundation.
 - `701ebd94` EPSOT-T1 provider skill trace source-of-truth guard.
@@ -137,15 +152,14 @@ Recent material chain:
 
 ## Next Allowed Move
 
-Operator may choose a Skill Control Plane inventory/reconciliation tranche over
-usage receipts, truth packets, and ASSF registry, another provider-skill
-governance tranche, another bounded package lifecycle promotion tranche, an
-explicitly scoped remaining-package batch, or a separate ACTIVE resolver or
-CLI/MCP adapter tranche through fresh GC-018/source-verified work order.
+ASCP-T2 activation policy semantics is the next recommended move through fresh
+GC-018/source-verified work order. It should define selected vs
+activation-ready vs body-read requested vs used-with-receipt before any CLI/MCP
+adapter implementation.
 
 No provider runtime interception, provider-side audit access, automatic package
 activation, automatic skill invocation telemetry outside the bounded loader,
-resolver mutation, CLI/MCP adapter, provider/live proof, public-sync, direct
+package lifecycle mutation, CLI/MCP adapter, provider/live proof, public-sync, direct
 import, merge authority, commit authority, or production-readiness claim is
 authorized.
 
@@ -374,6 +388,69 @@ production-readiness.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## Core Guard Self-Protection Authorization - ASCP-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+ASCP-T1 material commit `ddb65952`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording.
+
+Operator authorization: session-sync is required by the mandatory startup
+front-door, GC-020 in-place handoff HEAD rule, and active-session generated
+aggregate discipline after the operator-approved ASCP-T1 material tranche
+closed.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ascpT1ActiveResolverPilotClosure20260630.json`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `ddb65952`, SKUSE-T1 material commit `211c7bdb`, SKSOT-T1 material
+commit `c2278349`, EPSOT-T1 material commit `701ebd94`, AGSK-R7 material
+commit `19feb1f1`, AGSK-R6 material commit `8caef205`, AGSK-R5 material commit
+`3a742e6e`, AGSK-R4 material commit `416eb689`, or AGSK-R3 material commit
+`4003289a` unless reviewer reopens those closures.
+
+## GC-020 Marker - ASCP-T1 Active Resolver Pilot Material Closure
+
+Material commit `ddb65952` closed ASCP-T1 active resolver pilot. Full material
+SHA:
+`ddb659522451000b8a88e282a5fd193fdadcd411`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`ddb65952`. It does not authorize package lifecycle mutation, package body
+reads, automatic package activation, automatic skill invocation telemetry
+outside the bounded loader, CLI/MCP adapter, provider/live proof, public-sync
+export, direct import, merge authority, commit authority, or production-readiness.
+
+## Agent Operation Trace Block - ASCP-T1 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | ASCP-T1 session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V28 handoff |
+| Allowed scope source | GC-020 after ASCP-T1 material commit `ddb65952` plus generated active-session state discipline |
+| Before status evidence | material commit `ddb65952` closed ASCP-T1 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `ascp-t1-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/ascpT1ActiveResolverPilotClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/ascpT1ActiveResolverPilotClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Core Guard Self-Protection Authorization - SKUSE-T1 Session Sync
 
 Authorized guard-maintenance scope: update active session continuity after
@@ -440,8 +517,8 @@ direct import, merge authority, commit authority, or production-readiness.
 ## Claim Boundary
 
 V28 is a compact continuity handoff and session-sync carrier. It records
-SKUSE-T1 closure, SKSOT-T1 closure, EPSOT-T1 closure, AGSK-R7 package boundary,
-and next allowed moves only. It does not create provider runtime interception,
+ASCP-T1 closure, SKUSE-T1 closure, SKSOT-T1 closure, EPSOT-T1 closure,
+AGSK-R7 package boundary, and next allowed moves only. It does not create provider runtime interception,
 provider-side audit access, runtime activation, automatic resolver behavior,
 external adapter behavior, live provider proof, public export, merge authority,
 commit authority, or production readiness.

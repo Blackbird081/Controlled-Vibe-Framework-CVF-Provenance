@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche over usage receipts, truth packets, and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=SKUSE-T1 closed at material commit `211c7bdb`; SKSOT-T1 remains closed at `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=ASCP-T2 activation policy semantics before CLI/MCP adapter implementation; parked checkpoint=ASCP-T1 closed at material commit `ddb65952`; SKUSE-T1 remains closed at `211c7bdb`; SKSOT-T1 remains closed at `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
+Current mode marker: `ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`
 
-Current mode: `skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
+Current mode: `ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`
 
-`skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
+`ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`
 
 Previous mode:
 
-`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
+`skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ASCP-T1 active resolver pilot | `ddb65952` | CLOSED_PASS_BOUNDED; added read-only active resolver decision helper and focused tests; resolver combines generated ASSF metadata, approved STRICT truth index records, and runtime loader eligibility without package body reads; smoke observed 32 generated candidates and 6 `ACTIVATION_READY` packages; no lifecycle mutation, package body read, adapter, provider/live proof, public-sync, or production claim |
 | SKUSE-T1 skill usage receipt trace | `211c7bdb` | CLOSED_PASS_BOUNDED; loader emits deterministic `skillUsageReceipts` for explicit eligible package-body reads, optional `--receipt-out`, stable receipt trace standard, checker, tests, and reviewer-fast/pre-commit/autorun wiring; no automatic invocation telemetry outside the bounded loader, ACTIVE resolver, package lifecycle mutation, adapter, provider/live proof, public-sync, or production claim |
 | SKSOT-T1 skill truth packet foundation | `c2278349` | CLOSED_PASS_BOUNDED; added stable skill truth packet standard, six strict packet records, generated truth index, checker, six focused tests, and reviewer-fast/pre-commit/autorun wiring; no package lifecycle mutation, ACTIVE resolver, external adapter, provider/live proof, or public-sync claim |
 | EPSOT-T1 provider skill trace source-of-truth guard | `701ebd94` | CLOSED_PASS_BOUNDED; added external provider skill source-of-truth standard, trace checker, six focused tests, and reviewer-fast/pre-commit/autorun wiring; no provider runtime interception or live proof claim |
@@ -141,18 +142,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
+Mode: `ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`
 
-Next allowed move: operator may choose a Skill Control Plane
-inventory/reconciliation tranche over usage receipts, truth packets, and ASSF
-registry, another provider-skill governance tranche, another bounded package
-lifecycle promotion tranche, an explicitly scoped remaining-package batch, or
-a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh
-GC-018/source-verified work order. SKUSE-T1 skill usage receipt trace closed at
-material commit `211c7bdb`; SKSOT-T1 skill truth packet foundation closed at
-material commit `c2278349`; EPSOT-T1 provider skill trace guard closed at
-material commit `701ebd94`; AGSK-R7 runtime package batch promotion closed at
-material commit `19feb1f1`; AGSK-R6 code-review-quality
+Next allowed move: ASCP-T2 activation policy semantics, source-verified
+through fresh GC-018/work order, should define selected vs activation-ready vs
+body-read requested vs used-with-receipt before any CLI/MCP adapter
+implementation. ASCP-T1 active resolver pilot closed at material commit
+`ddb65952`; SKUSE-T1 skill usage receipt trace closed at material commit
+`211c7bdb`; SKSOT-T1 skill truth packet foundation closed at material commit
+`c2278349`; EPSOT-T1 provider skill trace guard closed at material commit
+`701ebd94`; AGSK-R7 runtime package batch promotion closed at material commit
+`19feb1f1`; AGSK-R6 code-review-quality
 pilot promotion closed at material commit `8caef205`; AGSK-R5 runtime
 eligibility audit closed at material commit `3a742e6e`; AGSK-R4 runtime package loader
 closed at material commit `416eb689`; AGSK-R3 package roots closed at material
@@ -160,12 +160,12 @@ commit `4003289a`.
 LHW24 remains the latest closed numbered LHW wave.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
-eligible package roots, deterministic loader receipts for explicit eligible
-body reads, and 18 remaining package roots blocked by
+eligible package roots, 6 `ACTIVATION_READY` resolver decisions, deterministic
+loader receipts for explicit eligible body reads, and 18 remaining package roots blocked by
 `certificationState=NOT_STARTED`,
 `uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
 package activation, automatic skill invocation telemetry outside the bounded
-loader, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync,
+loader, package lifecycle mutation, CLI/MCP adapter, provider/live proof, public-sync,
 direct import, merge authority, commit authority, or production-readiness claim
 is authorized.
 
