@@ -1,0 +1,41 @@
+{
+  "stateOrder": 1348,
+  "stateKey": "skuseT1SkillUsageReceiptTraceClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "211c7bdb",
+    "materialCommitFull": "211c7bdb1c7c0bfbf319e4a1760e112d876cc0b2",
+    "standard": "docs/reference/agent_system_skills/CVF_SKILL_USAGE_RECEIPT_TRACE_STANDARD.md",
+    "baseline": "docs/baselines/CVF_GC018_SKUSE_T1_SKILL_USAGE_RECEIPT_TRACE_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SKUSE_T1_SKILL_USAGE_RECEIPT_TRACE_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_SKUSE_T1_SKILL_USAGE_RECEIPT_TRACE_COMPLETION_2026-06-30.md",
+    "loader": "governance/compat/run_assf_runtime_package_loader.py",
+    "checker": "governance/compat/check_cvf_skill_usage_receipt_trace.py",
+    "tests": [
+      "governance/compat/test_run_assf_runtime_package_loader.py",
+      "governance/compat/test_check_cvf_skill_usage_receipt_trace.py"
+    ],
+    "catalogWiring": [
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/agent_autorun_command_catalog.py"
+    ],
+    "verification": [
+      "py_compile PASS",
+      "focused unittest PASS 14/14",
+      "real loader smoke emitted CVF_ASSF_SKILL_USAGE_RECEIPT for cvf-engineering-code-review-quality",
+      "CVF skill usage receipt trace checker PASS",
+      "reviewer-fast PASS 49/49",
+      "pre-commit PASS 69/69",
+      "commit steward reviewer-return PASS"
+    ],
+    "receiptSmoke": {
+      "skillId": "cvf-engineering-code-review-quality",
+      "receiptId": "sha256:1c50b864577052203b184e414b75f1ed21b8868caab05624f81291e74a2439e4",
+      "receiptType": "CVF_ASSF_SKILL_USAGE_RECEIPT"
+    },
+    "nextAllowedMove": "operator may choose a Skill Control Plane inventory/reconciliation tranche over usage receipts, truth packets, and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order",
+    "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
+    "claimBoundary": "no package lifecycle mutation, no automatic package activation, no automatic skill invocation telemetry outside the bounded loader, no resolver mutation, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
+  }
+}

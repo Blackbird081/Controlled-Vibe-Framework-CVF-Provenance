@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche over truth packets and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=SKSOT-T1 closed at material commit `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1` with six package roots runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche over usage receipts, truth packets, and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=SKUSE-T1 closed at material commit `211c7bdb`; SKSOT-T1 remains closed at `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
+Current mode marker: `skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
 
-Current mode: `sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
+Current mode: `skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
 
-`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
+`skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
 
 Previous mode:
 
-`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
+`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SKUSE-T1 skill usage receipt trace | `211c7bdb` | CLOSED_PASS_BOUNDED; loader emits deterministic `skillUsageReceipts` for explicit eligible package-body reads, optional `--receipt-out`, stable receipt trace standard, checker, tests, and reviewer-fast/pre-commit/autorun wiring; no automatic invocation telemetry outside the bounded loader, ACTIVE resolver, package lifecycle mutation, adapter, provider/live proof, public-sync, or production claim |
 | SKSOT-T1 skill truth packet foundation | `c2278349` | CLOSED_PASS_BOUNDED; added stable skill truth packet standard, six strict packet records, generated truth index, checker, six focused tests, and reviewer-fast/pre-commit/autorun wiring; no package lifecycle mutation, ACTIVE resolver, external adapter, provider/live proof, or public-sync claim |
 | EPSOT-T1 provider skill trace source-of-truth guard | `701ebd94` | CLOSED_PASS_BOUNDED; added external provider skill source-of-truth standard, trace checker, six focused tests, and reviewer-fast/pre-commit/autorun wiring; no provider runtime interception or live proof claim |
 | AGSK-R7 runtime package batch promotion | `19feb1f1` | CLOSED_PASS_BOUNDED; five additional packages promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 6 runtime eligible, 18 still blocked |
@@ -140,17 +141,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
+Mode: `skuse_t1_skill_usage_receipt_trace_closed_pending_next_skill_control_plane_decision`
 
 Next allowed move: operator may choose a Skill Control Plane
-inventory/reconciliation tranche over truth packets and ASSF registry, another
-provider-skill governance tranche, another bounded package lifecycle promotion
-tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE
-resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work
-order. SKSOT-T1 skill truth packet foundation closed at material commit
-`c2278349`; EPSOT-T1 provider skill trace guard closed at material commit
-`701ebd94`; AGSK-R7 runtime package batch promotion closed at material commit
-`19feb1f1`; AGSK-R6 code-review-quality
+inventory/reconciliation tranche over usage receipts, truth packets, and ASSF
+registry, another provider-skill governance tranche, another bounded package
+lifecycle promotion tranche, an explicitly scoped remaining-package batch, or
+a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh
+GC-018/source-verified work order. SKUSE-T1 skill usage receipt trace closed at
+material commit `211c7bdb`; SKSOT-T1 skill truth packet foundation closed at
+material commit `c2278349`; EPSOT-T1 provider skill trace guard closed at
+material commit `701ebd94`; AGSK-R7 runtime package batch promotion closed at
+material commit `19feb1f1`; AGSK-R6 code-review-quality
 pilot promotion closed at material commit `8caef205`; AGSK-R5 runtime
 eligibility audit closed at material commit `3a742e6e`; AGSK-R4 runtime package loader
 closed at material commit `416eb689`; AGSK-R3 package roots closed at material
@@ -158,12 +160,14 @@ commit `4003289a`.
 LHW24 remains the latest closed numbered LHW wave.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
-eligible package roots, and 18 remaining package roots blocked by
+eligible package roots, deterministic loader receipts for explicit eligible
+body reads, and 18 remaining package roots blocked by
 `certificationState=NOT_STARTED`,
 `uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
-package activation, resolver mutation, CLI/MCP adapter, provider/live proof,
-public-sync, direct import, merge authority, commit authority, or
-production-readiness claim is authorized.
+package activation, automatic skill invocation telemetry outside the bounded
+loader, resolver mutation, CLI/MCP adapter, provider/live proof, public-sync,
+direct import, merge authority, commit authority, or production-readiness claim
+is authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
