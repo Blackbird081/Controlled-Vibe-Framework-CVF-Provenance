@@ -280,6 +280,14 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "skill control plane inventory",
             ("python", "governance/compat/check_skill_control_plane_inventory.py", "--enforce"),
         ),
+        GateCommand(
+            "CVF Web skill control plane projection",
+            (
+                "python",
+                "governance/compat/check_cvf_web_skill_control_plane_projection.py",
+                "--enforce",
+            ),
+        ),
         _range_command(
             "truth foundation claim guard",
             "governance/compat/check_truth_foundation_claim_guard.py",

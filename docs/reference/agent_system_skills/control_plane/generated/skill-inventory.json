@@ -346,6 +346,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -355,11 +356,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "spec-driven-development",
+        "present": true,
+        "webKey": "cvf-engineering-spec-driven-development"
       }
     },
     {
@@ -454,6 +455,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -463,11 +465,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "planning-task-breakdown",
+        "present": true,
+        "webKey": "cvf-engineering-planning-task-breakdown"
       }
     },
     {
@@ -934,6 +936,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -943,11 +946,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "api-interface-design",
+        "present": true,
+        "webKey": "cvf-engineering-api-interface-design"
       }
     },
     {
@@ -1043,6 +1046,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1052,11 +1056,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "browser-runtime-verification",
+        "present": true,
+        "webKey": "cvf-engineering-browser-runtime-verification"
       }
     },
     {
@@ -1152,6 +1156,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1161,11 +1166,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "ci-cd-quality-gates",
+        "present": true,
+        "webKey": "cvf-engineering-ci-cd-quality-gates"
       }
     },
     {
@@ -1258,6 +1263,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1267,11 +1273,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "code-review-quality",
+        "present": true,
+        "webKey": "cvf-engineering-code-review-quality"
       }
     },
     {
@@ -1365,6 +1371,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1374,11 +1381,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "code-simplification",
+        "present": true,
+        "webKey": "cvf-engineering-code-simplification"
       }
     },
     {
@@ -1474,6 +1481,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1483,11 +1491,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "context-engineering",
+        "present": true,
+        "webKey": "cvf-governance-context-engineering"
       }
     },
     {
@@ -1582,6 +1590,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1591,11 +1600,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "debugging-error-recovery",
+        "present": true,
+        "webKey": "cvf-engineering-debugging-error-recovery"
       }
     },
     {
@@ -1689,6 +1698,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1698,11 +1708,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "deprecation-migration",
+        "present": true,
+        "webKey": "cvf-engineering-deprecation-migration"
       }
     },
     {
@@ -1796,6 +1806,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1805,11 +1816,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "documentation-adrs",
+        "present": true,
+        "webKey": "cvf-governance-documentation-adrs"
       }
     },
     {
@@ -1904,6 +1915,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -1913,11 +1925,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "doubt-driven-development",
+        "present": true,
+        "webKey": "cvf-governance-doubt-driven-development"
       }
     },
     {
@@ -2012,6 +2024,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2021,11 +2034,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "frontend-ui",
+        "present": true,
+        "webKey": "cvf-engineering-frontend-ui"
       }
     },
     {
@@ -2121,6 +2134,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2130,11 +2144,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "git-workflow-versioning",
+        "present": true,
+        "webKey": "cvf-governance-git-workflow-versioning"
       }
     },
     {
@@ -2229,6 +2243,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2238,11 +2253,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "idea-refinement",
+        "present": true,
+        "webKey": "cvf-governance-idea-refinement"
       }
     },
     {
@@ -2336,6 +2351,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2345,11 +2361,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "incremental-implementation",
+        "present": true,
+        "webKey": "cvf-engineering-incremental-implementation"
       }
     },
     {
@@ -2444,6 +2460,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2453,11 +2470,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "operator-interview",
+        "present": true,
+        "webKey": "cvf-governance-operator-interview"
       }
     },
     {
@@ -2554,6 +2571,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2563,11 +2581,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "observability-instrumentation",
+        "present": true,
+        "webKey": "cvf-engineering-observability-instrumentation"
       }
     },
     {
@@ -2662,6 +2680,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2671,11 +2690,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "performance-optimization",
+        "present": true,
+        "webKey": "cvf-engineering-performance-optimization"
       }
     },
     {
@@ -2775,6 +2794,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2784,11 +2804,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "security-hardening",
+        "present": true,
+        "webKey": "cvf-engineering-security-hardening"
       }
     },
     {
@@ -2883,6 +2903,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2892,11 +2913,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "shipping-launch",
+        "present": true,
+        "webKey": "cvf-engineering-shipping-launch"
       }
     },
     {
@@ -2990,6 +3011,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -2999,11 +3021,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "source-driven-development",
+        "present": true,
+        "webKey": "cvf-engineering-source-driven-development"
       }
     },
     {
@@ -3098,6 +3120,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -3107,11 +3130,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "test-driven-development",
+        "present": true,
+        "webKey": "cvf-engineering-test-driven-development"
       }
     },
     {
@@ -3207,6 +3230,7 @@
         "ACTIVE_RESOLVER_READY_PACKAGE",
         "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
@@ -3216,11 +3240,11 @@
         "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "skill-discovery-invocation",
+        "present": true,
+        "webKey": "cvf-governance-skill-discovery-invocation"
       }
     }
   ],
@@ -3268,7 +3292,7 @@
     "runtimeEligiblePackages": 24,
     "selectionProfiledPackages": 24,
     "templateMapEntries": 58,
-    "webProjectionItems": 28,
+    "webProjectionItems": 52,
     "webProjectionOnlyItems": 27
   },
   "taxonomy": {

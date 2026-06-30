@@ -184,6 +184,11 @@ export function SkillLibrary() {
                                                 Certified ASSF
                                             </span>
                                         )}
+                                        {selectedSkill.runtimePackageProjection && (
+                                            <span className="px-2.5 py-1 text-[10px] font-bold tracking-wider bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300 rounded-md uppercase">
+                                                Runtime package
+                                            </span>
+                                        )}
                                         <button 
                                             onClick={() => openSkillDetail(selectedSkill.domain?.toLowerCase().replace(/ /g, '-') || '', selectedSkill.id)}
                                             className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
@@ -217,6 +222,13 @@ export function SkillLibrary() {
                                     <div className="font-semibold">ASSF package projection</div>
                                     <div>Certification: {selectedSkill.certificationState}</div>
                                     <div>UAT: {selectedSkill.uatState}</div>
+                                    {selectedSkill.runtimePackageProjection && (
+                                        <>
+                                            <div>Runtime eligible: {selectedSkill.runtimeEligible ? 'YES' : 'NO'}</div>
+                                            <div>Activation: {selectedSkill.activationDecision}</div>
+                                            {selectedSkill.primaryDomain && <div>Domain: {selectedSkill.primaryDomain}</div>}
+                                        </>
+                                    )}
                                     <div>Adapter: {selectedSkill.externalCliMcpDisposition}</div>
                                     {selectedSkill.canonicalRoot && <div className="break-all">Source: {selectedSkill.canonicalRoot}</div>}
                                 </div>

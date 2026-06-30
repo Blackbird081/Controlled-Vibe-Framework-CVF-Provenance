@@ -220,6 +220,14 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_skill_control_plane_inventory.py", "--enforce"],
         ),
         (
+            "CVF Web skill control plane projection",
+            [
+                "python",
+                "governance/compat/check_cvf_web_skill_control_plane_projection.py",
+                "--enforce",
+            ],
+        ),
+        (
             "changed corpus registry coverage",
             ["python", "governance/compat/check_changed_corpus_registry_coverage.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

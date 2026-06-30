@@ -145,6 +145,14 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_skill_control_plane_inventory.py", "--enforce"],
     ),
     (
+        "CVF Web skill control plane projection",
+        [
+            "python",
+            "governance/compat/check_cvf_web_skill_control_plane_projection.py",
+            "--enforce",
+        ],
+    ),
+    (
         "truth foundation claim guard",
         ["python", "governance/compat/check_truth_foundation_claim_guard.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
