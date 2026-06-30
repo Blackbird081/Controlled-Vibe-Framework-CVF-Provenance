@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, production Model Gateway/model router work, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 provider/model selection use case closed at material commit `c15d9bd6` with auto provider `alibaba-dashscope`, model `deepseek-v4-flash`, HTTP 200, receipt `sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1`; ASCP-T5 corrective patch closed at `09656d16`; ASCP-T5 original adapter closed at `d409b602`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; remaining 18 package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-P1-P3 closed at material commit `43e4092f` with 6 ACTIVE runtime package skills and live CLI/MCP proof using provider `alibaba-dashscope`, model `deepseek-v4-flash`, HTTP 200, production receipt `sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5`.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`ascp_t5_provider_model_selection_use_case_cl
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `c15d9bd6` ASCP-T5 provider/model selection use case |
-| Latest session-sync target | session sync after ASCP-T5 provider/model selection use-case material closure |
+| Latest material closeout | `43e4092f` ASCP-P1-P3 runtime package skills productionization |
+| Latest session-sync target | session sync after ASCP-P1-P3 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`
+`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -36,14 +36,15 @@ boundary, and next-move boundary.
 
 ## Scope / Target / Owner Boundary
 
-Target: maintain active session continuity after SKSOT-T1 and preserve the
-bounded skill usage receipt trace, skill truth packet, provider-skill trace, and package-loader claim
-boundaries.
+Target: maintain active session continuity after ASCP-P1-P3 and preserve the
+bounded production package runtime, skill usage receipt trace, skill truth
+packet, provider-skill trace, and package-loader claim boundaries.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
-does not authorize package activation, runtime/provider/live work, public-sync
-mutation, additional checker implementation, resolver mutation, provider-side
-audit access, or generated aggregate mutation beyond active-session sync.
+does not authorize remaining package conversion, full MCP server,
+runtime/provider work beyond the closed ASCP-P1-P3 proof, public-sync mutation,
+additional checker implementation, resolver mutation, provider-side audit
+access, or generated aggregate mutation beyond active-session sync.
 
 ## Active Boundary
 
@@ -62,7 +63,59 @@ against CVF-governed surfaces.
 
 External agent memory files: non-canonical convenience only.
 
+## Core Guard Self-Protection Authorization - ASCP-P1-P3 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+ASCP-P1-P3 material commit `43e4092f`, regenerate active session state, and
+align front-door, bootstrap read model, and active handoff next-move wording.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ascpP1P3RuntimePackageSkillsProductionizationClosure20260630.json`
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+
+Operator authorization: session-sync follows operator-requested ASCP-P1-P3
+runtime package skills productionization.
+
+Rollback boundary: revert this session-sync commit only; do not revert ASCP-P1-P3
+material commit `43e4092f`, ASCP-T5 commits, package roots, truth packets, or
+generated ASSF indexes.
+
+## GC-020 Marker - ASCP-P1-P3 Runtime Package Skills Material Closure
+
+Material commit `43e4092f` closed ASCP-P1-P3 runtime package skills
+productionization. Full material SHA:
+`43e4092f9fff3fca2db02b09a23dde938c57f700`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`43e4092f`. It does not authorize remaining package conversion, full MCP server,
+production Model Gateway/model router, provider registry mutation, public-sync,
+or action authority from package loading alone.
+
 ## Latest Work / Changes
+
+Material commit `43e4092f` closed ASCP-P1-P3 runtime package skills
+productionization. Full SHA:
+`43e4092f9fff3fca2db02b09a23dde938c57f700`.
+
+It made exactly six runtime-eligible ASSF package skills ACTIVE and
+production-scoped through the ASSF production executor and CLI/MCP adapter.
+Live proof passed with provider `alibaba-dashscope`, model
+`deepseek-v4-flash`, HTTP 200, production receipt
+`sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5`, and
+use-proof receipt
+`sha256:bf0a7afa7fcb66a13f2949af1c68d0b4f7928c3047b894047ce529dae39dc803`.
+
+This closes P1 ACTIVE lifecycle admission, P2 production execution adapter, and
+P3 CLI/MCP production envelope for the six-package set. Remaining 18 package
+conversions, full MCP server, production Model Gateway/model router, provider
+registry mutation, public-sync, or broader production-readiness claim require a
+fresh GC-018/source-verified work order.
 
 Material commit `c15d9bd6` closed ASCP-T5 provider/model selection use case.
 Full SHA: `c15d9bd6cb4f03ed6814f9d55b9848f60347f0ed`.
