@@ -31,30 +31,32 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after KIOD-R5 closure: doc-only memory-foundation enrichment from KIOD-R5 candidates, a separate CVF-authored checker work order, or a new repo/folder absorption packet; parked checkpoint=KIOD-R5 closed at material commit `be6be4e2`, KIOD-R5 selected-source dispatch committed at `2924fddd`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after checker read-ahead hardening and KIOD-R5 closure: doc-only memory-foundation enrichment from KIOD-R5 candidates, a separate controlled checker work order, or a new repo/folder absorption packet; parked checkpoint=checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R5 selected-source dispatch committed at `2924fddd`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
+Current mode marker: `checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
 
-Current mode: `kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
+Current mode: `checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
 
-`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
+`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`
+`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
 
 ## Current Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Checker Read-Ahead Guard Hardening | `ac5b13ac` | CLOSED_PASS_BOUNDED; ADIF-0020 added, checker/source read-ahead block guard implemented and wired into autorun, reviewer-fast, pre-commit, and pre-push; guard orientation and literal-format gotchas warn agents to read checker constants and literal tokens before writing governed artifacts; no runtime/provider/live behavior, public-sync, package activation, automatic invocation, action authority, direct external source import, dashboard, MCP/CLI adapter, or production behavior claim |
 | KIOD-R5 Packet-Blocked Pilot closure | `be6be4e2` | CLOSED_PASS_BOUNDED; accepted EverOS Controlled Memory Index Store worker return, 26/26 files accounted, negative-search evidence present, future memory-foundation enrichment and CVF-authored checker candidates retained, checker/test/generated examples rejected for direct import; no runtime/provider behavior, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit beyond session sync, automatic invocation, action authority, package lifecycle mutation, or production-readiness claim |
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Checker Read-Ahead Guard Hardening | `ac5b13ac` | CLOSED_PASS_BOUNDED; machine-checkable `Checker Source Read-Ahead Block` discipline now required for changed governed execution artifacts under `docs/baselines`, `docs/work_orders`, `docs/reviews`, and `docs/roadmaps` |
 | KIOD-R5 Packet-Blocked Pilot | `be6be4e2` | CLOSED_PASS_BOUNDED; selected EverOS Controlled Memory Index Store folder scanned as documentation-only, 26/26 files accounted, seven negative-search commands recorded, ENRICH_EXISTING/NEW_FINDING evidence retained for future memory-foundation enrichment, source checker/test/generated examples rejected for direct import, and no runtime/provider/source-import/package/public claim |
 | KIOD-R4 Negative Search Evidence Decision | `0416843c` | CLOSED_PASS_BOUNDED; accepted Claude worker decision token `PACKET_BLOCK_REQUIRED_NOW`, converted negative-search evidence into mandatory packet content for the next source-intake pilot, and routed KIOD-R5 to source-verified packet-blocked pilot work-order authoring; no checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, automatic invocation, action authority, or production-readiness claim |
 | ASCP-P4-P6 Remaining Package Production Scale-Up | `687d4423` | CLOSED_PASS_BOUNDED; promoted the eighteen remaining ASSF package roots to ACTIVE production package skills through registry/package/truth updates, generated indexes, 18/18 dry-run matrix, and representative live proof with `alibaba-dashscope`, `deepseek-v4-flash`, HTTP 200; generated inventory now reports 24 runtime-eligible packages, 24 activation-ready packages, 24 CLI/MCP adapter packages, 24 selection-profiled packages, 28 Web projection items, and 0 drift; no full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, automatic invocation, filesystem/git/browser/downstream action authority, or broader production-readiness claim |
@@ -163,13 +165,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
+Mode: `checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next governed knowledge-intake lane.
-High-value options are a fresh GC-018/source-verified doc-only work order to
-enrich `docs/reference/memory_foundation/` from KIOD-R5 candidates, a separate
-CVF-authored checker work order derived from the rejected source checker
-pattern, or a new repo/folder absorption packet. KIOD-R5 itself is closed at
+Checker read-ahead hardening is closed at material commit `ac5b13ac`: changed
+governed execution artifacts now need a `Checker Source Read-Ahead Block` that
+names applicable `governance/compat/check_*.py` sources and reviewed literal
+tokens before acceptance. High-value options are a fresh GC-018/source-verified
+doc-only work order to enrich `docs/reference/memory_foundation/` from KIOD-R5
+candidates, a separate controlled checker work order derived from the rejected
+source checker pattern, or a new repo/folder absorption packet. KIOD-R5 itself
+is closed at
 material commit `be6be4e2`; it does not authorize direct import, runtime,
 SQLite/LanceDB implementation, MCP/CLI adapter, dashboard, public-sync,
 automatic invocation, action authority, generated aggregate edit beyond session

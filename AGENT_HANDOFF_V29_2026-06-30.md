@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after KIOD-R5 closure; parked checkpoint=KIOD-R5 closed at material commit `be6be4e2`, after KIOD-R5 selected-source dispatch `2924fddd` and KIOD-R4 material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
+Startup acknowledged: current mode=`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after checker read-ahead hardening and KIOD-R5 closure; parked checkpoint=checker read-ahead hardening closed at material commit `ac5b13ac`, after KIOD-R5 closure `be6be4e2`, KIOD-R5 selected-source dispatch `2924fddd`, and KIOD-R4 material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 ## Current State
 
@@ -18,13 +18,108 @@ Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_closed_pending_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `be6be4e2` KIOD-R5 Packet-Blocked Pilot closure |
-| Latest session-sync target | session sync after KIOD-R5 closure |
+| Latest material packet | `ac5b13ac` Checker Read-Ahead Guard Hardening |
+| Latest session-sync target | session sync after checker read-ahead hardening |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
+`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
+
+## Checker Read-Ahead Guard Hardening - 2026-06-30
+
+Material closure commit:
+`ac5b13ac99f61c210fe2d2a7da39cf8382805d74`
+
+Short SHA: `ac5b13ac`
+
+Artifacts:
+
+- `docs/reviews/CVF_CHECKER_READ_AHEAD_GUARD_HARDENING_AUTH_2026-06-30.md`
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md`
+- `governance/compat/check_governed_artifact_checker_read_ahead.py`
+- `governance/compat/test_check_governed_artifact_checker_read_ahead.py`
+- `docs/reference/guard_orientation/README.md`
+- `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure summary: KIOD-R5 review findings about closure discipline and literal
+machine-shape drift were promoted into ADIF-0020 and a machine checker. Changed
+governed execution artifacts under `docs/baselines`, `docs/work_orders`,
+`docs/reviews`, and `docs/roadmaps` now require a
+`Checker Source Read-Ahead Block` naming applicable checker paths, reviewed
+literal tokens, confirmatory gate purpose, and a claim boundary.
+
+Next allowed move: operator selects the next governed knowledge-intake lane:
+doc-only memory-foundation enrichment from KIOD-R5 candidates, a separate
+controlled checker work order, or a new repo/folder absorption packet.
+
+Claim boundary: checker/warning hardening only. No runtime/provider/live
+behavior, public-sync, package activation, automatic invocation, action
+authority, direct external source import, dashboard, MCP/CLI adapter, or
+production behavior is claimed.
+
+## Core Guard Self-Protection Authorization - Checker Read-Ahead Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+checker read-ahead hardening material commit `ac5b13ac`; regenerate active
+session state and align front door, bootstrap read model, and active handoff.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V29_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/checkerReadAheadGuardHardening20260630.json`
+
+Operator authorization: session-sync follows material closure for checker
+read-ahead hardening at commit `ac5b13ac`.
+
+Rollback boundary: revert only this session-sync if rejected; do not revert
+checker read-ahead hardening commit `ac5b13ac` or KIOD-R5 closure commit
+`be6be4e2`.
+
+## GC-020 HEAD Marker - Checker Read-Ahead Guard Hardening
+
+Latest material commit requiring in-place handoff trace:
+`ac5b13ac99f61c210fe2d2a7da39cf8382805d74`
+
+Short SHA: `ac5b13ac`
+
+Material work: Checker Read-Ahead Guard Hardening.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`ac5b13ac`. It records checker/warning hardening only and does not authorize
+runtime/provider/live behavior, public-sync, package activation, automatic
+invocation, action authority, direct external source import, dashboard,
+MCP/CLI adapter, or production behavior.
+
+## Agent Operation Trace Block - Checker Read-Ahead Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | Checker read-ahead hardening session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after checker read-ahead hardening material commit `ac5b13ac` plus generated active-session state discipline |
+| Before status evidence | material commit `ac5b13ac` closed checker read-ahead hardening; active continuity still named KIOD-R5 closure |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no material checker edits beyond state/front-door/handoff sync |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public/source-import claim |
+| Agent type | session-sync steward |
+| Invocation ID | `checker-read-ahead-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/checkerReadAheadGuardHardening20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/checkerReadAheadGuardHardening20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## KIOD-R5 Packet-Blocked Pilot Closure - 2026-06-30
 
