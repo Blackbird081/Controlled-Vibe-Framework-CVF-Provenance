@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=ASCP-T4 package lifecycle source-state decision through fresh GC-018/work order; parked checkpoint=ASCP-T3 closed at material commit `a5ab2689`; ASCP-T2 closed at `4d87c832`; ADIF-CLI-T1 closed at `0183e04f`; ASCP-T1 closed at `ddb65952`; SKUSE-T1 closed at `211c7bdb`; SKSOT-T1 closed at `c2278349`; EPSOT-T1 closed at `701ebd94`; AGSK-R7 closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane, or opens a fresh GC-018/work order for a specific ASSF package execution/use-proof adapter before any `ACTIVE` lifecycle promotion; parked checkpoint=ASCP-T4 closed at material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; ASCP-T3 closed at `a5ab2689`; ASCP-T2 closed at `4d87c832`; ADIF-CLI-T1 closed at `0183e04f`; ASCP-T1 closed at `ddb65952`; SKUSE-T1 closed at `211c7bdb`; SKSOT-T1 closed at `c2278349`; EPSOT-T1 closed at `701ebd94`; AGSK-R7 closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`ascp_t3_cli_mcp_adapter_projection_closed_pe
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `a5ab2689` ASCP-T3 CLI/MCP adapter projection |
-| Latest session-sync target | session sync after ASCP-T3 material closure |
+| Latest material closeout | `1625ab8c` ASCP-T4 package lifecycle source-state decision |
+| Latest session-sync target | session sync after ASCP-T4 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`
+`ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -63,6 +63,23 @@ against CVF-governed surfaces.
 External agent memory files: non-canonical convenience only.
 
 ## Latest Work / Changes
+
+Material commit `1625ab8c` closed ASCP-T4 package lifecycle source-state
+decision. Full SHA: `1625ab8c175d986038981c472bcb0eaf82f6e5ab`.
+
+It added:
+
+- `governance/compat/run_assf_package_lifecycle_decision.py`
+- `governance/compat/test_run_assf_package_lifecycle_decision.py`
+- ASCP-T4 GC-018 baseline, work order, completion review, and roadmap update
+
+The decision helper emits `HOLD_NO_ACTIVE_SOURCE_MUTATION` and
+`NO_SOURCE_MUTATIONS_AUTHORIZED`. Smoke observed 32 total candidates, 6 runtime
+eligible packages, 6 `ACTIVATION_READY` packages, 6 external projection ready
+packages, and 0 active source records. No package lifecycle source moved to
+`ACTIVE`; no registry entry, generated index, truth packet, package root,
+provider route, execution adapter, session state, or public-sync source was
+mutated by the material tranche.
 
 Material commit `a5ab2689` closed ASCP-T3 CLI/MCP adapter projection. Full
 SHA: `a5ab2689a7118cfc259932769bb9b8178e2987d2`.
@@ -189,6 +206,7 @@ production readiness.
 
 Recent material chain:
 
+- `1625ab8c` ASCP-T4 package lifecycle source-state decision.
 - `a5ab2689` ASCP-T3 CLI/MCP adapter projection.
 - `4d87c832` ASCP-T2 activation policy semantics.
 - `0183e04f` ADIF-CLI-T1 CLI classification and entrypoints.
@@ -204,17 +222,58 @@ Recent material chain:
 
 ## Next Allowed Move
 
-ASCP-T4 package lifecycle source-state decision is the next recommended move
-through fresh GC-018/source-verified work order. It should decide whether any
-package lifecycle source should move to `ACTIVE` after ASCP-T1 through ASCP-T3
-evidence, without package body reads, automatic invocation, provider/live
-proof, public-sync, or production claims.
+Operator selects the next high-value lane, or opens a fresh GC-018/work order
+for a specific ASSF package execution/use-proof adapter before any `ACTIVE`
+lifecycle promotion. ASCP-T5 remaining package conversion remains
+`VALUE_PARKED` until a concrete value condition is verified.
 
 No provider runtime interception, provider-side audit access, automatic package
 activation, automatic skill invocation telemetry outside the bounded loader,
-package lifecycle mutation, provider/live proof, public-sync, direct
-import, merge authority, commit authority, or production-readiness claim is
-authorized.
+package lifecycle mutation, provider/live proof, public-sync, direct import,
+merge authority, commit authority, or production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - ASCP-T4 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+ASCP-T4 material commit `1625ab8c`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording.
+
+Operator authorization: session-sync is required by the mandatory startup
+front-door, GC-020 in-place handoff HEAD rule, and active-session generated
+aggregate discipline after the operator-approved ASCP-T4 material tranche
+closed.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ascpT4PackageLifecycleSourceStateDecisionClosure20260630.json`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `1625ab8c`, ASCP-T3 material commit `a5ab2689`, ASCP-T2 material commit
+`4d87c832`, ADIF-CLI-T1 material commit `0183e04f`, ASCP-T1 material commit
+`ddb65952`, SKUSE-T1 material commit `211c7bdb`, SKSOT-T1 material commit
+`c2278349`, EPSOT-T1 material commit `701ebd94`, AGSK-R7 material commit
+`19feb1f1`, AGSK-R6 material commit `8caef205`, AGSK-R5 material commit
+`3a742e6e`, AGSK-R4 material commit `416eb689`, or AGSK-R3 material commit
+`4003289a` unless reviewer reopens those closures.
+
+## GC-020 Marker - ASCP-T4 Package Lifecycle Decision Material Closure
+
+Material commit `1625ab8c` closed ASCP-T4 package lifecycle source-state
+decision. Full material SHA:
+`1625ab8c175d986038981c472bcb0eaf82f6e5ab`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`1625ab8c`. It does not authorize package lifecycle mutation, package body
+reads, automatic package activation, automatic skill invocation telemetry
+outside the bounded loader, package execution adapters, provider/live proof,
+public-sync export, direct import, merge authority, commit authority, or
+production-readiness.
 
 ## Core Guard Self-Protection Authorization - ASCP-T3 Session Sync
 
