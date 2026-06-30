@@ -25,6 +25,8 @@ provider completion with a use-proof receipt.
 This standard applies to:
 
 - `governance/compat/run_assf_package_use_proof_adapter.py`;
+- `governance/compat/assf_live_model_selection.py`;
+- `governance/compat/live_provider_bootstrap.py`;
 - `governance/compat/test_run_assf_package_use_proof_adapter.py`;
 - governed artifacts that claim ASCP-T5 package execution/use-proof behavior.
 
@@ -86,6 +88,34 @@ A failed live run must emit a secret-safe diagnostic with:
 The adapter must not print raw API keys. It may report the environment variable
 name used as credential source.
 
+## Live Model Selection Guard
+
+Alibaba/DashScope free-quota live proof must select a model from
+`docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json`
+using the `models` array only.
+
+Binding rules:
+
+- the default model selection is `AUTO_FROM_ALIBABA_FREE_QUOTA_LEDGER`;
+- auto-selection must resolve to an unexpired ledger entry before package body
+  read or provider call;
+- an explicit model absent from the ledger `models` array must return
+  `MODEL_FREE_QUOTA_NOT_VERIFIED`;
+- an explicit model past its `expirationDate` must return
+  `MODEL_FREE_QUOTA_EXPIRED`;
+- diagnostic rerun summary rows are not model-selection authority;
+- provider capability registry entries are routability evidence only, not
+  current free-quota selection authority.
+
+## Live Environment Bootstrap Guard
+
+Live provider helpers under `governance/compat` must use the shared
+`governance/compat/live_provider_bootstrap.py` helper, or equivalent
+repo-root insertion before importing `scripts._local_env`.
+
+This prevents nested helper execution from reporting a false
+`missing_live_provider_key` when the key is present in repo-local env files.
+
 ## Source Verification Block
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |
@@ -93,7 +123,10 @@ name used as credential source.
 | Runtime loader emits usage receipts only for explicit eligible body reads | `governance/compat/run_assf_runtime_package_loader.py` | `_build_skill_usage_receipt`; `build_runtime_package_packet` | `skillUsageReceipts` | runtime package loader | RUNTIME_BEHAVIOR | ACCEPT |
 | Activation policy resolver requires matching usage receipt for consumed output | `governance/compat/run_assf_activation_policy_resolver.py` | `_state_for`; `build_activation_policy_packet` | `USED_WITH_RECEIPT` | activation policy resolver | RUNTIME_BEHAVIOR | ACCEPT |
 | Live key loader accepts repo env files and aliases without printing values | `scripts/_local_env.py`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/alibaba-env.ts` | `DEFAULT_ENV_FILES`; `keyCandidates` | `DEFAULT_ENV_FILES`; `DASHSCOPE_API_KEY` | repo env bootstrap and Alibaba env source | RUNTIME_BEHAVIOR | ACCEPT |
-| Provider capability registry includes Alibaba `qwen-turbo` completion capability | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | `PROVIDER_CAPABILITY_REGISTRY` | `qwen-turbo` | Model Gateway provider capability registry | VALUE_SET | ACCEPT |
+| Live provider helper inserts repo root before loading local env files | `governance/compat/live_provider_bootstrap.py` | `ensure_repo_root_on_sys_path`; `bootstrap_live_provider_env` | `sys.path`; `scripts._local_env` | live provider bootstrap helper | RUNTIME_BEHAVIOR | ACCEPT |
+| ASSF live model selector rejects absent or expired free-quota models | `governance/compat/assf_live_model_selection.py` | `resolve_free_quota_model` | `MODEL_FREE_QUOTA_NOT_VERIFIED`; `MODEL_FREE_QUOTA_EXPIRED` | ASSF live model selection helper | RUNTIME_BEHAVIOR | ACCEPT |
+| Alibaba free-quota model selection is controlled by the model ledger `models` array | `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json` | `models`; `useBeforeLiveTestRule` | `modelCode`; `expirationDate` | Alibaba free-quota ledger | VALUE_SET | ACCEPT |
+| Provider capability registry entries are not current free-quota selection authority | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`; `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.md` | `PROVIDER_CAPABILITY_REGISTRY`; `Use-Before-Live-Test Rule` | `qwen-turbo`; `MODEL_FREE_QUOTA_NOT_VERIFIED` | Model Gateway capability registry and free-quota ledger | LITERAL_INVARIANT | ACCEPT |
 | Live run diagnostic standard requires secret-safe failure classification | `docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | Required Diagnostic Record | `stage`; `class`; `retryable`; `safeMessage` | live run diagnostic standard | LITERAL_INVARIANT | ACCEPT |
 | Package use-proof adapter is new in ASCP-T5 | `governance/compat/run_assf_package_use_proof_adapter.py` | ASCP-T5 new file | `build_package_use_proof_packet` | package use-proof adapter | DOC_ONLY_NEW | ACCEPT |
 

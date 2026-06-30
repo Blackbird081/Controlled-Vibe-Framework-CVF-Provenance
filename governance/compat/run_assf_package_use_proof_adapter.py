@@ -34,6 +34,11 @@ try:
         build_activation_policy_packet,
     )
     from run_assf_runtime_package_loader import build_runtime_package_packet
+    from live_provider_bootstrap import bootstrap_live_provider_env
+    from assf_live_model_selection import (
+        AUTO_FREE_QUOTA_MODEL,
+        resolve_free_quota_model,
+    )
 except ModuleNotFoundError:
     from governance.compat.run_assf_activation_policy_resolver import (
         INDEX_PATH,
@@ -44,6 +49,11 @@ except ModuleNotFoundError:
     )
     from governance.compat.run_assf_runtime_package_loader import (
         build_runtime_package_packet,
+    )
+    from governance.compat.live_provider_bootstrap import bootstrap_live_provider_env
+    from governance.compat.assf_live_model_selection import (
+        AUTO_FREE_QUOTA_MODEL,
+        resolve_free_quota_model,
     )
 
 
@@ -62,8 +72,16 @@ DRY_RUN_MODE = "DRY_RUN_NO_PROVIDER_CALL"
 PROOF_RECEIPT_TYPE = "CVF_ASSF_PACKAGE_USE_PROOF_RECEIPT"
 DEFAULT_SKILL_ID = "cvf-engineering-spec-driven-development"
 DEFAULT_PROVIDER = "alibaba-dashscope"
-DEFAULT_MODEL = "qwen-turbo"
+AUTO_FREE_QUOTA_MODEL = "AUTO_FROM_ALIBABA_FREE_QUOTA_LEDGER"
+DEFAULT_MODEL = AUTO_FREE_QUOTA_MODEL
 DEFAULT_ENDPOINT = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions"
+FREE_QUOTA_LEDGER_PATH = (
+    REPO_ROOT
+    / "docs"
+    / "reference"
+    / "model_gateway"
+    / "CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json"
+)
 DEFAULT_TIMEOUT_SECONDS = 45
 DEFAULT_MAX_INSTRUCTION_CHARS = 6000
 DEFAULT_MAX_OUTPUT_CHARS = 1200
@@ -103,14 +121,7 @@ def _relative_path(path: Path) -> str:
 
 
 def _safe_loaded_env_files() -> list[str]:
-    repo_root_text = str(REPO_ROOT)
-    if repo_root_text not in sys.path:
-        sys.path.insert(0, repo_root_text)
-    try:
-        from scripts._local_env import bootstrap_repo_env
-    except ModuleNotFoundError:
-        return []
-    return [_relative_path(path) for path in bootstrap_repo_env()]
+    return [_relative_path(path) for path in bootstrap_live_provider_env()]
 
 
 def _resolve_api_key() -> tuple[str | None, str | None]:
@@ -291,6 +302,7 @@ def build_package_use_proof_packet(
     index_path: Path = INDEX_PATH,
     truth_index_path: Path = TRUTH_INDEX_PATH,
     repo_root: Path = REPO_ROOT,
+    free_quota_ledger_path: Path = FREE_QUOTA_LEDGER_PATH,
     skill_id: str = DEFAULT_SKILL_ID,
     provider: str = DEFAULT_PROVIDER,
     model: str = DEFAULT_MODEL,
@@ -309,7 +321,50 @@ def build_package_use_proof_packet(
     if max_output_chars <= 0:
         raise ValueError("max_output_chars must be a positive integer")
 
+    requested_model = model
+    model_selection = resolve_free_quota_model(
+        requested_model=requested_model,
+        ledger_path=free_quota_ledger_path,
+    )
+    resolved_model = model_selection.resolved_model or requested_model
     loaded_env_files = _safe_loaded_env_files() if live else []
+    base: dict[str, Any] = {
+        "adapterImplementation": ADAPTER_IMPLEMENTATION,
+        "claimBoundary": CLAIM_BOUNDARY,
+        "executionMode": LIVE_PROVIDER_MODE if live else DRY_RUN_MODE,
+        "lifecycleMutation": False,
+        "activePromotionAuthorized": False,
+        "sourceMutations": [],
+        "provider": provider,
+        "model": resolved_model,
+        "skillId": skill_id,
+        "sourcePaths": {
+            "runtimePackageLoader": "governance/compat/run_assf_runtime_package_loader.py",
+            "activationPolicyResolver": (
+                "governance/compat/run_assf_activation_policy_resolver.py"
+            ),
+            "skillIndex": _relative_path(index_path),
+            "truthIndex": _relative_path(truth_index_path),
+            "freeQuotaLedger": _relative_path(free_quota_ledger_path),
+        },
+        "modelSelection": model_selection.to_dict(relative_to=REPO_ROOT),
+        "safeLoadedEnvFiles": loaded_env_files,
+    }
+
+    if model_selection.status != "MODEL_FREE_QUOTA_USABLE":
+        base["executionDisposition"] = "LIVE_PROVIDER_DENIED_MODEL_FREE_QUOTA"
+        base["diagnostic"] = _diagnostic(
+            stage="model_selection",
+            failure_class=model_selection.status,
+            retryable=True,
+            user_action="select an unexpired model from the Alibaba free-quota ledger",
+            provider=provider,
+            model=requested_model,
+            safe_message=model_selection.reason
+            or "Requested model is not usable for free-quota live proof.",
+        )
+        return base
+
     runtime_packet = build_runtime_package_packet(
         index_path=index_path,
         repo_root=repo_root,
@@ -319,26 +374,6 @@ def build_package_use_proof_packet(
     )
     runtime_dict = runtime_packet.to_dict()
     items = runtime_dict.get("items", [])
-    base: dict[str, Any] = {
-        "adapterImplementation": ADAPTER_IMPLEMENTATION,
-        "claimBoundary": CLAIM_BOUNDARY,
-        "executionMode": LIVE_PROVIDER_MODE if live else DRY_RUN_MODE,
-        "lifecycleMutation": False,
-        "activePromotionAuthorized": False,
-        "sourceMutations": [],
-        "provider": provider,
-        "model": model,
-        "skillId": skill_id,
-        "sourcePaths": {
-            "runtimePackageLoader": "governance/compat/run_assf_runtime_package_loader.py",
-            "activationPolicyResolver": (
-                "governance/compat/run_assf_activation_policy_resolver.py"
-            ),
-            "skillIndex": _relative_path(index_path),
-            "truthIndex": _relative_path(truth_index_path),
-        },
-        "safeLoadedEnvFiles": loaded_env_files,
-    }
 
     if len(items) != 1:
         base["executionDisposition"] = "DENIED_PACKAGE_NOT_SELECTED"
@@ -347,6 +382,8 @@ def build_package_use_proof_packet(
             failure_class="package_not_selected",
             retryable=False,
             user_action="verify skill id and generated ASSF index",
+            provider=provider,
+            model=resolved_model,
             safe_message="No single matching runtime package was selected.",
         )
         return base
@@ -375,6 +412,8 @@ def build_package_use_proof_packet(
             failure_class="missing_skill_usage_receipt",
             retryable=False,
             user_action="use a runtime-eligible package and request body read through the loader",
+            provider=provider,
+            model=resolved_model,
             safe_message="Package body was not loaded with a matching skill usage receipt.",
         )
         return base
@@ -406,6 +445,8 @@ def build_package_use_proof_packet(
             failure_class="policy_use_without_receipt",
             retryable=False,
             user_action="provide a matching CVF_ASSF_SKILL_USAGE_RECEIPT",
+            provider=provider,
+            model=resolved_model,
             receipt_id=str(usage_receipt.get("receiptId", "")),
             safe_message="Activation policy did not classify the package as USED_WITH_RECEIPT.",
         )
@@ -441,7 +482,7 @@ def build_package_use_proof_packet(
             retryable=True,
             user_action="set DASHSCOPE_API_KEY or an accepted Alibaba alias",
             provider=provider,
-            model=model,
+            model=resolved_model,
             receipt_id=str(usage_receipt.get("receiptId", "")),
             safe_message="No DashScope-compatible live key was available.",
         )
@@ -449,7 +490,7 @@ def build_package_use_proof_packet(
 
     base["credentialSource"] = credential_source
     payload = {
-        "model": model,
+        "model": resolved_model,
         "messages": messages,
         "temperature": 0,
         "max_tokens": 400,
@@ -465,7 +506,7 @@ def build_package_use_proof_packet(
             retryable=True,
             user_action="inspect provider availability and retry once if transient",
             provider=provider,
-            model=model,
+            model=resolved_model,
             receipt_id=str(usage_receipt.get("receiptId", "")),
             safe_message=str(exc)[:400],
         )
@@ -493,7 +534,7 @@ def build_package_use_proof_packet(
             retryable=result.http_status is None or result.http_status >= 500,
             user_action="inspect safe provider response metadata before rerun",
             provider=provider,
-            model=model,
+            model=resolved_model,
             http_status=result.http_status,
             latency_ms=result.latency_ms,
             receipt_id=str(usage_receipt.get("receiptId", "")),
@@ -507,7 +548,7 @@ def build_package_use_proof_packet(
         skill_usage_receipt_id=str(usage_receipt.get("receiptId", "")),
         policy_receipt_id=str(policy_receipt.get("receiptId", "")),
         provider=provider,
-        model=model,
+        model=resolved_model,
         http_status=result.http_status,
         latency_ms=result.latency_ms,
         provider_trace_id=trace_id,
@@ -530,6 +571,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--index-path", type=Path, default=INDEX_PATH)
     parser.add_argument("--truth-index-path", type=Path, default=TRUTH_INDEX_PATH)
     parser.add_argument("--repo-root", type=Path, default=REPO_ROOT)
+    parser.add_argument("--free-quota-ledger-path", type=Path, default=FREE_QUOTA_LEDGER_PATH)
     parser.add_argument("--skill-id", default=DEFAULT_SKILL_ID)
     parser.add_argument("--provider", default=DEFAULT_PROVIDER)
     parser.add_argument("--model", default=DEFAULT_MODEL)
@@ -556,6 +598,7 @@ def main(argv: list[str] | None = None) -> int:
             index_path=args.index_path,
             truth_index_path=args.truth_index_path,
             repo_root=args.repo_root,
+            free_quota_ledger_path=args.free_quota_ledger_path,
             skill_id=args.skill_id,
             provider=args.provider,
             model=args.model,

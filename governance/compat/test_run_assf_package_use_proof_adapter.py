@@ -71,8 +71,16 @@ class PackageUseProofAdapterTests(unittest.TestCase):
             / "generated"
             / "skill-truth-index.json"
         )
+        self.free_quota_ledger_path = (
+            self.repo_root
+            / "docs"
+            / "reference"
+            / "model_gateway"
+            / "CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json"
+        )
         self._write_index()
         self._write_truth()
+        self._write_free_quota_ledger()
 
     def tearDown(self) -> None:
         shutil.rmtree(self.temp_dir)
@@ -133,11 +141,37 @@ class PackageUseProofAdapterTests(unittest.TestCase):
         self.truth_index_path.parent.mkdir(parents=True, exist_ok=True)
         self.truth_index_path.write_text(json.dumps(payload), encoding="utf-8")
 
+    def _write_free_quota_ledger(self) -> None:
+        payload = {
+            "schemaVersion": "0.1.0",
+            "artifact": "CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER",
+            "models": [
+                {
+                    "modelCode": "qwen3.6-plus",
+                    "expirationDate": "2026-07-01",
+                    "freeQuotaRemaining": 911370,
+                    "freeQuotaTotal": 1000000,
+                    "statusAtCapture": "Enabled",
+                },
+                {
+                    "modelCode": "qwen3.7-plus",
+                    "expirationDate": "2026-08-31",
+                    "freeQuotaRemaining": 998474,
+                    "freeQuotaTotal": 1000000,
+                    "statusAtCapture": "Enabled",
+                    "diagnosticRerun": {"result": "PASS"},
+                },
+            ],
+        }
+        self.free_quota_ledger_path.parent.mkdir(parents=True, exist_ok=True)
+        self.free_quota_ledger_path.write_text(json.dumps(payload), encoding="utf-8")
+
     def _packet(self, **kwargs: object) -> dict:
         return MODULE.build_package_use_proof_packet(
             index_path=self.index_path,
             truth_index_path=self.truth_index_path,
             repo_root=self.repo_root,
+            free_quota_ledger_path=self.free_quota_ledger_path,
             skill_id=self.skill_id,
             **kwargs,
         )
@@ -150,6 +184,11 @@ class PackageUseProofAdapterTests(unittest.TestCase):
             "DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF",
         )
         self.assertEqual(packet["executionMode"], "DRY_RUN_NO_PROVIDER_CALL")
+        self.assertEqual(packet["model"], "qwen3.7-plus")
+        self.assertEqual(
+            packet["modelSelection"]["status"],
+            "MODEL_FREE_QUOTA_USABLE",
+        )
         self.assertTrue(packet["packageRead"]["runtimeEligible"])
         self.assertEqual(packet["packageRead"]["packageBodyDisposition"], "LOADED")
         self.assertTrue(packet["packageRead"]["skillUsageReceiptId"].startswith("sha256:"))
@@ -164,7 +203,7 @@ class PackageUseProofAdapterTests(unittest.TestCase):
     def test_live_fake_provider_emits_use_proof_receipt(self) -> None:
         def fake_caller(payload: dict, api_key: str, timeout_seconds: int):
             self.assertEqual(api_key, "test-key")
-            self.assertEqual(payload["model"], "qwen-turbo")
+            self.assertEqual(payload["model"], "qwen3.7-plus")
             self.assertGreater(timeout_seconds, 0)
             return MODULE.ProviderResult(
                 http_status=200,
@@ -196,10 +235,24 @@ class PackageUseProofAdapterTests(unittest.TestCase):
         )
         self.assertEqual(receipt["skillId"], self.skill_id)
         self.assertEqual(receipt["provider"], "alibaba-dashscope")
-        self.assertEqual(receipt["model"], "qwen-turbo")
+        self.assertEqual(receipt["model"], "qwen3.7-plus")
         self.assertTrue(receipt["skillUsageReceiptId"].startswith("sha256:"))
         self.assertEqual(packet["liveCall"]["providerTraceId"], "req-test")
         self.assertIsNone(packet["diagnostic"])
+
+    def test_qwen_turbo_is_denied_as_unverified_free_quota_model(self) -> None:
+        packet = self._packet(live=True, model="qwen-turbo")
+
+        self.assertEqual(
+            packet["executionDisposition"],
+            "LIVE_PROVIDER_DENIED_MODEL_FREE_QUOTA",
+        )
+        self.assertEqual(
+            packet["diagnostic"]["class"],
+            "MODEL_FREE_QUOTA_NOT_VERIFIED",
+        )
+        self.assertEqual(packet["diagnostic"]["stage"], "model_selection")
+        self.assertNotIn("packageRead", packet)
 
     def test_live_missing_key_returns_secret_safe_diagnostic(self) -> None:
         clean_env = {key: "" for key in MODULE.API_KEY_ENV_CANDIDATES}
@@ -241,6 +294,8 @@ class PackageUseProofAdapterTests(unittest.TestCase):
                     str(self.truth_index_path),
                     "--repo-root",
                     str(self.repo_root),
+                    "--free-quota-ledger-path",
+                    str(self.free_quota_ledger_path),
                     "--skill-id",
                     self.skill_id,
                     "--json",
