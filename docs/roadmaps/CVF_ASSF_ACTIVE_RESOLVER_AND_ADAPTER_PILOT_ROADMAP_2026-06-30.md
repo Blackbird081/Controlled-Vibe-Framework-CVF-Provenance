@@ -23,8 +23,9 @@ Operator approved the next roadmap direction as ACTIVE resolver, CLI/MCP
 adapter, and package activation, with remaining package runtime conversion
 deferred. Operator also authorized live API-key use when a live proof is needed.
 
-This roadmap does not itself claim live provider behavior. ASCP-T1 uses local
-repo metadata, truth packets, and runtime loader logic only.
+This roadmap does not itself claim live provider behavior. ASCP-T1 and ASCP-T2
+use local repo metadata, truth packets, resolver logic, policy classification,
+and runtime loader receipt semantics only.
 
 ## Current Baseline
 
@@ -38,11 +39,11 @@ repo metadata, truth packets, and runtime loader logic only.
 
 ## Non-Goals
 
-- No remaining-package runtime conversion in ASCP-T1.
+- No remaining-package runtime conversion in ASCP-T1 or ASCP-T2.
 - No package lifecycle source mutation to `ACTIVE`.
 - No automatic package invocation.
 - No package instruction body read.
-- No external CLI/MCP adapter implementation.
+- No external CLI/MCP adapter implementation before ASCP-T3.
 - No provider call or live governance proof.
 - No public-sync or production-readiness claim.
 
@@ -61,8 +62,8 @@ repo metadata, truth packets, and runtime loader logic only.
 Included:
 
 - ASCP-T1 ACTIVE resolver pilot for the six current runtime-eligible packages.
-- ASCP-T2 activation policy hardening for decision receipt acceptance and
-  operator-facing activation language.
+- ASCP-T2 activation policy hardening for selected, ready, body-read requested,
+  and used-with-receipt semantics.
 - ASCP-T3 CLI/MCP adapter projection after resolver output is stable.
 - ASCP-T4 package activation lifecycle decision after adapter and resolver
   boundaries are proven.
@@ -73,7 +74,7 @@ Excluded:
 - package lifecycle mutation to `ACTIVE` without a later source-verified
   promotion work order;
 - automatic package invocation;
-- external adapter implementation in ASCP-T1;
+- external adapter implementation before ASCP-T3;
 - provider or live API calls unless a later tranche makes a live governance
   claim.
 
@@ -82,8 +83,8 @@ Excluded:
 | Tranche | Objective | Status |
 |---|---|---|
 | ASCP-T1 | Implement read-only ACTIVE resolver decision layer over generated ASSF metadata, truth index, and loader eligibility | CLOSED_PASS_BOUNDED |
-| ASCP-T2 | Define activation policy semantics: selected, ready, body-read requested, and used-with-receipt | READY_AFTER_T1 |
-| ASCP-T3 | Implement CLI/MCP adapter projection using resolver output and external readout allowlist | HOLD_AFTER_T2 |
+| ASCP-T2 | Define activation policy semantics: selected, ready, body-read requested, and used-with-receipt | CLOSED_PASS_BOUNDED |
+| ASCP-T3 | Implement CLI/MCP adapter projection using resolver output and external readout allowlist | READY_AFTER_T2 |
 | ASCP-T4 | Decide whether any package lifecycle source should move to `ACTIVE` | HOLD_AFTER_T3 |
 | ASCP-T5 | Reopen remaining package runtime conversion only after T1-T4 evidence shows value | VALUE_PARKED |
 
@@ -106,6 +107,29 @@ The resolver:
 Focused verification observed 6 `ACTIVATION_READY` packages and 32 total
 generated-index candidates.
 
+## ASCP-T2 Result
+
+ASCP-T2 added:
+
+- `docs/reference/agent_system_skills/CVF_ASSF_ACTIVATION_POLICY_SEMANTICS_STANDARD.md`;
+- `governance/compat/run_assf_activation_policy_resolver.py`;
+- `governance/compat/test_run_assf_activation_policy_resolver.py`.
+
+The policy layer:
+
+- classifies selected package rows separately from activation readiness;
+- treats `ACTIVATION_READY` as permission to request the runtime loader, not as
+  package body loading;
+- classifies `BODY_READ_REQUESTED` without opening package bodies;
+- requires a matching `CVF_ASSF_SKILL_USAGE_RECEIPT` before
+  `USED_WITH_RECEIPT`;
+- denies consumed-output claims without matching receipts;
+- keeps external CLI/MCP adapter behavior deferred to ASCP-T3.
+
+Focused verification passed 7 activation-policy unit tests and local smokes
+for `ACTIVATION_READY` and `BODY_READ_REQUESTED` on
+`cvf-engineering-spec-driven-development`.
+
 ## Source Verification Block
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |
@@ -116,6 +140,7 @@ generated-index candidates.
 | Usage receipts are emitted by the loader only for explicit eligible package body reads | `docs/reference/agent_system_skills/CVF_SKILL_USAGE_RECEIPT_TRACE_STANDARD.md` | Purpose; Claim Boundary | `skillUsageReceipts` | skill usage receipt standard | LITERAL_INVARIANT | ACCEPT |
 | External CLI/MCP adapter implementation remains deferred | `docs/reference/agent_system_skills/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_CONTRACT.md` | Adapter Admission Boundary | `EXTERNAL_AGENT_CLI_MCP` | external readout boundary contract | LITERAL_INVARIANT | ACCEPT |
 | ACTIVE resolver helper is new in ASCP-T1 | `governance/compat/run_assf_active_resolver.py` | ASCP-T1 new file | `build_active_resolver_packet` | active resolver helper | DOC_ONLY_NEW | ACCEPT |
+| Activation policy helper is new in ASCP-T2 | `governance/compat/run_assf_activation_policy_resolver.py` | ASCP-T2 new file | `build_activation_policy_packet` | activation policy resolver | DOC_ONLY_NEW | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
 
@@ -125,22 +150,26 @@ riskCeiling=`HIGH`, maxResults=`20`
 
 Returned defects: NONE_RETURNED
 
-Disclosure note: the ADIF resolver was called through Python import because the
-module has no CLI `main()` output path.
+Disclosure command:
+
+```text
+python governance/compat/run_adif_defect_resolver.py --task-class implementation --role worker --lifecycle-phase implementation --surface-selector docs/reference/agent_system_skills --risk-ceiling HIGH --max-results 20 --json
+```
 
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
 |---|---|---|---|---|---|
 | `INTERNAL_AGENT` | ASCP-T1 active resolver helper | may receive activation-readiness decisions only; no body read or authority grant | focused tests and resolver smoke | no external adapter | `IMPLEMENTED_BOUNDED` |
-| `EXTERNAL_AGENT_CLI_MCP` | future adapter projection | denied by ASCP-T1 until a separate adapter implementation tranche exists | external readout boundary contract | deferred adapter owner | `DEFERRED_WITH_REASON` |
+| `INTERNAL_AGENT` | ASCP-T2 activation policy helper | may receive selected/ready/body-read/use classification only; no body read or authority grant | focused tests and policy smoke | no external adapter | `IMPLEMENTED_BOUNDED` |
+| `EXTERNAL_AGENT_CLI_MCP` | future adapter projection | denied until a separate adapter implementation tranche exists | external readout boundary contract and ASCP-T2 policy standard | deferred adapter owner | `DEFERRED_WITH_REASON` |
 
 ## External Knowledge Intake Routing
 
 | Field | Value |
 |---|---|
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
-| Input type | runtime/provider/mcp/readiness claim |
+| Input type | Runtime/provider/MCP/readiness claim |
 | Chain map route | local CVF skill-control roadmap -> no external knowledge promotion |
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
 | Owner surface | this roadmap and ASCP-T1 artifacts |
@@ -166,6 +195,9 @@ module has no CLI `main()` output path.
 | AC3 | Resolver does not emit skill usage receipts | focused tests |
 | AC4 | External CLI/MCP consumer remains denied | focused tests |
 | AC5 | Real repo smoke observes 6 ready packages | resolver smoke |
+| AC6 | Policy helper classifies selected, ready, body-read requested, and used-with-receipt | focused tests |
+| AC7 | Policy helper denies consumed-output claims without matching receipts | focused tests |
+| AC8 | ASCP-T3 becomes ready only after ASCP-T2 closure | roadmap Work Plan |
 
 ## Verification / Evidence
 
@@ -173,6 +205,9 @@ module has no CLI `main()` output path.
 |---|---|
 | `python -m unittest governance.compat.test_run_assf_active_resolver` | PASS, 7 tests |
 | `python governance/compat/run_assf_active_resolver.py --json --max-results 100` | 32 total candidates, 6 `ACTIVATION_READY` |
+| `python -m unittest governance.compat.test_run_assf_activation_policy_resolver` | PASS, 7 tests |
+| `python governance/compat/run_assf_activation_policy_resolver.py --skill-id cvf-engineering-spec-driven-development --json` | returned `ACTIVATION_READY` |
+| `python governance/compat/run_assf_activation_policy_resolver.py --skill-id cvf-engineering-spec-driven-development --body-read-requested` | returned `BODY_READ_REQUESTED` |
 | Live provider proof | NOT_RUN_WITH_REASON: no provider/API/model behavior or live governance behavior is claimed |
 
 ## CVF Skill Usage Receipt Trace
@@ -180,11 +215,11 @@ module has no CLI `main()` output path.
 | Field | Value |
 |---|---|
 | Usage disposition | NOT_USED_WITH_REASON |
-| CVF skill id | N/A with reason: ASCP-T1 resolver did not consume package instruction output as work evidence |
+| CVF skill id | N/A with reason: ASCP-T1 resolver and ASCP-T2 policy helper did not consume package instruction output as work evidence |
 | Package root | N/A with reason: no package body was requested |
-| Invocation context | ASCP-T1 resolver smoke used metadata and truth index only |
+| Invocation context | ASCP-T1 resolver smoke and ASCP-T2 policy smokes used metadata, truth index, and policy classification only |
 | Receipt evidence | N/A with reason: no `skillUsageReceipt` is emitted until the runtime loader explicitly reads an eligible body |
-| Output consumed by CVF | resolver decision receipt metadata only |
+| Output consumed by CVF | resolver and policy decision metadata only |
 | Truth packet or source path | `docs/reference/agent_system_skills/truth/generated/skill-truth-index.json` |
 | Authority boundary | resolver decision receipt does not grant authority, activate a package, or bypass work-order scope |
 
@@ -213,23 +248,24 @@ authorization.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T1_ACTIVE_RESOLVER_PILOT_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_ASCP_T1_ACTIVE_RESOLVER_PILOT_COMPLETION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T2_ACTIVATION_POLICY_SEMANTICS_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASCP_T2_ACTIVATION_POLICY_SEMANTICS_COMPLETION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | this roadmap | `Status: ACTIVE_ROADMAP` | PASS |
 | Registry JSON | N/A with reason: no registry mutation authorized or performed | N/A with reason | PASS |
 | Registry Markdown | N/A with reason: no registry markdown mutation | N/A with reason | PASS |
 | External evidence digest | N/A with reason: no external evidence digest created | N/A with reason | N/A with reason |
 | System loop interlock | N/A with reason: no provider route, adapter, or package execution changed | N/A with reason | PASS |
 | Session continuity | session-sync may follow material closure | N/A with reason | PASS |
-| Focused tests | active resolver tests | PASS | PASS |
-| Runtime smoke | active resolver smoke | PASS | PASS |
+| Focused tests | active resolver and activation policy tests | PASS | PASS |
+| Runtime smoke | active resolver and activation policy smokes | PASS | PASS |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Live proof | this file | N/A with reason: no live governance behavior claim | PASS |
 
 ## Claim Boundary
 
 This roadmap opens and records a bounded ASSF skill control-plane path. ASCP-T1
-implements local activation-readiness decisions only. It does not convert
-remaining packages, mutate lifecycle sources, read package instruction bodies,
-call providers, expose CLI/MCP adapter behavior, public-sync, or claim
+implements local activation-readiness decisions, and ASCP-T2 implements local
+activation policy classification only. It does not convert remaining packages,
+mutate lifecycle sources, read package instruction bodies, call providers,
+expose CLI/MCP adapter behavior before ASCP-T3, public-sync, or claim
 production readiness.
