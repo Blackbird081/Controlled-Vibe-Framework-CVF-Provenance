@@ -271,6 +271,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "package skill productionization pipeline",
+            "governance/compat/check_package_skill_productionization_pipeline.py",
+            base,
+            head,
+        ),
+        _range_command(
             "truth foundation claim guard",
             "governance/compat/check_truth_foundation_claim_guard.py",
             base,
