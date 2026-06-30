@@ -69,8 +69,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection",
-  "previousMode": "scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection",
+  "currentMode": "scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection",
+  "previousMode": "ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

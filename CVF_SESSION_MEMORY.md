@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; Web dashboard/console UI, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, automatic invocation, action authority, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-P4-P6 Remaining Package Production Scale-Up closed at material commit `687d4423`, with SCPL-T2 at `25361957`, SCPL-T1 at `c5670974`, PKGSOP-T2 at `eaadc5ed`, PKGSOP-T1 at `693608cb`, and ASCP-P1-P3 retained as the first 6-package production baseline at `43e4092f`.
+Startup acknowledged: current mode=`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; full Skill Governance Console/dashboard build, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, automatic invocation, action authority, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=SCPL-WEB-T1 Skill Control Plane Web Projection closed at material commit `a01bdca2`, with ASCP-P4-P6 at `687d4423`, SCPL-T2 at `25361957`, SCPL-T1 at `c5670974`, PKGSOP-T2 at `eaadc5ed`, PKGSOP-T1 at `693608cb`, and ASCP-P1-P3 retained as the first 6-package production baseline at `43e4092f`.
 
 ## Current Mode
 
-Current mode marker: `ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
+Current mode marker: `scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
 
-Current mode: `ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
+Current mode: `scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
 
-`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
+`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`
+`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
@@ -155,7 +155,7 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
+Mode: `scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value package-skill lane.
 Web dashboard/console UI, full MCP server, production Model Gateway/model
@@ -181,7 +181,7 @@ a separate future roadmap.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 24 runtime
 eligible package roots, 24 `ACTIVATION_READY` resolver decisions, 24 external
-projection ready packages, 24 selection-profiled packages, 24 ACTIVE production package sources, activation policy states for
+projection ready packages, 24 selection-profiled packages, 24 ACTIVE production package sources, 52 Web front-door skills, 25 ASSF Web package projections, 24 Web runtime package projections, activation policy states for
 selected/ready/body-read/use classification, bounded external metadata/policy
 projection, deterministic loader receipts for explicit eligible body reads,
 two bounded ASCP-T5 live use-proof receipts, ASCP-P4-P6 dry-run proof for the
@@ -229,6 +229,17 @@ or command import, persona orchestration, hook install, additional checker imple
 automatic skill invocation, production-readiness
 claim, and MPI-T6 runtime work unless separately authorized by fresh
 GC-018/source-verified work order.
+
+SCPL-WEB-T1 closed at material commit `a01bdca2`. CVF Web now has generated
+Skill Control Plane projection inheritance through
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/assf-skill-control-plane.json`,
+with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
+catalogs. The next move remains operator selection of the next high-value
+package-skill lane; a full Skill Governance Console/dashboard build needs a
+fresh GC-018/source-verified work order.
+
+Current mode:
+`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
 
 ## Continuity Markers
 
