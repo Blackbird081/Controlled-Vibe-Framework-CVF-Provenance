@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=ASCP-T2 activation policy semantics before CLI/MCP adapter implementation; parked checkpoint=ASCP-T1 closed at material commit `ddb65952`; SKUSE-T1 remains closed at `211c7bdb`; SKSOT-T1 remains closed at `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`adif_cli_t1_closed_pending_ascp_t2_activation_policy`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=ASCP-T2 activation policy semantics before CLI/MCP adapter implementation; parked checkpoint=ADIF-CLI-T1 closed at material commit `0183e04f`; ASCP-T1 remains closed at `ddb65952`; SKUSE-T1 remains closed at `211c7bdb`; SKSOT-T1 remains closed at `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`ascp_t1_active_resolver_pilot_closed_pending
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `ddb65952` ASCP-T1 active resolver pilot |
-| Latest session-sync target | session sync after ASCP-T1 material closure |
+| Latest material closeout | `0183e04f` ADIF-CLI-T1 CLI classification and entrypoints |
+| Latest session-sync target | session sync after ADIF-CLI-T1 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`ascp_t1_active_resolver_pilot_closed_pending_ascp_t2_activation_policy`
+`adif_cli_t1_closed_pending_ascp_t2_activation_policy`
 
 ## Purpose
 
@@ -61,6 +61,22 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `0183e04f` closed ADIF-CLI-T1 CLI classification and
+entrypoints. It added:
+
+- `docs/reference/CVF_CLI_SURFACE_CLASSIFICATION_STANDARD_2026-06-30.md`
+- `governance/compat/CVF_CLI_SURFACE_CLASSIFICATION_REGISTRY.json`
+- `governance/compat/check_cli_surface_classification.py`
+- `governance/compat/test_check_cli_surface_classification.py`
+- CLI entrypoints for `run_adif_defect_resolver.py`,
+  `run_adif_preflight_readout.py`, and
+  `run_adif_finding_intake_bridge.py`
+
+The tranche records centralized `CLI_REQUIRED`, `CLI_OPTIONAL`, and
+`MODULE_ONLY` control for local helper surfaces. It does not mutate ADIF
+entries, activate ASSF packages, implement MCP adapters, call providers,
+public-sync, or claim production readiness.
 
 Material commit `211c7bdb` closed SKUSE-T1 skill usage receipt trace. It
 added:
@@ -140,6 +156,7 @@ production readiness.
 
 Recent material chain:
 
+- `0183e04f` ADIF-CLI-T1 CLI classification and entrypoints.
 - `ddb65952` ASCP-T1 active resolver pilot.
 - `211c7bdb` SKUSE-T1 skill usage receipt trace.
 - `c2278349` SKSOT-T1 skill truth packet foundation.
@@ -162,6 +179,71 @@ activation, automatic skill invocation telemetry outside the bounded loader,
 package lifecycle mutation, CLI/MCP adapter, provider/live proof, public-sync, direct
 import, merge authority, commit authority, or production-readiness claim is
 authorized.
+
+## Core Guard Self-Protection Authorization - ADIF-CLI-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+ADIF-CLI-T1 material commit `0183e04f`, regenerate active session state, and
+align front-door, bootstrap read model, and active handoff next-move wording.
+
+Operator authorization: session-sync is required by the mandatory startup
+front-door, GC-020 in-place handoff HEAD rule, and active-session generated
+aggregate discipline after the operator-approved ADIF-CLI-T1 material tranche
+closed.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/adifCliT1CliClassificationAndEntrypointsClosure20260630.json`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `0183e04f`, ASCP-T1 material commit `ddb65952`, SKUSE-T1 material
+commit `211c7bdb`, SKSOT-T1 material commit `c2278349`, EPSOT-T1 material
+commit `701ebd94`, AGSK-R7 material commit `19feb1f1`, AGSK-R6 material commit
+`8caef205`, AGSK-R5 material commit `3a742e6e`, AGSK-R4 material commit
+`416eb689`, or AGSK-R3 material commit `4003289a` unless reviewer reopens those
+closures.
+
+## GC-020 Marker - ADIF-CLI-T1 CLI Classification Material Closure
+
+Material commit `0183e04f` closed ADIF-CLI-T1 CLI classification and
+entrypoints. Full material SHA:
+`0183e04f746d8fd65f909a09bb11ac06968878fa`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`0183e04f`. It does not authorize ADIF entry mutation, automatic package
+activation, package body reads, automatic skill invocation telemetry outside
+the bounded loader, CLI/MCP adapter implementation, provider/live proof,
+public-sync export, direct import, merge authority, commit authority, or
+production-readiness.
+
+## Agent Operation Trace Block - ADIF-CLI-T1 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | ADIF-CLI-T1 session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V28 handoff |
+| Allowed scope source | GC-020 after ADIF-CLI-T1 material commit `0183e04f` plus generated active-session state discipline |
+| Before status evidence | material commit `0183e04f` closed ADIF-CLI-T1 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/resolver/provider activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `adif-cli-t1-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/adifCliT1CliClassificationAndEntrypointsClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/adifCliT1CliClassificationAndEntrypointsClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Parked Checkpoint
 
