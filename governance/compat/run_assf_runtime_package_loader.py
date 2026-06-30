@@ -14,6 +14,7 @@ order, role, lifecycle phase, and tool permissions still control any action.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from dataclasses import dataclass
@@ -55,6 +56,7 @@ class RuntimePackageItem:
     ineligibility_reasons: tuple[str, ...]
     package_body_disposition: str
     instruction_body: str | None = None
+    skill_usage_receipt: dict[str, Any] | None = None
 
     def to_dict(self) -> dict[str, Any]:
         payload = dict(self.metadata)
@@ -63,6 +65,8 @@ class RuntimePackageItem:
         payload["runtimeEligible"] = self.runtime_eligible
         if self.instruction_body is not None:
             payload["instructionBody"] = self.instruction_body
+        if self.skill_usage_receipt is not None:
+            payload["skillUsageReceipt"] = self.skill_usage_receipt
         return payload
 
 
@@ -76,10 +80,16 @@ class RuntimePackagePacket:
     instruction_bodies_requested: bool
 
     def to_dict(self) -> dict[str, Any]:
+        receipts = [
+            item.skill_usage_receipt
+            for item in self.items
+            if item.skill_usage_receipt is not None
+        ]
         return {
             "claimBoundary": CLAIM_BOUNDARY,
             "instructionBodiesRequested": self.instruction_bodies_requested,
             "items": [item.to_dict() for item in self.items],
+            "skillUsageReceipts": receipts,
             "sourcePath": INDEX_PATH.relative_to(REPO_ROOT).as_posix(),
             "totalCandidates": self.total_candidates,
             "truncated": self.truncated,
@@ -94,6 +104,12 @@ class RuntimePackagePacket:
             f"Truncated: {str(self.truncated).lower()}",
             f"Claim boundary: {CLAIM_BOUNDARY}",
         ]
+        receipts = [
+            item.skill_usage_receipt
+            for item in self.items
+            if item.skill_usage_receipt is not None
+        ]
+        lines.append(f"Skill usage receipts: {len(receipts)}")
         if not self.items:
             lines.append("No matching package records.")
             return "\n".join(lines)
@@ -108,6 +124,11 @@ class RuntimePackagePacket:
                 f"body={item.package_body_disposition} | "
                 f"reasons={reasons}"
             )
+            if item.skill_usage_receipt is not None:
+                lines.append(
+                    "  receipt="
+                    f"{item.skill_usage_receipt.get('receiptId', '<missing receiptId>')}"
+                )
         return "\n".join(lines)
 
 
@@ -246,6 +267,39 @@ def _metadata_item(entry: dict[str, Any]) -> dict[str, Any]:
     return {field: entry[field] for field in fields if field in entry}
 
 
+def _sha256_text(value: str) -> str:
+    return "sha256:" + hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def _build_skill_usage_receipt(
+    *,
+    entry: dict[str, Any],
+    instruction_body: str,
+    instruction_path: Path,
+    repo_root: Path,
+    index_path: Path,
+) -> dict[str, Any]:
+    package_root = instruction_path.relative_to(repo_root).as_posix()
+    body_hash = _sha256_text(instruction_body)
+    material = {
+        "authorityBoundary": (
+            "receipt proves an explicit eligible package body read only; it "
+            "does not grant authority, activate the package, call providers, "
+            "or bypass governed work-order scope"
+        ),
+        "bodyHash": body_hash,
+        "generatedBy": "governance/compat/run_assf_runtime_package_loader.py",
+        "packageBodyDisposition": ELIGIBLE_BODY_DISPOSITION,
+        "packageRootPath": package_root,
+        "receiptType": "CVF_ASSF_SKILL_USAGE_RECEIPT",
+        "schemaVersion": "0.1.0",
+        "skillId": _as_text(entry.get("skillId")),
+        "sourceIndexPath": index_path.relative_to(repo_root).as_posix(),
+    }
+    canonical = json.dumps(material, sort_keys=True, separators=(",", ":"))
+    return {"receiptId": _sha256_text(canonical), **material}
+
+
 def build_runtime_package_packet(
     *,
     index_path: Path = INDEX_PATH,
@@ -289,6 +343,7 @@ def build_runtime_package_packet(
         reasons = _runtime_ineligibility_reasons(entry, repo_root=repo_root)
         eligible = not reasons
         body: str | None = None
+        receipt: dict[str, Any] | None = None
         disposition = NOT_REQUESTED_BODY_DISPOSITION
         if include_instruction_bodies:
             if eligible:
@@ -298,6 +353,13 @@ def build_runtime_package_packet(
                 else:
                     body = instruction_path.read_text(encoding="utf-8")
                     disposition = ELIGIBLE_BODY_DISPOSITION
+                    receipt = _build_skill_usage_receipt(
+                        entry=entry,
+                        instruction_body=body,
+                        instruction_path=instruction_path,
+                        repo_root=repo_root,
+                        index_path=index_path,
+                    )
             else:
                 disposition = DENIED_BODY_DISPOSITION
         items.append(
@@ -307,6 +369,7 @@ def build_runtime_package_packet(
                 ineligibility_reasons=reasons,
                 package_body_disposition=disposition,
                 instruction_body=body,
+                skill_usage_receipt=receipt,
             )
         )
 
@@ -327,6 +390,7 @@ def main(argv: list[str] | None = None) -> int:
         )
     )
     parser.add_argument("--index-path", type=Path, default=INDEX_PATH)
+    parser.add_argument("--repo-root", type=Path, default=REPO_ROOT)
     parser.add_argument("--skill-id", default=None)
     parser.add_argument("--task-class", default=None)
     parser.add_argument("--role", default=None)
@@ -340,11 +404,18 @@ def main(argv: list[str] | None = None) -> int:
         help="Open eligible package SKILL.md bodies after lifecycle gates pass",
     )
     parser.add_argument("--json", action="store_true", help="Emit JSON output")
+    parser.add_argument(
+        "--receipt-out",
+        type=Path,
+        default=None,
+        help="Write skill usage receipts to a JSON file when bodies are loaded",
+    )
     args = parser.parse_args(argv)
 
     try:
         packet = build_runtime_package_packet(
             index_path=args.index_path,
+            repo_root=args.repo_root,
             skill_id=args.skill_id,
             task_class=args.task_class,
             role=args.role,
@@ -362,6 +433,19 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(packet.to_dict(), ensure_ascii=False, indent=2))
     else:
         print(packet.to_human_text())
+    if args.receipt_out is not None:
+        args.receipt_out.write_text(
+            json.dumps(
+                {
+                    "claimBoundary": CLAIM_BOUNDARY,
+                    "skillUsageReceipts": packet.to_dict()["skillUsageReceipts"],
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
     return 0
 
 

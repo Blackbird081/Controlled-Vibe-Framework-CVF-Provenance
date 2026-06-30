@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import builtins
+import contextlib
+import io
 import importlib.util
 import json
 import sys
@@ -143,6 +145,13 @@ class RuntimePackageLoaderTests(unittest.TestCase):
         self.assertTrue(item["runtimeEligible"])
         self.assertEqual(item["packageBodyDisposition"], "LOADED")
         self.assertEqual(item["instructionBody"], "# Eligible Skill\n")
+        self.assertEqual(len(packet.to_dict()["skillUsageReceipts"]), 1)
+        receipt = item["skillUsageReceipt"]
+        self.assertEqual(receipt["receiptType"], "CVF_ASSF_SKILL_USAGE_RECEIPT")
+        self.assertEqual(receipt["skillId"], "eligible-skill")
+        self.assertEqual(receipt["packageBodyDisposition"], "LOADED")
+        self.assertTrue(receipt["bodyHash"].startswith("sha256:"))
+        self.assertIn("does not grant authority", receipt["authorityBoundary"])
 
     def test_include_instruction_bodies_denies_proposed_package(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -165,6 +174,48 @@ class RuntimePackageLoaderTests(unittest.TestCase):
             item["ineligibilityReasons"],
         )
         self.assertNotIn("instructionBody", item)
+        self.assertNotIn("skillUsageReceipt", item)
+        self.assertEqual(packet.to_dict()["skillUsageReceipts"], [])
+
+    def test_receipt_output_writes_receipt_bundle(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_skill_body(root, "eligible-skill", "# Eligible Skill\n")
+            index_path = _write_index(
+                root,
+                [
+                    _entry(
+                        "eligible-skill",
+                        certification_state="CERTIFIED",
+                        uat_state="PASSED",
+                        internal_disposition="IMPLEMENTED",
+                    )
+                ],
+            )
+            receipt_path = root / "receipt.json"
+            with contextlib.redirect_stdout(io.StringIO()):
+                exit_code = MODULE.main(
+                    [
+                        "--index-path",
+                        str(index_path),
+                        "--repo-root",
+                        str(root),
+                        "--skill-id",
+                        "eligible-skill",
+                        "--include-instruction-bodies",
+                        "--json",
+                        "--receipt-out",
+                        str(receipt_path),
+                    ]
+                )
+            bundle = json.loads(receipt_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(len(bundle["skillUsageReceipts"]), 1)
+        self.assertEqual(
+            bundle["skillUsageReceipts"][0]["receiptType"],
+            "CVF_ASSF_SKILL_USAGE_RECEIPT",
+        )
 
     def test_out_of_scope_package_root_is_denied(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

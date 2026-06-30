@@ -259,6 +259,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "CVF skill usage receipt trace",
+            "governance/compat/check_cvf_skill_usage_receipt_trace.py",
+            base,
+            head,
+        ),
+        _range_command(
             "skill truth packets",
             "governance/compat/check_skill_truth_packets.py",
             base,
