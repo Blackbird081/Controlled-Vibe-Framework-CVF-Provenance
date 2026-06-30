@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=Claude executes KIOD-R4 work order under `WORKER_MUST_NOT_COMMIT` and returns only `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`; parked checkpoint=KIOD-R4 dispatched at material commit `c5f93805`.
+Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R5 GC-018/source-verified work order for packet-blocked next source repo/folder pilot with mandatory `Negative-search evidence` packet field; parked checkpoint=KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 ## Current State
 
@@ -18,13 +18,76 @@ Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_di
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material dispatch | `c5f93805` KIOD-R4 Negative Search Evidence Decision |
-| Latest session-sync target | session sync after KIOD-R4 material dispatch |
+| Latest material closure | `0416843c` KIOD-R4 Negative Search Evidence Decision |
+| Latest session-sync target | session sync after KIOD-R4 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
+`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+
+## KIOD-R4 Closure - 2026-06-30
+
+Material closure commit:
+`0416843c`
+
+Closure artifacts:
+
+- `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`
+- `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md`
+- `docs/baselines/CVF_GC018_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_2026-06-30.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_FOR_CLAUDE_2026-06-30.md`
+- `docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md`
+
+Decision: `PACKET_BLOCK_REQUIRED_NOW`.
+
+Next allowed move: author KIOD-R5 GC-018/source-verified work order for a
+packet-blocked next source repo/folder pilot that includes a mandatory
+`Negative-search evidence` packet field before novelty candidate or
+owner-missing row acceptance.
+
+Claim boundary: KIOD-R4 is documentation/governance decision closure only. It
+does not implement a checker, runtime/provider behavior, MCP/CLI adapter,
+dashboard, public-sync, source import, automatic invocation, action authority,
+or production-readiness claim.
+
+## GC-020 HEAD Marker - KIOD-R4 Closure
+
+Latest material commit requiring in-place handoff trace:
+`0416843cd1a9891db92b0724afdf90573e33caee`
+
+Short SHA: `0416843c`
+
+Material work: KIOD-R4 Negative Search Evidence Decision closure.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`0416843c`. It records the accepted `PACKET_BLOCK_REQUIRED_NOW` decision and
+does not authorize checker implementation, runtime/provider behavior, MCP/CLI
+adapter work, dashboard, public-sync, source import, automatic invocation,
+action authority, or production-readiness claims.
+
+## Agent Operation Trace Block - KIOD-R4 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-R4 closure session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-R4 material closure commit `0416843c` plus generated active-session state discipline |
+| Before status evidence | material commit `0416843c` closed KIOD-R4; active continuity still named KIOD-R4 worker dispatch |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no new runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-r4-closure-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR4NegativeSearchEvidenceDecisionClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR4NegativeSearchEvidenceDecisionClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## KIOD-R4 Dispatch - 2026-06-30
 
@@ -72,7 +135,7 @@ automatic invocation, or production-readiness claim.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: GC-020 session-sync after KIOD-R4 material
-dispatch commit `c5f93805`; update active session state sources, generated
+closure commit `0416843c`; update active session state sources, generated
 state/read model, front door, and active handoff only.
 
 Protected paths:
@@ -80,17 +143,18 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/kiodR4NegativeSearchEvidenceDecisionClosure20260630.json`
 - `CVF_SESSION/state/entries/kiodR4NegativeSearchEvidenceDecisionDispatch20260630.json`
 - `CVF_SESSION/state/entries/kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: governed session-sync requirement after material
-dispatch and active-session state continuity requirement naming material HEAD
-`c5f93805`.
+closure and active-session state continuity requirement naming material HEAD
+`0416843c`.
 
 Rollback boundary: revert only this session-sync if rejected; do not revert the
-KIOD-R4 material dispatch commit `c5f93805`.
+KIOD-R4 material closure commit `0416843c`.
 
 ## Purpose
 

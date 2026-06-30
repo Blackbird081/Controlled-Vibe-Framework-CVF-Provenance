@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=Claude executes KIOD-R4 work order under `WORKER_MUST_NOT_COMMIT` and returns only `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-R4 dispatched at material commit `c5f93805`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R5 GC-018/source-verified work order for a packet-blocked next source repo/folder pilot with mandatory `Negative-search evidence` packet field; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
+Current mode marker: `kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
 
-Current mode: `kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
+Current mode: `kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
 
-`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
+`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
 
 Previous mode:
 
-`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R4 Negative Search Evidence Decision | `0416843c` | CLOSED_PASS_BOUNDED; accepted Claude worker decision token `PACKET_BLOCK_REQUIRED_NOW`, converted negative-search evidence into mandatory packet content for the next source-intake pilot, and routed KIOD-R5 to source-verified packet-blocked pilot work-order authoring; no checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, automatic invocation, action authority, or production-readiness claim |
 | ASCP-P4-P6 Remaining Package Production Scale-Up | `687d4423` | CLOSED_PASS_BOUNDED; promoted the eighteen remaining ASSF package roots to ACTIVE production package skills through registry/package/truth updates, generated indexes, 18/18 dry-run matrix, and representative live proof with `alibaba-dashscope`, `deepseek-v4-flash`, HTTP 200; generated inventory now reports 24 runtime-eligible packages, 24 activation-ready packages, 24 CLI/MCP adapter packages, 24 selection-profiled packages, 28 Web projection items, and 0 drift; no full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, automatic invocation, filesystem/git/browser/downstream action authority, or broader production-readiness claim |
 | SCPL-T2 Skill Selection Guidance | `25361957` | CLOSED_PASS_BOUNDED; added 24 package-root selection profiles with domain groups, primary/secondary domains, user/use-case guidance, spec signals, keyword matching, output goals, recommended/not-recommended conditions, inventory projection, CLI `--spec-text` recommendation mode, focused tests, and checker coverage; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, Model Gateway/model router production work, provider registry mutation, public-sync, or broader production-readiness expansion |
 | SCPL-T1 Skill Control Plane inventory | `c5670974` | CLOSED_PASS_BOUNDED; added generated central inventory, per-skill CLI readout, cross-surface drift checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring; inventory reports 32 ASSF registry entries, 24 package roots, 6 runtime-eligible packages, 6 activation-ready packages, 6 CLI/MCP adapter packages, 28 Web projection items, and 0 drift; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, Model Gateway/model router production work, provider registry mutation, public-sync, or broader production-readiness expansion |
@@ -155,19 +156,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
+Mode: `kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_FOR_CLAUDE_2026-06-30.md`
-under `WORKER_MUST_NOT_COMMIT` and returns only
-`docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`.
-KIOD-R4 dispatch is material commit `c5f93805`; the worker must choose exactly
-one of `CHECKER_REQUIRED_NOW`, `PACKET_BLOCK_REQUIRED_NOW`, or
-`BLOCKED_PENDING_PILOT_EVIDENCE`, or return `BLOCKED_WITH_REASON`. KIOD-R1-R3
-Knowledge Intake Deduplication Foundation remains closed at material commit
-`5d453bce`, creating stable R1/R2/R3 references under
-`docs/reference/external_agent_review/` and updating KIOD-T0 to
-`OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`. Web
+Next allowed move: author KIOD-R5 GC-018/source-verified work order for a
+packet-blocked next source repo/folder pilot that includes a mandatory
+`Negative-search evidence` packet field before novelty candidate or
+owner-missing row acceptance. KIOD-R4 closed at material commit `0416843c`
+with accepted decision token `PACKET_BLOCK_REQUIRED_NOW`; worker return is
+`docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`;
+completion review is
+`docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md`.
+KIOD-R1-R3 Knowledge Intake Deduplication Foundation remains closed at material
+commit `5d453bce`, creating stable R1/R2/R3 references under
+`docs/reference/external_agent_review/` and updating KIOD-T0 through KIOD-R4
+decision closure. Web
 dashboard/console UI, full MCP server, production Model Gateway/model router,
 provider registry mutation, public-sync, automatic invocation, action authority,
 or broader production-readiness claim requires fresh GC-018/source-verified
