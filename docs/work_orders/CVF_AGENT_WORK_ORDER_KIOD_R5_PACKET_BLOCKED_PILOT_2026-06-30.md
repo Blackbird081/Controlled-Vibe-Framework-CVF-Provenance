@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-30
 
@@ -194,7 +194,7 @@ External knowledge intake routing: REQUIRED
 | Chain map route | external repo or copied folder -> root/folder lifecycle classification plus absorption map when retained -> CVF owner surface disposition -> governed work order before implementation |
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_overlap_discipline.py` |
 | Owner surface | `docs/reference/external_agent_review/`; `docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md` |
-| Disposition | DISPATCH_READY |
+| Disposition | CLOSED_PASS_BOUNDED |
 | Claim boundary | selected-source worker scan only; no source import or implementation claim |
 
 ## Execution Plan
@@ -427,7 +427,7 @@ reason` or `NOT_APPLICABLE_WITH_REASON`; do not omit them.
 
 Held packet evidence:
 
-- current status is `DISPATCH_READY`;
+- release-time status was `DISPATCH_READY`; reviewer closure status is `CLOSED_PASS_BOUNDED`;
 - source target is selected and fixed;
 - worker execution is documentation-only and `WORKER_MUST_NOT_COMMIT`.
 
@@ -461,7 +461,7 @@ runtime/checker/adapter/public/production behavior.
 - [x] AHB control block and reviewer closure conversion recorded.
 - [x] Dual-agent matrix recorded.
 - [x] Forbidden scope recorded.
-- [ ] Release pre-dispatch gates run after source selection.
+- [x] Release pre-dispatch gates run after source selection.
 
 ## Return-To-Orchestrator Conditions
 
@@ -487,7 +487,7 @@ Operator checkpoint satisfied: selected source is
 | Target paths | `docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md` |
 | Allowed scope source | operator request to inspect and handle poor Claude work order |
 | Before status evidence | `49a0dd74`; worktree clean before selected-source release edits; handoff synced after KIOD-R5 trace manifest repair; KIOD-R5 hold packet awaited operator source selection |
-| After status evidence | pending checker rerun after selected-source release |
+| After status evidence | checker reruns recorded in closure review and local gate output |
 | Diff evidence | `git diff -- docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md` |
 | Approval boundary | release KIOD-R5 selected-source packet only; worker must not commit |
 | Claim boundary | selected-source documentation scan only; no runtime, checker, adapter, public-sync, source import, or production claim |
@@ -501,7 +501,7 @@ Operator checkpoint satisfied: selected source is
 
 | Consumer | Surface owner | Allowed use | Evidence or reason | Adapter boundary | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| `INTERNAL_AGENT` | KIOD-R5 worker | may produce a documentation-only source-intake packet and worker return | KIOD-R1 through KIOD-R4 authority chain and this selected-source work order | no commit, runtime, source import, checker, or production claim | DISPATCH_READY_DOC_ONLY |
+| `INTERNAL_AGENT` | KIOD-R5 worker | produced a documentation-only source-intake packet and worker return | KIOD-R1 through KIOD-R4 authority chain, this selected-source work order, worker return, and completion review | no commit, runtime, source import, checker, or production claim | CLOSED_PASS_BOUNDED_DOC_ONLY |
 | `EXTERNAL_AGENT_CLI_MCP` | future external adapter | no CLI/MCP ingress, execution, mutation, raw source release, or public behavior | no adapter is implemented or authorized here | separate GC-018/source-verified adapter packet required | DEFERRED_WITH_REASON |
 
 ## Forbidden Scope
@@ -527,8 +527,42 @@ Release verification after source selection:
 - run any focused checker named by the release edit;
 - capture `git diff --name-status` and `git status --short`.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | `docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md` | `Status: COMPLETE_PENDING_REVIEW`; reviewer accepted | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_COMPLETION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md` | KIOD-R5 row is satisfied by this closed GC-018, work order, worker return, and completion review; roadmap content remains unchanged by design for this closure batch | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged; GC-051 drift guard passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | unchanged; GC-051 drift guard passes | PASS |
+| External evidence digest | N/A | no live/provider or external benchmark evidence created | N/A with reason |
+| System loop interlock | local closure gates | pre-closure gates rerun by reviewer/closer | PASS |
+| Session continuity | session state and active handoff | material closure records session-sync as a separate follow-up commit owned by reviewer/closer | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| source target selected before dispatch | operator-selected EverOS repo and local folder recorded | PASS |
+| worker return required | worker return artifact exists and is accepted by reviewer | PASS |
+| negative-search evidence required | worker return records all seven commands | PASS |
+| no direct source import | changed set contains only governed baseline/work order/review artifacts | PASS |
+| no runtime/provider/package/public claim | claim boundary excludes those behaviors | PASS |
+
+## Current Runtime Freshness Verification
+
+| Runtime/source surface | Verification result | Disposition |
+| --- | --- | --- |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` | source exists but is outside KIOD-R5 changed set and allowed scope | NO_RUNTIME_MUTATION |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | source exists but is outside KIOD-R5 changed set and allowed scope | NO_RUNTIME_MUTATION |
+| `PROVIDER_CAPABILITY_REGISTRY` | not modified by this closure | NO_RUNTIME_MUTATION |
+| KIOD-R5 closure | governed documentation only; no runtime/provider field or behavior changed | DOCUMENT_ONLY_CLOSURE |
+
 ## Claim Boundary
 
-This work order is dispatch-ready for a documentation-only worker return on the
+This work order is closed for a documentation-only worker return on the
 selected source target. It authorizes no runtime, checker, adapter, public-sync,
 source import, or production behavior.
