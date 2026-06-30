@@ -192,6 +192,45 @@ They do not activate packages, install plugins, wire hooks, mutate runtime,
 authorize provider execution, or create production claims. Those actions still
 require the normal CVF authorization chain.
 
+## Overlap And Novelty Classification Rule
+
+External repositories often repeat value already present in CVF, in prior
+absorbed repos, or in existing package/runtime/checker candidates. Before an
+agent opens a new owner surface, package lane, runtime lane, checker lane, or
+roadmap item, it must compare the incoming source value against existing CVF
+owner surfaces and record whether the source confirms, enriches, adds, rejects,
+or closes value.
+
+Any external absorption artifact must include this additional section:
+
+```text
+## Overlap And Novelty Classification
+
+| Source item or group | Existing CVF owner surface checked | Overlap disposition | Novelty / delta | Action |
+|---|---|---|---|---|
+| <source row or group> | <existing CVF path or OWNER_SURFACE_NOT_FOUND> | <disposition token> | <specific delta or no-new-value reason> | <adapt, enrich, park, reject, or close action> |
+```
+
+Allowed overlap dispositions:
+
+| Disposition | Meaning |
+|---|---|
+| `CONFIRMED_EXISTING` | Source confirms existing CVF doctrine or candidate value without changing the owner surface. |
+| `ENRICH_EXISTING` | Source adds a concrete delta to an existing owner surface, candidate, or reopen condition. |
+| `NEW_FINDING` | Source provides value with no current owner surface; it must be mapped, parked, or blocked explicitly. |
+| `REJECT_DIRECT_IMPORT` | Source implementation or artifact is rejected for direct use even if CVF-native value may remain. |
+| `NO_NEW_VALUE` | Source was compared against an existing owner surface and adds no meaningful delta. |
+| `OWNER_SURFACE_NOT_FOUND` | No existing owner surface was found; the artifact must name the next owner decision or blocker. |
+
+This section is a pre-write warning and a machine-checkable overlap ledger. It
+prevents two failure modes: silently missing valuable deltas because a row was
+marked `NO_NEW_VALUE` too quickly, and duplicating CVF capability surfaces when
+an existing doctrine/package/runtime/checker owner should be enriched instead.
+
+Forward enforcement:
+
+`governance/compat/check_external_absorption_overlap_discipline.py`
+
 ## Conditional Reopen Index Rule
 
 Candidate lanes are not allowed to disappear into closeout prose. Any external
@@ -252,6 +291,8 @@ Machine guards:
 
 `governance/compat/check_external_absorption_value_conversion.py`
 
+`governance/compat/check_external_absorption_overlap_discipline.py`
+
 The guard is forward-only and range-aware. It checks changed active governed
 Markdown artifacts that reference external absorption sources, external
 repository URLs, copied-folder intake, or the explicit marker:
@@ -266,6 +307,10 @@ an owner-surface map.
 The value-conversion guard requires the value conversion matrix, all required
 conversion lane tokens, and next-action plus boundary evidence for package,
 runtime, and checker candidates.
+
+The overlap-discipline guard requires the overlap and novelty classification
+section, owner-surface comparison column, allowed overlap disposition tokens,
+and per-row novelty/action evidence before an absorption artifact can close.
 
 The guards do not prove semantic understanding. They make the corpus,
 disposition, and conversion-opportunity evidence reviewable and block
@@ -297,7 +342,7 @@ reference artifact.
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | external repo or copied folder |
 | Chain map route | external repo or copied folder -> external absorption core -> corpus manifest and ledger -> owner-surface disposition -> value conversion matrix -> GC-018/work order/source verification if implementation is needed |
-| Matching local-view guard | `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py` |
+| Matching local-view guard | `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py` |
 | Owner surface | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` |
 | Disposition | ADAPT as central external absorption core standard and machine-check candidate |
 | Claim boundary | routing and evidence-shape standard only; no semantic-completeness, runtime, provider, public, or production claim |

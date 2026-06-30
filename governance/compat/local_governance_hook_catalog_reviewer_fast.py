@@ -93,6 +93,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_external_absorption_value_conversion.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "external absorption overlap discipline",
+        ["python", "governance/compat/check_external_absorption_overlap_discipline.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "source mirror migration",
         ["python", "governance/compat/check_source_mirror_migration.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

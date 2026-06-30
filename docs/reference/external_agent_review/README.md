@@ -40,6 +40,7 @@ semantics.
 | `CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md` | Standard for giving external agents enough context to review CVF without exposing private provenance source. |
 | `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | Central chain map connecting external/corpus/repo input, old blind-spot/corpus/legacy rules, external-agent review packets, returned-output absorption, GC-018, work orders, source verification, and autorun. |
 | `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` | Central index for external-absorption package, runtime, checker, and value-parked candidates that retain CVF value but require concrete reopen evidence before future work. |
+| `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` | Central external absorption standard, including overlap and novelty classification before new owner surfaces or follow-up lanes are opened. |
 | `.private_reference/source_mirrors/README.md` | Private-reference control plane for local cloned upstream repositories used as source authority during external absorption. |
 | `.private_reference/source_mirrors/INDEX.md` | Private source-mirror index linking upstream repos to derived external-agent packs and absorption lanes. |
 | `CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md` | Canonical distinction between public/simple workflow vocabulary and internal governed workflow-chain system. |
@@ -72,10 +73,16 @@ semantics.
     `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` before creating a
     finding, standard, roadmap, work order, review, reference artifact, or
     operator decision.
-8. If a closeout parks a package, runtime, checker, or valuable deferred item,
+8. Before opening a new owner surface or follow-up lane, fill the
+   `## Overlap And Novelty Classification` section required by
+   `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; compare against existing CVF
+   owner surfaces and use `CONFIRMED_EXISTING`, `ENRICH_EXISTING`,
+   `NEW_FINDING`, `REJECT_DIRECT_IMPORT`, `NO_NEW_VALUE`, or
+   `OWNER_SURFACE_NOT_FOUND`.
+9. If a closeout parks a package, runtime, checker, or valuable deferred item,
    add or update `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`, cite an
    existing row, or state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON`.
-9. For changed external-return absorption reviews, satisfy
+10. For changed external-return absorption reviews, satisfy
    `governance/compat/check_external_agent_absorption_table.py` before closure.
 
 ## Required Read Trigger
@@ -145,6 +152,15 @@ public, and it does not authorize public-sync or external-facing readiness.
 | External direct implementations | External direct import remains non-authoritative until rewritten into CVF-owned surfaces. | `REJECT_DIRECT_IMPORT` | CVF-owned reference, roadmap, work order, or source surface only | Use the absorption workflow before any implementation planning. | Direct import remains blocked |
 | Duplicate or already-owned guidance | Material with no new doctrine, package, runtime, or checker value should be closed with explicit no-value reason. | `NO_PACKAGE_OR_RUNTIME_VALUE` | Existing governed CVF owner surface | State the no-index reason in the closeout. | No runtime or package behavior |
 
+## Overlap And Novelty Classification
+
+| Source item or group | Existing CVF owner surface checked | Overlap disposition | Novelty / delta | Action |
+|---|---|---|---|---|
+| External absorption standard front door | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` | ENRICH_EXISTING | Adds overlap and novelty classification as a required pre-write discipline. | Keep this front door pointed at the standard and checker. |
+| Conditional reopen routing | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` | CONFIRMED_EXISTING | Existing index remains the owner for parked package/runtime/checker value. | Cite or update existing rows before closure. |
+| Direct external implementation ideas | Existing governed CVF owner surface or `OWNER_SURFACE_NOT_FOUND` per artifact | REJECT_DIRECT_IMPORT | Direct import stays rejected even when CVF-native doctrine or candidate value remains. | Route through value matrix and overlap ledger. |
+| Duplicate or already-owned guidance | Existing governed CVF owner surface | NO_NEW_VALUE | Material must be compared before no-value closure. | State no-new-value reason in the artifact. |
+
 ## External Knowledge Intake Routing
 
 | Field | Value |
@@ -152,7 +168,7 @@ public, and it does not authorize public-sync or external-facing readiness.
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | external knowledge intake routing guard implementation |
 | Chain map route | external-agent review front door -> chain-map classification -> context packet, returned-output absorption, conditional reopen index, or governed implementation planning |
-| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py` |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py` |
 | Owner surface | `docs/reference/external_agent_review/README.md` |
 | Disposition | ADAPT front-door routing to include the conditional reopen index |
 | Claim boundary | front-door routing only; no runtime, provider, public, package activation, checker wiring, or production claim |
