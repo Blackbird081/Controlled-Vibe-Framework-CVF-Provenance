@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; remaining 18 package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-P1-P3 closed at material commit `43e4092f` with 6 ACTIVE runtime package skills and live CLI/MCP proof using provider `alibaba-dashscope`, model `deepseek-v4-flash`, HTTP 200, production receipt `sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5`.
+Startup acknowledged: current mode=`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T1 SOP closed at material commit `693608cb`, with ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`ascp_p1_p3_runtime_package_skills_production
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `43e4092f` ASCP-P1-P3 runtime package skills productionization |
-| Latest session-sync target | session sync after ASCP-P1-P3 material closure |
+| Latest material closeout | `693608cb` PKGSOP-T1 package skill productionization SOP |
+| Latest session-sync target | session sync after PKGSOP-T1 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
+`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -36,13 +36,14 @@ boundary, and next-move boundary.
 
 ## Scope / Target / Owner Boundary
 
-Target: maintain active session continuity after ASCP-P1-P3 and preserve the
-bounded production package runtime, skill usage receipt trace, skill truth
-packet, provider-skill trace, and package-loader claim boundaries.
+Target: maintain active session continuity after PKGSOP-T1 and preserve the
+package-skill SOP, bounded production package runtime, skill usage receipt
+trace, skill truth packet, provider-skill trace, and package-loader claim
+boundaries.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize remaining package conversion, full MCP server,
-runtime/provider work beyond the closed ASCP-P1-P3 proof, public-sync mutation,
+runtime/provider work beyond closed proof tranches, public-sync mutation,
 additional checker implementation, resolver mutation, provider-side audit
 access, or generated aggregate mutation beyond active-session sync.
 
@@ -62,6 +63,41 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 External agent memory files: non-canonical convenience only.
+
+## Core Guard Self-Protection Authorization - PKGSOP-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+PKGSOP-T1 material commit `693608cb`, regenerate active session state, and
+align front-door, bootstrap read model, and active handoff next-move wording.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/pkgSopT1PackageSkillProductionizationSopClosure20260630.json`
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+
+Operator authorization: session-sync follows operator-requested PKGSOP-T1
+package skill productionization SOP closure.
+
+Rollback boundary: revert this session-sync commit only; do not revert
+PKGSOP-T1 material commit `693608cb`, ASCP-P1-P3 material commit `43e4092f`,
+ASCP-T5 commits, package roots, truth packets, or generated ASSF indexes.
+
+## GC-020 Marker - PKGSOP-T1 Package Skill Productionization SOP Material Closure
+
+Material commit `693608cb` closed PKGSOP-T1 package skill productionization
+SOP. Full material SHA:
+`693608cb9053680c8f2664fe3305aed9c6451d84`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`693608cb`. It does not authorize package conversion, lifecycle mutation,
+runtime helper implementation, provider calls, production Model Gateway/model
+router, provider registry mutation, public-sync, or action authority from
+package loading alone.
 
 ## Core Guard Self-Protection Authorization - ASCP-P1-P3 Session Sync
 
@@ -98,6 +134,17 @@ production Model Gateway/model router, provider registry mutation, public-sync,
 or action authority from package loading alone.
 
 ## Latest Work / Changes
+
+Material commit `693608cb` closed PKGSOP-T1 package skill productionization
+SOP. Full SHA:
+`693608cb9053680c8f2664fe3305aed9c6451d84`.
+
+It added the standard SOP from external repo or Learning Plane intake through
+ASSF metadata candidate, package root, UAT/certification, SKSOT truth packet,
+usage receipt readiness, resolver/projection, use-proof, and production
+runtime admission. This was documentation-only: no package conversion,
+lifecycle mutation, runtime helper, provider call, Model Gateway/model router,
+provider registry mutation, public-sync, or action authority was added.
 
 Material commit `43e4092f` closed ASCP-P1-P3 runtime package skills
 productionization. Full SHA:

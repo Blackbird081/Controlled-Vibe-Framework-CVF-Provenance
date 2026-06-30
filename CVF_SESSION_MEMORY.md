@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; remaining 18 package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-P1-P3 closed at material commit `43e4092f` with 6 ACTIVE runtime package skills and live CLI/MCP proof using provider `alibaba-dashscope`, model `deepseek-v4-flash`, HTTP 200, production receipt `sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5`.
+Startup acknowledged: current mode=`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T1 SOP closed at material commit `693608cb`, with ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
 
 ## Current Mode
 
-Current mode marker: `ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
+Current mode marker: `pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
 
-Current mode: `ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
+Current mode: `pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
 
-`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
+`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`
+`ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| PKGSOP-T1 package skill productionization SOP | `693608cb` | CLOSED_PASS_BOUNDED; added the standard SOP from external repo or Learning Plane intake through ASSF metadata candidate, package root, UAT/certification, SKSOT truth packet, usage receipt readiness, resolver/projection, use-proof, and production runtime admission; documentation-only, no package conversion, lifecycle mutation, runtime helper, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or action authority |
 | ASCP-P1-P3 runtime package skills productionization | `43e4092f` | CLOSED_PASS_BOUNDED; six runtime-eligible package skills are ACTIVE and production-scoped through ASSF production executor and CLI/MCP adapter; live proof passed with `alibaba-dashscope`, `deepseek-v4-flash`, HTTP 200, production receipt `sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5`; remaining 18 package conversions, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or broader production-readiness claim require fresh GC-018/source-verified work order |
 | ASCP-T5 provider/model selection use case | `c15d9bd6` | CLOSED_PASS_BOUNDED; upgraded ASCP-T5 package use-proof selection from model-only to bounded provider-and-model selection; default provider resolves to `alibaba-dashscope`, unsupported providers are denied before package body read or provider call, live proof passed with `deepseek-v4-flash`, HTTP 200, latency 11031 ms, use-proof receipt `sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1`; this is an ASCP-T5 Model Gateway use case only, not a production Model Gateway/model router |
 | ASCP-T5 corrective live model selection patch | `09656d16` | CLOSED_PASS_BOUNDED; added shared live-provider env bootstrap and free-quota model selector; default model resolves from Alibaba free-quota ledger; explicit `qwen-turbo` is denied as `MODEL_FREE_QUOTA_NOT_VERIFIED`; live proof passed with `qwen3.6-flash-2026-04-16`, HTTP 200, latency 14438 ms, use-proof receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`; no ACTIVE lifecycle promotion, remaining package conversion, provider registry mutation, external MCP runtime, public-sync, or production-readiness claim |
@@ -150,20 +151,22 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `ascp_p1_p3_runtime_package_skills_productionized_pending_operator_next_lane_selection`
+Mode: `pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
 
-Next allowed move: operator selects the next high-value lane. Remaining 18
-package conversions, full MCP server, production Model Gateway/model router,
-provider registry mutation, public-sync, or broader production-readiness claim
-requires fresh GC-018/source-verified work order and live/provider proof when
-governance behavior is claimed. ASCP-P1-P3 runtime package skills
-productionization closed at material commit `43e4092f`; ASCP-T5 provider/model
-selection use case closed at material commit `c15d9bd6`; ASCP-T5 corrective
-patch closed at `09656d16`; ASCP-T5 package execution/use-proof adapter closed
-at material commit `d409b602`; ASCP-T4 package lifecycle source-state decision
-closed at material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`.
-LHW24 remains the latest closed numbered LHW wave. A full Model Gateway/model
-router remains a separate future roadmap.
+Next allowed move: operator selects the next high-value package-skill lane.
+Remaining package conversions, full MCP server, production Model Gateway/model
+router, provider registry mutation, public-sync, or broader
+production-readiness claim requires fresh GC-018/source-verified work order and
+live/provider proof when governance behavior is claimed. PKGSOP-T1 package
+skill productionization SOP closed at material commit `693608cb`. ASCP-P1-P3
+runtime package skills productionization remains the six-package production
+baseline at material commit `43e4092f`; ASCP-T5 provider/model selection use
+case closed at material commit `c15d9bd6`; ASCP-T5 corrective patch closed at
+`09656d16`; ASCP-T5 package execution/use-proof adapter closed at material
+commit `d409b602`; ASCP-T4 package lifecycle source-state decision closed at
+material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`. LHW24 remains
+the latest closed numbered LHW wave. A full Model Gateway/model router remains
+a separate future roadmap.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
 eligible package roots, 6 `ACTIVATION_READY` resolver decisions, 6 external
