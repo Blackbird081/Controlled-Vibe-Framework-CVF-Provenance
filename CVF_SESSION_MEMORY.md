@@ -31,15 +31,15 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; full Skill Governance Console/dashboard build, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, automatic invocation, action authority, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=SCPL-WEB-T1 Skill Control Plane Web Projection closed at material commit `a01bdca2`, with ASCP-P4-P6 at `687d4423`, SCPL-T2 at `25361957`, SCPL-T1 at `c5670974`, PKGSOP-T2 at `eaadc5ed`, PKGSOP-T1 at `693608cb`, and ASCP-P1-P3 retained as the first 6-package production baseline at `43e4092f`.
+Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=execute the CGE-R3 no-commit CodeGraph upstream absorption worker lane; runtime/MCP/watcher/daemon/SQLite/package activation/checker implementation/provider-live/public-sync/direct-import/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=CGE-R3 dispatch closed at material commit `17a8d275`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
+Current mode marker: `cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
 
-Current mode: `scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
+Current mode: `cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
 
-`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
+`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
 
 Previous mode:
 
@@ -155,7 +155,7 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
+Mode: `cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
 
 Next allowed move: operator selects the next high-value package-skill lane.
 Web dashboard/console UI, full MCP server, production Model Gateway/model
@@ -230,16 +230,24 @@ automatic skill invocation, production-readiness
 claim, and MPI-T6 runtime work unless separately authorized by fresh
 GC-018/source-verified work order.
 
+CGE-R3 CodeGraph upstream absorption dispatch closed at material commit
+`17a8d275`. The source mirror
+`.private_reference/source_mirrors/colbymchenry__codegraph/` is pinned to
+upstream commit `da72946d25e112f662f5a60c6b69f363aec60f16`. The next move is
+the no-commit worker lane in
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-06-30.md`.
+Runtime/MCP/watcher/daemon/SQLite/package activation/checker
+implementation/provider-live/public-sync/direct-import/production-readiness
+claims remain forbidden.
+
 SCPL-WEB-T1 closed at material commit `a01bdca2`. CVF Web now has generated
 Skill Control Plane projection inheritance through
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/assf-skill-control-plane.json`,
 with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
-catalogs. The next move remains operator selection of the next high-value
-package-skill lane; a full Skill Governance Console/dashboard build needs a
-fresh GC-018/source-verified work order.
+catalogs.
 
 Current mode:
-`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
+`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
 
 ## Continuity Markers
 

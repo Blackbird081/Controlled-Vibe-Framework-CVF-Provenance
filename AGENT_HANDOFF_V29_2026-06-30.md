@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; parked checkpoint=SCPL-WEB-T1 Skill Control Plane Web Projection closed at material commit `a01bdca2`.
+Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=execute the CGE-R3 no-commit CodeGraph upstream absorption worker lane; parked checkpoint=CGE-R3 dispatch closed at material commit `17a8d275`.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`scpl_web_t1_skill_control_plane_web_projecti
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `a01bdca2` SCPL-WEB-T1 Skill Control Plane Web Projection |
-| Latest session-sync target | session sync after SCPL-WEB-T1 material closure |
+| Latest material closeout | `17a8d275` CGE-R3 CodeGraph upstream absorption dispatch |
+| Latest session-sync target | session sync after CGE-R3 dispatch material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`scpl_web_t1_skill_control_plane_web_projection_closed_pending_operator_next_lane_selection`
+`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
 
 ## Purpose
 
@@ -275,9 +275,15 @@ provider/live proof, or broader production-readiness expansion.
 
 ## Latest Work / Changes
 
-SCPL-WEB-T1 closed the Skill Control Plane Web projection bridge at material
-commit `a01bdca2`. CVF Web now has a generated dashboard-ready package-skill
-read model at
+CGE-R3 CodeGraph upstream absorption dispatch closed at material commit
+`17a8d275`. The source mirror
+`.private_reference/source_mirrors/colbymchenry__codegraph/` is pinned to
+upstream commit `da72946d25e112f662f5a60c6b69f363aec60f16`. The next move is
+the no-commit worker lane in
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-06-30.md`.
+
+SCPL-WEB-T1 remains closed at material commit `a01bdca2`. CVF Web has a
+generated dashboard-ready package-skill read model at
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/assf-skill-control-plane.json`.
 ASCP-P4-P6 remains closed at material commit `687d4423` with 24 ACTIVE
 production package skills. SCPL-T2 remains the package-skill domain and
@@ -287,19 +293,57 @@ remains the central Skill Control Plane inventory baseline at material commit
 
 ## Next Allowed Move
 
-Operator selects the next high-value package-skill lane. Current Web projection
-readouts report 52 front-door skills, 25 ASSF package projections, 24 runtime
-package projections, and 24 projected runtime packages in the dashboard-ready
-control-plane projection. The current inventory reports 32 ASSF registry
-entries, 24 package roots, 24 runtime-eligible packages, 24 activation-ready
-packages, 24 CLI/MCP adapter packages, 24 selection-profiled packages, and 0
-cross-surface drift violations.
+CGE-R3 no-commit worker executes the CodeGraph upstream source-mirror
+absorption work order. Current Web projection readouts remain 52 front-door
+skills, 25 ASSF package projections, 24 runtime package projections, and 24
+projected runtime packages in the dashboard-ready control-plane projection. The
+current inventory remains 32 ASSF registry entries, 24 package roots, 24
+runtime-eligible packages, 24 activation-ready packages, 24 CLI/MCP adapter
+packages, 24 selection-profiled packages, and 0 cross-surface drift violations.
 
 Web dashboard/console UI, full MCP server, production Model Gateway/model
 router, provider registry mutation, public-sync, automatic invocation, action
 authority, or broader production-readiness claim require fresh
 GC-018/source-verified work order and live/provider proof when governance
 behavior is claimed.
+
+## GC-020 HEAD Marker - CGE-R3 Dispatch
+
+Latest material commit requiring in-place handoff trace:
+`17a8d275967cc028ea6eb5db7d8747b60721e3cb`
+
+Short SHA: `17a8d275`
+
+Material work: CGE-R3 CodeGraph Upstream Source Mirror Absorption dispatch.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`17a8d275`. It does not authorize CodeGraph install/init, `.codegraph/`, MCP
+server, watcher, daemon, SQLite index, package activation, checker
+implementation, provider/live proof, public-sync, direct import, benchmark,
+or production-readiness claims.
+
+## Agent Operation Trace Block - CGE-R3 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | CGE-R3 dispatch session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after CGE-R3 material dispatch commit `17a8d275` plus generated active-session state discipline |
+| Before status evidence | material commit `17a8d275` closed CGE-R3 dispatch; active continuity still named SCPL-WEB-T1 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no new runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `cge-r3-dispatch-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cgeR3CodeGraphUpstreamAbsorptionDispatch20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cgeR3CodeGraphUpstreamAbsorptionDispatch20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
 

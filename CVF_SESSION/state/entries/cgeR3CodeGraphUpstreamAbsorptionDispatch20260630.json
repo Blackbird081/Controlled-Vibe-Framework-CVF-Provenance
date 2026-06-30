@@ -1,0 +1,20 @@
+{
+  "stateOrder": 658,
+  "stateKey": "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630",
+  "value": {
+    "status": "DISPATCH_CLOSED_WORKER_EXECUTION_PENDING",
+    "materialCommit": "17a8d275",
+    "dispatchBaseHead": "3ef56ead",
+    "upstreamRepository": "https://github.com/colbymchenry/codegraph.git",
+    "upstreamPinnedCommit": "da72946d25e112f662f5a60c6b69f363aec60f16",
+    "sourceMirror": ".private_reference/source_mirrors/colbymchenry__codegraph/",
+    "sourceMirrorIndex": ".private_reference/source_mirrors/INDEX.md",
+    "baseline": "docs/baselines/CVF_GC018_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-06-30.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_REVIEW_2026-06-30.md",
+      "docs/reference/CVF_CGE_R3_CODEGRAPH_UPSTREAM_OWNER_SURFACE_DELTA_2026-06-30.md"
+    ],
+    "claimBoundary": "Dispatch closed only. Worker may produce documentation/reference absorption outputs without committing. Runtime, MCP, watcher, daemon, SQLite index, package activation, checker implementation, provider-live proof, public-sync, direct import, and production-readiness claims remain forbidden."
+  }
+}
