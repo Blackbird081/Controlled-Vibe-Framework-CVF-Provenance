@@ -86,7 +86,7 @@ Excluded:
 | ASCP-T1 | Implement read-only ACTIVE resolver decision layer over generated ASSF metadata, truth index, and loader eligibility | CLOSED_PASS_BOUNDED |
 | ASCP-T2 | Define activation policy semantics: selected, ready, body-read requested, and used-with-receipt | CLOSED_PASS_BOUNDED |
 | ASCP-T3 | Implement CLI/MCP adapter projection using resolver output and external readout allowlist | CLOSED_PASS_BOUNDED |
-| ASCP-T4 | Decide whether any package lifecycle source should move to `ACTIVE` | READY_AFTER_T3 |
+| ASCP-T4 | Decide whether any package lifecycle source should move to `ACTIVE` | CLOSED_PASS_BOUNDED |
 | ASCP-T5 | Reopen remaining package runtime conversion only after T1-T4 evidence shows value | VALUE_PARKED |
 
 ## ASCP-T1 Result
@@ -156,6 +156,29 @@ The projection layer:
 Focused verification passed 6 projection unit tests and a local projection
 smoke on `cvf-engineering-spec-driven-development`.
 
+## ASCP-T4 Result
+
+ASCP-T4 added:
+
+- `governance/compat/run_assf_package_lifecycle_decision.py`;
+- `governance/compat/test_run_assf_package_lifecycle_decision.py`.
+
+The lifecycle decision helper:
+
+- summarizes runtime-loader eligibility, active-resolver readiness, CLI/MCP
+  projection readiness, and current active source records;
+- emits `HOLD_NO_ACTIVE_SOURCE_MUTATION`;
+- emits `NO_SOURCE_MUTATIONS_AUTHORIZED`;
+- emits no recommended source mutations;
+- does not open package instruction bodies;
+- does not mutate registry entries, generated indexes, truth packets, package
+  roots, provider routes, execution adapters, session state, or public-sync.
+
+Focused verification passed 5 lifecycle decision unit tests. Local decision
+smoke observed 32 total candidates, 6 runtime eligible packages, 6 activation
+ready packages, 6 external projection ready packages, 0 active source records,
+and the hold decision. ASCP-T5 remains `VALUE_PARKED`.
+
 ## Source Verification Block
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |
@@ -168,6 +191,7 @@ smoke on `cvf-engineering-spec-driven-development`.
 | ACTIVE resolver helper is new in ASCP-T1 | `governance/compat/run_assf_active_resolver.py` | ASCP-T1 new file | `build_active_resolver_packet` | active resolver helper | DOC_ONLY_NEW | ACCEPT |
 | Activation policy helper is new in ASCP-T2 | `governance/compat/run_assf_activation_policy_resolver.py` | ASCP-T2 new file | `build_activation_policy_packet` | activation policy resolver | DOC_ONLY_NEW | ACCEPT |
 | CLI/MCP projection helper is new in ASCP-T3 | `governance/compat/run_assf_cli_mcp_adapter_projection.py` | ASCP-T3 new file | `build_cli_mcp_adapter_projection` | CLI/MCP adapter projection helper | DOC_ONLY_NEW | ACCEPT |
+| Package lifecycle decision helper is new in ASCP-T4 | `governance/compat/run_assf_package_lifecycle_decision.py` | ASCP-T4 new file | `build_package_lifecycle_decision` | package lifecycle decision helper | DOC_ONLY_NEW | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
 
@@ -208,11 +232,11 @@ python governance/compat/run_adif_defect_resolver.py --task-class implementation
 
 | Field | Disposition |
 |---|---|
-| Runtime/source paths checked | ASSF package contract, truth packet standard, usage receipt standard, runtime loader, external adapter boundary contract, activation policy resolver, CLI/MCP projection helper |
-| Runtime behavior claimed | read-only active resolver, activation policy classifier, and external metadata/policy projection only |
+| Runtime/source paths checked | ASSF package contract, truth packet standard, usage receipt standard, runtime loader, external adapter boundary contract, activation policy resolver, CLI/MCP projection helper, lifecycle decision helper |
+| Runtime behavior claimed | read-only active resolver, activation policy classifier, external metadata/policy projection, and lifecycle source-state decision only |
 | Live/provider proof claimed | N/A_WITH_REASON: no provider/API/model behavior is claimed |
 | Public-sync claimed | N/A_WITH_REASON: no public-sync is authorized |
-| Freshness disposition | PASS - source evidence supports local readiness decisions and bounded external projection, not package execution adapter or lifecycle mutation |
+| Freshness disposition | PASS - source evidence supports local readiness decisions, bounded external projection, and hold decision, not package execution adapter or lifecycle mutation |
 
 ## Acceptance Criteria
 
@@ -228,6 +252,8 @@ python governance/compat/run_adif_defect_resolver.py --task-class implementation
 | AC8 | ASCP-T3 becomes ready only after ASCP-T2 closure | roadmap Work Plan |
 | AC9 | ASCP-T3 projection exposes metadata/policy state while denying external body reads and output use | focused tests and projection smoke |
 | AC10 | ASCP-T4 becomes ready only after ASCP-T3 closure | roadmap Work Plan |
+| AC11 | ASCP-T4 decides no lifecycle source moves to `ACTIVE` in this tranche | lifecycle decision helper, tests, and smoke |
+| AC12 | ASCP-T5 remains value-parked after T1-T4 evidence | Work Plan |
 
 ## Verification / Evidence
 
@@ -240,6 +266,8 @@ python governance/compat/run_adif_defect_resolver.py --task-class implementation
 | `python governance/compat/run_assf_activation_policy_resolver.py --skill-id cvf-engineering-spec-driven-development --body-read-requested` | returned `BODY_READ_REQUESTED` |
 | `python -m unittest governance.compat.test_run_assf_cli_mcp_adapter_projection` | PASS, 6 tests |
 | `python governance/compat/run_assf_cli_mcp_adapter_projection.py --skill-id cvf-engineering-spec-driven-development --json` | returned `ACTIVATION_READY` with external body/read output denied |
+| `python -m unittest governance.compat.test_run_assf_package_lifecycle_decision` | PASS, 5 tests |
+| `python governance/compat/run_assf_package_lifecycle_decision.py --json` | returned 32 total candidates, 6 runtime eligible, 6 activation ready, 6 external projection ready, 0 active source records, and `HOLD_NO_ACTIVE_SOURCE_MUTATION` |
 | Live provider proof | NOT_RUN_WITH_REASON: no provider/API/model behavior or live governance behavior is claimed |
 
 ## CVF Skill Usage Receipt Trace
@@ -247,9 +275,9 @@ python governance/compat/run_adif_defect_resolver.py --task-class implementation
 | Field | Value |
 |---|---|
 | Usage disposition | NOT_USED_WITH_REASON |
-| CVF skill id | N/A with reason: ASCP-T1 resolver, ASCP-T2 policy helper, and ASCP-T3 projection helper did not consume package instruction output as work evidence |
+| CVF skill id | N/A with reason: ASCP-T1 resolver, ASCP-T2 policy helper, ASCP-T3 projection helper, and ASCP-T4 decision helper did not consume package instruction output as work evidence |
 | Package root | N/A with reason: no package body was requested |
-| Invocation context | ASCP-T1 resolver smoke, ASCP-T2 policy smokes, and ASCP-T3 projection smoke used metadata, truth index, policy classification, and projection filtering only |
+| Invocation context | ASCP-T1 resolver smoke, ASCP-T2 policy smokes, ASCP-T3 projection smoke, and ASCP-T4 decision smoke used metadata, truth index, policy classification, projection filtering, and lifecycle decision output only |
 | Receipt evidence | N/A with reason: no `skillUsageReceipt` is emitted until the runtime loader explicitly reads an eligible body |
 | Output consumed by CVF | resolver, policy decision, and projection metadata only |
 | Truth packet or source path | `docs/reference/agent_system_skills/truth/generated/skill-truth-index.json` |
@@ -265,7 +293,7 @@ python governance/compat/run_adif_defect_resolver.py --task-class implementation
 | Invocation context | local Python helper and repo metadata only |
 | Output consumed by CVF | N/A with reason: no provider skill output consumed |
 | CVF source-of-truth promotion path | N/A with reason: no provider skill output promoted |
-| Evidence artifact | this roadmap and ASCP-T1 through ASCP-T3 completion artifacts |
+| Evidence artifact | this roadmap and ASCP-T1 through ASCP-T4 completion artifacts |
 | Authority boundary | provider-owned skill output is not CVF canonical authority |
 
 ## Public Export Disposition
@@ -280,16 +308,16 @@ authorization.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T3_CLI_MCP_ADAPTER_PROJECTION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_ASCP_T3_CLI_MCP_ADAPTER_PROJECTION_COMPLETION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T4_PACKAGE_LIFECYCLE_SOURCE_STATE_DECISION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ASCP_T4_PACKAGE_LIFECYCLE_SOURCE_STATE_DECISION_COMPLETION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | this roadmap | `Status: ACTIVE_ROADMAP` | PASS |
 | Registry JSON | N/A with reason: no registry mutation authorized or performed | N/A with reason | PASS |
 | Registry Markdown | N/A with reason: no registry markdown mutation | N/A with reason | PASS |
 | External evidence digest | N/A with reason: no external evidence digest created | N/A with reason | N/A with reason |
 | System loop interlock | N/A with reason: no provider route, execution adapter, or package execution changed | N/A with reason | PASS |
 | Session continuity | session-sync may follow material closure | N/A with reason | PASS |
-| Focused tests | active resolver, activation policy, and projection tests | PASS | PASS |
-| Runtime smoke | active resolver, activation policy, and projection smokes | PASS | PASS |
+| Focused tests | active resolver, activation policy, projection, and lifecycle decision tests | PASS | PASS |
+| Runtime smoke | active resolver, activation policy, projection, and lifecycle decision smokes | PASS | PASS |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 | Live proof | this file | N/A with reason: no live governance behavior claim | PASS |
 
@@ -297,8 +325,8 @@ authorization.
 
 This roadmap opens and records a bounded ASSF skill control-plane path. ASCP-T1
 implements local activation-readiness decisions, ASCP-T2 implements local
-activation policy classification, and ASCP-T3 implements bounded external
-metadata/policy projection only. It does not convert remaining packages,
-mutate lifecycle sources, read package instruction bodies, call providers,
-implement package execution adapter behavior, public-sync, or claim production
-readiness.
+activation policy classification, ASCP-T3 implements bounded external
+metadata/policy projection, and ASCP-T4 decides no lifecycle source moves to
+`ACTIVE` in this tranche. It does not convert remaining packages, mutate
+lifecycle sources, read package instruction bodies, call providers, implement
+package execution adapter behavior, public-sync, or claim production readiness.
