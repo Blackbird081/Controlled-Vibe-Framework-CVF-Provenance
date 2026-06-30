@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T2 pipeline guard closed at material commit `eaadc5ed`, with PKGSOP-T1 SOP at `693608cb` and ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
+Startup acknowledged: current mode=`scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, Web dashboard/console UI, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=SCPL-T1 Skill Control Plane inventory closed at material commit `c5670974`, with PKGSOP-T2 at `eaadc5ed`, PKGSOP-T1 at `693608cb`, and ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
 
 ## Current State
 
@@ -18,28 +18,28 @@ Startup acknowledged: current mode=`pkgsop_t2_package_skill_pipeline_guard_close
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `eaadc5ed` PKGSOP-T2 package skill productionization pipeline guard |
-| Latest session-sync target | session sync after PKGSOP-T2 material closure |
+| Latest material closeout | `c5670974` SCPL-T1 Skill Control Plane inventory |
+| Latest session-sync target | session sync after SCPL-T1 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
+`scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
 Keep the active handoff compact after V27 reached the governed file-size
 near-threshold during AGSK-R7 session sync. V27 is archived as historical
 continuity; V28 is the sole root active handoff and carries the current
-SKSOT-T1 closure, EPSOT-T1 provider-skill trace boundary, AGSK-R7 package
-boundary, and next-move boundary.
+Skill Control Plane inventory, package-skill pipeline guard, package runtime
+baseline, and next-move boundary.
 
 ## Scope / Target / Owner Boundary
 
-Target: maintain active session continuity after PKGSOP-T2 and preserve the
-package-skill pipeline guard, package-skill SOP, bounded production package
-runtime, skill usage receipt trace, skill truth packet, provider-skill trace,
-and package-loader claim boundaries.
+Target: maintain active session continuity after SCPL-T1 and preserve the Skill
+Control Plane inventory, package-skill pipeline guard, package-skill SOP,
+bounded production package runtime, skill usage receipt trace, skill truth
+packet, provider-skill trace, and package-loader claim boundaries.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize remaining package conversion, full MCP server,
@@ -63,6 +63,65 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 External agent memory files: non-canonical convenience only.
+
+## Core Guard Self-Protection Authorization - SCPL-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+SCPL-T1 material commit `c5670974`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/scplT1SkillControlPlaneInventoryClosure20260630.json`
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+
+Operator authorization: session-sync follows operator-requested Skill Control
+Plane / Inventory Reconciliation closure.
+
+Rollback boundary: revert this session-sync commit only; do not revert SCPL-T1
+material commit `c5670974`, PKGSOP-T2 material commit `eaadc5ed`, PKGSOP-T1
+material commit `693608cb`, ASCP-P1-P3 material commit `43e4092f`, package
+roots, truth packets, or generated ASSF indexes.
+
+## GC-020 Marker - SCPL-T1 Skill Control Plane Inventory Material Closure
+
+Material commit `c5670974` closed SCPL-T1 Skill Control Plane inventory. Full
+material SHA:
+`c5670974c86aeae2941060288e6096bb6ba90201`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`c5670974`. It does not authorize package conversion, lifecycle mutation,
+package body invocation, provider/live proof, Web page, full MCP server,
+production Model Gateway/model router, provider registry mutation, public-sync,
+or broader production-readiness expansion.
+
+## Agent Operation Trace Block - SCPL-T1 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | SCPL-T1 session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V28 handoff |
+| Allowed scope source | GC-020 after SCPL-T1 material commit `c5670974` plus generated active-session state discipline |
+| Before status evidence | material commit `c5670974` closed SCPL-T1 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `scpl-t1-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/scplT1SkillControlPlaneInventoryClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/scplT1SkillControlPlaneInventoryClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Core Guard Self-Protection Authorization - PKGSOP-T2 Session Sync
 
@@ -468,6 +527,7 @@ Recent material chain:
 - `1625ab8c` ASCP-T4 package lifecycle source-state decision.
 - `a5ab2689` ASCP-T3 CLI/MCP adapter projection.
 - `4d87c832` ASCP-T2 activation policy semantics.
+- `c5670974` SCPL-T1 Skill Control Plane inventory.
 - `0183e04f` ADIF-CLI-T1 CLI classification and entrypoints.
 - `ddb65952` ASCP-T1 active resolver pilot.
 - `211c7bdb` SKUSE-T1 skill usage receipt trace.
@@ -481,13 +541,16 @@ Recent material chain:
 
 ## Next Allowed Move
 
-Operator selects the next high-value lane. Any `ACTIVE` lifecycle promotion,
-remaining package conversion, external MCP package execution runtime, provider
-registry mutation, production Model Gateway/model router work, public-sync,
-direct import, merge authority, commit authority, or production-readiness claim
-requires fresh GC-018/source-verified work order and live/provider proof when
-governance behavior is claimed. A full Model Gateway/model router remains a
-separate future roadmap.
+Operator selects the next high-value lane. SCPL-T1 closed a generated Skill
+Control Plane inventory and checker with 32 registry entries, 24 package roots,
+6 runtime-eligible packages, 6 activation-ready packages, 6 CLI/MCP adapter
+packages, 28 Web projection items, and 0 drift. Any `ACTIVE` lifecycle
+promotion, remaining package conversion, Web dashboard/console UI, external MCP
+package execution runtime, provider registry mutation, production Model
+Gateway/model router work, public-sync, direct import, merge authority, commit
+authority, or production-readiness claim requires fresh GC-018/source-verified
+work order and live/provider proof when governance behavior is claimed. A full
+Model Gateway/model router remains a separate future roadmap.
 
 No provider runtime interception, provider-side audit access, automatic package
 activation, automatic skill invocation telemetry outside the bounded loader,

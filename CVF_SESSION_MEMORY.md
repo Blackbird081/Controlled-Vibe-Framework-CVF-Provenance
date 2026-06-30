@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V28_2026-06-30.md`
+4. `AGENT_HANDOFF_V29_2026-06-30.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,31 +24,32 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V28_2026-06-30.md` |
+| Active handoff | `AGENT_HANDOFF_V29_2026-06-30.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=PKGSOP-T2 pipeline guard closed at material commit `eaadc5ed`, with PKGSOP-T1 SOP at `693608cb` and ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
+Startup acknowledged: current mode=`scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, Web dashboard/console UI, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=SCPL-T1 Skill Control Plane inventory closed at material commit `c5670974`, with PKGSOP-T2 at `eaadc5ed`, PKGSOP-T1 at `693608cb`, and ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
 
 ## Current Mode
 
-Current mode marker: `pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
+Current mode marker: `scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`
 
-Current mode: `pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
+Current mode: `scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`
 
-`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
+`scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`pkgsop_t1_package_skill_productionization_sop_closed_pending_operator_next_lane_selection`
+`pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SCPL-T1 Skill Control Plane inventory | `c5670974` | CLOSED_PASS_BOUNDED; added generated central inventory, per-skill CLI readout, cross-surface drift checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring; inventory reports 32 ASSF registry entries, 24 package roots, 6 runtime-eligible packages, 6 activation-ready packages, 6 CLI/MCP adapter packages, 28 Web projection items, and 0 drift; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, Model Gateway/model router production work, provider registry mutation, public-sync, or broader production-readiness expansion |
 | PKGSOP-T2 package skill productionization pipeline guard | `eaadc5ed` | CLOSED_PASS_BOUNDED; added `governance/compat/check_package_skill_productionization_pipeline.py`, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring; package-skill artifacts now require `Package Skill Productionization Control Block` evidence before lifecycle/package/truth/ACTIVE production claims; no package conversion, lifecycle mutation, runtime helper behavior change, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or production-readiness expansion |
 | PKGSOP-T1 package skill productionization SOP | `693608cb` | CLOSED_PASS_BOUNDED; added the standard SOP from external repo or Learning Plane intake through ASSF metadata candidate, package root, UAT/certification, SKSOT truth packet, usage receipt readiness, resolver/projection, use-proof, and production runtime admission; documentation-only, no package conversion, lifecycle mutation, runtime helper, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or action authority |
 | ASCP-P1-P3 runtime package skills productionization | `43e4092f` | CLOSED_PASS_BOUNDED; six runtime-eligible package skills are ACTIVE and production-scoped through ASSF production executor and CLI/MCP adapter; live proof passed with `alibaba-dashscope`, `deepseek-v4-flash`, HTTP 200, production receipt `sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5`; remaining 18 package conversions, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or broader production-readiness claim require fresh GC-018/source-verified work order |
@@ -152,19 +153,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `pkgsop_t2_package_skill_pipeline_guard_closed_pending_operator_next_lane_selection`
+Mode: `scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value package-skill lane.
-Remaining package conversions, full MCP server, production Model Gateway/model
-router, provider registry mutation, public-sync, or broader
+Remaining package conversions, Web dashboard/console UI, full MCP server,
+production Model Gateway/model router, provider registry mutation, public-sync, or broader
 production-readiness claim requires fresh GC-018/source-verified work order and
-live/provider proof when governance behavior is claimed. PKGSOP-T1 package
-skill productionization SOP closed at material commit `693608cb`. PKGSOP-T2
-package skill productionization pipeline guard closed at material commit
-`eaadc5ed` and is wired into autorun, reviewer-fast, pre-commit, and pre-push.
-ASCP-P1-P3
-runtime package skills productionization remains the six-package production
-baseline at material commit `43e4092f`; ASCP-T5 provider/model selection use
+live/provider proof when governance behavior is claimed. SCPL-T1 Skill Control
+Plane inventory closed at material commit `c5670974`; generated inventory
+reports 32 registry entries, 24 package roots, 6 runtime-eligible packages, 6
+activation-ready packages, 6 CLI/MCP adapter packages, 28 Web projection items,
+and 0 cross-surface drift violations. PKGSOP-T2 remains closed at material
+commit `eaadc5ed`; PKGSOP-T1 remains closed at `693608cb`. ASCP-P1-P3 runtime
+package skills productionization remains the six-package production baseline at
+material commit `43e4092f`; ASCP-T5 provider/model selection use
 case closed at material commit `c15d9bd6`; ASCP-T5 corrective patch closed at
 `09656d16`; ASCP-T5 package execution/use-proof adapter closed at material
 commit `d409b602`; ASCP-T4 package lifecycle source-state decision closed at

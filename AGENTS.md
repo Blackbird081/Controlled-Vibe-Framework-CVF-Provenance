@@ -17,13 +17,13 @@ For complete canonical state, resolve the full machine-readable state registry:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V28_2026-06-30.md`
+`AGENT_HANDOFF_V29_2026-06-30.md`
 
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`
 
-This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V20, and
+This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V28, and
 side-channel handoff files. Do not append new status to archived handoffs;
 update the active handoff named by `CVF_SESSION/ACTIVE_SESSION_STATE.json` or
 open a later versioned handoff when the active handoff approaches the limit.
