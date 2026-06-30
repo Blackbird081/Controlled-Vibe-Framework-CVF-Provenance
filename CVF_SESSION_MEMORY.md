@@ -31,19 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R5 GC-018/source-verified work order for a packet-blocked next source repo/folder pilot with mandatory `Negative-search evidence` packet field; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects exactly one source repo URL, local source mirror, or folder path for KIOD-R5 before any worker dispatch; parked checkpoint=KIOD-R5 hold packet committed at `39f29456`, status `HOLD_PENDING_OPERATOR_SOURCE_SELECTION`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+Current mode marker: `kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
 
-Current mode: `kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+Current mode: `kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
 
-`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
 
 Previous mode:
 
-`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
+`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+
+## Current Held Work
+
+| Work | Commit | Disposition |
+|---|---|---|
+| KIOD-R5 Packet-Blocked Pilot hold packet | `39f29456` | HOLD_PENDING_OPERATOR_SOURCE_SELECTION; corrected Claude's scope-crept KIOD-R5 draft into a held baseline/work order pair; worker must not choose the source target; next move is operator selecting exactly one source repo URL, local source mirror, or folder path; no checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit, automatic invocation, action authority, package lifecycle mutation, or production-readiness claim |
 
 ## Latest Closed Work
 
@@ -156,16 +162,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+Mode: `kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
 
-Next allowed move: author KIOD-R5 GC-018/source-verified work order for a
-packet-blocked next source repo/folder pilot that includes a mandatory
-`Negative-search evidence` packet field before novelty candidate or
-owner-missing row acceptance. KIOD-R4 closed at material commit `0416843c`
-with accepted decision token `PACKET_BLOCK_REQUIRED_NOW`; worker return is
-`docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`;
-completion review is
-`docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md`.
+Next allowed move: operator selects exactly one source repo URL, local source
+mirror, or folder path for KIOD-R5. Then dispatcher release-edits
+`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md`
+with `sourceSelectionEvidence`, `sourceTargetReadPlan`, `Negative-search
+evidence`, and `Overlap And Novelty Classification` before rerunning
+pre-dispatch gates and dispatching a `WORKER_MUST_NOT_COMMIT` worker. KIOD-R5
+hold packet is material commit `39f29456`; KIOD-R4 closed at material commit
+`0416843c` with accepted decision token `PACKET_BLOCK_REQUIRED_NOW`; worker
+return is `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`;
+completion review is `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md`.
 KIOD-R1-R3 Knowledge Intake Deduplication Foundation remains closed at material
 commit `5d453bce`, creating stable R1/R2/R3 references under
 `docs/reference/external_agent_review/` and updating KIOD-T0 through KIOD-R4

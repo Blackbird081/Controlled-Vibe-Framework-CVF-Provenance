@@ -1,0 +1,21 @@
+{
+  "stateOrder": 716,
+  "stateKey": "kiodR5PacketBlockedPilotHold20260630",
+  "value": {
+    "status": "HOLD_PENDING_OPERATOR_SOURCE_SELECTION",
+    "materialCommit": "39f29456",
+    "materialCommitFull": "39f294565dd120ea89a7fc0539bd921e26fc23c0",
+    "baseHead": "fad6e44c",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md",
+    "releaseBlocker": "operator must select exactly one source repo URL, local source mirror, or folder path before worker dispatch",
+    "nextAllowedMove": "OPERATOR_SELECT_EXACT_KIOD_R5_SOURCE_TARGET",
+    "verification": [
+      "work-order dispatch quality PASS",
+      "pre-dispatch autorun PASS",
+      "commit steward dispatch PASS",
+      "pre-commit PASS 73/73"
+    ],
+    "claimBoundary": "Held governance packet only. No worker execution, checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit outside session sync, automatic invocation, action authority, package lifecycle mutation, or production-readiness claim."
+  }
+}

@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R5 GC-018/source-verified work order for packet-blocked next source repo/folder pilot with mandatory `Negative-search evidence` packet field; parked checkpoint=KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
+Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects exactly one source repo URL, local source mirror, or folder path for KIOD-R5 before any worker dispatch; parked checkpoint=KIOD-R5 hold packet committed at `39f29456`, status `HOLD_PENDING_OPERATOR_SOURCE_SELECTION`, after KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 ## Current State
 
@@ -18,13 +18,77 @@ Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_cl
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closure | `0416843c` KIOD-R4 Negative Search Evidence Decision |
-| Latest session-sync target | session sync after KIOD-R4 material closure |
+| Latest material packet | `39f29456` KIOD-R5 Packet-Blocked Pilot hold packet |
+| Latest session-sync target | session sync after KIOD-R5 hold packet |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
+
+## KIOD-R5 Hold Packet - 2026-06-30
+
+Material commit:
+`39f294565dd120ea89a7fc0539bd921e26fc23c0`
+
+Short SHA: `39f29456`
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md`
+
+Status: `HOLD_PENDING_OPERATOR_SOURCE_SELECTION`.
+
+Decision: Claude's draft was corrected from a false dispatch-ready packet with
+scope creep into a held packet. The worker must not choose the source target.
+
+Next allowed move: operator selects exactly one source repo URL, local source
+mirror, or folder path for KIOD-R5. The dispatcher must then release-edit
+`sourceSelectionEvidence`, `sourceTargetReadPlan`, `Negative-search evidence`,
+and `Overlap And Novelty Classification` before rerunning pre-dispatch gates
+and dispatching any `WORKER_MUST_NOT_COMMIT` worker.
+
+Claim boundary: KIOD-R5 hold packet authorizes no worker execution, checker
+implementation, runtime/provider behavior, MCP/CLI adapter, dashboard,
+public-sync, source import, generated aggregate edit, automatic invocation,
+action authority, package lifecycle mutation, or production-readiness claim.
+
+## GC-020 HEAD Marker - KIOD-R5 Hold Packet
+
+Latest material commit requiring in-place handoff trace:
+`39f294565dd120ea89a7fc0539bd921e26fc23c0`
+
+Short SHA: `39f29456`
+
+Material work: KIOD-R5 Packet-Blocked Pilot hold packet.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`39f29456`. It records a held packet only and does not authorize worker
+execution until the operator selects the exact source target.
+
+## Agent Operation Trace Block - KIOD-R5 Hold Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-R5 hold packet session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-R5 material commit `39f29456` plus generated active-session state discipline |
+| Before status evidence | material commit `39f29456` held KIOD-R5 pending operator source selection; active continuity still named KIOD-R5 authoring |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no worker dispatch or source absorption |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public/source-import claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-r5-hold-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotHold20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotHold20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## KIOD-R4 Closure - 2026-06-30
 
