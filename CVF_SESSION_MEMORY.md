@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R4 GC-018 and source-verified work order deciding whether negative-search evidence needs a checker or remains a required packet block before any next repo/folder pilot; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=Claude executes KIOD-R4 work order under `WORKER_MUST_NOT_COMMIT` and returns only `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-R4 dispatched at material commit `c5f93805`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+Current mode marker: `kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
 
-Current mode: `kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+Current mode: `kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
 
-`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
 
 Previous mode:
 
-`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
+`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
 
 ## Latest Closed Work
 
@@ -155,14 +155,19 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+Mode: `kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
 
-Next allowed move: author KIOD-R4 GC-018 and source-verified work order
-deciding whether negative-search evidence needs a checker or remains a required
-packet block before any next repo/folder pilot. KIOD-R1-R3 Knowledge Intake
-Deduplication Foundation closed at material commit `5d453bce`, creating stable
-R1/R2/R3 references under `docs/reference/external_agent_review/` and updating
-KIOD-T0 to `OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`. Web
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_FOR_CLAUDE_2026-06-30.md`
+under `WORKER_MUST_NOT_COMMIT` and returns only
+`docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`.
+KIOD-R4 dispatch is material commit `c5f93805`; the worker must choose exactly
+one of `CHECKER_REQUIRED_NOW`, `PACKET_BLOCK_REQUIRED_NOW`, or
+`BLOCKED_PENDING_PILOT_EVIDENCE`, or return `BLOCKED_WITH_REASON`. KIOD-R1-R3
+Knowledge Intake Deduplication Foundation remains closed at material commit
+`5d453bce`, creating stable R1/R2/R3 references under
+`docs/reference/external_agent_review/` and updating KIOD-T0 to
+`OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`. Web
 dashboard/console UI, full MCP server, production Model Gateway/model router,
 provider registry mutation, public-sync, automatic invocation, action authority,
 or broader production-readiness claim requires fresh GC-018/source-verified

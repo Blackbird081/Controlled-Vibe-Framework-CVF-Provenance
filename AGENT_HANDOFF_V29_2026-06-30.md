@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R4 GC-018 and source-verified work order deciding whether negative-search evidence needs a checker or remains a required packet block before any next repo/folder pilot; parked checkpoint=KIOD-R1-R3 closed at material commit `5d453bce`.
+Startup acknowledged: current mode=`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=Claude executes KIOD-R4 work order under `WORKER_MUST_NOT_COMMIT` and returns only `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`; parked checkpoint=KIOD-R4 dispatched at material commit `c5f93805`.
 
 ## Current State
 
@@ -18,13 +18,35 @@ Startup acknowledged: current mode=`kiod_r1_r3_knowledge_intake_deduplication_fo
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `5d453bce` KIOD-R1-R3 Knowledge Intake Deduplication Foundation |
-| Latest session-sync target | session sync after KIOD-R1-R3 material closure |
+| Latest material dispatch | `c5f93805` KIOD-R4 Negative Search Evidence Decision |
+| Latest session-sync target | session sync after KIOD-R4 material dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+`kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return`
+
+## KIOD-R4 Dispatch - 2026-06-30
+
+Material dispatch commit:
+`c5f93805`
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_2026-06-30.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_FOR_CLAUDE_2026-06-30.md`
+
+Next allowed move: Claude executes the KIOD-R4 work order as worker under
+`WORKER_MUST_NOT_COMMIT`, creates only
+`docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`,
+and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. The worker must
+select exactly one of `CHECKER_REQUIRED_NOW`, `PACKET_BLOCK_REQUIRED_NOW`, or
+`BLOCKED_PENDING_PILOT_EVIDENCE` if not blocked.
+
+Claim boundary: dispatch only. No checker implementation, new owner surface,
+next repo/folder pilot, runtime, MCP/CLI adapter, provider/live proof,
+public-sync, dashboard, generated aggregate, source import, or
+production-readiness claim.
 
 ## KIOD-R1-R3 Closure - 2026-06-30
 
@@ -49,8 +71,8 @@ automatic invocation, or production-readiness claim.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: GC-020 session-sync after KIOD-R1-R3
-material commit `5d453bce`; update active session state sources, generated
+Authorized guard-maintenance scope: GC-020 session-sync after KIOD-R4 material
+dispatch commit `c5f93805`; update active session state sources, generated
 state/read model, front door, and active handoff only.
 
 Protected paths:
@@ -58,17 +80,17 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/kiodR1R3KnowledgeIntakeDeduplicationFoundationClosure20260630.json`
+- `CVF_SESSION/state/entries/kiodR4NegativeSearchEvidenceDecisionDispatch20260630.json`
 - `CVF_SESSION/state/entries/kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: governed session-sync requirement after material
-closure and active-session state compatibility failure naming material HEAD
-`5d453bce`.
+dispatch and active-session state continuity requirement naming material HEAD
+`c5f93805`.
 
 Rollback boundary: revert only this session-sync if rejected; do not revert the
-KIOD-R1-R3 material commit `5d453bce`.
+KIOD-R4 material dispatch commit `c5f93805`.
 
 ## Purpose
 

@@ -69,8 +69,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision",
-  "previousMode": "kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy",
+  "currentMode": "kiod_r4_negative_search_evidence_decision_dispatched_to_claude_worker_pending_return",
+  "previousMode": "kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
