@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=EPSOT-T1 closed at material commit `701ebd94`; AGSK-R7 remains closed at material commit `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche over truth packets and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=SKSOT-T1 closed at material commit `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,25 +18,27 @@ Startup acknowledged: current mode=`epsot_t1_provider_skill_trace_guard_closed_p
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `701ebd94` EPSOT-T1 provider skill trace source-of-truth guard |
-| Latest session-sync target | session sync after EPSOT-T1 material closure |
+| Latest material closeout | `c2278349` SKSOT-T1 skill truth packet foundation |
+| Latest session-sync target | session sync after SKSOT-T1 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
+`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
 
 ## Purpose
 
 Keep the active handoff compact after V27 reached the governed file-size
 near-threshold during AGSK-R7 session sync. V27 is archived as historical
 continuity; V28 is the sole root active handoff and carries the current
-EPSOT-T1 closure, AGSK-R7 package boundary, and next-move boundary.
+SKSOT-T1 closure, EPSOT-T1 provider-skill trace boundary, AGSK-R7 package
+boundary, and next-move boundary.
 
 ## Scope / Target / Owner Boundary
 
-Target: maintain active session continuity after EPSOT-T1 and preserve the
-bounded provider-skill trace and package-loader claim boundaries.
+Target: maintain active session continuity after SKSOT-T1 and preserve the
+bounded skill truth packet, provider-skill trace, and package-loader claim
+boundaries.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
 does not authorize package activation, runtime/provider/live work, public-sync
@@ -59,6 +61,23 @@ convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
 ## Latest Work / Changes
+
+Material commit `c2278349` closed SKSOT-T1 skill truth packet foundation. It
+added:
+
+- `docs/reference/agent_system_skills/CVF_SKILL_SOURCE_OF_TRUTH_PACKET_STANDARD.md`
+- `docs/reference/agent_system_skills/truth/README.md`
+- six strict packet JSON records under `docs/reference/agent_system_skills/truth/packets/`
+- `docs/reference/agent_system_skills/truth/generated/skill-truth-index.json`
+- `governance/compat/check_skill_truth_packets.py`
+- `governance/compat/test_check_skill_truth_packets.py`
+- reviewer-fast, pre-commit, and autorun catalog wiring
+
+The foundation records evidence, provenance labels, obligations, verification
+results, and receipt hashes for the six existing runtime-eligible ASSF package
+roots. It does not change package lifecycle state, activate packages, mutate
+resolver behavior, implement adapters, call providers, public-sync, or claim
+production readiness.
 
 Material commit `701ebd94` closed EPSOT-T1 provider skill trace
 source-of-truth guard. It added:
@@ -90,6 +109,7 @@ eligible package roots, and 18 remaining package roots blocked by
 
 Recent material chain:
 
+- `c2278349` SKSOT-T1 skill truth packet foundation.
 - `701ebd94` EPSOT-T1 provider skill trace source-of-truth guard.
 - `8caef205` AGSK-R6 code-review-quality pilot runtime package.
 - `3a742e6e` AGSK-R5 runtime eligibility audit.
@@ -99,11 +119,11 @@ Recent material chain:
 
 ## Next Allowed Move
 
-Operator may choose a Skill Control Plane inventory/reconciliation tranche,
-another provider-skill governance tranche, another bounded package lifecycle
-promotion tranche, an explicitly scoped remaining-package batch, or a separate
-ACTIVE resolver or CLI/MCP adapter tranche through fresh GC-018/source-verified
-work order.
+Operator may choose a Skill Control Plane inventory/reconciliation tranche over
+truth packets and ASSF registry, another provider-skill governance tranche,
+another bounded package lifecycle promotion tranche, an explicitly scoped
+remaining-package batch, or a separate ACTIVE resolver or CLI/MCP adapter
+tranche through fresh GC-018/source-verified work order.
 
 No provider runtime interception, provider-side audit access, automatic package
 activation, resolver mutation, CLI/MCP adapter, provider/live proof,
@@ -273,11 +293,73 @@ This marker does not authorize automatic package activation, resolver mutation,
 CLI/MCP adapter, provider/live proof, public-sync export, direct import, merge
 authority, commit authority, or production-readiness.
 
+## Core Guard Self-Protection Authorization - SKSOT-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+SKSOT-T1 material commit `c2278349`, regenerate active session state, and align
+front-door, bootstrap read model, and active handoff next-move wording.
+
+Operator authorization: session-sync is required by the mandatory startup
+front-door, GC-020 in-place handoff HEAD rule, and active-session generated
+aggregate discipline after the operator-approved SKSOT-T1 material tranche
+closed.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sksotT1SkillTruthPacketFoundationClosure20260630.json`
+
+Rollback boundary: revert this session-sync commit only; do not revert material
+commit `c2278349`, EPSOT-T1 material commit `701ebd94`, AGSK-R7 material commit
+`19feb1f1`, AGSK-R6 material commit `8caef205`, AGSK-R5 material commit
+`3a742e6e`, AGSK-R4 material commit `416eb689`, or AGSK-R3 material commit
+`4003289a` unless reviewer reopens those closures.
+
+## GC-020 Marker - SKSOT-T1 Skill Truth Packet Material Closure
+
+Material commit `c2278349` closed SKSOT-T1 skill truth packet foundation. Full
+material SHA:
+`c2278349e3d0e7379e3752635d73df4851fb5dd8`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`c2278349`. It does not authorize package lifecycle mutation, automatic package
+activation, resolver mutation, CLI/MCP adapter, provider/live proof,
+public-sync export, direct import, merge authority, commit authority, or
+production-readiness.
+
+## Agent Operation Trace Block - SKSOT-T1 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | SKSOT-T1 session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V28 handoff |
+| Allowed scope source | GC-020 after SKSOT-T1 material commit `c2278349` plus generated active-session state discipline |
+| Before status evidence | material commit `c2278349` closed SKSOT-T1 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/resolver/provider activation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `sksot-t1-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/sksotT1SkillTruthPacketFoundationClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V28_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/sksotT1SkillTruthPacketFoundationClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Claim Boundary
 
 V28 is a compact continuity handoff and session-sync carrier. It records
-EPSOT-T1 closure, AGSK-R7 package boundary, and next allowed moves only. It
-does not create provider runtime interception, provider-side audit access,
-runtime activation, automatic resolver behavior, external adapter behavior,
-live provider proof, public export, merge authority, commit authority, or
-production readiness.
+SKSOT-T1 closure, EPSOT-T1 closure, AGSK-R7 package boundary, and next allowed
+moves only. It does not create provider runtime interception, provider-side
+audit access, runtime activation, automatic resolver behavior, external adapter
+behavior, live provider proof, public export, merge authority, commit
+authority, or production readiness.

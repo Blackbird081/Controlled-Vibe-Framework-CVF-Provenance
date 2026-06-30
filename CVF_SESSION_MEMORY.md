@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=EPSOT-T1 closed at material commit `701ebd94`; AGSK-R7 remains closed at material commit `19feb1f1` with six package roots runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator may choose a Skill Control Plane inventory/reconciliation tranche over truth packets and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order; parked checkpoint=SKSOT-T1 closed at material commit `c2278349`; EPSOT-T1 remains closed at `701ebd94`; AGSK-R7 remains closed at `19feb1f1` with six package roots runtime eligible for explicit internal loader body read; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
+Current mode marker: `sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
 
-Current mode: `epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
+Current mode: `sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
 
-`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
+`sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
 
 Previous mode:
 
-`agsk_r7_runtime_package_batch_promotion_closed_pending_next_runtime_decision`
+`epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SKSOT-T1 skill truth packet foundation | `c2278349` | CLOSED_PASS_BOUNDED; added stable skill truth packet standard, six strict packet records, generated truth index, checker, six focused tests, and reviewer-fast/pre-commit/autorun wiring; no package lifecycle mutation, ACTIVE resolver, external adapter, provider/live proof, or public-sync claim |
 | EPSOT-T1 provider skill trace source-of-truth guard | `701ebd94` | CLOSED_PASS_BOUNDED; added external provider skill source-of-truth standard, trace checker, six focused tests, and reviewer-fast/pre-commit/autorun wiring; no provider runtime interception or live proof claim |
 | AGSK-R7 runtime package batch promotion | `19feb1f1` | CLOSED_PASS_BOUNDED; five additional packages promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 6 runtime eligible, 18 still blocked |
 | AGSK-R6 code-review-quality pilot runtime package | `8caef205` | CLOSED_PASS_BOUNDED; `cvf-engineering-code-review-quality` promoted to APPROVED/PASSED/CERTIFIED/IMPLEMENTED for explicit internal package-loader body read; real-index audit reports 24 package roots, 1 runtime eligible, 23 still blocked |
@@ -139,15 +140,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `epsot_t1_provider_skill_trace_guard_closed_pending_next_skill_control_plane_decision`
+Mode: `sksot_t1_skill_truth_packet_foundation_closed_pending_next_skill_control_plane_decision`
 
 Next allowed move: operator may choose a Skill Control Plane
-inventory/reconciliation tranche, another provider-skill governance tranche,
-another bounded package lifecycle promotion tranche, an explicitly scoped
-remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche
-through fresh GC-018/source-verified work order. EPSOT-T1 provider skill trace
-guard closed at material commit `701ebd94`; AGSK-R7 runtime package batch
-promotion closed at material commit `19feb1f1`; AGSK-R6 code-review-quality
+inventory/reconciliation tranche over truth packets and ASSF registry, another
+provider-skill governance tranche, another bounded package lifecycle promotion
+tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE
+resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work
+order. SKSOT-T1 skill truth packet foundation closed at material commit
+`c2278349`; EPSOT-T1 provider skill trace guard closed at material commit
+`701ebd94`; AGSK-R7 runtime package batch promotion closed at material commit
+`19feb1f1`; AGSK-R6 code-review-quality
 pilot promotion closed at material commit `8caef205`; AGSK-R5 runtime
 eligibility audit closed at material commit `3a742e6e`; AGSK-R4 runtime package loader
 closed at material commit `416eb689`; AGSK-R3 package roots closed at material
