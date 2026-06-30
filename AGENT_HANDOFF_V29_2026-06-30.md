@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects exactly one source repo URL, local source mirror, or folder path for KIOD-R5 before any worker dispatch; parked checkpoint=KIOD-R5 hold packet committed at `39f29456`, status `HOLD_PENDING_OPERATOR_SOURCE_SELECTION`, after KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
+Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=worker executes KIOD-R5 as `WORKER_MUST_NOT_COMMIT` against EverOS plus `.private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store` and returns one uncommitted worker-return artifact; parked checkpoint=KIOD-R5 selected-source dispatch committed at `2924fddd`, after KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 ## Current State
 
@@ -18,13 +18,109 @@ Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_hold_pending_op
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `80a872c3` KIOD-R5 work order trace manifest repair |
-| Latest session-sync target | handoff sync after KIOD-R5 trace manifest repair |
+| Latest material packet | `2924fddd` KIOD-R5 selected-source dispatch |
+| Latest session-sync target | session sync after KIOD-R5 selected-source dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
+`kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`
+
+## KIOD-R5 Selected-Source Dispatch - 2026-06-30
+
+Material dispatch commit:
+`2924fddd51c5a0a3da1ad4dc42cfa8f7ebc68917`
+
+Short SHA: `2924fddd`
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md`
+
+Status: `DISPATCH_READY`.
+
+Selected source:
+
+- upstream context `https://github.com/EverMind-AI/EverOS.git` at
+  `0341f1230fef170d28d83c4295ab9d93570b0f2d`
+- local folder `.private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store`
+- selected-source file count 26
+
+Next allowed move: worker executes KIOD-R5 under `WORKER_MUST_NOT_COMMIT`,
+reads the selected source set, records negative-search evidence and overlap
+classification, and creates only
+`docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md`
+as an uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` artifact.
+
+Claim boundary: dispatch only. No checker implementation, runtime/provider
+behavior, MCP/CLI adapter, dashboard, public-sync, source import, generated
+aggregate edit outside session sync, automatic invocation, action authority,
+package lifecycle mutation, or production-readiness claim.
+
+## Core Guard Self-Protection Authorization - KIOD-R5 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+KIOD-R5 selected-source dispatch material commit `2924fddd`; regenerate active
+session state and align front door, bootstrap read model, and active handoff.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V29_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotDispatch20260630.json`
+
+Operator authorization: session-sync follows operator-selected EverOS source
+dispatch and GC-020 after material dispatch commit `2924fddd`.
+
+Rollback boundary: revert only this session-sync if rejected; do not revert
+KIOD-R5 selected-source dispatch commit `2924fddd`, handoff-sync commit
+`49a0dd74`, KIOD-R5 trace repair commit `80a872c3`, or KIOD-R5 hold packet
+commit `39f29456`.
+
+## GC-020 HEAD Marker - KIOD-R5 Selected-Source Dispatch
+
+Latest material commit requiring in-place handoff trace:
+`2924fddd51c5a0a3da1ad4dc42cfa8f7ebc68917`
+
+Short SHA: `2924fddd`
+
+Material work: KIOD-R5 selected-source dispatch for EverOS Controlled Memory
+Index Store.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`2924fddd`. It dispatches worker execution only under `WORKER_MUST_NOT_COMMIT`
+and does not authorize checker implementation, runtime/provider behavior,
+MCP/CLI adapter work, dashboard, public-sync, source import, automatic
+invocation, action authority, package lifecycle mutation, or production
+readiness claims.
+
+## Agent Operation Trace Block - KIOD-R5 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-R5 selected-source dispatch session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-R5 material dispatch commit `2924fddd` plus generated active-session state discipline |
+| Before status evidence | material commit `2924fddd` dispatched KIOD-R5; active continuity still named source-selection hold |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no worker execution by session-sync steward |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public/source-import claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-r5-dispatch-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotDispatch20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotDispatch20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## KIOD-R5 Hold Packet - 2026-06-30
 

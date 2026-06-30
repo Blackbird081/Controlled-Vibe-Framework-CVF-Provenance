@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects exactly one source repo URL, local source mirror, or folder path for KIOD-R5 before any worker dispatch; parked checkpoint=KIOD-R5 hold packet committed at `39f29456`, status `HOLD_PENDING_OPERATOR_SOURCE_SELECTION`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=worker executes KIOD-R5 as `WORKER_MUST_NOT_COMMIT` against EverOS plus `.private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store` and returns one uncommitted worker-return artifact; parked checkpoint=KIOD-R5 selected-source dispatch committed at `2924fddd`, KIOD-R5 hold packet committed at `39f29456`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
+Current mode marker: `kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`
 
-Current mode: `kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
+Current mode: `kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`
 
-`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
+`kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`
 
 Previous mode:
 
-`kiod_r4_negative_search_evidence_decision_closed_pending_kiod_r5_packet_blocked_pilot_work_order`
+`kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
 
-## Current Held Work
+## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| KIOD-R5 Packet-Blocked Pilot hold packet | `39f29456` | HOLD_PENDING_OPERATOR_SOURCE_SELECTION; corrected Claude's scope-crept KIOD-R5 draft into a held baseline/work order pair; worker must not choose the source target; next move is operator selecting exactly one source repo URL, local source mirror, or folder path; no checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit, automatic invocation, action authority, package lifecycle mutation, or production-readiness claim |
+| KIOD-R5 Packet-Blocked Pilot selected-source dispatch | `2924fddd` | DISPATCH_READY; worker must read EverOS upstream context at `0341f1230fef170d28d83c4295ab9d93570b0f2d` and local folder `.private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store`, account for all 26 files, record negative-search evidence and overlap classification, create only `docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md`, and not commit; no checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit beyond session sync, automatic invocation, action authority, package lifecycle mutation, or production-readiness claim |
 
 ## Latest Closed Work
 
@@ -162,18 +162,24 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r5_packet_blocked_pilot_hold_pending_operator_source_selection`
+Mode: `kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`
 
-Next allowed move: operator selects exactly one source repo URL, local source
-mirror, or folder path for KIOD-R5. Then dispatcher release-edits
+Next allowed move: worker executes
 `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md`
-with `sourceSelectionEvidence`, `sourceTargetReadPlan`, `Negative-search
-evidence`, and `Overlap And Novelty Classification` before rerunning
-pre-dispatch gates and dispatching a `WORKER_MUST_NOT_COMMIT` worker. KIOD-R5
-hold packet is material commit `39f29456`; KIOD-R4 closed at material commit
-`0416843c` with accepted decision token `PACKET_BLOCK_REQUIRED_NOW`; worker
-return is `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`;
-completion review is `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md`.
+as `WORKER_MUST_NOT_COMMIT`, reads EverOS upstream context at
+`0341f1230fef170d28d83c4295ab9d93570b0f2d` plus local folder
+`.private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store`,
+accounts for all 26 selected-source files, records `Negative-search evidence`
+and `Overlap And Novelty Classification`, and creates only
+`docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md`
+as an uncommitted `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` artifact.
+Worker must not choose another source target, commit, implement a checker,
+import source material, create runtime/provider behavior, MCP/CLI adapter,
+dashboard, public-sync, automatic invocation, action authority, generated
+aggregate edit, package lifecycle mutation, or production-readiness claim.
+KIOD-R5 selected-source dispatch is material commit `2924fddd`; KIOD-R4 closed
+at material commit `0416843c` with accepted decision token
+`PACKET_BLOCK_REQUIRED_NOW`.
 KIOD-R1-R3 Knowledge Intake Deduplication Foundation remains closed at material
 commit `5d453bce`, creating stable R1/R2/R3 references under
 `docs/reference/external_agent_review/` and updating KIOD-T0 through KIOD-R4
