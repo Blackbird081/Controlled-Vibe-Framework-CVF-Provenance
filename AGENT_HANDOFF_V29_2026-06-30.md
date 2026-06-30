@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=worker executes KIOD-R5 as `WORKER_MUST_NOT_COMMIT` against EverOS plus `.private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store` and returns one uncommitted worker-return artifact; parked checkpoint=KIOD-R5 selected-source dispatch committed at `2924fddd`, after KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
+Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after KIOD-R5 closure; parked checkpoint=KIOD-R5 closed at material commit `be6be4e2`, after KIOD-R5 selected-source dispatch `2924fddd` and KIOD-R4 material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 ## Current State
 
@@ -18,13 +18,108 @@ Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_dispatched_pend
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `2924fddd` KIOD-R5 selected-source dispatch |
-| Latest session-sync target | session sync after KIOD-R5 selected-source dispatch |
+| Latest material packet | `be6be4e2` KIOD-R5 Packet-Blocked Pilot closure |
+| Latest session-sync target | session sync after KIOD-R5 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_r5_packet_blocked_pilot_dispatched_pending_worker_return`
+`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
+
+## KIOD-R5 Packet-Blocked Pilot Closure - 2026-06-30
+
+Material closure commit:
+`be6be4e2fce8af33f3185015fbb516b2a76ed81d`
+
+Short SHA: `be6be4e2`
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md`
+- `docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md`
+- `docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_COMPLETION_2026-06-30.md`
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure summary: the EverOS Controlled Memory Index Store folder was reviewed
+as documentation-only. The worker return accounted for 26/26 files, recorded
+seven negative-search commands, retained ENRICH_EXISTING and NEW_FINDING
+evidence for future memory-foundation enrichment, and rejected checker/test and
+generated examples for direct import. Reviewer repaired only packet wording,
+corpus field shape, and jurisdiction routing before accepting the return.
+
+Next allowed move: operator selects a fresh governed lane, likely doc-only
+memory-foundation enrichment from KIOD-R5 candidates, a separate CVF-authored
+checker work order, or a new repo/folder absorption packet.
+
+Claim boundary: no runtime/provider behavior, SQLite/LanceDB implementation,
+MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate
+edit beyond session sync, automatic invocation, action authority, package
+lifecycle mutation, direct checker import, or production-readiness claim.
+
+## Core Guard Self-Protection Authorization - KIOD-R5 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+KIOD-R5 closure material commit `be6be4e2`; regenerate active session state and
+align front door, bootstrap read model, and active handoff.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V29_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotClosure20260630.json`
+
+Operator authorization: session-sync follows reviewer/closer material closure
+for KIOD-R5 at commit `be6be4e2`.
+
+Rollback boundary: revert only this session-sync if rejected; do not revert
+KIOD-R5 closure commit `be6be4e2`, selected-source dispatch commit `2924fddd`,
+trace repair commit `80a872c3`, or hold packet commit `39f29456`.
+
+## GC-020 HEAD Marker - KIOD-R5 Closure
+
+Latest material commit requiring in-place handoff trace:
+`be6be4e2fce8af33f3185015fbb516b2a76ed81d`
+
+Short SHA: `be6be4e2`
+
+Material work: KIOD-R5 Packet-Blocked Pilot closure for EverOS Controlled
+Memory Index Store.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`be6be4e2`. It closes KIOD-R5 as documentation-only and does not authorize
+runtime/provider behavior, SQLite/LanceDB implementation, MCP/CLI adapter work,
+dashboard, public-sync, source import, automatic invocation, action authority,
+package lifecycle mutation, direct checker import, or production-readiness
+claims.
+
+## Agent Operation Trace Block - KIOD-R5 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-R5 closure session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-R5 material closure commit `be6be4e2` plus generated active-session state discipline |
+| Before status evidence | material commit `be6be4e2` closed KIOD-R5; active continuity still named worker execution pending |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no material closure edits beyond state/front-door/handoff sync |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public/source-import claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-r5-closure-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR5PacketBlockedPilotClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## KIOD-R5 Selected-Source Dispatch - 2026-06-30
 
@@ -664,6 +759,7 @@ production-readiness claims.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R5 Packet-Blocked Pilot | `be6be4e2` | CLOSED_PASS_BOUNDED; EverOS Controlled Memory Index Store scan accepted as documentation-only, 26/26 files accounted, seven negative-search commands recorded, future memory-foundation/checker candidates retained, direct import/runtime/public/package claims rejected |
 | SCPL-WEB-T1 Skill Control Plane Web Projection | `a01bdca2` | CLOSED_PASS_BOUNDED; Web generator now emits dashboard-ready Skill Control Plane projection, skills-index reports 52 front-door skills, 25 ASSF projections, and 24 runtime package projections, with drift guard wiring |
 | ASCP-P4-P6 Remaining Package Production Scale-Up | `687d4423` | CLOSED_PASS_BOUNDED; 24 package roots now ACTIVE production package skills with 24 runtime-eligible, 24 activation-ready, 24 CLI/MCP adapter, 24 selection-profiled, 28 Web projection, and 0 drift readout |
 | SCPL-T2 Skill Selection Guidance | `25361957` | CLOSED_PASS_BOUNDED; 24 package-root domain/selection profiles, inventory projection, CLI spec recommendation, and checker/test coverage |
