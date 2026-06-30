@@ -12,6 +12,8 @@ Batch ID: EVEROS-T2
 
 rawMemoryReleased=false
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: this is a documentation reference matrix surface; it does not make empirical or evidence-based claims that require prediction, evidence comparison, or contradiction disposition.
+
 matrixVersion: `cvf.memoryFoundation.ownerSurfaceReconciliation.everosT2.v1`
 
 ## Purpose
@@ -56,6 +58,7 @@ Out of scope:
 | Raw memory release invariant has a local static guard | `governance/compat/check_raw_memory_release_invariant.py` | constants and diagnosis function | `RAW_RELEASE_FALSE_PATTERN`; `diagnose_raw_memory_release_invariant` | raw memory release invariant gate | EXISTS | ACCEPT |
 | Memory access overclaim has a local static guard | `governance/compat/check_memory_access_claim.py` | rule definitions and diagnosis function | `CLAIM_RULES`; `diagnose_memory_access_claims` | memory access claim gate | EXISTS | ACCEPT |
 | Stable foundation family files must avoid dated duplicate filenames | `governance/compat/check_foundation_storage_layout.py` | reference-family validation | `_validate_reference_family_folder`; `dated_stable_foundation_file` | foundation storage layout gate | EXISTS | ACCEPT |
+| KIOD-R6 enrichment adds PARTIAL_REBUILD state, partial rebuild rules, hash verification prerequisite, Receipt Type Taxonomy, denial receipt contract, Memory Access Gate Rules, sensitivity levels, retention classes, and Memory Claim Boundary Taxonomy to T1 owner surfaces | `docs/reviews/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_WORKER_RETURN_2026-06-30.md` | Candidate Replay Table; Field Comparison And Disposition; CVF-Native Enrichment Produced | Groups D-file10, E-file07, E-file08, E-file09, B-file00, H-file18 ADAPT_DOC_ONLY | KIOD-R6 memory foundation enrichment worker return | DOC_ONLY_NEW | ACCEPT |
 
 ## Reconciliation Matrix
 
@@ -73,6 +76,12 @@ Out of scope:
 | Stable memory foundation reference folder | `docs/reference/memory_foundation/README.md`; `governance/compat/check_foundation_storage_layout.py` | MACHINE_GUARD_AVAILABLE | Keep T2 matrix under the stable folder with no date in filename | no immediate new checker |
 | Timestamp storage/display separation | T1 contract | GAP_CANDIDATE_DOC_ONLY | Leave as doctrine until a future timestamp helper or receipt implementation exists | possible later, lower priority |
 | Privacy, retention, and redaction invalidating derived rows | T1 contract; MLW1 receipt model | PARTIAL_COVERAGE | Keep as future memory/index implementation acceptance criteria | possible later, after implementation source exists |
+| Receipt type taxonomy (RETRIEVAL_RECEIPT vs DENIAL_RECEIPT) and denial receipt contract | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | COVERED_CONTRACT_ONLY | T1 now defines both receipt types and the denial receipt field schema; no runtime or checker created | possible if future docs overclaim single receipt type |
+| Memory access gate rule categories for reads and writes | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | GAP_CANDIDATE_DOC_ONLY | T1 now names gate check categories for write and read operations; no runtime gate or checker created | yes, as future gate-claim checker candidate after T3 |
+| Sensitivity level taxonomy (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTED) | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | GAP_CANDIDATE_DOC_ONLY | T1 now defines sensitivity levels for classification before indexing; no runtime classifier created | possible later, after classification engine source exists |
+| Retention class taxonomy (EPHEMERAL, SESSION_SCOPED, GOVERNED, PERMANENT) | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | GAP_CANDIDATE_DOC_ONLY | T1 now defines retention classes; no runtime retention policy engine created | possible later, after retention engine source exists |
+| Partial rebuild rules and hash verification prerequisite | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | COVERED_CONTRACT_ONLY | T1 now names PARTIAL_REBUILD state and hash verification prerequisite; T3 checker candidate covers stale-derived overclaims | no immediate new checker beyond T3 candidate |
+| Memory claim boundary taxonomy for memory-facing governed artifacts | `docs/reference/memory_foundation/README.md` (KIOD-R6 enrichment) | GAP_CANDIDATE_DOC_ONLY | README now carries a claim boundary taxonomy table naming disallowed claim categories and CVF-authorized substitutes; no enforcement runtime created | future candidate for memory claim boundary checker |
 
 ## T2 Decision
 

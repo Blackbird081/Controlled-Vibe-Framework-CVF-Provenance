@@ -12,6 +12,8 @@ Batch ID: EVEROS-T1
 
 rawMemoryReleased=false
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: this is a documentation reference contract surface; it does not make empirical or evidence-based claims that require prediction, evidence comparison, or contradiction disposition.
+
 contractVersion: `cvf.memoryFoundation.sourceDerivedReplay.everosT1.v1`
 
 ## Purpose
@@ -120,6 +122,7 @@ STALE
 DEGRADED
 CONFLICTED
 REBUILDING
+PARTIAL_REBUILD
 FAILED
 DISABLED_BY_POLICY
 ```
@@ -140,6 +143,14 @@ When a derived view is stale, degraded, or conflicted, the safe responses are:
 - return a denial receipt;
 - fall back to authorized source lookup with explicit warning;
 - block the operation if source lookup would violate scope or sensitivity.
+
+Before executing a rebuild, the source hash must be verified against current source authority. Rebuilding from a stale or conflicted source must be blocked until the source path is restored or the index is marked DISABLED_BY_POLICY.
+
+When only a subset of derived rows are affected by a source change, a partial rebuild may target those rows. A partial rebuild must:
+
+- record which rows were rebuilt and which were left unchanged;
+- set the index state to PARTIAL_REBUILD until full-coverage verification completes;
+- complete full-coverage verification or escalate to a full rebuild before marking the index VALID.
 
 ## Retrieval Receipt Contract
 
@@ -182,6 +193,30 @@ Required invariants:
 - returned items must point back to source authority;
 - excluded items must record aggregate reason counts without leaking secrets.
 
+## Receipt Type Taxonomy
+
+A retrieval operation produces one of two receipt types:
+
+- `RETRIEVAL_RECEIPT`: a successful read gate pass that returned results or an empty result set within scope; carries the full retrieval field schema above.
+- `DENIAL_RECEIPT`: the read gate denied the request or no authorized results exist; used in place of a retrieval receipt when a gate check fails.
+
+A future denial receipt should include at least:
+
+```yaml
+receipt_type: DENIAL_RECEIPT
+receipt_id:
+retrieval_id:
+actor_id:
+actor_role:
+denial_reason:
+denied_field_count:
+partial_return_count:
+index_state:
+created_at_utc:
+```
+
+`receipt_type` must be set by the gate at read time, not inferred from field presence. Both receipt types require `actor_id`, `actor_role`, and `created_at_utc`. These are doc-only contract fields until a future source-verified implementation creates them.
+
 ## Rebuild Receipt Contract
 
 A future rebuild receipt should include at least:
@@ -206,6 +241,29 @@ created_at_utc:
 Rebuild receipts do not prove runtime behavior by themselves. They are evidence
 only for the rebuild operation they record.
 
+## Memory Access Gate Rules
+
+Future memory write and read operations should pass through a gate sequence before execution. Gate rule categories for writes:
+
+- actor and role validation against current scope boundary;
+- sensitivity classification check before write proceeds;
+- retention and redaction policy check;
+- conflict and consistency check for the target derived or canonical row;
+- write gate receipt recording before execution;
+- audit trail update after execution.
+
+Gate rule categories for reads:
+
+- actor and role validation;
+- scope validation against workspace and project boundary;
+- sensitivity and staleness check on the target derived view;
+- retention policy check;
+- retrieval receipt or denial receipt recording before results are returned;
+- result filtering by scope and sensitivity;
+- denial receipt issued when any gate check fails.
+
+Gate categories are doc-only contract classifications. They do not implement or activate a runtime gate until a future source-verified work order creates them.
+
 ## Privacy, Retention, And Redaction Boundary
 
 Future memory/index work must keep these boundaries:
@@ -220,6 +278,22 @@ Future memory/index work must keep these boundaries:
 
 If redaction changes a canonical source, every affected derived view must be
 marked stale, rebuilt, or disabled by policy.
+
+Future memory-facing work should classify records using these sensitivity levels before indexing or retrieval:
+
+- `PUBLIC`: safe for public export and open retrieval within scope;
+- `INTERNAL`: accessible to internal agents and authorized operators only;
+- `CONFIDENTIAL`: restricted; not indexed without explicit operator policy;
+- `RESTRICTED`: highest sensitivity; redaction required before any derived view is built.
+
+Future memory-facing work should assign records to these retention classes:
+
+- `EPHEMERAL`: expires at session end; derived rows must be purged after session close;
+- `SESSION_SCOPED`: bounded to the active session or project; purged after project close;
+- `GOVERNED`: persists under explicit retention policy; requires redaction-on-delete;
+- `PERMANENT`: retained until explicit operator deletion action; highest audit trail requirement.
+
+Sensitivity levels and retention classes are doc-only contract classifications. They do not implement a classification engine or policy enforcer until a future source-verified implementation creates them.
 
 ## Timestamp Discipline
 

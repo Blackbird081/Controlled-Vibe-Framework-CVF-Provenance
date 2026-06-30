@@ -10,6 +10,8 @@ Date: 2026-06-28
 
 rawMemoryReleased=false
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: this is a documentation reference front door surface; it does not make empirical or evidence-based claims that require prediction, evidence comparison, or contradiction disposition.
+
 ## Purpose
 
 Provide the stable CVF-owned front door for memory foundation contracts that
@@ -91,6 +93,20 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: EVEROS-T1 is private provenance reference promotion. Public-safe memory
 foundation wording requires a separate public-sync decision.
+
+## Memory Claim Boundary Taxonomy
+
+Future memory-facing governed artifacts must carry explicit claim boundaries by category. Authorized claim categories and their required substitutes:
+
+| Claim category | Disallowed form | CVF-authorized substitute |
+|---|---|---|
+| Implementation claim | asserts SQLite, LanceDB, vector store, or embedding behavior exists or is active | doc-only contract field; runtime requires source-verified work order with live proof |
+| Runtime claim | asserts memory retrieval, reinjection, or promotion operates at runtime | advisory notation only; any runtime behavior requires a live-proof work order |
+| Scope expansion claim | widens role, workspace, project, or sensitivity boundary beyond source authority | explicit source-verified scope grant in a future governed artifact |
+| Adapter claim | asserts MCP, CLI, or external adapter reads or writes memory without a separate GC-018 | deferred per MPI-T3 external-agent read contract |
+| Raw memory release claim | asserts raw memory is released or that `can_reinject` is true without explicit policy change | `rawMemoryReleased=false` invariant; change requires source-verified policy update |
+
+This taxonomy is a documentation reference only. It does not implement or activate any runtime boundary.
 
 ## Claim Boundary
 
