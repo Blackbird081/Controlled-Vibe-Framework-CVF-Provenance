@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 closed at material commit `d409b602` with `LIVE_PROVIDER_USE_PROOF_PASS`, HTTP 200, and use-proof receipt `sha256:f67bd3331f81e088c2f75f7287db0fce60508abbc89cd7099481e5e86aeaa7dc`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 corrective patch closed at material commit `09656d16` with qwen-turbo denied as `MODEL_FREE_QUOTA_NOT_VERIFIED` and live proof PASS using `qwen3.6-flash-2026-04-16`, HTTP 200, use-proof receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`; ASCP-T5 original adapter closed at `d409b602`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
+Current mode marker: `ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
 
-Current mode: `ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
+Current mode: `ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
 
-`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
+`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`
+`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ASCP-T5 corrective live model selection patch | `09656d16` | CLOSED_PASS_BOUNDED; added shared live-provider env bootstrap and free-quota model selector; default model resolves from Alibaba free-quota ledger; explicit `qwen-turbo` is denied as `MODEL_FREE_QUOTA_NOT_VERIFIED`; live proof passed with `qwen3.6-flash-2026-04-16`, HTTP 200, latency 14438 ms, use-proof receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`; no ACTIVE lifecycle promotion, remaining package conversion, provider registry mutation, external MCP runtime, public-sync, or production-readiness claim |
 | ASCP-T5 package execution/use-proof adapter | `d409b602` | CLOSED_PASS_BOUNDED; added package use-proof adapter standard, helper, and tests; dry-run returned `DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF` and `USED_WITH_RECEIPT`; live proof returned `LIVE_PROVIDER_USE_PROOF_PASS`, HTTP 200, latency 2162 ms, skill usage receipt `sha256:aa4e26d13ccd75475431e434ef1bd304f20d3b72d77f95a4726fdf6038f2455f`, and use-proof receipt `sha256:f67bd3331f81e088c2f75f7287db0fce60508abbc89cd7099481e5e86aeaa7dc`; no lifecycle mutation, remaining package conversion, external MCP runtime execution, provider registry mutation, public-sync, or production claim |
 | ASCP-T4 package lifecycle source-state decision | `1625ab8c` | CLOSED_PASS_BOUNDED; added read-only lifecycle decision helper and tests; decision `HOLD_NO_ACTIVE_SOURCE_MUTATION`, `NO_SOURCE_MUTATIONS_AUTHORIZED`; smoke observed 32 total candidates, 6 runtime eligible, 6 `ACTIVATION_READY`, 6 external projection ready, and 0 active source records; no package lifecycle source moved to `ACTIVE`; no package body read, registry/index/truth/package-root mutation, skill usage receipt emission or consumption, provider/live proof, public-sync, execution adapter, or production claim |
 | ASCP-T3 CLI/MCP adapter projection | `a5ab2689` | CLOSED_PASS_BOUNDED; added bounded `EXTERNAL_AGENT_CLI_MCP` metadata/policy projection helper, standard, tests, and roadmap update; projection emits `IMPLEMENTED_BOUNDED_PROJECTION`, exposes allowlisted metadata plus activation policy state, and denies external body reads/output use; no package body read, lifecycle mutation, skill usage receipt emission or consumption, provider/live proof, public-sync, or production claim |
@@ -147,7 +148,7 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
+Mode: `ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value lane. Any `ACTIVE`
 lifecycle promotion, remaining package conversion, external MCP package

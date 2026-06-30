@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 closed at material commit `d409b602` with `LIVE_PROVIDER_USE_PROOF_PASS`, HTTP 200, and use-proof receipt `sha256:f67bd3331f81e088c2f75f7287db0fce60508abbc89cd7099481e5e86aeaa7dc`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 corrective patch closed at material commit `09656d16` with qwen-turbo denied as `MODEL_FREE_QUOTA_NOT_VERIFIED` and live proof PASS using `qwen3.6-flash-2026-04-16`, HTTP 200, receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`; ASCP-T5 original adapter closed at `d409b602`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`ascp_t5_package_use_proof_adapter_closed_pen
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `d409b602` ASCP-T5 package execution/use-proof adapter |
-| Latest session-sync target | session sync after ASCP-T5 material closure |
+| Latest material closeout | `09656d16` ASCP-T5 corrective live model selection patch |
+| Latest session-sync target | session sync after ASCP-T5 corrective material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
+`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -63,6 +63,53 @@ against CVF-governed surfaces.
 External agent memory files: non-canonical convenience only.
 
 ## Latest Work / Changes
+
+Material commit `09656d16` closed ASCP-T5 corrective live model selection.
+Full SHA: `09656d1635e87d36915e96eb7393faa151ce0144`.
+
+It added:
+
+- `governance/compat/live_provider_bootstrap.py`
+- `governance/compat/assf_live_model_selection.py`
+- `governance/compat/test_live_provider_bootstrap.py`
+- ASCP-T5 adapter/test/standard corrective updates
+- `docs/reviews/CVF_ASCP_T5_PACKAGE_USE_PROOF_ADAPTER_CORRECTIVE_REVIEW_2026-06-30.md`
+
+The corrective patch prevents nested helper false missing-key diagnostics by
+inserting the repo root before loading the canonical local env bootstrap. It
+also replaces the legacy ASCP-T5 default model with
+`AUTO_FROM_ALIBABA_FREE_QUOTA_LEDGER`, denies explicit `qwen-turbo` as
+`MODEL_FREE_QUOTA_NOT_VERIFIED` for free-quota live proof, and passed live proof
+with `qwen3.6-flash-2026-04-16`, HTTP 200, latency 14438 ms, and use-proof
+receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`.
+No package lifecycle source, generated index, truth packet, package root,
+provider registry, external MCP runtime, public-sync source, or production
+claim was mutated by the material corrective patch.
+
+## Core Guard Self-Protection Authorization - ASCP-T5 Corrective Session Sync
+
+Authorized guard-maintenance scope: session-sync only after ASCP-T5 corrective
+material commit `09656d16`; update active handoff, front door, active session
+state sources, generated active session state, and bootstrap read model.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ascpT5CorrectiveLiveModelSelectionClosure20260630.json`
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+
+Operator authorization: operator requested fixing the live-key bootstrap and
+legacy-model findings, plus rerunning live proof with a different model; session
+sync is required by GC-020 after material commit `09656d16`.
+
+Rollback boundary: revert only this session-sync update if rejected; do not
+revert ASCP-T5 corrective material commit `09656d16`, earlier ASCP closures,
+package roots, truth packets, generated ASSF index, or unrelated session-sync
+history.
 
 Material commit `d409b602` closed ASCP-T5 package execution/use-proof adapter.
 Full SHA: `d409b602ed43e2cd796cf515bff449b635e8f420`.

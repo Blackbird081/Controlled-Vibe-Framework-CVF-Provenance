@@ -1,0 +1,19 @@
+{
+  "stateOrder": 642,
+  "stateKey": "ascpT5CorrectiveLiveModelSelectionClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "09656d16",
+    "review": "docs/reviews/CVF_ASCP_T5_PACKAGE_USE_PROOF_ADAPTER_CORRECTIVE_REVIEW_2026-06-30.md",
+    "summary": "Fixed ASCP-T5 live-provider env bootstrap and Alibaba free-quota model selection. Adapter default now resolves from the ledger, qwen-turbo is denied as MODEL_FREE_QUOTA_NOT_VERIFIED for free-quota proof, and live proof passed with qwen3.6-flash-2026-04-16.",
+    "liveProof": {
+      "provider": "alibaba-dashscope",
+      "model": "qwen3.6-flash-2026-04-16",
+      "httpStatus": 200,
+      "latencyMs": 14438,
+      "receiptId": "sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b",
+      "evidenceFileHash": "sha256:c44baadc5cdf909712b0262f1d7deb0d05692598d360365cb0817bbe04a00348"
+    },
+    "claimBoundary": "Corrective patch only; no ACTIVE lifecycle promotion, remaining package conversion, provider registry mutation, external MCP runtime, public-sync, or production-readiness claim."
+  }
+}
