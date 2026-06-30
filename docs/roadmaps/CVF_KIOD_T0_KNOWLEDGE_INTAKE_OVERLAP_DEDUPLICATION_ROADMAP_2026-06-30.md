@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_KIOD_R4_NEGATIVE_SEARCH_DECISION_AFTER_R1_R3_PASS
+Status: ROADMAP_READY_FOR_KIOD_R5_PACKET_BLOCKED_PILOT
 
 docType: roadmap
 
@@ -30,10 +30,10 @@ Operator decision: proceed with the deduplication roadmap proposed after
 KIOD-T1.
 
 Roadmap decision:
-`OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`
+`OPEN_KIOD_R5_PACKET_BLOCKED_PILOT`
 
 Recommended next:
-`AUTHOR_KIOD_R4_GC018_FOR_NEGATIVE_SEARCH_EVIDENCE_DECISION`
+`AUTHOR_KIOD_R5_GC018_FOR_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT`
 
 This roadmap authorizes planning only. It does not authorize new checker
 implementation, source-mirror mutation, package activation, runtime work,
@@ -87,8 +87,8 @@ Out of scope:
 | KIOD-R1 | PASS_BOUNDED | Author the owner-surface taxonomy for knowledge intake across doctrine, runtime, package skills, checkers, Web/UI, provider/model, MCP/CLI, memory/state, corpus, and public-sync | reference map only |
 | KIOD-R2 | PASS_BOUNDED | Define the pre-scan packet for future repo/folder intake: source groups, feature clusters, overlap candidates, novelty candidates, rejection reasons, and expected owner surfaces | packet template/reference only |
 | KIOD-R3 | PASS_BOUNDED | Define the overlap routing matrix that converts source groups into confirmed-existing, enrich-existing, new-finding, direct-import-reject, no-new-value, or owner-missing actions | no implementation |
-| KIOD-R4 | PROPOSED | Decide whether negative-search evidence needs a checker or can remain a required packet block; if a checker is proposed, open a fresh GC-018 | no checker now |
-| KIOD-R5 | PROPOSED | Pilot the pipeline on the next operator-selected repo/folder and measure whether it reduces overlap and missed-value defects | no runtime or public claim |
+| KIOD-R4 | PASS_BOUNDED | Decided `PACKET_BLOCK_REQUIRED_NOW`: negative-search evidence remains a mandatory packet block now; checker implementation is deferred until pilot evidence defines a machine-parseable evidence shape | no checker now |
+| KIOD-R5 | PROPOSED | Add the mandatory `Negative-search evidence` packet field to the next source-intake packet flow and pilot the pipeline on the next operator-selected repo/folder | no runtime or public claim |
 
 ## Acceptance Criteria
 
@@ -102,6 +102,7 @@ Out of scope:
 | KIOD-R1 owner-surface taxonomy exists | `docs/reference/external_agent_review/CVF_KIOD_R1_OWNER_SURFACE_TAXONOMY.md` | PASS |
 | KIOD-R2 pre-scan packet standard exists | `docs/reference/external_agent_review/CVF_KIOD_R2_PRE_SCAN_PACKET_STANDARD.md` | PASS |
 | KIOD-R3 overlap routing matrix exists | `docs/reference/external_agent_review/CVF_KIOD_R3_OVERLAP_ROUTING_MATRIX_STANDARD.md` | PASS |
+| KIOD-R4 negative-search evidence decision exists | `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md`; `PACKET_BLOCK_REQUIRED_NOW` accepted by reviewer | PASS_BOUNDED |
 
 ## Verification / Evidence
 
@@ -154,6 +155,7 @@ Out of scope:
 | Future agents mark value as no-new-value too quickly | KIOD-R2 requires source groups and feature clusters before closeout | PASS_BOUNDED |
 | New finding claims are made without negative search | KIOD-R3 routes missing-owner findings to R4 decision before new owner creation | PASS_BOUNDED |
 | A checker is implemented before the doctrine is stable | KIOD-R4 is a decision tranche, not automatic implementation | PLANNED |
+| A future packet omits negative-search evidence for owner-missing rows | KIOD-R4 selected `PACKET_BLOCK_REQUIRED_NOW`; KIOD-R5 must carry the required packet field before pilot acceptance | PASS_BOUNDED |
 | Pilot repo work widens into runtime or package activation | KIOD-R5 remains intake-pipeline proof only unless fresh GC-018 authorizes implementation | PLANNED |
 
 ## Package Skill Productionization Control Block

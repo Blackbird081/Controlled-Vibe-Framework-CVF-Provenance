@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-30
 
@@ -183,6 +183,37 @@ DEFERRED_PRIVATE_ONLY
 Reason: KIOD-R4 is a private provenance governance decision dispatch. Public
 export requires a separate public-sync tranche from the sibling public-sync
 repository.
+
+## Current Runtime Freshness Verification
+
+| Runtime/source surface | Verification result | Disposition |
+|---|---|---|
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` | source exists; `ProviderRegistry` runtime surface is outside KIOD-R4 allowed scope | NO_RUNTIME_MUTATION |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | source exists; `PROVIDER_CAPABILITY_REGISTRY` exists and is outside KIOD-R4 allowed scope | NO_RUNTIME_MUTATION |
+| KIOD-R4 negative-search evidence decision | no runtime field, provider registry value, route state, or hardcoded provider behavior is created or changed by this closure | DOCUMENT_ONLY_DECISION |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_FOR_CLAUDE_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md` | `ROADMAP_READY_FOR_KIOD_R5_PACKET_BLOCKED_PILOT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; drift gate passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Baseline closure status | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order closure status | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| KIOD-R4 decision token | `PACKET_BLOCK_REQUIRED_NOW` | PASS |
+| Completion review path | `docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md` | PASS |
+| Runtime mutation claim | N/A with reason: no runtime/source mutation authorized or performed | N/A_WITH_REASON |
 
 ## Delta Execution Claim Boundary Control Block
 
