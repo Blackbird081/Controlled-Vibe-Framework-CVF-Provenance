@@ -2,17 +2,17 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: ACTIVE
 
 docType: assf_package_front_door
 
-Batch ID: AGSK-R3
+Batch ID: AGSK-R3; ASCP-P4-P6
 
 skillId: cvf-engineering-code-simplification
 
 ## Purpose
 
-Provide the stable front door for the `cvf-engineering-code-simplification` ASSF package proposal.
+Provide the stable front door for the `cvf-engineering-code-simplification` ASSF package.
 
 ## Scope / Applies-To
 
@@ -21,13 +21,13 @@ Provide the stable front door for the `cvf-engineering-code-simplification` ASSF
 | Package root | `docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/` |
 | Canonical package body | `SKILL.md` |
 | Source evidence | `skill.source.json` |
-| Lifecycle state | PROPOSED |
-| Runtime activation | NOT_AUTHORIZED_WITH_REASON: AGSK-R3 does not activate runtime, resolver, CLI/MCP adapter, provider/live proof, public-sync, or production behavior |
+| Lifecycle state | ACTIVE |
+| Runtime activation | BOUNDED_WITH_REASON: ASCP-P4-P6 permits explicit receipt-backed production package execution through CVF adapters only; it does not grant automatic invocation, filesystem, git, browser, provider routing, public-sync, merge, commit, or downstream action authority |
 
 ## Owner Surface
 
-ASSF package proposal evidence under AGSK-R3. Reviewer acceptance and UAT are required before any later lifecycle promotion.
+ASSF package proposal evidence under AGSK-R3 and production scale-up evidence under ASCP-P4-P6. Automatic invocation, public export, full MCP server behavior, and action authority remain outside this package front door.
 
 ## Claim Boundary
 
-This front door only orients readers to the package root. It does not approve, activate, certify, execute, export, or publish the skill.
+This front door orients readers to the ACTIVE package root. It does not execute, export, publish, merge, commit, call providers, or grant authority beyond explicit receipt-backed production package execution under an active governed work order.
