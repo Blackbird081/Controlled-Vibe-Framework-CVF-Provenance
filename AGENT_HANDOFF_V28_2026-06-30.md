@@ -60,6 +60,8 @@ External agent memory files and provider-local memory are non-canonical
 convenience only. Source facts for governed CVF work must be re-verified
 against CVF-governed surfaces.
 
+External agent memory files: non-canonical convenience only.
+
 ## Latest Work / Changes
 
 Material commit `a5ab2689` closed ASCP-T3 CLI/MCP adapter projection. Full
@@ -255,6 +257,11 @@ reads, automatic package activation, automatic skill invocation telemetry
 outside the bounded loader, package execution adapters, provider/live proof,
 public-sync export, direct import, merge authority, commit authority, or
 production-readiness.
+
+Material follow-up commit `1626f189` classified
+`AGENT_HANDOFF_V28_2026-06-30.md` as `INTERNAL_ONLY` in the root file exposure
+registry. Full material SHA:
+`1626f1892e9c7157570982e9819cb71cd07248d5`
 
 ## Agent Operation Trace Block - ASCP-T3 Session Sync
 
