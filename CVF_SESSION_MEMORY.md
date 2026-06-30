@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; remaining package conversions, Web dashboard/console UI, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=SCPL-T2 Skill Selection Guidance closed at material commit `25361957`, with SCPL-T1 at `c5670974`, PKGSOP-T2 at `eaadc5ed`, PKGSOP-T1 at `693608cb`, and ASCP-P1-P3 retained as the 6-package production baseline at `43e4092f`.
+Startup acknowledged: current mode=`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; Web dashboard/console UI, full MCP server, production Model Gateway/model router work, provider registry mutation, public-sync, automatic invocation, action authority, or broader production-readiness claim requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-P4-P6 Remaining Package Production Scale-Up closed at material commit `687d4423`, with SCPL-T2 at `25361957`, SCPL-T1 at `c5670974`, PKGSOP-T2 at `eaadc5ed`, PKGSOP-T1 at `693608cb`, and ASCP-P1-P3 retained as the first 6-package production baseline at `43e4092f`.
 
 ## Current Mode
 
-Current mode marker: `scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`
+Current mode marker: `ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
 
-Current mode: `scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`
+Current mode: `ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
 
-`scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`
+`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`scpl_t1_skill_control_plane_inventory_closed_pending_operator_next_lane_selection`
+`scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ASCP-P4-P6 Remaining Package Production Scale-Up | `687d4423` | CLOSED_PASS_BOUNDED; promoted the eighteen remaining ASSF package roots to ACTIVE production package skills through registry/package/truth updates, generated indexes, 18/18 dry-run matrix, and representative live proof with `alibaba-dashscope`, `deepseek-v4-flash`, HTTP 200; generated inventory now reports 24 runtime-eligible packages, 24 activation-ready packages, 24 CLI/MCP adapter packages, 24 selection-profiled packages, 28 Web projection items, and 0 drift; no full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, automatic invocation, filesystem/git/browser/downstream action authority, or broader production-readiness claim |
 | SCPL-T2 Skill Selection Guidance | `25361957` | CLOSED_PASS_BOUNDED; added 24 package-root selection profiles with domain groups, primary/secondary domains, user/use-case guidance, spec signals, keyword matching, output goals, recommended/not-recommended conditions, inventory projection, CLI `--spec-text` recommendation mode, focused tests, and checker coverage; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, Model Gateway/model router production work, provider registry mutation, public-sync, or broader production-readiness expansion |
 | SCPL-T1 Skill Control Plane inventory | `c5670974` | CLOSED_PASS_BOUNDED; added generated central inventory, per-skill CLI readout, cross-surface drift checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring; inventory reports 32 ASSF registry entries, 24 package roots, 6 runtime-eligible packages, 6 activation-ready packages, 6 CLI/MCP adapter packages, 28 Web projection items, and 0 drift; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, Model Gateway/model router production work, provider registry mutation, public-sync, or broader production-readiness expansion |
 | PKGSOP-T2 package skill productionization pipeline guard | `eaadc5ed` | CLOSED_PASS_BOUNDED; added `governance/compat/check_package_skill_productionization_pipeline.py`, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring; package-skill artifacts now require `Package Skill Productionization Control Block` evidence before lifecycle/package/truth/ACTIVE production claims; no package conversion, lifecycle mutation, runtime helper behavior change, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or production-readiness expansion |
@@ -154,22 +155,23 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`
+Mode: `ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value package-skill lane.
-Remaining package conversions, Web dashboard/console UI, full MCP server,
-production Model Gateway/model router, provider registry mutation, public-sync, or broader
-production-readiness claim requires fresh GC-018/source-verified work order and
-live/provider proof when governance behavior is claimed. SCPL-T1 Skill Control
-Plane inventory closed at material commit `c5670974`; SCPL-T2 Skill Selection
-Guidance closed at material commit `25361957`; generated inventory reports 32
-registry entries, 24 package roots, 6 runtime-eligible packages, 6
-activation-ready packages, 6 CLI/MCP adapter packages, 24 selection-profiled
-packages, 28 Web projection items, and 0 cross-surface drift violations.
-PKGSOP-T2 remains closed at material
+Web dashboard/console UI, full MCP server, production Model Gateway/model
+router, provider registry mutation, public-sync, automatic invocation, action
+authority, or broader production-readiness claim requires fresh
+GC-018/source-verified work order and live/provider proof when governance
+behavior is claimed. ASCP-P4-P6 Remaining Package Production Scale-Up closed at
+material commit `687d4423`; generated inventory reports 32 registry entries,
+24 package roots, 24 runtime-eligible packages, 24 activation-ready packages,
+24 CLI/MCP adapter packages, 24 selection-profiled packages, 28 Web projection
+items, and 0 cross-surface drift violations. SCPL-T2 Skill Selection Guidance
+closed at material commit `25361957`; SCPL-T1 Skill Control Plane inventory
+closed at material commit `c5670974`. PKGSOP-T2 remains closed at material
 commit `eaadc5ed`; PKGSOP-T1 remains closed at `693608cb`. ASCP-P1-P3 runtime
-package skills productionization remains the six-package production baseline at
-material commit `43e4092f`; ASCP-T5 provider/model selection use
+package skills productionization remains the first six-package production
+baseline at material commit `43e4092f`; ASCP-T5 provider/model selection use
 case closed at material commit `c15d9bd6`; ASCP-T5 corrective patch closed at
 `09656d16`; ASCP-T5 package execution/use-proof adapter closed at material
 commit `d409b602`; ASCP-T4 package lifecycle source-state decision closed at
@@ -177,14 +179,14 @@ material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`. LHW24 remains
 the latest closed numbered LHW wave. A full Model Gateway/model router remains
 a separate future roadmap.
 
-Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
-eligible package roots, 6 `ACTIVATION_READY` resolver decisions, 6 external
-projection ready packages, 24 selection-profiled packages, 0 active source records, activation policy states for
+Current audit evidence: 32 ASSF records, 24 package-root records, 24 runtime
+eligible package roots, 24 `ACTIVATION_READY` resolver decisions, 24 external
+projection ready packages, 24 selection-profiled packages, 24 ACTIVE production package sources, activation policy states for
 selected/ready/body-read/use classification, bounded external metadata/policy
 projection, deterministic loader receipts for explicit eligible body reads,
-two bounded ASCP-T5 live use-proof receipts, and 18 remaining package roots blocked by
-`certificationState=NOT_STARTED`,
-`uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
+two bounded ASCP-T5 live use-proof receipts, ASCP-P4-P6 dry-run proof for the
+eighteen newly promoted packages, and ASCP-P4-P6 representative live proof with
+HTTP 200. No automatic
 package activation, automatic skill invocation telemetry outside the bounded
 loader, package lifecycle mutation, external MCP package execution runtime,
 public-sync, direct import, merge authority, commit authority, or

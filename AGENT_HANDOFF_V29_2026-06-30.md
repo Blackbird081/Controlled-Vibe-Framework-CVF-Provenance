@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; parked checkpoint=SCPL-T2 Skill Selection Guidance closed at material commit `25361957`.
+Startup acknowledged: current mode=`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next high-value package-skill lane; parked checkpoint=ASCP-P4-P6 Remaining Package Production Scale-Up closed at material commit `687d4423`.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`scpl_t2_skill_selection_guidance_closed_pend
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `25361957` SCPL-T2 Skill Selection Guidance |
-| Latest session-sync target | session sync after SCPL-T2 material closure |
+| Latest material closeout | `687d4423` ASCP-P4-P6 Remaining Package Production Scale-Up |
+| Latest session-sync target | session sync after ASCP-P4-P6 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`scpl_t2_skill_selection_guidance_closed_pending_operator_next_lane_selection`
+`ascp_p4_p6_remaining_package_production_scale_up_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -35,16 +35,17 @@ claim-boundary facts.
 
 ## Scope / Target / Owner Boundary
 
-Target: maintain active session continuity after SCPL-T2 and preserve the Skill
-Control Plane selection guidance, inventory, package-skill pipeline guard, package-skill SOP,
-bounded production package runtime, skill usage receipt trace, skill truth
-packet, provider-skill trace, and package-loader claim boundaries.
+Target: maintain active session continuity after ASCP-P4-P6 and preserve the
+24-package production runtime state, Skill Control Plane selection guidance,
+inventory, package-skill pipeline guard, package-skill SOP, bounded production
+package runtime, skill usage receipt trace, skill truth packet, provider-skill
+trace, and package-loader claim boundaries.
 
 Owner boundary: this handoff authorizes session continuity maintenance only. It
-does not authorize remaining package conversion, Web dashboard/console UI, full
-MCP server, production Model Gateway/model router, provider registry mutation,
-public-sync, package lifecycle mutation, package body invocation, provider/live
-proof, or broader production-readiness expansion.
+does not authorize Web dashboard/console UI, full MCP server, production Model
+Gateway/model router, provider registry mutation, public-sync, automatic
+invocation, filesystem/git/browser/downstream action authority, additional
+provider/live proof, or broader production-readiness expansion.
 
 ## Active Boundary
 
@@ -151,6 +152,68 @@ package body invocation, provider/live proof, Web page, full MCP server,
 production Model Gateway/model router, provider registry mutation, public-sync,
 or broader production-readiness expansion.
 
+## Core Guard Self-Protection Authorization - ASCP-P4-P6 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+ASCP-P4-P6 material commit `687d4423`, regenerate active session state, and
+align front-door, bootstrap read model, and active handoff next-move wording.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V29_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ascpP4P6RemainingPackageProductionScaleUpClosure20260630.json`
+
+Operator authorization: session-sync follows operator-requested remaining
+package-skill production scale-up closure.
+
+Rollback boundary: revert this session-sync commit only; do not revert
+ASCP-P4-P6 material commit `687d4423`, SCPL-T2 material commit `25361957`,
+SCPL-T1 material commit `c5670974`, PKGSOP-T2 material commit `eaadc5ed`,
+PKGSOP-T1 material commit `693608cb`, ASCP-P1-P3 material commit `43e4092f`,
+package roots, truth packets, generated ASSF indexes, generated truth index, or
+generated Skill Control Plane inventory unless a reviewer reopens those
+closures.
+
+## GC-020 Marker - ASCP-P4-P6 Remaining Package Production Scale-Up Material Closure
+
+Material commit `687d4423` closed ASCP-P4-P6 Remaining Package Production
+Scale-Up. Full material SHA:
+`687d44234e1776e6740433ac255efc0fe55d7612`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`687d4423`. It does not authorize full MCP server, production Model
+Gateway/model router, provider registry mutation, public-sync, automatic
+invocation, filesystem/git/browser/downstream action authority, additional
+provider/live proof, or broader production-readiness expansion.
+
+## Agent Operation Trace Block - ASCP-P4-P6 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | ASCP-P4-P6 session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after ASCP-P4-P6 material commit `687d4423` plus generated active-session state discipline |
+| Before status evidence | material commit `687d4423` closed ASCP-P4-P6; active continuity still named SCPL-T2 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no new runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no new runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `ascp-p4-p6-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/ascpP4P6RemainingPackageProductionScaleUpClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/ascpP4P6RemainingPackageProductionScaleUpClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Agent Operation Trace Block - SCPL-T2 Session Sync
 
 | Field | Evidence |
@@ -201,6 +264,7 @@ or broader production-readiness expansion.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ASCP-P4-P6 Remaining Package Production Scale-Up | `687d4423` | CLOSED_PASS_BOUNDED; 24 package roots now ACTIVE production package skills with 24 runtime-eligible, 24 activation-ready, 24 CLI/MCP adapter, 24 selection-profiled, 28 Web projection, and 0 drift readout |
 | SCPL-T2 Skill Selection Guidance | `25361957` | CLOSED_PASS_BOUNDED; 24 package-root domain/selection profiles, inventory projection, CLI spec recommendation, and checker/test coverage |
 | SCPL-T1 Skill Control Plane inventory | `c5670974` | CLOSED_PASS_BOUNDED; generated central inventory, per-skill CLI readout, drift checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring |
 | PKGSOP-T2 package skill productionization pipeline guard | `eaadc5ed` | CLOSED_PASS_BOUNDED; package-skill artifacts require pipeline control-block evidence before lifecycle/package/truth/ACTIVE production claims |
@@ -209,28 +273,32 @@ or broader production-readiness expansion.
 
 ## Latest Work / Changes
 
-SCPL-T2 closed package-skill domain and spec-selection guidance at material
+ASCP-P4-P6 closed the remaining-package production scale-up at material commit
+`687d4423`. CVF now has 24 ACTIVE production package skills. SCPL-T2 remains
+the package-skill domain and spec-selection guidance baseline at material
 commit `25361957`. SCPL-T1 remains the central Skill Control Plane inventory
 baseline at material commit `c5670974`.
 
 ## Next Allowed Move
 
-Operator selects the next high-value package-skill lane. The SCPL-T2 inventory
-reports 32 ASSF registry entries, 24 package roots, 6 runtime-eligible
-packages, 6 activation-ready packages, 6 CLI/MCP adapter packages, 24
+Operator selects the next high-value package-skill lane. The current inventory
+reports 32 ASSF registry entries, 24 package roots, 24 runtime-eligible
+packages, 24 activation-ready packages, 24 CLI/MCP adapter packages, 24
 selection-profiled packages, 28 Web projection items, and 0 cross-surface drift
 violations.
 
-Remaining package conversions, Web dashboard/console UI, full MCP server,
-production Model Gateway/model router, provider registry mutation, public-sync,
-or broader production-readiness claim require fresh GC-018/source-verified work
-order and live/provider proof when governance behavior is claimed.
+Web dashboard/console UI, full MCP server, production Model Gateway/model
+router, provider registry mutation, public-sync, automatic invocation, action
+authority, or broader production-readiness claim require fresh
+GC-018/source-verified work order and live/provider proof when governance
+behavior is claimed.
 
 ## Claim Boundary
 
-V29 is a compact continuity handoff and session-sync carrier. It records SCPL-T2
-closure, package-skill control-plane state, and next allowed moves only. It does
-not create provider runtime interception, provider-side audit access, runtime
-activation, automatic resolver behavior, external adapter behavior, live
-provider proof, public export, merge authority, commit authority, or production
+V29 is a compact continuity handoff and session-sync carrier. It records
+ASCP-P4-P6 closure, package-skill control-plane state, and next allowed moves
+only. It does not create provider runtime interception, provider-side audit
+access, automatic resolver behavior, external adapter behavior beyond the
+bounded package production envelope, new live provider proof, public export,
+merge authority, commit authority, action authority, or broader production
 readiness.
