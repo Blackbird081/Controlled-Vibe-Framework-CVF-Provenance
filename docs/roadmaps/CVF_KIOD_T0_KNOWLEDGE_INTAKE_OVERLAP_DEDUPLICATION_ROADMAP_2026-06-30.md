@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_KIOD_R1_OWNER_SURFACE_TAXONOMY
+Status: ROADMAP_READY_FOR_KIOD_R4_NEGATIVE_SEARCH_DECISION_AFTER_R1_R3_PASS
 
 docType: roadmap
 
@@ -30,10 +30,10 @@ Operator decision: proceed with the deduplication roadmap proposed after
 KIOD-T1.
 
 Roadmap decision:
-`OPEN_KIOD_R1_OWNER_SURFACE_TAXONOMY`
+`OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`
 
 Recommended next:
-`AUTHOR_KIOD_R1_GC018_FOR_KNOWLEDGE_INTAKE_OWNER_SURFACE_TAXONOMY`
+`AUTHOR_KIOD_R4_GC018_FOR_NEGATIVE_SEARCH_EVIDENCE_DECISION`
 
 This roadmap authorizes planning only. It does not authorize new checker
 implementation, source-mirror mutation, package activation, runtime work,
@@ -84,9 +84,9 @@ Out of scope:
 | Tranche | Status | Objective | Boundary |
 |---|---|---|---|
 | KIOD-T0 | ROADMAP_READY_FOR_KIOD_R1_OWNER_SURFACE_TAXONOMY | Create the deduplication roadmap after KIOD-T1 guard closure | planning only |
-| KIOD-R1 | PROPOSED | Author the owner-surface taxonomy for knowledge intake across doctrine, runtime, package skills, checkers, Web/UI, provider/model, MCP/CLI, memory/state, corpus, and public-sync | reference map only |
-| KIOD-R2 | PROPOSED | Define the pre-scan packet for future repo/folder intake: source groups, feature clusters, overlap candidates, novelty candidates, rejection reasons, and expected owner surfaces | packet template/reference only |
-| KIOD-R3 | PROPOSED | Define the overlap routing matrix that converts source groups into confirmed-existing, enrich-existing, new-finding, direct-import-reject, no-new-value, or owner-missing actions | no implementation |
+| KIOD-R1 | PASS_BOUNDED | Author the owner-surface taxonomy for knowledge intake across doctrine, runtime, package skills, checkers, Web/UI, provider/model, MCP/CLI, memory/state, corpus, and public-sync | reference map only |
+| KIOD-R2 | PASS_BOUNDED | Define the pre-scan packet for future repo/folder intake: source groups, feature clusters, overlap candidates, novelty candidates, rejection reasons, and expected owner surfaces | packet template/reference only |
+| KIOD-R3 | PASS_BOUNDED | Define the overlap routing matrix that converts source groups into confirmed-existing, enrich-existing, new-finding, direct-import-reject, no-new-value, or owner-missing actions | no implementation |
 | KIOD-R4 | PROPOSED | Decide whether negative-search evidence needs a checker or can remain a required packet block; if a checker is proposed, open a fresh GC-018 | no checker now |
 | KIOD-R5 | PROPOSED | Pilot the pipeline on the next operator-selected repo/folder and measure whether it reduces overlap and missed-value defects | no runtime or public claim |
 
@@ -99,6 +99,9 @@ Out of scope:
 | Roadmap avoids immediate checker or runtime expansion | Non-Goals and Claim Boundary | PASS |
 | Roadmap includes external knowledge intake routing | `## External Knowledge Intake Routing` | PASS |
 | Roadmap gives future agents a pre-warning path before gate failure | KIOD-R1 through KIOD-R3 plan owner taxonomy, pre-scan packet, and routing matrix | PASS |
+| KIOD-R1 owner-surface taxonomy exists | `docs/reference/external_agent_review/CVF_KIOD_R1_OWNER_SURFACE_TAXONOMY.md` | PASS |
+| KIOD-R2 pre-scan packet standard exists | `docs/reference/external_agent_review/CVF_KIOD_R2_PRE_SCAN_PACKET_STANDARD.md` | PASS |
+| KIOD-R3 overlap routing matrix exists | `docs/reference/external_agent_review/CVF_KIOD_R3_OVERLAP_ROUTING_MATRIX_STANDARD.md` | PASS |
 
 ## Verification / Evidence
 
@@ -108,7 +111,8 @@ Out of scope:
 | Pre-implementation autorun | PASS on `fdcc88b6..HEAD` before material edit |
 | Current KIOD-T1 material commit | `211645e8` |
 | Current session-sync commit | `fdcc88b6` |
-| Expected material changed set | this roadmap only |
+| KIOD-R1-R3 material base | `f3200159` |
+| Expected material changed set | roadmap, R1-R3 references, GC-018, work order, completion review |
 
 ## Source Verification Block
 
@@ -146,9 +150,9 @@ Out of scope:
 
 | Risk | Corrective action | Status |
 |---|---|---|
-| Future agents duplicate owner surfaces because a repo feels novel | KIOD-R1 creates owner-surface taxonomy before more intake closeouts | PLANNED |
-| Future agents mark value as no-new-value too quickly | KIOD-R2 requires source groups and feature clusters before closeout | PLANNED |
-| New finding claims are made without negative search | KIOD-R3/R4 define negative-search evidence and decide whether a checker is warranted | PLANNED |
+| Future agents duplicate owner surfaces because a repo feels novel | KIOD-R1 creates owner-surface taxonomy before more intake closeouts | PASS_BOUNDED |
+| Future agents mark value as no-new-value too quickly | KIOD-R2 requires source groups and feature clusters before closeout | PASS_BOUNDED |
+| New finding claims are made without negative search | KIOD-R3 routes missing-owner findings to R4 decision before new owner creation | PASS_BOUNDED |
 | A checker is implemented before the doctrine is stable | KIOD-R4 is a decision tranche, not automatic implementation | PLANNED |
 | Pilot repo work widens into runtime or package activation | KIOD-R5 remains intake-pipeline proof only unless fresh GC-018 authorizes implementation | PLANNED |
 
