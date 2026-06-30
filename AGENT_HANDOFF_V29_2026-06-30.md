@@ -102,6 +102,17 @@ package body invocation, provider/live proof, Web page, full MCP server,
 production Model Gateway/model router, provider registry mutation, public-sync,
 or broader production-readiness expansion.
 
+## GC-020 Marker - SCPL-T1 Session Sync Commit
+
+Session-sync commit `345d2e2d` aligned SCPL-T1 continuity and opened V29 after
+V28 reached the governed file-size near-threshold. Full session-sync SHA:
+`345d2e2ddbcd8f3f90a7ee4767e8b11eacd3dc44`
+
+This marker supports the dedicated handoff-sync commit that follows the
+session-sync rotation. It does not authorize package conversion, lifecycle
+mutation, runtime/provider proof, public-sync, or production-readiness
+expansion.
+
 ## Agent Operation Trace Block - SCPL-T1 Session Sync
 
 | Field | Evidence |
