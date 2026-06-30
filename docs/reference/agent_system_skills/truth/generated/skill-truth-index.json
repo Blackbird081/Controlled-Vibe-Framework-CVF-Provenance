@@ -1,8 +1,10 @@
 {
+  "schemaVersion": "0.1.0",
+  "generatedFrom": "docs/reference/agent_system_skills/truth/packets",
   "entries": [
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-code-review-quality.json",
-      "receiptHash": "sha256:54b9bd7e43a42c68f181b555b1d2178f7eeb8d1280ca9967f78b3a5cba91abff",
+      "receiptHash": "sha256:9e34cd97796bc56552d3e7a7fe7699ab8dc262a503ab2726f683a388145ca069",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-engineering-code-review-quality",
       "truthPacketId": "SKSOT-T1-cvf-engineering-code-review-quality",
@@ -11,7 +13,7 @@
     },
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-debugging-error-recovery.json",
-      "receiptHash": "sha256:68eef500c0efae3e6f76779d04cb5efe8b14d4d7445099b8d2983a1c3e013baf",
+      "receiptHash": "sha256:0e4c9f485a50242fe2b205994320d567ea0afe2d835155d143bfcf752694ec83",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-engineering-debugging-error-recovery",
       "truthPacketId": "SKSOT-T1-cvf-engineering-debugging-error-recovery",
@@ -20,7 +22,7 @@
     },
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-planning-task-breakdown.json",
-      "receiptHash": "sha256:ced14e06ca223b2f7b3e7914af7156dd808bb1683e972316d00f050d3b49b265",
+      "receiptHash": "sha256:242c0bb0480bc16da404925222715ef7f08e324535904a34c8036d8e02d96205",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-engineering-planning-task-breakdown",
       "truthPacketId": "SKSOT-T1-cvf-engineering-planning-task-breakdown",
@@ -29,7 +31,7 @@
     },
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-security-hardening.json",
-      "receiptHash": "sha256:ebb9b57b9c4cf922eb7a290440dd258d6af22f334a959a64fa842cf1c4b97713",
+      "receiptHash": "sha256:ea978b9ac66e7c23846425d1e71543e676c03c8d97a74f79f7b46d727046b213",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-engineering-security-hardening",
       "truthPacketId": "SKSOT-T1-cvf-engineering-security-hardening",
@@ -38,7 +40,7 @@
     },
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-spec-driven-development.json",
-      "receiptHash": "sha256:32e69e5669ac8765e0550eda3b1b1299d59cf4ca92bae2b8b1d5bc0017a08755",
+      "receiptHash": "sha256:36f9128e496d1670270515fc340dd4e2da4c165a9623bed1c68bb8bd08703c4e",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-engineering-spec-driven-development",
       "truthPacketId": "SKSOT-T1-cvf-engineering-spec-driven-development",
@@ -47,14 +49,12 @@
     },
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-driven-development.json",
-      "receiptHash": "sha256:2f938850564d639e203afe99d3a3e5c816717d4459595806febff96bee782f16",
+      "receiptHash": "sha256:370ac1a26d2d45db4a56550e4ba7480c13c73a7427f5c5d664e6eda9fb73445d",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-engineering-test-driven-development",
       "truthPacketId": "SKSOT-T1-cvf-engineering-test-driven-development",
       "truthStatus": "approved",
       "verificationMode": "STRICT"
     }
-  ],
-  "generatedFrom": "docs/reference/agent_system_skills/truth/packets",
-  "schemaVersion": "0.1.0"
+  ]
 }

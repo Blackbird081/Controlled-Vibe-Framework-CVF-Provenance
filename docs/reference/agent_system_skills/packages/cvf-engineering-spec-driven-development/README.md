@@ -2,11 +2,11 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED
+Status: ACTIVE
 
 docType: assf_package_front_door
 
-Batch ID: AGSK-R3; AGSK-R7
+Batch ID: AGSK-R3; AGSK-R7; ASCP-P1-P3
 
 skillId: cvf-engineering-spec-driven-development
 
@@ -21,13 +21,13 @@ Provide the stable front door for the `cvf-engineering-spec-driven-development` 
 | Package root | `docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/` |
 | Canonical package body | `SKILL.md` |
 | Source evidence | `skill.source.json` |
-| Lifecycle state | APPROVED |
-| Runtime activation | BOUNDED_WITH_REASON: AGSK-R7 permits explicit internal runtime package-loader body read only; it does not activate resolver, CLI/MCP adapter, provider/live proof, public-sync, implementation authority, commit, or production behavior |
+| Lifecycle state | ACTIVE |
+| Runtime activation | ACTIVE_PRODUCTION_BOUNDED: ASCP-P1-P3 permits receipt-backed production package execution through the CVF production executor and CLI/MCP wrapper; package loading alone grants no filesystem, git, browser, public-sync, commit, merge, or production action authority |
 
 ## Owner Surface
 
-ASSF package proposal evidence under AGSK-R3 and bounded lifecycle promotion evidence under AGSK-R7. A later ACTIVE resolver or adapter tranche is required before automatic invocation or external exposure.
+ASSF package proposal evidence under AGSK-R3, bounded lifecycle promotion evidence under AGSK-R7, and ASCP-P1-P3 production runtime evidence. Automatic invocation, public export, and action authority remain outside this package front door.
 
 ## Claim Boundary
 
-This front door orients readers to the APPROVED package root. It does not activate, execute, export, publish, implement specs, commit, call providers, or grant authority beyond explicit internal package-loader body read.
+This front door orients readers to the ACTIVE package root for receipt-backed CVF production package execution. It does not grant filesystem, git, browser, public-sync, commit, merge, provider router, or production action authority beyond the active governed work order.

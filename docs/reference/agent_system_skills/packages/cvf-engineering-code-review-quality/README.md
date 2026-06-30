@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED
+Status: ACTIVE
 
 docType: assf_package_front_door
 
@@ -21,7 +21,7 @@ Provide the stable front door for the `cvf-engineering-code-review-quality` ASSF
 | Package root | `docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/` |
 | Canonical package body | `SKILL.md` |
 | Source evidence | `skill.source.json` |
-| Lifecycle state | APPROVED |
+| Lifecycle state | ACTIVE |
 | Runtime activation | BOUNDED_WITH_REASON: AGSK-R6 permits explicit internal runtime package-loader body read only; it does not activate resolver, CLI/MCP adapter, provider/live proof, public-sync, merge, commit, or production behavior |
 
 ## Owner Surface

@@ -159,6 +159,20 @@ class SkillTruthPacketTests(unittest.TestCase):
 
             self.assertEqual(violations, [])
 
+    def test_runtime_eligible_packet_allows_active_registry_status(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            packet = _packet(root)
+            packet["lifecycleSnapshot"]["status"] = "ACTIVE"
+            registry = _registry_entry()
+            registry["status"] = "ACTIVE"
+            packets_dir, index_path, registry_dir = _write_repo(root, packet, registry)
+
+            checker.REPO_ROOT = root
+            violations = checker.check(packets_dir, index_path, registry_dir)
+
+            self.assertEqual(violations, [])
+
     def test_unknown_provenance_label_fails(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

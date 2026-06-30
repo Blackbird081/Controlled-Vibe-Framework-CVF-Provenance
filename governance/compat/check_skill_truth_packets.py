@@ -235,8 +235,14 @@ def _validate_packet(
                 )
 
         if runtime_eligibility == "RUNTIME_PACKAGE_ELIGIBLE":
+            if _text(registry_entry.get("status")) not in {"APPROVED", "ACTIVE"}:
+                violations.append(
+                    Violation(
+                        rel,
+                        "runtime eligible packet requires registry `status` APPROVED or ACTIVE",
+                    )
+                )
             requirements = {
-                "status": "APPROVED",
                 "uatState": "PASSED",
                 "certificationState": "CERTIFIED",
                 "internalAgentDisposition": "IMPLEMENTED",

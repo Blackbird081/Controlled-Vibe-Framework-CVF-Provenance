@@ -101,9 +101,11 @@ Obligation strength values are `HARD` and `SOFT`. Obligation state values are
 `satisfied`, `open`, `blocked`, and `not_applicable`.
 
 `STRICT` packets require every `HARD` obligation to be `satisfied`. Runtime
-eligible ASSF packages must at minimum record obligations for UAT, certification,
-internal-agent disposition, no ACTIVE resolver authority, no external adapter
-authority, and no provider/live proof claim.
+eligible ASSF packages must at minimum record obligations for UAT,
+certification, internal-agent disposition, no automatic resolver authority, and
+the current adapter/provider boundary. For ASCP-P1-P3 ACTIVE packages, the
+adapter/provider obligations are satisfied by receipt-backed production
+executor evidence rather than by a no-adapter/no-provider invariant.
 
 ## Runtime Eligibility Binding
 
@@ -112,7 +114,7 @@ registry entry whose current source fields are:
 
 | Registry field | Required value |
 |---|---|
-| `status` | `APPROVED` |
+| `status` | `APPROVED` or `ACTIVE` |
 | `uatState` | `PASSED` |
 | `certificationState` | `CERTIFIED` |
 | `internalAgentDisposition` | `IMPLEMENTED` |
@@ -149,9 +151,11 @@ reference folders are not source-of-truth authority.
 ## Claim Boundary
 
 SKSOT-T1 records approved truth packets for the six existing runtime-eligible
-ASSF package roots only. It does not broaden runtime eligibility, load package
-bodies, create activation policy, authorize provider calls, implement external
-adapters, export public artifacts, or mark any package `ACTIVE`.
+ASSF package roots only. ASCP-P1-P3 may update those six packet snapshots from
+`APPROVED` to `ACTIVE` only when the matching registry entries carry governed
+production runtime and CLI/MCP adapter evidence. This standard does not
+broaden runtime eligibility, convert the remaining package roots, export public
+artifacts, or grant action authority from package loading alone.
 
 ## Public Export Disposition
 

@@ -1,5 +1,5 @@
 {
-  "authorityBoundary": "Truth packet only; no ACTIVE resolver, no package invocation, no provider call, no public sync, and no external CLI/MCP adapter authority.",
+  "authorityBoundary": "Truth packet for ACTIVE package runtime only; production execution requires receipt-backed CVF adapters and active governed work-order authority. No automatic invocation, public sync, provider router, commit, merge, or filesystem action authority is granted.",
   "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-code-review-quality.json",
   "evidence": [
     {
@@ -37,14 +37,26 @@
       "kind": "skill_truth_packet_standard",
       "sourcePath": "docs/reference/agent_system_skills/CVF_SKILL_SOURCE_OF_TRUTH_PACKET_STANDARD.md",
       "status": "approved"
+    },
+    {
+      "evidenceId": "EV-ASCP-P1-P3-STANDARD",
+      "kind": "production_runtime_standard",
+      "sourcePath": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-ASCP-P1-P3-COMPLETION",
+      "kind": "production_runtime_completion_review",
+      "sourcePath": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+      "status": "approved"
     }
   ],
   "lifecycleSnapshot": {
     "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md",
     "certificationState": "CERTIFIED",
-    "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+    "externalCliMcpDisposition": "IMPLEMENTED",
     "internalAgentDisposition": "IMPLEMENTED",
-    "status": "APPROVED",
+    "status": "ACTIVE",
     "uatState": "PASSED"
   },
   "obligations": [
@@ -64,17 +76,17 @@
       "strength": "HARD"
     },
     {
-      "obligationId": "OB-NO-ACTIVE-RESOLVER",
+      "obligationId": "OB-NO-AUTOMATIC-INVOCATION",
       "state": "satisfied",
       "strength": "HARD"
     },
     {
-      "obligationId": "OB-NO-EXTERNAL-ADAPTER",
+      "obligationId": "OB-PRODUCTION-EXECUTOR-RECEIPT",
       "state": "satisfied",
       "strength": "HARD"
     },
     {
-      "obligationId": "OB-NO-PROVIDER-LIVE-CLAIM",
+      "obligationId": "OB-CLI-MCP-ADAPTER-RECEIPT",
       "state": "satisfied",
       "strength": "HARD"
     }
@@ -102,13 +114,14 @@
       "label": "HUMAN_APPROVED",
       "sourceEvidenceIds": [
         "EV-R3-WORKER",
-        "EV-R7-PROMOTION"
+        "EV-R7-PROMOTION",
+        "EV-ASCP-P1-P3-COMPLETION"
       ]
     }
   ],
   "receipt": {
-    "hash": "sha256:54b9bd7e43a42c68f181b555b1d2178f7eeb8d1280ca9967f78b3a5cba91abff",
-    "previousHash": null,
+    "hash": "sha256:9e34cd97796bc56552d3e7a7fe7699ab8dc262a503ab2726f683a388145ca069",
+    "previousHash": "sha256:54b9bd7e43a42c68f181b555b1d2178f7eeb8d1280ca9967f78b3a5cba91abff",
     "receiptId": "RCPT-SKSOT-T1-cvf-engineering-code-review-quality",
     "status": "issued"
   },
@@ -137,15 +150,16 @@
     },
     {
       "evidenceIds": [
-        "EV-SKSOT-STANDARD"
+        "EV-ASCP-P1-P3-STANDARD",
+        "EV-ASCP-P1-P3-COMPLETION"
       ],
-      "method": "schema",
+      "method": "test",
       "obligationIds": [
-        "OB-NO-ACTIVE-RESOLVER",
-        "OB-NO-EXTERNAL-ADAPTER",
-        "OB-NO-PROVIDER-LIVE-CLAIM"
+        "OB-NO-AUTOMATIC-INVOCATION",
+        "OB-PRODUCTION-EXECUTOR-RECEIPT",
+        "OB-CLI-MCP-ADAPTER-RECEIPT"
       ],
-      "resultId": "VR-BOUNDARY",
+      "resultId": "VR-PRODUCTION-RUNTIME",
       "status": "pass"
     }
   ]
