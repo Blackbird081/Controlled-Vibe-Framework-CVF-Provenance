@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane, or opens a fresh GC-018/work order for a specific ASSF package execution/use-proof adapter before any `ACTIVE` lifecycle promotion; parked checkpoint=ASCP-T4 closed at material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; ASCP-T3 closed at `a5ab2689`; ASCP-T2 closed at `4d87c832`; ADIF-CLI-T1 closed at `0183e04f`; ASCP-T1 closed at `ddb65952`; SKUSE-T1 closed at `211c7bdb`; SKSOT-T1 closed at `c2278349`; EPSOT-T1 closed at `701ebd94`; AGSK-R7 closed at `19feb1f1`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 closed at material commit `d409b602` with `LIVE_PROVIDER_USE_PROOF_PASS`, HTTP 200, and use-proof receipt `sha256:f67bd3331f81e088c2f75f7287db0fce60508abbc89cd7099481e5e86aeaa7dc`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`
+Current mode marker: `ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
 
-Current mode: `ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`
+Current mode: `ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
 
-`ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`
+`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`ascp_t3_cli_mcp_adapter_projection_closed_pending_ascp_t4_package_lifecycle_decision`
+`ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ASCP-T5 package execution/use-proof adapter | `d409b602` | CLOSED_PASS_BOUNDED; added package use-proof adapter standard, helper, and tests; dry-run returned `DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF` and `USED_WITH_RECEIPT`; live proof returned `LIVE_PROVIDER_USE_PROOF_PASS`, HTTP 200, latency 2162 ms, skill usage receipt `sha256:aa4e26d13ccd75475431e434ef1bd304f20d3b72d77f95a4726fdf6038f2455f`, and use-proof receipt `sha256:f67bd3331f81e088c2f75f7287db0fce60508abbc89cd7099481e5e86aeaa7dc`; no lifecycle mutation, remaining package conversion, external MCP runtime execution, provider registry mutation, public-sync, or production claim |
 | ASCP-T4 package lifecycle source-state decision | `1625ab8c` | CLOSED_PASS_BOUNDED; added read-only lifecycle decision helper and tests; decision `HOLD_NO_ACTIVE_SOURCE_MUTATION`, `NO_SOURCE_MUTATIONS_AUTHORIZED`; smoke observed 32 total candidates, 6 runtime eligible, 6 `ACTIVATION_READY`, 6 external projection ready, and 0 active source records; no package lifecycle source moved to `ACTIVE`; no package body read, registry/index/truth/package-root mutation, skill usage receipt emission or consumption, provider/live proof, public-sync, execution adapter, or production claim |
 | ASCP-T3 CLI/MCP adapter projection | `a5ab2689` | CLOSED_PASS_BOUNDED; added bounded `EXTERNAL_AGENT_CLI_MCP` metadata/policy projection helper, standard, tests, and roadmap update; projection emits `IMPLEMENTED_BOUNDED_PROJECTION`, exposes allowlisted metadata plus activation policy state, and denies external body reads/output use; no package body read, lifecycle mutation, skill usage receipt emission or consumption, provider/live proof, public-sync, or production claim |
 | ASCP-T2 activation policy semantics | `4d87c832` | CLOSED_PASS_BOUNDED; added activation policy semantics standard, bounded policy resolver helper, focused tests, and roadmap update; states now distinguish `SELECTED`, `ACTIVATION_READY`, `BODY_READ_REQUESTED`, `USED_WITH_RECEIPT`, `BODY_READ_DENIED`, and `USED_WITHOUT_RECEIPT_DENIED`; no package body read, lifecycle mutation, adapter implementation, provider/live proof, public-sync, or production claim |
@@ -146,38 +147,30 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `ascp_t4_lifecycle_decision_closed_pending_operator_next_lane_selection`
+Mode: `ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
 
-Next allowed move: operator selects the next high-value lane, or opens a fresh
-GC-018/work order for a specific ASSF package execution/use-proof adapter before
-any `ACTIVE` lifecycle promotion. ASCP-T4 package lifecycle source-state
-decision closed at material commit `1625ab8c` with
-`HOLD_NO_ACTIVE_SOURCE_MUTATION`; ASCP-T3 CLI/MCP adapter projection closed at
-material commit `a5ab2689`; ASCP-T2 activation policy semantics closed at
-material commit `4d87c832`; ADIF-CLI-T1 closed at material commit `0183e04f`;
-ASCP-T1 active resolver pilot closed at material commit `ddb65952`; SKUSE-T1
-skill usage receipt trace closed at material commit `211c7bdb`; SKSOT-T1 skill
-truth packet foundation closed at material commit `c2278349`; EPSOT-T1 provider
-skill trace guard closed at material commit `701ebd94`; AGSK-R7 runtime package
-batch promotion closed at material commit `19feb1f1`; AGSK-R6 code-review-quality
-pilot promotion closed at material commit `8caef205`; AGSK-R5 runtime eligibility
-audit closed at material commit `3a742e6e`; AGSK-R4 runtime package loader closed
-at material commit `416eb689`; AGSK-R3 package roots closed at material commit
-`4003289a`.
+Next allowed move: operator selects the next high-value lane. Any `ACTIVE`
+lifecycle promotion, remaining package conversion, external MCP package
+execution runtime, provider registry mutation, public-sync, direct import,
+merge authority, commit authority, or production-readiness claim requires fresh
+GC-018/source-verified work order and live/provider proof when governance
+behavior is claimed. ASCP-T5 package execution/use-proof adapter closed at
+material commit `d409b602`; ASCP-T4 package lifecycle source-state decision
+closed at material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`.
 LHW24 remains the latest closed numbered LHW wave.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
 eligible package roots, 6 `ACTIVATION_READY` resolver decisions, 6 external
 projection ready packages, 0 active source records, activation policy states for
 selected/ready/body-read/use classification, bounded external metadata/policy
-projection, deterministic loader receipts for explicit
-eligible body reads, and 18 remaining package roots blocked by
+projection, deterministic loader receipts for explicit eligible body reads,
+one bounded ASCP-T5 live use-proof receipt, and 18 remaining package roots blocked by
 `certificationState=NOT_STARTED`,
 `uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
 package activation, automatic skill invocation telemetry outside the bounded
-loader, package lifecycle mutation, provider/live proof, public-sync,
-direct import, merge authority, commit authority, or production-readiness claim
-is authorized.
+loader, package lifecycle mutation, external MCP package execution runtime,
+public-sync, direct import, merge authority, commit authority, or
+production-readiness claim is authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 

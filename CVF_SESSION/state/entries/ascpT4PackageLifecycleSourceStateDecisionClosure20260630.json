@@ -19,6 +19,6 @@
       "pre-commit hook PASS, 69 checks"
     ],
     "claimBoundary": "ASCP-T4 decides no package lifecycle source moves to ACTIVE in this tranche. It does not mutate lifecycle sources, read package instruction bodies, emit or consume skill usage receipts, implement package execution adapters, call providers, public-sync, or grant action authority.",
-    "nextAllowedMove": "Operator selects the next high-value lane, or opens a fresh GC-018/work order for a specific ASSF package execution/use-proof adapter before any ACTIVE lifecycle promotion. ASCP-T5 remaining package conversion remains VALUE_PARKED."
+    "nextAllowedMove": "Superseded by ASCP-T5 closure at material commit d409b602. Current next move is operator selection of the next high-value lane; ACTIVE lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order."
   }
 }

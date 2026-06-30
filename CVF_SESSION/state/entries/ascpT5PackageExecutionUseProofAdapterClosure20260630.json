@@ -1,0 +1,36 @@
+{
+  "stateOrder": 645,
+  "stateKey": "ascpT5PackageExecutionUseProofAdapterClosure20260630",
+  "value": {
+    "batchId": "ASCP-T5",
+    "materialCommit": "d409b602",
+    "fullMaterialCommit": "d409b602ed43e2cd796cf515bff449b635e8f420",
+    "disposition": "CLOSED_PASS_BOUNDED",
+    "adapterImplementation": "IMPLEMENTED_BOUNDED_USE_PROOF_ADAPTER",
+    "liveDisposition": "LIVE_PROVIDER_USE_PROOF_PASS",
+    "skillId": "cvf-engineering-spec-driven-development",
+    "skillUsageReceiptId": "sha256:aa4e26d13ccd75475431e434ef1bd304f20d3b72d77f95a4726fdf6038f2455f",
+    "policyReceiptId": "sha256:e51e3a291282f0cfc700543ed120e4d7d778d85f1197e80b514db9a46e99ed5f",
+    "useProofReceiptId": "sha256:f67bd3331f81e088c2f75f7287db0fce60508abbc89cd7099481e5e86aeaa7dc",
+    "liveProvider": "alibaba-dashscope",
+    "liveModel": "qwen-turbo",
+    "liveHttpStatus": 200,
+    "liveLatencyMs": 2162,
+    "liveEvidenceHash": "sha256:6fb08064c35dbfcdb1a7dbc3657edd345d57bbe78e186ca9267a60576d932c4a",
+    "standard": "docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_USE_PROOF_ADAPTER_STANDARD.md",
+    "helper": "governance/compat/run_assf_package_use_proof_adapter.py",
+    "tests": "governance/compat/test_run_assf_package_use_proof_adapter.py",
+    "roadmap": "docs/roadmaps/CVF_ASSF_ACTIVE_RESOLVER_AND_ADAPTER_PILOT_ROADMAP_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T5_PACKAGE_EXECUTION_USE_PROOF_ADAPTER_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ASCP_T5_PACKAGE_EXECUTION_USE_PROOF_ADAPTER_COMPLETION_2026-06-30.md",
+    "verification": [
+      "python -m unittest governance.compat.test_run_assf_package_use_proof_adapter PASS, 5 tests",
+      "python -m unittest governance.compat.test_run_assf_runtime_package_loader governance.compat.test_run_assf_activation_policy_resolver governance.compat.test_run_assf_package_use_proof_adapter PASS, 20 tests",
+      "python governance/compat/run_assf_package_use_proof_adapter.py --skill-id cvf-engineering-spec-driven-development --json returned DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF and USED_WITH_RECEIPT",
+      "python governance/compat/run_assf_package_use_proof_adapter.py --skill-id cvf-engineering-spec-driven-development --live --json --receipt-out .cvf/runtime/assf-use-proof/ascp-t5-live-proof.json returned LIVE_PROVIDER_USE_PROOF_PASS, HTTP 200, latency 2162 ms",
+      "pre-commit hook PASS, 69 checks"
+    ],
+    "claimBoundary": "ASCP-T5 proves one bounded receipt-backed package use path with one live provider call. It does not mutate package lifecycle state, convert remaining packages, implement external MCP runtime execution, public-sync, or grant action authority.",
+    "nextAllowedMove": "Operator selects the next high-value lane. Any ACTIVE lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order and live/provider proof when governance behavior is claimed."
+  }
+}
