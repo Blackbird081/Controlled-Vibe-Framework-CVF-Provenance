@@ -31,15 +31,15 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after KIOD-T1 overlap discipline guard closure; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R1 GC-018 and source-verified work order for the knowledge-intake owner-surface taxonomy; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-T0 roadmap ready at material commit `9dda8681`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
+Current mode marker: `kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
 
-Current mode: `kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
+Current mode: `kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
 
-`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
+`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
 
 Previous mode:
 
@@ -155,7 +155,7 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
+Mode: `kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
 
 Next allowed move: operator selects the next high-value package-skill lane.
 Web dashboard/console UI, full MCP server, production Model Gateway/model
@@ -252,6 +252,12 @@ CVF owner surfaces, and use the governed dispositions `CONFIRMED_EXISTING`,
 `OWNER_SURFACE_NOT_FOUND`. The checker
 `governance/compat/check_external_absorption_overlap_discipline.py` is wired
 into autorun, reviewer-fast, pre-commit, and pre-push.
+
+KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap is ready at material
+commit `9dda8681`. Decision: `OPEN_KIOD_R1_OWNER_SURFACE_TAXONOMY`.
+Recommended next: author KIOD-R1 GC-018 and source-verified work order for a
+knowledge-intake owner-surface taxonomy before the next external repo/folder
+pilot.
 
 SCPL-WEB-T1 closed at material commit `a01bdca2`. CVF Web now has generated
 Skill Control Plane projection inheritance through

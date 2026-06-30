@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after KIOD-T1 overlap discipline guard closure; parked checkpoint=KIOD-T1 closed at material commit `211645e8`.
+Startup acknowledged: current mode=`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R1 GC-018 and source-verified work order for the knowledge-intake owner-surface taxonomy; parked checkpoint=KIOD-T0 roadmap ready at material commit `9dda8681`.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`kiod_t1_external_absorption_overlap_discipli
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `9edc7776` CGE-R3 CodeGraph upstream absorption worker return |
-| Latest session-sync target | session sync after CGE-R3 worker-return material closure |
+| Latest material closeout | `9dda8681` KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap |
+| Latest session-sync target | session sync after KIOD-T0 roadmap material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
+`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
 
 ## Purpose
 
@@ -253,6 +253,45 @@ package activation, direct import, or production-readiness claims.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## GC-020 HEAD Marker - KIOD-T0
+
+Latest material commit requiring in-place handoff trace:
+`9dda868176396b661a4e32e02c7b5a3e7c83666e`
+
+Short SHA: `9dda8681`
+
+Material work: KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`9dda8681`. It adds a planning roadmap for KIOD-R1 through KIOD-R5 only. It
+does not authorize external source corpus absorption, runtime/MCP/watcher/
+daemon work, provider-live proof, public-sync, package activation, checker
+implementation, dashboard build, adapter expansion, direct import, or
+production-readiness claims.
+
+## Agent Operation Trace Block - KIOD-T0 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-T0 knowledge-intake deduplication roadmap session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-T0 material commit `9dda8681` plus generated active-session state discipline |
+| Before status evidence | material commit `9dda8681` created KIOD-T0 roadmap; active continuity still named KIOD-T1 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no new runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-t0-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Agent Operation Trace Block - SCPL-T2 Session Sync
 
 | Field | Evidence |
@@ -313,6 +352,12 @@ package activation, direct import, or production-readiness claims.
 
 ## Latest Work / Changes
 
+KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap is ready at material
+commit `9dda8681`. Decision: `OPEN_KIOD_R1_OWNER_SURFACE_TAXONOMY`.
+Recommended next: author KIOD-R1 GC-018 and source-verified work order for the
+knowledge-intake owner-surface taxonomy before the next external repo/folder
+pilot.
+
 CGE-R3 CodeGraph upstream absorption dispatch closed at material commit
 `17a8d275`. The source mirror
 `.private_reference/source_mirrors/colbymchenry__codegraph/` is pinned to
@@ -331,13 +376,17 @@ remains the central Skill Control Plane inventory baseline at material commit
 
 ## Next Allowed Move
 
-CGE-R3 upstream source-mirror absorption worker return is closed at material
-commit `9edc7776`. Current Web projection readouts remain 52 front-door
-skills, 25 ASSF package projections, 24 runtime package projections, and 24
-projected runtime packages in the dashboard-ready control-plane projection. The
-current inventory remains 32 ASSF registry entries, 24 package roots, 24
-runtime-eligible packages, 24 activation-ready packages, 24 CLI/MCP adapter
-packages, 24 selection-profiled packages, and 0 cross-surface drift violations.
+Author KIOD-R1 GC-018 and source-verified work order for the knowledge-intake
+owner-surface taxonomy. KIOD-R1 should map current CVF owner surfaces for
+doctrine, runtime, package skills, checkers, Web/UI, provider/model, MCP/CLI,
+memory/state, corpus, and public-sync before the next external repo/folder
+pilot.
+
+KIOD-T1 remains closed at material commit `211645e8`; future external
+repo/folder absorption artifacts in scope for external absorption core evidence
+must include `## Overlap And Novelty Classification` and use
+`CONFIRMED_EXISTING`, `ENRICH_EXISTING`, `NEW_FINDING`,
+`REJECT_DIRECT_IMPORT`, `NO_NEW_VALUE`, or `OWNER_SURFACE_NOT_FOUND`.
 
 Web dashboard/console UI, full MCP server, production Model Gateway/model
 router, provider registry mutation, public-sync, automatic invocation, action
