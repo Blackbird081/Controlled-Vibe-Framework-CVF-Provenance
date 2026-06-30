@@ -69,8 +69,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection",
-  "previousMode": "cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending",
+  "currentMode": "kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection",
+  "previousMode": "cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3180,7 +3180,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "CGE-R3 CodeGraph upstream source-mirror absorption worker return is closed at material commit 9edc7776 after dispatch commit 17a8d275 and session-sync commit d774a7b2. Worker outputs are docs/reviews/CVF_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_REVIEW_2026-06-30.md and docs/reference/CVF_CGE_R3_CODEGRAPH_UPSTREAM_OWNER_SURFACE_DELTA_2026-06-30.md. The source mirror .private_reference/source_mirrors/colbymchenry__codegraph/ remains pinned to upstream commit da72946d25e112f662f5a60c6b69f363aec60f16. SCPL-WEB-T1 remains closed at a01bdca2; ASCP-P4-P6 remains closed at 687d4423 with 24 ACTIVE production package skills; SCPL-T2 at 25361957; SCPL-T1 at c5670974; PKGSOP-T2 at eaadc5ed; PKGSOP-T1 at 693608cb; ASCP-P1-P3 at 43e4092f. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator selects the next high-value lane, such as a fresh CodeGraph runtime/MCP value probe, package-candidate enrichment, checker-candidate hardening, full Skill Governance Console/dashboard build, MCP/CLI adapter expansion, or separate controlled Model Gateway/model-router roadmap. Runtime/MCP/watcher/daemon/SQLite/package activation/checker implementation/provider-live/public-sync/direct-import/production-readiness claims remain forbidden unless separately authorized by fresh GC-018/source-verified work order.",
+  "nextAllowedMove": "KIOD-T1 external absorption overlap discipline guard is closed at material commit 211645e8. Future external repo/folder absorption artifacts that are in scope for external absorption core evidence must include ## Overlap And Novelty Classification and classify source groups against existing CVF owner surfaces using CONFIRMED_EXISTING, ENRICH_EXISTING, NEW_FINDING, REJECT_DIRECT_IMPORT, NO_NEW_VALUE, or OWNER_SURFACE_NOT_FOUND. The checker governance/compat/check_external_absorption_overlap_discipline.py is wired into autorun, reviewer-fast, pre-commit, and pre-push. CGE-R3 CodeGraph upstream source-mirror absorption worker return remains closed at material commit 9edc7776 after dispatch commit 17a8d275 and session-sync commit d774a7b2; the source mirror .private_reference/source_mirrors/colbymchenry__codegraph/ remains pinned to upstream commit da72946d25e112f662f5a60c6b69f363aec60f16. SCPL-WEB-T1 remains closed at a01bdca2; ASCP-P4-P6 remains closed at 687d4423 with 24 ACTIVE production package skills; SCPL-T2 at 25361957; SCPL-T1 at c5670974. LHW24 remains the latest closed numbered LHW wave. Next allowed move: operator selects the next high-value lane, including the next external repo/folder absorption target under the new overlap/novelty classification discipline, a fresh CodeGraph runtime/MCP value probe, package-candidate enrichment, checker-candidate hardening, full Skill Governance Console/dashboard build, MCP/CLI adapter expansion, or separate controlled Model Gateway/model-router roadmap. Runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/production-readiness claims remain forbidden unless separately authorized by fresh GC-018/source-verified work order.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -3203,6 +3203,35 @@
     "claimBoundary": "Worker return closed as documentation/reference absorption only. Runtime, MCP, watcher, daemon, SQLite index, package activation, checker implementation, provider-live proof, public-sync, direct import, and production-readiness claims remain forbidden."
   },
   "assfPicT0Dispatch20260625": "ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is dispatched to Claude at material commit 9e08f11a. Artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_2026-06-25.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_FOR_CLAUDE_2026-06-25.md. Commit mode is WORKER_MUST_NOT_COMMIT. Claude may create only docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md and docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Claude must not commit, push, public-sync, edit active session surfaces, create a package instance, make a certification decision, mutate SKILL.md, skill.source.json, generated index, registry source, resolver, checker, generator, CVF Web runtime, CLI/MCP adapter behavior, provider/live proof, package activation, readiness, or package instruction execution. Codex owns review, material commit, closure conversion, roadmap update, and session sync after worker return.",
+  "kiodT1ExternalAbsorptionOverlapDisciplineGuardClosure20260630": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "211645e8",
+    "baseHead": "5fa153c0",
+    "completionReview": "docs/reviews/CVF_KNOWLEDGE_INTAKE_OVERLAP_DISCIPLINE_GUARD_COMPLETION_2026-06-30.md",
+    "checker": "governance/compat/check_external_absorption_overlap_discipline.py",
+    "test": "governance/compat/test_check_external_absorption_overlap_discipline.py",
+    "updatedWarningSurfaces": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md",
+      "docs/reference/external_agent_review/README.md",
+      "docs/reference/guard_orientation/README.md"
+    ],
+    "hookWiring": [
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_pre_push.py"
+    ],
+    "requiredSection": "## Overlap And Novelty Classification",
+    "allowedDispositions": [
+      "CONFIRMED_EXISTING",
+      "ENRICH_EXISTING",
+      "NEW_FINDING",
+      "REJECT_DIRECT_IMPORT",
+      "NO_NEW_VALUE",
+      "OWNER_SURFACE_NOT_FOUND"
+    ],
+    "claimBoundary": "Repo-local guard hardening only. No external source corpus, runtime, provider, public-sync, package activation, or production-readiness claim was added."
+  },
   "assfPicT0Closure20260625": "ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is CLOSED_PASS_BOUNDED at material commit 24b49017 after Claude returned BLOCKED_WITH_REASON and Codex completed reviewer-owned closure. The selected candidate is cvf-dispatch-quality-reviewer. Evidence: docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md; docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_COMPLETION_2026-06-25.md; worker return docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md. ASSF-PIC-T1 remains held until Active Session State Bootstrap Read Model And Aggregate Size Refactor closes.",
   "stateBrT1Dispatch20260625": "STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size Refactor is DISPATCHED_TO_WORKER at material commit 06d54319. Dispatch artifacts: docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_2026-06-25.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md. Worker mode is WORKER_MUST_NOT_COMMIT. Claude may update only the authorized active-session generator/checker/test/front-door/read-model paths and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. ASSF-PIC-T1 remains held until this refactor closes.",
   "stateBrT1Closure20260626": {

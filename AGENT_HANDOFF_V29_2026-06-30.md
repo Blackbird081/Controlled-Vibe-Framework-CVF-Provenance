@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after CGE-R3 worker return; parked checkpoint=CGE-R3 worker return closed at material commit `9edc7776`.
+Startup acknowledged: current mode=`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after KIOD-T1 overlap discipline guard closure; parked checkpoint=KIOD-T1 closed at material commit `211645e8`.
 
 ## Current State
 
@@ -24,7 +24,7 @@ Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_worker_
 
 ## Current Mode
 
-`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
+`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -212,6 +212,44 @@ provider/live proof, or broader production-readiness expansion.
 | Invocation ID | `ascp-p4-p6-session-sync-2026-06-30` |
 | Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/ascpP4P6RemainingPackageProductionScaleUpClosure20260630.json` |
 | Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/ascpP4P6RemainingPackageProductionScaleUpClosure20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 HEAD Marker - KIOD-T1
+
+Latest material commit requiring in-place handoff trace:
+`211645e8ee11fbdb366593abd6baff8d3450ed21`
+
+Short SHA: `211645e8`
+
+Material work: KIOD-T1 External Absorption Overlap Discipline Guard.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`211645e8`. It adds an external absorption overlap/novelty classification
+checker and warning surfaces only. It does not authorize external source corpus
+absorption, runtime/MCP/watcher/daemon work, provider-live proof, public-sync,
+package activation, direct import, or production-readiness claims.
+
+## Agent Operation Trace Block - KIOD-T1 Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-T1 external absorption overlap discipline session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-T1 material commit `211645e8` plus generated active-session state discipline |
+| Before status evidence | material commit `211645e8` closed KIOD-T1; active continuity still named CGE-R3 |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no new runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-t1-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodT1ExternalAbsorptionOverlapDisciplineGuardClosure20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodT1ExternalAbsorptionOverlapDisciplineGuardClosure20260630.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

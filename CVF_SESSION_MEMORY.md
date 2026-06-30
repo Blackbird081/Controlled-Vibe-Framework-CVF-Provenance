@@ -31,15 +31,15 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after CGE-R3 worker return; runtime/MCP/watcher/daemon/SQLite/package activation/checker implementation/provider-live/public-sync/direct-import/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=CGE-R3 worker return closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after KIOD-T1 overlap discipline guard closure; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
+Current mode marker: `kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
 
-Current mode: `cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
+Current mode: `kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
 
-`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
+`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
@@ -155,7 +155,7 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
+Mode: `kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value package-skill lane.
 Web dashboard/console UI, full MCP server, production Model Gateway/model
@@ -243,6 +243,16 @@ Runtime/MCP/watcher/daemon/SQLite/package activation/checker
 implementation/provider-live/public-sync/direct-import/production-readiness
 claims remain forbidden.
 
+KIOD-T1 external absorption overlap discipline guard closed at material commit
+`211645e8`. Future external repo/folder absorption artifacts in scope for
+external absorption core evidence must include
+`## Overlap And Novelty Classification`, compare source groups against existing
+CVF owner surfaces, and use the governed dispositions `CONFIRMED_EXISTING`,
+`ENRICH_EXISTING`, `NEW_FINDING`, `REJECT_DIRECT_IMPORT`, `NO_NEW_VALUE`, or
+`OWNER_SURFACE_NOT_FOUND`. The checker
+`governance/compat/check_external_absorption_overlap_discipline.py` is wired
+into autorun, reviewer-fast, pre-commit, and pre-push.
+
 SCPL-WEB-T1 closed at material commit `a01bdca2`. CVF Web now has generated
 Skill Control Plane projection inheritance through
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/assf-skill-control-plane.json`,
@@ -250,7 +260,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
+`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
 
 ## Continuity Markers
 
