@@ -31,19 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after checker read-ahead hardening and KIOD-R5 closure: doc-only memory-foundation enrichment from KIOD-R5 candidates, a separate controlled checker work order, or a new repo/folder absorption packet; parked checkpoint=checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R5 selected-source dispatch committed at `2924fddd`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author a fresh GC-018 baseline and source-verified work order for KIOD-R6 doc-only memory-foundation enrichment from retained KIOD-R5 candidates; parked checkpoint=KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R5 selected-source dispatch committed at `2924fddd`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
+Current mode marker: `kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
 
-Current mode: `checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
+Current mode: `kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
 
-`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
+`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
 
 Previous mode:
 
-`kiod_r5_packet_blocked_pilot_closed_pending_operator_next_lane_selection`
+`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
+
+## Current Open Roadmap
+
+| Work | Commit | Status |
+|---|---|---|
+| KIOD-R6 Memory Foundation Enrichment Roadmap | `3e1bc936` | ROADMAP_READY_FOR_WORK_ORDER_AUTHORING; roadmap `docs/roadmaps/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_ROADMAP_2026-06-30.md`; next move is a fresh GC-018/source-verified work order, not implementation |
 
 ## Current Closed Work
 
@@ -165,17 +171,22 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
+Mode: `kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
 
-Next allowed move: operator selects the next governed knowledge-intake lane.
-Checker read-ahead hardening is closed at material commit `ac5b13ac`: changed
-governed execution artifacts now need a `Checker Source Read-Ahead Block` that
-names applicable `governance/compat/check_*.py` sources and reviewed literal
-tokens before acceptance. High-value options are a fresh GC-018/source-verified
-doc-only work order to enrich `docs/reference/memory_foundation/` from KIOD-R5
-candidates, a separate controlled checker work order derived from the rejected
-source checker pattern, or a new repo/folder absorption packet. KIOD-R5 itself
-is closed at
+Next allowed move: author a fresh GC-018 baseline and source-verified work
+order for KIOD-R6 doc-only memory-foundation enrichment. The work-order author
+must read applicable checker source before drafting, include a
+`Checker Source Read-Ahead Block`, include ADIF disclosure, include a Source
+Verification Block with Source fact type, include Negative Search And Collision
+Discipline, include a Roadmap-to-Work-Order Trace Matrix, and use
+`WORKER_MUST_NOT_COMMIT` with reviewer-owned closure. KIOD-R6 roadmap is ready
+at material commit `3e1bc936`; it does not dispatch a worker or authorize
+memory-foundation reference edits, checker implementation, runtime/provider
+behavior, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard,
+public-sync, source import, generated aggregate edit beyond session sync,
+automatic invocation, action authority, package lifecycle mutation, or
+production behavior. Checker read-ahead hardening remains closed at material
+commit `ac5b13ac`. KIOD-R5 itself is closed at
 material commit `be6be4e2`; it does not authorize direct import, runtime,
 SQLite/LanceDB implementation, MCP/CLI adapter, dashboard, public-sync,
 automatic invocation, action authority, generated aggregate edit beyond session

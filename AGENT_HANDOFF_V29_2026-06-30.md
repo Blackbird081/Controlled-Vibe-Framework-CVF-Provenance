@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after checker read-ahead hardening and KIOD-R5 closure; parked checkpoint=checker read-ahead hardening closed at material commit `ac5b13ac`, after KIOD-R5 closure `be6be4e2`, KIOD-R5 selected-source dispatch `2924fddd`, and KIOD-R4 material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
+Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author a fresh GC-018 baseline and source-verified work order for KIOD-R6 doc-only memory-foundation enrichment from retained KIOD-R5 candidates; parked checkpoint=KIOD-R6 roadmap ready at material commit `3e1bc936`, after checker read-ahead hardening `ac5b13ac`, KIOD-R5 closure `be6be4e2`, KIOD-R5 selected-source dispatch `2924fddd`, and KIOD-R4 material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 ## Current State
 
@@ -18,13 +18,105 @@ Startup acknowledged: current mode=`checker_read_ahead_guard_hardening_closed_pe
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `ac5b13ac` Checker Read-Ahead Guard Hardening |
-| Latest session-sync target | session sync after checker read-ahead hardening |
+| Latest material packet | `3e1bc936` KIOD-R6 Memory Foundation Enrichment Roadmap |
+| Latest session-sync target | session sync after KIOD-R6 roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
+`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
+
+## KIOD-R6 Memory Foundation Enrichment Roadmap - 2026-06-30
+
+Material roadmap commit:
+`3e1bc93605dbd9e5a72a27bf9d0578129d48d310`
+
+Short SHA: `3e1bc936`
+
+Artifact:
+
+- `docs/roadmaps/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_ROADMAP_2026-06-30.md`
+
+Status: `ROADMAP_READY_FOR_WORK_ORDER_AUTHORING`.
+
+Roadmap summary: R6 converts retained KIOD-R5 `ENRICH_EXISTING` and
+`NEW_FINDING_CANDIDATE` evidence into a doc-only memory-foundation enrichment
+lane. The roadmap requires checker source read-ahead, source verification with
+Source fact type, negative-search/collision discipline, roadmap-to-work-order
+trace, and `WORKER_MUST_NOT_COMMIT` reviewer-owned closure for the next work
+order.
+
+Next allowed move: author a fresh GC-018 baseline and source-verified work
+order for KIOD-R6 doc-only memory-foundation enrichment. Do not implement
+runtime, checker, adapter, Web/UI, source import, public-sync, package
+lifecycle, action authority, or production behavior.
+
+Claim boundary: roadmap authoring only. No worker is dispatched by this
+roadmap, and no memory-foundation reference edits, checker, runtime/provider
+behavior, source import, public-sync, MCP/CLI adapter, dashboard, package
+lifecycle mutation, automatic invocation, action authority, or production
+behavior is claimed.
+
+## Core Guard Self-Protection Authorization - KIOD-R6 Roadmap Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+KIOD-R6 roadmap material commit `3e1bc936`; regenerate active session state and
+align front door, bootstrap read model, and active handoff.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V29_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/kiodR6MemoryFoundationEnrichmentRoadmap20260630.json`
+
+Operator authorization: session-sync follows material roadmap commit
+`3e1bc936` for KIOD-R6.
+
+Rollback boundary: revert only this session-sync if rejected; do not revert
+KIOD-R6 roadmap commit `3e1bc936`, checker read-ahead hardening commit
+`ac5b13ac`, or KIOD-R5 closure commit `be6be4e2`.
+
+## GC-020 HEAD Marker - KIOD-R6 Roadmap
+
+Latest material commit requiring in-place handoff trace:
+`3e1bc93605dbd9e5a72a27bf9d0578129d48d310`
+
+Short SHA: `3e1bc936`
+
+Material work: KIOD-R6 Memory Foundation Enrichment Roadmap.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`3e1bc936`. It records roadmap authoring only and does not authorize
+runtime/provider/live behavior, public-sync, package activation, automatic
+invocation, action authority, direct external source import, dashboard,
+MCP/CLI adapter, checker implementation, or production behavior.
+
+## Agent Operation Trace Block - KIOD-R6 Roadmap Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-R6 roadmap session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-R6 roadmap material commit `3e1bc936` plus generated active-session state discipline |
+| Before status evidence | material commit `3e1bc936` made KIOD-R6 roadmap ready; active continuity still named checker read-ahead lane |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no material roadmap edits beyond state/front-door/handoff sync |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public/source-import/checker claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-r6-roadmap-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR6MemoryFoundationEnrichmentRoadmap20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR6MemoryFoundationEnrichmentRoadmap20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Checker Read-Ahead Guard Hardening - 2026-06-30
 
@@ -889,27 +981,32 @@ remains the central Skill Control Plane inventory baseline at material commit
 
 ## Next Allowed Move
 
-Author KIOD-R1 GC-018 and source-verified work order for the knowledge-intake
-owner-surface taxonomy. KIOD-R1 should map current CVF owner surfaces for
-doctrine, runtime, package skills, checkers, Web/UI, provider/model, MCP/CLI,
-memory/state, corpus, and public-sync before the next external repo/folder
-pilot.
+Author a fresh GC-018 baseline and source-verified work order for KIOD-R6
+doc-only memory-foundation enrichment from retained KIOD-R5 candidates.
 
-KIOD-T1 remains closed at material commit `211645e8`; future external
-repo/folder absorption artifacts in scope for external absorption core evidence
-must include `## Overlap And Novelty Classification` and use
-`CONFIRMED_EXISTING`, `ENRICH_EXISTING`, `NEW_FINDING`,
-`REJECT_DIRECT_IMPORT`, `NO_NEW_VALUE`, or `OWNER_SURFACE_NOT_FOUND`.
+The work-order author must read applicable checker source before drafting,
+include a `Checker Source Read-Ahead Block`, include ADIF disclosure, include a
+Source Verification Block with Source fact type, include Negative Search And
+Collision Discipline, include a Roadmap-to-Work-Order Trace Matrix, and use
+`WORKER_MUST_NOT_COMMIT` with reviewer-owned closure.
+
+KIOD-R6 roadmap is ready at material commit `3e1bc936`; it does not dispatch a
+worker and does not authorize memory-foundation reference edits, checker
+implementation, runtime/provider behavior, SQLite/LanceDB implementation,
+MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit
+beyond session sync, automatic invocation, action authority, package lifecycle
+mutation, or production behavior.
+
+Checker read-ahead hardening remains closed at material commit `ac5b13ac`.
+KIOD-R5 remains closed at material commit `be6be4e2`; checker/test/generated
+examples remain rejected for direct import. KIOD-R4 remains closed at material
+commit `0416843c` with accepted decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 Web dashboard/console UI, full MCP server, production Model Gateway/model
 router, provider registry mutation, public-sync, automatic invocation, action
 authority, or broader production-readiness claim require fresh
 GC-018/source-verified work order and live/provider proof when governance
 behavior is claimed.
-
-CodeGraph follow-up lanes such as runtime/MCP value probe, package-candidate
-enrichment, checker-candidate hardening, MCP/CLI adapter expansion, public-sync,
-or benchmark proof require fresh GC-018/source-verified authorization.
 
 ## GC-020 HEAD Marker - CGE-R3 Worker Return
 
