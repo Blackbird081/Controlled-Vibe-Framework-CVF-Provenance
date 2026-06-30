@@ -287,9 +287,9 @@ mirror, or folder path for KIOD-R5 before worker dispatch.
 | Claim boundary | held documentation packet only; no runtime, checker, adapter, public-sync, source import, or production claim |
 | Agent type | reviewer/dispatcher repair |
 | Invocation ID | local Codex session 2026-06-30 |
-| Expected manifest | `docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md` |
-| Manifest delta | N/A with reason: expected and actual changed sets match |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md` |
+| Manifest delta | MATCH - trace manifest fix commit only. GC-018 baseline and session-sync files were committed in earlier commits in this range. |
 
 ## Dual Agent Surface Matrix
 
