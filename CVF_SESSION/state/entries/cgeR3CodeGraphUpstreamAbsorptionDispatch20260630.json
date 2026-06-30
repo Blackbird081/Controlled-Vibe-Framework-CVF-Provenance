@@ -2,8 +2,10 @@
   "stateOrder": 658,
   "stateKey": "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630",
   "value": {
-    "status": "DISPATCH_CLOSED_WORKER_EXECUTION_PENDING",
-    "materialCommit": "17a8d275",
+    "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
+    "dispatchMaterialCommit": "17a8d275",
+    "workerMaterialCommit": "9edc7776",
+    "sessionSyncAfterDispatchCommit": "d774a7b2",
     "dispatchBaseHead": "3ef56ead",
     "upstreamRepository": "https://github.com/colbymchenry/codegraph.git",
     "upstreamPinnedCommit": "da72946d25e112f662f5a60c6b69f363aec60f16",
@@ -15,6 +17,9 @@
       "docs/reviews/CVF_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_REVIEW_2026-06-30.md",
       "docs/reference/CVF_CGE_R3_CODEGRAPH_UPSTREAM_OWNER_SURFACE_DELTA_2026-06-30.md"
     ],
-    "claimBoundary": "Dispatch closed only. Worker may produce documentation/reference absorption outputs without committing. Runtime, MCP, watcher, daemon, SQLite index, package activation, checker implementation, provider-live proof, public-sync, direct import, and production-readiness claims remain forbidden."
+    "workerReturnStatus": "COMPLETE_PENDING_REVIEW accepted by reviewer/closer material commit",
+    "workerManifestCount": 409,
+    "workerManifestHash": "sha256:7521050c35a7f6a5b923c1a3680ada1993fd131085c7e8b217830417b6d8f9a2",
+    "claimBoundary": "Worker return closed as documentation/reference absorption only. Runtime, MCP, watcher, daemon, SQLite index, package activation, checker implementation, provider-live proof, public-sync, direct import, and production-readiness claims remain forbidden."
   }
 }

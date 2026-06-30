@@ -31,15 +31,15 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=execute the CGE-R3 no-commit CodeGraph upstream absorption worker lane; runtime/MCP/watcher/daemon/SQLite/package activation/checker implementation/provider-live/public-sync/direct-import/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=CGE-R3 dispatch closed at material commit `17a8d275`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after CGE-R3 worker return; runtime/MCP/watcher/daemon/SQLite/package activation/checker implementation/provider-live/public-sync/direct-import/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=CGE-R3 worker return closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
+Current mode marker: `cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
 
-Current mode: `cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
+Current mode: `cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
 
-`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
+`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
@@ -155,7 +155,7 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
+Mode: `cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value package-skill lane.
 Web dashboard/console UI, full MCP server, production Model Gateway/model
@@ -230,12 +230,15 @@ automatic skill invocation, production-readiness
 claim, and MPI-T6 runtime work unless separately authorized by fresh
 GC-018/source-verified work order.
 
-CGE-R3 CodeGraph upstream absorption dispatch closed at material commit
-`17a8d275`. The source mirror
+CGE-R3 CodeGraph upstream absorption worker return closed at material commit
+`9edc7776` after dispatch material commit `17a8d275` and session-sync commit
+`d774a7b2`. The source mirror
 `.private_reference/source_mirrors/colbymchenry__codegraph/` is pinned to
-upstream commit `da72946d25e112f662f5a60c6b69f363aec60f16`. The next move is
-the no-commit worker lane in
-`docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-06-30.md`.
+upstream commit `da72946d25e112f662f5a60c6b69f363aec60f16`. Worker outputs:
+`docs/reviews/CVF_CGE_R3_CODEGRAPH_UPSTREAM_SOURCE_MIRROR_ABSORPTION_REVIEW_2026-06-30.md`
+and
+`docs/reference/CVF_CGE_R3_CODEGRAPH_UPSTREAM_OWNER_SURFACE_DELTA_2026-06-30.md`.
+The next move is operator selection among follow-up lanes.
 Runtime/MCP/watcher/daemon/SQLite/package activation/checker
 implementation/provider-live/public-sync/direct-import/production-readiness
 claims remain forbidden.
@@ -247,7 +250,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
+`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
 
 ## Continuity Markers
 

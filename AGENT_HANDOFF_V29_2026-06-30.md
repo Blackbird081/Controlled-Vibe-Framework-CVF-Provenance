@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=execute the CGE-R3 no-commit CodeGraph upstream absorption worker lane; parked checkpoint=CGE-R3 dispatch closed at material commit `17a8d275`.
+Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects next high-value lane after CGE-R3 worker return; parked checkpoint=CGE-R3 worker return closed at material commit `9edc7776`.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`cge_r3_codegraph_upstream_absorption_dispatc
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `17a8d275` CGE-R3 CodeGraph upstream absorption dispatch |
-| Latest session-sync target | session sync after CGE-R3 dispatch material closure |
+| Latest material closeout | `9edc7776` CGE-R3 CodeGraph upstream absorption worker return |
+| Latest session-sync target | session sync after CGE-R3 worker-return material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`cge_r3_codegraph_upstream_absorption_dispatch_closed_worker_execution_pending`
+`cge_r3_codegraph_upstream_absorption_worker_return_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -293,8 +293,8 @@ remains the central Skill Control Plane inventory baseline at material commit
 
 ## Next Allowed Move
 
-CGE-R3 no-commit worker executes the CodeGraph upstream source-mirror
-absorption work order. Current Web projection readouts remain 52 front-door
+CGE-R3 upstream source-mirror absorption worker return is closed at material
+commit `9edc7776`. Current Web projection readouts remain 52 front-door
 skills, 25 ASSF package projections, 24 runtime package projections, and 24
 projected runtime packages in the dashboard-ready control-plane projection. The
 current inventory remains 32 ASSF registry entries, 24 package roots, 24
@@ -306,6 +306,49 @@ router, provider registry mutation, public-sync, automatic invocation, action
 authority, or broader production-readiness claim require fresh
 GC-018/source-verified work order and live/provider proof when governance
 behavior is claimed.
+
+CodeGraph follow-up lanes such as runtime/MCP value probe, package-candidate
+enrichment, checker-candidate hardening, MCP/CLI adapter expansion, public-sync,
+or benchmark proof require fresh GC-018/source-verified authorization.
+
+## GC-020 HEAD Marker - CGE-R3 Worker Return
+
+Latest material commit requiring in-place handoff trace:
+`9edc7776`
+
+Short SHA: `9edc7776`
+
+Material work: CGE-R3 CodeGraph Upstream Source Mirror Absorption worker return
+and owner-surface delta.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`9edc7776`. It does not authorize CodeGraph install/init, `.codegraph/`, MCP
+server, watcher, daemon, SQLite index, package activation, checker
+implementation, provider/live proof, public-sync, direct import, benchmark,
+or production-readiness claims.
+
+## Agent Operation Trace Block - CGE-R3 Worker Return Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | CGE-R3 worker-return session sync, 2026-06-30 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after CGE-R3 material worker-return commit `9edc7776` plus generated active-session state discipline |
+| Before status evidence | material commit `9edc7776` closed CGE-R3 worker return; active continuity still named worker execution pending |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no runtime/package/provider activation |
+| Claim boundary | repo-local continuity update only; no new runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `cge-r3-worker-return-session-sync-2026-06-30` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cgeR3CodeGraphUpstreamAbsorptionDispatch20260630.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cgeR3CodeGraphUpstreamAbsorptionDispatch20260630.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## GC-020 HEAD Marker - CGE-R3 Dispatch
 
