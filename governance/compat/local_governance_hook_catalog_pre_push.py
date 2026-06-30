@@ -153,6 +153,10 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_package_skill_productionization_pipeline.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "skill control plane inventory",
+            ["python", "governance/compat/check_skill_control_plane_inventory.py", "--enforce"],
+        ),
+        (
             "system loop interlock",
             ["python", "governance/compat/check_system_loop_interlock.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

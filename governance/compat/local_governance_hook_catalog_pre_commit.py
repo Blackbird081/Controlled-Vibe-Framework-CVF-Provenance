@@ -216,6 +216,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_package_skill_productionization_pipeline.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "skill control plane inventory",
+            ["python", "governance/compat/check_skill_control_plane_inventory.py", "--enforce"],
+        ),
+        (
             "changed corpus registry coverage",
             ["python", "governance/compat/check_changed_corpus_registry_coverage.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

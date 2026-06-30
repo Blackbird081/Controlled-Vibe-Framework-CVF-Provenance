@@ -1,0 +1,2305 @@
+{
+  "claimBoundary": "This inventory is a generated Skill Control Plane read model. It classifies skill surfaces for governance review only. It is not canonical certification authority, package body authority, provider runtime authority, Web runtime authority, public-sync evidence, or permission to activate, execute, commit, push, or bypass governed work-order scope.",
+  "driftSummary": {},
+  "generatedBy": "governance/compat/generate_skill_control_plane_inventory.py",
+  "inventoryId": "cvf-skill-control-plane-inventory",
+  "records": [
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not yet authored; separate ASSF adapter work order required",
+        "adapterEvidence": "N/A with reason: no adapter implemented in ASSF-T2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Dispatch Quality Reviewer",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md",
+          "docs/reviews/CVF_ASSF_CERT_T2_CERTIFICATION_DECISION_2026-06-26.md",
+          "docs/reviews/CVF_ASSF_PACKAGE_CERTIFICATION_DECISION_T0_T3_COMPLETION_2026-06-26.md"
+        ],
+        "skillId": "cvf-dispatch-quality-reviewer",
+        "status": "CANDIDATE",
+        "uatState": "PASSED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-dispatch-quality-reviewer",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "WEB_PROJECTION_CATALOG_ITEM"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "Agent System Skills",
+        "present": true,
+        "webKey": "cvf-dispatch-quality-reviewer"
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not yet authored; separate ASSF adapter work order required",
+        "adapterEvidence": "N/A with reason: no adapter implemented in ASSF-T2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-worker-return-author.json",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Worker Return Author",
+        "reviewArtifacts": [],
+        "skillId": "cvf-worker-return-author",
+        "status": "CANDIDATE",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-worker-return-author",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not yet authored; separate ASSF adapter work order required",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T5",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance External Absorption",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-external-absorption",
+        "status": "CANDIDATE",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-governance-external-absorption",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "ACTIVATION_READY",
+        "truthPacketRequired": true
+      },
+      "cliMcp": {
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+        "disposition": "IMPLEMENTED"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/skill.source.json",
+        "sourceLifecycleState": "ACTIVE"
+      },
+      "registry": {
+        "approvalState": "APPROVED",
+        "candidateState": "ACTIVE",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-spec-driven-development/SKILL.md",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
+        "name": "CVF Engineering Spec-Driven Development",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md"
+        ],
+        "skillId": "cvf-engineering-spec-driven-development",
+        "status": "ACTIVE",
+        "uatState": "PASSED"
+      },
+      "runtime": {
+        "eligible": true,
+        "ineligibilityReasons": []
+      },
+      "skillId": "cvf-engineering-spec-driven-development",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE"
+      ],
+      "truth": {
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "ACTIVATION_READY",
+        "truthPacketRequired": true
+      },
+      "cliMcp": {
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+        "disposition": "IMPLEMENTED"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/skill.source.json",
+        "sourceLifecycleState": "ACTIVE"
+      },
+      "registry": {
+        "approvalState": "APPROVED",
+        "candidateState": "ACTIVE",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-planning-task-breakdown/SKILL.md",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
+        "name": "CVF Engineering Planning And Task Breakdown",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md"
+        ],
+        "skillId": "cvf-engineering-planning-task-breakdown",
+        "status": "ACTIVE",
+        "uatState": "PASSED"
+      },
+      "runtime": {
+        "eligible": true,
+        "ineligibilityReasons": []
+      },
+      "skillId": "cvf-engineering-planning-task-breakdown",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE"
+      ],
+      "truth": {
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-anti-rationalization-guard.json",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Anti-Rationalization Guard",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-anti-rationalization-guard",
+        "status": "CANDIDATE",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-governance-anti-rationalization-guard",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-context-packet-builder.json",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Context Packet Builder",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-context-packet-builder",
+        "status": "CANDIDATE",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-governance-context-packet-builder",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-evidence-receipt-review-freeze.json",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Evidence Receipt Review Freeze",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-evidence-receipt-review-freeze",
+        "status": "CANDIDATE",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-governance-evidence-receipt-review-freeze",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-T7",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-T7",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-governance-persona-skill-boundary-review.json",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Persona Skill Boundary Review",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-persona-skill-boundary-review",
+        "status": "CANDIDATE",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-governance-persona-skill-boundary-review",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored; CodeGraph runtime and MCP query adapter remain parked pending fresh GC-018 and source verification",
+        "adapterEvidence": "N/A with reason: no adapter implemented in CGE-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": false,
+        "rootPath": null,
+        "sourceJsonPath": null,
+        "sourceLifecycleState": null
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "CANDIDATE",
+        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-code-intelligence-context-review.json",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Code Intelligence Context Review",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_CGE_R2_CODEGRAPH_RESCAN_VALUE_AUDIT_AND_CORRECTION_2026-06-29.md"
+        ],
+        "skillId": "cvf-code-intelligence-context-review",
+        "status": "CANDIDATE",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
+          "PACKAGE_ROOT_OUT_OF_SCOPE"
+        ]
+      },
+      "skillId": "cvf-code-intelligence-context-review",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-api-interface-design/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-api-interface-design/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-api-interface-design/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering API And Interface Design",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-api-interface-design",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-api-interface-design",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-browser-runtime-verification/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-browser-runtime-verification/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-browser-runtime-verification/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Browser Runtime Verification",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-browser-runtime-verification",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-browser-runtime-verification",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-ci-cd-quality-gates/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-ci-cd-quality-gates/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-ci-cd-quality-gates/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering CI/CD Quality Gates",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-ci-cd-quality-gates",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-ci-cd-quality-gates",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "ACTIVATION_READY",
+        "truthPacketRequired": true
+      },
+      "cliMcp": {
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+        "disposition": "IMPLEMENTED"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/skill.source.json",
+        "sourceLifecycleState": "ACTIVE"
+      },
+      "registry": {
+        "approvalState": "APPROVED",
+        "candidateState": "ACTIVE",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
+        "name": "CVF Engineering Code Review Quality",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R5_RUNTIME_ELIGIBILITY_AUDIT_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md"
+        ],
+        "skillId": "cvf-engineering-code-review-quality",
+        "status": "ACTIVE",
+        "uatState": "PASSED"
+      },
+      "runtime": {
+        "eligible": true,
+        "ineligibilityReasons": []
+      },
+      "skillId": "cvf-engineering-code-review-quality",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE"
+      ],
+      "truth": {
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Code Simplification",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-code-simplification",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-code-simplification",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-context-engineering/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-context-engineering/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-context-engineering/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Context Engineering",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-context-engineering",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-governance-context-engineering",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "ACTIVATION_READY",
+        "truthPacketRequired": true
+      },
+      "cliMcp": {
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+        "disposition": "IMPLEMENTED"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-debugging-error-recovery/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-debugging-error-recovery/skill.source.json",
+        "sourceLifecycleState": "ACTIVE"
+      },
+      "registry": {
+        "approvalState": "APPROVED",
+        "candidateState": "ACTIVE",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-debugging-error-recovery/SKILL.md",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
+        "name": "CVF Engineering Debugging And Error Recovery",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md"
+        ],
+        "skillId": "cvf-engineering-debugging-error-recovery",
+        "status": "ACTIVE",
+        "uatState": "PASSED"
+      },
+      "runtime": {
+        "eligible": true,
+        "ineligibilityReasons": []
+      },
+      "skillId": "cvf-engineering-debugging-error-recovery",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE"
+      ],
+      "truth": {
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-deprecation-migration/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-deprecation-migration/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-deprecation-migration/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Deprecation And Migration",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-deprecation-migration",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-deprecation-migration",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-documentation-adrs/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-documentation-adrs/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-documentation-adrs/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Documentation And ADRs",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-documentation-adrs",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-governance-documentation-adrs",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-doubt-driven-development/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-doubt-driven-development/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-doubt-driven-development/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Doubt-Driven Development",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-doubt-driven-development",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-governance-doubt-driven-development",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-frontend-ui/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-frontend-ui/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-frontend-ui/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Frontend UI",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-frontend-ui",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-frontend-ui",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-git-workflow-versioning/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-git-workflow-versioning/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-git-workflow-versioning/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Git Workflow And Versioning",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-git-workflow-versioning",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-governance-git-workflow-versioning",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-idea-refinement/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-idea-refinement/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-idea-refinement/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Idea Refinement",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-idea-refinement",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-governance-idea-refinement",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-incremental-implementation/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-incremental-implementation/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-incremental-implementation/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Incremental Implementation",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-incremental-implementation",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-incremental-implementation",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-operator-interview/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-operator-interview/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-operator-interview/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Operator Interview",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-operator-interview",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-governance-operator-interview",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-observability-instrumentation/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-observability-instrumentation/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-observability-instrumentation/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Observability And Instrumentation",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-observability-instrumentation",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-observability-instrumentation",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-performance-optimization/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-performance-optimization/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-performance-optimization/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Performance Optimization",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-performance-optimization",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-performance-optimization",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "ACTIVATION_READY",
+        "truthPacketRequired": true
+      },
+      "cliMcp": {
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+        "disposition": "IMPLEMENTED"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-security-hardening/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-security-hardening/skill.source.json",
+        "sourceLifecycleState": "ACTIVE"
+      },
+      "registry": {
+        "approvalState": "APPROVED",
+        "candidateState": "ACTIVE",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-security-hardening/SKILL.md",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
+        "name": "CVF Engineering Security Hardening",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md"
+        ],
+        "skillId": "cvf-engineering-security-hardening",
+        "status": "ACTIVE",
+        "uatState": "PASSED"
+      },
+      "runtime": {
+        "eligible": true,
+        "ineligibilityReasons": []
+      },
+      "skillId": "cvf-engineering-security-hardening",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE"
+      ],
+      "truth": {
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-shipping-launch/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-shipping-launch/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-shipping-launch/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Shipping And Launch",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-shipping-launch",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-shipping-launch",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-source-driven-development/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-source-driven-development/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-source-driven-development/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Engineering Source-Driven Development",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-engineering-source-driven-development",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-engineering-source-driven-development",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "ACTIVATION_READY",
+        "truthPacketRequired": true
+      },
+      "cliMcp": {
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+        "disposition": "IMPLEMENTED"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/skill.source.json",
+        "sourceLifecycleState": "ACTIVE"
+      },
+      "registry": {
+        "approvalState": "APPROVED",
+        "candidateState": "ACTIVE",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/SKILL.md",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
+        "name": "CVF Engineering Test-Driven Development",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+          "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md",
+          "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md"
+        ],
+        "skillId": "cvf-engineering-test-driven-development",
+        "status": "ACTIVE",
+        "uatState": "PASSED"
+      },
+      "runtime": {
+        "eligible": true,
+        "ineligibilityReasons": []
+      },
+      "skillId": "cvf-engineering-test-driven-development",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE"
+      ],
+      "truth": {
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: external CLI/MCP adapter not authored in AGSK-R2",
+        "adapterEvidence": "N/A with reason: no adapter implemented in AGSK-R2",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-skill-discovery-invocation/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-skill-discovery-invocation/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-skill-discovery-invocation/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Skill Discovery And Invocation",
+        "reviewArtifacts": [
+          "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md"
+        ],
+        "skillId": "cvf-governance-skill-discovery-invocation",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "skillId": "cvf-governance-skill-discovery-invocation",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
+    }
+  ],
+  "schemaVersion": "skill-control-plane-v1",
+  "sourcePaths": {
+    "assfGeneratedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "assfRegistryEntries": "docs/reference/agent_system_skills/registry/entries",
+    "packageRoots": "docs/reference/agent_system_skills/packages",
+    "skillTruthIndex": "docs/reference/agent_system_skills/truth/generated/skill-truth-index.json",
+    "webSkillIndex": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/skills-index.json",
+    "webTemplateMap": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/data/skill-template-map.json"
+  },
+  "statusCounts": {
+    "candidateState": {
+      "ACTIVE": 6,
+      "CANDIDATE": 8,
+      "PROPOSED": 18
+    },
+    "certificationState": {
+      "CERTIFIED": 7,
+      "NOT_STARTED": 25
+    },
+    "internalAgentDisposition": {
+      "CANDIDATE": 26,
+      "IMPLEMENTED": 6
+    },
+    "status": {
+      "ACTIVE": 6,
+      "CANDIDATE": 8,
+      "PROPOSED": 18
+    },
+    "uatState": {
+      "NOT_STARTED": 25,
+      "PASSED": 7
+    }
+  },
+  "summary": {
+    "activeResolverReadyPackages": 6,
+    "activeSourcePackages": 6,
+    "assfRegistryEntries": 32,
+    "cliMcpAdapterPackages": 6,
+    "crossSurfaceDriftViolationCount": 0,
+    "externalProviderRuntimeSkillMappings": 0,
+    "packageRoots": 24,
+    "publicProdPackages": 0,
+    "runtimeEligiblePackages": 6,
+    "templateMapEntries": 58,
+    "webProjectionItems": 28,
+    "webProjectionOnlyItems": 27
+  },
+  "taxonomy": {
+    "activeResolverPackages": {
+      "authority": "read-only activation-readiness decision",
+      "token": "ACTIVE_RESOLVER_READY_PACKAGE"
+    },
+    "assfPackageRoots": {
+      "authority": "governed package body candidates",
+      "token": "ASSF_PACKAGE_ROOT"
+    },
+    "assfRegistryEntries": {
+      "authority": "canonical metadata source",
+      "token": "ASSF_REGISTRY_ENTRY"
+    },
+    "cliMcpAdapterPackages": {
+      "authority": "bounded adapter envelope only",
+      "token": "CLI_MCP_ADAPTER_PACKAGE"
+    },
+    "codexProviderSkills": {
+      "authority": "external/provider runtime skills; non-CVF authority",
+      "token": "EXTERNAL_PROVIDER_RUNTIME_SKILL"
+    },
+    "publicProdPackages": {
+      "authority": "public/prod package claim; none granted by this inventory",
+      "token": "PUBLIC_PROD_PACKAGE"
+    },
+    "runtimeEligiblePackages": {
+      "authority": "bounded internal loader packages",
+      "token": "RUNTIME_ELIGIBLE_PACKAGE"
+    },
+    "webLibraryCatalogItems": {
+      "authority": "presentation/projection/catalog item",
+      "token": "WEB_PROJECTION_CATALOG_ITEM"
+    }
+  },
+  "webProjectionOnlyRecords": [
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "App Development",
+      "id": "01_app_requirements_spec",
+      "title": "App Requirements Spec",
+      "webKey": "01_app_requirements_spec"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Technical Review",
+      "id": "01_code_review",
+      "title": "Code Review",
+      "webKey": "01_code_review"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Content Creation",
+      "id": "01_documentation",
+      "title": "Documentation",
+      "webKey": "01_documentation"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Finance Analytics",
+      "id": "01_finance_analysis_system",
+      "title": "Finance Analysis System",
+      "webKey": "01_finance_analysis_system"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "AI/ML Evaluation",
+      "id": "01_model_selection",
+      "title": "Model Selection",
+      "webKey": "01_model_selection"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Security & Compliance",
+      "id": "01_security_assessment",
+      "title": "01 Security Assessment",
+      "webKey": "01_security_assessment"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Marketing & SEO",
+      "id": "01_seo_audit",
+      "title": "SEO Audit",
+      "webKey": "01_seo_audit"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Business Analysis",
+      "id": "01_strategy_analysis",
+      "title": "Strategy Analysis",
+      "webKey": "01_strategy_analysis"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Product & UX",
+      "id": "01_user_persona_development",
+      "title": "User Persona Development",
+      "webKey": "01_user_persona_development"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Technical Review",
+      "id": "02_architecture_review",
+      "title": "Architecture Review",
+      "webKey": "02_architecture_review"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Security & Compliance",
+      "id": "02_data_privacy_compliance",
+      "title": "02 Data Privacy Compliance",
+      "webKey": "02_data_privacy_compliance"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Content Creation",
+      "id": "02_report_writing",
+      "title": "Report Writing",
+      "webKey": "02_report_writing"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Business Analysis",
+      "id": "02_risk_assessment",
+      "title": "Risk Assessment",
+      "webKey": "02_risk_assessment"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Product & UX",
+      "id": "02_user_flow_analysis",
+      "title": "User Flow Analysis",
+      "webKey": "02_user_flow_analysis"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "App Development",
+      "id": "03_architecture_design",
+      "title": "Architecture Design",
+      "webKey": "03_architecture_design"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Marketing & SEO",
+      "id": "03_content_quality_review",
+      "title": "Content Quality Checklist",
+      "webKey": "03_content_quality_review"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Security & Compliance",
+      "id": "03_incident_response",
+      "title": "Incident Response Plan",
+      "webKey": "03_incident_response"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Business Analysis",
+      "id": "03_market_research",
+      "title": "Market Research",
+      "webKey": "03_market_research"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Product & UX",
+      "id": "03_ux_heuristic_evaluation",
+      "title": "UX Heuristic Evaluation",
+      "webKey": "03_ux_heuristic_evaluation"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Product & UX",
+      "id": "04_accessibility_audit",
+      "title": "Accessibility Audit (WCAG)",
+      "webKey": "04_accessibility_audit"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Business Analysis",
+      "id": "04_business_plan",
+      "title": "Business Plan",
+      "webKey": "04_business_plan"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Marketing & SEO",
+      "id": "04_social_media_review",
+      "title": "Social Media Ad Review",
+      "webKey": "04_social_media_review"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "App Development",
+      "id": "05_api_design_spec",
+      "title": "API Design Spec",
+      "webKey": "05_api_design_spec"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Marketing & SEO",
+      "id": "05_brand_strategy_review",
+      "title": "05 Brand Strategy Review",
+      "webKey": "05_brand_strategy_review"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Product & UX",
+      "id": "05_onboarding_experience_review",
+      "title": "Onboarding Experience Review",
+      "webKey": "05_onboarding_experience_review"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "App Development",
+      "id": "07_project_init_checklist",
+      "title": "Project Init Checklist",
+      "webKey": "07_project_init_checklist"
+    },
+    {
+      "assfProjectionClass": "PRESENTATION_CATALOG_ITEM",
+      "authorityClass": "PRESENTATION_PROJECTION_CATALOG_ITEM",
+      "canonicalRoot": null,
+      "certificationState": null,
+      "domain": "Product & UX",
+      "id": "cvf_web_ux_redesign_system",
+      "title": "CVF Web UX Redesign System",
+      "webKey": "cvf_web_ux_redesign_system"
+    }
+  ]
+}
