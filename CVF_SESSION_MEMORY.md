@@ -31,19 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed knowledge-intake lane after KIOD-R6 doc-only memory-foundation enrichment closure; parked checkpoint=KIOD-R6 enrichment accepted at material commit `8b89fc64`, V29 archived under `CVF_SESSION/handoffs/archive/`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=worker executes KIOD-R7 Dispatch Packet Lifecycle Hygiene under `WORKER_MUST_NOT_COMMIT` and returns `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`; parked checkpoint=KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, V29 archived under `CVF_SESSION/handoffs/archive/`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
+Current mode marker: `kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`
 
-Current mode: `kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
+Current mode: `kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`
 
-`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
+`kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`
 
 Previous mode:
 
-`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
+`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
+
+## Current Dispatched Work
+
+| Work | Commit | Disposition |
+|---|---|---|
+| KIOD-R7 Dispatch Packet Lifecycle Hygiene | `eef49493` | DISPATCH_READY; worker executes `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md` under `WORKER_MUST_NOT_COMMIT` and returns `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`; reviewer owns acceptance, allowed repairs, final gates, material commit, and session sync |
 
 ## Current Closed Work
 
@@ -167,28 +173,26 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
+Mode: `kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`
 
-Next allowed move: operator selects the next governed knowledge-intake lane
-after KIOD-R6 Memory Foundation Enrichment closed bounded at material commit
-`8b89fc64`. Reviewer accepted the worker return and committed the 3
-memory-foundation owner-surface edits plus worker return as one reviewer batch.
-Result: doc-only enrichment only; added memory claim boundary taxonomy, partial
-rebuild/hash verification doctrine, receipt type taxonomy with
-`DENIAL_RECEIPT`, memory access gate categories, sensitivity levels, retention
-classes, and reconciliation rows. DEFER candidates C-file05, D-file06, and
-I-file19 require separate future work orders if operator selects them. No
-runtime implementation, checker creation, source import, MCP or CLI adapter,
-public-sync, package lifecycle mutation, automatic invocation, action
-authority, live/provider proof, or production behavior is authorized or
-claimed. KIOD-R6 roadmap remains at material commit `3e1bc936`. Checker
-read-ahead hardening remains closed at material commit `ac5b13ac`. KIOD-R5
-itself is closed at material commit `be6be4e2`; it does not authorize direct
-import, runtime, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard,
-public-sync, automatic invocation, action authority, generated aggregate edit
-beyond session sync, package lifecycle mutation, or production-readiness claim.
-KIOD-R4 closed at material commit `0416843c` with accepted decision token
-`PACKET_BLOCK_REQUIRED_NOW`.
+Next allowed move: worker executes KIOD-R7 Dispatch Packet Lifecycle Hygiene
+using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md`
+under `WORKER_MUST_NOT_COMMIT` and returns
+`docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`
+with `COMPLETE_PENDING_REVIEW` evidence. Reviewer/closer owns acceptance,
+allowed repairs, final gates, material commit, and any session-sync. Scope is
+guard-maintenance only: create or enrich the dispatch lifecycle hygiene
+standard, implement the changed-range checker, focused tests, and
+autorun/reviewer-fast/pre-commit/pre-push wiring. No KIOD-R6 rework,
+C-file05/D-file06/I-file19 work, runtime/provider/live proof, source import,
+public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation,
+action authority, automatic invocation, or production-readiness claim is
+authorized. KIOD-R6 remains CLOSED_PASS_BOUNDED at material commit `8b89fc64`.
+KIOD-R6 roadmap remains at material commit `3e1bc936`. Checker read-ahead
+hardening remains closed at material commit `ac5b13ac`. KIOD-R5 itself is
+closed at material commit `be6be4e2`. KIOD-R4 closed at material commit
+`0416843c` with accepted decision token `PACKET_BLOCK_REQUIRED_NOW`.
 KIOD-R1-R3 Knowledge Intake Deduplication Foundation remains closed at material
 commit `5d453bce`, creating stable R1/R2/R3 references under
 `docs/reference/external_agent_review/` and updating KIOD-T0 through KIOD-R4

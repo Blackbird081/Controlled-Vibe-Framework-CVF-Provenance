@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed knowledge-intake lane after KIOD-R6 doc-only memory-foundation enrichment closure; parked checkpoint=KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=worker executes KIOD-R7 Dispatch Packet Lifecycle Hygiene under `WORKER_MUST_NOT_COMMIT` and returns `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`; parked checkpoint=KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_accepte
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `8b89fc64` KIOD-R6 Memory Foundation Enrichment |
-| Latest session-sync target | session sync after KIOD-R6 enrichment acceptance and V30 handoff rotation |
+| Latest material packet | `eef49493` KIOD-R7 Dispatch Packet Lifecycle Hygiene work order |
+| Latest session-sync target | session sync after KIOD-R7 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
+`kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`
 
 ## Latest Changes
 
@@ -80,6 +80,62 @@ acceptance only. No runtime implementation, checker creation, source import,
 MCP or CLI adapter, dashboard, public-sync, package lifecycle mutation,
 automatic invocation, action authority, live/provider proof, or production
 behavior is authorized or claimed.
+
+## KIOD-R7 Dispatch Packet Lifecycle Hygiene Dispatch - 2026-07-01
+
+Material dispatch commit:
+`eef49493ceac1efdf9fa088b0df1c5d01375ff93`
+
+Short SHA: `eef49493`
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md`
+
+Status: `DISPATCH_READY`.
+
+Commit mode: `WORKER_MUST_NOT_COMMIT`.
+
+Expected worker return:
+`docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`
+
+Dispatch verification:
+
+- pre-dispatch autorun PASS 67/67 on range `b743c085..HEAD`
+- commit steward dispatch preflight PASS
+- pre-commit governance hook PASS 74/74
+
+Boundary: guard-maintenance only. The worker may create or enrich the dispatch
+lifecycle hygiene standard, implement the changed-range checker, focused tests,
+and autorun/reviewer-fast/pre-commit/pre-push wiring. No KIOD-R6 rework,
+C-file05/D-file06/I-file19 work, runtime/provider/live proof, source import,
+public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation,
+action authority, automatic invocation, or production-readiness claim is
+authorized.
+
+## Core Guard Self-Protection Authorization - KIOD-R7 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+KIOD-R7 dispatch material commit `eef49493`, align generated active-session
+state and bootstrap read model, and update active handoff/front-door next move.
+
+Operator authorization: operator approved writing the KIOD-R7 work order and
+dispatching it for worker execution.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V30_2026-07-01.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/kiodR7DispatchPacketLifecycleHygieneDispatch20260701.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: revert only KIOD-R7 dispatch session-sync paths if this sync
+is rejected. Do not revert material dispatch commit `eef49493` or KIOD-R6
+closure commit `8b89fc64`.
 
 ## Core Guard Self-Protection Authorization - KIOD-R6 Enrichment Session Sync And V30 Rotation
 
@@ -171,27 +227,23 @@ Session-sync work: KIOD-R6 enrichment session sync and V30 handoff rotation.
 
 ## Next Allowed Move
 
-Operator selects the next governed knowledge-intake lane after KIOD-R6 Memory
-Foundation Enrichment closed bounded at material commit `8b89fc64`.
+Worker executes KIOD-R7 Dispatch Packet Lifecycle Hygiene using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md`
+under `WORKER_MUST_NOT_COMMIT` and returns
+`docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`
+with `COMPLETE_PENDING_REVIEW` evidence.
 
-Likely options require fresh GC-018/source-verified work order before action:
-
-- separate checker/schema tranche for C-file05;
-- runtime/live-proof tranche for D-file06 or I-file19;
-- a new repo/folder absorption packet under KIOD discipline.
-
-DEFER candidates C-file05, D-file06, and I-file19 are not authorized by this
-closure. Web dashboard/console UI, full MCP server, production Model
-Gateway/model router, provider registry mutation, public-sync, automatic
-invocation, action authority, runtime implementation, checker creation, source
-import, live/provider proof, or broader production-readiness claim require a
-separate governed tranche.
+Reviewer/closer owns acceptance, allowed repairs, final gates, material commit,
+and any session-sync. No KIOD-R6 rework, C-file05/D-file06/I-file19 work,
+runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
+MCP/CLI adapter, package lifecycle mutation, action authority, automatic
+invocation, or production-readiness claim is authorized by KIOD-R7 dispatch.
 
 ## Claim Boundary
 
 V30 is a compact continuity handoff and session-sync carrier. It records
-KIOD-R6 enrichment closure, V29 archive rotation, active session pointers, and
-next allowed moves only. It does not create runtime/provider behavior,
+KIOD-R6 enrichment closure, KIOD-R7 dispatch, V29 archive rotation, active
+session pointers, and next allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
 authority, action authority, or broader production readiness.
