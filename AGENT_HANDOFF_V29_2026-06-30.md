@@ -18,8 +18,8 @@ Startup acknowledged: current mode=`kiod_r5_packet_blocked_pilot_hold_pending_op
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `39f29456` KIOD-R5 Packet-Blocked Pilot hold packet |
-| Latest session-sync target | session sync after KIOD-R5 hold packet |
+| Latest material packet | `80a872c3` KIOD-R5 work order trace manifest repair |
+| Latest session-sync target | handoff sync after KIOD-R5 trace manifest repair |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
@@ -66,6 +66,38 @@ Material work: KIOD-R5 Packet-Blocked Pilot hold packet.
 This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
 `39f29456`. It records a held packet only and does not authorize worker
 execution until the operator selects the exact source target.
+
+## Core Guard Self-Protection Authorization - KIOD-R5 Trace Manifest Repair Handoff Sync
+
+Authorized guard-maintenance scope: add the missing GC-020 in-place handoff
+marker for existing material commit `80a872c3`, which repaired the KIOD-R5 work
+order trace manifest after operator hold-packet commits.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V29_2026-06-30.md`
+
+Operator authorization: governed active-session compatibility requirement after
+material commit `80a872c3`.
+
+Rollback boundary: revert only this handoff-sync marker if rejected; do not
+revert KIOD-R5 hold packet commit `39f29456`, session-sync commit `6d2df592`,
+or material repair commit `80a872c3`.
+
+## GC-020 HEAD Marker - KIOD-R5 Trace Manifest Repair
+
+Latest material commit requiring in-place handoff trace:
+`80a872c314118e84d872550ceb3019746469a6b3`
+
+Short SHA: `80a872c3`
+
+Material work: KIOD-R5 work order trace manifest repair after operator
+hold-packet commits.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`80a872c3`. It records a trace-manifest repair only and does not authorize
+worker execution until the operator selects the exact source target and the
+dispatcher releases the KIOD-R5 packet through pre-dispatch gates.
 
 ## Agent Operation Trace Block - KIOD-R5 Hold Session Sync
 
