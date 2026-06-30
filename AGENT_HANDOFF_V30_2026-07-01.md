@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=worker executes KIOD-R7 Dispatch Packet Lifecycle Hygiene under `WORKER_MUST_NOT_COMMIT` and returns `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`; parked checkpoint=KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next high-value package-skill or knowledge-absorption lane after KIOD-R7 closure; parked checkpoint=KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_di
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `eef49493` KIOD-R7 Dispatch Packet Lifecycle Hygiene work order |
-| Latest session-sync target | session sync after KIOD-R7 dispatch |
+| Latest material packet | `dee9ebf9` KIOD-R7 Dispatch Packet Lifecycle Hygiene closure |
+| Latest session-sync target | session sync after KIOD-R7 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`
+`kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
@@ -113,6 +113,60 @@ C-file05/D-file06/I-file19 work, runtime/provider/live proof, source import,
 public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation,
 action authority, automatic invocation, or production-readiness claim is
 authorized.
+
+## KIOD-R7 Dispatch Packet Lifecycle Hygiene Closure - 2026-07-01
+
+Material closure commit:
+`dee9ebf98da0a164a16eb28874c2fe4207e343bd`
+
+Short SHA: `dee9ebf9`
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md`
+- `docs/reference/external_agent_review/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_STANDARD.md`
+- `governance/compat/check_dispatch_packet_lifecycle_hygiene.py`
+- `governance/compat/test_dispatch_packet_lifecycle_hygiene.py`
+- `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`
+- `docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_COMPLETION_2026-07-01.md`
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure summary: reviewer accepted the worker return after repairing literal
+packet-shape omissions, deleted transient helper scripts before commit, closed
+the paired dispatch packets, added the lifecycle hygiene standard/checker/tests,
+and wired the checker into autorun, reviewer-fast, pre-commit, and pre-push.
+
+Boundary: local dispatch-packet lifecycle hygiene guard only. No runtime,
+provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI
+adapter, package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - KIOD-R7 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+KIOD-R7 closure material commit `dee9ebf9`, align generated active-session
+state and bootstrap read model, and update active handoff/front-door next move.
+
+Operator authorization: session-sync follows reviewer material acceptance at
+commit `dee9ebf9`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V30_2026-07-01.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/kiodR7DispatchPacketLifecycleHygieneClosure20260701.json`
+- `CVF_SESSION/state/entries/kiodR7DispatchPacketLifecycleHygieneDispatch20260701.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
+
+Rollback boundary: revert only KIOD-R7 closure session-sync paths if this sync
+is rejected. Do not revert material closure commit `dee9ebf9`, dispatch commit
+`eef49493`, or KIOD-R6 closure commit `8b89fc64`.
 
 ## Core Guard Self-Protection Authorization - KIOD-R7 Dispatch Session Sync
 
@@ -215,6 +269,7 @@ Session-sync work: KIOD-R6 enrichment session sync and V30 handoff rotation.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted and worker return repaired/accepted |
 | KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted worker return plus 3 memory-foundation owner-surface doc-only edits; DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders |
 | Checker Read-Ahead Guard Hardening | `ac5b13ac` | CLOSED_PASS_BOUNDED; checker/source read-ahead block guard implemented and wired into autorun, reviewer-fast, pre-commit, and pre-push |
 | KIOD-R5 Packet-Blocked Pilot | `be6be4e2` | CLOSED_PASS_BOUNDED; EverOS Controlled Memory Index Store scan accepted as documentation-only, 26/26 files accounted, negative-search evidence recorded, future memory-foundation/checker candidates retained |
@@ -227,22 +282,17 @@ Session-sync work: KIOD-R6 enrichment session sync and V30 handoff rotation.
 
 ## Next Allowed Move
 
-Worker executes KIOD-R7 Dispatch Packet Lifecycle Hygiene using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md`
-under `WORKER_MUST_NOT_COMMIT` and returns
-`docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md`
-with `COMPLETE_PENDING_REVIEW` evidence.
-
-Reviewer/closer owns acceptance, allowed repairs, final gates, material commit,
-and any session-sync. No KIOD-R6 rework, C-file05/D-file06/I-file19 work,
+Operator selects the next high-value package-skill or knowledge-absorption lane
+after KIOD-R7 closure. No KIOD-R6 rework, C-file05/D-file06/I-file19 work,
 runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
 MCP/CLI adapter, package lifecycle mutation, action authority, automatic
-invocation, or production-readiness claim is authorized by KIOD-R7 dispatch.
+invocation, or production-readiness claim is authorized without a fresh
+source-verified GC-018/work order.
 
 ## Claim Boundary
 
 V30 is a compact continuity handoff and session-sync carrier. It records
-KIOD-R6 enrichment closure, KIOD-R7 dispatch, V29 archive rotation, active
+KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, V29 archive rotation, active
 session pointers, and next allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit

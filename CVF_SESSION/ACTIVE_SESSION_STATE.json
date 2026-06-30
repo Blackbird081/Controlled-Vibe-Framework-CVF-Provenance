@@ -70,8 +70,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return",
-  "previousMode": "kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection",
+  "currentMode": "kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection",
+  "previousMode": "kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3181,7 +3181,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "KIOD-R7 Dispatch Packet Lifecycle Hygiene is DISPATCH_READY at material commit eef49493. Worker executes docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md under WORKER_MUST_NOT_COMMIT and returns docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md with COMPLETE_PENDING_REVIEW evidence. Reviewer/closer owns acceptance, allowed repairs, final gates, material commit, and any session-sync. Scope is guard-maintenance only: create or enrich the dispatch lifecycle hygiene standard, implement the changed-range checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring. No KIOD-R6 rework, C-file05/D-file06/I-file19 work, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized. KIOD-R6 remains CLOSED_PASS_BOUNDED at 8b89fc64; KIOD-R6 roadmap remains at 3e1bc936; Checker Read-Ahead Guard Hardening remains CLOSED_PASS_BOUNDED at ac5b13ac. KIOD-R5 remains CLOSED_PASS_BOUNDED at be6be4e2; KIOD-R4 remains CLOSED_PASS_BOUNDED at 0416843c; KIOD-R1-R3 remain closed at 5d453bce; KIOD-T1 remains closed at 211645e8. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "KIOD-R7 Dispatch Packet Lifecycle Hygiene is CLOSED_PASS_BOUNDED at material commit dee9ebf9. The accepted batch created docs/reference/external_agent_review/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_STANDARD.md, governance/compat/check_dispatch_packet_lifecycle_hygiene.py, governance/compat/test_dispatch_packet_lifecycle_hygiene.py, wired autorun/reviewer-fast/pre-commit/pre-push catalogs, repaired/accepted docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md, and added docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_COMPLETION_2026-07-01.md. Helper scripts scripts/kiod_r7_wire_catalogs.py and scripts/kiod_r7_write_worker_return.py were deleted before commit. Next allowed move: operator selects the next high-value package-skill/knowledge-absorption lane. No KIOD-R6 rework, C-file05/D-file06/I-file19 work, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized without a fresh source-verified GC-018/work order. KIOD-R6 remains CLOSED_PASS_BOUNDED at 8b89fc64; KIOD-R6 roadmap remains at 3e1bc936; Checker Read-Ahead Guard Hardening remains CLOSED_PASS_BOUNDED at ac5b13ac. KIOD-R5 remains CLOSED_PASS_BOUNDED at be6be4e2; KIOD-R4 remains CLOSED_PASS_BOUNDED at 0416843c; KIOD-R1-R3 remain closed at 5d453bce; KIOD-T1 remains closed at 211645e8. LHW24 remains the latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -3715,9 +3715,11 @@
     "claimBoundary": "Documentation-only memory-foundation reference enrichment and worker-return acceptance only. No runtime implementation, checker creation, source import, MCP or CLI adapter, public-sync, package lifecycle mutation, automatic invocation, action authority, live/provider proof, or production behavior is claimed."
   },
   "kiodR7DispatchPacketLifecycleHygieneDispatch20260701": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "eef49493",
     "materialCommitFull": "eef49493ceac1efdf9fa088b0df1c5d01375ff93",
+    "closureMaterialCommit": "dee9ebf9",
+    "closureMaterialCommitFull": "dee9ebf98da0a164a16eb28874c2fe4207e343bd",
     "baseline": "docs/baselines/CVF_GC018_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md",
     "expectedWorkerReturn": "docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md",
@@ -3728,7 +3730,28 @@
       "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base b743c085 --head HEAD --enforce PASS",
       "pre-commit governance hook PASS 74/74"
     ],
-    "claimBoundary": "Dispatch packet only. No implementation has been accepted yet. No KIOD-R6 rework, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized."
+    "claimBoundary": "Closed bounded local governance checker tranche only. No KIOD-R6 rework, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized."
+  },
+  "kiodR7DispatchPacketLifecycleHygieneClosure20260701": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "dee9ebf9",
+    "materialCommitFull": "dee9ebf98da0a164a16eb28874c2fe4207e343bd",
+    "dispatchCommit": "eef49493",
+    "dispatchCommitFull": "eef49493ceac1efdf9fa088b0df1c5d01375ff93",
+    "standard": "docs/reference/external_agent_review/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_STANDARD.md",
+    "checker": "governance/compat/check_dispatch_packet_lifecycle_hygiene.py",
+    "tests": "governance/compat/test_dispatch_packet_lifecycle_hygiene.py",
+    "workerReturn": "docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_COMPLETION_2026-07-01.md",
+    "verification": [
+      "python -m unittest governance.compat.test_dispatch_packet_lifecycle_hygiene -v PASS 18/18",
+      "python governance/compat/check_dispatch_packet_lifecycle_hygiene.py --base ca790a48 --head HEAD --enforce PASS",
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base ca790a48 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base ca790a48 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 75/75"
+    ],
+    "claimBoundary": "Local dispatch-packet lifecycle hygiene guard only. No runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim."
   },
   "assfPicT4WebProjectionBridgeDecisionClosure20260626": "ASSF-PIC-T4 is CLOSED_PASS_BOUNDED at material closure commit 60ffa4de. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md. Dispositions: WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD; SCHEMA_BRIDGE_DEFERRED_CERTIFICATION_HELD; EXTERNAL_ADAPTER_DEFERRED_NO_EVIDENCE. ASSF-PIC-T5 is released for GC-018/source-verified work-order creation after this session-sync.",
   "assfPicT5CheckerReadinessNextControlDecisionClosure20260626": "ASSF-PIC-T5 is CLOSED_PASS_BOUNDED at material closure commit 410818fc, and the ASSF-PIC roadmap is CLOSED_PASS_BOUNDED. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md. Disposition: CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE. Next-control recommendation: OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE.",
@@ -3922,7 +3945,7 @@
     "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation.",
     "claimBoundary": "MKG owner-verification decision only; no runtime, UI, checker, MCP, CLI, IDE bridge, provider-live, public-sync, generated-state, resolver, adapter, registry, package, certification, DICE, or push scope."
   },
-  "lastUpdated": "2026-06-27",
+  "lastUpdated": "2026-07-01",
   "mpiT3ExternalAgentMemoryReadContractClosure20260627": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "b825a69c",
