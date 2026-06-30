@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -69,6 +70,15 @@ INVENTORY_PATH = (
     / "generated"
     / "skill-inventory.json"
 )
+SELECTION_PROFILES_PATH = (
+    REPO_ROOT
+    / "docs"
+    / "reference"
+    / "agent_system_skills"
+    / "control_plane"
+    / "source"
+    / "skill-selection-profiles.json"
+)
 
 CLAIM_BOUNDARY = (
     "This inventory is a generated Skill Control Plane read model. It "
@@ -86,6 +96,17 @@ _HEADER: dict[str, Any] = {
 }
 
 _TERMINAL_EXCLUDED_STATUSES = {"DEPRECATED", "RETIRED", "REJECTED"}
+_VALID_DOMAIN_GROUPS = {"engineering", "governance"}
+_REQUIRED_SELECTION_LISTS = (
+    "agentUseCases",
+    "intendedUsers",
+    "notRecommendedWhen",
+    "outputGoals",
+    "recommendedWhen",
+    "secondaryDomains",
+    "selectionKeywords",
+    "specSignals",
+)
 
 
 def _repo_rel(path: Path) -> str:
@@ -222,6 +243,45 @@ def _load_template_map_count(template_map_path: Path = WEB_TEMPLATE_MAP_PATH) ->
     return len(mapping) if isinstance(mapping, dict) else 0
 
 
+def _list(value: Any) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return [_text(item) for item in value if _text(item)]
+
+
+def _load_selection_profiles(
+    selection_profiles_path: Path = SELECTION_PROFILES_PATH,
+) -> dict[str, dict[str, Any]]:
+    if not selection_profiles_path.exists():
+        return {}
+    raw = _load_json(selection_profiles_path)
+    profiles = raw.get("profiles", []) if isinstance(raw, dict) else []
+    by_skill: dict[str, dict[str, Any]] = {}
+    for profile in profiles:
+        if not isinstance(profile, dict):
+            continue
+        skill_id = _text(profile.get("skillId"))
+        if skill_id:
+            by_skill[skill_id] = profile
+    return by_skill
+
+
+def _selection_profile_violations(profile: dict[str, Any] | None) -> list[str]:
+    if profile is None:
+        return ["SELECTION_PROFILE_MISSING"]
+    violations: list[str] = []
+    if _text(profile.get("domainGroup")).lower() not in _VALID_DOMAIN_GROUPS:
+        violations.append("SELECTION_PROFILE_INVALID_DOMAIN_GROUP")
+    if not _text(profile.get("primaryDomain")):
+        violations.append("SELECTION_PROFILE_MISSING_PRIMARY_DOMAIN")
+    if not _text(profile.get("expectedOutputContribution")):
+        violations.append("SELECTION_PROFILE_MISSING_OUTPUT_CONTRIBUTION")
+    for field in _REQUIRED_SELECTION_LISTS:
+        if not _list(profile.get(field)):
+            violations.append(f"SELECTION_PROFILE_MISSING_{field.upper()}")
+    return violations
+
+
 def _truth_allows_activation(truth: dict[str, Any] | None) -> bool:
     return (
         isinstance(truth, dict)
@@ -261,6 +321,7 @@ def _drift_for_record(
     entry: dict[str, Any],
     package_source: dict[str, Any] | None,
     runtime_eligible: bool,
+    selection_profile: dict[str, Any] | None,
     truth: dict[str, Any] | None,
     web_item: dict[str, Any] | None,
 ) -> list[str]:
@@ -287,6 +348,7 @@ def _drift_for_record(
             ):
                 if field in source and _upper(source.get(field)) != _upper(entry.get(field)):
                     drift.append(f"PACKAGE_SOURCE_{field.upper()}_MISMATCH")
+        drift.extend(_selection_profile_violations(selection_profile))
 
     if runtime_eligible and not _truth_allows_activation(truth):
         drift.append("RUNTIME_ELIGIBLE_WITHOUT_APPROVED_STRICT_TRUTH_PACKET")
@@ -321,6 +383,7 @@ def _taxonomy_for(
     runtime_eligible: bool,
     activation_decision: str,
     web_item: dict[str, Any] | None,
+    selection_profile: dict[str, Any] | None,
 ) -> list[str]:
     taxonomy = ["ASSF_REGISTRY_ENTRY"]
     if _is_package_root_entry(entry) or package_source is not None:
@@ -335,7 +398,41 @@ def _taxonomy_for(
         taxonomy.append("ACTIVE_SOURCE_PACKAGE")
     if web_item is not None:
         taxonomy.append("WEB_PROJECTION_CATALOG_ITEM")
+    if selection_profile is not None:
+        taxonomy.append("SPEC_SELECTION_PROFILE")
     return taxonomy
+
+
+def _selection_read_model(profile: dict[str, Any] | None) -> dict[str, Any]:
+    if profile is None:
+        return {
+            "agentUseCases": [],
+            "domainGroup": None,
+            "expectedOutputContribution": None,
+            "intendedUsers": [],
+            "notRecommendedWhen": [],
+            "outputGoals": [],
+            "primaryDomain": None,
+            "recommendedWhen": [],
+            "secondaryDomains": [],
+            "selectionKeywords": [],
+            "selectionPriority": None,
+            "specSignals": [],
+        }
+    return {
+        "agentUseCases": _list(profile.get("agentUseCases")),
+        "domainGroup": _text(profile.get("domainGroup")),
+        "expectedOutputContribution": _text(profile.get("expectedOutputContribution")),
+        "intendedUsers": _list(profile.get("intendedUsers")),
+        "notRecommendedWhen": _list(profile.get("notRecommendedWhen")),
+        "outputGoals": _list(profile.get("outputGoals")),
+        "primaryDomain": _text(profile.get("primaryDomain")),
+        "recommendedWhen": _list(profile.get("recommendedWhen")),
+        "secondaryDomains": _list(profile.get("secondaryDomains")),
+        "selectionKeywords": _list(profile.get("selectionKeywords")),
+        "selectionPriority": profile.get("selectionPriority"),
+        "specSignals": _list(profile.get("specSignals")),
+    }
 
 
 def build_inventory(
@@ -344,6 +441,7 @@ def build_inventory(
     index_path: Path = INDEX_PATH,
     package_roots_dir: Path = PACKAGE_ROOTS_DIR,
     truth_index_path: Path = TRUTH_INDEX_PATH,
+    selection_profiles_path: Path = SELECTION_PROFILES_PATH,
     web_skill_index_path: Path = WEB_SKILL_INDEX_PATH,
     web_template_map_path: Path = WEB_TEMPLATE_MAP_PATH,
 ) -> dict[str, Any]:
@@ -353,6 +451,7 @@ def build_inventory(
         key=lambda e: (e.get("registryOrder", 10**9), _text(e.get("skillId"))),
     )
     package_sources = _load_package_sources(package_roots_dir)
+    selection_profiles = _load_selection_profiles(selection_profiles_path)
     truth_by_skill = _load_truth_by_skill(truth_index_path)
     web_items = _load_web_projection_items(web_skill_index_path)
     web_by_root = _web_by_registry_root(web_items)
@@ -364,6 +463,7 @@ def build_inventory(
     for entry in entries:
         skill_id = _text(entry.get("skillId"))
         package_source = package_sources.get(skill_id)
+        selection_profile = selection_profiles.get(skill_id)
         truth = truth_by_skill.get(skill_id)
         reasons = _runtime_ineligibility_reasons(entry)
         runtime_eligible = not reasons
@@ -376,6 +476,7 @@ def build_inventory(
             entry=entry,
             package_source=package_source,
             runtime_eligible=runtime_eligible,
+            selection_profile=selection_profile,
             truth=truth,
             web_item=web_item,
         )
@@ -426,7 +527,9 @@ def build_inventory(
                 runtime_eligible=runtime_eligible,
                 activation_decision=activation_decision,
                 web_item=web_item,
+                selection_profile=selection_profile,
             ),
+            "selection": _selection_read_model(selection_profile),
             "truth": {
                 "exists": truth is not None,
                 "runtimeEligibility": truth.get("runtimeEligibility") if truth else None,
@@ -464,12 +567,26 @@ def build_inventory(
     taxonomy_counts: Counter[str] = Counter()
     for record in records:
         taxonomy_counts.update(record["taxonomy"])
+    domain_counts: Counter[str] = Counter()
+    for record in records:
+        primary_domain = _text(record.get("selection", {}).get("primaryDomain"))
+        if primary_domain:
+            domain_counts[primary_domain] += 1
+
+    known_package_skills = {
+        _text(record.get("skillId"))
+        for record in records
+        if "ASSF_PACKAGE_ROOT" in record.get("taxonomy", [])
+    }
+    for skill_id in sorted(set(selection_profiles) - known_package_skills):
+        drift_counts.update(["SELECTION_PROFILE_WITHOUT_PACKAGE_ROOT"])
 
     inventory: dict[str, Any] = dict(_HEADER)
     inventory["sourcePaths"] = {
         "assfGeneratedIndex": _repo_rel(index_path),
         "assfRegistryEntries": _repo_rel(entries_dir),
         "packageRoots": _repo_rel(package_roots_dir),
+        "selectionProfiles": _repo_rel(selection_profiles_path),
         "skillTruthIndex": _repo_rel(truth_index_path),
         "webSkillIndex": _repo_rel(web_skill_index_path),
         "webTemplateMap": _repo_rel(web_template_map_path),
@@ -507,6 +624,10 @@ def build_inventory(
             "authority": "presentation/projection/catalog item",
             "token": "WEB_PROJECTION_CATALOG_ITEM",
         },
+        "specSelectionProfiles": {
+            "authority": "spec-to-skill selection guidance only",
+            "token": "SPEC_SELECTION_PROFILE",
+        },
     }
     inventory["summary"] = {
         "activeResolverReadyPackages": taxonomy_counts.get("ACTIVE_RESOLVER_READY_PACKAGE", 0),
@@ -518,10 +639,12 @@ def build_inventory(
         "packageRoots": taxonomy_counts.get("ASSF_PACKAGE_ROOT", 0),
         "publicProdPackages": 0,
         "runtimeEligiblePackages": taxonomy_counts.get("RUNTIME_ELIGIBLE_PACKAGE", 0),
+        "selectionProfiledPackages": taxonomy_counts.get("SPEC_SELECTION_PROFILE", 0),
         "templateMapEntries": _load_template_map_count(web_template_map_path),
         "webProjectionItems": len(web_items),
         "webProjectionOnlyItems": len(web_projection_only),
     }
+    inventory["domainCounts"] = {key: domain_counts[key] for key in sorted(domain_counts)}
     inventory["statusCounts"] = {
         "candidateState": _status_counts(records, "candidateState"),
         "certificationState": _status_counts(records, "certificationState"),
@@ -542,6 +665,7 @@ def validate_inventory_matches_sources(
     index_path: Path = INDEX_PATH,
     package_roots_dir: Path = PACKAGE_ROOTS_DIR,
     truth_index_path: Path = TRUTH_INDEX_PATH,
+    selection_profiles_path: Path = SELECTION_PROFILES_PATH,
     web_skill_index_path: Path = WEB_SKILL_INDEX_PATH,
     web_template_map_path: Path = WEB_TEMPLATE_MAP_PATH,
 ) -> list[str]:
@@ -553,6 +677,7 @@ def validate_inventory_matches_sources(
             index_path=index_path,
             package_roots_dir=package_roots_dir,
             truth_index_path=truth_index_path,
+            selection_profiles_path=selection_profiles_path,
             web_skill_index_path=web_skill_index_path,
             web_template_map_path=web_template_map_path,
         )
@@ -583,6 +708,105 @@ def validate_inventory_matches_sources(
             "`python governance/compat/generate_skill_control_plane_inventory.py --generate`"
         )
     return violations
+
+
+def _normalized_terms(text: str) -> set[str]:
+    return {term for term in re.split(r"[^a-z0-9]+", text.lower()) if term}
+
+
+def _phrase_hits(spec_text: str, phrases: list[str]) -> list[str]:
+    normalized = " ".join(sorted(_normalized_terms(spec_text)))
+    lowered = spec_text.lower()
+    spec_terms = _normalized_terms(spec_text)
+    hits: list[str] = []
+    for phrase in phrases:
+        p = phrase.lower().strip()
+        if not p:
+            continue
+        phrase_terms = _normalized_terms(p)
+        if len(phrase_terms) == 1 and len(next(iter(phrase_terms))) <= 3:
+            if phrase_terms.issubset(spec_terms):
+                hits.append(phrase)
+            continue
+        if re.search(rf"(?<![a-z0-9]){re.escape(p)}(?![a-z0-9])", lowered):
+            hits.append(phrase)
+            continue
+        words = phrase_terms
+        if words and words.issubset(_normalized_terms(normalized)):
+            hits.append(phrase)
+    return hits
+
+
+def recommend_skills_for_spec(
+    spec_text: str,
+    inventory: dict[str, Any] | None = None,
+    *,
+    top: int = 5,
+    runtime_only: bool = False,
+) -> list[dict[str, Any]]:
+    """Return deterministic package-skill recommendations for a spec string."""
+    inventory = inventory or build_inventory()
+    recommendations: list[dict[str, Any]] = []
+    for record in inventory.get("records", []):
+        if not isinstance(record, dict):
+            continue
+        if "ASSF_PACKAGE_ROOT" not in record.get("taxonomy", []):
+            continue
+        runtime = record.get("runtime", {})
+        if runtime_only and not runtime.get("eligible"):
+            continue
+        selection = record.get("selection", {})
+        if not _text(selection.get("primaryDomain")):
+            continue
+        keyword_hits = _phrase_hits(spec_text, _list(selection.get("selectionKeywords")))
+        signal_hits = _phrase_hits(spec_text, _list(selection.get("specSignals")))
+        goal_hits = _phrase_hits(spec_text, _list(selection.get("outputGoals")))
+        domain_hits = _phrase_hits(
+            spec_text,
+            [
+                _text(selection.get("primaryDomain")).replace("-", " "),
+                *[domain.replace("-", " ") for domain in _list(selection.get("secondaryDomains"))],
+            ],
+        )
+        score = (
+            len(keyword_hits) * 5
+            + len(signal_hits) * 3
+            + len(goal_hits) * 2
+            + len(domain_hits) * 2
+        )
+        if score == 0:
+            continue
+        priority = selection.get("selectionPriority")
+        try:
+            priority_int = int(priority)
+        except (TypeError, ValueError):
+            priority_int = 0
+        score += max(priority_int, 0) / 100
+        if runtime.get("eligible"):
+            score += 0.5
+        recommendations.append(
+            {
+                "activationDecision": record.get("activation", {}).get("decision"),
+                "domainGroup": selection.get("domainGroup"),
+                "matchedGoals": goal_hits,
+                "matchedKeywords": keyword_hits,
+                "matchedSignals": signal_hits,
+                "primaryDomain": selection.get("primaryDomain"),
+                "recommendedWhen": selection.get("recommendedWhen", []),
+                "runtimeEligible": bool(runtime.get("eligible")),
+                "score": round(score, 2),
+                "secondaryDomains": selection.get("secondaryDomains", []),
+                "skillId": record.get("skillId"),
+            }
+        )
+    recommendations.sort(
+        key=lambda item: (
+            -float(item["score"]),
+            str(item.get("primaryDomain")),
+            str(item.get("skillId")),
+        )
+    )
+    return recommendations[:top]
 
 
 def generate_inventory(inventory_path: Path = INVENTORY_PATH) -> None:
