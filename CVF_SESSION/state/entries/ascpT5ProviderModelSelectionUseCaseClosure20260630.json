@@ -1,0 +1,21 @@
+{
+  "stateOrder": 643,
+  "stateKey": "ascpT5ProviderModelSelectionUseCaseClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "c15d9bd6",
+    "fullMaterialCommit": "c15d9bd6cb4f03ed6814f9d55b9848f60347f0ed",
+    "review": "docs/reviews/CVF_ASCP_T5_PROVIDER_MODEL_SELECTION_USE_CASE_COMPLETION_2026-06-30.md",
+    "summary": "Upgraded ASCP-T5 package use-proof selection from model-only selection to bounded provider-and-model selection. Default provider is AUTO_FROM_ASSF_LIVE_PROVIDER_CANDIDATES, resolved provider is alibaba-dashscope, unsupported providers are denied before package body read or provider call, and JSON output is ASCII-safe for Windows stdout.",
+    "liveProof": {
+      "provider": "alibaba-dashscope",
+      "model": "deepseek-v4-flash",
+      "httpStatus": 200,
+      "latencyMs": 11031,
+      "traceId": "6a62e1fc-b6a6-978d-a961-fa2456f80e43",
+      "receiptId": "sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1",
+      "evidenceFileHash": "sha256:3a1b06ffd6d6366fe3bd471e7b160716ef553a6eb6fc69679bbf774de7ea5221"
+    },
+    "claimBoundary": "ASCP-T5 Model Gateway use case only; no production Model Gateway/model router, multi-provider fallback, provider registry mutation, new credential source, ACTIVE lifecycle promotion, external MCP runtime, public-sync, or production-readiness claim."
+  }
+}

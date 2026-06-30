@@ -31,24 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 corrective patch closed at material commit `09656d16` with qwen-turbo denied as `MODEL_FREE_QUOTA_NOT_VERIFIED` and live proof PASS using `qwen3.6-flash-2026-04-16`, HTTP 200, use-proof receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`; ASCP-T5 original adapter closed at `d409b602`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, production Model Gateway/model router work, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 provider/model selection use case closed at material commit `c15d9bd6` with auto provider `alibaba-dashscope`, model `deepseek-v4-flash`, HTTP 200, use-proof receipt `sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1`; ASCP-T5 corrective patch closed at `09656d16`; ASCP-T5 original adapter closed at `d409b602`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
+Current mode marker: `ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`
 
-Current mode: `ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
+Current mode: `ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`
 
-`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
+`ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`ascp_t5_package_use_proof_adapter_closed_pending_operator_next_lane_selection`
+`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ASCP-T5 provider/model selection use case | `c15d9bd6` | CLOSED_PASS_BOUNDED; upgraded ASCP-T5 package use-proof selection from model-only to bounded provider-and-model selection; default provider resolves to `alibaba-dashscope`, unsupported providers are denied before package body read or provider call, live proof passed with `deepseek-v4-flash`, HTTP 200, latency 11031 ms, use-proof receipt `sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1`; this is an ASCP-T5 Model Gateway use case only, not a production Model Gateway/model router |
 | ASCP-T5 corrective live model selection patch | `09656d16` | CLOSED_PASS_BOUNDED; added shared live-provider env bootstrap and free-quota model selector; default model resolves from Alibaba free-quota ledger; explicit `qwen-turbo` is denied as `MODEL_FREE_QUOTA_NOT_VERIFIED`; live proof passed with `qwen3.6-flash-2026-04-16`, HTTP 200, latency 14438 ms, use-proof receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`; no ACTIVE lifecycle promotion, remaining package conversion, provider registry mutation, external MCP runtime, public-sync, or production-readiness claim |
 | ASCP-T5 package execution/use-proof adapter | `d409b602` | CLOSED_PASS_BOUNDED; added package use-proof adapter standard, helper, and tests; dry-run returned `DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF` and `USED_WITH_RECEIPT`; live proof returned `LIVE_PROVIDER_USE_PROOF_PASS`, HTTP 200, latency 2162 ms, skill usage receipt `sha256:aa4e26d13ccd75475431e434ef1bd304f20d3b72d77f95a4726fdf6038f2455f`, and use-proof receipt `sha256:f67bd3331f81e088c2f75f7287db0fce60508abbc89cd7099481e5e86aeaa7dc`; no lifecycle mutation, remaining package conversion, external MCP runtime execution, provider registry mutation, public-sync, or production claim |
 | ASCP-T4 package lifecycle source-state decision | `1625ab8c` | CLOSED_PASS_BOUNDED; added read-only lifecycle decision helper and tests; decision `HOLD_NO_ACTIVE_SOURCE_MUTATION`, `NO_SOURCE_MUTATIONS_AUTHORIZED`; smoke observed 32 total candidates, 6 runtime eligible, 6 `ACTIVATION_READY`, 6 external projection ready, and 0 active source records; no package lifecycle source moved to `ACTIVE`; no package body read, registry/index/truth/package-root mutation, skill usage receipt emission or consumption, provider/live proof, public-sync, execution adapter, or production claim |
@@ -148,24 +149,27 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
+Mode: `ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`
 
 Next allowed move: operator selects the next high-value lane. Any `ACTIVE`
 lifecycle promotion, remaining package conversion, external MCP package
-execution runtime, provider registry mutation, public-sync, direct import,
-merge authority, commit authority, or production-readiness claim requires fresh
-GC-018/source-verified work order and live/provider proof when governance
-behavior is claimed. ASCP-T5 package execution/use-proof adapter closed at
-material commit `d409b602`; ASCP-T4 package lifecycle source-state decision
+execution runtime, provider registry mutation, production Model Gateway/model
+router work, public-sync, direct import, merge authority, commit authority, or
+production-readiness claim requires fresh GC-018/source-verified work order and
+live/provider proof when governance behavior is claimed. ASCP-T5 provider/model
+selection use case closed at material commit `c15d9bd6`; ASCP-T5 corrective
+patch closed at `09656d16`; ASCP-T5 package execution/use-proof adapter closed
+at material commit `d409b602`; ASCP-T4 package lifecycle source-state decision
 closed at material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`.
-LHW24 remains the latest closed numbered LHW wave.
+LHW24 remains the latest closed numbered LHW wave. A full Model Gateway/model
+router remains a separate future roadmap.
 
 Current audit evidence: 32 ASSF records, 24 package-root records, 6 runtime
 eligible package roots, 6 `ACTIVATION_READY` resolver decisions, 6 external
 projection ready packages, 0 active source records, activation policy states for
 selected/ready/body-read/use classification, bounded external metadata/policy
 projection, deterministic loader receipts for explicit eligible body reads,
-one bounded ASCP-T5 live use-proof receipt, and 18 remaining package roots blocked by
+two bounded ASCP-T5 live use-proof receipts, and 18 remaining package roots blocked by
 `certificationState=NOT_STARTED`,
 `uatState=NOT_STARTED`, and `internalAgentDisposition=CANDIDATE`. No automatic
 package activation, automatic skill invocation telemetry outside the bounded
@@ -175,7 +179,7 @@ production-readiness claim is authorized.
 
 MPI-T6 runtime reopen conditions are inherited from `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`: an operator-stated product requirement explicitly needs the MPI lane itself to add live runtime memory read / vector-durable query / external-agent MCP-CLI read not satisfied by current MPI contract/helper or pre-existing durable/reinjection surfaces; MPI-T5 checker repeatedly flags real MPI-lane overclaim attempts caused by an actual missing MPI-lane capability rather than wording error; or an external integration partner requires the MPI lane specifically, not pre-existing memory routes, to expose live MCP-CLI memory read access. Any reopened runtime work still requires fresh operator decision, fresh GC-018, source verification, live/provider proof when governance behavior is claimed, public/provenance boundary review, and secrets/quota handling if applicable.
 
-No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation beyond session sync, DICE runtime expansion, MPI-T6 runtime work, Policy_Local, Document Translator, Model Gateway/Sandbox runtime expansion, push from provenance workspace, P0 registry reopen, C06 checker reopen, C02 checker reopen, C05 checker reopen, T5 manifest reopen, further T6 checker extension/reopen, T7 reopen, or downstream implementation without separate authorization and regression/reopen evidence. Live/API keys may be used only in a future authorized live-proof tranche; FPC-PRG-T2 did not use live keys because it made no runtime/provider governance claim.
+No runtime/MCP/CLI/IDE bridge implementation, further provider/live proof, resolver mutation, adapter mutation, package activation, certification decision, generated workspace state mutation beyond session sync, DICE runtime expansion, MPI-T6 runtime work, Policy_Local, Document Translator, production Model Gateway/model router work, Model Gateway/Sandbox runtime expansion, push from provenance workspace, P0 registry reopen, C06 checker reopen, C02 checker reopen, C05 checker reopen, T5 manifest reopen, further T6 checker extension/reopen, T7 reopen, or downstream implementation without separate authorization and regression/reopen evidence. Live/API keys may be used only in a future authorized live-proof tranche; FPC-PRG-T2 did not use live keys because it made no runtime/provider governance claim.
 
 ## Parked Checkpoint
 

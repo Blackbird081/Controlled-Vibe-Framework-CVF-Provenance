@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 corrective patch closed at material commit `09656d16` with qwen-turbo denied as `MODEL_FREE_QUOTA_NOT_VERIFIED` and live proof PASS using `qwen3.6-flash-2026-04-16`, HTTP 200, receipt `sha256:435388ae0860a0a61f33dc4db7d7472990c0080be19d6e5158ed89a053f5aa9b`; ASCP-T5 original adapter closed at `d409b602`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V28_2026-06-30.md; next allowed move=operator selects the next high-value lane; any `ACTIVE` lifecycle promotion, remaining package conversion, external MCP package execution runtime, production Model Gateway/model router work, or public-sync requires fresh GC-018/source-verified work order; parked checkpoint=ASCP-T5 provider/model selection use case closed at material commit `c15d9bd6` with auto provider `alibaba-dashscope`, model `deepseek-v4-flash`, HTTP 200, receipt `sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1`; ASCP-T5 corrective patch closed at `09656d16`; ASCP-T5 original adapter closed at `d409b602`; ASCP-T4 closed at `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -18,13 +18,13 @@ Startup acknowledged: current mode=`ascp_t5_corrective_live_model_selection_clos
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `09656d16` ASCP-T5 corrective live model selection patch |
-| Latest session-sync target | session sync after ASCP-T5 corrective material closure |
+| Latest material closeout | `c15d9bd6` ASCP-T5 provider/model selection use case |
+| Latest session-sync target | session sync after ASCP-T5 provider/model selection use-case material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`ascp_t5_corrective_live_model_selection_closed_pending_operator_next_lane_selection`
+`ascp_t5_provider_model_selection_use_case_closed_pending_operator_next_lane_selection`
 
 ## Purpose
 
@@ -63,6 +63,59 @@ against CVF-governed surfaces.
 External agent memory files: non-canonical convenience only.
 
 ## Latest Work / Changes
+
+Material commit `c15d9bd6` closed ASCP-T5 provider/model selection use case.
+Full SHA: `c15d9bd6cb4f03ed6814f9d55b9848f60347f0ed`.
+
+It added bounded provider-and-model selection to the ASCP-T5 package use-proof
+adapter. Default provider selection is
+`AUTO_FROM_ASSF_LIVE_PROVIDER_CANDIDATES`, resolved provider is
+`alibaba-dashscope`, unsupported providers are denied before package body read
+or provider call, and live proof passed with `deepseek-v4-flash`, HTTP 200,
+latency 11031 ms, trace `6a62e1fc-b6a6-978d-a961-fa2456f80e43`, and use-proof
+receipt `sha256:db51ca20b1967d95b5cc209185ffabd41b22adfbabe61b428cc6314ad1d3c0f1`.
+This is an ASCP-T5 Model Gateway use case only. It does not implement a
+production Model Gateway/model router, multi-provider fallback, provider
+registry mutation, new credential source, package lifecycle promotion,
+external MCP runtime, public-sync source, or production claim.
+
+## Core Guard Self-Protection Authorization - ASCP-T5 Provider/Model Use-Case Session Sync
+
+Authorized guard-maintenance scope: session-sync only after ASCP-T5
+provider/model selection use-case material commit `c15d9bd6`; update active
+handoff, front door, active session state sources, generated active session
+state, and bootstrap read model.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/ascpT5ProviderModelSelectionUseCaseClosure20260630.json`
+- `AGENT_HANDOFF_V28_2026-06-30.md`
+
+Operator authorization: operator approved treating provider/model selection as
+a small ASCP-T5 Model Gateway use case while keeping the full Model
+Gateway/model router roadmap separate.
+
+Rollback boundary: revert only this session-sync update if rejected; do not
+revert ASCP-T5 provider/model material commit `c15d9bd6`, corrective commit
+`09656d16`, earlier ASCP closures, package roots, truth packets, generated ASSF
+index, or unrelated session-sync history.
+
+## GC-020 Marker - ASCP-T5 Provider/Model Use-Case Material Closure
+
+Material commit `c15d9bd6` closed ASCP-T5 provider/model selection use case.
+Full material SHA:
+`c15d9bd6cb4f03ed6814f9d55b9848f60347f0ed`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`c15d9bd6`. It does not authorize production Model Gateway/model router work,
+multi-provider fallback, provider registry mutation, package lifecycle
+promotion, external MCP runtime, public-sync export, direct import, merge
+authority, commit authority, or production-readiness.
 
 Material commit `09656d16` closed ASCP-T5 corrective live model selection.
 Full SHA: `09656d1635e87d36915e96eb7393faa151ce0144`.
@@ -294,9 +347,11 @@ Recent material chain:
 
 Operator selects the next high-value lane. Any `ACTIVE` lifecycle promotion,
 remaining package conversion, external MCP package execution runtime, provider
-registry mutation, public-sync, direct import, merge authority, commit
-authority, or production-readiness claim requires fresh GC-018/source-verified
-work order and live/provider proof when governance behavior is claimed.
+registry mutation, production Model Gateway/model router work, public-sync,
+direct import, merge authority, commit authority, or production-readiness claim
+requires fresh GC-018/source-verified work order and live/provider proof when
+governance behavior is claimed. A full Model Gateway/model router remains a
+separate future roadmap.
 
 No provider runtime interception, provider-side audit access, automatic package
 activation, automatic skill invocation telemetry outside the bounded loader,
