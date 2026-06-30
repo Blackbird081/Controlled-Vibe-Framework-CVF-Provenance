@@ -13,7 +13,10 @@ or understood it; see the ADIF entry template's Claim Boundary section.
 
 from __future__ import annotations
 
+import argparse
+import json
 import re
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -257,3 +260,67 @@ def resolve_defect_packet(
         for entry in bounded
     )
     return DefectPacket(items=items, truncated=truncated, total_candidates=total_candidates)
+
+
+def packet_to_human_text(packet: DefectPacket) -> str:
+    """Format resolver output for direct agent/operator command use."""
+    lines = [
+        "ADIF defect resolver",
+        f"Total candidates: {packet.total_candidates}",
+        f"Returned defects: {len(packet.items)}",
+        f"Truncated: {packet.truncated}",
+    ]
+    if not packet.items:
+        lines.append("Returned defects: NONE_RETURNED")
+    else:
+        for item in packet.items:
+            lines.append(
+                f"- {item.defect_id} [{item.severity}/{item.enforcement_level}] "
+                f"{item.title} (checker: {item.checker_bindings}; source: {item.source_path})"
+            )
+    lines.append(
+        "Claim boundary: Returning this packet is not evidence that any caller "
+        "read or understood it."
+    )
+    return "\n".join(lines)
+
+
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Resolve a bounded read-only ADIF defect packet."
+    )
+    parser.add_argument("--task-class", default=None, help="Optional task class filter")
+    parser.add_argument("--role", default=None, help="Optional role filter")
+    parser.add_argument("--lifecycle-phase", default=None, help="Optional lifecycle phase filter")
+    parser.add_argument("--surface-selector", default=None, help="Optional surface selector substring")
+    parser.add_argument("--risk-ceiling", default=None, help="Optional LOW, MEDIUM, or HIGH ceiling")
+    parser.add_argument("--max-results", type=int, default=_DEFAULT_MAX_RESULTS)
+    parser.add_argument("--json", action="store_true", help="Print JSON output")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = _build_parser()
+    args = parser.parse_args(argv)
+    try:
+        packet = resolve_defect_packet(
+            task_class=args.task_class,
+            role=args.role,
+            lifecycle_phase=args.lifecycle_phase,
+            surface_selector=args.surface_selector,
+            risk_ceiling=args.risk_ceiling,
+            max_results=args.max_results,
+        )
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
+    if args.json:
+        print(json.dumps(packet.to_dict(), indent=2, ensure_ascii=False))
+    else:
+        print(packet_to_human_text(packet))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import importlib.util
+import io
 import sys
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 MODULE_PATH = Path(__file__).resolve().with_name("run_adif_preflight_readout.py")
@@ -21,6 +23,7 @@ class PreflightReadoutTests(unittest.TestCase):
             task_class="Closure",
             role="closer",
             lifecycle_phase="pre-closure",
+            max_results=10,
         )
         defect_ids = {line.defect_id for line in readout.lines}
         self.assertIn("ADIF-0003", defect_ids)
@@ -65,11 +68,29 @@ class PreflightReadoutTests(unittest.TestCase):
         self.assertIn("truncated", readout.to_human_text().lower())
 
     def test_does_not_duplicate_resolver_matching_logic(self) -> None:
-        direct_packet = MODULE.resolver.resolve_defect_packet(task_class="Closure", role="closer")
-        readout = MODULE.build_preflight_readout(task_class="Closure", role="closer")
+        direct_packet = MODULE.resolver.resolve_defect_packet(
+            task_class="Closure",
+            role="closer",
+            max_results=5,
+        )
+        readout = MODULE.build_preflight_readout(task_class="Closure", role="closer", max_results=5)
         direct_ids = [item.defect_id for item in direct_packet.items]
         readout_ids = [line.defect_id for line in readout.lines]
         self.assertEqual(direct_ids, readout_ids)
+
+    def test_cli_human_output_uses_readout_text(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            exit_code = MODULE.main(["--task-class", "Nonexistent Task Class"])
+        self.assertEqual(exit_code, 0)
+        self.assertIn("no matching defect entries", buffer.getvalue())
+
+    def test_cli_json_output_uses_readout_shape(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            exit_code = MODULE.main(["--task-class", "Nonexistent Task Class", "--json"])
+        self.assertEqual(exit_code, 0)
+        self.assertIn('"lines": []', buffer.getvalue())
 
 
 if __name__ == "__main__":
