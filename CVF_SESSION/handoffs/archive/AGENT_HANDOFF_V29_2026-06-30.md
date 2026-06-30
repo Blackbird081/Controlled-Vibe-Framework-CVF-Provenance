@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author a fresh GC-018 baseline and source-verified work order for KIOD-R6 doc-only memory-foundation enrichment from retained KIOD-R5 candidates; parked checkpoint=KIOD-R6 roadmap ready at material commit `3e1bc936`, after checker read-ahead hardening `ac5b13ac`, KIOD-R5 closure `be6be4e2`, KIOD-R5 selected-source dispatch `2924fddd`, and KIOD-R4 material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
+Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=operator selects the next governed knowledge-intake lane after KIOD-R6 doc-only memory-foundation enrichment closure; parked checkpoint=KIOD-R6 enrichment accepted at material commit `8b89fc64`, after KIOD-R6 roadmap `3e1bc936`, checker read-ahead hardening `ac5b13ac`, KIOD-R5 closure `be6be4e2`, KIOD-R5 selected-source dispatch `2924fddd`, and KIOD-R4 material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`.
 
 ## Current State
 
@@ -18,13 +18,109 @@ Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_roadmap
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `3e1bc936` KIOD-R6 Memory Foundation Enrichment Roadmap |
-| Latest session-sync target | session sync after KIOD-R6 roadmap |
+| Latest material packet | `8b89fc64` KIOD-R6 Memory Foundation Enrichment |
+| Latest session-sync target | session sync after KIOD-R6 enrichment acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
+`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
+
+## KIOD-R6 Memory Foundation Enrichment Closure - 2026-07-01
+
+Material closure commit:
+`8b89fc6469fc97156636c828528832d370d59c86`
+
+Short SHA: `8b89fc64`
+
+Artifacts:
+
+- `docs/reference/memory_foundation/README.md`
+- `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md`
+- `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md`
+- `docs/reviews/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_WORKER_RETURN_2026-06-30.md`
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure summary: reviewer accepted the ADAPT_DOC_ONLY worker-return batch and
+committed the 3 memory-foundation owner-surface edits plus worker return as one
+reviewer batch. The accepted enrichment adds memory claim boundary taxonomy,
+partial rebuild/hash verification doctrine, receipt type taxonomy with
+`DENIAL_RECEIPT`, memory access gate categories, sensitivity levels, retention
+classes, and reconciliation rows.
+
+DEFER candidates: C-file05, D-file06, and I-file19 require separate future work
+orders if the operator decides to proceed.
+
+Next allowed move: operator selects the next governed knowledge-intake lane.
+
+Claim boundary: doc-only memory-foundation enrichment and worker-return
+acceptance only. No runtime implementation, checker creation, source import,
+MCP or CLI adapter, dashboard, public-sync, package lifecycle mutation,
+automatic invocation, action authority, live/provider proof, or production
+behavior is authorized or claimed.
+
+## Core Guard Self-Protection Authorization - KIOD-R6 Enrichment Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+KIOD-R6 enrichment material commit `8b89fc64`; regenerate active session state
+and align front door, bootstrap read model, and active handoff.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V29_2026-06-30.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/kiodR6MemoryFoundationEnrichmentClosure20260701.json`
+
+Operator authorization: session-sync follows reviewer material acceptance at
+commit `8b89fc64` for KIOD-R6 Memory Foundation Enrichment.
+
+Rollback boundary: revert only this session-sync if rejected; do not revert
+KIOD-R6 enrichment commit `8b89fc64`, roadmap commit `3e1bc936`, checker
+read-ahead hardening commit `ac5b13ac`, or KIOD-R5 closure commit `be6be4e2`.
+
+## GC-020 HEAD Marker - KIOD-R6 Enrichment Closure
+
+Latest material commit requiring in-place handoff trace:
+`8b89fc6469fc97156636c828528832d370d59c86`
+
+Short SHA: `8b89fc64`
+
+Material work: KIOD-R6 Memory Foundation Enrichment.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`8b89fc64`. It records doc-only memory-foundation enrichment acceptance and
+does not authorize runtime/provider/live behavior, public-sync, package
+activation, automatic invocation, action authority, direct external source
+import, dashboard, MCP/CLI adapter, checker implementation, or production
+behavior.
+
+## Agent Operation Trace Block - KIOD-R6 Enrichment Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | KIOD-R6 enrichment session sync, 2026-07-01 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces and active V29 handoff |
+| Allowed scope source | GC-020 after KIOD-R6 enrichment material commit `8b89fc64` plus generated active-session state discipline |
+| Before status evidence | material commit `8b89fc64` closed KIOD-R6 enrichment; active continuity still named roadmap-ready work-order authoring |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no material enrichment edits beyond state/front-door/handoff sync |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public/source-import/checker claim |
+| Agent type | session-sync steward |
+| Invocation ID | `kiod-r6-enrichment-session-sync-2026-07-01` |
+| Expected manifest | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR6MemoryFoundationEnrichmentClosure20260701.json` |
+| Actual changed set | `AGENT_HANDOFF_V29_2026-06-30.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/kiodR6MemoryFoundationEnrichmentClosure20260701.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## KIOD-R6 Memory Foundation Enrichment Roadmap - 2026-06-30
 
@@ -946,6 +1042,7 @@ production-readiness claims.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted worker return plus 3 memory-foundation owner-surface doc-only edits; DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders |
 | KIOD-R5 Packet-Blocked Pilot | `be6be4e2` | CLOSED_PASS_BOUNDED; EverOS Controlled Memory Index Store scan accepted as documentation-only, 26/26 files accounted, seven negative-search commands recorded, future memory-foundation/checker candidates retained, direct import/runtime/public/package claims rejected |
 | SCPL-WEB-T1 Skill Control Plane Web Projection | `a01bdca2` | CLOSED_PASS_BOUNDED; Web generator now emits dashboard-ready Skill Control Plane projection, skills-index reports 52 front-door skills, 25 ASSF projections, and 24 runtime package projections, with drift guard wiring |
 | ASCP-P4-P6 Remaining Package Production Scale-Up | `687d4423` | CLOSED_PASS_BOUNDED; 24 package roots now ACTIVE production package skills with 24 runtime-eligible, 24 activation-ready, 24 CLI/MCP adapter, 24 selection-profiled, 28 Web projection, and 0 drift readout |
@@ -956,6 +1053,12 @@ production-readiness claims.
 | ASCP-P1-P3 runtime package skills productionization | `43e4092f` | CLOSED_PASS_BOUNDED; six-package production baseline |
 
 ## Latest Work / Changes
+
+KIOD-R6 Memory Foundation Enrichment closed at material commit `8b89fc64`.
+Reviewer accepted the doc-only memory-foundation enrichment worker return and
+3 owner-surface edits as one reviewer batch. DEFER candidates C-file05,
+D-file06, and I-file19 require separate future work orders if the operator
+decides to proceed.
 
 KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap is ready at material
 commit `9dda8681`. Decision: `OPEN_KIOD_R1_OWNER_SURFACE_TAXONOMY`.
@@ -981,21 +1084,21 @@ remains the central Skill Control Plane inventory baseline at material commit
 
 ## Next Allowed Move
 
-Author a fresh GC-018 baseline and source-verified work order for KIOD-R6
-doc-only memory-foundation enrichment from retained KIOD-R5 candidates.
+Operator selects the next governed knowledge-intake lane after KIOD-R6 Memory
+Foundation Enrichment closed bounded at material commit `8b89fc64`.
 
-The work-order author must read applicable checker source before drafting,
-include a `Checker Source Read-Ahead Block`, include ADIF disclosure, include a
-Source Verification Block with Source fact type, include Negative Search And
-Collision Discipline, include a Roadmap-to-Work-Order Trace Matrix, and use
-`WORKER_MUST_NOT_COMMIT` with reviewer-owned closure.
+Reviewer accepted the KIOD-R6 worker return and committed the 3
+memory-foundation owner-surface edits plus worker return as one reviewer batch.
+The result is doc-only enrichment only: memory claim boundary taxonomy, partial
+rebuild/hash verification doctrine, receipt type taxonomy with
+`DENIAL_RECEIPT`, memory access gate categories, sensitivity levels, retention
+classes, and reconciliation rows. DEFER candidates C-file05, D-file06, and
+I-file19 require separate future work orders if operator selects them.
 
-KIOD-R6 roadmap is ready at material commit `3e1bc936`; it does not dispatch a
-worker and does not authorize memory-foundation reference edits, checker
-implementation, runtime/provider behavior, SQLite/LanceDB implementation,
-MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit
-beyond session sync, automatic invocation, action authority, package lifecycle
-mutation, or production behavior.
+No runtime implementation, checker creation, source import, MCP or CLI adapter,
+public-sync, package lifecycle mutation, automatic invocation, action
+authority, live/provider proof, or production behavior is authorized or
+claimed. KIOD-R6 roadmap remains at material commit `3e1bc936`.
 
 Checker read-ahead hardening remains closed at material commit `ac5b13ac`.
 KIOD-R5 remains closed at material commit `be6be4e2`; checker/test/generated

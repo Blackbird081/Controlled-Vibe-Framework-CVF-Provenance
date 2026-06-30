@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V29_2026-06-30.md`
+4. `AGENT_HANDOFF_V30_2026-07-01.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,37 +24,32 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V29_2026-06-30.md` |
+| Active handoff | `AGENT_HANDOFF_V30_2026-07-01.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author a fresh GC-018 baseline and source-verified work order for KIOD-R6 doc-only memory-foundation enrichment from retained KIOD-R5 candidates; parked checkpoint=KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R5 selected-source dispatch committed at `2924fddd`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed knowledge-intake lane after KIOD-R6 doc-only memory-foundation enrichment closure; parked checkpoint=KIOD-R6 enrichment accepted at material commit `8b89fc64`, V29 archived under `CVF_SESSION/handoffs/archive/`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
+Current mode marker: `kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
 
-Current mode: `kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
+Current mode: `kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
 
-`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
+`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection`
-
-## Current Open Roadmap
-
-| Work | Commit | Status |
-|---|---|---|
-| KIOD-R6 Memory Foundation Enrichment Roadmap | `3e1bc936` | ROADMAP_READY_FOR_WORK_ORDER_AUTHORING; roadmap `docs/roadmaps/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_ROADMAP_2026-06-30.md`; next move is a fresh GC-018/source-verified work order, not implementation |
+`kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
 
 ## Current Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted doc-only enrichment of memory-foundation owner surfaces and worker return; no runtime/checker/source-import/adapter/public/package/action-authority/live/provider/production claim |
 | Checker Read-Ahead Guard Hardening | `ac5b13ac` | CLOSED_PASS_BOUNDED; ADIF-0020 added, checker/source read-ahead block guard implemented and wired into autorun, reviewer-fast, pre-commit, and pre-push; guard orientation and literal-format gotchas warn agents to read checker constants and literal tokens before writing governed artifacts; no runtime/provider/live behavior, public-sync, package activation, automatic invocation, action authority, direct external source import, dashboard, MCP/CLI adapter, or production behavior claim |
 | KIOD-R5 Packet-Blocked Pilot closure | `be6be4e2` | CLOSED_PASS_BOUNDED; accepted EverOS Controlled Memory Index Store worker return, 26/26 files accounted, negative-search evidence present, future memory-foundation enrichment and CVF-authored checker candidates retained, checker/test/generated examples rejected for direct import; no runtime/provider behavior, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit beyond session sync, automatic invocation, action authority, package lifecycle mutation, or production-readiness claim |
 
@@ -62,6 +57,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted worker return plus 3 memory-foundation owner-surface doc-only edits; DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders |
 | Checker Read-Ahead Guard Hardening | `ac5b13ac` | CLOSED_PASS_BOUNDED; machine-checkable `Checker Source Read-Ahead Block` discipline now required for changed governed execution artifacts under `docs/baselines`, `docs/work_orders`, `docs/reviews`, and `docs/roadmaps` |
 | KIOD-R5 Packet-Blocked Pilot | `be6be4e2` | CLOSED_PASS_BOUNDED; selected EverOS Controlled Memory Index Store folder scanned as documentation-only, 26/26 files accounted, seven negative-search commands recorded, ENRICH_EXISTING/NEW_FINDING evidence retained for future memory-foundation enrichment, source checker/test/generated examples rejected for direct import, and no runtime/provider/source-import/package/public claim |
 | KIOD-R4 Negative Search Evidence Decision | `0416843c` | CLOSED_PASS_BOUNDED; accepted Claude worker decision token `PACKET_BLOCK_REQUIRED_NOW`, converted negative-search evidence into mandatory packet content for the next source-intake pilot, and routed KIOD-R5 to source-verified packet-blocked pilot work-order authoring; no checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, automatic invocation, action authority, or production-readiness claim |
@@ -171,27 +167,27 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring`
+Mode: `kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
 
-Next allowed move: author a fresh GC-018 baseline and source-verified work
-order for KIOD-R6 doc-only memory-foundation enrichment. The work-order author
-must read applicable checker source before drafting, include a
-`Checker Source Read-Ahead Block`, include ADIF disclosure, include a Source
-Verification Block with Source fact type, include Negative Search And Collision
-Discipline, include a Roadmap-to-Work-Order Trace Matrix, and use
-`WORKER_MUST_NOT_COMMIT` with reviewer-owned closure. KIOD-R6 roadmap is ready
-at material commit `3e1bc936`; it does not dispatch a worker or authorize
-memory-foundation reference edits, checker implementation, runtime/provider
-behavior, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard,
-public-sync, source import, generated aggregate edit beyond session sync,
-automatic invocation, action authority, package lifecycle mutation, or
-production behavior. Checker read-ahead hardening remains closed at material
-commit `ac5b13ac`. KIOD-R5 itself is closed at
-material commit `be6be4e2`; it does not authorize direct import, runtime,
-SQLite/LanceDB implementation, MCP/CLI adapter, dashboard, public-sync,
-automatic invocation, action authority, generated aggregate edit beyond session
-sync, package lifecycle mutation, or production-readiness claim. KIOD-R4 closed
-at material commit `0416843c` with accepted decision token
+Next allowed move: operator selects the next governed knowledge-intake lane
+after KIOD-R6 Memory Foundation Enrichment closed bounded at material commit
+`8b89fc64`. Reviewer accepted the worker return and committed the 3
+memory-foundation owner-surface edits plus worker return as one reviewer batch.
+Result: doc-only enrichment only; added memory claim boundary taxonomy, partial
+rebuild/hash verification doctrine, receipt type taxonomy with
+`DENIAL_RECEIPT`, memory access gate categories, sensitivity levels, retention
+classes, and reconciliation rows. DEFER candidates C-file05, D-file06, and
+I-file19 require separate future work orders if operator selects them. No
+runtime implementation, checker creation, source import, MCP or CLI adapter,
+public-sync, package lifecycle mutation, automatic invocation, action
+authority, live/provider proof, or production behavior is authorized or
+claimed. KIOD-R6 roadmap remains at material commit `3e1bc936`. Checker
+read-ahead hardening remains closed at material commit `ac5b13ac`. KIOD-R5
+itself is closed at material commit `be6be4e2`; it does not authorize direct
+import, runtime, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard,
+public-sync, automatic invocation, action authority, generated aggregate edit
+beyond session sync, package lifecycle mutation, or production-readiness claim.
+KIOD-R4 closed at material commit `0416843c` with accepted decision token
 `PACKET_BLOCK_REQUIRED_NOW`.
 KIOD-R1-R3 Knowledge Intake Deduplication Foundation remains closed at material
 commit `5d453bce`, creating stable R1/R2/R3 references under
@@ -269,6 +265,12 @@ automatic skill invocation, production-readiness
 claim, and MPI-T6 runtime work unless separately authorized by fresh
 GC-018/source-verified work order.
 
+KIOD-R6 Memory Foundation Enrichment closed at material commit `8b89fc64`.
+Reviewer accepted the doc-only memory-foundation enrichment worker return and
+3 owner-surface edits. The next move is operator selection of a separate
+governed knowledge-intake lane; DEFER candidates C-file05, D-file06, and
+I-file19 need future work orders before any implementation or checker work.
+
 CGE-R3 CodeGraph upstream absorption worker return closed at material commit
 `9edc7776` after dispatch material commit `17a8d275` and session-sync commit
 `d774a7b2`. The source mirror
@@ -310,7 +312,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+`kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection`
 
 ## Continuity Markers
 

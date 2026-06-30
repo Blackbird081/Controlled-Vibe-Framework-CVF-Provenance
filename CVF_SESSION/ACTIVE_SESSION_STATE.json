@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V29_2026-06-30.md",
+  "activeHandoff": "AGENT_HANDOFF_V30_2026-07-01.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -62,15 +62,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring",
-  "previousMode": "checker_read_ahead_guard_hardening_closed_pending_operator_next_lane_selection",
+  "currentMode": "kiod_r6_memory_foundation_enrichment_accepted_pending_operator_next_lane_selection",
+  "previousMode": "kiod_r6_memory_foundation_enrichment_roadmap_ready_pending_work_order_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3180,7 +3181,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "KIOD-R6 Memory Foundation Enrichment Roadmap is ROADMAP_READY_FOR_WORK_ORDER_AUTHORING at material commit 3e1bc936. Roadmap: docs/roadmaps/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_ROADMAP_2026-06-30.md. Next allowed move: author a fresh GC-018 baseline and source-verified work order for doc-only memory-foundation enrichment from retained KIOD-R5 candidates. The work-order author must read applicable checker source before drafting, include Checker Source Read-Ahead Block evidence, include ADIF disclosure, include Source Verification Block with Source fact type, include Negative Search And Collision Discipline, include Roadmap-to-Work-Order Trace Matrix, and use WORKER_MUST_NOT_COMMIT with reviewer-owned closure. KIOD-R6 roadmap does not dispatch a worker and does not authorize memory-foundation reference edits, checker implementation, runtime/provider behavior, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit beyond session sync, automatic invocation, action authority, package lifecycle mutation, or production behavior. Checker Read-Ahead Guard Hardening remains CLOSED_PASS_BOUNDED at material commit ac5b13ac. KIOD-R5 Packet-Blocked Pilot remains CLOSED_PASS_BOUNDED at material commit be6be4e2 with 26/26 files accounted, negative-search evidence present, ENRICH_EXISTING and NEW_FINDING evidence retained, and checker/test/generated examples rejected for direct import. KIOD-R4 remains CLOSED_PASS_BOUNDED at material commit 0416843c with accepted token PACKET_BLOCK_REQUIRED_NOW. KIOD-R1-R3 remain closed at material commit 5d453bce and supply R1 owner-surface taxonomy, R2 pre-scan packet standard, and R3 overlap routing matrix. KIOD-T1 remains closed at material commit 211645e8. CGE-R3 CodeGraph upstream source-mirror absorption worker return remains closed at material commit 9edc7776 after dispatch commit 17a8d275 and session-sync commit d774a7b2. SCPL-WEB-T1 remains closed at a01bdca2; ASCP-P4-P6 remains closed at 687d4423 with 24 ACTIVE production package skills; SCPL-T2 at 25361957; SCPL-T1 at c5670974. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "KIOD-R6 Memory Foundation Enrichment is CLOSED_PASS_BOUNDED at material commit 8b89fc64. Reviewer accepted the worker return docs/reviews/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_WORKER_RETURN_2026-06-30.md and committed the 3 memory-foundation owner-surface edits plus worker return as one reviewer batch. Result: doc-only enrichment only; added memory claim boundary taxonomy, partial rebuild/hash verification doctrine, receipt type taxonomy with DENIAL_RECEIPT, memory access gate categories, sensitivity levels, retention classes, and reconciliation rows. DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders if operator selects them. No runtime implementation, checker creation, source import, MCP or CLI adapter, public-sync, package lifecycle mutation, automatic invocation, action authority, live/provider proof, or production behavior is authorized or claimed. Next allowed move: operator selects the next governed knowledge-intake lane, likely a separate checker/schema tranche for C-file05, a runtime/live-proof tranche for D-file06 or I-file19, or a new repo/folder absorption packet through fresh GC-018/source-verified work order. KIOD-R6 roadmap remains at material commit 3e1bc936; Checker Read-Ahead Guard Hardening remains CLOSED_PASS_BOUNDED at ac5b13ac. KIOD-R5 remains CLOSED_PASS_BOUNDED at be6be4e2; KIOD-R4 remains CLOSED_PASS_BOUNDED at 0416843c; KIOD-R1-R3 remain closed at 5d453bce; KIOD-T1 remains closed at 211645e8. LHW24 remains the latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -3690,6 +3691,28 @@
     ],
     "nextControlAction": "Author a fresh GC-018 baseline and source-verified work order for KIOD-R6 doc-only memory-foundation enrichment. The work-order author must read applicable checker source before drafting and must not implement runtime, checker, adapter, Web/UI, source import, public-sync, package lifecycle, action authority, or production behavior.",
     "claimBoundary": "Roadmap authoring only. No worker is dispatched by this state entry; no memory-foundation reference edits, checker, runtime/provider behavior, source import, public-sync, MCP/CLI adapter, dashboard, package lifecycle mutation, automatic invocation, action authority, or production behavior is claimed."
+  },
+  "kiodR6MemoryFoundationEnrichmentClosure20260701": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "8b89fc64",
+    "materialCommitFull": "8b89fc6469fc97156636c828528832d370d59c86",
+    "roadmap": "docs/roadmaps/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_ROADMAP_2026-06-30.md",
+    "workerReturn": "docs/reviews/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_WORKER_RETURN_2026-06-30.md",
+    "acceptedOwnerSurfaces": [
+      "docs/reference/memory_foundation/README.md",
+      "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md"
+    ],
+    "closureSummary": "Reviewer accepted the KIOD-R6 doc-only memory-foundation enrichment worker return and committed the three owner-surface edits plus worker return as a single reviewer-owned batch. The enrichment adds memory claim boundary taxonomy, partial rebuild/hash verification doctrine, receipt type taxonomy with DENIAL_RECEIPT, memory access gate categories, sensitivity levels, retention classes, and reconciliation rows. DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders if selected.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/check_corpus_completeness_report_integrity.py --base 40bacd73 --head HEAD --enforce PASS",
+      "python governance/compat/check_memory_access_claim.py --base 40bacd73 --head HEAD --enforce PASS",
+      "python governance/compat/check_raw_memory_release_invariant.py --base 40bacd73 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 40bacd73 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 74/74"
+    ],
+    "claimBoundary": "Documentation-only memory-foundation reference enrichment and worker-return acceptance only. No runtime implementation, checker creation, source import, MCP or CLI adapter, public-sync, package lifecycle mutation, automatic invocation, action authority, live/provider proof, or production behavior is claimed."
   },
   "assfPicT4WebProjectionBridgeDecisionClosure20260626": "ASSF-PIC-T4 is CLOSED_PASS_BOUNDED at material closure commit 60ffa4de. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md. Dispositions: WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD; SCHEMA_BRIDGE_DEFERRED_CERTIFICATION_HELD; EXTERNAL_ADAPTER_DEFERRED_NO_EVIDENCE. ASSF-PIC-T5 is released for GC-018/source-verified work-order creation after this session-sync.",
   "assfPicT5CheckerReadinessNextControlDecisionClosure20260626": "ASSF-PIC-T5 is CLOSED_PASS_BOUNDED at material closure commit 410818fc, and the ASSF-PIC roadmap is CLOSED_PASS_BOUNDED. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md. Disposition: CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE. Next-control recommendation: OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE.",
