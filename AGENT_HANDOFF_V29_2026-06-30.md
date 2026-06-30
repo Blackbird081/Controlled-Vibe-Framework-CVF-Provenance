@@ -6,7 +6,7 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R1 GC-018 and source-verified work order for the knowledge-intake owner-surface taxonomy; parked checkpoint=KIOD-T0 roadmap ready at material commit `9dda8681`.
+Startup acknowledged: current mode=`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R4 GC-018 and source-verified work order deciding whether negative-search evidence needs a checker or remains a required packet block before any next repo/folder pilot; parked checkpoint=KIOD-R1-R3 closed at material commit `5d453bce`.
 
 ## Current State
 
@@ -18,13 +18,57 @@ Startup acknowledged: current mode=`kiod_t0_knowledge_intake_overlap_deduplicati
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material closeout | `9dda8681` KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap |
-| Latest session-sync target | session sync after KIOD-T0 roadmap material closure |
+| Latest material closeout | `5d453bce` KIOD-R1-R3 Knowledge Intake Deduplication Foundation |
+| Latest session-sync target | session sync after KIOD-R1-R3 material closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
+`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
+
+## KIOD-R1-R3 Closure - 2026-06-30
+
+Material commit:
+`5d453bce1bcfe834f866597436a3922479ca0344`
+
+Short SHA: `5d453bce`
+
+Closure summary: KIOD-R1-R3 is `CLOSED_PASS_BOUNDED`. The batch created stable
+reference files for owner-surface taxonomy, pre-scan packet shape, and overlap
+routing matrix; updated KIOD-T0 to R1-R3 `PASS_BOUNDED`; and set the next
+decision to `OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`.
+
+Next allowed move: author KIOD-R4 GC-018 and source-verified work order
+deciding whether negative-search evidence needs a checker or remains a required
+packet block before any next repo/folder pilot.
+
+Claim boundary: documentation foundation only. No selected source intake,
+source mirror mutation, runtime, package activation, generated Web data,
+provider/live proof, public-sync, checker implementation, dashboard, adapter,
+automatic invocation, or production-readiness claim.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: GC-020 session-sync after KIOD-R1-R3
+material commit `5d453bce`; update active session state sources, generated
+state/read model, front door, and active handoff only.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/kiodR1R3KnowledgeIntakeDeduplicationFoundationClosure20260630.json`
+- `CVF_SESSION/state/entries/kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: governed session-sync requirement after material
+closure and active-session state compatibility failure naming material HEAD
+`5d453bce`.
+
+Rollback boundary: revert only this session-sync if rejected; do not revert the
+KIOD-R1-R3 material commit `5d453bce`.
 
 ## Purpose
 

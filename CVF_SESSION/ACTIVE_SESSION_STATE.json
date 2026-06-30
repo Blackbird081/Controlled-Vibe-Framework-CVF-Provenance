@@ -69,8 +69,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy",
-  "previousMode": "kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection",
+  "currentMode": "kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision",
+  "previousMode": "kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3180,7 +3180,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap is ready at material commit 9dda8681 with decision OPEN_KIOD_R1_OWNER_SURFACE_TAXONOMY. Next allowed move: author KIOD-R1 GC-018 and source-verified work order for the knowledge-intake owner-surface taxonomy before the next external repo/folder pilot. KIOD-R1 should map current CVF owner surfaces for doctrine, runtime, package skills, checkers, Web/UI, provider/model, MCP/CLI, memory/state, corpus, and public-sync so future intake can compare before opening new lanes. KIOD-T1 remains closed at material commit 211645e8; future external repo/folder absorption artifacts in scope for external absorption core evidence must include ## Overlap And Novelty Classification and use CONFIRMED_EXISTING, ENRICH_EXISTING, NEW_FINDING, REJECT_DIRECT_IMPORT, NO_NEW_VALUE, or OWNER_SURFACE_NOT_FOUND. CGE-R3 CodeGraph upstream source-mirror absorption worker return remains closed at material commit 9edc7776 after dispatch commit 17a8d275 and session-sync commit d774a7b2; the source mirror .private_reference/source_mirrors/colbymchenry__codegraph/ remains pinned to upstream commit da72946d25e112f662f5a60c6b69f363aec60f16. SCPL-WEB-T1 remains closed at a01bdca2; ASCP-P4-P6 remains closed at 687d4423 with 24 ACTIVE production package skills; SCPL-T2 at 25361957; SCPL-T1 at c5670974. LHW24 remains the latest closed numbered LHW wave. Runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims remain forbidden unless separately authorized by fresh GC-018/source-verified work order.",
+  "nextAllowedMove": "KIOD-R1-R3 Knowledge Intake Deduplication Foundation is closed at material commit 5d453bce. R1 created the stable owner-surface taxonomy at docs/reference/external_agent_review/CVF_KIOD_R1_OWNER_SURFACE_TAXONOMY.md; R2 created the pre-scan packet standard at docs/reference/external_agent_review/CVF_KIOD_R2_PRE_SCAN_PACKET_STANDARD.md; R3 created the overlap routing matrix at docs/reference/external_agent_review/CVF_KIOD_R3_OVERLAP_ROUTING_MATRIX_STANDARD.md. KIOD-T0 roadmap now records R1-R3 as PASS_BOUNDED and decision OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION. Next allowed move: author KIOD-R4 GC-018 and source-verified work order deciding whether negative-search evidence needs a checker or remains a required packet block before any next repo/folder pilot. KIOD-T1 remains closed at material commit 211645e8; future external repo/folder absorption artifacts in scope for external absorption core evidence must include ## Overlap And Novelty Classification and use CONFIRMED_EXISTING, ENRICH_EXISTING, NEW_FINDING, REJECT_DIRECT_IMPORT, NO_NEW_VALUE, or OWNER_SURFACE_NOT_FOUND. CGE-R3 CodeGraph upstream source-mirror absorption worker return remains closed at material commit 9edc7776 after dispatch commit 17a8d275 and session-sync commit d774a7b2; the source mirror .private_reference/source_mirrors/colbymchenry__codegraph/ remains pinned to upstream commit da72946d25e112f662f5a60c6b69f363aec60f16. SCPL-WEB-T1 remains closed at a01bdca2; ASCP-P4-P6 remains closed at 687d4423 with 24 ACTIVE production package skills; SCPL-T2 at 25361957; SCPL-T1 at c5670974. LHW24 remains the latest closed numbered LHW wave. Runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims remain forbidden unless separately authorized by fresh GC-018/source-verified work order.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -3233,25 +3233,26 @@
     "claimBoundary": "Repo-local guard hardening only. No external source corpus, runtime, provider, public-sync, package activation, or production-readiness claim was added."
   },
   "kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630": {
-    "status": "ROADMAP_READY_FOR_KIOD_R1_OWNER_SURFACE_TAXONOMY",
-    "materialCommit": "9dda8681",
-    "materialCommitFull": "9dda868176396b661a4e32e02c7b5a3e7c83666e",
+    "status": "ROADMAP_READY_FOR_KIOD_R4_NEGATIVE_SEARCH_DECISION_AFTER_R1_R3_PASS",
+    "materialCommit": "5d453bce",
+    "materialCommitFull": "5d453bce1bcfe834f866597436a3922479ca0344",
     "baseHead": "fdcc88b6",
     "roadmap": "docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md",
-    "decision": "OPEN_KIOD_R1_OWNER_SURFACE_TAXONOMY",
-    "recommendedNext": "AUTHOR_KIOD_R1_GC018_FOR_KNOWLEDGE_INTAKE_OWNER_SURFACE_TAXONOMY",
+    "decision": "OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION",
+    "recommendedNext": "AUTHOR_KIOD_R4_GC018_FOR_NEGATIVE_SEARCH_EVIDENCE_DECISION",
     "plannedTranches": [
-      "KIOD-R1 owner-surface taxonomy",
-      "KIOD-R2 external repo pre-scan packet",
-      "KIOD-R3 overlap routing matrix",
+      "KIOD-R1 owner-surface taxonomy - PASS_BOUNDED",
+      "KIOD-R2 pre-scan packet standard - PASS_BOUNDED",
+      "KIOD-R3 overlap routing matrix - PASS_BOUNDED",
       "KIOD-R4 negative-search evidence guard decision",
       "KIOD-R5 next repo/folder pilot"
     ],
     "verification": [
-      "pre-implementation autorun PASS before material edit",
+      "pre-implementation autorun PASS before KIOD-R1-R3 material edit",
       "direct external knowledge intake routing PASS",
       "direct markdown structural completeness PASS",
-      "reviewer-fast PASS",
+      "foundation storage layout PASS",
+      "work-order dispatch quality PASS",
       "commit steward implementation PASS",
       "pre-commit PASS 73/73"
     ],
@@ -3486,6 +3487,35 @@
     "nextAction": "Operator selects next tranche. ASSF-PIC-T4 may be selected only through fresh GC-018 and source-verified work order; no automatic release.",
     "picT4Disposition": "SELECTION_ALLOWED_WITH_FRESH_GC018_WORK_ORDER_ONLY",
     "forbiddenExpansion": "No package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, readiness, package instruction execution, package integration, worker commit, or worker session-sync."
+  },
+  "kiodR1R3KnowledgeIntakeDeduplicationFoundationClosure20260630": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "5d453bce",
+    "materialCommitFull": "5d453bce1bcfe834f866597436a3922479ca0344",
+    "baseHead": "f3200159",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R1_R3_KNOWLEDGE_INTAKE_DEDUPLICATION_FOUNDATION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R1_R3_KNOWLEDGE_INTAKE_DEDUPLICATION_FOUNDATION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R1_R3_KNOWLEDGE_INTAKE_DEDUPLICATION_FOUNDATION_COMPLETION_2026-06-30.md",
+    "roadmap": "docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md",
+    "r1OwnerSurfaceTaxonomy": "docs/reference/external_agent_review/CVF_KIOD_R1_OWNER_SURFACE_TAXONOMY.md",
+    "r2PreScanPacketStandard": "docs/reference/external_agent_review/CVF_KIOD_R2_PRE_SCAN_PACKET_STANDARD.md",
+    "r3OverlapRoutingMatrix": "docs/reference/external_agent_review/CVF_KIOD_R3_OVERLAP_ROUTING_MATRIX_STANDARD.md",
+    "nextAllowedMove": "AUTHOR_KIOD_R4_GC018_FOR_NEGATIVE_SEARCH_EVIDENCE_DECISION",
+    "verification": [
+      "pre-implementation autorun PASS on f3200159..HEAD before material edit",
+      "ADIF disclosure query PASS with NONE_RETURNED",
+      "external knowledge intake routing PASS",
+      "markdown structural completeness PASS",
+      "foundation storage layout PASS",
+      "work-order dispatch quality PASS",
+      "package skill productionization pipeline PASS",
+      "Delta execution claim boundary PASS",
+      "agent handoff boundary PASS",
+      "machine closure package PASS",
+      "commit steward implementation PASS",
+      "pre-commit PASS 73/73"
+    ],
+    "claimBoundary": "Documentation foundation only. No selected source intake, source mirror mutation, runtime, package activation, generated Web data, provider/live proof, public-sync, checker implementation, dashboard, adapter, automatic invocation, or production-readiness claim."
   },
   "assfPicT4WebProjectionBridgeDecisionClosure20260626": "ASSF-PIC-T4 is CLOSED_PASS_BOUNDED at material closure commit 60ffa4de. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md. Dispositions: WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD; SCHEMA_BRIDGE_DEFERRED_CERTIFICATION_HELD; EXTERNAL_ADAPTER_DEFERRED_NO_EVIDENCE. ASSF-PIC-T5 is released for GC-018/source-verified work-order creation after this session-sync.",
   "assfPicT5CheckerReadinessNextControlDecisionClosure20260626": "ASSF-PIC-T5 is CLOSED_PASS_BOUNDED at material closure commit 410818fc, and the ASSF-PIC roadmap is CLOSED_PASS_BOUNDED. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md. Disposition: CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE. Next-control recommendation: OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE.",

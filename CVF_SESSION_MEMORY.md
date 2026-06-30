@@ -31,15 +31,15 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R1 GC-018 and source-verified work order for the knowledge-intake owner-surface taxonomy; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-T0 roadmap ready at material commit `9dda8681`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`; active handoff=AGENT_HANDOFF_V29_2026-06-30.md; next allowed move=author KIOD-R4 GC-018 and source-verified work order deciding whether negative-search evidence needs a checker or remains a required packet block before any next repo/folder pilot; future external absorption lanes must include overlap/novelty classification; runtime/MCP/watcher/daemon/SQLite/package activation/provider-live/public-sync/direct-import/checker implementation/dashboard/adapter/production-readiness claims require fresh GC-018/source-verified work order; parked checkpoint=KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
+Current mode marker: `kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
 
-Current mode: `kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
+Current mode: `kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
 
-`kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
+`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
 
 Previous mode:
 
@@ -155,25 +155,30 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_t0_knowledge_intake_overlap_deduplication_roadmap_ready_for_kiod_r1_owner_surface_taxonomy`
+Mode: `kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
 
-Next allowed move: operator selects the next high-value package-skill lane.
-Web dashboard/console UI, full MCP server, production Model Gateway/model
-router, provider registry mutation, public-sync, automatic invocation, action
-authority, or broader production-readiness claim requires fresh
-GC-018/source-verified work order and live/provider proof when governance
-behavior is claimed. ASCP-P4-P6 Remaining Package Production Scale-Up closed at
-material commit `687d4423`; generated inventory reports 32 registry entries,
-24 package roots, 24 runtime-eligible packages, 24 activation-ready packages,
-24 CLI/MCP adapter packages, 24 selection-profiled packages, 28 Web projection
-items, and 0 cross-surface drift violations. SCPL-T2 Skill Selection Guidance
-closed at material commit `25361957`; SCPL-T1 Skill Control Plane inventory
-closed at material commit `c5670974`. PKGSOP-T2 remains closed at material
-commit `eaadc5ed`; PKGSOP-T1 remains closed at `693608cb`. ASCP-P1-P3 runtime
-package skills productionization remains the first six-package production
-baseline at material commit `43e4092f`; ASCP-T5 provider/model selection use
-case closed at material commit `c15d9bd6`; ASCP-T5 corrective patch closed at
-`09656d16`; ASCP-T5 package execution/use-proof adapter closed at material
+Next allowed move: author KIOD-R4 GC-018 and source-verified work order
+deciding whether negative-search evidence needs a checker or remains a required
+packet block before any next repo/folder pilot. KIOD-R1-R3 Knowledge Intake
+Deduplication Foundation closed at material commit `5d453bce`, creating stable
+R1/R2/R3 references under `docs/reference/external_agent_review/` and updating
+KIOD-T0 to `OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`. Web
+dashboard/console UI, full MCP server, production Model Gateway/model router,
+provider registry mutation, public-sync, automatic invocation, action authority,
+or broader production-readiness claim requires fresh GC-018/source-verified
+work order and live/provider proof when governance behavior is claimed.
+ASCP-P4-P6 Remaining Package Production Scale-Up closed at material commit
+`687d4423`; generated inventory reports 32 registry entries, 24 package roots,
+24 runtime-eligible packages, 24 activation-ready packages, 24 CLI/MCP adapter
+packages, 24 selection-profiled packages, 28 Web projection items, and 0
+cross-surface drift violations. SCPL-T2 Skill Selection Guidance closed at
+material commit `25361957`; SCPL-T1 Skill Control Plane inventory closed at
+material commit `c5670974`. PKGSOP-T2 remains closed at material commit
+`eaadc5ed`; PKGSOP-T1 remains closed at `693608cb`. ASCP-P1-P3 runtime package
+skills productionization remains the first six-package production baseline at
+material commit `43e4092f`; ASCP-T5 provider/model selection use case closed at
+material commit `c15d9bd6`; ASCP-T5 corrective patch closed at `09656d16`;
+ASCP-T5 package execution/use-proof adapter closed at material
 commit `d409b602`; ASCP-T4 package lifecycle source-state decision closed at
 material commit `1625ab8c` with `HOLD_NO_ACTIVE_SOURCE_MUTATION`. LHW24 remains
 the latest closed numbered LHW wave. A full Model Gateway/model router remains
@@ -253,11 +258,16 @@ CVF owner surfaces, and use the governed dispositions `CONFIRMED_EXISTING`,
 `governance/compat/check_external_absorption_overlap_discipline.py` is wired
 into autorun, reviewer-fast, pre-commit, and pre-push.
 
-KIOD-T0 Knowledge Intake Overlap Deduplication Roadmap is ready at material
-commit `9dda8681`. Decision: `OPEN_KIOD_R1_OWNER_SURFACE_TAXONOMY`.
-Recommended next: author KIOD-R1 GC-018 and source-verified work order for a
-knowledge-intake owner-surface taxonomy before the next external repo/folder
-pilot.
+KIOD-R1-R3 Knowledge Intake Deduplication Foundation closed at material commit
+`5d453bce`. R1 owner-surface taxonomy:
+`docs/reference/external_agent_review/CVF_KIOD_R1_OWNER_SURFACE_TAXONOMY.md`.
+R2 pre-scan packet standard:
+`docs/reference/external_agent_review/CVF_KIOD_R2_PRE_SCAN_PACKET_STANDARD.md`.
+R3 overlap routing matrix:
+`docs/reference/external_agent_review/CVF_KIOD_R3_OVERLAP_ROUTING_MATRIX_STANDARD.md`.
+KIOD-T0 decision is now `OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION`.
+Recommended next: author KIOD-R4 GC-018 and source-verified work order before
+the next external repo/folder pilot.
 
 SCPL-WEB-T1 closed at material commit `a01bdca2`. CVF Web now has generated
 Skill Control Plane projection inheritance through
@@ -266,7 +276,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`kiod_t1_external_absorption_overlap_discipline_guard_closed_pending_operator_next_lane_selection`
+`kiod_r1_r3_knowledge_intake_deduplication_foundation_closed_pending_kiod_r4_negative_search_decision`
 
 ## Continuity Markers
 
