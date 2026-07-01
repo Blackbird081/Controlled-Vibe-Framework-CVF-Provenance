@@ -31,36 +31,37 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=worker executes WOAS-R2 under WORKER_MUST_NOT_COMMIT and returns `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md`; parked checkpoint=WOAS-R2 dispatched at material commit `2c5a7c30`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R2 closure; parked checkpoint=WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`
+Current mode marker: `woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`
+Current mode: `woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`
+`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| WOAS-R2 Source-Intake Scaffold Golden Fixture | `2c5a7c30` | DISPATCH_READY; worker must execute `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md` under `WORKER_MUST_NOT_COMMIT` and return `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md` |
+| None | N/A | no worker currently dispatched after WOAS-R2 closure |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No separate held follow-up remains for the currently dispatched worker packet |
+| None | N/A | No separate held follow-up remains after WOAS-R2 closure |
 
 ## Current Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, deterministic source-intake golden fixture, and 10 focused tests for exact helper output and KIOD-R8 marker-overmatch avoidance; no helper source patch was needed |
 | WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, completion review, work-order-authoring standard/front door, local scaffold helper, and 32 focused tests; helper is manual text generation only, not a blocking guard or runtime/public/provider claim |
 | KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 plus literal-format gotchas items 34-35 warn future agents about path-marker/prose-marker self-trigger and declaration-shape applicability matching |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted after reviewer repair; 20 focused tests pass; no outside-source absorption/runtime/provider/public/Web/package/helper/action-authority/production claim |
@@ -73,6 +74,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; source-intake scaffold output is covered by deterministic golden fixture and 41/41 focused tests |
 | WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; helper now provides prefilled GC-018/work-order scaffold text with machine-shape sections and requires `--stdout` for generation mode |
 | KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 and gotchas items 34-35 record KIOD-R8 self-repaired marker-overmatch lessons before WOAS-R1 release review |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; source-intake decision packet preflight standard/checker/tests/catalog wiring closed after reviewer repair |
@@ -187,21 +189,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`
+Mode: `woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: worker executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md`
-under `WORKER_MUST_NOT_COMMIT` and returns
-`docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md`
-as `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. WOAS-R2 dispatch commit
-is `2c5a7c30`; paired baseline is
-`docs/baselines/CVF_GC018_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md`.
-Scope is helper/test/optional fixture dogfood for the WOAS-R1 source-intake
-scaffold profile only. No real external source intake, source import,
-source-mirror mutation, runtime/provider/live proof, public-sync,
-Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle
-mutation, hook catalog wiring, new blocking checker semantics, action
-authority, automatic invocation, or production-readiness claim is authorized.
+Next allowed move: operator selects the next governed lane after WOAS-R2
+closure at material commit `101fcf73`. Reasonable next options include another
+bounded work-order-authoring scaffold tranche, a fresh source-verified
+external-knowledge intake/absorption lane, or a separate high-value
+package-skill/Web/MCP/model-router roadmap only with fresh GC-018 authority. No
+real external source intake, source import, source-mirror mutation,
+runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, hook catalog wiring, new
+blocking checker semantics, action authority, automatic invocation, or
+production-readiness claim is authorized by the WOAS-R2 closure.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.

@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=worker executes WOAS-R2 under WORKER_MUST_NOT_COMMIT and returns `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md`; parked checkpoint=WOAS-R2 dispatched at material commit `2c5a7c30`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R2 closure; parked checkpoint=WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixtur
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `2c5a7c30` WOAS-R2 Source-Intake Scaffold Golden Fixture dispatch |
-| Latest session-sync target | session sync after WOAS-R2 dispatch |
+| Latest material packet | `101fcf73` WOAS-R2 Source-Intake Scaffold Golden Fixture closure |
+| Latest session-sync target | session sync after WOAS-R2 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`
+`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
@@ -70,6 +70,35 @@ No real external source intake, source import, runtime/provider/live proof,
 public-sync, Web/UI dashboard, MCP/CLI adapter, package lifecycle mutation,
 model-router work, hook catalog wiring, action authority, automatic invocation,
 or production-readiness claim is authorized.
+
+WOAS-R2 Source-Intake Scaffold Golden Fixture closed bounded at material commit
+`101fcf73`. Reviewer accepted the no-commit worker return, deterministic
+source-intake golden fixture, completion review, and 10 added focused tests.
+The existing helper source did not need a patch; 41/41 focused tests pass and
+the fixture guards exact source-intake scaffold output plus KIOD-R8
+marker-overmatch avoidance. No real external source intake, source import,
+runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter,
+package lifecycle mutation, model-router work, hook catalog wiring, action
+authority, automatic invocation, or production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - WOAS-R2 Closure Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, closed work, current dispatched work, and next allowed move after WOAS-R2 closure. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record WOAS-R2 closure, protected-path authorization, next-move update, and HEAD marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after WOAS-R2 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after WOAS-R2 closure. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane selection after WOAS-R2 closure. |
+| `CVF_SESSION/state/entries/woasR2SourceIntakeScaffoldGoldenFixtureDispatched20260701.json` | Mark WOAS-R2 dispatched entry closed and record closure commit `101fcf73`. |
+| `CVF_SESSION/state/entries/woasR2SourceIntakeScaffoldGoldenFixtureClosure20260701.json` | Add state source entry for WOAS-R2 closure commit `101fcf73`. |
+
+Authorization boundary: session-sync only. No helper/test implementation,
+runtime/provider/live proof, real outside-source intake, source import,
+source-mirror mutation, public-sync, Web/UI dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, hook catalog wiring, action
+authority, automatic invocation, or production-readiness claim is authorized.
 
 ## Core Guard Self-Protection Authorization - WOAS-R2 Dispatch Session Sync
 
@@ -470,6 +499,7 @@ by this block.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; source-intake scaffold output covered by deterministic golden fixture and 41/41 focused tests |
 | WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; helper standard/front door, scaffold helper, worker return, completion review, and 32 focused tests accepted |
 | KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 and gotchas items 34-35 record KIOD-R8 self-repaired marker-overmatch lessons before WOAS-R1 release review |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted after reviewer repair |
@@ -486,27 +516,23 @@ by this block.
 
 ## Next Allowed Move
 
-Worker executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md`
-under `WORKER_MUST_NOT_COMMIT` and returns
-`docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md`
-as `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-
-WOAS-R2 dispatch commit is `2c5a7c30`; paired baseline is
-`docs/baselines/CVF_GC018_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md`.
-Scope is helper/test/optional fixture dogfood for the WOAS-R1 source-intake
-scaffold profile only. No real external source intake, source import,
-source-mirror mutation, runtime/provider/live proof, public-sync,
-Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle
-mutation, hook catalog wiring, new blocking checker semantics, action
-authority, automatic invocation, or production-readiness claim is authorized.
+Operator selects the next governed lane after WOAS-R2 closure at material
+commit `101fcf73`. Reasonable next options include another bounded
+work-order-authoring scaffold tranche, a fresh source-verified external
+knowledge intake/absorption lane, or a separate high-value package-skill/Web/
+MCP/model-router roadmap only with fresh GC-018 authority. No real external
+source intake, source import, source-mirror mutation, runtime/provider/live
+proof, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work,
+package lifecycle mutation, hook catalog wiring, new blocking checker
+semantics, action authority, automatic invocation, or production-readiness
+claim is authorized by the WOAS-R2 closure.
 
 ## Claim Boundary
 
 V30 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
 closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure,
-WOAS-R2 dispatch, V29 archive rotation, active session pointers, and next
+WOAS-R2 dispatch and closure, V29 archive rotation, active session pointers, and next
 allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
@@ -563,3 +589,20 @@ source import, runtime/provider/live behavior, public-sync, package lifecycle
 mutation, Web/UI/dashboard work, MCP/CLI adapter implementation, model-router
 work, hook catalog wiring, action authority, automatic invocation, or
 production-readiness claims.
+
+## GC-020 HEAD Marker - WOAS-R2 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`101fcf73`
+
+Full SHA:
+
+`101fcf730ae1a6aa3cdc56c88000cbcdacef29c4`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`101fcf73`. It records bounded WOAS-R2 closure only and does not authorize real
+external source intake, source import, runtime/provider/live behavior,
+public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
+implementation, model-router work, hook catalog wiring, action authority,
+automatic invocation, or production-readiness claims.
