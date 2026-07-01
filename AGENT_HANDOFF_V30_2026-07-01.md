@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R4 closure; parked checkpoint=WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=worker executes WOAS-R5 Scaffold-First Dispatch Quality Gate under `WORKER_MUST_NOT_COMMIT` and returns `docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md`; parked checkpoint=WOAS-R5 dispatched at material commit `717f55cc`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`woas_r4_worker_return_quality_gate_closed_pa
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `e6a56718` WOAS-R4 Worker Return Quality Gate closure |
-| Latest session-sync target | session sync after WOAS-R4 closure |
+| Latest material packet | `717f55cc` WOAS-R5 Scaffold-First Dispatch Quality Gate dispatch |
+| Latest session-sync target | session sync after WOAS-R5 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`
 
 ## Latest Changes
 
@@ -118,6 +118,37 @@ common commands. No real external source intake, source import,
 runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter
 implementation, package lifecycle mutation, model-router work, action
 authority, automatic invocation, or production-readiness claim is authorized.
+
+WOAS-R5 Scaffold-First Dispatch Quality Gate dispatched at material commit
+`717f55cc`. It authorizes one bounded no-commit worker tranche to add explicit
+Scaffold Provenance Block discipline for future GC-018 baselines and work
+orders, update the local dispatch scaffold helper, add a dedicated checker and
+focused tests, and wire the checker into governed gate surfaces. Worker must
+return
+`docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md`.
+No session-state or handoff edits are authorized for the worker. No real
+external source intake, source import, runtime/provider/live proof,
+public-sync, Web/UI dashboard, MCP/CLI adapter implementation, package
+lifecycle mutation, model-router work, action authority, automatic invocation,
+or production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - WOAS-R5 Dispatch Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, latest work, and next allowed move after WOAS-R5 dispatch. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record WOAS-R5 dispatch, protected-path authorization, next-move update, and HEAD marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after WOAS-R5 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after WOAS-R5 dispatch. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to WOAS-R5 worker execution and worker-return wait. |
+| `CVF_SESSION/state/entries/woasR5ScaffoldFirstDispatchQualityGateDispatch20260701.json` | Add state source entry for WOAS-R5 dispatch commit `717f55cc`. |
+
+Authorization boundary: session-sync only. No checker implementation change,
+runtime/provider/live proof, real outside-source intake, source import,
+source-mirror mutation, public-sync, Web/UI dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, action authority, automatic
+invocation, or production-readiness claim is authorized.
 
 ## Core Guard Self-Protection Authorization - WOAS-R4 Closure Session Sync
 
@@ -588,6 +619,12 @@ model-router work, package lifecycle mutation, action authority, automatic
 invocation, helper implementation, or production-readiness claim is authorized
 by this block.
 
+## Current Dispatched Work
+
+| Work | Commit | Disposition |
+|---|---|---|
+| WOAS-R5 Scaffold-First Dispatch Quality Gate | `717f55cc` | DISPATCH_READY; worker must not commit and must return `docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md` for reviewer acceptance |
+
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
@@ -611,13 +648,13 @@ by this block.
 
 ## Next Allowed Move
 
-WOAS-R4 Worker Return Quality Gate is CLOSED_PASS_BOUNDED at material commit
-`e6a56718`. Operator may select the next governed lane. High-value
-candidates remain bounded work-order authoring/scaffold hardening, separate
-MCP/CLI adapter expansion, full Skill Governance Console/dashboard build from
-`assf-skill-control-plane.json`, or separate controlled Model Gateway/model
-router roadmap. Any such lane requires fresh GC-018/source-verified work order
-and applicable live/provider proof when governance behavior is claimed.
+WOAS-R5 Scaffold-First Dispatch Quality Gate is DISPATCH_READY at material
+commit `717f55cc`. Worker must execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_2026-07-01.md`
+under `WORKER_MUST_NOT_COMMIT` and return
+`docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md`.
+Reviewer/closer must validate worker output before any material closure commit.
+No session-state or handoff edits are authorized for the worker.
 
 ## Claim Boundary
 
@@ -625,12 +662,29 @@ V30 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
 closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure,
 WOAS-R2 dispatch and closure, WOAS-R3 dispatch and closure, WOAS-R4 closure,
-V29 archive
+WOAS-R5 dispatch, V29 archive
 rotation, active session pointers, and next
 allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
 authority, action authority, or broader production readiness.
+
+## GC-020 HEAD Marker - WOAS-R5 Dispatch
+
+Latest material commit requiring in-place handoff trace:
+
+`717f55cc`
+
+Full SHA:
+
+`717f55cce58d38f99c7f867acba29a8f1ef72d5d`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`717f55cc`. It records bounded WOAS-R5 dispatch only and does not authorize
+real external source intake, source import, runtime/provider/live behavior,
+public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
+implementation, model-router work, action authority, automatic invocation, or
+production-readiness claims.
 
 ## GC-020 HEAD Marker - WOAS-R1 Closure
 
