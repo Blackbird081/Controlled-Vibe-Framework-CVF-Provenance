@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=WOAS-R7 worker executes the dispatched no-commit helper/test/reference tranche and returns `docs/reviews/CVF_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_WORKER_RETURN_2026-07-01.md`; parked checkpoint=WOAS-R7 dispatched at material commit `9ae0c12c`, WOAS-R6 closed bounded at material commit `1c74075c`, WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r7_checker_safe_worker_return_skeleton_generation_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R7 closure; parked checkpoint=WOAS-R7 closed bounded at material commit `a8d98dd1`, WOAS-R6 closed bounded at material commit `1c74075c`, WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`woas_r7_checker_safe_worker_return_skeleton_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `9ae0c12c` WOAS-R7 Checker-Safe Worker Return Skeleton Generation dispatch |
-| Latest session-sync target | session sync after WOAS-R7 dispatch |
+| Latest material packet | `a8d98dd1` WOAS-R7 Checker-Safe Worker Return Skeleton Generation closure |
+| Latest session-sync target | session sync after WOAS-R7 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return`
+`woas_r7_checker_safe_worker_return_skeleton_generation_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
@@ -168,6 +168,39 @@ external source intake, source import, runtime/provider/live proof,
 public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle
 mutation, model-router work, action authority, automatic invocation, or
 production-readiness claim is authorized.
+
+WOAS-R7 Checker-Safe Worker Return Skeleton Generation closed bounded at
+material commit `a8d98dd1`. Reviewer accepted the no-commit worker return after
+adding a reviewer verification addendum inside the return. The closure updates
+`governance/compat/build_worker_return_skeleton_scaffold.py` and the matching
+golden fixture so generated worker-return skeleton output avoids the
+worker-return quality gate banned placeholder markers while preserving required
+headings, field labels, canonical external input, Delta/public/no-commit
+tokens, and fillable worker guidance. Focused tests now include a direct
+`diagnose()` regression proving the generated skeleton is clean; 71/71 focused
+tests pass. No checker semantic change, runtime/provider/live proof,
+public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle
+mutation, model-router work, action authority, automatic invocation, or
+production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - WOAS-R7 Closure Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed work, latest work, and next allowed move after WOAS-R7 closure. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record WOAS-R7 closure, protected-path authorization, next-move update, and HEAD marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after WOAS-R7 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after WOAS-R7 closure. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane selection after WOAS-R7 closure. |
+| `CVF_SESSION/state/entries/woasR7CheckerSafeWorkerReturnSkeletonGenerationDispatch20260701.json` | Mark WOAS-R7 dispatch entry closed by material commit `a8d98dd1`. |
+| `CVF_SESSION/state/entries/woasR7CheckerSafeWorkerReturnSkeletonGenerationClosure20260701.json` | Add state source entry for WOAS-R7 closure commit `a8d98dd1`. |
+
+Authorization boundary: session-sync only. No helper/test implementation,
+checker semantic change, runtime/provider/live proof, real outside-source
+intake, source import, source-mirror mutation, public-sync, Web/UI dashboard,
+MCP/CLI adapter, model-router work, package lifecycle mutation, action
+authority, automatic invocation, or production-readiness claim is authorized.
 
 ## Core Guard Self-Protection Authorization - WOAS-R7 Dispatch Session Sync
 
@@ -715,12 +748,15 @@ by this block.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| WOAS-R5 Scaffold-First Dispatch Quality Gate | `717f55cc` | DISPATCH_READY; worker must not commit and must return `docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md` for reviewer acceptance |
+| None | N/A | WOAS-R7 is closed bounded at material commit `a8d98dd1`; no current dispatched worker tranche remains |
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; generated worker-return skeleton avoids worker-return quality gate banned placeholder markers and direct `diagnose()` regression coverage passes |
+| WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; checker-source authoring checklist mirrors worker-return quality gate constants |
+| WOAS-R5 Scaffold-First Dispatch Quality Gate | `7ffbf3b4` | CLOSED_PASS_BOUNDED; scaffold provenance standard/checker/tests/helper wiring accepted |
 | WOAS-R4 Worker Return Quality Gate | `e6a56718` | CLOSED_PASS_BOUNDED; structural worker-return quality gate wired into worker-return fast gate, reviewer-fast, pre-commit, pre-push, and autorun common commands |
 | WOAS-R3 Worker Return Skeleton Scaffold | `38765baf` | CLOSED_PASS_BOUNDED; opt-in worker-return skeleton output covered by deterministic golden fixture and 54/54 focused tests |
 | WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; source-intake scaffold output covered by deterministic golden fixture and 41/41 focused tests |
@@ -740,18 +776,16 @@ by this block.
 
 ## Next Allowed Move
 
-WOAS-R7 Checker-Safe Worker Return Skeleton Generation is DISPATCH_READY at
-material commit `9ae0c12c`. Worker must execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_2026-07-01.md`,
-leave changes uncommitted under `WORKER_MUST_NOT_COMMIT`, and return
-`docs/reviews/CVF_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_WORKER_RETURN_2026-07-01.md`
-with `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Scope is
-helper/test/reference hardening only: make generated worker-return skeleton
-output checker-safe against `check_worker_return_quality_gate.py` without
-weakening checker semantics. No runtime/provider/live proof, public-sync,
-Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package
-lifecycle mutation, action authority, automatic invocation, session-sync
-mutation by worker, or production-readiness claim is authorized.
+WOAS-R7 Checker-Safe Worker Return Skeleton Generation is CLOSED_PASS_BOUNDED
+at material commit `a8d98dd1`. Generated worker-return skeleton output now
+avoids the worker-return quality gate banned placeholder markers, preserves
+required headings/fields/canonical tokens, and has direct `diagnose()`
+regression coverage plus deterministic golden fixture coverage. Operator may
+select the next governed lane. No checker semantic change,
+runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
+implementation, model-router work, package lifecycle mutation, action
+authority, automatic invocation, or production-readiness claim is authorized by
+WOAS-R7 closure.
 
 ## Claim Boundary
 
@@ -759,7 +793,8 @@ V30 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
 closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure,
 WOAS-R2 dispatch and closure, WOAS-R3 dispatch and closure, WOAS-R4 closure,
-WOAS-R5 dispatch and closure, WOAS-R6 closure, WOAS-R7 dispatch, V29 archive
+WOAS-R5 dispatch and closure, WOAS-R6 closure, WOAS-R7 dispatch and closure,
+V29 archive
 rotation, active session pointers, and next
 allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
@@ -800,6 +835,23 @@ runtime/provider/live behavior, public-sync, package lifecycle mutation,
 Web/UI/dashboard work, MCP/CLI adapter implementation, model-router work,
 action authority, automatic invocation, session-sync mutation by worker, or
 production-readiness claims.
+
+## GC-020 HEAD Marker - WOAS-R7 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`a8d98dd1`
+
+Full SHA:
+
+`a8d98dd117cf87f025f0a3744fc041e803b9d325`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`a8d98dd1`. It records bounded WOAS-R7 closure only and does not authorize
+checker semantic changes, real external source intake, source import,
+runtime/provider/live behavior, public-sync, package lifecycle mutation,
+Web/UI/dashboard work, MCP/CLI adapter implementation, model-router work,
+action authority, automatic invocation, or production-readiness claims.
 
 ## GC-020 HEAD Marker - WOAS-R5 Closure
 
