@@ -236,5 +236,9 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         "equivalence claim evidence",
         ["python", "governance/compat/check_equivalence_claim_evidence.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
+    (
+        "dispatch scaffold provenance",
+        ["python", "governance/compat/check_dispatch_scaffold_provenance.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
 ]
 

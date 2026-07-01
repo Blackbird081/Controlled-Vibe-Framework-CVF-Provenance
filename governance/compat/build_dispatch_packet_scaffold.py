@@ -139,6 +139,7 @@ class ScaffoldArgs:
     base: str
     commit_mode: str
     dependencies: list[str] = field(default_factory=list)
+    include_worker_return_skeleton: bool = False
 
 
 def detect_triggers(args: ScaffoldArgs) -> dict[str, bool]:
@@ -351,6 +352,33 @@ def _evidence_reuse_stub() -> str:
     )
 
 
+def _scaffold_provenance_block(args: ScaffoldArgs) -> str:
+    helper_cmd = (
+        f"python governance/compat/build_dispatch_packet_scaffold.py"
+        f" --packet-kind {args.packet_kind}"
+        f" --batch-id {args.batch_id}"
+        f' --title "{args.title}"'
+        f" --date {args.date}"
+        f" --base {args.base}"
+        f" --commit-mode {args.commit_mode}"
+    )
+    if args.include_worker_return_skeleton:
+        helper_cmd += " --include-worker-return-skeleton"
+    helper_cmd += " --stdout"
+    return (
+        "## Scaffold Provenance Block\n\n"
+        "| Field | Value |\n"
+        "| --- | --- |\n"
+        f"| scaffoldHelperCommand | `{helper_cmd}` |\n"
+        f"| generatedProfile | {args.packet_kind} plus {args.commit_mode} no-commit worker profile |\n"
+        "| generatedSkeletonStatus | USED_AS_STARTING_POINT |\n"
+        "| manualEditsAfterScaffold | FILL_ME (describe manual edits made after scaffold generation) |\n"
+        "| checkerReadAheadConfirmation | FILL_ME (list `governance/compat/check_*.py` paths read before authoring) |\n"
+        "| docOnlyNewFields | FILL_ME (list new doc-only field names introduced by this dispatch) |\n"
+        "| claimBoundary | Dispatch authoring provenance only; no runtime/provider/live/public/Web/MCP/model-router behavior claim. |\n"
+    )
+
+
 def _protected_governance_stub() -> str:
     return (
         "## Core Guard Self-Protection Authorization (trigger stub)\n\n"
@@ -542,6 +570,8 @@ def build_gc018_baseline(args: ScaffoldArgs, active: dict[str, bool]) -> str:
         "sentences.",
         "",
     ]
+    lines.append(_scaffold_provenance_block(args))
+    lines.append("")
     if active.get("held_dependency"):
         lines.append(_dependency_release_block(args.dependencies))
         lines.append("")
@@ -638,6 +668,8 @@ def build_work_order(args: ScaffoldArgs, active: dict[str, bool]) -> str:
         "FILL_ME: state the mission prompt for this work order.",
         "",
     ]
+    lines.append(_scaffold_provenance_block(args))
+    lines.append("")
     if active.get("held_dependency"):
         lines.append(_dependency_release_block(args.dependencies))
         lines.append("")
@@ -762,6 +794,7 @@ def main(argv: list[str] | None = None) -> int:
         base=args.base,
         commit_mode=args.commit_mode,
         dependencies=list(args.dependencies),
+        include_worker_return_skeleton=args.include_worker_return_skeleton,
     )
     active = detect_triggers(scaffold_args)
     baseline_md = build_gc018_baseline(scaffold_args, active)

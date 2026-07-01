@@ -38,6 +38,19 @@ Return contract: create the worker return artifact, run required gates, leave ch
 
 FILL_ME: state the mission prompt for this work order.
 
+## Scaffold Provenance Block
+
+| Field | Value |
+| --- | --- |
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind source-intake --batch-id WOAS-R2-GOLDEN --title "Source Intake Scaffold Golden Fixture" --date 2026-07-01 --base GOLDENFIXTUREBASEHEAD --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | source-intake plus WORKER_MUST_NOT_COMMIT no-commit worker profile |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | FILL_ME (describe manual edits made after scaffold generation) |
+| checkerReadAheadConfirmation | FILL_ME (list `governance/compat/check_*.py` paths read before authoring) |
+| docOnlyNewFields | FILL_ME (list new doc-only field names introduced by this dispatch) |
+| claimBoundary | Dispatch authoring provenance only; no runtime/provider/live/public/Web/MCP/model-router behavior claim. |
+
+
 ## Worker Autonomy / No-Question Rule
 
 Worker must repair allowed-scope checker failures directly by reading the failing checker source and matching the literal required shape. Worker should return to orchestrator only for a source contradiction, forbidden-scope need, or missing authority that makes completion impossible.

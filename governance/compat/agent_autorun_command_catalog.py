@@ -441,6 +441,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "governed python automation size",
             ("python", "governance/compat/check_python_automation_size.py", "--enforce"),
         ),
+        _range_command(
+            "dispatch scaffold provenance",
+            "governance/compat/check_dispatch_scaffold_provenance.py",
+            base,
+            head,
+        ),
     )
 
 

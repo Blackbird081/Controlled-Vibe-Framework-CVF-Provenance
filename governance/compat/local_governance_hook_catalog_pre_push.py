@@ -397,4 +397,8 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             "pre-public p3 readiness compatibility",
             ["python", "governance/compat/check_prepublic_p3_readiness.py", "--enforce"],
         ),
+    (
+        "dispatch scaffold provenance",
+        ["python", "governance/compat/check_dispatch_scaffold_provenance.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
     ]

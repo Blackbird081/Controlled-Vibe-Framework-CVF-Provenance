@@ -551,6 +551,7 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
         self.assertIn("=== Generated Worker Return Skeleton ===", output)
         self.assertIn("Status: COMPLETE_PENDING_REVIEW", output)
         self.assertIn("## Agent Operation Trace Block", output)
+        self.assertIn("--include-worker-return-skeleton --stdout", output)
 
     def test_cli_without_opt_in_omits_skeleton_section(self) -> None:
         import io
@@ -576,7 +577,9 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
                 ]
             )
         self.assertEqual(exit_code, 0)
-        self.assertNotIn("=== Generated Worker Return Skeleton ===", buf.getvalue())
+        output = buf.getvalue()
+        self.assertNotIn("=== Generated Worker Return Skeleton ===", output)
+        self.assertNotIn("--include-worker-return-skeleton --stdout", output)
 
 
 class TestTriggerMapExplainability(unittest.TestCase):

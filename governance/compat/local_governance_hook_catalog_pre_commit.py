@@ -323,4 +323,8 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             "public catalog update advisory (GC-024)",
             ["python", "governance/compat/check_catalog_update_advisory.py"],
         ),
+    (
+        "dispatch scaffold provenance",
+        ["python", "governance/compat/check_dispatch_scaffold_provenance.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
     ]
