@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: KIOD-R8
 
@@ -497,19 +497,19 @@ operator.checkpoint.waiver
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | This work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md` | Reviewer creates after worker return | BLOCKED until worker return is accepted |
+| Work order status | This work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md` | Reviewer completion created after worker return acceptance | PASS |
 | Roadmap state | Operator-selected KIOD-R8 lane | No standalone roadmap file for this bounded tranche | N/A with reason: operator-selected continuation from KIOD-R7 |
-| Registry JSON | N/A | No registry JSON mutation in dispatch packet | BLOCKED with reason: worker implementation has not run and registry mutation is outside dispatch scope |
-| Registry Markdown | N/A | No registry Markdown mutation in dispatch packet | BLOCKED with reason: worker implementation has not run and registry mutation is outside dispatch scope |
+| Registry JSON | N/A | No GC-051 or generated registry JSON mutation is authorized by this governance-checker preflight tranche | BLOCKED with reason: separate registry mutation work order required |
+| Registry Markdown | N/A | No corpus or scan registry Markdown mutation is authorized by this governance-checker preflight tranche | BLOCKED with reason: separate registry mutation work order required |
 | External evidence digest | N/A | No outside source is absorbed in KIOD-R8 dispatch | N/A with reason: guard-foundation dispatch only |
-| System loop interlock | Active session state/front door/handoff | Reviewer/closer owns update after accepted material commit | BLOCKED until reviewer closure |
-| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; active handoff | Reviewer/closer owns session sync | BLOCKED until reviewer closure |
+| System loop interlock | Active session state/front door/handoff | No system-loop registry mutation; reviewer closes material and syncs session separately | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; active handoff | Reviewer/closer performs dedicated session sync after material commit | PASS |
 | Source verification | Work order and worker return | Source Verification Block rows | PASS |
 | File diff | `git diff --name-status d77d5f52..HEAD` | Changed path list | PASS |
-| Tests | `governance.compat.test_source_intake_decision_packet_preflight` | Unit test output after worker implementation | BLOCKED until worker implementation |
-| Catalog wiring | Four governance command catalogs | Path-string entries for new checker after worker implementation | BLOCKED until worker implementation |
-| Commit ownership | Git history | Worker no-commit evidence and reviewer commit | BLOCKED until reviewer closure |
+| Tests | `governance.compat.test_source_intake_decision_packet_preflight` | Focused unit tests passed after worker implementation and reviewer repair | PASS |
+| Catalog wiring | Four governance command catalogs | Path-string entries for new checker present in all four catalogs | PASS |
+| Commit ownership | Git history | Worker no-commit evidence recorded; reviewer owns material commit | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 

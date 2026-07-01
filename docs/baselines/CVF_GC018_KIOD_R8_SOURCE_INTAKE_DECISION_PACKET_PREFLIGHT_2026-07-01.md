@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: KIOD-R8
 
@@ -126,6 +126,21 @@ Returned defects: NONE_RETURNED
 | `governance/compat/local_governance_hook_catalog_pre_commit.py` | Wire checker into pre-commit catalog. |
 | `governance/compat/local_governance_hook_catalog_pre_push.py` | Wire checker into pre-push catalog. |
 | `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md` | Worker return with command evidence and no commit. |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | This baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer/closer after repair | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason | no dedicated KIOD-R8 roadmap file is changed | N/A with reason |
+| Registry JSON | N/A | no GC-051 or generated registry JSON mutation is authorized by this governance-checker preflight tranche | BLOCKED with reason: separate registry mutation work order required |
+| Registry Markdown | N/A | no corpus or scan registry Markdown mutation is authorized by this governance-checker preflight tranche | BLOCKED with reason: separate registry mutation work order required |
+| External evidence digest | N/A with reason | no outside-source evidence digest is produced | N/A with reason |
+| System loop interlock | N/A with reason | no system loop interlock registry is changed | N/A with reason |
+| Session continuity | active session surfaces | update after material commit in separate session-sync batch | PASS |
 
 ## Claim Boundary
 

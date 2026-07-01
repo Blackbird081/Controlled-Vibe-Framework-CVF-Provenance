@@ -76,6 +76,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_dispatch_packet_lifecycle_hygiene.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "source intake decision packet preflight",
+            ["python", "governance/compat/check_source_intake_decision_packet_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "PLCS companion routing block",
             ["python", "governance/compat/check_plcs_companion_routing_block.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

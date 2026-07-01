@@ -34,6 +34,7 @@ RANGE_GATE_NAMES = (
     "governed artifact checker read-ahead",
     "work-order dispatch quality",
     "dispatch packet lifecycle hygiene",
+    "source intake decision packet preflight",
 )
 
 
@@ -95,6 +96,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "dispatch packet lifecycle hygiene",
             "governance/compat/check_dispatch_packet_lifecycle_hygiene.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "source intake decision packet preflight",
+            "governance/compat/check_source_intake_decision_packet_preflight.py",
             base,
             head,
         ),
