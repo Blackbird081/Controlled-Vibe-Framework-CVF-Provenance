@@ -31,7 +31,7 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=hand KIOD-R8 work order to worker and wait for worker return; parked checkpoint=KIOD-R8 dispatch committed at material commit `ce92d715`, KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, V29 archived under `CVF_SESSION/handoffs/archive/`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=hand KIOD-R8 work order to worker and wait for worker return; parked checkpoint=WOAS-R1 helper-first scaffold packet is held at material commit `12c92ecc` until KIOD-R8 worker return is reviewed or blocked, KIOD-R8 dispatch committed at material commit `ce92d715`, KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, V29 archived under `CVF_SESSION/handoffs/archive/`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
@@ -50,6 +50,12 @@ Previous mode:
 | Work | Commit | Disposition |
 |---|---|---|
 | KIOD-R8 Source Intake Decision Packet Preflight | `ce92d715` | DISPATCH_READY; worker must not commit; expected return `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md` |
+
+## Current Held Follow-Up Work
+
+| Work | Commit | Disposition |
+|---|---|---|
+| WOAS-R1 Dispatch Packet Authoring Scaffold | `12c92ecc` | HOLD_UNTIL_KIOD_R8_WORKER_RETURN; helper-first scaffold packet created for future worker release only after KIOD-R8 worker return is reviewed or blocked; current mode and next allowed move remain KIOD-R8 worker-return wait |
 
 ## Current Closed Work
 

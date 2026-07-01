@@ -5143,5 +5143,25 @@
     "nextAllowedMove": "ASCP-T2 activation policy semantics before CLI/MCP adapter implementation",
     "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
     "claimBoundary": "no package lifecycle mutation, no package body read, no automatic package activation, no automatic skill invocation telemetry outside the bounded loader, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
+  },
+  "woasR1DispatchPacketAuthoringScaffoldHeld20260701": {
+    "status": "HOLD_UNTIL_KIOD_R8_WORKER_RETURN",
+    "date": "2026-07-01",
+    "materialCommit": "12c92ecc",
+    "materialCommitFull": "12c92ecc2cf442487a52f992f49504558fa53893",
+    "baseline": "docs/baselines/CVF_GC018_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md",
+    "plannedWorkerReturn": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md",
+    "plannedCompletionReview": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_COMPLETION_2026-07-01.md",
+    "commitModeAfterRelease": "WORKER_MUST_NOT_COMMIT",
+    "dependency": "KIOD-R8 worker return must be reviewed or blocked with source-backed reviewer decision before WOAS-R1 can be released for worker execution.",
+    "dispatchSummary": "Held helper-first follow-up packet for generating prefilled GC-018 and work-order forms with checker read-ahead, dependency release, source verification, AHB, AOT, Delta claim-boundary, runtime-freshness, foundation-storage, package-skill, and public-export blocks.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 5858d420 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 5858d420 --head HEAD --enforce PASS",
+      "git diff --check PASS",
+      "pre-commit governance hook PASS 75/75"
+    ],
+    "claimBoundary": "Held packet only. Current mode and next allowed move remain KIOD-R8 worker-return wait. WOAS-R1 does not implement the helper, release worker execution, mutate runtime/provider/package/Web/MCP/model-router/public-sync behavior, or claim production readiness."
   }
 }

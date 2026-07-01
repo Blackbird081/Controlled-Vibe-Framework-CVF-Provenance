@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=hand KIOD-R8 work order to worker and wait for worker return; parked checkpoint=KIOD-R8 dispatch committed at material commit `ce92d715`, KIOD-R7 lifecycle hygiene remains closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=hand KIOD-R8 work order to worker and wait for worker return; parked checkpoint=WOAS-R1 helper-first scaffold packet is held at material commit `12c92ecc` until KIOD-R8 worker return is reviewed or blocked, KIOD-R8 dispatch committed at material commit `ce92d715`, KIOD-R7 lifecycle hygiene remains closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_prefli
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `ce92d715` KIOD-R8 Source Intake Decision Packet Preflight dispatch |
-| Latest session-sync target | session sync after KIOD-R8 dispatch |
+| Latest material packet | `12c92ecc` WOAS-R1 Dispatch Packet Authoring Scaffold held packet |
+| Latest session-sync target | session sync after WOAS-R1 held packet |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -48,6 +48,23 @@ receive new status.
 KIOD-R8 Source Intake Decision Packet Preflight was dispatched at material
 commit `ce92d715`. The worker must not commit and must return
 `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`.
+
+WOAS-R1 Dispatch Packet Authoring Scaffold was created as a held follow-up
+packet at material commit `12c92ecc`. It is not worker-released while KIOD-R8
+is active. Current mode and next allowed move remain KIOD-R8 worker-return
+wait.
+
+## Core Guard Self-Protection Authorization - WOAS-R1 Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record WOAS-R1 as a held follow-up packet while preserving KIOD-R8 current mode and next allowed move. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after adding the WOAS-R1 held packet entry. |
+| `CVF_SESSION/state/entries/woasR1DispatchPacketAuthoringScaffoldHeld20260701.json` | Add state source entry for WOAS-R1 held packet at material commit `12c92ecc`. |
+
+Authorization boundary: session-sync only. No worker release, no current-mode
+change, no next-allowed-move change, and no runtime/provider/public/package/Web
+or MCP/model-router claim.
 
 ## KIOD-R6 Memory Foundation Enrichment Closure - 2026-07-01
 
