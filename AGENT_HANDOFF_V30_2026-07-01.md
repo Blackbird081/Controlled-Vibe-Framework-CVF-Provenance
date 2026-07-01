@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next high-value package-skill or knowledge-absorption lane after KIOD-R7 closure; parked checkpoint=KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=hand KIOD-R8 work order to worker and wait for worker return; parked checkpoint=KIOD-R8 dispatch committed at material commit `ce92d715`, KIOD-R7 lifecycle hygiene remains closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_cl
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `dee9ebf9` KIOD-R7 Dispatch Packet Lifecycle Hygiene closure |
-| Latest session-sync target | session sync after KIOD-R7 closure |
+| Latest material packet | `ce92d715` KIOD-R8 Source Intake Decision Packet Preflight dispatch |
+| Latest session-sync target | session sync after KIOD-R8 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,13 +41,13 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-KIOD-R6 Memory Foundation Enrichment was accepted at material commit
-`8b89fc64`; active handoff V29 was rotated to this compact V30 because V29
-exceeded the active-markdown hard threshold after the required GC-020 marker.
+KIOD-R8 Source Intake Decision Packet Preflight was dispatched at material
+commit `ce92d715`. The worker must not commit and must return
+`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`.
 
 ## KIOD-R6 Memory Foundation Enrichment Closure - 2026-07-01
 
@@ -265,6 +265,60 @@ Session-sync work: KIOD-R6 enrichment session sync and V30 handoff rotation.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | V29 moved to archive as governed handoff rotation |
 
+## KIOD-R8 Source Intake Decision Packet Preflight Dispatch - 2026-07-01
+
+Material dispatch commit:
+`ce92d715276a702de5a024e2d8720d7d9bb616c1`
+
+Short SHA: `ce92d715`
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md`
+
+Status: `DISPATCH_READY`.
+
+Commit mode: `WORKER_MUST_NOT_COMMIT`.
+
+Expected worker return:
+`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`
+
+Completion review path:
+`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md`
+
+Dispatch verification:
+
+- pre-dispatch autorun PASS on range `d77d5f52..HEAD`
+- commit steward dispatch preflight PASS
+- `git diff --check` PASS
+- pre-commit governance hook PASS 75/75
+
+Boundary: guard-foundation dispatch only. The worker may create the KIOD-R8
+source-intake decision packet standard, implement a range-aware preflight
+checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push catalog
+wiring. No EverOS, CodeGraph, or other outside-source absorption pilot,
+runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
+MCP/CLI adapter, model-router work, package lifecycle mutation, action
+authority, automatic invocation, or production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - KIOD-R8 Session Sync
+
+| Protected path | Authorized session-sync change |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, and next allowed move after KIOD-R8 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup read model from active-session state sources. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from active-session state sources. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for KIOD-R8 dispatch. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to KIOD-R8 worker-return wait state. |
+| `CVF_SESSION/state/entries/kiodR8SourceIntakeDecisionPacketPreflightDispatch20260701.json` | Add KIOD-R8 dispatch state entry. |
+
+Authorization boundary: session continuity only after material dispatch commit
+`ce92d715`. No material dispatch artifact, runtime/provider/live behavior,
+source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router
+work, package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by this block.
+
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
@@ -282,18 +336,20 @@ Session-sync work: KIOD-R6 enrichment session sync and V30 handoff rotation.
 
 ## Next Allowed Move
 
-Operator selects the next high-value package-skill or knowledge-absorption lane
-after KIOD-R7 closure. No KIOD-R6 rework, C-file05/D-file06/I-file19 work,
+Hand KIOD-R8 to the worker and wait for
+`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`
+with `COMPLETE_PENDING_REVIEW` or `BLOCKED_RETURN_TO_ORCHESTRATOR`. Worker must
+not commit. No EverOS, CodeGraph, or other outside-source absorption pilot,
 runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
-MCP/CLI adapter, package lifecycle mutation, action authority, automatic
-invocation, or production-readiness claim is authorized without a fresh
-source-verified GC-018/work order.
+MCP/CLI adapter, model-router work, package lifecycle mutation, action
+authority, automatic invocation, or production-readiness claim is authorized in
+KIOD-R8.
 
 ## Claim Boundary
 
 V30 is a compact continuity handoff and session-sync carrier. It records
-KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, V29 archive rotation, active
-session pointers, and next allowed moves only. It does not create runtime/provider behavior,
+KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch,
+V29 archive rotation, active session pointers, and next allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
 authority, action authority, or broader production readiness.

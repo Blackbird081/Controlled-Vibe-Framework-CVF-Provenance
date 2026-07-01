@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next high-value package-skill or knowledge-absorption lane after KIOD-R7 closure; parked checkpoint=KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, V29 archived under `CVF_SESSION/handoffs/archive/`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=hand KIOD-R8 work order to worker and wait for worker return; parked checkpoint=KIOD-R8 dispatch committed at material commit `ce92d715`, KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, V29 archived under `CVF_SESSION/handoffs/archive/`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`
 
-Current mode: `kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`
 
-`kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`
 
 Previous mode:
 
-`kiod_r7_dispatch_packet_lifecycle_hygiene_dispatched_pending_worker_return`
+`kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No active dispatched worker packet after KIOD-R7 closure |
+| KIOD-R8 Source Intake Decision Packet Preflight | `ce92d715` | DISPATCH_READY; worker must not commit; expected return `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md` |
 
 ## Current Closed Work
 
@@ -175,17 +175,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`
 
-Next allowed move: operator selects the next high-value package-skill or
-knowledge-absorption lane after KIOD-R7 closure. KIOD-R7 is closed bounded at
-material commit `dee9ebf9`; helper scripts were deleted before commit. No
-KIOD-R6 rework, C-file05/D-file06/I-file19 work, runtime/provider/live proof,
-source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, package
+Next allowed move: hand KIOD-R8 to the worker and wait for
+`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`
+with `COMPLETE_PENDING_REVIEW` or `BLOCKED_RETURN_TO_ORCHESTRATOR`. KIOD-R8
+dispatch is committed at material commit `ce92d715`; worker packet is
+`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md`;
+commit mode is `WORKER_MUST_NOT_COMMIT`. No EverOS, CodeGraph, or other
+outside-source absorption pilot, runtime/provider/live proof, source import,
+public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package
 lifecycle mutation, action authority, automatic invocation, or
-production-readiness claim is authorized without a fresh source-verified
-GC-018/work order. KIOD-R6 remains CLOSED_PASS_BOUNDED at material commit
-`8b89fc64`.
+production-readiness claim is authorized in KIOD-R8. KIOD-R7 remains
+CLOSED_PASS_BOUNDED at material commit `dee9ebf9`. KIOD-R6 remains
+CLOSED_PASS_BOUNDED at material commit `8b89fc64`.
 KIOD-R6 roadmap remains at material commit `3e1bc936`. Checker read-ahead
 hardening remains closed at material commit `ac5b13ac`. KIOD-R5 itself is
 closed at material commit `be6be4e2`. KIOD-R4 closed at material commit
