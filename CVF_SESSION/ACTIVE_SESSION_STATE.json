@@ -70,8 +70,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection",
-  "previousMode": "kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return",
+  "currentMode": "kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return",
+  "previousMode": "kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -5495,5 +5495,26 @@
       "pre-commit governance hook PASS 78/78 for material closure commit 6ed7f257"
     ],
     "claimBoundary": "Documentation-only memory-foundation reference and worker-return acceptance. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
+  },
+  "kiodR10RuntimeDeferredCandidateDecisionDispatch20260701": {
+    "status": "DISPATCH_READY",
+    "dispatchCommit": "6a8b99f6",
+    "dispatchBaseHead": "b5ecbe59",
+    "batch": "KIOD-R10 Runtime Deferred Candidate Decision",
+    "gc018": "docs/baselines/CVF_GC018_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "expectedWorkerOutputs": [
+      "docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+      "docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_WORKER_RETURN_2026-07-01.md"
+    ],
+    "checks": [
+      "pre-dispatch autorun PASS on b5ecbe59..HEAD",
+      "dispatch commit steward PASS on b5ecbe59..HEAD",
+      "pre-commit hook PASS"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "result": "KIOD-R10 dispatch authorizes a decision-only source-intake worker tranche for D-file06 and I-file19, the runtime-adjacent EverOS memory candidates left parked by KIOD-R6/KIOD-R9.",
+    "nextAllowedMove": "Delegated worker executes KIOD-R10 under WORKER_MUST_NOT_COMMIT, creates the decision packet and worker return uncommitted, and does not implement runtime, checker, package, Web, MCP/CLI, public-sync, provider/live, action-authority, automatic-invocation, or session-sync work.",
+    "claimBoundary": "Dispatch-only material commit. No LanceDB/vector/embedding/rerank, Learning Plane runtime integration, checker implementation, source import, public export, provider/live proof, package lifecycle mutation, model-router work, action authority, automatic invocation, or production behavior is claimed."
   }
 }

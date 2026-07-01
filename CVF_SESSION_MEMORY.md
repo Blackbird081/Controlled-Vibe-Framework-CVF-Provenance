@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after KIOD-R9 closure; parked checkpoint=KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=delegated worker executes KIOD-R10 under WORKER_MUST_NOT_COMMIT; parked checkpoint=KIOD-R9 closed at material commit `6ed7f257`, KIOD-R10 dispatched at material commit `6a8b99f6`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
 
-Current mode: `kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
 
-`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return`
+`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No currently dispatched worker work after KIOD-R9 closure |
+| KIOD-R10 Runtime Deferred Candidate Decision | `6a8b99f6` | DISPATCH_READY; worker must not commit; decision-only source intake for D-file06/I-file19 with no runtime/checker/source-import/public/provider/package/Web/MCP/action-authority claim |
 
 ## Current Held Follow-Up Work
 
@@ -202,16 +202,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
 
-Next allowed move: KIOD-R9 Memory Ledger Schema Boundary is CLOSED_PASS_BOUNDED
-at material commit `6ed7f257`. Operator may select the next governed lane.
-D-file06 and I-file19 remain deferred runtime-adjacent candidates requiring
-fresh operator authorization and separate source-verified work orders before
-any follow-up. No checker implementation, runtime/provider/live proof, source
-import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation,
-model-router work, package lifecycle mutation, action authority, automatic
-invocation, or production-readiness claim is authorized by KIOD-R9 closure.
+Next allowed move: delegated worker executes KIOD-R10 from dispatch commit
+`6a8b99f6` under
+`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md`.
+Worker must create
+`docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md`
+and
+`docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_WORKER_RETURN_2026-07-01.md`
+uncommitted, with status COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+No checker implementation, runtime/provider/live proof, source import,
+public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
+work, package lifecycle mutation, action authority, automatic invocation,
+session-sync by worker, or production-readiness claim is authorized.
 WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material

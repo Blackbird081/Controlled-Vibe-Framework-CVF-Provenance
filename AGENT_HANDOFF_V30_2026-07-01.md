@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after KIOD-R9 closure; parked checkpoint=KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=delegated worker executes KIOD-R10 under WORKER_MUST_NOT_COMMIT; parked checkpoint=KIOD-R10 dispatched at material commit `6a8b99f6`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r9_memory_ledger_schema_boundary_closed
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `6ed7f257` KIOD-R9 Memory Ledger Schema Boundary closure |
-| Latest session-sync target | session sync after KIOD-R9 closure |
+| Latest material packet | `6a8b99f6` KIOD-R10 Runtime Deferred Candidate Decision dispatch |
+| Latest session-sync target | session sync after KIOD-R10 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
 
 ## Latest Changes
 
@@ -194,21 +194,26 @@ dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router
 work, action authority, automatic invocation, or production-readiness claim is
 authorized.
 
-## Core Guard Self-Protection Authorization - KIOD-R9 Closure Session Sync
+KIOD-R10 Runtime Deferred Candidate Decision dispatched at material commit
+`6a8b99f6`. The work order authorizes a no-commit worker to create only the
+decision packet and worker return for D-file06/I-file19. No runtime,
+provider/live, checker, source-import, public-sync, package, Web, MCP/CLI,
+model-router, action-authority, automatic-invocation, session-sync by worker,
+or production claim is authorized.
+
+## Core Guard Self-Protection Authorization - KIOD-R10 Dispatch Session Sync
 
 | Protected path | Authorized session-sync action |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed work, latest work, and next allowed move after KIOD-R9 closure. |
-| `AGENT_HANDOFF_V30_2026-07-01.md` | Record KIOD-R9 closure, protected-path authorization, next-move update, and HEAD marker. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after KIOD-R9 closure. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, and next allowed move after KIOD-R10 dispatch. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record KIOD-R10 dispatch, protected-path authorization, next-move update, and HEAD marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after KIOD-R10 dispatch. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after KIOD-R9 closure. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane selection after KIOD-R9 closure. |
-| `CVF_SESSION/state/entries/kiodR9MemoryLedgerSchemaBoundaryDispatch20260701.json` | Mark KIOD-R9 dispatch entry closed by material commit `6ed7f257`. |
-| `CVF_SESSION/state/entries/kiodR9MemoryLedgerSchemaBoundaryClosure20260701.json` | Add state source entry for KIOD-R9 closure commit `6ed7f257`. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after KIOD-R10 dispatch. |
+| `CVF_SESSION/state/entries/kiodR10RuntimeDeferredCandidateDecisionDispatch20260701.json` | Add state source entry for KIOD-R10 dispatch commit `6a8b99f6`. |
 
-Authorization boundary: session-sync only. No material KIOD-R9 artifact
-mutation after closure, checker implementation, runtime/provider/live proof,
+Authorization boundary: session-sync only. No material KIOD-R10 artifact
+mutation after dispatch, checker implementation, runtime/provider/live proof,
 source import, public-sync, Web/UI dashboard, MCP/CLI adapter, model-router
 work, package lifecycle mutation, action authority, automatic invocation, or
 production-readiness claim is authorized by this block.
@@ -778,7 +783,7 @@ by this block.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No currently dispatched worker work after KIOD-R9 closure |
+| KIOD-R10 Runtime Deferred Candidate Decision | `6a8b99f6` | DISPATCH_READY; worker must not commit; decision-only source intake for D-file06/I-file19 |
 
 ## Latest Closed Work
 
@@ -807,15 +812,16 @@ by this block.
 
 ## Next Allowed Move
 
-KIOD-R9 Memory Ledger Schema Boundary is CLOSED_PASS_BOUNDED at material commit
-`6ed7f257`. Operator may select the next governed lane. D-file06 and I-file19
-remain deferred runtime-adjacent candidates requiring fresh operator
-authorization and separate source-verified work orders before any follow-up. No
-checker implementation, runtime/provider/live proof, source import,
-public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
-work, package lifecycle mutation, action authority, automatic invocation, or
-production-readiness claim is authorized by KIOD-R9 closure. WOAS-R7 remains
-latest closed WOAS work at material commit `a8d98dd1`.
+Delegated worker executes KIOD-R10 from dispatch commit `6a8b99f6` under
+`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md`.
+Worker must create the KIOD-R10 decision packet and worker return under
+`docs/reviews/` uncommitted with status COMPLETE_PENDING_REVIEW or
+BLOCKED_WITH_REASON. No checker implementation, runtime/provider/live proof,
+source import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation,
+model-router work, package lifecycle mutation, action authority, automatic
+invocation, session-sync by worker, or production-readiness claim is
+authorized. WOAS-R7 remains latest closed WOAS work at material commit
+`a8d98dd1`.
 
 ## Claim Boundary
 
@@ -824,7 +830,7 @@ KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
 closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure,
 WOAS-R2 dispatch and closure, WOAS-R3 dispatch and closure, WOAS-R4 closure,
 WOAS-R5 dispatch and closure, WOAS-R6 closure, WOAS-R7 dispatch and closure,
-KIOD-R9 closure,
+KIOD-R10 dispatch,
 V29 archive
 rotation, active session pointers, and next
 allowed moves only. It does not create runtime/provider behavior,
@@ -1058,18 +1064,18 @@ lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter implementation,
 model-router work, hook catalog wiring, new blocking checker semantics, action
 authority, automatic invocation, or production-readiness claims.
 
-## GC-020 HEAD Marker - KIOD-R9 Closure
+## GC-020 HEAD Marker - KIOD-R10 Dispatch
 
 Latest material commit requiring in-place handoff trace:
 
-`6ed7f257`
+`6a8b99f6`
 
 Full SHA:
 
-`6ed7f257839c3d2b43a7c66358f805325acc4f7f`
+`6a8b99f6a890eb6d829f7119f853be470efcec80`
 
 This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
-`6ed7f257`. It records bounded KIOD-R9 closure only and does not authorize
+`6a8b99f6`. It records bounded KIOD-R10 dispatch only and does not authorize
 checker implementation, source import, runtime/provider/live behavior,
 public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
 implementation, model-router work, action authority, automatic invocation, or
