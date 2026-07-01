@@ -11,6 +11,13 @@ from pathlib import Path
 
 _COMPAT_DIR = Path(__file__).resolve().parent
 _MODULE_PATH = _COMPAT_DIR / "check_worker_return_quality_gate.py"
+_STANDARD_PATH = (
+    _COMPAT_DIR.parents[1]
+    / "docs"
+    / "reference"
+    / "work_order_authoring"
+    / "CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md"
+)
 _SPEC = importlib.util.spec_from_file_location("check_worker_return_quality_gate", _MODULE_PATH)
 if _SPEC is None or _SPEC.loader is None:
     raise RuntimeError(f"Unable to load module from {_MODULE_PATH}")
@@ -173,6 +180,41 @@ class DiagnoseTests(unittest.TestCase):
         d = chk.diagnose("docs/reviews/CVF_X_WORKER_RETURN.md", text)
         self.assertFalse(d.is_clean)
         self.assertTrue(any("canonical" in issue for issue in d.issues))
+
+
+class StandardParityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.standard_text = _STANDARD_PATH.read_text(encoding="utf-8")
+
+    def test_standard_lists_all_required_headings(self) -> None:
+        for heading in chk.REQUIRED_HEADINGS:
+            with self.subTest(heading=heading):
+                self.assertIn(heading, self.standard_text)
+
+    def test_standard_lists_checker_field_constants(self) -> None:
+        for label in (
+            *chk.READ_AHEAD_FIELDS,
+            *chk.AOT_FIELDS,
+            *chk.DELTA_FIELDS,
+        ):
+            with self.subTest(label=label):
+                self.assertIn(label, self.standard_text)
+
+    def test_standard_lists_canonical_tokens(self) -> None:
+        expected_tokens = (
+            *chk.PLACEHOLDER_MARKERS,
+            chk.EXTERNAL_INPUT_CANONICAL,
+            *chk.DELTA_RECEIPT_TOKENS,
+            *chk.DELTA_ACTION_TOKENS,
+            *chk.PUBLIC_EXPORT_TOKENS,
+            "WORKER_MUST_NOT_COMMIT honored",
+            "--base <executionBaseHead> --head HEAD --enforce",
+            "confirmation/evidence",
+        )
+        for token in expected_tokens:
+            with self.subTest(token=token):
+                self.assertIn(token, self.standard_text)
 
 
 if __name__ == "__main__":
