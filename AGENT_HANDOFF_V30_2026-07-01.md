@@ -75,7 +75,7 @@ or production-readiness claim is authorized.
 
 | Protected path | Authorized session-sync action |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, and next allowed move after WOAS-R2 dispatch. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, next allowed move, and lifecycle-hygiene false-positive spacing after WOAS-R2 dispatch. |
 | `AGENT_HANDOFF_V30_2026-07-01.md` | Record WOAS-R2 dispatch, worker-return wait state, protected-path authorization, and HEAD marker. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after WOAS-R2 dispatch. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |

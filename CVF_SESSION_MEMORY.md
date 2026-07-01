@@ -55,7 +55,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | WOAS-R2 is dispatched; no separate held follow-up remains |
+| None | N/A | No separate held follow-up remains for the currently dispatched worker packet |
 
 ## Current Closed Work
 
