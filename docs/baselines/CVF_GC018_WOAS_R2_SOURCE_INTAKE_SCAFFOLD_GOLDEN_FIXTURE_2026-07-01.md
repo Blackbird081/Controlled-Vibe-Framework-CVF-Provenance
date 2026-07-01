@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: WOAS-R2
 
@@ -53,7 +53,7 @@ authority, automatic invocation, or production-readiness claim.
 | Decision item | Disposition |
 | --- | --- |
 | Create WOAS-R2 as source-intake scaffold dogfood tranche | APPROVED |
-| Dispatch worker now | DISPATCH_READY |
+| Dispatch worker now | CLOSED_PASS_BOUNDED |
 | Worker commit authority | WORKER_MUST_NOT_COMMIT |
 | Reviewer closure conversion | REQUIRED |
 
@@ -175,6 +175,17 @@ or active session history.
 | Dependency state | WOAS-R1 material closure commit `fb6a0ae9` and session-sync commit `b23a2792` exist before dispatch. |
 | Dispatch gate plan | Pre-dispatch autorun must pass on range `b23a2792..HEAD` before worker handoff. |
 
+## Current Runtime Freshness Verification
+
+| Field | Value |
+| --- | --- |
+| runtimeClaimPresent | NO |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
+| reason | This closed baseline authorizes helper fixture and focused-test evidence only. It makes no runtime, provider, live-proof, Web, MCP, CLI, package, model-router, public-sync, or production-readiness claim. |
+| requiredFutureAction | If a later packet adds runtime or provider behavior, create a fresh source-verified work order and live-proof plan. |
+| providerRegistryBoundary | N/A with reason: no provider registry mutation or provider routing claim; current provider registry surfaces remain `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY`. |
+
 ## Claim Boundary
 
 This baseline authorizes a bounded helper/test dogfood tranche. It does not
@@ -183,6 +194,25 @@ external repository classification, runtime/provider/live behavior, public-sync,
 Web/UI dashboard work, MCP/CLI adapter work, model-router work, package
 lifecycle mutation, action authority, automatic invocation, or
 production-readiness claims.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | standalone helper dogfood tranche; no roadmap status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; worker-return fast gate drift check passed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Helper fixture | `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` | deterministic fixture accepted | PASS |
+| Focused tests | `governance/compat/test_build_dispatch_packet_scaffold.py` | unittest 41/41; worker-return fast gate PASS | PASS |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
 
 ## Public Export Disposition
 

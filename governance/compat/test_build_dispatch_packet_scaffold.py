@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -16,6 +17,21 @@ from build_dispatch_packet_scaffold import (
     detect_triggers,
     main,
     TRIGGER_FAMILIES,
+)
+
+FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
+SOURCE_INTAKE_GOLDEN_FIXTURE = FIXTURES_DIR / "woas_r2_source_intake_scaffold_golden.md"
+
+# Mirrors governance/compat/check_source_intake_decision_packet_preflight.py's
+# STANDALONE_MARKER_PATTERN / REQUIRED_SECTION exactly, so this test fails if
+# the helper's source-intake stub ever accidentally opts a generated sample
+# into the real KIOD-R8 decision-packet checker (ADIF-0020/ADIF-0021
+# marker-overmatch prevention; WOAS-R2 AC4).
+KIOD_R8_STANDALONE_MARKER_PATTERN = re.compile(
+    r"^\s*[-*]?\s*Source intake decision packet: REQUIRED\s*$", re.MULTILINE
+)
+KIOD_R8_REQUIRED_SECTION_HEADING_PATTERN = re.compile(
+    r"^## Source Intake Decision Packet\s*$", re.MULTILINE
 )
 
 
@@ -258,6 +274,109 @@ class TestTriggerDrivenOptionalBlocks(unittest.TestCase):
             "protected_governance_path",
         ):
             self.assertFalse(active[key], f"trigger {key} unexpectedly active")
+
+
+class TestSourceIntakeGoldenFixture(unittest.TestCase):
+    """WOAS-R2: source-intake scaffold output regression fixture and
+    marker-overmatch avoidance (AC1, AC4)."""
+
+    GOLDEN_ARGS = dict(
+        packet_kind="source-intake",
+        batch_id="WOAS-R2-GOLDEN",
+        title="Source Intake Scaffold Golden Fixture",
+        date="2026-07-01",
+        base="GOLDENFIXTUREBASEHEAD",
+        commit_mode="WORKER_MUST_NOT_COMMIT",
+        dependencies=[],
+    )
+
+    def _golden_work_order(self) -> str:
+        args = ScaffoldArgs(**self.GOLDEN_ARGS)
+        active = detect_triggers(args)
+        return build_work_order(args, active)
+
+    def test_golden_fixture_file_exists(self) -> None:
+        self.assertTrue(
+            SOURCE_INTAKE_GOLDEN_FIXTURE.is_file(),
+            f"missing golden fixture at {SOURCE_INTAKE_GOLDEN_FIXTURE}",
+        )
+
+    def test_source_intake_output_matches_golden_fixture_exactly(self) -> None:
+        expected = SOURCE_INTAKE_GOLDEN_FIXTURE.read_text(encoding="utf-8")
+        actual = self._golden_work_order()
+        self.assertEqual(
+            expected,
+            actual,
+            "helper source-intake output drifted from the checked-in golden "
+            "fixture; regenerate the fixture only after confirming the drift "
+            "is an intended shape change",
+        )
+
+    def test_source_intake_output_has_source_intake_trigger_active(self) -> None:
+        args = ScaffoldArgs(**self.GOLDEN_ARGS)
+        active = detect_triggers(args)
+        self.assertTrue(active["source_intake"])
+
+    def test_source_intake_output_avoids_standalone_kiod_r8_marker(self) -> None:
+        work_order = self._golden_work_order()
+        self.assertIsNone(
+            KIOD_R8_STANDALONE_MARKER_PATTERN.search(work_order),
+            "source-intake scaffold stub must never emit the standalone "
+            "`Source intake decision packet: REQUIRED` declaration line, or "
+            "generated samples would false-opt into the real KIOD-R8 "
+            "decision-packet checker",
+        )
+
+    def test_source_intake_output_avoids_real_required_section_heading(self) -> None:
+        work_order = self._golden_work_order()
+        self.assertIsNone(
+            KIOD_R8_REQUIRED_SECTION_HEADING_PATTERN.search(work_order),
+            "source-intake scaffold stub must use a distinct heading "
+            "(`## Source-Intake Decision Packet Fields (trigger stub)`), not "
+            "the real `## Source Intake Decision Packet` required-section "
+            "heading",
+        )
+
+    def test_source_intake_baseline_also_avoids_marker_overmatch(self) -> None:
+        args = ScaffoldArgs(**self.GOLDEN_ARGS)
+        active = detect_triggers(args)
+        baseline = build_gc018_baseline(args, active)
+        self.assertIsNone(KIOD_R8_STANDALONE_MARKER_PATTERN.search(baseline))
+        self.assertIsNone(KIOD_R8_REQUIRED_SECTION_HEADING_PATTERN.search(baseline))
+
+    def test_declaration_shape_marker_would_be_detected_if_present(self) -> None:
+        """Regression guard for the test itself: confirm the KIOD-R8 patterns
+        used above actually match a real standalone declaration, so a future
+        typo in the regex cannot silently make AC4 tests vacuous."""
+        real_marker_sample = "Source intake decision packet: REQUIRED\n"
+        self.assertIsNotNone(KIOD_R8_STANDALONE_MARKER_PATTERN.search(real_marker_sample))
+        real_heading_sample = "## Source Intake Decision Packet\n"
+        self.assertIsNotNone(
+            KIOD_R8_REQUIRED_SECTION_HEADING_PATTERN.search(real_heading_sample)
+        )
+
+    def test_quoted_marker_in_literal_token_list_is_not_standalone(self) -> None:
+        """Gotcha 35: quoting the real marker inside backticks as a literal
+        token (e.g. inside a Checker Source Read-Ahead Block) must not count
+        as a standalone declaration line."""
+        quoted_sample = (
+            "| literalTokensReviewed | `Source intake decision packet: "
+            "REQUIRED` reviewed for avoidance |\n"
+        )
+        self.assertIsNone(KIOD_R8_STANDALONE_MARKER_PATTERN.search(quoted_sample))
+
+    def test_golden_output_has_no_commit_and_source_intake_sections_together(self) -> None:
+        work_order = self._golden_work_order()
+        for marker in (
+            "## Dispatch Prompt Envelope",
+            "## Agent Handoff Contract Control Block",
+            "## Reviewer Closure Conversion",
+            "## Source-Intake Decision Packet Fields (trigger stub)",
+            "## Negative Search And Collision Discipline",
+            "## Public Export Disposition",
+            "DEFERRED_PRIVATE_ONLY",
+        ):
+            self.assertIn(marker, work_order)
 
 
 class TestTriggerMapExplainability(unittest.TestCase):

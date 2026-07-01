@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: WOAS-R2
 
@@ -111,6 +111,9 @@ Allowed scope:
 - Modify `governance/compat/build_dispatch_packet_scaffold.py` only if tests prove source-intake output lacks required scaffold shape.
 - Create `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` only if fixture-backed testing is the cleanest implementation.
 - Create the worker return at `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md`.
+- Reviewer-owned closure conversion may update `docs/baselines/CVF_GC018_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md`.
+- Reviewer-owned closure conversion may create `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_COMPLETION_2026-07-01.md`.
+- Reviewer-owned closure conversion may update `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md`.
 
 Forbidden scope:
 
@@ -296,6 +299,17 @@ source-verified work order or the operator explicitly changes scope.
 | `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` | Optional fixture path; create only if fixture-backed testing is cleaner than inline expected-output assertions. |
 | `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md` | Required worker return with command evidence, changed files, no-commit statement, and required review-shape sections. |
 
+## Required Artifact Manifest
+
+| Path | Required at handoff | Disposition |
+| --- | --- | --- |
+| `governance/compat/test_build_dispatch_packet_scaffold.py` | worker implementation | PASS |
+| `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` | worker implementation if fixture-backed testing is used | PASS |
+| `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md` | worker return | PASS |
+| `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_COMPLETION_2026-07-01.md` | reviewer closure conversion | PASS |
+| `docs/baselines/CVF_GC018_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md` | reviewer-owned closure status update | PASS |
+| `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md` | reviewer-owned closure status and checklist update | PASS |
+
 ## Foundation Storage Layout Block
 
 | Field | Value |
@@ -439,6 +453,17 @@ python governance/compat/run_worker_return_fast_gate.py --pytest-target governan
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <executionBaseHead> --head HEAD
 ```
 
+## Current Runtime Freshness Verification
+
+| Field | Value |
+| --- | --- |
+| runtimeClaimPresent | NO |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
+| reason | This closed work order authorizes helper fixture and focused-test evidence only. It makes no runtime, provider, live-proof, Web, MCP, CLI, package, model-router, public-sync, or production-readiness claim. |
+| requiredFutureAction | If a later packet adds runtime or provider behavior, create a fresh source-verified work order and live-proof plan. |
+| providerRegistryBoundary | N/A with reason: no provider registry mutation or provider routing claim; current provider registry surfaces remain `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY`. |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -493,14 +518,45 @@ outside this packet.
 
 ## Closure Checklist
 
-- [ ] Worker captured `executionBaseHead` and initial `git status --short`.
-- [ ] Worker read all required files and checker source before editing.
-- [ ] Worker stayed inside Write Ownership and Work-Order Fulfillment Manifest.
-- [ ] Focused helper tests passed.
-- [ ] Source-intake helper smoke command was run and recorded.
-- [ ] Worker-return fast gate passed or remaining limitations are classified.
-- [ ] Worker made no commit.
-- [ ] Reviewer accepted or rejected the worker return.
-- [ ] Reviewer/closer ran commit steward preflight before material commit.
-- [ ] Pre-closure autorun passed on the accepted material range.
-- [ ] Session-sync, if needed, was committed separately from material closure.
+- [x] Worker captured `executionBaseHead` and initial `git status --short`.
+- [x] Worker read all required files and checker source before editing.
+- [x] Worker stayed inside Write Ownership and Work-Order Fulfillment Manifest.
+- [x] Focused helper tests passed.
+- [x] Source-intake helper smoke command was run and recorded.
+- [x] Worker-return fast gate passed.
+- [x] Worker made no commit.
+- [x] Reviewer accepted the worker return.
+- [x] Reviewer/closer ran commit steward preflight before material commit.
+- [x] Worker-range pre-closure content checks passed before material commit except expected no-commit range/finality blockers.
+- [x] Session-sync is owned after material closure commit because current mode and next allowed move change.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | `docs/baselines/CVF_GC018_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED`; closure checklist all checked | PASS |
+| Worker return | `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | standalone helper dogfood tranche; no roadmap status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; worker-return fast gate drift check passed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Helper fixture | `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` | deterministic fixture accepted | PASS |
+| Focused tests | `governance/compat/test_build_dispatch_packet_scaffold.py` | unittest 41/41; worker-return fast gate PASS | PASS |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Worker return status | `COMPLETE_PENDING_REVIEW` | PASS |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT`; HEAD remained `2a21a61c` during worker return | PASS |
+| Focused tests | `python -m unittest governance.compat.test_build_dispatch_packet_scaffold -v` PASS 41/41 | PASS |
+| Smoke output | helper `--stdout` smoke command emitted scaffold text | PASS |
+| Golden fixture | `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` matched generated output exactly | PASS |
+| Marker-overmatch avoidance | no standalone source-intake decision marker or real required-section heading emitted | PASS |
+| No public export | `Public Export Disposition` remains `DEFERRED_PRIVATE_ONLY` | PASS |
