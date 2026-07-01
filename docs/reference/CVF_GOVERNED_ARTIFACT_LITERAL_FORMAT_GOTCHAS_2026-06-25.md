@@ -349,6 +349,27 @@ runtime/product code, and does not itself implement or modify any checker.
     This prevents the old loop of plausible prose, gate fail, checker read,
     partial repair, and next-checker fail.
 
+34. **Path-marker plus prose-marker can self-trigger a guard family.** A
+    governed shape standard can live under a path family that a checker treats
+    as an applicability marker. If that standard also uses flowing prose that
+    repeats the checker's text marker, the path marker plus prose marker can
+    make the standard look like a real execution artifact. KIOD-R8 hit this
+    when a standard path under `docs/reference/external_agent_review/` combined
+    with prose naming the absorption evidence class and three absorption
+    guards demanded full execution evidence. In shape/reference standards,
+    prefer citing the governed source path, section identifier, or exact
+    standard filename instead of repeating the trigger phrase as explanatory
+    prose, and keep the claim boundary explicit.
+
+35. **Applicability markers need declaration-shape matching, not bare
+    substring matching.** If a checker treats `MARKER in text` as opt-in, a
+    dispatch packet or work order that lists the real marker in backticks as a
+    literal token can become a false packet instance. For opt-in markers, use a
+    standalone-line pattern or equivalent declaration-shape parser, then add
+    regression tests for both cases: quoted marker in a literal-token list is
+    not applicable, and the same marker on its own declaration line is
+    applicable.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -374,19 +395,19 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | Checker read-ahead guard hardening, 2026-06-30 |
+| Session or invocation | KIOD-R8 self-trigger learning addendum, 2026-07-01 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reviews/CVF_CHECKER_READ_AHEAD_GUARD_HARDENING_AUTH_2026-06-30.md`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/test_check_governed_artifact_checker_read_ahead.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_pre_push.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py` |
-| Allowed scope source | operator instruction to handle closure discipline and literal machine-shape failures after KIOD-R5 review findings |
-| Before status evidence | checklist did not yet require checker-source read-ahead as a machine-shaped pre-write block |
-| After status evidence | checklist item 33 records the Checker Source Read-Ahead Block requirement |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Allowed scope source | operator instruction to add learning after KIOD-R8 self-repaired marker-overmatch defects |
+| Before status evidence | checklist did not yet name path-marker plus prose-marker self-trigger or declaration-shape marker matching |
+| After status evidence | checklist items 34 and 35 record KIOD-R8 marker-overmatch prevention guidance |
 | Diff evidence | `git diff --name-status` before material commit |
-| Approval boundary | governed artifact authoring friction checklist and ADIF/guard routing only |
+| Approval boundary | governed artifact authoring friction checklist and ADIF routing only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
-| Invocation ID | `cge-r1-absorption-lesson-hardening-2026-06-29` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_CHECKER_READ_AHEAD_GUARD_HARDENING_AUTH_2026-06-30.md`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_pre_push.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_check_governed_artifact_checker_read_ahead.py` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md`; `docs/reference/guard_orientation/README.md`; `docs/reviews/CVF_CHECKER_READ_AHEAD_GUARD_HARDENING_AUTH_2026-06-30.md`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_pre_push.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py`; `governance/compat/test_check_governed_artifact_checker_read_ahead.py` |
+| Invocation ID | `kiod-r8-marker-overmatch-learning-2026-07-01` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this hardening batch |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this learning batch |
