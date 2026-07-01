@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation; parked checkpoint=WOAS-R1 helper-first scaffold packet remains held at material commit `12c92ecc` until release evidence is refreshed, KIOD-R8 closed at material commit `303e62b9`, KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation; parked checkpoint=WOAS-R1 helper-first scaffold packet remains held at material commit `12c92ecc` until release evidence is refreshed, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
+Current mode marker: `kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
 
-Current mode: `kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
+Current mode: `kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
 
-`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
+`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
 
 Previous mode:
 
-`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`
+`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
 
 ## Current Dispatched Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 plus literal-format gotchas items 34-35 warn future agents about path-marker/prose-marker self-trigger and declaration-shape applicability matching |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted after reviewer repair; 20 focused tests pass; no outside-source absorption/runtime/provider/public/Web/package/helper/action-authority/production claim |
 | KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted, worker return repaired and accepted, completion review added, helper scripts deleted before commit; no runtime/provider/source-import/public/Web/package/action-authority/production claim |
 | KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted doc-only enrichment of memory-foundation owner surfaces and worker return; no runtime/checker/source-import/adapter/public/package/action-authority/live/provider/production claim |
@@ -71,6 +72,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 and gotchas items 34-35 record KIOD-R8 self-repaired marker-overmatch lessons before WOAS-R1 release review |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; source-intake decision packet preflight standard/checker/tests/catalog wiring closed after reviewer repair |
 | KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; dispatch-packet lifecycle hygiene standard, changed-range checker, 18 focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring accepted |
 | KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted worker return plus 3 memory-foundation owner-surface doc-only edits; DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders |
@@ -183,12 +185,14 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
+Mode: `kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
 
 Next allowed move: release WOAS-R1 Dispatch Packet Authoring Scaffold from HOLD
 only through dependency-release evidence and reviewer/dispatcher validation,
-then hand the existing held packet to a worker if gates pass. KIOD-R8 is closed
-at material commit `303e62b9`; WOAS-R1 held packet is material commit
+then hand the existing held packet to a worker if gates pass. KIOD-R8
+marker-overmatch learning is closed at material commit `b06b27db`; KIOD-R8
+source-intake preflight is closed at material commit `303e62b9`; WOAS-R1 held
+packet is material commit
 `12c92ecc` with work order
 `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md`.
 No EverOS, CodeGraph, or other outside-source absorption pilot,
@@ -325,7 +329,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
+`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
 
 ## Continuity Markers
 

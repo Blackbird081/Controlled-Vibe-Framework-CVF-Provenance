@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation; parked checkpoint=WOAS-R1 helper-first scaffold packet remains held at material commit `12c92ecc` until release evidence is refreshed, KIOD-R8 closed at material commit `303e62b9`, KIOD-R7 lifecycle hygiene remains closed at material commit `dee9ebf9`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation; parked checkpoint=WOAS-R1 helper-first scaffold packet remains held at material commit `12c92ecc` until release evidence is refreshed, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, KIOD-R7 lifecycle hygiene remains closed at material commit `dee9ebf9`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_prefli
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `303e62b9` KIOD-R8 Source Intake Decision Packet Preflight closure |
-| Latest session-sync target | session sync after KIOD-R8 closure |
+| Latest material packet | `b06b27db` KIOD-R8 Marker-Overmatch Learning Addendum |
+| Latest session-sync target | session sync after KIOD-R8 marker-overmatch learning addendum |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,18 +41,42 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
+`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
 
 ## Latest Changes
 
-KIOD-R8 Source Intake Decision Packet Preflight closed at material commit
-`303e62b9` after reviewer repair and acceptance. The worker return is
+KIOD-R8 Marker-Overmatch Learning Addendum closed at material commit
+`b06b27db`. It added
+`docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md` and
+literal-format gotchas items 34-35 for path-marker plus prose-marker
+self-trigger and declaration-shape applicability matching.
+
+KIOD-R8 Source Intake Decision Packet Preflight remains closed at material
+commit `303e62b9` after reviewer repair and acceptance. The worker return is
 `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`.
 
 WOAS-R1 Dispatch Packet Authoring Scaffold was created as a held follow-up
 packet at material commit `12c92ecc`. Its KIOD-R8 dependency is now satisfied,
 but worker release still requires dependency-release evidence and
 reviewer/dispatcher validation.
+
+## Core Guard Self-Protection Authorization - KIOD-R8 Learning Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, latest closed work, and next allowed move after KIOD-R8 marker-overmatch learning addendum. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record the learning addendum, protected-path authorization, and unchanged WOAS-R1 release-review next move. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after adding the learning-addendum state entry. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after the KIOD-R8 learning addendum. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Keep next move on WOAS-R1 dependency-release review while recording the learning addendum. |
+| `CVF_SESSION/state/entries/kiodR8MarkerOvermatchLearningAddendum20260701.json` | Add state source entry for material commit `b06b27db`. |
+
+Authorization boundary: session-sync only. No WOAS-R1 worker release, helper
+implementation, runtime/provider/live proof, outside-source absorption pilot,
+source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router
+work, package lifecycle mutation, automatic invocation, action authority, or
+production-readiness claim is authorized.
 
 ## Core Guard Self-Protection Authorization - WOAS-R1 Session Sync
 
@@ -399,6 +423,7 @@ by this block.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 and gotchas items 34-35 record KIOD-R8 self-repaired marker-overmatch lessons before WOAS-R1 release review |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted after reviewer repair |
 | KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted and worker return repaired/accepted |
 | KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted worker return plus 3 memory-foundation owner-surface doc-only edits; DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders |
@@ -426,8 +451,9 @@ session-sync.
 
 V30 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
-closure, V29 archive rotation, active session pointers, and next allowed moves
-only. It does not create runtime/provider behavior,
+closure, KIOD-R8 marker-overmatch learning, V29 archive rotation, active
+session pointers, and next allowed moves only. It does not create
+runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
 authority, action authority, or broader production readiness.
