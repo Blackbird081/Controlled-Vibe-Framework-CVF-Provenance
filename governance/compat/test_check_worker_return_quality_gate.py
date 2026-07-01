@@ -182,6 +182,65 @@ class DiagnoseTests(unittest.TestCase):
         self.assertTrue(any("canonical" in issue for issue in d.issues))
 
 
+class WoasR7GeneratedSkeletonQualityGateTests(unittest.TestCase):
+    """WOAS-R7: the WOAS-R3 generated worker-return skeleton must be
+    checker-safe by construction against this gate's `diagnose()` function,
+    proving AC5 of the WOAS-R7 work order without importing private checker
+    internals from a second module (both live in `governance/compat/`)."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        compat_dir = _COMPAT_DIR
+        if str(compat_dir) not in sys.path:
+            sys.path.insert(0, str(compat_dir))
+        from build_worker_return_skeleton_scaffold import (  # noqa: PLC0415
+            build_worker_return_skeleton,
+        )
+        from dataclasses import dataclass
+
+        @dataclass
+        class _ScaffoldArgs:
+            packet_kind: str
+            batch_id: str
+            title: str
+            date: str
+            base: str
+            commit_mode: str
+            dependencies: list
+            include_worker_return_skeleton: bool = False
+
+        args = _ScaffoldArgs(
+            packet_kind="generic-worker-dispatch",
+            batch_id="WOAS-R7-GATE-TEST",
+            title="Checker-Safe Worker Return Skeleton Generation",
+            date="2026-07-01",
+            base="abc1234",
+            commit_mode="WORKER_MUST_NOT_COMMIT",
+            dependencies=[],
+        )
+        cls.skeleton = build_worker_return_skeleton(args)
+
+    def test_generated_skeleton_has_no_placeholder_markers(self) -> None:
+        for marker in chk.PLACEHOLDER_MARKERS:
+            with self.subTest(marker=marker):
+                self.assertNotIn(marker, self.skeleton)
+
+    def test_generated_skeleton_is_eligible_worker_return(self) -> None:
+        self.assertTrue(
+            chk.is_eligible_worker_return(
+                "docs/reviews/CVF_WOAS_R7_GATE_TEST_WORKER_RETURN_2026-07-01.md",
+                self.skeleton,
+            )
+        )
+
+    def test_generated_skeleton_diagnoses_clean(self) -> None:
+        d = chk.diagnose(
+            "docs/reviews/CVF_WOAS_R7_GATE_TEST_WORKER_RETURN_2026-07-01.md",
+            self.skeleton,
+        )
+        self.assertTrue(d.is_clean, d.issues)
+
+
 class StandardParityTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

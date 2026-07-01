@@ -425,7 +425,17 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
         self.assertIn("Self-declared worker-return artifact: yes", skeleton)
         self.assertIn("Responds to work order:", skeleton)
         self.assertIn("dispatchWorkOrder:", skeleton)
-        self.assertIn("executionBaseHead: WORKER_MUST_CAPTURE_AT_START", skeleton)
+        self.assertIn("executionBaseHead:", skeleton)
+        self.assertIn("git rev-parse --short HEAD", skeleton)
+
+    def test_skeleton_has_no_banned_worker_return_quality_gate_placeholder(self) -> None:
+        """WOAS-R7: generated skeleton must be checker-safe by construction -
+        it must never contain a token from
+        `check_worker_return_quality_gate.PLACEHOLDER_MARKERS`, since that
+        checker scans the full raw document text regardless of context."""
+        skeleton = self._golden_skeleton()
+        self.assertNotIn("FILL_ME", skeleton)
+        self.assertNotIn("WORKER_MUST_CAPTURE_AT_START", skeleton)
 
     def test_skeleton_has_required_top_level_sections(self) -> None:
         skeleton = self._golden_skeleton()
