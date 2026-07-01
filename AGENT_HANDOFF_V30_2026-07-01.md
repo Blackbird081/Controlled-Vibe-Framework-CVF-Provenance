@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R5 closure; parked checkpoint=WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R6 closure; parked checkpoint=WOAS-R6 closed bounded at material commit `1c74075c`, WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`woas_r5_scaffold_first_dispatch_quality_gate
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `7ffbf3b4` WOAS-R5 Scaffold-First Dispatch Quality Gate closure |
-| Latest session-sync target | session sync after WOAS-R5 closure |
+| Latest material packet | `1c74075c` WOAS-R6 Worker Return Standard Checklist Parity closure |
+| Latest session-sync target | session sync after WOAS-R6 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
@@ -144,6 +144,36 @@ source import, runtime/provider/live proof, public-sync, Web/UI dashboard,
 MCP/CLI adapter behavior, package lifecycle mutation, model-router work,
 action authority, automatic invocation, or production-readiness claim is
 authorized.
+
+WOAS-R6 Worker Return Standard Checklist Parity closed bounded at material
+commit `1c74075c`. Codex updated
+`docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md`
+with a checker-source authoring checklist for exact worker-return headings,
+field labels, raw placeholder policy, canonical external input value,
+Delta/public/no-commit tokens, and real command-range discipline. It also added
+focused parity tests in `governance/compat/test_check_worker_return_quality_gate.py`
+so standard/checker drift is caught. No checker semantic change,
+runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter
+behavior, package lifecycle mutation, model-router work, action authority,
+automatic invocation, or production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - WOAS-R6 Closure Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed work, latest work, and next allowed move after WOAS-R6 closure. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record WOAS-R6 closure, protected-path authorization, next-move update, and HEAD marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after WOAS-R6 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after WOAS-R6 closure. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane selection after WOAS-R6 closure. |
+| `CVF_SESSION/state/entries/woasR6WorkerReturnStandardChecklistParityClosure20260701.json` | Add state source entry for WOAS-R6 closure commit `1c74075c`. |
+
+Authorization boundary: session-sync only. No checker semantic change,
+runtime/provider/live proof, real outside-source intake, source import,
+source-mirror mutation, public-sync, Web/UI dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, action authority, automatic
+invocation, or production-readiness claim is authorized.
 
 ## Core Guard Self-Protection Authorization - WOAS-R5 Closure Session Sync
 
@@ -680,15 +710,16 @@ by this block.
 
 ## Next Allowed Move
 
-WOAS-R5 Scaffold-First Dispatch Quality Gate is CLOSED_PASS_BOUNDED at material
-commit `7ffbf3b4`. Operator may select the next governed lane. The scaffold
-provenance standard, helper output, checker, focused tests, golden fixture
-maintenance, and reviewer-fast/pre-commit/pre-push/autorun wiring are closed.
-No real external source intake, source import, source-mirror mutation,
+WOAS-R6 Worker Return Standard Checklist Parity is CLOSED_PASS_BOUNDED at
+material commit `1c74075c`. Operator may select the next governed lane. The
+worker-return quality standard now mirrors checker-required headings, field
+labels, raw placeholder policy, canonical external input value,
+Delta/public/no-commit tokens, and real command-range discipline. Focused
+parity tests guard standard/checker drift. No checker semantic change,
 runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
 implementation, model-router work, package lifecycle mutation, action
 authority, automatic invocation, or production-readiness claim is authorized by
-WOAS-R5 closure.
+WOAS-R6 closure.
 
 ## Claim Boundary
 
@@ -696,12 +727,29 @@ V30 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
 closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure,
 WOAS-R2 dispatch and closure, WOAS-R3 dispatch and closure, WOAS-R4 closure,
-WOAS-R5 dispatch and closure, V29 archive
+WOAS-R5 dispatch and closure, WOAS-R6 closure, V29 archive
 rotation, active session pointers, and next
 allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
 authority, action authority, or broader production readiness.
+
+## GC-020 HEAD Marker - WOAS-R6 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`1c74075c`
+
+Full SHA:
+
+`1c74075c9949849ea14c475e275ad30276c67336`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`1c74075c`. It records bounded WOAS-R6 closure only and does not authorize
+checker semantic changes, real external source intake, source import,
+runtime/provider/live behavior, public-sync, package lifecycle mutation,
+Web/UI/dashboard work, MCP/CLI adapter implementation, model-router work,
+action authority, automatic invocation, or production-readiness claims.
 
 ## GC-020 HEAD Marker - WOAS-R5 Closure
 

@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R5 closure; parked checkpoint=WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R6 closure; parked checkpoint=WOAS-R6 closed bounded at material commit `1c74075c`, WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`
+`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | WOAS-R5 is closed bounded at material commit `7ffbf3b4`; no current dispatched worker tranche remains |
+| None | N/A | WOAS-R6 is closed bounded at material commit `1c74075c`; no current dispatched worker tranche remains |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; worker-return quality standard now mirrors checker required headings/tokens and focused parity tests guard standard/checker drift |
 | WOAS-R5 Scaffold-First Dispatch Quality Gate | `7ffbf3b4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair to scaffoldHelperCommand provenance, added scaffold provenance standard/checker/tests, updated helper output and golden fixture, and wired checker into reviewer-fast, pre-commit, pre-push, and autorun |
 | WOAS-R5 Scaffold-First Dispatch Quality Gate dispatch | `717f55cc` | CLOSED_PASS_BOUNDED_BY_7ffbf3b4; GC-018 baseline and work order created with Scaffold Provenance Block, source verification, ADIF disclosure, protected-path authorization, and worker-return quality requirements |
 | WOAS-R4 Worker Return Quality Gate | `e6a56718` | CLOSED_PASS_BOUNDED; added structural worker-return quality checker, skeleton self-declaration fields, focused tests, and worker-return fast gate/reviewer-fast/pre-commit/pre-push/autorun wiring to fail unresolved worker-return defects before reviewer acceptance |
@@ -78,6 +79,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; checklist exposes checker constants and parity tests passed 13/13 |
 | WOAS-R5 Scaffold-First Dispatch Quality Gate | `7ffbf3b4` | CLOSED_PASS_BOUNDED; scaffold provenance standard, helper output, checker, tests, fixture, and hook/autorun wiring are accepted |
 | WOAS-R4 Worker Return Quality Gate | `e6a56718` | CLOSED_PASS_BOUNDED; worker-return quality gate is wired into worker-return fast gate, reviewer-fast, pre-commit, pre-push, and autorun common commands |
 | WOAS-R3 Worker Return Skeleton Scaffold | `38765baf` | CLOSED_PASS_BOUNDED; opt-in worker-return skeleton output is covered by deterministic golden fixture and 54/54 focused tests |
@@ -196,18 +198,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: WOAS-R5 Scaffold-First Dispatch Quality Gate is
-CLOSED_PASS_BOUNDED at material commit `7ffbf3b4`. Operator may select the next
-governed lane. The scaffold provenance standard, helper output, checker,
-focused tests, and reviewer-fast/pre-commit/pre-push/autorun wiring are closed.
-Future GC-018 baselines and work orders generated by the local scaffold helper
-carry reviewable Scaffold Provenance Block evidence. No real external source
-intake, source import, source-mirror mutation, runtime/provider/live proof,
-public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
-work, package lifecycle mutation, action authority, automatic invocation, or
-production-readiness claim is authorized by WOAS-R5 closure.
+Next allowed move: WOAS-R6 Worker Return Standard Checklist Parity is
+CLOSED_PASS_BOUNDED at material commit `1c74075c`. Operator may select the next
+governed lane. The worker-return quality standard now mirrors checker-required
+headings, field labels, raw placeholder policy, canonical external input value,
+Delta/public/no-commit tokens, and real command-range discipline. Focused parity
+tests guard standard/checker drift. No checker semantic change,
+runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
+implementation, model-router work, package lifecycle mutation, action
+authority, automatic invocation, or production-readiness claim is authorized by
+WOAS-R6 closure.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
