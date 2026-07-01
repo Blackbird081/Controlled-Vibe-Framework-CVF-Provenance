@@ -2,19 +2,19 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: HOLD_UNTIL_KIOD_R8_WORKER_RETURN
+Status: DISPATCHED
 
 Batch ID: WOAS-R1
 
-Dispatch base head: 5858d420
+Dispatch base head: b25321f9
 
-Commit mode: WORKER_MUST_NOT_COMMIT_AFTER_RELEASE
+Commit mode: WORKER_MUST_NOT_COMMIT
 
 Decision owner: Operator
 
 Reviewer owner: Codex
 
-Worker target: delegated worker after dependency release
+Worker target: delegated worker
 
 ## Purpose
 
@@ -26,12 +26,13 @@ The goal is to reduce repeated work-order defects caused by blank-page
 authoring, late checker discovery, literal-format drift, and missing closure or
 machine-shape sections.
 
-## Dependency Hold
+## Dependency Release Evidence
 
 | Dependency | Current evidence | Release rule | Disposition |
 | --- | --- | --- | --- |
-| KIOD-R8 worker return | Active session state says KIOD-R8 is dispatched and waiting for worker return. | Release WOAS-R1 only after the KIOD-R8 worker return is reviewed or blocked with a source-backed reviewer decision. | HOLD_ACTIVE |
-| Current next allowed move | `CVF_SESSION/state/entries/nextAllowedMove.json` routes the next move to KIOD-R8 worker handoff and worker-return wait. | Do not supersede the active wait state with WOAS-R1 until dependency release evidence exists. | HOLD_ACTIVE |
+| KIOD-R8 source-intake worker return | KIOD-R8 Source Intake Decision Packet Preflight was accepted at material commit `303e62b9`; worker return `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`; completion review `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md`. | Release WOAS-R1 only after the KIOD-R8 worker return is reviewed or blocked with a source-backed reviewer decision. | SATISFIED |
+| KIOD-R8 marker-overmatch learning addendum | Learning addendum was accepted at material commit `b06b27db`; ADIF-0021 and gotchas items 34-35 record the worker self-repaired defects. | Release should carry the new marker-overmatch lessons into the helper lane. | SATISFIED |
+| Current next allowed move | `CVF_SESSION/state/entries/nextAllowedMove.json` routes the next move to WOAS-R1 dependency-release review after the KIOD-R8 closure and learning addendum. | Do not hand WOAS-R1 to a worker until this release packet refreshes evidence and gates. | RELEASED_BY_THIS_PACKET |
 
 ## Scope
 
@@ -51,32 +52,32 @@ machine-shape sections.
 | Decision item | Disposition |
 | --- | --- |
 | Create WOAS-R1 as the helper-first follow-up lane | APPROVED_AS_HOLD_PACKET |
-| Dispatch worker now | HELD_BY_KIOD_R8_ACTIVE_WORK |
-| Worker commit authority after release | WORKER_MUST_NOT_COMMIT |
-| Reviewer closure conversion after release | REQUIRED_AFTER_RELEASE |
+| Dispatch worker now | RELEASED_TO_WORKER_AFTER_THIS_PACKET_COMMITS_AND_GATES_PASS |
+| Worker commit authority | WORKER_MUST_NOT_COMMIT |
+| Reviewer closure conversion | REQUIRED |
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=`work-order-authoring`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
+Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
 
-Returned defects: NONE_RETURNED
+Returned defects: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007, ADIF-0014, ADIF-0015, ADIF-0016, ADIF-0017, ADIF-0020, ADIF-0021
 
 | Field | Value |
 | --- | --- |
-| Resolver command | `python governance/compat/run_adif_defect_resolver.py --task-class work-order-authoring --role dispatcher --lifecycle-phase pre-dispatch` |
-| Returned defect count | 0 |
-| Returned defects | NONE_RETURNED |
-| Disclosed defectIds | NONE_RETURNED |
-| Dispatch impact | No ADIF-specific defect rows are required for this baseline. The future worker must still read applicable checker source before writing artifacts. |
+| Resolver command | `python governance/compat/run_adif_defect_resolver.py --task-class "Work-order authoring / dispatch" --role dispatcher --lifecycle-phase pre-dispatch` |
+| Returned defect count | 10 |
+| Returned defects | ADIF-0001; ADIF-0002; ADIF-0006; ADIF-0007; ADIF-0014; ADIF-0015; ADIF-0016; ADIF-0017; ADIF-0020; ADIF-0021 |
+| Disclosed defectIds | ADIF-0001; ADIF-0002; ADIF-0006; ADIF-0007; ADIF-0014; ADIF-0015; ADIF-0016; ADIF-0017; ADIF-0020; ADIF-0021 |
+| Dispatch impact | Worker must read the disclosed ADIF entries before authoring. ADIF-0020 and ADIF-0021 are directly relevant to checker read-ahead and marker-overmatch avoidance for the helper scaffold. |
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_foundation_storage_layout.py` |
-| literalTokensReviewed | `Status: HOLD_UNTIL_KIOD_R8_WORKER_RETURN`; `WORKER_MUST_NOT_COMMIT`; `## Dispatch Prompt Envelope`; `## ADIF Defect Registry Disclosure`; `## Checker Source Read-Ahead Block`; `applicableCheckersRead`; `literalTokensReviewed`; `gateRunPurpose`; `claimBoundary`; `## Source Verification Block`; `Agent Handoff Contract Control Block`; `Reviewer Closure Conversion`; `Work-Order Fulfillment Manifest`; `Worker Return Packet Shape Contract`; `Negative Search And Collision Discipline` |
+| literalTokensReviewed | `Status: DISPATCHED`; `WORKER_MUST_NOT_COMMIT`; `## Dispatch Prompt Envelope`; `## ADIF Defect Registry Disclosure`; `## Checker Source Read-Ahead Block`; `applicableCheckersRead`; `literalTokensReviewed`; `gateRunPurpose`; `claimBoundary`; `## Source Verification Block`; `Agent Handoff Contract Control Block`; `Reviewer Closure Conversion`; `Work-Order Fulfillment Manifest`; `Worker Return Packet Shape Contract`; `Negative Search And Collision Discipline`; `ADIF-0020`; `ADIF-0021` |
 | gateRunPurpose | Pre-write and pre-dispatch confirmation evidence, not first discovery. |
-| claimBoundary | This block records dispatcher read-ahead for a held baseline. Worker read-ahead must be repeated after dependency release. |
+| claimBoundary | This block records dispatcher read-ahead for the released baseline. Worker read-ahead must be repeated at execution start. |
 
 ## Source Verification Block
 
@@ -87,11 +88,13 @@ Returned defects: NONE_RETURNED
 | Delegated runtime or source work must include a Work-Order Fulfillment Manifest. | EXISTS | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | line 121 | `Work-Order Fulfillment Manifest` | work-order template | ACCEPT |
 | Work-order source verification is a required block in the template. | EXISTS | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | line 392 | `Source Verification Block` | work-order template | ACCEPT |
 | Dependency-gated packets cannot move to ready or dispatch state until release evidence exists. | EXISTS | `docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md` | lines 49-73 | `Required Dependency Release Evidence` | dependency release standard | ACCEPT |
-| Handoff work orders require an Agent Handoff Contract Control Block. | EXISTS | `docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md` | lines 35-57 | `Agent Handoff Contract Control Block` | AHB machine-check standard | ACCEPT |
-| WORKER_MUST_NOT_COMMIT packets require Reviewer Closure Conversion. | EXISTS | `docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md` | lines 61-64 | `Reviewer Closure Conversion` | AHB machine-check standard | ACCEPT |
+| Handoff work orders require an Agent Handoff Contract Control Block. | EXISTS | `docs/reference/agent_handoff/README.md` | stable front door | `Agent Handoff Contract Control Block` | AHB machine-check standard | ACCEPT |
+| WORKER_MUST_NOT_COMMIT packets require Reviewer Closure Conversion. | EXISTS | `docs/reference/agent_handoff/README.md` | stable front door | `Reviewer Closure Conversion` | AHB machine-check standard | ACCEPT |
 | Dispatch-quality checker defines worker-return and source-verification literal term sets. | EXISTS | `governance/compat/check_work_order_dispatch_quality.py` | lines 68-202 | `FULFILLMENT_MANIFEST_MARKER; WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS; REQUIRED_SOURCE_COLUMNS` | dispatch-quality checker | ACCEPT |
-| ADIF disclosure checker requires exact resolver query and NONE_RETURNED marker. | VALUE_SET | `governance/compat/check_adif_defect_registry_disclosure.py` | lines 39-48 | `REQUIRED_SECTION; QUERY_LINE_PATTERN; RETURNED_NONE_MARKER` | ADIF disclosure checker | ACCEPT |
-| Active session state currently routes next work to KIOD-R8 worker return wait. | VALUE_SET | `CVF_SESSION/state/entries/nextAllowedMove.json` | line 4 | `KIOD-R8 Source Intake Decision Packet Preflight` | generated session state source entry | ACCEPT |
+| ADIF disclosure checker requires exact resolver query and every returned defectId. | VALUE_SET | `governance/compat/check_adif_defect_registry_disclosure.py` | lines 39-48 | `REQUIRED_SECTION; QUERY_LINE_PATTERN; DEFECT_ID_PATTERN` | ADIF disclosure checker | ACCEPT |
+| Active session state currently routes next work to WOAS-R1 release review. | VALUE_SET | `CVF_SESSION/state/entries/nextAllowedMove.json` | line 4 | `WOAS-R1 Dispatch Packet Authoring Scaffold` | generated session state source entry | ACCEPT |
+| KIOD-R8 source-intake worker return was accepted. | VALUE_SET | `CVF_SESSION/state/entries/nextAllowedMove.json` | line 4 | `303e62b9` | generated session state source entry | ACCEPT |
+| KIOD-R8 marker-overmatch learning addendum was closed. | VALUE_SET | `CVF_SESSION/state/entries/kiodR8MarkerOvermatchLearningAddendum20260701.json` | materialCommit field | `b06b27db` | generated session state source entry | ACCEPT |
 
 ## Negative Search And Collision Discipline
 
@@ -108,14 +111,14 @@ Returned defects: NONE_RETURNED
 | runtimeClaimPresent | NO |
 | runtimeMutationAuthorized | NO |
 | freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
-| reason | This held baseline authorizes future doc/helper/test scaffolding only. It makes no runtime, provider, live-proof, Web, MCP, CLI, package, model-router, public-sync, or production-readiness claim. |
+| reason | This released baseline authorizes doc/helper/test scaffolding only. It makes no runtime, provider, live-proof, Web, MCP, CLI, package, model-router, public-sync, or production-readiness claim. |
 | requiredFutureAction | If a later packet adds runtime or provider behavior, create a fresh source-verified work order and live-proof plan. |
 
 ## Package Skill Productionization Control Block
 
 SOP source: `docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md`
 
-Current phase: N/A with reason: this held baseline mentions package-skill only
+Current phase: N/A with reason: this released baseline mentions package-skill only
 as a trigger family for future scaffold stubs.
 
 Target lifecycle state: N/A with reason: no package lifecycle state is changed.
@@ -135,10 +138,10 @@ Claim boundary: Package-skill references are only scaffold trigger examples.
 
 | Evidence item | Current value |
 | --- | --- |
-| Dispatch base | 5858d420 |
-| ADIF resolver | `python governance/compat/run_adif_defect_resolver.py --task-class work-order-authoring --role dispatcher --lifecycle-phase pre-dispatch` returned zero candidates. |
+| Dispatch base | b25321f9 |
+| ADIF resolver | `python governance/compat/run_adif_defect_resolver.py --task-class "Work-order authoring / dispatch" --role dispatcher --lifecycle-phase pre-dispatch` returned 10 candidates: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007, ADIF-0014, ADIF-0015, ADIF-0016, ADIF-0017, ADIF-0020, ADIF-0021. |
 | Collision search | Planned WOAS-R1 path and token checks returned no existing artifact before authoring. |
-| Pre-dispatch dependency state | KIOD-R8 remains the active worker-return wait in session state. |
+| Pre-dispatch dependency state | KIOD-R8 source-intake closure and KIOD-R8 marker-overmatch learning are closed; active next move is WOAS-R1 release review. |
 
 ## Planned Worker Fulfillment Manifest
 
@@ -151,8 +154,8 @@ Claim boundary: Package-skill references are only scaffold trigger examples.
 
 ## Claim Boundary
 
-This baseline creates a held governance-helper follow-up lane. It does not
-dispatch a worker while KIOD-R8 remains active, does not implement the helper,
+This baseline releases a governance-helper follow-up lane. It does not
+implement the helper,
 does not add a blocking checker, and does not claim runtime, provider, public,
 package, Web, or live-governance behavior.
 
@@ -161,4 +164,4 @@ package, Web, or live-governance behavior.
 DEFERRED_PRIVATE_ONLY
 
 Reason: WOAS-R1 is private provenance governance-helper work. Public-sync is
-outside this held packet.
+outside this packet.
