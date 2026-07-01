@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=WOAS-R1 worker executes released scaffold packet under WORKER_MUST_NOT_COMMIT and returns worker-return artifact; parked checkpoint=WOAS-R1 released at material commit `a762cf0a`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane; parked checkpoint=WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`woas_r1_dispatch_packet_authoring_scaffold_d
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `a762cf0a` WOAS-R1 Dispatch Packet Authoring Scaffold release |
-| Latest session-sync target | session sync after WOAS-R1 dispatch release |
+| Latest material packet | `fb6a0ae9` WOAS-R1 Dispatch Packet Authoring Scaffold closure |
+| Latest session-sync target | session sync after WOAS-R1 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
+`woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
@@ -55,12 +55,12 @@ KIOD-R8 Source Intake Decision Packet Preflight remains closed at material
 commit `303e62b9` after reviewer repair and acceptance. The worker return is
 `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`.
 
-WOAS-R1 Dispatch Packet Authoring Scaffold was released at material commit
-`a762cf0a` after dependency-release evidence refresh and pre-dispatch gates.
-The worker must execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md`
-under `WORKER_MUST_NOT_COMMIT` and return
-`docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md`.
+WOAS-R1 Dispatch Packet Authoring Scaffold closed bounded at material commit
+`fb6a0ae9`. Reviewer accepted the no-commit worker return, completion review,
+work-order-authoring standard/front door, local scaffold helper, and 32 focused
+tests. Reviewer also repaired generation mode so valid arguments without
+`--stdout` fail instead of silently succeeding. The helper remains manual local
+text generation only, not a blocking guard or runtime/public/provider claim.
 
 ## Core Guard Self-Protection Authorization - WOAS-R1 Release Session Sync
 
@@ -443,6 +443,7 @@ by this block.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; helper standard/front door, scaffold helper, worker return, completion review, and 32 focused tests accepted |
 | KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 and gotchas items 34-35 record KIOD-R8 self-repaired marker-overmatch lessons before WOAS-R1 release review |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted after reviewer repair |
 | KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted and worker return repaired/accepted |
@@ -458,23 +459,40 @@ by this block.
 
 ## Next Allowed Move
 
-WOAS-R1 worker executes the released Dispatch Packet Authoring Scaffold work
-order under `WORKER_MUST_NOT_COMMIT`, captures `executionBaseHead` at start,
-and returns
-`docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md`.
-No EverOS, CodeGraph, or other outside-source absorption pilot,
-runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
-MCP/CLI adapter, model-router work, package lifecycle mutation, action
-authority, automatic invocation beyond the local helper command, or
-production-readiness claim is authorized by this session-sync.
+Operator selects the next governed lane. Future work orders should use the
+WOAS-R1 helper as a drafting aid when useful, but still require real source
+verification, ADIF disclosure, checker source read-ahead, negative search, and
+gates before dispatch. No EverOS, CodeGraph, or other outside-source absorption
+pilot, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
+MCP/CLI adapter implementation, model-router work, package lifecycle mutation,
+action authority, automatic invocation beyond manually running the local helper,
+or production-readiness claim is authorized without fresh GC-018/source-verified
+work order.
 
 ## Claim Boundary
 
 V30 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
-closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release, V29 archive
+closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure, V29 archive
 rotation, active session pointers, and next allowed moves only. It does not create
 runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
 authority, action authority, or broader production readiness.
+
+## GC-020 HEAD Marker - WOAS-R1 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`fb6a0ae9`
+
+Full SHA:
+
+`fb6a0ae9ff8223b2042617ea3e53691227d7152b`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`fb6a0ae9`. It records bounded dispatch-scaffold closure only and does not
+authorize runtime/provider/live behavior, public-sync, package lifecycle
+mutation, Web/UI/dashboard work, MCP/CLI adapter implementation, model-router
+work, action authority, automatic invocation beyond manually running the local
+helper, or production-readiness claims.

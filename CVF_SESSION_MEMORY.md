@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=WOAS-R1 worker executes released scaffold packet under WORKER_MUST_NOT_COMMIT and returns worker-return artifact; parked checkpoint=WOAS-R1 released at material commit `a762cf0a`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane; parked checkpoint=WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
+Current mode marker: `woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
+Current mode: `woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
+`woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
+`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| WOAS-R1 Dispatch Packet Authoring Scaffold | `a762cf0a` | DISPATCHED; worker must execute work order under WORKER_MUST_NOT_COMMIT and return `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md` |
+| None | N/A | WOAS-R1 closed bounded at `fb6a0ae9` |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, completion review, work-order-authoring standard/front door, local scaffold helper, and 32 focused tests; helper is manual text generation only, not a blocking guard or runtime/public/provider claim |
 | KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 plus literal-format gotchas items 34-35 warn future agents about path-marker/prose-marker self-trigger and declaration-shape applicability matching |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted after reviewer repair; 20 focused tests pass; no outside-source absorption/runtime/provider/public/Web/package/helper/action-authority/production claim |
 | KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted, worker return repaired and accepted, completion review added, helper scripts deleted before commit; no runtime/provider/source-import/public/Web/package/action-authority/production claim |
@@ -72,6 +73,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; helper now provides prefilled GC-018/work-order scaffold text with machine-shape sections and requires `--stdout` for generation mode |
 | KIOD-R8 Marker-Overmatch Learning Addendum | `b06b27db` | CLOSED_PASS_BOUNDED; ADIF-0021 and gotchas items 34-35 record KIOD-R8 self-repaired marker-overmatch lessons before WOAS-R1 release review |
 | KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; source-intake decision packet preflight standard/checker/tests/catalog wiring closed after reviewer repair |
 | KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; dispatch-packet lifecycle hygiene standard, changed-range checker, 18 focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring accepted |
@@ -185,19 +187,19 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
+Mode: `woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: WOAS-R1 worker executes the released Dispatch Packet
-Authoring Scaffold work order under `WORKER_MUST_NOT_COMMIT`, captures
-`executionBaseHead` at start, and returns
-`docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md`.
-WOAS-R1 release commit is `a762cf0a`; original held packet was material commit
+Next allowed move: operator selects the next governed lane. Future work orders
+should use the WOAS-R1 helper as a drafting aid when useful, but still require
+real source verification, ADIF disclosure, checker source read-ahead, negative
+search, and gates before dispatch. WOAS-R1 closure commit is `fb6a0ae9`;
+release commit was `a762cf0a`; original held packet was material commit
 `12c92ecc` with work order
 `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md`.
 No EverOS, CodeGraph, or other outside-source absorption pilot,
 runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
 MCP/CLI adapter, model-router work, package lifecycle mutation, action
-authority, automatic invocation, helper implementation, or production-readiness
+authority, automatic invocation beyond manually running the local helper, or production-readiness
 claim is authorized by this session-sync. KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
@@ -328,7 +330,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
+`woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Continuity Markers
 
