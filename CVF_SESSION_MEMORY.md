@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R6 closure; parked checkpoint=WOAS-R6 closed bounded at material commit `1c74075c`, WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=WOAS-R7 worker executes the dispatched no-commit helper/test/reference tranche and returns `docs/reviews/CVF_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_WORKER_RETURN_2026-07-01.md`; parked checkpoint=WOAS-R7 dispatched at material commit `9ae0c12c`, WOAS-R6 closed bounded at material commit `1c74075c`, WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return`
 
-Current mode: `woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return`
 
-`woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return`
 
 Previous mode:
 
-`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | WOAS-R6 is closed bounded at material commit `1c74075c`; no current dispatched worker tranche remains |
+| WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `9ae0c12c` | DISPATCH_READY; worker must execute `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_2026-07-01.md`, leave changes uncommitted, and return `docs/reviews/CVF_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_WORKER_RETURN_2026-07-01.md` |
 
 ## Current Held Follow-Up Work
 
@@ -198,18 +198,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `woas_r6_worker_return_standard_checklist_parity_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return`
 
-Next allowed move: WOAS-R6 Worker Return Standard Checklist Parity is
-CLOSED_PASS_BOUNDED at material commit `1c74075c`. Operator may select the next
-governed lane. The worker-return quality standard now mirrors checker-required
-headings, field labels, raw placeholder policy, canonical external input value,
-Delta/public/no-commit tokens, and real command-range discipline. Focused parity
-tests guard standard/checker drift. No checker semantic change,
-runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
-implementation, model-router work, package lifecycle mutation, action
-authority, automatic invocation, or production-readiness claim is authorized by
-WOAS-R6 closure.
+Next allowed move: WOAS-R7 Checker-Safe Worker Return Skeleton Generation is
+DISPATCH_READY at material commit `9ae0c12c`. Worker must execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_2026-07-01.md`,
+leave changes uncommitted under `WORKER_MUST_NOT_COMMIT`, and return
+`docs/reviews/CVF_WOAS_R7_CHECKER_SAFE_WORKER_RETURN_SKELETON_GENERATION_WORKER_RETURN_2026-07-01.md`
+with `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Scope is
+helper/test/reference hardening only: make generated worker-return skeleton
+output checker-safe against `check_worker_return_quality_gate.py` without
+weakening checker semantics. No runtime/provider/live proof, public-sync,
+Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package
+lifecycle mutation, action authority, automatic invocation, session-sync
+mutation by worker, or production-readiness claim is authorized.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
