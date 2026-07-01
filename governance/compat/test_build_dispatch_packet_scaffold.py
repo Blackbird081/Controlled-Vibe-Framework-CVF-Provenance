@@ -14,6 +14,7 @@ from build_dispatch_packet_scaffold import (
     build_gc018_baseline,
     build_trigger_map_table,
     build_work_order,
+    build_worker_return_skeleton,
     detect_triggers,
     main,
     TRIGGER_FAMILIES,
@@ -21,6 +22,7 @@ from build_dispatch_packet_scaffold import (
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
 SOURCE_INTAKE_GOLDEN_FIXTURE = FIXTURES_DIR / "woas_r2_source_intake_scaffold_golden.md"
+WORKER_RETURN_SKELETON_GOLDEN_FIXTURE = FIXTURES_DIR / "woas_r3_worker_return_skeleton_golden.md"
 
 # Mirrors governance/compat/check_source_intake_decision_packet_preflight.py's
 # STANDALONE_MARKER_PATTERN / REQUIRED_SECTION exactly, so this test fails if
@@ -377,6 +379,202 @@ class TestSourceIntakeGoldenFixture(unittest.TestCase):
             "DEFERRED_PRIVATE_ONLY",
         ):
             self.assertIn(marker, work_order)
+
+
+class TestWorkerReturnSkeleton(unittest.TestCase):
+    """WOAS-R3: worker-return skeleton generation, golden fixture, CLI opt-in,
+    default-output stability, and KIOD-R8 marker-overmatch avoidance."""
+
+    GOLDEN_ARGS = dict(
+        packet_kind="generic-worker-dispatch",
+        batch_id="WOAS-R3-GOLDEN",
+        title="Worker Return Skeleton Scaffold",
+        date="2026-07-01",
+        base="GOLDENFIXTUREBASEHEAD",
+        commit_mode="WORKER_MUST_NOT_COMMIT",
+        dependencies=[],
+    )
+
+    def _golden_skeleton(self) -> str:
+        args = ScaffoldArgs(**self.GOLDEN_ARGS)
+        return build_worker_return_skeleton(args)
+
+    def test_golden_fixture_file_exists(self) -> None:
+        self.assertTrue(
+            WORKER_RETURN_SKELETON_GOLDEN_FIXTURE.is_file(),
+            f"missing golden fixture at {WORKER_RETURN_SKELETON_GOLDEN_FIXTURE}",
+        )
+
+    def test_skeleton_matches_golden_fixture_exactly(self) -> None:
+        expected = WORKER_RETURN_SKELETON_GOLDEN_FIXTURE.read_text(encoding="utf-8")
+        actual = self._golden_skeleton()
+        self.assertEqual(
+            expected,
+            actual,
+            "worker-return skeleton output drifted from the checked-in golden "
+            "fixture; regenerate the fixture only after confirming the drift "
+            "is an intended shape change",
+        )
+
+    def test_skeleton_has_status_complete_pending_review(self) -> None:
+        skeleton = self._golden_skeleton()
+        self.assertIn("Status: COMPLETE_PENDING_REVIEW", skeleton)
+
+    def test_skeleton_has_dispatch_work_order_and_execution_base_head(self) -> None:
+        skeleton = self._golden_skeleton()
+        self.assertIn("dispatchWorkOrder:", skeleton)
+        self.assertIn("executionBaseHead: WORKER_MUST_CAPTURE_AT_START", skeleton)
+
+    def test_skeleton_has_required_top_level_sections(self) -> None:
+        skeleton = self._golden_skeleton()
+        for heading in (
+            "## Purpose",
+            "## Scope / Methodology",
+            "## Findings / Position",
+            "## Risk / Corrective Action",
+            "## Checker Source Read-Ahead Block",
+            "## Agent Operation Trace Block",
+            "## Delta Execution Claim Boundary Control Block",
+            "## Public Export Disposition",
+            "## Claim Boundary",
+            "## git status --short",
+            "## Changed Files",
+            "## Command Evidence",
+            "## No-Commit Statement",
+        ):
+            self.assertIn(heading, skeleton, f"missing heading: {heading}")
+
+    def test_skeleton_has_all_aot_labels(self) -> None:
+        skeleton = self._golden_skeleton()
+        for label in (
+            "Actor",
+            "Provider or surface",
+            "Session or invocation",
+            "Working directory",
+            "Command or tool surface",
+            "Target paths",
+            "Allowed scope source",
+            "Before status evidence",
+            "After status evidence",
+            "Diff evidence",
+            "Approval boundary",
+            "Claim boundary",
+            "Agent type",
+            "Invocation ID",
+            "Expected manifest",
+            "Actual changed set",
+            "Manifest delta",
+            "Deletion or rename disposition",
+        ):
+            self.assertIn(label, skeleton, f"missing AOT label: {label}")
+
+    def test_skeleton_has_all_delta_fields(self) -> None:
+        skeleton = self._golden_skeleton()
+        for field in (
+            "claimScope",
+            "claimDisposition",
+            "receiptEvidence",
+            "actionEvidence",
+            "invocationBoundary",
+            "interceptionBoundary",
+            "claimLanguage",
+            "forbiddenExpansion",
+        ):
+            self.assertIn(field, skeleton, f"missing Delta field: {field}")
+        self.assertIn("CLAIM_REJECTED_NO_RECEIPT", skeleton)
+        self.assertIn("CLAIM_REJECTED_NO_ACTION", skeleton)
+
+    def test_skeleton_has_public_export_deferred(self) -> None:
+        skeleton = self._golden_skeleton()
+        self.assertIn("DEFERRED_PRIVATE_ONLY", skeleton)
+
+    def test_skeleton_has_conditional_na_sections(self) -> None:
+        skeleton = self._golden_skeleton()
+        for section in (
+            "## External Knowledge Intake Routing",
+            "## Rescan Intelligence Hardening",
+            "## Corpus Completeness And Report Integrity",
+            "## Finding-To-Governance Learning Disposition",
+            "## Epistemic Process Block",
+            "## Machine Closure Package",
+        ):
+            self.assertIn(section, skeleton, f"missing conditional section: {section}")
+        self.assertIn("NOT_APPLICABLE_WITH_REASON", skeleton)
+        self.assertIn(
+            "operator-provided external comparison, critique, or recommendation",
+            skeleton,
+        )
+
+    def test_skeleton_has_no_commit_statement(self) -> None:
+        skeleton = self._golden_skeleton()
+        self.assertIn("WORKER_MUST_NOT_COMMIT honored", skeleton)
+
+    def test_skeleton_avoids_kiod_r8_marker_overmatch(self) -> None:
+        skeleton = self._golden_skeleton()
+        self.assertIsNone(
+            KIOD_R8_STANDALONE_MARKER_PATTERN.search(skeleton),
+            "worker-return skeleton must not emit standalone KIOD-R8 marker",
+        )
+        self.assertIsNone(
+            KIOD_R8_REQUIRED_SECTION_HEADING_PATTERN.search(skeleton),
+            "worker-return skeleton must not emit real KIOD-R8 required-section heading",
+        )
+
+    def test_cli_opt_in_produces_skeleton_section(self) -> None:
+        import io
+        from contextlib import redirect_stdout
+
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            exit_code = main(
+                [
+                    "--packet-kind",
+                    "generic-worker-dispatch",
+                    "--batch-id",
+                    "WOAS-R3-CLI",
+                    "--title",
+                    "Worker Return Skeleton Scaffold",
+                    "--date",
+                    "2026-07-01",
+                    "--base",
+                    "abc1234",
+                    "--commit-mode",
+                    "WORKER_MUST_NOT_COMMIT",
+                    "--stdout",
+                    "--include-worker-return-skeleton",
+                ]
+            )
+        self.assertEqual(exit_code, 0)
+        output = buf.getvalue()
+        self.assertIn("=== Generated Worker Return Skeleton ===", output)
+        self.assertIn("Status: COMPLETE_PENDING_REVIEW", output)
+        self.assertIn("## Agent Operation Trace Block", output)
+
+    def test_cli_without_opt_in_omits_skeleton_section(self) -> None:
+        import io
+        from contextlib import redirect_stdout
+
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            exit_code = main(
+                [
+                    "--packet-kind",
+                    "generic-worker-dispatch",
+                    "--batch-id",
+                    "WOAS-R3-NOOPT",
+                    "--title",
+                    "Worker Return Skeleton Scaffold",
+                    "--date",
+                    "2026-07-01",
+                    "--base",
+                    "abc1234",
+                    "--commit-mode",
+                    "WORKER_MUST_NOT_COMMIT",
+                    "--stdout",
+                ]
+            )
+        self.assertEqual(exit_code, 0)
+        self.assertNotIn("=== Generated Worker Return Skeleton ===", buf.getvalue())
 
 
 class TestTriggerMapExplainability(unittest.TestCase):

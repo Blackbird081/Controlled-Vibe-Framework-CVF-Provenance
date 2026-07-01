@@ -132,6 +132,39 @@ The helper does not run the ADIF resolver, does not read checker source, and
 does not perform negative searches on the author's behalf; it only prints
 the required shape so those steps are not discovered late via gate failure.
 
+## Opt-In Worker Return Skeleton (WOAS-R3)
+
+The helper supports an optional `--include-worker-return-skeleton` CLI flag
+that appends a `=== Generated Worker Return Skeleton ===` section after the
+baseline and work-order skeletons. This skeleton is a fillable worker-return
+markdown document with all required machine-shape sections:
+
+| Skeleton element | Requirement |
+| --- | --- |
+| `Status: COMPLETE_PENDING_REVIEW` | Present as fillable default. |
+| `dispatchWorkOrder:` | Present and points to the generated canonical work-order path. |
+| `executionBaseHead:` | Present and marked `WORKER_MUST_CAPTURE_AT_START`. |
+| `## Purpose` through `## No-Commit Statement` | All required top-level sections present. |
+| Agent Operation Trace Block | All labels from `check_agent_operation_trace.py` present. |
+| Delta Execution Claim Boundary Control Block | All eight required Delta fields with claim-rejection defaults. |
+| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` default. |
+| Conditional sections | `External Knowledge Intake Routing`, `Rescan Intelligence Hardening`, `Corpus Completeness And Report Integrity`, `Finding-To-Governance Learning Disposition`, `Epistemic Process Block`, `Machine Closure Package` present with compact N/A placeholders. |
+| KIOD-R8 marker safety | Must not emit standalone `Source intake decision packet: REQUIRED` or exact `## Source Intake Decision Packet`. |
+
+Default-output stability: without `--include-worker-return-skeleton`, the
+helper's baseline and work-order output remains byte-identical to the
+pre-WOAS-R3 behavior. The WOAS-R2 source-intake golden fixture test
+continues to guard this stability.
+
+The skeleton generator is `build_worker_return_skeleton(args: ScaffoldArgs)`
+- a deterministic pure function that takes the same `ScaffoldArgs` used for
+baseline/work-order generation and returns the skeleton markdown string.
+
+Claim boundary: the skeleton is a text-generation scaffold only. No runtime,
+provider, live-proof, Web, MCP, CLI, package-lifecycle, model-router,
+public-sync, action-authority, or automatic-invocation behavior is
+implemented or claimed.
+
 ## External Knowledge Intake Routing
 
 NOT_APPLICABLE_WITH_REASON: this standard documents an internal governance
@@ -179,21 +212,21 @@ outside this packet's public-sync boundary.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | WOAS-R1 no-commit worker |
+| Actor | WOAS-R3 no-commit worker |
 | Provider or surface | local workspace |
-| Session or invocation | WOAS-R1 worker execution, 2026-07-01 |
+| Session or invocation | WOAS-R3 worker execution, 2026-07-01 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | write_to_file, edit, multi_edit, run_command (unit tests, smoke commands, governance gates) |
-| Target paths | `docs/reference/work_order_authoring/README.md`; `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py` |
-| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md` Work-Order Fulfillment Manifest |
-| Before status evidence | clean worktree at HEAD `2835b1b5`; no existing `work_order_authoring` folder or scaffold helper found by negative search |
-| After status evidence | `git status --short` shows this standard, its folder README, the helper, and the helper test as untracked; HEAD unchanged |
+| Target paths | `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md` Allowed Scope |
+| Before status evidence | clean worktree at HEAD `4317eef3`; `git status --short` returned no changed paths before edits |
+| After status evidence | `git status --short` shows this standard, the helper, the helper test, and the golden fixture as changed; HEAD unchanged |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | worker execution only; reviewer/closer owns material commit |
-| Claim boundary | governance-helper standard authoring only; no runtime/provider/live/public/package/Web/MCP/model-router claim |
+| Claim boundary | governance-helper standard update only; no runtime/provider/live/public/package/Web/MCP/model-router claim |
 | Agent type | worker |
-| Invocation ID | `woas-r1-scaffold-standard-2026-07-01` |
-| Expected manifest | `docs/reference/work_order_authoring/README.md`; `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py` |
-| Actual changed set | `docs/reference/work_order_authoring/README.md`; `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py` |
+| Invocation ID | `woas-r3-worker-return-skeleton-scaffold-2026-07-01` |
+| Expected manifest | `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` |
+| Actual changed set | `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this batch |

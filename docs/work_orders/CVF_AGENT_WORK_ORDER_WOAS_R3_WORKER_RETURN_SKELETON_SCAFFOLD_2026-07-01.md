@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: WOAS-R3
 
@@ -192,6 +192,7 @@ Allowed scope:
 
 - `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md`
 - `governance/compat/build_dispatch_packet_scaffold.py`
+- `governance/compat/build_worker_return_skeleton_scaffold.py`
 - `governance/compat/test_build_dispatch_packet_scaffold.py`
 - `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md`
 - `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md`
@@ -221,6 +222,7 @@ catalog wiring or new blocking checker semantics.
 Protected paths:
 
 - `governance/compat/build_dispatch_packet_scaffold.py`
+- `governance/compat/build_worker_return_skeleton_scaffold.py`
 - `governance/compat/test_build_dispatch_packet_scaffold.py`
 
 Operator authorization: operator instructed the dispatcher to continue with
@@ -247,9 +249,24 @@ model-router, or production behavior is authorized.
 | --- | --- |
 | `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md` | Update to document the new opt-in worker-return skeleton path, default-output stability rule, and claim boundary. |
 | `governance/compat/build_dispatch_packet_scaffold.py` | Add deterministic worker-return skeleton generation and opt-in CLI plumbing. |
+| `governance/compat/build_worker_return_skeleton_scaffold.py` | Reviewer-added same-domain split module for worker-return skeleton generation to satisfy Python automation size guard. |
 | `governance/compat/test_build_dispatch_packet_scaffold.py` | Add focused tests for skeleton shape, golden fixture, CLI opt-in, default non-regression, and KIOD-R8 marker safety. |
 | `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` | Add byte-exact fixture for the new skeleton output. |
 | `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | Create worker return with required sections and command evidence; leave uncommitted. |
+
+## Required Artifact Manifest
+
+| Path | Required at handoff | Disposition |
+| --- | --- | --- |
+| `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md` | worker implementation | PASS |
+| `governance/compat/build_dispatch_packet_scaffold.py` | worker implementation | PASS |
+| `governance/compat/build_worker_return_skeleton_scaffold.py` | reviewer size-guard repair | PASS |
+| `governance/compat/test_build_dispatch_packet_scaffold.py` | worker implementation | PASS |
+| `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` | worker implementation | PASS |
+| `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | worker return | PASS |
+| `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_COMPLETION_2026-07-01.md` | reviewer closure conversion | PASS |
+| `docs/baselines/CVF_GC018_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md` | reviewer-owned closure status update | PASS |
+| `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md` | reviewer-owned closure status and checklist update | PASS |
 
 ## Execution Plan
 
@@ -356,14 +373,14 @@ dispatch/closure checks pass on a real base/head range.
 
 | Item | Required disposition |
 | --- | --- |
-| Worker return present | checked or BLOCKED with reason |
-| Worker did not commit | checked or BLOCKED with reason |
-| Allowed scope respected | checked or BLOCKED with reason |
-| Focused tests pass | checked or BLOCKED with reason |
-| Helper default output preserved | checked or BLOCKED with reason |
-| WOAS-R2 fixture remains valid | checked or BLOCKED with reason |
-| Reviewer-owned closure paths updated if accepted | checked or BLOCKED with reason |
-| Session-sync required if material commit accepted | checked or N/A with reason |
+| Worker return present | checked |
+| Worker did not commit | checked |
+| Allowed scope respected | checked |
+| Focused tests pass | checked |
+| Helper default output preserved | checked |
+| WOAS-R2 fixture remains valid | checked |
+| Reviewer-owned closure paths updated if accepted | checked |
+| Session-sync required if material commit accepted | checked |
 
 ## Operator Checkpoint
 
@@ -391,6 +408,7 @@ work, or a production-readiness claim.
 | freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
 | reason | WOAS-R3 is a local helper/test/reference scaffold tranche only. |
 | requiredFutureAction | Fresh GC-018 and live proof are required before any runtime/provider/governance behavior claim. |
+| providerRegistryBoundary | N/A with reason: no provider registry mutation or provider routing claim; current provider registry surfaces remain `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY`. |
 
 ## Evidence Reuse And Encoding Plan
 
@@ -488,6 +506,41 @@ public-sync, Web/UI/dashboard, MCP/CLI adapter behavior, package lifecycle
 mutation, model-router work, hook catalog wiring, new blocking checker
 semantics, action authority, automatic invocation, or production-readiness
 claims.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | `docs/baselines/CVF_GC018_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED`; closure checklist all checked | PASS |
+| Worker return | `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted after reviewer repair | PASS |
+| Completion review | `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | standalone helper scaffold tranche; no roadmap status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; worker-return fast gate drift check passed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Helper standard | `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md` | opt-in worker-return skeleton section accepted | PASS |
+| Helper source | `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py` | `build_worker_return_skeleton`; `--include-worker-return-skeleton` | PASS |
+| Helper fixture | `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` | deterministic fixture accepted | PASS |
+| Focused tests | `governance/compat/test_build_dispatch_packet_scaffold.py` | unittest 54/54; worker-return fast gate PASS | PASS |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Worker return status | `COMPLETE_PENDING_REVIEW` | PASS |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT`; HEAD remained `4317eef3` during worker return | PASS |
+| Focused tests | `python -m unittest governance.compat.test_build_dispatch_packet_scaffold -v` PASS 54/54 | PASS |
+| Smoke output without opt-in | helper `--stdout` smoke emitted no worker-return skeleton marker | PASS |
+| Smoke output with opt-in | helper `--include-worker-return-skeleton --stdout` emitted worker-return skeleton marker and required headings | PASS |
+| Golden fixture | `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` matched generated output exactly | PASS |
+| Marker-overmatch avoidance | no standalone source-intake decision marker or real required-section heading emitted | PASS |
+| No public export | `Public Export Disposition` remains `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Public Export Disposition
 

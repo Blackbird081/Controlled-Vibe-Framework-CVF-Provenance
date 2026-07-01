@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: WOAS-R3
 
@@ -89,7 +89,7 @@ Returned defects: NONE_RETURNED
 
 ## Baseline Decision
 
-Decision: DISPATCH_READY
+Decision: CLOSED_PASS_BOUNDED
 
 Proposed tranche: WOAS-R3 Worker Return Skeleton Scaffold.
 
@@ -113,6 +113,7 @@ Baseline boundary: helper/test/reference scaffold work only, with
 | Protected path | Authorized worker action |
 | --- | --- |
 | `governance/compat/build_dispatch_packet_scaffold.py` | Add an opt-in worker-return skeleton generator and CLI plumbing; preserve existing default output unless the opt-in flag is used. |
+| `governance/compat/build_worker_return_skeleton_scaffold.py` | Reviewer-added same-domain split module for worker-return skeleton generation to satisfy Python automation size guard. |
 | `governance/compat/test_build_dispatch_packet_scaffold.py` | Add focused tests for the new skeleton, CLI opt-in behavior, default-output stability, and literal marker safety. |
 
 Authorization boundary: WOAS-R3 helper/test work only. No guard catalog wiring,
@@ -156,6 +157,17 @@ Worker should also run any direct checker command needed after reading a
 failure message. Gate runs are confirmation evidence, not the first source of
 requirements.
 
+## Current Runtime Freshness Verification
+
+| Field | Value |
+| --- | --- |
+| runtimeClaimPresent | NO |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
+| reason | This closed baseline authorizes helper skeleton and focused-test evidence only. It makes no runtime, provider, live-proof, Web, MCP, CLI, package, model-router, public-sync, or production-readiness claim. |
+| requiredFutureAction | If a later packet adds runtime or provider behavior, create a fresh source-verified work order and live-proof plan. |
+| providerRegistryBoundary | N/A with reason: no provider registry mutation or provider routing claim; current provider registry surfaces remain `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY`. |
+
 ## Claim Boundary
 
 This baseline authorizes a local helper/test/reference update only. It does not
@@ -164,6 +176,41 @@ runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter,
 package lifecycle mutation, model-router work, hook catalog wiring, new
 blocking checker semantics, action authority, automatic invocation, or
 production-readiness claims.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted after reviewer repair | PASS |
+| Completion review | `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | standalone helper scaffold tranche; no roadmap status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; worker-return fast gate drift check passed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Helper standard | `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md` | opt-in worker-return skeleton section accepted | PASS |
+| Helper source | `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py` | `build_worker_return_skeleton`; `--include-worker-return-skeleton` | PASS |
+| Helper fixture | `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` | deterministic fixture accepted | PASS |
+| Focused tests | `governance/compat/test_build_dispatch_packet_scaffold.py` | unittest 54/54; worker-return fast gate PASS | PASS |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Worker return status | `COMPLETE_PENDING_REVIEW` | PASS |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT`; HEAD remained `4317eef3` during worker return | PASS |
+| Focused tests | `python -m unittest governance.compat.test_build_dispatch_packet_scaffold -v` PASS 54/54 | PASS |
+| Smoke output without opt-in | helper `--stdout` smoke emitted no worker-return skeleton marker | PASS |
+| Smoke output with opt-in | helper `--include-worker-return-skeleton --stdout` emitted worker-return skeleton marker and required headings | PASS |
+| Golden fixture | `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` matched generated output exactly | PASS |
+| Marker-overmatch avoidance | no standalone source-intake decision marker or real required-section heading emitted | PASS |
+| No public export | `Public Export Disposition` remains `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 

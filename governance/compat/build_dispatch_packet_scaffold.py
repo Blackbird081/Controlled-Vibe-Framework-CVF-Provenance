@@ -29,6 +29,8 @@ import re
 import sys
 from dataclasses import dataclass, field
 
+from build_worker_return_skeleton_scaffold import build_worker_return_skeleton
+
 PACKET_KINDS = (
     "generic-worker-dispatch",
     "held-dependency",
@@ -715,6 +717,7 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--commit-mode", choices=COMMIT_MODES, default=None)
     parser.add_argument("--dependency", action="append", default=[], dest="dependencies")
     parser.add_argument("--stdout", action="store_true")
+    parser.add_argument("--include-worker-return-skeleton", action="store_true")
     parser.add_argument("--explain-trigger-map", action="store_true")
     return parser.parse_args(argv)
 
@@ -770,6 +773,11 @@ def main(argv: list[str] | None = None) -> int:
     print(baseline_md)
     print("=== Generated Work Order Skeleton ===")
     print(work_order_md)
+
+    if args.include_worker_return_skeleton:
+        skeleton_md = build_worker_return_skeleton(scaffold_args)
+        print("=== Generated Worker Return Skeleton ===")
+        print(skeleton_md)
 
     return 0
 
