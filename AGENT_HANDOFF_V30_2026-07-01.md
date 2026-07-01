@@ -205,7 +205,7 @@ or production claim is authorized.
 
 | Protected path | Authorized session-sync action |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, and next allowed move after KIOD-R10 dispatch. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, next allowed move, and stale lower continuity-mode marker after KIOD-R10 dispatch. |
 | `AGENT_HANDOFF_V30_2026-07-01.md` | Record KIOD-R10 dispatch, protected-path authorization, next-move update, and HEAD marker. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after KIOD-R10 dispatch. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |

@@ -347,7 +347,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
 
 ## Continuity Markers
 
@@ -364,6 +364,30 @@ This front door is intentionally compact. Long continuity history was archived t
 `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md`
 
 Do not append long status history here. Update compact pointers, generated session state sources, and the active handoff instead.
+
+## Core Guard Self-Protection Authorization - KIOD-R10 Front-Door Mode Correction
+
+Authorized guard-maintenance scope: front-door session-sync correction only.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: implied by operator-approved KIOD-R10 session-sync
+continuity after dispatch and by the active governed session-sync role.
+
+Rollback boundary: revert only this lower continuity-mode correction if
+reviewer rejects the sync correction; do not alter KIOD-R10 material dispatch.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Correct stale lower continuity-mode marker after KIOD-R10 dispatch session-sync commit `e63f73f7`. |
+
+Authorization boundary: front-door mode-marker correction only. No material
+artifact mutation, checker implementation, runtime/provider/live proof, source
+import, public-sync, Web/UI dashboard, MCP/CLI adapter, model-router work,
+package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by this block.
 
 ## Claim Boundary
 
