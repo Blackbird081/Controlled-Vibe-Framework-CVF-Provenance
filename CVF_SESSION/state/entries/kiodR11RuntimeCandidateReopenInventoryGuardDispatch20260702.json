@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1365,
+  "stateKey": "kiodR11RuntimeCandidateReopenInventoryGuardDispatch20260702",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-02",
+    "materialCommit": "08f5fd68",
+    "materialCommitFull": "08f5fd68bae8788af828f36f64801b0762ca2bdf",
+    "dispatchBaseHead": "9c7aa4d5",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_WORKER_RETURN_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a bounded KIOD-R10 follow-up that systemizes the D-file06 and I-file19 concrete runtime-candidate reopen conditions into a KIOD-specific inventory, checker, focused tests, and local hook/autorun wiring.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 9c7aa4d5 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 9c7aa4d5 --head HEAD --enforce PASS"
+    ],
+    "nextAllowedMove": "Worker executes KIOD-R11 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer/closer owns acceptance, material commit of worker changes, and later session-sync.",
+    "claimBoundary": "Dispatch only. No runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}
