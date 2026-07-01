@@ -650,3 +650,21 @@ public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
 implementation, model-router work, hook catalog wiring, new blocking checker
 semantics, action authority, automatic invocation, or production-readiness
 claims.
+
+## GC-020 HEAD Marker - WOAS-R3 Dispatch Lifecycle Text Repair
+
+Latest session-sync repair commit requiring in-place handoff trace:
+
+`a9abfa3b`
+
+Full SHA:
+
+`a9abfa3ba38a37dab203df7b8752707933ee8397`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for session-sync
+repair commit `a9abfa3b`. It records wording-only lifecycle hygiene repair for
+WOAS-R3 dispatch continuity text and does not authorize real external source
+intake, source import, runtime/provider/live behavior, public-sync, package
+lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter implementation,
+model-router work, hook catalog wiring, new blocking checker semantics, action
+authority, automatic invocation, or production-readiness claims.
