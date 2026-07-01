@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1361,
+  "stateKey": "kiodR9MemoryLedgerSchemaBoundaryDispatch20260701",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-01",
+    "materialCommit": "063b9001",
+    "materialCommitFull": "063b900144fd471f2631fedfcc9f5f81dd80b2aa",
+    "dispatchBaseHead": "72881d3a",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_WORKER_RETURN_2026-07-01.md",
+    "optionalCompletionReview": "docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_COMPLETION_2026-07-01.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a bounded KIOD-R6 follow-up for C-file05 only: worker must re-read the EverOS SQLite ledger schema source file, compare it against current memory-foundation owner surfaces, and create a CVF-native doc-only ledger schema boundary reference only if refreshed searches and field comparison support it.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 72881d3a --head HEAD PASS 71/71",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 72881d3a --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 78/78 for material dispatch commit 063b9001"
+    ],
+    "claimBoundary": "Dispatch only. Worker must not commit and must not edit session/front-door/handoff surfaces. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

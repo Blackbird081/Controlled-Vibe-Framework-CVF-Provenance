@@ -70,8 +70,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "woas_r7_checker_safe_worker_return_skeleton_generation_closed_pass_bounded_pending_operator_next_lane_selection",
-  "previousMode": "woas_r7_checker_safe_worker_return_skeleton_generation_dispatched_pending_worker_return",
+  "currentMode": "kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return",
+  "previousMode": "woas_r7_checker_safe_worker_return_skeleton_generation_closed_pass_bounded_pending_operator_next_lane_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3208,7 +3208,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "WOAS-R7 Checker-Safe Worker Return Skeleton Generation is CLOSED_PASS_BOUNDED at material commit a8d98dd1. Generated worker-return skeleton output now avoids the worker-return quality gate banned placeholder markers, preserves required headings/fields/canonical tokens, and has direct diagnose() regression coverage plus deterministic golden fixture coverage. Operator may select the next governed lane. No checker semantic change, runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized by WOAS-R7 closure. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "KIOD-R9 Memory Ledger Schema Boundary is DISPATCH_READY at material commit 063b9001. Delegated worker must execute docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md under WORKER_MUST_NOT_COMMIT and return docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_WORKER_RETURN_2026-07-01.md uncommitted with COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Scope is C-file05 doc-only memory-foundation ledger-schema boundary comparison and optional reference creation only. D-file06 and I-file19 remain excluded runtime candidates. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, session-state/handoff/front-door worker edits, or production-readiness claim is authorized by KIOD-R9 dispatch. WOAS-R7 remains latest closed work at material commit a8d98dd1. LHW24 remains the latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -5448,5 +5448,24 @@
       "pre-commit governance hook PASS 78/78 for material closure commit a8d98dd1"
     ],
     "claimBoundary": "Generated worker-return skeleton helper/test/fixture hardening only. No checker semantic change, runtime/provider/live proof, real outside-source intake, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
+  },
+  "kiodR9MemoryLedgerSchemaBoundaryDispatch20260701": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-01",
+    "materialCommit": "063b9001",
+    "materialCommitFull": "063b900144fd471f2631fedfcc9f5f81dd80b2aa",
+    "dispatchBaseHead": "72881d3a",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_WORKER_RETURN_2026-07-01.md",
+    "optionalCompletionReview": "docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_COMPLETION_2026-07-01.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a bounded KIOD-R6 follow-up for C-file05 only: worker must re-read the EverOS SQLite ledger schema source file, compare it against current memory-foundation owner surfaces, and create a CVF-native doc-only ledger schema boundary reference only if refreshed searches and field comparison support it.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 72881d3a --head HEAD PASS 71/71",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 72881d3a --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 78/78 for material dispatch commit 063b9001"
+    ],
+    "claimBoundary": "Dispatch only. Worker must not commit and must not edit session/front-door/handoff surfaces. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
   }
 }
