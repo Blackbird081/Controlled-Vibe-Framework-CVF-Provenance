@@ -2,7 +2,7 @@
   "stateOrder": 1350,
   "stateKey": "woasR1DispatchPacketAuthoringScaffoldHeld20260701",
   "value": {
-    "status": "HOLD_UNTIL_KIOD_R8_WORKER_RETURN",
+    "status": "HOLD_DEPENDENCY_SATISFIED_PENDING_RELEASE_REVIEW",
     "date": "2026-07-01",
     "materialCommit": "12c92ecc",
     "materialCommitFull": "12c92ecc2cf442487a52f992f49504558fa53893",
@@ -11,7 +11,7 @@
     "plannedWorkerReturn": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md",
     "plannedCompletionReview": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_COMPLETION_2026-07-01.md",
     "commitModeAfterRelease": "WORKER_MUST_NOT_COMMIT",
-    "dependency": "KIOD-R8 worker return must be reviewed or blocked with source-backed reviewer decision before WOAS-R1 can be released for worker execution.",
+    "dependency": "SATISFIED_BY_KIOD_R8_CLOSED_PASS_BOUNDED at material commit 303e62b9; reviewer/dispatcher must still refresh dependency-release evidence and gates before worker release.",
     "dispatchSummary": "Held helper-first follow-up packet for generating prefilled GC-018 and work-order forms with checker read-ahead, dependency release, source verification, AHB, AOT, Delta claim-boundary, runtime-freshness, foundation-storage, package-skill, and public-export blocks.",
     "verification": [
       "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 5858d420 --head HEAD PASS",
@@ -19,6 +19,6 @@
       "git diff --check PASS",
       "pre-commit governance hook PASS 75/75"
     ],
-    "claimBoundary": "Held packet only. Current mode and next allowed move remain KIOD-R8 worker-return wait. WOAS-R1 does not implement the helper, release worker execution, mutate runtime/provider/package/Web/MCP/model-router/public-sync behavior, or claim production readiness."
+    "claimBoundary": "Held packet only with dependency satisfied. Next allowed move is release review, not helper implementation. WOAS-R1 does not implement the helper, release worker execution without refreshed gates, mutate runtime/provider/package/Web/MCP/model-router/public-sync behavior, or claim production readiness."
   }
 }

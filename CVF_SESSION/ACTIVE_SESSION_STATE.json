@@ -70,8 +70,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return",
-  "previousMode": "kiod_r7_dispatch_packet_lifecycle_hygiene_closed_pass_bounded_pending_operator_next_lane_selection",
+  "currentMode": "kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review",
+  "previousMode": "kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -2759,10 +2759,12 @@
   "mpiT4FederatedMemoryReadHelperClosure20260622": "MPI-T4 Federated Memory Read Helper is CLOSED_PASS_BOUNDED at material closure commit 28373d14, after dispatch commit 98709fd0 and dispatch session-sync commit bfc5843a. Accepted artifacts: EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.ts, EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/federated-memory-read.test.ts, docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_WORKER_RETURN_2026-06-22.md, docs/reviews/CVF_MPI_T4_FEDERATED_MEMORY_READ_HELPER_COMPLETION_2026-06-22.md, docs/baselines/CVF_GC018_MPI_T4_FEDERATED_MEMORY_READ_HELPER_2026-06-22.md, docs/work_orders/CVF_AGENT_WORK_ORDER_MPI_T4_FEDERATED_MEMORY_READ_HELPER_FOR_WORKER_2026-06-22.md, and docs/roadmaps/CVF_MPI_PHASE2_EXTERNAL_MEMORY_READ_ROADMAP_2026-06-22.md. Result: deterministic read-only helper buildFederatedMemoryRead composes caller-supplied LPF candidates and caller-supplied parsed scan-registry entries through existing source-verified projection/readout helpers; output remains summary-only, rawMemoryReleased=false, and canReinject=false. Reviewer repaired one allowed-scope semantic defect so malformed non-empty registry input sets registryDegraded=true. Evidence: focused Vitest PASS 24/24, TypeScript check PASS, AAF reviewer-return PASS defects [], worker-return fast gate PASS, reviewer-return steward PASS, pre-commit PASS 55/55, and committed-range pre-closure PASS 43/44 with only expected session continuity sync outstanding before this state update. Boundary: local helper/test only; no route/schema/auth edit, no automatic source loading, no registry/durable write, no vector DB, graph persistence, provider/live proof, public-sync, CLI/MCP adapter behavior, direct interception, arbitrary command execution, EDIT/COMMIT execution, queue/daemon/watcher, readiness, full-hook equivalence, cost optimization, or universal governed-coding-control claim.",
   "aafT7CReviewerScaffoldShapeHardeningClosure20260622": "AAF-T7C Reviewer Scaffold Shape Hardening is CLOSED_PASS_BOUNDED at material commit b7601865. Accepted artifacts: docs/baselines/CVF_GC018_AAF_T7C_REVIEWER_SCAFFOLD_SHAPE_HARDENING_2026-06-22.md, docs/work_orders/CVF_AGENT_WORK_ORDER_AAF_T7C_REVIEWER_SCAFFOLD_SHAPE_HARDENING_FOR_CODEX_2026-06-22.md, docs/reviews/CVF_AAF_T7C_REVIEWER_SCAFFOLD_SHAPE_HARDENING_COMPLETION_2026-06-22.md, governance/compat/run_agent_automation_assist.py, and governance/compat/test_run_agent_automation_assist.py. Result: the existing AAF reviewer-completion scaffold now front-loads Required Artifact Manifest, Acceptance Receipt Assertion Matrix, Machine Closure Package, and path-discipline skeletons while preserving L1-only helper behavior. Verification: focused unittest PASS 82/82, pre-implementation autorun PASS, commit steward implementation PASS, and material pre-commit hook PASS 55/55.",
   "kiodR8SourceIntakeDecisionPacketPreflightDispatch20260701": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-01",
     "materialCommit": "ce92d715",
     "materialCommitFull": "ce92d715276a702de5a024e2d8720d7d9bb616c1",
+    "closureCommit": "303e62b9",
+    "closureCommitFull": "303e62b9ebbb3868686043e35174635c28daa797",
     "baseline": "docs/baselines/CVF_GC018_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
     "expectedWorkerReturn": "docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md",
@@ -2773,9 +2775,15 @@
       "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base d77d5f52 --head HEAD PASS",
       "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base d77d5f52 --head HEAD --enforce PASS",
       "git diff --check PASS",
-      "pre-commit governance hook PASS 75/75"
+      "pre-commit governance hook PASS 75/75",
+      "python -m unittest governance.compat.test_source_intake_decision_packet_preflight -v PASS 20/20",
+      "python governance/compat/check_source_intake_decision_packet_preflight.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4543b227 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 4543b227 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 76/76"
     ],
-    "claimBoundary": "Dispatch packet only. Worker must not commit. No EverOS, CodeGraph, or other outside-source absorption pilot, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized."
+    "claimBoundary": "Closed local governance preflight only. No EverOS, CodeGraph, or other outside-source absorption pilot, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle mutation, action authority, automatic invocation, helper implementation, or production-readiness claim is authorized."
   },
   "mpiT6ReviewGateHardeningClosure20260622": "MPI-T6 Review Gate Hardening is CLOSED_PASS_BOUNDED at material commit df4029e2 after dispatch commit 760d74b0 and dispatch handoff sync e8aa5939. It extends three existing checker owners and focused tests only. The retained uncommitted MPI-T6 sample now emits two exhaustive-directory violations, one provider-local authority violation, one closed-GC018 Machine Closure Package violation, and one decided-versus-parked roadmap violation. Focused pytest passes 41 tests, worker-return fast gate passes, reviewer-fast passes 34/34, and the material pre-commit hook passes 55/55. Boundary: static private governance hardening only; no MPI-T6 decision acceptance or repair, runtime/product source, provider/live proof, public-sync, registry mutation, durable/vector/graph store, adapter behavior, interception, readiness, or universal semantic correctness claim.",
   "adifFoundationRoadmap20260622": "Agent Defect Intelligence Foundation roadmap is ROADMAP_READY_PENDING_OPERATOR_TRANCHE_SELECTION at provenance material commit d86f49e9. Artifact: docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md. The roadmap proposes ADIF-T0 owner reconciliation, ADIF-T1 entry schema/source layout/seed dictionary, ADIF-T2 task-role-phase defect packet resolver, ADIF-T3 early preflight integration, ADIF-T4 reviewer intake and de-dup bridge, and ADIF-T5 lifecycle/drift guard. It keeps defectCategory orthogonal to canonical F2G defectClass, returns bounded packets instead of the full dictionary, and distinguishes GUIDANCE_ONLY, PARTIAL_CHECK, MACHINE_CHECKED, and RETIRED. Evidence: AAF helper defects empty, pre-implementation 47/47 PASS, reviewer-fast 34/34 PASS, and pre-commit 55/55 PASS. Boundary: roadmap only; no ADIF schema, entry, index, registry, helper, checker, generator, hook integration, historical migration, runtime/provider/live behavior, public-sync, comprehension claim, or effectiveness claim.",
@@ -3200,7 +3208,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "KIOD-R8 Source Intake Decision Packet Preflight is DISPATCH_READY at material commit ce92d715. Worker packet: docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md. GC-018 baseline: docs/baselines/CVF_GC018_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md. Expected worker return: docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md. Commit mode: WORKER_MUST_NOT_COMMIT. Worker objective: create the KIOD-R8 source-intake decision packet standard, range-aware preflight checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push catalog wiring. Next allowed move: hand this packet to the worker and wait for COMPLETE_PENDING_REVIEW or BLOCKED_RETURN_TO_ORCHESTRATOR. No EverOS, CodeGraph, or other outside-source absorption pilot, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized in KIOD-R8. KIOD-R7 remains CLOSED_PASS_BOUNDED at dee9ebf9; KIOD-R6 remains CLOSED_PASS_BOUNDED at 8b89fc64; Checker Read-Ahead Guard Hardening remains CLOSED_PASS_BOUNDED at ac5b13ac. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "KIOD-R8 Source Intake Decision Packet Preflight is CLOSED_PASS_BOUNDED at material commit 303e62b9. Worker return: docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md. Completion review: docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md. Reviewer accepted after repair: equivalence wording was narrowed, SIDP-04 co-section escalation coverage was added, focused tests are 20/20 PASS, worker-return fast gate PASS, pre-implementation PASS, pre-commit hook PASS 76/76. Next allowed move: release WOAS-R1 Dispatch Packet Authoring Scaffold from HOLD only through dependency-release evidence and reviewer/dispatcher validation, then hand the existing held packet to a worker if gates pass. WOAS-R1 held packet is material commit 12c92ecc with work order docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md. No EverOS, CodeGraph, or other outside-source absorption pilot, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle mutation, action authority, automatic invocation, helper implementation, or production-readiness claim is authorized by this session-sync. KIOD-R7 remains CLOSED_PASS_BOUNDED at dee9ebf9; KIOD-R6 remains CLOSED_PASS_BOUNDED at 8b89fc64; Checker Read-Ahead Guard Hardening remains CLOSED_PASS_BOUNDED at ac5b13ac. LHW24 remains the latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -5145,7 +5153,7 @@
     "claimBoundary": "no package lifecycle mutation, no package body read, no automatic package activation, no automatic skill invocation telemetry outside the bounded loader, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
   },
   "woasR1DispatchPacketAuthoringScaffoldHeld20260701": {
-    "status": "HOLD_UNTIL_KIOD_R8_WORKER_RETURN",
+    "status": "HOLD_DEPENDENCY_SATISFIED_PENDING_RELEASE_REVIEW",
     "date": "2026-07-01",
     "materialCommit": "12c92ecc",
     "materialCommitFull": "12c92ecc2cf442487a52f992f49504558fa53893",
@@ -5154,7 +5162,7 @@
     "plannedWorkerReturn": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md",
     "plannedCompletionReview": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_COMPLETION_2026-07-01.md",
     "commitModeAfterRelease": "WORKER_MUST_NOT_COMMIT",
-    "dependency": "KIOD-R8 worker return must be reviewed or blocked with source-backed reviewer decision before WOAS-R1 can be released for worker execution.",
+    "dependency": "SATISFIED_BY_KIOD_R8_CLOSED_PASS_BOUNDED at material commit 303e62b9; reviewer/dispatcher must still refresh dependency-release evidence and gates before worker release.",
     "dispatchSummary": "Held helper-first follow-up packet for generating prefilled GC-018 and work-order forms with checker read-ahead, dependency release, source verification, AHB, AOT, Delta claim-boundary, runtime-freshness, foundation-storage, package-skill, and public-export blocks.",
     "verification": [
       "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 5858d420 --head HEAD PASS",
@@ -5162,6 +5170,40 @@
       "git diff --check PASS",
       "pre-commit governance hook PASS 75/75"
     ],
-    "claimBoundary": "Held packet only. Current mode and next allowed move remain KIOD-R8 worker-return wait. WOAS-R1 does not implement the helper, release worker execution, mutate runtime/provider/package/Web/MCP/model-router/public-sync behavior, or claim production readiness."
+    "claimBoundary": "Held packet only with dependency satisfied. Next allowed move is release review, not helper implementation. WOAS-R1 does not implement the helper, release worker execution without refreshed gates, mutate runtime/provider/package/Web/MCP/model-router/public-sync behavior, or claim production readiness."
+  },
+  "kiodR8SourceIntakeDecisionPacketPreflightClosure20260701": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "303e62b9",
+    "materialCommitFull": "303e62b9ebbb3868686043e35174635c28daa797",
+    "dispatchCommit": "ce92d715",
+    "executionBaseHead": "4543b227",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
+    "standard": "docs/reference/external_agent_review/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_STANDARD.md",
+    "checker": "governance/compat/check_source_intake_decision_packet_preflight.py",
+    "tests": "governance/compat/test_source_intake_decision_packet_preflight.py",
+    "workerReturn": "docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md",
+    "reviewerDecision": "ACCEPTED_AFTER_REVIEWER_REPAIR",
+    "reviewerRepairs": [
+      "narrowed equivalence wording in worker return",
+      "expanded SIDP-04 escalation detection to include Overlap And Novelty Classification co-section",
+      "added focused fail/pass regression tests"
+    ],
+    "verification": [
+      "python -m unittest governance.compat.test_source_intake_decision_packet_preflight -v PASS 20/20",
+      "python governance/compat/check_source_intake_decision_packet_preflight.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/check_machine_closure_package.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/check_finding_to_governance_learning.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4543b227 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 4543b227 --head HEAD --enforce PASS",
+      "git diff --check PASS",
+      "pre-commit governance hook PASS 76/76"
+    ],
+    "nextAllowedMove": "Release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation before worker handoff.",
+    "claimBoundary": "KIOD-R8 local governance preflight only; no external-source absorption completion, runtime/provider/live proof, public-sync, Web/UI/dashboard, package lifecycle, MCP/CLI, model-router, helper implementation, action authority, automatic invocation, or production-readiness claim."
   }
 }

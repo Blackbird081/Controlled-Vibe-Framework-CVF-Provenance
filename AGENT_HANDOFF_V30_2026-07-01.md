@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=hand KIOD-R8 work order to worker and wait for worker return; parked checkpoint=WOAS-R1 helper-first scaffold packet is held at material commit `12c92ecc` until KIOD-R8 worker return is reviewed or blocked, KIOD-R8 dispatch committed at material commit `ce92d715`, KIOD-R7 lifecycle hygiene remains closed at material commit `dee9ebf9`, KIOD-R7 dispatch packet committed at `eef49493`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, KIOD-R6 roadmap ready at material commit `3e1bc936`, checker read-ahead hardening closed at material commit `ac5b13ac`, KIOD-R5 closed at material commit `be6be4e2`, KIOD-R4 closed at material commit `0416843c` with decision token `PACKET_BLOCK_REQUIRED_NOW`, KIOD-R1-R3 closed at material commit `5d453bce`, KIOD-T1 closed at material commit `211645e8`, CGE-R3 worker return remains closed at material commit `9edc7776`, SCPL-WEB-T1 remains closed at `a01bdca2`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation; parked checkpoint=WOAS-R1 helper-first scaffold packet remains held at material commit `12c92ecc` until release evidence is refreshed, KIOD-R8 closed at material commit `303e62b9`, KIOD-R7 lifecycle hygiene remains closed at material commit `dee9ebf9`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r8_source_intake_decision_packet_prefli
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `12c92ecc` WOAS-R1 Dispatch Packet Authoring Scaffold held packet |
-| Latest session-sync target | session sync after WOAS-R1 held packet |
+| Latest material packet | `303e62b9` KIOD-R8 Source Intake Decision Packet Preflight closure |
+| Latest session-sync target | session sync after KIOD-R8 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,18 +41,18 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r8_source_intake_decision_packet_preflight_dispatched_pending_worker_return`
+`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
 
 ## Latest Changes
 
-KIOD-R8 Source Intake Decision Packet Preflight was dispatched at material
-commit `ce92d715`. The worker must not commit and must return
+KIOD-R8 Source Intake Decision Packet Preflight closed at material commit
+`303e62b9` after reviewer repair and acceptance. The worker return is
 `docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`.
 
 WOAS-R1 Dispatch Packet Authoring Scaffold was created as a held follow-up
-packet at material commit `12c92ecc`. It is not worker-released while KIOD-R8
-is active. Current mode and next allowed move remain KIOD-R8 worker-return
-wait.
+packet at material commit `12c92ecc`. Its KIOD-R8 dependency is now satisfied,
+but worker release still requires dependency-release evidence and
+reviewer/dispatcher validation.
 
 ## Core Guard Self-Protection Authorization - WOAS-R1 Session Sync
 
@@ -336,10 +336,70 @@ source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router
 work, package lifecycle mutation, action authority, automatic invocation, or
 production-readiness claim is authorized by this block.
 
+## KIOD-R8 Source Intake Decision Packet Preflight Closure - 2026-07-01
+
+Material closure commit:
+`303e62b9ebbb3868686043e35174635c28daa797`
+
+Short SHA: `303e62b9`
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Worker return:
+`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`
+
+Completion review:
+`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md`
+
+Reviewer decision: `ACCEPTED_AFTER_REVIEWER_REPAIR`.
+
+Reviewer repairs:
+
+- narrowed equivalence wording in the worker return;
+- expanded SIDP-04 escalation detection to include the Overlap And Novelty Classification co-section;
+- added focused fail/pass regression tests.
+
+Closure verification:
+
+- focused unittest PASS 20/20;
+- source-intake decision packet checker PASS on `4543b227..HEAD`;
+- machine closure package checker PASS;
+- finding-to-governance learning checker PASS;
+- worker-return fast gate PASS;
+- pre-implementation autorun PASS;
+- commit steward reviewer-return preflight PASS;
+- pre-commit governance hook PASS 76/76.
+
+Boundary: local governance preflight only. No external-source absorption
+completion, runtime/provider/live proof, public-sync, Web/UI/dashboard, package
+lifecycle, MCP/CLI, model-router, helper implementation, action authority,
+automatic invocation, or production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - KIOD-R8 Closure Session Sync
+
+| Protected path | Authorized session-sync change |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, closed work, held work, and next allowed move after KIOD-R8 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup read model from active-session state sources. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from active-session state sources. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after KIOD-R8 closure. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to WOAS-R1 dependency-release review. |
+| `CVF_SESSION/state/entries/kiodR8SourceIntakeDecisionPacketPreflightDispatch20260701.json` | Mark KIOD-R8 as closed and record closure evidence. |
+| `CVF_SESSION/state/entries/kiodR8SourceIntakeDecisionPacketPreflightClosure20260701.json` | Add KIOD-R8 closure state entry. |
+| `CVF_SESSION/state/entries/woasR1DispatchPacketAuthoringScaffoldHeld20260701.json` | Mark WOAS-R1 dependency as satisfied pending release review. |
+
+Authorization boundary: session continuity only after material closure commit
+`303e62b9`. No material KIOD-R8 artifact mutation, runtime/provider/live
+behavior, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, action authority, automatic
+invocation, helper implementation, or production-readiness claim is authorized
+by this block.
+
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R8 Source Intake Decision Packet Preflight | `303e62b9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted after reviewer repair |
 | KIOD-R7 Dispatch Packet Lifecycle Hygiene | `dee9ebf9` | CLOSED_PASS_BOUNDED; standard/checker/tests/catalog wiring accepted and worker return repaired/accepted |
 | KIOD-R6 Memory Foundation Enrichment | `8b89fc64` | CLOSED_PASS_BOUNDED; reviewer accepted worker return plus 3 memory-foundation owner-surface doc-only edits; DEFER candidates C-file05, D-file06, and I-file19 require separate future work orders |
 | Checker Read-Ahead Guard Hardening | `ac5b13ac` | CLOSED_PASS_BOUNDED; checker/source read-ahead block guard implemented and wired into autorun, reviewer-fast, pre-commit, and pre-push |
@@ -353,20 +413,21 @@ production-readiness claim is authorized by this block.
 
 ## Next Allowed Move
 
-Hand KIOD-R8 to the worker and wait for
-`docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md`
-with `COMPLETE_PENDING_REVIEW` or `BLOCKED_RETURN_TO_ORCHESTRATOR`. Worker must
-not commit. No EverOS, CodeGraph, or other outside-source absorption pilot,
-runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
-MCP/CLI adapter, model-router work, package lifecycle mutation, action
-authority, automatic invocation, or production-readiness claim is authorized in
-KIOD-R8.
+Release WOAS-R1 Dispatch Packet Authoring Scaffold from HOLD only through
+dependency-release evidence and reviewer/dispatcher validation, then hand the
+existing held packet to a worker if gates pass. No EverOS, CodeGraph, or other
+outside-source absorption pilot, runtime/provider/live proof, source import,
+public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package
+lifecycle mutation, action authority, automatic invocation, helper
+implementation, or production-readiness claim is authorized by this
+session-sync.
 
 ## Claim Boundary
 
 V30 is a compact continuity handoff and session-sync carrier. It records
-KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch,
-V29 archive rotation, active session pointers, and next allowed moves only. It does not create runtime/provider behavior,
+KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
+closure, V29 archive rotation, active session pointers, and next allowed moves
+only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
 authority, action authority, or broader production readiness.
