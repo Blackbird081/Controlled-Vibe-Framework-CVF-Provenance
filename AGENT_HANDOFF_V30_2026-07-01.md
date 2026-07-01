@@ -545,3 +545,21 @@ real external source intake, source import, runtime/provider/live behavior,
 public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
 implementation, model-router work, hook catalog wiring, action authority,
 automatic invocation, or production-readiness claims.
+
+## GC-020 HEAD Marker - WOAS-R2 Session Lifecycle Spacing Sync
+
+Latest session-sync-only commit requiring in-place handoff trace:
+
+`4a868f04`
+
+Full SHA:
+
+`4a868f0442ba83f177ff5bbcbf80657264034d83`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for session-sync
+commit `4a868f04`. It records lifecycle-hygiene false-positive spacing only
+after WOAS-R2 dispatch and does not authorize real external source intake,
+source import, runtime/provider/live behavior, public-sync, package lifecycle
+mutation, Web/UI/dashboard work, MCP/CLI adapter implementation, model-router
+work, hook catalog wiring, action authority, automatic invocation, or
+production-readiness claims.
