@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R2 closure; parked checkpoint=WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=WOAS-R3 worker execution and worker-return wait; parked checkpoint=WOAS-R3 dispatched at material commit `898f7a8c`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixtur
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `101fcf73` WOAS-R2 Source-Intake Scaffold Golden Fixture closure |
-| Latest session-sync target | session sync after WOAS-R2 closure |
+| Latest material packet | `898f7a8c` WOAS-R3 Worker Return Skeleton Scaffold dispatch |
+| Latest session-sync target | session sync after WOAS-R3 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`
 
 ## Latest Changes
 
@@ -79,6 +79,35 @@ the fixture guards exact source-intake scaffold output plus KIOD-R8
 marker-overmatch avoidance. No real external source intake, source import,
 runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter,
 package lifecycle mutation, model-router work, hook catalog wiring, action
+authority, automatic invocation, or production-readiness claim is authorized.
+
+WOAS-R3 Worker Return Skeleton Scaffold dispatched at material commit
+`898f7a8c`. It authorizes one bounded no-commit helper/test/reference tranche
+to add an opt-in worker-return skeleton generator, golden fixture, focused
+tests, and standard documentation while preserving default scaffold output.
+Worker must return
+`docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md`.
+No real external source intake, source import, runtime/provider/live proof,
+public-sync, Web/UI dashboard, MCP/CLI adapter, package lifecycle mutation,
+model-router work, hook catalog wiring, new blocking checker semantics, action
+authority, automatic invocation, or production-readiness claim is authorized.
+
+## Core Guard Self-Protection Authorization - WOAS-R3 Dispatch Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, and next allowed move after WOAS-R3 dispatch. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record WOAS-R3 dispatch, protected-path authorization, next-move update, and HEAD marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after WOAS-R3 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after WOAS-R3 dispatch. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to WOAS-R3 worker execution and worker-return wait. |
+| `CVF_SESSION/state/entries/woasR3WorkerReturnSkeletonScaffoldDispatch20260701.json` | Add state source entry for WOAS-R3 dispatch commit `898f7a8c`. |
+
+Authorization boundary: session-sync only. No helper/test implementation,
+runtime/provider/live proof, real outside-source intake, source import,
+source-mirror mutation, public-sync, Web/UI dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, hook catalog wiring, action
 authority, automatic invocation, or production-readiness claim is authorized.
 
 ## Core Guard Self-Protection Authorization - WOAS-R2 Closure Session Sync
@@ -516,23 +545,20 @@ by this block.
 
 ## Next Allowed Move
 
-Operator selects the next governed lane after WOAS-R2 closure at material
-commit `101fcf73`. Reasonable next options include another bounded
-work-order-authoring scaffold tranche, a fresh source-verified external
-knowledge intake/absorption lane, or a separate high-value package-skill/Web/
-MCP/model-router roadmap only with fresh GC-018 authority. No real external
-source intake, source import, source-mirror mutation, runtime/provider/live
-proof, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work,
-package lifecycle mutation, hook catalog wiring, new blocking checker
-semantics, action authority, automatic invocation, or production-readiness
-claim is authorized by the WOAS-R2 closure.
+WOAS-R3 Worker Return Skeleton Scaffold is DISPATCH_READY at material commit
+`898f7a8c`. Worker must execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md`,
+create
+`docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md`,
+leave changes uncommitted under `WORKER_MUST_NOT_COMMIT`, and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 ## Claim Boundary
 
 V30 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
 closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure,
-WOAS-R2 dispatch and closure, V29 archive rotation, active session pointers, and next
+WOAS-R2 dispatch and closure, WOAS-R3 dispatch, V29 archive rotation, active session pointers, and next
 allowed moves only. It does not create runtime/provider behavior,
 provider-side audit access, automatic resolver behavior, external adapter
 behavior, new live provider proof, public export, merge authority, commit
@@ -606,3 +632,21 @@ external source intake, source import, runtime/provider/live behavior,
 public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
 implementation, model-router work, hook catalog wiring, action authority,
 automatic invocation, or production-readiness claims.
+
+## GC-020 HEAD Marker - WOAS-R3 Dispatch
+
+Latest material commit requiring in-place handoff trace:
+
+`898f7a8c`
+
+Full SHA:
+
+`898f7a8c9828ee065e67393ed9fcc18f926118d0`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`898f7a8c`. It records bounded WOAS-R3 dispatch only and does not authorize
+real external source intake, source import, runtime/provider/live behavior,
+public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
+implementation, model-router work, hook catalog wiring, new blocking checker
+semantics, action authority, automatic invocation, or production-readiness
+claims.

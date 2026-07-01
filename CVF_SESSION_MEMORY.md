@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R2 closure; parked checkpoint=WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=WOAS-R3 worker execution and worker-return wait; parked checkpoint=WOAS-R3 dispatched at material commit `898f7a8c`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`
 
-Current mode: `woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`
 
-`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`
 
 Previous mode:
 
-`woas_r2_source_intake_scaffold_golden_fixture_dispatched_pending_worker_return`
+`woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | no worker currently dispatched after WOAS-R2 closure |
+| WOAS-R3 Worker Return Skeleton Scaffold | `898f7a8c` | DISPATCH_READY; worker must execute `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md`, leave changes uncommitted, and return `docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md` |
 
 ## Current Held Follow-Up Work
 
@@ -189,18 +189,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `woas_r2_source_intake_scaffold_golden_fixture_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`
 
-Next allowed move: operator selects the next governed lane after WOAS-R2
-closure at material commit `101fcf73`. Reasonable next options include another
-bounded work-order-authoring scaffold tranche, a fresh source-verified
-external-knowledge intake/absorption lane, or a separate high-value
-package-skill/Web/MCP/model-router roadmap only with fresh GC-018 authority. No
-real external source intake, source import, source-mirror mutation,
-runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter,
-model-router work, package lifecycle mutation, hook catalog wiring, new
-blocking checker semantics, action authority, automatic invocation, or
-production-readiness claim is authorized by the WOAS-R2 closure.
+Next allowed move: WOAS-R3 Worker Return Skeleton Scaffold is DISPATCH_READY at
+material commit `898f7a8c`. Worker must execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md`,
+create
+`docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md`,
+leave changes uncommitted under `WORKER_MUST_NOT_COMMIT`, and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. No real external source
+intake, source import, source-mirror mutation, runtime/provider/live proof,
+public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package
+lifecycle mutation, hook catalog wiring, new blocking checker semantics,
+action authority, automatic invocation, or production-readiness claim is
+authorized by WOAS-R3.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
