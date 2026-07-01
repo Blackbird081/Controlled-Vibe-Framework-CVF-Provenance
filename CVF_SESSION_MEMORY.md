@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r3_worker_return_skeleton_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R3 closure; parked checkpoint=WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R4 closure; parked checkpoint=WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `woas_r3_worker_return_skeleton_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `woas_r3_worker_return_skeleton_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`woas_r3_worker_return_skeleton_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`woas_r3_worker_return_skeleton_scaffold_dispatched_pending_worker_return`
+`woas_r3_worker_return_skeleton_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R4 Worker Return Quality Gate | `e6a56718` | CLOSED_PASS_BOUNDED; added structural worker-return quality checker, skeleton self-declaration fields, focused tests, and worker-return fast gate/reviewer-fast/pre-commit/pre-push/autorun wiring to fail unresolved worker-return defects before reviewer acceptance |
 | WOAS-R3 Worker Return Skeleton Scaffold | `38765baf` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair, opt-in worker-return skeleton, deterministic golden fixture, same-domain split helper, and 54/54 focused tests |
 | WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, deterministic source-intake golden fixture, and 10 focused tests for exact helper output and KIOD-R8 marker-overmatch avoidance; no helper source patch was needed |
 | WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, completion review, work-order-authoring standard/front door, local scaffold helper, and 32 focused tests; helper is manual text generation only, not a blocking guard or runtime/public/provider claim |
@@ -75,6 +76,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R4 Worker Return Quality Gate | `e6a56718` | CLOSED_PASS_BOUNDED; worker-return quality gate is wired into worker-return fast gate, reviewer-fast, pre-commit, pre-push, and autorun common commands |
 | WOAS-R3 Worker Return Skeleton Scaffold | `38765baf` | CLOSED_PASS_BOUNDED; opt-in worker-return skeleton output is covered by deterministic golden fixture and 54/54 focused tests |
 | WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; source-intake scaffold output is covered by deterministic golden fixture and 41/41 focused tests |
 | WOAS-R1 Dispatch Packet Authoring Scaffold | `fb6a0ae9` | CLOSED_PASS_BOUNDED; helper now provides prefilled GC-018/work-order scaffold text with machine-shape sections and requires `--stdout` for generation mode |
@@ -191,11 +193,13 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `woas_r3_worker_return_skeleton_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: WOAS-R3 Worker Return Skeleton Scaffold is
-CLOSED_PASS_BOUNDED at material commit `38765baf` after reviewer repair and
-no-commit worker-return acceptance. Operator may select the next governed lane.
+Next allowed move: WOAS-R4 Worker Return Quality Gate is CLOSED_PASS_BOUNDED at
+material commit `e6a56718`. Worker-return quality gate now fails unresolved
+skeleton placeholders, missing checker read-ahead/AOT/Delta/evidence sections,
+weak no-commit evidence, and non-canonical external-input wording before
+reviewer acceptance. Operator may select the next governed lane.
 High-value candidates remain bounded work-order authoring/scaffold hardening,
 separate MCP/CLI adapter expansion, full Skill Governance Console/dashboard
 build from `assf-skill-control-plane.json`, or separate controlled Model
@@ -203,9 +207,9 @@ Gateway/model-router roadmap. Any such lane requires fresh GC-018/source-verifie
 work order and applicable live/provider proof when governance behavior
 is claimed. No real external source intake, source import, source-mirror
 mutation, runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI
-adapter, model-router work, package lifecycle mutation, hook catalog wiring,
-new blocking checker semantics, action authority, automatic invocation, or
-production-readiness claim is authorized by WOAS-R3 closure.
+adapter implementation, model-router work, package lifecycle mutation, action
+authority, automatic invocation, or production-readiness claim is authorized by
+WOAS-R4 closure.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
