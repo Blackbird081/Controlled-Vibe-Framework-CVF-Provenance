@@ -545,7 +545,7 @@ by this block.
 
 ## Next Allowed Move
 
-WOAS-R3 Worker Return Skeleton Scaffold is DISPATCH_READY at material commit
+Worker Return Skeleton Scaffold dispatch is DISPATCH_READY at material commit
 `898f7a8c`. Worker must execute
 `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md`,
 create

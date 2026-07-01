@@ -202,7 +202,7 @@ intake, source import, source-mirror mutation, runtime/provider/live proof,
 public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package
 lifecycle mutation, hook catalog wiring, new blocking checker semantics,
 action authority, automatic invocation, or production-readiness claim is
-authorized by WOAS-R3.
+authorized by this dispatched tranche.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
