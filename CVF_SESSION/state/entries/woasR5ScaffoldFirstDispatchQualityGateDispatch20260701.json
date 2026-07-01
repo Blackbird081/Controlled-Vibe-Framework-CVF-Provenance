@@ -2,7 +2,7 @@
   "stateOrder": 1356,
   "stateKey": "woasR5ScaffoldFirstDispatchQualityGateDispatch20260701",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED_BY_7ffbf3b4",
     "date": "2026-07-01",
     "materialCommit": "717f55cc",
     "materialCommitFull": "717f55cce58d38f99c7f867acba29a8f1ef72d5d",
@@ -16,6 +16,9 @@
       "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 048816a0 --head HEAD --enforce PASS",
       "pre-commit governance hook PASS for material dispatch commit 717f55cc"
     ],
+    "closureCommit": "7ffbf3b4",
+    "closureCommitFull": "7ffbf3b4dfbd6dc54de9f8270bf5b9f41f0d5b68",
+    "closureDisposition": "CLOSED_PASS_BOUNDED",
     "claimBoundary": "Bounded work-order authoring/scaffold governance dispatch only. No real external source intake, source import, source-mirror mutation, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
   }
 }

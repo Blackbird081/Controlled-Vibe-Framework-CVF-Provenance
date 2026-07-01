@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=worker executes WOAS-R5 Scaffold-First Dispatch Quality Gate under WORKER_MUST_NOT_COMMIT and returns `docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md`; parked checkpoint=WOAS-R5 dispatched at material commit `717f55cc`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after WOAS-R5 closure; parked checkpoint=WOAS-R5 closed bounded at material commit `7ffbf3b4`, WOAS-R4 closed bounded at material commit `e6a56718`, WOAS-R3 closed bounded at material commit `38765baf`, WOAS-R2 closed bounded at material commit `101fcf73`, WOAS-R1 closed bounded at material commit `fb6a0ae9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`
+Current mode marker: `woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`
+Current mode: `woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`
+`woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`woas_r4_worker_return_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
+`woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| WOAS-R5 Scaffold-First Dispatch Quality Gate | `717f55cc` | DISPATCH_READY; worker must not commit and must return `docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md` for reviewer acceptance |
+| None | N/A | WOAS-R5 is closed bounded at material commit `7ffbf3b4`; no current dispatched worker tranche remains |
 
 ## Current Held Follow-Up Work
 
@@ -61,7 +61,8 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| WOAS-R5 Scaffold-First Dispatch Quality Gate dispatch | `717f55cc` | DISPATCH_READY; GC-018 baseline and work order created with Scaffold Provenance Block, source verification, ADIF disclosure, protected-path authorization, and worker-return quality requirements |
+| WOAS-R5 Scaffold-First Dispatch Quality Gate | `7ffbf3b4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair to scaffoldHelperCommand provenance, added scaffold provenance standard/checker/tests, updated helper output and golden fixture, and wired checker into reviewer-fast, pre-commit, pre-push, and autorun |
+| WOAS-R5 Scaffold-First Dispatch Quality Gate dispatch | `717f55cc` | CLOSED_PASS_BOUNDED_BY_7ffbf3b4; GC-018 baseline and work order created with Scaffold Provenance Block, source verification, ADIF disclosure, protected-path authorization, and worker-return quality requirements |
 | WOAS-R4 Worker Return Quality Gate | `e6a56718` | CLOSED_PASS_BOUNDED; added structural worker-return quality checker, skeleton self-declaration fields, focused tests, and worker-return fast gate/reviewer-fast/pre-commit/pre-push/autorun wiring to fail unresolved worker-return defects before reviewer acceptance |
 | WOAS-R3 Worker Return Skeleton Scaffold | `38765baf` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair, opt-in worker-return skeleton, deterministic golden fixture, same-domain split helper, and 54/54 focused tests |
 | WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, deterministic source-intake golden fixture, and 10 focused tests for exact helper output and KIOD-R8 marker-overmatch avoidance; no helper source patch was needed |
@@ -77,6 +78,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| WOAS-R5 Scaffold-First Dispatch Quality Gate | `7ffbf3b4` | CLOSED_PASS_BOUNDED; scaffold provenance standard, helper output, checker, tests, fixture, and hook/autorun wiring are accepted |
 | WOAS-R4 Worker Return Quality Gate | `e6a56718` | CLOSED_PASS_BOUNDED; worker-return quality gate is wired into worker-return fast gate, reviewer-fast, pre-commit, pre-push, and autorun common commands |
 | WOAS-R3 Worker Return Skeleton Scaffold | `38765baf` | CLOSED_PASS_BOUNDED; opt-in worker-return skeleton output is covered by deterministic golden fixture and 54/54 focused tests |
 | WOAS-R2 Source-Intake Scaffold Golden Fixture | `101fcf73` | CLOSED_PASS_BOUNDED; source-intake scaffold output is covered by deterministic golden fixture and 41/41 focused tests |
@@ -194,20 +196,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `woas_r5_scaffold_first_dispatch_quality_gate_dispatched_pending_worker_return`
+Mode: `woas_r5_scaffold_first_dispatch_quality_gate_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Next allowed move: WOAS-R5 Scaffold-First Dispatch Quality Gate is
-DISPATCH_READY at material commit `717f55cc`. Worker must execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_2026-07-01.md`
-under `WORKER_MUST_NOT_COMMIT` and return
-`docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md`.
-Reviewer/closer must validate worker output before any material closure commit.
-No session-state or handoff edits are authorized for the worker. No real
-external source intake, source import, source-mirror mutation,
-runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
-implementation, model-router work, package lifecycle mutation, action
-authority, automatic invocation, or production-readiness claim is authorized by
-WOAS-R5 dispatch.
+CLOSED_PASS_BOUNDED at material commit `7ffbf3b4`. Operator may select the next
+governed lane. The scaffold provenance standard, helper output, checker,
+focused tests, and reviewer-fast/pre-commit/pre-push/autorun wiring are closed.
+Future GC-018 baselines and work orders generated by the local scaffold helper
+carry reviewable Scaffold Provenance Block evidence. No real external source
+intake, source import, source-mirror mutation, runtime/provider/live proof,
+public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
+work, package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by WOAS-R5 closure.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
