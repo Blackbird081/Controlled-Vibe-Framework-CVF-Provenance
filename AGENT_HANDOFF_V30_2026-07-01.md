@@ -1080,3 +1080,33 @@ checker implementation, source import, runtime/provider/live behavior,
 public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
 implementation, model-router work, action authority, automatic invocation, or
 production-readiness claims.
+
+## Core Guard Self-Protection Authorization - KIOD-R10 Front-Door Mode Correction
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Add missing GC-020 HEAD marker for session-sync repair commit `8cd258bd`. |
+
+Authorization boundary: continuity marker repair only. No material KIOD-R10
+artifact mutation, checker implementation, runtime/provider/live proof, source
+import, public-sync, Web/UI dashboard, MCP/CLI adapter, model-router work,
+package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by this block.
+
+## GC-020 HEAD Marker - KIOD-R10 Front-Door Mode Correction
+
+Latest session-sync-only commit requiring in-place handoff trace:
+
+`8cd258bd`
+
+Full SHA:
+
+`8cd258bd94cc7b9df37156daf12743bed1fbacc7`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for session-sync
+repair commit `8cd258bd`. It records only the front-door mode-marker correction
+after KIOD-R10 dispatch and does not authorize material KIOD-R10 artifact
+mutation, checker implementation, source import, runtime/provider/live
+behavior, public-sync, package lifecycle mutation, Web/UI/dashboard work,
+MCP/CLI adapter implementation, model-router work, action authority, automatic
+invocation, or production-readiness claims.
