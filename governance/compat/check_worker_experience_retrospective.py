@@ -121,6 +121,9 @@ def is_eligible_worker_return(path: str, text: str) -> bool:
     `Self-declared worker-return artifact: yes` qualifies, or the Status +
     Responds-to-work-order pair qualifies.
     """
+    normalized_path = path.replace("\\", "/")
+    if not normalized_path.startswith("docs/reviews/"):
+        return False
     if not path.endswith(".md"):
         return False
     if any(d in text for d in EXCLUDED_DOCTYPES):

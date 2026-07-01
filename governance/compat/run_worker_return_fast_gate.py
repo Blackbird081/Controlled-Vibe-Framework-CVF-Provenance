@@ -47,6 +47,10 @@ def build_commands(pytest_targets: tuple[str, ...] = ()) -> tuple[FastGateComman
                 ("python", "governance/compat/check_epistemic_process_packet.py", "--enforce"),
             ),
             FastGateCommand(
+                "worker-return quality gate",
+                ("python", "governance/compat/check_worker_return_quality_gate.py", "--enforce"),
+            ),
+            FastGateCommand(
                 "reviewer-fast governance gate",
                 ("python", "governance/compat/run_local_governance_hook_chain.py", "--hook", "reviewer-fast"),
             ),

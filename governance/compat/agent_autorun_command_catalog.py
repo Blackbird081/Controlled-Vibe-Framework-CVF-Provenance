@@ -88,6 +88,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "worker-return quality gate",
+            "governance/compat/check_worker_return_quality_gate.py",
+            base,
+            head,
+        ),
+        _range_command(
             "ADIF defect registry disclosure",
             "governance/compat/check_adif_defect_registry_disclosure.py",
             base,

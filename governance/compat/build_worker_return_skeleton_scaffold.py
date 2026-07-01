@@ -18,6 +18,8 @@ Status: COMPLETE_PENDING_REVIEW
 Date: {args.date}
 docType: review
 Batch ID: {args.batch_id}
+Self-declared worker-return artifact: yes
+Responds to work order: `{work_order_path}`
 dispatchWorkOrder: `{work_order_path}`
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 ## Purpose

@@ -422,6 +422,8 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
 
     def test_skeleton_has_dispatch_work_order_and_execution_base_head(self) -> None:
         skeleton = self._golden_skeleton()
+        self.assertIn("Self-declared worker-return artifact: yes", skeleton)
+        self.assertIn("Responds to work order:", skeleton)
         self.assertIn("dispatchWorkOrder:", skeleton)
         self.assertIn("executionBaseHead: WORKER_MUST_CAPTURE_AT_START", skeleton)
 

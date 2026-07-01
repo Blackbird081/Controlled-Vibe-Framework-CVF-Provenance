@@ -4,6 +4,8 @@ Status: COMPLETE_PENDING_REVIEW
 Date: 2026-07-01
 docType: review
 Batch ID: WOAS-R3-GOLDEN
+Self-declared worker-return artifact: yes
+Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07-01.md`
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07-01.md`
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 ## Purpose
