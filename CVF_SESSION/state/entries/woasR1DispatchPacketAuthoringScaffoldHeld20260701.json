@@ -2,23 +2,25 @@
   "stateOrder": 1350,
   "stateKey": "woasR1DispatchPacketAuthoringScaffoldHeld20260701",
   "value": {
-    "status": "HOLD_DEPENDENCY_SATISFIED_PENDING_RELEASE_REVIEW",
+    "status": "DISPATCHED",
     "date": "2026-07-01",
     "materialCommit": "12c92ecc",
     "materialCommitFull": "12c92ecc2cf442487a52f992f49504558fa53893",
+    "releaseCommit": "a762cf0a",
+    "releaseCommitFull": "a762cf0a86d5d2274650bb213368bf22b352d962",
     "baseline": "docs/baselines/CVF_GC018_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md",
     "plannedWorkerReturn": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md",
     "plannedCompletionReview": "docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_COMPLETION_2026-07-01.md",
-    "commitModeAfterRelease": "WORKER_MUST_NOT_COMMIT",
-    "dependency": "SATISFIED_BY_KIOD_R8_CLOSED_PASS_BOUNDED at material commit 303e62b9; reviewer/dispatcher must still refresh dependency-release evidence and gates before worker release.",
-    "dispatchSummary": "Held helper-first follow-up packet for generating prefilled GC-018 and work-order forms with checker read-ahead, dependency release, source verification, AHB, AOT, Delta claim-boundary, runtime-freshness, foundation-storage, package-skill, and public-export blocks.",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dependency": "SATISFIED: KIOD-R8 source-intake preflight accepted at material commit 303e62b9 and KIOD-R8 marker-overmatch learning accepted at material commit b06b27db.",
+    "dispatchSummary": "Released helper-first follow-up packet for generating prefilled GC-018 and work-order forms with checker read-ahead, dependency release, source verification, AHB, AOT, Delta claim-boundary, runtime-freshness, foundation-storage, package-skill, and public-export blocks.",
     "verification": [
-      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 5858d420 --head HEAD PASS",
-      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 5858d420 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base b25321f9 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base b25321f9 --head HEAD --enforce PASS",
       "git diff --check PASS",
-      "pre-commit governance hook PASS 75/75"
+      "pre-commit governance hook PASS 76/76"
     ],
-    "claimBoundary": "Held packet only with dependency satisfied. Next allowed move is release review, not helper implementation. WOAS-R1 does not implement the helper, release worker execution without refreshed gates, mutate runtime/provider/package/Web/MCP/model-router/public-sync behavior, or claim production readiness."
+    "claimBoundary": "Dispatch packet release only. Worker may implement only the named scaffold standard, helper, focused tests, and worker return under WORKER_MUST_NOT_COMMIT. No outside-source absorption pilot, runtime/provider/live, package/Web/MCP/model-router/public-sync behavior, action authority, automatic invocation beyond the local helper command, or production readiness is claimed."
   }
 }

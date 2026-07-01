@@ -31,31 +31,31 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation; parked checkpoint=WOAS-R1 helper-first scaffold packet remains held at material commit `12c92ecc` until release evidence is refreshed, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, KIOD-R7 lifecycle hygiene closed at material commit `dee9ebf9`, KIOD-R6 enrichment accepted at material commit `8b89fc64`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=WOAS-R1 worker executes released scaffold packet under WORKER_MUST_NOT_COMMIT and returns worker-return artifact; parked checkpoint=WOAS-R1 released at material commit `a762cf0a`, KIOD-R8 marker-overmatch learning closed at material commit `b06b27db`, KIOD-R8 source-intake preflight closed at material commit `303e62b9`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
+Current mode marker: `woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
 
-Current mode: `kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
+Current mode: `woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
 
-`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
+`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
 
 Previous mode:
 
-`kiod_r8_source_intake_decision_packet_preflight_closed_pass_bounded_pending_woas_r1_dependency_release_review`
+`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | KIOD-R8 worker return has been reviewed and closed; next move is WOAS-R1 release review |
+| WOAS-R1 Dispatch Packet Authoring Scaffold | `a762cf0a` | DISPATCHED; worker must execute work order under WORKER_MUST_NOT_COMMIT and return `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md` |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| WOAS-R1 Dispatch Packet Authoring Scaffold | `12c92ecc` | HOLD_DEPENDENCY_SATISFIED_PENDING_RELEASE_REVIEW; helper-first scaffold packet may be released only after dependency-release evidence and reviewer/dispatcher validation |
+| None | N/A | WOAS-R1 has been released to worker at `a762cf0a` |
 
 ## Current Closed Work
 
@@ -185,14 +185,13 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
+Mode: `woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
 
-Next allowed move: release WOAS-R1 Dispatch Packet Authoring Scaffold from HOLD
-only through dependency-release evidence and reviewer/dispatcher validation,
-then hand the existing held packet to a worker if gates pass. KIOD-R8
-marker-overmatch learning is closed at material commit `b06b27db`; KIOD-R8
-source-intake preflight is closed at material commit `303e62b9`; WOAS-R1 held
-packet is material commit
+Next allowed move: WOAS-R1 worker executes the released Dispatch Packet
+Authoring Scaffold work order under `WORKER_MUST_NOT_COMMIT`, captures
+`executionBaseHead` at start, and returns
+`docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md`.
+WOAS-R1 release commit is `a762cf0a`; original held packet was material commit
 `12c92ecc` with work order
 `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md`.
 No EverOS, CodeGraph, or other outside-source absorption pilot,
@@ -329,7 +328,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`kiod_r8_marker_overmatch_learning_closed_pending_woas_r1_dependency_release_review`
+`woas_r1_dispatch_packet_authoring_scaffold_dispatched_pending_worker_return`
 
 ## Continuity Markers
 
