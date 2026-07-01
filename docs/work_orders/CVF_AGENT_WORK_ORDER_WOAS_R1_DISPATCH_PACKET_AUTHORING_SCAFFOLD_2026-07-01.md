@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: WOAS-R1
 
@@ -234,6 +234,7 @@ Returned defects: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007, ADIF-0014, ADIF-00
 | freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
 | reason | This released work order authorizes doc/helper/test scaffolding only. It makes no runtime, provider, live-proof, Web, MCP, CLI, package, model-router, public-sync, or production-readiness claim. |
 | requiredFutureAction | If a later packet adds runtime or provider behavior, create a fresh source-verified work order and live-proof plan. |
+| providerRegistryBoundary | N/A with reason: no provider registry mutation or provider routing claim; current provider registry surfaces remain `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY`. |
 
 ## External Knowledge Intake Routing
 
@@ -288,6 +289,17 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | `governance/compat/build_dispatch_packet_scaffold.py` | Create helper with `--packet-kind`, `--batch-id`, `--title`, `--date`, `--base`, `--commit-mode`, `--dependency`, `--stdout`, and `--explain-trigger-map`. |
 | `governance/compat/test_build_dispatch_packet_scaffold.py` | Add focused tests for generic worker dispatch, held packet dependency fields, trigger-driven optional blocks, and literal tokens. |
 | `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | Create worker return with command evidence, changed files, claim boundary, and no commit. |
+
+## Required Artifact Manifest
+
+| Path | Required at handoff | Disposition |
+| --- | --- | --- |
+| `docs/reference/work_order_authoring/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md` | YES | present at reviewer closure |
+| `docs/reference/work_order_authoring/README.md` | YES | present at reviewer closure |
+| `governance/compat/build_dispatch_packet_scaffold.py` | YES | present at reviewer closure |
+| `governance/compat/test_build_dispatch_packet_scaffold.py` | YES | present at reviewer closure |
+| `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | YES | present at reviewer closure |
+| `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_COMPLETION_2026-07-01.md` | YES | reviewer-owned closure artifact present |
 
 ## Helper Output Requirements
 
@@ -558,11 +570,36 @@ outside this packet.
 
 ## Closure Checklist For Future Reviewer
 
-- [ ] KIOD-R8 dependency release evidence is source-backed before worker start.
-- [ ] Worker stayed inside Work-Order Fulfillment Manifest.
-- [ ] Worker return includes executionBaseHead and `git status --short`.
-- [ ] Focused helper tests passed.
-- [ ] Smoke helper output generated successfully.
-- [ ] Pre-closure autorun passed on worker range.
-- [ ] Reviewer recorded accepted changed files and commit ownership.
-- [ ] Session-sync was performed only if current mode or next allowed move changed.
+- [x] KIOD-R8 dependency release evidence is source-backed before worker start.
+- [x] Worker stayed inside Work-Order Fulfillment Manifest.
+- [x] Worker return includes executionBaseHead and `git status --short`.
+- [x] Focused helper tests passed.
+- [x] Smoke helper output generated successfully.
+- [x] Worker-range pre-closure structural checks passed except expected no-commit range/finality blockers before reviewer commit.
+- [x] Reviewer recorded accepted changed files and commit ownership.
+- [x] Session-sync is owned after material closure commit because current mode and next allowed move change.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | `docs/baselines/CVF_GC018_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED`; closure checklist all checked | PASS |
+| Worker return | `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | standalone helper tranche; no roadmap status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; worker-return fast gate drift check passed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Worker return status | `COMPLETE_PENDING_REVIEW` | PASS |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT`; HEAD remained `2835b1b5` during worker return | PASS |
+| Helper tests | `python -m unittest governance.compat.test_build_dispatch_packet_scaffold` PASS 32/32 after reviewer remediation | PASS |
+| Smoke output | helper `--stdout` smoke command emitted scaffold text | PASS |
+| No public export | `Public Export Disposition` remains `DEFERRED_PRIVATE_ONLY` | PASS |

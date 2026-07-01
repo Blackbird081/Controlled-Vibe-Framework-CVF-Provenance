@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: WOAS-R1
 
@@ -113,6 +113,7 @@ Returned defects: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007, ADIF-0014, ADIF-00
 | freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
 | reason | This released baseline authorizes doc/helper/test scaffolding only. It makes no runtime, provider, live-proof, Web, MCP, CLI, package, model-router, public-sync, or production-readiness claim. |
 | requiredFutureAction | If a later packet adds runtime or provider behavior, create a fresh source-verified work order and live-proof plan. |
+| providerRegistryBoundary | N/A with reason: no provider registry mutation or provider routing claim; current provider registry surfaces remain `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY`. |
 
 ## Package Skill Productionization Control Block
 
@@ -165,3 +166,18 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: WOAS-R1 is private provenance governance-helper work. Public-sync is
 outside this packet.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_WORKER_RETURN_2026-07-01.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by reviewer | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_COMPLETION_2026-07-01.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | standalone helper tranche; no roadmap status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no registry JSON mutation; worker-return fast gate drift check passed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source or Markdown mutation | PASS |
+| External evidence digest | N/A | no external benchmark/provider/live digest created | N/A with reason |
+| System loop interlock | N/A | no runtime/source interlock changed | N/A with reason |
+| Session continuity | active session front-door/state/handoff | session-sync follows material closure commit | N/A with reason |
