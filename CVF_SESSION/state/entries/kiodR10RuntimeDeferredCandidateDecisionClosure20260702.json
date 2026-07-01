@@ -1,0 +1,34 @@
+{
+  "stateOrder": 1364,
+  "stateKey": "kiodR10RuntimeDeferredCandidateDecisionClosure20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-02",
+    "materialCommit": "e89e3dd4",
+    "materialCommitFull": "e89e3dd42dd8c932661f86fd1f065f5101d3b183",
+    "dispatchCommit": "6a8b99f6",
+    "dispatchCommitFull": "6a8b99f6a890eb6d829f7119f853be470efcec80",
+    "handoffRepairCommit": "b35403b9",
+    "handoffRepairCommitFull": "b35403b9911973d68f872cc667433b4f3a08baab",
+    "executionBaseHead": "8cd258bd",
+    "closureBaseHead": "b35403b9",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "decisionPacket": "docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "workerReturn": "docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_WORKER_RETURN_2026-07-01.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerDecision": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "closureSummary": "Reviewer accepted the KIOD-R10 no-commit worker return and decision packet. D-file06 and I-file19 remain parked runtime candidates with concrete reopen conditions; no new reference file, runtime, checker, source import, public-sync, package, Web, MCP/CLI, provider/live, action-authority, automatic-invocation, or production claim was created.",
+    "reopenConditions": {
+      "D-file06": "Reopen only if an operator-stated product requirement explicitly needs CVF to add live vector-backed semantic retrieval not satisfied by existing keyword/path-based lookup, or an external integration partner requires vector-similarity retrieval specifically, with fresh GC-018/source verification and a runtime proof plan naming vector store, embedding model, provider, public/provenance boundary, and secrets/quota handling.",
+      "I-file19": "Reopen only if an operator-stated product requirement explicitly needs the Learning Plane to read memory-index candidates for reviewer-inspected promotion and existing Learning Plane consumer-pipeline contracts cannot satisfy it, or a recorded repeated defect proves that gap, with fresh GC-018/source verification against current EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION contracts and explicit non-auto-promotion design."
+    },
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base b35403b9 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base b35403b9 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 78/78 for material closure commit e89e3dd4"
+    ],
+    "claimBoundary": "Documentation-only decision packet and worker-return acceptance. No LanceDB/vector/embedding/rerank, Learning Plane runtime integration, checker implementation, source import, public export, provider/live proof, package lifecycle mutation, model-router work, action authority, automatic invocation, or production behavior is claimed."
+  }
+}

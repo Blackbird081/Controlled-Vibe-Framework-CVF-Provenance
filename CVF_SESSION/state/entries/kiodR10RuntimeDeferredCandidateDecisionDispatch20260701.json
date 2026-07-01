@@ -2,7 +2,7 @@
   "stateOrder": 1363,
   "stateKey": "kiodR10RuntimeDeferredCandidateDecisionDispatch20260701",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED_BY_E89E3DD4",
     "dispatchCommit": "6a8b99f6",
     "dispatchBaseHead": "b5ecbe59",
     "batch": "KIOD-R10 Runtime Deferred Candidate Decision",
@@ -20,6 +20,7 @@
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "result": "KIOD-R10 dispatch authorizes a decision-only source-intake worker tranche for D-file06 and I-file19, the runtime-adjacent EverOS memory candidates left parked by KIOD-R6/KIOD-R9.",
     "nextAllowedMove": "Delegated worker executes KIOD-R10 under WORKER_MUST_NOT_COMMIT, creates the decision packet and worker return uncommitted, and does not implement runtime, checker, package, Web, MCP/CLI, public-sync, provider/live, action-authority, automatic-invocation, or session-sync work.",
-    "claimBoundary": "Dispatch-only material commit. No LanceDB/vector/embedding/rerank, Learning Plane runtime integration, checker implementation, source import, public export, provider/live proof, package lifecycle mutation, model-router work, action authority, automatic invocation, or production behavior is claimed."
+    "closureCommit": "e89e3dd4",
+    "claimBoundary": "Dispatch-only material commit, closed by KIOD-R10 material commit e89e3dd4. No LanceDB/vector/embedding/rerank, Learning Plane runtime integration, checker implementation, source import, public export, provider/live proof, package lifecycle mutation, model-router work, action authority, automatic invocation, or production behavior is claimed."
   }
 }

@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V30_2026-07-01.md",
+  "activeHandoff": "AGENT_HANDOFF_V31_2026-07-02.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -63,15 +63,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V26_2026-06-28.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V27_2026-06-29.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return",
-  "previousMode": "kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection",
+  "currentMode": "kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection",
+  "previousMode": "kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3208,7 +3209,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "KIOD-R9 Memory Ledger Schema Boundary is CLOSED_PASS_BOUNDED at material commit 6ed7f257. Operator may select the next governed lane. D-file06 and I-file19 remain deferred runtime-adjacent candidates requiring fresh operator authorization and separate source-verified work orders before any follow-up. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized by KIOD-R9 closure. WOAS-R7 remains latest closed WOAS work at material commit a8d98dd1. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "KIOD-R10 Runtime Deferred Candidate Decision is CLOSED_PASS_BOUNDED at material commit e89e3dd4. Operator may select the next governed lane. D-file06 and I-file19 remain parked runtime candidates with concrete reopen conditions, not generic future work: D-file06 may reopen only if an operator-stated product requirement explicitly needs CVF to add live vector-backed semantic retrieval not satisfied by existing keyword/path-based lookup, or an external integration partner requires vector-similarity retrieval specifically, with fresh GC-018/source verification and a runtime proof plan naming vector store, embedding model, provider, public/provenance boundary, and secrets/quota handling. I-file19 may reopen only if an operator-stated product requirement explicitly needs the Learning Plane to read memory-index candidates for reviewer-inspected promotion and existing Learning Plane consumer-pipeline contracts cannot satisfy it, or a recorded repeated defect proves that gap, with fresh GC-018/source verification against current EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION contracts and explicit non-auto-promotion design. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized by KIOD-R10 closure. KIOD-R9 remains closed at material commit 6ed7f257. WOAS-R7 remains latest closed WOAS work at material commit a8d98dd1. LHW24 remains the latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -5497,7 +5498,7 @@
     "claimBoundary": "Documentation-only memory-foundation reference and worker-return acceptance. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
   },
   "kiodR10RuntimeDeferredCandidateDecisionDispatch20260701": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED_BY_E89E3DD4",
     "dispatchCommit": "6a8b99f6",
     "dispatchBaseHead": "b5ecbe59",
     "batch": "KIOD-R10 Runtime Deferred Candidate Decision",
@@ -5515,6 +5516,37 @@
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "result": "KIOD-R10 dispatch authorizes a decision-only source-intake worker tranche for D-file06 and I-file19, the runtime-adjacent EverOS memory candidates left parked by KIOD-R6/KIOD-R9.",
     "nextAllowedMove": "Delegated worker executes KIOD-R10 under WORKER_MUST_NOT_COMMIT, creates the decision packet and worker return uncommitted, and does not implement runtime, checker, package, Web, MCP/CLI, public-sync, provider/live, action-authority, automatic-invocation, or session-sync work.",
-    "claimBoundary": "Dispatch-only material commit. No LanceDB/vector/embedding/rerank, Learning Plane runtime integration, checker implementation, source import, public export, provider/live proof, package lifecycle mutation, model-router work, action authority, automatic invocation, or production behavior is claimed."
+    "closureCommit": "e89e3dd4",
+    "claimBoundary": "Dispatch-only material commit, closed by KIOD-R10 material commit e89e3dd4. No LanceDB/vector/embedding/rerank, Learning Plane runtime integration, checker implementation, source import, public export, provider/live proof, package lifecycle mutation, model-router work, action authority, automatic invocation, or production behavior is claimed."
+  },
+  "kiodR10RuntimeDeferredCandidateDecisionClosure20260702": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-02",
+    "materialCommit": "e89e3dd4",
+    "materialCommitFull": "e89e3dd42dd8c932661f86fd1f065f5101d3b183",
+    "dispatchCommit": "6a8b99f6",
+    "dispatchCommitFull": "6a8b99f6a890eb6d829f7119f853be470efcec80",
+    "handoffRepairCommit": "b35403b9",
+    "handoffRepairCommitFull": "b35403b9911973d68f872cc667433b4f3a08baab",
+    "executionBaseHead": "8cd258bd",
+    "closureBaseHead": "b35403b9",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "decisionPacket": "docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md",
+    "workerReturn": "docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_WORKER_RETURN_2026-07-01.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerDecision": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "closureSummary": "Reviewer accepted the KIOD-R10 no-commit worker return and decision packet. D-file06 and I-file19 remain parked runtime candidates with concrete reopen conditions; no new reference file, runtime, checker, source import, public-sync, package, Web, MCP/CLI, provider/live, action-authority, automatic-invocation, or production claim was created.",
+    "reopenConditions": {
+      "D-file06": "Reopen only if an operator-stated product requirement explicitly needs CVF to add live vector-backed semantic retrieval not satisfied by existing keyword/path-based lookup, or an external integration partner requires vector-similarity retrieval specifically, with fresh GC-018/source verification and a runtime proof plan naming vector store, embedding model, provider, public/provenance boundary, and secrets/quota handling.",
+      "I-file19": "Reopen only if an operator-stated product requirement explicitly needs the Learning Plane to read memory-index candidates for reviewer-inspected promotion and existing Learning Plane consumer-pipeline contracts cannot satisfy it, or a recorded repeated defect proves that gap, with fresh GC-018/source verification against current EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION contracts and explicit non-auto-promotion design."
+    },
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base b35403b9 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base b35403b9 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 78/78 for material closure commit e89e3dd4"
+    ],
+    "claimBoundary": "Documentation-only decision packet and worker-return acceptance. No LanceDB/vector/embedding/rerank, Learning Plane runtime integration, checker implementation, source import, public export, provider/live proof, package lifecycle mutation, model-router work, action authority, automatic invocation, or production behavior is claimed."
   }
 }

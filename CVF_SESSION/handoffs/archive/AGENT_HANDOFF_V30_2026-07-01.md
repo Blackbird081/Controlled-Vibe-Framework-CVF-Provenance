@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=delegated worker executes KIOD-R10 under WORKER_MUST_NOT_COMMIT; parked checkpoint=KIOD-R10 dispatched at material commit `6a8b99f6`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects next governed lane; parked checkpoint=KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r10_runtime_deferred_candidate_decision
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `6a8b99f6` KIOD-R10 Runtime Deferred Candidate Decision dispatch |
-| Latest session-sync target | session sync after KIOD-R10 dispatch |
+| Latest material packet | `e89e3dd4` KIOD-R10 Runtime Deferred Candidate Decision closure |
+| Latest session-sync target | session sync after KIOD-R10 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
+`kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
@@ -200,6 +200,36 @@ decision packet and worker return for D-file06/I-file19. No runtime,
 provider/live, checker, source-import, public-sync, package, Web, MCP/CLI,
 model-router, action-authority, automatic-invocation, session-sync by worker,
 or production claim is authorized.
+
+KIOD-R10 Runtime Deferred Candidate Decision closed bounded at material commit
+`e89e3dd4`. Reviewer accepted
+`docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md`
+and
+`docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_WORKER_RETURN_2026-07-01.md`.
+D-file06 and I-file19 remain parked runtime candidates with concrete reopen
+conditions. No new reference file, runtime implementation, checker, source
+import, provider/live proof, public-sync, package lifecycle mutation, Web,
+MCP/CLI, model-router, action authority, automatic invocation, or production
+claim is authorized.
+
+## Core Guard Self-Protection Authorization - KIOD-R10 Closure Session Sync
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed/latest work, next allowed move, and KIOD-R10 reopen conditions after material commit `e89e3dd4`. |
+| `AGENT_HANDOFF_V30_2026-07-01.md` | Record KIOD-R10 closure, protected-path authorization, next-move update, and GC-020 HEAD marker for material commit `e89e3dd4`. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after KIOD-R10 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after KIOD-R10 closure. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane selection with D-file06/I-file19 reopen conditions. |
+| `CVF_SESSION/state/entries/kiodR10RuntimeDeferredCandidateDecisionDispatch20260701.json` | Mark KIOD-R10 dispatch entry closed by material commit `e89e3dd4`. |
+| `CVF_SESSION/state/entries/kiodR10RuntimeDeferredCandidateDecisionClosure20260702.json` | Add state source entry for KIOD-R10 closure commit `e89e3dd4`. |
+
+Authorization boundary: session-sync only. No material KIOD-R10 artifact
+mutation after closure, checker implementation, runtime/provider/live proof,
+source import, public-sync, Web/UI dashboard, MCP/CLI adapter, model-router
+work, package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by this block.
 
 ## Core Guard Self-Protection Authorization - KIOD-R10 Dispatch Session Sync
 
@@ -783,12 +813,13 @@ by this block.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| KIOD-R10 Runtime Deferred Candidate Decision | `6a8b99f6` | DISPATCH_READY; worker must not commit; decision-only source intake for D-file06/I-file19 |
+| None | N/A | No current dispatched worker tranche; KIOD-R10 closed at material commit `e89e3dd4` |
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; decision packet accepted and D-file06/I-file19 parked as runtime candidates with concrete reopen conditions |
 | KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; doc-only C-file05 ledger-schema boundary reference accepted with no runtime/checker/source-import/public/provider claim |
 | WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; generated worker-return skeleton avoids worker-return quality gate banned placeholder markers and direct `diagnose()` regression coverage passes |
 | WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; checker-source authoring checklist mirrors worker-return quality gate constants |
@@ -812,16 +843,32 @@ by this block.
 
 ## Next Allowed Move
 
-Delegated worker executes KIOD-R10 from dispatch commit `6a8b99f6` under
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md`.
-Worker must create the KIOD-R10 decision packet and worker return under
-`docs/reviews/` uncommitted with status COMPLETE_PENDING_REVIEW or
-BLOCKED_WITH_REASON. No checker implementation, runtime/provider/live proof,
-source import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation,
-model-router work, package lifecycle mutation, action authority, automatic
-invocation, session-sync by worker, or production-readiness claim is
-authorized. WOAS-R7 remains latest closed WOAS work at material commit
-`a8d98dd1`.
+Operator selects the next governed lane. KIOD-R10 is CLOSED_PASS_BOUNDED at
+material commit `e89e3dd4`. D-file06 and I-file19 remain parked runtime
+candidates with concrete reopen conditions, not generic future work.
+
+D-file06 may reopen only if an operator-stated product requirement explicitly
+needs CVF to add live vector-backed semantic retrieval not satisfied by
+existing keyword/path-based lookup, or an external integration partner requires
+vector-similarity retrieval specifically. Reopening requires fresh operator
+decision, fresh GC-018, source verification of the actual retrieval gap, a
+runtime proof plan naming vector store, embedding model, provider,
+public/provenance boundary review, and secrets/quota handling.
+
+I-file19 may reopen only if an operator-stated product requirement explicitly
+needs the Learning Plane to read memory-index candidates for reviewer-inspected
+promotion and existing Learning Plane consumer-pipeline contracts cannot
+satisfy it, or a recorded repeated defect proves that gap. Reopening requires
+fresh operator decision, fresh GC-018, source verification against the current
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/` contract surface, explicit
+non-auto-promotion design, and evidence that any memory-index read does not
+bypass existing evaluation/truth-score gates.
+
+No checker implementation, runtime/provider/live proof, source import,
+public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
+work, package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by KIOD-R10 closure. WOAS-R7 remains
+latest closed WOAS work at material commit `a8d98dd1`.
 
 ## Claim Boundary
 
@@ -830,7 +877,7 @@ KIOD-R6 enrichment closure, KIOD-R7 dispatch and closure, KIOD-R8 dispatch and
 closure, KIOD-R8 marker-overmatch learning, WOAS-R1 release and closure,
 WOAS-R2 dispatch and closure, WOAS-R3 dispatch and closure, WOAS-R4 closure,
 WOAS-R5 dispatch and closure, WOAS-R6 closure, WOAS-R7 dispatch and closure,
-KIOD-R10 dispatch,
+KIOD-R10 dispatch and closure,
 V29 archive
 rotation, active session pointers, and next
 allowed moves only. It does not create runtime/provider behavior,
@@ -1080,6 +1127,23 @@ checker implementation, source import, runtime/provider/live behavior,
 public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
 implementation, model-router work, action authority, automatic invocation, or
 production-readiness claims.
+
+## GC-020 HEAD Marker - KIOD-R10 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`e89e3dd4`
+
+Full SHA:
+
+`e89e3dd42dd8c932661f86fd1f065f5101d3b183`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`e89e3dd4`. It records bounded KIOD-R10 decision closure only and does not
+authorize checker implementation, source import, runtime/provider/live
+behavior, public-sync, package lifecycle mutation, Web/UI/dashboard work,
+MCP/CLI adapter implementation, model-router work, action authority, automatic
+invocation, or production-readiness claims.
 
 ## Core Guard Self-Protection Authorization - KIOD-R10 Front-Door Mode Correction
 

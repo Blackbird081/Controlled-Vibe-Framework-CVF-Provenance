@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V30_2026-07-01.md`
+4. `AGENT_HANDOFF_V31_2026-07-02.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,22 +24,22 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V30_2026-07-01.md` |
+| Active handoff | `AGENT_HANDOFF_V31_2026-07-02.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=delegated worker executes KIOD-R10 under WORKER_MUST_NOT_COMMIT; parked checkpoint=KIOD-R9 closed at material commit `6ed7f257`, KIOD-R10 dispatched at material commit `6a8b99f6`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator selects next governed lane; parked checkpoint=KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
+Current mode marker: `kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
+Current mode: `kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
+`kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
@@ -49,7 +49,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| KIOD-R10 Runtime Deferred Candidate Decision | `6a8b99f6` | DISPATCH_READY; worker must not commit; decision-only source intake for D-file06/I-file19 with no runtime/checker/source-import/public/provider/package/Web/MCP/action-authority claim |
+| None | N/A | No current dispatched worker tranche; KIOD-R10 closed at material commit `e89e3dd4` |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and decision packet, parked D-file06 vector retrieval and I-file19 Learning Plane memory-index promotion as runtime candidates with concrete reopen conditions; no new reference, runtime, checker, source-import, public, package, Web/MCP, provider/live, action-authority, automatic-invocation, or production claim |
 | KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, added doc-only memory ledger schema boundary reference for C-file05, and retained D-file06/I-file19 as deferred runtime-adjacent candidates requiring fresh work orders |
 | WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; generated worker-return skeleton now avoids worker-return quality gate banned placeholder markers and has direct `diagnose()` regression coverage plus deterministic golden fixture coverage |
 | WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; worker-return quality standard now mirrors checker required headings/tokens and focused parity tests guard standard/checker drift |
@@ -81,6 +82,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; D-file06 and I-file19 remain parked runtime candidates with concrete reopen conditions and no immediate implementation lane |
 | KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; doc-only C-file05 ledger-schema boundary reference accepted with no runtime/checker/source-import/public/provider claim |
 | WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; helper skeleton output is checker-safe by construction and 71/71 focused tests pass |
 | WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; checklist exposes checker constants and parity tests passed 13/13 |
@@ -202,21 +204,37 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
+Mode: `kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: delegated worker executes KIOD-R10 from dispatch commit
-`6a8b99f6` under
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md`.
-Worker must create
-`docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_2026-07-01.md`
-and
-`docs/reviews/CVF_KIOD_R10_RUNTIME_DEFERRED_CANDIDATE_DECISION_WORKER_RETURN_2026-07-01.md`
-uncommitted, with status COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+Next allowed move: operator selects the next governed lane. KIOD-R10 Runtime
+Deferred Candidate Decision is CLOSED_PASS_BOUNDED at material commit
+`e89e3dd4`. D-file06 and I-file19 are parked runtime candidates with concrete
+reopen conditions, not generic future work.
+
+D-file06 reopen condition: reopen only if an operator-stated product
+requirement explicitly needs CVF to add live vector-backed semantic retrieval
+not satisfied by existing keyword/path-based lookup, or an external integration
+partner requires vector-similarity retrieval specifically. Required evidence
+before reopening: fresh operator decision, fresh GC-018, source verification of
+the actual retrieval gap, runtime proof plan naming vector store, embedding
+model, provider, public/provenance boundary review, and secrets/quota handling.
+
+I-file19 reopen condition: reopen only if an operator-stated product
+requirement explicitly needs the Learning Plane to read memory-index candidates
+for reviewer-inspected promotion and existing Learning Plane
+consumer-pipeline contracts cannot satisfy it, or a recorded repeated defect
+proves that gap. Required evidence before reopening: fresh operator decision,
+fresh GC-018, source verification against the current
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/` contract surface, explicit
+non-auto-promotion design, and evidence that any memory-index read does not
+bypass existing evaluation/truth-score gates.
+
 No checker implementation, runtime/provider/live proof, source import,
 public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
-work, package lifecycle mutation, action authority, automatic invocation,
-session-sync by worker, or production-readiness claim is authorized.
-WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`.
+work, package lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by KIOD-R10 closure. KIOD-R9 remains
+closed at material commit `6ed7f257`. WOAS-R7 remains latest closed WOAS work
+at material commit `a8d98dd1`.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
@@ -300,11 +318,17 @@ automatic skill invocation, production-readiness
 claim, and MPI-T6 runtime work unless separately authorized by fresh
 GC-018/source-verified work order.
 
+KIOD-R10 Runtime Deferred Candidate Decision closed at material commit
+`e89e3dd4`. D-file06 and I-file19 remain parked runtime candidates with the
+concrete reopen conditions recorded in Next Allowed Move; neither candidate has
+an immediate implementation, checker, reference, package, Web/MCP, provider,
+public-sync, or production lane.
+
 KIOD-R6 Memory Foundation Enrichment closed at material commit `8b89fc64`.
 Reviewer accepted the doc-only memory-foundation enrichment worker return and
-3 owner-surface edits. The next move is operator selection of a separate
-governed knowledge-intake lane; DEFER candidates C-file05, D-file06, and
-I-file19 need future work orders before any implementation or checker work.
+3 owner-surface edits. C-file05 closed through KIOD-R9; D-file06 and I-file19
+closed through KIOD-R10 as parked runtime candidates requiring the recorded
+reopen conditions before any follow-up.
 
 CGE-R3 CodeGraph upstream absorption worker return closed at material commit
 `9edc7776` after dispatch material commit `17a8d275` and session-sync commit
@@ -347,7 +371,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`kiod_r10_runtime_deferred_candidate_decision_dispatched_pending_worker_return`
+`kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Continuity Markers
 
