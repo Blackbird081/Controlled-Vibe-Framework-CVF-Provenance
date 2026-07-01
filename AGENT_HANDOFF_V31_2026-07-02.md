@@ -202,6 +202,21 @@ closure. It does not authorize material, runtime, provider/live, checker,
 public-sync, package, Web/MCP, model-router, action-authority, automatic
 invocation, or production-readiness claims.
 
+## GC-020 HEAD Marker - KIOD-R10 Closure Session Sync
+
+Latest session-sync commit requiring in-place handoff trace:
+
+`6f42f4cc`
+
+Full SHA:
+
+`6f42f4ccae6a258760f780bdc2dc8f4013aa0e3a`
+
+This marker records the KIOD-R10 closure session-sync commit after material
+closure and V31 handoff rotation. It does not authorize material, runtime,
+provider/live, checker, public-sync, package, Web/MCP, model-router,
+action-authority, automatic invocation, or production-readiness claims.
+
 ## Claim Boundary
 
 V31 is a compact continuity handoff and session-sync carrier. It records
