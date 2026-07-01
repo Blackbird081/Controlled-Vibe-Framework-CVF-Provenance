@@ -2,10 +2,12 @@
   "stateOrder": 1361,
   "stateKey": "kiodR9MemoryLedgerSchemaBoundaryDispatch20260701",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED_BY_6ed7f257",
     "date": "2026-07-01",
     "materialCommit": "063b9001",
     "materialCommitFull": "063b900144fd471f2631fedfcc9f5f81dd80b2aa",
+    "closureCommit": "6ed7f257",
+    "closureCommitFull": "6ed7f257839c3d2b43a7c66358f805325acc4f7f",
     "dispatchBaseHead": "72881d3a",
     "baseline": "docs/baselines/CVF_GC018_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",

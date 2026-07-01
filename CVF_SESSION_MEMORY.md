@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=delegated worker executes KIOD-R9 under WORKER_MUST_NOT_COMMIT and returns the uncommitted worker-return packet; parked checkpoint=KIOD-R9 dispatched at material commit `063b9001`, WOAS-R7 remains latest closed work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V30_2026-07-01.md; next allowed move=operator selects the next governed lane after KIOD-R9 closure; parked checkpoint=KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return`
+Current mode marker: `kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return`
+Current mode: `kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return`
+`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`woas_r7_checker_safe_worker_return_skeleton_generation_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| KIOD-R9 Memory Ledger Schema Boundary | `063b9001` | DISPATCH_READY; delegated worker must execute `docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md` under WORKER_MUST_NOT_COMMIT and return `docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_WORKER_RETURN_2026-07-01.md` uncommitted |
+| None | N/A | No currently dispatched worker work after KIOD-R9 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, added doc-only memory ledger schema boundary reference for C-file05, and retained D-file06/I-file19 as deferred runtime-adjacent candidates requiring fresh work orders |
 | WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; generated worker-return skeleton now avoids worker-return quality gate banned placeholder markers and has direct `diagnose()` regression coverage plus deterministic golden fixture coverage |
 | WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; worker-return quality standard now mirrors checker required headings/tokens and focused parity tests guard standard/checker drift |
 | WOAS-R5 Scaffold-First Dispatch Quality Gate | `7ffbf3b4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair to scaffoldHelperCommand provenance, added scaffold provenance standard/checker/tests, updated helper output and golden fixture, and wired checker into reviewer-fast, pre-commit, pre-push, and autorun |
@@ -80,6 +81,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; doc-only C-file05 ledger-schema boundary reference accepted with no runtime/checker/source-import/public/provider claim |
 | WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; helper skeleton output is checker-safe by construction and 71/71 focused tests pass |
 | WOAS-R6 Worker Return Standard Checklist Parity | `1c74075c` | CLOSED_PASS_BOUNDED; checklist exposes checker constants and parity tests passed 13/13 |
 | WOAS-R5 Scaffold-First Dispatch Quality Gate | `7ffbf3b4` | CLOSED_PASS_BOUNDED; scaffold provenance standard, helper output, checker, tests, fixture, and hook/autorun wiring are accepted |
@@ -200,22 +202,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r9_memory_ledger_schema_boundary_dispatched_pending_worker_return`
+Mode: `kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: KIOD-R9 Memory Ledger Schema Boundary is DISPATCH_READY at
-material commit `063b9001`. Delegated worker must execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md`
-under WORKER_MUST_NOT_COMMIT and return
-`docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_WORKER_RETURN_2026-07-01.md`
-uncommitted with COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Scope is
-C-file05 doc-only memory-foundation ledger-schema boundary comparison and
-optional reference creation only. D-file06 and I-file19 remain excluded runtime
-candidates. No checker implementation, runtime/provider/live proof, source
+Next allowed move: KIOD-R9 Memory Ledger Schema Boundary is CLOSED_PASS_BOUNDED
+at material commit `6ed7f257`. Operator may select the next governed lane.
+D-file06 and I-file19 remain deferred runtime-adjacent candidates requiring
+fresh operator authorization and separate source-verified work orders before
+any follow-up. No checker implementation, runtime/provider/live proof, source
 import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation,
 model-router work, package lifecycle mutation, action authority, automatic
-invocation, session-state/handoff/front-door worker edits, or
-production-readiness claim is authorized by KIOD-R9 dispatch. WOAS-R7 remains
-latest closed work at material commit `a8d98dd1`.
+invocation, or production-readiness claim is authorized by KIOD-R9 closure.
+WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
 at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
 commit `8b89fc64`.
@@ -346,7 +343,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`woas_r1_dispatch_packet_authoring_scaffold_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r9_memory_ledger_schema_boundary_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Continuity Markers
 
