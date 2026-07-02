@@ -121,7 +121,8 @@ and by the literal `--commit-mode` value.
 | Agent Handoff Contract Control Block | Present when `--commit-mode WORKER_MUST_NOT_COMMIT`. |
 | Reviewer Closure Conversion | Present when `--commit-mode WORKER_MUST_NOT_COMMIT`. |
 | Work-Order Fulfillment Manifest | Always present. |
-| Worker Return Packet Shape Contract | Always present with the required worker-return sections. |
+| Worker Return Packet Shape Contract | Always present; for `WORKER_MUST_NOT_COMMIT`, emits compact `WORKER_RETURN_FULL_GATE_V1` profile plus required fast gate and skeleton requirement. |
+| Verification Commands | Always present; for `WORKER_MUST_NOT_COMMIT`, includes `python governance/compat/run_worker_return_fast_gate.py`. |
 | Agent Operation Trace Block | Always present with before-status and expected-manifest fields. |
 | Delta Execution Claim Boundary Control Block | Always present with no runtime/provider/live/public overclaim defaults. |
 | Public Export Disposition | Always present with default `DEFERRED_PRIVATE_ONLY` unless overridden. |
@@ -144,10 +145,13 @@ markdown document with all required machine-shape sections:
 | `Status: COMPLETE_PENDING_REVIEW` | Present as fillable default. |
 | `dispatchWorkOrder:` | Present and points to the generated canonical work-order path. |
 | `executionBaseHead:` | Present and marked `WORKER_MUST_CAPTURE_AT_START`. |
+| `rawMemoryReleased=false` | Present as literal default. |
 | `## Purpose` through `## No-Commit Statement` | All required top-level sections present. |
 | Agent Operation Trace Block | All labels from `check_agent_operation_trace.py` present. |
 | Delta Execution Claim Boundary Control Block | All eight required Delta fields with claim-rejection defaults. |
 | Public Export Disposition | `DEFERRED_PRIVATE_ONLY` default. |
+| Worker Experience Retrospective | Present with `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON` default. |
+| Command Evidence | Includes `python governance/compat/run_worker_return_fast_gate.py`. |
 | Conditional sections | `External Knowledge Intake Routing`, `Rescan Intelligence Hardening`, `Corpus Completeness And Report Integrity`, `Finding-To-Governance Learning Disposition`, `Epistemic Process Block`, `Machine Closure Package` present with compact N/A placeholders. |
 | KIOD-R8 marker safety | Must not emit standalone `Source intake decision packet: REQUIRED` or exact `## Source Intake Decision Packet`. |
 

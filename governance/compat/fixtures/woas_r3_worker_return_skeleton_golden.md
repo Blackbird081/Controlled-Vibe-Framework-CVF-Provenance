@@ -8,6 +8,7 @@ Self-declared worker-return artifact: yes
 Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07-01.md`
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07-01.md`
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
+rawMemoryReleased=false
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology
@@ -70,9 +71,9 @@ Reason: TO_FILL: default private-only worker return; override with real EXPORTED
 | Claim boundary | TO_FILL |
 ## Rescan Intelligence Hardening
 - Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
-- Reason: TO_FILL or keep NOT_APPLICABLE_WITH_REASON if no rescan applies.
+Reason: N/A with reason: this worker return is not a rescan, intake-refresh, or source-backed reassessment output.
 ## Corpus Completeness And Report Integrity
-- Corpus verdict: NOT_APPLICABLE_WITH_REASON - TO_FILL or keep N/A if no corpus scan applies.
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.
 ## Finding-To-Governance Learning Disposition
 | Field | Value |
 | --- | --- |
@@ -100,7 +101,10 @@ TO_FILL: paste `git status --short` output here
 ```
 ## Changed Files
 TO_FILL: list changed files with `git diff --name-status` evidence.
+## Worker Experience Retrospective
+WORKER_EXPERIENCE_RETRO_NA_WITH_REASON - no blocker in the generated skeleton; replace with concise retrospective if execution reveals worker friction.
 ## Command Evidence
-TO_FILL: paste command and result evidence for focused tests, smoke commands, and gates (record PASS/FAIL/BLOCKED for each).
+- `python governance/compat/run_worker_return_fast_gate.py` - BLOCKED: generated skeleton pending worker execution evidence.
+- TO_FILL: paste focused test or smoke command evidence when applicable.
 ## No-Commit Statement
 WORKER_MUST_NOT_COMMIT honored: HEAD unchanged; no git commit performed by worker. Reviewer/closer owns material commit.

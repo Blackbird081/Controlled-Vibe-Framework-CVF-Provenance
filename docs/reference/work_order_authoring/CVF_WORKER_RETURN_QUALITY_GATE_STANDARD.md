@@ -174,6 +174,17 @@ captured `executionBaseHead` and current `HEAD`, for example:
 The purpose of the gate run is confirmation/evidence after reading checker
 source, not first discovery of required literal tokens.
 
+### Work-Order Dispatch Contract
+
+No-commit work orders should cite the compact worker-return full-gate profile
+instead of repeating each individual worker-return checker section:
+
+`contractProfile: WORKER_RETURN_FULL_GATE_V1`
+
+The dispatch-quality checker requires this profile, the
+`run_worker_return_fast_gate.py` command, `individualCheckerSubstitution:
+FORBIDDEN`, and `workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED`.
+
 ## Claim Boundary
 
 This standard defines a structural quality gate only. It does not prove worker

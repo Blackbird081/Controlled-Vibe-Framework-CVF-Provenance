@@ -185,6 +185,21 @@ class TestNoCommitWorkerPacket(unittest.TestCase):
         self.assertIn("## Reviewer Closure Conversion", work_order)
         self.assertIn("workerCommitPermission | FORBIDDEN", work_order)
 
+    def test_no_commit_work_order_uses_compact_worker_return_full_gate_contract(self) -> None:
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        self.assertIn("## Worker Return Packet Shape Contract", work_order)
+        self.assertIn("contractProfile: WORKER_RETURN_FULL_GATE_V1", work_order)
+        self.assertIn(
+            "requiredGate: `python governance/compat/run_worker_return_fast_gate.py`",
+            work_order,
+        )
+        self.assertIn("individualCheckerSubstitution: FORBIDDEN", work_order)
+        self.assertIn("workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED", work_order)
+        self.assertIn("## Verification Commands", work_order)
+        self.assertIn("python governance/compat/run_worker_return_fast_gate.py", work_order)
+
     def test_ahb_block_has_required_base_head_fields(self) -> None:
         args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT", base="deadbeef")
         active = detect_triggers(args)
@@ -426,6 +441,7 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
         self.assertIn("Responds to work order:", skeleton)
         self.assertIn("dispatchWorkOrder:", skeleton)
         self.assertIn("executionBaseHead:", skeleton)
+        self.assertIn("rawMemoryReleased=false", skeleton)
         self.assertIn("git rev-parse --short HEAD", skeleton)
 
     def test_skeleton_has_no_banned_worker_return_quality_gate_placeholder(self) -> None:
@@ -516,6 +532,20 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
             "operator-provided external comparison, critique, or recommendation",
             skeleton,
         )
+        self.assertIn(
+            "Reason: N/A with reason: this worker return is not a rescan",
+            skeleton,
+        )
+        self.assertIn(
+            "Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason",
+            skeleton,
+        )
+
+    def test_skeleton_has_worker_experience_and_fast_gate_command(self) -> None:
+        skeleton = self._golden_skeleton()
+        self.assertIn("## Worker Experience Retrospective", skeleton)
+        self.assertIn("WORKER_EXPERIENCE_RETRO_NA_WITH_REASON", skeleton)
+        self.assertIn("python governance/compat/run_worker_return_fast_gate.py", skeleton)
 
     def test_skeleton_has_no_commit_statement(self) -> None:
         skeleton = self._golden_skeleton()

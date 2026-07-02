@@ -25,6 +25,31 @@ model-router, or public-sync behavior.
 | File | Purpose |
 | --- | --- |
 | `CVF_WOAS_R1_DISPATCH_PACKET_AUTHORING_SCAFFOLD_STANDARD.md` | Standard for the WOAS-R1 dispatch packet authoring scaffold helper (`governance/compat/build_dispatch_packet_scaffold.py`). |
+| `CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md` | Compact no-commit worker-return full-gate contract profile for work orders. |
+| `CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md` | Worker-return artifact quality gate and literal-shape reference. |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex |
+| Provider or surface | local workspace tools |
+| Session or invocation | compact worker-return gate hardening, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `apply_patch`; focused unit tests; governance gates |
+| Target paths | this front door and `docs/reference/work_order_authoring/CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md` |
+| Allowed scope source | operator-approved compact work-order standard hardening |
+| Before status evidence | clean worktree at HEAD `1b60fa67` before edits |
+| After status evidence | changed set recorded in paired review artifact before commit |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | bounded authoring/reference front-door update only |
+| Claim boundary | pointer update only |
+| Agent type | implementation/reviewer |
+| Invocation ID | `work-order-compact-worker-return-gate-2026-07-02` |
+| Expected manifest | paired review artifact changed manifest |
+| Actual changed set | paired review artifact changed manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this batch |
 
 ## Claim Boundary
 

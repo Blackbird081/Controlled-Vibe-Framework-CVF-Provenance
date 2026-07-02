@@ -75,6 +75,7 @@ SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
 INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
 EVIDENCE_REUSE_ENCODING_PLAN_MARKER = "Evidence Reuse And Encoding Plan"
 WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER = "Worker Return Packet Shape Contract"
+WORKER_RETURN_FULL_GATE_PROFILE = "WORKER_RETURN_FULL_GATE_V1"
 REQUIRED_PROOF_ATOMIC_LITERAL_MARKER = "Required Proof Manifest Atomic Literal Discipline"
 LEGACY_COVERAGE_DISPOSITION_MARKER = "Legacy Absorption Coverage Index Disposition"
 PROVIDER_MEMORY_AUTHORITY_BOUNDARY_MARKER = "Provider Memory Authority Boundary"
@@ -168,25 +169,12 @@ ROLE_ROUTING_MODES = {
     "MULTI_AGENT_MULTI_ROLE",
     "MULTI_AGENT_SINGLE_ROLE",
 }
-WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS = (
-    "Purpose",
-    "Scope / Methodology",
-    "Findings / Position",
-    "Risk / Corrective Action",
-    "Claim Boundary",
-    "Agent Operation Trace Block",
-    "Delta Execution Claim Boundary Control Block",
-    "Public Export Disposition",
-    "executionBaseHead",
-    "git status --short",
-)
-WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS = (
-    "External Knowledge Intake Routing",
-    "Rescan Intelligence Hardening",
-    "Corpus Completeness And Report Integrity",
-    "Finding-To-Governance Learning Disposition",
-    "Epistemic Process Block",
-    "Machine Closure Package",
+WORKER_RETURN_FULL_GATE_REQUIRED_TERMS = (
+    f"contractProfile: {WORKER_RETURN_FULL_GATE_PROFILE}",
+    "requiredGate:",
+    "run_worker_return_fast_gate.py",
+    "individualCheckerSubstitution: FORBIDDEN",
+    "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED",
 )
 EVIDENCE_REUSE_VERIFICATION_MODES = {
     "REUSE_PRIOR_VERIFICATION",

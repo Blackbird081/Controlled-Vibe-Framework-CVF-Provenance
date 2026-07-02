@@ -136,33 +136,20 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 ## Worker Return Packet Shape Contract
 
-Worker return must be created at `docs/reviews/CVF_WOAS-R2-GOLDEN_WORKER_RETURN_2026-07-01.md` and include:
+workerReturnPath: `docs/reviews/CVF_WOAS-R2-GOLDEN_WORKER_RETURN_2026-07-01.md`
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+individualCheckerSubstitution: FORBIDDEN
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-- `Status`
-- `dispatchWorkOrder`
-- `Purpose`
-- `Scope / Methodology`
-- `Findings / Position`
-- `Risk / Corrective Action`
-- `Claim Boundary`
-- `Agent Operation Trace Block`
-- `Delta Execution Claim Boundary Control Block`
-- `Public Export Disposition`
-- `executionBaseHead`
-- `git status --short`
-- changed files
-- command evidence
-- no-commit statement
 
-Worker return must also include these conditional sections, each filled with evidence or `N/A with reason` / `NOT_APPLICABLE_WITH_REASON`:
+## Verification Commands
 
-- `External Knowledge Intake Routing`
-- `Rescan Intelligence Hardening`
-- `Corpus Completeness And Report Integrity`
-- `Finding-To-Governance Learning Disposition`
-- `Epistemic Process Block`
-- `Machine Closure Package`
-
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base GOLDENFIXTUREBASEHEAD --head HEAD
+python governance/compat/run_worker_return_fast_gate.py
+git status --short
+```
 
 ## Source-Intake Decision Packet Fields (trigger stub)
 

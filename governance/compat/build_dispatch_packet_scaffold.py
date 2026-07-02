@@ -57,7 +57,8 @@ TRIGGER_FAMILIES: tuple[tuple[str, str, tuple[str, ...], str], ...] = (
         "no_commit_worker",
         "no-commit worker",
         ("--commit-mode WORKER_MUST_NOT_COMMIT",),
-        "## Agent Handoff Contract Control Block; ## Reviewer Closure Conversion",
+        "## Agent Handoff Contract Control Block; ## Reviewer Closure Conversion; "
+        "## Worker Return Packet Shape Contract",
     ),
     (
         "source_intake",
@@ -455,31 +456,31 @@ def _work_order_fulfillment_manifest() -> str:
 def _worker_return_packet_shape_contract(worker_return_path: str) -> str:
     return (
         "## Worker Return Packet Shape Contract\n\n"
-        f"Worker return must be created at `{worker_return_path}` and include:\n\n"
-        "- `Status`\n"
-        "- `dispatchWorkOrder`\n"
-        "- `Purpose`\n"
-        "- `Scope / Methodology`\n"
-        "- `Findings / Position`\n"
-        "- `Risk / Corrective Action`\n"
-        "- `Claim Boundary`\n"
-        "- `Agent Operation Trace Block`\n"
-        "- `Delta Execution Claim Boundary Control Block`\n"
-        "- `Public Export Disposition`\n"
-        "- `executionBaseHead`\n"
-        "- `git status --short`\n"
-        "- changed files\n"
-        "- command evidence\n"
-        "- no-commit statement\n\n"
-        "Worker return must also include these conditional sections, each filled "
-        "with evidence or `N/A with reason` / `NOT_APPLICABLE_WITH_REASON`:\n\n"
-        "- `External Knowledge Intake Routing`\n"
-        "- `Rescan Intelligence Hardening`\n"
-        "- `Corpus Completeness And Report Integrity`\n"
-        "- `Finding-To-Governance Learning Disposition`\n"
-        "- `Epistemic Process Block`\n"
-        "- `Machine Closure Package`\n"
+        f"workerReturnPath: `{worker_return_path}`\n"
+        "contractProfile: WORKER_RETURN_FULL_GATE_V1\n"
+        "requiredGate: `python governance/compat/run_worker_return_fast_gate.py`\n"
+        "individualCheckerSubstitution: FORBIDDEN\n"
+        "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED\n"
     )
+
+
+def _verification_commands_block(args: ScaffoldArgs) -> str:
+    lines = [
+        "## Verification Commands",
+        "",
+        "```powershell",
+        "python governance/compat/run_agent_autorun_workflow_gate.py "
+        f"--phase pre-implementation --base {args.base} --head HEAD",
+    ]
+    if args.commit_mode == "WORKER_MUST_NOT_COMMIT":
+        lines.append("python governance/compat/run_worker_return_fast_gate.py")
+    lines.extend(
+        [
+            "git status --short",
+            "```",
+        ]
+    )
+    return "\n".join(lines)
 
 
 def _delta_claim_boundary_block() -> str:
@@ -698,6 +699,8 @@ def build_work_order(args: ScaffoldArgs, active: dict[str, bool]) -> str:
     lines.append(_work_order_fulfillment_manifest())
     lines.append("")
     lines.append(_worker_return_packet_shape_contract(worker_return_path))
+    lines.append("")
+    lines.append(_verification_commands_block(args))
     lines.append("")
     if active.get("runtime_provider_live"):
         lines.append(_runtime_freshness_block())

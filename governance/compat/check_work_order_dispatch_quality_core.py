@@ -466,22 +466,29 @@ def _validate_worker_return_packet_shape_contract(text: str) -> list[str]:
         ]
 
     issues: list[str] = []
-    for term in WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS:
+    for term in WORKER_RETURN_FULL_GATE_REQUIRED_TERMS:
         if term not in section:
             issues.append(
-                f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` missing required worker-return term `{term}`"
+                f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` missing required contract term `{term}`"
             )
 
-    for term in WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS:
-        if term not in section:
-            issues.append(
-                f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` missing conditional gate term `{term}`"
-            )
-
-    if "N/A with reason" not in section and "NOT_APPLICABLE_WITH_REASON" not in section:
+    if re.search(r"(?im)^##\s+Verification Commands\s*$", text) is None:
         issues.append(
-            f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` must instruct workers "
-            "to use `N/A with reason` or `NOT_APPLICABLE_WITH_REASON` for non-applicable conditional blocks"
+            "WORKER_MUST_NOT_COMMIT dispatch lacks `## Verification Commands` "
+            "for worker-return fast gate evidence"
+        )
+    else:
+        verification_section = _extract_section(text, "Verification Commands")
+        if "run_worker_return_fast_gate.py" not in verification_section:
+            issues.append(
+                "`## Verification Commands` must include "
+                "`python governance/compat/run_worker_return_fast_gate.py`"
+            )
+
+    if "individual checker" in section.lower() and "individualCheckerSubstitution: FORBIDDEN" not in section:
+        issues.append(
+            f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` must forbid "
+            "substituting individual checker lists for the compact full-gate profile"
         )
     return issues
 
@@ -578,4 +585,3 @@ def _validate_negative_search_collision_discipline(
 ) -> list[str]:
     _sync_source_validation_repo_root()
     return source_validation._validate_negative_search_collision_discipline(path, text, artifact_label)
-

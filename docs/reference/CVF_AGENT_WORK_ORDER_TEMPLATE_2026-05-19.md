@@ -901,14 +901,20 @@ or committer must approve disposition, commit the reviewed owned diff, and run
 the committed-range `pre-closure` gate before changing status to a
 closed-equivalent value.
 
-No-commit worker returns should run the worker-return fast gate before handoff:
+No-commit worker returns use the compact full-gate contract:
 
-```powershell
-python governance/compat/run_worker_return_fast_gate.py
+```text
+## Worker Return Packet Shape Contract
+
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+individualCheckerSubstitution: FORBIDDEN
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ```
 
-When the work order names focused tests, add one `--pytest-target <path>` per
-test path.
+`## Verification Commands` must include
+`python governance/compat/run_worker_return_fast_gate.py`. When the work order
+names focused tests, add one `--pytest-target <path>` per test path.
 
 When a no-commit worker return is expected, create the packet from the scaffold
 before writing long prose:
