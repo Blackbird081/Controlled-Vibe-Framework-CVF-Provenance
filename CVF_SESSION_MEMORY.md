@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r5_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next MinerU route through fresh GC-018/source-verified work order, or holds all implementation lanes; parked checkpoint=MSEA-R5 accepted at material commit `1bac8163` with `PARTIAL` blind-spot verdict; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R6 no-commit worker route-decision work order; parked checkpoint=MSEA-R6 worker must return exactly one route decision or blocker and must not commit; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r5_accepted_pending_next_mineru_route_decision`
+Current mode marker: `msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
 
-Current mode: `msea_r5_accepted_pending_next_mineru_route_decision`
+Current mode: `msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
 
-`msea_r5_accepted_pending_next_mineru_route_decision`
+`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`
+`msea_r5_accepted_pending_next_mineru_route_decision`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No dispatched worker lane is currently active after MSEA-R5 acceptance |
+| MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `6ab29617` | DISPATCH_READY; `WORKER_MUST_NOT_COMMIT`; worker must create the MSEA-R6 worker return and route decision matrix, select exactly one allowed route outcome or blocker, and leave artifacts uncommitted |
 
 ## Current Held Follow-Up Work
 
@@ -221,13 +221,16 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r5_accepted_pending_next_mineru_route_decision`
+Mode: `msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
 
-Next allowed move: operator selects the next MinerU route through fresh
-GC-018/source-verified work order, or holds all implementation lanes. MSEA-R5
-accepted the worker return and owner-surface delta at material commit
-`1bac8163` with source mirror 425/425 and R5 target subset 373/373
-reconciled.
+Next allowed move: execute the MSEA-R6 no-commit worker route-decision work
+order at
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md`.
+MSEA-R6 dispatch material commit is `6ab29617`. Worker must produce the MSEA-R6
+worker return and route decision matrix, select exactly one allowed routing
+outcome or blocker, and leave changes uncommitted. MSEA-R5 remains accepted at
+material commit `1bac8163` with source mirror 425/425 and R5 target subset
+373/373 reconciled.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,

@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r5_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next MinerU route through fresh GC-018/source-verified work order, or holds all implementation lanes; parked checkpoint=MSEA-R5 is accepted at material commit `1bac8163` with `PARTIAL` blind-spot verdict and no runtime/package/checker/source-import/public/provider/live claim.
+Startup acknowledged: current mode=`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R6 no-commit worker route-decision work order; parked checkpoint=MSEA-R6 worker must return exactly one route decision or blocker and must not commit; no runtime/package/checker/source-import/public/provider/live claim is authorized.
 
 ## Current State
 
@@ -42,15 +42,32 @@ Startup acknowledged: current mode=`msea_r5_accepted_pending_next_mineru_route_d
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `1bac8163` MSEA-R5 MinerU deep document layer scan absorption acceptance |
-| Latest session-sync target | session sync after MSEA-R5 acceptance |
+| Latest material packet | `6ab29617` MSEA-R6 MinerU application route decision dispatch |
+| Latest session-sync target | session sync after MSEA-R6 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r5_accepted_pending_next_mineru_route_decision`
+`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R6 MinerU application route decision and adapter-readiness selection is
+dispatched at material commit `6ab29617`. The dispatch artifacts are
+`docs/baselines/CVF_GC018_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md`.
+The worker must run as `WORKER_MUST_NOT_COMMIT` and produce
+`docs/reviews/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md`
+plus
+`docs/reference/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_MATRIX_2026-07-02.md`.
+The route decision must select exactly one allowed outcome or return a
+source-backed blocker. The dispatch pre-dispatch autorun passed 72/72 and
+material pre-commit hook passed 79/79. This dispatch does not authorize MinerU
+runtime execution, source import, provider/live proof, credentials, S3/RAG use,
+package activation, checker implementation, public-sync, Web/MCP/model-router/
+action-authority, automatic invocation, benchmark, or production-readiness
+claim.
 
 MSEA-R5 MinerU deep document layer scan absorption is accepted at material
 commit `1bac8163`. The accepted worker return and owner-surface delta are
@@ -88,17 +105,45 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-Operator selects the next MinerU route through fresh GC-018/source-verified
-work order, or holds all implementation lanes. R5 evidence may inform a later
-bounded route-decision tranche, but it does not authorize runtime. No install,
-model download, execution, source import, package activation, checker
-implementation, provider/live proof, public-sync, Web/MCP/model-router/
-action-authority, automatic invocation, benchmark, or production claim is
-authorized now.
+Execute the MSEA-R6 no-commit worker route-decision work order. Worker must
+produce the MSEA-R6 worker return and route decision matrix, evaluate every
+allowed route candidate, select exactly one allowed routing outcome or return
+`BLOCKED_WITH_REASON`, run required gates or classify blockers, and leave
+changes uncommitted. No install, model download, execution, source import,
+credential/S3 use, RAG write, package activation, checker implementation,
+provider/live proof, public-sync, Web/MCP/model-router/action-authority,
+automatic invocation, benchmark, or production claim is authorized now.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
 LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R6 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`6ab29617`, including active mode, next allowed move, generated active session
+state, front-door continuity, and this active handoff marker.
+
+Protected paths:
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json`
+
+Operator authorization: user requested issuance of the next MinerU work order
+after MSEA-R5 completion and detailed document/layer scan value confirmation.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material commit `6ab29617` or prior accepted material commits.
+
+Not authorized: runtime/provider/live proof, MinerU install, source import,
+package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
+work, MCP/CLI adapter implementation, model-router work, action authority,
+automatic invocation, benchmark, or production claims.
 
 ## Core Guard Self-Protection Authorization - MSEA-R5 Dispatch Session Sync
 
@@ -263,28 +308,45 @@ This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
 only and routes any MinerU follow-up through fresh GC-018/source-verified work
 order selection.
 
+## GC-020 HEAD Marker - MSEA-R6 Dispatch
+
+Latest material commit requiring in-place handoff trace:
+
+`6ab29617`
+
+Full SHA:
+
+`6ab296176ae7fdaf4291f01a01306ff12726d26d`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`6ab29617`. It records MSEA-R6 dispatch only and does not claim worker
+execution, MinerU runtime behavior, source import, provider/live proof,
+credential/S3/RAG use, public-sync, package activation, checker implementation,
+MCP/CLI adapter behavior, model-router work, action authority, automatic
+invocation, benchmark, or production readiness.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Codex |
 | Provider or surface | Codex local workspace |
-| Session or invocation | MSEA-R4 closure session-sync and V32 handoff rotation, 2026-07-02 |
+| Session or invocation | MSEA-R6 dispatch session-sync, 2026-07-02 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, `git mv`, `apply_patch`, active-session generator, session-sync gates |
-| Target paths | `AGENTS.md`; `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR4MineruUpstreamSourceMirrorAbsorptionClosure20260702.json` |
-| Allowed scope source | operator request to inspect MSEA-R4 completion and add follow-up requirements for high-value MinerU detailed document/layer scan absorption |
-| Before status evidence | material HEAD `a6ddd8ba`; V31 active handoff near maintainability threshold at 975 lines; session-sync worktree started clean after material commit |
-| After status evidence | V32 active handoff created; V31 moved to archive; active session state regenerated; session-sync pending commit |
-| Diff evidence | `git diff --cached --name-status`; `git diff --name-status a6ddd8ba..HEAD` after commit |
-| Approval boundary | bounded session-sync after accepted MSEA-R4 material closure |
-| Claim boundary | session continuity, handoff rotation, next-move routing, and MSEA-R4 closure recording only |
+| Command or tool surface | PowerShell, `apply_patch`, active-session generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
+| Allowed scope source | operator request to issue the next MinerU work order after MSEA-R5 and material commit `6ab29617` dispatching MSEA-R6 |
+| Before status evidence | material HEAD `6ab29617`; session-sync worktree started clean after material commit |
+| After status evidence | active session state regenerated; front door and active handoff route next move to MSEA-R6 worker execution; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before session-sync commit |
+| Approval boundary | bounded session-sync after MSEA-R6 dispatch material commit |
+| Claim boundary | session continuity, next-move routing, and MSEA-R6 dispatch recording only |
 | Agent type | Codex reviewer/session-sync steward |
-| Invocation ID | `msea-r4-closure-session-sync-v32-2026-07-02` |
-| Expected manifest | `AGENTS.md`; `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR4MineruUpstreamSourceMirrorAbsorptionClosure20260702.json` |
-| Actual changed set | `AGENTS.md`; `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR4MineruUpstreamSourceMirrorAbsorptionClosure20260702.json` |
+| Invocation ID | `msea-r6-dispatch-session-sync-2026-07-02` |
+| Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
+| Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | RENAME_ARCHIVE_WITH_REASON: `AGENT_HANDOFF_V31_2026-07-02.md` moved to `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` because V31 reached 975 lines and V32 is now the active handoff; no continuity content was deleted. |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
 
 ## Claim Boundary
 
