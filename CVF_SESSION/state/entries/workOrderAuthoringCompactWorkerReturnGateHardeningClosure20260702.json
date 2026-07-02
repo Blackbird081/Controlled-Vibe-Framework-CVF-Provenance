@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1376,
+  "stateKey": "workOrderAuthoringCompactWorkerReturnGateHardeningClosure20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-02",
+    "materialCommit": "f8ad5380",
+    "materialCommitFull": "f8ad53806fefe0c6c534a0c478e9821269a72739",
+    "reviewArtifact": "docs/reviews/CVF_WORK_ORDER_AUTHORING_COMPACT_WORKER_RETURN_GATE_HARDENING_2026-07-02.md",
+    "standard": "docs/reference/work_order_authoring/CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md",
+    "contractProfile": "WORKER_RETURN_FULL_GATE_V1",
+    "closureSummary": "Added a compact no-commit work-order contract profile for worker-return full-gate compliance, updated scaffold helpers and worker-return skeleton defaults, and enforced the profile through dispatch-quality validation and regression tests.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 1b60fa67 --head HEAD PASS 74/74",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 1b60fa67 --head HEAD --enforce PASS",
+      "material pre-commit governance hook PASS 79/79 for commit f8ad5380"
+    ],
+    "claimBoundary": "Work-order authoring, scaffold, checker, tests, fixtures, and reference documentation only. No worker execution, runtime/provider/live proof, source import, public-sync, package lifecycle change, Web/UI dashboard work, MCP/CLI adapter implementation, model-router work, action authority, automatic invocation, or production-readiness claim is made."
+  }
+}

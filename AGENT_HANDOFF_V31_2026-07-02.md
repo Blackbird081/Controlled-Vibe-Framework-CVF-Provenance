@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, or name a concrete source target for a later source-verified tranche after FPC-DLR-T1 closed at material commit `79473e5a`; parked checkpoint=MFE-R1 remains closed at material commit `125c37f0`, no MFE-R2 is authorized without an operator-selected source, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, or name a concrete source target for a later source-verified tranche after compact worker-return gate hardening closed at material commit `f8ad5380`; parked checkpoint=FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, no MFE-R2 is authorized without an operator-selected source, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -41,7 +41,7 @@ receive new status.
 
 ## Current Mode
 
-`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
+`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
@@ -686,6 +686,49 @@ This marker records the KIOD-R10 closure session-sync commit after material
 closure and V31 handoff rotation. It does not authorize material, runtime,
 provider/live, checker, public-sync, package, Web/MCP, model-router,
 action-authority, automatic invocation, or production-readiness claims.
+
+## GC-020 HEAD Marker - Work Order Authoring Compact Worker Return Gate Hardening
+
+Latest material commit requiring in-place handoff trace:
+
+`f8ad5380`
+
+Full SHA:
+
+`f8ad53806fefe0c6c534a0c478e9821269a72739`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`f8ad5380`. It records bounded work-order authoring/scaffold/checker hardening
+for compact `WORKER_RETURN_FULL_GATE_V1` no-commit worker-return gate
+contracts. It does not authorize worker execution, runtime/provider/live
+behavior, source import, public-sync, package lifecycle mutation,
+Web/UI/dashboard work, MCP/CLI adapter implementation, model-router work,
+action authority, automatic invocation, or production-readiness claims.
+
+## Core Guard Self-Protection Authorization - Compact Worker Return Gate Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`f8ad5380`.
+
+Protected paths:
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/workOrderAuthoringCompactWorkerReturnGateHardeningClosure20260702.json`
+
+Operator authorization: user requested compact work-order standard hardening
+and continuity sync after material closure.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material commit `f8ad5380` or prior accepted material commits.
+
+Not authorized: worker execution, runtime/provider/live proof, source import,
+public-sync, package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
+implementation, model-router work, action authority, automatic invocation, or
+production-readiness claims.
 
 ## Claim Boundary
 

@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, or name a concrete source target for a later source-verified tranche after FPC-DLR-T1 closed at material commit `79473e5a`; parked checkpoint=MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, no MFE-R2 is authorized without an operator-selected source, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, or name a concrete source target for a later source-verified tranche after compact worker-return gate hardening closed at material commit `f8ad5380`; parked checkpoint=FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, no MFE-R2 is authorized without an operator-selected source, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed numbered WOAS tranche at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
+Current mode marker: `work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
+Current mode: `work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
+`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`fpc_dlr_t1_downstream_reopen_evidence_audit_dispatched_pending_worker_return`
+`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; future `WORKER_MUST_NOT_COMMIT` work orders use compact `WORKER_RETURN_FULL_GATE_V1` profile plus worker-return fast gate command instead of a long repeated checker-section inventory |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; selected `HOLD_ALL_DOWNSTREAM_LANES` because no source-backed reopen condition is met for `use-case-adapter-public`, `runtime-provider-live`, or `MPI-T6-runtime` |
 | MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; added ADIF-0022 and literal-format gotchas items 36-37 so future worker returns avoid never-created optional path evidence rows and use real Finding-To-Governance defect-class enums |
 | MFE-R1 Memory Foundation Future Enrichment Source Verification | `125c37f0` | CLOSED_PASS_BOUNDED; worker return accepted with `NO_NEW_VALUE` for immediate memory-foundation enrichment because no specific selected source file, copied folder, or external repository is named for this tranche; D-file06/I-file19 remain parked |
@@ -87,6 +88,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; compact no-commit worker-return full-gate profile is now documented, scaffolded, and enforced by dispatch-quality validation |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; downstream lanes remain held under `HOLD_ALL_DOWNSTREAM_LANES` |
 | MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; ADIF-0022 and gotchas items 36-37 make the MFE-R1 worker-return literal-format traps reusable for future agents |
 | MFE-R1 Memory Foundation Future Enrichment Source Verification | `125c37f0` | CLOSED_PASS_BOUNDED; no immediate enrichment target exists absent an operator-selected source |
@@ -213,13 +215,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
+Mode: `work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane
-Selection Decision is CLOSED_PASS_BOUNDED at material commit `79473e5a`.
-Selected routing outcome: `HOLD_ALL_DOWNSTREAM_LANES`. No downstream lane is
-reopened because `use-case-adapter-public`, `runtime-provider-live`, and
-`MPI-T6-runtime` all lack current source-backed condition-met evidence.
+Next allowed move: Work Order Authoring Compact Worker Return Gate Hardening is
+CLOSED_PASS_BOUNDED at material commit `f8ad5380`. Future
+`WORKER_MUST_NOT_COMMIT` work orders should use compact profile
+`WORKER_RETURN_FULL_GATE_V1` and include the required worker-return fast gate
+command instead of expanding a long checker-section inventory. FPC-DLR-T1
+remains CLOSED_PASS_BOUNDED at material commit `79473e5a`. Selected routing
+outcome: `HOLD_ALL_DOWNSTREAM_LANES`. No downstream lane is reopened because
+`use-case-adapter-public`, `runtime-provider-live`, and `MPI-T6-runtime` all
+lack current source-backed condition-met evidence.
 
 Operator may select another high-value foundation lane, provide fresh
 product/source evidence for a downstream reopen, or name a concrete source
