@@ -2,10 +2,13 @@
   "stateOrder": 1379,
   "stateKey": "mseaR10MineruAdapterContractDraftDispatch20260703",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-03",
     "materialCommit": "53f7db5d",
     "materialCommitFull": "53f7db5d73def4798e45598634231d84a1c37240",
+    "closureCommit": "28b77572",
+    "closureCommitFull": "28b775724cf06cf23c2321eeee2827078979eb4d",
+    "closureDate": "2026-07-03",
     "dispatchBaseHead": "7c19b587",
     "baseline": "docs/baselines/CVF_GC018_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md",
@@ -19,8 +22,13 @@
     "preDispatchGate": "PASS 72/72",
     "commitStewardPreflight": "PASS",
     "materialPreCommitHook": "PASS 79/79",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerCommitStewardPreflight": "PASS",
+    "closurePreCommitHook": "PASS 79/79",
     "selectedRoutingOutcome": "OPEN_ADAPTER_CONTRACT_DRAFT_ONLY",
-    "claimBoundary": "Dispatch-only material commit for a documentation/reference-only MinerU adapter contract draft. Worker may create only the planned worker return and companion reference paths under WORKER_MUST_NOT_COMMIT. No MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
-    "nextRecommendedMove": "Delegated worker executes MSEA-R10 work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit."
+    "reviewerDecision": "ACCEPT_FOR_MATERIAL_COMMIT",
+    "claimBoundary": "Closed bounded documentation/reference material commit. Accepts the no-commit worker return and companion adapter contract draft reference only. No MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
+    "nextRecommendedMove": "Author MSEA-R11 roadmap for MinerU document extraction productization readiness if operator chooses to continue toward route selection."
   }
 }
