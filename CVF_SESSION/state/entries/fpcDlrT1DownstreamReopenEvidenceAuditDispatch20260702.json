@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1374,
+  "stateKey": "fpcDlrT1DownstreamReopenEvidenceAuditDispatch20260702",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-02",
+    "materialCommit": "9aa9900c",
+    "materialCommitFull": "9aa9900ccc715898126b27f78869a537d55f7a45",
+    "dispatchBaseHead": "ceba1200",
+    "baseline": "docs/baselines/CVF_GC018_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md",
+    "workerReturnPath": "docs/reviews/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_WORKER_RETURN_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "python governance/compat/run_adif_defect_resolver.py --task-class \"work-order authoring / dispatch\" --role dispatcher --lifecycle-phase pre-dispatch returned NONE_RETURNED",
+      "python governance/compat/build_dispatch_packet_scaffold.py --packet-kind generic-worker-dispatch --batch-id FPC-DLR-T1 --title \"Downstream Reopen Evidence Audit And Lane Selection Decision\" --date 2026-07-02 --base ceba1200 --commit-mode WORKER_MUST_NOT_COMMIT --dependency \"FMS-T2 roadmap ready; DLR-T1 roadmap ready; PRG-T1 inventory active\" --stdout --include-worker-return-skeleton used as scaffold source",
+      "python governance/compat/check_fpc_parked_reopen_inventory.py --base ceba1200 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base ceba1200 --head HEAD PASS 72/72",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base ceba1200 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 79/79 for material dispatch commit 9aa9900c"
+    ],
+    "claimBoundary": "Dispatch-only material commit. Authorizes a single no-commit worker return decision packet for FPC-DLR-T1 only. No downstream implementation, runtime/provider/live proof, public-sync, adapter behavior, package activation, checker implementation, generated-state mutation, Web/UI dashboard, model-router work, MPI-T6 runtime work, push, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

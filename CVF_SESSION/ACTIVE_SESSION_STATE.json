@@ -71,8 +71,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mfe_r1_memory_foundation_future_enrichment_source_verification_closed_pass_bounded_pending_selected_source_or_next_lane",
-  "previousMode": "mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return",
+  "currentMode": "fpc_dlr_t1_downstream_reopen_evidence_audit_dispatched_pending_worker_return",
+  "previousMode": "mfe_r1_memory_foundation_future_enrichment_source_verification_closed_pass_bounded_pending_selected_source_or_next_lane",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3209,7 +3209,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MFE-R1 Memory Foundation Future Enrichment Source Verification is CLOSED_PASS_BOUNDED at material commit 125c37f0. MFE-R1 literal trap learning addendum is recorded at material commit faf09d46 with ADIF-0022 and gotchas items 36-37; this changes guidance only and does not reopen MFE-R1. Worker return confirmed current memory-foundation owner surfaces and KIOD-R6/KIOD-R9/KIOD-R10/KIOD-R11 predecessor evidence, kept D-file06 and I-file19 parked, and found NO_NEW_VALUE for immediate memory-foundation enrichment because no specific selected source file, copied folder, or external repository is named for this tranche. Next allowed move: select a future MFE-R2 or fresh MFE work order only after an operator-selected source exists, or select another high-value CVF foundation lane through fresh GC-018/source-verified work order. No KIOD-R6 replay, C-file05 reopen, D-file06/I-file19 reopen, memory-reference edit, source import, runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, checker implementation, action authority, automatic invocation, or production-readiness claim is authorized by MFE-R1 closure or the learning addendum. D-file06 and I-file19 remain parked by KIOD-R10 concrete reopen conditions and the KIOD-R11 checker. MFE-T0 roadmap remains ready at material commit 58688e87. KIOD-R11 remains CLOSED_PASS_BOUNDED at material commit 2c0e3cff. KIOD-R10 remains CLOSED_PASS_BOUNDED at material commit e89e3dd4. KIOD-R9 remains closed at material commit 6ed7f257. WOAS-R7 remains latest closed WOAS work at material commit a8d98dd1. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision is DISPATCH_READY at material commit 9aa9900c. Next allowed move: execute the FPC-DLR-T1 worker under WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md and return docs/reviews/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_WORKER_RETURN_2026-07-02.md as the single worker-return decision packet. Worker must evaluate use-case-adapter-public, runtime-provider-live, and MPI-T6-runtime against current source-backed reopen conditions and select exactly one routing outcome: SELECT_ONE_LANE_FOR_FRESH_GC018, HOLD_ALL_DOWNSTREAM_LANES, REQUEST_PRODUCT_REQUIREMENT_EVIDENCE, or OPEN_FOUNDATION_MAINTENANCE_INSTEAD. Worker must not commit, update session surfaces, implement any downstream lane, run live/provider proof, public-sync, edit runtime/adapter/package/checker/generated-state/Web/model-router/MPI surfaces, or claim production readiness. MFE-R1 remains CLOSED_PASS_BOUNDED at material commit 125c37f0 and literal trap learning remains recorded at material commit faf09d46. No MFE-R2 or fresh MFE follow-up is authorized until an operator-selected source exists. D-file06 and I-file19 remain parked by KIOD-R10 concrete reopen conditions and the KIOD-R11 checker. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -5691,5 +5691,25 @@
       "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 79/79"
     ],
     "claimBoundary": "Documentation/reference learning only. No worker execution, source import, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, checker implementation, action authority, automatic invocation, or production-readiness claim."
+  },
+  "fpcDlrT1DownstreamReopenEvidenceAuditDispatch20260702": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-02",
+    "materialCommit": "9aa9900c",
+    "materialCommitFull": "9aa9900ccc715898126b27f78869a537d55f7a45",
+    "dispatchBaseHead": "ceba1200",
+    "baseline": "docs/baselines/CVF_GC018_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md",
+    "workerReturnPath": "docs/reviews/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_WORKER_RETURN_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "python governance/compat/run_adif_defect_resolver.py --task-class \"work-order authoring / dispatch\" --role dispatcher --lifecycle-phase pre-dispatch returned NONE_RETURNED",
+      "python governance/compat/build_dispatch_packet_scaffold.py --packet-kind generic-worker-dispatch --batch-id FPC-DLR-T1 --title \"Downstream Reopen Evidence Audit And Lane Selection Decision\" --date 2026-07-02 --base ceba1200 --commit-mode WORKER_MUST_NOT_COMMIT --dependency \"FMS-T2 roadmap ready; DLR-T1 roadmap ready; PRG-T1 inventory active\" --stdout --include-worker-return-skeleton used as scaffold source",
+      "python governance/compat/check_fpc_parked_reopen_inventory.py --base ceba1200 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base ceba1200 --head HEAD PASS 72/72",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base ceba1200 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 79/79 for material dispatch commit 9aa9900c"
+    ],
+    "claimBoundary": "Dispatch-only material commit. Authorizes a single no-commit worker return decision packet for FPC-DLR-T1 only. No downstream implementation, runtime/provider/live proof, public-sync, adapter behavior, package activation, checker implementation, generated-state mutation, Web/UI dashboard, model-router work, MPI-T6 runtime work, push, action authority, automatic invocation, or production-readiness claim is authorized."
   }
 }
