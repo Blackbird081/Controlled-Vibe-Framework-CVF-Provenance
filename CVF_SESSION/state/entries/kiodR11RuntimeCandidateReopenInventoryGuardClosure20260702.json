@@ -1,0 +1,32 @@
+{
+  "stateOrder": 1366,
+  "stateKey": "kiodR11RuntimeCandidateReopenInventoryGuardClosure20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-02",
+    "materialCommit": "2c0e3cff",
+    "materialCommitFull": "2c0e3cff9697ef020f7dfb9d0f3f91678b1df222",
+    "dispatchCommit": "08f5fd68",
+    "dispatchCommitFull": "08f5fd68bae8788af828f36f64801b0762ca2bdf",
+    "executionBaseHead": "c6f18c68",
+    "closureBaseHead": "c6f18c68",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md",
+    "inventory": "docs/reference/CVF_KIOD_RUNTIME_CANDIDATE_REOPEN_CONDITION_INVENTORY_2026-07-02.json",
+    "checker": "governance/compat/check_kiod_runtime_candidate_reopen_inventory.py",
+    "tests": "governance/compat/test_check_kiod_runtime_candidate_reopen_inventory.py",
+    "workerReturn": "docs/reviews/CVF_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_WORKER_RETURN_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerDecision": "ACCEPTED_WITH_REVIEWER_REPAIR",
+    "closureSummary": "Reviewer accepted the KIOD-R11 no-commit worker return after repairing the changed-doc evidence-token logic. KIOD-R11 adds a KIOD-specific runtime-candidate reopen inventory, checker, 15 focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring for D-file06 and I-file19.",
+    "verification": [
+      "python -m unittest governance.compat.test_check_kiod_runtime_candidate_reopen_inventory -v PASS 15/15",
+      "python governance/compat/check_kiod_runtime_candidate_reopen_inventory.py --base c6f18c68 --head HEAD --enforce PASS",
+      "python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_kiod_runtime_candidate_reopen_inventory.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c6f18c68 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base c6f18c68 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 79/79 for material closure commit 2c0e3cff"
+    ],
+    "claimBoundary": "Local governance inventory/checker/test/wiring only. No runtime/provider/live proof, source import, public export, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is made."
+  }
+}

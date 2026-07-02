@@ -2,7 +2,7 @@
   "stateOrder": 1365,
   "stateKey": "kiodR11RuntimeCandidateReopenInventoryGuardDispatch20260702",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED_BY_2C0E3CFF",
     "date": "2026-07-02",
     "materialCommit": "08f5fd68",
     "materialCommitFull": "08f5fd68bae8788af828f36f64801b0762ca2bdf",
@@ -17,6 +17,7 @@
       "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 9c7aa4d5 --head HEAD --enforce PASS"
     ],
     "nextAllowedMove": "Worker executes KIOD-R11 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer/closer owns acceptance, material commit of worker changes, and later session-sync.",
-    "claimBoundary": "Dispatch only. No runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized."
+    "closureCommit": "2c0e3cff",
+    "claimBoundary": "Dispatch-only material commit, closed by KIOD-R11 material commit 2c0e3cff. No runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized."
   }
 }

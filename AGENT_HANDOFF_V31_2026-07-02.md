@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=worker executes KIOD-R11 under WORKER_MUST_NOT_COMMIT; parked checkpoint=KIOD-R11 dispatched at material commit `08f5fd68`, KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator selects next governed lane; parked checkpoint=KIOD-R11 closed at material commit `2c0e3cff`, KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `08f5fd68` KIOD-R11 Runtime Candidate Reopen Inventory Guard dispatch |
-| Latest session-sync target | session sync after KIOD-R11 dispatch |
+| Latest material packet | `2c0e3cff` KIOD-R11 Runtime Candidate Reopen Inventory Guard closure |
+| Latest session-sync target | session sync after KIOD-R11 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,18 +41,17 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`
+`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
-KIOD-R11 Runtime Candidate Reopen Inventory Guard was dispatched at material
-commit `08f5fd68`. The dispatch creates
-`docs/baselines/CVF_GC018_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md`
-and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md`.
-The worker must return
-`docs/reviews/CVF_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_WORKER_RETURN_2026-07-02.md`
-under WORKER_MUST_NOT_COMMIT.
+KIOD-R11 Runtime Candidate Reopen Inventory Guard closed bounded at material
+commit `2c0e3cff`. Reviewer accepted the no-commit worker return with
+reviewer repair to the changed-doc evidence-token logic. Closure added
+`docs/reference/CVF_KIOD_RUNTIME_CANDIDATE_REOPEN_CONDITION_INVENTORY_2026-07-02.json`,
+`governance/compat/check_kiod_runtime_candidate_reopen_inventory.py`,
+`governance/compat/test_check_kiod_runtime_candidate_reopen_inventory.py`,
+and hook/autorun catalog wiring. The focused tests pass 15/15.
 
 KIOD-R10 Runtime Deferred Candidate Decision remains closed bounded at material commit
 `e89e3dd4`. Reviewer accepted
@@ -78,12 +77,13 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 | Work | Commit | Disposition |
 |---|---|---|
-| KIOD-R11 Runtime Candidate Reopen Inventory Guard | `08f5fd68` | DISPATCH_READY; worker must not commit; systemize D-file06/I-file19 reopen conditions into KIOD-specific inventory, checker, tests, and hook/autorun wiring |
+| None | N/A | No current dispatched worker tranche; KIOD-R11 closed at material commit `2c0e3cff` |
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R11 Runtime Candidate Reopen Inventory Guard | `2c0e3cff` | CLOSED_PASS_BOUNDED; KIOD-specific inventory/checker/test/wiring now blocks unsupported D-file06/I-file19 runtime-candidate re-proposals |
 | KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; decision packet accepted and D-file06/I-file19 parked as runtime candidates with concrete reopen conditions |
 | KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; doc-only C-file05 ledger-schema boundary reference accepted with no runtime/checker/source-import/public/provider claim |
 | WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; generated worker-return skeleton avoids worker-return quality gate banned placeholder markers and direct `diagnose()` regression coverage passes |
@@ -99,18 +99,14 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 ## Next Allowed Move
 
-Worker executes KIOD-R11 under WORKER_MUST_NOT_COMMIT. KIOD-R11 is
-DISPATCH_READY at material commit `08f5fd68`; worker must use
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md`
-and return
-`docs/reviews/CVF_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_WORKER_RETURN_2026-07-02.md`
-as COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
-
-KIOD-R11 scope is a KIOD-specific reopen-condition inventory JSON, checker,
-tests, and hook/autorun wiring for D-file06 and I-file19. KIOD-R10 remains
-CLOSED_PASS_BOUNDED at material commit `e89e3dd4`; D-file06 and I-file19
-remain parked runtime candidates with concrete reopen conditions, not generic
-future work.
+Operator selects the next governed lane. KIOD-R11 is CLOSED_PASS_BOUNDED at
+material commit `2c0e3cff`. KIOD-R11 added a KIOD-specific reopen-condition
+inventory JSON, checker, 15 focused tests, and hook/autorun wiring for
+D-file06 and I-file19. KIOD-R10 remains CLOSED_PASS_BOUNDED at material
+commit `e89e3dd4`; D-file06 and I-file19 remain parked runtime candidates
+with concrete reopen conditions, not generic future work. Any future
+re-proposal must satisfy the KIOD-R10 concrete reopen conditions and the
+KIOD-R11 checker.
 
 D-file06 may reopen only if an operator-stated product requirement explicitly
 needs CVF to add live vector-backed semantic retrieval not satisfied by
@@ -129,11 +125,49 @@ fresh operator decision, fresh GC-018, source verification against the current
 non-auto-promotion design, and evidence that any memory-index read does not
 bypass existing evaluation/truth-score gates.
 
-No checker implementation, runtime/provider/live proof, source import,
-public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
+No runtime/provider/live proof, source import, public-sync,
+Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package
+lifecycle mutation, action authority, automatic invocation, or
+production-readiness claim is authorized by KIOD-R11 closure.
+
+## Core Guard Self-Protection Authorization - KIOD-R11 Closure Session Sync
+
+Authorized guard-maintenance scope: KIOD-R11 closure session-sync after
+material closure commit `2c0e3cff`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/kiodR11RuntimeCandidateReopenInventoryGuardClosure20260702.json`
+- `CVF_SESSION/state/entries/kiodR11RuntimeCandidateReopenInventoryGuardDispatch20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: implied by governed reviewer/closer session-sync after
+accepted KIOD-R11 material closure.
+
+Rollback boundary: revert only the KIOD-R11 closure session-sync if rejected;
+do not alter material closure commit `2c0e3cff` or prior accepted KIOD/WOAS
+material commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed/latest work, and next allowed move after KIOD-R11 closure commit `2c0e3cff`. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record KIOD-R11 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after KIOD-R11 closure session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for KIOD-R11 closed pending operator next lane selection. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane selection after KIOD-R11 closure. |
+| `CVF_SESSION/state/entries/kiodR11RuntimeCandidateReopenInventoryGuardDispatch20260702.json` | Mark KIOD-R11 dispatch entry closed by material commit `2c0e3cff`. |
+| `CVF_SESSION/state/entries/kiodR11RuntimeCandidateReopenInventoryGuardClosure20260702.json` | Add state source entry for KIOD-R11 material closure commit `2c0e3cff`. |
+
+Authorization boundary: session-sync only. No runtime/provider/live proof,
+source import, public-sync, Web/UI dashboard, MCP/CLI adapter, model-router
 work, package lifecycle mutation, action authority, automatic invocation, or
-production-readiness claim is authorized by KIOD-R11 dispatch or KIOD-R10
-closure.
+production-readiness claim is authorized by this block.
 
 ## Core Guard Self-Protection Authorization - KIOD-R11 Dispatch Session Sync
 
@@ -229,6 +263,22 @@ this block.
 | Archived prior handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | State source update | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` activeHandoff and supersededHandoffs |
 | Generator | `python governance/compat/generate_active_session_state.py --generate` |
+
+## GC-020 HEAD Marker - KIOD-R11 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`2c0e3cff`
+
+Full SHA:
+
+`2c0e3cff9697ef020f7dfb9d0f3f91678b1df222`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`2c0e3cff`. It records bounded KIOD-R11 closure only and does not authorize
+runtime/provider/live behavior, source import, public-sync, package lifecycle
+mutation, Web/UI/dashboard work, MCP/CLI adapter implementation, model-router
+work, action authority, automatic invocation, or production-readiness claims.
 
 ## GC-020 HEAD Marker - KIOD-R11 Dispatch
 

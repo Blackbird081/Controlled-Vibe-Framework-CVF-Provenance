@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=worker executes KIOD-R11 under WORKER_MUST_NOT_COMMIT; parked checkpoint=KIOD-R11 dispatched at material commit `08f5fd68`, KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator selects next governed lane; parked checkpoint=KIOD-R11 closed at material commit `2c0e3cff`, KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`
+Current mode marker: `kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Current mode: `kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`
+Current mode: `kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
 
-`kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`
+`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`kiod_r10_runtime_deferred_candidate_decision_closed_pass_bounded_pending_operator_next_lane_selection`
+`kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| KIOD-R11 Runtime Candidate Reopen Inventory Guard | `08f5fd68` | DISPATCH_READY; worker must not commit; systemize D-file06/I-file19 concrete reopen conditions into KIOD-specific inventory, checker, tests, and hook/autorun wiring |
+| None | N/A | No current dispatched worker tranche; KIOD-R11 closed at material commit `2c0e3cff` |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R11 Runtime Candidate Reopen Inventory Guard | `2c0e3cff` | CLOSED_PASS_BOUNDED; accepted no-commit worker return with reviewer repair, added KIOD-specific reopen-condition inventory, checker, 15 focused tests, and hook/autorun wiring for D-file06/I-file19 re-proposal discipline |
 | KIOD-R11 Runtime Candidate Reopen Inventory Guard dispatch | `08f5fd68` | DISPATCH_READY; GC-018 baseline and work order created for a bounded reopen-inventory guard follow-up to KIOD-R10; worker must not commit |
 | KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and decision packet, parked D-file06 vector retrieval and I-file19 Learning Plane memory-index promotion as runtime candidates with concrete reopen conditions; no new reference, runtime, checker, source-import, public, package, Web/MCP, provider/live, action-authority, automatic-invocation, or production claim |
 | KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; accepted no-commit worker return, added doc-only memory ledger schema boundary reference for C-file05, and retained D-file06/I-file19 as deferred runtime-adjacent candidates requiring fresh work orders |
@@ -83,6 +84,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| KIOD-R11 Runtime Candidate Reopen Inventory Guard | `2c0e3cff` | CLOSED_PASS_BOUNDED; KIOD-specific inventory/checker/test/wiring now blocks unsupported D-file06/I-file19 runtime-candidate re-proposals |
 | KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; D-file06 and I-file19 remain parked runtime candidates with concrete reopen conditions and no immediate implementation lane |
 | KIOD-R9 Memory Ledger Schema Boundary | `6ed7f257` | CLOSED_PASS_BOUNDED; doc-only C-file05 ledger-schema boundary reference accepted with no runtime/checker/source-import/public/provider claim |
 | WOAS-R7 Checker-Safe Worker Return Skeleton Generation | `a8d98dd1` | CLOSED_PASS_BOUNDED; helper skeleton output is checker-safe by construction and 71/71 focused tests pass |
@@ -205,21 +207,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`
+Mode: `kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
 
-Next allowed move: worker executes KIOD-R11 under WORKER_MUST_NOT_COMMIT.
-KIOD-R11 Runtime Candidate Reopen Inventory Guard is DISPATCH_READY at material
-commit `08f5fd68`. The worker must use
-`docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_2026-07-02.md`
-and return
-`docs/reviews/CVF_KIOD_R11_RUNTIME_CANDIDATE_REOPEN_INVENTORY_GUARD_WORKER_RETURN_2026-07-02.md`
-as COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+Next allowed move: operator selects the next governed lane. KIOD-R11 Runtime
+Candidate Reopen Inventory Guard is CLOSED_PASS_BOUNDED at material commit
+`2c0e3cff`. KIOD-R11 added
+`docs/reference/CVF_KIOD_RUNTIME_CANDIDATE_REOPEN_CONDITION_INVENTORY_2026-07-02.json`,
+`governance/compat/check_kiod_runtime_candidate_reopen_inventory.py`, 15
+focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring.
 
-KIOD-R11 scope is a KIOD-specific reopen-condition inventory JSON, checker,
-tests, and hook/autorun wiring for the D-file06 and I-file19 parked
-runtime-candidate reopen conditions recorded by KIOD-R10. D-file06 and
-I-file19 remain parked runtime candidates with concrete reopen conditions, not
-generic future work.
+D-file06 and I-file19 remain parked runtime candidates with concrete reopen
+conditions, not generic future work. Any future re-proposal must satisfy the
+KIOD-R10 concrete reopen conditions and the KIOD-R11 checker.
 
 D-file06 reopen condition: reopen only if an operator-stated product
 requirement explicitly needs CVF to add live vector-backed semantic retrieval
@@ -239,10 +238,10 @@ fresh GC-018, source verification against the current
 non-auto-promotion design, and evidence that any memory-index read does not
 bypass existing evaluation/truth-score gates.
 
-No checker implementation, runtime/provider/live proof, source import,
-public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
-work, package lifecycle mutation, action authority, automatic invocation, or
-production-readiness claim is authorized by KIOD-R10 closure. KIOD-R9 remains
+No runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
+MCP/CLI adapter implementation, model-router work, package lifecycle mutation,
+action authority, automatic invocation, or production-readiness claim is
+authorized by KIOD-R11 closure. KIOD-R9 remains
 closed at material commit `6ed7f257`. WOAS-R7 remains latest closed WOAS work
 at material commit `a8d98dd1`.
 KIOD-R7 remains CLOSED_PASS_BOUNDED
