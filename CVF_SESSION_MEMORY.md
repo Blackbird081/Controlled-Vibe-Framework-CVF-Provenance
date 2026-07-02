@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author MSEA-R7 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for a CVF-native MinerU receipt schema contract draft; parked checkpoint=MSEA-R7 is documentation/reference-only unless a fresh later authorization allows runtime behavior; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R7 work order under WORKER_MUST_NOT_COMMIT and return uncommitted worker artifacts; parked checkpoint=MSEA-R7 remains documentation/reference-only with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
+Current mode marker: `msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
 
-Current mode: `msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
+Current mode: `msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
 
-`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
+`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
+`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker lane is currently dispatched after MSEA-R6 closure |
+| MSEA-R7 MinerU Receipt Schema Contract Draft | `7aed70cb` | DISPATCH_READY; worker must not commit; create only the worker return and receipt schema contract draft reference named in the work order |
 
 ## Current Held Follow-Up Work
 
@@ -223,18 +223,17 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
+Mode: `msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
 
-Next allowed move: author MSEA-R7 GC-018 baseline and source-verified
-`WORKER_MUST_NOT_COMMIT` work order for a CVF-native MinerU receipt schema
-contract draft. MSEA-R6 closed at material commit `2d0b05c4` and selected
-`OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; the accepted worker return is
-`docs/reviews/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md`
-and the route decision matrix is
-`docs/reference/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_MATRIX_2026-07-02.md`.
-MSEA-R7 should be informed by `docs/en/reference/output_files.md` and accepted
-MSEA-T2/R5/R6 owner surfaces, and must remain documentation/reference-only
-unless a fresh later authorization allows runtime behavior.
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`
+under `WORKER_MUST_NOT_COMMIT`. The worker creates only
+`docs/reviews/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_WORKER_RETURN_2026-07-02.md`
+and
+`docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`,
+runs required gates, leaves changes uncommitted, and returns
+`COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, or
+`BLOCKED_WITH_REASON`.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,
