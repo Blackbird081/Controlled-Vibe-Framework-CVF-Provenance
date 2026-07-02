@@ -72,7 +72,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring",
+  "currentMode": "msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return",
   "previousMode": "msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -3210,7 +3210,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R4 MinerU upstream source mirror absorption is accepted at material commit a6ddd8ba after reviewer repair. Accepted artifacts: docs/reviews/CVF_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_WORKER_RETURN_2026-07-02.md and docs/reference/CVF_MSEA_R4_MINERU_UPSTREAM_OWNER_SURFACE_DELTA_2026-07-02.md. R4 reconciled the pinned MinerU source mirror to 425/425 files and recorded CLI/Docker candidate evidence, but retained a PARTIAL blind-spot verdict because docs/ and non-CLI mineru/ internals were read only at structural/group depth. Next allowed move: author a fresh source-verified MSEA-R5 GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for deep MinerU detailed document/layer scan absorption, targeting per-file or file-row-compact review of docs/, mineru/backend, mineru/data, mineru/model, mineru/resources, mineru/utils, and Docker content verification, mapped to layout/OCR/table/formula/reading-order/Markdown-JSON/RAG-handoff/receipt-quality use cases. No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/Docker/RAG execution, provider-live proof, public-sync, package activation, checker implementation, source import, Web/MCP/model-router/action-authority/automatic-invocation/benchmark/production-readiness claim is authorized unless a later fresh work order explicitly authorizes it. FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime parking remain as previously stated; LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R5 MinerU deep document layer scan absorption is DISPATCH_READY at material commit 7bb7b509. Baseline: docs/baselines/CVF_GC018_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md. Work order: docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md. Next allowed move: execute the MSEA-R5 WORKER_MUST_NOT_COMMIT lane and return COMPLETE_PENDING_REVIEW, COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW, or BLOCKED_WITH_REASON. Worker must create only the planned worker return and owner-surface delta, reconcile the pinned MinerU source mirror and 373-file R5 target subset, and map value to layout/OCR/table/formula/reading-order/Markdown-JSON/RAG-handoff/receipt-quality use cases. No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/Docker/RAG execution, provider-live proof, public-sync, package activation, checker implementation, source import, Web/MCP/model-router/action-authority/automatic-invocation/benchmark/production-readiness claim is authorized unless a later fresh work order explicitly authorizes it. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -3550,6 +3550,21 @@
     "corpusVerdict": "PARTIAL",
     "nextRecommendedMove": "MSEA-R5_DEEP_LAYER_SCAN_ABSORPTION_WORK_ORDER_AUTHORING",
     "summary": "MSEA-R4 accepted the no-commit MinerU source mirror worker return after reviewer repair. The mirror reconciled to 425/425 files with matching commit/count/hash and recorded high-value CLI and Docker candidate evidence, while retaining a PARTIAL blind-spot verdict for docs/ and non-CLI mineru/ internals read only at structural/group depth. No runtime, install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/Docker/RAG execution, provider/live proof, source import, public-sync, package activation, checker implementation, Web/MCP/model-router/action-authority, benchmark, or production-readiness claim is made."
+  },
+  "mseaR5MineruDeepDocumentLayerScanAbsorptionDispatch20260702": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "7bb7b509",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_WORKER_RETURN_2026-07-02.md",
+    "ownerSurfaceDelta": "docs/reference/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_OWNER_SURFACE_DELTA_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "targetSubsetCount": 373,
+    "summary": "MSEA-R5 dispatch authorizes a no-commit worker to deeply absorb the MinerU docs, non-CLI mineru internals, and Docker content left partial by MSEA-R4. Runtime/provider/live/source-import/package/public/Web/MCP/model-router/action-authority/production claims remain forbidden."
   },
   "kiodR1R3KnowledgeIntakeDeduplicationFoundationClosure20260630": {
     "status": "CLOSED_PASS_BOUNDED",

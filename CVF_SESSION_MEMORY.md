@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author fresh MSEA-R5 GC-018/work order for deep MinerU detailed document/layer scan absorption; parked checkpoint=MSEA-R4 accepted at material commit `a6ddd8ba` with reviewer hash/Docker evidence repair, 425/425 count/hash reconciliation, CLI/Docker candidate evidence, and `PARTIAL` blind-spot verdict for `docs/` plus non-CLI `mineru/`; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R5 under `WORKER_MUST_NOT_COMMIT` and return worker artifacts for review; parked checkpoint=MSEA-R4 accepted at material commit `a6ddd8ba` with `PARTIAL` blind-spot verdict; MSEA-R5 dispatch material commit is `7bb7b509`; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
+Current mode marker: `msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`
 
-Current mode: `msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
+Current mode: `msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`
 
-`msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
+`msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
+`msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No active dispatched worker work after MSEA-R4 closure |
+| MSEA-R5 MinerU Deep Document Layer Scan Absorption | `7bb7b509` | DISPATCH_READY; worker must not commit; target subset is 373 files across `docs/`, non-CLI `mineru/` internals, and Docker content |
 
 ## Current Held Follow-Up Work
 
@@ -219,14 +219,13 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
+Mode: `msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh source-verified MSEA-R5 GC-018 baseline and
-`WORKER_MUST_NOT_COMMIT` work order for deep MinerU detailed document/layer
-scan absorption. Target the R4 declared depth gaps and high-value use-case
-surfaces: per-file or file-row-compact review of `docs/`, `mineru/backend`,
-`mineru/data`, `mineru/model`, `mineru/resources`, `mineru/utils`, and Docker
-content verification, mapped to layout/OCR/table/formula/reading-order/
+Next allowed move: execute the MSEA-R5 `WORKER_MUST_NOT_COMMIT` work order and
+return `COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`,
+or `BLOCKED_WITH_REASON`. Worker must create only the planned worker return and
+owner-surface delta, reconcile the pinned MinerU source mirror and 373-file R5
+target subset, and map value to layout/OCR/table/formula/reading-order/
 Markdown-JSON/RAG-handoff/receipt-quality claim boundaries.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
