@@ -158,6 +158,23 @@ work-order authoring. A follow-up handoff-only sync commit may cite this parent
 SHA because the content-addressed SHA of that follow-up commit is not knowable
 before the handoff edit exists.
 
+## GC-020 HEAD Marker - MSEA-R5 Dispatch Prereq Session Wording Repair
+
+Latest dedicated session-sync parent commit requiring in-place handoff trace:
+
+`6f7103f3`
+
+Full SHA:
+
+`6f7103f3dc8c3b139e5bedaa3dec74985ae4a18f`
+
+This marker records the session-sync commit that repaired active continuity
+wording before MSEA-R5 dispatch authoring, avoiding false closed-lane lifecycle
+classification while preserving the accepted MSEA-R4 material boundary. A
+follow-up handoff-only sync commit may cite this parent SHA because the
+content-addressed SHA of that follow-up commit is not knowable before the
+handoff edit exists.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
