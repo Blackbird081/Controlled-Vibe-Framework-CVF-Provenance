@@ -142,6 +142,22 @@ This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
 `a6ddd8ba`. It records accepted MSEA-R4 documentation/reference absorption
 only and routes deeper source absorption to MSEA-R5 work-order authoring.
 
+## GC-020 HEAD Marker - MSEA-R4 Session Sync
+
+Latest dedicated session-sync parent commit requiring in-place handoff trace:
+
+`e69eef9e`
+
+Full SHA:
+
+`e69eef9e116644038a3cbfa880449a630be411f5`
+
+This marker records the session-sync commit that opened active V32, archived
+V31, updated active session state, and routed the next allowed move to MSEA-R5
+work-order authoring. A follow-up handoff-only sync commit may cite this parent
+SHA because the content-addressed SHA of that follow-up commit is not knowable
+before the handoff edit exists.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
