@@ -42,8 +42,8 @@ Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_abso
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `42eeb411` MSEA-R8 MinerU residual full repository absorption closure |
-| Latest session-sync target | session sync after MSEA-R8 closure |
+| Latest material packet | `dc4bba8d` ADIF-0023 worker output checker-shape learning |
+| Latest session-sync target | handoff sync after ADIF-0023 learning |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
@@ -51,6 +51,21 @@ Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_abso
 `msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
 
 ## Latest Changes
+
+ADIF-0023 worker output checker-shape learning is recorded at material commit
+`dc4bba8d`. The material learning batch added
+`docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`, updated
+`docs/reference/agent_defect_intelligence/entries/README.md`, added gotcha
+item 38 to
+`docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`,
+and tightened the worker-execution row in
+`docs/reference/guard_orientation/README.md`. The lesson is narrow: a valid
+dispatch packet checklist is not a substitute for reading checker source by
+each worker-created output artifact's `docType`, path family, and conditional
+content class. This learning batch made no checker implementation, runtime,
+provider/live, source import, package activation, public-sync, Web/MCP,
+model-router, action-authority, document-truth, extraction-accuracy, or
+production claim.
 
 MSEA-R8 MinerU residual full repository absorption closure ledger is accepted
 at material commit `42eeb411`. The accepted worker return and residual ledger
@@ -167,6 +182,29 @@ document-truth, extraction-accuracy, or production claim is not authorized now.
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
 LHW wave.
+
+## Core Guard Self-Protection Authorization - ADIF-0023 Learning Handoff Sync
+
+Authorized guard-maintenance scope: handoff-sync only after material commit
+`dc4bba8d`, including latest material packet marker, learning continuity, and
+GC-020 HEAD trace. No mode, next-move, or generated session-state change is
+required.
+
+Protected paths:
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+
+Operator authorization: operator provided Claude's MSEA-R8 gate-failure
+diagnosis and asked to continue handling the repository context.
+
+Rollback boundary: revert only this handoff-sync batch if rejected; do not
+alter material commit `dc4bba8d` or prior accepted material commits.
+
+Not authorized: runtime/provider/live proof, MinerU install, source import,
+package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
+work, MCP/CLI adapter implementation, model-router work, action authority,
+automatic invocation, benchmark, document-truth, extraction-accuracy, or
+production claims.
 
 ## Core Guard Self-Protection Authorization - MSEA-R8 Closure Session Sync
 
@@ -334,6 +372,44 @@ package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
 work, MCP/CLI adapter implementation, model-router work, action authority,
 automatic invocation, benchmark, or production claims.
+
+## GC-020 HEAD Marker - ADIF-0023 Learning
+
+Latest material commit requiring in-place handoff trace:
+
+`dc4bba8d`
+
+Full SHA:
+
+`dc4bba8dc057db0db6aa2301b3a2ff2118cc3087`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`dc4bba8d`. It records worker output checker-shape learning only and preserves
+the current next move: operator lane selection or fresh GC-018/source-verified
+work-order authoring for any concrete source-backed MinerU follow-up.
+
+## Agent Operation Trace Block - ADIF-0023 Learning Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | ADIF-0023 learning handoff-sync, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active-session checks, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md` |
+| Allowed scope source | material commit `dc4bba8d` recording ADIF-0023 worker output checker-shape learning |
+| Before status evidence | active session state checker reported HEAD SHA `dc4bba8d` missing from active handoff |
+| After status evidence | active handoff records latest material packet, GC-020 marker, and learning continuity for `dc4bba8d`; handoff-sync pending commit |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before handoff-sync commit |
+| Approval boundary | bounded handoff-sync after ADIF-0023 material learning commit |
+| Claim boundary | handoff continuity and GC-020 marker only |
+| Agent type | Codex reviewer/session-sync steward |
+| Invocation ID | `adif-0023-learning-handoff-sync-2026-07-02` |
+| Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md` |
+| Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this handoff-sync batch. |
 
 ## GC-020 HEAD Marker - MSEA-R8 Closure
 
