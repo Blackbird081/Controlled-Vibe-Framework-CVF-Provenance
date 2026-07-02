@@ -391,6 +391,20 @@ runtime/product code, and does not itself implement or modify any checker.
     `N/A_WITH_REASON` only as the disposition for a non-reusable/session-local
     note, or omit the finding row entirely when there is truly no finding.
 
+38. **Worker output artifacts need their own checker-shape read-ahead, not
+    only the dispatch packet checklist.** A GC-018 baseline and work order can
+    pass pre-dispatch while the new files created by the worker still fail
+    their own `docType` and conditional-section gates. Before writing a
+    worker return plus companion reference, read the checker source as applied
+    to each output file. For example, a `docs/reviews` worker return may need
+    the review heading families such as `## Target / Source`, worker-return
+    sections such as `## Rescan Intelligence Hardening`, and corpus/value/
+    rescan literal tokens. A `docs/reference` companion may need
+    `## Scope / Applies To` and its own marker or matrix tokens. Do not write
+    "the work order listed these checkers" as a substitute for extracting the
+    required headings, table labels, markers, and enum tokens for the output
+    artifacts themselves.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -419,16 +433,16 @@ verification or closure artifact for any tranche.
 | Session or invocation | MFE-R1 literal evidence row learning addendum, 2026-07-02 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0022.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Allowed scope source | operator instruction to make the MFE-R1 worker-return literal-format traps avoidable for next time |
-| Before status evidence | checklist did not yet name optional never-created artifact path evidence rows or finding-row defect-class enum traps |
-| After status evidence | checklist items 36 and 37 record MFE-R1 literal evidence row prevention guidance |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Allowed scope source | operator-provided Claude diagnosis after MSEA-R8 worker-output gate failures |
+| Before status evidence | checklist did not yet name the distinction between dispatch packet checklist compliance and output-artifact checker shape for worker-created review/reference files |
+| After status evidence | checklist item 38 records worker-output artifact checker-shape read-ahead guidance |
 | Diff evidence | `git diff --name-status` before material commit |
 | Approval boundary | governed artifact authoring friction checklist and ADIF routing only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
-| Invocation ID | `mfe-r1-literal-evidence-row-learning-2026-07-02` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0022.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0022.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Invocation ID | `msea-r8-worker-output-checker-shape-learning-2026-07-02` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this learning batch |
