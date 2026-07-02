@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, or name a concrete source target for a later source-verified tranche after compact worker-return gate hardening closed at material commit `f8ad5380`; parked checkpoint=FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, no MFE-R2 is authorized without an operator-selected source, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed numbered WOAS tranche at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=worker executes FPC-T4 decision-only work order at material commit `680f14d3` under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
 
-Current mode: `work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
 
-`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
+`fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
+`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No active dispatched worker work after FPC-DLR-T1 closure |
+| FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `680f14d3` | DISPATCHED_PENDING_WORKER_RETURN; worker must create only `docs/reviews/CVF_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_WORKER_RETURN_2026-07-02.md` under `WORKER_MUST_NOT_COMMIT` |
 
 ## Current Held Follow-Up Work
 
@@ -215,75 +215,71 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
 
-Next allowed move: Work Order Authoring Compact Worker Return Gate Hardening is
-CLOSED_PASS_BOUNDED at material commit `f8ad5380`. Future
-`WORKER_MUST_NOT_COMMIT` work orders should use compact profile
-`WORKER_RETURN_FULL_GATE_V1` and include the required worker-return fast gate
-command instead of expanding a long checker-section inventory. FPC-DLR-T1
-remains CLOSED_PASS_BOUNDED at material commit `79473e5a`. Selected routing
-outcome: `HOLD_ALL_DOWNSTREAM_LANES`. No downstream lane is reopened because
-`use-case-adapter-public`, `runtime-provider-live`, and `MPI-T6-runtime` all
-lack current source-backed condition-met evidence.
+Next allowed move: FPC-T4 Strategic Capability Decision And Source-Backed Route
+Selection is DISPATCHED_PENDING_WORKER_RETURN at material commit `680f14d3`.
+Worker must execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_2026-07-02.md`
+under `WORKER_MUST_NOT_COMMIT` and create only
+`docs/reviews/CVF_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_WORKER_RETURN_2026-07-02.md`.
 
-Operator may select another high-value foundation lane, provide fresh
-product/source evidence for a downstream reopen, or name a concrete source
-target for a later source-verified tranche. Any downstream implementation,
+FPC-T4 is decision-only. The worker must choose exactly one routing outcome:
+`OPEN_MODEL_GATEWAY_FRESH_GC018`, `OPEN_SANDBOX_RUNTIME_FRESH_GC018`,
+`OPEN_OTHER_STRATEGIC_CAPABILITY_FRESH_GC018`,
+`HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, or
+`REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`.
+
+No worker execution beyond the packet, source import, implementation,
 runtime/provider/live proof, public-sync, adapter behavior, package lifecycle
 change, checker implementation, generated-state mutation, Web/UI dashboard
-work, model-router work, MPI-T6 runtime work, action authority, automatic
-invocation, or production-readiness claim requires fresh operator decision plus
-fresh GC-018 and source-verified work order.
+work, model-router work, MPI-T6 runtime work, KIOD runtime-candidate reopen,
+action authority, automatic invocation, push, commit, or production-readiness
+claim is authorized.
 
-MFE-R1 remains CLOSED_PASS_BOUNDED at material commit `125c37f0` and literal
-trap learning remains recorded at material commit `faf09d46`. No MFE-R2 or
-fresh MFE follow-up is authorized until an operator-selected source exists.
-LHW24 remains the latest closed numbered LHW wave.
+FPC-DLR-T1 remains CLOSED_PASS_BOUNDED at material commit `79473e5a` with
+`HOLD_ALL_DOWNSTREAM_LANES`. MFE-R1 remains CLOSED_PASS_BOUNDED at material
+commit `125c37f0`; literal trap learning remains recorded at material commit
+`faf09d46`. LHW24 remains the latest closed numbered LHW wave.
 
-D-file06 and I-file19 remain parked runtime candidates with concrete reopen
-conditions, not generic future work. Any future re-proposal must satisfy the
-KIOD-R10 concrete reopen conditions and the KIOD-R11 checker.
+## Core Guard Self-Protection Authorization - FPC-T4 Dispatch Session Sync
 
-D-file06 reopen condition: reopen only if an operator-stated product
-requirement explicitly needs CVF to add live vector-backed semantic retrieval
-not satisfied by existing keyword/path-based lookup, or an external integration
-partner requires vector-similarity retrieval specifically. Required evidence
-before reopening: fresh operator decision, fresh GC-018, source verification of
-the actual retrieval gap, runtime proof plan naming vector store, embedding
-model, provider, public/provenance boundary review, and secrets/quota handling.
+Authorized guard-maintenance scope: FPC-T4 dispatch session-sync after material
+dispatch commit `680f14d3`.
 
-I-file19 reopen condition: reopen only if an operator-stated product
-requirement explicitly needs the Learning Plane to read memory-index candidates
-for reviewer-inspected promotion and existing Learning Plane
-consumer-pipeline contracts cannot satisfy it, or a recorded repeated defect
-proves that gap. Required evidence before reopening: fresh operator decision,
-fresh GC-018, source verification against the current
-`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/` contract surface, explicit
-non-auto-promotion design, and evidence that any memory-index read does not
-bypass existing evaluation/truth-score gates.
+Protected paths:
 
-No runtime/provider/live proof, source import, public-sync, Web/UI/dashboard,
-MCP/CLI adapter implementation, model-router work, package lifecycle mutation,
-action authority, automatic invocation, or production-readiness claim is
-authorized by KIOD-R11 closure. KIOD-R9 remains
-closed at material commit `6ed7f257`. WOAS-R7 remains latest closed WOAS work
-at material commit `a8d98dd1`.
-KIOD-R7 remains CLOSED_PASS_BOUNDED
-at material commit `dee9ebf9`. KIOD-R6 remains CLOSED_PASS_BOUNDED at material
-commit `8b89fc64`.
-KIOD-R6 roadmap remains at material commit `3e1bc936`. Checker read-ahead
-hardening remains closed at material commit `ac5b13ac`. KIOD-R5 itself is
-closed at material commit `be6be4e2`. KIOD-R4 closed at material commit
-`0416843c` with accepted decision token `PACKET_BLOCK_REQUIRED_NOW`.
-KIOD-R1-R3 Knowledge Intake Deduplication Foundation remains closed at material
-commit `5d453bce`, creating stable R1/R2/R3 references under
-`docs/reference/external_agent_review/` and updating KIOD-T0 through KIOD-R4
-decision closure. Web
-dashboard/console UI, full MCP server, production Model Gateway/model router,
-provider registry mutation, public-sync, automatic invocation, action authority,
-or broader production-readiness claim requires fresh GC-018/source-verified
-work order and live/provider proof when governance behavior is claimed.
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionDispatch20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: explicit operator approval to proceed with option 1,
+confirmed as FPC-T4 decision-only dispatch.
+
+Rollback boundary: revert only the FPC-T4 dispatch session-sync if rejected;
+do not alter material dispatch commit `680f14d3` or prior accepted material
+commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after FPC-T4 material dispatch commit `680f14d3`. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record FPC-T4 dispatch continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after FPC-T4 dispatch session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for FPC-T4 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to FPC-T4 worker execution under `WORKER_MUST_NOT_COMMIT`. |
+| `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionDispatch20260702.json` | Add state source entry for FPC-T4 material dispatch commit `680f14d3`. |
+
+Authorization boundary: session-sync only. No worker execution beyond the
+assigned worker return, implementation, runtime/provider/live proof, source
+import, public-sync, Web/UI dashboard, MCP/CLI adapter, model-router work,
+package lifecycle mutation, checker implementation, generated-state mutation
+beyond active session generation, action authority, automatic invocation, or
+production-readiness claim is authorized by this block.
 
 ## Core Guard Self-Protection Authorization - FPC-DLR-T1 Closure Session Sync
 

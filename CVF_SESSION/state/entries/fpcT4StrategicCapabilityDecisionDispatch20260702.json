@@ -1,0 +1,31 @@
+{
+  "stateOrder": 1377,
+  "stateKey": "fpcT4StrategicCapabilityDecisionDispatch20260702",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "date": "2026-07-02",
+    "materialCommit": "680f14d3",
+    "materialCommitFull": "680f14d33605b3110cc9c7990e424202d299cb2f",
+    "dispatchBaseHead": "b284cb70",
+    "baseline": "docs/baselines/CVF_GC018_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_2026-07-02.md",
+    "workerReturnPath": "docs/reviews/CVF_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_WORKER_RETURN_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "routingOutcomes": [
+      "OPEN_MODEL_GATEWAY_FRESH_GC018",
+      "OPEN_SANDBOX_RUNTIME_FRESH_GC018",
+      "OPEN_OTHER_STRATEGIC_CAPABILITY_FRESH_GC018",
+      "HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP",
+      "REQUEST_PRODUCT_REQUIREMENT_EVIDENCE"
+    ],
+    "verification": [
+      "python governance/compat/check_work_order_dispatch_quality.py --base b284cb70 --head HEAD --enforce PASS",
+      "python governance/compat/check_kiod_runtime_candidate_reopen_inventory.py --base b284cb70 --head HEAD --enforce PASS",
+      "python governance/compat/check_fpc_parked_reopen_inventory.py --base b284cb70 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base b284cb70 --head HEAD PASS 72/72",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base b284cb70 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 79/79 for material dispatch commit 680f14d3"
+    ],
+    "claimBoundary": "Dispatch-only decision packet. No worker execution beyond the assigned worker return, implementation, source import, runtime/provider/live proof, public-sync, adapter behavior, package lifecycle change, checker implementation, generated-state mutation, Web/UI dashboard work, model-router work, MPI-T6 runtime work, KIOD runtime-candidate reopen, action authority, automatic invocation, push, commit, or production-readiness claim is authorized."
+  }
+}
