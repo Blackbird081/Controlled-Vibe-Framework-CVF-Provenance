@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authors a fresh GC-018/source-verified work order only after selecting a concrete source-backed MinerU follow-up; parked checkpoint=R8 accepted documentation/reference residual source-mirror absorption only, with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=MSEA-R9 worker execution under WORKER_MUST_NOT_COMMIT; parked checkpoint=R9 dispatch authorizes only one worker return and one companion documentation/reference blueprint-readiness artifact, with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
+Current mode marker: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
 
-Current mode: `msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
+Current mode: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
 
-`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
+`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
+`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker lane is currently dispatched after MSEA-R8 closure |
+| MSEA-R9 MinerU CVF Application Blueprint And Adapter Contract Readiness Selection | `a94bb07c` | DISPATCH_READY; worker must create only the planned worker return and companion reference under WORKER_MUST_NOT_COMMIT; pre-dispatch autorun PASS 72/72, commit steward preflight PASS, material pre-commit hook PASS 79/79; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production claim |
 
 ## Current Held Follow-Up Work
 
@@ -227,19 +227,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
+Mode: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
 
-Next allowed move: operator selects the next high-value governed lane, or an
-agent authors a fresh GC-018/source-verified work order only if a concrete
-source-backed MinerU follow-up is selected.
+Next allowed move: delegated worker executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`
+under `WORKER_MUST_NOT_COMMIT`, creates only the planned worker return and
+companion reference, then returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`.
 
-MSEA-R8 is accepted at material commit `42eeb411`. The accepted worker return
-and residual ledger are
-`docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md`
+MSEA-R9 is dispatched at material commit `a94bb07c`. The dispatch artifacts are
+`docs/baselines/CVF_GC018_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`
 and
-`docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`.
-Reviewer repair closed the declared read-depth gaps for all 57
-`mineru/model/utils` files and all 9 Docker China hardware variants.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`.
+The worker must read ADIF-0023 and derive checker shape by output artifact
+before writing.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,

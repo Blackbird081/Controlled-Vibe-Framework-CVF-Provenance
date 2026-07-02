@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authors a fresh GC-018/source-verified work order only after selecting a concrete source-backed MinerU follow-up; parked checkpoint=R8 accepted documentation/reference residual source-mirror absorption only, with no runtime/package/checker/source-import/public/provider/live/document-truth/extraction-accuracy claim authorized.
+Startup acknowledged: current mode=`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=MSEA-R9 worker execution under WORKER_MUST_NOT_COMMIT; parked checkpoint=R9 dispatch authorizes only one worker return and one companion documentation/reference blueprint-readiness artifact, with no runtime/package/checker/source-import/public/provider/live/document-truth/extraction-accuracy claim authorized.
 
 ## Current State
 
@@ -42,15 +42,36 @@ Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_abso
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `dc4bba8d` ADIF-0023 worker output checker-shape learning |
-| Latest session-sync target | handoff sync after ADIF-0023 learning |
+| Latest material packet | `a94bb07c` MSEA-R9 MinerU CVF application blueprint dispatch |
+| Latest session-sync target | session sync after MSEA-R9 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
+`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R9 MinerU CVF application blueprint and adapter contract readiness
+selection is dispatched at material commit `a94bb07c`. The dispatch artifacts
+are
+`docs/baselines/CVF_GC018_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`.
+The worker lane is `WORKER_MUST_NOT_COMMIT` and may create only
+`docs/reviews/CVF_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md`
+and
+`docs/reference/CVF_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_2026-07-02.md`.
+Pre-dispatch autorun passed 72/72, commit steward preflight passed, and the
+material pre-commit hook passed 79/79. The work order explicitly incorporates
+ADIF-0023 worker-output checker-shape learning: the worker must derive checker
+shape by output artifact before writing and create the worker-return skeleton
+before long prose. No MinerU runtime, install, model download, parser/OCR/VLM/
+hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3,
+RAG write, source import, package activation, checker implementation,
+public-sync, Web/MCP/model-router/action-authority, automatic invocation,
+benchmark, document-truth, extraction-accuracy, or production-readiness claim
+is authorized.
 
 ADIF-0023 worker output checker-shape learning is recorded at material commit
 `dc4bba8d`. The material learning batch added
@@ -170,10 +191,10 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-Operator selects the next high-value governed lane, or an agent authors a
-fresh GC-018/source-verified work order only if a concrete source-backed
-MinerU follow-up is selected. MSEA-R8 is accepted at material commit
-`42eeb411`, and no worker lane is currently dispatched.
+MSEA-R9 worker execution under WORKER_MUST_NOT_COMMIT. The worker must execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`,
+create only the planned worker return and companion reference, then return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 MinerU install, model download, execution, source import, credential/S3 use,
 RAG write, package activation, provider/live proof, public-sync,
 Web/MCP/model-router/action-authority, automatic invocation, benchmark,
@@ -781,6 +802,74 @@ schema implementation, receipt-writer code, or production readiness.
 | Invocation ID | `msea-r7-closure-session-sync-2026-07-02` |
 | Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
 | Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
+
+## Core Guard Self-Protection Authorization - MSEA-R9 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material dispatch
+commit `a94bb07c`, including active mode, next allowed move, generated active
+session state, front-door continuity, dispatch entry, and this active handoff
+marker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR9MineruCvfApplicationBlueprintDispatch20260702.json`
+
+Operator authorization: operator requested this MSEA-R9 work order after
+continued MinerU absorption and accepted the worker-output checker-shape
+standard proposal. This update records the accepted MSEA-R9 dispatch and routes
+worker execution. It does not authorize runtime execution, source import,
+provider/live proof, public-sync, package activation, checker implementation,
+action authority, document-truth, extraction-accuracy, or production claim.
+
+Rollback boundary: revert only this MSEA-R9 dispatch session-sync if rejected;
+do not revert material commit `a94bb07c`, MSEA-R8 closure commit `42eeb411`,
+or prior MSEA session-sync commits.
+
+## GC-020 HEAD Marker - MSEA-R9 Dispatch
+
+Latest material commit requiring in-place handoff trace:
+
+`a94bb07c`
+
+Full SHA:
+
+`a94bb07ca01e2b2c3289dbdfd2cf0c319cf7fd2f`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`a94bb07c`. It records MSEA-R9 dispatch only and does not claim MinerU runtime
+behavior, source import, provider/live proof, credential/S3/RAG use,
+public-sync, package activation, checker implementation, MCP/CLI adapter
+behavior, model-router work, action authority, automatic invocation, benchmark,
+document-truth, extraction-accuracy, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R9 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | MSEA-R9 dispatch session-sync, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active-session generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR9MineruCvfApplicationBlueprintDispatch20260702.json` |
+| Allowed scope source | material commit `a94bb07c` dispatching MSEA-R9 |
+| Before status evidence | material HEAD `a94bb07c`; session-sync worktree started clean after material commit |
+| After status evidence | active session state regenerated; front door and active handoff route next move to MSEA-R9 worker execution; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before session-sync commit |
+| Approval boundary | bounded session-sync after MSEA-R9 dispatch material commit |
+| Claim boundary | session continuity, next-move routing, and MSEA-R9 dispatch recording only |
+| Agent type | reviewer/session-sync steward |
+| Invocation ID | `msea-r9-dispatch-session-sync-2026-07-02` |
+| Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR9MineruCvfApplicationBlueprintDispatch20260702.json` |
+| Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR9MineruCvfApplicationBlueprintDispatch20260702.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
 
