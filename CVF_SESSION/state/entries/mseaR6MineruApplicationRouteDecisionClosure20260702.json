@@ -1,0 +1,22 @@
+{
+  "stateOrder": 689,
+  "stateKey": "mseaR6MineruApplicationRouteDecisionClosure20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "2d0b05c4",
+    "dispatchCommit": "6ab29617",
+    "sessionSyncBeforeClosure": "b592e1fc",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md",
+    "routeDecisionMatrix": "docs/reference/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_MATRIX_2026-07-02.md",
+    "selectedRoutingOutcome": "OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "claimBoundary": "Route decision and adapter-readiness selection only; no MinerU runtime, provider/live, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, or production-readiness claim.",
+    "nextRecommendedMove": "MSEA-R7_RECEIPT_SCHEMA_CONTRACT_DRAFT_WORK_ORDER_AUTHORING",
+    "summary": "MSEA-R6 accepted the no-commit worker return and route decision matrix after reviewer repair. The selected next route is documentation/reference-only receipt schema contract drafting, because it has the lowest risk and highest immediate CVF value for detailed document/layer scan use cases."
+  }
+}

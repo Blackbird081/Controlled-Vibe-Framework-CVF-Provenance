@@ -2,7 +2,7 @@
   "stateOrder": 688,
   "stateKey": "mseaR6MineruApplicationRouteDecisionDispatch20260702",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_BY_2d0b05c4",
     "materialCommit": "6ab29617",
     "baseline": "docs/baselines/CVF_GC018_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md",

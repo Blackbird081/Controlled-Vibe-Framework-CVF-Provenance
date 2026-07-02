@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R6 no-commit worker route-decision work order; parked checkpoint=MSEA-R6 worker must return exactly one route decision or blocker and must not commit; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author MSEA-R7 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for a CVF-native MinerU receipt schema contract draft; parked checkpoint=MSEA-R7 is documentation/reference-only unless a fresh later authorization allows runtime behavior; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
+Current mode marker: `msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
 
-Current mode: `msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
+Current mode: `msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
 
-`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
+`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
 
 Previous mode:
 
-`msea_r5_accepted_pending_next_mineru_route_decision`
+`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `6ab29617` | DISPATCH_READY; `WORKER_MUST_NOT_COMMIT`; worker must create the MSEA-R6 worker return and route decision matrix, select exactly one allowed route outcome or blocker, and leave artifacts uncommitted |
+| None | N/A | No worker lane is currently dispatched after MSEA-R6 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and route decision matrix after reviewer repair; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT` as the lowest-risk, highest-immediate-CVF-value next route; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/production claim |
 | MSEA-R5 MinerU Deep Document Layer Scan Absorption | `1bac8163` | CLOSED_PASS_BOUNDED; accepted no-commit worker return; source mirror reconciled 425/425 and R5 target subset reconciled 373/373; new deferred candidates recorded for `mineru/utils/llm_aided.py`, `mineru/data/io/s3.py`, RagFlow parser integration, and output receipt schema evidence; `PARTIAL` blind-spot verdict retained for bounded listing-depth areas |
 | MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair; source mirror reconciled 425/425 with matching commit/count/hash; CLI/Docker candidate evidence recorded; `PARTIAL` blind-spot verdict routes deep `docs/` and non-CLI `mineru/` absorption to the current next move |
 | FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`; Model Gateway remains held behind FPC-DLR-T1 runtime-provider-live evidence and Sandbox Runtime remains held behind unresolved `DESIGN_REVIEW_REQUIRED` evidence |
@@ -91,6 +92,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; next move is MSEA-R7 documentation/reference-only receipt schema contract draft GC-018/work-order authoring |
 | MSEA-R5 MinerU Deep Document Layer Scan Absorption | `1bac8163` | CLOSED_PASS_BOUNDED; deep document-layer scan absorption accepted with deferred candidate evidence and no runtime/source-import/provider/live/public/package/checker claim |
 | MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted bounded source-mirror absorption with `PARTIAL` blind-spot verdict and deep absorption authoring route |
 | FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP` |
@@ -221,16 +223,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
+Mode: `msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
 
-Next allowed move: execute the MSEA-R6 no-commit worker route-decision work
-order at
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md`.
-MSEA-R6 dispatch material commit is `6ab29617`. Worker must produce the MSEA-R6
-worker return and route decision matrix, select exactly one allowed routing
-outcome or blocker, and leave changes uncommitted. MSEA-R5 remains accepted at
-material commit `1bac8163` with source mirror 425/425 and R5 target subset
-373/373 reconciled.
+Next allowed move: author MSEA-R7 GC-018 baseline and source-verified
+`WORKER_MUST_NOT_COMMIT` work order for a CVF-native MinerU receipt schema
+contract draft. MSEA-R6 closed at material commit `2d0b05c4` and selected
+`OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; the accepted worker return is
+`docs/reviews/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md`
+and the route decision matrix is
+`docs/reference/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_MATRIX_2026-07-02.md`.
+MSEA-R7 should be informed by `docs/en/reference/output_files.md` and accepted
+MSEA-T2/R5/R6 owner surfaces, and must remain documentation/reference-only
+unless a fresh later authorization allows runtime behavior.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,

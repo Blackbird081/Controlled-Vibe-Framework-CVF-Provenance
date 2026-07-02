@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R6 no-commit worker route-decision work order; parked checkpoint=MSEA-R6 worker must return exactly one route decision or blocker and must not commit; no runtime/package/checker/source-import/public/provider/live claim is authorized.
+Startup acknowledged: current mode=`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author MSEA-R7 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for a CVF-native MinerU receipt schema contract draft; parked checkpoint=MSEA-R7 is documentation/reference-only unless fresh later authorization allows runtime behavior; no runtime/package/checker/source-import/public/provider/live claim is authorized.
 
 ## Current State
 
@@ -42,32 +42,32 @@ Startup acknowledged: current mode=`msea_r6_mineru_application_route_decision_di
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `6ab29617` MSEA-R6 MinerU application route decision dispatch |
-| Latest session-sync target | session sync after MSEA-R6 dispatch |
+| Latest material packet | `2d0b05c4` MSEA-R6 MinerU application route decision closure |
+| Latest session-sync target | session sync after MSEA-R6 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r6_mineru_application_route_decision_dispatched_pending_worker_return`
+`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
 
 ## Latest Changes
 
 MSEA-R6 MinerU application route decision and adapter-readiness selection is
-dispatched at material commit `6ab29617`. The dispatch artifacts are
-`docs/baselines/CVF_GC018_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md`
-and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md`.
-The worker must run as `WORKER_MUST_NOT_COMMIT` and produce
+accepted at material commit `2d0b05c4`. The accepted worker return and route
+decision matrix are
 `docs/reviews/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md`
-plus
+and
 `docs/reference/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_MATRIX_2026-07-02.md`.
-The route decision must select exactly one allowed outcome or return a
-source-backed blocker. The dispatch pre-dispatch autorun passed 72/72 and
-material pre-commit hook passed 79/79. This dispatch does not authorize MinerU
-runtime execution, source import, provider/live proof, credentials, S3/RAG use,
-package activation, checker implementation, public-sync, Web/MCP/model-router/
-action-authority, automatic invocation, benchmark, or production-readiness
-claim.
+The selected routing outcome is `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`.
+Reviewer repair corrected the worker-return filename, required worker-return
+heading/block shape, worker-experience enum tokens, rescan-intelligence compact
+matrix vocabulary, and filesystem-backed corpus enumeration wording. Worker
+return fast gate passed, reviewer-fast passed 59/59, corpus/rescan/worker
+experience gates passed, and material pre-commit hook passed 79/79. This
+closure does not authorize MinerU runtime execution, source import,
+provider/live proof, credentials, S3/RAG use, package activation, checker
+implementation, public-sync, Web/MCP/model-router/action-authority, automatic
+invocation, benchmark, or production-readiness claim.
 
 MSEA-R5 MinerU deep document layer scan absorption is accepted at material
 commit `1bac8163`. The accepted worker return and owner-surface delta are
@@ -105,11 +105,11 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-Execute the MSEA-R6 no-commit worker route-decision work order. Worker must
-produce the MSEA-R6 worker return and route decision matrix, evaluate every
-allowed route candidate, select exactly one allowed routing outcome or return
-`BLOCKED_WITH_REASON`, run required gates or classify blockers, and leave
-changes uncommitted. No install, model download, execution, source import,
+Author MSEA-R7 GC-018 baseline and source-verified `WORKER_MUST_NOT_COMMIT`
+work order for a CVF-native MinerU receipt schema contract draft informed by
+`docs/en/reference/output_files.md` and accepted MSEA-T2/R5/R6 owner surfaces.
+MSEA-R7 is documentation/reference-only unless a fresh later authorization
+allows runtime behavior. No install, model download, execution, source import,
 credential/S3 use, RAG write, package activation, checker implementation,
 provider/live proof, public-sync, Web/MCP/model-router/action-authority,
 automatic invocation, benchmark, or production claim is authorized now.
@@ -117,6 +117,34 @@ automatic invocation, benchmark, or production claim is authorized now.
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
 LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R6 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`2d0b05c4`, including active mode, next allowed move, generated active session
+state, front-door continuity, and this active handoff marker.
+
+Protected paths:
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json`
+- `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json`
+
+Operator authorization: implied by reviewer/closer acceptance after user
+reported MSEA-R6 worker return completion.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material commit `2d0b05c4` or prior accepted material commits.
+
+Not authorized: runtime/provider/live proof, MinerU install, source import,
+package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
+work, MCP/CLI adapter implementation, model-router work, action authority,
+automatic invocation, benchmark, or production claims.
 
 ## Core Guard Self-Protection Authorization - MSEA-R6 Dispatch Session Sync
 
@@ -325,6 +353,24 @@ credential/S3/RAG use, public-sync, package activation, checker implementation,
 MCP/CLI adapter behavior, model-router work, action authority, automatic
 invocation, benchmark, or production readiness.
 
+## GC-020 HEAD Marker - MSEA-R6 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`2d0b05c4`
+
+Full SHA:
+
+`2d0b05c41e8de80f160294f010084ee161184678`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`2d0b05c4`. It records MSEA-R6 closure and selected route
+`OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT` only. It does not claim MinerU runtime
+behavior, source import, provider/live proof, credential/S3/RAG use,
+public-sync, package activation, checker implementation, MCP/CLI adapter
+behavior, model-router work, action authority, automatic invocation, benchmark,
+or production readiness.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -345,6 +391,29 @@ invocation, benchmark, or production readiness.
 | Invocation ID | `msea-r6-dispatch-session-sync-2026-07-02` |
 | Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
 | Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
+
+## Agent Operation Trace Block - MSEA-R6 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | MSEA-R6 closure session-sync, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active-session generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
+| Allowed scope source | material commit `2d0b05c4` accepting MSEA-R6 worker return and route decision matrix |
+| Before status evidence | material HEAD `2d0b05c4`; session-sync worktree started clean after material commit |
+| After status evidence | active session state regenerated; front door and active handoff route next move to MSEA-R7 receipt schema contract work-order authoring; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before session-sync commit |
+| Approval boundary | bounded session-sync after MSEA-R6 closure material commit |
+| Claim boundary | session continuity, next-move routing, and MSEA-R6 closure recording only |
+| Agent type | Codex reviewer/session-sync steward |
+| Invocation ID | `msea-r6-closure-session-sync-2026-07-02` |
+| Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
+| Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionDispatch20260702.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
 
