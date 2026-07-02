@@ -1,0 +1,34 @@
+{
+  "stateOrder": 691,
+  "stateKey": "mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-02",
+    "materialCommit": "4d9748bc",
+    "dispatchCommit": "4d9748bc",
+    "dispatchBaseHead": "825c454d",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md",
+    "residualLedgerPath": "docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "residualTargetGroups": [
+      ".github 8",
+      "root files 11",
+      "root demo 8",
+      "projects 2",
+      "tests 4",
+      "mineru/model/utils 57",
+      "Docker China hardware variants 9",
+      "docs assets/images/chemical demo binaries 92"
+    ],
+    "preDispatchGate": "PASS 72/72",
+    "materialPreCommitHook": "PASS 79/79",
+    "claimBoundary": "Dispatch-only material commit. Authorizes MSEA-R8 no-commit worker execution for documentation/reference residual source-mirror absorption ledger only; no MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, or production-readiness claim.",
+    "nextRecommendedMove": "MSEA-R8 worker executes under WORKER_MUST_NOT_COMMIT and returns the worker return plus residual ledger uncommitted for reviewer/closer acceptance."
+  }
+}

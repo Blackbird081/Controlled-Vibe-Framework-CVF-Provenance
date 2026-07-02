@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authorizes a fresh GC-018/source-verified follow-up; parked checkpoint=MSEA-R7 accepted documentation/reference-only contract draft and no runtime/package/checker/source-import/public/provider/live claim is authorized.
+Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=MSEA-R8 worker execution under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=R8 is documentation/reference residual source-mirror absorption only, with no runtime/package/checker/source-import/public/provider/live/document-truth/extraction-accuracy claim authorized.
 
 ## Current State
 
@@ -42,15 +42,35 @@ Startup acknowledged: current mode=`msea_r7_receipt_schema_contract_draft_accept
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `074144c9` MSEA-R7 MinerU receipt schema contract draft closure |
-| Latest session-sync target | session sync after MSEA-R7 closure |
+| Latest material packet | `4d9748bc` MSEA-R8 MinerU residual full repository absorption dispatch |
+| Latest session-sync target | session sync after MSEA-R8 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
+`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R8 MinerU residual full repository absorption closure ledger dispatch was
+committed at material commit `4d9748bc`. The dispatch artifacts are
+`docs/baselines/CVF_GC018_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`.
+The worker lane is `WORKER_MUST_NOT_COMMIT` and must create only
+`docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md`
+and
+`docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
+for reviewer/closer conversion. The residual target groups are `.github`,
+root files, root `demo`, `projects`, `tests`, `mineru/model/utils`, Docker
+China hardware variants, and docs asset/binary groups. Pre-dispatch autorun
+passed 72/72, commit steward preflight passed, and material pre-commit hook
+passed 79/79. No MinerU runtime, install, model download,
+parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run,
+provider/live proof, credential/S3/RAG use, source import, package activation,
+checker implementation, public-sync, Web/MCP/model-router/action-authority,
+automatic invocation, benchmark, document-truth, extraction-accuracy, or
+production-readiness claim is made.
 
 MSEA-R7 MinerU receipt schema contract draft is accepted at material commit
 `074144c9`. The accepted worker return and contract draft are
@@ -135,14 +155,14 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-Operator selects the next high-value governed lane or authorizes a fresh
-GC-018/source-verified work order. MSEA-R7 is now accepted as
-documentation/reference-only contract-draft work. Schema implementation,
-receipt-writer code, `MSEA-CC-4` checker implementation, MinerU install,
-model download, execution, source import, credential/S3 use, RAG write,
-package activation, provider/live proof, public-sync, Web/MCP/model-router/
-action-authority, automatic invocation, benchmark, or production claim is not
-authorized now.
+MSEA-R8 worker executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
+under `WORKER_MUST_NOT_COMMIT`. The worker must return the named worker return
+and residual ledger reference uncommitted for reviewer/closer conversion.
+MinerU install, model download, execution, source import, credential/S3 use,
+RAG write, package activation, provider/live proof, public-sync,
+Web/MCP/model-router/action-authority, automatic invocation, benchmark,
+document-truth, extraction-accuracy, or production claim is not authorized now.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
@@ -624,6 +644,73 @@ schema implementation, receipt-writer code, or production readiness.
 | Invocation ID | `msea-r7-closure-session-sync-2026-07-02` |
 | Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
 | Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
+
+## Core Guard Self-Protection Authorization - MSEA-R8 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`4d9748bc`, including active mode, next allowed move, generated active session
+state, front-door continuity, dispatch entry, and this active handoff marker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702.json`
+
+Operator authorization: operator requested continued MinerU absorption for the
+remaining repository. This update records the accepted MSEA-R8 dispatch and
+routes worker execution. It does not authorize runtime execution, source
+import, provider/live proof, public-sync, package activation, checker
+implementation, action authority, document-truth, extraction-accuracy, or
+production claim.
+
+Rollback boundary: revert only this MSEA-R8 dispatch session-sync if rejected;
+do not revert material commit `4d9748bc`, MSEA-R7 closure commit `074144c9`,
+or prior MSEA session-sync commits.
+
+## GC-020 HEAD Marker - MSEA-R8 Dispatch
+
+Latest material commit requiring in-place handoff trace:
+
+`4d9748bc`
+
+Full SHA:
+
+`4d9748bc8091383a73323472567d796f1e729a29`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`4d9748bc`. It records MSEA-R8 dispatch only and does not claim MinerU runtime
+behavior, source import, provider/live proof, credential/S3/RAG use,
+public-sync, package activation, checker implementation, MCP/CLI adapter
+behavior, model-router work, action authority, automatic invocation, benchmark,
+document-truth, extraction-accuracy, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R8 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | MSEA-R8 dispatch session-sync, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active-session generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702.json` |
+| Allowed scope source | material commit `4d9748bc` dispatching MSEA-R8 |
+| Before status evidence | material HEAD `4d9748bc`; session-sync worktree started clean after material commit |
+| After status evidence | active session state regenerated; front door and active handoff route next move to MSEA-R8 worker execution; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before session-sync commit |
+| Approval boundary | bounded session-sync after MSEA-R8 dispatch material commit |
+| Claim boundary | session continuity, next-move routing, and MSEA-R8 dispatch recording only |
+| Agent type | Codex reviewer/session-sync steward |
+| Invocation ID | `msea-r8-dispatch-session-sync-2026-07-02` |
+| Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702.json` |
+| Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
 

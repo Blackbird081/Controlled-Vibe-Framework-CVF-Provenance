@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authorizes a fresh GC-018/source-verified follow-up; parked checkpoint=MSEA-R7 accepted documentation/reference-only receipt schema contract draft with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=MSEA-R8 worker execution under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=R8 is documentation/reference residual source-mirror absorption only, with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
+Current mode marker: `msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
 
-Current mode: `msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
+Current mode: `msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
 
-`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
+`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
+`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker lane is currently dispatched after MSEA-R7 closure |
+| MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `4d9748bc` | DISPATCH_READY; `WORKER_MUST_NOT_COMMIT`; worker must create only `docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md` and `docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`; residual target groups are `.github`, root files, root `demo`, `projects`, `tests`, `mineru/model/utils`, Docker China hardware variants, and docs asset/binary groups; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production claim |
 
 ## Current Held Follow-Up Work
 
@@ -225,18 +225,20 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
+Mode: `msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
 
-Next allowed move: operator selects the next high-value governed lane or
-authorizes a fresh GC-018/source-verified work order. MSEA-R7 accepted
-`docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`
-as documentation/reference contract-draft language only; it does not authorize
-schema implementation, receipt-writer code, or `MSEA-CC-4` checker work.
+Next allowed move: MSEA-R8 worker executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
+under `WORKER_MUST_NOT_COMMIT`. The worker must return
+`docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md`
+and
+`docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
+uncommitted for reviewer/closer conversion.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,
 checker implementation, source import, Web/MCP/model-router/action-authority,
-automatic invocation, benchmark, or production-readiness claim is authorized
+automatic invocation, benchmark, document-truth, extraction-accuracy, or production-readiness claim is authorized
 unless a later fresh work order explicitly authorizes it.
 
 FPC-T4 remains CLOSED_PASS_BOUNDED at material commit `9e3c2ab0` with
