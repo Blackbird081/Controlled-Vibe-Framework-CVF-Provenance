@@ -72,7 +72,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring",
+  "currentMode": "msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring",
   "previousMode": "msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

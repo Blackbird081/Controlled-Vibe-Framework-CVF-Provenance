@@ -31,15 +31,15 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author fresh MSEA-R5 GC-018/work order for deep MinerU detailed document/layer scan absorption; parked checkpoint=MSEA-R4 accepted at material commit `a6ddd8ba` with reviewer hash/Docker evidence repair, 425/425 count/hash reconciliation, CLI/Docker candidate evidence, and `PARTIAL` blind-spot verdict for `docs/` plus non-CLI `mineru/`; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author fresh MSEA-R5 GC-018/work order for deep MinerU detailed document/layer scan absorption; parked checkpoint=MSEA-R4 accepted at material commit `a6ddd8ba` with reviewer hash/Docker evidence repair, 425/425 count/hash reconciliation, CLI/Docker candidate evidence, and `PARTIAL` blind-spot verdict for `docs/` plus non-CLI `mineru/`; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
+Current mode marker: `msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
 
-Current mode: `msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
+Current mode: `msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
 
-`msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
+`msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
 
 Previous mode:
 
@@ -61,7 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair; source mirror reconciled 425/425 with matching commit/count/hash; CLI/Docker candidate evidence recorded; `PARTIAL` blind-spot verdict routes deep `docs/` and non-CLI `mineru/` absorption to MSEA-R5 work-order authoring |
+| MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair; source mirror reconciled 425/425 with matching commit/count/hash; CLI/Docker candidate evidence recorded; `PARTIAL` blind-spot verdict routes deep `docs/` and non-CLI `mineru/` absorption to the current next move |
 | FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`; Model Gateway remains held behind FPC-DLR-T1 runtime-provider-live evidence and Sandbox Runtime remains held behind unresolved `DESIGN_REVIEW_REQUIRED` evidence |
 | Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; future `WORKER_MUST_NOT_COMMIT` work orders use compact `WORKER_RETURN_FULL_GATE_V1` profile plus worker-return fast gate command instead of a long repeated checker-section inventory |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; selected `HOLD_ALL_DOWNSTREAM_LANES` because no source-backed reopen condition is met for `use-case-adapter-public`, `runtime-provider-live`, or `MPI-T6-runtime` |
@@ -90,7 +90,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted bounded source-mirror absorption with `PARTIAL` blind-spot verdict and next MSEA-R5 deep absorption authoring route |
+| MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted bounded source-mirror absorption with `PARTIAL` blind-spot verdict and deep absorption authoring route |
 | FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP` |
 | Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; compact no-commit worker-return full-gate profile is now documented, scaffolded, and enforced by dispatch-quality validation |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; downstream lanes remain held under `HOLD_ALL_DOWNSTREAM_LANES` |
@@ -219,7 +219,7 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
+Mode: `msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
 
 Next allowed move: author a fresh source-verified MSEA-R5 GC-018 baseline and
 `WORKER_MUST_NOT_COMMIT` work order for deep MinerU detailed document/layer

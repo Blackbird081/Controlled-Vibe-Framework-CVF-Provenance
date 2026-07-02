@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author a fresh MSEA-R5 GC-018/work order for deep MinerU layer-scan absorption over `docs/`, non-CLI `mineru/` internals, and Docker content verification; parked checkpoint=MSEA-R4 is accepted at material commit `a6ddd8ba` with `PARTIAL` blind-spot verdict and no runtime/package/checker/source-import/public/provider/live claim.
+Startup acknowledged: current mode=`msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author a fresh MSEA-R5 GC-018/work order for deep MinerU layer-scan absorption over `docs/`, non-CLI `mineru/` internals, and Docker content verification; parked checkpoint=MSEA-R4 is accepted at material commit `a6ddd8ba` with `PARTIAL` blind-spot verdict and no runtime/package/checker/source-import/public/provider/live claim.
 
 ## Current State
 
@@ -48,7 +48,7 @@ Startup acknowledged: current mode=`msea_r4_closed_pass_bounded_pending_msea_r5_
 
 ## Current Mode
 
-`msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
+`msea_r4_accepted_pending_msea_r5_deep_absorption_work_order_authoring`
 
 ## Latest Changes
 
