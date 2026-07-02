@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1379,
+  "stateKey": "mseaR10MineruAdapterContractDraftDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-03",
+    "materialCommit": "53f7db5d",
+    "materialCommitFull": "53f7db5d73def4798e45598634231d84a1c37240",
+    "dispatchBaseHead": "7c19b587",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_WORKER_RETURN_2026-07-03.md",
+    "referenceOutputPath": "docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "selectedRoutingOutcome": "OPEN_ADAPTER_CONTRACT_DRAFT_ONLY",
+    "claimBoundary": "Dispatch-only material commit for a documentation/reference-only MinerU adapter contract draft. Worker may create only the planned worker return and companion reference paths under WORKER_MUST_NOT_COMMIT. No MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R10 work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit."
+  }
+}
