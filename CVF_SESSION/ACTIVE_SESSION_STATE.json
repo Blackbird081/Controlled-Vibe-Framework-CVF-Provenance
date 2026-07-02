@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V32_2026-07-02.md",
+  "activeHandoff": "AGENT_HANDOFF_V33_2026-07-03.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -65,15 +65,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V28_2026-06-30.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V29_2026-06-30.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring",
-  "previousMode": "msea_r10_mineru_adapter_contract_draft_dispatched_pending_worker_return",
+  "currentMode": "msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring",
+  "previousMode": "msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3210,7 +3211,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R10 MinerU Adapter Contract Draft accepted at material commit 28b77572. Next allowed move: author MSEA-R11 MinerU Document Extraction Productization Readiness roadmap as a roadmap-only source-verified route-planning artifact, then run pre-dispatch gates before any material commit. R11 may route a future MSEA-R11-T1 GC-018/work order for productization readiness selection, but no worker execution, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized without fresh source-verified work order and live/provider proof when governance behavior is claimed. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R11 MinerU Document Extraction Productization Readiness roadmap is ready at material commit 30a15322. Next allowed move: author MSEA-R11-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for productization-readiness route selection using the R11 roadmap, R10 adapter contract draft, R7 receipt schema contract draft, R8 residual closure ledger, R9 application blueprint readiness, and current MinerU source mirror owner surfaces. No worker execution, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized without fresh source-verified work order and live/provider proof when governance behavior is claimed. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6042,5 +6043,22 @@
     "reviewerDecision": "ACCEPT_FOR_MATERIAL_COMMIT",
     "claimBoundary": "Closed bounded documentation/reference material commit. Accepts the no-commit worker return and companion adapter contract draft reference only. No MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
     "nextRecommendedMove": "Author MSEA-R11 roadmap for MinerU document extraction productization readiness if operator chooses to continue toward route selection."
+  },
+  "mseaR11MineruProductizationReadinessRoadmap20260703": {
+    "status": "ROADMAP_READY_FOR_MSEA_R11_T1_GC018_AND_WORK_ORDER_AUTHORING",
+    "date": "2026-07-03",
+    "materialCommit": "30a15322",
+    "materialCommitFull": "30a153227c4058297fab985f86d79a55613c286e",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R11_MINERU_DOCUMENT_EXTRACTION_PRODUCTIZATION_READINESS_ROADMAP_2026-07-03.md",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "selectedRoutingOutcome": "OPEN_MSEA_R11_T1_PRODUCTIZATION_READINESS_SELECTION",
+    "claimBoundary": "Roadmap-only source-verified productization-readiness route planning after MSEA-R10. No worker execution, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
+    "nextRecommendedMove": "Author MSEA-R11-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for productization-readiness route selection."
   }
 }

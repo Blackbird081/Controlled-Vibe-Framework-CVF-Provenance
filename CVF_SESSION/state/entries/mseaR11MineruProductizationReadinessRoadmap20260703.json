@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1380,
+  "stateKey": "mseaR11MineruProductizationReadinessRoadmap20260703",
+  "value": {
+    "status": "ROADMAP_READY_FOR_MSEA_R11_T1_GC018_AND_WORK_ORDER_AUTHORING",
+    "date": "2026-07-03",
+    "materialCommit": "30a15322",
+    "materialCommitFull": "30a153227c4058297fab985f86d79a55613c286e",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R11_MINERU_DOCUMENT_EXTRACTION_PRODUCTIZATION_READINESS_ROADMAP_2026-07-03.md",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "selectedRoutingOutcome": "OPEN_MSEA_R11_T1_PRODUCTIZATION_READINESS_SELECTION",
+    "claimBoundary": "Roadmap-only source-verified productization-readiness route planning after MSEA-R10. No worker execution, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
+    "nextRecommendedMove": "Author MSEA-R11-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for productization-readiness route selection."
+  }
+}

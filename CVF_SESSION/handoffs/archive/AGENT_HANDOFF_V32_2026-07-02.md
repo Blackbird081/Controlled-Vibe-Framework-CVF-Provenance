@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author MSEA-R11 roadmap-only productization-readiness route planning; parked checkpoint=no runtime/package/checker/source-import/public/provider/live/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation claim authorized.
+Startup acknowledged: current mode=`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author MSEA-R11-T1 GC-018/work order for productization-readiness route selection; parked checkpoint=no runtime/package/checker/source-import/public/provider/live/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation claim authorized.
 
 ## Current State
 
@@ -42,15 +42,29 @@ Startup acknowledged: current mode=`msea_r10_mineru_adapter_contract_draft_accep
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `28b77572` MSEA-R10 MinerU adapter contract draft acceptance |
-| Latest session-sync target | session sync after MSEA-R10 closure |
+| Latest material packet | `30a15322` MSEA-R11 MinerU productization-readiness roadmap |
+| Latest session-sync target | session sync after MSEA-R11 roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`
+`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
 
 ## Latest Changes
+
+MSEA-R11 MinerU document extraction productization-readiness roadmap is ready
+at material commit `30a15322`. The roadmap is
+`docs/roadmaps/CVF_MSEA_R11_MINERU_DOCUMENT_EXTRACTION_PRODUCTIZATION_READINESS_ROADMAP_2026-07-03.md`.
+It is roadmap-only source-verified route planning after MSEA-R10 and opens only
+MSEA-R11-T1 GC-018/work-order authoring for productization-readiness route
+selection. Pre-dispatch autorun passed 72/72, commit steward preflight passed,
+and material pre-commit hook passed 79/79. No MinerU runtime, install, model
+download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution,
+provider/live call, credentials/S3, RAG write, source import, package
+activation, checker implementation, public-sync, Web/MCP/model-router/
+action-authority, automatic invocation, benchmark, document-truth,
+extraction-accuracy, schema implementation, receipt-writer code, adapter
+implementation, or production-readiness claim is authorized.
 
 MSEA-R10 MinerU adapter contract draft is accepted at material commit
 `28b77572`. The accepted worker return and companion reference are
@@ -223,13 +237,12 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-Author
-`docs/roadmaps/CVF_MSEA_R11_MINERU_DOCUMENT_EXTRACTION_PRODUCTIZATION_READINESS_ROADMAP_2026-07-03.md`
-as roadmap-only productization-readiness route planning after MSEA-R10 accepted
-at material commit `28b77572`. MSEA-R11 may route a future MSEA-R11-T1
-GC-018/work order for source-verified productization readiness selection, but
-it must not dispatch worker execution or claim implementation in the roadmap
-commit. MinerU install, model download, execution, source import,
+Author MSEA-R11-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT
+work order for productization-readiness route selection after MSEA-R11 roadmap
+material commit `30a15322`. R11-T1 must use the R11 roadmap, R10 adapter
+contract draft, R7 receipt schema contract draft, R8 residual closure ledger,
+R9 application blueprint readiness, and current MinerU source mirror owner
+surfaces. MinerU install, model download, execution, source import,
 credential/S3 use, RAG write, package activation, provider/live proof,
 public-sync, Web/MCP/model-router/action-authority, automatic invocation,
 benchmark, document-truth, extraction-accuracy, schema implementation,
@@ -239,6 +252,62 @@ authorized now.
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
 LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R11 Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material roadmap
+commit `30a15322`, including active mode, next allowed move, generated active
+session state, front-door continuity, roadmap entry, and this active handoff.
+
+Protected paths:
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR11MineruProductizationReadinessRoadmap20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked Codex to complete R11 after agreeing to
+the productization-readiness roadmap direction.
+
+Rollback boundary: revert only this MSEA-R11 roadmap session-sync if rejected;
+do not revert material commit `30a15322`, R10 closure commit `28b77572`, R10
+dispatch commit `53f7db5d`, or prior MSEA session-sync commits.
+
+## GC-020 HEAD Marker - MSEA-R11 Roadmap
+
+Latest material commit requiring in-place handoff trace: `30a15322`.
+
+This marker records MSEA-R11 roadmap-only route planning and does not claim
+MinerU runtime behavior, source import, provider/live proof, credential/S3/RAG
+use, public-sync, package activation, checker implementation, MCP/CLI adapter
+behavior, model-router work, action authority, automatic invocation, benchmark,
+document-truth, extraction-accuracy, schema implementation, receipt-writer
+code, adapter implementation, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R11 Roadmap Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R11 roadmap session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | active handoff; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material commit `30a15322` adding MSEA-R11 roadmap |
+| Before status evidence | material HEAD `30a15322`; session-sync worktree started clean |
+| After status evidence | active session state regenerated; front door and active handoff route next move to MSEA-R11-T1 work-order authoring; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `run_agent_commit_steward_preflight.py --mode session-sync --base 30a15322 --head HEAD --enforce` |
+| Approval boundary | bounded session-sync after MSEA-R11 material roadmap commit |
+| Claim boundary | session continuity, next-move routing, and MSEA-R11 roadmap recording only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r11-roadmap-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch |
 
 ## Core Guard Self-Protection Authorization - MSEA-R10 Closure Session Sync
 

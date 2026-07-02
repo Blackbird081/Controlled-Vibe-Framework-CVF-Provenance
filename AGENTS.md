@@ -17,7 +17,7 @@ For complete canonical state, resolve the full machine-readable state registry:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V32_2026-07-02.md`
+`AGENT_HANDOFF_V33_2026-07-03.md`
 
 Historical handoffs are archived under:
 

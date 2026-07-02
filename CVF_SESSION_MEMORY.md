@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V32_2026-07-02.md`
+4. `AGENT_HANDOFF_V33_2026-07-03.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,32 +24,32 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V32_2026-07-02.md` |
+| Active handoff | `AGENT_HANDOFF_V33_2026-07-03.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author MSEA-R11 MinerU Document Extraction Productization Readiness roadmap as roadmap-only route planning; parked checkpoint=no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author MSEA-R11-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for productization-readiness route selection; parked checkpoint=no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`
+Current mode marker: `msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
 
-Current mode: `msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`
+Current mode: `msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
 
-`msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`
+`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
 
 Previous mode:
 
-`msea_r10_mineru_adapter_contract_draft_dispatched_pending_worker_return`
+`msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No dispatched worker work is currently open after MSEA-R10 closure; next move is roadmap authoring |
+| None | N/A | No dispatched worker work is currently open after MSEA-R11 roadmap; next move is R11-T1 GC-018/work-order authoring |
 
 ## Current Held Follow-Up Work
 
@@ -231,16 +231,15 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`
+Mode: `msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
 
-Next allowed move: author
-`docs/roadmaps/CVF_MSEA_R11_MINERU_DOCUMENT_EXTRACTION_PRODUCTIZATION_READINESS_ROADMAP_2026-07-03.md`
-as roadmap-only productization-readiness route planning after MSEA-R10 accepted
-at material commit `28b77572`.
+Next allowed move: author MSEA-R11-T1 GC-018 baseline and source-verified
+WORKER_MUST_NOT_COMMIT work order for productization-readiness route selection
+after MSEA-R11 roadmap material commit `30a15322`.
 
-MSEA-R11 may route a future MSEA-R11-T1 GC-018/work order for source-verified
-productization readiness selection. It must not dispatch worker execution or
-claim implementation in the roadmap commit.
+R11-T1 must use the R11 roadmap, R10 adapter contract draft, R7 receipt schema
+contract draft, R8 residual closure ledger, R9 application blueprint readiness,
+and current MinerU source mirror owner surfaces.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,
@@ -251,6 +250,38 @@ unless a later fresh work order explicitly authorizes it.
 
 LHW24 remains the latest closed numbered LHW wave.
 
+## Core Guard Self-Protection Authorization - MSEA-R11 Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material roadmap
+commit `30a15322`, including active mode, next allowed move, generated active
+session state, front door, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `AGENTS.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR11MineruProductizationReadinessRoadmap20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked Codex to complete R11 after agreeing to
+the productization-readiness roadmap direction.
+
+Rollback boundary: revert only this MSEA-R11 roadmap session-sync batch if
+rejected; do not alter material commit `30a15322`, R10 closure commit
+`28b77572`, R10 dispatch commit `53f7db5d`, or prior MSEA commits.
+
+Not authorized: runtime/provider/live proof, MinerU install, source import,
+model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution,
+credentials/S3, RAG write, package activation, checker implementation,
+public-sync, Web/MCP/model-router/action-authority, automatic invocation,
+benchmark, document-truth, extraction-accuracy, schema implementation,
+receipt-writer code, adapter implementation, or production-readiness claim.
+
 ## Core Guard Self-Protection Authorization - MSEA-R10 Closure Session Sync
 
 Authorized guard-maintenance scope: session-sync only after material closure
@@ -259,7 +290,7 @@ session state, front door, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -297,7 +328,7 @@ session state, front door, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -327,7 +358,7 @@ state, front door, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -358,7 +389,7 @@ Authorized guard-maintenance scope: session-sync only after material commit
 Protected paths:
 
 - `AGENTS.md`
-- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md`
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
