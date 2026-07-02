@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator selects next governed lane; parked checkpoint=KIOD-R11 closed at material commit `2c0e3cff`, KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=author MFE-R1 GC-018 and source-verified work order if operator chooses to execute the lane; parked checkpoint=MFE-T0 roadmap ready at material commit `58688e87`, KIOD-R11 closed at material commit `2c0e3cff`, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `2c0e3cff` KIOD-R11 Runtime Candidate Reopen Inventory Guard closure |
-| Latest session-sync target | session sync after KIOD-R11 closure |
+| Latest material packet | `58688e87` MFE-T0 Memory Foundation Future Enrichment Roadmap |
+| Latest session-sync target | session sync after MFE-T0 roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,9 +41,20 @@ receive new status.
 
 ## Current Mode
 
-`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
+`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
 
 ## Latest Changes
+
+MFE-T0 Memory Foundation Future Enrichment Roadmap is ready at material commit
+`58688e87`. It added
+`docs/roadmaps/CVF_MFE_T0_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_ROADMAP_2026-07-02.md`
+as a roadmap-only route for future memory-foundation enrichment. The next
+recommended tranche is MFE-R1 GC-018 and source-verified
+`WORKER_MUST_NOT_COMMIT` work-order authoring. MFE-T0 does not authorize worker
+execution, source import, runtime/provider/live proof, public-sync,
+Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package
+lifecycle mutation, checker implementation, action authority, automatic
+invocation, or production-readiness claims.
 
 KIOD-R11 Runtime Candidate Reopen Inventory Guard closed bounded at material
 commit `2c0e3cff`. Reviewer accepted the no-commit worker return with
@@ -77,7 +88,7 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No current dispatched worker tranche; KIOD-R11 closed at material commit `2c0e3cff` |
+| None | N/A | No current dispatched worker tranche; MFE-T0 roadmap is ready at material commit `58688e87`; MFE-R1 work-order authoring is the next allowed governed move if selected |
 
 ## Latest Closed Work
 
@@ -99,14 +110,28 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 ## Next Allowed Move
 
-Operator selects the next governed lane. KIOD-R11 is CLOSED_PASS_BOUNDED at
-material commit `2c0e3cff`. KIOD-R11 added a KIOD-specific reopen-condition
-inventory JSON, checker, 15 focused tests, and hook/autorun wiring for
-D-file06 and I-file19. KIOD-R10 remains CLOSED_PASS_BOUNDED at material
-commit `e89e3dd4`; D-file06 and I-file19 remain parked runtime candidates
-with concrete reopen conditions, not generic future work. Any future
-re-proposal must satisfy the KIOD-R10 concrete reopen conditions and the
-KIOD-R11 checker.
+MFE-T0 Memory Foundation Future Enrichment Roadmap is
+ROADMAP_READY_FOR_MFE_R1_GC018_AND_WORK_ORDER_AUTHORING at material commit
+`58688e87`. If the operator chooses to execute this lane, author MFE-R1 as a
+fresh GC-018 baseline and source-verified `WORKER_MUST_NOT_COMMIT` work order.
+MFE-R1 must use the MFE-T0 roadmap, current memory-foundation owner surfaces,
+KIOD-R6/KIOD-R9/KIOD-R10/KIOD-R11 predecessor evidence, checker read-ahead,
+negative search, Source Verification Block, External Knowledge Intake Routing,
+Overlap And Novelty Classification, KIOD runtime-candidate parking checks,
+Agent Handoff Contract Control Block, Reviewer Closure Conversion, and
+pre-dispatch autorun gates.
+
+MFE-T0 does not authorize worker execution, source import,
+runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
+implementation, model-router work, package lifecycle mutation, checker
+implementation, action authority, automatic invocation, or production-readiness
+claim.
+
+KIOD-R11 is CLOSED_PASS_BOUNDED at material commit `2c0e3cff`. KIOD-R10 remains
+CLOSED_PASS_BOUNDED at material commit `e89e3dd4`; D-file06 and I-file19 remain
+parked runtime candidates with concrete reopen conditions, not generic future
+work. Any future re-proposal must satisfy the KIOD-R10 concrete reopen
+conditions and the KIOD-R11 checker.
 
 D-file06 may reopen only if an operator-stated product requirement explicitly
 needs CVF to add live vector-backed semantic retrieval not satisfied by
@@ -168,6 +193,45 @@ Authorization boundary: session-sync only. No runtime/provider/live proof,
 source import, public-sync, Web/UI dashboard, MCP/CLI adapter, model-router
 work, package lifecycle mutation, action authority, automatic invocation, or
 production-readiness claim is authorized by this block.
+
+## Core Guard Self-Protection Authorization - MFE-T0 Roadmap Session Sync
+
+Authorized guard-maintenance scope: MFE-T0 roadmap session-sync after material
+roadmap commit `58688e87`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mfeT0MemoryFoundationFutureEnrichmentRoadmap20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: implied by operator approval to create the MFE-T0
+roadmap and by mandatory active-session continuity sync after a governed
+roadmap changes current mode and next allowed move.
+
+Rollback boundary: revert only the MFE-T0 roadmap session-sync if rejected; do
+not alter material roadmap commit `58688e87` or prior accepted KIOD/WOAS
+material commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after MFE-T0 material commit `58688e87`. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record MFE-T0 roadmap continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after MFE-T0 roadmap session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for MFE-T0 roadmap ready pending MFE-R1 work-order authoring. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MFE-R1 GC-018 and source-verified work-order authoring. |
+| `CVF_SESSION/state/entries/mfeT0MemoryFoundationFutureEnrichmentRoadmap20260702.json` | Add state source entry for MFE-T0 material roadmap commit `58688e87`. |
+
+Authorization boundary: session-sync only. No worker execution, source import,
+runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, checker implementation, action
+authority, automatic invocation, or production-readiness claim is authorized by
+this block.
 
 ## Core Guard Self-Protection Authorization - KIOD-R11 Dispatch Session Sync
 
@@ -263,6 +327,24 @@ this block.
 | Archived prior handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | State source update | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` activeHandoff and supersededHandoffs |
 | Generator | `python governance/compat/generate_active_session_state.py --generate` |
+
+## GC-020 HEAD Marker - MFE-T0 Roadmap
+
+Latest material commit requiring in-place handoff trace:
+
+`58688e87`
+
+Full SHA:
+
+`58688e87d250a067e95aa5da2b76c80ecd61eee3`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`58688e87`. It records roadmap-only MFE-T0 readiness for MFE-R1 work-order
+authoring and does not authorize worker execution, source import,
+runtime/provider/live behavior, public-sync, package lifecycle mutation,
+Web/UI/dashboard work, MCP/CLI adapter implementation, model-router work,
+checker implementation, action authority, automatic invocation, or
+production-readiness claims.
 
 ## GC-020 HEAD Marker - KIOD-R11 Closure
 

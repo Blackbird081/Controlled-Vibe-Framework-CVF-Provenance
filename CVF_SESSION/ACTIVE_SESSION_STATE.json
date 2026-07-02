@@ -71,8 +71,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection",
-  "previousMode": "kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return",
+  "currentMode": "mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring",
+  "previousMode": "kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3209,7 +3209,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "KIOD-R11 Runtime Candidate Reopen Inventory Guard is CLOSED_PASS_BOUNDED at material commit 2c0e3cff. Operator may select the next governed lane. KIOD-R11 added docs/reference/CVF_KIOD_RUNTIME_CANDIDATE_REOPEN_CONDITION_INVENTORY_2026-07-02.json plus governance/compat/check_kiod_runtime_candidate_reopen_inventory.py, 15 focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring. D-file06 and I-file19 remain parked runtime candidates; future re-proposal must satisfy the KIOD-R10 concrete reopen conditions and the KIOD-R11 checker, including fresh operator decision, fresh GC-018, source verification, and required proof/design evidence. No runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized by KIOD-R11 closure. KIOD-R10 remains CLOSED_PASS_BOUNDED at material commit e89e3dd4. KIOD-R9 remains closed at material commit 6ed7f257. WOAS-R7 remains latest closed WOAS work at material commit a8d98dd1. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "MFE-T0 Memory Foundation Future Enrichment Roadmap is ROADMAP_READY_FOR_MFE_R1_GC018_AND_WORK_ORDER_AUTHORING at material commit 58688e87. Next allowed move: author MFE-R1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order if the operator wants to execute this lane. MFE-R1 must use the MFE-T0 roadmap, current memory-foundation owner surfaces, KIOD-R6/KIOD-R9/KIOD-R10/KIOD-R11 predecessor evidence, checker read-ahead, negative search, Source Verification Block, External Knowledge Intake Routing, Overlap And Novelty Classification, KIOD runtime-candidate parking checks, Agent Handoff Contract Control Block, Reviewer Closure Conversion, and pre-dispatch autorun gates. MFE-T0 does not authorize worker execution, source import, runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, checker implementation, action authority, automatic invocation, or production-readiness claim. D-file06 and I-file19 remain parked runtime candidates; future re-proposal must satisfy the KIOD-R10 concrete reopen conditions and the KIOD-R11 checker, including fresh operator decision, fresh GC-018, source verification, and required proof/design evidence. KIOD-R11 remains CLOSED_PASS_BOUNDED at material commit 2c0e3cff. KIOD-R10 remains CLOSED_PASS_BOUNDED at material commit e89e3dd4. KIOD-R9 remains closed at material commit 6ed7f257. WOAS-R7 remains latest closed WOAS work at material commit a8d98dd1. LHW24 remains the latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -5595,5 +5595,31 @@
       "pre-commit governance hook PASS 79/79 for material closure commit 2c0e3cff"
     ],
     "claimBoundary": "Local governance inventory/checker/test/wiring only. No runtime/provider/live proof, source import, public export, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is made."
+  },
+  "mfeT0MemoryFoundationFutureEnrichmentRoadmap20260702": {
+    "status": "ROADMAP_READY_FOR_MFE_R1_GC018_AND_WORK_ORDER_AUTHORING",
+    "date": "2026-07-02",
+    "materialCommit": "58688e87",
+    "materialCommitFull": "58688e87d250a067e95aa5da2b76c80ecd61eee3",
+    "baseHead": "a900c6e2",
+    "roadmap": "docs/roadmaps/CVF_MFE_T0_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_ROADMAP_2026-07-02.md",
+    "sourceLane": "post-KIOD memory-foundation enrichment routing",
+    "nextRecommendedTranche": "MFE-R1 GC-018 and source-verified WORKER_MUST_NOT_COMMIT work-order authoring",
+    "predecessorEvidence": [
+      "KIOD-R6 material commit 8b89fc64",
+      "KIOD-R9 material commit 6ed7f257",
+      "KIOD-R10 material commit e89e3dd4",
+      "KIOD-R11 material commit 2c0e3cff"
+    ],
+    "verification": [
+      "python governance/compat/check_governed_artifact_checker_read_ahead.py --base a900c6e2 --head HEAD --enforce PASS",
+      "python governance/compat/check_markdown_structural_completeness.py --base a900c6e2 --head HEAD --enforce PASS",
+      "python governance/compat/check_external_knowledge_intake_routing.py --base a900c6e2 --head HEAD --enforce PASS",
+      "python governance/compat/check_kiod_runtime_candidate_reopen_inventory.py --base a900c6e2 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a900c6e2 --head HEAD PASS 74/74",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base a900c6e2 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 79/79 for material roadmap commit 58688e87"
+    ],
+    "claimBoundary": "Roadmap-only material commit. No GC-018, work order, worker dispatch, source import, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, checker implementation, action authority, automatic invocation, or production-readiness claim is authorized."
   }
 }

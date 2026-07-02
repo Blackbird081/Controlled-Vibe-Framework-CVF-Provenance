@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator selects next governed lane; parked checkpoint=KIOD-R11 closed at material commit `2c0e3cff`, KIOD-R10 closed at material commit `e89e3dd4`, KIOD-R9 closed at material commit `6ed7f257`, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=author MFE-R1 GC-018 and source-verified work order if operator chooses to execute the lane; parked checkpoint=MFE-T0 roadmap ready at material commit `58688e87`, KIOD-R11 closed at material commit `2c0e3cff`, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode marker: `mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
 
-Current mode: `kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
+Current mode: `mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
 
-`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
+`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
 
 Previous mode:
 
-`kiod_r11_runtime_candidate_reopen_inventory_guard_dispatched_pending_worker_return`
+`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No current dispatched worker tranche; KIOD-R11 closed at material commit `2c0e3cff` |
+| None | N/A | No current dispatched worker tranche; MFE-T0 roadmap is ready at material commit `58688e87`; MFE-R1 work-order authoring is the next allowed governed move if selected |
 
 ## Current Held Follow-Up Work
 
@@ -207,14 +207,24 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
+Mode: `mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
 
-Next allowed move: operator selects the next governed lane. KIOD-R11 Runtime
-Candidate Reopen Inventory Guard is CLOSED_PASS_BOUNDED at material commit
-`2c0e3cff`. KIOD-R11 added
-`docs/reference/CVF_KIOD_RUNTIME_CANDIDATE_REOPEN_CONDITION_INVENTORY_2026-07-02.json`,
-`governance/compat/check_kiod_runtime_candidate_reopen_inventory.py`, 15
-focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring.
+Next allowed move: MFE-T0 Memory Foundation Future Enrichment Roadmap is
+ROADMAP_READY_FOR_MFE_R1_GC018_AND_WORK_ORDER_AUTHORING at material commit
+`58688e87`. If the operator chooses to execute this lane, author MFE-R1 as a
+fresh GC-018 baseline and source-verified `WORKER_MUST_NOT_COMMIT` work order.
+MFE-R1 must use the MFE-T0 roadmap, current memory-foundation owner surfaces,
+KIOD-R6/KIOD-R9/KIOD-R10/KIOD-R11 predecessor evidence, checker read-ahead,
+negative search, Source Verification Block, External Knowledge Intake Routing,
+Overlap And Novelty Classification, KIOD runtime-candidate parking checks,
+Agent Handoff Contract Control Block, Reviewer Closure Conversion, and
+pre-dispatch autorun gates.
+
+MFE-T0 does not authorize worker execution, source import,
+runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
+implementation, model-router work, package lifecycle mutation, checker
+implementation, action authority, automatic invocation, or production-readiness
+claim.
 
 D-file06 and I-file19 remain parked runtime candidates with concrete reopen
 conditions, not generic future work. Any future re-proposal must satisfy the
