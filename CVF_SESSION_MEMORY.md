@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=author a fresh source-verified MinerU/MSEA absorption GC-018 baseline and WORKER_MUST_NOT_COMMIT work order using `.private_reference/source_mirrors/opendatalab__MinerU/` as upstream source-fact authority; parked checkpoint=MinerU source mirror is pinned at material commit `ae7d5607` with upstream commit `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491`, old external repo clone and adapter folder are secondary historical material only, FPC-T4 is closed at material commit `9e3c2ab0` with `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=execute MSEA-R4 `WORKER_MUST_NOT_COMMIT` work order at material commit `d44c4646`; parked checkpoint=worker may create only the MSEA-R4 worker return and MinerU owner-surface delta reference, must recompute source mirror evidence from `.private_reference/source_mirrors/opendatalab__MinerU/`, and must not perform MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/production work; FPC-T4, FPC-DLR-T1, MFE-R1, and literal trap learning remain closed/recorded, KIOD runtime candidates remain parked, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
+Current mode marker: `msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
 
-Current mode: `mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
+Current mode: `msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
 
-`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
+`msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
 
 Previous mode:
 
-`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
+`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No active dispatched worker work after FPC-T4 closure |
+| MSEA-R4 MinerU Upstream Source Mirror Absorption | `d44c4646` | DISPATCH_READY; `WORKER_MUST_NOT_COMMIT`; worker creates only `docs/reviews/CVF_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_WORKER_RETURN_2026-07-02.md` and `docs/reference/CVF_MSEA_R4_MINERU_UPSTREAM_OWNER_SURFACE_DELTA_2026-07-02.md` |
 
 ## Current Held Follow-Up Work
 
@@ -217,27 +217,23 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
+Mode: `msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh source-verified MinerU/MSEA absorption
-GC-018 baseline and `WORKER_MUST_NOT_COMMIT` work order. Use
-`.private_reference/source_mirrors/opendatalab__MinerU/` as the upstream
-source-fact authority. The mirror is pinned at material commit `ae7d5607`
-with upstream commit `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491`; the ledger
-row is recorded in `.private_reference/source_mirrors/INDEX.md`.
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-07-02.md`
+from material commit `d44c4646` under `WORKER_MUST_NOT_COMMIT`. Worker must
+create only
+`docs/reviews/CVF_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_WORKER_RETURN_2026-07-02.md`
+and
+`docs/reference/CVF_MSEA_R4_MINERU_UPSTREAM_OWNER_SURFACE_DELTA_2026-07-02.md`,
+recompute source mirror remote/commit/count/hash evidence, compare the current
+MinerU mirror against MSEA-T0/T1/T2/T3 and CVF owner surfaces, and include all
+required work-order control blocks and no-commit evidence.
 
-The old `external_repos` clone and retained adapter folder are secondary
-historical material only. The next work order must include checker read-ahead,
-Source Verification Block, External Knowledge Intake Routing, Overlap And
-Novelty Classification, Source Mirror Migration Control if any legacy path is
-cited, Agent Handoff Contract Control Block, Reviewer Closure Conversion,
-ADIF disclosure, negative search, and pre-dispatch gates.
-
-No runtime, package activation, source import, model download, OCR/VLM/hybrid
-or remote backend activation, API/router/Gradio service, RAG write,
-provider/live proof, public-sync, Web/UI dashboard work, MCP/CLI adapter,
-model-router work, action authority, automatic invocation, or
-production-readiness claim is authorized by the mirror refresh.
+No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG/provider-live/public-sync/package/checker/source-import/Web/MCP/
+model-router/action-authority/automatic-invocation/production-readiness claim
+is authorized.
 
 FPC-T4 remains CLOSED_PASS_BOUNDED at material commit `9e3c2ab0` with
 `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`. FPC-DLR-T1 remains
@@ -245,6 +241,34 @@ CLOSED_PASS_BOUNDED at material commit `79473e5a` with
 `HOLD_ALL_DOWNSTREAM_LANES`. MFE-R1 remains CLOSED_PASS_BOUNDED at material
 commit `125c37f0`; literal trap learning remains recorded at material commit
 `faf09d46`. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R4 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material dispatch
+commit `d44c4646`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR4MineruUpstreamSourceMirrorAbsorptionDispatch20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: user requested the MinerU absorption work order after
+fresh clone into `source_mirrors`.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material dispatch commit `d44c4646` or prior accepted material commits.
+
+Authorization boundary: session-sync only. No MinerU runtime, install, model
+download, OCR/VLM/hybrid/parser/API/router/Gradio/Docker/RAG work,
+provider/live proof, public-sync, package lifecycle mutation, checker
+implementation, source import, Web/UI dashboard work, MCP/CLI adapter,
+model-router work, action authority, automatic invocation, or production claim
+is authorized.
 
 ## Core Guard Self-Protection Authorization - MinerU Source Mirror Refresh Session Sync
 
