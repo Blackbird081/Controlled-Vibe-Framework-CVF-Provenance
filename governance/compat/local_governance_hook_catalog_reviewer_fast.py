@@ -193,6 +193,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_fpc_parked_reopen_inventory.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "KIOD runtime candidate reopen inventory",
+        ["python", "governance/compat/check_kiod_runtime_candidate_reopen_inventory.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "corpus scan registry",
         ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
