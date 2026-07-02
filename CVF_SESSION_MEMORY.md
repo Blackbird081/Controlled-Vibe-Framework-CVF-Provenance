@@ -31,7 +31,7 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mfe_r1_memory_foundation_future_enrichment_source_verification_closed_pass_bounded_pending_selected_source_or_next_lane`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=select a future MFE-R2 or fresh MFE work order only after an operator-selected source exists, or select another high-value CVF foundation lane; parked checkpoint=MFE-R1 closed at material commit `125c37f0` with `NO_NEW_VALUE` for immediate enrichment, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`mfe_r1_memory_foundation_future_enrichment_source_verification_closed_pass_bounded_pending_selected_source_or_next_lane`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=select a future MFE-R2 or fresh MFE work order only after an operator-selected source exists, or select another high-value CVF foundation lane; parked checkpoint=MFE-R1 closed at material commit `125c37f0` with `NO_NEW_VALUE` for immediate enrichment, MFE-R1 literal trap learning recorded at material commit `faf09d46`, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; added ADIF-0022 and literal-format gotchas items 36-37 so future worker returns avoid never-created optional path evidence rows and use real Finding-To-Governance defect-class enums |
 | MFE-R1 Memory Foundation Future Enrichment Source Verification | `125c37f0` | CLOSED_PASS_BOUNDED; worker return accepted with `NO_NEW_VALUE` for immediate memory-foundation enrichment because no specific selected source file, copied folder, or external repository is named for this tranche; D-file06/I-file19 remain parked |
 | KIOD-R11 Runtime Candidate Reopen Inventory Guard | `2c0e3cff` | CLOSED_PASS_BOUNDED; accepted no-commit worker return with reviewer repair, added KIOD-specific reopen-condition inventory, checker, 15 focused tests, and hook/autorun wiring for D-file06/I-file19 re-proposal discipline |
 | KIOD-R11 Runtime Candidate Reopen Inventory Guard dispatch | `08f5fd68` | DISPATCH_READY; GC-018 baseline and work order created for a bounded reopen-inventory guard follow-up to KIOD-R10; worker must not commit |
@@ -85,6 +86,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; ADIF-0022 and gotchas items 36-37 make the MFE-R1 worker-return literal-format traps reusable for future agents |
 | MFE-R1 Memory Foundation Future Enrichment Source Verification | `125c37f0` | CLOSED_PASS_BOUNDED; no immediate enrichment target exists absent an operator-selected source |
 | KIOD-R11 Runtime Candidate Reopen Inventory Guard | `2c0e3cff` | CLOSED_PASS_BOUNDED; KIOD-specific inventory/checker/test/wiring now blocks unsupported D-file06/I-file19 runtime-candidate re-proposals |
 | KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; D-file06 and I-file19 remain parked runtime candidates with concrete reopen conditions and no immediate implementation lane |

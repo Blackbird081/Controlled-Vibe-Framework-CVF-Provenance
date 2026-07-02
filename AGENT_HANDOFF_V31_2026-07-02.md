@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`mfe_r1_memory_foundation_future_enrichment_s
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `125c37f0` MFE-R1 Memory Foundation Future Enrichment Source Verification worker return |
-| Latest session-sync target | session sync after MFE-R1 closure |
+| Latest material packet | `faf09d46` MFE-R1 literal trap learning addendum |
+| Latest session-sync target | session sync after MFE-R1 literal trap learning |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -44,6 +44,15 @@ receive new status.
 `mfe_r1_memory_foundation_future_enrichment_source_verification_closed_pass_bounded_pending_selected_source_or_next_lane`
 
 ## Latest Changes
+
+MFE-R1 literal trap learning addendum is recorded at material commit
+`faf09d46`. It added ADIF-0022 plus literal-format gotchas items 36-37 so
+future worker returns avoid repeating never-created optional governed artifact
+paths in absence-evidence rows and use real Finding-To-Governance defect-class
+enum tokens when a finding row exists. This is guidance/reference learning only:
+no checker, runtime, source import, public-sync, live/provider proof, adapter,
+package lifecycle, action-authority, automatic-invocation, or production claim
+changed.
 
 MFE-R1 Memory Foundation Future Enrichment Source Verification is
 CLOSED_PASS_BOUNDED at material commit `125c37f0`. The accepted worker return
@@ -105,6 +114,7 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; ADIF-0022 and gotchas items 36-37 preserve the MFE-R1 worker-return literal-format lessons for future agents |
 | MFE-R1 Memory Foundation Future Enrichment Source Verification | `125c37f0` | CLOSED_PASS_BOUNDED; no immediate enrichment target exists absent an operator-selected source |
 | KIOD-R11 Runtime Candidate Reopen Inventory Guard | `2c0e3cff` | CLOSED_PASS_BOUNDED; KIOD-specific inventory/checker/test/wiring now blocks unsupported D-file06/I-file19 runtime-candidate re-proposals |
 | KIOD-R10 Runtime Deferred Candidate Decision | `e89e3dd4` | CLOSED_PASS_BOUNDED; decision packet accepted and D-file06/I-file19 parked as runtime candidates with concrete reopen conditions |
@@ -238,6 +248,43 @@ material commits.
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for MFE-T0 roadmap ready pending MFE-R1 work-order authoring. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MFE-R1 GC-018 and source-verified work-order authoring. |
 | `CVF_SESSION/state/entries/mfeT0MemoryFoundationFutureEnrichmentRoadmap20260702.json` | Add state source entry for MFE-T0 material roadmap commit `58688e87`. |
+
+Authorization boundary: session-sync only. No worker execution, source import,
+runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, checker implementation, action
+authority, automatic invocation, or production-readiness claim is authorized by
+this block.
+
+## Core Guard Self-Protection Authorization - MFE-R1 Literal Trap Learning Session Sync
+
+Authorized guard-maintenance scope: MFE-R1 literal trap learning session-sync
+after material learning commit `faf09d46`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/mfeR1LiteralTrapLearningAddendum20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: operator instructed the reviewer/closer to handle the
+MFE-R1 literal-format traps, and active-session continuity must record the
+resulting material learning commit.
+
+Rollback boundary: revert only the MFE-R1 literal trap learning session-sync if
+rejected; do not alter material learning commit `faf09d46`, MFE-R1 closure
+commit `125c37f0`, or prior accepted MFE/KIOD/WOAS material commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record MFE-R1 literal trap learning commit `faf09d46` in startup acknowledgment and latest/current work tables without changing the next lane route. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record latest material packet, literal trap learning summary, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after MFE-R1 literal trap learning session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Preserve selected-source-dependent next move while naming learning commit `faf09d46` as recorded guidance. |
+| `CVF_SESSION/state/entries/mfeR1LiteralTrapLearningAddendum20260702.json` | Add state source entry for MFE-R1 material learning commit `faf09d46`. |
 
 Authorization boundary: session-sync only. No worker execution, source import,
 runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter,
