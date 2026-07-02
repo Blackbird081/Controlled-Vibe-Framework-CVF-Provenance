@@ -370,6 +370,27 @@ runtime/product code, and does not itself implement or modify any checker.
     not applicable, and the same marker on its own declaration line is
     applicable.
 
+36. **Never repeat a never-created optional governed artifact path in a
+    review evidence row.** `check_agent_packet_authority_and_encoding.py`
+    scans review packets for bare `docs/baselines`, `docs/roadmaps`,
+    `docs/work_orders`, and `docs/reviews` markdown paths, then checks that
+    every matched path exists. A `test -f ... NOT_EXISTS` evidence row can
+    still fail if it contains the literal optional path that was deliberately
+    not created. When the evidence is absence of an optional decision packet
+    or completion packet, describe the optional artifact in prose and cite the
+    existing worker return or work order path instead of writing the
+    never-created path as a parseable `docs/.../*.md` token.
+
+37. **Finding rows require a real `DEFECT_CLASSES` enum token.**
+    `N/A_WITH_REASON` is a disposition, not a defect class. If a changed
+    review, audit, assessment, or log has `## Findings`, `## Known Issues`, or
+    a table whose first column is `Finding`, the
+    `## Finding-To-Governance Learning Disposition` section must include one
+    of the checker-accepted defect classes such as `RULE_GAP`,
+    `MACHINE_GATE_GAP`, or `ORCHESTRATOR_PACKET_GAP`. Use
+    `N/A_WITH_REASON` only as the disposition for a non-reusable/session-local
+    note, or omit the finding row entirely when there is truly no finding.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -395,19 +416,19 @@ verification or closure artifact for any tranche.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | KIOD-R8 self-trigger learning addendum, 2026-07-01 |
+| Session or invocation | MFE-R1 literal evidence row learning addendum, 2026-07-02 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Allowed scope source | operator instruction to add learning after KIOD-R8 self-repaired marker-overmatch defects |
-| Before status evidence | checklist did not yet name path-marker plus prose-marker self-trigger or declaration-shape marker matching |
-| After status evidence | checklist items 34 and 35 record KIOD-R8 marker-overmatch prevention guidance |
+| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0022.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Allowed scope source | operator instruction to make the MFE-R1 worker-return literal-format traps avoidable for next time |
+| Before status evidence | checklist did not yet name optional never-created artifact path evidence rows or finding-row defect-class enum traps |
+| After status evidence | checklist items 36 and 37 record MFE-R1 literal evidence row prevention guidance |
 | Diff evidence | `git diff --name-status` before material commit |
 | Approval boundary | governed artifact authoring friction checklist and ADIF routing only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
-| Invocation ID | `kiod-r8-marker-overmatch-learning-2026-07-01` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Invocation ID | `mfe-r1-literal-evidence-row-learning-2026-07-02` |
+| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0022.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0022.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this learning batch |
