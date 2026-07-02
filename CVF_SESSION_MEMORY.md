@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=worker executes FPC-T4 decision-only work order at material commit `680f14d3` under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, provide Sandbox Runtime design-review evidence plus explicit operator decision, or name a concrete external/source target for a later source-verified tranche; parked checkpoint=FPC-T4 is closed at material commit `9e3c2ab0` with `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
+Current mode marker: `fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
 
-Current mode: `fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
+Current mode: `fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
 
-`fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
+`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`work_order_authoring_compact_worker_return_gate_hardening_closed_pass_bounded_pending_operator_next_lane_selection`
+`fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `680f14d3` | DISPATCHED_PENDING_WORKER_RETURN; worker must create only `docs/reviews/CVF_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_WORKER_RETURN_2026-07-02.md` under `WORKER_MUST_NOT_COMMIT` |
+| None | N/A | No active dispatched worker work after FPC-T4 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`; Model Gateway remains held behind FPC-DLR-T1 runtime-provider-live evidence and Sandbox Runtime remains held behind unresolved `DESIGN_REVIEW_REQUIRED` evidence |
 | Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; future `WORKER_MUST_NOT_COMMIT` work orders use compact `WORKER_RETURN_FULL_GATE_V1` profile plus worker-return fast gate command instead of a long repeated checker-section inventory |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; selected `HOLD_ALL_DOWNSTREAM_LANES` because no source-backed reopen condition is met for `use-case-adapter-public`, `runtime-provider-live`, or `MPI-T6-runtime` |
 | MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; added ADIF-0022 and literal-format gotchas items 36-37 so future worker returns avoid never-created optional path evidence rows and use real Finding-To-Governance defect-class enums |
@@ -88,6 +89,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP` |
 | Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; compact no-commit worker-return full-gate profile is now documented, scaffolded, and enforced by dispatch-quality validation |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; downstream lanes remain held under `HOLD_ALL_DOWNSTREAM_LANES` |
 | MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; ADIF-0022 and gotchas items 36-37 make the MFE-R1 worker-return literal-format traps reusable for future agents |
@@ -215,32 +217,76 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
+Mode: `fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
 
 Next allowed move: FPC-T4 Strategic Capability Decision And Source-Backed Route
-Selection is DISPATCHED_PENDING_WORKER_RETURN at material commit `680f14d3`.
-Worker must execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_2026-07-02.md`
-under `WORKER_MUST_NOT_COMMIT` and create only
-`docs/reviews/CVF_FPC_T4_STRATEGIC_CAPABILITY_DECISION_AND_SOURCE_BACKED_ROUTE_SELECTION_WORKER_RETURN_2026-07-02.md`.
+Selection is CLOSED_PASS_BOUNDED at material commit `9e3c2ab0` with selected
+routing outcome `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`. Reviewer accepted the
+`WORKER_MUST_NOT_COMMIT` worker return after a bounded corpus N/A verdict
+shape repair.
 
-FPC-T4 is decision-only. The worker must choose exactly one routing outcome:
-`OPEN_MODEL_GATEWAY_FRESH_GC018`, `OPEN_SANDBOX_RUNTIME_FRESH_GC018`,
-`OPEN_OTHER_STRATEGIC_CAPABILITY_FRESH_GC018`,
-`HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, or
-`REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`.
+Model Gateway is held because the remaining `runtime-provider-live` surface
+was already held by FPC-DLR-T1 with no new reopen evidence. Sandbox Runtime is
+held because the real gap remains behind unresolved `DESIGN_REVIEW_REQUIRED`
+evidence, not a fresh implementable strategic decision.
 
-No worker execution beyond the packet, source import, implementation,
-runtime/provider/live proof, public-sync, adapter behavior, package lifecycle
-change, checker implementation, generated-state mutation, Web/UI dashboard
-work, model-router work, MPI-T6 runtime work, KIOD runtime-candidate reopen,
-action authority, automatic invocation, push, commit, or production-readiness
-claim is authorized.
+Operator may select another high-value foundation lane, provide fresh
+product/source evidence for a downstream reopen, provide Sandbox Runtime
+design-review evidence plus explicit operator decision, or name a concrete
+external/source target for a later source-verified tranche.
+
+No implementation, runtime/provider/live proof, source import, public-sync,
+adapter behavior, package lifecycle change, checker implementation,
+generated-state mutation, Web/UI dashboard work, model-router work, MPI-T6
+runtime work, KIOD runtime-candidate reopen, action authority, automatic
+invocation, push, or production-readiness claim is authorized by FPC-T4
+closure.
 
 FPC-DLR-T1 remains CLOSED_PASS_BOUNDED at material commit `79473e5a` with
 `HOLD_ALL_DOWNSTREAM_LANES`. MFE-R1 remains CLOSED_PASS_BOUNDED at material
 commit `125c37f0`; literal trap learning remains recorded at material commit
 `faf09d46`. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - FPC-T4 Closure Session Sync
+
+Authorized guard-maintenance scope: FPC-T4 closure session-sync after material
+worker-return commit `9e3c2ab0`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionClosure20260702.json`
+- `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionDispatch20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: implied by governed reviewer/closer session-sync after
+accepted FPC-T4 material worker-return commit.
+
+Rollback boundary: revert only the FPC-T4 closure session-sync if rejected; do
+not alter material worker-return commit `9e3c2ab0` or prior accepted material
+commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed/latest work, startup acknowledgment, and next allowed move after FPC-T4 material worker-return commit `9e3c2ab0`. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record FPC-T4 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after FPC-T4 closure session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for FPC-T4 closed pending operator next lane selection. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane/source selection after FPC-T4 selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`. |
+| `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionDispatch20260702.json` | Mark FPC-T4 dispatch entry closed by material commit `9e3c2ab0`. |
+| `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionClosure20260702.json` | Add state source entry for FPC-T4 material worker-return commit `9e3c2ab0`. |
+
+Authorization boundary: session-sync only. No implementation,
+runtime/provider/live proof, source import, public-sync, Web/UI dashboard,
+MCP/CLI adapter, model-router work, package lifecycle mutation, checker
+implementation, generated-state mutation beyond active session generation,
+action authority, automatic invocation, or production-readiness claim is
+authorized by this block.
 
 ## Core Guard Self-Protection Authorization - FPC-T4 Dispatch Session Sync
 

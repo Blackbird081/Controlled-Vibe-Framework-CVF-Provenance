@@ -2,7 +2,7 @@
   "stateOrder": 1377,
   "stateKey": "fpcT4StrategicCapabilityDecisionDispatch20260702",
   "value": {
-    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "status": "CLOSED_PASS_BOUNDED_BY_9E3C2AB0",
     "date": "2026-07-02",
     "materialCommit": "680f14d3",
     "materialCommitFull": "680f14d33605b3110cc9c7990e424202d299cb2f",
