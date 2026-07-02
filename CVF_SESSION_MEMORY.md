@@ -92,7 +92,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; next move is MSEA-R7 documentation/reference-only receipt schema contract draft GC-018/work-order authoring |
+| MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; next move is documentation/reference-only receipt schema contract draft GC-018/work-order authoring |
 | MSEA-R5 MinerU Deep Document Layer Scan Absorption | `1bac8163` | CLOSED_PASS_BOUNDED; deep document-layer scan absorption accepted with deferred candidate evidence and no runtime/source-import/provider/live/public/package/checker claim |
 | MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted bounded source-mirror absorption with `PARTIAL` blind-spot verdict and deep absorption authoring route |
 | FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP` |

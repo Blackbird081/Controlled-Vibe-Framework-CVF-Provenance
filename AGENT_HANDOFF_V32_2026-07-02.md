@@ -417,6 +417,52 @@ or production readiness.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
 
+## Core Guard Self-Protection Authorization - MSEA-R7 Lifecycle Hygiene Wording
+
+Authorized guard-maintenance scope: minimal continuity wording repair before
+MSEA-R7 dispatch so dispatch-packet lifecycle hygiene does not mistake the new
+MSEA-R7 dispatch lane for a closed MSEA-R6 lane. The repair removes
+closed-status token proximity from the MSEA-R6 closure state entry and front
+door, then regenerates active session state.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator requested the next work order; this bounded
+session hygiene repair is necessary pre-dispatch gate remediation and does not
+authorize worker edits to session state, runtime work, public-sync, source
+import, or checker implementation.
+
+Rollback boundary: revert only this lifecycle-hygiene wording repair and its
+active-session regeneration if rejected; do not revert MSEA-R6 closure or prior
+session-sync commits.
+
+## Agent Operation Trace Block - MSEA-R7 Lifecycle Hygiene Wording
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | MSEA-R7 lifecycle hygiene wording repair, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active-session generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json` |
+| Allowed scope source | pre-dispatch lifecycle hygiene gate for MSEA-R7 dispatch authoring |
+| Before status evidence | session-sync HEAD `42cb5e46`; lifecycle hygiene gate reported MSEA-R7 appeared closed due closed-status token proximity |
+| After status evidence | lifecycle wording repaired; active session state regenerated; session-hygiene commit pending |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before session-hygiene commit |
+| Approval boundary | bounded session-hygiene repair for dispatch gate remediation only |
+| Claim boundary | continuity wording and generated active state only; no worker execution, runtime/provider/public/source-import/checker/package/Web/MCP/model-router/action-authority claim |
+| Agent type | Codex dispatcher/session-sync steward |
+| Invocation ID | `msea-r7-lifecycle-hygiene-wording-2026-07-02` |
+| Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json` |
+| Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/entries/mseaR6MineruApplicationRouteDecisionClosure20260702.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-hygiene batch. |
+
 ## Claim Boundary
 
 V32 is a compact continuity handoff and session-sync carrier. It records
