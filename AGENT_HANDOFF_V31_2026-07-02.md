@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=author MFE-R1 GC-018 and source-verified work order if operator chooses to execute the lane; parked checkpoint=MFE-T0 roadmap ready at material commit `58688e87`, KIOD-R11 closed at material commit `2c0e3cff`, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=MFE-R1 worker return only under WORKER_MUST_NOT_COMMIT; parked checkpoint=MFE-R1 dispatch ready at material commit `cf51bbf4`, MFE-T0 roadmap ready at material commit `58688e87`, KIOD-R11 closed at material commit `2c0e3cff`, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`mfe_t0_memory_foundation_future_enrichment_r
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `58688e87` MFE-T0 Memory Foundation Future Enrichment Roadmap |
-| Latest session-sync target | session sync after MFE-T0 roadmap |
+| Latest material packet | `cf51bbf4` MFE-R1 Memory Foundation Future Enrichment Source Verification dispatch |
+| Latest session-sync target | session sync after MFE-R1 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,20 +41,24 @@ receive new status.
 
 ## Current Mode
 
-`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
+`mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MFE-R1 Memory Foundation Future Enrichment Source Verification dispatch is
+ready at material commit `cf51bbf4`. It added
+`docs/baselines/CVF_GC018_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_2026-07-02.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_2026-07-02.md`.
+The dispatch is `WORKER_MUST_NOT_COMMIT`; worker may create only the required
+worker return and optional decision packet. Codex/reviewer owns review,
+allowed repairs, material commit, closure gates, and session sync.
 
 MFE-T0 Memory Foundation Future Enrichment Roadmap is ready at material commit
 `58688e87`. It added
 `docs/roadmaps/CVF_MFE_T0_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_ROADMAP_2026-07-02.md`
 as a roadmap-only route for future memory-foundation enrichment. The next
-recommended tranche is MFE-R1 GC-018 and source-verified
-`WORKER_MUST_NOT_COMMIT` work-order authoring. MFE-T0 does not authorize worker
-execution, source import, runtime/provider/live proof, public-sync,
-Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package
-lifecycle mutation, checker implementation, action authority, automatic
-invocation, or production-readiness claims.
+recommended tranche was satisfied by MFE-R1 dispatch commit `cf51bbf4`.
 
 KIOD-R11 Runtime Candidate Reopen Inventory Guard closed bounded at material
 commit `2c0e3cff`. Reviewer accepted the no-commit worker return with
@@ -88,7 +92,7 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No current dispatched worker tranche; MFE-T0 roadmap is ready at material commit `58688e87`; MFE-R1 work-order authoring is the next allowed governed move if selected |
+| MFE-R1 Memory Foundation Future Enrichment Source Verification | `cf51bbf4` | DISPATCH_READY; worker may create only the required worker return and optional decision packet under `WORKER_MUST_NOT_COMMIT`; Codex/reviewer owns review, allowed repairs, material commit, closure gates, and session sync |
 
 ## Latest Closed Work
 
@@ -110,22 +114,22 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 ## Next Allowed Move
 
-MFE-T0 Memory Foundation Future Enrichment Roadmap is
-ROADMAP_READY_FOR_MFE_R1_GC018_AND_WORK_ORDER_AUTHORING at material commit
-`58688e87`. If the operator chooses to execute this lane, author MFE-R1 as a
-fresh GC-018 baseline and source-verified `WORKER_MUST_NOT_COMMIT` work order.
-MFE-R1 must use the MFE-T0 roadmap, current memory-foundation owner surfaces,
-KIOD-R6/KIOD-R9/KIOD-R10/KIOD-R11 predecessor evidence, checker read-ahead,
-negative search, Source Verification Block, External Knowledge Intake Routing,
-Overlap And Novelty Classification, KIOD runtime-candidate parking checks,
-Agent Handoff Contract Control Block, Reviewer Closure Conversion, and
-pre-dispatch autorun gates.
+MFE-R1 Memory Foundation Future Enrichment Source Verification dispatch is
+DISPATCH_READY at material commit `cf51bbf4`. Worker execution only under
+`WORKER_MUST_NOT_COMMIT` is allowed using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_2026-07-02.md`.
+Worker may create only
+`docs/reviews/CVF_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_WORKER_RETURN_2026-07-02.md`
+and optional
+`docs/reviews/CVF_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_DECISION_2026-07-02.md`.
+Worker must not commit. Codex/reviewer owns review, allowed repairs, material
+commit, closure gates, and session sync.
 
-MFE-T0 does not authorize worker execution, source import,
-runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
-implementation, model-router work, package lifecycle mutation, checker
-implementation, action authority, automatic invocation, or production-readiness
-claim.
+MFE-R1 does not authorize KIOD-R6 replay, C-file05 reopen, D-file06/I-file19
+reopen, memory-reference edits, source import, runtime/provider/live proof,
+public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
+work, package lifecycle mutation, checker implementation, action authority,
+automatic invocation, or production-readiness claim.
 
 KIOD-R11 is CLOSED_PASS_BOUNDED at material commit `2c0e3cff`. KIOD-R10 remains
 CLOSED_PASS_BOUNDED at material commit `e89e3dd4`; D-file06 and I-file19 remain
@@ -226,6 +230,45 @@ material commits.
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for MFE-T0 roadmap ready pending MFE-R1 work-order authoring. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MFE-R1 GC-018 and source-verified work-order authoring. |
 | `CVF_SESSION/state/entries/mfeT0MemoryFoundationFutureEnrichmentRoadmap20260702.json` | Add state source entry for MFE-T0 material roadmap commit `58688e87`. |
+
+Authorization boundary: session-sync only. No worker execution, source import,
+runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter,
+model-router work, package lifecycle mutation, checker implementation, action
+authority, automatic invocation, or production-readiness claim is authorized by
+this block.
+
+## Core Guard Self-Protection Authorization - MFE-R1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: MFE-R1 dispatch session-sync after material
+dispatch commit `cf51bbf4`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mfeR1MemoryFoundationFutureEnrichmentSourceVerificationDispatch20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: implied by operator approval to author MFE-R1 dispatch
+and by mandatory active-session continuity sync after a governed dispatch
+changes current mode and next allowed move.
+
+Rollback boundary: revert only the MFE-R1 dispatch session-sync if rejected; do
+not alter material dispatch commit `cf51bbf4` or prior accepted MFE/KIOD/WOAS
+material commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after MFE-R1 material dispatch commit `cf51bbf4`. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record MFE-R1 dispatch continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after MFE-R1 dispatch session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for MFE-R1 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MFE-R1 worker execution under `WORKER_MUST_NOT_COMMIT`. |
+| `CVF_SESSION/state/entries/mfeR1MemoryFoundationFutureEnrichmentSourceVerificationDispatch20260702.json` | Add state source entry for MFE-R1 material dispatch commit `cf51bbf4`. |
 
 Authorization boundary: session-sync only. No worker execution, source import,
 runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter,

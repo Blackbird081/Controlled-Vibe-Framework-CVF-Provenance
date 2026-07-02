@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=author MFE-R1 GC-018 and source-verified work order if operator chooses to execute the lane; parked checkpoint=MFE-T0 roadmap ready at material commit `58688e87`, KIOD-R11 closed at material commit `2c0e3cff`, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=MFE-R1 worker return only under WORKER_MUST_NOT_COMMIT; parked checkpoint=MFE-R1 dispatch ready at material commit `cf51bbf4`, MFE-T0 roadmap ready at material commit `58688e87`, KIOD-R11 closed at material commit `2c0e3cff`, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
+Current mode marker: `mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return`
 
-Current mode: `mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
+Current mode: `mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return`
 
-`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
+`mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return`
 
 Previous mode:
 
-`kiod_r11_runtime_candidate_reopen_inventory_guard_closed_pass_bounded_pending_operator_next_lane_selection`
+`mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No current dispatched worker tranche; MFE-T0 roadmap is ready at material commit `58688e87`; MFE-R1 work-order authoring is the next allowed governed move if selected |
+| MFE-R1 Memory Foundation Future Enrichment Source Verification | `cf51bbf4` | DISPATCH_READY; worker may create only the required worker return and optional decision packet under `WORKER_MUST_NOT_COMMIT`; Codex/reviewer owns review, allowed repairs, material commit, closure gates, and session sync |
 
 ## Current Held Follow-Up Work
 
@@ -207,24 +207,24 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `mfe_t0_memory_foundation_future_enrichment_roadmap_ready_pending_mfe_r1_work_order_authoring`
+Mode: `mfe_r1_memory_foundation_future_enrichment_source_verification_dispatched_pending_worker_return`
 
-Next allowed move: MFE-T0 Memory Foundation Future Enrichment Roadmap is
-ROADMAP_READY_FOR_MFE_R1_GC018_AND_WORK_ORDER_AUTHORING at material commit
-`58688e87`. If the operator chooses to execute this lane, author MFE-R1 as a
-fresh GC-018 baseline and source-verified `WORKER_MUST_NOT_COMMIT` work order.
-MFE-R1 must use the MFE-T0 roadmap, current memory-foundation owner surfaces,
-KIOD-R6/KIOD-R9/KIOD-R10/KIOD-R11 predecessor evidence, checker read-ahead,
-negative search, Source Verification Block, External Knowledge Intake Routing,
-Overlap And Novelty Classification, KIOD runtime-candidate parking checks,
-Agent Handoff Contract Control Block, Reviewer Closure Conversion, and
-pre-dispatch autorun gates.
+Next allowed move: MFE-R1 Memory Foundation Future Enrichment Source
+Verification dispatch is DISPATCH_READY at material commit `cf51bbf4`. Worker
+execution only under `WORKER_MUST_NOT_COMMIT` is allowed using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_2026-07-02.md`.
+Worker may create only
+`docs/reviews/CVF_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_WORKER_RETURN_2026-07-02.md`
+and optional
+`docs/reviews/CVF_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_DECISION_2026-07-02.md`.
+Worker must not commit. Codex/reviewer owns review, allowed repairs, material
+commit, closure gates, and session sync.
 
-MFE-T0 does not authorize worker execution, source import,
-runtime/provider/live proof, public-sync, Web/UI/dashboard, MCP/CLI adapter
-implementation, model-router work, package lifecycle mutation, checker
-implementation, action authority, automatic invocation, or production-readiness
-claim.
+MFE-R1 does not authorize KIOD-R6 replay, C-file05 reopen, D-file06/I-file19
+reopen, memory-reference edits, source import, runtime/provider/live proof,
+public-sync, Web/UI/dashboard, MCP/CLI adapter implementation, model-router
+work, package lifecycle mutation, checker implementation, action authority,
+automatic invocation, or production-readiness claim.
 
 D-file06 and I-file19 remain parked runtime candidates with concrete reopen
 conditions, not generic future work. Any future re-proposal must satisfy the
