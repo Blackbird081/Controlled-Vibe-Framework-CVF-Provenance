@@ -31,19 +31,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, provide Sandbox Runtime design-review evidence plus explicit operator decision, or name a concrete external/source target for a later source-verified tranche; parked checkpoint=FPC-T4 is closed at material commit `9e3c2ab0` with `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=author a fresh source-verified MinerU/MSEA absorption GC-018 baseline and WORKER_MUST_NOT_COMMIT work order using `.private_reference/source_mirrors/opendatalab__MinerU/` as upstream source-fact authority; parked checkpoint=MinerU source mirror is pinned at material commit `ae7d5607` with upstream commit `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491`, old external repo clone and adapter folder are secondary historical material only, FPC-T4 is closed at material commit `9e3c2ab0` with `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, literal trap learning remains recorded at material commit `faf09d46`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
+Current mode marker: `mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
 
-Current mode: `fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
+Current mode: `mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
 
-`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
+`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
 
 Previous mode:
 
-`fpc_t4_strategic_capability_decision_dispatched_pending_worker_return`
+`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
 
 ## Current Dispatched Work
 
@@ -217,35 +217,72 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
+Mode: `mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
 
-Next allowed move: FPC-T4 Strategic Capability Decision And Source-Backed Route
-Selection is CLOSED_PASS_BOUNDED at material commit `9e3c2ab0` with selected
-routing outcome `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`. Reviewer accepted the
-`WORKER_MUST_NOT_COMMIT` worker return after a bounded corpus N/A verdict
-shape repair.
+Next allowed move: author a fresh source-verified MinerU/MSEA absorption
+GC-018 baseline and `WORKER_MUST_NOT_COMMIT` work order. Use
+`.private_reference/source_mirrors/opendatalab__MinerU/` as the upstream
+source-fact authority. The mirror is pinned at material commit `ae7d5607`
+with upstream commit `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491`; the ledger
+row is recorded in `.private_reference/source_mirrors/INDEX.md`.
 
-Model Gateway is held because the remaining `runtime-provider-live` surface
-was already held by FPC-DLR-T1 with no new reopen evidence. Sandbox Runtime is
-held because the real gap remains behind unresolved `DESIGN_REVIEW_REQUIRED`
-evidence, not a fresh implementable strategic decision.
+The old `external_repos` clone and retained adapter folder are secondary
+historical material only. The next work order must include checker read-ahead,
+Source Verification Block, External Knowledge Intake Routing, Overlap And
+Novelty Classification, Source Mirror Migration Control if any legacy path is
+cited, Agent Handoff Contract Control Block, Reviewer Closure Conversion,
+ADIF disclosure, negative search, and pre-dispatch gates.
 
-Operator may select another high-value foundation lane, provide fresh
-product/source evidence for a downstream reopen, provide Sandbox Runtime
-design-review evidence plus explicit operator decision, or name a concrete
-external/source target for a later source-verified tranche.
+No runtime, package activation, source import, model download, OCR/VLM/hybrid
+or remote backend activation, API/router/Gradio service, RAG write,
+provider/live proof, public-sync, Web/UI dashboard work, MCP/CLI adapter,
+model-router work, action authority, automatic invocation, or
+production-readiness claim is authorized by the mirror refresh.
 
-No implementation, runtime/provider/live proof, source import, public-sync,
-adapter behavior, package lifecycle change, checker implementation,
-generated-state mutation, Web/UI dashboard work, model-router work, MPI-T6
-runtime work, KIOD runtime-candidate reopen, action authority, automatic
-invocation, push, or production-readiness claim is authorized by FPC-T4
-closure.
-
-FPC-DLR-T1 remains CLOSED_PASS_BOUNDED at material commit `79473e5a` with
+FPC-T4 remains CLOSED_PASS_BOUNDED at material commit `9e3c2ab0` with
+`HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`. FPC-DLR-T1 remains
+CLOSED_PASS_BOUNDED at material commit `79473e5a` with
 `HOLD_ALL_DOWNSTREAM_LANES`. MFE-R1 remains CLOSED_PASS_BOUNDED at material
 commit `125c37f0`; literal trap learning remains recorded at material commit
 `faf09d46`. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MinerU Source Mirror Refresh Session Sync
+
+Authorized guard-maintenance scope: MinerU source mirror refresh session-sync
+after material mirror-ledger commit `ae7d5607`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mineruSourceMirrorRefresh20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: user requested a fresh clone into `source_mirrors`
+instead of reusing old source.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material mirror-ledger commit `ae7d5607` or prior accepted material
+commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, startup acknowledgment, next allowed move, and session-sync authorization after MinerU source mirror material commit `ae7d5607`. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record MinerU source mirror continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after MinerU source mirror session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for MinerU source mirror pinned pending work-order authoring. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to fresh source-verified MinerU/MSEA GC-018 and work-order authoring. |
+| `CVF_SESSION/state/entries/mineruSourceMirrorRefresh20260702.json` | Add state source entry for MinerU source mirror material commit `ae7d5607`. |
+
+Authorization boundary: session-sync only. No runtime, package activation,
+source import, model download, OCR/VLM/hybrid or remote backend activation,
+API/router/Gradio service, RAG write, provider/live proof, public-sync,
+Web/UI dashboard work, MCP/CLI adapter, model-router work, action authority,
+automatic invocation, or production-readiness claim is authorized.
 
 ## Core Guard Self-Protection Authorization - FPC-T4 Closure Session Sync
 

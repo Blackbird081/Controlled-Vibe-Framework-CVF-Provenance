@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, provide Sandbox Runtime design-review evidence plus explicit operator decision, or name a concrete external/source target for a later source-verified tranche; parked checkpoint=FPC-T4 is closed at material commit `9e3c2ab0` with `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=author a fresh source-verified MinerU/MSEA absorption GC-018 baseline and WORKER_MUST_NOT_COMMIT work order using `.private_reference/source_mirrors/opendatalab__MinerU/` as upstream source-fact authority; parked checkpoint=MinerU source mirror is pinned at material commit `ae7d5607` with upstream commit `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491`, old external repo clone and adapter folder are secondary historical material only, FPC-T4 is closed at material commit `9e3c2ab0` with `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`, FPC-DLR-T1 remains closed at material commit `79473e5a` with `HOLD_ALL_DOWNSTREAM_LANES`, MFE-R1 remains closed at material commit `125c37f0`, KIOD runtime candidates remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`fpc_t4_strategic_capability_decision_closed_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `9e3c2ab0` FPC-T4 strategic capability decision worker return |
-| Latest session-sync target | session sync after FPC-T4 closure |
+| Latest material packet | `ae7d5607` MinerU source mirror ledger |
+| Latest session-sync target | session sync after MinerU source mirror refresh |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,9 +41,26 @@ receive new status.
 
 ## Current Mode
 
-`fpc_t4_strategic_capability_decision_closed_pass_bounded_hold_no_source_backed_strategic_gap_pending_operator_next_lane_selection`
+`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
 
 ## Latest Changes
+
+MinerU upstream source mirror is freshly cloned and pinned at material commit
+`ae7d5607`. The mirror path is
+`.private_reference/source_mirrors/opendatalab__MinerU/`, the upstream
+repository is `https://github.com/opendatalab/MinerU.git`, the pinned upstream
+commit is `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491`, and the tracked
+upstream file count is 425. The source mirror ledger row is recorded in
+`.private_reference/source_mirrors/INDEX.md`. The clone payload remains ignored
+by git. Old `external_repos` source and the retained adapter folder are
+secondary historical material only. The next allowed move is a fresh
+source-verified MinerU/MSEA absorption GC-018 baseline and
+`WORKER_MUST_NOT_COMMIT` work order using the mirror as upstream source-fact
+authority. No install, model download, OCR/VLM/hybrid or remote backend
+activation, API/router/Gradio service, RAG write, package activation, checker
+wiring, provider/live proof, public-sync, direct import, Web/UI dashboard work,
+MCP/CLI adapter, model-router work, action authority, automatic invocation, or
+production-readiness claim is authorized by the mirror refresh.
 
 FPC-T4 Strategic Capability Decision And Source-Backed Route Selection is
 CLOSED_PASS_BOUNDED at material commit `9e3c2ab0`. Reviewer accepted the
@@ -859,12 +876,57 @@ package lifecycle mutation, Web/UI/dashboard work, MCP/CLI adapter
 implementation, model-router work, action authority, automatic invocation,
 push, or production-readiness claims.
 
+## Core Guard Self-Protection Authorization - MinerU Source Mirror Refresh Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`ae7d5607`.
+
+Protected paths:
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mineruSourceMirrorRefresh20260702.json`
+
+Operator authorization: user requested a fresh MinerU clone into
+`source_mirrors` instead of reusing old source.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material commit `ae7d5607` or prior accepted material commits.
+
+Not authorized: runtime/provider/live proof, source import, package activation,
+model download, OCR/VLM/hybrid or remote backend activation, API/router/Gradio
+service, RAG write, checker wiring, public-sync, Web/UI/dashboard work,
+MCP/CLI adapter implementation, model-router work, action authority,
+automatic invocation, or production-readiness claims.
+
+## GC-020 HEAD Marker - MinerU Source Mirror Refresh
+
+Latest material commit requiring in-place handoff trace:
+
+`ae7d5607`
+
+Full SHA:
+
+`ae7d56079ca5b8953e9d9a77f433d1d179908a7f`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`ae7d5607`. It records the fresh pinned MinerU source mirror ledger only. It
+does not authorize runtime/provider/live behavior, source import, package
+activation, model download, OCR/VLM/hybrid or remote backend activation,
+API/router/Gradio service, RAG write, checker wiring, public-sync,
+Web/UI/dashboard work, MCP/CLI adapter implementation, model-router work,
+action authority, automatic invocation, or production-readiness claims.
+
 ## Claim Boundary
 
 V31 is a compact continuity handoff and session-sync carrier. It records
 KIOD-R10 closure, V30 archive rotation, active session pointers, accepted
-closed work, FPC-T4 decision-only dispatch state, and FPC-T4 accepted closure
-state only. It does not create runtime/provider behavior, provider-side audit
-access, automatic resolver behavior, external adapter behavior, new live
-provider proof, public export, merge authority, commit authority, action
+closed work, FPC-T4 decision-only dispatch state, FPC-T4 accepted closure
+state, and the MinerU source mirror refresh state only. It does not create
+runtime/provider behavior, provider-side audit access, automatic resolver
+behavior, external adapter behavior, package activation, checker wiring, new
+live provider proof, public export, merge authority, commit authority, action
 authority, or broader production readiness.
