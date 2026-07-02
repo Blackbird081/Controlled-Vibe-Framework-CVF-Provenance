@@ -2,10 +2,13 @@
   "stateOrder": 692,
   "stateKey": "mseaR9MineruCvfApplicationBlueprintDispatch20260702",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-02",
     "materialCommit": "a94bb07c",
     "materialCommitFull": "a94bb07ca01e2b2c3289dbdfd2cf0c319cf7fd2f",
+    "closureCommit": "2a58322b",
+    "closureCommitFull": "2a58322ba238ae276aee19008f04f8d73a5e9ebf",
+    "closureDate": "2026-07-03",
     "dispatchBaseHead": "89943d30",
     "baseline": "docs/baselines/CVF_GC018_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md",
@@ -19,7 +22,12 @@
     "preDispatchGate": "PASS 72/72",
     "commitStewardPreflight": "PASS",
     "materialPreCommitHook": "PASS 79/79",
-    "claimBoundary": "Dispatch-only material commit. Authorizes one no-commit worker return and one companion documentation/reference blueprint-readiness artifact only. No MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, or production-readiness claim is authorized.",
-    "nextRecommendedMove": "Worker executes MSEA-R9 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON."
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerCommitStewardPreflight": "PASS",
+    "selectedRoutingOutcome": "OPEN_ADAPTER_CONTRACT_DRAFT_ONLY",
+    "reviewerDecision": "ACCEPT_FOR_MATERIAL_COMMIT",
+    "claimBoundary": "Closed bounded documentation/reference material commit. Accepts the no-commit worker return and companion blueprint-readiness reference only. No MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
+    "nextRecommendedMove": "Author fresh MSEA-R10 GC-018/work order for documentation/reference-only MinerU adapter contract draft if operator chooses to execute OPEN_ADAPTER_CONTRACT_DRAFT_ONLY."
   }
 }

@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=MSEA-R9 worker execution under WORKER_MUST_NOT_COMMIT; parked checkpoint=R9 dispatch authorizes only one worker return and one companion documentation/reference blueprint-readiness artifact, with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_accepted_pending_msea_r10_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author fresh MSEA-R10 GC-018/work order for documentation/reference-only MinerU adapter contract draft if operator chooses `OPEN_ADAPTER_CONTRACT_DRAFT_ONLY`; parked checkpoint=no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
+Current mode marker: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_accepted_pending_msea_r10_work_order_authoring`
 
-Current mode: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
+Current mode: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_accepted_pending_msea_r10_work_order_authoring`
 
-`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
+`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_accepted_pending_msea_r10_work_order_authoring`
 
 Previous mode:
 
-`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
+`msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R9 MinerU CVF Application Blueprint And Adapter Contract Readiness Selection | `a94bb07c` | DISPATCH_READY; worker must create only the planned worker return and companion reference under WORKER_MUST_NOT_COMMIT; pre-dispatch autorun PASS 72/72, commit steward preflight PASS, material pre-commit hook PASS 79/79; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production claim |
+| None | N/A | No worker-dispatched work is currently open after MSEA-R9 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R9 MinerU CVF Application Blueprint And Adapter Contract Readiness Selection | `2a58322b` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion blueprint-readiness reference; selected `OPEN_ADAPTER_CONTRACT_DRAFT_ONLY` for a future documentation/reference-only adapter contract draft lane; worker-return fast gate PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/adapter-implementation/production claim |
 | MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `42eeb411` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and residual closure ledger after reviewer repair; accounted for 425/425 MinerU mirror files, closed the 33-file non-overlap support complement, read all 57 `mineru/model/utils` files at symbol/import/config-surface depth, and read all 9 Docker China hardware variants at command-surface depth; worker-return fast gate PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production claim |
 | MSEA-R7 MinerU Receipt Schema Contract Draft | `074144c9` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and CVF-owned receipt schema contract draft reference; worker-return fast gate PASS, reviewer-fast PASS 59/59, pre-implementation autorun PASS 74/74, material pre-commit hook PASS 79/79; no schema implementation, receipt-writer code, checker, runtime/source-import/provider-live/public/package/Web/MCP/model-router/action-authority/benchmark/production claim |
 | MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and route decision matrix after reviewer repair; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT` as the lowest-risk, highest-immediate-CVF-value next route; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/production claim |
@@ -94,6 +95,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R9 MinerU CVF Application Blueprint And Adapter Contract Readiness Selection | `2a58322b` | CLOSED_PASS_BOUNDED; selected `OPEN_ADAPTER_CONTRACT_DRAFT_ONLY`; next move is documentation/reference-only adapter contract draft GC-018/work-order authoring if operator chooses |
 | MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `42eeb411` | CLOSED_PASS_BOUNDED; accepted residual full repository absorption closure ledger with reviewer repair and bounded binary/resource limits |
 | MSEA-R7 MinerU Receipt Schema Contract Draft | `074144c9` | CLOSED_PASS_BOUNDED; created documentation/reference contract draft with receipt artifact family map, field-family map, backend variant boundary, downstream-use boundary, and `MSEA-CC-4` checker-readiness note only |
 | MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; next move is documentation/reference-only receipt schema contract draft GC-018/work-order authoring |
@@ -227,25 +229,31 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_dispatched_pending_worker_return`
+Mode: `msea_r9_mineru_cvf_application_blueprint_adapter_readiness_accepted_pending_msea_r10_work_order_authoring`
 
-Next allowed move: delegated worker executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`
-under `WORKER_MUST_NOT_COMMIT`, creates only the planned worker return and
-companion reference, then returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`.
+Next allowed move: author a fresh MSEA-R10 GC-018 baseline and source-verified
+`WORKER_MUST_NOT_COMMIT` work order for documentation/reference-only MinerU
+adapter contract draft if the operator chooses to execute
+`OPEN_ADAPTER_CONTRACT_DRAFT_ONLY`.
 
-MSEA-R9 is dispatched at material commit `a94bb07c`. The dispatch artifacts are
-`docs/baselines/CVF_GC018_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`
+MSEA-R9 is accepted at material commit `2a58322b`. The accepted artifacts are
+`docs/reviews/CVF_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md`
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_SELECTION_2026-07-02.md`.
-The worker must read ADIF-0023 and derive checker shape by output artifact
-before writing.
+`docs/reference/CVF_MSEA_R9_MINERU_CVF_APPLICATION_BLUEPRINT_AND_ADAPTER_CONTRACT_READINESS_2026-07-02.md`.
+The worker selected `OPEN_ADAPTER_CONTRACT_DRAFT_ONLY`, and reviewer/closer
+accepted that docs-only route. MSEA-R10 must use MSEA-R9, R7 receipt schema
+contract draft, R6 route decision matrix, T2 receipt/quality/RAG advisory,
+R4/R5/R8 owner surfaces, checker read-ahead by output artifact, Source
+Verification Block, External Knowledge Intake Routing, Overlap And Novelty
+Classification, Source Mirror Migration Control, Agent Handoff Contract Control
+Block, Reviewer Closure Conversion, ADIF disclosure including ADIF-0023
+applicability, and pre-dispatch autorun gates.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,
 checker implementation, source import, Web/MCP/model-router/action-authority,
-automatic invocation, benchmark, document-truth, extraction-accuracy, or production-readiness claim is authorized
+automatic invocation, benchmark, document-truth, extraction-accuracy, schema
+implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized
 unless a later fresh work order explicitly authorizes it.
 
 FPC-T4 remains CLOSED_PASS_BOUNDED at material commit `9e3c2ab0` with
@@ -254,6 +262,37 @@ CLOSED_PASS_BOUNDED at material commit `79473e5a` with
 `HOLD_ALL_DOWNSTREAM_LANES`. MFE-R1 remains CLOSED_PASS_BOUNDED at material
 commit `125c37f0`; literal trap learning remains recorded at material commit
 `faf09d46`. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R9 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`2a58322b`, including active mode, next allowed move, generated active session
+state, front door, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR9MineruCvfApplicationBlueprintDispatch20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator reported MSEA-R9 worker return complete and
+asked Codex to continue governed review/closure.
+
+Rollback boundary: revert only this MSEA-R9 closure session-sync batch if
+rejected; do not alter material commit `2a58322b` or prior accepted material
+commits.
+
+Not authorized: runtime/provider/live proof, MinerU install, source import,
+package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
+work, MCP/CLI adapter implementation, model-router work, action authority,
+automatic invocation, benchmark, document-truth, extraction-accuracy, schema
+implementation, receipt-writer code, adapter implementation, or production
+claims.
 
 ## Core Guard Self-Protection Authorization - MSEA-R4 Closure Session Sync And V32 Rotation
 
