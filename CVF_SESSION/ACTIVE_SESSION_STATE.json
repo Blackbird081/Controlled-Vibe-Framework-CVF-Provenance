@@ -72,8 +72,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return",
-  "previousMode": "msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring",
+  "currentMode": "msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection",
+  "previousMode": "msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3210,7 +3210,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R7 MinerU receipt schema contract draft dispatch committed at material commit 7aed70cb. Next allowed move: execute docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md under WORKER_MUST_NOT_COMMIT. Worker must create only docs/reviews/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_WORKER_RETURN_2026-07-02.md and docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md, run required gates, and return COMPLETE_PENDING_REVIEW, COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW, or BLOCKED_WITH_REASON. The lane is documentation/reference-only and must not run MinerU, install packages, download models, execute parser/OCR/VLM/hybrid/API/router/Gradio/Docker, call providers, use credentials/S3, write RAG indexes, import source, activate packages, implement checkers, public-sync, touch Web/MCP/model-router/action-authority, invoke actions automatically, benchmark, or claim production readiness. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R7 MinerU receipt schema contract draft accepted at material commit 074144c9. Next allowed move: operator selects the next high-value governed lane or authorizes a fresh GC-018/source-verified work order. MSEA-R7 produced docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md as documentation/reference contract-draft language only; it does not authorize schema implementation, receipt-writer code, MSEA-CC-4 checker implementation, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, or production-readiness claim. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -3629,8 +3629,10 @@
     "summary": "MSEA-R6 accepted the no-commit worker return and route decision matrix after reviewer repair. The selected next route is documentation/reference-only receipt schema contract drafting, because it has the lowest risk and highest immediate CVF value for detailed document/layer scan use cases."
   },
   "mseaR7MineruReceiptSchemaContractDraftDispatch20260702": {
-    "status": "DISPATCH_READY",
-    "materialCommit": "7aed70cb",
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "074144c9",
+    "dispatchCommit": "7aed70cb",
+    "acceptanceCommit": "074144c9",
     "preDispatchBase": "ce48461e",
     "sessionHygieneCommit": "ce48461e",
     "baseline": "docs/baselines/CVF_GC018_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md",
@@ -3644,10 +3646,13 @@
     "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
     "trackedFileCount": 425,
     "preDispatchGate": "PASS 72/72",
+    "preImplementationGate": "PASS 74/74",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
     "materialPreCommitHook": "PASS 79/79",
     "selectedRoute": "OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT",
-    "claimBoundary": "Documentation/reference receipt schema contract draft dispatch only; no MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, or production-readiness claim.",
-    "nextRecommendedMove": "Execute the no-commit MSEA-R7 worker lane and return uncommitted worker artifacts for reviewer closure conversion."
+    "claimBoundary": "Documentation/reference receipt schema contract draft accepted only; no MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, schema implementation, receipt-writer code, or production-readiness claim.",
+    "nextRecommendedMove": "Operator selects the next high-value governed lane or authorizes a fresh source-verified follow-up; MSEA-CC-4 checker or schema implementation remains parked until fresh authorization."
   },
   "kiodR1R3KnowledgeIntakeDeduplicationFoundationClosure20260630": {
     "status": "CLOSED_PASS_BOUNDED",

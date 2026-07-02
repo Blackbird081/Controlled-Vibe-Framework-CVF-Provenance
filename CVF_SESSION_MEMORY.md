@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R7 work order under WORKER_MUST_NOT_COMMIT and return uncommitted worker artifacts; parked checkpoint=MSEA-R7 remains documentation/reference-only with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authorizes a fresh GC-018/source-verified follow-up; parked checkpoint=MSEA-R7 accepted documentation/reference-only receipt schema contract draft with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
+Current mode marker: `msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
 
-Current mode: `msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
+Current mode: `msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
 
-`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
+`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`msea_r6_accepted_pending_msea_r7_receipt_schema_contract_work_order_authoring`
+`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R7 MinerU Receipt Schema Contract Draft | `7aed70cb` | DISPATCH_READY; worker must not commit; create only the worker return and receipt schema contract draft reference named in the work order |
+| None | N/A | No worker lane is currently dispatched after MSEA-R7 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R7 MinerU Receipt Schema Contract Draft | `074144c9` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and CVF-owned receipt schema contract draft reference; worker-return fast gate PASS, reviewer-fast PASS 59/59, pre-implementation autorun PASS 74/74, material pre-commit hook PASS 79/79; no schema implementation, receipt-writer code, checker, runtime/source-import/provider-live/public/package/Web/MCP/model-router/action-authority/benchmark/production claim |
 | MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and route decision matrix after reviewer repair; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT` as the lowest-risk, highest-immediate-CVF-value next route; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/production claim |
 | MSEA-R5 MinerU Deep Document Layer Scan Absorption | `1bac8163` | CLOSED_PASS_BOUNDED; accepted no-commit worker return; source mirror reconciled 425/425 and R5 target subset reconciled 373/373; new deferred candidates recorded for `mineru/utils/llm_aided.py`, `mineru/data/io/s3.py`, RagFlow parser integration, and output receipt schema evidence; `PARTIAL` blind-spot verdict retained for bounded listing-depth areas |
 | MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair; source mirror reconciled 425/425 with matching commit/count/hash; CLI/Docker candidate evidence recorded; `PARTIAL` blind-spot verdict routes deep `docs/` and non-CLI `mineru/` absorption to the current next move |
@@ -92,6 +93,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R7 MinerU Receipt Schema Contract Draft | `074144c9` | CLOSED_PASS_BOUNDED; created documentation/reference contract draft with receipt artifact family map, field-family map, backend variant boundary, downstream-use boundary, and `MSEA-CC-4` checker-readiness note only |
 | MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; next move is documentation/reference-only receipt schema contract draft GC-018/work-order authoring |
 | MSEA-R5 MinerU Deep Document Layer Scan Absorption | `1bac8163` | CLOSED_PASS_BOUNDED; deep document-layer scan absorption accepted with deferred candidate evidence and no runtime/source-import/provider/live/public/package/checker claim |
 | MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted bounded source-mirror absorption with `PARTIAL` blind-spot verdict and deep absorption authoring route |
@@ -223,17 +225,13 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
+Mode: `msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
 
-Next allowed move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`
-under `WORKER_MUST_NOT_COMMIT`. The worker creates only
-`docs/reviews/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_WORKER_RETURN_2026-07-02.md`
-and
-`docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`,
-runs required gates, leaves changes uncommitted, and returns
-`COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, or
-`BLOCKED_WITH_REASON`.
+Next allowed move: operator selects the next high-value governed lane or
+authorizes a fresh GC-018/source-verified work order. MSEA-R7 accepted
+`docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`
+as documentation/reference contract-draft language only; it does not authorize
+schema implementation, receipt-writer code, or `MSEA-CC-4` checker work.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,

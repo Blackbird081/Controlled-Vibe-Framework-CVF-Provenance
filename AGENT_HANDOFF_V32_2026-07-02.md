@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R7 work order under WORKER_MUST_NOT_COMMIT and return uncommitted worker artifacts; parked checkpoint=MSEA-R7 is documentation/reference-only and no runtime/package/checker/source-import/public/provider/live claim is authorized.
+Startup acknowledged: current mode=`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authorizes a fresh GC-018/source-verified follow-up; parked checkpoint=MSEA-R7 accepted documentation/reference-only contract draft and no runtime/package/checker/source-import/public/provider/live claim is authorized.
 
 ## Current State
 
@@ -42,17 +42,33 @@ Startup acknowledged: current mode=`msea_r7_mineru_receipt_schema_contract_draft
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `7aed70cb` MSEA-R7 MinerU receipt schema contract draft dispatch |
-| Latest session-sync target | session sync after MSEA-R7 dispatch |
+| Latest material packet | `074144c9` MSEA-R7 MinerU receipt schema contract draft closure |
+| Latest session-sync target | session sync after MSEA-R7 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r7_mineru_receipt_schema_contract_draft_dispatched_pending_worker_return`
+`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
-MSEA-R7 MinerU receipt schema contract draft dispatch is committed at material
+MSEA-R7 MinerU receipt schema contract draft is accepted at material commit
+`074144c9`. The accepted worker return and contract draft are
+`docs/reviews/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_WORKER_RETURN_2026-07-02.md`
+and
+`docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`.
+The draft records receipt artifact family mapping, field-family mapping,
+backend variant boundary, downstream-use boundary, and a future
+`MSEA-CC-4` checker-readiness note only. Worker-return fast gate passed,
+reviewer-fast passed 59/59, pre-implementation autorun passed 74/74, and
+material pre-commit hook passed 79/79. This closure does not authorize schema
+implementation, receipt-writer code, checker implementation, MinerU runtime,
+install, model download, parser/OCR/VLM/hybrid execution, provider/live proof,
+credential/S3/RAG use, source import, package activation, public-sync,
+Web/MCP/model-router/action-authority, automatic invocation, benchmark, or
+production-readiness claim.
+
+MSEA-R7 MinerU receipt schema contract draft dispatch was committed at material
 commit `7aed70cb`. The dispatch artifacts are
 `docs/baselines/CVF_GC018_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`
 and
@@ -119,20 +135,13 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-Execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`
-under `WORKER_MUST_NOT_COMMIT`. The worker must create only
-`docs/reviews/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_WORKER_RETURN_2026-07-02.md`
-and
-`docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md`,
-run required gates, leave changes uncommitted, and return
-`COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, or
-`BLOCKED_WITH_REASON`.
-
-MSEA-R7 is documentation/reference-only. No install, model download, execution,
-source import, credential/S3 use, RAG write, package activation, checker
-implementation, provider/live proof, public-sync, Web/MCP/model-router/
-action-authority, automatic invocation, benchmark, or production claim is
+Operator selects the next high-value governed lane or authorizes a fresh
+GC-018/source-verified work order. MSEA-R7 is now accepted as
+documentation/reference-only contract-draft work. Schema implementation,
+receipt-writer code, `MSEA-CC-4` checker implementation, MinerU install,
+model download, execution, source import, credential/S3 use, RAG write,
+package activation, provider/live proof, public-sync, Web/MCP/model-router/
+action-authority, automatic invocation, benchmark, or production claim is not
 authorized now.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
@@ -545,6 +554,74 @@ invocation, benchmark, or production readiness.
 | Claim boundary | session continuity, next-move routing, and MSEA-R7 dispatch recording only |
 | Agent type | Codex reviewer/session-sync steward |
 | Invocation ID | `msea-r7-dispatch-session-sync-2026-07-02` |
+| Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
+| Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync batch. |
+
+## Core Guard Self-Protection Authorization - MSEA-R7 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`074144c9`, including active mode, next allowed move, generated active session
+state, front-door continuity, dispatch/closure entry update, and this active
+handoff marker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json`
+
+Operator authorization: operator reported MSEA-R7 worker completion; reviewer
+accepted material commit `074144c9`. This update records closure and returns
+the session to operator next-lane selection. It does not authorize runtime
+execution, source import, provider/live proof, public-sync, package activation,
+checker implementation, action authority, schema implementation, receipt-writer
+code, or production claim.
+
+Rollback boundary: revert only this MSEA-R7 closure session-sync if rejected;
+do not revert material commit `074144c9`, dispatch commit `7aed70cb`, or prior
+MSEA-R6/MSEA-R7 session-sync commits.
+
+## GC-020 HEAD Marker - MSEA-R7 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`074144c9`
+
+Full SHA:
+
+`074144c91915d70f75f8cd38c73bc41113ed8628`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`074144c9`. It records MSEA-R7 closure only and does not claim MinerU runtime
+behavior, source import, provider/live proof, credential/S3/RAG use,
+public-sync, package activation, checker implementation, MCP/CLI adapter
+behavior, model-router work, action authority, automatic invocation, benchmark,
+schema implementation, receipt-writer code, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R7 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | MSEA-R7 closure session-sync, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active-session generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
+| Allowed scope source | material commit `074144c9` accepting MSEA-R7 worker return and receipt schema contract draft |
+| Before status evidence | material HEAD `074144c9`; session-sync worktree started clean after material commit |
+| After status evidence | active session state regenerated; front door and active handoff route next move to operator lane selection; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before session-sync commit |
+| Approval boundary | bounded session-sync after MSEA-R7 closure material commit |
+| Claim boundary | session continuity, next-move routing, and MSEA-R7 closure recording only |
+| Agent type | Codex reviewer/session-sync steward |
+| Invocation ID | `msea-r7-closure-session-sync-2026-07-02` |
 | Expected manifest | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
 | Actual changed set | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR7MineruReceiptSchemaContractDraftDispatch20260702.json` |
 | Manifest delta | MATCH |
