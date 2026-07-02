@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V31_2026-07-02.md`
+4. `AGENT_HANDOFF_V32_2026-07-02.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,32 +24,32 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V31_2026-07-02.md` |
+| Active handoff | `AGENT_HANDOFF_V32_2026-07-02.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=execute MSEA-R4 `WORKER_MUST_NOT_COMMIT` work order at material commit `d44c4646`; parked checkpoint=worker may create only the MSEA-R4 worker return and MinerU owner-surface delta reference, must recompute source mirror evidence from `.private_reference/source_mirrors/opendatalab__MinerU/`, and must not perform MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/production work; FPC-T4, FPC-DLR-T1, MFE-R1, and literal trap learning remain closed/recorded, KIOD runtime candidates remain parked, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=author fresh MSEA-R5 GC-018/work order for deep MinerU detailed document/layer scan absorption; parked checkpoint=MSEA-R4 accepted at material commit `a6ddd8ba` with reviewer hash/Docker evidence repair, 425/425 count/hash reconciliation, CLI/Docker candidate evidence, and `PARTIAL` blind-spot verdict for `docs/` plus non-CLI `mineru/`; no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/production work is authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
+Current mode marker: `msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
 
-Current mode: `msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
+Current mode: `msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
 
-`msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
+`msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
 
 Previous mode:
 
-`mineru_source_mirror_pinned_pending_source_verified_absorption_work_order_authoring`
+`msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R4 MinerU Upstream Source Mirror Absorption | `d44c4646` | DISPATCH_READY; `WORKER_MUST_NOT_COMMIT`; worker creates only `docs/reviews/CVF_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_WORKER_RETURN_2026-07-02.md` and `docs/reference/CVF_MSEA_R4_MINERU_UPSTREAM_OWNER_SURFACE_DELTA_2026-07-02.md` |
+| None | N/A | No active dispatched worker work after MSEA-R4 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted no-commit worker return after reviewer repair; source mirror reconciled 425/425 with matching commit/count/hash; CLI/Docker candidate evidence recorded; `PARTIAL` blind-spot verdict routes deep `docs/` and non-CLI `mineru/` absorption to MSEA-R5 work-order authoring |
 | FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`; Model Gateway remains held behind FPC-DLR-T1 runtime-provider-live evidence and Sandbox Runtime remains held behind unresolved `DESIGN_REVIEW_REQUIRED` evidence |
 | Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; future `WORKER_MUST_NOT_COMMIT` work orders use compact `WORKER_RETURN_FULL_GATE_V1` profile plus worker-return fast gate command instead of a long repeated checker-section inventory |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; selected `HOLD_ALL_DOWNSTREAM_LANES` because no source-backed reopen condition is met for `use-case-adapter-public`, `runtime-provider-live`, or `MPI-T6-runtime` |
@@ -89,6 +90,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R4 MinerU Upstream Source Mirror Absorption | `a6ddd8ba` | CLOSED_PASS_BOUNDED; accepted bounded source-mirror absorption with `PARTIAL` blind-spot verdict and next MSEA-R5 deep absorption authoring route |
 | FPC-T4 Strategic Capability Decision And Source-Backed Route Selection | `9e3c2ab0` | CLOSED_PASS_BOUNDED; selected `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP` |
 | Work Order Authoring Compact Worker Return Gate Hardening | `f8ad5380` | CLOSED_PASS_BOUNDED; compact no-commit worker-return full-gate profile is now documented, scaffolded, and enforced by dispatch-quality validation |
 | FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; downstream lanes remain held under `HOLD_ALL_DOWNSTREAM_LANES` |
@@ -217,23 +219,21 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r4_mineru_upstream_source_mirror_absorption_dispatched_pending_worker_return`
+Mode: `msea_r4_closed_pass_bounded_pending_msea_r5_deep_absorption_work_order_authoring`
 
-Next allowed move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-07-02.md`
-from material commit `d44c4646` under `WORKER_MUST_NOT_COMMIT`. Worker must
-create only
-`docs/reviews/CVF_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_WORKER_RETURN_2026-07-02.md`
-and
-`docs/reference/CVF_MSEA_R4_MINERU_UPSTREAM_OWNER_SURFACE_DELTA_2026-07-02.md`,
-recompute source mirror remote/commit/count/hash evidence, compare the current
-MinerU mirror against MSEA-T0/T1/T2/T3 and CVF owner surfaces, and include all
-required work-order control blocks and no-commit evidence.
+Next allowed move: author a fresh source-verified MSEA-R5 GC-018 baseline and
+`WORKER_MUST_NOT_COMMIT` work order for deep MinerU detailed document/layer
+scan absorption. Target the R4 declared depth gaps and high-value use-case
+surfaces: per-file or file-row-compact review of `docs/`, `mineru/backend`,
+`mineru/data`, `mineru/model`, `mineru/resources`, `mineru/utils`, and Docker
+content verification, mapped to layout/OCR/table/formula/reading-order/
+Markdown-JSON/RAG-handoff/receipt-quality claim boundaries.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
-Docker/RAG/provider-live/public-sync/package/checker/source-import/Web/MCP/
-model-router/action-authority/automatic-invocation/production-readiness claim
-is authorized.
+Docker/RAG execution, provider-live proof, public-sync, package activation,
+checker implementation, source import, Web/MCP/model-router/action-authority,
+automatic invocation, benchmark, or production-readiness claim is authorized
+unless a later fresh work order explicitly authorizes it.
 
 FPC-T4 remains CLOSED_PASS_BOUNDED at material commit `9e3c2ab0` with
 `HOLD_NO_SOURCE_BACKED_STRATEGIC_GAP`. FPC-DLR-T1 remains
@@ -241,6 +241,36 @@ CLOSED_PASS_BOUNDED at material commit `79473e5a` with
 `HOLD_ALL_DOWNSTREAM_LANES`. MFE-R1 remains CLOSED_PASS_BOUNDED at material
 commit `125c37f0`; literal trap learning remains recorded at material commit
 `faf09d46`. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R4 Closure Session Sync And V32 Rotation
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`a6ddd8ba`, including active handoff rotation from V31 to V32.
+
+Protected paths:
+
+- `AGENTS.md`
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR4MineruUpstreamSourceMirrorAbsorptionClosure20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: user asked reviewer to inspect MSEA-R4 completion and
+add follow-up requirements because MinerU has high value for detailed
+document/layer scan use cases.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material commit `a6ddd8ba` or prior accepted material commits.
+
+Authorization boundary: session-sync and handoff rotation only. No MinerU
+install, runtime, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG execution, provider/live proof, source import, package activation,
+checker implementation, public-sync, Web/MCP/model-router work, action
+authority, automatic invocation, benchmark, or production claim is authorized.
 
 ## Core Guard Self-Protection Authorization - MSEA-R4 Dispatch Session Sync
 
@@ -255,7 +285,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/mseaR4MineruUpstreamSourceMirrorAbsorptionDispatch20260702.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `AGENT_HANDOFF_V31_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`
 
 Operator authorization: user requested the MinerU absorption work order after
 fresh clone into `source_mirrors`.
@@ -283,7 +313,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/mineruSourceMirrorRefresh20260702.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `AGENT_HANDOFF_V31_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`
 
 Operator authorization: user requested a fresh clone into `source_mirrors`
 instead of reusing old source.
@@ -295,7 +325,7 @@ commits.
 | Protected path | Authorized session-sync action |
 |---|---|
 | `CVF_SESSION_MEMORY.md` | Update current mode, startup acknowledgment, next allowed move, and session-sync authorization after MinerU source mirror material commit `ae7d5607`. |
-| `AGENT_HANDOFF_V31_2026-07-02.md` | Record MinerU source mirror continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` | Record MinerU source mirror continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after MinerU source mirror session-sync. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for MinerU source mirror pinned pending work-order authoring. |
@@ -322,7 +352,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionClosure20260702.json`
 - `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionDispatch20260702.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `AGENT_HANDOFF_V31_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`
 
 Operator authorization: implied by governed reviewer/closer session-sync after
 accepted FPC-T4 material worker-return commit.
@@ -334,7 +364,7 @@ commits.
 | Protected path | Authorized session-sync action |
 |---|---|
 | `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed/latest work, startup acknowledgment, and next allowed move after FPC-T4 material worker-return commit `9e3c2ab0`. |
-| `AGENT_HANDOFF_V31_2026-07-02.md` | Record FPC-T4 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` | Record FPC-T4 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after FPC-T4 closure session-sync. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for FPC-T4 closed pending operator next lane selection. |
@@ -362,7 +392,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/fpcT4StrategicCapabilityDecisionDispatch20260702.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `AGENT_HANDOFF_V31_2026-07-02.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`
 
 Operator authorization: explicit operator approval to proceed with option 1,
 confirmed as FPC-T4 decision-only dispatch.
@@ -374,7 +404,7 @@ commits.
 | Protected path | Authorized session-sync action |
 |---|---|
 | `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after FPC-T4 material dispatch commit `680f14d3`. |
-| `AGENT_HANDOFF_V31_2026-07-02.md` | Record FPC-T4 dispatch continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` | Record FPC-T4 dispatch continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after FPC-T4 dispatch session-sync. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for FPC-T4 dispatched pending worker return. |
@@ -400,7 +430,7 @@ Protected paths: `CVF_SESSION_MEMORY.md`,
 `CVF_SESSION/state/entries/fpcDlrT1DownstreamReopenEvidenceAuditClosure20260702.json`,
 `CVF_SESSION/state/entries/fpcDlrT1DownstreamReopenEvidenceAuditDispatch20260702.json`,
 `CVF_SESSION/state/entries/nextAllowedMove.json`, and
-`AGENT_HANDOFF_V31_2026-07-02.md`.
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`.
 
 Authorization boundary: session-sync only. No downstream implementation,
 runtime/provider/live proof, source import, public-sync, Web/UI dashboard,
@@ -420,7 +450,7 @@ Protected paths: `CVF_SESSION_MEMORY.md`,
 `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
 `CVF_SESSION/state/entries/fpcDlrT1DownstreamReopenEvidenceAuditDispatch20260702.json`,
 `CVF_SESSION/state/entries/nextAllowedMove.json`, and
-`AGENT_HANDOFF_V31_2026-07-02.md`.
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md`.
 
 Authorization boundary: session-sync only. No worker execution,
 runtime/provider/live proof, source import, public-sync, Web/UI dashboard,
