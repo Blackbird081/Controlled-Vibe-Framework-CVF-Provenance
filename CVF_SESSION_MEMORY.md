@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author MSEA-R11-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for productization-readiness route selection; parked checkpoint=no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R11-T1 route-selection work order under WORKER_MUST_NOT_COMMIT and returns worker-return plus companion decision matrix only; parked checkpoint=no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
+Current mode marker: `msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
 
-Current mode: `msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
+Current mode: `msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
 
-`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
+`msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r10_mineru_adapter_contract_draft_accepted_pending_msea_r11_roadmap_authoring`
+`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No dispatched worker work is currently open after MSEA-R11 roadmap; next move is R11-T1 GC-018/work-order authoring |
+| MSEA-R11-T1 MinerU Productization Readiness Route Selection | `3e5f54ce` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must create only the named worker return and companion decision matrix under WORKER_MUST_NOT_COMMIT; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 
 ## Current Held Follow-Up Work
 
@@ -231,22 +231,23 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
+Mode: `msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
 
-Next allowed move: author MSEA-R11-T1 GC-018 baseline and source-verified
-WORKER_MUST_NOT_COMMIT work order for productization-readiness route selection
-after MSEA-R11 roadmap material commit `30a15322`.
+Next allowed move: delegated worker executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_2026-07-03.md`
+under WORKER_MUST_NOT_COMMIT after material dispatch commit `3e5f54ce`.
 
-R11-T1 must use the R11 roadmap, R10 adapter contract draft, R7 receipt schema
-contract draft, R8 residual closure ledger, R9 application blueprint readiness,
-and current MinerU source mirror owner surfaces.
+Worker may create only
+`docs/reviews/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_WORKER_RETURN_2026-07-03.md`
+and
+`docs/reference/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_DECISION_MATRIX_2026-07-03.md`,
+then return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,
 checker implementation, source import, Web/MCP/model-router/action-authority,
 automatic invocation, benchmark, document-truth, extraction-accuracy, schema
-implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized
-unless a later fresh work order explicitly authorizes it.
+implementation, receipt-writer code, adapter implementation, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
 
