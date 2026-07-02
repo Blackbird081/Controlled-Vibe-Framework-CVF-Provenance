@@ -2,11 +2,14 @@
   "stateOrder": 691,
   "stateKey": "mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-02",
-    "materialCommit": "4d9748bc",
+    "materialCommit": "42eeb411",
     "dispatchCommit": "4d9748bc",
+    "acceptanceCommit": "42eeb411",
+    "closureCommit": "42eeb411",
     "dispatchBaseHead": "825c454d",
+    "executionBaseHead": "ad60c42d",
     "baseline": "docs/baselines/CVF_GC018_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md",
     "workerReturnPath": "docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md",
@@ -27,8 +30,11 @@
       "docs assets/images/chemical demo binaries 92"
     ],
     "preDispatchGate": "PASS 72/72",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
     "materialPreCommitHook": "PASS 79/79",
-    "claimBoundary": "Dispatch-only material commit. Authorizes MSEA-R8 no-commit worker execution for documentation/reference residual source-mirror absorption ledger only; no MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, or production-readiness claim.",
-    "nextRecommendedMove": "MSEA-R8 worker executes under WORKER_MUST_NOT_COMMIT and returns the worker return plus residual ledger uncommitted for reviewer/closer acceptance."
+    "reviewerDecision": "ACCEPTED_WITH_REVIEWER_REPAIR",
+    "claimBoundary": "Closure material commit accepted MSEA-R8 documentation/reference residual source-mirror absorption ledger only; no MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, or production-readiness claim.",
+    "nextRecommendedMove": "Operator selects the next high-value governed lane, or authors a fresh GC-018/source-verified work order only if a concrete source-backed MinerU follow-up is selected."
   }
 }

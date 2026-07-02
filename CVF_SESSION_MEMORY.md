@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=MSEA-R8 worker execution under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=R8 is documentation/reference residual source-mirror absorption only, with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authors a fresh GC-018/source-verified work order only after selecting a concrete source-backed MinerU follow-up; parked checkpoint=R8 accepted documentation/reference residual source-mirror absorption only, with no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
+Current mode marker: `msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
 
-Current mode: `msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
+Current mode: `msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
 
-`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
+`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`msea_r7_receipt_schema_contract_draft_accepted_pending_operator_next_lane_selection`
+`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `4d9748bc` | DISPATCH_READY; `WORKER_MUST_NOT_COMMIT`; worker must create only `docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md` and `docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`; residual target groups are `.github`, root files, root `demo`, `projects`, `tests`, `mineru/model/utils`, Docker China hardware variants, and docs asset/binary groups; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production claim |
+| None | N/A | No worker lane is currently dispatched after MSEA-R8 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `42eeb411` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and residual closure ledger after reviewer repair; accounted for 425/425 MinerU mirror files, closed the 33-file non-overlap support complement, read all 57 `mineru/model/utils` files at symbol/import/config-surface depth, and read all 9 Docker China hardware variants at command-surface depth; worker-return fast gate PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production claim |
 | MSEA-R7 MinerU Receipt Schema Contract Draft | `074144c9` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and CVF-owned receipt schema contract draft reference; worker-return fast gate PASS, reviewer-fast PASS 59/59, pre-implementation autorun PASS 74/74, material pre-commit hook PASS 79/79; no schema implementation, receipt-writer code, checker, runtime/source-import/provider-live/public/package/Web/MCP/model-router/action-authority/benchmark/production claim |
 | MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and route decision matrix after reviewer repair; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT` as the lowest-risk, highest-immediate-CVF-value next route; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/production claim |
 | MSEA-R5 MinerU Deep Document Layer Scan Absorption | `1bac8163` | CLOSED_PASS_BOUNDED; accepted no-commit worker return; source mirror reconciled 425/425 and R5 target subset reconciled 373/373; new deferred candidates recorded for `mineru/utils/llm_aided.py`, `mineru/data/io/s3.py`, RagFlow parser integration, and output receipt schema evidence; `PARTIAL` blind-spot verdict retained for bounded listing-depth areas |
@@ -93,6 +94,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `42eeb411` | CLOSED_PASS_BOUNDED; accepted residual full repository absorption closure ledger with reviewer repair and bounded binary/resource limits |
 | MSEA-R7 MinerU Receipt Schema Contract Draft | `074144c9` | CLOSED_PASS_BOUNDED; created documentation/reference contract draft with receipt artifact family map, field-family map, backend variant boundary, downstream-use boundary, and `MSEA-CC-4` checker-readiness note only |
 | MSEA-R6 MinerU Application Route Decision And Adapter Readiness Selection | `2d0b05c4` | CLOSED_PASS_BOUNDED; selected `OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT`; next move is documentation/reference-only receipt schema contract draft GC-018/work-order authoring |
 | MSEA-R5 MinerU Deep Document Layer Scan Absorption | `1bac8163` | CLOSED_PASS_BOUNDED; deep document-layer scan absorption accepted with deferred candidate evidence and no runtime/source-import/provider/live/public/package/checker claim |
@@ -225,15 +227,19 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
+Mode: `msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
 
-Next allowed move: MSEA-R8 worker executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
-under `WORKER_MUST_NOT_COMMIT`. The worker must return
+Next allowed move: operator selects the next high-value governed lane, or an
+agent authors a fresh GC-018/source-verified work order only if a concrete
+source-backed MinerU follow-up is selected.
+
+MSEA-R8 is accepted at material commit `42eeb411`. The accepted worker return
+and residual ledger are
 `docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md`
 and
-`docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
-uncommitted for reviewer/closer conversion.
+`docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`.
+Reviewer repair closed the declared read-depth gaps for all 57
+`mineru/model/utils` files and all 9 Docker China hardware variants.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,

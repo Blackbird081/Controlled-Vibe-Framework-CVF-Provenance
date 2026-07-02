@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=MSEA-R8 worker execution under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=R8 is documentation/reference residual source-mirror absorption only, with no runtime/package/checker/source-import/public/provider/live/document-truth/extraction-accuracy claim authorized.
+Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next high-value governed lane or authors a fresh GC-018/source-verified work order only after selecting a concrete source-backed MinerU follow-up; parked checkpoint=R8 accepted documentation/reference residual source-mirror absorption only, with no runtime/package/checker/source-import/public/provider/live/document-truth/extraction-accuracy claim authorized.
 
 ## Current State
 
@@ -42,30 +42,30 @@ Startup acknowledged: current mode=`msea_r8_mineru_residual_full_repository_abso
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `4d9748bc` MSEA-R8 MinerU residual full repository absorption dispatch |
-| Latest session-sync target | session sync after MSEA-R8 dispatch |
+| Latest material packet | `42eeb411` MSEA-R8 MinerU residual full repository absorption closure |
+| Latest session-sync target | session sync after MSEA-R8 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r8_mineru_residual_full_repository_absorption_dispatched_pending_worker_return`
+`msea_r8_mineru_residual_full_repository_absorption_accepted_pending_operator_next_lane_selection`
 
 ## Latest Changes
 
-MSEA-R8 MinerU residual full repository absorption closure ledger dispatch was
-committed at material commit `4d9748bc`. The dispatch artifacts are
-`docs/baselines/CVF_GC018_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
-and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`.
-The worker lane is `WORKER_MUST_NOT_COMMIT` and must create only
+MSEA-R8 MinerU residual full repository absorption closure ledger is accepted
+at material commit `42eeb411`. The accepted worker return and residual ledger
+are
 `docs/reviews/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_WORKER_RETURN_2026-07-02.md`
 and
-`docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
-for reviewer/closer conversion. The residual target groups are `.github`,
-root files, root `demo`, `projects`, `tests`, `mineru/model/utils`, Docker
-China hardware variants, and docs asset/binary groups. Pre-dispatch autorun
-passed 72/72, commit steward preflight passed, and material pre-commit hook
-passed 79/79. No MinerU runtime, install, model download,
+`docs/reference/CVF_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`.
+Reviewer repair closed the worker-declared read-depth gaps by loading all 57
+`mineru/model/utils` files for symbol/import/config-surface evidence and all
+9 Docker China hardware variants for command-surface evidence. The closure
+accounts for 425/425 MinerU source-mirror files, including the 33-file
+non-overlap support complement, while retaining bounded binary/resource
+semantic-content limits. Worker-return fast gate passed, reviewer-fast passed
+59/59, material pre-commit hook passed 79/79, and closure pre-commit checks
+passed. No MinerU runtime, install, model download,
 parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run,
 provider/live proof, credential/S3/RAG use, source import, package activation,
 checker implementation, public-sync, Web/MCP/model-router/action-authority,
@@ -155,10 +155,10 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-MSEA-R8 worker executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R8_MINERU_RESIDUAL_FULL_REPOSITORY_ABSORPTION_CLOSURE_LEDGER_2026-07-02.md`
-under `WORKER_MUST_NOT_COMMIT`. The worker must return the named worker return
-and residual ledger reference uncommitted for reviewer/closer conversion.
+Operator selects the next high-value governed lane, or an agent authors a
+fresh GC-018/source-verified work order only if a concrete source-backed
+MinerU follow-up is selected. MSEA-R8 is accepted at material commit
+`42eeb411`, and no worker lane is currently dispatched.
 MinerU install, model download, execution, source import, credential/S3 use,
 RAG write, package activation, provider/live proof, public-sync,
 Web/MCP/model-router/action-authority, automatic invocation, benchmark,
@@ -167,6 +167,34 @@ document-truth, extraction-accuracy, or production claim is not authorized now.
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
 LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R8 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`42eeb411`, including active mode, next allowed move, generated active session
+state, front-door continuity, and this active handoff marker.
+
+Protected paths:
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702.json`
+
+Operator authorization: user asked to continue after the MSEA-R8 worker return
+completed, and reviewer accepted the return with bounded repair.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material commit `42eeb411` or prior accepted material commits.
+
+Not authorized: runtime/provider/live proof, MinerU install, source import,
+package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
+work, MCP/CLI adapter implementation, model-router work, action authority,
+automatic invocation, benchmark, document-truth, extraction-accuracy, or
+production claims.
 
 ## Core Guard Self-Protection Authorization - MSEA-R6 Closure Session Sync
 
@@ -306,6 +334,39 @@ package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
 work, MCP/CLI adapter implementation, model-router work, action authority,
 automatic invocation, benchmark, or production claims.
+
+## GC-020 HEAD Marker - MSEA-R8 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`42eeb411`
+
+Full SHA:
+
+`42eeb411766499c84da42eee2fd17c941c5ade6c`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`42eeb411`. It records accepted MSEA-R8 documentation/reference residual
+source-mirror absorption only after reviewer repair and routes any follow-up to
+operator lane selection or fresh GC-018/source-verified work-order authoring.
+
+## Agent Operation Trace Block - MSEA-R8 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | MSEA-R8 closure session-sync, 2026-07-02 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active-session generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V32_2026-07-02.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/mseaR8MineruResidualFullRepositoryAbsorptionDispatch20260702.json` |
+| Allowed scope source | operator request to continue after MSEA-R8 worker return completion and material commit `42eeb411` accepting the return |
+| Before status evidence | material HEAD `42eeb411`; session-sync worktree started clean after material commit |
+| After status evidence | active session state regenerated; front door and active handoff route next move to operator lane selection; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `git diff --cached --name-status` before session-sync commit |
+| Approval boundary | bounded session-sync after MSEA-R8 closure material commit |
+| Claim boundary | session continuity, next-move routing, and MSEA-R8 closure recording only |
+| Agent type | Codex reviewer/session-sync steward |
 
 ## GC-020 HEAD Marker - MSEA-R4 Closure
 
