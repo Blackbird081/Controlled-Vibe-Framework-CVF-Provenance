@@ -30,7 +30,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=execute MSEA-R5 under `WORKER_MUST_NOT_COMMIT` and return worker artifacts for review; parked checkpoint=MSEA-R4 is accepted at material commit `a6ddd8ba` with `PARTIAL` blind-spot verdict and no runtime/package/checker/source-import/public/provider/live claim.
+Startup acknowledged: current mode=`msea_r5_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V32_2026-07-02.md; next allowed move=operator selects the next MinerU route through fresh GC-018/source-verified work order, or holds all implementation lanes; parked checkpoint=MSEA-R5 is accepted at material commit `1bac8163` with `PARTIAL` blind-spot verdict and no runtime/package/checker/source-import/public/provider/live claim.
 
 ## Current State
 
@@ -42,23 +42,30 @@ Startup acknowledged: current mode=`msea_r5_deep_document_layer_scan_absorption_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V31_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `7bb7b509` MSEA-R5 MinerU deep document layer scan absorption dispatch |
-| Latest session-sync target | session sync after MSEA-R5 dispatch |
+| Latest material packet | `1bac8163` MSEA-R5 MinerU deep document layer scan absorption acceptance |
+| Latest session-sync target | session sync after MSEA-R5 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r5_deep_document_layer_scan_absorption_dispatched_pending_worker_return`
+`msea_r5_accepted_pending_next_mineru_route_decision`
 
 ## Latest Changes
 
-MSEA-R5 MinerU deep document layer scan absorption was dispatched at material
-commit `7bb7b509`. The dispatch artifacts are
+MSEA-R5 MinerU deep document layer scan absorption is accepted at material
+commit `1bac8163`. The accepted worker return and owner-surface delta are
+`docs/reviews/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_WORKER_RETURN_2026-07-02.md`
+and
+`docs/reference/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_OWNER_SURFACE_DELTA_2026-07-02.md`.
+The source mirror reconciled 425/425 and the R5 target subset reconciled
+373/373. New deferred candidate evidence records `mineru/utils/llm_aided.py`,
+`mineru/data/io/s3.py`, RagFlow built-in parser integration evidence, and
+output receipt schema evidence. The blind-spot verdict remains `PARTIAL`.
+
+The MSEA-R5 dispatch artifacts remain
 `docs/baselines/CVF_GC018_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md`.
-The work order is `WORKER_MUST_NOT_COMMIT` and targets the 373-file R5 subset
-covering `docs/`, non-CLI `mineru/` internals, and Docker content.
 
 MSEA-R4 MinerU upstream source mirror absorption is accepted at material commit
 `a6ddd8ba`. The accepted worker return is
@@ -81,23 +88,13 @@ invocation, benchmark, or production-readiness claim is made.
 
 ## Next Allowed Move
 
-Execute the MSEA-R5 `WORKER_MUST_NOT_COMMIT` work order and return
-`COMPLETE_PENDING_REVIEW`, `COMPLETE_WITH_LIMITATIONS_PENDING_REVIEW`, or
-`BLOCKED_WITH_REASON`. Worker must create only:
-
-- `docs/reviews/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_WORKER_RETURN_2026-07-02.md`
-- `docs/reference/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_OWNER_SURFACE_DELTA_2026-07-02.md`
-
-Worker must reconcile the pinned source mirror, recompute the 373-file R5
-target subset, and map value to layout, OCR, table, formula, reading order,
-Markdown/JSON output, RAG handoff, receipt quality, privacy/storage, and Docker
-deployment boundaries.
-
-R5 must remain documentation/reference absorption unless a later fresh
-authorization explicitly allows runtime. No install, model download,
-execution, source import, package activation, checker implementation,
-provider/live proof, public-sync, Web/MCP/model-router/action-authority,
-automatic invocation, benchmark, or production claim is authorized now.
+Operator selects the next MinerU route through fresh GC-018/source-verified
+work order, or holds all implementation lanes. R5 evidence may inform a later
+bounded route-decision tranche, but it does not authorize runtime. No install,
+model download, execution, source import, package activation, checker
+implementation, provider/live proof, public-sync, Web/MCP/model-router/
+action-authority, automatic invocation, benchmark, or production claim is
+authorized now.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
@@ -124,6 +121,33 @@ work order after MSEA-R4, and material commit `7bb7b509` dispatched that
 
 Rollback boundary: revert only this session-sync batch if rejected; do not
 alter material commit `7bb7b509` or prior accepted material commits.
+
+Not authorized: runtime/provider/live proof, MinerU install, source import,
+package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
+Docker/RAG execution, checker implementation, public-sync, Web/UI dashboard
+work, MCP/CLI adapter implementation, model-router work, action authority,
+automatic invocation, benchmark, or production claims.
+
+## Core Guard Self-Protection Authorization - MSEA-R5 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`1bac8163`, including active mode, next allowed move, generated active session
+state, front-door continuity, and this active handoff marker.
+
+Protected paths:
+- `AGENT_HANDOFF_V32_2026-07-02.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR5MineruDeepDocumentLayerScanAbsorptionClosure20260702.json`
+
+Operator authorization: user asked reviewer to check the MSEA-R5 worker return
+and continue after the worker completed the deeper MinerU absorption lane.
+
+Rollback boundary: revert only this session-sync batch if rejected; do not
+alter material commit `1bac8163` or prior accepted material commits.
 
 Not authorized: runtime/provider/live proof, MinerU install, source import,
 package activation, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
@@ -223,6 +247,21 @@ execution, source import, runtime/provider/live proof, public-sync, package
 activation, checker implementation, MCP/CLI adapter behavior, model-router
 work, action authority, automatic invocation, benchmark, or production
 readiness.
+
+## GC-020 HEAD Marker - MSEA-R5 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`1bac8163`
+
+Full SHA:
+
+`1bac8163e657c31a36b7011849b5c2a9277c4c3b`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`1bac8163`. It records accepted MSEA-R5 documentation/reference absorption
+only and routes any MinerU follow-up through fresh GC-018/source-verified work
+order selection.
 
 ## Agent Operation Trace Block
 
