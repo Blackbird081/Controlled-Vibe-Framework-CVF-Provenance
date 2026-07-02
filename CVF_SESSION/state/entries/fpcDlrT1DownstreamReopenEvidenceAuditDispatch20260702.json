@@ -2,7 +2,7 @@
   "stateOrder": 1374,
   "stateKey": "fpcDlrT1DownstreamReopenEvidenceAuditDispatch20260702",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED_BY_79473E5A",
     "date": "2026-07-02",
     "materialCommit": "9aa9900c",
     "materialCommitFull": "9aa9900ccc715898126b27f78869a537d55f7a45",
@@ -19,6 +19,9 @@
       "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base ceba1200 --head HEAD --enforce PASS",
       "pre-commit governance hook PASS 79/79 for material dispatch commit 9aa9900c"
     ],
-    "claimBoundary": "Dispatch-only material commit. Authorizes a single no-commit worker return decision packet for FPC-DLR-T1 only. No downstream implementation, runtime/provider/live proof, public-sync, adapter behavior, package activation, checker implementation, generated-state mutation, Web/UI dashboard, model-router work, MPI-T6 runtime work, push, action authority, automatic invocation, or production-readiness claim is authorized."
+    "closureCommit": "79473e5a",
+    "closureCommitFull": "79473e5a106e0a1ff8685581c75679c605ae25e4",
+    "closureOutcome": "HOLD_ALL_DOWNSTREAM_LANES",
+    "claimBoundary": "Dispatch-only material commit, closed by FPC-DLR-T1 material worker-return commit 79473e5a. No downstream implementation, runtime/provider/live proof, public-sync, adapter behavior, package activation, checker implementation, generated-state mutation, Web/UI dashboard, model-router work, MPI-T6 runtime work, push, action authority, automatic invocation, or production-readiness claim is authorized."
   }
 }

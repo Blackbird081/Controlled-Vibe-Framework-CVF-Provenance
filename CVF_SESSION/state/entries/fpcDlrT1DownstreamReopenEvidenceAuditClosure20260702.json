@@ -1,0 +1,30 @@
+{
+  "stateOrder": 1375,
+  "stateKey": "fpcDlrT1DownstreamReopenEvidenceAuditClosure20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-02",
+    "materialCommit": "79473e5a",
+    "materialCommitFull": "79473e5a106e0a1ff8685581c75679c605ae25e4",
+    "executionBaseHead": "374b7672",
+    "dispatchCommit": "9aa9900c",
+    "dispatchCommitFull": "9aa9900ccc715898126b27f78869a537d55f7a45",
+    "dispatchSyncCommit": "374b7672",
+    "baseline": "docs/baselines/CVF_GC018_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_WORKER_RETURN_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerDecision": "ACCEPTED_WITH_REVIEWER_REPAIR",
+    "selectedRoutingOutcome": "HOLD_ALL_DOWNSTREAM_LANES",
+    "closureSummary": "Reviewer accepted the FPC-DLR-T1 no-commit worker return after repairing literal packet shape. All three parked downstream lanes remain held because no current source-backed condition-met evidence exists for use-case-adapter-public, runtime-provider-live, or MPI-T6-runtime.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/check_corpus_completeness_report_integrity.py --base 374b7672 --head HEAD --enforce PASS",
+      "python governance/compat/check_fpc_parked_reopen_inventory.py --base 374b7672 --head HEAD --enforce PASS",
+      "python governance/compat/check_delta_execution_claim_boundary.py --base 374b7672 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 374b7672 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 79/79 for material worker-return commit 79473e5a"
+    ],
+    "claimBoundary": "Documentation-only parked-lane evidence audit and worker-return acceptance. No downstream implementation, runtime/provider/live proof, public-sync, adapter behavior, package lifecycle change, checker implementation, generated-state mutation, Web/UI dashboard work, model-router work, MPI-T6 runtime work, action authority, automatic invocation, or production-readiness claim is made."
+  }
+}

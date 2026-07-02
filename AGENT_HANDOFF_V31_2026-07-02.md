@@ -17,7 +17,7 @@ handoff rotation evidence, and claim boundaries only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_dlr_t1_downstream_reopen_evidence_audit_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=execute FPC-DLR-T1 worker under `WORKER_MUST_NOT_COMMIT` using the dispatched work order at material commit `9aa9900c`; parked checkpoint=MFE-R1 remains closed at material commit `125c37f0`, no MFE-R2 is authorized without an operator-selected source, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V31_2026-07-02.md; next allowed move=operator may select another high-value foundation lane, provide fresh product/source evidence for a downstream reopen, or name a concrete source target for a later source-verified tranche after FPC-DLR-T1 closed at material commit `79473e5a`; parked checkpoint=MFE-R1 remains closed at material commit `125c37f0`, no MFE-R2 is authorized without an operator-selected source, D-file06/I-file19 remain parked by KIOD-R10/KIOD-R11 conditions, WOAS-R7 remains latest closed WOAS work at material commit `a8d98dd1`, and LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -29,8 +29,8 @@ Startup acknowledged: current mode=`fpc_dlr_t1_downstream_reopen_evidence_audit_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `9aa9900c` FPC-DLR-T1 evidence audit dispatch |
-| Latest session-sync target | session sync after FPC-DLR-T1 dispatch |
+| Latest material packet | `79473e5a` FPC-DLR-T1 evidence audit worker return |
+| Latest session-sync target | session sync after FPC-DLR-T1 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Active Boundary
@@ -41,9 +41,22 @@ receive new status.
 
 ## Current Mode
 
-`fpc_dlr_t1_downstream_reopen_evidence_audit_dispatched_pending_worker_return`
+`fpc_dlr_t1_downstream_reopen_evidence_audit_closed_pass_bounded_hold_all_downstream_lanes_pending_operator_next_lane_selection`
 
 ## Latest Changes
+
+FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision is
+CLOSED_PASS_BOUNDED at material commit `79473e5a`. Reviewer accepted the
+no-commit worker return
+`docs/reviews/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_WORKER_RETURN_2026-07-02.md`
+after repairing reviewer-fast/pre-commit literal shape. The selected routing
+outcome is `HOLD_ALL_DOWNSTREAM_LANES`: `use-case-adapter-public`,
+`runtime-provider-live`, and `MPI-T6-runtime` all remain held because no
+current source-backed reopen condition is met. No downstream implementation,
+runtime/provider/live proof, public-sync, adapter behavior, package lifecycle
+change, checker implementation, generated-state mutation, Web/UI dashboard
+work, model-router work, MPI-T6 runtime work, action authority, automatic
+invocation, or production-readiness claim is made.
 
 FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision is
 DISPATCH_READY at material commit `9aa9900c`. It added
@@ -119,12 +132,13 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 
 | Work | Commit | Disposition |
 |---|---|---|
-| FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `9aa9900c` | DISPATCH_READY; worker must create `docs/reviews/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_WORKER_RETURN_2026-07-02.md`, select exactly one routing outcome, and must not commit |
+| None | N/A | No active dispatched worker work after FPC-DLR-T1 closure |
 
 ## Latest Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision | `79473e5a` | CLOSED_PASS_BOUNDED; downstream lanes remain held under `HOLD_ALL_DOWNSTREAM_LANES` |
 | MFE-R1 Literal Trap Learning Addendum | `faf09d46` | RECORDED; ADIF-0022 and gotchas items 36-37 preserve the MFE-R1 worker-return literal-format lessons for future agents |
 | MFE-R1 Memory Foundation Future Enrichment Source Verification | `125c37f0` | CLOSED_PASS_BOUNDED; no immediate enrichment target exists absent an operator-selected source |
 | KIOD-R11 Runtime Candidate Reopen Inventory Guard | `2c0e3cff` | CLOSED_PASS_BOUNDED; KIOD-specific inventory/checker/test/wiring now blocks unsupported D-file06/I-file19 runtime-candidate re-proposals |
@@ -144,25 +158,23 @@ KIOD-R9 Memory Ledger Schema Boundary remains closed bounded at material commit
 ## Next Allowed Move
 
 FPC-DLR-T1 Downstream Reopen Evidence Audit And Lane Selection Decision is
-DISPATCH_READY at material commit `9aa9900c`. Execute the FPC-DLR-T1 worker
-under `WORKER_MUST_NOT_COMMIT` using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_2026-07-02.md`.
-The worker return path is
-`docs/reviews/CVF_FPC_DLR_T1_DOWNSTREAM_REOPEN_EVIDENCE_AUDIT_AND_LANE_SELECTION_DECISION_WORKER_RETURN_2026-07-02.md`.
+CLOSED_PASS_BOUNDED at material commit `79473e5a`. Selected routing outcome:
+`HOLD_ALL_DOWNSTREAM_LANES`. No downstream lane is reopened because
+`use-case-adapter-public`, `runtime-provider-live`, and `MPI-T6-runtime` all
+lack current source-backed condition-met evidence.
 
-Worker must evaluate `use-case-adapter-public`, `runtime-provider-live`, and
-`MPI-T6-runtime` against current source-backed reopen conditions and select
-exactly one routing outcome: `SELECT_ONE_LANE_FOR_FRESH_GC018`,
-`HOLD_ALL_DOWNSTREAM_LANES`, `REQUEST_PRODUCT_REQUIREMENT_EVIDENCE`, or
-`OPEN_FOUNDATION_MAINTENANCE_INSTEAD`.
+Operator may select another high-value foundation lane, provide fresh
+product/source evidence for a downstream reopen, or name a concrete source
+target for a later source-verified tranche. Any downstream implementation,
+runtime/provider/live proof, public-sync, adapter behavior, package lifecycle
+change, checker implementation, generated-state mutation, Web/UI dashboard
+work, model-router work, MPI-T6 runtime work, action authority, automatic
+invocation, or production-readiness claim requires fresh operator decision plus
+fresh GC-018 and source-verified work order.
 
-Worker must not commit, update session surfaces, implement any downstream
-lane, run live/provider proof, public-sync, edit runtime/adapter/package/
-checker/generated-state/Web/model-router/MPI surfaces, or claim production
-readiness. MFE-R1 remains CLOSED_PASS_BOUNDED at material commit `125c37f0`
-and literal trap learning remains recorded at material commit `faf09d46`. No
-MFE-R2 or fresh MFE follow-up is authorized until an operator-selected source
-exists.
+MFE-R1 remains CLOSED_PASS_BOUNDED at material commit `125c37f0` and literal
+trap learning remains recorded at material commit `faf09d46`. No MFE-R2 or
+fresh MFE follow-up is authorized until an operator-selected source exists.
 
 KIOD-R11 is CLOSED_PASS_BOUNDED at material commit `2c0e3cff`. KIOD-R10 remains
 CLOSED_PASS_BOUNDED at material commit `e89e3dd4`; D-file06 and I-file19 remain
@@ -191,6 +203,47 @@ No runtime/provider/live proof, source import, public-sync,
 Web/UI/dashboard, MCP/CLI adapter implementation, model-router work, package
 lifecycle mutation, action authority, automatic invocation, or
 production-readiness claim is authorized by KIOD-R11 closure.
+
+## Core Guard Self-Protection Authorization - FPC-DLR-T1 Closure Session Sync
+
+Authorized guard-maintenance scope: FPC-DLR-T1 closure session-sync after
+material worker-return commit `79473e5a`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/fpcDlrT1DownstreamReopenEvidenceAuditClosure20260702.json`
+- `CVF_SESSION/state/entries/fpcDlrT1DownstreamReopenEvidenceAuditDispatch20260702.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V31_2026-07-02.md`
+
+Operator authorization: implied by governed reviewer/closer session-sync after
+accepted FPC-DLR-T1 material closure.
+
+Rollback boundary: revert only the FPC-DLR-T1 closure session-sync if
+rejected; do not alter material worker-return commit `79473e5a` or prior
+accepted FPC/MFE/KIOD/WOAS material commits.
+
+| Protected path | Authorized session-sync action |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, closed/latest work, startup acknowledgment, and next allowed move after FPC-DLR-T1 material worker-return commit `79473e5a`. |
+| `AGENT_HANDOFF_V31_2026-07-02.md` | Record FPC-DLR-T1 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after FPC-DLR-T1 closure session-sync. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Carry generated compact startup facts after active state update. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for FPC-DLR-T1 closed pending operator next lane selection. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator lane/source selection after FPC-DLR-T1 holds all downstream lanes. |
+| `CVF_SESSION/state/entries/fpcDlrT1DownstreamReopenEvidenceAuditDispatch20260702.json` | Mark FPC-DLR-T1 dispatch entry closed by material commit `79473e5a`. |
+| `CVF_SESSION/state/entries/fpcDlrT1DownstreamReopenEvidenceAuditClosure20260702.json` | Add state source entry for FPC-DLR-T1 material worker-return commit `79473e5a`. |
+
+Authorization boundary: session-sync only. No downstream implementation,
+runtime/provider/live proof, source import, public-sync, Web/UI dashboard,
+MCP/CLI adapter, model-router work, package lifecycle mutation, checker
+implementation, generated-state mutation beyond active session generation,
+action authority, automatic invocation, or production-readiness claim is
+authorized by this block.
 
 ## Core Guard Self-Protection Authorization - FPC-DLR-T1 Dispatch Session Sync
 
@@ -517,6 +570,24 @@ this block.
 | Archived prior handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md` |
 | State source update | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` activeHandoff and supersededHandoffs |
 | Generator | `python governance/compat/generate_active_session_state.py --generate` |
+
+## GC-020 HEAD Marker - FPC-DLR-T1 Closure
+
+Latest material commit requiring in-place handoff trace:
+
+`79473e5a`
+
+Full SHA:
+
+`79473e5a106e0a1ff8685581c75679c605ae25e4`
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for material commit
+`79473e5a`. It records bounded FPC-DLR-T1 closure with routing outcome
+`HOLD_ALL_DOWNSTREAM_LANES` and does not authorize downstream implementation,
+runtime/provider/live behavior, source import, public-sync, package lifecycle
+mutation, Web/UI/dashboard work, MCP/CLI adapter implementation, model-router
+work, checker implementation, action authority, automatic invocation, or
+production-readiness claims.
 
 ## GC-020 HEAD Marker - MFE-T0 Roadmap
 
