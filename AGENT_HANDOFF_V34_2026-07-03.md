@@ -6,14 +6,15 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R19-T1 dispatch while preserving the V34
+Carry compact continuity after MSEA-R19-T1 acceptance while preserving the V34
 active handoff opened after V33 exceeded the governed handoff file-size
 threshold.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after dispatching the MSEA-R19-T1 local
-extraction environment/model/service teardown planning work order.
+Target: active CVF session continuity after accepting the MSEA-R19-T1 local
+extraction environment/model/service teardown planning worker return and
+readiness matrix.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -34,7 +35,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=execute the MSEA-R19-T1 work order under WORKER_MUST_NOT_COMMIT; parked checkpoint=no MinerU install/import/model-download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R19-T1.
+Startup acknowledged: current mode=`msea_r19_t1_mineru_environment_model_service_teardown_planning_closed_pending_model_cache_local_source_prep_work_order`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=author fresh GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for MinerU model cache/local-source preparation and temporary-service teardown receipt planning before any runtime smoke pilot; parked checkpoint=no MinerU install/import/model-download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R19-T1.
 
 ## Current State
 
@@ -46,34 +47,34 @@ Startup acknowledged: current mode=`msea_r19_t1_mineru_environment_model_service
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `000cd9c3` MSEA-R19-T1 environment/model/service planning dispatch |
-| Latest session-sync target | session sync after MSEA-R19-T1 dispatch |
+| Latest material packet | `707953bc` MSEA-R19-T1 environment/model/service planning acceptance |
+| Latest session-sync target | session sync after MSEA-R19-T1 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return`
+`msea_r19_t1_mineru_environment_model_service_teardown_planning_closed_pending_model_cache_local_source_prep_work_order`
 
 ## Latest Changes
 
 MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service
-Teardown Planning dispatch is committed at material commit `000cd9c3`.
+Teardown Planning acceptance is committed at material commit `707953bc`.
 
-Dispatch artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md`
-
-Planned worker-owned outputs:
+Accepted artifacts:
 
 - `docs/reviews/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_WORKER_RETURN_2026-07-03.md`
 - `docs/reference/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_READINESS_MATRIX_2026-07-03.md`
 
-Worker mode: `WORKER_MUST_NOT_COMMIT`.
+Selected route token:
 
-The dispatch asks the worker to source-verify MinerU environment/model/source/
-service facts, perform only read-only local environment inventory, produce a
-readiness matrix, and select exactly one route token.
+`OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`.
+
+Reviewer disposition: `ACCEPTED_FOR_MATERIAL_COMMIT`.
+
+The accepted worker return source-verified MinerU environment/model/source/
+service facts, performed only read-only local environment inventory, produced a
+readiness matrix, and selected a preparation-first route before any runtime
+smoke pilot.
 
 It does not authorize MinerU install/import/model download/parser/OCR/VLM/
 hybrid/API/router/Gradio/Docker execution, local temporary service startup,
@@ -85,15 +86,16 @@ action-authority, benchmark, document-truth, extraction-accuracy, legal advice
 quality, current-law correctness, workflow-chain completion, or production
 readiness.
 
-Material verification: pre-dispatch autorun PASS 72/72, dispatch-quality PASS,
-agent packet authority PASS, dispatch scaffold provenance PASS, dispatch
-steward preflight PASS, material pre-commit hook PASS 79/79.
+Material verification: worker-return fast gate PASS, pre-implementation
+autorun PASS 74/74, reviewer-return steward preflight PASS including
+reviewer-fast 59/59, material pre-commit hook PASS 79/79.
 
 ## Next Allowed Move
 
-Next allowed move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md`
-under `WORKER_MUST_NOT_COMMIT`.
+Next allowed move: author a fresh GC-018 baseline and source-verified
+`WORKER_MUST_NOT_COMMIT` work order for MinerU model cache/local-source
+preparation and temporary-service teardown receipt planning before any runtime
+smoke pilot.
 
 No original document copy/import into this repository, public-sync,
 redistribution, fuller content inclusion, Candidate Group B, rejected derived
@@ -124,6 +126,8 @@ MSEA-R18-T1 material dispatch commit: `fb42439d`.
 MSEA-R18-T1 material acceptance commit: `d40e21c8`.
 
 MSEA-R19-T1 material dispatch commit: `000cd9c3`.
+
+MSEA-R19-T1 material acceptance commit: `707953bc`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R16-T1 Acceptance Session Sync
 
@@ -506,6 +510,69 @@ current-law correctness, workflow-chain completion, or production readiness.
 | Claim boundary | session continuity and next-move routing only |
 | Agent type | session-sync steward |
 | Invocation ID | `msea-r17-t1-acceptance-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - MSEA-R19-T1 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R19-T1
+material acceptance commit `707953bc`, including active mode, next allowed
+move, current closed work, generated active session state, bootstrap read
+model, front-door continuity, and active handoff continuity.
+
+Protected paths:
+- `AGENT_HANDOFF_V34_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR19T1MineruEnvironmentModelServiceTeardownPlanningClosure20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked Codex to take multiple roles and finish
+this tranche; reviewer/closer accepted the worker return and companion matrix
+at material commit `707953bc`.
+
+Rollback boundary: revert only this MSEA-R19-T1 acceptance session-sync if
+rejected; do not revert material acceptance commit `707953bc`, dispatch commit
+`000cd9c3`, or prior accepted material/session commits.
+
+## GC-020 HEAD Marker - MSEA-R19-T1 Acceptance
+
+Latest material commit requiring in-place handoff trace: `707953bc`.
+
+Full SHA:
+`707953bc54e3f285a3df0d3e51e240269023cab1`.
+
+This marker records planning acceptance and route selection only. It does not
+claim MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/
+Gradio/Docker execution, local temporary service startup, provider/live proof,
+source document copy/import, document body read, extraction outputs,
+public-sync, fuller content inclusion, Candidate Group B, rejected outputs,
+RAG/S3, schema/writer/checker/adapter implementation, benchmark,
+document-truth, extraction-accuracy, legal advice quality, current-law
+correctness, workflow-chain completion, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R19-T1 Acceptance Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R19-T1 acceptance session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material acceptance commit `707953bc` |
+| Before status evidence | material HEAD `707953bc`; active state still pointed to R19-T1 worker execution |
+| After status evidence | active session state, bootstrap, front door, and V34 route next move to fresh model cache/local-source preparation work-order authoring |
+| Diff evidence | `git diff --name-status`; session-sync commit steward preflight |
+| Approval boundary | bounded session-sync after MSEA-R19-T1 material acceptance commit |
+| Claim boundary | session continuity and next-move routing only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r19-t1-acceptance-session-sync-2026-07-03` |
 | Expected manifest | protected paths listed in this authorization block |
 | Actual changed set | protected session/front-door/handoff paths only |
 | Manifest delta | MATCH |
