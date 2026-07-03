@@ -154,6 +154,16 @@ material/session-sync commits.
 | Public/export behavior | no public-sync or public export |
 | Actual changed set | `AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR24T1MineruModelSourceFallbackDecisionClosure20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 
+## Handoff-Sync Marker - MSEA-R24-T1 Acceptance Session Sync Commit
+
+| Field | Value |
+|---|---|
+| handoffSyncParentHead | `86097efe` |
+| handoffSyncCommitHead | `dc1c8392` |
+| scope | active handoff marker for the accepted MSEA-R24-T1 closure session-sync commit |
+| changedSet | `AGENT_HANDOFF_V35_2026-07-03.md` only |
+| claimBoundary | handoff marker only; no T2 dispatch, cache/runtime command, provider/live proof, public-sync, or production claim |
+
 Previous active handoff V34 was 1118 lines after the prior sync and exceeded
 the governed active-handoff hard threshold. This sync opens V35 and archives
 V34 instead of appending more status to the oversized active handoff.
