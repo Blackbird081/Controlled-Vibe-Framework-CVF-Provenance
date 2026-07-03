@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1412,
+  "stateKey": "mseaR18T1MineruCandidateGroupALocalExtractionPilotPlanDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "fb42439d",
+    "materialCommitFull": "fb42439decaaf4d068ff4768f9feaf55056225ba",
+    "dispatchBaseHead": "37bcd147",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch-quality PASS",
+      "agent packet authority and encoding PASS",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R18-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion readiness matrix and selects exactly one route token.",
+    "claimBoundary": "Dispatch-only planning and route-selection work order. No MinerU runtime/install/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
+  }
+}

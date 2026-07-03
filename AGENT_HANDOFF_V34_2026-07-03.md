@@ -33,7 +33,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r17_t1_candidate_group_a_private_test_corpus_intake_accepted_pending_next_source_verified_work_order`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=author fresh GC-018/source-verified work order for the next MinerU Candidate Group A private-test step if operator chooses, likely MSEA-R18-T1 extraction-planning or schema/receipt-readiness selection; parked checkpoint=no original document copy/import into repository, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected outputs, MinerU runtime/source-import/provider-live/live-run/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized without a fresh work order.
+Startup acknowledged: current mode=`msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=execute the MSEA-R18-T1 work order under WORKER_MUST_NOT_COMMIT; parked checkpoint=no MinerU runtime/install/model-download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R18-T1.
 
 ## Current State
 
@@ -45,62 +45,60 @@ Startup acknowledged: current mode=`msea_r17_t1_candidate_group_a_private_test_c
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `eb127b7f` MSEA-R17-T1 private test corpus intake acceptance |
-| Latest session-sync target | session sync after MSEA-R17-T1 acceptance |
+| Latest material packet | `fb42439d` MSEA-R18-T1 extraction pilot planning dispatch |
+| Latest session-sync target | session sync after MSEA-R18-T1 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r17_t1_candidate_group_a_private_test_corpus_intake_accepted_pending_next_source_verified_work_order`
+`msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R17-T1 MinerU Candidate Group A private test-corpus intake and receipt
-dry-run worker return is accepted at material commit `eb127b7f`.
+MSEA-R18-T1 MinerU Candidate Group A local extraction pilot plan and receipt
+readiness selection dispatch is committed at material commit `fb42439d`.
 
 Dispatch artifacts:
 
-- `docs/baselines/CVF_GC018_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_2026-07-03.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_2026-07-03.md`
+- `docs/baselines/CVF_GC018_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_2026-07-03.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_2026-07-03.md`
 
-Accepted worker-owned outputs:
+Planned worker-owned outputs:
 
-- `docs/reviews/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_WORKER_RETURN_2026-07-03.md`
-- `docs/reference/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_LEDGER_2026-07-03.md`
+- `docs/reviews/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_WORKER_RETURN_2026-07-03.md`
+- `docs/reference/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_MATRIX_2026-07-03.md`
 
-Selected candidate group: `CANDIDATE_GROUP_A_ONLY`.
+Worker mode: `WORKER_MUST_NOT_COMMIT`.
 
-The operator supplied local-private testing authorization for Candidate Group
-A. The accepted worker return records metadata-only local-private intake:
-path presence, size, SHA-256, slot assignment, authorization boundary, and
-receipt dry-run non-claims for the two Group A DOCX files. It does not
-authorize copying original documents into the repository, public-sync,
-redistribution, fuller content inclusion, Candidate Group B, rejected derived
-outputs, MinerU runtime, provider/live proof, RAG/S3, schema/writer/adapter/
-checker work, document-truth, extraction-accuracy, legal advice quality,
-current-law correctness, benchmark, workflow-chain completion, or production
-readiness.
+The dispatch asks the worker to source-verify MinerU CLI/backend/output facts,
+preserve the R17 Candidate Group A private boundary, produce a documentation-
+only local extraction pilot plan and receipt readiness matrix, and select
+exactly one route token. It does not authorize MinerU runtime/install/model
+download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local
+temporary service startup, provider/live proof, source document copy/import,
+public-sync, fuller content inclusion, Candidate Group B, rejected outputs,
+RAG/S3, schema/writer/checker/adapter work, document-truth, extraction-
+accuracy, legal advice quality, current-law correctness, benchmark, workflow-
+chain completion, or production readiness.
 
-Material verification: worker-return fast gate PASS, pre-implementation
-autorun PASS 74/74, reviewer-return steward PASS, independent reviewer
-path/hash/size check PASS, material pre-commit hook PASS 79/79.
+Material verification: pre-dispatch autorun PASS 72/72, dispatch-quality PASS,
+agent packet authority PASS, dispatch steward PASS, material pre-commit hook
+PASS 79/79.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh GC-018 baseline and source-verified
-`WORKER_MUST_NOT_COMMIT` work order for the next MinerU Candidate Group A
-private-test step if the operator chooses, likely MSEA-R18-T1 extraction-
-planning or schema/receipt-readiness selection using the accepted R17 intake
-ledger.
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_2026-07-03.md`
+under `WORKER_MUST_NOT_COMMIT`.
 
 No original document copy/import into this repository, public-sync,
 redistribution, fuller content inclusion, Candidate Group B, rejected derived
-outputs, MinerU runtime/OCR/parser/VLM/API/Docker/provider/RAG/S3, schema/
-writer/checker/adapter work, document-truth, extraction-accuracy, legal advice
+outputs, MinerU runtime/OCR/parser/VLM/hybrid/API/router/Gradio/Docker,
+local temporary service startup, provider/live proof, RAG/S3, schema/writer/
+checker/adapter work, document-truth, extraction-accuracy, legal advice
 quality, current-law correctness, benchmark, production readiness, source
 import, package activation, Web/MCP/model-router/action-authority, live run, or
-workflow-chain completion claim is authorized until a fresh source-verified
-work order explicitly opens that lane.
+workflow-chain completion claim is authorized by MSEA-R18-T1.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -115,6 +113,8 @@ V33 instead of appending more status to the oversized active handoff.
 MSEA-R17-T1 material dispatch commit: `b14bf0fd`.
 
 MSEA-R17-T1 material acceptance commit: `eb127b7f`.
+
+MSEA-R18-T1 material dispatch commit: `fb42439d`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R16-T1 Acceptance Session Sync
 
@@ -247,6 +247,68 @@ current-law correctness, workflow-chain completion, or production readiness.
 | Claim boundary | session continuity and next-move routing only |
 | Agent type | session-sync steward |
 | Invocation ID | `msea-r17-t1-dispatch-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - MSEA-R18-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R18-T1
+material dispatch commit `fb42439d`, including active mode, next allowed move,
+current dispatched work, generated active session state, bootstrap read model,
+front-door continuity, and active handoff continuity.
+
+Protected paths:
+- `AGENT_HANDOFF_V34_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR18T1MineruCandidateGroupALocalExtractionPilotPlanDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator requested a fresh MSEA-R18-T1 GC-018/source-
+verified work order; dispatcher committed the material dispatch at
+`fb42439d`.
+
+Rollback boundary: revert only this MSEA-R18-T1 dispatch session-sync if
+rejected; do not revert material dispatch commit `fb42439d`, MSEA-R17
+acceptance commit `eb127b7f`, or prior accepted material/session commits.
+
+## GC-020 HEAD Marker - MSEA-R18-T1 Dispatch
+
+Latest material commit requiring in-place handoff trace: `fb42439d`.
+
+Full SHA:
+`fb42439decaaf4d068ff4768f9feaf55056225ba`.
+
+This marker records dispatch only. It does not claim MinerU runtime/install/
+model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local
+temporary service startup, provider/live proof, source document copy/import,
+public-sync, fuller content inclusion, Candidate Group B, rejected outputs,
+RAG/S3, schema/writer/checker/adapter implementation, benchmark, document-
+truth, extraction-accuracy, legal advice quality, current-law correctness,
+workflow-chain completion, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R18-T1 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R18-T1 dispatch session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material dispatch commit `fb42439d` |
+| Before status evidence | material HEAD `fb42439d`; active state still pointed to R18-T1 work-order authoring |
+| After status evidence | active session state, bootstrap, front door, and V34 route next move to MSEA-R18-T1 worker execution |
+| Diff evidence | `git diff --name-status`; session-sync commit steward preflight |
+| Approval boundary | bounded session-sync after MSEA-R18-T1 material dispatch commit |
+| Claim boundary | session continuity and next-move routing only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r18-t1-dispatch-session-sync-2026-07-03` |
 | Expected manifest | protected paths listed in this authorization block |
 | Actual changed set | protected session/front-door/handoff paths only |
 | Manifest delta | MATCH |
