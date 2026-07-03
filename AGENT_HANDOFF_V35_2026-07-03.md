@@ -234,3 +234,13 @@ handoff rotation if rejected; do not revert material dispatch commit
 | scope | active handoff marker for the accepted session-sync commit |
 | changedSet | `AGENT_HANDOFF_V35_2026-07-03.md` only |
 | claimBoundary | handoff marker only; no material worker output, cache/runtime command, provider/live proof, public-sync, or production claim |
+
+## Handoff-Sync Marker - MSEA-R24-T2 Pre-Dispatch Session Wording Clarification
+
+| Field | Value |
+|---|---|
+| handoffSyncParentHead | `c1b8079b` |
+| handoffSyncCommitHead | `eb4ecd4f` |
+| scope | active handoff marker for the accepted session wording clarification commit |
+| changedSet | `AGENT_HANDOFF_V35_2026-07-03.md` only |
+| claimBoundary | handoff marker only; no material worker output, cache/runtime command, provider/live proof, public-sync, or production claim |
