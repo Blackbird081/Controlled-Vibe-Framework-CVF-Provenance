@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1421,
+  "stateKey": "mseaR24T2MineruHuggingFaceCacheDiagnosticClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "561eedc3",
+    "materialCommitFull": "561eedc3",
+    "workerExecutionBaseHead": "0ffcc4d1",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_READINESS_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "HOLD_PENDING_LOCAL_MODEL_PATH",
+    "configWritebackReceipt": "CONFIG_NOT_WRITTEN_PARENT_DIRECTORY_MISSING",
+    "runtimeSmokeGateDisposition": "BLOCKED_NO_CONFIG_RECEIPT",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author fresh MSEA-R24-T2A GC-018 baseline and source-verified work order for absolute config path plus local HuggingFace cache binding receipt recovery.",
+    "claimBoundary": "T2 cache diagnostic only. No runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup beyond the one command process, document body read, extraction output, provider/live proof, public-sync, production readiness, stage, commit by worker, or push was authorized or performed."
+  }
+}

@@ -75,8 +75,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r24_t2_mineru_huggingface_cache_completion_recovery_dispatched_pending_worker_return",
-  "previousMode": "msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring",
+  "currentMode": "msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring",
+  "previousMode": "msea_r24_t2_mineru_huggingface_cache_completion_recovery_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3213,7 +3213,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R24-T2 dispatch is committed at material commit 2ed430ba after T1 selected SELECT_HUGGINGFACE_CACHE_RECOVERY. Next allowed move is execute MSEA-R24-T2 worker under WORKER_MUST_NOT_COMMIT for exactly one HuggingFace pipeline cache-completion command, then create docs/reviews/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_WORKER_RETURN_2026-07-03.md and docs/reference/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_READINESS_MATRIX_2026-07-03.md with config/cache receipt or secret-safe diagnostic evidence. No second cache command, ModelScope retry, auto probe, local model parsing, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup beyond the one command process, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller sensitive content, Candidate Group B, rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation, package reinstall, Web/MCP/model-router/action-authority work, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, stage, commit, push, or provider/live governance proof is authorized by T2. T3/T4 remain dependent future tranches requiring accepted T2 receipt and fresh work orders. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R24-T2 is accepted at material commit 561eedc3 with selectedRouteToken HOLD_PENDING_LOCAL_MODEL_PATH. The HuggingFace command downloaded local pipeline cache path evidence but did not write config because the relative config path resolved under the user home and the parent directory was absent. Next allowed move is author fresh MSEA-R24-T2A GC-018 baseline and source-verified work order for absolute config path plus local HuggingFace cache binding receipt recovery. No second cache command, ModelScope retry, auto probe, local model parsing, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup beyond an authorized command process, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller sensitive content, Candidate Group B, rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation, package reinstall, Web/MCP/model-router/action-authority work, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, stage, commit, push, or provider/live governance proof is authorized by T2. T3/T4 remain dependent future tranches requiring accepted config/cache receipt and fresh work orders. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6740,5 +6740,25 @@
     ],
     "nextRecommendedMove": "Execute the T2 worker exactly inside the work order boundary: one HuggingFace pipeline cache-completion command, then uncommitted worker return and readiness matrix.",
     "claimBoundary": "Dispatch only. The dispatch did not run the cache command, did not create config/cache receipt evidence, did not run runtime smoke, and did not claim parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, document processing, provider/live proof, public-sync, production readiness, stage, commit by worker, or push."
+  },
+  "mseaR24T2MineruHuggingFaceCacheDiagnosticClosure20260703": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "561eedc3",
+    "materialCommitFull": "561eedc3",
+    "workerExecutionBaseHead": "0ffcc4d1",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_READINESS_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "HOLD_PENDING_LOCAL_MODEL_PATH",
+    "configWritebackReceipt": "CONFIG_NOT_WRITTEN_PARENT_DIRECTORY_MISSING",
+    "runtimeSmokeGateDisposition": "BLOCKED_NO_CONFIG_RECEIPT",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author fresh MSEA-R24-T2A GC-018 baseline and source-verified work order for absolute config path plus local HuggingFace cache binding receipt recovery.",
+    "claimBoundary": "T2 cache diagnostic only. No runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup beyond the one command process, document body read, extraction output, provider/live proof, public-sync, production readiness, stage, commit by worker, or push was authorized or performed."
   }
 }

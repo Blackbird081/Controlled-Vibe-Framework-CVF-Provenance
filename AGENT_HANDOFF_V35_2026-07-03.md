@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t2_mineru_huggingface_cache_completion_recovery_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T2 worker under WORKER_MUST_NOT_COMMIT for exactly one HuggingFace pipeline cache-completion command and receipt/diagnostic return; parked checkpoint=T3/T4 remain dependent future tranches until T2 worker return is accepted.
+Startup acknowledged: current mode=`msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh MSEA-R24-T2A GC-018/work order for absolute config path and local HuggingFace cache binding receipt; parked checkpoint=T3/T4 remain dependent future tranches until config/cache receipt is accepted.
 
 ## Current State
 
@@ -46,39 +46,38 @@ Startup acknowledged: current mode=`msea_r24_t2_mineru_huggingface_cache_complet
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `2ed430ba` MSEA-R24-T2 HuggingFace cache-completion recovery dispatch |
-| Latest session-sync target | session sync after MSEA-R24-T2 dispatch |
+| Latest material packet | `561eedc3` MSEA-R24-T2 HuggingFace cache diagnostic acceptance |
+| Latest session-sync target | session sync after MSEA-R24-T2 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r24_t2_mineru_huggingface_cache_completion_recovery_dispatched_pending_worker_return`
+`msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R24-T2 MinerU HuggingFace cache-completion recovery dispatch was committed
-at material commit `2ed430ba`.
+MSEA-R24-T2 MinerU HuggingFace cache diagnostic worker return was accepted at
+material commit `561eedc3`.
 
 Accepted artifacts:
 
-- `docs/baselines/CVF_GC018_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_2026-07-03.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_2026-07-03.md`
+- `docs/reviews/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_WORKER_RETURN_2026-07-03.md`
+- `docs/reference/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_READINESS_MATRIX_2026-07-03.md`
 
-Selected route token: `SELECT_HUGGINGFACE_CACHE_RECOVERY`.
+Selected route token: `HOLD_PENDING_LOCAL_MODEL_PATH`.
 
-Material verification: pre-dispatch autorun PASS 72/72, dispatch steward PASS,
-and material pre-commit hook PASS 79/79.
+Material verification: worker-return fast gate PASS, pre-implementation autorun
+PASS 74/74, reviewer-return steward PASS, and material pre-commit hook PASS
+79/79.
 
 ## Next Allowed Move
 
-Next allowed move: execute MSEA-R24-T2 worker under WORKER_MUST_NOT_COMMIT for
-exactly one HuggingFace pipeline cache-completion command and receipt/diagnostic
-return.
+Next allowed move: author fresh MSEA-R24-T2A GC-018/work order for absolute
+config path and local HuggingFace cache binding receipt recovery.
 
-The worker may create only the named worker return and companion readiness
-matrix, plus ignored `.cvf/runtime/` receipt/log evidence. Forbidden:
-second cache command, ModelScope retry, `auto` probe, alternate-source downloads,
-local model parsing, parser/OCR/
+T3 runtime smoke remains blocked until config/cache receipt is accepted.
+Forbidden without fresh authority: second cache command, ModelScope retry,
+`auto` probe, alternate-source downloads, local model parsing, parser/OCR/
 VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup,
 source document copy/import, document body read, extraction outputs,
 provider/live proof, public-sync, fuller sensitive content, Candidate Group B,
@@ -88,8 +87,8 @@ document-truth, extraction-accuracy, legal advice quality, current-law
 correctness, runtime smoke, workflow-chain completion, production readiness,
 stage, commit, push, or provider/live governance proof.
 
-T3/T4 remain dependent future tranches requiring accepted T2 receipt and fresh
-work orders.
+T3/T4 remain dependent future tranches requiring accepted config/cache receipt
+and fresh work orders.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -307,3 +306,55 @@ material/session-sync commits.
 | scope | active handoff marker for the accepted MSEA-R24-T2 dispatch session-sync commit |
 | changedSet | `AGENT_HANDOFF_V35_2026-07-03.md` only |
 | claimBoundary | handoff marker only; no material worker output, cache/runtime command, provider/live proof, public-sync, or production claim |
+
+## Core Guard Self-Protection Authorization - MSEA-R24-T2 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R24-T2
+material acceptance commit `561eedc3`, including active mode, next allowed move,
+generated active session state, bootstrap read model, front-door continuity, and
+active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR24T2MineruHuggingFaceCacheDiagnosticClosure20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked to handle the full T1-T4 sequence;
+accepted T2 evidence blocks T3 runtime smoke and routes the next allowed move
+to a fresh T2A absolute config path/local cache binding receipt work order.
+
+Rollback boundary: revert only this MSEA-R24-T2 acceptance session-sync if
+rejected; do not revert material acceptance commit `561eedc3` or earlier
+material/session-sync commits.
+
+## GC-020 HEAD Marker - MSEA-R24-T2 Acceptance Session Sync
+
+| Field | Value |
+|---|---|
+| lastSessionSyncMaterialHead | `561eedc3` |
+| activeHandoff | `AGENT_HANDOFF_V35_2026-07-03.md` |
+| currentMode | `msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring` |
+| nextAllowedMove | author MSEA-R24-T2A absolute config path/local cache binding receipt work order |
+| generator | `python governance/compat/generate_active_session_state.py --generate` |
+
+## Agent Operation Trace Block - MSEA-R24-T2 Acceptance Session Sync
+
+| Field | Value |
+|---|---|
+| Session or invocation | MSEA-R24-T2 acceptance session-sync, 2026-07-03 |
+| Role | Session-sync steward |
+| Operator instruction | Do all T1-T4, interpreted through dependency-gated tranche sequencing |
+| Allowed scope source | bounded session-sync after MSEA-R24-T2 material acceptance commit |
+| Before status evidence | material HEAD `561eedc3`; active state still pointed to T2 pending worker |
+| After status evidence | active session state, bootstrap, front door, and V35 route next move to T2A work-order authoring |
+| Approval boundary | bounded session-sync after MSEA-R24-T2 material acceptance commit |
+| Protected path handling | edited only active session/front-door/handoff routing surfaces and generated state aggregate |
+| Commit behavior | session-sync steward owns commit; T2A execution still requires fresh dispatch |
+| T3/T4 boundary | dependent future tranches only; no execution before accepted config/cache receipt and fresh work orders |
+| Public/export behavior | no public-sync or public export |
+| Actual changed set | `AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR24T2MineruHuggingFaceCacheDiagnosticClosure20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
