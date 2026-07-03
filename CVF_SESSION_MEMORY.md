@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T1 worker under WORKER_MUST_NOT_COMMIT, creating only the named worker return and companion decision matrix, and selecting exactly one route token; parked checkpoint=T2/T3/T4 remain dependent future tranches requiring fresh work orders and release evidence before any cache command, runtime smoke, workflow-chain receipt policy, or production claim; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh MSEA-R24-T2 GC-018 baseline and source-verified work order for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic; parked checkpoint=T2 may not run until its fresh work order is committed and gates pass, and T3/T4 remain dependent future tranches; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
+Current mode marker: `msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring`
 
-Current mode: `msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
+Current mode: `msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring`
 
-`msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
+`msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring`
 
 Previous mode:
 
-`msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
+`msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R24-T1 MinerU Model Source Fallback Decision | `3e117e95` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may create only `docs/reviews/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md`; worker must source-verify HuggingFace, ModelScope, auto, and local model-source options, select exactly one route token, and not commit |
+| None | N/A | No worker-dispatched work remains after MSEA-R24-T1 material acceptance commit `86097efe` |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R24-T1 MinerU Model Source Fallback Decision | `86097efe` | CLOSED_PASS_BOUNDED; accepted worker return and companion decision matrix; selected `SELECT_HUGGINGFACE_CACHE_RECOVERY`; releases only fresh MSEA-R24-T2 GC-018/work-order authoring for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no cache command, model download, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, schema/writer/adapter/checker implementation, runtime smoke, workflow-chain completion, production readiness, stage, commit, or push |
 | MSEA-R24-T1 MinerU Model Source Fallback Decision dispatch | `3e117e95` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after R24 roadmap; pre-dispatch autorun PASS 72/72, material pre-commit hook PASS 79/79; worker may create only the named worker return and companion decision matrix; no cache command, model download, alternate-source execution, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, schema/writer/adapter/checker implementation, package reinstall, runtime smoke, workflow-chain completion, production readiness, stage, commit, or push |
 | MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery Roadmap | `aa2614f6` | ROADMAP_READY_FOR_MSEA_R24_T1_GC018_AND_WORK_ORDER_AUTHORING; opens only T1 model-source fallback decision work-order authoring; T2/T3/T4 remain dependent future tranches requiring fresh work orders and release evidence |
 | MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision | `e9baa312` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC`; one authorized ModelScope retry launched from the R22 ignored venv, wrapper/process supervision failed, the retry process was stopped, R23 config was not written, cache completion remained unproven, and runtime smoke stayed blocked; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; next move is MSEA-R24 model-source fallback and cache-completion recovery roadmap authoring before any further runtime/cache work |
@@ -267,16 +268,16 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
+Mode: `msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring`
 
-Next allowed move: execute MSEA-R24-T1 worker under WORKER_MUST_NOT_COMMIT.
-Worker may create only the named worker return and companion decision matrix,
-source-verify HuggingFace, ModelScope, auto, and local model-source options,
-and select exactly one allowed route token.
+Next allowed move: author fresh MSEA-R24-T2 GC-018 baseline and source-verified
+work order for one bounded HuggingFace cache-completion recovery command and
+config/cache receipt diagnostic. T2 may not run until that dispatch packet is
+committed and gates pass.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_2026-07-03.md`
+`docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md`
 
 No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, provider/live proof,
 RAG/S3, schema/writer/checker/adapter implementation, source document copy/

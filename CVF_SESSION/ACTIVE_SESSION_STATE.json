@@ -75,8 +75,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return",
-  "previousMode": "msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring",
+  "currentMode": "msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring",
+  "previousMode": "msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3213,7 +3213,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R24-T1 MinerU Model Source Fallback Decision dispatched at material commit 3e117e95. Worker must execute under WORKER_MUST_NOT_COMMIT. Worker may create only docs/reviews/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_WORKER_RETURN_2026-07-03.md and docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md. Worker may source-verify huggingface, modelscope, auto, and local model-source options and select exactly one route token. Worker must not run cache commands, alternate-source downloads, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller sensitive content, Candidate Group B, rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation, package reinstall, Web/MCP/model-router/action-authority work, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, stage, commit, push, or provider/live governance proof. T2/T3/T4 remain dependent future tranches requiring fresh work orders and release evidence. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R24-T1 accepted at material commit 86097efe with selectedRouteToken SELECT_HUGGINGFACE_CACHE_RECOVERY. Next allowed move is author fresh MSEA-R24-T2 GC-018 baseline and source-verified work order for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic. T2 may not run until its fresh work order is committed and gates pass. No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup beyond the authorized cache command, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller sensitive content, Candidate Group B, rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation, package reinstall, Web/MCP/model-router/action-authority work, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, stage, commit, push, or provider/live governance proof is authorized by T1. T3/T4 remain dependent future tranches requiring T2 receipt and fresh work orders. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6700,5 +6700,25 @@
     ],
     "nextRecommendedMove": "Execute the MSEA-R24-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion decision matrix and selects exactly one route token.",
     "claimBoundary": "Dispatch only. No cache command, model download, alternate-source execution, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, runtime smoke, workflow-chain completion, production readiness, worker commit/stage/push, or session-sync edit is authorized."
+  },
+  "mseaR24T1MineruModelSourceFallbackDecisionClosure20260703": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "86097efe",
+    "materialCommitFull": "86097efeaca705bb9f6851731b3f76ded1331653",
+    "sessionPrerequisiteCommit": "5b870df7",
+    "workerExecutionBaseHead": "5b870df7",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "SELECT_HUGGINGFACE_CACHE_RECOVERY",
+    "t2ReleaseDisposition": "RELEASE_T2_WORK_ORDER_AUTHORING_ONLY",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author fresh MSEA-R24-T2 GC-018 baseline and source-verified work order for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic.",
+    "claimBoundary": "T1 route selection only. No cache command, model download, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, runtime smoke, workflow-chain completion, production readiness, stage, commit, or push was authorized or performed by T1."
   }
 }

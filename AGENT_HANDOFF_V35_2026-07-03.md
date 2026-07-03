@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T1 worker under WORKER_MUST_NOT_COMMIT, creating only the named worker return and companion decision matrix, and selecting exactly one route token; parked checkpoint=T2/T3/T4 remain dependent future tranches requiring fresh work orders and release evidence before any cache command, runtime smoke, workflow-chain receipt policy, or production claim.
+Startup acknowledged: current mode=`msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh MSEA-R24-T2 GC-018 baseline and source-verified work order for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic; parked checkpoint=T2 may not run until its fresh work order is committed and gates pass, and T3/T4 remain dependent future tranches.
 
 ## Current State
 
@@ -46,51 +46,46 @@ Startup acknowledged: current mode=`msea_r24_t1_mineru_model_source_fallback_dec
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `3e117e95` MSEA-R24-T1 model-source fallback decision dispatch |
-| Latest session-sync target | session sync after MSEA-R24-T1 dispatch and handoff rotation |
+| Latest material packet | `86097efe` MSEA-R24-T1 model-source fallback decision acceptance |
+| Latest session-sync target | session sync after MSEA-R24-T1 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
+`msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R24-T1 MinerU model-source fallback decision dispatch was created at
-material commit `3e117e95`.
+MSEA-R24-T1 MinerU model-source fallback decision worker return was accepted at
+material commit `86097efe`.
 
-Dispatch artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_2026-07-03.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_2026-07-03.md`
-
-Material verification: pre-dispatch autorun PASS 72/72 and material pre-commit
-hook PASS 79/79.
-
-## Next Allowed Move
-
-Next allowed move: execute the MSEA-R24-T1 work order under
-WORKER_MUST_NOT_COMMIT.
-
-The worker may create only:
+Accepted artifacts:
 
 - `docs/reviews/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_WORKER_RETURN_2026-07-03.md`
 - `docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md`
 
-The worker may source-verify HuggingFace, ModelScope, auto, and local
-model-source options and must select exactly one route token from the work
-order's allowed list.
+Selected route token: `SELECT_HUGGINGFACE_CACHE_RECOVERY`.
 
-Forbidden until a later fresh work order releases it: cache commands,
-alternate-source downloads, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL
-execution, local service startup, source document copy/import, document body
-read, extraction outputs, provider/live proof, public-sync, fuller sensitive
-content, Candidate Group B, rejected derived outputs, RAG/S3/schema/writer/
-adapter/checker implementation, package reinstall, Web/MCP/model-router/
-action-authority work, benchmark, document-truth, extraction-accuracy, legal
-advice quality, current-law correctness, runtime smoke, workflow-chain
-completion, production readiness, stage, commit, push, or provider/live
-governance proof.
+Material verification: worker-return fast gate PASS, pre-implementation autorun
+PASS 74/74, reviewer-return steward PASS, and material pre-commit hook PASS
+79/79.
+
+## Next Allowed Move
+
+Next allowed move: author fresh MSEA-R24-T2 GC-018 baseline and source-verified
+work order for one bounded HuggingFace cache-completion recovery command and
+config/cache receipt diagnostic.
+
+T2 may not run until its fresh dispatch packet is committed and gates pass.
+Forbidden until then: cache commands, alternate-source downloads, parser/OCR/
+VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup,
+source document copy/import, document body read, extraction outputs,
+provider/live proof, public-sync, fuller sensitive content, Candidate Group B,
+rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation,
+package reinstall, Web/MCP/model-router/action-authority work, benchmark,
+document-truth, extraction-accuracy, legal advice quality, current-law
+correctness, runtime smoke, workflow-chain completion, production readiness,
+stage, commit, push, or provider/live governance proof.
 
 T2/T3/T4 remain dependent future tranches requiring fresh work orders and
 release evidence.
@@ -104,6 +99,60 @@ MSEA-R23-T1 material acceptance commit: `e9baa312`.
 MSEA-R24 roadmap material commit: `aa2614f6`.
 
 MSEA-R24-T1 material dispatch commit: `3e117e95`.
+
+MSEA-R24-T1 material acceptance commit: `86097efe`.
+
+## Core Guard Self-Protection Authorization - MSEA-R24-T1 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R24-T1
+material acceptance commit `86097efe`, including active mode, next allowed
+move, generated active session state, bootstrap read model, front-door
+continuity, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR24T1MineruModelSourceFallbackDecisionClosure20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked to handle the full T1-T4 sequence; T1
+closure selected HuggingFace cache recovery and releases only T2 work-order
+authoring.
+
+Rollback boundary: revert only this MSEA-R24-T1 acceptance session-sync if
+rejected; do not revert material acceptance commit `86097efe` or earlier
+material/session-sync commits.
+
+## GC-020 HEAD Marker - MSEA-R24-T1 Acceptance Session Sync
+
+| Field | Value |
+|---|---|
+| lastSessionSyncMaterialHead | `86097efe` |
+| activeHandoff | `AGENT_HANDOFF_V35_2026-07-03.md` |
+| currentMode | `msea_r24_t1_mineru_model_source_fallback_decision_closed_pending_t2_huggingface_cache_work_order_authoring` |
+| nextAllowedMove | author MSEA-R24-T2 HuggingFace cache-completion recovery work order |
+| generator | `python governance/compat/generate_active_session_state.py --generate` |
+
+## Agent Operation Trace Block - MSEA-R24-T1 Acceptance Session Sync
+
+| Field | Value |
+|---|---|
+| Session or invocation | MSEA-R24-T1 acceptance session-sync, 2026-07-03 |
+| Role | Session-sync steward |
+| Operator instruction | Do all T1-T4, interpreted through dependency-gated tranche sequencing |
+| Allowed scope source | bounded session-sync after MSEA-R24-T1 material acceptance commit |
+| Before status evidence | material HEAD `86097efe`; active state still pointed to T1 pending worker |
+| After status evidence | active session state, bootstrap, front door, and V35 route next move to MSEA-R24-T2 work-order authoring |
+| Approval boundary | bounded session-sync after MSEA-R24-T1 material acceptance commit |
+| Protected path handling | edited only active session/front-door/handoff routing surfaces and generated state aggregate |
+| Commit behavior | session-sync steward owns commit; T2 execution still requires fresh dispatch |
+| T2/T3/T4 boundary | T2 work-order authoring only; no T2 command until dispatch passes |
+| Public/export behavior | no public-sync or public export |
+| Actual changed set | `AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR24T1MineruModelSourceFallbackDecisionClosure20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 
 Previous active handoff V34 was 1118 lines after the prior sync and exceeded
 the governed active-handoff hard threshold. This sync opens V35 and archives
