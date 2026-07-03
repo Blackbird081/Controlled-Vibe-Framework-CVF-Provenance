@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=execute MSEA-R23-T1 worker under `WORKER_MUST_NOT_COMMIT` after dispatch commit `4f716e25`; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, alternate-source download execution, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized by R23; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=author MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery roadmap and then fresh GC-018/source-verified work orders for T1-T4 only as dependencies release; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, alternate-source download execution, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized until the matching fresh work order exists and passes gates; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
+Current mode marker: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`
 
-Current mode: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
+Current mode: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`
 
-`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
+`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`
 
 Previous mode:
 
-`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
+`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision | `4f716e25` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may create only the named worker return and companion readiness matrix, inspect R22 diagnostic evidence, reuse `.cvf/runtime/msea-r22-mineru-venv` if present, set `MINERU_MODEL_SOURCE=modelscope` and `MINERU_TOOLS_CONFIG_JSON=.cvf/runtime/msea-r23-mineru.json`, and run exactly one `mineru-models-download --source modelscope --model_type pipeline`; worker must not commit/stage/push or run parser/runtime/document/public/production work |
+| None | N/A | No worker-dispatched work remains after MSEA-R23-T1 material acceptance commit `e9baa312` |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision | `e9baa312` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC`; one authorized ModelScope retry launched from the R22 ignored venv, wrapper/process supervision failed, the retry process was stopped, R23 config was not written, cache completion remained unproven, and runtime smoke stayed blocked; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; next move is MSEA-R24 model-source fallback and cache-completion recovery roadmap authoring before any further runtime/cache work |
 | MSEA-R22-T1 MinerU Package Install Activation And ModelScope Pipeline Cache Preparation | `7b105700` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`; local ignored package activation succeeded in `.cvf/runtime/msea-r22-mineru-venv` and the venv-local `mineru-models-download` command exists, but the single authorized ModelScope pipeline cache-prep command timed out after about 30 minutes, left partial cache evidence, and did not write `.cvf/runtime/msea-r22-mineru.json`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction outputs, provider/live proof, public-sync, production readiness, runtime smoke, or workflow-chain completion claim |
 | MSEA-R21-T1 MinerU ModelScope Test Cache Preparation And Runtime Smoke Gate | `c859ffb1` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION` because local `mineru-models-download` is missing and package install/activation was not authorized; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no ModelScope model download, config writeback, MinerU runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction outputs, provider/live proof, public-sync, package install, production readiness, or workflow-chain completion claim |
 | MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning | `707953bc` | CLOSED_PASS_BOUNDED; accepted worker return and companion readiness matrix; selected `OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward preflight PASS including reviewer-fast 59/59, material pre-commit hook PASS 79/79; next move is fresh GC-018/source-verified work-order authoring for MinerU model cache/local-source preparation and temporary-service teardown receipt planning before any runtime smoke pilot; no MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim |
@@ -119,6 +120,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision | `e9baa312` | CLOSED_PASS_BOUNDED; selected `HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC`; next move is MSEA-R24 model-source fallback and cache-completion recovery roadmap authoring |
 | MSEA-R22-T1 MinerU Package Install Activation And ModelScope Pipeline Cache Preparation | `7b105700` | CLOSED_PASS_BOUNDED; selected `HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`; next move is operator decision and, if chosen, fresh diagnostic-aware ModelScope cache resume/retry or alternate model-source work-order authoring |
 | MSEA-R21-T1 MinerU ModelScope Test Cache Preparation And Runtime Smoke Gate | `c859ffb1` | CLOSED_PASS_BOUNDED; selected `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`; released by R22 package activation evidence |
 | MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning | `707953bc` | CLOSED_PASS_BOUNDED; selected `OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`; next move is fresh model cache/local-source preparation and temporary-service teardown receipt planning work-order authoring |
@@ -263,16 +265,15 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
+Mode: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`
 
-Next allowed move: execute MSEA-R23-T1 worker under `WORKER_MUST_NOT_COMMIT`.
-The worker may create only the named worker return and companion readiness
-matrix, inspect R22 diagnostic evidence, reuse the ignored R22 venv if present,
-set the R23 config path, and run exactly one ModelScope pipeline cache retry.
+Next allowed move: author MSEA-R24 MinerU Model Source Fallback And Cache
+Completion Recovery roadmap, then fresh GC-018/source-verified work orders for
+T1-T4 only as each dependency releases.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md`
+`docs/reviews/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_WORKER_RETURN_2026-07-03.md`
 
 No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, provider/live proof,
 RAG/S3, schema/writer/checker/adapter implementation, source document copy/
@@ -282,8 +283,9 @@ content inclusion, Candidate Group B, rejected derived outputs,
 document-truth, extraction-accuracy, legal advice quality, current-law
 correctness, benchmark, production readiness, Web/MCP/model-router/
 action-authority, live run, runtime smoke, or workflow-chain completion claim
-is authorized by MSEA-R23-T1. Runtime smoke remains held until cache/config
-readiness is accepted under a later fresh authority.
+is authorized until the matching fresh work order exists and passes gates.
+Runtime smoke remains held until cache/config readiness is accepted under a
+later fresh authority.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -836,7 +838,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
+`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`
 
 ## Continuity Markers
 

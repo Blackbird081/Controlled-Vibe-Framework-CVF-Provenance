@@ -74,8 +74,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return",
-  "previousMode": "msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution",
+  "currentMode": "msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap",
+  "previousMode": "msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3212,7 +3212,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision dispatched at material commit 4f716e25. Worker must execute under WORKER_MUST_NOT_COMMIT. Worker may create only docs/reviews/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_WORKER_RETURN_2026-07-03.md and docs/reference/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_READINESS_MATRIX_2026-07-03.md, plus ignored local runtime side effects under .cvf/runtime and the user model cache created or resumed by the single authorized command. Worker may inspect R22 diagnostic evidence, reuse .cvf/runtime/msea-r22-mineru-venv if present, set MINERU_MODEL_SOURCE=modelscope and MINERU_TOOLS_CONFIG_JSON to .cvf/runtime/msea-r23-mineru.json, and run exactly one mineru-models-download --source modelscope --model_type pipeline command. Worker must not commit, stage, push, run parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, start local services, read or copy source document bodies, create extraction outputs, public-sync, redistribute, include fuller sensitive content, execute alternate model-source downloads, touch Candidate Group B, use rejected derived outputs, perform RAG/S3/schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority work, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, or provider/live governance proof. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision closed at material commit e9baa312. Selected route HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC after one authorized ModelScope retry launched but wrapper/process supervision failed, the retry process was stopped, .cvf/runtime/msea-r23-mineru.json was not written, and cache completion remained unproven. Next allowed move is author MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery roadmap, then fresh GC-018/source-verified work orders for T1-T4 only as each dependency releases: T1 source-verified model-source fallback decision, T2 bounded cache completion recovery, T3 local pipeline runtime smoke only after config/cache receipt, and T4 workflow-chain receipt policy only after smoke evidence. No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, alternate-source download execution, fuller sensitive content, Candidate Group B, rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority work, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, or provider/live governance proof is authorized until the matching fresh work order exists and passes its gates. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6608,11 +6608,15 @@
     "claimBoundary": "Closed bounded planning and route-selection acceptance only. The selected route opens preparation-first authoring for model source/cache/local-mode and temporary-service teardown receipts. No MinerU install, import, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, document body read, extraction outputs, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
   },
   "mseaR23T1MineruModelScopeCacheDiagnosticResolutionDispatch20260703": {
-    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-03",
     "materialCommit": "4f716e25",
     "materialCommitFull": "4f716e25a4ad94cf0920ee1bc9e42af10b95e68c",
+    "closureCommit": "e9baa312",
+    "closureCommitFull": "e9baa31268dc4a806ff8ad30d8f2c01e6e72ea67",
+    "closureDate": "2026-07-03",
     "dispatchBaseHead": "d0d4f120",
+    "executionBaseHead": "4142da0c",
     "baselinePath": "docs/baselines/CVF_GC018_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md",
     "workerReturnPath": "docs/reviews/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_WORKER_RETURN_2026-07-03.md",
@@ -6627,6 +6631,13 @@
       "HOLD_PENDING_CONFIG_WRITEBACK_REVIEW",
       "HOLD_ALL_MINERU_RUNTIME_LANES"
     ],
+    "selectedRouteToken": "HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC",
+    "workerReturnStatus": "COMPLETE_PENDING_REVIEW",
+    "retryCommandDisposition": "PROCESS_ORCHESTRATION_FAILURE_RETRY_STOPPED_DIAGNOSTIC_RECORDED",
+    "r23ConfigWritebackReceipt": "CONFIG_NOT_WRITTEN_AFTER_STOP",
+    "modelCacheCompletionReceipt": "NOT_READY_INCOMPLETE_MODELSCOPE_CACHE_ONLY",
+    "alternateSourceDecision": "DEFER_FRESH_SOURCE_VERIFIED_WORK_ORDER",
+    "runtimeSmokeGateDisposition": "BLOCKED_NO_CACHE_CONFIG_RECEIPT",
     "verification": [
       "pre-dispatch autorun PASS 72/72",
       "dispatch-quality PASS",
@@ -6635,7 +6646,12 @@
       "dispatch steward PASS",
       "material pre-commit hook PASS 79/79"
     ],
-    "nextRecommendedMove": "Execute the MSEA-R23-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion readiness matrix, performs source verification and one bounded ModelScope cache retry if prerequisites hold, selects exactly one route token, and does not commit.",
-    "claimBoundary": "Dispatch only. No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, worker commit/stage/push, or session-sync edit is authorized."
+    "workerReturnFastGate": "PASS",
+    "preImplementationAutorunGate": "PASS 74/74",
+    "reviewerReturnStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "closureSummary": "Reviewer/closer accepted MSEA-R23-T1 worker return and readiness matrix at material commit e9baa312. The worker launched exactly one authorized ModelScope pipeline retry from the R22 ignored venv. The wrapper/process supervision failed before controlled completion, the orphaned retry process was stopped, R23 config was not written, cache completion remained unproven, and runtime smoke stayed blocked.",
+    "nextRecommendedMove": "Author MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery roadmap, then fresh GC-018/source-verified work orders for T1-T4 only as dependencies release: source decision, cache completion, runtime smoke after config/cache receipt, and workflow-chain receipt policy after smoke evidence.",
+    "claimBoundary": "Closure accepts bounded local cache diagnostic classification only. MSEA-R23-T1 does not claim model cache readiness, MinerU runtime readiness, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction outputs, alternate-source execution, provider/live behavior, public readiness, legal advice quality, current-law correctness, workflow-chain completion, production readiness, schema/writer/adapter/checker implementation, or runtime smoke authorization."
   }
 }

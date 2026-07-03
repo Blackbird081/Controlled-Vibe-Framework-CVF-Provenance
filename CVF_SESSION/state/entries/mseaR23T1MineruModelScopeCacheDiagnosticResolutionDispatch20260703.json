@@ -2,11 +2,15 @@
   "stateOrder": 1416,
   "stateKey": "mseaR23T1MineruModelScopeCacheDiagnosticResolutionDispatch20260703",
   "value": {
-    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-03",
     "materialCommit": "4f716e25",
     "materialCommitFull": "4f716e25a4ad94cf0920ee1bc9e42af10b95e68c",
+    "closureCommit": "e9baa312",
+    "closureCommitFull": "e9baa31268dc4a806ff8ad30d8f2c01e6e72ea67",
+    "closureDate": "2026-07-03",
     "dispatchBaseHead": "d0d4f120",
+    "executionBaseHead": "4142da0c",
     "baselinePath": "docs/baselines/CVF_GC018_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md",
     "workerReturnPath": "docs/reviews/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_WORKER_RETURN_2026-07-03.md",
@@ -21,6 +25,13 @@
       "HOLD_PENDING_CONFIG_WRITEBACK_REVIEW",
       "HOLD_ALL_MINERU_RUNTIME_LANES"
     ],
+    "selectedRouteToken": "HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC",
+    "workerReturnStatus": "COMPLETE_PENDING_REVIEW",
+    "retryCommandDisposition": "PROCESS_ORCHESTRATION_FAILURE_RETRY_STOPPED_DIAGNOSTIC_RECORDED",
+    "r23ConfigWritebackReceipt": "CONFIG_NOT_WRITTEN_AFTER_STOP",
+    "modelCacheCompletionReceipt": "NOT_READY_INCOMPLETE_MODELSCOPE_CACHE_ONLY",
+    "alternateSourceDecision": "DEFER_FRESH_SOURCE_VERIFIED_WORK_ORDER",
+    "runtimeSmokeGateDisposition": "BLOCKED_NO_CACHE_CONFIG_RECEIPT",
     "verification": [
       "pre-dispatch autorun PASS 72/72",
       "dispatch-quality PASS",
@@ -29,7 +40,12 @@
       "dispatch steward PASS",
       "material pre-commit hook PASS 79/79"
     ],
-    "nextRecommendedMove": "Execute the MSEA-R23-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion readiness matrix, performs source verification and one bounded ModelScope cache retry if prerequisites hold, selects exactly one route token, and does not commit.",
-    "claimBoundary": "Dispatch only. No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, worker commit/stage/push, or session-sync edit is authorized."
+    "workerReturnFastGate": "PASS",
+    "preImplementationAutorunGate": "PASS 74/74",
+    "reviewerReturnStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "closureSummary": "Reviewer/closer accepted MSEA-R23-T1 worker return and readiness matrix at material commit e9baa312. The worker launched exactly one authorized ModelScope pipeline retry from the R22 ignored venv. The wrapper/process supervision failed before controlled completion, the orphaned retry process was stopped, R23 config was not written, cache completion remained unproven, and runtime smoke stayed blocked.",
+    "nextRecommendedMove": "Author MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery roadmap, then fresh GC-018/source-verified work orders for T1-T4 only as dependencies release: source decision, cache completion, runtime smoke after config/cache receipt, and workflow-chain receipt policy after smoke evidence.",
+    "claimBoundary": "Closure accepts bounded local cache diagnostic classification only. MSEA-R23-T1 does not claim model cache readiness, MinerU runtime readiness, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction outputs, alternate-source execution, provider/live behavior, public readiness, legal advice quality, current-law correctness, workflow-chain completion, production readiness, schema/writer/adapter/checker implementation, or runtime smoke authorization."
   }
 }
