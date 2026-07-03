@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=author MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery roadmap and then fresh GC-018/source-verified work orders for T1-T4 only as dependencies release; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, alternate-source download execution, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized until the matching fresh work order exists and passes gates.
+Startup acknowledged: current mode=`msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=author MSEA-R24-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for model-source fallback decision only; parked checkpoint=no cache command, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, alternate-source download execution, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized until the matching fresh work order exists and passes gates.
 
 ## Current State
 
@@ -46,36 +46,30 @@ Startup acknowledged: current mode=`msea_r23_t1_mineru_modelscope_cache_diagnost
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `e9baa312` MSEA-R23-T1 cache diagnostic resolution acceptance |
-| Latest session-sync target | session sync after MSEA-R23-T1 acceptance |
+| Latest material packet | `aa2614f6` MSEA-R24 model-source fallback roadmap |
+| Latest session-sync target | session sync after MSEA-R24 roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`
+`msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source
-Decision accepted at material commit `e9baa312`.
+MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery roadmap
+created at material commit `aa2614f6`.
 
 Accepted artifacts:
 
-- `docs/reviews/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_WORKER_RETURN_2026-07-03.md`
-- `docs/reference/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_READINESS_MATRIX_2026-07-03.md`
+- `docs/roadmaps/CVF_MSEA_R24_MINERU_MODEL_SOURCE_FALLBACK_AND_CACHE_COMPLETION_RECOVERY_ROADMAP_2026-07-03.md`
 
-Material verification: worker-return fast gate PASS, pre-implementation
-autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook
-PASS 79/79.
+Material verification: pre-dispatch autorun PASS 72/72, material pre-commit
+hook PASS 79/79.
 
 ## Next Allowed Move
 
-Next allowed move: author MSEA-R24 MinerU Model Source Fallback And Cache
-Completion Recovery roadmap, then fresh GC-018/source-verified work orders for
-T1-T4 only as each dependency releases: T1 source-verified model-source
-fallback decision, T2 bounded cache completion recovery, T3 local pipeline
-runtime smoke only after config/cache receipt, and T4 workflow-chain receipt
-policy only after smoke evidence.
+Next allowed move: author MSEA-R24-T1 GC-018 baseline and source-verified
+WORKER_MUST_NOT_COMMIT work order for model-source fallback decision only.
 
 No original document copy/import into this repository, public-sync,
 redistribution, fuller content inclusion, Candidate Group B, rejected derived
@@ -124,6 +118,69 @@ MSEA-R22-T1 material acceptance commit: `7b105700`.
 MSEA-R23-T1 material dispatch commit: `4f716e25`.
 
 MSEA-R23-T1 material acceptance commit: `e9baa312`.
+
+MSEA-R24 roadmap material commit: `aa2614f6`.
+
+## Core Guard Self-Protection Authorization - MSEA-R24 Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R24 roadmap
+material commit `aa2614f6`, including active mode, next allowed move, current
+roadmap-ready work, generated active session state, bootstrap read model,
+front-door continuity, and active handoff continuity.
+
+Protected paths:
+- `AGENT_HANDOFF_V34_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR24MineruModelSourceFallbackCacheRecoveryRoadmap20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator approved the R24 model-source fallback and
+cache-completion recovery direction and asked Codex to handle T1-T4, with
+fresh work orders required as each dependency releases.
+
+Rollback boundary: revert only this MSEA-R24 roadmap session-sync if rejected;
+do not revert material roadmap commit `aa2614f6`, R23 acceptance commit
+`e9baa312`, or prior accepted material/session commits.
+
+## GC-020 HEAD Marker - MSEA-R24 Roadmap
+
+| Field | Value |
+| --- | --- |
+| headSha | `aa2614f6` |
+| headFullSha | `aa2614f63e4cf7d56fd54e0e8b8dd25fde79c0eb` |
+| protectedPathUpdate | session-sync only |
+| materialAnchor | `aa2614f6` |
+| nextAllowedMove | author MSEA-R24-T1 model-source fallback decision work order |
+
+This marker records roadmap readiness only. It does not claim cache readiness,
+MinerU runtime readiness, parser/OCR/VLM/API/service execution, document
+extraction behavior, public readiness, legal advice quality, current-law
+correctness, runtime smoke, workflow-chain completion, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R24 Roadmap Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R24 roadmap session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, `generate_active_session_state.py`, session-sync gates |
+| Target paths | active session state fragments, generated active session state, bootstrap, front door, and active handoff |
+| Allowed scope source | bounded session-sync after MSEA-R24 roadmap material commit |
+| Before status evidence | material HEAD `aa2614f6`; active state still pointed to R24 roadmap authoring |
+| After status evidence | active session state, bootstrap, front door, and V34 route next move to MSEA-R24-T1 work-order authoring |
+| Diff evidence | `git diff --name-status`; session-sync commit steward preflight |
+| Approval boundary | bounded session-sync after MSEA-R24 roadmap material commit |
+| Claim boundary | session continuity only; no runtime/provider/public/package behavior |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r24-roadmap-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed above |
+| Actual changed set | `AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR24MineruModelSourceFallbackCacheRecoveryRoadmap20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization - MSEA-R23-T1 Acceptance Session Sync
 
