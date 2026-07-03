@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r20_t1_mineru_model_cache_local_source_teardown_prep_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=execute MSEA-R20-T1 under WORKER_MUST_NOT_COMMIT, creating only the named worker return and companion readiness matrix with source verification and read-only local metadata; parked checkpoint=no MinerU install/import/model-download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R20-T1 dispatch; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r20_t1_mineru_model_cache_local_source_teardown_prep_closed_pending_operator_model_source_choice`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=operator chooses local model path/cache proof, modelscope download permission, huggingface download permission, explicit auto/config write-back authorization, or runtime defer before any MinerU runtime smoke work order; parked checkpoint=no MinerU install/import/model-download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R20-T1; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r20_t1_mineru_model_cache_local_source_teardown_prep_dispatched_pending_worker_return`
+Current mode marker: `msea_r20_t1_mineru_model_cache_local_source_teardown_prep_closed_pending_operator_model_source_choice`
 
-Current mode: `msea_r20_t1_mineru_model_cache_local_source_teardown_prep_dispatched_pending_worker_return`
+Current mode: `msea_r20_t1_mineru_model_cache_local_source_teardown_prep_closed_pending_operator_model_source_choice`
 
-`msea_r20_t1_mineru_model_cache_local_source_teardown_prep_dispatched_pending_worker_return`
+`msea_r20_t1_mineru_model_cache_local_source_teardown_prep_closed_pending_operator_model_source_choice`
 
 Previous mode:
 
-`msea_r19_t1_mineru_environment_model_service_teardown_planning_closed_pending_model_cache_local_source_prep_work_order`
+`msea_r20_t1_mineru_model_cache_local_source_teardown_prep_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R20-T1 MinerU Model Cache Local Source And Teardown Prep | `cd831308` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may create only `docs/reviews/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_READINESS_MATRIX_2026-07-03.md`; worker must source-verify model-cache/local-source and teardown prep facts, perform only read-only local metadata, select exactly one route token, and not commit |
+| None | N/A | No currently dispatched worker tranche after MSEA-R20-T1 acceptance |
 
 ## Current Held Follow-Up Work
 
@@ -62,6 +62,7 @@ Previous mode:
 | Work | Commit | Disposition |
 |---|---|---|
 | MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning | `707953bc` | CLOSED_PASS_BOUNDED; accepted worker return and companion readiness matrix; selected `OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward preflight PASS including reviewer-fast 59/59, material pre-commit hook PASS 79/79; next move is fresh GC-018/source-verified work-order authoring for MinerU model cache/local-source preparation and temporary-service teardown receipt planning before any runtime smoke pilot; no MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim |
+| MSEA-R20-T1 MinerU Model Cache Local Source And Teardown Prep | `df5b71fa` | CLOSED_PASS_BOUNDED; accepted worker return and companion readiness matrix; selected `HOLD_PENDING_OPERATOR_MODEL_SOURCE_CHOICE`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS including reviewer-fast 59/59, material pre-commit hook PASS 79/79; next move is operator model-source choice before any runtime smoke work order; no MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim |
 | MSEA-R20-T1 MinerU Model Cache Local Source And Teardown Prep dispatch | `cd831308` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after accepted R19 selected `OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`; pre-dispatch autorun PASS 72/72, dispatch-quality PASS, overlap discipline PASS, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_READINESS_MATRIX_2026-07-03.md`; worker must source-verify model-cache/local-source and teardown prep facts, perform only read-only local metadata, select exactly one route token, and not commit |
 | MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning dispatch | `000cd9c3` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after accepted R18 selected `HOLD_RUNTIME_PENDING_ENVIRONMENT_OR_MODEL_PLAN`; pre-dispatch autorun PASS 72/72, dispatch-quality PASS, agent packet authority PASS, dispatch scaffold provenance PASS, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_READINESS_MATRIX_2026-07-03.md`; worker must source-verify MinerU environment/model/source/service facts, perform only read-only local inventory, select exactly one route token, and not commit |
 | MSEA-R18-T1 MinerU Candidate Group A Local Extraction Pilot Plan And Receipt Readiness Selection | `d40e21c8` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion pilot-readiness matrix; selected `HOLD_RUNTIME_PENDING_ENVIRONMENT_OR_MODEL_PLAN`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward preflight PASS including reviewer-fast 59/59, material pre-commit hook PASS 79/79; opens only fresh source-verified planning for MinerU local extraction environment/model lifecycle/local temporary service teardown if the operator chooses; no MinerU runtime/install/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/checker/adapter implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production readiness, or workflow-chain completion claim |
@@ -258,16 +259,16 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r20_t1_mineru_model_cache_local_source_teardown_prep_dispatched_pending_worker_return`
+Mode: `msea_r20_t1_mineru_model_cache_local_source_teardown_prep_closed_pending_operator_model_source_choice`
 
-Next allowed move: execute MSEA-R20-T1 under WORKER_MUST_NOT_COMMIT. Worker
-may create only the named worker return and companion readiness matrix, perform
-source verification and read-only local metadata only, and select exactly one
-route token.
+Next allowed move: operator chooses local model path/cache proof, modelscope
+download permission, huggingface download permission, explicit auto/config
+write-back authorization, or runtime defer before any MinerU runtime smoke work
+order.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_2026-07-03.md`
+`docs/reviews/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_WORKER_RETURN_2026-07-03.md`
 
 No MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/
 Gradio/Docker execution, local temporary service startup, provider/live proof,
