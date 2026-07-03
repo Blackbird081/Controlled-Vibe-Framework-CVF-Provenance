@@ -32,7 +32,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r14_mineru_post_sample_qualification_route_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R14 route decision under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no route execution, operator-confirmation collection, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
+Startup acknowledged: current mode=`msea_r14_mineru_post_sample_qualification_route_decision_accepted_pending_gap_closure_work_order_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=if the operator chooses to continue this lane, author a fresh GC-018 baseline and source-verified work order for bounded sample-stressor provenance-gap closure only; parked checkpoint=no route execution, operator-confirmation collection outside a fresh work order, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -44,38 +44,40 @@ Startup acknowledged: current mode=`msea_r14_mineru_post_sample_qualification_ro
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `b51cbb84` MSEA-R14 MinerU post-sample qualification route-decision dispatch |
-| Latest session-sync target | session sync after MSEA-R14 dispatch |
+| Latest material packet | `7ce21cbd` MSEA-R14 MinerU post-sample qualification route decision acceptance |
+| Latest session-sync target | session sync after MSEA-R14 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r14_mineru_post_sample_qualification_route_decision_dispatched_pending_worker_return`
+`msea_r14_mineru_post_sample_qualification_route_decision_accepted_pending_gap_closure_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R14 MinerU post-sample qualification route-decision dispatch is committed
-at material commit `b51cbb84`. The baseline and work order are
+MSEA-R14 MinerU post-sample qualification route decision is accepted at
+material commit `7ce21cbd`. The accepted worker return and companion matrix are
+`docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md`
+and
+`docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md`.
+Selected route token:
+`OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE`. Worker-return fast gate PASS;
+reviewer-fast PASS 59/59; reviewer-return commit steward preflight PASS;
+material pre-commit hook PASS 79/79.
+
+MSEA-R14 dispatch remains recorded at material commit `b51cbb84`. The baseline
+and work order are
 `docs/baselines/CVF_GC018_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md`.
-The worker must create only
-`docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md`
-and
-`docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md`,
-select exactly one allowed route token, and leave artifacts uncommitted under
-WORKER_MUST_NOT_COMMIT. Expected default is
-`OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE` if R13 evidence still supports
-it. Pre-dispatch autorun PASS 72/72; dispatch commit steward preflight PASS;
-material pre-commit hook PASS 79/79. No route execution, operator-confirmation
-collection, corpus population, runtime/provider/RAG/schema/writer/checker/
-adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority
-or production claim is authorized.
+No route execution, operator-confirmation collection outside a fresh work
+order, corpus population, runtime/provider/RAG/schema/writer/checker/adapter/
+public-sync/source-import/package/Web/MCP/model-router/action-authority or
+production claim is authorized.
 
-## Core Guard Self-Protection Authorization - MSEA-R14 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R14 Acceptance Session Sync
 
-Authorized guard-maintenance scope: session-sync only after material dispatch
-commit `b51cbb84`, including active mode, next allowed move, generated active
+Authorized guard-maintenance scope: session-sync only after material acceptance
+commit `7ce21cbd`, including active mode, next allowed move, generated active
 session state, bootstrap read model, front-door continuity, and this active
 handoff.
 
@@ -84,14 +86,15 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR14MineruPostSampleQualificationRouteDecisionClosure20260703.json`
 - `CVF_SESSION/state/entries/mseaR14MineruPostSampleQualificationRouteDecisionDispatch20260703.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Operator authorization: operator selected option 1; dispatcher committed
-MSEA-R14 route-decision dispatch at `b51cbb84`.
+Operator authorization: operator reported MSEA-R14 worker return COMPLETE_PENDING_REVIEW; reviewer accepted the route decision at `7ce21cbd`.
 
-Rollback boundary: revert only this MSEA-R14 dispatch session-sync if
-rejected; do not revert material dispatch commit `b51cbb84` or earlier
+Rollback boundary: revert only this MSEA-R14 acceptance session-sync if
+rejected; do not revert material acceptance commit `7ce21cbd`, dispatch commit
+`b51cbb84`, or earlier
 MSEA-R13/R12 material commits.
 
 MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification is
@@ -184,29 +187,28 @@ code, adapter implementation, or production-readiness claim is authorized.
 
 ## Next Allowed Move
 
-Operator chooses the next MinerU route.
+If the operator chooses to continue this lane, author a fresh GC-018 baseline
+and source-verified work order for bounded sample-stressor provenance-gap
+closure only: permission/license statement, privacy/redaction disposition,
+proof-use confirmation, and reviewer closure routing before any sample corpus
+population.
 
-If continuing this legal-policy set only as a MinerU sample stressor, the next
-fresh GC-018/work order may close permission/license, privacy/redaction, and
-proof-use confirmation gaps for Candidate Group A and the T11B-verified subset
-of Candidate Group B.
+Accepted MSEA-R14 worker return:
 
-Accepted worker return:
+`docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md`
 
-`docs/reviews/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_WORKER_RETURN_2026-07-03.md`
+Accepted MSEA-R14 companion matrix:
 
-Accepted companion ledger:
+`docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md`
 
-`docs/reference/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_LEDGER_2026-07-03.md`
-
-Otherwise return to the broader MinerU route decision after R12/R13. No
-legal-domain product lane, document copy/import, sample corpus population,
-MinerU runtime/OCR/parser/VLM, provider/RAG/schema/writer/checker/adapter
-work, public-sync, document-truth, extraction-accuracy, legal advice quality,
-current-law correctness, benchmark, production readiness, source import,
-package activation, Web/MCP/model-router/action-authority, worker execution,
-or session-sync edit is authorized without a later fresh source-verified
-roadmap/GC-018/work order and required proof.
+No route execution, operator-confirmation collection outside a fresh work
+order, legal-domain product lane, document copy/import, sample corpus
+population, MinerU runtime/OCR/parser/VLM, provider/RAG/schema/writer/checker/
+adapter work, public-sync, document-truth, extraction-accuracy, legal advice
+quality, current-law correctness, benchmark, production readiness, source
+import, package activation, Web/MCP/model-router/action-authority, worker
+execution, or session-sync edit is authorized without a later fresh
+source-verified roadmap/GC-018/work order and required proof.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
@@ -214,7 +216,7 @@ LHW wave.
 
 ## Verification / Evidence
 
-R13-T1 worker-return fast gate passed, reviewer-fast passed 59/59,
+MSEA-R14 worker-return fast gate passed, reviewer-fast passed 59/59,
 reviewer-return commit steward preflight passed, material pre-commit hook
 passed 79/79, and session-sync gates are pending for this sync commit attempt.
 

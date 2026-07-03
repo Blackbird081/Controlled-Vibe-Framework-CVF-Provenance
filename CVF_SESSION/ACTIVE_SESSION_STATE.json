@@ -73,8 +73,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r14_mineru_post_sample_qualification_route_decision_dispatched_pending_worker_return",
-  "previousMode": "msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision",
+  "currentMode": "msea_r14_mineru_post_sample_qualification_route_decision_accepted_pending_gap_closure_work_order_authoring",
+  "previousMode": "msea_r14_mineru_post_sample_qualification_route_decision_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3211,7 +3211,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R14 MinerU Post Sample Qualification Route Decision dispatch is committed at material commit b51cbb84. Next allowed move: delegated worker executes MSEA-R14 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with only the named worker return and route-decision matrix uncommitted. Worker must select exactly one allowed route token, with expected default OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE if R13 evidence still supports it, and must not execute any selected route. No operator-confirmation collection, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter, document-truth, extraction-accuracy, legal advice quality, current-law correctness, benchmark, public-sync, production readiness, source import, package activation, Web/MCP/model-router/action-authority, worker commit/stage/push, or session-sync edit is authorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R14 MinerU Post Sample Qualification Route Decision is accepted at material commit 7ce21cbd. Selected route token: OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE. Next allowed move: if the operator chooses to continue this lane, author a fresh GC-018 baseline and source-verified work order for bounded sample-stressor provenance-gap closure only: permission/license statement, privacy/redaction disposition, proof-use confirmation, and reviewer closure routing before any sample corpus population. No route execution, operator-confirmation collection outside a fresh work order, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter, document-truth, extraction-accuracy, legal advice quality, current-law correctness, benchmark, public-sync, production readiness, source import, package activation, Web/MCP/model-router/action-authority, worker commit/stage/push, or session-sync edit is authorized without the fresh packet. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6253,5 +6253,26 @@
     "materialPreCommitHook": "PASS 79/79",
     "nextRecommendedMove": "Delegated worker executes MSEA-R14 route-decision matrix and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push.",
     "claimBoundary": "Dispatch only. Worker may create route-decision worker return and companion matrix only; no route execution, operator-confirmation collection, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized."
+  },
+  "mseaR14MineruPostSampleQualificationRouteDecisionClosure20260703": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "7ce21cbd",
+    "materialCommitFull": "7ce21cbd361b76094c7114a13fafe4a2d793a4e2",
+    "dispatchCommit": "b51cbb84",
+    "sessionSyncAfterDispatch": "d80e517b",
+    "executionBaseHead": "d80e517b",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "selectedRouteToken": "OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerReturnCommitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "If the operator chooses to continue this lane, author a fresh GC-018 baseline and source-verified work order for bounded sample-stressor provenance-gap closure only: permission/license statement, privacy/redaction disposition, proof-use confirmation, and reviewer closure routing before any sample corpus population.",
+    "claimBoundary": "Closed bounded route-decision documentation only. No route execution, operator-confirmation collection outside a fresh work order, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or runtime reopen condition was authorized or accepted."
   }
 }
