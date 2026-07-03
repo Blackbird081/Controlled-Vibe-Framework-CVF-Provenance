@@ -31,36 +31,37 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T3 worker under WORKER_MUST_NOT_COMMIT for one bounded local MinerU pipeline runtime smoke or diagnostic hold; parked checkpoint=T4 remains dependent until accepted T3 smoke receipt; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r24_t3_mineru_local_pipeline_runtime_smoke_diagnostic_closed_pending_t3a_path_quoting_rerun_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh MSEA-R24-T3A path-quoting-safe rerun work order if continuing; parked checkpoint=T4 remains held because accepted T3 selected `SMOKE_FAIL_DIAGNOSTIC_RECORDED`, not a successful smoke receipt; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`
+Current mode marker: `msea_r24_t3_mineru_local_pipeline_runtime_smoke_diagnostic_closed_pending_t3a_path_quoting_rerun_work_order_authoring`
 
-Current mode: `msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`
+Current mode: `msea_r24_t3_mineru_local_pipeline_runtime_smoke_diagnostic_closed_pending_t3a_path_quoting_rerun_work_order_authoring`
 
-`msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`
+`msea_r24_t3_mineru_local_pipeline_runtime_smoke_diagnostic_closed_pending_t3a_path_quoting_rerun_work_order_authoring`
 
 Previous mode:
 
-`msea_r24_t2a_mineru_absolute_config_cache_receipt_closed_pending_t3_runtime_smoke_work_order_authoring`
+`msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R24-T3 MinerU Local Pipeline Runtime Smoke dispatch | `2fa47915` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must capture executionBaseHead, preflight, run at most one allowed local MinerU CLI smoke or hold before command if preflight fails, create only the named uncommitted worker return and readiness matrix, and run worker-return fast gate plus pre-implementation autorun |
+| None | N/A | No currently dispatched worker packet remains after accepted MSEA-R24-T3 diagnostic closure |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No separate held follow-up remains after WOAS-R2 closure |
+| MSEA-R24-T3A path-quoting-safe local runtime smoke rerun | `4fe1b044` | WORK_ORDER_AUTHORING_ALLOWED_IF_CONTINUING; fresh GC-018/source-verified work order required before any rerun; T4 remains held until successful smoke receipt exists |
 
 ## Current Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R24-T3 MinerU Local Pipeline Runtime Smoke diagnostic | `4fe1b044` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `SMOKE_FAIL_DIAGNOSTIC_RECORDED`; one authorized local MinerU CLI attempt exited 2 before document processing because a Windows path with spaces was split by the invocation wrapper; no output directory was created and no lingering MinerU/API process remained; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; T4 not released; next move is fresh T3A work-order authoring only if continuing |
 | MSEA-R24-T2A MinerU Absolute Config Path And Local Cache Binding | `b53786d9` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `CONFIG_CACHE_RECEIPT_READY`; config writeback receipt `CONFIG_WRITTEN_ABSOLUTE_PATH`; runtime smoke gate disposition `READY_FOR_FRESH_T3_WORK_ORDER_AUTHORING_ONLY`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; next move is fresh T3 GC-018/source-verified work-order authoring only |
 | MSEA-R24-T2 MinerU HuggingFace Cache Completion Recovery | `561eedc3` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_LOCAL_MODEL_PATH`; one HuggingFace pipeline command ran from the R22 ignored venv, downloaded pipeline cache path evidence, then exited 1 because relative `MINERU_TOOLS_CONFIG_JSON` resolved under user home and the parent directory was absent; config receipt remains absent and runtime smoke remains blocked; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; next move is a fresh source-verified T2A absolute config path/local cache binding receipt work order if continuing |
 | MSEA-R24-T2 MinerU HuggingFace Cache Completion Recovery dispatch | `2ed430ba` | DISPATCH_READY_PENDING_WORKER_RETURN; created baseline and work order for exactly one HuggingFace pipeline cache-completion command using the ignored R22 venv and process-local config path; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; no command executed by dispatch, no runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, document processing, provider/live proof, public-sync, production readiness, stage, commit by worker, or push |
@@ -272,26 +273,26 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`
+Mode: `msea_r24_t3_mineru_local_pipeline_runtime_smoke_diagnostic_closed_pending_t3a_path_quoting_rerun_work_order_authoring`
 
-Next allowed move: execute the MSEA-R24-T3 worker exactly inside the dispatched
-WORKER_MUST_NOT_COMMIT work order boundary: capture executionBaseHead, preflight,
-run at most one allowed local MinerU CLI smoke command or hold before command if
-preflight fails, create the named uncommitted worker return and readiness matrix,
-and run worker-return fast gate plus pre-implementation autorun.
+Next allowed move: author a fresh MSEA-R24-T3A GC-018/source-verified
+WORKER_MUST_NOT_COMMIT work order for one path-quoting-safe local MinerU
+pipeline rerun, if the operator continues. MSEA-R24-T4 remains held until a
+successful local smoke receipt exists.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_2026-07-03.md`
+`docs/reviews/CVF_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_WORKER_RETURN_2026-07-03.md`
 
-No second smoke command, rerun after failure, model download/cache mutation,
-ModelScope, VLM/hybrid/http-client/router/Gradio/Docker/WSL, service outside
-the single CLI process, manual document body read, content quotation, Candidate
-Group A file copy/import, committed extraction outputs, provider/live proof,
-public-sync, RAG/S3/schema/writer/adapter/checker/package/Web/MCP/model-router/
-action-authority work, benchmark, document-truth, extraction-accuracy, legal
-advice quality, current-law correctness, workflow-chain completion, production
-readiness, stage, commit, push, or provider/live governance proof is authorized.
+No T4 dispatch, model download/cache mutation, second rerun inside the same
+worker, ModelScope, VLM/hybrid/http-client/router/Gradio/Docker/WSL, service
+outside a single CLI process, manual document body read, content quotation,
+Candidate Group A file copy/import, committed extraction outputs, provider/live
+proof, public-sync, RAG/S3/schema/writer/adapter/checker/package/Web/MCP/
+model-router/action-authority work, benchmark, document-truth,
+extraction-accuracy, legal advice quality, current-law correctness,
+workflow-chain completion, production readiness, worker stage/commit/push, or
+provider/live governance proof is authorized.
 T4 remains held until accepted T3 smoke receipt and a fresh work order.
 
 LHW24 remains the latest closed numbered LHW wave.
