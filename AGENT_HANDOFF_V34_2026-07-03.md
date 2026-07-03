@@ -147,6 +147,17 @@ extraction-accuracy, legal-advice quality, current-law correctness,
 schema/receipt-writer/adapter implementation, legal-domain product readiness,
 or production readiness.
 
+## GC-020 HEAD Marker - MSEA-R16-T1 Acceptance Session Sync Commit
+
+Latest session-sync commit requiring in-place handoff trace: `0c16c611`.
+
+Full SHA:
+`0c16c61174d1f5ab6aa803ac97fa3da91082a1ad`.
+
+This marker records the session-sync and handoff-rotation commit after
+MSEA-R16-T1 material acceptance. It does not change the current mode, next
+allowed move, or claim boundary recorded above.
+
 ## Agent Operation Trace Block - MSEA-R16-T1 Acceptance Session Sync
 
 | Field | Evidence |
