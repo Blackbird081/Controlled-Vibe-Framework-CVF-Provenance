@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R13-T1 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no document copy/import, sample corpus population, MinerU runtime/install/model-download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter/source-import/provider-live/public-sync/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=operator chooses next MinerU route; if continuing the legal-policy set only as a MinerU sample stressor, first close permission/license, privacy/redaction, and proof-use confirmation gaps under a fresh GC-018/work order; parked checkpoint=no legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/install/model-download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter/source-import/provider-live/public-sync/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`
+Current mode marker: `msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`
 
-Current mode: `msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`
+Current mode: `msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`
 
-`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`
+`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`
 
 Previous mode:
 
-`msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`
+`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R13-T1 MinerU Legal Policy Sample Corpus Candidate Qualification | `c58de9ec` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must not commit/stage/push; create only the candidate qualification worker return and companion ledger; use R12-T1 policy plus LPCI2 legal-policy evidence; no document copy/import, sample corpus population, MinerU runtime/provider/RAG/schema/writer/checker/adapter, document-truth, extraction-accuracy, legal-advice-quality, current-law-correctness, benchmark, public-sync, or production claim |
+| None | N/A | No dispatched worker work is currently open after MSEA-R13-T1 acceptance; next move is operator next MinerU route decision or fresh source-verified work-order authoring if continuing the legal-policy set only as a MinerU sample stressor |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R13-T1 MinerU Legal Policy Sample Corpus Candidate Qualification | `c14398b2` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion candidate qualification ledger after reviewer repair; Group A and the T11B-verified subset of Group B are `PARTIALLY_READY_PENDING_OPERATOR_CONFIRMATION`; 9 ungoverned derived outputs are `NOT_READY`; reviewer corrected effective-date wording and narrowed route implication so the legal-policy use case remains only a MinerU sample stressor/candidate evidence, not a legal-domain product lane or runtime reopen condition; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; no document copy/import, sample corpus population, MinerU runtime/provider/RAG/schema/writer/checker/adapter, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal-advice-quality, current-law-correctness, legal-product lane, production claim, or runtime reopen condition |
 | MSEA-R13-T1 MinerU Legal Policy Sample Corpus Candidate Qualification dispatch | `c58de9ec` | DISPATCH_READY_PENDING_WORKER_RETURN; operator named legal-policy data analysis use case using prior scan/memory-layer data input; dispatch asks for qualification-only mapping of existing LPCI2 legal-policy evidence and external bundle presence to R12 sample slots; pre-dispatch autorun PASS 72/72, dispatch-quality PASS, corpus gates PASS, material pre-commit hook PASS 79/79; no document copy/import, sample corpus population, MinerU runtime/provider/RAG/schema/writer/checker/adapter, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal-advice-quality, current-law-correctness, or production claim |
 | MSEA-R12-T1 MinerU Sample Corpus Expected Receipt Policy | `9f6241af` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion policy reference; defines sample-corpus slot taxonomy, intake/provenance policy, expected receipt assertions/non-assertions, held-lane reopen routing, and operator handoff requirements; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 | MSEA-R12 MinerU Sample Corpus And Expected Receipt Policy Roadmap | `072c15f1` | ROADMAP_READY_FOR_MSEA_R12_T1_GC018_AND_WORK_ORDER_AUTHORING; roadmap-only policy-definition planning after accepted R11-T1 route selection; opens R12-T1 GC-018/work-order authoring; no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
@@ -100,7 +101,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R13-T1 MinerU Legal Policy Sample Corpus Candidate Qualification dispatch | `c58de9ec` | DISPATCH_READY_PENDING_WORKER_RETURN; worker execution is the next move under WORKER_MUST_NOT_COMMIT |
+| MSEA-R13-T1 MinerU Legal Policy Sample Corpus Candidate Qualification | `c14398b2` | CLOSED_PASS_BOUNDED; accepted candidate qualification only; next move is operator next MinerU route decision, with legal-policy set usable only as a sample stressor after separate provenance-gap closure |
 | MSEA-R11-T1 MinerU Productization Readiness Route Selection | `bfa451dc` | CLOSED_PASS_BOUNDED; selected `OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP` as next route |
 | MSEA-R10 MinerU Adapter Contract Draft | `28b77572` | CLOSED_PASS_BOUNDED; accepted adapter contract draft reference and routes next move to MSEA-R11 roadmap authoring |
 | MSEA-R9 MinerU CVF Application Blueprint And Adapter Contract Readiness Selection | `2a58322b` | CLOSED_PASS_BOUNDED; selected `OPEN_ADAPTER_CONTRACT_DRAFT_ONLY`; next move is documentation/reference-only adapter contract draft GC-018/work-order authoring if operator chooses |
@@ -237,36 +238,31 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`
+Mode: `msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`
 
-Next allowed move: delegated worker executes MSEA-R13-T1 under
-WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or
-BLOCKED_WITH_REASON.
+Next allowed move: operator chooses the next MinerU route.
 
-Baseline:
+If continuing this legal-policy set only as a MinerU sample stressor, the
+next fresh GC-018/work order may close permission/license, privacy/redaction,
+and proof-use confirmation gaps for Candidate Group A and the T11B-verified
+subset of Candidate Group B.
 
-`docs/baselines/CVF_GC018_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
-
-Work order:
-
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
-
-Expected worker return:
+Accepted worker return:
 
 `docs/reviews/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_WORKER_RETURN_2026-07-03.md`
 
-Expected companion ledger:
+Accepted companion ledger:
 
 `docs/reference/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_LEDGER_2026-07-03.md`
 
-Worker must use R12-T1 policy plus LPCI2-T4S/T4/T5/T11/T11B legal-policy
-evidence and may safely re-check external bundle presence/hash evidence.
-Document copy/import, sample corpus population, MinerU runtime/OCR/parser/VLM,
-provider/RAG/schema/writer/checker/adapter work, public-sync, document-truth,
-extraction-accuracy, legal advice quality, current-law correctness, benchmark,
-production readiness, source import, package activation, Web/MCP/model-router/
-action-authority, worker commit/stage/push, or session-sync edit remain
-unauthorized.
+Otherwise return to the broader MinerU route decision after R12/R13. No
+legal-domain product lane, document copy/import, sample corpus population,
+MinerU runtime/OCR/parser/VLM, provider/RAG/schema/writer/checker/adapter
+work, public-sync, document-truth, extraction-accuracy, legal advice quality,
+current-law correctness, benchmark, production readiness, source import,
+package activation, Web/MCP/model-router/action-authority, worker execution,
+or session-sync edit is authorized without a later fresh source-verified
+roadmap/GC-018/work order and required proof.
 
 LHW24 remains the latest closed numbered LHW wave.
 

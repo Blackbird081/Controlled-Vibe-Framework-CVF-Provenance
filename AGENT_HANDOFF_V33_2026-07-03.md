@@ -32,7 +32,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R13-T1 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
+Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=operator chooses next MinerU route; if continuing the legal-policy set only as a MinerU sample stressor, first close permission/license, privacy/redaction, and proof-use confirmation gaps under a fresh GC-018/work order; parked checkpoint=no legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -44,18 +44,31 @@ Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candi
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `c58de9ec` MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification dispatch |
-| Latest session-sync target | session sync after MSEA-R13-T1 dispatch |
+| Latest material packet | `c14398b2` MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification acceptance |
+| Latest session-sync target | session sync after MSEA-R13-T1 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`
+`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`
 
 ## Latest Changes
 
 MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification is
-dispatched at material commit `c58de9ec`. The baseline and work order are
+accepted at material commit `c14398b2` after reviewer repair. The accepted
+worker return and companion ledger are
+`docs/reviews/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_WORKER_RETURN_2026-07-03.md`
+and
+`docs/reference/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_LEDGER_2026-07-03.md`.
+Group A and the T11B-verified subset of Group B are
+`PARTIALLY_READY_PENDING_OPERATOR_CONFIRMATION`; 9 ungoverned derived outputs
+are `NOT_READY`. Reviewer repaired effective-date wording and route
+implication so the legal-policy use case remains only a MinerU sample stressor
+and candidate evidence, not a legal-domain product lane or runtime reopen
+condition.
+
+MSEA-R13-T1 dispatch remains recorded at material commit `c58de9ec`. The
+baseline and work order are
 `docs/baselines/CVF_GC018_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`.
@@ -131,33 +144,29 @@ code, adapter implementation, or production-readiness claim is authorized.
 
 ## Next Allowed Move
 
-Delegated worker executes MSEA-R13-T1 under WORKER_MUST_NOT_COMMIT and returns
-COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+Operator chooses the next MinerU route.
 
-Baseline:
+If continuing this legal-policy set only as a MinerU sample stressor, the next
+fresh GC-018/work order may close permission/license, privacy/redaction, and
+proof-use confirmation gaps for Candidate Group A and the T11B-verified subset
+of Candidate Group B.
 
-`docs/baselines/CVF_GC018_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
-
-Work order:
-
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
-
-Expected worker return:
+Accepted worker return:
 
 `docs/reviews/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_WORKER_RETURN_2026-07-03.md`
 
-Expected companion ledger:
+Accepted companion ledger:
 
 `docs/reference/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_LEDGER_2026-07-03.md`
 
-Worker must use R12-T1 policy plus LPCI2-T4S/T4/T5/T11/T11B legal-policy
-evidence and may safely re-check external bundle presence/hash evidence.
-Document copy/import, sample corpus population, MinerU runtime/OCR/parser/VLM,
-provider/RAG/schema/writer/checker/adapter work, public-sync, document-truth,
-extraction-accuracy, legal advice quality, current-law correctness, benchmark,
-production readiness, source import, package activation, Web/MCP/model-router/
-action-authority, worker commit/stage/push, or session-sync edit remain
-unauthorized.
+Otherwise return to the broader MinerU route decision after R12/R13. No
+legal-domain product lane, document copy/import, sample corpus population,
+MinerU runtime/OCR/parser/VLM, provider/RAG/schema/writer/checker/adapter
+work, public-sync, document-truth, extraction-accuracy, legal advice quality,
+current-law correctness, benchmark, production readiness, source import,
+package activation, Web/MCP/model-router/action-authority, worker execution,
+or session-sync edit is authorized without a later fresh source-verified
+roadmap/GC-018/work order and required proof.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
@@ -165,18 +174,19 @@ LHW wave.
 
 ## Verification / Evidence
 
-R13-T1 pre-dispatch autorun passed 72/72, dispatch-quality and corpus gates
-passed, material pre-commit hook passed 79/79, and session-sync gates are
-pending for this sync commit attempt.
+R13-T1 worker-return fast gate passed, reviewer-fast passed 59/59,
+reviewer-return commit steward preflight passed, material pre-commit hook
+passed 79/79, and session-sync gates are pending for this sync commit attempt.
 
 ## Claim Boundary
 
 This handoff records continuity only: generated state alignment, next-move
-routing, and MSEA-R13-T1 material dispatch evidence. It does not claim
+routing, and MSEA-R13-T1 material acceptance evidence. It does not claim
 implementation, runtime behavior, provider/live proof, production readiness,
 sample corpus existence, document-truth, extraction-accuracy, legal advice
 quality, current-law correctness, schema implementation, receipt-writer code,
-adapter implementation, or source import.
+adapter implementation, legal-domain product lane, runtime reopen condition,
+or source import.
 
 ## Core Guard Self-Protection Authorization - MSEA-R12-T1 Closure Session Sync
 
@@ -236,6 +246,72 @@ code, adapter implementation, or production readiness.
 | Claim boundary | session continuity and next-move routing only |
 | Agent type | session-sync steward |
 | Invocation ID | `msea-r12-t1-closure-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync |
+
+## Core Guard Self-Protection Authorization - MSEA-R13-T1 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material acceptance
+commit `c14398b2`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front-door continuity, and this active
+handoff.
+
+Protected paths:
+- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR13T1MineruLegalPolicySampleCorpusCandidateQualificationClosure20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator reported MSEA-R13-T1 worker execution
+complete; reviewer/closer accepted and committed material closure at
+`c14398b2` after reviewer repair.
+
+Rollback boundary: revert only this MSEA-R13-T1 acceptance session-sync if
+rejected; do not revert material acceptance commit `c14398b2`, dispatch commit
+`c58de9ec`, dispatch session-sync commit `a60a2ae2`, MSEA-R12-T1 acceptance
+commit `9f6241af`, or prior MSEA commits.
+
+## GC-020 HEAD Marker - MSEA-R13-T1 Acceptance
+
+Latest material commit requiring in-place handoff trace: `c14398b2`.
+
+Full SHA:
+`c14398b2098e6f3b65c87a4b4cb39963aa32b5f2`.
+
+This marker records accepted candidate-qualification evidence only. The
+legal-policy use case is retained as a MinerU sample stressor and candidate
+evidence, not as a legal-domain product lane, current-law correctness claim,
+or runtime reopen condition. It does not claim document copy/import, sample
+corpus population, MinerU runtime behavior, install/model download,
+parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source
+import, provider/live proof, credential/S3 use, public-sync, package
+activation, Web/MCP/model-router/action-authority work, automatic invocation,
+benchmark, document-truth, extraction-accuracy, legal advice quality,
+current-law correctness, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R13-T1 Acceptance Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R13-T1 acceptance session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | active handoff; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material acceptance commit `c14398b2` |
+| Before status evidence | material HEAD `c14398b2`; active state still pointed to R13-T1 worker execution |
+| After status evidence | active session state, bootstrap, front door, and handoff route next move to operator next MinerU route decision; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `run_agent_commit_steward_preflight.py --mode session-sync --base c14398b2 --head HEAD --enforce` |
+| Approval boundary | bounded session-sync after MSEA-R13-T1 material acceptance commit |
+| Claim boundary | session continuity and next-move routing only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r13-t1-acceptance-session-sync-2026-07-03` |
 | Expected manifest | protected paths listed in this authorization block |
 | Actual changed set | protected session/front-door/handoff paths only |
 | Manifest delta | MATCH |
