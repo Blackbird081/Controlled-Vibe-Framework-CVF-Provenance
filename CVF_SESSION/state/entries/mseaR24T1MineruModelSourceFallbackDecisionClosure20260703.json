@@ -18,7 +18,7 @@
       "reviewer-return steward preflight PASS",
       "material pre-commit hook PASS 79/79"
     ],
-    "nextRecommendedMove": "Author fresh MSEA-R24-T2 GC-018 baseline and source-verified work order for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic.",
+    "nextRecommendedMove": "Author the successor GC-018 baseline and source-verified work order for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic.",
     "claimBoundary": "T1 route selection only. No cache command, model download, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, runtime smoke, workflow-chain completion, production readiness, stage, commit, or push was authorized or performed by T1."
   }
 }
