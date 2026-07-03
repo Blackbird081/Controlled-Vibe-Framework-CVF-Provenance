@@ -32,7 +32,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=operator chooses next MinerU route or asks for a fresh source-verified roadmap/GC-018/work-order using the accepted R12-T1 policy; parked checkpoint=no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized without fresh route/work order.
+Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R13-T1 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -44,15 +44,24 @@ Startup acknowledged: current mode=`msea_r12_t1_sample_corpus_receipt_policy_acc
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `9f6241af` MSEA-R12-T1 MinerU sample-corpus expected-receipt-policy acceptance |
-| Latest session-sync target | session sync after MSEA-R12-T1 acceptance |
+| Latest material packet | `c58de9ec` MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification dispatch |
+| Latest session-sync target | session sync after MSEA-R13-T1 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`
+`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification is
+dispatched at material commit `c58de9ec`. The baseline and work order are
+`docs/baselines/CVF_GC018_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`.
+The dispatch responds to the operator-named legal-policy data analysis use
+case using prior scan/memory-layer data input. It is qualification-only and
+requires WORKER_MUST_NOT_COMMIT.
 
 MSEA-R12-T1 MinerU sample-corpus expected-receipt-policy is accepted at
 material commit `9f6241af`. The accepted worker return and companion policy
@@ -122,24 +131,33 @@ code, adapter implementation, or production-readiness claim is authorized.
 
 ## Next Allowed Move
 
-Operator chooses the next MinerU route or asks for a fresh source-verified
-roadmap/GC-018/work-order using the accepted R12-T1 policy:
+Delegated worker executes MSEA-R13-T1 under WORKER_MUST_NOT_COMMIT and returns
+COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
 
-`docs/reference/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
+Baseline:
 
-Accepted worker return:
+`docs/baselines/CVF_GC018_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
 
-`docs/reviews/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_WORKER_RETURN_2026-07-03.md`
+Work order:
 
-Sample corpus population requires operator-supplied documents meeting the
-intake/provenance policy plus fresh GC-018. Receipt schema implementation,
-receipt-writer code, runtime/parser pilot, RAG adapter, provider-assisted
-correction, S3 boundary, Docker/package lane, checker implementation,
-public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth,
-extraction-accuracy, production-readiness, source import, package activation,
-provider/live proof, or session-sync edit all remain unauthorized until a
-later fresh source-verified roadmap/work order and required proof/conditions
-exist.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md`
+
+Expected worker return:
+
+`docs/reviews/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_WORKER_RETURN_2026-07-03.md`
+
+Expected companion ledger:
+
+`docs/reference/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_LEDGER_2026-07-03.md`
+
+Worker must use R12-T1 policy plus LPCI2-T4S/T4/T5/T11/T11B legal-policy
+evidence and may safely re-check external bundle presence/hash evidence.
+Document copy/import, sample corpus population, MinerU runtime/OCR/parser/VLM,
+provider/RAG/schema/writer/checker/adapter work, public-sync, document-truth,
+extraction-accuracy, legal advice quality, current-law correctness, benchmark,
+production readiness, source import, package activation, Web/MCP/model-router/
+action-authority, worker commit/stage/push, or session-sync edit remain
+unauthorized.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
@@ -147,17 +165,18 @@ LHW wave.
 
 ## Verification / Evidence
 
-R12-T1 worker-return fast gate passed, reviewer-fast passed 59/59,
-reviewer-return commit steward preflight passed, material pre-commit hook
-passed 79/79, and session-sync gates are pending for this sync commit attempt.
+R13-T1 pre-dispatch autorun passed 72/72, dispatch-quality and corpus gates
+passed, material pre-commit hook passed 79/79, and session-sync gates are
+pending for this sync commit attempt.
 
 ## Claim Boundary
 
 This handoff records continuity only: generated state alignment, next-move
-routing, and MSEA-R12-T1 material acceptance evidence. It does not claim
+routing, and MSEA-R13-T1 material dispatch evidence. It does not claim
 implementation, runtime behavior, provider/live proof, production readiness,
-sample corpus existence, document-truth, extraction-accuracy, schema
-implementation, receipt-writer code, adapter implementation, or source import.
+sample corpus existence, document-truth, extraction-accuracy, legal advice
+quality, current-law correctness, schema implementation, receipt-writer code,
+adapter implementation, or source import.
 
 ## Core Guard Self-Protection Authorization - MSEA-R12-T1 Closure Session Sync
 
@@ -217,6 +236,72 @@ code, adapter implementation, or production readiness.
 | Claim boundary | session continuity and next-move routing only |
 | Agent type | session-sync steward |
 | Invocation ID | `msea-r12-t1-closure-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync |
+
+## Core Guard Self-Protection Authorization - MSEA-R13-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material dispatch
+commit `c58de9ec`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front-door continuity, and this active
+handoff.
+
+Protected paths:
+- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR13T1MineruLegalPolicySampleCorpusCandidateQualificationDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator named a legal-policy data analysis use case
+using prior scan/memory-layer data input; Codex created a bounded
+qualification-only dispatch.
+
+Rollback boundary: revert only this MSEA-R13-T1 dispatch session-sync if
+rejected; do not revert material dispatch commit `c58de9ec`, MSEA-R12-T1
+acceptance commit `9f6241af`, MSEA-R12 roadmap commit `072c15f1`, or prior
+MSEA commits.
+
+## GC-020 HEAD Marker - MSEA-R13-T1 Dispatch
+
+Latest material commit requiring in-place handoff trace: `c58de9ec`.
+
+Full SHA:
+`c58de9ece776faffc8cd20737047a4808cde9331`.
+
+This marker records the MSEA-R13-T1 legal-policy sample-corpus candidate
+qualification dispatch packet. It authorizes only a WORKER_MUST_NOT_COMMIT
+candidate qualification worker return and companion ledger using existing
+R12-T1 policy and LPCI2 legal-policy evidence. It does not claim document
+copy/import, sample corpus population, MinerU runtime behavior, install/model
+download, parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution,
+source import, provider/live proof, credential/S3 use, public-sync, package
+activation, Web/MCP/model-router/action-authority work, automatic invocation,
+benchmark, document-truth, extraction-accuracy, legal advice quality,
+current-law correctness, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R13-T1 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R13-T1 dispatch session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | active handoff; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material dispatch commit `c58de9ec` |
+| Before status evidence | material HEAD `c58de9ec`; active state still pointed to R12-T1 accepted route decision |
+| After status evidence | active session state, bootstrap, front door, and handoff route next move to R13-T1 worker execution; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `run_agent_commit_steward_preflight.py --mode session-sync --base c58de9ec --head HEAD --enforce` |
+| Approval boundary | bounded session-sync after MSEA-R13-T1 material dispatch commit |
+| Claim boundary | session continuity and next-move routing only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r13-t1-dispatch-session-sync-2026-07-03` |
 | Expected manifest | protected paths listed in this authorization block |
 | Actual changed set | protected session/front-door/handoff paths only |
 | Manifest delta | MATCH |

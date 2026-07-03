@@ -1,0 +1,36 @@
+{
+  "stateOrder": 1398,
+  "stateKey": "mseaR13T1MineruLegalPolicySampleCorpusCandidateQualificationDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "c58de9ec",
+    "materialCommitFull": "c58de9ece776faffc8cd20737047a4808cde9331",
+    "dispatchBaseHead": "79a0569c",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_LEDGER_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "operatorUseCase": "legal-policy data analysis using prior scan/memory-layer data input",
+    "externalCandidateRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\Policy_Local\\data_input\\Law use case_Codex",
+    "priorEvidence": [
+      "docs/reference/CVF_LPCI2_T11_REAL_USE_CASE_BUNDLE_INVENTORY_2026-06-07.md",
+      "docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md",
+      "docs/reviews/CVF_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md",
+      "docs/reviews/CVF_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_COMPLETION_2026-06-04.md",
+      "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md",
+      "docs/reference/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md"
+    ],
+    "adifDisclosure": "NONE_RETURNED",
+    "preDispatchGate": "PASS 72/72",
+    "dispatchQualityGate": "PASS",
+    "corpusCompletenessGate": "PASS",
+    "corpusKnowledgeMapGate": "PASS",
+    "corpusIntelligenceGate": "PASS",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R13-T1 candidate qualification and returns COMPLETE_PENDING_REVIEW without commit/stage/push.",
+    "claimBoundary": "Dispatch only. Worker may create candidate qualification worker return and ledger only; no document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized."
+  }
+}
