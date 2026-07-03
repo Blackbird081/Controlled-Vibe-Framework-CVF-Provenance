@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author MSEA-R12-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for MinerU sample-corpus and expected-receipt-policy definition; parked checkpoint=no sample document import, corpus population, MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R12-T1 WORKER_MUST_NOT_COMMIT documentation/reference policy-definition work order; parked checkpoint=no sample document import, corpus population, MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`
+Current mode marker: `msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
 
-Current mode: `msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`
+Current mode: `msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
 
-`msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`
+`msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`
+`msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No dispatched worker work is currently open after MSEA-R12 roadmap creation; next move is MSEA-R12-T1 GC-018/work-order authoring |
+| MSEA-R12-T1 MinerU Sample Corpus Expected Receipt Policy | `ac0ef871` | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; worker may create only the named worker return and policy reference; no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 
 ## Current Held Follow-Up Work
 
@@ -234,32 +234,62 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`
+Mode: `msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
 
-Next allowed move: author MSEA-R12-T1 GC-018 baseline and source-verified
-WORKER_MUST_NOT_COMMIT work order for a documentation/reference
-sample-corpus and expected-receipt-policy definition tranche after MSEA-R12
-roadmap material commit `072c15f1`.
+Next allowed move: delegated worker executes the MSEA-R12-T1
+WORKER_MUST_NOT_COMMIT documentation/reference policy-definition work order:
 
-The work order must use the MSEA-R12 roadmap, accepted R11-T1 worker return
-and decision matrix, R11 roadmap, R10 adapter contract draft, R9
-readiness/hold conditions, R8 residual closure ledger, R7 receipt schema
-contract draft, and current MinerU source mirror owner surfaces.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
 
-T1 may define sample-corpus slots, sample intake/provenance requirements,
-expected receipt assertions and non-assertions, held-lane reopen routing, and
-operator handoff requirements only.
+Paired baseline:
+
+`docs/baselines/CVF_GC018_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
+
+Worker may create only:
+
+- `docs/reviews/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_WORKER_RETURN_2026-07-03.md`
+- `docs/reference/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
+
+Worker must capture executionBaseHead, read output-artifact checkers before
+writing, define sample-corpus slots, sample intake/provenance requirements,
+expected receipt assertions/non-assertions, held-lane reopen routing, and
+operator handoff requirements only, run pre-implementation and worker-return
+gates, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without
+commit/stage/push.
 
 No sample document import, corpus population, MinerU install, model download,
 OCR/VLM/hybrid/parser/API/router/Gradio/Docker/RAG execution, provider-live
 proof, public-sync, package activation, checker implementation, source import,
 Web/MCP/model-router/action-authority, automatic invocation, benchmark,
 document-truth, extraction-accuracy, schema implementation, receipt-writer
-code, adapter implementation, production-readiness claim, worker
-commit/stage/push, or session-sync edit is authorized without a later fresh
-source-verified work order.
+code, adapter implementation, production-readiness claim, or session-sync edit
+is authorized without a later fresh source-verified work order.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R12-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material dispatch
+commit `ac0ef871`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front door, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR12T1MineruSampleCorpusReceiptPolicyDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked for the next work order; dispatch was
+authored and gated at material commit `ac0ef871`.
+
+Rollback boundary: revert only this MSEA-R12-T1 dispatch session-sync batch if
+rejected; do not alter material dispatch commit `ac0ef871`, MSEA-R12 roadmap
+commit `072c15f1`, MSEA-R11-T1 acceptance commit `bfa451dc`, MSEA-R11-T1
+dispatch commit `3e5f54ce`, or prior MSEA commits.
 
 ## Core Guard Self-Protection Authorization - MSEA-R12 Roadmap Session Sync
 

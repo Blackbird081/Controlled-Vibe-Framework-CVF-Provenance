@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1396,
+  "stateKey": "mseaR12T1MineruSampleCorpusReceiptPolicyDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-03",
+    "materialCommit": "ac0ef871",
+    "materialCommitFull": "ac0ef87106de15dd53d9b480ac66d8cb4156f74f",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_WORKER_RETURN_2026-07-03.md",
+    "policyReferencePath": "docs/reference/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedRouteToken": "OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP",
+    "dispatchBaseHead": "c376ff33",
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R12-T1 and returns COMPLETE_PENDING_REVIEW without commit/stage/push.",
+    "claimBoundary": "Dispatch only. Worker may define policy reference and worker return only; no sample document import, corpus population, MinerU runtime, provider/live, source import, package, checker, public-sync, schema implementation, receipt-writer code, adapter implementation, document-truth, extraction-accuracy, or production-readiness claim is authorized."
+  }
+}
