@@ -142,6 +142,7 @@ handoff rotation if rejected; do not revert material dispatch commit
 | Field | Value |
 |---|---|
 | lastSessionSyncMaterialHead | `3e117e95` |
+| sessionSyncCommitHead | `22e79082` |
 | activeHandoff | `AGENT_HANDOFF_V35_2026-07-03.md` |
 | archivedHandoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | currentMode | `msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return` |
@@ -165,3 +166,12 @@ handoff rotation if rejected; do not revert material dispatch commit
 | Public/export behavior | no public-sync or public export |
 | Actual changed set | `AGENTS.md`; `AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR24T1MineruModelSourceFallbackDecisionDispatch20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 
+## Handoff-Sync Marker - MSEA-R24-T1 Dispatch Session Sync Commit
+
+| Field | Value |
+|---|---|
+| handoffSyncParentHead | `3e117e95` |
+| handoffSyncCommitHead | `22e79082` |
+| scope | active handoff marker for the accepted session-sync commit |
+| changedSet | `AGENT_HANDOFF_V35_2026-07-03.md` only |
+| claimBoundary | handoff marker only; no material worker output, cache/runtime command, provider/live proof, public-sync, or production claim |
