@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1418,
+  "stateKey": "mseaR24T1MineruModelSourceFallbackDecisionDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "3e117e95",
+    "materialCommitFull": "3e117e959f7e08b0c1fddaf93e0a54d479453ecd",
+    "dispatchBaseHead": "225228d9",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedRouteTokens": [
+      "SELECT_HUGGINGFACE_CACHE_RECOVERY",
+      "SELECT_MODELSCOPE_SUPERVISED_RETRY",
+      "SELECT_AUTO_SOURCE_PROBE",
+      "SELECT_LOCAL_MODEL_PATH_PREP",
+      "HOLD_ALL_CACHE_RECOVERY"
+    ],
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R24-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion decision matrix and selects exactly one route token.",
+    "claimBoundary": "Dispatch only. No cache command, model download, alternate-source execution, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, runtime smoke, workflow-chain completion, production readiness, worker commit/stage/push, or session-sync edit is authorized."
+  }
+}

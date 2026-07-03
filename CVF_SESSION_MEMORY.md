@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V34_2026-07-03.md`
+4. `AGENT_HANDOFF_V35_2026-07-03.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,32 +24,32 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V34_2026-07-03.md` |
+| Active handoff | `AGENT_HANDOFF_V35_2026-07-03.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=author MSEA-R24-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for model-source fallback decision only; parked checkpoint=no cache command, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, alternate-source download execution, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized until the matching fresh work order exists and passes gates; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T1 worker under WORKER_MUST_NOT_COMMIT, creating only the named worker return and companion decision matrix, and selecting exactly one route token; parked checkpoint=T2/T3/T4 remain dependent future tranches requiring fresh work orders and release evidence before any cache command, runtime smoke, workflow-chain receipt policy, or production claim; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
+Current mode marker: `msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
 
-Current mode: `msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
+Current mode: `msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
 
-`msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
+`msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_closed_pass_bounded_pending_r24_model_source_fallback_roadmap`
+`msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker-dispatched work remains after MSEA-R23-T1 material acceptance commit `e9baa312` |
+| MSEA-R24-T1 MinerU Model Source Fallback Decision | `3e117e95` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may create only `docs/reviews/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md`; worker must source-verify HuggingFace, ModelScope, auto, and local model-source options, select exactly one route token, and not commit |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R24-T1 MinerU Model Source Fallback Decision dispatch | `3e117e95` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after R24 roadmap; pre-dispatch autorun PASS 72/72, material pre-commit hook PASS 79/79; worker may create only the named worker return and companion decision matrix; no cache command, model download, alternate-source execution, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, schema/writer/adapter/checker implementation, package reinstall, runtime smoke, workflow-chain completion, production readiness, stage, commit, or push |
 | MSEA-R24 MinerU Model Source Fallback And Cache Completion Recovery Roadmap | `aa2614f6` | ROADMAP_READY_FOR_MSEA_R24_T1_GC018_AND_WORK_ORDER_AUTHORING; opens only T1 model-source fallback decision work-order authoring; T2/T3/T4 remain dependent future tranches requiring fresh work orders and release evidence |
 | MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision | `e9baa312` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC`; one authorized ModelScope retry launched from the R22 ignored venv, wrapper/process supervision failed, the retry process was stopped, R23 config was not written, cache completion remained unproven, and runtime smoke stayed blocked; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; next move is MSEA-R24 model-source fallback and cache-completion recovery roadmap authoring before any further runtime/cache work |
 | MSEA-R22-T1 MinerU Package Install Activation And ModelScope Pipeline Cache Preparation | `7b105700` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`; local ignored package activation succeeded in `.cvf/runtime/msea-r22-mineru-venv` and the venv-local `mineru-models-download` command exists, but the single authorized ModelScope pipeline cache-prep command timed out after about 30 minutes, left partial cache evidence, and did not write `.cvf/runtime/msea-r22-mineru.json`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction outputs, provider/live proof, public-sync, production readiness, runtime smoke, or workflow-chain completion claim |
@@ -266,14 +267,16 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
+Mode: `msea_r24_t1_mineru_model_source_fallback_decision_dispatched_pending_worker_return`
 
-Next allowed move: author MSEA-R24-T1 GC-018 baseline and source-verified
-WORKER_MUST_NOT_COMMIT work order for model-source fallback decision only.
+Next allowed move: execute MSEA-R24-T1 worker under WORKER_MUST_NOT_COMMIT.
+Worker may create only the named worker return and companion decision matrix,
+source-verify HuggingFace, ModelScope, auto, and local model-source options,
+and select exactly one allowed route token.
 
 Current material source:
 
-`docs/roadmaps/CVF_MSEA_R24_MINERU_MODEL_SOURCE_FALLBACK_AND_CACHE_COMPLETION_RECOVERY_ROADMAP_2026-07-03.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_2026-07-03.md`
 
 No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, provider/live proof,
 RAG/S3, schema/writer/checker/adapter implementation, source document copy/
