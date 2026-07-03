@@ -32,7 +32,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author source-verified roadmap for MinerU sample corpus and expected receipt policy definition from accepted R11-T1 route selection; parked checkpoint=no MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
+Startup acknowledged: current mode=`msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author MSEA-R12-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for MinerU sample-corpus and expected-receipt-policy definition; parked checkpoint=no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -44,17 +44,25 @@ Startup acknowledged: current mode=`msea_r11_t1_route_selection_accepted_pending
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `bfa451dc` MSEA-R11-T1 MinerU productization-readiness route-selection acceptance |
-| Latest session-sync target | session sync after MSEA-R11-T1 acceptance |
+| Latest material packet | `072c15f1` MSEA-R12 MinerU sample-corpus expected-receipt-policy roadmap |
+| Latest session-sync target | session sync after MSEA-R12 roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`
+`msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R11-T1 MinerU productization-readiness route-selection is accepted at
+MSEA-R12 MinerU sample-corpus and expected-receipt-policy roadmap is ready at
+material commit `072c15f1`. The roadmap is
+`docs/roadmaps/CVF_MSEA_R12_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_ROADMAP_2026-07-03.md`.
+It is roadmap-only policy-definition planning after MSEA-R11-T1 selected
+`OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP`. It opens MSEA-R12-T1
+GC-018/work-order authoring for a documentation/reference policy-definition
+tranche only.
+
+MSEA-R11-T1 MinerU productization-readiness route-selection remains accepted at
 material commit `bfa451dc`. The accepted worker return and companion decision
 matrix are
 `docs/reviews/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_WORKER_RETURN_2026-07-03.md`
@@ -96,22 +104,27 @@ code, adapter implementation, or production-readiness claim is authorized.
 
 ## Next Allowed Move
 
-Author a source-verified roadmap for MinerU sample corpus and expected receipt
-policy definition after MSEA-R11-T1 material acceptance commit `bfa451dc`
-selected `OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP`.
+Author MSEA-R12-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT
+work order for a documentation/reference MinerU sample-corpus and
+expected-receipt-policy definition tranche after MSEA-R12 material roadmap
+commit `072c15f1`.
 
-The roadmap must use the accepted R11-T1 worker return, R11-T1 decision matrix,
-R11 roadmap, R10 adapter contract draft, R9 readiness/hold conditions, R8
-residual closure ledger, R7 receipt schema contract draft, and current MinerU
-source mirror owner surfaces.
+The work order must use the MSEA-R12 roadmap, accepted R11-T1 worker return,
+R11-T1 decision matrix, R11 roadmap, R10 adapter contract draft, R9
+readiness/hold conditions, R8 residual closure ledger, R7 receipt schema
+contract draft, and current MinerU source mirror owner surfaces.
 
-No MinerU install, model download, execution, source import, credential/S3 use,
-RAG write, package activation, provider/live proof, public-sync,
-Web/MCP/model-router/action-authority, automatic invocation, benchmark,
-document-truth, extraction-accuracy, schema implementation, receipt-writer
-code, adapter implementation, or production claim is authorized now. No
-GC-018/work-order dispatch or worker execution is authorized until the roadmap
-is authored and accepted.
+T1 may define sample-corpus slots, sample intake/provenance requirements,
+expected receipt assertions and non-assertions, held-lane reopen routing, and
+operator handoff requirements only.
+
+No sample document import, corpus population, MinerU install, model download,
+execution, source import, credential/S3 use, RAG write, package activation,
+provider/live proof, public-sync, Web/MCP/model-router/action-authority,
+automatic invocation, benchmark, document-truth, extraction-accuracy, schema
+implementation, receipt-writer code, adapter implementation, or production
+claim is authorized now. No worker execution is authorized until the R12-T1
+work order is authored, gated, and dispatched.
 
 FPC-T4, FPC-DLR-T1, MFE-R1, literal trap learning, and KIOD runtime-candidate
 parking remain as previously recorded. LHW24 remains the latest closed numbered
@@ -119,18 +132,78 @@ LHW wave.
 
 ## Verification / Evidence
 
-R11 roadmap pre-dispatch autorun passed 72/72, material commit pre-commit hook
-passed 79/79, active-session state compatibility passed after V33 rotation,
-next-move freshness passed, governed file size enforcement passed, and
-session-sync commit steward preflight passed before this sync commit attempt.
+R12 roadmap pre-dispatch autorun passed 72/72, material commit pre-commit hook
+passed 79/79, and session-sync gates are pending for this sync commit attempt.
 
 ## Claim Boundary
 
-This handoff records continuity only: active handoff rotation, generated state
-alignment, next-move routing, and MSEA-R11 roadmap material commit evidence. It
-does not claim implementation, runtime behavior, provider/live proof,
-production readiness, document-truth, extraction-accuracy, schema
+This handoff records continuity only: generated state alignment, next-move
+routing, and MSEA-R12 roadmap material commit evidence. It does not claim
+implementation, runtime behavior, provider/live proof, production readiness,
+sample corpus existence, document-truth, extraction-accuracy, schema
 implementation, receipt-writer code, adapter implementation, or source import.
+
+## Core Guard Self-Protection Authorization - MSEA-R12 Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material roadmap
+commit `072c15f1`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front-door continuity, and this active
+handoff.
+
+Protected paths:
+- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR12MineruSampleCorpusExpectedReceiptPolicyRoadmap20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator accepted the R11-T1 selected route and asked
+for the next work order.
+
+Rollback boundary: revert only this MSEA-R12 roadmap session-sync if rejected;
+do not revert material roadmap commit `072c15f1`, MSEA-R11-T1 acceptance commit
+`bfa451dc`, R11-T1 dispatch commit `3e5f54ce`, MSEA-R11 roadmap commit
+`30a15322`, MSEA-R10 closure commit `28b77572`, or prior MSEA commits.
+
+## GC-020 HEAD Marker - MSEA-R12 Roadmap
+
+Latest material commit requiring in-place handoff trace: `072c15f1`.
+
+Full SHA:
+`072c15f12959860e110698fd6479537601f1ea47`.
+
+This marker records MSEA-R12 roadmap-only policy-definition planning and does
+not claim sample document import, corpus population, MinerU runtime behavior,
+source import, provider/live proof, credential/S3/RAG use, public-sync, package
+activation, checker implementation, MCP/CLI adapter behavior, model-router
+work, action authority, automatic invocation, benchmark, document-truth,
+extraction-accuracy, schema implementation, receipt-writer code, adapter
+implementation, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R12 Roadmap Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R12 roadmap session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | active handoff; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material roadmap commit `072c15f1` |
+| Before status evidence | material HEAD `072c15f1`; active state still pointed to R12 roadmap authoring |
+| After status evidence | active session state, bootstrap, front door, and handoff route next move to MSEA-R12-T1 work-order authoring; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `run_agent_commit_steward_preflight.py --mode session-sync --base 072c15f1 --head HEAD --enforce` |
+| Approval boundary | bounded session-sync after MSEA-R12 material roadmap commit |
+| Claim boundary | session continuity and next-move routing only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r12-roadmap-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync |
 
 ## Core Guard Self-Protection Authorization - MSEA-R11 Roadmap Session Sync
 
