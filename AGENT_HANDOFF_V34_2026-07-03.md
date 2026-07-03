@@ -6,14 +6,15 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R21-T1 dispatch while preserving the V34
+Carry compact continuity after MSEA-R21-T1 closure while preserving the V34
 active handoff opened after V33 exceeded the governed handoff file-size
 threshold.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after dispatching MSEA-R21-T1 MinerU
-ModelScope test cache preparation and runtime smoke gate.
+Target: active CVF session continuity after closing MSEA-R21-T1 MinerU
+ModelScope test cache preparation and runtime smoke gate with a bounded
+package-install authorization blocker.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -34,7 +35,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=MSEA-R21-T1 worker executes under WORKER_MUST_NOT_COMMIT, may create only the named worker return and readiness matrix, and may run the single ModelScope pipeline cache-prep command only if `mineru-models-download` already exists; parked checkpoint=no package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local temporary service startup, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R21-T1.
+Startup acknowledged: current mode=`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=MSEA-R21-T1 closed with `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`; if operator wants to proceed, author fresh GC-018/source-verified MSEA-R22 work order for MinerU package install/activation authorization and ModelScope pipeline cache-preparation prerequisites; parked checkpoint=no package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local temporary service startup, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized without fresh work order.
 
 ## Current State
 
@@ -46,36 +47,39 @@ Startup acknowledged: current mode=`msea_r21_t1_mineru_modelscope_test_cache_pre
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `d40a8adf` MSEA-R21-T1 ModelScope cache-prep dispatch |
-| Latest session-sync target | session sync after MSEA-R21-T1 dispatch |
+| Latest material packet | `c859ffb1` MSEA-R21-T1 ModelScope cache-prep blocker acceptance |
+| Latest session-sync target | session sync after MSEA-R21-T1 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`
+`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
 
 ## Latest Changes
 
 MSEA-R21-T1 MinerU ModelScope Test Cache Preparation And Runtime Smoke Gate
-dispatch is committed at material commit `d40a8adf`.
+worker return and readiness matrix are accepted at material commit `c859ffb1`.
 
 Dispatch artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_2026-07-03.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_2026-07-03.md`
 
-Worker outputs authorized:
+Worker outputs accepted:
 
 - `docs/reviews/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_WORKER_RETURN_2026-07-03.md`
 - `docs/reference/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_READINESS_MATRIX_2026-07-03.md`
 
-The work order records operator ModelScope selection for test-first cache
-preparation. Worker may run exactly one command only if
-`mineru-models-download` already exists:
+The work order recorded operator ModelScope selection for test-first cache
+preparation. Worker found that `mineru-models-download` is not available in the
+local environment, and MSEA-R21-T1 did not authorize package install or
+activation. Therefore the selected route is:
 
-`mineru-models-download --source modelscope --model_type pipeline`.
+`HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`.
 
-It does not authorize package install, source import, parser/OCR/VLM/hybrid/
+It does not claim model cache readiness, config writeback, runtime smoke, or
+workflow-chain completion. It does not authorize package install, source import,
+parser/OCR/VLM/hybrid/
 API/router/Gradio/Docker/WSL execution, local temporary service startup,
 provider/live proof, corpus population, source document copy/import, document
 body read, extraction outputs, public-sync, redistribution, fuller content
@@ -84,17 +88,16 @@ checker/adapter work, Web/MCP/model-router/action-authority, benchmark,
 document-truth, extraction-accuracy, legal advice quality, current-law
 correctness, workflow-chain completion, or production readiness.
 
-Material verification: pre-dispatch autorun PASS 72/72, dispatch steward
-preflight PASS, material pre-commit hook PASS 79/79.
+Material verification: worker-return fast gate PASS, pre-implementation
+autorun PASS 74/74, reviewer-return steward preflight PASS, material
+pre-commit hook PASS 79/79.
 
 ## Next Allowed Move
 
-Next allowed move: MSEA-R21-T1 worker executes under WORKER_MUST_NOT_COMMIT.
-Worker may create only the named worker return and companion readiness matrix,
-perform source verification, run read-only local metadata, and run the single
-ModelScope pipeline cache-prep command only if `mineru-models-download` already
-exists. If the command is missing or package install is needed, worker must
-return a blocker route and must not install anything.
+Next allowed move: if the operator wants to proceed, author fresh
+GC-018/source-verified MSEA-R22 work order for MinerU package install/activation
+authorization and ModelScope pipeline cache-preparation prerequisites.
+Otherwise hold all MinerU runtime lanes.
 
 No original document copy/import into this repository, public-sync,
 redistribution, fuller content inclusion, Candidate Group B, rejected derived
@@ -103,8 +106,8 @@ Gradio/Docker/WSL execution, local temporary service startup, provider/live
 proof, document body read, extraction outputs, RAG/S3, schema/writer/checker/
 adapter work, document-truth, extraction-accuracy, legal advice quality,
 current-law correctness, benchmark, production readiness, Web/MCP/model-router/
-action-authority, live run, or workflow-chain completion claim is authorized by
-MSEA-R21-T1.
+action-authority, live run, or workflow-chain completion claim is authorized
+without a fresh work order.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -133,6 +136,8 @@ MSEA-R20-T1 material dispatch commit: `cd831308`.
 MSEA-R20-T1 material acceptance commit: `df5b71fa`.
 
 MSEA-R21-T1 material dispatch commit: `d40a8adf`.
+
+MSEA-R21-T1 material acceptance commit: `c859ffb1`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R21-T1 Dispatch Session Sync
 
@@ -186,6 +191,68 @@ acceptance commit `df5b71fa`, or prior accepted material/session commits.
 | Claim boundary | session continuity only; no runtime/provider/public/package behavior |
 | Agent type | session-sync steward |
 | Invocation ID | `msea-r21-t1-dispatch-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed above |
+| Actual changed set | `AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR21T1MineruModelScopeTestCachePrepDispatch20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+
+## Core Guard Self-Protection Authorization - MSEA-R21-T1 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R21-T1
+material acceptance commit `c859ffb1`, including active mode, next allowed
+move, current closed work, generated active session state, bootstrap read model,
+front-door continuity, and active handoff continuity.
+
+Protected paths:
+- `AGENT_HANDOFF_V34_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR21T1MineruModelScopeTestCachePrepDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked Codex to execute the tranche directly;
+reviewer/closer accepted the worker return and companion readiness matrix at
+material commit `c859ffb1`.
+
+Rollback boundary: revert only this MSEA-R21-T1 acceptance session-sync if
+rejected; do not revert material acceptance commit `c859ffb1`, dispatch commit
+`d40a8adf`, or prior accepted material/session commits.
+
+## GC-020 HEAD Marker - MSEA-R21-T1 Acceptance
+
+| Field | Value |
+| --- | --- |
+| headSha | `c859ffb1` |
+| headFullSha | `c859ffb15f895371366e6a519de3e7b48cbf1f0c` |
+| protectedPathUpdate | session-sync only |
+| materialAnchor | `c859ffb1` |
+| nextAllowedMove | author fresh MSEA-R22 package install/activation authorization and ModelScope cache-prep prerequisite work order if operator proceeds |
+
+This marker records acceptance of a bounded blocker route only. It does not
+claim model cache readiness, config writeback, MinerU runtime readiness,
+document extraction behavior, provider/live behavior, public readiness, legal
+advice quality, current-law correctness, workflow-chain completion, or
+production readiness.
+
+## Agent Operation Trace Block - MSEA-R21-T1 Acceptance Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R21-T1 acceptance session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, `generate_active_session_state.py`, session-sync gates |
+| Target paths | active session state fragments, generated active session state, bootstrap, front door, and active handoff |
+| Allowed scope source | bounded session-sync after MSEA-R21-T1 material acceptance commit |
+| Before status evidence | material HEAD `c859ffb1`; active state still pointed to MSEA-R21-T1 worker execution |
+| After status evidence | active session state, bootstrap, front door, and V34 route next move to fresh MSEA-R22 authorization work-order authoring if operator proceeds |
+| Diff evidence | `git diff --name-status`; session-sync commit steward preflight |
+| Approval boundary | bounded session-sync after MSEA-R21-T1 material acceptance commit |
+| Claim boundary | session continuity only; no runtime/provider/public/package behavior |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r21-t1-acceptance-session-sync-2026-07-03` |
 | Expected manifest | protected paths listed above |
 | Actual changed set | `AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR21T1MineruModelScopeTestCachePrepDispatch20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |

@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=MSEA-R21-T1 worker executes under WORKER_MUST_NOT_COMMIT, may create only the named worker return and readiness matrix, and may run the single ModelScope pipeline cache-prep command only if `mineru-models-download` already exists; parked checkpoint=no package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local temporary service startup, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R21-T1; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=MSEA-R21-T1 closed with `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`; if operator wants to proceed, author fresh GC-018/source-verified MSEA-R22 work order for MinerU package install/activation authorization and ModelScope pipeline cache-preparation prerequisites; parked checkpoint=no package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local temporary service startup, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized without fresh work order; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`
+Current mode marker: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
 
-Current mode: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`
+Current mode: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
 
-`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`
+`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
 
 Previous mode:
 
-`msea_r20_t1_mineru_model_cache_local_source_teardown_prep_closed_pending_operator_model_source_choice`
+`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R21-T1 MinerU ModelScope Test Cache Preparation And Runtime Smoke Gate | `d40a8adf` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after operator selected ModelScope for test-first cache prep; worker may create only `docs/reviews/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_READINESS_MATRIX_2026-07-03.md`; worker may run exactly one ModelScope pipeline cache-prep command only if `mineru-models-download` already exists; no package install, parser/OCR/VLM/API/Docker/WSL/service execution, document body read, extraction outputs, provider/live proof, public-sync, schema/writer/checker/adapter/source-import/Web/MCP/model-router/action-authority/production claim |
+| None | N/A | No current dispatched worker remains after MSEA-R21-T1 closure |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R21-T1 MinerU ModelScope Test Cache Preparation And Runtime Smoke Gate | `c859ffb1` | CLOSED_PASS_BOUNDED; accepted worker return and readiness matrix; selected `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION` because local `mineru-models-download` is missing and package install/activation was not authorized; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no ModelScope model download, config writeback, MinerU runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction outputs, provider/live proof, public-sync, package install, production readiness, or workflow-chain completion claim |
 | MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning | `707953bc` | CLOSED_PASS_BOUNDED; accepted worker return and companion readiness matrix; selected `OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward preflight PASS including reviewer-fast 59/59, material pre-commit hook PASS 79/79; next move is fresh GC-018/source-verified work-order authoring for MinerU model cache/local-source preparation and temporary-service teardown receipt planning before any runtime smoke pilot; no MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim |
 | MSEA-R20-T1 MinerU Model Cache Local Source And Teardown Prep | `df5b71fa` | CLOSED_PASS_BOUNDED; accepted worker return and companion readiness matrix; selected `HOLD_PENDING_OPERATOR_MODEL_SOURCE_CHOICE`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS including reviewer-fast 59/59, material pre-commit hook PASS 79/79; next move is operator model-source choice before any runtime smoke work order; no MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim |
 | MSEA-R20-T1 MinerU Model Cache Local Source And Teardown Prep dispatch | `cd831308` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after accepted R19 selected `OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`; pre-dispatch autorun PASS 72/72, dispatch-quality PASS, overlap discipline PASS, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_READINESS_MATRIX_2026-07-03.md`; worker must source-verify model-cache/local-source and teardown prep facts, perform only read-only local metadata, select exactly one route token, and not commit |
@@ -117,6 +118,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R21-T1 MinerU ModelScope Test Cache Preparation And Runtime Smoke Gate | `c859ffb1` | CLOSED_PASS_BOUNDED; selected `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`; next move is fresh MSEA-R22 package install/activation authorization and ModelScope cache-prep prerequisite work order if operator wants to proceed |
 | MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning | `707953bc` | CLOSED_PASS_BOUNDED; selected `OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST`; next move is fresh model cache/local-source preparation and temporary-service teardown receipt planning work-order authoring |
 | MSEA-R17-T1 MinerU Candidate Group A Private Test Corpus Intake And Receipt Dry Run | `eb127b7f` | CLOSED_PASS_BOUNDED; next move is fresh GC-018/source-verified work order authoring for the next private-test step if operator chooses |
 | MSEA-R17-T1 MinerU Candidate Group A Private Test Corpus Intake And Receipt Dry Run dispatch | `b14bf0fd` | DISPATCH_READY_PENDING_WORKER_RETURN; worker execution accepted at `eb127b7f` |
@@ -259,18 +261,18 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`
+Mode: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
 
-Next allowed move: MSEA-R21-T1 worker executes under WORKER_MUST_NOT_COMMIT.
-Worker may create only the named worker return and companion readiness matrix,
-perform source verification, run read-only local metadata, and run the single
-ModelScope pipeline cache-prep command only if `mineru-models-download` already
-exists. If the command is missing or package install is needed, worker must
-return a blocker route and must not install anything.
+Next allowed move: MSEA-R21-T1 closed at material commit `c859ffb1` with
+selectedRouteToken `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`. If the
+operator wants to proceed, author fresh GC-018/source-verified MSEA-R22 work
+order for MinerU package install/activation authorization and ModelScope
+pipeline cache-preparation prerequisites. Otherwise hold all MinerU runtime
+lanes.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_2026-07-03.md`
+`docs/reviews/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_WORKER_RETURN_2026-07-03.md`
 
 No package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/
 Docker/WSL execution, local temporary service startup, provider/live proof,
@@ -280,7 +282,7 @@ public-sync, redistribution, fuller content inclusion, Candidate Group B,
 rejected derived outputs, document-truth, extraction-accuracy, legal advice
 quality, current-law correctness, benchmark, production readiness, Web/MCP/
 model-router/action-authority, live run, or workflow-chain completion claim is
-authorized.
+authorized without a fresh work order.
 
 LHW24 remains the latest closed numbered LHW wave.
 
