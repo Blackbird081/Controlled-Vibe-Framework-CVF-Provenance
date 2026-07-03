@@ -6,13 +6,13 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R24-T2A acceptance and keep the active
-handoff current for the next MSEA-R24-T3 work-order authoring step.
+Carry compact continuity after MSEA-R24-T3 dispatch and keep the active
+handoff current for the next MSEA-R24-T3 worker execution step.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after accepting MSEA-R24-T2A MinerU
-absolute config path and local cache binding evidence.
+Target: active CVF session continuity after dispatching MSEA-R24-T3 MinerU
+local pipeline runtime smoke.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t2a_mineru_absolute_config_cache_receipt_closed_pending_t3_runtime_smoke_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R24-T3 GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for bounded local MinerU pipeline runtime smoke; parked checkpoint=T4 remains dependent until accepted T3 smoke receipt.
+Startup acknowledged: current mode=`msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T3 worker under WORKER_MUST_NOT_COMMIT for one bounded local MinerU pipeline runtime smoke or diagnostic hold; parked checkpoint=T4 remains dependent until accepted T3 smoke receipt.
 
 ## Current State
 
@@ -46,56 +46,80 @@ Startup acknowledged: current mode=`msea_r24_t2a_mineru_absolute_config_cache_re
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `b53786d9` MSEA-R24-T2A config/cache receipt acceptance |
-| Latest session-sync target | session sync after MSEA-R24-T2A acceptance |
+| Latest material packet | `2fa47915` MSEA-R24-T3 local runtime smoke dispatch |
+| Latest session-sync target | session sync after MSEA-R24-T3 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r24_t2a_mineru_absolute_config_cache_receipt_closed_pending_t3_runtime_smoke_work_order_authoring`
+`msea_r24_t3_mineru_local_pipeline_runtime_smoke_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R24-T2A MinerU absolute config path and local cache binding acceptance was
-committed at material commit `b53786d9`.
+MSEA-R24-T3 MinerU local pipeline runtime smoke dispatch was committed at
+material commit `2fa47915`.
 
-Accepted artifacts:
+Dispatch artifacts:
 
-- `docs/reviews/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_WORKER_RETURN_2026-07-03.md`
-- `docs/reference/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_READINESS_MATRIX_2026-07-03.md`
+- `docs/baselines/CVF_GC018_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_2026-07-03.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_2026-07-03.md`
 
-Selected route: `CONFIG_CACHE_RECEIPT_READY`.
+Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
-Config writeback receipt: `CONFIG_WRITTEN_ABSOLUTE_PATH`.
+Allowed worker result tokens: `SMOKE_PASS_BOUNDED`,
+`SMOKE_FAIL_DIAGNOSTIC_RECORDED`, `HOLD_PENDING_RUNTIME_ENV_FIX`,
+`HOLD_ALL_RUNTIME_LANES`.
 
-Runtime smoke gate disposition:
-`READY_FOR_FRESH_T3_WORK_ORDER_AUTHORING_ONLY`.
-
-Material verification: worker-return fast gate PASS, pre-implementation
-autorun PASS 74/74, reviewer-return steward PASS, and material pre-commit hook
-PASS 79/79.
+Material verification: pre-dispatch autorun PASS 72/72, dispatch steward PASS,
+and material pre-commit hook PASS 79/79.
 
 ## Next Allowed Move
 
-Next allowed move: author fresh MSEA-R24-T3 GC-018 baseline and
-source-verified WORKER_MUST_NOT_COMMIT work order for bounded local MinerU
-pipeline runtime smoke using the accepted T2A config/cache receipt.
+Next allowed move: execute the MSEA-R24-T3 worker exactly inside the dispatched
+WORKER_MUST_NOT_COMMIT work order boundary: capture executionBaseHead, preflight,
+run at most one allowed local MinerU CLI smoke command or hold before command if
+preflight fails, create the named uncommitted worker return and readiness matrix,
+and run worker-return fast gate plus pre-implementation autorun.
 
-Do not execute runtime smoke until T3 dispatch and session-sync pass.
-Forbidden without fresh authority: second cache command, ModelScope retry,
-alternate-source download, local model parsing beyond T3-authorized smoke
-planning, source document copy/import, document body read, extraction outputs,
-provider/live proof, public-sync, fuller sensitive content, Candidate Group B,
-rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation,
-package reinstall, Web/MCP/model-router/action-authority work, benchmark,
+Forbidden without fresh authority: second smoke command, rerun after failure,
+model download/cache mutation, ModelScope, VLM/hybrid/http-client/router/
+Gradio/Docker/WSL, service outside the single CLI process, manual document body
+read, content quotation, Candidate Group A file copy/import, committed
+extraction outputs, provider/live proof, public-sync, RAG/S3/schema/writer/
+adapter/checker/package/Web/MCP/model-router/action-authority work, benchmark,
 document-truth, extraction-accuracy, legal advice quality, current-law
-correctness, workflow-chain completion, production readiness, push, or
-provider/live governance proof.
+correctness, workflow-chain completion, production readiness, stage, commit,
+push, or provider/live governance proof.
 
 T4 remains a dependent future tranche requiring accepted T3 smoke receipt and a
 fresh work order.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R24-T3 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R24-T3
+dispatch material commit `2fa47915`, including active mode, next allowed move,
+generated active session state, bootstrap read model, front-door continuity,
+and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR24T3MineruLocalPipelineRuntimeSmokeDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked to continue the T1-T4 MinerU sequence;
+T3 dispatch commit `2fa47915` releases only T3 worker execution under the
+committed work order.
+
+Rollback boundary: revert only this MSEA-R24-T3 dispatch session-sync if
+rejected; do not revert dispatch commit `2fa47915` or earlier material/session
+commits.
 
 ## Verification / Evidence
 
