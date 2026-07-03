@@ -32,7 +32,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=operator chooses next MinerU route; if continuing the legal-policy set only as a MinerU sample stressor, first close permission/license, privacy/redaction, and proof-use confirmation gaps under a fresh GC-018/work order; parked checkpoint=no legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
+Startup acknowledged: current mode=`msea_r14_mineru_post_sample_qualification_route_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R14 route decision under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no route execution, operator-confirmation collection, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -44,15 +44,55 @@ Startup acknowledged: current mode=`msea_r13_t1_legal_policy_sample_corpus_candi
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `c14398b2` MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification acceptance |
-| Latest session-sync target | session sync after MSEA-R13-T1 acceptance |
+| Latest material packet | `b51cbb84` MSEA-R14 MinerU post-sample qualification route-decision dispatch |
+| Latest session-sync target | session sync after MSEA-R14 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r13_t1_legal_policy_sample_corpus_candidate_qualification_accepted_pending_next_mineru_route_decision`
+`msea_r14_mineru_post_sample_qualification_route_decision_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R14 MinerU post-sample qualification route-decision dispatch is committed
+at material commit `b51cbb84`. The baseline and work order are
+`docs/baselines/CVF_GC018_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md`.
+The worker must create only
+`docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md`
+and
+`docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md`,
+select exactly one allowed route token, and leave artifacts uncommitted under
+WORKER_MUST_NOT_COMMIT. Expected default is
+`OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE` if R13 evidence still supports
+it. Pre-dispatch autorun PASS 72/72; dispatch commit steward preflight PASS;
+material pre-commit hook PASS 79/79. No route execution, operator-confirmation
+collection, corpus population, runtime/provider/RAG/schema/writer/checker/
+adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority
+or production claim is authorized.
+
+## Core Guard Self-Protection Authorization - MSEA-R14 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material dispatch
+commit `b51cbb84`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front-door continuity, and this active
+handoff.
+
+Protected paths:
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR14MineruPostSampleQualificationRouteDecisionDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator selected option 1; dispatcher committed
+MSEA-R14 route-decision dispatch at `b51cbb84`.
+
+Rollback boundary: revert only this MSEA-R14 dispatch session-sync if
+rejected; do not revert material dispatch commit `b51cbb84` or earlier
+MSEA-R13/R12 material commits.
 
 MSEA-R13-T1 MinerU legal-policy sample-corpus candidate qualification is
 accepted at material commit `c14398b2` after reviewer repair. The accepted
