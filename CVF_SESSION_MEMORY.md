@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh MSEA-R24-T2A GC-018/work order for absolute config path and local HuggingFace cache binding receipt; parked checkpoint=T3/T4 remain dependent future tranches until config/cache receipt is accepted; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T2A worker under WORKER_MUST_NOT_COMMIT; parked checkpoint=T3/T4 remain dependent future tranches until config/cache receipt is accepted; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`
+Current mode marker: `msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`
 
-Current mode: `msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`
+Current mode: `msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`
 
-`msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`
+`msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r24_t2_mineru_huggingface_cache_completion_recovery_dispatched_pending_worker_return`
+`msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker-dispatched work remains after MSEA-R24-T2 material acceptance commit `561eedc3` |
+| MSEA-R24-T2A MinerU Absolute Config Path And Local Cache Binding | `c6214814` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order authorize exactly one HuggingFace pipeline cache-binding command using the ignored R22 venv and absolute `MINERU_TOOLS_CONFIG_JSON` under `.cvf/runtime`; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only the named worker return and companion readiness matrix and must not commit |
 
 ## Current Held Follow-Up Work
 
@@ -270,21 +270,23 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`
+Mode: `msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`
 
-Next allowed move: author fresh MSEA-R24-T2A GC-018 baseline and source-verified
-work order for absolute config path plus local HuggingFace cache binding receipt
-recovery. T3 runtime smoke remains blocked until that config/cache receipt is
-accepted.
+Next allowed move: execute the MSEA-R24-T2A work order under
+WORKER_MUST_NOT_COMMIT. The worker may run exactly one HuggingFace pipeline
+cache-binding command using the ignored R22 venv and absolute
+`MINERU_TOOLS_CONFIG_JSON` under ignored `.cvf/runtime`, then create the
+uncommitted worker return and companion readiness matrix. T3 runtime smoke
+remains blocked until the T2A config/cache receipt is accepted.
 
 Current material source:
 
-`docs/reference/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_READINESS_MATRIX_2026-07-03.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_2026-07-03.md`
 
-No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, provider/live proof,
+No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup beyond the authorized command process, provider/live proof,
 RAG/S3, schema/writer/checker/adapter implementation, source document copy/
 import into this repository, document body read, extraction outputs,
-public-sync, redistribution, second cache command without fresh authority, alternate-source download execution, fuller
+public-sync, redistribution, second cache command, alternate-source download execution, fuller
 content inclusion, Candidate Group B, rejected derived outputs,
 document-truth, extraction-accuracy, legal advice quality, current-law
 correctness, benchmark, production readiness, Web/MCP/model-router/
@@ -843,7 +845,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`msea_r24_mineru_model_source_fallback_cache_completion_recovery_roadmap_ready_pending_t1_work_order_authoring`
+`msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`
 
 ## Continuity Markers
 

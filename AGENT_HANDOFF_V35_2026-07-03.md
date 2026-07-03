@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh MSEA-R24-T2A GC-018/work order for absolute config path and local HuggingFace cache binding receipt; parked checkpoint=T3/T4 remain dependent future tranches until config/cache receipt is accepted.
+Startup acknowledged: current mode=`msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T2A worker under WORKER_MUST_NOT_COMMIT; parked checkpoint=T3/T4 remain dependent future tranches until config/cache receipt is accepted.
 
 ## Current State
 
@@ -46,46 +46,52 @@ Startup acknowledged: current mode=`msea_r24_t2_mineru_huggingface_cache_diagnos
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `561eedc3` MSEA-R24-T2 HuggingFace cache diagnostic acceptance |
-| Latest session-sync target | session sync after MSEA-R24-T2 acceptance |
+| Latest material packet | `c6214814` MSEA-R24-T2A absolute config path recovery dispatch |
+| Latest session-sync target | session sync after MSEA-R24-T2A dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r24_t2_mineru_huggingface_cache_diagnostic_closed_pending_t2a_absolute_config_path_work_order_authoring`
+`msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R24-T2 MinerU HuggingFace cache diagnostic worker return was accepted at
-material commit `561eedc3`.
+MSEA-R24-T2A MinerU absolute config path and local cache binding dispatch was
+committed at material commit `c6214814`.
 
-Accepted artifacts:
+Dispatch artifacts:
 
-- `docs/reviews/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_WORKER_RETURN_2026-07-03.md`
-- `docs/reference/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_READINESS_MATRIX_2026-07-03.md`
+- `docs/baselines/CVF_GC018_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_2026-07-03.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_2026-07-03.md`
 
-Selected route token: `HOLD_PENDING_LOCAL_MODEL_PATH`.
+Worker output paths:
 
-Material verification: worker-return fast gate PASS, pre-implementation autorun
-PASS 74/74, reviewer-return steward PASS, and material pre-commit hook PASS
-79/79.
+- `docs/reviews/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_WORKER_RETURN_2026-07-03.md`
+- `docs/reference/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_READINESS_MATRIX_2026-07-03.md`
+
+Material verification: pre-dispatch autorun PASS 72/72, dispatch steward PASS,
+and material pre-commit hook PASS 79/79.
 
 ## Next Allowed Move
 
-Next allowed move: author fresh MSEA-R24-T2A GC-018/work order for absolute
-config path and local HuggingFace cache binding receipt recovery.
+Next allowed move: execute the MSEA-R24-T2A worker under
+WORKER_MUST_NOT_COMMIT. The worker may run exactly one HuggingFace pipeline
+cache-binding command using the existing ignored R22 venv and absolute
+`MINERU_TOOLS_CONFIG_JSON` path under ignored `.cvf/runtime`, then create the
+uncommitted worker return and companion readiness matrix.
 
 T3 runtime smoke remains blocked until config/cache receipt is accepted.
 Forbidden without fresh authority: second cache command, ModelScope retry,
 `auto` probe, alternate-source downloads, local model parsing, parser/OCR/
-VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup,
-source document copy/import, document body read, extraction outputs,
-provider/live proof, public-sync, fuller sensitive content, Candidate Group B,
-rejected derived outputs, RAG/S3/schema/writer/adapter/checker implementation,
-package reinstall, Web/MCP/model-router/action-authority work, benchmark,
-document-truth, extraction-accuracy, legal advice quality, current-law
-correctness, runtime smoke, workflow-chain completion, production readiness,
-stage, commit, push, or provider/live governance proof.
+VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup beyond
+the authorized command process, source document copy/import, document body
+read, extraction outputs, provider/live proof, public-sync, fuller sensitive
+content, Candidate Group B, rejected derived outputs, RAG/S3/schema/writer/
+adapter/checker implementation, package reinstall, Web/MCP/model-router/
+action-authority work, benchmark, document-truth, extraction-accuracy, legal
+advice quality, current-law correctness, runtime smoke, workflow-chain
+completion, production readiness, stage, commit, push, or provider/live
+governance proof.
 
 T3/T4 remain dependent future tranches requiring accepted config/cache receipt
 and fresh work orders.
@@ -101,6 +107,10 @@ MSEA-R24 roadmap material commit: `aa2614f6`.
 MSEA-R24-T1 material dispatch commit: `3e117e95`.
 
 MSEA-R24-T1 material acceptance commit: `86097efe`.
+
+MSEA-R24-T2 material acceptance commit: `561eedc3`.
+
+MSEA-R24-T2A material dispatch commit: `c6214814`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R24-T1 Acceptance Session Sync
 
@@ -368,3 +378,55 @@ material/session-sync commits.
 | scope | active handoff marker for the accepted MSEA-R24-T2 diagnostic session-sync commit |
 | changedSet | `AGENT_HANDOFF_V35_2026-07-03.md` only |
 | claimBoundary | handoff marker only; no material worker output, cache/runtime command, provider/live proof, public-sync, or production claim |
+
+## Core Guard Self-Protection Authorization - MSEA-R24-T2A Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R24-T2A
+material dispatch commit `c6214814`, including active mode, next allowed move,
+generated active session state, bootstrap read model, front-door continuity, and
+active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR24T2AMineruAbsoluteConfigPathLocalCacheBindingDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked to continue after T2A dispatch was
+created; governance dependency rules release only T2A worker execution after
+this dispatch sync, while T3/T4 remain dependent future tranches.
+
+Rollback boundary: revert only this MSEA-R24-T2A dispatch session-sync if
+rejected; do not revert material dispatch commit `c6214814` or earlier
+material/session-sync commits.
+
+## GC-020 HEAD Marker - MSEA-R24-T2A Dispatch Session Sync
+
+| Field | Value |
+|---|---|
+| lastSessionSyncMaterialHead | `c6214814` |
+| activeHandoff | `AGENT_HANDOFF_V35_2026-07-03.md` |
+| currentMode | `msea_r24_t2a_mineru_absolute_config_path_and_local_cache_binding_dispatched_pending_worker_return` |
+| nextAllowedMove | execute MSEA-R24-T2A worker under WORKER_MUST_NOT_COMMIT |
+| generator | `python governance/compat/generate_active_session_state.py --generate` |
+
+## Agent Operation Trace Block - MSEA-R24-T2A Dispatch Session Sync
+
+| Field | Value |
+|---|---|
+| Session or invocation | MSEA-R24-T2A dispatch session-sync, 2026-07-03 |
+| Role | Session-sync steward |
+| Operator instruction | Do all T1-T4, interpreted through dependency-gated tranche sequencing |
+| Allowed scope source | bounded session-sync after MSEA-R24-T2A material dispatch commit |
+| Before status evidence | material HEAD `c6214814`; active state still pointed to T2A work-order authoring |
+| After status evidence | active session state, bootstrap, front door, and V35 route next move to T2A worker execution |
+| Approval boundary | bounded session-sync after MSEA-R24-T2A material dispatch commit |
+| Protected path handling | edited only active session/front-door/handoff routing surfaces and generated state aggregate |
+| Commit behavior | session-sync steward owns commit; worker execution remains no-commit until reviewer acceptance |
+| T3/T4 boundary | dependent future tranches only; no execution before accepted config/cache receipt and fresh work orders |
+| Public/export behavior | no public-sync or public export |
+| Actual changed set | `AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR24T2AMineruAbsoluteConfigPathLocalCacheBindingDispatch20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
