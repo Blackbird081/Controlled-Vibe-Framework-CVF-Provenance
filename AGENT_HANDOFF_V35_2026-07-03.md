@@ -476,6 +476,26 @@ material/session-sync commits.
 | nextAllowedMove | author MSEA-R24-T3 runtime-smoke work order |
 | generator | `python governance/compat/generate_active_session_state.py --generate` |
 
+## Core Guard Self-Protection Authorization - MSEA-R24-T3 Lifecycle Text Repair
+
+Authorized guard-maintenance scope: session-text wording repair only, so the
+closed T2A receipt does not make lifecycle hygiene treat successor T3 dispatch
+as already closed.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/mseaR24T2AMineruAbsoluteConfigPathLocalCacheBindingClosure20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator approved continuing the dependency-gated
+MinerU T1-T4 chain; this batch does not execute runtime smoke.
+
+Rollback boundary: revert only this wording repair and generated-state refresh
+if rejected; do not revert accepted T2A material or prior session-sync commits.
+
 ## Agent Operation Trace Block - MSEA-R24-T2A Acceptance Session Sync
 
 | Field | Value |

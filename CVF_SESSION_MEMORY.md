@@ -126,7 +126,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R24-T2A MinerU Absolute Config Path And Local Cache Binding | `b53786d9` | CLOSED_PASS_BOUNDED; selected `CONFIG_CACHE_RECEIPT_READY`; next move is fresh MSEA-R24-T3 runtime-smoke work-order authoring only |
+| MSEA-R24-T2A MinerU Absolute Config Path And Local Cache Binding | `b53786d9` | CLOSED_PASS_BOUNDED; selected `CONFIG_CACHE_RECEIPT_READY`; next move is fresh successor T3 runtime-smoke work-order authoring only |
 | MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision | `e9baa312` | CLOSED_PASS_BOUNDED; selected `HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC`; next move is MSEA-R24 model-source fallback and cache-completion recovery roadmap authoring |
 | MSEA-R22-T1 MinerU Package Install Activation And ModelScope Pipeline Cache Preparation | `7b105700` | CLOSED_PASS_BOUNDED; selected `HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`; next move is operator decision and, if chosen, fresh diagnostic-aware ModelScope cache resume/retry or alternate model-source work-order authoring |
 | MSEA-R21-T1 MinerU ModelScope Test Cache Preparation And Runtime Smoke Gate | `c859ffb1` | CLOSED_PASS_BOUNDED; selected `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`; released by R22 package activation evidence |

@@ -20,7 +20,7 @@
       "reviewer-return steward preflight PASS",
       "material pre-commit hook PASS 79/79"
     ],
-    "nextRecommendedMove": "Author fresh MSEA-R24-T3 GC-018 baseline and source-verified work order for bounded local MinerU pipeline runtime smoke using the accepted T2A config/cache receipt.",
+    "nextRecommendedMove": "Author fresh successor T3 GC-018 baseline and source-verified work order for bounded local MinerU pipeline runtime smoke using the accepted T2A config/cache receipt.",
     "claimBoundary": "T2A config/cache receipt only. The accepted evidence wrote the absolute local config receipt and confirmed local HuggingFace pipeline cache binding. No runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup beyond the one authorized command process, source document body read, extraction output, provider/live proof, public-sync, production readiness, stage or commit by worker, or push was authorized or performed."
   }
 }
