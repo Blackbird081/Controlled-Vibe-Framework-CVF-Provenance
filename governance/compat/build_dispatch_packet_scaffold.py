@@ -232,7 +232,7 @@ def _negative_search_block(title: str, date: str) -> str:
         "| Check | Evidence | Disposition |\n"
         "| --- | --- | --- |\n"
         f"| Path existence for \"{title}\" artifacts | `Test-Path` result before authoring | FILL_ME |\n"
-        f"| Token search for \"{title}\" ({date}) | `rg -n \"FILL_ME\"` result before authoring | FILL_ME |\n"
+        f"| Token search for \"{title}\" ({date}) | search roots: governed artifact roots plus session state; exact search command: `rg -n \"FILL_ME\" docs CVF_SESSION`; query used FILL_ME; result: FILL_ME | FILL_ME |\n"
         "| Collision decision | FILL_ME | FILL_ME |\n\n"
         "Author reminder: run the searches for real before dispatch; do not leave "
         "placeholder rows."
@@ -350,6 +350,17 @@ def _evidence_reuse_stub() -> str:
         "REVIEWER_RECOMPUTE_ONLY) |\n"
         "| encodingPlan | FILL_ME: explicit `encoding=\"utf-8\", errors=\"replace\"` for "
         "any new subprocess text decoding |\n"
+        "\n"
+        "verificationMode: FILL_ME\n"
+        "priorVerificationArtifact: FILL_ME\n"
+        "priorVerificationAnchor: FILL_ME\n"
+        "freshRecomputeRequired: FILL_ME\n"
+        "unicodePathHandling: use literal paths and UTF-8-safe readers for governed artifact reads.\n"
+        "extractedTextAuthority: FILL_ME\n"
+        "\n"
+        "Author reminder: keep these scalar field lines. The dispatch-quality "
+        "checker reads them with a field-line parser and does not treat table "
+        "cells as substitutes."
     )
 
 
@@ -461,6 +472,28 @@ def _worker_return_packet_shape_contract(worker_return_path: str) -> str:
         "requiredGate: `python governance/compat/run_worker_return_fast_gate.py`\n"
         "individualCheckerSubstitution: FORBIDDEN\n"
         "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED\n"
+        "\n"
+        "Shape-list rule: when listing required worker-output sections, write "
+        "section names without the `##` prefix. Reserve actual heading syntax "
+        "for real sections so structural checkers do not treat this checklist "
+        "as the artifact section body.\n"
+    )
+
+
+def _worker_output_checker_read_ahead_mandate() -> str:
+    return (
+        "## Worker Output Checker Read-Ahead Mandate\n\n"
+        "Before writing each worker-owned output artifact, read checker source "
+        "for that file's docType, path family, and conditional content class.\n\n"
+        "| Output artifact | Required read-ahead result |\n"
+        "| --- | --- |\n"
+        "| worker return under `docs/reviews/` | derive exact review headings, worker-return quality terms, trace labels, delta boundary labels, corpus/value/rescan tokens, and no-commit evidence shape before writing |\n"
+        "| companion reference under `docs/reference/` | derive exact reference headings such as Scope / Applies To, Target / Source, source verification, corpus/value/rescan, trace, and claim-boundary labels before writing |\n\n"
+        "Literal-shape reminders: do not list required headings as backticked "
+        "`## ...` strings before the real section; write source-not-found "
+        "disposition spelling instead of the exact blocked enum in "
+        "literalTokensReviewed; avoid `after ... closure` wording unless a "
+        "dependency-release row cites the accepted artifact path and commit."
     )
 
 
@@ -695,6 +728,8 @@ def build_work_order(args: ScaffoldArgs, active: dict[str, bool]) -> str:
         lines.append(_agent_handoff_control_block(args))
         lines.append("")
         lines.append(_reviewer_closure_conversion_block(args.batch_id, args.date))
+        lines.append("")
+        lines.append(_worker_output_checker_read_ahead_mandate())
         lines.append("")
     lines.append(_work_order_fulfillment_manifest())
     lines.append("")

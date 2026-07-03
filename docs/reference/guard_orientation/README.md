@@ -114,6 +114,7 @@ Forbidden normative patterns:
 | Changed absorption artifact keeps citing `.private_reference/external_repos/` without migration evidence | `check_source_mirror_migration.py` | Add `## Source Mirror Migration Control`, migrate source authority to `.private_reference/source_mirrors/`, or record `BLOCKED_SOURCE_MIRROR_WITH_REASON` |
 | Governed artifact is written before checker source and literal tokens are read | `check_governed_artifact_checker_read_ahead.py` | Read applicable `governance/compat/check_*.py` files first; record `applicableCheckersRead`, `literalTokensReviewed`, `gateRunPurpose`, and `claimBoundary` in `## Checker Source Read-Ahead Block`; use the gate as confirmation evidence |
 | Worker output assumes dispatch packet checklist is enough | ADIF-0023; structural, worker-return, corpus, value-conversion, and rescan gates | For each worker-created output file, derive required headings, table labels, marker lines, and enum tokens from checker source by `docType`, path family, and conditional content class before writing the first section |
+| Work-order authoring burns time on known literal-shape traps | `check_work_order_dispatch_quality.py`; `check_agent_operation_trace.py`; `check_agent_handoff_boundary.py`; `check_dispatch_packet_lifecycle_hygiene.py` | Use `governance/compat/build_dispatch_packet_scaffold.py` before drafting. Preserve its scalar Evidence Reuse fields, exact negative-search command/root/query row, Worker Output Checker Read-Ahead Mandate, and handoff contract exception wording. In shape contracts, list section names without `##`; avoid exact `BLOCKED_SOURCE_NOT_FOUND` in `literalTokensReviewed`; avoid `after ... closure` wording unless paired with accepted dependency evidence. |
 
 ## Claim Boundary
 
@@ -144,20 +145,20 @@ still control.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | CGE-R1 absorption lesson hardening, 2026-06-29 |
+| Session or invocation | MSEA-R16-T1 work-order helper hardening, 2026-07-03 |
 | Working directory | repository root |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Allowed scope source | operator-provided Claude diagnosis after MSEA-R8 worker-output gate failures |
-| Before status evidence | Guard Orientation told workers to read applicable checkers, but did not distinguish dispatch packet compliance from output-artifact `docType` and conditional-section checker shape |
-| After status evidence | worker execution row and common failure table name output-artifact checker source read-ahead by `docType`, path family, and conditional content class |
+| Target paths | `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` |
+| Allowed scope source | operator asked to raise the foundation checklist and helper support after MSEA-R16-T1 work-order authoring exposed repeated literal-shape traps |
+| Before status evidence | Guard Orientation named worker-output checker read-ahead, but did not yet route work-order authors to scaffold support for heading-list, scalar Evidence Reuse, negative-search, dependency wording, and handoff-contract exception traps |
+| After status evidence | common failure table tells dispatch authors to use the scaffold helper and preserve the safer stubs for those literal-shape traps |
 | Diff evidence | `git diff --name-status` before material commit |
 | Approval boundary | guard-orientation guidance and ADIF learning only |
 | Claim boundary | orientation layer plus ADIF/gotcha routing; no runtime, provider/live, external adapter, public-sync, package instance, certification, push authorization, or implementation claim |
 | Agent type | reviewer/closer |
-| Invocation ID | `msea-r8-worker-output-checker-shape-learning-2026-07-02` |
-| Expected manifest | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Actual changed set | `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Invocation ID | `msea-r16-t1-work-order-helper-hardening-2026-07-03` |
+| Expected manifest | `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` |
+| Actual changed set | `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` |
 | Manifest delta | MATCH |
 
 ## Related Surfaces

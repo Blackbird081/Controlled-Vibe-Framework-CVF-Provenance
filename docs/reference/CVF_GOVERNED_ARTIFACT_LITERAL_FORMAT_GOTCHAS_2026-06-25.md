@@ -405,6 +405,54 @@ runtime/product code, and does not itself implement or modify any checker.
     required headings, table labels, markers, and enum tokens for the output
     artifacts themselves.
 
+39. **Do not put output section headings in checklist form as literal
+    `## ...` lines before the real section.** Some structural and trace
+    checkers find the first heading-shaped occurrence in the file. A work
+    order that lists required worker-output sections as backticked
+    heading-prefixed literals can cause the checker to treat the checklist as
+    the real section and then report missing table labels. In worker-output
+    shape contracts, list section names without the heading prefix, or write
+    them in prose such as "section name: Agent Operation Trace Block". Reserve
+    actual markdown heading text for real sections.
+
+40. **Evidence Reuse And Encoding Plan needs scalar fields, not only a
+    markdown table.** `check_work_order_dispatch_quality.py` reads
+    `verificationMode`, `priorVerificationArtifact`,
+    `priorVerificationAnchor`, `freshRecomputeRequired`,
+    `unicodePathHandling`, and `extractedTextAuthority` with a field-line
+    parser. A table that visually contains these fields can still fail. Add
+    scalar lines such as `verificationMode: REUSE_PRIOR_VERIFICATION` and
+    `unicodePathHandling: use literal paths and UTF-8-safe readers...` in the
+    section, even when a human-readable table is also present.
+
+41. **Avoid literal `BLOCKED_SOURCE_NOT_FOUND` in `literalTokensReviewed`
+    unless it is needed as an actual source-verification disposition.** The
+    dispatch-quality negative-search checker treats source-not-found wording
+    as a negative-search claim and may compare nearby all-caps tokens against
+    the repository. In checker-read-ahead prose, write "source-not-found
+    disposition spelling" instead of the exact enum token. Keep the exact enum
+    only in a real Source Verification disposition cell when the work order is
+    intentionally blocked.
+
+42. **Do not write `after ... closure` in non-ACCEPT table rows of a ready
+    work order.** The dependency-release checker intentionally treats phrases
+    such as `after closure`, `after partial closure`, or `after Tn closure` as
+    stale prerequisite placeholders unless paired with accepted release
+    evidence. When describing predecessor evidence, use wording such as "from
+    accepted closure evidence", "because material commit `<sha>` exists", or
+    "using partial-closure evidence", and cite the closed artifact path and
+    commit when a dependency was actually released.
+
+43. **Agent handoff contract ratification can look like a stale handoff path
+    unless cited with the accepted exception wording.** The handoff boundary
+    checker requires the ratified contract path
+    `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`,
+    while lifecycle hygiene also scans for stale `AGENT_HANDOFF...`-looking
+    names. Use the known-good line
+    `Contract source archive-qualified exception: <contract path>` immediately
+    before the Agent Handoff Contract Control Block table. Do not rename the
+    contract, and do not cite it as the active handoff.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute
@@ -424,25 +472,47 @@ does not implement, modify, or supersede any `governance/compat/check_*.py`
 checker, does not define new governance semantics, and is not itself a
 verification or closure artifact for any tranche.
 
+## Core Guard Self-Protection Authorization - MSEA-R16-T1 Work-Order Helper Hardening
+
+Authorized guard-maintenance scope: update the dispatch scaffold helper and
+its focused tests so future work-order authors get safer defaults for known
+literal-shape traps discovered during MSEA-R16-T1 dispatch authoring.
+
+Protected paths:
+- `governance/compat/build_dispatch_packet_scaffold.py`
+- `governance/compat/test_build_dispatch_packet_scaffold.py`
+
+Operator authorization: operator asked to raise the foundation checklist and
+use helper support after MSEA-R16-T1 work-order authoring was delayed by known
+literal/shape gate traps.
+
+Rollback boundary: revert only this helper-hardening batch if rejected; do not
+revert material dispatch commit `60aba982`, session-sync commit `50037c3e`, or
+the open MSEA-R16-T1 worker dispatch.
+
+Not authorized: no checker semantics change, hook catalog change, runtime
+behavior, source import, provider/live proof, public-sync, package activation,
+adapter behavior, generated state mutation, or worker execution.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | MFE-R1 literal evidence row learning addendum, 2026-07-02 |
+| Session or invocation | MSEA-R16-T1 work-order dispatch literal-shape hardening, 2026-07-03 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, rg, apply_patch, governance gates |
-| Target paths | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Allowed scope source | operator-provided Claude diagnosis after MSEA-R8 worker-output gate failures |
-| Before status evidence | checklist did not yet name the distinction between dispatch packet checklist compliance and output-artifact checker shape for worker-created review/reference files |
-| After status evidence | checklist item 38 records worker-output artifact checker-shape read-ahead guidance |
+| Target paths | `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` |
+| Allowed scope source | operator asked to raise the foundation checklist and use helper support after MSEA-R16-T1 dispatch authoring took 22 minutes due to literal/shape traps |
+| Before status evidence | checklist named worker-output checker-shape read-ahead but did not yet cover heading-list collisions, scalar Evidence Reuse fields, source-not-found literal false positives, broad `after ... closure` dependency regex, or handoff-contract exception wording |
+| After status evidence | checklist items 39-43 record the new literal traps and helper scaffold now emits safer stubs |
 | Diff evidence | `git diff --name-status` before material commit |
 | Approval boundary | governed artifact authoring friction checklist and ADIF routing only |
 | Claim boundary | checklist guidance only; no runtime/provider/live behavior, public-sync, package instance, certification, generated-index mutation, resolver mutation, or adapter behavior |
 | Agent type | reviewer/closer |
-| Invocation ID | `msea-r8-worker-output-checker-shape-learning-2026-07-02` |
-| Expected manifest | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
-| Actual changed set | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0023.md`; `docs/reference/agent_defect_intelligence/entries/README.md` |
+| Invocation ID | `msea-r16-t1-work-order-literal-shape-helper-hardening-2026-07-03` |
+| Expected manifest | `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` |
+| Actual changed set | `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`; `docs/reference/guard_orientation/README.md`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this learning batch |

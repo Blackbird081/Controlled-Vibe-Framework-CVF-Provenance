@@ -95,7 +95,7 @@ Author reminder: every claimed item needs a real source file and line/section; d
 | Check | Evidence | Disposition |
 | --- | --- | --- |
 | Path existence for "Source Intake Scaffold Golden Fixture" artifacts | `Test-Path` result before authoring | FILL_ME |
-| Token search for "Source Intake Scaffold Golden Fixture" (2026-07-01) | `rg -n "FILL_ME"` result before authoring | FILL_ME |
+| Token search for "Source Intake Scaffold Golden Fixture" (2026-07-01) | search roots: governed artifact roots plus session state; exact search command: `rg -n "FILL_ME" docs CVF_SESSION`; query used FILL_ME; result: FILL_ME | FILL_ME |
 | Collision decision | FILL_ME | FILL_ME |
 
 Author reminder: run the searches for real before dispatch; do not leave placeholder rows.
@@ -127,6 +127,17 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | workerCommitPermission | FORBIDDEN |
 
 
+## Worker Output Checker Read-Ahead Mandate
+
+Before writing each worker-owned output artifact, read checker source for that file's docType, path family, and conditional content class.
+
+| Output artifact | Required read-ahead result |
+| --- | --- |
+| worker return under `docs/reviews/` | derive exact review headings, worker-return quality terms, trace labels, delta boundary labels, corpus/value/rescan tokens, and no-commit evidence shape before writing |
+| companion reference under `docs/reference/` | derive exact reference headings such as Scope / Applies To, Target / Source, source verification, corpus/value/rescan, trace, and claim-boundary labels before writing |
+
+Literal-shape reminders: do not list required headings as backticked `## ...` strings before the real section; write source-not-found disposition spelling instead of the exact blocked enum in literalTokensReviewed; avoid `after ... closure` wording unless a dependency-release row cites the accepted artifact path and commit.
+
 ## Work-Order Fulfillment Manifest
 
 | Artifact | Required worker action |
@@ -141,6 +152,8 @@ contractProfile: WORKER_RETURN_FULL_GATE_V1
 requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+
+Shape-list rule: when listing required worker-output sections, write section names without the `##` prefix. Reserve actual heading syntax for real sections so structural checkers do not treat this checklist as the artifact section body.
 
 
 ## Verification Commands

@@ -197,8 +197,17 @@ class TestNoCommitWorkerPacket(unittest.TestCase):
         )
         self.assertIn("individualCheckerSubstitution: FORBIDDEN", work_order)
         self.assertIn("workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED", work_order)
+        self.assertIn("Shape-list rule:", work_order)
         self.assertIn("## Verification Commands", work_order)
         self.assertIn("python governance/compat/run_worker_return_fast_gate.py", work_order)
+
+    def test_no_commit_work_order_includes_worker_output_read_ahead_mandate(self) -> None:
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        self.assertIn("## Worker Output Checker Read-Ahead Mandate", work_order)
+        self.assertIn("docType, path family, and conditional content class", work_order)
+        self.assertIn("write section names without the `##` prefix", work_order)
 
     def test_ahb_block_has_required_base_head_fields(self) -> None:
         args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT", base="deadbeef")
@@ -269,6 +278,9 @@ class TestTriggerDrivenOptionalBlocks(unittest.TestCase):
         self.assertTrue(active["unicode_evidence_reuse"])
         baseline = build_gc018_baseline(args, active)
         self.assertIn("## Evidence Reuse And Encoding Plan", baseline)
+        self.assertIn("verificationMode: FILL_ME", baseline)
+        self.assertIn("unicodePathHandling: use literal paths and UTF-8-safe readers", baseline)
+        self.assertIn("field-line parser", baseline)
 
     def test_protected_governance_path_indicator_activates_trigger_and_stub(self) -> None:
         args = _base_args(title="Update hook catalog and checker wiring")
@@ -276,6 +288,14 @@ class TestTriggerDrivenOptionalBlocks(unittest.TestCase):
         self.assertTrue(active["protected_governance_path"])
         baseline = build_gc018_baseline(args, active)
         self.assertIn("## Core Guard Self-Protection Authorization", baseline)
+
+    def test_negative_search_stub_includes_exact_command_roots_and_query(self) -> None:
+        args = _base_args(title="Collision discipline sample")
+        active = detect_triggers(args)
+        baseline = build_gc018_baseline(args, active)
+        self.assertIn("search roots: governed artifact roots plus session state", baseline)
+        self.assertIn("exact search command:", baseline)
+        self.assertIn("query used FILL_ME", baseline)
 
     def test_neutral_title_does_not_activate_content_triggers(self) -> None:
         args = _base_args(title="A quiet neutral title with no trigger words")
