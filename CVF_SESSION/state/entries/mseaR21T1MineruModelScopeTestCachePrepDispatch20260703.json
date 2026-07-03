@@ -1,0 +1,24 @@
+{
+  "stateOrder": 660,
+  "stateKey": "mseaR21T1MineruModelScopeTestCachePrepDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "d40a8adf",
+    "materialCommitFull": "d40a8adf1770cc76feda3aa61cc30b62f54d156b",
+    "dispatchBaseHead": "bd322a8d",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_READINESS_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "modelSourceRoute": "modelscope",
+    "modelTypeRoute": "pipeline",
+    "conditionalAllowedCommand": "mineru-models-download --source modelscope --model_type pipeline",
+    "preDispatchGate": "PASS 72/72",
+    "dispatchStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R21-T1 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push.",
+    "claimBoundary": "Dispatch only. Worker may create only the named worker return and companion readiness matrix; may run exactly one ModelScope pipeline cache-prep command only if mineru-models-download already exists; no package install, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local temporary service startup, document body read, extraction outputs, provider/live proof, public-sync, source import, schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production readiness, workflow-chain completion claim, worker commit/stage/push, or session-sync edit is authorized."
+  }
+}
