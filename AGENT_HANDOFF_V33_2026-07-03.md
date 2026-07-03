@@ -32,7 +32,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R15 provenance-gap closure under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no route execution, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/live-run/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
+Startup acknowledged: current mode=`msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author bounded MSEA-R16 roadmap for operator-detail and minimal sample-corpus population readiness, then only after roadmap acceptance author fresh GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for R16-T1; parked checkpoint=no route execution, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/live-run/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -44,13 +44,13 @@ Startup acknowledged: current mode=`msea_r15_mineru_sample_stressor_provenance_g
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `61345bc3` MSEA-R15 MinerU sample-stressor provenance-gap closure dispatch |
-| Latest session-sync target | session sync after MSEA-R15 dispatch |
+| Latest material packet | `836ce239` MSEA-R15 MinerU sample-stressor provenance-gap closure acceptance |
+| Latest session-sync target | session sync after MSEA-R15 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`
+`msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring`
 
 ## Latest Changes
 
@@ -329,6 +329,71 @@ code, adapter implementation, or production readiness.
 | Claim boundary | session continuity and next-move routing only |
 | Agent type | session-sync steward |
 | Invocation ID | `msea-r12-t1-closure-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync |
+
+## Core Guard Self-Protection Authorization - MSEA-R15 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material acceptance
+commit `836ce239`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front-door continuity, and this active
+handoff.
+
+Protected paths:
+- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR15MineruSampleStressorProvenanceGapClosureAcceptance20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked Codex to continue and handle the next
+roadmap after MSEA-R15 worker completion.
+
+Rollback boundary: revert only this MSEA-R15 acceptance session-sync if
+rejected; do not revert material acceptance commit `836ce239`, MSEA-R15
+dispatch commit `61345bc3`, MSEA-R14 acceptance commit `7ce21cbd`, or prior
+MSEA commits.
+
+## GC-020 HEAD Marker - MSEA-R15 Acceptance
+
+Latest material commit requiring in-place handoff trace: `836ce239`.
+
+Full SHA:
+`836ce2397adf87ecac8093674f18bc3305c64bbc`.
+
+This marker records accepted provenance-gap classification only. It opens
+MSEA-R16 roadmap authoring for operator-detail and minimal sample-corpus
+population readiness, but does not claim sample document import, corpus
+population, MinerU runtime behavior, source import, provider/live proof,
+credential/S3/RAG use, public-sync, package activation, checker
+implementation, MCP/CLI adapter behavior, model-router work, action authority,
+automatic invocation, benchmark, document-truth, extraction-accuracy, legal
+advice quality, current-law correctness, schema implementation, receipt-writer
+code, adapter implementation, legal-domain product work, or production
+readiness.
+
+## Agent Operation Trace Block - MSEA-R15 Acceptance Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R15 acceptance session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | active handoff; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material acceptance commit `836ce239` |
+| Before status evidence | material HEAD `836ce239`; active state still pointed to R15 worker execution |
+| After status evidence | active session state, bootstrap, front door, and handoff route next move to MSEA-R16 roadmap authoring; session-sync pending commit |
+| Diff evidence | `git diff --name-status`; `run_agent_commit_steward_preflight.py --mode session-sync --base 836ce239 --head HEAD --enforce` |
+| Approval boundary | bounded session-sync after MSEA-R15 material acceptance commit |
+| Claim boundary | session continuity and next-move routing only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r15-acceptance-session-sync-2026-07-03` |
 | Expected manifest | protected paths listed in this authorization block |
 | Actual changed set | protected session/front-door/handoff paths only |
 | Manifest delta | MATCH |

@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R15 provenance-gap closure under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no route execution, document copy/import, sample corpus population, MinerU runtime/install/model-download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter/source-import/provider-live/live-run/public-sync/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author bounded MSEA-R16 roadmap for operator-detail and minimal sample-corpus population readiness, then only after roadmap acceptance author fresh GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for R16-T1; parked checkpoint=no route execution, document copy/import, sample corpus population, MinerU runtime/install/model-download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter/source-import/provider-live/live-run/public-sync/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`
+Current mode marker: `msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring`
 
-Current mode: `msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`
+Current mode: `msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring`
 
-`msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`
+`msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring`
 
 Previous mode:
 
-`msea_r14_mineru_post_sample_qualification_route_decision_accepted_pending_gap_closure_work_order_authoring`
+`msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R15 MinerU Sample Stressor Provenance Gap Closure | `61345bc3` | DISPATCH_READY_PENDING_WORKER_RETURN; delegated worker must create only the provenance-gap closure worker return and companion ledger, classify permission/license, privacy/redaction, and proof-use confirmation for Candidate Group A and the T11B-verified subset of Candidate Group B, select exactly one next-route token, preserve derived-output rejection, and leave artifacts uncommitted under WORKER_MUST_NOT_COMMIT; no route execution, document copy/import, corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim authorized |
+| None | N/A | No worker dispatch is currently open after MSEA-R15 acceptance |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R15 MinerU Sample Stressor Provenance Gap Closure | `836ce239` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion provenance-gap closure ledger; selected `PARTIAL_GAP_CLOSURE_PENDING_OPERATOR_DETAIL`; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; next move is bounded MSEA-R16 roadmap authoring for operator-detail and minimal population-readiness before any sample corpus population; no route execution, document copy/import, corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/legal-domain product/production claim |
 | MSEA-R15 MinerU Sample Stressor Provenance Gap Closure dispatch | `61345bc3` | DISPATCH_READY_PENDING_WORKER_RETURN; provenance-gap closure only after accepted R14 selected `OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE`; pre-dispatch autorun PASS 72/72, dispatch commit steward preflight PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R15_MINERU_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R15_MINERU_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE_LEDGER_2026-07-03.md`; no route execution, document copy/import, corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim |
 | MSEA-R14 MinerU Post Sample Qualification Route Decision | `7ce21cbd` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion route-decision matrix; selected `OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE`; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; next move is fresh GC-018/work-order authoring for bounded sample-stressor provenance-gap closure if operator chooses; no route execution, operator-confirmation collection outside a fresh work order, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/provider/RAG/schema/writer/checker/adapter, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal-advice-quality, current-law-correctness, production claim, or runtime reopen condition |
 | MSEA-R14 MinerU Post Sample Qualification Route Decision dispatch | `b51cbb84` | DISPATCH_READY_PENDING_WORKER_RETURN; route-decision-only work order after accepted R12/R13; pre-dispatch autorun PASS 72/72, commit steward dispatch preflight PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md`; no route execution, operator-confirmation collection, corpus population, runtime/provider/RAG/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim |
@@ -242,31 +243,28 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r15_mineru_sample_stressor_provenance_gap_closure_dispatched_pending_worker_return`
+Mode: `msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring`
 
-Next allowed move: delegated worker executes MSEA-R14 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+Next allowed move: author bounded MSEA-R16 roadmap for operator-detail and minimal sample-corpus population readiness, then only after roadmap acceptance author fresh GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for R16-T1.
 
-Worker must create only the named worker return and route-decision matrix,
-select exactly one allowed route token, and leave artifacts uncommitted.
-Expected default is `OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE` if R13
-evidence still supports it.
+Roadmap must preserve R15's selected route
+`PARTIAL_GAP_CLOSURE_PENDING_OPERATOR_DETAIL` and keep sample corpus
+population, runtime/live proof, schema/writer/adapter/checker work, source
+import, public-sync, legal-domain product work, document-truth,
+extraction-accuracy, legal-advice-quality, current-law-correctness, and
+production-readiness claims out of scope.
 
-Dispatch work order:
+Expected roadmap:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md`
+`docs/roadmaps/CVF_MSEA_R16_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_ROADMAP_2026-07-03.md`
 
-Expected worker return:
-
-`docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md`
-
-Otherwise return to the broader MinerU route decision after R12/R13. No
-legal-domain product lane, document copy/import, sample corpus population,
-MinerU runtime/OCR/parser/VLM, provider/RAG/schema/writer/checker/adapter
-work, public-sync, document-truth, extraction-accuracy, legal advice quality,
-current-law correctness, benchmark, production readiness, source import,
-package activation, Web/MCP/model-router/action-authority, worker execution,
-or session-sync edit is authorized without a later fresh source-verified
-roadmap/GC-018/work order and required proof.
+No route execution, worker dispatch, document copy/import, sample corpus
+population, MinerU runtime/OCR/parser/VLM, provider/RAG/schema/writer/checker/
+adapter work, public-sync, document-truth, extraction-accuracy, legal advice
+quality, current-law correctness, benchmark, production readiness, source
+import, package activation, Web/MCP/model-router/action-authority, worker
+execution, or session-sync edit is authorized without a later fresh
+source-verified roadmap/GC-018/work order and required proof.
 
 LHW24 remains the latest closed numbered LHW wave.
 
