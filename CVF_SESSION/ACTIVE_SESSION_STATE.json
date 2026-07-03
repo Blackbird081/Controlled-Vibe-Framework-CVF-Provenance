@@ -74,8 +74,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order",
-  "previousMode": "msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_dispatched_pending_worker_return",
+  "currentMode": "msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return",
+  "previousMode": "msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3212,7 +3212,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R18-T1 MinerU Candidate Group A Local Extraction Pilot Plan And Receipt Readiness Selection is accepted at material commit d40e21c8. Selected route token: HOLD_RUNTIME_PENDING_ENVIRONMENT_OR_MODEL_PLAN. Next allowed move: author a fresh GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order or roadmap for MinerU local extraction environment/model lifecycle/local temporary service teardown planning if the operator chooses to continue toward a runtime pilot. No MinerU runtime/install/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production readiness, or workflow-chain completion claim is authorized until a fresh source-verified work order explicitly opens that lane. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning is dispatched at material commit 000cd9c3. Next allowed move: execute docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md under WORKER_MUST_NOT_COMMIT. Worker may create only docs/reviews/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_WORKER_RETURN_2026-07-03.md and docs/reference/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_READINESS_MATRIX_2026-07-03.md, perform only source verification and read-only local environment inventory, and select exactly one route token. No MinerU install, import, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, document body read, extraction outputs, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production readiness, or workflow-chain completion claim is authorized. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6472,5 +6472,27 @@
     ],
     "nextRecommendedMove": "Author a fresh GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order or roadmap for MinerU local extraction environment/model lifecycle/local temporary service teardown planning if the operator chooses to continue toward a runtime pilot.",
     "claimBoundary": "Closed bounded planning and route-selection acceptance only. The selected route keeps runtime held pending environment/model/local-service planning. No MinerU runtime/install/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
+  },
+  "mseaR19T1MineruEnvironmentModelServiceTeardownPlanningDispatch20260703": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "000cd9c3",
+    "materialCommitFull": "000cd9c34a09b620f2d32709e320e51a702bb8d6",
+    "dispatchBaseHead": "add7eda4",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_READINESS_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch-quality PASS",
+      "agent packet authority PASS",
+      "dispatch scaffold provenance PASS",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R19-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion readiness matrix, performs source verification and read-only local environment inventory only, and selects exactly one route token.",
+    "claimBoundary": "Dispatch only. No MinerU install, import, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, document body read, extraction outputs, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
   }
 }

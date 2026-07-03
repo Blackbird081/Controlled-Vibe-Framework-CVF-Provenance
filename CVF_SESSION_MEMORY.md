@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=author a fresh GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order or roadmap for MinerU local extraction environment/model lifecycle/local temporary service teardown planning if the operator chooses to continue toward a runtime pilot; parked checkpoint=no MinerU runtime/install/model-download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R18-T1; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=execute the MSEA-R19-T1 work order under WORKER_MUST_NOT_COMMIT; parked checkpoint=no MinerU install/import/model-download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by MSEA-R19-T1; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order`
+Current mode marker: `msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return`
 
-Current mode: `msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order`
+Current mode: `msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return`
 
-`msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order`
+`msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_dispatched_pending_worker_return`
+`msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker-dispatched tranche is currently open after MSEA-R18-T1 acceptance |
+| MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning | `000cd9c3` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must execute `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md` under WORKER_MUST_NOT_COMMIT, creating only the named worker return and companion readiness matrix; worker may perform source verification and read-only local environment inventory only; no MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, source document copy/import, document body read, extraction outputs, public-sync, fuller content inclusion, Candidate Group B, rejected outputs, RAG/S3, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R19-T1 MinerU Local Extraction Environment Model Lifecycle And Service Teardown Planning dispatch | `000cd9c3` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after accepted R18 selected `HOLD_RUNTIME_PENDING_ENVIRONMENT_OR_MODEL_PLAN`; pre-dispatch autorun PASS 72/72, dispatch-quality PASS, agent packet authority PASS, dispatch scaffold provenance PASS, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_READINESS_MATRIX_2026-07-03.md`; worker must source-verify MinerU environment/model/source/service facts, perform only read-only local inventory, select exactly one route token, and not commit |
 | MSEA-R18-T1 MinerU Candidate Group A Local Extraction Pilot Plan And Receipt Readiness Selection | `d40e21c8` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion pilot-readiness matrix; selected `HOLD_RUNTIME_PENDING_ENVIRONMENT_OR_MODEL_PLAN`; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward preflight PASS including reviewer-fast 59/59, material pre-commit hook PASS 79/79; opens only fresh source-verified planning for MinerU local extraction environment/model lifecycle/local temporary service teardown if the operator chooses; no MinerU runtime/install/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/checker/adapter implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production readiness, or workflow-chain completion claim |
 | MSEA-R18-T1 MinerU Candidate Group A Local Extraction Pilot Plan And Receipt Readiness Selection dispatch | `fb42439d` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created; pre-dispatch autorun PASS 72/72, dispatch-quality PASS, agent packet authority PASS, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_MATRIX_2026-07-03.md`; worker must source-verify MinerU CLI/backend/output facts, preserve R17 private boundary, select exactly one route token, and not commit |
 | MSEA-R17-T1 MinerU Candidate Group A Private Test Corpus Intake And Receipt Dry Run | `eb127b7f` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion private intake ledger; verified the two Candidate Group A files by path presence, size, SHA-256, slot assignment, operator local-private authorization boundary, and receipt dry-run non-claims; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, independent reviewer hash/size check PASS, material pre-commit hook PASS 79/79; no source document copy/import into repository, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, MinerU runtime/provider/RAG/schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production claim |
@@ -254,26 +255,25 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r18_t1_candidate_group_a_local_extraction_pilot_plan_closed_pending_environment_model_plan_work_order`
+Mode: `msea_r19_t1_mineru_environment_model_service_teardown_planning_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh GC-018 baseline and source-verified
-`WORKER_MUST_NOT_COMMIT` work order or roadmap for MinerU local extraction
-environment/model lifecycle/local temporary service teardown planning if the
-operator chooses to continue toward a runtime pilot.
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md`
+under `WORKER_MUST_NOT_COMMIT`.
 
-Current accepted material source:
+Current dispatch source:
 
-`docs/reviews/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_WORKER_RETURN_2026-07-03.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md`
 
-No MinerU runtime/OCR/parser/VLM/hybrid/API/router/Gradio/Docker execution,
-local temporary service startup, provider/live proof, RAG/S3, schema/writer/
-checker/adapter implementation, source document copy/import into this
-repository, public-sync, redistribution, fuller content inclusion, Candidate
-Group B, rejected derived outputs, document-truth, extraction-accuracy, legal
-advice quality, current-law correctness, benchmark, production readiness,
-source import, package activation, Web/MCP/model-router/action-authority, live
-run, or workflow-chain completion claim is authorized until a fresh
-source-verified work order explicitly opens that lane.
+No MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/
+Gradio/Docker execution, local temporary service startup, provider/live proof,
+RAG/S3, schema/writer/checker/adapter implementation, source document
+copy/import into this repository, document body read, extraction outputs,
+public-sync, redistribution, fuller content inclusion, Candidate Group B,
+rejected derived outputs, document-truth, extraction-accuracy, legal advice
+quality, current-law correctness, benchmark, production readiness, source
+import, package activation, Web/MCP/model-router/action-authority, live run, or
+workflow-chain completion claim is authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
 
