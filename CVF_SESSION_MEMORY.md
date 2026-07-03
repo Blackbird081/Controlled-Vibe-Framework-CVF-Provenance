@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R12-T1 WORKER_MUST_NOT_COMMIT documentation/reference policy-definition work order; parked checkpoint=no sample document import, corpus population, MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=operator chooses next MinerU route or asks for a fresh source-verified roadmap/GC-018/work-order using the accepted R12-T1 policy; parked checkpoint=no sample document import, corpus population, MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized without fresh route/work order; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
+Current mode marker: `msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`
 
-Current mode: `msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
+Current mode: `msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`
 
-`msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
+`msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`
 
 Previous mode:
 
-`msea_r12_sample_corpus_receipt_policy_roadmap_ready_pending_r12_t1_work_order_authoring`
+`msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R12-T1 MinerU Sample Corpus Expected Receipt Policy | `ac0ef871` | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; worker may create only the named worker return and policy reference; no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
+| None | N/A | No dispatched worker work is currently open after MSEA-R12-T1 acceptance; next move is operator next MinerU route decision or fresh source-verified roadmap/work-order authoring |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R12-T1 MinerU Sample Corpus Expected Receipt Policy | `9f6241af` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion policy reference; defines sample-corpus slot taxonomy, intake/provenance policy, expected receipt assertions/non-assertions, held-lane reopen routing, and operator handoff requirements; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 | MSEA-R12 MinerU Sample Corpus And Expected Receipt Policy Roadmap | `072c15f1` | ROADMAP_READY_FOR_MSEA_R12_T1_GC018_AND_WORK_ORDER_AUTHORING; roadmap-only policy-definition planning after accepted R11-T1 route selection; opens R12-T1 GC-018/work-order authoring; no sample document import, corpus population, MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 | MSEA-R11-T1 MinerU Productization Readiness Route Selection | `bfa451dc` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion decision matrix; selected `OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP`; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; no sample corpus, receipt policy, runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 | MSEA-R10 MinerU Adapter Contract Draft | `28b77572` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion adapter contract draft reference; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; opens only MSEA-R11 roadmap authoring for productization-readiness route planning; no MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
@@ -234,38 +235,53 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r12_t1_sample_corpus_receipt_policy_dispatched_pending_worker_return`
+Mode: `msea_r12_t1_sample_corpus_receipt_policy_accepted_pending_next_mineru_route_decision`
 
-Next allowed move: delegated worker executes the MSEA-R12-T1
-WORKER_MUST_NOT_COMMIT documentation/reference policy-definition work order:
+Next allowed move: operator chooses the next MinerU route or asks for a fresh
+source-verified roadmap/GC-018/work-order using the accepted R12-T1 policy:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
+`docs/reference/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
 
-Paired baseline:
+Accepted worker return:
 
-`docs/baselines/CVF_GC018_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
+`docs/reviews/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_WORKER_RETURN_2026-07-03.md`
 
-Worker may create only:
-
-- `docs/reviews/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_WORKER_RETURN_2026-07-03.md`
-- `docs/reference/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md`
-
-Worker must capture executionBaseHead, read output-artifact checkers before
-writing, define sample-corpus slots, sample intake/provenance requirements,
-expected receipt assertions/non-assertions, held-lane reopen routing, and
-operator handoff requirements only, run pre-implementation and worker-return
-gates, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without
-commit/stage/push.
-
-No sample document import, corpus population, MinerU install, model download,
-OCR/VLM/hybrid/parser/API/router/Gradio/Docker/RAG execution, provider-live
-proof, public-sync, package activation, checker implementation, source import,
-Web/MCP/model-router/action-authority, automatic invocation, benchmark,
-document-truth, extraction-accuracy, schema implementation, receipt-writer
-code, adapter implementation, production-readiness claim, or session-sync edit
-is authorized without a later fresh source-verified work order.
+Sample corpus population requires operator-supplied documents meeting the
+intake/provenance policy plus fresh GC-018. Receipt schema implementation,
+receipt-writer code, runtime/parser pilot, RAG adapter, provider-assisted
+correction, S3 boundary, Docker/package lane, checker implementation,
+public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth,
+extraction-accuracy, production-readiness, source import, package activation,
+provider/live proof, or session-sync edit all remain unauthorized until a
+later fresh source-verified roadmap/work order and required proof/conditions
+exist.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R12-T1 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material closure
+commit `9f6241af`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front door, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR12T1MineruSampleCorpusReceiptPolicyClosure20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator reported MSEA-R12-T1 worker execution
+complete; reviewer/closer accepted and committed material closure at
+`9f6241af`.
+
+Rollback boundary: revert only this MSEA-R12-T1 closure session-sync batch if
+rejected; do not alter material closure commit `9f6241af`, dispatch/session
+commits `ac0ef871`/`b13351e2`, MSEA-R12 roadmap commit `072c15f1`, or prior
+MSEA commits.
 
 ## Core Guard Self-Protection Authorization - MSEA-R12-T1 Dispatch Session Sync
 

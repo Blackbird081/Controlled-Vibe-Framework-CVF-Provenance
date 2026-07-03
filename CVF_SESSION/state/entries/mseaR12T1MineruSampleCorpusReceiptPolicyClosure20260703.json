@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1397,
+  "stateKey": "mseaR12T1MineruSampleCorpusReceiptPolicyClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "9f6241af",
+    "materialCommitFull": "9f6241aff2910c22f59278dc5ba66cc9b1cdcdfc",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_WORKER_RETURN_2026-07-03.md",
+    "policyReferencePath": "docs/reference/CVF_MSEA_R12_T1_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_2026-07-03.md",
+    "dispatchCommit": "ac0ef871",
+    "sessionSyncAfterDispatch": "b13351e2",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerReturnCommitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Operator chooses next MinerU route or authorizes a fresh source-verified roadmap/GC-018/work order. Sample corpus population requires operator-supplied documents meeting policy; implementation-facing lanes remain held.",
+    "claimBoundary": "Closed documentation/reference policy only. No sample document import, corpus population, MinerU runtime, provider/live proof, source import, package activation, checker implementation, public-sync, schema implementation, receipt-writer code, adapter implementation, document-truth, extraction-accuracy, benchmark, or production-readiness claim."
+  }
+}
