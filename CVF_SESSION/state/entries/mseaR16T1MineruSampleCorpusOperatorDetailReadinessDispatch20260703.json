@@ -1,0 +1,33 @@
+{
+  "stateOrder": 1405,
+  "stateKey": "mseaR16T1MineruSampleCorpusOperatorDetailReadinessDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "60aba982",
+    "materialCommitFull": "60aba9827a6220420ec057e243d1ad47e258716a",
+    "dispatchBaseHead": "6be10aff",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchPurpose": "bounded operator-detail and minimal sample-corpus population-readiness selection after MSEA-R16 roadmap",
+    "allowedDetailClassificationTokens": [
+      "CLOSED_BY_OPERATOR_STATEMENT",
+      "PARTIAL_WITH_LIMITS",
+      "HELD_PENDING_OPERATOR_DETAIL",
+      "REJECTED_FOR_THIS_LANE"
+    ],
+    "allowedNextRouteTokens": [
+      "OPEN_SAMPLE_CORPUS_POPULATION_WORK_ORDER_AFTER_OPERATOR_DETAIL",
+      "PARTIAL_READINESS_PENDING_OPERATOR_DETAIL",
+      "HOLD_SAMPLE_STRESSOR_LANE"
+    ],
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R16-T1 readiness-selection work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push.",
+    "claimBoundary": "Dispatch only. Worker may create only the named worker return and companion readiness reference; no document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, live run, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized."
+  }
+}

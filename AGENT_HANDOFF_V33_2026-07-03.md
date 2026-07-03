@@ -32,7 +32,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r16_mineru_sample_corpus_operator_detail_readiness_roadmap_ready_pending_r16_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author MSEA-R16-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for documentation/reference-only operator-detail and minimal population-readiness selection; parked checkpoint=no route execution, document copy/import, sample corpus population, MinerU runtime/source-import/provider-live/live-run/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
+Startup acknowledged: current mode=`msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R16-T1 WORKER_MUST_NOT_COMMIT work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push; parked checkpoint=no route execution, document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/source-import/provider-live/live-run/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -44,15 +44,57 @@ Startup acknowledged: current mode=`msea_r16_mineru_sample_corpus_operator_detai
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `4bf22a5d` MSEA-R16 MinerU sample-corpus operator-detail readiness roadmap |
-| Latest session-sync target | session sync after MSEA-R16 roadmap |
+| Latest material packet | `60aba982` MSEA-R16-T1 MinerU sample-corpus operator-detail readiness dispatch |
+| Latest session-sync target | session sync after MSEA-R16-T1 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r16_mineru_sample_corpus_operator_detail_readiness_roadmap_ready_pending_r16_t1_work_order_authoring`
+`msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R16-T1 MinerU sample-corpus operator-detail and minimal
+population-readiness dispatch is committed at material commit `60aba982`.
+The baseline and work order are
+`docs/baselines/CVF_GC018_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md`.
+The delegated worker must create only
+`docs/reviews/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_WORKER_RETURN_2026-07-03.md`
+and
+`docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md`,
+classify permission/license, privacy/redaction, proof-use, candidate-group
+first-use or hold decision, and later population work-order readiness, then
+leave artifacts uncommitted under WORKER_MUST_NOT_COMMIT. Pre-dispatch
+autorun PASS 72/72; dispatch commit steward preflight PASS; material
+pre-commit hook PASS 79/79. No route execution, document copy/import/storage/
+redaction/processing, corpus population, runtime/provider/live/schema/writer/
+checker/adapter/public-sync/source-import/package/Web/MCP/model-router/
+action-authority or production claim is authorized.
+
+## Core Guard Self-Protection Authorization - MSEA-R16-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material dispatch
+commit `60aba982`, including active mode, next allowed move, generated active
+session state, bootstrap read model, front-door continuity, and this active
+handoff.
+
+Protected paths:
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR16T1MineruSampleCorpusOperatorDetailReadinessDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked to create the next work order after
+choosing to continue MinerU absorption toward a workflow-chain system with the
+legal-policy data as a bounded test use case.
+
+Rollback boundary: revert only this MSEA-R16-T1 dispatch session-sync if
+rejected; do not revert material dispatch commit `60aba982` or earlier
+MSEA-R16/R15 material commits.
 
 MSEA-R15 MinerU sample-stressor provenance-gap closure dispatch is committed
 at material commit `61345bc3`. The baseline and work order are

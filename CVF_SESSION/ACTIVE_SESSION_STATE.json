@@ -73,8 +73,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r16_mineru_sample_corpus_operator_detail_readiness_roadmap_ready_pending_r16_t1_work_order_authoring",
-  "previousMode": "msea_r15_mineru_sample_stressor_provenance_gap_closure_accepted_pending_r16_roadmap_authoring",
+  "currentMode": "msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return",
+  "previousMode": "msea_r16_mineru_sample_corpus_operator_detail_readiness_roadmap_ready_pending_r16_t1_work_order_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3211,7 +3211,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R16 MinerU Sample Corpus Operator Detail And Minimal Population Readiness roadmap is committed at material commit 4bf22a5d. Next allowed move: author MSEA-R16-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for documentation/reference-only operator-detail and minimal population-readiness selection. R16-T1 must record permission/license, privacy/redaction, proof-use, candidate-group first-use or hold decision, source verification, checker read-ahead, negative search, Source Verification Block, External Knowledge Intake Routing, External Absorption Core, Overlap And Novelty Classification, Agent Handoff Contract Control Block, Reviewer Closure Conversion, and pre-dispatch autorun gates. No document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter, live run, document-truth, extraction-accuracy, legal advice quality, current-law correctness, benchmark, public-sync, production readiness, source import, package activation, Web/MCP/model-router/action-authority, worker execution, or route execution is authorized until that fresh work order exists. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness dispatch is committed at material commit 60aba982. Next allowed move: delegated worker executes the MSEA-R16-T1 WORKER_MUST_NOT_COMMIT work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push. Worker may create only docs/reviews/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_WORKER_RETURN_2026-07-03.md and docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md. Worker must classify permission/license, privacy/redaction, proof-use, candidate-group first-use or hold decision, and later population work-order readiness using source verification and checker read-ahead. No document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter, live run, document-truth, extraction-accuracy, legal advice quality, current-law correctness, benchmark, public-sync, production readiness, source import, package activation, Web/MCP/model-router/action-authority, session-sync edit, worker commit, or route execution is authorized. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6339,5 +6339,34 @@
     "materialPreCommitHook": "PASS 79/79",
     "nextRecommendedMove": "Author MSEA-R16-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for operator-detail and minimal sample-corpus population-readiness selection.",
     "claimBoundary": "Roadmap-only planning. No sample document import, corpus population, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, schema implementation, receipt-writer code, adapter implementation, legal-domain product work, or production-readiness claim is authorized."
+  },
+  "mseaR16T1MineruSampleCorpusOperatorDetailReadinessDispatch20260703": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "60aba982",
+    "materialCommitFull": "60aba9827a6220420ec057e243d1ad47e258716a",
+    "dispatchBaseHead": "6be10aff",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchPurpose": "bounded operator-detail and minimal sample-corpus population-readiness selection after MSEA-R16 roadmap",
+    "allowedDetailClassificationTokens": [
+      "CLOSED_BY_OPERATOR_STATEMENT",
+      "PARTIAL_WITH_LIMITS",
+      "HELD_PENDING_OPERATOR_DETAIL",
+      "REJECTED_FOR_THIS_LANE"
+    ],
+    "allowedNextRouteTokens": [
+      "OPEN_SAMPLE_CORPUS_POPULATION_WORK_ORDER_AFTER_OPERATOR_DETAIL",
+      "PARTIAL_READINESS_PENDING_OPERATOR_DETAIL",
+      "HOLD_SAMPLE_STRESSOR_LANE"
+    ],
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R16-T1 readiness-selection work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push.",
+    "claimBoundary": "Dispatch only. Worker may create only the named worker return and companion readiness reference; no document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, live run, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized."
   }
 }
