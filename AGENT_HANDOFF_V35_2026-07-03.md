@@ -492,3 +492,13 @@ material/session-sync commits.
 | T3/T4 boundary | T3 work-order authoring only; no runtime smoke before fresh dispatch and release evidence |
 | Public/export behavior | no public-sync or public export |
 | Actual changed set | `AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR24T2AMineruAbsoluteConfigPathLocalCacheBindingClosure20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+
+## Handoff-Sync Marker - MSEA-R24-T2A Acceptance Session Sync Commit
+
+| Field | Value |
+|---|---|
+| handoffSyncParentHead | `b53786d9` |
+| handoffSyncCommitHead | `71b10f74` |
+| scope | active handoff marker for the accepted MSEA-R24-T2A receipt session-sync commit |
+| changedSet | `AGENT_HANDOFF_V35_2026-07-03.md` only |
+| claimBoundary | handoff marker only; no material worker output, cache/runtime command, provider/live proof, public-sync, or production claim |
