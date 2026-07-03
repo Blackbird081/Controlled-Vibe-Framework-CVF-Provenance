@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V33_2026-07-03.md`
+4. `AGENT_HANDOFF_V34_2026-07-03.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,32 +24,32 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V33_2026-07-03.md` |
+| Active handoff | `AGENT_HANDOFF_V34_2026-07-03.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R16-T1 WORKER_MUST_NOT_COMMIT work order and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push; parked checkpoint=no route execution, document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/install/model-download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter/source-import/provider-live/live-run/public-sync/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=operator provides explicit Candidate Group A permission/license and privacy/redaction detail, or dispatcher authors a fresh source-verified operator-detail-closure work order only after that detail exists; parked checkpoint=no route execution, document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/install/model-download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter/source-import/provider-live/live-run/public-sync/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`
+Current mode marker: `msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
 
-Current mode: `msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`
+Current mode: `msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
 
-`msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`
+`msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
 
 Previous mode:
 
-`msea_r16_mineru_sample_corpus_operator_detail_readiness_roadmap_ready_pending_r16_t1_work_order_authoring`
+`msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness | `60aba982` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may create only `docs/reviews/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md`; WORKER_MUST_NOT_COMMIT; no route execution, document copy/import/storage/redaction/processing, corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim |
+| None | N/A | No worker dispatch is currently open after MSEA-R16-T1 acceptance |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness | `742a81ab` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion readiness reference; selected first-use target `CANDIDATE_GROUP_A_ONLY`; selected next-route token `PARTIAL_READINESS_PENDING_OPERATOR_DETAIL`; Candidate Group A remains pending explicit operator permission/license and privacy/redaction detail before any later population work order; Candidate Group B remains held on privacy/redaction; nine ungoverned derived outputs remain rejected; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no route execution, document copy/import/storage/redaction/processing, corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim |
 | Work Order Literal-Shape Scaffold Hardening | `2794a493` | CLOSED_PASS_BOUNDED; raised shared work-order authoring foundation after MSEA-R16-T1 dispatch friction; added literal-format gotchas 39-43, guard-orientation routing, safer dispatch scaffold defaults, focused scaffold tests, regenerated source-intake golden fixture, and review carrier `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; material pre-commit hook PASS 79/79; committed-range pre-closure content gates PASS 72/72 except expected post-material handoff HEAD drift before this session-sync; no checker semantics, worker execution, route execution, runtime/provider/live, source import, corpus population, public-sync, package activation, adapter behavior, generated state mutation, or production claim |
 | MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness dispatch | `60aba982` | DISPATCH_READY_PENDING_WORKER_RETURN; GC-018 baseline and work order created for documentation/reference-only operator-detail and minimal population-readiness selection after MSEA-R16 roadmap; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only the named worker return and companion readiness reference; no route execution, document copy/import/storage/redaction/processing, sample corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim |
 | MSEA-R16 MinerU Sample Corpus Operator Detail And Minimal Population Readiness Roadmap | `4bf22a5d` | ROADMAP_READY_FOR_MSEA_R16_T1_GC018_AND_WORK_ORDER_AUTHORING; opens only R16-T1 GC-018/work-order authoring for documentation/reference-only operator-detail and minimal population-readiness selection; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; no route execution, document copy/import, corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/legal-domain product/production claim |
@@ -108,6 +109,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness | `742a81ab` | CLOSED_PASS_BOUNDED; selected `CANDIDATE_GROUP_A_ONLY` and `PARTIAL_READINESS_PENDING_OPERATOR_DETAIL`; next move is explicit operator detail for Candidate Group A before any fresh population-related packet |
 | MSEA-R14 MinerU Post Sample Qualification Route Decision | `7ce21cbd` | CLOSED_PASS_BOUNDED; selected `OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE`; next move is fresh provenance-gap closure GC-018/work-order authoring if operator chooses |
 | MSEA-R13-T1 MinerU Legal Policy Sample Corpus Candidate Qualification | `c14398b2` | CLOSED_PASS_BOUNDED; accepted candidate qualification only; next move is operator next MinerU route decision, with legal-policy set usable only as a sample stressor after separate provenance-gap closure |
 | MSEA-R11-T1 MinerU Productization Readiness Route Selection | `bfa451dc` | CLOSED_PASS_BOUNDED; selected `OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP` as next route |
@@ -246,33 +248,25 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`
+Mode: `msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
 
-Next allowed move: delegated worker executes the MSEA-R16-T1
-WORKER_MUST_NOT_COMMIT work order and returns COMPLETE_PENDING_REVIEW or
-BLOCKED_WITH_REASON without commit/stage/push.
+Next allowed move: operator may provide an explicit Candidate Group A
+permission/license statement and an explicit privacy/redaction disposition for
+the two named Group A DOCX files. Only after that detail exists may a
+dispatcher author a fresh source-verified GC-018/work order for a bounded
+operator-detail closure or later Candidate Group A population-readiness step.
 
-Worker must use the R16 roadmap, R15 provenance-gap closure ledger, R12 sample
-policy, R13 qualification ledger, and R14 route-decision matrix. Worker may
-create only the named worker return and companion readiness reference, must
-classify permission/license, privacy/redaction, proof-use, candidate-group
-first-use or hold decision, and later population work-order readiness, and
-must preserve checker read-ahead, source verification, negative search,
-External Knowledge Intake Routing, External Absorption Core, Overlap And
-Novelty Classification, Agent Operation Trace, Delta Execution Claim Boundary,
-and no-commit evidence.
+Current accepted source:
 
-Expected roadmap source:
+`docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md`
 
-`docs/roadmaps/CVF_MSEA_R16_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_ROADMAP_2026-07-03.md`
-
-No route execution, worker execution, document copy/import, sample corpus
-population, MinerU runtime/OCR/parser/VLM, provider/RAG/schema/writer/checker/
-adapter work, public-sync, document-truth, extraction-accuracy, legal advice
-quality, current-law correctness, benchmark, production readiness, source
-import, package activation, Web/MCP/model-router/action-authority, or
-session-sync edit is authorized without the fresh R16-T1 work order and
-required proof.
+No route execution, worker execution, document copy/import/storage/redaction/
+processing, sample corpus population, MinerU runtime/OCR/parser/VLM,
+provider/RAG/schema/writer/checker/adapter work, public-sync, document-truth,
+extraction-accuracy, legal advice quality, current-law correctness, benchmark,
+production readiness, source import, package activation, Web/MCP/model-router/
+action-authority, live run, or session-sync edit is authorized without a fresh
+source-verified packet and required proof.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -284,7 +278,7 @@ session state, bootstrap read model, front door, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -309,7 +303,7 @@ session state, bootstrap read model, front door, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -333,7 +327,7 @@ session state, bootstrap read model, front door, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -365,7 +359,7 @@ session state, front door, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V33_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md`
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V32_2026-07-02.md`
 - `CVF_SESSION_MEMORY.md`
 - `AGENTS.md`
