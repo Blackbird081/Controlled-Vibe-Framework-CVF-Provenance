@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=delegated worker executes MSEA-R11-T1 route-selection work order under WORKER_MUST_NOT_COMMIT and returns worker-return plus companion decision matrix only; parked checkpoint=no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`; active handoff=AGENT_HANDOFF_V33_2026-07-03.md; next allowed move=author source-verified roadmap for MinerU sample corpus and expected receipt policy definition from accepted R11-T1 route selection; parked checkpoint=no MinerU runtime/install/model-download/source-import/provider-live/public-sync/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production work authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
+Current mode marker: `msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`
 
-Current mode: `msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
+Current mode: `msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`
 
-`msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
+`msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`
 
 Previous mode:
 
-`msea_r11_mineru_productization_readiness_roadmap_ready_pending_r11_t1_work_order_authoring`
+`msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R11-T1 MinerU Productization Readiness Route Selection | `3e5f54ce` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must create only the named worker return and companion decision matrix under WORKER_MUST_NOT_COMMIT; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
+| None | N/A | No dispatched worker work is currently open after MSEA-R11-T1 acceptance; next move is sample-corpus/expected-receipt-policy roadmap authoring |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R11-T1 MinerU Productization Readiness Route Selection | `bfa451dc` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion decision matrix; selected `OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP`; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; no sample corpus, receipt policy, runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 | MSEA-R10 MinerU Adapter Contract Draft | `28b77572` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion adapter contract draft reference; worker-return fast gate PASS, reviewer-fast PASS 59/59, reviewer-return steward preflight PASS, material pre-commit hook PASS 79/79; opens only MSEA-R11 roadmap authoring for productization-readiness route planning; no MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/receipt-writer-code/adapter-implementation/production claim |
 | MSEA-R9 MinerU CVF Application Blueprint And Adapter Contract Readiness Selection | `2a58322b` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion blueprint-readiness reference; selected `OPEN_ADAPTER_CONTRACT_DRAFT_ONLY` for a future documentation/reference-only adapter contract draft lane; worker-return fast gate PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no MinerU runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/schema-implementation/adapter-implementation/production claim |
 | MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `42eeb411` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and residual closure ledger after reviewer repair; accounted for 425/425 MinerU mirror files, closed the 33-file non-overlap support complement, read all 57 `mineru/model/utils` files at symbol/import/config-surface depth, and read all 9 Docker China hardware variants at command-surface depth; worker-return fast gate PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no runtime/source-import/provider-live/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/production claim |
@@ -96,6 +97,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R11-T1 MinerU Productization Readiness Route Selection | `bfa451dc` | CLOSED_PASS_BOUNDED; selected `OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP` as next route |
 | MSEA-R10 MinerU Adapter Contract Draft | `28b77572` | CLOSED_PASS_BOUNDED; accepted adapter contract draft reference and routes next move to MSEA-R11 roadmap authoring |
 | MSEA-R9 MinerU CVF Application Blueprint And Adapter Contract Readiness Selection | `2a58322b` | CLOSED_PASS_BOUNDED; selected `OPEN_ADAPTER_CONTRACT_DRAFT_ONLY`; next move is documentation/reference-only adapter contract draft GC-018/work-order authoring if operator chooses |
 | MSEA-R8 MinerU Residual Full Repository Absorption Closure Ledger | `42eeb411` | CLOSED_PASS_BOUNDED; accepted residual full repository absorption closure ledger with reviewer repair and bounded binary/resource limits |
@@ -231,23 +233,23 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r11_t1_mineru_productization_route_selection_dispatched_pending_worker_return`
+Mode: `msea_r11_t1_route_selection_accepted_pending_sample_corpus_receipt_policy_roadmap_authoring`
 
-Next allowed move: delegated worker executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_2026-07-03.md`
-under WORKER_MUST_NOT_COMMIT after material dispatch commit `3e5f54ce`.
+Next allowed move: author a source-verified roadmap for MinerU sample corpus
+and expected receipt policy definition after MSEA-R11-T1 material acceptance
+commit `bfa451dc` selected
+`OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP`.
 
-Worker may create only
-`docs/reviews/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_WORKER_RETURN_2026-07-03.md`
-and
-`docs/reference/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_DECISION_MATRIX_2026-07-03.md`,
-then return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+The roadmap must use the accepted R11-T1 worker return, R11-T1 decision
+matrix, R11 roadmap, R10 adapter contract draft, R9 readiness/hold
+conditions, R8 residual closure ledger, R7 receipt schema contract draft, and
+current MinerU source mirror owner surfaces.
 
 No MinerU install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/
 Docker/RAG execution, provider-live proof, public-sync, package activation,
 checker implementation, source import, Web/MCP/model-router/action-authority,
 automatic invocation, benchmark, document-truth, extraction-accuracy, schema
-implementation, receipt-writer code, adapter implementation, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized.
+implementation, receipt-writer code, adapter implementation, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized without a later fresh source-verified work order.
 
 LHW24 remains the latest closed numbered LHW wave.
 
