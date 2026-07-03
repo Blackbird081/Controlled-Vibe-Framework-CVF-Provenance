@@ -471,6 +471,7 @@ material/session-sync commits.
 | Field | Value |
 |---|---|
 | lastSessionSyncMaterialHead | `b53786d9` |
+| latestSessionLifecycleWordingHead | `5af0d29f` (`5af0d29fc9a7ee9eeaf19c32faa98569a38b04c4`) |
 | activeHandoff | `AGENT_HANDOFF_V35_2026-07-03.md` |
 | currentMode | `msea_r24_t2a_mineru_absolute_config_cache_receipt_closed_pending_t3_runtime_smoke_work_order_authoring` |
 | nextAllowedMove | author MSEA-R24-T3 runtime-smoke work order |
