@@ -1,0 +1,27 @@
+{
+  "stateOrder": 661,
+  "stateKey": "mseaR22T1MineruPackageInstallActivationModelScopeCachePrepDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "36285ea3",
+    "materialCommitFull": "36285ea393f7c2c82a9329b8fecd9e8c153a51b6",
+    "dispatchBaseHead": "242927cc",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_READINESS_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "localRuntimeVenvPath": ".cvf/runtime/msea-r22-mineru-venv",
+    "localRuntimeConfigPath": ".cvf/runtime/msea-r22-mineru.json",
+    "installSource": ".private_reference/source_mirrors/opendatalab__MinerU",
+    "modelSourceRoute": "modelscope",
+    "modelTypeRoute": "pipeline",
+    "allowedCachePrepCommand": "mineru-models-download --source modelscope --model_type pipeline",
+    "preDispatchGate": "PASS 72/72",
+    "dispatchStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Worker executes MSEA-R22-T1 under WORKER_MUST_NOT_COMMIT, creates only the named worker return and companion readiness matrix as governed outputs, and records package install, command activation, config/cache, and selected route evidence.",
+    "claimBoundary": "Dispatch only. Worker may perform only ignored local venv/package/cache-prep side effects specified by the work order; no parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, service startup, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, legal-quality, current-law, production, or workflow-chain claim is authorized."
+  }
+}

@@ -74,8 +74,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization",
-  "previousMode": "msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return",
+  "currentMode": "msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return",
+  "previousMode": "msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3212,7 +3212,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R21-T1 closed at material commit c859ffb1 with selectedRouteToken HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION. Worker return and readiness matrix were accepted, but local mineru-models-download is missing and package install or activation was not authorized, so no ModelScope model download, config writeback, MinerU runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction output, provider/live proof, or public-sync occurred. Next allowed move: if the operator wants to proceed, author a fresh GC-018/source-verified MSEA-R22 work order for MinerU package install/activation authorization and ModelScope pipeline cache-preparation prerequisites; otherwise hold all MinerU runtime lanes. No package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local temporary service startup, document body read, extraction outputs, provider/live proof, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production readiness, or workflow-chain completion claim is authorized without a fresh work order. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R22-T1 MinerU Package Install Activation And ModelScope Pipeline Cache Preparation is dispatched at material commit 36285ea3. Worker must execute under WORKER_MUST_NOT_COMMIT and may create only docs/reviews/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_WORKER_RETURN_2026-07-03.md and docs/reference/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_READINESS_MATRIX_2026-07-03.md as governed outputs. Worker may create/reuse ignored local runtime path .cvf/runtime/msea-r22-mineru-venv, install MinerU from the pinned source mirror inside that venv, redirect MinerU config to .cvf/runtime/msea-r22-mineru.json, and run exactly one ModelScope pipeline cache-prep command as specified by the work order. No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production readiness, or workflow-chain completion claim is authorized by MSEA-R22-T1. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -3344,6 +3344,29 @@
     "claimBoundary": "Closure accepts a bounded blocker route only. MSEA-R21-T1 proved local command absence and preserved no-install/no-runtime boundaries; it does not claim model cache readiness, MinerU runtime readiness, document extraction behavior, provider/live behavior, public readiness, legal advice quality, current-law correctness, workflow-chain completion, or production readiness."
   },
   "assfPicT0Closure20260625": "ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is CLOSED_PASS_BOUNDED at material commit 24b49017 after Claude returned BLOCKED_WITH_REASON and Codex completed reviewer-owned closure. The selected candidate is cvf-dispatch-quality-reviewer. Evidence: docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md; docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_COMPLETION_2026-06-25.md; worker return docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md. ASSF-PIC-T1 remains held until Active Session State Bootstrap Read Model And Aggregate Size Refactor closes.",
+  "mseaR22T1MineruPackageInstallActivationModelScopeCachePrepDispatch20260703": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "36285ea3",
+    "materialCommitFull": "36285ea393f7c2c82a9329b8fecd9e8c153a51b6",
+    "dispatchBaseHead": "242927cc",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_READINESS_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "localRuntimeVenvPath": ".cvf/runtime/msea-r22-mineru-venv",
+    "localRuntimeConfigPath": ".cvf/runtime/msea-r22-mineru.json",
+    "installSource": ".private_reference/source_mirrors/opendatalab__MinerU",
+    "modelSourceRoute": "modelscope",
+    "modelTypeRoute": "pipeline",
+    "allowedCachePrepCommand": "mineru-models-download --source modelscope --model_type pipeline",
+    "preDispatchGate": "PASS 72/72",
+    "dispatchStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Worker executes MSEA-R22-T1 under WORKER_MUST_NOT_COMMIT, creates only the named worker return and companion readiness matrix as governed outputs, and records package install, command activation, config/cache, and selected route evidence.",
+    "claimBoundary": "Dispatch only. Worker may perform only ignored local venv/package/cache-prep side effects specified by the work order; no parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, service startup, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, legal-quality, current-law, production, or workflow-chain claim is authorized."
+  },
   "stateBrT1Dispatch20260625": "STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size Refactor is DISPATCHED_TO_WORKER at material commit 06d54319. Dispatch artifacts: docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_2026-06-25.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md. Worker mode is WORKER_MUST_NOT_COMMIT. Claude may update only the authorized active-session generator/checker/test/front-door/read-model paths and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. ASSF-PIC-T1 remains held until this refactor closes.",
   "stateBrT1Closure20260626": {
     "status": "CLOSED_PASS_BOUNDED",

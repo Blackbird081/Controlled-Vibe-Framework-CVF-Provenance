@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=MSEA-R21-T1 closed with `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`; if operator wants to proceed, author fresh GC-018/source-verified MSEA-R22 work order for MinerU package install/activation authorization and ModelScope pipeline cache-preparation prerequisites; parked checkpoint=no package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local temporary service startup, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized without fresh work order; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=MSEA-R22-T1 worker executes under WORKER_MUST_NOT_COMMIT, may create only the named worker return and readiness matrix as governed outputs, may create/reuse ignored local R22 runtime venv/config, install MinerU from the pinned source mirror inside that venv, and run exactly one ModelScope pipeline cache-prep command; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by R22; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
+Current mode marker: `msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`
 
-Current mode: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
+Current mode: `msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`
 
-`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
+`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_dispatched_pending_worker_return`
+`msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No current dispatched worker remains after MSEA-R21-T1 closure |
+| MSEA-R22-T1 MinerU Package Install Activation And ModelScope Pipeline Cache Preparation | `36285ea3` | DISPATCH_READY_PENDING_WORKER_RETURN; fresh GC-018 baseline and source-verified work order created after accepted R21 selected `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`; worker may create only the named worker return and companion readiness matrix as governed outputs; worker may create/reuse ignored local R22 venv/config, install MinerU from pinned source mirror inside that venv, and run one ModelScope pipeline cache-prep command; no parser/OCR/VLM/API/router/Gradio/Docker/WSL/service execution, document body read, extraction outputs, provider/live proof, public-sync, schema/writer/checker/adapter/source-import/Web/MCP/model-router/action-authority/production claim |
 
 ## Current Held Follow-Up Work
 
@@ -261,28 +261,26 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r21_t1_mineru_modelscope_test_cache_preparation_and_runtime_smoke_gate_closed_pass_bounded_pending_package_install_authorization`
+Mode: `msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`
 
-Next allowed move: MSEA-R21-T1 closed at material commit `c859ffb1` with
-selectedRouteToken `HOLD_PENDING_MINERU_PACKAGE_INSTALL_AUTHORIZATION`. If the
-operator wants to proceed, author fresh GC-018/source-verified MSEA-R22 work
-order for MinerU package install/activation authorization and ModelScope
-pipeline cache-preparation prerequisites. Otherwise hold all MinerU runtime
-lanes.
+Next allowed move: MSEA-R22-T1 worker executes under WORKER_MUST_NOT_COMMIT.
+Worker may create only the named worker return and companion readiness matrix
+as governed outputs, may create/reuse ignored local R22 runtime venv/config,
+install MinerU from the pinned source mirror inside that venv, and run exactly
+one ModelScope pipeline cache-prep command.
 
 Current material source:
 
-`docs/reviews/CVF_MSEA_R21_T1_MINERU_MODELSCOPE_TEST_CACHE_PREPARATION_AND_RUNTIME_SMOKE_GATE_WORKER_RETURN_2026-07-03.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_2026-07-03.md`
 
-No package install, source import, parser/OCR/VLM/hybrid/API/router/Gradio/
-Docker/WSL execution, local temporary service startup, provider/live proof,
+No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, provider/live proof,
 RAG/S3, schema/writer/checker/adapter implementation, source document copy/
 import into this repository, document body read, extraction outputs,
 public-sync, redistribution, fuller content inclusion, Candidate Group B,
 rejected derived outputs, document-truth, extraction-accuracy, legal advice
 quality, current-law correctness, benchmark, production readiness, Web/MCP/
 model-router/action-authority, live run, or workflow-chain completion claim is
-authorized without a fresh work order.
+authorized by MSEA-R22-T1.
 
 LHW24 remains the latest closed numbered LHW wave.
 
