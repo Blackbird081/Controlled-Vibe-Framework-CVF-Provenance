@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=operator decision and, if chosen, fresh GC-018/source-verified work-order authoring for diagnostic-aware ModelScope cache resume/retry or alternate model-source decision after R22 selected `HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized by R22; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=execute MSEA-R23-T1 worker under `WORKER_MUST_NOT_COMMIT` after dispatch commit `4f716e25`; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, alternate-source download execution, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized by R23; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
+Current mode marker: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
 
-Current mode: `msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
+Current mode: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
 
-`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
+`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`
+`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No current dispatched work remains after MSEA-R22-T1 material acceptance at `7b105700` |
+| MSEA-R23-T1 MinerU ModelScope Cache Diagnostic Resolution And Alternate Source Decision | `4f716e25` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may create only the named worker return and companion readiness matrix, inspect R22 diagnostic evidence, reuse `.cvf/runtime/msea-r22-mineru-venv` if present, set `MINERU_MODEL_SOURCE=modelscope` and `MINERU_TOOLS_CONFIG_JSON=.cvf/runtime/msea-r23-mineru.json`, and run exactly one `mineru-models-download --source modelscope --model_type pipeline`; worker must not commit/stage/push or run parser/runtime/document/public/production work |
 
 ## Current Held Follow-Up Work
 
@@ -263,26 +263,27 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
+Mode: `msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
 
-Next allowed move: operator decision and, if chosen, fresh GC-018/source-
-verified work-order authoring for diagnostic-aware ModelScope cache resume/
-retry or alternate model-source decision after accepted MSEA-R22-T1 selected
-`HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`.
+Next allowed move: execute MSEA-R23-T1 worker under `WORKER_MUST_NOT_COMMIT`.
+The worker may create only the named worker return and companion readiness
+matrix, inspect R22 diagnostic evidence, reuse the ignored R22 venv if present,
+set the R23 config path, and run exactly one ModelScope pipeline cache retry.
 
 Current material source:
 
-`docs/reviews/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_WORKER_RETURN_2026-07-03.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md`
 
 No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, provider/live proof,
 RAG/S3, schema/writer/checker/adapter implementation, source document copy/
 import into this repository, document body read, extraction outputs,
-public-sync, redistribution, fuller content inclusion, Candidate Group B,
-rejected derived outputs, document-truth, extraction-accuracy, legal advice
-quality, current-law correctness, benchmark, production readiness, Web/MCP/
-model-router/action-authority, live run, or workflow-chain completion claim is
-authorized by MSEA-R22-T1. Runtime smoke remains held until cache/config
-readiness is completed under fresh authority.
+public-sync, redistribution, alternate-source download execution, fuller
+content inclusion, Candidate Group B, rejected derived outputs,
+document-truth, extraction-accuracy, legal advice quality, current-law
+correctness, benchmark, production readiness, Web/MCP/model-router/
+action-authority, live run, runtime smoke, or workflow-chain completion claim
+is authorized by MSEA-R23-T1. Runtime smoke remains held until cache/config
+readiness is accepted under a later fresh authority.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -835,7 +836,7 @@ with drift guard wiring in autorun, pre-commit, reviewer-fast, and pre-push
 catalogs.
 
 Current mode:
-`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
+`msea_r23_t1_mineru_modelscope_cache_diagnostic_resolution_and_alternate_source_decision_dispatched_pending_worker_return`
 
 ## Continuity Markers
 

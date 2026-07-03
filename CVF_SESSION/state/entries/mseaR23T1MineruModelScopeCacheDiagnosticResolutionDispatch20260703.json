@@ -1,0 +1,35 @@
+{
+  "stateOrder": 1416,
+  "stateKey": "mseaR23T1MineruModelScopeCacheDiagnosticResolutionDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "4f716e25",
+    "materialCommitFull": "4f716e25a4ad94cf0920ee1bc9e42af10b95e68c",
+    "dispatchBaseHead": "d0d4f120",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_DECISION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R23_T1_MINERU_MODELSCOPE_CACHE_DIAGNOSTIC_RESOLUTION_AND_ALTERNATE_SOURCE_READINESS_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchPurpose": "diagnostic-aware ModelScope pipeline cache resume/retry and alternate source route decision after accepted R22 timeout diagnostic",
+    "allowedCachePrepCommand": "mineru-models-download --source modelscope --model_type pipeline",
+    "allowedRouteTokens": [
+      "OPEN_MSEA_R24_LOCAL_PIPELINE_RUNTIME_SMOKE_WORK_ORDER",
+      "HOLD_PENDING_MODELSCOPE_RETRY_OR_NETWORK_DIAGNOSTIC",
+      "OPEN_ALTERNATE_MODEL_SOURCE_DECISION_WORK_ORDER",
+      "HOLD_PENDING_CONFIG_WRITEBACK_REVIEW",
+      "HOLD_ALL_MINERU_RUNTIME_LANES"
+    ],
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch-quality PASS",
+      "ADIF disclosure PASS",
+      "checker read-ahead PASS",
+      "dispatch steward PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R23-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion readiness matrix, performs source verification and one bounded ModelScope cache retry if prerequisites hold, selects exactly one route token, and does not commit.",
+    "claimBoundary": "Dispatch only. No parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, runtime smoke, workflow-chain completion, production readiness, worker commit/stage/push, or session-sync edit is authorized."
+  }
+}
