@@ -6,13 +6,13 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R22-T1 dispatch while preserving the V34
+Carry compact continuity after MSEA-R22-T1 acceptance while preserving the V34
 active handoff opened after V33 exceeded the governed handoff file-size
 threshold.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after dispatching MSEA-R22-T1 MinerU
+Target: active CVF session continuity after accepting MSEA-R22-T1 MinerU
 package install activation and ModelScope pipeline cache preparation.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=MSEA-R22-T1 worker executes under WORKER_MUST_NOT_COMMIT, may create only the named worker return and readiness matrix as governed outputs, may create/reuse ignored local R22 runtime venv/config, install MinerU from the pinned source mirror inside that venv, and run exactly one ModelScope pipeline cache-prep command; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim authorized by R22.
+Startup acknowledged: current mode=`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=operator decision and, if chosen, fresh GC-018/source-verified work-order authoring for diagnostic-aware ModelScope cache resume/retry or alternate model-source decision after R22 selected `HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`; parked checkpoint=no parser/OCR/VLM/hybrid/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction outputs, provider/live proof, public-sync, fuller content inclusion, schema/writer/checker/adapter/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/runtime-smoke/workflow-chain claim authorized by R22.
 
 ## Current State
 
@@ -46,50 +46,45 @@ Startup acknowledged: current mode=`msea_r22_t1_mineru_package_install_activatio
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `36285ea3` MSEA-R22-T1 package/cache-prep dispatch |
-| Latest session-sync target | session sync after MSEA-R22-T1 dispatch |
+| Latest material packet | `7b105700` MSEA-R22-T1 package/cache diagnostic acceptance |
+| Latest session-sync target | session sync after MSEA-R22-T1 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_dispatched_pending_worker_return`
+`msea_r22_t1_mineru_package_install_activation_and_modelscope_pipeline_cache_preparation_closed_pass_bounded_pending_modelscope_download_diagnostic_resolution`
 
 ## Latest Changes
 
 MSEA-R22-T1 MinerU Package Install Activation And ModelScope Pipeline Cache
-Preparation is dispatched at material commit `36285ea3`.
+Preparation closed bounded at material commit `7b105700`.
 
 Dispatch artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_2026-07-03.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_2026-07-03.md`
 
-Worker outputs authorized:
+Accepted worker outputs:
 
 - `docs/reviews/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_WORKER_RETURN_2026-07-03.md`
 - `docs/reference/CVF_MSEA_R22_T1_MINERU_PACKAGE_INSTALL_ACTIVATION_AND_MODELSCOPE_PIPELINE_CACHE_PREPARATION_READINESS_MATRIX_2026-07-03.md`
 
-The work order authorizes ignored local runtime side effects only:
-`.cvf/runtime/msea-r22-mineru-venv`, `.cvf/runtime/msea-r22-mineru.json`, MinerU
-install from the pinned source mirror inside that venv, and one ModelScope
-pipeline cache-prep command. It does not authorize parser/OCR/VLM/hybrid/API/
-router/Gradio/Docker/WSL execution, local service startup, source document
-copy/import, document body read, extraction outputs, provider/live proof,
-public-sync, schema/writer/checker/adapter work, Web/MCP/model-router/
-action-authority, benchmark, document-truth, extraction-accuracy, legal advice
-quality, current-law correctness, workflow-chain completion, or production
-readiness.
+Reviewer/closer accepted selectedRouteToken `HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`.
+Local ignored package activation succeeded in `.cvf/runtime/msea-r22-mineru-venv`
+and the venv-local `mineru-models-download` command exists. The single
+authorized ModelScope pipeline cache-prep command timed out after about 30
+minutes, left partial cache evidence, and did not write
+`.cvf/runtime/msea-r22-mineru.json`. Runtime smoke remains held.
 
-Material verification: pre-dispatch autorun PASS 72/72, dispatch steward
-preflight PASS, material pre-commit hook PASS 79/79.
+Material verification: worker-return fast gate PASS, pre-implementation autorun
+PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79.
 
 ## Next Allowed Move
 
-Next allowed move: MSEA-R22-T1 worker executes under WORKER_MUST_NOT_COMMIT.
-Worker may create only the named worker return and readiness matrix as governed
-outputs, may create/reuse ignored local R22 runtime venv/config, install MinerU
-from the pinned source mirror inside that venv, and run exactly one ModelScope
-pipeline cache-prep command.
+Next allowed move: operator decision and, if chosen, fresh GC-018/source-
+verified work-order authoring for diagnostic-aware ModelScope cache resume/
+retry or alternate model-source decision after accepted MSEA-R22-T1 selected
+`HOLD_PENDING_MODELSCOPE_DOWNLOAD_DIAGNOSTIC`.
 
 No original document copy/import into this repository, public-sync,
 redistribution, fuller content inclusion, Candidate Group B, rejected derived
@@ -98,8 +93,8 @@ Gradio/Docker/WSL execution, local temporary service startup, provider/live
 proof, document body read, extraction outputs, RAG/S3, schema/writer/checker/
 adapter work, document-truth, extraction-accuracy, legal advice quality,
 current-law correctness, benchmark, production readiness, Web/MCP/model-router/
-action-authority, live run, or workflow-chain completion claim is authorized by
-MSEA-R22-T1.
+action-authority, live run, runtime smoke, or workflow-chain completion claim is
+authorized by MSEA-R22-T1.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -132,6 +127,70 @@ MSEA-R21-T1 material dispatch commit: `d40a8adf`.
 MSEA-R21-T1 material acceptance commit: `c859ffb1`.
 
 MSEA-R22-T1 material dispatch commit: `36285ea3`.
+
+MSEA-R22-T1 material acceptance commit: `7b105700`.
+
+## Core Guard Self-Protection Authorization - MSEA-R22-T1 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R22-T1
+material acceptance commit `7b105700`, including active mode, next allowed
+move, current closed work, generated active session state, bootstrap read
+model, front-door continuity, and active handoff continuity.
+
+Protected paths:
+- `AGENT_HANDOFF_V34_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR22T1MineruPackageInstallActivationModelScopeCachePrepDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked Codex to continue and process the full
+R22 lane; reviewer/closer accepted the worker return and companion matrix at
+material commit `7b105700`.
+
+Rollback boundary: revert only this MSEA-R22-T1 acceptance session-sync if
+rejected; do not revert material acceptance commit `7b105700`, dispatch commit
+`36285ea3`, or prior accepted material/session commits.
+
+## GC-020 HEAD Marker - MSEA-R22-T1 Acceptance
+
+| Field | Value |
+| --- | --- |
+| headSha | `7b105700` |
+| headFullSha | `7b10570099def44aea81deaa04127a5f4b6a18ee` |
+| protectedPathUpdate | session-sync only |
+| materialAnchor | `7b105700` |
+| nextAllowedMove | operator decision and fresh diagnostic-aware ModelScope cache resume/retry or alternate model-source work-order authoring if continuing |
+
+This marker records bounded local package activation plus ModelScope download
+diagnostic acceptance only. It does not claim model cache readiness, MinerU
+runtime readiness, parser/OCR/VLM/API/service execution, document extraction
+behavior, provider/live behavior, public readiness, legal advice quality,
+current-law correctness, workflow-chain completion, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R22-T1 Acceptance Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R22-T1 acceptance session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, `generate_active_session_state.py`, session-sync gates |
+| Target paths | active session state fragments, generated active session state, bootstrap, front door, and active handoff |
+| Allowed scope source | bounded session-sync after MSEA-R22-T1 material acceptance commit |
+| Before status evidence | material HEAD `7b105700`; active state still pointed to MSEA-R22-T1 worker execution |
+| After status evidence | active session state, bootstrap, front door, and V34 route next move to diagnostic-aware ModelScope cache resolution decision |
+| Diff evidence | `git diff --name-status`; session-sync commit steward preflight |
+| Approval boundary | bounded session-sync after MSEA-R22-T1 material acceptance commit |
+| Claim boundary | session continuity only; no package/runtime/provider/public behavior |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r22-t1-acceptance-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed above |
+| Actual changed set | `AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR22T1MineruPackageInstallActivationModelScopeCachePrepDispatch20260703.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization - MSEA-R21-T1 Dispatch Session Sync
 
