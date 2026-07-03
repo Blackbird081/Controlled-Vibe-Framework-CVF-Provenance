@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1410,
+  "stateKey": "mseaR17T1MineruCandidateGroupAPrivateTestCorpusIntakeDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "b14bf0fd",
+    "materialCommitFull": "b14bf0fdeb98a700f0d42df9287f428c54236e7d",
+    "dispatchBaseHead": "32d4a11f",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_LEDGER_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchPurpose": "Candidate Group A local-private metadata-only test corpus intake and receipt dry-run readiness after operator authorization",
+    "selectedCandidateGroup": "CANDIDATE_GROUP_A_ONLY",
+    "operatorAuthorization": "local private CVF testing only; no public-sync or redistribution; derived outputs may be generated for governed internal receipts/evaluation; original documents and sensitive details remain private; committed artifacts use metadata, redaction, or excerpt-minimal evidence unless separately approved",
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R17-T1 private metadata-only intake and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push.",
+    "claimBoundary": "Dispatch only. Worker may create only the named worker return and companion intake ledger; no original document copy/import into repository, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, MinerU runtime/install/model download/parser/OCR/VLM/API/Docker execution, provider/live proof, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, workflow-chain completion claim, worker commit/stage/push, or session-sync edit is authorized."
+  }
+}

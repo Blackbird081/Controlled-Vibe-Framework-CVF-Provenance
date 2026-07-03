@@ -33,7 +33,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=operator provides explicit Candidate Group A permission/license and privacy/redaction detail, or dispatcher authors a fresh source-verified operator-detail-closure work order only after that detail exists; parked checkpoint=no sample document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/source-import/provider-live/live-run/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
+Startup acknowledged: current mode=`msea_r17_t1_candidate_group_a_private_test_corpus_intake_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=delegated worker executes MSEA-R17-T1 Candidate Group A private metadata-only test-corpus intake under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no original document copy/import into repository, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, MinerU runtime/source-import/provider-live/live-run/public/package/checker/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/schema-implementation/receipt-writer-code/adapter-implementation/production claim authorized.
 
 ## Current State
 
@@ -45,55 +45,58 @@ Startup acknowledged: current mode=`msea_r16_t1_sample_corpus_operator_detail_re
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V33_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `742a81ab` MSEA-R16-T1 sample corpus operator-detail readiness acceptance |
-| Latest session-sync target | session sync after MSEA-R16-T1 acceptance and handoff rotation |
+| Latest material packet | `b14bf0fd` MSEA-R17-T1 private test corpus intake dispatch |
+| Latest session-sync target | session sync after MSEA-R17-T1 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
+`msea_r17_t1_candidate_group_a_private_test_corpus_intake_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R16-T1 MinerU sample-corpus operator-detail and minimal
-population-readiness worker return is accepted at material commit `742a81ab`.
-Accepted artifacts:
+MSEA-R17-T1 MinerU Candidate Group A private test-corpus intake and receipt
+dry-run dispatch is open at material commit `b14bf0fd`.
 
-- `docs/reviews/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_WORKER_RETURN_2026-07-03.md`
-- `docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md`
+Dispatch artifacts:
 
-Selected first-use target: `CANDIDATE_GROUP_A_ONLY`.
+- `docs/baselines/CVF_GC018_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_2026-07-03.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_2026-07-03.md`
 
-Selected next-route token: `PARTIAL_READINESS_PENDING_OPERATOR_DETAIL`.
+Worker-owned outputs:
 
-The acceptance records that Candidate Group A is the lower-risk first-use
-target if a later population packet is ever authorized, but it does not open a
-population work order. Candidate Group A still needs explicit operator
-permission/license and privacy/redaction detail. Candidate Group B remains held
-because its privacy/redaction row is `HELD_PENDING_OPERATOR_DETAIL`. The nine
-ungoverned derived outputs remain rejected for direct promotion.
+- `docs/reviews/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_WORKER_RETURN_2026-07-03.md`
+- `docs/reference/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_LEDGER_2026-07-03.md`
 
-Material verification: worker-return fast gate PASS, pre-implementation
-autorun PASS 74/74, reviewer-return steward preflight PASS, material
-pre-commit hook PASS 79/79, and committed-range pre-closure content gates PASS
-with only expected pre-session-sync handoff HEAD drift.
+Selected candidate group: `CANDIDATE_GROUP_A_ONLY`.
+
+The operator supplied local-private testing authorization for Candidate Group
+A. This dispatch opens metadata-only local-private intake: path presence,
+size, SHA-256, slot assignment, authorization boundary, and receipt dry-run
+non-claims for the two Group A DOCX files. It does not authorize copying
+original documents into the repository, public-sync, redistribution, fuller
+content inclusion, Candidate Group B, rejected derived outputs, MinerU runtime,
+provider/live proof, RAG/S3, schema/writer/adapter/checker work, document-truth,
+extraction-accuracy, legal advice quality, current-law correctness, benchmark,
+workflow-chain completion, or production readiness.
+
+Material verification: pre-dispatch autorun PASS 72/72, dispatch steward
+preflight PASS, material pre-commit hook PASS 79/79.
 
 ## Next Allowed Move
 
-No automatic next work order is open.
+Next allowed move: delegated worker executes the MSEA-R17-T1 work order under
+`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`.
 
-Next allowed move: operator may provide an explicit Candidate Group A
-permission/license statement and an explicit privacy/redaction disposition for
-the two named Group A DOCX files. Only after that detail exists may a dispatcher
-author a fresh source-verified GC-018/work order for a bounded operator-detail
-closure or later Candidate Group A population-readiness step.
-
-The current state does not authorize sample document copy/import/storage/
-redaction/processing, corpus population, MinerU runtime/OCR/parser/VLM,
-provider/RAG/schema/writer/checker/adapter work, public-sync, document-truth,
-extraction-accuracy, legal advice quality, current-law correctness, benchmark,
-production readiness, source import, package activation, Web/MCP/model-router/
-action-authority, live run, or route execution.
+Worker may create only the worker return and companion intake ledger named
+above. No original document copy/import into this repository, public-sync,
+redistribution, fuller content inclusion, Candidate Group B, rejected derived
+outputs, MinerU runtime/OCR/parser/VLM/API/Docker/provider/RAG/S3, schema/
+writer/checker/adapter work, document-truth, extraction-accuracy, legal advice
+quality, current-law correctness, benchmark, production readiness, source
+import, package activation, Web/MCP/model-router/action-authority, live run,
+worker commit/stage/push, or session-sync edit is authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -104,6 +107,8 @@ MSEA-R16-T1 material acceptance commit: `742a81ab`.
 Previous active handoff V33 was 1051 lines after the prior sync and exceeded
 the governed active-handoff hard threshold. This sync opens V34 and archives
 V33 instead of appending more status to the oversized active handoff.
+
+MSEA-R17-T1 material dispatch commit: `b14bf0fd`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R16-T1 Acceptance Session Sync
 
@@ -180,6 +185,66 @@ allowed move, or claim boundary recorded above.
 | Actual changed set | protected session/front-door/handoff paths only |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | V33 active handoff moved to archive; V34 opened as active successor |
+
+## Core Guard Self-Protection Authorization - MSEA-R17-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R17-T1
+material dispatch commit `b14bf0fd`, including active mode, next allowed move,
+current dispatched work, generated active session state, bootstrap read model,
+front-door continuity, and active handoff continuity.
+
+Protected paths:
+- `AGENT_HANDOFF_V34_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR17T1MineruCandidateGroupAPrivateTestCorpusIntakeDispatch20260703.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator provided Candidate Group A local-private
+testing authorization; dispatcher filed MSEA-R17-T1 material dispatch commit
+`b14bf0fd`.
+
+Rollback boundary: revert only this MSEA-R17-T1 dispatch session-sync if
+rejected; do not revert material dispatch commit `b14bf0fd` or prior accepted
+material/session commits.
+
+## GC-020 HEAD Marker - MSEA-R17-T1 Dispatch
+
+Latest material commit requiring in-place handoff trace: `b14bf0fd`.
+
+Full SHA:
+`b14bf0fdeb98a700f0d42df9287f428c54236e7d`.
+
+This marker records dispatch evidence only. It does not claim worker
+execution, source document copy/import, public-sync, MinerU runtime,
+provider/live proof, RAG/S3, schema/writer/adapter/checker implementation,
+benchmark, document-truth, extraction-accuracy, legal advice quality,
+current-law correctness, workflow-chain completion, or production readiness.
+
+## Agent Operation Trace Block - MSEA-R17-T1 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R17-T1 dispatch session-sync, 2026-07-03 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | PowerShell, `apply_patch`, active state generator, session-sync gates |
+| Target paths | `AGENT_HANDOFF_V34_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; active session generated/source state |
+| Allowed scope source | material dispatch commit `b14bf0fd` |
+| Before status evidence | material HEAD `b14bf0fd`; active state still pointed to R16-T1 accepted pending operator detail |
+| After status evidence | active session state, bootstrap, front door, and V34 route next move to MSEA-R17-T1 worker execution |
+| Diff evidence | `git diff --name-status`; session-sync commit steward preflight |
+| Approval boundary | bounded session-sync after MSEA-R17-T1 material dispatch commit |
+| Claim boundary | session continuity and next-move routing only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r17-t1-dispatch-session-sync-2026-07-03` |
+| Expected manifest | protected paths listed in this authorization block |
+| Actual changed set | protected session/front-door/handoff paths only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
 

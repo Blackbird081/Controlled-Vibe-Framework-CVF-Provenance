@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=operator provides explicit Candidate Group A permission/license and privacy/redaction detail, or dispatcher authors a fresh source-verified operator-detail-closure work order only after that detail exists; parked checkpoint=no route execution, document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/install/model-download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter/source-import/provider-live/live-run/public-sync/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production work authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r17_t1_candidate_group_a_private_test_corpus_intake_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V34_2026-07-03.md; next allowed move=delegated worker executes MSEA-R17-T1 Candidate Group A private metadata-only test-corpus intake under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=no original document copy/import into repository, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, MinerU runtime/install/model-download/parser/OCR/VLM/API/Docker/provider/RAG/S3/schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production claim authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
+Current mode marker: `msea_r17_t1_candidate_group_a_private_test_corpus_intake_dispatched_pending_worker_return`
 
-Current mode: `msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
+Current mode: `msea_r17_t1_candidate_group_a_private_test_corpus_intake_dispatched_pending_worker_return`
 
-`msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
+`msea_r17_t1_candidate_group_a_private_test_corpus_intake_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r16_t1_mineru_sample_corpus_operator_detail_readiness_dispatched_pending_worker_return`
+`msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker dispatch is currently open after MSEA-R16-T1 acceptance |
+| MSEA-R17-T1 MinerU Candidate Group A Private Test Corpus Intake And Receipt Dry Run | `b14bf0fd` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may create only the named worker return and companion intake ledger; metadata-only local-private test intake for the two Group A DOCX files; no worker commit/stage/push or session-sync edit |
 
 ## Current Held Follow-Up Work
 
@@ -61,6 +61,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R17-T1 MinerU Candidate Group A Private Test Corpus Intake And Receipt Dry Run dispatch | `b14bf0fd` | DISPATCH_READY_PENDING_WORKER_RETURN; GC-018 baseline and work order created after operator supplied local-private testing authorization for Candidate Group A; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only `docs/reviews/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_WORKER_RETURN_2026-07-03.md` and `docs/reference/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_LEDGER_2026-07-03.md`; no original document copy/import into repository, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, MinerU runtime/provider/RAG/schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production claim |
 | MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness | `742a81ab` | CLOSED_PASS_BOUNDED; accepted no-commit worker return and companion readiness reference; selected first-use target `CANDIDATE_GROUP_A_ONLY`; selected next-route token `PARTIAL_READINESS_PENDING_OPERATOR_DETAIL`; Candidate Group A remains pending explicit operator permission/license and privacy/redaction detail before any later population work order; Candidate Group B remains held on privacy/redaction; nine ungoverned derived outputs remain rejected; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no route execution, document copy/import/storage/redaction/processing, corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim |
 | Work Order Literal-Shape Scaffold Hardening | `2794a493` | CLOSED_PASS_BOUNDED; raised shared work-order authoring foundation after MSEA-R16-T1 dispatch friction; added literal-format gotchas 39-43, guard-orientation routing, safer dispatch scaffold defaults, focused scaffold tests, regenerated source-intake golden fixture, and review carrier `docs/reviews/CVF_MSEA_R16_T1_WORK_ORDER_LITERAL_SHAPE_HELPER_HARDENING_2026-07-03.md`; material pre-commit hook PASS 79/79; committed-range pre-closure content gates PASS 72/72 except expected post-material handoff HEAD drift before this session-sync; no checker semantics, worker execution, route execution, runtime/provider/live, source import, corpus population, public-sync, package activation, adapter behavior, generated state mutation, or production claim |
 | MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness dispatch | `60aba982` | DISPATCH_READY_PENDING_WORKER_RETURN; GC-018 baseline and work order created for documentation/reference-only operator-detail and minimal population-readiness selection after MSEA-R16 roadmap; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; worker may create only the named worker return and companion readiness reference; no route execution, document copy/import/storage/redaction/processing, sample corpus population, runtime/provider/live/schema/writer/checker/adapter/public-sync/source-import/package/Web/MCP/model-router/action-authority/production claim |
@@ -109,6 +110,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R17-T1 MinerU Candidate Group A Private Test Corpus Intake And Receipt Dry Run dispatch | `b14bf0fd` | DISPATCH_READY_PENDING_WORKER_RETURN; next move is delegated worker execution under no-commit for metadata-only local-private intake |
 | MSEA-R16-T1 MinerU Sample Corpus Operator Detail And Minimal Population Readiness | `742a81ab` | CLOSED_PASS_BOUNDED; selected `CANDIDATE_GROUP_A_ONLY` and `PARTIAL_READINESS_PENDING_OPERATOR_DETAIL`; next move is explicit operator detail for Candidate Group A before any fresh population-related packet |
 | MSEA-R14 MinerU Post Sample Qualification Route Decision | `7ce21cbd` | CLOSED_PASS_BOUNDED; selected `OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE`; next move is fresh provenance-gap closure GC-018/work-order authoring if operator chooses |
 | MSEA-R13-T1 MinerU Legal Policy Sample Corpus Candidate Qualification | `c14398b2` | CLOSED_PASS_BOUNDED; accepted candidate qualification only; next move is operator next MinerU route decision, with legal-policy set usable only as a sample stressor after separate provenance-gap closure |
@@ -248,25 +250,25 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r16_t1_sample_corpus_operator_detail_readiness_accepted_pending_operator_detail`
+Mode: `msea_r17_t1_candidate_group_a_private_test_corpus_intake_dispatched_pending_worker_return`
 
-Next allowed move: operator may provide an explicit Candidate Group A
-permission/license statement and an explicit privacy/redaction disposition for
-the two named Group A DOCX files. Only after that detail exists may a
-dispatcher author a fresh source-verified GC-018/work order for a bounded
-operator-detail closure or later Candidate Group A population-readiness step.
+Next allowed move: delegated worker executes MSEA-R17-T1 under
+`WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON` without commit/stage/push.
 
 Current accepted source:
 
-`docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_2026-07-03.md`
 
-No route execution, worker execution, document copy/import/storage/redaction/
-processing, sample corpus population, MinerU runtime/OCR/parser/VLM,
-provider/RAG/schema/writer/checker/adapter work, public-sync, document-truth,
-extraction-accuracy, legal advice quality, current-law correctness, benchmark,
-production readiness, source import, package activation, Web/MCP/model-router/
-action-authority, live run, or session-sync edit is authorized without a fresh
-source-verified packet and required proof.
+Worker may create only the named worker return and companion intake ledger.
+No original document copy/import into this repository, public-sync,
+redistribution, fuller content inclusion, Candidate Group B, rejected derived
+outputs, MinerU runtime/OCR/parser/VLM/API/Docker/provider/RAG/S3, schema/
+writer/checker/adapter work, public-sync, document-truth, extraction-accuracy,
+legal advice quality, current-law correctness, benchmark, production
+readiness, source import, package activation, Web/MCP/model-router/
+action-authority, live run, worker commit/stage/push, or session-sync edit is
+authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
 
