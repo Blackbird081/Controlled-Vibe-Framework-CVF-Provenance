@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t3a_mineru_path_quoting_safe_local_pipeline_rerun_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R24-T3A worker under WORKER_MUST_NOT_COMMIT; parked checkpoint=T4 remains held until reviewer accepts a successful smoke receipt.
+Startup acknowledged: current mode=`msea_r24_t3a_smoke_receipt_closed_pending_t4_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R24-T4 workflow-chain receipt policy and private output handling work order; parked checkpoint=T4 may proceed only as fresh GC-018/work-order authoring after accepted T3A smoke receipt.
 
 ## Current State
 
@@ -46,15 +46,39 @@ Startup acknowledged: current mode=`msea_r24_t3a_mineru_path_quoting_safe_local_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `1f169c74` MSEA-R24-T3A path-quoting-safe rerun dispatch |
-| Latest session-sync target | session sync after MSEA-R24-T3A dispatch |
+| Latest material packet | `04b99044` MSEA-R24-T3A smoke receipt acceptance |
+| Latest session-sync target | session sync after MSEA-R24-T3A acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r24_t3a_mineru_path_quoting_safe_local_pipeline_rerun_dispatched_pending_worker_return`
+`msea_r24_t3a_smoke_receipt_closed_pending_t4_work_order_authoring`
 
 ## Latest Changes
+
+MSEA-R24-T3A MinerU path-quoting-safe local pipeline rerun worker return was
+accepted at material commit `04b99044`.
+
+Accepted artifacts:
+
+- `docs/reviews/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_WORKER_RETURN_2026-07-04.md`
+- `docs/reference/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_READINESS_MATRIX_2026-07-04.md`
+
+Accepted result: `SMOKE_PASS_BOUNDED`.
+
+Runtime receipt boundary: one direct PowerShell call-operator MinerU CLI
+pipeline invocation exited `0` in 25.465s, produced six metadata-visible files
+under ignored `.cvf/runtime`, and left no lingering process. The accepted
+evidence does not quote source or generated extraction content and does not
+claim extraction accuracy, document truth, legal advice quality, current-law
+correctness, workflow-chain completion, public-sync, provider/live proof, or
+production readiness.
+
+Verification: worker-return fast gate PASS, pre-implementation autorun PASS
+74/74, reviewer-return steward PASS, and material pre-commit hook PASS 79/79.
+
+T4 release disposition: released for fresh GC-018/work-order authoring only.
+T4 is not already closed and no workflow-chain completion claim exists.
 
 MSEA-R24-T3A MinerU path-quoting-safe local pipeline rerun dispatch was
 committed at material commit `1f169c74`.
@@ -85,26 +109,44 @@ Allowed worker result tokens: `SMOKE_PASS_BOUNDED`,
 
 ## Next Allowed Move
 
-Next allowed move: execute the MSEA-R24-T3A worker exactly inside the
-dispatched WORKER_MUST_NOT_COMMIT work order boundary.
+Next allowed move: author fresh MSEA-R24-T4 GC-018 baseline and source-verified
+work order for workflow-chain receipt policy and private output handling only,
+using the accepted T3A smoke receipt and R17 privacy boundary as prerequisites.
 
-Worker must capture executionBaseHead, read the paired baseline and required
-sources/checkers, preflight local CLI/config/input, run at most one direct
-PowerShell call-operator MinerU invocation or hold before command if preflight
-fails, create only the named uncommitted worker return and readiness matrix,
-and run worker-return fast gate plus pre-implementation autorun.
-
-Forbidden without fresh authority: T4 dispatch, second rerun, model
-download/cache mutation, ModelScope, VLM/hybrid/http-client/router/Gradio/
-Docker/WSL, service outside the single CLI process, manual document body read,
-content quotation, Candidate Group A file copy/import, committed extraction
-outputs, provider/live proof, public-sync, RAG/S3/schema/writer/adapter/checker/
-package/Web/MCP/model-router/action-authority work, benchmark, document-truth,
-extraction-accuracy, legal advice quality, current-law correctness,
-workflow-chain completion, production readiness, stage, commit by worker, push,
-or provider/live governance proof.
+Forbidden without fresh authority: MinerU rerun, model download/cache mutation,
+ModelScope, VLM/hybrid/http-client/router/Gradio/Docker/WSL, manual document
+body read, generated extraction content quotation, Candidate Group A source or
+generated output copy/import into governed repo, provider/live proof,
+public-sync, RAG/S3/schema/writer/adapter/checker/package/Web/MCP/model-router/
+action-authority work, benchmark, document-truth, extraction-accuracy, legal
+advice quality, current-law correctness, workflow-chain completion before T4
+closure, production readiness, stage by worker, commit by worker, push, or
+provider/live governance proof.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R24-T3A Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R24-T3A
+material acceptance commit `04b99044`, including active mode, next allowed move,
+generated active state, front-door current work, and this handoff.
+
+Protected paths authorized for this session-sync:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR24T3aPathQuotingSafeLocalPipelineRerunClosure20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: operator asked to complete R24 and R25 as proposed;
+accepted T3A evidence releases only T4 work-order authoring before R25.
+
+Rollback boundary: revert only this MSEA-R24-T3A acceptance session-sync if
+rejected; do not revert material acceptance commit `04b99044` or prior material
+commits without explicit operator request.
 
 ## Core Guard Self-Protection Authorization - MSEA-R24-T3A Dispatch Session Sync
 

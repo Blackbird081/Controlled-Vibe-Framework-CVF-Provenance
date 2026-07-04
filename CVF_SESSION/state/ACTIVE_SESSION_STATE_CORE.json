@@ -75,8 +75,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r24_t3a_mineru_path_quoting_safe_local_pipeline_rerun_dispatched_pending_worker_return",
-  "previousMode": "msea_r24_t3_mineru_local_pipeline_runtime_smoke_diagnostic_closed_pending_t3a_path_quoting_rerun_work_order_authoring",
+  "currentMode": "msea_r24_t3a_smoke_receipt_closed_pending_t4_work_order_authoring",
+  "previousMode": "msea_r24_t3a_mineru_path_quoting_safe_local_pipeline_rerun_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
