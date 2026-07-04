@@ -331,4 +331,8 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
         "dispatch scaffold provenance",
         ["python", "governance/compat/check_dispatch_scaffold_provenance.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
+    (
+        "MinerU receipt boundary",
+        ["python", "governance/compat/check_mineru_receipt_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
     ]

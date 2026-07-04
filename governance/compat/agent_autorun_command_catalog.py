@@ -453,6 +453,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        _range_command(
+            "MinerU receipt boundary",
+            "governance/compat/check_mineru_receipt_boundary.py",
+            base,
+            head,
+        ),
     )
 
 
