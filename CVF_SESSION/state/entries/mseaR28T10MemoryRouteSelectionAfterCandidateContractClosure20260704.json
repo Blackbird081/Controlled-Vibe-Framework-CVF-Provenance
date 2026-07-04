@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1450,
+  "stateKey": "mseaR28T10MemoryRouteSelectionAfterCandidateContractClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "528f8255",
+    "materialCommitFull": "528f8255524bed85625bff9b39e789bcab6b41cd",
+    "executionBaseHead": "7e97e4c0",
+    "dispatchMaterialCommit": "7244842b",
+    "dispatchMaterialCommitFull": "7244842b89d9213f602c58c653a3c8c892e19fef",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T10_MINERU_MEMORY_ROUTE_SELECTION_AFTER_CANDIDATE_CONTRACT_2026-07-04.md",
+    "matrixPath": "docs/reference/CVF_MSEA_R28_T10_MINERU_MEMORY_ROUTE_SELECTION_AFTER_CANDIDATE_CONTRACT_MATRIX_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T10_MINERU_MEMORY_ROUTE_SELECTION_AFTER_CANDIDATE_CONTRACT_WORKER_RETURN_2026-07-04.md",
+    "selectedDecisionDisposition": "MEMORY_ROUTE_SELECTION_AFTER_CANDIDATE_CONTRACT_MATRIX_READY",
+    "selectedNextRoute": "MEMORY_SAFE_CANDIDATE_READY_FOR_MEMORY_OWNER_REVIEW",
+    "downstreamUseDisposition": "DOWNSTREAM_USE_ALLOWED_FOR_FUTURE_MEMORY_OWNER_REVIEW_ONLY",
+    "memoryWriteDisposition": "MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T10",
+    "futureAuthorityRequired": "FUTURE_MEMORY_OWNER_WORK_ORDER_REQUIRED",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T10 accepted a docs-only route-selection matrix and worker return selecting future memory-owner review readiness after the accepted T9 candidate contract. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker/hook edits, memory/RAG write, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}

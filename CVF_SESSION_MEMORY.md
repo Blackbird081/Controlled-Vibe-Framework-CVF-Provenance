@@ -31,32 +31,32 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the MSEA-R28-T10 no-commit docs-only worker packet from dispatch commit `7244842b`; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, source/test/checker/hook edits, session-sync by worker, and production workflow lanes remain deferred unless a fresh packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t10_memory_route_selection_after_candidate_contract_closed_pending_operator_next_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator next-lane selection, or fresh memory-owner GC-018/source-verified work order only if the operator chooses memory admission design; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, source/test/checker/hook edits, and production workflow lanes remain deferred unless a fresh packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
+Current mode marker: `msea_r28_t10_memory_route_selection_after_candidate_contract_closed_pending_operator_next_lane_selection`
 
-Current mode: `msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
+Current mode: `msea_r28_t10_memory_route_selection_after_candidate_contract_closed_pending_operator_next_lane_selection`
 
-`msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
+`msea_r28_t10_memory_route_selection_after_candidate_contract_closed_pending_operator_next_lane_selection`
 
 Previous mode:
 
-`msea_r28_t9_memory_safe_candidate_contract_closed_pending_r28_t10_route_selection_work_order_authoring`
+`msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R28-T10 memory route selection after candidate contract | `7244842b` | DISPATCH_READY_PENDING_WORKER_RETURN; execute the no-commit docs-only worker packet for companion matrix and worker return only. |
+| None | N/A | No active dispatched worker packet after MSEA-R28-T10 closure. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
 | Actual quality-report/source-pointer production | `67b98170` | CLOSED_PASS_BOUNDED; deterministic metadata-only helper and focused tests accepted. |
-| Memory-route release | `45fb7a9a` | MEMORY_ROUTE_STILL_HELD_PENDING_T10_ROUTE_SELECTION_AND_MEMORY_OWNER_DECISION; T9 accepted a metadata-only candidate contract helper, not memory/RAG write authority. |
+| Memory-route release | `528f8255` | MEMORY_SAFE_CANDIDATE_READY_FOR_MEMORY_OWNER_REVIEW; memory/RAG write remains `MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T10`; fresh future memory-owner GC-018/work order required before any admission or write. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
@@ -64,6 +64,8 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T10 MinerU Memory Route Selection After Candidate Contract | `528f8255` | CLOSED_PASS_BOUNDED; accepted docs-only route-selection matrix and worker return; selected `MEMORY_SAFE_CANDIDATE_READY_FOR_MEMORY_OWNER_REVIEW`; memory/RAG write remains `MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T10`; future authority required is `FUTURE_MEMORY_OWNER_WORK_ORDER_REQUIRED`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker edit, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
+| MSEA-R28-T10 MinerU Memory Route Selection After Candidate Contract dispatch | `7244842b` | DISPATCH_READY_CLOSED_BY_528f8255; created GC-018 baseline and source-verified no-commit docs-only work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80 |
 | MSEA-R28-T9 MinerU Memory Safe Candidate Contract | `45fb7a9a` | CLOSED_PASS_BOUNDED; accepted deterministic metadata-only memory-safe candidate contract helper, focused receipt-writer tests, and worker return; focused pytest PASS 34/34, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; memory/RAG write remains `MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH`; no MinerU runtime, private/generated content read, Candidate Group A import, checker/hook edit, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
 | MSEA-R28-T9 MinerU Memory Safe Candidate Contract dispatch | `3e901fda` | DISPATCH_READY_CLOSED_BY_45fb7a9a; created GC-018 baseline and source-verified no-commit source/test work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80 |
 | MSEA-R28-T8 MinerU Downstream Use And Memory Route Release Decision | `cba22bc8` | CLOSED_PASS_BOUNDED; accepted docs-only companion decision matrix and worker return; selected `MEMORY_SAFE_CANDIDATE_CONTRACT_RECOMMENDED` and `MEMORY_WRITE_NOT_AUTHORIZED_BY_T8`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker edit, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
@@ -93,26 +95,47 @@ Detailed historical closure rows are intentionally summarized out of this front 
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
+Mode: `msea_r28_t10_memory_route_selection_after_candidate_contract_closed_pending_operator_next_lane_selection`
 
-Next allowed move: execute the MSEA-R28-T10 no-commit docs-only worker packet
-from dispatch commit `7244842b`.
+Next allowed move: operator next-lane selection. If the operator wants memory
+admission design, author a fresh GC-018/source-verified future memory-owner
+work order using the accepted T10 matrix and worker return as dependency
+evidence.
 
 LHW24 remains the latest closed numbered LHW wave.
 
-Dispatch authority:
-
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T10_MINERU_MEMORY_ROUTE_SELECTION_AFTER_CANDIDATE_CONTRACT_2026-07-04.md`
-
-Worker may create only the named companion matrix and T10 worker return. Worker
-must run worker-return fast gate and pre-implementation autorun, then return
-COMPLETE_PENDING_REVIEW uncommitted. Do not write memory/RAG, run MinerU, read
-private/generated content, import Candidate Group A, run provider/live proof,
-public-sync, build standalone app surfaces, perform legal/use-case deep dive,
-claim extraction accuracy, document truth, legal quality, current-law
+Memory/RAG write remains unauthorized. Do not write memory/RAG, run MinerU,
+read private/generated content, import Candidate Group A, run provider/live
+proof, public-sync, build standalone app surfaces, perform legal/use-case deep
+dive, claim extraction accuracy, document truth, legal quality, current-law
 correctness, workflow-chain production readiness, edit source/test/checker/hook
-surfaces, session-sync by worker, stage worker changes, commit worker changes,
-or push before T10 is reviewed, accepted, committed, and session-synced.
+surfaces, stage worker changes, commit worker changes, or push unless a fresh
+packet and gates explicitly release that scope.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T10 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T10
+material closure commit `528f8255`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T10 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T10 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T10 closed pending operator next-lane selection. |
+| `CVF_SESSION/state/entries/mseaR28T10MemoryRouteSelectionAfterCandidateContractClosure20260704.json` | Record accepted T10 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator next-lane selection or future memory-owner GC-018 authoring if selected. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T10 closure continuity and next-lane boundary. |
+
+Rollback boundary: revert only this MSEA-R28-T10 closure session-sync if
+rejected; do not revert material closure commit `528f8255` or older MSEA
+history.
+
+LHW24 remains the latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T10 Dispatch Session Sync
 
