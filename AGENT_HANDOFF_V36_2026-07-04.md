@@ -177,3 +177,16 @@ or older MSEA history.
 | Actual changed set | pending session-sync commit |
 | Manifest delta | MATCH_PENDING_COMMIT |
 | Deletion or rename disposition | V35 moved to archived handoff path; V36 opened as active successor |
+
+## GC-020 HEAD Marker - MSEA-R28-T3 Closure Session Sync Commit
+
+| Field | Evidence |
+|---|---|
+| sessionSyncCommitHead | `6548da9d` |
+| sessionSyncCommitHeadFull | `6548da9d76fddd7e2675fabaa3a6b36a2b67da05` |
+| activeHandoff | `AGENT_HANDOFF_V36_2026-07-04.md` |
+| archivedHandoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
+| materialCommit | `4d64e33f` |
+| currentMode | `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring` |
+| nextAllowedMove | author MSEA-R28-T4 GC-018/source-verified work order for receipt-boundary checker implementation and hook wiring decision |
+| claimBoundary | handoff marker only; no checker implementation, hook wiring, runtime, provider/live proof, public-sync, memory/RAG write, app build, use-case deep dive, or production claim |
