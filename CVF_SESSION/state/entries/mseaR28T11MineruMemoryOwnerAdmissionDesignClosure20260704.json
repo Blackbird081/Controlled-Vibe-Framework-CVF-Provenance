@@ -1,0 +1,29 @@
+{
+  "stateOrder": 827,
+  "stateKey": "mseaR28T11MineruMemoryOwnerAdmissionDesignClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "dec53037",
+    "materialCommitFull": "dec530378c47d657bc19e539dc7cddbc84297bf5",
+    "executionBaseHead": "51e0704e",
+    "dispatchMaterialCommit": "a6aaf7ec",
+    "dispatchMaterialCommitFull": "a6aaf7ec47a89d2bf9965cd92bfe47f34cd98b76",
+    "dispatchBaseHead": "c870adac",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T11_MINERU_MEMORY_OWNER_ADMISSION_DESIGN_2026-07-04.md",
+    "matrixPath": "docs/reference/CVF_MSEA_R28_T11_MINERU_MEMORY_OWNER_ADMISSION_DESIGN_MATRIX_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T11_MINERU_MEMORY_OWNER_ADMISSION_DESIGN_WORKER_RETURN_2026-07-04.md",
+    "selectedDesignDisposition": "MEMORY_OWNER_ADMISSION_DESIGN_ONLY",
+    "admissionCriteriaStatus": "ADMISSION_CRITERIA_DESIGN_READY",
+    "memoryWriteDisposition": "MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T11_DISPATCH",
+    "futureAuthorityRequired": "FUTURE_MEMORY_OWNER_IMPLEMENTATION_WORK_ORDER_REQUIRED",
+    "privateOutputDisposition": "PRIVATE_OUTPUT_NOT_READ_OR_RELEASED",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T11 accepted a docs-only memory-owner admission design matrix and worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker/hook edits, memory/RAG write, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}

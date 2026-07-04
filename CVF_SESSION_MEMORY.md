@@ -31,32 +31,32 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t11_mineru_memory_owner_admission_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the MSEA-R28-T11 no-commit docs-only worker packet from dispatch commit `a6aaf7ec`; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, source/test/checker/hook edits, session-sync by worker, and production workflow lanes remain deferred unless a fresh packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t11_mineru_memory_owner_admission_design_closed_pending_operator_t12_memory_owner_implementation_or_next_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator lane selection: author a fresh MSEA-R28-T12 GC-018/source-verified work order for memory-owner implementation/admission wiring using accepted T11 evidence, or park MSEA and select another governed lane; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, source/test/checker/hook edits, worker commit/push, and production workflow lanes remain deferred unless a fresh packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t11_mineru_memory_owner_admission_design_dispatched_pending_worker_return`
+Current mode marker: `msea_r28_t11_mineru_memory_owner_admission_design_closed_pending_operator_t12_memory_owner_implementation_or_next_lane_selection`
 
-Current mode: `msea_r28_t11_mineru_memory_owner_admission_design_dispatched_pending_worker_return`
+Current mode: `msea_r28_t11_mineru_memory_owner_admission_design_closed_pending_operator_t12_memory_owner_implementation_or_next_lane_selection`
 
-`msea_r28_t11_mineru_memory_owner_admission_design_dispatched_pending_worker_return`
+`msea_r28_t11_mineru_memory_owner_admission_design_closed_pending_operator_t12_memory_owner_implementation_or_next_lane_selection`
 
 Previous mode:
 
-`msea_r28_t10_memory_route_selection_after_candidate_contract_closed_pending_operator_next_lane_selection`
+`msea_r28_t11_mineru_memory_owner_admission_design_dispatched_pending_worker_return`
 
-## Current Dispatched Work
+## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R28-T11 MinerU Memory Owner Admission Design | `a6aaf7ec` | DISPATCH_READY_PENDING_WORKER_RETURN; execute the no-commit docs-only worker packet for companion matrix and worker return only. |
+| MSEA-R28-T11 MinerU Memory Owner Admission Design | `dec53037` | CLOSED_PASS_BOUNDED; accepted docs-only admission design matrix and worker return; memory/RAG write remains unauthorized pending fresh future implementation authority. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
 | Actual quality-report/source-pointer production | `67b98170` | CLOSED_PASS_BOUNDED; deterministic metadata-only helper and focused tests accepted. |
-| Memory-route release | `a6aaf7ec` | MEMORY_OWNER_ADMISSION_DESIGN_DISPATCHED; memory/RAG write remains `MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T11_DISPATCH`; worker may design admission criteria only. |
+| Memory-route release | `dec53037` | MEMORY_OWNER_ADMISSION_DESIGN_CLOSED; memory/RAG write remains `MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T11_DISPATCH`; future implementation requires fresh GC-018/source-verified work order. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
@@ -64,30 +64,11 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T11 MinerU Memory Owner Admission Design | `dec53037` | CLOSED_PASS_BOUNDED; accepted docs-only memory-owner admission design matrix and worker return; selected `MEMORY_OWNER_ADMISSION_DESIGN_ONLY`; admission criteria are `ADMISSION_CRITERIA_DESIGN_READY`; memory/RAG write remains `MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T11_DISPATCH`; future authority required is `FUTURE_MEMORY_OWNER_IMPLEMENTATION_WORK_ORDER_REQUIRED`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker edit, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
+| MSEA-R28-T11 MinerU Memory Owner Admission Design dispatch | `a6aaf7ec` | DISPATCH_READY_CLOSED_BY_dec53037; created GC-018 baseline and source-verified no-commit docs-only work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80 |
 | MSEA-R28-T10 MinerU Memory Route Selection After Candidate Contract | `528f8255` | CLOSED_PASS_BOUNDED; accepted docs-only route-selection matrix and worker return; selected `MEMORY_SAFE_CANDIDATE_READY_FOR_MEMORY_OWNER_REVIEW`; memory/RAG write remains `MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T10`; future authority required is `FUTURE_MEMORY_OWNER_WORK_ORDER_REQUIRED`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker edit, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
 | MSEA-R28-T10 MinerU Memory Route Selection After Candidate Contract dispatch | `7244842b` | DISPATCH_READY_CLOSED_BY_528f8255; created GC-018 baseline and source-verified no-commit docs-only work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80 |
-| MSEA-R28-T9 MinerU Memory Safe Candidate Contract | `45fb7a9a` | CLOSED_PASS_BOUNDED; accepted deterministic metadata-only memory-safe candidate contract helper, focused receipt-writer tests, and worker return; focused pytest PASS 34/34, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; memory/RAG write remains `MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH`; no MinerU runtime, private/generated content read, Candidate Group A import, checker/hook edit, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
-| MSEA-R28-T9 MinerU Memory Safe Candidate Contract dispatch | `3e901fda` | DISPATCH_READY_CLOSED_BY_45fb7a9a; created GC-018 baseline and source-verified no-commit source/test work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80 |
-| MSEA-R28-T8 MinerU Downstream Use And Memory Route Release Decision | `cba22bc8` | CLOSED_PASS_BOUNDED; accepted docs-only companion decision matrix and worker return; selected `MEMORY_SAFE_CANDIDATE_CONTRACT_RECOMMENDED` and `MEMORY_WRITE_NOT_AUTHORIZED_BY_T8`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker edit, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
-| MSEA-R28-T8 MinerU Downstream Use And Memory Route Release Decision dispatch | `17d8c1a4` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit docs-only work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; worker may create only the named companion matrix and worker return; no MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker edit, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
-| MSEA-R28-T7 MinerU Actual Quality Report Source Pointer Production Implementation | `67b98170` | CLOSED_PASS_BOUNDED; accepted deterministic metadata-only quality-report/source-pointer helper and focused tests; focused pytest PASS 29/29, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; memory route remains `MEMORY_ROUTE_HELD_PENDING_ALLOWED_DOWNSTREAM_USE_AND_MEMORY_OWNER_DECISION`; no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, checker/hook edit, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
-| MSEA-R28-T7 MinerU Actual Quality Report Source Pointer Production Implementation dispatch | `3b4488e5` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit implementation work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; worker may modify only `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`, `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`, and the named worker return; no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, checker/hook edit, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
-| MSEA-R28-T6 MinerU Quality Report Source Pointer Production Decision | `6bad1865` | CLOSED_PASS_BOUNDED; accepted docs-only worker return and companion matrix; selected `QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_MATRIX_READY` and `QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_ONLY`; memory route remains `MEMORY_ROUTE_STILL_HELD_PENDING_ACTUAL_PRODUCTION_AND_MEMORY_OWNER_DECISION`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no actual quality-report production, source-pointer resolution, source/test/checker edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG release, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R28-T6 MinerU Quality Report Source Pointer Production Decision dispatch | `03e04018` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit docs-only work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; worker may create only worker return and companion matrix; no source/test/checker edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
-| MSEA-R28-T5 MinerU Quality Source Pointer Receipt Schema Extension And Checker Update Decision | `4a824e6d` | CLOSED_PASS_BOUNDED; accepted metadata-only `qualityReportRef` and `sourcePointer` writer fields, validation, payload rendering, receipt-boundary checker required-field/value validation, focused tests, and worker return after reviewer removed an out-of-scope temporary work-order edit; focused pytest PASS 47/47, MinerU receipt boundary checker PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; memory route remains `MEMORY_ROUTE_STILL_HELD_AFTER_QUALITY_SOURCE_POINTER_SCHEMA_EXTENSION`; no MinerU runtime, private/generated content read, committed receipt instance, quality computation, source-pointer resolution, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R28-T5 MinerU Quality Source Pointer Receipt Schema Extension And Checker Update Decision dispatch | `042fa17b` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; no implementation accepted, no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
-| MSEA-R28-T4 MinerU Receipt Boundary Checker Implementation And Hook Wiring Decision | `0c81b7bc` | CLOSED_PASS_BOUNDED; accepted checker, focused tests, and autorun/pre-commit/pre-push hook wiring after reviewer repair added `privateOutputDisposition` validation; focused unittest PASS 19/19, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; memory route remains `MEMORY_ROUTE_STILL_HELD_AFTER_CHECKER_IMPLEMENTATION`; no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design | `4d64e33f` | CLOSED_PASS_BOUNDED; accepted worker return and companion design matrix; selected `RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY`; checker implementation remains `CHECKER_IMPLEMENTATION_HELD_PENDING_ACCEPTED_DESIGN`; memory route remains `MEMORY_ROUTE_HELD_PENDING_ACTUAL_CHECKER_AND_QUALITY`; worker-return fast gate PASS after reviewer GC-051 path-literal repair, pre-implementation autorun PASS 74/74, reviewer-return commit steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, source/test edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design dispatch | `0567257f` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit work order; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, source/test edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R28-T2 MinerU Receipt Boundary Checker And Memory Route Release Selection | `3e230445` | CLOSED_PASS_BOUNDED; selected `SELECT_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY`; memory-route release remains `HOLD_MEMORY_ROUTE_RELEASE_PENDING_RECEIPT_CHECKER_AND_QUALITY`; runtime/app lanes remain `HOLD_RUNTIME_AND_APP_LANES_FOR_CVF_FOUNDATION_ONLY`; worker-return fast gate PASS after reviewer path/token repair, pre-implementation autorun PASS 74/74, reviewer-return commit steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R28-T1 MinerU Minimal Metadata Receipt Writer | `23177f27` | CLOSED_PASS_BOUNDED; implemented `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`, focused tests, worker return, and GC-051 registry coverage; focused pytest PASS 19/19, pre-implementation autorun PASS 74/74, worker-return fast gate PASS, reviewer-fast PASS 59/59, commit steward PASS, material pre-commit hook PASS 79/79; downstream release remains `HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE`; no MinerU runtime, private/generated content read, Candidate Group A import, checker hook, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R28 Foundation Implementation Sequence Audit And Selection | `e2bb6b61` | CLOSED_PASS_BOUNDED; selected `SELECT_MINIMAL_METADATA_RECEIPT_WRITER_FIRST`; next move is R28-T1 GC-018/source-verified work-order authoring only; pre-implementation autorun PASS 74/74, reviewer-return steward PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no receipt-writer implementation, checker implementation, MinerU runtime execution, private document read, generated output content read/quote, Candidate Group A import, public-sync, provider/live proof, schema/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R27 MinerU Document Intelligence Plane Integration Roadmap | `ebd42823` | CLOSED_PASS_BOUNDED; created roadmap, completion review, and decision ledger; selected `DOCUMENT_INTELLIGENCE_PLANE_CONTRACT_READY` and `SCAN_TO_MEMORY_INTAKE_ROUTE_MATRIX_READY`; held standalone PDF app, legal/use-case deep dive, and runtime workflow implementation; pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no MinerU runtime execution, private document read, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, schema-writer/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R26-T1 MinerU Receipt Schema Writer Contract And Checker Candidate Design | `4b8166ad` | CLOSED_PASS_BOUNDED; accepted worker return and companion reference; selected `CONTRACT_DRAFT_READY` and `CHECKER_CANDIDATE`; pre-implementation autorun PASS 74/74, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no MinerU runtime execution, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, schema-writer/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
-| MSEA-R26-T1 MinerU Receipt Schema Writer Contract And Checker Candidate Design dispatch | `b3bcf7cb` | DISPATCH_READY_CLOSED_BY_4b8166ad; created GC-018 baseline and source-verified no-commit work order; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79 |
-| MSEA-R25 MinerU CVF Workflow-Chain Systemization Roadmap | `1e58d75a` | CLOSED_PASS_BOUNDED; closed as a bounded documentation/reference decision chain with completion review and decision ledger; T1-T6 route decisions recorded; material pre-commit hook PASS 79/79; no worker execution, MinerU rerun, generated output content read, schema/writer/checker/adapter/memory implementation, evaluation deep dive, public-sync, provider/live proof, production workflow-chain claim, stage by worker, commit by worker, or push |
-| MSEA-R24-T4 MinerU Workflow-Chain Receipt Policy And Private Output Handling | `224a31a8` | CLOSED_PASS_BOUNDED; accepted worker return and policy reference; selected `WORKFLOW_RECEIPT_POLICY_READY`; no MinerU rerun and no generated output content read; worker-return fast gate PASS, pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; releases only MSEA-R25 roadmap authoring |
-| Older MSEA, KIOD, WOAS, FPC, MFE, and ASSF history | see state registry and archives | Summarized out of the front door to keep this startup pointer compact; canonical details remain in `CVF_SESSION/ACTIVE_SESSION_STATE.json`, state entry files, governed artifacts, and archived handoffs. |
+| Older MSEA-R28, R27, R26, KIOD, WOAS, FPC, MFE, and ASSF history | see state registry and governed artifacts | Summarized out of the front door to keep this startup pointer compact after T11 closure; canonical detail remains in the active session state aggregate, generated source entries, governed review/work-order/reference artifacts, and archived handoffs. |
 
 ## Latest Closed Work
 
@@ -95,26 +76,54 @@ Detailed historical closure rows are intentionally summarized out of this front 
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t11_mineru_memory_owner_admission_design_dispatched_pending_worker_return`
+Mode: `msea_r28_t11_mineru_memory_owner_admission_design_closed_pending_operator_t12_memory_owner_implementation_or_next_lane_selection`
 
-Next allowed move: execute the MSEA-R28-T11 no-commit docs-only worker packet
-from dispatch commit `a6aaf7ec`.
+Next allowed move: operator lane selection. Author a fresh MSEA-R28-T12
+GC-018/source-verified work order for memory-owner implementation/admission
+wiring using accepted T11 matrix evidence, or park MSEA and select another
+governed lane.
 
 LHW24 remains the latest closed numbered LHW wave.
 
-Dispatch authority:
+Accepted T11 evidence:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T11_MINERU_MEMORY_OWNER_ADMISSION_DESIGN_2026-07-04.md`
+- `docs/reference/CVF_MSEA_R28_T11_MINERU_MEMORY_OWNER_ADMISSION_DESIGN_MATRIX_2026-07-04.md`
+- `docs/reviews/CVF_MSEA_R28_T11_MINERU_MEMORY_OWNER_ADMISSION_DESIGN_WORKER_RETURN_2026-07-04.md`
 
-Worker may create only the named companion matrix and T11 worker return. Worker
-must run worker-return fast gate and pre-implementation autorun, then return
-COMPLETE_PENDING_REVIEW uncommitted. Do not write memory/RAG, run MinerU, read
-private/generated content, import Candidate Group A, run provider/live proof,
-public-sync, build standalone app surfaces, perform legal/use-case deep dive,
-claim extraction accuracy, document truth, legal quality, current-law
+Memory/RAG write remains unauthorized. Do not write memory/RAG, run MinerU,
+read private/generated content, import Candidate Group A, run provider/live
+proof, public-sync, build standalone app surfaces, perform legal/use-case deep
+dive, claim extraction accuracy, document truth, legal quality, current-law
 correctness, workflow-chain production readiness, edit source/test/checker/hook
-surfaces, session-sync by worker, stage worker changes, commit worker changes,
-or push before T11 is reviewed, accepted, committed, and session-synced.
+surfaces, stage worker changes, commit worker changes, or push unless a fresh
+packet explicitly releases that scope.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T11 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T11
+material closure commit `dec53037`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T11 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T11 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T11 closed pending operator T12 or next-lane selection. |
+| `CVF_SESSION/state/entries/blockedWorkClasses.json` | Preserve startup blocked-work-class list as generated active-state source entry. |
+| `CVF_SESSION/state/entries/mseaR28T11MineruMemoryOwnerAdmissionDesignClosure20260704.json` | Record accepted T11 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T12 work-order authoring or another operator-selected governed lane. |
+| `CVF_SESSION/state/entries/startupAcknowledgmentRequired.json` | Preserve startup acknowledgment field list as generated active-state source entry. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T11 closure continuity and next-move boundary. |
+
+Rollback boundary: revert only this MSEA-R28-T11 closure session-sync if
+rejected; do not revert material closure commit `dec53037` or older MSEA
+history.
+
+LHW24 remains the latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T11 Dispatch Session Sync
 
@@ -214,130 +223,10 @@ history.
 
 LHW24 remains the latest closed numbered LHW wave.
 
-## Core Guard Self-Protection Authorization - MSEA-R28-T8 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T8 material
-closure commit `cba22bc8`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T8DownstreamUseAndMemoryRouteReleaseDecisionClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T8 closure session-sync if
-rejected; do not revert material closure commit `cba22bc8` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T8 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T8 material
-dispatch commit `17d8c1a4`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T8DownstreamUseAndMemoryRouteReleaseDecisionDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T8 dispatch session-sync if
-rejected; do not revert material dispatch commit `17d8c1a4` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T7 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T7 material
-closure commit `67b98170`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T7ActualQualityReportSourcePointerProductionImplementationClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T7 closure session-sync if
-rejected; do not revert material closure commit `67b98170` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T7 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T7 material
-dispatch commit `3b4488e5`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T7ActualQualityReportSourcePointerProductionImplementationDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T7 dispatch session-sync if
-rejected; do not revert material dispatch commit `3b4488e5` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T6 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T6 material
-closure commit `6bad1865`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T6QualityReportSourcePointerProductionDecisionClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T6 closure session-sync if
-rejected; do not revert material closure commit `6bad1865` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T6 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T6 material
-dispatch commit `03e04018`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T6QualityReportSourcePointerProductionDecisionDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T6 dispatch session-sync if
-rejected; do not revert material dispatch commit `03e04018` or older MSEA
+MSEA-R28-T8 through T6 session-sync guard blocks are summarized out of this
+front door to keep it below the governed file-size threshold. Canonical detail
+remains in the corresponding material/session-sync commits, generated state
+entries, governed work orders, worker returns, matrices, and active handoff
 history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T3 Closure Session Sync
