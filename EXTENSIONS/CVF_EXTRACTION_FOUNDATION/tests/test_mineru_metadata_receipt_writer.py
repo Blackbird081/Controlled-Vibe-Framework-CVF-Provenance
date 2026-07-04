@@ -13,8 +13,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from mineru_metadata_receipt_writer import (  # noqa: E402
     DOWNSTREAM_RELEASE_HELD,
     MineruMetadataReceiptValidationError,
+    MineruMetadataReceipt,
     build_mineru_metadata_receipt,
+    build_mineru_memory_safe_candidate_contract,
     build_mineru_quality_report_source_pointer,
+    mineru_memory_safe_candidate_contract_payload,
     mineru_metadata_receipt_payload,
     render_mineru_metadata_receipt_json,
 )
@@ -247,3 +250,87 @@ def test_downstream_lanes_remain_held_for_future_packets() -> None:
     assert "memory ingestion readiness" in str(boundary)
     assert "RAG readiness" in str(boundary)
     assert "production workflow readiness" in str(boundary)
+
+
+def test_memory_safe_candidate_contract_is_deterministic_and_metadata_only() -> None:
+    contract = build_mineru_memory_safe_candidate_contract(_receipt())
+    repeated = build_mineru_memory_safe_candidate_contract(_receipt())
+    payload = mineru_memory_safe_candidate_contract_payload(contract)
+
+    assert contract == repeated
+    assert contract.candidate_id.startswith("memory-safe-candidate:")
+    assert payload == mineru_memory_safe_candidate_contract_payload(repeated)
+    assert payload["receiptId"] == "msea-r28-t1:receipt-001"
+    assert payload["qualityReportRef"] == "msea-r28-t5:quality-report-001"
+    assert payload["sourcePointer"] == "msea-r28-t5:source-pointer-001"
+    assert payload["downstreamRelease"] == DOWNSTREAM_RELEASE_HELD
+    assert payload["outputContentRead"] is False
+    assert payload["memoryWriteAuthorized"] is False
+    assert payload["memoryWriteDisposition"] == "MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH"
+    assert "outputFileNames" not in payload
+    assert "extractedText" not in payload
+    assert "rawOcrText" not in payload
+    assert "documentBody" not in payload
+    assert "memoryRecordBody" not in payload
+    assert "vectorContent" not in payload
+
+
+def test_memory_safe_candidate_contract_changes_with_source_pointer_metadata() -> None:
+    first = build_mineru_memory_safe_candidate_contract(
+        _receipt(source_pointer="msea-r28-t5:source-pointer-001")
+    )
+    second = build_mineru_memory_safe_candidate_contract(
+        _receipt(source_pointer="msea-r28-t5:source-pointer-002")
+    )
+
+    assert first.candidate_id != second.candidate_id
+
+
+@pytest.mark.parametrize(
+    ("receipt", "token"),
+    [
+        (
+            MineruMetadataReceipt(
+                receipt_id="msea-r28-t9:receipt-content-read",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                output_file_names=("layout.pdf",),
+                quality_report_ref="msea-r28-t5:quality-report-004",
+                source_pointer="msea-r28-t5:source-pointer-004",
+                output_content_read=True,
+            ),
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+        ),
+        (
+            MineruMetadataReceipt(
+                receipt_id="msea-r28-t9:receipt-unsafe-ref",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                output_file_names=("layout.pdf",),
+                quality_report_ref="raw:quality-notes",
+                source_pointer="msea-r28-t5:source-pointer-005",
+            ),
+            "QUALITY_OR_SOURCE_POINTER_MISSING",
+        ),
+        (
+            MineruMetadataReceipt(
+                receipt_id="msea-r28-t9:receipt-released",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                output_file_names=("layout.pdf",),
+                quality_report_ref="msea-r28-t5:quality-report-006",
+                source_pointer="msea-r28-t5:source-pointer-006",
+                downstream_release="MEMORY_WRITE_READY",
+            ),
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+        ),
+    ],
+)
+def test_memory_safe_candidate_contract_fails_closed_for_unsafe_receipts(
+    receipt: MineruMetadataReceipt,
+    token: str,
+) -> None:
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_memory_safe_candidate_contract(receipt)
+
+    assert exc_info.value.token == token

@@ -15,8 +15,10 @@ from typing import Literal, Sequence
 
 
 RECEIPT_VERSION = "cvf.mineruMetadataReceipt.r28t5.v2"
+MEMORY_SAFE_CANDIDATE_CONTRACT_VERSION = "cvf.mineruMemorySafeCandidate.r28t9.v1"
 PRIVATE_OUTPUT_DISPOSITION = "RECEIPT_METADATA_ALLOWED"
 DOWNSTREAM_RELEASE_HELD = "HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE"
+MEMORY_WRITE_NOT_AUTHORIZED_BY_T9 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH"
 CLAIM_BOUNDARY = (
     "This receipt records caller-supplied MinerU metadata only. It does not "
     "prove extraction accuracy, document truth, legal quality, current-law "
@@ -48,6 +50,7 @@ FailureToken = Literal[
     "INVALID_OUTPUT_FILE_NAME",
     "OUTPUT_CONTENT_READ_FORBIDDEN",
     "QUALITY_OR_SOURCE_POINTER_MISSING",
+    "DOWNSTREAM_RELEASE_NOT_HELD",
 ]
 
 _SAFE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$")
@@ -89,6 +92,24 @@ class MineruQualityReportSourcePointer:
 
     quality_report_ref: str
     source_pointer: str
+
+
+@dataclass(frozen=True)
+class MineruMemorySafeCandidateContract:
+    """Metadata-only candidate contract for later memory-route selection."""
+
+    candidate_id: str
+    receipt_id: str
+    source_input_slot: str
+    input_sha256: str
+    quality_report_ref: str
+    source_pointer: str
+    downstream_release: str = DOWNSTREAM_RELEASE_HELD
+    output_content_read: bool = False
+    memory_write_authorized: bool = False
+    memory_write_disposition: str = MEMORY_WRITE_NOT_AUTHORIZED_BY_T9
+    contract_version: str = MEMORY_SAFE_CANDIDATE_CONTRACT_VERSION
+    claim_boundary: str = CLAIM_BOUNDARY
 
 
 def _fail(token: FailureToken, message: str) -> None:
@@ -268,6 +289,90 @@ def mineru_metadata_receipt_payload(
         "receiptVersion": receipt.receipt_version,
         "sourceInputSlot": receipt.source_input_slot,
         "sourcePointer": receipt.source_pointer,
+    }
+
+
+def build_mineru_memory_safe_candidate_contract(
+    receipt: MineruMetadataReceipt,
+) -> MineruMemorySafeCandidateContract:
+    """Derive a deterministic metadata-only contract from a validated receipt."""
+
+    _validate_safe_id(
+        receipt.receipt_id,
+        field_name="receipt_id",
+        token="INVALID_RECEIPT_ID",
+    )
+    _validate_safe_id(
+        receipt.source_input_slot,
+        field_name="source_input_slot",
+        token="INVALID_SOURCE_INPUT_SLOT",
+    )
+    if not _SHA256_RE.fullmatch(receipt.input_sha256):
+        _fail("INVALID_INPUT_SHA256", "input_sha256 must be sha256:<64 lowercase hex>")
+    if receipt.output_content_read is not False:
+        _fail(
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+            "memory-safe candidate contracts require output_content_read false",
+        )
+    if receipt.downstream_release != DOWNSTREAM_RELEASE_HELD:
+        _fail(
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+            "memory-safe candidate contracts require held downstream release",
+        )
+    _validate_quality_source_pointer(
+        receipt.quality_report_ref,
+        receipt.source_pointer,
+    )
+
+    seed = "|".join(
+        (
+            receipt.receipt_id,
+            receipt.source_input_slot,
+            receipt.input_sha256,
+            receipt.quality_report_ref,
+            receipt.source_pointer,
+            receipt.downstream_release,
+            receipt.claim_boundary,
+        )
+    )
+    digest = sha256(seed.encode("utf-8")).hexdigest()[:24]
+    candidate_id = f"memory-safe-candidate:{digest}"
+    _validate_safe_id(
+        candidate_id,
+        field_name="candidate_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+
+    return MineruMemorySafeCandidateContract(
+        candidate_id=candidate_id,
+        receipt_id=receipt.receipt_id,
+        source_input_slot=receipt.source_input_slot,
+        input_sha256=receipt.input_sha256,
+        quality_report_ref=receipt.quality_report_ref,
+        source_pointer=receipt.source_pointer,
+        downstream_release=receipt.downstream_release,
+        claim_boundary=receipt.claim_boundary,
+    )
+
+
+def mineru_memory_safe_candidate_contract_payload(
+    contract: MineruMemorySafeCandidateContract,
+) -> dict[str, object]:
+    """Return the stable camelCase memory-safe candidate payload."""
+
+    return {
+        "candidateId": contract.candidate_id,
+        "claimBoundary": contract.claim_boundary,
+        "contractVersion": contract.contract_version,
+        "downstreamRelease": contract.downstream_release,
+        "inputSha256": contract.input_sha256,
+        "memoryWriteAuthorized": contract.memory_write_authorized,
+        "memoryWriteDisposition": contract.memory_write_disposition,
+        "outputContentRead": contract.output_content_read,
+        "qualityReportRef": contract.quality_report_ref,
+        "receiptId": contract.receipt_id,
+        "sourceInputSlot": contract.source_input_slot,
+        "sourcePointer": contract.source_pointer,
     }
 
 
