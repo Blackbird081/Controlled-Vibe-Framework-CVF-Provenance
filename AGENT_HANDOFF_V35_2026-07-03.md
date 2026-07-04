@@ -6,13 +6,13 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R26-T1 dispatch and keep the active handoff
-current for worker execution.
+Carry compact continuity after MSEA-R27 closure and keep the active handoff
+current for the next MinerU CVF foundation-plane route selection.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after closing MSEA-R25 MinerU CVF
-workflow-chain systemization.
+Target: active CVF session continuity after closing MSEA-R27 MinerU Document
+Intelligence Plane Integration Roadmap.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r26_t1_receipt_schema_writer_contract_closed_pending_foundation_route_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=select the next MinerU CVF-foundation route and author fresh source-verified dispatch only if chosen; parked checkpoint=runtime/provider/public/schema-writer/checker/adapter/memory implementation and legal/use-case deep-dive lanes remain deferred until separately authorized.
+Startup acknowledged: current mode=`msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=select a CVF foundation implementation sequence from the R27 roadmap and author fresh source-verified dispatch only if chosen; parked checkpoint=runtime/provider/public/schema-writer/checker/adapter/memory/RAG implementation, standalone PDF app, and legal/use-case deep-dive lanes remain deferred until separately authorized.
 
 ## Current State
 
@@ -46,49 +46,58 @@ Startup acknowledged: current mode=`msea_r26_t1_receipt_schema_writer_contract_c
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `4b8166ad` MSEA-R26-T1 receipt schema writer contract closure |
-| Latest session-sync target | session sync after MSEA-R26-T1 closure |
+| Latest material packet | `ebd42823` MSEA-R27 document intelligence plane integration closure |
+| Latest session-sync target | session sync after MSEA-R27 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r26_t1_receipt_schema_writer_contract_closed_pending_foundation_route_selection`
+`msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`
 
 ## Latest Changes
 
-MSEA-R26-T1 MinerU receipt schema writer contract and checker-candidate design
-closed at material commit `4b8166ad`.
+MSEA-R27 MinerU Document Intelligence Plane Integration Roadmap closed at
+material commit `ebd42823`.
 
 Accepted artifacts:
 
-- `docs/reviews/CVF_MSEA_R26_T1_MINERU_RECEIPT_SCHEMA_WRITER_CONTRACT_AND_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R26_T1_MINERU_RECEIPT_SCHEMA_WRITER_CONTRACT_AND_CHECKER_CANDIDATE_DESIGN_2026-07-04.md`
+- `docs/roadmaps/CVF_MSEA_R27_MINERU_DOCUMENT_INTELLIGENCE_PLANE_INTEGRATION_ROADMAP_2026-07-04.md`
+- `docs/reviews/CVF_MSEA_R27_MINERU_DOCUMENT_INTELLIGENCE_PLANE_INTEGRATION_ROADMAP_COMPLETION_2026-07-04.md`
+- `docs/reference/CVF_MSEA_R27_MINERU_DOCUMENT_INTELLIGENCE_PLANE_INTEGRATION_DECISION_LEDGER_2026-07-04.md`
 
-Selected result: `CONTRACT_DRAFT_READY` plus `CHECKER_CANDIDATE`.
+Selected result: `DOCUMENT_INTELLIGENCE_PLANE_CONTRACT_READY` plus
+`SCAN_TO_MEMORY_INTAKE_ROUTE_MATRIX_READY`. Standalone PDF app, legal/use-case
+deep dive, and runtime workflow implementation remain held.
 
-Verification: pre-implementation autorun PASS 74/74, worker-return fast gate
-PASS, reviewer-return steward PASS, and material pre-commit hook PASS 79/79.
+Verification: focused structural, overlap, knowledge reconciliation,
+raw-memory invariant, dispatch-quality, closure-packaging, and machine-closure
+gates PASS before material commit; pre-implementation autorun PASS 74/74,
+reviewer-return steward PASS, and material pre-commit hook PASS 79/79.
 
-R26 boundary: documentation/reference contract drafting only. It does not
-authorize MinerU runtime execution, generated output content read/quote,
+R27 boundary: documentation/reference roadmap, completion review, and decision
+ledger only. It does not authorize MinerU runtime execution, private document
+read, generated output content read/quote,
 Candidate Group A source or generated output import, public-sync, provider/live
 proof, schema-writer/checker/adapter/source/package/memory/RAG/S3/Web/MCP/
-model-router/action-authority implementation, legal/use-case deep dive,
+model-router/action-authority implementation, standalone PDF app,
+legal/use-case deep dive,
 extraction accuracy, document truth, legal quality, current-law correctness,
 workflow-chain production readiness, worker stage/commit/push, or public claim.
 
-Recent predecessor anchors: R26 dispatch `b3bcf7cb`, R25 closure `1e58d75a`,
-and R24-T4 policy closure `224a31a8`. Older R24 and MSEA runtime/cache/sample
-history is intentionally summarized out of the active handoff; use
+Recent predecessor anchors: R26 closure `4b8166ad`, R26 dispatch `b3bcf7cb`,
+R25 closure `1e58d75a`, and R24-T4 policy closure `224a31a8`. Older R24 and
+MSEA runtime/cache/sample history is intentionally summarized out of the active
+handoff; use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, state entries, and archived handoffs
 for full details.
 
 ## Next Allowed Move
 
-Next allowed move: select the next MinerU CVF-foundation route and author a
-fresh GC-018/source-verified roadmap or work order only after that selection.
-Reasonable foundation candidates are adapter/memory route-matrix refinement,
-checker-candidate gap triage, or another source-backed contract/policy surface.
+Next allowed move: select a CVF foundation implementation sequence from the
+R27 roadmap and author a fresh GC-018/source-verified roadmap or work order
+only after that selection. Reasonable foundation candidates are minimal metadata
+receipt writer planning, receipt boundary checker planning, memory-safe
+candidate contract planning, or scan-to-memory intake implementation planning.
 
 No active worker execution is currently authorized. Forbidden without fresh
 authority: MinerU runtime execution, model download/cache mutation, ModelScope,
@@ -96,12 +105,49 @@ VLM/hybrid/http-client/router/Gradio/Docker/WSL, manual document body read,
 generated extraction content quotation, Candidate Group A source or generated
 output copy/import into governed repo, provider/live proof, public-sync, RAG/
 S3/schema-writer/checker/adapter/package/memory-layer/Web/MCP/model-router/
-action-authority implementation, evaluation deep dive, benchmark,
+action-authority implementation, standalone PDF app, legal/use-case deep dive,
+evaluation deep dive, benchmark,
 document-truth, extraction-accuracy, legal quality, current-law correctness,
 workflow-chain production readiness, stage by worker, commit by worker, push,
 or provider/live governance proof.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R27 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R27 material
+closure commit `ebd42823`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current work, closure state
+entry, and this handoff.
+
+Protected paths authorized for this session-sync:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR27DocumentIntelligencePlaneIntegrationRoadmap20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Reason: MSEA-R27 material closure commit `ebd42823` accepted the document
+intelligence plane integration roadmap, completion review, and decision ledger;
+continuity must route the next move to foundation implementation sequence
+selection rather than standalone PDF application work or legal/use-case deep
+dive.
+
+Rollback boundary: revert only this MSEA-R27 closure session-sync if rejected;
+do not revert material closure commit `ebd42823` or older MSEA history.
+
+| Protected path | Authorized update |
+|---|---|
+| `AGENT_HANDOFF_V35_2026-07-03.md` | Record R27 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, closed/latest work, startup acknowledgment, and next allowed move after R27 material closure commit `ebd42823`. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerated bootstrap read model from state sources. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R27 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R27 closed pending foundation implementation sequence selection. |
+| `CVF_SESSION/state/entries/mseaR27DocumentIntelligencePlaneIntegrationRoadmap20260704.json` | Add state source entry for R27 material closure commit `ebd42823`. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to foundation implementation sequence selection only. |
 
 ## Core Guard Self-Protection Authorization - MSEA-R26-T1 Closure Session Sync
 
