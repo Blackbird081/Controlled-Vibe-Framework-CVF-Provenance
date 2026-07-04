@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T9 GC-018/source-verified metadata-only memory-safe candidate contract work order; parked checkpoint=memory-route write, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, T10 execution, and production workflow lanes remain deferred until T9 is authored, gated, reviewed, and accepted.
+Startup acknowledged: current mode=`msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the MSEA-R28-T9 no-commit worker packet from dispatch commit `3e901fda`; parked checkpoint=memory-route write, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, checker/hook edits, session-sync by worker, T10 execution, and production workflow lanes remain deferred until T9 is reviewed, accepted, committed, and session-synced.
 
 ## Current State
 
@@ -46,44 +46,44 @@ Startup acknowledged: current mode=`msea_r28_t8_downstream_use_and_memory_route_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `cba22bc8` MSEA-R28-T8 downstream-use and memory-route release decision closure |
-| Latest session-sync target | session sync after MSEA-R28-T8 closure |
+| Latest material packet | `3e901fda` MSEA-R28-T9 memory-safe candidate contract dispatch |
+| Latest session-sync target | session sync after MSEA-R28-T9 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`
+`msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R28-T8 Downstream Use And Memory Route Release Decision is closed at
-material commit `cba22bc8`.
+MSEA-R28-T9 Memory Safe Candidate Contract is dispatched at material commit
+`3e901fda`.
 
-Accepted artifacts:
+Dispatch artifacts:
 
-- `docs/reference/CVF_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md`
-- `docs/reviews/CVF_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_WORKER_RETURN_2026-07-04.md`
+- `docs/baselines/CVF_GC018_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_2026-07-04.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_2026-07-04.md`
 
-Selected next route:
-`MEMORY_SAFE_CANDIDATE_CONTRACT_RECOMMENDED`.
+Selected route:
+`MEMORY_SAFE_CANDIDATE_CONTRACT`.
 Memory-write disposition:
-`MEMORY_WRITE_NOT_AUTHORIZED_BY_T8`.
+`MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH`.
 
-Verification: worker-return fast gate PASS, pre-implementation autorun PASS
-75/75, reviewer-return commit steward PASS, and material pre-commit hook PASS
-80/80.
+Verification: dispatch-quality PASS, pre-dispatch autorun PASS 73/73, dispatch
+commit steward PASS, and material pre-commit hook PASS 80/80.
 
-R28-T8 closure boundary: accepted decision evidence recommends T9 metadata-only
-memory-safe candidate contract work. It does not authorize MinerU runtime
-execution, private document read, generated output content read/quote,
-committed receipt creation, Candidate Group A source or generated output import,
-public-sync, provider/live proof, source/test/checker/hook edits,
+R28-T9 dispatch boundary: worker may implement only the metadata-only candidate
+contract helper in the named receipt-writer source, focused tests in the named
+receipt-writer test file, and the named worker return. It does not authorize
+MinerU runtime execution, private document read, generated output content
+read/quote, committed receipt creation, Candidate Group A source or generated
+output import, public-sync, provider/live proof, checker/hook edits,
 memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone
 PDF app, legal/use-case deep dive, extraction accuracy, document truth, legal
 quality, current-law correctness, workflow-chain production readiness, worker
 commit, or push.
 
-Recent predecessor anchors: R28-T8 closure `cba22bc8`, R28-T8 dispatch
+Recent predecessor anchors: R28-T9 dispatch `3e901fda`, R28-T8 closure `cba22bc8`, R28-T8 dispatch
 `17d8c1a4`, R28-T7 closure
 `67b98170`, R28-T7 dispatch
 `3b4488e5`, R28-T6 closure `6bad1865`, R28-T6 dispatch
@@ -100,25 +100,45 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MSEA-R28-T9 GC-018/source-verified no-commit
-work order for metadata-only memory-safe candidate contract.
+Next allowed move: execute the MSEA-R28-T9 no-commit worker packet from
+dispatch commit `3e901fda`.
 
-Current material source:
+Dispatch authority:
 
-`docs/reference/CVF_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_2026-07-04.md`
 
-T9 must use accepted T8 matrix/worker-return evidence, T7 helper evidence, R27
-memory prerequisites, R24-T4 private-output policy, current receipt
-writer/checker source, checker read-ahead, Source Verification Block, ADIF
-Defect Registry Disclosure, Agent Handoff Contract Control Block, Reviewer
-Closure Conversion, pre-dispatch autorun gates, and GC-051 path-literal
-discipline. No T10 execution, MinerU runtime execution, private document read,
+Worker may touch only the named receipt-writer source, focused receipt-writer
+tests, and T9 worker return. Worker must run focused pytest, worker-return fast
+gate, and pre-implementation autorun, then return COMPLETE_PENDING_REVIEW
+uncommitted. No T10 execution, MinerU runtime execution, private document read,
 generated output content read/quote, Candidate Group A source or generated
 output import, public-sync, provider/live proof, memory-layer/RAG write,
 standalone PDF app, legal/use-case deep dive, evaluation deep dive, extraction
 accuracy, document truth, legal quality, current-law correctness,
-workflow-chain production readiness, worker stage/commit, or push is authorized
-before T9 is authored, gated, reviewed, and accepted.
+workflow-chain production readiness, checker/hook edits, session-sync by
+worker, worker stage/commit, or push is authorized before T9 is reviewed,
+accepted, committed, and session-synced.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T9 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T9 material
+dispatch commit `3e901fda`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door continuity, active handoff, and
+dispatch state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T9MemorySafeCandidateContractDispatch20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this MSEA-R28-T9 dispatch session-sync if
+rejected; do not revert material dispatch commit `3e901fda` or older MSEA
+history.
 
 LHW24 remains the latest closed numbered LHW wave.
 

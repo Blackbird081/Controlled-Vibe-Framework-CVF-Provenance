@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T9 GC-018/source-verified metadata-only memory-safe candidate contract work order; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, T10 execution, and production workflow lanes remain deferred until T9 is authored, gated, reviewed, and accepted; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the MSEA-R28-T9 no-commit worker packet from dispatch commit `3e901fda`; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, checker/hook edits, session-sync by worker, T10 execution, and production workflow lanes remain deferred until T9 is reviewed, accepted, committed, and session-synced; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`
+Current mode marker: `msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`
 
-Current mode: `msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`
+Current mode: `msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`
 
-`msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`
+`msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r28_t8_downstream_use_and_memory_route_release_decision_dispatched_pending_worker_return`
+`msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R28-T9 memory-safe candidate contract | `cba22bc8` | WORK_ORDER_AUTHORING_NEXT; must be fresh GC-018/source-verified, no-commit, metadata-only, and must not authorize memory/RAG write without a later memory-owner packet. |
+| MSEA-R28-T9 memory-safe candidate contract | `3e901fda` | DISPATCH_READY_PENDING_WORKER_RETURN; execute the no-commit worker packet for metadata-only helper source/test implementation and worker return only. |
 
 ## Current Held Follow-Up Work
 
@@ -91,26 +91,48 @@ Detailed historical closure rows are intentionally summarized out of this front 
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t8_downstream_use_and_memory_route_release_decision_closed_pending_r28_t9_memory_safe_candidate_contract_work_order_authoring`
+Mode: `msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh MSEA-R28-T9 GC-018/source-verified no-commit
-work order for metadata-only memory-safe candidate contract.
+Next allowed move: execute the MSEA-R28-T9 no-commit worker packet from
+dispatch commit `3e901fda`.
 
-Current material source:
+LHW24 remains the latest closed numbered LHW wave.
 
-`docs/reference/CVF_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md`
+Dispatch authority:
 
-T9 must use accepted T8 matrix/worker-return evidence, T7 helper evidence, R27
-memory prerequisites, R24-T4 private-output policy, current receipt
-writer/checker source, checker read-ahead, Source Verification Block, ADIF
-Defect Registry Disclosure, Agent Handoff Contract Control Block, Reviewer
-Closure Conversion, pre-dispatch autorun gates, and GC-051 path-literal
-discipline. Do not start T10, run MinerU, read private/generated content,
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_2026-07-04.md`
+
+Worker may touch only the named receipt-writer source, focused receipt-writer
+tests, and T9 worker return. Worker must run focused pytest, worker-return fast
+gate, and pre-implementation autorun, then return COMPLETE_PENDING_REVIEW
+uncommitted. Do not start T10, run MinerU, read private/generated content,
 import Candidate Group A, write memory/RAG, run provider/live proof,
 public-sync, build standalone app surfaces, perform legal/use-case deep dive,
 claim extraction accuracy, document truth, legal quality, current-law
-correctness, workflow-chain production readiness, stage worker changes, commit
-worker changes, or push before T9 is authored, gated, reviewed, and accepted.
+correctness, workflow-chain production readiness, edit checker/hook surfaces,
+session-sync by worker, stage worker changes, commit worker changes, or push
+before T9 is reviewed, accepted, committed, and session-synced.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T9 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T9 material
+dispatch commit `3e901fda`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door continuity, active handoff, and
+dispatch state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T9MemorySafeCandidateContractDispatch20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this MSEA-R28-T9 dispatch session-sync if
+rejected; do not revert material dispatch commit `3e901fda` or older MSEA
+history.
 
 LHW24 remains the latest closed numbered LHW wave.
 

@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1447,
+  "stateKey": "mseaR28T9MemorySafeCandidateContractDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "dispatchMaterialCommit": "3e901fda",
+    "dispatchMaterialCommitFull": "3e901fda123619beee2308fb0a3f58159e2ef039",
+    "dispatchBaseHead": "c4fed412",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_WORKER_RETURN_2026-07-04.md",
+    "selectedRoute": "MEMORY_SAFE_CANDIDATE_CONTRACT",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "dispatch-quality PASS",
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T9 dispatch authorizes only no-commit deterministic metadata-only memory-safe candidate contract helper implementation, focused receipt-writer tests, and worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, checker/hook edits, memory/RAG write, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}
