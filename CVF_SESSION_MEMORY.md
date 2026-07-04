@@ -31,25 +31,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t9_memory_safe_candidate_contract_closed_pending_r28_t10_route_selection_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T10 GC-018/source-verified route-selection work order after T9 material commit `45fb7a9a`; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, checker/hook edits, implementation beyond docs-only route selection, and production workflow lanes remain deferred unless a fresh packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the MSEA-R28-T10 no-commit docs-only worker packet from dispatch commit `7244842b`; parked checkpoint=memory/RAG write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, source/test/checker/hook edits, session-sync by worker, and production workflow lanes remain deferred unless a fresh packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t9_memory_safe_candidate_contract_closed_pending_r28_t10_route_selection_work_order_authoring`
+Current mode marker: `msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
 
-Current mode: `msea_r28_t9_memory_safe_candidate_contract_closed_pending_r28_t10_route_selection_work_order_authoring`
+Current mode: `msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
 
-`msea_r28_t9_memory_safe_candidate_contract_closed_pending_r28_t10_route_selection_work_order_authoring`
+`msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r28_t9_memory_safe_candidate_contract_dispatched_pending_worker_return`
+`msea_r28_t9_memory_safe_candidate_contract_closed_pending_r28_t10_route_selection_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | `45fb7a9a` | N/A with reason: no active dispatched worker packet after accepted MSEA-R28-T9 material closure; next move is T10 work-order authoring. |
+| MSEA-R28-T10 memory route selection after candidate contract | `7244842b` | DISPATCH_READY_PENDING_WORKER_RETURN; execute the no-commit docs-only worker packet for companion matrix and worker return only. |
 
 ## Current Held Follow-Up Work
 
@@ -93,27 +93,51 @@ Detailed historical closure rows are intentionally summarized out of this front 
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t9_memory_safe_candidate_contract_closed_pending_r28_t10_route_selection_work_order_authoring`
+Mode: `msea_r28_t10_memory_route_selection_after_candidate_contract_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh MSEA-R28-T10 GC-018/source-verified
-route-selection work order after accepted T9 material commit `45fb7a9a`.
+Next allowed move: execute the MSEA-R28-T10 no-commit docs-only worker packet
+from dispatch commit `7244842b`.
 
 LHW24 remains the latest closed numbered LHW wave.
 
-Required T10 source anchors:
+Dispatch authority:
 
-- T8 downstream-use and memory-route decision matrix and worker return.
-- T9 worker return and material commit `45fb7a9a`.
-- R27 scan-to-memory route ledger.
-- R24-T4 private-output policy.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T10_MINERU_MEMORY_ROUTE_SELECTION_AFTER_CANDIDATE_CONTRACT_2026-07-04.md`
 
-T10 may decide the next bounded route only. Do not write memory/RAG, run
-MinerU, read private/generated content, import Candidate Group A, run
-provider/live proof, public-sync, build standalone app surfaces, perform
-legal/use-case deep dive, claim extraction accuracy, document truth, legal
-quality, current-law correctness, workflow-chain production readiness, edit
-checker/hook surfaces, stage worker changes, commit worker changes, or push
-unless a fresh work order and gates explicitly release the action.
+Worker may create only the named companion matrix and T10 worker return. Worker
+must run worker-return fast gate and pre-implementation autorun, then return
+COMPLETE_PENDING_REVIEW uncommitted. Do not write memory/RAG, run MinerU, read
+private/generated content, import Candidate Group A, run provider/live proof,
+public-sync, build standalone app surfaces, perform legal/use-case deep dive,
+claim extraction accuracy, document truth, legal quality, current-law
+correctness, workflow-chain production readiness, edit source/test/checker/hook
+surfaces, session-sync by worker, stage worker changes, commit worker changes,
+or push before T10 is reviewed, accepted, committed, and session-synced.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T10 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T10
+material dispatch commit `7244842b`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after T10 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T10 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T10 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR28T10MemoryRouteSelectionAfterCandidateContractDispatch20260704.json` | Record T10 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T10 no-commit worker execution. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T10 dispatch continuity and worker next move. |
+
+Rollback boundary: revert only this MSEA-R28-T10 dispatch session-sync if
+rejected; do not revert material dispatch commit `7244842b` or older MSEA
+history.
+
+LHW24 remains the latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T9 Closure Session Sync
 
