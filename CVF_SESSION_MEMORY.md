@@ -31,37 +31,39 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=select a CVF foundation implementation sequence from the R27 roadmap and author fresh source-verified dispatch only if chosen; parked checkpoint=runtime/provider/public/schema-writer/checker/adapter/memory/RAG implementation, standalone PDF app, and legal/use-case deep-dive lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh GC-018/source-verified MSEA-R28-T1 work order for the selected minimal metadata receipt writer lane; parked checkpoint=worker execution, receipt-writer implementation, checker/adapter/memory/RAG implementation, runtime, standalone PDF app, and legal/use-case deep-dive lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`
+Current mode marker: `msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
 
-Current mode: `msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`
+Current mode: `msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
 
-`msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`
+`msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
 
 Previous mode:
 
-`msea_r26_t1_receipt_schema_writer_contract_closed_pending_foundation_route_selection`
+`msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | `ebd42823` | No active worker dispatch is open after R27 closure. |
+| None | `e2bb6b61` | No active worker dispatch is open after R28 selection audit. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Runtime/provider/public/schema-writer/checker/adapter/memory/RAG implementation lanes | `ebd42823` | DEFERRED; R27 closed a documentation/reference roadmap, completion review, and decision ledger only. |
-| Standalone PDF app and legal/use-case deep dive | `ebd42823` | HELD; operator clarified that current MinerU work must strengthen CVF foundation planes rather than become a separate app or project use case. |
+| Receipt-writer implementation | `e2bb6b61` | SELECTED_FOR_DISPATCH_AUTHORING_ONLY; R28-T1 still requires fresh GC-018/source-verified work order before any implementation. |
+| Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `e2bb6b61` | DEFERRED; R28 selected writer first and held checker/memory/runtime lanes behind later packets. |
+| Standalone PDF app and legal/use-case deep dive | `e2bb6b61` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
 ## Current Closed Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28 Foundation Implementation Sequence Audit And Selection | `e2bb6b61` | CLOSED_PASS_BOUNDED; selected `SELECT_MINIMAL_METADATA_RECEIPT_WRITER_FIRST`; next move is R28-T1 GC-018/source-verified work-order authoring only; pre-implementation autorun PASS 74/74, reviewer-return steward PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no receipt-writer implementation, checker implementation, MinerU runtime execution, private document read, generated output content read/quote, Candidate Group A import, public-sync, provider/live proof, schema/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R27 MinerU Document Intelligence Plane Integration Roadmap | `ebd42823` | CLOSED_PASS_BOUNDED; created roadmap, completion review, and decision ledger; selected `DOCUMENT_INTELLIGENCE_PLANE_CONTRACT_READY` and `SCAN_TO_MEMORY_INTAKE_ROUTE_MATRIX_READY`; held standalone PDF app, legal/use-case deep dive, and runtime workflow implementation; pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no MinerU runtime execution, private document read, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, schema-writer/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R26-T1 MinerU Receipt Schema Writer Contract And Checker Candidate Design | `4b8166ad` | CLOSED_PASS_BOUNDED; accepted worker return and companion reference; selected `CONTRACT_DRAFT_READY` and `CHECKER_CANDIDATE`; pre-implementation autorun PASS 74/74, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no MinerU runtime execution, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, schema-writer/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R26-T1 MinerU Receipt Schema Writer Contract And Checker Candidate Design dispatch | `b3bcf7cb` | DISPATCH_READY_CLOSED_BY_4b8166ad; created GC-018 baseline and source-verified no-commit work order; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79 |
@@ -73,6 +75,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28 Foundation Implementation Sequence Audit And Selection | `e2bb6b61` | CLOSED_PASS_BOUNDED; selected minimal metadata receipt writer first; next move is R28-T1 dispatch authoring only |
 | MSEA-R27 MinerU Document Intelligence Plane Integration Roadmap | `ebd42823` | CLOSED_PASS_BOUNDED; selected CVF document-intelligence plane contract plus scan-to-memory route matrix; next move is foundation implementation sequence selection only |
 | MSEA-R26-T1 MinerU Receipt Schema Writer Contract And Checker Candidate Design | `4b8166ad` | CLOSED_PASS_BOUNDED; selected `CONTRACT_DRAFT_READY` and `CHECKER_CANDIDATE`; next move is foundation-route selection only |
 | MSEA-R25 MinerU CVF Workflow-Chain Systemization Roadmap | `1e58d75a` | CLOSED_PASS_BOUNDED; T1-T6 decision chain recorded; use-case deep dive held |
@@ -212,27 +215,29 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`
+Mode: `msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
 
-Next allowed move: select a CVF foundation implementation sequence from the
-R27 roadmap and author a fresh GC-018/source-verified roadmap or work order
-only after that selection. Reasonable foundation candidates are minimal metadata
-receipt writer planning, receipt boundary checker planning, memory-safe
-candidate contract planning, or scan-to-memory intake implementation planning.
+Next allowed move: author a fresh GC-018 baseline and source-verified
+MSEA-R28-T1 work order for the selected minimal metadata-only MinerU receipt
+writer lane. The dispatch must source-verify R24-T4, R26, R27, and Extraction
+Foundation owner files before implementation and must preserve private-output,
+no-runtime, no-memory-write, no-RAG-write, no-product-app, and no-legal-use-case
+boundaries.
 
 Current material source:
 
-`docs/roadmaps/CVF_MSEA_R27_MINERU_DOCUMENT_INTELLIGENCE_PLANE_INTEGRATION_ROADMAP_2026-07-04.md`
+`docs/reviews/CVF_MSEA_R28_FOUNDATION_IMPLEMENTATION_SEQUENCE_AUDIT_AND_SELECTION_2026-07-04.md`
 
-No active worker execution is currently authorized. No MinerU runtime execution,
-private document read, generated output content read/quote, Candidate Group A
-source or generated output import, public-sync, provider/live proof,
-schema-writer/checker/adapter/source/package/memory/RAG/S3/Web/MCP/
-model-router/action-authority implementation, standalone PDF app,
-legal/use-case deep dive, evaluation deep dive, extraction accuracy, document
-truth, legal quality, current-law correctness, workflow-chain production
-readiness, worker stage/commit/push, or provider/live governance proof is
-authorized.
+No active worker execution is currently authorized. No receipt-writer
+implementation, checker implementation, MinerU runtime execution, private
+document read, generated output content read/quote, Candidate Group A source or
+generated output import, public-sync, provider/live proof, schema/checker/
+adapter/source/package/memory/RAG/S3/Web/MCP/model-router/action-authority
+implementation, standalone PDF app, legal/use-case deep dive, evaluation deep
+dive, extraction accuracy, document truth, legal quality, current-law
+correctness, workflow-chain production readiness, worker stage/commit/push, or
+provider/live governance proof is authorized until a fresh R28-T1 dispatch
+exists and passes pre-dispatch gates.
 
 LHW24 remains the latest closed numbered LHW wave.
 
