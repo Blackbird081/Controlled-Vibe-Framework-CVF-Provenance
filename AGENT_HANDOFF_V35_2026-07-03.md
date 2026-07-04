@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t4_workflow_receipt_policy_closed_pending_r25_workflow_chain_systemization_roadmap_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R25 MinerU CVF workflow-chain systemization roadmap; parked checkpoint=R25 may proceed only as roadmap authoring using T4 private receipt policy, not implementation.
+Startup acknowledged: current mode=`msea_r25_workflow_chain_systemization_roadmap_ready_pending_r25_t1_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R25-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for receipt-envelope contract decision; parked checkpoint=R25-T1 may decide or hold a minimal receipt envelope only, not implement.
 
 ## Current State
 
@@ -46,15 +46,38 @@ Startup acknowledged: current mode=`msea_r24_t4_workflow_receipt_policy_closed_p
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `224a31a8` MSEA-R24-T4 workflow receipt policy acceptance |
-| Latest session-sync target | session sync after MSEA-R24-T4 acceptance |
+| Latest material packet | `8e04a5e1` MSEA-R25 workflow-chain systemization roadmap |
+| Latest session-sync target | session sync after MSEA-R25 roadmap |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r24_t4_workflow_receipt_policy_closed_pending_r25_workflow_chain_systemization_roadmap_authoring`
+`msea_r25_workflow_chain_systemization_roadmap_ready_pending_r25_t1_work_order_authoring`
 
 ## Latest Changes
+
+MSEA-R25 MinerU CVF workflow-chain systemization roadmap was committed at
+material commit `8e04a5e1`.
+
+Roadmap artifact:
+
+- `docs/roadmaps/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-07-04.md`
+
+Roadmap status:
+`ROADMAP_READY_FOR_MSEA_R25_T1_GC018_AND_WORK_ORDER_AUTHORING`.
+
+Recommended next:
+`AUTHOR_MSEA_R25_T1_GC018_AND_WORK_ORDER_FOR_RECEIPT_ENVELOPE_CONTRACT_DECISION`.
+
+Verification: pre-dispatch autorun PASS 72/72, dispatch commit steward PASS,
+and material pre-commit hook PASS 79/79.
+
+R25 boundary: roadmap-only. It opens only future R25-T1 GC-018/work-order
+authoring for a receipt-envelope contract decision. It does not authorize
+worker execution, MinerU rerun, generated output content read, Candidate Group
+A source or output import, public-sync, provider/live proof, schema/writer/
+checker/adapter/memory implementation, evaluation deep dive, production
+workflow-chain claim, stage by worker, commit by worker, or push.
 
 MSEA-R24-T4 MinerU workflow-chain receipt policy and private output handling
 worker return was accepted at material commit `224a31a8`.
@@ -145,20 +168,53 @@ Allowed worker result tokens: `SMOKE_PASS_BOUNDED`,
 
 ## Next Allowed Move
 
-Next allowed move: author MSEA-R25 MinerU CVF workflow-chain systemization
-roadmap using the accepted T4 private receipt policy as planning boundary.
+Next allowed move: author MSEA-R25-T1 GC-018 baseline and source-verified
+WORKER_MUST_NOT_COMMIT work order for the receipt-envelope contract decision.
 
-Forbidden without fresh authority: MinerU rerun, model download/cache mutation,
-ModelScope, VLM/hybrid/http-client/router/Gradio/Docker/WSL, manual document
-body read, generated extraction content quotation, Candidate Group A source or
-generated output copy/import into governed repo, provider/live proof,
-public-sync, RAG/S3/schema/writer/adapter/checker/package/Web/MCP/model-router/
-action-authority implementation, benchmark, document-truth,
-extraction-accuracy, legal advice quality, current-law correctness, production
-readiness, stage by worker, commit by worker, push, or provider/live governance
-proof.
+T1 may source-verify and decide or hold a minimal receipt envelope contract
+only. Forbidden without fresh authority: worker execution, MinerU rerun, model
+download/cache mutation, ModelScope, VLM/hybrid/http-client/router/Gradio/
+Docker/WSL, manual document body read, generated extraction content quotation,
+Candidate Group A source or generated output copy/import into governed repo,
+provider/live proof, public-sync, RAG/S3/schema/writer/adapter/checker/package/
+memory-layer/Web/MCP/model-router/action-authority implementation, evaluation
+deep dive, benchmark, document-truth, extraction-accuracy, legal advice quality,
+current-law correctness, workflow-chain production readiness, stage by worker,
+commit by worker, push, or provider/live governance proof.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R25 Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R25 roadmap
+material commit `8e04a5e1`, including active mode, next allowed move, generated
+active state, front-door current work, roadmap state entry, and this handoff.
+
+Protected paths authorized for this session-sync:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR25WorkflowChainSystemizationRoadmap20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Reason: MSEA-R25 material roadmap commit `8e04a5e1` is ready and must route the
+next allowed move to R25-T1 receipt-envelope GC-018/work-order authoring only.
+
+Rollback boundary: revert only this MSEA-R25 roadmap session-sync if rejected;
+do not revert material roadmap commit `8e04a5e1` or older MSEA history.
+
+| Protected path | Authorized update |
+|---|---|
+| `AGENT_HANDOFF_V35_2026-07-03.md` | Record R25 roadmap continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, closed/latest work, startup acknowledgment, and next allowed move after R25 material roadmap commit `8e04a5e1`. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerated bootstrap read model from state sources. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R25 roadmap session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R25 roadmap-ready pending T1 work-order authoring. |
+| `CVF_SESSION/state/entries/mseaR25WorkflowChainSystemizationRoadmap20260704.json` | Add state source entry for R25 material roadmap commit `8e04a5e1`. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R25-T1 GC-018/work-order authoring only. |
 
 ## Core Guard Self-Protection Authorization - MSEA-R24-T4 Acceptance Session Sync
 
