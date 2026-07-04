@@ -6,8 +6,8 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T1 closure and keep the active handoff
-current for R28-T2 route-selection/work-order authoring.
+Carry compact continuity after MSEA-R28-T2 dispatch and keep the active handoff
+current for the no-commit R28-T2 worker return.
 
 ## Scope / Target / Owner Boundary
 
@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R28-T2 route-selection and GC-018/source-verified work order for receipt-boundary checker candidate and memory-route release prerequisites; parked checkpoint=runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized.
+Startup acknowledged: current mode=`msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R28-T2 worker under WORKER_MUST_NOT_COMMIT, producing only the worker return and companion decision matrix; parked checkpoint=runtime, private/generated content read, checker implementation, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized.
 
 ## Current State
 
@@ -46,15 +46,39 @@ Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `23177f27` MSEA-R28-T1 minimal metadata receipt writer closure |
-| Latest session-sync target | session sync after MSEA-R28-T1 closure |
+| Latest material packet | `5b67c128` MSEA-R28-T2 receipt-boundary checker and memory-route release selection dispatch |
+| Latest session-sync target | session sync after MSEA-R28-T2 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
+`msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R28-T2 Receipt Boundary Checker And Memory Route Release Selection dispatch
+is complete at material commit `5b67c128`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_2026-07-04.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_2026-07-04.md`
+
+Selected dispatch route:
+`RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION`.
+
+Verification: pre-dispatch autorun PASS 72/72, dispatch commit steward
+preflight PASS, and material pre-commit hook PASS 79/79.
+
+R28-T2 boundary: docs-only route-selection worker return plus companion
+decision matrix. Worker must not commit. The dispatch does not authorize
+checker code or hook wiring, source/test edits, MinerU runtime execution,
+private document read, generated output content read/quote, Candidate Group A
+source or generated output import, public-sync, provider/live proof,
+memory/RAG/S3/Web/MCP/model-router/action-authority implementation,
+standalone PDF app, legal/use-case deep dive, extraction accuracy, document
+truth, legal quality, current-law correctness, workflow-chain production
+readiness, stage/commit by worker, or push.
 
 MSEA-R28-T1 Minimal Metadata Receipt Writer closure is complete at material
 commit `23177f27`.
@@ -102,23 +126,61 @@ for full details.
 
 ## Next Allowed Move
 
-Next allowed move: author MSEA-R28-T2 route-selection and GC-018/source-verified
-work order for the post-writer receipt-boundary checker candidate and
-memory-route release prerequisites.
+Next allowed move: execute the MSEA-R28-T2 worker under
+WORKER_MUST_NOT_COMMIT. Worker may create only:
 
-The next packet must decide whether to author a bounded checker-candidate/design
-tranche or keep the memory-route release held. Forbidden: MinerU runtime
+- `docs/reviews/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_WORKER_RETURN_2026-07-04.md`
+- `docs/reference/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md`
+
+The worker must decide whether to select a bounded receipt-boundary
+checker-candidate design route or keep memory-route release held pending receipt
+checker and quality/source-pointer prerequisites. Forbidden: MinerU runtime
 execution, model download/cache mutation, ModelScope, VLM/hybrid/http-client/
 router/Gradio/Docker/WSL, manual document body read, generated extraction
 content quotation, Candidate Group A source or generated output copy/import into
 the governed repo, provider/live proof, public-sync, RAG/S3/schema-writer/
-checker/adapter/package/memory-layer/Web/MCP/model-router/action-authority
+checker-code/hook wiring/adapter/package/memory-layer/Web/MCP/model-router/action-authority
 implementation, standalone PDF app, legal/use-case deep dive, evaluation deep
 dive, benchmark, document truth, extraction accuracy, legal quality, current-law
-correctness, workflow-chain production readiness, push, or provider/live
+correctness, workflow-chain production readiness, stage, commit, push, or provider/live
 governance proof.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T2 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T2 material
+dispatch commit `5b67c128`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current dispatched work, dispatch
+state entry, and this handoff.
+
+Protected paths authorized for this session-sync:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T2MineruReceiptBoundaryCheckerMemoryRouteSelectionDispatch20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Reason: MSEA-R28-T2 material dispatch commit `5b67c128` created the GC-018
+baseline and source-verified no-commit work order; continuity must route the
+next move to bounded worker execution, not checker/runtime/memory/app work.
+
+Rollback boundary: revert only this MSEA-R28-T2 dispatch session-sync if
+rejected; do not revert material dispatch commit `5b67c128` or older MSEA
+history.
+
+| Protected path | Authorized update |
+|---|---|
+| `AGENT_HANDOFF_V35_2026-07-03.md` | Record R28-T2 dispatch continuity, active mode, next move, protected-path authorization, and material marker. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after R28-T2 material dispatch commit `5b67c128`. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate bootstrap read model from state sources. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R28-T2 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R28-T2 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR28T2MineruReceiptBoundaryCheckerMemoryRouteSelectionDispatch20260704.json` | Add state source entry for R28-T2 material dispatch commit `5b67c128`. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R28-T2 worker execution under `WORKER_MUST_NOT_COMMIT`. |
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T1 Closure Session Sync
 

@@ -31,31 +31,31 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R28-T2 route-selection and GC-018/source-verified work order for receipt-boundary checker candidate and memory-route release prerequisites; parked checkpoint=runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R28-T2 worker under WORKER_MUST_NOT_COMMIT, producing only the worker return and companion decision matrix; parked checkpoint=runtime, private/generated content read, checker implementation, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
+Current mode marker: `msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_dispatched_pending_worker_return`
 
-Current mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
+Current mode: `msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_dispatched_pending_worker_return`
 
-`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
+`msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
+`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No active dispatched worker item remains after MSEA-R28-T1 closure `23177f27`. |
+| MSEA-R28-T2 MinerU Receipt Boundary Checker And Memory Route Release Selection | `5b67c128` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must not commit and may create only the worker return plus companion decision matrix. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Receipt-writer implementation | `23177f27` | CLOSED_PASS_BOUNDED; downstream release remains held pending R28-T2 route-selection/source-verified work order for receipt-boundary checker candidate and memory-route prerequisites. |
+| Receipt/checker/memory-route release | `5b67c128` | DISPATCHED_FOR_DECISION_ONLY; downstream release remains held until accepted worker evidence and any future source-verified packet release it. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
@@ -217,26 +217,50 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
+Mode: `msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_dispatched_pending_worker_return`
 
-Next allowed move: author MSEA-R28-T2 route-selection and GC-018/source-verified
-work order for post-writer receipt-boundary checker candidate and memory-route
-release prerequisites.
+Next allowed move: execute the MSEA-R28-T2 worker under
+WORKER_MUST_NOT_COMMIT. Worker may create only the worker return and companion
+decision matrix named in the work order.
 
 Current material source:
 
-`docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_2026-07-04.md`
 
-The next packet must decide whether to author a bounded checker-candidate/design
-tranche or keep the memory-route release held. No MinerU runtime execution,
+The worker must decide whether to select a bounded receipt-boundary
+checker-candidate design route or keep memory-route release held pending receipt
+checker and quality/source-pointer prerequisites. No MinerU runtime execution,
 private document read, generated output content read/quote, Candidate Group A
 source or generated output import, public-sync, provider/live proof,
-schema/checker/adapter/memory-layer/RAG/S3/Web/MCP/model-router/action-authority
+checker-code/hook wiring/schema/adapter/memory-layer/RAG/S3/Web/MCP/model-router/action-authority
 implementation, standalone PDF app, legal/use-case deep dive, evaluation deep
 dive, extraction accuracy, document truth, legal quality, current-law
-correctness, workflow-chain production readiness, or push is authorized.
+correctness, workflow-chain production readiness, stage, commit, or push is
+authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T2 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T2 material
+dispatch commit `5b67c128`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current dispatched work, dispatch
+state entry, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T2MineruReceiptBoundaryCheckerMemoryRouteSelectionDispatch20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Authorization boundary: session-sync only. No runtime execution, checker hook
+wiring, memory/RAG write, private or generated content read, public-sync,
+provider/live proof, app build, use-case deep dive, production-readiness claim,
+worker stage/commit/push, or public claim is authorized.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T1 Closure Session Sync
 
