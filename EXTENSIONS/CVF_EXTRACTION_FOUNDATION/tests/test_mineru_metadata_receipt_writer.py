@@ -14,6 +14,7 @@ from mineru_metadata_receipt_writer import (  # noqa: E402
     DOWNSTREAM_RELEASE_HELD,
     MineruMetadataReceiptValidationError,
     build_mineru_metadata_receipt,
+    build_mineru_quality_report_source_pointer,
     mineru_metadata_receipt_payload,
     render_mineru_metadata_receipt_json,
 )
@@ -106,6 +107,70 @@ def test_allowed_mineru_output_family_names_are_metadata_only(file_name: str) ->
     assert receipt.output_content_read is False
 
 
+def test_quality_report_source_pointer_helper_is_deterministic_and_receipt_compatible() -> None:
+    refs = build_mineru_quality_report_source_pointer(
+        receipt_id="msea-r28-t7:receipt-001",
+        source_input_slot="candidate-group-a-private-input",
+        input_sha256=VALID_SHA,
+        quality_report_status="PASS",
+        boundary_sha256="b" * 64,
+        chunk_count=7,
+    )
+    repeated = build_mineru_quality_report_source_pointer(
+        receipt_id="msea-r28-t7:receipt-001",
+        source_input_slot="candidate-group-a-private-input",
+        input_sha256=VALID_SHA,
+        quality_report_status="PASS",
+        boundary_sha256="b" * 64,
+        chunk_count=7,
+    )
+
+    assert refs == repeated
+    assert refs.quality_report_ref.startswith("quality-report:")
+    assert refs.source_pointer.startswith("source-pointer:")
+    assert "candidate-group-a-private-input" not in refs.quality_report_ref
+    assert "candidate-group-a-private-input" not in refs.source_pointer
+
+    receipt = build_mineru_metadata_receipt(
+        receipt_id="msea-r28-t7:receipt-001",
+        source_input_slot="candidate-group-a-private-input",
+        input_sha256=VALID_SHA,
+        output_file_names=["layout.pdf", "document.md"],
+        quality_report_ref=refs.quality_report_ref,
+        source_pointer=refs.source_pointer,
+    )
+    payload = mineru_metadata_receipt_payload(receipt)
+
+    assert payload["qualityReportRef"] == refs.quality_report_ref
+    assert payload["sourcePointer"] == refs.source_pointer
+    assert payload["outputContentRead"] is False
+    assert payload["downstreamRelease"] == DOWNSTREAM_RELEASE_HELD
+    assert "extractedText" not in payload
+    assert "rawOcrText" not in payload
+    assert "documentBody" not in payload
+
+
+def test_quality_report_source_pointer_helper_changes_with_quality_metadata() -> None:
+    passed = build_mineru_quality_report_source_pointer(
+        receipt_id="msea-r28-t7:receipt-002",
+        source_input_slot="private-input-slot",
+        input_sha256=VALID_SHA,
+        quality_report_status="PASS",
+        boundary_sha256="c" * 64,
+        chunk_count=1,
+    )
+    partial = build_mineru_quality_report_source_pointer(
+        receipt_id="msea-r28-t7:receipt-002",
+        source_input_slot="private-input-slot",
+        input_sha256=VALID_SHA,
+        quality_report_status="PARTIAL_EXTRACTION",
+        boundary_sha256="c" * 64,
+        chunk_count=1,
+    )
+
+    assert passed != partial
+
+
 @pytest.mark.parametrize(
     ("kwargs", "token"),
     [
@@ -140,6 +205,35 @@ def test_invalid_metadata_fails_closed(
 
     with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
         build_mineru_metadata_receipt(**params)
+
+    assert exc_info.value.token == token
+
+
+@pytest.mark.parametrize(
+    ("kwargs", "token"),
+    [
+        ({"quality_report_status": "raw:PASS"}, "QUALITY_OR_SOURCE_POINTER_MISSING"),
+        ({"boundary_sha256": "sha256:" + ("b" * 64)}, "QUALITY_OR_SOURCE_POINTER_MISSING"),
+        ({"chunk_count": -1}, "QUALITY_OR_SOURCE_POINTER_MISSING"),
+        ({"input_sha256": "sha256:NOTLOWER"}, "INVALID_INPUT_SHA256"),
+    ],
+)
+def test_quality_report_source_pointer_helper_fails_closed(
+    kwargs: dict[str, object],
+    token: str,
+) -> None:
+    params: dict[str, object] = {
+        "receipt_id": "msea-r28-t7:receipt-003",
+        "source_input_slot": "private-input-slot",
+        "input_sha256": VALID_SHA,
+        "quality_report_status": "PASS",
+        "boundary_sha256": "d" * 64,
+        "chunk_count": 3,
+    }
+    params.update(kwargs)
+
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_quality_report_source_pointer(**params)
 
     assert exc_info.value.token == token
 

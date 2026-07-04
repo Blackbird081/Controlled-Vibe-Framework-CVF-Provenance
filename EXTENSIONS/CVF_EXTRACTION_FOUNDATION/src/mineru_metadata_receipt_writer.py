@@ -8,6 +8,7 @@ or execute MinerU.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from hashlib import sha256
 from json import dumps
 import re
 from typing import Literal, Sequence
@@ -52,6 +53,7 @@ FailureToken = Literal[
 _SAFE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$")
 _SAFE_MARKDOWN_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}\.md$")
 _SHA256_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
+_BOUNDARY_SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 _UNSAFE_TEXT_MARKERS = ("raw:", "text:", "ocr:", "content:")
 
 
@@ -79,6 +81,14 @@ class MineruMetadataReceipt:
     downstream_release: str = DOWNSTREAM_RELEASE_HELD
     receipt_version: str = RECEIPT_VERSION
     claim_boundary: str = CLAIM_BOUNDARY
+
+
+@dataclass(frozen=True)
+class MineruQualityReportSourcePointer:
+    """Metadata-only references produced from caller-owned quality evidence."""
+
+    quality_report_ref: str
+    source_pointer: str
 
 
 def _fail(token: FailureToken, message: str) -> None:
@@ -128,6 +138,64 @@ def _validate_quality_source_pointer(quality_report_ref: str, source_pointer: st
                 "QUALITY_OR_SOURCE_POINTER_MISSING",
                 f"{field_name} must not contain raw-content markers",
             )
+
+
+def build_mineru_quality_report_source_pointer(
+    *,
+    receipt_id: str,
+    source_input_slot: str,
+    input_sha256: str,
+    quality_report_status: str,
+    boundary_sha256: str,
+    chunk_count: int,
+) -> MineruQualityReportSourcePointer:
+    """Build deterministic metadata refs without reading extraction content."""
+
+    _validate_safe_id(
+        receipt_id,
+        field_name="receipt_id",
+        token="INVALID_RECEIPT_ID",
+    )
+    _validate_safe_id(
+        source_input_slot,
+        field_name="source_input_slot",
+        token="INVALID_SOURCE_INPUT_SLOT",
+    )
+    _validate_safe_id(
+        quality_report_status,
+        field_name="quality_report_status",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+    if not _SHA256_RE.fullmatch(input_sha256):
+        _fail("INVALID_INPUT_SHA256", "input_sha256 must be sha256:<64 lowercase hex>")
+    if not _BOUNDARY_SHA256_RE.fullmatch(boundary_sha256):
+        _fail(
+            "QUALITY_OR_SOURCE_POINTER_MISSING",
+            "boundary_sha256 must be a lowercase 64-character metadata digest",
+        )
+    if chunk_count < 0:
+        _fail(
+            "QUALITY_OR_SOURCE_POINTER_MISSING",
+            "chunk_count must be a non-negative metadata count",
+        )
+
+    seed = "|".join(
+        (
+            receipt_id,
+            source_input_slot,
+            input_sha256,
+            quality_report_status,
+            boundary_sha256,
+            str(chunk_count),
+        )
+    )
+    digest = sha256(seed.encode("utf-8")).hexdigest()[:24]
+    refs = MineruQualityReportSourcePointer(
+        quality_report_ref=f"quality-report:{digest}",
+        source_pointer=f"source-pointer:{digest}",
+    )
+    _validate_quality_source_pointer(refs.quality_report_ref, refs.source_pointer)
+    return refs
 
 
 def build_mineru_metadata_receipt(
