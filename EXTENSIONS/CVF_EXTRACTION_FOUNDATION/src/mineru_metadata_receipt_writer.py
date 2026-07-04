@@ -13,7 +13,7 @@ import re
 from typing import Literal, Sequence
 
 
-RECEIPT_VERSION = "cvf.mineruMetadataReceipt.r28t1.v1"
+RECEIPT_VERSION = "cvf.mineruMetadataReceipt.r28t5.v2"
 PRIVATE_OUTPUT_DISPOSITION = "RECEIPT_METADATA_ALLOWED"
 DOWNSTREAM_RELEASE_HELD = "HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE"
 CLAIM_BOUNDARY = (
@@ -46,6 +46,7 @@ FailureToken = Literal[
     "INVALID_INPUT_SHA256",
     "INVALID_OUTPUT_FILE_NAME",
     "OUTPUT_CONTENT_READ_FORBIDDEN",
+    "QUALITY_OR_SOURCE_POINTER_MISSING",
 ]
 
 _SAFE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$")
@@ -70,6 +71,8 @@ class MineruMetadataReceipt:
     source_input_slot: str
     input_sha256: str
     output_file_names: tuple[str, ...]
+    quality_report_ref: str
+    source_pointer: str
     private_output_class: MineruPrivateOutputClass = "PRIVATE_GENERATED_OUTPUT"
     private_output_disposition: str = PRIVATE_OUTPUT_DISPOSITION
     output_content_read: bool = False
@@ -109,12 +112,32 @@ def _validate_output_file_name(name: str) -> None:
     )
 
 
+def _validate_quality_source_pointer(quality_report_ref: str, source_pointer: str) -> None:
+    for field_name, value in (
+        ("quality_report_ref", quality_report_ref),
+        ("source_pointer", source_pointer),
+    ):
+        if not _SAFE_ID_RE.fullmatch(value):
+            _fail(
+                "QUALITY_OR_SOURCE_POINTER_MISSING",
+                f"{field_name} must be a bounded metadata identifier",
+            )
+        lowered = value.casefold()
+        if any(marker in lowered for marker in _UNSAFE_TEXT_MARKERS):
+            _fail(
+                "QUALITY_OR_SOURCE_POINTER_MISSING",
+                f"{field_name} must not contain raw-content markers",
+            )
+
+
 def build_mineru_metadata_receipt(
     *,
     receipt_id: str,
     source_input_slot: str,
     input_sha256: str,
     output_file_names: Sequence[str],
+    quality_report_ref: str,
+    source_pointer: str,
     private_output_class: MineruPrivateOutputClass = "PRIVATE_GENERATED_OUTPUT",
     output_content_read: bool = False,
 ) -> MineruMetadataReceipt:
@@ -142,6 +165,7 @@ def build_mineru_metadata_receipt(
             "INVALID_OUTPUT_FILE_NAME",
             "at least one MinerU output file name is required",
         )
+    _validate_quality_source_pointer(quality_report_ref, source_pointer)
 
     normalized_names = tuple(output_file_names)
     for name in normalized_names:
@@ -152,6 +176,8 @@ def build_mineru_metadata_receipt(
         source_input_slot=source_input_slot,
         input_sha256=input_sha256,
         output_file_names=normalized_names,
+        quality_report_ref=quality_report_ref,
+        source_pointer=source_pointer,
         private_output_class=private_output_class,
     )
 
@@ -169,9 +195,11 @@ def mineru_metadata_receipt_payload(
         "outputFileNames": list(receipt.output_file_names),
         "privateOutputClass": receipt.private_output_class,
         "privateOutputDisposition": receipt.private_output_disposition,
+        "qualityReportRef": receipt.quality_report_ref,
         "receiptId": receipt.receipt_id,
         "receiptVersion": receipt.receipt_version,
         "sourceInputSlot": receipt.source_input_slot,
+        "sourcePointer": receipt.source_pointer,
     }
 
 

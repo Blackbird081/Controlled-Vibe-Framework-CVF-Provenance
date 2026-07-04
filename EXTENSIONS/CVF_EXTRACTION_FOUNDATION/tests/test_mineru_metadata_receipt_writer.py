@@ -22,12 +22,12 @@ from mineru_metadata_receipt_writer import (  # noqa: E402
 VALID_SHA = "sha256:" + ("a" * 64)
 
 
-def _receipt():
-    return build_mineru_metadata_receipt(
-        receipt_id="msea-r28-t1:receipt-001",
-        source_input_slot="candidate-group-a-private-input",
-        input_sha256=VALID_SHA,
-        output_file_names=[
+def _receipt(**overrides):
+    params = {
+        "receipt_id": "msea-r28-t1:receipt-001",
+        "source_input_slot": "candidate-group-a-private-input",
+        "input_sha256": VALID_SHA,
+        "output_file_names": [
             "layout.pdf",
             "span.pdf",
             "model.json",
@@ -36,7 +36,11 @@ def _receipt():
             "content_list_v2.json",
             "document.md",
         ],
-    )
+        "quality_report_ref": "msea-r28-t5:quality-report-001",
+        "source_pointer": "msea-r28-t5:source-pointer-001",
+    }
+    params.update(overrides)
+    return build_mineru_metadata_receipt(**params)
 
 
 def test_receipt_payload_contains_required_r24_r26_metadata_fields() -> None:
@@ -57,6 +61,8 @@ def test_receipt_payload_contains_required_r24_r26_metadata_fields() -> None:
     assert payload["outputContentRead"] is False
     assert payload["privateOutputDisposition"] == "RECEIPT_METADATA_ALLOWED"
     assert payload["downstreamRelease"] == DOWNSTREAM_RELEASE_HELD
+    assert payload["qualityReportRef"] == "msea-r28-t5:quality-report-001"
+    assert payload["sourcePointer"] == "msea-r28-t5:source-pointer-001"
 
 
 def test_json_rendering_is_stable_and_metadata_only() -> None:
@@ -66,7 +72,7 @@ def test_json_rendering_is_stable_and_metadata_only() -> None:
 
     assert first == second
     assert first.endswith("\n")
-    assert payload["receiptVersion"] == "cvf.mineruMetadataReceipt.r28t1.v1"
+    assert payload["receiptVersion"] == "cvf.mineruMetadataReceipt.r28t5.v2"
     assert '"outputContentRead": false' in first
     assert "extractedText" not in first
     assert "rawOcrText" not in first
@@ -92,6 +98,8 @@ def test_allowed_mineru_output_family_names_are_metadata_only(file_name: str) ->
         source_input_slot="private-input-slot",
         input_sha256=VALID_SHA,
         output_file_names=[file_name],
+        quality_report_ref="msea-r28-t5:quality-report-002",
+        source_pointer="msea-r28-t5:source-pointer-002",
     )
 
     assert receipt.output_file_names == (file_name,)
@@ -110,6 +118,10 @@ def test_allowed_mineru_output_family_names_are_metadata_only(file_name: str) ->
         ({"output_file_names": ["full_text.txt"]}, "INVALID_OUTPUT_FILE_NAME"),
         ({"output_file_names": []}, "INVALID_OUTPUT_FILE_NAME"),
         ({"output_content_read": True}, "OUTPUT_CONTENT_READ_FORBIDDEN"),
+        ({"quality_report_ref": ""}, "QUALITY_OR_SOURCE_POINTER_MISSING"),
+        ({"quality_report_ref": "raw:quality-notes"}, "QUALITY_OR_SOURCE_POINTER_MISSING"),
+        ({"source_pointer": ""}, "QUALITY_OR_SOURCE_POINTER_MISSING"),
+        ({"source_pointer": "text:full-document"}, "QUALITY_OR_SOURCE_POINTER_MISSING"),
     ],
 )
 def test_invalid_metadata_fails_closed(
@@ -121,6 +133,8 @@ def test_invalid_metadata_fails_closed(
         "source_input_slot": "private-input-slot",
         "input_sha256": VALID_SHA,
         "output_file_names": ["layout.pdf"],
+        "quality_report_ref": "msea-r28-t5:quality-report-003",
+        "source_pointer": "msea-r28-t5:source-pointer-003",
     }
     params.update(kwargs)
 

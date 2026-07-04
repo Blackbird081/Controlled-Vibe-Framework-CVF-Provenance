@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-CVF MinerU Receipt Boundary Checker (MSEA-R28-T4)
+CVF MinerU Receipt Boundary Checker (MSEA-R28-T4, extended by MSEA-R28-T5)
 
 Validates any committed MinerU metadata receipt JSON document against the
-MSEA-R28-T3 accepted checker-candidate design matrix. This checker reads only
-receipt metadata fields; it never opens a referenced output file, reads
+MSEA-R28-T3 accepted checker-candidate design matrix, plus the R28-T5
+metadata-only `qualityReportRef`/`sourcePointer` fields. This checker reads
+only receipt metadata fields; it never opens a referenced output file, reads
 private source document bodies, or executes MinerU.
 
 Applicability is narrow: a changed or worktree JSON file whose top-level
@@ -43,6 +44,8 @@ REQUIRED_FIELDS = (
     "downstreamRelease",
     "claimBoundary",
     "receiptVersion",
+    "qualityReportRef",
+    "sourcePointer",
 )
 
 ALLOWED_PRIVATE_OUTPUT_CLASSES = (
@@ -300,6 +303,23 @@ def _validate_receipt(path: str, receipt: dict[str, Any]) -> list[dict[str, str]
             "MISSING_REQUIRED_RECEIPT_FIELD",
             "inputSha256 must be sha256:<64 lowercase hex>",
         )
+
+    for field_name in ("qualityReportRef", "sourcePointer"):
+        value = receipt.get(field_name)
+        if not isinstance(value, str) or not _SAFE_SLOT_RE.fullmatch(value):
+            _add(
+                violations,
+                path,
+                "QUALITY_OR_SOURCE_POINTER_MISSING",
+                f"{field_name} must be a bounded metadata identifier, not free-form or absent",
+            )
+        elif any(marker in value.casefold() for marker in _UNSAFE_TEXT_MARKERS):
+            _add(
+                violations,
+                path,
+                "QUALITY_OR_SOURCE_POINTER_MISSING",
+                f"{field_name} must not contain raw-content markers",
+            )
 
     return violations
 

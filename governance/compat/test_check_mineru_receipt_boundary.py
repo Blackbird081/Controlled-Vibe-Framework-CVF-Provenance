@@ -28,7 +28,9 @@ def _valid_receipt(**overrides: object) -> dict[str, object]:
         "privateOutputDisposition": "RECEIPT_METADATA_ALLOWED",
         "downstreamRelease": "HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE",
         "claimBoundary": "This receipt records caller-supplied MinerU metadata only.",
-        "receiptVersion": "cvf.mineruMetadataReceipt.r28t1.v1",
+        "receiptVersion": "cvf.mineruMetadataReceipt.r28t5.v2",
+        "qualityReportRef": "msea-r28-t5:quality-report-001",
+        "sourcePointer": "msea-r28-t5:source-pointer-001",
     }
     receipt.update(overrides)
     return receipt
@@ -131,6 +133,40 @@ class ValidateReceiptTests(unittest.TestCase):
         violations = MODULE._validate_receipt("receipt.json", receipt)
         types = [v["type"] for v in violations]
         self.assertIn("MISSING_REQUIRED_RECEIPT_FIELD", types)
+
+    def test_missing_quality_report_ref_value_is_flagged(self) -> None:
+        receipt = _valid_receipt(qualityReportRef="")
+        violations = MODULE._validate_receipt("receipt.json", receipt)
+        types = [v["type"] for v in violations]
+        self.assertIn("QUALITY_OR_SOURCE_POINTER_MISSING", types)
+
+    def test_raw_content_quality_report_ref_is_flagged(self) -> None:
+        receipt = _valid_receipt(qualityReportRef="raw:quality-notes")
+        violations = MODULE._validate_receipt("receipt.json", receipt)
+        types = [v["type"] for v in violations]
+        self.assertIn("QUALITY_OR_SOURCE_POINTER_MISSING", types)
+
+    def test_missing_source_pointer_value_is_flagged(self) -> None:
+        receipt = _valid_receipt(sourcePointer="")
+        violations = MODULE._validate_receipt("receipt.json", receipt)
+        types = [v["type"] for v in violations]
+        self.assertIn("QUALITY_OR_SOURCE_POINTER_MISSING", types)
+
+    def test_raw_content_source_pointer_is_flagged(self) -> None:
+        receipt = _valid_receipt(sourcePointer="content:full-document-text")
+        violations = MODULE._validate_receipt("receipt.json", receipt)
+        types = [v["type"] for v in violations]
+        self.assertIn("QUALITY_OR_SOURCE_POINTER_MISSING", types)
+
+    def test_missing_quality_and_source_pointer_fields_reports_required_field_gap(self) -> None:
+        receipt = _valid_receipt()
+        del receipt["qualityReportRef"]
+        del receipt["sourcePointer"]
+        violations = MODULE._validate_receipt("receipt.json", receipt)
+        self.assertEqual(len(violations), 1)
+        self.assertEqual(violations[0]["type"], "MISSING_REQUIRED_RECEIPT_FIELD")
+        self.assertIn("qualityReportRef", violations[0]["message"])
+        self.assertIn("sourcePointer", violations[0]["message"])
 
 
 class ClassifyApplicabilityTests(unittest.TestCase):
