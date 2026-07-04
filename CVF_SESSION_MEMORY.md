@@ -31,31 +31,31 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T5 GC-018/source-verified work order for quality/source-pointer receipt schema extension and checker update decision; parked checkpoint=memory-route release, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until a fresh packet passes gates; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t5_quality_source_pointer_receipt_schema_extension_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the MSEA-R28-T5 worker under WORKER_MUST_NOT_COMMIT and return for review; parked checkpoint=memory-route release, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`
+Current mode marker: `msea_r28_t5_quality_source_pointer_receipt_schema_extension_dispatched_pending_worker_return`
 
-Current mode: `msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`
+Current mode: `msea_r28_t5_quality_source_pointer_receipt_schema_extension_dispatched_pending_worker_return`
 
-`msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`
+`msea_r28_t5_quality_source_pointer_receipt_schema_extension_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`
+`msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | N/A | No worker is currently dispatched. Next move is R28-T5 packet authoring only. |
+| MSEA-R28-T5 MinerU Quality Source Pointer Receipt Schema Extension And Checker Update Decision | `042fa17b` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must not commit; execute only the dispatched packet scope and return `docs/reviews/CVF_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_WORKER_RETURN_2026-07-04.md` for review |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Quality/source-pointer receipt schema extension | `0c81b7bc` | HELD_PENDING_R28_T5_PACKET; R28-T4 accepted the checker only, not quality/source-pointer schema extension. |
+| Quality/source-pointer receipt schema extension | `042fa17b` | DISPATCHED_PENDING_WORKER_RETURN under MSEA-R28-T5; no implementation accepted until reviewer closure. |
 | Memory-route release | `0c81b7bc` | MEMORY_ROUTE_STILL_HELD_AFTER_CHECKER_IMPLEMENTATION; requires quality/source-pointer prerequisites, allowed downstream use, and a dedicated memory-owner work order before release. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
@@ -64,6 +64,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T5 MinerU Quality Source Pointer Receipt Schema Extension And Checker Update Decision dispatch | `042fa17b` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; no implementation accepted, no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
 | MSEA-R28-T4 MinerU Receipt Boundary Checker Implementation And Hook Wiring Decision | `0c81b7bc` | CLOSED_PASS_BOUNDED; accepted checker, focused tests, and autorun/pre-commit/pre-push hook wiring after reviewer repair added `privateOutputDisposition` validation; focused unittest PASS 19/19, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; memory route remains `MEMORY_ROUTE_STILL_HELD_AFTER_CHECKER_IMPLEMENTATION`; no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design | `4d64e33f` | CLOSED_PASS_BOUNDED; accepted worker return and companion design matrix; selected `RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY`; checker implementation remains `CHECKER_IMPLEMENTATION_HELD_PENDING_ACCEPTED_DESIGN`; memory route remains `MEMORY_ROUTE_HELD_PENDING_ACTUAL_CHECKER_AND_QUALITY`; worker-return fast gate PASS after reviewer GC-051 path-literal repair, pre-implementation autorun PASS 74/74, reviewer-return commit steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, source/test edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design dispatch | `0567257f` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit work order; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, source/test edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
@@ -225,27 +226,26 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`
+Mode: `msea_r28_t5_quality_source_pointer_receipt_schema_extension_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh MSEA-R28-T5 GC-018/source-verified work
-order for quality/source-pointer receipt schema extension and checker update
-decision.
+Next allowed move: execute the MSEA-R28-T5 worker under WORKER_MUST_NOT_COMMIT
+and return for review.
 
 Current material source:
 
-`docs/reviews/CVF_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_WORKER_RETURN_2026-07-04.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_2026-07-04.md`
 
-R28-T5 packet authoring must use the accepted R28-T4 checker and worker return,
-R28-T3 design matrix quality/source-pointer prerequisite row, R28-T1 writer
-source evidence, R27 scan-to-memory route matrix, R24-T4 private-output policy,
-and Extraction Foundation quality/source-pointer owner surfaces. No MinerU
+R28-T5 worker execution must follow the dispatched baseline/work order at
+material commit `042fa17b`. Worker scope is bounded to metadata-only receipt
+schema/source-pointer/quality-reference source and focused tests,
+receipt-boundary checker update and focused tests, conditional GC-051 registry
+metadata updates only if required, and the named worker return. No MinerU
 runtime execution, private document read, generated output content read/quote,
 Candidate Group A source or generated output import, public-sync, provider/live
 proof, memory-layer/RAG/S3/Web/MCP/model-router/action-authority implementation,
 standalone PDF app, legal/use-case deep dive, evaluation deep dive, extraction
 accuracy, document truth, legal quality, current-law correctness, workflow-chain
-production readiness, worker stage/commit, or push is authorized until a fresh
-packet passes gates.
+production readiness, worker stage/commit, or push is authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
 

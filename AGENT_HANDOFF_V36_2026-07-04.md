@@ -6,14 +6,14 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T4 checker closure. Keep the active
-session ready for R28-T5 quality/source-pointer packet authoring without
-implying memory-route release authority.
+Carry compact continuity after MSEA-R28-T5 quality/source-pointer dispatch. Keep
+the active session ready for no-commit worker execution without implying
+memory-route release authority.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after accepting the MSEA-R28-T4
-receipt-boundary checker implementation and hook-wiring lane.
+Target: active CVF session continuity after dispatching the MSEA-R28-T5
+quality/source-pointer receipt schema extension and checker update lane.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -33,7 +33,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T5 GC-018/source-verified work order for quality/source-pointer receipt schema extension and checker update decision; parked checkpoint=memory-route release, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until that fresh packet passes gates.
+Startup acknowledged: current mode=`msea_r28_t5_quality_source_pointer_receipt_schema_extension_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the MSEA-R28-T5 worker under WORKER_MUST_NOT_COMMIT and return for review; parked checkpoint=memory-route release, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred.
 
 ## Current State
 
@@ -45,45 +45,45 @@ Startup acknowledged: current mode=`msea_r28_t4_mineru_receipt_boundary_checker_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `0c81b7bc` MSEA-R28-T4 receipt-boundary checker implementation closure |
-| Latest session-sync target | session sync after MSEA-R28-T4 closure |
+| Latest material packet | `042fa17b` MSEA-R28-T5 quality/source-pointer dispatch |
+| Latest session-sync target | session sync after MSEA-R28-T5 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`
+`msea_r28_t5_quality_source_pointer_receipt_schema_extension_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R28-T4 Receipt Boundary Checker Implementation And Hook Wiring Decision
-closure is complete at material commit `0c81b7bc`.
+MSEA-R28-T5 Quality Source Pointer Receipt Schema Extension And Checker Update
+Decision dispatch is complete at material commit `042fa17b`.
 
 Accepted artifacts:
 
-- `docs/reviews/CVF_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_WORKER_RETURN_2026-07-04.md`
-- `governance/compat/check_mineru_receipt_boundary.py`
-- `governance/compat/test_check_mineru_receipt_boundary.py`
+- `docs/baselines/CVF_GC018_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_2026-07-04.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_2026-07-04.md`
 
-Selected implementation disposition:
-`RECEIPT_BOUNDARY_CHECKER_IMPLEMENTED_AND_WIRED`.
-Memory-route disposition:
-`MEMORY_ROUTE_STILL_HELD_AFTER_CHECKER_IMPLEMENTATION`.
+Selected dispatch route:
+`QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION`.
+Commit route:
+`WORKER_MUST_NOT_COMMIT`.
 
-Verification: reviewer repair added `privateOutputDisposition` validation,
-focused unittest PASS 19/19, worker-return fast gate PASS, pre-implementation
-autorun PASS 75/75, reviewer-return commit steward preflight PASS, and material
-pre-commit hook PASS 80/80.
+Verification: pre-dispatch autorun PASS 73/73, dispatch commit steward
+preflight PASS, and material pre-commit hook PASS 80/80.
 
-R28-T4 boundary: local deterministic receipt metadata checker, focused tests,
-and bounded autorun/pre-commit/pre-push hook wiring only. It does not authorize
-MinerU runtime execution, private document read, generated output content
-read/quote, Candidate Group A source or generated output import, public-sync,
-provider/live proof, memory/RAG/S3/Web/MCP/model-router/action-authority
-implementation, standalone PDF app, legal/use-case deep dive, extraction
-accuracy, document truth, legal quality, current-law correctness, workflow-chain
-production readiness, worker stage/commit/push, or push.
+R28-T5 boundary: no-commit worker execution only for metadata-only
+quality/source-pointer receipt schema source and focused tests, receipt-boundary
+checker update and focused tests, conditional GC-051 registry metadata updates
+only if required, and the named worker return. It does not authorize MinerU
+runtime execution, private document read, generated output content read/quote,
+Candidate Group A source or generated output import, public-sync, provider/live
+proof, memory/RAG/S3/Web/MCP/model-router/action-authority implementation,
+standalone PDF app, legal/use-case deep dive, extraction accuracy, document
+truth, legal quality, current-law correctness, workflow-chain production
+readiness, worker stage/commit/push, or push.
 
-Recent predecessor anchors: R28-T4 closure `0c81b7bc`, R28-T3 closure
+Recent predecessor anchors: R28-T5 dispatch `042fa17b`, R28-T4 closure
+`0c81b7bc`, R28-T3 closure
 `4d64e33f`, R28-T3 dispatch `0567257f`, R28-T2 closure
 `3e230445`, R28-T1 closure `23177f27`, R28 selection `e2bb6b61`, R27 closure
 `ebd42823`, R26 closure `4b8166ad`, R25 closure `1e58d75a`, and R24-T4 policy
@@ -93,25 +93,21 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MSEA-R28-T5 GC-018/source-verified work
-order for quality/source-pointer receipt schema extension and checker update
-decision.
+Next allowed move: execute the MSEA-R28-T5 worker under WORKER_MUST_NOT_COMMIT
+and return for review.
 
 Current material source:
 
-`docs/reviews/CVF_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_WORKER_RETURN_2026-07-04.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_2026-07-04.md`
 
-R28-T5 packet authoring must use the accepted R28-T4 checker and worker return,
-R28-T3 design matrix quality/source-pointer prerequisite row, R28-T1 writer
-source evidence, R27 scan-to-memory route matrix, R24-T4 private-output policy,
-and Extraction Foundation quality/source-pointer owner surfaces. No MinerU
-runtime execution, private document read, generated output content read/quote,
-Candidate Group A source or generated output import, public-sync, provider/live
-proof, memory-layer/RAG/S3/Web/MCP/model-router/action-authority implementation,
-standalone PDF app, legal/use-case deep dive, evaluation deep dive, extraction
-accuracy, document truth, legal quality, current-law correctness, workflow-chain
-production readiness, worker stage/commit, or push is authorized until a fresh
-packet passes gates.
+R28-T5 worker execution must follow the dispatched baseline/work order at
+material commit `042fa17b`. No MinerU runtime execution, private document read,
+generated output content read/quote, Candidate Group A source or generated
+output import, public-sync, provider/live proof, memory-layer/RAG/S3/Web/MCP/
+model-router/action-authority implementation, standalone PDF app, legal/use-case
+deep dive, evaluation deep dive, extraction accuracy, document truth, legal
+quality, current-law correctness, workflow-chain production readiness, worker
+stage/commit, or push is authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -119,11 +115,32 @@ LHW24 remains the latest closed numbered LHW wave.
 
 This handoff is a continuity and next-move routing artifact only. It does not
 implement or prove quality/source-pointer schema extension, MinerU runtime,
-receipt writer changes beyond a fresh packet, private or generated content
+receipt writer changes beyond the dispatched no-commit worker lane, private or generated content
 reads, memory/RAG writes, adapter behavior, provider/live behavior, public-sync,
 standalone PDF app behavior, legal/use-case analysis quality, extraction
 accuracy, document truth,
 current-law correctness, workflow-chain completion, or production readiness.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T5 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T5 material
+dispatch commit `042fa17b`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door continuity, active handoff, and
+dispatch state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T5QualitySourcePointerReceiptSchemaExtensionDispatch20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this MSEA-R28-T5 dispatch session-sync if
+rejected; do not revert material dispatch commit `042fa17b` or older MSEA
+history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T4 Closure Session Sync
 
