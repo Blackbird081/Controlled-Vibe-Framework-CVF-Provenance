@@ -31,31 +31,31 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute the MSEA-R28-T1 minimal metadata receipt writer worker under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=checker/adapter/memory/RAG implementation, runtime, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R28-T2 route-selection and GC-018/source-verified work order for receipt-boundary checker candidate and memory-route release prerequisites; parked checkpoint=runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
+Current mode marker: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
 
-Current mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
+Current mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
 
-`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
+`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
 
 Previous mode:
 
-`msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
+`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R28-T1 MinerU Minimal Metadata Receipt Writer dispatch | `45bae1d4` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must use `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md` and `docs/baselines/CVF_GC018_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`; allowed worker paths are `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`, `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`, and `docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`; worker must not stage, commit, or push. |
+| None | N/A | No active dispatched worker item remains after MSEA-R28-T1 closure `23177f27`. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Receipt-writer implementation | `45bae1d4` | RELEASED_ONLY_FOR_R28_T1_WORKER; bounded to the no-commit worker paths in the dispatch packet. |
+| Receipt-writer implementation | `23177f27` | CLOSED_PASS_BOUNDED; downstream release remains held pending R28-T2 route-selection/source-verified work order for receipt-boundary checker candidate and memory-route prerequisites. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
@@ -63,6 +63,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T1 MinerU Minimal Metadata Receipt Writer | `23177f27` | CLOSED_PASS_BOUNDED; implemented `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`, focused tests, worker return, and GC-051 registry coverage; focused pytest PASS 19/19, pre-implementation autorun PASS 74/74, worker-return fast gate PASS, reviewer-fast PASS 59/59, commit steward PASS, material pre-commit hook PASS 79/79; downstream release remains `HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE`; no MinerU runtime, private/generated content read, Candidate Group A import, checker hook, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R28 Foundation Implementation Sequence Audit And Selection | `e2bb6b61` | CLOSED_PASS_BOUNDED; selected `SELECT_MINIMAL_METADATA_RECEIPT_WRITER_FIRST`; next move is R28-T1 GC-018/source-verified work-order authoring only; pre-implementation autorun PASS 74/74, reviewer-return steward PASS, reviewer-fast PASS 59/59, material pre-commit hook PASS 79/79; no receipt-writer implementation, checker implementation, MinerU runtime execution, private document read, generated output content read/quote, Candidate Group A import, public-sync, provider/live proof, schema/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R27 MinerU Document Intelligence Plane Integration Roadmap | `ebd42823` | CLOSED_PASS_BOUNDED; created roadmap, completion review, and decision ledger; selected `DOCUMENT_INTELLIGENCE_PLANE_CONTRACT_READY` and `SCAN_TO_MEMORY_INTAKE_ROUTE_MATRIX_READY`; held standalone PDF app, legal/use-case deep dive, and runtime workflow implementation; pre-implementation autorun PASS 74/74, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no MinerU runtime execution, private document read, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, schema-writer/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R26-T1 MinerU Receipt Schema Writer Contract And Checker Candidate Design | `4b8166ad` | CLOSED_PASS_BOUNDED; accepted worker return and companion reference; selected `CONTRACT_DRAFT_READY` and `CHECKER_CANDIDATE`; pre-implementation autorun PASS 74/74, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 79/79; no MinerU runtime execution, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, schema-writer/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
@@ -75,6 +76,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T1 MinerU Minimal Metadata Receipt Writer | `23177f27` | CLOSED_PASS_BOUNDED; next move is MSEA-R28-T2 route-selection/GC-018 work-order authoring only |
 | MSEA-R28 Foundation Implementation Sequence Audit And Selection | `e2bb6b61` | CLOSED_PASS_BOUNDED; selected minimal metadata receipt writer first; next move is R28-T1 dispatch authoring only |
 | MSEA-R27 MinerU Document Intelligence Plane Integration Roadmap | `ebd42823` | CLOSED_PASS_BOUNDED; selected CVF document-intelligence plane contract plus scan-to-memory route matrix; next move is foundation implementation sequence selection only |
 | MSEA-R26-T1 MinerU Receipt Schema Writer Contract And Checker Candidate Design | `4b8166ad` | CLOSED_PASS_BOUNDED; selected `CONTRACT_DRAFT_READY` and `CHECKER_CANDIDATE`; next move is foundation-route selection only |
@@ -215,34 +217,48 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
+Mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
 
-Next allowed move: execute the MSEA-R28-T1 minimal metadata receipt writer
-worker under `WORKER_MUST_NOT_COMMIT` using the source-verified dispatch at
-material commit `45bae1d4`.
+Next allowed move: author MSEA-R28-T2 route-selection and GC-018/source-verified
+work order for post-writer receipt-boundary checker candidate and memory-route
+release prerequisites.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`
+`docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`
 
-Worker may create only
-`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`,
-`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`,
-and
-`docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`.
-Worker must capture `executionBaseHead`, run focused tests plus required
-pre-implementation and worker-return gates, and leave changes uncommitted for
-reviewer/closer. No checker implementation, MinerU runtime execution, private
-document read, generated output content read/quote, Candidate Group A source or
-generated output import, public-sync, provider/live proof, package/checker/source
-mutation beyond the allowed writer/test files, schema/checker/adapter/
-memory-layer/RAG/S3/Web/MCP/model-router/action-authority implementation,
-standalone PDF app, legal/use-case deep dive, evaluation deep dive, extraction
-accuracy, document truth, legal quality, current-law correctness, workflow-chain
-production readiness, worker stage/commit/push, or provider/live governance
-proof is authorized.
+The next packet must decide whether to author a bounded checker-candidate/design
+tranche or keep the memory-route release held. No MinerU runtime execution,
+private document read, generated output content read/quote, Candidate Group A
+source or generated output import, public-sync, provider/live proof,
+schema/checker/adapter/memory-layer/RAG/S3/Web/MCP/model-router/action-authority
+implementation, standalone PDF app, legal/use-case deep dive, evaluation deep
+dive, extraction accuracy, document truth, legal quality, current-law
+correctness, workflow-chain production readiness, or push is authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T1 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T1 material
+closure commit `23177f27`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current/closed work, closure
+state entry, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T1MineruMinimalMetadataReceiptWriterClosure20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Authorization boundary: session-sync only. No runtime execution, checker hook
+wiring, memory/RAG write, private or generated content read, public-sync,
+provider/live proof, app build, use-case deep dive, production-readiness claim,
+or push is authorized by this block.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T1 Dispatch Session Sync
 

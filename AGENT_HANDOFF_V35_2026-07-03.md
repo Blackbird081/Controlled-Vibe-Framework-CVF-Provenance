@@ -6,12 +6,12 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T1 dispatch and keep the active handoff
-current for no-commit worker execution.
+Carry compact continuity after MSEA-R28-T1 closure and keep the active handoff
+current for R28-T2 route-selection/work-order authoring.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after dispatching the MSEA-R28-T1 minimal
+Target: active CVF session continuity after closing the MSEA-R28-T1 minimal
 metadata receipt writer lane.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute the MSEA-R28-T1 minimal metadata receipt writer worker under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=checker/adapter/memory/RAG implementation, runtime, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized.
+Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R28-T2 route-selection and GC-018/source-verified work order for receipt-boundary checker candidate and memory-route release prerequisites; parked checkpoint=runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized.
 
 ## Current State
 
@@ -46,33 +46,40 @@ Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `45bae1d4` MSEA-R28-T1 minimal metadata receipt writer dispatch |
-| Latest session-sync target | session sync after MSEA-R28-T1 dispatch |
+| Latest material packet | `23177f27` MSEA-R28-T1 minimal metadata receipt writer closure |
+| Latest session-sync target | session sync after MSEA-R28-T1 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
+`msea_r28_t1_mineru_minimal_metadata_receipt_writer_closed_pending_r28_t2_route_selection`
 
 ## Latest Changes
 
-MSEA-R28-T1 Minimal Metadata Receipt Writer dispatch is ready at material commit
-`45bae1d4`.
+MSEA-R28-T1 Minimal Metadata Receipt Writer closure is complete at material
+commit `23177f27`.
 
 Accepted artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`
+- `docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`
+- `docs/corpus-intelligence/registry/entries/msea-r28-t1-mineru-metadata-receipt-writer-source.json`
+- `docs/corpus-intelligence/registry/entries/msea-r28-t1-mineru-metadata-receipt-writer-tests.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 
-Selected result: `MINIMAL_METADATA_RECEIPT_WRITER`.
-R28-T1 worker execution under `WORKER_MUST_NOT_COMMIT` is now the next allowed
-move. Worker edits are limited to the writer source, focused test, and worker
-return paths named in the work order. Checker implementation, memory/RAG,
-runtime workflow, standalone PDF app, and legal/use-case deep dive remain held
-until fresh source-verified packets authorize them.
+Selected result: `MINIMAL_METADATA_RECEIPT_WRITER_CLOSED`.
+The writer emits metadata-only receipts and keeps downstream release at
+`HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE`. Checker implementation,
+memory/RAG, runtime workflow, standalone PDF app, and legal/use-case deep dive
+remain held until fresh source-verified packets authorize them.
 
-Verification: dispatch-quality gate PASS, pre-dispatch autorun PASS 72/72,
-dispatch commit steward preflight PASS, and material pre-commit hook PASS 79/79.
+Verification: focused pytest PASS 19/19, pre-implementation autorun PASS 74/74,
+worker-return fast gate PASS, reviewer-fast PASS 59/59, registry aggregate
+drift check PASS, commit steward preflight PASS, and material pre-commit hook
+PASS 79/79.
 
 R28-T1 boundary: deterministic metadata-only writer helper and focused tests
 only. It does not authorize checker implementation, MinerU runtime execution,
@@ -84,41 +91,70 @@ standalone PDF app, legal/use-case deep dive, extraction accuracy, document
 truth, legal quality, current-law correctness, workflow-chain production
 readiness, worker stage/commit/push, or public claim.
 
-Recent predecessor anchors: R28 selection `e2bb6b61`, R28 selection
-session-sync `0892f634`, R27 closure `ebd42823`, R27 session-sync `e4aadd07`,
-R26 closure `4b8166ad`, R26 dispatch `b3bcf7cb`, R25 closure `1e58d75a`, and
-R24-T4 policy closure `224a31a8`. Older R24 and MSEA runtime/cache/sample
+Recent predecessor anchors: R28-T1 dispatch `45bae1d4`, R28-T1 dispatch
+session-sync `1ae21806`, R28 selection `e2bb6b61`, R28 selection session-sync
+`0892f634`, R27 closure `ebd42823`, R27 session-sync `e4aadd07`, R26 closure
+`4b8166ad`, R26 dispatch `b3bcf7cb`, R25 closure `1e58d75a`, and R24-T4
+policy closure `224a31a8`. Older R24 and MSEA runtime/cache/sample
 history is intentionally summarized out of the active handoff; use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, state entries, and archived handoffs
 for full details.
 
 ## Next Allowed Move
 
-Next allowed move: execute the MSEA-R28-T1 minimal metadata receipt writer
-worker under `WORKER_MUST_NOT_COMMIT` using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`
-and
-`docs/baselines/CVF_GC018_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`.
+Next allowed move: author MSEA-R28-T2 route-selection and GC-018/source-verified
+work order for the post-writer receipt-boundary checker candidate and
+memory-route release prerequisites.
 
-Worker may create only
-`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`,
-`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`,
-and
-`docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`.
-Worker must capture `executionBaseHead`, run focused tests plus required
-pre-implementation and worker-return gates, and leave changes uncommitted for
-reviewer/closer. Forbidden: checker implementation, MinerU runtime execution,
-model download/cache mutation, ModelScope, VLM/hybrid/http-client/router/
-Gradio/Docker/WSL, manual document body read, generated extraction content
-quotation, Candidate Group A source or generated output copy/import into the
-governed repo, provider/live proof, public-sync, RAG/S3/schema-writer/checker/
-adapter/package/memory-layer/Web/MCP/model-router/action-authority
+The next packet must decide whether to author a bounded checker-candidate/design
+tranche or keep the memory-route release held. Forbidden: MinerU runtime
+execution, model download/cache mutation, ModelScope, VLM/hybrid/http-client/
+router/Gradio/Docker/WSL, manual document body read, generated extraction
+content quotation, Candidate Group A source or generated output copy/import into
+the governed repo, provider/live proof, public-sync, RAG/S3/schema-writer/
+checker/adapter/package/memory-layer/Web/MCP/model-router/action-authority
 implementation, standalone PDF app, legal/use-case deep dive, evaluation deep
 dive, benchmark, document truth, extraction accuracy, legal quality, current-law
-correctness, workflow-chain production readiness, stage by worker, commit by
-worker, push, or provider/live governance proof.
+correctness, workflow-chain production readiness, push, or provider/live
+governance proof.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T1 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T1 material
+closure commit `23177f27`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current/closed work, closure
+state entry, and this handoff.
+
+Protected paths authorized for this session-sync:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T1MineruMinimalMetadataReceiptWriterClosure20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Reason: MSEA-R28-T1 material closure commit `23177f27` accepted the metadata
+receipt writer, focused tests, worker return, and GC-051 registry coverage.
+Continuity surfaces must no longer direct agents to execute the already closed
+worker and must instead route to R28-T2 route-selection/work-order authoring.
+
+Rollback boundary: if this session-sync is rejected, revert only the protected
+session-sync files listed above; do not revert material closure commit
+`23177f27` or older MSEA history.
+
+| Path | Authorized change |
+|---|---|
+| `AGENT_HANDOFF_V35_2026-07-03.md` | Update current mode, latest material packet, next allowed move, closure evidence, and protected-path authorization after R28-T1 closure. |
+| `CVF_SESSION_MEMORY.md` | Update startup acknowledgment, current mode, current dispatched work, current held follow-up, latest closed work, and next allowed move after R28-T1 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate from active session state after source entry edits. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from active session state source files. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update current and previous mode. |
+| `CVF_SESSION/state/entries/mseaR28T1MineruMinimalMetadataReceiptWriterClosure20260704.json` | Add state source entry for R28-T1 material closure commit `23177f27`. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next allowed move to R28-T2 route-selection/source-verified work-order authoring. |
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T1 Dispatch Session Sync
 
