@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r26_t1_receipt_schema_writer_contract_dispatch_ready_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R26-T1 worker under WORKER_MUST_NOT_COMMIT using the dispatched work order; parked checkpoint=runtime/provider/public/schema-writer/checker/adapter/memory implementation lanes remain deferred until separately authorized.
+Startup acknowledged: current mode=`msea_r26_t1_receipt_schema_writer_contract_closed_pending_foundation_route_selection`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=select the next MinerU CVF-foundation route and author fresh source-verified dispatch only if chosen; parked checkpoint=runtime/provider/public/schema-writer/checker/adapter/memory implementation and legal/use-case deep-dive lanes remain deferred until separately authorized.
 
 ## Current State
 
@@ -46,181 +46,69 @@ Startup acknowledged: current mode=`msea_r26_t1_receipt_schema_writer_contract_d
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `b3bcf7cb` MSEA-R26-T1 receipt schema writer contract dispatch |
-| Latest session-sync target | session sync after MSEA-R26-T1 dispatch |
+| Latest material packet | `4b8166ad` MSEA-R26-T1 receipt schema writer contract closure |
+| Latest session-sync target | session sync after MSEA-R26-T1 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r26_t1_receipt_schema_writer_contract_dispatch_ready_pending_worker_return`
+`msea_r26_t1_receipt_schema_writer_contract_closed_pending_foundation_route_selection`
 
 ## Latest Changes
 
 MSEA-R26-T1 MinerU receipt schema writer contract and checker-candidate design
-dispatch was committed at material commit `b3bcf7cb`.
+closed at material commit `4b8166ad`.
 
-Dispatch artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R26_T1_MINERU_RECEIPT_SCHEMA_WRITER_CONTRACT_AND_CHECKER_CANDIDATE_DESIGN_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R26_T1_MINERU_RECEIPT_SCHEMA_WRITER_CONTRACT_AND_CHECKER_CANDIDATE_DESIGN_2026-07-04.md`
-
-Worker may create only:
+Accepted artifacts:
 
 - `docs/reviews/CVF_MSEA_R26_T1_MINERU_RECEIPT_SCHEMA_WRITER_CONTRACT_AND_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md`
 - `docs/reference/CVF_MSEA_R26_T1_MINERU_RECEIPT_SCHEMA_WRITER_CONTRACT_AND_CHECKER_CANDIDATE_DESIGN_2026-07-04.md`
 
-Verification: pre-dispatch autorun PASS 72/72, dispatch steward PASS, and
-material pre-commit hook PASS 79/79.
+Selected result: `CONTRACT_DRAFT_READY` plus `CHECKER_CANDIDATE`.
+
+Verification: pre-implementation autorun PASS 74/74, worker-return fast gate
+PASS, reviewer-return steward PASS, and material pre-commit hook PASS 79/79.
 
 R26 boundary: documentation/reference contract drafting only. It does not
-authorize MinerU runtime execution, private output content read, public-sync,
-provider/live proof, schema-writer/checker/adapter/source/package/memory/RAG/
-Web/MCP/model-router/action-authority implementation, production readiness,
-stage or commit by worker, or push.
+authorize MinerU runtime execution, generated output content read/quote,
+Candidate Group A source or generated output import, public-sync, provider/live
+proof, schema-writer/checker/adapter/source/package/memory/RAG/S3/Web/MCP/
+model-router/action-authority implementation, legal/use-case deep dive,
+extraction accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production readiness, worker stage/commit/push, or public claim.
 
-MSEA-R25 MinerU CVF workflow-chain systemization roadmap was closed at material
-commit `1e58d75a`.
-
-Closed artifacts:
-
-- `docs/roadmaps/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-07-04.md`
-- `docs/reviews/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_COMPLETION_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R25_MINERU_WORKFLOW_CHAIN_SYSTEMIZATION_DECISION_LEDGER_2026-07-04.md`
-
-Roadmap status:
-`CLOSED_PASS_BOUNDED`.
-
-Selected closure: R25 was converted into a bounded documentation/reference
-decision chain. T1 selected the minimal receipt envelope contract; T2 selected
-private-output routing policy; T3 selected schema/writer contract draft and
-checker-candidate-only disposition; T4 selected adapter/memory route matrix; T5
-deferred the use-case deep dive; T6 selected production-boundary rejection.
-
-Verification: reviewer-fast/material pre-commit hook PASS 79/79; commit steward
-preflight PASS before material commit; pre-closure content gates passed after
-material commit with only expected active-session drift before this session
-sync.
-
-R25 boundary: closure is documentation/reference decision systemization only.
-It does not authorize worker execution, MinerU rerun, generated output content
-read, Candidate Group A source or output import, public-sync, provider/live
-proof, schema/writer/checker/adapter/memory implementation, evaluation deep
-dive, production workflow-chain claim, stage by worker, commit by worker, or
-push.
-
-MSEA-R24-T4 MinerU workflow-chain receipt policy and private output handling
-worker return was accepted at material commit `224a31a8`.
-
-Accepted artifacts:
-
-- `docs/reviews/CVF_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_WORKER_RETURN_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_POLICY_2026-07-04.md`
-
-Accepted result: `WORKFLOW_RECEIPT_POLICY_READY`.
-
-T4 policy boundary: no MinerU rerun, no generated output content read, no
-Candidate Group A source/output import, no public-sync, no provider/live proof,
-no schema/writer/adapter/checker/package/Web/MCP/model-router/action-authority
-work, and no production workflow-chain claim. R25 is released for roadmap
-authoring only.
-
-Verification: worker-return fast gate PASS, pre-implementation autorun PASS
-74/74, reviewer-return steward PASS, and material pre-commit hook PASS 79/79.
-
-MSEA-R24-T4 MinerU workflow-chain receipt policy and private output handling
-dispatch was committed at material commit `0aa1f6c2`.
-
-Dispatch artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_2026-07-04.md`
-
-Dispatch verification: pre-dispatch autorun PASS 72/72, dispatch steward PASS,
-and material pre-commit hook PASS 79/79.
-
-T4 dispatch is docs-only. It authorizes worker creation of the named worker
-return and policy reference, but no MinerU rerun, generated output content
-read, Candidate Group A source/output import, public-sync, provider/live proof,
-schema/writer/adapter/checker/package/Web/MCP/model-router/action-authority
-work, or production workflow-chain claim.
-
-MSEA-R24-T3A MinerU path-quoting-safe local pipeline rerun worker return was
-accepted at material commit `04b99044`.
-
-Accepted artifacts:
-
-- `docs/reviews/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_WORKER_RETURN_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_READINESS_MATRIX_2026-07-04.md`
-
-Accepted result: `SMOKE_PASS_BOUNDED`.
-
-Runtime receipt boundary: one direct PowerShell call-operator MinerU CLI
-pipeline invocation exited `0` in 25.465s, produced six metadata-visible files
-under ignored `.cvf/runtime`, and left no lingering process. The accepted
-evidence does not quote source or generated extraction content and does not
-claim extraction accuracy, document truth, legal advice quality, current-law
-correctness, workflow-chain completion, public-sync, provider/live proof, or
-production readiness.
-
-Verification: worker-return fast gate PASS, pre-implementation autorun PASS
-74/74, reviewer-return steward PASS, and material pre-commit hook PASS 79/79.
-
-T4 release disposition: released for fresh GC-018/work-order authoring only.
-T4 is not already closed and no workflow-chain completion claim exists.
-
-MSEA-R24-T3A MinerU path-quoting-safe local pipeline rerun dispatch was
-committed at material commit `1f169c74`.
-
-Dispatch artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_2026-07-04.md`
-
-Worker return path:
-
-- `docs/reviews/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_WORKER_RETURN_2026-07-04.md`
-
-Companion reference path:
-
-- `docs/reference/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_READINESS_MATRIX_2026-07-04.md`
-
-Dispatch verification: pre-dispatch autorun PASS 72/72, dispatch steward PASS,
-and material pre-commit hook PASS 79/79.
-
-T4 release disposition: HELD until reviewer accepts a successful smoke receipt.
-
-Commit mode: `WORKER_MUST_NOT_COMMIT`.
-
-Allowed worker result tokens: `SMOKE_PASS_BOUNDED`,
-`SMOKE_FAIL_DIAGNOSTIC_RECORDED`, `HOLD_PENDING_RUNTIME_ENV_FIX`,
-`HOLD_ALL_RUNTIME_LANES`.
+Recent predecessor anchors: R26 dispatch `b3bcf7cb`, R25 closure `1e58d75a`,
+and R24-T4 policy closure `224a31a8`. Older R24 and MSEA runtime/cache/sample
+history is intentionally summarized out of the active handoff; use
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`, state entries, and archived handoffs
+for full details.
 
 ## Next Allowed Move
 
-Next allowed move: execute MSEA-R26-T1 worker under WORKER_MUST_NOT_COMMIT using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R26_T1_MINERU_RECEIPT_SCHEMA_WRITER_CONTRACT_AND_CHECKER_CANDIDATE_DESIGN_2026-07-04.md`.
+Next allowed move: select the next MinerU CVF-foundation route and author a
+fresh GC-018/source-verified roadmap or work order only after that selection.
+Reasonable foundation candidates are adapter/memory route-matrix refinement,
+checker-candidate gap triage, or another source-backed contract/policy surface.
 
-Worker may create only the R26-T1 worker return and companion reference named in
-the work order, run pre-implementation autorun plus worker-return fast gate, and
-leave changes uncommitted. Forbidden without fresh authority: MinerU runtime
-execution, model download/cache mutation, ModelScope, VLM/hybrid/http-client/
-router/Gradio/Docker/WSL, manual document body read, generated extraction
-content quotation, Candidate Group A source or generated output copy/import into
-governed repo, provider/live proof, public-sync, RAG/S3/schema-writer/checker/
-adapter/package/memory-layer/Web/MCP/model-router/action-authority
-implementation, evaluation deep dive, benchmark, document-truth,
-extraction-accuracy, legal quality, current-law correctness, workflow-chain
-production readiness, stage by worker, commit by worker, push, or provider/live
-governance proof.
+No active worker execution is currently authorized. Forbidden without fresh
+authority: MinerU runtime execution, model download/cache mutation, ModelScope,
+VLM/hybrid/http-client/router/Gradio/Docker/WSL, manual document body read,
+generated extraction content quotation, Candidate Group A source or generated
+output copy/import into governed repo, provider/live proof, public-sync, RAG/
+S3/schema-writer/checker/adapter/package/memory-layer/Web/MCP/model-router/
+action-authority implementation, evaluation deep dive, benchmark,
+document-truth, extraction-accuracy, legal quality, current-law correctness,
+workflow-chain production readiness, stage by worker, commit by worker, push,
+or provider/live governance proof.
 
 LHW24 remains the latest closed numbered LHW wave.
 
-## Core Guard Self-Protection Authorization - MSEA-R26-T1 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R26-T1 Closure Session Sync
 
 Authorized guard-maintenance scope: session-sync only after MSEA-R26-T1 material
-dispatch commit `b3bcf7cb`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door current work, new state entry,
-and this handoff.
+closure commit `4b8166ad`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current work, closure state
+entry, and this handoff.
 
 Protected paths authorized for this session-sync:
 
@@ -230,25 +118,27 @@ Protected paths authorized for this session-sync:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/mseaR26T1ReceiptSchemaWriterContractDispatch20260704.json`
+- `CVF_SESSION/state/entries/mseaR26T1ReceiptSchemaWriterContractClosure20260704.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
-Reason: MSEA-R26-T1 material dispatch commit `b3bcf7cb` created the GC-018
-baseline and work order; continuity must route the next move to
-WORKER_MUST_NOT_COMMIT worker execution only.
+Reason: MSEA-R26-T1 material closure commit `4b8166ad` accepted the worker
+return and companion reference; continuity must route the next move to
+foundation-route selection rather than worker execution or use-case deep dive.
 
-Rollback boundary: revert only this MSEA-R26-T1 dispatch session-sync if
-rejected; do not revert material dispatch commit `b3bcf7cb` or older MSEA
+Rollback boundary: revert only this MSEA-R26-T1 closure session-sync if
+rejected; do not revert material closure commit `4b8166ad` or older MSEA
 history.
 
 | Protected path | Authorized update |
 |---|---|
-| `AGENT_HANDOFF_V35_2026-07-03.md` | Record R26-T1 dispatch continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
-| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after R26-T1 material dispatch commit `b3bcf7cb`. |
+| `AGENT_HANDOFF_V35_2026-07-03.md` | Record R26-T1 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after R26-T1 material closure commit `4b8166ad`. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerated bootstrap read model from state sources. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R26-T1 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R26-T1 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR26T1ReceiptSchemaWriterContractDispatch20260704.json` | Add state source entry for R26-T1 material dispatch commit `b3bcf7cb`. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MSEA-R26-T1 worker execution only. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R26-T1 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R26-T1 closed pending foundation-route selection. |
+| `CVF_SESSION/state/entries/mseaR26T1ReceiptSchemaWriterContractDispatch20260704.json` | Leave dispatch evidence as predecessor state. |
+| `CVF_SESSION/state/entries/mseaR26T1ReceiptSchemaWriterContractClosure20260704.json` | Add state source entry for R26-T1 material closure commit `4b8166ad`. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to foundation-route selection only. |
 
 ## Core Guard Self-Protection Authorization - MSEA-R25 Closure Session Sync
 
