@@ -46,7 +46,7 @@ Startup acknowledged: current mode=`msea_r24_t3a_smoke_receipt_closed_pending_t4
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `04b99044` MSEA-R24-T3A smoke receipt acceptance |
+| Latest material packet | `0aa1f6c2` MSEA-R24-T4 workflow receipt policy dispatch |
 | Latest session-sync target | session sync after MSEA-R24-T3A acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
@@ -55,6 +55,23 @@ Startup acknowledged: current mode=`msea_r24_t3a_smoke_receipt_closed_pending_t4
 `msea_r24_t3a_smoke_receipt_closed_pending_t4_work_order_authoring`
 
 ## Latest Changes
+
+MSEA-R24-T4 MinerU workflow-chain receipt policy and private output handling
+dispatch was committed at material commit `0aa1f6c2`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_2026-07-04.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_2026-07-04.md`
+
+Dispatch verification: pre-dispatch autorun PASS 72/72, dispatch steward PASS,
+and material pre-commit hook PASS 79/79.
+
+T4 dispatch is docs-only. It authorizes worker creation of the named worker
+return and policy reference, but no MinerU rerun, generated output content
+read, Candidate Group A source/output import, public-sync, provider/live proof,
+schema/writer/adapter/checker/package/Web/MCP/model-router/action-authority
+work, or production workflow-chain claim.
 
 MSEA-R24-T3A MinerU path-quoting-safe local pipeline rerun worker return was
 accepted at material commit `04b99044`.
