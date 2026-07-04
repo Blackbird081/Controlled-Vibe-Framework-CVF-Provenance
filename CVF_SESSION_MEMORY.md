@@ -31,32 +31,32 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t7_actual_quality_report_source_pointer_production_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute the no-commit MSEA-R28-T7 worker per the committed work order; parked checkpoint=memory-route release, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, T8-T10, and production workflow lanes remain deferred until T7 worker return is reviewed; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t7_actual_quality_report_source_pointer_production_implementation_closed_pending_r28_t8_downstream_use_and_memory_route_release_decision_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T8 GC-018/source-verified downstream-use and memory-route release decision work order; parked checkpoint=memory-route write, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, T9/T10 execution, and production workflow lanes remain deferred until T8 is authored, gated, reviewed, and accepted; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t7_actual_quality_report_source_pointer_production_implementation_dispatched_pending_worker_return`
+Current mode marker: `msea_r28_t7_actual_quality_report_source_pointer_production_implementation_closed_pending_r28_t8_downstream_use_and_memory_route_release_decision_work_order_authoring`
 
-Current mode: `msea_r28_t7_actual_quality_report_source_pointer_production_implementation_dispatched_pending_worker_return`
+Current mode: `msea_r28_t7_actual_quality_report_source_pointer_production_implementation_closed_pending_r28_t8_downstream_use_and_memory_route_release_decision_work_order_authoring`
 
-`msea_r28_t7_actual_quality_report_source_pointer_production_implementation_dispatched_pending_worker_return`
+`msea_r28_t7_actual_quality_report_source_pointer_production_implementation_closed_pending_r28_t8_downstream_use_and_memory_route_release_decision_work_order_authoring`
 
 Previous mode:
 
-`msea_r28_t6_quality_report_source_pointer_production_decision_closed_pending_r28_t7_actual_quality_report_source_pointer_production_implementation_work_order_authoring`
+`msea_r28_t7_actual_quality_report_source_pointer_production_implementation_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R28-T7 MinerU Actual Quality Report Source Pointer Production Implementation | `3b4488e5` | DISPATCH_READY_PENDING_WORKER_RETURN; worker may modify only the named receipt writer source/test files and worker return, must run focused pytest, worker-return fast gate, and pre-implementation autorun, then leave changes uncommitted for reviewer closure. |
+| MSEA-R28-T8 downstream-use and memory-route release decision | `67b98170` | WORK_ORDER_AUTHORING_NEXT; must be fresh GC-018/source-verified, no-commit, decision-only unless explicitly authorized; no memory/RAG write or T9/T10 execution before T8 gates and acceptance. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Actual quality-report/source-pointer production | `3b4488e5` | RELEASED_FOR_R28_T7_WORKER_EXECUTION_ONLY; no-commit worker execution is allowed only inside the committed work order boundaries. |
-| Memory-route release | `6bad1865` | MEMORY_ROUTE_STILL_HELD_PENDING_ACTUAL_PRODUCTION_AND_MEMORY_OWNER_DECISION; requires actual quality report/source pointer, allowed downstream use, claim boundary, and a dedicated memory-owner decision before release. |
+| Actual quality-report/source-pointer production | `67b98170` | CLOSED_PASS_BOUNDED; deterministic metadata-only helper and focused tests accepted. |
+| Memory-route release | `67b98170` | MEMORY_ROUTE_STILL_HELD_PENDING_ALLOWED_DOWNSTREAM_USE_AND_MEMORY_OWNER_DECISION; requires a dedicated T8 release decision before any memory/RAG write. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
@@ -64,6 +64,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T7 MinerU Actual Quality Report Source Pointer Production Implementation | `67b98170` | CLOSED_PASS_BOUNDED; accepted deterministic metadata-only quality-report/source-pointer helper and focused tests; focused pytest PASS 29/29, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; memory route remains `MEMORY_ROUTE_HELD_PENDING_ALLOWED_DOWNSTREAM_USE_AND_MEMORY_OWNER_DECISION`; no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, checker/hook edit, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
 | MSEA-R28-T7 MinerU Actual Quality Report Source Pointer Production Implementation dispatch | `3b4488e5` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit implementation work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; worker may modify only `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`, `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`, and the named worker return; no MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, checker/hook edit, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
 | MSEA-R28-T6 MinerU Quality Report Source Pointer Production Decision | `6bad1865` | CLOSED_PASS_BOUNDED; accepted docs-only worker return and companion matrix; selected `QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_MATRIX_READY` and `QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_ONLY`; memory route remains `MEMORY_ROUTE_STILL_HELD_PENDING_ACTUAL_PRODUCTION_AND_MEMORY_OWNER_DECISION`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no actual quality-report production, source-pointer resolution, source/test/checker edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG release, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R28-T6 MinerU Quality Report Source Pointer Production Decision dispatch | `03e04018` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit docs-only work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; worker may create only worker return and companion matrix; no source/test/checker edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push |
@@ -232,28 +233,50 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t7_actual_quality_report_source_pointer_production_implementation_dispatched_pending_worker_return`
+Mode: `msea_r28_t7_actual_quality_report_source_pointer_production_implementation_closed_pending_r28_t8_downstream_use_and_memory_route_release_decision_work_order_authoring`
 
-Next allowed move: execute the no-commit MSEA-R28-T7 worker per the committed
-work order for actual quality-report/source-pointer production implementation.
+Next allowed move: author a fresh MSEA-R28-T8 GC-018/source-verified no-commit
+work order for downstream-use and memory-route release decision.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_2026-07-04.md`
+`docs/reviews/CVF_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md`
 
-T7 worker may modify only the named receipt writer source/test files and worker
-return path, must run focused pytest, worker-return fast gate, and
-pre-implementation autorun, then leave changes uncommitted. Memory-route
-release remains held pending actual production evidence, allowed downstream
-use, claim boundary, and a dedicated memory-owner decision. Do not start
-T8/T9/T10, run MinerU, read private/generated content, import Candidate Group A,
-write memory/RAG, run provider/live proof, public-sync, build standalone app
-surfaces, perform legal/use-case deep dive, claim extraction accuracy, document
-truth, legal quality, current-law correctness, workflow-chain production
-readiness, stage worker changes, commit worker changes, or push before T7
-worker return is reviewed and accepted.
+T8 must use accepted T7 implementation evidence, R28-T6 production decision
+matrix, R27 scan-to-memory route matrix, R24-T4 private-output policy, current
+receipt writer/checker source, checker read-ahead, Source Verification Block,
+ADIF Defect Registry Disclosure, Agent Handoff Contract Control Block, Reviewer
+Closure Conversion, pre-dispatch autorun gates, and GC-051 path-literal
+discipline. T8 is decision-only unless its packet explicitly authorizes
+implementation. Do not start T9/T10, run MinerU, read private/generated
+content, import Candidate Group A, write memory/RAG, run provider/live proof,
+public-sync, build standalone app surfaces, perform legal/use-case deep dive,
+claim extraction accuracy, document truth, legal quality, current-law
+correctness, workflow-chain production readiness, stage worker changes, commit
+worker changes, or push before T8 is authored, gated, reviewed, and accepted.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T7 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T7 material
+closure commit `67b98170`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door continuity, active handoff, and
+closure state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T7ActualQualityReportSourcePointerProductionImplementationClosure20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this MSEA-R28-T7 closure session-sync if
+rejected; do not revert material closure commit `67b98170` or older MSEA
+history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T7 Dispatch Session Sync
 
