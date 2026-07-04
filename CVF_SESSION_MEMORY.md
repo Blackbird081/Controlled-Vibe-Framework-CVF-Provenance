@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V35_2026-07-03.md`
+4. `AGENT_HANDOFF_V36_2026-07-04.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,40 +24,39 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V35_2026-07-03.md` |
+| Active handoff | `AGENT_HANDOFF_V36_2026-07-04.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute MSEA-R28-T3 worker under WORKER_MUST_NOT_COMMIT, producing only the worker return and checker-candidate design matrix; parked checkpoint=checker implementation, hook wiring, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T4 GC-018/source-verified work order for receipt-boundary checker implementation and hook wiring decision; parked checkpoint=checker implementation, hook wiring, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until that fresh packet passes gates; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_dispatched_pending_worker_return`
+Current mode marker: `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`
 
-Current mode: `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_dispatched_pending_worker_return`
+Current mode: `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`
 
-`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_dispatched_pending_worker_return`
+`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`
 
 Previous mode:
 
-`msea_r28_t2_mineru_receipt_boundary_checker_memory_route_selection_closed_pending_r28_t3_checker_candidate_design_authoring`
+`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_dispatched_pending_worker_return`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design | `0567257f` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must not commit and may create only the worker return plus companion checker-candidate design matrix. |
+| None | N/A | No worker is currently dispatched. Next move is R28-T4 packet authoring only. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Receipt-boundary checker implementation | `0567257f` | HELD; R28-T3 dispatch authorizes design only, not checker code or hook wiring. |
-| Receipt-boundary checker-candidate design | `3e230445` | SELECTED_FOR_R28_T3_PACKET_AUTHORING_ONLY; no checker implementation or hook wiring authorized yet. |
-| Memory-route release | `3e230445` | HOLD_MEMORY_ROUTE_RELEASE_PENDING_RECEIPT_CHECKER_AND_QUALITY; requires receipt checker, quality/source-pointer prerequisites, allowed downstream use, and claim boundary before release. |
+| Receipt-boundary checker implementation | `4d64e33f` | HELD_PENDING_R28_T4_PACKET; R28-T3 accepted design only, not checker code or hook wiring. |
+| Memory-route release | `4d64e33f` | MEMORY_ROUTE_HELD_PENDING_ACTUAL_CHECKER_AND_QUALITY; requires an actual receipt checker, quality/source-pointer prerequisites, allowed downstream use, and claim boundary before release. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
@@ -65,6 +64,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design | `4d64e33f` | CLOSED_PASS_BOUNDED; accepted worker return and companion design matrix; selected `RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY`; checker implementation remains `CHECKER_IMPLEMENTATION_HELD_PENDING_ACCEPTED_DESIGN`; memory route remains `MEMORY_ROUTE_HELD_PENDING_ACTUAL_CHECKER_AND_QUALITY`; worker-return fast gate PASS after reviewer GC-051 path-literal repair, pre-implementation autorun PASS 74/74, reviewer-return commit steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, source/test edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design dispatch | `0567257f` | DISPATCH_READY_PENDING_WORKER_RETURN; created GC-018 baseline and source-verified no-commit work order; pre-dispatch autorun PASS 72/72, dispatch steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, source/test edit, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R28-T2 MinerU Receipt Boundary Checker And Memory Route Release Selection | `3e230445` | CLOSED_PASS_BOUNDED; selected `SELECT_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY`; memory-route release remains `HOLD_MEMORY_ROUTE_RELEASE_PENDING_RECEIPT_CHECKER_AND_QUALITY`; runtime/app lanes remain `HOLD_RUNTIME_AND_APP_LANES_FOR_CVF_FOUNDATION_ONLY`; worker-return fast gate PASS after reviewer path/token repair, pre-implementation autorun PASS 74/74, reviewer-return commit steward PASS, material pre-commit hook PASS 79/79; no checker implementation/hook wiring, MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
 | MSEA-R28-T1 MinerU Minimal Metadata Receipt Writer | `23177f27` | CLOSED_PASS_BOUNDED; implemented `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`, focused tests, worker return, and GC-051 registry coverage; focused pytest PASS 19/19, pre-implementation autorun PASS 74/74, worker-return fast gate PASS, reviewer-fast PASS 59/59, commit steward PASS, material pre-commit hook PASS 79/79; downstream release remains `HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE`; no MinerU runtime, private/generated content read, Candidate Group A import, checker hook, memory/RAG write, public-sync, provider/live proof, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push |
@@ -80,6 +80,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T3 MinerU Receipt Boundary Checker Candidate Design | `4d64e33f` | CLOSED_PASS_BOUNDED; accepted design-only checker-candidate matrix; next move is R28-T4 GC-018/source-verified work-order authoring for checker implementation/hook wiring decision only |
 | MSEA-R28-T2 MinerU Receipt Boundary Checker And Memory Route Release Selection | `3e230445` | CLOSED_PASS_BOUNDED; selected receipt-boundary checker-candidate design only; next move is R28-T3 GC-018/source-verified work-order authoring only |
 | MSEA-R28-T1 MinerU Minimal Metadata Receipt Writer | `23177f27` | CLOSED_PASS_BOUNDED; next move is MSEA-R28-T2 route-selection/GC-018 work-order authoring only |
 | MSEA-R28 Foundation Implementation Sequence Audit And Selection | `e2bb6b61` | CLOSED_PASS_BOUNDED; selected minimal metadata receipt writer first; next move is R28-T1 dispatch authoring only |
@@ -222,28 +223,51 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_dispatched_pending_worker_return`
+Mode: `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`
 
-Next allowed move: execute the MSEA-R28-T3 worker under
-WORKER_MUST_NOT_COMMIT. Worker may create only:
-
-- `docs/reviews/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_MATRIX_2026-07-04.md`
+Next allowed move: author a fresh MSEA-R28-T4 GC-018/source-verified work
+order for receipt-boundary checker implementation and hook wiring decision.
 
 Current material source:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_2026-07-04.md`
+`docs/reviews/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md`
 
-Worker must design checker-candidate scope and evidence contract only. No
-checker code, hook wiring, source/test edit, MinerU runtime execution, private
-document read, generated output content read/quote, Candidate Group A source or
-generated output import, public-sync, provider/live proof, memory-layer/RAG/S3/
-Web/MCP/model-router/action-authority implementation, standalone PDF app,
-legal/use-case deep dive, evaluation deep dive, extraction accuracy, document
-truth, legal quality, current-law correctness, workflow-chain production
-readiness, worker stage/commit, or push is authorized.
+R28-T4 packet authoring must use the accepted R28-T3 worker return and companion
+design matrix, R28-T1 writer source evidence, R26 checker-candidate criteria,
+R24-T4 private-output policy, and R27 scan-to-memory route matrix. No checker
+code, hook wiring, source/test edit, MinerU runtime execution, private document
+read, generated output content read/quote, Candidate Group A source or generated
+output import, public-sync, provider/live proof, memory-layer/RAG/S3/Web/MCP/
+model-router/action-authority implementation, standalone PDF app, legal/use-case
+deep dive, evaluation deep dive, extraction accuracy, document truth, legal
+quality, current-law correctness, workflow-chain production readiness, worker
+stage/commit, or push is authorized until a fresh packet passes gates.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T3 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T3 material
+closure commit `4d64e33f`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current/closed work, closure
+state entry, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T3MineruReceiptBoundaryCheckerCandidateDesignClosure20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Authorization boundary: session-sync only. No checker implementation, hook
+wiring, source/test edit, runtime execution, memory/RAG write, private or
+generated content read, public-sync, provider/live proof, app build,
+use-case deep dive, production-readiness claim, worker stage/commit/push, or
+public claim is authorized.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T3 Dispatch Session Sync
 
@@ -254,7 +278,7 @@ state entry, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -277,7 +301,7 @@ state entry, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -300,7 +324,7 @@ state entry, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -322,7 +346,7 @@ state entry, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -344,7 +368,7 @@ state entry, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -369,7 +393,7 @@ state entry, and this handoff.
 
 Protected paths authorized for this session-sync:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -388,7 +412,7 @@ history.
 
 | Protected path | Authorized update |
 |---|---|
-| `AGENT_HANDOFF_V35_2026-07-03.md` | Record R26-T1 closure continuity, active mode, next move, and protected-path authorization. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` | Archived handoff retained prior R26-T1 closure continuity, active mode, next move, and protected-path authorization. |
 | `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after R26-T1 material closure commit `4b8166ad`. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerated bootstrap read model from state sources. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R26-T1 closure session-sync. |
@@ -406,7 +430,7 @@ handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -431,7 +455,7 @@ continuity, and active handoff continuity.
 
 Protected paths:
 
-- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
