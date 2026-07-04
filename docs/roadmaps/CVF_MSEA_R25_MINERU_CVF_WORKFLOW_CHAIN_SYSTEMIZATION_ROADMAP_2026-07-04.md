@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_MSEA_R25_T1_GC018_AND_WORK_ORDER_AUTHORING
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -160,12 +160,12 @@ checker, adapter, and evaluation work.
 | Step | Output | Status |
 |---|---|---|
 | R25.1 | Create this workflow-chain systemization roadmap | COMPLETE |
-| R25.2 | Author MSEA-R25-T1 GC-018 and work order for receipt-envelope contract decision | READY_NEXT |
-| R25.3 | If T1 accepts a minimal envelope, author private-output redaction and artifact-routing decision | FUTURE_DEPENDENT |
-| R25.4 | If T2 accepts private-output routing, author schema/writer/checker feasibility decision | FUTURE_DEPENDENT |
-| R25.5 | If T3 selects a safe contract route, author adapter and memory-layer routing decision | FUTURE_DEPENDENT |
-| R25.6 | If operator wants representative proof, author bounded evaluation/use-case pilot decision | FUTURE_DEPENDENT |
-| R25.7 | If implementation claims require it, author runtime reproof or production-boundary decision | FUTURE_DEPENDENT |
+| R25.2 | Resolve MSEA-R25-T1 receipt-envelope contract decision | COMPLETE_VIA_DECISION_LEDGER |
+| R25.3 | Resolve private-output redaction and artifact-routing decision | COMPLETE_VIA_DECISION_LEDGER |
+| R25.4 | Resolve schema/writer/checker feasibility decision | COMPLETE_VIA_DECISION_LEDGER_WITH_IMPLEMENTATION_HOLD |
+| R25.5 | Resolve adapter and memory-layer routing decision | COMPLETE_VIA_DECISION_LEDGER_WITH_IMPLEMENTATION_HOLD |
+| R25.6 | Resolve bounded evaluation/use-case pilot decision | COMPLETE_WITH_DEEP_DIVE_HOLD |
+| R25.7 | Resolve runtime reproof or production-boundary decision | COMPLETE_WITH_PRODUCTION_BOUNDARY_REJECTION |
 
 ## T1-T6 Dependency Contract
 
@@ -401,18 +401,46 @@ authorized.
 
 ## Claim Boundary
 
-This roadmap authorizes only future MSEA-R25-T1 GC-018/work-order authoring for
-a source-verified receipt-envelope contract decision. T2 private-output routing,
-T3 schema/writer/checker feasibility, T4 adapter and memory-layer routing, T5
-bounded evaluation/use-case pilot decision, and T6 runtime reproof or
-production-boundary decision each require their own fresh source-verified work
-order and dependency-release evidence. This roadmap does not authorize or claim
-MinerU rerun, cache mutation, model download, parser/OCR/VLM/API/router/Gradio/
-Docker/WSL execution, local service startup, source document import, document
-body read, private generated output read or quotation, provider/live proof,
-public-sync export, RAG indexing, checker enforcement, package activation,
-schema implementation, receipt-writer code, adapter implementation, memory
-ingestion, document truth, extraction accuracy, legal advice quality,
-current-law correctness, benchmark, production readiness, model-router
-behavior, action authority, automatic invocation, or universal document
-intelligence.
+This roadmap is closed as bounded documentation/reference systemization. It
+authorizes no worker execution, MinerU rerun, cache mutation, model download,
+parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup,
+source document import, document body read, private generated output read or
+quotation, provider/live proof, public-sync export, RAG indexing, checker
+enforcement, package activation, schema implementation, receipt-writer code,
+adapter implementation, memory ingestion, document truth, extraction accuracy,
+legal advice quality, current-law correctness, benchmark, production readiness,
+model-router behavior, action authority, automatic invocation, or universal
+document intelligence. Future implementation-facing work requires a fresh
+source-verified GC-018 and work order.
+
+## Roadmap Closure Decision Ledger
+
+| Tranche | Closure token | Closure evidence | Downstream result |
+|---|---|---|---|
+| MSEA-R25-T1 | `SELECT_MINIMAL_RECEIPT_ENVELOPE_CONTRACT` | `docs/reference/CVF_MSEA_R25_MINERU_WORKFLOW_CHAIN_SYSTEMIZATION_DECISION_LEDGER_2026-07-04.md` Minimal Receipt Envelope Contract | T2 resolved inside closure chain |
+| MSEA-R25-T2 | `SELECT_PRIVATE_OUTPUT_ROUTING_POLICY` | companion decision ledger Private Output Routing Policy | T3 resolved inside closure chain |
+| MSEA-R25-T3 | `SELECT_SCHEMA_WRITER_CONTRACT_DRAFT`; `SELECT_CHECKER_CANDIDATE_ONLY` | companion decision ledger Future Lane Routing | implementation held |
+| MSEA-R25-T4 | `SELECT_ADAPTER_MEMORY_ROUTE_MATRIX` | companion decision ledger Future Lane Routing | implementation held |
+| MSEA-R25-T5 | `HOLD_USE_CASE_DEEP_DIVE` | companion decision ledger and roadmap Non-Goals | deep evaluation held |
+| MSEA-R25-T6 | `SELECT_PRODUCTION_BOUNDARY_REJECTION` | companion decision ledger and roadmap Claim Boundary | runtime proof held until future implementation claim |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R25-AR-001 | `docs/reviews/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_COMPLETION_2026-07-04.md` | N/A with reason: markdown completion artifact | `CLOSED_PASS_BOUNDED` | `CLOSED_PASS_BOUNDED` | PASS |
+| R25-AR-002 | `docs/reference/CVF_MSEA_R25_MINERU_WORKFLOW_CHAIN_SYSTEMIZATION_DECISION_LEDGER_2026-07-04.md` | N/A with reason: markdown reference artifact | all T1-T6 lanes resolved | all T1-T6 lanes resolved | PASS |
+| R25-AR-003 | runtime receipt | N/A with reason: no runtime receipt created | no runtime proof claim | no runtime proof claim | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: operator authorized Codex multi-role direct closure for roadmap decisions; no delegated work-order artifact was created in this bounded closure. | N/A with reason | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_COMPLETION_2026-07-04.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-07-04.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: R25 closure does not authorize generated registry mutation; open a fresh registry work order only if a later owner surface needs registration. | BLOCKED with reason | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: R25 closure does not authorize markdown registry mutation; open a fresh registry work order only if a later owner surface needs registration. | BLOCKED with reason | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external evidence; existing pinned source mirror and governed MSEA artifacts are cited only. | N/A with reason | N/A with reason |
+| System loop interlock | pre-closure autorun and material pre-commit hook | planned before commit | PASS |
+| Session continuity | session-sync after material commit | required after material closure | PASS |
