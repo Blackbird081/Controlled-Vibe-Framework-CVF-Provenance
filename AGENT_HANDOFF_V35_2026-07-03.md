@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r24_t3a_smoke_receipt_closed_pending_t4_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R24-T4 workflow-chain receipt policy and private output handling work order; parked checkpoint=T4 may proceed only as fresh GC-018/work-order authoring after accepted T3A smoke receipt.
+Startup acknowledged: current mode=`msea_r24_t4_workflow_receipt_policy_closed_pending_r25_workflow_chain_systemization_roadmap_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author MSEA-R25 MinerU CVF workflow-chain systemization roadmap; parked checkpoint=R25 may proceed only as roadmap authoring using T4 private receipt policy, not implementation.
 
 ## Current State
 
@@ -46,15 +46,34 @@ Startup acknowledged: current mode=`msea_r24_t3a_smoke_receipt_closed_pending_t4
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `0aa1f6c2` MSEA-R24-T4 workflow receipt policy dispatch |
-| Latest session-sync target | session sync after MSEA-R24-T3A acceptance |
+| Latest material packet | `224a31a8` MSEA-R24-T4 workflow receipt policy acceptance |
+| Latest session-sync target | session sync after MSEA-R24-T4 acceptance |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r24_t3a_smoke_receipt_closed_pending_t4_work_order_authoring`
+`msea_r24_t4_workflow_receipt_policy_closed_pending_r25_workflow_chain_systemization_roadmap_authoring`
 
 ## Latest Changes
+
+MSEA-R24-T4 MinerU workflow-chain receipt policy and private output handling
+worker return was accepted at material commit `224a31a8`.
+
+Accepted artifacts:
+
+- `docs/reviews/CVF_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_WORKER_RETURN_2026-07-04.md`
+- `docs/reference/CVF_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_POLICY_2026-07-04.md`
+
+Accepted result: `WORKFLOW_RECEIPT_POLICY_READY`.
+
+T4 policy boundary: no MinerU rerun, no generated output content read, no
+Candidate Group A source/output import, no public-sync, no provider/live proof,
+no schema/writer/adapter/checker/package/Web/MCP/model-router/action-authority
+work, and no production workflow-chain claim. R25 is released for roadmap
+authoring only.
+
+Verification: worker-return fast gate PASS, pre-implementation autorun PASS
+74/74, reviewer-return steward PASS, and material pre-commit hook PASS 79/79.
 
 MSEA-R24-T4 MinerU workflow-chain receipt policy and private output handling
 dispatch was committed at material commit `0aa1f6c2`.
@@ -126,21 +145,54 @@ Allowed worker result tokens: `SMOKE_PASS_BOUNDED`,
 
 ## Next Allowed Move
 
-Next allowed move: author fresh MSEA-R24-T4 GC-018 baseline and source-verified
-work order for workflow-chain receipt policy and private output handling only,
-using the accepted T3A smoke receipt and R17 privacy boundary as prerequisites.
+Next allowed move: author MSEA-R25 MinerU CVF workflow-chain systemization
+roadmap using the accepted T4 private receipt policy as planning boundary.
 
 Forbidden without fresh authority: MinerU rerun, model download/cache mutation,
 ModelScope, VLM/hybrid/http-client/router/Gradio/Docker/WSL, manual document
 body read, generated extraction content quotation, Candidate Group A source or
 generated output copy/import into governed repo, provider/live proof,
 public-sync, RAG/S3/schema/writer/adapter/checker/package/Web/MCP/model-router/
-action-authority work, benchmark, document-truth, extraction-accuracy, legal
-advice quality, current-law correctness, workflow-chain completion before T4
-closure, production readiness, stage by worker, commit by worker, push, or
-provider/live governance proof.
+action-authority implementation, benchmark, document-truth,
+extraction-accuracy, legal advice quality, current-law correctness, production
+readiness, stage by worker, commit by worker, push, or provider/live governance
+proof.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R24-T4 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R24-T4
+material acceptance commit `224a31a8`, including active mode, next allowed move,
+generated active state, front-door current work, closure state entry, and this
+handoff.
+
+Protected paths authorized for this session-sync:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR24T4WorkflowReceiptPolicyClosure20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Reason: reviewer accepted MSEA-R24-T4 material worker-return commit `224a31a8`
+and must route next allowed move to MSEA-R25 roadmap authoring only.
+
+Rollback boundary: revert only this MSEA-R24-T4 acceptance session-sync if
+rejected; do not revert the accepted T4 material artifacts or older MSEA
+history.
+
+| Protected path | Authorized update |
+|---|---|
+| `AGENT_HANDOFF_V35_2026-07-03.md` | Record T4 closure continuity, active mode, next move, protected-path authorization, and GC-020 material marker. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, closed/latest work, startup acknowledgment, and next allowed move after T4 material acceptance commit `224a31a8`. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerated bootstrap read model from state sources. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after T4 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T4 closed pending R25 roadmap authoring. |
+| `CVF_SESSION/state/entries/mseaR24T4WorkflowReceiptPolicyClosure20260704.json` | Add state source entry for T4 material worker-return commit `224a31a8`. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MSEA-R25 roadmap authoring only. |
 
 ## Core Guard Self-Protection Authorization - MSEA-R24-T3A Acceptance Session Sync
 
