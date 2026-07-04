@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1432,
+  "stateKey": "mseaR28T1MineruMinimalMetadataReceiptWriterDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "materialCommit": "45bae1d4",
+    "materialCommitFull": "45bae1d44522615694f62020f331abd7a52e3519",
+    "dispatchBaseHead": "0892f634",
+    "predecessorMaterialCommit": "e2bb6b61",
+    "predecessorSessionSyncCommit": "0892f634",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md",
+    "allowedWorkerPaths": [
+      "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py",
+      "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py",
+      "docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md"
+    ],
+    "selectedRoute": "MINIMAL_METADATA_RECEIPT_WRITER",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R28-T1 worker under WORKER_MUST_NOT_COMMIT, producing only the allowed writer source, focused test, and worker return.",
+    "claimBoundary": "R28-T1 dispatch authorizes a deterministic metadata-only receipt writer helper and focused tests only. It does not authorize checker implementation, MinerU runtime execution, private document read, generated output content read or quote, Candidate Group A source or generated output import, public-sync, provider/live proof, source/package mutation beyond the allowed writer/test files, schema/checker/adapter/memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone PDF application, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, stage or commit by worker, or push."
+  }
+}

@@ -31,33 +31,33 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=author fresh GC-018/source-verified MSEA-R28-T1 work order for the selected minimal metadata receipt writer lane; parked checkpoint=worker execution, receipt-writer implementation, checker/adapter/memory/RAG implementation, runtime, standalone PDF app, and legal/use-case deep-dive lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V35_2026-07-03.md; next allowed move=execute the MSEA-R28-T1 minimal metadata receipt writer worker under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=checker/adapter/memory/RAG implementation, runtime, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until separately authorized; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
+Current mode marker: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
 
-Current mode: `msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
+Current mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
 
-`msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
+`msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r27_document_intelligence_plane_integration_closed_pending_foundation_implementation_sequence_selection`
+`msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
 
 ## Current Dispatched Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| None | `e2bb6b61` | No active worker dispatch is open after R28 selection audit. |
+| MSEA-R28-T1 MinerU Minimal Metadata Receipt Writer dispatch | `45bae1d4` | DISPATCH_READY_PENDING_WORKER_RETURN; worker must use `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md` and `docs/baselines/CVF_GC018_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`; allowed worker paths are `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`, `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`, and `docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`; worker must not stage, commit, or push. |
 
 ## Current Held Follow-Up Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Receipt-writer implementation | `e2bb6b61` | SELECTED_FOR_DISPATCH_AUTHORING_ONLY; R28-T1 still requires fresh GC-018/source-verified work order before any implementation. |
-| Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `e2bb6b61` | DEFERRED; R28 selected writer first and held checker/memory/runtime lanes behind later packets. |
-| Standalone PDF app and legal/use-case deep dive | `e2bb6b61` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
+| Receipt-writer implementation | `45bae1d4` | RELEASED_ONLY_FOR_R28_T1_WORKER; bounded to the no-commit worker paths in the dispatch packet. |
+| Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED; R28-T1 authorizes only a metadata-only writer helper and focused tests, not checker/memory/runtime lanes. |
+| Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work, not a separate app or project use case. |
 
 ## Current Closed Work
 
@@ -215,31 +215,59 @@ Previous mode:
 
 ## Next Allowed Move
 
-Mode: `msea_r28_minimal_metadata_receipt_writer_lane_selected_pending_gc018_work_order_authoring`
+Mode: `msea_r28_t1_mineru_minimal_metadata_receipt_writer_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh GC-018 baseline and source-verified
-MSEA-R28-T1 work order for the selected minimal metadata-only MinerU receipt
-writer lane. The dispatch must source-verify R24-T4, R26, R27, and Extraction
-Foundation owner files before implementation and must preserve private-output,
-no-runtime, no-memory-write, no-RAG-write, no-product-app, and no-legal-use-case
-boundaries.
+Next allowed move: execute the MSEA-R28-T1 minimal metadata receipt writer
+worker under `WORKER_MUST_NOT_COMMIT` using the source-verified dispatch at
+material commit `45bae1d4`.
 
 Current material source:
 
-`docs/reviews/CVF_MSEA_R28_FOUNDATION_IMPLEMENTATION_SEQUENCE_AUDIT_AND_SELECTION_2026-07-04.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_2026-07-04.md`
 
-No active worker execution is currently authorized. No receipt-writer
-implementation, checker implementation, MinerU runtime execution, private
+Worker may create only
+`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`,
+`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`,
+and
+`docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md`.
+Worker must capture `executionBaseHead`, run focused tests plus required
+pre-implementation and worker-return gates, and leave changes uncommitted for
+reviewer/closer. No checker implementation, MinerU runtime execution, private
 document read, generated output content read/quote, Candidate Group A source or
-generated output import, public-sync, provider/live proof, schema/checker/
-adapter/source/package/memory/RAG/S3/Web/MCP/model-router/action-authority
-implementation, standalone PDF app, legal/use-case deep dive, evaluation deep
-dive, extraction accuracy, document truth, legal quality, current-law
-correctness, workflow-chain production readiness, worker stage/commit/push, or
-provider/live governance proof is authorized until a fresh R28-T1 dispatch
-exists and passes pre-dispatch gates.
+generated output import, public-sync, provider/live proof, package/checker/source
+mutation beyond the allowed writer/test files, schema/checker/adapter/
+memory-layer/RAG/S3/Web/MCP/model-router/action-authority implementation,
+standalone PDF app, legal/use-case deep dive, evaluation deep dive, extraction
+accuracy, document truth, legal quality, current-law correctness, workflow-chain
+production readiness, worker stage/commit/push, or provider/live governance
+proof is authorized.
 
 LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T1 material
+dispatch commit `45bae1d4`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door current dispatched work, dispatch
+state entry, and active handoff continuity.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V35_2026-07-03.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T1MineruMinimalMetadataReceiptWriterDispatch20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Authorization boundary: session-sync only. No worker execution by the
+session-sync steward, checker implementation, MinerU runtime execution, private
+document read, generated output content read/quote, Candidate Group A source or
+generated output import, public-sync, provider/live proof, package/checker/source
+mutation, schema/checker/adapter/memory/RAG/S3/Web/MCP/model-router/
+action-authority implementation, standalone app, legal/use-case deep dive,
+production-readiness claim, stage, commit, or push is authorized by this block.
 
 ## Core Guard Self-Protection Authorization - MSEA-R26-T1 Closure Session Sync
 
