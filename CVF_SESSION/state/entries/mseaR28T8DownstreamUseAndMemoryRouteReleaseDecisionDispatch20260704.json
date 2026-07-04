@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1445,
+  "stateKey": "mseaR28T8DownstreamUseAndMemoryRouteReleaseDecisionDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "dispatchMaterialCommit": "17d8c1a4",
+    "dispatchMaterialCommitFull": "17d8c1a4336b1530868524d19b464095ec6191c9",
+    "dispatchBaseHead": "5d396bc8",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_2026-07-04.md",
+    "matrixPath": "docs/reference/CVF_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T8_MINERU_DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION_WORKER_RETURN_2026-07-04.md",
+    "selectedRoute": "DOWNSTREAM_USE_AND_MEMORY_ROUTE_RELEASE_DECISION",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "dispatch-quality PASS",
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T8 dispatch authorizes only no-commit docs-only downstream-use and memory-route release decision matrix plus worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker edits, memory/RAG write, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}
