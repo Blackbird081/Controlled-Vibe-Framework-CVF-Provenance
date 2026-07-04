@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1435,
+  "stateKey": "mseaR28T2MineruReceiptBoundaryCheckerMemoryRouteSelectionClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "3e230445",
+    "materialCommitFull": "3e230445dd4fbc51985acb7f1553a689dd7a0d12",
+    "executionBaseHead": "eaffb52e",
+    "dispatchMaterialCommit": "5b67c128",
+    "dispatchSessionSyncCommit": "eaffb52e",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_WORKER_RETURN_2026-07-04.md",
+    "companionDecisionMatrixPath": "docs/reference/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md",
+    "selectedRoute": "SELECT_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY",
+    "memoryRouteDisposition": "HOLD_MEMORY_ROUTE_RELEASE_PENDING_RECEIPT_CHECKER_AND_QUALITY",
+    "runtimeAndAppDisposition": "HOLD_RUNTIME_AND_APP_LANES_FOR_CVF_FOUNDATION_ONLY",
+    "verification": [
+      "worker-return fast gate PASS after reviewer path/token repair",
+      "pre-implementation autorun PASS 74/74 after reviewer path/token repair",
+      "reviewer-return commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "AUTHOR_MSEA_R28_T3_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_FOR_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY",
+    "claimBoundary": "R28-T2 closure accepts docs-only route selection and companion decision matrix. It selects a bounded receipt-boundary checker-candidate design route only and keeps memory-route release held pending receipt checker and quality/source-pointer prerequisites. It does not authorize checker implementation or hook wiring, source/test edits, MinerU runtime execution, private document read, generated output content read or quote, Candidate Group A source or generated output import, public-sync, provider/live proof, memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone PDF application, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker stage/commit/push, or push."
+  }
+}
