@@ -6,19 +6,19 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T3 closure and the V35 handoff rotation.
-Keep the active session ready for R28-T4 checker implementation decision
-packet authoring without implying checker implementation authority.
+Carry compact continuity after MSEA-R28-T4 checker closure. Keep the active
+session ready for R28-T5 quality/source-pointer packet authoring without
+implying memory-route release authority.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after accepting the MSEA-R28-T3
-checker-candidate design lane.
+Target: active CVF session continuity after accepting the MSEA-R28-T4
+receipt-boundary checker implementation and hook-wiring lane.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
 runtime execution, private document or generated-output reads, provider/live
-proof, public-sync, schema/writer/checker/adapter implementation, hook wiring,
+proof, public-sync, schema/writer/adapter implementation beyond a fresh packet,
 memory/RAG writes, standalone PDF app work, legal/use-case deep dive,
 extraction accuracy, document truth, current-law correctness, workflow-chain
 completion, or production-readiness claims.
@@ -33,7 +33,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T4 GC-018/source-verified work order for receipt-boundary checker implementation and hook wiring decision; parked checkpoint=checker implementation, hook wiring, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until that fresh packet passes gates.
+Startup acknowledged: current mode=`msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh MSEA-R28-T5 GC-018/source-verified work order for quality/source-pointer receipt schema extension and checker update decision; parked checkpoint=memory-route release, runtime, private/generated content read, memory/RAG implementation, standalone PDF app, legal/use-case deep-dive, and production workflow lanes remain deferred until that fresh packet passes gates.
 
 ## Current State
 
@@ -45,45 +45,46 @@ Startup acknowledged: current mode=`msea_r28_t3_mineru_receipt_boundary_checker_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `4d64e33f` MSEA-R28-T3 receipt-boundary checker candidate design closure |
-| Latest session-sync target | session sync after MSEA-R28-T3 closure and V36 rotation |
+| Latest material packet | `0c81b7bc` MSEA-R28-T4 receipt-boundary checker implementation closure |
+| Latest session-sync target | session sync after MSEA-R28-T4 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring`
+`msea_r28_t4_mineru_receipt_boundary_checker_closed_pending_r28_t5_quality_source_pointer_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R28-T3 Receipt Boundary Checker Candidate Design closure is complete at
-material commit `4d64e33f`.
+MSEA-R28-T4 Receipt Boundary Checker Implementation And Hook Wiring Decision
+closure is complete at material commit `0c81b7bc`.
 
 Accepted artifacts:
 
-- `docs/reviews/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_MATRIX_2026-07-04.md`
+- `docs/reviews/CVF_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_WORKER_RETURN_2026-07-04.md`
+- `governance/compat/check_mineru_receipt_boundary.py`
+- `governance/compat/test_check_mineru_receipt_boundary.py`
 
-Selected design disposition:
-`RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY`.
-Checker implementation disposition:
-`CHECKER_IMPLEMENTATION_HELD_PENDING_ACCEPTED_DESIGN`.
+Selected implementation disposition:
+`RECEIPT_BOUNDARY_CHECKER_IMPLEMENTED_AND_WIRED`.
 Memory-route disposition:
-`MEMORY_ROUTE_HELD_PENDING_ACTUAL_CHECKER_AND_QUALITY`.
+`MEMORY_ROUTE_STILL_HELD_AFTER_CHECKER_IMPLEMENTATION`.
 
-Verification: worker-return fast gate PASS after reviewer GC-051 path-literal
-repair, pre-implementation autorun PASS 74/74, reviewer-return commit steward
-preflight PASS, and material pre-commit hook PASS 79/79.
+Verification: reviewer repair added `privateOutputDisposition` validation,
+focused unittest PASS 19/19, worker-return fast gate PASS, pre-implementation
+autorun PASS 75/75, reviewer-return commit steward preflight PASS, and material
+pre-commit hook PASS 80/80.
 
-R28-T3 boundary: docs-only checker-candidate design acceptance and companion
-design matrix. It does not authorize checker code or hook wiring, source/test
-edits, MinerU runtime execution, private document read, generated output
-content read/quote, Candidate Group A source or generated output import,
-public-sync, provider/live proof, memory/RAG/S3/Web/MCP/model-router/
-action-authority implementation, standalone PDF app, legal/use-case deep dive,
-extraction accuracy, document truth, legal quality, current-law correctness,
-workflow-chain production readiness, worker stage/commit/push, or push.
+R28-T4 boundary: local deterministic receipt metadata checker, focused tests,
+and bounded autorun/pre-commit/pre-push hook wiring only. It does not authorize
+MinerU runtime execution, private document read, generated output content
+read/quote, Candidate Group A source or generated output import, public-sync,
+provider/live proof, memory/RAG/S3/Web/MCP/model-router/action-authority
+implementation, standalone PDF app, legal/use-case deep dive, extraction
+accuracy, document truth, legal quality, current-law correctness, workflow-chain
+production readiness, worker stage/commit/push, or push.
 
-Recent predecessor anchors: R28-T3 dispatch `0567257f`, R28-T2 closure
+Recent predecessor anchors: R28-T4 closure `0c81b7bc`, R28-T3 closure
+`4d64e33f`, R28-T3 dispatch `0567257f`, R28-T2 closure
 `3e230445`, R28-T1 closure `23177f27`, R28 selection `e2bb6b61`, R27 closure
 `ebd42823`, R26 closure `4b8166ad`, R25 closure `1e58d75a`, and R24-T4 policy
 closure `224a31a8`. Older MSEA history is intentionally summarized out of the
@@ -92,34 +93,58 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MSEA-R28-T4 GC-018/source-verified work
-order for receipt-boundary checker implementation and hook wiring decision.
+Next allowed move: author a fresh MSEA-R28-T5 GC-018/source-verified work
+order for quality/source-pointer receipt schema extension and checker update
+decision.
 
 Current material source:
 
-`docs/reviews/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md`
+`docs/reviews/CVF_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_WORKER_RETURN_2026-07-04.md`
 
-R28-T4 packet authoring must use the accepted R28-T3 worker return and companion
-design matrix, R28-T1 writer source evidence, R26 checker-candidate criteria,
-R24-T4 private-output policy, and R27 scan-to-memory route matrix. No checker
-code, hook wiring, source/test edit, MinerU runtime execution, private document
-read, generated output content read/quote, Candidate Group A source or generated
-output import, public-sync, provider/live proof, memory-layer/RAG/S3/Web/MCP/
-model-router/action-authority implementation, standalone PDF app, legal/use-case
-deep dive, evaluation deep dive, extraction accuracy, document truth, legal
-quality, current-law correctness, workflow-chain production readiness, worker
-stage/commit, or push is authorized until a fresh packet passes gates.
+R28-T5 packet authoring must use the accepted R28-T4 checker and worker return,
+R28-T3 design matrix quality/source-pointer prerequisite row, R28-T1 writer
+source evidence, R27 scan-to-memory route matrix, R24-T4 private-output policy,
+and Extraction Foundation quality/source-pointer owner surfaces. No MinerU
+runtime execution, private document read, generated output content read/quote,
+Candidate Group A source or generated output import, public-sync, provider/live
+proof, memory-layer/RAG/S3/Web/MCP/model-router/action-authority implementation,
+standalone PDF app, legal/use-case deep dive, evaluation deep dive, extraction
+accuracy, document truth, legal quality, current-law correctness, workflow-chain
+production readiness, worker stage/commit, or push is authorized until a fresh
+packet passes gates.
 
 LHW24 remains the latest closed numbered LHW wave.
 
 ## Claim Boundary
 
 This handoff is a continuity and next-move routing artifact only. It does not
-implement or prove checker code, hook wiring, MinerU runtime, receipt writer
-changes, private or generated content reads, memory/RAG writes, adapter
-behavior, provider/live behavior, public-sync, standalone PDF app behavior,
-legal/use-case analysis quality, extraction accuracy, document truth,
+implement or prove quality/source-pointer schema extension, MinerU runtime,
+receipt writer changes beyond a fresh packet, private or generated content
+reads, memory/RAG writes, adapter behavior, provider/live behavior, public-sync,
+standalone PDF app behavior, legal/use-case analysis quality, extraction
+accuracy, document truth,
 current-law correctness, workflow-chain completion, or production readiness.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T4 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T4 material
+closure commit `0c81b7bc`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door continuity, active handoff, and
+closure state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T4MineruReceiptBoundaryCheckerImplementationClosure20260704.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this MSEA-R28-T4 closure session-sync if
+rejected; do not revert material closure commit `0c81b7bc` or older MSEA
+history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T3 Closure Session Sync And V36 Handoff Rotation
 
