@@ -2,22 +2,34 @@
   "stateOrder": 1429,
   "stateKey": "mseaR25WorkflowChainSystemizationRoadmap20260704",
   "value": {
-    "status": "ROADMAP_READY_FOR_MSEA_R25_T1_GC018_AND_WORK_ORDER_AUTHORING",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-04",
-    "materialCommit": "8e04a5e1",
-    "materialCommitFull": "8e04a5e15ce913894a9d984294c553c23537ac6c",
-    "sessionSyncBase": "aa2e9745",
+    "materialCommit": "1e58d75a",
+    "materialCommitFull": "1e58d75a7e2990187f99746605ecf95e966deca2",
+    "sessionSyncBase": "1e58d75a",
     "roadmapPath": "docs/roadmaps/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-07-04.md",
     "predecessorMaterialCommit": "224a31a8",
     "predecessorSessionSyncCommit": "aa2e9745",
-    "selectedRoadmapDecision": "OPEN_MSEA_R25_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP",
-    "recommendedNext": "AUTHOR_MSEA_R25_T1_GC018_AND_WORK_ORDER_FOR_RECEIPT_ENVELOPE_CONTRACT_DECISION",
+    "selectedRoadmapDecision": "CLOSE_MSEA_R25_AS_BOUNDED_WORKFLOW_CHAIN_SYSTEMIZATION_DECISION_LEDGER",
+    "recommendedNext": "POST_R25_OPERATOR_ROUTE_SELECTION_OR_FRESH_GC018_FOR_ONE_SELECTED_LANE",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_COMPLETION_2026-07-04.md",
+    "decisionLedgerPath": "docs/reference/CVF_MSEA_R25_MINERU_WORKFLOW_CHAIN_SYSTEMIZATION_DECISION_LEDGER_2026-07-04.md",
     "verification": [
-      "pre-dispatch autorun PASS 72/72",
-      "dispatch commit steward preflight PASS",
-      "material pre-commit hook PASS 79/79"
+      "reviewer-fast gates PASS during material pre-commit hook",
+      "commit steward preflight PASS before material commit",
+      "material pre-commit hook PASS 79/79",
+      "pre-closure content gates PASS after material commit; active session drift expected before this session sync"
     ],
-    "nextRecommendedMove": "Author MSEA-R25-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for the receipt-envelope contract decision.",
-    "claimBoundary": "R25 is roadmap-only. It does not authorize worker execution, MinerU rerun, output-content inspection, public-sync, provider/live proof, schema/writer/checker/adapter implementation, memory-layer ingestion, evaluation deep dive, legal-quality claim, extraction-accuracy claim, workflow-chain production readiness, stage or commit by worker, or push."
+    "closureTokens": [
+      "SELECT_MINIMAL_RECEIPT_ENVELOPE_CONTRACT",
+      "SELECT_PRIVATE_OUTPUT_ROUTING_POLICY",
+      "SELECT_SCHEMA_WRITER_CONTRACT_DRAFT",
+      "SELECT_CHECKER_CANDIDATE_ONLY",
+      "SELECT_ADAPTER_MEMORY_ROUTE_MATRIX",
+      "HOLD_USE_CASE_DEEP_DIVE",
+      "SELECT_PRODUCTION_BOUNDARY_REJECTION"
+    ],
+    "nextRecommendedMove": "Select one post-R25 route, then author a fresh GC-018 baseline and source-verified work order for that lane only if continuing.",
+    "claimBoundary": "R25 closed as documentation/reference decision systemization only. It does not authorize worker execution, MinerU rerun, output-content inspection, public-sync, provider/live proof, schema/writer/checker/adapter implementation, memory-layer ingestion, evaluation deep dive, legal-quality claim, extraction-accuracy claim, workflow-chain production readiness, stage or commit by worker, or push."
   }
 }

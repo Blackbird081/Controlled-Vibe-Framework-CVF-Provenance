@@ -75,8 +75,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r25_workflow_chain_systemization_roadmap_ready_pending_r25_t1_work_order_authoring",
-  "previousMode": "msea_r24_t4_workflow_receipt_policy_closed_pending_r25_workflow_chain_systemization_roadmap_authoring",
+  "currentMode": "msea_r25_workflow_chain_systemization_closed_pending_post_r25_next_route_selection",
+  "previousMode": "msea_r25_workflow_chain_systemization_roadmap_ready_pending_r25_t1_work_order_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3213,7 +3213,7 @@
     "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
   },
   "assfPicRoadmap20260625": "ASSF Package Instance Certification Pilot roadmap is ROADMAP_READY at material commit 916c6908. Artifact: docs/roadmaps/CVF_ASSF_PACKAGE_INSTANCE_CERTIFICATION_PILOT_ROADMAP_2026-06-25.md. The roadmap selects a strict single-candidate pilot sequence after ASSF-T7 closure: PIC-T0 candidate selection/source inventory, PIC-T1 package-instance evidence and skeleton hardening, PIC-T2 manual UAT/certification review, PIC-T3 generated index/resolver integration decision, PIC-T4 Web projection bridge decision, and PIC-T5 checker-readiness decision. It authorizes planning only; PIC-T0 still requires fresh GC-018, source verification, ADIF disclosure where applicable, Dual Agent Surface Matrix, dependency-release evidence, and an approved work order. Boundary: no package instance creation, certification decision, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter, provider/live proof, public-sync, push, activation, or package instruction execution is released by the roadmap.",
-  "nextAllowedMove": "MSEA-R25 MinerU CVF workflow-chain systemization roadmap is ready at material commit 8e04a5e1. Next allowed move is author MSEA-R25-T1 GC-018 baseline and a source-verified WORKER_MUST_NOT_COMMIT work order for the receipt-envelope contract decision, using the R25 roadmap, T4 private receipt policy, R17 privacy boundary, and pinned MinerU output-file documentation. T1 may decide or hold a minimal receipt envelope contract only. No worker execution, MinerU rerun, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, package/checker/source mutation, schema/writer/adapter/memory-layer/RAG/S3/Web/MCP/model-router/action-authority implementation, evaluation deep dive, extraction accuracy, document truth, legal advice quality, current-law correctness, workflow-chain production readiness, stage by worker, commit by worker, or push is authorized by this next move. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R25 MinerU CVF workflow-chain systemization roadmap closed at material commit 1e58d75a. R25 resolved T1-T6 as a bounded documentation/reference decision chain using the R25 completion review and decision ledger. Next allowed move is operator post-R25 route selection, or fresh GC-018 baseline and source-verified work order authoring for exactly one selected post-R25 lane such as schema/writer contract drafting, checker-candidate design, adapter/memory route planning, or a later runtime proof lane only when a new implementation claim exists. No worker execution, MinerU rerun, generated output content read/quote, Candidate Group A source or generated output import, public-sync, provider/live proof, package/checker/source mutation, schema/writer/adapter/memory-layer/RAG/S3/Web/MCP/model-router/action-authority implementation, evaluation deep dive, extraction accuracy, document truth, legal advice quality, current-law correctness, workflow-chain production readiness, stage by worker, commit by worker, or push is authorized by this next move. LHW24 remains latest closed numbered LHW wave.",
   "cgeR3CodeGraphUpstreamAbsorptionDispatch20260630": {
     "status": "WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION",
     "dispatchMaterialCommit": "17a8d275",
@@ -6938,22 +6938,34 @@
     "claimBoundary": "T4 policy closure only. The accepted evidence defines private receipt metadata and private output handling from the accepted T3A smoke receipt. It does not claim extraction accuracy, document truth, legal advice quality, current-law correctness, workflow-chain production readiness, public-sync, provider/live proof, runtime execution by T4, schema/writer/adapter/checker/package/source mutation, stage or commit by worker, or push."
   },
   "mseaR25WorkflowChainSystemizationRoadmap20260704": {
-    "status": "ROADMAP_READY_FOR_MSEA_R25_T1_GC018_AND_WORK_ORDER_AUTHORING",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-07-04",
-    "materialCommit": "8e04a5e1",
-    "materialCommitFull": "8e04a5e15ce913894a9d984294c553c23537ac6c",
-    "sessionSyncBase": "aa2e9745",
+    "materialCommit": "1e58d75a",
+    "materialCommitFull": "1e58d75a7e2990187f99746605ecf95e966deca2",
+    "sessionSyncBase": "1e58d75a",
     "roadmapPath": "docs/roadmaps/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_2026-07-04.md",
     "predecessorMaterialCommit": "224a31a8",
     "predecessorSessionSyncCommit": "aa2e9745",
-    "selectedRoadmapDecision": "OPEN_MSEA_R25_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP",
-    "recommendedNext": "AUTHOR_MSEA_R25_T1_GC018_AND_WORK_ORDER_FOR_RECEIPT_ENVELOPE_CONTRACT_DECISION",
+    "selectedRoadmapDecision": "CLOSE_MSEA_R25_AS_BOUNDED_WORKFLOW_CHAIN_SYSTEMIZATION_DECISION_LEDGER",
+    "recommendedNext": "POST_R25_OPERATOR_ROUTE_SELECTION_OR_FRESH_GC018_FOR_ONE_SELECTED_LANE",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R25_MINERU_CVF_WORKFLOW_CHAIN_SYSTEMIZATION_ROADMAP_COMPLETION_2026-07-04.md",
+    "decisionLedgerPath": "docs/reference/CVF_MSEA_R25_MINERU_WORKFLOW_CHAIN_SYSTEMIZATION_DECISION_LEDGER_2026-07-04.md",
     "verification": [
-      "pre-dispatch autorun PASS 72/72",
-      "dispatch commit steward preflight PASS",
-      "material pre-commit hook PASS 79/79"
+      "reviewer-fast gates PASS during material pre-commit hook",
+      "commit steward preflight PASS before material commit",
+      "material pre-commit hook PASS 79/79",
+      "pre-closure content gates PASS after material commit; active session drift expected before this session sync"
     ],
-    "nextRecommendedMove": "Author MSEA-R25-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for the receipt-envelope contract decision.",
-    "claimBoundary": "R25 is roadmap-only. It does not authorize worker execution, MinerU rerun, output-content inspection, public-sync, provider/live proof, schema/writer/checker/adapter implementation, memory-layer ingestion, evaluation deep dive, legal-quality claim, extraction-accuracy claim, workflow-chain production readiness, stage or commit by worker, or push."
+    "closureTokens": [
+      "SELECT_MINIMAL_RECEIPT_ENVELOPE_CONTRACT",
+      "SELECT_PRIVATE_OUTPUT_ROUTING_POLICY",
+      "SELECT_SCHEMA_WRITER_CONTRACT_DRAFT",
+      "SELECT_CHECKER_CANDIDATE_ONLY",
+      "SELECT_ADAPTER_MEMORY_ROUTE_MATRIX",
+      "HOLD_USE_CASE_DEEP_DIVE",
+      "SELECT_PRODUCTION_BOUNDARY_REJECTION"
+    ],
+    "nextRecommendedMove": "Select one post-R25 route, then author a fresh GC-018 baseline and source-verified work order for that lane only if continuing.",
+    "claimBoundary": "R25 closed as documentation/reference decision systemization only. It does not authorize worker execution, MinerU rerun, output-content inspection, public-sync, provider/live proof, schema/writer/checker/adapter implementation, memory-layer ingestion, evaluation deep dive, legal-quality claim, extraction-accuracy claim, workflow-chain production readiness, stage or commit by worker, or push."
   }
 }
