@@ -42,6 +42,7 @@ Startup acknowledged: current mode=`msea_r37_t1_public_catalog_hygiene_public_sy
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material packet | public commit `99997d923` MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution export |
 | Latest session-sync target | session sync after MSEA-R37-T1 public export |
+| Latest provenance session-sync parent | `b47836f0` Sync session after MSEA R37 public export |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
