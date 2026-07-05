@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1461,
+  "stateKey": "mseaR28T15MineruCandidateReviewAndStoreWriteAuthorityDecisionDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-04",
+    "materialCommit": "e3ef73e4",
+    "materialCommitFull": "e3ef73e4da51b099edc0a1284d7e02a1953d64a4",
+    "dispatchBaseHead": "13b22b94",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "matrixPath": "docs/reference/CVF_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_MATRIX_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-04.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDecisionDisposition": "CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_DISPATCH",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T15_DISPATCH",
+    "futureAuthorityRequired": "T15_DECISION_REQUIRED_BEFORE_T16",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "Dispatch authorizes only docs-only candidate review and store-write authority decision matrix plus worker return. It does not authorize actual memory/RAG write, memory-store adapter implementation, MinerU runtime, private/generated content read, Candidate Group A import, checker/hook/session/source/test edits, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, session-sync by worker, worker commit, or push."
+  }
+}
