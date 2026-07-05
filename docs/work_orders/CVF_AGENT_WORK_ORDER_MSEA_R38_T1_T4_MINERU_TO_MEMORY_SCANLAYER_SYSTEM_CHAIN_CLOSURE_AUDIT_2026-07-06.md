@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Created: 2026-07-06
 
@@ -405,7 +405,7 @@ Disclosed defectIds:
 | Field | Evidence |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_work_order_dispatch_quality_source.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/run_worker_return_fast_gate.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; WORKER_MUST_NOT_COMMIT; Dispatch Prompt Envelope; Required First Reads; Verification Commands; Worker Return Packet Shape Contract; Worker Output Quality Controls; Provider-Local Stray Artifact Control; Pylance Static-Analysis Diagnostic Boundary; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition |
+| literalTokensReviewed | Status: CLOSED; WORKER_MUST_NOT_COMMIT; Dispatch Prompt Envelope; Required First Reads; Verification Commands; Worker Return Packet Shape Contract; Worker Output Quality Controls; Provider-Local Stray Artifact Control; Pylance Static-Analysis Diagnostic Boundary; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition |
 | gateRunPurpose | confirm R38 dispatch artifact shape after checker source read-ahead |
 | claimBoundary | checker read-ahead evidence only; no runtime, provider/live, public-sync, private-output, source/test, memory write, or production route release |
 
@@ -598,6 +598,26 @@ production-readiness, or hosted-readiness claims.
 | Durable store invoked | No |
 | Foundation storage claim | R38 dispatch creates no runtime storage, memory record, vector index, retrieval store, file-backed production persistence, or durable-store receipt |
 | Layout disposition | R38 worker outputs remain in `docs/reference` and `docs/reviews`; no source/runtime storage layout mutation is authorized |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_COMPLETION_2026-07-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | N/A with reason: R38 is a standalone operator-requested system-chain audit packet, not a roadmap-derived closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `python governance/compat/generate_corpus_scan_registry.py --check` PASS during worker-return fast gate | PASS |
+| Registry Markdown | changed corpus registry coverage | reviewer-fast changed corpus registry coverage PASS | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact, public-web source, or local external file was absorbed | N/A with reason |
+| System loop interlock | R38 T1-T4 worker artifacts and completion review | `SYSTEM_FOUNDATION_COMPLETE_STOP`; no further audit-only tranche | PASS |
+| Session continuity | session state, session memory, and active handoff | dedicated session-sync commit required after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| No runtime receipt is accepted by this dispatch closure | R38 remains docs-only and accepts no MinerU runtime, provider/live, memory-write, public-sync, or production route receipt | PASS |
+| Worker return accepted only after reviewer closure | Completion review path named above records `CLOSED_PASS_BOUNDED` | PASS |
 
 ## Claim Boundary
 
