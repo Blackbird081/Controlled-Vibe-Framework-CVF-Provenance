@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1455,
+  "stateKey": "mseaR28T12MineruMemoryOwnerAdmissionReadoutImplementationDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-04",
+    "materialCommit": "f87661cb",
+    "dispatchBaseHead": "89c356a4",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T12_MINERU_MEMORY_OWNER_ADMISSION_READOUT_IMPLEMENTATION_2026-07-04.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T12_MINERU_MEMORY_OWNER_ADMISSION_READOUT_IMPLEMENTATION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T12_MINERU_MEMORY_OWNER_ADMISSION_READOUT_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedImplementationDisposition": "MEMORY_OWNER_ADMISSION_READOUT_IMPLEMENTATION",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T12_DISPATCH",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "Dispatch authorizes only deterministic local metadata-only admission readout source/test implementation and a worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, checker/hook edit outside the work order, session-sync by worker, worker commit, or push."
+  }
+}
