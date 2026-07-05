@@ -7,12 +7,12 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 ## Purpose
 
 Carry compact continuity after MSEA-R28-T16 memory-store adapter mapping
-implementation dispatch. Keep the active session ready for no-commit T16 worker
-execution without implying memory-route write authority.
+implementation closure. Keep the active session ready for T17 work-order
+authoring without implying memory-route write authority.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after dispatching the MSEA-R28-T16
+Target: active CVF session continuity after closing the MSEA-R28-T16
 memory-store adapter mapping implementation packet.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
@@ -33,7 +33,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t16_mineru_memory_store_adapter_mapping_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=no-commit T16 worker execution using the T16 work order and GC-018 baseline; parked checkpoint=actual memory/RAG write, durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred unless a later accepted packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t16_mineru_memory_store_adapter_mapping_implementation_closed_pending_t17_memory_write_authority_decision_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T17 GC-018/source-verified work order for actual durable-memory write authority decision only; parked checkpoint=actual memory/RAG write, durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred unless a later accepted packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -45,54 +45,52 @@ Startup acknowledged: current mode=`msea_r28_t16_mineru_memory_store_adapter_map
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `93d94b0d` MSEA-R28-T16 memory-store adapter mapping implementation dispatch |
-| Latest session-sync target | session sync after MSEA-R28-T16 dispatch |
+| Latest material packet | `0bf81a68` MSEA-R28-T16 memory-store adapter mapping implementation closure |
+| Latest session-sync target | session sync after MSEA-R28-T16 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t16_mineru_memory_store_adapter_mapping_implementation_dispatched_pending_worker_return`
+`msea_r28_t16_mineru_memory_store_adapter_mapping_implementation_closed_pending_t17_memory_write_authority_decision_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R28-T16 Memory Store Adapter Mapping Implementation is dispatched at
-material commit `93d94b0d`.
+MSEA-R28-T16 Memory Store Adapter Mapping Implementation is closed at material
+commit `0bf81a68`.
 
-Dispatch artifacts:
+Accepted artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R28_T16_MINERU_MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTATION_2026-07-04.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T16_MINERU_MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTATION_2026-07-04.md`
-
-Expected worker output paths:
-
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`
 - `docs/reviews/CVF_MSEA_R28_T16_MINERU_MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md`
 
-Selected dispatch disposition:
-`MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTATION_DISPATCH`.
+Selected implementation disposition:
+`MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTED`.
 Memory-write disposition:
-`MEMORY_WRITE_NOT_AUTHORIZED_BY_T16_DISPATCH`.
+`MEMORY_WRITE_NOT_AUTHORIZED_BY_T16_MAPPING_ONLY`.
 Future authority required:
-`T16_WORKER_RETURN_AND_REVIEW_REQUIRED_BEFORE_ANY_MEMORY_WRITE_RELEASE`.
+`T17_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_REQUIRED_BEFORE_ANY_MEMORY_WRITE_RELEASE`.
 
-Verification: pre-dispatch autorun PASS 73/73, dispatch commit steward PASS,
-material pre-commit hook PASS 80/80, and commit `93d94b0d`.
+Verification: focused pytest PASS 55/55, worker-return fast gate PASS,
+pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS,
+material pre-commit hook PASS 80/80, and commit `0bf81a68`.
 
-R28-T16 dispatch boundary: authorizes only no-commit source/test worker
-execution for deterministic summary-only durable-memory write-input candidate
-mapping. The worker may modify only the allowed receipt-writer source, focused
-receipt-writer test, and T16 worker return, then return without staging,
-committing, pushing, or session-sync. It does not authorize actual memory/RAG
-write, durable-store invocation, vectorization, retrieval, MinerU runtime
-execution, private document read, generated output content read/quote,
-Candidate Group A source or generated output import, public-sync,
-provider/live proof, checker/hook/session/handoff edits by worker,
+R28-T16 closure boundary: accepts only deterministic summary-only
+durable-memory write-input candidate mapping source/test behavior and a worker
+return. It structurally maps the T14 MinerU memory-record candidate to the
+durable memory store write-input candidate shape. It does not authorize actual
+memory/RAG write, actor authorization release, policy decision release,
+provenance scoring release, durable-store invocation, vectorization,
+retrieval, MinerU runtime execution, private document read, generated output
+content read/quote, Candidate Group A source or generated output import,
+public-sync, provider/live proof, checker/hook/session/handoff edits by worker,
 standalone PDF app, legal/use-case deep dive, extraction accuracy, document
 truth, legal quality, current-law correctness, workflow-chain production
 readiness, worker commit, or push.
 
-Recent predecessor anchors: R28-T16 dispatch `93d94b0d`, R28-T15 closure `50afaa0f`, R28-T15 dispatch `e3ef73e4`, R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
+Recent predecessor anchors: R28-T16 closure `0bf81a68`, R28-T16 dispatch `93d94b0d`, R28-T15 closure `50afaa0f`, R28-T15 dispatch `e3ef73e4`, R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
 `a6aaf7ec`, R28-T10 closure
 `528f8255`, R28-T10 dispatch
 `7244842b`, R28-T9 closure `45fb7a9a`, R28-T9 dispatch
@@ -113,14 +111,39 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: no-commit MSEA-R28-T16 worker execution using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T16_MINERU_MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTATION_2026-07-04.md`
-and
-`docs/baselines/CVF_GC018_MSEA_R28_T16_MINERU_MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTATION_2026-07-04.md`.
-Worker may modify only the allowed receipt-writer source, focused
-receipt-writer test, and T16 worker return, then return without staging,
-committing, pushing, or session-sync. Actual memory/RAG write and durable-store
-invocation remain unauthorized.
+Next allowed move: author fresh MSEA-R28-T17 GC-018 baseline and
+source-verified work order for actual durable-memory write authority decision
+only. T17 authoring must use the accepted T16 worker return, T14 memory-record
+candidate builder, durable-memory-store write input and write policy source,
+runtime memory hierarchy actor authorization source, R27 scan-to-memory route
+decision ledger, R24-T4 private-output policy, Source Verification Block, ADIF
+Defect Registry Disclosure, Agent Handoff Contract Control Block, Reviewer
+Closure Conversion, pre-dispatch autorun gates, and careful GC-051 path-literal
+discipline. Actual memory/RAG write and durable-store invocation remain
+unauthorized until a later accepted packet explicitly releases them.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T16 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T16
+material closure commit `0bf81a68`, including active mode, next allowed move,
+generated active state, bootstrap read model, compacted front-door continuity,
+active handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current/closed work, startup acknowledgment, and next allowed move after T16 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T16 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T16 closed pending T17 work-order authoring. |
+| `CVF_SESSION/state/entries/mseaR28T16MineruMemoryStoreAdapterMappingImplementationClosure20260704.json` | Record accepted T16 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T17 GC-018/source-verified work-order authoring only. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T16 closure continuity and T17 next move. |
+
+Rollback boundary: revert only this MSEA-R28-T16 closure session-sync if
+rejected; do not revert material closure commit `0bf81a68` or older MSEA
+history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T16 Dispatch Session Sync
 
