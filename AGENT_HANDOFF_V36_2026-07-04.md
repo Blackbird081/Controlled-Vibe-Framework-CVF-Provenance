@@ -6,23 +6,24 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T19 durable-store invocation
-release-decision closure. Keep the active session ready for T20 work-order
-authoring without implying durable-store invocation or memory-route write
-authority before fresh dispatch.
+Carry compact continuity after MSEA-R28-T20 actual durable-store invocation
+implementation dispatch. Keep the active session ready for no-commit T20 worker
+execution without implying memory/RAG route release or production write
+authority.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after accepting the MSEA-R28-T19
-durable-store invocation release-decision worker return.
+Target: active CVF session continuity after dispatching the MSEA-R28-T20 actual
+durable-store invocation implementation work order.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
 runtime execution, private document or generated-output reads, provider/live
-proof, public-sync, schema/writer/adapter implementation beyond a fresh packet,
-memory/RAG writes, standalone PDF app work, legal/use-case deep dive,
-extraction accuracy, document truth, current-law correctness, workflow-chain
-completion, or production-readiness claims.
+proof, public-sync, schema/writer/adapter implementation outside dispatched
+scope, memory/RAG route release, production file-backed storage proof,
+standalone PDF app work, legal/use-case deep dive, extraction accuracy,
+document truth, current-law correctness, workflow-chain completion, or
+production-readiness claims.
 
 ## Active Boundary
 
@@ -34,7 +35,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t19_mineru_durable_store_invocation_release_decision_closed_pending_t20_actual_durable_store_invocation_implementation_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T20 GC-018/source-verified work order for actual durable-store invocation implementation; parked checkpoint=actual memory/RAG write, durable-store invocation before fresh T20 dispatch, Learning Plane source edits, checker/hook/session/handoff edits by worker, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t20_mineru_actual_durable_store_invocation_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=no-commit MSEA-R28-T20 worker execution for bounded durable-store invocation helper implementation; parked checkpoint=memory/RAG route release, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -46,20 +47,57 @@ Startup acknowledged: current mode=`msea_r28_t19_mineru_durable_store_invocation
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `dc687360` MSEA-R28-T19 durable-store invocation release-decision closure |
-| Latest session-sync target | session sync after MSEA-R28-T19 closure |
+| Latest material packet | `974876b40` MSEA-R28-T20 actual durable-store invocation implementation dispatch |
+| Latest session-sync target | session sync after MSEA-R28-T20 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t19_mineru_durable_store_invocation_release_decision_closed_pending_t20_actual_durable_store_invocation_implementation_work_order_authoring`
+`msea_r28_t20_mineru_actual_durable_store_invocation_implementation_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R28-T19 Durable Store Invocation Release Decision is
-CLOSED_PASS_BOUNDED at material commit `dc687360`.
+MSEA-R28-T20 Actual Durable Store Invocation Implementation dispatch is
+DISPATCH_READY at material commit `974876b40`.
 
-Accepted artifacts:
+T20 dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md`
+
+T20 authorized worker paths:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-durable-store-invocation.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-durable-store-invocation.test.ts`
+- `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-05.md`
+
+T20 dispatch disposition:
+`ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_DISPATCH_READY`.
+Memory-write disposition:
+`MEMORY_WRITE_NOT_AUTHORIZED_BY_T20_DISPATCH`.
+Durable-store invocation scope:
+`IN_PROCESS_FOCUSED_TEST_HELPER_INVOCATION_ONLY`.
+Private-output disposition:
+`PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`.
+
+Verification: pre-dispatch autorun PASS 73/73, dispatch commit steward PASS,
+material pre-commit hook PASS 80/80, and commit `974876b40`.
+
+T20 dispatch boundary: authorizes only a WORKER_MUST_NOT_COMMIT worker to
+create the bounded Learning Plane Foundation helper source file, focused test
+file, and worker return. The helper may consume the accepted T18 adapter
+payload shape and invoke existing `DurableMemoryStore.write` only through
+focused in-process tests. Actual memory/RAG route release, MinerU runtime,
+private/generated content read, Candidate Group A import, provider/live proof,
+public-sync, Web/UI, production file-backed storage proof,
+retrieval/vectorization, standalone app surfaces, legal/use-case deep dive,
+extraction accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production readiness, Python source/test edits for Pylance,
+durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
+edits, checker/hook/session/handoff edits by worker, worker commit, and push
+remain unauthorized.
+
+Accepted T19 artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
@@ -136,17 +174,47 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MSEA-R28-T20 GC-018/source-verified work
-order for actual durable-store invocation implementation.
+Next allowed move: no-commit MSEA-R28-T20 worker execution for bounded actual
+durable-store invocation helper implementation.
 
-T19 must use accepted T18 source/test evidence and worker return, the T17
-authority decision matrix, the T16 write-input candidate mapping, R27 route
-matrix, R24-T4 private-output policy, and durable-memory-store/runtime-hierarchy
-source evidence. Actual memory/RAG write, durable-store invocation, Learning
-Plane source edits, checker/hook/session/handoff edits by worker, runtime,
-private-output, provider/live, public-sync, and production claims remain
-unauthorized until a fresh T20 packet is authored, gated, dispatched, executed,
-reviewed, and accepted.
+T20 worker execution may create only:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-durable-store-invocation.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-durable-store-invocation.test.ts`
+- `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-05.md`
+
+The worker must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON and must
+not stage, commit, or push. Memory/RAG route release remains
+`MEMORY_WRITE_NOT_AUTHORIZED_BY_T20_DISPATCH`; private/generated output content
+read, MinerU runtime, Candidate Group A import, provider/live proof,
+public-sync, Web/UI, production file-backed storage proof,
+retrieval/vectorization, standalone app work, legal/use-case deep dive,
+extraction accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production readiness, Python source/test edits for Pylance,
+durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
+edits, checker/hook/session/handoff edits by worker, worker commit, and push
+remain unauthorized.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T20 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T20
+material dispatch commit `974876b40`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and dispatch state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T20MineruActualDurableStoreInvocationImplementationDispatch20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this MSEA-R28-T20 dispatch session-sync if
+rejected; do not revert material dispatch commit `974876b40`, T19 material
+closure commit `dc687360`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T19 Closure Session Sync
 
