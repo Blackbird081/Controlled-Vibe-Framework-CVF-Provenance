@@ -33,7 +33,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t13_mineru_memory_write_authority_decision_closed_pending_t14_candidate_builder_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=fresh MSEA-R28-T14 GC-018/source-verified work-order authoring for a deterministic metadata-only memory-record candidate builder; parked checkpoint=T14 implementation, actual memory-route/RAG write, runtime, private/generated content read, checker/hook edits outside a fresh work order, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred unless a later accepted packet and gates explicitly release them.
+Startup acknowledged: current mode=`msea_r28_t14_mineru_memory_record_candidate_builder_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=no-commit T14 worker execution using the T14 work order and GC-018 baseline; parked checkpoint=actual memory-route/RAG write, runtime, private/generated content read, checker/hook edits, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred unless a later accepted packet and gates explicitly release them.
 
 ## Current State
 
@@ -45,13 +45,13 @@ Startup acknowledged: current mode=`msea_r28_t13_mineru_memory_write_authority_d
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `0002de2d` MSEA-R28-T13 memory-write authority decision closure |
-| Latest session-sync target | session sync after MSEA-R28-T13 closure |
+| Latest material packet | `1b0a50fd` MSEA-R28-T14 memory-record candidate builder dispatch |
+| Latest session-sync target | session sync after MSEA-R28-T14 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t13_mineru_memory_write_authority_decision_closed_pending_t14_candidate_builder_work_order_authoring`
+`msea_r28_t14_mineru_memory_record_candidate_builder_dispatched_pending_worker_return`
 
 ## Latest Changes
 
@@ -113,8 +113,33 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MSEA-R28-T14 GC-018/source-verified work
-order for a deterministic metadata-only memory-record candidate builder.
+Next allowed move: no-commit T14 worker execution using the T14 work order and
+GC-018 baseline.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T14 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T14
+material dispatch commit `1b0a50fd`, including active mode, next allowed move,
+generated active state, bootstrap read model, compacted front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Compact front door and update current mode, current dispatched work, startup acknowledgment, and next allowed move after T14 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T14 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T14 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR28T14MineruMemoryRecordCandidateBuilderDispatch20260704.json` | Record T14 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T14 no-commit worker execution. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T14 dispatch continuity and worker next move. |
+
+Rollback boundary: revert only this MSEA-R28-T14 dispatch session-sync if
+rejected; do not revert material dispatch commit `1b0a50fd` or older MSEA
+history.
+
+LHW24 remains the latest closed numbered LHW wave.
 
 Accepted T13 artifacts:
 
