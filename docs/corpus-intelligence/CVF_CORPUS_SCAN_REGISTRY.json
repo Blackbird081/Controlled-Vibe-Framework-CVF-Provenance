@@ -4421,6 +4421,57 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md",
       "notes": "Focused tests for stable metadata-only payload rendering, required receipt fields, outputContentRead=false, allowed MinerU output filenames, unsafe path rejection, content-like token rejection, held downstream release, and no runtime or memory/RAG readiness claim."
+    },
+    {
+      "id": "msea-r33-t3-mineru-internal-system-chain-harness-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Learning Plane Foundation MSEA-R33-T3 MinerU internal system-chain harness source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-internal-system-chain-harness.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "MinerU runtime execution (not present)",
+        "private output content read (not present)",
+        "file-backed production persistence (not used)",
+        "retrieval (not used)",
+        "vectorization (not used)",
+        "provider live proof (not used)"
+      ],
+      "nextScanRecommendation": "Revisit only if a future source-verified packet wires the Python receipt bridge, production memory/RAG release, retrieval, vectorization, provider/live proof, or file-backed production persistence.",
+      "scanWave": "MSEA-R33-T3",
+      "scanDate": "2026-07-05",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R33_T5_MINERU_INTERNAL_SYSTEM_CHAIN_COMPLETION_2026-07-05.md",
+      "notes": "Deterministic in-process harness around the accepted T25/T22/T20 MinerU chain candidate. It records pythonReceiptBridgeStatus as not wired by R33 and keeps productionRouteAuthorized, fileBackedPersistenceUsed, mineruRuntimeExecuted, privateOutputContentRead, retrievalUsed, vectorizationUsed, providerLiveProofUsed, and publicRuntimeClaimed false."
+    },
+    {
+      "id": "msea-r33-t3-mineru-internal-system-chain-harness-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Learning Plane Foundation MSEA-R33-T3 MinerU internal system-chain harness tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-internal-system-chain-harness.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "production route authorization claim (not made)",
+        "Python receipt bridge claim (explicitly not wired)",
+        "file-backed persistence acceptance (rejected)",
+        "private generated output read acceptance (rejected)",
+        "R27 prerequisite bypass (rejected)"
+      ],
+      "nextScanRecommendation": "Retain focused regression for any future R33 or later harness changes.",
+      "scanWave": "MSEA-R33-T3",
+      "scanDate": "2026-07-05",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R33_T5_MINERU_INTERNAL_SYSTEM_CHAIN_COMPLETION_2026-07-05.md",
+      "notes": "Focused Vitest coverage for the R33 internal system-chain harness: bounded pass path, explicit Python bridge non-wiring, private-output fail-closed, file-backed persistence fail-closed, R27 prerequisite fail-closed, and caller-provided in-process store behavior."
     }
   ]
 }
