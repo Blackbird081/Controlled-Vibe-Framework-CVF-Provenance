@@ -6,14 +6,14 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T13 memory-write authority decision
-closure. Keep the active session ready for fresh T14 work-order authoring
+Carry compact continuity after MSEA-R28-T14 memory-record candidate builder
+closure. Keep the active session ready for fresh T15 work-order authoring
 without implying memory-route write authority.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after accepting the MSEA-R28-T13
-memory-write authority decision worker return.
+Target: active CVF session continuity after accepting the MSEA-R28-T14
+memory-record candidate builder worker return.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -33,7 +33,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t14_mineru_memory_record_candidate_builder_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=no-commit T14 worker execution using the T14 work order and GC-018 baseline; parked checkpoint=actual memory-route/RAG write, runtime, private/generated content read, checker/hook edits, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred unless a later accepted packet and gates explicitly release them.
+Startup acknowledged: current mode=`msea_r28_t14_mineru_memory_record_candidate_builder_closed_pending_t15_candidate_review_and_store_write_authority_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=fresh MSEA-R28-T15 GC-018/source-verified work-order authoring for candidate review and source-backed store-write authority decision; parked checkpoint=actual memory-route/RAG write, runtime, private/generated content read, checker/hook edits, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred unless a later accepted packet and gates explicitly release them.
 
 ## Current State
 
@@ -45,54 +45,56 @@ Startup acknowledged: current mode=`msea_r28_t14_mineru_memory_record_candidate_
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `1b0a50fd` MSEA-R28-T14 memory-record candidate builder dispatch |
-| Latest session-sync target | session sync after MSEA-R28-T14 dispatch |
+| Latest material packet | `1b367302` MSEA-R28-T14 memory-record candidate builder closure |
+| Latest session-sync target | session sync after MSEA-R28-T14 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t14_mineru_memory_record_candidate_builder_dispatched_pending_worker_return`
+`msea_r28_t14_mineru_memory_record_candidate_builder_closed_pending_t15_candidate_review_and_store_write_authority_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R28-T13 Memory Write Authority Decision is closed at material commit
-`0002de2d`.
+MSEA-R28-T14 Memory Record Candidate Builder is closed at material commit
+`1b367302`.
 
 Dispatch artifacts:
 
-- `docs/baselines/CVF_GC018_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md`
+- `docs/baselines/CVF_GC018_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_2026-07-04.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_2026-07-04.md`
 
 Accepted worker output paths:
 
-- `docs/reference/CVF_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_MATRIX_2026-07-04.md`
-- `docs/reviews/CVF_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-04.md`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`
+- `docs/reviews/CVF_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_WORKER_RETURN_2026-07-04.md`
 
-Selected decision disposition:
-`MEMORY_WRITE_AUTHORITY_DECISION_COMPLETED`.
-Selected route:
-`MEMORY_RECORD_CANDIDATE_BUILDER_READY`.
+Selected implementation disposition:
+`MEMORY_RECORD_CANDIDATE_BUILDER_IMPLEMENTED`.
+Candidate disposition:
+`MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW`.
 Memory-write disposition:
-`MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T13`.
+`MEMORY_WRITE_NOT_AUTHORIZED_BY_T14_CANDIDATE_ONLY`.
 Future authority required:
-`FUTURE_MEMORY_RECORD_CANDIDATE_WORK_ORDER_REQUIRED`.
+`FUTURE_MEMORY_STORE_WRITE_AUTHORITY_REQUIRED`.
 
-Verification: worker-return fast gate PASS, pre-implementation autorun PASS
-75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80, and
-commit `0002de2d`.
+Verification: focused pytest PASS 48/48, worker-return fast gate PASS,
+pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material
+pre-commit hook PASS 80/80, and commit `1b367302`.
 
-R28-T13 closure boundary: accepted only docs-only authority decision evidence
-and released only future T14 work-order authoring for a deterministic
-metadata-only memory-record candidate builder. It does not authorize T14
-implementation before a fresh packet, MinerU runtime execution, private
-document read, generated output content read/quote, Candidate Group A source or
-generated output import, public-sync, provider/live proof, checker/hook edits
-outside a fresh work order, actual memory/RAG write, S3/Web/MCP/model-router/
+R28-T14 closure boundary: accepted only local deterministic metadata-only
+candidate-builder source/test behavior and worker return evidence. It releases
+only future T15 work-order authoring for candidate review and source-backed
+store-write authority decision. It does not authorize actual memory/RAG write,
+memory store adapter, vectorization, retrieval, MinerU runtime execution,
+private document read, generated output content read/quote, Candidate Group A
+source or generated output import, public-sync, provider/live proof,
+checker/hook edits outside a fresh work order, S3/Web/MCP/model-router/
 action-authority implementation, standalone PDF app, legal/use-case deep dive,
 extraction accuracy, document truth, legal quality, current-law correctness,
 workflow-chain production readiness, worker commit, or push.
 
-Recent predecessor anchors: R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
+Recent predecessor anchors: R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
 `a6aaf7ec`, R28-T10 closure
 `528f8255`, R28-T10 dispatch
 `7244842b`, R28-T9 closure `45fb7a9a`, R28-T9 dispatch
@@ -113,30 +115,30 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: no-commit T14 worker execution using the T14 work order and
-GC-018 baseline.
+Next allowed move: author a fresh MSEA-R28-T15 GC-018/source-verified work
+order for candidate review and source-backed store-write authority decision.
 
-## Core Guard Self-Protection Authorization - MSEA-R28-T14 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R28-T14 Closure Session Sync
 
 Authorized guard-maintenance scope: session-sync only after MSEA-R28-T14
-material dispatch commit `1b0a50fd`, including active mode, next allowed move,
+material closure commit `1b367302`, including active mode, next allowed move,
 generated active state, bootstrap read model, compacted front-door continuity,
-active handoff, and dispatch state entry.
+active handoff, and closure state entry.
 
 Protected paths:
 
 | Path | Purpose |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Compact front door and update current mode, current dispatched work, startup acknowledgment, and next allowed move after T14 dispatch. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T14 closure. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T14 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T14 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR28T14MineruMemoryRecordCandidateBuilderDispatch20260704.json` | Record T14 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T14 no-commit worker execution. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T14 dispatch continuity and worker next move. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T14 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T14 closed pending T15 work-order authoring. |
+| `CVF_SESSION/state/entries/mseaR28T14MineruMemoryRecordCandidateBuilderClosure20260704.json` | Record accepted T14 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T15 work-order authoring only. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T14 closure continuity and next-move boundary. |
 
-Rollback boundary: revert only this MSEA-R28-T14 dispatch session-sync if
-rejected; do not revert material dispatch commit `1b0a50fd` or older MSEA
+Rollback boundary: revert only this MSEA-R28-T14 closure session-sync if
+rejected; do not revert material closure commit `1b367302` or older MSEA
 history.
 
 LHW24 remains the latest closed numbered LHW wave.
