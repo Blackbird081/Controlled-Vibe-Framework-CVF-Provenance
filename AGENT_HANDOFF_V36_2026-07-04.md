@@ -6,12 +6,12 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R33 MinerU internal system-chain readiness
-audit and release-boundary closure. The active session is now past the R32
-push-continuity cleanup checkpoint and parked on selecting one narrow next
-release lane, without implying production memory/RAG route release, use-case
-expansion, runtime proof, private-output release, public runtime behavior, or
-production write authority.
+Carry compact continuity after MSEA-R34-T1 MinerU Python-to-TypeScript bridge
+proof dispatch. The active session is now past the R33 internal system-chain
+readiness checkpoint and parked on R34-T1 no-commit worker execution, without
+implying production memory/RAG route release, use-case expansion, runtime
+proof, private-output release, public runtime behavior, or production write
+authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -28,7 +28,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may choose one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r34_t1_mineru_python_to_typescript_bridge_proof_dispatched_pending_no_commit_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R34-T1 no-commit worker return only in the three allowed paths named by the R34-T1 work order; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, interface/root-barrel/runtime wiring beyond the bounded bridge helper, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current State
 
@@ -40,8 +40,8 @@ Startup acknowledged: current mode=`msea_r33_mineru_internal_system_chain_readin
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `3a46bc371` MSEA-R33 MinerU internal system-chain readiness audit and release boundary |
-| Latest session-sync target | session sync after MSEA-R33 closure |
+| Latest material packet | `17ff309e` MSEA-R34-T1 MinerU Python to TypeScript bridge proof dispatch |
+| Latest session-sync target | session sync after MSEA-R34-T1 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -52,9 +52,42 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
+`msea_r34_t1_mineru_python_to_typescript_bridge_proof_dispatched_pending_no_commit_worker_execution`
 
 ## Latest Changes
+
+MSEA-R34-T1 MinerU Python To TypeScript Bridge Proof dispatch is
+DISPATCH_READY at material commit `17ff309e`.
+
+Accepted R34-T1 dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_2026-07-05.md`
+
+R34-T1 selected disposition:
+`R34_T1_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_DISPATCH_READY`.
+
+R34-T1 verification: source-anchor spot-check PASS, ADIF disclosure PASS,
+dispatch-quality gate PASS, checker read-ahead gate PASS, handoff boundary
+gate PASS, pre-dispatch autorun PASS 73/73, dispatch commit steward PASS,
+and material pre-commit hook PASS 80/80.
+
+R34-T1 next move: execute only the no-commit worker return in the three
+allowed paths named by the work order:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-python-receipt-bridge.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-python-receipt-bridge.test.ts`
+- `docs/reviews/CVF_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_WORKER_RETURN_2026-07-05.md`
+
+R34-T1 boundary: dispatch authoring only. It does not authorize live Python
+process invocation, file-based Python output consumption, MinerU runtime
+execution, private/generated output content read, production memory/RAG route
+release, production durable-store invocation, file-backed production
+persistence, retrieval, vectorization, provider/live proof, public-sync,
+Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy,
+document truth, legal quality, current-law correctness, hosted readiness,
+production readiness, provider-local or IDE config edits, worker stage,
+worker commit, or push.
 
 MSEA-R33 MinerU Internal System Chain Readiness Audit And Release Boundary is
 CLOSED_PASS_BOUNDED at material commit `3a46bc371`.
@@ -136,20 +169,64 @@ Older MSEA history is summarized out of this active handoff. Use the active stat
 
 ## Next Allowed Move
 
-Next allowed move: operator may choose one narrow fresh source-verified lane
-only: Python-to-TypeScript bridge proof, production memory/RAG authority
-packet, or provider/live proof packet. Legal/use-case workflow remains parked.
+Next allowed move: execute MSEA-R34-T1 no-commit worker return only in the
+three allowed paths named by
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_2026-07-05.md`.
+Legal/use-case workflow remains parked.
 
-Production memory/RAG route release, interface/root-barrel/runtime wiring,
-file-backed production persistence, vectorization, retrieval, MinerU runtime,
-private/generated output content read, Candidate Group A import, provider/live
-proof, Web/UI, standalone app work, legal/use-case deep dive, extraction
-accuracy, document truth, legal quality, current-law correctness,
-workflow-chain production readiness, Python source/test edits for Pylance,
-durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
-edits, checker/hook implementation, worker commit/push, and public runtime
-claim remain unauthorized without fresh source-verified operator
-authorization.
+Production memory/RAG route release, interface/root-barrel/runtime wiring
+beyond the bounded bridge helper, file-backed production persistence,
+vectorization, retrieval, MinerU runtime, private/generated output content
+read, Candidate Group A import, provider/live proof, Web/UI, standalone app
+work, legal/use-case deep dive, extraction accuracy, document truth, legal
+quality, current-law correctness, workflow-chain production readiness, Python
+source/test edits for Pylance, durable store/runtime hierarchy/root barrel
+edits, provider-local/IDE config edits, checker/hook implementation, worker
+stage/commit/push, and public runtime claim remain unauthorized without fresh
+source-verified operator authorization.
+
+## Core Guard Self-Protection Authorization - MSEA-R34-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R34-T1
+dispatch material commit `17ff309e`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, dispatch state entry, and last-updated state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR34T1MineruPythonToTypescriptBridgeProofDispatch20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R34-T1 dispatch session-sync if rejected;
+do not revert material dispatch commit `17ff309e`, R33 material commit
+`3a46bc371`, public-sync commit `7f6e548d3`, or earlier accepted history.
+
+## Agent Operation Trace Block - MSEA-R34-T1 Dispatch Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R34-T1 dispatch session-sync, 2026-07-05 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `rg`; `python governance/compat/generate_active_session_state.py --generate`; `apply_patch`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR34T1MineruPythonToTypescriptBridgeProofDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R34-T1 material dispatch commit `17ff309e` and session-sync steward role |
+| Before status evidence | R33 mode routed to operator next narrow lane selection |
+| After status evidence | active mode and next allowed move route to R34-T1 no-commit worker execution |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session-sync only; no worker execution, runtime, provider/live, private-output read, source/test implementation, production route release, public-sync, or use-case claim |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r34-t1-bridge-proof-dispatch-session-sync-2026-07-05` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR34T1MineruPythonToTypescriptBridgeProofDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR34T1MineruPythonToTypescriptBridgeProofDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization - MSEA-R33 Session Sync
 

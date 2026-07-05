@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may choose one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r34_t1_mineru_python_to_typescript_bridge_proof_dispatched_pending_no_commit_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R34-T1 no-commit worker return only in the three allowed paths named by the R34-T1 work order; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, interface/root-barrel/runtime wiring beyond the bounded bridge helper, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
+Current mode marker: `msea_r34_t1_mineru_python_to_typescript_bridge_proof_dispatched_pending_no_commit_worker_execution`
 
-Current mode: `msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
+Current mode: `msea_r34_t1_mineru_python_to_typescript_bridge_proof_dispatched_pending_no_commit_worker_execution`
 
-`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
+`msea_r34_t1_mineru_python_to_typescript_bridge_proof_dispatched_pending_no_commit_worker_execution`
 
 Previous mode:
 
-`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
+`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R34-T1 MinerU Python To TypeScript Bridge Proof dispatch | `17ff309e` | DISPATCH_READY; accepted source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a bounded fixture/synthetic Python-to-TypeScript bridge proof; pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit worker execution in the three allowed paths only. |
 | MSEA-R33 MinerU Internal System Chain Readiness Audit And Release Boundary | `3a46bc371` | CLOSED_PASS_BOUNDED; accepted R33 roadmap, GC-018, work order, T1 chain inventory, T2 internal harness decision, T3 bounded TypeScript harness source/test, T4 release-boundary matrix, and T5 completion review; public-sync commit `7f6e548d3` refreshed README, current-state snapshot, and technical catalog; selected `INTERNAL_FOUNDATION_READY_ONLY_WITH_RELEASE_LANES_HELD`; next move is one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet. |
 | MSEA-R32 Push Continuity Debt Remediation And Public Sync Release | `e851f04c4` | CLOSED_PASS_BOUNDED; accepted R32 push/continuity cleanup, repaired active-handoff root exposure classification, KIOD priority marker drift, and GC-043 session front-door markers; public-sync commit `53b39f3d5` refreshed README, evidence index, public current-state snapshot, and technical catalog; remaining full-range push preview issues are recorded as operator-authorized historical stack debt; next move is operator selection of the next governed tranche from a clean pushed continuity baseline. |
 | MSEA-R31 Push Continuity Debt Audit | `369fa93a0` | CLOSED_PASS_BOUNDED; accepted private push/continuity debt audit; selected `R31_PUSH_CONTINUITY_DEBT_AUDIT_COMPLETE_BLOCKED_PUSH_NOT_READY` and `PUSH_NOT_READY_BLOCKED_BY_UPSTREAM_DEBT_AND_FULL_RANGE_DRIFT`; removed local provider-stray `.qwen` after workspace-bound path check; recorded five remaining push-readiness blockers; next move is a fresh R31 push-debt remediation packet before any new MinerU tranche. |
@@ -122,9 +123,33 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
+Mode: `msea_r34_t1_mineru_python_to_typescript_bridge_proof_dispatched_pending_no_commit_worker_execution`
 
-Next allowed move: operator may choose one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet. Legal/use-case workflow remains parked. R33 closed internal system-chain readiness at material commit `3a46bc371` and public-sync commit `7f6e548d3`.
+Next allowed move: execute MSEA-R34-T1 no-commit worker return only in the three allowed paths named by `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_2026-07-05.md`. Legal/use-case workflow remains parked. R34-T1 dispatch is accepted at material commit `17ff309e`; R33 closed internal system-chain readiness at material commit `3a46bc371` and public-sync commit `7f6e548d3`; LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R34-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R34-T1
+dispatch material commit `17ff309e`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R34-T1 dispatch continuity and worker-execution next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R34-T1 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R34-T1 dispatched pending worker execution. |
+| `CVF_SESSION/state/entries/mseaR34T1MineruPythonToTypescriptBridgeProofDispatch20260705.json` | Record accepted R34-T1 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R34-T1 no-commit worker execution. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record R34-T1 dispatch continuity and worker-execution next move. |
+
+Rollback boundary: revert only this R34-T1 dispatch session-sync if
+rejected; do not revert material dispatch commit `17ff309e`, R33 material
+commit `3a46bc371`, public-sync commit `7f6e548d3`, or earlier accepted
+history.
 
 LHW24 remains the latest closed numbered LHW wave.
 
