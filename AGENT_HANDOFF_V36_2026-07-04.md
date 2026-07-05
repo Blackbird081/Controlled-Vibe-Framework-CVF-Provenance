@@ -7,14 +7,14 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 ## Purpose
 
 Carry compact continuity after MSEA-R28-T19 durable-store invocation
-release-decision dispatch. Keep the active session ready for T19 no-commit
-worker execution without implying durable-store invocation or memory-route
-write authority.
+release-decision closure. Keep the active session ready for T20 work-order
+authoring without implying durable-store invocation or memory-route write
+authority before fresh dispatch.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after authoring the MSEA-R28-T19
-durable-store invocation release-decision GC-018 baseline and work order.
+Target: active CVF session continuity after accepting the MSEA-R28-T19
+durable-store invocation release-decision worker return.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -34,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t19_mineru_durable_store_invocation_release_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R28-T19 WORKER_MUST_NOT_COMMIT docs-only durable-store invocation release-decision worker packet; parked checkpoint=actual memory/RAG write, durable-store invocation, Learning Plane source edits, checker/hook/session/handoff edits by worker, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t19_mineru_durable_store_invocation_release_decision_closed_pending_t20_actual_durable_store_invocation_implementation_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T20 GC-018/source-verified work order for actual durable-store invocation implementation; parked checkpoint=actual memory/RAG write, durable-store invocation before fresh T20 dispatch, Learning Plane source edits, checker/hook/session/handoff edits by worker, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -46,26 +46,23 @@ Startup acknowledged: current mode=`msea_r28_t19_mineru_durable_store_invocation
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `8db612b0` MSEA-R28-T19 durable-store invocation release-decision dispatch |
-| Latest session-sync target | session sync after MSEA-R28-T19 dispatch |
+| Latest material packet | `dc687360` MSEA-R28-T19 durable-store invocation release-decision closure |
+| Latest session-sync target | session sync after MSEA-R28-T19 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t19_mineru_durable_store_invocation_release_decision_dispatched_pending_worker_return`
+`msea_r28_t19_mineru_durable_store_invocation_release_decision_closed_pending_t20_actual_durable_store_invocation_implementation_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R28-T19 Durable Store Invocation Release Decision dispatch is
-DISPATCH_READY at material commit `8db612b0`.
+MSEA-R28-T19 Durable Store Invocation Release Decision is
+CLOSED_PASS_BOUNDED at material commit `dc687360`.
 
-Dispatch artifacts:
+Accepted artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
-
-Required worker output artifacts:
-
 - `docs/reference/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_MATRIX_2026-07-05.md`
 - `docs/reviews/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md`
 
@@ -84,18 +81,26 @@ Memory-write disposition:
 Durable-store invocation disposition:
 `DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T18`.
 
-Verification: pre-dispatch autorun PASS 73/73, dispatch commit steward PASS,
-material pre-commit hook PASS 80/80, and commit `8db612b0`.
+T19 selected decision disposition:
+`T20_DURABLE_STORE_INVOCATION_IMPLEMENTATION_CANDIDATE`.
+Memory-write disposition:
+`MEMORY_WRITE_NOT_AUTHORIZED_BY_T19_DECISION_ONLY`.
+Durable-store invocation disposition:
+`DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T19_DECISION_ONLY`.
 
-R28-T19 dispatch boundary: authorizes only a no-commit docs-only decision
-matrix and worker return. Actual memory/RAG write, durable-store invocation,
-vectorization, retrieval, MinerU runtime, private/generated content read,
-Candidate Group A import, provider/live proof, public-sync, standalone app
-work, legal/use-case deep dive, extraction accuracy, document truth, legal
+Verification: worker-return fast gate PASS, pre-implementation autorun PASS
+75/75, reviewer-return commit steward PASS, material pre-commit hook PASS
+80/80, and commit `dc687360`.
+
+R28-T19 closure boundary: accepts only a docs-only decision matrix and worker
+return. Actual memory/RAG write, durable-store invocation before fresh T20
+dispatch, vectorization, retrieval, MinerU runtime, private/generated content
+read, Candidate Group A import, provider/live proof, public-sync, standalone
+app work, legal/use-case deep dive, extraction accuracy, document truth, legal
 quality, current-law correctness, workflow-chain production readiness, Learning
 Plane source edits, checker/hook/session/handoff edits by worker, worker
-commit, and push remain unauthorized pending T19 worker execution, review, and
-acceptance.
+commit, and push remain unauthorized pending fresh T20 authoring, dispatch,
+execution, review, and acceptance.
 
 Previous R28-T16 closure boundary: accepts only deterministic summary-only
 durable-memory write-input candidate mapping source/test behavior and a worker
@@ -110,7 +115,7 @@ standalone PDF app, legal/use-case deep dive, extraction accuracy, document
 truth, legal quality, current-law correctness, workflow-chain production
 readiness, worker commit, or push.
 
-Recent predecessor anchors: R28-T19 dispatch `8db612b0`, R28-T18 closure `51966467`, R28-T18 dispatch `02d174be`, R28-T17 closure `5166a624`, R28-T17 dispatch `b62e1be3`, R28-T16 closure `0bf81a68`, R28-T16 dispatch `93d94b0d`, R28-T15 closure `50afaa0f`, R28-T15 dispatch `e3ef73e4`, R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
+Recent predecessor anchors: R28-T19 closure `dc687360`, R28-T19 dispatch `8db612b0`, R28-T18 closure `51966467`, R28-T18 dispatch `02d174be`, R28-T17 closure `5166a624`, R28-T17 dispatch `b62e1be3`, R28-T16 closure `0bf81a68`, R28-T16 dispatch `93d94b0d`, R28-T15 closure `50afaa0f`, R28-T15 dispatch `e3ef73e4`, R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
 `a6aaf7ec`, R28-T10 closure
 `528f8255`, R28-T10 dispatch
 `7244842b`, R28-T9 closure `45fb7a9a`, R28-T9 dispatch
@@ -131,8 +136,8 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: execute the MSEA-R28-T19 WORKER_MUST_NOT_COMMIT docs-only
-durable-store invocation release-decision worker packet.
+Next allowed move: author a fresh MSEA-R28-T20 GC-018/source-verified work
+order for actual durable-store invocation implementation.
 
 T19 must use accepted T18 source/test evidence and worker return, the T17
 authority decision matrix, the T16 write-input candidate mapping, R27 route
@@ -140,7 +145,29 @@ matrix, R24-T4 private-output policy, and durable-memory-store/runtime-hierarchy
 source evidence. Actual memory/RAG write, durable-store invocation, Learning
 Plane source edits, checker/hook/session/handoff edits by worker, runtime,
 private-output, provider/live, public-sync, and production claims remain
-unauthorized until T19 is executed, reviewed, and accepted.
+unauthorized until a fresh T20 packet is authored, gated, dispatched, executed,
+reviewed, and accepted.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T19 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T19
+material closure commit `dc687360`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and closure state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR28T19MineruDurableStoreInvocationReleaseDecisionClosure20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this MSEA-R28-T19 closure session-sync if
+rejected; do not revert material closure commit `dc687360`, T19 dispatch commit
+`8db612b0`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T19 Dispatch Session Sync
 

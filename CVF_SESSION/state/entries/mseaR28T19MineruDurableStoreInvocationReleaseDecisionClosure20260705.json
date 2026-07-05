@@ -1,0 +1,31 @@
+{
+  "stateOrder": 1470,
+  "stateKey": "mseaR28T19MineruDurableStoreInvocationReleaseDecisionClosure20260705",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-05",
+    "materialCommit": "dc687360",
+    "materialCommitFull": "dc68736079b2228ae0e6710ae165eef51b5fb976",
+    "executionBaseHead": "12bf23a26",
+    "dispatchMaterialCommit": "8db612b0",
+    "dispatchMaterialCommitFull": "8db612b020f226c753348f608517550bc31fb295",
+    "dispatchSessionSyncCommit": "12bf23a26",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md",
+    "matrixPath": "docs/reference/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_MATRIX_2026-07-05.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md",
+    "selectedDecisionDisposition": "T20_DURABLE_STORE_INVOCATION_IMPLEMENTATION_CANDIDATE",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T19_DECISION_ONLY",
+    "durableStoreInvocationDisposition": "DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T19_DECISION_ONLY",
+    "privateOutputDisposition": "PRIVATE_OUTPUT_NOT_READ_OR_RELEASED",
+    "nextRecommendedMove": "AUTHOR_MSEA_R28_T20_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_FOR_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION",
+    "reviewerDisposition": "accepted worker return and companion matrix without worker-artifact repair; no completion review committed",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T19 accepted a docs-only durable-store invocation release decision matrix and worker return. It selects a future T20 implementation candidate route only. It does not authorize actual memory/RAG write, durable-store invocation before fresh T20 dispatch, vectorization, retrieval, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, Learning Plane source edits, checker/hook/session/handoff edits by worker, worker commit, or push."
+  }
+}
