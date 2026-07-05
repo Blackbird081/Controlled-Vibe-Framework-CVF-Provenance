@@ -6,24 +6,15 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T22 memory/RAG route release
-implementation-candidate closure. Keep the active session ready for T23
-production route release authority-decision work-order authoring without
-implying production memory/RAG route release or production write authority.
+Carry compact continuity after MSEA-R28-T23 production memory/RAG route release
+authority-decision dispatch. Keep the active session ready for T23 no-commit
+worker execution without implying production memory/RAG route release or
+production write authority.
 
-## Scope / Target / Owner Boundary
-
-Target: active CVF session continuity after closing the MSEA-R28-T22
-memory/RAG route release implementation-candidate tranche.
-
-Owner boundary: this handoff owns session-sync continuity, active pointer
-updates, next-move routing, and claim boundaries only. It does not own MinerU
-runtime execution, private document or generated-output reads, provider/live
-proof, public-sync, schema/writer/adapter implementation outside dispatched
-scope, memory/RAG route release, production file-backed storage proof,
-standalone PDF app work, legal/use-case deep dive, extraction accuracy,
-document truth, current-law correctness, workflow-chain completion, or
-production-readiness claims.
+Historical detail is intentionally compacted out of this active handoff. Use
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
+`CVF_SESSION/state/entries/`, governed artifacts, and archived handoffs for
+canonical older continuity.
 
 ## Active Boundary
 
@@ -35,7 +26,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_closed_pending_t23_production_route_release_authority_decision_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T23 GC-018/source-verified work order for production memory/RAG route release authority decision only; parked checkpoint=production memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred until a fresh T23 packet is authored and gates pass; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R28-T23 no-commit worker return for production memory/RAG route release authority decision only; parked checkpoint=production memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred by T23 dispatch; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -47,15 +38,43 @@ Startup acknowledged: current mode=`msea_r28_t22_mineru_memory_rag_route_release
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `62f9b9c0c` MSEA-R28-T22 memory/RAG route release implementation-candidate closure |
-| Latest session-sync target | session sync after MSEA-R28-T22 closure |
+| Latest material packet | `4084f59db` MSEA-R28-T23 production memory/RAG route release authority-decision dispatch |
+| Latest session-sync target | session sync after MSEA-R28-T23 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_closed_pending_t23_production_route_release_authority_decision_work_order_authoring`
+`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R28-T23 Production Memory/RAG Route Release Authority Decision dispatch is
+DISPATCH_READY at material commit `4084f59db`.
+
+T23 dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
+
+Worker target artifacts:
+
+- `docs/reference/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
+
+Dispatch verification: pre-dispatch autorun PASS 73/73, dispatch commit
+steward PASS, material pre-commit hook PASS 80/80, and commit `4084f59db`.
+
+T23 dispatch boundary: authorizes only a docs-only decision matrix and worker
+return under WORKER_MUST_NOT_COMMIT. Production memory/RAG route release,
+production durable-store invocation, file-backed production persistence,
+vectorization, retrieval, MinerU runtime, private/generated output content
+read, Candidate Group A import, provider/live proof, public-sync, Web/UI,
+standalone app work, legal/use-case deep dive, extraction accuracy, document
+truth, legal quality, current-law correctness, workflow-chain production
+readiness, Python source/test edits for Pylance, durable store/runtime
+hierarchy/root barrel edits, provider-local/IDE config edits,
+checker/hook/session/handoff edits by worker, worker commit, and push remain
+unauthorized by T23 dispatch.
 
 MSEA-R28-T22 Memory/RAG Route Release Implementation Candidate is
 CLOSED_PASS_BOUNDED at material commit `62f9b9c0c`.
@@ -75,208 +94,47 @@ Accepted disposition:
 Held token:
 `MEMORY_RAG_ROUTE_RELEASE_NOT_PRODUCTION_AUTHORIZED_BY_T22`.
 
-Verification: focused Vitest PASS 1 file / 19 tests, TypeScript check PASS,
-worker-return fast gate PASS, pre-implementation autorun PASS 75/75,
-reviewer-return commit steward PASS, material pre-commit hook PASS 80/80, and
-commit `62f9b9c0c`.
-
-T22 closure boundary: accepts only a bounded Learning Plane helper/test
-implementation candidate that checks explicit memory-owner authorization, R27
-prerequisites, R24-T4 privacy invariants, and T20 helper delegation in
-deterministic in-process tests. Production memory/RAG route release,
+T22 closure boundary: accepts only bounded Learning Plane helper/test
+implementation-candidate behavior. Production memory/RAG route release,
 production durable-store invocation, file-backed production persistence,
-vectorization, retrieval, MinerU runtime, private/generated output content
-read, Candidate Group A import, provider/live proof, public-sync, Web/UI,
-standalone app work, legal/use-case deep dive, extraction accuracy, document
-truth, legal quality, current-law correctness, workflow-chain production
-readiness, Python source/test edits for Pylance, durable store/runtime
-hierarchy/root barrel edits, provider-local/IDE config edits,
-checker/hook/session/handoff edits by worker, worker commit, and push remain
-unauthorized pending fresh T23 authoring and acceptance.
+retrieval, vectorization, private/generated output content read, provider/live
+proof, public-sync, and production-readiness claims remain unauthorized.
 
-MSEA-R28-T21 Memory/RAG Route Release Authority Decision is
-CLOSED_PASS_BOUNDED at material commit `6ce339437`.
-
-Dispatch artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
-
-Accepted T21 artifacts:
-
-- `docs/reference/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
-
-Selected T21 disposition:
-`T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`.
-
-Held token:
+MSEA-R28-T21 selected
+`T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE` at material commit
+`6ce339437` while preserving
 `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`.
 
-Verification: worker-return fast gate PASS, pre-implementation autorun PASS
-75/75, ADIF worker disclosure verified for 9 returned defects, reviewer-return
-commit steward PASS, material pre-commit hook PASS 80/80, and commit
-`6ce339437`.
-
-T21 closure boundary: accepts only a docs-only decision matrix and worker
-return. Actual memory/RAG route release, production durable-store invocation,
-file-backed production persistence, vectorization, retrieval, MinerU runtime,
-private/generated output content read, Candidate Group A import, provider/live
-proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive,
-extraction accuracy, document truth, legal quality, current-law correctness,
-workflow-chain production readiness, Python source/test edits for Pylance unless
-explicitly authorized by T22, durable store/runtime hierarchy/root barrel edits
-unless explicitly authorized by T22, provider-local/IDE config edits,
-checker/hook/session/handoff edits by worker, worker commit, and push remain
-unauthorized pending fresh T22 authoring and acceptance.
-
-Worker output quality controls hardening is accepted at material commit
-`cb4e296db`.
-
-Accepted hardening artifacts:
-
-- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0024.md`
-- `docs/reference/agent_defect_intelligence/entries/README.md`
-- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
-
-Result: `ADIF-0024` records worker-return stale evidence and workspace hygiene
-drift, and the work-order template now has a Worker Output Quality Controls
-section. T21 must use both so no-commit worker instructions require exact
-command rerun after final edits, current git status with untracked files,
-provider-local and IDE side-channel cleanup or disclosure, static-analysis
-diagnostic disposition, and negative edge-case tests for risky
-memory/private-output/security/unsafe-normalization surfaces.
-
-Verification: ADIF entry integrity PASS, ADIF resolver returns ADIF-0024 for
-worker/pre-implementation `docs/reviews` lookup, raw memory release invariant
-PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS,
-material pre-commit hook PASS 80/80, and commit `cb4e296db`.
-
-MSEA-R28-T20 Actual Durable Store Invocation Implementation is
-CLOSED_PASS_BOUNDED at material commit `696c01224`.
-
-Accepted T20 artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-durable-store-invocation.ts`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-durable-store-invocation.test.ts`
-- `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_COMPLETION_2026-07-05.md`
-
-T20 accepted disposition:
-`ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_ACCEPTED_BOUNDED`.
-Memory-write disposition:
+MSEA-R28-T20 accepted bounded durable-store invocation helper/test evidence at
+material commit `696c01224` while preserving
 `MEMORY_WRITE_NOT_AUTHORIZED_BY_T20_INVOCATION_ONLY`.
-Durable-store invocation scope:
-`IN_PROCESS_FOCUSED_TEST_HELPER_INVOCATION_ONLY`.
-Private-output disposition:
-`PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`.
 
-Verification: TypeScript check PASS, focused Vitest PASS 1 file / 29 tests,
-worker-return fast gate PASS, pre-implementation autorun PASS 75/75,
-reviewer-return commit steward PASS, material pre-commit hook PASS 80/80, and
-commit `696c01224`.
-
-T20 closure boundary: accepts only a bounded Learning Plane Foundation helper
-and focused test path that consume the accepted T18 adapter payload shape,
-reject unsafe adapter payloads before invocation, and invoke existing
-`DurableMemoryStore.write` only through deterministic in-process tests. Actual
-memory/RAG route release, production durable-store invocation, MinerU runtime,
-private/generated content read, Candidate Group A import, provider/live proof,
-public-sync, Web/UI, production file-backed storage proof,
-retrieval/vectorization, standalone app surfaces, legal/use-case deep dive,
-extraction accuracy, document truth, legal quality, current-law correctness,
-workflow-chain production readiness, Python source/test edits for Pylance,
-durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
-edits, checker/hook/session/handoff edits by worker, worker commit, and push
-remain unauthorized pending fresh T21 authoring and acceptance.
-
-Accepted T19 artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
-- `docs/reference/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_MATRIX_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md`
-
-Accepted T18 artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_2026-07-04.md`
-- `docs/reviews/CVF_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md`
-- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`
-- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`
-
-Closure disposition:
-`DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_CANDIDATE_READY`.
-Memory-write disposition:
-`MEMORY_WRITE_NOT_AUTHORIZED_BY_T18_ADAPTER_ONLY`.
-Durable-store invocation disposition:
-`DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T18`.
-
-T19 selected decision disposition:
-`T20_DURABLE_STORE_INVOCATION_IMPLEMENTATION_CANDIDATE`.
-Memory-write disposition:
-`MEMORY_WRITE_NOT_AUTHORIZED_BY_T19_DECISION_ONLY`.
-Durable-store invocation disposition:
-`DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T19_DECISION_ONLY`.
-
-Verification: worker-return fast gate PASS, pre-implementation autorun PASS
-75/75, reviewer-return commit steward PASS, material pre-commit hook PASS
-80/80, and commit `dc687360`.
-
-R28-T19 closure boundary: accepts only a docs-only decision matrix and worker
-return. Actual memory/RAG write, durable-store invocation before fresh T20
-dispatch, vectorization, retrieval, MinerU runtime, private/generated content
-read, Candidate Group A import, provider/live proof, public-sync, standalone
-app work, legal/use-case deep dive, extraction accuracy, document truth, legal
-quality, current-law correctness, workflow-chain production readiness, Learning
-Plane source edits, checker/hook/session/handoff edits by worker, worker
-commit, and push remain unauthorized pending fresh T20 authoring, dispatch,
-execution, review, and acceptance.
-
-Previous R28-T16 closure boundary: accepts only deterministic summary-only
-durable-memory write-input candidate mapping source/test behavior and a worker
-return. It structurally maps the T14 MinerU memory-record candidate to the
-durable memory store write-input candidate shape. It does not authorize actual
-memory/RAG write, actor authorization release, policy decision release,
-provenance scoring release, durable-store invocation, vectorization,
-retrieval, MinerU runtime execution, private document read, generated output
-content read/quote, Candidate Group A source or generated output import,
-public-sync, provider/live proof, checker/hook/session/handoff edits by worker,
-standalone PDF app, legal/use-case deep dive, extraction accuracy, document
-truth, legal quality, current-law correctness, workflow-chain production
-readiness, worker commit, or push.
-
-Recent predecessor anchors: worker output quality hardening `cb4e296db`, R28-T20 closure `696c01224`, R28-T20 dispatch `974876b40`, R28-T19 closure `dc687360`, R28-T19 dispatch `8db612b0`, R28-T18 closure `51966467`, R28-T18 dispatch `02d174be`, R28-T17 closure `5166a624`, R28-T17 dispatch `b62e1be3`, R28-T16 closure `0bf81a68`, R28-T16 dispatch `93d94b0d`, R28-T15 closure `50afaa0f`, R28-T15 dispatch `e3ef73e4`, R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
-`a6aaf7ec`, R28-T10 closure
-`528f8255`, R28-T10 dispatch
-`7244842b`, R28-T9 closure `45fb7a9a`, R28-T9 dispatch
-`3e901fda`, R28-T8 closure `cba22bc8`, R28-T8 dispatch
-`17d8c1a4`, R28-T7 closure
-`67b98170`, R28-T7 dispatch
-`3b4488e5`, R28-T6 closure `6bad1865`, R28-T6 dispatch
-`03e04018`, R28-T5 closure
-`4a824e6d`, R28-T5 dispatch
-`042fa17b`, R28-T4 closure
-`0c81b7bc`, R28-T3 closure
-`4d64e33f`, R28-T3 dispatch `0567257f`, R28-T2 closure
-`3e230445`, R28-T1 closure `23177f27`, R28 selection `e2bb6b61`, R27 closure
-`ebd42823`, R26 closure `4b8166ad`, R25 closure `1e58d75a`, and R24-T4 policy
-closure `224a31a8`. Older MSEA history is intentionally summarized out of the
-active handoff; use `CVF_SESSION/ACTIVE_SESSION_STATE.json`, state entries, and
-archived handoffs for full details.
+Older MSEA history is summarized out of this active handoff. Use the active
+state registry, source state entries, governed artifacts, and archived handoffs
+for full detail.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MSEA-R28-T23 GC-018/source-verified work
-order for production memory/RAG route release authority decision only.
+Next allowed move: execute the MSEA-R28-T23 no-commit worker return for
+production memory/RAG route release authority decision only.
 
-T23 must use accepted T22 evidence, T21 authority decision, T20 durable-store
-invocation helper, R27 route prerequisites, R24-T4 private-output policy,
-Source Verification Block, ADIF disclosure, checker read-ahead, Agent Handoff
-Contract Control Block, Reviewer Closure Conversion, pre-dispatch autorun
-gates, and GC-051 path-literal discipline.
+Worker must create only:
+
+- `docs/reference/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
+
+Worker must select exactly one:
+
+- `T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY`
+- `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_HELD_PENDING_AUTHORITY_GAP`
+- `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_BLOCKED_WITH_REASON`
+
+T23 worker must use accepted T22 evidence, T21 authority decision, T20
+durable-store invocation helper, R27 route prerequisites, R24-T4 private-output
+policy, Source Verification Block, ADIF disclosure, checker read-ahead, Worker
+Output Quality Controls, Provider-Local Stray Artifact Control, Pylance
+Static-Analysis Diagnostic Boundary, final worker-return fast gate,
+pre-implementation autorun gates, and GC-051 path-literal discipline.
 
 Production memory/RAG route release, production durable-store invocation,
 file-backed production persistence, vectorization, retrieval, MinerU runtime,
@@ -286,33 +144,12 @@ extraction accuracy, document truth, legal quality, current-law correctness,
 workflow-chain production readiness, Python source/test edits for Pylance,
 durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
 edits, checker/hook/session/handoff edits by worker, worker commit, and push
-remain unauthorized until a fresh T23 packet is authored and gates pass.
+remain unauthorized by T23 dispatch.
 
-## Core Guard Self-Protection Authorization - MSEA-R28-T22 Closure Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R28-T23 Dispatch Session Sync
 
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T22
-material closure commit `62f9b9c0c`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T22MineruMemoryRagRouteReleaseImplementationCandidateClosure20260705.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-
-Rollback boundary: revert only this T22 closure session-sync if rejected; do
-not revert material closure commit `62f9b9c0c`, T22 dispatch commit
-`6e31088a1`, or earlier MSEA history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T22 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T22
-dispatch material commit `6e31088a1`, including active mode, next allowed move,
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T23
+dispatch material commit `4084f59db`, including active mode, next allowed move,
 generated active state, bootstrap read model, front-door continuity, active
 handoff, and dispatch state entry.
 
@@ -322,835 +159,45 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T22MineruMemoryRagRouteReleaseImplementationCandidateDispatch20260705.json`
+- `CVF_SESSION/state/entries/mseaR28T23MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260705.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `AGENT_HANDOFF_V36_2026-07-04.md`
 
-Rollback boundary: revert only this T22 dispatch session-sync if rejected; do
-not revert material dispatch commit `6e31088a1` or earlier T21/T20 material
-commits.
+Operator authorization: operator requested continuation to T23 work order; the
+session-sync steward is authorized to update continuity surfaces after material
+dispatch commit `4084f59db` only.
 
-## Core Guard Self-Protection Authorization - MSEA-R28-T21 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T21
-material closure commit `6ce339437`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record T21 closure continuity and T22 authoring next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T21 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T21 closed pending T22 work-order authoring. |
-| `CVF_SESSION/state/entries/mseaR28T21MineruMemoryRagRouteReleaseAuthorityDecisionClosure20260705.json` | Record T21 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T22 GC-018/source-verified work-order authoring. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T21 closure continuity and T22 authoring next move. |
-
-Rollback boundary: revert only this T21 closure session-sync if rejected; do
-not revert material closure commit `6ce339437`, T21 dispatch commit
-`53305fa86`, or older MSEA history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T21 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T21
-dispatch material commit `53305fa86`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record T21 dispatch continuity and worker-execution next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T21 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T21 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR28T21MineruMemoryRagRouteReleaseAuthorityDecisionDispatch20260705.json` | Record T21 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T21 no-commit worker execution. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T21 dispatch continuity and worker-execution next move. |
-
-Rollback boundary: revert only this T21 dispatch session-sync if rejected; do
-not revert material dispatch commit `53305fa86`, worker-output hardening commit
-`cb4e296db`, T20 material closure commit `696c01224`, T20 dispatch commit
-`974876b40`, or older MSEA history.
-
-## Core Guard Self-Protection Authorization - Worker Output Quality Hardening Session Sync
-
-Authorized guard-maintenance scope: session-sync only after worker output
-quality controls hardening material commit `cb4e296db`, including next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and hardening state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/entries/mseaR28T20WorkerOutputQualityControlsHardening20260705.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this worker-output quality hardening
-session-sync if rejected; do not revert material hardening commit `cb4e296db`,
-T20 material closure commit `696c01224`, T20 dispatch commit `974876b40`, or
-older MSEA history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T20 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T20
-material closure commit `696c01224`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T20MineruActualDurableStoreInvocationImplementationClosure20260705.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T20 closure session-sync if
-rejected; do not revert material closure commit `696c01224`, T20 dispatch
-commit `974876b40`, or older MSEA history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T20 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T20
-material dispatch commit `974876b40`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T20MineruActualDurableStoreInvocationImplementationDispatch20260705.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T20 dispatch session-sync if
-rejected; do not revert material dispatch commit `974876b40`, T19 material
-closure commit `dc687360`, or older MSEA history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T19 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T19
-material closure commit `dc687360`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T19MineruDurableStoreInvocationReleaseDecisionClosure20260705.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T19 closure session-sync if
-rejected; do not revert material closure commit `dc687360`, T19 dispatch commit
-`8db612b0`, or older MSEA history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T19 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T19
-material dispatch commit `8db612b0`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T19MineruDurableStoreInvocationReleaseDecisionDispatch20260705.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T19 dispatch session-sync if
-rejected; do not revert material dispatch commit `8db612b0`, T18 material
-closure commit `51966467`, or older MSEA history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T18 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T18
-material closure commit `51966467`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T18MineruActualDurableMemoryWriteAdapterImplementationClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T18 closure session-sync if
-rejected; do not revert material closure commit `51966467` or older MSEA
+Rollback boundary: revert only this T23 dispatch session-sync if rejected; do
+not revert material dispatch commit `4084f59db` or earlier T22/T21 material
 history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T18 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T18
-material dispatch commit `02d174be`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T18MineruActualDurableMemoryWriteAdapterImplementationDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T18 dispatch session-sync if
-rejected; do not revert material dispatch commit `02d174be` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T17 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T17
-material closure commit `5166a624`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T17MineruDurableMemoryWriteAuthorityDecisionClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T17 closure session-sync if
-rejected; do not revert material closure commit `5166a624` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T17 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T17
-material dispatch commit `b62e1be3`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T17MineruDurableMemoryWriteAuthorityDecisionDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T17 dispatch session-sync if
-rejected; do not revert material dispatch commit `b62e1be3` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T16 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T16
-material closure commit `0bf81a68`, including active mode, next allowed move,
-generated active state, bootstrap read model, compacted front-door continuity,
-active handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current/closed work, startup acknowledgment, and next allowed move after T16 closure. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T16 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T16 closed pending T17 work-order authoring. |
-| `CVF_SESSION/state/entries/mseaR28T16MineruMemoryStoreAdapterMappingImplementationClosure20260704.json` | Record accepted T16 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T17 GC-018/source-verified work-order authoring only. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T16 closure continuity and T17 next move. |
-
-Rollback boundary: revert only this MSEA-R28-T16 closure session-sync if
-rejected; do not revert material closure commit `0bf81a68` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T16 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T16
-material dispatch commit `93d94b0d`, including active mode, next allowed move,
-generated active state, bootstrap read model, compacted front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after T16 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T16 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T16 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR28T16MineruMemoryStoreAdapterMappingImplementationDispatch20260704.json` | Record T16 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T16 no-commit worker execution. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T16 dispatch continuity and worker next move. |
-
-Rollback boundary: revert only this MSEA-R28-T16 dispatch session-sync if
-rejected; do not revert material dispatch commit `93d94b0d` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-Accepted T13 artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_MATRIX_2026-07-04.md`
-- `docs/reviews/CVF_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-04.md`
-
-MSEA-R28-T13 is closed at material commit `0002de2d`. The selected route is
-`MEMORY_RECORD_CANDIDATE_BUILDER_READY`, which releases only T14 work-order
-authoring. Do not implement T14 source/test changes until a fresh T14 packet is
-authored, gates pass, and worker execution is explicitly released.
-Memory-layer/RAG write remains unauthorized and T16 remains held pending later
-source-backed store-write authority. No MinerU runtime execution, private
-document read, generated output content read/quote, Candidate Group A source or
-generated output import, public-sync, provider/live proof, checker/hook edits
-outside a fresh work order, standalone PDF app, legal/use-case deep dive,
-evaluation deep dive, extraction accuracy, document truth, legal quality,
-current-law correctness, workflow-chain production readiness, worker
-stage/commit, or push is authorized unless a later accepted packet explicitly
-releases that scope.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T13 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T13
-material closure commit `0002de2d`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T13 closure. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T13 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T13 closed pending T14 work-order authoring. |
-| `CVF_SESSION/state/entries/mseaR28T13MineruMemoryWriteAuthorityDecisionClosure20260704.json` | Record accepted T13 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T14 work-order authoring only. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T13 closure continuity and next-move boundary. |
-
-Rollback boundary: revert only this MSEA-R28-T13 closure session-sync if
-rejected; do not revert material closure commit `0002de2d` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T13 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T13
-material dispatch commit `66f0f3c6`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after T13 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T13 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T13 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR28T13MineruMemoryWriteAuthorityDecisionDispatch20260704.json` | Record T13 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T13 no-commit worker execution. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T13 dispatch continuity and worker next move. |
-
-Rollback boundary: revert only this MSEA-R28-T13 dispatch session-sync if
-rejected; do not revert material dispatch commit `66f0f3c6` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T12 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T12
-material closure commit `91cc1422`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T12 closure. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T12 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T12 closed pending operator next-lane selection. |
-| `CVF_SESSION/state/entries/mseaR28T12MineruMemoryOwnerAdmissionReadoutImplementationClosure20260704.json` | Record accepted T12 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator next-lane selection or fresh memory-write authority work-order authoring if selected. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T12 closure continuity and next-move boundary. |
-
-Rollback boundary: revert only this MSEA-R28-T12 closure session-sync if
-rejected; do not revert material closure commit `91cc1422` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T12 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T12
-material dispatch commit `f87661cb`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after T12 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T12 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T12 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR28T12MineruMemoryOwnerAdmissionReadoutImplementationDispatch20260704.json` | Record T12 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T12 no-commit worker execution. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T12 dispatch continuity and worker next move. |
-
-Rollback boundary: revert only this MSEA-R28-T12 dispatch session-sync if
-rejected; do not revert material dispatch commit `f87661cb` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T11 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T11
-material closure commit `dec53037`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T11 closure. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T11 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T11 closed pending operator T12 or next-lane selection. |
-| `CVF_SESSION/state/entries/blockedWorkClasses.json` | Preserve startup blocked-work-class list as generated active-state source entry. |
-| `CVF_SESSION/state/entries/mseaR28T11MineruMemoryOwnerAdmissionDesignClosure20260704.json` | Record accepted T11 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T12 work-order authoring or another operator-selected governed lane. |
-| `CVF_SESSION/state/entries/startupAcknowledgmentRequired.json` | Preserve startup acknowledgment field list as generated active-state source entry. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T11 closure continuity and next-move boundary. |
-
-Rollback boundary: revert only this MSEA-R28-T11 closure session-sync if
-rejected; do not revert material closure commit `dec53037` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T11 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T11
-material dispatch commit `a6aaf7ec`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after T11 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T11 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T11 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR28T11MineruMemoryOwnerAdmissionDesignDispatch20260704.json` | Record T11 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T11 no-commit worker execution. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T11 dispatch continuity and worker next move. |
-
-Rollback boundary: revert only this MSEA-R28-T11 dispatch session-sync if
-rejected; do not revert material dispatch commit `a6aaf7ec` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T10 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T10
-material closure commit `528f8255`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T10 closure. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T10 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T10 closed pending operator next-lane selection. |
-| `CVF_SESSION/state/entries/mseaR28T10MemoryRouteSelectionAfterCandidateContractClosure20260704.json` | Record accepted T10 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator next-lane selection or future memory-owner GC-018 authoring if selected. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T10 closure continuity and next-lane boundary. |
-
-Rollback boundary: revert only this MSEA-R28-T10 closure session-sync if
-rejected; do not revert material closure commit `528f8255` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T10 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T10
-material dispatch commit `7244842b`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after T10 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T10 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T10 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR28T10MemoryRouteSelectionAfterCandidateContractDispatch20260704.json` | Record T10 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T10 no-commit worker execution. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T10 dispatch continuity and worker next move. |
-
-Rollback boundary: revert only this MSEA-R28-T10 dispatch session-sync if
-rejected; do not revert material dispatch commit `7244842b` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T9 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T9 material
-closure commit `45fb7a9a`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after T9 closure. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T9 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T9 closed pending T10 work-order authoring. |
-| `CVF_SESSION/state/entries/mseaR28T9MemorySafeCandidateContractClosure20260704.json` | Record accepted T9 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T10 route-selection work-order authoring. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T9 closure continuity and T10 next move. |
-
-Rollback boundary: revert only this MSEA-R28-T9 closure session-sync if
-rejected; do not revert material closure commit `45fb7a9a` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T9 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T9 material
-dispatch commit `3e901fda`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T9MemorySafeCandidateContractDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T9 dispatch session-sync if
-rejected; do not revert material dispatch commit `3e901fda` or older MSEA
-history.
-
-LHW24 remains the latest closed numbered LHW wave.
-
-## Claim Boundary
-
-This handoff is a continuity and next-move routing artifact only. It does not
-implement or prove memory-route release, source-pointer resolution beyond the
-accepted metadata helper, MinerU runtime, private or generated content reads,
-memory/RAG writes, adapter
-behavior, provider/live behavior, public-sync,
-standalone PDF app behavior, legal/use-case analysis quality, extraction
-accuracy, document truth,
-current-law correctness, workflow-chain completion, or production readiness.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T8 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T8 material
-closure commit `cba22bc8`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T8DownstreamUseAndMemoryRouteReleaseDecisionClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T8 closure session-sync if
-rejected; do not revert material closure commit `cba22bc8` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T8 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T8 material
-dispatch commit `17d8c1a4`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T8DownstreamUseAndMemoryRouteReleaseDecisionDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T8 dispatch session-sync if
-rejected; do not revert material dispatch commit `17d8c1a4` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T7 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T7 material
-closure commit `67b98170`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T7ActualQualityReportSourcePointerProductionImplementationClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T7 closure session-sync if
-rejected; do not revert material closure commit `67b98170` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T7 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T7 material
-dispatch commit `3b4488e5`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T7ActualQualityReportSourcePointerProductionImplementationDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T7 dispatch session-sync if
-rejected; do not revert material dispatch commit `3b4488e5` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T6 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T6 material
-closure commit `6bad1865`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T6QualityReportSourcePointerProductionDecisionClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T6 closure session-sync if
-rejected; do not revert material closure commit `6bad1865` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T6 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T6 material
-dispatch commit `03e04018`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T6QualityReportSourcePointerProductionDecisionDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T6 dispatch session-sync if
-rejected; do not revert material dispatch commit `03e04018` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T5 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T5 material
-closure commit `4a824e6d`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T5QualitySourcePointerReceiptSchemaExtensionClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T5 closure session-sync if
-rejected; do not revert material closure commit `4a824e6d` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T5 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T5 material
-dispatch commit `042fa17b`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-dispatch state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T5QualitySourcePointerReceiptSchemaExtensionDispatch20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T5 dispatch session-sync if
-rejected; do not revert material dispatch commit `042fa17b` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T4 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T4 material
-closure commit `0c81b7bc`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-closure state entry.
-
-Protected paths:
-
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T4MineruReceiptBoundaryCheckerImplementationClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Rollback boundary: revert only this MSEA-R28-T4 closure session-sync if
-rejected; do not revert material closure commit `0c81b7bc` or older MSEA
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R28-T3 Closure Session Sync And V36 Handoff Rotation
-
-Authorized guard-maintenance scope: session-sync and handoff rotation only after
-MSEA-R28-T3 material closure commit `4d64e33f`, including active handoff
-rotation from V35 to V36, active mode, next allowed move, generated active
-state, bootstrap read model, front-door continuity, AGENTS active-handoff
-pointer, archived-handoff routing, closure state entry, and this handoff.
-
-Protected paths:
-
-- `AGENTS.md`
-- `AGENT_HANDOFF_V36_2026-07-04.md`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T3MineruReceiptBoundaryCheckerCandidateDesignClosure20260704.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-
-Reason: MSEA-R28-T3 material closure commit `4d64e33f` accepted the docs-only
-checker-candidate design worker return and companion matrix while preserving
-the checker implementation and memory-route holds. The prior active handoff V35
-was within the hard size threshold after the closure sync and must be archived
-instead of receiving more status text.
-
-Operator authorization: operator asked Codex to continue closure/next-move work;
-the governed file size guard required handoff rotation before session-sync
-commit could close.
-
-Rollback boundary: revert only this MSEA-R28-T3 closure session-sync and
-handoff rotation if rejected; do not revert material closure commit `4d64e33f`
-or older MSEA history.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
-|---|---|
-| Actor | Codex reviewer/closer and session-sync steward |
+| --- | --- |
+| Actor | Codex session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | MSEA-R28-T3 closure session-sync and V36 handoff rotation, 2026-07-04 |
+| Session or invocation | MSEA-R28-T23 dispatch session-sync, 2026-07-05 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read, rg, apply_patch, git mv, governance gates |
-| Target paths | `AGENTS.md`; `AGENT_HANDOFF_V36_2026-07-04.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T3MineruReceiptBoundaryCheckerCandidateDesignClosure20260704.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
-| Allowed scope source | MSEA-R28-T3 material closure commit `4d64e33f` plus governed file size guard requiring active handoff rotation near the hard threshold |
-| Before status evidence | active handoff V35 was touched during closure sync and reached 1196 lines against the 1200-line hard threshold |
-| After status evidence | V35 archived, V36 opened as active handoff, generated session state and front door point to V36 |
+| Command or tool surface | `Get-Content`; `rg`; `python governance/compat/*`; `apply_patch`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T23MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R28-T23 dispatch material commit `4084f59db` and session-sync steward role |
+| Before status evidence | T22 closure state routed next move to T23 work-order authoring; active handoff V36 exceeded active markdown size threshold after T23 dispatch note |
+| After status evidence | active mode and next allowed move route to T23 no-commit worker execution; active handoff compacted below size threshold |
 | Diff evidence | `git diff --name-status` before session-sync commit |
-| Approval boundary | session-sync and handoff rotation only |
-| Claim boundary | no checker implementation, hook wiring, runtime, provider/live proof, public-sync, memory/RAG write, app build, use-case deep dive, or production-readiness claim |
-| Agent type | reviewer/closer; session-sync steward |
-| Invocation ID | `msea-r28-t3-closure-session-sync-v36-rotation-2026-07-04` |
-| Expected manifest | `AGENTS.md`; `AGENT_HANDOFF_V36_2026-07-04.md`; `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T3MineruReceiptBoundaryCheckerCandidateDesignClosure20260704.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
-| Actual changed set | pending session-sync commit |
-| Manifest delta | MATCH_PENDING_COMMIT |
-| Deletion or rename disposition | V35 moved to archived handoff path; V36 opened as active successor |
+| Approval boundary | session-sync only; no worker execution, runtime, provider/live, public-sync, private-output read, source/test edit, or production route release |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r28-t23-dispatch-session-sync-2026-07-05` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T23MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T23MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Manifest delta | MATCH |
 
-## GC-020 HEAD Marker - MSEA-R28-T3 Closure Session Sync Commit
+## Claim Boundary
 
-| Field | Evidence |
-|---|---|
-| sessionSyncCommitHead | `6548da9d` |
-| sessionSyncCommitHeadFull | `6548da9d76fddd7e2675fabaa3a6b36a2b67da05` |
-| activeHandoff | `AGENT_HANDOFF_V36_2026-07-04.md` |
-| archivedHandoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
-| materialCommit | `4d64e33f` |
-| currentMode | `msea_r28_t3_mineru_receipt_boundary_checker_candidate_design_closed_pending_r28_t4_checker_implementation_decision_work_order_authoring` |
-| nextAllowedMove | author MSEA-R28-T4 GC-018/source-verified work order for receipt-boundary checker implementation and hook wiring decision |
-| claimBoundary | handoff marker only; no checker implementation, hook wiring, runtime, provider/live proof, public-sync, memory/RAG write, app build, use-case deep dive, or production claim |
+This handoff is continuity metadata only. It does not authorize production
+memory/RAG route release, production durable-store invocation, runtime,
+provider/live proof, private/generated output content read, public-sync,
+source/test implementation, standalone app work, legal/use-case deep dive,
+extraction accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production readiness, worker commit, push, or public claim.
