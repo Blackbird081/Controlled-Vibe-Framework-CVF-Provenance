@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R28-T21 WORKER_MUST_NOT_COMMIT docs-only authority decision worker for MinerU memory/RAG route release; parked checkpoint=actual memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T22 GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for bounded memory/RAG route release implementation candidate; parked checkpoint=actual memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance unless explicitly authorized by T22, durable store/runtime hierarchy/root barrel edits unless explicitly authorized by T22, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+Current mode marker: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
 
-Current mode: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+Current mode: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
 
-`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
 
 Previous mode:
 
-`msea_r28_t20_mineru_actual_durable_store_invocation_implementation_closed_pending_t21_memory_route_release_authority_decision_work_order_authoring`
+`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T21 MinerU Memory/RAG Route Release Authority Decision | `6ce339437` | CLOSED_PASS_BOUNDED; accepted docs-only decision matrix and worker return; selected `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`; preserved `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG route release remains unauthorized pending fresh T22 dispatch and acceptance. |
 | MSEA-R28-T21 MinerU Memory/RAG Route Release Authority Decision dispatch | `53305fa86` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for docs-only route-release authority decision; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; next move is no-commit T21 worker execution creating only the decision matrix and worker return. |
 | MSEA-R28-T20 Worker Output Quality Controls Hardening | `cb4e296db` | REFERENCE_HARDENING_ACCEPTED; added `ADIF-0024` and work-order template Worker Output Quality Controls so T21 and later no-commit worker returns must rerun exact commands after final edits, record current git status with untracked files, clean/disclose provider-local and IDE side-channel files, disposition static-analysis diagnostics, and include negative edge-case tests for risky memory/private-output/security/unsafe-normalization surfaces. |
 | MSEA-R28-T20 MinerU Actual Durable Store Invocation Implementation | `696c01224` | CLOSED_PASS_BOUNDED; accepted bounded Learning Plane helper, focused test, worker return, and completion review; TypeScript check PASS, focused Vitest PASS 1 file / 29 tests, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG route release remains unauthorized pending fresh T21 authority decision. |
@@ -69,7 +70,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Memory-route release | `53305fa86` | T21_DISPATCH_READY; actual memory/RAG route release remains unauthorized pending T21 no-commit worker execution, review, and acceptance. |
+| Memory-route release | `6ce339437` | T22_WORK_ORDER_AUTHORING_READY; T21 selected a future implementation candidate but actual memory/RAG route release remains unauthorized pending fresh T22 GC-018/work order, execution, review, and acceptance. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
 
@@ -77,6 +78,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T21 MinerU Memory/RAG Route Release Authority Decision | `6ce339437` | CLOSED_PASS_BOUNDED; selected `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`; memory/RAG route release remains `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R28-T20 MinerU Actual Durable Store Invocation Implementation | `696c01224` | CLOSED_PASS_BOUNDED; selected `ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_ACCEPTED_BOUNDED`; memory/RAG route release remains `MEMORY_WRITE_NOT_AUTHORIZED_BY_T20_INVOCATION_ONLY`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; TypeScript check PASS, focused Vitest PASS 1 file / 29 tests, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R28-T19 MinerU Durable Store Invocation Release Decision | `dc687360` | CLOSED_PASS_BOUNDED; selected `T20_DURABLE_STORE_INVOCATION_IMPLEMENTATION_CANDIDATE`; memory/RAG write remains `MEMORY_WRITE_NOT_AUTHORIZED_BY_T19_DECISION_ONLY`; durable-store invocation remains `DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T19_DECISION_ONLY`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R28-T18 MinerU Actual Durable Memory Write Adapter Implementation | `51966467` | CLOSED_PASS_BOUNDED; selected `DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_CANDIDATE_READY`; memory/RAG write remains `MEMORY_WRITE_NOT_AUTHORIZED_BY_T18_ADAPTER_ONLY`; durable-store invocation remains `DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T18`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; focused pytest PASS 71/71, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
@@ -98,10 +100,13 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+Mode: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
 
-Next allowed move: execute MSEA-R28-T21 under WORKER_MUST_NOT_COMMIT. Worker
-creates only:
+Next allowed move: author a fresh MSEA-R28-T22 GC-018/source-verified
+WORKER_MUST_NOT_COMMIT work order for bounded memory/RAG route release
+implementation candidate.
+
+Accepted T21 closure artifacts:
 
 - `docs/reference/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
 - `docs/reviews/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
@@ -111,12 +116,16 @@ T21 dispatch artifacts:
 - `docs/baselines/CVF_GC018_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
 
-T21 worker must select exactly one of
-`T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`,
-`MEMORY_RAG_ROUTE_RELEASE_HELD_PENDING_GAP`, or
-`BLOCKED_SOURCE_NOT_FOUND`, preserve
-`MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`, and satisfy
-ADIF-0024 Worker Output Quality Controls.
+T21 selected `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE` and
+preserved `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`.
+
+T22 authoring must use accepted T21, T20, T19, T18, T17, R27, R24-T4, and
+ADIF-0024 evidence. It must require a fresh memory-owner authorization surface,
+explicit `policyDecision`, `actorAuthorized`, and `provenanceScore` source
+verification, R27 five-prerequisite re-verification at implementation time,
+R24-T4 privacy preservation, provider-local/Pylance hygiene controls, Source
+Verification Block, ADIF disclosure, Agent Handoff Contract Control Block,
+Reviewer Closure Conversion, and pre-dispatch gates.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -150,26 +159,47 @@ Accepted T18 closure artifacts:
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`
 
-MSEA-R28-T20 closure is at material commit `696c01224`. It accepts only a
-bounded Learning Plane Foundation helper and focused test path that consume the
-accepted T18 adapter payload shape, reject unsafe adapter payloads before
-invocation, and invoke existing `DurableMemoryStore.write` only through
-deterministic in-process tests. Actual memory/RAG route release, production
-durable-store invocation, MinerU runtime, private/generated content read,
-Candidate Group A import, provider/live proof, public-sync, Web/UI, production
-file-backed storage proof, retrieval/vectorization, standalone app surfaces,
-legal/use-case deep dive, extraction accuracy, document truth, legal quality,
-current-law correctness, workflow-chain production readiness, Python source/test
-edits for Pylance, durable store/runtime hierarchy/root barrel edits,
+MSEA-R28-T21 closure is at material commit `6ce339437`. It accepts only a
+docs-only decision matrix and worker return. Actual memory/RAG route release,
+production durable-store invocation, MinerU runtime, private/generated content
+read, Candidate Group A import, provider/live proof, public-sync, Web/UI,
+production file-backed storage proof, retrieval/vectorization, standalone app
+surfaces, legal/use-case deep dive, extraction accuracy, document truth, legal
+quality, current-law correctness, workflow-chain production readiness, Python
+source/test edits for Pylance unless explicitly authorized by T22, durable
+store/runtime hierarchy/root barrel edits unless explicitly authorized by T22,
 provider-local/IDE config edits, checker/hook/session/handoff edits by worker,
-worker commit, and push remain held pending fresh T21 authoring and acceptance.
+worker commit, and push remain held pending fresh T22 authoring and acceptance.
 
-T21 work order already includes ADIF-0024 and Worker Output Quality Controls.
-Worker execution must rerun exact commands after final edits, record current
-`git status --short --untracked-files=all`, clean/disclose provider-local and
-IDE side-channel files, disposition static-analysis diagnostics, and include
-negative edge-case decision rows for risky memory/private-output/security/
-unsafe-normalization surfaces.
+T22 work-order authoring should carry ADIF-0024 and Worker Output Quality
+Controls forward so no-commit worker returns must rerun exact commands after
+final edits, record current `git status --short --untracked-files=all`,
+clean/disclose provider-local and IDE side-channel files, disposition
+static-analysis diagnostics, and include negative edge-case tests for risky
+memory/private-output/security/unsafe-normalization surfaces.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T21 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T21
+material closure commit `6ce339437`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record T21 closure continuity and T22 authoring next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T21 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T21 closed pending T22 work-order authoring. |
+| `CVF_SESSION/state/entries/mseaR28T21MineruMemoryRagRouteReleaseAuthorityDecisionClosure20260705.json` | Record T21 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T22 GC-018/source-verified work-order authoring. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T21 closure continuity and T22 authoring next move. |
+
+Rollback boundary: revert only this T21 closure session-sync if rejected; do
+not revert material closure commit `6ce339437`, T21 dispatch commit
+`53305fa86`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T21 Dispatch Session Sync
 

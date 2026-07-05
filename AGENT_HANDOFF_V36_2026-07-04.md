@@ -7,14 +7,13 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 ## Purpose
 
 Carry compact continuity after MSEA-R28-T21 memory/RAG route release authority
-decision dispatch. Keep the active session ready for T21 no-commit worker
-execution without implying memory/RAG route release or production write
-authority.
+decision closure. Keep the active session ready for T22 work-order authoring
+without implying memory/RAG route release or production write authority.
 
 ## Scope / Target / Owner Boundary
 
-Target: active CVF session continuity after committing the MSEA-R28-T21
-memory/RAG route release authority decision dispatch packet.
+Target: active CVF session continuity after accepting the MSEA-R28-T21
+memory/RAG route release authority decision worker return.
 
 Owner boundary: this handoff owns session-sync continuity, active pointer
 updates, next-move routing, and claim boundaries only. It does not own MinerU
@@ -35,7 +34,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R28-T21 WORKER_MUST_NOT_COMMIT docs-only authority decision worker for MinerU memory/RAG route release; parked checkpoint=actual memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T22 GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for bounded memory/RAG route release implementation candidate; parked checkpoint=actual memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance unless explicitly authorized by T22, durable store/runtime hierarchy/root barrel edits unless explicitly authorized by T22, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -47,46 +46,51 @@ Startup acknowledged: current mode=`msea_r28_t21_mineru_memory_rag_route_release
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `53305fa86` MSEA-R28-T21 memory/RAG route release authority decision dispatch |
-| Latest session-sync target | session sync after MSEA-R28-T21 dispatch |
+| Latest material packet | `6ce339437` MSEA-R28-T21 memory/RAG route release authority decision closure |
+| Latest session-sync target | session sync after MSEA-R28-T21 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R28-T21 Memory/RAG Route Release Authority Decision dispatch is committed
-at material commit `53305fa86`.
+MSEA-R28-T21 Memory/RAG Route Release Authority Decision is
+CLOSED_PASS_BOUNDED at material commit `6ce339437`.
 
 Dispatch artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
 
-Allowed worker outputs:
+Accepted T21 artifacts:
 
 - `docs/reference/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
 - `docs/reviews/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
 
-Verification: pre-dispatch autorun PASS 73/73, dispatch commit steward PASS,
-material pre-commit hook PASS 80/80, and commit `53305fa86`.
+Selected T21 disposition:
+`T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`.
 
-T21 dispatch boundary: WORKER_MUST_NOT_COMMIT docs-only decision. Worker must
-select exactly one of `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`,
-`MEMORY_RAG_ROUTE_RELEASE_HELD_PENDING_GAP`, or `BLOCKED_SOURCE_NOT_FOUND`,
-preserve `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`, and
-satisfy ADIF-0024 Worker Output Quality Controls. Actual memory/RAG route
-release, production durable-store invocation, file-backed production
-persistence, vectorization, retrieval, MinerU runtime, private/generated output
-content read, Candidate Group A import, provider/live proof, public-sync,
-Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy,
-document truth, legal quality, current-law correctness, workflow-chain
-production readiness, Python source/test edits for Pylance, durable
-store/runtime hierarchy/root barrel edits, provider-local/IDE config edits,
+Held token:
+`MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`.
+
+Verification: worker-return fast gate PASS, pre-implementation autorun PASS
+75/75, ADIF worker disclosure verified for 9 returned defects, reviewer-return
+commit steward PASS, material pre-commit hook PASS 80/80, and commit
+`6ce339437`.
+
+T21 closure boundary: accepts only a docs-only decision matrix and worker
+return. Actual memory/RAG route release, production durable-store invocation,
+file-backed production persistence, vectorization, retrieval, MinerU runtime,
+private/generated output content read, Candidate Group A import, provider/live
+proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive,
+extraction accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production readiness, Python source/test edits for Pylance unless
+explicitly authorized by T22, durable store/runtime hierarchy/root barrel edits
+unless explicitly authorized by T22, provider-local/IDE config edits,
 checker/hook/session/handoff edits by worker, worker commit, and push remain
-unauthorized.
+unauthorized pending fresh T22 authoring and acceptance.
 
 Worker output quality controls hardening is accepted at material commit
 `cb4e296db`.
@@ -227,30 +231,51 @@ archived handoffs for full details.
 
 ## Next Allowed Move
 
-Next allowed move: execute MSEA-R28-T21 under WORKER_MUST_NOT_COMMIT. Worker
-creates only the T21 decision matrix and worker return named above.
+Next allowed move: author a fresh MSEA-R28-T22 GC-018/source-verified
+WORKER_MUST_NOT_COMMIT work order for bounded memory/RAG route release
+implementation candidate.
 
-Worker must use accepted T20 helper/test/worker-return/completion evidence,
-accepted T19 decision matrix, accepted T18 adapter candidate, T17 authority
-decision, R27 route prerequisites, R24-T4 private-output policy, ADIF-0024, and
-the Worker Output Quality Controls template section.
-
-Worker instructions already require exact command rerun after final edits,
-current `git status --short --untracked-files=all`, provider-local and IDE
-side-channel cleanup or disclosure, static-analysis diagnostic disposition, and
-negative edge-case decision rows for risky memory/private-output/security/
-unsafe-normalization surfaces.
+T22 authoring must use accepted T21, T20, T19, T18, T17, R27, R24-T4, and
+ADIF-0024 evidence. It must require a fresh memory-owner authorization surface,
+explicit `policyDecision`, `actorAuthorized`, and `provenanceScore` source
+verification, R27 five-prerequisite re-verification at implementation time,
+R24-T4 privacy preservation, provider-local/Pylance hygiene controls, Source
+Verification Block, ADIF disclosure, Agent Handoff Contract Control Block,
+Reviewer Closure Conversion, and pre-dispatch gates.
 
 Actual memory/RAG route release, production durable-store invocation,
 file-backed production persistence, vectorization, retrieval, MinerU runtime,
 private/generated output content read, Candidate Group A import, provider/live
 proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive,
 extraction accuracy, document truth, legal quality, current-law correctness,
-workflow-chain production readiness, Python source/test edits for Pylance,
-durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
-edits, checker/hook/session/handoff edits by worker, worker commit, and push
-remain unauthorized until T21 is executed, reviewed, and accepted, and any
-implementation follow-up is separately dispatched and accepted.
+workflow-chain production readiness, Python source/test edits for Pylance unless
+explicitly authorized by T22, durable store/runtime hierarchy/root barrel edits
+unless explicitly authorized by T22, provider-local/IDE config edits,
+checker/hook/session/handoff edits by worker, worker commit, and push remain
+unauthorized.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T21 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T21
+material closure commit `6ce339437`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record T21 closure continuity and T22 authoring next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T21 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T21 closed pending T22 work-order authoring. |
+| `CVF_SESSION/state/entries/mseaR28T21MineruMemoryRagRouteReleaseAuthorityDecisionClosure20260705.json` | Record T21 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T22 GC-018/source-verified work-order authoring. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T21 closure continuity and T22 authoring next move. |
+
+Rollback boundary: revert only this T21 closure session-sync if rejected; do
+not revert material closure commit `6ce339437`, T21 dispatch commit
+`53305fa86`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T21 Dispatch Session Sync
 
