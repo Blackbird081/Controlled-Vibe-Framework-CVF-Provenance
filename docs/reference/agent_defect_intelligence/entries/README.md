@@ -51,6 +51,7 @@ registry edit is required when adding a new entry beyond this table.
 | `CVF_ADIF-0021.md` | ADIF-0021 | GATE_TRIGGER_FRICTION | PARTIAL_CHECK |
 | `CVF_ADIF-0022.md` | ADIF-0022 | GATE_TRIGGER_FRICTION | PARTIAL_CHECK |
 | `CVF_ADIF-0023.md` | ADIF-0023 | GATE_TRIGGER_FRICTION | PARTIAL_CHECK |
+| `CVF_ADIF-0024.md` | ADIF-0024 | CLOSURE_EVIDENCE | PARTIAL_CHECK |
 
 ## Claim Boundary
 

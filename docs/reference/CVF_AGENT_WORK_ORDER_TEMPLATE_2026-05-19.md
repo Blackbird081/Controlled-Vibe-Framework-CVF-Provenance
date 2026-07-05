@@ -943,6 +943,34 @@ action cell: `READ`, `FULL_READ`, `PARTIAL_READ`, or `SOURCE_VERIFIED`. Put
 qualifiers such as targeted grep, line-range read, or reason text outside the
 action cell.
 
+Worker Output Quality Controls:
+
+rawMemoryReleased=false. This template guidance does not release raw memory,
+retrieval, reinjection, private-output, or memory/RAG write behavior; any such
+release still requires a fresh source-verified work order and accepted closure.
+
+For any no-commit worker return, especially source/test or high-evidence
+tranches, the work order should require the worker to complete and record this
+self-audit before `COMPLETE_PENDING_REVIEW`:
+
+- rerun every exact required command after the last material edit, including
+  focused tests and worker-return gates named by the work order;
+- copy each required command exactly as run, with working directory and focused
+  target where applicable;
+- classify any final command result as PASS, FAIL with allowed-scope repair
+  completed and rerun, BLOCKED with reason, or N/A with reason;
+- record `git status --short --untracked-files=all` after the worker-return
+  file exists, so pending owned files and unexpected untracked files are visible
+  to the reviewer;
+- remove or disclose any provider-local or IDE side-channel file before
+  handoff, and do not stage or claim such files unless the work order
+  explicitly authorizes them;
+- record any static-analysis diagnostic as fixed inside Allowed scope or as
+  out-of-scope with no source/test edit claim;
+- when the tranche touches security, private output, memory write, route
+  release, unsafe metadata, or normalization behavior, include at least one
+  negative or edge-case test proving the risky input fails closed.
+
 When a work order requires a `docs/reviews/` review artifact (a worker return,
 a UAT review, or a completion review), name these three sections explicitly in
 the work order's required-shape guidance, in addition to the scaffold-emitted
