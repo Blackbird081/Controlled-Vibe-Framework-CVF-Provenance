@@ -16,9 +16,11 @@ from typing import Literal, Sequence
 
 RECEIPT_VERSION = "cvf.mineruMetadataReceipt.r28t5.v2"
 MEMORY_SAFE_CANDIDATE_CONTRACT_VERSION = "cvf.mineruMemorySafeCandidate.r28t9.v1"
+MEMORY_OWNER_ADMISSION_READOUT_VERSION = "cvf.mineruMemoryOwnerAdmission.r28t12.v1"
 PRIVATE_OUTPUT_DISPOSITION = "RECEIPT_METADATA_ALLOWED"
 DOWNSTREAM_RELEASE_HELD = "HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE"
 MEMORY_WRITE_NOT_AUTHORIZED_BY_T9 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH"
+MEMORY_WRITE_NOT_AUTHORIZED_BY_T12 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T12_DISPATCH"
 CLAIM_BOUNDARY = (
     "This receipt records caller-supplied MinerU metadata only. It does not "
     "prove extraction accuracy, document truth, legal quality, current-law "
@@ -51,6 +53,8 @@ FailureToken = Literal[
     "OUTPUT_CONTENT_READ_FORBIDDEN",
     "QUALITY_OR_SOURCE_POINTER_MISSING",
     "DOWNSTREAM_RELEASE_NOT_HELD",
+    "MEMORY_WRITE_ALREADY_AUTHORIZED",
+    "CLAIM_BOUNDARY_MISSING",
 ]
 
 _SAFE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$")
@@ -110,6 +114,26 @@ class MineruMemorySafeCandidateContract:
     memory_write_disposition: str = MEMORY_WRITE_NOT_AUTHORIZED_BY_T9
     contract_version: str = MEMORY_SAFE_CANDIDATE_CONTRACT_VERSION
     claim_boundary: str = CLAIM_BOUNDARY
+
+
+@dataclass(frozen=True)
+class MineruMemoryOwnerAdmissionReadout:
+    """Metadata-only readout for future memory-owner admission review."""
+
+    candidate_id: str
+    receipt_id: str
+    source_input_slot: str
+    input_sha256: str
+    quality_report_ref: str
+    source_pointer: str
+    downstream_release: str
+    claim_boundary: str
+    output_content_read: bool = False
+    memory_write_authorized: bool = False
+    memory_write_disposition: str = MEMORY_WRITE_NOT_AUTHORIZED_BY_T12
+    admission_disposition: str = "MEMORY_OWNER_ADMISSION_READY_FOR_REVIEW"
+    future_authority_required: str = "FUTURE_MEMORY_WRITE_WORK_ORDER_REQUIRED"
+    readout_version: str = MEMORY_OWNER_ADMISSION_READOUT_VERSION
 
 
 def _fail(token: FailureToken, message: str) -> None:
@@ -373,6 +397,88 @@ def mineru_memory_safe_candidate_contract_payload(
         "receiptId": contract.receipt_id,
         "sourceInputSlot": contract.source_input_slot,
         "sourcePointer": contract.source_pointer,
+    }
+
+
+def build_mineru_memory_owner_admission_readout(
+    contract: MineruMemorySafeCandidateContract,
+) -> MineruMemoryOwnerAdmissionReadout:
+    """Build a metadata-only admission readout without writing memory."""
+
+    _validate_safe_id(
+        contract.candidate_id,
+        field_name="candidate_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+    _validate_safe_id(
+        contract.receipt_id,
+        field_name="receipt_id",
+        token="INVALID_RECEIPT_ID",
+    )
+    _validate_safe_id(
+        contract.source_input_slot,
+        field_name="source_input_slot",
+        token="INVALID_SOURCE_INPUT_SLOT",
+    )
+    if not _SHA256_RE.fullmatch(contract.input_sha256):
+        _fail("INVALID_INPUT_SHA256", "input_sha256 must be sha256:<64 lowercase hex>")
+    _validate_quality_source_pointer(
+        contract.quality_report_ref,
+        contract.source_pointer,
+    )
+    if contract.downstream_release != DOWNSTREAM_RELEASE_HELD:
+        _fail(
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+            "memory-owner admission readouts require held downstream release",
+        )
+    if contract.output_content_read is not False:
+        _fail(
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+            "memory-owner admission readouts require output_content_read false",
+        )
+    if contract.memory_write_authorized is not False:
+        _fail(
+            "MEMORY_WRITE_ALREADY_AUTHORIZED",
+            "T12 admission readouts must not authorize memory write",
+        )
+    if not contract.claim_boundary.strip():
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary is required")
+    lowered_boundary = contract.claim_boundary.casefold()
+    if any(marker in lowered_boundary for marker in _UNSAFE_TEXT_MARKERS):
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary must not contain raw-content markers")
+
+    return MineruMemoryOwnerAdmissionReadout(
+        candidate_id=contract.candidate_id,
+        receipt_id=contract.receipt_id,
+        source_input_slot=contract.source_input_slot,
+        input_sha256=contract.input_sha256,
+        quality_report_ref=contract.quality_report_ref,
+        source_pointer=contract.source_pointer,
+        downstream_release=contract.downstream_release,
+        claim_boundary=contract.claim_boundary,
+    )
+
+
+def mineru_memory_owner_admission_readout_payload(
+    readout: MineruMemoryOwnerAdmissionReadout,
+) -> dict[str, object]:
+    """Return the stable camelCase memory-owner admission readout payload."""
+
+    return {
+        "admissionDisposition": readout.admission_disposition,
+        "candidateId": readout.candidate_id,
+        "claimBoundary": readout.claim_boundary,
+        "downstreamRelease": readout.downstream_release,
+        "futureAuthorityRequired": readout.future_authority_required,
+        "inputSha256": readout.input_sha256,
+        "memoryWriteAuthorized": readout.memory_write_authorized,
+        "memoryWriteDisposition": readout.memory_write_disposition,
+        "outputContentRead": readout.output_content_read,
+        "qualityReportRef": readout.quality_report_ref,
+        "readoutVersion": readout.readout_version,
+        "receiptId": readout.receipt_id,
+        "sourceInputSlot": readout.source_input_slot,
+        "sourcePointer": readout.source_pointer,
     }
 
 

@@ -12,11 +12,15 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mineru_metadata_receipt_writer import (  # noqa: E402
     DOWNSTREAM_RELEASE_HELD,
+    MEMORY_WRITE_NOT_AUTHORIZED_BY_T12,
     MineruMetadataReceiptValidationError,
     MineruMetadataReceipt,
+    MineruMemorySafeCandidateContract,
     build_mineru_metadata_receipt,
+    build_mineru_memory_owner_admission_readout,
     build_mineru_memory_safe_candidate_contract,
     build_mineru_quality_report_source_pointer,
+    mineru_memory_owner_admission_readout_payload,
     mineru_memory_safe_candidate_contract_payload,
     mineru_metadata_receipt_payload,
     render_mineru_metadata_receipt_json,
@@ -332,5 +336,121 @@ def test_memory_safe_candidate_contract_fails_closed_for_unsafe_receipts(
 ) -> None:
     with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
         build_mineru_memory_safe_candidate_contract(receipt)
+
+    assert exc_info.value.token == token
+
+
+def test_memory_owner_admission_readout_is_deterministic_and_metadata_only() -> None:
+    contract = build_mineru_memory_safe_candidate_contract(_receipt())
+    readout = build_mineru_memory_owner_admission_readout(contract)
+    repeated = build_mineru_memory_owner_admission_readout(contract)
+    payload = mineru_memory_owner_admission_readout_payload(readout)
+
+    assert readout == repeated
+    assert payload == mineru_memory_owner_admission_readout_payload(repeated)
+    assert payload["readoutVersion"] == "cvf.mineruMemoryOwnerAdmission.r28t12.v1"
+    assert payload["admissionDisposition"] == "MEMORY_OWNER_ADMISSION_READY_FOR_REVIEW"
+    assert payload["candidateId"] == contract.candidate_id
+    assert payload["receiptId"] == "msea-r28-t1:receipt-001"
+    assert payload["qualityReportRef"] == "msea-r28-t5:quality-report-001"
+    assert payload["sourcePointer"] == "msea-r28-t5:source-pointer-001"
+    assert payload["downstreamRelease"] == DOWNSTREAM_RELEASE_HELD
+    assert payload["outputContentRead"] is False
+    assert payload["memoryWriteAuthorized"] is False
+    assert payload["memoryWriteDisposition"] == MEMORY_WRITE_NOT_AUTHORIZED_BY_T12
+    assert payload["futureAuthorityRequired"] == "FUTURE_MEMORY_WRITE_WORK_ORDER_REQUIRED"
+    assert "outputFileNames" not in payload
+    assert "extractedText" not in payload
+    assert "rawOcrText" not in payload
+    assert "documentBody" not in payload
+    assert "memoryRecordBody" not in payload
+    assert "vectorContent" not in payload
+
+
+def test_memory_owner_admission_readout_changes_with_candidate_metadata() -> None:
+    first = build_mineru_memory_owner_admission_readout(
+        build_mineru_memory_safe_candidate_contract(
+            _receipt(source_pointer="msea-r28-t5:source-pointer-001")
+        )
+    )
+    second = build_mineru_memory_owner_admission_readout(
+        build_mineru_memory_safe_candidate_contract(
+            _receipt(source_pointer="msea-r28-t5:source-pointer-002")
+        )
+    )
+
+    assert first.candidate_id != second.candidate_id
+
+
+@pytest.mark.parametrize(
+    ("contract", "token"),
+    [
+        (
+            MineruMemorySafeCandidateContract(
+                candidate_id="memory-safe-candidate:content-read",
+                receipt_id="msea-r28-t12:receipt-content-read",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-007",
+                source_pointer="msea-r28-t5:source-pointer-007",
+                output_content_read=True,
+            ),
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+        ),
+        (
+            MineruMemorySafeCandidateContract(
+                candidate_id="memory-safe-candidate:write-ready",
+                receipt_id="msea-r28-t12:receipt-write-ready",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-008",
+                source_pointer="msea-r28-t5:source-pointer-008",
+                memory_write_authorized=True,
+            ),
+            "MEMORY_WRITE_ALREADY_AUTHORIZED",
+        ),
+        (
+            MineruMemorySafeCandidateContract(
+                candidate_id="memory-safe-candidate:released",
+                receipt_id="msea-r28-t12:receipt-released",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-009",
+                source_pointer="msea-r28-t5:source-pointer-009",
+                downstream_release="MEMORY_WRITE_READY",
+            ),
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+        ),
+        (
+            MineruMemorySafeCandidateContract(
+                candidate_id="memory-safe-candidate:unsafe-ref",
+                receipt_id="msea-r28-t12:receipt-unsafe-ref",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="raw:quality-notes",
+                source_pointer="msea-r28-t5:source-pointer-010",
+            ),
+            "QUALITY_OR_SOURCE_POINTER_MISSING",
+        ),
+        (
+            MineruMemorySafeCandidateContract(
+                candidate_id="memory-safe-candidate:no-boundary",
+                receipt_id="msea-r28-t12:receipt-no-boundary",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-011",
+                source_pointer="msea-r28-t5:source-pointer-011",
+                claim_boundary="",
+            ),
+            "CLAIM_BOUNDARY_MISSING",
+        ),
+    ],
+)
+def test_memory_owner_admission_readout_fails_closed_for_unsafe_candidates(
+    contract: MineruMemorySafeCandidateContract,
+    token: str,
+) -> None:
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_memory_owner_admission_readout(contract)
 
     assert exc_info.value.token == token
