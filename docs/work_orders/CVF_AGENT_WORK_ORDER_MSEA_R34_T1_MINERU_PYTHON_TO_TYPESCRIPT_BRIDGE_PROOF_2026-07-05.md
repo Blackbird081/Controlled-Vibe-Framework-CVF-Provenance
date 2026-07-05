@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Created: 2026-07-05
 
@@ -453,7 +453,7 @@ Disclosure count: 10
 | Field | Evidence |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; WORKER_MUST_NOT_COMMIT; Dispatch Prompt Envelope; Required First Reads; Evidence Requirements; Verification Commands; Worker Return Packet Shape Contract; Worker Output Quality Controls; Provider-Local Stray Artifact Control; Pylance Static-Analysis Diagnostic Boundary; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; Dispatch Prompt Envelope; Required First Reads; Evidence Requirements; Verification Commands; Worker Return Packet Shape Contract; Worker Output Quality Controls; Provider-Local Stray Artifact Control; Pylance Static-Analysis Diagnostic Boundary; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition |
 | gateRunPurpose | confirm R34-T1 dispatch artifact shape after checker source read-ahead; this is confirmation evidence, discovered nothing new |
 | claimBoundary | checker read-ahead evidence only; no worker execution, MinerU runtime, private-output, provider/live, public, production memory/RAG route, or production-readiness claim |
 
@@ -583,6 +583,43 @@ before material closure. Reviewer must not convert R34-T1 into a live
 Python process invocation, file-based Python output consumption, production
 memory/RAG route release, file-backed persistence, retrieval,
 vectorization, provider/live proof, or public-sync.
+
+## Required Artifact Manifest
+
+| Artifact | Required path | Final status |
+| --- | --- | --- |
+| Bridge source | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-python-receipt-bridge.ts` | PRESENT |
+| Bridge test | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-python-receipt-bridge.test.ts` | PRESENT |
+| Worker return | `docs/reviews/CVF_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_WORKER_RETURN_2026-07-05.md` | PRESENT |
+| Completion review | `docs/reviews/CVF_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_COMPLETION_2026-07-05.md` | PRESENT |
+
+## Current Runtime Freshness Verification
+
+| Runtime claim | Freshness evidence | Disposition |
+| --- | --- | --- |
+| Bridge helper remains fixture-only and not production-wired | focused Vitest and TypeScript check run after reviewer repair; helper contains no process, filesystem, network, MinerU runtime, or Python invocation path | PASS |
+| Production memory/RAG route remains unreleased | completion review keeps production route release, provider/live proof, private-output content read, retrieval, vectorization, and file-backed persistence out of scope | PASS |
+| Hardcoded override masking is avoided | safe fixture values are pass-through; unsafe governance boolean values fail closed before mapping instead of being overwritten | PASS |
+| Provider registry and capability registry surfaces are untouched | current `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` provider registry surface and `PROVIDER_CAPABILITY_REGISTRY` in `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` are accounted-for as out-of-scope; R34-T1 performs no provider selection, provider registry mutation, or hardcoded provider release | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+| --- | --- | --- | --- | --- | --- |
+| R34-T1-LOCAL | N/A with reason: no runtime receipt created | N/A with reason: deterministic local test only | `MINERU_PYTHON_RECEIPT_BRIDGE_PROOF_FIXTURE_ONLY` and `MINERU_INTERNAL_SYSTEM_CHAIN_HARNESS_PASS_BOUNDED` | focused Vitest asserted both pass tokens | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | Status: CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R34_T1_MINERU_PYTHON_TO_TYPESCRIPT_BRIDGE_PROOF_COMPLETION_2026-07-05.md` | Status: CLOSED_PASS_BOUNDED | PASS |
+| Roadmap state | N/A with reason: R34-T1 is a single-tranche continuation from R33 next-move, not a separate roadmap file | no roadmap top status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | corpus registry aggregate drift PASS during worker-return fast gate | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | no registry source entry required by changed corpus registry coverage gate for R34-T1 closure | PASS |
+| External evidence digest | N/A with reason: no external evidence intake used | no external input | N/A with reason |
+| System loop interlock | N/A with reason: fixture-only bridge proof with no runtime loop or production route claim | no loop change | N/A with reason |
+| Session continuity | session-sync steward updates front door/state/handoff after material commit | pending dedicated session-sync commit | PASS |
 
 ## Closure Checklist
 
