@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r37_t1_public_catalog_hygiene_public_sync_local_commit_closed_pending_operator_push_confirmation`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may either give fresh explicit confirmation immediately before public push from the sibling public-sync clone, or select the next roadmap without pushing; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; public push is not authorized without fresh explicit confirmation; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=select the next roadmap or author a fresh source-verified packet before any new implementation, public-sync, or runtime work; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r37_t1_public_catalog_hygiene_public_sync_local_commit_closed_pending_operator_push_confirmation`
+Current mode marker: `msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
 
-Current mode: `msea_r37_t1_public_catalog_hygiene_public_sync_local_commit_closed_pending_operator_push_confirmation`
+Current mode: `msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
 
-`msea_r37_t1_public_catalog_hygiene_public_sync_local_commit_closed_pending_operator_push_confirmation`
+`msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
 
 Previous mode:
 
-`msea_r37_t1_public_catalog_hygiene_public_sync_execution_dispatched_pending_local_commit_worker_return`
+`msea_r37_t1_public_catalog_hygiene_public_sync_local_commit_closed_pending_operator_push_confirmation`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution exported | `99997d923` public / provenance export session-sync batch | CLOSED_PASS_BOUNDED_EXPORTED; public-sync commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf` pushed to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` on `main`; push evidence `7f6e548d3..99997d923 main -> main`; next move is next-roadmap selection or fresh source-verified packet. |
 | MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution local commit closure | `2ce8d15ab` | CLOSED_PASS_BOUNDED_LOCAL_COMMIT_READY_PENDING_OPERATOR_PUSH_CONFIRMATION; accepted worker return and local public-sync clone commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`; public-sync clone is clean and `main...origin/main [ahead 1]`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no public push was executed and push still requires fresh explicit operator confirmation immediately before the command. |
 | MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution dispatch | `1aed1f066` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MAY_COMMIT-in-public-sync-clone work order for one bounded public technical product catalog update and provenance worker return; pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80; worker may create a local public-sync clone commit but must stop before public push pending fresh explicit operator confirmation. |
 | MSEA-R36 T1-T3 Public Catalog Hygiene Source Packet | `507bda564` | CLOSED_PASS_BOUNDED; accepted T1 public catalog staleness source matrix, T2 public-safe catalog update claim boundary plan, T3 public-sync readiness decision matrix, and worker return; selected `READY_FOR_SEPARATE_PUBLIC_SYNC_PACKET`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh GC-018/source-verified public-sync work-order authoring only, with public-sync execution and public claims still unauthorized until a separate packet releases them. |
@@ -131,33 +132,34 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r37_t1_public_catalog_hygiene_public_sync_local_commit_closed_pending_operator_push_confirmation`
+Mode: `msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
 
-Next allowed move: R37-T1 local public-sync commit is ready at sibling clone commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf` and provenance worker-return commit `2ce8d15ab`. Operator may either give fresh explicit confirmation immediately before public push from the sibling public-sync clone, or select the next roadmap without pushing. No autonomous public push is authorized. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: R37-T1 public catalog hygiene sync is EXPORTED at public commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`. Select the next roadmap or author a fresh source-verified packet before any new implementation, public-sync, or runtime work. LHW24 remains the latest closed numbered LHW wave.
 
-## Core Guard Self-Protection Authorization - MSEA-R37-T1 Local Commit Closure Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R37-T1 Public Export Session Sync
 
 Authorized guard-maintenance scope: session-sync only after MSEA-R37-T1
-local-commit worker-return material commit `2ce8d15ab`, including active
-mode, next allowed move, generated active state, bootstrap read model,
-front-door continuity, active handoff, and closure state entry.
+public-sync push commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`,
+including active mode, next allowed move, generated active state, bootstrap
+read model, front-door continuity, active handoff, and export state entry.
 
 Protected paths:
 
 | Path | Purpose |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Record R37-T1 local public-sync commit closure and operator push-confirmation next move. |
+| `CVF_SESSION_MEMORY.md` | Record R37-T1 public export evidence and next-roadmap selection move. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R37-T1 local-commit closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R37-T1 local-commit closure. |
-| `CVF_SESSION/state/entries/mseaR37T1PublicCatalogHygienePublicSyncExecutionLocalCommitClosure20260706.json` | Record accepted R37-T1 local-commit closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator push confirmation or next-roadmap selection. |
-| `AGENT_HANDOFF_V36_2026-07-04.md` | Record R37-T1 local public-sync commit closure and no-autonomous-push next move. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R37-T1 public export session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R37-T1 public export. |
+| `CVF_SESSION/state/entries/mseaR37T1PublicCatalogHygienePublicSyncExported20260706.json` | Record R37-T1 public export evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to next-roadmap selection or fresh source-verified packet. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record R37-T1 public export evidence and next-roadmap selection move. |
 
-Rollback boundary: revert only this R37-T1 local-commit closure session-sync
-if rejected; do not revert material worker-return commit `2ce8d15ab`, public-sync
-local commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`, dispatch commit
-`1aed1f066`, R36 closure commit `507bda564`, or earlier accepted history.
+Rollback boundary: revert only this R37-T1 public export session-sync if
+rejected; do not revert public-sync push commit
+`99997d92392fc05bf4896fcfa3afd1c22b24b3cf`, material worker-return commit
+`2ce8d15ab`, dispatch commit `1aed1f066`, R36 closure commit `507bda564`,
+or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R36 Closure Session Sync
 
