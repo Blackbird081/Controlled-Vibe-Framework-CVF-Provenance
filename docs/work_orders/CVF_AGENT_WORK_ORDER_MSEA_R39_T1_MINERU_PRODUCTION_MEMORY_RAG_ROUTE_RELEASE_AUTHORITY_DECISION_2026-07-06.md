@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Created: 2026-07-06
 
@@ -306,7 +306,7 @@ last edit, and disclose final workspace hygiene.
 | Field | Evidence |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Source Verification Block; New Doc-Only Fields; ADIF Defect Registry Disclosure; Checker Source Read-Ahead Block; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Work-Order Fulfillment Manifest; Public Export Disposition; Claim Boundary; source-not-found disposition spelling |
+| literalTokensReviewed | Status: CLOSED; Dispatch Prompt Envelope; Source Verification Block; New Doc-Only Fields; ADIF Defect Registry Disclosure; Checker Source Read-Ahead Block; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Work-Order Fulfillment Manifest; Public Export Disposition; Claim Boundary; source-not-found disposition spelling |
 | gateRunPurpose | confirmation evidence before dispatch; gates are used to confirm the work-order shape after checker read-ahead, not for first discovery |
 | claimBoundary | checker read-ahead evidence only; no runtime, provider/live, public-sync, private-output, source/test, memory write, file-backed persistence, retrieval, vectorization, or production route release |
 
@@ -533,6 +533,30 @@ Disposition: DEFERRED_PRIVATE_ONLY
 Reason: R39-T1 is private provenance authority-decision work. It does not
 change public catalog content and does not create public runtime,
 production-readiness, or hosted-readiness claims.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Closure status | this work order | `Status: CLOSED` | PASS |
+| Work order status | this work order | `Status: CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_COMPLETION_2026-07-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | N/A with reason: R39-T1 is a standalone operator-selected authority lane packet, not a roadmap-derived closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `python governance/compat/generate_corpus_scan_registry.py --check` PASS during worker-return fast gate | PASS |
+| Registry Markdown | changed corpus registry coverage | reviewer-fast changed corpus registry coverage PASS | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact, public-web source, or local external file was absorbed | N/A with reason |
+| System loop interlock | R39-T1 decision matrix and completion review | `R39_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_HELD_PENDING_AUTHORITY_GAPS`; no production release | PASS |
+| Session continuity | session state, session memory, and active handoff | dedicated session-sync commit required after material commit | PASS |
+| Worker return | `docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md` | `Status: COMPLETE_PENDING_REVIEW`, accepted by completion review | PASS |
+| Runtime boundary | R39-T1 completion review | no source/test/runtime/private/provider/public execution | PASS |
+| Public disposition | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| No runtime receipt is accepted by this closure | R39-T1 remains docs-only and accepts no MinerU runtime, provider/live, memory-write, public-sync, or production route receipt | PASS |
+| Worker return accepted only after reviewer closure | Completion review records `CLOSED_PASS_BOUNDED` | PASS |
 
 ## Claim Boundary
 
