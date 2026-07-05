@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=select the next roadmap or author a fresh source-verified packet before any new implementation, public-sync, or runtime work; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=WORKER_MUST_NOT_COMMIT executes docs-only R38 T1-T4, creating only the four reference artifacts and one worker return named by the work order, then stops for reviewer closure; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, public-sync, worker commit, push, and public runtime claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
+Current mode marker: `msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_dispatched_pending_worker_return`
 
-Current mode: `msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
+Current mode: `msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_dispatched_pending_worker_return`
 
-`msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
+`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r37_t1_public_catalog_hygiene_public_sync_local_commit_closed_pending_operator_push_confirmation`
+`msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit dispatch | `09ab88f13` | DISPATCH_READY; authored paired GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only work order for T1 current chain map, T2 gap classification, T3 minimal E2E harness decision, T4 release-gate decision, and worker return; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R38 worker execution only, with source/test edits, MinerU runtime, private/generated content read, production memory/RAG release, provider/live proof, public-sync, use-case/legal work, worker commit, and push unauthorized. |
 | MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution exported | `99997d923` public / provenance export session-sync batch | CLOSED_PASS_BOUNDED_EXPORTED; public-sync commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf` pushed to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` on `main`; push evidence `7f6e548d3..99997d923 main -> main`; next move is next-roadmap selection or fresh source-verified packet. |
 | MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution local commit closure | `2ce8d15ab` | CLOSED_PASS_BOUNDED_LOCAL_COMMIT_READY_PENDING_OPERATOR_PUSH_CONFIRMATION; accepted worker return and local public-sync clone commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`; public-sync clone is clean and `main...origin/main [ahead 1]`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no public push was executed and push still requires fresh explicit operator confirmation immediately before the command. |
 | MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution dispatch | `1aed1f066` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MAY_COMMIT-in-public-sync-clone work order for one bounded public technical product catalog update and provenance worker return; pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80; worker may create a local public-sync clone commit but must stop before public push pending fresh explicit operator confirmation. |
@@ -132,9 +133,9 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r37_t1_public_catalog_hygiene_public_sync_exported_closed_pending_next_roadmap_selection`
+Mode: `msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_dispatched_pending_worker_return`
 
-Next allowed move: R37-T1 public catalog hygiene sync is EXPORTED at public commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`. Select the next roadmap or author a fresh source-verified packet before any new implementation, public-sync, or runtime work. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: R38 T1-T4 no-commit docs-only worker execution. Worker creates only the four reference artifacts and one worker return named by the work order, then stops for reviewer closure. No source/test edit, MinerU runtime, private/generated content read, production memory/RAG route release, provider/live proof, public-sync, use-case/legal work, worker commit, or push is authorized. LHW24 remains the latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R37-T1 Public Export Session Sync
 
