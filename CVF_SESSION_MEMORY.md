@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t17_mineru_durable_memory_write_authority_decision_closed_pending_t18_actual_durable_memory_write_adapter_implementation_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T18 GC-018/source-verified work order for actual durable-memory write adapter implementation only; parked checkpoint=actual memory/RAG write, durable-store invocation, source/test/checker/hook/session/handoff edits by worker, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred unless a later accepted packet and gates explicitly release them; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=no-commit MSEA-R28-T18 worker execution against the accepted T18 work order; parked checkpoint=actual memory/RAG write, durable-store invocation, Learning Plane source edits, checker/hook/session/handoff edits by worker, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone PDF app, legal/use-case deep-dive, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t17_mineru_durable_memory_write_authority_decision_closed_pending_t18_actual_durable_memory_write_adapter_implementation_work_order_authoring`
+Current mode marker: `msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_dispatched_pending_worker_return`
 
-Current mode: `msea_r28_t17_mineru_durable_memory_write_authority_decision_closed_pending_t18_actual_durable_memory_write_adapter_implementation_work_order_authoring`
+Current mode: `msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_dispatched_pending_worker_return`
 
-`msea_r28_t17_mineru_durable_memory_write_authority_decision_closed_pending_t18_actual_durable_memory_write_adapter_implementation_work_order_authoring`
+`msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r28_t17_mineru_durable_memory_write_authority_decision_dispatched_pending_worker_return`
+`msea_r28_t17_mineru_durable_memory_write_authority_decision_closed_pending_t18_actual_durable_memory_write_adapter_implementation_work_order_authoring`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T18 MinerU Actual Durable Memory Write Adapter Implementation dispatch | `02d174be` | DISPATCH_READY; created GC-018 baseline and source-verified no-commit source/test adapter-candidate implementation work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; worker may edit only the two allowed Extraction Foundation files and T18 worker return; actual memory/RAG write and durable-store invocation remain unauthorized. |
 | MSEA-R28-T17 MinerU Durable Memory Write Authority Decision | `5166a624` | CLOSED_PASS_BOUNDED; accepted docs-only decision matrix and worker return; selected `T18_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_CANDIDATE`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG write and durable-store invocation remain unauthorized pending T18 authoring and acceptance. |
 | MSEA-R28-T17 MinerU Durable Memory Write Authority Decision dispatch | `b62e1be3` | DISPATCH_READY; created GC-018 baseline and source-verified no-commit docs-only authority decision work order; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG write and durable-store invocation remain unauthorized. |
 | MSEA-R28-T16 MinerU Memory Store Adapter Mapping Implementation | `0bf81a68` | CLOSED_PASS_BOUNDED; accepted deterministic summary-only durable-memory write-input candidate mapping helper, focused tests, and worker return; focused pytest PASS 55/55, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG write and durable-store invocation remain unauthorized pending T17 authority decision. |
@@ -63,7 +64,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Memory-route release | `5166a624` | T17_CLOSED_DECISION_ONLY; actual memory/RAG write and durable-store invocation remain unauthorized pending fresh T18 work-order authoring, dispatch, worker execution, and reviewer acceptance. |
+| Memory-route release | `02d174be` | T18_DISPATCH_ADAPTER_ONLY; actual memory/RAG write and durable-store invocation remain unauthorized pending worker execution, reviewer acceptance, and a later explicit release packet. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
 
@@ -89,40 +90,58 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t17_mineru_durable_memory_write_authority_decision_closed_pending_t18_actual_durable_memory_write_adapter_implementation_work_order_authoring`
+Mode: `msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_dispatched_pending_worker_return`
 
-Next allowed move: author fresh MSEA-R28-T18 GC-018 baseline and
-source-verified work order for actual durable-memory write adapter
-implementation only.
+Next allowed move: execute MSEA-R28-T18 as a no-commit worker tranche using
+the accepted T18 work order.
 
 LHW24 remains the latest closed numbered LHW wave.
 
-Accepted T17 artifacts:
+Accepted T18 dispatch artifacts:
 
-- `docs/baselines/CVF_GC018_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md`
-- `docs/reference/CVF_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_MATRIX_2026-07-04.md`
-- `docs/reviews/CVF_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-04.md`
+- `docs/baselines/CVF_GC018_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_2026-07-04.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_2026-07-04.md`
 
-MSEA-R28-T17 is closed at material commit `5166a624`. It accepts only a
-docs-only durable-memory write authority decision matrix and worker return,
-selecting T18 actual durable-memory write adapter implementation as a candidate
-route for fresh work-order authoring. Actual memory/RAG write, durable-store
-invocation, vectorization, retrieval, MinerU runtime, private/generated content
-read, Candidate Group A import, provider/live proof, public-sync, standalone
-app surfaces, legal/use-case deep dive, extraction accuracy, document truth,
-legal quality, current-law correctness, workflow-chain production readiness,
-source/test/checker/hook/session/handoff edits by worker, worker commit, and
-push remain held unless a later accepted packet explicitly releases that
-scope.
+MSEA-R28-T18 dispatch is at material commit `02d174be`. It authorizes only a
+bounded Extraction Foundation adapter-candidate implementation and no-commit
+worker return. Worker may edit only
+`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`,
+`EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`,
+and
+`docs/reviews/CVF_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md`.
 
-T18 authoring must use the accepted T17 worker return and matrix, accepted T16
-durable write-input candidate mapper, T14 memory-record candidate builder,
-durable-memory-store write input/write policy source, runtime memory hierarchy
-actor authorization source, R27 scan-to-memory route decision ledger, R24-T4
-private-output policy, Source Verification Block, ADIF Defect Registry
-Disclosure, Agent Handoff Contract Control Block, Reviewer Closure Conversion,
-pre-dispatch gates, and careful GC-051 path-literal discipline.
+Worker must run focused pytest, worker-return fast gate with pytest target, and
+pre-implementation autorun before returning `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Actual memory/RAG write, durable-store invocation,
+vectorization, retrieval, MinerU runtime, private/generated content read,
+Candidate Group A import, provider/live proof, public-sync, standalone app
+surfaces, legal/use-case deep dive, extraction accuracy, document truth, legal
+quality, current-law correctness, workflow-chain production readiness, Learning
+Plane source edits, checker/hook/session/handoff edits by worker, worker
+commit, and push remain held.
+
+## Core Guard Self-Protection Authorization - MSEA-R28-T18 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T18
+material dispatch commit `02d174be`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after T18 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after T18 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for T18 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR28T18MineruActualDurableMemoryWriteAdapterImplementationDispatch20260704.json` | Record T18 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to T18 no-commit source/test worker execution. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record T18 dispatch continuity and worker next move. |
+
+Rollback boundary: revert only this MSEA-R28-T18 dispatch session-sync if
+rejected; do not revert material dispatch commit `02d174be` or older MSEA
+history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T17 Closure Session Sync
 
