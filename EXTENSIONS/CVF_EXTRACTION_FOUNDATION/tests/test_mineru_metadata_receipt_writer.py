@@ -14,16 +14,20 @@ from mineru_metadata_receipt_writer import (  # noqa: E402
     DOWNSTREAM_RELEASE_HELD,
     MEMORY_WRITE_NOT_AUTHORIZED_BY_T12,
     MEMORY_WRITE_NOT_AUTHORIZED_BY_T14,
+    MEMORY_WRITE_NOT_AUTHORIZED_BY_T16,
     MineruMetadataReceiptValidationError,
     MineruMetadataReceipt,
+    MineruDurableMemoryWriteInputCandidate,
     MineruMemoryOwnerAdmissionReadout,
     MineruMemoryRecordCandidate,
     MineruMemorySafeCandidateContract,
     build_mineru_metadata_receipt,
+    build_mineru_durable_memory_write_input_candidate,
     build_mineru_memory_owner_admission_readout,
     build_mineru_memory_record_candidate,
     build_mineru_memory_safe_candidate_contract,
     build_mineru_quality_report_source_pointer,
+    mineru_durable_memory_write_input_candidate_payload,
     mineru_memory_owner_admission_readout_payload,
     mineru_memory_record_candidate_payload,
     mineru_memory_safe_candidate_contract_payload,
@@ -585,5 +589,167 @@ def test_memory_record_candidate_fails_closed_for_unsafe_readouts(
 ) -> None:
     with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
         build_mineru_memory_record_candidate(readout)
+
+    assert exc_info.value.token == token
+
+
+def _memory_record_candidate(**receipt_overrides) -> MineruMemoryRecordCandidate:
+    return build_mineru_memory_record_candidate(
+        _memory_owner_admission_readout(**receipt_overrides)
+    )
+
+
+def test_durable_memory_write_input_candidate_is_deterministic_and_metadata_only() -> None:
+    record = _memory_record_candidate()
+    candidate = build_mineru_durable_memory_write_input_candidate(
+        record,
+        scope="msea-r28-t16:scope-001",
+        actor_id="msea-r28-t16:actor-001",
+        actor_role="AI_AGENT",
+    )
+    repeated = build_mineru_durable_memory_write_input_candidate(
+        record,
+        scope="msea-r28-t16:scope-001",
+        actor_id="msea-r28-t16:actor-001",
+        actor_role="AI_AGENT",
+    )
+    payload = mineru_durable_memory_write_input_candidate_payload(candidate)
+
+    assert isinstance(candidate, MineruDurableMemoryWriteInputCandidate)
+    assert candidate == repeated
+    assert candidate.id.startswith("durable-memory-write-input:")
+    assert payload == mineru_durable_memory_write_input_candidate_payload(repeated)
+    assert payload["candidateVersion"] == "cvf.mineruDurableMemoryWriteInputCandidate.r28t16.v1"
+    assert payload["scope"] == "msea-r28-t16:scope-001"
+    assert payload["actorId"] == "msea-r28-t16:actor-001"
+    assert payload["actorRole"] == "AI_AGENT"
+    assert payload["recordCandidateId"] == record.record_candidate_id
+    assert payload["outputContentRead"] is False
+    assert payload["memoryWriteAuthorized"] is False
+    assert payload["memoryWriteDisposition"] == MEMORY_WRITE_NOT_AUTHORIZED_BY_T16
+    assert record.record_candidate_id in payload["summary"]
+    assert "content" not in payload
+    assert "rawContent" not in payload
+    assert "value" not in payload
+    assert "extractedText" not in payload
+    assert "rawOcrText" not in payload
+    assert "documentBody" not in payload
+    assert "vectorContent" not in payload
+
+
+def test_durable_memory_write_input_candidate_changes_with_scope_or_actor() -> None:
+    record = _memory_record_candidate()
+    base = build_mineru_durable_memory_write_input_candidate(
+        record,
+        scope="msea-r28-t16:scope-001",
+        actor_id="msea-r28-t16:actor-001",
+        actor_role="AI_AGENT",
+    )
+    different_scope = build_mineru_durable_memory_write_input_candidate(
+        record,
+        scope="msea-r28-t16:scope-002",
+        actor_id="msea-r28-t16:actor-001",
+        actor_role="AI_AGENT",
+    )
+    different_actor = build_mineru_durable_memory_write_input_candidate(
+        record,
+        scope="msea-r28-t16:scope-001",
+        actor_id="msea-r28-t16:actor-002",
+        actor_role="AI_AGENT",
+    )
+
+    assert base.id != different_scope.id
+    assert base.id != different_actor.id
+
+
+@pytest.mark.parametrize(
+    ("record", "kwargs", "token"),
+    [
+        (
+            MineruMemoryRecordCandidate(
+                record_candidate_id="memory-record-candidate:content-read",
+                candidate_id="memory-safe-candidate:content-read",
+                receipt_id="msea-r28-t16:receipt-content-read",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-020",
+                source_pointer="msea-r28-t5:source-pointer-020",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="metadata-only boundary",
+                output_content_read=True,
+            ),
+            {"scope": "scope-020", "actor_id": "actor-020", "actor_role": "AI_AGENT"},
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+        ),
+        (
+            MineruMemoryRecordCandidate(
+                record_candidate_id="memory-record-candidate:write-ready",
+                candidate_id="memory-safe-candidate:write-ready",
+                receipt_id="msea-r28-t16:receipt-write-ready",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-021",
+                source_pointer="msea-r28-t5:source-pointer-021",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="metadata-only boundary",
+                memory_write_authorized=True,
+            ),
+            {"scope": "scope-021", "actor_id": "actor-021", "actor_role": "AI_AGENT"},
+            "MEMORY_WRITE_ALREADY_AUTHORIZED",
+        ),
+        (
+            MineruMemoryRecordCandidate(
+                record_candidate_id="memory-record-candidate:released",
+                candidate_id="memory-safe-candidate:released",
+                receipt_id="msea-r28-t16:receipt-released",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-022",
+                source_pointer="msea-r28-t5:source-pointer-022",
+                downstream_release="MEMORY_WRITE_READY",
+                claim_boundary="metadata-only boundary",
+            ),
+            {"scope": "scope-022", "actor_id": "actor-022", "actor_role": "AI_AGENT"},
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+        ),
+        (
+            MineruMemoryRecordCandidate(
+                record_candidate_id="memory-record-candidate:no-boundary",
+                candidate_id="memory-safe-candidate:no-boundary",
+                receipt_id="msea-r28-t16:receipt-no-boundary",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-023",
+                source_pointer="msea-r28-t5:source-pointer-023",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="",
+            ),
+            {"scope": "scope-023", "actor_id": "actor-023", "actor_role": "AI_AGENT"},
+            "CLAIM_BOUNDARY_MISSING",
+        ),
+        (
+            MineruMemoryRecordCandidate(
+                record_candidate_id="memory-record-candidate:valid",
+                candidate_id="memory-safe-candidate:valid",
+                receipt_id="msea-r28-t16:receipt-unsafe-scope",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-024",
+                source_pointer="msea-r28-t5:source-pointer-024",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="metadata-only boundary",
+            ),
+            {"scope": "raw:full-scope-text", "actor_id": "actor-024", "actor_role": "AI_AGENT"},
+            "INVALID_SOURCE_INPUT_SLOT",
+        ),
+    ],
+)
+def test_durable_memory_write_input_candidate_fails_closed_for_unsafe_inputs(
+    record: MineruMemoryRecordCandidate,
+    kwargs: dict[str, str],
+    token: str,
+) -> None:
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_durable_memory_write_input_candidate(record, **kwargs)
 
     assert exc_info.value.token == token

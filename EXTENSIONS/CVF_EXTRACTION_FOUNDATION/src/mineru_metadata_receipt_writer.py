@@ -18,12 +18,15 @@ RECEIPT_VERSION = "cvf.mineruMetadataReceipt.r28t5.v2"
 MEMORY_SAFE_CANDIDATE_CONTRACT_VERSION = "cvf.mineruMemorySafeCandidate.r28t9.v1"
 MEMORY_OWNER_ADMISSION_READOUT_VERSION = "cvf.mineruMemoryOwnerAdmission.r28t12.v1"
 MEMORY_RECORD_CANDIDATE_VERSION = "cvf.mineruMemoryRecordCandidate.r28t14.v1"
+DURABLE_MEMORY_WRITE_INPUT_CANDIDATE_VERSION = "cvf.mineruDurableMemoryWriteInputCandidate.r28t16.v1"
 PRIVATE_OUTPUT_DISPOSITION = "RECEIPT_METADATA_ALLOWED"
 DOWNSTREAM_RELEASE_HELD = "HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE"
 MEMORY_WRITE_NOT_AUTHORIZED_BY_T9 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH"
 MEMORY_WRITE_NOT_AUTHORIZED_BY_T12 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T12_DISPATCH"
 MEMORY_WRITE_NOT_AUTHORIZED_BY_T14 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T14_CANDIDATE_ONLY"
+MEMORY_WRITE_NOT_AUTHORIZED_BY_T16 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T16_MAPPING_ONLY"
 MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW = "MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW"
+MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTED = "MEMORY_STORE_ADAPTER_MAPPING_IMPLEMENTED"
 CLAIM_BOUNDARY = (
     "This receipt records caller-supplied MinerU metadata only. It does not "
     "prove extraction accuracy, document truth, legal quality, current-law "
@@ -158,6 +161,23 @@ class MineruMemoryRecordCandidate:
     candidate_disposition: str = MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW
     future_authority_required: str = "FUTURE_MEMORY_STORE_WRITE_AUTHORITY_REQUIRED"
     candidate_version: str = MEMORY_RECORD_CANDIDATE_VERSION
+
+
+@dataclass(frozen=True)
+class MineruDurableMemoryWriteInputCandidate:
+    """Summary-only durable-memory write-input candidate; never calls the store."""
+
+    id: str
+    scope: str
+    actor_id: str
+    actor_role: str
+    summary: str
+    record_candidate_id: str
+    claim_boundary: str
+    output_content_read: bool = False
+    memory_write_authorized: bool = False
+    memory_write_disposition: str = MEMORY_WRITE_NOT_AUTHORIZED_BY_T16
+    candidate_version: str = DURABLE_MEMORY_WRITE_INPUT_CANDIDATE_VERSION
 
 
 def _fail(token: FailureToken, message: str) -> None:
@@ -609,6 +629,102 @@ def mineru_memory_record_candidate_payload(
         "recordCandidateId": candidate.record_candidate_id,
         "sourceInputSlot": candidate.source_input_slot,
         "sourcePointer": candidate.source_pointer,
+    }
+
+
+def build_mineru_durable_memory_write_input_candidate(
+    candidate: MineruMemoryRecordCandidate,
+    *,
+    scope: str,
+    actor_id: str,
+    actor_role: str,
+) -> MineruDurableMemoryWriteInputCandidate:
+    """Map a T14 memory-record candidate to a summary-only write-input shape.
+
+    This never calls the durable memory store, never writes memory/RAG, and
+    never includes raw OCR text, extracted text, document body, or any
+    private/generated output content. The summary is built only from bounded
+    metadata identifiers already present on the candidate.
+    """
+
+    _validate_safe_id(
+        candidate.record_candidate_id,
+        field_name="record_candidate_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+    _validate_safe_id(scope, field_name="scope", token="INVALID_SOURCE_INPUT_SLOT")
+    _validate_safe_id(actor_id, field_name="actor_id", token="INVALID_RECEIPT_ID")
+    _validate_safe_id(actor_role, field_name="actor_role", token="INVALID_RECEIPT_ID")
+    if candidate.downstream_release != DOWNSTREAM_RELEASE_HELD:
+        _fail(
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+            "durable memory write-input candidates require held downstream release",
+        )
+    if candidate.output_content_read is not False:
+        _fail(
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+            "durable memory write-input candidates require output_content_read false",
+        )
+    if candidate.memory_write_authorized is not False:
+        _fail(
+            "MEMORY_WRITE_ALREADY_AUTHORIZED",
+            "T16 mapping must not authorize memory write",
+        )
+    if not candidate.claim_boundary.strip():
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary is required")
+    lowered_boundary = candidate.claim_boundary.casefold()
+    if any(marker in lowered_boundary for marker in _UNSAFE_TEXT_MARKERS):
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary must not contain raw-content markers")
+
+    summary = (
+        f"MinerU memory-record candidate {candidate.record_candidate_id} "
+        f"(receipt {candidate.receipt_id}, quality {candidate.quality_report_ref}, "
+        f"source {candidate.source_pointer})"
+    )
+    seed = "|".join(
+        (
+            candidate.record_candidate_id,
+            scope,
+            actor_id,
+            actor_role,
+        )
+    )
+    digest = sha256(seed.encode("utf-8")).hexdigest()[:24]
+    write_input_id = f"durable-memory-write-input:{digest}"
+    _validate_safe_id(
+        write_input_id,
+        field_name="write_input_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+
+    return MineruDurableMemoryWriteInputCandidate(
+        id=write_input_id,
+        scope=scope,
+        actor_id=actor_id,
+        actor_role=actor_role,
+        summary=summary,
+        record_candidate_id=candidate.record_candidate_id,
+        claim_boundary=candidate.claim_boundary,
+    )
+
+
+def mineru_durable_memory_write_input_candidate_payload(
+    candidate: MineruDurableMemoryWriteInputCandidate,
+) -> dict[str, object]:
+    """Return the stable camelCase durable memory write-input candidate payload."""
+
+    return {
+        "actorId": candidate.actor_id,
+        "actorRole": candidate.actor_role,
+        "candidateVersion": candidate.candidate_version,
+        "claimBoundary": candidate.claim_boundary,
+        "id": candidate.id,
+        "memoryWriteAuthorized": candidate.memory_write_authorized,
+        "memoryWriteDisposition": candidate.memory_write_disposition,
+        "outputContentRead": candidate.output_content_read,
+        "recordCandidateId": candidate.record_candidate_id,
+        "scope": candidate.scope,
+        "summary": candidate.summary,
     }
 
 
