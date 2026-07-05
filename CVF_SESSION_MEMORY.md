@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator decision only for a fresh GC-018/source-verified next packet or stop; parked checkpoint=production memory/RAG route release, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized by T25-T28 closure; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator decision only: stop here or open a fresh GC-018/source-verified packet for a separate production/runtime/public/use-case lane; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized by R29 closure; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
+Current mode marker: `msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
 
-Current mode: `msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
+Current mode: `msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
 
-`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
+`msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
 
 Previous mode:
 
-`msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`
+`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R29-T1 through T5 MinerU Foundation Chain Stabilization And Release Boundary | `9da20ec0c` | CLOSED_PASS_BOUNDED; accepted R29 roadmap, GC-018, work order, T1 gap register, T2 internal-only interface decision, T3 future release criteria matrix, T4 no-wiring decision, and T5 completion review; selected `R29_STOP_FOUNDATION_CHAIN_HERE_PENDING_OPERATOR_FRESH_PACKET`; pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release, interface/runtime wiring, provider/live proof, public-sync, and use-case lanes remain unauthorized. |
 | MSEA-R28-T25 through T28 MinerU Bounded System Chain Implementation And Proof | `5ca346d18` | CLOSED_PASS_BOUNDED; accepted T25 helper/test, T25 worker return, T26 release decision matrix, T27 acceptance ledger, and T28 deterministic smoke proof; focused Vitest PASS 1 file / 8 tests, TypeScript check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release and use-case lanes remain unauthorized. |
 | MSEA-R28-T24 MinerU Bounded System Chain Implementation And Proof dispatch | `ab92e6191` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for bounded local T25-T28 helper/test, worker return, release decision matrix, acceptance ledger, and deterministic smoke proof; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release and use-case lanes remain unauthorized. |
 | MSEA-R28-T23 MinerU Production Memory/RAG Route Release Authority Decision | `0585429ee` | CLOSED_PASS_BOUNDED; accepted docs-only source-verified decision matrix, worker return, and completion review; selected `T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY`; preserved `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh T24 GC-018/source-verified work-order authoring only. |
@@ -108,109 +109,33 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
+Mode: `msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
 
-Next allowed move: operator decision only. Either stop the MinerU foundation
-chain here, author a fresh GC-018/source-verified bounded non-use-case
-follow-up, or explicitly authorize a later production/use-case tranche with
-separate scope.
+Next allowed move: operator decision only. Stop the MinerU foundation chain here, or author a fresh GC-018/source-verified packet for a separate production memory/RAG route release, interface export/runtime wiring, retrieval/vectorization, private-output content policy release, provider/live proof, public-sync, or use-case/legal workflow lane.
 
-Accepted T23 closure artifacts:
+Accepted R29 artifacts:
 
-- `docs/baselines/CVF_GC018_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
-- `docs/reference/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_COMPLETION_2026-07-05.md`
+- `docs/roadmaps/CVF_MSEA_R29_MINERU_FOUNDATION_CHAIN_STABILIZATION_AND_RELEASE_BOUNDARY_ROADMAP_2026-07-05.md`
+- `docs/baselines/CVF_GC018_MSEA_R29_T1_T5_MINERU_FOUNDATION_CHAIN_STABILIZATION_AND_RELEASE_BOUNDARY_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R29_T1_T5_MINERU_FOUNDATION_CHAIN_STABILIZATION_AND_RELEASE_BOUNDARY_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R29_T1_MINERU_FOUNDATION_CHAIN_CLOSURE_AUDIT_AND_GAP_REGISTER_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R29_T2_MINERU_INTERFACE_EXPOSURE_DECISION_MATRIX_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R29_T3_MINERU_PRODUCTION_MEMORY_RAG_RELEASE_CRITERIA_MATRIX_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R29_T4_MINERU_MINIMAL_INTERFACE_WIRING_DECISION_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R29_T5_MINERU_STOP_RELEASE_NEXT_ROADMAP_DECISION_COMPLETION_2026-07-05.md`
 
-Accepted T23 selected disposition:
+Accepted R29 selected disposition:
 
-- `T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY`
+- `R29_STOP_FOUNDATION_CHAIN_HERE_PENDING_OPERATOR_FRESH_PACKET`
 
-Held T23 token:
+Held R29 boundaries:
 
-- `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY`
-
-Accepted T22 closure artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_2026-07-05.md`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-memory-rag-route-release.ts`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-memory-rag-route-release.test.ts`
-- `docs/reviews/CVF_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_WORKER_RETURN_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_COMPLETION_2026-07-05.md`
-
-T24 authoring must use accepted T23 matrix/return/completion, accepted T22
-evidence, T21 authority decision, T20 durable-store invocation helper, R27
-route prerequisites, R24-T4 private-output policy, durable-store file-backed
-boundary evidence, Source Verification Block, ADIF disclosure, checker
-read-ahead, Worker Output Quality Controls, Provider-Local Stray Artifact
-Control, Pylance Static-Analysis Diagnostic Boundary, Agent Handoff Contract
-Control Block, Reviewer Closure Conversion, pre-dispatch autorun gates, and
-GC-051 path-literal discipline.
-
-Production memory/RAG route release, production durable-store invocation,
-file-backed production persistence, vectorization, retrieval, MinerU runtime,
-private/generated output content read, Candidate Group A import, provider/live
-proof, public-sync, Web/UI, standalone app, legal/use-case deep dive,
-extraction accuracy/document truth/legal quality/current-law
-correctness/workflow-chain production-readiness claim, Python source/test edits
-for Pylance, durable store/runtime hierarchy/root barrel edits,
-provider-local/IDE config edits, checker/hook implementation, worker
-stage/commit/push remain unauthorized until a fresh T24 packet is authored,
-gated, dispatched, executed, reviewed, and accepted.
+- `R29_INTERFACE_EXPOSURE_INTERNAL_ONLY`
+- `R29_PRODUCTION_RELEASE_CRITERIA_DEFINED_NOT_RELEASED`
+- `R29_MINIMAL_WIRING_NOT_RELEASED`
+- production memory/RAG route release, interface/root-barrel/runtime wiring, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated output content read, Candidate Group A import, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized.
 
 LHW24 remains the latest closed numbered LHW wave.
-
-Accepted T20 closure artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-durable-store-invocation.ts`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-durable-store-invocation.test.ts`
-- `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_COMPLETION_2026-07-05.md`
-
-Accepted worker-output quality hardening artifacts:
-
-- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0024.md`
-- `docs/reference/agent_defect_intelligence/entries/README.md`
-- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
-
-Accepted T19 closure artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md`
-- `docs/reference/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_MATRIX_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md`
-
-Accepted T18 closure artifacts:
-
-- `docs/baselines/CVF_GC018_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_2026-07-04.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_2026-07-04.md`
-- `docs/reviews/CVF_MSEA_R28_T18_MINERU_ACTUAL_DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md`
-- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py`
-- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py`
-
-MSEA-R28-T21 closure is at material commit `6ce339437`. It accepts only a
-docs-only decision matrix and worker return. Actual memory/RAG route release,
-production durable-store invocation, MinerU runtime, private/generated content
-read, Candidate Group A import, provider/live proof, public-sync, Web/UI,
-production file-backed storage proof, retrieval/vectorization, standalone app
-surfaces, legal/use-case deep dive, extraction accuracy, document truth, legal
-quality, current-law correctness, workflow-chain production readiness, Python
-source/test edits for Pylance unless explicitly authorized by T22, durable
-store/runtime hierarchy/root barrel edits unless explicitly authorized by T22,
-provider-local/IDE config edits, checker/hook/session/handoff edits by worker,
-worker commit, and push remain held pending fresh T22 authoring and acceptance.
-
-T22 work-order authoring should carry ADIF-0024 and Worker Output Quality
-Controls forward so no-commit worker returns must rerun exact commands after
-final edits, record current `git status --short --untracked-files=all`,
-clean/disclose provider-local and IDE side-channel files, disposition
-static-analysis diagnostics, and include negative edge-case tests for risky
-memory/private-output/security/unsafe-normalization surfaces.
-
 ## Core Guard Self-Protection Authorization - MSEA-R28-T21 Closure Session Sync
 
 Authorized guard-maintenance scope: session-sync only after MSEA-R28-T21
