@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=fresh R31 push-debt remediation packet before any new MinerU tranche; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized until push/continuity debt is resolved or operator override is explicitly recorded; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may select the next governed tranche from a clean pushed continuity baseline; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
+Current mode marker: `msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
 
-Current mode: `msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
+Current mode: `msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
 
-`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
+`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
 
 Previous mode:
 
-`msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
+`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R32 Push Continuity Debt Remediation And Public Sync Release | `e851f04c4` | CLOSED_PASS_BOUNDED; accepted R32 push/continuity cleanup, repaired active-handoff root exposure classification, KIOD priority marker drift, and GC-043 session front-door markers; public-sync commit `53b39f3d5` refreshed README, evidence index, public current-state snapshot, and technical catalog; remaining full-range push preview issues are recorded as operator-authorized historical stack debt; next move is operator selection of the next governed tranche from a clean pushed continuity baseline. |
 | MSEA-R31 Push Continuity Debt Audit | `369fa93a0` | CLOSED_PASS_BOUNDED; accepted private push/continuity debt audit; selected `R31_PUSH_CONTINUITY_DEBT_AUDIT_COMPLETE_BLOCKED_PUSH_NOT_READY` and `PUSH_NOT_READY_BLOCKED_BY_UPSTREAM_DEBT_AND_FULL_RANGE_DRIFT`; removed local provider-stray `.qwen` after workspace-bound path check; recorded five remaining push-readiness blockers; next move is a fresh R31 push-debt remediation packet before any new MinerU tranche. |
 | MSEA-R30-T1 through T5 MinerU Production Release Gate Decision | `533a65044` | CLOSED_PASS_BOUNDED; accepted R30 roadmap, GC-018, work order, T1 production memory/RAG not-authorized decision, T2 interface/runtime wiring not-authorized decision, T3 private-output policy not-released decision, T4 provider/runtime proof not-released decision, and T5 no-go implementation completion; selected `R30_NO_GO_IMPLEMENTATION_NOT_RELEASED_PENDING_OPERATOR_PRODUCTION_PACKET`; pre-implementation autorun PASS 75/75, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 80/80; implementation remains unreleased pending fresh narrow packet. |
 | MSEA-R29-T1 through T5 MinerU Foundation Chain Stabilization And Release Boundary | `9da20ec0c` | CLOSED_PASS_BOUNDED; accepted R29 roadmap, GC-018, work order, T1 gap register, T2 internal-only interface decision, T3 future release criteria matrix, T4 no-wiring decision, and T5 completion review; selected `R29_STOP_FOUNDATION_CHAIN_HERE_PENDING_OPERATOR_FRESH_PACKET`; pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release, interface/runtime wiring, provider/live proof, public-sync, and use-case lanes remain unauthorized. |
@@ -79,7 +80,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Push/continuity debt | `369fa93a0` | PUSH_NOT_READY; R31 requires a fresh push-debt remediation packet before any new MinerU tranche. |
+| Push/continuity debt | `e851f04c4` | RESOLVED_BOUNDED; R32 repaired source-checkable blockers and recorded operator-authorized historical stack push debt. |
 | Memory-route release | `5ca346d18` | T25_T28_CLOSED_PASS_BOUNDED_FOUNDATION_CANDIDATE_ONLY; production memory/RAG route release remains unauthorized and requires fresh operator decision plus fresh source-verified packet. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
@@ -120,29 +121,31 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
+Mode: `msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
 
-Next allowed move: author a fresh R31 push-debt remediation packet before any new MinerU tranche. R31 closed push/continuity audit at material commit `369fa93a0` and recorded push not ready due to upstream debt and full-range drift.
+Next allowed move: operator may select the next governed tranche from a clean pushed continuity baseline. R32 closed push/continuity cleanup at material commit `e851f04c4`, pushed public-sync commit `53b39f3d5`, repaired the source-checkable push blockers, and recorded remaining full-range push preview issues as operator-authorized historical stack debt.
 
-Accepted R31 artifact:
+Accepted R32 artifact:
 
-- `docs/reviews/CVF_MSEA_R31_PUSH_CONTINUITY_DEBT_AUDIT_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R32_PUSH_CONTINUITY_DEBT_REMEDIATION_AND_PUBLIC_SYNC_RELEASE_2026-07-05.md`
 
-R31 selected disposition:
+R32 selected disposition:
 
-`R31_PUSH_CONTINUITY_DEBT_AUDIT_COMPLETE_BLOCKED_PUSH_NOT_READY`
+`R32_PUSH_DEBT_REMEDIATED_WITH_OPERATOR_AUTHORIZED_HISTORICAL_STACK_PUSH`
 
-Push readiness decision:
+Public-sync evidence:
 
-`PUSH_NOT_READY_BLOCKED_BY_UPSTREAM_DEBT_AND_FULL_RANGE_DRIFT`
+- public commit `53b39f3d5`;
+- public changed paths: `README.md`, `docs/evidence/README.md`, `docs/evidence/public-current-state-snapshot-2026-07-05.md`, and `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.
 
-Remaining R31 blockers:
+Resolved R32 blockers:
 
-- upstream branch was `0 519` ahead/behind before R31 material commit;
-- preview range mixed material and protected session/handoff paths;
-- full-range core guard self-protection authorization is missing;
-- pre-public root exposure classification is missing for the active handoff root file;
-- KIOD priority guard drift remains in the full range.
+- active-handoff root exposure classification;
+- KIOD priority guard marker drift;
+- GC-043 session front-door marker drift.
+
+Remaining full-range preview issues are accepted only as recorded historical
+stack debt under operator authorization, not as normal future push cadence.
 
 Accepted R30 artifacts:
 

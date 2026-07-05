@@ -1,0 +1,41 @@
+{
+  "stateOrder": 1493,
+  "stateKey": "mseaR32PushContinuityDebtRemediationPublicSync20260705",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-05",
+    "materialCommit": "e851f04c4",
+    "executionBaseHead": "3db3a8bda",
+    "reviewPath": "docs/reviews/CVF_MSEA_R32_PUSH_CONTINUITY_DEBT_REMEDIATION_AND_PUBLIC_SYNC_RELEASE_2026-07-05.md",
+    "selectedDisposition": "R32_PUSH_DEBT_REMEDIATED_WITH_OPERATOR_AUTHORIZED_HISTORICAL_STACK_PUSH",
+    "publicSyncCommit": "53b39f3d5",
+    "publicSyncBranch": "main",
+    "publicSyncChangedPaths": [
+      "README.md",
+      "docs/evidence/README.md",
+      "docs/evidence/public-current-state-snapshot-2026-07-05.md",
+      "docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md"
+    ],
+    "resolvedBlockers": [
+      "pre-public root exposure classification for AGENT_HANDOFF_V36_2026-07-04.md",
+      "KIOD priority guard marker drift",
+      "GC-043 session front-door literal markers"
+    ],
+    "acceptedHistoricalPushDebt": [
+      "upstream push debt exceeds normal preview limit",
+      "mixed material and protected session/handoff historical range",
+      "full-range core guard self-protection authorization gap"
+    ],
+    "verification": [
+      "public docs gate PASS",
+      "public markdown gate PASS",
+      "public surface gate PASS",
+      "public diff check PASS",
+      "pre-public P3 readiness PASS",
+      "knowledge absorption priority guard PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "PUSH_CONTINUITY_CLEANUP_COMPLETE_OPERATOR_MAY_SELECT_NEXT_GOVERNED_TRANCHE",
+    "claimBoundary": "R32 closes push/continuity remediation and public documentation sync only. It does not authorize MinerU runtime execution, private/generated output read or release, production memory/RAG route release, provider/live proof, interface/root-barrel/runtime wiring, legal/use-case workflow, extraction accuracy, document truth, current-law correctness, hosted readiness, or production readiness."
+  }
+}

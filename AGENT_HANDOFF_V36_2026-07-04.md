@@ -6,7 +6,12 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R31 push/continuity debt audit closure. Keep the active session parked on push-debt remediation before any new MinerU tranche, without implying production memory/RAG route release, use-case expansion, runtime proof, public-sync, push readiness, or production write authority.
+Carry compact continuity after MSEA-R32 push/continuity debt remediation and
+public-sync release. The active session is now past the R31 push-debt cleanup
+checkpoint and parked on operator selection of the next governed tranche,
+without implying production memory/RAG route release, use-case expansion,
+runtime proof, private-output release, public runtime behavior, or production
+write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -23,7 +28,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=fresh R31 push-debt remediation packet before any new MinerU tranche; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized until push/continuity debt is resolved or operator override is explicitly recorded; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may select the next governed tranche from a clean pushed continuity baseline; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -35,15 +40,54 @@ Startup acknowledged: current mode=`msea_r31_push_continuity_debt_audit_closed_b
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `369fa93a0` MSEA-R31 push continuity debt audit |
-| Latest session-sync target | session sync after MSEA-R31 push debt audit |
+| Latest material packet | `e851f04c4` MSEA-R32 push continuity debt remediation and public sync release |
+| Latest session-sync target | session sync after MSEA-R32 push/public-sync cleanup |
 | Latest closed numbered LHW wave | `LHW24` |
+
+Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
+`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
 
 ## Latest Changes
+
+MSEA-R32 Push Continuity Debt Remediation And Public Sync Release is
+CLOSED_PASS_BOUNDED at material commit `e851f04c4`.
+
+Accepted R32 artifact:
+
+- `docs/reviews/CVF_MSEA_R32_PUSH_CONTINUITY_DEBT_REMEDIATION_AND_PUBLIC_SYNC_RELEASE_2026-07-05.md`
+
+R32 selected disposition:
+`R32_PUSH_DEBT_REMEDIATED_WITH_OPERATOR_AUTHORIZED_HISTORICAL_STACK_PUSH`.
+
+R32 public-sync evidence: public commit `53b39f3d5` refreshed `README.md`,
+`docs/evidence/README.md`,
+`docs/evidence/public-current-state-snapshot-2026-07-05.md`, and
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, then pushed
+public `main`.
+
+R32 repaired active-handoff root exposure classification, KIOD priority marker
+drift, and GC-043 session front-door marker drift. Remaining full-range push
+preview issues are recorded as operator-authorized historical stack debt, not
+as normal future push cadence.
+
+R32 verification: public docs gate PASS, public markdown gate PASS, public
+surface gate PASS, public diff check PASS, pre-public P3 readiness PASS,
+knowledge absorption priority guard PASS, and material pre-commit hook PASS
+80/80.
+
+R32 boundary: push/continuity remediation and public documentation sync only.
+MinerU runtime execution, private/generated output read or release, production
+memory/RAG route release, provider/live proof, interface/root-barrel/runtime
+wiring, legal/use-case workflow, extraction accuracy, document truth,
+current-law correctness, hosted readiness, and production readiness remain
+unauthorized without fresh source-verified operator authorization.
 
 MSEA-R31 Push Continuity Debt Audit is CLOSED_PASS_BOUNDED at material commit `369fa93a0`.
 
@@ -88,9 +132,67 @@ Older MSEA history is summarized out of this active handoff. Use the active stat
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh R31 push-debt remediation packet before any new MinerU tranche.
+Next allowed move: operator may select the next governed tranche from a clean
+pushed continuity baseline.
 
-Production memory/RAG route release, interface/root-barrel/runtime wiring, file-backed production persistence, vectorization, retrieval, MinerU runtime, private/generated output content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, provider-local/IDE config edits, checker/hook implementation, worker commit, and push remain unauthorized until push/continuity debt is resolved or the operator explicitly records an override.
+Production memory/RAG route release, interface/root-barrel/runtime wiring,
+file-backed production persistence, vectorization, retrieval, MinerU runtime,
+private/generated output content read, Candidate Group A import, provider/live
+proof, Web/UI, standalone app work, legal/use-case deep dive, extraction
+accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production readiness, Python source/test edits for Pylance,
+durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
+edits, checker/hook implementation, worker commit/push, and public runtime
+claim remain unauthorized without fresh source-verified operator
+authorization.
+
+## Core Guard Self-Protection Authorization - MSEA-R32 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R32 material
+commit `e851f04c4`, including active mode, next allowed move, generated active
+state, bootstrap read model, front-door continuity, active handoff, closure
+state entry, and last-updated state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/mseaR32PushContinuityDebtRemediationPublicSync20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Operator authorization: operator requested cleanup and push to both provenance
+and public repositories; the session-sync steward is authorized to update
+continuity surfaces after R32 material commit `e851f04c4`.
+
+Rollback boundary: revert only this R32 session-sync if rejected; do not revert
+material commit `e851f04c4`, public-sync commit `53b39f3d5`, or earlier
+accepted history.
+
+## Agent Operation Trace Block - MSEA-R32 Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R32 push/public-sync cleanup session-sync, 2026-07-05 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `rg`; `python governance/compat/generate_active_session_state.py`; `apply_patch`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/mseaR32PushContinuityDebtRemediationPublicSync20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R32 material commit `e851f04c4` and session-sync steward role |
+| Before status evidence | R31 mode routed to push-debt remediation packet |
+| After status evidence | active mode and next allowed move route to operator selection of the next governed tranche from a pushed continuity baseline |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session-sync only; no worker execution, runtime, provider/live, private-output read, source/test edit, or production route release |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r32-push-public-sync-cleanup-session-sync-2026-07-05` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/mseaR32PushContinuityDebtRemediationPublicSync20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/mseaR32PushContinuityDebtRemediationPublicSync20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization - MSEA-R31 Push Debt Audit Session Sync
 
