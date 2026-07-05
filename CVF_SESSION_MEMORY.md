@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator decision only: stop here or open a fresh GC-018/source-verified implementation packet for one narrow lane; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized by R30 closure; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=fresh R31 push-debt remediation packet before any new MinerU tranche; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized until push/continuity debt is resolved or operator override is explicitly recorded; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
+Current mode marker: `msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
 
-Current mode: `msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
+Current mode: `msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
 
-`msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
+`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
 
 Previous mode:
 
-`msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
+`msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R31 Push Continuity Debt Audit | `369fa93a0` | CLOSED_PASS_BOUNDED; accepted private push/continuity debt audit; selected `R31_PUSH_CONTINUITY_DEBT_AUDIT_COMPLETE_BLOCKED_PUSH_NOT_READY` and `PUSH_NOT_READY_BLOCKED_BY_UPSTREAM_DEBT_AND_FULL_RANGE_DRIFT`; removed local provider-stray `.qwen` after workspace-bound path check; recorded five remaining push-readiness blockers; next move is a fresh R31 push-debt remediation packet before any new MinerU tranche. |
 | MSEA-R30-T1 through T5 MinerU Production Release Gate Decision | `533a65044` | CLOSED_PASS_BOUNDED; accepted R30 roadmap, GC-018, work order, T1 production memory/RAG not-authorized decision, T2 interface/runtime wiring not-authorized decision, T3 private-output policy not-released decision, T4 provider/runtime proof not-released decision, and T5 no-go implementation completion; selected `R30_NO_GO_IMPLEMENTATION_NOT_RELEASED_PENDING_OPERATOR_PRODUCTION_PACKET`; pre-implementation autorun PASS 75/75, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 80/80; implementation remains unreleased pending fresh narrow packet. |
 | MSEA-R29-T1 through T5 MinerU Foundation Chain Stabilization And Release Boundary | `9da20ec0c` | CLOSED_PASS_BOUNDED; accepted R29 roadmap, GC-018, work order, T1 gap register, T2 internal-only interface decision, T3 future release criteria matrix, T4 no-wiring decision, and T5 completion review; selected `R29_STOP_FOUNDATION_CHAIN_HERE_PENDING_OPERATOR_FRESH_PACKET`; pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release, interface/runtime wiring, provider/live proof, public-sync, and use-case lanes remain unauthorized. |
 | MSEA-R28-T25 through T28 MinerU Bounded System Chain Implementation And Proof | `5ca346d18` | CLOSED_PASS_BOUNDED; accepted T25 helper/test, T25 worker return, T26 release decision matrix, T27 acceptance ledger, and T28 deterministic smoke proof; focused Vitest PASS 1 file / 8 tests, TypeScript check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release and use-case lanes remain unauthorized. |
@@ -78,6 +79,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Push/continuity debt | `369fa93a0` | PUSH_NOT_READY; R31 requires a fresh push-debt remediation packet before any new MinerU tranche. |
 | Memory-route release | `5ca346d18` | T25_T28_CLOSED_PASS_BOUNDED_FOUNDATION_CANDIDATE_ONLY; production memory/RAG route release remains unauthorized and requires fresh operator decision plus fresh source-verified packet. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
@@ -110,9 +112,29 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
+Mode: `msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
 
-Next allowed move: operator decision only. Stop here, or author a fresh GC-018/source-verified implementation packet for one narrow lane such as production memory/RAG route release, interface export/runtime wiring, private-output content policy release, provider/live proof, retrieval/vectorization, public-sync, or use-case/legal workflow.
+Next allowed move: author a fresh R31 push-debt remediation packet before any new MinerU tranche. R31 closed push/continuity audit at material commit `369fa93a0` and recorded push not ready due to upstream debt and full-range drift.
+
+Accepted R31 artifact:
+
+- `docs/reviews/CVF_MSEA_R31_PUSH_CONTINUITY_DEBT_AUDIT_2026-07-05.md`
+
+R31 selected disposition:
+
+`R31_PUSH_CONTINUITY_DEBT_AUDIT_COMPLETE_BLOCKED_PUSH_NOT_READY`
+
+Push readiness decision:
+
+`PUSH_NOT_READY_BLOCKED_BY_UPSTREAM_DEBT_AND_FULL_RANGE_DRIFT`
+
+Remaining R31 blockers:
+
+- upstream branch was `0 519` ahead/behind before R31 material commit;
+- preview range mixed material and protected session/handoff paths;
+- full-range core guard self-protection authorization is missing;
+- pre-public root exposure classification is missing for the active handoff root file;
+- KIOD priority guard drift remains in the full range.
 
 Accepted R30 artifacts:
 

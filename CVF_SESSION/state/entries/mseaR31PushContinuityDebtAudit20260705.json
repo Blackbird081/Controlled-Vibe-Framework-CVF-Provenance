@@ -1,0 +1,33 @@
+{
+  "stateOrder": 1492,
+  "stateKey": "mseaR31PushContinuityDebtAudit20260705",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-05",
+    "materialCommit": "369fa93a0",
+    "executionBaseHead": "21b5e69dd",
+    "auditPath": "docs/reviews/CVF_MSEA_R31_PUSH_CONTINUITY_DEBT_AUDIT_2026-07-05.md",
+    "selectedDisposition": "R31_PUSH_CONTINUITY_DEBT_AUDIT_COMPLETE_BLOCKED_PUSH_NOT_READY",
+    "pushReadinessDecision": "PUSH_NOT_READY_BLOCKED_BY_UPSTREAM_DEBT_AND_FULL_RANGE_DRIFT",
+    "upstreamTrackingBranch": "origin/codex/p1-p5-small-debt-remediation",
+    "aheadBehindBeforeR31Material": "0 519",
+    "previewChangedPathCount": 979,
+    "previewIssueCountAfterProviderStrayCleanup": 5,
+    "localProviderStrayCleanup": ".qwen removed after workspace-bound path check; provider-local file not committed",
+    "remainingBlockers": [
+      "upstream push debt exceeds limit",
+      "mixed material and protected session/handoff range",
+      "core guard self-protection full-range authorization missing",
+      "pre-public root exposure classification missing for active handoff root file",
+      "KIOD priority guard drift in full range"
+    ],
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "R31_PUSH_DEBT_RESOLUTION_PACKET_REQUIRED_BEFORE_NEW_MINERU_TRANCHE",
+    "claimBoundary": "R31 is a private push/continuity debt audit only. It does not authorize git push, public-sync, production memory/RAG route release, production durable-store invocation, runtime execution, private/generated output read, provider/live proof, source/test implementation, use-case workflow, worker commit, or public claim."
+  }
+}
