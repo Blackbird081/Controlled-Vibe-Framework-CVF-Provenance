@@ -47,7 +47,8 @@ Startup acknowledged: current mode=`msea_r39_t1_mineru_production_memory_rag_rou
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material packet | `bdc865ce0` MSEA-R39-T1 MinerU Production Memory/RAG Route Release Authority Decision closure |
-| Latest session-sync target | session sync after MSEA-R39-T1 closure and V37 handoff rotation |
+| Latest session-sync target | `7f0045b52` Sync session after MSEA R39 T1 closure |
+| Latest handoff marker sync target | marker sync after session-sync commit `7f0045b52` |
 | Latest provenance session-sync parent | `bdc865ce0` Accept MSEA R39 T1 production memory route authority decision |
 | Latest closed numbered LHW wave | `LHW24` |
 
