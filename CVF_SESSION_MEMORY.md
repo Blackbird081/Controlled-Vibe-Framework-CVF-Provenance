@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator decision only: stop here or open a fresh GC-018/source-verified packet for a separate production/runtime/public/use-case lane; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized by R29 closure; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator decision only: stop here or open a fresh GC-018/source-verified implementation packet for one narrow lane; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized by R30 closure; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
+Current mode marker: `msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
 
-Current mode: `msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
+Current mode: `msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
 
-`msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
+`msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
 
 Previous mode:
 
-`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
+`msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R30-T1 through T5 MinerU Production Release Gate Decision | `533a65044` | CLOSED_PASS_BOUNDED; accepted R30 roadmap, GC-018, work order, T1 production memory/RAG not-authorized decision, T2 interface/runtime wiring not-authorized decision, T3 private-output policy not-released decision, T4 provider/runtime proof not-released decision, and T5 no-go implementation completion; selected `R30_NO_GO_IMPLEMENTATION_NOT_RELEASED_PENDING_OPERATOR_PRODUCTION_PACKET`; pre-implementation autorun PASS 75/75, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 80/80; implementation remains unreleased pending fresh narrow packet. |
 | MSEA-R29-T1 through T5 MinerU Foundation Chain Stabilization And Release Boundary | `9da20ec0c` | CLOSED_PASS_BOUNDED; accepted R29 roadmap, GC-018, work order, T1 gap register, T2 internal-only interface decision, T3 future release criteria matrix, T4 no-wiring decision, and T5 completion review; selected `R29_STOP_FOUNDATION_CHAIN_HERE_PENDING_OPERATOR_FRESH_PACKET`; pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release, interface/runtime wiring, provider/live proof, public-sync, and use-case lanes remain unauthorized. |
 | MSEA-R28-T25 through T28 MinerU Bounded System Chain Implementation And Proof | `5ca346d18` | CLOSED_PASS_BOUNDED; accepted T25 helper/test, T25 worker return, T26 release decision matrix, T27 acceptance ledger, and T28 deterministic smoke proof; focused Vitest PASS 1 file / 8 tests, TypeScript check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release and use-case lanes remain unauthorized. |
 | MSEA-R28-T24 MinerU Bounded System Chain Implementation And Proof dispatch | `ab92e6191` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for bounded local T25-T28 helper/test, worker return, release decision matrix, acceptance ledger, and deterministic smoke proof; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release and use-case lanes remain unauthorized. |
@@ -109,30 +110,31 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r29_t1_t5_mineru_foundation_chain_stabilization_closed_bounded_pending_operator_fresh_packet_or_stop`
+Mode: `msea_r30_t1_t5_mineru_production_release_gate_decision_closed_bounded_pending_operator_stop_or_fresh_implementation_packet`
 
-Next allowed move: operator decision only. Stop the MinerU foundation chain here, or author a fresh GC-018/source-verified packet for a separate production memory/RAG route release, interface export/runtime wiring, retrieval/vectorization, private-output content policy release, provider/live proof, public-sync, or use-case/legal workflow lane.
+Next allowed move: operator decision only. Stop here, or author a fresh GC-018/source-verified implementation packet for one narrow lane such as production memory/RAG route release, interface export/runtime wiring, private-output content policy release, provider/live proof, retrieval/vectorization, public-sync, or use-case/legal workflow.
 
-Accepted R29 artifacts:
+Accepted R30 artifacts:
 
-- `docs/roadmaps/CVF_MSEA_R29_MINERU_FOUNDATION_CHAIN_STABILIZATION_AND_RELEASE_BOUNDARY_ROADMAP_2026-07-05.md`
-- `docs/baselines/CVF_GC018_MSEA_R29_T1_T5_MINERU_FOUNDATION_CHAIN_STABILIZATION_AND_RELEASE_BOUNDARY_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R29_T1_T5_MINERU_FOUNDATION_CHAIN_STABILIZATION_AND_RELEASE_BOUNDARY_2026-07-05.md`
-- `docs/reference/CVF_MSEA_R29_T1_MINERU_FOUNDATION_CHAIN_CLOSURE_AUDIT_AND_GAP_REGISTER_2026-07-05.md`
-- `docs/reference/CVF_MSEA_R29_T2_MINERU_INTERFACE_EXPOSURE_DECISION_MATRIX_2026-07-05.md`
-- `docs/reference/CVF_MSEA_R29_T3_MINERU_PRODUCTION_MEMORY_RAG_RELEASE_CRITERIA_MATRIX_2026-07-05.md`
-- `docs/reference/CVF_MSEA_R29_T4_MINERU_MINIMAL_INTERFACE_WIRING_DECISION_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R29_T5_MINERU_STOP_RELEASE_NEXT_ROADMAP_DECISION_COMPLETION_2026-07-05.md`
+- `docs/roadmaps/CVF_MSEA_R30_MINERU_PRODUCTION_RELEASE_GATE_DECISION_ROADMAP_2026-07-05.md`
+- `docs/baselines/CVF_GC018_MSEA_R30_T1_T5_MINERU_PRODUCTION_RELEASE_GATE_DECISION_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R30_T1_T5_MINERU_PRODUCTION_RELEASE_GATE_DECISION_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R30_T1_MINERU_PRODUCTION_MEMORY_RAG_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R30_T2_MINERU_INTERFACE_EXPORT_RUNTIME_WIRING_AUTHORITY_DECISION_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R30_T3_MINERU_PRIVATE_OUTPUT_POLICY_RELEASE_DECISION_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R30_T4_MINERU_PROVIDER_RUNTIME_PROOF_BOUNDARY_DECISION_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R30_T5_MINERU_GO_NO_GO_IMPLEMENTATION_PACKET_DECISION_COMPLETION_2026-07-05.md`
 
-Accepted R29 selected disposition:
+Accepted R30 selected disposition:
 
-- `R29_STOP_FOUNDATION_CHAIN_HERE_PENDING_OPERATOR_FRESH_PACKET`
+- `R30_NO_GO_IMPLEMENTATION_NOT_RELEASED_PENDING_OPERATOR_PRODUCTION_PACKET`
 
-Held R29 boundaries:
+Held R30 boundaries:
 
-- `R29_INTERFACE_EXPOSURE_INTERNAL_ONLY`
-- `R29_PRODUCTION_RELEASE_CRITERIA_DEFINED_NOT_RELEASED`
-- `R29_MINIMAL_WIRING_NOT_RELEASED`
+- `R30_PRODUCTION_MEMORY_RAG_RELEASE_NOT_AUTHORIZED`
+- `R30_INTERFACE_RUNTIME_WIRING_NOT_AUTHORIZED`
+- `R30_PRIVATE_OUTPUT_POLICY_NOT_RELEASED`
+- `R30_PROVIDER_RUNTIME_PROOF_NOT_RELEASED`
 - production memory/RAG route release, interface/root-barrel/runtime wiring, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated output content read, Candidate Group A import, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized.
 
 LHW24 remains the latest closed numbered LHW wave.
