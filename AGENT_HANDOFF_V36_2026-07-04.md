@@ -6,13 +6,12 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R38 T1-T4 MinerU To Memory ScanLayer
-System Chain Closure Audit closure. The active session is now routed to
-operator selection of exactly one held authority lane through a fresh
-source-verified packet if further MinerU value is desired, without implying
-public-sync, production memory/RAG route release, use-case expansion, runtime
-proof, private-output release, public runtime behavior, or production write
-authority.
+Carry compact continuity after MSEA-R39-T1 MinerU Production Memory/RAG Route
+Release Authority Decision dispatch. The active session is now routed to
+WORKER_MUST_NOT_COMMIT docs-only worker execution for the R39-T1 authority
+decision, without implying public-sync, Memory/RAG invocation or release,
+use-case expansion, runtime proof, private-output release, public runtime
+behavior, or production write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -29,7 +28,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_closed_pending_operator_authority_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator selects exactly one held authority lane through a fresh source-verified GC-018/work order if further MinerU value is desired: production memory/RAG route release, file-backed persistence, provider/live proof, or use-case/legal workflow; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, public-sync, worker commit, push, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=MSEA-R39-T1 no-commit docs-only worker execution creates only `docs/reference/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md`, then stops for reviewer closure; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; source/test edits, runtime, MinerU execution, private/generated content read, Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current State
 
@@ -41,9 +40,9 @@ Startup acknowledged: current mode=`msea_r38_t1_t4_mineru_to_memory_scanlayer_sy
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `42a0f1f02` MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit closure |
-| Latest session-sync target | session sync after MSEA-R38 T1-T4 closure |
-| Latest provenance session-sync parent | `42a0f1f02` Accept MSEA R38 system chain audit worker return |
+| Latest material packet | `2931cd918` MSEA-R39-T1 MinerU Production Memory/RAG Route Release Authority Decision dispatch |
+| Latest session-sync target | session sync after MSEA-R39-T1 dispatch |
+| Latest provenance session-sync parent | `2931cd918` Dispatch MSEA R39 T1 MinerU production memory route authority decision |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -54,9 +53,36 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_closed_pending_operator_authority_lane_selection`
+`msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R39-T1 MinerU Production Memory/RAG Route Release Authority Decision is
+DISPATCH_READY at material commit `2931cd918`.
+
+Accepted R39-T1 dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-06.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-06.md`
+
+R39-T1 selected dispatch disposition:
+`R39_T1_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_AUTHORIZED_DOCS_ONLY`.
+
+R39-T1 next allowed move: no-commit docs-only worker execution. Worker may
+create only
+`docs/reference/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-06.md`
+and
+`docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md`,
+then stop for reviewer closure.
+
+R39-T1 verification: pre-dispatch autorun PASS 73/73, dispatch steward PASS,
+and material pre-commit hook PASS 80/80.
+
+R39-T1 boundary: no source/test edits, runtime, MinerU execution,
+private/generated content read, Memory/RAG invocation or release,
+file-backed persistence, retrieval, vectorization, provider/live proof,
+provider-local or IDE config edits, public-sync, use-case/legal work, worker
+commit, push, or public claim.
 
 MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit is
 CLOSED_PASS_BOUNDED at material commit `42a0f1f02`.
@@ -465,22 +491,23 @@ Older MSEA history is summarized out of this active handoff. Use the active stat
 
 ## Next Allowed Move
 
-Next allowed move: R37-T1 public catalog hygiene sync is EXPORTED at public
-commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`. Select the next roadmap
-or author a fresh source-verified packet before any new implementation,
-public-sync, or runtime work.
+Next allowed move: MSEA-R39-T1 no-commit docs-only worker execution at
+material commit `2931cd918`. Worker may create only
+`docs/reference/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-06.md`
+and
+`docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md`,
+then stop for reviewer closure.
 
-Production memory/RAG route release, interface/root-barrel/runtime wiring,
-file-backed production persistence, vectorization, retrieval, MinerU
-runtime, private/generated output content read, Candidate Group A import,
-provider/live proof, Web/UI implementation, standalone app work,
-legal/use-case deep dive, extraction accuracy, document truth, legal
-quality, current-law correctness, workflow-chain production readiness,
-Python source/test edits for Pylance, durable store/runtime hierarchy/root
-barrel edits, provider-local/IDE config edits, checker/hook
-implementation, worker stage/commit/push, public-sync execution,
-and public runtime claim remain unauthorized. Public push requires fresh
-explicit operator confirmation immediately before the push command.
+Source/test edits, runtime, MinerU execution, private/generated output content
+read, Candidate Group A import, Memory/RAG invocation or release,
+file-backed persistence, vectorization, retrieval, provider/live proof,
+Web/UI implementation, standalone app work, legal/use-case deep dive,
+extraction accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production-readiness claim, Python source/test edits for
+Pylance, durable store/runtime hierarchy/root barrel edits,
+provider-local/IDE config edits, checker/hook implementation, worker
+stage/commit/push, public-sync execution, and public runtime claim remain
+unauthorized.
 
 ## Core Guard Self-Protection Authorization - MSEA-R37-T1 Public Export Session Sync
 
@@ -971,6 +998,60 @@ provider/live proof, public-sync, standalone app work, legal/use-case deep
 dive, extraction accuracy, document truth, legal quality, current-law
 correctness, workflow-chain production readiness, worker commit, push, or
 public claim.
+
+## Core Guard Self-Protection Authorization - MSEA-R39-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R39-T1
+dispatch material commit `2931cd918`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260706.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R39-T1 dispatch session-sync if rejected;
+do not revert material dispatch commit `2931cd918`, R38 closure commit
+`42a0f1f02`, or earlier accepted history.
+
+## Agent Operation Trace Block - MSEA-R39-T1 Dispatch Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R39-T1 dispatch session-sync, 2026-07-06 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `rg`; `python governance/compat/generate_active_session_state.py --generate`; `apply_patch`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R39-T1 dispatch material commit `2931cd918` and session-sync steward role |
+| Before status evidence | R38 closure mode routed to operator selection of exactly one held authority lane |
+| After status evidence | active mode and next allowed move route to R39-T1 no-commit docs-only worker execution |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session-sync only; no worker execution, runtime, provider/live, private-output read, source/test edit, Memory/RAG release, public-sync, or push |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r39-t1-dispatch-session-sync-2026-07-06` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Manifest delta | MATCH |
+
+## Claim Boundary - MSEA-R39-T1 Dispatch Session Sync
+
+This handoff update is continuity metadata only. It does not authorize
+source/test implementation, MinerU runtime, private/generated output content
+read, Memory/RAG invocation or release, production durable-store invocation,
+file-backed persistence, retrieval, vectorization, provider/live proof,
+public-sync, standalone app work, legal/use-case deep dive, extraction
+accuracy, document truth, legal quality, current-law correctness,
+workflow-chain production-readiness claim, worker commit, push, or public
+claim.
 
 ## Core Guard Self-Protection Authorization - MSEA-R38 T1-T4 Closure Session Sync
 
