@@ -47,8 +47,8 @@ Startup acknowledged: current mode=`msea_r28_t20_mineru_actual_durable_store_inv
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `696c01224` MSEA-R28-T20 actual durable-store invocation implementation closure |
-| Latest session-sync target | session sync after MSEA-R28-T20 closure |
+| Latest material packet | `cb4e296db` worker output quality controls hardening |
+| Latest session-sync target | session sync after worker output quality hardening |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
@@ -56,6 +56,28 @@ Startup acknowledged: current mode=`msea_r28_t20_mineru_actual_durable_store_inv
 `msea_r28_t20_mineru_actual_durable_store_invocation_implementation_closed_pending_t21_memory_route_release_authority_decision_work_order_authoring`
 
 ## Latest Changes
+
+Worker output quality controls hardening is accepted at material commit
+`cb4e296db`.
+
+Accepted hardening artifacts:
+
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0024.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+
+Result: `ADIF-0024` records worker-return stale evidence and workspace hygiene
+drift, and the work-order template now has a Worker Output Quality Controls
+section. T21 must use both so no-commit worker instructions require exact
+command rerun after final edits, current git status with untracked files,
+provider-local and IDE side-channel cleanup or disclosure, static-analysis
+diagnostic disposition, and negative edge-case tests for risky
+memory/private-output/security/unsafe-normalization surfaces.
+
+Verification: ADIF entry integrity PASS, ADIF resolver returns ADIF-0024 for
+worker/pre-implementation `docs/reviews` lookup, raw memory release invariant
+PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS,
+material pre-commit hook PASS 80/80, and commit `cb4e296db`.
 
 MSEA-R28-T20 Actual Durable Store Invocation Implementation is
 CLOSED_PASS_BOUNDED at material commit `696c01224`.
@@ -153,7 +175,7 @@ standalone PDF app, legal/use-case deep dive, extraction accuracy, document
 truth, legal quality, current-law correctness, workflow-chain production
 readiness, worker commit, or push.
 
-Recent predecessor anchors: R28-T20 closure `696c01224`, R28-T20 dispatch `974876b40`, R28-T19 closure `dc687360`, R28-T19 dispatch `8db612b0`, R28-T18 closure `51966467`, R28-T18 dispatch `02d174be`, R28-T17 closure `5166a624`, R28-T17 dispatch `b62e1be3`, R28-T16 closure `0bf81a68`, R28-T16 dispatch `93d94b0d`, R28-T15 closure `50afaa0f`, R28-T15 dispatch `e3ef73e4`, R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
+Recent predecessor anchors: worker output quality hardening `cb4e296db`, R28-T20 closure `696c01224`, R28-T20 dispatch `974876b40`, R28-T19 closure `dc687360`, R28-T19 dispatch `8db612b0`, R28-T18 closure `51966467`, R28-T18 dispatch `02d174be`, R28-T17 closure `5166a624`, R28-T17 dispatch `b62e1be3`, R28-T16 closure `0bf81a68`, R28-T16 dispatch `93d94b0d`, R28-T15 closure `50afaa0f`, R28-T15 dispatch `e3ef73e4`, R28-T14 closure `1b367302`, R28-T14 dispatch `1b0a50fd`, R28-T13 closure `0002de2d`, R28-T13 dispatch `66f0f3c6`, R28-T12 closure `91cc1422`, R28-T12 dispatch `f87661cb`, R28-T11 closure `dec53037`, R28-T11 dispatch
 `a6aaf7ec`, R28-T10 closure
 `528f8255`, R28-T10 dispatch
 `7244842b`, R28-T9 closure `45fb7a9a`, R28-T9 dispatch
@@ -176,11 +198,19 @@ archived handoffs for full details.
 
 Next allowed move: author a fresh MSEA-R28-T21 GC-018/source-verified work
 order for MinerU memory/RAG route release authority decision using accepted
-T20 helper/test/worker-return/completion evidence.
+T20 helper/test/worker-return/completion evidence and worker-output quality
+hardening commit `cb4e296db`.
 
 T21 must use accepted T20 helper/test/worker-return/completion evidence,
 accepted T19 decision matrix, accepted T18 adapter candidate, T17 authority
-decision, R27 route prerequisites, and R24-T4 private-output policy.
+decision, R27 route prerequisites, R24-T4 private-output policy, ADIF-0024, and
+the Worker Output Quality Controls template section.
+
+T21 worker instructions must require exact command rerun after final edits,
+current `git status --short --untracked-files=all`, provider-local and IDE
+side-channel cleanup or disclosure, static-analysis diagnostic disposition, and
+negative edge-case tests for risky memory/private-output/security/
+unsafe-normalization surfaces.
 
 Actual memory/RAG route release, production durable-store invocation,
 file-backed production persistence, vectorization, retrieval, MinerU runtime,
@@ -192,6 +222,27 @@ durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
 edits, checker/hook/session/handoff edits by worker, worker commit, and push
 remain unauthorized until a fresh T21 packet is authored, gated, dispatched,
 executed, reviewed, and accepted.
+
+## Core Guard Self-Protection Authorization - Worker Output Quality Hardening Session Sync
+
+Authorized guard-maintenance scope: session-sync only after worker output
+quality controls hardening material commit `cb4e296db`, including next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and hardening state entry.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/mseaR28T20WorkerOutputQualityControlsHardening20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this worker-output quality hardening
+session-sync if rejected; do not revert material hardening commit `cb4e296db`,
+T20 material closure commit `696c01224`, T20 dispatch commit `974876b40`, or
+older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T20 Closure Session Sync
 

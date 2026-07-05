@@ -51,6 +51,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T20 Worker Output Quality Controls Hardening | `cb4e296db` | REFERENCE_HARDENING_ACCEPTED; added `ADIF-0024` and work-order template Worker Output Quality Controls so T21 and later no-commit worker returns must rerun exact commands after final edits, record current git status with untracked files, clean/disclose provider-local and IDE side-channel files, disposition static-analysis diagnostics, and include negative edge-case tests for risky memory/private-output/security/unsafe-normalization surfaces. |
 | MSEA-R28-T20 MinerU Actual Durable Store Invocation Implementation | `696c01224` | CLOSED_PASS_BOUNDED; accepted bounded Learning Plane helper, focused test, worker return, and completion review; TypeScript check PASS, focused Vitest PASS 1 file / 29 tests, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG route release remains unauthorized pending fresh T21 authority decision. |
 | MSEA-R28-T20 MinerU Actual Durable Store Invocation Implementation dispatch | `974876b40` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for bounded Learning Plane Foundation helper/test implementation; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; next move is no-commit T20 worker execution. |
 | MSEA-R28-T19 MinerU Durable Store Invocation Release Decision | `dc687360` | CLOSED_PASS_BOUNDED; accepted docs-only decision matrix and worker return; selected `T20_DURABLE_STORE_INVOCATION_IMPLEMENTATION_CANDIDATE`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG write and durable-store invocation remain unauthorized pending fresh T20 dispatch. |
@@ -100,7 +101,8 @@ Mode: `msea_r28_t20_mineru_actual_durable_store_invocation_implementation_closed
 
 Next allowed move: author a fresh MSEA-R28-T21 GC-018/source-verified work
 order for MinerU memory/RAG route release authority decision using accepted T20
-helper/test/worker-return/completion evidence.
+helper/test/worker-return/completion evidence and the accepted worker-output
+quality hardening from `cb4e296db`.
 
 LHW24 remains the latest closed numbered LHW wave.
 
@@ -112,6 +114,12 @@ Accepted T20 closure artifacts:
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-durable-store-invocation.test.ts`
 - `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-05.md`
 - `docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_COMPLETION_2026-07-05.md`
+
+Accepted worker-output quality hardening artifacts:
+
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0024.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 
 Accepted T19 closure artifacts:
 
@@ -141,6 +149,36 @@ current-law correctness, workflow-chain production readiness, Python source/test
 edits for Pylance, durable store/runtime hierarchy/root barrel edits,
 provider-local/IDE config edits, checker/hook/session/handoff edits by worker,
 worker commit, and push remain held pending fresh T21 authoring and acceptance.
+
+T21 work-order authoring must include ADIF-0024 and the Worker Output Quality
+Controls template section. The worker instructions must require exact command
+rerun after final edits, current `git status --short --untracked-files=all`,
+provider-local and IDE side-channel cleanup or disclosure, static-analysis
+diagnostic disposition, and negative edge-case tests for risky
+memory/private-output/security/unsafe-normalization surfaces.
+
+## Core Guard Self-Protection Authorization - Worker Output Quality Hardening Session Sync
+
+Authorized guard-maintenance scope: session-sync only after worker output
+quality controls hardening material commit `cb4e296db`, including next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and hardening state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record hardening continuity and T21 next-move requirement. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after hardening session-sync. |
+| `CVF_SESSION/state/entries/mseaR28T20WorkerOutputQualityControlsHardening20260705.json` | Record accepted worker-output quality controls hardening evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route T21 work-order authoring through ADIF-0024 and Worker Output Quality Controls. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record hardening continuity and T21 next-move requirement. |
+
+Rollback boundary: revert only this worker-output quality hardening
+session-sync if rejected; do not revert material hardening commit `cb4e296db`,
+T20 material closure commit `696c01224`, T20 dispatch commit `974876b40`, or
+older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R28-T20 Closure Session Sync
 
