@@ -33,25 +33,26 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R28-T23 no-commit worker return for production memory/RAG route release authority decision only; parked checkpoint=production memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred by T23 dispatch; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_closed_pending_t24_production_route_release_implementation_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T24 GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for production memory/RAG route release implementation-work-order authoring only; parked checkpoint=production memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook implementation, worker commit/push, and production workflow lanes remain deferred until a fresh T24 packet is authored, gated, dispatched, executed, reviewed, and accepted; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+Current mode marker: `msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_closed_pending_t24_production_route_release_implementation_work_order_authoring`
 
-Current mode: `msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+Current mode: `msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_closed_pending_t24_production_route_release_implementation_work_order_authoring`
 
-`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_closed_pending_t24_production_route_release_implementation_work_order_authoring`
 
 Previous mode:
 
-`msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_closed_pending_t23_production_route_release_authority_decision_work_order_authoring`
+`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R28-T23 MinerU Production Memory/RAG Route Release Authority Decision dispatch | `4084f59db` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for docs-only production route authority decision; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; next move is no-commit T23 worker execution creating only the decision matrix and worker return; production memory/RAG route release remains unauthorized. |
+| MSEA-R28-T23 MinerU Production Memory/RAG Route Release Authority Decision | `0585429ee` | CLOSED_PASS_BOUNDED; accepted docs-only source-verified decision matrix, worker return, and completion review; selected `T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY`; preserved `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh T24 GC-018/source-verified work-order authoring only. |
+| MSEA-R28-T23 MinerU Production Memory/RAG Route Release Authority Decision dispatch | `4084f59db` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for docs-only production route authority decision; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release remained unauthorized. |
 | MSEA-R28-T22 MinerU Memory/RAG Route Release Implementation Candidate | `62f9b9c0c` | CLOSED_PASS_BOUNDED; accepted bounded Learning Plane helper, focused test, worker return, and completion review; focused Vitest PASS 1 file / 19 tests, TypeScript check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release remains unauthorized pending fresh T23 authority-decision work-order authoring. |
 | MSEA-R28-T22 MinerU Memory/RAG Route Release Implementation Candidate dispatch | `6e31088a1` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for bounded Learning Plane TypeScript helper/test implementation; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; next move is no-commit T22 worker execution in the three allowed paths only; production memory/RAG route release remains unauthorized. |
 | MSEA-R28-T21 MinerU Memory/RAG Route Release Authority Decision | `6ce339437` | CLOSED_PASS_BOUNDED; accepted docs-only decision matrix and worker return; selected `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`; preserved `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG route release remains unauthorized pending fresh T22 dispatch and acceptance. |
@@ -73,7 +74,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Memory-route release | `4084f59db` | T23_DISPATCH_READY_PENDING_WORKER_RETURN; T23 authorizes only docs-only authority decision matrix and worker return; production memory/RAG route release remains unauthorized pending T23 worker execution, review, and acceptance. |
+| Memory-route release | `0585429ee` | T23_CLOSED_PASS_BOUNDED_PENDING_T24_WORK_ORDER_AUTHORING; T23 authorizes only future T24 implementation-work-order authoring readiness; production memory/RAG route release remains unauthorized pending a fresh T24 packet, gates, dispatch, execution, review, and acceptance. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
 
@@ -81,6 +82,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T23 MinerU Production Memory/RAG Route Release Authority Decision | `0585429ee` | CLOSED_PASS_BOUNDED; selected `T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY`; production memory/RAG route release remains `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R28-T22 MinerU Memory/RAG Route Release Implementation Candidate | `62f9b9c0c` | CLOSED_PASS_BOUNDED; selected `MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTED_BOUNDED_CANDIDATE`; memory/RAG route release remains `MEMORY_RAG_ROUTE_RELEASE_NOT_PRODUCTION_AUTHORIZED_BY_T22`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; focused Vitest PASS 1 file / 19 tests, TypeScript check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R28-T21 MinerU Memory/RAG Route Release Authority Decision | `6ce339437` | CLOSED_PASS_BOUNDED; selected `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`; memory/RAG route release remains `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R28-T20 MinerU Actual Durable Store Invocation Implementation | `696c01224` | CLOSED_PASS_BOUNDED; selected `ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_ACCEPTED_BOUNDED`; memory/RAG route release remains `MEMORY_WRITE_NOT_AUTHORIZED_BY_T20_INVOCATION_ONLY`; private/generated output remains `PRIVATE_OUTPUT_NOT_READ_OR_RELEASED`; TypeScript check PASS, focused Vitest PASS 1 file / 29 tests, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80. |
@@ -104,26 +106,27 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+Mode: `msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_closed_pending_t24_production_route_release_implementation_work_order_authoring`
 
-Next allowed move: execute the MSEA-R28-T23 no-commit worker return for
-production memory/RAG route release authority decision only.
+Next allowed move: author a fresh MSEA-R28-T24 GC-018/source-verified
+WORKER_MUST_NOT_COMMIT work order for production memory/RAG route release
+implementation-work-order authoring only.
 
-T23 dispatch artifacts:
+Accepted T23 closure artifacts:
 
 - `docs/baselines/CVF_GC018_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
-
-T23 worker must create only:
-
 - `docs/reference/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
 - `docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_COMPLETION_2026-07-05.md`
 
-T23 worker must select exactly one:
+Accepted T23 selected disposition:
 
 - `T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY`
-- `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_HELD_PENDING_AUTHORITY_GAP`
-- `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_BLOCKED_WITH_REASON`
+
+Held T23 token:
+
+- `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY`
 
 Accepted T22 closure artifacts:
 
@@ -134,11 +137,14 @@ Accepted T22 closure artifacts:
 - `docs/reviews/CVF_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_WORKER_RETURN_2026-07-05.md`
 - `docs/reviews/CVF_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_COMPLETION_2026-07-05.md`
 
-T23 must use accepted T22 evidence, T21 authority decision, T20 durable-store
-invocation helper, R27 route prerequisites, R24-T4 private-output policy,
-Source Verification Block, ADIF disclosure, checker read-ahead, Agent Handoff
-Contract Control Block, Reviewer Closure Conversion, pre-dispatch autorun
-gates, and GC-051 path-literal discipline.
+T24 authoring must use accepted T23 matrix/return/completion, accepted T22
+evidence, T21 authority decision, T20 durable-store invocation helper, R27
+route prerequisites, R24-T4 private-output policy, durable-store file-backed
+boundary evidence, Source Verification Block, ADIF disclosure, checker
+read-ahead, Worker Output Quality Controls, Provider-Local Stray Artifact
+Control, Pylance Static-Analysis Diagnostic Boundary, Agent Handoff Contract
+Control Block, Reviewer Closure Conversion, pre-dispatch autorun gates, and
+GC-051 path-literal discipline.
 
 Production memory/RAG route release, production durable-store invocation,
 file-backed production persistence, vectorization, retrieval, MinerU runtime,
@@ -147,9 +153,9 @@ proof, public-sync, Web/UI, standalone app, legal/use-case deep dive,
 extraction accuracy/document truth/legal quality/current-law
 correctness/workflow-chain production-readiness claim, Python source/test edits
 for Pylance, durable store/runtime hierarchy/root barrel edits,
-provider-local/IDE config edits, checker/hook/session/handoff edits by worker,
-worker stage/commit/push remain unauthorized until a fresh T23 packet is
-worker execution, review, and acceptance.
+provider-local/IDE config edits, checker/hook implementation, worker
+stage/commit/push remain unauthorized until a fresh T24 packet is authored,
+gated, dispatched, executed, reviewed, and accepted.
 
 LHW24 remains the latest closed numbered LHW wave.
 
