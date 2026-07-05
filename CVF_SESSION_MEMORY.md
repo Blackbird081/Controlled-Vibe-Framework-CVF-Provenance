@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute local T25-T28 bounded system-chain worker scope under the T24 WORKER_MUST_NOT_COMMIT work order; parked checkpoint=production memory/RAG route release, production durable-store invocation beyond deterministic local in-process test scope, file-backed production persistence, retrieval, vectorization, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, use-case/legal expansion, checker/hook implementation, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator decision only for a fresh GC-018/source-verified next packet or stop; parked checkpoint=production memory/RAG route release, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized by T25-T28 closure; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`
+Current mode marker: `msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
 
-Current mode: `msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`
+Current mode: `msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
 
-`msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`
+`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
 
 Previous mode:
 
-`msea_r28_t23_mineru_production_memory_rag_route_release_authority_decision_closed_pending_t24_production_route_release_implementation_work_order_authoring`
+`msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T25 through T28 MinerU Bounded System Chain Implementation And Proof | `5ca346d18` | CLOSED_PASS_BOUNDED; accepted T25 helper/test, T25 worker return, T26 release decision matrix, T27 acceptance ledger, and T28 deterministic smoke proof; focused Vitest PASS 1 file / 8 tests, TypeScript check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release and use-case lanes remain unauthorized. |
 | MSEA-R28-T24 MinerU Bounded System Chain Implementation And Proof dispatch | `ab92e6191` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for bounded local T25-T28 helper/test, worker return, release decision matrix, acceptance ledger, and deterministic smoke proof; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release and use-case lanes remain unauthorized. |
 | MSEA-R28-T23 MinerU Production Memory/RAG Route Release Authority Decision | `0585429ee` | CLOSED_PASS_BOUNDED; accepted docs-only source-verified decision matrix, worker return, and completion review; selected `T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY`; preserved `PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh T24 GC-018/source-verified work-order authoring only. |
 | MSEA-R28-T23 MinerU Production Memory/RAG Route Release Authority Decision dispatch | `4084f59db` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for docs-only production route authority decision; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; production memory/RAG route release remained unauthorized. |
@@ -75,7 +76,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Memory-route release | `ab92e6191` | T24_DISPATCH_READY_PENDING_T25_T28_WORKER_EXECUTION; production memory/RAG route release remains unauthorized pending bounded helper/test proof, release decision, acceptance ledger, smoke proof, review, and acceptance. |
+| Memory-route release | `5ca346d18` | T25_T28_CLOSED_PASS_BOUNDED_FOUNDATION_CANDIDATE_ONLY; production memory/RAG route release remains unauthorized and requires fresh operator decision plus fresh source-verified packet. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
 
@@ -107,10 +108,12 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`
+Mode: `msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
 
-Next allowed move: execute local T25-T28 bounded system-chain worker scope under
-the T24 WORKER_MUST_NOT_COMMIT work order.
+Next allowed move: operator decision only. Either stop the MinerU foundation
+chain here, author a fresh GC-018/source-verified bounded non-use-case
+follow-up, or explicitly authorize a later production/use-case tranche with
+separate scope.
 
 Accepted T23 closure artifacts:
 

@@ -6,10 +6,10 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R28-T24 bounded system-chain implementation
-and proof dispatch. Keep the active session ready for local T25-T28 worker
-execution without implying production memory/RAG route release, use-case
-expansion, or production write authority.
+Carry compact continuity after MSEA-R28-T25 through T28 bounded system-chain
+implementation and deterministic smoke proof closure. Keep the active session
+ready for operator next-roadmap decision without implying production memory/RAG
+route release, use-case expansion, or production write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -26,7 +26,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute local T25-T28 bounded system-chain worker scope under the T24 WORKER_MUST_NOT_COMMIT work order; parked checkpoint=production memory/RAG route release, production durable-store invocation beyond deterministic local in-process test scope, file-backed production persistence, retrieval, vectorization, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, use-case/legal expansion, checker/hook implementation, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator decision only for a fresh GC-018/source-verified next packet or stop; parked checkpoint=production memory/RAG route release, use-case/legal workflow, provider/live proof, public-sync, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public claim remain unauthorized by T25-T28 closure; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -38,15 +38,40 @@ Startup acknowledged: current mode=`msea_r28_t24_mineru_bounded_system_chain_imp
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `ab92e6191` MSEA-R28-T24 bounded system-chain implementation/proof dispatch |
-| Latest session-sync target | session sync after MSEA-R28-T24 dispatch |
+| Latest material packet | `5ca346d18` MSEA-R28-T25 through T28 bounded system-chain implementation/proof closure |
+| Latest session-sync target | session sync after MSEA-R28-T25 through T28 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 ## Current Mode
 
-`msea_r28_t24_mineru_bounded_system_chain_implementation_and_proof_dispatched_pending_t25_t28_worker_execution`
+`msea_r28_t28_mineru_system_chain_deterministic_smoke_proof_closed_bounded_pending_operator_next_roadmap_decision`
 
 ## Latest Changes
+
+MSEA-R28-T25 through T28 Bounded System Chain Implementation And Proof is
+CLOSED_PASS_BOUNDED at material commit `5ca346d18`.
+
+Accepted T25-T28 artifacts:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-system-chain-route-candidate.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-route-candidate.test.ts`
+- `docs/reviews/CVF_MSEA_R28_T25_MINERU_BOUNDED_SYSTEM_CHAIN_ROUTE_CANDIDATE_WORKER_RETURN_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R28_T26_MINERU_SYSTEM_CHAIN_RELEASE_DECISION_MATRIX_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R28_T27_MINERU_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R28_T28_MINERU_SYSTEM_CHAIN_DETERMINISTIC_SMOKE_PROOF_2026-07-05.md`
+
+T25-T28 verification: focused Vitest PASS 1 file / 8 tests, TypeScript check
+PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75,
+reviewer-return commit steward PASS, material pre-commit hook PASS 80/80, and
+material commit `5ca346d18`.
+
+T25-T28 boundary: bounded local foundation-plane candidate only. Production
+memory/RAG route release, use-case/legal workflow, provider/live proof,
+public-sync, MinerU runtime, retrieval, vectorization, private/generated output
+content read, Candidate Group A import, file-backed production persistence,
+checker/hook implementation, worker commit, push, and public claim remain
+unauthorized without fresh operator decision and a fresh source-verified
+packet.
 
 MSEA-R28-T24 Bounded System Chain Implementation And Proof dispatch is
 DISPATCH_READY at material commit `ab92e6191`.
@@ -133,8 +158,10 @@ for full detail.
 
 ## Next Allowed Move
 
-Next allowed move: execute local T25-T28 bounded system-chain worker scope under
-the T24 WORKER_MUST_NOT_COMMIT work order.
+Next allowed move: operator decision only. Either stop the MinerU foundation
+chain here, author a fresh GC-018/source-verified bounded non-use-case
+follow-up, or explicitly authorize a later production/use-case tranche with
+separate scope.
 
 Production memory/RAG route release, production durable-store invocation,
 file-backed production persistence, vectorization, retrieval, MinerU runtime,
@@ -147,12 +174,12 @@ edits, checker/hook implementation, worker commit, and push remain
 unauthorized until a fresh T24 packet is authored, gated, dispatched,
 executed, reviewed, and accepted.
 
-## Core Guard Self-Protection Authorization - MSEA-R28-T24 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R28-T25-T28 Closure Session Sync
 
-Authorized guard-maintenance scope: session-sync only after MSEA-R28-T24
-dispatch material commit `ab92e6191`, including active mode, next allowed move,
+Authorized guard-maintenance scope: session-sync only after MSEA-R28-T25-T28
+material commit `5ca346d18`, including active mode, next allowed move,
 generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
+handoff, and closure state entry.
 
 Protected paths:
 
@@ -160,16 +187,16 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaR28T24MineruBoundedSystemChainImplementationProofDispatch20260705.json`
+- `CVF_SESSION/state/entries/mseaR28T25T28MineruBoundedSystemChainClosure20260705.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `AGENT_HANDOFF_V36_2026-07-04.md`
 
 Operator authorization: operator asked Codex to complete T24-T28 locally; the
-session-sync steward is authorized to update continuity surfaces after T24
-dispatch material commit `ab92e6191` only.
+session-sync steward is authorized to update continuity surfaces after T25-T28
+material commit `5ca346d18` only.
 
-Rollback boundary: revert only this T24 dispatch session-sync if rejected; do
-not revert dispatch material commit `ab92e6191` or earlier T23/T22/T21 material
+Rollback boundary: revert only this T25-T28 closure session-sync if rejected; do
+not revert material commit `5ca346d18` or earlier T24/T23/T22 material
 history.
 
 ## Agent Operation Trace Block
@@ -178,20 +205,20 @@ history.
 | --- | --- |
 | Actor | Codex session-sync steward |
 | Provider or surface | local workspace |
-| Session or invocation | MSEA-R28-T24 dispatch session-sync, 2026-07-05 |
+| Session or invocation | MSEA-R28-T25-T28 closure session-sync, 2026-07-05 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | `Get-Content`; `rg`; `python governance/compat/*`; `apply_patch`; `git` |
-| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T24MineruBoundedSystemChainImplementationProofDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
-| Allowed scope source | MSEA-R28-T24 dispatch material commit `ab92e6191` and session-sync steward role |
-| Before status evidence | T23 closure state routed next move to T24 work-order authoring |
-| After status evidence | active mode and next allowed move route to T25-T28 worker execution under T24 work order |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T25T28MineruBoundedSystemChainClosure20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R28-T25-T28 material commit `5ca346d18` and session-sync steward role |
+| Before status evidence | T24 dispatch session state routed next move to T25-T28 worker execution |
+| After status evidence | active mode and next allowed move route to operator next-roadmap decision only |
 | Diff evidence | `git diff --name-status` before session-sync commit |
 | Approval boundary | session-sync only; no worker execution, runtime, provider/live, public-sync, private-output read, source/test edit, or production route release |
 | Claim boundary | continuity update only |
 | Agent type | session-sync steward |
-| Invocation ID | `msea-r28-t24-dispatch-session-sync-2026-07-05` |
-| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T24MineruBoundedSystemChainImplementationProofDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
-| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T24MineruBoundedSystemChainImplementationProofDispatch20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Invocation ID | `msea-r28-t25-t28-closure-session-sync-2026-07-05` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T25T28MineruBoundedSystemChainClosure20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR28T25T28MineruBoundedSystemChainClosure20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
 | Manifest delta | MATCH |
 
 ## Claim Boundary
