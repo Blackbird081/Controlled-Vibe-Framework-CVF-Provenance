@@ -6,9 +6,9 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R36 T1-T3 Public Catalog Hygiene Source
-Packet closure. The active session is now parked on fresh public-sync
-work-order authoring decision, without implying public-sync execution,
+Carry compact continuity after MSEA-R37-T1 Public Catalog Hygiene Public-Sync
+Execution dispatch. The active session is now parked on bounded public-sync
+local-commit worker execution and return, without implying public push,
 production memory/RAG route release, use-case expansion, runtime proof,
 private-output release, public runtime behavior, or production write
 authority.
@@ -28,7 +28,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r36_t1_t3_public_catalog_hygiene_source_packet_closed_pending_public_sync_work_order_authoring_decision`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author a fresh GC-018/source-verified public-sync work order from the R36 source packet, naming exact public catalog sections/documents and requiring execution from the sibling public-sync clone after re-verifying that clone's current state; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, public-sync execution, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized until a fresh packet releases them.
+Startup acknowledged: current mode=`msea_r37_t1_public_catalog_hygiene_public_sync_execution_dispatched_pending_local_commit_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute/review the R37-T1 worker path only: one bounded local commit inside the sibling public-sync clone, then a provenance worker return, then stop before push; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; public push requires fresh explicit operator confirmation immediately before the push command; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current State
 
@@ -40,8 +40,8 @@ Startup acknowledged: current mode=`msea_r36_t1_t3_public_catalog_hygiene_source
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `507bda564` MSEA-R36 T1-T3 Public Catalog Hygiene Source Packet closure |
-| Latest session-sync target | session sync after MSEA-R36 closure |
+| Latest material packet | `1aed1f066` MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution dispatch |
+| Latest session-sync target | session sync after MSEA-R37-T1 dispatch |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -52,9 +52,41 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r36_t1_t3_public_catalog_hygiene_source_packet_closed_pending_public_sync_work_order_authoring_decision`
+`msea_r37_t1_public_catalog_hygiene_public_sync_execution_dispatched_pending_local_commit_worker_return`
 
 ## Latest Changes
+
+MSEA-R37-T1 Public Catalog Hygiene Public-Sync Execution dispatch is
+DISPATCH_READY at material commit `1aed1f066`.
+
+Accepted R37-T1 dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R37_T1_PUBLIC_CATALOG_HYGIENE_PUBLIC_SYNC_EXECUTION_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R37_T1_PUBLIC_CATALOG_HYGIENE_PUBLIC_SYNC_EXECUTION_2026-07-05.md`
+
+R37-T1 selected dispatch disposition:
+`R37_T1_PUBLIC_CATALOG_HYGIENE_PUBLIC_SYNC_EXECUTION_AUTHORIZED_BOUNDED`.
+
+R37-T1 verification: pre-dispatch autorun PASS 73/73, dispatch commit
+steward PASS, and material pre-commit hook PASS 80/80.
+
+R37-T1 next allowed move: execute/review the worker path only. Worker may
+create one bounded local commit inside the sibling public-sync clone against
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, create the
+R37-T1 worker return in this provenance workspace, and stop before push.
+Public push requires fresh explicit operator confirmation immediately before
+the push command.
+
+R37-T1 boundary: public-sync local commit only. It does not authorize public
+push without confirmation, production memory/RAG route release, live Python
+process invocation, file-based Python output consumption, MinerU runtime
+execution, private/generated output content read, production durable-store
+invocation, file-backed production persistence, retrieval, vectorization,
+provider/live proof, Web/UI implementation, standalone app work,
+legal/use-case deep dive, extraction accuracy, document truth, legal quality,
+current-law correctness, hosted readiness, production readiness, source/test
+edits, provider-local or IDE config edits, or public `EXPORTED` claim before
+push evidence exists.
 
 MSEA-R36 T1-T3 Public Catalog Hygiene Source Packet is
 CLOSED_PASS_BOUNDED at material commit `507bda564`.
@@ -364,12 +396,13 @@ Older MSEA history is summarized out of this active handoff. Use the active stat
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh GC-018/source-verified public-sync work
-order from the R36 source packet, naming exact public catalog
-sections/documents and requiring execution from the sibling public-sync clone
-after re-verifying that clone's current state. R36 closure is accepted at
-material commit `507bda564`; R36 dispatch is accepted at material commit
-`cfab0813c`; R35 T1-T3 is accepted at material commit `f9e2a0b33`.
+Next allowed move: execute/review the R37-T1 worker path only: make one
+bounded local commit inside the sibling public-sync clone against
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, create
+`docs/reviews/CVF_MSEA_R37_T1_PUBLIC_CATALOG_HYGIENE_PUBLIC_SYNC_EXECUTION_WORKER_RETURN_2026-07-05.md`
+in this provenance workspace, and stop before push. R37-T1 dispatch is
+accepted at material commit `1aed1f066`; R36 closure is accepted at material
+commit `507bda564`.
 
 Production memory/RAG route release, interface/root-barrel/runtime wiring,
 file-backed production persistence, vectorization, retrieval, MinerU
@@ -380,7 +413,29 @@ quality, current-law correctness, workflow-chain production readiness,
 Python source/test edits for Pylance, durable store/runtime hierarchy/root
 barrel edits, provider-local/IDE config edits, checker/hook
 implementation, worker stage/commit/push, public-sync execution,
-and public runtime claim remain unauthorized.
+and public runtime claim remain unauthorized. Public push requires fresh
+explicit operator confirmation immediately before the push command.
+
+## Core Guard Self-Protection Authorization - MSEA-R37-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R37-T1
+dispatch material commit `1aed1f066`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR37T1PublicCatalogHygienePublicSyncExecutionDispatch20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R37-T1 dispatch session-sync if rejected;
+do not revert material dispatch commit `1aed1f066`, R36 closure commit
+`507bda564`, R36 dispatch commit `cfab0813c`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R36 Closure Session Sync
 
