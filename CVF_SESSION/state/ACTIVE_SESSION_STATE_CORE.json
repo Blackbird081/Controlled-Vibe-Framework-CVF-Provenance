@@ -76,8 +76,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_closed_pending_t19_durable_store_invocation_release_decision_work_order_authoring",
-  "previousMode": "msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_dispatched_pending_worker_return",
+  "currentMode": "msea_r28_t19_mineru_durable_store_invocation_release_decision_dispatched_pending_worker_return",
+  "previousMode": "msea_r28_t18_mineru_actual_durable_memory_write_adapter_implementation_closed_pending_t19_durable_store_invocation_release_decision_work_order_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
