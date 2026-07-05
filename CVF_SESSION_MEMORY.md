@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R35 no-commit docs-only worker creating only the T1 stop-state matrix, T2 capability snapshot, T3 candidate ranking, and R35 worker return; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, public-sync, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_closed_pending_r36_public_catalog_hygiene_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R36 GC-018/source-verified roadmap and work order for public catalog hygiene source-packet preparation; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, public-sync execution, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`
+Current mode marker: `msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_closed_pending_r36_public_catalog_hygiene_work_order_authoring`
 
-Current mode: `msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`
+Current mode: `msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_closed_pending_r36_public_catalog_hygiene_work_order_authoring`
 
-`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`
+`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_closed_pending_r36_public_catalog_hygiene_work_order_authoring`
 
 Previous mode:
 
-`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`
+`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R35 T1-T3 Post-MinerU Stop-State And Initiative Selection | `f9e2a0b33` | CLOSED_PASS_BOUNDED; accepted T1 stop-state matrix, T2 current capability snapshot, T3 next-initiative candidate ranking, and worker return; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; reviewer audit selected public catalog hygiene source-packet preparation as the next bounded initiative; no public-sync execution, production route, runtime, provider/live, private-output, source/test edit, use-case/legal work, worker commit, or push is authorized. |
 | MSEA-R35 T1-T3 Post-MinerU Stop-State And Initiative Selection dispatch | `1d42f331` | DISPATCH_READY; accepted roadmap, GC-018 baseline, and WORKER_MUST_NOT_COMMIT docs-only work order for T1 stop-state consolidation, T2 capability snapshot, T3 candidate ranking, and worker return; pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80; no next-initiative selection, production route, runtime, provider/live, private-output, public-sync, source/test edit, existing capability-inventory edit, worker stage, commit, or push is authorized. |
 | MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision | `20ff04e17` | CLOSED_PASS_BOUNDED; accepted source-verified decision matrix and worker return; selected `MINERU_FOUNDATION_PLANE_STOP_HERE_PENDING_OPERATOR_NEW_INITIATIVE`; reviewer repair removed conversation-record source-authority wording; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is operator selection of a new initiative before any fresh packet. |
 | MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision dispatch | `de19d6891` | DISPATCH_READY; accepted source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only decision work order; worker may create only the R34-T2 decision matrix and worker return; pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80; no production route, runtime, provider/live, private-output, public-sync, source/test edit, worker stage, commit, or push is authorized. |
@@ -126,9 +127,33 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`
+Mode: `msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_closed_pending_r36_public_catalog_hygiene_work_order_authoring`
 
-Next allowed move: execute MSEA-R35 no-commit docs-only worker creating only `docs/reference/CVF_MSEA_R35_T1_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_MATRIX_2026-07-05.md`, `docs/reference/CVF_MSEA_R35_T2_CVF_CURRENT_PRODUCT_CAPABILITY_SNAPSHOT_2026-07-05.md`, `docs/reference/CVF_MSEA_R35_T3_NEXT_INITIATIVE_CANDIDATE_RANKING_2026-07-05.md`, and `docs/reviews/CVF_MSEA_R35_T1_T3_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_WORKER_RETURN_2026-07-05.md`. R35 dispatch is accepted at material commit `1d42f331`; R34-T2 is closed at material commit `20ff04e17`; R33 closed internal system-chain readiness at material commit `3a46bc371` and public-sync commit `7f6e548d3`; LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: author fresh MSEA-R36 GC-018/source-verified roadmap and work order for public catalog hygiene source-packet preparation. R35 T1-T3 is accepted at material commit `f9e2a0b33`; R35 dispatch is accepted at material commit `1d42f331`; R34-T2 is closed at material commit `20ff04e17`; R33 closed internal system-chain readiness at material commit `3a46bc371` and public-sync commit `7f6e548d3`; LHW24 remains the latest closed numbered LHW wave. Public-sync execution remains unauthorized until a separate boundary-checked packet explicitly releases it.
+
+## Core Guard Self-Protection Authorization - MSEA-R35 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R35
+material closure commit `f9e2a0b33`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R35 closure continuity and R36 work-order-authoring next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R35 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R35 closure. |
+| `CVF_SESSION/state/entries/mseaR35T1T3PostMineruStopStateAndInitiativeSelectionClosure20260705.json` | Record accepted R35 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MSEA-R36 public catalog hygiene source-packet work-order authoring. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record R35 closure continuity and R36 authoring next move. |
+
+Rollback boundary: revert only this R35 closure session-sync if rejected;
+do not revert material closure commit `f9e2a0b33`, R35 dispatch commit
+`1d42f331`, R34-T2 closure commit `20ff04e17`, R33 material commit
+`3a46bc371`, public-sync commit `7f6e548d3`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R35 Dispatch Session Sync
 

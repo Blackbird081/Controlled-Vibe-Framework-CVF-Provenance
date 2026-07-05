@@ -7,11 +7,11 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 ## Purpose
 
 Carry compact continuity after MSEA-R35 T1-T3 Post-MinerU Stop-State And
-Initiative Selection dispatch. The active session is now parked on R35
-no-commit docs-only worker execution, without implying production
-memory/RAG route release, use-case expansion, runtime proof, private-output
-release, public runtime behavior, next-initiative selection, or production
-write authority.
+Initiative Selection closure. The active session is now parked on MSEA-R36
+public catalog hygiene source-packet work-order authoring, without implying
+public-sync execution, production memory/RAG route release, use-case
+expansion, runtime proof, private-output release, public runtime behavior,
+or production write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -28,7 +28,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R35 no-commit docs-only worker creating only the T1 stop-state matrix, T2 capability snapshot, T3 candidate ranking, and R35 worker return; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, public-sync, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_closed_pending_r36_public_catalog_hygiene_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R36 GC-018/source-verified roadmap and work order for public catalog hygiene source-packet preparation; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, public-sync execution, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current State
 
@@ -40,8 +40,8 @@ Startup acknowledged: current mode=`msea_r35_t1_t3_post_mineru_stop_state_and_in
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `1d42f331` MSEA-R35 T1-T3 Post-MinerU Stop-State And Initiative Selection dispatch |
-| Latest session-sync target | session sync after MSEA-R35 dispatch |
+| Latest material packet | `f9e2a0b33` MSEA-R35 T1-T3 Post-MinerU Stop-State And Initiative Selection closure |
+| Latest session-sync target | session sync after MSEA-R35 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -52,11 +52,30 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_dispatched_pending_no_commit_worker_execution`
+`msea_r35_t1_t3_post_mineru_stop_state_and_initiative_selection_closed_pending_r36_public_catalog_hygiene_work_order_authoring`
 
 ## Latest Changes
 
-MSEA-R35 T1-T3 Post-MinerU Stop-State And Initiative Selection dispatch is
+MSEA-R35 T1-T3 Post-MinerU Stop-State And Initiative Selection is
+CLOSED_PASS_BOUNDED at material commit `f9e2a0b33`.
+
+Accepted R35 closure artifacts:
+
+- `docs/reference/CVF_MSEA_R35_T1_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_MATRIX_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R35_T2_CVF_CURRENT_PRODUCT_CAPABILITY_SNAPSHOT_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R35_T3_NEXT_INITIATIVE_CANDIDATE_RANKING_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R35_T1_T3_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_WORKER_RETURN_2026-07-05.md`
+
+R35 verification: worker-return fast gate PASS, pre-implementation autorun
+PASS 75/75, reviewer-return steward PASS, and material pre-commit hook PASS
+80/80.
+
+Reviewer audit selected public catalog hygiene source-packet preparation as
+the next bounded initiative because R35-T2 verified stale capability
+documentation and R35-T3 scored public catalog hygiene as low-medium risk
+without dependency on the four held MinerU lanes.
+
+MSEA-R35 T1-T3 Post-MinerU Stop-State And Initiative Selection dispatch was
 DISPATCH_READY at material commit `1d42f331`.
 
 Accepted R35 dispatch artifacts:
@@ -68,7 +87,7 @@ Accepted R35 dispatch artifacts:
 R35 selected dispatch disposition:
 `R35_POST_MINERU_STOP_STATE_CONSOLIDATION_AND_RANKING_AUTHORIZED_BOUNDED`.
 
-R35 verification: pre-dispatch autorun PASS 73/73, dispatch commit steward
+R35 dispatch verification: pre-dispatch autorun PASS 73/73, dispatch commit steward
 PASS, and material pre-commit hook PASS 80/80.
 
 R35 worker allowed output paths:
@@ -79,8 +98,8 @@ R35 worker allowed output paths:
 - `docs/reviews/CVF_MSEA_R35_T1_T3_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_WORKER_RETURN_2026-07-05.md`
 
 R35 boundary: docs-only post-stop consolidation, capability snapshot, and
-candidate ranking dispatch. It does not authorize selecting a next
-initiative, production memory/RAG route release, live Python process
+candidate ranking. It does not authorize public-sync execution,
+production memory/RAG route release, live Python process
 invocation, file-based Python output consumption, MinerU runtime execution,
 private/generated output content read, production durable-store invocation,
 file-backed production persistence, retrieval, vectorization, provider/live
@@ -277,24 +296,44 @@ Older MSEA history is summarized out of this active handoff. Use the active stat
 
 ## Next Allowed Move
 
-Next allowed move: execute MSEA-R35 no-commit docs-only worker creating
-only `docs/reference/CVF_MSEA_R35_T1_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_MATRIX_2026-07-05.md`,
-`docs/reference/CVF_MSEA_R35_T2_CVF_CURRENT_PRODUCT_CAPABILITY_SNAPSHOT_2026-07-05.md`,
-`docs/reference/CVF_MSEA_R35_T3_NEXT_INITIATIVE_CANDIDATE_RANKING_2026-07-05.md`,
-and `docs/reviews/CVF_MSEA_R35_T1_T3_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_WORKER_RETURN_2026-07-05.md`.
-R35 dispatch is accepted at material commit `1d42f331`; R34-T2 is closed
-at material commit `20ff04e17`.
+Next allowed move: author fresh MSEA-R36 GC-018/source-verified roadmap and
+work order for public catalog hygiene source-packet preparation. R35 T1-T3
+is accepted at material commit `f9e2a0b33`; R35 dispatch is accepted at
+material commit `1d42f331`; R34-T2 is closed at material commit
+`20ff04e17`.
 
-Production memory/RAG route release, interface/root-barrel/runtime wiring
-beyond this docs-only R35 dispatch, file-backed production persistence,
-vectorization, retrieval, MinerU runtime, private/generated output content
-read, Candidate Group A import, provider/live proof, Web/UI, standalone app
-work, legal/use-case deep dive, extraction accuracy, document truth, legal
+Production memory/RAG route release, interface/root-barrel/runtime wiring,
+file-backed production persistence, vectorization, retrieval, MinerU
+runtime, private/generated output content read, Candidate Group A import,
+provider/live proof, Web/UI implementation, standalone app work,
+legal/use-case deep dive, extraction accuracy, document truth, legal
 quality, current-law correctness, workflow-chain production readiness,
 Python source/test edits for Pylance, durable store/runtime hierarchy/root
-barrel edits, existing capability-inventory edits, provider-local/IDE config
-edits, checker/hook implementation, worker stage/commit/push, public-sync,
+barrel edits, provider-local/IDE config edits, checker/hook
+implementation, worker stage/commit/push, public-sync execution,
 and public runtime claim remain unauthorized.
+
+## Core Guard Self-Protection Authorization - MSEA-R35 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R35
+material closure commit `f9e2a0b33`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and closure state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR35T1T3PostMineruStopStateAndInitiativeSelectionClosure20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R35 closure session-sync if rejected;
+do not revert material closure commit `f9e2a0b33`, R35 dispatch commit
+`1d42f331`, R34-T2 closure commit `20ff04e17`, R33 material commit
+`3a46bc371`, public-sync commit `7f6e548d3`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R35 Dispatch Session Sync
 
