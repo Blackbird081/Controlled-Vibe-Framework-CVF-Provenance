@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=author fresh MSEA-R28-T22 GC-018/source-verified WORKER_MUST_NOT_COMMIT work order for bounded memory/RAG route release implementation candidate; parked checkpoint=actual memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance unless explicitly authorized by T22, durable store/runtime hierarchy/root barrel edits unless explicitly authorized by T22, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R28-T22 WORKER_MUST_NOT_COMMIT worker return for bounded memory/RAG route release implementation candidate; parked checkpoint=production memory/RAG route release, production durable-store invocation, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, checker/hook/session/handoff edits by worker, worker commit/push, and production workflow lanes remain deferred; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
+Current mode marker: `msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_dispatched_pending_worker_return`
 
-Current mode: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
+Current mode: `msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_dispatched_pending_worker_return`
 
-`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
+`msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+`msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R28-T22 MinerU Memory/RAG Route Release Implementation Candidate dispatch | `6e31088a1` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for bounded Learning Plane TypeScript helper/test implementation; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; next move is no-commit T22 worker execution in the three allowed paths only; production memory/RAG route release remains unauthorized. |
 | MSEA-R28-T21 MinerU Memory/RAG Route Release Authority Decision | `6ce339437` | CLOSED_PASS_BOUNDED; accepted docs-only decision matrix and worker return; selected `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE`; preserved `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; actual memory/RAG route release remains unauthorized pending fresh T22 dispatch and acceptance. |
 | MSEA-R28-T21 MinerU Memory/RAG Route Release Authority Decision dispatch | `53305fa86` | DISPATCH_READY; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for docs-only route-release authority decision; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; next move is no-commit T21 worker execution creating only the decision matrix and worker return. |
 | MSEA-R28-T20 Worker Output Quality Controls Hardening | `cb4e296db` | REFERENCE_HARDENING_ACCEPTED; added `ADIF-0024` and work-order template Worker Output Quality Controls so T21 and later no-commit worker returns must rerun exact commands after final edits, record current git status with untracked files, clean/disclose provider-local and IDE side-channel files, disposition static-analysis diagnostics, and include negative edge-case tests for risky memory/private-output/security/unsafe-normalization surfaces. |
@@ -70,7 +71,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Memory-route release | `6ce339437` | T22_WORK_ORDER_AUTHORING_READY; T21 selected a future implementation candidate but actual memory/RAG route release remains unauthorized pending fresh T22 GC-018/work order, execution, review, and acceptance. |
+| Memory-route release | `6e31088a1` | T22_DISPATCH_READY_PENDING_WORKER_RETURN; T22 authorizes only bounded helper/test implementation candidate work in the named allowed paths; production memory/RAG route release remains unauthorized pending execution, review, and acceptance. |
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
 
@@ -100,32 +101,26 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r28_t21_mineru_memory_rag_route_release_authority_decision_closed_pending_t22_memory_rag_route_release_implementation_work_order_authoring`
+Mode: `msea_r28_t22_mineru_memory_rag_route_release_implementation_candidate_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh MSEA-R28-T22 GC-018/source-verified
-WORKER_MUST_NOT_COMMIT work order for bounded memory/RAG route release
-implementation candidate.
+Next allowed move: execute the MSEA-R28-T22 WORKER_MUST_NOT_COMMIT worker
+return for bounded memory/RAG route release implementation candidate.
 
-Accepted T21 closure artifacts:
+T22 dispatch artifacts:
 
-- `docs/reference/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md`
-- `docs/reviews/CVF_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md`
+- `docs/baselines/CVF_GC018_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_2026-07-05.md`
 
-T21 dispatch artifacts:
+Allowed T22 worker paths:
 
-- `docs/baselines/CVF_GC018_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T21_MINERU_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-memory-rag-route-release.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-memory-rag-route-release.test.ts`
+- `docs/reviews/CVF_MSEA_R28_T22_MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE_WORKER_RETURN_2026-07-05.md`
 
-T21 selected `T22_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE` and
-preserved `MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T21_DECISION_ONLY`.
-
-T22 authoring must use accepted T21, T20, T19, T18, T17, R27, R24-T4, and
-ADIF-0024 evidence. It must require a fresh memory-owner authorization surface,
-explicit `policyDecision`, `actorAuthorized`, and `provenanceScore` source
-verification, R27 five-prerequisite re-verification at implementation time,
-R24-T4 privacy preservation, provider-local/Pylance hygiene controls, Source
-Verification Block, ADIF disclosure, Agent Handoff Contract Control Block,
-Reviewer Closure Conversion, and pre-dispatch gates.
+Worker must preserve explicit memory-owner authorization checks, R27
+five-prerequisite verification, R24-T4 privacy invariants, provider-local and
+Pylance/static-analysis hygiene controls, current command evidence, and
+no-commit status.
 
 LHW24 remains the latest closed numbered LHW wave.
 
