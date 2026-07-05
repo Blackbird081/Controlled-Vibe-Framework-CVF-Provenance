@@ -17,10 +17,13 @@ from typing import Literal, Sequence
 RECEIPT_VERSION = "cvf.mineruMetadataReceipt.r28t5.v2"
 MEMORY_SAFE_CANDIDATE_CONTRACT_VERSION = "cvf.mineruMemorySafeCandidate.r28t9.v1"
 MEMORY_OWNER_ADMISSION_READOUT_VERSION = "cvf.mineruMemoryOwnerAdmission.r28t12.v1"
+MEMORY_RECORD_CANDIDATE_VERSION = "cvf.mineruMemoryRecordCandidate.r28t14.v1"
 PRIVATE_OUTPUT_DISPOSITION = "RECEIPT_METADATA_ALLOWED"
 DOWNSTREAM_RELEASE_HELD = "HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE"
 MEMORY_WRITE_NOT_AUTHORIZED_BY_T9 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH"
 MEMORY_WRITE_NOT_AUTHORIZED_BY_T12 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T12_DISPATCH"
+MEMORY_WRITE_NOT_AUTHORIZED_BY_T14 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T14_CANDIDATE_ONLY"
+MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW = "MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW"
 CLAIM_BOUNDARY = (
     "This receipt records caller-supplied MinerU metadata only. It does not "
     "prove extraction accuracy, document truth, legal quality, current-law "
@@ -134,6 +137,27 @@ class MineruMemoryOwnerAdmissionReadout:
     admission_disposition: str = "MEMORY_OWNER_ADMISSION_READY_FOR_REVIEW"
     future_authority_required: str = "FUTURE_MEMORY_WRITE_WORK_ORDER_REQUIRED"
     readout_version: str = MEMORY_OWNER_ADMISSION_READOUT_VERSION
+
+
+@dataclass(frozen=True)
+class MineruMemoryRecordCandidate:
+    """Metadata-only memory-record candidate for future store-owner review."""
+
+    record_candidate_id: str
+    candidate_id: str
+    receipt_id: str
+    source_input_slot: str
+    input_sha256: str
+    quality_report_ref: str
+    source_pointer: str
+    downstream_release: str
+    claim_boundary: str
+    output_content_read: bool = False
+    memory_write_authorized: bool = False
+    memory_write_disposition: str = MEMORY_WRITE_NOT_AUTHORIZED_BY_T14
+    candidate_disposition: str = MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW
+    future_authority_required: str = "FUTURE_MEMORY_STORE_WRITE_AUTHORITY_REQUIRED"
+    candidate_version: str = MEMORY_RECORD_CANDIDATE_VERSION
 
 
 def _fail(token: FailureToken, message: str) -> None:
@@ -479,6 +503,112 @@ def mineru_memory_owner_admission_readout_payload(
         "receiptId": readout.receipt_id,
         "sourceInputSlot": readout.source_input_slot,
         "sourcePointer": readout.source_pointer,
+    }
+
+
+def build_mineru_memory_record_candidate(
+    readout: MineruMemoryOwnerAdmissionReadout,
+) -> MineruMemoryRecordCandidate:
+    """Build a metadata-only memory-record candidate without writing memory."""
+
+    _validate_safe_id(
+        readout.candidate_id,
+        field_name="candidate_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+    _validate_safe_id(
+        readout.receipt_id,
+        field_name="receipt_id",
+        token="INVALID_RECEIPT_ID",
+    )
+    _validate_safe_id(
+        readout.source_input_slot,
+        field_name="source_input_slot",
+        token="INVALID_SOURCE_INPUT_SLOT",
+    )
+    if not _SHA256_RE.fullmatch(readout.input_sha256):
+        _fail("INVALID_INPUT_SHA256", "input_sha256 must be sha256:<64 lowercase hex>")
+    _validate_quality_source_pointer(
+        readout.quality_report_ref,
+        readout.source_pointer,
+    )
+    if readout.downstream_release != DOWNSTREAM_RELEASE_HELD:
+        _fail(
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+            "memory-record candidates require held downstream release",
+        )
+    if readout.output_content_read is not False:
+        _fail(
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+            "memory-record candidates require output_content_read false",
+        )
+    if readout.memory_write_authorized is not False:
+        _fail(
+            "MEMORY_WRITE_ALREADY_AUTHORIZED",
+            "T14 memory-record candidates must not authorize memory write",
+        )
+    if not readout.claim_boundary.strip():
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary is required")
+    lowered_boundary = readout.claim_boundary.casefold()
+    if any(marker in lowered_boundary for marker in _UNSAFE_TEXT_MARKERS):
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary must not contain raw-content markers")
+
+    seed = "|".join(
+        (
+            readout.candidate_id,
+            readout.receipt_id,
+            readout.source_input_slot,
+            readout.input_sha256,
+            readout.quality_report_ref,
+            readout.source_pointer,
+            readout.downstream_release,
+            readout.claim_boundary,
+            readout.admission_disposition,
+            readout.readout_version,
+        )
+    )
+    digest = sha256(seed.encode("utf-8")).hexdigest()[:24]
+    record_candidate_id = f"memory-record-candidate:{digest}"
+    _validate_safe_id(
+        record_candidate_id,
+        field_name="record_candidate_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+
+    return MineruMemoryRecordCandidate(
+        record_candidate_id=record_candidate_id,
+        candidate_id=readout.candidate_id,
+        receipt_id=readout.receipt_id,
+        source_input_slot=readout.source_input_slot,
+        input_sha256=readout.input_sha256,
+        quality_report_ref=readout.quality_report_ref,
+        source_pointer=readout.source_pointer,
+        downstream_release=readout.downstream_release,
+        claim_boundary=readout.claim_boundary,
+    )
+
+
+def mineru_memory_record_candidate_payload(
+    candidate: MineruMemoryRecordCandidate,
+) -> dict[str, object]:
+    """Return the stable camelCase memory-record candidate payload."""
+
+    return {
+        "candidateDisposition": candidate.candidate_disposition,
+        "candidateId": candidate.candidate_id,
+        "candidateVersion": candidate.candidate_version,
+        "claimBoundary": candidate.claim_boundary,
+        "downstreamRelease": candidate.downstream_release,
+        "futureAuthorityRequired": candidate.future_authority_required,
+        "inputSha256": candidate.input_sha256,
+        "memoryWriteAuthorized": candidate.memory_write_authorized,
+        "memoryWriteDisposition": candidate.memory_write_disposition,
+        "outputContentRead": candidate.output_content_read,
+        "qualityReportRef": candidate.quality_report_ref,
+        "receiptId": candidate.receipt_id,
+        "recordCandidateId": candidate.record_candidate_id,
+        "sourceInputSlot": candidate.source_input_slot,
+        "sourcePointer": candidate.source_pointer,
     }
 
 

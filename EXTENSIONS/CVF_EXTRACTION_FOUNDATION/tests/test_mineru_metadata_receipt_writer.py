@@ -13,14 +13,19 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from mineru_metadata_receipt_writer import (  # noqa: E402
     DOWNSTREAM_RELEASE_HELD,
     MEMORY_WRITE_NOT_AUTHORIZED_BY_T12,
+    MEMORY_WRITE_NOT_AUTHORIZED_BY_T14,
     MineruMetadataReceiptValidationError,
     MineruMetadataReceipt,
+    MineruMemoryOwnerAdmissionReadout,
+    MineruMemoryRecordCandidate,
     MineruMemorySafeCandidateContract,
     build_mineru_metadata_receipt,
     build_mineru_memory_owner_admission_readout,
+    build_mineru_memory_record_candidate,
     build_mineru_memory_safe_candidate_contract,
     build_mineru_quality_report_source_pointer,
     mineru_memory_owner_admission_readout_payload,
+    mineru_memory_record_candidate_payload,
     mineru_memory_safe_candidate_contract_payload,
     mineru_metadata_receipt_payload,
     render_mineru_metadata_receipt_json,
@@ -452,5 +457,133 @@ def test_memory_owner_admission_readout_fails_closed_for_unsafe_candidates(
 ) -> None:
     with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
         build_mineru_memory_owner_admission_readout(contract)
+
+    assert exc_info.value.token == token
+
+
+def _memory_owner_admission_readout(**receipt_overrides) -> MineruMemoryOwnerAdmissionReadout:
+    return build_mineru_memory_owner_admission_readout(
+        build_mineru_memory_safe_candidate_contract(_receipt(**receipt_overrides))
+    )
+
+
+def test_memory_record_candidate_is_deterministic_and_metadata_only() -> None:
+    readout = _memory_owner_admission_readout()
+    candidate = build_mineru_memory_record_candidate(readout)
+    repeated = build_mineru_memory_record_candidate(readout)
+    payload = mineru_memory_record_candidate_payload(candidate)
+
+    assert isinstance(candidate, MineruMemoryRecordCandidate)
+    assert candidate == repeated
+    assert candidate.record_candidate_id.startswith("memory-record-candidate:")
+    assert payload == mineru_memory_record_candidate_payload(repeated)
+    assert payload["candidateVersion"] == "cvf.mineruMemoryRecordCandidate.r28t14.v1"
+    assert payload["candidateDisposition"] == "MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW"
+    assert payload["candidateId"] == readout.candidate_id
+    assert payload["receiptId"] == "msea-r28-t1:receipt-001"
+    assert payload["qualityReportRef"] == "msea-r28-t5:quality-report-001"
+    assert payload["sourcePointer"] == "msea-r28-t5:source-pointer-001"
+    assert payload["downstreamRelease"] == DOWNSTREAM_RELEASE_HELD
+    assert payload["outputContentRead"] is False
+    assert payload["memoryWriteAuthorized"] is False
+    assert payload["memoryWriteDisposition"] == MEMORY_WRITE_NOT_AUTHORIZED_BY_T14
+    assert payload["futureAuthorityRequired"] == "FUTURE_MEMORY_STORE_WRITE_AUTHORITY_REQUIRED"
+    assert "outputFileNames" not in payload
+    assert "extractedText" not in payload
+    assert "rawOcrText" not in payload
+    assert "documentBody" not in payload
+    assert "memoryRecordBody" not in payload
+    assert "vectorContent" not in payload
+
+
+def test_memory_record_candidate_changes_with_source_pointer_metadata() -> None:
+    first = build_mineru_memory_record_candidate(
+        _memory_owner_admission_readout(source_pointer="msea-r28-t5:source-pointer-001")
+    )
+    second = build_mineru_memory_record_candidate(
+        _memory_owner_admission_readout(source_pointer="msea-r28-t5:source-pointer-002")
+    )
+
+    assert first.record_candidate_id != second.record_candidate_id
+
+
+@pytest.mark.parametrize(
+    ("readout", "token"),
+    [
+        (
+            MineruMemoryOwnerAdmissionReadout(
+                candidate_id="memory-safe-candidate:content-read",
+                receipt_id="msea-r28-t14:receipt-content-read",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-012",
+                source_pointer="msea-r28-t5:source-pointer-012",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="metadata-only boundary",
+                output_content_read=True,
+            ),
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+        ),
+        (
+            MineruMemoryOwnerAdmissionReadout(
+                candidate_id="memory-safe-candidate:write-ready",
+                receipt_id="msea-r28-t14:receipt-write-ready",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-013",
+                source_pointer="msea-r28-t5:source-pointer-013",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="metadata-only boundary",
+                memory_write_authorized=True,
+            ),
+            "MEMORY_WRITE_ALREADY_AUTHORIZED",
+        ),
+        (
+            MineruMemoryOwnerAdmissionReadout(
+                candidate_id="memory-safe-candidate:released",
+                receipt_id="msea-r28-t14:receipt-released",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-014",
+                source_pointer="msea-r28-t5:source-pointer-014",
+                downstream_release="MEMORY_WRITE_READY",
+                claim_boundary="metadata-only boundary",
+            ),
+            "DOWNSTREAM_RELEASE_NOT_HELD",
+        ),
+        (
+            MineruMemoryOwnerAdmissionReadout(
+                candidate_id="memory-safe-candidate:unsafe-ref",
+                receipt_id="msea-r28-t14:receipt-unsafe-ref",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="raw:quality-notes",
+                source_pointer="msea-r28-t5:source-pointer-015",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="metadata-only boundary",
+            ),
+            "QUALITY_OR_SOURCE_POINTER_MISSING",
+        ),
+        (
+            MineruMemoryOwnerAdmissionReadout(
+                candidate_id="memory-safe-candidate:no-boundary",
+                receipt_id="msea-r28-t14:receipt-no-boundary",
+                source_input_slot="private-input-slot",
+                input_sha256=VALID_SHA,
+                quality_report_ref="msea-r28-t5:quality-report-016",
+                source_pointer="msea-r28-t5:source-pointer-016",
+                downstream_release=DOWNSTREAM_RELEASE_HELD,
+                claim_boundary="",
+            ),
+            "CLAIM_BOUNDARY_MISSING",
+        ),
+    ],
+)
+def test_memory_record_candidate_fails_closed_for_unsafe_readouts(
+    readout: MineruMemoryOwnerAdmissionReadout,
+    token: str,
+) -> None:
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_memory_record_candidate(readout)
 
     assert exc_info.value.token == token
