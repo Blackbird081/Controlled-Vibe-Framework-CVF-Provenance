@@ -19,6 +19,14 @@ MEMORY_SAFE_CANDIDATE_CONTRACT_VERSION = "cvf.mineruMemorySafeCandidate.r28t9.v1
 MEMORY_OWNER_ADMISSION_READOUT_VERSION = "cvf.mineruMemoryOwnerAdmission.r28t12.v1"
 MEMORY_RECORD_CANDIDATE_VERSION = "cvf.mineruMemoryRecordCandidate.r28t14.v1"
 DURABLE_MEMORY_WRITE_INPUT_CANDIDATE_VERSION = "cvf.mineruDurableMemoryWriteInputCandidate.r28t16.v1"
+DURABLE_MEMORY_WRITE_ADAPTER_CANDIDATE_VERSION = "cvf.mineruDurableMemoryWriteAdapterCandidate.r28t18.v1"
+DURABLE_MEMORY_WRITE_ADAPTER_CANDIDATE_READY = "DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_CANDIDATE_READY"
+DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T18 = "DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T18"
+MIN_PROVENANCE_SCORE = 0.7
+DURABLE_TIER_ACTOR_LANES: dict[str, frozenset[str]] = {
+    "skill": frozenset({"OPERATOR", "GOVERNOR", "BUILDER", "SERVICE_AGENT"}),
+    "long-term": frozenset({"OPERATOR", "GOVERNOR", "SERVICE_AGENT"}),
+}
 PRIVATE_OUTPUT_DISPOSITION = "RECEIPT_METADATA_ALLOWED"
 DOWNSTREAM_RELEASE_HELD = "HELD_PENDING_RECEIPT_CHECKER_AND_MEMORY_ROUTE"
 MEMORY_WRITE_NOT_AUTHORIZED_BY_T9 = "MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH"
@@ -61,6 +69,12 @@ FailureToken = Literal[
     "DOWNSTREAM_RELEASE_NOT_HELD",
     "MEMORY_WRITE_ALREADY_AUTHORIZED",
     "CLAIM_BOUNDARY_MISSING",
+    "POLICY_DECISION_DENIED",
+    "ACTOR_NOT_AUTHORIZED",
+    "LOW_PROVENANCE_SCORE",
+    "ACTOR_ROLE_NOT_ALLOWED_FOR_TIER",
+    "R27_PREREQUISITE_MISSING",
+    "DURABLE_TIER_NOT_SUPPORTED",
 ]
 
 _SAFE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$")
@@ -178,6 +192,40 @@ class MineruDurableMemoryWriteInputCandidate:
     memory_write_authorized: bool = False
     memory_write_disposition: str = MEMORY_WRITE_NOT_AUTHORIZED_BY_T16
     candidate_version: str = DURABLE_MEMORY_WRITE_INPUT_CANDIDATE_VERSION
+
+
+@dataclass(frozen=True)
+class MineruDurableMemoryWriteAdapterCandidate:
+    """Metadata-only durable-memory write adapter candidate; never calls the store.
+
+    This adapter candidate validates T16 write-input candidates against T17
+    policy, actor, provenance, privacy, and R27 prerequisites. It does not
+    invoke the durable memory store, write memory/RAG, vectorize, retrieve,
+    or read private/generated output content.
+    """
+
+    adapter_candidate_id: str
+    write_input_candidate_id: str
+    policy_decision: str
+    actor_authorized: bool
+    actor_role: str
+    target_durable_tier: str
+    provenance_score: float
+    r27_receipt_prerequisite: bool
+    r27_quality_prerequisite: bool
+    r27_source_pointer_prerequisite: bool
+    r27_downstream_use_prerequisite: bool
+    r27_claim_boundary_prerequisite: bool
+    summary: str
+    claim_boundary: str
+    adapter_disposition: str = DURABLE_MEMORY_WRITE_ADAPTER_CANDIDATE_READY
+    durable_store_invocation_disposition: str = DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T18
+    summary_only: bool = True
+    can_reinject: bool = False
+    raw_memory_released: bool = False
+    output_content_read: bool = False
+    memory_write_authorized: bool = False
+    adapter_version: str = DURABLE_MEMORY_WRITE_ADAPTER_CANDIDATE_VERSION
 
 
 def _fail(token: FailureToken, message: str) -> None:
@@ -725,6 +773,186 @@ def mineru_durable_memory_write_input_candidate_payload(
         "recordCandidateId": candidate.record_candidate_id,
         "scope": candidate.scope,
         "summary": candidate.summary,
+    }
+
+
+def build_mineru_durable_memory_write_adapter_candidate(
+    write_input_candidate: MineruDurableMemoryWriteInputCandidate,
+    *,
+    policy_decision: str,
+    actor_authorized: bool,
+    actor_role: str,
+    target_durable_tier: str,
+    provenance_score: float,
+    r27_receipt_prerequisite: bool,
+    r27_quality_prerequisite: bool,
+    r27_source_pointer_prerequisite: bool,
+    r27_downstream_use_prerequisite: bool,
+    r27_claim_boundary_prerequisite: bool,
+) -> MineruDurableMemoryWriteAdapterCandidate:
+    """Build a metadata-only durable-memory write adapter candidate.
+
+    This builder validates the T16 write-input candidate against T17 policy,
+    actor authorization, provenance, actor-role/tier compatibility, and R27
+    prerequisites. It never calls the durable memory store, never writes
+    memory/RAG, and never reads private/generated output content.
+
+    Fail-closed conditions:
+    - policy_decision is not "allow"
+    - actor_authorized is not True
+    - provenance_score is below MIN_PROVENANCE_SCORE (0.7)
+    - actor_role is not allowed for the target durable tier
+    - target_durable_tier is not a supported durable tier
+    - any R27 prerequisite is False
+    - write_input_candidate has output_content_read=True
+    - write_input_candidate has memory_write_authorized=True
+    - write_input_candidate has an empty or unsafe claim_boundary
+    """
+
+    _validate_safe_id(
+        write_input_candidate.id,
+        field_name="write_input_candidate_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+    _validate_safe_id(actor_role, field_name="actor_role", token="INVALID_RECEIPT_ID")
+    _validate_safe_id(
+        target_durable_tier,
+        field_name="target_durable_tier",
+        token="INVALID_SOURCE_INPUT_SLOT",
+    )
+
+    if write_input_candidate.output_content_read is not False:
+        _fail(
+            "OUTPUT_CONTENT_READ_FORBIDDEN",
+            "T18 adapter candidates require output_content_read false on write-input",
+        )
+    if write_input_candidate.memory_write_authorized is not False:
+        _fail(
+            "MEMORY_WRITE_ALREADY_AUTHORIZED",
+            "T18 adapter candidates must not inherit memory_write_authorized true",
+        )
+    if not write_input_candidate.claim_boundary.strip():
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary is required")
+    lowered_boundary = write_input_candidate.claim_boundary.casefold()
+    if any(marker in lowered_boundary for marker in _UNSAFE_TEXT_MARKERS):
+        _fail("CLAIM_BOUNDARY_MISSING", "claim_boundary must not contain raw-content markers")
+
+    if target_durable_tier not in DURABLE_TIER_ACTOR_LANES:
+        _fail(
+            "DURABLE_TIER_NOT_SUPPORTED",
+            f"target_durable_tier must be one of: {', '.join(sorted(DURABLE_TIER_ACTOR_LANES.keys()))}",
+        )
+    if policy_decision != "allow":
+        _fail(
+            "POLICY_DECISION_DENIED",
+            "T18 adapter candidates require policy_decision allow",
+        )
+    if actor_authorized is not True:
+        _fail(
+            "ACTOR_NOT_AUTHORIZED",
+            "T18 adapter candidates require actor_authorized true",
+        )
+    if (
+        isinstance(provenance_score, bool)
+        or not isinstance(provenance_score, (int, float))
+        or provenance_score < MIN_PROVENANCE_SCORE
+    ):
+        _fail(
+            "LOW_PROVENANCE_SCORE",
+            f"T18 adapter candidates require provenance_score >= {MIN_PROVENANCE_SCORE}",
+        )
+    allowed_actors = DURABLE_TIER_ACTOR_LANES[target_durable_tier]
+    if actor_role not in allowed_actors:
+        _fail(
+            "ACTOR_ROLE_NOT_ALLOWED_FOR_TIER",
+            f"actor_role {actor_role} is not allowed for durable tier {target_durable_tier}",
+        )
+
+    if not r27_receipt_prerequisite:
+        _fail("R27_PREREQUISITE_MISSING", "R27 receipt prerequisite must be satisfied")
+    if not r27_quality_prerequisite:
+        _fail("R27_PREREQUISITE_MISSING", "R27 quality prerequisite must be satisfied")
+    if not r27_source_pointer_prerequisite:
+        _fail("R27_PREREQUISITE_MISSING", "R27 source pointer prerequisite must be satisfied")
+    if not r27_downstream_use_prerequisite:
+        _fail("R27_PREREQUISITE_MISSING", "R27 downstream use prerequisite must be satisfied")
+    if not r27_claim_boundary_prerequisite:
+        _fail("R27_PREREQUISITE_MISSING", "R27 claim boundary prerequisite must be satisfied")
+
+    summary = (
+        f"Durable memory write adapter candidate for write-input "
+        f"{write_input_candidate.id} (tier {target_durable_tier}, "
+        f"actor {actor_role}, provenance {provenance_score})"
+    )
+    seed = "|".join(
+        (
+            write_input_candidate.id,
+            policy_decision,
+            str(actor_authorized),
+            actor_role,
+            target_durable_tier,
+            str(provenance_score),
+            str(r27_receipt_prerequisite),
+            str(r27_quality_prerequisite),
+            str(r27_source_pointer_prerequisite),
+            str(r27_downstream_use_prerequisite),
+            str(r27_claim_boundary_prerequisite),
+        )
+    )
+    digest = sha256(seed.encode("utf-8")).hexdigest()[:24]
+    adapter_candidate_id = f"durable-memory-write-adapter:{digest}"
+    _validate_safe_id(
+        adapter_candidate_id,
+        field_name="adapter_candidate_id",
+        token="QUALITY_OR_SOURCE_POINTER_MISSING",
+    )
+
+    return MineruDurableMemoryWriteAdapterCandidate(
+        adapter_candidate_id=adapter_candidate_id,
+        write_input_candidate_id=write_input_candidate.id,
+        policy_decision=policy_decision,
+        actor_authorized=actor_authorized,
+        actor_role=actor_role,
+        target_durable_tier=target_durable_tier,
+        provenance_score=provenance_score,
+        r27_receipt_prerequisite=r27_receipt_prerequisite,
+        r27_quality_prerequisite=r27_quality_prerequisite,
+        r27_source_pointer_prerequisite=r27_source_pointer_prerequisite,
+        r27_downstream_use_prerequisite=r27_downstream_use_prerequisite,
+        r27_claim_boundary_prerequisite=r27_claim_boundary_prerequisite,
+        summary=summary,
+        claim_boundary=write_input_candidate.claim_boundary,
+    )
+
+
+def mineru_durable_memory_write_adapter_candidate_payload(
+    candidate: MineruDurableMemoryWriteAdapterCandidate,
+) -> dict[str, object]:
+    """Return the stable camelCase durable memory write adapter candidate payload."""
+
+    return {
+        "adapterCandidateId": candidate.adapter_candidate_id,
+        "adapterDisposition": candidate.adapter_disposition,
+        "adapterVersion": candidate.adapter_version,
+        "actorAuthorized": candidate.actor_authorized,
+        "actorRole": candidate.actor_role,
+        "canReinject": candidate.can_reinject,
+        "claimBoundary": candidate.claim_boundary,
+        "durableStoreInvocationDisposition": candidate.durable_store_invocation_disposition,
+        "memoryWriteAuthorized": candidate.memory_write_authorized,
+        "outputContentRead": candidate.output_content_read,
+        "policyDecision": candidate.policy_decision,
+        "provenanceScore": candidate.provenance_score,
+        "r27ClaimBoundaryPrerequisite": candidate.r27_claim_boundary_prerequisite,
+        "r27DownstreamUsePrerequisite": candidate.r27_downstream_use_prerequisite,
+        "r27QualityPrerequisite": candidate.r27_quality_prerequisite,
+        "r27ReceiptPrerequisite": candidate.r27_receipt_prerequisite,
+        "r27SourcePointerPrerequisite": candidate.r27_source_pointer_prerequisite,
+        "rawMemoryReleased": candidate.raw_memory_released,
+        "summary": candidate.summary,
+        "summaryOnly": candidate.summary_only,
+        "targetDurableTier": candidate.target_durable_tier,
+        "writeInputCandidateId": candidate.write_input_candidate_id,
     }
 
 

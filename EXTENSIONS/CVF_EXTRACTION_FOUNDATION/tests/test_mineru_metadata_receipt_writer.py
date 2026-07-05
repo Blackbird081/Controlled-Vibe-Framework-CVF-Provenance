@@ -18,16 +18,19 @@ from mineru_metadata_receipt_writer import (  # noqa: E402
     MineruMetadataReceiptValidationError,
     MineruMetadataReceipt,
     MineruDurableMemoryWriteInputCandidate,
+    MineruDurableMemoryWriteAdapterCandidate,
     MineruMemoryOwnerAdmissionReadout,
     MineruMemoryRecordCandidate,
     MineruMemorySafeCandidateContract,
     build_mineru_metadata_receipt,
     build_mineru_durable_memory_write_input_candidate,
+    build_mineru_durable_memory_write_adapter_candidate,
     build_mineru_memory_owner_admission_readout,
     build_mineru_memory_record_candidate,
     build_mineru_memory_safe_candidate_contract,
     build_mineru_quality_report_source_pointer,
     mineru_durable_memory_write_input_candidate_payload,
+    mineru_durable_memory_write_adapter_candidate_payload,
     mineru_memory_owner_admission_readout_payload,
     mineru_memory_record_candidate_payload,
     mineru_memory_safe_candidate_contract_payload,
@@ -753,3 +756,172 @@ def test_durable_memory_write_input_candidate_fails_closed_for_unsafe_inputs(
         build_mineru_durable_memory_write_input_candidate(record, **kwargs)
 
     assert exc_info.value.token == token
+
+
+def _durable_write_input_candidate(**receipt_overrides) -> MineruDurableMemoryWriteInputCandidate:
+    return build_mineru_durable_memory_write_input_candidate(
+        _memory_record_candidate(**receipt_overrides),
+        scope="msea-r28-t18:scope-001",
+        actor_id="msea-r28-t18:actor-001",
+        actor_role="OPERATOR",
+    )
+
+
+def _adapter_kwargs(**overrides) -> dict[str, object]:
+    params: dict[str, object] = {
+        "policy_decision": "allow",
+        "actor_authorized": True,
+        "actor_role": "OPERATOR",
+        "target_durable_tier": "skill",
+        "provenance_score": 0.85,
+        "r27_receipt_prerequisite": True,
+        "r27_quality_prerequisite": True,
+        "r27_source_pointer_prerequisite": True,
+        "r27_downstream_use_prerequisite": True,
+        "r27_claim_boundary_prerequisite": True,
+    }
+    params.update(overrides)
+    return params
+
+
+def test_durable_memory_write_adapter_candidate_is_deterministic_and_metadata_only() -> None:
+    write_input = _durable_write_input_candidate()
+    candidate = build_mineru_durable_memory_write_adapter_candidate(
+        write_input, **_adapter_kwargs()
+    )
+    repeated = build_mineru_durable_memory_write_adapter_candidate(
+        write_input, **_adapter_kwargs()
+    )
+    payload = mineru_durable_memory_write_adapter_candidate_payload(candidate)
+
+    assert isinstance(candidate, MineruDurableMemoryWriteAdapterCandidate)
+    assert candidate == repeated
+    assert candidate.adapter_candidate_id.startswith("durable-memory-write-adapter:")
+    assert payload == mineru_durable_memory_write_adapter_candidate_payload(repeated)
+    assert payload["adapterVersion"] == "cvf.mineruDurableMemoryWriteAdapterCandidate.r28t18.v1"
+    assert payload["adapterDisposition"] == "DURABLE_MEMORY_WRITE_ADAPTER_IMPLEMENTATION_CANDIDATE_READY"
+    assert payload["durableStoreInvocationDisposition"] == "DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T18"
+    assert payload["policyDecision"] == "allow"
+    assert payload["actorAuthorized"] is True
+    assert payload["actorRole"] == "OPERATOR"
+    assert payload["targetDurableTier"] == "skill"
+    assert payload["provenanceScore"] == 0.85
+    assert payload["writeInputCandidateId"] == write_input.id
+    assert payload["summaryOnly"] is True
+    assert payload["canReinject"] is False
+    assert payload["rawMemoryReleased"] is False
+    assert payload["outputContentRead"] is False
+    assert payload["memoryWriteAuthorized"] is False
+    assert payload["r27ReceiptPrerequisite"] is True
+    assert payload["r27QualityPrerequisite"] is True
+    assert payload["r27SourcePointerPrerequisite"] is True
+    assert payload["r27DownstreamUsePrerequisite"] is True
+    assert payload["r27ClaimBoundaryPrerequisite"] is True
+    assert "content" not in payload
+    assert "rawContent" not in payload
+    assert "value" not in payload
+    assert "extractedText" not in payload
+    assert "rawOcrText" not in payload
+    assert "documentBody" not in payload
+    assert "vectorContent" not in payload
+
+
+def test_durable_memory_write_adapter_candidate_changes_with_tier_or_actor() -> None:
+    write_input = _durable_write_input_candidate()
+    skill = build_mineru_durable_memory_write_adapter_candidate(
+        write_input, **_adapter_kwargs(target_durable_tier="skill")
+    )
+    long_term = build_mineru_durable_memory_write_adapter_candidate(
+        write_input, **_adapter_kwargs(target_durable_tier="long-term")
+    )
+    different_actor = build_mineru_durable_memory_write_adapter_candidate(
+        write_input, **_adapter_kwargs(actor_role="GOVERNOR")
+    )
+
+    assert skill.adapter_candidate_id != long_term.adapter_candidate_id
+    assert skill.adapter_candidate_id != different_actor.adapter_candidate_id
+
+
+@pytest.mark.parametrize(
+    ("overrides", "token"),
+    [
+        ({"policy_decision": "deny"}, "POLICY_DECISION_DENIED"),
+        ({"actor_authorized": False}, "ACTOR_NOT_AUTHORIZED"),
+        ({"provenance_score": 0.5}, "LOW_PROVENANCE_SCORE"),
+        ({"provenance_score": "0.85"}, "LOW_PROVENANCE_SCORE"),
+        ({"actor_role": "AI_AGENT", "target_durable_tier": "long-term"}, "ACTOR_ROLE_NOT_ALLOWED_FOR_TIER"),
+        ({"target_durable_tier": "working"}, "DURABLE_TIER_NOT_SUPPORTED"),
+        ({"r27_receipt_prerequisite": False}, "R27_PREREQUISITE_MISSING"),
+        ({"r27_quality_prerequisite": False}, "R27_PREREQUISITE_MISSING"),
+        ({"r27_source_pointer_prerequisite": False}, "R27_PREREQUISITE_MISSING"),
+        ({"r27_downstream_use_prerequisite": False}, "R27_PREREQUISITE_MISSING"),
+        ({"r27_claim_boundary_prerequisite": False}, "R27_PREREQUISITE_MISSING"),
+    ],
+)
+def test_durable_memory_write_adapter_candidate_fails_closed_for_unsafe_inputs(
+    overrides: dict[str, object],
+    token: str,
+) -> None:
+    write_input = _durable_write_input_candidate()
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_durable_memory_write_adapter_candidate(
+            write_input, **_adapter_kwargs(**overrides)
+        )
+
+    assert exc_info.value.token == token
+
+
+def test_durable_memory_write_adapter_candidate_fails_closed_for_unsafe_write_input() -> None:
+    unsafe_write_input = MineruDurableMemoryWriteInputCandidate(
+        id="durable-memory-write-input:unsafe-content-read",
+        scope="msea-r28-t18:scope-unsafe",
+        actor_id="msea-r28-t18:actor-unsafe",
+        actor_role="OPERATOR",
+        summary="unsafe write-input with content read",
+        record_candidate_id="memory-record-candidate:unsafe",
+        claim_boundary="metadata-only boundary",
+        output_content_read=True,
+    )
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_durable_memory_write_adapter_candidate(
+            unsafe_write_input, **_adapter_kwargs()
+        )
+
+    assert exc_info.value.token == "OUTPUT_CONTENT_READ_FORBIDDEN"
+
+
+def test_durable_memory_write_adapter_candidate_fails_closed_for_write_authorized_input() -> None:
+    unsafe_write_input = MineruDurableMemoryWriteInputCandidate(
+        id="durable-memory-write-input:write-authorized",
+        scope="msea-r28-t18:scope-write-auth",
+        actor_id="msea-r28-t18:actor-write-auth",
+        actor_role="OPERATOR",
+        summary="unsafe write-input with write authorized",
+        record_candidate_id="memory-record-candidate:write-auth",
+        claim_boundary="metadata-only boundary",
+        memory_write_authorized=True,
+    )
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_durable_memory_write_adapter_candidate(
+            unsafe_write_input, **_adapter_kwargs()
+        )
+
+    assert exc_info.value.token == "MEMORY_WRITE_ALREADY_AUTHORIZED"
+
+
+def test_durable_memory_write_adapter_candidate_fails_closed_for_empty_claim_boundary() -> None:
+    unsafe_write_input = MineruDurableMemoryWriteInputCandidate(
+        id="durable-memory-write-input:no-boundary",
+        scope="msea-r28-t18:scope-no-boundary",
+        actor_id="msea-r28-t18:actor-no-boundary",
+        actor_role="OPERATOR",
+        summary="unsafe write-input with no boundary",
+        record_candidate_id="memory-record-candidate:no-boundary",
+        claim_boundary="",
+    )
+    with pytest.raises(MineruMetadataReceiptValidationError) as exc_info:
+        build_mineru_durable_memory_write_adapter_candidate(
+            unsafe_write_input, **_adapter_kwargs()
+        )
+
+    assert exc_info.value.token == "CLAIM_BOUNDARY_MISSING"
