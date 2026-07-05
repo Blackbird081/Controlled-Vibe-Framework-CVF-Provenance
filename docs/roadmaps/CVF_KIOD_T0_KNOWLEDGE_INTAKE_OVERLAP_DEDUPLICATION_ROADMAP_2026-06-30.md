@@ -12,6 +12,9 @@ Batch ID: KIOD-T0
 
 External knowledge intake routing: REQUIRED
 
+Doctrine/governance priority standard:
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`
+
 ## Purpose
 
 Define the next governed roadmap for knowledge-intake deduplication after
@@ -22,7 +25,8 @@ existing CVF owner surfaces before opening a new doctrine, package, runtime,
 checker, adapter, or dashboard lane. The roadmap turns the operator-approved
 discipline into a staged pipeline: classify overlap first, enrich existing
 surfaces when possible, require negative search before new-owner claims, and
-pilot the method on the next selected source.
+pilot the method on the next selected source. The sequence is doctrine-first
+and governance-first absorption before any implementation-first expansion.
 
 ## Authorization / Decision
 
@@ -78,6 +82,15 @@ Out of scope:
 | New-owner claims | KIOD-R3 or later must require negative-search evidence before `NEW_FINDING` becomes a new owner surface. |
 | External-source authority | External material stays advisory until source-verified and mapped to a CVF-owned surface. |
 | Runtime and package boundary | Runtime, package, adapter, public, and provider behavior remain parked unless a later GC-018 authorizes them. |
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+| --- | --- |
+| applicableCheckersRead | `governance/compat/check_knowledge_absorption_priority_compat.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
+| literalTokensReviewed | Doctrine/governance priority standard; doctrine-first / governance-first absorption; implementation-first expansion; owner-surface; no runtime changes |
+| gateRunPurpose | confirmation/evidence after checker read-ahead for R32 push-debt remediation marker repair; not first discovery |
+| claimBoundary | KIOD roadmap marker repair only; no runtime, package, provider, public-sync, or implementation authorization |
 
 ## Work Plan
 

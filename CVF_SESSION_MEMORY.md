@@ -84,6 +84,14 @@ Previous mode:
 | Runtime/provider/public/checker/adapter/memory/RAG implementation lanes | `45bae1d4` | DEFERRED unless a fresh packet explicitly releases them. |
 | Standalone PDF app and legal/use-case deep dive | `45bae1d4` | HELD; current MinerU work remains CVF foundation-plane work. |
 
+## Knowledge Absorption Priority Boundary
+
+broad external knowledge absorption remains governed by
+`CVF_SESSION/ACTIVE_SESSION_STATE.json` and the GC-043 owner-surface route.
+The current blocked work classes include implementation-first expansion,
+runtime/package activation, provider/live proof, public-sync, dashboard work,
+and new-owner claims unless a fresh source-verified packet releases them.
+
 ## Current Closed Work
 
 | Work | Commit | Disposition |
