@@ -7,10 +7,11 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 ## Purpose
 
 Carry compact continuity after MSEA-R38 T1-T4 MinerU To Memory ScanLayer
-System Chain Closure Audit dispatch. The active session is now routed to
-no-commit docs-only worker execution, without implying public-sync,
-production memory/RAG route release, use-case expansion, runtime proof,
-private-output release, public runtime behavior, or production write
+System Chain Closure Audit closure. The active session is now routed to
+operator selection of exactly one held authority lane through a fresh
+source-verified packet if further MinerU value is desired, without implying
+public-sync, production memory/RAG route release, use-case expansion, runtime
+proof, private-output release, public runtime behavior, or production write
 authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
@@ -28,7 +29,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=WORKER_MUST_NOT_COMMIT executes docs-only R38 T1-T4, creating only the four reference artifacts and one worker return named by the work order, then stops for reviewer closure; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, public-sync, worker commit, push, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_closed_pending_operator_authority_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator selects exactly one held authority lane through a fresh source-verified GC-018/work order if further MinerU value is desired: production memory/RAG route release, file-backed persistence, provider/live proof, or use-case/legal workflow; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, provider-local or IDE config edits, public-sync, worker commit, push, and public runtime claim remain unauthorized.
 
 ## Current State
 
@@ -40,9 +41,9 @@ Startup acknowledged: current mode=`msea_r38_t1_t4_mineru_to_memory_scanlayer_sy
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `09ab88f13` MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit dispatch |
-| Latest session-sync target | session sync after MSEA-R38 T1-T4 dispatch |
-| Latest provenance session-sync parent | `09ab88f13` Dispatch MSEA R38 MinerU system chain audit |
+| Latest material packet | `42a0f1f02` MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit closure |
+| Latest session-sync target | session sync after MSEA-R38 T1-T4 closure |
+| Latest provenance session-sync parent | `42a0f1f02` Accept MSEA R38 system chain audit worker return |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -53,27 +54,41 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_dispatched_pending_worker_return`
+`msea_r38_t1_t4_mineru_to_memory_scanlayer_system_chain_closure_audit_closed_pending_operator_authority_lane_selection`
 
 ## Latest Changes
 
-MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit dispatch
-is DISPATCH_READY at material commit `09ab88f13`.
+MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit is
+CLOSED_PASS_BOUNDED at material commit `42a0f1f02`.
 
-Accepted R38 dispatch artifacts:
+Accepted R38 closure artifacts:
 
-- `docs/baselines/CVF_GC018_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_2026-07-06.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_2026-07-06.md`
+- `docs/reference/CVF_MSEA_R38_T1_MINERU_TO_MEMORY_SCANLAYER_CURRENT_CHAIN_MAP_2026-07-06.md`
+- `docs/reference/CVF_MSEA_R38_T2_MINERU_TO_MEMORY_SCANLAYER_GAP_CLASSIFICATION_2026-07-06.md`
+- `docs/reference/CVF_MSEA_R38_T3_MINERU_TO_MEMORY_SCANLAYER_MINIMAL_E2E_HARNESS_DECISION_2026-07-06.md`
+- `docs/reference/CVF_MSEA_R38_T4_MINERU_TO_MEMORY_SCANLAYER_RELEASE_GATE_DECISION_2026-07-06.md`
+- `docs/reviews/CVF_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_WORKER_RETURN_2026-07-06.md`
+- `docs/reviews/CVF_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_COMPLETION_2026-07-06.md`
 
-R38 selected dispatch disposition:
-`R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_AUTHORIZED_DOCS_ONLY`.
+R38 selected closure disposition:
+`R38_T1_T4_AUDIT_COMPLETE_SYSTEM_FOUNDATION_COMPLETE_STOP`.
 
-R38 next allowed move: WORKER_MUST_NOT_COMMIT executes docs-only T1-T4,
-creating only the four reference artifacts and one worker return named by the
-work order, then stops for reviewer closure.
+R38 selected T4 decision: `SYSTEM_FOUNDATION_COMPLETE_STOP`.
 
-R38 verification: pre-dispatch autorun PASS 73/73, dispatch commit steward
-PASS, and material pre-commit hook PASS 80/80.
+R38 answer: MinerU/Memory/scanlayer is a coherent foundation/internal system
+chain only. It is not production memory/RAG, file-backed persistence,
+provider/live proof, public runtime proof, or use-case/legal workflow
+readiness.
+
+R38 next allowed move: operator selects exactly one held authority lane
+through a fresh source-verified GC-018/work order if further MinerU value is
+desired: production memory/RAG route release, file-backed persistence,
+provider/live proof, or use-case/legal workflow. No further audit-only
+tranche is needed.
+
+R38 verification: worker-return fast gate PASS, dispatch-quality check PASS,
+reviewer-return steward PASS, and material pre-commit hook PASS 80/80.
 
 R38 boundary: no source/test edits, MinerU runtime, private/generated content
 read, production memory/RAG route release, production durable-store
@@ -947,6 +962,61 @@ history.
 | Manifest delta | MATCH |
 
 ## Claim Boundary - MSEA-R38 Dispatch Session Sync
+
+This handoff update is continuity metadata only. It does not authorize
+source/test implementation, MinerU runtime, private/generated output content
+read, production memory/RAG route release, production durable-store
+invocation, file-backed production persistence, retrieval, vectorization,
+provider/live proof, public-sync, standalone app work, legal/use-case deep
+dive, extraction accuracy, document truth, legal quality, current-law
+correctness, workflow-chain production readiness, worker commit, push, or
+public claim.
+
+## Core Guard Self-Protection Authorization - MSEA-R38 T1-T4 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R38 T1-T4
+closure material commit `42a0f1f02`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, closure state entry, and last-updated state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/mseaR38T1T4MineruToMemoryScanlayerSystemChainClosureAuditClosure20260706.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R38 closure session-sync if rejected; do
+not revert material closure commit `42a0f1f02`, dispatch commit `09ab88f13`,
+or earlier accepted history.
+
+## Agent Operation Trace Block - MSEA-R38 T1-T4 Closure Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R38 T1-T4 closure session-sync, 2026-07-06 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `rg`; `python governance/compat/generate_active_session_state.py --generate`; `apply_patch`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/mseaR38T1T4MineruToMemoryScanlayerSystemChainClosureAuditClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R38 closure material commit `42a0f1f02` and session-sync steward role |
+| Before status evidence | R38 dispatch mode routed to no-commit docs-only worker execution |
+| After status evidence | active mode and next allowed move route to operator selection of exactly one held authority lane through fresh source-verified packet |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session-sync only; no worker execution, runtime, provider/live, private-output read, source/test edit, production route release, public-sync, or push |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r38-t1-t4-closure-session-sync-2026-07-06` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/mseaR38T1T4MineruToMemoryScanlayerSystemChainClosureAuditClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/state/entries/mseaR38T1T4MineruToMemoryScanlayerSystemChainClosureAuditClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Manifest delta | MATCH |
+
+## Claim Boundary - MSEA-R38 Closure Session Sync
 
 This handoff update is continuity metadata only. It does not authorize
 source/test implementation, MinerU runtime, private/generated output content
