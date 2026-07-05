@@ -6,12 +6,12 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R32 push/continuity debt remediation and
-public-sync release. The active session is now past the R31 push-debt cleanup
-checkpoint and parked on operator selection of the next governed tranche,
-without implying production memory/RAG route release, use-case expansion,
-runtime proof, private-output release, public runtime behavior, or production
-write authority.
+Carry compact continuity after MSEA-R33 MinerU internal system-chain readiness
+audit and release-boundary closure. The active session is now past the R32
+push-continuity cleanup checkpoint and parked on selecting one narrow next
+release lane, without implying production memory/RAG route release, use-case
+expansion, runtime proof, private-output release, public runtime behavior, or
+production write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -28,7 +28,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may select the next governed tranche from a clean pushed continuity baseline; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may choose one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current State
 
@@ -40,8 +40,8 @@ Startup acknowledged: current mode=`msea_r32_push_continuity_debt_remediated_pub
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `e851f04c4` MSEA-R32 push continuity debt remediation and public sync release |
-| Latest session-sync target | session sync after MSEA-R32 push/public-sync cleanup |
+| Latest material packet | `3a46bc371` MSEA-R33 MinerU internal system-chain readiness audit and release boundary |
+| Latest session-sync target | session sync after MSEA-R33 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -52,42 +52,46 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
+`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
 
 ## Latest Changes
 
+MSEA-R33 MinerU Internal System Chain Readiness Audit And Release Boundary is
+CLOSED_PASS_BOUNDED at material commit `3a46bc371`.
+
+Accepted R33 artifacts:
+
+- `docs/roadmaps/CVF_MSEA_R33_MINERU_INTERNAL_SYSTEM_CHAIN_READINESS_AUDIT_AND_RELEASE_BOUNDARY_ROADMAP_2026-07-05.md`
+- `docs/baselines/CVF_GC018_MSEA_R33_T1_T5_MINERU_INTERNAL_SYSTEM_CHAIN_READINESS_AUDIT_AND_RELEASE_BOUNDARY_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R33_T1_T5_MINERU_INTERNAL_SYSTEM_CHAIN_READINESS_AUDIT_AND_RELEASE_BOUNDARY_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R33_T1_MINERU_CHAIN_INVENTORY_AND_CONTRACT_MAP_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R33_T2_MINERU_INTERNAL_HARNESS_DECISION_2026-07-05.md`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-internal-system-chain-harness.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-internal-system-chain-harness.test.ts`
+- `docs/reference/CVF_MSEA_R33_T4_MINERU_RELEASE_BOUNDARY_MATRIX_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R33_T5_MINERU_INTERNAL_SYSTEM_CHAIN_COMPLETION_2026-07-05.md`
+
+R33 selected disposition:
+`INTERNAL_FOUNDATION_READY_ONLY_WITH_RELEASE_LANES_HELD`.
+
+R33 public-sync evidence: public commit `7f6e548d3` refreshed `README.md`,
+`docs/evidence/public-current-state-snapshot-2026-07-05.md`, and
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.
+
+R33 implementation evidence: bounded Learning Plane harness plus focused
+Vitest PASS 1 file / 5 tests, TypeScript check PASS, GC-051 registry check
+PASS, pre-implementation autorun PASS 75/75, commit steward PASS, and material
+pre-commit hook PASS 80/80.
+
+R33 boundary: internal foundation readiness only. Python bridge wiring,
+production memory/RAG route release, file-backed production persistence,
+retrieval, vectorization, MinerU runtime execution, private/generated output
+content read, provider/live proof, public runtime claim, hosted readiness,
+production readiness, and legal/use-case workflow remain unauthorized without
+fresh source-verified operator authorization.
+
 MSEA-R32 Push Continuity Debt Remediation And Public Sync Release is
 CLOSED_PASS_BOUNDED at material commit `e851f04c4`.
-
-Accepted R32 artifact:
-
-- `docs/reviews/CVF_MSEA_R32_PUSH_CONTINUITY_DEBT_REMEDIATION_AND_PUBLIC_SYNC_RELEASE_2026-07-05.md`
-
-R32 selected disposition:
-`R32_PUSH_DEBT_REMEDIATED_WITH_OPERATOR_AUTHORIZED_HISTORICAL_STACK_PUSH`.
-
-R32 public-sync evidence: public commit `53b39f3d5` refreshed `README.md`,
-`docs/evidence/README.md`,
-`docs/evidence/public-current-state-snapshot-2026-07-05.md`, and
-`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`, then pushed
-public `main`.
-
-R32 repaired active-handoff root exposure classification, KIOD priority marker
-drift, and GC-043 session front-door marker drift. Remaining full-range push
-preview issues are recorded as operator-authorized historical stack debt, not
-as normal future push cadence.
-
-R32 verification: public docs gate PASS, public markdown gate PASS, public
-surface gate PASS, public diff check PASS, pre-public P3 readiness PASS,
-knowledge absorption priority guard PASS, and material pre-commit hook PASS
-80/80.
-
-R32 boundary: push/continuity remediation and public documentation sync only.
-MinerU runtime execution, private/generated output read or release, production
-memory/RAG route release, provider/live proof, interface/root-barrel/runtime
-wiring, legal/use-case workflow, extraction accuracy, document truth,
-current-law correctness, hosted readiness, and production readiness remain
-unauthorized without fresh source-verified operator authorization.
 
 MSEA-R31 Push Continuity Debt Audit is CLOSED_PASS_BOUNDED at material commit `369fa93a0`.
 
@@ -132,8 +136,9 @@ Older MSEA history is summarized out of this active handoff. Use the active stat
 
 ## Next Allowed Move
 
-Next allowed move: operator may select the next governed tranche from a clean
-pushed continuity baseline.
+Next allowed move: operator may choose one narrow fresh source-verified lane
+only: Python-to-TypeScript bridge proof, production memory/RAG authority
+packet, or provider/live proof packet. Legal/use-case workflow remains parked.
 
 Production memory/RAG route release, interface/root-barrel/runtime wiring,
 file-backed production persistence, vectorization, retrieval, MinerU runtime,
@@ -145,6 +150,49 @@ durable store/runtime hierarchy/root barrel edits, provider-local/IDE config
 edits, checker/hook implementation, worker commit/push, and public runtime
 claim remain unauthorized without fresh source-verified operator
 authorization.
+
+## Core Guard Self-Protection Authorization - MSEA-R33 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R33 material
+commit `3a46bc371`, including active mode, next allowed move, generated active
+state, bootstrap read model, front-door continuity, active handoff, closure
+state entry, and last-updated state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR33MineruInternalSystemChainReadinessAuditReleaseBoundary20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R33 session-sync if rejected; do not revert
+material commit `3a46bc371`, public-sync commit `7f6e548d3`, or earlier
+accepted history.
+
+## Agent Operation Trace Block - MSEA-R33 Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R33 closure session-sync, 2026-07-05 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `rg`; `python governance/compat/generate_active_session_state.py --generate`; `apply_patch`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR33MineruInternalSystemChainReadinessAuditReleaseBoundary20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R33 material commit `3a46bc371` and session-sync steward role |
+| Before status evidence | R32 mode routed to operator next tranche selection |
+| After status evidence | active mode and next allowed move route to one narrow R33 follow-up lane selection |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session-sync only; no worker execution, runtime, provider/live, private-output read, source/test edit, or production route release |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r33-internal-system-chain-session-sync-2026-07-05` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR33MineruInternalSystemChainReadinessAuditReleaseBoundary20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR33MineruInternalSystemChainReadinessAuditReleaseBoundary20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization - MSEA-R32 Session Sync
 

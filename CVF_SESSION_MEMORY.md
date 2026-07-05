@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may select the next governed tranche from a clean pushed continuity baseline; parked checkpoint=production memory/RAG route release, interface/root-barrel/runtime wiring, use-case/legal workflow, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, checker/hook implementation, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
+Startup acknowledged: current mode=`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator may choose one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker commit/push, and public runtime claim remain unauthorized without fresh source-verified operator authorization; LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Mode
 
-Current mode marker: `msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
+Current mode marker: `msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
 
-Current mode: `msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
+Current mode: `msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
 
-`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
+`msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
 
 Previous mode:
 
-`msea_r31_push_continuity_debt_audit_closed_bounded_pending_push_debt_resolution_packet`
+`msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R33 MinerU Internal System Chain Readiness Audit And Release Boundary | `3a46bc371` | CLOSED_PASS_BOUNDED; accepted R33 roadmap, GC-018, work order, T1 chain inventory, T2 internal harness decision, T3 bounded TypeScript harness source/test, T4 release-boundary matrix, and T5 completion review; public-sync commit `7f6e548d3` refreshed README, current-state snapshot, and technical catalog; selected `INTERNAL_FOUNDATION_READY_ONLY_WITH_RELEASE_LANES_HELD`; next move is one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet. |
 | MSEA-R32 Push Continuity Debt Remediation And Public Sync Release | `e851f04c4` | CLOSED_PASS_BOUNDED; accepted R32 push/continuity cleanup, repaired active-handoff root exposure classification, KIOD priority marker drift, and GC-043 session front-door markers; public-sync commit `53b39f3d5` refreshed README, evidence index, public current-state snapshot, and technical catalog; remaining full-range push preview issues are recorded as operator-authorized historical stack debt; next move is operator selection of the next governed tranche from a clean pushed continuity baseline. |
 | MSEA-R31 Push Continuity Debt Audit | `369fa93a0` | CLOSED_PASS_BOUNDED; accepted private push/continuity debt audit; selected `R31_PUSH_CONTINUITY_DEBT_AUDIT_COMPLETE_BLOCKED_PUSH_NOT_READY` and `PUSH_NOT_READY_BLOCKED_BY_UPSTREAM_DEBT_AND_FULL_RANGE_DRIFT`; removed local provider-stray `.qwen` after workspace-bound path check; recorded five remaining push-readiness blockers; next move is a fresh R31 push-debt remediation packet before any new MinerU tranche. |
 | MSEA-R30-T1 through T5 MinerU Production Release Gate Decision | `533a65044` | CLOSED_PASS_BOUNDED; accepted R30 roadmap, GC-018, work order, T1 production memory/RAG not-authorized decision, T2 interface/runtime wiring not-authorized decision, T3 private-output policy not-released decision, T4 provider/runtime proof not-released decision, and T5 no-go implementation completion; selected `R30_NO_GO_IMPLEMENTATION_NOT_RELEASED_PENDING_OPERATOR_PRODUCTION_PACKET`; pre-implementation autorun PASS 75/75, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 80/80; implementation remains unreleased pending fresh narrow packet. |
@@ -121,31 +122,71 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r32_push_continuity_debt_remediated_public_sync_pushed_pending_operator_next_governed_tranche_selection`
+Mode: `msea_r33_mineru_internal_system_chain_readiness_audit_closed_pending_operator_next_narrow_release_lane_selection`
 
-Next allowed move: operator may select the next governed tranche from a clean pushed continuity baseline. R32 closed push/continuity cleanup at material commit `e851f04c4`, pushed public-sync commit `53b39f3d5`, repaired the source-checkable push blockers, and recorded remaining full-range push preview issues as operator-authorized historical stack debt.
+Next allowed move: operator may choose one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet. Legal/use-case workflow remains parked. R33 closed internal system-chain readiness at material commit `3a46bc371` and public-sync commit `7f6e548d3`.
 
-Accepted R32 artifact:
+LHW24 remains the latest closed numbered LHW wave.
 
-- `docs/reviews/CVF_MSEA_R32_PUSH_CONTINUITY_DEBT_REMEDIATION_AND_PUBLIC_SYNC_RELEASE_2026-07-05.md`
+Accepted R33 artifacts:
 
-R32 selected disposition:
+- `docs/roadmaps/CVF_MSEA_R33_MINERU_INTERNAL_SYSTEM_CHAIN_READINESS_AUDIT_AND_RELEASE_BOUNDARY_ROADMAP_2026-07-05.md`
+- `docs/baselines/CVF_GC018_MSEA_R33_T1_T5_MINERU_INTERNAL_SYSTEM_CHAIN_READINESS_AUDIT_AND_RELEASE_BOUNDARY_2026-07-05.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R33_T1_T5_MINERU_INTERNAL_SYSTEM_CHAIN_READINESS_AUDIT_AND_RELEASE_BOUNDARY_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R33_T1_MINERU_CHAIN_INVENTORY_AND_CONTRACT_MAP_2026-07-05.md`
+- `docs/reference/CVF_MSEA_R33_T2_MINERU_INTERNAL_HARNESS_DECISION_2026-07-05.md`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-internal-system-chain-harness.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-internal-system-chain-harness.test.ts`
+- `docs/reference/CVF_MSEA_R33_T4_MINERU_RELEASE_BOUNDARY_MATRIX_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R33_T5_MINERU_INTERNAL_SYSTEM_CHAIN_COMPLETION_2026-07-05.md`
 
-`R32_PUSH_DEBT_REMEDIATED_WITH_OPERATOR_AUTHORIZED_HISTORICAL_STACK_PUSH`
+R33 selected disposition:
+
+`INTERNAL_FOUNDATION_READY_ONLY_WITH_RELEASE_LANES_HELD`
 
 Public-sync evidence:
 
-- public commit `53b39f3d5`;
-- public changed paths: `README.md`, `docs/evidence/README.md`, `docs/evidence/public-current-state-snapshot-2026-07-05.md`, and `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.
+- public commit `7f6e548d3`;
+- public changed paths: `README.md`, `docs/evidence/public-current-state-snapshot-2026-07-05.md`, and `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.
 
-Resolved R32 blockers:
+R33 verification:
 
-- active-handoff root exposure classification;
-- KIOD priority guard marker drift;
-- GC-043 session front-door marker drift.
+- focused Vitest PASS 1 file / 5 tests;
+- TypeScript check PASS;
+- GC-051 registry check PASS;
+- pre-implementation autorun PASS 75/75;
+- commit steward PASS;
+- material pre-commit hook PASS 80/80.
 
-Remaining full-range preview issues are accepted only as recorded historical
-stack debt under operator authorization, not as normal future push cadence.
+R33 held boundaries:
+
+- Python receipt writer to TypeScript bridge not wired by R33;
+- production memory/RAG route not released;
+- private/generated output content not read or released;
+- MinerU runtime not executed;
+- provider/live proof not run;
+- legal/use-case workflow remains parked.
+
+## Core Guard Self-Protection Authorization - MSEA-R33 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R33 material
+commit `3a46bc371`, including active mode, next allowed move, generated active
+state, bootstrap read model, front-door continuity, active handoff, closure
+state entry, and last-updated state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR33MineruInternalSystemChainReadinessAuditReleaseBoundary20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R33 session-sync if rejected; do not revert
+material commit `3a46bc371`, public-sync commit `7f6e548d3`, or earlier
+accepted history.
 
 Accepted R30 artifacts:
 
