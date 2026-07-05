@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R34-T2 no-commit docs-only decision worker creating only the decision matrix and worker return named by the R34-T2 work order; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator selects a new initiative before any further MinerU foundation-plane work; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`
+Current mode marker: `msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`
 
-Current mode: `msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`
+Current mode: `msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`
 
-`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`
+`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`
 
 Previous mode:
 
-`msea_r34_t1_mineru_python_to_typescript_bridge_proof_closed_pending_r34_t2_stop_or_narrow_release_lane_decision`
+`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision | `20ff04e17` | CLOSED_PASS_BOUNDED; accepted source-verified decision matrix and worker return; selected `MINERU_FOUNDATION_PLANE_STOP_HERE_PENDING_OPERATOR_NEW_INITIATIVE`; reviewer repair removed conversation-record source-authority wording; worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is operator selection of a new initiative before any fresh packet. |
 | MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision dispatch | `de19d6891` | DISPATCH_READY; accepted source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only decision work order; worker may create only the R34-T2 decision matrix and worker return; pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80; no production route, runtime, provider/live, private-output, public-sync, source/test edit, worker stage, commit, or push is authorized. |
 | MSEA-R34-T1 MinerU Python To TypeScript Bridge Proof | `878dfe8c2` | CLOSED_PASS_BOUNDED; accepted bounded fixture-only TypeScript bridge helper, focused test, worker return, completion review, and closed work order; reviewer repair added bridge-level fail-closed invariants and unsafe-invariant test; focused Vitest PASS 1 file / 12 tests, TypeScript check PASS, worker-return fast gate PASS, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is R34-T2 stop-or-one-narrow-release-lane decision packet. |
 | MSEA-R33 MinerU Internal System Chain Readiness Audit And Release Boundary | `3a46bc371` | CLOSED_PASS_BOUNDED; accepted R33 roadmap, GC-018, work order, T1 chain inventory, T2 internal harness decision, T3 bounded TypeScript harness source/test, T4 release-boundary matrix, and T5 completion review; public-sync commit `7f6e548d3` refreshed README, current-state snapshot, and technical catalog; selected `INTERNAL_FOUNDATION_READY_ONLY_WITH_RELEASE_LANES_HELD`; next move is one narrow fresh source-verified lane only: Python-to-TypeScript bridge proof, production memory/RAG authority packet, or provider/live proof packet. |
@@ -124,9 +125,34 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`
+Mode: `msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`
 
-Next allowed move: execute MSEA-R34-T2 no-commit docs-only decision worker creating only `docs/reference/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_MATRIX_2026-07-05.md` and `docs/reviews/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md`. Legal/use-case workflow remains parked. R34-T2 dispatch is accepted at material commit `de19d6891`; R34-T1 is closed at material commit `878dfe8c2`; R33 closed internal system-chain readiness at material commit `3a46bc371` and public-sync commit `7f6e548d3`; LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: operator selects a new initiative before any further MinerU foundation-plane work. R34-T2 is closed at material commit `20ff04e17` with selected disposition `MINERU_FOUNDATION_PLANE_STOP_HERE_PENDING_OPERATOR_NEW_INITIATIVE`. The operator may choose one of the four remaining lanes named by R34-T2 (production memory/RAG route release, file-backed production persistence, provider/live proof, or use-case/legal workflow) through a fresh source-verified packet, or choose an unrelated governed tranche. No automatic next tranche is authorized. R34-T1 is closed at material commit `878dfe8c2`; R33 closed internal system-chain readiness at material commit `3a46bc371` and public-sync commit `7f6e548d3`; LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R34-T2 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R34-T2
+closure material commit `20ff04e17`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R34-T2 closure continuity and operator-selection next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R34-T2 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R34-T2 closure. |
+| `CVF_SESSION/state/entries/mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionClosure20260705.json` | Record accepted R34-T2 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator new-initiative selection. |
+| `AGENT_HANDOFF_V36_2026-07-04.md` | Record R34-T2 closure continuity and operator-selection next move. |
+
+Rollback boundary: revert only this R34-T2 closure session-sync if
+rejected; do not revert material closure commit `20ff04e17`, material
+dispatch commit `de19d6891`, R34-T1 closure commit `878dfe8c2`, R33
+material commit `3a46bc371`, public-sync commit `7f6e548d3`, or earlier
+accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R34-T2 Dispatch Session Sync
 

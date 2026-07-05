@@ -7,10 +7,11 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md`
 ## Purpose
 
 Carry compact continuity after MSEA-R34-T2 MinerU Foundation Lane Stop Or
-Narrow Release Decision dispatch. The active session is now parked on R34-T2
-no-commit docs-only worker execution, without implying production memory/RAG
-route release, use-case expansion, runtime proof, private-output release,
-public runtime behavior, or production write authority.
+Narrow Release Decision closure. The active session is now parked on
+operator selection of a new initiative before any further MinerU
+foundation-plane work, without implying production memory/RAG route
+release, use-case expansion, runtime proof, private-output release, public
+runtime behavior, or production write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -27,7 +28,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=execute MSEA-R34-T2 no-commit docs-only decision worker creating only the decision matrix and worker return named by the R34-T2 work order; parked checkpoint=legal/use-case workflow remains parked; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`; active handoff=AGENT_HANDOFF_V36_2026-07-04.md; next allowed move=operator selects a new initiative before any further MinerU foundation-plane work; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane through a fresh source-verified packet; production memory/RAG route release, live Python process invocation, file-based Python output consumption, interface/root-barrel/runtime wiring, provider/live proof, MinerU runtime, retrieval, vectorization, private/generated content read, file-backed production persistence, worker stage/commit/push, provider-local or IDE config edits, and public runtime claim remain unauthorized.
 
 ## Current State
 
@@ -39,8 +40,8 @@ Startup acknowledged: current mode=`msea_r34_t2_mineru_foundation_lane_stop_or_n
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `de19d6891` MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision dispatch |
-| Latest session-sync target | session sync after MSEA-R34-T2 dispatch |
+| Latest material packet | `20ff04e17` MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision closure |
+| Latest session-sync target | session sync after MSEA-R34-T2 closure |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -51,9 +52,47 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_dispatched_pending_no_commit_worker_execution`
+`msea_r34_t2_mineru_foundation_lane_stop_or_narrow_release_decision_closed_pending_operator_new_initiative_selection`
 
 ## Latest Changes
+
+MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision is
+CLOSED_PASS_BOUNDED at material commit `20ff04e17`.
+
+Accepted R34-T2 closure artifacts:
+
+- `docs/reference/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_MATRIX_2026-07-05.md`
+- `docs/reviews/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md`
+
+R34-T2 selected disposition:
+`MINERU_FOUNDATION_PLANE_STOP_HERE_PENDING_OPERATOR_NEW_INITIATIVE`.
+
+R34-T2 decision: the MinerU foundation-plane lane pauses here pending
+operator selection of a new initiative. R34-T2 does not name any one
+remaining lane as ready without operator prioritization.
+
+R34-T2 verification: reviewer repair removed conversation-record
+source-authority wording from the matrix and worker return; worker-return
+fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return
+commit steward PASS, and material pre-commit hook PASS 80/80.
+
+R34-T2 next move: operator selects a new initiative before any further
+MinerU foundation-plane work. The operator may choose one of the four
+remaining lanes named by R34-T2 (production memory/RAG route release,
+file-backed production persistence, provider/live proof, or use-case/legal
+workflow) through a fresh source-verified packet, or choose an unrelated
+governed tranche. No automatic next tranche is authorized.
+
+R34-T2 boundary: docs-only stop-or-narrow-release decision closure. It
+does not authorize production memory/RAG route release, live Python process
+invocation, file-based Python output consumption, MinerU runtime execution,
+private/generated output content read, production durable-store invocation,
+file-backed production persistence, retrieval, vectorization, provider/live
+proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive,
+extraction accuracy, document truth, legal quality, current-law
+correctness, hosted readiness, production readiness, interface/root-barrel
+runtime wiring, source/test edits, provider-local or IDE config edits,
+worker stage, worker commit, or push.
 
 MSEA-R34-T2 MinerU Foundation Lane Stop Or Narrow Release Decision dispatch is
 DISPATCH_READY at material commit `de19d6891`.
@@ -204,20 +243,72 @@ Older MSEA history is summarized out of this active handoff. Use the active stat
 
 ## Next Allowed Move
 
-Next allowed move: execute MSEA-R34-T2 no-commit docs-only decision worker
-creating only `docs/reference/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_MATRIX_2026-07-05.md`
-and `docs/reviews/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md`.
-Legal/use-case workflow remains parked.
+Next allowed move: operator selects a new initiative before any further
+MinerU foundation-plane work. R34-T2 is closed at material commit
+`20ff04e17` with selected disposition
+`MINERU_FOUNDATION_PLANE_STOP_HERE_PENDING_OPERATOR_NEW_INITIATIVE`. The
+operator may choose one of the four remaining lanes named by R34-T2
+(production memory/RAG route release, file-backed production persistence,
+provider/live proof, or use-case/legal workflow) through a fresh
+source-verified packet, or choose an unrelated governed tranche. No
+automatic next tranche is authorized.
 
 Production memory/RAG route release, interface/root-barrel/runtime wiring
-beyond this docs-only decision dispatch, file-backed production persistence,
+beyond this docs-only decision closure, file-backed production persistence,
 vectorization, retrieval, MinerU runtime, private/generated output content
 read, Candidate Group A import, provider/live proof, Web/UI, standalone app
 work, legal/use-case deep dive, extraction accuracy, document truth, legal
-quality, current-law correctness, workflow-chain production readiness, Python
-source/test edits for Pylance, durable store/runtime hierarchy/root barrel
-edits, provider-local/IDE config edits, checker/hook implementation, worker
-stage/commit/push, and public runtime claim remain unauthorized.
+quality, current-law correctness, workflow-chain production readiness,
+Python source/test edits for Pylance, durable store/runtime hierarchy/root
+barrel edits, provider-local/IDE config edits, checker/hook implementation,
+worker stage/commit/push, and public runtime claim remain unauthorized.
+
+## Core Guard Self-Protection Authorization - MSEA-R34-T2 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R34-T2
+closure material commit `20ff04e17`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and closure state entry.
+
+Current HEAD after material closure: `20ff04e17`
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionClosure20260705.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V36_2026-07-04.md`
+
+Rollback boundary: revert only this R34-T2 closure session-sync if
+rejected; do not revert material closure commit `20ff04e17`, material
+dispatch commit `de19d6891`, R34-T1 closure commit `878dfe8c2`, R33
+material commit `3a46bc371`, public-sync commit `7f6e548d3`, or earlier
+accepted history.
+
+## Agent Operation Trace Block - MSEA-R34-T2 Closure Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R34-T2 stop-or-release decision closure session-sync, 2026-07-05 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `rg`; `python governance/compat/generate_active_session_state.py --generate`; `apply_patch`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionClosure20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Allowed scope source | MSEA-R34-T2 material closure commit `20ff04e17` and session-sync steward role |
+| Before status evidence | R34-T2 mode routed to no-commit decision worker execution |
+| After status evidence | active mode and next allowed move route to operator new-initiative selection |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session-sync only; no worker execution, runtime, provider/live, private-output read, source/test edit, production route release, public-sync, or use-case claim |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r34-t2-stop-or-release-decision-closure-session-sync-2026-07-05` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionClosure20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionClosure20260705.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V36_2026-07-04.md` |
+| Manifest delta | MATCH |
 
 ## Core Guard Self-Protection Authorization - MSEA-R34-T2 Dispatch Session Sync
 
