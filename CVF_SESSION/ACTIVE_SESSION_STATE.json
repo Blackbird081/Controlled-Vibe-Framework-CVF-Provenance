@@ -77,8 +77,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_closed_pending_next_roadmap_or_release_decision",
-  "previousMode": "msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_dispatched_pending_worker_return",
+  "currentMode": "msea_r45_t1_mineru_post_r44_system_chain_release_or_stop_decision_dispatched_pending_worker_return",
+  "previousMode": "msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_closed_pending_next_roadmap_or_release_decision",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -3748,7 +3748,6 @@
     "claimBoundary": "ASCP-T5 Model Gateway use case only; no production Model Gateway/model router, multi-provider fallback, provider registry mutation, new credential source, ACTIVE lifecycle promotion, external MCP runtime, public-sync, or production-readiness claim."
   },
   "assfWebProjectionImplementationClosure20260626": "ASSF-WEBPROJ-T1 Web projection implementation closed CLOSED_PASS_BOUNDED at material commit 0b57a4de. Artifacts: docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_WEB_PROJECTION_IMPLEMENTATION_FOR_CODEX_2026-06-26.md, docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md, and docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md. Implementation projected certified ASSF package metadata into the CVF Web public skill index as read-only presentation data and added GC-051 coverage for the Web projection public skill-index surfaces. Boundary retained: no package instance creation, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, adapter behavior, provider/live proof, public-sync, push, activation, package instruction execution, or package integration.",
-  "nextAllowedMove": "MSEA-R44-T2 MinerU Narrow File Backed Persistence Invocation Implementation is CLOSED_PASS_BOUNDED at material commit 8004f30c6. The accepted source/test implementation widens the route candidate to file-backed mode only under explicit request plus OPERATOR/GOVERNOR actor-role authority, preserves productionRouteAuthorized=false, preserves the T25 held token, and proves deterministic file-backed behavior only in focused tests. Next allowed move is roadmap selection or a fresh GC-018/source-verified release-or-stop decision packet for the post-R44 system-chain state. No MinerU runtime execution, private/generated output content read, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim is authorized without a fresh accepted packet. LHW24 remains latest closed numbered LHW wave.",
   "ascpP1P3RuntimePackageSkillsProductionizationClosure20260630": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "43e4092f",
@@ -3811,6 +3810,27 @@
     "claimBoundary": "ASCP-T4 decides no package lifecycle source moves to ACTIVE in this tranche. It does not mutate lifecycle sources, read package instruction bodies, emit or consume skill usage receipts, implement package execution adapters, call providers, public-sync, or grant action authority.",
     "nextAllowedMove": "Superseded by ASCP-T5 closure at material commit d409b602. Current next move is operator selection of the next high-value lane; ACTIVE lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order."
   },
+  "mseaR45T1MineruPostR44SystemChainReleaseOrStopDecisionDispatch20260706": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-06",
+    "materialCommit": "cf0977295",
+    "materialCommitFull": "cf0977295c57c81135138453e8316d34b18ccdaa",
+    "dispatchBaseHead": "2898812d8",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_WORKER_RETURN_2026-07-06.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "predecessorClosure": "MSEA-R44-T2 at 8004f30c6",
+    "preDispatchGate": "PASS 73/73",
+    "dispatchQualityGate": "PASS",
+    "adifDisclosure": "PASS",
+    "handoffBoundaryGate": "PASS",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 80/80",
+    "nextRecommendedMove": "DELEGATED_NO_COMMIT_R45_T1_WORKER_EXECUTION",
+    "claimBoundary": "Dispatch only. Worker may create only the R45-T1 decision matrix and worker return named by the work order, then stop for reviewer closure. No source/test edit, MinerU runtime execution, private/generated output read, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim is authorized."
+  },
   "adifT0CheckpointAcceptedT1Release20260623": "Codex accepted ADIF-T0 for continuation at review commit 6277cb28 after Claude execution commit 7c0480bc and continuity commit e454191f. Review artifact: docs/reviews/CVF_ADIF_T0_OWNER_RECONCILIATION_CHECKPOINT_REVIEW_2026-06-23.md. Reviewer-fast and pre-commit passed; T0 remains pending final full-chain review rather than independently closed. T1 dependency authoring is released from the post-sync HEAD. Learning: continuous WORKER_MAY_COMMIT chains with reviewer-owned continuity require an explicit Codex checkpoint sync/review boundary after each worker commit; this is not worker scope.",
   "ascpT5PackageExecutionUseProofAdapterClosure20260630": {
     "batchId": "ASCP-T5",
@@ -3845,6 +3865,7 @@
     "nextAllowedMove": "Operator selects the next high-value lane. Any ACTIVE lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order and live/provider proof when governance behavior is claimed."
   },
   "assfExternalAgentReadoutCliMcpBoundaryClosure20260626": "ASSF external-agent readout / CLI-MCP adapter boundary T0-T4 closed CLOSED_PASS_BOUNDED at material commit 99fabd26. Artifacts: docs/roadmaps/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_ROADMAP_2026-06-26.md, docs/baselines/CVF_GC018_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_2026-06-26.md, docs/reference/agent_system_skills/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_CONTRACT.md, and docs/reviews/CVF_ASSF_EXTERNAL_AGENT_READOUT_CLI_MCP_ADAPTER_BOUNDARY_COMPLETION_2026-06-26.md. Boundary: decision-first contract/readiness only; no adapter implementation, package instance, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration.",
+  "nextAllowedMove": "MSEA-R45-T1 MinerU Post R44 System Chain Release Or Stop Decision is DISPATCH_READY at material commit cf0977295. The paired GC-018 baseline and WORKER_MUST_NOT_COMMIT work order authorize only docs-only/source-verified no-commit worker execution to create docs/reference/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_MATRIX_2026-07-06.md and docs/reviews/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_WORKER_RETURN_2026-07-06.md, then stop for reviewer closure. No source/test edit, MinerU runtime execution, private/generated output read, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim is authorized. LHW24 remains latest closed numbered LHW wave.",
   "pkgSopT1PackageSkillProductionizationSopClosure20260630": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "693608cb",

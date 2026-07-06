@@ -1,0 +1,25 @@
+{
+  "stateOrder": 644,
+  "stateKey": "mseaR45T1MineruPostR44SystemChainReleaseOrStopDecisionDispatch20260706",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-06",
+    "materialCommit": "cf0977295",
+    "materialCommitFull": "cf0977295c57c81135138453e8316d34b18ccdaa",
+    "dispatchBaseHead": "2898812d8",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_WORKER_RETURN_2026-07-06.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "predecessorClosure": "MSEA-R44-T2 at 8004f30c6",
+    "preDispatchGate": "PASS 73/73",
+    "dispatchQualityGate": "PASS",
+    "adifDisclosure": "PASS",
+    "handoffBoundaryGate": "PASS",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 80/80",
+    "nextRecommendedMove": "DELEGATED_NO_COMMIT_R45_T1_WORKER_EXECUTION",
+    "claimBoundary": "Dispatch only. Worker may create only the R45-T1 decision matrix and worker return named by the work order, then stop for reviewer closure. No source/test edit, MinerU runtime execution, private/generated output read, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim is authorized."
+  }
+}
