@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, or implementation is authorized by R55.
+Startup acknowledged: current mode=`msea_r56_foundation_plane_io_contract_and_system_interlock_closed_pass_bounded_ready_for_r57_release_or_stop_decision`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision packet; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, or implementation is authorized by R56.
 
 ## Current Mode
 
-Current mode marker: `msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`
+Current mode marker: `msea_r56_foundation_plane_io_contract_and_system_interlock_closed_pass_bounded_ready_for_r57_release_or_stop_decision`
 
-Current mode: `msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`
+Current mode: `msea_r56_foundation_plane_io_contract_and_system_interlock_closed_pass_bounded_ready_for_r57_release_or_stop_decision`
 
-`msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`
+`msea_r56_foundation_plane_io_contract_and_system_interlock_closed_pass_bounded_ready_for_r57_release_or_stop_decision`
 
 Previous mode:
 
-`msea_r54_p3_reconciliation_parked_low_value_ready_for_r55_high_value_plane_absorb_target_reselection`
+`msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet | `18253d95b` | CLOSED_PASS_BOUNDED; selected `R56_FOUNDATION_PLANE_IO_CONTRACT_DEFINED_READY_FOR_R57_RELEASE_OR_STOP_DECISION`; defined foundation plane output-to-input contract rows plus system interlock acceptance rules; selected fresh source-verified MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision as the next target; focused gates PASS, pre-implementation autorun PASS 75/75 on `699015afa..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 reopen, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R55 High-Value Plane Absorb Target Reselection | `ea53c7df5` | CLOSED_PASS_BOUNDED; selected `R55_SELECT_FOUNDATION_PLANE_IO_CONTRACT_AND_INTERLOCK_PACKET`; selected fresh source-verified MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet as the next target; P3 remains parked; focused gates PASS, pre-implementation autorun PASS 75/75 on `ecb9a5c10..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 reopen, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision | `e89e03e9f` | CLOSED_PASS_BOUNDED; selected `R54_P3_RECONCILIATION_PARKED_LOW_IMMEDIATE_VALUE`; parked `Controlled-Vibe-Framework-CVF-P3` branch `restructuring/p3-layout-wave-2`; selected fresh source-verified MSEA-R55 High-Value Plane Absorb Target Reselection as the next packet; focused gates PASS, pre-implementation autorun PASS 75/75 on `a70bc189d..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no P3 merge, branch reconciliation, physical relocation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R53 Plane Absorb Repo Target Discovery And Readiness Decision | `22c471fdd` | CLOSED_PASS_BOUNDED; selected `R53_SELECT_P3_PROVENANCE_PLANE_RECONCILIATION_READINESS_DECISION`; selected `Controlled-Vibe-Framework-CVF-P3` on branch `restructuring/p3-layout-wave-2` as the next target; next packet is fresh source-verified MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision; focused gates PASS, pre-implementation autorun PASS 75/75 on `c875b6084..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no merge, branch reconciliation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
@@ -142,18 +143,18 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`
+Mode: `msea_r56_foundation_plane_io_contract_and_system_interlock_closed_pass_bounded_ready_for_r57_release_or_stop_decision`
 
-Author a fresh source-verified MSEA-R56 Foundation Plane I/O Contract And
-System Interlock Packet. R56 is docs-only contract authoring: it should define
-the bounded output-to-input contract for chaining foundation planes, including
-accepted MinerU/scanlayer/memory evidence as one source, and map each transition
-to required receipt, boundary, owner, downstream input, `rawMemoryReleased=false`,
-and held scope. It must not implement source/tests, run runtime/provider/MCP
-proof, read private/generated MinerU output, release production Memory/RAG,
-perform retrieval/vectorization, mutate public-sync, reopen P3, import external
-source, open use-case/legal workflow, or claim public/hosted/production
-readiness. LHW24 remains the latest closed numbered LHW wave.
+Author a fresh source-verified MSEA-R57 Foundation Plane I/O Contract
+Release-Or-Stop Decision packet. R57 is docs-only decision work: decide whether
+the R56 contract is sufficient to stop at an architecture/control-plane
+checkpoint, authorize a narrower implementation or checker packet, or require
+operator target narrowing. It must not implement source/tests, run
+runtime/provider/MCP proof, read private/generated MinerU output, release
+production Memory/RAG, perform retrieval/vectorization, mutate public-sync,
+reopen P3, import external source, open use-case/legal workflow, or claim
+public/hosted/production readiness. LHW24 remains the latest closed numbered
+LHW wave.
 
 ## Current Closed Work
 
@@ -180,6 +181,31 @@ door to keep it below the governed file-size threshold. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
 `CVF_SESSION/state/entries/`, governed artifacts, and archived handoffs for
 canonical older closure detail.
+
+## Core Guard Self-Protection Authorization - MSEA-R56 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R56 material
+closure commit `18253d95b`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door continuity, active handoff, and
+R56 closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R56 contract closure and next R57 route. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R56 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R56 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R56 closure. |
+| `CVF_SESSION/state/entries/mseaR56FoundationPlaneIoContractAndSystemInterlock20260707.json` | Record R56 closure and R57 target selection. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R57 release-or-stop decision packet. |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R56 continuity and R57 next target. |
+
+Rollback boundary: revert only this MSEA-R56 session-sync if rejected; do not
+revert material closure commit `18253d95b`, R55 material commit `ea53c7df5`,
+R54 material commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material
+commit `18f177033`, public-sync commit
+`65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R55 Session Sync
 
