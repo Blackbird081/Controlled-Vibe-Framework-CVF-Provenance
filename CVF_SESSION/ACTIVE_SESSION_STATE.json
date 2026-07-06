@@ -78,8 +78,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint",
-  "previousMode": "msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal",
+  "currentMode": "msea_r51_t1_post_r50_public_safe_catalog_snapshot_refresh_closed_pass_bounded_exported_stop_checkpoint",
+  "previousMode": "msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -4366,7 +4366,6 @@
     "nextAllowedMove": "Operator chooses local model path/cache proof, modelscope download permission, huggingface download permission, explicit auto/config write-back authorization, or runtime defer before any MinerU runtime smoke work order.",
     "claimBoundary": "No MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, document body read, extraction outputs, public-sync, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim."
   },
-  "nextAllowedMove": "MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal is CLOSED_PASS_BOUNDED at material commit 5a37765fa. MinerU/scanlayer/memory is sealed as an internal foundation system chain against owner surface docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md. Next allowed move: stop/checkpoint the MinerU foundation lane as complete. Any future continuation requires a fresh operator-named target and fresh source-verified authority. No external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains latest closed numbered LHW wave.",
   "kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630": {
     "status": "ROADMAP_READY_FOR_KIOD_R4_NEGATIVE_SEARCH_DECISION_AFTER_R1_R3_PASS",
     "materialCommit": "5d453bce",
@@ -4427,6 +4426,54 @@
     "nextRecommendedMove": "If operator wants to proceed, author fresh GC-018/source-verified MSEA-R22 work order for MinerU package install/activation authorization and ModelScope pipeline cache preparation prerequisites. Otherwise hold all MinerU runtime lanes.",
     "claimBoundary": "Closure accepts a bounded blocker route only. MSEA-R21-T1 proved local command absence and preserved no-install/no-runtime boundaries; it does not claim model cache readiness, MinerU runtime readiness, document extraction behavior, provider/live behavior, public readiness, legal advice quality, current-law correctness, workflow-chain completion, or production readiness."
   },
+  "mseaR51T1PostR50PublicSafeCatalogSnapshotRefresh20260707": {
+    "status": "CLOSED_PASS_BOUNDED_EXPORTED",
+    "date": "2026-07-07",
+    "dispatchCommit": "fc5411ebc",
+    "handoffFreshnessSyncCommit": "f46a8dadd",
+    "materialCommit": "0b1cda836",
+    "materialCommitFull": "0b1cda836f2d44f5923a583673a8bc8e4179bfd0",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R51_T1_POST_R50_PUBLIC_SAFE_CATALOG_SNAPSHOT_REFRESH_WORKER_RETURN_2026-07-07.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R51_T1_POST_R50_PUBLIC_SAFE_CATALOG_SNAPSHOT_REFRESH_2026-07-07.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R51_T1_POST_R50_PUBLIC_SAFE_CATALOG_SNAPSHOT_REFRESH_2026-07-07.md",
+    "publicSyncRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "publicSyncBranch": "main",
+    "publicSyncCommit": "65f3dd6ce48743c89efdc1e40db3cdce8fb083c5",
+    "publicExportDisposition": "EXPORTED",
+    "publicArtifacts": [
+      "README.md",
+      "docs/evidence/README.md",
+      "docs/evidence/public-current-state-snapshot-2026-07-07.md",
+      "docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md"
+    ],
+    "verification": [
+      "public docs governance gate PASS",
+      "public markdown structural completeness gate PASS",
+      "public doc drift phrase gate PASS",
+      "public pre-public P3 readiness gate PASS",
+      "public export disposition gate PASS",
+      "public git diff --check --cached PASS",
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75 on f46a8dadd..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedExportFacts": {
+      "postR50PublicSnapshotExported": true,
+      "publicCatalogRefreshed": true,
+      "publicReadmeRefreshed": true,
+      "publicEvidenceIndexRefreshed": true,
+      "productionMemoryRagReleased": false,
+      "runtimeExtractionReleased": false,
+      "privateOutputReleased": false,
+      "providerLiveProofReleased": false,
+      "retrievalReleased": false,
+      "vectorizationReleased": false,
+      "useCaseLegalWorkflowOpened": false
+    },
+    "nextAllowedMove": "Stop/checkpoint the MinerU foundation lane as complete. Any future continuation requires a fresh operator-named target and fresh source-verified authority.",
+    "claimBoundary": "R51-T1 exports only a public-safe post-R50 documentation snapshot and catalog refresh. It does not authorize external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output reads, retrieval, vectorization, use-case/legal workflow, extraction accuracy, document truth, legal quality, current-law correctness, hosted release, standalone app work, provider-local config edits, push, or new public claims beyond the pushed public-safe snapshot."
+  },
   "assfPicT0Closure20260625": "ASSF-PIC-T0 Pilot Candidate Selection And Source Inventory is CLOSED_PASS_BOUNDED at material commit 24b49017 after Claude returned BLOCKED_WITH_REASON and Codex completed reviewer-owned closure. The selected candidate is cvf-dispatch-quality-reviewer. Evidence: docs/audits/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_AUDIT_2026-06-25.md; docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_COMPLETION_2026-06-25.md; worker return docs/reviews/CVF_ASSF_PIC_T0_PILOT_CANDIDATE_SELECTION_SOURCE_INVENTORY_WORKER_RETURN_2026-06-25.md. ASSF-PIC-T1 remains held until Active Session State Bootstrap Read Model And Aggregate Size Refactor closes.",
   "mseaR22T1MineruPackageInstallActivationModelScopeCachePrepDispatch20260703": {
     "status": "CLOSED_PASS_BOUNDED",
@@ -4466,6 +4513,7 @@
     "nextRecommendedMove": "If operator wants to continue, author fresh GC-018/source-verified MSEA-R23 work order for diagnostic-aware ModelScope cache resume/retry or alternate model-source decision before any runtime smoke. Otherwise hold all MinerU runtime lanes.",
     "claimBoundary": "Closure accepts bounded local package activation plus download diagnostic only. MSEA-R22-T1 does not claim model cache readiness, MinerU runtime readiness, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction outputs, provider/live behavior, public readiness, legal advice quality, current-law correctness, workflow-chain completion, production readiness, schema/writer/adapter/checker implementation, or runtime smoke authorization."
   },
+  "nextAllowedMove": "MSEA-R51-T1 Post R50 Public Safe Catalog Snapshot Refresh is CLOSED_PASS_BOUNDED_EXPORTED at provenance material commit 0b1cda836 and public-sync commit 65f3dd6ce48743c89efdc1e40db3cdce8fb083c5 pushed to https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git on main. Public README, evidence index, 2026-07-07 public current-state snapshot, and public technical product catalog now reflect the R50 sealed internal foundation system-chain posture with public-safe boundaries. Next allowed move: stop/checkpoint the MinerU foundation lane as complete. Any future continuation requires a fresh operator-named target and fresh source-verified authority. No external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains latest closed numbered LHW wave.",
   "stateBrT1Dispatch20260625": "STATE-BR-T1 Active Session State Bootstrap Read Model And Aggregate Size Refactor is DISPATCHED_TO_WORKER at material commit 06d54319. Dispatch artifacts: docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_2026-06-25.md and docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_BOOTSTRAP_READ_MODEL_AGGREGATE_SIZE_REFACTOR_FOR_CLAUDE_2026-06-25.md. Worker mode is WORKER_MUST_NOT_COMMIT. Claude may update only the authorized active-session generator/checker/test/front-door/read-model paths and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. ASSF-PIC-T1 remains held until this refactor closes.",
   "stateBrT1Closure20260626": {
     "status": "CLOSED_PASS_BOUNDED",

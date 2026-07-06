@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=stop/checkpoint the MinerU foundation lane as complete; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; any future continuation requires a fresh operator-named target and fresh source-verified authority; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized.
+Startup acknowledged: current mode=`msea_r51_t1_post_r50_public_safe_catalog_snapshot_refresh_closed_pass_bounded_exported_stop_checkpoint`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=stop/checkpoint the MinerU foundation lane as complete after the R51-T1 public-safe snapshot export; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; any future continuation requires a fresh operator-named target and fresh source-verified authority; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or new public claim is authorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint`
+Current mode marker: `msea_r51_t1_post_r50_public_safe_catalog_snapshot_refresh_closed_pass_bounded_exported_stop_checkpoint`
 
-Current mode: `msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint`
+Current mode: `msea_r51_t1_post_r50_public_safe_catalog_snapshot_refresh_closed_pass_bounded_exported_stop_checkpoint`
 
-`msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint`
+`msea_r51_t1_post_r50_public_safe_catalog_snapshot_refresh_closed_pass_bounded_exported_stop_checkpoint`
 
 Previous mode:
 
-`msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal`
+`msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R51-T1 Post R50 Public Safe Catalog Snapshot Refresh | `0b1cda836` provenance / `65f3dd6ce` public | CLOSED_PASS_BOUNDED_EXPORTED; public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5` pushed to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` on `main`; refreshed public README, evidence index, `docs/evidence/public-current-state-snapshot-2026-07-07.md`, and public technical product catalog with R50 sealed internal foundation system-chain posture and public-safe boundaries; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `f46a8dadd..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move remains stop/checkpoint unless a fresh operator-named target and fresh source-verified authority are provided; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or new public claim is authorized. |
 | MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal | `5a37765fa` | CLOSED_PASS_BOUNDED; selected `R50_MINERU_FOUNDATION_SYSTEM_CHAIN_SEALED_STOP_CHECKPOINT`; seals MinerU/scanlayer/memory as an internal foundation system chain against `docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md`; focused gates PASS, pre-implementation autorun PASS 75/75 on `19401824a..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is stop/checkpoint unless a fresh operator-named target and fresh source-verified authority are provided; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R49 Plane Absorb Target Selection And Owner Surface Map | `85bd012a3` | CLOSED_PASS_BOUNDED; selects `docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md` as the existing owner surface for system-chain seal; selected `R49_SELECT_EXISTING_R10_ADAPTER_CONTRACT_OWNER_SURFACE_FOR_SYSTEM_CHAIN_SEAL`; mirror commit/count recheck matched `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491` and 425 files; focused gates PASS, pre-implementation autorun PASS 75/75 on `dce655773..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal packet or stop/checkpoint; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R48 MinerU To Plane Absorb Transition Readiness Packet | `34151de7c` | CLOSED_PASS_BOUNDED; accepts a docs-only source-verified transition-readiness decision; selected `R48_PLANE_ABSORB_TRANSITION_READY_FOR_TARGET_SELECTION_ONLY`; next move is fresh source-verified MSEA-R49 Plane Absorb Target Selection And Owner Surface Map packet or stop/checkpoint; pre-implementation autorun PASS 75/75 on `b6a69ed03..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
@@ -163,9 +164,32 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint`
+Mode: `msea_r51_t1_post_r50_public_safe_catalog_snapshot_refresh_closed_pass_bounded_exported_stop_checkpoint`
 
-Next allowed move: stop/checkpoint the MinerU foundation lane as complete. Any future continuation requires a fresh operator-named target and fresh source-verified authority. No external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: stop/checkpoint the MinerU foundation lane as complete after the R51-T1 public-safe snapshot export. Any future continuation requires a fresh operator-named target and fresh source-verified authority. No external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or new public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R51-T1 Public Export Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R51-T1
+material closure commit `0b1cda836`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and R51-T1 closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R51-T1 public-safe export closure and stop/checkpoint state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R51-T1 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R51-T1 exported stop/checkpoint. |
+| `CVF_SESSION/state/entries/mseaR51T1PostR50PublicSafeCatalogSnapshotRefresh20260707.json` | Record accepted R51-T1 closure and public export evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop/checkpoint with fresh-target condition. |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R51-T1 public export continuity and stop/checkpoint state. |
+
+Rollback boundary: revert only this MSEA-R51-T1 session-sync if rejected; do
+not revert material closure commit `0b1cda836`, public-sync commit
+`65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R50 Closure Session Sync
 
