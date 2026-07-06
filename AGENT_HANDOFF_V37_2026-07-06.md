@@ -6,13 +6,14 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R42-T1 MinerU Persistence Mode Authority
-Reopen Source Discovery closure. R42-T1 closed with source authority still
-missing for the R41-T2 persistence-mode reopen condition, without implying
-public-sync, Memory/RAG invocation or release, use-case expansion, runtime
-proof, private-output release, public runtime behavior, file-backed
-persistence invocation, persistence-mode widening, harness implementation, or
-production write authority.
+Carry compact continuity after MSEA-R43-T1 MinerU Actor Role Persistence
+Authority Wiring Design dispatch. R43-T1 is a docs-only no-commit worker
+dispatch for designing how actor-role authority should connect to the
+`fileBackedPersistenceRequested` decision path, without implying public-sync,
+Memory/RAG invocation or release, use-case expansion, runtime proof,
+private-output release, public runtime behavior, file-backed persistence
+invocation, persistence-mode widening, harness implementation, source/test
+edits, implementation wiring, or production write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -41,7 +42,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r42_t1_mineru_persistence_mode_authority_reopen_source_discovery_closed_missing_confirmed_pending_operator_next_initiative_or_fresh_design_packet`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=operator may select a fresh source-verified actor-role authority wiring design packet, a different held MinerU lane, stop this lane, or a new initiative; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=execute R43-T1 no-commit docs-only actor-role authority wiring design worker, creating only the design matrix and worker return, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, implementation wiring, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current State
 
@@ -53,10 +54,10 @@ Startup acknowledged: current mode=`msea_r42_t1_mineru_persistence_mode_authorit
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `f88ecfaca` Close MSEA R42 T1 source discovery |
-| Latest session-sync target | this session-sync after R42-T1 closure |
+| Latest material packet | `d27fc56fa` Dispatch MSEA R43 T1 actor role wiring design |
+| Latest session-sync target | this session-sync after R43-T1 dispatch |
 | Latest handoff marker sync target | `1b9df6ff0` Sync handoff marker after ADIF 0025 |
-| Latest provenance session-sync parent | `f88ecfaca` Close MSEA R42 T1 source discovery |
+| Latest provenance session-sync parent | `d27fc56fa` Dispatch MSEA R43 T1 actor role wiring design |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -67,54 +68,75 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r42_t1_mineru_persistence_mode_authority_reopen_source_discovery_closed_missing_confirmed_pending_operator_next_initiative_or_fresh_design_packet`
+`msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R42-T1 MinerU Persistence Mode Authority Reopen Source Discovery closed
-at material commit `f88ecfaca` ("Close MSEA R42 T1 source discovery"). The
-closure accepted the repaired worker return, source-discovery decision matrix,
-completion review, and closed work order.
+MSEA-R43-T1 MinerU Actor Role Persistence Authority Wiring Design dispatched
+at material commit `d27fc56fa` ("Dispatch MSEA R43 T1 actor role wiring
+design"). The dispatch created a fresh source-verified GC-018 baseline and
+WORKER_MUST_NOT_COMMIT docs-only work order for designing actor-role authority
+wiring into the `fileBackedPersistenceRequested` decision path.
 
-Selected R42-T1 disposition:
-`R42_T1_PERSISTENCE_AUTHORITY_SOURCE_MISSING_CONFIRMED`.
+Allowed worker artifacts:
 
-Reviewer repair: the worker initially overbroadly said no route/release/
-invocation reference to `runtime-memory-hierarchy.ts` existed. Reviewer
-repaired the source claim to distinguish `RuntimeMemoryActorRole` type usage
-inside `mineru-durable-store-invocation.ts` from actual
-`evaluateRuntimeMemoryAction` decision-path authority for
-`fileBackedPersistenceRequested`. The missing-authority result remains
-accepted.
+- `docs/reference/CVF_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_MATRIX_2026-07-06.md`
+- `docs/reviews/CVF_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_WORKER_RETURN_2026-07-06.md`
 
-R42-T1 closure evidence: worker-return fast gate PASS; pre-implementation
-autorun PASS 75 commands; reviewer-return steward PASS; corpus scan registry
-path-literal check PASS; material pre-commit hook PASS 80/80.
+The worker must select exactly one of:
+`R43_T1_ACTOR_ROLE_WIRING_DESIGN_READY_FOR_IMPLEMENTATION_PACKET`,
+`R43_T1_ACTOR_ROLE_WIRING_DESIGN_HELD_PENDING_MISSING_AUTHORITY`, or
+`R43_T1_ACTOR_ROLE_WIRING_DESIGN_CONTRADICTION_BLOCKED`.
 
-The closure does not authorize source/test edits, MinerU runtime execution,
+Dispatch evidence: dispatch-quality PASS; pre-dispatch autorun PASS 73
+commands; dispatch commit steward PASS; material pre-commit hook PASS 80/80.
+
+The dispatch does not authorize source/test edits, MinerU runtime execution,
 private/generated output content reads, file-backed persistence invocation,
 persistence-mode widening, production durable-store invocation, production
 Memory/RAG route invocation or release, retrieval, vectorization,
-provider/live proof, public-sync, use-case/legal workflow, push, or public
-claim.
+provider/live proof, implementation wiring, public-sync, use-case/legal
+workflow, push, or public claim.
 
 Active handoff rotation: none required for this session-sync. V37 remains well
 under the governed file-size guard hard threshold for its class.
 
 ## Next Allowed Move
 
-Operator may select a fresh source-verified implementation-design packet for
-explicitly wiring an actor-role authority mechanism into the
-`fileBackedPersistenceRequested` decision path, select a different held MinerU
-system-chain lane such as R39 production Memory/RAG authority or private-output
-policy, stop this MinerU lane, or start a new initiative.
+Execute MSEA-R43-T1 no-commit docs-only actor-role persistence authority
+wiring design worker. Worker may create only the design matrix and worker
+return named above, then return `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`.
 
 This next move must not run MinerU runtime, read private/generated output
 content, invoke file-backed persistence, widen persistence mode, invoke or
 release production Memory/RAG, add retrieval or vectorization, run
 provider/live proof, edit provider-local or IDE config, public-sync, worker
-commit, push, or make a public claim unless a fresh governed packet releases
-that scope.
+commit, push, implement wiring, or make a public claim unless a later governed
+packet releases that scope.
+
+## Core Guard Self-Protection Authorization - MSEA-R43-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R43-T1
+material dispatch commit `d27fc56fa`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after R43-T1 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R43-T1 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R43-T1 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR43T1MineruActorRolePersistenceAuthorityWiringDesignDispatch20260706.json` | Record R43-T1 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R43-T1 no-commit docs-only worker execution. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R43-T1 dispatch continuity and worker-execution next move. |
+
+Rollback boundary: revert only this R43-T1 dispatch session-sync if rejected;
+do not revert material dispatch commit `d27fc56fa`, R42-T1 closure commit
+`f88ecfaca`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R42-T1 Closure Session Sync
 
