@@ -49,6 +49,10 @@ This handoff is active for startup routing. Historical continuity from V37 is ar
 
 R48 material closure added `docs/reviews/CVF_MSEA_R48_MINERU_TO_PLANE_ABSORB_TRANSITION_READINESS_PACKET_2026-07-06.md` at commit `34151de7c`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing from V37 to V38.
 
+## HEAD Freshness
+
+Latest session-sync parent commit: `820b9fc3`.
+
 ## R48 Boundary
 
 R48 is a docs-only source-verified transition-readiness decision. It allows only target selection and owner-surface mapping as a future packet. It does not authorize direct absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, hosted release, provider-local config edit, push, or public claim.
