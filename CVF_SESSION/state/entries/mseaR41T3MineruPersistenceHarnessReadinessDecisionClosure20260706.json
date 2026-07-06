@@ -1,0 +1,28 @@
+{
+  "stateOrder": 619,
+  "stateKey": "mseaR41T3MineruPersistenceHarnessReadinessDecisionClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "7c5d94ac5",
+    "closureBaseHead": "9d423e800",
+    "dispatchCommit": "7be26e751",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_COMPLETION_2026-07-06.md",
+    "selectedDisposition": "R41_T3_MINIMAL_PERSISTENCE_HARNESS_BLOCKED_BY_R41_T2_AUTHORITY_GAPS",
+    "closureDisposition": "R41_T3_READINESS_DECISION_COMPLETE_BLOCKED_BY_R41_T2_AUTHORITY_GAPS",
+    "persistenceHarnessDisposition": "MINIMAL_PERSISTENCE_HARNESS_IMPLEMENTATION_NOT_AUTHORIZED",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75 commands",
+      "corpus scan registry path-literal check PASS",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "AUTHOR_R41_T4_STOP_RELEASE_DECISION_WORK_ORDER_OR_OPERATOR_STOP_OR_FRESH_REOPEN_AUTHORITY_PACKET",
+    "claimBoundary": "R41-T3 closes a docs-only persistence harness readiness decision and accepts the blocked-by-R41-T2-authority-gaps disposition. It does not authorize source/test edits, MinerU runtime execution, private/generated output content reads, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}
