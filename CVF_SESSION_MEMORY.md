@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r52_provenance_sync_and_next_target_selection_closed_pass_bounded_ready_for_r53_plane_absorb_repo_discovery`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision packet; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, or implementation is authorized by R52.
+Startup acknowledged: current mode=`msea_r53_plane_absorb_repo_target_discovery_closed_pass_bounded_ready_for_r54_p3_reconciliation_readiness`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision packet; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no merge, branch reconciliation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, or implementation is authorized by R53.
 
 ## Current Mode
 
-Current mode marker: `msea_r52_provenance_sync_and_next_target_selection_closed_pass_bounded_ready_for_r53_plane_absorb_repo_discovery`
+Current mode marker: `msea_r53_plane_absorb_repo_target_discovery_closed_pass_bounded_ready_for_r54_p3_reconciliation_readiness`
 
-Current mode: `msea_r52_provenance_sync_and_next_target_selection_closed_pass_bounded_ready_for_r53_plane_absorb_repo_discovery`
+Current mode: `msea_r53_plane_absorb_repo_target_discovery_closed_pass_bounded_ready_for_r54_p3_reconciliation_readiness`
 
-`msea_r52_provenance_sync_and_next_target_selection_closed_pass_bounded_ready_for_r53_plane_absorb_repo_discovery`
+`msea_r53_plane_absorb_repo_target_discovery_closed_pass_bounded_ready_for_r54_p3_reconciliation_readiness`
 
 Previous mode:
 
-`msea_r51_t1_post_r50_public_safe_catalog_snapshot_refresh_closed_pass_bounded_exported_stop_checkpoint`
+`msea_r52_provenance_sync_and_next_target_selection_closed_pass_bounded_ready_for_r53_plane_absorb_repo_discovery`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R53 Plane Absorb Repo Target Discovery And Readiness Decision | `22c471fdd` | CLOSED_PASS_BOUNDED; selected `R53_SELECT_P3_PROVENANCE_PLANE_RECONCILIATION_READINESS_DECISION`; selected `Controlled-Vibe-Framework-CVF-P3` on branch `restructuring/p3-layout-wave-2` as the next target; next packet is fresh source-verified MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision; focused gates PASS, pre-implementation autorun PASS 75/75 on `c875b6084..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no merge, branch reconciliation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R52 Provenance Sync And Next Target Selection Packet | `18f177033` | CLOSED_PASS_BOUNDED; selected `R52_SELECT_PLANE_ABSORB_REPO_TARGET_DISCOVERY_AND_READINESS_DECISION`; next target is fresh source-verified MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision; repaired provenance pre-push hygiene by classifying `AGENT_HANDOFF_V38_2026-07-06.md` as `INTERNAL_ONLY` in the root-file exposure registry; pre-implementation autorun PASS 75/75 on `0a545b1b5..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, external absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, provider-local config edit, or public claim is authorized. |
 | MSEA-R51-T1 Post R50 Public Safe Catalog Snapshot Refresh | `0b1cda836` provenance / `65f3dd6ce` public | CLOSED_PASS_BOUNDED_EXPORTED; public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5` pushed to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` on `main`; refreshed public README, evidence index, `docs/evidence/public-current-state-snapshot-2026-07-07.md`, and public technical product catalog with R50 sealed internal foundation system-chain posture and public-safe boundaries; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `f46a8dadd..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move remains stop/checkpoint unless a fresh operator-named target and fresh source-verified authority are provided; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or new public claim is authorized. |
 | MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal | `5a37765fa` | CLOSED_PASS_BOUNDED; selected `R50_MINERU_FOUNDATION_SYSTEM_CHAIN_SEALED_STOP_CHECKPOINT`; seals MinerU/scanlayer/memory as an internal foundation system chain against `docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md`; focused gates PASS, pre-implementation autorun PASS 75/75 on `19401824a..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is stop/checkpoint unless a fresh operator-named target and fresh source-verified authority are provided; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
@@ -165,9 +166,33 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r52_provenance_sync_and_next_target_selection_closed_pass_bounded_ready_for_r53_plane_absorb_repo_discovery`
+Mode: `msea_r53_plane_absorb_repo_target_discovery_closed_pass_bounded_ready_for_r54_p3_reconciliation_readiness`
 
-Next allowed move: author a fresh source-verified MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision packet. R53 is docs-only target discovery/readiness: it may enumerate candidate plane/absorb repositories or owner surfaces and select exactly one target or stop. It must not edit source/tests, import external source, run runtime/provider/MCP proof, mutate public-sync, read private/generated MinerU output, release production Memory/RAG, perform retrieval/vectorization, open use-case/legal workflow, or claim public/hosted/production readiness. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: author a fresh source-verified MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision packet. R54 is docs-only readiness: it may inspect the selected P3 branch as a source target, compare it with current provenance state, and decide whether to reconcile, park, or author a later narrower implementation work order. It must not merge branches, edit source/tests, import external source, run runtime/provider/MCP proof, mutate public-sync, read private/generated MinerU output, release production Memory/RAG, perform retrieval/vectorization, open use-case/legal workflow, or claim public/hosted/production readiness. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R53 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R53 material
+closure commit `22c471fdd`, including active mode, next allowed move, generated
+active state, bootstrap read model, front-door continuity, active handoff, and
+R53 closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R53 target selection and next R54 route. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R53 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R53 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R53 closure. |
+| `CVF_SESSION/state/entries/mseaR53PlaneAbsorbRepoTargetDiscoveryReadiness20260707.json` | Record R53 closure and selected P3 target. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R54 P3 readiness packet. |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R53 continuity and R54 next target. |
+
+Rollback boundary: revert only this MSEA-R53 session-sync if rejected; do not
+revert material closure commit `22c471fdd`, R52 material commit `18f177033`,
+public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA
+history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R52 Session Sync
 
