@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_closed_pending_memory_owner_authorization_packet_or_stop`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=author a fresh source-verified GC-018/work order for the memory-owner authorization packet named by R39-T1, or stop if the operator does not want to pursue the production Memory/RAG lane further; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; source/test edits, runtime, MinerU execution, private/generated content read, Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r40_t1_mineru_system_chain_provider_live_proof_dispatched_worker_returned_complete_pending_review_awaiting_reviewer_closure_decision`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=reviewer must review the MSEA-R40-T1 worker return and worker-added test file, then decide closure (accept and commit, or request repair); parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; source/test edits beyond reviewer-accepted worker output, runtime, MinerU execution, private/generated content read, Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, additional provider/live proof beyond the returned R40-T1 test, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_closed_pending_memory_owner_authorization_packet_or_stop`
+Current mode marker: `msea_r40_t1_mineru_system_chain_provider_live_proof_dispatched_worker_returned_complete_pending_review_awaiting_reviewer_closure_decision`
 
-Current mode: `msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_closed_pending_memory_owner_authorization_packet_or_stop`
+Current mode: `msea_r40_t1_mineru_system_chain_provider_live_proof_dispatched_worker_returned_complete_pending_review_awaiting_reviewer_closure_decision`
 
-`msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_closed_pending_memory_owner_authorization_packet_or_stop`
+`msea_r40_t1_mineru_system_chain_provider_live_proof_dispatched_worker_returned_complete_pending_review_awaiting_reviewer_closure_decision`
 
 Previous mode:
 
-`msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_dispatched_pending_worker_return`
+`msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_closed_pending_memory_owner_authorization_packet_or_stop`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R40-T1 MinerU System Chain Provider Live Proof dispatch and worker return | `c80bcd7b1` | DISPATCHED then worker returned `COMPLETE_PENDING_REVIEW` at `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md`, per WORKER_MUST_NOT_COMMIT leaving two untracked worker-added paths pending reviewer acceptance; existing deterministic MinerU test set passed 5 Vitest files / 73 tests, Python MinerU metadata receipt writer tests passed 71 tests, and the new focused live Alibaba/DashScope test passed 1 file / 1 test; worker-return quality gate, dispatch-quality gate, finding-to-governance learning gate, and worker-experience retrospective gate all PASS; worker-return fast gate and pre-implementation autorun gate were BLOCKED only by GC-020 active-handoff HEAD freshness before this session-sync; next move is reviewer review and closure decision for R40-T1, not automatic acceptance. |
 | MSEA-R39-T1 MinerU Production Memory/RAG Route Release Authority Decision closure | `bdc865ce0` | CLOSED_PASS_BOUNDED; accepted work order closure, source-verified decision matrix, repaired worker return, and completion review; selected `R39_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_HELD_PENDING_AUTHORITY_GAPS` and `R39_T1_AUTHORITY_DECISION_COMPLETE_HELD_PENDING_AUTHORITY_GAPS`; reviewer repaired stale session-front-door source row and TypeScript line citations to physical lines 93 and 78; worker-return fast gate PASS after repair, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh memory-owner authorization packet authoring or stop, with implementation/runtime/production Memory/RAG release still unauthorized. |
 | MSEA-R39-T1 MinerU Production Memory/RAG Route Release Authority Decision dispatch | `2931cd918` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only work order for production Memory/RAG route release authority decision; worker may create only `docs/reference/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; no source/test edit, runtime, MinerU execution, private/generated content read, Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, or public claim is authorized. |
 | MSEA-R38 T1-T4 MinerU To Memory ScanLayer System Chain Closure Audit closure | `42a0f1f02` | CLOSED_PASS_BOUNDED; accepted T1 chain map, T2 gap classification, T3 minimal harness decision, T4 release-gate decision, worker return, completion review, and closed work order; selected `SYSTEM_FOUNDATION_COMPLETE_STOP` and `R38_T1_T4_AUDIT_COMPLETE_SYSTEM_FOUNDATION_COMPLETE_STOP`; worker-return fast gate PASS, dispatch-quality check PASS, reviewer-return steward PASS, material pre-commit hook PASS 80/80; answer: MinerU/Memory/scanlayer is a coherent foundation/internal system chain only, not production memory/RAG, file-backed persistence, provider/live proof, public runtime proof, or use-case/legal workflow readiness; next move is operator selection of exactly one held authority lane through fresh source-verified packet if further value is desired. |
@@ -136,9 +137,35 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r39_t1_mineru_production_memory_rag_route_release_authority_decision_closed_pending_memory_owner_authorization_packet_or_stop`
+Mode: `msea_r40_t1_mineru_system_chain_provider_live_proof_dispatched_worker_returned_complete_pending_review_awaiting_reviewer_closure_decision`
 
-Next allowed move: author a fresh source-verified GC-018/work order for the memory-owner authorization packet named by R39-T1, or stop if the operator does not want to pursue the production Memory/RAG lane further. No implementation, source/test edit, runtime, MinerU execution, private/generated content read, Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: reviewer must review the MSEA-R40-T1 worker return at `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md` and the worker-added test file `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-live.alibaba.test.ts`, then decide closure (accept and commit the worker deliverables, or request repair). No implementation, source/test edit beyond reviewer-accepted worker output, runtime, MinerU execution, private/generated content read, Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, additional provider/live proof beyond the returned R40-T1 test, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R40-T1 Dispatch And Worker-Return Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R40-T1
+dispatch material commit `c80bcd7b1`, bringing active mode, next allowed
+move, generated active state, bootstrap read model, and front-door
+continuity current with that commit so the already-returned R40-T1 worker
+output can proceed to reviewer closure.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R40-T1 dispatch/worker-return continuity and reviewer-closure next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R40-T1 session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R40-T1 dispatch/worker-return. |
+| `CVF_SESSION/state/entries/mseaR40T1MineruSystemChainProviderLiveProofDispatch20260706.json` | Record accepted R40-T1 dispatch evidence. |
+| `CVF_SESSION/state/entries/mseaR40T1WorkerReturnSessionSync20260706.json` | Record R40-T1 worker-return continuity evidence and reviewer-closure routing. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to reviewer review and closure decision for R40-T1. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record dispatch commit `c80bcd7b1` for GC-020 handoff HEAD freshness and R40-T1 worker-return continuity. |
+
+Rollback boundary: revert only this R40-T1 session-sync if rejected; do not
+revert material dispatch commit `c80bcd7b1`, prior closure commit
+`bdc865ce0`, or earlier accepted history. Do not commit or revert the two
+untracked worker-added paths as part of this sync's rollback.
 
 ## Core Guard Self-Protection Authorization - MSEA-R39-T1 Closure Session Sync
 

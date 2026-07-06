@@ -1,0 +1,24 @@
+{
+  "stateOrder": 565,
+  "stateKey": "mseaR40T1MineruSystemChainProviderLiveProofDispatch20260706",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-06",
+    "materialCommit": "c80bcd7b1",
+    "materialCommitFull": "c80bcd7b1b4f2f29d999ff77785daa6b77ec2fd3",
+    "dispatchBaseHead": "4e917ebb6",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md",
+    "workerAddedTestPath": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-live.alibaba.test.ts",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_AUTHORIZED_BOUNDED",
+    "verification": [
+      "pre-dispatch autorun PASS",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS"
+    ],
+    "nextRecommendedMove": "EXECUTE_R40_T1_BOUNDED_LIVE_PROOF_WORKER_THEN_RETURN_FOR_REVIEW_NO_COMMIT",
+    "claimBoundary": "R40-T1 dispatch authorizes only one bounded live provider proof over summary-only MinerU system-chain harness context. It does not authorize MinerU runtime execution, private/generated output content reads, production Memory/RAG route release, file-backed persistence, retrieval, vectorization, public-sync, worker commit, push, public claim, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, or production readiness."
+  }
+}
