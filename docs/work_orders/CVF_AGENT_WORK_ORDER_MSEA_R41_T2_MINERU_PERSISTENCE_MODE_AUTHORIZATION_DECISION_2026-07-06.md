@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Batch ID: MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION
 
@@ -120,6 +120,14 @@ The decision matrix must select exactly one disposition:
 - `R41_T2_PERSISTENCE_MODE_AUTHORIZATION_REJECTED_STOP`
 
 If the selected disposition is ready-for-implementation-packet, the matrix must name the authority actor, the source-backed invariant conditions, and the required future implementation packet boundaries. If the selected disposition is held or stop, the matrix must name the unresolved authority gap and the exact condition that would reopen the lane.
+
+## Required Artifact Manifest
+
+| Artifact | Required path | Owner | Closure disposition |
+| --- | --- | --- | --- |
+| Decision matrix | `docs/reference/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_MATRIX_2026-07-06.md` | no-commit worker | accepted by reviewer completion |
+| Worker return | `docs/reviews/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_WORKER_RETURN_2026-07-06.md` | no-commit worker | accepted by reviewer completion |
+| Completion review | `docs/reviews/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_COMPLETION_2026-07-06.md` | reviewer/closer | `CLOSED_PASS_BOUNDED` |
 
 ## Allowed Scope
 
@@ -438,6 +446,30 @@ Worker handoff is not closure. Reviewer/closer must inspect the matrix and worke
 ## Operator Checkpoint
 
 No operator checkpoint is required for worker execution inside Allowed Scope. Operator approval is required before source/test edits, runtime execution, private/generated output reads, persistence invocation, Memory/RAG release, provider/live proof, public-sync, use-case/legal work, worker commit, push, or claim-boundary expansion.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Closure status | this work order | `Status: CLOSED` | PASS |
+| Work order status | this work order | `Status: CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_COMPLETION_2026-07-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | N/A with reason: R41-T2 is a standalone operator-selected authority lane packet, not a roadmap-derived closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `python governance/compat/generate_corpus_scan_registry.py --check` PASS during worker-return fast gate | PASS |
+| Registry Markdown | changed corpus registry coverage | reviewer-fast changed corpus registry coverage PASS | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact, public-web source, or local external file was absorbed | N/A with reason |
+| System loop interlock | R41-T2 decision matrix and completion review | `R41_T2_PERSISTENCE_MODE_AUTHORIZATION_HELD_PENDING_AUTHORITY_GAPS`; no persistence-mode widening or implementation release | PASS |
+| Session continuity | session state, session memory, and active handoff | dedicated session-sync commit required after material commit | PASS |
+| Worker return | `docs/reviews/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_WORKER_RETURN_2026-07-06.md` | `Status: COMPLETE_PENDING_REVIEW`, accepted by completion review | PASS |
+| Runtime boundary | R41-T2 completion review | no source/test/runtime/private/provider/public execution | PASS |
+| Public disposition | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| No runtime receipt is accepted by this closure | R41-T2 remains docs-only and accepts no MinerU runtime, file-backed persistence, provider/live, memory-write, public-sync, or production route receipt | PASS |
+| Worker return accepted only after reviewer closure | Completion review records `CLOSED_PASS_BOUNDED` | PASS |
 
 ## Claim Boundary
 
