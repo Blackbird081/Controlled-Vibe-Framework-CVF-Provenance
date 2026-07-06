@@ -6,13 +6,13 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R41-T4 MinerU Foundation Chain Stop Release
-Decision closure. The active session is routed to operator next-initiative or
-fresh reopen-packet selection, without implying public-sync, Memory/RAG
-invocation or release, use-case expansion, runtime proof, private-output
-release, public runtime behavior, file-backed persistence invocation,
-persistence-mode widening, harness implementation, or production write
-authority.
+Carry compact continuity after MSEA-R42-T1 MinerU Persistence Mode Authority
+Reopen Source Discovery dispatch. The active session is routed to no-commit
+docs-only worker execution and reviewer return, without implying public-sync,
+Memory/RAG invocation or release, use-case expansion, runtime proof,
+private-output release, public runtime behavior, file-backed persistence
+invocation, persistence-mode widening, harness implementation, or production
+write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -27,8 +27,8 @@ only and does not accept or close the R40-T1 worker deliverables.
 
 ## Scope
 
-Target: active session continuity and handoff maintainability after R41-T4
-closure. Owner: session-sync steward. Scope is limited to startup routing,
+Target: active session continuity and handoff maintainability after R42-T1
+dispatch. Owner: session-sync steward. Scope is limited to startup routing,
 active state, active handoff, and compact next-move continuity.
 
 ## Active Boundary
@@ -41,7 +41,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r41_t4_mineru_foundation_chain_stop_release_decision_closed_bounded_candidate_stop_pending_operator_next_initiative_or_fresh_reopen_packet`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=operator may stop, author a fresh source-verified R41-T2 reopen packet, author a fresh source-verified R39 authority packet, select a different held lane such as private-output policy, or start a new initiative; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r42_t1_mineru_persistence_mode_authority_reopen_source_discovery_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=execute R42-T1 docs-only no-commit source-discovery worker and return for review; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current State
 
@@ -53,10 +53,10 @@ Startup acknowledged: current mode=`msea_r41_t4_mineru_foundation_chain_stop_rel
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `41802d2ff` Accept MSEA R41 T4 foundation chain stop release decision |
-| Latest session-sync target | this session-sync after R41-T4 closure |
+| Latest material packet | `9198f09ca` Dispatch MSEA R42 T1 persistence mode authority source discovery |
+| Latest session-sync target | this session-sync after R42-T1 dispatch |
 | Latest handoff marker sync target | `1b9df6ff0` Sync handoff marker after ADIF 0025 |
-| Latest provenance session-sync parent | `41802d2ff` Accept MSEA R41 T4 foundation chain stop release decision |
+| Latest provenance session-sync parent | `9198f09ca` Dispatch MSEA R42 T1 persistence mode authority source discovery |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -67,43 +67,68 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r41_t4_mineru_foundation_chain_stop_release_decision_closed_bounded_candidate_stop_pending_operator_next_initiative_or_fresh_reopen_packet`
+`msea_r42_t1_mineru_persistence_mode_authority_reopen_source_discovery_dispatched_pending_worker_return`
 
 ## Latest Changes
 
-MSEA-R41-T4 MinerU Foundation Chain Stop Release Decision closed at material
-commit `41802d2ff` ("Accept MSEA R41 T4 foundation chain stop release
-decision"). The closure accepted the decision matrix, worker return,
-completion review, and closed work order.
+MSEA-R42-T1 MinerU Persistence Mode Authority Reopen Source Discovery
+dispatched at material commit `9198f09ca` ("Dispatch MSEA R42 T1 persistence
+mode authority source discovery"). The dispatch accepted the paired GC-018
+baseline and WORKER_MUST_NOT_COMMIT docs-only work order.
 
-R41-T4 closure evidence: worker-return fast gate passed; pre-implementation
-autorun passed 75 commands; corpus scan registry path-literal check passed;
-reviewer-return steward passed; material pre-commit hook passed 80/80.
+R42-T1 dispatch evidence: dispatch-quality check passed; pre-dispatch autorun
+passed 73 commands; dispatch commit steward passed; material pre-commit hook
+passed 80/80.
 
-R41-T4 selected `R41_T4_FOUNDATION_CHAIN_STOP_BOUNDED_CANDIDATE` and
-`R41_T4_STOP_RELEASE_DECISION_COMPLETE_BOUNDED_CANDIDATE`. MinerU/Memory/
-scanlayer remains a bounded foundation/internal candidate stop-state only.
-Production Memory/RAG release, file-backed persistence release,
-persistence-mode widening, minimal persistence harness implementation,
-private/generated output release, provider/live proof, public-sync,
-use-case/legal workflow, push, and public claim remain unauthorized.
+R42-T1 worker may create only
+`docs/reference/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_MATRIX_2026-07-06.md`
+and
+`docs/reviews/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_WORKER_RETURN_2026-07-06.md`.
+The worker must select exactly one R42-T1 disposition token and must not treat
+adjacent source existence as authority unless it directly satisfies a named
+R41-T2 reopen path. The dispatch does not authorize source/test edits, MinerU
+runtime execution, private/generated output content reads, file-backed
+persistence invocation, persistence-mode widening, production durable-store
+invocation, production Memory/RAG route invocation or release, retrieval,
+vectorization, provider/live proof, public-sync, use-case/legal workflow,
+push, or public claim.
 
 Active handoff rotation: none required for this session-sync. V37 remains well
 under the governed file-size guard hard threshold for its class.
 
 ## Next Allowed Move
 
-MSEA-R41-T4 is closed as a bounded candidate stop-state. Operator may stop,
-author a fresh source-verified packet satisfying the R41-T2 reopen condition,
-author a fresh source-verified packet for R39's memory-owner/production-
-persistence authority gap, select a different held lane such as private-output
-policy, or start a new initiative.
+Execute MSEA-R42-T1 docs-only source-discovery worker under
+WORKER_MUST_NOT_COMMIT. Worker creates only the decision matrix and worker
+return named in Latest Changes, then returns COMPLETE_PENDING_REVIEW or
+BLOCKED_WITH_REASON without commit.
 
 This next move must not run MinerU runtime, read private/generated output
 content, invoke file-backed persistence, widen persistence mode, invoke or
 release production Memory/RAG, add retrieval or vectorization, run
 provider/live proof, edit provider-local or IDE config, public-sync, worker
-commit, push, or make a public claim without a fresh governed packet.
+commit, push, or make a public claim.
+
+## Core Guard Self-Protection Authorization - MSEA-R42-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R42-T1
+material dispatch commit `9198f09ca`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR42T1MineruPersistenceModeAuthorityReopenSourceDiscoveryDispatch20260706.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V37_2026-07-06.md`
+
+Rollback boundary: revert only this R42-T1 dispatch session-sync if rejected;
+do not revert material dispatch commit `9198f09ca`, R41-T4 closure commit
+`41802d2ff`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R41-T4 Closure Session Sync
 
