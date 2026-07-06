@@ -1,0 +1,25 @@
+{
+  "stateOrder": 611,
+  "stateKey": "mseaR41T1MineruFileBackedPersistenceReleaseAuthorityDecisionClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "51216fb9a",
+    "materialCommitFull": "51216fb9ab1073dae73ff4b19a979fd65c017ec3",
+    "closureBaseHead": "f324d1d96",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R41_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_AUTHORITY_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R41_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R41_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R41_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_AUTHORITY_DECISION_COMPLETION_2026-07-06.md",
+    "selectedDisposition": "R41_T1_FILE_BACKED_PERSISTENCE_RELEASE_HELD_PENDING_AUTHORITY_GAPS",
+    "closureDisposition": "R41_T1_AUTHORITY_DECISION_COMPLETE_HELD_PENDING_AUTHORITY_GAPS",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75 commands",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "AUTHOR_PERSISTENCE_MODE_AUTHORIZATION_PACKET_OR_STOP",
+    "claimBoundary": "R41-T1 closes only the docs-only file-backed persistence release authority decision. File-backed persistence release remains held pending authority gaps. This closure does not authorize source/test edits, MinerU runtime execution, private/generated output content reads, file-backed persistence invocation, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, interface/root-barrel/runtime wiring, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}
