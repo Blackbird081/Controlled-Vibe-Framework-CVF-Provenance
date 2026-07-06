@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r41_t2_mineru_persistence_mode_authorization_decision_closed_pending_operator_reopen_lane_or_stop_decision`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=operator decision only: author a fresh source-verified R41-T2 reopen packet, select a different held MinerU system-chain lane, or stop; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r41_t3_mineru_persistence_harness_readiness_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=execute the no-commit R41-T3 docs-only readiness decision worker, then stop for review; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r41_t2_mineru_persistence_mode_authorization_decision_closed_pending_operator_reopen_lane_or_stop_decision`
+Current mode marker: `msea_r41_t3_mineru_persistence_harness_readiness_decision_dispatched_pending_worker_return`
 
-Current mode: `msea_r41_t2_mineru_persistence_mode_authorization_decision_closed_pending_operator_reopen_lane_or_stop_decision`
+Current mode: `msea_r41_t3_mineru_persistence_harness_readiness_decision_dispatched_pending_worker_return`
 
-`msea_r41_t2_mineru_persistence_mode_authorization_decision_closed_pending_operator_reopen_lane_or_stop_decision`
+`msea_r41_t3_mineru_persistence_harness_readiness_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r41_t2_mineru_persistence_mode_authorization_decision_dispatched_pending_worker_return`
+`msea_r41_t2_mineru_persistence_mode_authorization_decision_closed_pending_operator_reopen_lane_or_stop_decision`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R41-T3 MinerU Persistence Harness Readiness Decision dispatch | `7be26e751` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only work order for persistence harness readiness decision; worker may create only `docs/reference/CVF_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; dispatch-quality PASS, pre-dispatch autorun PASS 73 commands, dispatch steward PASS, material pre-commit hook PASS 80/80; worker must select `R41_T3_MINIMAL_PERSISTENCE_HARNESS_BLOCKED_BY_R41_T2_AUTHORITY_GAPS` unless accepted evidence satisfies the R41-T2 reopen condition; no source/test edit, MinerU runtime, private/generated content read, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, public-sync, worker commit, push, or public claim is authorized. |
 | MSEA-R41-T2 MinerU Persistence Mode Authorization Decision closure | `4a08d3ef0` | CLOSED_PASS_BOUNDED; accepted decision matrix, worker return, completion review, and closed work order; selected `R41_T2_PERSISTENCE_MODE_AUTHORIZATION_HELD_PENDING_AUTHORITY_GAPS` and `R41_T2_AUTHORITY_DECISION_COMPLETE_HELD_PENDING_AUTHORITY_GAPS`; worker-return fast gate PASS, pre-implementation autorun PASS 75 commands, corpus scan registry path-literal check PASS, reviewer-return steward PASS, material pre-commit hook PASS 80/80; persistence-mode widening and file-backed persistence invocation remain held pending explicit source-backed authority gaps and no runtime, private-output, production route, provider/live, public-sync, use-case/legal, worker commit, push, or public claim is authorized. |
 | MSEA-R41-T2 MinerU Persistence Mode Authorization Decision dispatch | `a9bc692d3` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only work order for persistence-mode authorization decision; worker may create only `docs/reference/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; pre-dispatch autorun PASS 73 commands, dispatch steward PASS, material pre-commit hook PASS 80/80; no source/test edit, MinerU runtime, private/generated content read, file-backed persistence invocation, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, public-sync, worker commit, push, or public claim is authorized. |
 | MSEA-R41-T1 MinerU File-Backed Persistence Release Authority Decision closure | `51216fb9a` | CLOSED_PASS_BOUNDED; accepted decision matrix, worker return, completion review, and closed work order; selected `R41_T1_FILE_BACKED_PERSISTENCE_RELEASE_HELD_PENDING_AUTHORITY_GAPS` and `R41_T1_AUTHORITY_DECISION_COMPLETE_HELD_PENDING_AUTHORITY_GAPS`; worker-return fast gate PASS, pre-implementation autorun PASS 75 commands, reviewer-return steward PASS, material pre-commit hook PASS 80/80; file-backed persistence release remains held pending a fresh persistence-mode authorization packet and no runtime, private-output, production route, provider/live, public-sync, use-case/legal, worker commit, push, or public claim is authorized. |
@@ -141,9 +142,32 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r41_t2_mineru_persistence_mode_authorization_decision_closed_pending_operator_reopen_lane_or_stop_decision`
+Mode: `msea_r41_t3_mineru_persistence_harness_readiness_decision_dispatched_pending_worker_return`
 
-Next allowed move: operator decision only - author a fresh source-verified GC-018/work order satisfying the R41-T2 reopen condition, select a different held MinerU system-chain lane, or stop. The R41-T2 reopen condition requires explicit source-backed persistence authority actor/role plus authorization mechanism, or a second persistence-mode literal/runtime check, or a new receipt/invariant field tied to fail-closed default. No source/test edit, MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: execute the no-commit R41-T3 docs-only readiness decision worker to create `docs/reference/CVF_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R41_T3_MINERU_PERSISTENCE_HARNESS_READINESS_DECISION_WORKER_RETURN_2026-07-06.md`, then stop for review. Worker must select `R41_T3_MINIMAL_PERSISTENCE_HARNESS_BLOCKED_BY_R41_T2_AUTHORITY_GAPS` unless accepted source-verified evidence satisfies the R41-T2 reopen condition. No source/test edit, MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R41-T3 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R41-T3
+dispatch commit `7be26e751`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R41-T3 dispatch continuity and no-commit worker next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T3 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T3 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR41T3MineruPersistenceHarnessReadinessDecisionDispatch20260706.json` | Record R41-T3 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to no-commit R41-T3 docs-only worker execution. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T3 dispatch continuity and HEAD freshness. |
+
+Rollback boundary: revert only this R41-T3 dispatch session-sync if rejected;
+do not revert dispatch commit `7be26e751`, R41-T2 closure commit `4a08d3ef0`,
+or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R41-T2 Closure Session Sync
 
