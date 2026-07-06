@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Batch ID: MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY
 
@@ -503,6 +503,31 @@ and update session continuity if accepted.
 | Pre-closure autorun | Reviewer-owned after material commit range is available. |
 | Session continuity | Reviewer/closer-owned only if accepted closure changes current mode or next move. |
 | Public export | Private-only unless a future public-sync packet authorizes export. |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_COMPLETION_2026-07-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_WORKER_RETURN_2026-07-06.md` | `Status: COMPLETE_PENDING_REVIEW`; accepted by completion review | PASS |
+| Companion decision matrix | `docs/reference/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_MATRIX_2026-07-06.md` | selected `R42_T1_PERSISTENCE_AUTHORITY_SOURCE_MISSING_CONFIRMED` | PASS |
+| Roadmap state | N/A | N/A with reason: R42-T1 is a standalone operator-selected source-discovery packet, not a roadmap-derived closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `python governance/compat/generate_corpus_scan_registry.py --check` PASS during worker-return fast gate | PASS |
+| Registry Markdown | changed corpus registry coverage | reviewer-fast changed corpus registry coverage PASS | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact, public-web source, or local external file was absorbed | N/A with reason |
+| System loop interlock | R42-T1 decision matrix and completion review | source-missing confirmed; no implementation or production release | PASS |
+| Session continuity | session state, session memory, and active handoff | dedicated session-sync commit required after material commit | PASS |
+| Runtime boundary | completion review and worker return | no source/test/runtime/private/provider/public execution | PASS |
+| Public disposition | this work order and completion review | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| No runtime receipt is accepted by this closure | R42-T1 remains docs-only and accepts no MinerU runtime, harness execution, file-backed persistence, provider/live, memory-write, public-sync, or production route receipt | PASS |
+| Worker return accepted only after reviewer closure | R42-T1 completion review records `CLOSED_PASS_BOUNDED` | PASS |
+| Gate evidence is closure evidence only | Worker-return fast gate, pre-implementation autorun, and corpus scan registry checks are recorded as governance evidence, not runtime release evidence | PASS |
 
 ## Operator Checkpoint
 
