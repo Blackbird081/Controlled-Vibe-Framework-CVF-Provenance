@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Created: 2026-07-06
 
@@ -386,7 +386,7 @@ Disclosed defectIds:
 | Field | Evidence |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Source Verification Block; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Planned Worker Fulfillment Manifest; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED; Dispatch Prompt Envelope; Source Verification Block; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Planned Worker Fulfillment Manifest; Public Export Disposition; Machine Closure Package; Acceptance Receipt Assertion Matrix; Claim Boundary |
 | gateRunPurpose | confirmation evidence before dispatch; gates confirm packet shape after source and checker read-ahead |
 | claimBoundary | checker read-ahead evidence only; no private-output read, production Memory/RAG release, retrieval, vectorization, file-backed production persistence, public-sync, worker commit, push, or public claim |
 
@@ -491,6 +491,30 @@ Disposition: DEFERRED_PRIVATE_ONLY
 
 Reason: R41-T1 is a private provenance authority-decision packet. It does
 not update public catalog content or make a public product-readiness claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Closure status | this work order | `Status: CLOSED` | PASS |
+| Work order status | this work order | `Status: CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R41_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_AUTHORITY_DECISION_COMPLETION_2026-07-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | N/A with reason: R41-T1 is a standalone operator-selected authority lane packet, not a roadmap-derived closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `python governance/compat/generate_corpus_scan_registry.py --check` PASS during worker-return fast gate | PASS |
+| Registry Markdown | changed corpus registry coverage | reviewer-fast changed corpus registry coverage PASS | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact, public-web source, or local external file was absorbed | N/A with reason |
+| System loop interlock | R41-T1 decision matrix and completion review | `R41_T1_FILE_BACKED_PERSISTENCE_RELEASE_HELD_PENDING_AUTHORITY_GAPS`; no file-backed persistence release | PASS |
+| Session continuity | session state, session memory, and active handoff | dedicated session-sync commit required after material commit | PASS |
+| Worker return | `docs/reviews/CVF_MSEA_R41_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md` | `Status: COMPLETE_PENDING_REVIEW`, accepted by completion review | PASS |
+| Runtime boundary | R41-T1 completion review | no source/test/runtime/private/provider/public execution | PASS |
+| Public disposition | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| No runtime receipt is accepted by this closure | R41-T1 remains docs-only and accepts no MinerU runtime, file-backed persistence, provider/live, memory-write, public-sync, or production route receipt | PASS |
+| Worker return accepted only after reviewer closure | Completion review records `CLOSED_PASS_BOUNDED` | PASS |
 
 ## Claim Boundary
 
