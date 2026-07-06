@@ -37,6 +37,12 @@ Startup acknowledged: current mode=`msea_r51_t1_post_r50_public_safe_catalog_sna
 
 This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R51-T1 exported the public-safe post-R50 snapshot; future continuation requires a fresh operator-named target and fresh source-verified authority.
 
+Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
 ## Latest Material Closure
 
 | Work | Commit | Disposition |
@@ -55,6 +61,8 @@ R51-T1 accepted `docs/reviews/CVF_MSEA_R51_T1_POST_R50_PUBLIC_SAFE_CATALOG_SNAPS
 ## HEAD Freshness
 
 Latest session-sync parent commit: `0b1cda836`.
+
+Latest handoff guard compatibility sync parent commit: `ef726c4fc`.
 
 Latest R51 dispatch commit: `fc5411ebc`.
 
