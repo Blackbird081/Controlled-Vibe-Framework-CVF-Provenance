@@ -7,11 +7,11 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md`
 ## Purpose
 
 Carry compact continuity after MSEA-R45-T1 MinerU Post R44 System Chain
-Release Or Stop Decision dispatch. R45-T1 authorizes only docs-only,
-source-verified no-commit worker execution to decide whether the post-R44
-system-chain state should stop as a bounded internal candidate, move to a
-minimal private smoke packet, move to an operator production authority packet,
-or remain held by source gaps. It does not imply public-sync, production
+Release Or Stop Decision closure. R45-T1 selected
+`R45_T1_POST_R44_STOP_BOUNDED_INTERNAL_CANDIDATE`, stopping the
+MinerU/Memory/scanlayer foundation lane as a bounded internal candidate unless
+the operator opens a fresh production release, provider/live, private-output,
+or use-case/legal checkpoint. It does not imply public-sync, production
 Memory/RAG invocation or release, use-case expansion, MinerU runtime proof,
 private-output release, public runtime behavior, production durable-store
 invocation, provider/live proof, or production write authority.
@@ -43,7 +43,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r45_t1_mineru_post_r44_system_chain_release_or_stop_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=MSEA-R45-T1 no-commit worker execution creating only the decision matrix and worker return named by the work order; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r45_t1_mineru_post_r44_system_chain_release_or_stop_decision_closed_stop_bounded_internal_candidate_pending_operator_next_initiative_or_checkpoint`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=stop the MinerU/Memory/scanlayer foundation lane as a bounded internal candidate and select an unrelated next initiative, or reopen only through a fresh operator checkpoint naming a specific production release, provider/live, private-output, or use-case/legal lane; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current State
 
@@ -55,10 +55,10 @@ Startup acknowledged: current mode=`msea_r45_t1_mineru_post_r44_system_chain_rel
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `cf0977295` Dispatch MSEA R45 T1 post R44 release decision |
-| Latest session-sync target | this session-sync after R45-T1 dispatch |
+| Latest material packet | `6415a3cf2` Accept MSEA R45 T1 post R44 stop decision |
+| Latest session-sync target | this session-sync after R45-T1 closure |
 | Latest handoff marker sync target | `1b9df6ff0` Sync handoff marker after ADIF 0025 |
-| Latest provenance session-sync parent | `cf0977295` Dispatch MSEA R45 T1 post R44 release decision |
+| Latest provenance session-sync parent | `6415a3cf2` Accept MSEA R45 T1 post R44 stop decision |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -69,9 +69,36 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r45_t1_mineru_post_r44_system_chain_release_or_stop_decision_dispatched_pending_worker_return`
+`msea_r45_t1_mineru_post_r44_system_chain_release_or_stop_decision_closed_stop_bounded_internal_candidate_pending_operator_next_initiative_or_checkpoint`
 
 ## Latest Changes
+
+MSEA-R45-T1 MinerU Post R44 System Chain Release Or Stop Decision closed at
+material commit `6415a3cf2` ("Accept MSEA R45 T1 post R44 stop decision").
+The accepted worker return and companion decision matrix select
+`R45_T1_POST_R44_STOP_BOUNDED_INTERNAL_CANDIDATE`, stopping the
+MinerU/Memory/scanlayer foundation lane as a bounded internal candidate until
+the operator opens a fresh production release, provider/live, private-output,
+or use-case/legal checkpoint.
+
+Accepted artifacts:
+
+- `docs/reference/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_MATRIX_2026-07-06.md`
+- `docs/reviews/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_WORKER_RETURN_2026-07-06.md`
+
+Reviewer decision: `ACCEPTED_FOR_MATERIAL_COMMIT`. Closure evidence:
+worker-return fast gate PASS; pre-implementation autorun PASS 75/75 on
+`9065a8875..HEAD`; reviewer-return commit steward PASS; material pre-commit
+hook PASS 80/80.
+
+This closure does not authorize further foundation-chain implementation,
+source/test edits, MinerU runtime execution, private/generated output content
+reads, production durable-store invocation, production Memory/RAG route
+invocation or release, retrieval, vectorization, provider/live proof, Web/UI
+implementation, public-sync, standalone app work, legal/use-case workflow,
+extraction accuracy, document truth, legal quality, current-law correctness,
+hosted release claim, production release claim, provider-local or IDE config
+edits, worker commit, push, or public claim.
 
 MSEA-R45-T1 MinerU Post R44 System Chain Release Or Stop Decision dispatched
 at material commit `cf0977295` ("Dispatch MSEA R45 T1 post R44 release
@@ -278,14 +305,41 @@ under the governed file-size guard hard threshold for its class.
 
 ## Next Allowed Move
 
-MSEA-R45-T1 no-commit worker execution creating only the decision matrix and
-worker return named by the work order, then stop for reviewer closure.
+Stop the MinerU/Memory/scanlayer foundation lane as a bounded internal
+candidate and select an unrelated next initiative, or reopen only through a
+fresh operator checkpoint naming a specific production release authority
+decision, provider/live proof beyond existing bounded private evidence,
+private-output policy packet, or use-case/legal workflow checkpoint.
 
-This next move must not edit source/tests, run MinerU runtime, read
-private/generated output content, invoke production durable-store behavior,
-invoke or release production Memory/RAG, add retrieval or vectorization, run
-provider/live proof, edit provider-local or IDE config, public-sync, worker
-commit, push, make a public claim, or enter legal/use-case workflow.
+This next move must not open further foundation-chain implementation, edit
+source/tests, run MinerU runtime, read private/generated output content, invoke
+production durable-store behavior, invoke or release production Memory/RAG, add
+retrieval or vectorization, run provider/live proof, edit provider-local or IDE
+config, public-sync, worker commit, push, make a public claim, or enter
+legal/use-case workflow without that fresh operator checkpoint.
+
+## Core Guard Self-Protection Authorization - MSEA-R45-T1 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R45-T1
+material closure commit `6415a3cf2`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current closed work, startup acknowledgment, and next allowed move after R45-T1 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R45-T1 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R45-T1 closed stop state. |
+| `CVF_SESSION/state/entries/mseaR45T1MineruPostR44SystemChainReleaseOrStopDecisionClosure20260706.json` | Record R45-T1 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop or a fresh operator checkpoint. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R45-T1 closure continuity and stop-state next move. |
+
+Rollback boundary: revert only this R45-T1 closure session-sync if rejected;
+do not revert material closure commit `6415a3cf2`, dispatch commit
+`cf0977295`, R44-T2 closure commit `8004f30c6`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R45-T1 Dispatch Session Sync
 

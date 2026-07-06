@@ -1,0 +1,28 @@
+{
+  "stateOrder": 646,
+  "stateKey": "mseaR45T1MineruPostR44SystemChainReleaseOrStopDecisionClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "6415a3cf2",
+    "materialCommitFull": "6415a3cf284199acbc70f45e99faf841266a69f9",
+    "dispatchCommit": "cf0977295",
+    "dispatchCommitFull": "cf0977295c57c81135138453e8316d34b18ccdaa",
+    "sessionSyncAfterDispatch": "9065a8875",
+    "executionBaseHead": "9065a8875",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R45_T1_MINERU_POST_R44_SYSTEM_CHAIN_RELEASE_OR_STOP_DECISION_WORKER_RETURN_2026-07-06.md",
+    "selectedDisposition": "R45_T1_POST_R44_STOP_BOUNDED_INTERNAL_CANDIDATE",
+    "reviewerDecision": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75 on 9065a8875..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "STOP_MINERU_FOUNDATION_CHAIN_OR_OPERATOR_SELECTS_FRESH_CHECKPOINT",
+    "claimBoundary": "R45-T1 accepts a docs-only post-R44 stop decision. The MinerU/Memory/scanlayer foundation chain is a bounded internal candidate only. No further foundation-chain implementation, source/test edit, MinerU runtime execution, private/generated output read, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim is authorized."
+  }
+}
