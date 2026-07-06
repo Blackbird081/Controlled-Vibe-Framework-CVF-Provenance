@@ -53,7 +53,13 @@ R50 material closure added `docs/reviews/CVF_MSEA_R50_MINERU_ADAPTER_CONTRACT_OW
 
 ## HEAD Freshness
 
-Latest session-sync parent commit: pending after R50 session-sync.
+Latest session-sync parent commit: `86b12ca5c`.
+
+Latest dispatch commit before R51 worker-return review: `fc5411ebc`.
+
+R51 dispatch status: MSEA-R51-T1 public-safe catalog snapshot refresh was
+dispatched at `fc5411ebc`; worker-return review and final session-sync remain
+pending.
 
 ## R50 Boundary
 
