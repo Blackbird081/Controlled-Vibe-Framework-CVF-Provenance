@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_closed_ready_for_option_b_implementation_packet_authoring`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=fresh GC-018/source-verified R43-T2 Option B implementation work-order authoring only, or explicit stop/different held-lane decision; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, implementation wiring, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized until a later governed packet releases them.
+Startup acknowledged: current mode=`msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=no-commit worker execution of MSEA-R43-T2 actor-role persistence authority wiring implementation only; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening beyond the packet, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_closed_ready_for_option_b_implementation_packet_authoring`
+Current mode marker: `msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_dispatched_pending_worker_return`
 
-Current mode: `msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_closed_ready_for_option_b_implementation_packet_authoring`
+Current mode: `msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_dispatched_pending_worker_return`
 
-`msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_closed_ready_for_option_b_implementation_packet_authoring`
+`msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_dispatched_pending_worker_return`
+`msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_closed_ready_for_option_b_implementation_packet_authoring`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R43-T2 MinerU Actor Role Persistence Authority Wiring Implementation dispatch | `43abc2791` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT source/test implementation work order for wiring the operator-approved file-backed persistence actor allowlist `OPERATOR`, `GOVERNOR` into the `fileBackedPersistenceRequested` decision path; packet records that CVF controls route-boundary authority, evidence, traceability, and responsibility review, not agent internal operation; worker may edit only `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-system-chain-route-candidate.ts`, `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-route-candidate.test.ts`, and `docs/reviews/CVF_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; pre-dispatch autorun PASS 73/73, dispatch-quality PASS, ADIF disclosure PASS, handoff-boundary PASS, dispatch steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated output read, real file-backed persistence invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, worker commit, push, or public claim is authorized. |
 | MSEA-R43-T1 MinerU Actor Role Persistence Authority Wiring Design closure | `f92e089b6` | CLOSED_PASS_BOUNDED; accepted worker return and companion decision matrix; selected `R43_T1_ACTOR_ROLE_WIRING_DESIGN_READY_FOR_IMPLEMENTATION_PACKET` and Option B, a purpose-built route authority actor-role field plus fail-closed allowlist check for the `fileBackedPersistenceRequested` decision path; reviewer decision `ACCEPTED_FOR_CLOSURE`; no completion review file was created because worker return plus matrix carried the closure evidence; worker-return fast gate PASS, pre-implementation autorun PASS 75 commands, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is fresh R43-T2 source-verified implementation work-order authoring only, with explicit operator-approved allowlist membership required before implementation; no source/test edit, MinerU runtime, private/generated content read, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, implementation wiring, public-sync, worker commit, push, or public claim is authorized. |
 | MSEA-R43-T1 MinerU Actor Role Persistence Authority Wiring Design dispatch | `d27fc56fa` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only work order for designing actor-role authority wiring into the `fileBackedPersistenceRequested` decision path; worker may create only `docs/reference/CVF_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; dispatch-quality PASS, pre-dispatch autorun PASS 73 commands, dispatch steward PASS, material pre-commit hook PASS 80/80; no source/test edit, MinerU runtime, private/generated content read, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, implementation wiring, public-sync, worker commit, push, or public claim is authorized. |
 | MSEA-R42-T1 MinerU Persistence Mode Authority Reopen Source Discovery closure | `f88ecfaca` | CLOSED_PASS_BOUNDED; accepted repaired worker return, source-discovery decision matrix, completion review, and closed work order; selected `R42_T1_PERSISTENCE_AUTHORITY_SOURCE_MISSING_CONFIRMED` and `R42_T1_SOURCE_DISCOVERY_COMPLETE_MISSING_CONFIRMED`; reviewer repaired one source-claim precision issue distinguishing `RuntimeMemoryActorRole` type usage from `evaluateRuntimeMemoryAction` decision-path authority; worker-return fast gate PASS, pre-implementation autorun PASS 75 commands, reviewer-return steward PASS, corpus scan registry path-literal check PASS, material pre-commit hook PASS 80/80; source authority remains missing for R41-T2 reopen and no implementation, runtime, persistence invocation, Memory/RAG release, provider/live, public-sync, worker commit, push, or public claim is authorized. |
@@ -149,9 +150,32 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r43_t1_mineru_actor_role_persistence_authority_wiring_design_closed_ready_for_option_b_implementation_packet_authoring`
+Mode: `msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_dispatched_pending_worker_return`
 
-Next allowed move: author a fresh MSEA-R43-T2 GC-018/source-verified Option B implementation work order, or explicitly stop/select a different held lane. The packet must use the accepted R43-T1 worker return and decision matrix, require explicit operator-approved allowlist membership before implementation, and keep implementation/source/test/runtime work unauthorized until its own gates pass. No source/test edit, MinerU runtime execution, private/generated content read, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, implementation wiring, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized until a later governed packet releases it. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: no-commit worker execution of `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_2026-07-06.md` only. Worker may edit only the route source, focused route test, and worker return named by the packet, then return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without commit/stage/push. No MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening beyond the packet, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, implementation outside the allowed path set, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R43-T2 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R43-T2
+material dispatch commit `43abc2791`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after R43-T2 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R43-T2 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R43-T2 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR43T2MineruActorRolePersistenceAuthorityWiringImplementationDispatch20260706.json` | Record R43-T2 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R43-T2 no-commit source/test worker execution. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R43-T2 dispatch continuity and worker-execution next move. |
+
+Rollback boundary: revert only this R43-T2 dispatch session-sync if rejected;
+do not revert material dispatch commit `43abc2791`, R43-T1 closure commit
+`f92e089b6`, dispatch commit `d27fc56fa`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R43-T1 Closure Session Sync
 

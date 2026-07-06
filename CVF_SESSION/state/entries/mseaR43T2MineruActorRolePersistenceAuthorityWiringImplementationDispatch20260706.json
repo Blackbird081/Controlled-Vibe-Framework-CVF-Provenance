@@ -1,0 +1,28 @@
+{
+  "stateOrder": 633,
+  "stateKey": "mseaR43T2MineruActorRolePersistenceAuthorityWiringImplementationDispatch20260706",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-06",
+    "materialCommit": "43abc2791",
+    "materialCommitFull": "43abc27914c1e6b1f2a5422ffefca599376b57a1",
+    "dispatchBaseHead": "0d408e163",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "operatorApprovedFileBackedPersistenceActorRoles": [
+      "OPERATOR",
+      "GOVERNOR"
+    ],
+    "selectedDispatchPurpose": "Implement accepted R43-T1 Option B actor-role authority wiring for the fileBackedPersistenceRequested decision path.",
+    "preDispatchGate": "PASS 73/73",
+    "dispatchQualityGate": "PASS",
+    "adifDisclosureGate": "PASS",
+    "agentHandoffBoundaryGate": "PASS",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 80/80",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R43-T2 source/test implementation and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push.",
+    "claimBoundary": "Dispatch only. The packet records CVF route-boundary authority, evidence, traceability, and responsibility-review controls for file-backed persistence requests; it does not claim CVF controls agent internal operation. Worker may edit only the named route source, focused route test, and worker return. No MinerU runtime, private/generated output read, real file-backed persistence invocation, persistence-mode widening beyond the packet, production durable-store invocation, production Memory/RAG route release, retrieval, vectorization, provider/live proof, Web/UI, public-sync, legal/use-case work, worker commit/stage/push, or public claim is authorized."
+  }
+}
