@@ -2,22 +2,22 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R54 P3 reconciliation readiness parking and R55 target reselection routing.
+Purpose: compact current-session continuity for resumed agents after MSEA-R55 high-value plane/absorb target reselection and R56 foundation plane I/O contract routing.
 Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync, provider-local config, private/generated MinerU output, external absorption, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R54 closure, active handoff V38, and the next selected R55 high-value plane/absorb target reselection packet.
+Keep resumed agents aligned on R55 closure, active handoff V38, and the next selected R56 foundation plane I/O contract and system interlock packet.
 
 ## Scope
 
-This handoff covers private provenance continuity after R54 only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, runtime source, tests, public-sync, provider-local config, private/generated MinerU output, direct absorption, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after R55 only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, runtime source, tests, public-sync, provider-local config, private/generated MinerU output, direct absorption, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r54_p3_reconciliation_parked_low_value_ready_for_r55_high_value_plane_absorb_target_reselection`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R55 High-Value Plane Absorb Target Reselection packet; parked checkpoint=legal/use-case workflow remains parked unless explicitly selected; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, or implementation is authorized by R54.
+Startup acknowledged: current mode=`msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet; parked checkpoint=legal/use-case workflow remains parked unless explicitly selected; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, or implementation is authorized by R55.
 
 ## Mandatory Startup Reads
 
@@ -31,11 +31,11 @@ Startup acknowledged: current mode=`msea_r54_p3_reconciliation_parked_low_value_
 
 ## Current Mode
 
-`msea_r54_p3_reconciliation_parked_low_value_ready_for_r55_high_value_plane_absorb_target_reselection`
+`msea_r55_high_value_plane_absorb_target_reselection_closed_pass_bounded_ready_for_r56_foundation_plane_io_contract_and_system_interlock_packet`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R54 parked `Controlled-Vibe-Framework-CVF-P3` branch `restructuring/p3-layout-wave-2` as low immediate value and routes next work to R55 high-value target reselection; implementation, merge, reconciliation, and absorption remain unauthorized.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R55 selected the foundation plane I/O contract and system interlock packet as the next target; P3 remains parked, and implementation, merge, reconciliation, runtime proof, production Memory/RAG release, public-sync, and absorption remain unauthorized.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
@@ -47,6 +47,7 @@ External agent memory files: non-canonical convenience only.
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
+| MSEA-R55 High-Value Plane Absorb Target Reselection | `ea53c7df5` | CLOSED_PASS_BOUNDED; selected `R55_SELECT_FOUNDATION_PLANE_IO_CONTRACT_AND_INTERLOCK_PACKET`; next move is fresh source-verified MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet; P3 remains parked; no implementation, source/test edit, import, runtime/provider/MCP proof, public-sync, production Memory/RAG release, private-output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, public claim, or implementation is authorized. |
 | MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision | `e89e03e9f` | CLOSED_PASS_BOUNDED; selected `R54_P3_RECONCILIATION_PARKED_LOW_IMMEDIATE_VALUE`; parked `Controlled-Vibe-Framework-CVF-P3` branch `restructuring/p3-layout-wave-2`; next move is fresh source-verified MSEA-R55 High-Value Plane Absorb Target Reselection; no P3 merge, branch reconciliation, physical relocation, source/test edit, import, runtime/provider/MCP proof, public-sync, production Memory/RAG release, private-output read, retrieval/vectorization, use-case/legal workflow, public claim, or implementation is authorized. |
 | MSEA-R53 Plane Absorb Repo Target Discovery And Readiness Decision | `22c471fdd` | CLOSED_PASS_BOUNDED; selected `R53_SELECT_P3_PROVENANCE_PLANE_RECONCILIATION_READINESS_DECISION`; selected `Controlled-Vibe-Framework-CVF-P3` on branch `restructuring/p3-layout-wave-2`; next move is fresh source-verified MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision; no merge, branch reconciliation, source/test edit, import, runtime/provider/MCP proof, public-sync, production Memory/RAG release, private-output read, retrieval/vectorization, use-case/legal workflow, public claim, or implementation is authorized. |
 | MSEA-R52 Provenance Sync And Next Target Selection Packet | `18f177033` | CLOSED_PASS_BOUNDED; selected `R52_SELECT_PLANE_ABSORB_REPO_TARGET_DISCOVERY_AND_READINESS_DECISION`; next target is fresh source-verified MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision; active root handoff file classified `INTERNAL_ONLY` for provenance pre-push hygiene; next move is R53 authoring only. |
@@ -59,11 +60,11 @@ External agent memory files: non-canonical convenience only.
 
 ## Latest Work/Changes
 
-R54 accepted `docs/reviews/CVF_MSEA_R54_P3_PROVENANCE_PLANE_RECONCILIATION_READINESS_DECISION_2026-07-07.md` at provenance commit `e89e03e9f`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for the R55 high-value target reselection next move.
+R55 accepted `docs/reviews/CVF_MSEA_R55_HIGH_VALUE_PLANE_ABSORB_TARGET_RESELECTION_2026-07-07.md` at provenance commit `ea53c7df5`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for the R56 foundation plane I/O contract and system interlock next move.
 
 ## HEAD Freshness
 
-Latest session-sync parent commit: `e89e03e9f`.
+Latest session-sync parent commit: `ea53c7df5`.
 
 Latest handoff guard compatibility sync parent commit: `ef726c4fc`.
 
@@ -71,7 +72,7 @@ Latest R51 dispatch commit: `fc5411ebc`.
 
 Latest R51 handoff freshness sync commit: `f46a8dadd`.
 
-R54 status: MSEA-R54 P3 reconciliation readiness decision is closed and P3 is parked for now.
+R55 status: MSEA-R55 high-value plane/absorb target reselection is closed, P3 remains parked, and R56 foundation plane I/O contract authoring is next.
 
 ## R50 Boundary
 
@@ -83,6 +84,9 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| Pre-implementation autorun on `ecb9a5c10..HEAD` for R55 | PASS 75/75 |
+| Reviewer-return commit steward on `ecb9a5c10..HEAD` for R55 | PASS |
+| Material pre-commit hook for R55 | PASS 80/80 |
 | Pre-implementation autorun on `a70bc189d..HEAD` for R54 | PASS 75/75 |
 | Reviewer-return commit steward on `a70bc189d..HEAD` for R54 | PASS |
 | Material pre-commit hook for R54 | PASS 80/80 |
@@ -100,7 +104,7 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-Author a fresh source-verified MSEA-R55 High-Value Plane Absorb Target Reselection packet. R55 is docs-only target reselection: it should rank non-use-case plane/absorb targets by system-chain value and select one target or stop. It must not reopen P3 restructuring, mutate public-sync, perform merge/reconciliation, edit source/tests, import external source, run runtime/provider/MCP proof, read private/generated MinerU output, release production Memory/RAG, perform retrieval/vectorization, open use-case/legal workflow, or claim public/hosted/production readiness.
+Author a fresh source-verified MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet. R56 is docs-only contract authoring: it should define the bounded output-to-input contract for chaining foundation planes, including accepted MinerU/scanlayer/memory evidence as one source, and map each transition to required receipt, boundary, owner, downstream input, `rawMemoryReleased=false`, and held scope. It must not implement source/tests, run runtime/provider/MCP proof, read private/generated MinerU output, release production Memory/RAG, perform retrieval/vectorization, mutate public-sync, reopen P3, import external source, open use-case/legal workflow, or claim public/hosted/production readiness.
 
 ## Agent Operation Trace
 
@@ -114,6 +118,16 @@ Author a fresh source-verified MSEA-R55 High-Value Plane Absorb Target Reselecti
 | Worker commit | Not applicable |
 
 ## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R55 material closure commit `ea53c7df5`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R55 closure state entry.
+
+Operator authorization: operator agreed to proceed with high-value foundation plane-chain target selection after parking P3.
+
+Protected paths: `AGENT_HANDOFF_V38_2026-07-06.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, `CVF_SESSION/state/entries/mseaR55HighValuePlaneAbsorbTargetReselection20260707.json`, `CVF_SESSION/state/entries/nextAllowedMove.json`, and `CVF_SESSION_MEMORY.md`. The purpose is solely to reflect R55 closure and R56 foundation plane I/O contract routing. It may not change runtime source, tests, provider-local config, private/generated MinerU output, external absorption, public-sync, merge/reconciliation, P3 restructuring, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow material.
+
+Rollback boundary: revert only this MSEA-R55 session-sync if rejected; do not revert material closure commit `ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
+
+## Core Guard Self-Protection Authorization - MSEA-R54 Session Sync
 
 Authorized guard-maintenance scope: session-sync only after MSEA-R54 material closure commit `e89e03e9f`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R54 closure state entry.
 
