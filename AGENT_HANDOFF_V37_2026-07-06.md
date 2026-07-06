@@ -18,6 +18,12 @@ Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/state/entries/`, governed artifacts, and archived handoffs for
 canonical older continuity.
 
+ADIF-0025 was added at material learning-record commit `a61c165c6` after the
+R40-T1 dispatch session-sync. It records the untracked worker-return
+trace-check changed-set gap that can affect mixed session-sync/reviewer
+ranges. This handoff marker sync records that commit for GC-020 freshness
+only and does not accept or close the R40-T1 worker deliverables.
+
 ## Scope
 
 Target: active session continuity and handoff maintainability after R39-T1
@@ -47,8 +53,8 @@ Startup acknowledged: current mode=`msea_r40_t1_mineru_system_chain_provider_liv
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
 | Latest material packet | `c80bcd7b1` MSEA-R40-T1 MinerU System Chain Provider Live Proof dispatch |
-| Latest session-sync target | this handoff-sync commit, "Sync session after MSEA R40 T1 dispatch" |
-| Latest handoff marker sync target | this handoff-sync commit records dispatch commit `c80bcd7b1` |
+| Latest session-sync target | `e5d4665f8` Sync session after MSEA R40 T1 dispatch |
+| Latest handoff marker sync target | marker sync after ADIF-0025 commit `a61c165c6` |
 | Latest provenance session-sync parent | `c80bcd7b1` Dispatch MSEA R40 T1 MinerU system chain provider live proof |
 | Latest closed numbered LHW wave | `LHW24` |
 
@@ -245,3 +251,56 @@ file-backed production persistence, retrieval, vectorization, additional
 provider/live proof beyond the already-returned R40-T1 test, public-sync,
 push, or public claim. Reviewer review and closure of R40-T1 remain a
 separate next step for the operator/reviewer.
+
+## Core Guard Self-Protection Authorization - ADIF-0025 Handoff Marker Sync
+
+Authorized guard-maintenance scope: handoff marker sync only after
+learning-record commit `a61c165c6`, which added ADIF-0025 for the untracked
+worker-return trace-check changed-set gap observed during the R40-T1
+session-sync/reviewer transition.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V37_2026-07-06.md`
+
+Operator authorization: reviewer/session steward maintenance to keep GC-020
+handoff HEAD freshness aligned before R40-T1 reviewer closure.
+
+Rollback boundary: revert only this marker-sync edit if rejected; do not revert
+R40-T1 dispatch commit `c80bcd7b1`, R40-T1 session-sync commit `e5d4665f8`,
+ADIF-0025 learning-record commit `a61c165c6`, MSEA-R39-T1 closure commit
+`bdc865ce0`, or earlier accepted history. Do not revert or commit the two
+untracked R40-T1 worker deliverables as part of this marker sync.
+
+## Agent Operation Trace Block - ADIF-0025 Handoff Marker Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | ADIF-0025 handoff marker sync, 2026-07-06 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `rg`; `git stash`; `apply_patch`; `python governance/compat/check_active_session_state.py`; `python governance/compat/run_agent_commit_steward_preflight.py`; `git` |
+| Target paths | `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Allowed scope source | GC-020 active-handoff HEAD freshness requirement after ADIF-0025 commit `a61c165c6` |
+| Before status evidence | active handoff referenced R40-T1 dispatch/session-sync but did not name ADIF-0025 commit `a61c165c6` |
+| After status evidence | active handoff names ADIF-0025 marker sync target for freshness only |
+| Diff evidence | `git diff --name-status` before marker-sync commit |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this marker sync |
+| Approval boundary | handoff marker sync only; no R40-T1 acceptance, closure, source/test edit, runtime, provider/live proof, private-output read, Memory/RAG release, public-sync, push, or public claim |
+| Claim boundary | continuity marker only |
+| Agent type | session-sync steward |
+| Invocation ID | `adif-0025-handoff-marker-sync-2026-07-06` |
+| Expected manifest | `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Actual changed set | `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Manifest delta | MATCH |
+
+## Claim Boundary - ADIF-0025 Handoff Marker Sync
+
+This handoff update is continuity metadata only. It records the ADIF-0025
+learning-record commit for active-handoff freshness and does not accept,
+close, or commit the R40-T1 worker deliverables; does not authorize MinerU
+runtime execution, private/generated output content read, production
+Memory/RAG route invocation or release, production durable-store invocation,
+file-backed production persistence, retrieval, vectorization, additional
+provider/live proof, public-sync, push, or public claim.
