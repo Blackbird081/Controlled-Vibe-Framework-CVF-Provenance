@@ -6,14 +6,15 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R43-T2 MinerU Actor Role Persistence
-Authority Wiring Implementation closure. R43-T2 accepted the route-boundary
-actor-role authority gate for the `fileBackedPersistenceRequested` decision
-path, while preserving the bounded file-backed persistence cap and without
-implying public-sync, Memory/RAG invocation or release, use-case expansion,
-runtime proof, private-output release, public runtime behavior, real
-file-backed persistence invocation, persistence-mode widening, harness
-implementation, or production write authority.
+Carry compact continuity after MSEA-R44-T1 MinerU File Backed Persistence
+Release Recheck Or Stop dispatch. R44-T1 authorizes only docs-only,
+source-verified worker execution to decide whether the file-backed persistence
+lane is ready for a future narrow invocation packet, remains held pending
+named authority gaps, or should stop. It does not imply public-sync,
+Memory/RAG invocation or release, use-case expansion, runtime proof,
+private-output release, public runtime behavior, real file-backed persistence
+invocation, persistence-mode widening, harness implementation, or production
+write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -28,8 +29,8 @@ only and does not accept or close the R40-T1 worker deliverables.
 
 ## Scope
 
-Target: active session continuity and handoff maintainability after R43-T2
-closure. Owner: session-sync steward. Scope is limited to startup routing,
+Target: active session continuity and handoff maintainability after R44-T1
+dispatch. Owner: session-sync steward. Scope is limited to startup routing,
 active state, active handoff, and compact next-move continuity.
 
 ## Active Boundary
@@ -42,7 +43,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_closed_ready_for_file_backed_persistence_release_recheck_or_stop`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=next-roadmap selection or fresh R44-T1 file-backed persistence release recheck/stop packet; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening beyond the accepted boundary, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=no-commit R44-T1 worker execution in the two allowed output paths only; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current State
 
@@ -54,10 +55,10 @@ Startup acknowledged: current mode=`msea_r43_t2_mineru_actor_role_persistence_au
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `db2599f49` Accept MSEA R43 T2 actor role persistence wiring |
-| Latest session-sync target | this session-sync after R43-T2 closure |
+| Latest material packet | `2588b5e74` Dispatch MSEA R44 T1 persistence release recheck |
+| Latest session-sync target | this session-sync after R44-T1 dispatch |
 | Latest handoff marker sync target | `1b9df6ff0` Sync handoff marker after ADIF 0025 |
-| Latest provenance session-sync parent | `db2599f49` Accept MSEA R43 T2 actor role persistence wiring |
+| Latest provenance session-sync parent | `2588b5e74` Dispatch MSEA R44 T1 persistence release recheck |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -68,9 +69,35 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_closed_ready_for_file_backed_persistence_release_recheck_or_stop`
+`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`
 
 ## Latest Changes
+
+MSEA-R44-T1 MinerU File Backed Persistence Release Recheck Or Stop dispatched
+at material commit `2588b5e74` ("Dispatch MSEA R44 T1 persistence release
+recheck"). The paired GC-018 baseline and WORKER_MUST_NOT_COMMIT work order
+authorize only docs-only/source-verified worker execution to create the
+R44-T1 decision matrix and worker return.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_2026-07-06.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_2026-07-06.md`
+
+Worker-owned output paths:
+
+- `docs/reference/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_DECISION_MATRIX_2026-07-06.md`
+- `docs/reviews/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_WORKER_RETURN_2026-07-06.md`
+
+Verification: pre-dispatch autorun PASS 73/73; dispatch steward PASS;
+material pre-commit hook PASS 80/80.
+
+This dispatch does not authorize source/test edits, MinerU runtime execution,
+private/generated output content reads, real file-backed persistence
+invocation, persistence-mode widening, production durable-store invocation,
+production Memory/RAG route invocation or release, retrieval, vectorization,
+provider/live proof, implementation, public-sync, use-case/legal workflow,
+worker commit, push, or public claim.
 
 MSEA-R43-T2 MinerU Actor Role Persistence Authority Wiring Implementation
 closed at material commit `db2599f49` ("Accept MSEA R43 T2 actor role
@@ -144,17 +171,74 @@ under the governed file-size guard hard threshold for its class.
 
 ## Next Allowed Move
 
-Next-roadmap selection or a fresh source-verified release recheck/stop packet,
-likely R44-T1 File-Backed Persistence Release Recheck Or Stop. R43-T2 is
-closed bounded at material commit `db2599f49`; it wires actor-role authority
-into the route boundary and preserves the existing bounded file-backed
-persistence cap.
+No-commit R44-T1 worker execution in the two allowed output paths only.
+R44-T1 is DISPATCH_READY at material commit `2588b5e74`; it authorizes a
+docs-only/source-verified decision matrix and worker return selecting whether
+file-backed persistence is ready for a future narrow invocation packet,
+remains held pending named authority gaps, or should stop.
 
 This next move must not run MinerU runtime, read private/generated output
-content, invoke real file-backed persistence, widen persistence mode beyond
-the accepted boundary, invoke or release production Memory/RAG, add retrieval
-or vectorization, run provider/live proof, edit provider-local or IDE config,
-public-sync, worker commit, push, or make a public claim.
+content, invoke real file-backed persistence, widen persistence mode, invoke
+or release production Memory/RAG, add retrieval or vectorization, run
+provider/live proof, edit provider-local or IDE config, public-sync,
+worker commit, push, or make a public claim.
+
+## Core Guard Self-Protection Authorization - MSEA-R44-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R44-T1
+material dispatch commit `2588b5e74`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and dispatch state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, dispatched work, startup acknowledgment, and next allowed move after R44-T1 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R44-T1 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R44-T1 dispatched pending worker return. |
+| `CVF_SESSION/state/entries/mseaR44T1MineruFileBackedPersistenceReleaseRecheckOrStopDispatch20260706.json` | Record R44-T1 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to no-commit R44-T1 worker execution. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R44-T1 dispatch continuity and worker-execution next move. |
+
+Rollback boundary: revert only this R44-T1 dispatch session-sync if rejected;
+do not revert material dispatch commit `2588b5e74`, R43-T2 material closure
+commit `db2599f49`, R43-T2 dispatch commit `43abc2791`, or earlier accepted
+history.
+
+## Agent Operation Trace Block - MSEA-R44-T1 Dispatch Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R44-T1 dispatch session-sync, 2026-07-06 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `Select-String`; `apply_patch`; `python governance/compat/generate_active_session_state.py --generate`; `python governance/compat/run_agent_commit_steward_preflight.py`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR44T1MineruFileBackedPersistenceReleaseRecheckOrStopDispatch20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Allowed scope source | MSEA-R44-T1 dispatch material commit `2588b5e74` and session-sync steward role |
+| Before status evidence | active mode routed to R43-T2 closed ready for release recheck or stop |
+| After status evidence | active mode routes to R44-T1 dispatched pending worker return |
+| Diff evidence | `git diff --name-status 2588b5e74..HEAD` before session-sync commit |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync |
+| Approval boundary | session-sync and continuity update only; no runtime, source/test edit, private-output read, real file-backed persistence invocation, production Memory/RAG release, public-sync, push, or public claim |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r44-t1-dispatch-session-sync-2026-07-06` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR44T1MineruFileBackedPersistenceReleaseRecheckOrStopDispatch20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR44T1MineruFileBackedPersistenceReleaseRecheckOrStopDispatch20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Manifest delta | MATCH |
+
+## Claim Boundary - MSEA-R44-T1 Dispatch Session Sync
+
+This handoff update is continuity metadata only. It records R44-T1 dispatch
+and routes the next move to no-commit worker execution. It does not authorize
+source/test edits, MinerU runtime execution, private/generated output content
+reads, real file-backed persistence invocation, persistence-mode widening,
+production durable-store invocation, production Memory/RAG route invocation
+or release, retrieval, vectorization, provider/live proof, implementation,
+public-sync, push, or public claim.
 
 ## Core Guard Self-Protection Authorization - MSEA-R43-T2 Closure Session Sync
 
