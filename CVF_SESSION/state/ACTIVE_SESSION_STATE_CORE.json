@@ -78,8 +78,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal",
-  "previousMode": "msea_r48_mineru_to_plane_absorb_transition_readiness_closed_pass_bounded_ready_for_r49_target_selection",
+  "currentMode": "msea_r50_mineru_system_chain_sealed_closed_pass_bounded_stop_checkpoint",
+  "previousMode": "msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
