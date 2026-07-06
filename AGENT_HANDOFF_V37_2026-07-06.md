@@ -40,7 +40,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r40_t1_mineru_system_chain_provider_live_proof_dispatched_worker_returned_complete_pending_review_awaiting_reviewer_closure_decision`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=reviewer must review the MSEA-R40-T1 worker return at `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md` and the worker-added test file, then decide closure (accept and commit, or request repair); parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; source/test edits beyond reviewer-accepted worker output, runtime, MinerU execution, private/generated content read, Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, additional provider/live proof beyond the returned R40-T1 test, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r40_t1_mineru_system_chain_provider_live_proof_closed_pending_next_roadmap_selection_or_stop`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=select the next roadmap or stop after R40-T1 bounded provider/live proof closure; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, production Memory/RAG invocation or release, file-backed persistence, retrieval, vectorization, additional provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized without a fresh source-verified packet.
 
 ## Current State
 
@@ -52,10 +52,10 @@ Startup acknowledged: current mode=`msea_r40_t1_mineru_system_chain_provider_liv
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `c80bcd7b1` MSEA-R40-T1 MinerU System Chain Provider Live Proof dispatch |
-| Latest session-sync target | `e5d4665f8` Sync session after MSEA R40 T1 dispatch |
-| Latest handoff marker sync target | marker sync after ADIF-0025 commit `a61c165c6` |
-| Latest provenance session-sync parent | `c80bcd7b1` Dispatch MSEA R40 T1 MinerU system chain provider live proof |
+| Latest material packet | `513a41c66` Accept MSEA R40 T1 MinerU provider live proof |
+| Latest session-sync target | this session-sync after R40-T1 closure |
+| Latest handoff marker sync target | `1b9df6ff0` Sync handoff marker after ADIF 0025 |
+| Latest provenance session-sync parent | `513a41c66` Accept MSEA R40 T1 MinerU provider live proof |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -66,64 +66,45 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r40_t1_mineru_system_chain_provider_live_proof_dispatched_worker_returned_complete_pending_review_awaiting_reviewer_closure_decision`
+`msea_r40_t1_mineru_system_chain_provider_live_proof_closed_pending_next_roadmap_selection_or_stop`
 
 ## Latest Changes
 
-MSEA-R40-T1 MinerU System Chain Provider Live Proof was DISPATCHED at material
-commit `c80bcd7b1` ("Dispatch MSEA R40 T1 MinerU system chain provider live
-proof"). A worker then executed the bounded live-proof task and returned
-`COMPLETE_PENDING_REVIEW`.
+MSEA-R40-T1 MinerU System Chain Provider Live Proof closed at material commit
+`513a41c66` ("Accept MSEA R40 T1 MinerU provider live proof"). The closure
+accepted the focused live Alibaba/DashScope Vitest file, worker return,
+completion review, and closed work order with disposition
+`R40_T1_PROVIDER_LIVE_PROOF_COMPLETE_BOUNDED_PRIVATE`.
 
-Worker-added untracked deliverables (not yet committed, pending reviewer
-acceptance):
+R40-T1 reviewer-rerun evidence: deterministic MinerU test set passed 5 Vitest
+files / 73 tests; Python MinerU metadata receipt writer tests passed 71 tests;
+the focused live Alibaba/DashScope test passed 1 file / 1 test without raw key
+disclosure; worker-return fast gate passed after handoff marker sync;
+pre-implementation autorun passed 75/75; reviewer-return steward passed; and
+material pre-commit hook passed 80/80.
 
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-live.alibaba.test.ts`
-- `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md`
-
-R40-T1 worker-return command evidence: existing deterministic MinerU test set
-passed 5 Vitest files / 73 tests; Python MinerU metadata receipt writer tests
-passed 71 tests; the new focused live Alibaba/DashScope test passed 1 file / 1
-test; the worker-return quality gate, dispatch-quality gate, finding-to-
-governance learning gate, and worker-experience retrospective gate all passed.
-
-R40-T1 worker-return blocked gates: `run_worker_return_fast_gate.py` and
-`run_agent_autorun_workflow_gate.py --phase pre-implementation` were both
-BLOCKED only by GC-020 active-handoff HEAD freshness, because this handoff did
-not yet contain dispatch commit `c80bcd7b1` before this session-sync. This
-session-sync resolves that freshness gap; it does not itself accept, close, or
-commit the R40-T1 worker deliverables.
-
-R40-T1 next allowed move: reviewer must review the R40-T1 worker return and
-the worker-added test file, then decide closure (accept and commit the worker
-deliverables, or request repair). Acceptance is not automatic or implied by
-this session-sync.
-
-R40-T1 boundary carried forward unchanged: no MinerU runtime execution, no
-private/generated MinerU output content read, no production Memory/RAG route
-invocation or release, no file-backed production persistence, retrieval, or
-vectorization beyond the returned R40-T1 test, no public-sync, no push, and no
-worker commit, unless R40-T1 closure explicitly changes that.
+R40-T1 boundary carried forward: the provider/live proof lane is complete only
+as bounded private provenance evidence. It does not release MinerU runtime,
+private/generated output content, production Memory/RAG route invocation or
+release, file-backed persistence, retrieval, vectorization, public-sync,
+use-case/legal workflow, hosted readiness, production readiness, push, or
+public claim.
 
 Active handoff rotation: none required for this session-sync. V37 remains well
 under the governed file-size guard hard threshold for its class.
 
 ## Next Allowed Move
 
-Reviewer must review the MSEA-R40-T1 worker return at
-`docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md`
-and the worker-added test file
-`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-live.alibaba.test.ts`,
-then decide closure: accept and commit the worker deliverables, or request
-repair.
+Select the next roadmap or stop after MSEA-R40-T1 bounded provider/live proof
+closure. Any further action must be a fresh source-verified packet,
+preferably avoiding use-case/legal drift unless the operator explicitly
+selects that lane.
 
 This next move must not run MinerU runtime, read private/generated output
-content, invoke or release Memory/RAG, add file-backed production
-persistence, retrieval, or vectorization, run additional provider/live proof
-beyond the returned R40-T1 test, edit provider-local or IDE config,
-public-sync, push, or make a public claim unless a later governed packet
-explicitly releases that scope. Reviewer closure of R40-T1 itself is a
-separate next step from this session-sync.
+content, invoke or release production Memory/RAG, add file-backed production
+persistence, retrieval, or vectorization, run additional provider/live proof,
+edit provider-local or IDE config, public-sync, push, or make a public claim
+unless a later governed packet explicitly releases that scope.
 
 ## Core Guard Self-Protection Authorization - MSEA-R39-T1 Closure Session Sync
 
@@ -304,3 +285,60 @@ runtime execution, private/generated output content read, production
 Memory/RAG route invocation or release, production durable-store invocation,
 file-backed production persistence, retrieval, vectorization, additional
 provider/live proof, public-sync, push, or public claim.
+
+## Core Guard Self-Protection Authorization - MSEA-R40-T1 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R40-T1
+closure material commit `513a41c66`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and closure state entry.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaR40T1MineruSystemChainProviderLiveProofClosure20260706.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `AGENT_HANDOFF_V37_2026-07-06.md`
+
+Operator authorization: session-sync steward maintenance after accepted
+MSEA-R40-T1 closure material commit `513a41c66`.
+
+Rollback boundary: revert only this R40-T1 closure session-sync if rejected;
+do not revert material closure commit `513a41c66`, handoff marker sync commit
+`1b9df6ff0`, ADIF-0025 learning-record commit `a61c165c6`, dispatch commit
+`c80bcd7b1`, or earlier accepted history.
+
+## Agent Operation Trace Block - MSEA-R40-T1 Closure Session Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R40-T1 closure session-sync, 2026-07-06 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `Get-Content`; `rg`; `apply_patch`; `python governance/compat/generate_active_session_state.py --generate`; `python governance/compat/run_agent_commit_steward_preflight.py`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR40T1MineruSystemChainProviderLiveProofClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Allowed scope source | MSEA-R40-T1 closure material commit `513a41c66` and session-sync steward role |
+| Before status evidence | active mode routed to R40-T1 pending reviewer closure; pre-closure committed range failed only active-handoff HEAD freshness |
+| After status evidence | active mode routes to R40-T1 closed pending next roadmap selection or stop |
+| Diff evidence | `git diff --name-status 513a41c66..HEAD` before session-sync commit |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync |
+| Approval boundary | session-sync and continuity update only; no runtime, provider/live proof, private-output read, Memory/RAG release, public-sync, push, or public claim |
+| Claim boundary | continuity update only |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r40-t1-closure-session-sync-2026-07-06` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR40T1MineruSystemChainProviderLiveProofClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR40T1MineruSystemChainProviderLiveProofClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Manifest delta | MATCH |
+
+## Claim Boundary - MSEA-R40-T1 Closure Session Sync
+
+This handoff update is continuity metadata only. It records accepted R40-T1
+closure and routes the next move to roadmap selection or stop. It does not
+authorize MinerU runtime execution, private/generated output content read,
+production Memory/RAG route invocation or release, production durable-store
+invocation, file-backed production persistence, retrieval, vectorization,
+additional provider/live proof, public-sync, push, or public claim.
