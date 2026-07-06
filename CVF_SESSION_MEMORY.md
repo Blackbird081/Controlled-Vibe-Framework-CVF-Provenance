@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r48_mineru_to_plane_absorb_transition_readiness_closed_pass_bounded_ready_for_r49_target_selection`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R49 Plane Absorb Target Selection And Owner Surface Map packet, or stop/checkpoint; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized.
+Startup acknowledged: current mode=`msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh source-verified MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal packet, or stop/checkpoint; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r48_mineru_to_plane_absorb_transition_readiness_closed_pass_bounded_ready_for_r49_target_selection`
+Current mode marker: `msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal`
 
-Current mode: `msea_r48_mineru_to_plane_absorb_transition_readiness_closed_pass_bounded_ready_for_r49_target_selection`
+Current mode: `msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal`
 
-`msea_r48_mineru_to_plane_absorb_transition_readiness_closed_pass_bounded_ready_for_r49_target_selection`
+`msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal`
 
 Previous mode:
 
-`msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`
+`msea_r48_mineru_to_plane_absorb_transition_readiness_closed_pass_bounded_ready_for_r49_target_selection`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R49 Plane Absorb Target Selection And Owner Surface Map | `85bd012a3` | CLOSED_PASS_BOUNDED; selects `docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md` as the existing owner surface for system-chain seal; selected `R49_SELECT_EXISTING_R10_ADAPTER_CONTRACT_OWNER_SURFACE_FOR_SYSTEM_CHAIN_SEAL`; mirror commit/count recheck matched `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491` and 425 files; focused gates PASS, pre-implementation autorun PASS 75/75 on `dce655773..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal packet or stop/checkpoint; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R48 MinerU To Plane Absorb Transition Readiness Packet | `34151de7c` | CLOSED_PASS_BOUNDED; accepts a docs-only source-verified transition-readiness decision; selected `R48_PLANE_ABSORB_TRANSITION_READY_FOR_TARGET_SELECTION_ONLY`; next move is fresh source-verified MSEA-R49 Plane Absorb Target Selection And Owner Surface Map packet or stop/checkpoint; pre-implementation autorun PASS 75/75 on `b6a69ed03..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R47 MinerU System Chain Finalization And Plane Absorb Transition Readiness | `92f7b92ab` | CLOSED_PASS_BOUNDED; closes the current MinerU/scanlayer/memory workflow chain as a bounded internal foundation system chain, based on accepted R46 file-backed write/read-back plus live provider proof; records that CVF controls route-boundary authority, receipt/evidence, and responsibility tracing without intervening in agent internal operation; pre-implementation autorun PASS 75/75 on `1b81a41ad..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified plane/absorb transition readiness packet or stop/checkpoint; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R46 MinerU ScanLayer Memory Bounded Live System Chain Proof closure | `cb93bc5d1` | CLOSED_PASS_BOUNDED; accepted bounded internal source/test proof harness, focused deterministic test, focused Alibaba/DashScope-compatible live test, secret-safe evidence JSON, worker return, and corpus scan registry entries; selected `R46_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_PASS`; proof facts: `productionRouteAuthorized=false`, `fileBackedPersistenceUsed=true`, `mineruRuntimeExecuted=false`, `privateOutputContentRead=false`, `retrievalUsed=false`, `vectorizationUsed=false`, `publicRuntimeClaimed=false`, write/read receipts allowed, read-back record count 1; focused deterministic Vitest PASS 1 file / 1 test, learning-plane `npm run check` PASS, focused live Vitest PASS 1 file / 1 test, corpus registry generate/check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `5ee66c1c6..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified plane/absorb transition readiness packet or stop/checkpoint; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
@@ -161,9 +162,31 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r48_mineru_to_plane_absorb_transition_readiness_closed_pass_bounded_ready_for_r49_target_selection`
+Mode: `msea_r49_plane_absorb_target_selection_closed_pass_bounded_ready_for_r50_system_chain_seal`
 
-Next allowed move: author a fresh source-verified MSEA-R49 Plane Absorb Target Selection And Owner Surface Map packet, or stop/checkpoint. No external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: author a fresh source-verified MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal packet, or stop/checkpoint. No external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R49 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R49 material
+closure commit `85bd012a3`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and R49 closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R49 closure continuity and R50 seal next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R49 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R49 closed pending R50 seal/recheck. |
+| `CVF_SESSION/state/entries/mseaR49PlaneAbsorbTargetSelectionOwnerSurfaceMap20260706.json` | Record accepted R49 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R50 source-verified seal/recheck or stop/checkpoint. |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R49 closure continuity and R50 next move. |
+
+Rollback boundary: revert only this MSEA-R49 session-sync if rejected; do not
+revert material closure commit `85bd012a3` or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R48 Session Sync And Handoff Rotation
 
