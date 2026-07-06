@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Batch ID: MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION
 
@@ -155,13 +155,13 @@ and R41 authority gaps or shows a different held lane now has higher bounded
 value. The worker must not treat the operator's desire to continue as
 authority to run or implement anything.
 
-## Planned Artifact Manifest
+## Required Artifact Manifest
 
 | Artifact | Required path | Owner | Closure disposition |
 | --- | --- | --- | --- |
 | Decision matrix | `docs/reference/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_MATRIX_2026-07-06.md` | no-commit worker | reviewer-owned acceptance or rejection |
 | Worker return | `docs/reviews/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_WORKER_RETURN_2026-07-06.md` | no-commit worker | reviewer-owned acceptance or rejection |
-| Completion review | `docs/reviews/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_COMPLETION_2026-07-06.md` | reviewer/closer | reviewer-created only if closure proceeds |
+| Completion review | `docs/reviews/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_COMPLETION_2026-07-06.md` | reviewer/closer | `CLOSED_PASS_BOUNDED` |
 
 ## Allowed Scope
 
@@ -526,6 +526,30 @@ Operator approval is required before source/test edits, runtime execution,
 private/generated output reads, persistence invocation, Memory/RAG release,
 provider/live proof, public-sync, use-case/legal work, worker commit, push, or
 claim-boundary expansion.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Closure status | this work order | `Status: CLOSED` | PASS |
+| Work order status | this work order | `Status: CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_COMPLETION_2026-07-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | N/A with reason: R41-T4 is a standalone operator-selected stop/release lane packet, not a roadmap-derived closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `python governance/compat/generate_corpus_scan_registry.py --check` PASS during worker-return fast gate | PASS |
+| Registry Markdown | changed corpus registry coverage | reviewer-fast changed corpus registry coverage PASS | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact, public-web source, or local external file was absorbed | N/A with reason |
+| System loop interlock | R41-T4 decision matrix and completion review | `R41_T4_FOUNDATION_CHAIN_STOP_BOUNDED_CANDIDATE`; no implementation, persistence release, Memory/RAG release, or production claim | PASS |
+| Session continuity | session state, session memory, and active handoff | dedicated session-sync commit required after material commit | PASS |
+| Worker return | `docs/reviews/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_WORKER_RETURN_2026-07-06.md` | `Status: COMPLETE_PENDING_REVIEW`, accepted by completion review | PASS |
+| Runtime boundary | R41-T4 completion review | no source/test/runtime/private/provider/public execution | PASS |
+| Public disposition | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| No runtime receipt is accepted by this closure | R41-T4 remains docs-only and accepts no MinerU runtime, harness execution, file-backed persistence, provider/live, memory-write, public-sync, or production route receipt | PASS |
+| Worker return accepted only after reviewer closure | Completion review records `CLOSED_PASS_BOUNDED` | PASS |
 
 ## Claim Boundary
 
