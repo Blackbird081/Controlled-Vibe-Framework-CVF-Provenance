@@ -7,6 +7,7 @@ import type {
 } from "../src/mineru-memory-rag-route-release";
 import {
   buildMineruSystemChainRouteCandidate,
+  FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED,
   MINERU_SYSTEM_CHAIN_ROUTE_CANDIDATE_ACCEPTED,
   MINERU_SYSTEM_CHAIN_ROUTE_CANDIDATE_VERSION,
   PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY,
@@ -158,7 +159,7 @@ describe("buildMineruSystemChainRouteCandidate", () => {
     expect(store.list()).toHaveLength(0);
   });
 
-  it("fails closed on file-backed production persistence request", () => {
+  it("fails closed on file-backed production persistence request when actor role is missing", () => {
     const store = createInProcessDurableMemoryStore();
     const result = buildMineruSystemChainRouteCandidate(
       store,
@@ -166,8 +167,27 @@ describe("buildMineruSystemChainRouteCandidate", () => {
     );
 
     expect(result.disposition).toBe(
-      "FAIL_CLOSED_FILE_BACKED_PERSISTENCE_REQUESTED",
+      FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED,
     );
+    expect(result.persistenceMode).toBe("rejected");
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+  });
+
+  it("fails closed on file-backed persistence with authorized actor role (T25 bounded cap still prevents release)", () => {
+    const store = createInProcessDurableMemoryStore();
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "OPERATOR",
+        },
+      }),
+    );
+
+    // Actor-role gate passes for OPERATOR, but the T25 bounded cap still blocks
+    expect(result.disposition).toBe("FAIL_CLOSED_FILE_BACKED_PERSISTENCE_REQUESTED");
     expect(result.persistenceMode).toBe("rejected");
     expect(result.routeResult).toBeNull();
     expect(store.list()).toHaveLength(0);
@@ -223,5 +243,135 @@ describe("buildMineruSystemChainRouteCandidate", () => {
     );
     expect(result.systemChainCandidateReady).toBe(false);
     expect(result.productionRouteAuthorized).toBe(false);
+  });
+});
+
+describe("R43-T2 actor-role authority gate for fileBackedPersistenceRequested", () => {
+  it("passes actor-role gate for authorized OPERATOR with fileBackedPersistenceRequested true (T25 bounded cap still active)", () => {
+    const store = createInProcessDurableMemoryStore();
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "OPERATOR",
+        },
+      }),
+    );
+
+    // Actor-role gate passes for OPERATOR, but the bounded T25 cap still
+    // prevents file-backed persistence release (productionRouteAuthorized remains false)
+    expect(result.disposition).toBe("FAIL_CLOSED_FILE_BACKED_PERSISTENCE_REQUESTED");
+    expect(result.disposition).not.toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(false);
+    expect(result.heldToken).toBe(PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY);
+    expect(store.list()).toHaveLength(0);
+  });
+
+  it("passes actor-role gate for authorized GOVERNOR with fileBackedPersistenceRequested true (T25 bounded cap still active)", () => {
+    const store = createInProcessDurableMemoryStore();
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "GOVERNOR",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe("FAIL_CLOSED_FILE_BACKED_PERSISTENCE_REQUESTED");
+    expect(result.disposition).not.toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(false);
+    expect(result.heldToken).toBe(PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY);
+    expect(store.list()).toHaveLength(0);
+  });
+
+  it("fails closed with actor-role token when fileBackedPersistenceActorRole is missing", () => {
+    const store = createInProcessDurableMemoryStore();
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          fileBackedPersistenceRequested: true,
+          // fileBackedPersistenceActorRole intentionally omitted
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(false);
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+  });
+
+  it("fails closed with actor-role token for unauthorized role AI_AGENT", () => {
+    const store = createInProcessDurableMemoryStore();
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "AI_AGENT",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+  });
+
+  it("fails closed with actor-role token for unauthorized role SERVICE_AGENT", () => {
+    const store = createInProcessDurableMemoryStore();
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "SERVICE_AGENT",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+  });
+
+  it("fails closed with actor-role token for unauthorized role OBSERVER", () => {
+    const store = createInProcessDurableMemoryStore();
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "OBSERVER",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+  });
+
+  it("existing bounded happy path with fileBackedPersistenceRequested false still passes (R43-T2 regression)", () => {
+    const store = createInProcessDurableMemoryStore({
+      now: () => 1770000000000,
+    });
+
+    const result = buildMineruSystemChainRouteCandidate(store, validInput());
+
+    expect(result.disposition).toBe(MINERU_SYSTEM_CHAIN_ROUTE_CANDIDATE_ACCEPTED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(true);
+    expect(result.persistenceMode).toBe("in-process-only");
+    expect(result.heldToken).toBe(PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY);
+    expect(store.list()).toHaveLength(1);
   });
 });

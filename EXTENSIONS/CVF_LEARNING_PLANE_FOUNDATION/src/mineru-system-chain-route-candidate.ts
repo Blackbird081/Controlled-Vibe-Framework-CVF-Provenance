@@ -12,6 +12,7 @@
  */
 
 import type { DurableMemoryStore } from "./durable-memory-store";
+import type { RuntimeMemoryActorRole } from "./runtime-memory-hierarchy";
 import {
   MINERU_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTED_BOUNDED_CANDIDATE,
   releaseMineruMemoryRagRouteCandidate,
@@ -31,6 +32,18 @@ export const PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY =
 export const T24_AUTHORING_READY_DISPOSITION =
   "T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY";
 
+export const FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED =
+  "FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED";
+
+/**
+ * Route-local allowlist for actor roles permitted to request file-backed
+ * persistence. Operator-approved per MSEA-R43-T2 dispatch policy.
+ * CVF controls route-boundary authority and traceability only; it does not
+ * intervene in agent internal operation.
+ */
+const FILE_BACKED_PERSISTENCE_ACTOR_ROLE_ALLOWLIST: ReadonlyArray<RuntimeMemoryActorRole> =
+  ["OPERATOR", "GOVERNOR"];
+
 export type MineruSystemChainPersistenceMode = "in-process-only";
 
 export interface MineruSystemChainRouteAuthority {
@@ -38,6 +51,13 @@ export interface MineruSystemChainRouteAuthority {
   freshMemoryOwnerAuthorization: boolean;
   productionPersistenceMode: MineruSystemChainPersistenceMode;
   fileBackedPersistenceRequested: boolean;
+  /**
+   * Actor role authorizing the file-backed persistence request.
+   * Required when fileBackedPersistenceRequested is true.
+   * Must be one of the route-local operator-approved allowlist values.
+   * CVF records this for route-boundary evidence and traceability only.
+   */
+  fileBackedPersistenceActorRole?: RuntimeMemoryActorRole;
   retrievalRequested: boolean;
   vectorizationRequested: boolean;
   privateOutputContentRead: boolean;
@@ -103,6 +123,21 @@ export function buildMineruSystemChainRouteCandidate(
   }
 
   if (authority.fileBackedPersistenceRequested !== false) {
+    // Actor-role gate: check before any other file-backed persistence handling.
+    // CVF controls only the route boundary; it records actor-role evidence
+    // and requires fail-closed behavior for traceability. It does not
+    // intervene in or direct the agent's internal operation.
+    const actorRole = authority.fileBackedPersistenceActorRole;
+    if (
+      actorRole === undefined ||
+      actorRole === null ||
+      !FILE_BACKED_PERSISTENCE_ACTOR_ROLE_ALLOWLIST.includes(actorRole)
+    ) {
+      return blocked(
+        FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED,
+        "file-backed persistence actor role is missing or not in the operator-approved allowlist (OPERATOR, GOVERNOR)",
+      );
+    }
     return blocked(
       "FAIL_CLOSED_FILE_BACKED_PERSISTENCE_REQUESTED",
       "file-backed production persistence is not authorized by T25",
