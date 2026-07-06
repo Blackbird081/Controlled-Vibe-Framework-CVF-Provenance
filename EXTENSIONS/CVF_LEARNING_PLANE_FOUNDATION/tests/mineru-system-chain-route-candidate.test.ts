@@ -1,5 +1,7 @@
-import { describe, expect, it } from "vitest";
-import { createInProcessDurableMemoryStore } from "../src/durable-memory-store";
+import { afterAll, beforeEach, describe, expect, it } from "vitest";
+import { existsSync, unlinkSync } from "node:fs";
+import { join } from "node:path";
+import { createInProcessDurableMemoryStore, createFileBackedDurableMemoryStore } from "../src/durable-memory-store";
 import type { MineruDurableStoreInvocationInput } from "../src/mineru-durable-store-invocation";
 import type {
   MineruMemoryOwnerAuthorization,
@@ -373,5 +375,152 @@ describe("R43-T2 actor-role authority gate for fileBackedPersistenceRequested", 
     expect(result.persistenceMode).toBe("in-process-only");
     expect(result.heldToken).toBe(PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY);
     expect(store.list()).toHaveLength(1);
+  });
+});
+
+describe("R44-T2 narrow file-backed persistence invocation implementation", () => {
+  const tempDbPath = join(__dirname, "fixtures", "tmp-file-backed-store-r44t2.json");
+
+  const cleanup = () => {
+    if (existsSync(tempDbPath)) {
+      try {
+        unlinkSync(tempDbPath);
+      } catch {}
+    }
+  };
+
+  beforeEach(() => {
+    cleanup();
+  });
+
+  afterAll(() => {
+    cleanup();
+  });
+
+  it("passes actor-role gate for authorized OPERATOR with fileBackedPersistenceRequested true and productionPersistenceMode file-backed", () => {
+    const store = createFileBackedDurableMemoryStore(tempDbPath, {
+      now: () => 1770000000000,
+    });
+
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          productionPersistenceMode: "file-backed",
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "OPERATOR",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(MINERU_SYSTEM_CHAIN_ROUTE_CANDIDATE_ACCEPTED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(true);
+    expect(result.persistenceMode).toBe("file-backed");
+    expect(result.heldToken).toBe(PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY);
+    expect(result.routeResult!.productionRouteAuthorized).toBe(false);
+    expect(result.routeResult!.invocationResult!.memoryWriteAuthorized).toBe(
+      false,
+    );
+    expect(result.routeResult!.invocationResult!.durableStoreReceipt!.summaryOnly)
+      .toBe(true);
+    expect(result.routeResult!.invocationResult!.durableStoreReceipt!.canReinject)
+      .toBe(false);
+    expect(
+      result.routeResult!.invocationResult!.durableStoreReceipt!.rawMemoryReleased,
+    ).toBe(false);
+    expect(store.list()).toHaveLength(1);
+    expect(existsSync(tempDbPath)).toBe(true);
+  });
+
+  it("passes actor-role gate for authorized GOVERNOR with fileBackedPersistenceRequested true and productionPersistenceMode file-backed", () => {
+    const store = createFileBackedDurableMemoryStore(tempDbPath, {
+      now: () => 1770000000000,
+    });
+
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          productionPersistenceMode: "file-backed",
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "GOVERNOR",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(MINERU_SYSTEM_CHAIN_ROUTE_CANDIDATE_ACCEPTED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(true);
+    expect(result.persistenceMode).toBe("file-backed");
+    expect(result.heldToken).toBe(PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY);
+    expect(store.list()).toHaveLength(1);
+    expect(existsSync(tempDbPath)).toBe(true);
+  });
+
+  it("fails closed when file-backed mode is requested but actor role is missing", () => {
+    const store = createFileBackedDurableMemoryStore(tempDbPath);
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          productionPersistenceMode: "file-backed",
+          fileBackedPersistenceRequested: true,
+          // fileBackedPersistenceActorRole intentionally omitted
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(false);
+    expect(result.persistenceMode).toBe("rejected");
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+    expect(existsSync(tempDbPath)).toBe(false);
+  });
+
+  it("fails closed when file-backed mode is requested but actor role is unauthorized (AI_AGENT)", () => {
+    const store = createFileBackedDurableMemoryStore(tempDbPath);
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          productionPersistenceMode: "file-backed",
+          fileBackedPersistenceRequested: true,
+          fileBackedPersistenceActorRole: "AI_AGENT",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe(FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED);
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(false);
+    expect(result.persistenceMode).toBe("rejected");
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+    expect(existsSync(tempDbPath)).toBe(false);
+  });
+
+  it("fails closed when file-backed mode is NOT requested but persistenceMode is set to file-backed", () => {
+    const store = createFileBackedDurableMemoryStore(tempDbPath);
+    const result = buildMineruSystemChainRouteCandidate(
+      store,
+      validInput({
+        authority: {
+          productionPersistenceMode: "file-backed",
+          fileBackedPersistenceRequested: false,
+          fileBackedPersistenceActorRole: "OPERATOR",
+        },
+      }),
+    );
+
+    expect(result.disposition).toBe("FAIL_CLOSED_FILE_BACKED_PERSISTENCE_NOT_REQUESTED");
+    expect(result.productionRouteAuthorized).toBe(false);
+    expect(result.systemChainCandidateReady).toBe(false);
+    expect(result.persistenceMode).toBe("rejected");
+    expect(result.routeResult).toBeNull();
+    expect(store.list()).toHaveLength(0);
+    expect(existsSync(tempDbPath)).toBe(false);
   });
 });

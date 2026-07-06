@@ -44,7 +44,7 @@ export const FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED =
 const FILE_BACKED_PERSISTENCE_ACTOR_ROLE_ALLOWLIST: ReadonlyArray<RuntimeMemoryActorRole> =
   ["OPERATOR", "GOVERNOR"];
 
-export type MineruSystemChainPersistenceMode = "in-process-only";
+export type MineruSystemChainPersistenceMode = "in-process-only" | "file-backed";
 
 export interface MineruSystemChainRouteAuthority {
   t23Disposition: string;
@@ -115,14 +115,35 @@ export function buildMineruSystemChainRouteCandidate(
     );
   }
 
-  if (authority.productionPersistenceMode !== "in-process-only") {
+  if (
+    authority.productionPersistenceMode !== "in-process-only" &&
+    authority.productionPersistenceMode !== "file-backed"
+  ) {
     return blocked(
       "FAIL_CLOSED_UNSUPPORTED_PERSISTENCE_MODE",
-      "T25 bounded system-chain candidate supports only in-process persistence",
+      "T25 bounded system-chain candidate supports only in-process or file-backed persistence",
     );
   }
 
-  if (authority.fileBackedPersistenceRequested !== false) {
+  if (authority.productionPersistenceMode === "file-backed") {
+    if (authority.fileBackedPersistenceRequested !== true) {
+      return blocked(
+        "FAIL_CLOSED_FILE_BACKED_PERSISTENCE_NOT_REQUESTED",
+        "file-backed persistence mode requires fileBackedPersistenceRequested to be true",
+      );
+    }
+    const actorRole = authority.fileBackedPersistenceActorRole;
+    if (
+      actorRole === undefined ||
+      actorRole === null ||
+      !FILE_BACKED_PERSISTENCE_ACTOR_ROLE_ALLOWLIST.includes(actorRole)
+    ) {
+      return blocked(
+        FAIL_CLOSED_FILE_BACKED_PERSISTENCE_ACTOR_ROLE_NOT_AUTHORIZED,
+        "file-backed persistence actor role is missing or not in the operator-approved allowlist (OPERATOR, GOVERNOR)",
+      );
+    }
+  } else if (authority.fileBackedPersistenceRequested !== false) {
     // Actor-role gate: check before any other file-backed persistence handling.
     // CVF controls only the route boundary; it records actor-role evidence
     // and requires fail-closed behavior for traceability. It does not
@@ -190,7 +211,7 @@ export function buildMineruSystemChainRouteCandidate(
     routeCandidateVersion: MINERU_SYSTEM_CHAIN_ROUTE_CANDIDATE_VERSION,
     productionRouteAuthorized: false,
     systemChainCandidateReady: true,
-    persistenceMode: "in-process-only",
+    persistenceMode: authority.productionPersistenceMode,
     routeResult,
     preventedReason: null,
     heldToken: PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY,
