@@ -1,0 +1,26 @@
+{
+  "stateOrder": 615,
+  "stateKey": "mseaR41T2MineruPersistenceModeAuthorizationDecisionClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "4a08d3ef0",
+    "materialCommitFull": "4a08d3ef073a7486633b9ca28fbed66c25dba49b",
+    "closureBaseHead": "d3753fd90",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R41_T2_MINERU_PERSISTENCE_MODE_AUTHORIZATION_DECISION_COMPLETION_2026-07-06.md",
+    "selectedDisposition": "R41_T2_PERSISTENCE_MODE_AUTHORIZATION_HELD_PENDING_AUTHORITY_GAPS",
+    "closureDisposition": "R41_T2_AUTHORITY_DECISION_COMPLETE_HELD_PENDING_AUTHORITY_GAPS",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75 commands",
+      "corpus scan registry path-literal check PASS",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "OPERATOR_DECISION_REOPEN_WITH_SOURCE_VERIFIED_AUTHORITY_PACKET_OR_SELECT_DIFFERENT_HELD_LANE_OR_STOP",
+    "claimBoundary": "R41-T2 closes only the docs-only persistence-mode authorization decision. Persistence-mode widening and file-backed persistence invocation remain held pending explicit source-backed authority gaps. This closure does not authorize source/test edits, MinerU runtime execution, private/generated output content reads, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, interface/root-barrel/runtime wiring, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}
