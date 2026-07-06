@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Created: 2026-07-06
 
@@ -273,6 +273,14 @@ any rerun and must not print raw key values.
 | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-live.alibaba.test.ts` | focused live test | worker | `MINERU_INTERNAL_SYSTEM_CHAIN_HARNESS_PASS_BOUNDED` |
 | `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md` | worker return | worker | `COMPLETE_PENDING_REVIEW` |
 
+## Required Artifact Manifest
+
+| Required artifact/path | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-live.alibaba.test.ts` | focused live test exists | accepted in reviewer closure | PASS |
+| `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md` | worker return exists with `COMPLETE_PENDING_REVIEW` | accepted in reviewer closure | PASS |
+| `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_COMPLETION_2026-07-06.md` | completion review exists with `CLOSED_PASS_BOUNDED` | created by reviewer closure | PASS |
+
 ## Worker Return Packet Shape Contract
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
@@ -394,7 +402,7 @@ Disclosed defectIds:
 | Field | Evidence |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Source Verification Block; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Work-Order Fulfillment Manifest; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED; Dispatch Prompt Envelope; Source Verification Block; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Work-Order Fulfillment Manifest; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirmation evidence before dispatch; gates confirm packet shape after source and checker read-ahead |
 | claimBoundary | checker read-ahead evidence only; no private-output read, production Memory/RAG release, retrieval, vectorization, file-backed persistence, public-sync, worker commit, push, or public claim |
 
@@ -502,6 +510,31 @@ Disposition: DEFERRED_PRIVATE_ONLY
 
 Reason: R40-T1 is a private provenance provider-live proof packet. It does
 not update public catalog content or make a public product-readiness claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_COMPLETION_2026-07-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | N/A with reason: R40-T1 is an operator-selected held-lane proof packet, not a roadmap-derived closure | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `python governance/compat/generate_corpus_scan_registry.py --check` PASS during worker-return fast gate | PASS |
+| Registry Markdown | changed corpus registry coverage | reviewer-fast changed corpus registry coverage PASS | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact, public-web source, or local external file was absorbed | N/A with reason |
+| System loop interlock | R40-T1 live test and completion review | `R40_T1_PROVIDER_LIVE_PROOF_COMPLETE_BOUNDED_PRIVATE`; no production release | PASS |
+| Session continuity | session state, session memory, and active handoff | dedicated session-sync commit required after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Deterministic MinerU tests | 5 files / 73 tests pass | 5 files / 73 tests passed | PASS |
+| Python MinerU receipt tests | 71 tests pass | 71 tests passed | PASS |
+| Focused live provider test | 1 file / 1 test pass | 1 file / 1 test passed | PASS |
+| Live response bounded token | response contains `MINERU_INTERNAL_SYSTEM_CHAIN_HARNESS_PASS_BOUNDED` | asserted by live test | PASS |
+| Live response held token | response contains harness held token | asserted by live test | PASS |
+| Production route authorization | `productionRouteAuthorized=false`; no positive authorization | asserted by live test | PASS |
+| CVF runtime receipt | N/A with reason: no CVF runtime receipt is created for this bounded Vitest live proof | command evidence recorded instead | N/A with reason |
 
 ## Claim Boundary
 
