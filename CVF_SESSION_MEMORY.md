@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=no-commit R44-T2 worker execution in the three allowed paths only; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_closed_pending_next_roadmap_or_release_decision`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=roadmap selection or fresh GC-018/source-verified post-R44 release-or-stop decision packet only; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_dispatched_pending_worker_return`
+Current mode marker: `msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_closed_pending_next_roadmap_or_release_decision`
 
-Current mode: `msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_dispatched_pending_worker_return`
+Current mode: `msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_closed_pending_next_roadmap_or_release_decision`
 
-`msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_dispatched_pending_worker_return`
+`msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_closed_pending_next_roadmap_or_release_decision`
 
 Previous mode:
 
-`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_closed_ready_for_narrow_invocation_work_order_authoring`
+`msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R44-T2 MinerU Narrow File Backed Persistence Invocation Implementation closure | `8004f30c6` | CLOSED_PASS_BOUNDED; accepted bounded route-candidate source/test implementation and worker return; widened `MineruSystemChainPersistenceMode` to include `file-backed` only under explicit request plus `OPERATOR`/`GOVERNOR` actor-role authority; preserved `productionRouteAuthorized=false` and `PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY`; focused Vitest PASS 1 file / 21 tests, worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `30ad5afa7..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated output read, production durable-store invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, use-case/legal workflow, worker commit, push, or public claim is authorized. |
 | MSEA-R44-T2 MinerU Narrow File Backed Persistence Invocation Implementation dispatch | `790f59ad2` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT source/test work order for narrow route-candidate file-backed persistence behavior under the existing `OPERATOR`/`GOVERNOR` actor-role gate; worker may edit only `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-system-chain-route-candidate.ts`, `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-route-candidate.test.ts`, and create `docs/reviews/CVF_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; pre-dispatch autorun PASS 73/73, dispatch-quality PASS, ADIF disclosure PASS, handoff-boundary PASS, dispatch steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated output read, production durable-store invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, use-case/legal workflow, worker commit, push, or public claim is authorized. |
 | MSEA-R44-T1 MinerU File Backed Persistence Release Recheck Or Stop closure | `c892ba922` | CLOSED_PASS_BOUNDED; accepted source-verified decision matrix and worker return; selected `R44_T1_FILE_BACKED_PERSISTENCE_RELEASE_READY_FOR_NARROW_INVOCATION_PACKET`; reviewer decision `ACCEPTED_FOR_MATERIAL_COMMIT`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `28b9ed5c9..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified narrow invocation implementation work-order authoring only; no source/test edit, MinerU runtime, private/generated output read, real file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, use-case/legal workflow, worker commit, push, or public claim is authorized. |
 | MSEA-R44-T1 MinerU File Backed Persistence Release Recheck Or Stop dispatch | `2588b5e74` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only work order for source-verified release recheck/stop after R43-T2 actor-role authority wiring; worker may create only `docs/reference/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_DECISION_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; no source/test edit, MinerU runtime, private/generated output read, real file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, use-case/legal workflow, worker commit, push, or public claim is authorized. |
@@ -154,9 +155,32 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_dispatched_pending_worker_return`
+Mode: `msea_r44_t2_mineru_narrow_file_backed_persistence_invocation_implementation_closed_pending_next_roadmap_or_release_decision`
 
-Next allowed move: no-commit R44-T2 worker execution only. Worker may edit only `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-system-chain-route-candidate.ts`, `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-route-candidate.test.ts`, and create `docs/reviews/CVF_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure. No MinerU runtime execution, private/generated content read, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: roadmap selection or a fresh GC-018/source-verified post-R44 release-or-stop decision packet only. No MinerU runtime execution, private/generated content read, production durable-store invocation, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized without a fresh accepted packet. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R44-T2 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R44-T2
+material closure commit `8004f30c6`, including active mode, next allowed
+move, generated active state, bootstrap read model, front-door continuity,
+active handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, closed work, startup acknowledgment, and next allowed move after R44-T2 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R44-T2 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R44-T2 closed pending next roadmap or release decision. |
+| `CVF_SESSION/state/entries/mseaR44T2MineruNarrowFileBackedPersistenceInvocationImplementationClosure20260706.json` | Record R44-T2 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to roadmap selection or fresh post-R44 release-or-stop decision packet. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R44-T2 closure continuity and next move. |
+
+Rollback boundary: revert only this R44-T2 closure session-sync if rejected;
+do not revert material closure commit `8004f30c6`, dispatch commit
+`790f59ad2`, session-sync commit `30ad5afa7`, or earlier accepted history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R44-T2 Dispatch Session Sync
 
