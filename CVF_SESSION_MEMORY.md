@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=select a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded internal proof complete; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized.
+Startup acknowledged: current mode=`msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=author a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded complete; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`
+Current mode marker: `msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`
 
-Current mode: `msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`
+Current mode: `msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`
 
-`msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`
+`msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`
 
 Previous mode:
 
-`msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_dispatched_pending_worker_execution_and_reviewer_closure`
+`msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R47 MinerU System Chain Finalization And Plane Absorb Transition Readiness | `92f7b92ab` | CLOSED_PASS_BOUNDED; closes the current MinerU/scanlayer/memory workflow chain as a bounded internal foundation system chain, based on accepted R46 file-backed write/read-back plus live provider proof; records that CVF controls route-boundary authority, receipt/evidence, and responsibility tracing without intervening in agent internal operation; pre-implementation autorun PASS 75/75 on `1b81a41ad..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified plane/absorb transition readiness packet or stop/checkpoint; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R46 MinerU ScanLayer Memory Bounded Live System Chain Proof closure | `cb93bc5d1` | CLOSED_PASS_BOUNDED; accepted bounded internal source/test proof harness, focused deterministic test, focused Alibaba/DashScope-compatible live test, secret-safe evidence JSON, worker return, and corpus scan registry entries; selected `R46_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_PASS`; proof facts: `productionRouteAuthorized=false`, `fileBackedPersistenceUsed=true`, `mineruRuntimeExecuted=false`, `privateOutputContentRead=false`, `retrievalUsed=false`, `vectorizationUsed=false`, `publicRuntimeClaimed=false`, write/read receipts allowed, read-back record count 1; focused deterministic Vitest PASS 1 file / 1 test, learning-plane `npm run check` PASS, focused live Vitest PASS 1 file / 1 test, corpus registry generate/check PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `5ee66c1c6..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified plane/absorb transition readiness packet or stop/checkpoint; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R46 MinerU ScanLayer Memory Bounded Live System Chain Proof dispatch | `d00362790` | DISPATCH_READY; accepted roadmap, paired GC-018 baseline, and WORKER_MUST_NOT_COMMIT work order for bounded internal proof only: synthetic summary-only MinerU metadata, file-backed durable memory write/read-back, one Alibaba-compatible live provider proof with secret-safe evidence, worker return, reviewer closure, and session-sync; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, worker commit, push, or public claim is authorized. |
 | MSEA-R45-T1 MinerU Post R44 System Chain Release Or Stop Decision closure | `6415a3cf2` | CLOSED_PASS_BOUNDED; accepted worker return and companion decision matrix; selected `R45_T1_POST_R44_STOP_BOUNDED_INTERNAL_CANDIDATE`; reviewer decision `ACCEPTED_FOR_MATERIAL_COMMIT`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `9065a8875..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is stop the MinerU/Memory/scanlayer foundation lane as a bounded internal candidate unless the operator opens a fresh production release, provider/live, private-output, or use-case/legal checkpoint; no further foundation implementation, source/test edit, MinerU runtime, private/generated output read, production durable-store invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, use-case/legal workflow, worker commit, push, or public claim is authorized. |
@@ -159,9 +160,31 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`
+Mode: `msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`
 
-Next allowed move: select a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded internal proof complete. No production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: author a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded complete. No production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains the latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R47 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R47 material
+closure commit `92f7b92ab`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current closed work, startup acknowledgment, and next allowed move after R47 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R47 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R47 closed bounded completion. |
+| `CVF_SESSION/state/entries/mseaR47MineruSystemChainFinalizationAndPlaneAbsorbTransitionReadiness20260706.json` | Record accepted R47 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to plane/absorb transition readiness packet authoring or stop/checkpoint. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R47 closure continuity and next move. |
+
+Rollback boundary: revert only this MSEA-R47 closure session-sync if rejected;
+do not revert material closure commit `92f7b92ab` or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R45-T1 Closure Session Sync
 

@@ -77,8 +77,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint",
-  "previousMode": "msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_dispatched_pending_worker_execution_and_reviewer_closure",
+  "currentMode": "msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint",
+  "previousMode": "msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -4040,8 +4040,34 @@
   },
   "adifT2CheckpointPendingReview20260623": "Claude committed ADIF-T2 at b19a1918 from release sync HEAD 479e98e3 and correctly stopped under the prior instruction. Codex now owns T2 checkpoint review. After T2 acceptance, the operator requires immediate hardening of the continuation pattern so T3 through T5 run continuously with bounded machine-gated session-sync bridges and no intermediate Codex review pause.",
   "assfExternalAgentMetadataReadoutImplementationClosure20260626": "ASSF external-agent metadata readout implementation closed CLOSED_PASS_BOUNDED at material commit 1f93ea33. Artifacts: governance/compat/run_assf_external_agent_metadata_readout.py, governance/compat/test_run_assf_external_agent_metadata_readout.py, docs/reviews/CVF_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_WORKER_RETURN_2026-06-26.md, docs/reviews/CVF_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_COMPLETION_2026-06-26.md, and docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_EXTERNAL_AGENT_METADATA_READOUT_IMPLEMENTATION_FOR_CODEX_2026-06-26.md. Boundary: read-only metadata helper only; no adapter behavior, package instance, certification decision, lifecycle mutation, ASSF registry-source mutation, ASSF generated-index source mutation, resolver mutation, provider/live proof, public-sync, push, activation, package instruction execution, or package integration.",
-  "nextAllowedMove": "MSEA-R46 MinerU ScanLayer Memory Bounded Live System Chain Proof is CLOSED_PASS_BOUNDED at material commit cb93bc5d1. Bounded internal proof is complete: synthetic summary-only MinerU metadata, file-backed durable memory write/read-back, and one Alibaba-compatible live provider proof with secret-safe evidence. Next allowed move: select a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded internal proof complete. No production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains latest closed numbered LHW wave.",
   "adifT2AcceptedT3T5ContinuousRelease20260623": "ADIF-T2 worker commit b19a1918 was accepted after bounded resolver repair at 07000fd6: only ACTIVE entries are eligible, governed citations are repo-relative, invalid risk ceilings fail closed, and 13 focused tests pass. Handoff bridge proof commit 4527c55a demonstrated the root-handoff-only lane. The reusable bridge standard and hardened ADIF authorization/master work order are committed at dfaae2e7. T3 through T5 are released as one continuous sequence with no intermediate Codex review; machine-gated root-handoff-only bridges preserve GC-020, while final review and session sync remain Codex-owned after T5.",
+  "mseaR47MineruSystemChainFinalizationAndPlaneAbsorbTransitionReadiness20260706": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "92f7b92ab",
+    "reviewPath": "docs/reviews/CVF_MSEA_R47_MINERU_SYSTEM_CHAIN_FINALIZATION_AND_PLANE_ABSORB_TRANSITION_READINESS_2026-07-06.md",
+    "upstreamProofCommit": "cb93bc5d1",
+    "upstreamProofPath": "docs/reviews/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_WORKER_RETURN_2026-07-06.md",
+    "upstreamEvidencePath": "docs/reviews/evidence/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_2026-07-06.json",
+    "selectedDisposition": "MINERU_SCANLAYER_MEMORY_CHAIN_BOUNDED_INTERNAL_FOUNDATION_COMPLETE",
+    "verification": [
+      "markdown structural completeness PASS",
+      "pre-implementation autorun PASS 75/75 on 1b81a41ad..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedCompletionFacts": {
+      "foundationSystemChainComplete": true,
+      "productionMemoryRagReleased": false,
+      "publicSyncAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "retrievalReleased": false,
+      "vectorizationReleased": false,
+      "useCaseLegalWorkflowOpened": false
+    },
+    "nextAllowedMove": "Author a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint the MinerU foundation lane as bounded complete.",
+    "claimBoundary": "R47 closes the MinerU/scanlayer/memory workflow chain only as a bounded internal foundation system chain. It records authority, receipt/evidence, and responsibility-trace controls without claiming CVF controls agent internal operation. It does not release production Memory/RAG, public-sync, private/generated MinerU output reads, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy, document truth, legal quality, current-law correctness, hosted release, standalone app work, provider-local config edits, push, or public claims."
+  },
   "scplT2SkillSelectionGuidanceClosure20260630": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "25361957",
@@ -4080,6 +4106,7 @@
     "claimBoundary": "selection guidance/read-model only; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or broader production-readiness expansion."
   },
   "adifT0T5CompletePendingFinalReview20260623": "The hardened ADIF T3-T5 continuous batch completed at material commit 5f7eb42a after joint dispatch af56db7c, T3 checkpoint 41b026a6, T4 checkpoint fb4bac23, convergence bridge 2b93b314, and final T5 commit. Claude returned COMPLETE_PENDING_REVIEW exactly once for the full chain. Codex owns final T0-T5 review, allowed-scope repairs, closure decision, and final session sync.",
+  "nextAllowedMove": "MSEA-R47 MinerU System Chain Finalization And Plane Absorb Transition Readiness is CLOSED_PASS_BOUNDED at material commit 92f7b92ab. MinerU/scanlayer/memory chain is complete as a bounded internal foundation system chain, based on R46 file-backed write/read-back plus live provider proof. Next allowed move: author a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded complete. No production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. LHW24 remains latest closed numbered LHW wave.",
   "adifT0T5ClosedPassBounded20260623": "ADIF T0-T5 closed CLOSED_PASS_BOUNDED at Codex final-review material commit fd5414b7. Review repaired T3 source-path projection, T4 canonical enum and checker-path validation, and T5 canonical-source plus arbitrary-length cycle integrity. The integrated ADIF suite passes 52/52, entry integrity reports 0 violations across 8 entries, reviewer-fast passes 34/34, pre-commit passes 55/55, and the GC-051 ADIF corpus entry is generated without drift. Public export is DEFERRED_PRIVATE_ONLY; external CLI/MCP, runtime/provider/live, automatic promotion, and universal-control claims remain out of scope.",
   "ascpP4P6RemainingPackageProductionScaleUpClosure20260630": {
     "status": "CLOSED_PASS_BOUNDED",

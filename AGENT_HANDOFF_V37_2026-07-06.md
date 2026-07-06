@@ -6,15 +6,14 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md`
 
 ## Purpose
 
-Carry compact continuity after MSEA-R46 MinerU ScanLayer Memory Bounded Live
-System Chain Proof closure. R46 selected
-`R46_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_PASS`, proving the bounded internal
-chain with synthetic summary-only MinerU metadata, file-backed durable memory
-write/read-back, and one Alibaba-compatible live provider proof with
-secret-safe evidence. It does not imply public-sync, production Memory/RAG
-invocation or release, use-case expansion, private/generated MinerU output
-release, public runtime behavior, production durable-store invocation, or
-production write authority.
+Carry compact continuity after MSEA-R47 MinerU System Chain Finalization And
+Plane Absorb Transition Readiness. R47 closes the MinerU/scanlayer/memory
+workflow chain as a bounded internal foundation system chain, based on accepted
+R46 file-backed durable memory write/read-back and one Alibaba-compatible live
+provider proof with secret-safe evidence. It does not imply public-sync,
+production Memory/RAG invocation or release, use-case expansion,
+private/generated MinerU output release, public runtime behavior, production
+durable-store invocation, or production write authority.
 
 Historical detail is intentionally compacted out of this active handoff. Use
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
@@ -29,7 +28,7 @@ only and does not accept or close the R40-T1 worker deliverables.
 
 ## Scope
 
-Target: active session continuity and handoff maintainability after R46
+Target: active session continuity and handoff maintainability after R47
 closure. Owner: session-sync steward. Scope is limited to startup routing,
 active state, active handoff, and compact next-move continuity.
 
@@ -43,7 +42,7 @@ later active successor if size pressure requires another rotation.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=select a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded internal proof complete; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized.
+Startup acknowledged: current mode=`msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=author a fresh source-verified plane/absorb transition readiness packet, or stop/checkpoint this MinerU foundation lane as bounded complete; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized.
 
 ## Current State
 
@@ -55,10 +54,10 @@ Startup acknowledged: current mode=`msea_r46_mineru_scanlayer_memory_bounded_liv
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` |
 | Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
-| Latest material packet | `cb93bc5d1` Accept MSEA R46 bounded live system chain proof |
-| Latest session-sync target | this session-sync after R46 closure |
+| Latest material packet | `92f7b92ab` Accept MSEA R47 system chain finalization decision |
+| Latest session-sync target | this session-sync after R47 closure |
 | Latest handoff marker sync target | `1b9df6ff0` Sync handoff marker after ADIF 0025 |
-| Latest provenance session-sync parent | `cb93bc5d1` Accept MSEA R46 bounded live system chain proof |
+| Latest provenance session-sync parent | `92f7b92ab` Accept MSEA R47 system chain finalization decision |
 | Latest closed numbered LHW wave | `LHW24` |
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
@@ -69,18 +68,22 @@ External agent memory files: non-canonical convenience only.
 
 ## Current Mode
 
-`msea_r46_mineru_scanlayer_memory_bounded_live_system_chain_proof_closed_pass_bounded_pending_plane_or_absorb_transition_checkpoint`
+`msea_r47_mineru_system_chain_finalization_closed_pass_bounded_ready_for_plane_absorb_transition_or_checkpoint`
 
 ## Latest Changes
 
-MSEA-R46 MinerU ScanLayer Memory Bounded Live System Chain Proof closed at
-material commit `cb93bc5d1` ("Accept MSEA R46 bounded live system chain
-proof"). The accepted worker return, focused harness source, deterministic
-test, Alibaba/DashScope-compatible live test, secret-safe evidence JSON, and
-corpus scan registry entries select
-`R46_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_PASS`.
+MSEA-R47 MinerU System Chain Finalization And Plane Absorb Transition
+Readiness closed at material commit `92f7b92ab` ("Accept MSEA R47 system chain
+finalization decision"). R47 records that the MinerU/scanlayer/memory workflow
+chain is complete as a bounded internal foundation system chain. The decision
+is based on accepted R46 source/test/live-provider proof evidence and keeps
+production/public/private-output/use-case holds in place.
 
-Accepted artifacts:
+R47 accepted artifact:
+
+- `docs/reviews/CVF_MSEA_R47_MINERU_SYSTEM_CHAIN_FINALIZATION_AND_PLANE_ABSORB_TRANSITION_READINESS_2026-07-06.md`
+
+Upstream R46 proof artifacts:
 
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-bounded-live-system-chain-proof.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-bounded-live-system-chain-proof.test.ts`
@@ -95,10 +98,14 @@ Alibaba-compatible live provider proof. The evidence records
 `privateOutputContentRead=false`, `retrievalUsed=false`,
 `vectorizationUsed=false`, and `publicRuntimeClaimed=false`.
 
-Closure evidence: focused deterministic Vitest PASS 1 file / 1 test;
-learning-plane `npm run check` PASS; focused live Vitest PASS 1 file / 1
-test; corpus scan registry generate/check PASS; worker-return fast gate PASS;
-pre-implementation autorun PASS 75/75 on `5ee66c1c6..HEAD`;
+R47 closure evidence: markdown structural completeness PASS;
+pre-implementation autorun PASS 75/75 on `1b81a41ad..HEAD`;
+reviewer-return commit steward PASS; material pre-commit hook PASS 80/80.
+
+Upstream R46 proof evidence: focused deterministic Vitest PASS 1 file / 1
+test; learning-plane `npm run check` PASS; focused live Vitest PASS 1 file /
+1 test; corpus scan registry generate/check PASS; worker-return fast gate
+PASS; pre-implementation autorun PASS 75/75 on `5ee66c1c6..HEAD`;
 reviewer-return commit steward PASS; material pre-commit hook PASS 80/80.
 
 The closure does not authorize production Memory/RAG release, public-sync,
@@ -1122,4 +1129,30 @@ sync, not `cb93bc5d1`, `5ee66c1c6`, `d00362790`, or earlier history.
 | Invocation ID | `msea-r46-closure-session-sync-2026-07-06` |
 | Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR46MineruScanlayerMemoryBoundedLiveSystemChainProofClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
 | Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR46MineruScanlayerMemoryBoundedLiveSystemChainProofClosure20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Manifest delta | MATCH |
+
+## Agent Operation Trace Block - MSEA-R47 Closure Session Sync
+
+Authorized session-sync after material closure `92f7b92ab`; rollback only this
+sync, not `92f7b92ab`, `1b81a41ad`, `cb93bc5d1`, or earlier history.
+
+| Field | Evidence |
+| --- | --- |
+| Actor | session-sync steward |
+| Provider or surface | local workspace |
+| Session or invocation | MSEA-R47 closure session-sync, 2026-07-06 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `git status`; `Get-Content`; `rg`; `apply_patch`; `python governance/compat/generate_active_session_state.py --generate`; `python governance/compat/run_agent_commit_steward_preflight.py`; `git` |
+| Target paths | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR47MineruSystemChainFinalizationAndPlaneAbsorbTransitionReadiness20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Allowed scope source | MSEA-R47 material closure commit `92f7b92ab`; session-sync steward role |
+| Before status evidence | active mode routed to R46 closed bounded proof pending plane/absorb transition checkpoint or stop |
+| After status evidence | active mode routes to R47 closed bounded foundation chain completion pending plane/absorb transition readiness packet or stop |
+| Diff evidence | `git diff --name-status 92f7b92ab..HEAD` before session-sync commit |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this session-sync |
+| Approval boundary | session-sync only; no production Memory/RAG release, public-sync, private-output release, hosted release, push, or public claim |
+| Claim boundary | continuity update only; R47 decision remains bounded internal |
+| Agent type | session-sync steward |
+| Invocation ID | `msea-r47-closure-session-sync-2026-07-06` |
+| Expected manifest | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR47MineruSystemChainFinalizationAndPlaneAbsorbTransitionReadiness20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
+| Actual changed set | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR47MineruSystemChainFinalizationAndPlaneAbsorbTransitionReadiness20260706.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V37_2026-07-06.md` |
 | Manifest delta | MATCH |
