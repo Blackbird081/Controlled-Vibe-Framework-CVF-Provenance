@@ -1,0 +1,29 @@
+{
+  "stateOrder": 638,
+  "stateKey": "mseaR44T1MineruFileBackedPersistenceReleaseRecheckOrStopClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "c892ba922",
+    "materialCommitFull": "c892ba922005ca060293e7aae97b03db391fd8d4",
+    "dispatchCommit": "2588b5e74",
+    "dispatchCommitFull": "2588b5e749b8cbac229a806a91b0f380042f5f78",
+    "sessionSyncAfterDispatch": "28b9ed5c9",
+    "sessionSyncAfterDispatchFull": "28b9ed5c9b5d27ad468f7b19f806abc37aa76daf",
+    "executionBaseHead": "28b9ed5c9",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_WORKER_RETURN_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_DECISION_MATRIX_2026-07-06.md",
+    "selectedDisposition": "R44_T1_FILE_BACKED_PERSISTENCE_RELEASE_READY_FOR_NARROW_INVOCATION_PACKET",
+    "reviewerDecision": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75 on 28b9ed5c9..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "AUTHOR_FRESH_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_WORK_ORDER",
+    "claimBoundary": "R44-T1 is docs-only/source-verified release recheck closure. It authorizes only a future fresh source-verified narrow invocation implementation work-order packet. It does not authorize source/test edit, MinerU runtime execution, private/generated output read, real file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}

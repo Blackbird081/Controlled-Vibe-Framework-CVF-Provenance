@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=no-commit R44-T1 worker execution in the two allowed output paths only; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
+Startup acknowledged: current mode=`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_closed_ready_for_narrow_invocation_work_order_authoring`; active handoff=AGENT_HANDOFF_V37_2026-07-06.md; next allowed move=fresh source-verified narrow file-backed persistence invocation work-order authoring only; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, worker commit, push, and public claim remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`
+Current mode marker: `msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_closed_ready_for_narrow_invocation_work_order_authoring`
 
-Current mode: `msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`
+Current mode: `msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_closed_ready_for_narrow_invocation_work_order_authoring`
 
-`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`
+`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_closed_ready_for_narrow_invocation_work_order_authoring`
 
 Previous mode:
 
-`msea_r43_t2_mineru_actor_role_persistence_authority_wiring_implementation_closed_ready_for_file_backed_persistence_release_recheck_or_stop`
+`msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R44-T1 MinerU File Backed Persistence Release Recheck Or Stop closure | `c892ba922` | CLOSED_PASS_BOUNDED; accepted source-verified decision matrix and worker return; selected `R44_T1_FILE_BACKED_PERSISTENCE_RELEASE_READY_FOR_NARROW_INVOCATION_PACKET`; reviewer decision `ACCEPTED_FOR_MATERIAL_COMMIT`; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `28b9ed5c9..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified narrow invocation implementation work-order authoring only; no source/test edit, MinerU runtime, private/generated output read, real file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, use-case/legal workflow, worker commit, push, or public claim is authorized. |
 | MSEA-R44-T1 MinerU File Backed Persistence Release Recheck Or Stop dispatch | `2588b5e74` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT docs-only work order for source-verified release recheck/stop after R43-T2 actor-role authority wiring; worker may create only `docs/reference/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_DECISION_MATRIX_2026-07-06.md` and `docs/reviews/CVF_MSEA_R44_T1_MINERU_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80; no source/test edit, MinerU runtime, private/generated output read, real file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, use-case/legal workflow, worker commit, push, or public claim is authorized. |
 | MSEA-R43-T2 MinerU Actor Role Persistence Authority Wiring Implementation closure | `db2599f49` | CLOSED_PASS_BOUNDED; accepted worker return, route source change, focused route test change, and reviewer note; wired the operator-approved file-backed persistence actor-role authority gate for `OPERATOR` and `GOVERNOR` into the `fileBackedPersistenceRequested` route boundary; preserved the existing bounded file-backed persistence cap; recorded that CVF controls route-boundary authority, evidence, traceability, and responsibility review, not agent internal operation; focused Vitest PASS 1 file / 16 tests, worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `35954028e..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is next-roadmap selection or fresh R44-T1 file-backed persistence release recheck/stop packet; no MinerU runtime, private/generated output read, real file-backed persistence invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, worker commit, push, or public claim is authorized. |
 | MSEA-R43-T2 MinerU Actor Role Persistence Authority Wiring Implementation dispatch | `43abc2791` | DISPATCH_READY; accepted paired GC-018 baseline and WORKER_MUST_NOT_COMMIT source/test implementation work order for wiring the operator-approved file-backed persistence actor allowlist `OPERATOR`, `GOVERNOR` into the `fileBackedPersistenceRequested` decision path; packet records that CVF controls route-boundary authority, evidence, traceability, and responsibility review, not agent internal operation; worker may edit only `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-system-chain-route-candidate.ts`, `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-route-candidate.test.ts`, and `docs/reviews/CVF_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md`, then stop for reviewer closure; pre-dispatch autorun PASS 73/73, dispatch-quality PASS, ADIF disclosure PASS, handoff-boundary PASS, dispatch steward PASS, material pre-commit hook PASS 80/80; no MinerU runtime, private/generated output read, real file-backed persistence invocation, production Memory/RAG release, retrieval, vectorization, provider/live proof, public-sync, worker commit, push, or public claim is authorized. |
@@ -152,38 +153,14 @@ canonical older closure detail.
 
 ## Next Allowed Move
 
-Mode: `msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_dispatched_pending_worker_return`
+Mode: `msea_r44_t1_mineru_file_backed_persistence_release_recheck_or_stop_closed_ready_for_narrow_invocation_work_order_authoring`
 
-Next allowed move: no-commit R44-T1 worker execution in the two allowed output paths only. R44-T1 is DISPATCH_READY at material commit `2588b5e74`; it authorizes a docs-only/source-verified decision matrix and worker return selecting whether file-backed persistence is ready for a future narrow invocation packet, remains held pending named authority gaps, or should stop. No source/test edit, MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized until a later accepted packet releases it. LHW24 remains the latest closed numbered LHW wave.
+Next allowed move: fresh source-verified narrow file-backed persistence invocation implementation work-order authoring only. R44-T1 is CLOSED_PASS_BOUNDED at material commit `c892ba922`; it selected `R44_T1_FILE_BACKED_PERSISTENCE_RELEASE_READY_FOR_NARROW_INVOCATION_PACKET`, which authorizes authoring a future narrow invocation packet, not implementation or runtime execution yet. No source/test edit, MinerU runtime execution, private/generated content read, real file-backed persistence invocation, persistence-mode widening, production Memory/RAG invocation or release, retrieval, vectorization, provider/live proof, provider-local or IDE config edits, public-sync, use-case/legal work, worker commit, push, or public claim is authorized until a later accepted packet releases it. LHW24 remains the latest closed numbered LHW wave.
 
-## Core Guard Self-Protection Authorization - MSEA-R44-T1 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R44-T1 Closure Session Sync
 
 Authorized guard-maintenance scope: session-sync only after MSEA-R44-T1
-dispatch material commit `2588b5e74`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, dispatched work, startup acknowledgment, and next allowed move after R44-T1 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R44-T1 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R44-T1 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR44T1MineruFileBackedPersistenceReleaseRecheckOrStopDispatch20260706.json` | Record R44-T1 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to no-commit R44-T1 worker execution. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R44-T1 dispatch continuity and worker-execution next move. |
-
-Rollback boundary: revert only this R44-T1 dispatch session-sync if rejected;
-do not revert material dispatch commit `2588b5e74`, R43-T2 material closure
-commit `db2599f49`, R43-T2 dispatch commit `43abc2791`, or earlier accepted
-history.
-
-## Core Guard Self-Protection Authorization - MSEA-R43-T2 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R43-T2
-material closure commit `db2599f49`, including active mode, next allowed
+material closure commit `c892ba922`, including active mode, next allowed
 move, generated active state, bootstrap read model, front-door continuity,
 active handoff, and closure state entry.
 
@@ -191,566 +168,29 @@ Protected paths:
 
 | Path | Purpose |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, closed work, startup acknowledgment, and next allowed move after R43-T2 closure. |
+| `CVF_SESSION_MEMORY.md` | Update current mode, closed work, startup acknowledgment, and next allowed move after R44-T1 closure. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R43-T2 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R43-T2 closed ready for release recheck or stop. |
-| `CVF_SESSION/state/entries/mseaR43T2MineruActorRolePersistenceAuthorityWiringImplementationClosure20260706.json` | Record accepted R43-T2 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to next-roadmap selection or fresh release recheck/stop packet. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R43-T2 closure continuity and release-recheck/stop next move. |
-
-Rollback boundary: revert only this R43-T2 closure session-sync if rejected;
-do not revert material closure commit `db2599f49`, dispatch commit
-`43abc2791`, R43-T1 closure commit `f92e089b6`, or earlier accepted history.
-
-Historical R43-T2 dispatch and R43-T1 session-sync authorization detail is
-available in `CVF_SESSION/ACTIVE_SESSION_STATE.json`, source entries under
-`CVF_SESSION/state/entries/`, governed artifacts, and active/archived handoffs.
-
-## Core Guard Self-Protection Authorization - MSEA-R42-T1 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R42-T1
-material closure commit `f88ecfaca`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R42-T1 closure continuity and next operator-selection move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R42-T1 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R42-T1 closed missing-confirmed state. |
-| `CVF_SESSION/state/entries/mseaR42T1MineruPersistenceModeAuthorityReopenSourceDiscoveryClosure20260706.json` | Record R42-T1 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator-selected fresh design packet, different held lane, stop, or new initiative. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R42-T1 closure continuity and next move. |
-
-Rollback boundary: revert only this R42-T1 closure session-sync if rejected;
-do not revert material closure commit `f88ecfaca`, dispatch commit
-`9198f09ca`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R42-T1 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R42-T1
-material dispatch commit `9198f09ca`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after R42-T1 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R42-T1 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R42-T1 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR42T1MineruPersistenceModeAuthorityReopenSourceDiscoveryDispatch20260706.json` | Record R42-T1 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R42-T1 no-commit docs-only worker execution. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R42-T1 dispatch continuity and worker-execution next move. |
-
-Rollback boundary: revert only this R42-T1 dispatch session-sync if rejected;
-do not revert material dispatch commit `9198f09ca`, R41-T4 closure commit
-`41802d2ff`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T4 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T4
-closure material commit `41802d2ff`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R41-T4 closure continuity and next-move options. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T4 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T4 closed pending operator next initiative or fresh reopen packet. |
-| `CVF_SESSION/state/entries/mseaR41T4MineruFoundationChainStopReleaseDecisionClosure20260706.json` | Record accepted R41-T4 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop, fresh R41-T2 reopen packet, fresh R39 authority packet, different held lane, or new initiative. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T4 closure continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R41-T4 closure session-sync if rejected;
-do not revert material closure commit `41802d2ff`, dispatch commit
-`41879e78e`, R41-T3 closure commit `7c5d94ac5`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T4 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T4
-material dispatch commit `41879e78e`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Update current mode, current dispatched work, startup acknowledgment, and next allowed move after R41-T4 dispatch. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T4 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T4 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR41T4MineruFoundationChainStopReleaseDecisionDispatch20260706.json` | Record R41-T4 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R41-T4 no-commit docs-only worker execution. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T4 dispatch continuity and worker-execution next move. |
-
-Rollback boundary: revert only this R41-T4 dispatch session-sync if rejected;
-do not revert material dispatch commit `41879e78e`, R41-T3 closure commit
-`7c5d94ac5`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T3 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T3
-closure material commit `7c5d94ac5`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R41-T3 closure continuity and next-move options. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T3 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T3 closed pending T4/stop/reopen decision. |
-| `CVF_SESSION/state/entries/mseaR41T3MineruPersistenceHarnessReadinessDecisionClosure20260706.json` | Record accepted R41-T3 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop, reopen-authority packet, different held lane, or R41-T4 stop/release decision work-order authoring. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T3 closure continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R41-T3 closure session-sync if rejected;
-do not revert material closure commit `7c5d94ac5`, dispatch commit
-`7be26e751`, R41-T2 closure commit `4a08d3ef0`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T3 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T3
-dispatch commit `7be26e751`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R41-T3 dispatch continuity and no-commit worker next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T3 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T3 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR41T3MineruPersistenceHarnessReadinessDecisionDispatch20260706.json` | Record R41-T3 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to no-commit R41-T3 docs-only worker execution. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T3 dispatch continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R41-T3 dispatch session-sync if rejected;
-do not revert dispatch commit `7be26e751`, R41-T2 closure commit `4a08d3ef0`,
-or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T2 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T2
-closure material commit `4a08d3ef0`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R41-T2 closure continuity and operator decision next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T2 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T2 closed pending operator decision. |
-| `CVF_SESSION/state/entries/mseaR41T2MineruPersistenceModeAuthorizationDecisionClosure20260706.json` | Record R41-T2 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator reopen-lane-or-stop decision. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T2 closure continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R41-T2 closure session-sync if rejected;
-do not revert material commit `4a08d3ef0`, dispatch commit `a9bc692d3`,
-R41-T1 closure commit `51216fb9a`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T2 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T2
-dispatch commit `a9bc692d3`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R41-T2 dispatch continuity and no-commit worker next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T2 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T2 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR41T2MineruPersistenceModeAuthorizationDecisionDispatch20260706.json` | Record R41-T2 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to no-commit R41-T2 docs-only worker execution. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T2 dispatch continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R41-T2 dispatch session-sync if rejected;
-do not revert dispatch commit `a9bc692d3`, R41-T1 closure commit `51216fb9a`,
-or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T1 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T1
-closure material commit `51216fb9a`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R41-T1 closure continuity and persistence-mode authorization next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T1 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T1 closed pending persistence-mode authorization packet or stop. |
-| `CVF_SESSION/state/entries/mseaR41T1MineruFileBackedPersistenceReleaseAuthorityDecisionClosure20260706.json` | Record R41-T1 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to persistence-mode authorization packet authoring or stop. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T1 closure continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R41-T1 closure session-sync if rejected;
-do not revert material closure commit `51216fb9a`, dispatch session-sync commit
-`f324d1d96`, dispatch commit `92a33f4ab`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R41-T1 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R41-T1
-dispatch commit `92a33f4ab`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R41-T1 dispatch continuity and no-commit worker next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R41-T1 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R41-T1 dispatched pending worker return. |
-| `CVF_SESSION/state/entries/mseaR41T1MineruFileBackedPersistenceReleaseAuthorityDecisionDispatch20260706.json` | Record R41-T1 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to no-commit R41-T1 docs-only worker execution. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R41-T1 dispatch continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R41-T1 dispatch session-sync if rejected;
-do not revert dispatch commit `92a33f4ab`, R40-T1 closure commit `513a41c66`,
-or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R40-T1 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R40-T1
-closure material commit `513a41c66`, including active mode, next allowed move,
-generated active state, bootstrap read model, front-door continuity, active
-handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R40-T1 closure continuity and next-roadmap-or-stop next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R40-T1 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R40-T1 closed pending next-roadmap selection or stop. |
-| `CVF_SESSION/state/entries/mseaR40T1MineruSystemChainProviderLiveProofClosure20260706.json` | Record R40-T1 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to next roadmap selection or stop. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R40-T1 closure continuity and HEAD freshness. |
-
-Rollback boundary: revert only this R40-T1 closure session-sync if rejected;
-do not revert material closure commit `513a41c66`, handoff marker sync commit
-`1b9df6ff0`, ADIF-0025 learning-record commit `a61c165c6`, dispatch commit
-`c80bcd7b1`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R40-T1 Dispatch And Worker-Return Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R40-T1
-dispatch material commit `c80bcd7b1`, bringing active mode, next allowed
-move, generated active state, bootstrap read model, and front-door
-continuity current with that commit so the already-returned R40-T1 worker
-output can proceed to reviewer closure.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R40-T1 dispatch/worker-return continuity and reviewer-closure next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R40-T1 session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R40-T1 dispatch/worker-return. |
-| `CVF_SESSION/state/entries/mseaR40T1MineruSystemChainProviderLiveProofDispatch20260706.json` | Record accepted R40-T1 dispatch evidence. |
-| `CVF_SESSION/state/entries/mseaR40T1WorkerReturnSessionSync20260706.json` | Record R40-T1 worker-return continuity evidence and reviewer-closure routing. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to reviewer review and closure decision for R40-T1. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record dispatch commit `c80bcd7b1` for GC-020 handoff HEAD freshness and R40-T1 worker-return continuity. |
-
-Rollback boundary: revert only this R40-T1 session-sync if rejected; do not
-revert material dispatch commit `c80bcd7b1`, prior closure commit
-`bdc865ce0`, or earlier accepted history. Do not commit or revert the two
-untracked worker-added paths as part of this sync's rollback.
-
-## Core Guard Self-Protection Authorization - MSEA-R39-T1 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R39-T1
-closure material commit `bdc865ce0`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff rotation, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R39-T1 closure continuity and memory-owner authorization packet next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R39-T1 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R39-T1 closure. |
-| `CVF_SESSION/state/entries/mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionClosure20260706.json` | Record accepted R39-T1 closure evidence. |
-| `CVF_SESSION/state/entries/mseaR39T1ClosureHandoffRotationSessionSync20260706.json` | Record V36 archive and V37 active-handoff rotation evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to memory-owner authorization packet authoring or stop. |
-| `AGENT_HANDOFF_V37_2026-07-06.md` | Record compact active handoff after R39-T1 closure and V36 rotation. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Preserve superseded handoff as archived historical continuity. |
-
-Rollback boundary: revert only this R39-T1 closure session-sync if rejected;
-do not revert material closure commit `bdc865ce0`, dispatch commit
-`2931cd918`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R39-T1 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R39-T1
-dispatch material commit `2931cd918`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R39-T1 dispatch continuity and no-commit worker next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R39-T1 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R39-T1 dispatch. |
-| `CVF_SESSION/state/entries/mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260706.json` | Record accepted R39-T1 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R39-T1 no-commit docs-only worker execution. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R39-T1 dispatch evidence and worker handoff boundary. |
-
-Rollback boundary: revert only this R39-T1 dispatch session-sync if rejected;
-do not revert material dispatch commit `2931cd918`, R38 closure commit
-`42a0f1f02`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R38 T1-T4 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R38 T1-T4
-closure material commit `42a0f1f02`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, closure state entry, and last-updated state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R38 closure continuity and operator authority-lane selection next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R38 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R38 closure. |
-| `CVF_SESSION/state/entries/mseaR38T1T4MineruToMemoryScanlayerSystemChainClosureAuditClosure20260706.json` | Record accepted R38 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator authority-lane selection. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R38 closure evidence and next authority-lane selection move. |
-
-Rollback boundary: revert only this R38 closure session-sync if rejected; do
-not revert material closure commit `42a0f1f02`, dispatch commit `09ab88f13`,
-or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R37-T1 Public Export Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R37-T1
-public-sync push commit `99997d92392fc05bf4896fcfa3afd1c22b24b3cf`,
-including active mode, next allowed move, generated active state, bootstrap
-read model, front-door continuity, active handoff, and export state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R37-T1 public export evidence and next-roadmap selection move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R37-T1 public export session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R37-T1 public export. |
-| `CVF_SESSION/state/entries/mseaR37T1PublicCatalogHygienePublicSyncExported20260706.json` | Record R37-T1 public export evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to next-roadmap selection or fresh source-verified packet. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R37-T1 public export evidence and next-roadmap selection move. |
-
-Rollback boundary: revert only this R37-T1 public export session-sync if
-rejected; do not revert public-sync push commit
-`99997d92392fc05bf4896fcfa3afd1c22b24b3cf`, material worker-return commit
-`2ce8d15ab`, dispatch commit `1aed1f066`, R36 closure commit `507bda564`,
-or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R36 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R36
-closure material commit `507bda564`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R36 closure continuity and public-sync work-order authoring next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R36 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R36 closure. |
-| `CVF_SESSION/state/entries/mseaR36T1T3PublicCatalogHygieneSourcePacketClosure20260705.json` | Record accepted R36 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to fresh public-sync work-order authoring. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R36 closure continuity and public-sync work-order authoring next move. |
-
-Rollback boundary: revert only this R36 closure session-sync if rejected;
-do not revert material closure commit `507bda564`, R36 dispatch commit
-`cfab0813c`, R35 closure commit
-`f9e2a0b33`, R35 dispatch commit `1d42f331`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R35 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R35
-material closure commit `f9e2a0b33`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R35 closure continuity and R36 work-order-authoring next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R35 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R35 closure. |
-| `CVF_SESSION/state/entries/mseaR35T1T3PostMineruStopStateAndInitiativeSelectionClosure20260705.json` | Record accepted R35 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to MSEA-R36 public catalog hygiene source-packet work-order authoring. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R35 closure continuity and R36 authoring next move. |
-
-Rollback boundary: revert only this R35 closure session-sync if rejected;
-do not revert material closure commit `f9e2a0b33`, R35 dispatch commit
-`1d42f331`, R34-T2 closure commit `20ff04e17`, R33 material commit
-`3a46bc371`, public-sync commit `7f6e548d3`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R35 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R35
-dispatch material commit `1d42f331`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R35 dispatch continuity and no-commit worker-execution next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R35 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R35 dispatch. |
-| `CVF_SESSION/state/entries/mseaR35T1T3PostMineruStopStateAndInitiativeSelectionDispatch20260705.json` | Record accepted R35 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R35 no-commit worker execution. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R35 dispatch continuity and worker-execution next move. |
-
-Rollback boundary: revert only this R35 dispatch session-sync if rejected;
-do not revert material dispatch commit `1d42f331`, R34-T2 closure commit
-`20ff04e17`, R33 material commit `3a46bc371`, public-sync commit
-`7f6e548d3`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R34-T2 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R34-T2
-closure material commit `20ff04e17`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R34-T2 closure continuity and operator-selection next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R34-T2 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R34-T2 closure. |
-| `CVF_SESSION/state/entries/mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionClosure20260705.json` | Record accepted R34-T2 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator new-initiative selection. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R34-T2 closure continuity and operator-selection next move. |
-
-Rollback boundary: revert only this R34-T2 closure session-sync if
-rejected; do not revert material closure commit `20ff04e17`, material
-dispatch commit `de19d6891`, R34-T1 closure commit `878dfe8c2`, R33
-material commit `3a46bc371`, public-sync commit `7f6e548d3`, or earlier
-accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R34-T2 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R34-T2
-dispatch material commit `de19d6891`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R34-T2 dispatch continuity and no-commit worker-execution next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R34-T2 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R34-T2 dispatch. |
-| `CVF_SESSION/state/entries/mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionDispatch20260705.json` | Record accepted R34-T2 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R34-T2 no-commit decision worker execution. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R34-T2 dispatch continuity and worker-execution next move. |
-
-Rollback boundary: revert only this R34-T2 dispatch session-sync if
-rejected; do not revert material dispatch commit `de19d6891`, R34-T1
-closure commit `878dfe8c2`, R33 material commit `3a46bc371`, public-sync
-commit `7f6e548d3`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R34-T1 Closure Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R34-T1
-material closure commit `878dfe8c2`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and closure state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R34-T1 closure continuity and R34-T2 decision-packet next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R34-T1 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` after R34-T1 closure. |
-| `CVF_SESSION/state/entries/mseaR34T1MineruPythonToTypescriptBridgeProofClosure20260705.json` | Record accepted R34-T1 closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R34-T2 stop-or-one-narrow-release-lane decision packet. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R34-T1 closure continuity and R34-T2 next move. |
-
-Rollback boundary: revert only this R34-T1 closure session-sync if
-rejected; do not revert material closure commit `878dfe8c2`, dispatch
-commit `17ff309e`, R33 material commit `3a46bc371`, public-sync commit
-`7f6e548d3`, or earlier accepted history.
-
-## Core Guard Self-Protection Authorization - MSEA-R34-T1 Dispatch Session Sync
-
-Authorized guard-maintenance scope: session-sync only after MSEA-R34-T1
-dispatch material commit `17ff309e`, including active mode, next allowed
-move, generated active state, bootstrap read model, front-door continuity,
-active handoff, and dispatch state entry.
-
-Protected paths:
-
-| Path | Purpose |
-|---|---|
-| `CVF_SESSION_MEMORY.md` | Record R34-T1 dispatch continuity and worker-execution next move. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R34-T1 dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R34-T1 dispatched pending worker execution. |
-| `CVF_SESSION/state/entries/mseaR34T1MineruPythonToTypescriptBridgeProofDispatch20260705.json` | Record accepted R34-T1 dispatch evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R34-T1 no-commit worker execution. |
-| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md` | Record R34-T1 dispatch continuity and worker-execution next move. |
-
-Rollback boundary: revert only this R34-T1 dispatch session-sync if
-rejected; do not revert material dispatch commit `17ff309e`, R33 material
-commit `3a46bc371`, public-sync commit `7f6e548d3`, or earlier accepted
-history.
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R44-T1 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R44-T1 closed ready for narrow invocation work-order authoring. |
+| `CVF_SESSION/state/entries/mseaR44T1MineruFileBackedPersistenceReleaseRecheckOrStopClosure20260706.json` | Record R44-T1 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to fresh narrow invocation work-order authoring only. |
+| `AGENT_HANDOFF_V37_2026-07-06.md` | Record R44-T1 closure continuity and next move. |
+
+Rollback boundary: revert only this R44-T1 closure session-sync if rejected;
+do not revert material closure commit `c892ba922`, dispatch commit
+`2588b5e74`, session-sync commit `28b9ed5c9`, or earlier accepted history.
+
+## Historical Session-Sync Authorization Routing
+
+Older session-sync authorization blocks from MSEA-R44-T1 dispatch and prior
+closures were compacted out of this front door to keep it below the governed
+file-size threshold. Canonical detail remains available in:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- source entries under `CVF_SESSION/state/entries/`;
+- `AGENT_HANDOFF_V37_2026-07-06.md` for current R44 continuity;
+- archived handoffs under `CVF_SESSION/handoffs/archive/`;
+- governed baselines, work orders, reviews, matrices, and closure packets under `docs/`.
 
 LHW24 remains the latest closed numbered LHW wave.
 
