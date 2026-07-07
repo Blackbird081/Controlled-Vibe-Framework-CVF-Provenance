@@ -14,7 +14,6 @@ $publicRemote = "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.g
 $requiredPublicCoreFiles = @(
     "AGENTS.md",
     "AGENT_HANDOFF.md",
-    "AGENT_HANDOFF.md",
     "docs\reference\CVF_WORKSPACE_RULES.md",
     "governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
     "scripts\check_cvf_workspace_agent_enforcement.ps1",
@@ -210,6 +209,16 @@ try {
     }
 
     Write-LocalWorkspaceRules -Workspace $workspaceResolved -CorePath $corePath
+
+    if (Test-Path -LiteralPath $workspaceWrapperInstallerPath -PathType Leaf) {
+        & powershell -ExecutionPolicy Bypass -File $workspaceWrapperInstallerPath -WorkspaceRoot $workspaceResolved
+        if ($LASTEXITCODE -ne 0) {
+            throw "Workspace wrapper installer failed with exit code $LASTEXITCODE : $workspaceWrapperInstallerPath"
+        }
+    }
+    else {
+        Write-Warn "Workspace wrapper installer not found: $workspaceWrapperInstallerPath"
+    }
 }
 catch {
     if (Test-Path -LiteralPath $backupPath -PathType Container) {
