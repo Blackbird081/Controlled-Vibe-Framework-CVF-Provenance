@@ -77,6 +77,8 @@ Latest R51 handoff freshness sync commit: `f46a8dadd`.
 
 R58/R59 status: plane I/O registry checkpoint is closed; R56 contract is reusable through `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md`; provenance push is held by R58 push-debt/split-range findings; public-safe snapshot/public-sync remains deferred unless separately authorized.
 
+Latest handoff authorization repair parent commit: `e73f566da`.
+
 ## R50 Boundary
 
 R50 is a docs-only source-verified seal decision. It seals the existing R10 adapter-contract reference to the completed MinerU/scanlayer/memory foundation chain and selects stop/checkpoint. It does not authorize direct absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, hosted release, provider-local config edit, push, or public claim.
