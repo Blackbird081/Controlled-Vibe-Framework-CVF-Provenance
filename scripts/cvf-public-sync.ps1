@@ -72,7 +72,6 @@ $ALLOWED_SCRIPT_FILES = @(
     'scripts\check_cvf_workspace_agent_enforcement.ps1',
     'scripts\check_cvf_workspace_new_project_enforcement.ps1',
     'scripts\ingest_cvf_downstream_knowledge.ps1',
-    'scripts\install_cvf_workspace_root_wrappers.ps1',
     'scripts\install_cvf_hooks.ps1',
     'scripts\new-cvf-workspace.ps1',
     'scripts\update_cvf_workspace_public_core.ps1',
@@ -90,6 +89,10 @@ $MAPPED_FILES = @(
     @{
         Source      = 'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_CONTINUATION.md'
         Destination = 'AGENT_HANDOFF.md'
+    },
+    @{
+        Source      = 'scripts\install_cvf_workspace_root_wrappers_public.ps1'
+        Destination = 'scripts\install_cvf_workspace_root_wrappers.ps1'
     }
 )
 
