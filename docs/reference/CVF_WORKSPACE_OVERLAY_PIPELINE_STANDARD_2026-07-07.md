@@ -80,6 +80,13 @@ Each catalog entry must declare:
 
 Directory entries are exported recursively.
 
+Validate the catalog and profile set before publishing or relying on a changed
+overlay configuration:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\check_cvf_workspace_overlay_catalog.ps1
+```
+
 ## Commands
 
 Export a reviewed overlay bundle:
@@ -129,6 +136,8 @@ Use these criteria before tagging an artifact into a workspace lane:
 - canonical enough to survive normal repo churn;
 - not dependent on private operator-only continuity state;
 - safe to layer on top of a public hidden core.
+- must not depend on `CVF_SESSION/`, `CVF_SESSION_MEMORY.md`, or versioned
+  private handoff files.
 
 ### `workspace-provenance-local`
 
@@ -136,3 +145,15 @@ Use these criteria before tagging an artifact into a workspace lane:
 - allowed to be volatile;
 - private/local-only by nature;
 - must not be treated as public-safe export.
+
+## Machine Validation
+
+The checker must fail when:
+
+- a catalog entry points to a missing path;
+- an `artifactId` or path is duplicated;
+- a required field is missing;
+- a profile references an unknown selector;
+- `workspace-premium` includes private continuity surfaces;
+- `workspace-provenance-local` uses anything other than `local-only` review
+  policy.

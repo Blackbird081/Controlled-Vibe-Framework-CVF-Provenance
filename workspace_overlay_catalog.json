@@ -2,6 +2,55 @@
   "schemaVersion": "1.0",
   "artifacts": [
     {
+      "artifactId": "guard-orientation-index",
+      "path": "docs\\reference\\guard_orientation\\README.md",
+      "artifactClass": "orientation-index",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance",
+        "operator-orientation"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Primary guard-orientation entrypoint used before governed authoring and execution."
+    },
+    {
+      "artifactId": "operational-reference-index",
+      "path": "docs\\reference\\CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "artifactClass": "reference-index",
+      "selectionTags": [
+        "workspace-premium",
+        "operator-orientation"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Cross-CVF lookup index that helps operators and agents find the right reference lane."
+    },
+    {
+      "artifactId": "governance-control-matrix",
+      "path": "docs\\reference\\CVF_GOVERNANCE_CONTROL_MATRIX.md",
+      "artifactClass": "reference-matrix",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "High-value governance surface that summarizes control points used across downstream work."
+    },
+    {
+      "artifactId": "agent-work-order-template",
+      "path": "docs\\reference\\CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "artifactClass": "authoring-template",
+      "selectionTags": [
+        "workspace-premium",
+        "work-order-authoring"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Reusable governed work-order front door for downstream authoring and dispatch preparation."
+    },
+    {
       "artifactId": "knowledge-absorption-priority-standard",
       "path": "docs\\reference\\CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
       "artifactClass": "reference-standard",
