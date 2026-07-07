@@ -78,8 +78,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target",
-  "previousMode": "msea_r56_foundation_plane_io_contract_and_system_interlock_closed_pass_bounded_ready_for_r57_release_or_stop_decision",
+  "currentMode": "msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target",
+  "previousMode": "msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -5308,6 +5308,42 @@
     "nextRecommendedMove": "EXECUTE_MSEA_R28_T22_NO_COMMIT_WORKER_RETURN_FOR_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_CANDIDATE",
     "claimBoundary": "R28-T22 dispatch authored a source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a bounded MinerU memory/RAG route release implementation candidate. It authorizes only the named TypeScript helper/test paths and worker return. It does not authorize production memory/RAG route release, production durable-store invocation, file-backed production persistence, vectorization, retrieval, MinerU runtime, private/generated output content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, provider-local or IDE config edits, checker/hook/session/handoff edits by worker, worker commit, or push."
   },
+  "mseaR58R59PlaneIoRegistryCheckpoint20260707": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "a960db753",
+    "materialCommitFull": "a960db753e7d6cd1f7e1b536feb3dc4a521d451f",
+    "r58ReviewPath": "docs/reviews/CVF_MSEA_R58_PROVENANCE_SYNC_PUSH_READINESS_CHECKPOINT_2026-07-07.md",
+    "r59ReviewPath": "docs/reviews/CVF_MSEA_R59_PUBLIC_SAFE_SNAPSHOT_AND_PLANE_IO_REGISTRY_DECISION_2026-07-07.md",
+    "registryReferencePath": "docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md",
+    "selectedR58Disposition": "R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT",
+    "selectedR59Disposition": "R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY",
+    "verification": [
+      "pre-implementation autorun PASS 75/75 on e3d84e3fb..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80",
+      "push-readiness preview before material authoring reported upstream push debt over limit 2 and broad-range material/session split requirements"
+    ],
+    "boundedDecisionFacts": {
+      "r56ContractPromotedToReusableReference": true,
+      "provenancePushReady": false,
+      "publicSafeSnapshotDeferred": true,
+      "publicSyncAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "runtimeProviderMcpProofAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "rawMemoryReleased": false,
+      "privateOutputContentReadAuthorized": false,
+      "retrievalReleased": false,
+      "vectorizationReleased": false,
+      "p3Reopened": false,
+      "useCaseLegalWorkflowOpened": false,
+      "publicClaimAuthorized": false
+    },
+    "nextAllowedMove": "Stop/checkpoint unless the operator selects a fresh source-verified target. Provenance push requires a dedicated push-prep or push execution batch that clears push-readiness preview findings. Public-safe snapshot/public-sync remains deferred unless separately authorized from the sibling public-sync clone.",
+    "claimBoundary": "R58/R59 closes only a private provenance docs/reference checkpoint. It adds a reusable R56-derived foundation plane I/O contract reference, records provenance push held by push-debt/split-range findings, and defers public-safe snapshot. It does not authorize implementation, checker work, source/test edit, runtime/provider proof, production Memory/RAG release, public-sync mutation, retrieval/vectorization, P3 reopen, external source import, private/generated MinerU output read, use-case/legal workflow, public claim, or downstream release."
+  },
   "assfPicT4WebProjectionBridgeDecisionClosure20260626": "ASSF-PIC-T4 is CLOSED_PASS_BOUNDED at material closure commit 60ffa4de. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md. Dispositions: WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD; SCHEMA_BRIDGE_DEFERRED_CERTIFICATION_HELD; EXTERNAL_ADAPTER_DEFERRED_NO_EVIDENCE. ASSF-PIC-T5 is released for GC-018/source-verified work-order creation after this session-sync.",
   "assfPicT5CheckerReadinessNextControlDecisionClosure20260626": "ASSF-PIC-T5 is CLOSED_PASS_BOUNDED at material closure commit 410818fc, and the ASSF-PIC roadmap is CLOSED_PASS_BOUNDED. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md. Disposition: CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE. Next-control recommendation: OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE.",
   "roadmapClosurePackageGotchaHardening20260626": "Roadmap closure package gotcha hardening is CLOSED_PASS_BOUNDED at material commit 9cd46bd2. Material artifact: docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md. Disposition: CHECKLIST_GUIDANCE_ADDED. Lesson recorded: changing a roadmap top Status line to a closed-equivalent token requires adding the roadmap-local Machine Closure Package and, when receipt/query acceptance language is used, the Acceptance Receipt Assertion Matrix before the first gate run. Boundary: documentation/reference checklist guidance only; no checker implementation, package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, or readiness claim.",
@@ -9800,5 +9836,5 @@
     "nextAllowedMove": "Stop/checkpoint. No further MSEA R57 follow-on implementation, checker, runtime, public-sync, production Memory/RAG, retrieval/vectorization, P3 reopen, external import, private/generated MinerU output read, source/test edit, provider/MCP proof, use-case/legal workflow, hosted/public/production claim, or direct implementation is authorized unless the operator selects a fresh source-verified target.",
     "claimBoundary": "R57 closes only a bounded private provenance release-or-stop decision. It accepts the R56 foundation plane I/O contract as the current governed internal architecture/control-plane checkpoint and stops the current lane. Future checker, implementation, runtime, public, or use-case work requires a fresh operator-selected source-verified target."
   },
-  "nextAllowedMove": "MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision is CLOSED_PASS_BOUNDED at provenance material commit 4736ca56f. R57 selected R57_STOP_AT_FOUNDATION_PLANE_IO_CONTRACT_CHECKPOINT and selected OPERATOR_SELECT_FRESH_SOURCE_VERIFIED_TARGET_OR_STOP as the next state. R57 accepts the R56 foundation plane I/O contract as the current governed internal architecture/control-plane checkpoint and stops the current lane. Next allowed move: stop/checkpoint unless the operator selects a fresh source-verified target. No further MSEA R57 follow-on implementation, checker, runtime, public-sync, production Memory/RAG, retrieval/vectorization, P3 reopen, external import, private/generated MinerU output read, source/test edit, provider/MCP proof, use-case/legal workflow, hosted/public/production claim, or direct implementation is authorized. LHW24 remains latest closed numbered LHW wave."
+  "nextAllowedMove": "MSEA-R58/R59 Plane I/O Registry Checkpoint is CLOSED_PASS_BOUNDED at provenance material commit a960db753. R58 selected R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT after read-only push preview showed upstream push debt and broad-range material/session split requirements. R59 selected R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY and added docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md as the reusable R56-derived foundation plane I/O contract reference. Next allowed move: stop/checkpoint unless the operator selects a fresh source-verified target. A future provenance push requires a dedicated push-prep or push execution batch that clears push-readiness preview findings. Public-safe snapshot/public-sync remains deferred unless separately authorized from the sibling public-sync clone. No implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval/vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, public-sync mutation, or direct downstream release is authorized. LHW24 remains latest closed numbered LHW wave."
 }

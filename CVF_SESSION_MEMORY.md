@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=stop/checkpoint unless the operator selects a fresh source-verified target; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, or implementation is authorized by R57.
+Startup acknowledged: current mode=`msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=stop/checkpoint unless the operator selects a fresh source-verified target; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; provenance push is held by R58 push-debt/split-range findings; public-safe snapshot/public-sync remains deferred unless separately authorized from the sibling public-sync clone; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation, or direct downstream release is authorized by R58/R59.
 
 ## Current Mode
 
-Current mode marker: `msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+Current mode marker: `msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
 
-Current mode: `msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+Current mode: `msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
 
-`msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+`msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
 
 Previous mode:
 
-`msea_r56_foundation_plane_io_contract_and_system_interlock_closed_pass_bounded_ready_for_r57_release_or_stop_decision`
+`msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R58/R59 Plane I/O Registry Checkpoint | `a960db753` | CLOSED_PASS_BOUNDED; R58 selected `R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT` after read-only push preview showed upstream push debt and broad-range material/session split requirements; R59 selected `R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY` and added `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md` as reusable R56-derived foundation plane I/O contract reference; pre-implementation autorun PASS 75/75 on `e3d84e3fb..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval, vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, public-sync mutation, hosted/public/production claim, or direct downstream release is authorized. |
 | MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision | `4736ca56f` | CLOSED_PASS_BOUNDED; selected `R57_STOP_AT_FOUNDATION_PLANE_IO_CONTRACT_CHECKPOINT`; accepts R56 foundation plane I/O contract as the current governed internal architecture/control-plane checkpoint; stops the current lane unless the operator selects a fresh source-verified target; focused gates PASS, pre-implementation autorun PASS 75/75 on `3a36ef8fd..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, checker work, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 reopen, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet | `18253d95b` | CLOSED_PASS_BOUNDED; selected `R56_FOUNDATION_PLANE_IO_CONTRACT_DEFINED_READY_FOR_R57_RELEASE_OR_STOP_DECISION`; defined foundation plane output-to-input contract rows plus system interlock acceptance rules; selected fresh source-verified MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision as the next target; focused gates PASS, pre-implementation autorun PASS 75/75 on `699015afa..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 reopen, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R55 High-Value Plane Absorb Target Reselection | `ea53c7df5` | CLOSED_PASS_BOUNDED; selected `R55_SELECT_FOUNDATION_PLANE_IO_CONTRACT_AND_INTERLOCK_PACKET`; selected fresh source-verified MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet as the next target; P3 remains parked; focused gates PASS, pre-implementation autorun PASS 75/75 on `ecb9a5c10..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 reopen, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
@@ -144,16 +145,19 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r57_foundation_plane_io_contract_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+Mode: `msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
 
-Stop/checkpoint. R57 accepts the R56 foundation plane I/O contract as the
-current governed internal architecture/control-plane checkpoint and stops the
-current lane. No further MSEA R57 follow-on implementation, checker, runtime,
-public-sync, production Memory/RAG, retrieval/vectorization, P3 reopen,
-external import, private/generated MinerU output read, source/test edit,
-provider/MCP proof, use-case/legal workflow, hosted/public/production claim,
-or direct implementation is authorized unless the operator selects a fresh
-source-verified target. LHW24 remains the latest closed numbered LHW wave.
+Stop/checkpoint. R58/R59 closes the plane I/O registry checkpoint: R56
+contract is now reusable as an internal reference, provenance push remains held
+until a dedicated push-prep or push execution batch clears push-readiness
+preview findings, and public-safe snapshot/public-sync remains deferred unless
+separately authorized from the sibling public-sync clone. No implementation,
+checker work, source/test edit, runtime/provider/MCP proof, production
+Memory/RAG release, retrieval/vectorization, P3 reopen, external import,
+private/generated MinerU output read, use-case/legal workflow,
+hosted/public/production claim, public-sync mutation, or direct downstream
+release is authorized unless the operator selects a fresh source-verified
+target. LHW24 remains the latest closed numbered LHW wave.
 
 ## Current Closed Work
 
@@ -181,29 +185,30 @@ door to keep it below the governed file-size threshold. Use
 `CVF_SESSION/state/entries/`, governed artifacts, and archived handoffs for
 canonical older closure detail.
 
-## Core Guard Self-Protection Authorization - MSEA-R57 Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R58/R59 Session Sync
 
-Authorized guard-maintenance scope: session-sync only after MSEA-R57 material
-closure commit `4736ca56f`, including active mode, next allowed move, generated
-active state, bootstrap read model, front-door continuity, active handoff, and
-R57 closure state entry.
+Authorized guard-maintenance scope: session-sync only after MSEA-R58/R59
+material closure commit `a960db753`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and R58/R59 closure state entry.
 
 Protected paths:
 
 | Path | Purpose |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Record R57 stop/checkpoint closure. |
-| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R57 closure. |
-| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R57 closure session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R57 closure. |
-| `CVF_SESSION/state/entries/mseaR57FoundationPlaneIoContractReleaseOrStopDecision20260707.json` | Record R57 closure and stop/checkpoint state. |
+| `CVF_SESSION_MEMORY.md` | Record R58/R59 plane I/O registry checkpoint closure. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R58/R59 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R58/R59 session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R58/R59 closure. |
+| `CVF_SESSION/state/entries/mseaR58R59PlaneIoRegistryCheckpoint20260707.json` | Record R58/R59 closure, registry reference, push hold, and public snapshot deferral. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop/checkpoint unless operator selects a fresh source-verified target. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R57 continuity and stop/checkpoint next move. |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R58/R59 continuity and stop/checkpoint next move. |
 
-Rollback boundary: revert only this MSEA-R57 session-sync if rejected; do not
-revert material closure commit `4736ca56f`, R56 material commit `18253d95b`,
-R55 material commit `ea53c7df5`, R54 material commit `e89e03e9f`, R53 material
-commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit
+Rollback boundary: revert only this MSEA-R58/R59 session-sync if rejected; do
+not revert material closure commit `a960db753`, R57 material commit
+`4736ca56f`, R56 material commit `18253d95b`, R55 material commit
+`ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit
+`22c471fdd`, R52 material commit `18f177033`, public-sync commit
 `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R56 Session Sync
