@@ -2,24 +2,24 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R72 Governance Control Index front-door refactor.
+Purpose: compact current-session continuity for resumed agents after MSEA-R72 Governance Control Index Claude-review repair.
 Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, checker retirement implementation, checker deletion/disablement, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on the official Governance Control Index front
+Keep resumed agents aligned on the repaired Governance Control Index front
 door, active handoff V38, and the next R72A public-main CI
 health/governance-load baseline GC-018 and work-order authoring lane.
 
 ## Scope
 
-This handoff covers private provenance continuity after the R72 Governance Control Index front-door refactor only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, checker retirement implementation, checker deletion/disablement, new public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after the R72 Governance Control Index Claude-review repair only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, checker retirement implementation, checker deletion/disablement, new public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, product extraction, operator onboarding implementation, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only, citing GCI-014 for public-main CI/public-surface evidence; parked checkpoint=Governance Control Index is lifecycle/cost/value authority only, while checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, push, and public/production claims remain unauthorized.
+Startup acknowledged: current mode=`msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only, citing repaired GCI-014 for public-main CI/public-surface evidence; parked checkpoint=GCI/roadmap repairs from Claude review are accepted, but checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, push, operator onboarding implementation, product extraction, and public/production claims remain unauthorized.
 
 ## Mandatory Startup Reads
 
@@ -33,11 +33,34 @@ Startup acknowledged: current mode=`msea_r72_governance_control_index_establishe
 
 ## Current Mode
 
-`msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`
+`msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R72 now has an official Governance Control Index front door, but it is lifecycle/cost/value authority only: public PR #3 and provenance narrow PR #21 remain merged, broad provenance PR #20 remains closed as superseded and not merged, and public-sync `main` remains at the last verified public `origin/main` commit `e50ac604d`. P3 remains parked, and implementation, merge, push, cherry-pick, new public-sync mutation, provider/live proof, unrelated provenance runtime/source/test/checker edits, script edits, checker retirement implementation, checker deletion/disablement, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh operator-selected packet releases them.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R72 now has a repaired Governance Control Index front door, but it is lifecycle/cost/value authority only: public PR #3 and provenance narrow PR #21 remain merged, broad provenance PR #20 remains closed as superseded and not merged, and public-sync `main` remains at the last verified public `origin/main` commit `e50ac604d`. P3 remains parked, and implementation, merge, push, cherry-pick, new public-sync mutation, provider/live proof, unrelated provenance runtime/source/test/checker edits, script edits, checker retirement implementation, checker deletion/disablement, production Memory/RAG release, direct external import, historical rename/move sweep, operator onboarding implementation, product extraction, and downstream release remain unauthorized unless a fresh operator-selected packet releases them.
+
+## Core Guard Self-Protection Authorization - MSEA-R72 GCI Claude Review Repair Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R72 GCI
+Claude-review repair material commit `7f25ad753`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record GCI repair acceptance, material commit, and R72A packet-authoring route. |
+| `CVF_SESSION_MEMORY.md` | Record repaired GCI continuity and next-move routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after GCI repair acceptance. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after GCI repair session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for GCI repair acceptance. |
+| `CVF_SESSION/state/entries/mseaR72GciClaudeReviewRepairAccepted20260708.json` | Record GCI repair evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R72A packet authoring with repaired GCI-014, R72D, R72F, R72G, and R72H guardrails. |
+
+Rollback boundary: revert only this MSEA-R72 GCI Claude-review repair
+session-sync if needed; do not revert GCI repair material commit `7f25ad753`,
+GCI material commit `7c2a04ff1`, R72 roadmap material commit `4c540f1af`,
+R70A material acceptance, R70/R71 acceptance, R69 public merge closure, or
+earlier MSEA material.
 
 ## Core Guard Self-Protection Authorization - MSEA-R72 Governance Control Index Session Sync
 
@@ -469,6 +492,7 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
+| MSEA-R72 GCI Claude Review Repair | `7f25ad753` | GCI_CLAUDE_REVIEW_REPAIR_ACCEPTED_PENDING_R72A_GC018; accepted Claude's `ACCEPT_WITH_REPAIRS` review by tightening GCI-014 public-sync owner surfaces, closing the R72F silent zero-retirement escape hatch with named WATCH-row evidence, adding R72G/R72H roadmap ownership, preserving the direct checker-script baseline correction for R72D, and tracking both external review files as private provenance evidence; focused encoding/corpus/structure/read-ahead/trace/index/public-export/finding-learning gates PASS, pre-implementation autorun PASS 75/75 on `a37c32dc8..HEAD`, implementation steward PASS, material pre-commit hook PASS 80/80; next move remains fresh source-verified R72A GC-018/work-order authoring only; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, operator onboarding implementation, product extraction, public/production claim, or historical sweep is authorized. |
 | MSEA-R72 Governance Control Index front-door refactor | `7c2a04ff1` | GOVERNANCE_CONTROL_INDEX_ESTABLISHED_PENDING_R72A_GC018; added official GCI README and index, registered both in the reference artifact index, and updated the R72 roadmap so R72B/R72F use lifecycle/cost/value/retirement-readiness criteria before any checker consolidation or retirement pilot; focused structural/index/trace gates PASS, pre-implementation autorun PASS 75/75 on `778adb4c3..HEAD`, implementation steward PASS, material pre-commit hook PASS 80/80; next move remains fresh source-verified R72A GC-018/work-order authoring only with GCI-014 cited for public-main CI/public-surface evidence; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
 | MSEA-R72 EA Assessment Intake And Governance Load Rebalancing roadmap | `4c540f1af` | ROADMAP_READY_FOR_R72A_GC018_AND_WORK_ORDER_AUTHORING; accepted the independent EA critique as a high-confidence governance-load signal only after command remeasurement; roadmap defines R72A public-main CI health/governance-load baseline, R72B checker lifecycle criteria, R72C Fast Lane calibration, R72D governance metric readout, R72E absorb-lane ceremony reclassification, and R72F first retirement/consolidation pilot; pre-implementation autorun PASS 75/75 on `29a8a4087..HEAD`, material pre-commit hook PASS 80/80; next move is fresh source-verified R72A GC-018 and work-order authoring only; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
 | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions acceptance | `0e9b59d9b` | REVIEWER_ACCEPTED_BOUNDED; accepted the definition-only overlay standard, catalog JSON, eleven profile JSON files, R71 reference index row, and worker return after reviewer repairs; repairs changed non-existent script command examples into future implementation hooks, updated the stale V23 handoff catalog path to active `AGENT_HANDOFF_V38_2026-07-06.md`, and aligned the new reference standard top matter with `LEGACY_DATED_ACTIVE_REFERENCE`; JSON parse/path validation PASS for 12 JSON files, worker-return fast gate PASS 59/59, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; no checker retirement implementation, checker deletion/disablement, runtime/source/test/checker edit, public-sync mutation, merge, push, provider/live proof, public/production claim, broad overlay implementation, or historical sweep is authorized. |
@@ -505,8 +529,15 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 ## Latest Work/Changes
 
-R72 added the official Governance Control Index front door at provenance
-material commit `7c2a04ff1`:
+R72 accepted Claude's GCI review repair at provenance material commit
+`7f25ad753`. The repair tightens GCI-014 to name public-sync static CI and
+public-surface scripts, closes the R72F silent zero-retirement escape hatch
+with named WATCH-row evidence, adds R72G/R72H roadmap ownership, preserves the
+R72D direct checker-script baseline correction, and tracks the independent EA
+assessment plus Claude GCI review as private provenance evidence.
+
+R72 originally added the official Governance Control Index front door at
+provenance material commit `7c2a04ff1`:
 `docs/reference/governance_control_index/README.md` and
 `docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md`.
 The reference artifact index now lists both GCI files, and the R72 roadmap now
@@ -582,6 +613,10 @@ Latest R72 Governance Control Index material commit: `7c2a04ff1`.
 
 R72 GCI status: GOVERNANCE_CONTROL_INDEX_ESTABLISHED_PENDING_R72A_GC018; GCI is lifecycle/cost/value authority only, and the next move remains fresh R72A GC-018/work-order authoring with GCI-014 cited for public-main CI/public-surface evidence.
 
+Latest R72 GCI Claude-review repair material commit: `7f25ad753`.
+
+R72 GCI repair status: GCI_CLAUDE_REVIEW_REPAIR_ACCEPTED_PENDING_R72A_GC018; repaired GCI-014, R72D, R72F, R72G, and R72H routing are now binding for the next R72A packet-authoring lane.
+
 Latest handoff authorization repair parent commit: `e73f566da`.
 
 ## R50 Boundary
@@ -594,6 +629,10 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| Focused R72 GCI repair encoding/corpus/structure/read-ahead/trace/index/public-export/finding-learning checks | PASS |
+| Pre-implementation autorun on `a37c32dc8..HEAD` for R72 GCI repair | PASS 75/75 |
+| Implementation commit steward on `a37c32dc8..HEAD` for R72 GCI repair | PASS |
+| Material pre-commit hook for R72 GCI repair | PASS 80/80 |
 | Focused GCI structural/index/trace checks | PASS |
 | Pre-implementation autorun on `778adb4c3..HEAD` for GCI front-door refactor | PASS 75/75 |
 | Implementation commit steward on `778adb4c3..HEAD` for GCI front-door refactor | PASS |
@@ -673,15 +712,18 @@ Latest closed numbered LHW wave: LHW24.
 ## Next Allowed Move
 
 Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load
-Baseline GC-018 and work-order authoring only. R72A must cite GCI-014 for
-public-main CI/public-surface evidence, may refresh public-main GitHub Actions
-status, verify the public-sync repository boundary, classify current CI
-failures, and define a governance-load baseline work order. R72A must not
+Baseline GC-018 and work-order authoring only. R72A must cite repaired GCI-014
+for public-main CI/public-surface evidence, may refresh public-main GitHub
+Actions status, verify the public-sync repository boundary, classify current CI
+failures, define a governance-load baseline work order, carry the R72D
+direct-checker-count correction, preserve the R72F named-WATCH-row/no-silent-zero-retirement
+guardrail, and leave R72G/R72H for downstream bounded tranches. R72A must not
 implement checker retirement, delete or disable checkers, mutate public-sync,
 edit runtime/source/tests/checkers, run provider/live proof, make
-public/production claims, push, merge, or sweep historical artifacts unless a
-later accepted work order explicitly authorizes the narrower action. LHW24
-remains latest closed numbered LHW wave.
+public/production claims, push, merge, extract product surfaces, onboard
+operators, or sweep historical artifacts unless a later accepted work order
+explicitly authorizes the narrower action. LHW24 remains latest closed numbered
+LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R65C Dispatch Session Sync
 
