@@ -96,6 +96,10 @@
       "exposureClass": "INTERNAL_ONLY"
     },
     {
+      "path": "AGENT_HANDOFF_V39_2026-07-08.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "AGENT_HANDOFF_V9_2026-05-18.md",
       "exposureClass": "INTERNAL_ONLY"
     },
@@ -202,6 +206,10 @@
     {
       "path": "START_HERE.md",
       "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "workspace_overlay_catalog.json",
+      "exposureClass": "INTERNAL_ONLY"
     },
     {
       "path": "AGENT_HANDOFF_V12_2026-05-23.md",
