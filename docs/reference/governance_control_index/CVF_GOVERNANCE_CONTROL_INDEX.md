@@ -145,7 +145,7 @@ include at least:
 | GCI-011 | Generated State Aggregate Controls | generated aggregate standards + generators | `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`; `governance/compat/generate_active_session_state.py` | session-sync; pre-commit | session-continuity | C2 | V3 | generated-state | ACTIVE | consolidation only if generator drift checks remain equivalent |
 | GCI-012 | Reference Artifact Storage And Index Controls | storage standard + reference artifact index | `docs/reference/reference_artifact_storage/CVF_REFERENCE_ARTIFACT_STORAGE_CLASS_STANDARD.md`; `docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md` | authoring; review | source-fidelity | C1 | V2 | reference-index | ACTIVE | can consolidate with GCI only if storage-class citation rules stay explicit |
 | GCI-013 | Core Guard Self-Protection Controls | self-protection guard + authorization block | `governance/compat/check_core_guard_self_protection.py`; `governance/toolkit/05_OPERATION/CVF_CORE_GUARD_SELF_PROTECTION_GUARD.md` | pre-implementation; pre-commit | public-boundary; checker-integrity | C3 | V4 | protected-control | PROTECTED | not eligible while agents can edit guard/checker/session surfaces |
-| GCI-014 | Public Main CI And Public Surface Controls | public-surface and static CI gates | `governance/public-surface-manifest.json`; public-sync static CI scripts | CI; pre-push | public-boundary; product-value | C4 | V4 | public-release | WATCH | R72A must classify current failures before any lightening or expansion |
+| GCI-014 | Public Main CI And Public Surface Controls | public-surface and static CI gates | `governance/public-surface-manifest.json`; public-sync `scripts/run_cvf_static_ci_gate.py`; public-sync `scripts/check_public_surface.py` | CI; pre-push | public-boundary; product-value | C4 | V4 | public-release | WATCH | R72A must classify current failures before any lightening or expansion |
 | GCI-015 | Governance Control Index Controls | this index + front door README | `docs/reference/governance_control_index/README.md`; `docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md` | authoring; review | governance-load | C1 | V3 | governance-lifecycle | ACTIVE | may be generated or split only after the schema remains stable through one R72B/R72F cycle |
 
 ## Baseline Measurement
@@ -187,7 +187,7 @@ modules.
 | R72C | Fast Lane calibration uses GCI cost/value classes and the `PROTECTED` state to prevent unsafe lightening |
 | R72D | monthly readout uses GCI metric boundaries so checker counts are reproducible |
 | R72E | absorb lane reclassification maps intake controls to GCI-009 and GCI-010 instead of inventing a new ceremony path |
-| R72F | first retirement/consolidation pilot must select one non-`PROTECTED` candidate row or child row and prove criteria are satisfied |
+| R72F | first retirement/consolidation pilot must select one non-`PROTECTED` candidate row or child row and prove criteria are satisfied; if no candidate passes, closure must name at least one `WATCH` row and the exact missing evidence blocking it |
 
 ## Verification
 
@@ -198,6 +198,11 @@ modules.
 | Source read-ahead for structural completeness | `governance/compat/check_markdown_structural_completeness.py` read |
 | Source read-ahead for trace applicability | `governance/compat/check_agent_operation_trace.py` read |
 | Direct checker-script baseline | `checkerCount=186`; `added=186`; `deleted=0` |
+
+Correction note: broader recursive counts that match `check_.*.py` also include
+`test_check_*.py` files. R72D metrics must keep the direct checker-script
+baseline (`186` at `778adb4c3`) separate from broader governance Python or
+checker-test surface counts.
 
 ## Agent Operation Trace Block
 

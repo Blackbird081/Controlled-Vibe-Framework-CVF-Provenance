@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_WITH_GOVERNANCE_CONTROL_INDEX_PENDING_R72A_GC018
+Status: ROADMAP_READY_WITH_GCI_REPAIR_PENDING_R72A_GC018
 
 docType: roadmap
 
@@ -17,7 +17,7 @@ External knowledge intake routing: REQUIRED
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_roadmap_closure_freshness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_next_move_freshness.py`; `governance/compat/check_session_mode_consistency.py`; `governance/compat/check_index_classification.py`; `governance/compat/check_agent_operation_trace.py` |
-| literalTokensReviewed | `## Checker Source Read-Ahead Block`; `applicableCheckersRead`; `literalTokensReviewed`; `gateRunPurpose`; `claimBoundary`; `## External Knowledge Intake Routing`; `Chain map`; `Input type`; `operator-provided external comparison, critique, or recommendation`; `Matching local-view guard`; `Owner surface`; `Disposition`; `Claim boundary`; `## Purpose`; `## Work Plan`; `## Acceptance Criteria`; `## Verification / Evidence`; `## Public Export Disposition`; `DEFERRED_PRIVATE_ONLY`; `ROADMAP_READY_WITH_GOVERNANCE_CONTROL_INDEX_PENDING_R72A_GC018`; `INDEX type:`; `Source authority:`; `Human-reviewable:` |
+| literalTokensReviewed | `## Checker Source Read-Ahead Block`; `applicableCheckersRead`; `literalTokensReviewed`; `gateRunPurpose`; `claimBoundary`; `## External Knowledge Intake Routing`; `Chain map`; `Input type`; `operator-provided external comparison, critique, or recommendation`; `Matching local-view guard`; `Owner surface`; `Disposition`; `Claim boundary`; `## Purpose`; `## Work Plan`; `## Acceptance Criteria`; `## Verification / Evidence`; `## Public Export Disposition`; `DEFERRED_PRIVATE_ONLY`; `ROADMAP_READY_WITH_GCI_REPAIR_PENDING_R72A_GC018`; `INDEX type:`; `Source authority:`; `Human-reviewable:` |
 | gateRunPurpose | confirmation after checker-source read-ahead; gates are verification evidence, not first discovery |
 | claimBoundary | roadmap authoring only; no checker retirement implementation, checker deletion or disablement, CI repair, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, release claim, or historical artifact sweep |
 
@@ -45,6 +45,18 @@ index. This advances the R72B foundation, but it still does not authorize
 checker retirement implementation, checker deletion/disablement, hook-catalog
 change, runtime/source/test/checker edit, public-sync mutation, push, merge,
 provider/live proof, or public/production claim.
+
+2026-07-08 update:
+`docs/reviews/CVF_R72_GOVERNANCE_CONTROL_INDEX_CLAUDE_REVIEW_2026-07-07.md`
+is accepted as external cross-agent review input with disposition
+`ACCEPT_WITH_REPAIRS`. This roadmap is repaired to close the R72F
+no-eligible-candidate escape hatch, add R72G and R72H ownership for the two EA
+coverage gaps, and record the direct-checker baseline distinction (`186`
+direct checker scripts versus broader recursive counts that include checker
+tests). These repairs still do not authorize checker implementation, checker
+deletion/disablement, hook-catalog change, runtime/source/test/checker edit,
+public-sync mutation, push, merge, provider/live proof, or public/production
+claim.
 
 ## Purpose
 
@@ -94,20 +106,21 @@ Forbidden roadmap scope:
 |---|---|---|---|---|
 | Current session allows R72 EA assessment intake and governance-load roadmap authoring only | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | `currentMode` and `nextAllowedMove` name R72 packet authoring and forbid checker retirement implementation, public-sync mutation, runtime/source/tests/checkers, provider/live proof, push, and merge | VALUE_SET | ACCEPT |
 | Product-source touches and governance-artifact touches diverged materially across 2026-02 through 2026-07 partial | `git log --since/--until --name-only --pretty=format:` with product and governance path filters | recomputed table: 2026-02 `806/0`, 2026-03 `805/2572`, 2026-04 `685/556`, 2026-05 `518/3730`, 2026-06 `154/4800`, 2026-07 partial `8/1348` | COMMAND_RECOMPUTED | ACCEPT_WITH_PARTIAL_MONTH_CAVEAT |
-| Checker count has grown monotonically in the measured month-end snapshots and no checker deletion is visible in git history | `git ls-tree` at month-end SHAs plus `git log --all --diff-filter=A/D --name-only -- governance/compat/*.py` | recomputed counts: `3`, `89`, `110`, `131`, `276`, `287`; all-time added `294`; deleted `0` | COMMAND_RECOMPUTED | ACCEPT |
+| Checker count has grown monotonically in the measured month-end snapshots and no checker deletion is visible in git history | `git ls-tree` at month-end SHAs plus `git log --all --diff-filter=A/D --name-only -- governance/compat/*.py` | broader recursive count includes checker tests and produced `3`, `89`, `110`, `131`, `276`, `287`; direct checker-script baseline at `778adb4c3` is `186`; all-time direct checker deletion remains `0` | COMMAND_RECOMPUTED_WITH_SCOPE_CORRECTION | ACCEPT |
 | Public repository main branch is currently CI-red at time of R72 authoring | public-sync clone command `gh run list --branch main --limit 10 --json conclusion,name,createdAt,headSha` | latest 10 public-main workflow rows include failures in `CVF CI`, `CVF CI Pipeline`, and `Documentation & Testing`; successful rows include `CVF Public Surface` and `CVF Static CI Gate` | LIVE_COMMAND_RECHECKED | ACCEPT_TIME_SENSITIVE |
 | R66-R69 public-safe workspace repair lane produced 10 governed artifacts totaling 4745 lines | `rg --files docs/reviews docs/baselines docs/work_orders` filtered for R66-R69 plus `Get-Content` line counts | recomputed `TOTAL=4745 FILES=10` | COMMAND_RECOMPUTED | ACCEPT |
 | CVF has real product surface underneath the governance layer | filesystem counts under `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`, `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION`, and `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` | recomputed counts: `pages=41`, `routes=69`, `components=149`, `controlTests=146`, `learningTests=87` | COMMAND_RECOMPUTED | ACCEPT |
 | CVF already has a Fast Lane audit template that can be calibrated before inventing a new lightweight mechanism | `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md` | eligibility, scope, safety, verification, and audit decision sections exist | EXISTS | ACCEPT |
 | Current governance-learning philosophy promotes repeated agent errors into rules and machine checks, but does not define a symmetric retirement lifecycle | `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` | escalation ladder promotes repeated ambiguity toward written rules and machine checks | EXISTS | ACCEPT |
 | Official Governance Control Index front door and lifecycle/cost/value index exist after R72 update | `docs/reference/governance_control_index/README.md`; `docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md`; `docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md` | GCI README and IDX-3 index created; reference artifact index records both as `STABLE_REFERENCE_FRONT_DOOR` | EXISTS | ACCEPT |
+| External GCI review accepts the index with repairs rather than rejection | `docs/reviews/CVF_R72_GOVERNANCE_CONTROL_INDEX_CLAUDE_REVIEW_2026-07-07.md` | `Recommended verdict: ACCEPT_WITH_REPAIRS`; findings F2, F3, F7 | EXTERNAL_REVIEW_INPUT | ACCEPT |
 
 ## Reverification Summary
 
 | Finding | Recheck result | R72 disposition |
 |---|---|---|
 | Governance output has expanded while product-source touches declined | Confirmed directionally; July is partial and must not be treated as a full-month final | ACCEPT_AS_HIGH_CONFIDENCE_INFERENCE |
-| Checker count ratchet exists | Confirmed with `adds=294` and `dels=0` | ACCEPT_AS_HIGH_CONFIDENCE_FINDING |
+| Checker count ratchet exists | Confirmed with direct checker-script baseline `186` at `778adb4c3`, broader recursive count caveat, and `dels=0` | ACCEPT_AS_HIGH_CONFIDENCE_FINDING_WITH_SCOPE_CORRECTION |
 | Public main CI is red | Confirmed at R72 authoring time; live status is time-sensitive | ACCEPT_AS_CURRENT_RELEASE_BLOCKER_CANDIDATE |
 | R66-R69 ceremony cost was high for low-risk repairs | Confirmed 4745 governed-artifact lines; direct product-change-line ratio is approximate | ACCEPT_AS_CASE_STUDY |
 | CVF product foundation is real | Confirmed via web/app/API/component/test surface counts | ACCEPT_AS_BALANCING_FACT |
@@ -130,6 +143,9 @@ Index. The remaining work is not to invent the lifecycle vocabulary; it is to
 use that vocabulary to triage public CI, inventory direct checker scripts,
 calibrate Fast Lane routing, and execute one bounded non-`PROTECTED`
 retirement or consolidation pilot only after source-backed criteria are met.
+The Claude GCI review also found two EA coverage gaps: human-operator
+bus-factor/onboarding load and product/governance separability. R72G and R72H
+own those gaps as future docs-only, read-only assessment tranches.
 
 ## Non-Goals
 
@@ -193,7 +209,9 @@ Minimum effective governance:
 | R72C | Fast Lane Calibration And Risk-Class Router | Make low-risk route selection explicit so byte-level/doc-only repairs do not default to full multi-round ceremony | Updated Fast Lane decision standard or work-order packet; representative case matrix from R66-R69 | Any proposed lighter path weakens public/private boundary, source verification, or closure evidence |
 | R72D | Governance Cost Metric And Monthly Readout | Define stable metrics for product-source touches, governance-artifact touches, checker additions/deletions, public CI status, and ceremony ratio | Metric spec plus optional script/checker candidate decision | Metric cannot be computed reproducibly from git/GitHub without unstable assumptions |
 | R72E | Absorb Lane Ceremony Reclassification | Reclassify external repo/source intake work into risk tiers so representative proof can replace exhaustive packet loops where safe | Absorb lane risk taxonomy and work-order trace seed | A source class involves runtime/provider/public claims or missing source authority |
-| R72F | First Retirement Or Consolidation Pilot | Execute one controlled non-zero retirement/consolidation after GCI-backed R72B criteria exist | Fresh GC-018 and work order; one non-`PROTECTED` candidate checker or control-family row dispositioned | No eligible low-risk candidate passes the criteria |
+| R72F | First Retirement Or Consolidation Pilot | Execute one controlled non-zero retirement/consolidation after GCI-backed R72B criteria exist | Fresh GC-018 and work order; one non-`PROTECTED` candidate checker or control-family row dispositioned; if none passes, named `WATCH` row plus exact missing evidence | No candidate can be source-backed and the closure names at least one `WATCH` row plus the specific evidence still missing |
+| R72G | Human-Operator Onboarding And Bus-Factor Reduction | Own the EA bus-factor risk by measuring mandatory human/operator read burden and separating minimum viable operator guidance from full agent startup burden | Docs-only, read-only onboarding burden audit and tiered operator guide proposal | Mandatory read chain cannot be source-backed or proposed simplification would weaken boundary/source-fidelity controls |
+| R72H | Product/Governance Separability Assessment | Own the EA commercial/product-separation recommendation by inventorying which product assets can be evaluated separately from full dispatch/handoff ceremony | Docs-only, read-only separability matrix and candidate packaging decision; no extraction or release | Product surface cannot be source-backed or assessment would require extraction, repackaging, runtime change, public release, or commercial claim |
 
 ## Priority Order
 
@@ -207,8 +225,12 @@ Minimum effective governance:
    vocabulary are defined.
 5. R72E fifth, because absorb lanes need the Fast Lane and metric vocabulary to
    avoid repeating the same cost pattern.
-6. R72F last, because actual retirement is a controlled implementation step,
+6. R72F sixth, because actual retirement is a controlled implementation step,
    not a roadmap assertion.
+7. R72G seventh, because human/operator load should be measured after the
+   core public CI and governance lifecycle lanes have current evidence.
+8. R72H eighth, because product/governance separability needs the R72A-D cost
+   and product-value baseline before any packaging decision is meaningful.
 
 ## Roadmap-To-Work-Order Trace Seed
 
@@ -220,8 +242,12 @@ Minimum effective governance:
 | Create checker lifecycle before deleting checkers | classify checker owner, phase, true-positive history, false-positive risk, and consolidation target | checker inventory table mapped to GCI rows and no-delete claim boundary |
 | Calibrate Fast Lane safely | compare R66-R69 and one later small fix against Fast Lane eligibility | case matrix, rollback unit, boundary risk classification |
 | Make governance cost visible | define product/governance touch formulas and caveats | reproducible command block and monthly table |
+| Correct checker-count scope ambiguity | distinguish direct checker scripts from checker tests and broader governance Python surface | metric definition that keeps `check_*.py` direct scripts separate from `test_check_*.py` and support modules |
 | Preserve high-risk controls | list change classes that still require full GC-018 and worker/reviewer separation | risk-tier table and explicit fail conditions |
 | Keep public/provenance boundary intact | require public-sync remote verification before public mutation | `git remote -v` evidence from public-sync clone |
+| Close R72F silent-exit risk | require any no-retirement result to name one `WATCH` row and exact missing evidence | R72F closure row with named row ID, missing evidence, and next action |
+| Own human/operator bus-factor risk | audit mandatory read-chain length and split human onboarding from full agent startup burden | R72G source-backed read-chain table and tiered guide proposal |
+| Own product/governance separability risk | inventory separable product assets without extracting, repackaging, or releasing them | R72H separability matrix with no-runtime/no-public claim boundary |
 
 ## Acceptance Criteria
 
@@ -235,6 +261,9 @@ Minimum effective governance:
 | AC6 | Roadmap forbids runtime/source/test/checker edits, public-sync mutation, push, merge, and provider/live proof in this roadmap itself | PASS_REQUIRED |
 | AC7 | Roadmap sets the next executable move to R72A GC-018/work-order authoring only | PASS_REQUIRED |
 | AC8 | Roadmap recognizes the Governance Control Index as the official lifecycle/cost/value front door for future control changes | PASS_REQUIRED |
+| AC9 | Roadmap closes the R72F no-eligible-candidate escape hatch by requiring a named `WATCH` row and exact missing evidence if no retirement/consolidation candidate passes | PASS_REQUIRED |
+| AC10 | Roadmap assigns owner tranches for EA bus-factor/onboarding risk and commercial/product-separation recommendation | PASS_REQUIRED |
+| AC11 | Roadmap records the direct checker-script baseline correction so future metrics do not confuse checker tests with checkers | PASS_REQUIRED |
 
 ## Verification / Evidence
 
@@ -248,6 +277,7 @@ Minimum effective governance:
 | R66-R69 ceremony case count | filtered `rg --files` plus line counts | `TOTAL=4745 FILES=10` |
 | Roadmap gates | changed-range governance gates | to be run before material commit |
 | Governance Control Index front door | `docs/reference/governance_control_index/README.md`; `docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md` | official R72 lifecycle/cost/value front door added; no checker implementation or deletion |
+| External GCI review | `docs/reviews/CVF_R72_GOVERNANCE_CONTROL_INDEX_CLAUDE_REVIEW_2026-07-07.md` | `ACCEPT_WITH_REPAIRS`; repairs folded into this roadmap |
 
 ## External Knowledge Intake Routing
 
@@ -274,8 +304,9 @@ Next control action: `R72A_GC018_AND_WORK_ORDER_AUTHORING`
 Learning summary: CVF has a strong add-rule path for repeated agent errors.
 R72 now adds the Governance Control Index as the explicit front door for
 retirement, consolidation, cost/value classification, and ceremony-risk
-routing. Later work must use that index instead of immediately deleting or
-weakening controls.
+routing, and repairs the roadmap so R72F cannot silently close with zero
+retirements without naming the blocked `WATCH` row and missing evidence. Later
+work must use that index instead of immediately deleting or weakening controls.
 
 ## Epistemic Process Block
 
@@ -296,8 +327,9 @@ current command evidence and routes implementation into later tranches.
 
 Claim Update: accept the critique as a high-confidence governance-load signal,
 establish the Governance Control Index as the official lifecycle/cost/value
-front door, and route corrective action through R72A-R72F beginning with
-public-main CI health and governance-load baseline authoring.
+front door, route corrective action through R72A-R72H beginning with
+public-main CI health and governance-load baseline authoring, and carry the
+direct-checker baseline correction into R72D.
 
 ## Public Export Disposition
 
@@ -314,6 +346,7 @@ This roadmap records measurement-backed planning only. It does not implement
 checker retirement, delete or disable any checker, mutate public-sync, repair
 public CI, edit runtime/source/tests/checkers, run provider/live proof, push,
 merge, make public or production claims, accept broad overlay implementation,
-or authorize historical cleanup. The Governance Control Index added by this
-R72 update is a lifecycle/cost/value front door only. The next executable move
-is R72A GC-018 and source-verified work-order authoring only.
+extract or repackage a product surface, or authorize historical cleanup. The
+Governance Control Index added by this R72 update is a lifecycle/cost/value
+front door only. The next executable move is R72A GC-018 and source-verified
+work-order authoring only.
