@@ -53,7 +53,32 @@ Overlay definitions live under:
 
 `workspace_overlay_profiles/`
 
-Each profile is a JSON allowlist. Directory entries are exported recursively.
+Artifact classification lives under:
+
+`workspace_overlay_catalog.json`
+
+Profiles should stay thin. They select by stable tags such as
+`workspace-premium` or `workspace-provenance-local` instead of carrying long
+manual file lists.
+
+This is the long-lived maintenance rule:
+
+1. add or update the source artifact;
+2. decide whether the artifact is export-safe and useful for a workspace;
+3. classify it once in `workspace_overlay_catalog.json`;
+4. keep profile JSON unchanged unless a new lane is needed.
+
+Each catalog entry must declare:
+
+- `artifactId`
+- `path`
+- `artifactClass`
+- `selectionTags`
+- `stability`
+- `reviewPolicy`
+- `reason`
+
+Directory entries are exported recursively.
 
 ## Commands
 
@@ -93,3 +118,21 @@ This pipeline is local-first by default.
 
 Running it does not publish anything to GitHub. A later provenance push is a
 separate operator decision after review.
+
+## Selection Criteria
+
+Use these criteria before tagging an artifact into a workspace lane:
+
+### `workspace-premium`
+
+- useful to downstream project execution;
+- canonical enough to survive normal repo churn;
+- not dependent on private operator-only continuity state;
+- safe to layer on top of a public hidden core.
+
+### `workspace-provenance-local`
+
+- needed for full-fidelity local operator continuity;
+- allowed to be volatile;
+- private/local-only by nature;
+- must not be treated as public-safe export.
