@@ -6,6 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
+. (Join-Path $PSScriptRoot "cvf_workspace_overlay_lib.ps1")
 if ([string]::IsNullOrWhiteSpace($CatalogPath)) {
     $CatalogPath = Join-Path $repoRoot "workspace_overlay_catalog.json"
 }
@@ -24,15 +25,8 @@ function Add-Result([System.Collections.ArrayList]$Results, [string]$Level, [str
     })
 }
 
-function Get-JsonFile([string]$Path) {
-    if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) {
-        throw "JSON file not found: $Path"
-    }
-    return Get-Content -LiteralPath $Path -Raw -Encoding utf8 | ConvertFrom-Json
-}
-
 $results = [System.Collections.ArrayList]::new()
-$catalog = Get-JsonFile -Path $CatalogPath
+$catalog = Get-CvfWorkspaceOverlayCatalog -RepoRoot $repoRoot
 if (-not $catalog.artifacts) {
     throw "Overlay catalog missing artifacts array: $CatalogPath"
 }
@@ -115,7 +109,7 @@ foreach ($profileFile in $profileFiles) {
 }
 
 foreach ($profileFile in $profileFiles) {
-    $profile = Get-JsonFile -Path $profileFile.FullName
+    $profile = Get-CvfWorkspaceOverlayProfileObject -RepoRoot $repoRoot -ProfileName ([System.IO.Path]::GetFileNameWithoutExtension($profileFile.Name))
     if ([string]::IsNullOrWhiteSpace($profile.profileName)) {
         Add-Result -Results $results -Level "FAIL" -Message "Profile missing profileName: $($profileFile.Name)"
         continue
@@ -125,7 +119,8 @@ foreach ($profileFile in $profileFiles) {
     if (@($profile.includeSelectionTags | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count -gt 0) { $selectorCount++ }
     if (@($profile.includeArtifactIds | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count -gt 0) { $selectorCount++ }
     if (@($profile.includePaths | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count -gt 0) { $selectorCount++ }
-    if ($selectorCount -eq 0) {
+    $extendsCount = @($profile.extends | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count
+    if ($selectorCount -eq 0 -and $extendsCount -eq 0) {
         Add-Result -Results $results -Level "FAIL" -Message "Profile '$($profile.profileName)' has no selectors."
     }
 

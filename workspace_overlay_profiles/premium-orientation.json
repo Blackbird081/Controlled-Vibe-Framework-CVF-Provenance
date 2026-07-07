@@ -1,0 +1,7 @@
+{
+  "profileName": "premium-orientation",
+  "description": "Operator-facing orientation surfaces for workspace use.",
+  "includeSelectionTags": [
+    "operator-orientation"
+  ]
+}

@@ -61,6 +61,12 @@ Profiles should stay thin. They select by stable tags such as
 `workspace-premium` or `workspace-provenance-local` instead of carrying long
 manual file lists.
 
+Recommended structure:
+
+- lane profiles select one stable concern each;
+- bundle profiles extend those lane profiles;
+- local operator profiles extend bundle profiles plus local continuity lanes.
+
 This is the long-lived maintenance rule:
 
 1. add or update the source artifact;
@@ -85,6 +91,16 @@ overlay configuration:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\check_cvf_workspace_overlay_catalog.ps1
+```
+
+Preview profile composition before export or apply:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\get_cvf_workspace_overlay_profile_report.ps1
+
+powershell -ExecutionPolicy Bypass -File scripts\get_cvf_workspace_overlay_profile_report.ps1 `
+  -ProfileName premium-workspace `
+  -ShowFiles
 ```
 
 ## Commands
@@ -145,6 +161,21 @@ Use these criteria before tagging an artifact into a workspace lane:
 - allowed to be volatile;
 - private/local-only by nature;
 - must not be treated as public-safe export.
+
+## Bundle Profiles
+
+Current lane profiles:
+
+- `premium-orientation`
+- `premium-governance`
+- `premium-authoring`
+- `premium-boundary`
+- `provenance-continuity-local`
+
+Current bundle profiles:
+
+- `premium-workspace`
+- `provenance-local`
 
 ## Machine Validation
 
