@@ -78,8 +78,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r65c_public_sync_publish_or_hold_checker_decision_dispatched_pending_worker_return",
-  "previousMode": "msea_r65b_provider_canary_receipt_evidence_index_integrity_accepted_r65c_publish_or_hold_checker_decision_packet_next",
+  "currentMode": "msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold",
+  "previousMode": "msea_r65c_public_sync_publish_or_hold_checker_decision_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -5579,7 +5579,40 @@
     "nextAllowedMove": "Execute no-commit MSEA-R65C worker decision pass only. Worker may create only the R65C decision matrix and worker return in provenance, may read public-sync status/remote/log/matrix/audit evidence, and must not mutate, commit, or push public-sync.",
     "claimBoundary": "R65C dispatch authorizes only decision-only read work. It does not authorize public-sync mutation, public commit, public push, checker implementation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, worker commit, historical rename/move sweep, or downstream release."
   },
-  "nextAllowedMove": "MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision is dispatched at provenance material commit 627085c35. Dispatch artifacts are docs/baselines/CVF_GC018_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md and docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md. Public-sync is clean and local ahead of origin by two commits, but public push was not authorized. Next allowed move: execute no-commit MSEA-R65C worker decision pass only. Worker may create docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md and docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_WORKER_RETURN_2026-07-07.md, may read public-sync status/remote/log/matrix/audit evidence, and must not mutate, commit, or push public-sync. Checker implementation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, worker commit, historical rename/move sweep, and direct downstream release remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
+  "mseaR65CPublicSyncPublishOrHoldReceiptLinkCheckerDecisionClosure20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "7f557d4bb",
+    "materialCommitFull": "7f557d4bb610c011d414073b165697276c8427c6",
+    "dispatchCommit": "627085c35",
+    "dispatchCommitFull": "627085c35a6d46e5decc7ee3b06b580160f60418",
+    "executionBaseHead": "1f6f79c1d",
+    "executionBaseHeadFull": "1f6f79c1d43fbdba6b5e2edbb68636d7b0762a75",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "decisionMatrix": "docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_WORKER_RETURN_2026-07-07.md",
+    "completionReview": "docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_COMPLETION_REVIEW_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerDecision": "R65C_PUBLIC_SYNC_PUSH_READY_PENDING_OPERATOR_CONFIRMATION_AND_CHECKER_PACKET_RECOMMENDED_ACCEPTED",
+    "publicSyncStatusAtClosure": "clean; main...origin/main [ahead 2]; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "publicSyncLocalCommits": [
+      "fbb782fee4509af99a02c8632ddf8bde3aa449e6",
+      "756c465e16fb034d6b699afc5d46831fba77a5bc"
+    ],
+    "closureSummary": "Reviewer accepted the R65C no-commit worker return and decision matrix. R65C classifies the existing public-sync local R65A/R65B commits as push-ready under a separate authorization hold and recommends a future provider receipt-link integrity checker packet. R65C did not mutate, commit, or push public-sync and did not implement a checker.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a1f3a8006 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 1f6f79c1d --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit 7f557d4bb",
+      "git -C public-sync status --short --branch confirmed main...origin/main [ahead 2]",
+      "git -C public-sync remote -v confirmed public repository remote"
+    ],
+    "nextAllowedMove": "Hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization. No public push, checker implementation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production claims, worker commit, historical rename/move sweep, or direct downstream release is authorized by R65C closure alone.",
+    "claimBoundary": "R65C closes only a bounded private provenance decision tranche. It accepts the decision matrix and worker return, records public-sync push readiness under separate authorization, and recommends a future checker packet. It does not authorize public push, public-sync mutation, runtime/source/test/checker edits, provider/live proof, JSON receipt export, direct external import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, or OpenAI certification uplift."
+  },
+  "nextAllowedMove": "MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision is accepted at provenance material commit 7f557d4bb. Completion review: docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_COMPLETION_REVIEW_2026-07-07.md. Decision matrix: docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md. Public-sync remains clean and local ahead of origin by two commits fbb782fee and 756c465e1 against https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git. Next allowed move: hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization. R65C recommends a future provider receipt-link integrity checker packet, but no checker implementation is authorized by R65C closure alone. Public push, public-sync mutation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, worker commit, historical rename/move sweep, and direct downstream release remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
   "assfPicT4WebProjectionBridgeDecisionClosure20260626": "ASSF-PIC-T4 is CLOSED_PASS_BOUNDED at material closure commit 60ffa4de. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md. Dispositions: WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD; SCHEMA_BRIDGE_DEFERRED_CERTIFICATION_HELD; EXTERNAL_ADAPTER_DEFERRED_NO_EVIDENCE. ASSF-PIC-T5 is released for GC-018/source-verified work-order creation after this session-sync.",
   "assfPicT5CheckerReadinessNextControlDecisionClosure20260626": "ASSF-PIC-T5 is CLOSED_PASS_BOUNDED at material closure commit 410818fc, and the ASSF-PIC roadmap is CLOSED_PASS_BOUNDED. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md. Disposition: CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE. Next-control recommendation: OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE.",
   "roadmapClosurePackageGotchaHardening20260626": "Roadmap closure package gotcha hardening is CLOSED_PASS_BOUNDED at material commit 9cd46bd2. Material artifact: docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md. Disposition: CHECKLIST_GUIDANCE_ADDED. Lesson recorded: changing a roadmap top Status line to a closed-equivalent token requires adding the roadmap-local Machine Closure Package and, when receipt/query acceptance language is used, the Acceptance Receipt Assertion Matrix before the first gate run. Boundary: documentation/reference checklist guidance only; no checker implementation, package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, or readiness claim.",

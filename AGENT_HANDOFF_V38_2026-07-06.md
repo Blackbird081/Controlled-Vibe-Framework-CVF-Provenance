@@ -2,22 +2,22 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R65C public-sync publish-or-hold/checker decision dispatch.
+Purpose: compact current-session continuity for resumed agents after MSEA-R65C public-sync publish-or-hold/checker decision acceptance.
 Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R65C dispatch, active handoff V38, and the no-commit R65C worker decision route.
+Keep resumed agents aligned on R65C acceptance, active handoff V38, and the public-sync push/checker authorization hold.
 
 ## Scope
 
-This handoff covers private provenance continuity after R65B acceptance only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, runtime source, tests, checker work, public push, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after R65C acceptance only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, runtime source, tests, checker work, public push, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r65c_public_sync_publish_or_hold_checker_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=execute no-commit MSEA-R65C worker decision pass only; parked checkpoint=public-sync local commits `fbb782fee` and `756c465e1` are not pushed, OpenAI remains EXPERIMENTAL and not certified, and public push/checker implementation/runtime edits/live proof remain unauthorized.
+Startup acknowledged: current mode=`msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization; parked checkpoint=public-sync local commits `fbb782fee` and `756c465e1` are not pushed, OpenAI remains EXPERIMENTAL and not certified, and public push/checker implementation/runtime edits/live proof remain unauthorized.
 
 ## Mandatory Startup Reads
 
@@ -31,11 +31,11 @@ Startup acknowledged: current mode=`msea_r65c_public_sync_publish_or_hold_checke
 
 ## Current Mode
 
-`msea_r65c_public_sync_publish_or_hold_checker_decision_dispatched_pending_worker_return`
+`msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R65C dispatch is ready for no-commit worker execution. Public-sync remains local ahead of origin by two commits and unpushed. P3 remains parked, and public push, implementation, checker work, merge, reconciliation, runtime proof, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh source-verified packet releases them.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R65C is accepted; public-sync remains local ahead of origin by two commits and unpushed. P3 remains parked, and public push, implementation, checker work, merge, reconciliation, runtime proof, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh source-verified packet or explicit public-sync push authorization releases them.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
@@ -43,10 +43,31 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
+## Core Guard Self-Protection Authorization - MSEA-R65C Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R65C material closure commit `7f557d4bb`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R65C closure state entry.
+
+Operator authorization: operator reported R65C worker execution as COMPLETE_PENDING_REVIEW and requested reviewer handling before the next tranche.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R65C acceptance and authorization-hold routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R65C closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R65C closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R65C closure. |
+| `CVF_SESSION/state/entries/mseaR65CPublicSyncPublishOrHoldReceiptLinkCheckerDecisionClosure20260707.json` | Record R65C closure and selected authorization hold. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to explicit public-sync push authorization or fresh R65D checker packet authorization. |
+| `CVF_SESSION_MEMORY.md` | Record R65C acceptance continuity and next-move hold. |
+
+Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not revert material closure commit `7f557d4bb`, material dispatch commit `627085c35`, R65B material commit `f381ec920`, R65B public-sync local commit `756c465e16fb034d6b699afc5d46831fba77a5bc`, R65A public-sync local commit `fbb782fee4509af99a02c8632ddf8bde3aa449e6`, or older MSEA history.
+
 ## Latest Material Closure
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
+| MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision acceptance | `7f557d4bb` | REVIEWER_ACCEPTED_BOUNDED; accepted decision matrix, worker return, and completion review; selected `R65C_PUBLIC_SYNC_PUSH_READY_PENDING_OPERATOR_CONFIRMATION_AND_CHECKER_PACKET_RECOMMENDED_ACCEPTED`; public-sync remains clean and `main...origin/main [ahead 2]` with local commits `fbb782fee` and `756c465e1` not pushed; reviewer-fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `a1f3a8006..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is authorization hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization; no public push, public-sync mutation, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, public claim, or downstream release is authorized by R65C closure alone. |
 | MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision dispatch | `627085c35` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for read-only public-sync publish-or-hold and receipt-link checker value decision; pre-dispatch autorun PASS 73/73 on `a1f3a8006..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R65C worker execution only in the two worker-owned provenance outputs; public-sync mutation, public commit, public push, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, and downstream release remain unauthorized. |
 | MSEA-R65B Provider Canary Receipt Evidence Index Integrity acceptance | `f381ec920` | REVIEWER_ACCEPTED_BOUNDED_EXPORTED_LOCAL_NOT_PUSHED; accepted worker return and completion review; public-sync local commit `756c465e16fb034d6b699afc5d46831fba77a5bc` adds public-safe Alibaba and DeepSeek canary receipt/index markdown files on top of R65A local commit `fbb782fee4509af99a02c8632ddf8bde3aa449e6`; public-sync is clean and `main...origin/main [ahead 2]`; OpenAI remains EXPERIMENTAL and not certified; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `4c288ce5..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is fresh R65C publish-or-hold/checker decision packet only; no public push, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, or downstream release is authorized. |
 | MSEA-R71 Reference Artifact Storage Class And Index Standard acceptance | `cf2f6f3d3` | REVIEWER_ACCEPTED_BOUNDED; accepted reference storage README, storage-class standard, reference artifact index, and worker return; selected `R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_ACCEPTED_R65_PUBLIC_DRIFT_FOLLOWUP_PACKET_NEXT`; worker-return fast gate PASS, index classification PASS, pre-implementation autorun PASS 75/75 on `f0bf70029..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is fresh R65 public drift follow-up packet authoring only; no public-sync mutation, public commit, public push, historical rename/move sweep, checker implementation, runtime/source/test edit, provider/live proof, direct external import, private-output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, worker commit, public claim, or downstream release is authorized. |
@@ -69,7 +90,7 @@ External agent memory files: non-canonical convenience only.
 
 ## Latest Work/Changes
 
-R65C dispatched `docs/baselines/CVF_GC018_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md` at provenance material commit `627085c35`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for no-commit R65C worker execution.
+R65C accepted `docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md`, `docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_WORKER_RETURN_2026-07-07.md`, and `docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_COMPLETION_REVIEW_2026-07-07.md` at provenance material commit `7f557d4bb`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for authorization hold.
 
 ## HEAD Freshness
 
@@ -91,7 +112,9 @@ Latest R65B public-sync local commit: `756c465e16fb034d6b699afc5d46831fba77a5bc`
 
 Latest R65C dispatch material commit: `627085c35`.
 
-R65C status: public-sync publish-or-hold/checker decision packet is DISPATCH_READY; no-commit worker execution is next; `Gop y CVF` remains advisory input only; public push remains deferred unless separately authorized.
+Latest R65C closure material commit: `7f557d4bb`.
+
+R65C status: REVIEWER_ACCEPTED_BOUNDED; public-sync local commits are push-ready under authorization hold; `Gop y CVF` remains advisory input only; public push and checker implementation remain deferred unless separately authorized.
 
 Latest handoff authorization repair parent commit: `e73f566da`.
 
@@ -105,6 +128,10 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| Worker-return fast gate for R65C acceptance | PASS 59/59 |
+| Pre-implementation autorun on `a1f3a8006..HEAD` for R65C acceptance | PASS 75/75 |
+| Reviewer-return commit steward on `1f6f79c1d..HEAD` for R65C acceptance | PASS |
+| Material pre-commit hook for R65C acceptance | PASS 80/80 |
 | Pre-dispatch autorun on `a1f3a8006..HEAD` for R65C dispatch | PASS 73/73 |
 | Dispatch commit steward on `a1f3a8006..HEAD` for R65C dispatch | PASS |
 | Material pre-commit hook for R65C dispatch | PASS 80/80 |
