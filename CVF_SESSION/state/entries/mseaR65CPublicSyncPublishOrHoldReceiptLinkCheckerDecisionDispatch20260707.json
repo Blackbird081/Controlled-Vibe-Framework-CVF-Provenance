@@ -1,0 +1,26 @@
+{
+  "stateOrder": 919,
+  "stateKey": "mseaR65CPublicSyncPublishOrHoldReceiptLinkCheckerDecisionDispatch20260707",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "627085c35",
+    "materialCommitFull": "627085c35a6d46e5decc7ee3b06b580160f60418",
+    "dispatchBaseHead": "a1f3a8006",
+    "dispatchBaseHeadFull": "a1f3a8006942b57c1a559880f4e94ce7c12fef3e",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "workerDecisionMatrix": "docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a no-commit, read-only R65C worker decision pass to classify public-sync publish-or-hold posture after R65A/R65B and decide whether provider receipt-link integrity checker implementation deserves a later packet.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base a1f3a8006 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base a1f3a8006 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "publicSyncStatusAtDispatch": "clean; main...origin/main [ahead 2]; public push not authorized",
+    "nextAllowedMove": "Execute no-commit MSEA-R65C worker decision pass only. Worker may create only the R65C decision matrix and worker return in provenance, may read public-sync status/remote/log/matrix/audit evidence, and must not mutate, commit, or push public-sync.",
+    "claimBoundary": "R65C dispatch authorizes only decision-only read work. It does not authorize public-sync mutation, public commit, public push, checker implementation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, worker commit, historical rename/move sweep, or downstream release."
+  }
+}
