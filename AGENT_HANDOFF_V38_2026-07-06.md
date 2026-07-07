@@ -2,22 +2,22 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R60/R63 Control Plane interlock checkpoint closure.
-Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync, provider-local config, private/generated MinerU output, external absorption, or use-case/legal workflow change is authorized here.
+Purpose: compact current-session continuity for resumed agents after MSEA-R64 external critique intake dispatch.
+Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R60/R63 closure, active handoff V38, and the stop/checkpoint state after the foundation-to-Control-Plane interlock reference.
+Keep resumed agents aligned on R64 dispatch, active handoff V38, and the no-commit worker route for external critique intake and public drift decision.
 
 ## Scope
 
-This handoff covers private provenance continuity after R60/R63 only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, runtime source, tests, checker work, public-sync, provider-local config, private/generated MinerU output, direct absorption, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after R64 dispatch only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, runtime source, tests, checker work, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=stop/checkpoint unless the operator selects a fresh source-verified target; parked checkpoint=legal/use-case workflow remains parked unless explicitly selected; R60/R63 added a docs-only foundation-to-Control-Plane interlock reference and kept runtime/source/checker/public lanes held; public-safe snapshot/public-sync remains deferred unless separately authorized from the sibling public-sync clone; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation, or direct downstream release is authorized by R60/R63.
+Startup acknowledged: current mode=`msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=execute only the R64 WORKER_MUST_NOT_COMMIT worker and return COMPLETE_PENDING_REVIEW; parked checkpoint=legal/use-case workflow remains parked unless explicitly selected; R64 classifies `Gop y CVF` as advisory external input and authorizes read-only public drift verification only; public-safe snapshot/public-sync remains deferred unless separately authorized from the sibling public-sync clone; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, direct external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation, worker commit, push, or direct downstream release is authorized by R64.
 
 ## Mandatory Startup Reads
 
@@ -31,11 +31,11 @@ Startup acknowledged: current mode=`msea_r60_r63_control_plane_interlock_checkpo
 
 ## Current Mode
 
-`msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+`msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R60/R63 reconciled pre-batch provenance push posture, selected the Governance Control Plane as the consumer/checkpoint target, and added a docs-only foundation-to-Control-Plane interlock reference; P3 remains parked, and implementation, checker work, merge, reconciliation, runtime proof, production Memory/RAG release, public-sync, and absorption remain unauthorized.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R64 dispatches a docs-only external critique intake and public drift decision worker; P3 remains parked, and implementation, checker work, merge, reconciliation, runtime proof, production Memory/RAG release, public-sync mutation, direct external import, and downstream release remain unauthorized.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
@@ -47,6 +47,7 @@ External agent memory files: non-canonical convenience only.
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
+| MSEA-R64 External Critique Intake And Public Drift Decision dispatch | `32f2a95d0` | DISPATCH_READY; added R64-R70 public trust and agent-loop absorption roadmap, paired GC-018 baseline, and WORKER_MUST_NOT_COMMIT work order; worker may create only `docs/reviews/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_WORKER_RETURN_2026-07-07.md` and `docs/reference/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_CLASSIFICATION_MATRIX_2026-07-07.md`, then return COMPLETE_PENDING_REVIEW; no public-sync mutation, runtime/source/test/checker edit, provider/live proof, direct external import, private-output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, worker commit, push, public claim, or downstream release is authorized. |
 | MSEA-R60/R63 Control Plane Interlock Checkpoint | `f7e9d36d2` | CLOSED_PASS_BOUNDED; R60 selected `R60_PROVENANCE_PUSH_POSTURE_RECONCILED_REMOTE_CURRENT`; R61 selected `R61_SELECT_CONTROL_PLANE_CONSUMER_FOR_FOUNDATION_IO_CONTRACT`; R62 selected `R62_READY_FOR_DOCS_ONLY_CONTROL_PLANE_INTERLOCK_REFERENCE`; R63 selected `R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_ADDED_RUNTIME_HELD` and added `docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md`; no implementation, checker work, source/test edit, runtime/provider/MCP proof, public-sync mutation, production Memory/RAG release, private-output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, public claim, or downstream release is authorized. |
 | MSEA-R58/R59 Plane I/O Registry Checkpoint | `a960db753` | CLOSED_PASS_BOUNDED; R58 selected `R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT` after read-only push preview showed upstream push debt and broad-range material/session split requirements; R59 selected `R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY` and added `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md` as reusable R56-derived foundation plane I/O contract reference; no implementation, checker work, source/test edit, runtime/provider/MCP proof, public-sync mutation, production Memory/RAG release, private-output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, public claim, or downstream release is authorized. |
 | MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision | `4736ca56f` | CLOSED_PASS_BOUNDED; selected `R57_STOP_AT_FOUNDATION_PLANE_IO_CONTRACT_CHECKPOINT`; accepts R56 foundation plane I/O contract as the current governed internal architecture/control-plane checkpoint; stops the current lane unless the operator selects a fresh source-verified target; no implementation, checker work, source/test edit, import, runtime/provider/MCP proof, public-sync, production Memory/RAG release, private-output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, public claim, or implementation is authorized. |
@@ -64,11 +65,11 @@ External agent memory files: non-canonical convenience only.
 
 ## Latest Work/Changes
 
-R60/R63 accepted `docs/reviews/CVF_MSEA_R60_PUSH_CONTINUITY_POSTURE_RECONCILIATION_2026-07-07.md`, `docs/reviews/CVF_MSEA_R61_PLANE_CONSUMER_TARGET_SELECTION_2026-07-07.md`, `docs/reviews/CVF_MSEA_R62_CONTROL_PLANE_INTERLOCK_READINESS_2026-07-07.md`, `docs/reviews/CVF_MSEA_R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_PACKET_2026-07-07.md`, and `docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md` at provenance material commit `f7e9d36d2`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for the stop/checkpoint state after the Control Plane interlock checkpoint.
+R64 dispatch accepted `docs/roadmaps/CVF_MSEA_R64_R70_PUBLIC_TRUST_AGENT_LOOP_ABSORPTION_ROADMAP_2026-07-07.md`, `docs/baselines/CVF_GC018_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md`, and `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md` at provenance material commit `32f2a95d0`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for the R64 no-commit worker execution state.
 
 ## HEAD Freshness
 
-Latest session-sync parent commit: `f7e9d36d2`.
+Latest session-sync parent commit: `32f2a95d0`.
 
 Latest handoff guard compatibility sync parent commit: `ef726c4fc`.
 
@@ -76,7 +77,7 @@ Latest R51 dispatch commit: `fc5411ebc`.
 
 Latest R51 handoff freshness sync commit: `f46a8dadd`.
 
-R60/R63 status: Control Plane interlock checkpoint is closed; R56/R59 contract is reusable through `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md`; foundation-to-Control-Plane interlock is reusable through `docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md`; public-safe snapshot/public-sync remains deferred unless separately authorized.
+R64 status: external critique intake and public drift decision is DISPATCH_READY; `Gop y CVF` remains advisory input only; public-safe snapshot/public-sync remains deferred unless separately authorized.
 
 Latest handoff authorization repair parent commit: `e73f566da`.
 
@@ -90,6 +91,9 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| Pre-dispatch autorun on `8492fc8c3..HEAD` for R64 | PASS 73/73 |
+| Dispatch commit steward on `8492fc8c3..HEAD` for R64 | PASS |
+| Material pre-commit hook for R64 | PASS 80/80 |
 | Pre-implementation autorun on `0ddf326ac..HEAD` for R60/R63 | PASS 75/75 |
 | Reviewer-return commit steward on `0ddf326ac..HEAD` for R60/R63 | PASS |
 | Material pre-commit hook for R60/R63 | PASS 80/80 |
@@ -122,7 +126,7 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-Stop/checkpoint. R60/R63 closes the Control Plane interlock checkpoint: R56/R59 contract remains reusable as an internal reference, `docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md` is the reusable docs-only foundation-to-Control-Plane interlock reference, and public-safe snapshot/public-sync remains deferred unless separately authorized from the sibling public-sync clone. No implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval/vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, public-sync mutation, or direct downstream release is authorized unless the operator selects a fresh source-verified target.
+Execute only the R64 WORKER_MUST_NOT_COMMIT worker from `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md`. The worker may create only `docs/reviews/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_WORKER_RETURN_2026-07-07.md` and `docs/reference/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_CLASSIFICATION_MATRIX_2026-07-07.md`, then return COMPLETE_PENDING_REVIEW. Public-sync mutation, implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval/vectorization, P3 reopen, direct external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, worker commit, push, and direct downstream release remain unauthorized. LHW24 remains latest closed numbered LHW wave.
 
 ## Agent Operation Trace
 
@@ -137,13 +141,13 @@ Stop/checkpoint. R60/R63 closes the Control Plane interlock checkpoint: R56/R59 
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session-sync only after MSEA-R60/R63 material closure commit `f7e9d36d2`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R60/R63 closure state entry.
+Authorized guard-maintenance scope: session-sync only after MSEA-R64 material dispatch commit `32f2a95d0`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R64 dispatch state entry.
 
 Operator authorization: operator approved R60-R63 after the R58/R59 plane I/O registry checkpoint.
 
-Protected paths: `AGENT_HANDOFF_V38_2026-07-06.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, `CVF_SESSION/state/entries/mseaR60R63ControlPlaneInterlockCheckpoint20260707.json`, `CVF_SESSION/state/entries/nextAllowedMove.json`, and `CVF_SESSION_MEMORY.md`. The purpose is solely to reflect R60/R63 closure and stop/checkpoint routing. It may not change runtime source, tests, checker work, provider-local config, private/generated MinerU output, external absorption, public-sync, merge/reconciliation, P3 restructuring, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow material.
+Protected paths: `AGENT_HANDOFF_V38_2026-07-06.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, `CVF_SESSION/state/entries/mseaR64ExternalCritiqueIntakePublicDriftDecisionDispatch20260707.json`, `CVF_SESSION/state/entries/nextAllowedMove.json`, and `CVF_SESSION_MEMORY.md`. The purpose is solely to reflect R64 dispatch and no-commit worker routing. It may not change runtime source, tests, checker work, provider-local config, private/generated MinerU output, public-sync mutation, merge/reconciliation, P3 restructuring, production Memory/RAG release, retrieval/vectorization, direct external import, or use-case/legal workflow material.
 
-Rollback boundary: revert only this MSEA-R60/R63 session-sync if rejected; do not revert material closure commit `f7e9d36d2`, R58/R59 material commit `a960db753`, R57 material commit `4736ca56f`, R56 material commit `18253d95b`, R55 material commit `ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
+Rollback boundary: revert only this MSEA-R64 session-sync if rejected; do not revert material dispatch commit `32f2a95d0`, R60/R63 material commit `f7e9d36d2`, R58/R59 material commit `a960db753`, R57 material commit `4736ca56f`, R56 material commit `18253d95b`, R55 material commit `ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R54 Session Sync
 

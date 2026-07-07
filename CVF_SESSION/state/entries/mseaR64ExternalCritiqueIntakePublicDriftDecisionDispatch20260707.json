@@ -1,0 +1,34 @@
+{
+  "stateOrder": 702,
+  "stateKey": "mseaR64ExternalCritiqueIntakePublicDriftDecisionDispatch20260707",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "32f2a95d0",
+    "materialCommitFull": "32f2a95d05f80004ddee89cf5eec9d389696ab9f",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R64_R70_PUBLIC_TRUST_AGENT_LOOP_ABSORPTION_ROADMAP_2026-07-07.md",
+    "gc018BaselinePath": "docs/baselines/CVF_GC018_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md",
+    "selectedDisposition": "R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_DISPATCH_READY",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73 on 8492fc8c3..HEAD",
+      "dispatch commit steward PASS on 8492fc8c3..HEAD",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedDecisionFacts": {
+      "externalCritiqueClassifiedAsAdvisoryInput": true,
+      "publicDriftVerificationAuthorizedReadOnly": true,
+      "publicSyncMutationAuthorized": false,
+      "runtimeImplementationAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "providerLiveProofAuthorized": false,
+      "directExternalImportAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "workerCommitAuthorized": false
+    },
+    "nextAllowedMove": "Execute only the R64 WORKER_MUST_NOT_COMMIT worker and return COMPLETE_PENDING_REVIEW with the worker return and classification matrix.",
+    "claimBoundary": "R64 dispatch opens only a docs-only external critique intake and public drift decision worker. It does not authorize public-sync mutation, runtime/source/test/checker edits, provider/live proof, direct external source import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, worker commit, push, or direct downstream release."
+  }
+}

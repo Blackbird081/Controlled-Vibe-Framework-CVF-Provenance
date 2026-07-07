@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=stop/checkpoint unless the operator selects a fresh source-verified target; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; R60/R63 added a docs-only foundation-to-Control-Plane interlock reference and kept runtime/source/checker/public lanes held; public-sync remains deferred unless separately authorized from the sibling public-sync clone; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation, or direct downstream release is authorized by R60/R63.
+Startup acknowledged: current mode=`msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=execute only the R64 WORKER_MUST_NOT_COMMIT worker and return COMPLETE_PENDING_REVIEW; parked checkpoint=legal/use-case workflow remains parked unless the operator explicitly selects that lane; R64 dispatch classifies `Gop y CVF` as advisory external input and authorizes read-only public drift verification only; public-sync remains deferred unless separately authorized from the sibling public-sync clone; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, direct external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation, worker commit, push, or direct downstream release is authorized by R64.
 
 ## Current Mode
 
-Current mode marker: `msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+Current mode marker: `msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`
 
-Current mode: `msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+Current mode: `msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`
 
-`msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+`msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+`msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R64 External Critique Intake And Public Drift Decision dispatch | `32f2a95d0` | DISPATCH_READY; added R64-R70 public trust and agent-loop absorption roadmap, paired GC-018 baseline, and WORKER_MUST_NOT_COMMIT work order for docs-only external critique intake and read-only public drift verification; pre-dispatch autorun PASS 73/73 on `8492fc8c3..HEAD`, dispatch steward PASS, material pre-commit hook PASS 80/80; worker may create only the R64 worker return and classification matrix then return COMPLETE_PENDING_REVIEW; no public-sync mutation, runtime/source/test/checker edit, provider/live proof, direct external source import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, worker commit, push, hosted/public/production claim, or direct downstream release is authorized. |
 | MSEA-R60/R63 Control Plane Interlock Checkpoint | `f7e9d36d2` | CLOSED_PASS_BOUNDED; R60 selected `R60_PROVENANCE_PUSH_POSTURE_RECONCILED_REMOTE_CURRENT` for the pre-batch push posture; R61 selected `R61_SELECT_CONTROL_PLANE_CONSUMER_FOR_FOUNDATION_IO_CONTRACT`; R62 selected `R62_READY_FOR_DOCS_ONLY_CONTROL_PLANE_INTERLOCK_REFERENCE`; R63 selected `R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_ADDED_RUNTIME_HELD` and added `docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md`; pre-implementation autorun PASS 75/75 on `0ddf326ac..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval, vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, public-sync mutation, hosted/public/production claim, or direct downstream release is authorized. |
 | MSEA-R58/R59 Plane I/O Registry Checkpoint | `a960db753` | CLOSED_PASS_BOUNDED; R58 selected `R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT` after read-only push preview showed upstream push debt and broad-range material/session split requirements; R59 selected `R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY` and added `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md` as reusable R56-derived foundation plane I/O contract reference; pre-implementation autorun PASS 75/75 on `e3d84e3fb..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval, vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, public-sync mutation, hosted/public/production claim, or direct downstream release is authorized. |
 | MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision | `4736ca56f` | CLOSED_PASS_BOUNDED; selected `R57_STOP_AT_FOUNDATION_PLANE_IO_CONTRACT_CHECKPOINT`; accepts R56 foundation plane I/O contract as the current governed internal architecture/control-plane checkpoint; stops the current lane unless the operator selects a fresh source-verified target; focused gates PASS, pre-implementation autorun PASS 75/75 on `3a36ef8fd..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, checker work, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 reopen, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
@@ -146,20 +147,23 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target`
+Mode: `msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`
 
-Stop/checkpoint. R60/R63 closes the Control Plane interlock checkpoint: R56/R59
-contract remains reusable as an internal reference, and
-`docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md`
-is the reusable docs-only foundation-to-Control-Plane interlock reference.
-Public-safe snapshot/public-sync remains deferred unless separately authorized
-from the sibling public-sync clone. No implementation, checker work,
-source/test edit, runtime/provider/MCP proof, production Memory/RAG release,
+Execute only the R64 WORKER_MUST_NOT_COMMIT worker from
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md`.
+The worker may create only
+`docs/reviews/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_WORKER_RETURN_2026-07-07.md`
+and
+`docs/reference/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_CLASSIFICATION_MATRIX_2026-07-07.md`,
+then return COMPLETE_PENDING_REVIEW. Public-safe snapshot/public-sync remains
+deferred unless separately authorized from the sibling public-sync clone. No
+implementation, checker work, source/test edit, runtime/provider/MCP proof,
+production Memory/RAG release,
 retrieval/vectorization, P3 reopen, external import, private/generated MinerU
 output read, use-case/legal workflow, hosted/public/production claim,
 public-sync mutation, or direct downstream release is authorized unless the
-operator selects a fresh source-verified target. LHW24 remains the latest
-closed numbered LHW wave.
+operator selects a fresh source-verified target. LHW24 remains latest closed
+numbered LHW wave.
 
 ## Current Closed Work
 
