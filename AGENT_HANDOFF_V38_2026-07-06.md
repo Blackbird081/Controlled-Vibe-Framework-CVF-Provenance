@@ -81,6 +81,8 @@ Latest R51 handoff freshness sync commit: `f46a8dadd`.
 
 Latest R65A material commit: `6ff1a7287`.
 
+Latest R65B dispatch material commit: `6a630dbe3`.
+
 R71 status: reference artifact storage-class/index standard is REVIEWER_ACCEPTED_BOUNDED; R65 public drift follow-up packet authoring is next; `Gop y CVF` remains advisory input only; public-safe snapshot/public-sync remains deferred unless separately authorized.
 
 Latest handoff authorization repair parent commit: `e73f566da`.
