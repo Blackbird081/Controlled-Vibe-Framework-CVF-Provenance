@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r67_public_safe_workspace_pr_defect_repair_and_merge_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R67 worker execution only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, `0d3bba46f`, and `e85252a47` remain unpushed, public merge/push remains operator-owned, and PR #20/#3 remain HOLD until the dispatched R67 worker repairs or returns source-backed decisions for Vietnamese guide encoding, New Project Enforcement Gate restoration, overlay-bundle split/hold, and failing required checks.
+Startup acknowledged: current mode=`msea_r67_public_safe_workspace_pr_defect_repair_merge_readiness_accepted_bounded_push_hold_r68_packet_next`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R68 public-safe workspace PR repair publish-or-hold packet authoring only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, `0d3bba46f`, and `e85252a47` remain unpushed, PR #20/#3 repair diffs remain local in PR-branch worktrees, public merge/push remains operator-owned, and no GitHub merge/push is authorized without explicit authority.
 
 ## Current Mode
 
-Current mode marker: `msea_r67_public_safe_workspace_pr_defect_repair_and_merge_readiness_dispatched_pending_worker_return`
+Current mode marker: `msea_r67_public_safe_workspace_pr_defect_repair_merge_readiness_accepted_bounded_push_hold_r68_packet_next`
 
-Current mode: `msea_r67_public_safe_workspace_pr_defect_repair_and_merge_readiness_dispatched_pending_worker_return`
+Current mode: `msea_r67_public_safe_workspace_pr_defect_repair_merge_readiness_accepted_bounded_push_hold_r68_packet_next`
 
-`msea_r67_public_safe_workspace_pr_defect_repair_and_merge_readiness_dispatched_pending_worker_return`
+`msea_r67_public_safe_workspace_pr_defect_repair_merge_readiness_accepted_bounded_push_hold_r68_packet_next`
 
 Previous mode:
 
-`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_accepted_bounded_with_hold_r67_packet_next`
+`msea_r67_public_safe_workspace_pr_defect_repair_and_merge_readiness_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R67 Public-Safe Workspace PR Defect Repair And Merge Readiness acceptance | `e03677e57` | REVIEWER_ACCEPTED_BOUNDED_WITH_PUSH_HOLD; accepted worker return and reviewer decision; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `16d0f7763..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; R67 verified but did not commit or push local PR-branch repair diffs: PR #20 BOM repair in `C:\Users\DELL\AppData\Local\Temp\pr20-fix`, PR #3 `New Project Enforcement Gate` restoration and public-core handoff-pointer realignment in `C:\Users\DELL\AppData\Local\Temp\pr3-fix`; PR #20 narrow leakfix split recipe is decision-ready but unapplied; public-sync remains clean and `main...origin/main [ahead 4]`; next move is fresh MSEA-R68 public-safe workspace PR repair publish-or-hold packet authoring only; no public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, unrelated provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, hosted/public/production claim, historical rename/move sweep, worker commit without authorization, or direct downstream release is authorized. |
 | MSEA-R67 Public-Safe Workspace PR Defect Repair And Merge Readiness dispatch | `49f842557` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R67 worker execution covering the remaining R66 public-safe workspace PR defects; pre-dispatch autorun PASS 73/73 on `3ac51ea70..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R67 worker execution only, producing `docs/reviews/CVF_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`; worker must refresh PR #20/#3 metadata, repair or return source-backed decisions for Windows PowerShell 5.1 Vietnamese guide mojibake, PR #3 `New Project Enforcement Gate` restoration, PR #20 overlay-bundle split/hold, and failing GitHub required-check triage; no public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, worker commit, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R66 Public-Safe Workspace PR Repair And Merge Readiness acceptance | `f5f10b8f` provenance / `e85252a47` public-sync | REVIEWER_ACCEPTED_BOUNDED_WITH_HOLD; accepted worker return and bounded public-sync manifest repair; public-sync local commit `e85252a472af6e508bed9ada957d37fa390b7193` allowlists four accepted Alibaba/DeepSeek canary receipt/index artifacts and resolves the R65D public-surface guard conflict locally; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `78d7317b0..HEAD`, commit steward PASS, public-sync public-surface guard PASS, public-sync static CI PASS 8/8, material pre-commit hook PASS 80/80; public-sync is clean and `main...origin/main [ahead 4]`; merge readiness remains HOLD for Windows PowerShell 5.1 Vietnamese guide mojibake, PR #3 `New Project Enforcement Gate` documentation deletion, PR #20 overlay-bundle split/authorization, and failing GitHub required checks; R66 follow-up is released by R67 dispatch `49f842557`; no public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, JSON receipt export, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R66 Public-Safe Workspace PR Repair And Merge Readiness dispatch | `006d9cafa` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit PR repair/merge-readiness worker execution covering GitHub PR #20, GitHub PR #3, and the R65D public-surface guard conflict; pre-dispatch autorun PASS 73/73 on `f27123098..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R66 worker execution only, producing `docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`; public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider status edits outside R66 scope, provenance runtime/source/test/checker edits, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, hosted/public/production claim, historical rename/move sweep, and direct downstream release remain unauthorized. |
@@ -156,23 +157,22 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r67_public_safe_workspace_pr_defect_repair_and_merge_readiness_dispatched_pending_worker_return`
+Mode: `msea_r67_public_safe_workspace_pr_defect_repair_merge_readiness_accepted_bounded_push_hold_r68_packet_next`
 
-No-commit R67 worker execution only. Worker must create
-`docs/reviews/CVF_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`,
-refresh PR #20/#3 metadata and check rollups, repair or return source-backed
-decisions for Windows PowerShell 5.1 Vietnamese guide mojibake, PR #3
-`New Project Enforcement Gate` restoration, PR #20 overlay-bundle split/hold,
-and failing GitHub required-check triage, then run required gates and leave all
-changes uncommitted. Public-sync local commits `fbb782fee`, `756c465e1`,
-`0d3bba46f`, and `e85252a47` remain unpushed. Public push, GitHub merge, broad
-overlay-pipeline acceptance, provider status edits, provenance
-runtime/source/test/checker edits outside the R67 branch-correct public-safe
-source scope, provider/live proof, JSON receipt export, OpenAI certification
-uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen,
-use-case/legal workflow, hosted/public/production claim, historical
-rename/move sweep, worker commit, and direct downstream release remain
-unauthorized. LHW24 remains latest closed numbered LHW wave.
+Fresh source-verified MSEA-R68 public-safe workspace PR repair publish-or-hold
+packet authoring only. R68 must decide whether to transfer and push the
+verified PR #20 and PR #3 local worktree repairs and whether to open the PR #20
+narrow leakfix split recipe. It must name exact repositories, branches,
+commits, paths, worktree source, transfer mechanism, and push/merge authority
+before any remote mutation. Public-sync local commits `fbb782fee`,
+`756c465e1`, `0d3bba46f`, and `e85252a47` remain unpushed. Public push, GitHub
+merge, broad overlay-pipeline acceptance, provider status edits, unrelated
+provenance runtime/source/test/checker edits, provider/live proof, JSON receipt
+export, OpenAI certification uplift, production Memory/RAG release,
+retrieval/vectorization, P3 reopen, use-case/legal workflow,
+hosted/public/production claim, historical rename/move sweep, worker commit
+without authorization, and direct downstream release remain unauthorized.
+LHW24 remains latest closed numbered LHW wave.
 
 ## Current Closed Work
 
