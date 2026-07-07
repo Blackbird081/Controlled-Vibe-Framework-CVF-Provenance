@@ -95,6 +95,33 @@ workspace-state material surface, not active session-sync continuity. It follows
 the generated aggregate discipline and the agent workspace state checker rather
 than the session-sync lane.
 
+## Commit Stack Debt Guard
+
+Before creating any governed commit, the committing agent must inspect local
+commit debt against the upstream tracking branch:
+
+```powershell
+git status --short --branch
+git log --oneline "HEAD@{upstream}..HEAD"
+```
+
+If the current branch has more than two unpushed commits, the agent must not
+start another tranche or create additional optional closure/session-sync commits
+until one of these dispositions is true:
+
+- the commit is required to finish the same already-started operator-approved
+  tranche and cannot be safely left uncommitted;
+- the operator has explicitly selected a push, squash, split, rebase, or branch
+  isolation plan for the current stack;
+- the agent records a concrete blocker explaining why the completed safe pair
+  cannot be pushed or consolidated before more work continues.
+
+The normal completed-tranche shape is at most one material commit plus one
+session-sync or handoff-sync commit. More commits for the same tranche require a
+brief reason in the steward evidence. A failed commit attempt is not a reason to
+create another tranche; repair the current changed set or stop with a
+source-backed blocker.
+
 ## Single-Agent Multi-Role Rule
 
 A single agent may execute multiple roles only if the evidence is separated by
@@ -150,6 +177,8 @@ Commit or closure evidence should record:
 - material paths;
 - protected session paths;
 - split recommendation or `N/A with reason`;
+- unpushed commit count against upstream, or `N/A with reason` when no upstream
+  tracking branch exists;
 - gate result;
 - whether `--enforce` was used.
 
@@ -167,6 +196,9 @@ The steward preflight must block or return to orchestrator when:
 - `handoff-sync` mode includes any file other than the root active handoff;
 - a worker in `WORKER_MUST_NOT_COMMIT` tries to commit or claim committed-range
   closure.
+- more than two unpushed commits already exist and the proposed commit is not
+  finishing the same already-started tranche, not covered by an operator-selected
+  consolidation/push/split plan, and not paired with a concrete blocker.
 
 ## Related Artifacts
 
@@ -257,10 +289,17 @@ This batch is authorized as bounded governance control-plane hardening in
 response to the operator request on 2026-06-15 to reduce total governed commit
 latency while keeping guard coverage.
 
+2026-07-08 extension: the operator identified excessive local commit stacking
+as a governance-load defect analogous to overgrown ceremony. This standard is
+authorized to add lightweight commit stack debt discipline without adding a new
+checker, hook, runtime behavior, provider proof, public-sync mutation, or
+session-sync requirement.
+
 Protected paths authorized in this batch:
 
 - `governance/compat/run_agent_commit_steward_preflight.py`
 - `governance/compat/test_run_agent_commit_steward_preflight.py`
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
 - `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`
 
 Allowed changes:
@@ -269,6 +308,11 @@ Allowed changes:
   authorization gaps before commit;
 - add focused tests for the session-sync command sequence;
 - preserve the lightweight handoff-sync command sequence.
+- add lightweight commit stack debt discipline requiring agents to inspect
+  unpushed commits before creating more local governed commits.
+- register this still-active dated standard in the active-window registry so
+  the active archive hygiene gate treats bounded updates as an active reference
+  rather than stale drift.
 
 Forbidden changes:
 
@@ -288,20 +332,20 @@ not revert Agent Dispatch Prompt Envelope Standardization material commit
 | --- | --- |
 | Actor | Codex |
 | Provider or surface | Codex CLI |
-| Session or invocation | GGL-T1 governance gate latency optimization from execution base `309e9f57` |
+| Session or invocation | commit stack debt lightweight hardening from execution base `3e1289ecc` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | implement exact autorun receipt reuse, bounded parallel timing, stderr-safe path parsing, and focused tests |
-| Target paths | GGL-T1 six-file material implementation manifest |
-| Allowed scope source | GGL-T1 GC-018 and work order dispatched at `7de440d2` |
-| Before status evidence | execution base `309e9f57`; worktree clean before implementation |
-| After status evidence | six GGL-T1 material paths changed before material commit |
-| Diff evidence | `git diff --check`, focused tests, parallel autorun, and exact receipt reuse proof |
-| Approval boundary | bounded governance control-plane optimization only |
-| Claim boundary | Repo-local trace only; no OS telemetry, provider-internal log, public readiness, production readiness, or runtime behavior claim |
+| Command or tool surface | add lightweight commit stack debt guard to the commit steward standard |
+| Target paths | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
+| Allowed scope source | operator requested light hardening for excessive local commit creation after observing repeated push/split friction |
+| Before status evidence | branch status `codex/p1-p5-small-debt-remediation...origin/codex/p1-p5-small-debt-remediation [ahead 50]`; standard had split rules but no explicit pre-commit stack-debt guard |
+| After status evidence | standard requires inspecting upstream commit debt before governed commits and treats more than two unpushed commits as a blocker unless finishing the same tranche or covered by an operator-selected consolidation/push/split plan; active-window registry protects this still-active dated standard from stale-active false failure |
+| Diff evidence | `git diff -- docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; focused gates and pre-implementation autorun |
+| Approval boundary | bounded reference-standard hardening only |
+| Claim boundary | Repo-local trace only; no checker/hook/runtime/provider/public-sync behavior change, no public readiness, no production readiness, no push authorization |
 | Agent type | Single agent acting as orchestrator/implementer/reviewer for a governance-control batch |
-| Invocation ID | `ggl-t1-material-codex-2026-06-19` |
-| Expected manifest | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_FOR_CODEX_2026-06-19.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/ggl-t1-governance-gate-latency-audit-optimization-2026-06-19.json` |
-| Actual changed set | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_FOR_CODEX_2026-06-19.md`; `governance/compat/run_agent_autorun_workflow_gate.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_GGL_T1_GOVERNANCE_GATE_LATENCY_AUDIT_OPTIMIZATION_COMPLETION_2026-06-19.md`; `docs/reviews/evidence/ggl-t1-governance-gate-latency-audit-optimization-2026-06-19.json` |
+| Invocation ID | `commit-stack-debt-hardening-codex-2026-07-08` |
+| Expected manifest | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
+| Actual changed set | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
 | Manifest delta | MATCH |
 
 ## Claim Boundary
