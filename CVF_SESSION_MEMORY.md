@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh MSEA-R71 GC-018/source-verified Reference Artifact Storage Class And Index Standard packet with README/front-door planning, index planning, forward-only storage-class taxonomy, citation rules, and no historical rename sweep; parked checkpoint=R65 public drift repair remains valuable but parked until R71 dispatch/closure or a fresh operator selection changes priority; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, direct external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation, worker commit, push, or direct downstream release is authorized.
+Startup acknowledged: current mode=`msea_r71_reference_artifact_storage_class_and_index_standard_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R71 worker execution only, creating the reference storage README, storage-class standard, reference artifact index, and worker return, then returning COMPLETE_PENDING_REVIEW; parked checkpoint=R65 public drift follow-up remains valuable but parked until R71 closure or a fresh operator selection changes priority; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, direct external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation outside R71 docs/reference outputs, worker commit, push, historical rename/move sweep, or direct downstream release is authorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`
+Current mode marker: `msea_r71_reference_artifact_storage_class_and_index_standard_dispatched_pending_worker_return`
 
-Current mode: `msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`
+Current mode: `msea_r71_reference_artifact_storage_class_and_index_standard_dispatched_pending_worker_return`
 
-`msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`
+`msea_r71_reference_artifact_storage_class_and_index_standard_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r64_external_critique_intake_and_public_drift_decision_dispatched_pending_worker_return`
+`msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R71 Reference Artifact Storage Class And Index Standard dispatch | `599269898` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a forward-only reference artifact storage-class README, standard, index, and worker return; pre-dispatch autorun PASS 73/73 on `32093b1b1..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R71 worker execution only in the four worker-owned paths; no historical rename/move sweep, checker implementation, public-sync mutation, runtime/source/test edit, provider/live proof, direct external import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, worker commit, push, hosted/public/production claim, or direct downstream release is authorized. |
 | MSEA-R64 External Critique Intake And Public Drift Decision acceptance | `0390151eb` | REVIEWER_ACCEPTED_BOUNDED; accepted worker return, companion classification matrix, and reviewer acceptance file; selected `R64_EXTERNAL_CRITIQUE_INTAKE_ACCEPTED_R71_REFERENCE_STORAGE_CLASS_PACKET_NEXT`; R65 public drift findings remain valuable but parked until R71 dispatch/closure or fresh operator selection; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `d614ec636..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; no public-sync mutation, runtime/source/test/checker edit, provider/live proof, direct external source import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, worker commit, push, hosted/public/production claim, or direct downstream release is authorized. |
 | MSEA-R60/R63 Control Plane Interlock Checkpoint | `f7e9d36d2` | CLOSED_PASS_BOUNDED; R60 selected `R60_PROVENANCE_PUSH_POSTURE_RECONCILED_REMOTE_CURRENT` for the pre-batch push posture; R61 selected `R61_SELECT_CONTROL_PLANE_CONSUMER_FOR_FOUNDATION_IO_CONTRACT`; R62 selected `R62_READY_FOR_DOCS_ONLY_CONTROL_PLANE_INTERLOCK_REFERENCE`; R63 selected `R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_ADDED_RUNTIME_HELD` and added `docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md`; pre-implementation autorun PASS 75/75 on `0ddf326ac..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval, vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, public-sync mutation, hosted/public/production claim, or direct downstream release is authorized. |
 | MSEA-R58/R59 Plane I/O Registry Checkpoint | `a960db753` | CLOSED_PASS_BOUNDED; R58 selected `R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT` after read-only push preview showed upstream push debt and broad-range material/session split requirements; R59 selected `R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY` and added `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md` as reusable R56-derived foundation plane I/O contract reference; pre-implementation autorun PASS 75/75 on `e3d84e3fb..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval, vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, public-sync mutation, hosted/public/production claim, or direct downstream release is authorized. |
@@ -147,23 +148,23 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`
+Mode: `msea_r71_reference_artifact_storage_class_and_index_standard_dispatched_pending_worker_return`
 
-Author a fresh MSEA-R71 GC-018/source-verified Reference Artifact Storage
-Class And Index Standard packet. R71 must include README/front-door planning,
-reference artifact index planning, forward-only storage-class taxonomy,
-citation rules, no historical rename sweep, and explicit handling for existing
-dated active references such as
-`docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md`.
-R65 public drift repair remains valuable but parked until R71 dispatch/closure
-or a fresh operator selection changes priority. Public-safe snapshot/public-sync
-remains deferred unless separately authorized from the sibling public-sync
-clone. No implementation, checker work, source/test edit, runtime/provider/MCP
-proof, production Memory/RAG release, retrieval/vectorization, P3 reopen,
-external import, private/generated MinerU output read, use-case/legal workflow,
-hosted/public/production claim, public-sync mutation, or direct downstream
-release is authorized unless a fresh source-verified packet releases it. LHW24
-remains latest closed numbered LHW wave.
+No-commit R71 worker execution only. Worker may create
+`docs/reference/reference_artifact_storage/README.md`,
+`docs/reference/reference_artifact_storage/CVF_REFERENCE_ARTIFACT_STORAGE_CLASS_STANDARD.md`,
+`docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md`, and
+`docs/reviews/CVF_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_WORKER_RETURN_2026-07-07.md`,
+then return COMPLETE_PENDING_REVIEW. R65 public drift follow-up remains valuable
+but parked until R71 closure or a fresh operator selection changes priority.
+Public-safe snapshot/public-sync remains deferred unless separately authorized
+from the sibling public-sync clone. No historical rename/move sweep, checker
+work, source/test edit, runtime/provider/MCP proof, production Memory/RAG
+release, retrieval/vectorization, P3 reopen, external import, private/generated
+MinerU output read, use-case/legal workflow, hosted/public/production claim,
+public-sync mutation, worker commit, push, or direct downstream release is
+authorized unless a fresh source-verified packet releases it. LHW24 remains
+latest closed numbered LHW wave.
 
 ## Current Closed Work
 

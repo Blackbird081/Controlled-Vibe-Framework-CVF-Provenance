@@ -2,14 +2,14 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R64 external critique intake acceptance and R71 next-target selection.
+Purpose: compact current-session continuity for resumed agents after MSEA-R71 reference artifact storage-class/index dispatch.
 Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R64 acceptance, active handoff V38, and the next source-verified R71 reference storage-class/index packet authoring route.
+Keep resumed agents aligned on R71 dispatch, active handoff V38, and the no-commit R71 worker execution route.
 
 ## Scope
 
@@ -17,7 +17,7 @@ This handoff covers private provenance continuity after R64 acceptance only. It 
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=author a fresh MSEA-R71 GC-018/source-verified Reference Artifact Storage Class And Index Standard packet with README/front-door planning, index planning, forward-only storage-class taxonomy, citation rules, and no historical rename sweep; parked checkpoint=R65 public drift repair remains valuable but parked until R71 dispatch/closure or a fresh operator selection changes priority; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, direct external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation, worker commit, push, or direct downstream release is authorized.
+Startup acknowledged: current mode=`msea_r71_reference_artifact_storage_class_and_index_standard_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R71 worker execution only, creating the reference storage README, storage-class standard, reference artifact index, and worker return, then returning COMPLETE_PENDING_REVIEW; parked checkpoint=R65 public drift follow-up remains valuable but parked until R71 closure or a fresh operator selection changes priority; no P3 restructuring reopen, public-sync mutation, merge/reconciliation, source/test edit, direct external source import, runtime/provider/MCP proof, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, use-case/legal workflow, hosted/public/production claim, provider-local config edit, checker work, implementation outside R71 docs/reference outputs, worker commit, push, historical rename/move sweep, or direct downstream release is authorized.
 
 ## Mandatory Startup Reads
 
@@ -31,11 +31,11 @@ Startup acknowledged: current mode=`msea_r64_external_critique_intake_accepted_r
 
 ## Current Mode
 
-`msea_r64_external_critique_intake_accepted_r71_reference_storage_class_packet_authoring_next`
+`msea_r71_reference_artifact_storage_class_and_index_standard_dispatched_pending_worker_return`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R64 accepted a docs-only external critique intake and public drift decision worker return; R71 is selected next for reference storage-class/index governance. P3 remains parked, and implementation, checker work, merge, reconciliation, runtime proof, production Memory/RAG release, public-sync mutation, direct external import, and downstream release remain unauthorized.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R71 is dispatched for no-commit reference storage-class/index governance worker execution. P3 remains parked, and implementation outside R71 docs/reference outputs, checker work, merge, reconciliation, runtime proof, production Memory/RAG release, public-sync mutation, direct external import, historical rename/move sweep, and downstream release remain unauthorized.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
@@ -47,6 +47,7 @@ External agent memory files: non-canonical convenience only.
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
+| MSEA-R71 Reference Artifact Storage Class And Index Standard dispatch | `599269898` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a forward-only reference artifact storage-class README, standard, index, and worker return; pre-dispatch autorun PASS 73/73 on `32093b1b1..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R71 worker execution only in the four worker-owned paths; no historical rename/move sweep, checker implementation, public-sync mutation, runtime/source/test edit, provider/live proof, direct external import, private-output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, worker commit, push, public claim, or downstream release is authorized. |
 | MSEA-R64 External Critique Intake And Public Drift Decision acceptance | `0390151eb` | REVIEWER_ACCEPTED_BOUNDED; accepted worker return, companion classification matrix, and reviewer acceptance file; selected `R64_EXTERNAL_CRITIQUE_INTAKE_ACCEPTED_R71_REFERENCE_STORAGE_CLASS_PACKET_NEXT`; R65 public drift findings remain valuable but parked until R71 dispatch/closure or fresh operator selection; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `d614ec636..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; no public-sync mutation, runtime/source/test/checker edit, provider/live proof, direct external import, private-output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, worker commit, push, public claim, or downstream release is authorized. |
 | MSEA-R60/R63 Control Plane Interlock Checkpoint | `f7e9d36d2` | CLOSED_PASS_BOUNDED; R60 selected `R60_PROVENANCE_PUSH_POSTURE_RECONCILED_REMOTE_CURRENT`; R61 selected `R61_SELECT_CONTROL_PLANE_CONSUMER_FOR_FOUNDATION_IO_CONTRACT`; R62 selected `R62_READY_FOR_DOCS_ONLY_CONTROL_PLANE_INTERLOCK_REFERENCE`; R63 selected `R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_ADDED_RUNTIME_HELD` and added `docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md`; no implementation, checker work, source/test edit, runtime/provider/MCP proof, public-sync mutation, production Memory/RAG release, private-output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, public claim, or downstream release is authorized. |
 | MSEA-R58/R59 Plane I/O Registry Checkpoint | `a960db753` | CLOSED_PASS_BOUNDED; R58 selected `R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT` after read-only push preview showed upstream push debt and broad-range material/session split requirements; R59 selected `R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY` and added `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md` as reusable R56-derived foundation plane I/O contract reference; no implementation, checker work, source/test edit, runtime/provider/MCP proof, public-sync mutation, production Memory/RAG release, private-output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, public claim, or downstream release is authorized. |
@@ -65,7 +66,7 @@ External agent memory files: non-canonical convenience only.
 
 ## Latest Work/Changes
 
-R64 accepted `docs/reviews/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_WORKER_RETURN_2026-07-07.md`, `docs/reference/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_CLASSIFICATION_MATRIX_2026-07-07.md`, and `docs/reviews/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_COMPLETION_REVIEW_2026-07-07.md` at provenance material commit `0390151eb`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for the R71 reference storage-class/index packet authoring state.
+R71 dispatch committed `docs/baselines/CVF_GC018_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_2026-07-07.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_2026-07-07.md` at provenance material commit `599269898`. This session-sync updates active pointers, state source fragments, generated active state/bootstrap, front door, and handoff routing for the R71 no-commit worker execution state.
 
 ## HEAD Freshness
 
@@ -77,7 +78,7 @@ Latest R51 dispatch commit: `fc5411ebc`.
 
 Latest R51 handoff freshness sync commit: `f46a8dadd`.
 
-R64 status: external critique intake and public drift decision is REVIEWER_ACCEPTED_BOUNDED; `Gop y CVF` remains advisory input only; R71 reference storage-class/index packet authoring is selected next; public-safe snapshot/public-sync remains deferred unless separately authorized.
+R71 status: reference artifact storage-class/index standard is DISPATCH_READY; worker execution is next under WORKER_MUST_NOT_COMMIT; `Gop y CVF` remains advisory input only; public-safe snapshot/public-sync remains deferred unless separately authorized.
 
 Latest handoff authorization repair parent commit: `e73f566da`.
 
@@ -91,6 +92,9 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| Pre-dispatch autorun on `32093b1b1..HEAD` for R71 | PASS 73/73 |
+| Dispatch commit steward on `32093b1b1..HEAD` for R71 | PASS |
+| Material pre-commit hook for R71 | PASS 80/80 |
 | Pre-dispatch autorun on `8492fc8c3..HEAD` for R64 | PASS 73/73 |
 | Dispatch commit steward on `8492fc8c3..HEAD` for R64 | PASS |
 | Material pre-commit hook for R64 | PASS 80/80 |
@@ -129,7 +133,39 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-Author a fresh MSEA-R71 GC-018/source-verified Reference Artifact Storage Class And Index Standard packet. R71 must include README/front-door planning, reference artifact index planning, forward-only storage-class taxonomy, citation rules, no historical rename sweep, and explicit handling for existing dated active references such as `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md`. R65 public drift repair remains valuable but parked until R71 dispatch/closure or a fresh operator selection changes priority. Public-sync mutation, implementation, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval/vectorization, P3 reopen, direct external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, worker commit, push, and direct downstream release remain unauthorized. LHW24 remains latest closed numbered LHW wave.
+No-commit R71 worker execution only. Worker may create `docs/reference/reference_artifact_storage/README.md`, `docs/reference/reference_artifact_storage/CVF_REFERENCE_ARTIFACT_STORAGE_CLASS_STANDARD.md`, `docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md`, and `docs/reviews/CVF_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_WORKER_RETURN_2026-07-07.md`, then return COMPLETE_PENDING_REVIEW. R65 public drift follow-up remains valuable but parked until R71 closure or a fresh operator selection changes priority. Public-sync mutation, implementation outside R71 docs/reference outputs, checker work, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval/vectorization, P3 reopen, direct external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, worker commit, push, historical rename/move sweep, and direct downstream release remain unauthorized. LHW24 remains latest closed numbered LHW wave.
+
+## Core Guard Self-Protection Authorization - MSEA-R71 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R71 material
+dispatch commit `599269898`, including active mode, next allowed move,
+generated active state, bootstrap read model, active handoff, front door, and
+R71 dispatch state entry.
+
+Operator authorization: operator instructed to wait for R64 completion and then
+proceed with R71 as the Reference Artifact Storage Class And Stable Front Door
+Standard lane, including README and INDEX planning, without historical churn.
+
+Protected paths: `AGENT_HANDOFF_V38_2026-07-06.md`,
+`CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+`CVF_SESSION/state/entries/mseaR71ReferenceArtifactStorageClassIndexStandardDispatch20260707.json`,
+and `CVF_SESSION/state/entries/nextAllowedMove.json`. The purpose is solely to
+reflect R71 dispatch and no-commit worker routing. It may not change runtime
+source, tests, checker work, provider-local config, private/generated MinerU
+output, public-sync mutation, merge/reconciliation, P3 restructuring,
+production Memory/RAG release, retrieval/vectorization, direct external import,
+historical rename/move sweep, or use-case/legal workflow material.
+
+Rollback boundary: revert only this MSEA-R71 dispatch session-sync if rejected;
+do not revert material dispatch commit `599269898`, R64 acceptance commit
+`0390151eb`, R64 material dispatch commit `32f2a95d0`, R60/R63 material commit
+`f7e9d36d2`, R58/R59 material commit `a960db753`, R57 material commit
+`4736ca56f`, R56 material commit `18253d95b`, R55 material commit
+`ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit
+`22c471fdd`, R52 material commit `18f177033`, public-sync commit
+`65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
 
 ## Agent Operation Trace
 
