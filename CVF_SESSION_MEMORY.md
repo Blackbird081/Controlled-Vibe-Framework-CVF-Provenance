@@ -11,7 +11,7 @@ Read these files before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V38_2026-07-06.md`
+4. `AGENT_HANDOFF_V39_2026-07-08.md`
 5. `docs/reference/guard_orientation/README.md`
 
 For governed artifact authoring, also read:
@@ -24,7 +24,7 @@ For governed artifact authoring, also read:
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V38_2026-07-06.md` |
+| Active handoff | `AGENT_HANDOFF_V39_2026-07-08.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
 | Front-door archive snapshot | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md` |
@@ -33,28 +33,29 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only, citing repaired GCI-014 for public-main CI/public-surface evidence; parked checkpoint=GCI/roadmap repairs from Claude review are accepted, but checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, push, operator onboarding implementation, product extraction, and public/production claims remain unauthorized.
+Startup acknowledged: current mode=`msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72B Governance Control Index And Checker Lifecycle Inventory GC-018 and work-order authoring only; parked checkpoint=R72A accepted as evidence/classification only, public-main CI remains unrepaired, public-sync mutation remains unauthorized, and branch commit stack debt remains 51 unpushed commits.
 
 ## Current Mode
 
-Current mode marker: `msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`
+Current mode marker: `msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
 
-Current mode: `msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`
+Current mode: `msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
 
-`msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`
+`msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
 
 Previous mode:
 
-`msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`
+`msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R72A Public Main CI Health And Governance-Load Baseline | `f1de350cb` base / uncommitted pending operator review | REVIEWER_ACCEPTED_BOUNDED_PENDING_DEBT_PLAN; accepted GC-018 baseline, work order, combined matrix artifact, and worker return. R72A classified current public-main CI as one `GOVERNANCE_LOAD` failure (`CVF CI Pipeline`) and two `PRODUCT_DEBT` failures (`Documentation & Testing`, `CVF CI`), with public-surface/static CI passing. No public-sync mutation, CI repair, checker retirement, runtime/source/test/checker edit, provider/live proof, merge, or push was performed. |
 | MSEA-R72 GCI Claude Review Repair | `7f25ad753` | GCI_CLAUDE_REVIEW_REPAIR_ACCEPTED_PENDING_R72A_GC018; accepted Claude's `ACCEPT_WITH_REPAIRS` review by tightening GCI-014 public-sync owner surfaces, closing the R72F silent zero-retirement escape hatch with named WATCH-row evidence, adding R72G/R72H roadmap ownership, preserving the direct checker-script baseline correction for R72D, and tracking both external review files as private provenance evidence; focused encoding/corpus/structure/read-ahead/trace/index/public-export/finding-learning gates PASS, pre-implementation autorun PASS 75/75 on `a37c32dc8..HEAD`, implementation steward PASS, material pre-commit hook PASS 80/80; next move remains fresh source-verified R72A GC-018/work-order authoring only; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, operator onboarding implementation, product extraction, public/production claim, or historical sweep is authorized. |
 | MSEA-R72 Governance Control Index front-door refactor | `7c2a04ff1` | GOVERNANCE_CONTROL_INDEX_ESTABLISHED_PENDING_R72A_GC018; added official GCI README and index, registered both in the reference artifact index, and updated the R72 roadmap so R72B/R72F use lifecycle/cost/value/retirement-readiness criteria before any checker consolidation or retirement pilot; focused structural/index/trace gates PASS, pre-implementation autorun PASS 75/75 on `778adb4c3..HEAD`, implementation steward PASS, material pre-commit hook PASS 80/80; next move remains fresh source-verified R72A GC-018/work-order authoring only with GCI-014 cited for public-main CI/public-surface evidence; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
 | MSEA-R72 EA Assessment Intake And Governance Load Rebalancing roadmap | `4c540f1af` | ROADMAP_READY_FOR_R72A_GC018_AND_WORK_ORDER_AUTHORING; accepted the independent EA critique as a high-confidence governance-load signal only after command remeasurement; roadmap defines R72A public-main CI health/governance-load baseline, R72B checker lifecycle criteria, R72C Fast Lane calibration, R72D governance metric readout, R72E absorb-lane ceremony reclassification, and R72F first retirement/consolidation pilot; pre-implementation autorun PASS 75/75 on `29a8a4087..HEAD`, material pre-commit hook PASS 80/80; next move is fresh source-verified R72A GC-018 and work-order authoring only; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
-| MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions acceptance | `0e9b59d9b` | REVIEWER_ACCEPTED_BOUNDED; accepted the definition-only overlay standard, catalog JSON, eleven profile JSON files, R71 reference index row, and worker return after reviewer repairs; repairs changed non-existent script command examples into future implementation hooks, updated the stale V23 handoff catalog path to active `AGENT_HANDOFF_V38_2026-07-06.md`, and aligned the new reference standard top matter with `LEGACY_DATED_ACTIVE_REFERENCE`; JSON parse/path validation PASS for 12 JSON files, worker-return fast gate PASS 59/59, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; no checker retirement implementation, checker deletion/disablement, runtime/source/test/checker edit, public-sync mutation, merge, push, provider/live proof, public/production claim, broad overlay implementation, or historical sweep is authorized. |
+| MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions acceptance | `0e9b59d9b` | REVIEWER_ACCEPTED_BOUNDED; accepted the definition-only overlay standard, catalog JSON, eleven profile JSON files, R71 reference index row, and worker return after reviewer repairs; repairs changed non-existent script command examples into future implementation hooks, updated the stale V23 handoff catalog path to active `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`, and aligned the new reference standard top matter with `LEGACY_DATED_ACTIVE_REFERENCE`; JSON parse/path validation PASS for 12 JSON files, worker-return fast gate PASS 59/59, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; no checker retirement implementation, checker deletion/disablement, runtime/source/test/checker edit, public-sync mutation, merge, push, provider/live proof, public/production claim, broad overlay implementation, or historical sweep is authorized. |
 | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions dispatch | `80b37b2d2` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R70A worker execution; pre-dispatch autorun PASS 73/73 on `b65ad7c76..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R70A worker execution only, producing `docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md` and the worker-owned definition artifacts named in the work order; no worker commit, merge, push, cherry-pick, public-sync mutation, script edit, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, broad overlay acceptance, or downstream release is authorized. |
 | MSEA-R70 Workspace Overlay Pipeline Feature Split And Review Decision acceptance | `f267c92ca` | REVIEWER_ACCEPTED_BOUNDED; accepted worker return after reviewer repair; selected `ACCEPT_AS_FUTURE_FEATURE_WITH_SPLIT` for the residual PR #20 overlay feature bundle; worker-return fast gate PASS 59/59, reviewer-return commit steward PASS on `51ed478d8..HEAD`, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R70A standards/catalog/profile-definition packet authoring only; no implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, public claim, historical rename/move sweep, worker commit, or direct downstream release is authorized. |
 | MSEA-R69 Public-Safe Workspace PR Safe Merge Execution | `fee4e12d1` | CLOSED_PASS_BOUNDED; executed the operator-authorized safe merge route; public PR #3 merged as `b9ce2e4822a6a6bef353ae85df82d2efd4511fb1`; provenance narrow PR #21 merged as `eaa48db35b3d2a95da9394948f608ea4670726db`; broad provenance PR #20 closed as superseded and not merged; public-sync local `main` rebased, public-surface PASS, static CI PASS 8/8, pushed, and confirmed clean/current at `HEAD == origin/main == e50ac604d`; R69 material gates PASS: worker-return fast 59/59, pre-implementation autorun 75/75 on `d1288b04c..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is return to governed roadmap continuation or fresh source-verified packet selection only; no broad overlay-pipeline acceptance, new public-sync mutation, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
@@ -78,7 +79,7 @@ Previous mode:
 | MSEA-R55 High-Value Plane Absorb Target Reselection | `ea53c7df5` | CLOSED_PASS_BOUNDED; selected `R55_SELECT_FOUNDATION_PLANE_IO_CONTRACT_AND_INTERLOCK_PACKET`; selected fresh source-verified MSEA-R56 Foundation Plane I/O Contract And System Interlock Packet as the next target; P3 remains parked; focused gates PASS, pre-implementation autorun PASS 75/75 on `ecb9a5c10..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 reopen, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision | `e89e03e9f` | CLOSED_PASS_BOUNDED; selected `R54_P3_RECONCILIATION_PARKED_LOW_IMMEDIATE_VALUE`; parked `Controlled-Vibe-Framework-CVF-P3` branch `restructuring/p3-layout-wave-2`; selected fresh source-verified MSEA-R55 High-Value Plane Absorb Target Reselection as the next packet; focused gates PASS, pre-implementation autorun PASS 75/75 on `a70bc189d..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no P3 merge, branch reconciliation, physical relocation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
 | MSEA-R53 Plane Absorb Repo Target Discovery And Readiness Decision | `22c471fdd` | CLOSED_PASS_BOUNDED; selected `R53_SELECT_P3_PROVENANCE_PLANE_RECONCILIATION_READINESS_DECISION`; selected `Controlled-Vibe-Framework-CVF-P3` on branch `restructuring/p3-layout-wave-2` as the next target; next packet is fresh source-verified MSEA-R54 P3 Provenance Plane Reconciliation Readiness Decision; focused gates PASS, pre-implementation autorun PASS 75/75 on `c875b6084..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no merge, branch reconciliation, source/test edit, external source import, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation is authorized. |
-| MSEA-R52 Provenance Sync And Next Target Selection Packet | `18f177033` | CLOSED_PASS_BOUNDED; selected `R52_SELECT_PLANE_ABSORB_REPO_TARGET_DISCOVERY_AND_READINESS_DECISION`; next target is fresh source-verified MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision; repaired provenance pre-push hygiene by classifying `AGENT_HANDOFF_V38_2026-07-06.md` as `INTERNAL_ONLY` in the root-file exposure registry; pre-implementation autorun PASS 75/75 on `0a545b1b5..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, external absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, provider-local config edit, or public claim is authorized. |
+| MSEA-R52 Provenance Sync And Next Target Selection Packet | `18f177033` | CLOSED_PASS_BOUNDED; selected `R52_SELECT_PLANE_ABSORB_REPO_TARGET_DISCOVERY_AND_READINESS_DECISION`; next target is fresh source-verified MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision; repaired provenance pre-push hygiene by classifying `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` as `INTERNAL_ONLY` in the root-file exposure registry; pre-implementation autorun PASS 75/75 on `0a545b1b5..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; no implementation, external absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, provider-local config edit, or public claim is authorized. |
 | MSEA-R51-T1 Post R50 Public Safe Catalog Snapshot Refresh | `0b1cda836` provenance / `65f3dd6ce` public | CLOSED_PASS_BOUNDED_EXPORTED; public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5` pushed to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` on `main`; refreshed public README, evidence index, `docs/evidence/public-current-state-snapshot-2026-07-07.md`, and public technical product catalog with R50 sealed internal foundation system-chain posture and public-safe boundaries; worker-return fast gate PASS, pre-implementation autorun PASS 75/75 on `f46a8dadd..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move remains stop/checkpoint unless a fresh operator-named target and fresh source-verified authority are provided; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, additional public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or new public claim is authorized. |
 | MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal | `5a37765fa` | CLOSED_PASS_BOUNDED; selected `R50_MINERU_FOUNDATION_SYSTEM_CHAIN_SEALED_STOP_CHECKPOINT`; seals MinerU/scanlayer/memory as an internal foundation system chain against `docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md`; focused gates PASS, pre-implementation autorun PASS 75/75 on `19401824a..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is stop/checkpoint unless a fresh operator-named target and fresh source-verified authority are provided; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
 | MSEA-R49 Plane Absorb Target Selection And Owner Surface Map | `85bd012a3` | CLOSED_PASS_BOUNDED; selects `docs/reference/CVF_MSEA_R10_MINERU_ADAPTER_CONTRACT_DRAFT_2026-07-03.md` as the existing owner surface for system-chain seal; selected `R49_SELECT_EXISTING_R10_ADAPTER_CONTRACT_OWNER_SURFACE_FOR_SYSTEM_CHAIN_SEAL`; mirror commit/count recheck matched `3e60291846cb7c3bf8fe7f4f16238f4fc6cce491` and 425 files; focused gates PASS, pre-implementation autorun PASS 75/75 on `dce655773..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R50 MinerU Adapter Contract Owner Surface System Chain Seal packet or stop/checkpoint; no external source absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, extraction accuracy claim, document truth claim, legal quality claim, current-law correctness claim, hosted release claim, standalone app work, provider-local config edit, push, or public claim is authorized. |
@@ -166,21 +167,18 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`
+Mode: `msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
 
-Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load
-Baseline GC-018 and work-order authoring only. R72A must cite repaired GCI-014
-for public-main CI/public-surface evidence, may refresh public-main GitHub
-Actions status, verify public-sync repository boundary, classify current CI
-failures, define a governance-load baseline work order, carry the R72D
-direct-checker-count correction, preserve the R72F named-WATCH-row/no-silent-zero-retirement
-guardrail, and leave R72G/R72H for downstream bounded tranches. R72A must not
-implement checker retirement, delete or disable checkers, mutate public-sync,
-edit runtime/source/tests/checkers, run provider/live proof, make
-public/production claims, push, merge, extract product surfaces, onboard
-operators, or sweep historical artifacts unless a later accepted work order
-explicitly authorizes the narrower action. LHW24 remains latest closed numbered
-LHW wave.
+Fresh source-verified MSEA-R72B Governance Control Index And Checker Lifecycle
+Inventory GC-018 and work-order authoring only. R72B must use the Governance
+Control Index as the lifecycle/cost/value spine and inventory direct checker
+scripts by owner, risk, phase, cost, value, overlap group, and candidate
+criteria without deleting, disabling, retiring, consolidating, renaming, or
+editing any checker. R72B must not mutate public-sync, edit runtime/source/
+tests/checkers, run provider/live proof, push, merge, extract product surfaces,
+onboard operators, or make public/production claims. If checker ownership or
+metric scope cannot be source-backed, R72B must return HOLD/BLOCKED with exact
+evidence. LHW24 remains latest closed numbered LHW wave.
 
 ## Current Closed Work
 
@@ -225,7 +223,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R58/R59 closure. |
 | `CVF_SESSION/state/entries/mseaR58R59PlaneIoRegistryCheckpoint20260707.json` | Record R58/R59 closure, registry reference, push hold, and public snapshot deferral. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop/checkpoint unless operator selects a fresh source-verified target. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R58/R59 continuity and stop/checkpoint next move. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R58/R59 continuity and stop/checkpoint next move. |
 
 Rollback boundary: revert only this MSEA-R58/R59 session-sync if rejected; do
 not revert material closure commit `a960db753`, R57 material commit
@@ -251,7 +249,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R56 closure. |
 | `CVF_SESSION/state/entries/mseaR56FoundationPlaneIoContractAndSystemInterlock20260707.json` | Record R56 closure and R57 target selection. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R57 release-or-stop decision packet. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R56 continuity and R57 next target. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R56 continuity and R57 next target. |
 
 Rollback boundary: revert only this MSEA-R56 session-sync if rejected; do not
 revert material closure commit `18253d95b`, R55 material commit `ea53c7df5`,
@@ -276,7 +274,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R55 closure. |
 | `CVF_SESSION/state/entries/mseaR55HighValuePlaneAbsorbTargetReselection20260707.json` | Record R55 closure and R56 target selection. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R56 foundation plane I/O contract packet. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R55 continuity and R56 next target. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R55 continuity and R56 next target. |
 
 Rollback boundary: revert only this MSEA-R55 session-sync if rejected; do not
 revert material closure commit `ea53c7df5`, R54 material commit `e89e03e9f`,
@@ -301,7 +299,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R54 closure. |
 | `CVF_SESSION/state/entries/mseaR54P3ProvenancePlaneReconciliationReadiness20260707.json` | Record R54 closure and P3 park decision. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R55 high-value target reselection packet. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R54 continuity and R55 next target. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R54 continuity and R55 next target. |
 
 Rollback boundary: revert only this MSEA-R54 session-sync if rejected; do not
 revert material closure commit `e89e03e9f`, R53 material commit `22c471fdd`,
@@ -325,7 +323,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R53 closure. |
 | `CVF_SESSION/state/entries/mseaR53PlaneAbsorbRepoTargetDiscoveryReadiness20260707.json` | Record R53 closure and selected P3 target. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R54 P3 readiness packet. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R53 continuity and R54 next target. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R53 continuity and R54 next target. |
 
 Rollback boundary: revert only this MSEA-R53 session-sync if rejected; do not
 revert material closure commit `22c471fdd`, R52 material commit `18f177033`,
@@ -349,7 +347,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R52 closure. |
 | `CVF_SESSION/state/entries/mseaR52ProvenanceSyncAndNextTargetSelection20260707.json` | Record R52 closure and selected next target. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R53 discovery/readiness packet. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R52 continuity and R53 next target. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R52 continuity and R53 next target. |
 
 Rollback boundary: revert only this MSEA-R52 session-sync if rejected; do not
 revert material commit `18f177033`, R51 public-sync commit
@@ -372,7 +370,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R51-T1 exported stop/checkpoint. |
 | `CVF_SESSION/state/entries/mseaR51T1PostR50PublicSafeCatalogSnapshotRefresh20260707.json` | Record accepted R51-T1 closure and public export evidence. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop/checkpoint with fresh-target condition. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R51-T1 public export continuity and stop/checkpoint state. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R51-T1 public export continuity and stop/checkpoint state. |
 
 Rollback boundary: revert only this MSEA-R51-T1 session-sync if rejected; do
 not revert material closure commit `0b1cda836`, public-sync commit
@@ -395,7 +393,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R50 sealed stop/checkpoint. |
 | `CVF_SESSION/state/entries/mseaR50MineruAdapterContractOwnerSurfaceSystemChainSeal20260706.json` | Record accepted R50 closure evidence. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop/checkpoint with fresh-target condition. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R50 closure continuity and stop/checkpoint state. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R50 closure continuity and stop/checkpoint state. |
 
 Rollback boundary: revert only this MSEA-R50 session-sync if rejected; do not
 revert material closure commit `5a37765fa` or older MSEA history.
@@ -417,7 +415,7 @@ Protected paths:
 | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R49 closed pending R50 seal/recheck. |
 | `CVF_SESSION/state/entries/mseaR49PlaneAbsorbTargetSelectionOwnerSurfaceMap20260706.json` | Record accepted R49 closure evidence. |
 | `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R50 source-verified seal/recheck or stop/checkpoint. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R49 closure continuity and R50 next move. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Record R49 closure continuity and R50 next move. |
 
 Rollback boundary: revert only this MSEA-R49 session-sync if rejected; do not
 revert material closure commit `85bd012a3` or older MSEA history.
@@ -434,7 +432,7 @@ Protected paths:
 | Path | Purpose |
 |---|---|
 | `AGENTS.md` | Update active handoff pointer from V37 to V38. |
-| `AGENT_HANDOFF_V38_2026-07-06.md` | Open active handoff after V37 size rotation. |
+| `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md` | Open active handoff after V37 size rotation. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R48 closure session-sync. |
 | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md` | Archive superseded V37 handoff after rotation. |
