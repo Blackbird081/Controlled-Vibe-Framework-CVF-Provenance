@@ -21,7 +21,7 @@ R72A was accepted as a bounded evidence/classification tranche. The accepted clo
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72B Governance Control Index And Checker Lifecycle Inventory GC-018 and work-order authoring only; parked checkpoint=R72A accepted as evidence/classification only, public-main CI remains unrepaired, public-sync mutation remains unauthorized, and branch commit stack debt remains 51 unpushed commits.
+Startup acknowledged: current mode=`msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72B Governance Control Index And Checker Lifecycle Inventory GC-018 and work-order authoring only; parked checkpoint=R72A accepted as evidence/classification only, public-main CI remains unrepaired, public-sync mutation remains unauthorized, and operator authorized provenance-branch push-debt cleanup before applying further commit-stack rules.
 
 ## Mandatory Startup Reads
 
@@ -39,7 +39,7 @@ Startup acknowledged: current mode=`msea_r72a_public_main_ci_health_governance_l
 
 ## Active Boundary
 
-R72A is accepted at material-content level from uncommitted artifacts in the current worktree. The accepted R72A scope is classification and baseline measurement only: it identifies one `GOVERNANCE_LOAD` public-main failure and two `PRODUCT_DEBT` public-main failures, but does not repair CI or mutate public-sync.
+R72A is accepted and committed as a bounded classification and baseline measurement tranche only: it identifies one `GOVERNANCE_LOAD` public-main failure and two `PRODUCT_DEBT` public-main failures, but does not repair CI or mutate public-sync.
 
 R72B is the next bounded roadmap step. R72B may author a fresh GC-018 and source-verified work order for Governance Control Index And Checker Lifecycle Inventory. It must not delete, disable, retire, consolidate, or edit checkers; it must not mutate public-sync; it must not edit runtime/source/tests/checkers; it must not run provider/live proof; it must not push, merge, extract product surfaces, onboard operators, or make public/production claims.
 
@@ -76,15 +76,21 @@ Rollback boundary: revert only this R72A acceptance/session-sync and V39 rotatio
 
 ## HEAD Freshness
 
-Current HEAD before R72A post-commit session-sync commit: `1187018cd2a7626cd9c896a60ed30343961e927b`.
+Current HEAD before handoff remote-tracking sync commit: `60da2badac5ca4c064aa0b8fb047db6b38b26481`.
 
-Current HEAD short: `1187018cd`.
+Current HEAD short: `60da2bada`.
 
-Current HEAD parent: `f1de350cbbd846f018711fb7433a5ddd94d6ef1d`.
+Current HEAD parent: `1187018cd2a7626cd9c896a60ed30343961e927b`.
 
-Branch state at session-sync authoring: `codex/p1-p5-small-debt-remediation` remains ahead upstream; do not push without separate operator authorization.
+Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 
-Commit stack debt disposition: `DEBT_PRESENT_REVIEW_AFTER_COMPLETION`; do not create public push or broad history rewrite from this handoff. Any material/session-sync commit remains subject to operator review and later push/squash/split decision.
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
+Branch state at session-sync authoring: `codex/p1-p5-small-debt-remediation` is ahead of its tracked provenance remote branch; operator authorized cleaning the existing private provenance push debt before applying further commit-stack rules.
+
+Commit stack debt disposition: `OPERATOR_AUTHORIZED_PROVENANCE_BRANCH_PUSH_CLEANUP`; do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
 
 Latest closed numbered LHW wave: LHW24.
 
