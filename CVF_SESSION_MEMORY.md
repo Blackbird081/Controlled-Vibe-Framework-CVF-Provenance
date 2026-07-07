@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=return to governed roadmap continuation or fresh source-verified packet selection only; parked checkpoint=R65-R69 public-safe workspace leakfix lane is merged/synced, public-sync has no pending push for this lane, broad PR #20 is closed as superseded and not accepted.
+Startup acknowledged: current mode=`msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R70 worker execution only; parked checkpoint=R65-R69 public-safe workspace leakfix lane is merged/synced, public-sync has no pending push for that lane, and broad PR #20 overlay implementation remains unaccepted pending R70 worker decision.
 
 ## Current Mode
 
-Current mode marker: `msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`
+Current mode marker: `msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return`
 
-Current mode: `msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`
+Current mode: `msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return`
 
-`msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`
+`msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r68_public_safe_workspace_pr_repair_publish_or_hold_accepted_bounded_authorization_hold`
+`msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R70 Workspace Overlay Pipeline Feature Split And Review Decision dispatch | `a18d2ef99` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit residual PR #20 overlay-pipeline feature split/review decision; pre-dispatch autorun PASS 73/73 on `0260fec3b..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R70 worker execution only, producing `docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md`; worker must refresh PR #20 metadata/diff/check evidence, classify overlay feature commits separately from already-handled leakfix commits, assess value/boundary/maintainability, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; no implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, public claim, historical rename/move sweep, worker commit, or direct downstream release is authorized. |
 | MSEA-R69 Public-Safe Workspace PR Safe Merge Execution | `fee4e12d1` | CLOSED_PASS_BOUNDED; executed the operator-authorized safe merge route; public PR #3 merged as `b9ce2e4822a6a6bef353ae85df82d2efd4511fb1`; provenance narrow PR #21 merged as `eaa48db35b3d2a95da9394948f608ea4670726db`; broad provenance PR #20 closed as superseded and not merged; public-sync local `main` rebased, public-surface PASS, static CI PASS 8/8, pushed, and confirmed clean/current at `HEAD == origin/main == e50ac604d`; R69 material gates PASS: worker-return fast 59/59, pre-implementation autorun 75/75 on `d1288b04c..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is return to governed roadmap continuation or fresh source-verified packet selection only; no broad overlay-pipeline acceptance, new public-sync mutation, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R68 Public-Safe Workspace PR Repair Publish Or Hold acceptance | `c5cbe6691` | REVIEWER_ACCEPTED_BOUNDED_WITH_AUTHORIZATION_HOLD; accepted worker return and reviewer decision; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `6ddd8f81d..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; R68 confirmed PR #20 repair content is transfer-ready in local worktree `C:\Users\DELL\AppData\Local\Temp\pr20-fix`, PR #3 repair content is transfer-ready in local worktree `C:\Users\DELL\AppData\Local\Temp\pr3-fix`, and the PR #20 narrow split recipe is reproducible, but every remote-mutation action remains on HOLD because explicit operator push/merge authorization is absent; next move is explicit operator authorization checkpoint or fresh source-verified R69 push/merge/split execution packet only; no public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, worker commit, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R68 Public-Safe Workspace PR Repair Publish Or Hold dispatch | `15e736a65` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R68 worker execution; pre-dispatch autorun PASS 73/73 on `d6d576891..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R68 worker execution only, producing `docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md`; worker must refresh PR #20/#3 metadata, verify R67 local repair worktrees, classify transfer/publish readiness, identify remaining check holds, and return an operator-ready checklist or exact hold reason; no public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, worker commit, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
@@ -160,20 +161,20 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`
+Mode: `msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return`
 
-Return to governed roadmap continuation or fresh source-verified packet
-selection only. R69 closed the R65-R69 public-safe workspace leakfix lane:
-public PR #3 is merged, provenance narrow PR #21 is merged, broad provenance
-PR #20 is closed as superseded and not merged, and public-sync `main` is clean
-and current with public `origin/main` at `e50ac604d`. No pending public-sync
-push remains for this lane. Broad overlay-pipeline acceptance, new public-sync
-mutation, provider status edits, unrelated provenance runtime/source/test/checker
-edits, provider/live proof, JSON receipt export, OpenAI certification uplift,
-production Memory/RAG release, retrieval/vectorization, P3 reopen,
-use-case/legal workflow, hosted/public/production claim, historical rename/move
-sweep, worker commit, and direct downstream release remain unauthorized without
-a fresh operator-selected packet. LHW24 remains latest closed numbered LHW wave.
+No-commit R70 worker execution only. Worker must create
+`docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md`,
+refresh PR #20 metadata/diff/check evidence, separate residual overlay feature
+commits from already-handled leakfix commits, assess value, maintainability,
+PowerShell safety, and public/provenance boundary safety, run worker-return fast
+gate, and leave HEAD unchanged. No implementation, merge, push, cherry-pick,
+public-sync mutation, runtime/source/test/checker edit, provider/live proof,
+JSON receipt export, OpenAI certification uplift, production Memory/RAG release,
+retrieval/vectorization, P3 reopen, use-case/legal workflow,
+hosted/public/production claim, historical rename/move sweep, worker commit, or
+direct downstream release is authorized. LHW24 remains latest closed numbered
+LHW wave.
 
 ## Current Closed Work
 

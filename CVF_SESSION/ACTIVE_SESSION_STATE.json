@@ -78,8 +78,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced",
-  "previousMode": "msea_r68_public_safe_workspace_pr_repair_publish_or_hold_accepted_bounded_authorization_hold",
+  "currentMode": "msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return",
+  "previousMode": "msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -10283,7 +10283,6 @@
     "nextAllowedMove": "No-commit R68 worker execution only. Worker must create docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md, refresh PR metadata/check rollups, verify R67 repair worktrees, classify publish-or-hold readiness, run required gates, and leave all changes uncommitted.",
     "claimBoundary": "R68 dispatch authorizes only no-commit worker execution and publish-or-hold decision evidence. It does not authorize public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release."
   },
-  "nextAllowedMove": "MSEA-R69 Public-Safe Workspace PR Safe Merge Execution is CLOSED_PASS_BOUNDED at provenance material commit fee4e12d1. Closure artifact: docs/reviews/CVF_MSEA_R69_PUBLIC_SAFE_WORKSPACE_PR_SAFE_MERGE_EXECUTION_2026-07-07.md. Result: public PR #3 merged as b9ce2e4822a6a6bef353ae85df82d2efd4511fb1; provenance narrow PR #21 merged as eaa48db35b3d2a95da9394948f608ea4670726db; broad provenance PR #20 closed as superseded, not merged; public-sync local main was rebased, verified, pushed, and confirmed clean at HEAD == origin/main == e50ac604d. Material verification passed worker-return fast gate 59/59, pre-implementation autorun 75/75 on d1288b04c..HEAD, reviewer-return commit steward, and material pre-commit hook 80/80. Next allowed move: return to governed roadmap continuation or fresh source-verified packet selection only; there is no pending public-sync push for the R65-R69 public-safe workspace leakfix lane. Broad overlay-pipeline acceptance, new public-sync mutation, provider status edits, unrelated provenance runtime/source/test/checker edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, and direct downstream release remain unauthorized without a fresh operator-selected packet. LHW24 remains latest closed numbered LHW wave.",
   "mseaR68PublicSafeWorkspacePrRepairPublishOrHoldClosure20260707": {
     "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_AUTHORIZATION_HOLD",
     "date": "2026-07-07",
@@ -10347,5 +10346,24 @@
     ],
     "nextAllowedMove": "Return to governed roadmap continuation or fresh source-verified packet selection only. No pending public-sync push remains for the R65-R69 public-safe workspace leakfix lane.",
     "claimBoundary": "R69 closure claims only the bounded safe merge/public-sync execution. It does not accept the broad overlay-pipeline bundle, open a new public-sync lane, edit provider status, run provider/live proof, release production Memory/RAG, reopen P3, authorize use-case/legal workflow, or make hosted/public/production readiness claims."
-  }
+  },
+  "mseaR70WorkspaceOverlayPipelineFeatureSplitReviewDecisionDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "a18d2ef99",
+    "materialCommitFull": "a18d2ef9984d08a356955fa1998a8071903ce5a5",
+    "dispatchBaseHead": "0260fec3b",
+    "gc018Baseline": "docs/baselines/CVF_GC018_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md",
+    "dispatchSummary": "Dispatched a no-commit R70 worker tranche to evaluate the residual workspace overlay pipeline feature bundle from closed provenance PR #20. The worker must refresh PR #20 evidence, separate the candidate overlay feature commits from the already-handled public-safe leakfix commits, assess value, maintainability, PowerShell safety, and public/provenance boundary safety, and return an accept/split/hold/reject recommendation without implementation.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 0260fec3b --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 0260fec3b --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "No-commit R70 worker execution only. Worker must create docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md, refresh PR #20 metadata/diff/check evidence, classify the residual overlay feature bundle, run required gates, and leave all changes uncommitted.",
+    "claimBoundary": "R70 dispatch authorizes only no-commit feature split and review decision work. It does not authorize implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release."
+  },
+  "nextAllowedMove": "MSEA-R70 Workspace Overlay Pipeline Feature Split And Review Decision is DISPATCH_READY at provenance material commit a18d2ef99. Dispatch artifacts: docs/baselines/CVF_GC018_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md and docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md. Next allowed move: no-commit R70 worker execution only, producing docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md with COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Worker must refresh PR #20 evidence, separate overlay feature commits from already-handled leakfix commits, assess boundary/value/maintainability, run worker-return fast gate, and leave HEAD unchanged. No implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release is authorized. LHW24 remains latest closed numbered LHW wave."
 }

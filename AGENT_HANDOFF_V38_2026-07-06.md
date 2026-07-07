@@ -2,24 +2,24 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R69 public-safe workspace PR safe merge execution closure.
+Purpose: compact current-session continuity for resumed agents after MSEA-R70 workspace overlay pipeline feature split/review dispatch.
 Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R69 safe merge closure, active handoff V38, and
-the return to governed roadmap continuation or fresh source-verified packet
-selection after the public-safe workspace leakfix lane was merged/synced.
+Keep resumed agents aligned on R70 no-commit worker dispatch, active handoff
+V38, and the bounded decision lane for the residual PR #20 overlay-pipeline
+feature bundle after the public-safe workspace leakfix lane was merged/synced.
 
 ## Scope
 
-This handoff covers private provenance continuity after R69 safe merge closure only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, new public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after R70 dispatch only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, new public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=return to governed roadmap continuation or fresh source-verified packet selection only; parked checkpoint=R65-R69 public-safe workspace leakfix lane is merged/synced, public-sync has no pending push for this lane, broad PR #20 is closed as superseded and not accepted.
+Startup acknowledged: current mode=`msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R70 worker execution only; parked checkpoint=R65-R69 public-safe workspace leakfix lane is merged/synced, public-sync has no pending push for that lane, and broad PR #20 overlay implementation remains unaccepted pending R70 worker decision.
 
 ## Mandatory Startup Reads
 
@@ -33,11 +33,40 @@ Startup acknowledged: current mode=`msea_r69_public_safe_workspace_pr_safe_merge
 
 ## Current Mode
 
-`msea_r69_public_safe_workspace_pr_safe_merge_execution_closed_public_synced`
+`msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_dispatched_pending_worker_return`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R69 is closed bounded: public PR #3 is merged, provenance narrow PR #21 is merged, broad provenance PR #20 is closed as superseded and not merged, and public-sync `main` is clean/current with public `origin/main` at `e50ac604d`. P3 remains parked, and new public-sync mutation, provider/live proof, unrelated provenance runtime/source/test/checker edits, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh operator-selected packet releases them.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R70 is dispatched for no-commit worker decision only: public PR #3 and provenance narrow PR #21 remain merged, broad provenance PR #20 remains closed as superseded and not merged, and public-sync `main` remains clean/current with public `origin/main` at `e50ac604d`. P3 remains parked, and implementation, merge, push, cherry-pick, new public-sync mutation, provider/live proof, unrelated provenance runtime/source/test/checker edits, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh operator-selected packet releases them.
+
+## Core Guard Self-Protection Authorization - MSEA-R70 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R70 material
+dispatch commit `a18d2ef99`, including active mode, next allowed move,
+generated active state, bootstrap read model, active handoff, front door, and
+R70 dispatch state entry.
+
+Operator authorization: operator requested a new tranche for the residual
+valuable overlay-pipeline work after R69 safe merge closure.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R70 dispatch and no-commit worker routing. |
+| `CVF_SESSION_MEMORY.md` | Record R70 dispatch continuity and next-move routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R70 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R70 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R70 dispatch. |
+| `CVF_SESSION/state/entries/mseaR70WorkspaceOverlayPipelineFeatureSplitReviewDecisionDispatch20260707.json` | Record R70 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R70 no-commit worker execution. |
+
+Rollback boundary: revert only this MSEA-R70 dispatch session-sync if rejected;
+do not revert material dispatch commit `a18d2ef99`, R69 material closure commit
+`fee4e12d1`, public PR #3 merge commit
+`b9ce2e4822a6a6bef353ae85df82d2efd4511fb1`, provenance PR #21 merge commit
+`eaa48db35b3d2a95da9394948f608ea4670726db`, public-sync push to
+`e50ac604d`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R69 Closure Session Sync
 
@@ -317,6 +346,7 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
+| MSEA-R70 Workspace Overlay Pipeline Feature Split And Review Decision dispatch | `a18d2ef99` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit residual PR #20 overlay-pipeline feature split/review decision; pre-dispatch autorun PASS 73/73 on `0260fec3b..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R70 worker execution only, producing `docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md`; worker must refresh PR #20 metadata/diff/check evidence, classify overlay feature commits separately from already-handled leakfix commits, assess value/boundary/maintainability, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; no implementation, merge, push, cherry-pick, public-sync mutation, provider/live proof, runtime/source/test/checker edit, worker commit, public claim, or direct downstream release is authorized. |
 | MSEA-R69 Public-Safe Workspace PR Safe Merge Execution | `fee4e12d1` | CLOSED_PASS_BOUNDED; executed the operator-authorized safe merge route; public PR #3 merged as `b9ce2e4822a6a6bef353ae85df82d2efd4511fb1`; provenance narrow PR #21 merged as `eaa48db35b3d2a95da9394948f608ea4670726db`; broad provenance PR #20 closed as superseded and not merged; public-sync local `main` rebased, public-surface PASS, static CI PASS 8/8, pushed, and confirmed clean/current at `HEAD == origin/main == e50ac604d`; R69 material gates PASS: worker-return fast 59/59, pre-implementation autorun 75/75 on `d1288b04c..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is return to governed roadmap continuation or fresh source-verified packet selection only; no broad overlay-pipeline acceptance, new public-sync mutation, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, public claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R68 Public-Safe Workspace PR Repair Publish Or Hold acceptance | `c5cbe6691` | REVIEWER_ACCEPTED_BOUNDED_WITH_AUTHORIZATION_HOLD; accepted worker return and reviewer decision; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `6ddd8f81d..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; R68 confirmed PR #20 repair content is transfer-ready in local worktree `C:\Users\DELL\AppData\Local\Temp\pr20-fix`, PR #3 repair content is transfer-ready in local worktree `C:\Users\DELL\AppData\Local\Temp\pr3-fix`, and the PR #20 narrow split recipe is reproducible, but every remote-mutation action remains on HOLD because explicit operator push/merge authorization is absent; next move is explicit operator authorization checkpoint or fresh source-verified R69 push/merge/split execution packet only; no public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, worker commit, public claim, or direct downstream release is authorized. |
 | MSEA-R68 Public-Safe Workspace PR Repair Publish Or Hold dispatch | `15e736a65` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R68 worker execution; pre-dispatch autorun PASS 73/73 on `d6d576891..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R68 worker execution only, producing `docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md`; worker must refresh PR #20/#3 metadata, verify R67 local repair worktrees, classify transfer/publish readiness, identify remaining check holds, and return an operator-ready checklist or exact hold reason; no public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, worker commit, public claim, or direct downstream release is authorized. |
@@ -348,14 +378,13 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 ## Latest Work/Changes
 
-R69 closed the public-safe workspace PR leakfix lane at provenance material
-commit `fee4e12d1`. The closure artifact is
-`docs/reviews/CVF_MSEA_R69_PUBLIC_SAFE_WORKSPACE_PR_SAFE_MERGE_EXECUTION_2026-07-07.md`.
-Result: public PR #3 merged as
-`b9ce2e4822a6a6bef353ae85df82d2efd4511fb1`; provenance narrow PR #21 merged
-as `eaa48db35b3d2a95da9394948f608ea4670726db`; broad provenance PR #20 closed
-as superseded and not merged; public-sync local `main` is clean/current with
-public `origin/main` at `e50ac604d`.
+R70 dispatched the residual workspace overlay-pipeline feature split/review
+decision at provenance material commit `a18d2ef99`. Dispatch artifacts are
+`docs/baselines/CVF_GC018_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md`.
+R69 remains the safe-merge closure for public PR #3 and provenance narrow PR
+#21; broad provenance PR #20 remains closed as superseded and not merged.
 
 ## HEAD Freshness
 
@@ -401,6 +430,10 @@ Latest R69 safe merge material commit: `fee4e12d1`.
 
 R69 status: CLOSED_PASS_BOUNDED; public PR #3 and provenance narrow PR #21 are merged; broad provenance PR #20 is closed as superseded and not merged; public-sync is clean/current at `HEAD == origin/main == e50ac604d`; no pending public-sync push remains for this lane.
 
+Latest R70 dispatch material commit: `a18d2ef99`.
+
+R70 status: DISPATCH_READY; no-commit worker execution is the only next move; broad PR #20 overlay implementation remains unaccepted pending worker return and reviewer decision.
+
 Latest handoff authorization repair parent commit: `e73f566da`.
 
 ## R50 Boundary
@@ -413,6 +446,9 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| Pre-dispatch autorun on `0260fec3b..HEAD` for R70 | PASS 73/73 |
+| Dispatch commit steward on `0260fec3b..HEAD` for R70 | PASS |
+| Material pre-commit hook for R70 dispatch | PASS 80/80 |
 | Worker-return fast gate for R69 closure | PASS 59/59 |
 | Pre-implementation autorun on `d1288b04c..HEAD` for R69 closure | PASS 75/75 |
 | Reviewer-return commit steward on `d1288b04c..HEAD` for R69 closure | PASS |
@@ -479,19 +515,18 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-Return to governed roadmap continuation or fresh source-verified packet
-selection only. R69 closed the R65-R69 public-safe workspace leakfix lane:
-public PR #3 is merged, provenance narrow PR #21 is merged, broad provenance
-PR #20 is closed as superseded and not merged, and public-sync `main` is clean
-and current with public `origin/main` at `e50ac604d`. No pending public-sync
-push remains for this lane. Broad overlay-pipeline acceptance, new public-sync
-mutation, provider status edits, unrelated provenance runtime/source/test/checker
-edits, provider/live proof, JSON receipt export, OpenAI certification uplift,
-production Memory/RAG release, retrieval/vectorization, P3 reopen,
-direct external import, private/generated MinerU output read, use-case/legal
-workflow, hosted/public/production claim, worker commit, historical rename/move
-sweep, and direct downstream release remain unauthorized without a fresh
-operator-selected packet. LHW24 remains latest closed numbered LHW wave.
+No-commit R70 worker execution only. Worker must create
+`docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md`,
+refresh PR #20 metadata/diff/check evidence, separate residual overlay feature
+commits from already-handled leakfix commits, assess value, maintainability,
+PowerShell safety, and public/provenance boundary safety, run worker-return fast
+gate, and leave HEAD unchanged. No implementation, merge, push, cherry-pick,
+public-sync mutation, runtime/source/test/checker edit, provider/live proof,
+JSON receipt export, OpenAI certification uplift, production Memory/RAG release,
+retrieval/vectorization, P3 reopen, direct external import, private/generated
+MinerU output read, use-case/legal workflow, hosted/public/production claim,
+worker commit, historical rename/move sweep, or direct downstream release is
+authorized. LHW24 remains latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R65C Dispatch Session Sync
 
