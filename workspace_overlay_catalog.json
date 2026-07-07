@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0",
+  "artifacts": [
+    {
+      "artifactId": "knowledge-absorption-priority-standard",
+      "path": "docs\\reference\\CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Canonical downstream knowledge-absorption rule."
+    },
+    {
+      "artifactId": "template-skill-corpus-rescreen-standard",
+      "path": "docs\\reference\\CVF_TEMPLATE_SKILL_CORPUS_RESCREEN_STANDARD_2026-04-14.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Canonical template and skill corpus screening rule."
+    },
+    {
+      "artifactId": "non-coder-value-measurement-standard",
+      "path": "docs\\reference\\CVF_NON_CODER_VALUE_MEASUREMENT_STANDARD_2026-04-14.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Value-proof measurement guidance reused by downstream projects."
+    },
+    {
+      "artifactId": "session-governance-bootstrap-reference",
+      "path": "docs\\reference\\CVF_SESSION_GOVERNANCE_BOOTSTRAP.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Compact governance bootstrap guidance that is still useful in local workspaces."
+    },
+    {
+      "artifactId": "critical-repository-boundary-reference",
+      "path": "docs\\reference\\CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "repository-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Prevents public/provenance boundary confusion in shared workspace operations."
+    },
+    {
+      "artifactId": "knowledge-absorption-priority-checker",
+      "path": "governance\\compat\\check_knowledge_absorption_priority_compat.py",
+      "artifactClass": "compat-checker",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Machine checker for the knowledge-absorption priority standard."
+    },
+    {
+      "artifactId": "template-skill-standard-checker",
+      "path": "governance\\compat\\check_template_skill_standard_guard_compat.py",
+      "artifactClass": "compat-checker",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Machine checker for template and skill standard guard."
+    },
+    {
+      "artifactId": "knowledge-absorption-priority-guard",
+      "path": "governance\\toolkit\\05_OPERATION\\CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md",
+      "artifactClass": "operation-guard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Operational guard used by agents during downstream execution."
+    },
+    {
+      "artifactId": "template-skill-standard-guard",
+      "path": "governance\\toolkit\\05_OPERATION\\CVF_TEMPLATE_SKILL_STANDARD_GUARD.md",
+      "artifactClass": "operation-guard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Operational guard used when skill and template value claims are involved."
+    },
+    {
+      "artifactId": "provenance-root-agents",
+      "path": "AGENTS.md",
+      "artifactClass": "continuity-surface",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Canonical provenance startup instructions for the operator machine."
+    },
+    {
+      "artifactId": "active-versioned-handoff",
+      "path": "AGENT_HANDOFF_V23_2026-06-26.md",
+      "artifactClass": "continuity-surface",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Current active handoff required for private continuity on the operator machine."
+    },
+    {
+      "artifactId": "session-memory-front-door",
+      "path": "CVF_SESSION_MEMORY.md",
+      "artifactClass": "continuity-surface",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Session continuity front door for local full-fidelity operation."
+    },
+    {
+      "artifactId": "session-state-tree",
+      "path": "CVF_SESSION",
+      "artifactClass": "continuity-surface-directory",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Canonical machine-readable session continuity state for local-only full provenance use."
+    }
+  ]
+}

@@ -1,15 +1,7 @@
 {
   "profileName": "premium-workspace",
   "description": "Curated premium overlay for downstream workspace use without copying private session continuity state.",
-  "includePaths": [
-    "docs\\reference\\CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
-    "docs\\reference\\CVF_TEMPLATE_SKILL_CORPUS_RESCREEN_STANDARD_2026-04-14.md",
-    "docs\\reference\\CVF_NON_CODER_VALUE_MEASUREMENT_STANDARD_2026-04-14.md",
-    "docs\\reference\\CVF_SESSION_GOVERNANCE_BOOTSTRAP.md",
-    "docs\\reference\\CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md",
-    "governance\\compat\\check_knowledge_absorption_priority_compat.py",
-    "governance\\compat\\check_template_skill_standard_guard_compat.py",
-    "governance\\toolkit\\05_OPERATION\\CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md",
-    "governance\\toolkit\\05_OPERATION\\CVF_TEMPLATE_SKILL_STANDARD_GUARD.md"
+  "includeSelectionTags": [
+    "workspace-premium"
   ]
 }

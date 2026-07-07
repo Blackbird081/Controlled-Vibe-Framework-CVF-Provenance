@@ -4,10 +4,7 @@
   "extends": [
     "premium-workspace"
   ],
-  "includePaths": [
-    "AGENTS.md",
-    "AGENT_HANDOFF_V23_2026-06-26.md",
-    "CVF_SESSION_MEMORY.md",
-    "CVF_SESSION"
+  "includeSelectionTags": [
+    "workspace-provenance-local"
   ]
 }
