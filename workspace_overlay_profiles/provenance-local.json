@@ -1,0 +1,13 @@
+{
+  "profileName": "provenance-local",
+  "description": "Local operator overlay that layers canonical provenance continuity surfaces on top of the public workspace core.",
+  "extends": [
+    "premium-workspace"
+  ],
+  "includePaths": [
+    "AGENTS.md",
+    "AGENT_HANDOFF_V23_2026-06-26.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION"
+  ]
+}
