@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization; parked checkpoint=public-sync local commits `fbb782fee` and `756c465e1` are not pushed, OpenAI remains EXPERIMENTAL and not certified, and public push/checker implementation/runtime edits/live proof remain unauthorized.
+Startup acknowledged: current mode=`msea_r65d_provider_receipt_link_integrity_checker_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R65D worker execution only; parked checkpoint=public-sync local commits `fbb782fee` and `756c465e1` remain unpushed, public push remains operator-owned, and R65D worker must not commit/push public-sync or provenance.
 
 ## Current Mode
 
-Current mode marker: `msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`
+Current mode marker: `msea_r65d_provider_receipt_link_integrity_checker_implementation_dispatched_pending_worker_return`
 
-Current mode: `msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`
+Current mode: `msea_r65d_provider_receipt_link_integrity_checker_implementation_dispatched_pending_worker_return`
 
-`msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`
+`msea_r65d_provider_receipt_link_integrity_checker_implementation_dispatched_pending_worker_return`
 
 Previous mode:
 
-`msea_r65c_public_sync_publish_or_hold_checker_decision_dispatched_pending_worker_return`
+`msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R65D Provider Receipt-Link Integrity Checker Implementation dispatch | `22638481b` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a bounded public-sync static provider receipt-link integrity checker implementation; worker may edit only sibling public-sync `scripts/check_provider_receipt_link_integrity.py` and `scripts/run_cvf_static_ci_gate.py`, plus create provenance worker return `docs/reviews/CVF_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_WORKER_RETURN_2026-07-07.md`; pre-dispatch autorun PASS 73/73 on `961c56c5e..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R65D worker execution only; no public-sync commit, public push, provider status edit, README/docs index/Known Limitations/provider routing edit, provenance runtime/source/test/checker edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision acceptance | `7f557d4bb` | REVIEWER_ACCEPTED_BOUNDED; accepted decision matrix, worker return, and completion review; selected `R65C_PUBLIC_SYNC_PUSH_READY_PENDING_OPERATOR_CONFIRMATION_AND_CHECKER_PACKET_RECOMMENDED_ACCEPTED`; public-sync remains clean and `main...origin/main [ahead 2]` with local commits `fbb782fee` and `756c465e1` not pushed; reviewer-fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `a1f3a8006..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is authorization hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization; no public push, public-sync mutation, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, hosted/public/production claim, or downstream release is authorized by R65C closure alone. |
 | MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision dispatch | `627085c35` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for read-only public-sync publish-or-hold and receipt-link checker value decision; pre-dispatch autorun PASS 73/73 on `a1f3a8006..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R65C worker execution only in the two worker-owned provenance outputs; public-sync mutation, public commit, public push, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, and downstream release remain unauthorized. |
 | MSEA-R65B Provider Canary Receipt Evidence Index Integrity acceptance | `f381ec920` | REVIEWER_ACCEPTED_BOUNDED_EXPORTED_LOCAL_NOT_PUSHED; accepted worker return and completion review; public-sync local commit `756c465e16fb034d6b699afc5d46831fba77a5bc` adds public-safe Alibaba and DeepSeek canary receipt/index markdown files on top of R65A local commit `fbb782fee4509af99a02c8632ddf8bde3aa449e6`; public-sync is clean and `main...origin/main [ahead 2]`; OpenAI remains EXPERIMENTAL and not certified; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `4c288ce5..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is fresh R65C publish-or-hold/checker decision packet only; no public push, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, or downstream release is authorized. |
@@ -152,19 +153,22 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r65c_public_sync_publish_or_hold_checker_decision_accepted_authorization_hold`
+Mode: `msea_r65d_provider_receipt_link_integrity_checker_implementation_dispatched_pending_worker_return`
 
-Execute no-commit MSEA-R65C worker decision pass only. Worker may create
-`docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md`
-and
-`docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_WORKER_RETURN_2026-07-07.md`,
-may read public-sync status/remote/log/matrix/audit evidence, and must not
-mutate, commit, or push public-sync. Checker implementation,
-runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI
-certification uplift, production Memory/RAG release, retrieval/vectorization,
-P3 reopen, use-case/legal workflow, hosted/public/production claim, worker
-commit, historical rename/move sweep, and direct downstream release remain
-unauthorized. LHW24 remains latest closed numbered LHW wave.
+Execute no-commit MSEA-R65D worker implementation only. Worker may edit sibling
+public-sync `scripts/check_provider_receipt_link_integrity.py` and
+`scripts/run_cvf_static_ci_gate.py`, and may create
+`docs/reviews/CVF_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_WORKER_RETURN_2026-07-07.md`
+in provenance. Worker must refresh public-sync status/remote/source evidence
+before editing, run focused checker evidence, and leave all changes
+uncommitted. Public-sync commit, public push, provider status edits,
+README/docs index/Known Limitations/provider routing edits, provenance
+runtime/source/test/checker edits, provider/live proof, JSON receipt export,
+OpenAI certification uplift, production Memory/RAG release,
+retrieval/vectorization, P3 reopen, use-case/legal workflow,
+hosted/public/production claim, worker commit, historical rename/move sweep,
+and direct downstream release remain unauthorized. LHW24 remains latest closed
+numbered LHW wave.
 
 ## Current Closed Work
 
