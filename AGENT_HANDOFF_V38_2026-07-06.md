@@ -2,24 +2,24 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R70A workspace overlay standards/catalog/profile-definition acceptance.
-Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, checker retirement implementation, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
+Purpose: compact current-session continuity for resumed agents after MSEA-R72 EA assessment intake and governance-load rebalancing roadmap acceptance.
+Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, checker retirement implementation, checker deletion/disablement, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R70A acceptance, active handoff V38, and the
-next R72 EA assessment intake/governance-load rebalancing packet-authoring
-lane after the public-safe workspace leakfix lane was merged/synced.
+Keep resumed agents aligned on R72 roadmap acceptance, active handoff V38, and
+the next R72A public-main CI health/governance-load baseline GC-018 and
+work-order authoring lane.
 
 ## Scope
 
-This handoff covers private provenance continuity after R70A acceptance only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, checker retirement implementation, new public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after R72 roadmap acceptance only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, checker retirement implementation, checker deletion/disablement, new public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; parked checkpoint=R70A accepted static overlay definitions only, while implementation, merge, push, public-sync mutation, script edits, broad overlay acceptance, and checker retirement implementation remain unauthorized.
+Startup acknowledged: current mode=`msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only; parked checkpoint=R72 roadmap is planning only, while checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, push, and public/production claims remain unauthorized.
 
 ## Mandatory Startup Reads
 
@@ -33,11 +33,32 @@ Startup acknowledged: current mode=`msea_r70a_workspace_overlay_standards_catalo
 
 ## Current Mode
 
-`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`
+`msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R70A acceptance is definition-only: public PR #3 and provenance narrow PR #21 remain merged, broad provenance PR #20 remains closed as superseded and not merged, and public-sync `main` remains clean/current with public `origin/main` at `e50ac604d`. P3 remains parked, and implementation, merge, push, cherry-pick, new public-sync mutation, provider/live proof, unrelated provenance runtime/source/test/checker edits, script edits, checker retirement implementation, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh operator-selected packet releases them.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R72 is roadmap-only: public PR #3 and provenance narrow PR #21 remain merged, broad provenance PR #20 remains closed as superseded and not merged, and public-sync `main` remains at the last verified public `origin/main` commit `e50ac604d`. P3 remains parked, and implementation, merge, push, cherry-pick, new public-sync mutation, provider/live proof, unrelated provenance runtime/source/test/checker edits, script edits, checker retirement implementation, checker deletion/disablement, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh operator-selected packet releases them.
+
+## Core Guard Self-Protection Authorization - MSEA-R72 Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R72 roadmap
+material commit `4c540f1af`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R72 roadmap acceptance, material commit, and R72A packet-authoring route. |
+| `CVF_SESSION_MEMORY.md` | Record R72 roadmap continuity and next-move routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R72 roadmap acceptance. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R72 roadmap session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R72 roadmap acceptance. |
+| `CVF_SESSION/state/entries/mseaR72EaAssessmentGovernanceLoadRebalancingRoadmap20260707.json` | Record R72 roadmap evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R72A public-main CI health and governance-load baseline packet authoring. |
+
+Rollback boundary: revert only this MSEA-R72 roadmap session-sync if needed; do
+not revert R72 material roadmap, R70A material acceptance, R70/R71 acceptance,
+R69 public merge closure, or earlier MSEA material.
 
 ## Core Guard Self-Protection Authorization - MSEA-R70A Acceptance Session Sync
 
@@ -426,6 +447,7 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
+| MSEA-R72 EA Assessment Intake And Governance Load Rebalancing roadmap | `4c540f1af` | ROADMAP_READY_FOR_R72A_GC018_AND_WORK_ORDER_AUTHORING; accepted the independent EA critique as a high-confidence governance-load signal only after command remeasurement; roadmap defines R72A public-main CI health/governance-load baseline, R72B checker lifecycle criteria, R72C Fast Lane calibration, R72D governance metric readout, R72E absorb-lane ceremony reclassification, and R72F first retirement/consolidation pilot; pre-implementation autorun PASS 75/75 on `29a8a4087..HEAD`, material pre-commit hook PASS 80/80; next move is fresh source-verified R72A GC-018 and work-order authoring only; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
 | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions acceptance | `0e9b59d9b` | REVIEWER_ACCEPTED_BOUNDED; accepted the definition-only overlay standard, catalog JSON, eleven profile JSON files, R71 reference index row, and worker return after reviewer repairs; repairs changed non-existent script command examples into future implementation hooks, updated the stale V23 handoff catalog path to active `AGENT_HANDOFF_V38_2026-07-06.md`, and aligned the new reference standard top matter with `LEGACY_DATED_ACTIVE_REFERENCE`; JSON parse/path validation PASS for 12 JSON files, worker-return fast gate PASS 59/59, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; no checker retirement implementation, checker deletion/disablement, runtime/source/test/checker edit, public-sync mutation, merge, push, provider/live proof, public/production claim, broad overlay implementation, or historical sweep is authorized. |
 | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions dispatch | `80b37b2d2` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R70A worker execution; pre-dispatch autorun PASS 73/73 on `b65ad7c76..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R70A worker execution only, producing `docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md` and the worker-owned definition artifacts named in the work order; no worker commit, merge, push, cherry-pick, public-sync mutation, script edit, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, broad overlay acceptance, or downstream release is authorized. |
 | MSEA-R70 Workspace Overlay Pipeline Feature Split And Review Decision acceptance | `f267c92ca` | REVIEWER_ACCEPTED_BOUNDED; accepted worker return after reviewer repair; selected `ACCEPT_AS_FUTURE_FEATURE_WITH_SPLIT` for the residual PR #20 overlay feature bundle; worker-return fast gate PASS 59/59, reviewer-return commit steward PASS on `51ed478d8..HEAD`, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R70A standards/catalog/profile-definition packet authoring only; no implementation, merge, push, cherry-pick, public-sync mutation, provider/live proof, runtime/source/test/checker edit, worker commit, public claim, or direct downstream release is authorized. |
@@ -460,16 +482,16 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 ## Latest Work/Changes
 
-R70A accepted the definition-only workspace overlay standard, catalog, and
-profile JSON tranche at provenance material commit `0e9b59d9b`. Accepted
-artifact set includes
-`docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md`,
-`workspace_overlay_catalog.json`, the eleven `workspace_overlay_profiles/*.json`
-files, the R71 row in `docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md`, and
-`docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md`.
-R70 remains accepted only as split follow-up authority, R69 remains the
-safe-merge closure for public PR #3 and provenance narrow PR #21, and broad
-provenance PR #20 remains closed as superseded and not merged.
+R72 added
+`docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md`
+at provenance material commit `4c540f1af`. The roadmap rechecks the independent
+EA critique with command-backed evidence, accepts the governance-load risk as
+real, and routes correction through R72A-R72F without implementing checker
+retirement, public-sync mutation, runtime/source/test/checker edits, provider
+or live proof, public claims, merge, push, or historical sweep. R70A remains
+accepted as the latest overlay-definition tranche, R69 remains the safe-merge
+closure for public PR #3 and provenance narrow PR #21, and broad provenance PR
+#20 remains closed as superseded and not merged.
 
 ## HEAD Freshness
 
@@ -527,6 +549,10 @@ Latest R70A acceptance material commit: `0e9b59d9b`.
 
 R70A status: REVIEWER_ACCEPTED_BOUNDED; static overlay standard/catalog/profile definitions are accepted, but overlay scripts, validation automation, apply/export behavior, broad overlay implementation, public-sync mutation, merge, push, and checker retirement implementation remain unauthorized.
 
+Latest R72 roadmap material commit: `4c540f1af`.
+
+R72 status: ROADMAP_READY_FOR_R72A_GC018_AND_WORK_ORDER_AUTHORING; governance-load rebalancing is authorized for roadmap sequencing only, and the next move is fresh R72A GC-018/work-order authoring.
+
 Latest handoff authorization repair parent commit: `e73f566da`.
 
 ## R50 Boundary
@@ -539,6 +565,8 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| Pre-implementation autorun on `29a8a4087..HEAD` for R72 roadmap | PASS 75/75 |
+| Material pre-commit hook for R72 roadmap | PASS 80/80 |
 | JSON parse and catalog path validation for R70A | PASS 12 JSON files |
 | Worker-return fast gate for R70A acceptance | PASS 59/59 |
 | Material pre-commit hook for R70A acceptance | PASS 80/80 |
@@ -611,14 +639,15 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-Fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance
-Load Rebalancing packet authoring only. R72 may verify
-`docs/reviews/CVF_INDEPENDENT_EA_ASSESSMENT_CLAUDE_2026-07-07.md` facts,
-classify governance-load risks, and propose bounded corrective-action lanes.
-R72 must not implement checker retirement, delete or disable checkers, mutate
+Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load
+Baseline GC-018 and work-order authoring only. R72A may refresh public-main
+GitHub Actions status, verify the public-sync repository boundary, classify
+current CI failures, and define a governance-load baseline work order. R72A
+must not implement checker retirement, delete or disable checkers, mutate
 public-sync, edit runtime/source/tests/checkers, run provider/live proof, make
-public/production claims, push, merge, or sweep historical artifacts without a
-later accepted work order. LHW24 remains latest closed numbered LHW wave.
+public/production claims, push, merge, or sweep historical artifacts unless a
+later accepted work order explicitly authorizes the narrower action. LHW24
+remains latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R65C Dispatch Session Sync
 
