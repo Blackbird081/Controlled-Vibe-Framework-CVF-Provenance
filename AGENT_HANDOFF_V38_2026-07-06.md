@@ -2,22 +2,22 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R67 public-safe workspace PR defect repair and merge-readiness acceptance.
+Purpose: compact current-session continuity for resumed agents after MSEA-R68 public-safe workspace PR repair publish-or-hold dispatch.
 Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R67 acceptance, active handoff V38, and the R68 public-safe workspace PR repair publish-or-hold packet-authoring boundary.
+Keep resumed agents aligned on R68 dispatch, active handoff V38, and the no-commit R68 public-safe workspace PR repair publish-or-hold worker-execution boundary.
 
 ## Scope
 
-This handoff covers private provenance continuity after R67 acceptance only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, public push, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after R68 dispatch only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, unrelated provenance runtime source, tests, checker work, public push, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r67_public_safe_workspace_pr_defect_repair_merge_readiness_accepted_bounded_push_hold_r68_packet_next`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R68 public-safe workspace PR repair publish-or-hold packet authoring only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, `0d3bba46f`, and `e85252a47` are not pushed, PR #20/#3 repair diffs remain local in PR-branch worktrees, public merge/push remains operator-owned, and no GitHub merge/push is authorized without explicit authority.
+Startup acknowledged: current mode=`msea_r68_public_safe_workspace_pr_repair_publish_or_hold_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R68 worker execution only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, `0d3bba46f`, and `e85252a47` are not pushed, PR #20/#3 repair diffs remain local in PR-branch worktrees, public merge/push remains operator-owned, and no GitHub merge/push is authorized without explicit authority.
 
 ## Mandatory Startup Reads
 
@@ -31,11 +31,39 @@ Startup acknowledged: current mode=`msea_r67_public_safe_workspace_pr_defect_rep
 
 ## Current Mode
 
-`msea_r67_public_safe_workspace_pr_defect_repair_merge_readiness_accepted_bounded_push_hold_r68_packet_next`
+`msea_r68_public_safe_workspace_pr_repair_publish_or_hold_dispatched_pending_worker_return`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R67 is accepted bounded with push hold; public-sync remains local ahead of origin by four commits and unpushed after R65A/R65B/R65D/R66 public-sync local commits. P3 remains parked, and public push, GitHub merge, provider/live proof, unrelated provenance runtime/source/test/checker edits, merge, reconciliation, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh source-verified packet or explicit public-sync push authorization releases them.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R68 is dispatched pending no-commit worker return; public-sync remains local ahead of origin by four commits and unpushed after R65A/R65B/R65D/R66 public-sync local commits. P3 remains parked, and public push, GitHub merge, provider/live proof, unrelated provenance runtime/source/test/checker edits, merge, reconciliation, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh source-verified packet or explicit public-sync push authorization releases them.
+
+## Core Guard Self-Protection Authorization - MSEA-R68 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R68 material
+dispatch commit `15e736a65`, including active mode, next allowed move,
+generated active state, bootstrap read model, active handoff, front door, and
+R68 dispatch state entry.
+
+Operator authorization: operator asked to continue after R67 worker execution
+completed and R67 was accepted bounded with push hold.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R68 dispatch and no-commit worker routing. |
+| `CVF_SESSION_MEMORY.md` | Record R68 dispatch continuity and next-move routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R68 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R68 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R68 dispatch. |
+| `CVF_SESSION/state/entries/mseaR68PublicSafeWorkspacePrRepairPublishOrHoldDispatch20260707.json` | Record R68 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R68 no-commit worker execution. |
+
+Rollback boundary: revert only this MSEA-R68 dispatch session-sync if
+rejected; do not revert material dispatch commit `15e736a65`, R67 material
+acceptance commit `e03677e57`, R67 dispatch commit `49f842557`, R66 material
+acceptance commit `f5f10b8f`, public-sync local commit `e85252a47`, or older
+MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R67 Closure Session Sync
 
@@ -232,7 +260,8 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
-| MSEA-R67 Public-Safe Workspace PR Defect Repair And Merge Readiness acceptance | `e03677e57` | REVIEWER_ACCEPTED_BOUNDED_WITH_PUSH_HOLD; accepted worker return and reviewer decision; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `16d0f7763..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; R67 verified but did not commit or push local PR-branch repair diffs: PR #20 BOM repair in `C:\Users\DELL\AppData\Local\Temp\pr20-fix`, PR #3 `New Project Enforcement Gate` restoration and `AGENT_HANDOFF.md` realignment in `C:\Users\DELL\AppData\Local\Temp\pr3-fix`; PR #20 narrow leakfix split recipe is decision-ready but unapplied; public-sync remains clean and `main...origin/main [ahead 4]`; next move is fresh MSEA-R68 public-safe workspace PR repair publish-or-hold packet authoring only; no public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, unrelated provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, public claim, worker commit without authorization, or direct downstream release is authorized. |
+| MSEA-R68 Public-Safe Workspace PR Repair Publish Or Hold dispatch | `15e736a65` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R68 worker execution; pre-dispatch autorun PASS 73/73 on `d6d576891..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R68 worker execution only, producing `docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md`; worker must refresh PR #20/#3 metadata, verify R67 local repair worktrees, classify transfer/publish readiness, identify remaining check holds, and return an operator-ready checklist or exact hold reason; no public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, worker commit, public claim, or direct downstream release is authorized. |
+| MSEA-R67 Public-Safe Workspace PR Defect Repair And Merge Readiness acceptance | `e03677e57` | REVIEWER_ACCEPTED_BOUNDED_WITH_PUSH_HOLD; accepted worker return and reviewer decision; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `16d0f7763..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; R67 verified but did not commit or push local PR-branch repair diffs: PR #20 BOM repair in `C:\Users\DELL\AppData\Local\Temp\pr20-fix`, PR #3 `New Project Enforcement Gate` restoration and public-core handoff-pointer realignment in `C:\Users\DELL\AppData\Local\Temp\pr3-fix`; PR #20 narrow leakfix split recipe is decision-ready but unapplied; public-sync remains clean and `main...origin/main [ahead 4]`; next move is fresh MSEA-R68 public-safe workspace PR repair publish-or-hold packet authoring only; no public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, unrelated provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, public claim, worker commit without authorization, or direct downstream release is authorized. |
 | MSEA-R67 Public-Safe Workspace PR Defect Repair And Merge Readiness dispatch | `49f842557` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R67 worker execution covering the remaining R66 public-safe workspace PR defects; pre-dispatch autorun PASS 73/73 on `3ac51ea70..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R67 worker execution only, producing `docs/reviews/CVF_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`; worker must refresh PR #20/#3 metadata, repair or return source-backed decisions for Windows PowerShell 5.1 Vietnamese guide mojibake, PR #3 `New Project Enforcement Gate` restoration, PR #20 overlay-bundle split/hold, and failing GitHub required-check triage; no public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, worker commit, public claim, or direct downstream release is authorized. |
 | MSEA-R66 Public-Safe Workspace PR Repair And Merge Readiness acceptance | `f5f10b8f` provenance / `e85252a47` public-sync | REVIEWER_ACCEPTED_BOUNDED_WITH_HOLD; accepted worker return and bounded public-sync manifest repair; public-sync local commit `e85252a472af6e508bed9ada957d37fa390b7193` allowlists four accepted Alibaba/DeepSeek canary receipt/index artifacts and resolves the R65D public-surface guard conflict locally; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `78d7317b0..HEAD`, commit steward PASS, public-sync public-surface guard PASS, public-sync static CI PASS 8/8, material pre-commit hook PASS 80/80; public-sync is clean and `main...origin/main [ahead 4]`; merge readiness remains HOLD for Windows PowerShell 5.1 Vietnamese guide mojibake, PR #3 `New Project Enforcement Gate` documentation deletion, PR #20 overlay-bundle split/authorization, and failing GitHub required checks; R66 follow-up is released by R67 dispatch `49f842557`; no public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, JSON receipt export, public claim, or direct downstream release is authorized. |
 | MSEA-R66 Public-Safe Workspace PR Repair And Merge Readiness dispatch | `006d9cafa` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit PR repair/merge-readiness worker execution covering GitHub PR #20, GitHub PR #3, and the R65D public-surface guard conflict; pre-dispatch autorun PASS 73/73 on `f27123098..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R66 worker execution only, producing `docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`; public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider status edits outside R66 scope, provenance runtime/source/test/checker edits, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, public claim, or downstream release remains unauthorized. |
@@ -309,6 +338,10 @@ Latest R67 acceptance material commit: `e03677e57`.
 
 R67 status: REVIEWER_ACCEPTED_BOUNDED_WITH_PUSH_HOLD; public-sync local commits remain unpushed and public-sync is ahead origin by 4; verified PR-branch repair diffs remain local in `C:\Users\DELL\AppData\Local\Temp\pr20-fix` and `C:\Users\DELL\AppData\Local\Temp\pr3-fix`; public merge/push remains separately operator-owned.
 
+Latest R68 dispatch material commit: `15e736a65`.
+
+R68 status: DISPATCH_READY; no-commit worker execution is the next move; public-sync local commits remain unpushed and public-sync is ahead origin by 4; public merge/push remains separately operator-owned.
+
 Latest handoff authorization repair parent commit: `e73f566da`.
 
 ## R50 Boundary
@@ -381,20 +414,20 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-Fresh source-verified MSEA-R68 public-safe workspace PR repair publish-or-hold
-packet authoring only. R68 must decide whether to transfer and push the
-verified PR #20 and PR #3 local worktree repairs and whether to open the PR #20
-narrow leakfix split recipe. It must name exact repositories, branches,
-commits, paths, worktree source, transfer mechanism, and push/merge authority
-before any remote mutation. Public-sync local commits `fbb782fee`,
-`756c465e1`, `0d3bba46f`, and `e85252a47` remain unpushed. Public push, GitHub
-merge, provider status edits, unrelated provenance runtime/source/test/checker
-edits, provider/live proof, JSON receipt export, OpenAI certification uplift,
-production Memory/RAG release, retrieval/vectorization, P3 reopen, direct
-external import, private/generated MinerU output read, use-case/legal workflow,
-hosted/public/production claim, worker commit without authorization, historical
-rename/move sweep, and direct downstream release remain unauthorized. LHW24
-remains latest closed numbered LHW wave.
+No-commit R68 worker execution only. Worker must create
+`docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md`,
+refresh PR #20/#3 metadata and check rollups, verify R67 local repair
+worktrees, classify transfer/publish readiness, identify remaining check holds,
+and return an operator-ready checklist or exact hold reason, then run required
+gates and leave all changes uncommitted. Public-sync local commits
+`fbb782fee`, `756c465e1`, `0d3bba46f`, and `e85252a47` remain unpushed. Public
+push, GitHub merge, provider status edits, unrelated provenance
+runtime/source/test/checker edits, provider/live proof, JSON receipt export,
+OpenAI certification uplift, production Memory/RAG release,
+retrieval/vectorization, P3 reopen, direct external import, private/generated
+MinerU output read, use-case/legal workflow, hosted/public/production claim,
+worker commit, historical rename/move sweep, and direct downstream release
+remain unauthorized. LHW24 remains latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R65C Dispatch Session Sync
 
