@@ -88,6 +88,10 @@ $MAPPED_FILES = @(
     @{
         Source      = 'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_CONTINUATION.md'
         Destination = 'AGENT_HANDOFF.md'
+    },
+    @{
+        Source      = 'scripts\install_cvf_workspace_root_wrappers_public.ps1'
+        Destination = 'scripts\install_cvf_workspace_root_wrappers.ps1'
     }
 )
 
