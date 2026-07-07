@@ -69,6 +69,7 @@ Rollback boundary: revert only this R72A acceptance/session-sync and V39 rotatio
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| Root File Exposure Classification | `b6a46ae8a` | PUSH_DEBT_CLEANUP_SUPPORT; classified `AGENT_HANDOFF_V39_2026-07-08.md` and `workspace_overlay_catalog.json` as internal-only root files so the private provenance pre-push hook no longer fails pre-public P3 readiness. |
 | Repository Lifecycle Local Root Classification | `90865633d` | PUSH_DEBT_CLEANUP_SUPPORT; classified `Gop y CVF` as frozen internal advisory reference and `workspace_overlay_profiles` as active internal overlay-profile root so the private provenance pre-push hook no longer fails on visible local roots. |
 | MSEA-R72A Public Main CI Health And Governance-Load Baseline | `1187018cd` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72B_GC018; accepted GC-018 baseline, source-verified work order, combined matrix artifact, and worker return. R72A classified public main at head `e50ac604d`: `CVF CI Pipeline` = `GOVERNANCE_LOAD`; `Documentation & Testing` and `CVF CI` = `PRODUCT_DEBT`; public-surface/static CI passed. Worker-return fast gate, pre-implementation autorun, and material pre-commit hook passed before commit. |
 | MSEA-R72 Governance Control Index Claude Review Repair | `7f25ad753` | accepted; repaired GCI-014, R72D, R72F, R72G, and R72H routing. |
@@ -77,11 +78,11 @@ Rollback boundary: revert only this R72A acceptance/session-sync and V39 rotatio
 
 ## HEAD Freshness
 
-Current HEAD before lifecycle-root classification session-sync commit: `90865633d97c82d0439eca61b8acba93f95bffa3`.
+Current HEAD before root-file exposure classification session-sync commit: `b6a46ae8a72f1277acf35f9aef74bdc8464a84b9`.
 
-Current HEAD short: `90865633d`.
+Current HEAD short: `b6a46ae8a`.
 
-Current HEAD parent: `8e080d1c801314e96ef3eceef7e8b67aea286836`.
+Current HEAD parent: `a2b8833b2d01dbcf640a5c31761acae3175df01a`.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 
