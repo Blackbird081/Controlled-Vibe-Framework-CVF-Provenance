@@ -170,12 +170,23 @@ Current lane profiles:
 - `premium-governance`
 - `premium-authoring`
 - `premium-boundary`
+- `premium-operator-runbook`
+- `premium-skill-enablement`
 - `provenance-continuity-local`
 
 Current bundle profiles:
 
 - `premium-workspace`
+- `premium-extended-workspace`
 - `provenance-local`
+- `provenance-extended-local`
+
+Recommended use:
+
+- `premium-workspace`: stable default premium bundle
+- `premium-extended-workspace`: stable default plus optional operator and skill lanes
+- `provenance-local`: local full continuity on top of the stable default
+- `provenance-extended-local`: local full continuity plus optional operator and skill lanes
 
 ## Machine Validation
 

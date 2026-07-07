@@ -159,6 +159,66 @@
       "reason": "Operational guard used when skill and template value claims are involved."
     },
     {
+      "artifactId": "provider-lane-operator-runbook",
+      "path": "docs\\reference\\CVF_PROVIDER_LANE_OPERATOR_RUNBOOK.md",
+      "artifactClass": "operator-runbook",
+      "selectionTags": [
+        "operator-runbook",
+        "live-operations"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Step-by-step operator runbook for smoke, canary, and receipt handling in multi-provider lanes."
+    },
+    {
+      "artifactId": "provider-lane-readiness-matrix",
+      "path": "docs\\reference\\CVF_PROVIDER_LANE_READINESS_MATRIX.md",
+      "artifactClass": "reference-matrix",
+      "selectionTags": [
+        "operator-runbook",
+        "live-operations"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Current readiness taxonomy and receipt linkage for provider lane operations."
+    },
+    {
+      "artifactId": "skill-spec-compat-entry",
+      "path": "docs\\reference\\CVF_SKILL_SPEC.md",
+      "artifactClass": "skill-reference",
+      "selectionTags": [
+        "skill-enablement",
+        "template-skill-enablement"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Compact front door to CVF skill contract surfaces."
+    },
+    {
+      "artifactId": "skill-lifecycle-reference",
+      "path": "docs\\reference\\CVF_SKILL_LIFECYCLE.md",
+      "artifactClass": "skill-reference",
+      "selectionTags": [
+        "skill-enablement",
+        "template-skill-enablement"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Lifecycle semantics for governing reusable skill capabilities."
+    },
+    {
+      "artifactId": "progressive-disclosure-guide",
+      "path": "docs\\reference\\CVF_PROGRESSIVE_DISCLOSURE_GUIDE.md",
+      "artifactClass": "pattern-guide",
+      "selectionTags": [
+        "skill-enablement",
+        "template-skill-enablement"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Scalable skill-structuring pattern that remains useful for long-term local project growth."
+    },
+    {
       "artifactId": "provenance-root-agents",
       "path": "AGENTS.md",
       "artifactClass": "continuity-surface",

@@ -63,6 +63,12 @@ function Add-CvfOverlayUniqueString {
     }
 }
 
+function Get-CvfOverlayNormalizedStringArray {
+    param($Values)
+
+    return @($Values | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+}
+
 function Resolve-CvfWorkspaceOverlayProfileArtifactPaths {
     param(
         $Profile,
@@ -71,11 +77,11 @@ function Resolve-CvfWorkspaceOverlayProfileArtifactPaths {
 
     $paths = [System.Collections.Generic.List[string]]::new()
 
-    foreach ($item in @($Profile.includePaths | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })) {
+    foreach ($item in @(Get-CvfOverlayNormalizedStringArray -Values $Profile.includePaths)) {
         Add-CvfOverlayUniqueString -List $paths -Value $item
     }
 
-    $artifactIds = @($Profile.includeArtifactIds | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+    $artifactIds = @(Get-CvfOverlayNormalizedStringArray -Values $Profile.includeArtifactIds)
     if ($artifactIds.Count -gt 0) {
         foreach ($artifactId in $artifactIds) {
             $matches = @($Catalog.artifacts | Where-Object { $_.artifactId -eq $artifactId })
@@ -88,7 +94,7 @@ function Resolve-CvfWorkspaceOverlayProfileArtifactPaths {
         }
     }
 
-    $selectionTags = @($Profile.includeSelectionTags | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+    $selectionTags = @(Get-CvfOverlayNormalizedStringArray -Values $Profile.includeSelectionTags)
     if ($selectionTags.Count -gt 0) {
         foreach ($entry in @($Catalog.artifacts)) {
             $entryTags = @($entry.selectionTags)
@@ -121,7 +127,7 @@ function Resolve-CvfWorkspaceOverlayProfileNames {
     $profile = Get-CvfWorkspaceOverlayProfileObject -RepoRoot $RepoRoot -ProfileName $ProfileName
     $resolvedNames = [System.Collections.Generic.List[string]]::new()
 
-    foreach ($parent in @($profile.extends | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })) {
+    foreach ($parent in @(Get-CvfOverlayNormalizedStringArray -Values $profile.extends)) {
         foreach ($item in Resolve-CvfWorkspaceOverlayProfileNames -RepoRoot $RepoRoot -ProfileName $parent -Visited $Visited) {
             Add-CvfOverlayUniqueString -List $resolvedNames -Value $item
         }
@@ -146,7 +152,7 @@ function Resolve-CvfWorkspaceOverlayIncludePaths {
     $catalog = Get-CvfWorkspaceOverlayCatalog -RepoRoot $RepoRoot
     $paths = [System.Collections.Generic.List[string]]::new()
 
-    foreach ($parent in @($profile.extends | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })) {
+    foreach ($parent in @(Get-CvfOverlayNormalizedStringArray -Values $profile.extends)) {
         foreach ($item in Resolve-CvfWorkspaceOverlayIncludePaths -RepoRoot $RepoRoot -ProfileName $parent -Visited $Visited) {
             Add-CvfOverlayUniqueString -List $paths -Value $item
         }
@@ -214,10 +220,10 @@ function Get-CvfWorkspaceOverlayProfileReport {
     return [PSCustomObject]@{
         profileName = $profile.profileName
         description = $profile.description
-        extends = @($profile.extends)
-        includeSelectionTags = @($profile.includeSelectionTags)
-        includeArtifactIds = @($profile.includeArtifactIds)
-        includePaths = @($profile.includePaths)
+        extends = @(Get-CvfOverlayNormalizedStringArray -Values $profile.extends)
+        includeSelectionTags = @(Get-CvfOverlayNormalizedStringArray -Values $profile.includeSelectionTags)
+        includeArtifactIds = @(Get-CvfOverlayNormalizedStringArray -Values $profile.includeArtifactIds)
+        includePaths = @(Get-CvfOverlayNormalizedStringArray -Values $profile.includePaths)
         resolvedProfiles = $resolvedProfiles
         resolvedPathCount = $resolvedPaths.Count
         resolvedPaths = $resolvedPaths
