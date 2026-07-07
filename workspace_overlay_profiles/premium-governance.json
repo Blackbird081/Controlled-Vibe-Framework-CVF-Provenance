@@ -1,0 +1,7 @@
+{
+  "profileName": "premium-governance",
+  "description": "Governance standards, guards, and checkers useful to downstream projects.",
+  "includeSelectionTags": [
+    "downstream-governance"
+  ]
+}
