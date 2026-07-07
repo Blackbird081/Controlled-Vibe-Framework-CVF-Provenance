@@ -95,7 +95,7 @@ workspace-state material surface, not active session-sync continuity. It follows
 the generated aggregate discipline and the agent workspace state checker rather
 than the session-sync lane.
 
-## Commit Stack Debt Guard
+## Commit Stack Debt Disclosure Guard
 
 Before creating any governed commit, the committing agent must inspect local
 commit debt against the upstream tracking branch:
@@ -105,9 +105,9 @@ git status --short --branch
 git log --oneline "HEAD@{upstream}..HEAD"
 ```
 
-If the current branch has more than two unpushed commits, the agent must not
-start another tranche or create additional optional closure/session-sync commits
-until one of these dispositions is true:
+If the current branch has more than two unpushed commits, the agent records a
+push-debt disposition before starting another tranche or creating additional
+optional closure/session-sync commits. Valid dispositions are:
 
 - the commit is required to finish the same already-started operator-approved
   tranche and cannot be safely left uncommitted;
@@ -121,6 +121,21 @@ session-sync or handoff-sync commit. More commits for the same tranche require a
 brief reason in the steward evidence. A failed commit attempt is not a reason to
 create another tranche; repair the current changed set or stop with a
 source-backed blocker.
+
+This section is a disclosure and operating-discipline rule for commit authors.
+It does not claim that `run_agent_commit_steward_preflight.py` currently
+machine-enforces the upstream ahead-count threshold. The read-only
+`run_agent_push_readiness_preview.py` upstream check can fail when the local
+ahead count exceeds the preview limit, but commit-steward preflight enforcement
+is limited to the implemented mode and changed-path shape checks until a future
+source-verified checker tranche explicitly adds an upstream-count guard.
+
+Branches that already exceed the threshold when this disclosure rule is adopted
+are `LEGACY_PUSH_DEBT_PRESENT`, not proof that every future commit must hard
+block. They should be routed to an operator-visible push/squash/split/rebase or
+branch-isolation decision before broad new roadmap work continues; a bounded
+in-progress tranche may still be finished when leaving it uncommitted would lose
+reviewable evidence.
 
 ## Single-Agent Multi-Role Rule
 
@@ -184,7 +199,8 @@ Commit or closure evidence should record:
 
 ## Failure Conditions
 
-The steward preflight must block or return to orchestrator when:
+The steward preflight must block or return to orchestrator for the machine
+checked conditions it currently implements:
 
 - the selected mode does not match the work phase;
 - `closure` or `push` uses an empty committed range;
@@ -196,9 +212,13 @@ The steward preflight must block or return to orchestrator when:
 - `handoff-sync` mode includes any file other than the root active handoff;
 - a worker in `WORKER_MUST_NOT_COMMIT` tries to commit or claim committed-range
   closure.
-- more than two unpushed commits already exist and the proposed commit is not
-  finishing the same already-started tranche, not covered by an operator-selected
-  consolidation/push/split plan, and not paired with a concrete blocker.
+
+Upstream push debt above the normal two-commit completed-tranche shape is an
+advisory disclosure condition in commit steward evidence. It is hard-enforced by
+push-readiness preview only when that preview is run with upstream checking and
+`--enforce`. Do not describe it as a commit-steward machine block unless the
+steward implementation has been updated and verified in the same source-backed
+checker tranche.
 
 ## Related Artifacts
 
@@ -332,20 +352,20 @@ not revert Agent Dispatch Prompt Envelope Standardization material commit
 | --- | --- |
 | Actor | Codex |
 | Provider or surface | Codex CLI |
-| Session or invocation | commit stack debt lightweight hardening from execution base `3e1289ecc` |
+| Session or invocation | commit stack debt disclosure wording repair after provenance push-debt cleanup at execution base `8b28e5923` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | add lightweight commit stack debt guard to the commit steward standard |
-| Target paths | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
-| Allowed scope source | operator requested light hardening for excessive local commit creation after observing repeated push/split friction |
-| Before status evidence | branch status `codex/p1-p5-small-debt-remediation...origin/codex/p1-p5-small-debt-remediation [ahead 50]`; standard had split rules but no explicit pre-commit stack-debt guard |
-| After status evidence | standard requires inspecting upstream commit debt before governed commits and treats more than two unpushed commits as a blocker unless finishing the same tranche or covered by an operator-selected consolidation/push/split plan; active-window registry protects this still-active dated standard from stale-active false failure |
-| Diff evidence | `git diff -- docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`; focused gates and pre-implementation autorun |
-| Approval boundary | bounded reference-standard hardening only |
+| Command or tool surface | repair commit stack debt standard wording after source verification showed commit steward does not enforce upstream ahead count |
+| Target paths | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md` |
+| Allowed scope source | operator supplied review finding that the prior wording promised a machine block that current steward implementation does not provide, and highlighted existing 53-commit push debt |
+| Before status evidence | branch status after cleanup was `codex/p1-p5-small-debt-remediation...origin/codex/p1-p5-small-debt-remediation`; historical review finding recorded prior `ahead 53`; `run_agent_commit_steward_preflight.py` has no upstream-count logic; `run_agent_push_readiness_preview.py` owns the upstream ahead-limit check |
+| After status evidence | standard now distinguishes disclosure discipline from implemented machine enforcement, keeps the normal two-commit completed-tranche shape, and classifies already-over-threshold branches as `LEGACY_PUSH_DEBT_PRESENT` needing operator-visible consolidation planning rather than automatic hard block |
+| Diff evidence | `git diff -- docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; focused gates |
+| Approval boundary | bounded reference-standard wording repair only |
 | Claim boundary | Repo-local trace only; no checker/hook/runtime/provider/public-sync behavior change, no public readiness, no production readiness, no push authorization |
 | Agent type | Single agent acting as orchestrator/implementer/reviewer for a governance-control batch |
 | Invocation ID | `commit-stack-debt-hardening-codex-2026-07-08` |
-| Expected manifest | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
-| Actual changed set | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` |
+| Expected manifest | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md` |
+| Actual changed set | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md` |
 | Manifest delta | MATCH |
 
 ## Claim Boundary
