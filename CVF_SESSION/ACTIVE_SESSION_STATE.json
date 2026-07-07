@@ -78,8 +78,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return",
-  "previousMode": "msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_accepted_pending_r70a_standards_catalog_packet",
+  "currentMode": "msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet",
+  "previousMode": "msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -10415,5 +10415,44 @@
     "nextAllowedMove": "No-commit MSEA-R70A worker execution only, producing docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md and the worker-owned definition artifacts named in the R70A work order. Worker may create docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md, workspace_overlay_catalog.json, the eleven named workspace_overlay_profiles JSON files, and a narrow docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md row/update. Worker must not commit, merge, push, cherry-pick, mutate public-sync, edit scripts, runtime/source/tests/checkers, run provider/live proof, edit provider status or OpenAI certification, release production Memory/RAG, reopen P3, open use-case/legal workflow, make hosted/public/production claims, sweep historical renames/moves, or release downstream work.",
     "claimBoundary": "R70A dispatch records only source-verified definition-authoring authority. It does not implement the overlay pipeline, accept broad PR #20, mutate public-sync, or claim runtime/public/provider behavior."
   },
-  "nextAllowedMove": "MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions is DISPATCH_READY at provenance material commit 80b37b2d2. Dispatch artifacts: docs/baselines/CVF_GC018_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_2026-07-07.md and docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_2026-07-07.md. Next allowed move: no-commit R70A worker execution only, producing docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md and the worker-owned definition artifacts named in the R70A work order. Worker may create docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md, workspace_overlay_catalog.json, the eleven named workspace_overlay_profiles JSON files, and a narrow docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md row/update. Worker must not commit, merge, push, cherry-pick, mutate public-sync, edit scripts, runtime/source/tests/checkers, run provider/live proof, edit provider status or OpenAI certification, release production Memory/RAG, reopen P3, open use-case/legal workflow, make hosted/public/production claims, sweep historical renames/moves, or release downstream work. LHW24 remains latest closed numbered LHW wave."
+  "mseaR70AWorkspaceOverlayStandardsCatalogProfileDefinitionsAcceptance20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "0e9b59d9b",
+    "materialCommitFull": "0e9b59d9b1945a09a10b2fb4cbce322c42c51f6e",
+    "executionBaseHead": "94942ede2",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md",
+    "acceptedArtifacts": [
+      "docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md",
+      "workspace_overlay_catalog.json",
+      "workspace_overlay_profiles/premium-authoring.json",
+      "workspace_overlay_profiles/premium-boundary.json",
+      "workspace_overlay_profiles/premium-extended-workspace.json",
+      "workspace_overlay_profiles/premium-governance.json",
+      "workspace_overlay_profiles/premium-operator-runbook.json",
+      "workspace_overlay_profiles/premium-orientation.json",
+      "workspace_overlay_profiles/premium-skill-enablement.json",
+      "workspace_overlay_profiles/premium-workspace.json",
+      "workspace_overlay_profiles/provenance-continuity-local.json",
+      "workspace_overlay_profiles/provenance-extended-local.json",
+      "workspace_overlay_profiles/provenance-local.json",
+      "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md"
+    ],
+    "statusSummary": "REVIEWER_ACCEPTED_BOUNDED for R70A definition-only workspace overlay standard, catalog, profile JSON files, and R71 reference index classification row. Reviewer repaired overclaim and stale-path defects before material commit.",
+    "reviewerRepairs": [
+      "Promoted the overlay standard top matter to Memory class ACTIVE_REFERENCE and Status ACTIVE_REFERENCE to match LEGACY_DATED_ACTIVE_REFERENCE index classification.",
+      "Converted non-existent overlay script command examples into future implementation hook names with an explicit no-executable-evidence boundary.",
+      "Updated the stale V23 handoff catalog path to active AGENT_HANDOFF_V38_2026-07-06.md.",
+      "Added Claim Boundary and Public Export Disposition sections to the new reference standard."
+    ],
+    "verification": [
+      "JSON parse and catalog path validation PASS for workspace_overlay_catalog.json plus 11 profile JSON files",
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "material pre-commit hook PASS 80/80",
+      "pre-closure autorun on 94942ede2..HEAD PASS for 72/73 content gates; blocked only by required post-material session-sync active-state freshness before this entry"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only. R72 may verify the external EA assessment facts, classify governance-load risks, and propose bounded corrective-action lanes. R72 must not implement checker retirement, delete or disable checkers, mutate public-sync, edit runtime/source/tests/checkers, run provider/live proof, make public/production claims, push, merge, or sweep historical artifacts without a later accepted work order.",
+    "claimBoundary": "R70A accepts static overlay definitions only. It does not implement overlay scripts, validate runtime behavior, mutate public-sync, merge PR #20, authorize broad overlay-pipeline implementation, or make public release or production claims."
+  },
+  "nextAllowedMove": "MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions is REVIEWER_ACCEPTED_BOUNDED at provenance material commit 0e9b59d9b. Accepted artifacts: docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md, workspace_overlay_catalog.json, the eleven workspace_overlay_profiles JSON files, docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md, and docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md. Reviewer repaired non-existent script overclaim, stale handoff path, and R71 storage-class evidence before commit. Next allowed move: fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only. R72 may verify docs/reviews/CVF_INDEPENDENT_EA_ASSESSMENT_CLAUDE_2026-07-07.md facts, classify governance-load risks, and propose bounded corrective-action lanes. R72 must not implement checker retirement, delete or disable checkers, mutate public-sync, edit runtime/source/tests/checkers, run provider/live proof, make public/production claims, push, merge, or sweep historical artifacts without a later accepted work order. LHW24 remains latest closed numbered LHW wave."
 }

@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R70A worker execution only; parked checkpoint=R70A dispatch authorizes proposed overlay definitions only, while implementation, merge, push, public-sync mutation, script edits, and broad overlay acceptance remain unauthorized.
+Startup acknowledged: current mode=`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; parked checkpoint=R70A accepted static overlay definitions only, while implementation, merge, push, public-sync mutation, script edits, broad overlay acceptance, and checker retirement implementation remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return`
+Current mode marker: `msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`
 
-Current mode: `msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return`
+Current mode: `msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`
 
-`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return`
+`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`
 
 Previous mode:
 
-`msea_r70_workspace_overlay_pipeline_feature_split_and_review_decision_accepted_pending_r70a_standards_catalog_packet`
+`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions acceptance | `0e9b59d9b` | REVIEWER_ACCEPTED_BOUNDED; accepted the definition-only overlay standard, catalog JSON, eleven profile JSON files, R71 reference index row, and worker return after reviewer repairs; repairs changed non-existent script command examples into future implementation hooks, updated the stale V23 handoff catalog path to active `AGENT_HANDOFF_V38_2026-07-06.md`, and aligned the new reference standard top matter with `LEGACY_DATED_ACTIVE_REFERENCE`; JSON parse/path validation PASS for 12 JSON files, worker-return fast gate PASS 59/59, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; no checker retirement implementation, checker deletion/disablement, runtime/source/test/checker edit, public-sync mutation, merge, push, provider/live proof, public/production claim, broad overlay implementation, or historical sweep is authorized. |
 | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions dispatch | `80b37b2d2` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R70A worker execution; pre-dispatch autorun PASS 73/73 on `b65ad7c76..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R70A worker execution only, producing `docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md` and the worker-owned definition artifacts named in the work order; no worker commit, merge, push, cherry-pick, public-sync mutation, script edit, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, broad overlay acceptance, or downstream release is authorized. |
 | MSEA-R70 Workspace Overlay Pipeline Feature Split And Review Decision acceptance | `f267c92ca` | REVIEWER_ACCEPTED_BOUNDED; accepted worker return after reviewer repair; selected `ACCEPT_AS_FUTURE_FEATURE_WITH_SPLIT` for the residual PR #20 overlay feature bundle; worker-return fast gate PASS 59/59, reviewer-return commit steward PASS on `51ed478d8..HEAD`, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R70A standards/catalog/profile-definition packet authoring only; no implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, public claim, historical rename/move sweep, worker commit, or direct downstream release is authorized. |
 | MSEA-R69 Public-Safe Workspace PR Safe Merge Execution | `fee4e12d1` | CLOSED_PASS_BOUNDED; executed the operator-authorized safe merge route; public PR #3 merged as `b9ce2e4822a6a6bef353ae85df82d2efd4511fb1`; provenance narrow PR #21 merged as `eaa48db35b3d2a95da9394948f608ea4670726db`; broad provenance PR #20 closed as superseded and not merged; public-sync local `main` rebased, public-surface PASS, static CI PASS 8/8, pushed, and confirmed clean/current at `HEAD == origin/main == e50ac604d`; R69 material gates PASS: worker-return fast 59/59, pre-implementation autorun 75/75 on `d1288b04c..HEAD`, reviewer-return steward PASS, material pre-commit hook PASS 80/80; next move is return to governed roadmap continuation or fresh source-verified packet selection only; no broad overlay-pipeline acceptance, new public-sync mutation, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
@@ -162,19 +163,16 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r70a_workspace_overlay_standards_catalog_profile_definitions_dispatched_pending_worker_return`
+Mode: `msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`
 
-No-commit MSEA-R70A worker execution only. The worker may create
-`docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md`,
-`workspace_overlay_catalog.json`, the eleven named workspace overlay profile
-JSON files, the narrow R70A row/update in `docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md`,
-and `docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md`.
-The worker must not commit, merge, push, cherry-pick, mutate public-sync, edit
-scripts, runtime/source/tests/checkers, run provider/live proof, edit provider
-status or OpenAI certification, release production Memory/RAG, reopen P3, open
-use-case/legal workflow, make hosted/public/production claims, sweep historical
-renames/moves, or release downstream work. LHW24 remains latest closed numbered
-LHW wave.
+Fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance
+Load Rebalancing packet authoring only. R72 may verify
+`docs/reviews/CVF_INDEPENDENT_EA_ASSESSMENT_CLAUDE_2026-07-07.md` facts,
+classify governance-load risks, and propose bounded corrective-action lanes.
+R72 must not implement checker retirement, delete or disable checkers, mutate
+public-sync, edit runtime/source/tests/checkers, run provider/live proof, make
+public/production claims, push, merge, or sweep historical artifacts without a
+later accepted work order. LHW24 remains latest closed numbered LHW wave.
 
 ## Current Closed Work
 
