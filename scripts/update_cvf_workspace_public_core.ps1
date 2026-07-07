@@ -11,6 +11,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $publicRemote = "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git"
+$workspaceWrapperInstallerPath = Join-Path $PSScriptRoot "install_cvf_workspace_root_wrappers.ps1"
 $requiredPublicCoreFiles = @(
     "AGENTS.md",
     "AGENT_HANDOFF.md",
@@ -225,6 +226,16 @@ try {
     }
 
     Write-LocalWorkspaceRules -Workspace $workspaceResolved -CorePath $corePath
+
+    if (Test-Path -LiteralPath $workspaceWrapperInstallerPath -PathType Leaf) {
+        & powershell -ExecutionPolicy Bypass -File $workspaceWrapperInstallerPath -WorkspaceRoot $workspaceResolved
+        if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+        }
+    }
+    else {
+        Write-Warn "Workspace wrapper installer not found: $workspaceWrapperInstallerPath"
+    }
 }
 catch {
     if (Test-Path -LiteralPath $backupPath -PathType Container) {

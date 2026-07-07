@@ -38,6 +38,7 @@ $cvfCorePath = Join-Path $workspaceRootResolved ".Controlled-Vibe-Framework-CVF"
 $projectPath = Join-Path $workspaceRootResolved $ProjectName
 $workspaceFilePath = Join-Path $workspaceRootResolved "$ProjectName.code-workspace"
 $workspaceRulesPath = Join-Path $workspaceRootResolved "WORKSPACE_RULES.md"
+$workspaceWrapperInstallerPath = Join-Path $PSScriptRoot "install_cvf_workspace_root_wrappers.ps1"
 $requiredPublicCoreFiles = @(
     "AGENTS.md",
     "AGENT_HANDOFF.md",
@@ -103,6 +104,16 @@ Canonical source: `.Controlled-Vibe-Framework-CVF/docs/reference/CVF_WORKSPACE_R
 }
 else {
     Write-Info "Workspace rules already exist: $workspaceRulesPath"
+}
+
+if (Test-Path -LiteralPath $workspaceWrapperInstallerPath -PathType Leaf) {
+    & powershell -ExecutionPolicy Bypass -File $workspaceWrapperInstallerPath -WorkspaceRoot $workspaceRootResolved
+    if ($LASTEXITCODE -ne 0) {
+        exit $LASTEXITCODE
+    }
+}
+else {
+    Write-Warn "Workspace wrapper installer not found: $workspaceWrapperInstallerPath"
 }
 
 if (-not (Test-Path $projectPath)) {
