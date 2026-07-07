@@ -67,6 +67,7 @@ Each row in the Reference Artifact Index table below must record:
 | Artifact path | Storage class | Source authority | Citation rule | Classified by | Classification date |
 |---|---|---|---|---|---|
 | `docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md` | LEGACY_DATED_ACTIVE_REFERENCE | `Memory class: ACTIVE_REFERENCE`; `Status: ACTIVE_REFERENCE` (verified in the artifact's own top matter) | Cite the full existing dated filename exactly as it exists; do not invent an undated alias; state that the artifact is cited as ongoing active reference content per its own `Status: ACTIVE_REFERENCE` declaration | MSEA-R71 Reference Artifact Storage Class And Index Standard | 2026-07-07 |
+| `docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md` | LEGACY_DATED_ACTIVE_REFERENCE | `Memory class: ACTIVE_REFERENCE`; `Status: ACTIVE_REFERENCE` (verified in the artifact's own top matter) | Cite the full existing dated filename exactly as it exists; do not invent an undated alias; state that the artifact is cited as ongoing active reference content per its own `Status: ACTIVE_REFERENCE` declaration | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions | 2026-07-07 |
 
 ## Adding A Future Row
 

@@ -1,0 +1,10 @@
+{
+  "profileName": "premium-workspace",
+  "description": "Curated premium overlay for downstream workspace use without copying private session continuity state.",
+  "extends": [
+    "premium-orientation",
+    "premium-governance",
+    "premium-authoring",
+    "premium-boundary"
+  ]
+}

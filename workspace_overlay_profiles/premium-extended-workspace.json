@@ -1,0 +1,9 @@
+{
+  "profileName": "premium-extended-workspace",
+  "description": "Extended premium bundle that adds operator runbook and skill enablement lanes on top of the default premium workspace set.",
+  "extends": [
+    "premium-workspace",
+    "premium-operator-runbook",
+    "premium-skill-enablement"
+  ]
+}

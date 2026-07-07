@@ -1,0 +1,270 @@
+{
+  "schemaVersion": "1.0",
+  "artifacts": [
+    {
+      "artifactId": "guard-orientation-index",
+      "path": "docs\\reference\\guard_orientation\\README.md",
+      "artifactClass": "orientation-index",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance",
+        "operator-orientation"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Primary guard-orientation entrypoint used before governed authoring and execution."
+    },
+    {
+      "artifactId": "operational-reference-index",
+      "path": "docs\\reference\\CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "artifactClass": "reference-index",
+      "selectionTags": [
+        "workspace-premium",
+        "operator-orientation"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Cross-CVF lookup index that helps operators and agents find the right reference lane."
+    },
+    {
+      "artifactId": "governance-control-matrix",
+      "path": "docs\\reference\\CVF_GOVERNANCE_CONTROL_MATRIX.md",
+      "artifactClass": "reference-matrix",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "High-value governance surface that summarizes control points used across downstream work."
+    },
+    {
+      "artifactId": "agent-work-order-template",
+      "path": "docs\\reference\\CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+      "artifactClass": "authoring-template",
+      "selectionTags": [
+        "workspace-premium",
+        "work-order-authoring"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Reusable governed work-order front door for downstream authoring and dispatch preparation."
+    },
+    {
+      "artifactId": "knowledge-absorption-priority-standard",
+      "path": "docs\\reference\\CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Canonical downstream knowledge-absorption rule."
+    },
+    {
+      "artifactId": "template-skill-corpus-rescreen-standard",
+      "path": "docs\\reference\\CVF_TEMPLATE_SKILL_CORPUS_RESCREEN_STANDARD_2026-04-14.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Canonical template and skill corpus screening rule."
+    },
+    {
+      "artifactId": "non-coder-value-measurement-standard",
+      "path": "docs\\reference\\CVF_NON_CODER_VALUE_MEASUREMENT_STANDARD_2026-04-14.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Value-proof measurement guidance reused by downstream projects."
+    },
+    {
+      "artifactId": "session-governance-bootstrap-reference",
+      "path": "docs\\reference\\CVF_SESSION_GOVERNANCE_BOOTSTRAP.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Compact governance bootstrap guidance that is still useful in local workspaces."
+    },
+    {
+      "artifactId": "critical-repository-boundary-reference",
+      "path": "docs\\reference\\CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-premium",
+        "repository-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Prevents public/provenance boundary confusion in shared workspace operations."
+    },
+    {
+      "artifactId": "knowledge-absorption-priority-checker",
+      "path": "governance\\compat\\check_knowledge_absorption_priority_compat.py",
+      "artifactClass": "compat-checker",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Machine checker for the knowledge-absorption priority standard."
+    },
+    {
+      "artifactId": "template-skill-standard-checker",
+      "path": "governance\\compat\\check_template_skill_standard_guard_compat.py",
+      "artifactClass": "compat-checker",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Machine checker for template and skill standard guard."
+    },
+    {
+      "artifactId": "knowledge-absorption-priority-guard",
+      "path": "governance\\toolkit\\05_OPERATION\\CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md",
+      "artifactClass": "operation-guard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Operational guard used by agents during downstream execution."
+    },
+    {
+      "artifactId": "template-skill-standard-guard",
+      "path": "governance\\toolkit\\05_OPERATION\\CVF_TEMPLATE_SKILL_STANDARD_GUARD.md",
+      "artifactClass": "operation-guard",
+      "selectionTags": [
+        "workspace-premium",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Operational guard used when skill and template value claims are involved."
+    },
+    {
+      "artifactId": "provider-lane-operator-runbook",
+      "path": "docs\\reference\\CVF_PROVIDER_LANE_OPERATOR_RUNBOOK.md",
+      "artifactClass": "operator-runbook",
+      "selectionTags": [
+        "operator-runbook",
+        "live-operations"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Step-by-step operator runbook for smoke, canary, and receipt handling in multi-provider lanes."
+    },
+    {
+      "artifactId": "provider-lane-readiness-matrix",
+      "path": "docs\\reference\\CVF_PROVIDER_LANE_READINESS_MATRIX.md",
+      "artifactClass": "reference-matrix",
+      "selectionTags": [
+        "operator-runbook",
+        "live-operations"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Current readiness taxonomy and receipt linkage for provider lane operations."
+    },
+    {
+      "artifactId": "skill-spec-compat-entry",
+      "path": "docs\\reference\\CVF_SKILL_SPEC.md",
+      "artifactClass": "skill-reference",
+      "selectionTags": [
+        "skill-enablement",
+        "template-skill-enablement"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Compact front door to CVF skill contract surfaces."
+    },
+    {
+      "artifactId": "skill-lifecycle-reference",
+      "path": "docs\\reference\\CVF_SKILL_LIFECYCLE.md",
+      "artifactClass": "skill-reference",
+      "selectionTags": [
+        "skill-enablement",
+        "template-skill-enablement"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Lifecycle semantics for governing reusable skill capabilities."
+    },
+    {
+      "artifactId": "progressive-disclosure-guide",
+      "path": "docs\\reference\\CVF_PROGRESSIVE_DISCLOSURE_GUIDE.md",
+      "artifactClass": "pattern-guide",
+      "selectionTags": [
+        "skill-enablement",
+        "template-skill-enablement"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Scalable skill-structuring pattern that remains useful for long-term local project growth."
+    },
+    {
+      "artifactId": "provenance-root-agents",
+      "path": "AGENTS.md",
+      "artifactClass": "continuity-surface",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Canonical provenance startup instructions for the operator machine."
+    },
+    {
+      "artifactId": "active-versioned-handoff",
+      "path": "AGENT_HANDOFF_V38_2026-07-06.md",
+      "artifactClass": "continuity-surface",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Current active handoff required for private continuity on the operator machine."
+    },
+    {
+      "artifactId": "session-memory-front-door",
+      "path": "CVF_SESSION_MEMORY.md",
+      "artifactClass": "continuity-surface",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Session continuity front door for local full-fidelity operation."
+    },
+    {
+      "artifactId": "session-state-tree",
+      "path": "CVF_SESSION",
+      "artifactClass": "continuity-surface-directory",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "continuity-local"
+      ],
+      "stability": "volatile",
+      "reviewPolicy": "local-only",
+      "reason": "Canonical machine-readable session continuity state for local-only full provenance use."
+    }
+  ]
+}

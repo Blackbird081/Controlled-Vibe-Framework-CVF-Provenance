@@ -1,0 +1,7 @@
+{
+  "profileName": "premium-boundary",
+  "description": "Repository-boundary and public/private separation surfaces.",
+  "includeSelectionTags": [
+    "repository-boundary"
+  ]
+}
