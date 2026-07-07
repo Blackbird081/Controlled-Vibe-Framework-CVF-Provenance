@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R66 worker execution only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, and `0d3bba46f` remain unpushed, public merge/push remains operator-owned, and the R65D-disclosed public-surface guard conflict against `docs/audits/**` must be resolved or explicitly waived before public merge/push readiness is claimed.
+Startup acknowledged: current mode=`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_accepted_bounded_with_hold_r67_packet_next`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified R67 public-safe workspace PR defect repair and merge-readiness packet authoring only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, `0d3bba46f`, and `e85252a47` remain unpushed, public merge/push remains operator-owned, and PR #20/#3 remain HOLD until Vietnamese guide encoding, New Project Enforcement Gate restoration/acceptance, overlay-bundle split/authorization, and failing required checks are handled.
 
 ## Current Mode
 
-Current mode marker: `msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`
+Current mode marker: `msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_accepted_bounded_with_hold_r67_packet_next`
 
-Current mode: `msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`
+Current mode: `msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_accepted_bounded_with_hold_r67_packet_next`
 
-`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`
+`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_accepted_bounded_with_hold_r67_packet_next`
 
 Previous mode:
 
-`msea_r65d_provider_receipt_link_integrity_checker_accepted_public_workspace_pr_repair_packet_next`
+`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R66 Public-Safe Workspace PR Repair And Merge Readiness acceptance | `f5f10b8f` provenance / `e85252a47` public-sync | REVIEWER_ACCEPTED_BOUNDED_WITH_HOLD; accepted worker return and bounded public-sync manifest repair; public-sync local commit `e85252a472af6e508bed9ada957d37fa390b7193` allowlists four accepted Alibaba/DeepSeek canary receipt/index artifacts and resolves the R65D public-surface guard conflict locally; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `78d7317b0..HEAD`, commit steward PASS, public-sync public-surface guard PASS, public-sync static CI PASS 8/8, material pre-commit hook PASS 80/80; public-sync is clean and `main...origin/main [ahead 4]`; merge readiness remains HOLD for Windows PowerShell 5.1 Vietnamese guide mojibake, PR #3 `New Project Enforcement Gate` documentation deletion, PR #20 overlay-bundle split/authorization, and failing GitHub required checks; next move is fresh source-verified R67 public-safe workspace PR defect repair and merge-readiness packet authoring only; no public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, JSON receipt export, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R66 Public-Safe Workspace PR Repair And Merge Readiness dispatch | `006d9cafa` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit PR repair/merge-readiness worker execution covering GitHub PR #20, GitHub PR #3, and the R65D public-surface guard conflict; pre-dispatch autorun PASS 73/73 on `f27123098..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R66 worker execution only, producing `docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`; public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider status edits outside R66 scope, provenance runtime/source/test/checker edits, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, hosted/public/production claim, historical rename/move sweep, and direct downstream release remain unauthorized. |
 | MSEA-R65D Provider Receipt-Link Integrity Checker Implementation acceptance | `bb959a63f` provenance / `0d3bba46f` public-sync | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR; accepted worker return and bounded public-sync checker implementation after reviewer repair; public-sync local commit `0d3bba46fae54ec32e1efdd60e72cc59c3620053` adds `scripts/check_provider_receipt_link_integrity.py` and wires it into `scripts/run_cvf_static_ci_gate.py`; provenance material commit `bb959a63f65932c50d57f791c8c394dd203a6fc1` records the worker return and repairs the R65D work-order manifest shape; focused checker PASS, worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80; public-sync is clean and `main...origin/main [ahead 3]`; known hold before public merge/push: full public-sync static CI still has a pre-existing Public surface guard failure against R65B `docs/audits/**` receipt/index exports; R65D follow-up is released by R66 dispatch `006d9cafa`; no public push, GitHub merge, provider status edit, README/docs index/Known Limitations/provider routing edit outside a fresh packet, provenance runtime/source/test/checker edit, provider/live proof, JSON receipt export, OpenAI certification uplift, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized. |
 | MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision acceptance | `7f557d4bb` | REVIEWER_ACCEPTED_BOUNDED; accepted decision matrix, worker return, and completion review; selected `R65C_PUBLIC_SYNC_PUSH_READY_PENDING_OPERATOR_CONFIRMATION_AND_CHECKER_PACKET_RECOMMENDED_ACCEPTED`; public-sync remains clean and `main...origin/main [ahead 2]` with local commits `fbb782fee` and `756c465e1` not pushed; reviewer-fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `a1f3a8006..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is authorization hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization; no public push, public-sync mutation, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, hosted/public/production claim, or downstream release is authorized by R65C closure alone. |
@@ -154,18 +155,17 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`
+Mode: `msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_accepted_bounded_with_hold_r67_packet_next`
 
-No-commit R66 worker execution only. Worker must create
-`docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`,
-refresh GitHub PR #20/#3 metadata, verify public-sync remote/status, verify
-generated public-safe guide leakage and Vietnamese encoding, reconcile PR #3
-eight-file scope, separate PR #20 broad overlay bundle from narrow leakfix,
-and resolve or explicitly hold the R65D public-surface guard conflict before
-any merge/push readiness claim. Public-sync local commits `fbb782fee`,
-`756c465e1`, and `0d3bba46f` remain unpushed. Public push, GitHub merge,
-provider status edits outside R66 scope, provenance runtime/source/test/checker
-edits, provider/live proof, JSON receipt export, OpenAI certification uplift,
+Fresh source-verified R67 public-safe workspace PR defect repair and
+merge-readiness packet authoring only. R67 should target the Windows PowerShell
+5.1 Vietnamese guide mojibake defect, PR #3 `New Project Enforcement Gate`
+restoration or explicit acceptance, PR #20 overlay-bundle split/hold decision,
+and failing required-check triage before any merge or public push. Public-sync
+local commits `fbb782fee`, `756c465e1`, `0d3bba46f`, and `e85252a47` remain
+unpushed. Public push, GitHub merge, broad overlay-pipeline acceptance,
+provider status edits, provenance runtime/source/test/checker edits,
+provider/live proof, JSON receipt export, OpenAI certification uplift,
 production Memory/RAG release, retrieval/vectorization, P3 reopen,
 use-case/legal workflow, hosted/public/production claim, historical rename/move
 sweep, worker commit, and direct downstream release remain unauthorized. LHW24
