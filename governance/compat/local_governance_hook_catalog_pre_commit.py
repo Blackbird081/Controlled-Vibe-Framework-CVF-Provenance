@@ -56,6 +56,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "governed artifact checker read-ahead",
+            ["python", "governance/compat/check_governed_artifact_checker_read_ahead.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "work-order dispatch quality",
             ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
@@ -64,8 +68,20 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_worker_experience_retrospective.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "worker-return quality gate",
+            ["python", "governance/compat/check_worker_return_quality_gate.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "dispatch prompt envelope",
             ["python", "governance/compat/check_dispatch_prompt_envelope.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "dispatch packet lifecycle hygiene",
+            ["python", "governance/compat/check_dispatch_packet_lifecycle_hygiene.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "source intake decision packet preflight",
+            ["python", "governance/compat/check_source_intake_decision_packet_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "PLCS companion routing block",
@@ -120,6 +136,22 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_external_knowledge_intake_routing.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "external absorption core",
+            ["python", "governance/compat/check_external_absorption_core.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "external absorption value conversion",
+            ["python", "governance/compat/check_external_absorption_value_conversion.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "external absorption overlap discipline",
+            ["python", "governance/compat/check_external_absorption_overlap_discipline.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "source mirror migration",
+            ["python", "governance/compat/check_source_mirror_migration.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "Delta mutating profile boundary",
             ["python", "governance/compat/check_delta_mutating_profile_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
@@ -134,6 +166,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
         (
             "public export disposition quality",
             ["python", "governance/compat/check_public_export_disposition.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "absorption blind-spot control presence",
+            ["python", "governance/compat/check_absorption_blindspot_control_presence.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "corpus completeness and report integrity",
@@ -176,8 +212,40 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_assf_certified_metadata_admission.py"],
         ),
         (
+            "ASSF package candidate anatomy",
+            ["python", "governance/compat/check_assf_package_candidate_anatomy.py", "--enforce"],
+        ),
+        (
             "ASSF external-agent metadata readout",
             ["python", "governance/compat/check_assf_external_agent_metadata_readout.py", "--enforce"],
+        ),
+        (
+            "external provider skill usage trace",
+            ["python", "governance/compat/check_external_provider_skill_usage_trace.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "CVF skill usage receipt trace",
+            ["python", "governance/compat/check_cvf_skill_usage_receipt_trace.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "skill truth packets",
+            ["python", "governance/compat/check_skill_truth_packets.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "package skill productionization pipeline",
+            ["python", "governance/compat/check_package_skill_productionization_pipeline.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "skill control plane inventory",
+            ["python", "governance/compat/check_skill_control_plane_inventory.py", "--enforce"],
+        ),
+        (
+            "CVF Web skill control plane projection",
+            [
+                "python",
+                "governance/compat/check_cvf_web_skill_control_plane_projection.py",
+                "--enforce",
+            ],
         ),
         (
             "changed corpus registry coverage",
@@ -186,6 +254,22 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
         (
             "system loop interlock",
             ["python", "governance/compat/check_system_loop_interlock.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "FPC system-chain acceptance ledger",
+            ["python", "governance/compat/check_fpc_system_chain_acceptance_ledger.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "FPC parked reopen inventory",
+            ["python", "governance/compat/check_fpc_parked_reopen_inventory.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "KIOD runtime candidate reopen inventory",
+            ["python", "governance/compat/check_kiod_runtime_candidate_reopen_inventory.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "truth foundation claim guard",
+            ["python", "governance/compat/check_truth_foundation_claim_guard.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "ERH CI public-evaluation workflow chain",
@@ -243,4 +327,12 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             "public catalog update advisory (GC-024)",
             ["python", "governance/compat/check_catalog_update_advisory.py"],
         ),
+    (
+        "dispatch scaffold provenance",
+        ["python", "governance/compat/check_dispatch_scaffold_provenance.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "MinerU receipt boundary",
+        ["python", "governance/compat/check_mineru_receipt_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
     ]

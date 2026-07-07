@@ -1,0 +1,33 @@
+{
+  "stateOrder": 1480,
+  "stateKey": "mseaR28T20MineruActualDurableStoreInvocationImplementationDispatch20260705",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-05",
+    "dispatchMaterialCommit": "974876b40",
+    "dispatchMaterialCommitFull": "974876b401de6bacdf55d7a53b7bbe6247ca6e5d",
+    "dispatchBaseHead": "d59fbdb3e",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_2026-07-05.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-05.md",
+    "allowedWorkerPaths": [
+      "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-durable-store-invocation.ts",
+      "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-durable-store-invocation.test.ts",
+      "docs/reviews/CVF_MSEA_R28_T20_MINERU_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-05.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION_DISPATCH_READY",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T20_DISPATCH",
+    "durableStoreInvocationScope": "IN_PROCESS_FOCUSED_TEST_HELPER_INVOCATION_ONLY",
+    "privateOutputDisposition": "PRIVATE_OUTPUT_NOT_READ_OR_RELEASED",
+    "providerLocalStrayControl": "PROVIDER_LOCAL_STRAY_ARTIFACT_CONTROL_REQUIRED",
+    "pylanceDiagnosticDisposition": "STATIC_ANALYSIS_PATH_ISSUE_RECORDED_NO_PYTHON_EDIT_AUTHORIZED",
+    "nextRecommendedMove": "EXECUTE_MSEA_R28_T20_NO_COMMIT_WORKER_RETURN_FOR_ACTUAL_DURABLE_STORE_INVOCATION_IMPLEMENTATION",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T20 dispatch authored a source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a bounded Learning Plane Foundation helper that may invoke existing DurableMemoryStore.write only through focused in-process tests. It does not authorize MinerU runtime, private/generated output content reads, Candidate Group A import, provider/live proof, public-sync, Web/UI, production file-backed storage proof, memory/RAG route release, retrieval/vectorization, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, provider-local or IDE config edits, checker/hook/session/handoff edits by worker, worker commit, or push."
+  }
+}

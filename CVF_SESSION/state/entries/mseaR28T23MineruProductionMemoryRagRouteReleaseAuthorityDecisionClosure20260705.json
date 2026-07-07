@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1487,
+  "stateKey": "mseaR28T23MineruProductionMemoryRagRouteReleaseAuthorityDecisionClosure20260705",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-05",
+    "materialCommit": "0585429ee",
+    "closureBaseHead": "94280c395",
+    "dispatchMaterialCommit": "4084f59db",
+    "dispatchSessionSyncCommit": "94280c395",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-05.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-05.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-05.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R28_T23_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_COMPLETION_2026-07-05.md",
+    "selectedDisposition": "T24_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION_WORK_ORDER_AUTHORING_READY",
+    "memoryRouteDisposition": "PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY",
+    "privateOutputDisposition": "PRIVATE_OUTPUT_NOT_READ_OR_RELEASED",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "AUTHOR_MSEA_R28_T24_GC018_SOURCE_VERIFIED_WORK_ORDER_FOR_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_IMPLEMENTATION",
+    "claimBoundary": "R28-T23 accepts a docs-only source-verified production memory/RAG route release authority decision matrix, worker return, and completion review. It selects future T24 implementation-work-order authoring readiness while preserving PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_NOT_AUTHORIZED_BY_T23_DECISION_ONLY. It does not authorize production memory/RAG route release, production durable-store invocation, file-backed production persistence, vectorization, retrieval, MinerU runtime, private/generated output content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits, provider-local or IDE config edits, checker/hook implementation, worker commit, or push."
+  }
+}

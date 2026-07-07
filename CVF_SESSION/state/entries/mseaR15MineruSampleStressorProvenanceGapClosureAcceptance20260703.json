@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1403,
+  "stateKey": "mseaR15MineruSampleStressorProvenanceGapClosureAcceptance20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "836ce239",
+    "materialCommitFull": "836ce2397adf87ecac8093674f18bc3305c64bbc",
+    "dispatchCommit": "61345bc3",
+    "sessionSyncAfterDispatch": "7ff71cd8",
+    "executionBaseHead": "7ff71cd8",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R15_MINERU_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R15_MINERU_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R15_MINERU_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R15_MINERU_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE_LEDGER_2026-07-03.md",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "selectedRouteToken": "PARTIAL_GAP_CLOSURE_PENDING_OPERATOR_DETAIL",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerReturnCommitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Author MSEA-R16 roadmap for operator-detail and minimal sample-corpus population readiness before any population, runtime, schema, writer, adapter, checker, or live proof work.",
+    "claimBoundary": "Closed bounded provenance-gap classification only. No route execution, document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, live run, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, legal-domain product work, production-readiness claim, or runtime reopen condition was authorized or accepted."
+  }
+}

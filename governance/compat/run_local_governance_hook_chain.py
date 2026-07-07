@@ -27,6 +27,7 @@ Compatibility marker block for self-checking guards:
 - governance/compat/check_template_skill_standard_guard_compat.py
 
 Pre-push catalog marker coverage:
+- governance/compat/check_absorption_blindspot_control_presence.py
 - governance/compat/check_active_archive_hygiene.py
 - governance/compat/check_active_session_state.py
 - governance/compat/check_active_window_registry.py
@@ -62,6 +63,8 @@ Pre-push catalog marker coverage:
 - governance/compat/check_erh_ci_public_evaluation_workflow.py
 - governance/compat/check_erh_public_surface_drift_workflow.py
 - governance/compat/check_execute_route_step_sequence.py
+- governance/compat/check_external_absorption_core.py
+- governance/compat/check_external_absorption_value_conversion.py
 - governance/compat/check_external_agent_absorption_table.py
 - governance/compat/check_external_knowledge_intake_routing.py
 - governance/compat/check_finding_to_governance_learning.py

@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1415,
+  "stateKey": "mseaR19T1MineruEnvironmentModelServiceTeardownPlanningClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "707953bc",
+    "materialCommitFull": "707953bc54e3f285a3df0d3e51e240269023cab1",
+    "dispatchCommit": "000cd9c3",
+    "sessionSyncAfterDispatch": "0c7d9433",
+    "executionBaseHead": "0c7d9433",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_READINESS_MATRIX_2026-07-03.md",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "selectedRouteToken": "OPEN_MODEL_CACHE_AND_LOCAL_SOURCE_PREP_WORK_ORDER_FIRST",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS including reviewer-fast 59/59",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author a fresh GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for MinerU model cache/local-source preparation and temporary-service teardown receipt planning before any runtime smoke pilot.",
+    "claimBoundary": "Closed bounded planning and route-selection acceptance only. The selected route opens preparation-first authoring for model source/cache/local-mode and temporary-service teardown receipts. No MinerU install, import, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, document body read, extraction outputs, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
+  }
+}

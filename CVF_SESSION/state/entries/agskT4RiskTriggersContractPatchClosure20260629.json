@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1320,
+  "stateKey": "agskT4RiskTriggersContractPatchClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-06-29",
+    "roadmap": "docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md",
+    "contractPatch": "docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md",
+    "workerReturn": "docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md",
+    "materialCommit": "2a84036a",
+    "result": "ASSF contract now includes documentation-only riskTriggers field with authorityCeiling and riskCeiling boundaries.",
+    "nextAllowedMove": "Author and dispatch AGSK-T5 first package-candidate registry instance; no runtime, package activation, generated index, resolver, checker, provider/live proof, public-sync, or production-readiness claim is authorized by T4 closure."
+  }
+}

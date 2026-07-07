@@ -1,0 +1,32 @@
+{
+  "stateOrder": 656,
+  "stateKey": "scplWebT1SkillControlPlaneWebProjectionClosure20260630",
+  "value": {
+    "batchId": "SCPL-WEB-T1",
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "a01bdca2",
+    "baseline": "docs/baselines/CVF_GC018_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_COMPLETION_2026-06-30.md",
+    "standard": "docs/reference/agent_system_skills/CVF_WEB_SKILL_CONTROL_PLANE_PROJECTION_STANDARD.md",
+    "webControlPlaneProjection": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/assf-skill-control-plane.json",
+    "webSkillIndex": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/skills-index.json",
+    "summary": {
+      "frontDoorSkills": 52,
+      "assfProjectedSkills": 25,
+      "runtimePackageProjections": 24,
+      "projectedRuntimePackages": 24,
+      "crossSurfaceDriftViolationCount": 0
+    },
+    "verification": [
+      "node scripts/build-skill-index.js",
+      "python governance/compat/check_cvf_web_skill_control_plane_projection.py --enforce",
+      "python -m unittest governance.compat.test_cvf_web_skill_control_plane_projection",
+      "npm test -- --run src/components/SkillLibrary.test.tsx src/components/SkillDetailView.test.tsx",
+      "npm run check",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 87823bd0 --head HEAD",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 87823bd0 --head HEAD --enforce"
+    ],
+    "claimBoundary": "Read-only Web/dashboard projection only; no runtime activation, provider routing, public-sync, automatic invocation, or downstream action authority."
+  }
+}

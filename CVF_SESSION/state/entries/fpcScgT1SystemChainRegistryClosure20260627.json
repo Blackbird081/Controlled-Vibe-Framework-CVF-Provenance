@@ -1,0 +1,27 @@
+{
+  "stateOrder": 1256,
+  "stateKey": "fpcScgT1SystemChainRegistryClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "75fcad20",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T1_FOUNDATION_PLANE_SYSTEM_CHAIN_INTERLOCK_REGISTRY_DECISION_AND_EDIT_COMPLETION_2026-06-27.md",
+    "registry": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json",
+    "activeWindowRegistry": "governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json",
+    "entriesAdded": [
+      "governance-hook-chain-to-learning-intake",
+      "memory-consolidation-to-learning-signal",
+      "memory-knowledge-graph-to-retrieval",
+      "dir-dice-to-downstream-adapter-eligibility",
+      "epistemic-process-to-claim-update"
+    ],
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit 75fcad20",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync",
+      "check_system_loop_interlock.py PASS with registry count 20"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 machine-check coverage tranche for remaining FPC checker gaps, recommended first source-verified candidate FPC-T3-C06 rawMemoryReleased=false/local-governance autorun coverage or FPC-T3-C02 DICE machine-candidate coverage.",
+    "claimBoundary": "Structural system-loop interlock registry visibility only. No runtime/provider/live/public/use-case readiness, downstream adapter capability, Policy_Local, Document Translator, Model Gateway/Sandbox runtime, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  }
+}

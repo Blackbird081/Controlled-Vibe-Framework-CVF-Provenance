@@ -1,0 +1,35 @@
+{
+  "stateOrder": 1290,
+  "stateKey": "fpcScgT7FoundationSystemChainAcceptanceLedgerClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_AND_DOWNSTREAM_REOPEN_GATE_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_AND_DOWNSTREAM_REOPEN_GATE_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_AND_DOWNSTREAM_REOPEN_GATE_COMPLETION_2026-06-27.md",
+    "ledger": "docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json",
+    "checker": "governance/compat/check_fpc_system_chain_acceptance_ledger.py",
+    "focusedTest": "governance/compat/test_check_fpc_system_chain_acceptance_ledger.py",
+    "guidance": "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+    "upstreamClosures": [
+      "FPC-SCG-T1 P0 registry visibility at 75fcad20",
+      "FPC-SCG-T2 FPC-T3-C06 raw-memory invariant coverage at be253923",
+      "FPC-SCG-T3 FPC-T3-C02 DICE machine-candidate coverage at be253923",
+      "FPC-SCG-T4 FPC-T3-C05 worker-return fast-gate coverage at be253923",
+      "FPC-SCG-T5 expected-chain manifest source verification at be253923",
+      "FPC-SCG-T6 expected-chain checker extension at be253923",
+      "FPC-SCG-T0 roadmap refresh at be253923"
+    ],
+    "verification": [
+      "pre-implementation autorun PASS at receipt .cvf/runtime/autorun-receipts/pre-implementation.json",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "focused checker PASS: python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce",
+      "focused pytest PASS: python -m pytest governance/compat/test_check_fpc_system_chain_acceptance_ledger.py -q, 4 passed",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "acceptanceVerdict": "FOUNDATION_SYSTEM_CHAIN_ACCEPTED_BOUNDED",
+    "downstreamGatePosture": "PARKED_UNTIL_OPERATOR_LANE_SELECTION_AND_T7_CHECKER_PASS",
+    "nextAllowedMove": "Hold downstream lanes, or open a fresh GC-018/source-verified downstream-lane selection decision only if the operator selects one specific downstream lane and the FPC system-chain acceptance ledger checker passes on current HEAD.",
+    "claimBoundary": "Acceptance ledger/checker and reopen-gate definition only. No downstream runtime/provider/public/use-case implementation, MPI-T6 runtime, resolver, adapter, package, certification, generated workspace state mutation beyond session sync, public-sync, push, or reopening of P0/C06/C02/C05/T5/T6/T0/T7 without regression evidence."
+  }
+}

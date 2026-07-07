@@ -1,0 +1,41 @@
+{
+  "stateOrder": 652,
+  "stateKey": "scplT2SkillSelectionGuidanceClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "25361957",
+    "fullMaterialCommit": "2536195794cb4c99be6cb6aa7356c57b76232f2a",
+    "baseline": "docs/baselines/CVF_GC018_SCPL_T2_SKILL_SELECTION_GUIDANCE_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCPL_T2_SKILL_SELECTION_GUIDANCE_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_SCPL_T2_SKILL_SELECTION_GUIDANCE_COMPLETION_2026-06-30.md",
+    "standard": "docs/reference/agent_system_skills/CVF_SKILL_SELECTION_GUIDANCE_STANDARD.md",
+    "selectionProfiles": "docs/reference/agent_system_skills/control_plane/source/skill-selection-profiles.json",
+    "inventory": "docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
+    "generator": "governance/compat/generate_skill_control_plane_inventory.py",
+    "cli": "governance/compat/run_skill_control_plane_inventory.py",
+    "checker": "governance/compat/check_skill_control_plane_inventory.py",
+    "test": "governance/compat/test_skill_control_plane_inventory.py",
+    "inventoryReadout": {
+      "assfRegistryEntries": 32,
+      "packageRoots": 24,
+      "runtimeEligiblePackages": 6,
+      "activationReadyPackages": 6,
+      "cliMcpAdapterPackages": 6,
+      "selectionProfiledPackages": 24,
+      "webProjectionItems": 28,
+      "crossSurfaceDriftViolations": 0
+    },
+    "scope": "domain classification and deterministic spec-to-skill recommendation guidance for all 24 package roots",
+    "verification": [
+      "focused unittest PASS: python -m unittest governance.compat.test_skill_control_plane_inventory",
+      "checker PASS: python governance/compat/check_skill_control_plane_inventory.py --enforce",
+      "CLI summary PASS: python governance/compat/run_skill_control_plane_inventory.py --summary-only",
+      "CLI spec recommendation PASS: python governance/compat/run_skill_control_plane_inventory.py --spec-text \"Build a secure login flow with authorization checks, secrets handling, and tests\" --top 5",
+      "pre-dispatch autorun PASS",
+      "pre-implementation autorun PASS",
+      "commit steward implementation preflight PASS",
+      "pre-commit hook PASS"
+    ],
+    "claimBoundary": "selection guidance/read-model only; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or broader production-readiness expansion."
+  }
+}

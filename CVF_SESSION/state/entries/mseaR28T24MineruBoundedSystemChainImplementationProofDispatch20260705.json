@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1488,
+  "stateKey": "mseaR28T24MineruBoundedSystemChainImplementationProofDispatch20260705",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-05",
+    "materialCommit": "ab92e6191",
+    "dispatchBaseHead": "be5786121",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T24_MINERU_BOUNDED_SYSTEM_CHAIN_IMPLEMENTATION_AND_PROOF_2026-07-05.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T24_MINERU_BOUNDED_SYSTEM_CHAIN_IMPLEMENTATION_AND_PROOF_2026-07-05.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T25_MINERU_BOUNDED_SYSTEM_CHAIN_ROUTE_CANDIDATE_WORKER_RETURN_2026-07-05.md",
+    "releaseDecisionMatrixPath": "docs/reference/CVF_MSEA_R28_T26_MINERU_SYSTEM_CHAIN_RELEASE_DECISION_MATRIX_2026-07-05.md",
+    "acceptanceLedgerPath": "docs/reference/CVF_MSEA_R28_T27_MINERU_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-07-05.md",
+    "smokeProofPath": "docs/reviews/CVF_MSEA_R28_T28_MINERU_SYSTEM_CHAIN_DETERMINISTIC_SMOKE_PROOF_2026-07-05.md",
+    "selectedDisposition": "T25_T28_BOUNDED_SYSTEM_CHAIN_WORKER_EXECUTION_READY",
+    "productionRouteDisposition": "PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T24_DISPATCH_ONLY",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_T25_T28_BOUNDED_SYSTEM_CHAIN_WORKER_SCOPE_UNDER_T24_WORK_ORDER",
+    "claimBoundary": "R28-T24 dispatch authorizes only bounded local foundation-plane T25-T28 work. It does not authorize production memory/RAG route release, production durable-store invocation beyond deterministic local in-process test scope, file-backed production persistence, vectorization, retrieval, MinerU runtime, private/generated output content read, Candidate Group A import, provider/live proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, Python source/test edits for Pylance, durable store/runtime hierarchy/root barrel edits except the named T25 helper, provider-local or IDE config edits, checker/hook implementation, worker commit, or push."
+  }
+}

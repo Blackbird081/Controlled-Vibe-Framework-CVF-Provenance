@@ -1,0 +1,34 @@
+{
+  "stateOrder": 1438,
+  "stateKey": "mseaR28T4MineruReceiptBoundaryCheckerImplementationClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "0c81b7bc",
+    "materialCommitFull": "0c81b7bc6e6d6d657148358063a11c3958345726",
+    "executionBaseHead": "55961ef2",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T4_MINERU_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION_WORKER_RETURN_2026-07-04.md",
+    "implementedPaths": [
+      "governance/compat/check_mineru_receipt_boundary.py",
+      "governance/compat/test_check_mineru_receipt_boundary.py",
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_pre_push.py"
+    ],
+    "selectedImplementationDisposition": "RECEIPT_BOUNDARY_CHECKER_IMPLEMENTED_AND_WIRED",
+    "checkerDisposition": "ACTIVE_GOVERNANCE_GATE_FOR_FUTURE_COMMITTED_MINERU_RECEIPTS",
+    "memoryRouteDisposition": "MEMORY_ROUTE_STILL_HELD_AFTER_CHECKER_IMPLEMENTATION",
+    "nextRecommendedMove": "AUTHOR_MSEA_R28_T5_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_FOR_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION",
+    "verification": [
+      "reviewer repair added privateOutputDisposition validation and focused test",
+      "focused unittest PASS 19/19",
+      "worker-return fast gate PASS after reviewer repair",
+      "pre-implementation autorun PASS 75/75 after reviewer repair",
+      "reviewer-return commit steward preflight PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T4 closure accepts a local deterministic MinerU metadata receipt-boundary checker, focused tests, and bounded autorun/pre-commit/pre-push catalog wiring. It does not run MinerU, read private or generated content, create a receipt instance, release memory/RAG, implement a memory adapter, run provider/live proof, public-sync, build an app, or claim extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1327,
+  "stateKey": "agskT7PackageCandidateExpansionClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "aa4d932a",
+    "dispatchCommit": "9ee75a5e",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_2026-06-29.md",
+    "workerReturn": "docs/reviews/CVF_AGSK_T7_PACKAGE_CANDIDATE_EXPANSION_FROM_SOURCE_PACK_WORKER_RETURN_2026-06-29.md",
+    "registryEntriesAdded": [
+      "docs/reference/agent_system_skills/registry/entries/cvf-engineering-spec-driven-development.json",
+      "docs/reference/agent_system_skills/registry/entries/cvf-engineering-planning-task-breakdown.json",
+      "docs/reference/agent_system_skills/registry/entries/cvf-governance-anti-rationalization-guard.json",
+      "docs/reference/agent_system_skills/registry/entries/cvf-governance-context-packet-builder.json",
+      "docs/reference/agent_system_skills/registry/entries/cvf-governance-evidence-receipt-review-freeze.json",
+      "docs/reference/agent_system_skills/registry/entries/cvf-governance-persona-skill-boundary-review.json"
+    ],
+    "generatedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "verification": [
+      "worker-return fast gate PASS",
+      "reviewer-fast governance hook PASS",
+      "ASSF skill index drift PASS",
+      "absorption blind-spot control presence PASS",
+      "pre-commit governance hook PASS"
+    ],
+    "nextAllowedMove": "operator/reviewer selects either the next external repo/folder absorption target under the full-value absorption rule, or opens a fresh source-verified AGSK-T6 checker value probe now that multiple ASSF CANDIDATE fixtures exist",
+    "claimBoundary": "metadata-only ASSF registry candidate expansion; no package root, SKILL.md, checker implementation, resolver mutation, runtime activation, provider/live proof, public-sync, package activation, lifecycle promotion, external CLI/MCP adapter, direct pack checker import, or production-readiness claim"
+  }
+}

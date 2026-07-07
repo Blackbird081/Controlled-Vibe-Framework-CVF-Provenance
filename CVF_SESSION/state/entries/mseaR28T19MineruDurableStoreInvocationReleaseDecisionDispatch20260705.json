@@ -1,0 +1,27 @@
+{
+  "stateOrder": 1469,
+  "stateKey": "mseaR28T19MineruDurableStoreInvocationReleaseDecisionDispatch20260705",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-05",
+    "dispatchMaterialCommit": "8db612b0",
+    "dispatchMaterialCommitFull": "8db612b020f226c753348f608517550bc31fb295",
+    "dispatchBaseHead": "70632c8c",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_2026-07-05.md",
+    "workerMatrixPath": "docs/reference/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_MATRIX_2026-07-05.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R28_T19_MINERU_DURABLE_STORE_INVOCATION_RELEASE_DECISION_COMPLETION_2026-07-05.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "DURABLE_STORE_INVOCATION_RELEASE_DECISION_DISPATCH_READY",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T19_DISPATCH",
+    "durableStoreInvocationDisposition": "DURABLE_STORE_INVOCATION_NOT_AUTHORIZED_BY_T19_DISPATCH",
+    "nextRecommendedMove": "EXECUTE_MSEA_R28_T19_NO_COMMIT_WORKER_RETURN_FOR_DURABLE_STORE_INVOCATION_RELEASE_DECISION",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T19 dispatch authored a source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a docs-only durable-store invocation release decision. It does not authorize actual memory/RAG write, durable-store invocation, vectorization, retrieval, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, Learning Plane source edits, checker/hook/session/handoff edits by worker, worker commit, or push."
+  }
+}

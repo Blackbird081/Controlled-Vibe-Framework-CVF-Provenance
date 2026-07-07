@@ -1,0 +1,24 @@
+{
+  "stateOrder": 564,
+  "stateKey": "mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionDispatch20260706",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-06",
+    "materialCommit": "2931cd918",
+    "materialCommitFull": "2931cd9189d0abdd61733afa78a83d3c19e3f78d",
+    "dispatchBaseHead": "2368d1266",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-06.md",
+    "workerTargetPath": "docs/reference/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "R39_T1_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_AUTHORIZED_DOCS_ONLY",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_R39_T1_DOCS_ONLY_WORKER_THEN_RETURN_FOR_REVIEW_NO_COMMIT",
+    "claimBoundary": "R39-T1 dispatch authorizes only a docs-only source-verified authority decision about the production Memory/RAG route release lane. It does not authorize source/test edits, MinerU runtime execution, private/generated output content read, production durable-store invocation, production Memory/RAG route invocation or release, file-backed production persistence, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, interface/root-barrel/runtime wiring, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}

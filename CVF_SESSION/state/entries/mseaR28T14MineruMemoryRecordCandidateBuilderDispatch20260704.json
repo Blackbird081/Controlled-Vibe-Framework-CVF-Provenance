@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1459,
+  "stateKey": "mseaR28T14MineruMemoryRecordCandidateBuilderDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-04",
+    "materialCommit": "1b0a50fd",
+    "materialCommitFull": "1b0a50fd5e568bc9fdedc4995ddc9869d712bdde",
+    "dispatchBaseHead": "ef99f417",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_2026-07-04.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_WORKER_RETURN_2026-07-04.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedImplementationDisposition": "MEMORY_RECORD_CANDIDATE_BUILDER_DISPATCH",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T14_DISPATCH",
+    "futureAuthorityRequired": "FUTURE_MEMORY_STORE_WRITE_AUTHORITY_REQUIRED",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "Dispatch authorizes only deterministic metadata-only candidate-builder source/test implementation and a worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, checker/hook/session edits, actual memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, session-sync by worker, worker commit, or push."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "stateOrder": 637,
+  "stateKey": "kiodR8SourceIntakeDecisionPacketPreflightDispatch20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "ce92d715",
+    "materialCommitFull": "ce92d715276a702de5a024e2d8720d7d9bb616c1",
+    "closureCommit": "303e62b9",
+    "closureCommitFull": "303e62b9ebbb3868686043e35174635c28daa797",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Authorizes a bounded guard-foundation worker tranche to create the KIOD-R8 source-intake decision packet standard, implement a range-aware preflight checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push catalog wiring.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base d77d5f52 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base d77d5f52 --head HEAD --enforce PASS",
+      "git diff --check PASS",
+      "pre-commit governance hook PASS 75/75",
+      "python -m unittest governance.compat.test_source_intake_decision_packet_preflight -v PASS 20/20",
+      "python governance/compat/check_source_intake_decision_packet_preflight.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4543b227 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 4543b227 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 76/76"
+    ],
+    "claimBoundary": "Closed local governance preflight only. No EverOS, CodeGraph, or other outside-source absorption pilot, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle mutation, action authority, automatic invocation, helper implementation, or production-readiness claim is authorized."
+  }
+}

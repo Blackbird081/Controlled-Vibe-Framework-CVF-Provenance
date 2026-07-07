@@ -1,0 +1,27 @@
+{
+  "stateOrder": 717,
+  "stateKey": "kiodR5PacketBlockedPilotDispatch20260630",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "2924fddd",
+    "materialCommitFull": "2924fddd51c5a0a3da1ad4dc42cfa8f7ebc68917",
+    "handoffSyncBeforeDispatch": "49a0dd74",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md",
+    "sourceRepo": "https://github.com/EverMind-AI/EverOS.git",
+    "sourceRepoHead": "0341f1230fef170d28d83c4295ab9d93570b0f2d",
+    "selectedLocalFolder": ".private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store",
+    "selectedFileCount": 26,
+    "workerReturn": "docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md",
+    "nextAllowedMove": "WORKER_MUST_NOT_COMMIT executes KIOD-R5 and returns one uncommitted worker-return artifact only.",
+    "verification": [
+      "external upstream HEAD verified by git ls-remote",
+      "selected local folder enumerated at 26 files",
+      "work-order dispatch quality PASS",
+      "pre-dispatch autorun PASS",
+      "commit steward dispatch PASS",
+      "pre-commit PASS 73/73"
+    ],
+    "claimBoundary": "Dispatch packet only. No checker implementation, runtime/provider behavior, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit outside session sync, automatic invocation, action authority, package lifecycle mutation, or production-readiness claim."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1457,
+  "stateKey": "mseaR28T13MineruMemoryWriteAuthorityDecisionDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-04",
+    "materialCommit": "66f0f3c6",
+    "materialCommitFull": "66f0f3c619b1b670782f5a6ec324ed74876f72f4",
+    "dispatchBaseHead": "4cd04307",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "matrixPath": "docs/reference/CVF_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_MATRIX_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T13_MINERU_MEMORY_WRITE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-04.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDecisionDisposition": "MEMORY_WRITE_AUTHORITY_DECISION_DISPATCH",
+    "memoryWriteDisposition": "MEMORY_WRITE_STILL_NOT_AUTHORIZED_BY_T13_DISPATCH",
+    "futureAuthorityRequired": "FUTURE_MEMORY_RECORD_CANDIDATE_WORK_ORDER_REQUIRED",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "Dispatch authorizes only a docs-only memory-write authority decision matrix and worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, source/test/checker/hook edits, actual memory/RAG write, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, session-sync by worker, worker commit, or push."
+  }
+}

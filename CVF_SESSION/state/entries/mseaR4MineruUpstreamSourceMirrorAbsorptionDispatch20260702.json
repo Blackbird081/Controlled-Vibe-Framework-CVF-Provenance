@@ -1,0 +1,19 @@
+{
+  "stateOrder": 682,
+  "stateKey": "mseaR4MineruUpstreamSourceMirrorAbsorptionDispatch20260702",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "d44c4646",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_WORKER_RETURN_2026-07-02.md",
+    "ownerSurfaceDelta": "docs/reference/CVF_MSEA_R4_MINERU_UPSTREAM_OWNER_SURFACE_DELTA_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "sourceMirrorManifestSha256": "3a0ad960e1d8fc663c5f099c27f8416a0b2d8147718e9788ee298dd653da6a81",
+    "trackedFileCount": 425,
+    "summary": "MSEA-R4 dispatch authorizes a no-commit worker to reconcile the freshly pinned MinerU source mirror against prior MSEA-T0/T1/T2/T3 evidence and current CVF extraction owner surfaces. The worker must produce a worker return plus owner-surface delta reference only; runtime/provider/live/source-import/package/public/Web/MCP/model-router/action-authority/production claims remain forbidden."
+  }
+}

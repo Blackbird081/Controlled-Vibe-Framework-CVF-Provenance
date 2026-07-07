@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1465,
+  "stateKey": "mseaR28T17MineruDurableMemoryWriteAuthorityDecisionDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-04",
+    "materialCommit": "b62e1be3",
+    "materialCommitFull": "b62e1be396e51e0c25b05a6f1312c7eb158c8feb",
+    "dispatchBaseHead": "f0800b95",
+    "dispatchBaseHeadFull": "f0800b95612187060bf61b7c67536d592bf80d29",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_MATRIX_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T17_MINERU_DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-04.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "DURABLE_MEMORY_WRITE_AUTHORITY_DECISION_DISPATCH",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T17_DISPATCH",
+    "futureAuthorityRequired": "T17_WORKER_RETURN_AND_REVIEW_REQUIRED_BEFORE_ANY_DURABLE_MEMORY_WRITE_RELEASE",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "Dispatch authorizes only docs-only durable-memory write authority decision matrix and T17 worker return. It does not authorize source/test/checker/hook/session/handoff edits by worker, actual memory/RAG write, durable-store invocation, vectorization, retrieval, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}

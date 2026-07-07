@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1319,
+  "stateKey": "agskT4RiskTriggersWorkOrderDispatch20260629",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-06-29",
+    "roadmap": "docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md",
+    "dispatchBaseHead": "d8b14a2e",
+    "dispatchMaterialCommit": "11590704",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute AGSK-T4 only: patch riskTriggers into CVF_ASSF_PACKAGE_CONTRACT.md and return worker evidence without commit.",
+    "claimBoundary": "documentation-only contract patch dispatch; no registry candidate, generated index, package body, checker, runtime, provider/live proof, public-sync, session sync by worker, package activation, or production-readiness claim"
+  }
+}

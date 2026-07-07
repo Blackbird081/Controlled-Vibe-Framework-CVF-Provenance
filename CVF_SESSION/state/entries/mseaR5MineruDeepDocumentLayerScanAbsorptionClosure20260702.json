@@ -1,0 +1,24 @@
+{
+  "stateOrder": 687,
+  "stateKey": "mseaR5MineruDeepDocumentLayerScanAbsorptionClosure20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "1bac8163",
+    "dispatchCommit": "7bb7b509",
+    "workerReturn": "docs/reviews/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_WORKER_RETURN_2026-07-02.md",
+    "ownerSurfaceDelta": "docs/reference/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_OWNER_SURFACE_DELTA_2026-07-02.md",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "targetSubsetCount": 373,
+    "newCandidateEvidence": [
+      "mineru/utils/llm_aided.py caller-supplied OpenAI-compatible api_key/base_url for config-gated title correction",
+      "mineru/data/io/s3.py credential-requiring S3Reader via on-demand boto3 import",
+      "docs/zh/usage/plugin/RagFlow.md concrete RagFlow built-in PDF parser integration evidence",
+      "docs/en/reference/output_files.md output receipt schema evidence for layout/span/model/middle/content list artifacts"
+    ],
+    "blindSpotVerdict": "PARTIAL",
+    "summary": "MSEA-R5 accepted the no-commit deep documentation/reference absorption for MinerU. It sharpened document-layer scan value mapping and recorded deferred runtime/storage/provider candidates without authorizing implementation."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "stateOrder": 683,
+  "stateKey": "mseaR4MineruUpstreamSourceMirrorAbsorptionClosure20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "a6ddd8ba",
+    "dispatchCommit": "d44c4646",
+    "sessionSyncBeforeClosure": "514220ac",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R4_MINERU_UPSTREAM_SOURCE_MIRROR_ABSORPTION_WORKER_RETURN_2026-07-02.md",
+    "ownerSurfaceDelta": "docs/reference/CVF_MSEA_R4_MINERU_UPSTREAM_OWNER_SURFACE_DELTA_2026-07-02.md",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "sourceMirrorManifestSha256": "3a0ad960e1d8fc663c5f099c27f8416a0b2d8147718e9788ee298dd653da6a81",
+    "corpusVerdict": "PARTIAL",
+    "nextRecommendedMove": "MSEA-R5_DEEP_LAYER_SCAN_ABSORPTION_WORK_ORDER_AUTHORING",
+    "summary": "MSEA-R4 accepted the no-commit MinerU source mirror worker return after reviewer repair. The mirror reconciled to 425/425 files with matching commit/count/hash and recorded high-value CLI and Docker candidate evidence, while retaining a PARTIAL blind-spot verdict for docs/ and non-CLI mineru/ internals read only at structural/group depth. No runtime, install, model download, OCR/VLM/hybrid/parser/API/router/Gradio/Docker/RAG execution, provider/live proof, source import, public-sync, package activation, checker implementation, Web/MCP/model-router/action-authority, benchmark, or production-readiness claim is made."
+  }
+}

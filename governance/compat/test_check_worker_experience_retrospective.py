@@ -135,6 +135,22 @@ class EligibilityTests(unittest.TestCase):
     def test_non_md_excluded(self):
         self.assertFalse(chk.is_eligible_worker_return("x.py", _VALID_STRUCT))
 
+    def test_self_declared_reference_standard_excluded(self):
+        self.assertFalse(
+            chk.is_eligible_worker_return(
+                "docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md",
+                _SELF_DECLARED,
+            )
+        )
+
+    def test_self_declared_fixture_excluded(self):
+        self.assertFalse(
+            chk.is_eligible_worker_return(
+                "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+                _SELF_DECLARED,
+            )
+        )
+
 
 class DiagnoseTests(unittest.TestCase):
     def test_valid_struct_is_clean(self):

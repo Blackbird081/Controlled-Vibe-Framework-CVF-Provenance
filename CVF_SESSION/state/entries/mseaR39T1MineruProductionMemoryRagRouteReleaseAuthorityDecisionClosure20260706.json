@@ -1,0 +1,29 @@
+{
+  "stateOrder": 565,
+  "stateKey": "mseaR39T1MineruProductionMemoryRagRouteReleaseAuthorityDecisionClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "bdc865ce0",
+    "materialCommitFull": "bdc865ce0a32e594f5075fc1e466a64b6a61c479",
+    "closureBaseHead": "3395a9f2e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R39_T1_MINERU_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_AUTHORITY_DECISION_COMPLETION_2026-07-06.md",
+    "selectedDisposition": "R39_PRODUCTION_MEMORY_RAG_ROUTE_RELEASE_HELD_PENDING_AUTHORITY_GAPS",
+    "closureDisposition": "R39_T1_AUTHORITY_DECISION_COMPLETE_HELD_PENDING_AUTHORITY_GAPS",
+    "reviewerRepair": [
+      "Replaced stale session-front-door Source Verification row with current R39 dispatch evidence and stable R38 T4/R38 completion evidence",
+      "Restored TypeScript function-definition citations to physical source lines 93 and 78 after reviewer verification"
+    ],
+    "verification": [
+      "worker-return fast gate PASS after reviewer repair",
+      "reviewer-return commit steward PASS",
+      "pre-closure material range PASS except expected active-handoff HEAD marker pending session-sync",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "AUTHOR_MEMORY_OWNER_AUTHORIZATION_PACKET_OR_STOP_NO_IMPLEMENTATION",
+    "claimBoundary": "R39-T1 closes only the docs-only production Memory/RAG route release authority decision. Production Memory/RAG route release remains held pending authority gaps. No implementation, source/test edit, MinerU runtime execution, private/generated output content read, production durable-store invocation, production Memory/RAG route invocation or release, file-backed production persistence, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, interface/root-barrel/runtime wiring, provider-local or IDE config edits, worker commit, push, or public claim is authorized."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1314,
+  "stateKey": "legacySourceFolderConsolidation20260629",
+  "value": {
+    "status": "ACTIVE_PATH_POINTER_UPDATE",
+    "date": "2026-06-29",
+    "operatorInstruction": "Operator consolidated the external repos and folders absorbed on 2026-06-28 under a single ignored legacy root.",
+    "legacyRoot": ".private_reference/legacy/CVF 28.06",
+    "retainedFolders": [
+      ".private_reference/legacy/CVF 28.06/CodeGraph",
+      ".private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store",
+      ".private_reference/legacy/CVF 28.06/CVF_Agent_Engineering_Control_Standard",
+      ".private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack",
+      ".private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter",
+      ".private_reference/legacy/CVF 28.06/CVF_Product_Requirement_Governance",
+      ".private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE",
+      ".private_reference/legacy/CVF 28.06/CVF_Truth_Kernel_Patch",
+      ".private_reference/legacy/CVF 28.06/CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE"
+    ],
+    "boundary": "Path pointer update only. Does not reopen closed absorption lanes, change material absorption decisions, authorize runtime/provider/live/public-sync/package/import/checker work, or convert retained external folders into CVF source of truth."
+  }
+}

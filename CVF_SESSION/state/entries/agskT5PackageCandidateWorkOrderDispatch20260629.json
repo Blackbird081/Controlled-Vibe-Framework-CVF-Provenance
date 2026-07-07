@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1321,
+  "stateKey": "agskT5PackageCandidateWorkOrderDispatch20260629",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-06-29",
+    "roadmap": "docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md",
+    "dispatchBaseHead": "3ce884c9",
+    "dispatchMaterialCommit": "1cc52d7a",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "plannedRegistryEntry": "docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json",
+    "plannedGeneratedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "plannedWorkerReturn": "docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md",
+    "nextAllowedMove": "Execute AGSK-T5 only: create the metadata-only CANDIDATE registry entry, regenerate the generated skill index, and return worker evidence without commit.",
+    "claimBoundary": "documentation and metadata-only registry-candidate dispatch; no package root, SKILL.md, resolver, checker, runtime, provider/live proof, public-sync, session sync by worker, package activation, lifecycle promotion, or production-readiness claim"
+  }
+}

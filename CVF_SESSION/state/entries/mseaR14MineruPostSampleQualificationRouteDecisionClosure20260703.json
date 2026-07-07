@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1401,
+  "stateKey": "mseaR14MineruPostSampleQualificationRouteDecisionClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "7ce21cbd",
+    "materialCommitFull": "7ce21cbd361b76094c7114a13fafe4a2d793a4e2",
+    "dispatchCommit": "b51cbb84",
+    "sessionSyncAfterDispatch": "d80e517b",
+    "executionBaseHead": "d80e517b",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "selectedRouteToken": "OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerReturnCommitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "If the operator chooses to continue this lane, author a fresh GC-018 baseline and source-verified work order for bounded sample-stressor provenance-gap closure only: permission/license statement, privacy/redaction disposition, proof-use confirmation, and reviewer closure routing before any sample corpus population.",
+    "claimBoundary": "Closed bounded route-decision documentation only. No route execution, operator-confirmation collection outside a fresh work order, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or runtime reopen condition was authorized or accepted."
+  }
+}

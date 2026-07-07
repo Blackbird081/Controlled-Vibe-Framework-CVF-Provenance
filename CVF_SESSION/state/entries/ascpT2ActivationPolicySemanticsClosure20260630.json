@@ -1,0 +1,24 @@
+{
+  "stateOrder": 642,
+  "stateKey": "ascpT2ActivationPolicySemanticsClosure20260630",
+  "value": {
+    "batchId": "ASCP-T2",
+    "materialCommit": "4d87c832",
+    "fullMaterialCommit": "4d87c832867500be810f6a7774c9dddd234aadfe",
+    "disposition": "CLOSED_PASS_BOUNDED",
+    "standard": "docs/reference/agent_system_skills/CVF_ASSF_ACTIVATION_POLICY_SEMANTICS_STANDARD.md",
+    "helper": "governance/compat/run_assf_activation_policy_resolver.py",
+    "tests": "governance/compat/test_run_assf_activation_policy_resolver.py",
+    "roadmap": "docs/roadmaps/CVF_ASSF_ACTIVE_RESOLVER_AND_ADAPTER_PILOT_ROADMAP_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T2_ACTIVATION_POLICY_SEMANTICS_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ASCP_T2_ACTIVATION_POLICY_SEMANTICS_COMPLETION_2026-06-30.md",
+    "verification": [
+      "python -m unittest governance.compat.test_run_assf_active_resolver governance.compat.test_run_assf_activation_policy_resolver PASS, 14 tests",
+      "policy resolver smoke returned ACTIVATION_READY",
+      "policy resolver body-read-request smoke returned BODY_READ_REQUESTED",
+      "pre-commit hook PASS, 69 checks"
+    ],
+    "claimBoundary": "ASCP-T2 classifies activation policy state only. It does not activate packages, mutate lifecycle sources, read package instruction bodies, emit skill usage receipts, implement external adapters, call providers, public-sync, or grant action authority.",
+    "nextAllowedMove": "ASCP-T3 CLI/MCP adapter projection using resolver output and the external readout allowlist through fresh GC-018/work order."
+  }
+}

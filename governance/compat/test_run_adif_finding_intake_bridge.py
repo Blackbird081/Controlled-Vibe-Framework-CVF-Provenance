@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import importlib.util
+import io
 import sys
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 MODULE_PATH = Path(__file__).resolve().with_name("run_adif_finding_intake_bridge.py")
@@ -119,6 +121,26 @@ class FindingIntakeBridgeTests(unittest.TestCase):
         }
         self.assertEqual(len(outcomes), 5)
         self.assertEqual(outcomes, MODULE._VALID_OUTCOMES)
+
+    def test_human_text_names_outcome_and_claim_boundary(self) -> None:
+        outcome = MODULE.classify_finding(MODULE.FindingIntakeRequest(summary="new pattern"))
+        text = outcome.to_human_text()
+        self.assertIn("Outcome: PROPOSE_NEW_GUIDANCE_ONLY_CANDIDATE", text)
+        self.assertIn("does not create, modify, or promote", text)
+
+    def test_cli_json_output_uses_outcome_shape(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            exit_code = MODULE.main(["--summary", "known", "--matching-defect-id", "ADIF-0001", "--json"])
+        self.assertEqual(exit_code, 0)
+        self.assertIn('"outcome": "LINK_TO_EXISTING_ENTRY"', buffer.getvalue())
+
+    def test_cli_human_output_names_session_local_rejection(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            exit_code = MODULE.main(["--summary", "local", "--session-local"])
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Outcome: REJECT_AS_NON_REUSABLE", buffer.getvalue())
 
 
 if __name__ == "__main__":

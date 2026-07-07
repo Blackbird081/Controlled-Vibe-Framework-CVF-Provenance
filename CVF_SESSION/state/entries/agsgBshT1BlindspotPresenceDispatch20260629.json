@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1312,
+  "stateKey": "agsgBshT1BlindspotPresenceDispatch20260629",
+  "value": {
+    "status": "CLOSED_BY_IMPLEMENTATION",
+    "materialCommit": "5ae9cb9e",
+    "baseline": "docs/baselines/CVF_GC018_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md",
+    "adifEntry": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0014.md",
+    "adifIndex": "docs/reference/agent_defect_intelligence/entries/README.md",
+    "decision": "IMPLEMENTED_AND_CLOSED_AT_328DE12B",
+    "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
+    "summary": "AGSG-BSH-T1 records the scope-triggered absorption blind-spot presence checker dispatch packet authored by Claude. The implementation and reviewer closeout landed at material commit 328de12b with the named checker, focused tests, hook/catalog wiring, worker return update, and completion review. The closure remains an offline governance checker claim only and does not authorize provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claims."
+  }
+}

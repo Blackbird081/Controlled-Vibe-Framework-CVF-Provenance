@@ -1,0 +1,28 @@
+{
+  "stateOrder": 688,
+  "stateKey": "mseaR6MineruApplicationRouteDecisionDispatch20260702",
+  "value": {
+    "status": "CLOSED_BY_2d0b05c4",
+    "materialCommit": "6ab29617",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_AND_ADAPTER_READINESS_SELECTION_WORKER_RETURN_2026-07-02.md",
+    "routeDecisionMatrix": "docs/reference/CVF_MSEA_R6_MINERU_APPLICATION_ROUTE_DECISION_MATRIX_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "routeCandidates": [
+      "OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT",
+      "OPEN_LOCAL_PARSER_ADAPTER_VALUE_PROBE",
+      "OPEN_RAG_HANDOFF_ROUTE_PROBE",
+      "OPEN_PROVIDER_ASSISTED_TITLE_CORRECTION_PROBE",
+      "OPEN_STORAGE_CREDENTIAL_BOUNDARY_PROBE",
+      "OPEN_CHECKER_CANDIDATE_VALUE_PROBE",
+      "HOLD_ALL_IMPLEMENTATION_LANES",
+      "BLOCKED_SOURCE_CONTRADICTION"
+    ],
+    "summary": "MSEA-R6 dispatch authorizes a no-commit worker to convert MSEA-R4/R5 MinerU absorption evidence into exactly one source-backed route decision or blocker. It does not authorize MinerU runtime execution, provider/live proof, credentials, S3/RAG use, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, or production-readiness claims."
+  }
+}

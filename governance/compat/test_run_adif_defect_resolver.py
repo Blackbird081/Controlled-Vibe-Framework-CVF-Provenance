@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import importlib.util
+import io
 import sys
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 MODULE_PATH = Path(__file__).resolve().with_name("run_adif_defect_resolver.py")
@@ -51,14 +53,15 @@ def _make_entry(
 class RealEntriesTests(unittest.TestCase):
     def test_real_entries_load_and_resolve_without_filesystem_mutation(self) -> None:
         entries_dir = MODULE.ENTRIES_DIR
-        before_listing = sorted(p.name for p in entries_dir.glob("*"))
+        before_listing = sorted(p.name for p in entries_dir.glob("CVF_ADIF-*.md"))
         entries = MODULE.load_entries()
-        self.assertEqual(len(entries), 9)
-        after_listing = sorted(p.name for p in entries_dir.glob("*"))
+        self.assertEqual(len(entries), len(before_listing))
+        self.assertGreaterEqual(len(entries), 9)
+        after_listing = sorted(p.name for p in entries_dir.glob("CVF_ADIF-*.md"))
         self.assertEqual(before_listing, after_listing)
 
         packet = MODULE.resolve_defect_packet(entries=entries)
-        self.assertEqual(packet.total_candidates, 9)
+        self.assertGreaterEqual(packet.total_candidates, 9)
         self.assertLessEqual(len(packet.items), 10)
         self.assertTrue(packet.to_dict()["claimBoundary"])
 
@@ -158,6 +161,20 @@ class FixtureEntryTests(unittest.TestCase):
     def test_risk_ceiling_rejects_unknown_value(self) -> None:
         with self.assertRaises(ValueError):
             MODULE.resolve_defect_packet(risk_ceiling="CRITICAL")
+
+    def test_cli_json_output_uses_existing_resolver_shape(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            exit_code = MODULE.main(["--task-class", "Nonexistent Task Class", "--json"])
+        self.assertEqual(exit_code, 0)
+        self.assertIn('"items": []', buffer.getvalue())
+
+    def test_cli_human_output_names_empty_return(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            exit_code = MODULE.main(["--task-class", "Nonexistent Task Class"])
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Returned defects: NONE_RETURNED", buffer.getvalue())
 
 
 if __name__ == "__main__":

@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1358,
+  "stateKey": "woasR6WorkerReturnStandardChecklistParityClosure20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "1c74075c",
+    "materialCommitFull": "1c74075c9949849ea14c475e275ad30276c67336",
+    "completionReview": "docs/reviews/CVF_WOAS_R6_WORKER_RETURN_STANDARD_CHECKLIST_PARITY_COMPLETION_2026-07-01.md",
+    "standard": "docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md",
+    "testPath": "governance/compat/test_check_worker_return_quality_gate.py",
+    "closureSummary": "Added worker-return authoring checklist text that mirrors checker constants and focused parity tests so future required heading/token drift is caught before workers rediscover it through gate failure.",
+    "verification": [
+      "python -m unittest governance.compat.test_check_worker_return_quality_gate -v PASS 13/13",
+      "python governance/compat/check_worker_return_quality_gate.py --base c5acdcf9 --head HEAD --enforce PASS",
+      "python governance/compat/check_core_guard_self_protection.py --base c5acdcf9 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c5acdcf9 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base c5acdcf9 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 78/78 for material closure commit 1c74075c"
+    ],
+    "claimBoundary": "Worker-return authoring checklist and checker-standard parity tests only. No checker semantic change, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

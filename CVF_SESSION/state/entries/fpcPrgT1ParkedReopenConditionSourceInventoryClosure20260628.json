@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1298,
+  "stateKey": "fpcPrgT1ParkedReopenConditionSourceInventoryClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "ca60e1fd",
+    "baseline": "docs/baselines/CVF_GC018_FPC_PRG_T1_PARKED_REOPEN_CONDITION_SOURCE_INVENTORY_2026-06-28.md",
+    "completionReview": "docs/reviews/CVF_FPC_PRG_T1_PARKED_REOPEN_CONDITION_SOURCE_INVENTORY_COMPLETION_2026-06-28.md",
+    "inventory": "docs/reference/CVF_FPC_PRG_T1_PARKED_REOPEN_CONDITION_SOURCE_INVENTORY_2026-06-28.json",
+    "upstreamRoadmap": "docs/roadmaps/CVF_FPC_PRG_T0_PARKED_REOPEN_GATE_SYSTEMIZATION_ROADMAP_2026-06-28.md",
+    "decision": "INVENTORY_REOPEN_CONDITIONS_BEFORE_CHECKER_IMPLEMENTATION",
+    "selectedImplementationLane": "none",
+    "nextRecommendedTranche": "FPC-PRG-T2 Parked Reopen Gate Checker",
+    "verification": [
+      "python -m json.tool docs/reference/CVF_FPC_PRG_T1_PARKED_REOPEN_CONDITION_SOURCE_INVENTORY_2026-06-28.json PASS",
+      "python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce PASS",
+      "python governance/compat/check_markdown_structural_completeness.py --base 732ac3b7 --head HEAD --enforce PASS",
+      "python governance/compat/check_work_order_dispatch_quality.py --base 732ac3b7 --head HEAD --enforce PASS",
+      "python governance/compat/check_adif_defect_registry_disclosure.py --base 732ac3b7 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 732ac3b7 --head HEAD --enforce PASS"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "liveProofDisposition": "N/A with reason: FPC-PRG-T1 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Private provenance parked reopen condition inventory only. No checker implementation, hook wiring, public-sync, runtime/provider/live proof, MPI-T6 runtime work, Policy_Local or Document Translator implementation, adapter implementation, package activation, certification, generated-state mutation beyond session sync, or push from the provenance workspace."
+  }
+}

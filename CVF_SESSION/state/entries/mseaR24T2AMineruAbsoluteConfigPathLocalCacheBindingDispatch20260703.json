@@ -1,0 +1,30 @@
+{
+  "stateOrder": 1422,
+  "stateKey": "mseaR24T2AMineruAbsoluteConfigPathLocalCacheBindingDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "c6214814",
+    "materialCommitFull": "c6214814941993e9f3054a27b813a572cc86b9b6",
+    "dispatchBaseHead": "9a24c3b6",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_2026-07-03.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_READINESS_MATRIX_2026-07-03.md",
+    "selectedDispatchPurpose": "absolute config path plus local HuggingFace cache binding receipt recovery after accepted T2 did not write config",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedRouteTokens": [
+      "CONFIG_CACHE_RECEIPT_READY",
+      "HOLD_PENDING_ABSOLUTE_CONFIG_WRITEBACK_DIAGNOSTIC",
+      "HOLD_PENDING_LOCAL_CACHE_PATH_RECONCILIATION",
+      "HOLD_ALL_RUNTIME_LANES"
+    ],
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the T2A worker exactly inside the work order boundary: one HuggingFace pipeline cache-binding command using absolute MINERU_TOOLS_CONFIG_JSON under ignored .cvf/runtime, then uncommitted worker return and readiness matrix.",
+    "claimBoundary": "Dispatch only. The dispatch did not run the cache command, did not create config/cache receipt evidence, did not run runtime smoke, and did not claim parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, document processing, provider/live proof, public-sync, production readiness, stage, commit by worker, or push."
+  }
+}

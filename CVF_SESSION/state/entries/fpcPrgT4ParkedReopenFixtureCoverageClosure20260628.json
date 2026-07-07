@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1301,
+  "stateKey": "fpcPrgT4ParkedReopenFixtureCoverageClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "aa0d1276",
+    "baseline": "docs/baselines/CVF_GC018_FPC_PRG_T4_PARKED_REOPEN_FIXTURE_COVERAGE_2026-06-28.md",
+    "completionReview": "docs/reviews/CVF_FPC_PRG_T4_PARKED_REOPEN_FIXTURE_COVERAGE_COMPLETION_2026-06-28.md",
+    "checker": "governance/compat/check_fpc_parked_reopen_inventory.py",
+    "tests": "governance/compat/test_check_fpc_parked_reopen_inventory.py",
+    "decision": "FOCUSED_FIXTURE_COVERAGE_COMPLETE",
+    "selectedImplementationLane": "none",
+    "nextRecommendedTranche": "fresh source-verified next roadmap/tranche selection only",
+    "verification": [
+      "python -m unittest governance.compat.test_check_fpc_parked_reopen_inventory PASS with 8 tests",
+      "python governance/compat/check_fpc_parked_reopen_inventory.py --enforce PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base f925103e --head HEAD --enforce PASS",
+      "pre-commit hook PASS 60/60 at material commit aa0d1276"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "liveProofDisposition": "N/A with reason: FPC-PRG-T4 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Private provenance fixture coverage only. No runtime/provider/live proof, public-sync, MPI-T6 runtime work, Policy_Local or Document Translator implementation, adapter implementation, package activation, certification, generated-state mutation beyond session sync, or push from the provenance workspace."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1423,
+  "stateKey": "mseaR24T2AMineruAbsoluteConfigPathLocalCacheBindingClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "b53786d9",
+    "materialCommitFull": "b53786d9ca0770bd57be7070e8c478c4b519ca70",
+    "dispatchCommit": "c6214814",
+    "sessionPrerequisiteCommit": "b43f4bfa",
+    "workerExecutionBaseHead": "b43f4bfa",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T2A_MINERU_ABSOLUTE_CONFIG_PATH_AND_LOCAL_CACHE_BINDING_READINESS_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "CONFIG_CACHE_RECEIPT_READY",
+    "configWritebackReceipt": "CONFIG_WRITTEN_ABSOLUTE_PATH",
+    "runtimeSmokeGateDisposition": "READY_FOR_FRESH_T3_WORK_ORDER_AUTHORING_ONLY",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author fresh successor T3 GC-018 baseline and source-verified work order for bounded local MinerU pipeline runtime smoke using the accepted T2A config/cache receipt.",
+    "claimBoundary": "T2A config/cache receipt only. The accepted evidence wrote the absolute local config receipt and confirmed local HuggingFace pipeline cache binding. No runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup beyond the one authorized command process, source document body read, extraction output, provider/live proof, public-sync, production readiness, stage or commit by worker, or push was authorized or performed."
+  }
+}

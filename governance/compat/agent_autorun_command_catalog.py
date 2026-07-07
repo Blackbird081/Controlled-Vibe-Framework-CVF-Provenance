@@ -31,7 +31,10 @@ class GitStatusResult:
 RANGE_GATE_NAMES = (
     "docs governance compatibility",
     "markdown structural completeness",
+    "governed artifact checker read-ahead",
     "work-order dispatch quality",
+    "dispatch packet lifecycle hygiene",
+    "source intake decision packet preflight",
 )
 
 
@@ -73,14 +76,38 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "governed artifact checker read-ahead",
+            "governance/compat/check_governed_artifact_checker_read_ahead.py",
+            base,
+            head,
+        ),
+        _range_command(
             "work-order dispatch quality",
             "governance/compat/check_work_order_dispatch_quality.py",
             base,
             head,
         ),
         _range_command(
+            "worker-return quality gate",
+            "governance/compat/check_worker_return_quality_gate.py",
+            base,
+            head,
+        ),
+        _range_command(
             "ADIF defect registry disclosure",
             "governance/compat/check_adif_defect_registry_disclosure.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "dispatch packet lifecycle hygiene",
+            "governance/compat/check_dispatch_packet_lifecycle_hygiene.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "source intake decision packet preflight",
+            "governance/compat/check_source_intake_decision_packet_preflight.py",
             base,
             head,
         ),
@@ -169,6 +196,30 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "external absorption core",
+            "governance/compat/check_external_absorption_core.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "external absorption value conversion",
+            "governance/compat/check_external_absorption_value_conversion.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "external absorption overlap discipline",
+            "governance/compat/check_external_absorption_overlap_discipline.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "source mirror migration",
+            "governance/compat/check_source_mirror_migration.py",
+            base,
+            head,
+        ),
+        _range_command(
             "Delta mutating profile boundary",
             "governance/compat/check_delta_mutating_profile_boundary.py",
             base,
@@ -195,6 +246,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "corpus completeness and report integrity",
             "governance/compat/check_corpus_completeness_report_integrity.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "absorption blind-spot control presence",
+            "governance/compat/check_absorption_blindspot_control_presence.py",
             base,
             head,
         ),
@@ -229,6 +286,60 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "external provider skill usage trace",
+            "governance/compat/check_external_provider_skill_usage_trace.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "CVF skill usage receipt trace",
+            "governance/compat/check_cvf_skill_usage_receipt_trace.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "skill truth packets",
+            "governance/compat/check_skill_truth_packets.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "package skill productionization pipeline",
+            "governance/compat/check_package_skill_productionization_pipeline.py",
+            base,
+            head,
+        ),
+        GateCommand(
+            "skill control plane inventory",
+            ("python", "governance/compat/check_skill_control_plane_inventory.py", "--enforce"),
+        ),
+        GateCommand(
+            "CVF Web skill control plane projection",
+            (
+                "python",
+                "governance/compat/check_cvf_web_skill_control_plane_projection.py",
+                "--enforce",
+            ),
+        ),
+        _range_command(
+            "truth foundation claim guard",
+            "governance/compat/check_truth_foundation_claim_guard.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "raw memory release invariant",
+            "governance/compat/check_raw_memory_release_invariant.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "DICE machine-candidate coverage",
+            "governance/compat/check_dice_machine_candidates.py",
+            base,
+            head,
+        ),
+        _range_command(
             "corpus packet source hash (NR-04)",
             "governance/compat/check_corpus_packet_source_hash.py",
             base,
@@ -257,12 +368,34 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             ("python", "governance/compat/check_assf_certified_metadata_admission.py"),
         ),
         GateCommand(
+            "ASSF package candidate anatomy",
+            ("python", "governance/compat/check_assf_package_candidate_anatomy.py", "--enforce"),
+        ),
+        GateCommand(
             "ASSF external-agent metadata readout",
             ("python", "governance/compat/check_assf_external_agent_metadata_readout.py", "--enforce"),
         ),
         _range_command(
             "system loop interlock",
             "governance/compat/check_system_loop_interlock.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "FPC system-chain acceptance ledger",
+            "governance/compat/check_fpc_system_chain_acceptance_ledger.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "FPC parked reopen inventory",
+            "governance/compat/check_fpc_parked_reopen_inventory.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "KIOD runtime candidate reopen inventory",
+            "governance/compat/check_kiod_runtime_candidate_reopen_inventory.py",
             base,
             head,
         ),
@@ -313,6 +446,18 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         GateCommand(
             "governed python automation size",
             ("python", "governance/compat/check_python_automation_size.py", "--enforce"),
+        ),
+        _range_command(
+            "dispatch scaffold provenance",
+            "governance/compat/check_dispatch_scaffold_provenance.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "MinerU receipt boundary",
+            "governance/compat/check_mineru_receipt_boundary.py",
+            base,
+            head,
         ),
     )
 

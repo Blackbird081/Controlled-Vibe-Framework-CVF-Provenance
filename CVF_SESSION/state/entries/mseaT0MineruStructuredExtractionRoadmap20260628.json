@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1308,
+  "stateKey": "mseaT0MineruStructuredExtractionRoadmap20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "38f236bc",
+    "t0MaterialCommit": "3776d5db",
+    "roadmap": "docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md",
+    "upstreamRepo": "opendatalab/MinerU",
+    "upstreamCommit": "3e60291",
+    "upstreamClone": ".private_reference/external_repos/MinerU",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION_2026-06-28.md",
+    "reference": "docs/reference/CVF_MSEA_T2_DOCUMENT_EXTRACTION_CLAIM_BOUNDARY_RECEIPT_QUALITY_AND_RAG_HANDOFF_ADVISORY_2026-06-28.md",
+    "closeout": "docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md",
+    "decision": "CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW",
+    "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
+    "summary": "MSEA-T0 through T3 closed the MinerU Structured Extraction absorption roadmap. The lane promoted the useful doctrine into a CVF-owned document-extraction claim-boundary, receipt, quality, and RAG-handoff advisory reference, rejected direct MinerU runtime/package/checker import, and closed with no checker now. MinerU install, model download, API/router/Gradio service, OCR/provider/live proof, VLM/hybrid/remote routes, RAG index writes, checker implementation, public-sync, extraction accuracy, document-truth, and production-readiness claims remain parked behind MSEA-T3 reopen conditions."
+  }
+}

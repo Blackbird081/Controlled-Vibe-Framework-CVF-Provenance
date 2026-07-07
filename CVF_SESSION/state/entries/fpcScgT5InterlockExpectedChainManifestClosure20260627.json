@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1260,
+  "stateKey": "fpcScgT5InterlockExpectedChainManifestClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T5_INTERLOCK_EXPECTED_CHAIN_MANIFEST_SOURCE_VERIFICATION_COMPLETION_2026-06-27.md",
+    "manifestJson": "docs/reference/CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.json",
+    "manifestMarkdown": "docs/reference/CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.md",
+    "registry": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json",
+    "checkerCandidate": "governance/compat/check_system_loop_interlock.py",
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "manifest parse PASS with five expected chains",
+      "system loop interlock checker PASS on current registry",
+      "pre-implementation commit steward PASS before material commit",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 tranche for FPC-SCG-T6 interlock registry expected-chain checker extension using the T5 manifest as authority.",
+    "claimBoundary": "Static expected-chain manifest source verification only. No checker implementation, registry mutation, runtime/provider/live/public/use-case readiness, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  }
+}

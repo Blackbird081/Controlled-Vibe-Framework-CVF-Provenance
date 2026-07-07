@@ -1,0 +1,27 @@
+{
+  "stateOrder": 1448,
+  "stateKey": "mseaR28T9MemorySafeCandidateContractClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "45fb7a9a",
+    "materialCommitFull": "45fb7a9aa2759a9ca52421fdad2fe9dc8229c81b",
+    "executionBaseHead": "11e0956c",
+    "dispatchMaterialCommit": "3e901fda",
+    "dispatchMaterialCommitFull": "3e901fda123619beee2308fb0a3f58159e2ef039",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T9_MINERU_MEMORY_SAFE_CANDIDATE_CONTRACT_WORKER_RETURN_2026-07-04.md",
+    "selectedImplementationDisposition": "MEMORY_SAFE_CANDIDATE_CONTRACT_IMPLEMENTED",
+    "candidateContractHelper": "build_mineru_memory_safe_candidate_contract",
+    "candidateContractPayload": "mineru_memory_safe_candidate_contract_payload",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T9_DISPATCH",
+    "verification": [
+      "focused pytest PASS 34/34",
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T9 accepted deterministic metadata-only memory-safe candidate contract helper implementation, focused receipt-writer tests, and worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, checker/hook edits, memory/RAG write, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}

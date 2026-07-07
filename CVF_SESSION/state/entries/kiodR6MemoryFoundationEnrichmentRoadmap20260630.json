@@ -1,0 +1,30 @@
+{
+  "stateOrder": 720,
+  "stateKey": "kiodR6MemoryFoundationEnrichmentRoadmap20260630",
+  "value": {
+    "status": "ROADMAP_READY_FOR_WORK_ORDER_AUTHORING",
+    "materialCommit": "3e1bc936",
+    "materialCommitFull": "3e1bc93605dbd9e5a72a27bf9d0578129d48d310",
+    "roadmap": "docs/roadmaps/CVF_KIOD_R6_MEMORY_FOUNDATION_ENRICHMENT_ROADMAP_2026-06-30.md",
+    "sourceInputs": [
+      "docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md",
+      "docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_COMPLETION_2026-06-30.md",
+      "docs/reference/memory_foundation/README.md",
+      "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md"
+    ],
+    "roadmapSummary": "KIOD-R6 roadmap is ready for a separate GC-018/source-verified work order that converts retained KIOD-R5 ENRICH_EXISTING and NEW_FINDING_CANDIDATE evidence into doc-only memory-foundation enrichment, with checker read-ahead, negative-search/collision discipline, source verification, and direct-import rejection made explicit.",
+    "verification": [
+      "python governance/compat/check_governed_artifact_checker_read_ahead.py --base 2f4b0159 --head HEAD --enforce PASS",
+      "python governance/compat/check_markdown_structural_completeness.py --base 2f4b0159 --head HEAD --enforce PASS",
+      "python governance/compat/check_roadmap_closure_freshness.py --base 2f4b0159 --head HEAD --enforce PASS",
+      "python governance/compat/check_work_order_dispatch_quality.py --base 2f4b0159 --head HEAD --enforce PASS",
+      "python governance/compat/check_agent_packet_authority_and_encoding.py --base 2f4b0159 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 2f4b0159 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 2f4b0159 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 74/74"
+    ],
+    "nextControlAction": "Author a fresh GC-018 baseline and source-verified work order for KIOD-R6 doc-only memory-foundation enrichment. The work-order author must read applicable checker source before drafting and must not implement runtime, checker, adapter, Web/UI, source import, public-sync, package lifecycle, action authority, or production behavior.",
+    "claimBoundary": "Roadmap authoring only. No worker is dispatched by this state entry; no memory-foundation reference edits, checker, runtime/provider behavior, source import, public-sync, MCP/CLI adapter, dashboard, package lifecycle mutation, automatic invocation, action authority, or production behavior is claimed."
+  }
+}

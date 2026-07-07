@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1351,
+  "stateKey": "woasR2SourceIntakeScaffoldGoldenFixtureDispatched20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "2c5a7c30",
+    "materialCommitFull": "2c5a7c30bc6bf91983c7410e110b6736ed67fd9e",
+    "baseline": "docs/baselines/CVF_GC018_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_2026-07-01.md",
+    "workerReturn": "docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_WORKER_RETURN_2026-07-01.md",
+    "completionReview": "docs/reviews/CVF_WOAS_R2_SOURCE_INTAKE_SCAFFOLD_GOLDEN_FIXTURE_COMPLETION_2026-07-01.md",
+    "closureCommit": "101fcf73",
+    "closureCommitFull": "101fcf730ae1a6aa3cdc56c88000cbcdacef29c4",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches bounded dogfood of the WOAS-R1 source-intake scaffold profile. Worker may harden helper/tests and optionally add a deterministic fixture. Real external source intake, source import, runtime/provider/live, public-sync, Web/UI, MCP/CLI adapter, package lifecycle, model-router, hook catalog wiring, action authority, automatic invocation, and production-readiness claims are forbidden.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base b23a2792 --head HEAD PASS 69/69",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base b23a2792 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 76/76 for material dispatch commit 2c5a7c30"
+    ],
+    "claimBoundary": "Bounded helper/test/fixture dogfood closure only. No real external source intake or runtime/provider/public/package/Web/MCP/model-router production behavior is authorized or claimed."
+  }
+}

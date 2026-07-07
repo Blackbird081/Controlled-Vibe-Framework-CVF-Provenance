@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1406,
+  "stateKey": "mseaR16T1MineruSampleCorpusOperatorDetailReadinessClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "742a81ab",
+    "materialCommitFull": "742a81abfe7e53dc0a29b6925a0e0cb31e5ee2c9",
+    "executionBaseHead": "0b8aaf16",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R16_T1_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_2026-07-03.md",
+    "selectedFirstUseTarget": "CANDIDATE_GROUP_A_ONLY",
+    "selectedNextRouteToken": "PARTIAL_READINESS_PENDING_OPERATOR_DETAIL",
+    "nextRecommendedMove": "Operator may provide explicit Candidate Group A permission/license and privacy/redaction detail before any fresh source-verified operator-detail closure or population-readiness packet is authored.",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79",
+      "committed-range pre-closure content gates PASS with expected pre-session-sync handoff HEAD drift"
+    ],
+    "claimBoundary": "Documentation/reference readiness acceptance only. No document copy/import/storage/redaction/processing, sample corpus population, MinerU runtime/provider/live/schema/writer/checker/adapter execution, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or route execution is authorized."
+  }
+}

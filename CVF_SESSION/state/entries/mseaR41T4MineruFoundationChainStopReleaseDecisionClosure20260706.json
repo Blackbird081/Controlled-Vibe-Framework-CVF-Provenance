@@ -1,0 +1,29 @@
+{
+  "stateOrder": 623,
+  "stateKey": "mseaR41T4MineruFoundationChainStopReleaseDecisionClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "41802d2ff",
+    "materialCommitFull": "41802d2ffb8deb0dbe3fb630ffa152290bda3e07",
+    "closureBaseHead": "3fc50a86d",
+    "dispatchCommit": "41879e78e",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R41_T4_MINERU_FOUNDATION_CHAIN_STOP_RELEASE_DECISION_COMPLETION_2026-07-06.md",
+    "selectedDisposition": "R41_T4_FOUNDATION_CHAIN_STOP_BOUNDED_CANDIDATE",
+    "closureDisposition": "R41_T4_STOP_RELEASE_DECISION_COMPLETE_BOUNDED_CANDIDATE",
+    "foundationChainDisposition": "BOUNDED_CANDIDATE_STOP_STATE_ONLY",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75 commands",
+      "corpus scan registry path-literal check PASS",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "OPERATOR_SELECT_STOP_OR_FRESH_R41_T2_REOPEN_PACKET_OR_FRESH_R39_AUTHORITY_PACKET_OR_DIFFERENT_HELD_LANE_OR_NEW_INITIATIVE",
+    "claimBoundary": "R41-T4 closes a docs-only foundation-chain stop/release decision and accepts the bounded-candidate stop disposition. It does not authorize source/test edits, MinerU runtime execution, private/generated output content reads, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}
