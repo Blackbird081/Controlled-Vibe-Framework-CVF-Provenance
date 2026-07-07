@@ -522,6 +522,11 @@ git status --short
 
 ## Work-Order Fulfillment Manifest
 
+The required artifact manifest below binds the worker-owned public-sync diff
+and provenance worker return to the R65D work-order scope.
+
+## Required Artifact Manifest
+
 | Artifact | Required worker action |
 | --- | --- |
 | `scripts/check_provider_receipt_link_integrity.py` | create public-sync static checker, uncommitted |
