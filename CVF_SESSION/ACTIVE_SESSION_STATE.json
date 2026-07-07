@@ -78,8 +78,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order",
-  "previousMode": "msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet",
+  "currentMode": "msea_r72_governance_control_index_established_pending_r72a_gc018_work_order",
+  "previousMode": "msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -10472,5 +10472,28 @@
     "nextAllowedMove": "Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A may refresh public-main GitHub Actions status, verify public-sync repository boundary, classify current CI failures, and define a governance-load baseline work order. R72A must not implement checker retirement, delete or disable checkers, mutate public-sync, edit runtime/source/tests/checkers, run provider/live proof, make public/production claims, push, merge, or sweep historical artifacts unless a later accepted work order explicitly authorizes the narrower action.",
     "claimBoundary": "R72 is roadmap-only. It does not implement checker retirement, delete or disable checkers, mutate public-sync, repair CI, edit runtime/source/tests/checkers, run provider/live proof, push, merge, or make public/production claims."
   },
-  "nextAllowedMove": "MSEA-R72 EA Assessment Intake And Governance Load Rebalancing roadmap is ROADMAP_READY_FOR_R72A_GC018_AND_WORK_ORDER_AUTHORING at provenance material commit 4c540f1af. Roadmap artifact: docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md. The roadmap rechecked the independent EA critique's core measurements and routes corrective action through R72A-R72F. Next allowed move: fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A may refresh public-main GitHub Actions status, verify public-sync repository boundary, classify current CI failures, and define a governance-load baseline work order. R72A must not implement checker retirement, delete or disable checkers, mutate public-sync, edit runtime/source/tests/checkers, run provider/live proof, make public/production claims, push, merge, or sweep historical artifacts unless a later accepted work order explicitly authorizes the narrower action. LHW24 remains latest closed numbered LHW wave."
+  "mseaR72GovernanceControlIndexEstablished20260707": {
+    "status": "GOVERNANCE_CONTROL_INDEX_ESTABLISHED_PENDING_R72A_GC018",
+    "date": "2026-07-07",
+    "materialCommit": "7c2a04ff1",
+    "materialCommitFull": "7c2a04ff1be0b833cc1e1d388e5dbe827106ebcb",
+    "artifacts": [
+      "docs/reference/governance_control_index/README.md",
+      "docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md",
+      "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md",
+      "docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md"
+    ],
+    "statusSummary": "Official Governance Control Index front door is established as the lifecycle, cost, value, and retirement-readiness control index for governance surfaces. R72 roadmap is updated to route R72B and R72F through GCI-backed inventory and criteria before any checker retirement or consolidation pilot.",
+    "verification": [
+      "python governance/compat/check_markdown_structural_completeness.py --base 778adb4c3 --head HEAD --enforce PASS",
+      "python governance/compat/check_index_classification.py --base 778adb4c3 --head HEAD --enforce PASS",
+      "python governance/compat/check_agent_operation_trace.py --base 778adb4c3 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 778adb4c3 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 778adb4c3 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A must cite Governance Control Index GCI-014 for public-main CI/public-surface evidence and preserve R72 boundaries: no checker retirement implementation, no checker deletion or disablement, no public-sync mutation, no runtime/source/tests/checkers edit, no provider/live proof, no push, no merge, and no public/production claims unless a later accepted work order explicitly authorizes narrower action.",
+    "claimBoundary": "GCI is a lifecycle/cost/value governance front door and roadmap authority update only. This commit does not implement checker retirement, delete or disable checkers, mutate public-sync, repair CI, edit runtime/source/tests/checkers, run provider/live proof, push, merge, or make public/production claims."
+  },
+  "nextAllowedMove": "MSEA-R72 Governance Control Index front door is established at provenance material commit 7c2a04ff1. Artifacts: docs/reference/governance_control_index/README.md, docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md, docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md, and docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md. GCI is lifecycle/cost/value governance authority only; it does not retire, delete, disable, or rewrite checkers. Next allowed move: fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A must cite GCI-014 for public-main CI/public-surface evidence, refresh public-main GitHub Actions status, verify public-sync repository boundary, classify current CI failures, and define a governance-load baseline work order. R72A must not implement checker retirement, delete or disable checkers, mutate public-sync, edit runtime/source/tests/checkers, run provider/live proof, make public/production claims, push, merge, or sweep historical artifacts unless a later accepted work order explicitly authorizes the narrower action. LHW24 remains latest closed numbered LHW wave."
 }

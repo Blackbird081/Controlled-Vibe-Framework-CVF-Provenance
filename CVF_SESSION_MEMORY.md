@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only; parked checkpoint=R72 roadmap is planning only, while checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, push, and public/production claims remain unauthorized.
+Startup acknowledged: current mode=`msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only, citing GCI-014 for public-main CI/public-surface evidence; parked checkpoint=Governance Control Index is lifecycle/cost/value authority only, while checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, push, and public/production claims remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`
+Current mode marker: `msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`
 
-Current mode: `msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`
+Current mode: `msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`
 
-`msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`
+`msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`
 
 Previous mode:
 
-`msea_r70a_workspace_overlay_standards_catalog_profile_definitions_accepted_pending_r72_ea_assessment_intake_packet`
+`msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R72 Governance Control Index front-door refactor | `7c2a04ff1` | GOVERNANCE_CONTROL_INDEX_ESTABLISHED_PENDING_R72A_GC018; added official GCI README and index, registered both in the reference artifact index, and updated the R72 roadmap so R72B/R72F use lifecycle/cost/value/retirement-readiness criteria before any checker consolidation or retirement pilot; focused structural/index/trace gates PASS, pre-implementation autorun PASS 75/75 on `778adb4c3..HEAD`, implementation steward PASS, material pre-commit hook PASS 80/80; next move remains fresh source-verified R72A GC-018/work-order authoring only with GCI-014 cited for public-main CI/public-surface evidence; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
 | MSEA-R72 EA Assessment Intake And Governance Load Rebalancing roadmap | `4c540f1af` | ROADMAP_READY_FOR_R72A_GC018_AND_WORK_ORDER_AUTHORING; accepted the independent EA critique as a high-confidence governance-load signal only after command remeasurement; roadmap defines R72A public-main CI health/governance-load baseline, R72B checker lifecycle criteria, R72C Fast Lane calibration, R72D governance metric readout, R72E absorb-lane ceremony reclassification, and R72F first retirement/consolidation pilot; pre-implementation autorun PASS 75/75 on `29a8a4087..HEAD`, material pre-commit hook PASS 80/80; next move is fresh source-verified R72A GC-018 and work-order authoring only; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
 | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions acceptance | `0e9b59d9b` | REVIEWER_ACCEPTED_BOUNDED; accepted the definition-only overlay standard, catalog JSON, eleven profile JSON files, R71 reference index row, and worker return after reviewer repairs; repairs changed non-existent script command examples into future implementation hooks, updated the stale V23 handoff catalog path to active `AGENT_HANDOFF_V38_2026-07-06.md`, and aligned the new reference standard top matter with `LEGACY_DATED_ACTIVE_REFERENCE`; JSON parse/path validation PASS for 12 JSON files, worker-return fast gate PASS 59/59, material pre-commit hook PASS 80/80; next move is fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only; no checker retirement implementation, checker deletion/disablement, runtime/source/test/checker edit, public-sync mutation, merge, push, provider/live proof, public/production claim, broad overlay implementation, or historical sweep is authorized. |
 | MSEA-R70A Workspace Overlay Standards Catalog Profile Definitions dispatch | `80b37b2d2` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R70A worker execution; pre-dispatch autorun PASS 73/73 on `b65ad7c76..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R70A worker execution only, producing `docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md` and the worker-owned definition artifacts named in the work order; no worker commit, merge, push, cherry-pick, public-sync mutation, script edit, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, broad overlay acceptance, or downstream release is authorized. |
@@ -164,17 +165,18 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r72_ea_assessment_intake_and_governance_load_rebalancing_roadmap_ready_pending_r72a_gc018_work_order`
+Mode: `msea_r72_governance_control_index_established_pending_r72a_gc018_work_order`
 
 Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load
-Baseline GC-018 and work-order authoring only. R72A may refresh public-main
-GitHub Actions status, verify public-sync repository boundary, classify current
-CI failures, and define a governance-load baseline work order. R72A must not
-implement checker retirement, delete or disable checkers, mutate public-sync,
-edit runtime/source/tests/checkers, run provider/live proof, make
-public/production claims, push, merge, or sweep historical artifacts unless a
-later accepted work order explicitly authorizes the narrower action. LHW24
-remains latest closed numbered LHW wave.
+Baseline GC-018 and work-order authoring only. R72A must cite GCI-014 for
+public-main CI/public-surface evidence, may refresh public-main GitHub Actions
+status, verify public-sync repository boundary, classify current CI failures,
+and define a governance-load baseline work order. R72A must not implement
+checker retirement, delete or disable checkers, mutate public-sync, edit
+runtime/source/tests/checkers, run provider/live proof, make public/production
+claims, push, merge, or sweep historical artifacts unless a later accepted work
+order explicitly authorizes the narrower action. LHW24 remains latest closed
+numbered LHW wave.
 
 ## Current Closed Work
 
