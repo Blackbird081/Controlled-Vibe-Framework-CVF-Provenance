@@ -148,3 +148,83 @@ Operator authorization: operator requested provenance GitHub sync and a packet s
 Protected paths: `AGENT_HANDOFF_V38_2026-07-06.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, `CVF_SESSION/state/entries/mseaR54P3ProvenancePlaneReconciliationReadiness20260707.json`, `CVF_SESSION/state/entries/nextAllowedMove.json`, and `CVF_SESSION_MEMORY.md`. The purpose is solely to reflect R54 closure and R55 high-value target reselection routing. It may not change runtime source, tests, provider-local config, private/generated MinerU output, external absorption, public-sync, merge/reconciliation, P3 restructuring, or use-case/legal workflow material.
 
 Rollback boundary: revert only this MSEA-R54 session-sync if rejected; do not revert material closure commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
+
+## Core Guard Self-Protection Authorization - MSEA-R57 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R57 material closure commit `4736ca56f`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R57 closure state entry.
+
+Operator authorization: operator asked to continue the foundation plane-chain completion lane.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R57 continuity and stop/checkpoint next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R57 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R57 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R57 closure. |
+| `CVF_SESSION/state/entries/mseaR57FoundationPlaneIoContractReleaseOrStopDecision20260707.json` | Record R57 closure and stop/checkpoint decision. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to stop/checkpoint unless operator selects a fresh source-verified target. |
+| `CVF_SESSION_MEMORY.md` | Record R57 closure continuity and stop/checkpoint routing. |
+
+Rollback boundary: revert only this MSEA-R57 session-sync if rejected; do not revert material closure commit `4736ca56f`, R56 material commit `18253d95b`, R55 material commit `ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
+
+## Core Guard Self-Protection Authorization - MSEA-R56 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R56 material closure commit `18253d95b`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R56 closure state entry.
+
+Operator authorization: operator asked to continue the foundation plane-chain completion lane.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R56 continuity and R57 next target. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R56 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R56 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R56 closure. |
+| `CVF_SESSION/state/entries/mseaR56FoundationPlaneIoContractAndSystemInterlock20260707.json` | Record R56 closure and R57 target selection. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R57 release-or-stop decision packet. |
+| `CVF_SESSION_MEMORY.md` | Record R56 contract closure and next R57 route. |
+
+Rollback boundary: revert only this MSEA-R56 session-sync if rejected; do not revert material closure commit `18253d95b`, R55 material commit `ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
+
+## Core Guard Self-Protection Authorization - MSEA-R55 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R55 material closure commit `ea53c7df5`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R55 closure state entry.
+
+Operator authorization: operator agreed to proceed with high-value foundation plane-chain target selection after parking P3.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R55 continuity and R56 next target. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R55 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R55 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R55 closure. |
+| `CVF_SESSION/state/entries/mseaR55HighValuePlaneAbsorbTargetReselection20260707.json` | Record R55 closure and R56 target selection. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R56 foundation plane I/O contract packet. |
+| `CVF_SESSION_MEMORY.md` | Record R55 target reselection and next R56 route. |
+
+Rollback boundary: revert only this MSEA-R55 session-sync if rejected; do not revert material closure commit `ea53c7df5`, R54 material commit `e89e03e9f`, R53 material commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
+
+## Core Guard Self-Protection Authorization - MSEA-R53 Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R53 material closure commit `22c471fdd`, including active mode, next allowed move, generated active state, bootstrap read model, active handoff, and R53 closure state entry.
+
+Operator authorization: operator requested provenance GitHub sync and a packet selecting the next target.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R53 continuity and R54 next target. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R53 closure. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R53 closure session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R53 closure. |
+| `CVF_SESSION/state/entries/mseaR53PlaneAbsorbRepoTargetDiscoveryReadiness20260707.json` | Record R53 closure and selected P3 target. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R54 P3 readiness packet. |
+| `CVF_SESSION_MEMORY.md` | Record R53 target selection and next R54 route. |
+
+Rollback boundary: revert only this MSEA-R53 session-sync if rejected; do not revert material closure commit `22c471fdd`, R52 material commit `18f177033`, public-sync commit `65f3dd6ce48743c89efdc1e40db3cdce8fb083c5`, or older MSEA history.
