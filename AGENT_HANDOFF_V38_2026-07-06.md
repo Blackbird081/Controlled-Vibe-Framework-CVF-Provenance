@@ -2,22 +2,22 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity for resumed agents after MSEA-R65D provider receipt-link integrity checker implementation acceptance.
+Purpose: compact current-session continuity for resumed agents after MSEA-R66 public-safe workspace PR repair and merge-readiness dispatch.
 Scope/target/owner boundary: private provenance continuity only; Codex session-sync steward owns this handoff update; no runtime source, tests, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`
 Opened because: V37 reached 1158 lines and was rotated under governed file maintainability planning during R48 session-sync.
 
 ## Purpose
 
-Keep resumed agents aligned on R65D acceptance, active handoff V38, and the next public-safe workspace PR repair / merge-readiness packet boundary.
+Keep resumed agents aligned on R66 dispatch, active handoff V38, and the next no-commit public-safe workspace PR repair / merge-readiness worker boundary.
 
 ## Scope
 
-This handoff covers private provenance continuity after R65D acceptance only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, provenance runtime source, tests, checker work, public push, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
+This handoff covers private provenance continuity after R66 dispatch only. It does not authorize P3 restructuring reopen, merge, branch reconciliation, provenance runtime source, tests, checker work, public push, provider-local config, private/generated MinerU output, direct external import, production Memory/RAG release, retrieval/vectorization, or use-case/legal workflow changes.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r65d_provider_receipt_link_integrity_checker_accepted_public_workspace_pr_repair_packet_next`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=fresh source-verified public-safe workspace PR repair and merge-readiness packet authoring only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, and `0d3bba46f` are not pushed, public merge/push remains operator-owned, and the R65D-disclosed public-surface guard conflict against `docs/audits/**` must be resolved or explicitly waived before public merge/push readiness is claimed.
+Startup acknowledged: current mode=`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V38_2026-07-06.md; next allowed move=no-commit R66 worker execution only; parked checkpoint=public-sync local commits `fbb782fee`, `756c465e1`, and `0d3bba46f` are not pushed, public merge/push remains operator-owned, and the R65D-disclosed public-surface guard conflict against `docs/audits/**` must be resolved or explicitly waived before public merge/push readiness is claimed.
 
 ## Mandatory Startup Reads
 
@@ -31,17 +31,46 @@ Startup acknowledged: current mode=`msea_r65d_provider_receipt_link_integrity_ch
 
 ## Current Mode
 
-`msea_r65d_provider_receipt_link_integrity_checker_accepted_public_workspace_pr_repair_packet_next`
+`msea_r66_public_safe_workspace_pr_repair_and_merge_readiness_dispatched_pending_worker_return`
 
 ## Active Boundary
 
-This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R65D is accepted bounded with reviewer repair; public-sync remains local ahead of origin by three commits and unpushed after adding the provider receipt-link checker. P3 remains parked, and public push, GitHub merge, provider/live proof, provenance runtime/source/test/checker edits, merge, reconciliation, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh source-verified packet or explicit public-sync push authorization releases them.
+This handoff is active for startup routing. Historical continuity from V37 is archived at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md`. R66 is dispatched for no-commit worker execution; public-sync remains local ahead of origin by three commits and unpushed after R65A/R65B/R65D public-sync local commits. P3 remains parked, and public push, GitHub merge, provider/live proof, provenance runtime/source/test/checker edits, merge, reconciliation, production Memory/RAG release, direct external import, historical rename/move sweep, and downstream release remain unauthorized unless a fresh source-verified packet or explicit public-sync push authorization releases them.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`
 
 Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
+
+## Core Guard Self-Protection Authorization - MSEA-R66 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R66 material
+dispatch commit `006d9cafa`, including active mode, next allowed move,
+generated active state, bootstrap read model, active handoff, front door, and
+R66 dispatch state entry.
+
+Operator authorization: operator requested creating a work order to handle the
+public-safe workspace PR fallout after R65D acceptance.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V38_2026-07-06.md` | Record R66 dispatch and no-commit worker routing. |
+| `CVF_SESSION_MEMORY.md` | Record R66 dispatch continuity and next-move routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after R66 dispatch. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R66 dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R66 dispatch. |
+| `CVF_SESSION/state/entries/mseaR66PublicSafeWorkspacePrRepairMergeReadinessDispatch20260707.json` | Record R66 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R66 no-commit worker execution. |
+
+Rollback boundary: revert only this MSEA-R66 session-sync if rejected; do not
+revert material dispatch commit `006d9cafa`, R65D material acceptance commit
+`bb959a63f`, public-sync local commit `0d3bba46f`, R65D dispatch commit
+`22638481b`, R65C material closure commit `7f557d4bb`, R65B public-sync local
+commit `756c465e16fb034d6b699afc5d46831fba77a5bc`, R65A public-sync local
+commit `fbb782fee4509af99a02c8632ddf8bde3aa449e6`, or older MSEA history.
 
 ## Core Guard Self-Protection Authorization - MSEA-R65D Closure Session Sync
 
@@ -117,7 +146,8 @@ Rollback boundary: revert only this MSEA-R65C session-sync if rejected; do not r
 
 | Work | Commit | Disposition |
 | --- | --- | --- |
-| MSEA-R65D Provider Receipt-Link Integrity Checker Implementation acceptance | `bb959a63f` provenance / `0d3bba46f` public-sync | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR; accepted worker return and bounded public-sync checker implementation after reviewer repair; public-sync local commit `0d3bba46fae54ec32e1efdd60e72cc59c3620053` adds `scripts/check_provider_receipt_link_integrity.py` and wires it into `scripts/run_cvf_static_ci_gate.py`; provenance material commit `bb959a63f65932c50d57f791c8c394dd203a6fc1` records the worker return and repairs the R65D work-order manifest shape; focused checker PASS, worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80; public-sync is clean and `main...origin/main [ahead 3]`; known hold before public merge/push: full public-sync static CI still has a pre-existing Public surface guard failure against R65B `docs/audits/**` receipt/index exports; next move is fresh source-verified public-safe workspace PR repair and merge-readiness packet authoring only; no public push, GitHub merge, provider status edit, README/docs index/Known Limitations/provider routing edit outside a fresh packet, provenance runtime/source/test/checker edit, provider/live proof, JSON receipt export, OpenAI certification uplift, public claim, or downstream release is authorized. |
+| MSEA-R66 Public-Safe Workspace PR Repair And Merge Readiness dispatch | `006d9cafa` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit PR repair/merge-readiness worker execution covering GitHub PR #20, GitHub PR #3, and the R65D public-surface guard conflict; pre-dispatch autorun PASS 73/73 on `f27123098..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R66 worker execution only, producing `docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`; public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider status edits outside R66 scope, provenance runtime/source/test/checker edits, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, public claim, or downstream release remains unauthorized. |
+| MSEA-R65D Provider Receipt-Link Integrity Checker Implementation acceptance | `bb959a63f` provenance / `0d3bba46f` public-sync | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR; accepted worker return and bounded public-sync checker implementation after reviewer repair; public-sync local commit `0d3bba46fae54ec32e1efdd60e72cc59c3620053` adds `scripts/check_provider_receipt_link_integrity.py` and wires it into `scripts/run_cvf_static_ci_gate.py`; provenance material commit `bb959a63f65932c50d57f791c8c394dd203a6fc1` records the worker return and repairs the R65D work-order manifest shape; focused checker PASS, worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80; public-sync is clean and `main...origin/main [ahead 3]`; known hold before public merge/push: full public-sync static CI still has a pre-existing Public surface guard failure against R65B `docs/audits/**` receipt/index exports; R65D follow-up is released by R66 dispatch `006d9cafa`; no public push, GitHub merge, provider status edit, README/docs index/Known Limitations/provider routing edit outside a fresh packet, provenance runtime/source/test/checker edit, provider/live proof, JSON receipt export, OpenAI certification uplift, public claim, or downstream release is authorized. |
 | MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision acceptance | `7f557d4bb` | REVIEWER_ACCEPTED_BOUNDED; accepted decision matrix, worker return, and completion review; selected `R65C_PUBLIC_SYNC_PUSH_READY_PENDING_OPERATOR_CONFIRMATION_AND_CHECKER_PACKET_RECOMMENDED_ACCEPTED`; public-sync remains clean and `main...origin/main [ahead 2]` with local commits `fbb782fee` and `756c465e1` not pushed; reviewer-fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `a1f3a8006..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is authorization hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization; no public push, public-sync mutation, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, public claim, or downstream release is authorized by R65C closure alone. |
 | MSEA-R65C Public-Sync Publish-Or-Hold And Provider Receipt-Link Integrity Checker Decision dispatch | `627085c35` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for read-only public-sync publish-or-hold and receipt-link checker value decision; pre-dispatch autorun PASS 73/73 on `a1f3a8006..HEAD`, dispatch commit steward PASS, material pre-commit hook PASS 80/80; next move is no-commit R65C worker execution only in the two worker-owned provenance outputs; public-sync mutation, public commit, public push, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, and downstream release remain unauthorized. |
 | MSEA-R65B Provider Canary Receipt Evidence Index Integrity acceptance | `f381ec920` | REVIEWER_ACCEPTED_BOUNDED_EXPORTED_LOCAL_NOT_PUSHED; accepted worker return and completion review; public-sync local commit `756c465e16fb034d6b699afc5d46831fba77a5bc` adds public-safe Alibaba and DeepSeek canary receipt/index markdown files on top of R65A local commit `fbb782fee4509af99a02c8632ddf8bde3aa449e6`; public-sync is clean and `main...origin/main [ahead 2]`; OpenAI remains EXPERIMENTAL and not certified; worker-return fast gate PASS 59/59, pre-implementation autorun PASS 75/75 on `4c288ce5..HEAD`, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80; next move is fresh R65C publish-or-hold/checker decision packet only; no public push, checker implementation, runtime/source/test edit, provider/live proof, JSON receipt export, OpenAI certification uplift, worker commit, or downstream release is authorized. |
@@ -258,7 +288,7 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-Execute no-commit MSEA-R65D worker implementation only. Worker may edit sibling public-sync `scripts/check_provider_receipt_link_integrity.py` and `scripts/run_cvf_static_ci_gate.py`, and may create `docs/reviews/CVF_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_WORKER_RETURN_2026-07-07.md` in provenance. Worker must refresh public-sync status/remote/source evidence before editing, run focused checker evidence, and leave all changes uncommitted. Public-sync commit, public push, provider status edits, README/docs index/Known Limitations/provider routing edits, provenance runtime/source/test/checker edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, direct external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, worker commit, historical rename/move sweep, and direct downstream release remain unauthorized. LHW24 remains latest closed numbered LHW wave.
+Execute no-commit MSEA-R66 worker execution only. Worker must create `docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md`, refresh GitHub PR #20/#3 metadata, verify public-sync remote/status, verify generated public-safe guide leakage and Vietnamese encoding, reconcile PR #3 eight-file scope, separate PR #20 broad overlay bundle from narrow leakfix, and resolve or explicitly hold the R65D public-surface guard conflict before any merge/push readiness claim. Public push, GitHub merge, provider status edits outside R66 scope, provenance runtime/source/test/checker edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, direct external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, worker commit, historical rename/move sweep, and direct downstream release remain unauthorized. LHW24 remains latest closed numbered LHW wave.
 
 ## Core Guard Self-Protection Authorization - MSEA-R65C Dispatch Session Sync
 
