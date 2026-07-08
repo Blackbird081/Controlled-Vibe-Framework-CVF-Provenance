@@ -17,7 +17,7 @@ This handoff is private provenance continuity owned by Codex in reviewer/closer 
 
 ## Latest Work / Changes
 
-R74 public-sync export is closed bounded. Public commit `9d6f10657` exported the public-safe workspace onboarding wrapper flow to the public repository from the sibling public-sync clone. Follow-up public commit `d32922c8a` added the public-safe `Update-CVF-Workspace.ps1` root wrapper generation path; local `CVF-Workspace` is clean/current at hidden public core `d32922c8a` after a passing workspace-wide gate. Provenance commit `452c9312d` adds a local-only curated rule-pack sync path and applies `workspace-standard` to `CVF-Workspace`. Provenance commit `b01760f6d` adds workspace-safe memory/handoff templates, create-if-missing root materialization, and lifecycle classification for the template root; local `CVF-Workspace` now has workspace memory plus handoff root files, and later syncs preserve those live files. Provenance commit `9932ad08a` adds public-safe optional rule-pack guidance to generated workspace guides, and the local EN/VI guides now include the operator-machine two-step update plus rule-pack profile commands. Provenance commit `37d0cf28a` refreshes canonical and generated workspace-root rules so `WORKSPACE_RULES.md` now names the root update wrapper, optional rule packs, workspace memory, and the workspace handoff root file. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
+R74 public-sync export is closed bounded. Public commit `9d6f10657` exported the public-safe workspace onboarding wrapper flow to the public repository from the sibling public-sync clone. Follow-up public commit `d32922c8a` added the public-safe `Update-CVF-Workspace.ps1` root wrapper generation path. Provenance commit `452c9312d` adds a local-only curated rule-pack sync path and applies `workspace-standard` to `CVF-Workspace`. Provenance commit `b01760f6d` adds workspace-safe memory/handoff templates, create-if-missing root materialization, and lifecycle classification for the template root; local `CVF-Workspace` now has workspace memory plus handoff root files, and later syncs preserve those live files. Provenance commit `9932ad08a` adds public-safe optional rule-pack guidance to generated workspace guides, and the local EN/VI guides now include the operator-machine two-step update plus rule-pack profile commands. Provenance commit `37d0cf28a` refreshes canonical and generated workspace-root rules so `WORKSPACE_RULES.md` now names the root update wrapper, optional rule packs, workspace memory, and the workspace handoff root file. Public commits `179839b50`, `8e01854bf`, and `507285bbb` exported that rule refresh, fixed the new-project gate to skip `CVF_RULE_PACKS`, and synced the public-safe guide installer so optional rule-pack guidance survives wrapper refresh. Local `CVF-Workspace` is clean/current at hidden public core `507285bbb` after a passing workspace-wide gate. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
@@ -83,6 +83,30 @@ surfaces.
 Rollback boundary: revert only this workspace rules session-sync if rejected;
 do not revert material commit `37d0cf28a`, the earlier workspace rule-pack
 sync commits, public-sync commit `d32922c8a`, or older MSEA material.
+
+## Core Guard Self-Protection Authorization - Workspace Rules Public Export Session Sync
+
+Authorized guard-maintenance scope: session-sync only after public-sync commits
+`179839b50`, `8e01854bf`, and `507285bbb`, including next allowed move,
+generated active state, bootstrap read model, front-door continuity, and active
+handoff freshness.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record workspace rules public export and local hidden-core freshness. |
+| `CVF_SESSION_MEMORY.md` | Record workspace rules public export in the active front door. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after next-move source update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after the session-sync. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Preserve operator-selection routing while naming the public export commits. |
+
+Operator authorization: operator asked Codex to handle the workspace rules
+update and keep GitHub/workspace debt clean.
+
+Rollback boundary: revert only this workspace rules public-export session-sync
+if rejected; do not revert public commits `179839b50`, `8e01854bf`,
+`507285bbb`, provenance material commit `37d0cf28a`, or older MSEA material.
 
 ## Core Guard Self-Protection Authorization - MSEA-R74 Closure Session Sync
 
