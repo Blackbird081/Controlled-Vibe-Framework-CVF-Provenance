@@ -12,8 +12,9 @@
     "lint": "eslint",
     "check": "tsc --noEmit",
     "test": "vitest",
-    "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage",
+    "test:run": "vitest run --exclude \"src/**/*.live.test.ts\"",
+    "test:coverage": "vitest run --coverage --exclude \"src/**/*.live.test.ts\"",
+    "test:live": "vitest run \"src/**/*.live.test.ts\" --fileParallelism=false",
     "test:e2e": "playwright test"
   },
   "dependencies": {

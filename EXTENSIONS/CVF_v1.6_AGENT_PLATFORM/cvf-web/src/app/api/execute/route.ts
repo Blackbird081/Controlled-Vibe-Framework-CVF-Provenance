@@ -38,6 +38,62 @@ import { approvalRecordMatchesActor, buildApprovalActorBinding, buildApprovalReq
 import { executeVisionRouteRequest, prepareVisionRouteRequest } from './vision-route-helper';
 import { buildExecuteFinalResponse } from './route-final-response';
 import { buildMemoryAdvisoryReadout } from './route-memory-advisory';
+
+type ExecutionRequestWithSpecFirst = ExecutionRequest & {
+    specFirst?: {
+        originalPrompt?: string;
+        advisory?: {
+            draftSummary?: string;
+            draftText?: string;
+            [key: string]: unknown;
+        };
+        [key: string]: unknown;
+    };
+};
+
+async function redactTextForReadout(value: string | undefined): Promise<string | undefined> {
+    if (typeof value !== 'string') return value;
+    return (await applyDLPFilter(value)).redacted;
+}
+
+async function buildDlpRedactedReadoutRequest(
+    request: Partial<ExecutionRequestWithSpecFirst>,
+    dlpWasRedacted: boolean,
+): Promise<ExecutionRequestWithSpecFirst> {
+    if (!dlpWasRedacted) return request as ExecutionRequestWithSpecFirst;
+
+    const redactedInputs = Object.fromEntries(
+        await Promise.all(
+            Object.entries(request.inputs ?? {}).map(async ([key, value]) => [
+                key,
+                (await redactTextForReadout(value)) ?? '',
+            ]),
+        ),
+    );
+    const specFirst = request.specFirst
+        ? {
+            ...request.specFirst,
+            originalPrompt: await redactTextForReadout(request.specFirst.originalPrompt),
+            advisory: request.specFirst.advisory
+                ? {
+                    ...request.specFirst.advisory,
+                    draftSummary: await redactTextForReadout(request.specFirst.advisory.draftSummary),
+                    draftText: await redactTextForReadout(request.specFirst.advisory.draftText),
+                }
+                : request.specFirst.advisory,
+        }
+        : request.specFirst;
+
+    return {
+        ...request,
+        templateId: request.templateId ?? '',
+        templateName: (await redactTextForReadout(request.templateName)) ?? '',
+        inputs: redactedInputs,
+        intent: (await redactTextForReadout(request.intent)) ?? '',
+        specFirst,
+    } as ExecutionRequestWithSpecFirst;
+}
+
 export async function POST(request: NextRequest) {
     const routeStartedAtMs = Date.now();
     try {
@@ -240,6 +296,7 @@ export async function POST(request: NextRequest) {
         const userPrompt = buildExecutionPrompt(body as ExecutionRequest);
         const dlpResult = await applyDLPFilter(userPrompt);
         const filteredPrompt = dlpResult.redacted;
+        const readoutRequest = await buildDlpRedactedReadoutRequest(body, dlpResult.wasRedacted);
 
         if (dlpResult.wasRedacted) {
             await appendAuditEvent({
@@ -369,7 +426,7 @@ export async function POST(request: NextRequest) {
             intent: body.intent,
             templateId: template?.id ?? body.templateId,
         });
-        const memoryAdvisoryReadout = buildMemoryAdvisoryReadout({ request: body as ExecutionRequest, actorRole: resolvedExecutionRole.role ?? 'unknown', actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), sessionId: session?.userId ?? serviceIdentity ?? null });
+        const memoryAdvisoryReadout = buildMemoryAdvisoryReadout({ request: readoutRequest, actorRole: resolvedExecutionRole.role ?? 'unknown', actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), sessionId: session?.userId ?? serviceIdentity ?? null });
         const enforcement = evaluateEnforcement({
             mode,
             content: filteredPrompt,
@@ -879,7 +936,7 @@ export async function POST(request: NextRequest) {
             aiResult: { ...aiResult, memoryAdvisoryReadout } as ExecutionResponse,
             outputValidation,
             retryState,
-            request: body as ExecutionRequest,
+            request: readoutRequest,
             template,
             routeStartedAtMs,
             session,

@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V38_2026-07-06.md",
+  "activeHandoff": "AGENT_HANDOFF_V39_2026-07-08.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -71,15 +71,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V34_2026-07-03.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r60_r63_control_plane_interlock_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target",
-  "previousMode": "msea_r58_r59_plane_io_registry_checkpoint_closed_pass_bounded_stop_or_fresh_operator_target",
+  "currentMode": "msea_r72_governance_refactor_r72a_to_r72h_complete_pending_operator_next_selection",
+  "previousMode": "msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -4943,6 +4944,55 @@
     "claimBoundary": "Closed bounded documentation/reference material commit. Accepts the no-commit worker return and companion blueprint-readiness reference only. No MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized.",
     "nextRecommendedMove": "Author fresh MSEA-R10 GC-018/work order for documentation/reference-only MinerU adapter contract draft if operator chooses to execute OPEN_ADAPTER_CONTRACT_DRAFT_ONLY."
   },
+  "mseaR64ExternalCritiqueIntakePublicDriftDecisionDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "32f2a95d0",
+    "materialCommitFull": "32f2a95d05f80004ddee89cf5eec9d389696ab9f",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R64_R70_PUBLIC_TRUST_AGENT_LOOP_ABSORPTION_ROADMAP_2026-07-07.md",
+    "gc018BaselinePath": "docs/baselines/CVF_GC018_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_2026-07-07.md",
+    "selectedDisposition": "R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_DISPATCH_READY",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73 on 8492fc8c3..HEAD",
+      "dispatch commit steward PASS on 8492fc8c3..HEAD",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedDecisionFacts": {
+      "externalCritiqueClassifiedAsAdvisoryInput": true,
+      "publicDriftVerificationAuthorizedReadOnly": true,
+      "publicSyncMutationAuthorized": false,
+      "runtimeImplementationAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "providerLiveProofAuthorized": false,
+      "directExternalImportAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "workerCommitAuthorized": false
+    },
+    "nextAllowedMove": "Execute only the R64 WORKER_MUST_NOT_COMMIT worker and return COMPLETE_PENDING_REVIEW with the worker return and classification matrix.",
+    "claimBoundary": "R64 dispatch opens only a docs-only external critique intake and public drift decision worker. It does not authorize public-sync mutation, runtime/source/test/checker edits, provider/live proof, direct external source import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, worker commit, push, or direct downstream release."
+  },
+  "mseaR66PublicSafeWorkspacePrRepairMergeReadinessDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "006d9cafa",
+    "materialCommitFull": "006d9cafaa4230461cf5ff836f2598f2efbae8e2",
+    "dispatchBaseHead": "f27123098",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a bounded no-commit worker tranche to repair or return a source-backed merge-readiness decision for GitHub PR #20, GitHub PR #3, and the R65D-disclosed public-surface guard conflict before any public merge or push.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base f27123098 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base f27123098 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit 006d9cafa"
+    ],
+    "nextAllowedMove": "No-commit R66 worker execution only. Worker must create the R66 worker return, refresh PR #20/#3 metadata, verify public-sync remote/status, verify generated public-safe guide leakage and Vietnamese encoding, reconcile PR #3 eight-file scope, separate PR #20 broad overlay bundle from narrow leakfix, and resolve or explicitly hold the R65D public-surface guard conflict before any merge/push readiness claim.",
+    "claimBoundary": "Dispatch only. No public push, GitHub merge, public release claim, broad overlay-pipeline acceptance, provider/live proof, provenance runtime/source/test/checker edit, provider status edit outside R66 scope, OpenAI certification uplift, JSON receipt export, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release is authorized."
+  },
   "kiodR1R3KnowledgeIntakeDeduplicationFoundationClosure20260630": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "5d453bce",
@@ -5386,7 +5436,296 @@
     "nextAllowedMove": "Stop/checkpoint unless the operator selects a fresh source-verified target. Future runtime wiring, checker work, public-safe export, or concrete adapter work requires a fresh source-verified packet.",
     "claimBoundary": "R60/R63 closes only a private provenance docs/reference checkpoint. It reconciles pre-batch push posture, selects the Governance Control Plane as the consumer/checkpoint target, records docs-only interlock readiness, and adds a reusable foundation-to-Control-Plane interlock reference. It does not authorize implementation, checker work, source/test edit, runtime/provider proof, production Memory/RAG release, public-sync mutation, retrieval/vectorization, P3 reopen, external source import, private/generated MinerU output read, use-case/legal workflow, public claim, or downstream release."
   },
-  "nextAllowedMove": "MSEA-R60/R63 Control Plane Interlock Checkpoint is CLOSED_PASS_BOUNDED at provenance material commit f7e9d36d2. R60 selected R60_PROVENANCE_PUSH_POSTURE_RECONCILED_REMOTE_CURRENT for the pre-batch push posture; R61 selected R61_SELECT_CONTROL_PLANE_CONSUMER_FOR_FOUNDATION_IO_CONTRACT; R62 selected R62_READY_FOR_DOCS_ONLY_CONTROL_PLANE_INTERLOCK_REFERENCE; R63 selected R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_ADDED_RUNTIME_HELD and added docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md. Next allowed move: stop/checkpoint unless the operator selects a fresh source-verified target. Any future runtime wiring, checker work, public-safe export, or concrete adapter work requires a fresh source-verified packet. Public-sync remains deferred unless separately authorized from the sibling public-sync clone. No implementation, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, retrieval/vectorization, P3 reopen, external import, private/generated MinerU output read, use-case/legal workflow, hosted/public/production claim, public-sync mutation, or direct downstream release is authorized. LHW24 remains latest closed numbered LHW wave.",
+  "mseaR64ExternalCritiqueIntakeAccepted20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "0390151eb",
+    "materialCommitFull": "0390151ebad933a20fb8da413f73336918e57847",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_WORKER_RETURN_2026-07-07.md",
+    "classificationMatrixPath": "docs/reference/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_CLASSIFICATION_MATRIX_2026-07-07.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_AND_PUBLIC_DRIFT_DECISION_COMPLETION_REVIEW_2026-07-07.md",
+    "selectedDisposition": "R64_EXTERNAL_CRITIQUE_INTAKE_ACCEPTED_R71_REFERENCE_STORAGE_CLASS_PACKET_NEXT",
+    "verification": [
+      "worker-return fast gate PASS on d614ec636..HEAD before material commit",
+      "pre-implementation autorun PASS 75/75 on d614ec636..HEAD before material commit",
+      "reviewer-return commit steward PASS on d614ec636..HEAD",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedDecisionFacts": {
+      "externalCritiqueClassifiedAsAdvisoryInput": true,
+      "publicDriftFindingsAcceptedForFutureR65": true,
+      "r71ReferenceStorageClassPacketSelectedNext": true,
+      "historicalRenameSweepAuthorized": false,
+      "publicSyncMutationAuthorized": false,
+      "runtimeImplementationAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "providerLiveProofAuthorized": false,
+      "directExternalImportAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "workerCommitAuthorized": false
+    },
+    "nextAllowedMove": "Author a fresh MSEA-R71 GC-018/source-verified Reference Artifact Storage Class And Index Standard packet with README/front-door planning, index planning, forward-only storage-class taxonomy, citation rules, and no historical rename sweep.",
+    "claimBoundary": "R64 accepts only private provenance external critique classification and route selection. It does not authorize public-sync mutation, source/test/runtime/checker edits, provider/live proof, direct external import, production Memory/RAG release, private/generated MinerU output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, push, or public/hosted/production claims."
+  },
+  "mseaR71ReferenceArtifactStorageClassIndexStandardDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "599269898",
+    "materialCommitFull": "5992698980e4cca98f95396762317272a0343a3b",
+    "gc018BaselinePath": "docs/baselines/CVF_GC018_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_2026-07-07.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_2026-07-07.md",
+    "selectedDisposition": "R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_DISPATCH_READY",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73 on 32093b1b1..HEAD before material commit",
+      "dispatch commit steward PASS on 32093b1b1..HEAD",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "workerOwnedOutputs": [
+      "docs/reference/reference_artifact_storage/README.md",
+      "docs/reference/reference_artifact_storage/CVF_REFERENCE_ARTIFACT_STORAGE_CLASS_STANDARD.md",
+      "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md",
+      "docs/reviews/CVF_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_WORKER_RETURN_2026-07-07.md"
+    ],
+    "boundedDecisionFacts": {
+      "readmeFrontDoorWorkerOutputAuthorized": true,
+      "referenceArtifactIndexWorkerOutputAuthorized": true,
+      "forwardOnlyStorageClassStandardAuthorized": true,
+      "historicalRenameSweepAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "publicSyncMutationAuthorized": false,
+      "runtimeImplementationAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "providerLiveProofAuthorized": false,
+      "directExternalImportAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "workerCommitAuthorized": false
+    },
+    "nextAllowedMove": "No-commit R71 worker execution only: create the README front door, storage-class standard, reference artifact index, and worker return, then stop for reviewer closure.",
+    "claimBoundary": "R71 dispatch authorizes only no-commit documentation/reference worker outputs. It does not authorize historical rename/move sweep, public-sync mutation, source/test/runtime/checker edits, provider/live proof, direct external import, production Memory/RAG release, private/generated MinerU output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, push, or public/hosted/production claims."
+  },
+  "mseaR71ReferenceArtifactStorageClassIndexStandardAccepted20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "cf2f6f3d3",
+    "materialCommitFull": "cf2f6f3d35b121f6cbde50c2fee32992d800d414",
+    "readmePath": "docs/reference/reference_artifact_storage/README.md",
+    "storageClassStandardPath": "docs/reference/reference_artifact_storage/CVF_REFERENCE_ARTIFACT_STORAGE_CLASS_STANDARD.md",
+    "referenceArtifactIndexPath": "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_WORKER_RETURN_2026-07-07.md",
+    "selectedDisposition": "R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_ACCEPTED_R65_PUBLIC_DRIFT_FOLLOWUP_PACKET_NEXT",
+    "verification": [
+      "worker-return fast gate PASS on f0bf70029..HEAD before material commit",
+      "index classification gate PASS on f0bf70029..HEAD before material commit",
+      "pre-implementation autorun PASS 75/75 on f0bf70029..HEAD before material commit",
+      "reviewer-return commit steward PASS on f0bf70029..HEAD",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedDecisionFacts": {
+      "readmeFrontDoorAccepted": true,
+      "referenceArtifactIndexAccepted": true,
+      "forwardOnlyStorageClassStandardAccepted": true,
+      "legacyDatedActiveReferenceClassDefined": true,
+      "initialFoundationRegistryIndexRowAccepted": true,
+      "historicalRenameSweepAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "publicSyncMutationAuthorized": false,
+      "runtimeImplementationAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "providerLiveProofAuthorized": false,
+      "directExternalImportAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "workerCommitAuthorized": false
+    },
+    "nextAllowedMove": "Author a fresh MSEA-R65 GC-018/source-verified public drift follow-up packet using R64 EI-01 through EI-05 and R71 reference storage-class/index governance. Do not mutate public-sync until that packet releases the exact scope.",
+    "claimBoundary": "R71 accepts only private provenance reference governance artifacts. It does not authorize historical rename/move sweep, public-sync mutation, source/test/runtime/checker edits, provider/live proof, direct external import, production Memory/RAG release, private/generated MinerU output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, push, or public/hosted/production claims."
+  },
+  "mseaR65BProviderCanaryReceiptEvidenceIndexIntegrityClosure20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_EXPORTED_LOCAL_NOT_PUSHED",
+    "date": "2026-07-07",
+    "materialCommit": "f381ec920",
+    "materialCommitFull": "f381ec92091b810e9513b8e3a7c17fccbd79e0e6",
+    "dispatchCommit": "6a630dbe3",
+    "dispatchCommitFull": "6a630dbe3024bc97eea964306fad0ad0333d6c7f",
+    "handoffSyncBeforeClosureCommit": "4c288ce5c04a8053a63ed388a1a1cb3014deb2a6",
+    "publicSyncBaseCommit": "fbb782fee4509af99a02c8632ddf8bde3aa449e6",
+    "publicSyncLocalCommit": "756c465e16fb034d6b699afc5d46831fba77a5bc",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65B_PROVIDER_CANARY_RECEIPT_EVIDENCE_INDEX_INTEGRITY_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65B_PROVIDER_CANARY_RECEIPT_EVIDENCE_INDEX_INTEGRITY_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R65B_PROVIDER_CANARY_RECEIPT_EVIDENCE_INDEX_INTEGRITY_WORKER_RETURN_2026-07-07.md",
+    "completionReview": "docs/reviews/CVF_MSEA_R65B_PROVIDER_CANARY_RECEIPT_EVIDENCE_INDEX_INTEGRITY_COMPLETION_REVIEW_2026-07-07.md",
+    "publicSyncArtifacts": [
+      "docs/audits/alibaba-canary/INDEX.md",
+      "docs/audits/alibaba-canary/CVF_RECEIPT_20260421-072551-422037.md",
+      "docs/audits/deepseek-canary/INDEX.md",
+      "docs/audits/deepseek-canary/CVF_RECEIPT_20260421-114125-19515e.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerDecision": "R65B_PROVIDER_CANARY_RECEIPT_EVIDENCE_INDEX_INTEGRITY_ACCEPTED_PUBLIC_SYNC_LOCAL_COMMIT_NOT_PUSHED",
+    "closureSummary": "Reviewer accepted the R65B no-commit worker return, repaired formatting-only public-sync whitespace/ASCII issues, committed the sibling public-sync provider canary receipt/index artifacts locally, and committed the provenance worker return plus completion review. OpenAI remains EXPERIMENTAL and not certified. Public push was not performed.",
+    "verification": [
+      "git -C public-sync diff --check PASS after reviewer whitespace repair",
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4c288ce5 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 4c288ce5 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit f381ec920"
+    ],
+    "nextAllowedMove": "Author a fresh MSEA-R65C GC-018/source-verified public-sync publish-or-hold and provider receipt-link integrity checker decision packet. Public push, checker implementation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production claims, and direct downstream release remain unauthorized until the packet and operator authorization release an exact scope.",
+    "claimBoundary": "R65B closes only bounded public-sync documentation/evidence repair and private provenance reviewer closure. It does not authorize public push, runtime/source/test/checker edits, provider/live proof, JSON receipt export, direct external import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, or OpenAI certification uplift."
+  },
+  "mseaR65CPublicSyncPublishOrHoldReceiptLinkCheckerDecisionDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "627085c35",
+    "materialCommitFull": "627085c35a6d46e5decc7ee3b06b580160f60418",
+    "dispatchBaseHead": "a1f3a8006",
+    "dispatchBaseHeadFull": "a1f3a8006942b57c1a559880f4e94ce7c12fef3e",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "workerDecisionMatrix": "docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a no-commit, read-only R65C worker decision pass to classify public-sync publish-or-hold posture after R65A/R65B and decide whether provider receipt-link integrity checker implementation deserves a later packet.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base a1f3a8006 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base a1f3a8006 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "publicSyncStatusAtDispatch": "clean; main...origin/main [ahead 2]; public push not authorized",
+    "nextAllowedMove": "Execute no-commit MSEA-R65C worker decision pass only. Worker may create only the R65C decision matrix and worker return in provenance, may read public-sync status/remote/log/matrix/audit evidence, and must not mutate, commit, or push public-sync.",
+    "claimBoundary": "R65C dispatch authorizes only decision-only read work. It does not authorize public-sync mutation, public commit, public push, checker implementation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, worker commit, historical rename/move sweep, or downstream release."
+  },
+  "mseaR65CPublicSyncPublishOrHoldReceiptLinkCheckerDecisionClosure20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "7f557d4bb",
+    "materialCommitFull": "7f557d4bb610c011d414073b165697276c8427c6",
+    "dispatchCommit": "627085c35",
+    "dispatchCommitFull": "627085c35a6d46e5decc7ee3b06b580160f60418",
+    "executionBaseHead": "1f6f79c1d",
+    "executionBaseHeadFull": "1f6f79c1d43fbdba6b5e2edbb68636d7b0762a75",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_2026-07-07.md",
+    "decisionMatrix": "docs/reference/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_DECISION_MATRIX_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_WORKER_RETURN_2026-07-07.md",
+    "completionReview": "docs/reviews/CVF_MSEA_R65C_PUBLIC_SYNC_PUBLISH_OR_HOLD_AND_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_DECISION_COMPLETION_REVIEW_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerDecision": "R65C_PUBLIC_SYNC_PUSH_READY_PENDING_OPERATOR_CONFIRMATION_AND_CHECKER_PACKET_RECOMMENDED_ACCEPTED",
+    "publicSyncStatusAtClosure": "clean; main...origin/main [ahead 2]; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "publicSyncLocalCommits": [
+      "fbb782fee4509af99a02c8632ddf8bde3aa449e6",
+      "756c465e16fb034d6b699afc5d46831fba77a5bc"
+    ],
+    "closureSummary": "Reviewer accepted the R65C no-commit worker return and decision matrix. R65C classifies the existing public-sync local R65A/R65B commits as push-ready under a separate authorization hold and recommends a future provider receipt-link integrity checker packet. R65C did not mutate, commit, or push public-sync and did not implement a checker.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a1f3a8006 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 1f6f79c1d --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit 7f557d4bb",
+      "git -C public-sync status --short --branch confirmed main...origin/main [ahead 2]",
+      "git -C public-sync remote -v confirmed public repository remote"
+    ],
+    "nextAllowedMove": "Hold for explicit public-sync push authorization or fresh source-verified R65D checker packet authorization. No public push, checker implementation, runtime/source/test edits, provider/live proof, JSON receipt export, OpenAI certification uplift, production claims, worker commit, historical rename/move sweep, or direct downstream release is authorized by R65C closure alone.",
+    "claimBoundary": "R65C closes only a bounded private provenance decision tranche. It accepts the decision matrix and worker return, records public-sync push readiness under separate authorization, and recommends a future checker packet. It does not authorize public push, public-sync mutation, runtime/source/test/checker edits, provider/live proof, JSON receipt export, direct external import, private/generated MinerU output read, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, or OpenAI certification uplift."
+  },
+  "mseaR65DProviderReceiptLinkIntegrityCheckerImplementationDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "22638481b",
+    "materialCommitFull": "22638481b7d74a2ad28bb8f7c49024fd77ab8894",
+    "dispatchBaseHead": "961c56c5e",
+    "dispatchBaseHeadFull": "961c56c5e71ba4799b6e25b6e7aa3c70e06c350e",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a bounded R65D no-commit worker tranche to add a public-sync static provider receipt-link integrity checker and wire it into the existing public-sync static CI gate. The worker may edit only scripts/check_provider_receipt_link_integrity.py and scripts/run_cvf_static_ci_gate.py in the sibling public-sync clone, plus one provenance worker return.",
+    "publicSyncStatusAtDispatch": "clean; main...origin/main [ahead 2]; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "publicSyncLocalCommits": [
+      "fbb782fee4509af99a02c8632ddf8bde3aa449e6",
+      "756c465e16fb034d6b699afc5d46831fba77a5bc"
+    ],
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 961c56c5e --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 961c56c5e --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit 22638481b",
+      "git -C public-sync status --short --branch confirmed main...origin/main [ahead 2]",
+      "git -C public-sync remote -v confirmed public repository remote"
+    ],
+    "nextAllowedMove": "Worker executes R65D under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer/closer owns acceptance, material commit of worker changes, and later session-sync. Public push remains separately operator-owned.",
+    "claimBoundary": "R65D dispatch authorizes only a bounded public-sync static checker implementation and one provenance worker return. No public-sync commit, public push, provider/live proof, JSON receipt export, provider status changes, OpenAI certification uplift, provenance runtime/source/test/checker edits, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized."
+  },
+  "mseaR65DProviderReceiptLinkIntegrityCheckerImplementationClosure20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR",
+    "date": "2026-07-07",
+    "materialCommit": "bb959a63f",
+    "materialCommitFull": "bb959a63f65932c50d57f791c8c394dd203a6fc1",
+    "dispatchCommit": "22638481b",
+    "dispatchCommitFull": "22638481b7d74a2ad28bb8f7c49024fd77ab8894",
+    "sessionSyncBaseHead": "bb959a63f",
+    "executionBaseHead": "c2e5dcdfa",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_WORKER_RETURN_2026-07-07.md",
+    "publicSyncLocalCommit": "0d3bba46f",
+    "publicSyncLocalCommitFull": "0d3bba46fae54ec32e1efdd60e72cc59c3620053",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "closureSummary": "Accepted the R65D no-commit worker return after reviewer repair. Public-sync local commit 0d3bba46f adds scripts/check_provider_receipt_link_integrity.py and wires it into scripts/run_cvf_static_ci_gate.py. Provenance material commit bb959a63f records the worker return and repairs the R65D work-order manifest shape. The focused checker passes Alibaba and DeepSeek certified receipt links and skips OpenAI while EXPERIMENTAL.",
+    "reviewerRepairs": [
+      "Corrected the public-sync checker so --matrix-path resolves relative links against the supplied matrix file directory while still enforcing repository-root containment.",
+      "Restored the R65D work-order Work-Order Fulfillment Manifest marker plus Required Artifact Manifest table required by dispatch-quality gates.",
+      "Added reviewer decision/disposition evidence to the worker return instead of creating an optional completion review."
+    ],
+    "verification": [
+      "python -m py_compile scripts/check_provider_receipt_link_integrity.py scripts/run_cvf_static_ci_gate.py PASS in public-sync",
+      "python scripts/check_provider_receipt_link_integrity.py PASS in public-sync",
+      "in-repo temporary --matrix-path fixture PASS in public-sync",
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 961c56c5e --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base c2e5dcdfa --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit bb959a63f"
+    ],
+    "publicSyncStatusAfterClosure": "clean; main...origin/main [ahead 3]; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "knownHoldBeforePublicMergeOrPush": "Full public-sync static CI still has a pre-existing Public surface guard failure against R65B docs/audits/** receipt/index exports. This is not caused by R65D but must be resolved or explicitly waived in a fresh packet before public merge/push readiness is claimed.",
+    "nextAllowedMove": "Fresh source-verified public-safe workspace PR repair and merge-readiness packet authoring only, covering GitHub PR #20/#3 findings and the R65D-disclosed public-surface guard conflict before any public merge or push.",
+    "claimBoundary": "R65D closure accepts only local public-sync checker implementation and provenance worker-return/work-order repair. No public push, public GitHub merge, provider/live proof, provider status edit, OpenAI certification uplift, JSON receipt export, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, or direct downstream release is authorized."
+  },
+  "mseaR70WorkspaceOverlayPipelineFeatureSplitReviewDecisionAccepted20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "f267c92ca",
+    "materialCommitFull": "f267c92cadde0278238df693f0038c277bbe4184",
+    "dispatchCommit": "a18d2ef99",
+    "dispatchCommitFull": "a18d2ef9984d08a356955fa1998a8071903ce5a5",
+    "sessionSyncBaseHead": "f267c92ca",
+    "gc018Baseline": "docs/baselines/CVF_GC018_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md",
+    "decision": "ACCEPT_AS_FUTURE_FEATURE_WITH_SPLIT",
+    "closureSummary": "Accepted the no-commit R70 worker return after reviewer repair. The residual closed PR #20 overlay feature bundle remains valuable but is not merge-ready as one bundle. The accepted path is to split it into standards/catalog/profile definitions first, then overlay engine/validation, then integration/wrapper wiring only after separate packets.",
+    "reviewerRepairs": [
+      "Reverted the worker's out-of-scope work-order layout edit so the final material changed set is the worker return only.",
+      "Corrected the worker-return gate evidence to record that the work order's --path gate command shape is stale for the current helper and that the supported current command passed.",
+      "Narrowed public-safety and implementation-readiness prose so R70 does not claim the overlay bundle is implemented, merge-ready, or public-safe without follow-up verification."
+    ],
+    "recommendedSplit": [
+      "R70A standards/catalog/profile-definition packet only: docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md, workspace_overlay_catalog.json, and workspace_overlay_profiles/*.json.",
+      "R70B overlay engine and validation scripts only after R70A acceptance.",
+      "R70C integration and wrapper wiring only after R70B acceptance and fresh boundary verification."
+    ],
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 51ed478d8 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 51ed478d8 --head HEAD PASS 75/75",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R70A standards/catalog/profile-definition packet authoring only. No implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release is authorized.",
+    "claimBoundary": "R70 acceptance records only the bounded decision to keep the overlay feature as a split follow-up lane. It does not accept or merge the broad PR #20 overlay implementation and does not authorize public-sync, runtime, provider/live, production, or public readiness claims."
+  },
   "assfPicT4WebProjectionBridgeDecisionClosure20260626": "ASSF-PIC-T4 is CLOSED_PASS_BOUNDED at material closure commit 60ffa4de. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T4_WEB_PROJECTION_BRIDGE_DECISION_COMPLETION_2026-06-26.md. Dispositions: WEB_PROJECTION_DEFERRED_CERTIFICATION_HELD; SCHEMA_BRIDGE_DEFERRED_CERTIFICATION_HELD; EXTERNAL_ADAPTER_DEFERRED_NO_EVIDENCE. ASSF-PIC-T5 is released for GC-018/source-verified work-order creation after this session-sync.",
   "assfPicT5CheckerReadinessNextControlDecisionClosure20260626": "ASSF-PIC-T5 is CLOSED_PASS_BOUNDED at material closure commit 410818fc, and the ASSF-PIC roadmap is CLOSED_PASS_BOUNDED. Material artifacts: docs/baselines/CVF_GC018_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/work_orders/CVF_AGENT_WORK_ORDER_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_FOR_CODEX_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_2026-06-26.md; docs/reviews/CVF_ASSF_PIC_T5_CHECKER_READINESS_NEXT_CONTROL_DECISION_COMPLETION_2026-06-26.md. Disposition: CHECKERS_DEFERRED_PENDING_FIRST_CERTIFICATION_EVIDENCE. Next-control recommendation: OPEN_UAT_CERTIFICATION_EVIDENCE_COLLECTION_LANE.",
   "roadmapClosurePackageGotchaHardening20260626": "Roadmap closure package gotcha hardening is CLOSED_PASS_BOUNDED at material commit 9cd46bd2. Material artifact: docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md. Disposition: CHECKLIST_GUIDANCE_ADDED. Lesson recorded: changing a roadmap top Status line to a closed-equivalent token requires adding the roadmap-local Machine Closure Package and, when receipt/query acceptance language is used, the Acceptance Receipt Assertion Matrix before the first gate run. Boundary: documentation/reference checklist guidance only; no checker implementation, package instance creation, certification decision, lifecycle mutation, registry-source mutation, generated-index mutation, resolver mutation, Web runtime change, CLI/MCP adapter behavior, provider/live proof, public-sync, push, activation, or readiness claim.",
@@ -9878,5 +10217,324 @@
     },
     "nextAllowedMove": "Stop/checkpoint. No further MSEA R57 follow-on implementation, checker, runtime, public-sync, production Memory/RAG, retrieval/vectorization, P3 reopen, external import, private/generated MinerU output read, source/test edit, provider/MCP proof, use-case/legal workflow, hosted/public/production claim, or direct implementation is authorized unless the operator selects a fresh source-verified target.",
     "claimBoundary": "R57 closes only a bounded private provenance release-or-stop decision. It accepts the R56 foundation plane I/O contract as the current governed internal architecture/control-plane checkpoint and stops the current lane. Future checker, implementation, runtime, public, or use-case work requires a fresh operator-selected source-verified target."
-  }
+  },
+  "mseaR66PublicSafeWorkspacePrRepairMergeReadinessClosure20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_HOLD",
+    "date": "2026-07-07",
+    "materialCommit": "f5f10b8f",
+    "materialCommitFull": "f5f10b8f8f49825d93cce7766f248f0c720a54a2",
+    "dispatchCommit": "006d9cafa",
+    "dispatchCommitFull": "006d9cafaa4230461cf5ff836f2598f2efbae8e2",
+    "sessionSyncBaseHead": "f5f10b8f",
+    "executionBaseHead": "78d7317b0",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R66_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md",
+    "publicSyncLocalCommit": "e85252a47",
+    "publicSyncLocalCommitFull": "e85252a472af6e508bed9ada957d37fa390b7193",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "closureSummary": "Accepted the R66 no-commit worker return with bounded hold. Public-sync local commit e85252a47 allowlists four already-accepted Alibaba and DeepSeek canary receipt/index markdown artifacts in governance/public-surface-manifest.json, resolving the R65D public-surface guard conflict locally. R66 confirms PR #3's apparent eight-file scope is justified by three scoped sync commits and isolates PR #20's narrow leakfix from its broader undispatched overlay-pipeline bundle. Merge readiness remains held by the Windows PowerShell 5.1 Vietnamese guide mojibake defect, the PR #3 New Project Enforcement Gate documentation deletion, PR #20 overlay-bundle split/authorization, and failing GitHub required checks.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 78d7317b0 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 78d7317b0 --head HEAD --enforce PASS",
+      "python scripts/check_public_surface.py PASS in public-sync",
+      "python scripts/run_cvf_static_ci_gate.py PASS 8/8 in public-sync after manifest repair",
+      "material pre-commit hook PASS 80/80 for provenance commit f5f10b8f"
+    ],
+    "publicSyncStatusAfterClosure": "clean; main...origin/main [ahead 4]; latest local commit e85252a47; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "knownHoldBeforePublicMergeOrPush": "Do not merge PR #20 or PR #3 and do not push public-sync until a fresh R67 packet repairs or explicitly accepts the Windows PowerShell 5.1 Vietnamese guide mojibake defect, restores or explicitly accepts the lost New Project Enforcement Gate documentation section, handles PR #20 overlay-bundle split/authorization, and triages or waives failing required GitHub checks.",
+    "nextAllowedMove": "Fresh source-verified R67 public-safe workspace PR defect repair and merge-readiness packet authoring only. R67 should target the Windows PowerShell 5.1 Vietnamese guide encoding defect, PR #3 New Project Enforcement Gate restoration or explicit acceptance, PR #20 overlay-bundle split/hold decision, and failing required-check triage before any merge or public push.",
+    "claimBoundary": "R66 closure accepts only local public-sync manifest repair and provenance worker-return evidence. No public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, JSON receipt export, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, or direct downstream release is authorized."
+  },
+  "mseaR67PublicSafeWorkspacePrDefectRepairMergeReadinessDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "49f842557",
+    "materialCommitFull": "49f8425573c81d1287da940dc1c55f14a804dfe2",
+    "dispatchBaseHead": "3ac51ea70",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatched a no-commit R67 worker tranche for the remaining R66 public-safe workspace PR defects: Windows PowerShell 5.1 Vietnamese guide mojibake repair or hold, PR #3 New Project Enforcement Gate restoration or hold, PR #20 overlay-bundle split/hold handling, and refreshed failing GitHub required-check triage. No public push, GitHub merge, broad overlay acceptance, provider/live proof, or worker commit is authorized.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 3ac51ea70 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 3ac51ea70 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "publicSyncStatusAtDispatch": "clean; main...origin/main [ahead 4]; latest local commit e85252a47; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "nextAllowedMove": "No-commit R67 worker execution only. Worker must create docs/reviews/CVF_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md, refresh PR metadata/check rollups, repair or return source-backed decisions for the encoding, workspace-rules, overlay split/hold, and required-check items, run required gates, and leave all changes uncommitted.",
+    "claimBoundary": "R67 dispatch authorizes only no-commit worker execution and lane-correct repair/decision evidence. It does not authorize public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release."
+  },
+  "mseaR67PublicSafeWorkspacePrDefectRepairMergeReadinessClosure20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_PUSH_HOLD",
+    "date": "2026-07-07",
+    "materialCommit": "e03677e57",
+    "materialCommitFull": "e03677e57631ebc3ffe4c6d7f90dfcae7842f092",
+    "dispatchCommit": "49f842557",
+    "dispatchCommitFull": "49f8425573c81d1287da940dc1c55f14a804dfe2",
+    "sessionSyncBaseHead": "e03677e57",
+    "executionBaseHead": "16d0f7763",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R67_PUBLIC_SAFE_WORKSPACE_PR_DEFECT_REPAIR_AND_MERGE_READINESS_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "closureSummary": "Accepted the R67 no-commit worker return with bounded push hold. R67 root-caused and locally verified a Windows PowerShell 5.1 Vietnamese guide encoding repair for PR #20, restored the PR #3 New Project Enforcement Gate section in a local PR-branch worktree, repaired the PR #3 Surface Scan Continuity failure in that worktree by realigning AGENT_HANDOFF.md, and proved a 3-commit PR #20 narrow-leakfix split recipe. None of the verified PR-branch repair diffs were committed or pushed.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 16d0f7763 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 16d0f7763 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "publicSyncStatusAfterClosure": "clean; main...origin/main [ahead 4]; latest local commit e85252a47; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "verifiedLocalRepairWorktrees": [
+      "C:\\Users\\DELL\\AppData\\Local\\Temp\\pr20-fix at detached b4676d09b with uncommitted scripts/install_cvf_workspace_root_wrappers_public.ps1 BOM repair",
+      "C:\\Users\\DELL\\AppData\\Local\\Temp\\pr3-fix at detached 2576ac6ed with uncommitted AGENT_HANDOFF.md and docs/reference/CVF_WORKSPACE_RULES.md repairs"
+    ],
+    "knownHoldBeforePublicMergeOrPush": "Do not merge PR #20 or PR #3 and do not push any public/provenance branch until a fresh R68 packet or explicit operator authorization names the exact branch, repair transfer mechanism, push scope, and merge boundary. PR #20's broad overlay-pipeline bundle remains not accepted; its narrow leakfix path requires the documented 3-commit recipe e94440c09, 4920d656d, b4676d09b with fresh execution-time verification.",
+    "nextAllowedMove": "Fresh source-verified MSEA-R68 public-safe workspace PR repair publish-or-hold packet authoring only. R68 should decide whether to transfer and push the verified PR #20 and PR #3 worktree repairs and whether to open a narrow PR #20 leakfix split, while preserving the no-public-push/no-merge boundary until authority is explicit.",
+    "claimBoundary": "R67 closure accepts only provenance worker-return evidence and local disposable-worktree repair verification. No public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, JSON receipt export, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, or direct downstream release is authorized."
+  },
+  "mseaR68PublicSafeWorkspacePrRepairPublishOrHoldDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "15e736a65",
+    "materialCommitFull": "15e736a6537cfc6407700d96e7bab23c39a2e5de",
+    "dispatchBaseHead": "d6d576891",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatched a no-commit R68 worker tranche to verify R67 local PR-branch repair worktrees, refresh PR #20/#3 metadata, classify transfer/publish readiness, and return an operator-ready checklist or exact hold reason. No public push, GitHub merge, broad overlay acceptance, provider/live proof, or worker commit is authorized.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base d6d576891 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base d6d576891 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "publicSyncStatusAtDispatch": "clean; main...origin/main [ahead 4]; latest local commit e85252a47; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "nextAllowedMove": "No-commit R68 worker execution only. Worker must create docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md, refresh PR metadata/check rollups, verify R67 repair worktrees, classify publish-or-hold readiness, run required gates, and leave all changes uncommitted.",
+    "claimBoundary": "R68 dispatch authorizes only no-commit worker execution and publish-or-hold decision evidence. It does not authorize public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release."
+  },
+  "mseaR68PublicSafeWorkspacePrRepairPublishOrHoldClosure20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_AUTHORIZATION_HOLD",
+    "date": "2026-07-07",
+    "materialCommit": "c5cbe6691",
+    "materialCommitFull": "c5cbe66919070a9c0a05dfa52567573b48d8cd6d",
+    "dispatchCommit": "15e736a65",
+    "dispatchCommitFull": "15e736a6537cfc6407700d96e7bab23c39a2e5de",
+    "sessionSyncBaseHead": "c5cbe6691",
+    "executionBaseHead": "6ddd8f81d",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "closureSummary": "Accepted the R68 no-commit worker return as a bounded publish-or-hold decision packet. R68 re-verified the R67 PR #20 and PR #3 repair worktrees, refreshed live PR metadata, reproduced the PR #20 narrow split recipe, confirmed public-sync remains clean and ahead origin by four commits, and preserved HOLD on every remote-mutation action because explicit operator push/merge authorization is absent.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 6ddd8f81d --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 6ddd8f81d --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "publicSyncStatusAfterClosure": "clean; main...origin/main [ahead 4]; latest local commit e85252a47; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "verifiedLocalRepairWorktrees": [
+      "C:\\Users\\DELL\\AppData\\Local\\Temp\\pr20-fix at detached b4676d09b with uncommitted scripts/install_cvf_workspace_root_wrappers_public.ps1 BOM repair",
+      "C:\\Users\\DELL\\AppData\\Local\\Temp\\pr3-fix at detached 2576ac6ed with uncommitted AGENT_HANDOFF.md and docs/reference/CVF_WORKSPACE_RULES.md repairs"
+    ],
+    "knownHoldBeforePublicMergeOrPush": "Do not push PR #20, push PR #3, push public-sync main, merge GitHub PR #20, merge GitHub PR #3, or open the narrow PR #20 split until the operator gives explicit authorization or a fresh R69 execution packet names the exact selected action, repository, branch/worktree, push scope, merge boundary, and required-check handling. PR #20's broad overlay-pipeline bundle remains not accepted.",
+    "nextAllowedMove": "Explicit operator authorization checkpoint or fresh source-verified MSEA-R69 push/merge/split execution packet only. R69, if authorized, must name the exact selected action(s), repositories, branches/worktrees, push scope, merge boundary, required-check handling, and whether public-sync main ahead commits are included. Without that authorization, remain on HOLD.",
+    "claimBoundary": "R68 closure accepts only provenance worker-return evidence and a bounded publish-or-hold decision. No public push, provenance push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provenance runtime/source/test/checker edit, provider status edit, OpenAI certification uplift, JSON receipt export, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized."
+  },
+  "mseaR69PublicSafeWorkspacePrSafeMergeExecutionClosure20260707": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "fee4e12d1",
+    "materialCommitFull": "fee4e12d15644dece4ed8153a5749f0c8b8d7013",
+    "sessionSyncBaseHead": "fee4e12d1",
+    "closureArtifact": "docs/reviews/CVF_MSEA_R69_PUBLIC_SAFE_WORKSPACE_PR_SAFE_MERGE_EXECUTION_2026-07-07.md",
+    "r68AcceptedArtifact": "docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md",
+    "closureSummary": "Executed the operator-authorized safe merge path after R68. Public PR #3 was repaired and merged; a narrow provenance PR #21 was created and merged; broad provenance PR #20 was closed as superseded without accepting the overlay-pipeline bundle; public-sync local main was rebased, verified, pushed, and confirmed clean/current with public GitHub.",
+    "publicPr3": {
+      "url": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/3",
+      "state": "MERGED",
+      "mergeCommit": "b9ce2e4822a6a6bef353ae85df82d2efd4511fb1"
+    },
+    "provenancePr21": {
+      "url": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance/pull/21",
+      "state": "MERGED",
+      "mergeCommit": "eaa48db35b3d2a95da9394948f608ea4670726db"
+    },
+    "provenancePr20": {
+      "url": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance/pull/20",
+      "state": "CLOSED_SUPERSEDED_NOT_MERGED"
+    },
+    "publicSyncStatusAfterClosure": "clean; main...origin/main; HEAD == origin/main == e50ac604d; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base d1288b04c --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base d1288b04c --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80",
+      "public-sync python scripts/check_public_surface.py PASS",
+      "public-sync python scripts/run_cvf_static_ci_gate.py PASS 8/8"
+    ],
+    "nextAllowedMove": "Return to governed roadmap continuation or fresh source-verified packet selection only. No pending public-sync push remains for the R65-R69 public-safe workspace leakfix lane.",
+    "claimBoundary": "R69 closure claims only the bounded safe merge/public-sync execution. It does not accept the broad overlay-pipeline bundle, open a new public-sync lane, edit provider status, run provider/live proof, release production Memory/RAG, reopen P3, authorize use-case/legal workflow, or make hosted/public/production readiness claims."
+  },
+  "mseaR70WorkspaceOverlayPipelineFeatureSplitReviewDecisionDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "a18d2ef99",
+    "materialCommitFull": "a18d2ef9984d08a356955fa1998a8071903ce5a5",
+    "dispatchBaseHead": "0260fec3b",
+    "gc018Baseline": "docs/baselines/CVF_GC018_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md",
+    "dispatchSummary": "Dispatched a no-commit R70 worker tranche to evaluate the residual workspace overlay pipeline feature bundle from closed provenance PR #20. The worker must refresh PR #20 evidence, separate the candidate overlay feature commits from the already-handled public-safe leakfix commits, assess value, maintainability, PowerShell safety, and public/provenance boundary safety, and return an accept/split/hold/reject recommendation without implementation.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 0260fec3b --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 0260fec3b --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "No-commit R70 worker execution only. Worker must create docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md, refresh PR #20 metadata/diff/check evidence, classify the residual overlay feature bundle, run required gates, and leave all changes uncommitted.",
+    "claimBoundary": "R70 dispatch authorizes only no-commit feature split and review decision work. It does not authorize implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release."
+  },
+  "mseaR70AWorkspaceOverlayStandardsCatalogProfileDefinitionsDispatch20260707": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "80b37b2d2",
+    "materialCommitFull": "80b37b2d2c5a56eb997640743188a1b50b506098",
+    "dispatchBaseHead": "b65ad7c76",
+    "gc018Baseline": "docs/baselines/CVF_GC018_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_2026-07-07.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md",
+    "statusSummary": "DISPATCH_READY for no-commit R70A worker execution. The packet authorizes proposed workspace overlay standard, catalog, profile JSON definitions, and the R71-required reference artifact index row only.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base b65ad7c76 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base b65ad7c76 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "No-commit MSEA-R70A worker execution only, producing docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md and the worker-owned definition artifacts named in the R70A work order. Worker may create docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md, workspace_overlay_catalog.json, the eleven named workspace_overlay_profiles JSON files, and a narrow docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md row/update. Worker must not commit, merge, push, cherry-pick, mutate public-sync, edit scripts, runtime/source/tests/checkers, run provider/live proof, edit provider status or OpenAI certification, release production Memory/RAG, reopen P3, open use-case/legal workflow, make hosted/public/production claims, sweep historical renames/moves, or release downstream work.",
+    "claimBoundary": "R70A dispatch records only source-verified definition-authoring authority. It does not implement the overlay pipeline, accept broad PR #20, mutate public-sync, or claim runtime/public/provider behavior."
+  },
+  "mseaR70AWorkspaceOverlayStandardsCatalogProfileDefinitionsAcceptance20260707": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "0e9b59d9b",
+    "materialCommitFull": "0e9b59d9b1945a09a10b2fb4cbce322c42c51f6e",
+    "executionBaseHead": "94942ede2",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md",
+    "acceptedArtifacts": [
+      "docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md",
+      "workspace_overlay_catalog.json",
+      "workspace_overlay_profiles/premium-authoring.json",
+      "workspace_overlay_profiles/premium-boundary.json",
+      "workspace_overlay_profiles/premium-extended-workspace.json",
+      "workspace_overlay_profiles/premium-governance.json",
+      "workspace_overlay_profiles/premium-operator-runbook.json",
+      "workspace_overlay_profiles/premium-orientation.json",
+      "workspace_overlay_profiles/premium-skill-enablement.json",
+      "workspace_overlay_profiles/premium-workspace.json",
+      "workspace_overlay_profiles/provenance-continuity-local.json",
+      "workspace_overlay_profiles/provenance-extended-local.json",
+      "workspace_overlay_profiles/provenance-local.json",
+      "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md"
+    ],
+    "statusSummary": "REVIEWER_ACCEPTED_BOUNDED for R70A definition-only workspace overlay standard, catalog, profile JSON files, and R71 reference index classification row. Reviewer repaired overclaim and stale-path defects before material commit.",
+    "reviewerRepairs": [
+      "Promoted the overlay standard top matter to Memory class ACTIVE_REFERENCE and Status ACTIVE_REFERENCE to match LEGACY_DATED_ACTIVE_REFERENCE index classification.",
+      "Converted non-existent overlay script command examples into future implementation hook names with an explicit no-executable-evidence boundary.",
+      "Updated the stale V23 handoff catalog path to active AGENT_HANDOFF_V38_2026-07-06.md.",
+      "Added Claim Boundary and Public Export Disposition sections to the new reference standard."
+    ],
+    "verification": [
+      "JSON parse and catalog path validation PASS for workspace_overlay_catalog.json plus 11 profile JSON files",
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "material pre-commit hook PASS 80/80",
+      "pre-closure autorun on 94942ede2..HEAD PASS for 72/73 content gates; blocked only by required post-material session-sync active-state freshness before this entry"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R72 Independent EA Assessment Intake And Governance Load Rebalancing packet authoring only. R72 may verify the external EA assessment facts, classify governance-load risks, and propose bounded corrective-action lanes. R72 must not implement checker retirement, delete or disable checkers, mutate public-sync, edit runtime/source/tests/checkers, run provider/live proof, make public/production claims, push, merge, or sweep historical artifacts without a later accepted work order.",
+    "claimBoundary": "R70A accepts static overlay definitions only. It does not implement overlay scripts, validate runtime behavior, mutate public-sync, merge PR #20, authorize broad overlay-pipeline implementation, or make public release or production claims."
+  },
+  "mseaR72EaAssessmentGovernanceLoadRebalancingRoadmap20260707": {
+    "status": "ROADMAP_READY_FOR_R72A_GC018_AND_WORK_ORDER_AUTHORING",
+    "date": "2026-07-07",
+    "materialCommit": "4c540f1af",
+    "materialCommitFull": "4c540f1af1b2cfc6c8fa09140ac750e287d13c59",
+    "roadmap": "docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md",
+    "statusSummary": "R72 roadmap accepts the independent EA critique as a high-confidence governance-load signal after command remeasurement, then routes corrective action through R72A-R72F without implementing checker retirement or public/runtime changes.",
+    "verification": [
+      "Product/governance monthly touches recomputed at 29a8a4087 before roadmap authoring",
+      "Checker count and add/delete history recomputed: 287 checkers on 2026-07-07 snapshot, 294 added, 0 deleted",
+      "Public main CI live rechecked through gh run list and remains red at roadmap authoring time",
+      "R66-R69 artifact line count recomputed: TOTAL=4745 FILES=10",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 29a8a4087 --head HEAD PASS 75/75",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A may refresh public-main GitHub Actions status, verify public-sync repository boundary, classify current CI failures, and define a governance-load baseline work order. R72A must not implement checker retirement, delete or disable checkers, mutate public-sync, edit runtime/source/tests/checkers, run provider/live proof, make public/production claims, push, merge, or sweep historical artifacts unless a later accepted work order explicitly authorizes the narrower action.",
+    "claimBoundary": "R72 is roadmap-only. It does not implement checker retirement, delete or disable checkers, mutate public-sync, repair CI, edit runtime/source/tests/checkers, run provider/live proof, push, merge, or make public/production claims."
+  },
+  "mseaR72GovernanceControlIndexEstablished20260707": {
+    "status": "GOVERNANCE_CONTROL_INDEX_ESTABLISHED_PENDING_R72A_GC018",
+    "date": "2026-07-07",
+    "materialCommit": "7c2a04ff1",
+    "materialCommitFull": "7c2a04ff1be0b833cc1e1d388e5dbe827106ebcb",
+    "artifacts": [
+      "docs/reference/governance_control_index/README.md",
+      "docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md",
+      "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md",
+      "docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md"
+    ],
+    "statusSummary": "Official Governance Control Index front door is established as the lifecycle, cost, value, and retirement-readiness control index for governance surfaces. R72 roadmap is updated to route R72B and R72F through GCI-backed inventory and criteria before any checker retirement or consolidation pilot.",
+    "verification": [
+      "python governance/compat/check_markdown_structural_completeness.py --base 778adb4c3 --head HEAD --enforce PASS",
+      "python governance/compat/check_index_classification.py --base 778adb4c3 --head HEAD --enforce PASS",
+      "python governance/compat/check_agent_operation_trace.py --base 778adb4c3 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 778adb4c3 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 778adb4c3 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A must cite Governance Control Index GCI-014 for public-main CI/public-surface evidence and preserve R72 boundaries: no checker retirement implementation, no checker deletion or disablement, no public-sync mutation, no runtime/source/tests/checkers edit, no provider/live proof, no push, no merge, and no public/production claims unless a later accepted work order explicitly authorizes narrower action.",
+    "claimBoundary": "GCI is a lifecycle/cost/value governance front door and roadmap authority update only. This commit does not implement checker retirement, delete or disable checkers, mutate public-sync, repair CI, edit runtime/source/tests/checkers, run provider/live proof, push, merge, or make public/production claims."
+  },
+  "mseaR72APublicMainCiHealthGovernanceLoadBaselineAccepted20260708": "REVIEWER_ACCEPTED_BOUNDED_PENDING_DEBT_PLAN. R72A Public Main CI Health And Governance-Load Baseline accepted from no-commit worker execution at base f1de350cb. Accepted artifacts: docs/baselines/CVF_GC018_MSEA_R72A_PUBLIC_MAIN_CI_HEALTH_AND_GOVERNANCE_LOAD_BASELINE_2026-07-08.md, docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R72A_PUBLIC_MAIN_CI_HEALTH_AND_GOVERNANCE_LOAD_BASELINE_2026-07-08.md, docs/reference/CVF_MSEA_R72A_PUBLIC_MAIN_CI_AND_GOVERNANCE_LOAD_BASELINE_MATRIX_2026-07-08.md, docs/reviews/CVF_MSEA_R72A_PUBLIC_MAIN_CI_HEALTH_AND_GOVERNANCE_LOAD_BASELINE_WORKER_RETURN_2026-07-08.md. Result: public-main head e50ac604d classified as one GOVERNANCE_LOAD failure (CVF CI Pipeline: public export disposition binding drift in public AGENTS.md) and two PRODUCT_DEBT failures (Documentation & Testing: missing public conformance script; CVF CI: stale Learning Plane Foundation lockfile), with public-surface/static CI checks passing. Worker-return fast gate and pre-implementation autorun passed all R72A content checks; the only prior failing gate was active handoff HEAD freshness, repaired by opening AGENT_HANDOFF_V39_2026-07-08.md. Boundary: no CI repair, checker retirement, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, product extraction, onboarding implementation, public/production claim, or R72B-R72H execution.",
+  "mseaR72GciClaudeReviewRepairAccepted20260708": {
+    "status": "GCI_CLAUDE_REVIEW_REPAIR_ACCEPTED_PENDING_R72A_GC018",
+    "date": "2026-07-08",
+    "materialCommit": "7f25ad753",
+    "materialCommitFull": "7f25ad753fd1b9c4a8d5ac5e01ee8642bbdc4fcf",
+    "sourceReview": "docs/reviews/CVF_R72_GOVERNANCE_CONTROL_INDEX_CLAUDE_REVIEW_2026-07-07.md",
+    "sourceAssessment": "docs/reviews/CVF_INDEPENDENT_EA_ASSESSMENT_CLAUDE_2026-07-07.md",
+    "artifacts": [
+      "docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md",
+      "docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md",
+      "docs/reviews/CVF_INDEPENDENT_EA_ASSESSMENT_CLAUDE_2026-07-07.md",
+      "docs/reviews/CVF_R72_GOVERNANCE_CONTROL_INDEX_CLAUDE_REVIEW_2026-07-07.md"
+    ],
+    "statusSummary": "Accepted Claude's independent R72 GCI review with bounded repairs: GCI-014 now names the public-sync static CI and public-surface scripts, the R72F no-candidate stop condition requires a named WATCH row and exact missing evidence, the roadmap now owns R72G human-operator onboarding and R72H product/governance separability, and the checker-count baseline distinguishes the direct checker-script count from broader checker-test-inclusive counts.",
+    "verification": [
+      "python governance/compat/check_agent_packet_authority_and_encoding.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_corpus_scan_registry.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_markdown_structural_completeness.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_governed_artifact_checker_read_ahead.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_agent_operation_trace.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_index_classification.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_public_export_disposition.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_finding_to_governance_learning.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a37c32dc8 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base a37c32dc8 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A must cite repaired GCI-014 for public-main CI/public-surface evidence, carry the R72D direct-checker-count correction, preserve the R72F named-WATCH-row/no-silent-zero-retirement guardrail, and leave R72G/R72H for their own downstream bounded tranches.",
+    "claimBoundary": "This repair accepts and records bounded roadmap/GCI corrections only. It does not implement checker retirement, delete or disable checkers, mutate public-sync, repair CI, edit runtime/source/tests/checkers, run provider/live proof, push, merge, extract product surfaces, onboard operators, or make public/production claims."
+  },
+  "mseaR72BGovernanceControlIndexCheckerLifecycleInventoryAccepted20260708": "REVIEWER_ACCEPTED_BOUNDED_PENDING_R72C_GC018. R72B Governance Control Index And Checker Lifecycle Inventory accepted from no-commit worker execution at base 7f7bf1a0f and material commit 4dc2bf197. Accepted artifacts: docs/baselines/CVF_GC018_MSEA_R72B_GOVERNANCE_CONTROL_INDEX_AND_CHECKER_LIFECYCLE_INVENTORY_2026-07-08.md, docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R72B_GOVERNANCE_CONTROL_INDEX_AND_CHECKER_LIFECYCLE_INVENTORY_2026-07-08.md, docs/reviews/CVF_GOVERNANCE_VS_MICROMANAGEMENT_LAYER_SEPARATION_ASSESSMENT_2026-07-08.md, docs/reference/CVF_MSEA_R72B_GOVERNANCE_CONTROL_CHECKER_LIFECYCLE_INVENTORY_2026-07-08.md, and docs/reviews/CVF_MSEA_R72B_GOVERNANCE_CONTROL_INDEX_AND_CHECKER_LIFECYCLE_INVENTORY_WORKER_RETURN_2026-07-08.md. Result: inventory/recommendation only over 186 direct governance/compat/check_*.py scripts; cross_family_approval_artifact family is strongest R72F retirement-review candidate class; R72D direct-checker metric boundary preserved; CI/script/manual-run reachability limits disclosed. Reviewer repairs added assessment Epistemic Process evidence, fixed packet-shape literal terms, corrected stale upstream-debt/count wording, corrected the 5 referenced checker count, and updated the R72 roadmap to route next move to R72C. Gates: worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Boundary: no checker deletion, disablement, retirement, consolidation, severity split, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, merge, product extraction, onboarding implementation, public/production claim, or R72C-R72H execution.",
+  "mseaR72CFastLaneCalibrationRiskClassRouterDispatch20260708": "DISPATCH_READY. MSEA-R72C Fast Lane Calibration And Risk-Class Router dispatched at material commit b9650b40d from base 4d88fb0d5. Dispatch artifacts: docs/baselines/CVF_GC018_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_2026-07-08.md and docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_2026-07-08.md. Scope: no-commit worker creates docs/reference/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_CASE_MATRIX_2026-07-08.md plus docs/reviews/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_WORKER_RETURN_2026-07-08.md, building a source-backed R66-R72B ceremony-cost case matrix and proposed risk-class routing design only. Gates: dispatch quality PASS, markdown structural completeness PASS, ADIF disclosure PASS, agent handoff boundary PASS, pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80. Boundary: worker must not commit; no checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane guard or audit-template edit, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, push, merge, product extraction, onboarding implementation, public/production claim, or downstream R72D-R72H execution is authorized.",
+  "mseaR72CFastLaneCalibrationRiskClassRouterAccepted20260708": "REVIEWER_ACCEPTED_BOUNDED. MSEA-R72C Fast Lane Calibration And Risk-Class Router accepted at material commit 7ea4086da from execution base d9c0696ad. Accepted artifacts: docs/reference/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_CASE_MATRIX_2026-07-08.md and docs/reviews/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_WORKER_RETURN_2026-07-08.md. R72C evidence: source-backed R66-R72B case matrix, ceremony-cost trend that fixed-shape cost tracks claim type more than real risk, and proposal-only FAST_DOC_LANE preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence. Gates: worker-return fast gate PASS 59/59, worker-return quality gate PASS 0 violations, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Boundary: no Fast Lane standard edit, checker severity split, checker deletion/disablement/retirement/consolidation, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, push, merge, product extraction, onboarding implementation, public/production claim, or release claim was performed. Next move released: fresh source-verified MSEA-R72D Governance Cost Metric And Monthly Readout GC-018/work-order authoring only.",
+  "mseaR72C1RescanGuardSelfReferenceFalsePositiveRepairAccepted20260708": "CLOSED_PASS_BOUNDED. MSEA-R72C1 Rescan Guard Self-Reference False-Positive Repair accepted at material commit 3cad26401 from base 6ec393a79. Accepted artifacts: docs/reviews/CVF_MSEA_R72C1_RESCAN_GUARD_SELF_REFERENCE_FALSE_POSITIVE_REPAIR_2026-07-08.md, governance/compat/check_rescan_intelligence_hardening.py, and governance/compat/test_check_rescan_intelligence_hardening.py. Result: the target checker now ignores short negated explanatory clauses such as never/no/without around its applicability keywords while preserving the positive regression that real applicable outputs cannot use compact not-applicable disposition. Evidence: focused pytest PASS 16/16, target rescan guard PASS, pre-implementation autorun PASS 75/75, commit steward PASS, material pre-commit hook PASS 80/80. Boundary: no Fast Lane standard edit, checker severity split, checker deletion/disablement/retirement/consolidation, hook edit, public-sync mutation, runtime/product source edit, provider/live proof, public/production claim, or R72D execution was performed. Next move remains fresh source-verified MSEA-R72D Governance Cost Metric And Monthly Readout GC-018/work-order authoring only.",
+  "mseaR72DGovernanceCostMetricMonthlyReadoutDispatch20260708": "DISPATCH_READY. MSEA-R72D Governance Cost Metric And Monthly Readout dispatched at material commit 08535d770 from base 194e98ae4. Dispatch artifacts: docs/baselines/CVF_GC018_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_2026-07-08.md and docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_2026-07-08.md. Scope: no-commit worker creates docs/reference/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_SPECIFICATION_2026-07-08.md plus docs/reviews/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_WORKER_RETURN_2026-07-08.md, defining source-backed metric specs for product-source touches, governance-artifact touches, checker additions/deletions, public CI status, and ceremony ratio. Gates: dispatch quality PASS, markdown structural completeness PASS, packet authority/encoding PASS, agent handoff boundary PASS, target rescan guard PASS, pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80. Boundary: worker must not commit; no metrics automation, checker/hook/Fast Lane edit, public-sync mutation, runtime/source/test edit outside worker-owned docs, provider/live proof, merge, product extraction, onboarding implementation, public/production claim, or downstream R72E-R72H execution is authorized.",
+  "mseaR72D0RescanGuardApplicabilityFalsePositiveRepairAccepted20260708": "CLOSED_PASS_BOUNDED. MSEA-R72D0 Rescan Guard Applicability False-Positive Repair accepted at material commit 402bc2c9e from base c75bbe75f. Accepted artifacts: docs/reviews/CVF_MSEA_R72D0_RESCAN_GUARD_APPLICABILITY_FALSE_POSITIVE_REPAIR_2026-07-08.md, governance/compat/check_rescan_intelligence_hardening.py, and governance/compat/test_check_rescan_intelligence_hardening.py. Result: the target checker now reuses _has_real_rescan_signal_outside_section from _is_applicable_output for ordinary active Markdown applicability and extends self-reference compound token coverage to re-scan spelling, while preserving work-order path detection and positive real-output behavior. Evidence: focused pytest PASS 20/20, target checker PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Boundary: no metrics automation, checker severity split, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, runtime/product source edit, provider/live proof, public/production claim, R72D worker execution, or downstream R72E-R72H execution was performed. Next move remains R72D WORKER_MUST_NOT_COMMIT execution only.",
+  "mseaR72DGovernanceCostMetricMonthlyReadoutAccepted20260708": "REVIEWER_ACCEPTED_BOUNDED. MSEA-R72D Governance Cost Metric And Monthly Readout accepted at material commit 690b11999 from execution base 086f04c22. Accepted artifacts: docs/reference/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_SPECIFICATION_2026-07-08.md and docs/reviews/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_WORKER_RETURN_2026-07-08.md. Reviewer repair tightened the metric evidence before acceptance: product-source and governance-artifact touch metrics now count unique paths, public CI status is refreshed read-only from public repository main, ceremony ratio records numerator and denominator, and public export is DEFERRED_PRIVATE_ONLY. Evidence: worker-return fast gate PASS, markdown structural completeness PASS, packet authority and encoding PASS, rescan intelligence hardening PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Boundary: no metrics automation, new script/checker, checker or hook edit, Fast Lane standard edit, public-sync mutation, runtime/source/test edit outside worker-owned docs, provider/live proof, merge, public release claim, product extraction, onboarding implementation, or downstream R72E-R72H execution was performed. Next move is fresh source-verified R72E GC-018/work-order authoring only.",
+  "mseaR72EAbsorbLaneCeremonyReclassificationDispatch20260708": "DISPATCH_READY. MSEA-R72E Absorb Lane Ceremony Reclassification dispatched at material commit f75656805 from base c83636243. Dispatch artifacts: docs/baselines/CVF_GC018_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_2026-07-08.md and docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_2026-07-08.md. Scope: no-commit worker creates docs/reference/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_TAXONOMY_AND_TRACE_SEED_2026-07-08.md plus docs/reviews/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_WORKER_RETURN_2026-07-08.md. Worker must define absorb-lane risk taxonomy and work-order trace seed preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence. Gates: dispatch quality PASS, markdown structural completeness PASS, ADIF disclosure PASS, checker read-ahead PASS, agent handoff boundary PASS, dispatch prompt envelope PASS, agent operation trace PASS, external knowledge intake routing PASS, external absorption guard family PASS, rescan intelligence hardening PASS, pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80. Boundary: worker must not commit; no checker/hook/Fast Lane/template edit, runtime/source/test edit, public-sync mutation, external source import, source mirror migration, actual absorption execution, provider/live proof, merge, push, product extraction, onboarding implementation, public/production claim, R72F retirement/consolidation pilot, or downstream R72F-R72H execution is authorized.",
+  "nextAllowedMove": "MSEA-R72 governance refactor is complete through R72H pending operator review. Accepted material evidence covers R72A public CI/governance-load baseline, R72B checker lifecycle inventory, R72C Fast Doc Lane proposal, R72D monthly metric spec, R72E absorb-lane reclassification, R72F first retirement/consolidation hold decision, and R72G/R72H read-chain plus product/governance separability evidence. Next allowed move: operator may select a fresh product-value roadmap lane, a bounded R72 follow-up implementation packet, or GitHub/public-sync cleanup only through fresh source-verified GC-018/work order. No automatic checker retirement, checker edit, hook edit, Fast Lane standard edit, public-sync mutation, product extraction, runtime/source/test edit, provider/live proof, merge, push, hosted/public/production claim, or further governance tranche is authorized by this closure. LHW24 remains latest closed numbered LHW wave.",
+  "mseaR72EToR72HGovernanceRefactorClosure20260708": "REVIEWER_ACCEPTED_BOUNDED_PENDING_OPERATOR_NEXT_SELECTION. Codex accepted and committed R72E/R72F material artifacts at b896cc759, then accepted combined R72G/R72H docs-only evidence artifacts at b7a72b748. R72E produced absorb-lane ceremony reclassification taxonomy and trace seed; R72F produced first retirement/consolidation pilot decision matrix with RETIREMENT_HOLD_SOURCE_GAP rather than unsafe checker deletion; R72G/R72H produced read-chain simplification and product/governance separability evidence without implementation. R72G/R72H gates: dispatch quality PASS, markdown structural completeness PASS, worker-return quality PASS, rescan intelligence hardening PASS, corpus completeness PASS, finding-to-governance learning PASS, dispatch scaffold provenance PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80. Boundary: no checker/hook/Fast Lane/template edit, no runtime/source/test edit, no public-sync mutation, no product extraction, no provider/live proof, no merge, no push, no hosted/public/production claim, and no automatic downstream governance tranche."
 }

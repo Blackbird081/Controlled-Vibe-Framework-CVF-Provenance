@@ -51,6 +51,18 @@
       "status": "ACTIVE"
     },
     {
+      "id": "agent_commit_steward_protocol_standard_active_reference",
+      "windowClass": "BINDING_REFERENCE_ACTIVE_WINDOW",
+      "activePath": "docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md",
+      "archiveDir": "docs/reference/archive",
+      "archivePattern": "^CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15\\.md$",
+      "rotationGuard": "governance/compat/check_active_archive_hygiene.py",
+      "rotationCheck": "governance/compat/check_active_archive_hygiene.py",
+      "rotationScript": "scripts/cvf_active_archive.py",
+      "protectionMode": "PERMANENT_ACTIVE_WINDOW",
+      "status": "ACTIVE"
+    },
+    {
       "id": "agent_error_to_governance_learning_philosophy_active_reference",
       "windowClass": "BINDING_REFERENCE_ACTIVE_WINDOW",
       "activePath": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",

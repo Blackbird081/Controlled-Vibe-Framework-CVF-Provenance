@@ -1,0 +1,7 @@
+{
+  "profileName": "premium-skill-enablement",
+  "description": "Optional skill and template enablement references for structured reusable capability work.",
+  "includeSelectionTags": [
+    "skill-enablement"
+  ]
+}

@@ -322,18 +322,24 @@ export class RedisEventListAdapter<T = unknown> implements EventListAdapter<T> {
   readonly adapterType = 'redis';
 
   async init(_storeKey: string): Promise<void> {
+    void _storeKey;
     throw new Error(CVF_NOT_IMPLEMENTED);
   }
 
   async readAll(_storeKey: string): Promise<T[]> {
+    void _storeKey;
     throw new Error(CVF_NOT_IMPLEMENTED);
   }
 
   async writeAll(_storeKey: string, _items: T[]): Promise<void> {
+    void _storeKey;
+    void _items;
     throw new Error(CVF_NOT_IMPLEMENTED);
   }
 
   async writeRaw(_storeKey: string, _content: string): Promise<void> {
+    void _storeKey;
+    void _content;
     throw new Error(CVF_NOT_IMPLEMENTED);
   }
 }
@@ -342,10 +348,15 @@ export class RedisKeyValueAdapter<T = unknown> implements KeyValueAdapter<T> {
   readonly adapterType = 'redis';
 
   async write(_dir: string, _id: string, _item: T): Promise<void> {
+    void _dir;
+    void _id;
+    void _item;
     throw new Error(CVF_NOT_IMPLEMENTED);
   }
 
   async read(_dir: string, _id: string): Promise<T | null> {
+    void _dir;
+    void _id;
     throw new Error(CVF_NOT_IMPLEMENTED);
   }
 }

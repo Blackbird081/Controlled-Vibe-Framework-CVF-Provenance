@@ -1,0 +1,7 @@
+{
+  "profileName": "premium-authoring",
+  "description": "Reusable governed authoring surfaces for dispatch and work-order preparation.",
+  "includeSelectionTags": [
+    "work-order-authoring"
+  ]
+}

@@ -99,10 +99,6 @@ function getStorePath(): string {
     : path.join(process.cwd(), '.cvf', 'runtime', 'control-plane-events.json');
 }
 
-async function ensureStore(): Promise<void> {
-  await _eventAdapter.init(getStorePath());
-}
-
 async function writeEvents(events: ControlPlaneEvent[]): Promise<void> {
   await _eventAdapter.writeAll(getStorePath(), events);
 }

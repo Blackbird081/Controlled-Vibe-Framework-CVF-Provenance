@@ -1,0 +1,8 @@
+{
+  "profileName": "provenance-extended-local",
+  "description": "Local full-fidelity provenance bundle plus optional operator-runbook and skill-enablement lanes.",
+  "extends": [
+    "premium-extended-workspace",
+    "provenance-continuity-local"
+  ]
+}

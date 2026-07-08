@@ -139,7 +139,10 @@ def is_eligible_worker_return(path: str, text: str) -> bool:
 def _field_value(block: str, field_label: str) -> str:
     # Use [ \t]* (not \s*) after the label so an empty value does not greedily
     # consume the newline and capture the next line's content.
-    pattern = re.compile(rf"^[ \t]*{re.escape(field_label)}[ \t]*(.*)$", re.MULTILINE)
+    pattern = re.compile(
+        rf"^[ \t]*(?:[-*][ \t]+)?{re.escape(field_label)}[ \t]*(.*)$",
+        re.MULTILINE,
+    )
     m = pattern.search(block)
     return m.group(1).strip() if m else ""
 

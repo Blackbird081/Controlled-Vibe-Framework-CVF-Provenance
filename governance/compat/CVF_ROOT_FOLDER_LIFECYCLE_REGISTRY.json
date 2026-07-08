@@ -93,6 +93,14 @@
     { "path": "EXTENSIONS", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": "governance", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     {
+      "path": "Gop y CVF",
+      "lifecycleClass": "FROZEN_REFERENCE",
+      "exposureClass": "INTERNAL_ONLY",
+      "retentionPolicy": "FREEZE_IN_PLACE",
+      "relocationPolicy": "DO_NOT_MOVE_WITHOUT_SEPARATE_PRESERVATION_OVERRIDE",
+      "rationale": "Operator-provided advisory comparison/input root. Internal-only reference material; not a CVF source of truth and not intended for direct public export."
+    },
+    {
       "path": "public",
       "lifecycleClass": "ACTIVE_CANONICAL",
       "exposureClass": "PUBLIC_DOCS_ONLY",
@@ -116,6 +124,12 @@
       "retentionPolicy": "FREEZE_IN_PLACE",
       "relocationPolicy": "DO_NOT_MOVE_WITHOUT_SEPARATE_PRESERVATION_OVERRIDE",
       "rationale": "Enterprise-private retained root. Preserve the current path on cvf-next; explain boundaries through curated docs instead of relocation."
+    },
+    {
+      "path": "workspace_overlay_profiles",
+      "lifecycleClass": "ACTIVE_CANONICAL",
+      "exposureClass": "INTERNAL_ONLY",
+      "rationale": "Active internal workspace overlay profile definitions retained in the provenance workspace; public-safe export requires separate curation."
     },
     {
       "path": "v1.0",

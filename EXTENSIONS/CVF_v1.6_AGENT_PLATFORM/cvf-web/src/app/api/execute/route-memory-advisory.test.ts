@@ -32,7 +32,13 @@ vi.mock('@/lib/phase3e-operational-emission', () => ({
 
 vi.mock('@/lib/audit-memory-receipt', () => ({
   buildRouteAuditMemoryCapture: vi.fn().mockReturnValue({
-    auditMemoryReceipt: { receiptId: 'audit-1' },
+    auditMemoryReceipt: {
+      receipt: {
+        receiptId: 'audit-1',
+        memoryIds: [],
+        decision: 'captured',
+      },
+    },
     auditEventPayload: { payload: {} },
   }),
 }));
@@ -62,7 +68,13 @@ vi.mock('@/lib/middleware-auth', () => ({
 }));
 
 vi.mock('./route-response-readouts', () => ({
-  buildExecuteResponseReadouts: vi.fn().mockReturnValue({ responseReadout: true }),
+  buildExecuteResponseReadouts: vi.fn().mockReturnValue({
+    responseReadout: true,
+    learningPlaneReadout: {
+      compositeScore: 100,
+      scoreClass: 'STRONG',
+    },
+  }),
 }));
 
 import { buildExecuteFinalResponse } from './route-final-response';

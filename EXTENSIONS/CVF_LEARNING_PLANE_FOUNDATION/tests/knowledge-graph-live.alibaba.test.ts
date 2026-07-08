@@ -60,6 +60,11 @@ function resolveAlibabaKey(): string {
   throw new Error("missing_dashscope_compatible_live_key");
 }
 
+function hasAlibabaKey(): boolean {
+  loadLocalEnv();
+  return KEY_NAMES.some((keyName) => Boolean(process.env[keyName]?.trim()));
+}
+
 async function callAlibabaWithKgrContext(apiKey: string, context: string): Promise<string> {
   const response = await fetch(DASHSCOPE_URL, {
     method: "POST",
@@ -97,7 +102,7 @@ async function callAlibabaWithKgrContext(apiKey: string, context: string): Promi
 }
 
 describe("KGR1-T5 live provider proof", () => {
-  it("uses KGR graph_search context in a live Alibaba response without raw memory release", async () => {
+  (hasAlibabaKey() ? it : it.skip)("uses KGR graph_search context in a live Alibaba response without raw memory release", async () => {
     const apiKey = resolveAlibabaKey();
     const providerRouting = createKgrNode({
       kind: "concept",

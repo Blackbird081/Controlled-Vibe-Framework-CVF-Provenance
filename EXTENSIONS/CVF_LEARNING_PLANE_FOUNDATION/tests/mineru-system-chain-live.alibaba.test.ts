@@ -59,6 +59,11 @@ function resolveAlibabaKey(): string {
   throw new Error("missing_dashscope_compatible_live_key");
 }
 
+function hasAlibabaKey(): boolean {
+  loadLocalEnv();
+  return KEY_NAMES.some((keyName) => Boolean(process.env[keyName]?.trim()));
+}
+
 async function callAlibabaWithMineruContext(
   apiKey: string,
   context: string,
@@ -103,7 +108,7 @@ async function callAlibabaWithMineruContext(
 }
 
 describe("MSEA-R40-T1 MinerU system-chain live provider proof", () => {
-  it("uses summary-only MinerU harness context in a live Alibaba response without production release", async () => {
+  (hasAlibabaKey() ? it : it.skip)("uses summary-only MinerU harness context in a live Alibaba response without production release", async () => {
     const apiKey = resolveAlibabaKey();
     const harness = runMineruInternalSystemChainHarness();
 

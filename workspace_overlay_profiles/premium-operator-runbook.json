@@ -1,0 +1,7 @@
+{
+  "profileName": "premium-operator-runbook",
+  "description": "Optional operator-facing live-operations references for smoke, canary, and lane readiness management.",
+  "includeSelectionTags": [
+    "operator-runbook"
+  ]
+}

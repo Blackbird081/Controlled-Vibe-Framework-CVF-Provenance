@@ -1,0 +1,39 @@
+{
+  "stateOrder": 925,
+  "stateKey": "mseaR65DProviderReceiptLinkIntegrityCheckerImplementationClosure20260707",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR",
+    "date": "2026-07-07",
+    "materialCommit": "bb959a63f",
+    "materialCommitFull": "bb959a63f65932c50d57f791c8c394dd203a6fc1",
+    "dispatchCommit": "22638481b",
+    "dispatchCommitFull": "22638481b7d74a2ad28bb8f7c49024fd77ab8894",
+    "sessionSyncBaseHead": "bb959a63f",
+    "executionBaseHead": "c2e5dcdfa",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_WORKER_RETURN_2026-07-07.md",
+    "publicSyncLocalCommit": "0d3bba46f",
+    "publicSyncLocalCommitFull": "0d3bba46fae54ec32e1efdd60e72cc59c3620053",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "closureSummary": "Accepted the R65D no-commit worker return after reviewer repair. Public-sync local commit 0d3bba46f adds scripts/check_provider_receipt_link_integrity.py and wires it into scripts/run_cvf_static_ci_gate.py. Provenance material commit bb959a63f records the worker return and repairs the R65D work-order manifest shape. The focused checker passes Alibaba and DeepSeek certified receipt links and skips OpenAI while EXPERIMENTAL.",
+    "reviewerRepairs": [
+      "Corrected the public-sync checker so --matrix-path resolves relative links against the supplied matrix file directory while still enforcing repository-root containment.",
+      "Restored the R65D work-order Work-Order Fulfillment Manifest marker plus Required Artifact Manifest table required by dispatch-quality gates.",
+      "Added reviewer decision/disposition evidence to the worker return instead of creating an optional completion review."
+    ],
+    "verification": [
+      "python -m py_compile scripts/check_provider_receipt_link_integrity.py scripts/run_cvf_static_ci_gate.py PASS in public-sync",
+      "python scripts/check_provider_receipt_link_integrity.py PASS in public-sync",
+      "in-repo temporary --matrix-path fixture PASS in public-sync",
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 961c56c5e --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base c2e5dcdfa --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit bb959a63f"
+    ],
+    "publicSyncStatusAfterClosure": "clean; main...origin/main [ahead 3]; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "knownHoldBeforePublicMergeOrPush": "Full public-sync static CI still has a pre-existing Public surface guard failure against R65B docs/audits/** receipt/index exports. This is not caused by R65D but must be resolved or explicitly waived in a fresh packet before public merge/push readiness is claimed.",
+    "nextAllowedMove": "Fresh source-verified public-safe workspace PR repair and merge-readiness packet authoring only, covering GitHub PR #20/#3 findings and the R65D-disclosed public-surface guard conflict before any public merge or push.",
+    "claimBoundary": "R65D closure accepts only local public-sync checker implementation and provenance worker-return/work-order repair. No public push, public GitHub merge, provider/live proof, provider status edit, OpenAI certification uplift, JSON receipt export, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, or direct downstream release is authorized."
+  }
+}

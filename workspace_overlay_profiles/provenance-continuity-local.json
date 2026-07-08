@@ -1,0 +1,7 @@
+{
+  "profileName": "provenance-continuity-local",
+  "description": "Local-only continuity surfaces required for full provenance operation on the operator machine.",
+  "includeSelectionTags": [
+    "workspace-provenance-local"
+  ]
+}

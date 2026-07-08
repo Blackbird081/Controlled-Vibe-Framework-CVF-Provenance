@@ -1,0 +1,31 @@
+{
+  "stateOrder": 923,
+  "stateKey": "mseaR65DProviderReceiptLinkIntegrityCheckerImplementationDispatch20260707",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "22638481b",
+    "materialCommitFull": "22638481b7d74a2ad28bb8f7c49024fd77ab8894",
+    "dispatchBaseHead": "961c56c5e",
+    "dispatchBaseHeadFull": "961c56c5e71ba4799b6e25b6e7aa3c70e06c350e",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_2026-07-07.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_MSEA_R65D_PROVIDER_RECEIPT_LINK_INTEGRITY_CHECKER_IMPLEMENTATION_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatches a bounded R65D no-commit worker tranche to add a public-sync static provider receipt-link integrity checker and wire it into the existing public-sync static CI gate. The worker may edit only scripts/check_provider_receipt_link_integrity.py and scripts/run_cvf_static_ci_gate.py in the sibling public-sync clone, plus one provenance worker return.",
+    "publicSyncStatusAtDispatch": "clean; main...origin/main [ahead 2]; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "publicSyncLocalCommits": [
+      "fbb782fee4509af99a02c8632ddf8bde3aa449e6",
+      "756c465e16fb034d6b699afc5d46831fba77a5bc"
+    ],
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 961c56c5e --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 961c56c5e --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80 for provenance commit 22638481b",
+      "git -C public-sync status --short --branch confirmed main...origin/main [ahead 2]",
+      "git -C public-sync remote -v confirmed public repository remote"
+    ],
+    "nextAllowedMove": "Worker executes R65D under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer/closer owns acceptance, material commit of worker changes, and later session-sync. Public push remains separately operator-owned.",
+    "claimBoundary": "R65D dispatch authorizes only a bounded public-sync static checker implementation and one provenance worker return. No public-sync commit, public push, provider/live proof, JSON receipt export, provider status changes, OpenAI certification uplift, provenance runtime/source/test/checker edits, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, or direct downstream release is authorized."
+  }
+}

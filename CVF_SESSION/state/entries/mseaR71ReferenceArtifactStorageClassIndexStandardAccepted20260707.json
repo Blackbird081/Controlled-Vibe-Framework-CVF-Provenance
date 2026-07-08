@@ -1,0 +1,41 @@
+{
+  "stateOrder": 916,
+  "stateKey": "mseaR71ReferenceArtifactStorageClassIndexStandardAccepted20260707",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "cf2f6f3d3",
+    "materialCommitFull": "cf2f6f3d35b121f6cbde50c2fee32992d800d414",
+    "readmePath": "docs/reference/reference_artifact_storage/README.md",
+    "storageClassStandardPath": "docs/reference/reference_artifact_storage/CVF_REFERENCE_ARTIFACT_STORAGE_CLASS_STANDARD.md",
+    "referenceArtifactIndexPath": "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_WORKER_RETURN_2026-07-07.md",
+    "selectedDisposition": "R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_ACCEPTED_R65_PUBLIC_DRIFT_FOLLOWUP_PACKET_NEXT",
+    "verification": [
+      "worker-return fast gate PASS on f0bf70029..HEAD before material commit",
+      "index classification gate PASS on f0bf70029..HEAD before material commit",
+      "pre-implementation autorun PASS 75/75 on f0bf70029..HEAD before material commit",
+      "reviewer-return commit steward PASS on f0bf70029..HEAD",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedDecisionFacts": {
+      "readmeFrontDoorAccepted": true,
+      "referenceArtifactIndexAccepted": true,
+      "forwardOnlyStorageClassStandardAccepted": true,
+      "legacyDatedActiveReferenceClassDefined": true,
+      "initialFoundationRegistryIndexRowAccepted": true,
+      "historicalRenameSweepAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "publicSyncMutationAuthorized": false,
+      "runtimeImplementationAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "providerLiveProofAuthorized": false,
+      "directExternalImportAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "workerCommitAuthorized": false
+    },
+    "nextAllowedMove": "Author a fresh MSEA-R65 GC-018/source-verified public drift follow-up packet using R64 EI-01 through EI-05 and R71 reference storage-class/index governance. Do not mutate public-sync until that packet releases the exact scope.",
+    "claimBoundary": "R71 accepts only private provenance reference governance artifacts. It does not authorize historical rename/move sweep, public-sync mutation, source/test/runtime/checker edits, provider/live proof, direct external import, production Memory/RAG release, private/generated MinerU output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, push, or public/hosted/production claims."
+  }
+}

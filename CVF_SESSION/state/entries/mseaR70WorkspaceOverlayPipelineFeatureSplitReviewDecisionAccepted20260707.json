@@ -1,0 +1,36 @@
+{
+  "stateOrder": 930,
+  "stateKey": "mseaR70WorkspaceOverlayPipelineFeatureSplitReviewDecisionAccepted20260707",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "f267c92ca",
+    "materialCommitFull": "f267c92cadde0278238df693f0038c277bbe4184",
+    "dispatchCommit": "a18d2ef99",
+    "dispatchCommitFull": "a18d2ef9984d08a356955fa1998a8071903ce5a5",
+    "sessionSyncBaseHead": "f267c92ca",
+    "gc018Baseline": "docs/baselines/CVF_GC018_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md",
+    "decision": "ACCEPT_AS_FUTURE_FEATURE_WITH_SPLIT",
+    "closureSummary": "Accepted the no-commit R70 worker return after reviewer repair. The residual closed PR #20 overlay feature bundle remains valuable but is not merge-ready as one bundle. The accepted path is to split it into standards/catalog/profile definitions first, then overlay engine/validation, then integration/wrapper wiring only after separate packets.",
+    "reviewerRepairs": [
+      "Reverted the worker's out-of-scope work-order layout edit so the final material changed set is the worker return only.",
+      "Corrected the worker-return gate evidence to record that the work order's --path gate command shape is stale for the current helper and that the supported current command passed.",
+      "Narrowed public-safety and implementation-readiness prose so R70 does not claim the overlay bundle is implemented, merge-ready, or public-safe without follow-up verification."
+    ],
+    "recommendedSplit": [
+      "R70A standards/catalog/profile-definition packet only: docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md, workspace_overlay_catalog.json, and workspace_overlay_profiles/*.json.",
+      "R70B overlay engine and validation scripts only after R70A acceptance.",
+      "R70C integration and wrapper wiring only after R70B acceptance and fresh boundary verification."
+    ],
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py PASS 59/59",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 51ed478d8 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 51ed478d8 --head HEAD PASS 75/75",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R70A standards/catalog/profile-definition packet authoring only. No implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release is authorized.",
+    "claimBoundary": "R70 acceptance records only the bounded decision to keep the overlay feature as a split follow-up lane. It does not accept or merge the broad PR #20 overlay implementation and does not authorize public-sync, runtime, provider/live, production, or public readiness claims."
+  }
+}

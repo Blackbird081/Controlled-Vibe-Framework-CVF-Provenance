@@ -69,6 +69,11 @@ function resolveAlibabaKey(): string {
   throw new Error("missing_dashscope_compatible_live_key");
 }
 
+function hasAlibabaKey(): boolean {
+  loadLocalEnv();
+  return KEY_NAMES.some((keyName) => Boolean(process.env[keyName]?.trim()));
+}
+
 async function callAlibaba(apiKey: string, context: string): Promise<string> {
   const response = await fetch(DASHSCOPE_URL, {
     method: "POST",
@@ -127,7 +132,7 @@ function cleanup(): void {
 afterEach(cleanup);
 
 describe("MSEA-R46 MinerU bounded live system-chain proof", () => {
-  it("uses file-backed write/read evidence in a live Alibaba response without production release", async () => {
+  (hasAlibabaKey() ? it : it.skip)("uses file-backed write/read evidence in a live Alibaba response without production release", async () => {
     cleanup();
     const apiKey = resolveAlibabaKey();
     const proof = runMineruBoundedLiveSystemChainProof({

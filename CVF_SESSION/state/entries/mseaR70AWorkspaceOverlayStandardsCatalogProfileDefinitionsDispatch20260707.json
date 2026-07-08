@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1540,
+  "stateKey": "mseaR70AWorkspaceOverlayStandardsCatalogProfileDefinitionsDispatch20260707",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "80b37b2d2",
+    "materialCommitFull": "80b37b2d2c5a56eb997640743188a1b50b506098",
+    "dispatchBaseHead": "b65ad7c76",
+    "gc018Baseline": "docs/baselines/CVF_GC018_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_2026-07-07.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md",
+    "statusSummary": "DISPATCH_READY for no-commit R70A worker execution. The packet authorizes proposed workspace overlay standard, catalog, profile JSON definitions, and the R71-required reference artifact index row only.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base b65ad7c76 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base b65ad7c76 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "No-commit MSEA-R70A worker execution only, producing docs/reviews/CVF_MSEA_R70A_WORKSPACE_OVERLAY_STANDARDS_CATALOG_PROFILE_DEFINITIONS_WORKER_RETURN_2026-07-07.md and the worker-owned definition artifacts named in the R70A work order. Worker may create docs/reference/CVF_WORKSPACE_OVERLAY_PIPELINE_STANDARD_2026-07-07.md, workspace_overlay_catalog.json, the eleven named workspace_overlay_profiles JSON files, and a narrow docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md row/update. Worker must not commit, merge, push, cherry-pick, mutate public-sync, edit scripts, runtime/source/tests/checkers, run provider/live proof, edit provider status or OpenAI certification, release production Memory/RAG, reopen P3, open use-case/legal workflow, make hosted/public/production claims, sweep historical renames/moves, or release downstream work.",
+    "claimBoundary": "R70A dispatch records only source-verified definition-authoring authority. It does not implement the overlay pipeline, accept broad PR #20, mutate public-sync, or claim runtime/public/provider behavior."
+  }
+}

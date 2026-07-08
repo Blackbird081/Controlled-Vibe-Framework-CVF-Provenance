@@ -146,7 +146,7 @@ export default function HomePage() {
             icon: Wand2,
             tone: 'violet' as const,
         },
-    ]), [allRunnableTemplates.length, language, starterHandoff]);
+    ]), [language, starterHandoff]);
 
     const liveReadyProviders = useMemo(
         () => providers.filter(provider => provider.configured),

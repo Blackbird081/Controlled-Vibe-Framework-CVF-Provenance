@@ -210,7 +210,9 @@ def _is_applicable(path: str, text: str) -> bool:
     if any(marker in text for marker in SOURCE_MARKERS):
         return True
     lowered = text.casefold()
-    if "github.com/" in lowered and "absorption" in lowered:
+    if "github.com/" in lowered and any(
+        marker in lowered for marker in ABSORPTION_TEXT_MARKERS
+    ):
         return True
     upper_path = path.replace("\\", "/").upper()
     return (
