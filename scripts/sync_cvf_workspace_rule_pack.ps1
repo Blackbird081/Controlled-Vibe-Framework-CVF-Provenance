@@ -328,10 +328,43 @@ $activeManifest = [ordered]@{
     sourceCommit = $sourceCommit
     artifactCount = $copied.Count
     workspaceRootFileCount = $materializedRootFiles.Count
+    rootRulePackWrapper = "Update-CVF-Workspace-RulePack.ps1"
     updatedAt = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ssK")
 }
 $activeManifestPath = Join-Path $outputRoot "ACTIVE_RULE_PACK.json"
 $activeManifest | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $activeManifestPath -Encoding utf8
+
+$rulePackWrapperPath = Join-Path $workspaceRootResolved "Update-CVF-Workspace-RulePack.ps1"
+$rulePackWrapper = @"
+param(
+    [string]`$ProfileName = "$ProfileName",
+    [switch]`$AllowProvenanceContinuity
+)
+
+`$ErrorActionPreference = "Stop"
+
+`$workspaceRoot = Split-Path -Parent `$MyInvocation.MyCommand.Path
+`$syncScript = "$repoRoot\scripts\sync_cvf_workspace_rule_pack.ps1"
+
+if (-not (Test-Path -LiteralPath `$syncScript -PathType Leaf)) {
+    throw "Rule-pack sync script not found: `$syncScript"
+}
+
+`$syncArgs = @(
+    "-ExecutionPolicy", "Bypass",
+    "-File", `$syncScript,
+    "-WorkspaceRoot", `$workspaceRoot,
+    "-ProfileName", `$ProfileName
+)
+
+if (`$AllowProvenanceContinuity) {
+    `$syncArgs += "-AllowProvenanceContinuity"
+}
+
+& powershell @syncArgs
+exit `$LASTEXITCODE
+"@
+Set-Content -LiteralPath $rulePackWrapperPath -Value $rulePackWrapper -Encoding utf8
 
 $workspaceGuidePath = Join-Path $workspaceRootResolved "CVF_WORKSPACE_RULE_PACKS.md"
 $workspaceGuide = @"
@@ -347,7 +380,13 @@ this folder as a public export or a full provenance mirror.
 
 ## Commands
 
-Refresh this pack from the provenance repository:
+Refresh this pack from the workspace root:
+
+~~~powershell
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace-RulePack.ps1" -ProfileName "$ProfileName"
+~~~
+
+Fallback command from the provenance repository:
 
 ~~~powershell
 powershell -ExecutionPolicy Bypass -File "<provenance-root>\scripts\sync_cvf_workspace_rule_pack.ps1" -WorkspaceRoot "$workspaceRootResolved" -ProfileName "$ProfileName"
@@ -358,6 +397,7 @@ powershell -ExecutionPolicy Bypass -File "<provenance-root>\scripts\sync_cvf_wor
 - $OutputDirName\ACTIVE_RULE_PACK.json
 - $OutputDirName\$ProfileName\RULE_PACK_MANIFEST.json
 - $OutputDirName\$ProfileName\source\
+- Update-CVF-Workspace-RulePack.ps1
 
 ## Workspace Root Files
 
@@ -371,4 +411,5 @@ Set-Content -LiteralPath $workspaceGuidePath -Value $workspaceGuide -Encoding ut
 Write-Ok "Applied profile '$ProfileName' to workspace: $workspaceRootResolved"
 Write-Ok "Copied artifacts: $($copied.Count)"
 Write-Ok "Workspace root files: $($materializedRootFiles.Count)"
+Write-Ok "Rule-pack wrapper: $rulePackWrapperPath"
 Write-Ok "Manifest: $manifestPath"
