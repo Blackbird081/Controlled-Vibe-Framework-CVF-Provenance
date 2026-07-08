@@ -325,19 +325,35 @@ older MSEA material.
 
 ## HEAD Freshness
 
-Current HEAD after GitHub workspace CI stabilization material commit: `95463878b`.
+Current HEAD after provenance PR #22 merge into `main`: `5790a2ee4`.
 
-Current HEAD short: `95463878b`.
+Current HEAD short: `5790a2ee4`.
 
-Current HEAD parent: `a4ef941b`.
+Current HEAD full: `5790a2ee438cf7a4bd4784531cd54996555e69e7`.
 
-Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
+Current HEAD parent: `eaa48db3`.
+
+Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: R72E/R72F acceptance material commit `b896cc759`, R72G/R72H material commit `b7a72b748`, session sync `8ad7d6c8`, GitHub workspace CI debt repair `d1b3fb2a`, GitHub workspace CI hygiene repair `760d5c48`, and GitHub workspace CI stabilization repair `95463878b` exist locally. The branch may be pushed only to the provenance PR branch for CI recheck; public-sync remains out of scope.
+Branch state at handoff-sync authoring: provenance PR #22 has been merged into `main` at `5790a2ee4`. Public-sync remains out of scope.
+
+## Core Guard Self-Protection Authorization - GitHub Merge Handoff Freshness Sync
+
+Authorized guard-maintenance scope: handoff-sync only after provenance PR #22 merge, limited to HEAD freshness and branch-state wording in this active handoff.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record current merge HEAD freshness after PR #22 merged into main. |
+
+Operator authorization: operator asked Codex to continue after GitHub/workspace cleanup and then authorized R73A through R73F.
+
+Rollback boundary: revert only this handoff freshness sync if rejected; do not revert provenance PR #22 merge or older MSEA material.
 
 Commit stack debt disposition: `DISCLOSED_AND_REDUCED_BY_BATCHING`; R72G/R72H are intentionally combined to avoid unnecessary commit stacking. Do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
 
