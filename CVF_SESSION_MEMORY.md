@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r73_product_value_recovery_and_lean_governance_closed_pending_operator_review`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose fresh R74 public-sync/export packet for the workspace onboarding repair, source-verified R73F follow-up retirement packet, or another product-value roadmap lane; parked checkpoint=R73 is closed pending operator review and public-sync remains held.
+Startup acknowledged: current mode=`msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose product-value continuation, a dedicated conformance-reference cleanup or reattachment packet for the R72F candidate family, or public GitHub check triage for commit `9d6f10657`; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r73_product_value_recovery_and_lean_governance_closed_pending_operator_review`
+Current mode marker: `msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
 
-Current mode: `msea_r73_product_value_recovery_and_lean_governance_closed_pending_operator_review`
+Current mode: `msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
 
-`msea_r73_product_value_recovery_and_lean_governance_closed_pending_operator_review`
+`msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
 
 Previous mode:
 
-`msea_r72_governance_refactor_r72a_to_r72h_complete_pending_operator_next_selection`
+`msea_r73_product_value_recovery_and_lean_governance_closed_pending_operator_review`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R74 Public Sync Export And R73F Follow-Up Closure | `e68fa6d27` | CLOSED_PASS_BOUNDED; public-sync commit `9d6f10657` exported the public-safe workspace onboarding wrapper flow to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` from the sibling public-sync clone. Public-sync parse checks PASS, generated-guide sensitive-token smoke PASS, static CI gate PASS 8/8, public surface PASS, and post-push public-sync status is clean with `HEAD == origin/main == 9d6f10657722dae28d0f245c4f31cb9e4ac8ead6`. R73F follow-up confirms actual checker retirement remains blocked by active conformance/evidence-pack references. Next move is operator selection of product-value continuation, dedicated conformance-reference cleanup or reattachment for the R72F candidate family, or public GitHub check triage for commit `9d6f10657`; no automatic checker retirement, checker deletion/disablement, hook/Fast Lane edit, runtime/provider/live proof, provenance push, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow is authorized. |
 | MSEA-R73 Product Value Recovery And Lean Governance Batch Closure | `a7be6f2b4` | CLOSED_PASS_BOUNDED_PENDING_OPERATOR_REVIEW; repaired public-safe workspace bootstrap/reconcile wrapper flow in `scripts/new-cvf-workspace.ps1` and `scripts/update_cvf_workspace_public_core.ps1`, recorded R73A-R73F bounded decisions in `docs/reviews/CVF_MSEA_R73_PRODUCT_VALUE_RECOVERY_AND_LEAN_GOVERNANCE_BATCH_CLOSURE_2026-07-08.md`, and kept public-sync held. Parse checks PASS for both changed scripts, temp-workspace bootstrap smoke PASS, generated guide leakage-token scan PASS, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80. Next move is operator selection of a fresh R74 public-sync/export packet, source-verified R73F follow-up retirement packet, or another product-value roadmap lane; no automatic public-sync mutation, push, checker retirement, hook/Fast Lane edit, runtime/provider/live proof, hosted/public/production claim, or product extraction is authorized. |
 | MSEA-R72E through R72H Governance Refactor Closure | `b7a72b748` | REVIEWER_ACCEPTED_BOUNDED_PENDING_OPERATOR_NEXT_SELECTION; accepted R72E/R72F material artifacts at `b896cc759` and combined R72G/R72H read-chain plus product/governance separability evidence at `b7a72b748`. Next move is operator selection of a fresh product-value roadmap, bounded R72 follow-up implementation packet, or GitHub/public-sync cleanup through source-verified GC-018/work order. No automatic checker retirement, checker edit, hook edit, Fast Lane standard edit, runtime/source/test edit, public-sync mutation, product extraction, provider/live proof, merge, push, hosted/public/production claim, or further governance tranche is authorized. |
 | MSEA-R72E Absorb Lane Ceremony Reclassification dispatch | `f75656805` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R72E worker execution. Worker must create `docs/reference/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_TAXONOMY_AND_TRACE_SEED_2026-07-08.md` and `docs/reviews/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_WORKER_RETURN_2026-07-08.md`; scope is taxonomy and work-order trace seed only, preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence. Dispatch quality PASS, structural completeness PASS, ADIF disclosure PASS, checker read-ahead PASS, handoff boundary PASS, external-intake routing PASS, rescan guard PASS, pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80. |
@@ -176,16 +177,16 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r73_product_value_recovery_and_lean_governance_closed_pending_operator_review`
+Mode: `msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
 
-R73 product-value recovery batch is closed pending operator review. The next
-allowed move is operator selection of a fresh R74 public-sync/export packet for
-the workspace onboarding repair, a source-verified R73F follow-up retirement
-packet that resolves the R72F source gap, or another product-value roadmap
-lane. No automatic public-sync mutation, push, checker retirement, hook/Fast
-Lane edit, runtime/provider/live proof, hosted/public/production claim, or
-product extraction is authorized. LHW24 remains latest closed numbered LHW
-wave.
+R74 public-sync export and R73F follow-up are closed bounded. The next allowed
+move is operator selection of product-value continuation, a dedicated
+conformance-reference cleanup or reattachment packet for the R72F candidate
+family, or public GitHub check triage for public commit `9d6f10657`. No
+automatic checker retirement, checker deletion/disablement, hook/Fast Lane
+edit, runtime/provider/live proof, provenance push, hosted/production claim,
+Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow is
+authorized. LHW24 remains latest closed numbered LHW wave.
 
 ## Current Closed Work
 
