@@ -39,6 +39,34 @@
       "reason": "Reusable downstream agent instruction template generated into new governed projects."
     },
     {
+      "artifactId": "workspace-memory-template",
+      "path": "workspace_templates\\CVF_WORKSPACE_MEMORY_TEMPLATE.md",
+      "artifactClass": "workspace-root-template",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-continuity"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "workspaceRootTarget": "CVF_WORKSPACE_MEMORY.md",
+      "rootMaterializationPolicy": "create-if-missing",
+      "reason": "Workspace-safe equivalent of the provenance session front door for local agent continuity without copying private provenance state."
+    },
+    {
+      "artifactId": "workspace-agent-handoff-template",
+      "path": "workspace_templates\\AGENT_HANDOFF_TEMPLATE.md",
+      "artifactClass": "workspace-root-template",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-continuity"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "workspaceRootTarget": "AGENT_HANDOFF.md",
+      "rootMaterializationPolicy": "create-if-missing",
+      "reason": "Workspace-safe active handoff template so agents can pass compact task state across sessions."
+    },
+    {
       "artifactId": "governed-artifact-literal-format-gotchas",
       "path": "docs\\reference\\CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
       "artifactClass": "reference-checklist",

@@ -213,6 +213,7 @@ if (Test-Path -LiteralPath $profileRoot) {
 New-Item -ItemType Directory -Path $sourceRoot -Force | Out-Null
 
 $copied = [System.Collections.ArrayList]::new()
+$materializedRootFiles = [System.Collections.ArrayList]::new()
 foreach ($artifact in $selected) {
     $relativeSource = [string]$artifact.path
     $sourcePath = [System.IO.Path]::GetFullPath((Join-Path $repoRoot $relativeSource))
@@ -243,6 +244,44 @@ foreach ($artifact in $selected) {
         selectionTags = @($artifact.selectionTags)
         reviewPolicy = $artifact.reviewPolicy
     })
+
+    $workspaceRootTarget = [string]$artifact.workspaceRootTarget
+    if (-not [string]::IsNullOrWhiteSpace($workspaceRootTarget)) {
+        $materializationPolicy = [string]$artifact.rootMaterializationPolicy
+        if ([string]::IsNullOrWhiteSpace($materializationPolicy)) {
+            $materializationPolicy = "create-if-missing"
+        }
+        if ($materializationPolicy -ne "create-if-missing") {
+            throw "Unsupported root materialization policy for $($artifact.artifactId): $materializationPolicy"
+        }
+        if (Test-Path -LiteralPath $sourcePath -PathType Container) {
+            throw "Root materialization requires a file artifact: $relativeSource"
+        }
+
+        $rootTargetPath = [System.IO.Path]::GetFullPath((Join-Path $workspaceRootResolved $workspaceRootTarget))
+        Assert-ChildPath -Child $rootTargetPath -Parent $workspaceRootResolved -Label "workspace root target"
+        $rootTargetParent = Split-Path -Parent $rootTargetPath
+        if (-not [string]::IsNullOrWhiteSpace($rootTargetParent)) {
+            New-Item -ItemType Directory -Path $rootTargetParent -Force | Out-Null
+        }
+
+        $relativeRootTarget = $rootTargetPath.Substring($workspaceRootResolved.Length).TrimStart("\", "/")
+        if (Test-Path -LiteralPath $rootTargetPath) {
+            [void]$materializedRootFiles.Add([ordered]@{
+                artifactId = $artifact.artifactId
+                targetPath = $relativeRootTarget
+                disposition = "PRESERVED_EXISTING"
+            })
+        }
+        else {
+            Copy-Item -LiteralPath $sourcePath -Destination $rootTargetPath -Force
+            [void]$materializedRootFiles.Add([ordered]@{
+                artifactId = $artifact.artifactId
+                targetPath = $relativeRootTarget
+                disposition = "CREATED"
+            })
+        }
+    }
 }
 
 $sourceCommit = (git -C $repoRoot rev-parse --short HEAD).Trim()
@@ -257,6 +296,7 @@ $manifest = [ordered]@{
     selectionTags = @($selectionTags)
     artifactCount = $copied.Count
     artifacts = @($copied)
+    workspaceRootFiles = @($materializedRootFiles)
 }
 
 $manifestPath = Join-Path $profileRoot "RULE_PACK_MANIFEST.json"
@@ -287,6 +327,7 @@ $activeManifest = [ordered]@{
     activeProfilePath = (Join-Path $OutputDirName "$ProfileName\RULE_PACK_MANIFEST.json")
     sourceCommit = $sourceCommit
     artifactCount = $copied.Count
+    workspaceRootFileCount = $materializedRootFiles.Count
     updatedAt = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ssK")
 }
 $activeManifestPath = Join-Path $outputRoot "ACTIVE_RULE_PACK.json"
@@ -317,9 +358,17 @@ powershell -ExecutionPolicy Bypass -File "<provenance-root>\scripts\sync_cvf_wor
 - $OutputDirName\ACTIVE_RULE_PACK.json
 - $OutputDirName\$ProfileName\RULE_PACK_MANIFEST.json
 - $OutputDirName\$ProfileName\source\
+
+## Workspace Root Files
+
+The active profile may install root-level continuity templates. Existing root
+files are preserved and never overwritten by this sync command.
+
+$($materializedRootFiles | ForEach-Object { "- $($_.targetPath): $($_.disposition)" } | Out-String)
 "@
 Set-Content -LiteralPath $workspaceGuidePath -Value $workspaceGuide -Encoding utf8
 
 Write-Ok "Applied profile '$ProfileName' to workspace: $workspaceRootResolved"
 Write-Ok "Copied artifacts: $($copied.Count)"
+Write-Ok "Workspace root files: $($materializedRootFiles.Count)"
 Write-Ok "Manifest: $manifestPath"
