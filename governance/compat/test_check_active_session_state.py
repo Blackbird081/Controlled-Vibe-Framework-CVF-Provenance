@@ -149,6 +149,20 @@ class ActiveSessionStateTests(unittest.TestCase):
         self.assertEqual(report["readyReviewItems"], ["current-roadmap"])
         self.assertEqual(report["detectedActiveHandoffs"], ["AGENT_HANDOFF_V8_2026-05-17.md"])
 
+    def test_missing_ignored_required_first_read_is_allowed(self) -> None:
+        private_read = ".private_reference/legacy/local-only.md"
+        state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["requiredFirstReads"] = [self.first_read, private_read]
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), patch.object(
+            MODULE, "_git_ignored", side_effect=lambda path: path == private_read
+        ):
+            report = MODULE._classify()
+
+        self.assertTrue(report["compliant"])
+
     def test_ready_review_item_with_existing_response_fails(self) -> None:
         (self.repo_root / "reviews/current-rebuttal.md").write_text(
             "Status: REBUTTAL_FILED\n",

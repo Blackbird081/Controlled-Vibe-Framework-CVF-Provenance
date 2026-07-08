@@ -241,6 +241,19 @@ def _git_parent_sha() -> str | None:
     return _git_rev_parse("HEAD^")
 
 
+def _git_ignored(rel_path: str) -> bool:
+    try:
+        result = subprocess.run(
+            ["git", "check-ignore", "-q", rel_path],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+        )
+        return result.returncode == 0
+    except FileNotFoundError:
+        return False
+
+
 def _head_changed_path(rel_path: str) -> bool:
     try:
         result = subprocess.run(
@@ -403,7 +416,7 @@ def _classify() -> dict[str, Any]:
         if not required_first_reads:
             state_violations.append("requiredFirstReads must be a non-empty list")
         for path in required_first_reads:
-            if not (REPO_ROOT / path).exists():
+            if not (REPO_ROOT / path).exists() and not _git_ignored(path):
                 state_violations.append(f"requiredFirstReads path does not exist: {path}")
 
         required_startup_guards = _as_list(state.get("requiredStartupGuards"))
