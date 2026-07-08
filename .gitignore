@@ -63,6 +63,7 @@ EXTENSIONS/**/package-lock.json
 !EXTENSIONS/CVF_GUARD_CONTRACT/package-lock.json
 !EXTENSIONS/CVF_GOVERNANCE_EXPANSION_FOUNDATION/package-lock.json
 !EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/package-lock.json
+!EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/package-lock.json
 
 # AI Research (external reference)
 AI-Research-SKILLs/
