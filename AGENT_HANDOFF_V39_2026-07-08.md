@@ -424,6 +424,8 @@ older MSEA material.
 
 ## HEAD Freshness
 
+Current HEAD after workspace rules public-export session sync: `054724784`.
+
 Current HEAD after workspace local rule-pack sync: `452c9312d`.
 
 Current HEAD short: `452c9312d`.
