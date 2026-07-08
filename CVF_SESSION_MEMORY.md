@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72d_governance_cost_metric_and_monthly_readout_accepted_pending_r72e_gc018_authoring`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R72E GC-018/source-verified work-order authoring only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence and R72D accepted metric-specification evidence; no R72E worker execution, metrics automation, Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72F-R72H execution authorized.
+Startup acknowledged: current mode=`msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R72E no-commit worker execution only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence, R72D accepted metric-specification evidence, and R72E dispatch remains taxonomy/trace-seed only with no implementation authorization.
 
 ## Current Mode
 
-Current mode marker: `msea_r72d_governance_cost_metric_and_monthly_readout_accepted_pending_r72e_gc018_authoring`
+Current mode marker: `msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution`
 
-Current mode: `msea_r72d_governance_cost_metric_and_monthly_readout_accepted_pending_r72e_gc018_authoring`
+Current mode: `msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution`
 
-`msea_r72d_governance_cost_metric_and_monthly_readout_accepted_pending_r72e_gc018_authoring`
+`msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution`
 
 Previous mode:
 
-`msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`
+`msea_r72d_governance_cost_metric_and_monthly_readout_accepted_pending_r72e_gc018_authoring`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R72E Absorb Lane Ceremony Reclassification dispatch | `f75656805` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R72E worker execution. Worker must create `docs/reference/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_TAXONOMY_AND_TRACE_SEED_2026-07-08.md` and `docs/reviews/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_WORKER_RETURN_2026-07-08.md`; scope is taxonomy and work-order trace seed only, preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence. Dispatch quality PASS, structural completeness PASS, ADIF disclosure PASS, checker read-ahead PASS, handoff boundary PASS, external-intake routing PASS, rescan guard PASS, pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72D0 Rescan Guard Applicability False-Positive Repair | `402bc2c9e` | CLOSED_PASS_BOUNDED_PENDING_R72D_WORKER_EXECUTION; repaired the remaining target-checker applicability false-positive by reusing the real-signal helper from `_is_applicable_output` and adding four regression tests. Focused pytest PASS 20/20, target checker PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Next move remains R72D no-commit worker execution only. |
 | MSEA-R72D Governance Cost Metric And Monthly Readout acceptance | `690b11999` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72E_GC018; accepted the source-backed metric specification and worker return after reviewer repair tightened unique-path metrics, public-main CI evidence, ceremony-ratio numerator/denominator, and private-only export disposition. Worker-return fast gate PASS, structural completeness PASS, packet authority/encoding PASS, rescan guard PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. No metrics automation, new script/checker, checker/hook/Fast Lane edit, public-sync mutation, runtime/source/test edit outside worker-owned docs, provider/live proof, merge, push, product extraction, onboarding implementation, public/production claim, or R72E-R72H execution was performed. |
 | MSEA-R72C1 Rescan Guard Self-Reference False-Positive Repair | `3cad26401` | CLOSED_PASS_BOUNDED_PENDING_R72D_GC018; repaired the repeated rescan-guard self-reference false-positive before R72D by adding a bounded negated-context filter and two regression tests. Focused pytest PASS 16/16, target rescan guard PASS, pre-implementation autorun PASS 75/75, commit steward PASS, material pre-commit hook PASS 80/80. No Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, runtime/product source edit, provider/live proof, public/production claim, or R72D execution was performed. Next move remains fresh source-verified R72D GC-018/work-order authoring only. |
@@ -173,15 +174,17 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r72d_governance_cost_metric_and_monthly_readout_accepted_pending_r72e_gc018_authoring`
+Mode: `msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution`
 
-R72D is accepted bounded at material commit `690b11999`: source-backed
-metric specification and worker return are complete after reviewer repair, with
-no metrics automation, checker/hook/Fast Lane standard edit, public-sync
-mutation, provider/live proof, merge, or R72E-R72H execution. The next allowed
-move is fresh R72E GC-018/source-verified work-order authoring for Absorb Lane
-Ceremony Reclassification only; no R72E worker execution is authorized yet.
-LHW24 remains latest closed numbered LHW wave.
+R72E is dispatched at material commit `f75656805`. The next allowed move is
+no-commit R72E worker execution only, creating the taxonomy/trace-seed artifact
+and worker return named in the R72E work order. No worker commit,
+checker/hook/Fast Lane/template edit, runtime/source/test edit, public-sync
+mutation, external source import, source mirror migration, actual absorption
+execution, provider/live proof, merge, push, product extraction, onboarding
+implementation, public/production claim, R72F retirement/consolidation pilot,
+or downstream R72F-R72H execution is authorized. LHW24 remains latest closed
+numbered LHW wave.
 
 ## Current Closed Work
 
