@@ -69,6 +69,7 @@ Rollback boundary: revert only this R72A acceptance/session-sync and V39 rotatio
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| MSEA-R72B0 Checker False-Positive Repair | `ee8d2a605` | COMPLETE_PENDING_REVIEW_COMMITTED; repaired two R72A-proven checker false positives before R72B worker execution: structured worker-experience retrospective fields now allow markdown bullet prefixes, and the external absorption guard family no longer treats a benign GitHub remote URL plus chain-map absorption filename as an external absorption artifact. Focused unittest PASS 39/39, pre-implementation autorun PASS 75/75, commit steward PASS, material pre-commit hook PASS 80/80. |
 | Commit Stack Debt Disclosure Wording Repair | `b3e03d308` | APPLIED_AFTER_PUSH_DEBT_CLEANUP; revised the commit steward standard so it no longer claims unimplemented commit-steward upstream-count enforcement, preserves push-readiness preview as the hard upstream-debt check, and records `LEGACY_PUSH_DEBT_PRESENT` for already-over-threshold branches. |
 | Root File Exposure Classification | `b6a46ae8a` | PUSH_DEBT_CLEANUP_SUPPORT; classified `AGENT_HANDOFF_V39_2026-07-08.md` and `workspace_overlay_catalog.json` as internal-only root files so the private provenance pre-push hook no longer fails pre-public P3 readiness. |
 | Repository Lifecycle Local Root Classification | `90865633d` | PUSH_DEBT_CLEANUP_SUPPORT; classified `Gop y CVF` as frozen internal advisory reference and `workspace_overlay_profiles` as active internal overlay-profile root so the private provenance pre-push hook no longer fails on visible local roots. |
@@ -79,11 +80,11 @@ Rollback boundary: revert only this R72A acceptance/session-sync and V39 rotatio
 
 ## HEAD Freshness
 
-Current HEAD before commit-stack disclosure wording session-sync commit: `b3e03d308b68295c1076a7c336406d03fe729608`.
+Current HEAD after R72B0 checker false-positive repair material commit: `ee8d2a6056a9d710d0c0c2fd636709b10fd5cdd6`.
 
-Current HEAD short: `b3e03d308`.
+Current HEAD short: `ee8d2a605`.
 
-Current HEAD parent: `8b28e59230b9e0fc3db5b705d4d0a51210a2f6e3`.
+Current HEAD parent: `f2929dafa6d9e0d49afc6fae22a8f0d69ace19ad`.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 
@@ -91,9 +92,9 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at session-sync authoring: `codex/p1-p5-small-debt-remediation` is ahead of its tracked provenance remote branch; operator authorized cleaning the existing private provenance push debt before applying further commit-stack rules.
+Branch state at handoff-sync authoring: `codex/p1-p5-small-debt-remediation` is ahead of its tracked provenance remote branch by the bounded R72B0 material commit; this remains within the two-commit disclosure threshold before R72B dispatch.
 
-Commit stack debt disposition: `OPERATOR_AUTHORIZED_PROVENANCE_BRANCH_PUSH_CLEANUP`; do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
+Commit stack debt disposition: `WITHIN_DISCLOSURE_THRESHOLD`; do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
 
 Latest closed numbered LHW wave: LHW24.
 
