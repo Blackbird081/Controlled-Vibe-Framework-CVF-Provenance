@@ -79,8 +79,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r72b_governance_control_index_checker_lifecycle_inventory_accepted_pending_r72c_gc018_work_order",
-  "previousMode": "msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order",
+  "currentMode": "msea_r72c_fast_lane_calibration_and_risk_class_router_dispatched_pending_worker_return",
+  "previousMode": "msea_r72b_governance_control_index_checker_lifecycle_inventory_accepted_pending_r72c_gc018_work_order",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
