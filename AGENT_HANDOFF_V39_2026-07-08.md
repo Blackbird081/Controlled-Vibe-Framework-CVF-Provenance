@@ -2,26 +2,26 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R72E absorb lane ceremony reclassification dispatch.
-Scope/target/owner boundary: private provenance continuity only; Codex dispatcher plus session-sync steward owns this handoff update. No runtime source, tests, checker retirement implementation, checker deletion/disablement, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, product extraction, operator onboarding implementation, public/production claim, merge, push, or use-case/legal workflow change is authorized here.
+Purpose: compact current-session continuity after MSEA-R72 governance refactor evidence closure through R72H.
+Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No runtime source, tests, checker retirement implementation, checker deletion/disablement, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, product extraction, operator onboarding implementation, public/production claim, merge, push, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R72E dispatch and route the next executable move to R72E no-commit worker execution only.
+Provide compact active-session continuity after MSEA-R72A through R72H governance refactor evidence and route the next executable move back to operator selection.
 
 ## Scope / Target / Owner Boundary
 
-This handoff is private provenance continuity owned by Codex in dispatcher and session-sync steward roles. It covers R72E dispatch, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, product extraction, operator onboarding, public/production claims, R72F-R72H execution, or use-case/legal workflow changes.
+This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R72E/R72F acceptance, R72G/R72H docs-only evidence, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, public-sync mutation, runtime/source/test/checker edits, provider/live proof, merge, product extraction, operator onboarding implementation, public/production claims, or use-case/legal workflow changes.
 
 ## Latest Work / Changes
 
-R72E is dispatched as a bounded no-commit documentation-and-evidence tranche. It authorizes only an absorb-lane risk taxonomy and work-order trace seed; checker or hook edits, Fast Lane standard edits, public-sync mutation, provider/live proof, merge, push, and downstream R72F-R72H execution remain unauthorized.
+R72 governance refactor evidence is complete through R72H pending operator review. The closure preserves the line between protected governance controls and micromanagement reduction: no checker retirement, checker edit, hook edit, Fast Lane standard edit, public-sync mutation, provider/live proof, merge, push, product extraction, or public/production claim is authorized by this handoff.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R72E no-commit worker execution only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence, R72D accepted metric-specification evidence, and R72E dispatch remains taxonomy/trace-seed only with no implementation authorization.
+Startup acknowledged: current mode=`msea_r72_governance_refactor_r72a_to_r72h_complete_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator selection of fresh product-value roadmap, bounded R72 follow-up implementation packet, or GitHub/public-sync cleanup through fresh source-verified GC-018/work order; parked checkpoint=R72A-R72H governance refactor evidence is complete pending operator review.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r72e_absorb_lane_ceremony_reclassificat
 
 ## Current Mode
 
-`msea_r72e_absorb_lane_ceremony_reclassification_dispatched_pending_worker_execution`
+`msea_r72_governance_refactor_r72a_to_r72h_complete_pending_operator_next_selection`
 
 ## Active Boundary
 
@@ -49,9 +49,28 @@ R72D is accepted bounded at material commit `690b11999`. The accepted artifacts 
 
 R72D0 is closed bounded at material commit `402bc2c9e`. It repaired one target-checker applicability false-positive class before R72D worker execution.
 
-R72E is dispatched at material commit `f75656805`. The dispatch artifacts are `docs/baselines/CVF_GC018_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_2026-07-08.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_2026-07-08.md`.
+R72E/R72F are accepted at material commit `b896cc759`, and R72G/R72H docs-only evidence is accepted at material commit `b7a72b748`.
 
-No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, runtime/product source edit, provider/live proof, merge, product extraction, operator onboarding, public/production claim, R72F retirement/consolidation pilot, or downstream R72F-R72H execution is authorized by this handoff.
+No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, runtime/product source edit, provider/live proof, merge, product extraction, operator onboarding implementation, public/production claim, or automatic downstream governance execution is authorized by this handoff.
+
+## Core Guard Self-Protection Authorization - MSEA-R72E-R72H Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R72E/R72F acceptance and R72G/R72H closure evidence, including active mode, next allowed move, generated active state, bootstrap read model, front-door continuity, active handoff, and R72E-R72H closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `CVF_SESSION_MEMORY.md` | Record R72A-R72H closure and operator-selection next move. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after state-source update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R72E-R72H closure. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update current mode and previous mode for R72A-R72H completion. |
+| `CVF_SESSION/state/entries/mseaR72EToR72HGovernanceRefactorClosure20260708.json` | Record R72E-R72H closure evidence and boundaries. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator selection only. |
+
+Operator authorization: operator authorized Codex to handle both R72G and R72H and complete the governance refactor closure.
+
+Rollback boundary: revert only this R72E-R72H closure session-sync if rejected; do not revert material commit `b896cc759`, R72G/R72H worker artifacts, R72E/R72F acceptance evidence, or older MSEA material.
 
 ## Core Guard Self-Protection Authorization - MSEA-R72E Dispatch Session Sync
 
@@ -303,11 +322,11 @@ older MSEA material.
 
 ## HEAD Freshness
 
-Current HEAD after R72E dispatch material commit: `f75656805`.
+Current HEAD after R72G/R72H closure material commit: `b7a72b748`.
 
-Current HEAD short: `f75656805`.
+Current HEAD short: `b7a72b748`.
 
-Current HEAD parent: `c83636243`.
+Current HEAD parent: `b896cc759`.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 
@@ -315,9 +334,9 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: R72E dispatch material commit `f75656805` exists locally after R72D session sync `c83636243`. The branch is ahead by the bounded R72E dispatch commit until this session-sync commit is pushed.
+Branch state at handoff-sync authoring: R72E/R72F acceptance material commit `b896cc759` and R72G/R72H material commit `b7a72b748` exist locally. The branch remains local-only until operator authorizes any push.
 
-Commit stack debt disposition: `WITHIN_DISCLOSURE_THRESHOLD`; do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
+Commit stack debt disposition: `DISCLOSED_AND_REDUCED_BY_BATCHING`; R72G/R72H are intentionally combined to avoid unnecessary commit stacking. Do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
 
 Latest closed numbered LHW wave: LHW24.
 
@@ -386,14 +405,12 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-R72E no-commit worker execution only. Worker must create
-`docs/reference/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_TAXONOMY_AND_TRACE_SEED_2026-07-08.md`
-and `docs/reviews/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_WORKER_RETURN_2026-07-08.md`
-under the R72E work order. Do not commit as worker, implement metrics
-automation, edit checkers/hooks/Fast Lane standards/templates, mutate
-public-sync, run provider/live proof, import external sources, execute actual
-absorption, push/merge, or execute R72F-R72H without fresh accepted
-authorization.
+Operator selection of the next fresh product-value roadmap, bounded R72
+follow-up implementation packet, or GitHub/public-sync cleanup packet only.
+No automatic checker retirement, checker edit, hook edit, Fast Lane standard
+edit, public-sync mutation, runtime/source/test edit, product extraction,
+provider/live proof, merge, push, hosted/public/production claim, or further
+governance tranche is authorized by the R72A-R72H evidence closure.
 
 ## Public/Provenance Boundary
 
@@ -403,9 +420,10 @@ public-sync packet, and explicit operator authorization.
 
 ## Claim Boundary
 
-This handoff records R72E dispatch and continuity routing only. It does not
-repair public CI, mutate public-sync, retire or disable checkers, change checker
-severity, edit Fast Lane standards, implement metrics automation, edit
-runtime/source/tests/checkers, run provider/live proof, merge, release a public
-claim, extract a product surface, onboard operators, execute actual absorption,
+This handoff records R72A-R72H governance refactor continuity routing only. It
+does not repair public CI, mutate public-sync, retire or disable checkers,
+change checker severity, edit Fast Lane standards, implement metrics
+automation, edit runtime/source/tests/checkers, run provider/live proof, merge,
+release a public claim, extract a product surface, onboard operators,
+execute actual absorption,
 or complete R72F-R72H.
