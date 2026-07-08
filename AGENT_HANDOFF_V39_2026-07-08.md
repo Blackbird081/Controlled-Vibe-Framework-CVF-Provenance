@@ -2,14 +2,14 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R72D Governance Cost Metric And Monthly Readout dispatch.
+Purpose: compact current-session continuity after MSEA-R72D0 checker false-positive repair.
 Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No runtime source, tests, checker retirement implementation, checker deletion/disablement, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, product extraction, operator onboarding implementation, public/production claim, merge, push, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R72D dispatch and route the next executable move to R72D no-commit worker execution only.
+Provide compact active-session continuity after MSEA-R72D0 repair and route the next executable move to R72D no-commit worker execution only.
 
 ## Scope / Target / Owner Boundary
 
@@ -17,11 +17,11 @@ This handoff is private provenance continuity owned by Codex in reviewer/closer,
 
 ## Latest Work / Changes
 
-R72D was dispatched as a bounded no-commit documentation-and-evidence tranche. The worker must define source-backed governance-cost metrics and a monthly readout specification only; metrics automation, checker or hook edits, Fast Lane standard edits, public-sync mutation, provider/live proof, merge, push, and downstream R72E-R72H execution remain unauthorized.
+R72D was dispatched as a bounded no-commit documentation-and-evidence tranche. R72D0 then repaired one remaining local checker false-positive class before worker execution resumes. The worker must define source-backed governance-cost metrics and a monthly readout specification only; metrics automation, checker or hook edits, Fast Lane standard edits, public-sync mutation, provider/live proof, merge, push, and downstream R72E-R72H execution remain unauthorized.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R72D WORKER_MUST_NOT_COMMIT execution only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence and R72C1 repaired the rescan-guard self-reference false-positive; no metrics automation, Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72E-R72H execution authorized.
+Startup acknowledged: current mode=`msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R72D WORKER_MUST_NOT_COMMIT execution only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence and R72C1/R72D0 repaired rescan-guard false-positive classes; no metrics automation, Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72E-R72H execution authorized.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r72d_governance_cost_metric_and_monthly
 
 ## Current Mode
 
-`msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`
+`msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`
 
 ## Active Boundary
 
@@ -46,6 +46,8 @@ R72C is reviewer-accepted bounded. The accepted artifacts are the R72C case-matr
 R72C1 is closed bounded at material commit `3cad26401`. It repaired one checker false-positive class in `governance/compat/check_rescan_intelligence_hardening.py` with focused regression tests in `governance/compat/test_check_rescan_intelligence_hardening.py`.
 
 R72D is dispatched at material commit `08535d770`. The dispatched artifacts are `docs/baselines/CVF_GC018_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_2026-07-08.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_2026-07-08.md`.
+
+R72D0 is closed bounded at material commit `402bc2c9e`. It repaired one target-checker applicability false-positive class before R72D worker execution.
 
 No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, runtime/product source edit, provider/live proof, merge, product extraction, operator onboarding, public/production claim, or downstream R72E-R72H execution is authorized by this handoff.
 
@@ -202,10 +204,38 @@ do not revert material commit `08535d770`, R72C1 repair, R72C acceptance,
 R72C dispatch, R72B acceptance, R72A acceptance, R72 GCI repair, or older MSEA
 material.
 
+## Core Guard Self-Protection Authorization - MSEA-R72D0 Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R72D0 material
+repair commit `402bc2c9e`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and R72D0 state entry.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R72D0 acceptance, current HEAD freshness, and R72D worker-execution next move. |
+| `CVF_SESSION_MEMORY.md` | Record R72D0 acceptance and preserve R72D worker-execution next-move routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after state-source update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R72D0 acceptance. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update current mode and previous mode for R72D0 accepted pending R72D worker execution. |
+| `CVF_SESSION/state/entries/mseaR72D0RescanGuardApplicabilityFalsePositiveRepairAccepted20260708.json` | Record R72D0 repair evidence and boundaries. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Preserve next move as R72D no-commit worker execution only. |
+
+Operator authorization: operator identified the Claude-reported finding as
+needing handling and asked Codex to address it before continuing.
+
+Rollback boundary: revert only this R72D0 acceptance session-sync if rejected;
+do not revert material commit `402bc2c9e`, R72D dispatch, R72C1 repair, R72C
+acceptance, R72C dispatch, R72B acceptance, R72A acceptance, R72 GCI repair, or
+older MSEA material.
+
 ## Current Work
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| MSEA-R72D0 Rescan Guard Applicability False-Positive Repair | `402bc2c9e` | CLOSED_PASS_BOUNDED_PENDING_R72D_WORKER_EXECUTION; repaired the remaining target-checker applicability false-positive by reusing the real-signal helper from `_is_applicable_output` and adding four regression tests. Focused pytest PASS 20/20, target checker PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72D Governance Cost Metric And Monthly Readout dispatch | `08535d770` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R72D worker execution. Worker must create `docs/reference/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_SPECIFICATION_2026-07-08.md` and `docs/reviews/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_WORKER_RETURN_2026-07-08.md`, defining source-backed metrics for product-source touches, governance-artifact touches, checker additions/deletions, public CI status, and ceremony ratio. Dispatch gates PASS; material pre-commit hook PASS 80/80. |
 | MSEA-R72C1 Rescan Guard Self-Reference False-Positive Repair | `3cad26401` | CLOSED_PASS_BOUNDED_PENDING_R72D_GC018; repaired the repeated rescan-guard self-reference false-positive before R72D by adding a bounded negated-context filter and two regression tests. Focused pytest PASS 16/16, target rescan guard PASS, pre-implementation autorun PASS 75/75, commit steward PASS, material pre-commit hook PASS 80/80. No Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, runtime/product source edit, provider/live proof, public/production claim, or R72D execution was performed. |
 | MSEA-R72C Fast Lane Calibration And Risk-Class Router acceptance | `7ea4086da` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72D_GC018; accepted the source-backed R66-R72B case matrix and worker return. R72C proposes `FAST_DOC_LANE` as future decision input only, preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence; it does not implement a Fast Lane standard edit, checker severity split, checker retirement, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, push, merge, product extraction, onboarding implementation, public/production claim, or release claim. Worker-return fast gate PASS 59/59, worker-return quality gate PASS 0 violations, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. |
@@ -222,11 +252,11 @@ material.
 
 ## HEAD Freshness
 
-Current HEAD after R72D dispatch material commit: `08535d770`.
+Current HEAD after R72D0 material repair commit: `402bc2c9e`.
 
-Current HEAD short: `08535d770`.
+Current HEAD short: `402bc2c9e`.
 
-Current HEAD parent: `194e98ae4`.
+Current HEAD parent: `c75bbe75f`.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 
@@ -234,7 +264,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: the branch was clean and equal to the tracked provenance remote before the R72D dispatch material commit. The branch is ahead by the bounded R72D material commit until this session-sync pair is pushed.
+Branch state at handoff-sync authoring: the branch was clean and equal to the tracked provenance remote before the R72D0 material repair commit. The branch is ahead by the bounded R72D0 material commit until this session-sync pair is pushed.
 
 Commit stack debt disposition: `WITHIN_DISCLOSURE_THRESHOLD`; do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
 
@@ -244,6 +274,12 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| R72D0 focused pytest | PASS 20/20 |
+| R72D0 target rescan guard | PASS |
+| R72D0 worker-return fast gate | PASS |
+| R72D0 pre-implementation autorun | PASS 75/75 |
+| R72D0 reviewer-return commit steward | PASS |
+| R72D0 material pre-commit hook | PASS 80/80 |
 | R72D dispatch quality gate | PASS 0 violations |
 | R72D markdown structural completeness | PASS 0 violations |
 | R72D packet authority and encoding | PASS 0 violations |

@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R72D WORKER_MUST_NOT_COMMIT execution only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence and R72C1 repaired the rescan-guard self-reference false-positive; no metrics automation, Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72E-R72H execution authorized.
+Startup acknowledged: current mode=`msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R72D WORKER_MUST_NOT_COMMIT execution only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence and R72C1/R72D0 repaired rescan-guard false-positive classes; no metrics automation, Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72E-R72H execution authorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`
+Current mode marker: `msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`
 
-Current mode: `msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`
+Current mode: `msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`
 
-`msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`
+`msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`
 
 Previous mode:
 
-`msea_r72c1_rescan_guard_self_reference_false_positive_repair_accepted_pending_r72d_gc018_work_order`
+`msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R72D0 Rescan Guard Applicability False-Positive Repair | `402bc2c9e` | CLOSED_PASS_BOUNDED_PENDING_R72D_WORKER_EXECUTION; repaired the remaining target-checker applicability false-positive by reusing the real-signal helper from `_is_applicable_output` and adding four regression tests. Focused pytest PASS 20/20, target checker PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Next move remains R72D no-commit worker execution only. |
 | MSEA-R72D Governance Cost Metric And Monthly Readout dispatch | `08535d770` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R72D worker execution. Worker must create `docs/reference/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_SPECIFICATION_2026-07-08.md` and `docs/reviews/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_WORKER_RETURN_2026-07-08.md`; no metrics automation, checker/hook/Fast Lane edit, public-sync mutation, runtime/source/test edit outside worker-owned docs, provider/live proof, merge, push, product extraction, onboarding implementation, public/production claim, or R72E-R72H execution is authorized. |
 | MSEA-R72C1 Rescan Guard Self-Reference False-Positive Repair | `3cad26401` | CLOSED_PASS_BOUNDED_PENDING_R72D_GC018; repaired the repeated rescan-guard self-reference false-positive before R72D by adding a bounded negated-context filter and two regression tests. Focused pytest PASS 16/16, target rescan guard PASS, pre-implementation autorun PASS 75/75, commit steward PASS, material pre-commit hook PASS 80/80. No Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, runtime/product source edit, provider/live proof, public/production claim, or R72D execution was performed. Next move remains fresh source-verified R72D GC-018/work-order authoring only. |
 | MSEA-R72C Fast Lane Calibration And Risk-Class Router acceptance | `7ea4086da` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72D_GC018; accepted the source-backed R66-R72B case matrix and worker return. R72C proposes `FAST_DOC_LANE` as future decision input only, preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence; it does not implement a Fast Lane standard edit, checker severity split, checker retirement, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, push, merge, product extraction, onboarding implementation, public/production claim, or release claim. Worker-return fast gate PASS 59/59, worker-return quality gate PASS 0 violations, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Next move is fresh source-verified R72D Governance Cost Metric And Monthly Readout GC-018/work-order authoring only. |
@@ -172,7 +173,7 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r72d_governance_cost_metric_and_monthly_readout_dispatched_pending_worker_return`
+Mode: `msea_r72d0_rescan_guard_applicability_false_positive_repair_accepted_pending_r72d_worker_execution`
 
 R72D WORKER_MUST_NOT_COMMIT execution only. Worker must produce
 `docs/reference/CVF_MSEA_R72D_GOVERNANCE_COST_METRIC_AND_MONTHLY_READOUT_SPECIFICATION_2026-07-08.md`
