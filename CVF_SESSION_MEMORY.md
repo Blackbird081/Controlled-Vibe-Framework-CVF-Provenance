@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72B Governance Control Index And Checker Lifecycle Inventory GC-018 and work-order authoring only; parked checkpoint=R72A accepted as evidence/classification only, public-main CI remains unrepaired, public-sync mutation remains unauthorized, and branch remains ahead upstream until separately authorized for push.
+Startup acknowledged: current mode=`msea_r72b_governance_control_index_checker_lifecycle_inventory_accepted_pending_r72c_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72C Fast Lane Calibration And Risk-Class Router GC-018 and work-order authoring only; parked checkpoint=R72B accepted as inventory/recommendation only, no severity split or checker retirement implemented, public-main CI remains unrepaired, and public-sync mutation remains unauthorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
+Current mode marker: `msea_r72b_governance_control_index_checker_lifecycle_inventory_accepted_pending_r72c_gc018_work_order`
 
-Current mode: `msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
+Current mode: `msea_r72b_governance_control_index_checker_lifecycle_inventory_accepted_pending_r72c_gc018_work_order`
 
-`msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
+`msea_r72b_governance_control_index_checker_lifecycle_inventory_accepted_pending_r72c_gc018_work_order`
 
 Previous mode:
 
-`msea_r72_gci_claude_review_repair_accepted_pending_r72a_gc018_work_order`
+`msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R72B Governance Control Index And Checker Lifecycle Inventory | `4dc2bf197` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72C_GC018; accepted GC-018 baseline, source-verified work order, Governance-vs-Micromanagement assessment input, checker lifecycle inventory reference artifact, and worker return. R72B inventories 186 direct `governance/compat/check_*.py` scripts, preserves the R72D direct-checker metric boundary, and identifies the `cross_family_approval_artifact` family as the strongest R72F retirement-review candidate class while recording CI/script/manual-run reachability limits. Worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. No checker deletion, disablement, retirement, consolidation, severity split, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, merge, push, product extraction, onboarding implementation, or public/production claim was performed. |
 | MSEA-R72A Public Main CI Health And Governance-Load Baseline | `1187018cd` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72B_GC018; accepted GC-018 baseline, work order, combined matrix artifact, and worker return. R72A classified current public-main CI as one `GOVERNANCE_LOAD` failure (`CVF CI Pipeline`) and two `PRODUCT_DEBT` failures (`Documentation & Testing`, `CVF CI`), with public-surface/static CI passing. No public-sync mutation, CI repair, checker retirement, runtime/source/test/checker edit, provider/live proof, merge, or push was performed. |
 | MSEA-R72 GCI Claude Review Repair | `7f25ad753` | GCI_CLAUDE_REVIEW_REPAIR_ACCEPTED_PENDING_R72A_GC018; accepted Claude's `ACCEPT_WITH_REPAIRS` review by tightening GCI-014 public-sync owner surfaces, closing the R72F silent zero-retirement escape hatch with named WATCH-row evidence, adding R72G/R72H roadmap ownership, preserving the direct checker-script baseline correction for R72D, and tracking both external review files as private provenance evidence; focused encoding/corpus/structure/read-ahead/trace/index/public-export/finding-learning gates PASS, pre-implementation autorun PASS 75/75 on `a37c32dc8..HEAD`, implementation steward PASS, material pre-commit hook PASS 80/80; next move remains fresh source-verified R72A GC-018/work-order authoring only; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, operator onboarding implementation, product extraction, public/production claim, or historical sweep is authorized. |
 | MSEA-R72 Governance Control Index front-door refactor | `7c2a04ff1` | GOVERNANCE_CONTROL_INDEX_ESTABLISHED_PENDING_R72A_GC018; added official GCI README and index, registered both in the reference artifact index, and updated the R72 roadmap so R72B/R72F use lifecycle/cost/value/retirement-readiness criteria before any checker consolidation or retirement pilot; focused structural/index/trace gates PASS, pre-implementation autorun PASS 75/75 on `778adb4c3..HEAD`, implementation steward PASS, material pre-commit hook PASS 80/80; next move remains fresh source-verified R72A GC-018/work-order authoring only with GCI-014 cited for public-main CI/public-surface evidence; no checker retirement implementation, checker deletion/disablement, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, public/production claim, or historical sweep is authorized. |
@@ -167,18 +168,19 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r72a_public_main_ci_health_governance_load_baseline_accepted_pending_r72b_gc018_work_order`
+Mode: `msea_r72b_governance_control_index_checker_lifecycle_inventory_accepted_pending_r72c_gc018_work_order`
 
-Fresh source-verified MSEA-R72B Governance Control Index And Checker Lifecycle
-Inventory GC-018 and work-order authoring only. R72B must use the Governance
-Control Index as the lifecycle/cost/value spine and inventory direct checker
-scripts by owner, risk, phase, cost, value, overlap group, and candidate
-criteria without deleting, disabling, retiring, consolidating, renaming, or
-editing any checker. R72B must not mutate public-sync, edit runtime/source/
-tests/checkers, run provider/live proof, push, merge, extract product surfaces,
-onboard operators, or make public/production claims. If checker ownership or
-metric scope cannot be source-backed, R72B must return HOLD/BLOCKED with exact
-evidence. LHW24 remains latest closed numbered LHW wave.
+Fresh source-verified MSEA-R72C Fast Lane Calibration And Risk-Class Router
+GC-018 and work-order authoring only. R72C must use the R72 roadmap, the
+Governance Control Index, the R72B checker lifecycle inventory, and
+representative R66-R72B ceremony evidence to define a lighter route without
+weakening public/private boundary, source verification, no-commit/reviewer
+separation, or closure evidence. R72C must not change checker severity, delete,
+disable, retire, or consolidate checkers, edit hook catalogs or runtime/source/
+tests/checkers, mutate public-sync, run provider/live proof, push, merge,
+extract product surfaces, onboard operators, or make public/production claims.
+If a lighter route would weaken any protected boundary, R72C must return
+HOLD/BLOCKED with exact evidence. LHW24 remains latest closed numbered LHW wave.
 
 ## Current Closed Work
 
