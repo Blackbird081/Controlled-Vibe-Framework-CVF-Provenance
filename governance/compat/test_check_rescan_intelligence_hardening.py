@@ -203,3 +203,43 @@ Reason: N/A with reason: this is a worker return discussing a prior gate
 failure, not a rescan or intake refresh output.
 """
     assert check_text("docs/reviews/CVF_WORKER_RETURN_COMPOUND_PHRASING.md", text) == []
+
+
+def test_compact_not_applicable_can_use_never_rescan_negation():
+    text = """
+# Worker Return
+
+Status: COMPLETE_PENDING_REVIEW
+
+## Findings / Position
+
+The worker said this was never a rescan, but the previous bare-keyword filter
+still treated that explanatory sentence as applicability evidence.
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is a worker return, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_WORKER_RETURN_NEVER_RESCAN.md", text) == []
+
+
+def test_compact_not_applicable_can_use_no_intake_refresh_negation():
+    text = """
+# Worker Return
+
+Status: COMPLETE_PENDING_REVIEW
+
+## Findings / Position
+
+No intake refresh or knowledge absorption output was produced in this bounded
+checker-maintenance tranche.
+
+## Rescan Intelligence Hardening
+
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+
+Reason: N/A with reason: this is a worker return, not a rescan or intake refresh output.
+"""
+    assert check_text("docs/reviews/CVF_WORKER_RETURN_NO_INTAKE_REFRESH.md", text) == []

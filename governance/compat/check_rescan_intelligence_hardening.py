@@ -104,6 +104,12 @@ RESCAN_SELF_REFERENCE_COMPOUND_RE = re.compile(
     rf"|\b(?:{RESCAN_GUARD_MAINTENANCE_NOUNS})\b(?:[\s,-]+\w+){{0,3}}[\s,-]+\brescan\b",
     re.I,
 )
+NEGATED_RESCAN_CONTEXT_RE = re.compile(
+    r"\b(?:not|never|no|without)\b[^.\n;]{0,120}\b"
+    r"(?:rescan|re-scan|intake[- ]refresh|knowledge absorption|"
+    r"source[- ]backed reassessment|source[- ]verified rescan)\b[^.\n;]*",
+    re.I,
+)
 
 NA_LINE_RE = re.compile(r"(?im)^\s*[-|].{0,40}N/A\s+with\s+reason\b")
 INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
@@ -320,6 +326,7 @@ def _has_real_rescan_signal_outside_section(path: str, text: str) -> bool:
     lowered = re.sub(r"\bnot\s+(?:a|itself\s+a)\s+rescan[^.\n]*", " ", lowered)
     lowered = re.sub(r"\bnot\s+performing\s+a\s+rescan[^.\n]*", " ", lowered)
     for _ in range(3):
+        lowered = NEGATED_RESCAN_CONTEXT_RE.sub(" ", lowered)
         lowered = RESCAN_SELF_REFERENCE_COMPOUND_RE.sub(" ", lowered)
     return any(re.search(pattern, lowered, re.I) for pattern in APPLICABILITY_PATTERNS)
 
