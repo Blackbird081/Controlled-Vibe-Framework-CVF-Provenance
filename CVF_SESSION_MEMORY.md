@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose downstream workspace product proof using paid-user-safe on a real target project, paid-user-safe public documentation refinement, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r78_paid_user_safe_workspace_product_proof_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose paid-user-safe public documentation refinement, dogfooding on an actual paid/shared project, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`
+Current mode marker: `msea_r78_paid_user_safe_workspace_product_proof_closed_pending_operator_next_selection`
 
-Current mode: `msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`
+Current mode: `msea_r78_paid_user_safe_workspace_product_proof_closed_pending_operator_next_selection`
 
-`msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`
+`msea_r78_paid_user_safe_workspace_product_proof_closed_pending_operator_next_selection`
 
 Previous mode:
 
-`msea_r76_workspace_profile_tiers_closed_pending_operator_next_selection`
+`msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Paid-User-Safe Workspace Product Proof R78 | `ebe61599d` | CLOSED_PASS_BOUNDED; created local proof project `CVF-PaidUserSafe-Proof-20260709`; project doctor PASS 17/17; workspace-wide gate PASS with project `ENFORCED_PASS`; applied `paid-user-safe` profile with 11 artifacts and 2 workspace-root files; sensitive-token scan PASS; restored actual workspace to `operator-local` with 27 artifacts and 2 workspace-root files, activeProfile `operator-local`, sourceCommit `8dc6cd336`, final workspace gate PASS. No public-sync mutation, public push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Paid-User-Safe Workspace Onboarding R77 | `32eafb699` / `62eedfdce` provenance; `1793ceea8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; added `docs/reference/CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md`, registered it in `workspace_overlay_catalog.json`, updated paid-user-safe authoring/profile/rules docs, refreshed public-safe workspace guide generation, and aligned `operator-local` inheritance so the operator-local tier includes paid-user-safe flow while preserving explicit continuity allowance for private artifacts. Public-sync exported bounded workspace-kit changes at `1793ceea8`; local `CVF-Workspace` hidden public core is clean/current at `1793cee`, workspace gate PASS, active profile remains `operator-local`, source commit is `32eafb699`, and artifact count is 27. R77 smoke PASS: `paid-user-safe` 11 artifacts/2 root files, `operator-local` blocked without continuity flag and PASS with continuity flag. No checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Workspace Profile Tiers R76 | `72132366e` provenance / `2a74a7dc8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; defined `public-free`, `paid-user-safe`, and `operator-local` workspace profile tiers, added the tier map and paid-user-safe authoring guide, updated profile JSONs/catalog, generated rule-pack guide output, canonical workspace rules, and public-safe wrapper guide text. Public-sync exported bounded workspace-kit changes at `2a74a7dc8`; local `CVF-Workspace` hidden public core is clean/current at `2a74a7d`, active profile is `operator-local`, rule-pack source commit is `72132366e`, artifact count is 25, and workspace gate PASS. Profile smoke PASS: `public-free` 9 artifacts, `paid-user-safe` 10 artifacts, `operator-local` blocked without continuity flag and PASS with continuity flag. No checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Workspace Local Productization R75A-R75E | `9f8c5f382` / `0107dbd2e` provenance; `cc7565acb` / `3a3c2875a` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; productized public-safe `.agents/workflows` generation, root rule-pack refresh wrapper, and create-if-missing workspace enforcement baseline. Public-sync is pushed/current at `3a3c2875a`; public static CI PASS 8/8; generated public-safe output token scan PASS; disposable fresh-workspace proof PASS with project doctor 17/17 and workspace gate PASS; actual `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace` hidden core is clean/current at `3a3c287`, workspace gate PASS, and rule-pack source commit is `0107dbd2e`. No runtime/provider/live proof, checker/Fast Lane edit, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
@@ -184,18 +185,17 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`
+Mode: `msea_r78_paid_user_safe_workspace_product_proof_closed_pending_operator_next_selection`
 
-R77 Paid-User-Safe Workspace Onboarding is closed bounded and public-synced.
-The next allowed move is operator selection of downstream workspace product
-proof using paid-user-safe on a real target project, paid-user-safe public
-documentation refinement, a dedicated conformance-reference cleanup or
-reattachment packet for the R72F candidate family, or public GitHub check
-triage only if a current failing check is confirmed. No automatic checker
-retirement, checker deletion/disablement,
-hook/Fast Lane edit, runtime/provider/live proof, provenance push,
-hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or
-legal workflow is authorized. LHW24 remains latest closed numbered LHW wave.
+R78 Paid-User-Safe Workspace Product Proof is closed bounded. The next allowed
+move is operator selection of paid-user-safe public documentation refinement,
+dogfooding on an actual paid/shared project, a dedicated conformance-reference
+cleanup or reattachment packet for the R72F candidate family, or public GitHub
+check triage only if a current failing check is confirmed. No automatic checker
+retirement, checker deletion/disablement, hook/Fast Lane edit, public-sync
+mutation, public push, runtime/provider/live proof, hosted/production claim,
+Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow is
+authorized. LHW24 remains latest closed numbered LHW wave.
 
 ## Current Closed Work
 
