@@ -243,3 +243,52 @@ checker-maintenance tranche.
 Reason: N/A with reason: this is a worker return, not a rescan or intake refresh output.
 """
     assert check_text("docs/reviews/CVF_WORKER_RETURN_NO_INTAKE_REFRESH.md", text) == []
+
+
+def test_self_reference_without_section_is_not_applicable_for_hyphenated_guard_phrase():
+    text = """
+# Checker Maintenance Note
+
+Status: COMPLETE_PENDING_REVIEW
+
+The prior R72D drafting loop hit a rescan-guard self-reference phrase while
+describing checker behavior, not an output that refreshed intake evidence.
+"""
+    assert check_text("docs/reviews/CVF_RESCAN_GUARD_FALSE_TRIGGER_NOTE.md", text) == []
+
+
+def test_self_reference_without_section_is_not_applicable_when_wrapped_across_lines():
+    text = """
+# Checker Maintenance Note
+
+Status: COMPLETE_PENDING_REVIEW
+
+The sentence discussed the rescan
+guard matching pattern itself, not a refreshed evidence output.
+"""
+    assert check_text("docs/reviews/CVF_RESCAN_GUARD_WRAP_NOTE.md", text) == []
+
+
+def test_self_reference_without_section_ignores_bullet_section_name():
+    text = """
+# Checker Maintenance Note
+
+Status: COMPLETE_PENDING_REVIEW
+
+- Rescan Intelligence Hardening
+
+The bullet above names a section label for discussion only.
+"""
+    assert check_text("docs/reviews/CVF_RESCAN_SECTION_NAME_NOTE.md", text) == []
+
+
+def test_self_reference_without_section_handles_re_scan_maintenance_phrase():
+    text = """
+# Checker Maintenance Note
+
+Status: COMPLETE_PENDING_REVIEW
+
+The note described a re-scan-type maintenance false trigger, not an evidence
+refresh output.
+"""
+    assert check_text("docs/reviews/CVF_RE_SCAN_TYPE_FALSE_TRIGGER_NOTE.md", text) == []
