@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72D Governance Cost Metric And Monthly Readout GC-018/work-order authoring only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence, no Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72E-R72H execution authorized.
+Startup acknowledged: current mode=`msea_r72c1_rescan_guard_self_reference_false_positive_repair_accepted_pending_r72d_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72D Governance Cost Metric And Monthly Readout GC-018/work-order authoring only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence and R72C1 repaired the rescan-guard self-reference false-positive; no Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72E-R72H execution authorized.
 
 ## Current Mode
 
-Current mode marker: `msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`
+Current mode marker: `msea_r72c1_rescan_guard_self_reference_false_positive_repair_accepted_pending_r72d_gc018_work_order`
 
-Current mode: `msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`
+Current mode: `msea_r72c1_rescan_guard_self_reference_false_positive_repair_accepted_pending_r72d_gc018_work_order`
 
-`msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`
+`msea_r72c1_rescan_guard_self_reference_false_positive_repair_accepted_pending_r72d_gc018_work_order`
 
 Previous mode:
 
-`msea_r72c_fast_lane_calibration_and_risk_class_router_dispatched_pending_worker_return`
+`msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R72C1 Rescan Guard Self-Reference False-Positive Repair | `3cad26401` | CLOSED_PASS_BOUNDED_PENDING_R72D_GC018; repaired the repeated rescan-guard self-reference false-positive before R72D by adding a bounded negated-context filter and two regression tests. Focused pytest PASS 16/16, target rescan guard PASS, pre-implementation autorun PASS 75/75, commit steward PASS, material pre-commit hook PASS 80/80. No Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, runtime/product source edit, provider/live proof, public/production claim, or R72D execution was performed. Next move remains fresh source-verified R72D GC-018/work-order authoring only. |
 | MSEA-R72C Fast Lane Calibration And Risk-Class Router acceptance | `7ea4086da` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72D_GC018; accepted the source-backed R66-R72B case matrix and worker return. R72C proposes `FAST_DOC_LANE` as future decision input only, preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence; it does not implement a Fast Lane standard edit, checker severity split, checker retirement, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, push, merge, product extraction, onboarding implementation, public/production claim, or release claim. Worker-return fast gate PASS 59/59, worker-return quality gate PASS 0 violations, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. Next move is fresh source-verified R72D Governance Cost Metric And Monthly Readout GC-018/work-order authoring only. |
 | MSEA-R72C Fast Lane Calibration And Risk-Class Router dispatch | `b9650b40d` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R72C worker execution. Worker must create `docs/reference/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_CASE_MATRIX_2026-07-08.md` and `docs/reviews/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_WORKER_RETURN_2026-07-08.md`, preserving public/private boundary, source verification, no-commit/reviewer separation, live-proof safety, and closure evidence in every proposed tier. Dispatch quality PASS, structural completeness PASS, ADIF disclosure PASS, handoff boundary PASS, pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72B Governance Control Index And Checker Lifecycle Inventory | `4dc2bf197` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72C_GC018; accepted GC-018 baseline, source-verified work order, Governance-vs-Micromanagement assessment input, checker lifecycle inventory reference artifact, and worker return. R72B inventories 186 direct `governance/compat/check_*.py` scripts, preserves the R72D direct-checker metric boundary, and identifies the `cross_family_approval_artifact` family as the strongest R72F retirement-review candidate class while recording CI/script/manual-run reachability limits. Worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. No checker deletion, disablement, retirement, consolidation, severity split, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, merge, push, product extraction, onboarding implementation, or public/production claim was performed. |
@@ -170,7 +171,7 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`
+Mode: `msea_r72c1_rescan_guard_self_reference_false_positive_repair_accepted_pending_r72d_gc018_work_order`
 
 Fresh source-verified MSEA-R72D Governance Cost Metric And Monthly Readout
 GC-018 baseline and work-order authoring only. R72D must use the R72 roadmap,
