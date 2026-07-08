@@ -97,8 +97,15 @@ downstream projects. Application work belongs in each project folder.
 ~~~text
 CVF-Workspace/
   .Controlled-Vibe-Framework-CVF/
+  CVF_RULE_PACKS/
   <Application-Project>/
   WORKSPACE_RULES.md
+  CVF_WORKSPACE_RULE_PACKS.md
+  CVF_WORKSPACE_MEMORY.md
+  AGENT_HANDOFF.md
+  New-CVF-Governed-Project.ps1
+  Run-CVF-NewProject-Enforcement.ps1
+  Update-CVF-Workspace.ps1
 ~~~
 
 ## Public Core
@@ -111,9 +118,24 @@ CVF-Workspace/
 Reconcile the hidden core with the latest public remote:
 
 ~~~powershell
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace.ps1" -RunGate
+~~~
+
+If the root update wrapper is missing, run the hidden-core reconciler directly:
+
+~~~powershell
 powershell -ExecutionPolicy Bypass -File ".Controlled-Vibe-Framework-CVF\scripts\update_cvf_workspace_public_core.ps1" ``
   -WorkspaceRoot "$Workspace"
 ~~~
+
+## Rule Packs And Agent Continuity
+
+- `CVF_RULE_PACKS/ACTIVE_RULE_PACK.json` records the active rule pack when one is installed.
+- `CVF_WORKSPACE_RULE_PACKS.md` explains the installed rule pack and refresh flow.
+- `CVF_WORKSPACE_MEMORY.md` is the workspace-local memory front door.
+- `AGENT_HANDOFF.md` is the workspace-local handoff file.
+- Rule packs are selected local guidance; they do not turn this workspace into the private full CVF repository.
+- Project-level `AGENTS.md`, manifests, policies, and handoffs still belong to each downstream project.
 
 ## Current Sibling Projects
 
