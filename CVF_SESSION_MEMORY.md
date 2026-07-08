@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose product-value continuation, deeper Workspace Local Productization packaging/onboarding, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r75_workspace_local_productization_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose product-value continuation, workspace profile expansion, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
+Current mode marker: `msea_r75_workspace_local_productization_closed_pending_operator_next_selection`
 
-Current mode: `msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
+Current mode: `msea_r75_workspace_local_productization_closed_pending_operator_next_selection`
 
-`msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
+`msea_r75_workspace_local_productization_closed_pending_operator_next_selection`
 
 Previous mode:
 
-`msea_r73_product_value_recovery_and_lean_governance_closed_pending_operator_review`
+`msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Workspace Local Productization R75A-R75E | `9f8c5f382` / `0107dbd2e` provenance; `cc7565acb` / `3a3c2875a` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; productized public-safe `.agents/workflows` generation, root rule-pack refresh wrapper, and create-if-missing workspace enforcement baseline. Public-sync is pushed/current at `3a3c2875a`; public static CI PASS 8/8; generated public-safe output token scan PASS; disposable fresh-workspace proof PASS with project doctor 17/17 and workspace gate PASS; actual `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace` hidden core is clean/current at `3a3c287`, workspace gate PASS, and rule-pack source commit is `0107dbd2e`. No runtime/provider/live proof, checker/Fast Lane edit, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Workspace Rules Local Continuity Refresh | `37d0cf28a` provenance / `179839b50`, `8e01854bf`, `507285bbb` public-sync | APPLIED_LOCAL_SOURCE_AND_PUBLIC_SYNCED; updated `docs/reference/CVF_WORKSPACE_RULES.md` and `scripts/update_cvf_workspace_public_core.ps1` so generated workspace-root rules now mention `Update-CVF-Workspace.ps1`, optional `CVF_RULE_PACKS/`, `CVF_WORKSPACE_RULE_PACKS.md`, workspace memory, and the workspace handoff root file. Public-sync exported the rule text, excluded `CVF_RULE_PACKS` from the new-project enforcement gate, and synced the public-safe guide installer so optional rule-pack guidance survives wrapper refresh. Local `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace` is now updated to hidden public core `507285bbb` and workspace-wide gate PASS. Script parse PASS, public-safe leakage scan PASS, public surface PASS, public static CI PASS 8/8, provenance pre-implementation/pre-push gates PASS, material pre-commit hook PASS 80/80. No runtime/provider/live proof, checker/hook/Fast Lane edit, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Workspace Guide Rule-Pack Setup Documentation | `9932ad08a` | APPLIED_LOCAL_AND_SOURCE; updated `scripts/install_cvf_workspace_root_wrappers_public.ps1` so generated public-safe workspace guides mention optional rule packs without provenance-local command leakage, and updated local `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace` EN/VI guides with the operator-machine two-step flow for `Update-CVF-Workspace.ps1` plus `scripts/sync_cvf_workspace_rule_pack.ps1 -ProfileName workspace-standard` and selectable profile names. Installer parse PASS, generated guide/wrapper leakage scan PASS, local guide command presence PASS, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80. No public-sync mutation, runtime/provider/live proof, checker/hook/Fast Lane edit, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Workspace Local Productization Rule-Pack Sync And Continuity Templates | `452c9312d` / `b01760f6d` | APPLIED_LOCAL_ONLY; added `workspace-standard` curated rule-pack profile, `scripts/sync_cvf_workspace_rule_pack.ps1`, workspace-safe root continuity templates, and lifecycle classification for the template root. The workspace now has `CVF_RULE_PACKS/workspace-standard` with 8 selected artifacts, `ACTIVE_RULE_PACK.json`, `CVF_WORKSPACE_RULE_PACKS.md`, and workspace memory plus handoff root files. Root continuity files are installed with create-if-missing semantics and preserved on later syncs. Temp smoke PASS, script parse PASS, catalog/profile JSON parse PASS, provenance-local fail-safe PASS, private-token scan PASS, lifecycle/exposure classification PASS, pre-implementation autorun PASS 75/75, material pre-commit hooks PASS 80/80. No public-sync mutation, runtime/provider/live proof, checker/hook/Fast Lane edit, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
@@ -181,14 +182,15 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`
+Mode: `msea_r75_workspace_local_productization_closed_pending_operator_next_selection`
 
-R74 public-sync export and R73F follow-up are closed bounded. The next allowed
-move is operator selection of product-value continuation, a dedicated
-conformance-reference cleanup or reattachment packet for the R72F candidate
-family, or public GitHub check triage for public commit `9d6f10657`. No
-automatic checker retirement, checker deletion/disablement, hook/Fast Lane
-edit, runtime/provider/live proof, provenance push, hosted/production claim,
+R75 Workspace Local Productization is closed bounded and public-synced. The
+next allowed move is operator selection of product-value continuation,
+workspace profile expansion, a dedicated conformance-reference cleanup or
+reattachment packet for the R72F candidate family, or public GitHub check
+triage only if a current failing check is confirmed. No automatic checker
+retirement, checker deletion/disablement, hook/Fast Lane edit,
+runtime/provider/live proof, provenance push, hosted/production claim,
 Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow is
 authorized. LHW24 remains latest closed numbered LHW wave.
 
