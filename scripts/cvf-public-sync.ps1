@@ -70,6 +70,7 @@ $ALLOWED_SCRIPT_FILES = @(
     'scripts\bootstrap_foundations.ps1',
     'scripts\bootstrap_foundations.sh',
     'scripts\check_cvf_workspace_agent_enforcement.ps1',
+    'scripts\check_cvf_workspace_new_project_enforcement.ps1',
     'scripts\ingest_cvf_downstream_knowledge.ps1',
     'scripts\install_cvf_hooks.ps1',
     'scripts\new-cvf-workspace.ps1',
