@@ -27,6 +27,30 @@
       "reason": "Canonical workspace topology, bootstrap, and boundary rule set."
     },
     {
+      "artifactId": "workspace-profile-tiers-reference",
+      "path": "docs\\reference\\CVF_WORKSPACE_PROFILE_TIERS.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Product-facing profile tier map for choosing public-free, paid-user-safe, or operator-local workspace rule packs."
+    },
+    {
+      "artifactId": "workspace-paid-user-authoring-guide",
+      "path": "docs\\reference\\CVF_WORKSPACE_PAID_USER_AUTHORING_GUIDE.md",
+      "artifactClass": "reference-guide",
+      "selectionTags": [
+        "paid-user-safe",
+        "agent-authoring"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Public-safe downstream authoring guide for paid-user-safe workspaces without private continuity state."
+    },
+    {
       "artifactId": "downstream-agents-template",
       "path": "governance\\toolkit\\05_OPERATION\\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
       "artifactClass": "agent-template",

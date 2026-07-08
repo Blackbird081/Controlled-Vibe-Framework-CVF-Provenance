@@ -285,6 +285,11 @@ foreach ($artifact in $selected) {
 }
 
 $sourceCommit = (git -C $repoRoot rev-parse --short HEAD).Trim()
+$continuityFlagText = ""
+if ($AllowProvenanceContinuity) {
+    $continuityFlagText = " -AllowProvenanceContinuity"
+}
+
 $manifest = [ordered]@{
     schemaVersion = "1.0"
     profileName = $ProfileName
@@ -325,6 +330,7 @@ $activeManifest = [ordered]@{
     schemaVersion = "1.0"
     activeProfile = $ProfileName
     activeProfilePath = (Join-Path $OutputDirName "$ProfileName\RULE_PACK_MANIFEST.json")
+    productProfileTiers = @("public-free", "paid-user-safe", "operator-local")
     sourceCommit = $sourceCommit
     artifactCount = $copied.Count
     workspaceRootFileCount = $materializedRootFiles.Count
@@ -383,13 +389,35 @@ this folder as a public export or a full provenance mirror.
 Refresh this pack from the workspace root:
 
 ~~~powershell
-powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace-RulePack.ps1" -ProfileName "$ProfileName"
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace-RulePack.ps1" -ProfileName "$ProfileName"$continuityFlagText
 ~~~
 
 Fallback command from the provenance repository:
 
 ~~~powershell
-powershell -ExecutionPolicy Bypass -File "<provenance-root>\scripts\sync_cvf_workspace_rule_pack.ps1" -WorkspaceRoot "$workspaceRootResolved" -ProfileName "$ProfileName"
+powershell -ExecutionPolicy Bypass -File "<provenance-root>\scripts\sync_cvf_workspace_rule_pack.ps1" -WorkspaceRoot "$workspaceRootResolved" -ProfileName "$ProfileName"$continuityFlagText
+~~~
+
+## Product Profiles
+
+Use one of these product-facing profiles when switching the active rule pack:
+
+| Profile | Use when | Continuity allowance |
+|---|---|---|
+| `public-free` | Free or public-core-only workspace needs the lightest guidance set. | Not required |
+| `paid-user-safe` | Downstream paid/shared workspace needs curated authoring and boundary references without private continuity state. | Not required |
+| `operator-local` | Private operator machine needs full local continuity. | Required: add `-AllowProvenanceContinuity` |
+
+Example:
+
+~~~powershell
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace-RulePack.ps1" -ProfileName "paid-user-safe"
+~~~
+
+Operator-local example:
+
+~~~powershell
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace-RulePack.ps1" -ProfileName "operator-local" -AllowProvenanceContinuity
 ~~~
 
 ## Files
