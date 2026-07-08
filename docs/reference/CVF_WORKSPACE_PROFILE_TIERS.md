@@ -65,7 +65,9 @@ Use `paid-user-safe` when the workspace is for real downstream work and should
 inherit more of CVF's useful authoring and boundary guardrails without exposing
 private continuity state. Keep full startup-orientation and broader governance
 library material in the private operator tier until separately reviewed
-public-safe versions exist.
+public-safe versions exist. Use
+`docs/reference/CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md` as the
+profile setup checklist.
 
 Use `operator-local` only on the operator's private machine. It is meant for
 high-continuity local work and should not be copied into a public or customer

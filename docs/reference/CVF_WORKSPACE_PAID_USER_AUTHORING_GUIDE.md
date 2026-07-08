@@ -38,6 +38,20 @@ Give downstream agents a short authoring rule set that keeps useful CVF habits:
 | 5 | Run the project-local test, lint, doctor, or validation command that best matches the change. | Command and result. |
 | 6 | Update project handoff or workspace handoff only when continuity matters. | Handoff path or N/A reason. |
 
+## Onboarding Flow
+
+Use `docs/reference/CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md` as the
+setup checklist before relying on this authoring guide in a downstream
+workspace.
+
+The short version is:
+
+1. refresh the workspace public core and wrapper set;
+2. select the `paid-user-safe` rule-pack profile;
+3. verify the active manifest;
+4. create or refresh the downstream project;
+5. run the workspace gate and the project-local checks.
+
 ## Boundary Rules
 
 - Do not copy private operator continuity state into a customer or public

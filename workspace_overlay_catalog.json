@@ -51,6 +51,18 @@
       "reason": "Public-safe downstream authoring guide for paid-user-safe workspaces without private continuity state."
     },
     {
+      "artifactId": "workspace-paid-user-safe-onboarding-flow",
+      "path": "docs\\reference\\CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md",
+      "artifactClass": "reference-guide",
+      "selectionTags": [
+        "paid-user-safe",
+        "workspace-onboarding"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Setup and verification flow for paid-user-safe workspaces without private continuity state."
+    },
+    {
       "artifactId": "downstream-agents-template",
       "path": "governance\\toolkit\\05_OPERATION\\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
       "artifactClass": "agent-template",
