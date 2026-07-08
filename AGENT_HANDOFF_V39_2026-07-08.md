@@ -2,26 +2,26 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R74 public-sync export and R73F follow-up closure.
-Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, additional public-sync mutation, provider-local config, private/generated MinerU output, direct external import, product extraction, operator onboarding implementation, production claim, provenance push, or use-case/legal workflow change is authorized here.
+Purpose: compact current-session continuity after MSEA-R74 public-sync export, R73F follow-up closure, and bounded workspace update-wrapper productization.
+Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, additional public-sync mutation beyond completed update-wrapper export, provider-local config, private/generated MinerU output, direct external import, product extraction, operator onboarding implementation, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R74 public-sync export and R73F follow-up closure, and route the next executable move back to operator selection.
+Provide compact active-session continuity after MSEA-R74 public-sync export, R73F follow-up closure, and bounded workspace update-wrapper productization, and route the next executable move back to operator selection.
 
 ## Scope / Target / Owner Boundary
 
-This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R74 public-sync export closure, R73F follow-up routing, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, additional public-sync mutation, provider/live proof, product extraction, operator onboarding implementation, production claims, or use-case/legal workflow changes.
+This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R74 public-sync export closure, R73F follow-up routing, bounded workspace update-wrapper productization, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, additional public-sync mutation beyond completed update-wrapper export, provider/live proof, product extraction, operator onboarding implementation, production claims, or use-case/legal workflow changes.
 
 ## Latest Work / Changes
 
-R74 public-sync export is closed bounded. Public commit `9d6f10657` exported the public-safe workspace onboarding wrapper flow to the public repository from the sibling public-sync clone. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
+R74 public-sync export is closed bounded. Public commit `9d6f10657` exported the public-safe workspace onboarding wrapper flow to the public repository from the sibling public-sync clone. Follow-up public commit `d32922c8a` added the public-safe `Update-CVF-Workspace.ps1` root wrapper generation path; local `CVF-Workspace` is clean/current at hidden public core `d32922c8a` after a passing workspace-wide gate. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose product-value continuation, a dedicated conformance-reference cleanup or reattachment packet for the R72F candidate family, or public GitHub check triage for commit `9d6f10657`; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r74_public_sync_export_and_r73f_followup_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose product-value continuation, a dedicated Workspace Local Productization roadmap/work-order lane, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -39,7 +39,7 @@ Startup acknowledged: current mode=`msea_r74_public_sync_export_and_r73f_followu
 
 ## Active Boundary
 
-R74 is closed bounded at material commit `e68fa6d27`. Public-sync commit `9d6f10657` exported the public-safe workspace wrapper installer flow to the public repository and public-sync is clean/current after push.
+R74 is closed bounded at material commit `e68fa6d27`. Public-sync commit `9d6f10657` exported the public-safe workspace wrapper installer flow to the public repository. Follow-up public-sync commit `d32922c8a` exported public-safe `Update-CVF-Workspace.ps1` generation, and local `CVF-Workspace` is clean/current after pulling that public commit and passing the workspace-wide gate.
 
 R73F follow-up is closed bounded as a decision: actual checker retirement remains blocked by active references in conformance scenarios, conformance JSON, enterprise evidence-pack guidance, and conformance runner scripts.
 
@@ -57,7 +57,7 @@ R72D0 is closed bounded at material commit `402bc2c9e`. It repaired one target-c
 
 R72E/R72F are accepted at material commit `b896cc759`, and R72G/R72H docs-only evidence is accepted at material commit `b7a72b748`.
 
-No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, provider/live proof, push, product extraction, operator onboarding implementation, public/production claim, or automatic downstream governance execution is authorized by this handoff.
+No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, additional public-sync mutation beyond completed update-wrapper export, provider/live proof, product extraction, operator onboarding implementation, public/production claim, or automatic downstream governance execution is authorized by this handoff.
 
 ## Core Guard Self-Protection Authorization - MSEA-R74 Closure Session Sync
 
@@ -350,6 +350,7 @@ older MSEA material.
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| Workspace Update Wrapper Productization Follow-Up | `8ec987858` | APPLIED_AND_PUBLIC_SYNCED; added `Update-CVF-Workspace.ps1` generation to `scripts/install_cvf_workspace_root_wrappers_public.ps1`, exported the matching public-safe installer as public commit `d32922c8a`, and updated local `CVF-Workspace` to hidden public core `d32922c8a`. Installer smoke PASS, generated wrapper parse PASS, generated guide/wrapper leak scan PASS, public static CI PASS 8/8, public surface PASS, and local workspace-wide gate PASS. |
 | MSEA-R74 Public Sync Export And R73F Follow-Up Closure | `e68fa6d27` | CLOSED_PASS_BOUNDED; public-sync commit `9d6f10657` exported the public-safe workspace onboarding wrapper flow to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` from the sibling public-sync clone. Public-sync parse checks PASS, generated-guide sensitive-token smoke PASS, static CI gate PASS 8/8, public surface PASS, and post-push public-sync status is clean with `HEAD == origin/main == 9d6f10657722dae28d0f245c4f31cb9e4ac8ead6`. R73F follow-up confirms actual checker retirement remains blocked by active conformance/evidence-pack references. Next move is operator selection of product-value continuation, dedicated conformance-reference cleanup or reattachment for the R72F candidate family, or public GitHub check triage for commit `9d6f10657`; no automatic checker retirement, checker deletion/disablement, hook/Fast Lane edit, runtime/provider/live proof, provenance push, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow is authorized. |
 | MSEA-R73 Product Value Recovery And Lean Governance Batch Closure | `a7be6f2b4` | CLOSED_PASS_BOUNDED_PENDING_OPERATOR_REVIEW; repaired public-safe workspace bootstrap/reconcile wrapper flow in `scripts/new-cvf-workspace.ps1` and `scripts/update_cvf_workspace_public_core.ps1`, recorded R73A-R73F bounded decisions in `docs/reviews/CVF_MSEA_R73_PRODUCT_VALUE_RECOVERY_AND_LEAN_GOVERNANCE_BATCH_CLOSURE_2026-07-08.md`, and kept public-sync held. Parse checks PASS for both changed scripts, temp-workspace bootstrap smoke PASS, generated guide leakage-token scan PASS, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80. Next move is operator selection of a fresh R74 public-sync/export packet, source-verified R73F follow-up retirement packet, or another product-value roadmap lane; no automatic public-sync mutation, push, checker retirement, hook/Fast Lane edit, provider/live proof, hosted/public/production claim, or product extraction is authorized. |
 | GitHub Workspace CI Hygiene Repair | `760d5c48` | APPLIED_PENDING_GITHUB_CI_RECHECK; repaired two PR #22 workspace/CI hygiene defects by adding `fetch-depth: 2` to the PR-head checkout workflow in `.github/workflows/ci.yml` and tracking `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/package-lock.json` so the MCP ECO cache dependency path resolves in GitHub CI. ECO MCP `npm ci` PASS with audit warnings, ECO MCP tests PASS 727/727, active-session checker PASS before material commit, and material pre-commit hook PASS 80/80. Public-sync remains untouched. |
@@ -373,13 +374,13 @@ older MSEA material.
 
 ## HEAD Freshness
 
-Current HEAD after MSEA-R74 material closure: `e68fa6d27`.
+Current HEAD after workspace update-wrapper productization source sync: `8ec987858`.
 
-Current HEAD short: `e68fa6d27`.
+Current HEAD short: `8ec987858`.
 
-Current HEAD full: `e68fa6d2714bcfc390e87c03960bb30323c69fcd`.
+Current HEAD full: `8ec98785876402bea0ccad50bbe4e47dec08e8c8`.
 
-Current HEAD parent: `46a5ee78c`.
+Current HEAD parent: `50da896ab`.
 
 Remote tracking branch: `origin/main`.
 
@@ -387,7 +388,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R73 session-sync at `46a5ee78c`, and R74 material closure at `e68fa6d27`. Public-sync is clean/current after public commit `9d6f10657`.
+Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, and workspace update-wrapper productization source sync at `8ec987858`. Public-sync and local workspace hidden public core are clean/current after public commit `d32922c8a`.
 
 ## Core Guard Self-Protection Authorization - GitHub Merge Handoff Freshness Sync
 
@@ -471,6 +472,11 @@ Latest closed numbered LHW wave: LHW24.
 | R74 public-sync post-push status | PASS: clean and `HEAD == origin/main == 9d6f10657722dae28d0f245c4f31cb9e4ac8ead6` |
 | R74 material pre-implementation autorun | PASS 75/75 |
 | R74 material pre-commit hook | PASS 80/80 |
+| Workspace update-wrapper installer smoke | PASS |
+| Workspace update-wrapper generated parse/leak scan | PASS |
+| Workspace update-wrapper public static CI gate | PASS 8/8 |
+| Workspace update-wrapper public surface gate | PASS |
+| Workspace local update and gate | PASS: hidden public core `d32922c8a`; workspace-wide gate PASS |
 | Public-sync mutation | PERFORMED_BOUNDED_R74_EXPORT_ONLY |
 | Runtime/source/test/checker edit | PERFORMED_SCRIPT_REPAIR_ONLY; no governance checker edit |
 | Provider/live proof | NOT_PERFORMED |
@@ -482,32 +488,33 @@ Latest closed numbered LHW wave: LHW24.
 | --- | --- |
 | Actor | Codex reviewer/closer and session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | MSEA-R74 closure session-sync after material commit `e68fa6d27` |
+| Session or invocation | Workspace update-wrapper productization session-sync after material commit `8ec987858` |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, apply_patch, git, Python governance checkers |
 | Target paths | active session state sources and aggregates, front-door memory, active handoff V39 |
 | Allowed scope source | operator authorization to process R74A/R74B and R73F follow-up in order |
-| Before status evidence | R74 material commit `e68fa6d27` existed; session front doors still described R73 next-move routing |
-| After status evidence | session-sync files updated to R74 closure and operator next selection |
+| Before status evidence | workspace update-wrapper source commit `8ec987858` existed; active handoff still described R74 material commit `e68fa6d27` as current HEAD |
+| After status evidence | session-sync files updated to workspace update-wrapper productization and operator next selection |
 | Diff evidence | `git status --short`; generated active session state; pre-implementation autorun; commit steward; pre-commit hook |
-| Approval boundary | R74 closure session-sync only; no additional public-sync mutation, provenance push, checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
-| Claim boundary | private provenance continuity routing only; public export evidence is limited to public-sync commit `9d6f10657`; no production deployment, checker retirement, or provider certification claim |
+| Approval boundary | workspace update-wrapper productization session-sync only; no additional public-sync mutation beyond commit `d32922c8a`, checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
+| Claim boundary | private provenance continuity routing only; public export evidence is limited to public-sync commits `9d6f10657` and `d32922c8a`; no production deployment, checker retirement, or provider certification claim |
 | Agent type | Codex |
-| Invocation ID | msea-r74-closure-session-sync-2026-07-08 |
-| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR74PublicSyncExportR73FFollowupClosure20260708.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
-| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR74PublicSyncExportR73FFollowupClosure20260708.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Invocation ID | workspace-update-wrapper-productization-session-sync-2026-07-08 |
+| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this R74 closure session-sync |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this workspace update-wrapper session-sync |
 
 ## Next Allowed Move
 
-Operator may choose product-value continuation, a dedicated conformance-reference
-cleanup or reattachment packet for the R72F candidate family, or public GitHub
-check triage for public commit `9d6f10657`.
+Operator may choose product-value continuation, a dedicated Workspace Local
+Productization roadmap/work-order lane, conformance-reference cleanup or
+reattachment for the R72F candidate family, or GitHub check triage only if a
+current failing check is confirmed.
 No automatic checker retirement, checker deletion/disablement, hook/Fast Lane
-edit, runtime/provider/live proof, provenance push, hosted/production claim,
+edit, runtime/provider/live proof, hosted/production claim,
 Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow is
-authorized by the R74 closure.
+authorized by this handoff.
 
 ## Public/Provenance Boundary
 
