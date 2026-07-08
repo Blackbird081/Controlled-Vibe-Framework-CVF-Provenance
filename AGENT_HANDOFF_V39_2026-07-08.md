@@ -2,26 +2,26 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R76 Workspace Profile Tiers closure and public-sync export.
-Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, additional public-sync mutation beyond completed R76 workspace-kit export, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
+Purpose: compact current-session continuity after MSEA-R77 Paid-User-Safe Workspace Onboarding closure and public-sync export.
+Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, additional public-sync mutation beyond completed R77 workspace-kit export, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R76 Workspace Profile Tiers closure and public-sync export, and route the next executable move back to operator selection.
+Provide compact active-session continuity after MSEA-R77 Paid-User-Safe Workspace Onboarding closure and public-sync export, and route the next executable move back to operator selection.
 
 ## Scope / Target / Owner Boundary
 
-This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R76 workspace profile tier closure, public-safe workspace-kit export, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, additional public-sync mutation beyond completed R76 workspace-kit export, provider/live proof, production claims, or use-case/legal workflow changes.
+This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R77 paid-user-safe workspace onboarding closure, public-safe workspace-kit export, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, additional public-sync mutation beyond completed R77 workspace-kit export, provider/live proof, production claims, or use-case/legal workflow changes.
 
 ## Latest Work / Changes
 
-R76 Workspace Profile Tiers is closed bounded and public-synced. Provenance commit `72132366e` defines `public-free`, `paid-user-safe`, and `operator-local` workspace rule-pack tiers; adds the tier map and paid-user-safe authoring guide; updates profile JSONs, catalog registration, generated rule-pack guide output, canonical workspace rules, and public-safe wrapper guide text. Public-sync commit `2a74a7dc8` exported the bounded workspace-kit public-safe changes. Profile smoke PASS: `public-free` 9 artifacts, `paid-user-safe` 10 artifacts, `operator-local` blocked without continuity flag and PASS with continuity flag. Local `CVF-Workspace` is clean/current at hidden public core `2a74a7d`, active profile `operator-local`, source commit `72132366e`, artifact count 25, and workspace-wide gate PASS. R75 and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
+R77 Paid-User-Safe Workspace Onboarding is closed bounded and public-synced. Provenance commit `32eafb699` adds the paid-user-safe onboarding flow reference, registers it in the workspace overlay catalog, updates paid-user-safe authoring/profile/rules docs, and refreshes public-safe workspace guide generation. Follow-up provenance commit `62eedfdce` aligns `operator-local` inheritance so the private operator tier includes paid-user-safe flow while still requiring explicit continuity allowance. Public-sync commit `1793ceea8` exported bounded workspace-kit public-safe changes. Profile smoke PASS: `paid-user-safe` 11 artifacts and 2 root files, `operator-local` blocked without continuity flag and PASS with continuity flag. Local `CVF-Workspace` is clean/current at hidden public core `1793cee`, active profile `operator-local`, source commit `32eafb699`, artifact count 27, and workspace-wide gate PASS. R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r76_workspace_profile_tiers_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose product-value continuation, paid-user-safe orientation/public-safe authoring expansion, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose downstream workspace product proof using paid-user-safe on a real target project, paid-user-safe public documentation refinement, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -35,9 +35,11 @@ Startup acknowledged: current mode=`msea_r76_workspace_profile_tiers_closed_pend
 
 ## Current Mode
 
-`msea_r76_workspace_profile_tiers_closed_pending_operator_next_selection`
+`msea_r77_paid_user_safe_workspace_onboarding_closed_pending_operator_next_selection`
 
 ## Active Boundary
+
+R77 is closed bounded and public-synced. Provenance commits `32eafb699` and `62eedfdce` define the paid-user-safe onboarding flow and align operator-local inheritance. Public-sync commit `1793ceea8` exported the bounded workspace-kit changes. Local `CVF-Workspace` hidden public core is clean/current at `1793cee`, active rule-pack profile is `operator-local`, and workspace-wide gate PASS.
 
 R76 is closed bounded and public-synced. Provenance commit `72132366e` defines the workspace profile tiers and public-sync commit `2a74a7dc8` exported the bounded workspace-kit changes. Local `CVF-Workspace` hidden public core is clean/current at `2a74a7d`, active rule-pack profile is `operator-local`, and workspace-wide gate PASS.
 
@@ -61,7 +63,33 @@ R72D0 is closed bounded at material commit `402bc2c9e`. It repaired one target-c
 
 R72E/R72F are accepted at material commit `b896cc759`, and R72G/R72H docs-only evidence is accepted at material commit `b7a72b748`.
 
-No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, additional public-sync mutation beyond completed R76 workspace-kit export, provider/live proof, public/production claim, or automatic downstream governance execution is authorized by this handoff.
+No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, additional public-sync mutation beyond completed R77 workspace-kit export, provider/live proof, public/production claim, or automatic downstream governance execution is authorized by this handoff.
+
+## Core Guard Self-Protection Authorization - MSEA-R77 Paid-User-Safe Workspace Onboarding Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R77 material
+commits `32eafb699` and `62eedfdce` and public-sync commit `1793ceea8`,
+including active mode, next allowed move, generated active state, bootstrap
+read model, front-door continuity, active handoff, and R77 closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R77 closure, public-sync status, workspace proof, and current HEAD freshness. |
+| `CVF_SESSION_MEMORY.md` | Record R77 closure in the active front door. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after state-source update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R77 closure. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update current mode and previous mode for R77 closure. |
+| `CVF_SESSION/state/entries/mseaR77PaidUserSafeWorkspaceOnboardingClosure20260709.json` | Record R77 closure evidence and boundaries. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator selection only after R77 closure. |
+
+Operator authorization: operator agreed to proceed with the next tranche after
+R76 closure.
+
+Rollback boundary: revert only this R77 session-sync if rejected; do not
+revert material commits `32eafb699` or `62eedfdce`, public-sync commit
+`1793ceea8`, local workspace refresh output, or older MSEA material.
 
 ## Core Guard Self-Protection Authorization - MSEA-R76 Workspace Profile Tiers Session Sync
 
@@ -455,6 +483,7 @@ older MSEA material.
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| MSEA-R77 Paid-User-Safe Workspace Onboarding | `32eafb699` / `62eedfdce` provenance; `1793ceea8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; added `docs/reference/CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md`, registered it in `workspace_overlay_catalog.json`, updated the paid-user-safe authoring guide, profile tier map, canonical workspace rules, and public-safe wrapper guide generation. Follow-up commit `62eedfdce` aligned `operator-local` inheritance so the operator-local tier actually includes the paid-user-safe flow while still requiring explicit continuity allowance for private continuity artifacts. Public-sync exported bounded workspace-kit changes only. Local `CVF-Workspace` is clean/current at hidden public core `1793cee`, active profile `operator-local`, source commit `32eafb699`, artifact count 27, and workspace-wide gate PASS. R77 smoke PASS: `paid-user-safe` 11 artifacts/2 root files, `operator-local` blocked without continuity flag and PASS with continuity flag. |
 | MSEA-R76 Workspace Profile Tiers | `72132366e` provenance / `2a74a7dc8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; defined `public-free`, `paid-user-safe`, and `operator-local` workspace rule-pack tiers; added tier map and paid-user-safe authoring guide; updated profile catalog, profile JSONs, generated wrapper guide output, canonical workspace rules, and public-safe wrapper guide text. Profile smoke PASS: `public-free` 9 artifacts, `paid-user-safe` 10 artifacts, `operator-local` blocked without continuity flag and PASS with continuity flag. Public-sync exported bounded workspace-kit changes only. Local `CVF-Workspace` is clean/current at hidden public core `2a74a7d`, active profile `operator-local`, source commit `72132366e`, artifact count 25, and workspace-wide gate PASS. |
 | Workspace Local Productization Rule-Pack Sync | `452c9312d` | APPLIED_LOCAL_ONLY; added `workspace-standard` curated rule-pack profile and `scripts/sync_cvf_workspace_rule_pack.ps1`, then applied it to local `CVF-Workspace`. The workspace now has `CVF_RULE_PACKS/workspace-standard`, `ACTIVE_RULE_PACK.json`, and `CVF_WORKSPACE_RULE_PACKS.md`; selected artifact count is 6 and private-token scan PASS. Temp smoke PASS, script parse PASS, catalog/profile JSON parse PASS, provenance-local fail-safe PASS, pre-implementation autorun PASS 75/75, material pre-commit hook PASS 80/80. |
 | Workspace Update Wrapper Productization Follow-Up | `8ec987858` | APPLIED_AND_PUBLIC_SYNCED; added `Update-CVF-Workspace.ps1` generation to `scripts/install_cvf_workspace_root_wrappers_public.ps1`, exported the matching public-safe installer as public commit `d32922c8a`, and updated local `CVF-Workspace` to hidden public core `d32922c8a`. Installer smoke PASS, generated wrapper parse PASS, generated guide/wrapper leak scan PASS, public static CI PASS 8/8, public surface PASS, and local workspace-wide gate PASS. |
@@ -481,6 +510,10 @@ older MSEA material.
 
 ## HEAD Freshness
 
+Current HEAD after R77 operator-local profile inheritance fix: `62eedfdce`.
+
+Current HEAD after R77 paid-user-safe onboarding material commit: `32eafb699`.
+
 Current HEAD after R76 workspace profile tiers material commit: `72132366e`.
 
 Current HEAD after workspace rules public-export session sync: `054724784`.
@@ -491,11 +524,11 @@ Current HEAD after R75A-E workspace agent workflow material commit: `9f8c5f382`.
 
 Current HEAD after R75 fresh-workspace baseline fix: `0107dbd2e`.
 
-Current HEAD short: `72132366e`.
+Current HEAD short: `62eedfdce`.
 
-Current HEAD full: `72132366ec51be12c1c8edc556a9ef19ac835cf2`.
+Current HEAD full: `62eedfdcee2e7312289d1d61874746ae39cb8ff6`.
 
-Current HEAD parent: `5abe3e3ab`.
+Current HEAD parent: `32eafb699`.
 
 Remote tracking branch: `origin/main`.
 
@@ -503,7 +536,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, and R76 workspace profile tiers material commit `72132366e`. Public-sync is clean/current after public commit `2a74a7dc8`, and local workspace hidden public core is clean/current at `2a74a7d`.
+Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, R76 workspace profile tiers material commit `72132366e`, and R77 workspace onboarding material commits `32eafb699` and `62eedfdce`. Public-sync is clean/current after public commit `1793ceea8`, and local workspace hidden public core is clean/current at `1793cee`.
 
 ## Core Guard Self-Protection Authorization - GitHub Merge Handoff Freshness Sync
 
@@ -527,6 +560,17 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| R77 profile JSON and catalog parse | PASS |
+| R77 changed script parse checks | PASS |
+| R77 sensitive-token scan for paid-user-safe/public generator docs | PASS |
+| R77 paid-user-safe profile smoke | PASS: 11 artifacts and 2 root files |
+| R77 operator-local no-flag safety check | PASS: blocked without continuity authorization |
+| R77 operator-local continuity-authorized smoke | PASS: 27 artifacts |
+| R77 pre-implementation autorun | PASS 75/75 |
+| R77 onboarding material pre-commit hook | PASS 80/80 |
+| R77 operator-local inheritance material pre-commit hook | PASS 80/80 |
+| R77 bounded public-sync push | PASS: public commit `1793ceea8` |
+| R77 local workspace update and gate | PASS: hidden public core `1793cee`; active profile `operator-local`; source commit `32eafb699`; artifact count 27 |
 | R76 profile JSON and catalog parse | PASS |
 | R76 changed script parse checks | PASS |
 | R76 public-free profile smoke | PASS: 9 artifacts |
@@ -629,27 +673,27 @@ Latest closed numbered LHW wave: LHW24.
 | --- | --- |
 | Actor | Codex reviewer/closer and session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | R76 workspace profile tiers session-sync after material commit `72132366e` |
+| Session or invocation | R77 paid-user-safe workspace onboarding session-sync after material commits `32eafb699` and `62eedfdce` |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, apply_patch, git, Python governance checkers |
 | Target paths | active session state sources and aggregates, front-door memory, active handoff V39 |
-| Allowed scope source | operator agreement to proceed with workspace profile expansion after R75 closure |
-| Before status evidence | R76 material commit `72132366e`, public-sync commit `2a74a7dc8`, and local workspace refresh evidence existed; session front doors still needed final R76 alignment |
-| After status evidence | session-sync files updated to R76 workspace profile tiers closure and operator next selection |
+| Allowed scope source | operator agreement to proceed with the next workspace-productization tranche after R76 closure |
+| Before status evidence | R77 material commits `32eafb699` and `62eedfdce`, public-sync commit `1793ceea8`, and local workspace refresh evidence existed; session front doors still needed final R77 alignment |
+| After status evidence | session-sync files updated to R77 paid-user-safe workspace onboarding closure and operator next selection |
 | Diff evidence | `git status --short`; generated active session state; pre-implementation autorun; commit steward; pre-commit hook |
-| Approval boundary | R76 session-sync only; no additional public-sync mutation beyond commit `2a74a7dc8`, checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
-| Claim boundary | private provenance continuity routing only; public export evidence is limited to public-sync commit `2a74a7dc8`; no production deployment, checker retirement, or provider certification claim |
+| Approval boundary | R77 session-sync only; no additional public-sync mutation beyond commit `1793ceea8`, checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
+| Claim boundary | private provenance continuity routing only; public export evidence is limited to public-sync commit `1793ceea8`; no production deployment, checker retirement, or provider certification claim |
 | Agent type | Codex |
-| Invocation ID | r76-workspace-profile-tiers-session-sync-2026-07-09 |
-| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR76WorkspaceProfileTiersClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
-| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR76WorkspaceProfileTiersClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Invocation ID | r77-paid-user-safe-workspace-onboarding-session-sync-2026-07-09 |
+| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR77PaidUserSafeWorkspaceOnboardingClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR77PaidUserSafeWorkspaceOnboardingClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this R76 session-sync |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this R77 session-sync |
 
 ## Next Allowed Move
 
-Operator may choose product-value continuation, workspace profile expansion,
-smaller paid-user-safe orientation/public-safe authoring expansion,
+Operator may choose downstream workspace product proof using paid-user-safe on a
+real target project, paid-user-safe public documentation refinement,
 conformance-reference cleanup or reattachment for the R72F candidate family, or
 GitHub check triage only if a current failing check is confirmed.
 No automatic checker retirement, checker deletion/disablement, hook/Fast Lane
@@ -665,8 +709,8 @@ public-sync packet, and explicit operator authorization.
 
 ## Claim Boundary
 
-This handoff records R76 workspace profile tiers closure continuity routing
-only. It does not authorize additional public-sync mutation,
+This handoff records R77 paid-user-safe workspace onboarding closure continuity
+routing only. It does not authorize additional public-sync mutation,
 checker retirement or
 disablement, checker severity change, Fast Lane standard edit, metrics
 automation, production release, product extraction, operator onboarding, or
