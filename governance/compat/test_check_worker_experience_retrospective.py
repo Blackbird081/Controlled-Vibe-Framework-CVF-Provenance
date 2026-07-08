@@ -38,6 +38,15 @@ _VALID_STRUCT = (
     + "preventiveControlCandidate: HELPER_DIAGNOSTIC\n"
 )
 
+_VALID_STRUCT_WITH_BULLETS = (
+    _WORKER_RETURN_HEADER
+    + "WORKER_EXPERIENCE_RETRO:\n"
+    + "- frictionLevel: LOW\n"
+    + "- frictionType: KEYWORD_TRAP\n"
+    + "- observedStep: corpus block self-triggered full-field requirement\n"
+    + "- preventiveControlCandidate: HELPER_DIAGNOSTIC\n"
+)
+
 _VALID_NA = (
     _WORKER_RETURN_HEADER
     + "WORKER_EXPERIENCE_RETRO_NA_WITH_REASON: no friction beyond normal gates; "
@@ -155,6 +164,11 @@ class EligibilityTests(unittest.TestCase):
 class DiagnoseTests(unittest.TestCase):
     def test_valid_struct_is_clean(self):
         d = chk.diagnose("docs/reviews/x.md", _VALID_STRUCT)
+        self.assertTrue(d.eligible)
+        self.assertTrue(d.is_clean, d.issues)
+
+    def test_valid_struct_with_bullet_prefix_is_clean(self):
+        d = chk.diagnose("docs/reviews/x.md", _VALID_STRUCT_WITH_BULLETS)
         self.assertTrue(d.eligible)
         self.assertTrue(d.is_clean, d.issues)
 

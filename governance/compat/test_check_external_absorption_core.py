@@ -123,6 +123,22 @@ This absorbs `.private_reference/legacy/CVF 28.06/Pack`.
 
         self.assertEqual([], violations)
 
+    def test_remote_url_plus_chain_map_absorption_word_is_ignored(self) -> None:
+        text = """
+# Internal Governance Review
+
+## Evidence
+
+Remote evidence: https://github.com/example/project.git
+
+Required routing source:
+docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md
+"""
+
+        violations = MODULE.check_text("docs/reviews/CVF_INTERNAL_ROUTE_REVIEW.md", text)
+
+        self.assertEqual([], violations)
+
     def test_github_absorption_without_source_path_is_applicable(self) -> None:
         text = VALID_ARTIFACT.replace(".private_reference/external_repos/repo", "local mirror")
 
