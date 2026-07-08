@@ -1,0 +1,10 @@
+{
+  "profileName": "workspace-standard",
+  "description": "Core local-workspace rules and guard references for downstream project use without private provenance continuity state.",
+  "extends": [
+    "premium-boundary"
+  ],
+  "includeSelectionTags": [
+    "workspace-standard"
+  ]
+}

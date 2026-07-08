@@ -15,6 +15,77 @@
       "reason": "Primary guard-orientation entrypoint used before governed authoring and execution."
     },
     {
+      "artifactId": "workspace-rules-reference",
+      "path": "docs\\reference\\CVF_WORKSPACE_RULES.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Canonical workspace topology, bootstrap, and boundary rule set."
+    },
+    {
+      "artifactId": "downstream-agents-template",
+      "path": "governance\\toolkit\\05_OPERATION\\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "artifactClass": "agent-template",
+      "selectionTags": [
+        "workspace-standard",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Reusable downstream agent instruction template generated into new governed projects."
+    },
+    {
+      "artifactId": "governed-artifact-literal-format-gotchas",
+      "path": "docs\\reference\\CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+      "artifactClass": "reference-checklist",
+      "selectionTags": [
+        "agent-authoring"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Compact checklist for avoiding repeated literal-format checker traps."
+    },
+    {
+      "artifactId": "text-encoding-and-symbol-discipline",
+      "path": "docs\\reference\\CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "agent-authoring"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Low-cost text and encoding discipline that prevents common cross-machine drift."
+    },
+    {
+      "artifactId": "live-run-diagnostic-standard",
+      "path": "docs\\reference\\archive\\CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "live-operations"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Reusable diagnostic discipline for live API or provider proof failures; archive-qualified because no active-path copy exists in the current tree."
+    },
+    {
+      "artifactId": "agent-error-learning-philosophy",
+      "path": "docs\\reference\\CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "agent-authoring"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Guidance for turning repeated agent defects into bounded rules without overfitting."
+    },
+    {
       "artifactId": "operational-reference-index",
       "path": "docs\\reference\\CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
       "artifactClass": "reference-index",
@@ -103,6 +174,7 @@
       "path": "docs\\reference\\CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md",
       "artifactClass": "reference-standard",
       "selectionTags": [
+        "workspace-standard",
         "workspace-premium",
         "repository-boundary"
       ],
@@ -232,7 +304,7 @@
     },
     {
       "artifactId": "active-versioned-handoff",
-      "path": "AGENT_HANDOFF_V38_2026-07-06.md",
+      "path": "AGENT_HANDOFF_V39_2026-07-08.md",
       "artifactClass": "continuity-surface",
       "selectionTags": [
         "workspace-provenance-local",

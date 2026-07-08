@@ -2,6 +2,7 @@
   "profileName": "premium-workspace",
   "description": "Curated premium overlay for downstream workspace use without copying private session continuity state.",
   "extends": [
+    "workspace-standard",
     "premium-orientation",
     "premium-governance",
     "premium-authoring",
