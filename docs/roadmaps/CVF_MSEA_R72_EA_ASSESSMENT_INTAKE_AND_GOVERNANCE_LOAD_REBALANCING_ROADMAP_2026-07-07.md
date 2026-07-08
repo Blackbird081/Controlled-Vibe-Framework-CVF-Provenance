@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE_R72B_ACCEPTED_PENDING_R72C_GC018
+Status: ROADMAP_ACTIVE_R72D_ACCEPTED_PENDING_R72E_GC018
 
 docType: roadmap
 
@@ -17,7 +17,7 @@ External knowledge intake routing: REQUIRED
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_roadmap_closure_freshness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_next_move_freshness.py`; `governance/compat/check_session_mode_consistency.py`; `governance/compat/check_index_classification.py`; `governance/compat/check_agent_operation_trace.py` |
-| literalTokensReviewed | `## Checker Source Read-Ahead Block`; `applicableCheckersRead`; `literalTokensReviewed`; `gateRunPurpose`; `claimBoundary`; `## External Knowledge Intake Routing`; `Chain map`; `Input type`; `operator-provided external comparison, critique, or recommendation`; `Matching local-view guard`; `Owner surface`; `Disposition`; `Claim boundary`; `## Purpose`; `## Work Plan`; `## Acceptance Criteria`; `## Verification / Evidence`; `## Public Export Disposition`; `DEFERRED_PRIVATE_ONLY`; `ROADMAP_ACTIVE_R72B_ACCEPTED_PENDING_R72C_GC018`; `INDEX type:`; `Source authority:`; `Human-reviewable:` |
+| literalTokensReviewed | `## Checker Source Read-Ahead Block`; `applicableCheckersRead`; `literalTokensReviewed`; `gateRunPurpose`; `claimBoundary`; `## External Knowledge Intake Routing`; `Chain map`; `Input type`; `operator-provided external comparison, critique, or recommendation`; `Matching local-view guard`; `Owner surface`; `Disposition`; `Claim boundary`; `## Purpose`; `## Work Plan`; `## Acceptance Criteria`; `## Verification / Evidence`; `## Public Export Disposition`; `DEFERRED_PRIVATE_ONLY`; `ROADMAP_ACTIVE_R72D_ACCEPTED_PENDING_R72E_GC018`; `INDEX type:`; `Source authority:`; `Human-reviewable:` |
 | gateRunPurpose | confirmation after checker-source read-ahead; gates are verification evidence, not first discovery |
 | claimBoundary | roadmap authoring only; no checker retirement implementation, checker deletion or disablement, CI repair, public-sync mutation, runtime/source/test/checker edit, provider/live proof, merge, push, release claim, or historical artifact sweep |
 
@@ -31,8 +31,8 @@ only.
 Decision:
 `AUTHOR_R72_GOVERNANCE_LOAD_REBALANCING_ROADMAP`.
 
-Next recommended tranche after R72B acceptance:
-`R72C_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_AUTHORING_FOR_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER`.
+Next recommended tranche after R72D acceptance:
+`R72E_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_AUTHORING_FOR_ABSORB_LANE_CEREMONY_RECLASSIFICATION`.
 
 This roadmap does not dispatch a worker. It converts the verified critique into
 a sequence of bounded future tranches.
@@ -84,7 +84,7 @@ reachability. This acceptance does not implement a Fast Lane router, change
 severity behavior, retire/delete/disable/consolidate any checker, edit runtime
 source/tests/checkers, mutate public-sync, run provider/live proof, push, merge,
 extract product surfaces, onboard operators, or make public/production claims.
-The next executable move is R72C GC-018 and source-verified work-order
+The next executable move is R72E GC-018 and source-verified work-order
 authoring only.
 
 ## Purpose
@@ -237,8 +237,8 @@ Minimum effective governance:
 |---|---|---|---|---|
 | R72A | Public Main CI Health And Governance-Load Baseline | Repair or source-classify the current public-main CI red state and create the first governance-load measurement packet | ACCEPTED_BOUNDED: GC-018 plus source-verified work order; current public-main check matrix; baseline metric artifact | Completed as classification/baseline only; public CI repair remains future work |
 | R72B | Governance Control Index And Checker Lifecycle Inventory | Use the official Governance Control Index as the lifecycle spine, then inventory active direct checker scripts by owner/risk/phase/cost/value without deleting anything yet | ACCEPTED_BOUNDED: R72B baseline, source-verified work order, assessment input, checker lifecycle inventory, and worker return | Completed as inventory/recommendation only; no checker severity change, retirement, deletion, disablement, consolidation, or hook edit |
-| R72C | Fast Lane Calibration And Risk-Class Router | Make low-risk route selection explicit so byte-level/doc-only repairs do not default to full multi-round ceremony | Updated Fast Lane decision standard or work-order packet; representative case matrix from R66-R69 | Any proposed lighter path weakens public/private boundary, source verification, or closure evidence |
-| R72D | Governance Cost Metric And Monthly Readout | Define stable metrics for product-source touches, governance-artifact touches, checker additions/deletions, public CI status, and ceremony ratio | Metric spec plus optional script/checker candidate decision | Metric cannot be computed reproducibly from git/GitHub without unstable assumptions |
+| R72C | Fast Lane Calibration And Risk-Class Router | Make low-risk route selection explicit so byte-level/doc-only repairs do not default to full multi-round ceremony | ACCEPTED_BOUNDED: case matrix plus `FAST_DOC_LANE` proposal-only routing design and worker return | Completed as proposal-only evidence; no Fast Lane standard edit, checker severity split, checker retirement, or hook edit |
+| R72D | Governance Cost Metric And Monthly Readout | Define stable metrics for product-source touches, governance-artifact touches, checker additions/deletions, public CI status, and ceremony ratio | ACCEPTED_BOUNDED: source-backed metric specification, monthly readout design proposal, and worker return | Completed as metric-specification evidence only; no metrics automation, script/checker addition, hook edit, or public-sync mutation |
 | R72E | Absorb Lane Ceremony Reclassification | Reclassify external repo/source intake work into risk tiers so representative proof can replace exhaustive packet loops where safe | Absorb lane risk taxonomy and work-order trace seed | A source class involves runtime/provider/public claims or missing source authority |
 | R72F | First Retirement Or Consolidation Pilot | Execute one controlled non-zero retirement/consolidation after GCI-backed R72B criteria exist | Fresh GC-018 and work order; one non-`PROTECTED` candidate checker or control-family row dispositioned; if none passes, named `WATCH` row plus exact missing evidence | No candidate can be source-backed and the closure names at least one `WATCH` row plus the specific evidence still missing |
 | R72G | Human-Operator Onboarding And Bus-Factor Reduction | Own the EA bus-factor risk by measuring mandatory human/operator read burden and separating minimum viable operator guidance from full agent startup burden | Docs-only, read-only onboarding burden audit and tiered operator guide proposal | Mandatory read chain cannot be source-backed or proposed simplification would weaken boundary/source-fidelity controls |
@@ -290,7 +290,7 @@ Minimum effective governance:
 | AC4 | Roadmap defines checker retirement/consolidation as a future criteria-first lane, not an immediate deletion | PASS_REQUIRED |
 | AC5 | Roadmap routes low-risk fixes toward calibrated Fast Lane use without weakening boundary safety | PASS_REQUIRED |
 | AC6 | Roadmap forbids runtime/source/test/checker edits, public-sync mutation, push, merge, and provider/live proof in this roadmap itself | PASS_REQUIRED |
-| AC7 | Roadmap records R72A and R72B as accepted and sets the next executable move to R72C GC-018/work-order authoring only | PASS_REQUIRED |
+| AC7 | Roadmap records R72A through R72D as accepted and sets the next executable move to R72E GC-018/work-order authoring only | PASS_REQUIRED |
 | AC8 | Roadmap recognizes the Governance Control Index as the official lifecycle/cost/value front door for future control changes | PASS_REQUIRED |
 | AC9 | Roadmap closes the R72F no-eligible-candidate escape hatch by requiring a named `WATCH` row and exact missing evidence if no retirement/consolidation candidate passes | PASS_REQUIRED |
 | AC10 | Roadmap assigns owner tranches for EA bus-factor/onboarding risk and commercial/product-separation recommendation | PASS_REQUIRED |
@@ -317,7 +317,7 @@ Minimum effective governance:
 |---|---|
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | operator-provided external comparison, critique, or recommendation |
-| Chain map route | operator-provided EA critique -> Codex command remeasurement -> R72 roadmap -> R72A accepted bounded baseline/classification -> R72B accepted bounded checker lifecycle inventory -> R72C GC-018 and source-verified work order authoring |
+| Chain map route | operator-provided EA critique -> Codex command remeasurement -> R72 roadmap -> R72A accepted bounded baseline/classification -> R72B accepted bounded checker lifecycle inventory -> R72C accepted bounded routing proposal -> R72D accepted bounded metric specification -> R72E GC-018 and source-verified work order authoring |
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py` |
 | Owner surface | `docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md` |
 | Disposition | ADAPT the critique into a CVF-owned roadmap after current command remeasurement; do not accept advisory prose as source authority |
@@ -331,7 +331,7 @@ Learning lane: `GOVERNANCE_LOAD_REBALANCING`
 
 Escalation state: `ROADMAP_READY`
 
-Next control action: `R72C_GC018_AND_WORK_ORDER_AUTHORING`
+Next control action: `R72E_GC018_AND_WORK_ORDER_AUTHORING`
 
 Learning summary: CVF has a strong add-rule path for repeated agent errors.
 R72 now adds the Governance Control Index as the explicit front door for
@@ -360,9 +360,10 @@ current command evidence and routes implementation into later tranches.
 Claim Update: accept the critique as a high-confidence governance-load signal,
 establish the Governance Control Index as the official lifecycle/cost/value
 front door, accept R72A as a bounded classification/baseline tranche, accept
-R72B as a bounded checker lifecycle inventory tranche, route the next
-corrective action to R72C Fast Lane calibration authoring, and carry the
-direct-checker baseline correction into R72D.
+R72B as a bounded checker lifecycle inventory tranche, accept R72C as a bounded
+routing proposal tranche, accept R72D as a bounded metric-specification
+tranche, and route the next corrective action to R72E absorb-lane ceremony
+reclassification authoring.
 
 ## Public Export Disposition
 
@@ -383,5 +384,6 @@ extract or repackage a product surface, or authorize historical cleanup. The
 Governance Control Index added by this R72 update is a lifecycle/cost/value
 front door only. R72A is accepted as classification/baseline evidence only.
 R72B is accepted as checker lifecycle inventory/recommendation evidence only.
-The next executable move is R72C GC-018 and source-verified work-order
-authoring only.
+R72C is accepted as routing-design proposal evidence only. R72D is accepted as
+metric-specification evidence only. The next executable move is R72E GC-018 and
+source-verified work-order authoring only.
