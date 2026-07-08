@@ -2,26 +2,26 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R72C Fast Lane Calibration And Risk-Class Router dispatch.
+Purpose: compact current-session continuity after MSEA-R72C Fast Lane Calibration And Risk-Class Router acceptance.
 Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No runtime source, tests, checker retirement implementation, checker deletion/disablement, public-sync mutation, provider-local config, private/generated MinerU output, direct external import, product extraction, operator onboarding implementation, public/production claim, merge, push, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R72C dispatch and route the next executable move to R72C no-commit worker execution only.
+Provide compact active-session continuity after MSEA-R72C acceptance and route the next executable move to R72D GC-018/work-order authoring only.
 
 ## Scope / Target / Owner Boundary
 
-This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R72C dispatch, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, public-sync mutation, runtime/source/test/checker edits, provider/live proof, push, merge, product extraction, operator onboarding, public/production claims, downstream R72D-R72H execution, or use-case/legal workflow changes.
+This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R72C acceptance, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, public-sync mutation, runtime/source/test/checker edits, provider/live proof, push, merge, product extraction, operator onboarding, public/production claims, downstream R72E-R72H execution, or use-case/legal workflow changes.
 
 ## Latest Work / Changes
 
-R72C was dispatched as a bounded no-commit documentation-and-evidence tranche. The dispatch pair authorizes a worker to create a source-backed R66-R72B ceremony-cost case matrix and a proposed risk-class routing design only, while preserving public/private boundary, source verification, no-commit/reviewer separation, live-proof safety, and closure evidence in every proposed tier.
+R72C was accepted as a bounded no-commit documentation-and-evidence tranche. The accepted case matrix records R66-R72B ceremony-cost evidence and proposes `FAST_DOC_LANE` as future decision input only, while preserving public/private boundary, source verification, no-commit/reviewer separation, live-proof safety, and closure evidence in every proposed tier.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r72c_fast_lane_calibration_and_risk_class_router_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=no-commit MSEA-R72C worker execution only; parked checkpoint=R72C is case-matrix/routing-design proposal only, no Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72D-R72H execution authorized.
+Startup acknowledged: current mode=`msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=fresh source-verified MSEA-R72D Governance Cost Metric And Monthly Readout GC-018/work-order authoring only; parked checkpoint=R72C accepted `FAST_DOC_LANE` as proposal-only evidence, no Fast Lane standard edit, checker severity split, checker retirement, public-sync mutation, or downstream R72E-R72H execution authorized.
 
 ## Mandatory Startup Reads
 
@@ -35,13 +35,13 @@ Startup acknowledged: current mode=`msea_r72c_fast_lane_calibration_and_risk_cla
 
 ## Current Mode
 
-`msea_r72c_fast_lane_calibration_and_risk_class_router_dispatched_pending_worker_return`
+`msea_r72c_fast_lane_calibration_and_risk_class_router_accepted_pending_r72d_gc018_work_order`
 
 ## Active Boundary
 
 R72A is accepted and committed as a bounded classification and baseline measurement tranche only: it identifies one `GOVERNANCE_LOAD` public-main failure and two `PRODUCT_DEBT` public-main failures, but does not repair CI or mutate public-sync.
 
-R72C is now dispatched. The worker may create only the R72C case-matrix-plus-routing-design reference artifact and the R72C worker return, uncommitted. It must not change checker severity, delete, disable, retire, consolidate, or edit checkers; it must not mutate public-sync; it must not edit runtime/source/tests/checkers; it must not run provider/live proof; it must not push, merge, extract product surfaces, onboard operators, or make public/production claims.
+R72C is now reviewer-accepted bounded. The accepted artifacts are the R72C case-matrix-plus-routing-design reference artifact and the R72C worker return. `FAST_DOC_LANE` remains proposal-only evidence for a future tranche; no checker severity change, checker deletion/disablement/retirement/consolidation, checker edit, Fast Lane standard edit, public-sync mutation, runtime/source/test/checker edit, provider/live proof, push, merge, product extraction, operator onboarding, or public/production claim is authorized by this handoff.
 
 ## Core Guard Self-Protection Authorization - MSEA-R72A Acceptance And Handoff Rotation
 
@@ -117,10 +117,37 @@ Rollback boundary: revert only this R72C dispatch session-sync if rejected;
 do not revert material commit `b9650b40d`, R72B acceptance, R72A acceptance,
 R72 GCI repair, or older MSEA material.
 
+## Core Guard Self-Protection Authorization - MSEA-R72C Acceptance Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R72C material
+acceptance commit `7ea4086da`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and R72C acceptance state entry.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R72C acceptance, current HEAD freshness, and R72D authoring next move. |
+| `CVF_SESSION_MEMORY.md` | Record R72C acceptance and R72D next-move routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after state-source update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R72C acceptance. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update current mode and previous mode for R72C accepted pending R72D authoring. |
+| `CVF_SESSION/state/entries/mseaR72CFastLaneCalibrationRiskClassRouterAccepted20260708.json` | Record R72C acceptance evidence and boundaries. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R72D GC-018/source-verified work-order authoring only. |
+
+Operator authorization: operator reported R72C `COMPLETE_PENDING_REVIEW` and
+asked Codex to continue reviewer/closer handling within the R72 roadmap.
+
+Rollback boundary: revert only this R72C acceptance session-sync if rejected;
+do not revert material commit `7ea4086da`, R72C dispatch, R72B acceptance,
+R72A acceptance, R72 GCI repair, or older MSEA material.
+
 ## Current Work
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| MSEA-R72C Fast Lane Calibration And Risk-Class Router acceptance | `7ea4086da` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72D_GC018; accepted the source-backed R66-R72B case matrix and worker return. R72C proposes `FAST_DOC_LANE` as future decision input only, preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence; it does not implement a Fast Lane standard edit, checker severity split, checker retirement, hook edit, runtime/source/test/checker edit, public-sync mutation, provider/live proof, push, merge, product extraction, onboarding implementation, public/production claim, or release claim. Worker-return fast gate PASS 59/59, worker-return quality gate PASS 0 violations, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72C Fast Lane Calibration And Risk-Class Router dispatch | `b9650b40d` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R72C worker execution. Worker must create `docs/reference/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_CASE_MATRIX_2026-07-08.md` and `docs/reviews/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_WORKER_RETURN_2026-07-08.md`, preserving public/private boundary, source verification, no-commit/reviewer separation, live-proof safety, and closure evidence in every proposed tier. Dispatch quality PASS, structural completeness PASS, ADIF disclosure PASS, handoff boundary PASS, pre-dispatch autorun PASS 73/73, dispatch commit steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72B Governance Control Index And Checker Lifecycle Inventory | `4dc2bf197` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72C_GC018; accepted the R72B GC-018 baseline, source-verified work order, Governance-vs-Micromanagement assessment input, checker lifecycle inventory reference artifact, and worker return. R72B inventories 186 direct `governance/compat/check_*.py` scripts, preserves the R72D direct-checker metric boundary, and identifies the `cross_family_approval_artifact` family as the strongest R72F retirement-review candidate class while recording CI/script/manual-run reachability limits. Worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72B0 Checker False-Positive Repair | `ee8d2a605` | COMPLETE_PENDING_REVIEW_COMMITTED; repaired two R72A-proven checker false positives before R72B worker execution: structured worker-experience retrospective fields now allow markdown bullet prefixes, and the external absorption guard family no longer treats a benign GitHub remote URL plus chain-map absorption filename as an external absorption artifact. Focused unittest PASS 39/39, pre-implementation autorun PASS 75/75, commit steward PASS, material pre-commit hook PASS 80/80. |
@@ -134,11 +161,11 @@ R72 GCI repair, or older MSEA material.
 
 ## HEAD Freshness
 
-Current HEAD after R72C dispatch material commit: `b9650b40d`.
+Current HEAD after R72C acceptance material commit: `7ea4086da`.
 
-Current HEAD short: `b9650b40d`.
+Current HEAD short: `7ea4086da`.
 
-Current HEAD parent: `4d88fb0d5`.
+Current HEAD parent: `d9c0696ad`.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 
@@ -146,7 +173,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: prior R72B material/session-sync pair was pushed to provenance remote before R72C material commit. The branch is ahead of its tracked provenance remote by the bounded R72C dispatch material commit; this remains within the two-commit disclosure threshold.
+Branch state at handoff-sync authoring: prior R72C dispatch material/session-sync pair was pushed to provenance remote before R72C acceptance material commit. The branch is ahead of its tracked provenance remote by the bounded R72C acceptance material commit; this remains within the two-commit disclosure threshold.
 
 Commit stack debt disposition: `WITHIN_DISCLOSURE_THRESHOLD`; do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
 
@@ -156,16 +183,15 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
-| R72C dispatch quality | PASS |
-| R72C markdown structural completeness | PASS |
-| R72C ADIF disclosure | PASS |
-| R72C handoff boundary | PASS |
-| R72C pre-dispatch autorun | PASS 73/73 |
-| R72C dispatch commit steward | PASS |
+| R72C worker-return fast gate | PASS 59/59 |
+| R72C worker-return quality gate | PASS 0 violations |
+| R72C pre-implementation autorun | PASS 75/75 |
+| R72C reviewer-return commit steward | PASS |
+| R72C material pre-commit hook | PASS 80/80 |
 | Public-sync mutation | NOT_PERFORMED |
 | Runtime/source/test/checker edit | NOT_PERFORMED |
 | Provider/live proof | NOT_PERFORMED |
-| Provenance push | R72B pair pushed before R72C dispatch commit; R72C not pushed before this session-sync authoring |
+| Provenance push | R72C dispatch pair pushed before R72C acceptance commit; R72C acceptance not pushed before this session-sync authoring |
 
 ## Agent Operation Trace Block
 
@@ -192,17 +218,14 @@ Latest closed numbered LHW wave: LHW24.
 
 ## Next Allowed Move
 
-No-commit MSEA-R72C worker execution only. Worker must create
-`docs/reference/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_CASE_MATRIX_2026-07-08.md`
-and
-`docs/reviews/CVF_MSEA_R72C_FAST_LANE_CALIBRATION_AND_RISK_CLASS_ROUTER_WORKER_RETURN_2026-07-08.md`,
-then return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` with HEAD
-unchanged. Worker must preserve public/private boundary, source verification,
-no-commit/reviewer separation, live-proof safety, and closure evidence in every
-proposed tier. R72C must not change checker severity, edit Fast Lane standards,
-delete/disable/retire/consolidate checkers, edit hooks or runtime/source/tests/
-checkers, mutate public-sync, run provider/live proof, push, merge, extract
-product surfaces, onboard operators, or make public/production claims.
+Fresh source-verified MSEA-R72D Governance Cost Metric And Monthly Readout
+GC-018 baseline and work-order authoring only. R72D must use the R72 roadmap,
+R72B inventory, R72C case matrix, Governance Control Index, public/provenance
+boundary standard, commit steward standard, ADIF disclosure, and checker
+read-ahead. R72D may define a metric specification and candidate script/checker
+decision, but must not implement metrics automation, edit checkers/hooks/Fast
+Lane standards, mutate public-sync, run provider/live proof, push/merge, or
+execute R72E-R72F without fresh accepted authorization.
 
 ## Public/Provenance Boundary
 
@@ -212,7 +235,7 @@ public-sync packet, and explicit operator authorization.
 
 ## Claim Boundary
 
-This handoff records R72C dispatch and continuity routing only. It does not
+This handoff records R72C acceptance and continuity routing only. It does not
 repair public CI, mutate public-sync, retire or disable checkers, change checker
 severity, edit Fast Lane standards, edit runtime/source/tests/checkers, run
 provider/live proof, push, merge, release a public claim, extract a product
