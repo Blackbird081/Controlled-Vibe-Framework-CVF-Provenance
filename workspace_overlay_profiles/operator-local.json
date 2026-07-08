@@ -2,6 +2,7 @@
   "profileName": "operator-local",
   "description": "Private operator-machine tier for full local continuity on top of the paid-user-safe bundle. Requires explicit continuity allowance when applied.",
   "extends": [
+    "paid-user-safe",
     "provenance-local"
   ]
 }
