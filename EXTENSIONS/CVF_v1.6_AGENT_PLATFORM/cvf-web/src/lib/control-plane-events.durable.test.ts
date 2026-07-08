@@ -12,7 +12,7 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import path from 'node:path';
 import os from 'node:os';
-import { mkdir, rm } from 'node:fs/promises';
+import { rm } from 'node:fs/promises';
 import {
     readControlPlaneEvents,
     appendAuditEvent,
@@ -21,12 +21,6 @@ import {
     readCostEvents,
     exportAuditEventsToCsv,
 } from './control-plane-events';
-
-async function makeTmpStore(): Promise<string> {
-    const dir = path.join(os.tmpdir(), `cvf-test-events-${Date.now()}`);
-    await mkdir(dir, { recursive: true });
-    return path.join(dir, 'events.json');
-}
 
 describe('control-plane-events durability', () => {
     let storePath: string;

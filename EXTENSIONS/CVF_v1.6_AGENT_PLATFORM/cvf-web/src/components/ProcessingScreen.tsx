@@ -449,7 +449,7 @@ export function ProcessingScreen({
             // No inputs provided, use mock
             runMockExecution();
         }
-    }, [inputs, intent, executeReal, runMockExecution, isLoaded]);
+    }, [inputs, intent, executeReal, runMockExecution, isLoaded, isVi]);
 
     return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center">

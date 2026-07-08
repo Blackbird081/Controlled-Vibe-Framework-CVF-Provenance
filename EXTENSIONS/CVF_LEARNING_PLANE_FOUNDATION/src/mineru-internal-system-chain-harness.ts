@@ -12,6 +12,7 @@ import {
   type DurableMemoryStore,
 } from "./durable-memory-store";
 import type { MineruDurableStoreInvocationInput } from "./mineru-durable-store-invocation";
+import type { RuntimeMemoryActorRole } from "./runtime-memory-hierarchy";
 import type {
   MineruMemoryOwnerAuthorization,
   MineruMemoryRagRouteReleaseInput,
@@ -56,6 +57,24 @@ export interface MineruInternalSystemChainHarnessResult {
   heldToken: typeof PRODUCTION_MEMORY_RAG_ROUTE_NOT_RELEASED_BY_T25_CANDIDATE_ONLY;
   storeRecordCount: number;
   routeCandidateResult: MineruSystemChainRouteCandidateResult;
+}
+
+function asRuntimeMemoryActorRole(role: string): RuntimeMemoryActorRole | undefined {
+  const allowedRoles: readonly RuntimeMemoryActorRole[] = [
+    "OPERATOR",
+    "GOVERNOR",
+    "HUMAN",
+    "BUILDER",
+    "AI_AGENT",
+    "REVIEWER",
+    "SERVICE_AGENT",
+    "OBSERVER",
+    "ANALYST",
+    "unknown",
+  ];
+  return allowedRoles.includes(role as RuntimeMemoryActorRole)
+    ? (role as RuntimeMemoryActorRole)
+    : undefined;
 }
 
 export function buildMineruInternalSystemChainHarnessInput(
@@ -109,6 +128,7 @@ export function buildMineruInternalSystemChainHarnessInput(
     freshMemoryOwnerAuthorization: true,
     productionPersistenceMode: "in-process-only",
     fileBackedPersistenceRequested: false,
+    fileBackedPersistenceActorRole: asRuntimeMemoryActorRole(adapterPayload.actorRole),
     retrievalRequested: false,
     vectorizationRequested: false,
     privateOutputContentRead: false,

@@ -97,7 +97,7 @@ export function buildEvidenceToLearningReadout(input: {
   const evidenceBasis = [
     `receipt:${input.receipt.receiptId}`,
     `contextBundle:${input.contextBundleReadout.bundleHash}`,
-    input.auditMemoryReceipt?.receipt.receiptId
+    input.auditMemoryReceipt?.receipt?.receiptId
       ? `auditMemoryReceipt:${input.auditMemoryReceipt.receipt.receiptId}`
       : undefined,
   ].filter((value): value is string => Boolean(value));
@@ -105,7 +105,7 @@ export function buildEvidenceToLearningReadout(input: {
     receiptId: input.receipt.receiptId,
     envelopeId: input.receipt.envelopeId,
     contextBundleHash: input.contextBundleReadout.bundleHash,
-    auditMemoryReceiptId: input.auditMemoryReceipt?.receipt.receiptId,
+    auditMemoryReceiptId: input.auditMemoryReceipt?.receipt?.receiptId,
   }).slice(0, 24)}`;
   const findingToLearningRecord = buildFindingToLearningRecord(
     {
@@ -130,7 +130,7 @@ export function buildEvidenceToLearningReadout(input: {
       envelopeId: input.receipt.envelopeId,
       contextBundleId: input.contextBundleReadout.bundleId,
       contextBundleHash: input.contextBundleReadout.bundleHash,
-      auditMemoryReceiptId: input.auditMemoryReceipt?.receipt.receiptId || undefined,
+      auditMemoryReceiptId: input.auditMemoryReceipt?.receipt?.receiptId || undefined,
     },
     truthCandidate: {
       candidateType: 'receipt_metadata_truth_candidate',
