@@ -304,6 +304,7 @@ older MSEA material.
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| GitHub Workspace CI Debt Repair | `d1b3fb2a` | APPLIED_PENDING_GITHUB_CI_RECHECK; repaired provenance PR #22 GitHub CI debt by adding the guard-contract lockfile, making PR workflows use the PR head SHA for branch-state checks, and narrowing active-session required-first-read existence checks so Git-ignored local-only paths do not fail CI clones. Focused active-session unit tests PASS 19/19, active-session checker PASS, generated-state drift check PASS, guard-contract `npm ci` PASS, material pre-commit hook PASS 80/80. Public-sync remains untouched. |
 | MSEA-R72E Absorb Lane Ceremony Reclassification dispatch | `f75656805` | DISPATCH_READY; accepted GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for no-commit R72E worker execution. Worker must create `docs/reference/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_TAXONOMY_AND_TRACE_SEED_2026-07-08.md` and `docs/reviews/CVF_MSEA_R72E_ABSORB_LANE_CEREMONY_RECLASSIFICATION_WORKER_RETURN_2026-07-08.md`, preserving public/private boundary, source verification, no-commit/reviewer separation, and closure evidence. Dispatch quality PASS, structural completeness PASS, ADIF disclosure PASS, checker read-ahead PASS, handoff boundary PASS, external-intake routing PASS, rescan guard PASS, pre-dispatch autorun PASS 73/73, dispatch steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72D0 Rescan Guard Applicability False-Positive Repair | `402bc2c9e` | CLOSED_PASS_BOUNDED_PENDING_R72D_WORKER_EXECUTION; repaired the remaining target-checker applicability false-positive by reusing the real-signal helper from `_is_applicable_output` and adding four regression tests. Focused pytest PASS 20/20, target checker PASS, worker-return fast gate PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. |
 | MSEA-R72D Governance Cost Metric And Monthly Readout acceptance | `690b11999` | REVIEWER_ACCEPTED_BOUNDED_PENDING_R72E_GC018; accepted the source-backed metric specification and worker return after reviewer repair tightened unique-path metrics, public-main CI evidence, ceremony-ratio numerator/denominator, and private-only export disposition. Worker-return fast gate PASS, structural completeness PASS, packet authority/encoding PASS, rescan guard PASS, pre-implementation autorun PASS 75/75, reviewer-return commit steward PASS, material pre-commit hook PASS 80/80. |
@@ -322,11 +323,11 @@ older MSEA material.
 
 ## HEAD Freshness
 
-Current HEAD after R72G/R72H closure material commit: `b7a72b748`.
+Current HEAD after GitHub workspace CI debt repair material commit: `d1b3fb2a`.
 
-Current HEAD short: `b7a72b748`.
+Current HEAD short: `d1b3fb2a`.
 
-Current HEAD parent: `b896cc759`.
+Current HEAD parent: `8ad7d6c8`.
 
 Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
 
@@ -334,7 +335,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: R72E/R72F acceptance material commit `b896cc759` and R72G/R72H material commit `b7a72b748` exist locally. The branch remains local-only until operator authorizes any push.
+Branch state at handoff-sync authoring: R72E/R72F acceptance material commit `b896cc759`, R72G/R72H material commit `b7a72b748`, session sync `8ad7d6c8`, and GitHub workspace CI debt repair `d1b3fb2a` exist locally. The branch may be pushed only to the provenance PR branch for CI recheck; public-sync remains out of scope.
 
 Commit stack debt disposition: `DISCLOSED_AND_REDUCED_BY_BATCHING`; R72G/R72H are intentionally combined to avoid unnecessary commit stacking. Do not create public push or broad history rewrite from this handoff. Public-sync remains out of scope.
 
