@@ -2,26 +2,26 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R78 Paid-User-Safe Workspace Product Proof closure.
+Purpose: compact current-session continuity after MSEA-R79 Policy Local Workspace Dogfood closure.
 Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, public-sync mutation, public push, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R78 Paid-User-Safe Workspace Product Proof closure, and route the next executable move back to operator selection.
+Provide compact active-session continuity after MSEA-R79 Policy Local Workspace Dogfood closure, and route the next executable move back to operator selection.
 
 ## Scope / Target / Owner Boundary
 
-This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R78 paid-user-safe workspace product proof closure, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, public-sync mutation, public push, provider/live proof, production claims, or use-case/legal workflow changes.
+This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R79 Policy Local workspace dogfood closure, generated session-state refresh, and next-move routing only; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, public-sync mutation, public push, provider/live proof, production claims, or use-case/legal workflow changes.
 
 ## Latest Work / Changes
 
-R78 Paid-User-Safe Workspace Product Proof is closed bounded. Provenance commit `ebe61599d` records the proof in `docs/reviews/CVF_MSEA_R78_PAID_USER_SAFE_WORKSPACE_PRODUCT_PROOF_2026-07-09.md`. Local proof project `CVF-PaidUserSafe-Proof-20260709` was created; project doctor PASS 17/17; workspace-wide gate PASS with project `ENFORCED_PASS`; `paid-user-safe` applied with 11 artifacts and 2 root files; sensitive-token scan PASS; actual workspace restored to `operator-local` with 27 artifacts and 2 root files, source commit `8dc6cd336`, and final workspace gate PASS. R77 public-sync remains at `1793ceea8`; no public-sync mutation or public push occurred in R78. R77, R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
+R79 Policy Local Workspace Dogfood is closed bounded with product follow-ups. Provenance commit `398671d20` records the dogfood run in `docs/reviews/CVF_MSEA_R79_POLICY_LOCAL_WORKSPACE_DOGFOOD_2026-07-09.md`. Real downstream project `Policy_Local` was onboarded locally; direct project doctor moved from expected fail 2/8 to PASS 17/17; `paid-user-safe` applied with 11 artifacts and 2 root files; sensitive-token scan PASS; actual workspace restored to `operator-local` with 27 artifacts and 2 root files. Workspace-wide gate PASS but still reports `Policy_Local` as `LEGACY_EXEMPT`, and `git check-ignore` confirmed `Policy_Local/.gitignore` pattern `CVF_*.md` hides `docs/CVF_BOOTSTRAP_LOG_20260709.md`. R78, R77, R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r78_paid_user_safe_workspace_product_proof_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose paid-user-safe public documentation refinement, dogfooding on an actual paid/shared project, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r79_policy_local_workspace_dogfood_closed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose R80 adopt-existing-project hardening for baseline promotion and downstream ignore-pattern guidance, commit/review the new Policy_Local scaffold in the Policy_Local repo, paid-user-safe documentation refinement, conformance-reference cleanup or reattachment for the R72F candidate family, or GitHub check triage only if a current failing check is confirmed; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -35,9 +35,11 @@ Startup acknowledged: current mode=`msea_r78_paid_user_safe_workspace_product_pr
 
 ## Current Mode
 
-`msea_r78_paid_user_safe_workspace_product_proof_closed_pending_operator_next_selection`
+`msea_r79_policy_local_workspace_dogfood_closed_pending_operator_next_selection`
 
 ## Active Boundary
+
+R79 is closed bounded with product follow-ups. Provenance commit `398671d20` records real-project dogfood on `Policy_Local`. The local downstream project now has CVF scaffold files and direct doctor PASS 17/17, but remains baseline-grandfathered in workspace-wide gate until an explicit adopt-existing-project promotion flow is chosen.
 
 R78 is closed bounded. Provenance commit `ebe61599d` records paid-user-safe workspace product proof. Local proof project `CVF-PaidUserSafe-Proof-20260709` passed project doctor 17/17 and workspace-wide enforcement. `paid-user-safe` applied cleanly, and the actual workspace was restored to `operator-local` with source commit `8dc6cd336`, artifact count 27, and final workspace-wide gate PASS.
 
@@ -66,6 +68,33 @@ R72D0 is closed bounded at material commit `402bc2c9e`. It repaired one target-c
 R72E/R72F are accepted at material commit `b896cc759`, and R72G/R72H docs-only evidence is accepted at material commit `b7a72b748`.
 
 No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, public push, provider/live proof, public/production claim, or automatic downstream governance execution is authorized by this handoff.
+
+## Core Guard Self-Protection Authorization - MSEA-R79 Policy Local Workspace Dogfood Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R79 material commit
+`398671d20`, including active mode, next allowed move, generated active state,
+bootstrap read model, front-door continuity, active handoff, and R79 closure
+state entry.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R79 dogfood closure, current HEAD freshness, and next-move routing. |
+| `CVF_SESSION_MEMORY.md` | Record R79 closure in the active front door. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after state-source update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R79 closure. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update current mode and previous mode for R79 closure. |
+| `CVF_SESSION/state/entries/mseaR79PolicyLocalWorkspaceDogfoodClosure20260709.json` | Record R79 closure evidence and boundaries. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to operator selection only after R79 closure. |
+
+Operator authorization: operator selected real-project dogfood and specified
+`Policy_Local`.
+
+Rollback boundary: revert only this R79 session-sync if rejected; do not
+revert material commit `398671d20`, local `Policy_Local` scaffold output, R78
+proof commit `ebe61599d`, R77 public-sync commit `1793ceea8`, or older MSEA
+material.
 
 ## Core Guard Self-Protection Authorization - MSEA-R78 Paid-User-Safe Workspace Product Proof Session Sync
 
@@ -511,6 +540,7 @@ older MSEA material.
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| MSEA-R79 Policy Local Workspace Dogfood | `398671d20` | CLOSED_PASS_BOUNDED_WITH_PRODUCT_FOLLOW_UPS; onboarded real dirty downstream project `Policy_Local`; direct project doctor moved from expected fail 2/8 to PASS 17/17; `paid-user-safe` profile applied with 11 artifacts/2 root files and sensitive-token scan PASS; `operator-local` restored with 27 artifacts/2 root files. Workspace gate PASS but still reports `Policy_Local` as `LEGACY_EXEMPT`; `git check-ignore` confirmed `Policy_Local/.gitignore` pattern `CVF_*.md` hides `docs/CVF_BOOTSTRAP_LOG_20260709.md`. No public-sync mutation, public push, `Policy_Local` commit/push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | MSEA-R78 Paid-User-Safe Workspace Product Proof | `ebe61599d` | CLOSED_PASS_BOUNDED; created local proof project `CVF-PaidUserSafe-Proof-20260709`; project doctor PASS 17/17; workspace-wide gate PASS with project `ENFORCED_PASS`; applied `paid-user-safe` profile with 11 artifacts and 2 workspace-root files; sensitive-token scan PASS; restored actual workspace to `operator-local` with 27 artifacts and 2 workspace-root files, activeProfile `operator-local`, sourceCommit `8dc6cd336`, final workspace gate PASS. No public-sync mutation, public push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | MSEA-R77 Paid-User-Safe Workspace Onboarding | `32eafb699` / `62eedfdce` provenance; `1793ceea8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; added `docs/reference/CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md`, registered it in `workspace_overlay_catalog.json`, updated the paid-user-safe authoring guide, profile tier map, canonical workspace rules, and public-safe wrapper guide generation. Follow-up commit `62eedfdce` aligned `operator-local` inheritance so the operator-local tier actually includes the paid-user-safe flow while still requiring explicit continuity allowance for private continuity artifacts. Public-sync exported bounded workspace-kit changes only. Local `CVF-Workspace` is clean/current at hidden public core `1793cee`, active profile `operator-local`, source commit `32eafb699`, artifact count 27, and workspace-wide gate PASS. R77 smoke PASS: `paid-user-safe` 11 artifacts/2 root files, `operator-local` blocked without continuity flag and PASS with continuity flag. |
 | MSEA-R76 Workspace Profile Tiers | `72132366e` provenance / `2a74a7dc8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; defined `public-free`, `paid-user-safe`, and `operator-local` workspace rule-pack tiers; added tier map and paid-user-safe authoring guide; updated profile catalog, profile JSONs, generated wrapper guide output, canonical workspace rules, and public-safe wrapper guide text. Profile smoke PASS: `public-free` 9 artifacts, `paid-user-safe` 10 artifacts, `operator-local` blocked without continuity flag and PASS with continuity flag. Public-sync exported bounded workspace-kit changes only. Local `CVF-Workspace` is clean/current at hidden public core `2a74a7d`, active profile `operator-local`, source commit `72132366e`, artifact count 25, and workspace-wide gate PASS. |
@@ -539,6 +569,8 @@ older MSEA material.
 
 ## HEAD Freshness
 
+Current HEAD after R79 Policy Local workspace dogfood material commit: `398671d20`.
+
 Current HEAD after R78 paid-user-safe workspace product proof: `ebe61599d`.
 
 Current HEAD after R77 operator-local profile inheritance fix: `62eedfdce`.
@@ -555,11 +587,11 @@ Current HEAD after R75A-E workspace agent workflow material commit: `9f8c5f382`.
 
 Current HEAD after R75 fresh-workspace baseline fix: `0107dbd2e`.
 
-Current HEAD short: `ebe61599d`.
+Current HEAD short: `398671d20`.
 
-Current HEAD full: `ebe61599d1b1d961655408723ab67f1fcac36009`.
+Current HEAD full: `398671d20777547f9899d13fa02df59c18911496`.
 
-Current HEAD parent: `8dc6cd336`.
+Current HEAD parent: `6648a7874`.
 
 Remote tracking branch: `origin/main`.
 
@@ -567,7 +599,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, R76 workspace profile tiers material commit `72132366e`, R77 workspace onboarding material commits `32eafb699` and `62eedfdce`, and R78 paid-user-safe workspace product proof material commit `ebe61599d`. Public-sync remains clean/current after public commit `1793ceea8`, local workspace hidden public core remains clean/current at `1793cee`, and the actual local workspace active profile was restored to `operator-local` with source commit `8dc6cd336`.
+Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, R76 workspace profile tiers material commit `72132366e`, R77 workspace onboarding material commits `32eafb699` and `62eedfdce`, R78 paid-user-safe workspace product proof material commit `ebe61599d`, and R79 Policy Local workspace dogfood material commit `398671d20`. Public-sync remains clean/current after public commit `1793ceea8`, local workspace hidden public core remains clean/current at `1793cee`, and the actual local workspace active profile was restored to `operator-local` with source commit `6648a7874`.
 
 ## Core Guard Self-Protection Authorization - GitHub Merge Handoff Freshness Sync
 
@@ -591,6 +623,18 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| R79 Policy_Local pre-onboarding direct doctor | EXPECTED_FAIL: 2/8 checks passed |
+| R79 Policy_Local onboarding wrapper | PASS: scaffold created; direct doctor PASS 17/17 |
+| R79 paid-user-safe profile apply | PASS: 11 artifacts and 2 root files |
+| R79 paid-user-safe sensitive-token scan | PASS: no hits |
+| R79 Policy_Local direct doctor while paid-user-safe active | PASS 17/17 |
+| R79 operator-local restore | PASS: 27 artifacts and 2 root files |
+| R79 final Policy_Local direct doctor | PASS 17/17 |
+| R79 workspace-wide gate after restore | PASS; `Policy_Local` remains `LEGACY_EXEMPT` |
+| R79 Policy_Local bootstrap log ignore check | PASS: `.gitignore:3:CVF_*.md` hides `docs/CVF_BOOTSTRAP_LOG_20260709.md` |
+| R79 material pre-implementation autorun | PASS 75/75 |
+| R79 material commit steward | PASS |
+| R79 material pre-commit hook | PASS 80/80 |
 | R78 proof project bootstrap | PASS: project doctor 17/17 |
 | R78 workspace-wide gate after bootstrap | PASS: proof project `ENFORCED_PASS` |
 | R78 paid-user-safe profile apply | PASS: 11 artifacts and 2 root files |
@@ -714,32 +758,34 @@ Latest closed numbered LHW wave: LHW24.
 | --- | --- |
 | Actor | Codex reviewer/closer and session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | R78 paid-user-safe workspace product proof session-sync after material commit `ebe61599d` |
+| Session or invocation | R79 Policy Local workspace dogfood session-sync after material commit `398671d20` |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, apply_patch, git, Python governance checkers |
 | Target paths | active session state sources and aggregates, front-door memory, active handoff V39 |
-| Allowed scope source | operator agreement to proceed with downstream workspace product proof after R77 closure |
-| Before status evidence | R78 material commit `ebe61599d` and local workspace proof evidence existed; session front doors still needed final R78 alignment |
-| After status evidence | session-sync files updated to R78 paid-user-safe workspace product proof closure and operator next selection |
+| Allowed scope source | operator selected real-project dogfood and specified `Policy_Local` |
+| Before status evidence | R79 material commit `398671d20` and local dogfood evidence existed; session front doors still needed final R79 alignment |
+| After status evidence | session-sync files updated to R79 Policy Local workspace dogfood closure and operator next selection |
 | Diff evidence | `git status --short`; generated active session state; pre-implementation autorun; commit steward; pre-commit hook |
-| Approval boundary | R78 session-sync only; no public-sync mutation, public push, checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
-| Claim boundary | private provenance continuity routing only; public-sync state remains bounded to prior commit `1793ceea8`; no production deployment, checker retirement, or provider certification claim |
+| Approval boundary | R79 session-sync only; no public-sync mutation, public push, checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
+| Claim boundary | private provenance continuity routing only; local `Policy_Local` scaffold output is disclosed but not committed from provenance; no production deployment, checker retirement, or provider certification claim |
 | Agent type | Codex |
-| Invocation ID | r78-paid-user-safe-workspace-product-proof-session-sync-2026-07-09 |
-| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR78PaidUserSafeWorkspaceProductProofClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
-| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR78PaidUserSafeWorkspaceProductProofClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Invocation ID | r79-policy-local-workspace-dogfood-session-sync-2026-07-09 |
+| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR79PolicyLocalWorkspaceDogfoodClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR79PolicyLocalWorkspaceDogfoodClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this R78 session-sync |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this R79 session-sync |
 
 ## Next Allowed Move
 
-Operator may choose paid-user-safe public documentation refinement, dogfooding
-on an actual paid/shared project, conformance-reference cleanup or reattachment
-for the R72F candidate family, or GitHub check triage only if a current failing
-check is confirmed. No automatic checker retirement, checker
-deletion/disablement, hook/Fast Lane edit, public-sync mutation, public push,
-runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval,
-vectorization, P3 reopen, or legal workflow is authorized by this handoff.
+Operator may choose R80 adopt-existing-project hardening for baseline promotion
+and downstream ignore-pattern guidance, commit/review the new `Policy_Local`
+scaffold in the `Policy_Local` repo, paid-user-safe documentation refinement,
+conformance-reference cleanup or reattachment for the R72F candidate family, or
+GitHub check triage only if a current failing check is confirmed. No automatic
+checker retirement, checker deletion/disablement, hook/Fast Lane edit,
+public-sync mutation, public push, runtime/provider/live proof,
+hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or
+legal workflow is authorized by this handoff.
 
 ## Public/Provenance Boundary
 
@@ -749,7 +795,7 @@ public-sync packet, and explicit operator authorization.
 
 ## Claim Boundary
 
-This handoff records R78 paid-user-safe workspace product proof closure
+This handoff records R79 Policy Local workspace dogfood closure
 continuity routing only. It does not authorize public-sync mutation, public
 push, checker retirement or disablement, checker severity change, Fast Lane
 standard edit, metrics automation, production release, product extraction,
