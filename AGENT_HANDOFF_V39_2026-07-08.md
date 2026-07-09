@@ -2,26 +2,26 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R80 Adopt Existing Project Workspace Hardening closure and public-sync.
-Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. Bounded R80B workspace-kit public-sync may follow only after source review and gates. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
+Purpose: compact current-session continuity after MSEA-R80B Workspace AGENTS Idempotency Follow-Up closure and public-sync.
+Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, unbounded public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R80 Adopt Existing Project Workspace Hardening closure and public-sync, and route the next executable move to the bounded R80B idempotency follow-up.
+Provide compact active-session continuity after MSEA-R80B Workspace AGENTS Idempotency Follow-Up closure and public-sync, and route the next executable move back to operator selection.
 
 ## Scope / Target / Owner Boundary
 
-This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R80 Adopt Existing Project Workspace Hardening closure, generated session-state refresh, and next-move routing only. It allows only a bounded R80B workspace-kit public-sync after source review and gates; it does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, provider/live proof, production claims, or use-case/legal workflow changes.
+This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R80B Workspace AGENTS Idempotency Follow-Up closure, generated session-state refresh, and next-move routing only. It does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, provider/live proof, production claims, or use-case/legal workflow changes.
 
 ## Latest Work / Changes
 
-R80 Adopt Existing Project Workspace Hardening is closed bounded and public-synced. Provenance commit `5901e1623` added public-safe workspace new-project/adopt-existing enforcement, promotion support, installer wrapper pass-through, public-sync allowlist support, workspace rules guidance, and R80 review evidence. Public-sync commit `2d1b4a7f8` exported the bounded workspace-kit changes. Local `CVF-Workspace` hidden public core updated to `2d1b4a7`; `Policy_Local` was promoted out of `WORKSPACE_PROJECT_ENFORCEMENT_BASELINE.json` and final workspace-wide gate reports `Policy_Local` `ENFORCED_PASS` with one warning that `Policy_Local/.gitignore` hides `docs/CVF_BOOTSTRAP_LOG_20260709.md`. R80B follow-up remains pending from stash `r80b-agents-idempotency` for AGENTS bootstrap idempotency in `scripts/new-cvf-workspace.ps1`. R79, R78, R77, R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
+R80B Workspace AGENTS Idempotency Follow-Up is closed bounded and public-synced. Provenance commit `81d977d4f` repaired `scripts/new-cvf-workspace.ps1` so rerunning workspace bootstrap strips stale CVF merge blocks, refreshes CVF-generated `AGENTS.md` in place, and inserts only one CVF merge block for custom downstream AGENTS content. Public-sync commit `2277a5423` exported the bounded workspace-kit script update. Local `CVF-Workspace` hidden public core updated to `2277a54`; root `New-CVF-Governed-Project.ps1` rerun against `Policy_Local` PASS, `Policy_Local` `AGENTS.md` has `MERGE_BLOCK_COUNT=0`, and final workspace-wide gate reports `Policy_Local` `ENFORCED_PASS` with the known bootstrap-log ignore warning. R80, R79, R78, R77, R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r80_adopt_existing_project_workspace_hardening_closed_public_synced_pending_r80b_idempotency_followup`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=first handle R80B AGENTS bootstrap idempotency follow-up from stash `r80b-agents-idempotency`, then optionally commit/review the `Policy_Local` scaffold, fix the bootstrap-log ignore warning, refine paid-user-safe docs, handle R72F conformance-reference cleanup/reattachment, or triage current GitHub checks; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r80b_workspace_agents_idempotency_follow_up_closed_public_synced_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose commit/review of the `Policy_Local` scaffold, fix the bootstrap-log ignore warning, refine paid-user-safe docs, handle R72F conformance-reference cleanup/reattachment, triage current GitHub checks, or select the next product roadmap lane; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -35,11 +35,13 @@ Startup acknowledged: current mode=`msea_r80_adopt_existing_project_workspace_ha
 
 ## Current Mode
 
-`msea_r80_adopt_existing_project_workspace_hardening_closed_public_synced_pending_r80b_idempotency_followup`
+`msea_r80b_workspace_agents_idempotency_follow_up_closed_public_synced_pending_operator_next_selection`
 
 ## Active Boundary
 
-R80 is closed bounded and public-synced. Provenance commit `5901e1623` records the adopt-existing-project workspace hardening. Public-sync commit `2d1b4a7f8` exported the bounded workspace-kit changes. Local `CVF-Workspace` hidden public core is updated to `2d1b4a7`, and `Policy_Local` is now promoted from legacy baseline to `ENFORCED_PASS` in workspace-wide gate with one warning for its ignored bootstrap log. R80B remains pending for AGENTS bootstrap idempotency in `scripts/new-cvf-workspace.ps1`.
+R80B is closed bounded and public-synced. Provenance commit `81d977d4f` records the AGENTS bootstrap idempotency repair. Public-sync commit `2277a5423` exported the bounded workspace-kit script update. Local `CVF-Workspace` hidden public core is updated to `2277a54`, root `New-CVF-Governed-Project.ps1` rerun against `Policy_Local` PASS, and `Policy_Local` `AGENTS.md` has `MERGE_BLOCK_COUNT=0`.
+
+R80 is closed bounded and public-synced. Provenance commit `5901e1623` records the adopt-existing-project workspace hardening. Public-sync commit `2d1b4a7f8` exported the bounded workspace-kit changes. Local `CVF-Workspace` hidden public core is updated to `2d1b4a7`, and `Policy_Local` is promoted from legacy baseline to `ENFORCED_PASS` in workspace-wide gate with one warning for its ignored bootstrap log.
 
 R79 is closed bounded with product follow-ups. Provenance commit `398671d20` records real-project dogfood on `Policy_Local`. The local downstream project has CVF scaffold files and direct doctor PASS 17/17; R80 later promoted it out of the workspace legacy baseline.
 
@@ -70,6 +72,33 @@ R72D0 is closed bounded at material commit `402bc2c9e`. It repaired one target-c
 R72E/R72F are accepted at material commit `b896cc759`, and R72G/R72H docs-only evidence is accepted at material commit `b7a72b748`.
 
 No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, public push, provider/live proof, public/production claim, or automatic downstream governance execution is authorized by this handoff.
+
+## Core Guard Self-Protection Authorization - MSEA-R80B Workspace AGENTS Idempotency Follow-Up Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R80B material commit
+`81d977d4f` and public-sync commit `2277a5423`, including active mode, next
+allowed move, generated active state, bootstrap read model, front-door
+continuity, active handoff, and R80B closure state entry.
+
+Protected paths:
+
+| Path | Purpose |
+| --- | --- |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R80B closure, public-sync status, local workspace proof, and current HEAD freshness. |
+| `CVF_SESSION_MEMORY.md` | Record R80B closure in the active front door. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts after state-source update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerated aggregate from state sources after R80B closure. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update current mode and previous mode for R80B closure. |
+| `CVF_SESSION/state/entries/mseaR80BWorkspaceAgentsIdempotencyFollowUpClosure20260709.json` | Record R80B closure evidence, public-sync result, and local workspace proof. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move back to operator selection after R80B closure. |
+
+Operator authorization: operator asked Codex to process the workspace/GitHub
+debt safely and selected `Policy_Local` as the real local project target.
+
+Rollback boundary: revert only this R80B session-sync if rejected; do not
+revert material commit `81d977d4f`, public-sync commit `2277a5423`, local
+workspace core update, `Policy_Local` local scaffold output, or older MSEA
+material.
 
 ## Core Guard Self-Protection Authorization - MSEA-R80 Adopt Existing Project Workspace Hardening Session Sync
 
@@ -568,6 +597,7 @@ older MSEA material.
 
 | Work | Commit or state | Disposition |
 | --- | --- | --- |
+| MSEA-R80B Workspace AGENTS Idempotency Follow-Up | `81d977d4f` provenance / `2277a5423` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; repaired `scripts/new-cvf-workspace.ps1` so rerunning workspace bootstrap strips stale CVF merge blocks, refreshes CVF-generated `AGENTS.md` in place, and inserts only one CVF merge block for custom downstream AGENTS content. Local `CVF-Workspace` hidden public core updated to `2277a54`; root `New-CVF-Governed-Project.ps1` rerun against `Policy_Local` PASS; `Policy_Local` `AGENTS.md` has `MERGE_BLOCK_COUNT=0`; workspace-wide gate reports `Policy_Local` `ENFORCED_PASS` with the known bootstrap-log ignore warning. No `Policy_Local` commit/push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | MSEA-R80 Adopt Existing Project Workspace Hardening | `5901e1623` provenance / `2d1b4a7f8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED_WITH_R80B_FOLLOW_UP; added public-safe workspace new-project/adopt-existing enforcement, promotion support, installer wrapper pass-through, workspace rules guidance, and public-sync allowlist support. Local `CVF-Workspace` hidden public core updated to `2d1b4a7`; `Policy_Local` was promoted out of `WORKSPACE_PROJECT_ENFORCEMENT_BASELINE.json` and final workspace-wide gate reports `Policy_Local` `ENFORCED_PASS` with one warning that `Policy_Local/.gitignore` hides `docs/CVF_BOOTSTRAP_LOG_20260709.md`. R80B follow-up remains pending from stash `r80b-agents-idempotency` for `scripts/new-cvf-workspace.ps1` AGENTS bootstrap idempotency. No `Policy_Local` commit/push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | MSEA-R79 Policy Local Workspace Dogfood | `398671d20` | CLOSED_PASS_BOUNDED_WITH_PRODUCT_FOLLOW_UPS; onboarded real dirty downstream project `Policy_Local`; direct project doctor moved from expected fail 2/8 to PASS 17/17; `paid-user-safe` profile applied with 11 artifacts/2 root files and sensitive-token scan PASS; `operator-local` restored with 27 artifacts/2 root files. Workspace gate PASS but still reports `Policy_Local` as `LEGACY_EXEMPT`; `git check-ignore` confirmed `Policy_Local/.gitignore` pattern `CVF_*.md` hides `docs/CVF_BOOTSTRAP_LOG_20260709.md`. No public-sync mutation, public push, `Policy_Local` commit/push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | MSEA-R78 Paid-User-Safe Workspace Product Proof | `ebe61599d` | CLOSED_PASS_BOUNDED; created local proof project `CVF-PaidUserSafe-Proof-20260709`; project doctor PASS 17/17; workspace-wide gate PASS with project `ENFORCED_PASS`; applied `paid-user-safe` profile with 11 artifacts and 2 workspace-root files; sensitive-token scan PASS; restored actual workspace to `operator-local` with 27 artifacts and 2 workspace-root files, activeProfile `operator-local`, sourceCommit `8dc6cd336`, final workspace gate PASS. No public-sync mutation, public push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
@@ -598,6 +628,8 @@ older MSEA material.
 
 ## HEAD Freshness
 
+Current HEAD after R80B Workspace AGENTS idempotency follow-up material commit: `81d977d4f`.
+
 Current HEAD after R80 Adopt Existing Project workspace hardening material commit: `5901e1623`.
 
 Current HEAD after R79 Policy Local workspace dogfood material commit: `398671d20`.
@@ -618,11 +650,11 @@ Current HEAD after R75A-E workspace agent workflow material commit: `9f8c5f382`.
 
 Current HEAD after R75 fresh-workspace baseline fix: `0107dbd2e`.
 
-Current HEAD short: `5901e1623`.
+Current HEAD short: `81d977d4f`.
 
-Current HEAD full: `5901e16231dd8f56dd84fb858b69da6bdca8d7bd`.
+Current HEAD full: `81d977d4f26bb20c31af0b5fa7d490d24960783f`.
 
-Current HEAD parent: `7c1941a7a`.
+Current HEAD parent: `a6631d962`.
 
 Remote tracking branch: `origin/main`.
 
@@ -630,7 +662,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, R76 workspace profile tiers material commit `72132366e`, R77 workspace onboarding material commits `32eafb699` and `62eedfdce`, R78 paid-user-safe workspace product proof material commit `ebe61599d`, R79 Policy Local workspace dogfood material commit `398671d20`, and R80 Adopt Existing Project workspace hardening material commit `5901e1623`. Public-sync is current after public commit `2d1b4a7f8`, local workspace hidden public core is current at `2d1b4a7`, and `Policy_Local` is now `ENFORCED_PASS` after promotion out of the workspace legacy baseline.
+Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, R76 workspace profile tiers material commit `72132366e`, R77 workspace onboarding material commits `32eafb699` and `62eedfdce`, R78 paid-user-safe workspace product proof material commit `ebe61599d`, R79 Policy Local workspace dogfood material commit `398671d20`, R80 Adopt Existing Project workspace hardening material commit `5901e1623`, and R80B AGENTS idempotency material commit `81d977d4f`. Public-sync is current after public commit `2277a5423`, local workspace hidden public core is current at `2277a54`, and `Policy_Local` is `ENFORCED_PASS` after promotion out of the workspace legacy baseline.
 
 ## Core Guard Self-Protection Authorization - GitHub Merge Handoff Freshness Sync
 
@@ -654,6 +686,16 @@ Latest closed numbered LHW wave: LHW24.
 
 | Gate | Result |
 | --- | --- |
+| R80B PowerShell parser | PASS: `scripts/new-cvf-workspace.ps1` |
+| R80B root wrapper rerun on Policy_Local | PASS: CVF-generated `AGENTS.md` refreshed in place |
+| R80B Policy_Local AGENTS merge block count | PASS: `MERGE_BLOCK_COUNT=0` |
+| R80B direct Policy_Local doctor | PASS WITH NOTE: 17 passed, 1 warning for ignored bootstrap log |
+| R80B workspace-wide gate | PASS: `Policy_Local` `ENFORCED_PASS` |
+| R80B material pre-implementation autorun | PASS 75/75 |
+| R80B material commit steward | PASS |
+| R80B material pre-commit hook | PASS 80/80 |
+| R80B public-sync export | PASS: public commit `2277a5423` |
+| R80B local workspace update | PASS: hidden public core `2277a54` |
 | R80 changed script parse checks | PASS |
 | R80 temp promotion smoke | PASS: baseline project removed only after doctor PASS |
 | R80 Policy_Local direct doctor before promotion | PASS WITH NOTE: 17 passed, 1 warning for ignored bootstrap log |
@@ -801,35 +843,34 @@ Latest closed numbered LHW wave: LHW24.
 | --- | --- |
 | Actor | Codex reviewer/closer and session-sync steward |
 | Provider or surface | Codex local workspace |
-| Session or invocation | R80 Adopt Existing Project workspace hardening session-sync after material commit `5901e1623` and public-sync commit `2d1b4a7f8` |
+| Session or invocation | R80B Workspace AGENTS idempotency follow-up session-sync after material commit `81d977d4f` and public-sync commit `2277a5423` |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | PowerShell, apply_patch, git, Python governance checkers |
 | Target paths | active session state sources and aggregates, front-door memory, active handoff V39 |
-| Allowed scope source | operator selected GitHub/workspace cleanup and specified `Policy_Local` as the real local project target |
-| Before status evidence | R80 material commit `5901e1623`, public-sync commit `2d1b4a7f8`, and local workspace promotion evidence existed; session front doors still needed final R80 alignment |
-| After status evidence | session-sync files updated to R80 closure, public-sync result, local workspace promotion, and R80B next move |
+| Allowed scope source | R80 session-sync next move authorized R80B AGENTS idempotency follow-up, and operator specified `Policy_Local` as the real local project target |
+| Before status evidence | R80B material commit `81d977d4f`, public-sync commit `2277a5423`, and local workspace proof existed; session front doors still needed final R80B alignment |
+| After status evidence | session-sync files updated to R80B closure, public-sync result, local workspace proof, and operator next selection |
 | Diff evidence | `git status --short`; generated active session state; pre-implementation autorun; commit steward; pre-commit hook |
-| Approval boundary | R80 session-sync only; bounded R80B workspace-kit public-sync may follow only after source review and gates; no checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
-| Claim boundary | private provenance continuity routing only; local `Policy_Local` promotion is disclosed but not committed from provenance; no production deployment, checker retirement, or provider certification claim |
+| Approval boundary | R80B session-sync only; no checker retirement, hook/Fast Lane edit, hosted/production claim, or product extraction |
+| Claim boundary | private provenance continuity routing only; local `Policy_Local` scaffold/proof is disclosed but not committed from provenance; no production deployment, checker retirement, or provider certification claim |
 | Agent type | Codex |
-| Invocation ID | r80-adopt-existing-project-workspace-hardening-session-sync-2026-07-09 |
-| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR80AdoptExistingProjectWorkspaceHardeningClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
-| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR80AdoptExistingProjectWorkspaceHardeningClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Invocation ID | r80b-workspace-agents-idempotency-session-sync-2026-07-09 |
+| Expected manifest | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR80BWorkspaceAgentsIdempotencyFollowUpClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V39_2026-07-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/mseaR80BWorkspaceAgentsIdempotencyFollowUpClosure20260709.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: no deletion or rename in this R80 session-sync |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this R80B session-sync |
 
 ## Next Allowed Move
 
-Handle the R80B AGENTS bootstrap idempotency follow-up from stash
-`r80b-agents-idempotency` first, then optionally commit/review the new
-`Policy_Local` scaffold in the `Policy_Local` repo, fix the bootstrap-log
-ignore warning, refine paid-user-safe documentation, handle conformance-reference
-cleanup or reattachment for the R72F candidate family, or triage GitHub checks
-only if a current failing check is confirmed. No automatic checker retirement,
-checker deletion/disablement, hook/Fast Lane edit, runtime/provider/live proof,
-hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or
-legal workflow is authorized by this handoff. Public-sync is authorized only for
-the bounded R80B workspace-kit export after source review and gate pass.
+Operator may choose commit/review of the new `Policy_Local` scaffold in the
+`Policy_Local` repo, fix the bootstrap-log ignore warning, refine
+paid-user-safe documentation, handle conformance-reference cleanup or
+reattachment for the R72F candidate family, triage GitHub checks only if a
+current failing check is confirmed, or select the next product roadmap lane. No
+automatic checker retirement, checker deletion/disablement, hook/Fast Lane edit,
+public-sync mutation, public push beyond the completed R80B export,
+runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval,
+vectorization, P3 reopen, or legal workflow is authorized by this handoff.
 
 ## Public/Provenance Boundary
 

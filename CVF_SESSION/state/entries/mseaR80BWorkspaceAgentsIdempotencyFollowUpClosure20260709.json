@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1610,
+  "stateKey": "mseaR80BWorkspaceAgentsIdempotencyFollowUpClosure20260709",
+  "value": "CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Provenance material commit 81d977d4f repaired scripts/new-cvf-workspace.ps1 so rerunning workspace bootstrap strips stale CVF merge blocks, refreshes CVF-generated AGENTS.md in place, and inserts only one CVF merge block for custom downstream AGENTS.md content. Review evidence is recorded in docs/reviews/CVF_MSEA_R80B_WORKSPACE_AGENTS_IDEMPOTENCY_FOLLOW_UP_2026-07-09.md. Public-sync commit 2277a5423 exported the bounded workspace-kit script update. Local CVF-Workspace hidden public core updated to 2277a54, workspace update PASS, root New-CVF-Governed-Project.ps1 rerun against Policy_Local PASS, Policy_Local AGENTS.md has MERGE_BLOCK_COUNT=0, and final workspace-wide gate reports Policy_Local ENFORCED_PASS with the known non-failing bootstrap-log ignore warning. No Policy_Local commit or push, provider/live proof, checker/Fast Lane edit, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed."
+}
