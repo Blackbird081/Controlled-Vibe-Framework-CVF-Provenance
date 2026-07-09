@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81A source-verified GC-018 baseline and work order for Workspace Productization RC source map and boundary confirmation only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81A no-commit worker execution for Workspace Productization RC source map and boundary confirmation only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
+Current mode marker: `msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`
 
-Current mode: `msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
+Current mode: `msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`
 
-`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
+`msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`
 
 Previous mode:
 
-`msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`
+`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Workspace Productization RC Source Map And Boundary Confirmation R81A dispatch | `9e31ff777` | DISPATCH_READY_PENDING_WORKER_EXECUTION; authored source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for R81A source map and boundary confirmation. Worker may create only `docs/reference/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md` and `docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_WORKER_RETURN_2026-07-09.md`, run required gates, and leave all changes uncommitted. Pre-dispatch autorun PASS 73/73 before commit and material pre-commit hook PASS 80/80. No script/runtime/source/test/checker edit, public-sync mutation, workspace mutation, Policy_Local app mutation, provider/live proof, hosted/public/production claim, public push, R81B-R81F execution, checker retirement, or Fast Lane/hook change is authorized. |
 | Workspace Productization Release Candidate Roadmap R81 | `5500f357c` | ROADMAP_ACTIVE_PENDING_R81A_GC018; added `docs/roadmaps/CVF_MSEA_R81_WORKSPACE_PRODUCTIZATION_RELEASE_CANDIDATE_ROADMAP_2026-07-09.md` to keep the next product lane focused on CVF Workspace value rather than a downstream use case. Next move is R81A source-verified GC-018/work-order authoring for RC source map and boundary confirmation only. No Policy_Local app logic, legal workflow, retrieval, Memory/RAG, vectorization, provider/live proof, hosted/production claim, checker retirement, hook/Fast Lane edit, public push, or broad governance refactor is authorized. |
 | Workspace Bootstrap Log Ignore Negation Fix R80C | `bd3a38f57` provenance / `f593c58db` public-sync / `edd92aa` Policy_Local | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED_WITH_POLICY_LOCAL_SCAFFOLD_COMMITTED; repaired workspace doctor so gitignore negation rules such as `!docs/CVF_BOOTSTRAP_LOG_*.md` do not produce a false bootstrap-log warning. Local `CVF-Workspace` hidden public core updated to `f593c58`; `Policy_Local` doctor and workspace-wide gate report PASS 17/17 without warning. `Policy_Local` local commit `edd92aa` added CVF scaffold and `.gitignore` exception only; `Policy_Local` remains `master...origin/master [ahead 9]` with pre-existing app changes and untracked app/debug files. No `Policy_Local` push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Workspace AGENTS Idempotency Follow-Up R80B | `81d977d4f` provenance / `2277a5423` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; repaired `scripts/new-cvf-workspace.ps1` so rerunning workspace bootstrap strips stale CVF merge blocks, refreshes CVF-generated `AGENTS.md` in place, and inserts only one CVF merge block for custom downstream `AGENTS.md` content. Local `CVF-Workspace` hidden public core updated to `2277a54`; root `New-CVF-Governed-Project.ps1` rerun against `Policy_Local` PASS; `Policy_Local` `AGENTS.md` has `MERGE_BLOCK_COUNT=0`; workspace-wide gate reports `Policy_Local` `ENFORCED_PASS` with the known bootstrap-log ignore warning. No `Policy_Local` commit/push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
@@ -190,19 +191,19 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
+Mode: `msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`
 
-R80C Workspace Bootstrap Log Ignore Negation Fix is closed bounded and
-public-synced, and `Policy_Local` scaffold is committed locally. The next
-allowed move is operator selection: `Policy_Local` app-change review/cleanup and
-push planning, paid-user-safe documentation refinement, conformance-reference
-cleanup or reattachment for the R72F candidate family, public GitHub check
-triage only if a current failing check is confirmed, or the next product roadmap
-lane. No automatic checker retirement, checker deletion/disablement, hook/Fast
-Lane edit, public-sync mutation, public push beyond the completed R80C export,
-runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval,
-vectorization, P3 reopen, or legal workflow is authorized. LHW24 remains latest
-closed numbered LHW wave.
+MSEA-R81A Workspace Productization RC Source Map And Boundary Confirmation is
+DISPATCH_READY at provenance material commit `9e31ff777`. The next allowed
+move is R81A no-commit worker execution only: use the R81A work order and
+paired GC-018 baseline, create the source-map reference artifact and worker
+return named there, run required gates, and leave all changes uncommitted. No
+script/runtime/source/test/checker edit, public-sync mutation, workspace
+mutation, `Policy_Local` app mutation, provider/live proof,
+hosted/public/production claim, public push, R81B-R81F execution, checker
+retirement, hook edit, Fast Lane edit, Memory/RAG, retrieval, vectorization, P3
+reopen, or legal workflow is authorized. LHW24 remains latest closed numbered
+LHW wave.
 
 ## Current Closed Work
 

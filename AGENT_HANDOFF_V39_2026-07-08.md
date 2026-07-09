@@ -2,14 +2,14 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R81 Workspace Productization Release Candidate Roadmap activation.
+Purpose: compact current-session continuity after MSEA-R81A Workspace Productization RC Source Map dispatch.
 Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, unbounded public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R81 Workspace Productization Release Candidate Roadmap activation, and route the next executable move to R81A GC-018/work-order authoring.
+Provide compact active-session continuity after MSEA-R81A Workspace Productization RC Source Map dispatch, and route the next executable move to R81A no-commit worker execution.
 
 ## Scope / Target / Owner Boundary
 
@@ -17,11 +17,13 @@ This handoff is private provenance continuity owned by Codex in reviewer/closer 
 
 ## Latest Work / Changes
 
+R81A Workspace Productization RC Source Map And Boundary Confirmation is dispatched at provenance material commit `9e31ff777`. It added `docs/baselines/CVF_GC018_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`. Pre-dispatch autorun PASS 73/73 and material pre-commit hook PASS 80/80. Next move is R81A no-commit worker execution only: create the source-map reference artifact and worker return named in the work order, run required gates, and leave changes uncommitted.
+
 R80C Workspace Bootstrap Log Ignore Negation Fix is closed bounded and public-synced. Provenance commit `bd3a38f57` repaired `scripts/check_cvf_workspace_agent_enforcement.ps1` so gitignore negation rules such as `!docs/CVF_BOOTSTRAP_LOG_*.md` do not produce a false bootstrap-log warning. Public-sync commit `f593c58db` exported the bounded workspace-kit doctor update. Local `CVF-Workspace` hidden public core updated to `f593c58`; `Policy_Local` doctor and workspace-wide gate report PASS 17/17 without warning. `Policy_Local` local commit `edd92aa` added the CVF workspace scaffold and `.gitignore` exception only; `Policy_Local` remains ahead 9 with pre-existing app changes and untracked app/debug files, and no `Policy_Local` push was performed. R80B, R80, R79, R78, R77, R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81A source-verified GC-018 baseline and work order for Workspace Productization RC source map and boundary confirmation only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81A no-commit worker execution for Workspace Productization RC source map and boundary confirmation only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +37,7 @@ Startup acknowledged: current mode=`msea_r81_workspace_productization_release_ca
 
 ## Current Mode
 
-`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
+`msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`
 
 ## Active Boundary
 
@@ -73,7 +75,7 @@ R72D0 is closed bounded at material commit `402bc2c9e`. It repaired one target-c
 
 R72E/R72F are accepted at material commit `b896cc759`, and R72G/R72H docs-only evidence is accepted at material commit `b7a72b748`.
 
-No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, public push, provider/live proof, public/production claim, or automatic downstream governance execution is authorized by this handoff.
+No metrics automation, checker severity change, checker deletion/disablement/retirement/consolidation, Fast Lane standard edit, public-sync mutation, public push, provider/live proof, public/production claim, R81B-R81F execution, or automatic downstream governance execution is authorized by this handoff.
 
 ## Core Guard Self-Protection Authorization - MSEA-R80C Workspace Bootstrap Log Ignore Negation Fix Session Sync
 
@@ -658,6 +660,8 @@ older MSEA material.
 
 ## HEAD Freshness
 
+Current HEAD after R81A source map dispatch material commit: `9e31ff777`.
+
 Current HEAD after R80C Workspace Bootstrap Log Ignore Negation Fix material commit: `bd3a38f57`.
 
 Current HEAD after R80B Workspace AGENTS idempotency follow-up material commit: `81d977d4f`.
@@ -682,11 +686,11 @@ Current HEAD after R75A-E workspace agent workflow material commit: `9f8c5f382`.
 
 Current HEAD after R75 fresh-workspace baseline fix: `0107dbd2e`.
 
-Current HEAD short: `bd3a38f57`.
+Current HEAD short: `9e31ff777`.
 
-Current HEAD full: `bd3a38f57863eaeff98678f0880ee177ca9f8618`.
+Current HEAD full: `9e31ff7775cd9563a690377228d27f0a973737ad`.
 
-Current HEAD parent: `ad4500461`.
+Current HEAD parent: `831deec9c`.
 
 Remote tracking branch: `origin/main`.
 
@@ -694,7 +698,7 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
-Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, R76 workspace profile tiers material commit `72132366e`, R77 workspace onboarding material commits `32eafb699` and `62eedfdce`, R78 paid-user-safe workspace product proof material commit `ebe61599d`, R79 Policy Local workspace dogfood material commit `398671d20`, R80 Adopt Existing Project workspace hardening material commit `5901e1623`, R80B AGENTS idempotency material commit `81d977d4f`, and R80C bootstrap-log negation material commit `bd3a38f57`. Public-sync is current after public commit `f593c58db`, local workspace hidden public core is current at `f593c58`, and `Policy_Local` scaffold is locally committed at `edd92aa`.
+Branch state at handoff-sync authoring: provenance `main` contains PR #22 merge, R73 material closure at `a7be6f2b4`, R74 material closure at `e68fa6d27`, R74 session-sync at `50da896ab`, workspace update-wrapper productization source sync at `8ec987858`, workspace update-wrapper session-sync at `db4d0fb12`, workspace local rule-pack sync at `452c9312d`, R75 workspace productization material commits `9f8c5f382` and `0107dbd2e`, R76 workspace profile tiers material commit `72132366e`, R77 workspace onboarding material commits `32eafb699` and `62eedfdce`, R78 paid-user-safe workspace product proof material commit `ebe61599d`, R79 Policy Local workspace dogfood material commit `398671d20`, R80 Adopt Existing Project workspace hardening material commit `5901e1623`, R80B AGENTS idempotency material commit `81d977d4f`, R80C bootstrap-log negation material commit `bd3a38f57`, and R81A source-map dispatch material commit `9e31ff777`. Public-sync is current after public commit `f593c58db`, local workspace hidden public core is current at `f593c58`, and `Policy_Local` scaffold is locally committed at `edd92aa`.
 
 ## Core Guard Self-Protection Authorization - GitHub Merge Handoff Freshness Sync
 
@@ -955,19 +959,44 @@ Protected paths:
 Rollback boundary: revert only this R81 roadmap session-sync if rejected; do not
 revert material roadmap commit `5500f357c` or older R80 workspace history.
 
+## Core Guard Self-Protection Authorization - MSEA-R81A Source Map Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R81A source-map
+dispatch material commit `9e31ff777`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and current HEAD freshness.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after R81A dispatch material commit. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R81A dispatch session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R81A dispatch pending worker execution. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R81A no-commit worker execution only. |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R81A dispatch, current HEAD freshness, and R81A worker-execution next move. |
+
+Rollback boundary: revert only this R81A session-sync if rejected; do not revert
+material dispatch commit `9e31ff777` or older workspace productization history.
+
 ## Next Allowed Move
 
-Next allowed move is R81A only: author a fresh source-verified GC-018 baseline
-and work order for Workspace Productization RC source map and boundary
-confirmation, using the R81 roadmap above as the roadmap source.
+Next allowed move is R81A no-commit worker execution only: create
+`docs/reference/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`
+and
+`docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_WORKER_RETURN_2026-07-09.md`
+under
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`,
+run required gates, and leave changes uncommitted.
 
-R81A may map workspace scripts, generated guides, profile manifests,
+R81A worker may map workspace scripts, generated guides, profile manifests,
 public-sync scripts, current local workspace generated files, and continuity
-surfaces needed for the provenance/public/local workspace boundary. R81A must
-not edit runtime/source/tests/checkers, mutate `Policy_Local` app code, run
-provider/live proof, create hosted/public/production claims, perform public
-push, execute R81B-R81F early, or reopen checker retirement, hook, or Fast Lane
-changes.
+surfaces needed for the provenance/public/local workspace boundary. R81A worker
+must not edit runtime/source/tests/checkers, mutate scripts, public-sync,
+workspace files, or `Policy_Local` app code, run provider/live proof, create
+hosted/public/production claims, perform public push, execute R81B-R81F early,
+or reopen checker retirement, hook, or Fast Lane changes.
 
 ## Public/Provenance Boundary
 
