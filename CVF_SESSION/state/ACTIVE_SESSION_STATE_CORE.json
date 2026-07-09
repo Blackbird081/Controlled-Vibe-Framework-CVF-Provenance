@@ -79,8 +79,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection",
-  "previousMode": "msea_r80b_workspace_agents_idempotency_follow_up_closed_public_synced_pending_operator_next_selection",
+  "currentMode": "msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018",
+  "previousMode": "msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

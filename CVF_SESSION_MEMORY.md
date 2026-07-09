@@ -33,24 +33,25 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose `Policy_Local` app-change review/cleanup and push planning, paid-user-safe docs refinement, R72F conformance-reference cleanup/reattachment, current GitHub check triage, or the next product roadmap lane; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81A source-verified GC-018 baseline and work order for Workspace Productization RC source map and boundary confirmation only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`
+Current mode marker: `msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
 
-Current mode: `msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`
+Current mode: `msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
 
-`msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`
+`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
 
 Previous mode:
 
-`msea_r80b_workspace_agents_idempotency_follow_up_closed_public_synced_pending_operator_next_selection`
+`msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`
 
 ## Current Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Workspace Productization Release Candidate Roadmap R81 | `5500f357c` | ROADMAP_ACTIVE_PENDING_R81A_GC018; added `docs/roadmaps/CVF_MSEA_R81_WORKSPACE_PRODUCTIZATION_RELEASE_CANDIDATE_ROADMAP_2026-07-09.md` to keep the next product lane focused on CVF Workspace value rather than a downstream use case. Next move is R81A source-verified GC-018/work-order authoring for RC source map and boundary confirmation only. No Policy_Local app logic, legal workflow, retrieval, Memory/RAG, vectorization, provider/live proof, hosted/production claim, checker retirement, hook/Fast Lane edit, public push, or broad governance refactor is authorized. |
 | Workspace Bootstrap Log Ignore Negation Fix R80C | `bd3a38f57` provenance / `f593c58db` public-sync / `edd92aa` Policy_Local | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED_WITH_POLICY_LOCAL_SCAFFOLD_COMMITTED; repaired workspace doctor so gitignore negation rules such as `!docs/CVF_BOOTSTRAP_LOG_*.md` do not produce a false bootstrap-log warning. Local `CVF-Workspace` hidden public core updated to `f593c58`; `Policy_Local` doctor and workspace-wide gate report PASS 17/17 without warning. `Policy_Local` local commit `edd92aa` added CVF scaffold and `.gitignore` exception only; `Policy_Local` remains `master...origin/master [ahead 9]` with pre-existing app changes and untracked app/debug files. No `Policy_Local` push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Workspace AGENTS Idempotency Follow-Up R80B | `81d977d4f` provenance / `2277a5423` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED; repaired `scripts/new-cvf-workspace.ps1` so rerunning workspace bootstrap strips stale CVF merge blocks, refreshes CVF-generated `AGENTS.md` in place, and inserts only one CVF merge block for custom downstream `AGENTS.md` content. Local `CVF-Workspace` hidden public core updated to `2277a54`; root `New-CVF-Governed-Project.ps1` rerun against `Policy_Local` PASS; `Policy_Local` `AGENTS.md` has `MERGE_BLOCK_COUNT=0`; workspace-wide gate reports `Policy_Local` `ENFORCED_PASS` with the known bootstrap-log ignore warning. No `Policy_Local` commit/push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
 | Adopt Existing Project Workspace Hardening R80 | `5901e1623` provenance / `2d1b4a7f8` public-sync | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED_WITH_R80B_FOLLOW_UP; added public-safe workspace new-project/adopt-existing enforcement, promotion support, installer wrapper pass-through, public-sync allowlist support, and workspace rules guidance. Local `CVF-Workspace` hidden public core updated to `2d1b4a7`; `Policy_Local` was promoted out of `WORKSPACE_PROJECT_ENFORCEMENT_BASELINE.json` and final workspace-wide gate reports `Policy_Local` `ENFORCED_PASS` with one warning that `Policy_Local/.gitignore` hides `docs/CVF_BOOTSTRAP_LOG_20260709.md`. R80B follow-up remains pending from stash `r80b-agents-idempotency` for `scripts/new-cvf-workspace.ps1` AGENTS bootstrap idempotency. No `Policy_Local` commit/push, checker/Fast Lane edit, runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed. |
@@ -189,7 +190,7 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`
+Mode: `msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
 
 R80C Workspace Bootstrap Log Ignore Negation Fix is closed bounded and
 public-synced, and `Policy_Local` scaffold is committed locally. The next

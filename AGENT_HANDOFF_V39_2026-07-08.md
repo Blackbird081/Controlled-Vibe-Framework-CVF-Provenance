@@ -2,14 +2,14 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R80C Workspace Bootstrap Log Ignore Negation Fix closure and public-sync.
+Purpose: compact current-session continuity after MSEA-R81 Workspace Productization Release Candidate Roadmap activation.
 Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, unbounded public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R80C Workspace Bootstrap Log Ignore Negation Fix closure and public-sync, and route the next executable move back to operator selection.
+Provide compact active-session continuity after MSEA-R81 Workspace Productization Release Candidate Roadmap activation, and route the next executable move to R81A GC-018/work-order authoring.
 
 ## Scope / Target / Owner Boundary
 
@@ -21,7 +21,7 @@ R80C Workspace Bootstrap Log Ignore Negation Fix is closed bounded and public-sy
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=operator may choose `Policy_Local` app-change review/cleanup and push planning, paid-user-safe docs refinement, R72F conformance-reference cleanup/reattachment, current GitHub check triage, or the next product roadmap lane; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81A source-verified GC-018 baseline and work order for Workspace Productization RC source map and boundary confirmation only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r80c_workspace_bootstrap_log_ignore_neg
 
 ## Current Mode
 
-`msea_r80c_workspace_bootstrap_log_ignore_negation_fix_closed_public_synced_policy_local_scaffold_committed_pending_operator_next_selection`
+`msea_r81_workspace_productization_release_candidate_roadmap_active_pending_r81a_gc018`
 
 ## Active Boundary
 
@@ -902,16 +902,72 @@ Latest closed numbered LHW wave: LHW24.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this R80C session-sync |
 
+## 2026-07-09 MSEA-R81 Workspace Productization Roadmap
+
+R81 Workspace Productization Release Candidate Roadmap is active at provenance
+material commit `5500f357c`.
+
+Roadmap:
+
+`docs/roadmaps/CVF_MSEA_R81_WORKSPACE_PRODUCTIZATION_RELEASE_CANDIDATE_ROADMAP_2026-07-09.md`
+
+R81 keeps the next product lane focused on CVF Workspace itself:
+provenance/public/local workspace boundary, public-safe workspace core,
+selected local rule-pack and continuity inheritance, disposable fresh/adopted
+project smoke proof, and a compact RC checklist.
+
+Material gates before commit:
+
+| Check | Result |
+|---|---|
+| Markdown structural completeness | PASS |
+| Governed artifact checker read-ahead | PASS |
+| Public export disposition | PASS |
+| Roadmap closure freshness | PASS |
+| Work-order dispatch quality | PASS |
+| Pre-implementation autorun | PASS 75/75 |
+| Commit steward preflight | PASS |
+| Material pre-commit hook | PASS 80/80 |
+
+No Policy_Local app logic, legal workflow, retrieval, Memory/RAG,
+vectorization, provider/live proof, hosted/production claim, checker
+retirement, hook/Fast Lane edit, public push, or broad governance refactor was
+performed.
+
+## Core Guard Self-Protection Authorization - MSEA-R81 Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R81 roadmap
+material commit `5500f357c`, including active mode, next allowed move,
+generated active state, bootstrap read model, front-door continuity, active
+handoff, and roadmap state entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after R81 roadmap material commit. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R81 roadmap session-sync. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R81 roadmap active pending R81A dispatch. |
+| `CVF_SESSION/state/entries/mseaR81WorkspaceProductizationReleaseCandidateRoadmap20260709.json` | Record R81 roadmap material commit and boundary summary. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R81A source-verified GC-018/work-order authoring only. |
+
+Rollback boundary: revert only this R81 roadmap session-sync if rejected; do not
+revert material roadmap commit `5500f357c` or older R80 workspace history.
+
 ## Next Allowed Move
 
-Operator may choose `Policy_Local` app-change review/cleanup and push planning,
-paid-user-safe documentation refinement, conformance-reference cleanup or
-reattachment for the R72F candidate family, triage GitHub checks only if a
-current failing check is confirmed, or select the next product roadmap lane. No
-automatic checker retirement, checker deletion/disablement, hook/Fast Lane edit,
-public-sync mutation, public push beyond the completed R80C export,
-runtime/provider/live proof, hosted/production claim, Memory/RAG, retrieval,
-vectorization, P3 reopen, or legal workflow is authorized by this handoff.
+Next allowed move is R81A only: author a fresh source-verified GC-018 baseline
+and work order for Workspace Productization RC source map and boundary
+confirmation, using the R81 roadmap above as the roadmap source.
+
+R81A may map workspace scripts, generated guides, profile manifests,
+public-sync scripts, current local workspace generated files, and continuity
+surfaces needed for the provenance/public/local workspace boundary. R81A must
+not edit runtime/source/tests/checkers, mutate `Policy_Local` app code, run
+provider/live proof, create hosted/public/production claims, perform public
+push, execute R81B-R81F early, or reopen checker retirement, hook, or Fast Lane
+changes.
 
 ## Public/Provenance Boundary
 
