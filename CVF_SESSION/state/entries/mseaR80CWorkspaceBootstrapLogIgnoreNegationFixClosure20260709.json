@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1615,
+  "stateKey": "mseaR80CWorkspaceBootstrapLogIgnoreNegationFixClosure20260709",
+  "value": "CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED_WITH_POLICY_LOCAL_SCAFFOLD_COMMITTED. Provenance material commit bd3a38f57 repaired scripts/check_cvf_workspace_agent_enforcement.ps1 so gitignore negation rules such as !docs/CVF_BOOTSTRAP_LOG_*.md do not produce a false bootstrap-log visibility warning. Review evidence is recorded in docs/reviews/CVF_MSEA_R80C_WORKSPACE_BOOTSTRAP_LOG_IGNORE_NEGATION_FIX_2026-07-09.md. Public-sync commit f593c58db exported the bounded workspace-kit doctor update. Local CVF-Workspace hidden public core updated to f593c58, workspace update PASS, and Policy_Local doctor/workspace gate now report PASS 17/17 without warning. Policy_Local local commit edd92aa added the CVF workspace scaffold and .gitignore exception only; Policy_Local remains master...origin/master ahead 9 with pre-existing app changes and untracked app/debug files, and no Policy_Local push was performed. No provider/live proof, checker/Fast Lane edit, hosted/production claim, Memory/RAG, retrieval, vectorization, P3 reopen, or legal workflow was performed."
+}
