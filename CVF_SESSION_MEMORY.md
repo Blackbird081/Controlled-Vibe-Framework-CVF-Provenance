@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the integrated R85 work order from dispatch commit f350d506d; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`
+Current mode marker: `msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`
 
-Current mode: `msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`
+Current mode: `msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`
 
-`msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`
+`msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`
 
 Previous mode:
 
-`msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`
+`msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R85 residual value absorption closure | `6872dbc94` | REVIEWER_ACCEPTED_BOUNDED. Reconciled 27/27 source files, created bounded BUILD-loop and public-trust owners, exported public commit `c2663b1ee`, and closed the historical R64-R70 roadmap. |
 | MSEA-R85 residual value absorption dispatch | `f350d506d` | DISPATCH_READY for terminal 27-file reconciliation, bounded BUILD-loop and public-trust owner surfaces, five-minute demo, public-safe projection, and closure. |
 | MSEA-R84 Lean Governance Follow-Through closure | `a4b504b53` | CLOSED_PASS_BOUNDED. Dispatch-authenticated compact profile; full compatibility; protected controls remain blocking; 175 focused tests pass. |
 | MSEA-R84 Lean Governance Follow-Through dispatch | `dc91b6807` | DISPATCH_READY for one compact docs-only worker-return profile and one bounded checker lifecycle disposition; no public-sync or global demotion. |
@@ -65,13 +66,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`
+Mode: `msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`
 
-Next allowed move: execute the integrated R85 work order from dispatch commit
-`f350d506d`. Keep the lane documentation/schema-only until the validated
-public-safe projection step. No checker/hook, runtime/provider/live,
-private-output, Memory/RAG, retrieval, or unrelated repo work is authorized.
-Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: select and source-verify the next repository, check the
+conditional reopen index, and author a fresh bounded packet before reading or
+absorbing it. R85 and the historical R64-R70 source family are closed. No
+checker/hook, runtime/provider/live, private-output, Memory/RAG, retrieval, or
+new repo mutation is authorized by R85. Latest closed numbered LHW wave remains
+`LHW24`.
 
 The parked R73F checker-retirement candidate must not reopen until its active
 conformance and evidence-pack references are removed or reattached under a

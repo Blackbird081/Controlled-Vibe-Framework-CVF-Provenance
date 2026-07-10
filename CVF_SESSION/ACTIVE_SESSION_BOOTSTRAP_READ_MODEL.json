@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next",
+  "currentMode": "msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R85 residual value absorption is DISPATCH_READY at material commit f350d506d. Next allowed move is execution of the integrated R85 work order: reconcile all 27 Gop y CVF files, create bounded CVF-native BUILD-loop and public-trust owner surfaces, validate a five-minute trust demo, project only public-safe outputs through the sibling public-sync clone, and close the historical absorption lane. No checker/hook, runtime/provider/live work, private/generated output, Memory/RAG, retrieval, or unrelated repository work is authorized. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R85 residual value absorption is REVIEWER_ACCEPTED_BOUNDED at provenance material commit 6872dbc94 and public commit c2663b1ee. The 27-file Gop y CVF source family and historical R64-R70 roadmap are closed; EI-06 through EI-10 have bounded CVF-native owners, and no runtime/checker debt is inherited. Next allowed move is to select and source-verify the next repository, check the conditional reopen index, and author a fresh bounded packet before absorption. No checker/hook, runtime/provider/live work, private/generated output, Memory/RAG, retrieval, or new repository mutation is authorized by R85. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

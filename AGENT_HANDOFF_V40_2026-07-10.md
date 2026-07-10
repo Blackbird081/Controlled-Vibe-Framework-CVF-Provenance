@@ -4,7 +4,7 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity for MSEA-R85 residual value absorption execution.
+Purpose: compact continuity after MSEA-R85 residual value absorption closure.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the integrated R85 work order from dispatch commit f350d506d; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,16 @@ Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption
 
 ## Current Mode
 
-`msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`
+`msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`
 
 ## Latest Work / Changes
+
+MSEA-R85 closed `REVIEWER_ACCEPTED_BOUNDED` at provenance material commit
+`6872dbc94` and public commit `c2663b1ee`. The fresh corpus is 27 files and
+3,704 lines with 27 terminal rows and zero unresolved items. EI-06 through
+EI-10 now have optional BUILD-loop, public-trust/threat, and five-minute-demo
+owners. The historical R64-R70 roadmap is closed without crediting unrelated
+reuse of R66-R70 tranche numbers. No runtime/checker debt remains inherited.
 
 MSEA-R85 residual value absorption is dispatched at `f350d506d`. It authorizes
 terminal reconciliation of all 27 files under `Gop y CVF`, bounded CVF-native
@@ -98,10 +105,15 @@ public push occurred.
 
 ## Active Boundary
 
-R85 is the active implementation lane. Provenance remains the source of truth;
-public-sync mutation is limited to the exact validated R85 public-safe outputs.
+R85 and its historical source family are closed. Provenance remains the source
+of truth; no new repository absorption is active until a source-verified target
+and fresh packet are selected.
 
 ## Current HEAD
+
+R85 closure material commit before this session-sync: `6872dbc94`.
+
+R85 public-safe projection commit: `c2663b1ee`.
 
 R85 dispatch material commit before this session-sync: `f350d506d`.
 
@@ -144,11 +156,27 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: execute the integrated R85 work order from `f350d506d`,
-validate the exact public-safe projection, close the historical absorption
-lane, and synchronize continuity. Checker/hook, runtime/provider/live,
-private-output, Memory/RAG, retrieval, and unrelated repository work remain
-outside scope. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: select and source-verify the next repository, check the
+conditional reopen index, and author a fresh bounded packet before absorption.
+R85 does not authorize checker/hook, runtime/provider/live, private-output,
+Memory/RAG, retrieval, or new repository mutation. Latest closed numbered LHW
+wave remains `LHW24`.
+
+## Core Guard Self-Protection Authorization - MSEA-R85 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R85 closure
+material commit `6872dbc94` and public commit `c2663b1ee`.
+
+Protected paths: `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V40_2026-07-10.md`,
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+`CVF_SESSION/state/entries/nextAllowedMove.json`, and generated active-session
+state/read-model artifacts.
+
+Operator authorization: absorb and preserve all useful value in `Gop y CVF`
+before moving to another repository.
+
+Rollback boundary: revert only this session-sync; do not revert R85 material
+or public commits.
 
 ## Core Guard Self-Protection Authorization - MSEA-R85 Dispatch Session Sync
 
