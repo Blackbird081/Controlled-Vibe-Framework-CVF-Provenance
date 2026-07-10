@@ -98,6 +98,8 @@ R83 dispatch material commit before this session-sync: `22262eb6`.
 
 R83 workspace operability implementation material commit: `202d7dd92`.
 
+R83 pre-R83 manifest compatibility fix commit: `38672f496`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
