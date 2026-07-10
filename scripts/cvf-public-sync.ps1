@@ -73,10 +73,18 @@ $ALLOWED_SCRIPT_FILES = @(
     'scripts\check_cvf_workspace_new_project_enforcement.ps1',
     'scripts\ingest_cvf_downstream_knowledge.ps1',
     'scripts\install_cvf_hooks.ps1',
+    'scripts\install_cvf_workspace.ps1',
+    'scripts\build_cvf_workspace_distribution.ps1',
     'scripts\new-cvf-workspace.ps1',
+    'scripts\sync_cvf_workspace_public_profile.ps1',
     'scripts\update_cvf_workspace_public_core.ps1',
     'scripts\w114_cp7_multi_sample_downstream_proof.ps1',
     'scripts\write_cvf_workspace_web_evidence_bridge.ps1'
+)
+
+$ALLOWED_WORKSPACE_TEMPLATE_FILES = @(
+    'workspace_templates\CVF_WORKSPACE_MEMORY_TEMPLATE.md',
+    'workspace_templates\AGENT_HANDOFF_TEMPLATE.md'
 )
 
 # Mapped exports keep private provenance root files private while still
@@ -101,11 +109,18 @@ $WORKSPACE_KIT_FILES = @(
     'docs\reference\CVF_NEW_MACHINE_SETUP_CHECKLIST.md',
     'docs\reference\CVF_W114_PUBLIC_EVIDENCE_PACKET_2026-04-23.md',
     'docs\reference\CVF_WORKSPACE_RULES.md',
+    'docs\reference\CVF_WORKSPACE_PROFILE_TIERS.md',
+    'docs\reference\CVF_WORKSPACE_PAID_USER_AUTHORING_GUIDE.md',
+    'docs\reference\CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md',
+    'docs\reference\CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md',
+    'docs\reference\CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md',
+    'docs\reference\workspace_distribution\README.md',
+    'docs\reference\workspace_distribution\CVF_WORKSPACE_DISTRIBUTION_MANIFEST.json',
     'governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md',
     'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_AGENTS.md',
     'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_CONTINUATION.md',
     'governance\toolkit\05_OPERATION\CVF_WORKSPACE_ISOLATION_GUARD.md'
-) + $ALLOWED_SCRIPT_FILES
+) + $ALLOWED_WORKSPACE_TEMPLATE_FILES + $ALLOWED_SCRIPT_FILES
 
 # Allowlist: docs/ sub-paths that may be synced
 # baselines/, reviews/, roadmaps/ are intentionally absent
@@ -170,6 +185,11 @@ function Get-AllowedFiles {
     foreach ($scriptPath in $ALLOWED_SCRIPT_FILES) {
         $full = Join-Path $GOVERNANCE_ROOT $scriptPath
         if (Test-Path $full -PathType Leaf) { $files.Add($scriptPath) }
+    }
+
+    foreach ($templatePath in $ALLOWED_WORKSPACE_TEMPLATE_FILES) {
+        $full = Join-Path $GOVERNANCE_ROOT $templatePath
+        if (Test-Path $full -PathType Leaf) { $files.Add($templatePath) }
     }
 
     # Allowed directory trees
