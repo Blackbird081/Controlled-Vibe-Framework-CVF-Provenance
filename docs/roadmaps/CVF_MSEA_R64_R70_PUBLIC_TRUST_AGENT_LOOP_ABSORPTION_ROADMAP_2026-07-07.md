@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_R64_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-07
 
@@ -91,25 +91,25 @@ or release gates exist.
 
 | Tranche | Title | Objective | Primary output | Boundary |
 | --- | --- | --- | --- | --- |
-| R64 | External Critique Intake And Public Drift Decision | Classify the `Gop y CVF` pack, verify public drift candidates, and decide R65-R68 routing | worker return plus classification matrix | no public-sync edit, no runtime, no checker |
-| R65 | Public P0 Drift Fix Execution | Repair verified public trust drift in the sibling public-sync clone | public docs patch and public-sync evidence | public-sync only; no new policy module beyond drift fixes |
-| R66 | Agent Loop Discipline Policy And Schema Admission | Add BUILD-stage micro-loop doctrine, receipt schema, metrics, work-order addendum, and example | policy/schema docs | policy/schema-defined only, not runtime-enforced |
-| R67 | Product Trust Doctrine And Public Threat Model | Add product-feeling doctrine, five-minute trust demo, threat model, and cost-loop posture | public trust docs | no measured UX or safety claim |
-| R68 | Agent Loop Validator Feasibility Decision | Decide whether to implement receipt validator/checker or hold at schema level | decision packet | no checker until fresh authorization |
-| R69 | Public Snapshot Refresh | Refresh public current-state/evidence index after accepted public docs changes | public snapshot/catalog evidence | public-safe summary only |
-| R70 | Provenance Closure And Session Sync | Close the absorption lane, sync session state, and push appropriate repos | closure/session-sync | no new material scope |
+| R64 | External Critique Intake And Public Drift Decision | Classify the `Gop y CVF` pack, verify public drift candidates, and decide R65-R68 routing | R64 classification matrix and completion review | PASS |
+| R65 | Public P0 Drift Fix Execution | Repair verified public trust drift in the sibling public-sync clone | R65A-R65D closure evidence and public history | PASS |
+| R66 | Agent Loop Discipline Policy And Schema Admission | Preserve useful BUILD-loop doctrine, schema, metrics, and compact work-order selection | fulfilled by R85 build-loop reference family | PASS_VIA_R85; unrelated historical R66 work is not credited |
+| R67 | Product Trust Doctrine And Public Threat Model | Preserve trust doctrine, five-minute demo, and threat model | fulfilled by R85 trust reference and demo | PASS_VIA_R85; unrelated historical R67 work is not credited |
+| R68 | Agent Loop Validator Feasibility Decision | Decide whether to implement receipt validator/checker | R85 terminal decision: no checker/runtime admission | PASS_VIA_R85; unrelated historical R68 work is not credited |
+| R69 | Public Snapshot Refresh | Publish bounded public-safe owner surfaces | public commit `c2663b1ee` | PASS_VIA_R85; unrelated historical R69 work is not credited |
+| R70 | Provenance Closure And Session Sync | Close the absorption lane and sync session state | R85 completion review and following session-sync | PASS_VIA_R85; unrelated historical R70 work is not credited |
 
 ## Acceptance Criteria
 
 | Criterion | Evidence required | Status |
 | --- | --- | --- |
-| R64 dispatch packet exists | GC-018 baseline and work order under governed paths | READY_BY_THIS_ROADMAP |
-| External critique is classified before action | R64 Required Absorption Table and classification matrix | PENDING_R64 |
-| Public drift fixes happen only after verification | R65 source-verified public-sync work order | PENDING_R65 |
-| Agent-loop discipline is bounded | R66 status uses policy/schema language, not runtime enforcement language | PENDING_R66 |
-| Trust doctrine is bounded | R67 records no measured UX/safety claim without evidence | PENDING_R67 |
-| Checker/runtime decision is separate | R68 release-or-hold decision before checker work | PENDING_R68 |
-| Public/provenance boundary preserved | public-sync clone used for public changes; provenance stores private decision evidence | PENDING_R65_R70 |
+| R64 dispatch packet exists | GC-018 baseline and work order under governed paths | PASS |
+| External critique is classified before action | R64 Required Absorption Table and classification matrix | PASS |
+| Public drift fixes happen only after verification | R65 source-verified public-sync work order | PASS |
+| Agent-loop discipline is bounded | R85 optional playbook and validated schema | PASS |
+| Trust doctrine is bounded | R85 status matrix and no measured trust claim | PASS |
+| Checker/runtime decision is separate | R85 no-admission decision | PASS |
+| Public/provenance boundary preserved | exact 8-file public commit `c2663b1ee`; reconciliation stays private | PASS |
 
 ## Verification / Evidence
 
@@ -159,23 +159,57 @@ Required lane-level verification:
 | Field | Evidence |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_agent_absorption_table.py`; `governance/compat/check_public_export_disposition.py` |
-| literalTokensReviewed | Purpose; Scope; Authorization / Decision; Why; Non-Goals; Design Control Gate; Work Plan; Acceptance Criteria; Verification / Evidence; External Knowledge Intake Routing; Dual Agent Surface Matrix; Public Export Disposition; Claim Boundary; ROADMAP_READY_FOR_R64_DISPATCH; DEFERRED_PRIVATE_ONLY |
+| literalTokensReviewed | Purpose; Scope; Authorization / Decision; Why; Non-Goals; Design Control Gate; Work Plan; Acceptance Criteria; Verification / Evidence; External Knowledge Intake Routing; Dual Agent Surface Matrix; Public Export Disposition; Machine Closure Package; Claim Boundary; CLOSED_PASS_BOUNDED; EXPORTED |
 | gateRunPurpose | Gate runs are confirmation/evidence after checker source read-ahead, not first discovery. |
 | claimBoundary | Read-ahead covers this roadmap and the immediate R64 dispatch lane only. |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | R64 and R85 work orders | dispatch authority retained; accepted reviews carry final dispositions | PASS |
+| Completion or reviewer artifact | R64 completion review and R85 completion review | both accepted bounded | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check passes; source family continues R64 | PASS |
+| Registry Markdown | R85 source reconciliation matrix | bounded inline manifest and terminal ledger | PASS |
+| External evidence digest | R85 source reconciliation matrix | canonical manifest SHA-256 `a00f239eccbaa15f49fa287562f2357051091597b189785510ddf76caaa6ceca` | PASS |
+| System loop interlock | N/A with reason: roadmap closure changes no runtime/system loop. | no interlock mutation required | N/A with reason |
+| Session continuity | active session front door and generated state | separate session-sync follows material closure | N/A with reason |
+| R64 intake | R64 classification matrix and completion review | accepted bounded | PASS |
+| R65 public drift | R65A-R65D chain and current public history | accepted and published | PASS |
+| Residual source value | R85 source reconciliation matrix | 27/27 terminal rows | PASS |
+| R66/R67 replacement | R85 build-loop and public-trust owner surfaces | schema/docs validated | PASS |
+| R68 decision | R85 terminal admission decision | no runtime/checker inherited reopen | PASS |
+| R69 public projection | public commit `c2663b1ee` | static CI 8/8 | PASS |
+| R70 closure | R85 completion review | accepted bounded | PASS |
+| Historical numbering truth | this roadmap Work Plan | unrelated later R66-R70 work is not credited | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Build-loop schema version | `cvf.agent-build-loop-receipt.v1` | R85 example matches | PASS |
+| Receipt authority | process evidence only | no correctness/runtime claim | PASS |
+| Negative boundary | invalid continue/freeze paths rejected | two negative fixtures rejected | PASS |
+
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: this roadmap is private provenance planning. Public-sync export may
-occur only through a later authorized public-sync tranche from the sibling
-public-sync clone.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-sync commit: `c2663b1ee`
+
+Public artifact paths: `docs/INDEX.md`; `docs/guides/CVF_5_MINUTE_TRUST_DEMO.md`; `docs/reference/agent_build_loop/`; `docs/reference/public_trust/`
+
+Public-safe R85 owner surfaces and index pointers were pushed from the sibling
+public-sync clone at commit `c2663b1ee`. This private roadmap and source
+reconciliation evidence were not exported.
 
 ## Claim Boundary
 
-This roadmap authorizes R64 dispatch authoring and a docs-only external critique
-classification lane. It does not authorize public-sync mutation, source/test
-edits, runtime/provider/MCP proof, checker implementation, production
-Memory/RAG release, private-output read, retrieval/vectorization, use-case/legal
-workflow, direct external source import, hosted/public/production readiness
-claim, or direct downstream release.
+This roadmap is closed through the source-backed R64/R65 history and bounded
+R85 replacement for its previously unfulfilled residual-value tranches. It
+does not claim runtime/provider/MCP proof, checker implementation, production
+Memory/RAG, private-output reads, retrieval/vectorization, use-case/legal
+workflow, direct external import, or hosted/production readiness.

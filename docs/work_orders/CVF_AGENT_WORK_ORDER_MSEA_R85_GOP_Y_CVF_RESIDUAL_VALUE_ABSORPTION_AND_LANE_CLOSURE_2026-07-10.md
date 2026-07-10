@@ -297,14 +297,14 @@ before moving to another repository. No intermediate pause is required.
 - Snapshot time: 2026-07-10 local source audit.
 - Enumeration command: `rg --files --hidden --no-ignore "Gop y CVF"`.
 - Manifest artifact or inline manifest: `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md`.
-- Manifest hash: sha256:c6169444ee6978e4230098a3641ea51ca3c8bf6389a1b223aad5e6fdd0136a14.
+- Manifest hash: sha256:a00f239eccbaa15f49fa287562f2357051091597b189785510ddf76caaa6ceca.
 - Processing ledger artifact or inline ledger: `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md`.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE.
 - Reconciliation: manifest=27 ledger_terminal=27 exclusions=0 unresolved=0.
 - Unresolved files: 0
 - Declared exclusions: none.
 - Unreadable or unsupported files: none.
-- Aggregation check: 27 files and 2,479 lines reconciled against per-file hashes.
+- Aggregation check: 27 files and 3,704 lines reconciled against per-file hashes.
 - Drift check: fresh 2026-07-10 hash set supersedes the R64 intake snapshot for this closure.
 - Output traceability: each file maps to EI-01 through EI-13 and a CVF owner or terminal no-import decision.
 - Adversarial verification: direct-import, duplicate-owner, unsupported-runtime, and private-output risks reviewed.

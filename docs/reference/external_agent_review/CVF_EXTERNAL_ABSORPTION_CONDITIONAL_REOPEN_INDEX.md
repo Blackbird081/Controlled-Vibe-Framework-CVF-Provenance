@@ -80,11 +80,11 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 - Manifest hash: not generated; bounded index seed is path-listed and command-backed in the working session.
 - Processing ledger artifact or inline ledger: inline candidate index table in this file.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE
-- Reconciliation: manifest=9 seed-source artifacts; ledger_terminal=17 indexed candidate rows; exclusions=0; unresolved=0
+- Reconciliation: manifest=10 source artifacts; ledger_terminal=17 indexed candidate rows plus 1 terminal source-family closure; exclusions=0; unresolved=0
 - Unresolved files: 0
 - Declared exclusions: none
 - Unreadable or unsupported files: none
-- Aggregation check: 17 indexed rows are sourced from 9 governed artifacts listed below.
+- Aggregation check: 17 indexed candidate rows and 1 terminal source-family closure are sourced from 10 governed artifacts listed below.
 - Drift check: future external absorption closeouts must update this file or state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON`.
 - Output traceability: each indexed row names the source artifact and owner surface.
 - Adversarial verification: direct-import rejection alone is not accepted as no-value closure when CVF-native package, runtime, or checker value remains.
@@ -103,6 +103,7 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md` | Agent-skills package, runtime, and checker candidate triage | READ |
 | `docs/reviews/CVF_CGE_R2_CODEGRAPH_RESCAN_VALUE_AUDIT_AND_CORRECTION_2026-06-29.md` | CodeGraph second-pass value audit and package-candidate correction | READ |
 | `docs/reference/agent_system_skills/registry/entries/cvf-code-intelligence-context-review.json` | CodeGraph metadata-only ASSF package candidate created after CGE-R2 rescan | READ |
+| `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md` | Terminal 27-file `Gop y CVF` residual-value reconciliation | READ |
 
 ## Candidate Index
 
@@ -126,6 +127,12 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `AGSK-activation-resolver-runtime` | Agent Skills AGSK | `RUNTIME_CANDIDATE` | Risk-aware package resolver states could become useful executable selection behavior. | `PARKED_UNTIL_CONDITION` | Reopen after at least one package reaches APPROVED state through a later package promotion review. | `docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md` | Resolver runtime, ACTIVE package selection behavior |
 | `AGSK-package-anatomy-checker` | Agent Skills AGSK | `CHECKER_CANDIDATE` | Package anatomy checker may become useful after concrete package fixtures expose a repeated defect or high-risk gap. | `PARKED_UNTIL_CONDITION` | Reopen only after AGSK-T4 and AGSK-T5 close and a concrete repeated defect or high-risk gap is demonstrated by a package instance. | `docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md` | Checker implementation, hook-chain mutation |
 
+## Terminal Source-Family Closures
+
+| Source family | Source evidence | Terminal status | Value retained | Reopen disposition |
+| --- | --- | --- | --- | --- |
+| `Gop y CVF` EI-01 through EI-13 | `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md` | `RECONCILED_NO_REOPEN` | EI-01 through EI-04 closed in R65A; EI-06 through EI-10 are owned by R85 CVF-native references; EI-11 through EI-13 retain reject/no-new-value decisions | NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON: useful docs/schema value is absorbed; runtime/checker expansion lacks a current source-backed value case and requires a fresh independent problem if ever proposed |
+
 ## External Absorption Value Conversion Matrix
 
 | Source item | Value extracted | Conversion lane | CVF target surface | Next governed action | Runtime/package boundary |
@@ -136,6 +143,15 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | CodeGraph guards plus PINT, MSEA, TKG, EverOS checker ideas | Several checker candidates may become useful after repeated misses or source-owned behavior exists. | `CHECKER_CANDIDATE` | Pending future `governance/compat` checker work orders | Reopen only when row-specific evidence thresholds are met | No checker wiring from this index |
 | Direct external implementations | Direct package, adapter, runtime, MCP, daemon, and public-interface import remains rejected without fresh CVF authorization. | `REJECT_DIRECT_IMPORT` | CVF-native rewrite lanes only | Use this index to preserve value without copying foreign implementation authority. | Direct import remains blocked |
 | Already-owned duplicate material | Rows with no remaining package, runtime, checker, or doctrine delta stay outside this index. | `NO_PACKAGE_OR_RUNTIME_VALUE` | Existing CVF owner surfaces | State no-index reason in the closeout. | No runtime or package behavior |
+
+## Overlap And Novelty Classification
+
+| Source item or group | Existing CVF owner surface checked | Overlap disposition | Novelty / delta | Action |
+| --- | --- | --- | --- | --- |
+| Existing indexed candidates | existing governed owner paths in the Candidate Index | CONFIRMED_EXISTING | R85 does not alter their evidence thresholds or authority | retain all 17 candidate rows unchanged |
+| `Gop y CVF` EI-01 through EI-05 | `docs/reference/CVF_MSEA_R64_EXTERNAL_CRITIQUE_INTAKE_CLASSIFICATION_MATRIX_2026-07-07.md` and R65A closure | CONFIRMED_EXISTING | prior public-drift treatment remains authoritative | record terminal source-family closure |
+| `Gop y CVF` EI-06 through EI-10 | `docs/reference/agent_build_loop/`; `docs/reference/public_trust/`; `docs/guides/CVF_5_MINUTE_TRUST_DEMO.md` | ENRICH_EXISTING | R85 adds bounded CVF-native owner surfaces without runtime/checker admission | close source-family row with no conditional reopen |
+| `Gop y CVF` EI-11 through EI-13 | `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md` | NO_NEW_VALUE | reject and structural-only decisions remain terminal | no candidate-index row |
 
 ## Future Update Rule
 

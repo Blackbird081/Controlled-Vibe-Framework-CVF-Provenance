@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INTEGRATED_EXECUTION_AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -59,11 +59,11 @@ blocks closure.
 
 | Tranche | Objective | Exit evidence | Status |
 |---|---|---|---|
-| R85A | Reverify corpus and current owners | 27-file hash manifest and source map | AUTHORIZED |
-| R85B | Absorb BUILD-loop value | playbook, JSON schema/example, metrics and cost boundary | AUTHORIZED |
-| R85C | Absorb trust/threat/demo value | trust model and five-minute guide | AUTHORIZED |
-| R85D | Reconcile and close | per-file ledger, reopen-index correction, old-roadmap closure | AUTHORIZED |
-| R85E | Public-safe projection | exact public diff, static checks, commits, session sync | AUTHORIZED |
+| R85A | Reverify corpus and current owners | 27-file hash manifest and source map | PASS |
+| R85B | Absorb BUILD-loop value | playbook, JSON schema/example, metrics and cost boundary | PASS |
+| R85C | Absorb trust/threat/demo value | trust model and five-minute guide | PASS |
+| R85D | Reconcile and close | per-file ledger, reopen-index correction, old-roadmap closure | PASS |
+| R85E | Public-safe projection | exact public diff, static checks, commits, session sync | PASS |
 
 ## Work Plan
 
@@ -114,14 +114,14 @@ public-surface scans, and committed-range autorun gates.
 - Snapshot time: 2026-07-10 local source audit.
 - Enumeration command: `rg --files --hidden --no-ignore "Gop y CVF"`.
 - Manifest artifact or inline manifest: `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md`.
-- Manifest hash: sha256:c6169444ee6978e4230098a3641ea51ca3c8bf6389a1b223aad5e6fdd0136a14.
+- Manifest hash: sha256:a00f239eccbaa15f49fa287562f2357051091597b189785510ddf76caaa6ceca.
 - Processing ledger artifact or inline ledger: `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md`.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE.
 - Reconciliation: manifest=27 ledger_terminal=27 exclusions=0 unresolved=0.
 - Unresolved files: 0
 - Declared exclusions: none.
 - Unreadable or unsupported files: none.
-- Aggregation check: 27 files and 2,479 lines reconciled against per-file hashes.
+- Aggregation check: 27 files and 3,704 lines reconciled against per-file hashes.
 - Drift check: fresh 2026-07-10 hash set supersedes the R64 intake snapshot for this closure.
 - Output traceability: each file maps to EI-01 through EI-13 and a CVF owner or terminal no-import decision.
 - Adversarial verification: direct-import, duplicate-owner, unsupported-runtime, and private-output risks reviewed.
@@ -182,12 +182,52 @@ public-surface scans, and committed-range autorun gates.
 | claimLanguage | CVF-native doctrine, schema, example, guide, and source reconciliation |
 | forbiddenExpansion | no runtime/checker/provider/live/private-output/other-repo work |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | R85 work order | dispatch authority retained; completion review carries final disposition | PASS |
+| Completion or reviewer artifact | R85 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Corpus | R85 source reconciliation matrix | 27 files, 3,704 lines, 27 terminal rows, unresolved=0 | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check passes; R85 continues the already governed R64 source family | PASS |
+| Registry Markdown | R85 source reconciliation matrix | bounded inline manifest and terminal ledger | PASS |
+| External evidence digest | R85 source reconciliation matrix | canonical manifest SHA-256 `a00f239eccbaa15f49fa287562f2357051091597b189785510ddf76caaa6ceca` | PASS |
+| System loop interlock | N/A with reason: R85 changes no runtime/system loop. | no interlock mutation required | N/A with reason |
+| Build loop | `docs/reference/agent_build_loop/` | Draft 2020-12 schema and example validation | PASS |
+| Public trust | `docs/reference/public_trust/` | 11-threat status matrix and claim boundary | PASS |
+| Demo | `docs/guides/CVF_5_MINUTE_TRUST_DEMO.md` | explicit structure-only/live split | PASS |
+| Reopen index | external absorption conditional reopen index | `RECONCILED_NO_REOPEN` row | PASS |
+| Public projection | sibling public-sync commit `c2663b1ee` | exact 8-file commit and static CI 8/8 | PASS |
+| Completion review | `docs/reviews/CVF_MSEA_R85_GOP_Y_CVF_RESIDUAL_VALUE_ABSORPTION_AND_LANE_CLOSURE_COMPLETION_REVIEW_2026-07-10.md` | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Session continuity | active session front door and generated state | separate session-sync follows material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Schema version | `cvf.agent-build-loop-receipt.v1` | example uses exact value | PASS |
+| Out-of-scope edit | review or stop only | freeze negative fixture rejected | PASS |
+| Non-falsifiable hypothesis | review or stop only | continue negative fixture rejected | PASS |
+| Receipt claim | process record only | playbook and example deny correctness/closure proof | PASS |
+
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Next action: author, validate, and project the R85 public-safe artifacts before
-changing this disposition to `EXPORTED`.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-sync commit: `c2663b1ee`
+
+Public artifact paths: `docs/INDEX.md`; `docs/guides/CVF_5_MINUTE_TRUST_DEMO.md`; `docs/reference/agent_build_loop/`; `docs/reference/public_trust/`
+
+Public repository: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit: `c2663b1ee`.
+
+Exported paths: public `docs/INDEX.md`, the seven R85 owner files under
+`docs/guides/`, `docs/reference/agent_build_loop/`, and
+`docs/reference/public_trust/`.
 
 ## Claim Boundary
 
