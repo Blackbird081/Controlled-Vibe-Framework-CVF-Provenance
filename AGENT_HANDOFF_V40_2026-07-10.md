@@ -4,14 +4,14 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity for MSEA-R92 worker-return scaffold hardening dispatch.
+Purpose: compact continuity after MSEA-R92 worker-return scaffold hardening closure.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
 ## Purpose
 
-Route a five-path last-mile authoring-helper hardening tranche before the
-separate advisory-directory cleanup packet.
+Route the next fresh advisory-directory cleanup packet after closing the
+five-path last-mile authoring-helper hardening tranche.
 
 ## Scope / Target / Owner Boundary
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=delegated worker executes MSEA-R92 without committing; parked checkpoint=Gop y CVF legacy cleanup follows R92 and R73F remains blocked.
+Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh governed Gop y CVF legacy-cleanup packet; parked checkpoint=R73F remains blocked.
 
 ## Mandatory Startup Reads
 
@@ -36,16 +36,22 @@ Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_di
 
 ## Current Mode
 
-`msea_r92_worker_return_scaffold_hardening_dispatched`
+`msea_r92_worker_return_scaffold_hardening_closed`
 
 ## Latest Work / Changes
 
-MSEA-R92 is `DISPATCH_READY` at commit `115dd8d16`. The delegated worker must
-execute the exact five-path work order under `WORKER_MUST_NOT_COMMIT`. Scope is
-profile-neutral direct scaffold output, its focused tests, two existing
-guidance owners, and the worker return. Checker semantics, compact eligibility,
-hooks, session state, cleanup, public work, and roadmap continuation are
-forbidden.
+MSEA-R92 closed `REVIEWER_ACCEPTED_BOUNDED` at material commit `4284a5acd`.
+FULL and COMPACT direct scaffolds now share checker-required markers, headings,
+read-ahead fields, and last-mile finalization guidance. COMPACT retains exactly
+the three authorized conditional omissions. Thirteen focused tests and
+reviewer-fast 60/60 pass. No checker, enforcement severity, compact eligibility,
+automatic rewrite, runtime, provider, public, cleanup move, or roadmap work
+changed. The touched canonical gotchas owner is retained through the existing
+permanent active-window registry.
+
+Next allowed move is authoring a fresh governed packet to relocate `Gop y CVF/`
+into `.private_reference/legacy/`. Do not move it before dispatch gates pass and
+do not combine that cleanup with roadmap implementation or public work.
 
 MSEA-R89 closed at provenance material commit `17362cf7d`. The shared wizard
 now offers `Check`, `Update`, or `Create`. Read-only assessment covers public
@@ -423,6 +429,29 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
+
+## Core Guard Self-Protection Authorization - MSEA-R92 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R92 material
+commit `4284a5acd`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to fresh legacy-cleanup packet authoring. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record MSEA-R92 closure and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set MSEA-R92 closed mode. |
+| `CVF_SESSION/state/entries/mseaR92WorkerReturnScaffoldHardeningClosure20260710.json` | Record bounded closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route packet-first advisory cleanup. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: complete the small hardening tranche before roadmap
+continuation and retain the previously selected legacy-cleanup sequence.
+
+Rollback boundary: revert only this closure session-sync; do not revert R92
+material commit `4284a5acd`, R91 closure, or unrelated workspace work.
 
 ## Core Guard Self-Protection Authorization - MSEA-R92 Dispatch Session Sync
 

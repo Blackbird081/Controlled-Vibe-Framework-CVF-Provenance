@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1646,
+  "stateKey": "mseaR92WorkerReturnScaffoldHardeningClosure20260710",
+  "value": "REVIEWER_ACCEPTED_BOUNDED at material commit 4284a5acd. MSEA-R92 aligns the direct FULL and COMPACT worker-return scaffold profiles with checker-required markers and headings, adds complete checker-read-ahead and last-mile finalization guidance, preserves the exact three-section compact conditional delta, and passes 13 focused tests plus reviewer-fast 60/60. The touched canonical literal-gotchas owner is retained through the existing permanent active-window registry. No checker, enforcement severity, compact eligibility, automatic rewrite, runtime, provider, public, cleanup move, or roadmap implementation changed."
+}

@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-R92 is DISPATCH_READY at commit 115dd8d16. Next allowed move is delegated worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R92_WORKER_RETURN_SCAFFOLD_LAST_MILE_HARDENING_2026-07-10.md under WORKER_MUST_NOT_COMMIT, followed by reviewer closure. Scope is exactly the direct scaffold helper, its test, two existing guidance owners, and one worker return; no checker, compact eligibility, hook, session, cleanup, public, or roadmap mutation. Gop y CVF/ legacy cleanup follows R92 through a fresh packet. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-R92 is REVIEWER_ACCEPTED_BOUNDED at material commit 4284a5acd. Next allowed move is authoring a fresh governed cleanup packet for relocating Gop y CVF/ into .private_reference/legacy/ without mixing roadmap implementation or public work. Do not move the directory before that packet passes dispatch gates. R73F remains parked until its recorded source condition is satisfied. LHW24 remains latest closed numbered LHW wave."
 }
