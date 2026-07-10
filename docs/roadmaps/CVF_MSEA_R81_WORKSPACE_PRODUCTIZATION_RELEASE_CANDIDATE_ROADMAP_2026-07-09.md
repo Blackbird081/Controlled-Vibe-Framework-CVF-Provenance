@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_ACTIVE
+Status: RC_PASS_BOUNDED
 
 docType: roadmap
 
@@ -97,12 +97,12 @@ unneeded artifacts. It may not weaken these protected controls.
 
 | Tranche | Objective | Output | Status |
 |---|---|---|---|
-| R81A | RC source map and boundary confirmation | source-verified map of workspace scripts, generated files, guides, profiles, and public/private boundaries | READY_FOR_FRESH_GC018 |
-| R81B | RC checklist definition | compact workspace RC checklist with required commands and pass/fail meanings | HOLD_PENDING_R81A |
-| R81C | Disposable fresh-project smoke | prove fresh bootstrap plus selected rule-pack behavior in a temp workspace | HOLD_PENDING_R81B |
-| R81D | Existing-project adoption smoke | prove adopt-existing flow without depending on Policy_Local app logic | HOLD_PENDING_R81B |
-| R81E | Local workspace update proof | prove hidden public core update, wrapper refresh, guide refresh, and doctor check remain repeatable | HOLD_PENDING_R81C_R81D |
-| R81F | RC closure decision | close or park the RC lane with exact blockers and next product action | HOLD_PENDING_R81E |
+| R81A | RC source map and boundary confirmation | source-verified map of workspace scripts, generated files, guides, profiles, and public/private boundaries | REVIEWER_ACCEPTED_BOUNDED |
+| R81B | RC checklist definition | compact workspace RC checklist with required commands and pass/fail meanings | PASS |
+| R81C | Disposable fresh-project smoke | prove fresh bootstrap plus selected rule-pack behavior in a temp workspace | PASS |
+| R81D | Existing-project adoption smoke | prove adopt-existing flow without depending on Policy_Local app logic | PASS |
+| R81E | Local workspace update proof | prove hidden public core update, wrapper refresh, guide refresh, and doctor check remain repeatable | PASS |
+| R81F | RC closure decision | close or park the RC lane with exact blockers and next product action | RC_PASS_BOUNDED |
 
 ## Work Plan
 
@@ -147,17 +147,36 @@ R81 can close only when all of these are true:
 | Git changed-set proof | no use-case app changes in R81 workspace RC closure |
 | Governance gate | matching autorun phase passes before dispatch, closure, commit, or push |
 
+## Closure Decision
+
+R81 is RC_PASS_BOUNDED. The source map, compact checklist, disposable fresh
+bootstrap, existing-project adoption, local workspace update, and profile
+boundary proof are recorded in
+`docs/reviews/CVF_MSEA_R81B_WORKSPACE_RC_INTEGRATED_SMOKE_AND_CLOSURE_REVIEW_2026-07-10.md`.
+
+The next product move is public-safe packaging and distribution design only
+when a separately authorized public-sync packet refreshes repository-boundary
+evidence. Do not infer public release readiness from this local RC decision.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Final status |
+|---|---|---|
+| R81A source map | R81A source map and completion review | REVIEWER_ACCEPTED_BOUNDED |
+| R81B checklist | Workspace RC checklist | PASS |
+| R81C-R81E smoke evidence | R81B integrated smoke and closure review | PASS |
+| R81F decision | R81B integrated smoke and closure review | RC_PASS_BOUNDED |
+| Public export | no public-sync batch | DEFERRED_PRIVATE_ONLY |
+
 ## Dispatch Boundary
 
-The next authorized move from this roadmap is R81A only.
+The next authorized move from this roadmap is a separately authorized
+public-safe packaging or distribution-design packet. R81 execution is closed.
 
-R81A may read workspace scripts, guides, profile manifests, public-sync scripts,
-current local workspace generated files, and current session surfaces needed to
-map the boundary.
-
-R81A must not edit runtime/source/tests/checkers, mutate Policy_Local app code,
-run provider/live proof, create public release claims, perform public push, or
-execute R81B-R81F work early.
+Any later packet may read current workspace scripts, guides, profile manifests,
+and public-sync boundary evidence, but must not infer a public claim from R81.
+It needs fresh authority before it changes public-sync, runtime, tests,
+checkers, hooks, `Policy_Local`, provider/live behavior, or production scope.
 
 ## Checker Source Read-Ahead Block
 
@@ -181,4 +200,3 @@ This roadmap opens the CVF Workspace Productization Release Candidate lane
 only. It does not implement a use case, mutate Policy_Local app behavior,
 change governance checker semantics, retire guards, prove provider/live
 behavior, claim hosted or production readiness, or export public artifacts.
-

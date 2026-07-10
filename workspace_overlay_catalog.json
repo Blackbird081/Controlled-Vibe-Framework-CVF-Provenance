@@ -368,7 +368,7 @@
     },
     {
       "artifactId": "active-versioned-handoff",
-      "path": "AGENT_HANDOFF_V39_2026-07-08.md",
+      "path": "AGENT_HANDOFF_V40_2026-07-10.md",
       "artifactClass": "continuity-surface",
       "selectionTags": [
         "workspace-provenance-local",
