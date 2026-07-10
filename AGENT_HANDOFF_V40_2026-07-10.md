@@ -40,8 +40,8 @@ Startup acknowledged: current mode=`msea_r90_system_chain_audit_a_completion_dis
 
 ## Latest Work / Changes
 
-MSEA-R90 system-chain Audit A completion is dispatched at material commit
-`2abdb8857`. The worker must complete the three unresolved chain rows and
+MSEA-R90 system-chain Audit A completion is dispatched at final material commit
+`1398098cf` after initial packet commit `2abdb8857`. The worker must complete the three unresolved chain rows and
 revalidate the two prior rows from canonical sources, produce governed audit,
 JSON evidence, and worker-return artifacts, and must not commit. Deliverable B,
 freshness automation, legacy relocation, runtime/checker mutation, governance
@@ -427,8 +427,8 @@ the sibling public-sync clone, fresh remote evidence, and separate authority.
 
 ## Core Guard Self-Protection Authorization - MSEA-R90 Dispatch Session Sync
 
-Authorized guard-maintenance scope: session-sync only after R90 dispatch
-material commit `2abdb8857`.
+Authorized guard-maintenance scope: session-sync only after R90 final dispatch
+material commit `1398098cf`.
 
 Protected paths:
 

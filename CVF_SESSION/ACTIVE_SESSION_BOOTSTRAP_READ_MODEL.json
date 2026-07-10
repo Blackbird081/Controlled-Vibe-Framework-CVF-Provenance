@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "msea_r90_system_chain_audit_a_completion_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R90 system-chain Audit A completion is dispatched at material commit 2abdb8857. Next allowed move is for the worker to execute docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md from a fresh execution-base anchor and return the governed Audit A, JSON evidence, and worker-return artifacts without committing. Codex then reviews and closes or returns the packet. Deliverable B, freshness automation, legacy relocation, runtime/checker mutation, governance-lane changes, and session-state mutation remain excluded. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R90 system-chain Audit A completion is dispatched at final material commit 1398098cf after initial packet commit 2abdb8857. Next allowed move is for the worker to execute docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md from a fresh execution-base anchor and return the governed Audit A, JSON evidence, and worker-return artifacts without committing. Codex then reviews and closes or returns the packet. Deliverable B, freshness automation, legacy relocation, runtime/checker mutation, governance-lane changes, and session-state mutation remain excluded. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

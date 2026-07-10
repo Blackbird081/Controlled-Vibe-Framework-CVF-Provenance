@@ -52,7 +52,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R90 system-chain Audit A completion dispatch | `2abdb8857` | DISPATCH_READY. Complete and revalidate all five chain rows; worker produces governed audit, JSON evidence, and worker return without committing. Deliverable B, maintenance automation, legacy relocation, runtime/checker changes, governance-lane changes, and session mutation remain excluded. |
+| MSEA-R90 system-chain Audit A completion dispatch | `1398098cf` | DISPATCH_READY after initial packet commit `2abdb8857`. Complete and revalidate all five chain rows; worker produces governed audit, JSON evidence, and worker return without committing. Deliverable B, maintenance automation, legacy relocation, runtime/checker changes, governance-lane changes, and session mutation remain excluded. |
 | MSEA-R88 double-click workspace setup wizard | `b7d0e818d` | CLOSED_PASS_BOUNDED. Added a one-file double-click launcher and three-step Windows GUI over the shared R87 setup engine; GUI and launcher smoke proofs passed. |
 | MSEA-R87 interactive operator workspace initializer | `b3004069d` | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Added one options-driven provenance entrypoint and agent autorun routing; fresh and existing workspace proofs passed; public root-rules fix exported at `a78b35c9d`. |
 | MSEA-R86 workspace classification guide | `c5b1fddd1` | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Added the detailed classification guide, exported public commit `4c0d06cf2`, refreshed the actual operator workspace, retained `operator-local`, and passed workspace enforcement. |
