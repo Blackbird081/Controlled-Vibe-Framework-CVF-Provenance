@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1638,
+  "stateKey": "mseaR88DoubleClickWorkspaceSetupWizardClosure20260710",
+  "value": "CLOSED_PASS_BOUNDED. Provenance material commit b7d0e818d adds START_CVF_WORKSPACE_SETUP.cmd and a three-step WinForms wizard to the existing initializer. The user double-clicks one launcher, selects operator-local, paid-user-safe, or public-free, chooses a folder, reviews the summary, and starts setup. The launcher uses Windows PowerShell STA plus execution-policy bypass. GUI render smoke and launcher-route smoke passed; non-interactive plan regression passed. The implementation reuses the R87 setup engine and does not add a second installation path. Public repo behavior is unchanged from a78b35c9d."
+}

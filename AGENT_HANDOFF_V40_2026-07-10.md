@@ -4,7 +4,7 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R87 interactive operator workspace initializer closure.
+Purpose: compact continuity after MSEA-R88 double-click workspace setup wizard closure.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,15 @@ Startup acknowledged: current mode=`msea_r87_interactive_operator_workspace_init
 
 ## Current Mode
 
-`msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`
+`msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`
 
 ## Latest Work / Changes
+
+MSEA-R88 closed at provenance material commit `b7d0e818d`.
+`START_CVF_WORKSPACE_SETUP.cmd` now provides the actual double-click UX: a
+three-step Windows wizard for profile, folder, and confirmation. It launches
+the same R87 setup engine used by agents, so GUI and automation do not drift.
+GUI render smoke and launcher-route smoke passed.
 
 MSEA-R87 closed at provenance material commit `b3004069d` and public commit
 `a78b35c9d`. `Initialize-CVF-Operator-Workspace.ps1` is now the options-driven
@@ -122,12 +128,15 @@ public push occurred.
 
 ## Active Boundary
 
-R85 through R87 and the historical R64-R70 source family are closed. Provenance
+R85 through R88 and the historical R64-R70 source family are closed. Provenance
 remains the source of truth; no new repository absorption is active until a
 source-verified target and fresh packet are selected. Workspace setup does not
 reopen without observed cross-machine friction.
 
 ## Current HEAD
+
+R88 double-click workspace wizard material commit before this session-sync:
+`b7d0e818d`.
 
 R87 interactive workspace initializer material commit before this session-sync:
 `b3004069d`.
@@ -186,9 +195,9 @@ External agent memory files: non-canonical convenience only.
 
 Next allowed move: select and source-verify the next repository, check the
 conditional reopen index, and author a fresh bounded packet before absorption.
-R85 through R87 are closed. Do not reopen workspace setup without observed
+R85 through R88 are closed. Do not reopen workspace setup without observed
 cross-machine friction. `Policy_Local` remains a closed workspace enforcement
-proof target, not the next implementation task. R87 does not authorize
+proof target, not the next implementation task. R88 does not authorize
 checker/hook, runtime/provider/live, private-output,
 Memory/RAG, retrieval, or new repository mutation. Latest closed numbered LHW
 wave remains `LHW24`.
@@ -397,6 +406,29 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
+
+## Core Guard Self-Protection Authorization - MSEA-R88 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R88 material
+commit `b7d0e818d`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to post-R88 repository selection. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R88 closure and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set post-R88 mode. |
+| `CVF_SESSION/state/entries/mseaR88DoubleClickWorkspaceSetupWizardClosure20260710.json` | Record bounded closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Keep next repository selection bounded. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: replace the console-first experience with a
+double-click options wizard for broad usability.
+
+Rollback boundary: revert only this session-sync; do not revert R88 material,
+R87 setup engine, public root-rules fix, or local workspace refresh.
 
 ## Core Guard Self-Protection Authorization - MSEA-R87 Closure Session Sync
 
