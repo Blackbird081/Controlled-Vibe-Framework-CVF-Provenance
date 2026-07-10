@@ -129,6 +129,9 @@ evidence, contradiction ledger, current-authority precedence, changed-file
 evidence, and a bounded verdict. The JSON companion must be deterministic and
 match the Markdown edge identifiers and dispositions.
 
+The worker captures a fresh executionBaseHead from the committed dispatch HEAD
+before material edits; the dispatch base remains provenance evidence only.
+
 ## ADIF Defect Registry Disclosure
 
 Resolver query: taskClass=`system-chain audit`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`

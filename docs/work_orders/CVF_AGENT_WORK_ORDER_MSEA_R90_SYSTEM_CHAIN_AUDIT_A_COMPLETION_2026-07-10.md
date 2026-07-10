@@ -447,9 +447,9 @@ Boundary, Changed Files, Command Evidence, and No-Commit Statement.
 Worker captures a fresh execution anchor before edits and runs:
 
 ```powershell
-git rev-parse --short HEAD
+$executionBaseHead = git rev-parse --short HEAD
 git status --short --untracked-files=all
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 3bdb6640a --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $executionBaseHead --head HEAD
 python governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_WORKER_RETURN_2026-07-10.md --title "MSEA R90 System Chain Audit A Completion Worker Return"
 ```
 
